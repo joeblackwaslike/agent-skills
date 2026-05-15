@@ -1,0 +1,3 @@
+display_name: Best Practices for Agentic Development
+short_description: Design reliable skills, agents, workflows, and MCP tools.
+default_prompt: Use the best-practices-for-agentic-development skill to route agent-development work into Skill Development, General Agent Development, Agentic Development, or MCP Development guidance before making design or implementation decisions.
