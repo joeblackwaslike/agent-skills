@@ -1,0 +1,13 @@
+{
+  "name": "agent-skills",
+  "version": "0.1.0",
+  "description": "Joe Black's custom skills for Claude Code — agentic development, Claude Code plugin development, and best practices for working with Claude Code.",
+  "author": {
+    "name": "Joe Black",
+    "email": "joeblackwaslike@gmail.com"
+  },
+  "homepage": "https://github.com/joeblackwaslike/agent-skills",
+  "repository": "https://github.com/joeblackwaslike/agent-skills",
+  "license": "MIT",
+  "keywords": ["claude-code", "skills", "agent-development", "plugin-development", "agentic"]
+}
