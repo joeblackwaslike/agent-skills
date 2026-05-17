@@ -1,6 +1,5 @@
 {
   "name": "agent-skills",
-  "version": "0.1.0",
   "description": "Joe Black's custom skills for Claude Code — agentic development, Claude Code plugin development, and best practices for working with Claude Code.",
   "author": {
     "name": "Joe Black",
