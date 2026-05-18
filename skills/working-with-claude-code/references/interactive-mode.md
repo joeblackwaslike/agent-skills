@@ -203,7 +203,7 @@ Press `v` for character-wise selection or `V` for line-wise selection. Motions e
 | `>`/`<`          | Indent or dedent selected lines                      |
 | `J`              | Join selected lines                                  |
 | `o`              | Swap cursor and anchor                               |
-| `iw`/`aw`/`i"`/��� | Select a text object                                 |
+| `iw`/`aw`/`i"`/… | Select a text object                                 |
 | `v`/`V`          | Toggle between character-wise and line-wise, or exit |
 
 Block-wise visual mode with `Ctrl+V` is not supported.
