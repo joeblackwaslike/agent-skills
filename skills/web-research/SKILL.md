@@ -81,3 +81,14 @@ Apply in order. Stop at the first step that returns sufficient content.
 - If a tool returns an error: log the tool name and error, escalate to the next option
 - Never retry the same tool + query combination more than twice
 - Never fabricate citations — only cite URLs actually returned by a tool
+
+## Reference Files
+
+Load the relevant reference when deep tool-specific details are needed:
+
+| Tool | Reference | When to load |
+|------|-----------|--------------|
+| Context7 (library docs) | `references/context7.md` | Resolving library IDs, version-specific queries, quota errors |
+| Exa (search + deep research) | `references/exa-research.md` | Deep researcher workflow, date handling, citation format |
+| Brave Search | `references/brave-web-search.md` | Brave MCP unavailable, REST API fallback needed |
+| Tavily CLI | `references/tavily-cli.md` | `tvly` commands, crawl/extract/map/research workflows |
