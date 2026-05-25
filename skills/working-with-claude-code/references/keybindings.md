@@ -149,9 +149,9 @@ Actions available in the `Confirmation` context:
 
 Actions available in the `Confirmation` context for permission dialogs:
 
-| Action                   | Default | Description                  |
-| :----------------------- | :------ | :--------------------------- |
-| `permission:toggleDebug` | Ctrl+D  | Toggle permission debug info |
+| Action                   | Default   | Description                                                                                                         |
+| :----------------------- | :-------- | :------------------------------------------------------------------------------------------------------------------ |
+| `permission:toggleDebug` | (unbound) | Toggle permission debug info. The previous default of Ctrl+D was removed in v2.1.146 because it shadowed `app:exit` |
 
 ### Transcript actions
 
@@ -261,10 +261,11 @@ Actions available in the `DiffDialog` context:
 
 Actions available in the `ModelPicker` context:
 
-| Action                       | Default | Description           |
-| :--------------------------- | :------ | :-------------------- |
-| `modelPicker:decreaseEffort` | Left    | Decrease effort level |
-| `modelPicker:increaseEffort` | Right   | Increase effort level |
+| Action                       | Default | Description                                       |
+| :--------------------------- | :------ | :------------------------------------------------ |
+| `modelPicker:decreaseEffort` | Left    | Decrease effort level                             |
+| `modelPicker:increaseEffort` | Right   | Increase effort level                             |
+| `modelPicker:setAsDefault`   | d       | Set highlighted model as default for new sessions |
 
 ### Select actions
 

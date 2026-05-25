@@ -60,6 +60,7 @@ For full details, please review our [Commercial Terms of Service](https://www.an
 * **Isolated context windows**: Web fetch uses a separate context window to avoid injecting potentially malicious prompts
 * **Trust verification**: First-time codebase runs and new MCP servers require trust verification
   * Note: Trust verification is disabled when running non-interactively with the `-p` flag. The exception is [`--worktree`](/en/worktrees), which still requires that trust has been accepted for the directory
+  * Note: When you start Claude Code directly in your home directory, trust acceptance is held for the current session only and is not written to disk, so the prompt reappears on each launch. There is no setting to persist it. Start Claude Code from a project subdirectory instead, where trust acceptance is saved per directory
 * **Command injection detection**: Suspicious bash commands require manual approval even if previously allowlisted
 * **Fail-closed matching**: Unmatched commands default to requiring manual approval
 * **Natural language descriptions**: Complex bash commands include explanations for user understanding
@@ -136,8 +137,9 @@ If you discover a security vulnerability in Claude Code:
 
 ## Related resources
 
-* [Sandboxing](/en/sandboxing) - Filesystem and network isolation for bash commands
-* [Permissions](/en/permissions) - Configure permissions and access controls
-* [Monitoring usage](/en/monitoring-usage) - Track and audit Claude Code activity
-* [Development containers](/en/devcontainer) - Secure, isolated environments
-* [Anthropic Trust Center](https://trust.anthropic.com) - Security certifications and compliance
+* [Sandbox environments](/en/sandbox-environments): compare isolation approaches and choose one for your threat model
+* [Sandboxing](/en/sandboxing): filesystem and network isolation for Bash commands
+* [Permissions](/en/permissions): configure permissions and access controls
+* [Monitoring usage](/en/monitoring-usage): track and audit Claude Code activity
+* [Development containers](/en/devcontainer): secure, isolated environments
+* [Anthropic Trust Center](https://trust.anthropic.com): security certifications and compliance
