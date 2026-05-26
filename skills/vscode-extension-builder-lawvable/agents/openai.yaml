@@ -1,0 +1,7 @@
+interface:
+  display_name: "VS Code Extension Builder"
+  short_description: "Build and verify VS Code extensions"
+  default_prompt: "Use $vscode-extension-builder-lawvable to build, test, and package this VS Code extension with a real feedback loop."
+
+policy:
+  allow_implicit_invocation: true

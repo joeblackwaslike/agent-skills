@@ -1,0 +1,238 @@
+---
+title: "Markdown Table of Contents"
+source: "https://docusaurus.io/docs/markdown-features/toc"
+fetched_at: "2026-05-26T21:59:04.182Z"
+sha256: "b33956e0e04f4004f7fd8b218855c4408f5c3b7c57c247332c17a9ce962d8f9e"
+---
+
+# Markdown Table of Contents
+
+Source: https://docusaurus.io/docs/markdown-features/toc
+
+- GuidesMarkdown FeaturesHeadings and Table of contentsVersion: 3.10.1On this page
+# Headings and Table of contents
+
+## Markdown headings​
+
+You can use regular Markdown headings.
+
+
+```
+## Level 2 title### Level 3 title#### Level 4 title
+```
+
+Each Markdown heading will appear as a table of contents entry.
+
+### Heading IDs​
+
+Each heading has an ID that can be automatically generated or explicitly specified. Heading IDs allow you to link to a specific document heading in Markdown or JSX:
+
+
+```
+[link](#heading-id)
+```
+
+
+```
+<Link to="#heading-id">link</Link>
+```
+
+By default, Docusaurus will generate heading IDs for you, based on the heading text. For example, `### Hello World` will have ID `hello-world`.
+
+Generated IDs have **some limitations**:
+
+The ID might not look good
+
+- You might want to **change or translate** the text without updating the existing ID to avoid breaking links
+
+A special syntax lets you set an **explicit heading id**.
+
+- MDXCommonMark
+```
+### Hello World {/* #my-explicit-id */}### Hello World {#my-explicit-id}
+```
+
+```
+### Hello World <!-- #my-explicit-id -->### Hello World {#my-explicit-id}
+```
+
+The heading id comment must start with `#`, be placed at the **end** of the heading and will be stripped from the rendered output.
+
+tipUse the **`write-heading-ids`** CLI command to add explicit IDs to all your Markdown documents.The `--syntax` option lets you choose which syntax you prefer:
+The `classic` syntax for `{#headingId}`
+
+- The `mdx-comment` syntax for `{/* #headingId */}`
+
+Avoid the classic `{#id}` syntax for MDX filesFor MDX files, the `{#id}` syntax should be avoided. Since Docusaurus v3 and MDX v2, it is **not valid MDX syntax anymore**. It can break external tools that support MDX (IDEs and linters). It is only supported in Docusaurus for backward compatibility, thanks to the `markdown.mdx1Compat.headingIds` config option. The comment-based syntax should be preferred for MDX documents.
+Avoid colliding IDsGenerated heading IDs will be guaranteed to be unique on each page, but if you use custom IDs, make sure each one appears exactly once on each page, or there will be two DOM elements with the same ID, which is invalid HTML semantics, and will lead to one heading being unlinkable.
+
+## Table of contents heading level​
+
+Each Markdown document displays a table of contents on the top-right corner. By default, this table only shows h2 and h3 headings, which should be sufficient for an overview of the page structure. In case you need to change the range of headings displayed, you can customize the minimum and maximum heading level — either per page or globally.
+
+To set the heading level for a particular page, use the `toc_min_heading_level` and `toc_max_heading_level` front matter.
+
+myDoc.md
+```
+---# Display h2 to h5 headingstoc_min_heading_level: 2toc_max_heading_level: 5---
+```
+
+To set the heading level for _all_ pages, use the `themeConfig.tableOfContents` option.
+
+docusaurus.config.js
+```
+export default {  themeConfig: {    tableOfContents: {      minHeadingLevel: 2,      maxHeadingLevel: 5,    },  },};
+```
+
+If you've set the options globally, you can still override them locally via front matter.
+
+noteThe `themeConfig` option would apply to all TOC on the site, including inline TOC, but front matter options only affect the top-right TOC. You need to use the `minHeadingLevel` and `maxHeadingLevel` props to customize each `<TOCInline />` component.
+
+## Inline table of contents​
+
+It is also possible to display an inline table of contents directly inside a Markdown document, thanks to MDX.
+
+The `toc` variable is available in any MDX document and contains all the headings of an MDX document. By default, only `h2` and `h3` headings are displayed in the TOC. You can change which heading levels are visible by setting `minHeadingLevel` or `maxHeadingLevel` for individual `TOCInline` components.
+
+
+```
+import TOCInline from '@theme/TOCInline';<TOCInline toc={toc} />
+```
+
+
+http://localhost:3000Markdown headingsHeading IDsTable of contents heading levelInline table of contentsCustomizing table of contents generationExample Section 1Example Subsection 1 aExample Subsection 1 bExample Subsection 1 cExample Section 2Example Subsection 2 aExample Subsection 2 bExample Subsection 2 cExample Section 3Example Subsection 3 aExample Subsection 3 bExample Subsection 3 c
+The `toc` global is just a list of heading items:
+
+
+```
+declare const toc: {  value: string;  id: string;  level: number;}[];
+```
+
+Note that the `toc` global is a flat array, so you can easily cut out unwanted nodes or insert extra nodes, and create a new TOC tree.
+
+
+```
+import TOCInline from '@theme/TOCInline';<TOCInline  // Only show h2 and h4 headings  toc={toc.filter((node) => node.level === 2 || node.level === 4)}  minHeadingLevel={2}  // Show h4 headings in addition to the default h2 and h3 headings  maxHeadingLevel={4}/>
+```
+
+http://localhost:3000Markdown headingsTable of contents heading levelInline table of contentsCustomizing table of contents generationExample Section 1Example subsubsection 1 a IExample subsubsection 1 a IIExample subsubsection 1 a IIIExample subsubsection 1 b IExample subsubsection 1 b IIExample subsubsection 1 b IIIExample subsubsection 1 c IExample subsubsection 1 c IIExample subsubsection 1 c IIIExample Section 2Example subsubsection 2 a IExample subsubsection 2 a IIExample subsubsection 2 a IIIExample subsubsection 2 b IExample subsubsection 2 b IIExample subsubsection 2 b IIIExample subsubsection 2 c IExample subsubsection 2 c IIExample subsubsection 2 c IIIExample Section 3Example subsubsection 3 a IExample subsubsection 3 a IIExample subsubsection 3 a IIIExample subsubsection 3 b IExample subsubsection 3 b IIExample subsubsection 3 b IIIExample subsubsection 3 c IExample subsubsection 3 c IIExample subsubsection 3 c III
+
+## Customizing table of contents generation​
+
+The table-of-contents is generated by parsing the Markdown source with a Remark plugin. There are known edge-cases where it generates false-positives and false-negatives.
+
+Markdown headings within hideable areas will still show up in the TOC. For example, headings within `Tabs` and `details` will not be excluded.
+
+Non-Markdown headings will not show up in the TOC. This can be used to your advantage to tackle the aforementioned issue.
+
+
+```
+<details><summary>Some details containing headings</summary><h2 id="#heading-id">I'm a heading that will not show up in the TOC</h2>Some content...</details>
+```
+
+The ability to ergonomically insert extra headings or ignore certain headings is a work-in-progress. If this feature is important to you, please report your use-case in this issue.
+
+warningBelow is just some dummy content to have more table of contents items available on the current page.
+
+## Example Section 1​
+
+Lorem ipsum
+
+### Example Subsection 1 a​
+
+Lorem ipsum
+
+#### Example subsubsection 1 a I​
+
+#### Example subsubsection 1 a II​
+
+#### Example subsubsection 1 a III​
+
+### Example Subsection 1 b​
+
+Lorem ipsum
+
+#### Example subsubsection 1 b I​
+
+#### Example subsubsection 1 b II​
+
+#### Example subsubsection 1 b III​
+
+### Example Subsection 1 c​
+
+Lorem ipsum
+
+#### Example subsubsection 1 c I​
+
+#### Example subsubsection 1 c II​
+
+#### Example subsubsection 1 c III​
+
+## Example Section 2​
+
+Lorem ipsum
+
+### Example Subsection 2 a​
+
+Lorem ipsum
+
+#### Example subsubsection 2 a I​
+
+#### Example subsubsection 2 a II​
+
+#### Example subsubsection 2 a III​
+
+### Example Subsection 2 b​
+
+Lorem ipsum
+
+#### Example subsubsection 2 b I​
+
+#### Example subsubsection 2 b II​
+
+#### Example subsubsection 2 b III​
+
+### Example Subsection 2 c​
+
+Lorem ipsum
+
+#### Example subsubsection 2 c I​
+
+#### Example subsubsection 2 c II​
+
+#### Example subsubsection 2 c III​
+
+## Example Section 3​
+
+Lorem ipsum
+
+### Example Subsection 3 a​
+
+Lorem ipsum
+
+#### Example subsubsection 3 a I​
+
+#### Example subsubsection 3 a II​
+
+#### Example subsubsection 3 a III​
+
+### Example Subsection 3 b​
+
+Lorem ipsum
+
+#### Example subsubsection 3 b I​
+
+#### Example subsubsection 3 b II​
+
+#### Example subsubsection 3 b III​
+
+### Example Subsection 3 c​
+
+Lorem ipsum
+
+#### Example subsubsection 3 c I​
+
+#### Example subsubsection 3 c II​
+
+#### Example subsubsection 3 c III​
+Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber

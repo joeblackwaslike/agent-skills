@@ -1,0 +1,7 @@
+interface:
+  display_name: "Docusaurus Docs Builder"
+  short_description: "Build polished Docusaurus docs sites"
+  default_prompt: "Use $docusaurus-docs-builder to create or overhaul this Docusaurus docs site with strong IA, visuals, MDX components, and verified build output."
+
+policy:
+  allow_implicit_invocation: true

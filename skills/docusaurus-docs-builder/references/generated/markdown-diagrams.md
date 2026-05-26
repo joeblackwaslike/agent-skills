@@ -1,0 +1,101 @@
+---
+title: "Markdown Diagrams"
+source: "https://docusaurus.io/docs/markdown-features/diagrams"
+fetched_at: "2026-05-26T21:59:04.800Z"
+sha256: "7a015314679e0555506fafed63971a6fafcca4b2ca3a7eae37d711bde9ab98e8"
+---
+
+# Markdown Diagrams
+
+Source: https://docusaurus.io/docs/markdown-features/diagrams
+
+- GuidesMarkdown FeaturesDiagramsVersion: 3.10.1On this page
+# Diagrams
+
+Diagrams can be rendered using Mermaid in a code block.
+
+## Installation​
+
+npmYarnpnpmBun
+```
+npm install --save @docusaurus/theme-mermaid
+```
+
+```
+yarn add @docusaurus/theme-mermaid
+```
+
+```
+pnpm add @docusaurus/theme-mermaid
+```
+
+```
+bun add @docusaurus/theme-mermaid
+```
+
+Enable Mermaid functionality by adding plugin `@docusaurus/theme-mermaid` and setting `markdown.mermaid` to `true` in your `docusaurus.config.js`.
+
+docusaurus.config.js
+```
+export default {  markdown: {    mermaid: true,  },  themes: ['@docusaurus/theme-mermaid'],};
+```
+
+
+## Usage​
+
+Add a code block with language `mermaid`:
+
+Example Mermaid diagram
+```
+```mermaidgraph TD;    A-->B;    A-->C;    B-->D;    C-->D;```
+```
+
+
+See the Mermaid syntax documentation for more information on the Mermaid syntax.
+
+## Theming​
+
+The diagram dark and light themes can be changed by setting `mermaid.theme` values in the `themeConfig` in your `docusaurus.config.js`. You can set themes for both light and dark mode.
+
+docusaurus.config.js
+```
+export default {  themeConfig: {    mermaid: {      theme: {light: 'neutral', dark: 'forest'},    },  },};
+```
+
+See the Mermaid theme documentation for more information on theming Mermaid diagrams.
+
+## Mermaid Config​
+
+Options in `mermaid.options` will be passed directly to `mermaid.initialize`:
+
+docusaurus.config.js
+```
+export default {  themeConfig: {    mermaid: {      options: {        maxTextSize: 50,      },    },  },};
+```
+
+See the [Mermaid config documentation](https://mermaid-js.github.io/mermaid/#/./Setup?id=configuration) and the Mermaid config types for the available config options.
+
+## Dynamic Mermaid Component​
+
+To generate dynamic diagrams, you can use the `Mermaid` component:
+
+Example of dynamic Mermaid component
+```
+import Mermaid from '@theme/Mermaid';<Mermaid  value={`graph TD;    A-->B;    A-->C;    B-->D;    C-->D;`}/>
+```
+
+
+## Layouts​
+
+Mermaid supports different layout engines:
+
+The `dagre` layout engine is supported by default in Docusaurus.
+
+- The `elk` layout engine is heavier and can be enabled by installing the optional `@mermaid-js/layout-elk` dependency.
+
+
+```
+```mermaid---config:  layout: elk---graph TD;    A-->B;    A-->C;    B-->D;    C-->D;```
+```
+
+Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber

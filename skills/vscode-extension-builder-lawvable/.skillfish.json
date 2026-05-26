@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "vscode-extension-builder-lawvable",
+  "owner": "lawvable",
+  "repo": "awesome-legal-skills",
+  "path": "skills/vscode-extension-builder-lawvable",
+  "branch": "main",
+  "sha": "41976fc0e1099385a7f225c11d5d3796d19615f0",
+  "source": "manual"
+}

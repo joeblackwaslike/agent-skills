@@ -1,0 +1,7 @@
+interface:
+  display_name: "GitHub README Overhaul"
+  short_description: "Rewrite READMEs for installs and adoption"
+  default_prompt: "Use $github-readme-overhaul to rewrite this README with stronger branding, visuals, badges, proof, and install-focused conversion."
+
+policy:
+  allow_implicit_invocation: true
