@@ -1,7 +1,7 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-05-26T10:34:19.512Z"
+fetched_at: "2026-06-01T05:42:32.780Z"
 sha256: "d8ea07b852258f25bc9d4d4e330f90293a02905f09785667dfc59a23a6ee7ffb"
 ---
 

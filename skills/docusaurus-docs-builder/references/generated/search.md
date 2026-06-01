@@ -1,7 +1,7 @@
 ---
 title: "Search"
 source: "https://docusaurus.io/docs/search"
-fetched_at: "2026-05-26T21:59:05.888Z"
+fetched_at: "2026-06-01T05:42:28.484Z"
 sha256: "dce1f0b229ac8fd15e3674885ead71a814178b6f61710555c7d36a75509abf0f"
 ---
 

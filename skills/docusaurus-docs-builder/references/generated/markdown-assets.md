@@ -1,7 +1,7 @@
 ---
 title: "Markdown Assets"
 source: "https://docusaurus.io/docs/markdown-features/assets"
-fetched_at: "2026-05-26T21:59:04.127Z"
+fetched_at: "2026-06-01T05:42:26.900Z"
 sha256: "acdcd1d0f920f2e8b1fa90099c51d79c860f99900b5f0771b3e26829b7fc8029"
 ---
 

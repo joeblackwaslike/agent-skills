@@ -1,7 +1,7 @@
 ---
 title: "MDX Plugins"
 source: "https://docusaurus.io/docs/markdown-features/plugins"
-fetched_at: "2026-05-26T21:59:04.958Z"
+fetched_at: "2026-06-01T05:42:27.891Z"
 sha256: "f62a13e1020508746fa468bfbfda7020ed6ce5ddb6923882cf885d90c0e98e3f"
 ---
 

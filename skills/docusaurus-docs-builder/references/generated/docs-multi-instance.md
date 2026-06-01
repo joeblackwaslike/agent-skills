@@ -1,7 +1,7 @@
 ---
 title: "Docs Multi-instance"
 source: "https://docusaurus.io/docs/docs-multi-instance"
-fetched_at: "2026-05-26T21:59:03.376Z"
+fetched_at: "2026-06-01T05:42:26.171Z"
 sha256: "ee194f7372c24cbc390d7d65c375260d74cdc1b415dc4f3df176d7f1064915dc"
 ---
 

@@ -130,7 +130,7 @@ az login
 ```
 
 <Note>
-  When using Microsoft Foundry, the `/login` and `/logout` commands are disabled since authentication is handled through Azure credentials.
+  When using Microsoft Foundry, the `/logout` command is unavailable since authentication is handled through Azure credentials.
 </Note>
 
 ### 3. Configure Claude Code
@@ -155,10 +155,10 @@ export ANTHROPIC_FOUNDRY_RESOURCE={resource}
 
 Set the model variables to match the deployment names you created in step 1.
 
-Without `ANTHROPIC_DEFAULT_OPUS_MODEL`, the `opus` alias on Foundry resolves to Opus 4.6. Set it to the Opus 4.7 ID to use the latest model:
+Without `ANTHROPIC_DEFAULT_OPUS_MODEL`, the `opus` alias on Foundry resolves to Opus 4.6. Set it to the Opus 4.8 ID to use the latest model:
 
 ```bash theme={null}
-export ANTHROPIC_DEFAULT_OPUS_MODEL='claude-opus-4-7'
+export ANTHROPIC_DEFAULT_OPUS_MODEL='claude-opus-4-8'
 export ANTHROPIC_DEFAULT_SONNET_MODEL='claude-sonnet-4-6'
 export ANTHROPIC_DEFAULT_HAIKU_MODEL='claude-haiku-4-5'
 ```

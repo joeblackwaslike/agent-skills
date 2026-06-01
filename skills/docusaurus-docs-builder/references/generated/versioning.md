@@ -1,7 +1,7 @@
 ---
 title: "Versioning"
 source: "https://docusaurus.io/docs/versioning"
-fetched_at: "2026-05-26T21:59:03.625Z"
+fetched_at: "2026-06-01T05:42:26.446Z"
 sha256: "20b68ec946dbfc61245e5c6a735c424c446e0e6bf10afea1ee61e20b4b3697fc"
 ---
 

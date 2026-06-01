@@ -1,7 +1,7 @@
 ---
 title: "Styling and Layout"
 source: "https://docusaurus.io/docs/styling-layout"
-fetched_at: "2026-05-26T21:59:05.136Z"
+fetched_at: "2026-06-01T05:42:28.059Z"
 sha256: "20295257f6161922ec95d64a698d0fe9626e06e7459961c44cce75eaea9c936c"
 ---
 

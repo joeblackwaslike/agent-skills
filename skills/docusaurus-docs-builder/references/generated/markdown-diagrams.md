@@ -1,7 +1,7 @@
 ---
 title: "Markdown Diagrams"
 source: "https://docusaurus.io/docs/markdown-features/diagrams"
-fetched_at: "2026-05-26T21:59:04.800Z"
+fetched_at: "2026-06-01T05:42:27.643Z"
 sha256: "7a015314679e0555506fafed63971a6fafcca4b2ca3a7eae37d711bde9ab98e8"
 ---
 

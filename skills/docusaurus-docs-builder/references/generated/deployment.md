@@ -1,7 +1,7 @@
 ---
 title: "Deployment"
 source: "https://docusaurus.io/docs/deployment"
-fetched_at: "2026-05-26T21:59:06.185Z"
+fetched_at: "2026-06-01T05:42:28.783Z"
 sha256: "a8de0d754a6bb45770f427406539296b4c70f6c16b5803a7ada05a7b0d6ebcd7"
 ---
 
