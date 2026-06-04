@@ -1,0 +1,14 @@
+{
+  "name": "agent-skills",
+  "version": "1.0.0",
+  "description": "Joe Black's custom skills for Claude Code and Codex CLI — agentic development, plugin development, and best practices for working with AI coding assistants.",
+  "author": {
+    "name": "Joe Black",
+    "email": "joeblackwaslike@gmail.com"
+  },
+  "homepage": "https://github.com/joeblackwaslike/agent-skills",
+  "repository": "https://github.com/joeblackwaslike/agent-skills",
+  "license": "MIT",
+  "keywords": ["codex", "skills", "agent-development", "plugin-development", "agentic"],
+  "skills": "./skills/"
+}

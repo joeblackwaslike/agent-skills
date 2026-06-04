@@ -3,13 +3,14 @@
 [![Discord](https://img.shields.io/discord/1486035859747897414?logo=discord&label=Discord&color=5865F2)](https://discord.com/channels/1486035859747897414/1509515248284209232) [![Join Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.gg/Fjc9zYHZyV)
 
 
-A Claude Code plugin bundling custom skills for easy installation in any agent environment.
+A plugin bundling custom skills for Claude Code and Codex CLI — easy installation in any agent environment.
 
 ## Skills
 
 ```
 agent-skills:best-practices-for-agentic-development
 agent-skills:developing-claude-code-plugins
+agent-skills:developing-codex-plugins
 agent-skills:devcontainers
 agent-skills:docusaurus-docs-builder
 agent-skills:git-github-workflows
@@ -19,4 +20,5 @@ agent-skills:multi-provider-plugins
 agent-skills:vscode-extension-builder-lawvable
 agent-skills:web-research
 agent-skills:working-with-claude-code
+agent-skills:working-with-codex
 ```
