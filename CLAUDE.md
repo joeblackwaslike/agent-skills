@@ -39,3 +39,43 @@ Existing example: `skills/working-with-claude-code/scripts/update_docs.js`
 ## Task management
 
 This repo uses beads for task management so be sure to load the beads skill whenever working with tasks.
+
+## Available Skills
+
+Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
+
+| Skill | When to Invoke |
+| --- | --- |
+| `best-practices-for-agentic-development` | Before designing agents, MCP servers, multi-step workflows, or skill systems |
+| `working-with-claude-code` | Working with Claude Code CLI, plugins, hooks, MCP, skills, or any Claude Code feature |
+| `developing-claude-code-plugins` | Creating, modifying, testing, or releasing Claude Code plugins |
+| `working-with-codex` | Working with the Codex CLI, plugins, skills, hooks, configuration, or any Codex feature |
+| `developing-codex-plugins` | Creating, modifying, testing, or releasing Codex plugins |
+| `working-with-gemini` | Working with Gemini CLI or Antigravity CLI — extensions, skills, hooks, configuration |
+| `developing-gemini-plugins` | Creating, modifying, testing, or releasing Gemini CLI extensions or Antigravity plugins |
+| `working-with-opencode` | Working with OpenCode CLI — skills, plugins, configuration, commands, agents |
+| `developing-opencode-plugins` | Creating, modifying, testing, or releasing OpenCode skills or npm/Bun plugins |
+| `multi-provider-plugins` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
+| `web-research` | Any web search, URL fetching, or multi-source research task |
+| `git-github-workflows` | Git commits, branch operations, PR creation, CI debugging, or review workflows |
+| `devcontainers` | Building, using, modifying, developing, or distributing dev containers |
+| `docusaurus-docs-builder` | Building or updating Docusaurus documentation sites |
+| `github-readme-overhaul` | Writing or overhauling a GitHub README |
+| `interactive-system-docs` | Creating self-contained interactive HTML system visualizations |
+| `vscode-extension-builder-lawvable` | Building VS Code extensions |
+
+## Common Workflows
+
+> **Gemini CLI / Antigravity users:** Instruction files use `skill()` (Codex syntax). See `GEMINI.md` for `activate_skill()` syntax.
+
+**Starting agentic/plugin work:** Load `best-practices-for-agentic-development` first to route to the right reference.
+
+**Claude Code plugin development:** `working-with-claude-code` for docs, `developing-claude-code-plugins` for workflow.
+
+**Codex plugin development:** `working-with-codex` for docs, `developing-codex-plugins` for workflow.
+
+**Gemini CLI / Antigravity plugin development:** `working-with-gemini` for official docs, `developing-gemini-plugins` for workflow.
+
+**OpenCode plugin / skill development:** `working-with-opencode` for official docs, `developing-opencode-plugins` for workflow.
+
+**Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `multi-provider-plugins` for cross-platform architecture.
