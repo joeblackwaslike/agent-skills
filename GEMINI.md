@@ -15,7 +15,9 @@ Invoke with `activate_skill("name")`:
 | `activate_skill("developing-codex-plugins")` | Creating, modifying, testing, or releasing Codex CLI plugins |
 | `activate_skill("working-with-gemini")` | Working with Gemini CLI or Antigravity CLI — extensions, skills, hooks, configuration |
 | `activate_skill("developing-gemini-plugins")` | Creating, modifying, testing, or releasing Gemini CLI extensions or Antigravity plugins |
-| `activate_skill("multi-provider-plugins")` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, etc.) |
+| `activate_skill("working-with-opencode")` | Working with OpenCode CLI — skills, plugins, configuration, commands, agents |
+| `activate_skill("developing-opencode-plugins")` | Creating, modifying, testing, or releasing OpenCode skills or npm/Bun plugins |
+| `activate_skill("multi-provider-plugins")` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
 | `activate_skill("web-research")` | Any web search, URL fetching, or multi-source research task |
 | `activate_skill("git-github-workflows")` | Git commits, branch operations, PR creation, CI debugging, or review workflows |
 | `activate_skill("devcontainers")` | Building, using, modifying, developing, or distributing dev containers |
@@ -35,7 +37,10 @@ Invoke with `activate_skill("name")`:
 **Claude Code plugin development:**
 `activate_skill("working-with-claude-code")` for docs, `activate_skill("developing-claude-code-plugins")` for workflow.
 
-**Cross-platform plugin (Claude Code + Codex + Gemini + Antigravity):**
+**OpenCode plugin / skill development:**
+`activate_skill("working-with-opencode")` for official docs, `activate_skill("developing-opencode-plugins")` for workflow.
+
+**Cross-platform plugin (Claude Code + Codex + Gemini + OpenCode):**
 `activate_skill("multi-provider-plugins")` for architecture.
 
 ## Installation

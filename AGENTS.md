@@ -15,7 +15,9 @@ Invoke with `skill("name")`:
 | `skill("developing-codex-plugins")` | Creating, modifying, testing, or releasing Codex plugins |
 | `skill("working-with-gemini")` | Working with Gemini CLI or Antigravity CLI — extensions, skills, hooks, configuration |
 | `skill("developing-gemini-plugins")` | Creating, modifying, testing, or releasing Gemini CLI extensions or Antigravity plugins |
-| `skill("multi-provider-plugins")` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, etc.) |
+| `skill("working-with-opencode")` | Working with OpenCode CLI — skills, plugins, configuration, commands, agents |
+| `skill("developing-opencode-plugins")` | Creating, modifying, testing, or releasing OpenCode skills or npm/Bun plugins |
+| `skill("multi-provider-plugins")` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
 | `skill("web-research")` | Any web search, URL fetching, or multi-source research task |
 | `skill("git-github-workflows")` | Git commits, branch operations, PR creation, CI debugging, or review workflows |
 | `skill("devcontainers")` | Building, using, modifying, developing, or distributing dev containers |
@@ -45,4 +47,6 @@ Invoke with `skill("name")`:
 
 **Gemini CLI / Antigravity plugin development:** `skill("working-with-gemini")` for official docs, `skill("developing-gemini-plugins")` for workflow.
 
-**Multi-provider (Claude Code + Codex + Gemini + Antigravity):** `skill("multi-provider-plugins")` for cross-platform architecture.
+**OpenCode plugin / skill development:** `skill("working-with-opencode")` for official docs, `skill("developing-opencode-plugins")` for workflow.
+
+**Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `skill("multi-provider-plugins")` for cross-platform architecture.
