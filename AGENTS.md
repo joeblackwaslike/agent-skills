@@ -24,6 +24,15 @@ Invoke with `skill("name")`:
 | `skill("interactive-system-docs")` | Creating self-contained interactive HTML system visualizations |
 | `skill("vscode-extension-builder-lawvable")` | Building VS Code extensions |
 
+## Agent Instruction File Conventions
+
+**CLAUDE.md is the source of truth** when both Claude Code and Codex are in use:
+
+- **Claude Code** reads `CLAUDE.md`. Supports `@filename` import syntax.
+- **Codex CLI** reads `AGENTS.md` as plain Markdown only — **no `@import` or `@include` syntax**. `@CLAUDE.md` in AGENTS.md is ignored.
+- **Best pattern:** Write everything in `CLAUDE.md`. Configure `project_doc_fallback_filenames = ["CLAUDE.md"]` in `~/.codex/config.toml` so Codex reads CLAUDE.md when AGENTS.md is absent.
+- **Codex plugins:** `codex plugin marketplace add/upgrade/remove` only — there is no `codex plugin install`.
+
 ## Common Workflows
 
 > **Gemini CLI / Antigravity users:** This file uses `skill()` (Codex syntax). See `GEMINI.md` for `activate_skill()` syntax.

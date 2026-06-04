@@ -27,6 +27,15 @@ A GitHub Actions workflow (`.github/workflows/update-docs.yml`) runs `make updat
 
 Existing example: `skills/working-with-claude-code/scripts/update_docs.js`
 
+## Agent Instruction Files (CLAUDE.md / AGENTS.md)
+
+**CLAUDE.md is the source of truth.** Key cross-tool differences to remember when creating or editing instruction files:
+
+- **Claude Code** reads `CLAUDE.md`. Supports `@filename` import syntax (e.g. `@AGENTS.md` pulls that file inline).
+- **Codex CLI** reads `AGENTS.md` as plain Markdown — **no `@file` import/include syntax exists**. Writing `@CLAUDE.md` in AGENTS.md does nothing; Codex just sees it as a broken line.
+- **Best pattern:** Write everything in `CLAUDE.md`. Add `project_doc_fallback_filenames = ["CLAUDE.md"]` to `~/.codex/config.toml` so Codex reads CLAUDE.md when AGENTS.md is absent. Delete or omit AGENTS.md.
+- **Codex plugin commands:** `codex plugin marketplace add/upgrade/remove` only. There is **no `codex plugin install`** subcommand.
+
 ## Task management
 
 This repo uses beads for task management so be sure to load the beads skill whenever working with tasks.

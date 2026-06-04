@@ -17,6 +17,15 @@ Route to the reference that matches your task.
 | Implement session-start bootstrap injection for a provider | `references/bootstrap-patterns.md` |
 | Structure or audit a portable shared skills library | `references/shared-skills-library.md` |
 
+## Instruction File Conventions (CLAUDE.md / AGENTS.md)
+
+**Non-obvious and commonly wrong** — apply whenever creating a new project or touching either file:
+
+- **Claude Code** reads `CLAUDE.md`. Supports `@filename` import syntax (e.g. `@AGENTS.md` inlines it).
+- **Codex CLI** reads `AGENTS.md` as plain Markdown — **no `@import` or include syntax exists**. `@CLAUDE.md` in AGENTS.md is a broken line, not an import.
+- **Best pattern:** Write everything in `CLAUDE.md`. Add `project_doc_fallback_filenames = ["CLAUDE.md"]` to `~/.codex/config.toml`. Delete AGENTS.md. Codex reads CLAUDE.md directly via the fallback.
+- **Codex plugins:** `codex plugin marketplace add/upgrade/remove` only — no `install` subcommand.
+
 ## Universal Principles
 
 1. **One `skills/` directory, many adapters.** Skills live once; provider adapters point to them. Never duplicate skill content per provider.
