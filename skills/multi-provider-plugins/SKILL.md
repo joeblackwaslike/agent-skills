@@ -23,7 +23,7 @@ Route to the reference that matches your task.
 
 - **Claude Code** reads `CLAUDE.md`. Supports `@filename` import syntax (e.g. `@AGENTS.md` inlines it).
 - **Codex CLI** reads `AGENTS.md` as plain Markdown — **no `@import` or include syntax exists**. `@CLAUDE.md` in AGENTS.md is a broken line, not an import.
-- **Best pattern:** Write everything in `CLAUDE.md`. Add `project_doc_fallback_filenames = ["CLAUDE.md"]` to `~/.codex/config.toml`. Delete AGENTS.md. Codex reads CLAUDE.md directly via the fallback.
+- **Best pattern:** Write everything in `AGENTS.md`. Make `CLAUDE.md` contain only `@AGENTS.md`. All tools read AGENTS.md directly; Claude Code imports it inline via the `@` syntax.
 - **Codex plugins:** `codex plugin marketplace add/upgrade/remove` only — no `install` subcommand.
 
 ## Universal Principles
