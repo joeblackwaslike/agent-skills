@@ -37,3 +37,15 @@ Invoke with `activate_skill("name")`:
 
 **Cross-platform plugin (Claude Code + Codex + Gemini + Antigravity):**
 `activate_skill("multi-provider-plugins")` for architecture.
+
+## Installation
+
+```sh
+# Local install (from repo root)
+echo "y" | gemini extensions install . --consent
+
+# GitHub install
+echo "y" | gemini extensions install https://github.com/joeblackwaslike/agent-skills --consent
+```
+
+The `echo "y"` is required to confirm the folder trust prompt. `--consent` suppresses the security risk confirmation.
