@@ -60,6 +60,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `working-with-pieces` | Working with Pieces OS, Desktop, CLI, IDE/browser/Obsidian plugins, MCP server, long-term memory, TypeScript or Python SDKs |
 | `multi-provider-plugins` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
 | `web-research` | Any web search, URL fetching, or multi-source research task |
+| `working-with-github-actions` | Building, configuring, debugging, or optimizing GitHub Actions CI/CD workflows — syntax, triggers, runners, caching, matrix, OIDC deployments, release-please, CodeQL, dependabot |
 | `git-github-workflows` | Git commits, branch operations, PR creation, CI debugging, or review workflows |
 | `devcontainers` | Building, using, modifying, developing, or distributing dev containers |
 | `docusaurus-docs-builder` | Building or updating Docusaurus documentation sites |
@@ -85,3 +86,5 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 **Cursor plugin development:** `working-with-cursor` for docs, `developing-cursor-plugins` for workflow.
 
 **Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `multi-provider-plugins` for cross-platform architecture.
+
+**GitHub Actions CI/CD:** `working-with-github-actions` for workflow syntax, cookbook patterns, action versions, and OIDC deployments.
