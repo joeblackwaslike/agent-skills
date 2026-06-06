@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 UPDATE_SCRIPTS := $(shell find skills -path '*/scripts/update*.js' -o -path '*/scripts/update*.sh' 2>/dev/null | sort)
 
-.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode
+.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces
 
 update-all: ## Update all auto-generated skill docs
 	@if [ -z "$(UPDATE_SCRIPTS)" ]; then echo "No update scripts found."; exit 0; fi
@@ -27,6 +27,12 @@ update-working-with-gemini: ## Update working-with-gemini references
 
 update-working-with-opencode: ## Update working-with-opencode references
 	node skills/working-with-opencode/scripts/update_docs.js
+
+update-working-with-cursor: ## Update working-with-cursor references
+	node skills/working-with-cursor/scripts/update_docs.js
+
+update-working-with-pieces: ## Update working-with-pieces references (resources, MCP tools, LTM prompts, versions)
+	node skills/working-with-pieces/scripts/update.js
 
 list-update-scripts: ## List all discovered auto-doc update scripts
 	@echo "Discovered update scripts:"

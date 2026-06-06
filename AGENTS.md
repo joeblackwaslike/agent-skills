@@ -55,6 +55,9 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `developing-gemini-plugins` | Creating, modifying, testing, or releasing Gemini CLI extensions or Antigravity plugins |
 | `working-with-opencode` | Working with OpenCode CLI — skills, plugins, configuration, commands, agents |
 | `developing-opencode-plugins` | Creating, modifying, testing, or releasing OpenCode skills or npm/Bun plugins |
+| `working-with-cursor` | Working with Cursor IDE rules, skills, plugins, MCP servers, or any Cursor feature |
+| `developing-cursor-plugins` | Creating, modifying, testing, or releasing Cursor plugins |
+| `working-with-pieces` | Working with Pieces OS, Desktop, CLI, IDE/browser/Obsidian plugins, MCP server, long-term memory, TypeScript or Python SDKs |
 | `multi-provider-plugins` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
 | `web-research` | Any web search, URL fetching, or multi-source research task |
 | `git-github-workflows` | Git commits, branch operations, PR creation, CI debugging, or review workflows |
@@ -63,6 +66,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `github-readme-overhaul` | Writing or overhauling a GitHub README |
 | `interactive-system-docs` | Creating self-contained interactive HTML system visualizations |
 | `vscode-extension-builder-lawvable` | Building VS Code extensions |
+| `agent-instructions` | Creating CLAUDE.md, AGENTS.md, GEMINI.md, or other AI instruction files at any scope level (user/global, project, subdirectory) — includes cookbook templates for Python, TypeScript, monorepo, and agent/MCP projects |
 
 ## Common Workflows
 
@@ -77,5 +81,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 **Gemini CLI / Antigravity plugin development:** `working-with-gemini` for official docs, `developing-gemini-plugins` for workflow.
 
 **OpenCode plugin / skill development:** `working-with-opencode` for official docs, `developing-opencode-plugins` for workflow.
+
+**Cursor plugin development:** `working-with-cursor` for docs, `developing-cursor-plugins` for workflow.
 
 **Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `multi-provider-plugins` for cross-platform architecture.

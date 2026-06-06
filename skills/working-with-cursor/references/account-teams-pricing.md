@@ -1,0 +1,133 @@
+# Team Pricing
+
+There are two business plans: Teams and Enterprise (Custom). Teams offers two types of seats: Standard ($40/user/mo) and Premium (5x usage at $120/user/mo).
+
+Team plans provide additional features like:
+
+- Centralized team billing and administration, with usage stats also available via the [Admin API](https://cursor.com/docs/account/teams/admin-api.md)
+- Team marketplace for internal rules, skills, and plugins
+- Agentic code reviews with Bugbot
+- Cloud agents and automations with shared team context
+- Usage analytics to understand team behavior
+- Team-wide privacy mode enforcement
+- SAML/OIDC SSO
+
+We recommend Teams for any customer that is happy self-serving. We recommend [Enterprise](https://cursor.com/docs/enterprise.md) for customers that need priority support, pooled usage, invoicing, SCIM, or advanced security controls. [Contact sales](https://cursor.com/contact-sales?source=docs-teams-pricing) to get started.
+
+## How pricing works
+
+Teams pricing is based on paid seats and usage. Each paid seat includes monthly usage, and you can continue using Cursor beyond that with on-demand usage.
+
+### Seat types
+
+Teams has two paid seat types and one free admin-only seat type:
+
+- **Standard**: $40/user/mo with the standard Teams usage allowance
+- **Premium**: $120/user/mo with 5x the usage of a Standard seat
+- **Free**: $0/user/mo for Unpaid Admins who manage the team without Cursor access
+
+Seat type is separate from role. Members and Admins can have either a Standard or Premium seat. Unpaid Admins don't use a paid seat.
+
+### Included usage
+
+Each paid seat comes with included usage across two pools:
+
+- Composer and Auto
+- Third-party API models
+
+Usage is allocated per user based on seat type, does not transfer between team members, and resets at the start of each billing cycle. Third-party API model usage is charged at public list API prices + Cursor Token Rate.
+
+The [usage dashboard](https://cursor.com/dashboard/usage) tracks included usage separately for:
+
+- Composer and Auto
+- Third-party API models
+
+Our [Enterprise plan](https://cursor.com/docs/enterprise.md) offers pooled usage shared between all users in a team. [Get in touch](https://cursor.com/contact-sales?source=docs-teams-pricing) with our team to learn more.
+
+### On-demand usage
+
+On-demand usage allows you to continue using models after included usage is consumed, billed in arrears.
+
+When a team member consumes all of their included third-party API model usage, Cursor switches them to Composer and Auto. If they continue using third-party API models, or if they fully consume their Composer and Auto included usage, they continue with **on-demand usage** if it is enabled:
+
+- Billed monthly at the same rates (API prices + Cursor Token Rate)
+- No interruption in service or quality
+- Tracked per user in your admin dashboard (see [spending data API](https://cursor.com/docs/account/teams/admin-api.md#get-spending-data))
+- Can be controlled with spending limits
+
+On-demand usage is enabled by default for the Teams plan.
+
+### Cursor Token Rate
+
+All non-Auto agent requests include a **Cursor Token Rate of $0.25 per million tokens**. This covers:
+
+- [Semantic search](https://cursor.com/docs/agent/tools/search.md)
+- Custom model execution (Tab, Apply, etc.)
+- Infrastructure and processing costs
+
+The Cursor Token Rate applies to all tokens: input, output, and cached tokens. This applies to [BYOK](https://cursor.com/help/models-and-usage/api-keys.md) as well.
+
+## Active seats
+
+Cursor bills per active paid seat, not pre-allocated seats. Add, remove, upgrade, or downgrade users anytime and billing will adjust based on seat type.
+
+Refunds appear as account credit on your next invoice. Your renewal date stays the same.
+
+## Spending controls
+
+Teams can configure monthly team-wide spending limits. You can manage these limits through the dashboard. Per-member spend limits are available on [Enterprise](https://cursor.com/docs/enterprise.md) plans.
+
+Contact `enterprise@cursor.com` for volume discounts on larger teams.
+
+## Model Pricing
+
+All prices are per million tokens. Teams are charged at public list API prices + [Cursor Token Rate](https://cursor.com/docs/account/teams/pricing.md#cursor-token-rate).
+
+| Model                                                                                         | Provider  | Input | Cache write | Cache read | Output | Notes                                                                                                                                                                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------------- | --------- | ----- | ----------- | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Claude 4 Sonnet](https://www.anthropic.com/claude/sonnet)                                    | Anthropic | $3    | $3.75       | $0.3       | $15    | Hidden by default; Thinking variant counts as 2 requests in legacy pricing                                                                                                                                                                                                                                                                    |
+| [Claude 4 Sonnet 1M](https://www.anthropic.com/claude/sonnet)                                 | Anthropic | $6    | $7.5        | $0.6       | $22.5  | Hidden by default; Thinking variant counts as 2 requests in legacy pricing; This model can be very expensive due to the large context window; The cost is 2x when the input exceeds 200k tokens                                                                                                                                               |
+| [Claude 4.5 Haiku](https://www.anthropic.com/claude/haiku)                                    | Anthropic | $1    | $1.25       | $0.1       | $5     | Hidden by default; Bedrock/Vertex: regional endpoints +10% surcharge; Cache: writes 1.25x, reads 0.1x                                                                                                                                                                                                                                         |
+| [Claude 4.5 Opus](https://www.anthropic.com/claude/opus)                                      | Anthropic | $5    | $6.25       | $0.5       | $25    | Hidden by default; Requires Max Mode on request-based plans                                                                                                                                                                                                                                                                                   |
+| [Claude 4.5 Sonnet](https://www.anthropic.com/claude/sonnet)                                  | Anthropic | $3    | $3.75       | $0.3       | $15    | Hidden by default; Requires Max Mode on request-based plans; Up to 1M tokens in Max Mode at the same per-token rates (no long-context surcharge)                                                                                                                                                                                              |
+| [Claude 4.6 Opus](https://www.anthropic.com/claude/opus)                                      | Anthropic | $5    | $6.25       | $0.5       | $25    | Hidden by default; Requires Max Mode on request-based plans; Up to 1M tokens in Max Mode at the same per-token rates (no long-context surcharge)                                                                                                                                                                                              |
+| [Claude 4.6 Opus (Fast mode)](https://www.anthropic.com/claude/opus)                          | Anthropic | $30   | $37.5       | $3         | $150   | Hidden by default; Requires Max Mode on request-based plans; Limited research preview; Up to 1M tokens in Max Mode at the same per-token rates as shorter context                                                                                                                                                                             |
+| [Claude 4.6 Sonnet](https://www.anthropic.com/claude/sonnet)                                  | Anthropic | $3    | $3.75       | $0.3       | $15    | Requires Max Mode on request-based plans; Up to 1M tokens in Max Mode at the same per-token rates (no long-context surcharge)                                                                                                                                                                                                                 |
+| [Claude 4.7 Opus](https://www.anthropic.com/claude/opus)                                      | Anthropic | $5    | $6.25       | $0.5       | $25    | Hidden by default; Requires Max Mode on request-based plans; Up to 1M tokens in Max Mode at the same per-token rates (no long-context surcharge)                                                                                                                                                                                              |
+| [Claude Opus 4.7 (fast mode)](https://www.anthropic.com/claude/opus)                          | Anthropic | $30   | $37.5       | $3         | $150   | Hidden by default; Requires Max Mode on request-based plans; Limited research preview; Up to 1M tokens in Max Mode at the same per-token rates as shorter context                                                                                                                                                                             |
+| [Claude Opus 4.8](https://www.anthropic.com/claude/opus)                                      | Anthropic | $5    | $6.25       | $0.5       | $25    | Requires Max Mode on request-based plans; Fast mode (\`claude-opus-4-8-fast\`) requires Max Mode; Fast mode is 3x lower per-token pricing than Opus 4.7 fast mode; Up to 1M tokens in Max Mode at the same per-token rates (no long-context surcharge)                                                                                        |
+| [Composer 1](https://cursor.com)                                                              | Cursor    | $1.25 | -           | $0.125     | $10    | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [Composer 1.5](https://cursor.com)                                                            | Cursor    | $3.5  | -           | $0.35      | $17.5  | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [Composer 2](https://cursor.com/blog/composer-2)                                              | Cursor    | $0.5  | -           | $0.2       | $2.5   | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [Composer 2.5](https://cursor.com/blog/composer-2-5)                                          | Cursor    | $0.5  | -           | $0.2       | $2.5   | -                                                                                                                                                                                                                                                                                                                                             |
+| [Gemini 2.5 Flash](https://developers.googleblog.com/en/start-building-with-gemini-25-flash/) | Google    | $0.3  | -           | $0.03      | $2.5   | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [Gemini 3 Flash](https://ai.google.dev/gemini-api/docs)                                       | Google    | $0.5  | -           | $0.05      | $3     | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [Gemini 3 Pro](https://ai.google.dev/gemini-api/docs)                                         | Google    | $2    | -           | $0.2       | $12    | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [Gemini 3 Pro Image Preview](https://ai.google.dev/gemini-api/docs)                           | Google    | $2    | -           | $0.2       | $12    | Hidden by default; Native image generation model optimized for speed, flexibility, and contextual understanding; Text input and output priced the same as Gemini 3 Pro; Image output: $120/1M tokens (\~$0.134 per 1K/2K image, \~$0.24 per 4K image); Preview models may change before becoming stable and have more restrictive rate limits |
+| [Gemini 3.1 Pro](https://ai.google.dev/gemini-api/docs)                                       | Google    | $2    | -           | $0.2       | $12    | -                                                                                                                                                                                                                                                                                                                                             |
+| [Gemini 3.5 Flash](https://ai.google.dev/gemini-api/docs)                                     | Google    | $1.5  | -           | $0.15      | $9     | -                                                                                                                                                                                                                                                                                                                                             |
+| [GPT-5](https://openai.com/index/gpt-5/)                                                      | OpenAI    | $1.25 | -           | $0.125     | $10    | Hidden by default; Agentic and reasoning capabilities; Available reasoning effort variant is gpt-5-high                                                                                                                                                                                                                                       |
+| [GPT-5 Fast](https://openai.com/index/gpt-5/)                                                 | OpenAI    | $2.5  | -           | $0.25      | $20    | Hidden by default; Faster speed but 2x price; Available reasoning effort variants are gpt-5-high-fast, gpt-5-low-fast                                                                                                                                                                                                                         |
+| [GPT-5 Mini](https://openai.com/index/gpt-5/)                                                 | OpenAI    | $0.25 | -           | $0.025     | $2     | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [GPT-5-Codex](https://platform.openai.com/docs/models/gpt-5-codex)                            | OpenAI    | $1.25 | -           | $0.125     | $10    | Hidden by default; Agentic and reasoning capabilities                                                                                                                                                                                                                                                                                         |
+| [GPT-5.1 Codex](https://platform.openai.com/docs/models/gpt-5-codex)                          | OpenAI    | $1.25 | -           | $0.125     | $10    | Hidden by default; Agentic and reasoning capabilities                                                                                                                                                                                                                                                                                         |
+| [GPT-5.1 Codex Max](https://platform.openai.com/docs/models/gpt-5-codex)                      | OpenAI    | $1.25 | -           | $0.125     | $10    | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+| [GPT-5.1 Codex Mini](https://platform.openai.com/docs/models/gpt-5-codex)                     | OpenAI    | $0.25 | -           | $0.025     | $2     | Hidden by default; Agentic and reasoning capabilities; 4x rate limits compared to GPT-5.1 Codex                                                                                                                                                                                                                                               |
+| [GPT-5.2](https://openai.com/index/gpt-5/)                                                    | OpenAI    | $1.75 | -           | $0.175     | $14    | Hidden by default; Agentic and reasoning capabilities; Available reasoning effort variant is gpt-5.2-high                                                                                                                                                                                                                                     |
+| [GPT-5.2 Codex](https://platform.openai.com/docs/models/gpt-5-codex)                          | OpenAI    | $1.75 | -           | $0.175     | $14    | Hidden by default; Agentic and reasoning capabilities                                                                                                                                                                                                                                                                                         |
+| [GPT-5.3 Codex](https://platform.openai.com/docs/models/gpt-5-codex)                          | OpenAI    | $1.75 | -           | $0.175     | $14    | Requires Max Mode on request-based plans; Agentic and reasoning capabilities; Available reasoning effort variant is gpt-5.3-codex-high                                                                                                                                                                                                        |
+| [GPT-5.4](https://developers.openai.com/api/docs/models/gpt-5.4)                              | OpenAI    | $2.5  | -           | $0.25      | $15    | Hidden by default; Requires Max Mode on request-based plans; Agentic and reasoning capabilities; 90% discount on cached input tokens; Fast mode is 15% faster with 2x pricing; Long context (Max Mode) supports up to 1M tokens with 2x input pricing                                                                                         |
+| [GPT-5.4 Mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini)                    | OpenAI    | $0.75 | -           | $0.075     | $4.5   | Hidden by default; Smaller, faster variant of GPT-5.4; 90% discount on cached input tokens                                                                                                                                                                                                                                                    |
+| [GPT-5.4 Nano](https://developers.openai.com/api/docs/models/gpt-5.4-nano)                    | OpenAI    | $0.2  | -           | $0.02      | $1.25  | Hidden by default; Smallest GPT-5.4 variant, optimized for cost; 90% discount on cached input tokens                                                                                                                                                                                                                                          |
+| [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5)                              | OpenAI    | $5    | -           | $0.5       | $30    | Requires Max Mode on request-based plans; Agentic and reasoning capabilities; More token-efficient than GPT-5.4 on comparable tasks; Improved persistence on long-running tasks; Fast mode is available at higher rates; Long context (Max Mode) supports up to 1M tokens with 2x input pricing                                               |
+| [Grok 4.20](https://docs.x.ai/docs/models#models-and-pricing)                                 | xAI       | $2    | -           | $0.2       | $6     | Hidden by default; The cost is 2x when the input exceeds 200k tokens                                                                                                                                                                                                                                                                          |
+| [Grok 4.3](https://docs.x.ai/docs/models#models-and-pricing)                                  | xAI       | $1.25 | -           | $0.2       | $2.5   | Hidden by default; Requires Max Mode on request-based plans                                                                                                                                                                                                                                                                                   |
+| [Grok Build 0.1](https://docs.x.ai/developers/models/grok-build-0.1)                          | xAI       | $1    | -           | $0.2       | $2     | The cost is 2x when the input exceeds 200k tokens; No user-configurable reasoning effort                                                                                                                                                                                                                                                      |
+| Kimi K2.5                                                                                     | Moonshot  | $0.6  | -           | $0.1       | $3     | Hidden by default                                                                                                                                                                                                                                                                                                                             |
+
+
+---
+
+## Sitemap
+
+[Overview of all docs pages](/llms.txt)
