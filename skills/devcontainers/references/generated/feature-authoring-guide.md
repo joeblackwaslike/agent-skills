@@ -1,7 +1,7 @@
 ---
 title: "Feature authoring guide"
 source: "https://containers.dev/guide/author-a-feature"
-fetched_at: "2026-06-01T11:08:54.677Z"
+fetched_at: "2026-06-08T05:39:43.570Z"
 sha256: "33c2c180ed7361dba5c948522f1ded6198d6cb9919332bda6a9eac169fbd6b18"
 ---
 

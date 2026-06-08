@@ -1,7 +1,7 @@
 ---
 title: "devcontainer.json reference"
 source: "https://containers.dev/implementors/json_reference/"
-fetched_at: "2026-06-01T11:08:54.614Z"
+fetched_at: "2026-06-08T05:39:43.285Z"
 sha256: "fb4113ae364f464c887df7d9178b595ad2bfa081907e0926b52abb9b18f607cb"
 ---
 

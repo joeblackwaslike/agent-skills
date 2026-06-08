@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T11:08:54.513Z",
+  "generated_at": "2026-06-08T05:39:43.070Z",
   "source": "Official Dev Containers specification (containers.dev) and VS Code documentation",
   "docs": [
     {
@@ -7,7 +7,7 @@
       "title": "devcontainer.json reference",
       "url": "https://containers.dev/implementors/json_reference/",
       "file": "json-reference.md",
-      "fetched_at": "2026-06-01T11:08:54.614Z",
+      "fetched_at": "2026-06-08T05:39:43.285Z",
       "sha256": "fb4113ae364f464c887df7d9178b595ad2bfa081907e0926b52abb9b18f607cb",
       "bytes": 30110
     },
@@ -16,7 +16,7 @@
       "title": "Features specification",
       "url": "https://containers.dev/implementors/features/",
       "file": "features-spec.md",
-      "fetched_at": "2026-06-01T11:08:54.632Z",
+      "fetched_at": "2026-06-08T05:39:43.345Z",
       "sha256": "6a62f519f73ed89b6200239157133c45f9f45eefe15c55469b74086f9058f392",
       "bytes": 51818
     },
@@ -25,7 +25,7 @@
       "title": "Templates specification",
       "url": "https://containers.dev/implementors/templates/",
       "file": "templates-spec.md",
-      "fetched_at": "2026-06-01T11:08:54.644Z",
+      "fetched_at": "2026-06-08T05:39:43.396Z",
       "sha256": "4c566a4caa79f1ab364bfb22f494732dd82a145d7c4325ff5dd4b37d58740b4e",
       "bytes": 18200
     },
@@ -34,7 +34,7 @@
       "title": "Features distribution",
       "url": "https://containers.dev/implementors/features-distribution/",
       "file": "features-distribution.md",
-      "fetched_at": "2026-06-01T11:08:54.654Z",
+      "fetched_at": "2026-06-08T05:39:43.446Z",
       "sha256": "e2b16c1652c28013716b2edfabf01ba6a1cfceba538ef39f77f5dfe6279d82f7",
       "bytes": 16273
     },
@@ -43,7 +43,7 @@
       "title": "Templates distribution",
       "url": "https://containers.dev/implementors/templates-distribution/",
       "file": "templates-distribution.md",
-      "fetched_at": "2026-06-01T11:08:54.666Z",
+      "fetched_at": "2026-06-08T05:39:43.505Z",
       "sha256": "3e022f35365536378ec45baaa2f1632650e4903156919df54f71810e9a6c1955",
       "bytes": 11550
     },
@@ -52,7 +52,7 @@
       "title": "Feature authoring guide",
       "url": "https://containers.dev/guide/author-a-feature",
       "file": "feature-authoring-guide.md",
-      "fetched_at": "2026-06-01T11:08:54.677Z",
+      "fetched_at": "2026-06-08T05:39:43.570Z",
       "sha256": "33c2c180ed7361dba5c948522f1ded6198d6cb9919332bda6a9eac169fbd6b18",
       "bytes": 8392
     },
@@ -61,7 +61,7 @@
       "title": "Feature authoring best practices",
       "url": "https://containers.dev/guide/feature-authoring-best-practices",
       "file": "feature-authoring-best-practices.md",
-      "fetched_at": "2026-06-01T11:08:54.686Z",
+      "fetched_at": "2026-06-08T05:39:43.632Z",
       "sha256": "880101dc85e1389db780b60e9924d2d6d9d49c23067fd6976d2381fd39db1edc",
       "bytes": 15839
     },
@@ -70,54 +70,54 @@
       "title": "Available features index",
       "url": "https://containers.dev/features",
       "file": "features-index.md",
-      "fetched_at": "2026-06-01T11:08:54.712Z",
-      "sha256": "7d2674712e318c18cfb51a208321166e4da692105e6628d4d10b8e59ebb73404",
-      "bytes": 146009
+      "fetched_at": "2026-06-08T05:39:43.706Z",
+      "sha256": "16331d9fca537e189bfe01fe91c9c0eaf0b70285cbdaba588d76802a811a7197",
+      "bytes": 147123
     },
     {
       "slug": "templates-index",
       "title": "Available templates index",
       "url": "https://containers.dev/templates",
       "file": "templates-index.md",
-      "fetched_at": "2026-06-01T11:08:54.728Z",
-      "sha256": "d1138143d10159b4d5522538b45128da4e86e301dcf3f57a0cf9fd33c9204494",
-      "bytes": 20397
+      "fetched_at": "2026-06-08T05:39:43.759Z",
+      "sha256": "c2baeca5d7b9a1f3f63e15d9f0fb05e448db6594067f555bc50a0ba72e06e0e7",
+      "bytes": 20393
     },
     {
       "slug": "vscode-containers",
       "title": "VS Code Dev Containers guide",
       "url": "https://code.visualstudio.com/docs/devcontainers/containers",
       "file": "vscode-containers.md",
-      "fetched_at": "2026-06-01T11:08:54.853Z",
-      "sha256": "70a41f970b5ad6f5ccdf47e5cd736dafe398d196eb1b0d8be0032d680d212846",
-      "bytes": 51353
+      "fetched_at": "2026-06-08T05:39:43.872Z",
+      "sha256": "82606aff8cd9d42b1ca7485884ef232880739a3190a3503f0b7a3b47dbcf5555",
+      "bytes": 51352
     },
     {
       "slug": "vscode-create",
       "title": "VS Code create dev container",
       "url": "https://code.visualstudio.com/docs/devcontainers/create-dev-container",
       "file": "vscode-create.md",
-      "fetched_at": "2026-06-01T11:08:54.950Z",
-      "sha256": "3b266b0638dd6b2a087b81b091d449030a1c820af466ea892db563f9134dd685",
-      "bytes": 47812
+      "fetched_at": "2026-06-08T05:39:44.018Z",
+      "sha256": "31960265e1988db871a2e82f3b8bbe5a460babb4a1360fa555a77522e19cdb97",
+      "bytes": 47811
     },
     {
       "slug": "vscode-cli",
       "title": "VS Code devcontainer CLI",
       "url": "https://code.visualstudio.com/docs/devcontainers/devcontainer-cli",
       "file": "vscode-cli.md",
-      "fetched_at": "2026-06-01T11:08:55.039Z",
-      "sha256": "13800d10aae21320629dd5395f455ff2987dffe39bf260fd5e95792c3199e999",
-      "bytes": 26491
+      "fetched_at": "2026-06-08T05:39:44.243Z",
+      "sha256": "150d21e1ab38b7c79234776a1091f9c72a09dd5469a46a80f8f302d7fcf05967",
+      "bytes": 26490
     },
     {
       "slug": "vscode-tips",
       "title": "VS Code Dev Containers tips and tricks",
       "url": "https://code.visualstudio.com/docs/devcontainers/tips-and-tricks",
       "file": "vscode-tips.md",
-      "fetched_at": "2026-06-01T11:08:55.091Z",
-      "sha256": "66af221fac24dc963e6c4e000c13625cf848ee24dcbd828e49be0d9d427d1425",
-      "bytes": 23598
+      "fetched_at": "2026-06-08T05:39:44.279Z",
+      "sha256": "1c3b563c4a87cf20a568a45908588fd2d99d686d6eb04a0c1fbb7f41e4c01a7c",
+      "bytes": 23597
     }
   ]
 }

@@ -649,7 +649,7 @@ This example combines several techniques: threshold-based colors (green under 70
       let branch = '';
       try {
           branch = execSync('git branch --show-current', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }).trim();
-          branch = branch ? ` | 🌿 ${branch}` : '';
+          branch = branch ? ` | ���� ${branch}` : '';
       } catch {}
 
       console.log(`${CYAN}[${model}]${RESET} 📁 ${dir}${branch}`);

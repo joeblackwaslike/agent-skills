@@ -1,7 +1,7 @@
 ---
 title: "Templates distribution"
 source: "https://containers.dev/implementors/templates-distribution/"
-fetched_at: "2026-06-01T11:08:54.666Z"
+fetched_at: "2026-06-08T05:39:43.505Z"
 sha256: "3e022f35365536378ec45baaa2f1632650e4903156919df54f71810e9a6c1955"
 ---
 

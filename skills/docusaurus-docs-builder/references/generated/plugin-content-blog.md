@@ -1,7 +1,7 @@
 ---
 title: "Blog Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog"
-fetched_at: "2026-06-01T05:42:28.415Z"
+fetched_at: "2026-06-08T05:39:47.903Z"
 sha256: "1f72e68aa7b546fbb2b521f5ff0dc35262a189ee2608086965c33b29a4751b75"
 ---
 
