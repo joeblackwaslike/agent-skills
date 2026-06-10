@@ -1,6 +1,8 @@
 ---
 name: git-github-workflows
 description: Git and GitHub workflow router. Selects the right skill for any git or GitHub operation — committing, PR creation, CI debugging, review comment handling, and more. Invoke at the start of any git/GitHub task.
+metadata:
+  last_updated: "2026-05-20"
 ---
 
 # Git & GitHub Workflows

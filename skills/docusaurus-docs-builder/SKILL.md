@@ -2,7 +2,7 @@
 name: docusaurus-docs-builder
 description: Use when creating, redesigning, rewriting, or improving a Docusaurus documentation site, docs portal, developer docs, product docs, API docs, guide site, knowledge base, or documentation landing experience, especially when the user wants engaging, attractive, polished, conversion-aware, visual, MDX-powered documentation rather than plain Markdown pages.
 metadata:
-  version: 2026.05.26
+  last_updated: "2026-06-01"
 ---
 
 # Docusaurus Docs Builder

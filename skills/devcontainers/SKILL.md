@@ -1,6 +1,8 @@
 ---
 name: devcontainers
 description: Use when building, modifying, using, or distributing Dev Containers — creating or editing devcontainer.json from scratch, adding devcontainer features, writing Dockerfiles for dev containers, authoring custom features or templates, publishing to GHCR, using the devcontainer CLI (devcontainer up, build, exec, features test), or debugging container startup failures. Also use when the user mentions ghcr.io/joeblackwaslike/devcontainer, the claude-code or claude-code-extend templates, or asks about setting up a reproducible development environment in a container. Invoke this skill whenever the word "devcontainer", "dev container", ".devcontainer", or "devcontainer.json" appears, or whenever someone wants to containerize their development environment.
+metadata:
+  last_updated: "2026-06-01"
 ---
 
 # Dev Containers

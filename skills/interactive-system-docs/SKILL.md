@@ -8,6 +8,8 @@ description: >-
   user wants a "how it works" page, an architecture explainer, an interactive
   spec, or a visual reference doc for a technical system. Based on the memtree
   how-it-works.html approach.
+metadata:
+  last_updated: "2026-05-26"
 ---
 
 # Interactive System Docs

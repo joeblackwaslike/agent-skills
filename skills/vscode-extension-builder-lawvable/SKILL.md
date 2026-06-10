@@ -2,9 +2,9 @@
 name: vscode-extension-builder-lawvable
 description: Use when building, converting, testing, debugging, packaging, publishing, or reviewing VS Code extensions, including commands, webviews, custom editors, tree views, language features, AI/Language Model API integrations, Language Model Tools, extension host behavior, and .vsix distribution.
 metadata:
+  last_updated: "2026-06-01"
   author: Antoine Louis (Lawvable), expanded for Joe Black
   license: AGPL-3.0
-  version: 2026.05.26
 ---
 
 # VS Code Extension Builder

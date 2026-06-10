@@ -1,6 +1,8 @@
 ---
 name: working-with-codex
 description: Use when working with Codex CLI, plugins, skills, hooks, configuration, or any Codex feature - provides comprehensive official documentation for all aspects of the OpenAI Codex CLI
+metadata:
+  last_updated: "2026-06-04"
 ---
 
 # Working with Codex

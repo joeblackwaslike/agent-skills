@@ -36,6 +36,10 @@ const REPOS = [
 const GITHUB_API_BASE = 'https://api.github.com';
 const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com';
 const REFERENCES_DIR = path.join(__dirname, '..', 'references');
+const { withFrontmatter, setSkillLastUpdated } = require('../../../scripts/lib/doc-frontmatter.cjs');
+const SKILL_MD = path.join(__dirname, '..', 'SKILL.md');
+const RUN_NOW = new Date().toISOString();
+let docsChanged = false;
 const USER_AGENT = 'agent-skills-updater/1.0 (github.com/joeblackwaslike/agent-skills)';
 
 /**
@@ -149,7 +153,9 @@ async function fetchAndSaveDoc({ url, repoName, filePath }) {
   try {
     console.log(`  Fetching ${filename}...`);
     const content = await fetchUrl(url, { 'Accept': 'text/plain, text/markdown' });
-    fs.writeFileSync(filepath, content, 'utf8');
+    const wrapped = withFrontmatter({ filePath: filepath, body: content, source: url, now: RUN_NOW });
+    fs.writeFileSync(filepath, wrapped.content, 'utf8');
+    if (wrapped.changed) docsChanged = true;
     return { url, filename, success: true };
   } catch (error) {
     console.error(`  ❌ Failed to fetch ${filename}: ${error.message}`);
@@ -200,6 +206,11 @@ async function main() {
     console.log(`   ${failed} files failed to download`);
   }
   console.log(`\n📁 Documentation saved to: ${REFERENCES_DIR}`);
+
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, RUN_NOW.slice(0, 10));
+    console.log('📅 Stamped SKILL.md last_updated');
+  }
 }
 
 if (require.main === module) {

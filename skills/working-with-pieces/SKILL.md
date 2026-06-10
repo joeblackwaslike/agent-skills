@@ -9,6 +9,8 @@ description: Use when working with the Pieces for Developers ecosystem: Pieces O
   or understanding the Pieces OS internals (processes, databases, config). Also
   invoke when the user mentions "Pieces", "Pieces Copilot", "pieces-os", or wants
   AI tools to remember past workflow context across sessions.
+metadata:
+  last_updated: "2026-06-05"
 ---
 
 # Working with Pieces for Developers

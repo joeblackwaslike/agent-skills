@@ -1,12 +1,15 @@
 #!/usr/bin/env node
-import { createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { withFrontmatter, setSkillLastUpdated } from "../../../scripts/lib/doc-frontmatter.cjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const skillRoot = path.resolve(__dirname, "..");
 const outputDir = path.join(skillRoot, "references", "generated");
+const SKILL_MD = path.join(skillRoot, "SKILL.md");
+const NOW = new Date().toISOString();
+let docsChanged = false;
 
 const DOCS = [
   {
@@ -162,35 +165,21 @@ async function fetchDoc(doc) {
   const html = await response.text();
   const body = htmlToMarkdown(html, doc.url);
   const normalizedBody = body.replace(new RegExp(`^#\\s+${doc.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s+`, "i"), "");
-  const fetchedAt = new Date().toISOString();
-  const hash = createHash("sha256").update(normalizedBody).digest("hex");
-  const markdown = [
-    "---",
-    `title: "${doc.title.replaceAll("\"", "\\\"")}"`,
-    `source: "${doc.url}"`,
-    `fetched_at: "${fetchedAt}"`,
-    `sha256: "${hash}"`,
-    "---",
-    "",
-    `# ${doc.title}`,
-    "",
-    `Source: ${doc.url}`,
-    "",
-    normalizedBody,
-    "",
-  ].join("\n");
-
   const filename = `${doc.slug}.md`;
-  await writeFile(path.join(outputDir, filename), markdown, "utf8");
+  const filePath = path.join(outputDir, filename);
+  const docBody = [`# ${doc.title}`, "", `Source: ${doc.url}`, "", normalizedBody, ""].join("\n");
+  const wrapped = withFrontmatter({ filePath, body: docBody, source: doc.url, title: doc.title, now: NOW });
+  await writeFile(filePath, wrapped.content, "utf8");
+  if (wrapped.changed) docsChanged = true;
 
   return {
     slug: doc.slug,
     title: doc.title,
     url: doc.url,
     file: filename,
-    fetched_at: fetchedAt,
-    sha256: hash,
-    bytes: Buffer.byteLength(markdown),
+    fetched_at: wrapped.fetched_at,
+    sha256: wrapped.sha256,
+    bytes: Buffer.byteLength(wrapped.content),
   };
 }
 
@@ -228,6 +217,11 @@ async function main() {
     ].join("\n"),
     "utf8",
   );
+
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, NOW.slice(0, 10));
+    console.error("Stamped SKILL.md last_updated");
+  }
 }
 
 main().catch((error) => {

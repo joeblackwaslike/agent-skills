@@ -24,6 +24,10 @@ const GITHUB_API_TREE = 'https://api.github.com/repos/openai/codex/git/trees/mai
 const LLMS_TXT_URL = 'https://platform.openai.com/llms.txt';
 const CODEX_DOC_PATTERN = /https:\/\/platform\.openai\.com\/docs\/[^\s)]+\.md/g;
 const REFERENCES_DIR = path.join(__dirname, '..', 'references');
+const { withFrontmatter, setSkillLastUpdated } = require('../../../scripts/lib/doc-frontmatter.cjs');
+const SKILL_MD = path.join(__dirname, '..', 'SKILL.md');
+const RUN_NOW = new Date().toISOString();
+let docsChanged = false;
 const USER_AGENT = 'agent-skills-updater/1.0 (github.com/joeblackwaslike/agent-skills)';
 
 /**
@@ -131,7 +135,9 @@ async function fetchAndSaveDoc(url) {
   try {
     console.log(`  Fetching ${filename}...`);
     const content = await fetchUrl(url, { 'Accept': 'text/plain, text/markdown' });
-    fs.writeFileSync(filepath, content, 'utf8');
+    const wrapped = withFrontmatter({ filePath: filepath, body: content, source: url, now: RUN_NOW });
+    fs.writeFileSync(filepath, wrapped.content, 'utf8');
+    if (wrapped.changed) docsChanged = true;
     return { url, filename, success: true };
   } catch (error) {
     console.error(`  ❌ Failed to fetch ${filename}: ${error.message}`);
@@ -188,6 +194,11 @@ async function main() {
     console.log(`   ${failed} files failed to download`);
   }
   console.log(`\n📁 Documentation saved to: ${REFERENCES_DIR}`);
+
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, RUN_NOW.slice(0, 10));
+    console.log('📅 Stamped SKILL.md last_updated');
+  }
 }
 
 // Run if called directly

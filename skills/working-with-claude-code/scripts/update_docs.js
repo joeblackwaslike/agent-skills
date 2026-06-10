@@ -17,6 +17,10 @@ const LLMS_TXT_URL = 'https://code.claude.com/docs/llms.txt';
 const DOCS_MAP_URL = 'https://code.claude.com/docs/en/claude_code_docs_map.md';
 const CLAUDE_CODE_PATTERN = /https:\/\/code\.claude\.com\/docs\/en\/[^\s)]+\.md/g;
 const REFERENCES_DIR = path.join(__dirname, '..', 'references');
+const { withFrontmatter, setSkillLastUpdated } = require('../../../scripts/lib/doc-frontmatter.cjs');
+const SKILL_MD = path.join(__dirname, '..', 'SKILL.md');
+const RUN_NOW = new Date().toISOString();
+let docsChanged = false;
 
 /**
  * Fetch content from a URL using https module
@@ -64,7 +68,9 @@ async function fetchAndSaveDoc(url) {
   try {
     console.log(`  Fetching ${filename}...`);
     const content = await fetchUrl(url);
-    fs.writeFileSync(filepath, content, 'utf8');
+    const wrapped = withFrontmatter({ filePath: filepath, body: content, source: url, now: RUN_NOW });
+    fs.writeFileSync(filepath, wrapped.content, 'utf8');
+    if (wrapped.changed) docsChanged = true;
     return { url, filename, success: true };
   } catch (error) {
     console.error(`  ❌ Failed to fetch ${filename}: ${error.message}`);
@@ -111,6 +117,11 @@ async function main() {
     console.log(`   ${failed} files failed to download`);
   }
   console.log(`\n📁 Documentation saved to: ${REFERENCES_DIR}`);
+
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, RUN_NOW.slice(0, 10));
+    console.log('📅 Stamped SKILL.md last_updated');
+  }
 }
 
 // Run if called directly

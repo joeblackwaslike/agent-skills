@@ -1,6 +1,8 @@
 ---
 name: best-practices-for-agentic-development
 description: Use when designing, building, reviewing, testing, or improving agents, agentic workflows, agent skills, MCP servers, tool interfaces, subagent systems, or agent-development methodology
+metadata:
+  last_updated: "2026-05-14"
 ---
 
 # Best Practices for Agentic Development

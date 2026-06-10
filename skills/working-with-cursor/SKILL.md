@@ -1,6 +1,8 @@
 ---
 name: working-with-cursor
 description: Use when working with Cursor IDE, rules (.cursor/rules/*.mdc), skills, plugins, MCP servers, agents, commands, hooks, configuration, or any Cursor IDE feature - provides comprehensive official documentation for all aspects of Cursor
+metadata:
+  last_updated: "2026-06-05"
 ---
 
 # Working with Cursor

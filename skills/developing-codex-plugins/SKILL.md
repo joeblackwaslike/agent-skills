@@ -1,6 +1,8 @@
 ---
 name: developing-codex-plugins
 description: Use when working on Codex plugins (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and reference for the complete Codex plugin lifecycle
+metadata:
+  last_updated: "2026-06-04"
 ---
 
 # Developing Codex Plugins

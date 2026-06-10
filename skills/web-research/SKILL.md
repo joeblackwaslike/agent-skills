@@ -3,6 +3,8 @@ name: web-research
 description: Expert web research router. Automatically selects the best search and page-fetch tool for any research task. Invoke whenever performing web search, fetching documentation, looking up library APIs, or retrieving any external web content. The user never needs to specify which tool to use — routing is handled invisibly.
 license: MIT
 compatibility: Requires MCP servers for optimal routing (Exa, Context7, Ref, Tavily, Perplexity). Falls back gracefully to built-in webSearch and webFetch when specialized tools are unavailable.
+metadata:
+  last_updated: "2026-05-26"
 ---
 
 ## Web Research Routing Rules

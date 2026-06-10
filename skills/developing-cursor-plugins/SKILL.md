@@ -1,6 +1,8 @@
 ---
 name: developing-cursor-plugins
 description: Use when working on Cursor plugins (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and examples for the complete Cursor plugin lifecycle
+metadata:
+  last_updated: "2026-06-05"
 ---
 
 # Developing Cursor Plugins

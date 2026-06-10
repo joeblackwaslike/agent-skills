@@ -4,13 +4,15 @@
  * Run: node skills/devcontainers/scripts/update.js
  */
 
-import { createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { withFrontmatter, setSkillLastUpdated } from "../../../scripts/lib/doc-frontmatter.cjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "../references/generated");
+const SKILL_MD = join(__dirname, "..", "SKILL.md");
+let docsChanged = false;
 
 const DOCS = [
   {
@@ -237,13 +239,13 @@ for (const doc of DOCS) {
     continue;
   }
 
-  const fetchedAt = new Date().toISOString();
-  const sha256 = createHash("sha256").update(markdown, "utf8").digest("hex");
-  const header = `---\ntitle: "${doc.title}"\nsource: "${doc.url}"\nfetched_at: "${fetchedAt}"\nsha256: "${sha256}"\n---\n\n# ${doc.title}\n\nSource: ${doc.url}\n\n`;
-  const fullContent = header + markdown + "\n";
-
   const filename = `${doc.slug}.md`;
-  await writeFile(join(OUT_DIR, filename), fullContent, "utf8");
+  const filePath = join(OUT_DIR, filename);
+  const body = `# ${doc.title}\n\nSource: ${doc.url}\n\n` + markdown + "\n";
+  const wrapped = withFrontmatter({ filePath, body, source: doc.url, title: doc.title, now });
+  await writeFile(filePath, wrapped.content, "utf8");
+  if (wrapped.changed) docsChanged = true;
+  const fullContent = wrapped.content;
   process.stderr.write(`  wrote ${filename} (${Buffer.byteLength(fullContent, "utf8")} bytes)\n`);
 
   manifest.docs.push({
@@ -251,11 +253,16 @@ for (const doc of DOCS) {
     title: doc.title,
     url: doc.url,
     file: filename,
-    fetched_at: fetchedAt,
-    sha256,
+    fetched_at: wrapped.fetched_at,
+    sha256: wrapped.sha256,
     bytes: Buffer.byteLength(fullContent, "utf8"),
   });
 }
 
 await writeFile(join(OUT_DIR, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
 process.stderr.write(`\nWrote ${manifest.docs.length} files + manifest.json to ${OUT_DIR}\n`);
+
+if (docsChanged) {
+  setSkillLastUpdated(SKILL_MD, now.slice(0, 10));
+  process.stderr.write("Stamped SKILL.md last_updated\n");
+}

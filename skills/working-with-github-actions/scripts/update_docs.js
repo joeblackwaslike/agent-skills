@@ -16,6 +16,11 @@ const path = require('path');
 const REFS_DIR = path.join(__dirname, '..', 'references');
 const RATE_LIMIT_DELAY_MS = 300;
 
+const { withFrontmatter, setSkillLastUpdated } = require('../../../scripts/lib/doc-frontmatter.cjs');
+const SKILL_MD = path.join(__dirname, '..', 'SKILL.md');
+const RUN_NOW = new Date().toISOString();
+let docsChanged = false;
+
 // ---------------------------------------------------------------------------
 // Fetch helpers
 // ---------------------------------------------------------------------------
@@ -137,8 +142,10 @@ async function fetchDocFiles(errors) {
     const destPath = path.join(REFS_DIR, outFile);
     try {
       const raw = await fetchText(url);
-      const content = stripFrontmatter(raw).trim() + '\n';
+      const body = stripFrontmatter(raw).trim() + '\n';
+      const { content } = withFrontmatter({ filePath: destPath, body, source: url, now: RUN_NOW });
       const changed = writeIfChanged(destPath, content);
+      if (changed) docsChanged = true;
       console.log(`  ${changed ? '✔' : '–'} ${outFile}${changed ? '' : ' (unchanged)'}`);
     } catch (err) {
       console.error(`  ✘ ${outFile}: ${err.message}`);
@@ -288,6 +295,12 @@ async function main() {
   const versionsPath = path.join(REFS_DIR, 'action-versions.md');
   const changed = writeIfChanged(versionsPath, versionsContent);
   console.log(`\n  ${changed ? '✔' : '–'} action-versions.md${changed ? '' : ' (unchanged)'}`);
+  if (changed) docsChanged = true;
+
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, RUN_NOW.slice(0, 10));
+    console.log('  ✔ Stamped SKILL.md last_updated');
+  }
 
   if (errors.length > 0) {
     console.error(`\n✘ ${errors.length} error(s):`);

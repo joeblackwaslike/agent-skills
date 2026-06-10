@@ -8,11 +8,14 @@ A plugin bundling custom skills for Claude Code, Codex CLI, Gemini CLI, and Anti
 ## Skills
 
 ```
+agent-skills:agent-instructions
 agent-skills:best-practices-for-agentic-development
+agent-skills:devcontainers
 agent-skills:developing-claude-code-plugins
 agent-skills:developing-codex-plugins
+agent-skills:developing-cursor-plugins
 agent-skills:developing-gemini-plugins
-agent-skills:devcontainers
+agent-skills:developing-opencode-plugins
 agent-skills:docusaurus-docs-builder
 agent-skills:git-github-workflows
 agent-skills:github-readme-overhaul
@@ -22,5 +25,9 @@ agent-skills:vscode-extension-builder-lawvable
 agent-skills:web-research
 agent-skills:working-with-claude-code
 agent-skills:working-with-codex
+agent-skills:working-with-cursor
 agent-skills:working-with-gemini
+agent-skills:working-with-github-actions
+agent-skills:working-with-opencode
+agent-skills:working-with-pieces
 ```

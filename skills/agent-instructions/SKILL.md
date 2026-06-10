@@ -11,6 +11,8 @@ description: >
   request — even without explicit mention of CLAUDE.md or AGENTS.md. If the user is starting
   a new project or onboarding into an existing one and no instruction file exists, proactively
   suggest creating one.
+metadata:
+  last_updated: "2026-06-05"
 ---
 
 # Agent Instructions Builder

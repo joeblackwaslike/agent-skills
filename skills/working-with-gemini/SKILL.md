@@ -1,6 +1,8 @@
 ---
 name: working-with-gemini
 description: Use when working with Gemini CLI or Antigravity CLI — extensions, skills, hooks, GEMINI.md, configuration, models, or any Gemini/Antigravity feature
+metadata:
+  last_updated: "2026-06-04"
 ---
 
 # Working with Gemini CLI & Antigravity CLI

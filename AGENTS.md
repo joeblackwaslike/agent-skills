@@ -27,6 +27,15 @@ A GitHub Actions workflow (`.github/workflows/update-docs.yml`) runs `make updat
 
 Existing example: `skills/working-with-claude-code/scripts/update_docs.js`
 
+### Freshness metadata convention
+
+So agents can judge how current a skill is, two freshness signals are stamped automatically. Both flow through the shared helper `scripts/lib/doc-frontmatter.cjs` (importable from CJS and ESM update scripts):
+
+- **Per fetched doc** (files in `references/`): YAML frontmatter with `source` (origin URL), `fetched_at` (ISO timestamp), and `sha256` (hash of the fetched body). The hash drives **change-detection** — `fetched_at` is preserved when upstream content is unchanged, so weekly runs don't churn timestamps. Hand-written reference files get no frontmatter; only fetched docs do. (`working-with-pieces` is the exception — its docs merge multiple upstreams, so it carries only the skill-level signal.)
+- **Per skill** (`SKILL.md`): `metadata.last_updated` (`YYYY-MM-DD`) — the coarse "how fresh is this skill" date an agent sees the moment it loads the skill. Each update script restamps it (to the run date) only when a fetched doc actually changed.
+
+Wiring a new fetch script: import `withFrontmatter` and `setSkillLastUpdated`, wrap each written doc body via `withFrontmatter({ filePath, body, source, now })`, track whether any `wrapped.changed`, and call `setSkillLastUpdated(SKILL_MD, now.slice(0, 10))` at the end of the run if so. Backfill or re-stamp every `SKILL.md` from git history any time with `node scripts/backfill-last-updated.cjs`.
+
 ## Agent Instruction Files (CLAUDE.md / AGENTS.md)
 
 **CLAUDE.md is the source of truth.** Key cross-tool differences to remember when creating or editing instruction files:

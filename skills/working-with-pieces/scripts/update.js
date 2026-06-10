@@ -54,6 +54,11 @@ function fetchJson(url) {
   return fetch(url).then(JSON.parse);
 }
 
+const { setSkillLastUpdated } = require('../../../scripts/lib/doc-frontmatter.cjs');
+const SKILL_MD = path.join(__dirname, '..', 'SKILL.md');
+const RUN_NOW = new Date().toISOString();
+let docsChanged = false;
+
 function readRef(name) {
   return fs.readFileSync(path.join(REFS, name), 'utf8');
 }
@@ -67,6 +72,7 @@ function writeRef(name, content) {
     return false;
   }
   fs.writeFileSync(path.join(REFS, name), content, 'utf8');
+  docsChanged = true;
   console.log(`  updated:   ${name}`);
   return true;
 }
@@ -408,6 +414,11 @@ async function main() {
   }
 
   console.log('\n─────────────────────────────────────────────────────');
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, RUN_NOW.slice(0, 10));
+    console.log('📅 Stamped SKILL.md last_updated');
+  }
+
   if (errors.length > 0) {
     console.error(`\nCompleted with ${errors.length} error(s):`);
     errors.forEach((e) => console.error(`  ✗ ${e}`));

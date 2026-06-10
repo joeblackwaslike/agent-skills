@@ -2,7 +2,7 @@
 name: github-readme-overhaul
 description: Use when writing, rewriting, branding, visually overhauling, or optimizing a GitHub README.md for installs, downloads, stars, marketplace conversion, OSS adoption, or immediate product value, including badges, hero graphics, tagline, pain-point messaging, quickstart, terminal demos, screenshots, GIFs/videos, and README-native visual assets.
 metadata:
-  version: 2026.05.26
+  last_updated: "2026-05-26"
 ---
 
 # GitHub README Overhaul

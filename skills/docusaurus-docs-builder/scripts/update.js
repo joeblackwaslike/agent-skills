@@ -1,12 +1,15 @@
 #!/usr/bin/env node
-import { createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { withFrontmatter, setSkillLastUpdated } from "../../../scripts/lib/doc-frontmatter.cjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const skillRoot = path.resolve(__dirname, "..");
 const outputDir = path.join(skillRoot, "references", "generated");
+const SKILL_MD = path.join(skillRoot, "SKILL.md");
+const NOW = new Date().toISOString();
+let docsChanged = false;
 
 const DOCS = [
   ["installation", "Installation", "https://docusaurus.io/docs/installation"],
@@ -102,31 +105,14 @@ async function fetchDoc([slug, title, url]) {
   if (!response.ok) throw new Error(`${url} returned ${response.status}`);
 
   const body = htmlToMarkdown(await response.text(), url);
-  const fetchedAt = new Date().toISOString();
-  const hash = createHash("sha256").update(body).digest("hex");
   const file = `${slug}.md`;
+  const filePath = path.join(outputDir, file);
+  const docBody = [`# ${title}`, "", `Source: ${url}`, "", body, ""].join("\n");
+  const wrapped = withFrontmatter({ filePath, body: docBody, source: url, title, now: NOW });
+  await writeFile(filePath, wrapped.content, "utf8");
+  if (wrapped.changed) docsChanged = true;
 
-  await writeFile(
-    path.join(outputDir, file),
-    [
-      "---",
-      `title: "${title}"`,
-      `source: "${url}"`,
-      `fetched_at: "${fetchedAt}"`,
-      `sha256: "${hash}"`,
-      "---",
-      "",
-      `# ${title}`,
-      "",
-      `Source: ${url}`,
-      "",
-      body,
-      "",
-    ].join("\n"),
-    "utf8",
-  );
-
-  return { slug, title, url, file, fetched_at: fetchedAt, sha256: hash };
+  return { slug, title, url, file, fetched_at: wrapped.fetched_at, sha256: wrapped.sha256 };
 }
 
 async function main() {
@@ -155,6 +141,11 @@ async function main() {
     ].join("\n"),
     "utf8",
   );
+
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, NOW.slice(0, 10));
+    console.error("Stamped SKILL.md last_updated");
+  }
 }
 
 main().catch((error) => {

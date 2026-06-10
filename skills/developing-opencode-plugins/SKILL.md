@@ -1,6 +1,8 @@
 ---
 name: developing-opencode-plugins
 description: Use when working on OpenCode plugins or skills (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and reference for the complete OpenCode plugin and skill lifecycle
+metadata:
+  last_updated: "2026-06-04"
 ---
 
 # Developing OpenCode Plugins

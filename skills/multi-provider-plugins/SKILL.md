@@ -1,6 +1,8 @@
 ---
 name: multi-provider-plugins
 description: Use when making a Claude Code plugin compatible with other AI coding assistants (Codex, OpenCode, Cursor, Gemini CLI), designing multi-provider plugin architecture, adding a provider adapter, or structuring a portable shared skills library
+metadata:
+  last_updated: "2026-06-04"
 ---
 
 # Multi-Provider Plugins
