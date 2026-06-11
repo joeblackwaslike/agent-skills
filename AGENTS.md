@@ -77,6 +77,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `interactive-system-docs` | Creating self-contained interactive HTML system visualizations |
 | `vscode-extension-builder-lawvable` | Building VS Code extensions |
 | `agent-instructions` | Creating CLAUDE.md, AGENTS.md, GEMINI.md, or other AI instruction files at any scope level (user/global, project, subdirectory) — includes cookbook templates for Python, TypeScript, monorepo, and agent/MCP projects |
+| `domain-driven-design` | Modeling a business domain or backend architecture — DDD (strategic + tactical), CQRS, event sourcing, aggregates, value objects, bounded contexts, hexagonal/clean architecture; framework-agnostic examples in TypeScript and Python |
 
 ## Common Workflows
 
@@ -97,3 +98,5 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 **Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `multi-provider-plugins` for cross-platform architecture.
 
 **GitHub Actions CI/CD:** `working-with-github-actions` for workflow syntax, cookbook patterns, action versions, and OIDC deployments.
+
+**Domain modeling / backend architecture:** `domain-driven-design` for strategic + tactical DDD, CQRS, event sourcing, and where each pattern earns (or doesn't earn) its cost — with complete TypeScript and Python examples.
