@@ -2,7 +2,7 @@
 name: docusaurus-docs-builder
 description: Use when creating, redesigning, rewriting, or improving a Docusaurus documentation site, docs portal, developer docs, product docs, API docs, guide site, knowledge base, or documentation landing experience, especially when the user wants engaging, attractive, polished, conversion-aware, visual, MDX-powered documentation rather than plain Markdown pages.
 metadata:
-  last_updated: "2026-06-01"
+  last_updated: "2026-06-11"
 ---
 
 # Docusaurus Docs Builder
@@ -39,6 +39,8 @@ Default shape:
 
 Use progressive disclosure: quick path first, deep details later.
 
+When the task is "scaffold docs for this project" or "set up docs like spinup-ts" — for either a new project or an existing repo that lacks real docs — start from `references/project-docs-template.md`. It supplies the full directory tree, `sidebars.ts`, `docusaurus.config.ts`, and every page as a placeholder skeleton, plus an adaptation playbook. Drop it in, then change the details to match the actual project.
+
 ## Reference Router
 
 Read only what the task needs:
@@ -46,6 +48,7 @@ Read only what the task needs:
 | File | When to Read |
 | --- | --- |
 | `references/information-architecture.md` | Site maps, sidebar design, docs taxonomy, landing pages |
+| `references/project-docs-template.md` | Proven, droppable docs scaffold (tree, sidebars, page skeletons) for bootstrapping a new project or revitalizing an existing repo |
 | `references/visual-mdx-patterns.md` | MDX components, cards, callouts, diagrams, code blocks, before/after sections |
 | `references/copy-and-conversion.md` | Headlines, CTAs, pain-point framing, page intros, anti-wall-of-text rules |
 | `references/top-docs-patterns.md` | Best attributes of elite documentation sites and how to apply them |
