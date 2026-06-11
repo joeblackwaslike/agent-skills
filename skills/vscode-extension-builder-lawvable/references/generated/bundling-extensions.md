@@ -1,8 +1,8 @@
 ---
 title: "Bundling Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/bundling-extension"
-fetched_at: "2026-06-01T05:42:30.025Z"
-sha256: "a0f224ff2bbbcbb674c641b96ed13e62eecd5662b33f797aa36cd4c99da26e22"
+fetched_at: "2026-06-08T05:39:49.732Z"
+sha256: "f7a6314d894c606d6616a5bcf778107e6a92644269b248b1b069af12b144cccc"
 ---
 
 # Bundling Extensions
@@ -402,4 +402,4 @@ To address the warning, you should either:
 - [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration) - Learn how to run extension CI builds on Azure Pipelines.
 
  
- 5/28/2026
+ 6/3/2026

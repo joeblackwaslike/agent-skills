@@ -1,8 +1,8 @@
 ---
 title: "Language Model API"
 source: "https://code.visualstudio.com/api/extension-guides/language-model"
-fetched_at: "2026-06-01T05:42:31.208Z"
-sha256: "be2721fd43deab813b76635991bc402150d5c4bb6e0f782488c55c3e765006a1"
+fetched_at: "2026-06-08T05:39:51.133Z"
+sha256: "9777ecd161f0b7ac34bcf25a6c0fbdf21afd7ee1af8055a75893c84cdc5e07e9"
 ---
 
 # Language Model API
@@ -264,4 +264,4 @@ Once you have created your AI extension, you can publish your extension to the V
 - [Build a VS Code chat extension](https://code.visualstudio.com/api/extension-guides/ai/chat)
 
  
- 5/28/2026
+ 6/3/2026

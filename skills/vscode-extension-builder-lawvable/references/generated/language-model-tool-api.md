@@ -1,17 +1,17 @@
 ---
 title: "Language Model Tool API"
 source: "https://code.visualstudio.com/api/extension-guides/tools"
-fetched_at: "2026-06-01T05:42:31.793Z"
-sha256: "62113c7b72b78e4c8d63b220955c444db79ff222f7bc89302e017b5aaed46b85"
+fetched_at: "2026-06-08T05:39:51.519Z"
+sha256: "3aa3c7767836bec09d17d53e6413affca227a32126c80ea531b9a42239b28864"
 ---
 
 # Language Model Tool API
 
 Source: https://code.visualstudio.com/api/extension-guides/tools
 
-Language model tools enable you to extend the functionality of a large language model (LLM) in chat with domain-specific capabilities. To process a user's chat prompt, [agents](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) in VS Code can automatically invoke these tools to perform specialized tasks as part of the conversation.
+Language model tools enable you to extend the functionality of a large language model (LLM) in chat with domain-specific capabilities. To process a user's chat prompt, [agents](https://code.visualstudio.com/docs/chat/copilot-chat) in VS Code can automatically invoke these tools to perform specialized tasks as part of the conversation.
 
-By contributing a language model tool in your VS Code extension, you can extend the agentic coding workflow while also providing deep integration with the editor. Extension tools are one of three types of tools available in VS Code, alongside [built-in tools and MCP tools](https://code.visualstudio.com/docs/copilot/agents/agent-tools#_types-of-tools).
+By contributing a language model tool in your VS Code extension, you can extend the agentic coding workflow while also providing deep integration with the editor. Extension tools are one of three types of tools available in VS Code, alongside [built-in tools and MCP tools](https://code.visualstudio.com/docs/agents/agent-tools#_types-of-tools).
 
 In this extension guide, you learn how to create a language model tool by using the Language Model Tools API and how to implement tool calling in a chat extension.
 
@@ -22,7 +22,7 @@ You can also extend the chat experience with specialized tools by contributing a
  
 
  Tip
- For information about using tools as an end user, see [Use tools in chat](https://code.visualstudio.com/docs/copilot/agents/agent-tools).
+ For information about using tools as an end user, see [Use tools in chat](https://code.visualstudio.com/docs/agents/agent-tools).
 
 ## What is tool calling in an LLM?
 
@@ -54,7 +54,7 @@ You might consider implementing a language model tool with an [MCP server](https
 
 - You don't need access to VS Code APIs.
 
-Learn more about the [differences between tool types](https://code.visualstudio.com/docs/copilot/agents/agent-tools#_types-of-tools).
+Learn more about the [differences between tool types](https://code.visualstudio.com/docs/agents/agent-tools#_types-of-tools).
 
 ## Create a language model tool
 
@@ -86,15 +86,15 @@ The unique name of the tool, used to reference the tool in the extension impleme
 The user-friendly name of the tool, used for displaying in the UI.
 
 - 
-If the tool can be used with [agents](https://code.visualstudio.com/docs/copilot/agents/overview#_built-in-agents) or referenced in a chat prompt with `#`, add the following properties:
+If the tool can be used with [agents](https://code.visualstudio.com/docs/agents/overview#_built-in-agents) or referenced in a chat prompt with `#`, add the following properties:
 
-Users can enable or disable the tool in the Chat view, similar to how this is done for [Model Context Protocol (MCP) tools](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
+Users can enable or disable the tool in the Chat view, similar to how this is done for [Model Context Protocol (MCP) tools](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
 
 Property
 Description
 
 `canBeReferencedInPrompt`
-Set to `true` if the tool can be used with [agents](https://code.visualstudio.com/docs/copilot/agents/overview#_built-in-agents) or referenced in chat.
+Set to `true` if the tool can be used with [agents](https://code.visualstudio.com/docs/agents/overview#_built-in-agents) or referenced in chat.
 
 `toolReferenceName`
 The name for users to reference the tool in a chat prompt via `#`.
@@ -292,7 +292,7 @@ When a user sends a chat prompt, the following steps occur:
 - 
 Copilot determines the list of available tools based on the user's configuration.
 
-The list of tools consists of built-in tools, tools registered by extensions, and tools from [MCP servers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers). You can contribute to agent mode via extensions or MCP servers (shown in green in the diagram).
+The list of tools consists of built-in tools, tools registered by extensions, and tools from [MCP servers](https://code.visualstudio.com/docs/agent-customization/mcp-servers). You can contribute to agent mode via extensions or MCP servers (shown in green in the diagram).
 
 - 
 Copilot sends the request to the LLM and provides it with the prompt, chat context, and the list of tool definitions to consider.
@@ -343,7 +343,7 @@ Get more best practices for creating tools in the [OpenAI documentation](https:/
 
 - [Register an MCP server in a VS Code extension](https://code.visualstudio.com/api/extension-guides/ai/mcp)
 
-- [Use MCP tools in agent mode](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
+- [Use MCP tools in agent mode](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
 
  
- 5/28/2026
+ 6/3/2026

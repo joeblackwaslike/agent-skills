@@ -1,7 +1,7 @@
 ---
 title: "Templates specification"
 source: "https://containers.dev/implementors/templates/"
-fetched_at: "2026-06-01T11:08:54.644Z"
+fetched_at: "2026-06-08T05:39:43.396Z"
 sha256: "4c566a4caa79f1ab364bfb22f494732dd82a145d7c4325ff5dd4b37d58740b4e"
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Extension Host"
 source: "https://code.visualstudio.com/api/advanced-topics/extension-host"
-fetched_at: "2026-06-01T05:42:29.543Z"
-sha256: "309ca81b708378417064e957f10830df19b8d4b3651886baed93027cbde13872"
+fetched_at: "2026-06-08T05:39:49.217Z"
+sha256: "d4cb5fc9e8c33569c396a87bc8e1c5e7f8a22188f1df7c65ca29e250e839c2d1"
 ---
 
 # Extension Host
@@ -93,4 +93,4 @@ VS Code aims to deliver a stable and high performance editor to users, and misbe
 Additionally, VS Code lets extensions declare their [Activation Events](https://code.visualstudio.com/api/references/activation-events) and loads them lazily. For example, the Markdown extension should only be loaded when a user opens a Markdown file. This makes sure that extensions do not consume unnecessary CPU and memory.
 
  
- 5/28/2026
+ 6/3/2026

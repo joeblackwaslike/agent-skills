@@ -1,8 +1,8 @@
 ---
 title: "Publishing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
-fetched_at: "2026-06-01T05:42:30.251Z"
-sha256: "833d0e49966a7e3136b45ca5b958dc15787e5de3a63706c146397929c09ade1d"
+fetched_at: "2026-06-08T05:39:49.955Z"
+sha256: "18239f00ba42f6fd1d2e77607f0a5e53bc104fff0bda1fe6457ad2ee6c937cb9"
 ---
 
 # Publishing Extensions
@@ -69,7 +69,127 @@ The publishing tool checks the following constraints:
 
 Visual Studio Code uses [Azure DevOps](https://azure.microsoft.com/services/devops/) for its Marketplace services. This means that authentication, hosting, and management of extensions are provided through Azure DevOps.
 
-`vsce` can only publish extensions using [Personal Access Tokens](https://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate). You need to create at least one in order to publish an extension.
+### Secure automated publishing to Visual Studio Marketplace
+
+Follow these steps to improve security and align with Microsoft best practices!
+We strongly recommend that extension publishing use [Microsoft Entra ID–based authentication](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/entra?view=azure-devops) with **workload identity federation and managed identities**, eliminating long-lived secrets such as Personal Access Tokens (PATs) and enabling secure, automated publishing pipelines.
+
+This approach strengthens the overall security posture by removing reliance on stored credentials, simplifies operations through native integration with Azure Pipelines and Entra ID, scales effectively across environments, and aligns with modern identity and access management standards required for enterprise compliance. For more information, see [Reduce PAT usage](https://devblogs.microsoft.com/devops/reducing-pat-usage-across-azure-devops/).
+
+- 
+Create a Service Connection (Azure DevOps)
+
+Navigate to **Project Settings → Service Connections**
+
+- Create a new **Azure Resource Manager** connection
+
+- Select **Workload Identity Federation (manual)**
+
+- Save the connection in draft mode to collect required values later
+
+- 
+Create a Managed Identity (Azure)
+
+Create a **user-assigned managed identity** in Azure
+
+- Assign the **Reader** role
+
+- Record the following values: **Client ID**, **Tenant ID**, **Subscription** details
+
+- 
+Configure Federated Credentials
+
+Establish link between Azure DevOps and Azure:
+
+Add a federated credential to the managed identity
+
+- Exchange required values between systems:
+
+From Azure DevOps → Azure: **issuer and subject**
+
+- From Azure → Azure DevOps: **client ID, tenant ID, subscription**
+
+- In Azure DevOps, select **Verify and save**
+
+- 
+Grant Pipeline Access
+
+Open the service connection
+
+- Grant access to the pipelines responsible for publishing
+
+- 
+Retrieve Managed Identity Resource ID (one-time)
+
+Run an Azure CLI task to retrieve the identity information:
+```
+steps:
+- task: AzureCLI@2
+  displayName: 'Get identity details'
+  inputs:
+    azureSubscription: &#x3C;ServiceConnectionName>
+    scriptType: pscore
+    scriptLocation: inlineScript
+    inlineScript: |
+      az rest -u https://app.vssps.visualstudio.com/_apis/profile/profiles/me --resource 499b84ac-1321-427f-aa17-267ca6975798
+```
+
+
+- From the output JSON, capture the managed identity resource ID (the `id` field).
+
+- 
+Authorize the Identity in Visual Studio Marketplace
+
+Add the managed identity (using its resource ID) as a member of your publisher.
+
+- Assign the **Contributor** role
+
+- 
+Configure the CI/CD Pipeline
+
+Set up your Azure Pipelines CI/CD workflow
+
+- Replace PAT-based authentication with the identity-based approach
+
+- 
+Publish Using Managed Identity
+
+In your pipeline, generate a Microsoft Entra ID (AAD) access token via Azure CLI.
+
+- Use the token with your publishing commands (for example: `vsce publish --azure-credential`).
+
+Sample YAML tasks. Replace with the extension directory path.
+
+
+```
+# Install VS Code Extension Manager (vsce >= v2.26.1 needed) and dependencies
+- script: |
+    cd &#x3C;ExtensionDirectory>
+    npm install -g @vscode/vsce
+    npm install
+  displayName: "Install vsce and dependencies"
+
+# Publish
+- task: AzureCLI@2
+  displayName: 'Publish using managed identity'
+  inputs:
+    azureSubscription: &#x3C;ServiceConnectionName>
+    scriptType: pscore
+    scriptLocation: inlineScript
+    inlineScript: |
+      cd &#x3C;ExtensionDirectory>
+      vsce publish --azure-credential
+```
+
+
+`vsce` can also publish extensions using [Personal Access Tokens](https://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+
+ 
+
+ 
+
+ Important
+ Due to security concerns, consider using the more secure Microsoft Entra tokens over higher-risk personal access tokens.
 
 ### Get a Personal Access Token
 
@@ -635,4 +755,4 @@ You can either use npm or yarn v1 to manage your extension's dependencies.
 You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](https://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.
 
  
- 5/28/2026
+ 6/3/2026

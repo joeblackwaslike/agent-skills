@@ -1,7 +1,7 @@
 ---
 title: "Markdown Code Blocks"
 source: "https://docusaurus.io/docs/markdown-features/code-blocks"
-fetched_at: "2026-06-01T05:42:27.206Z"
+fetched_at: "2026-06-08T05:39:46.475Z"
 sha256: "12af02178cad746ac8a5a0215e38ccea88c1d83e7c57823c567a7877ff6f532d"
 ---
 

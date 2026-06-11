@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-06-01T05:42:32.093Z"
-sha256: "b25628f7f8982ca09da5a55e6c75571e11e92115faac3a1b1a563b721d385fb7"
+fetched_at: "2026-06-08T05:39:51.866Z"
+sha256: "a990f9d14710c8c8ce957982ed39d72ec3bd89c608a4ad759892ca88933bc4c5"
 ---
 
 # Contribution Points
@@ -123,7 +123,7 @@ Usually a debugger extension will also have a `contributes.breakpoints` entry wh
 
 ## contributes.chatInstructions
 
-Contributes [instructions files](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) for Copilot Chat. Instructions files provide custom guidelines that are automatically included in chat requests to steer the behavior of Copilot. Use this contribution point to bundle reusable instructions with your extension, such as coding conventions, framework-specific guidelines, or domain-specific rules.
+Contributes [instructions files](https://code.visualstudio.com/docs/agent-customization/custom-instructions) for Copilot Chat. Instructions files provide custom guidelines that are automatically included in chat requests to steer the behavior of Copilot. Use this contribution point to bundle reusable instructions with your extension, such as coding conventions, framework-specific guidelines, or domain-specific rules.
 
 Copilot automatically applies contributed instructions when the user's chat request is relevant to the instructions' use case. You do not need to manually attach them.
 
@@ -180,7 +180,7 @@ See the [chatPromptFiles](https://code.visualstudio.com/api/references/contribut
 
 ## contributes.chatPromptFiles
 
-Contributes [prompt files](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) for Copilot Chat. Prompt files are reusable chat prompts that users can invoke as slash commands in chat. Use this contribution point to bundle ready-made prompts with your extension.
+Contributes [prompt files](https://code.visualstudio.com/docs/agent-customization/custom-instructions) for Copilot Chat. Prompt files are reusable chat prompts that users can invoke as slash commands in chat. Use this contribution point to bundle ready-made prompts with your extension.
 
 Each entry requires a `path` to a Markdown file relative to the extension root. You can optionally specify a `when` clause to conditionally enable the prompt. Specify the `name` and `description` metadata inside the Markdown file itself rather than in the contribution point.
 
@@ -219,7 +219,7 @@ See the [chatInstructions](https://code.visualstudio.com/api/references/contribu
 
 ## contributes.chatSkills
 
-Contributes [Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) for Copilot Chat. Agent Skills are folders of instructions, scripts, and resources that Copilot can load when relevant to perform specialized tasks. Use this contribution point to bundle reusable skills with your extension.
+Contributes [Agent Skills](https://code.visualstudio.com/docs/agent-customization/agent-skills) for Copilot Chat. Agent Skills are folders of instructions, scripts, and resources that Copilot can load when relevant to perform specialized tasks. Use this contribution point to bundle reusable skills with your extension.
 
 Each entry requires a `path` to a `SKILL.md` file relative to the extension root. The `SKILL.md` file must follow the [Agent Skills specification](https://agentskills.io/specification), and its `name` field must match the parent directory name. You can optionally specify a `when` clause to conditionally enable the skill.
 
@@ -254,7 +254,7 @@ Path to the `SKILL.md` file relative to the extension root. The path must resolv
 No
 A [when clause](https://code.visualstudio.com/api/references/when-clause-contexts) condition that must be true for this entry to be enabled.
 
-See [Contribute skills from extensions](https://code.visualstudio.com/docs/copilot/customization/agent-skills#_contribute-skills-from-extensions) for the required skill structure and `SKILL.md` format.
+See [Contribute skills from extensions](https://code.visualstudio.com/docs/agent-customization/agent-skills#_contribute-skills-from-extensions) for the required skill structure and `SKILL.md` format.
 
 ## contributes.colors
 
@@ -1905,4 +1905,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 5/28/2026
+ 6/3/2026

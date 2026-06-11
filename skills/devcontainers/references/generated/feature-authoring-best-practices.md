@@ -1,7 +1,7 @@
 ---
 title: "Feature authoring best practices"
 source: "https://containers.dev/guide/feature-authoring-best-practices"
-fetched_at: "2026-06-01T11:08:54.686Z"
+fetched_at: "2026-06-08T05:39:43.632Z"
 sha256: "880101dc85e1389db780b60e9924d2d6d9d49c23067fd6976d2381fd39db1edc"
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Web Extensions"
 source: "https://code.visualstudio.com/api/extension-guides/web-extensions"
-fetched_at: "2026-06-01T05:42:30.836Z"
-sha256: "5b1e52acfa20baf412e4cf4809dd5e2df94a0a46e29909be0ccb28e385806544"
+fetched_at: "2026-06-08T05:39:50.712Z"
+sha256: "79deca65608fa43604eefb445daa4d37348150de2270a46ef939b1ebe60e2f06"
 ---
 
 # Web Extensions
@@ -13,7 +13,7 @@ Visual Studio Code can run as an editor in the browser. One example is the `gith
 
 Web extensions share the same structure as regular extensions, but given the different runtime, don't run with the same code as extensions written for a Node.js runtime. Web extensions still have access to the full VS Code API, but no longer to the Node.js APIs and module loading. Instead, web extensions are restricted by the browser sandbox and therefore have [limitations](https://code.visualstudio.com/api/extension-guides/web-extensions#_web-extension-main-file) compared to normal extensions.
 
-The web extension runtime is supported on VS Code desktop too. If you decide to create your extension as a web extension, it will be supported on [VS Code for the Web](https://code.visualstudio.com/docs/setup/vscode-web) (including `vscode.dev` and `github.dev`) as well as on the desktop and in services like [GitHub Codespaces](https://code.visualstudio.com/docs/remote/codespaces).
+The web extension runtime is supported on VS Code desktop too. If you decide to create your extension as a web extension, it will be supported on [VS Code for the Web](https://code.visualstudio.com/docs/remote/vscode-web) (including `vscode.dev` and `github.dev`) as well as on the desktop and in services like [GitHub Codespaces](https://code.visualstudio.com/docs/remote/codespaces).
 
 ## Web extension anatomy
 
@@ -69,7 +69,7 @@ The example below shows the `package.json` for a simple hello world extension, t
 
 Extensions that have only a `main` entry point, but no `browser` are not web extensions. They are ignored by the web extension host and not available for download in the Extensions view.
 
-Extensions with only declarative contributions (only `contributes`, no `main` or `browser`) can be web extensions. They can be installed and run in [VS Code for the Web](https://code.visualstudio.com/docs/setup/vscode-web) without any modifications by the extension author. Examples of extensions with declarative contributions include themes, grammars, and snippets.
+Extensions with only declarative contributions (only `contributes`, no `main` or `browser`) can be web extensions. They can be installed and run in [VS Code for the Web](https://code.visualstudio.com/docs/remote/vscode-web) without any modifications by the extension author. Examples of extensions with declarative contributions include themes, grammars, and snippets.
 
 Extensions can have both `browser` and `main` entry points in order to run in browser and in Node.js runtimes. The [Update existing extensions to Web extensions](https://code.visualstudio.com/api/extension-guides/web-extensions#_update-existing-extensions-to-web-extensions) section shows how to migrate an extension to work in both runtimes.
 
@@ -821,4 +821,4 @@ export function run(): Promise&#x3C;void> {
 - [lsp-web-extension-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample)
 
  
- 5/28/2026
+ 6/3/2026

@@ -1,7 +1,7 @@
 ---
 title: "Sidebar"
 source: "https://docusaurus.io/docs/sidebar"
-fetched_at: "2026-06-01T05:42:26.403Z"
+fetched_at: "2026-06-08T05:39:45.427Z"
 sha256: "5cb6b36773a7fbcf20a04a9140b551bdcfa37a570902fc762a67e83a3de3aea9"
 ---
 

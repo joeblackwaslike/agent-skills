@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 source: "https://docusaurus.io/docs/installation"
-fetched_at: "2026-06-01T05:42:25.580Z"
+fetched_at: "2026-06-08T05:39:44.757Z"
 sha256: "bee9cde3b0b3d9a872a3fac7134eb3782d528b4357789518148cce34bbaba9ec"
 ---
 

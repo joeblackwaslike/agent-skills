@@ -1,7 +1,7 @@
 ---
 title: "Features distribution"
 source: "https://containers.dev/implementors/features-distribution/"
-fetched_at: "2026-06-01T11:08:54.654Z"
+fetched_at: "2026-06-08T05:39:43.446Z"
 sha256: "e2b16c1652c28013716b2edfabf01ba6a1cfceba538ef39f77f5dfe6279d82f7"
 ---
 

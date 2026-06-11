@@ -32,7 +32,7 @@ Click the link for your IDE to install directly:
 
 Or in VS Code, press `Cmd+Shift+X` (Mac) or `Ctrl+Shift+X` (Windows/Linux) to open the Extensions view, search for "Claude Code", and click **Install**.
 
-The extension also installs in other VS Code forks like Windsurf or Kiro. Search for "Claude Code" in the editor's Extensions view, or install from the [Open VSX registry](https://open-vsx.org/extension/Anthropic/claude-code). If your editor can't install the extension, run `claude` in its integrated terminal instead. The [CLI](/en/quickstart) works in any terminal.
+The extension also installs in other VS Code forks like Devin Desktop or Kiro. Search for "Claude Code" in the editor's Extensions view, or install from the [Open VSX registry](https://open-vsx.org/extension/Anthropic/claude-code). If your editor can't install the extension, run `claude` in its integrated terminal instead. The [CLI](/en/quickstart) works in any terminal.
 
 <Note>If the extension doesn't appear after installation, restart VS Code or run "Developer: Reload Window" from the Command Palette.</Note>
 
@@ -510,10 +510,24 @@ To uninstall the Claude Code extension:
 2. Search for "Claude Code"
 3. Click **Uninstall**
 
-To also remove extension data and reset all settings:
+To also remove extension data and reset all settings, delete the extension's storage directory for your platform.
+
+On macOS:
 
 ```bash theme={null}
-rm -rf ~/.vscode/globalStorage/anthropic.claude-code
+rm -rf ~/Library/"Application Support"/Code/User/globalStorage/anthropic.claude-code
+```
+
+On Linux:
+
+```bash theme={null}
+rm -rf ~/.config/Code/User/globalStorage/anthropic.claude-code
+```
+
+On Windows, in PowerShell:
+
+```powershell theme={null}
+Remove-Item -Recurse -Force "$env:APPDATA\Code\User\globalStorage\anthropic.claude-code"
 ```
 
 For additional help, see the [troubleshooting guide](/en/troubleshooting).

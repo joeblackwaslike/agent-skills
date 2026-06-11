@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-06-01T11:08:54.728Z"
-sha256: "d1138143d10159b4d5522538b45128da4e86e301dcf3f57a0cf9fd33c9204494"
+fetched_at: "2026-06-08T05:39:43.759Z"
+sha256: "c2baeca5d7b9a1f3f63e15d9f0fb05e448db6594067f555bc50a0ba72e06e0e7"
 ---
 
 # Available templates index
@@ -143,7 +143,7 @@ Templates
 | Rust | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/rust:5.0.0` | `5.0.0` |
 | Rust & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/rust-postgres:5.0.0` | `5.0.0` |
 | Node.js & TypeScript | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/typescript-node:5.0.0` | `5.0.0` |
-| Ubuntu | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ubuntu:2.0.0` | `2.0.0` |
+| Ubuntu | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ubuntu:3.0.0` | `3.0.0` |
 | Default Linux Universal | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/universal:2.0.1` | `2.0.1` |
 | .NET and Azure SQL | Azure SQL Developer Experiences Team | `ghcr.io/microsoft/azuresql-devcontainers/dotnet:1.2.2` | `1.2.2` |
 | .NET with Aspire and Azure SQL | Azure SQL Developer Experiences Team | `ghcr.io/microsoft/azuresql-devcontainers/dotnet-aspire:1.2.2` | `1.2.2` |
@@ -251,8 +251,8 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:6.10.3` | `6.10.3` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:6.10.3` | `6.10.3` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:7.2.0` | `7.2.0` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:7.2.0` | `7.2.0` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
 | Python + uv | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python-uv:1.0.5` | `1.0.5` |
 | AI Sandbox | goodjobandrew | `ghcr.io/goodjobandrew/devcontainer-templates/ai-sandbox:1.2.0` | `1.2.0` |
