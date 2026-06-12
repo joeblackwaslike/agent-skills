@@ -80,6 +80,8 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `domain-driven-design` | Modeling a business domain or backend architecture — DDD (strategic + tactical), CQRS, event sourcing, aggregates, value objects, bounded contexts, hexagonal/clean architecture; framework-agnostic examples in TypeScript and Python |
 | `working-with-vercel-ai-sdk` | Working with the Vercel AI SDK (`ai` package) — generateText/streamText, generateObject, embeddings, tools, agents (ToolLoopAgent), UI hooks (useChat), RSC, providers, migrations; comprehensive offline docs from ai-sdk.dev |
 | `authoring-agent-skills` | Creating or maintaining a skill in this repo — naming taxonomy (working-with-X / developing-X / topic), SKILL.md frontmatter, the doc-fetching cookbook (llms.txt / sitemap / curated-list), the `scripts/lib/doc-frontmatter.cjs` freshness helpers, Makefile/CI auto-discovery, and the registration checklist |
+| `working-with-beads` | Working with the beads CLI (`bd`) — offline CLI reference generated from the pinned binary (`bd <cmd> --help`, `bd prime`) plus upstream repo docs, pinned to a known version. Use for any `bd` command/flag/concept lookup |
+| `beads-operations` | Running/maintaining/troubleshooting beads day-to-day — bd vs TodoWrite, Joe's shared-server conventions (port 3308, `--skip-agents`), the ready→claim→note→close loop, compaction recovery, and recovering broken beads states |
 
 ## Common Workflows
 
@@ -106,3 +108,5 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 **Vercel AI SDK development:** `working-with-vercel-ai-sdk` for offline ai-sdk.dev docs (core, UI, RSC, agents, providers, cookbook) — grep `references/` by topic; falls back to live Markdown pages for anything newer.
 
 **Authoring a new skill in this repo:** `authoring-agent-skills` for the naming taxonomy, the doc-fetching cookbook (how to wrap a tool's docs via llms.txt/sitemap), the freshness-metadata conventions, and the registration checklist — then `skill-creator` for generic description/triggering quality.
+
+**Beads task management:** `beads-operations` for setup conventions (`bd init --shared-server --skip-agents`), the core workflow, and the troubleshooting runbook; `working-with-beads` for the exact CLI reference at the pinned version. These supersede the third-party `beads` plugin's convention guidance.
