@@ -1,0 +1,42 @@
+---
+source: "bd mol seed --help @ 1.0.5"
+fetched_at: "2026-06-12T18:59:04.430Z"
+sha256: "c026067f4d5b78ff3da6de1d40718ca3c614e106ef32bb31c04a4ef7e4644658"
+---
+
+Verify that a formula is accessible and can be cooked.
+
+The seed command checks formula search paths to ensure a formula exists
+and can be loaded. This is useful for verifying system health before
+attempting to spawn work from a formula.
+
+Formula search paths (checked in order):
+  1. <resolved-beads-dir>/formulas/ (active project)
+  2. <checkout-root>/.beads/formulas/ (repo-local formulas)
+  3. ~/.beads/formulas/ (user level)
+  4. $GT_ROOT/.beads/formulas/ (shared workspace root, if GT_ROOT set)
+
+Examples:
+  bd mol seed mol-feature                 # Verify specific formula
+  bd mol seed mol-review --var name=test  # Verify with variable substitution
+
+Usage:
+  bd mol seed <formula-name> [flags]
+
+Flags:
+  -h, --help              help for seed
+      --var stringArray   Variable substitution for condition filtering (key=value)
+
+Global Flags:
+      --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
+      --db string                 Database path (default: auto-discover .beads/*.db)
+  -C, --directory string          Change to this directory before running the command (like git -C)
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --global                    Use the global shared-server database (beads_global)
+      --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
+      --json                      Output in JSON format
+      --profile                   Generate CPU profile for performance analysis
+  -q, --quiet                     Suppress non-essential output (errors only)
+      --readonly                  Read-only mode: block write operations (for worker sandboxes)
+      --sandbox                   Sandbox mode: disables Dolt auto-push
+  -v, --verbose                   Enable verbose/debug output

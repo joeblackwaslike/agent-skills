@@ -42,8 +42,8 @@ function parseCommandTree(helpText) {
   const cmds = new Set();
   let inCommands = false;
   for (const line of helpText.split('\n')) {
+    if (/^(Usage|Flags|Global Flags|Additional help topics):/.test(line)) { inCommands = false; continue; }
     if (/^[A-Z][A-Za-z &]+:\s*$/.test(line)) { inCommands = true; continue; }
-    if (/^(Flags|Global Flags|Additional help topics):/.test(line)) { inCommands = false; continue; }
     if (inCommands) {
       const m = line.match(/^\s{2,}([a-z][a-z0-9-]*)\s+\S/);
       if (m) cmds.add(m[1]);
