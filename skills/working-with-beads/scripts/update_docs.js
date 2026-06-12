@@ -136,11 +136,14 @@ function fetchUrl(url, headers = {}) {
         res.resume();
         return resolve(fetchUrl(res.headers.location, headers));
       }
-      let data = '';
-      res.on('data', (c) => (data += c));
+      // Buffer chunks and decode once at the end — `data += chunk` corrupts
+      // multi-byte UTF-8 characters (e.g. box-drawing glyphs) that straddle a
+      // chunk boundary, which broke idempotency and committed mojibake.
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
       res.on('end', () =>
         res.statusCode >= 200 && res.statusCode < 300
-          ? resolve(data)
+          ? resolve(Buffer.concat(chunks).toString('utf8'))
           : reject(new Error(`HTTP ${res.statusCode} for ${url}`)));
     }).on('error', reject);
   });

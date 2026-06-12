@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/gastownhall/beads/v1.0.5/docs/ARCHITECTURE.md"
-fetched_at: "2026-06-12T19:01:09.400Z"
-sha256: "4c2856c9c8f00aa2aea251f75fc507d73b1b034b52b5a357f4e92f588d22450e"
+fetched_at: "2026-06-12T19:28:27.579Z"
+sha256: "b0579ea2c4286b16c230d41639ab3da10084ca10edb57983abb50ae259929baf"
 ---
 
 # Architecture
@@ -84,7 +84,7 @@ All queries run directly against the local Dolt database:
 ┌─────────────────┐    ┌─────────────────┐
 │   CLI Query     │───▶│   Dolt Query    │
 │   (bd ready)    │    │   (SQL)         │
-└───────────────���─┘    └─────────────────┘
+└─────────────────┘    └─────────────────┘
 ```
 
 1. **Query:** Commands read from fast local Dolt database via SQL
@@ -125,7 +125,7 @@ Branch B: bd create "Add Stripe"  → bd-f14c (no collision)
 4. **Merge logic:** Same ID + different content = update, same ID + same content = skip
 
 ```
-┌──────────────────────────────────────���──────────────────────────┐
+┌─────────────────────────────────────────────────────────────────┐
 │                        Merge Logic                               │
 │             (used by Dolt pull and init --from-jsonl)            │
 │                                                                  │
@@ -148,7 +148,7 @@ See [COLLISION_MATH.md](COLLISION_MATH.md) for birthday paradox calculations on 
 Each workspace can run its own Dolt server for multi-writer access:
 
 ```
-┌────────���────────────────────────────────────────────────────────┐
+┌─────────────────────────────────────────────────────────────────┐
 │                     Dolt Server Mode                              │
 │                                                                  │
 │  ┌─────────────┐    ┌─────────────┐                             │
@@ -162,7 +162,7 @@ Each workspace can run its own Dolt server for multi-writer access:
 │                   ┌─────────────┐                                │
 │                   │    Dolt     │                                │
 │                   │   Database  │                                │
-│                   └────���────────┘                                │
+│                   └─────────────┘                                │
 └─────────────────────────────────────────────────────────────────┘
 
      CLI commands ───SQL───▶ dolt sql-server ───▶ Database
