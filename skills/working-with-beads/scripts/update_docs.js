@@ -25,7 +25,7 @@ const RUN_NOW = new Date().toISOString();
 const FAILURE_THRESHOLD = 0.25;
 let docsChanged = false;
 
-// ---------- pure helpers (unit-tested in update_docs.test.js) ----------
+// ---------- pure helpers (unit-tested in cli-parsers.test.js) ----------
 
 function parsePinnedVersion(text) {
   const out = {};
