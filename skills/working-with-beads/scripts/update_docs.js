@@ -127,6 +127,55 @@ function generateCliRef(pin) {
   return true;
 }
 
+// ---------- repo docs fetch (no `bd` needed) ----------
+
+function fetchUrl(url, headers = {}) {
+  return new Promise((resolve, reject) => {
+    https.get(url, { headers: { 'User-Agent': 'agent-skills', ...headers } }, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        res.resume();
+        return resolve(fetchUrl(res.headers.location, headers));
+      }
+      let data = '';
+      res.on('data', (c) => (data += c));
+      res.on('end', () =>
+        res.statusCode >= 200 && res.statusCode < 300
+          ? resolve(data)
+          : reject(new Error(`HTTP ${res.statusCode} for ${url}`)));
+    }).on('error', reject);
+  });
+}
+
+async function fetchRepoDocs(pin) {
+  console.log(`📥 Fetching ${REPO} docs @ ${pin.tag}...`);
+  const listing = JSON.parse(
+    await fetchUrl(`https://api.github.com/repos/${REPO}/contents/docs?ref=${pin.tag}`, {
+      Accept: 'application/vnd.github+json',
+    }),
+  );
+  const entries = listing.filter((e) => e.type === 'file' && e.name.endsWith('.md'));
+  const results = [];
+  for (const e of entries) {
+    try {
+      writeRef(path.join(DOCS_DIR, e.name), await fetchUrl(e.download_url), e.download_url);
+      results.push(true);
+    } catch (err) {
+      console.error(`  ⚠ ${e.name}: ${err.message}`);
+      results.push(false);
+    }
+    await new Promise((r) => setTimeout(r, 80));
+  }
+  const readmeUrl = `https://raw.githubusercontent.com/${REPO}/${pin.tag}/README.md`;
+  try {
+    writeRef(path.join(DOCS_DIR, 'README.md'), await fetchUrl(readmeUrl), readmeUrl);
+    results.push(true);
+  } catch (e) {
+    console.error(`  ⚠ README: ${e.message}`);
+    results.push(false);
+  }
+  return results;
+}
+
 module.exports = {
   parsePinnedVersion, normalizeVersion, parseCommandTree, parseSubcommands, filenameForCommand,
 };
