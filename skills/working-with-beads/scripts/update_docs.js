@@ -176,6 +176,39 @@ async function fetchRepoDocs(pin) {
   return results;
 }
 
+// ---------- main ----------
+
+async function main() {
+  if (!fs.existsSync(PINNED_VERSION_FILE)) throw new Error(`Missing ${PINNED_VERSION_FILE}`);
+  const pin = parsePinnedVersion(fs.readFileSync(PINNED_VERSION_FILE, 'utf8'));
+  if (!pin.tag) throw new Error('PINNED_VERSION must define tag=');
+  fs.mkdirSync(REFERENCES_DIR, { recursive: true });
+  console.log(`🚀 working-with-beads updater (bd=${pin.bd} tag=${pin.tag})`);
+
+  generateCliRef(pin); // graceful skip handled inside
+  const docResults = await fetchRepoDocs(pin);
+
+  if (docsChanged) {
+    setSkillLastUpdated(SKILL_MD, RUN_NOW.slice(0, 10));
+    console.log('📅 Stamped SKILL.md last_updated');
+  }
+
+  const failed = docResults.filter((r) => !r).length;
+  const ratio = docResults.length ? failed / docResults.length : 1;
+  if (docResults.length === 0 || ratio > FAILURE_THRESHOLD) {
+    console.error(`❌ doc-fetch failure ratio ${(ratio * 100).toFixed(0)}% exceeds threshold`);
+    process.exit(1);
+  }
+  console.log('✅ Done.');
+}
+
+if (require.main === module) {
+  main().catch((e) => {
+    console.error('❌', e.message);
+    process.exit(1);
+  });
+}
+
 module.exports = {
   parsePinnedVersion, normalizeVersion, parseCommandTree, parseSubcommands, filenameForCommand,
 };
