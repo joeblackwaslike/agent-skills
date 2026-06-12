@@ -78,6 +78,8 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `vscode-extension-builder-lawvable` | Building VS Code extensions |
 | `agent-instructions` | Creating CLAUDE.md, AGENTS.md, GEMINI.md, or other AI instruction files at any scope level (user/global, project, subdirectory) — includes cookbook templates for Python, TypeScript, monorepo, and agent/MCP projects |
 | `domain-driven-design` | Modeling a business domain or backend architecture — DDD (strategic + tactical), CQRS, event sourcing, aggregates, value objects, bounded contexts, hexagonal/clean architecture; framework-agnostic examples in TypeScript and Python |
+| `working-with-vercel-ai-sdk` | Working with the Vercel AI SDK (`ai` package) — generateText/streamText, generateObject, embeddings, tools, agents (ToolLoopAgent), UI hooks (useChat), RSC, providers, migrations; comprehensive offline docs from ai-sdk.dev |
+| `authoring-agent-skills` | Creating or maintaining a skill in this repo — naming taxonomy (working-with-X / developing-X / topic), SKILL.md frontmatter, the doc-fetching cookbook (llms.txt / sitemap / curated-list), the `scripts/lib/doc-frontmatter.cjs` freshness helpers, Makefile/CI auto-discovery, and the registration checklist |
 
 ## Common Workflows
 
@@ -100,3 +102,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 **GitHub Actions CI/CD:** `working-with-github-actions` for workflow syntax, cookbook patterns, action versions, and OIDC deployments.
 
 **Domain modeling / backend architecture:** `domain-driven-design` for strategic + tactical DDD, CQRS, event sourcing, and where each pattern earns (or doesn't earn) its cost — with complete TypeScript and Python examples.
+
+**Vercel AI SDK development:** `working-with-vercel-ai-sdk` for offline ai-sdk.dev docs (core, UI, RSC, agents, providers, cookbook) — grep `references/` by topic; falls back to live Markdown pages for anything newer.
+
+**Authoring a new skill in this repo:** `authoring-agent-skills` for the naming taxonomy, the doc-fetching cookbook (how to wrap a tool's docs via llms.txt/sitemap), the freshness-metadata conventions, and the registration checklist — then `skill-creator` for generic description/triggering quality.

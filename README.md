@@ -9,6 +9,7 @@ A plugin bundling custom skills for Claude Code, Codex CLI, Gemini CLI, and Anti
 
 ```
 agent-skills:agent-instructions
+agent-skills:authoring-agent-skills
 agent-skills:best-practices-for-agentic-development
 agent-skills:devcontainers
 agent-skills:developing-claude-code-plugins
@@ -30,4 +31,5 @@ agent-skills:working-with-gemini
 agent-skills:working-with-github-actions
 agent-skills:working-with-opencode
 agent-skills:working-with-pieces
+agent-skills:working-with-vercel-ai-sdk
 ```
