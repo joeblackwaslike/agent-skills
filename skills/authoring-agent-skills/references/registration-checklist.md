@@ -11,7 +11,19 @@ What to touch after the skill's files exist, so it's discoverable, auto-updated,
 
 ## 2. `README.md`
 
-Add the skill to the README's skills listing so the repo's public docs include it. Match the existing format (the README mirrors the AGENTS.md skill list).
+Add the skill to the README's `## Skills` listing so the repo's public docs include it. **Easy to forget — skills have drifted out of this list before.** The list is a flat, alphabetically-sorted code block of `agent-skills:<name>` entries; add yours in the correct alphabetical slot:
+
+```text
+agent-skills:<skill-name>
+```
+
+Confirm the README matches the `skills/` directory exactly (catches both the just-added skill and any earlier drift):
+
+```bash
+diff <(grep -oE 'agent-skills:[a-z-]+' README.md | sed 's/agent-skills://' | sort) <(ls -1 skills/ | sort)
+```
+
+No output = in sync.
 
 ## 3. `Makefile` (doc-wrappers only)
 
@@ -61,4 +73,5 @@ Use the `marketplace-publishing` skill for the versioning rules (semantic versio
 1. `make list-update-scripts` — your fetch script appears (doc-wrappers); a topic skill adds nothing.
 2. `make update-<skill-name>` (doc-wrappers) — fetches, writes `references/`, and stamps `last_updated` on first run.
 3. Every `references/*.md` path the `SKILL.md` links to exists (no dangling links).
-4. Skill triggers: load the skill and confirm the `description` fires on its intended phrases (optionally via `skill-creator` eval).
+4. `README.md` matches `skills/` exactly (the `diff` in step 2 prints nothing).
+5. Skill triggers: load the skill and confirm the `description` fires on its intended phrases (optionally via `skill-creator` eval).
