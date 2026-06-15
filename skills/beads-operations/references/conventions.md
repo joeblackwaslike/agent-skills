@@ -76,9 +76,38 @@ Dolt needs a git repo (it uses git for commit history). So:
 ```sh
 git init                              # Dolt requires a git repository
 bd init --shared-server --skip-agents # join the shared server on 3308
+bd hooks install                      # REQUIRED: init does NOT install them
 ```
 
 If you skip `git init`, server startup fails with "not in a git repository" — see [`troubleshooting.md`](troubleshooting.md).
+
+### Always run `bd hooks install` after init
+
+`bd init` in this shared-server flow does **not** install the git sync hooks
+(`post-checkout`/`post-merge`/`pre-commit`/`pre-push`/`prepare-commit-msg`). Without
+them, the Dolt DB and the tracked `interactions.jsonl` drift across branches and never
+auto-sync — every branch switch becomes a "commit the `.beads/` churn first" chore.
+`bd hooks install` is idempotent; run it once per repo after init. Verify with `bd hooks list`.
+
+### Husky repos: hooks land in a gitignored dir — make them durable
+
+If the repo uses **Husky** (e.g. anything scaffolded by create-ts-project — check
+`git config core.hooksPath`, usually `.husky/_`), `bd hooks install` writes its
+integration into `.husky/_/<hook>`. That directory is **husky-generated and gitignored**,
+so husky **regenerates it on every `pnpm install`/`prepare`, wiping the beads block** —
+the hooks silently stop firing. Husky's runner already execs the *tracked* `.husky/<hook>`
+files, so put the beads call there instead (durable + committed):
+
+```sh
+# .husky/post-merge, .husky/post-checkout, .husky/pre-push, .husky/prepare-commit-msg
+command -v bd >/dev/null 2>&1 && bd hooks run <hookname> "$@" || true
+# .husky/pre-commit: keep the existing gate, then add the beads line (non-fatal)
+#   pnpm lint-staged
+#   command -v bd >/dev/null 2>&1 && bd hooks run pre-commit "$@" || true
+```
+
+Non-fatal (`|| true`) so a beads hiccup never blocks a commit/merge/checkout; keep the
+real lint/test gate (`lint-staged`) fatal.
 
 ## See also
 
