@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/contexts.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "973c90862193943a128c6f4ff88df6737b98d01647c772015d4dcc9939fccaa7"
+---
+
 ## Available contexts
 
 | Context name | Type | Description |

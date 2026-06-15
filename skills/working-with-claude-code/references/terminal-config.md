@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/terminal-config.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "a1e41a5439a7c85b4391e068cebfd4bb293bfcd1f15d126fe6b0a0ce9b26bba3"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

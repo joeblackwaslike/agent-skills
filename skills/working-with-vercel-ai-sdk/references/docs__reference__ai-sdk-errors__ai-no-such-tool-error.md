@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-tool-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4bc68a1199731e73999bae01f81b6a6703a5b3aa225f09b4f4fce5b9629f0a5f"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "5b260605da89befd13600ac852764563d31ecd59f5079e6a00b64487e4e11ef9"
 ---
 
 # AI_NoSuchToolError
@@ -38,6 +38,7 @@ if (NoSuchToolError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

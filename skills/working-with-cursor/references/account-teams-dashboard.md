@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/account/teams/dashboard.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "470f667602c5a3b3352b3abd393dedae311625ab3d568b44e024cac8adc285a9"
+---
+
 # Dashboard
 
 The dashboard lets you access billing, set up usage-based pricing, and manage your Team.
@@ -18,7 +24,7 @@ Configure team-wide preferences and security settings. The settings page include
 
 ### Privacy Settings
 
-Control data sharing preferences for your team. Configure zero data retention policies with AI providers (OpenAI, Anthropic, Google Vertex AI, xAi Grok) and manage team-wide privacy enforcement.
+Control data sharing preferences for your team. Configure whether your data can be used for training, and manage team-wide privacy enforcement.
 
 ### Usage-Based Pricing Settings
 

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/README.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "37b3270d3fc0095e754040bae4484c95eb4fc4d825a30323c0897abcd3ea0c21"
+---
+
 <p align="center"><strong>Codex CLI</strong> is a coding agent from OpenAI that runs locally on your computer.
 <p align="center">
   <img src="https://github.com/openai/codex/blob/main/.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" />

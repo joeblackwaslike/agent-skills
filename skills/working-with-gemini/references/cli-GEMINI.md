@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/cli/GEMINI.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "0493bdb65816b925112eb8d9ce7e64bfc08e29b9c488c644a629fc9bca17773e"
+---
+
 ## React & Ink (CLI UI)
 
 - **Side Effects**: Use reducers for complex state transitions; avoid `setState`

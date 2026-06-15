@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cloud-agent/setup.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "3d7a7d57e690c9c24920ac1b0389837705dbd1d3cbf2cb4446ad4167ac732f70"
+---
+
 # Cloud Environment Setup
 
 Cloud agents run on isolated Ubuntu machines. Configure the environment so the agent has the same repos, tools, dependencies, secrets, and network access a developer would use.
@@ -198,7 +204,7 @@ Cursor supports assuming customer-provided IAM roles for deeper integration with
 
 2. **Configure the IAM role secret**: Navigate to [Cursor Dashboard → Cloud Agents](https://cursor.com/dashboard?tab=cloud-agents), and add a user or team secret named `CURSOR_AWS_ASSUME_IAM_ROLE_ARN` set to the ARN of the IAM role you created.
 
-3. **Generate an external ID**: Navigate to [Cursor Dashboard → Settings](https://cursor.com/dashboard?tab=settings) and find the External ID settings. If you don't see an external ID displayed, enter a placeholder value in the "AWS IAM Role ARN" field, click "Validate & Save", and reload the page. This will generate an external ID for your team (e.g. `cursor-xxx-yyy-zzz`).
+3. **Generate an external ID**: A team admin must do this from the **Advanced** section of team settings. Navigate to [Cursor Dashboard → Settings → Advanced](https://cursor.com/dashboard?tab=settings) and find the External ID settings. If you don't see an external ID displayed, enter a placeholder value in the "AWS IAM Role ARN" field, click "Validate & Save", and reload the page. This will generate an external ID for your team (e.g. `cursor-xxx-yyy-zzz`).
 
 4. **Configure IAM role trust policy**: In your AWS account, update the IAM role's trust policy to trust Cursor's role assumer. The trust policy should look like this:
 

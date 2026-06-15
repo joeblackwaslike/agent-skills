@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/themes.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a9e0ea7b69f472039ac22f969f9bf646f8c3152b966fed40e902a15326066c0d"
+---
+
 # Themes
 
 Gemini CLI supports a variety of themes to customize its color scheme and

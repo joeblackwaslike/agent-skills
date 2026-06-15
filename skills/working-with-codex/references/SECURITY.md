@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/SECURITY.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "a71f3645c5438400bf803a210cae829a07b5319ac1babe289badad7d1091af3a"
+---
+
 # Security Policy
 
 Thank you for helping us keep Codex secure!

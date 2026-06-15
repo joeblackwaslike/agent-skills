@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/cli/src/commands/extensions/examples/mcp-server/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "25cc1a65ba305b04bfa9df29249cff8de4a4cabf78a70fbd77b54eadd105b022"
+---
+
 # MCP Server Example
 
 This is a basic example of an MCP (Model Context Protocol) server used as a

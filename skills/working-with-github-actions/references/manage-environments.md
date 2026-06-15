@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "5270f325e87f54d524ebd0fccfe47cb57bfe647473e65d7d9fdeb6ea86e093b9"
+---
+
 ## Prerequisites
 
 {% ifversion fpt %}

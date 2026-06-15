@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/model.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "11ab3a82c4e8212c693ef5f20c43ff82def58703563150ba127163fb10b9ac51"
+---
+
 # Gemini CLI model selection (`/model` command)
 
 Select your Gemini CLI model. The `/model` command lets you configure the model

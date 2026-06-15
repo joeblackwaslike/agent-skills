@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/deep-links.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "209d08339c5c305bf34902438260c5fa95b79a341122695d9492e5b2e8f5fb63"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

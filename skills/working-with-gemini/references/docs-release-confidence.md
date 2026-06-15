@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/release-confidence.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "0ca1f6c8e7377b711d833f3dfe3527dff55fc6ff9369500928f3a4b9b7a18880"
+---
+
 # Release confidence strategy
 
 This document outlines the strategy for gaining confidence in every release of

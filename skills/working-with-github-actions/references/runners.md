@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/github-hosted-runners.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "5356e416730717a5e2b539d41a3e5fc038fda457dec9b30236a22a3aabea561d"
+---
+
 {% ifversion ghes %}
 
 {% data reusables.actions.enterprise-github-hosted-runners %}

@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/legal-and-compliance.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "ce1c6374458d4cc95cac62f1fc0e0c22806c54108ce387387d0030b425af8272"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

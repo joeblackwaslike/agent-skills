@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/npm.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "2ee05cabd896a5e3bc9e37b57e3d5fd61e8cdf30a10baa746ca7e69ea41c86c3"
+---
+
 # Package overview
 
 This monorepo contains two main packages: `@google/gemini-cli` and

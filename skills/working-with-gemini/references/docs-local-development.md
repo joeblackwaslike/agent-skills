@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/local-development.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "c8fbe6d7e915aa50ceb337977d83bfa4221d6e02f43cf27b716b01f8aecd7a16"
+---
+
 # Local development guide
 
 This guide provides instructions for setting up and using local development

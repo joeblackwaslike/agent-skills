@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/session-management.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a14b362df736246a99019504996507dcca7d0af5715cb5321a5891bf79fbb0b5"
+---
+
 # Manage sessions and history
 
 Resume, browse, and rewind your conversations with Gemini CLI. In this guide,

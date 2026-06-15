@@ -3,6 +3,9 @@ name: docs-changelog
 description: >-
   Generates and formats changelog files for a new release based on provided
   version and raw changelog data.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/docs-changelog/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "accc09bf6dede29b607bf3d480c8a87ce2f3ec6aadd120a6433bb160ed9b02fa"
 ---
 
 # Procedure: Updating Changelog for New Releases

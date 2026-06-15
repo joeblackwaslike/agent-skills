@@ -1,6 +1,18 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "b9bae34941dedb6d43d14eb968c2c3361547876c8aa85a23abf0708e7a108777"
+---
+
 - To regenerate the JavaScript SDK, run `./packages/sdk/js/script/build.ts`.
 - The default branch in this repo is `dev`.
 - Local `main` ref may not exist; use `dev` or `origin/dev` for diffs.
+
+## Branch Names
+
+Use a short branch name of at most three words, separated by hyphens. Do not use slashes or type prefixes such as `feat/` or `fix/`.
+
+Examples: `session-recovery`, `fix-scroll-state`, `regenerate-sdk`.
 
 ## Commits and PR Titles
 

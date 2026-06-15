@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/imagegen/references/sample-prompts.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "43307821f1db18e06be50189a078f3e1ccc3ee6b5523934614e22e64d27597ab"
+---
+
 # Sample prompts (copy/paste)
 
 These prompt recipes are shared across both top-level modes of the skill:

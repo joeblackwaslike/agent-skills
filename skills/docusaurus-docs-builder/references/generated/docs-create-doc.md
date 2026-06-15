@@ -1,8 +1,8 @@
 ---
 title: "Create Docs"
 source: "https://docusaurus.io/docs/create-doc"
-fetched_at: "2026-06-08T05:39:45.139Z"
-sha256: "0bcce8c982766c327f4b598a579558f7326ff64bc668c21ccf47b3a84ca36288"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "65a3bbc9b952819fc074994d0a6d58e00158defae16a8200aa56f79402c5a8c2"
 ---
 
 # Create Docs

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/workflow-syntax.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "6dadf0ad89f1f99f39fe07e49a5b3496a9b12bd83bd5f76133d4591d00954468"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## About YAML syntax for workflows

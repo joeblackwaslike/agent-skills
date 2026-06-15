@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-when-workflows-run/control-jobs-with-conditions.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "24324a5407ecde9def32f6265e5f2b1c49b894156b08e74c3780638042266842"
+---
+
 You can use the `jobs.<job_id>.if` conditional to prevent a job from running unless a condition is met. {% data reusables.actions.if-supported-contexts %}
 
 ### Example: Only run job for a specific repository

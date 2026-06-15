@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/ide-integration/ide-companion-spec.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "b3a75285f3dc8836a1df837ff631515d39781f9dfdec47613261e984d77434a0"
+---
+
 # Gemini CLI companion plugin: Interface specification
 
 > Last Updated: September 15, 2025

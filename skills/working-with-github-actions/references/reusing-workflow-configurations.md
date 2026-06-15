@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/reusing-workflow-configurations.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "edf1997a75084a0c00d162ddc2223b4b610d2180c9fb5f31ef5d0d91dcc9bd0a"
+---
+
 ## Reusable workflows
 
 Reference information for reusable workflows.

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/extensions/releasing.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "94b07a2ac657790e8b8094452f19bbfcc156e1e595fccc5ee15f9b5852742dfe"
+---
+
 # Release extensions
 
 Release Gemini CLI extensions to your users through a Git repository or GitHub

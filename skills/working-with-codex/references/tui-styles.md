@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/tui/styles.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "e9fd1c7fadf305028537782242afdd2104db9b0d2d1cc0ce7da03f7aceed1af9"
+---
+
 # Headers, primary, and secondary text
 
 - **Headers:** Use `bold`. For markdown with various header levels, leave in the `#` signs.

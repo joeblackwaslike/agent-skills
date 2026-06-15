@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/docs/config.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "745768b4da6cd73e414fc49c5c6ef3d6bf8a0c08289fab23a7dd79776ab31d9d"
+---
+
 # Configuration
 
 For basic configuration instructions, see [this documentation](https://developers.openai.com/codex/config-basic).

@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/observability.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "84e993136ddb73fd8a8d6443e834d4b829e5083e50d550603691416e83b6b98d"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

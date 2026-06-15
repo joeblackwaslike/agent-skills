@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/integrations/github.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "c76cf9d7bdec8ff0abb7f9611861712cce4f88ff72b92cfe63c76ba7ee65fe1b"
+---
+
 # GitHub
 
 The Cursor GitHub app connects your repositories so you can use features like [Cloud Agents](https://cursor.com/docs/cloud-agent.md) and [Bugbot](https://cursor.com/docs/bugbot.md).
@@ -23,6 +29,7 @@ To disconnect your GitHub account, return to the integrations dashboard and clic
 
 - Running a supported version of GitHub Enterprise Server (v3.8 or later recommended)
 - Admin privileges on your GHES instance
+- Cursor team admin access (required to see the GitHub Enterprise registration option in the dashboard)
 
 ### Networking
 
@@ -55,7 +62,7 @@ The proxy should allow authenticated GitHub API requests from Cursor without blo
 
 ### Register the Cursor Enterprise App
 
-1. Go to [Integrations in the dashboard](https://cursor.com/dashboard/integrations) → **Advanced** → **GitHub Enterprise Server**
+1. Go to [Integrations in the dashboard](https://cursor.com/dashboard/integrations). In the **Source Control** section, find the **GitHub Enterprise** row (listed under GitHub) and click **Manage apps**.
 2. Enter the **base URL** of your GHES instance (e.g., `https://git.yourcompany.com`)
 3. Enter the name of the **Organization** that will own the application
    - This should be your company's Organization inside your GHES installation

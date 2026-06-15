@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/gemini-3.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "c8912d310b801f86e8b59f00e35dfbb439e49f66538aad39605f12ef1bebc0f0"
+---
+
 # Gemini 3 Pro and Gemini 3 Flash on Gemini CLI
 
 Learn about how you can use Gemini 3 Pro and Gemini 3 Flash on Gemini CLI.

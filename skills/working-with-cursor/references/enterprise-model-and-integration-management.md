@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/enterprise/model-and-integration-management.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "3344cac7a3a3f55546753a356798ed11f211c63acd030924ac8c792840583a02"
+---
+
 # Model and Integration Management
 
 Your team can access multiple AI models and integrate Cursor with various services. This documentation covers how to control which models are available, manage MCP server trust, and set up integrations with tools like Slack, GitHub, and Linear.

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/perf-tests/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "6f98c38420141667f5f5fb250fb490f8e4e0e5ebc8abc0c6e532f2c22c9b02c6"
+---
+
 # CPU Performance Integration Test Harness
 
 ## Overview

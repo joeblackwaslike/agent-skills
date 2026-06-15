@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/behavioral-evals/references/fixing.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "ad6ac40abdfca450a40960eca42de746e7d27dd8c880e4526603e93e7c7d7ee9"
+---
+
 # Fixing Behavioral Evals
 
 Use this guide when asked to debug, troubleshoot, or fix a failing behavioral

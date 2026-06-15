@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/string-reviewer/references/word-list.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "6e2bfb2223a18d34417b4a7cdc63eb35a7101477b247355607bb995781f3c1c9"
+---
+
 ## Terms
 
 ### Preferred

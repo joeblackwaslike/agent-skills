@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/core/GEMINI.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "cc468f1b903a87e812fa3863214478166fc919d6155700fc85e8925bd6b370d3"
+---
+
 # Gemini CLI Core (`@google/gemini-cli-core`)
 
 Backend logic for Gemini CLI: API orchestration, prompt construction, tool

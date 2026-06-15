@@ -1,5 +1,8 @@
 ---
 description: "Bump AI sdk dependencies minor / patch versions only"
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/ai-deps.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "31bbd0ff021af312fe1dcc80943a266bdb282f0b2d5b176f372ea30098c6f2be"
 ---
 
 Please read @package.json and @packages/opencode/package.json.

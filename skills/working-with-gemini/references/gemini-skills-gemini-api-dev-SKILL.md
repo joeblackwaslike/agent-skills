@@ -1,6 +1,9 @@
 ---
 name: gemini-api-dev
 description: Use this skill when building applications with Gemini API hosted models, including Gemini and Gemma 4, working with multimodal content (text, images, audio, video), implementing function calling, using structured outputs, or needing current model specifications. Covers SDK usage (google-genai for Python, @google/genai for JavaScript/TypeScript, com.google.genai:google-genai for Java, google.golang.org/genai for Go), model selection, and API capabilities.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-api-dev/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "21bbac1bd36430f12af75ac4223ef18271905ee51c3bb522cd918bb7679542fe"
 ---
 
 # Gemini API Development Skill

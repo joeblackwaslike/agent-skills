@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/reuse-automations/reuse-workflows.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "a7cb95c90d7c32a4317d08af36e3149a33b3fe1a4ed210054c426c3e6a2bbbde"
+---
+
 ## Creating a reusable workflow
 
 Reusable workflows are YAML-formatted files, very similar to any other workflow file. As with other workflow files, you locate reusable workflows in the `.github/workflows` directory of a repository. Subdirectories of the `workflows` directory are not supported.

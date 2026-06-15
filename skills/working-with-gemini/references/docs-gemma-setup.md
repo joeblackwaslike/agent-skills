@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/gemma-setup.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "39a8e3db8f99a0f72a9e926d92254ad16c10f3d1e57a3007ba135f67493dc6ed"
+---
+
 # `gemini gemma` — Automated Local Model Routing Setup
 
 Local model routing uses a local Gemma 3 1B model running on your machine to

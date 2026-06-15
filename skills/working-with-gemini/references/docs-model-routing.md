@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/model-routing.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "7e7cc3785ea30a59481d155c6f3c09299b1fa13d57fb982b555852c5bd960141"
+---
+
 # Model routing
 
 Gemini CLI includes a model routing feature that automatically switches to a

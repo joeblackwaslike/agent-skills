@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/self-hosted-runners.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "0eb0a24d5864e93810f0c07205b1e677807d864988e713f1b637a58f575d4f09"
+---
+
 ## Requirements for self-hosted runner machines
 
 You can use a machine as a self-hosted runner as long as it meets these requirements:

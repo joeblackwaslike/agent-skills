@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-video-generated-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "53b7b288c696e16dbdc1cabb103159904d01b29aa174c8bf0382fd3fa8bed471"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "59f5eede124a781dc5d92d1f03c69037cb258165c82753969b3aa428a0614366"
 ---
 
 # AI_NoVideoGeneratedError
@@ -51,6 +51,7 @@ try {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

@@ -1,8 +1,8 @@
 ---
 title: "Markdown Assets"
 source: "https://docusaurus.io/docs/markdown-features/assets"
-fetched_at: "2026-06-08T05:39:46.039Z"
-sha256: "acdcd1d0f920f2e8b1fa90099c51d79c860f99900b5f0771b3e26829b7fc8029"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "89e36547a67be32b3575908636337b6eae408bf5b4eca68c785f20ef9ee33491"
 ---
 
 # Markdown Assets

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/SECURITY.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "d6ba9f6d1cf81794f35b600c309f40655287168e3ecc8093169c0c16578c2cf0"
+---
+
 # Reporting Security Issues
 
 To report a security issue, please use [https://g.co/vulnz](https://g.co/vulnz).

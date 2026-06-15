@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-06-08
+Last updated: 2026-06-15
 
 ## GitHub Official
 
@@ -42,7 +42,7 @@ Last updated: 2026-06-08
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `aws-actions/configure-aws-credentials` | `v6.2.0` | `uses: aws-actions/configure-aws-credentials@v6.2.0` |
-| `aws-actions/amazon-ecr-login` | `v2.1.5` | `uses: aws-actions/amazon-ecr-login@v2.1.5` |
+| `aws-actions/amazon-ecr-login` | `v2.1.6` | `uses: aws-actions/amazon-ecr-login@v2.1.6` |
 | `google-github-actions/auth` | `v3` | `uses: google-github-actions/auth@v3` |
 | `google-github-actions/setup-gcloud` | `v3.0.1` | `uses: google-github-actions/setup-gcloud@v3.0.1` |
 | `azure/login` | `v3.0.0` | `uses: azure/login@v3.0.0` |

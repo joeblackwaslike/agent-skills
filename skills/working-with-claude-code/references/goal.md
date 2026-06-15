@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/goal.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "33e2de6e0f25631098f27c266d622b3d7d5676f513dd45d1f2d259cfa1fd1fed"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

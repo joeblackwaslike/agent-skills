@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/perf/test-suite.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "6593aae516c08917b90c1615a03bc0fd139af7c2c9832f3011648f5d9928778d"
+---
+
 # Test Suite Speed
 
 ## Goal

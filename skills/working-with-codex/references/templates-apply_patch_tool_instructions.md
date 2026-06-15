@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/apply_patch_tool_instructions.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "061ad07965f437292a604be2518a6fe445c19324946f9e827fffa0a3e8695d94"
+---
+
 ## `apply_patch`
 
 Use the `apply_patch` shell command to edit files.

@@ -3,6 +3,9 @@ name: string-reviewer
 description: >
   Use this skill when asked to review text and user-facing strings within the codebase. It ensures that these strings follow rules on clarity,
   usefulness, brevity and style.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/string-reviewer/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "ce71381401c436417251936181af2d1da635fb80fa82432d295d1f2c9d73499d"
 ---
 
 # String Reviewer

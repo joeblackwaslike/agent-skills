@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/tos-privacy.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "522e2c6fc73f4d736c13118e4ef1bd4e9ce48b2562ec385bac4c53d145b2c073"
+---
+
 # Gemini CLI: License, Terms of Service, and Privacy Notices
 
 Gemini CLI is an open-source tool that lets you interact with Google's powerful

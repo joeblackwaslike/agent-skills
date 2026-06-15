@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/memories/write/templates/memories/consolidation.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "1450e24f84c03375aa5114c6c0857f515395129dcc00f65263221d03866852a0"
+---
+
 ## Memory Writing Agent: Phase 2 (Consolidation)
 
 You are a Memory Writing Agent.

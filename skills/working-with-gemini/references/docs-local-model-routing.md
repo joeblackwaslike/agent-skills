@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/local-model-routing.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a0746424a484dbcb0952db3c775d6e0b30399a3f3837b7f36a306ea4c8ee62ed"
+---
+
 # Manual Local Model Routing Setup (experimental)
 
 Gemini CLI supports using a local model for

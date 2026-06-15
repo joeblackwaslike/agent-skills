@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/github_token.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "5c99defc0fdaa3d1993c643b95e38ff5b4135ef5cd077a0abaf0b3696724c218"
+---
+
 ## About the `GITHUB_TOKEN`
 
 At the start of each workflow job, {% data variables.product.prodname_dotcom %} automatically creates a unique `GITHUB_TOKEN` secret to use in your workflow. You can use the `GITHUB_TOKEN` to authenticate in the workflow job.

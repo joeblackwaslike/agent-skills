@@ -1,8 +1,8 @@
 ---
 title: "Language Model API"
 source: "https://code.visualstudio.com/api/extension-guides/language-model"
-fetched_at: "2026-06-08T05:39:51.133Z"
-sha256: "9777ecd161f0b7ac34bcf25a6c0fbdf21afd7ee1af8055a75893c84cdc5e07e9"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "d63c548df0848f1fef6aab265414d38c73262680ef580bd24181566b8a97b70f"
 ---
 
 # Language Model API
@@ -98,7 +98,7 @@ if (models.length === 0) {
 
 **Important**: Copilot's language models require consent from the user before an extension can use them. Consent is implemented as an authentication dialog. Because of that, `selectChatModels` should be called as part of a user-initiated action, such as a command.
 
-After you select a model, you can send a request to the language model by invoking the [sendRequest](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChat) method on the model instance. You pass the [prompt](https://code.visualstudio.com/api/extension-guides/language-model#_build-the-language-model-prompt) you crafted earlier, along with any additional options, and a cancellation token.
+After you select a model, you can send a request to the language model by invoking the [sendRequest](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChat) method on the model instance. You pass the [prompt](https://code.visualstudio.com/api/extension-guides/language-model#build-the-language-model-prompt) you crafted earlier, along with any additional options, and a cancellation token.
 
 When you make a request to the Language Model API, the request might fail. For example, because the model doesn't exist, or the user didn't give consent to use the Language Model API, or because quota limits are exceeded. Use `LanguageModelError` to distinguish between different types of errors.
 
@@ -264,4 +264,4 @@ Once you have created your AI extension, you can publish your extension to the V
 - [Build a VS Code chat extension](https://code.visualstudio.com/api/extension-guides/ai/chat)
 
  
- 6/3/2026
+ 6/10/2026

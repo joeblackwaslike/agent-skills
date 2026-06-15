@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/ROADMAP.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "197dd4820090bdaf995da1a522226fa4216318db1ff5b12944d022b88a0c4f3d"
+---
+
 # Gemini CLI Roadmap
 
 The

@@ -1,8 +1,8 @@
 ---
 title: "Bundling Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/bundling-extension"
-fetched_at: "2026-06-08T05:39:49.732Z"
-sha256: "f7a6314d894c606d6616a5bcf778107e6a92644269b248b1b069af12b144cccc"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "3df8c9851052c1faac1991a64a33e892ea41995d902e4527e22bdad33fd0d647"
 ---
 
 # Bundling Extensions
@@ -185,9 +185,9 @@ To not forget that, add a `.vscode/extensions.json` file to the workspace:
 }
 ```
 
-Finally, you will want to update your `.vscodeignore` file so that compiled files are included in the published extension. Check out the [Publishing](https://code.visualstudio.com/api/working-with-extensions/bundling-extension#_publishing) section for more details.
+Finally, you will want to update your `.vscodeignore` file so that compiled files are included in the published extension. Check out the [Publishing](https://code.visualstudio.com/api/working-with-extensions/bundling-extension#publishing) section for more details.
 
-Jump down to the [Tests](https://code.visualstudio.com/api/working-with-extensions/bundling-extension#_tests) section to continue reading.
+Jump down to the [Tests](https://code.visualstudio.com/api/working-with-extensions/bundling-extension#tests) section to continue reading.
 
 ## Using webpack
 
@@ -282,7 +282,7 @@ In the sample above, the following are defined:
 
 - The `externals` configuration is used to declare exclusions, for example files and modules that should not be included in the bundle. The `vscode` module should not be bundled because it doesn't exist on disk but is created by VS Code on-the-fly when required. Depending on the node modules that an extension uses, more exclusion may be necessary.
 
-Finally, you will want to update your `.vscodeignore` file so that compiled files are included in the published extension. Check out the [Publishing](https://code.visualstudio.com/api/working-with-extensions/bundling-extension#_publishing) section for more details.
+Finally, you will want to update your `.vscodeignore` file so that compiled files are included in the published extension. Check out the [Publishing](https://code.visualstudio.com/api/working-with-extensions/bundling-extension#publishing) section for more details.
 
 ### Run webpack
 
@@ -402,4 +402,4 @@ To address the warning, you should either:
 - [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration) - Learn how to run extension CI builds on Azure Pipelines.
 
  
- 6/3/2026
+ 6/10/2026

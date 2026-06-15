@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cloud-agent/self-hosted-pool.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "9871e0e9cf32a012f50c44638e08f57f0b338d0cb25b8f25edd0b7d43c582553"
+---
+
 # Self-Hosted Pool
 
 Self-Hosted Pool is for Enterprise teams that want Cloud Agents to run inside company-managed infrastructure. Instead of each developer starting a worker on a personal machine, admins operate a pool of workers that can be assigned to agents across the organization.
@@ -426,7 +432,7 @@ The `cursor_self_hosted_worker_session_ends_total` counter includes a `reason` l
 
 **Outbound-only.** Workers connect outbound over HTTPS. No inbound ports or firewall changes required.
 
-**Privacy mode.** Self-hosted Cloud Agents respect Cursor's [privacy mode](/data-use), which enables zero data retention across all model providers. None of your code is stored or used for training.
+**Privacy mode.** Self-hosted Cloud Agents respect Cursor's [Privacy Mode settings](/data-use). When Privacy Mode is enabled, none of your code is used for training.
 
 **Isolation.** Each agent session gets its own dedicated worker. Sessions are not shared across workers.
 

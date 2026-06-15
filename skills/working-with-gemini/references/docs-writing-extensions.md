@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/extensions/writing-extensions.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "f298c787f9ba4173fd288fab86d1686c2982e7dda5e1651ca93435fea91d986f"
+---
+
 # Build Gemini CLI extensions
 
 Gemini CLI extensions let you expand the capabilities of Gemini CLI by adding

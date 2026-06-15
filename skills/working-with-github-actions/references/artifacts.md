@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/workflow-artifacts.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "278de1c94fbfc083b9989edcaeda8aca31381174b93b966c7a9300bd1fe1f704"
+---
+
 ## About workflow artifacts
 
 An artifact is a file or collection of files produced during a workflow run. Artifacts allow you to persist data after a job has completed, and share that data with another job in the same workflow. For example, you can use artifacts to save your build and test output after a workflow run has ended.

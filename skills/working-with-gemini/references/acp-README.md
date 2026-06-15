@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/cli/src/acp/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "6977e64f4a7712244b23060022d526a3d1b93502fc564a648ff20b861953e841"
+---
+
 # Agent Client Protocol (ACP) Implementation
 
 This directory contains the implementation of the Agent Client Protocol (ACP)

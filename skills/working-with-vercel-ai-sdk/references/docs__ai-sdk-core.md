@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "53a64ff91376092cb0e6428276896a1bbfaf459ff12220f58e9fc25dfa849d78"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
 ---
 
 # AI SDK Core
@@ -265,6 +265,7 @@ sha256: "53a64ff91376092cb0e6428276896a1bbfaf459ff12220f58e9fc25dfa849d78"
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

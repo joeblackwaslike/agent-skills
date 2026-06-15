@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/issue-and-pr-automation.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "faf0360d6e7e8c6d48cbe1b80f712e22e02e8961daf36f517b3a85e79b4a35a9"
+---
+
 # Automation and triage processes
 
 This document provides a detailed overview of the automated processes we use to

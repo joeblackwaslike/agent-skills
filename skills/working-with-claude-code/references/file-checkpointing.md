@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/file-checkpointing.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "1f8256a7ac59bfec971e6f67e3166437b63a8df006eb8406221280b2ae9798a4"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

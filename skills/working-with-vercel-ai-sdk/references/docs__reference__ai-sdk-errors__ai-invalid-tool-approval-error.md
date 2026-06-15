@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "35f8f4d375af6a567e0409d911d0e56157772fa62ca177f724901ae227d2b9ed"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "9c689d01b90a2effe73d1ecd645fd82250640496570b9b7b66406401bd7626ae"
 ---
 
 # AI_InvalidToolApprovalError
@@ -36,6 +36,7 @@ if (InvalidToolApprovalError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

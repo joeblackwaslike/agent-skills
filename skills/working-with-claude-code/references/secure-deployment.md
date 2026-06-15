@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/secure-deployment.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "2a461c7caf4cc2d5352db78389442e8f99fff389c4d4d28a2074eec0095457cf"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/compromised-runners.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "ee0daa1ca11811618992dec557b89876521b0ef61220ddb05cf6e12c848d5085"
+---
+
 ## Potential impact of a compromised runner
 
 These sections consider some of the steps an attacker can take if they're able to run malicious commands on a {% data variables.product.prodname_actions %} runner.

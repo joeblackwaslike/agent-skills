@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-resources.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "afd0283a49c6f585a6f43885f39fdd833aa543b8b0e12356facc3ead49c9d237"
+---
+
 # MCP resource tools
 
 MCP resource tools let Gemini CLI discover and retrieve data from contextual

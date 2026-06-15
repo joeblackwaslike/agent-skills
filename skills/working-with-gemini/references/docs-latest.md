@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/changelogs/latest.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "f262d9122add2d7f8fe45053dac009cd79c68180e663179a509adb1ab8d76ed0"
+---
+
 # Latest stable release: v0.45.0
 
 Released: June 03, 2026

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-google-cloud-platform.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "177da699b6e5e096abfe511c603240db0b9e4c463c85d3f5ce7d9aa3881a2f13"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## Overview
@@ -13,6 +19,8 @@ This guide gives an overview of how to configure GCP to trust {% data variables.
 {% data reusables.actions.oidc-security-notice %}
 
 {% data reusables.actions.oidc-on-ghecom %}
+
+For repositories created after July 15, 2026, and repository renames or transfers after that date, use an immutable default OIDC `sub` claim that includes owner and repository IDs (not available on {% data variables.product.prodname_ghe_server %}). Existing repositories keep the previous format unless they opt in. For more information, see [AUTOTITLE](/actions/reference/openid-connect-reference#immutable-subject-claims).
 
 {% ifversion ghes %}
 {% data reusables.actions.oidc-endpoints %}

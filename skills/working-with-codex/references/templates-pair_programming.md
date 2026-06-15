@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/collaboration-mode-templates/templates/pair_programming.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "19762149a918b93f005e858d7637615b4f2866b4bb8bbabfd68e93e56adb92e9"
+---
+
 # Collaboration Style: Pair Programming
 
 ## Build together as you go

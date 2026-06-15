@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/model-steering.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "81817458cdae634a539ada9539b95fce258289502aa226422eab7bbd8f9df545"
+---
+
 # Model steering (experimental)
 
 Model steering lets you provide real-time guidance and feedback to Gemini CLI

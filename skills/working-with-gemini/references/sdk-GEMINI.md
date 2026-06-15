@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/sdk/GEMINI.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "098786bbdeef91780f77eae01e8f373dfdfa1998b62dc268cae392e4da2931ae"
+---
+
 # Gemini CLI SDK (`@google/gemini-cli-sdk`)
 
 Programmatic SDK for embedding Gemini CLI agent capabilities into other

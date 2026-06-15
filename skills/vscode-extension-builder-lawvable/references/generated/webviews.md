@@ -1,8 +1,8 @@
 ---
 title: "Webviews"
 source: "https://code.visualstudio.com/api/extension-guides/webview"
-fetched_at: "2026-06-08T05:39:50.160Z"
-sha256: "a4adb61b3dd5261dcf5cabfe7f6e8b8619eaa53492055426f370174f8f2ecde7"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "4333f9984531e7b3a0aed5f57f99bc65e7e54dcdb0d743ce6e70074325343e46"
 ---
 
 # Webviews
@@ -528,7 +528,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 To disallow all local resources, just set `localResourceRoots` to `[]`.
 
-In general, webviews should be as restrictive as possible in loading local resources. However, keep in mind that `localResourceRoots` does not offer complete security protection on its own. Make sure your webview also follows [security best practices](https://code.visualstudio.com/api/extension-guides/webview#_security), and add a [content security policy](https://code.visualstudio.com/api/extension-guides/webview#_content-security-policy) to further restrict the content that can be loaded.
+In general, webviews should be as restrictive as possible in loading local resources. However, keep in mind that `localResourceRoots` does not offer complete security protection on its own. Make sure your webview also follows [security best practices](https://code.visualstudio.com/api/extension-guides/webview#security), and add a [content security policy](https://code.visualstudio.com/api/extension-guides/webview#content-security-policy) to further restrict the content that can be loaded.
 
 ### Theming webview content
 
@@ -686,7 +686,7 @@ Sometimes it can be useful to show a menu on left/primary click. For example, to
 
 Webviews are just like iframes, which means that they can also run scripts. JavaScript is disabled in webviews by default, but it can easily re-enable by passing in the `enableScripts: true` option.
 
-Let's use a script to add a counter tracking the lines of source code our cat has written. Running a basic script is pretty simple, but note that this example is only for demonstration purposes. In practice, your webview should always disable inline scripts using a [content security policy](https://code.visualstudio.com/api/extension-guides/webview#_content-security-policy):
+Let's use a script to add a counter tracking the lines of source code our cat has written. Running a basic script is pretty simple, but note that this example is only for demonstration purposes. In practice, your webview should always disable inline scripts using a [content security policy](https://code.visualstudio.com/api/extension-guides/webview#content-security-policy):
 
 
 ```
@@ -1020,13 +1020,13 @@ Example values that must be sanitized:
 
 Consider using a helper library to construct your HTML strings, or at least ensure that all content from the user's workspace is properly sanitized.
 
-Never rely on sanitization alone for security. Make sure to follow the other security best practices, such as having a [content security policy](https://code.visualstudio.com/api/extension-guides/webview#_content-security-policy) to minimize the impact of any potential content injections.
+Never rely on sanitization alone for security. Make sure to follow the other security best practices, such as having a [content security policy](https://code.visualstudio.com/api/extension-guides/webview#content-security-policy) to minimize the impact of any potential content injections.
 
 ## Persistence
 
-In the standard webview [lifecycle](https://code.visualstudio.com/api/extension-guides/webview#_lifecycle), webviews are created by `createWebviewPanel` and destroyed when the user closes them or when `.dispose()` is called. The contents of webviews however are created when the webview becomes visible and destroyed when the webview is moved into the background. Any state inside the webview will be lost when the webview is moved to a background tab.
+In the standard webview [lifecycle](https://code.visualstudio.com/api/extension-guides/webview#lifecycle), webviews are created by `createWebviewPanel` and destroyed when the user closes them or when `.dispose()` is called. The contents of webviews however are created when the webview becomes visible and destroyed when the webview is moved into the background. Any state inside the webview will be lost when the webview is moved to a background tab.
 
-The best way to solve this is to make your webview stateless. Use [message passing](https://code.visualstudio.com/api/extension-guides/webview#_passing-messages-from-a-webview-to-an-extension) to save off the webview's state and then restore the state when the webview becomes visible again.
+The best way to solve this is to make your webview stateless. Use [message passing](https://code.visualstudio.com/api/extension-guides/webview#passing-messages-from-a-webview-to-an-extension) to save off the webview's state and then restore the state when the webview becomes visible again.
 
 ### getState and setState
 
@@ -1166,4 +1166,4 @@ If you'd like to learn more about VS Code extensibility, try these topics:
 - [Extension Capabilities](https://code.visualstudio.com/api/extension-capabilities/overview) - Take a look at other ways to extend VS Code.
 
  
- 6/3/2026
+ 6/10/2026

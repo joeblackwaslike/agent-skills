@@ -1,6 +1,9 @@
 ---
 name: review-duplication
 description: Use this skill during code reviews to proactively investigate the codebase for duplicated functionality, reinvented wheels, or failure to reuse existing project best practices and shared utilities.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/review-duplication/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "79952fb123e43328ef8ee83a6d20da57966036b90cf00e484aeca03a11bebf0a"
 ---
 
 # Review Duplication

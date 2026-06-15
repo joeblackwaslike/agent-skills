@@ -1,6 +1,9 @@
 ---
 name: gemini-interactions-api
 description: Use this skill when writing code that calls the Gemini API for text generation, multi-turn chat, multimodal understanding, image generation, streaming responses, background research tasks, function calling, structured output, or migrating from the old generateContent API. This skill covers the Interactions API, the recommended way to use Gemini models and agents in Python and TypeScript.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-interactions-api/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "94d6dcda5e8f1730eaa632e9452daea119eb9ed9b9cc22aa582ee87bf98aec0e"
 ---
 
 # Gemini Interactions API Skill

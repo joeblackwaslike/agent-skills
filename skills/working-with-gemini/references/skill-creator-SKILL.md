@@ -1,6 +1,9 @@
 ---
 name: skill-creator
 description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Gemini CLI's capabilities with specialized knowledge, workflows, or tool integrations.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/core/src/skills/builtin/skill-creator/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "b84f6b905f3bb45a9db6fd977927e128aaf46de0301ed9439414da06f05d22c8"
 ---
 
 # Skill Creator

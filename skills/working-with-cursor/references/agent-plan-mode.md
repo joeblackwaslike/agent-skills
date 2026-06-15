@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/plan-mode.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "7735fd1b71f5d6bb4316369d79d577318ae97208d7edc9860eb47b596ca883b8"
+---
+
 # Plan Mode
 
 Plan Mode creates detailed implementation plans before writing any code. Agent researches your codebase, asks clarifying questions, and generates a reviewable plan you can edit before building.

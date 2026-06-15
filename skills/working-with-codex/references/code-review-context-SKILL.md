@@ -1,6 +1,9 @@
 ---
 name: code-review-context
 description: Model visible context
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/code-review-context/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "0af80b6388ccd525f8e78a57bf878b117cb57e2f611186f017633d3141a445bb"
 ---
 
 Codex maintains a context (history of messages) that is sent to the model in inference requests.

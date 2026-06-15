@@ -1,6 +1,9 @@
 ---
 name: remote-tests
 description: How to run tests using remote executor.
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/remote-tests/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "03891a22c1dfdda2c4d66690dfccb77ff1f27ee802af18ae81020943b03fb807"
 ---
 
 Some codex integration tests support a running against a remote executor.

@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/models/gemini-3-1-pro.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "0073856bcc0449b47c17c6dfa63dfb3699e72cba8e5e38b04504b91ce2fbb993"
+---
+
 Gemini 3.1 Pro is Google's latest model. It processes images alongside code, making it strong for UI/UX work from design mockups. The context window stretches to 1M tokens in Max Mode for whole-codebase analysis.
 
 ## Strengths

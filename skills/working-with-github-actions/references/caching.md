@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/dependency-caching.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "533de60279d4483dae82729741c96e5b5e7b7149d538b9b49a6aa24b6945b23a"
+---
+
 ## About workflow dependency caching
 
 Workflow runs often reuse the same outputs or downloaded dependencies from one run to another. For example, package and dependency management tools such as Maven, Gradle, npm, and Yarn keep a local cache of downloaded dependencies.

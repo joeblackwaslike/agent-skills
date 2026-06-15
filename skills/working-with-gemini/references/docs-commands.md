@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/commands.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "367252e2da387fb0c896bfbf07cf3c3bb52abf4bc5541bd91b3fb83f0106fd17"
+---
+
 # CLI commands
 
 Gemini CLI supports several built-in commands to help you manage your session,

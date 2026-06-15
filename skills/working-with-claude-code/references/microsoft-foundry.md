@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/microsoft-foundry.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "bfd2d9462375a5e6bc5e05513a428cf70846e599be63f0599e3c2e86e6cf2265"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

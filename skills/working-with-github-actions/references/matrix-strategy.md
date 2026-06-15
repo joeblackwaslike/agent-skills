@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "ca551c710203ba5cd6c6b8d39e8f309bb284e46efd6b8b19301cbd1c2bc36f64"
+---
+
 ## About matrix strategies
 
 {% data reusables.actions.jobs.about-matrix-strategy %}

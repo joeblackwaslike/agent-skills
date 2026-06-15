@@ -1,5 +1,8 @@
 ---
 description: use whenever you are styling a ui with css
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/.opencode/agent/css.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "2e17787bad0dc54a8775209128ab5c0a4fc631d2e9fd3cada724f141e1c12c09"
 ---
 
 you are very good at writing clean maintainable css using modern techniques

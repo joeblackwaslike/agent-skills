@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/integration-tests.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "1939abc1f2b7aedbc7184132a1467cbc929cf3b674856a478357a5b051b4ed06"
+---
+
 # Integration tests
 
 This document provides information about the integration testing framework used

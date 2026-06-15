@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/tools.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "84f3d310f53dcaa2e4e7a437aac67f5a3db5370e5c064380568844fe69e385b6"
+---
+
 # Tools reference
 
 Gemini CLI uses tools to interact with your local environment, access

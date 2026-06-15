@@ -1,8 +1,8 @@
 ---
 title: "Markdown Diagrams"
 source: "https://docusaurus.io/docs/markdown-features/diagrams"
-fetched_at: "2026-06-08T05:39:46.939Z"
-sha256: "7a015314679e0555506fafed63971a6fafcca4b2ca3a7eae37d711bde9ab98e8"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "c6e8f507db369575594ecc793b7c7df2a4814fd0e93b0f34689dada7ac76ace6"
 ---
 
 # Markdown Diagrams

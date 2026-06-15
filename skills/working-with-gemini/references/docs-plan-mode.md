@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/plan-mode.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "81ca2ea403d1cb8eb7c4941f8d446d56a8d49e97ab5af400c24dfd11be1d55b3"
+---
+
 # Plan Mode
 
 Plan Mode is a read-only environment for architecting robust solutions before

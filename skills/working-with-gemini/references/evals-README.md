@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/evals/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "469db149508ca0e2efdf8b8195347afea9c16ea5c8170e727bcedd9edab1e0d3"
+---
+
 # Behavioral Evals
 
 Behavioral evaluations (evals) are tests designed to validate the agent's

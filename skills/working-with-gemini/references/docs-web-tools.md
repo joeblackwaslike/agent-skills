@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/web-tools.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "72b60e4b4a2b99e3b33230c4e496e5fec0ff9424d0145bc447dc6c257197d8c2"
+---
+
 # Web search and fetch
 
 Access the live internet directly from your prompt. In this guide, you'll learn

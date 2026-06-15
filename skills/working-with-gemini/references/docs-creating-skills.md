@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/creating-skills.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "244e992d0a504bf54e92679291d30fdbe6a2e98f960a19bcb75ee928e3960385"
+---
+
 # Creating Agent Skills
 
 Agent Skills let you extend Gemini CLI with specialized expertise, procedural

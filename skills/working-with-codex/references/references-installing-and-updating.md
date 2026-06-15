@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/plugin-creator/references/installing-and-updating.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "b030517fe05b12dda71babe2890656d7c6db6a0111797e1d20d208804427276d"
+---
+
 # Updating Existing Local Plugins
 
 Use this reference when a plugin already exists and the request is about updating the plugin during 

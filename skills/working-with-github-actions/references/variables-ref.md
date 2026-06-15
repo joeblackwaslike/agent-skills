@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/variables.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "d176720bbdbe16d8dac69d6aa0e08dbc0f50e3256c3765ef1bfd7e1aaafa7d10"
+---
+
 This article lists the supported variables you can use in {% data variables.product.prodname_actions %} workflows, including environment variables, configuration variables, and default variables provided by {% data variables.product.github %}. Use this reference to look up variable names, naming conventions, limits, and supported contexts when configuring your workflows.
 
 For more information about variables, see [AUTOTITLE](/actions/concepts/workflows-and-actions/variables).

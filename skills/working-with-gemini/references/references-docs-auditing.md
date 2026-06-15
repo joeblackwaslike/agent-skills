@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/docs-writer/references/docs-auditing.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "5f965450047b0b2311f526334af7c23ae5d8854fd7d408026eea7305d4cef406"
+---
+
 # Procedural Guide: Auditing the Docset
 
 This guide outlines the process for auditing the Gemini CLI documentation for

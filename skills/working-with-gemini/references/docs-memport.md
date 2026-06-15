@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/memport.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "eb2737b49776e97e5b967114c50150d42d7c45606c0fbccc24b9bc8d8ab6da11"
+---
+
 # Memory Import Processor
 
 The Memory Import Processor is a feature that lets you modularize your GEMINI.md

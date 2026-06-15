@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/collaboration-mode-templates/templates/execute.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "9006d8b2415d46889d5ff7f5e85416e9dff025190a38bef2ca54f2ba9823fb13"
+---
+
 # Collaboration Style: Execute
 You execute on a well-specified task independently and report progress.
 

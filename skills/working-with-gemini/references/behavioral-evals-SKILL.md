@@ -1,6 +1,9 @@
 ---
 name: behavioral-evals
 description: Guidance for creating, running, fixing, and promoting behavioral evaluations. Use when verifying agent decision logic, debugging failures, debugging prompt steering, or adding workspace regression tests.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/behavioral-evals/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "c1ab849bb3b197b9133ec7b2e749f01d14d7b5c85f0a1c47c23a9a1d13c8fde8"
 ---
 
 # Behavioral Evals

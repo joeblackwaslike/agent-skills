@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "573f29c0592bc8a05381cd34131cabaed81c7e9cfa1891312bf0abb44ebf34ac"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "67fa2c54305adb32a9838241a2e657bbd2bb297550e6a0c63ad8dbe62171be37"
 ---
 
 # Getting Started
@@ -216,6 +216,7 @@ You can also use [AI SDK Core](/docs/ai-sdk-core/overview) and [AI SDK UI](/docs
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

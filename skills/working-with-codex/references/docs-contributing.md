@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/docs/contributing.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "463d14dae054fa70db91381a15321f0e121dade50557166c1bf1b56e34231a26"
+---
+
 ## Contributing
 
 **External contributions are by invitation only**

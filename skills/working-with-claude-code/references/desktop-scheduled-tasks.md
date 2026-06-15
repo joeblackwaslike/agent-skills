@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/desktop-scheduled-tasks.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "d09f4a7060da4301e4624558c9335ae8ad74c66b20b6e12cf02bfc4b1c248d68"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

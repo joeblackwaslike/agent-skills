@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/behavioral-evals/references/running.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "7a6203d9d546b95ceec5b40d14c4ba47d1db4886ac97fcdadf31aa933a8af2ed"
+---
+
 # Running & Promoting Evals
 
 ## 🛠️ Prerequisites

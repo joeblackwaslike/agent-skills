@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/memory.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "0b06aae2faac361b5b34ab0e372b64c3898c75334f8867b44154cb6f0dbdaa84"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -381,7 +387,7 @@ Claude reads and writes memory files during your session. When you see "Writing 
 
 ### Audit and edit your memory
 
-Auto memory files are plain markdown you can edit or delete at any time. Run [`/memory`](#view-and-edit-with-memory) to browse and open memory files from within a session.
+Auto memory files are plain markdown you can edit or delete at any time. Run [`/memory`](#view-and-edit-with-%2Fmemory) to browse and open memory files from within a session.
 
 ## View and edit with `/memory`
 

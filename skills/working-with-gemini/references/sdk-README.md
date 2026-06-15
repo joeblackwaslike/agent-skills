@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/sdk/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "7b0a525f099a7a4b717baf31ae83e191d58c01d8384e033988c6639043558054"
+---
+
 # @google/gemini-cli-sdk
 
 The Gemini CLI SDK provides a programmatic interface to interact with Gemini

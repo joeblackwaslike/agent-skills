@@ -4,6 +4,9 @@ description:
   Use this skill when asked to create a GitHub issue. It handles different issue
   types (bug, feature, etc.) using repository templates and ensures proper
   labeling.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/github-issue-creator/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "298aa6043c40b23807313a87f9952f439264c0359096f5c1deaf3ffaf57b5636"
 ---
 
 # GitHub Issue Creator

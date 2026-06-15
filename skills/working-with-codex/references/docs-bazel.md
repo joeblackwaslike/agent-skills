@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/docs/bazel.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "afc6c9dc9e74136ccec146cb6fb85c6d3957e4ce71bc3e4b6a51a33cd4e1ffe4"
+---
+
 # Bazel in codex-rs
 
 This repository uses Bazel to build the Rust workspace under `codex-rs`.

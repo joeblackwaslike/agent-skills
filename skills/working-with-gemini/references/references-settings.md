@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/string-reviewer/references/settings.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "4c6ea34bfd466c6661c4b4b48f1ee6a45e37e724202c5cbdc5d08b81b4538ae1"
+---
+
 # Settings
 
 ## Noun-First Labeling (Scannability)

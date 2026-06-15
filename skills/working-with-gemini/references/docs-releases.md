@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/releases.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "0dd32ebb612cbf4d0aef4ab25db5321912ceec4aefa175eb73f89bece90bd349"
+---
+
 # Gemini CLI releases
 
 <!-- prettier-ignore -->

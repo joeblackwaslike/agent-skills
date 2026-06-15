@@ -1,6 +1,9 @@
 ---
 name: memory
 description: Expertise in maintaining persistent bot memory, synchronizing with previous sessions via the Task Ledger, and preserving decision logs.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/.gemini/skills/memory/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "0d62e0b3bfc0af3d15fac471fa404939b20b8963e45c1cfacd483d77db36d645"
 ---
 
 # Skill: Memory & State Management

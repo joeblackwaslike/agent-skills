@@ -1,8 +1,8 @@
 ---
 title: "Docs Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs"
-fetched_at: "2026-06-08T05:39:47.620Z"
-sha256: "44e9d4ed4a2abd1aba42cc2da3f0940ee59eeb55be7fe41dc4cda3108131114e"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "156074bef7b2e1b0aa1679182da83cda696966cb4c3912d8d2684e9e17bf30c9"
 ---
 
 # Docs Plugin

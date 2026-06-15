@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/remote-agents.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "8dd736d4ad31ffdb3ef8736746da31935b00fffaa37de07408827bf36d6fc2aa"
+---
+
 # Remote Subagents
 
 Gemini CLI supports connecting to remote subagents using the Agent-to-Agent

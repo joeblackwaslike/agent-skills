@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/babysit-pr/references/heuristics.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "6da7e334fa16a3cd4d022e996e819c0285e5ffde37ff83a5c3b7a907c6848c07"
+---
+
 # CI / Review Heuristics
 
 ## CI classification checklist

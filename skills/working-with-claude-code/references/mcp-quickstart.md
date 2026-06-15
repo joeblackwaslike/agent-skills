@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/mcp-quickstart.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "4214a47baf5ed15cdc22b19bc261ba73873b82c1e6dff0515d4d32ecb56d64db"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

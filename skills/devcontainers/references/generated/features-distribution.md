@@ -1,8 +1,8 @@
 ---
 title: "Features distribution"
 source: "https://containers.dev/implementors/features-distribution/"
-fetched_at: "2026-06-08T05:39:43.446Z"
-sha256: "e2b16c1652c28013716b2edfabf01ba6a1cfceba538ef39f77f5dfe6279d82f7"
+fetched_at: "2026-06-15T05:52:46.055Z"
+sha256: "9fcecb6f74c714b6aeea5fa215965d9a2d96637585d9463f36aa3cdef9831d50"
 ---
 
 # Features distribution

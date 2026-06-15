@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/src/session/llm/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "f1c14f72f12e42b5683cd1a021cb7b1c46b92f30d0c0986940655420b99172f4"
+---
+
 # Session LLM Runtime Boundaries
 
 `../llm.ts` is the opencode session LLM service. It owns opencode concerns: auth, config, model/provider resolution, plugins, permissions, telemetry headers, and runtime selection. It is the only file in this area that should know about the full session request shape.

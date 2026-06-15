@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/examples/proxy-script.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "365fdeb71a8baf51b4793df6ab9a71e5fe6e6a99a5f2372c8660d0525352e8ba"
+---
+
 # Example proxy script
 
 The following is an example of a proxy script that can be used with the

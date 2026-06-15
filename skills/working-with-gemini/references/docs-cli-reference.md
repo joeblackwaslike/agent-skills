@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/cli-reference.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "ec376db5857fe8dda715ce38575370c33aa03390925b2d7024f0642021525545"
+---
+
 # Gemini CLI cheatsheet
 
 This page provides a reference for commonly used Gemini CLI commands, options,

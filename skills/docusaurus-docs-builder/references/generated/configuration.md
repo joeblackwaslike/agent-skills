@@ -1,8 +1,8 @@
 ---
 title: "Configuration"
 source: "https://docusaurus.io/docs/configuration"
-fetched_at: "2026-06-08T05:39:44.989Z"
-sha256: "78d0454f5c44512fcaef8903229ad795c85fe5f2192dd7e6ee0e76070b711fe8"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "404e7132fa4592c532487bdf2a65cbe3f6501aefe36f5bc242eeccdb7dddfe44"
 ---
 
 # Configuration

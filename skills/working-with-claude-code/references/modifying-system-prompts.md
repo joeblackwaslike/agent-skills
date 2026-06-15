@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "b08c10581e193c9ef18ad5c1ca46997529c82de82c26012a229279372521798d"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/subagents.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "a73d2bb65e9548a7040c6266656fb5c55806784cfd946cc7111aca08d2dc3507"
+---
+
 # Subagents
 
 Subagents are specialized AI assistants that Cursor's agent can delegate tasks to. Each subagent operates in its own context window, handles specific types of work, and returns its result to the parent agent. Use subagents to break down complex tasks, do work in parallel, and preserve context in the main conversation.

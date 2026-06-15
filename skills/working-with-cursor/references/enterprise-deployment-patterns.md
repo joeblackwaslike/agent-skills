@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/enterprise/deployment-patterns.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "e38539a797fc7df6e532c93c933365c2388296c1ccfcec9399ba8d06d58a292d"
+---
+
 # Deployment Patterns
 
 This guide covers how to deploy the Cursor editor and CLI tools to developer machines in your organization. Most organizations deploy both the editor (for daily development work) and the CLI (for automation, CI/CD, and scripting).

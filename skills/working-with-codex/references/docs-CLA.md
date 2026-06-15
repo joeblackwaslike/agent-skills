@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/docs/CLA.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "3c3fc352c13db113d079a637f338e696e2dc47af53bae3394cf8fb8de6daa562"
+---
+
 # Individual Contributor License Agreement (v1.0, OpenAI)
 
 _Based on the Apache Software Foundation Individual CLA v 2.2._

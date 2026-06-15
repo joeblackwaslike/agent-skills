@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/permissions/approval_policy/on_request.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "85541a9738741407642b3c39bbe3781fbf8bb42f628d50e562c87738ab192b3a"
+---
+
 # Escalation Requests
 
 Commands are run outside the sandbox if they are approved by the user, or match an existing rule that allows it to run unrestricted. The command string is split into independent command segments at shell control operators, including but not limited to:

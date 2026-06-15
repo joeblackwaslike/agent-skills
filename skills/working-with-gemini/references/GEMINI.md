@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/GEMINI.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "74dab8e16a1ac9ea84d061a61944eab80b2991412daf02ab98e319ea61f49688"
+---
+
 # Gemini CLI Project Context
 
 Gemini CLI is an open-source AI agent that brings the power of Gemini directly

@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/analytics.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "533c247f0998fbf1865a1f56fd400f9c4e5b4f795c3fdc05736ac6407d4c6fe9"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

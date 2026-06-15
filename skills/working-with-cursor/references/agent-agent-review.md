@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/agent-review.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "ca27ca033c0d14178c5d8cc091e7c0efb1a6aa7d697307183a35adf6edaec048"
+---
+
 # Agent Review
 
 Agent Review runs a dedicated code review on your local changes from inside Cursor.

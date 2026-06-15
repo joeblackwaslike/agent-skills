@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/using-agent-skills.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "17ba498a64dd181f9cb74e1039b06c4e8940cc17bb0970e275c318acaad5bc41"
+---
+
 # Managing Agent Skills
 
 Agent Skills provide Gemini CLI with specialized expertise on demand. This guide

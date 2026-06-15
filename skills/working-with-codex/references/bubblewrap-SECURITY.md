@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/vendor/bubblewrap/SECURITY.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "15927261f07466f2e2481a9d25903de27841dee3454d457229bc0ccf3067ecd6"
+---
+
 ## Security and Disclosure Information Policy for the bubblewrap Project
 
 The bubblewrap Project follows the [Security and Disclosure Information Policy](https://github.com/containers/common/blob/HEAD/SECURITY.md) for the Containers Projects.

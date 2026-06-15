@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/llm/example/call-sites.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "f2daa73cc24dedf24d82674817c5429ffc11949f257a561e69f3b9a8470af9e8"
+---
+
 # LLM Call Site Sketches
 
 Scratchpad for examples first, abstractions second. Current direction: routes

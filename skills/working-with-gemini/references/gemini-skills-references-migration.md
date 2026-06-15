@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-interactions-api/references/migration.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "2f5bd52c8394d6b0a00b29c591238c789dcf3c0f3f2e6716e555e849a5fa79fe"
+---
+
 # Migration Reference
 
 How to migrate existing Gemini API code to the Interactions API and/or upgrade between model generations. Covers the agent workflow for performing migrations safely.

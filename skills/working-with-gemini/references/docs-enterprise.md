@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/enterprise.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "8067aedee867aa5499136dd79879cacb12a742500ac0f364f763f85b5818530a"
+---
+
 # Gemini CLI for the enterprise
 
 This document outlines configuration patterns and best practices for deploying

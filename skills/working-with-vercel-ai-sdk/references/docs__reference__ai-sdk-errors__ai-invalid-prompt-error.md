@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-prompt-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "43299eb345d826da7c0639fd8964ab58402555dbfc50219793cfb1c75bf29563"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "eff1498536c2d9db954dd4c6f71d0acec4b86429e3ac01b50a3d090afb26818f"
 ---
 
 # AI_InvalidPromptError
@@ -59,6 +59,7 @@ if (InvalidPromptError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

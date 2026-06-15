@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/templates/search_tool/request_plugin_install_description.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "e5acd502e83f3a6a9d20c53bcb521633a8df8c654ceb08da63db5aefb35e1f66"
+---
+
 # Request plugin/connector install
 
 Use this tool only to ask the user to install one known plugin or connector from the list below. The list contains known candidates that are not currently installed.

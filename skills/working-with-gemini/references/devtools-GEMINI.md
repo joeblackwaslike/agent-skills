@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/devtools/GEMINI.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "4ae767284da9847359b4b7aa56325afe93fa1f20b00f3b4be8bafd38296e415d"
+---
+
 # Gemini CLI DevTools
 
 Integrated Developer Tools for Gemini CLI, providing a Chrome DevTools-like

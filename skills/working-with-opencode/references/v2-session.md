@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/session.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "1211ead86b26c2956968032e94d1a1d48c67306ca330390b0226600c231bcff8"
+---
+
 # Session API
 
 ## Current V2 Core Slice

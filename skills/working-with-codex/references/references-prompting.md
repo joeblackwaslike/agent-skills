@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/imagegen/references/prompting.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "a88c459a0306051535d1b68eb899925f08a175cbbcd07d72a9d0c43f330cb81f"
+---
+
 # Prompting best practices
 
 These prompting principles are shared by both top-level modes of the skill:

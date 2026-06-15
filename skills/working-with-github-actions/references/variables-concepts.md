@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/variables.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "c62ef7038b383dbc54595abcfa0b246384bd1bac9503ded16c548d9cff4b8569"
+---
+
 ## About
 
 Variables provide a way to store and reuse non-sensitive configuration information. You can store any configuration data such as compiler flags, usernames, or server names as variables. Variables are interpolated on the runner machine that runs your workflow. Commands that run in actions or workflow steps can create, read, and modify variables.

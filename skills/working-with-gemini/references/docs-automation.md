@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/automation.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a5e815ce9cafc808f92a05dc92672b2c553edd1aae395ea873c1abfd41268ebd"
+---
+
 # Automate tasks with headless mode
 
 Automate tasks with Gemini CLI. Learn how to use headless mode, pipe data into

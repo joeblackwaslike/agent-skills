@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cloud-agent.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "d5552f8ebc85dce1e70e04642b8e26a5123fdd515701ec27fd511c22068eafdf"
+---
+
 # Cloud Agents
 
 Cloud agents use the same [agent fundamentals](https://cursor.com/learn/agents.md) but run in isolated VMs in the cloud with full development environments instead of on your local machine. The development environment is similar to the setup on your laptop: cloned repos, installed dependencies, secrets, startup commands, and network access.

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/test/server/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "043b38ac4568efae5818b7a2724624dfa6b8400ecc5b7413e3868f2fd64aa27f"
+---
+
 # Server Test Guide
 
 Use these patterns for server and HttpApi middleware tests in this directory.

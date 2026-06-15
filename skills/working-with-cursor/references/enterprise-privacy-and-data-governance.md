@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/enterprise/privacy-and-data-governance.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "c331c38c06e8e5d5ac9ef210614a2dc18bb2c08619b6fe79585c9e990bc3f3f6"
+---
+
 # Privacy and Data Governance
 
 Understanding how data flows through Cursor is critical for security reviews and compliance assessments. This documentation explains what data goes where, what guarantees you have, and where that data lives geographically.
@@ -28,16 +34,9 @@ The vector database never sees your raw code. It only stores mathematical repres
 
 ### 2. LLM requests
 
-When you use AI features, we send prompts and code context to language model providers like OpenAI, Anthropic, and Google.
+When you use AI features, we send prompts and code context to language model providers like OpenAI, Anthropic, and Google. If you are using Cursor's custom models (e.g. Composer), your data may also be processed by our inference providers. See our list of [sub-processors](https://trust.cursor.com/subprocessors).
 
-**With Privacy Mode enabled:**
-
-- Code is never stored by model providers
-- Code is never used for training
-- We maintain Zero Data Retention (ZDR) agreements with all providers
-
-**Zero Data Retention agreements:**
-We have contractual ZDR policies with OpenAI, Anthropic, Google Vertex AI, and xAI Grok. These agreements legally prevent providers from storing inputs or outputs or using your data for training.
+**With Privacy Mode enabled** your code is never used for training by Cursor or other AI model providers.
 
 Privacy Mode is on by default for Enterprise teams. See [Privacy Overview](https://cursor.com/privacy-overview) for details.
 
@@ -60,6 +59,14 @@ Cloud Agents are the only feature that requires Cursor to store code. Unlike the
 Cloud Agents are optional. If your security policy prohibits code storage, don't enable Cloud Agents. You can still use all other Cursor features.
 
 See [Cloud Agents](https://cursor.com/docs/cloud-agent.md) for details.
+
+## Models with data retention
+
+Most models run under Cursor's ZDR agreements, so providers don't store inputs or outputs or train on your data ([read more](https://cursor.com/data-use) about our data use policies). A few models require data retention with the provider and fall outside these agreements. For Enterprise customers, Teams with Privacy Mode enabled, and individual customers with Privacy Mode enabled, Cursor requires admin approval before use.
+
+[Claude Fable 5](https://cursor.com/docs/models/claude-fable-5.md) works this way. Anthropic stores its inputs and outputs to run automatic and human harm-prevention reviews. This data is not used for training or product improvement. For Enterprise customers and customers with Privacy Mode enabled, requests to Fable 5 fail until the model's data retention policy is approved from the [dashboard](https://cursor.com/dashboard/restricted_models/claude-fable-5). Opting in applies to the whole team. Enterprise admins can still limit which user groups can select the model with [model access control](https://cursor.com/docs/enterprise/model-and-integration-management.md#model-access-control).
+
+When a Fable 5 request trips one of its security guardrails, Cursor routes that request to Claude Opus automatically so your work continues.
 
 ## Privacy Mode enforcement
 

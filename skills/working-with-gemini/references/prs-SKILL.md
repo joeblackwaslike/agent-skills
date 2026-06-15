@@ -1,6 +1,9 @@
 ---
 name: prs
 description: Expertise in managing the Git and GitHub Pull Request lifecycle, including staging changes, generating PR descriptions, and branch management.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/.gemini/skills/prs/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "dace221f16d4fd6de4d8cd863a18a774fe536ba36985f1d50b51638dc0cfab20"
 ---
 
 # Skill: GitHub PR & Git Management

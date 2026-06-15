@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5f67f96ca02de958e9a58dffcb108bfbe2f2718b64871beaf84fa2f64074c39e"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "fbc698814b923fb0418fa2e72b6719ae011b6006d3d562d9343f3042bf272bca"
 ---
 
 # AI_TooManyEmbeddingValuesForCallError
@@ -39,6 +39,7 @@ if (TooManyEmbeddingValuesForCallError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

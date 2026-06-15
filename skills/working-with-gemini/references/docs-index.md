@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/index.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a99fc6bf1c1ba19c6de5fdfd6470982bd8746ad6d0153e8d07d96d3957921e5d"
+---
+
 # Gemini CLI documentation
 
 Gemini CLI brings the power of Gemini models directly into your terminal. Use it

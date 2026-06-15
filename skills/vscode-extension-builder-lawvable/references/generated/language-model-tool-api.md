@@ -1,17 +1,17 @@
 ---
 title: "Language Model Tool API"
 source: "https://code.visualstudio.com/api/extension-guides/tools"
-fetched_at: "2026-06-08T05:39:51.519Z"
-sha256: "3aa3c7767836bec09d17d53e6413affca227a32126c80ea531b9a42239b28864"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "eb9733dad9939f7bbc5e6e7396159c120571c7a2588b5a5f21abb53907972ccb"
 ---
 
 # Language Model Tool API
 
 Source: https://code.visualstudio.com/api/extension-guides/tools
 
-Language model tools enable you to extend the functionality of a large language model (LLM) in chat with domain-specific capabilities. To process a user's chat prompt, [agents](https://code.visualstudio.com/docs/chat/copilot-chat) in VS Code can automatically invoke these tools to perform specialized tasks as part of the conversation.
+Language model tools enable you to extend the functionality of a large language model (LLM) in chat with domain-specific capabilities. To process a user's chat prompt, [agents](https://code.visualstudio.com/docs/chat/chat-overview) in VS Code can automatically invoke these tools to perform specialized tasks as part of the conversation.
 
-By contributing a language model tool in your VS Code extension, you can extend the agentic coding workflow while also providing deep integration with the editor. Extension tools are one of three types of tools available in VS Code, alongside [built-in tools and MCP tools](https://code.visualstudio.com/docs/agents/agent-tools#_types-of-tools).
+By contributing a language model tool in your VS Code extension, you can extend the agentic coding workflow while also providing deep integration with the editor. Extension tools are one of three types of tools available in VS Code, alongside [built-in tools and MCP tools](https://code.visualstudio.com/docs/agents/concepts/tools#_types-of-tools).
 
 In this extension guide, you learn how to create a language model tool by using the Language Model Tools API and how to implement tool calling in a chat extension.
 
@@ -22,7 +22,7 @@ You can also extend the chat experience with specialized tools by contributing a
  
 
  Tip
- For information about using tools as an end user, see [Use tools in chat](https://code.visualstudio.com/docs/agents/agent-tools).
+ For information about using tools as an end user, see [Use tools in chat](https://code.visualstudio.com/docs/chat/chat-tools).
 
 ## What is tool calling in an LLM?
 
@@ -30,7 +30,7 @@ A language model tool is a function that can be invoked as part of a language mo
 
 The LLM never actually executes the tool itself, instead the LLM generates the parameters that are used to call your tool. It's important to clearly describe the tool's purpose, functionality, and input parameters so that the tool can be invoked in the right context.
 
-The following diagram shows the tool-calling flow in agent mode in VS Code. See [Tool-calling flow](https://code.visualstudio.com/api/extension-guides/tools#_tool-calling-flow) for details about the specific steps involved.
+The following diagram shows the tool-calling flow in agent mode in VS Code. See [Tool-calling flow](https://code.visualstudio.com/api/extension-guides/tools#tool-calling-flow) for details about the specific steps involved.
 
 Read more about [function calling](https://platform.openai.com/docs/guides/function-calling) in the OpenAI documentation.
 
@@ -54,7 +54,7 @@ You might consider implementing a language model tool with an [MCP server](https
 
 - You don't need access to VS Code APIs.
 
-Learn more about the [differences between tool types](https://code.visualstudio.com/docs/agents/agent-tools#_types-of-tools).
+Learn more about the [differences between tool types](https://code.visualstudio.com/docs/agents/concepts/tools#_types-of-tools).
 
 ## Create a language model tool
 
@@ -80,7 +80,7 @@ Property
 Description
 
 `name`
-The unique name of the tool, used to reference the tool in the extension implementation code. Format the name in the format `{verb}_{noun}`. See [naming guidelines](https://code.visualstudio.com/api/extension-guides/tools#_guidelines-and-conventions).
+The unique name of the tool, used to reference the tool in the extension implementation code. Format the name in the format `{verb}_{noun}`. See [naming guidelines](https://code.visualstudio.com/api/extension-guides/tools#guidelines-and-conventions).
 
 `displayName`
 The user-friendly name of the tool, used for displaying in the UI.
@@ -346,4 +346,4 @@ Get more best practices for creating tools in the [OpenAI documentation](https:/
 - [Use MCP tools in agent mode](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
 
  
- 6/3/2026
+ 6/10/2026

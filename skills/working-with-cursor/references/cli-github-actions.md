@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/github-actions.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "27d8163948b9a4c786f7c7179395f2e3dd0d9879b4c7c8123ef9e27baa22313e"
+---
+
 # GitHub Actions
 
 Use Cursor CLI in GitHub Actions and other CI/CD systems to automate development tasks.

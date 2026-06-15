@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/tools/search.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "9cb9a868f0461477a94f1edf97354034bae049ab5795fb879202b45dccad6f07"
+---
+
 # Semantic & agentic search
 
 Agent combines multiple search tools to find relevant code across your codebase. You describe what you're looking for in natural language, and Agent picks the right strategy.

@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/common-workflows.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "c5375cc0f8d983fe2da468d638d105e2b9213eceb5cb2c131aae59f32e25acc1"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

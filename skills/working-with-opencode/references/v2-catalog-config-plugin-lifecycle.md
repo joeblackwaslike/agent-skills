@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/catalog-config-plugin-lifecycle.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "c799915c4ce1bf10bee41189b5788211ce513d3660aab6219e82519016335d97"
+---
+
 # Catalog / Config / Plugin Lifecycle Options
 
 Status: current core has selected replayable Location-scoped Catalog transforms, aligned with option B. Reload/watch behavior and deferred external plugin activation remain design work; the option comparison below is retained as historical context.

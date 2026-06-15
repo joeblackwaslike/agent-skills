@@ -1,8 +1,8 @@
 ---
 title: "Markdown Admonitions"
 source: "https://docusaurus.io/docs/markdown-features/admonitions"
-fetched_at: "2026-06-08T05:39:46.539Z"
-sha256: "e329a037bd620148f0e32986863d614d7ea45bbf0e8322db43c1db5e6925512f"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "ca67e7b1adfc5a4b20c6d44ddc3fb12f933b0840c44fd92c1acc48c2937a2ae8"
 ---
 
 # Markdown Admonitions

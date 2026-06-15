@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/introduction.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bde531f394505472f8116883552e5d828aae6045f8921da606f68dc9a1c05dce"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "88b55b0e9a12aa218af66dec30747cddd201fc76ea4b7c1c1db781947be0087e"
 ---
 
 # AI SDK
@@ -248,6 +248,7 @@ Based on the above documentation, answer the following:
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

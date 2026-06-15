@@ -4,6 +4,9 @@ description:
   Use this skill to review code. It supports both local changes (staged or working tree)
   and remote Pull Requests (by ID or URL). It focuses on correctness, maintainability,
   and adherence to project standards.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/code-reviewer/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "d2bd763e7cfa424845c54639d4a97cdb0aa03b5eedeabb1d171a16086584cec9"
 ---
 
 # Code Reviewer

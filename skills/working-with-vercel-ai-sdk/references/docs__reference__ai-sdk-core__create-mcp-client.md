@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4b3c490a0ed83a05a14cd131379e19452c0b4f9d3b3ac9ffc27030b923f5e204"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "bf20802e096903247dbe47d072632f358cfda75840d98219e63ad6ef686f8a6b"
 ---
 
 # `createMCPClient()`
@@ -107,7 +107,7 @@ It currently does not support accepting notifications from an MCP server, and cu
                       type: 'OAuthClientProvider',
                       isOptional: true,
                       description:
-                        'Optional OAuth provider for authorization to access protected remote MCP servers.',
+                        'Optional OAuth provider for authorization to access protected remote MCP servers. Implement `validateAuthorizationServerURL` on the provider to allowlist discovered OAuth authorization server URLs before metadata is fetched.',
                     },
                     {
                       name: 'redirect',

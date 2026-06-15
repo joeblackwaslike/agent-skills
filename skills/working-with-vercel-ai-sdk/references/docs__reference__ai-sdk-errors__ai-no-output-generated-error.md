@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-output-generated-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "79581435d8e539772089faae69751b23514651dd7837285e6b14f5549e5d2230"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "cac2ec45dfeb8ac561aba1c434d25d881a518c66484f258a37d7e37c01c0e3a4"
 ---
 
 # AI_NoOutputGeneratedError
@@ -37,6 +37,7 @@ if (NoOutputGeneratedError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

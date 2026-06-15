@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/rules.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "7dc7288dd2632f6aba7049761a1ffa9cc801a7a73f0b9c6c65fad4fbe1957906"
+---
+
 # Rules
 
 Rules provide system-level instructions to Agent. They bundle prompts, scripts, and more together, making it easy to manage and share workflows across your team.

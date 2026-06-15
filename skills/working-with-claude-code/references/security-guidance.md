@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/security-guidance.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "cba70f0391eca6c06e9c5d162324ef43bacef6b62c66234b2267d9d03d92db63"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

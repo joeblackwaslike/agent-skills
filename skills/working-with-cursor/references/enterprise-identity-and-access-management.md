@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/enterprise/identity-and-access-management.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "0056ecda7c0184844cae556ab8c505104c89b20c178713ddcfec6a3f0f557e72"
+---
+
 # Identity and Access Management
 
 Identity and access management controls who can use Cursor in your organization and what they can do. You'll set up authentication, automate user provisioning, and enforce policies through device management.

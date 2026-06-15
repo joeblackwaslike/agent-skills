@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/gemini-md.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "b84ac3ef9525bf7d1c4bfedea7e63c7d55f50ad04ce8948b8ac3740dd6ba4847"
+---
+
 # Provide context with GEMINI.md files
 
 Context files, which use the default name `GEMINI.md`, are a powerful feature

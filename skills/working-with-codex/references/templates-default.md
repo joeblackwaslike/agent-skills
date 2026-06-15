@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/collaboration-mode-templates/templates/default.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "94a6a72b8aaf0d597eac1aa59926c58a156dbca7573c1bf48f3d5ae8b80558d7"
+---
+
 # Collaboration Mode: Default
 
 You are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.

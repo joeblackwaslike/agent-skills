@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-server.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "4ab29862568ff4b8f1389ca068c653c0450da42f5048c59a0da776ca47798d12"
+---
+
 # MCP servers with Gemini CLI
 
 This document provides a guide to configuring and using Model Context Protocol

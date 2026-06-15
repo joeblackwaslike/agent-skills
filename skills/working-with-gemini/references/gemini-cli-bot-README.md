@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "587d62438bd2b91a0e63fc96b34e44f0aa17de979413505aabfa416e61354e04"
+---
+
 # Gemini CLI Bot (Cognitive Repository)
 
 This directory contains the foundational architecture for the `gemini-cli-bot`,

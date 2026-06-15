@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/gpt_5_codex_prompt.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "42842be69650ae563d212695e8d3f3591534908fd8ca33b63f742daf41f88b65"
+---
+
 You are Codex, based on GPT-5. You are running as a coding agent in the Codex CLI on a user's computer.
 
 ## General

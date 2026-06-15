@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/token-caching.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "0cd2b222377c8874b7cb4e52fc8f61e198643e716aea987855d0d4780ad54f12"
+---
+
 # Token caching and cost optimization
 
 Gemini CLI automatically optimizes API costs through token caching when using

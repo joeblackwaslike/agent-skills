@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/docs-changelog/references/highlights_examples.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "4644b8d51082f42398d410b0857e3fa00da366f0fea36397b5face4b8a13a5a4"
+---
+
 ## Highlights example 1
 
 - **Plan Mode Enhancements**: Significant updates to Plan Mode, including new

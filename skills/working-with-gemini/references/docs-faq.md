@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/faq.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "74928afb51ad73cf1170edebf68f5782ed829e1ef2e69f36dd679a594ac51070"
+---
+
 # Frequently asked questions (FAQ)
 
 This page provides answers to common questions and solutions to frequent

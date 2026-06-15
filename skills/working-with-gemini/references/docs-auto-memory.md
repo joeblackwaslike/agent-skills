@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/auto-memory.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "232133c2568ca86323415901f2648147f65ac85751c8aa1ea07cb9d7b6d1a588"
+---
+
 # Auto Memory
 
 Auto Memory is an experimental feature that mines your past Gemini CLI sessions

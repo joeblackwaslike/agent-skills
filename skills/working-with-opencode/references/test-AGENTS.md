@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/test/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "0d0c71dd95b457f92fa0290886bb25633928db166a59e75ca09987295a49b305"
+---
+
 # Test Fixtures Guide
 
 ## Temporary Directory Fixture

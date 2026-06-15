@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/routines.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "27213e9ed746e4bde09615714f53bf8e5478c2d6948ee0bdf4eae1df96f73606"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

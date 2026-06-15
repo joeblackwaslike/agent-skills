@@ -1,5 +1,8 @@
 ---
 description: Extract non-obvious learnings from session to AGENTS.md files to build codebase understanding
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/learn.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "891675a8519c637290b675f6671c451e30e14ac3a50e6759bd513c414e50cd22"
 ---
 
 Analyze this session and extract non-obvious learnings to add to AGENTS.md files.

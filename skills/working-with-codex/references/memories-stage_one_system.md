@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/memories/write/templates/memories/stage_one_system.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "cf795e8a2f5f52d333af2613bf1ff79178112f5fd2161cc181a8ddf52e59da33"
+---
+
 ## Memory Writing Agent: Phase 1 (Single Rollout)
 
 You are a Memory Writing Agent.

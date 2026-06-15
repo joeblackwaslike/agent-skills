@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/uninstall.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "839d715ea05f2cd14c2b008bff070c60a39627bdc4faf59f5bde29d4c9169117"
+---
+
 # Uninstalling the CLI
 
 Your uninstall method depends on how you ran the CLI. Follow the instructions

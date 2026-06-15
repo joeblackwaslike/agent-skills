@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/acp-mode.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "812af1001c110f474a624c3026c31e66519ca95c251d1f79679d8ebd56edd779"
+---
+
 # ACP Mode
 
 ACP (Agent Client Protocol) mode is a special operational mode of Gemini CLI

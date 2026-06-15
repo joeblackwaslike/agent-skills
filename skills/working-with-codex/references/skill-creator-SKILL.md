@@ -3,6 +3,9 @@ name: skill-creator
 description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations.
 metadata:
   short-description: Create or update a skill
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/skill-creator/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "da44c88f6b3845a8fa8c60792ec9a722110a55a9793c279757b48fefb11f819c"
 ---
 
 # Skill Creator

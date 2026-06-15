@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-with-reusable-workflows.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "db8f3ad416c85a652e030c089963add610d18e61d431185d510d042c5ecd6551"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## About reusable workflows

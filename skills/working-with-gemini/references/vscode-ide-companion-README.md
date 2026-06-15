@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/vscode-ide-companion/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "729e9b9ea9fef6fb8f7456fd1156891746f57fc34709015d80ab38fa81a5f30c"
+---
+
 # Gemini CLI Companion
 
 The Gemini CLI Companion extension pairs with

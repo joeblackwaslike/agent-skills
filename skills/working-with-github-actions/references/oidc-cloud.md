@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-cloud-providers.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "cf6823b6fd1281ff671a320992a79d0ccb8a360627b7f2f8f45fc65524d9e16d"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## Overview

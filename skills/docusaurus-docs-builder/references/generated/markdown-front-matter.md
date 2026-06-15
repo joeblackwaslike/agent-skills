@@ -1,8 +1,8 @@
 ---
 title: "Markdown Front Matter"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter"
-fetched_at: "2026-06-08T05:39:45.651Z"
-sha256: "44e9d4ed4a2abd1aba42cc2da3f0940ee59eeb55be7fe41dc4cda3108131114e"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "56056b083a6e38597189693a023352b528d82fb413da4fb62c26fea97c22abc1"
 ---
 
 # Markdown Front Matter

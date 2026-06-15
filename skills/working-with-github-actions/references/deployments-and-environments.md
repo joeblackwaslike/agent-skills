@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/deployments-and-environments.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "c955db0f1a78decc2b20f375547aa6ba4821c97270f72aa5a0676cf544c9f4e9"
+---
+
 ## Deployment protection rules
 
 Deployment protection rules require specific conditions to pass before a job referencing the environment can proceed. You can use deployment protection rules to require a manual approval, delay a job, or restrict the environment to certain branches. You can also create and implement custom protection rules powered by {% data variables.product.prodname_github_apps %} to use third-party systems to control deployments referencing environments configured on {% data variables.product.github %}.

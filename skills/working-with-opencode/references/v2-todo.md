@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/todo.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "989c53e56ec32ac6963c996f2067572681fcbd1039d3ae5e9f1376bbf8ff60c3"
+---
+
 # TODO
 
 ok we need to work towards a launch of v2 so we can get out of this rebuild phase

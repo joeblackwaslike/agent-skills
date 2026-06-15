@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/enterprise/network-configuration.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "323b38078d35de8589b535a61d8236e572f8c6b28bc6664c142b6b3c1250a0d1"
+---
+
 # Network Configuration
 
 Cursor needs to communicate with backend services and AI providers. This documentation covers how to configure Cursor to work within your network infrastructure, including proxies, firewalls, and encryption requirements.

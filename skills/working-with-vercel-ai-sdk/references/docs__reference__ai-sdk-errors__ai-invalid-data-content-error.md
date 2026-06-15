@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-data-content-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1e531855673c826c37210d8167d3f98802567f4262d10a5dc7efe5a76cd81c1e"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "66e07b43029af03855294fbe39b559c3895ec6afd1997d94502c126bc635eb2b"
 ---
 
 # AI_InvalidDataContentError
@@ -38,6 +38,7 @@ if (InvalidDataContentError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

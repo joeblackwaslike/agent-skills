@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/openid-connect.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "6d81ba0879458092b4dd304d6f66e58b342d1f359e1fc3dd6296d5edc3fad4df"
+---
+
 ## Overview of OpenID Connect (OIDC)
 
 {% data variables.product.prodname_actions %} workflows are often designed to access a cloud provider (such as AWS, Azure, GCP, HashiCorp Vault, and others) in order to deploy software or use the cloud's services. Before the workflow can access these resources, it will supply credentials, such as a password or token, to the cloud provider. These credentials are usually stored as a secret in {% data variables.product.prodname_dotcom %}, and the workflow presents this secret to the cloud provider every time it runs.

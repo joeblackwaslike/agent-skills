@@ -3,6 +3,9 @@ name: pr-creator
 description:
   Use this skill when asked to create a pull request (PR). It ensures all PRs
   follow the repository's established templates and standards.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/pr-creator/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "55b90da8be524f5f2f8e112e914de0d85b416576e221177835532bcf836e9af7"
 ---
 
 # Pull Request Creator

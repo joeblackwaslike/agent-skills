@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cloud-agent/best-practices.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "d8ffc2bd98e07eb4721d84f28cbf6fe05de5230bcece728047f90fec2879ec5e"
+---
+
 # Best Practices
 
 Use these recommendations to get more reliable Cloud Agent runs.

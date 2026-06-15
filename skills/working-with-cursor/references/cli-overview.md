@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/overview.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "65dc2eb141919eed4147665c6efd524a6309aabb0b711c43c81a4489f6ad4293"
+---
+
 # Cursor CLI
 
 Cursor CLI lets you interact with AI agents directly from your terminal to write, review, and modify code. Whether you prefer an interactive terminal interface or print automation for scripts and CI pipelines, the CLI provides powerful coding assistance right where you work.

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/plan-mode-steering.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "b0f94afa0966740c08a346cac5660882fcc30ad60361d75e64faab4b0cf0c2a5"
+---
+
 # Use Plan Mode with model steering for complex tasks
 
 Architecting a complex solution requires precision. By combining Plan Mode's

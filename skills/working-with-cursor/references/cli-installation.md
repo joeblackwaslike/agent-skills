@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/installation.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "50435bbdfe5f3640484df508440b1c6274d8c57f85c2f91ac78ee15caa5a1d3c"
+---
+
 # Installation
 
 ## Installation

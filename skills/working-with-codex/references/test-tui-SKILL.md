@@ -1,6 +1,9 @@
 ---
 name: test-tui
 description: Guide for testing Codex TUI interactively
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/test-tui/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "e81787c2d976a1eb0c6108eb8ff56376e3e2ae4aae77771fd9259c211fc7f230"
 ---
 
 You can start and use Codex TUI to verify changes. 

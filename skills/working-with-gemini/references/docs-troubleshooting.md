@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/troubleshooting.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "27cf11e83cc105c879c00f89c5eb2d24d2e2a39d34e25e5cadf5e26897caa1c7"
+---
+
 # Troubleshooting guide
 
 This guide provides solutions to common issues and debugging tips, including

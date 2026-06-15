@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/docs-writer/quota-limit-style-guide.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "9c59d6d0bb64815a7cddb72cd877443f505aefb15cdfa64841bb5a4b14cc35a6"
+---
+
 # Style Guide: Quota vs. Limit
 
 This guide defines the usage of "quota," "limit," and related terms in

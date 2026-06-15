@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "c1f02a48f5a7cea69b647b9c6d8cd5d0cac6e434da3f27fee97df51d3ec0fa80"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

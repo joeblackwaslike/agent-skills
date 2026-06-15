@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/security-agents.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "981fd4e9c54aed3a019ab10bc04af683c03f9769571227de95b63e243e7107a6"
+---
+
 # Security Agents
 
 Security Agents scan your code for security bugs, risky patterns, and vulnerabilities.
@@ -50,6 +56,18 @@ Use tools and MCPs to connect Security Agents to the systems where your team tra
 Security Agents run on Cloud Agents.
 
 You can use Cursor's cloud with no additional setup, or configure [self-hosted Cloud Agents](https://cursor.com/docs/cloud-agent/self-hosted-pool.md) to run reviews in your own environment.
+
+## Run in your agent
+
+Use the `/review-security` or `/review` skills to run the Security Agent from your agent before you push the code.
+
+**What diff is reviewed:** By default, `/review-security` reviews your branch changes: every change relative to the base branch, including committed and uncommitted changes. Ask it to review only your uncommitted changes when you want narrower feedback.
+
+**Against which branch:** `/review-security` compares against your default base branch. When your base branch isn't the default (such as `main`), tell the agent which branch to compare against or let it infer from the context.
+
+![Running the /review-security skill from the agent input](/docs-static/images/security-review/review-security-skill.png)
+
+`/review` and `/review-security` are available in Cursor 3.7+ and at [cursor.com/agents](https://cursor.com/agents). CLI support is coming soon.
 
 ## Billing
 

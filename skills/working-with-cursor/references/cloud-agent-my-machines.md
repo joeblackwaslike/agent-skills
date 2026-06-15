@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cloud-agent/my-machines.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "ca861ab2fa3cf548ab3d637e58df81ffb5e7a5c2d20ff9f00ca40dc4664b063c"
+---
+
 # My Machines
 
 My Machines lets you run Cloud Agents on a machine you already use: your laptop, a devbox, or a remote VM. It is the fastest way to give Cloud Agents access to your local repo, dependencies, build cache, and private network.

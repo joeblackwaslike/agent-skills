@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/prompt-library.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "d59bbc4216bf34945dc0cfdc22b1c9385c92e9a6ee6e6c09b1c9cfcac1d8744d"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

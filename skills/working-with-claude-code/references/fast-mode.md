@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/fast-mode.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "3c9b0d4d461416d9f4c9bb3716276ba05d07db6e541007f479c47d8c0128d0bd"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

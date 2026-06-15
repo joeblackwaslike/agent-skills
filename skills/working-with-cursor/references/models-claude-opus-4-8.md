@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/models/claude-opus-4-8.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "2780e59651ee71c0c6d829e2c89210dd3156daf0c2607ce1d4db3f17a7d726bc"
+---
+
 Claude Opus 4.8 is Anthropic's strongest model and a meaningful jump over Opus 4.7 on [CursorBench](https://cursor.com/blog/cursorbench). It excels at autonomous, multi-step work: it holds intent across long sessions, self-corrects when it hits friction, and writes production-ready code without hand-holding. We recommend the high thinking variant for the best results.
 
 ## Strengths

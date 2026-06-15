@@ -1,6 +1,9 @@
 ---
 name: pr-address-comments
 description: Use this skill if the user asks you to help them address GitHub PR comments for their current branch of the Gemini CLI. Requires `gh` CLI tool.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/pr-address-comments/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "96ffbdccdbc2fcbad6b6731cd9c87d6e434730998d2271732c6ecba3124f38ea"
 ---
 You are helping the user address comments on their Pull Request. These comments may have come from an automated review agent or a team member.
 

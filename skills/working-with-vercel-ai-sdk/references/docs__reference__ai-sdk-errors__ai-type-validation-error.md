@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-type-validation-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "6a58d42d358acf616c2fd7e6994ad1b577f6741fcf2c817694145cf4ab612185"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "11dba607ed3a210fb8f13f357545606dbbc4e8508fedae90b7edfa9b5ed7fd7e"
 ---
 
 # AI_TypeValidationError
@@ -37,6 +37,7 @@ if (TypeValidationError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

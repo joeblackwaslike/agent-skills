@@ -1,6 +1,9 @@
 ---
 name: metrics
 description: Expertise in analyzing time-series repository health metrics, investigating root causes, and proposing proactive workflow improvements.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/.gemini/skills/metrics/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "9858f3459c0b8b50e54941f36ff465edb706f3b47350c81cb5b2c2f4fdc54128"
 ---
 
 # Phase: The Brain (Metrics & Root-Cause Analysis)

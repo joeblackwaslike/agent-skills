@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agents.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "075530b8e4f0b6682b8ed571781e4cca0012ae2ffa69508a24106d7a123314d0"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -8,12 +14,12 @@
 
 [Subagents](/en/sub-agents), [agent view](/en/agent-view), [agent teams](/en/agent-teams), and [dynamic workflows](/en/workflows) each parallelize work in a different way. The right one depends on whether you want to stay in each conversation yourself, hand tasks off and check back later, or have Claude coordinate a group of workers for you.
 
-| Approach                           | What it gives you                                                                                                                                                           | Use it when                                                                                                                                                                                         |
-| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Subagents](/en/sub-agents)        | Delegated workers inside one session that do a side task in their own context and return a summary                                                                          | A side task would flood your main conversation with search results, logs, or file contents you won't reference again                                                                                |
-| [Agent view](/en/agent-view)       | One screen to dispatch and monitor sessions running in the background, opened with `claude agents`. Research preview                                                        | You have several independent tasks and want to hand them off, check status at a glance, and step in only when one needs you                                                                         |
-| [Agent teams](/en/agent-teams)     | Multiple coordinated sessions with a shared task list and inter-agent messaging, managed by a lead. Experimental and disabled by default                                    | You want Claude to split a project into pieces, assign them, and keep the workers in sync                                                                                                           |
-| [Dynamic workflows](/en/workflows) | A script that runs many subagents and cross-checks their results, for work too big to coordinate one turn at a time or that needs more than a single pass. Research preview | A job outgrows a handful of subagents, or you want findings verified against each other: a codebase-wide audit, a 500-file migration, cross-checked research, or a plan drafted from several angles |
+| Approach                           | What it gives you                                                                                                                                         | Use it when                                                                                                                                                                                         |
+| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Subagents](/en/sub-agents)        | Delegated workers inside one session that do a side task in their own context and return a summary                                                        | A side task would flood your main conversation with search results, logs, or file contents you won't reference again                                                                                |
+| [Agent view](/en/agent-view)       | One screen to dispatch and monitor sessions running in the background, opened with `claude agents`. Research preview                                      | You have several independent tasks and want to hand them off, check status at a glance, and step in only when one needs you                                                                         |
+| [Agent teams](/en/agent-teams)     | Multiple coordinated sessions with a shared task list and inter-agent messaging, managed by a lead. Experimental and disabled by default                  | You want Claude to split a project into pieces, assign them, and keep the workers in sync                                                                                                           |
+| [Dynamic workflows](/en/workflows) | A script that runs many subagents and cross-checks their results, for work too big to coordinate one turn at a time or that needs more than a single pass | A job outgrows a handful of subagents, or you want findings verified against each other: a codebase-wide audit, a 500-file migration, cross-checked research, or a plan drafted from several angles |
 
 In every approach the workers are Claude sessions. To involve a different tool, expose it to Claude as an [MCP server](/en/mcp).
 

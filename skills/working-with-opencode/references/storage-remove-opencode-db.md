@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/storage/remove-opencode-db.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "e19f277c730478e75c6a1f2016132e840a002b5963f801d1e6a5d508c834233c"
+---
+
 # Remove `packages/opencode/src/storage/db.ts`
 
 ## Goal

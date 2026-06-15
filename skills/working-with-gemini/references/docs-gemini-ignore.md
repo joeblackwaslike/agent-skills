@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/gemini-ignore.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "21cf247e9066355a3ec1130097e3aaa6ec7065a95d1b52c623e7e46d975253cc"
+---
+
 # Ignoring files
 
 This document provides an overview of the Gemini Ignore (`.geminiignore`)

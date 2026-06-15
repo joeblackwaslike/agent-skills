@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/account/teams/setup.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "3b8bdca37526949753dcd4b669ad1d9ccedf31b3bb659c45c3f0910229838635"
+---
+
 # Get Started
 
 ## Cursor for Teams

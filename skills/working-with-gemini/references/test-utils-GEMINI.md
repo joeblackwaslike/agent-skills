@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/test-utils/GEMINI.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "fedef3c9b8fac1c94b5d92a15512f7422b3dd1ff6853b9021db18facc4fbef64"
+---
+
 # Gemini CLI Test Utils (`@google/gemini-cli-test-utils`)
 
 Shared test utilities used across the monorepo. This is a private package — not

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/trusted-folders.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a9d986314ad4806d356eeca678a9ea0f838851372c84979471d1ba6e0250e44d"
+---
+
 # Trusted Folders
 
 The Trusted Folders feature is a security setting that gives you control over

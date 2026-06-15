@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/best-practices.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "d762542534b391bde4df3ad61b5b91da73663bb6b5fb0b4a202d8bfda5e3d932"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/extension-api/notes.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "6891eff01534ace9a289115ed64a4bf48b606580d8ba60e445012f5bb70e7209"
+---
+
 Everything becomes a good contributor design, which contributors do we need?
 
 git attribution              Context

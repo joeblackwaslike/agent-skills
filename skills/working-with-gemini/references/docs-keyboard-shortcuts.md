@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/keyboard-shortcuts.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "702a2b4a5a4a84a8734758bffe216e6c56daf79b5c498b0f2316cfa0cba10d22"
+---
+
 # Gemini CLI keyboard shortcuts
 
 Gemini CLI ships with a set of default keyboard shortcuts for editing input,

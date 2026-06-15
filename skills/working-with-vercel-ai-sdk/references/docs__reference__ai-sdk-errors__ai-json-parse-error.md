@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-json-parse-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1e6dd135dea5a28bd220606cc9ed715290bd785ea5de1434dd398c71e2e208f1"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "39bd5a0e5cdf8c536d743413c72605839f01e3834ee4f2062394fb9c5b2c14c7"
 ---
 
 # AI_JSONParseError
@@ -37,6 +37,7 @@ if (JSONParseError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c5ec8b159679222da00f6cdcf7cb1f0761dc36ae8791413b79922d8472104c44"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "bd11e6dc9ce8d7cbffd1cb24315fa608e9deb983ff6f5111492798c2da998e78"
 ---
 
 # Migration Guides
@@ -193,6 +193,7 @@ sha256: "c5ec8b159679222da00f6cdcf7cb1f0761dc36ae8791413b79922d8472104c44"
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

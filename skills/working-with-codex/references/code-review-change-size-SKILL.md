@@ -1,6 +1,9 @@
 ---
 name: code-review-change-size
 description: Change size guidance (800 lines)
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/code-review-change-size/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "e8184218e0f0b0e906fe4bbe45c46518a8098f4192f2bb4b8a357d04c2fc9e1b"
 ---
 
 Unless the change is mechanical the total number of changed lines should not exceed 800 lines.

@@ -1,6 +1,9 @@
 ---
 name: worker
 description: General purpose agent for any tasks that need a scoped context window.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/.gemini/agents/WORKER.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "bcf81f77d411765d3f639f52bde8f5b0ce62497a9207b6e78a0651f0f89e0840"
 ---
 
 # Worker Subagent

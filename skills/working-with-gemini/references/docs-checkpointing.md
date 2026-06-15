@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/checkpointing.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "cb4261f5390134e586459de23a1fef62d2741d9e0c0b3ca1c1372c629e8a89af"
+---
+
 # Checkpointing
 
 Gemini CLI includes a Checkpointing feature that automatically saves a snapshot

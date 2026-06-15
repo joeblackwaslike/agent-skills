@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/mcp.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "4cfba47a5a895280039dc7a1d0d5bf14dfe2edca54f833a7d933f6390b0e217a"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -255,6 +261,16 @@ Or inline in `plugin.json`:
 
 Plugin servers appear in the list with indicators showing they come from plugins.
 
+**Plugin MCP tool names**:
+
+Tools from a plugin-bundled MCP server include both the plugin name and the server key in their callable name. The full form is `mcp__plugin_<plugin-name>_<server-name>__<tool-name>`, where any character outside `A-Z`, `a-z`, `0-9`, `_`, and `-` is replaced with `_`. For the `database-tools` server bundled in a plugin named `my-plugin`, a `query` tool is callable as:
+
+```
+mcp__plugin_my-plugin_database-tools__query
+```
+
+Use this full name when referencing the tool in [permission rules](/en/permissions), a skill's `allowed-tools` list, or a [subagent's `tools` field](/en/sub-agents#available-tools).
+
 **Benefits of plugin MCP servers**:
 
 * **Bundled distribution**: Tools and servers packaged together
@@ -389,24 +405,6 @@ Environment variables can be expanded in:
 If a required environment variable is not set and has no default value, Claude Code will fail to parse the config.
 
 ## Practical examples
-
-{/* ### Example: Automate browser testing with Playwright
-
-```bash
-claude mcp add --transport stdio playwright -- npx -y @playwright/mcp@latest
-```
-
-Then write and run browser tests:
-
-```text
-Test if the login flow works with test@example.com
-```
-```text
-Take a screenshot of the checkout page on mobile
-```
-```text
-Verify that the search feature returns results
-``` */}
 
 ### Example: Monitor errors with Sentry
 
@@ -963,7 +961,7 @@ MCP servers can expose resources that you can reference using @ mentions, simila
 
 ## Scale with MCP Tool Search
 
-Tool search keeps MCP context usage low by deferring tool definitions until Claude needs them. Only tool names and server instructions load at session start, so adding more MCP servers has minimal impact on your context window.
+Tool search keeps MCP context usage low by deferring tool definitions until Claude needs them. Only tool names and server instructions load at session start, so adding more MCP servers has minimal impact on your context window. Claude Code does not impose a fixed per-server tool cap; the practical limit is your context window budget.
 
 ### How it works
 
@@ -987,7 +985,7 @@ Claude Code truncates tool descriptions and server instructions at 2KB each. Kee
 
 Tool search is enabled by default: MCP tools are deferred and discovered on demand. Claude Code disables it by default on Vertex AI. It is also disabled when `ANTHROPIC_BASE_URL` points to a non-first-party host, since most proxies do not forward `tool_reference` blocks. Set `ENABLE_TOOL_SEARCH` explicitly to override either fallback.
 
-Tool search requires a model that supports `tool_reference` blocks: Sonnet 4 and later, or Opus 4 and later. Haiku models do not support it. On Vertex AI, tool search is supported for Claude Sonnet 4.5 and later and Claude Opus 4.5 and later.
+Tool search requires a model that supports `tool_reference` blocks. Haiku models do not support it. On Vertex AI, tool search is supported for Claude Sonnet 4.5 and later and Claude Opus 4.5 and later.
 
 Control tool search behavior with the `ENABLE_TOOL_SEARCH` environment variable:
 

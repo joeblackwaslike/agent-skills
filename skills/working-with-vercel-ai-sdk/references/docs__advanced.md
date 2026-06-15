@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ab91b5de0d653dc268f71aea4e48a0cd94d406f81a0e8bc64b66dc46de90c028"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "df0a068f8b03b0bc39ac366b753d9cef045bf899fd318aa3c34eef109ae796c0"
 ---
 
 # Advanced
@@ -182,6 +182,7 @@ After these concepts, you should have a better understanding of the paradigms be
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

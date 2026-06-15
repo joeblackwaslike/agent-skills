@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/generation-settings.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "06d1a138349ec1c97202936557042c87de992e729268cda82c7f83d6b3356a3f"
+---
+
 # Advanced Model Configuration
 
 This guide details the Model Configuration system within Gemini CLI. Designed

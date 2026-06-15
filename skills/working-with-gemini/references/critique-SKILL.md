@@ -1,6 +1,9 @@
 ---
 name: critique
 description: Expertise in auditing and fixing repository scripts and GitHub Actions workflows to ensure technical robustness and security.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/.gemini/skills/critique/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "54d7b0e79d9824ce3f50c73bb8cbb91d8fce10d2f0c0b197caf23fb246960187"
 ---
 
 # Phase: Critique Agent

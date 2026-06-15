@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/hooks/reference.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "103bab9f0f8fd7251b97d06c6b7c4e52752427bf23cbacd1379f2aecaaf26e4c"
+---
+
 # Hooks reference
 
 This document provides the technical specification for Gemini CLI hooks,

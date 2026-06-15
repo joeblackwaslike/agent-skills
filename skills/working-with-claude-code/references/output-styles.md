@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/output-styles.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "372651ced9743306f52d8e63206a4d120b915cdc9fecbf8b589400916b7b8ef5"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

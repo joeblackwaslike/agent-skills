@@ -1,8 +1,8 @@
 ---
 title: "Templates distribution"
 source: "https://containers.dev/implementors/templates-distribution/"
-fetched_at: "2026-06-08T05:39:43.505Z"
-sha256: "3e022f35365536378ec45baaa2f1632650e4903156919df54f71810e9a6c1955"
+fetched_at: "2026-06-15T05:52:46.055Z"
+sha256: "778360e9a3b23e0f9c684678ce547e987770aa2422f9bff1fefebd086884db42"
 ---
 
 # Templates distribution

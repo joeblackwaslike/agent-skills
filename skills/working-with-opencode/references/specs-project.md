@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/project.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "f298049df2aefcdb7818aa8a1db53e4bb3b42a870ec95264899c1d93879ead37"
+---
+
 ## project
 
 The goal is to let a single instance of OpenCode run sessions for multiple projects and different worktrees per project.

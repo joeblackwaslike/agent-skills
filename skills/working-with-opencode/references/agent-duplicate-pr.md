@@ -6,6 +6,9 @@ color: "#E67E22"
 tools:
   "*": false
   "github-pr-search": true
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/agent/duplicate-pr.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "639806db0259a5aa38caa8320c5e311bfcd89d807461b300355fad90e8c21f0f"
 ---
 
 You are a duplicate PR detection agent. When a PR is opened, your job is to search for potentially duplicate or related open PRs.

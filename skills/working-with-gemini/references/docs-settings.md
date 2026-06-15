@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/settings.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "f20e3dfa2c27974be9d2200a5d0f6804e45b09b90810b432ca9bebec9fc355e2"
+---
+
 # Gemini CLI settings (`/settings` command)
 
 Control your Gemini CLI experience with the `/settings` command. The `/settings`

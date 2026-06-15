@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/references/latest-model.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "b53eabc8f3204aabe793eccb729fce21eb26709fccb9be85d3a674b0fefb7c6e"
+---
+
 # Latest model guide
 
 This file is a curated helper. Every recommendation here must be verified against current OpenAI docs before it is repeated to a user.

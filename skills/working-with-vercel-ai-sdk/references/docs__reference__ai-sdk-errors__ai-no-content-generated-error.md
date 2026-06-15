@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-content-generated-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "db5ea410e7b858e1e98fd4bad52f566b778269b3c84a7e7b9a6b00f81d4d357a"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "c52ab30db9a08dc6a77e8ab688064ca439e1ac6b7629086eeb43aafb22de18a5"
 ---
 
 # AI_NoContentGeneratedError
@@ -36,6 +36,7 @@ if (NoContentGeneratedError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

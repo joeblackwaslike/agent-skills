@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/memory.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "f441a575c49c629875423e76476454f24e5bee8e9aa71a8453f0993e310f54e1"
+---
+
 # Memory files
 
 Gemini CLI persists durable facts, user preferences, and project details by

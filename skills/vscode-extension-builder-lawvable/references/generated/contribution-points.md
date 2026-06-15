@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-06-08T05:39:51.866Z"
-sha256: "a990f9d14710c8c8ce957982ed39d72ec3bd89c608a4ad759892ca88933bc4c5"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "dacfb8c0ced3876965bdd6ce44b52cac48126ca5dcc73ec27d3481f6cf46d3b1"
 ---
 
 # Contribution Points
@@ -1728,7 +1728,7 @@ Contribute a view to VS Code. You must specify an identifier and name for the vi
 
 - `test`: Test view container in the Activity Bar
 
-- [Custom view containers](https://code.visualstudio.com/api/references/contribution-points#_contributes.viewsContainers) contributed by Extensions.
+- [Custom view containers](https://code.visualstudio.com/api/references/contribution-points#contributes.viewsContainers) contributed by Extensions.
 
 When the user opens the view, VS Code will then emit an activationEvent `onView:${viewId}` (`onView:nodeDependencies` for the example below). You can also control the visibility of the view by providing the `when` context value. The `icon` specified will be used when the title cannot be shown (e.g. when the view is dragged to the Activity Bar). The `contextualTitle` is used when the view is moved out of its default view container and needs additional context.
 
@@ -1760,7 +1760,7 @@ The content of a view can be populated in two ways:
 
 ## contributes.viewsContainers
 
-Contribute a view container into which [Custom views](https://code.visualstudio.com/api/references/contribution-points#_contributes.views) can be contributed. You must specify an identifier, title, and an icon for the view container. At present, you can contribute them to the Activity Bar (`activitybar`) and Panel (`panel`). Below example shows how the `Package Explorer` view container is contributed to the Activity Bar and how views are contributed to it.
+Contribute a view container into which [Custom views](https://code.visualstudio.com/api/references/contribution-points#contributes.views) can be contributed. You must specify an identifier, title, and an icon for the view container. At present, you can contribute them to the Activity Bar (`activitybar`) and Panel (`panel`). Below example shows how the `Package Explorer` view container is contributed to the Activity Bar and how views are contributed to it.
 
 
 ```
@@ -1820,7 +1820,7 @@ Active
 
 ## contributes.viewsWelcome
 
-Contribute welcome content to [Custom views](https://code.visualstudio.com/api/references/contribution-points#_contributes.views). Welcome content only applies to empty tree views. A view is considered empty if the tree has no children and no `TreeView.message`. By convention, any command links that are on a line by themselves are displayed as a button. You can specify the view that the welcome content should apply to with the `view` property. Visibility of the welcome content can be controlled with the `when` context value. The text to be displayed as the welcome content is set with the `contents` property.
+Contribute welcome content to [Custom views](https://code.visualstudio.com/api/references/contribution-points#contributes.views). Welcome content only applies to empty tree views. A view is considered empty if the tree has no children and no `TreeView.message`. By convention, any command links that are on a line by themselves are displayed as a button. You can specify the view that the welcome content should apply to with the `view` property. Visibility of the welcome content can be controlled with the `when` context value. The text to be displayed as the welcome content is set with the `contents` property.
 
 
 ```
@@ -1905,4 +1905,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 6/3/2026
+ 6/10/2026

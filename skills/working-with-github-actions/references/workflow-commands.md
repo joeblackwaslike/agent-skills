@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/workflow-commands.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "acd2da4cc442a52e50d2ffeeb39a380e99494fa3438c6f5eeda1c224774464ef"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## About workflow commands

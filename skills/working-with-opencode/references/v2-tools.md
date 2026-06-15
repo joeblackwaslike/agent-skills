@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/tools.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "d699b711cc97c99cdd85d4cb59a8fab1ea1ad1916c2e7a4492c182d44b95200a"
+---
+
 # V2 Tools
 
 ## Design

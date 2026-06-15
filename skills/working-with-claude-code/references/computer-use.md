@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/computer-use.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "427032da986704fc93a4673b1ee604553d0c77f1ff04b7140aaa737be1d76993"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

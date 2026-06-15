@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/vscode-ide-companion/development.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "3cc5dbf863d4fec2db585119b61ceb9c29eed31f407b4cc2303bf37aa9a4f7cc"
+---
+
 # Local Development ⚙️
 
 ## Running the Extension

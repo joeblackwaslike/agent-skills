@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "770400079278011eb57ed84ee53d3fac5d2b615969469bdb0bff4da7e752cfa0"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## Prerequisites

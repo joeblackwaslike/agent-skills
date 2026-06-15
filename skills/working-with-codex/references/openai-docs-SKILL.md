@@ -1,6 +1,9 @@
 ---
 name: "openai-docs"
 description: "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains."
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "5cae604fb26d9ca3db47af72e16e9c1bffa47f9e6508b77566d2374dac75e610"
 ---
 
 

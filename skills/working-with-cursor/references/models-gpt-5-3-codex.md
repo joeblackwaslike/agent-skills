@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/models/gpt-5-3-codex.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "24d9eb400eb9bfcfbf9e01b944e48db712740e6944577afbae15e9922082ad33"
+---
+
 GPT-5.3 Codex is OpenAI's flagship coding model. It leads Terminal-Bench by a wide margin and performs on par with Opus 4.6 on our internal benchmarks, at roughly one-third the price. Much faster than previous GPT generations. A strong default for most coding tasks.
 
 ## Strengths

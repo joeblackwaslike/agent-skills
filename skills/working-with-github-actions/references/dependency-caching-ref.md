@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/dependency-caching.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "e743a4bfa0c2b8e529804b664947bde5539e2432a69c0309b5b5f6d7fdba9ccd"
+---
+
 ## `cache` action usage
 
 The [`cache` action](https://github.com/actions/cache) will attempt the following sequence when restoring a cache:

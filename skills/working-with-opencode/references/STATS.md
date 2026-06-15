@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/STATS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "51704e5b3d341f2b12e7a8e6d3653f59f9bed653d6585f78151f9e35567f0e63"
+---
+
 # Download Stats
 
 | Date       | GitHub Downloads     | npm Downloads        | Total                 |

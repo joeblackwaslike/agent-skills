@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/larger-runners.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "698b8be7d40ad7b5d788a346e5760c69beb799c48bab10bf46beb9e5eb7dd0bd"
+---
+
 {% ifversion ghes %}
 
 {% data reusables.actions.enterprise-github-hosted-runners %}

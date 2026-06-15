@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/ultraplan.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "da4a30a211896239913bea7e753dafac6b1b79ca8f57f30057f753ed4603ab44"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -36,7 +42,7 @@ For example, to plan a service migration with the command:
 
 The command and keyword paths open a confirmation dialog before launching. The local plan path skips this dialog because that selection already serves as confirmation. If [Remote Control](/en/remote-control) is active, it disconnects when ultraplan starts because both features occupy the claude.ai/code interface and only one can be connected at a time.
 
-After the cloud session launches, your CLI's prompt input shows a status indicator while the remote session works:
+After the cloud session launches, your CLI's prompt input shows a status indicator while the cloud session works:
 
 | Status                         | Meaning                                                            |
 | :----------------------------- | :----------------------------------------------------------------- |

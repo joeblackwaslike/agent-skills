@@ -1,6 +1,9 @@
 ---
 name: pushing-ci-changes
 description: Pushing GitHub Actions changes, resolving push rejection, requesting upload exceptions.
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/pushing-ci-changes/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "1e5d0e3260f140e12687ff8ca65721126f47ba4cca9853e26da9dc9d46126020"
 ---
 
 The Codex repository prevents anyone from uploading changes to its CI configuration unless they've

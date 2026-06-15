@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/memories/templates/memories/read_path.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "2bc7736029884b714860a6f0d6b2fd26598bba58f2213b787f01fe2a491f4326"
+---
+
 ## Memory
 
 You have access to a memory folder with guidance from prior runs. It can save

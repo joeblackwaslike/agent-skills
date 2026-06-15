@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/skill-creator/references/openai_yaml.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "ffac39318e408108141d40f820968e59f70434a891694f9bf1d25be8237b150c"
+---
+
 # openai.yaml fields (full example + descriptions)
 
 `agents/openai.yaml` is an extended, product-specific config intended for the machine/harness to read, not the agent. Other product-specific config can also live in the `agents/` folder.

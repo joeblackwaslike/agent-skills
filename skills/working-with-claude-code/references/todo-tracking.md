@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/todo-tracking.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "9be74c81fd6914b01e8883ed9785a5f48afc299810ea8bb3664aed7e1b241ec5"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

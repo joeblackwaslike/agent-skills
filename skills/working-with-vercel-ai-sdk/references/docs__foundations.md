@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e3c55379b75600c9903bd5e4913c40b8fe456081d726626bdb909e16cb9fdbdf"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "672e495e06a193881480e344ac9c11c173016a368f4d21f93486d7bd42511fc2"
 ---
 
 # Foundations
@@ -221,6 +221,7 @@ sha256: "e3c55379b75600c9903bd5e4913c40b8fe456081d726626bdb909e16cb9fdbdf"
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

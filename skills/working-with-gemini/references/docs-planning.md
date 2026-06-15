@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/planning.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "cf7e5c9d383c2912858cd8ae61edd818ed8a7634c1cbaf465dc0b0ce08fda119"
+---
+
 # Gemini CLI planning tools
 
 Planning tools let Gemini CLI switch into a safe, read-only "Plan Mode" for

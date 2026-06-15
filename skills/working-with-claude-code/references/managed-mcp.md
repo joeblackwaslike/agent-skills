@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/managed-mcp.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "5b64c78cb7bd2f86ec3771964df33f4b112107c899689e7c86e2dc85c8d9d903"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

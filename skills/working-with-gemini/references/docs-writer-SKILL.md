@@ -3,6 +3,9 @@ name: docs-writer
 description:
   Always use this skill when the task involves writing, reviewing, or editing
   files in the `/docs` directory or any `.md` files in the repository.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/docs-writer/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a7e5c1e5ed154e698c5f688f4a33f98c6c69558d99c4ec2dd49231c4ea915921"
 ---
 
 # `docs-writer` skill instructions

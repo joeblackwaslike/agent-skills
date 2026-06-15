@@ -1,8 +1,8 @@
 ---
 title: "Versioning"
 source: "https://docusaurus.io/docs/versioning"
-fetched_at: "2026-06-08T05:39:45.490Z"
-sha256: "20b68ec946dbfc61245e5c6a735c424c446e0e6bf10afea1ee61e20b4b3697fc"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "03e01629a76ad973f00af4e29c00319f18ba21a6b747c273c9fae075f12682de"
 ---
 
 # Versioning

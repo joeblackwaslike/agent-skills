@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/web-search.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "3f528d5410cba40e0816e28497c3d13e7b5443c5c6002808c054fbce4f5b6908"
+---
+
 # Web search tool (`google_web_search`)
 
 The `google_web_search` tool allows the Gemini agent to retrieve up-to-date

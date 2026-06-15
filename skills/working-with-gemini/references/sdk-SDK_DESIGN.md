@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/sdk/SDK_DESIGN.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "80f3d4129f6736fe2f0ce5a37f1b357b013197ca0300c6c5924bc71784abde7f"
+---
+
 # `Gemini CLI SDK`
 
 > **Implementation Status:** Core agent loop, tool execution, and session

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/expressions.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "ea00646fe39f25869c7842bfa5e1d1606ede15160ceea8556a1506fce3021c82"
+---
+
 ## Literals
 
 As part of an expression, you can use `boolean`, `null`, `number`, or `string` data types.

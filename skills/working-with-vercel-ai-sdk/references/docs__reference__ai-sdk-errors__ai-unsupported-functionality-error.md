@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0a39b013bbeaedaa84b90c4c8c2204c8c9a9bc135ef0d757ff897c353943950b"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "2ed67f351f733cb528b8bffe5149fcfe848d56a1773bcab6b7e9616497387500"
 ---
 
 # AI_UnsupportedFunctionalityError
@@ -37,6 +37,7 @@ if (UnsupportedFunctionalityError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1738f86cc8db59da63f57fbc1eee1924fb7f7043e2cc4296f2fdbedfe1776253"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "e48a521ae07b824beaf57971073a89b741bab0bdc873af03934decf7c06223c6"
 ---
 
 # Model Context Protocol (MCP)
@@ -124,6 +124,38 @@ Authorization via OAuth is supported when using the AI SDK MCP HTTP or SSE
 transports by providing an `authProvider`.
 
 </Note>
+
+### OAuth Authorization Server Validation
+
+When using MCP OAuth in server-side applications, the MCP server can advertise
+the OAuth authorization server to use. If you connect to MCP servers outside
+your control, implement `validateAuthorizationServerURL` on your
+`authProvider` to allow only the authorization server origins you trust:
+
+```typescript
+const allowedAuthorizationServerOrigins = new Set([
+  'https://accounts.example.com',
+  'https://tenant.auth0.com',
+]);
+
+const myOAuthClientProvider = {
+  // ...other OAuthClientProvider methods
+
+  validateAuthorizationServerURL(serverUrl, authorizationServerUrl) {
+    const origin = new URL(authorizationServerUrl).origin;
+
+    if (!allowedAuthorizationServerOrigins.has(origin)) {
+      throw new Error(
+        `Unexpected OAuth authorization server for ${serverUrl}: ${origin}`,
+      );
+    }
+  },
+};
+```
+
+This hook is called before the SDK fetches authorization server metadata, so a
+rejected URL is not requested. It is optional and does not change existing OAuth
+flows unless you implement it.
 
 ### Closing the MCP Client
 

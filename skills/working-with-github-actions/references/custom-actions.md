@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/custom-actions.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "f75cd9395a7d5ac80ba57a6a084455a7ae3353b5d455bac0ad590e9771e2a446"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## About custom actions

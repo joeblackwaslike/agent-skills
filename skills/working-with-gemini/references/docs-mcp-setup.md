@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/mcp-setup.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "9a4633c905689c79d06e1e3fe59236ccc76010bce5ef6da38b0ff41e5f14a4b0"
+---
+
 # Set up an MCP server
 
 Connect Gemini CLI to your external databases and services. In this guide,

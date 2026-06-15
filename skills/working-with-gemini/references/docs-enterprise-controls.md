@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/admin/enterprise-controls.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "ee86880b717cca667e55b25f7e955f02517f3740667949ae0137f14c0f4744f6"
+---
+
 # Enterprise Admin Controls
 
 Gemini CLI empowers enterprise administrators to manage and enforce security

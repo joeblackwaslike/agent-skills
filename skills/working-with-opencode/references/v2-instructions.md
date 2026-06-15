@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/instructions.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "b5696f98d2d08e2c54a127b831553d89c240885e03c1ccabb0f38b934fa17a1d"
+---
+
 # V2 Core Instructions
 
 These notes describe how to work on `packages/core` during the v2 port.

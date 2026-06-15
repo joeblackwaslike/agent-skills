@@ -1,8 +1,8 @@
 ---
 title: "Swizzling"
 source: "https://docusaurus.io/docs/swizzling"
-fetched_at: "2026-06-08T05:39:47.299Z"
-sha256: "f834a2982112a38f7cfab57de82803d155755365a734bf24d97a6787c46ce5cb"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "307154631ba4e70e689634ea50cb29b120826fa8c13b0c801594269070bd3f2a"
 ---
 
 # Swizzling

@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cloud-agent/security-network.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "7b30b33209b1052e82256e1bbc6cf3ce9da38c191005734f5401ea4b380c9635"
+---
+
 # Security & Network
 
 Cloud Agents are available in Privacy Mode. We never train on your code and only retain code for running the agent. [Learn more about Privacy mode](https://www.cursor.com/privacy-overview).

@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/voice-dictation.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "a5f1efe9c1e4d8184012e2a3280cac2695442995d778fbce4200694a7a49ddfb"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

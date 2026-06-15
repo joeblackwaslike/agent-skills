@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "35f4fb66d82fb2915ddc49e372ec635ba627ae0b9b8deb28f23d9f46128d6e9e"
+---
+
 # Contributing to OpenCode
 
 We want to make it easy for you to contribute to OpenCode. Here are the most common type of changes that get merged:

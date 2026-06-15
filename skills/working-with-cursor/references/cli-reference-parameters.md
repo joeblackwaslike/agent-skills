@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/reference/parameters.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "3401c22767a11d3243e8ac0d2c944f7c411059a3af63285b27476632a10695bb"
+---
+
 # Parameters
 
 ## Global options

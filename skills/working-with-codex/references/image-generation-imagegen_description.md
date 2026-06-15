@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/ext/image-generation/imagegen_description.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "9159d0d322c766d1d74d8965b7169ff6031af76999a22f91487b1862fe25c8f1"
+---
+
 The `image_gen.imagegen` tool enables image generation from descriptions and editing of existing images based on specific instructions. Use it when:
 
 - The user requests an image based on a scene description, such as a diagram, portrait, comic, meme, or any other visual.
@@ -5,8 +11,13 @@ The `image_gen.imagegen` tool enables image generation from descriptions and edi
 
 Guidelines:
 - In code mode, pass the result to `generatedImage(result)`.
-- Set `action` to `generate` when the user asks for a brand new image.
-- Set `action` to `edit` when the user asks to modify an existing image from the conversation history.
-- Directly generate the image without reconfirmation or clarification.
+- Omit both `referenced_image_paths` and `num_last_images_to_include` when generating a brand new image.
+- For edits, use `referenced_image_paths` when every target image has a local file path.
+- If you have not seen a local image yet, use `view_image` to inspect it before editing.
+- Use `num_last_images_to_include` only when at least one target image has no local file path.
+- Set `num_last_images_to_include` to the smallest number of recent conversation images that includes every target image, up to 5.
+- Never provide both `referenced_image_paths` and `num_last_images_to_include`.
+- If neither mechanism can include every target image, ask the user to attach the missing images again.
+- Directly generate the image without reconfirmation or clarification unless required images must be attached again.
 - After each image generation, do not mention anything related to download. Do not summarize the image. Do not ask followup question. Do not say ANYTHING after you generate an image.
 - Always use this tool for image editing unless the user explicitly requests otherwise. Do not use the `python` tool for image editing unless specifically instructed.

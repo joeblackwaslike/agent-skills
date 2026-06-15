@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-retry-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a839748a7c2d16ecf15bb73908c46934a232cdf607b38dcebd643ca70533dd8f"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "9f7939c0ff9c1793aef686e700ea86cf70700c8fa1a572d0cf9d7142fe803519"
 ---
 
 # AI_RetryError
@@ -39,6 +39,7 @@ if (RetryError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

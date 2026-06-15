@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "79b8151414b6baf780439eebb00fdfc21f4aaf83ff046f40bac770b6b900c159"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "e7e9ae426359769d3633323ab61b8fe835af20793695413249fb062e0cdd8552"
 ---
 
 # AI SDK UI
@@ -173,6 +173,7 @@ Here is a comparison of the supported functions across these frameworks:
   - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
   - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
   - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+  - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
   - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
   - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
   - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

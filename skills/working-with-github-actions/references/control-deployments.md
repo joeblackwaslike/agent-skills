@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "604c6130381fa5707ec46416f12b921f16df71db60fd905a9f33bee10775e417"
+---
+
 ## Prerequisites
 
 You should be familiar with the syntax for {% data variables.product.prodname_actions %}. For more information, see [AUTOTITLE](/actions/learn-github-actions).

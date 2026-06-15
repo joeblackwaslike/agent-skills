@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/git-worktrees.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "3c2cec491f0134509b431eaebd8e7d036efd49edea900f546c917a7479a13150"
+---
+
 # Git Worktrees (experimental)
 
 When working on multiple tasks at once, you can use Git worktrees to give each

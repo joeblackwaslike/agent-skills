@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/provider-model.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "7f9c4df1adc6358d03e279df526acf7d9ab4d0c177fe967442afb94cda7ef0a3"
+---
+
 # Provider and Model Catalog
 
 ## Provider Schema

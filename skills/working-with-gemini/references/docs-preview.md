@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/changelogs/preview.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "5f86c8d7a3c1a1ad956cc0df420a80545065e0514930f51704586ae14ee78e70"
+---
+
 # Preview release: v0.46.0-preview.0
 
 Released: June 3, 2026

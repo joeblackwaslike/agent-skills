@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/skills-getting-started.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "111e8bfa1b99c2d2e2728864d092728334f73eb4fc9ce2998f6cf6ba3ca1c167"
+---
+
 # Get started with Agent Skills
 
 Agent Skills extend Gemini CLI with specialized expertise. In this tutorial,

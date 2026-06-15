@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/policy-engine.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "4895bc05bccef1a16ab1442c7a9b12ebe61945f0f079e9fca3261cf8b9e2d0f5"
+---
+
 # Policy engine
 
 Gemini CLI includes a powerful policy engine that provides fine-grained control

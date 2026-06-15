@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/.github/codex/labels/codex-rust-review.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "0ac34263c511f7fe0410ebeb54cc05160d1c3d9a90c2e946d2e55e0933840ab4"
+---
+
 Review this PR and respond with a very concise final message, formatted in Markdown.
 
 There should be a summary of the changes (1-2 sentences) and a few bullet points if necessary.

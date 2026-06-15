@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-download-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a2edf4b772091a1dca51e2fc7356b1e14868ce4c93e45358da9ae9c2331a6350"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "dacd24924fe45791300dcac61490ee77b5f98a86c9def6b611ee65da251db167"
 ---
 
 # AI_DownloadError
@@ -40,6 +40,7 @@ if (DownloadError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

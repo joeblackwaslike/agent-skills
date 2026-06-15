@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/headless.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "d767966f4e86012bce9e358c80c8a8e056d4ad0c8e73d74fd036d5acdf32a7af"
+---
+
 # Using Headless CLI
 
 Use Cursor CLI in scripts and automation workflows for code analysis, generation, and refactoring tasks.

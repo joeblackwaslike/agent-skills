@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-argument-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "880e538b50e505af36ef9d393a8f2ce309969c5be3f2a694f377da2d46535986"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "795e438edc995dc69ca42af77f48bd889c3db57d3cb19ee9fda8d00ae51f0b66"
 ---
 
 # AI_InvalidArgumentError
@@ -38,6 +38,7 @@ if (InvalidArgumentError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

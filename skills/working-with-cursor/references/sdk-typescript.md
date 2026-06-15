@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/sdk/typescript.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "ff5919b3a6106521caa69f354a211df7ecdbc386f1250329ac3280f44c93e7b5"
+---
+
 # Cursor TypeScript SDK
 
 The `@cursor/sdk` package lets you call Cursor's agent from your own code. The same agent that runs in the Cursor IDE, CLI, and web app is now scriptable from TypeScript. Run the `/sdk` skill inside Cursor to get started.

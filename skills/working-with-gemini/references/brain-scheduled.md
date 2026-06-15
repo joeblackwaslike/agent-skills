@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/brain/scheduled.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "3ba7070a9bc66fbaec605c0864b3e79626bcc961b9b47a9058f8df2ae3bba231"
+---
+
 # Phase: Scheduled Agent (Strategic Investigation & Optimization)
 
 ## Goal

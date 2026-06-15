@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/skills.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "232996919cf3c2a757e2836205497f6cae84209460d4899b55c13afa9a4970f3"
+---
+
 # Agent Skills
 
 Agent Skills is an open standard for extending AI agents with specialized capabilities. Skills package domain-specific knowledge and workflows that agents can use to perform specific tasks.

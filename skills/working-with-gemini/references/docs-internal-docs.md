@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/internal-docs.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "ff2712ba8a9af421fa36d0095ad7ff8b59b6564a4a47875a4727939474501283"
+---
+
 # Internal documentation tool (`get_internal_docs`)
 
 The `get_internal_docs` tool lets Gemini CLI access its own technical

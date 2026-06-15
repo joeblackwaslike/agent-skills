@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/hooks/best-practices.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "7d9ba054f3b227ced18db33f184da0eec9117966093a30dadbce15b75a6d79e2"
+---
+
 # Hooks Best Practices
 
 This guide covers security considerations, performance optimization, debugging

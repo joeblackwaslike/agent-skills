@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/account/teams/analytics.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "ca8fe641c3226ce22b83a1d8624f727cb0bcce8ff03e5062ae4ce1191186be5c"
+---
+
 # Usage Analytics
 
 Usage Analytics are available for Team and Enterprise customers.

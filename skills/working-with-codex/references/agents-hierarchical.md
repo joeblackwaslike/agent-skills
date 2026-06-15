@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/agents/hierarchical.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "014702d6022bda308699f94aac2e2a328541bd916b599faee8724b162e643be8"
+---
+
 Files called AGENTS.md commonly appear in many places inside a container - at "/", in "~", deep within git repositories, or in any other directory; their location is not limited to version-controlled folders.
 
 Their purpose is to pass along human guidance to you, the agent. Such guidance can include coding standards, explanations of the project layout, steps for building or testing, and even wording that must accompany a GitHub pull-request description produced by the agent; all of it is to be followed.

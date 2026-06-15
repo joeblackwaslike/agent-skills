@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/activate-skill.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "90abfd1b806a09c086c46eb17115636d81167850e1e5e1556062aa380d7fb30c"
+---
+
 # Activate skill tool (`activate_skill`)
 
 The `activate_skill` tool lets Gemini CLI load specialized procedural expertise

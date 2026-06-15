@@ -1,8 +1,8 @@
 ---
 title: "Pages Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages"
-fetched_at: "2026-06-08T05:39:47.809Z"
-sha256: "da9884c0a578f128442149c643ae76cfa865cdc3c7f287c4681df45a69fc650a"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "c34dab44841def06d39dcfbb25054b0b4ec7779bcb236891f91bd4d6cd67a0f5"
 ---
 
 # Pages Plugin

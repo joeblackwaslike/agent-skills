@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cloud-agent/capabilities.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "a543a2cd4235c42341fdcc5d3cfe2f22abcc831e1765b0166d35dc763d9ff6fb"
+---
+
 # Capabilities
 
 ## Computer use

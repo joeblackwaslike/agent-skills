@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/whats-new/index.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "c3cc507590e5c2b992b3378dcf8cb19266b9de746db81ba092555acf1ca6403f"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

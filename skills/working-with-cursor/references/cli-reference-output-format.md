@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/reference/output-format.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "87622f82c25faca7979fbcb0587b5298b7b08379ea5261e10a5cbb13c1b2912e"
+---
+
 # Output Format
 
 The Cursor Agent CLI provides multiple output formats with the `--output-format` option when combined with `--print`. These formats include structured formats for programmatic use (`json`, `stream-json`) and a simplified text format for human-readable output (`text`).

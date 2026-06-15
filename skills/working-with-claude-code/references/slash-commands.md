@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/slash-commands.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "aa70d4c5c4f5d22a52417b4d8fec15a553aedde466a947e0a048659946d54993"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

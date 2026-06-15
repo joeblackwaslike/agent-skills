@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/security.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "c7c994e0f888baf05a3dbc14c231581b481c97ff969dfa043f3edce45e1bc95c"
+---
+
 # Agent Security
 
 AI can behave unexpectedly due to prompt injection, hallucinations, and other issues. We protect users with guardrails that limit what agents can do. By default, sensitive actions require your manual approval. This document explains our guardrails and what they mean for you.

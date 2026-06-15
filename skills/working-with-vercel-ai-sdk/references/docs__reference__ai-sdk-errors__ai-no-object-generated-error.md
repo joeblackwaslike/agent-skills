@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-object-generated-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "fa38f59b5fae9de78f5bef252b43cdffd96c0ed4c7c409863dff5a881ec15188"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "1ecb70e3cd8485aa1e28b3985bb3d651ec595322d537e708e6e438bbcc7910b2"
 ---
 
 # AI_NoObjectGeneratedError
@@ -55,6 +55,7 @@ try {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

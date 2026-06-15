@@ -1,8 +1,8 @@
 ---
 title: "Markdown Tabs"
 source: "https://docusaurus.io/docs/markdown-features/tabs"
-fetched_at: "2026-06-08T05:39:46.735Z"
-sha256: "f868fb0d1ed053224b43e1894a043d02ddd3637dd9254e0b1fd10c5d7821a3a1"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "1934be7d62047103ae23472e75e729d6619c15a0d1586d1211ce2fa6793517d4"
 ---
 
 # Markdown Tabs

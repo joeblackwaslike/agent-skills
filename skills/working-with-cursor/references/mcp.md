@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/mcp.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "7162582bb201c3701ea7f2fd4e8d3cc969a8eb46ee208a07af252b1dedea6a18"
+---
+
 # Model Context Protocol (MCP)
 
 ## What is MCP?

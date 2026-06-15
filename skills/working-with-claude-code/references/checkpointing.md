@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/checkpointing.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "4056d43fd208398998e2e54d26b9d3913ebdc1a12de7be3538ee0158d94cb88b"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

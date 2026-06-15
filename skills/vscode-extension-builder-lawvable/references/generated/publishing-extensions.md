@@ -1,23 +1,23 @@
 ---
 title: "Publishing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
-fetched_at: "2026-06-08T05:39:49.955Z"
-sha256: "18239f00ba42f6fd1d2e77607f0a5e53bc104fff0bda1fe6457ad2ee6c937cb9"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "bcc48a2852c56a7da6c0d64e674bb0bda9fd32cd8f01e259e98d7901e15aefe6"
 ---
 
 # Publishing Extensions
 
 Source: https://code.visualstudio.com/api/working-with-extensions/publishing-extension
 
-Once you have made a high-quality extension, you can publish it to the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode) so others can find, download, and use your extension. Alternatively, you can [package](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_packaging-extensions) an extension into the installable VSIX format and share it with other users.
+Once you have made a high-quality extension, you can publish it to the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode) so others can find, download, and use your extension. Alternatively, you can [package](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions) an extension into the installable VSIX format and share it with other users.
 
 This topic covers:
 
-- Using [vsce](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_vsce), the CLI tool for managing VS Code extensions
+- Using [vsce](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce), the CLI tool for managing VS Code extensions
 
-- [Packaging](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_packaging-extensions), [publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_publishing-extensions) and [unpublishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_unpublishing-extensions) extensions
+- [Packaging](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions), [publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing-extensions) and [unpublishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#unpublishing-extensions) extensions
 
-- [Registering a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_create-a-publisher) necessary for publishing extensions
+- [Registering a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher) necessary for publishing extensions
 
 ## vsce
 
@@ -35,7 +35,7 @@ npm install -g @vscode/vsce
 
 ### Usage
 
-You can use `vsce` to easily [package](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_packaging-extensions) and [publish](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_publishing-extensions) your extensions:
+You can use `vsce` to easily [package](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions) and [publish](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing-extensions) your extensions:
 
 
 ```
@@ -69,10 +69,16 @@ The publishing tool checks the following constraints:
 
 Visual Studio Code uses [Azure DevOps](https://azure.microsoft.com/services/devops/) for its Marketplace services. This means that authentication, hosting, and management of extensions are provided through Azure DevOps.
 
+ 
+
+ 
+
+ Important
+ On December 1, 2026, global Personal Access Tokens (PATs) in Azure DevOps are retired. To keep publishing extensions, use [secure automated publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#secure-automated-publishing-to-visual-studio-marketplace) with Microsoft Entra ID instead of PATs. For more information, see [Retirement of global Personal Access Tokens in Azure DevOps](https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/).
+
 ### Secure automated publishing to Visual Studio Marketplace
 
-Follow these steps to improve security and align with Microsoft best practices!
-We strongly recommend that extension publishing use [Microsoft Entra ID–based authentication](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/entra?view=azure-devops) with **workload identity federation and managed identities**, eliminating long-lived secrets such as Personal Access Tokens (PATs) and enabling secure, automated publishing pipelines.
+We recommend that extension publishing use [Microsoft Entra ID–based authentication](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/entra?view=azure-devops) with **workload identity federation and managed identities**. This approach eliminates long-lived secrets such as Personal Access Tokens (PATs) and enables secure, automated publishing pipelines.
 
 This approach strengthens the overall security posture by removing reliance on stored credentials, simplifies operations through native integration with Azure Pipelines and Entra ID, scales effectively across environments, and aligns with modern identity and access management standards required for enterprise compliance. For more information, see [Reduce PAT usage](https://devblogs.microsoft.com/devops/reducing-pat-usage-across-azure-devops/).
 
@@ -189,7 +195,7 @@ Sample YAML tasks. Replace with the extension directory path.
  
 
  Important
- Due to security concerns, consider using the more secure Microsoft Entra tokens over higher-risk personal access tokens.
+ Global PATs in Azure DevOps are retired on December 1, 2026. We recommend that you use [secure automated publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#secure-automated-publishing-to-visual-studio-marketplace) with Microsoft Entra ID instead of PATs. For more information, see [Retirement of global Personal Access Tokens in Azure DevOps](https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/).
 
 ### Get a Personal Access Token
 
@@ -225,7 +231,7 @@ click **Show all scopes** link below the **Scopes** section
 - 
 Click **Create**.
 
-You'll be presented with your newly created Personal Access Token. **Copy** it to the safe location, you'll need it to [create a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_create-a-publisher).
+You'll be presented with your newly created Personal Access Token. **Copy** it to the safe location, you'll need it to [create a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher).
 
 ### Create a publisher
 
@@ -237,7 +243,7 @@ To create a publisher:
 Go to the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage).
 
 - 
-Log in with the same Microsoft account you used to create the [Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_get-a-personal-access-token) in the previous section.
+Log in with the same Microsoft account you used to create the [Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token) in the previous section.
 
 - 
 Click **Create publisher** in the pane on the left.
@@ -337,7 +343,7 @@ Once unpublished, the extension's Availability status is changed to **Unpublishe
 You can remove an extension in two ways:
 
 - 
-Automatically, using [vsce](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_vsce) with the `unpublish` command:
+Automatically, using [vsce](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce) with the `unpublish` command:
 
 
 ```
@@ -357,6 +363,21 @@ In both cases, you will be prompted to confirm the removal by typing the extensi
  Note
  When you remove an extension, the Marketplace also removes any extension statistics. You may want to unpublish your extension rather than remove it.
 Important! Extension names are unique identifiers in the Visual Studio Code Marketplace. Once an extension is removed, its extension name is permanently reserved and cannot be reused, even by the original publisher. This helps protect users from impersonation and maintains trust in the Marketplace ecosystem. Before deleting an extension, ensure that you no longer need the name, as this action is irreversible.
+
+## Removing specific extension versions
+
+You can remove a specific extension version from the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage) by selecting **More Actions > Reports**:
+
+On the **Manage** tab, select **Delete this version**.
+
+You are prompted to confirm the removal by typing the extension name. This action is **irreversible**.
+
+ 
+
+ 
+
+ Important
+ Once deleted, you can't reuse this version number for a new publish. Additionally, you cannot delete the latest version of an extension.
 
 ## Deprecating extensions
 
@@ -498,7 +519,7 @@ See more information in [Marketplace Presentation Tips](https://code.visualstudi
 
 ### Verify a publisher
 
-You can become a **verified publisher** by verifying ownership of an [eligible domain](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_eligible-domains) associated with your brand or identity. Once your publisher is verified, the Marketplace will add a verified badge to your extension details.
+You can become a **verified publisher** by verifying ownership of an [eligible domain](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#eligible-domains) associated with your brand or identity. Once your publisher is verified, the Marketplace will add a verified badge to your extension details.
 
 #### Prerequisites
 
@@ -510,13 +531,13 @@ To verify a publisher:
 Go to the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage).
 
 - 
-In the pane on the left, select or [create a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_create-a-publisher) you wish to verify.
+In the pane on the left, select or [create a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher) you wish to verify.
 
 - 
 In the main pane, select the **Details** tab.
 
 - 
-In the **Details tab**, under the **Verified domain** section, type an [eligible domain](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_eligible-domains).
+In the **Details tab**, under the **Verified domain** section, type an [eligible domain](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#eligible-domains).
 
 **Note**: Notice an asterisk (*) next to **Details** tab title after you start typing. Just like in VS Code, this indicates that you have unsaved changes. For the same reason, the **Verify** button is disabled yet.
 
@@ -531,7 +552,7 @@ Follow the instructions to add the TXT record to your domain's DNS configuration
 - 
 Select **Verify** in the dialog window to validate that the TXT record has been successfully added.
 
-Once your TXT record has been validated, the Marketplace team will review your request and let you know the result within 5 business days. The validation includes, but is not limited to: domain, website and extensions [prerequisites for track record](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_prerequisites), content eligibility, legitimacy, trust and positive reputation.
+Once your TXT record has been validated, the Marketplace team will review your request and let you know the result within 5 business days. The validation includes, but is not limited to: domain, website and extensions [prerequisites for track record](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#prerequisites), content eligibility, legitimacy, trust and positive reputation.
 
 If validation is passed, you will see the corresponding badge next to your publisher name in the Visual Studio Marketplace publisher management page:
 
@@ -675,7 +696,7 @@ Starting with version `1.61.0`, VS Code looks for the extension package that mat
 
 Platform-specific extensions are useful if your extension has platform-specific libraries or dependencies, so you can control the exact binaries that are included in a platform package. A common use case is the use of **native node modules**.
 
-Platform-specific extensions are published as separate packages containing platform-specific content. You can specify the target platform by passing the [--target flag](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_publishing). If you don't pass this flag, that package will be used as a fallback for all platforms that have no platform-specific package.
+Platform-specific extensions are published as separate packages containing platform-specific content. You can specify the target platform by passing the [--target flag](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing). If you don't pass this flag, that package will be used as a fallback for all platforms that have no platform-specific package.
 
 The currently available platforms are: `win32-x64`, `win32-arm64`, `linux-x64`, `linux-arm64`, `linux-armhf`, `alpine-x64`, `alpine-arm64`, `darwin-x64`, `darwin-arm64` and `web`.
 
@@ -725,7 +746,7 @@ One easy mistake to make when creating the PAT (Personal Access Token) is to sel
 
 ### I can't unpublish my extension through the `vsce` tool?
 
-You may have changed your extension ID or publisher ID. You can also manage your extensions directly via the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage). For example, update or [unpublish](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#_unpublishing-extensions).
+You may have changed your extension ID or publisher ID. You can also manage your extensions directly via the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage). For example, update or [unpublish](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#unpublishing-extensions).
 
 ### Why does vsce not preserve file attributes?
 
@@ -755,4 +776,4 @@ You can either use npm or yarn v1 to manage your extension's dependencies.
 You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](https://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.
 
  
- 6/3/2026
+ 6/10/2026

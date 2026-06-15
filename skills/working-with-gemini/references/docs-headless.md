@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/headless.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "42718e00f5acac2ab039091fab282ed9b3d992ae9f49afc64ec7636fbf6fa6ec"
+---
+
 # Headless mode reference
 
 Headless mode provides a programmatic interface to Gemini CLI, returning

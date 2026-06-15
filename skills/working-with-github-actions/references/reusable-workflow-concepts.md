@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/reusing-workflow-configurations.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "62a6723a943933fa9296f3c351e3305ee7bd5dcc3e1d98e6981f296d6f886756"
+---
+
 ## Reusable workflows
 
 Rather than copying and pasting from one workflow to another, you can make workflows reusable. You and anyone with access to the reusable workflow can then call the reusable workflow from another workflow.

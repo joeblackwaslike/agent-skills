@@ -1,6 +1,9 @@
 ---
 name: codex-pr-body
 description: Update the title and body of one or more pull requests.
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/codex-pr-body/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "716cacb29179991ef5265fa2f801b0b5fc65452f03b52a579616792b5f4d5347"
 ---
 
 ## Determining the PR(s)

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/vendor/bubblewrap/NEWS.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "53c9018f3fc3427d0594c8ba2dc74e366fe2156a0a3f5a957ad43eaa146cd063"
+---
+
 bubblewrap 0.11.2
 =================
 

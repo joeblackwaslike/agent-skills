@@ -1,6 +1,9 @@
 ---
 name: plugin-creator
 description: Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, valid manifest defaults, and personal-marketplace entries by default. Use when Codex needs to create a new personal plugin, add optional plugin structure, generate or update marketplace entries for plugin ordering and availability metadata, or update an existing local plugin during development with the CLI-driven cachebuster and reinstall flow.
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/plugin-creator/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "8fd56316b2c49cbdc657a5d197967a233018e1fada65b00a5dd030dce6499a6e"
 ---
 
 # Plugin Creator

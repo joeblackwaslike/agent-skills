@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e3471736dab0e2d8929632e2be16c8d969f386aa3eb90fb7eddb4f1174a21ac7"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "971eb98e1b3d4c09b1f7eaa29ddc029029c32fd40aa782ce79cec2e10722b0d8"
 ---
 
 # API Reference
@@ -200,6 +200,7 @@ sha256: "e3471736dab0e2d8929632e2be16c8d969f386aa3eb90fb7eddb4f1174a21ac7"
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

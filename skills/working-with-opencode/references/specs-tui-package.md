@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/tui-package.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "77a60509f49487a429416d4362cfe817a9022896f886dd05b1d682bb307999bc"
+---
+
 # TUI Package Extraction
 
 ## Goal

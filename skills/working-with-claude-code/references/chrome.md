@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/chrome.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "9da345d19488ad20df87143f5fd13aea4feff389efe5a68f1036d79639ab61e8"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

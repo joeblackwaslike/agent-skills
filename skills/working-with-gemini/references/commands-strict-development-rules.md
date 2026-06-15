@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/commands/strict-development-rules.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "373969348168471eaa1ef08cc02372f1638a6b19d54adeb1db56747381282b46"
+---
+
 # Gemini CLI Strict Development Rules
 
 These rules apply strictly to all code modifications and additions within the

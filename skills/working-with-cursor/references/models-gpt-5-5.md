@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/models/gpt-5-5.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "5c609168e25ff4588ec1f90e3d04371fb8124c3e518737f9da4901a32dd9ed7b"
+---
+
 GPT-5.5 is OpenAI's most intelligent model in Cursor. It keeps momentum on long-running work and stays on task for significantly longer before stopping early, which matters most in complex, multi-step coding sessions.
 
 ## Strengths

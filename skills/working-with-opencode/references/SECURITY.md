@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/SECURITY.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "25d6b5b174c7b6728da5df12d1befbc714394da55950ebfd9b1922ea953ce417"
+---
+
 # Security
 
 ## IMPORTANT

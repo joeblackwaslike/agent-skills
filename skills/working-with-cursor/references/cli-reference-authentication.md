@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/reference/authentication.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "6182415159c85c2d1f6a9feb9689ba4874f14149caa668de04979dc3693cdff3"
+---
+
 # Authentication
 
 Cursor CLI supports two authentication methods: browser-based login (recommended) and API keys.

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/ask-user.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "c28e0e318e1234690540c5a0ef504caa185160c7821f1254c470f0726ba7d2fc"
+---
+
 # Ask User Tool
 
 The `ask_user` tool lets Gemini CLI ask you one or more questions to gather

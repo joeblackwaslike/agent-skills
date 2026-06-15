@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/reference/permissions.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "6a2c0e5dc920465bffa5fc963e356218c196283e3426503c484138da6257c54c"
+---
+
 # Permissions
 
 Configure what the agent is allowed to do using permission tokens in your CLI configuration. Permissions are set in `~/.cursor/cli-config.json` (global) or `<project>/.cursor/cli.json` (project-specific).

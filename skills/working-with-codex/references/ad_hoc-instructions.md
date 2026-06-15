@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/memories/write/templates/extensions/ad_hoc/instructions.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "d36a36083d92f9d44efbd95e0e4b6e81d7d149e812f2bca2009b6dd4b8aa93e7"
+---
+
 # Ad-hoc notes
 
 ## Instructions

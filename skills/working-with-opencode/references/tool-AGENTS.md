@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/core/src/tool/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "c325cfc3087a6f0db38c50af8ec9eb4fb6011c6548f8b03b2405871641a311f2"
+---
+
 # Core Tool Architecture
 
 This folder owns Core's one local tool representation, process and Location registration, effective lookup, and settlement.

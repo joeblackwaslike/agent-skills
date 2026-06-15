@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/plugin-creator/references/plugin-json-spec.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "f49edc4375d4344eb8fe0ca2148eac2db9e5d0ea2be312ab59f8e83746d1ec8f"
+---
+
 # Plugin JSON sample spec
 
 ```json

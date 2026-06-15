@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/todos.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "ac1f3d58ea3bad6bc78ac958d39fa3345a6268fb6343a58a7b330db573ee5e67"
+---
+
 # Todo tool (`write_todos`)
 
 The `write_todos` tool allows the Gemini agent to maintain an internal list of

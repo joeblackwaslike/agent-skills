@@ -1,5 +1,8 @@
 ---
 model: opencode/gpt-5.4
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/changelog.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "e299dd8ca2911f8ea5320cc069a0edbd57dbfaacf5d644092ecdf6907201659d"
 ---
 
 Create `UPCOMING_CHANGELOG.md` from the structured changelog input below.

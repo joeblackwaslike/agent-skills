@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/models/grok-build-0-1.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "5794cac1d7e46672b1211c2d824efd751d9eda418f249b053406a953ab67b277"
+---
+
 Grok Build 0.1 is xAI's fast coding model trained specifically for agentic coding. It supports a 256k context window with no Max Mode extension to 1M tokens.
 
 ## Strengths

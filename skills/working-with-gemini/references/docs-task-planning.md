@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/task-planning.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "c04a41a1ee7c3e2de39fbb671abc9925c9403615a3de8606e9d3815f0ae3b794"
+---
+
 # Plan tasks with todos
 
 Keep complex jobs on the rails with Gemini CLI's built-in task planning. In this

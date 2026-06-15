@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/gemini-cli-bot/brain/interactive.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "2a8209aba40c71feee0151c86dfbb04b4fa932eae11c2a3aab5cda974318a995"
+---
+
 # Phase: Interactive Agent (Strategic Investigation & Implementation)
 
 ## Goal

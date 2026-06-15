@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/api-reference.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "0f5a6b0b520e240a407a6e4cf195a1fc2c948a662c4f81b24b3bd13e9473b4ba"
+---
+
 # OpenAI Codex Python SDK (Beta) - API Reference
 
 Public surface of `openai_codex` for Codex workflows.

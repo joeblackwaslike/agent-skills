@@ -1,6 +1,9 @@
 ---
 name: tui-tester
 description: Expert guidance for testing Gemini CLI behavior and visual output using terminal automation.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/tui-tester/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a4ad3ebb4586adbd88d57515cc6ccfbd1a277dd672c0439b3b6c65a06a50c0d5"
 ---
 
 # TUI Tester Skill

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/CONTRIBUTING.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "2ef930c36793e73056cded82740adcaddb725b1952e998b5d426478f6283bb52"
+---
+
 # How to contribute
 
 We would love to accept your patches and contributions to this project. This

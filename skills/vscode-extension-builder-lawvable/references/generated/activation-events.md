@@ -1,8 +1,8 @@
 ---
 title: "Activation Events"
 source: "https://code.visualstudio.com/api/references/activation-events"
-fetched_at: "2026-06-08T05:39:48.798Z"
-sha256: "633c52e7b1ac57113e906bd914b858051865eb698f2497df8c48f561610e2974"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "c28ca05e2c16c082d9c96aa5741b0a3b3803970f4197cdad9f3859eb02c85b3d"
 ---
 
 # Activation Events
@@ -51,11 +51,11 @@ Source: https://code.visualstudio.com/api/references/activation-events
 
 - [onTaskType](https://code.visualstudio.com/api/references/activation-events#onTaskType)
 
-- [onTerminal](https://code.visualstudio.com/api/references/activation-events#_onTerminal)
+- [onTerminal](https://code.visualstudio.com/api/references/activation-events#onTerminal)
 
 [onTerminalProfile](https://code.visualstudio.com/api/references/activation-events#onTerminalProfile)
 
-- [onTerminalShellIntegration](https://code.visualstudio.com/api/references/activation-events#_onTerminalShellIntegration)
+- [onTerminalShellIntegration](https://code.visualstudio.com/api/references/activation-events#onTerminalShellIntegration)
 
 - [onUri](https://code.visualstudio.com/api/references/activation-events#onUri)
 
@@ -449,4 +449,4 @@ The `*` activation event is emitted and interested extensions will be activated 
 **Note:** An extension **must** export an `activate()` function from its main module and it will be invoked **only once** by VS Code when any of the specified activation events is emitted. Also, an extension **should** export a `deactivate()` function from its main module to perform cleanup tasks on VS Code shutdown. Extension **must** return a Promise from `deactivate()` if the cleanup process is asynchronous. An extension may return `undefined` from `deactivate()` if the cleanup runs synchronously.
 
  
- 6/3/2026
+ 6/10/2026

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/notifications.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "cc07054bf15d52359f1d7785d09d7b13accb50b6d84416e56ff28f467667e4b3"
+---
+
 # Notifications (experimental)
 
 Gemini CLI can send system notifications to alert you when a session completes

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "aa78659537ce7844650533bd6f5aa9b64aec781f1e8b31745dbde5bf29441f3e"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "302416b5077440daf0d3a6fd66979e5edd6936fd6ad15e48130869375622f6b6"
 ---
 
 # Chatbot Message Persistence
@@ -41,6 +41,9 @@ import { existsSync, mkdirSync } from 'fs';
 import { writeFile } from 'fs/promises';
 import path from 'path';
 
+// Treat chat IDs as opaque tokens before using them in file paths.
+const chatIdRegex = /^[A-Za-z0-9_-]+$/;
+
 export async function createChat(): Promise<string> {
   const id = generateId(); // generate a unique chat ID
   await writeFile(getChatFile(id), '[]'); // create an empty chat file
@@ -48,11 +51,26 @@ export async function createChat(): Promise<string> {
 }
 
 function getChatFile(id: string): string {
-  const chatDir = path.join(process.cwd(), '.chats');
+  if (!chatIdRegex.test(id)) {
+    throw new Error('Invalid chat ID');
+  }
+
+  const chatDir = path.resolve(process.cwd(), '.chats');
+  const chatFile = path.resolve(chatDir, `${id}.json`);
+
+  // Defense in depth: keep the resolved file inside the chat directory.
+  if (!chatFile.startsWith(`${chatDir}${path.sep}`)) {
+    throw new Error('Invalid chat ID');
+  }
+
   if (!existsSync(chatDir)) mkdirSync(chatDir, { recursive: true });
-  return path.join(chatDir, `${id}.json`);
+  return chatFile;
 }
 ```
+
+The chat ID can come from the URL or the request body, so validate it as an
+opaque token before using it in a file path. The resolved path check ensures the
+file stays inside the intended `.chats` directory.
 
 ## Loading an existing chat
 

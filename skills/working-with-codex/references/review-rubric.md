@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/review/rubric.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "bc96ddff6a80d36620ea27cd3e864abffd875cc4ea65a55063b99da459ba4ae2"
+---
+
 # Review guidelines:
 
 You are acting as a reviewer for a proposed code change made by another engineer.

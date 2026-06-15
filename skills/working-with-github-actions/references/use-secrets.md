@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "9fc3f187de9bc0cbcfa1d20bcb43eb6906b7cc72b4808b7ea6411233b246ce04"
+---
+
 ## Creating secrets for a repository
 
 {% data reusables.actions.permissions-statement-secrets-variables-repository %}

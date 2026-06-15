@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/plugin-dependencies.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "292332ed6193fe49ba27bf122dff68899f0cf7d74ad1222afc6155128d83c816"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

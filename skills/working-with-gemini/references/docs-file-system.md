@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/file-system.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "bcdf392eddc135811976d045f19f8a2d782003fa528add7c98f3a6e59a97ef3b"
+---
+
 # File system tools reference
 
 Gemini CLI core provides a suite of tools for interacting with the local file

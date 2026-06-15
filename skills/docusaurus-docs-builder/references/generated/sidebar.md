@@ -1,8 +1,8 @@
 ---
 title: "Sidebar"
 source: "https://docusaurus.io/docs/sidebar"
-fetched_at: "2026-06-08T05:39:45.427Z"
-sha256: "5cb6b36773a7fbcf20a04a9140b551bdcfa37a570902fc762a67e83a3de3aea9"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "0b935f91485739595e5651ed9f4cd5f3f65db7ce845b4ca503b2f6d3384d203d"
 ---
 
 # Sidebar

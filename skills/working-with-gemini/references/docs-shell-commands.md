@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/shell-commands.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "66a496e97d82605e11475ac0379ede83ec49f2fe5c0c22301cde61a87284a2df"
+---
+
 # Execute shell commands
 
 Use the CLI to run builds, manage git, and automate system tasks without leaving

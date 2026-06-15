@@ -4,6 +4,9 @@ description:
   A specialized skill for Gemini CLI that provides high-performance, fail-fast
   monitoring of GitHub Actions workflows and automated local verification of CI
   failures. It handles run discovery automatically—simply provide the branch name.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/ci/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "2f6c8c68cc4e7d7de2b13c99dd51bc511d353c26587dc74a60232c9d2f4bf800"
 ---
 
 # CI Replicate & Status

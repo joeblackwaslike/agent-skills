@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/custom-commands.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "d0a7dacc329cfb6055195b066e70e6c75cfce280e626101bad14f4d1907a7e83"
+---
+
 # Custom commands
 
 Custom commands let you save and reuse your favorite or most frequently used

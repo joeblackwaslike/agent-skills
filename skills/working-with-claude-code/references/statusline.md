@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/statusline.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "4f1178cd373a97c799eebcf81f42800881e752a572e8954ed290acae13432400"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -649,7 +655,7 @@ This example combines several techniques: threshold-based colors (green under 70
       let branch = '';
       try {
           branch = execSync('git branch --show-current', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }).trim();
-          branch = branch ? ` | ���� ${branch}` : '';
+          branch = branch ? ` | 🌿 ${branch}` : '';
       } catch {}
 
       console.log(`${CYAN}[${model}]${RESET} 📁 ${dir}${branch}`);

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/a2a-server/development-extension-rfc.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "4f1a42fc02d5de264cabae66b6df04dd8fd6cca38d498ecccb1f527279f1d9a4"
+---
+
 # RFC: Gemini CLI A2A Development-Tool Extension
 
 ## 1. Introduction

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/babysit-pr/references/github-api-notes.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "33e0202472fa2e01e41d11ddc6cdc625d67ebff2c3282a0ca14f23a0950d23d2"
+---
+
 # GitHub CLI / API Notes For `babysit-pr`
 
 ## Primary commands used
@@ -43,6 +49,9 @@ Reruns only failed jobs (and dependencies) for a workflow run.
   - `gh api repos/{owner}/{repo}/pulls/<pr_number>/comments?per_page=100`
 - Review submissions:
   - `gh api repos/{owner}/{repo}/pulls/<pr_number>/reviews?per_page=100`
+
+Use each inline comment's `pull_request_review_id` to find its parent review. Ignore parent reviews
+whose `state` is `PENDING`, along with their inline comments, until the review is submitted.
 
 ## JSON fields consumed by the watcher
 

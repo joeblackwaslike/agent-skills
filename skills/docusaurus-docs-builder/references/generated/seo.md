@@ -1,8 +1,8 @@
 ---
 title: "SEO"
 source: "https://docusaurus.io/docs/seo"
-fetched_at: "2026-06-08T05:39:48.079Z"
-sha256: "8d87c408ba6b0b69c6fcfa082256604fbf9eddf853333a4e148d0e4781ee4558"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "f492eb56b2b3878077b7246e3ae40687ff592cdc396df81a8b3aa4817bae3736"
 ---
 
 # SEO

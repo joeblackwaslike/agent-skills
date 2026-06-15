@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/script-injections.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "a44a043baac704cf2a8674c15259d5942be7f66702f7122ba3e13abdeca1924c"
+---
+
 ## Understanding the risk of script injections
 
 When creating workflows, [custom actions](/actions/creating-actions/about-custom-actions), and [composite actions](/actions/creating-actions/creating-a-composite-action), you should always consider whether your code might execute untrusted input from attackers. This can occur when an attacker adds malicious commands and scripts to a context. When your workflow runs, those strings might be interpreted as code which is then executed on the runner.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-speech-generated-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ae2c7793f7f0a1f0601ad827ce80a573dbfdb143fa7c1be1971dc1b4de47e8a8"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "b0b9a699834b3eaac329bfe70972d500085363f17e7717381a70412997a289e5"
 ---
 
 # AI_NoSpeechGeneratedError
@@ -36,6 +36,7 @@ if (NoSpeechGeneratedError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

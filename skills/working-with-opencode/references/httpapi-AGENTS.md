@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/src/server/routes/instance/httpapi/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "85f198f1c3c5aeb6e2b4eef195d0e7b09710b0d43c53912a2e2d680c0be3f7b2"
+---
+
 # HttpApi Route Patterns
 
 Use `HttpApiBuilder.group(...)` for normal HTTP endpoints, including streaming HTTP responses such as server-sent events. Handlers should yield stable services once while building the handler layer, then close over those services in endpoint implementations.

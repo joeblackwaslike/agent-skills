@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/acp.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "65f46c603203646915b98f3ab52db1f0d670c221b46521a2b4e71d70d3c9181b"
+---
+
 # ACP
 
 ## Overview

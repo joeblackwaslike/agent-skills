@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/bugbot.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "839ac6dc86b7baa2e1620209d0815b5ab41a54ea886dd4771c34273fec0bff2c"
+---
+
 # Bugbot
 
 Bugbot reviews pull requests and identifies bugs, security issues, and code quality problems.
@@ -69,6 +75,12 @@ Team members can override settings for their own PRs:
 ## Analytics
 
 ![Bugbot dashboard](/docs-static/images/bugbot/bugbot-dashboard.png)
+
+## Incremental reviews
+
+By default, Bugbot reviews the full pull request diff on every push. Turn on **Incremental Review** from the [Bugbot dashboard](https://cursor.com/dashboard/bugbot) to review only the changes since the previous Bugbot review.
+
+![Incremental Review setting in the Bugbot dashboard](/docs-static/images/bugbot/incremental-review-setting.png)
 
 ## Effort Levels
 
@@ -192,6 +204,26 @@ If any changed file contains /(?:^|\s)(TODO|FIXME)(?:\s*:|\s+)/, then:
 - Body: "Replace TODO/FIXME with a tracked issue reference, e.g., `TODO(#1234): ...`, or remove it."
 - If the TODO already references an issue pattern /#\d+|[A-Z]+-\d+/, mark the Bug as resolved automatically.
 ```
+
+## Run in your agent
+
+Use the `/review-bugbot` or `/review` skills to run Bugbot from your agent before you push the code.
+
+**What diff is reviewed:** By default, `/review-bugbot` reviews your branch changes: every change relative to the base branch, including committed and uncommitted changes. Ask it to review only your uncommitted changes when you want narrower feedback.
+
+**Against which branch:** `/review-bugbot` compares against your default base branch. When your base branch isn't the default (such as `main`), tell the agent which branch to compare against or let it infer from the context.
+
+![Running the /review-bugbot skill from the agent input](/docs-static/images/bugbot/review-bugbot-skill.png)
+
+### Sync with your pull request
+
+`/review-bugbot` reviews stay in sync with Bugbot on your connected SCM (GitHub or GitLab).
+
+Under the hood, `/review-bugbot` stores the [patch ID](https://git-scm.com/docs/git-patch-id) of the reviewed diff. When Bugbot on your SCM sees a diff with the same patch ID, it skips the review and leaves a comment noting it already reviewed that diff.
+
+A common use case: run `/review-bugbot`, then open a pull request with the same diff, and Bugbot recognizes the review and skips the remote PR review.
+
+`/review` and `/review-bugbot` are available in Cursor 3.7+ and at [cursor.com/agents](https://cursor.com/agents). CLI support is coming soon.
 
 ## Autofix
 

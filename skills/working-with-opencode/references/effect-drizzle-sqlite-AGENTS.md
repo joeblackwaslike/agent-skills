@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/effect-drizzle-sqlite/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "f524ac5266a0a600c93615a8c3d32917d24327dafa01cdd9f8c7415721883738"
+---
+
 # Effect Drizzle SQLite
 
 This package vendors a Drizzle Effect SQLite adapter for this repo.

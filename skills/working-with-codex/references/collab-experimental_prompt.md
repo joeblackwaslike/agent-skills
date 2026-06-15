@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/templates/collab/experimental_prompt.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "6704ebc4ca8914c2ed0ff65706c1f8dd4f681a9ccec4ae7f9008a5f8e1d78cef"
+---
+
 ## Multi agents
 You have the possibility to spawn and use other agents to complete a task. For example, this can be use for:
 * Very large tasks with multiple well-defined scopes

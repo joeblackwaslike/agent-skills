@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/cli/src/commands/extensions/examples/policies/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "65c031f221466404cede7f8cb1ece18735d51bbd23d9a552011420fb83f6ef76"
+---
+
 # Policy engine example extension
 
 This extension demonstrates how to contribute security rules and safety checkers

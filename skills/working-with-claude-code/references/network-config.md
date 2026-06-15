@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/network-config.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "24f1fc26e6f1db6abf79968bbf96d8a178f1d41b9264340dcc976846a5e3421d"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

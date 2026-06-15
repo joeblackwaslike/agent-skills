@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/telemetry.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "9567d8090d7e8a1dfb459b04f9fa24d513bc6110a6ed5ae6ab841a770bbed97f"
+---
+
 # Observability with OpenTelemetry
 
 Observability is the key to turning experimental AI into reliable software.

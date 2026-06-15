@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/prompts/templates/permissions/approval_policy/on_request_rule_request_permission.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "98e8a78ac869d64fb094fb1a12e20e327e46a159bf74022c588b84326bf6afba"
+---
+
 # Permission Requests
 
 Commands may require user approval before execution. Prefer requesting sandboxed additional permissions instead of asking to run fully outside the sandbox.

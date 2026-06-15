@@ -1,6 +1,9 @@
 ---
 name: async-pr-review
 description: Trigger this skill when the user wants to start an asynchronous PR review, run background checks on a PR, or check the status of a previously started async PR review.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/async-pr-review/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "1502652fdef089cddc921a3f02a4f473c7f86b552e440f4e0c148e707930fd32"
 ---
 
 # Async PR Review

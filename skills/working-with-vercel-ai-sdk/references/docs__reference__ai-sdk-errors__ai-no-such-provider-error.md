@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-provider-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2becd6bc71cad1d5a5ac6b34d89799031685331fac3f5b86ae904cb80d19fba2"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "ffe33e1835a2db682e2cc0d1df6fa0f88e7e2a401c50cc9229821a2bcbfa8932"
 ---
 
 # AI_NoSuchProviderError
@@ -40,6 +40,7 @@ if (NoSuchProviderError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

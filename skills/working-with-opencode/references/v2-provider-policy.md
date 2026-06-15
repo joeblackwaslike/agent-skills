@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/provider-policy.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "0624bcef3029268b658af184c857a22580c55d1dd74102c08cf435d06a6160de"
+---
+
 # Policy
 
 ## Purpose

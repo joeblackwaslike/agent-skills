@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/plugins.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "1d0b73ea18dbeff5a5537bc60d64a8e3a303cf82258f37854ed3f6d7fd433234"
+---
+
 # Plugins
 
 Plugins package rules, skills, agents, commands, MCP servers, and hooks into distributable bundles. Browse official plugins in the [Cursor Marketplace](/marketplace). For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory). You can also [build your own](https://cursor.com/docs/plugins.md#creating-plugins) to share with other developers.

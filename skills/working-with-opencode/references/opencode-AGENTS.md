@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/opencode/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "3eb97d68fba764fc98daa9e2410ff559f38fa2cfa5f8aa18ebed45f1e4abd8ff"
+---
+
 # opencode database guide
 
 ## Database

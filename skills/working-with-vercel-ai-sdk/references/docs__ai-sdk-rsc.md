@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "664901fd8174901ca02aae7aa30d120d4d444e9abe9949ac81beb0f0825aab25"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "1b6b18b05512bec89f14f921e62433261da2a6cbfbf670d1073ce4f8b4d7a2ca"
 ---
 
 # AI SDK RSC
@@ -234,6 +234,7 @@ sha256: "664901fd8174901ca02aae7aa30d120d4d444e9abe9949ac81beb0f0825aab25"
     - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
     - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
     - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
     - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
     - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
     - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

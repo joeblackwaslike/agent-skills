@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/skills-best-practices.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "a064fd7fb55eab56d44e74b7367ad122f93a2f48fdfa5442e658ff3ba07d34f0"
+---
+
 # Agent Skill best practices
 
 Create high-quality, reliable Agent Skills by following these established design

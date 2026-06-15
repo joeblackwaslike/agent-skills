@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/integrations/slack.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "aa1f4c07a594ff9c77ee8d926b4834ae8541d9a270018d8725582e00f65c135e"
+---
+
 # Slack
 
 With Cursor's integration for Slack, you can use [Cloud Agents](https://cursor.com/docs/cloud-agent.md) to work on your tasks directly from Slack by mentioning `@cursor` with a prompt.

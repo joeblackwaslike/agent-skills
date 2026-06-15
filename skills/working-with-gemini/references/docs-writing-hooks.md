@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/hooks/writing-hooks.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "de4d2d8920ddf40354562b335921933287faaa8b6db10ba053b727081039afee"
+---
+
 # Writing hooks for Gemini CLI
 
 This guide will walk you through creating hooks for Gemini CLI, from a simple

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/behavioral-evals/references/creating.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "24e11a81e437aeadcd695af4fb31667525803ece2ffc38f015c93c8f2c6e8572"
+---
+
 # Creating Behavioral Evals
 
 ## 🔬 Rig Selection

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/storage/effect-sqlite-package.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "887568a4f8484decd9b6469836613c8e0ea9151b899f3b053f20058c3eea5fb8"
+---
+
 # Effect Drizzle SQLite Package
 
 ## Goal

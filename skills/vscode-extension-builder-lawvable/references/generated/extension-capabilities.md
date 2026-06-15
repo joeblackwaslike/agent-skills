@@ -1,8 +1,8 @@
 ---
 title: "Extension Capabilities"
 source: "https://code.visualstudio.com/api/extension-capabilities/overview"
-fetched_at: "2026-06-08T05:39:48.999Z"
-sha256: "adc697d57c5f088ae7ccdee6786ff343dbb26816ff5394f41068f953758eb589"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "eb6ef9e195bdac8a93466b3fb3e444ea41073ce4eba32f916b5cf78428c2946d"
 ---
 
 # Extension Capabilities
@@ -19,7 +19,7 @@ Visual Studio Code offers many ways for extensions to extend its capabilities. I
 
 - A few extension ideas
 
-However, we also impose [restrictions](https://code.visualstudio.com/api/extension-capabilities/overview#_restrictions) upon extensions to ensure the stability and performance of VS Code. For example, extensions cannot access the DOM of VS Code UI.
+However, we also impose [restrictions](https://code.visualstudio.com/api/extension-capabilities/overview#restrictions) upon extensions to ensure the stability and performance of VS Code. For example, extensions cannot access the DOM of VS Code UI.
 
 ## Common Capabilities
 
@@ -55,7 +55,7 @@ Some of these capabilities include:
 
 ## Declarative Language Features
 
-[Declarative Language Features](https://code.visualstudio.com/api/language-extensions/overview#declarative-language-features) adds basic text editing support for a programming language such as bracket matching, auto-indentation and syntax highlighting. This is done declaratively, without writing any code. For more advanced language features, like IntelliSense or debugging, see [Programmatic Language Features](https://code.visualstudio.com/api/extension-capabilities/overview#_programmatic-language-features).
+[Declarative Language Features](https://code.visualstudio.com/api/language-extensions/overview#declarative-language-features) adds basic text editing support for a programming language such as bracket matching, auto-indentation and syntax highlighting. This is done declaratively, without writing any code. For more advanced language features, like IntelliSense or debugging, see [Programmatic Language Features](https://code.visualstudio.com/api/extension-capabilities/overview#programmatic-language-features).
 
 **Extension Ideas**
 
@@ -150,4 +150,4 @@ A custom style sheet provided by users or extensions would work against the DOM 
 Instead, VS Code aims to provide a well-designed extension API supporting UI customizations. The API is documented, comes with tooling and samples, and is kept stable across all upcoming releases of VS Code.
 
  
- 6/3/2026
+ 6/10/2026

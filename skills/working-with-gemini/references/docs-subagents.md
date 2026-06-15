@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/subagents.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "1a1b38993a2f5c6e16afda1914974a86274e73fac90e3ab62334d45e34bf7849"
+---
+
 # Subagents
 
 Subagents are specialized agents that operate within your main Gemini CLI
@@ -105,7 +111,7 @@ Gemini CLI comes with the following built-in subagents:
     slow. You can invoke it explicitly using `@generalist`.
 - **Configuration:** Enabled by default.
 
-### Browser Agent (experimental)
+### Browser Agent
 
 - **Name:** `browser_agent`
 - **Purpose:** Automate web browser tasks — navigating websites, filling forms,
@@ -114,10 +120,6 @@ Gemini CLI comes with the following built-in subagents:
 - **When to use:** "Go to example.com and fill out the contact form," "Extract
   the pricing table from this page," "Click the login button and enter my
   credentials."
-
-<!-- prettier-ignore -->
-> [!NOTE]
-> This is a preview feature currently under active development.
 
 #### Prerequisites
 

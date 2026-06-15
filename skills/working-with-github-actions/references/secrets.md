@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/secrets.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "8eaf186614c2e110b743faff8e215e637b546c4fcdefa4063c996d4bed529345"
+---
+
 ## About secrets
 
 Secrets allow you to store sensitive information in your organization, repository, or repository environments. Secrets are variables that you create to use in {% data variables.product.prodname_actions %} workflows in an organization, repository, or repository environment.

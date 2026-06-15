@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/faq.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "ef254ecd4b88ade60991ab27e6caddd6578d2b5ef76fa40b8228de1f7f70435c"
+---
+
 # FAQ
 
 ## Is the Python SDK stable?

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/vendor/bubblewrap/release-checklist.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "99a43f1c07af118a61b399e2a4b40f43f8c4e231bc3cea394be1986cdf87869e"
+---
+
 bubblewrap release checklist
 ============================
 

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "9a6e83990a276009abe6ae8b274fda4249e6d484bc2f3ad683a8de8c21b3e75e"
+---
+
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
 ## Overview
@@ -49,6 +55,17 @@ Edit the trust policy, adding the `sub` field to the validation conditions. For 
   "StringEquals": {
     "{% ifversion ghes %}HOSTNAME/_services/token{% else %}token.actions.githubusercontent.com{% endif %}:aud": "sts.amazonaws.com",
     "{% ifversion ghes %}HOSTNAME/_services/token{% else %}token.actions.githubusercontent.com{% endif %}:sub": "repo:octo-org/octo-repo:ref:refs/heads/octo-branch"
+  }
+}
+```
+
+For repositories created after July 15, 2026, or that have opted in to immutable subject claims, the `sub` claim includes immutable owner and repository IDs (not available on {% data variables.product.prodname_ghe_server %}). Make sure your trust policy matches the format your repository uses. For more information, see [AUTOTITLE](/actions/reference/openid-connect-reference#immutable-subject-claims).
+
+```json copy
+"Condition": {
+  "StringEquals": {
+    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+    "token.actions.githubusercontent.com:sub": "repo:octo-org@123456/octo-repo@456789:ref:refs/heads/octo-branch"
   }
 }
 ```

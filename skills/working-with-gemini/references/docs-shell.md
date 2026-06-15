@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/shell.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "7e9649ff91274b23cc05c0af8e4aec31f2d832439d448e61e5b47f964c2de5dd"
+---
+
 # Shell tool (`run_shell_command`)
 
 The `run_shell_command` tool allows the Gemini model to execute commands

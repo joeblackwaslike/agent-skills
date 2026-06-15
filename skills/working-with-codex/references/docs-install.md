@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/docs/install.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "1126ec733921878a40720e139ba7be88e325ecf9fa5b113de2cc636bc71a1f5a"
+---
+
 ## Installing & building
 
 ### System requirements
@@ -26,6 +32,8 @@ rustup component add rustfmt
 rustup component add clippy
 # Install helper tools used by the workspace justfile:
 cargo install --locked just
+# DotSlash fetches pinned development tools such as buildifier on first use.
+cargo install --locked dotslash
 # Install nextest for the `just test` helper.
 cargo install --locked cargo-nextest
 

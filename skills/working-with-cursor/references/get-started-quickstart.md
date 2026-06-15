@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/get-started/quickstart.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "f1644b24b45f5ed693ff2d446e9489b5ec10eb1adebc18f77de382ece4be24e1"
+---
+
 # Quickstart
 
 This guide gets you from install to your first useful change in Cursor. You'll sign in, ask Cursor to explain your codebase, make a small edit, and review the result.

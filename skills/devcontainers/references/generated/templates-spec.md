@@ -1,8 +1,8 @@
 ---
 title: "Templates specification"
 source: "https://containers.dev/implementors/templates/"
-fetched_at: "2026-06-08T05:39:43.396Z"
-sha256: "4c566a4caa79f1ab364bfb22f494732dd82a145d7c4325ff5dd4b37d58740b4e"
+fetched_at: "2026-06-15T05:52:46.055Z"
+sha256: "1d02053c1cb0d24aa13ec7f1a2f354303206be3d988de780d05f2c2f136c825c"
 ---
 
 # Templates specification

@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "f6a71545c9c84bcfe62470b91591118b76ef4bd315438503e7a18603209c7ad8"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

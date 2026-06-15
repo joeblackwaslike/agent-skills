@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/jetbrains.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "b6e13b2fd20ada8006d0d601219d654f73af49673f4d6b0d81c9bdc26b403d04"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -29,11 +35,21 @@ The Claude Code plugin works with most JetBrains IDEs, including:
 
 ## Installation
 
-### Marketplace installation
+The plugin runs the `claude` command in your IDE's integrated terminal and connects to it. It does not bundle its own copy of the CLI, so install both pieces:
 
-Find and install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains marketplace and restart your IDE.
+<Steps>
+  <Step title="Install the Claude Code CLI">
+    Follow the [quickstart](/en/quickstart) to install the CLI if you haven't already. The plugin shows a "Cannot launch Claude Code" notification when `claude` isn't on your PATH.
+  </Step>
 
-If you haven't installed Claude Code yet, see the [quickstart guide](/en/quickstart) for installation instructions.
+  <Step title="Install the JetBrains plugin">
+    Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE.
+  </Step>
+</Steps>
+
+If `claude` is installed somewhere your IDE can't find, set the full path in the plugin's [Claude command setting](#general-settings).
+
+Claude Code works with any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account, and no API key is required. You'll be prompted to [log in](/en/authentication#log-in-to-claude-code) the first time you run `claude`.
 
 <Note>
   After installing the plugin, you may need to restart your IDE completely for it to take effect.

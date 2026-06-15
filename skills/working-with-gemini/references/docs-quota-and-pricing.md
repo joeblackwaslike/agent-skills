@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/quota-and-pricing.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "648eea80b4f1c537b76aba3b817467b7ee3189cb15a77f28364575210a65ec51"
+---
+
 # Gemini CLI: Quotas and pricing
 
 Gemini CLI offers a generous free tier that covers many individual developers'

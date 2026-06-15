@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/file-management.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "bc2d4b7e25b4ad34f78061a7ffb43f149f6e3afa5f3281c46882e6eb0f753342"
+---
+
 # File management with Gemini CLI
 
 Explore, analyze, and modify your codebase using Gemini CLI. In this guide,

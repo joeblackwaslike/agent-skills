@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-06-08T05:39:43.759Z"
-sha256: "c2baeca5d7b9a1f3f63e15d9f0fb05e448db6594067f555bc50a0ba72e06e0e7"
+fetched_at: "2026-06-15T05:52:46.055Z"
+sha256: "d174a9be9427f4bf72f2a0184f846c6945af4d28392e0bb71d37116b1819e109"
 ---
 
 # Available templates index
@@ -253,6 +253,8 @@ Templates
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
 | C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:7.2.0` | `7.2.0` |
 | Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:7.2.0` | `7.2.0` |
+| Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
+| Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
 | Python + uv | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python-uv:1.0.5` | `1.0.5` |
 | AI Sandbox | goodjobandrew | `ghcr.io/goodjobandrew/devcontainer-templates/ai-sandbox:1.2.0` | `1.2.0` |

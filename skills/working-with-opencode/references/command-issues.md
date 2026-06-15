@@ -1,6 +1,9 @@
 ---
 description: "find issue(s) on github"
 model: opencode/claude-haiku-4-5
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/issues.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "cc8fd1121ba237c0c76f45ec91913c91c26b1e46a52faeed40e4ca58a0718f43"
 ---
 
 Search through existing issues in anomalyco/opencode using the gh cli to find issues matching this query:

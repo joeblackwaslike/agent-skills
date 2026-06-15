@@ -1,8 +1,8 @@
 ---
 title: "Styling and Layout"
 source: "https://docusaurus.io/docs/styling-layout"
-fetched_at: "2026-06-08T05:39:47.201Z"
-sha256: "20295257f6161922ec95d64a698d0fe9626e06e7459961c44cce75eaea9c936c"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "da9399ff738492afd333678ab7d2d1d618f683fee58af201c3f57633dc293905"
 ---
 
 # Styling and Layout

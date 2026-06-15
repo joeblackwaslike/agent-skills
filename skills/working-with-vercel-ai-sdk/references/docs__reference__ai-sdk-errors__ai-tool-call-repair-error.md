@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-tool-call-repair-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1d599c18e357850d0642e12dab694d1875eaf53ef249f9ee593944fb74b8376d"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "db7e2b3b7acb0ed443169c4514bbb7ed1a407fddc85b6ce4fe93bb5ea1e78a78"
 ---
 
 # ToolCallRepairError
@@ -40,6 +40,7 @@ if (ToolCallRepairError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

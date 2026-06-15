@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/app/AGENTS.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "0f30cbdccab8eb9335d59733978b5d328d70e56d7cce095bfc7a3a03534190a4"
+---
+
 ## Debugging
 
 - NEVER try to restart the app, or the server process, EVER.

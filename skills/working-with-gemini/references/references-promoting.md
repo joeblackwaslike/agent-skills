@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/behavioral-evals/references/promoting.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "d79c418cca750990487bbb68bcd7e84f01d244b0fbfa9958805a1f52574606ab"
+---
+
 # Promoting Behavioral Evals
 
 Use this guide when asked to analyze nightly results and promote incubated tests

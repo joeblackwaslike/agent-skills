@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/champion-kit.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "c3574420815a3daae4062535ff3db41b5be6dd0c269cb5e4b6d500dc615ca176"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

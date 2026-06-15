@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/tools/canvas.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "82960f61a0bc638d7e83e7f9720e942f3e14ba0712421d5e993a2871b487180e"
+---
+
 # Canvases
 
 Canvases let Cursor create interactive artifacts that render next to the chat. Instead of scrolling through a long markdown table or code block, you get a standalone view, laid out with sections, stats, and tables, that you can reopen, edit, and iterate on.

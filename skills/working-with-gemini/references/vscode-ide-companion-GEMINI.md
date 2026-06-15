@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/vscode-ide-companion/GEMINI.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "9b7445a6c524922938f0b8abd9d16b53f0edd0674fbcf2897dcb21dde5eabcde"
+---
+
 # Gemini CLI VS Code Companion (`gemini-cli-vscode-ide-companion`)
 
 VS Code extension that pairs with Gemini CLI, providing direct IDE workspace

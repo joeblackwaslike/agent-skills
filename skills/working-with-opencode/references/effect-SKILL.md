@@ -1,6 +1,9 @@
 ---
 name: effect
 description: Work with Effect v4 / effect-smol TypeScript code in this repo
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/skills/effect/SKILL.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "0d27f8d40455cd4d509c0c81f3d2b6edb8319cd8ebd12a2e9f21626fc80495d5"
 ---
 
 # Effect

@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/cli/reference/configuration.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "87a1cccbf673c3a63ec3beb24bb481a33701dc98b52b3126a0c2f95622082792"
+---
+
 # Configuration
 
 Configure the Agent CLI using the `cli-config.json` file.

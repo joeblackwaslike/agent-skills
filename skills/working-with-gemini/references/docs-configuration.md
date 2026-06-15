@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/configuration.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "43c9c7d38e511161936929c819498a9fd7abe3cd28cc2e834346e139cff031a7"
+---
+
 # Gemini CLI configuration
 
 Gemini CLI offers several ways to configure its behavior, including environment

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/app/create-effect-simplification-spec.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "f50aa86e6eb0c1752575a0512fe91b9d0bd4e43d47d20dc4246ca864787186b9"
+---
+
 # CreateEffect Simplification Implementation Spec
 
 Reduce reactive misuse across `packages/app`.

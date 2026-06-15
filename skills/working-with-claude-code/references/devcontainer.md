@@ -1,3 +1,9 @@
+---
+source: "https://code.claude.com/docs/en/devcontainer.md"
+fetched_at: "2026-06-15T05:52:57.871Z"
+sha256: "f806dba4afa929c1654a728a1b3276431eec3abcdde7b538db5caed215a7b82a"
+---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

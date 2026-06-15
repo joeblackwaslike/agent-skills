@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/web-fetch.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "2624a4b0e0aafcc837c48b9169ef4c2ec481906d26bf13f1ea007f827fc48cad"
+---
+
 # Web fetch tool (`web_fetch`)
 
 The `web_fetch` tool allows the Gemini agent to retrieve and process content

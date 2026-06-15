@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-message-conversion-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "deb2fcb5dc5fc78b0639faa4349acf0a0e9806257cca00d8c4cae2a780b6b97a"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "61ae2100b554a5089aba9dee5277e7e1c09fb113bbbe2285c9cecdaf898f5c0f"
 ---
 
 # AI_MessageConversionError
@@ -37,6 +37,7 @@ if (MessageConversionError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

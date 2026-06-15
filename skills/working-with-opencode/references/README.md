@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/README.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "400890a3082e225c440561825270a911cd7df90a9f64f85166aed330201e50ba"
+---
+
 <p align="center">
   <a href="https://opencode.ai">
     <picture>

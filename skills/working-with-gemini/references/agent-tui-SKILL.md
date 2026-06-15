@@ -5,6 +5,9 @@ description: >
   Drive terminal UI (TUI) applications programmatically for testing, automation, and inspection.
   Use when: automating CLI/TUI interactions, regression testing terminal apps, or verifying interactive behavior.
   Also use when: user asks "what is agent-tui", "what does agent-tui do", "demo agent-tui", "show me agent-tui", "how does agent-tui work", or wants to see it in action.
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/.gemini/skills/agent-tui/SKILL.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "ca493705811a52a6eb91b9bbbd393928252174d7a07f924f630b55d97663f90c"
 ---
 
 ## 🚨 CRITICAL: macOS Daemon Workaround & Gemini CLI Usage 🚨

@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "6940f5925adc095c67261210796bc05c46d0eb425f62ac3fce609469624723b1"
+---
+
 # Gemini API skills
 
 A library of skills for the Gemini API, SDK and model interactions.

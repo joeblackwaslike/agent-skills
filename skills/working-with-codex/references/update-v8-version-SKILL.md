@@ -1,6 +1,9 @@
 ---
 name: update-v8-version
 description: Update Codex's pinned `v8` / `rusty_v8` versions, validate the release-candidate path, and investigate failed V8 canary or artifact builds. Use when asked to bump V8, update `rusty_v8` artifacts, prepare or validate a V8 release candidate, check `v8-canary`, or diagnose why a V8 version update no longer builds.
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/update-v8-version/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "c3d4037f1d7cf71258fe3267ce7ed9a36ac4bb3a25baea26b7af91ae98088dee"
 ---
 
 # Update V8 Version

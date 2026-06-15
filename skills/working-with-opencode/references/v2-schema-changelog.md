@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/schema-changelog.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "23bca3a7c4c3154b085ff5ded0051f1b469911cf1850e26c911a430e0663d15f"
+---
+
 # V2 Schema Changelog
 
 ## 2026-06-05: Execute Automatic Session Compaction

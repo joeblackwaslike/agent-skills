@@ -1,6 +1,9 @@
 ---
 name: codex-bug
 description: Diagnose GitHub bug reports in openai/codex. Use when given a GitHub issue URL from openai/codex and asked to decide next steps such as verifying against the repo, requesting more info, or explaining why it is not a bug; follow any additional user-provided instructions.
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/codex-bug/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "cfdaae2defa524d9f2fb8573bb0e4961c99e2237d48666d9007e0ef5d210cbbf"
 ---
 
 # Codex Bug

@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/enterprise/llm-safety-and-controls.md"
+fetched_at: "2026-06-15T05:54:54.284Z"
+sha256: "8a4ccbff0a2d8ec389f1c9322d4c54dff268048bd05d50f41ff22b7c862b9cf8"
+---
+
 # LLM Safety and Controls
 
 AI models can behave unexpectedly. This documentation covers how to control what agents can do, set up safety guardrails, and guide LLM behavior toward desired outcomes.

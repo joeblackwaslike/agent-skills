@@ -1,8 +1,8 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-06-08T05:39:52.306Z"
-sha256: "d8ea07b852258f25bc9d4d4e330f90293a02905f09785667dfc59a23a6ee7ffb"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "aee53c7b9a4312e961dd04c7af6d87b20737ec93b26bc0a45b61322b8e6927db"
 ---
 
 # VS Code API
@@ -1159,7 +1159,7 @@ for copy and paste operations based on their handled mimetypes as specified by t
 For [copy operations](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider.prepareDocumentPaste), changes to the [DataTransfer](https://code.visualstudio.com/api/references/vscode-api#DataTransfer)
 made by each provider will be merged into a single [DataTransfer](https://code.visualstudio.com/api/references/vscode-api#DataTransfer) that is used to populate the clipboard.
 
-For [DocumentPasteEditProvider.providerDocumentPasteEdits paste operations](#_DocumentPasteEditProvider.providerDocumentPasteEdits paste operations), each provider will be invoked
+For [DocumentPasteEditProvider.providerDocumentPasteEdits paste operations](#DocumentPasteEditProvider.providerDocumentPasteEdits paste operations), each provider will be invoked
 and can return one or more [DocumentPasteEdits](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEdit). The edits are sorted using
 the [DocumentPasteEdit.yieldTo](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEdit.yieldTo) property. By default the first edit will be applied
 and the rest of the edits will be shown to the user as selectable paste options in the paste widget.
@@ -4425,7 +4425,7 @@ A request to a chat participant.
 
 command: string
 
-The name of the [ChatCommand command](#_ChatCommand command) that was selected for this request.
+The name of the [ChatCommand command](#ChatCommand command) that was selected for this request.
 
 model: [LanguageModelChat](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChat)
 
@@ -4438,7 +4438,7 @@ The prompt as entered by the user.
 
 Information about references used in this request is stored in [ChatRequest.references](https://code.visualstudio.com/api/references/vscode-api#ChatRequest.references).
 
-_Note_ that the [ChatParticipant.name name](#_ChatParticipant.name name) of the participant and the [ChatCommand.name command](#_ChatCommand.name command)
+_Note_ that the [ChatParticipant.name name](#ChatParticipant.name name) of the participant and the [ChatCommand.name command](#ChatCommand.name command)
 are not part of the prompt.
 
 references: readonly [ChatPromptReference](https://code.visualstudio.com/api/references/vscode-api#ChatPromptReference)[]
@@ -4477,7 +4477,7 @@ Represents a user request in chat history.
 
 command?: string
 
-The name of the [ChatCommand command](#_ChatCommand command) that was selected for this request.
+The name of the [ChatCommand command](#ChatCommand command) that was selected for this request.
 
 participant: string
 
@@ -4489,7 +4489,7 @@ The prompt as entered by the user.
 
 Information about references used in this request is stored in [ChatRequestTurn.references](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn.references).
 
-_Note_ that the [ChatParticipant.name name](#_ChatParticipant.name name) of the participant and the [ChatCommand.name command](#_ChatCommand.name command)
+_Note_ that the [ChatParticipant.name name](#ChatParticipant.name name) of the participant and the [ChatCommand.name command](#ChatCommand.name command)
 are not part of the prompt.
 
 references: [ChatPromptReference](https://code.visualstudio.com/api/references/vscode-api#ChatPromptReference)[]
@@ -11814,7 +11814,7 @@ possible. Reasons for this can be:
 
 - quota limits exceeded, see [Blocked](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError.Blocked)
 
-- other issues in which case extension must check [LanguageModelError.cause `LanguageModelError.cause`](#_LanguageModelError.cause `LanguageModelError.cause`)
+- other issues in which case extension must check [LanguageModelError.cause `LanguageModelError.cause`](#LanguageModelError.cause `LanguageModelError.cause`)
 
 An extension can make use of language model tool calling by passing a set of tools to
 [LanguageModelChatRequestOptions.tools](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions.tools). The language model will return a [LanguageModelToolCallPart](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolCallPart) and
@@ -13480,9 +13480,9 @@ The source value of this cell data - either source code or formatted text.
 A NotebookCellExecution is how [notebook controller](https://code.visualstudio.com/api/references/vscode-api#NotebookController) modify a notebook cell as
 it is executing.
 
-When a cell execution object is created, the cell enters the [NotebookCellExecutionState.Pending Pending](#_NotebookCellExecutionState.Pending Pending) state.
-When [start(...)](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.start) is called on the execution task, it enters the [NotebookCellExecutionState.Executing Executing](#_NotebookCellExecutionState.Executing Executing) state. When
-[end(...)](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.end) is called, it enters the [NotebookCellExecutionState.Idle Idle](#_NotebookCellExecutionState.Idle Idle) state.
+When a cell execution object is created, the cell enters the [NotebookCellExecutionState.Pending Pending](#NotebookCellExecutionState.Pending Pending) state.
+When [start(...)](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.start) is called on the execution task, it enters the [NotebookCellExecutionState.Executing Executing](#NotebookCellExecutionState.Executing Executing) state. When
+[end(...)](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.end) is called, it enters the [NotebookCellExecutionState.Idle Idle](#NotebookCellExecutionState.Idle Idle) state.
 
 #### Properties
 
@@ -22248,7 +22248,7 @@ will be `file`.
 The _difference_ between [Uri.parse](https://code.visualstudio.com/api/references/vscode-api#Uri.parse) and [Uri.file](https://code.visualstudio.com/api/references/vscode-api#Uri.file) is that the latter treats the argument
 as path, not as stringified-uri. E.g. `Uri.file(path)` is _not_ the same as
 `Uri.parse('file://' + path)` because the path might contain characters that are
-interpreted (#_ and ?). See the following sample:
+interpreted (# and ?). See the following sample:
 
 
 ```
@@ -23004,7 +23004,7 @@ For example, when the user collapse a view or switches to another top level acti
 [WebviewView](https://code.visualstudio.com/api/references/vscode-api#WebviewView) itself is kept alive but the webview's underlying document is deallocated. It is recreated when
 the view becomes visible again.
 
-You can prevent this behavior by setting [WebviewOptions.retainContextWhenHidden retainContextWhenHidden](#_WebviewOptions.retainContextWhenHidden retainContextWhenHidden) in the [WebviewOptions](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions).
+You can prevent this behavior by setting [WebviewOptions.retainContextWhenHidden retainContextWhenHidden](#WebviewOptions.retainContextWhenHidden retainContextWhenHidden) in the [WebviewOptions](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions).
 However this increases resource usage and should be avoided wherever possible. Instead, you can use
 persisted state to save off a webview's state so that it can be quickly recreated as needed.
 

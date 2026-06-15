@@ -1,8 +1,8 @@
 ---
 title: "Classic Theme"
 source: "https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic"
-fetched_at: "2026-06-08T05:39:47.553Z"
-sha256: "aad62145763d47c5ac176d84b4c003f821f7f8272955dd33fa760fdfca0e2c71"
+fetched_at: "2026-06-15T05:52:48.352Z"
+sha256: "f12df121d84a82e0400ec75e2d888536fa8e34bb5b431dff2d6a02aec3ece0c2"
 ---
 
 # Classic Theme

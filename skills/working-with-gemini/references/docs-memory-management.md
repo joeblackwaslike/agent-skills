@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/tutorials/memory-management.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "3d745a89d9f455a458af2561002612270628ce6acb4af8364b4d1f614d32ff9c"
+---
+
 # Manage context and memory
 
 Control what Gemini CLI knows about you and your projects. In this guide, you'll

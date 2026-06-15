@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/config.md"
+fetched_at: "2026-06-15T05:56:15.706Z"
+sha256: "9f242f2317db2097c338034964557dc7943554c9ce5904380d571e95174180f4"
+---
+
 # V2 Config Review
 
 This document breaks the legacy configuration schema into small review groups. Work through one group at a time and decide whether each field should be ported as-is, removed, or redesigned for v2.

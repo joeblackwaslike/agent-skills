@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/sandbox.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "1dbc39a3fa336ce0ce8aa9475b6f16f3c207abb3c7667ac1d3c61db67f90019a"
+---
+
 # Sandboxing in Gemini CLI
 
 This document provides a guide to sandboxing in Gemini CLI, including

@@ -1,6 +1,9 @@
 ---
 name: codex-issue-digest
 description: Run a GitHub issue digest for openai/codex by feature-area labels, all areas, and configurable time windows. Use when asked to summarize recent Codex bug reports or enhancement requests, especially for owner-specific labels such as tui, exec, app, or similar areas.
+source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/codex-issue-digest/SKILL.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "b010b5e498c2ede8c9bc80d31ab1d6734d2774264fdfe61e360bc937da481dd0"
 ---
 
 # Codex Issue Digest

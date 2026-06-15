@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables.md"
+fetched_at: "2026-06-15T05:55:46.959Z"
+sha256: "d8eef27468a29164099289269e78be979987607001cd5140dce881bf298588a9"
+---
+
 ## Defining environment variables for a single workflow
 
 To set a custom environment variable for a single workflow, you can define it using the `env` key in the workflow file. The scope of a custom variable set by this method is limited to the element in which it is defined. You can define variables that are scoped for:

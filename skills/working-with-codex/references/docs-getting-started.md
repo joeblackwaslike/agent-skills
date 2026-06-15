@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/getting-started.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "e1f2e928462849e683d52d04fb727530be2f6fd0031601d39072fce2263131c8"
+---
+
 # Getting Started
 
 This guide gets a published OpenAI Codex Python SDK beta installation running
@@ -157,7 +163,7 @@ the repository:
 
 ```bash
 cd sdk/python
-uv sync --extra dev
+uv sync --group dev
 source .venv/bin/activate
 ```
 

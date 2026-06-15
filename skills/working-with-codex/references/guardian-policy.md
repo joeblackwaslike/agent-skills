@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/core/src/guardian/policy.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "c2be313e18e1af6f1fce400db338cb9895d3f21cb9f5e31cccb36af02a8e36e6"
+---
+
 ## Environment Profile
 - Organization: default generic tenant.
 - Trusted internal destinations include tenant-owned internal storage, pipelines, job systems, and approved internal artifact-upload and evaluation/compute submission workflows. Treat these as internal operations unless the action exports data outside approved systems.

@@ -1,4 +1,11 @@
+---
+source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/tui/prompt_for_init_command.md"
+fetched_at: "2026-06-15T05:54:26.964Z"
+sha256: "70dfe903081ca894fbec7d80b40da2b5560a6106422fdfd0db2907dc9f5aa525"
+---
+
 Generate a file named AGENTS.md that serves as a contributor guide for this repository.
+Before writing, check whether AGENTS.md already exists in the current working directory. If it does, do not overwrite or modify it.
 Your goal is to produce a clear, concise, and well-structured document with descriptive headings and actionable explanations for each section.
 Follow the outline below, but adapt as needed — add sections if relevant, and omit those that do not apply to this project.
 

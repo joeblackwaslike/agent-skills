@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-ui-message-stream-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e2d252b529dcd59c379dd7f504a3aedc9c32962f5360e74e36afbc4847529355"
+fetched_at: "2026-06-15T05:56:27.795Z"
+sha256: "4c1f06ea0ef748be5defc727c71b2a8428a003fe0af288a062bbb7710f08ef3b"
 ---
 
 # AI_UIMessageStreamError
@@ -79,6 +79,7 @@ if (UIMessageStreamError.isInstance(error)) {
 - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
 - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
 - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
 - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
 - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
 - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)

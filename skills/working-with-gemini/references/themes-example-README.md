@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/cli/src/commands/extensions/examples/themes-example/README.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "1b90b5307df1af550f85e37b1ef9dea29e26b17ef48b4fba77d4fa2c8c20f8c8"
+---
+
 # Themes Example
 
 This is an example of a Gemini CLI extension that adds a custom theme.

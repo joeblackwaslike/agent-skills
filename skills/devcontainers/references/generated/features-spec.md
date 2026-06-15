@@ -1,8 +1,8 @@
 ---
 title: "Features specification"
 source: "https://containers.dev/implementors/features/"
-fetched_at: "2026-06-08T05:39:43.345Z"
-sha256: "6a62f519f73ed89b6200239157133c45f9f45eefe15c55469b74086f9058f392"
+fetched_at: "2026-06-15T05:52:46.055Z"
+sha256: "94a62608306ac6ec0086e6b861cf0c0108c46c881400a011122463c7efb9d26f"
 ---
 
 # Features specification

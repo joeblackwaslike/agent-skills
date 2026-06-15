@@ -1,3 +1,9 @@
+---
+source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/system-prompt.md"
+fetched_at: "2026-06-15T05:55:14.234Z"
+sha256: "78dc737c79e0e30048ac5e9db6ead0c286c7e80d1e4d53c0d34e6dbcd721e755"
+---
+
 # System Prompt Override (GEMINI_SYSTEM_MD)
 
 The core system instructions that guide Gemini CLI can be completely replaced

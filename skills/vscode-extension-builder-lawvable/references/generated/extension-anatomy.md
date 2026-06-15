@@ -1,8 +1,8 @@
 ---
 title: "Extension Anatomy"
 source: "https://code.visualstudio.com/api/get-started/extension-anatomy"
-fetched_at: "2026-06-08T05:39:48.594Z"
-sha256: "685e69ce4b2dae67c6916d010eeee6c692a0b5ef4e0e00b6cb5609e6526eb514"
+fetched_at: "2026-06-15T05:52:52.261Z"
+sha256: "6429f0a8c47c3748c56c81126a4f0d797eaeda0efae7409f64c52b87d589ad61"
 ---
 
 # Extension Anatomy
@@ -23,7 +23,7 @@ Understanding these three concepts is crucial to writing extensions in VS Code:
 
 - [Activation Events](https://code.visualstudio.com/api/references/activation-events): events upon which your extension becomes active.
 
-- [Contribution Points](https://code.visualstudio.com/api/references/contribution-points): static declarations that you make in the `package.json` [Extension Manifest](https://code.visualstudio.com/api/get-started/extension-anatomy#_extension-manifest) to extend VS Code.
+- [Contribution Points](https://code.visualstudio.com/api/references/contribution-points): static declarations that you make in the `package.json` [Extension Manifest](https://code.visualstudio.com/api/get-started/extension-anatomy#extension-manifest) to extend VS Code.
 
 - [VS Code API](https://code.visualstudio.com/api/references/vscode-api): a set of JavaScript APIs that you can invoke in your extension code.
 
@@ -146,4 +146,4 @@ export function deactivate() {}
 
 
  
- 6/3/2026
+ 6/10/2026
