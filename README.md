@@ -16,9 +16,11 @@ agent-skills:devcontainers
 agent-skills:developing-claude-code-plugins
 agent-skills:developing-codex-plugins
 agent-skills:developing-cursor-plugins
+agent-skills:developing-for-github
 agent-skills:developing-gemini-plugins
 agent-skills:developing-opencode-plugins
 agent-skills:docusaurus-docs-builder
+agent-skills:domain-driven-design
 agent-skills:git-github-workflows
 agent-skills:github-readme-overhaul
 agent-skills:interactive-system-docs
@@ -30,6 +32,8 @@ agent-skills:working-with-claude-code
 agent-skills:working-with-codex
 agent-skills:working-with-cursor
 agent-skills:working-with-gemini
+agent-skills:working-with-git
+agent-skills:working-with-github
 agent-skills:working-with-github-actions
 agent-skills:working-with-opencode
 agent-skills:working-with-pieces
