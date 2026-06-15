@@ -1,0 +1,54 @@
+---
+title: Schema
+description: How Dolt stores and versions table schema, and how schema changes diff and merge.
+source: "https://www.dolthub.com/docs/concepts/dolt/sql/schema.md"
+fetched_at: "2026-06-15T20:08:28.186Z"
+sha256: "39c7f27a67f8cf1d670c81a8f0d2eb696d3c88290a4e90f54a9a9f970d44daa5"
+---
+
+## What is a Schema?
+
+Schema defines the shape of the data in your database. 
+
+[Tables](/concepts/dolt/sql/table) are the core unit of schema. Tables have columns and rows. Each column in a table has a [type](/concepts/dolt/sql/types). A table can have one or more [primary keys](/concepts/dolt/sql/primary-key), the combination of which identify the row and must be unique. Columns can also be assigned additional [constraints](/concepts/dolt/sql/constraints), including foreign key constraints which are references to other tables in the database. 
+
+Schema also includes [views](/concepts/dolt/sql/views). Views look like tables but the data in them is generated using SQL stored in the view definition. The data is stored in the tables the views reference not the view itself.
+
+[Secondary Indexes](/concepts/dolt/sql/indexes) are a part of schema. An index allows read query performance to be improved at the expense of write performance and increased storage. 
+
+Finally, schema includes [triggers](/concepts/dolt/sql/triggers) and [procedures](/concepts/dolt/sql/procedures). Triggers and procedures are code stored in your database that executes on specific conditions or when a user asks, respectively.
+
+## How to use Schema
+
+Schema is the core of database design. You use schema to explain to database users the shape of the data in the database. What values are allowed in this column? What data is allowed to be duplicated in multiple rows? Can a value exist in this table without existing in this other table as well? 
+
+Schema design also effects the performance of queries against the database. Defining primary keys and indexes correctly can make your database perform for large databases or complex queries.
+
+Changing schema can be a costly operation. For instance, adding an index to a column on a running database requires scanning the entire table and writing a new index artifact, usually while also restricting writes to that table. 
+
+## Difference between MySQL Schema and Dolt Schema
+
+Dolt supports [all MySQL schema elements at least partially](/sql-reference/sql-support/data-description).
+
+## Interaction with Dolt Version Control
+
+Dolt versions your schema and data. So, if you want to see the difference between the schema of two different versions, Dolt provides this using `diff` functionality. See individual SQL concepts for how Dolt handles each individual schema element with regards to versioning.
+
+## Example
+
+```sql
+mysql> create table complex (pk1 int, pk2 varchar(47), c1 tinyint not null, c2 datetime, c3 json, primary key(pk1, pk2));
+mysql> show create table complex;
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                     |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| complex | CREATE TABLE `complex` (
+  `pk1` int NOT NULL,
+  `pk2` varchar(47) NOT NULL,
+  `c1` tinyint NOT NULL,
+  `c2` datetime,
+  `c3` json,
+  PRIMARY KEY (`pk1`,`pk2`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_bin |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+```

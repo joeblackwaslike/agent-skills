@@ -85,6 +85,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `authoring-agent-skills` | Creating or maintaining a skill in this repo — naming taxonomy (working-with-X / developing-X / topic), SKILL.md frontmatter, the doc-fetching cookbook (llms.txt / sitemap / curated-list), the `scripts/lib/doc-frontmatter.cjs` freshness helpers, Makefile/CI auto-discovery, and the registration checklist |
 | `working-with-beads` | Working with the beads CLI (`bd`) — offline CLI reference generated from the pinned binary (`bd <cmd> --help`, `bd prime`) plus upstream repo docs, pinned to a known version. Use for any `bd` command/flag/concept lookup |
 | `beads-operations` | Running/maintaining/troubleshooting beads day-to-day — bd vs TodoWrite, Joe's shared-server conventions (port 3308, `--skip-agents`), the ready→claim→note→close loop, compaction recovery, and recovering broken beads states |
+| `working-with-dolt` | Working with Dolt — the version-controlled "Git for data" SQL database (branch/diff/merge/clone over MySQL wire). Offline `dolt` CLI reference from the pinned binary + dolthub.com docs, plus a runbook for the shared `dolt sql-server` backing beads (port 3308). Any `dolt` command/concept lookup or Dolt-server upkeep |
 
 ## Common Workflows
 
@@ -115,3 +116,5 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 **Authoring a new skill in this repo:** `authoring-agent-skills` for the naming taxonomy, the doc-fetching cookbook (how to wrap a tool's docs via llms.txt/sitemap), the freshness-metadata conventions, and the registration checklist — then `skill-creator` for generic description/triggering quality.
 
 **Beads task management:** `beads-operations` for setup conventions (`bd init --shared-server --skip-agents`), the core workflow, and the troubleshooting runbook; `working-with-beads` for the exact CLI reference at the pinned version. These supersede the third-party `beads` plugin's convention guidance.
+
+**Dolt / the data engine under beads:** `working-with-dolt` for the `dolt` CLI reference + dolthub.com docs and the runbook for the shared `dolt sql-server` backing beads (port 3308).

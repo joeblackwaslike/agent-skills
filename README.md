@@ -31,6 +31,7 @@ agent-skills:working-with-beads
 agent-skills:working-with-claude-code
 agent-skills:working-with-codex
 agent-skills:working-with-cursor
+agent-skills:working-with-dolt
 agent-skills:working-with-gemini
 agent-skills:working-with-git
 agent-skills:working-with-github
