@@ -2,12 +2,14 @@
 name: git-github-workflows
 description: Git and GitHub workflow router. Selects the right skill for any git or GitHub operation — committing, PR creation, CI debugging, review comment handling, and more. Invoke at the start of any git/GitHub task.
 metadata:
-  last_updated: "2026-05-20"
+  last_updated: "2026-06-15"
 ---
 
 # Git & GitHub Workflows
 
 Identify the current operation and invoke the appropriate skill. Never ask the user which skill to use — routing is automatic.
+
+There are two kinds of targets below: **action skills** (do a specific operation) and **reference skills** (look up how something works). For a "do X now" task, route to an action skill; for a "what is / how does / which flag" question, route to a reference skill.
 
 ## Routing Table
 
@@ -20,6 +22,10 @@ Identify the current operation and invoke the appropriate skill. Never ask the u
 | Failing CI / GitHub Actions checks | `gh-fix-ci` |
 | Addressing comments on an open PR | `gh-address-comments` |
 | Processing and responding to received review feedback | `superpowers:receiving-code-review` |
+| **Any git command/flag, rewriting history, bisect, conflicts, reflog recovery, git servers** | `agent-skills:working-with-git` |
+| **gh CLI, REST/GraphQL API, rate limits, tokens, PRs, code review, issues, releases & assets, branch protection, Dependabot/CodeQL config** | `agent-skills:working-with-github` |
+| **Building a GitHub App / OAuth app / webhook consumer / Octokit bot** | `agent-skills:developing-for-github` |
+| **Writing/debugging CI workflow YAML, Actions, OIDC deploys** | `agent-skills:working-with-github-actions` |
 
 ## Routing Details
 
@@ -50,3 +56,23 @@ A reviewer has left comments on an open PR that need to be addressed or resolved
 ### Responding to Review Feedback
 
 You have received a code review and need to process the feedback, decide what to apply, and respond thoughtfully. Invoke `superpowers:receiving-code-review`.
+
+## Reference Skills (look-ups, not actions)
+
+When the task is "how does X work" / "what's the flag for Y" rather than "do Z now", route to the matching reference skill:
+
+### Git itself
+
+Any `git` command or flag, version-control concepts, rewriting history (rebase/`filter-repo`/amend), `bisect`, recovering from mistakes (reflog, `reset` vs `revert` vs `restore`, dropped stashes/commits), merges & conflict resolution, remotes, hooks, submodules, or hosting/connecting to Git servers. Invoke `agent-skills:working-with-git` (AsciiDoc reference pinned to a known Git version + the Pro Git book + how-to playbooks).
+
+### GitHub the platform
+
+The `gh` CLI, REST API, GraphQL API (rate limits, REST-vs-GraphQL, request efficiency), tokens/auth, pull requests, code review, issues, releases (assets/binaries/changelogs), branch protection & rulesets, GitHub flow, multi-branch release with environments, and Dependabot + CodeQL **security config**. Invoke `agent-skills:working-with-github`.
+
+### Building on GitHub
+
+Creating GitHub Apps, OAuth apps, webhook consumers, or Octokit JS/TS bots/integrations — app auth (JWT → installation token), webhook signature verification, SDK usage. Invoke `agent-skills:developing-for-github`.
+
+### CI/CD
+
+Authoring or debugging GitHub Actions workflow YAML, OIDC cloud deploys, runners, the Dependabot/CodeQL **workflow** cookbooks. Invoke `agent-skills:working-with-github-actions`.

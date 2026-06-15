@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 UPDATE_SCRIPTS := $(shell find skills -path '*/scripts/update*.js' -o -path '*/scripts/update*.sh' 2>/dev/null | sort)
 
-.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads
+.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads update-working-with-git update-working-with-github update-developing-for-github
 
 update-all: ## Update all auto-generated skill docs
 	@if [ -z "$(UPDATE_SCRIPTS)" ]; then echo "No update scripts found."; exit 0; fi
@@ -42,6 +42,15 @@ update-working-with-vercel-ai-sdk: ## Update working-with-vercel-ai-sdk referenc
 
 update-working-with-beads: ## Update working-with-beads references (CLI ref from pinned bd + repo docs @ tag)
 	node skills/working-with-beads/scripts/update_docs.js
+
+update-working-with-git: ## Update working-with-git references (git/git AsciiDoc @ pinned tag + Pro Git book)
+	node skills/working-with-git/scripts/update_docs.js
+
+update-working-with-github: ## Update working-with-github references (gh CLI from pinned binary + docs.github.com guides)
+	node skills/working-with-github/scripts/update_docs.js
+
+update-developing-for-github: ## Update developing-for-github references (Apps/OAuth/webhooks docs + Octokit READMEs)
+	node skills/developing-for-github/scripts/update_docs.js
 
 list-update-scripts: ## List all discovered auto-doc update scripts
 	@echo "Discovered update scripts:"

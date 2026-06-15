@@ -1,0 +1,40 @@
+---
+source: "gh repo fork --help @ 2.94.0"
+fetched_at: "2026-06-15T17:27:25.905Z"
+sha256: "5bd9eace4efc6cb4f2e9625bdccc1031b81f955e12302a9bdd775ff6fbb56e5d"
+---
+
+Create a fork of a repository.
+
+With no argument, creates a fork of the current repository. Otherwise, forks
+the specified repository.
+
+By default, the new fork is set to be your `origin` remote and any existing
+origin remote is renamed to `upstream`. To alter this behavior, you can set
+a name for the new fork's remote with `--remote-name`.
+
+The `upstream` remote will be set as the default remote repository.
+
+Additional `git clone` flags can be passed after `--`.
+
+
+USAGE
+  gh repo fork [<repository>] [-- <gitflags>...] [flags]
+
+FLAGS
+  --clone                 Clone the fork
+  --default-branch-only   Only include the default branch in the fork
+  --fork-name string      Rename the forked repository
+  --org string            Create the fork in an organization
+  --remote                Add a git remote for the fork
+  --remote-name string    Specify the name for the new remote (default "origin")
+
+INHERITED FLAGS
+  --help   Show help for command
+
+LEARN MORE
+  Use `gh <command> <subcommand> --help` for more information about a command.
+  Read the manual at https://cli.github.com/manual
+  Learn about exit codes using `gh help exit-codes`
+  Learn about accessibility experiences using `gh help accessibility`
+

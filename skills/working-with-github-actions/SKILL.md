@@ -125,5 +125,8 @@ Use `cancel-in-progress: false` for release/deploy jobs where partial runs are d
 
 ## Cross-References
 
-- `git-github-workflows` skill — git operations, branch strategy, PR creation (not CI/CD)
+- `git-github-workflows` skill — router for any git/GitHub task (not CI/CD)
+- `working-with-github` skill — gh CLI, REST/GraphQL APIs, PRs, releases, tokens, and the Dependabot/CodeQL **security config** (this skill keeps the Dependabot/CodeQL **workflow** cookbooks)
+- `working-with-git` skill — raw git: history rewriting, bisect, conflicts, recovery
+- `developing-for-github` skill — GitHub Apps, webhooks, Octokit SDKs
 - `deploy` skill — deployment orchestration across providers

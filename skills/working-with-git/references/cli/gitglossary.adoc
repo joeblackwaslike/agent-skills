@@ -1,0 +1,33 @@
+---
+source: "https://raw.githubusercontent.com/git/git/v2.54.0/Documentation/gitglossary.adoc @ v2.54.0"
+fetched_at: "2026-06-15T17:29:22.739Z"
+sha256: "fe1078d5078c2c7f26abf50a873e34a4e02b605ee6357663e52b60b4da76c575"
+---
+
+gitglossary(7)
+==============
+
+NAME
+----
+gitglossary - A Git Glossary
+
+SYNOPSIS
+--------
+*
+
+DESCRIPTION
+-----------
+
+include::glossary-content.adoc[]
+
+SEE ALSO
+--------
+linkgit:gittutorial[7],
+linkgit:gittutorial-2[7],
+linkgit:gitcvs-migration[7],
+linkgit:giteveryday[7],
+link:user-manual.html[The Git User's Manual]
+
+GIT
+---
+Part of the linkgit:git[1] suite

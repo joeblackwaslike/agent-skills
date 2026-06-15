@@ -1,0 +1,41 @@
+---
+source: "gh codespace list --help @ 2.94.0"
+fetched_at: "2026-06-15T17:27:25.905Z"
+sha256: "2f26872a8f577d8efd1f4a74b95ada4eeab290827b863b1c87a81e82bc326a43"
+---
+
+List codespaces of the authenticated user.
+
+Alternatively, organization administrators may list all codespaces billed to the organization.
+
+For more information about output formatting flags, see `gh help formatting`.
+
+USAGE
+  gh codespace list [flags]
+
+ALIASES
+  gh codespace ls, gh cs ls
+
+FLAGS
+  -q, --jq expression     Filter JSON output using a jq expression
+      --json fields       Output JSON with the specified fields
+  -L, --limit int         Maximum number of codespaces to list (default 30)
+  -o, --org login         The login handle of the organization to list codespaces for (admin-only)
+  -R, --repo string       Repository name with owner: user/repo
+  -t, --template string   Format JSON output using a Go template; see "gh help formatting"
+  -u, --user username     The username to list codespaces for (used with --org)
+  -w, --web               List codespaces in the web browser, cannot be used with --user or --org
+
+INHERITED FLAGS
+  --help   Show help for command
+
+JSON FIELDS
+  createdAt, displayName, gitStatus, lastUsedAt, machineName, name, owner,
+  repository, state, vscsTarget
+
+LEARN MORE
+  Use `gh <command> <subcommand> --help` for more information about a command.
+  Read the manual at https://cli.github.com/manual
+  Learn about exit codes using `gh help exit-codes`
+  Learn about accessibility experiences using `gh help accessibility`
+

@@ -1,0 +1,29 @@
+---
+source: "https://raw.githubusercontent.com/git/git/v2.54.0/Documentation/git-stage.adoc @ v2.54.0"
+fetched_at: "2026-06-15T17:29:22.739Z"
+sha256: "2f678c6da142078537e23500c048970cf654f7381760f194b282d75e9d87893f"
+---
+
+git-stage(1)
+============
+
+NAME
+----
+git-stage - Add file contents to the staging area
+
+
+SYNOPSIS
+--------
+[synopsis]
+git stage <arg>...
+
+
+DESCRIPTION
+-----------
+
+This is a synonym for linkgit:git-add[1].  Please refer to the
+documentation of that command.
+
+GIT
+---
+Part of the linkgit:git[1] suite

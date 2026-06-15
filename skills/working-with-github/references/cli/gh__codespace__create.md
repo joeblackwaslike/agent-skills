@@ -1,0 +1,33 @@
+---
+source: "gh codespace create --help @ 2.94.0"
+fetched_at: "2026-06-15T17:27:25.905Z"
+sha256: "46a7498bbca5814592b196f41c927e9776a6c780c32d8a9fddd3c8c2d0ffd9a8"
+---
+
+Create a codespace
+
+USAGE
+  gh codespace create [flags]
+
+FLAGS
+  -b, --branch string               Repository branch
+      --default-permissions         Do not prompt to accept additional permissions requested by the codespace
+      --devcontainer-path string    Path to the devcontainer.json file to use when creating codespace
+  -d, --display-name string         Display name for the codespace (48 characters or less)
+      --idle-timeout duration       Allowed inactivity before codespace is stopped, e.g. "10m", "1h"
+  -l, --location string             Location: {EastUs|SouthEastAsia|WestEurope|WestUs2} (determined automatically if not provided)
+  -m, --machine string              Hardware specifications for the VM
+  -R, --repo string                 Repository name with owner: user/repo
+      --retention-period duration   Allowed time after shutting down before the codespace is automatically deleted (maximum 30 days), e.g. "1h", "72h"
+  -s, --status                      Show status of post-create command and dotfiles
+  -w, --web                         Create codespace from browser, cannot be used with --display-name, --idle-timeout, or --retention-period
+
+INHERITED FLAGS
+  --help   Show help for command
+
+LEARN MORE
+  Use `gh <command> <subcommand> --help` for more information about a command.
+  Read the manual at https://cli.github.com/manual
+  Learn about exit codes using `gh help exit-codes`
+  Learn about accessibility experiences using `gh help accessibility`
+
