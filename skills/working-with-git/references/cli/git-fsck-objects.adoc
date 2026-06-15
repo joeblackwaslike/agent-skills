@@ -1,0 +1,28 @@
+---
+source: "https://raw.githubusercontent.com/git/git/v2.54.0/Documentation/git-fsck-objects.adoc @ v2.54.0"
+fetched_at: "2026-06-15T17:29:22.739Z"
+sha256: "912556bd12da2b36825ea29790a8efcad650d44e0f4647aa3c1f4fb2809eb2eb"
+---
+
+git-fsck-objects(1)
+===================
+
+NAME
+----
+git-fsck-objects - Verifies the connectivity and validity of the objects in the database
+
+
+SYNOPSIS
+--------
+[verse]
+'git fsck-objects' ...
+
+DESCRIPTION
+-----------
+
+This is a synonym for linkgit:git-fsck[1].  Please refer to the
+documentation of that command.
+
+GIT
+---
+Part of the linkgit:git[1] suite

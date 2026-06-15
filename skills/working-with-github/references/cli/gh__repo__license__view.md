@@ -1,0 +1,42 @@
+---
+source: "gh repo license view --help @ 2.94.0"
+fetched_at: "2026-06-15T17:27:25.905Z"
+sha256: "50878d117a40a33785b751af1cd18bd533e8fd9cf8577eadc1084f55d826cd32"
+---
+
+View a specific repository license by license key or SPDX ID.
+
+Run `gh repo license list` to see available commonly used licenses. For even more licenses, visit <https://choosealicense.com/appendix>.
+
+
+USAGE
+  gh repo license view {<license-key> | <spdx-id>} [flags]
+
+FLAGS
+  -w, --web   Open https://choosealicense.com/ in the browser
+
+INHERITED FLAGS
+  --help   Show help for command
+
+EXAMPLES
+  # View the MIT license from SPDX ID
+  $ gh repo license view MIT
+  
+  # View the MIT license from license key
+  $ gh repo license view mit
+  
+  # View the GNU AGPL-3.0 license from SPDX ID
+  $ gh repo license view AGPL-3.0
+  
+  # View the GNU AGPL-3.0 license from license key
+  $ gh repo license view agpl-3.0
+  
+  # Create a LICENSE.md with the MIT license
+  $ gh repo license view MIT > LICENSE.md
+
+LEARN MORE
+  Use `gh <command> <subcommand> --help` for more information about a command.
+  Read the manual at https://cli.github.com/manual
+  Learn about exit codes using `gh help exit-codes`
+  Learn about accessibility experiences using `gh help accessibility`
+

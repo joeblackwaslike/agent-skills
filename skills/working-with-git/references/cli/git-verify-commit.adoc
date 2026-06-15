@@ -1,0 +1,36 @@
+---
+source: "https://raw.githubusercontent.com/git/git/v2.54.0/Documentation/git-verify-commit.adoc @ v2.54.0"
+fetched_at: "2026-06-15T17:29:22.739Z"
+sha256: "cc18f1ecb110639d1ceb20836c3469de05e988f6af187e4c785dd92d15b41b56"
+---
+
+git-verify-commit(1)
+====================
+
+NAME
+----
+git-verify-commit - Check the GPG signature of commits
+
+SYNOPSIS
+--------
+[synopsis]
+git verify-commit [-v | --verbose] [--raw] <commit>...
+
+DESCRIPTION
+-----------
+Validates the GPG signature created by `git commit -S`
+on the commit objects given on the command line.
+
+OPTIONS
+-------
+`--raw`::
+	Print the raw gpg status output to standard error instead of the normal
+	human-readable output.
+
+`-v`::
+`--verbose`::
+	Print the contents of the commit object before validating it.
+
+GIT
+---
+Part of the linkgit:git[1] suite

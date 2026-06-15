@@ -1,0 +1,35 @@
+---
+source: "gh project copy --help @ 2.94.0"
+fetched_at: "2026-06-15T17:27:25.905Z"
+sha256: "3ea812ae01e62221d5eee06596c38c7a7dff9601f6ec9ce540a9e9b6b4330864"
+---
+
+Copy a project
+
+For more information about output formatting flags, see `gh help formatting`.
+
+USAGE
+  gh project copy [<number>] [flags]
+
+FLAGS
+      --drafts                Include draft issues when copying
+      --format string         Output format: {json}
+  -q, --jq expression         Filter JSON output using a jq expression
+      --source-owner string   Login of the source owner. Use "@me" for the current user.
+      --target-owner string   Login of the target owner. Use "@me" for the current user.
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --title string          Title for the new project
+
+INHERITED FLAGS
+  --help   Show help for command
+
+EXAMPLES
+  # Copy project "1" owned by monalisa to github
+  $ gh project copy 1 --source-owner monalisa --target-owner github --title "a new project"
+
+LEARN MORE
+  Use `gh <command> <subcommand> --help` for more information about a command.
+  Read the manual at https://cli.github.com/manual
+  Learn about exit codes using `gh help exit-codes`
+  Learn about accessibility experiences using `gh help accessibility`
+

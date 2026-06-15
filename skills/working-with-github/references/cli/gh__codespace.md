@@ -1,0 +1,38 @@
+---
+source: "gh codespace --help @ 2.94.0"
+fetched_at: "2026-06-15T17:27:25.905Z"
+sha256: "883b1c80de4b2b2e4937d1e9cc2714006801bda0e966e09f8dde671e89779180"
+---
+
+Connect to and manage codespaces
+
+USAGE
+  gh codespace [flags]
+
+ALIASES
+  gh cs
+
+AVAILABLE COMMANDS
+  code:          Open a codespace in Visual Studio Code
+  cp:            Copy files between local and remote file systems
+  create:        Create a codespace
+  delete:        Delete codespaces
+  edit:          Edit a codespace
+  jupyter:       Open a codespace in JupyterLab
+  list:          List codespaces
+  logs:          Access codespace logs
+  ports:         List ports in a codespace
+  rebuild:       Rebuild a codespace
+  ssh:           SSH into a codespace
+  stop:          Stop a running codespace
+  view:          View details about a codespace
+
+INHERITED FLAGS
+  --help   Show help for command
+
+LEARN MORE
+  Use `gh <command> <subcommand> --help` for more information about a command.
+  Read the manual at https://cli.github.com/manual
+  Learn about exit codes using `gh help exit-codes`
+  Learn about accessibility experiences using `gh help accessibility`
+

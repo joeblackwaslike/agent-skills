@@ -70,7 +70,10 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `multi-provider-plugins` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
 | `web-research` | Any web search, URL fetching, or multi-source research task |
 | `working-with-github-actions` | Building, configuring, debugging, or optimizing GitHub Actions CI/CD workflows — syntax, triggers, runners, caching, matrix, OIDC deployments, release-please, CodeQL, dependabot |
-| `git-github-workflows` | Git commits, branch operations, PR creation, CI debugging, or review workflows |
+| `working-with-git` | Any git command/flag, rewriting history, bisect, conflicts, reflog recovery, git servers — AsciiDoc reference pinned to a Homebrew-resolved Git version + the Pro Git book + how-to playbooks |
+| `working-with-github` | GitHub the platform — gh CLI (pinned), REST + GraphQL APIs, rate limits/efficiency, tokens, PRs, code review, issues, releases & assets, branch protection/rulesets, GitHub flow, multi-branch release, Dependabot/CodeQL config |
+| `developing-for-github` | Building on GitHub — GitHub Apps, OAuth apps, webhooks (signature verification), and the Octokit JS/TS SDKs (app auth: JWT → installation token) |
+| `git-github-workflows` | Git/GitHub router — selects the right action or reference skill for any git/GitHub task; invoke at the start of any git/GitHub operation |
 | `devcontainers` | Building, using, modifying, developing, or distributing dev containers |
 | `docusaurus-docs-builder` | Building or updating Docusaurus documentation sites |
 | `github-readme-overhaul` | Writing or overhauling a GitHub README |
@@ -102,6 +105,8 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 **Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `multi-provider-plugins` for cross-platform architecture.
 
 **GitHub Actions CI/CD:** `working-with-github-actions` for workflow syntax, cookbook patterns, action versions, and OIDC deployments.
+
+**Git & GitHub:** start at `git-github-workflows` (router) for any git/GitHub task. It routes to `working-with-git` (every git command/flag, history rewriting, bisect, conflicts, git servers — pinned to a known Git version + Pro Git + playbooks), `working-with-github` (gh CLI, REST/GraphQL APIs, rate limits, tokens, PRs, code review, issues, releases, branch protection, Dependabot/CodeQL config), `developing-for-github` (GitHub Apps, OAuth, webhooks, Octokit SDKs), and `working-with-github-actions` (CI/workflow YAML). The Dependabot/CodeQL *security config* lives in `working-with-github`; the *workflow YAML* cookbooks live in `working-with-github-actions`.
 
 **Domain modeling / backend architecture:** `domain-driven-design` for strategic + tactical DDD, CQRS, event sourcing, and where each pattern earns (or doesn't earn) its cost — with complete TypeScript and Python examples.
 

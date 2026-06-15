@@ -1,0 +1,27 @@
+---
+source: "https://raw.githubusercontent.com/git/git/v2.54.0/Documentation/git-merge-one-file.adoc @ v2.54.0"
+fetched_at: "2026-06-15T17:29:22.739Z"
+sha256: "70a2ff1e53bf2fa8a7f2bcd01d04caaa20944a85ec53ffe18b38a55031d43fc7"
+---
+
+git-merge-one-file(1)
+=====================
+
+NAME
+----
+git-merge-one-file - The standard helper program to use with git-merge-index
+
+
+SYNOPSIS
+--------
+[verse]
+'git merge-one-file'
+
+DESCRIPTION
+-----------
+This is the standard helper program to use with 'git merge-index'
+to resolve a merge after the trivial merge done with 'git read-tree -m'.
+
+GIT
+---
+Part of the linkgit:git[1] suite
