@@ -38,6 +38,7 @@ agent-skills:working-with-github
 agent-skills:working-with-github-actions
 agent-skills:working-with-opencode
 agent-skills:working-with-pieces
+agent-skills:working-with-serena
 agent-skills:working-with-vercel
 agent-skills:working-with-vercel-ai-sdk
 agent-skills:working-with-vercel-api

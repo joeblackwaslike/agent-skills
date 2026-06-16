@@ -2,12 +2,12 @@
 
 What to touch after the skill's files exist, so it's discoverable, auto-updated, and shippable. Work top to bottom.
 
-## 1. `AGENTS.md` (source of truth)
+## 1. `SKILLS.md` (skill catalog) + `AGENTS.md` (conventions)
 
-`CLAUDE.md` is just `@AGENTS.md`, so all human-facing skill docs live in [`AGENTS.md`](../../../AGENTS.md).
+The skill catalog table was **extracted out of `AGENTS.md` into [`SKILLS.md`](../../../SKILLS.md)** (AGENTS.md was hitting the 12,000-char Windsurf ceiling; `CLAUDE.md` is just `@AGENTS.md`). So:
 
-- **Available Skills table** — add a row in the form `| skill-name | When to invoke (one line) |` (wrap the skill name in backticks, matching the existing rows).
-- **Common Workflows** — if the skill fits an existing workflow narrative (e.g. "Vercel AI SDK development"), add a bullet. Optional for niche skills.
+- **[`SKILLS.md`](../../../SKILLS.md) — Skill catalog table:** add a row in the form `| skill-name | When to invoke (one line) |` (wrap the skill name in backticks, matching the existing rows). **This is where new skills go now**, not the AGENTS.md table.
+- **[`AGENTS.md`](../../../AGENTS.md) — Common Workflows:** if the skill fits an existing workflow narrative (e.g. "Vercel AI SDK development"), add a bullet there. Optional for niche skills. AGENTS.md keeps only a one-line pointer to SKILLS.md under `## Available Skills` — don't re-add the table.
 
 ## 2. `README.md`
 

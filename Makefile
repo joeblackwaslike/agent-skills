@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 UPDATE_SCRIPTS := $(shell find skills -path '*/scripts/update*.js' -o -path '*/scripts/update*.sh' 2>/dev/null | sort)
 
-.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads update-working-with-git update-working-with-github update-developing-for-github update-working-with-dolt update-working-with-vercel update-working-with-vercel-api update-working-with-zsh update-working-with-bash update-working-with-release-please
+.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads update-working-with-git update-working-with-github update-developing-for-github update-working-with-dolt update-working-with-vercel update-working-with-vercel-api update-working-with-zsh update-working-with-bash update-working-with-release-please update-working-with-serena
 
 update-all: ## Update all auto-generated skill docs
 	@if [ -z "$(UPDATE_SCRIPTS)" ]; then echo "No update scripts found."; exit 0; fi
@@ -69,6 +69,9 @@ update-working-with-bash: ## Update working-with-bash references (man bash from 
 
 update-working-with-release-please: ## Update working-with-release-please references (release-please README/docs/schemas + action README @ pinned tags)
 	node skills/working-with-release-please/scripts/update_docs.js
+
+update-working-with-serena: ## Update working-with-serena references (serena/serena-hooks CLI @ pinned uvx + oraios.github.io docs)
+	node skills/working-with-serena/scripts/update_docs.js
 
 list-update-scripts: ## List all discovered auto-doc update scripts
 	@echo "Discovered update scripts:"
