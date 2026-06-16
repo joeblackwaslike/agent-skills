@@ -42,4 +42,5 @@ agent-skills:working-with-vercel
 agent-skills:working-with-vercel-ai-sdk
 agent-skills:working-with-vercel-api
 agent-skills:working-with-zsh
+agent-skills:working-with-bash
 ```

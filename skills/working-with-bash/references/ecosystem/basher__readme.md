@@ -1,0 +1,182 @@
+---
+source: "https://raw.githubusercontent.com/basherpm/basher/master/README.md"
+fetched_at: "2026-06-16T09:46:54.480Z"
+sha256: "63d7b8a8c6053f8188e2f41d4bf75e85d7ee407700d152b1aff6d95b71d7d807"
+---
+
+# basher
+
+A package manager for shell scripts and functions.
+
+Basher allows you to quickly install shell packages directly from github (or
+other sites). Instead of looking for specific install instructions for each
+package and messing with your path, basher will create a central location for
+all packages and manage their binaries for you.
+
+Even though it is called basher, it also works with zsh and fish.
+
+[![Build Status](https://travis-ci.org/basherpm/basher.svg?branch=master)](https://travis-ci.org/basherpm/basher)
+
+## Installation
+
+You can install Basher in 1 line. This will install Basher, and add it to your .bashrc/.zshrc file - in a way that can automatically be uninstalled later:
+
+	curl -s https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash
+
+#### Install on Mac OSX
+ 
+Basher requires `bash >= 4`, and the `realpath` utility from `coreutils`. On
+osx you can install both with brew:
+
+```
+$ brew install bash coreutils
+```
+
+#### Manual method to Install
+
+1. Checkout basher on `~/.basher`
+
+    ~~~ sh
+    $ git clone --depth=1 https://github.com/basherpm/basher.git ~/.basher
+    ~~~
+
+2. Initialize basher in your shell initialization
+
+    ~~~ sh
+    export PATH="$HOME/.basher/bin:$PATH"
+    eval "$(basher init - bash)" # replace `bash` with `zsh` if you use zsh
+    ~~~
+
+    **Fish**: Use the following commands instead:
+
+    ~~~ sh
+    if test -d ~/.basher
+      set basher ~/.basher/bin
+    end
+    set -gx PATH $basher $PATH
+    status --is-interactive; and . (basher init - fish|psub)
+    ~~~
+
+
+## Updating
+
+Go to the directory where you cloned basher and pull the latest changes:
+
+~~~ sh
+$ cd ~/.basher
+$ git pull
+~~~
+
+## Usage
+
+### Installing packages from Github
+
+~~~ sh
+$ basher install sstephenson/bats
+~~~
+
+This will install bats from https://github.com/sstephenson/bats and add `bin/bats` to the PATH.
+
+### Installing packages from other sites
+
+~~~ sh
+$ basher install bitbucket.org/user/repo_name
+~~~
+
+This will install `repo_name` from https://bitbucket.org/user/repo_name
+
+### Using ssh instead of https
+
+If you want to do local development on installed packages and you have ssh
+access to the site, use `--ssh` to override the protocol:
+
+~~~ sh
+$ basher install --ssh juanibiapina/gg
+~~~
+
+### Installing with a custom folder name
+
+You can install a package with a custom folder name by providing a second argument:
+
+~~~ sh
+$ basher install sstephenson/bats bats-core/bats
+~~~
+
+This will install the package into `~/.basher/packages/bats-core/bats` instead of the default location. And it will appear in `basher list` as `bats-core/bats`.
+
+### Installing a local package
+
+If you develop a package locally and want to try it through basher,
+use the `link` command:
+
+~~~ sh
+$ basher link directory my_namespace/my_package
+~~~
+
+The `link` command will install the dependencies of the local package.
+You can prevent that with the `--no-deps` option:
+
+~~~ sh
+$ basher link --no-deps directory my_namespace/my_package
+~~~
+
+### Sourcing files from a package into current shell
+
+Basher provides an `include` function that allows sourcing files into the
+current shell. After installing a package, you can run:
+
+```
+include username/repo lib/file.sh
+```
+
+This will source a file `lib/file.sh` under the package `username/repo`.
+
+### Command summary
+
+- `basher commands` - List commands
+- `basher help <command>` - Display help for a command
+- `basher install [--ssh] [site]/<package>[@ref] [folder]` - Install a package
+- `basher uninstall <package>` - Uninstall a package
+- `basher list [-v]` - List installed packages
+- `basher outdated` - List packages which are not in the latest version
+- `basher upgrade <package>` - Upgrade a package to the latest version
+
+### Configuration options
+
+To change the behavior of basher, you can set the following variables either
+globally or before each command:
+
+- If `$XDG_DATA_HOME/basher` is a directory, then `$BASHER_ROOT` will be set to `$XDG_DATA_HOME/basher` instead of the usual `$HOME/.basher`. If `$XDG_DATA_HOME` is not set or is empty, then it defaults to `~/.local/share`.
+- `BASHER_FULL_CLONE=true` - Clones the full repo history instead of only the last commit (useful for package development)
+- `BASHER_PREFIX` - set the installation and package checkout prefix (default is `$BASHER_ROOT/cellar`).  Setting this to `/usr/local`, for example, will install binaries to `/usr/local/bin`, manpages to `/usr/local/man`, completions to `/usr/local/completions`, and clone packages to `/usr/local/packages`.  This allows you to manage "global packages", distinct from individual user packages.
+
+## Packages
+
+Packages are simply repos (username/repo). You may also specify a site
+(site/username/repo).
+
+Any files inside a bin directory are added to the path. If there is no bin
+directory, any executable files in the package root are added to the path.
+
+Any manpages (files ended in `\.[0-9]`) inside a `man` directory are added
+to the manpath.
+
+Optionally, a repo might contain a `package.sh` file which specifies binaries,
+dependencies and completions in the following format:
+
+~~~ sh
+BINS=folder/file1:folder/file2.sh
+DEPS=user1/repo1:user2/repo2
+BASH_COMPLETIONS=completions/package
+ZSH_COMPLETIONS=completions/_package
+~~~
+
+BINS specified in this fashion have higher precedence then the inference rules
+above.
+
+### Package Directory
+
+A list of working packages can be found on https://www.basher.it/. There
+you can also find a badge if you want to include it in your readme:
+
+[![basher install](https://img.shields.io/badge/basher-install-white?logo=gnu-bash&style=flat)](https://www.basher.it/package/)
