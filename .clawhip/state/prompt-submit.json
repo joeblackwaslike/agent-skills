@@ -1,8 +1,8 @@
 {
-  "observed_at": "2026-05-21T08:56:09.467Z",
+  "observed_at": "2026-06-16T00:39:07.226Z",
   "provider": "claude-code",
   "event_name": "UserPromptSubmit",
-  "session_id": "27cb1286-ab30-4323-ad68-94681a2c19cf",
+  "session_id": "c6beffcb-7083-4e24-9831-76c21412a62f",
   "turn_id": null,
-  "prompt_summary": "yeah put them in to read me"
+  "prompt_summary": "go ahead and commit and push"
 }

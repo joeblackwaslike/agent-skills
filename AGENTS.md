@@ -1,6 +1,6 @@
 # agent-skills
 
-A Claude Code plugin that bundles all of my custom developed skills for easy installation in any agent environment. 
+A Claude Code plugin that bundles all of my custom developed skills for easy installation in any agent environment.
 
 ## Plugin Development
 
@@ -31,10 +31,10 @@ Existing example: `skills/working-with-claude-code/scripts/update_docs.js`
 
 So agents can judge how current a skill is, two freshness signals are stamped automatically. Both flow through the shared helper `scripts/lib/doc-frontmatter.cjs` (importable from CJS and ESM update scripts):
 
-- **Per fetched doc** (files in `references/`): YAML frontmatter with `source` (origin URL), `fetched_at` (ISO timestamp), and `sha256` (hash of the fetched body). The hash drives **change-detection** — `fetched_at` is preserved when upstream content is unchanged, so weekly runs don't churn timestamps. Hand-written reference files get no frontmatter; only fetched docs do. (`working-with-pieces` is the exception — its docs merge multiple upstreams, so it carries only the skill-level signal.)
+- **Per fetched doc** (files in `references/`): YAML frontmatter with `source`, `fetched_at` (ISO), and `sha256` (hash of the body). The hash drives **change-detection** — `fetched_at` is preserved when content is unchanged, so weekly runs don't churn timestamps. Hand-written files get no frontmatter; only fetched docs do (`working-with-pieces` is the exception — merged upstreams, skill-level signal only).
 - **Per skill** (`SKILL.md`): `metadata.last_updated` (`YYYY-MM-DD`) — the coarse "how fresh is this skill" date an agent sees the moment it loads the skill. Each update script restamps it (to the run date) only when a fetched doc actually changed.
 
-Wiring a new fetch script: import `withFrontmatter` and `setSkillLastUpdated`, wrap each written doc body via `withFrontmatter({ filePath, body, source, now })`, track whether any `wrapped.changed`, and call `setSkillLastUpdated(SKILL_MD, now.slice(0, 10))` at the end of the run if so. Backfill or re-stamp every `SKILL.md` from git history any time with `node scripts/backfill-last-updated.cjs`.
+Wiring a new fetch script: import `withFrontmatter` + `setSkillLastUpdated`, wrap each doc body via `withFrontmatter({ filePath, body, source, now })`, track any `wrapped.changed`, and call `setSkillLastUpdated(SKILL_MD, now.slice(0, 10))` if so. Backfill from git history with `node scripts/backfill-last-updated.cjs`.
 
 ## Agent Instruction Files (CLAUDE.md / AGENTS.md)
 
@@ -82,16 +82,18 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `agent-instructions` | Creating CLAUDE.md, AGENTS.md, GEMINI.md, or other AI instruction files at any scope level (user/global, project, subdirectory) — includes cookbook templates for Python, TypeScript, monorepo, and agent/MCP projects |
 | `domain-driven-design` | Modeling a business domain or backend architecture — DDD (strategic + tactical), CQRS, event sourcing, aggregates, value objects, bounded contexts, hexagonal/clean architecture; framework-agnostic examples in TypeScript and Python |
 | `working-with-vercel-ai-sdk` | Working with the Vercel AI SDK (`ai` package) — generateText/streamText, generateObject, embeddings, tools, agents (ToolLoopAgent), UI hooks (useChat), RSC, providers, migrations; comprehensive offline docs from ai-sdk.dev |
-| `authoring-agent-skills` | Creating or maintaining a skill in this repo — naming taxonomy (working-with-X / developing-X / topic), SKILL.md frontmatter, the doc-fetching cookbook (llms.txt / sitemap / curated-list), the `scripts/lib/doc-frontmatter.cjs` freshness helpers, Makefile/CI auto-discovery, and the registration checklist |
+| `authoring-agent-skills` | Creating/maintaining a skill in this repo — naming taxonomy (working-with-X / developing-X / topic), SKILL.md frontmatter, the doc-fetching cookbook (llms.txt / sitemap / curated-list), the `doc-frontmatter.cjs` freshness helpers, Makefile/CI auto-discovery, and the registration checklist |
 | `working-with-beads` | Working with the beads CLI (`bd`) — offline CLI reference generated from the pinned binary (`bd <cmd> --help`, `bd prime`) plus upstream repo docs, pinned to a known version. Use for any `bd` command/flag/concept lookup |
-| `beads-operations` | Running/maintaining/troubleshooting beads day-to-day — bd vs TodoWrite, Joe's shared-server conventions (port 3308, `--skip-agents`), the ready→claim→note→close loop, compaction recovery, and recovering broken beads states |
-| `working-with-dolt` | Working with Dolt — the version-controlled "Git for data" SQL database (branch/diff/merge/clone over MySQL wire). Offline `dolt` CLI reference from the pinned binary + dolthub.com docs, plus a runbook for the shared `dolt sql-server` backing beads (port 3308). Any `dolt` command/concept lookup or Dolt-server upkeep |
+| `beads-operations` | Running/maintaining/troubleshooting beads day-to-day — bd vs TodoWrite, Joe's shared-server conventions (port 3308, `--skip-agents`), the ready→claim→note→close loop, compaction recovery, and broken-state recovery |
+| `working-with-dolt` | Working with Dolt — version-controlled "Git for data" SQL DB (branch/diff/merge over MySQL wire). Offline `dolt` CLI reference from the pinned binary + dolthub.com docs, plus the shared `dolt sql-server` runbook (port 3308). Any `dolt` command/concept lookup |
+| `working-with-vercel` | Vercel **hosting platform** — the `vercel` CLI, hosted MCP server (mcp.vercel.com), and platform concepts (deploys, domains, DNS, env, functions, edge config, blob, firewall). Offline vercel.com/docs. REST API → `working-with-vercel-api`; `ai` pkg → `working-with-vercel-ai-sdk` |
+| `working-with-vercel-api` | Vercel **REST API** + `@vercel/sdk` — the complete OpenAPI spec (every endpoint/param/schema) plus auth (bearer/`VERCEL_TOKEN`), team scoping, versioning, pagination, errors. CLI/MCP/platform → `working-with-vercel` |
 
 ## Common Workflows
 
 > **Gemini CLI / Antigravity users:** Instruction files use `skill()` (Codex syntax). See `GEMINI.md` for `activate_skill()` syntax.
 
-**Starting agentic/plugin work:** Load `best-practices-for-agentic-development` first to route to the right reference.
+**Starting agentic/plugin work:** Load `best-practices-for-agentic-development` first.
 
 **Claude Code plugin development:** `working-with-claude-code` for docs, `developing-claude-code-plugins` for workflow.
 
@@ -105,16 +107,18 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 
 **Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `multi-provider-plugins` for cross-platform architecture.
 
-**GitHub Actions CI/CD:** `working-with-github-actions` for workflow syntax, cookbook patterns, action versions, and OIDC deployments.
+**GitHub Actions CI/CD:** `working-with-github-actions` for workflow syntax, cookbooks, action versions, and OIDC deployments.
 
-**Git & GitHub:** start at `git-github-workflows` (router) for any git/GitHub task. It routes to `working-with-git` (every git command/flag, history rewriting, bisect, conflicts, git servers — pinned to a known Git version + Pro Git + playbooks), `working-with-github` (gh CLI, REST/GraphQL APIs, rate limits, tokens, PRs, code review, issues, releases, branch protection, Dependabot/CodeQL config), `developing-for-github` (GitHub Apps, OAuth, webhooks, Octokit SDKs), and `working-with-github-actions` (CI/workflow YAML). The Dependabot/CodeQL *security config* lives in `working-with-github`; the *workflow YAML* cookbooks live in `working-with-github-actions`.
+**Git & GitHub:** start at `git-github-workflows` (router). It routes to `working-with-git` (git commands, history rewriting, bisect, conflicts, git servers), `working-with-github` (gh CLI, REST/GraphQL, tokens, PRs, code review, issues, releases, branch protection, Dependabot/CodeQL config), `developing-for-github` (GitHub Apps, OAuth, webhooks, Octokit), and `working-with-github-actions` (CI/workflow YAML).
 
-**Domain modeling / backend architecture:** `domain-driven-design` for strategic + tactical DDD, CQRS, event sourcing, and where each pattern earns (or doesn't earn) its cost — with complete TypeScript and Python examples.
+**Domain modeling / backend architecture:** `domain-driven-design` for strategic + tactical DDD, CQRS, event sourcing — with complete TypeScript and Python examples.
 
-**Vercel AI SDK development:** `working-with-vercel-ai-sdk` for offline ai-sdk.dev docs (core, UI, RSC, agents, providers, cookbook) — grep `references/` by topic; falls back to live Markdown pages for anything newer.
+**Vercel AI SDK development:** `working-with-vercel-ai-sdk` for offline ai-sdk.dev docs (core, UI, RSC, agents, providers, cookbook).
 
-**Authoring a new skill in this repo:** `authoring-agent-skills` for the naming taxonomy, the doc-fetching cookbook (how to wrap a tool's docs via llms.txt/sitemap), the freshness-metadata conventions, and the registration checklist — then `skill-creator` for generic description/triggering quality.
+**Authoring a new skill in this repo:** `authoring-agent-skills` for the naming taxonomy, doc-fetching cookbook (llms.txt/sitemap), freshness-metadata conventions, and registration checklist — then `skill-creator` for generic description/triggering quality.
 
-**Beads task management:** `beads-operations` for setup conventions (`bd init --shared-server --skip-agents`), the core workflow, and the troubleshooting runbook; `working-with-beads` for the exact CLI reference at the pinned version. These supersede the third-party `beads` plugin's convention guidance.
+**Beads task management:** `beads-operations` for setup conventions, the core workflow, and the troubleshooting runbook; `working-with-beads` for the exact CLI reference at the pinned version. These supersede the third-party `beads` plugin's guidance.
 
-**Dolt / the data engine under beads:** `working-with-dolt` for the `dolt` CLI reference + dolthub.com docs and the runbook for the shared `dolt sql-server` backing beads (port 3308).
+**Dolt / the data engine under beads:** `working-with-dolt` for the `dolt` CLI reference + dolthub.com docs and the shared `dolt sql-server` runbook (port 3308).
+
+**Vercel hosting platform:** `working-with-vercel` for the `vercel` CLI, MCP server, and deploy/domain/env/function ops; `working-with-vercel-api` for the REST API + `@vercel/sdk` + OpenAPI spec. (For the `ai` package use `working-with-vercel-ai-sdk`.)
