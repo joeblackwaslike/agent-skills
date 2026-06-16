@@ -11,30 +11,9 @@ When working on or developing this plugin (modifying hooks, commands, skills, or
 
 ## Auto-generated docs convention
 
-Skills that wrap external documentation use a fetch script to keep references current. The convention:
+Doc-wrapping skills keep `references/` current via `skills/<name>/scripts/update*.{js,sh}` (exit non-zero on failure; generated files are committed, not gitignored). `Makefile` + CI auto-discover the glob — no registration needed. Run `make update-all` / `make update-<name>` / `make list-update-scripts`. A weekly GitHub Action (`.github/workflows/update-docs.yml`, Mon 4am UTC) runs them and commits changes.
 
-- **Script location:** `skills/<name>/scripts/update.js` (or `update.sh`)
-- **Output location:** `skills/<name>/references/`
-- **Exit behavior:** non-zero on failure, 0 on success
-- **Docs are content:** generated files are committed to the repo, not gitignored
-- **Discovery:** `Makefile` and CI glob `skills/*/scripts/update*.{js,sh}` automatically — no registration needed
-
-To update all auto-generated docs locally: `make update-all`  
-To update a specific skill: `make update-<skill-name>`  
-To see what scripts exist: `make list-update-scripts`
-
-A GitHub Actions workflow (`.github/workflows/update-docs.yml`) runs `make update-all` weekly (Monday 4am UTC) and commits any changed files.
-
-Existing example: `skills/working-with-claude-code/scripts/update_docs.js`
-
-### Freshness metadata convention
-
-So agents can judge how current a skill is, two freshness signals are stamped automatically. Both flow through the shared helper `scripts/lib/doc-frontmatter.cjs` (importable from CJS and ESM update scripts):
-
-- **Per fetched doc** (files in `references/`): YAML frontmatter with `source`, `fetched_at` (ISO), and `sha256` (hash of the body). The hash drives **change-detection** — `fetched_at` is preserved when content is unchanged, so weekly runs don't churn timestamps. Hand-written files get no frontmatter; only fetched docs do (`working-with-pieces` is the exception — merged upstreams, skill-level signal only).
-- **Per skill** (`SKILL.md`): `metadata.last_updated` (`YYYY-MM-DD`) — the coarse "how fresh is this skill" date an agent sees the moment it loads the skill. Each update script restamps it (to the run date) only when a fetched doc actually changed.
-
-Wiring a new fetch script: import `withFrontmatter` + `setSkillLastUpdated`, wrap each doc body via `withFrontmatter({ filePath, body, source, now })`, track any `wrapped.changed`, and call `setSkillLastUpdated(SKILL_MD, now.slice(0, 10))` if so. Backfill from git history with `node scripts/backfill-last-updated.cjs`.
+Fetched docs carry `source`/`fetched_at`/`sha256` frontmatter (the sha drives change-detection, so unchanged content doesn't churn timestamps); each `SKILL.md` carries `metadata.last_updated`. Both flow through `scripts/lib/doc-frontmatter.cjs`. See `authoring-agent-skills` for the full doc-fetching + freshness cookbook (`withFrontmatter`/`setSkillLastUpdated`, `node scripts/backfill-last-updated.cjs`).
 
 ## Agent Instruction Files (CLAUDE.md / AGENTS.md)
 
@@ -95,17 +74,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 
 **Starting agentic/plugin work:** Load `best-practices-for-agentic-development` first.
 
-**Claude Code plugin development:** `working-with-claude-code` for docs, `developing-claude-code-plugins` for workflow.
-
-**Codex plugin development:** `working-with-codex` for docs, `developing-codex-plugins` for workflow.
-
-**Gemini CLI / Antigravity plugin development:** `working-with-gemini` for official docs, `developing-gemini-plugins` for workflow.
-
-**OpenCode plugin / skill development:** `working-with-opencode` for official docs, `developing-opencode-plugins` for workflow.
-
-**Cursor plugin development:** `working-with-cursor` for docs, `developing-cursor-plugins` for workflow.
-
-**Multi-provider (Claude Code + Codex + Gemini + OpenCode):** `multi-provider-plugins` for cross-platform architecture.
+**Plugin development (any platform):** pair `working-with-<platform>` (official docs) with `developing-<platform>` (workflow) — for Claude Code, Codex, Gemini/Antigravity, OpenCode, or Cursor. Cross-platform: `multi-provider-plugins`.
 
 **GitHub Actions CI/CD:** `working-with-github-actions` for workflow syntax, cookbooks, action versions, and OIDC deployments.
 
@@ -113,12 +82,8 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 
 **Domain modeling / backend architecture:** `domain-driven-design` for strategic + tactical DDD, CQRS, event sourcing — with complete TypeScript and Python examples.
 
-**Vercel AI SDK development:** `working-with-vercel-ai-sdk` for offline ai-sdk.dev docs (core, UI, RSC, agents, providers, cookbook).
-
 **Authoring a new skill in this repo:** `authoring-agent-skills` for the naming taxonomy, doc-fetching cookbook (llms.txt/sitemap), freshness-metadata conventions, and registration checklist — then `skill-creator` for generic description/triggering quality.
 
 **Beads task management:** `beads-operations` for setup conventions, the core workflow, and the troubleshooting runbook; `working-with-beads` for the exact CLI reference at the pinned version. These supersede the third-party `beads` plugin's guidance.
 
 **Dolt / the data engine under beads:** `working-with-dolt` for the `dolt` CLI reference + dolthub.com docs and the shared `dolt sql-server` runbook (port 3308).
-
-**Vercel hosting platform:** `working-with-vercel` for the `vercel` CLI, MCP server, and deploy/domain/env/function ops; `working-with-vercel-api` for the REST API + `@vercel/sdk` + OpenAPI spec. (For the `ai` package use `working-with-vercel-ai-sdk`.)
