@@ -22,6 +22,10 @@ Ask "will I need this context in 2 weeks / across sessions?" — **yes → `bd`*
 - [`references/troubleshooting.md`](references/troubleshooting.md) — symptom → diagnosis → recovery for the nasty states.
 - [`references/long-term-maintenance.md`](references/long-term-maintenance.md) — version pin/bump, server lifecycle, backup/export, db hygiene, compaction.
 
+## BeadBoard (the dashboard on top of `bd`)
+
+When `bd` work is coordinated through **BeadBoard** (Joe's multi-agent dashboard): the agent-side operating contract — the Iron Law, the session lifecycle, mail, evidence — is the `beadboard-driver` skill. Running its macOS launchd services (the `:3000` dashboard, the daemon), the dashboard HTTP API, the Dolt↔JSONL sync, and the `verify-sync.sh` diagnostic is the `beadboard-operations` skill. Neither replaces this skill's `bd` conventions; they layer on top.
+
 ## When beads is broken
 
 Go straight to [`references/troubleshooting.md`](references/troubleshooting.md). Do **not** improvise schema/server fixes — beads' shared-server states have specific recoveries, and guessing makes them worse.

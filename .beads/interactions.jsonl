@@ -1,0 +1,1 @@
+{"id":"int-5231135fff8554cbc70c8d813fc46164","kind":"field_change","created_at":"2026-06-16T12:41:53.462285Z","actor":"Joe Black","issue_id":"agent-skills-ql0","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"working-with-serena skill built, registered (v1.15.0), verified; using-serena deleted from personal-agent-skills"}}

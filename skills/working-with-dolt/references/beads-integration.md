@@ -141,6 +141,7 @@ bd dolt show                     # database == new project's name, port 3308
 
 - **`beads-operations`** — `bd` conventions, the ready→claim→note→close loop, `bd doctor`, compaction recovery, and the full symptom-first troubleshooting runbook.
 - **`working-with-beads`** — the `bd` CLI reference at its pinned version.
+- **`beadboard-operations`** — when this shared Dolt server is run as a launchd service alongside the BeadBoard dashboard, which watches each project's `.beads/issues.jsonl` (the dual-write export) for real-time UI updates. That skill owns the dashboard/launchd/`verify-sync.sh` ops layer; the agent coordination contract is `beadboard-driver`.
 - `references/cli/sql-server.md` — the annotated `dolt sql-server` config (GC, listener, timeouts).
 - `references/cli/gc.md`, `references/cli/fsck.md` — maintenance commands used above.
 - `references/docs/introduction__installation__application-server.md` — running Dolt as a long-lived server.

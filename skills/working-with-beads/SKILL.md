@@ -20,6 +20,7 @@ Offline reference for the [beads](https://github.com/gastownhall/beads) CLI, **p
 
 - The reference reflects the **pinned** version only. Always trust `bd <cmd> --help` from the live binary if they disagree, and surface the drift.
 - For **how Joe runs beads** (`--shared-server`, shared Dolt server on port 3308, `--skip-agents`) and for fixing broken states, use the `beads-operations` skill — not this one.
+- For the **BeadBoard** multi-agent dashboard that sits on top of `bd`: the agent-side coordination contract is the `beadboard-driver` skill; running its launchd services/dashboard/diagnostics is the `beadboard-operations` skill.
 
 ## Reference map
 

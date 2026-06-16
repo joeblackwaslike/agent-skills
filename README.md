@@ -10,6 +10,7 @@ A plugin bundling custom skills for Claude Code, Codex CLI, Gemini CLI, and Anti
 ```
 agent-skills:agent-instructions
 agent-skills:authoring-agent-skills
+agent-skills:beadboard-operations
 agent-skills:beads-operations
 agent-skills:best-practices-for-agentic-development
 agent-skills:devcontainers
