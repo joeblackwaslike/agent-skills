@@ -21,12 +21,8 @@ Fetched docs carry `source`/`fetched_at`/`sha256` frontmatter (the sha drives ch
 
 - **Claude Code** reads `CLAUDE.md`. Supports `@filename` import syntax (e.g. `@AGENTS.md` pulls that file inline).
 - **Codex CLI** reads `AGENTS.md` as plain Markdown — **no `@file` import/include syntax exists**. Writing `@CLAUDE.md` in AGENTS.md does nothing; Codex just sees it as a broken line.
-- **Best pattern:** Write everything in `CLAUDE.md`. Add `project_doc_fallback_filenames = ["CLAUDE.md"]` to `~/.codex/config.toml` so Codex reads CLAUDE.md when AGENTS.md is absent. Delete or omit AGENTS.md.
+- **Best pattern:** Write everything in `AGENTS.md`. Add `project_doc_fallback_filenames = ["CLAUDE.md"]` to `~/.codex/config.toml` so Codex reads CLAUDE.md when AGENTS.md is absent. Delete or omit CLAUDE.md.
 - **Codex plugin commands:** `codex plugin marketplace add/upgrade/remove` only. There is **no `codex plugin install`** subcommand.
-
-## Task management
-
-This repo uses beads for task management so be sure to load the beads skill whenever working with tasks.
 
 ## Available Skills
 
@@ -67,6 +63,7 @@ Invoke with `skill("name")` (Codex syntax) or via the Skill tool in Claude Code:
 | `working-with-dolt` | Working with Dolt — version-controlled "Git for data" SQL DB (branch/diff/merge over MySQL wire). Offline `dolt` CLI reference from the pinned binary + dolthub.com docs, plus the shared `dolt sql-server` runbook (port 3308). Any `dolt` command/concept lookup |
 | `working-with-vercel` | Vercel **hosting platform** — the `vercel` CLI, hosted MCP server (mcp.vercel.com), and platform concepts (deploys, domains, DNS, env, functions, edge config, blob, firewall). Offline vercel.com/docs. REST API → `working-with-vercel-api`; `ai` pkg → `working-with-vercel-ai-sdk` |
 | `working-with-vercel-api` | Vercel **REST API** + `@vercel/sdk` — the complete OpenAPI spec (every endpoint/param/schema) plus auth (bearer/`VERCEL_TOKEN`), team scoping, versioning, pagination, errors. CLI/MCP/platform → `working-with-vercel` |
+| `working-with-zsh` | Working with Zsh — any command/builtin/option/glob/expansion lookup, Bash→Zsh migration, startup-file config, completion (`compinit`/`zstyle`) & ZLE. The complete manual generated verbatim from the pinned `zsh` man pages, plus snapshot-fetched ecosystem docs (Oh My Zsh, Prezto, zinit/antidote/sheldon, Powerlevel10k/Starship/Oh My Posh, plugins) and hand-written migration/comparison/cookbook guides |
 
 ## Common Workflows
 

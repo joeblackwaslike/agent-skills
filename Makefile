@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 UPDATE_SCRIPTS := $(shell find skills -path '*/scripts/update*.js' -o -path '*/scripts/update*.sh' 2>/dev/null | sort)
 
-.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads update-working-with-git update-working-with-github update-developing-for-github update-working-with-dolt update-working-with-vercel update-working-with-vercel-api
+.PHONY: update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads update-working-with-git update-working-with-github update-developing-for-github update-working-with-dolt update-working-with-vercel update-working-with-vercel-api update-working-with-zsh
 
 update-all: ## Update all auto-generated skill docs
 	@if [ -z "$(UPDATE_SCRIPTS)" ]; then echo "No update scripts found."; exit 0; fi
@@ -60,6 +60,9 @@ update-working-with-vercel: ## Update working-with-vercel references (vercel.com
 
 update-working-with-vercel-api: ## Update working-with-vercel-api references (OpenAPI spec → YAML + conceptual REST docs)
 	node skills/working-with-vercel-api/scripts/update_docs.js
+
+update-working-with-zsh: ## Update working-with-zsh references (manual from pinned zsh man pages + ecosystem docs)
+	node skills/working-with-zsh/scripts/update_docs.js
 
 list-update-scripts: ## List all discovered auto-doc update scripts
 	@echo "Discovered update scripts:"

@@ -1,0 +1,413 @@
+---
+source: "https://raw.githubusercontent.com/wiki/ohmyzsh/ohmyzsh/Plugins.md"
+fetched_at: "2026-06-16T09:07:15.812Z"
+sha256: "e584c74904e068fe47fc8f034fc4fadf3b6dced7d8948da77d6528f348ec8d82"
+---
+
+<!-- prettier-ignore-start -->
+> _This wiki is automatically published from [ohmyzsh/wiki](https://github.com/ohmyzsh/wiki). To edit this page,_
+> _go to [ohmyzsh/wiki](https://github.com/ohmyzsh/wiki), make your changes and submit a Pull Request._
+<!-- prettier-ignore-end -->
+
+Oh My Zsh comes bundled with plugins, which allow you to take advantage of functionality of many sorts to your shell just by enabling them. They are
+each documented in the README file in their respective `plugins/` folder.
+
+Enable a plugin by adding its name to the `plugins` array in your `.zshrc` file (found in the `$HOME`
+directory). For example, this enables the `rails`, `git` and `ruby` plugins, **in that order**:
+
+```shell
+plugins=(rails git ruby)
+```
+
+**_NOTE: elements in zsh arrays are separated by whitespace (spaces, tabs, newlines...). DO NOT use commas._**
+
+## Plugins
+
+<!--
+  Update via scripts/list-plugins.sh (requires local installation of Oh My Zsh).
+  These plugins' descriptions are taken manually as the script is not smart enough to get them: chezmoi, wd, zsh-navigation-tools.
+  Also links to sections within plugin readmes are not updated, must be fixed manually.
+  Also the automatic lowercasing does not account for names (Chuck Norris), which are harder to detect than acronyms.
+-->
+
+- [1password](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/1password): this plugin adds 1Password functionality to oh-my-zsh.
+- [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases): with lots of 3rd-party amazing aliases installed, this plugin helps list the shortcuts that are currently available based on the plugins you have enabled.
+- [alias-finder](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/alias-finder): this plugin searches the defined aliases and outputs any that match the command inputted. This makes learning new aliases easier.
+- [ansible](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ansible): the `ansible plugin` adds several aliases for useful [ansible](https://docs.ansible.com/ansible/latest/index.html) commands and [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ansible#aliases).
+- [ant](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ant): this plugin provides completion for [Ant](https://ant.apache.org/).
+- [apache2-macports](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/apache2-macports): enables aliases to control a local Apache2 installed via [MacPorts](https://www.macports.org/).
+- [arcanist](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/arcanist): this plugin adds many useful aliases for [arcanist](https://github.com/phacility/arcanist).
+- [archlinux](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux): this plugin adds some aliases and functions to work with Arch Linux.
+- [arduino-cli](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/arduino-cli): this plugin adds completion for the [arduino-cli](https://github.com/arduino/arduino-cli) tool.
+- [argocd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/argocd): this plugin adds completion for the [Argo CD](https://argoproj.github.io/cd/) CLI.
+- [asdf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/asdf): adds integration with [asdf](https://github.com/asdf-vm/asdf), the extendable version manager, with support for Ruby, Node.js, Elixir, Erlang and more.
+- [autoenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autoenv): this plugin loads the [Autoenv](https://github.com/inishchith/autoenv).
+- [autojump](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump): this plugin loads the [autojump navigation tool](https://github.com/wting/autojump).
+- [autopep8](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autopep8): this plugin adds completion for [autopep8](https://pypi.org/project/autopep8/), a tool that automatically formats Python code to conform to the [PEP 8](http://www.python.org/dev/peps/pep-0008/) style guide.
+- [aws](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws): this plugin provides completion support for [awscli v2](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html) and a few utilities to manage AWS profiles/regions and display them in the prompt. [awscli v1](https://docs.aws.amazon.com/cli/latest/userguide/cliv2-migration.html) is no longer supported.
+- [azure](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/azure): this plugin provides completion support for [azure cli](https://docs.microsoft.com/en-us/cli/azure/) and a few utilities to manage azure subscriptions and display them in the prompt.
+- [battery](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/battery): this plugin adds some functions you can use to display battery information in your custom theme.
+- [bazel](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bazel): this plugin adds completion and aliases for [bazel](https://bazel.build), an open-source build and test tool that scalably supports multi-language and multi-platform projects.
+- [bbedit](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bbedit): plugin for BBEdit, an HTML and text editor for Mac OS X
+- [bedtools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bedtools): this plugin adds support for the [bedtools suite](http://bedtools.readthedocs.org/en/latest/):
+- [bgnotify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bgnotify): cross-platform background notifications for long running commands! Supports OSX and Linux.
+- [bower](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bower): this plugin adds completion for [Bower](https://bower.io/) and a few useful aliases for common Bower commands.
+- [branch](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/branch): this plugin displays the current Git or Mercurial branch, fast. If in a Mercurial repository, also display the current bookmark, if present.
+- [brew](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew): the plugin adds several aliases for common [brew](https://brew.sh) commands.
+- [bridgetown](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bridgetown): this plugin adds some aliases and autocompletion for common [Bridgetown](https://bridgetownrb.com/) commands.
+- [buf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/buf): this plugin adds completion for [Buf CLI](https://github.com/bufbuild/buf), a tool working with Protocol Buffers.
+- [bun](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bun): this plugin sets up completion for [Bun](https://bun.sh).
+- [bundler](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bundler): this plugin adds completion for basic bundler commands, as well as aliases and helper functions for an easier experience with bundler.
+- [cabal](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cabal): this plugin provides completion for [Cabal](https://www.haskell.org/cabal/), a build tool for Haskell. It also provides a function `cabal_sandbox_info` that prints whether the current working directory is in a sandbox.
+- [cake](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cake): this plugin provides completion for [CakePHP](https://cakephp.org/).
+- [cakephp3](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cakephp3): the plugin adds aliases and autocompletion for [cakephp3](https://book.cakephp.org/3.0/en/index.html).
+- [capistrano](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/capistrano): this plugin provides completion for [Capistrano](https://capistranorb.com/).
+- [cask](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cask): [Cask](https://github.com/cask/cask) is a project management tool for Emacs that helps automate the package development cycle; development, dependencies, testing, building, packaging and more.
+- [catimg](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/catimg): plugin for displaying images on the terminal using the `catimg.sh` script provided by [posva](https://github.com/posva/catimg)
+- [celery](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/celery): this plugin provides completion for [Celery](http://www.celeryproject.org/).
+- [charm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/charm): this plugin adds completion for the [charm](https://github.com/charmbracelet/charm) CLI.
+- [chezmoi](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chezmoi): This plugin adds completion for [chezmoi](https://chezmoi.io/).
+- [chruby](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chruby): this plugin loads [chruby](https://github.com/postmodern/chruby), a tool that changes the current Ruby version, and completion and a prompt function to display the Ruby version. Supports brew and manual installation of chruby.
+- [chucknorris](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/chucknorris): fortunes plugin for Chuck Norris for Oh My Zsh. Perfectly suitable as MOTD.
+- [cloudfoundry](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cloudfoundry): this plugin is intended to offer a few simple aliases for regular users of the [Cloud Foundry Cli][1]. Most are just simple aliases that will save a bit of typing. Others include mini functions and or accept parameters. Take a look at the table below for details.
+- [codeclimate](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/codeclimate): this plugin adds autocompletion for the [`codeclimate` CLI](https://github.com/codeclimate/codeclimate).
+- [coffee](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/coffee): this plugin provides aliases for quickly compiling and previewing your coffeescript code.
+- [colemak](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colemak): this plugin remaps keys in `zsh`'s [`vi`-style navigation mode](https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Keymaps) for a [Colemak](https://colemak.com/) keyboard layout, to match the QWERTY position:
+- [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages): this plugin adds colors to man pages.
+- [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize): with this plugin you can syntax-highlight file contents of over 300 supported languages and other text formats.
+- [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found): this plugin uses the command-not-found package for zsh to provide suggested packages to be installed if a command cannot be found.
+- [common-aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases): this plugin creates helpful shortcut aliases for many commonly used commands.
+- [compleat](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/compleat): this plugin looks for [compleat](https://github.com/mbrubeck/compleat) and loads its completion.
+- [composer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/composer): this plugin provides completion for [composer](https://getcomposer.org/), as well as aliases for frequent composer commands. It also adds Composer's global binaries to the PATH, using Composer if available.
+- [conda](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/conda): the conda plugin provides [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/conda#aliases) for `conda`, usually installed via [anaconda](https://www.anaconda.com/) or [miniconda](https://docs.conda.io/en/latest/miniconda.html).
+- [conda-env](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/conda-env): the plugin displays information of the created virtual container of conda and allows background theming.
+- [copybuffer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer): this plugin adds the <kbd>ctrl-o</kbd> keyboard shortcut to copy the current text in the command line to the system clipboard.
+- [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile): puts the contents of a file in your system clipboard so you can paste it anywhere.
+- [copypath](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath): copies the path of given directory or file to the system clipboard.
+- [cp](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cp): this plugin defines a `cpv` function that uses `rsync` so that you get the features and security of this command.
+- [cpanm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cpanm): this plugin provides completion for [Cpanm](https://github.com/miyagawa/cpanminus) ([docs](https://metacpan.org/pod/App::cpanminus)).
+- [dash](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dash): this plugin adds command line functionality for [Dash](https://kapeli.com/dash), an API Documentation Browser for macOS. This plugin requires Dash to be installed to work.
+- [dbt](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dbt): the `dbt plugin` adds several aliases for useful [dbt](https://docs.getdbt.com/) commands and [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dbt#aliases).
+- [debian](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/debian): this plugin provides Debian-related aliases and functions for zsh.
+- [deno](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/deno): this plugin sets up completion and aliases for [Deno](https://deno.land).
+- [dircycle](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dircycle): plugin for cycling through the directory stack
+- [direnv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/direnv): this plugin creates the [Direnv](https://direnv.net/) hook.
+- [dirhistory](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory): this plugin adds keyboard shortcuts for navigating directory history and hierarchy.
+- [dirpersist](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirpersist): this plugin keeps a running tally of the previous 20 unique directories in the `$HOME/.zdirs` file. When you cd to a new directory, it is prepended to the beginning of the file.
+- [dnf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dnf): this plugin makes `dnf` usage easier by adding aliases for the most common commands.
+- [dnote](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dnote): this plugin adds auto-completion for [Dnote](https://www.getdnote.com/), a simple command line notebook.
+- [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker): this plugin adds auto-completion and aliases for [docker](https://www.docker.com/).
+- [docker-compose](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose): this plugin provides completion for [docker-compose](https://docs.docker.com/compose/) as well as some aliases for frequent docker-compose commands. This plugin chooses automatically between the legacy `docker-compose` command and the modern  `docker compose` subcommand, preferring `docker-compose` when both are available.
+- [doctl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/doctl): this plugin provides completion for [Doctl](https://github.com/digitalocean/doctl).
+- [dotenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv): automatically load your project ENV variables from `.env` file when you `cd` into project root directory.
+- [dotnet](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotnet): this plugin provides completion and useful aliases for [.NET CLI](https://dotnet.microsoft.com/).
+- [droplr](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/droplr): use [Droplr](https://droplr.com/) from the command line to upload files and shorten links. It needs to have [Droplr.app](https://droplr.com/apps) installed and logged in. MacOS only.
+- [drush](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/drush): this plugin adds aliases and functions for [Drush](https://www.drush.org), a command-line shell and Unix scripting interface for Drupal. It also adds completion for the `drush` command.
+- [eecms](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/eecms): this plugin adds auto-completion of console commands for [`eecms`](https://github.com/ExpressionEngine/ExpressionEngine).
+- [emacs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/emacs): this plugin utilizes the Emacs daemon capability, allowing the user to quickly open frames, whether they are opened in a terminal via a ssh connection, or X frames opened on the same host. The plugin also provides some aliases for such operations.
+- [ember-cli](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ember-cli): this plugin adds completion and aliases for using [`ember-cli`](https://cli.emberjs.com/).
+- [emoji](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/emoji): support for conveniently working with Unicode emoji in Zsh.
+- [emoji-clock](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/emoji-clock): the plugin displays current time as an emoji symbol with half hour accuracy.
+- [emotty](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/emotty): this plugin returns an emoji for the current $TTY number so it can be used in a prompt.
+- [encode64](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/encode64): alias plugin for encoding or decoding using `base64` command.
+- [extract](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract): this plugin defines a function called `extract` that extracts the archive file you pass it, and it supports a wide variety of archive filetypes.
+- [eza](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/eza): this provides aliases that invoke the [`eza`](https://github.com/eza-community/eza) utility rather than `ls`
+- [fabric](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fabric): this plugin provides completion for [Fabric](https://www.fabfile.org/).
+- [fancy-ctrl-z](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fancy-ctrl-z): allows pressing Ctrl-Z again to switch back to a background job.
+- [fasd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fasd): [`Fasd`](https://github.com/clvv/fasd) (pronounced similar to "fast") is a command-line productivity booster. Fasd offers quick access to files and directories for POSIX shells.
+- [fastfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fastfile): this plugin adds a way to reference certain files or folders used frequently using a global alias or shortcut.
+- [fbterm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fbterm): this plugin automatically starts [fbterm](https://github.com/zhangyuanwei/fbterm) if on a real TTY (`/dev/tty*`).
+- [firewalld](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/firewalld): this plugin adds some aliases and functions for FirewallD using the `firewalld-cmd` command. To use it, add firewalld to your plugins array.
+- [flutter](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/flutter): the Flutter plugin provides completion and useful aliases
+- [fluxcd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fluxcd): this plugin adds completion for [FluxCD](https://fluxcd.io), an open and extensible continuous delivery solution for Kubernetes. Powered by GitOps Toolkit.
+- [fnm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fnm): this plugin adds autocompletion for [fnm](https://github.com/Schniz/fnm) - a Node.js version manager.
+- [foot](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/foot): this plugin adds shell integration for [foot, a fast, lightweight and minimalistic Wayland terminal emulator](https://codeberg.org/dnkl/foot).
+- [forklift](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/forklift): plugin for ForkLift, an FTP application for OS X.
+- [fossil](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fossil): this plugin adds completion support and prompt for fossil repositories. The prompt will display the current branch and status been dirty or clean.
+- [frontend-search](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/frontend-search): > Searches for your frontend web development made easier
+- [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf): this plugin tries to find [junegunn's fzf](https://github.com/junegunn/fzf) based on where it's been installed, and enables its fuzzy auto-completion and key bindings.
+- [gas](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gas): this plugin adds autocompletion for the [gas](http://ramblingsby.me/gas/) command, a utility to manage Git authors.
+- [gatsby](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gatsby): adds autocomplete options for all gatsby commands.
+- [gcloud](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gcloud): this plugin provides completion support for the [Google Cloud SDK CLI](https://cloud.google.com/sdk/gcloud/).
+- [geeknote](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/geeknote): this plugin provides autocompletion for [Geeknote](https://github.com/VitaliyRodnenko/geeknote) and an alias for `geeknote` called `gn`.
+- [gem](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gem): this plugin adds completions and aliases for [Gem](https://rubygems.org/). The completions include the common `gem` subcommands as well as the installed gems in the current directory.
+- [genpass](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/genpass): this plugin provides three unique password generators for ZSH. Each generator has at least a 128-bit security margin and generates passwords from the cryptographically secure `/dev/urandom`. Each generator can also take an optional numeric argument to generate multiple passwords.
+- [gh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh): this plugin adds completion for the [GitHub CLI](https://cli.github.com/).
+- [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git): the git plugin provides many [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases) and a few useful [functions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#functions).
+- [git-auto-fetch](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-auto-fetch): automatically fetches all changes from all remotes while you are working in a git-initialized directory.
+- [git-commit](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-commit): the git-commit plugin adds several [git aliases](https://www.git-scm.com/docs/git-config#Documentation/git-config.txt-alias) for [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) messages.
+- [git-escape-magic](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-escape-magic): this plugin is copied from the original at https://github.com/knu/zsh-git-escape-magic. All credit for the functionality enabled by this plugin should go to @knu.
+- [git-extras](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-extras): this plugin provides completion definitions for some of the commands defined by [git-extras](https://github.com/tj/git-extras), which must already be installed.
+- [gitfast](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitfast): this plugin adds completion for Git, using the zsh completion from git.git folks, which is much faster than the official one from zsh. A lot of zsh-specific features are not supported, like descriptions for every argument, but everything the bash completion has, this one does too (as it is using it behind the scenes). Not only is it faster, it should be more robust, and updated regularly to the latest git upstream version.
+- [git-flow](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-flow): this plugin adds completion and aliases for the [`git-flow` command](https://github.com/nvie/gitflow).
+- [git-flow-avh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-flow-avh): this plugin adds completion for the [git-flow (AVH Edition)](https://github.com/petervanderdoes/gitflow-avh). The AVH Edition of the git extensions that provides high-level repository operations for [Vincent Driessen's branching model](https://nvie.com/posts/a-successful-git-branching-model/).
+- [github](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/github): this plugin supports working with GitHub from the command line. It provides a few things:
+- [git-hubflow](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-hubflow): this plugin adds completion for [HubFlow](https://datasift.github.io/gitflow/) (GitFlow for GitHub), as well as some aliases for common commands. HubFlow is a git extension to make it easy to use GitFlow with GitHub. Based on the original gitflow extension for git.
+- [gitignore](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitignore): this plugin enables you the use of [gitignore.io](https://www.toptal.com/developers/gitignore) from the command line. You need an active internet connection.
+- [git-lfs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-lfs): the git lfs plugin provides [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-lfs#aliases) and [functions](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-lfs#functions) for [git-lfs](https://github.com/git-lfs/git-lfs).
+- [git-prompt](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-prompt): A `zsh` prompt that displays information about the current git repository. In particular: the branch name, difference with remote branch, number of files staged or changed, etc.
+- [glassfish](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/glassfish): the glassfish plugin adds completion for the `asadmin` utility, a command to manage [Oracle GlassFish](https://docs.oracle.com/cd/E18930_01/html/821-2416/giobi.html) servers.
+- [globalias](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/globalias): expands all glob expressions, subcommands and aliases (including global).
+- [gnu-utils](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gnu-utils): this plugin binds GNU coreutils to their default names, so that you don't have to call them using their prefixed name, which starts with `g`. This is useful in systems which don't have GNU coreutils installed by default, mainly macOS or FreeBSD, which use BSD coreutils.
+- [golang](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang): this plugin adds completion for the [Go Programming Language](https://golang.org/), as well as some aliases for common Golang commands.
+- [gpg-agent](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gpg-agent): applies some fixes for some common issues encountered with [GPG's gpg-agent](https://www.gnupg.org/documentation/manuals/gnupg/).
+- [gradle](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gradle): this plugin adds completions and aliases for [Gradle](https://gradle.org/).
+- [grails](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/grails): this plugin adds completion for the [Grails 2 CLI](https://grails.github.io/grails2-doc/2.5.x/guide/commandLine.html)
+- [grc](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/grc): this plugin adds wrappers for commands supported by [Generic Colouriser](https://github.com/garabik/grc):
+- [grunt](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/grunt): this plugin adds completions for [grunt](https://github.com/gruntjs/grunt).
+- [gulp](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gulp): this plugin adds autocompletion for your [`gulp`](https://gulpjs.com/) tasks. It grabs all available tasks from the `gulpfile.js` in the current directory.
+- [hanami](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/hanami): this plugin adds convenient aliases to work with [Hanami](https://hanamirb.org/) via console. It's inspired by Rails plugin, so if you've used it, you'll feel like home.
+- [hasura](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/hasura): this plugin adds completion for [the Hasura CLI](https://hasura.io/docs/latest/hasura-cli/index/).
+- [hcloud](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/hcloud): this plugin adds completion for the [Hetzner Cloud CLI](https://github.com/hetznercloud/cli), as well as some aliases for common hcloud commands.
+- [helm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/helm): this plugin adds completion and aliases for [Helm](https://helm.sh/), the Kubernetes package manager.
+- [heroku](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/heroku): this plugin provides completion for the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+- [heroku-alias](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/heroku-alias): full alias list for Heroku CLI.
+- [history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history): provides a couple of convenient aliases for using the `history` command to examine your command line history.
+- [history-substring-search](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history-substring-search): this is a clean-room implementation of the [Fish shell][1]'s history search feature, where you can type in any part of any command from history and then press chosen keys, such as the UP and DOWN arrows, to cycle through matches.
+- [hitchhiker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/hitchhiker): this plugin adds quotes from The Hitchhiker's Guide to the Galaxy, from Douglas Adams.
+- [hitokoto](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/hitokoto): displays a random quote taken from [hitokoto.cn](https://v1.hitokoto.cn/)
+- [homestead](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/homestead): this plugin provides completion for [Homestead](https://laravel.com/docs/homestead).
+- [httpie](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/httpie): this plugin adds completion for [HTTPie](https://httpie.org), a command line HTTP client, a friendlier cURL replacement.
+- [invoke](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/invoke): this plugin adds completion for [invoke](https://github.com/pyinvoke/invoke).
+- [ionic](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ionic): this plugin adds completion for the [Ionic CLI](https://ionicframework.com/docs/cli), as well as some aliases for common Ionic commands.
+- [ipfs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ipfs): zsh completion plugin for [The InterPlanetary File System (IPFS)][1]
+- [isodate](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/isodate): this plugin adds completion for the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), as well as some aliases for common Date commands.
+- [istioctl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/istioctl): the [istioctl](https://istio.io/latest/docs/ops/diagnostic-tools/istioctl/) tool is a configuration command line utility that allows service operators to debug and diagnose their Istio service mesh deployments.
+- [iterm2](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/iterm2): this plugin adds a few functions that are useful when using [iTerm2](https://www.iterm2.com/).
+- [jake-node](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jake-node): this plugin provides completion for [Jake](http://jakejs.com/).
+- [jenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jenv): [jenv](https://www.jenv.be/) is a Java version manager similar to [rbenv](https://github.com/rbenv/rbenv) and [pyenv](https://github.com/yyuu/pyenv).
+- [jfrog](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jfrog): this plugin provides completion for [JFrog CLI](https://github.com/jfrog/jfrog-cli).
+- [jhbuild](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jhbuild): this plugin adds some [JHBuild](https://developer.gnome.org/jhbuild/) aliases.
+- [jira](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jira): this plugin provides command line tools for interacting with Atlassian's [JIRA](https://www.atlassian.com/software/jira) bug tracking software.
+- [jj](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jj): this plugin provides autocompletion for [jj](https://martinvonz.github.io/jj).
+- [jruby](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jruby): this plugin adds aliases for [JRuby](https://www.jruby.org/).
+- [jsontools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools): handy command line tools for dealing with json data.
+- [juju](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/juju): this plugin provides useful aliases and functions for [juju](https://juju.is/) (for TAB completion, refer to the [official repo](https://github.com/juju/juju/blob/develop/etc/bash_completion.d/juju)).
+- [jump](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jump): this plugin allows to easily jump around the file system by manually adding marks. Those marks are stored as symbolic links in the directory `$MARKPATH` (default `$HOME/.marks`)
+- [k9s](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/k9s): this plugin adds completion support for the [k9s](https://k9scli.io).
+- [kamal](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kamal): this plugin provides completion for [Kamal](https://kamal-deploy.org/) as well as some aliases for frequent Kamal commands.
+- [kate](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kate): this plugin adds aliases for the [Kate editor](https://kate-editor.org).
+- [keychain](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/keychain): this plugin starts automatically [`keychain`](https://www.funtoo.org/Keychain) to set up and load whichever credentials you want for both gpg and ssh connections.
+- [kind](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kind): this plugin adds completion for the [Kind](https://kind.sigs.k8s.io/) tool, as well as a few aliases for easier use.
+- [kitchen](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kitchen): this plugin adds completion support for the [Test Kitchen](https://kitchen.ci).
+- [kitty](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kitty): this plugin adds a few aliases and functions that are useful for users of the [Kitty](https://sw.kovidgoyal.net/kitty/) terminal.
+- [kn](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kn): this plugin provides autocompletion for [kn](https://knative.dev/docs/install/client/install-kn/) operations.
+- [knife](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/knife): this plugin adds completion for [knife](https://docs.chef.io/knife.html), a command-line tool to interact with [Chef](https://chef.io), a platform to automate and manage infrastructure via code.
+- [knife_ssh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/knife_ssh): this plugin adds a `knife_ssh` function as well as completion for it, to allow connecting via ssh to servers managed with [Chef](https://www.chef.io/).
+- [kompose](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kompose): this plugin provides completion for [kompose](https://github.com/kubernetes/kompose), to migrate from docker compose to Kubernetes resource definitions.
+- [kops](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kops): this plugin provides completion for [kops](https://github.com/kubernetes/kops) (Kubernetes Operations), the command line interface to get a production grade Kubernetes cluster up and running.
+- [kubectl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl): this plugin adds completion for the [Kubernetes cluster manager](https://kubernetes.io/docs/reference/kubectl/kubectl/), as well as some aliases for common kubectl commands.
+- [kubectx](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectx): this plugins adds `kubectx_prompt_info()` function. It shows name of the active kubectl context (`kubectl config current-context`).
+- [kube-ps1](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kube-ps1): A script that lets you add the current Kubernetes context and namespace configured on `kubectl` to your Bash/Zsh prompt strings (i.e. the `$PS1`).
+- [lando](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/lando): this plugin adds aliases for using various languages and frameworks with [Lando](https://docs.lando.dev/basics/) for Docker. It will only run within lando-driven project directories.
+- [laravel](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/laravel): this plugin adds aliases and autocompletion for Laravel [Artisan](https://laravel.com/docs/artisan) and [Bob](http://daylerees.github.io/laravel-bob/) command-line interfaces.
+- [laravel4](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/laravel4): this plugin adds some aliases for common [Laravel 4](https://laravel.com/docs/4.2) commands.
+- [laravel5](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/laravel5): this plugin adds some aliases for common [Laravel 5](https://laravel.com/docs) commands.
+- [last-working-dir](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/last-working-dir): keeps track of the last used working directory and automatically jumps into it for new shells, unless the starting directory is not `$HOME`.
+- [lein](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/lein): this plugin adds completions for the [Leiningen](https://leiningen.org/) Clojure build tool.
+- [lighthouse](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/lighthouse): this plugin adds commands to manage [Lighthouse](https://lighthouseapp.com/).
+- [localstack](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/localstack): CLI support for LOCALSTACK interaction
+- [lol](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/lol): plugin for adding catspeak aliases, because why not.
+- [lpass](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/lpass): this plugin adds completion for LastPass CLI [`lpass`](https://github.com/lastpass/lastpass-cli).
+- [lxd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/lxd): this plugin provides completion for [lxd](https://linuxcontainers.org/lxd/), as well as aliases for frequent lxc commands.
+- [macos](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos): this plugin provides a few utilities to make it more enjoyable on macOS (previously named OSX).
+- [macports](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macports): this plugin adds completion for the package manager [Macports](https://macports.com/), as well as some aliases for common Macports commands.
+- [magic-enter](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/magic-enter): this plugin makes your enter key magical, by binding commonly used commands to it.
+- [man](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/man): this plugin adds a shortcut to insert man before the previous command.
+- [marked2](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/marked2): plugin for Marked 2, a previewer for Markdown files on Mac OS X
+- [marktext](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/marktext): plugin for MarkText, a previewer for Markdown files on Mac OS X
+- [mercurial](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mercurial): this plugin adds some handy aliases for using Mercurial as well as a few utility and prompt functions that can be used in a theme.
+- [meteor](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/meteor): the [meteor plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/meteor) provides many [useful aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/meteor#aliases) as well as completion for the `meteor` command.
+- [microk8s](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/microk8s): this plugin provides completion and useful aliases for [MicroK8s](https://microk8s.io/).
+- [minikube](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/minikube): this plugin provides completion for [minikube](https://github.com/kubernetes/minikube).
+- [mise](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mise): adds integration with [mise](https://github.com/jdx/mise) (formerly `rtx`), a runtime executor compatible with npm, nodenv, pyenv, etc. mise is written in rust and is very fast. 20x-200x faster than asdf. With that being said, mise is compatible with asdf plugins and .tool-versions files. It can be used as a drop-in replacement.
+- [mix](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mix): this plugin adds completions for the [Elixir's Mix build tool](https://hexdocs.pm/mix/Mix.html).
+- [mix-fast](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mix-fast): fast mix autocompletion plugin.
+- [mongo-atlas](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mongo-atlas): this plugin adds completion for [Atlas](https://www.mongodb.com/docs/atlas/cli/stable/) a command line interface built specifically for MongoDB Atlas.
+- [mongocli](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mongocli): the plugin adds several aliases for common [mongocli](https://docs.mongodb.com/mongocli/stable/) commands.
+- [mosh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mosh): this plugin allows SSH tab completion for [mosh](https://mosh.org/) hostnames.
+- [multipass](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/multipass): this plugin provides completion for [multipass](https://multipass.run), as well as aliases for multipass commands.
+- [mvn](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mvn): the mvn plugin provides many [useful aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mvn#aliases) as well as completion for the [Apache Maven](https://maven.apache.org/) command (`mvn`).
+- [mysql-macports](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mysql-macports): this plugin adds aliases for some of the commonly used [MySQL](https://www.mysql.com/) commands when installed using [MacPorts](https://www.macports.org/) on macOS.
+- [n98-magerun](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/n98-magerun): the swiss army knife for Magento developers, sysadmins and devops. The tool provides a huge set of well tested command line commands which save hours of work time.
+- [nanoc](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nanoc): this plugin adds some aliases and autocompletion for common [Nanoc](https://nanoc.ws) commands.
+- [nats](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nats): this plugin adds completion for several tools from [NATS](https://nats.io/).
+- [nestjs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nestjs): this plugin provides aliases for common [NestJS CLI](https://docs.nestjs.com/cli/overview) commands.
+- [ng](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ng): this plugin adds autocompletion support for [Angular's CLI](https://github.com/angular/angular-cli) (named `ng`).
+- [ngrok](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ngrok): this plugin adds completion for the [ngrok](https://ngrok.com) CLI.
+- [nmap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nmap): adds some useful aliases for [Nmap](https://nmap.org/) similar to the profiles in zenmap.
+- [node](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node): this plugin adds `node-docs` function that opens specific section in [Node.js](https://nodejs.org) documentation (depending on the installed version).
+- [nodenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nodenv): the primary job of this plugin is to provide `nodenv_prompt_info` which can be added to your theme to include Node version information into your prompt.
+- [nomad](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nomad): the `nomad` plugin provides a simple autocompletion for [Nomad](https://nomadproject.io/), a tool from Hashicorp for easily deploy applications at any scale.
+- [npm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm): the npm plugin provides completion as well as adding many useful aliases.
+- [nvm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm): this plugin adds autocompletions for [nvm](https://github.com/nvm-sh/nvm) — a Node.js version manager. It also automatically sources nvm, so you don't need to do it manually in your `.zshrc`.
+- [oc](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/oc): this plugin provides autocompletion for [OC](https://docs.openshift.com/container-platform/latest/cli_reference/openshift_cli/getting-started-cli.html) commands, building, managing and updating operations.
+- [octozen](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/octozen): displays a zen quote from GitHub's Octocat on start up.
+- [opentofu](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/opentofu): plugin for OpenTofu, a fork of Terraform that is open-source, community-driven, and managed by the Linux Foundation. It adds completion for `tofu` command, as well as aliases and a prompt function.
+- [operator-sdk](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/operator-sdk): [Operator SDK](https://sdk.operatorframework.io/) is a component of the Operator Framework, an open source toolkit to manage Kubernetes native applications, called Operators, in an effective, automated, and scalable way.
+- [otp](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/otp): this plugin allows you to create one-time passwords using [`oathtool`](https://www.nongnu.org/oath-toolkit/man-oathtool.html), able to replace MFA devices. The oathtool key is kept in a GPG-encrypted file so the codes can only be generated by a user able to decrypt it.
+- [pass](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pass): this plugin provides completion for the [pass](https://www.passwordstore.org/) password manager.
+- [paver](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/paver): this plugin adds completion for the `paver` command-line tool of [Paver](https://pythonhosted.org/Paver/).
+- [pep8](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pep8): this plugin adds completion for [pep8](https://pep8.readthedocs.io/en/release-1.7.x/#), a tool to check your Python code against some of the style conventions in [PEP 8](http://www.python.org/dev/peps/pep-0008/).
+- [percol](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/percol): provides some useful function to make [percol](https://github.com/mooz/percol) work with zsh history and the [jump plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jump), optionally.
+- [per-directory-history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/per-directory-history): this plugin adds per-directory history for zsh, as well as a global history, and the ability to toggle between them with a keyboard shortcut. This is a bundle of the [official plugin by @jimhester](https://github.com/jimhester/per-directory-history).
+- [perl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/perl): this plugin adds [perl](https://www.perl.org/) useful aliases/functions.
+- [perms](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/perms): plugin to handle some unix filesystem permissions quickly.
+- [phing](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/phing): this plugin adds autocompletion for [`phing`](https://github.com/phingofficial/phing) targets.
+- [pip](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip): this plugin adds completion for [pip](https://pip.pypa.io/en/latest/), the Python package manager.
+- [pipenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pipenv): this plugin provides some features to simplify the use of [Pipenv](https://pipenv.pypa.io/) while working on ZSH.
+- [pj](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pj): the `pj` plugin (short for `Project Jump`) allows you to define several folders where you store your projects, so that you can jump there directly by just using the name of the project directory.
+- [please](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/please): [Please](https://please.build) is a cross-language build system with an emphasis on high performance, extensibility and reproducibility. It supports a number of popular languages and can automate nearly any aspect of your build process.
+- [pm2](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pm2): the plugin adds several aliases and completions for common [pm2](http://pm2.keymetrics.io/) commands.
+- [pod](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pod): this plugin adds completion for [`CocoaPods`](https://cocoapods.org/). CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.
+- [podman](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/podman): this plugin adds auto-completion and aliases for [podman](https://podman.io/).
+- [poetry](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry): this plugin automatically installs [Poetry](https://python-poetry.org/)'s completions for you, and keeps them up to date as your Poetry version changes.
+- [poetry-env](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/poetry-env): this plugin automatically changes poetry environment when you cd into or out of the project directory. Note: Script looks for pyproject.toml file to determine poetry if its a poetry environment
+- [postgres](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/postgres): this plugin adds some aliases for useful Postgres commands.
+- [pow](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pow): this plugin adds completion and commands for [pow](http://pow.cx/), a zero-configuration Rack server for macOS.
+- [powder](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/powder): this plugin provides completion for [powder](https://github.com/powder-rb/powder/).
+- [powify](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/powify): this plugin adds autocompletion for [powify](https://github.com/sethvargo/powify), an easy-to-use wrapper for Basecamp's [pow](https://github.com/basecamp/pow).
+- [pre-commit](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pre-commit): this plugin adds aliases for common commands of [pre-commit](https://pre-commit.com/). It also supports [prek](https://github.com/prek/prek) as a drop-in replacement. If `prek` is available, it will be used; otherwise, `pre-commit` is used as fallback.
+- [procs](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/procs): this plugin provides completion for [procs](https://github.com/dalance/procs).
+- [profiles](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/profiles): this plugin allows you to create separate configuration files for zsh based on your long hostname (including the domain).
+- [pulumi](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pulumi): this is an **Oh My Zsh plugin** for the [**Pulumi CLI**](https://www.pulumi.com/docs/iac/cli/), an Infrastructure as Code (IaC) tool for building, deploying and managing cloud infrastucture.
+- [pyenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv): this plugin looks for [pyenv](https://github.com/pyenv/pyenv), a Simple Python version management system, and loads it if it's found. It also loads pyenv-virtualenv, a pyenv plugin to manage virtualenv, if it's found. If a venv is found pyenv won't load.
+- [pylint](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pylint): this plugin adds aliases and autocompletion for [Pylint](https://www.pylint.org/), the Python code style checking tool.
+- [python](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/python): the plugin adds several aliases for useful [Python](https://www.python.org/) commands.
+- [qodana](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/qodana): this plugin adds completion for the [JetBrains Qodana CLI](https://github.com/JetBrains/qodana-cli).
+- [qrcode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/qrcode): generate a QR Code from the command line. Uses [QRcode.show](https://qrcode.show) via curl.
+- [rails](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rails): this plugin adds completion for [Ruby On Rails Framework](https://rubyonrails.org/) and [Rake](https://ruby.github.io/rake/) commands, as well as some aliases for logs and environment variables.
+- [rake](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rake): this plugin adds support for [rake](https://ruby.github.io/rake/), the Ruby build tool or Ruby Make.
+- [rake-fast](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rake-fast): fast rake autocompletion plugin.
+- [rand-quote](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rand-quote): displays a random quote taken from [quotationspage.com](http://www.quotationspage.com/random.php)
+- [rbenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rbenv): the primary job of this plugin is to provide `rbenv_prompt_info` which can be added to your theme to include Ruby version and gemset information into your prompt.
+- [rbw](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rbw): this plugin adds completion for [rbw](https://github.com/doy/rbw), an unofficial CLI for [Bitwarden](https://bitwarden.com).
+- [rclone](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rclone): this plugin adds completion for [Rclone](https://rclone.org/), the command-line program to manage files on cloud storage.
+- [react-native](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/react-native): this plugin adds completion for [`react-native`](https://reactnative.dev/). It also defines a few [aliases](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/react-native#aliases) for the commands more frequently used.
+- [rebar](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rebar): this plugin adds completions for the [rebar](https://www.rebar3.org/) Erlang build tool.
+- [redis-cli](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/redis-cli): this plugin adds [redis-cli](https://redis.io/topics/rediscli) completion, based off of Homebrew completion.
+- [repo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/repo): this plugin mainly adds some aliases and support for automatic completion for the [repo command line tool](https://code.google.com/p/git-repo/).
+- [ros](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ros): this plugin adds completions and aliases for [Roswell](https://github.com/roswell/roswell/).
+- [rsync](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rsync): this plugin adds aliases for frequent [rsync](https://rsync.samba.org/) commands, simplifying file transfer and synchronization tasks.
+- [ruby](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ruby): this plugin adds aliases for common commands used in dealing with [Ruby](https://www.ruby-lang.org/en/) and [gem packages](https://rubygems.org/).
+- [rust](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust): this plugin adds completion for [`rustc`](https://doc.rust-lang.org/rustc/index.html), the compiler for the Rust programming language, as well as for `rustup` and `cargo` if you have the Rust toolchain installed.
+- [rvm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rvm): this plugin adds some utility functions and completions for [Ruby Version Manager](https://rvm.io/).
+- [safe-paste](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/safe-paste): preventing any code from actually running while pasting, so you have a chance to review what was actually pasted before running it.
+- [salt](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/salt): A copy of the completion script from the [salt](https://github.com/saltstack/salt/blob/develop/pkg/zsh_completion.zsh) git repo.
+- [samtools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/samtools): this plugin adds support for [samtools](http://www.htslib.org/):
+- [sbt](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sbt): this plugin adds completion for the [sbt, the interactive build tool](https://scala-sbt.org/), as well as some aliases for common sbt commands.
+- [scala](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/scala): completion script for [scala and scalac](https://www.scala-lang.org/) commands.
+- [scd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/scd): define `scd` shell function for changing to any directory with a few keystrokes.
+- [screen](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/screen): this plugin sets title and hardstatus of the tab window for [screen](https://www.gnu.org/software/screen/), the terminal multiplexer.
+- [scw](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/scw): this plugin adds completion for [scw](https://github.com/scaleway/scaleway-cli), the command line interface for Scaleway.
+- [sdk](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sdk): plugin for SDKMAN, a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems. Provides autocompletion for all known commands.
+- [sfdx](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sfdx): this plugin provides autocompletion for the [Salesforce DX](https://developer.salesforce.com/tools/sfdxcli) CLI.
+- [sfffe](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sfffe): this plugin adds a few functions for searching files used in Front-End web development.
+- [shell-proxy](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/shell-proxy): this a pure user-space program, shell-proxy setter, written in Python3 and Zsh.
+- [shrink-path](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/shrink-path): A plugin to shrink directory paths for brevity and pretty-printing.
+- [sigstore](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sigstore): this plugin sets up completion for the following [Sigstore](https://sigstore.dev/) CLI tools.
+- [singlechar](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/singlechar): this plugin adds single char shortcuts (and combinations) for some commands.
+- [skaffold](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/skaffold): this plugin adds completion for [Skaffold](https://skaffold.dev)
+- [snap](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/snap): this plugin sets up aliases for the common [snap](https://snapcraft.io/docs/getting-started) commands
+- [spackenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/spackenv): based on the virtualenv plugin.
+- [spring](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/spring): adds autocomplete options for all [Spring Boot](https://spring.io/projects/spring-boot) commands.
+- [sprunge](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sprunge): this plugin uploads data and fetch URL from the pastebin http://sprunge.us
+- [ssh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh): this plugin provides host completion based off of your `~/.ssh/config` file, and adds some utility functions to work with SSH keys.
+- [ssh-agent](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent): this plugin starts automatically `ssh-agent` to set up and load whichever credentials you want for ssh connections.
+- [stack](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/stack): this plugin provides completion for [Stack](https://haskellstack.org).
+- [starship](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/starship): initializes [starship prompt](https://starship.rs) - a minimal, blazing-fast and infinitely customizable cross-shell prompt.
+- [stripe](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/stripe): this plugin provides completion for the [Stripe CLI](https://stripe.com/docs/stripe-cli).
+- [sublime](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sublime): plugin for [Sublime Text](https://www.sublimetext.com/), a cross platform text and code editor, available for Linux, macOS, and Windows.
+- [sublime-merge](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sublime-merge): plugin for Sublime Merge, a cross platform text and code editor, available for Linux, Mac OS X, and Windows.
+- [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo): easily prefix your current or previous commands with `sudo` by pressing <kbd>esc</kbd> twice.
+- [supervisor](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/supervisor): this plugin adds tab-completion for `supervisord`/`supervisorctl` in [Supervisor](http://supervisord.org/). Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
+- [suse](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/suse): aliases for [Zypper](https://en.opensuse.org/Portal:Zypper) according to the official Zypper's alias
+- [svcat](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/svcat): this plugin provides completion for the [Kubernetes service catalog cli](https://github.com/kubernetes-incubator/service-catalog).
+- [svn](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/svn): this plugin adds some utility functions to display additional information regarding your current svn repository. See https://subversion.apache.org/ for the full svn documentation.
+- [svn-fast-info](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/svn-fast-info): faster alternative to the main SVN plugin implementation. Works with svn 1.6 and newer. Use as a drop-in replacement to the svn plugin, not as complementary.
+- [swiftpm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/swiftpm): this plugin provides a few utilities that make you faster on your daily work with the [Swift Package Manager](https://github.com/apple/swift-package-manager), as well as autocompletion for Swift 5.9.
+- [symfony](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/symfony): this plugin provides completion for [Symfony](https://symfony.com/).
+- [symfony2](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/symfony2): this plugin provides completion for [Symfony 2](https://symfony.com/), as well as aliases for frequent Symfony commands.
+- [symfony6](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/symfony6): this plugin provides native completion for [Symfony](https://symfony.com/), but requires at least Symfony 6.2.
+- [systemadmin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/systemadmin): this plugin adds a series of aliases and functions which make a System Administrator's life easier.
+- [systemd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/systemd): the systemd plugin provides many useful aliases for systemd.
+- [tailscale](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tailscale): this plugin provides completion for [tailscale](https://tailscale.com/) (Easy software-defined networks using an implementation of wireguard).
+- [task](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/task): this plugin adds completion for [Task CLI](https://taskfile.dev/), a fast, cross-platform build tool inspired by Make, designed for modern workflows.
+- [taskwarrior](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/taskwarrior): this plugin adds smart tab completion for [TaskWarrior](https://taskwarrior.org/). It uses the zsh tab completion script (`_task`) shipped with TaskWarrior for the completion definitions.
+- [terminitor](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/terminitor): this plugin adds completions for the [Terminitor](https://github.com/achiurizo/terminitor) development workflow setup tool.
+- [term_tab](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/term_tab): this plugin only works for Solaris and linux.
+- [terraform](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/terraform): plugin for Terraform, a tool from Hashicorp for managing infrastructure safely and efficiently. It adds completion for `terraform`, as well as aliases and a prompt function.
+- [textastic](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/textastic): plugin for Textastic, a text and code editor for Mac OS X
+- [textmate](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/textmate): the plugin adds a function for the [TextMate](https://macromates.com) editor.
+- [thefuck](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/thefuck): [The Fuck](https://github.com/nvbn/thefuck) plugin — magnificent app which corrects your previous console command.
+- [themes](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/themes): this plugin allows you to change ZSH theme on the go.
+- [thor](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/thor): this plugin adds completion for [Thor](http://whatisthor.com/), a ruby toolkit for building powerful command-line interfaces.
+- [tig](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tig): this plugin adds some aliases for people who work with [`tig`](https://jonas.github.io/tig/) (text-mode interface for Git) in a regular basis. To use it, add `tig` to your plugins array:
+- [timer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/timer): timer can be tuned by these two variables: _ `TIMER_PRECISION` allows to control number of decimal places (default `1`) _ `TIMER_FORMAT` allows to adjust display format (default `'/%d'`) \* `TIMER_THRESHOLD` allows to set the minimum execution time that causes the timer to be shown (default `0`)
+- [timoni](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/timoni): this plugin adds completion for [Timoni](https://timoni.sh), a package manager for Kubernetes, powered by CUE and inspired by Helm.
+- [tldr](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tldr): this plugin adds a shortcut to insert tldr before the previous command. Heavily inspired from [Man plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/man).
+- [tmux](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux): this plugin provides aliases for [tmux](https://tmux.github.io/), the terminal multiplexer. To use it add `tmux` to the plugins array in your zshrc file.
+- [tmux-cssh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux-cssh): this plugin adds autocompletion for [`tmux-cssh`](https://github.com/zinic/tmux-cssh/).
+- [tmuxinator](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmuxinator): this plugin provides completion for [tmuxinator](https://github.com/tmuxinator/tmuxinator), as well as aliases for frequent tmuxinator commands.
+- [toolbox](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/toolbox): plugin for [toolbox](https://containertoolbx.org), a tool to use containerized CLI environments.
+- [torrent](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/torrent): this plugin creates a Torrent file based on a [MagnetURI](https://en.wikipedia.org/wiki/Magnet_URI_scheme).
+- [transfer](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/transfer): [`transfer.sh`](https://transfer.sh) is an easy to use file sharing service from the command line
+- [tt](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tt): this plugin provides mutual conversion of timestamp and date. 
+- [tugboat](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tugboat): this plugin adds autocompletion for Tugboat, a command line tool for interacting with your [DigitalOcean droplets](https://www.digitalocean.com/products/droplets/).
+- [ubuntu](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ubuntu): this plugin adds completions and aliases for [Ubuntu](https://www.ubuntu.com/).
+- [ufw](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ufw): this plugin adds completion for managing everybody's favorite Uncomplicated Firewall (UFW), a simple interface for managing iptables. Learn more about [`UFW`](https://wiki.ubuntu.com/UncomplicatedFirewall).
+- [universalarchive](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/universalarchive): the `universalarchive` plugin provides a convenient command-line interface for archiving files and directories using a wide variety of compression formats - without having to remember the exact syntax for each tool.
+- [urltools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/urltools): this plugin provides two aliases to URL-encode and URL-decode strings.
+- [uv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/uv): this plugin automatically installs [uv](https://github.com/astral-sh/uv)'s completions for you, and keeps them up to date. It also adds convenient aliases for common usage.
+- [vagrant](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant): this plugin adds autocompletion for [Vagrant](https://www.vagrantup.com/) commands, task names, box names and built-in handy documentation.
+- [vagrant-prompt](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant-prompt): this plugin prompts the status of the Vagrant VMs. It supports single-host and multi-host configurations as well.
+- [vault](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vault): this plugin adds completion for [Vault](https://www.vaultproject.io/), the secrets and sensitive data manager.
+- [vim-interaction](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vim-interaction): the idea for this script is to give you some decent interaction with a running GVim session.  Normally you'll be running around your filesystem doing any number of amazing things and you'll need to load some files into GVim for editing, inspecting, destruction, or other bits of mayhem.  This script lets you do that.
+- [vi-mode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode): this plugin increase `vi-like` zsh functionality.
+- [virtualenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/virtualenv): the plugin displays information of the created virtual container and allows background theming.
+- [virtualenvwrapper](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/virtualenvwrapper): this plugin loads Python's [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) shell tools.
+- [volta](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/volta): this plugin provides completion for [Volta](https://volta.sh/).
+- [vscode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode): this plugin provides useful aliases to simplify the interaction between the command line and VS Code, VSCodium, or Cursor editor.
+- [vundle](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vundle): this plugin adds functions to control [vundle](https://github.com/VundleVim/Vundle.vim) plug-in manager for vim.
+- [wakeonlan](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/wakeonlan): this plugin provides a wrapper around the "wakeonlan" tool available from most distributions' package repositories, or from [the following website](https://github.com/jpoliv/wakeonlan).
+- [watson](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/watson): this plugin provides completion for [Watson](https://tailordev.github.io/Watson/).
+- [wd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/wd): `wd` (_warp directory_) lets you jump to custom directories in zsh, without using `cd`. Why? Because `cd` seems inefficient when the folder is frequently visited or has a long path.
+- [web-search](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search): this plugin adds aliases for searching with Google, Wiki, Bing, YouTube and other popular services.
+- [wp-cli](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/wp-cli): the [WordPress CLI](https://wp-cli.org/) is a command-line tool for managing WordPress installations. You can update plugins, set up multisite installs and much more, without using a web browser.
+- [xcode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/xcode): this plugin provides a few utilities that can help you on your daily use of Xcode and iOS development.
+- [yarn](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn): this plugin adds completion for the [Yarn package manager](https://yarnpkg.com/en/), as well as some aliases for common Yarn commands.
+- [yii](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yii): the plugin adds autocomplete commands and subcommands for [yii](https://www.yiiframework.com/).
+- [yii2](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yii2): adds autocomplete commands and subcommands for [yii](https://www.yiiframework.com/).
+- [yum](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yum): this plugin adds useful aliases for common [Yum](http://yum.baseurl.org/) commands.
+- [z](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z): this plugin defines the [z command](https://github.com/agkozak/zsh-z) that tracks your most visited directories and allows you to access them with very few keystrokes.
+- [zbell](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zbell): this plugin prints a bell character when a command finishes if it has been running for longer than a specified duration.
+- [zeus](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zeus): [Zeus](https://github.com/burke/zeus) preloads your Rails environment and forks that process whenever needed. This effectively speeds up Rails' boot process to under 1 sec. This plugin adds autocompletion for zeus and aliases for common usage.
+- [zoxide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zoxide): initializes [zoxide](https://github.com/ajeetdsouza/zoxide), a smarter cd command for your terminal.
+- [zsh-interactive-cd](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-interactive-cd): this plugin provides an interactive way to change directories in zsh using fzf.
+- [zsh-navigation-tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-navigation-tools): set of tools like `n-history` – multi-word history searcher, `n-cd` – directory bookmark manager, `n-kill` – `htop` like kill utility, and more. Based on `n-list`, a tool generating selectable curses-based list of elements that has access to current `Zsh` session, i.e. has broad capabilities to work together with it. Feature highlights include incremental multi-word searching, approximate matching, ANSI coloring, themes, unique mode, horizontal scroll, grepping, advanced history management and various integrations with `Zsh`.
+
+### Removed
+
+- `adb`: completion is already provided by Zsh 4.3.17 and newer.
+- `ag`: completion for "The Silver Searcher" is already included when installed via package managers.
+- `boot2docker`: the boot2docker project was abandoned in 2020.
+- `cargo`: moved to the `rust` plugin.
+- `cloudapp`: removed due to [deprecated API](https://github.com/cloudapp/api#note-the-api-is-no-longer-supported).
+- `copydir`: functionality moved to [`copypath`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath) plugin.
+- `django`: removed because Zsh provides a better completion for Django.
+- `docker-machine`: removed because Docker Machine was deprecated. Use Docker Desktop instead.
+- `fedora`: use `dnf` instead.
+- `fd`: completion is already included when installed via package managers.
+- `fig`: [project sunset in September 1, 2024](https://fig.io/). Integrated with AWS Amazon Q.
+- `gb`: [project archived since 2017](https://github.com/constabulary/gb).
+- `git-remote-branch`: not actively maintained.
+- `go`: use `golang` instead.
+- `npx`: new npm versions (>=7.0.0) do not provide the same functionality.
+- `nyan`: the service that the plugin relied on is no longer available.
+- `osx`: renamed to `macos`.
+- `rbfu`: tool archived in 2013. Users are encouraged to use other [Ruby version managers](https://www.jetbrains.com/help/ruby/ruby-version-managers.html).
+- `ripgrep`: completion is already included when installed via package managers.
+- `rustup`: moved to the `rust` plugin.
+- `rtx`: moved to the `mise` plugin as [it was renamed](https://mise.jdx.dev/rtx.html).
+- `vault`: use the [official autocompletion](https://developer.hashicorp.com/vault/docs/commands#enable-autocomplete) instead.
+- `zsh_reload`: functionality baked into the CLI with `omz reload`.
