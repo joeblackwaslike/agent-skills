@@ -12,7 +12,7 @@ Offline reference for the [beads](https://github.com/gastownhall/beads) CLI, **p
 ## How to use this skill
 
 1. **CLI reference:** read [`references/cli/_index.md`](references/cli/_index.md) for the command tree, then `references/cli/<command>.md` (or `<command>__<subcommand>.md`) for exact flags/usage — these are the literal output of `bd <command> --help` at the pinned version.
-2. **Workflow context:** [`references/prime.md`](references/prime.md) is the captured `bd prime` output.
+2. **Workflow context:** [`references/prime.md`](references/prime.md) is the captured `bd prime` output (auto-generated; empty when captured outside a beads project). For how `bd prime` is wired into sessions, its flags/config, the `PRIME.md` override + resolution, and neutralizing the conservative preamble, see the `beads-operations` skill (`references/prime-customization.md`).
 3. **Concepts/advanced:** `grep` [`references/docs/`](references/docs/) (ADVANCED, federation, adaptive IDs, config, etc.).
 4. **If the installed `bd` differs from `PINNED_VERSION`**, the reference may not match — bump the pin (see below) and regenerate, or run `bd <cmd> --help` directly.
 
@@ -26,7 +26,7 @@ Offline reference for the [beads](https://github.com/gastownhall/beads) CLI, **p
 
 - `references/cli/_index.md` — `bd help` top-level command tree.
 - `references/cli/<command>.md` — per-command `--help` (nested groups as `<command>__<subcommand>.md`).
-- `references/prime.md` — `bd prime` output.
+- `references/prime.md` — captured `bd prime` output (auto-generated). For the mechanics + `PRIME.md` customization, see `beads-operations/references/prime-customization.md`.
 - `references/docs/*.md` — upstream `docs/` + `README.md` at the pinned tag.
 
 ## Keeping this current

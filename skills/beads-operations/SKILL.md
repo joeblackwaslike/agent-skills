@@ -1,8 +1,8 @@
 ---
 name: beads-operations
-description: Use when running, maintaining, or troubleshooting beads (`bd`) day-to-day — deciding bd vs TodoWrite, Joe's shared-server conventions (`bd init --shared-server --skip-agents`, the shared Dolt server on port 3308), the ready→claim→note→close workflow, compaction recovery, and recovering from broken/nasty beads states (stale ports, orphan/duplicate Dolt servers, db-name mismatch, "database is locked"). Invoke on "beads is broken", "bd won't start", "set up beads in this project", "how do I track this", or any beads failure. For the raw CLI reference, use `working-with-beads`.
+description: Use when running, maintaining, or troubleshooting beads (`bd`) day-to-day — deciding bd vs TodoWrite, Joe's shared-server conventions (`bd init --shared-server --skip-agents`, the shared Dolt server on port 3308), the ready→claim→note→close workflow, compaction recovery, recovering from broken/nasty beads states (stale ports, orphan/duplicate Dolt servers, db-name mismatch, "database is locked"), and taming the `bd prime` session-start injection (the workflow preamble, `PRIME.md` customization, neutralizing the conservative git policy). Invoke on "beads is broken", "bd won't start", "set up beads in this project", "how do I track this", "bd prime is noisy", "change the session-start beads text", or any beads failure. For the raw CLI reference, use `working-with-beads`.
 metadata:
-  last_updated: "2026-06-12"
+  last_updated: "2026-06-16"
 ---
 
 # Beads operations
@@ -21,6 +21,7 @@ Ask "will I need this context in 2 weeks / across sessions?" — **yes → `bd`*
 - [`references/workflows.md`](references/workflows.md) — the core loop, compaction recovery, discovered-from side-quests.
 - [`references/troubleshooting.md`](references/troubleshooting.md) — symptom → diagnosis → recovery for the nasty states.
 - [`references/long-term-maintenance.md`](references/long-term-maintenance.md) — version pin/bump, server lifecycle, backup/export, db hygiene, compaction.
+- [`references/prime-customization.md`](references/prime-customization.md) — what `bd prime` injects, how `bd setup claude` wires the SessionStart/PreCompact hooks, the flag/config matrix, the `PRIME.md` override + resolution order, git-state modes, Joe's neutral PRIME.md, and the un-gunkify runbook.
 
 ## BeadBoard (the dashboard on top of `bd`)
 
@@ -29,6 +30,10 @@ When `bd` work is coordinated through **BeadBoard** (Joe's multi-agent dashboard
 ## When beads is broken
 
 Go straight to [`references/troubleshooting.md`](references/troubleshooting.md). Do **not** improvise schema/server fixes — beads' shared-server states have specific recoveries, and guessing makes them worse.
+
+## Taming `bd prime`
+
+The session-start "Beads Workflow Context / SESSION CLOSE PROTOCOL" preamble is emitted by `bd prime`, wired as a SessionStart (and PreCompact) hook by `bd setup claude` — **not** `bd hooks install`. It ships a conservative "don't push without explicit authority" git policy and is easily duplicated across project + global `settings.json`. To change the wording, neutralize the policy, dedupe the hooks, or understand the flags / `PRIME.md` override and its resolution order, see [`references/prime-customization.md`](references/prime-customization.md).
 
 ## Niche features
 
