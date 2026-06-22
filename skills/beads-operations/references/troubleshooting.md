@@ -150,7 +150,31 @@ git rev-parse --is-inside-work-tree   # must be true first (Dolt needs git)
 ```sh
 git init   # only if not already a git repo
 bd init --shared-server --skip-agents
+bd config set export.auto true   # REQUIRED: off by default; enables .beads/issues.jsonl auto-export
+bd hooks install
 ```
+
+---
+
+### BeadBoard dashboard shows stale data / `.beads/issues.jsonl` drift
+
+Symptom: the BeadBoard dashboard (or any consumer of `.beads/issues.jsonl`) shows an outdated
+issue set, but `bd list`/`bd ready` in the terminal are correct. The Dolt DB is the source of
+truth and is fine; the JSONL export it feeds the dashboard is stale. Root cause is almost always
+`export.auto` left at its **`false` default** — `bd` only rewrites the JSONL on a manual `bd export`.
+
+**Diagnosis:**
+```sh
+bd config get export.auto         # false (or empty) → auto-export is OFF; this is the cause
+```
+
+**Recovery:**
+```sh
+bd config set export.auto true    # auto-export after writes (throttled 60s)
+bd export                         # force one immediate export to un-stale the JSONL now
+```
+Setting `export.auto true` is idempotent; do it on every project. Confirm with
+`bd config get export.auto | grep -q true || bd config set export.auto true`.
 
 ---
 
@@ -195,9 +219,10 @@ bd doctor --agent                     # prose diagnosis + remediation commands
 bd doctor --fix                       # apply safe fixes (confirms each)
 bd prime                              # re-anchor the agent's workflow context
 
-# 5. Confirm the project sees its data.
+# 5. Confirm the project sees its data, and that auto-export is on (JSONL/dashboard freshness).
 bd status
 bd ready
+bd config get export.auto | grep -q true || bd config set export.auto true
 
 # 6. Last resort — rebuild from the JSONL snapshot (DESTRUCTIVE; have the export).
 bd doctor --fix --source=jsonl        # rebuild database from a JSONL export  [verify path]

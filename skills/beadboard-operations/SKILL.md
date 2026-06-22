@@ -2,7 +2,7 @@
 name: beadboard-operations
 description: Use when running, operating, or troubleshooting the BeadBoard dashboard and its macOS launchd services — `com.beadboard.dashboard` (Next.js UI on :3000), `com.beadboard.daemon`, install.sh/uninstall.sh, the dashboard HTTP API, the Dolt↔JSONL sync architecture (`export.auto`, the `.beads/issues.jsonl` file-watcher), the `verify-sync.sh` diagnostic, env vars (`BEADS_DOLT_SHARED_SERVER`, `BEADS_DOLT_SERVER_PORT`, `BB_AGENT`), service file paths, and the operating/maintenance runbooks. Invoke on "dashboard won't start", "beadboard service", "launchctl beadboard", "is BeadBoard running", "verify-sync", "JSONL drift", "kickstart the dashboard", "EADDRINUSE on 3000". This is the ops/infra layer. For the agent-side coordination contract (the Iron Law, session lifecycle, mail categories, agent states, evidence flow) use `beadboard-driver`; for day-to-day `bd` conventions/troubleshooting use `beads-operations`; for the shared Dolt server internals use `working-with-dolt`.
 metadata:
-  last_updated: "2026-06-16"
+  last_updated: "2026-06-22"
 ---
 
 # BeadBoard operations
@@ -29,7 +29,15 @@ curl -s -o /dev/null -w '%{http_code}\n' http://localhost:3000   # -> 200
 launchctl kickstart -k gui/$(id -u)/com.beadboard.dashboard      # force-restart dashboard
 tail -f /tmp/beadboard-dashboard.err                             # dashboard boot errors
 ./bin/verify-sync.sh                                             # audit Dolt <-> JSONL across all projects
+bd config get export.auto | grep -q true || bd config set export.auto true   # per-project: ensure JSONL auto-export is ON
 ```
+
+> **Stale dashboard? Check `export.auto` first.** The dashboard reads each project's
+> `.beads/issues.jsonl`, which `bd` only refreshes automatically when **`export.auto=true`** (it is
+> **`false` by default** in every fresh `bd init`). A project showing stale data on the board almost
+> always has `export.auto` off — run `bd config set export.auto true` in that repo (then `bd export`
+> to refresh now). This was the root cause of JSONL drift across all of Joe's repos. The per-`bd`-project
+> setup convention lives in `beads-operations`; this is the dashboard-side symptom of getting it wrong.
 
 ## Reference map
 

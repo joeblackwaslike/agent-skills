@@ -76,10 +76,26 @@ Dolt needs a git repo (it uses git for commit history). So:
 ```sh
 git init                              # Dolt requires a git repository
 bd init --shared-server --skip-agents # join the shared server on 3308
+bd config set export.auto true        # REQUIRED: auto-export to .beads/issues.jsonl
 bd hooks install                      # REQUIRED: init does NOT install them
 ```
 
 If you skip `git init`, server startup fails with "not in a git repository" — see [`troubleshooting.md`](troubleshooting.md).
+
+### Always set `export.auto=true` immediately after init
+
+`export.auto` is **`false` by default** in every fresh `bd init`. It controls whether `bd`
+auto-exports issues to `.beads/issues.jsonl` after writes (throttled to once per 60s). With it
+off, the JSONL is only refreshed on a manual `bd export` — so the **BeadBoard dashboard (and any
+other consumer of `.beads/issues.jsonl`) shows stale data**, and the tracked JSONL drifts out of
+sync with the live Dolt DB. This was the single root cause of JSONL drift across all of Joe's repos.
+
+```sh
+bd config set export.auto true
+```
+
+Set it on **every** project right after `bd init`, before any issue writes. It's idempotent — safe
+to re-run. To confirm: `bd config get export.auto` → `true`.
 
 ### Always run `bd hooks install` after init
 

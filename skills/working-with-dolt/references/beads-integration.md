@@ -117,6 +117,7 @@ The golden path — produces a project wired to the shared server with git-sync 
 ```sh
 git init                                   # Dolt needs a git repo
 bd init --shared-server --skip-agents      # shared server on 3308; skip agent scaffolding
+bd config set export.auto true             # REQUIRED — off by default; auto-export to .beads/issues.jsonl
 bd hooks install                           # REQUIRED — init does NOT install git-sync hooks
 bd dolt show                               # confirm: host 127.0.0.1, port 3308, database = <project>
 bd ready                                   # smoke test: lists ready issues (empty is fine)
@@ -124,6 +125,7 @@ bd ready                                   # smoke test: lists ready issues (emp
 
 Critical gotchas:
 
+- **`export.auto` is `false` by default.** Set `bd config set export.auto true` right after init. It controls whether `bd` auto-exports to `.beads/issues.jsonl` after writes (throttled 60s). Without it, the JSONL is only refreshed on a manual `bd export`, so the **BeadBoard dashboard shows stale data** and the tracked JSONL drifts from the live Dolt DB. This was the root cause of JSONL drift across Joe's repos.
 - **`bd hooks install` is separate from `bd init`.** Without the hooks, the Dolt DB and the tracked `interactions.jsonl` drift across branches and every checkout becomes a "commit the `.beads/` churn first" chore.
 - **Husky repos** (`git config core.hooksPath` = `.husky/_`, e.g. create-ts-project scaffolds): `bd hooks install` writes to the gitignored, husky-regenerated `.husky/_` and gets wiped on `pnpm install`. Instead, add to each tracked `.husky/<hook>` file:
   ```sh
@@ -131,10 +133,11 @@ Critical gotchas:
   ```
 - **Always `--shared-server`.** Plain `bd init` creates a per-project Dolt server that drifts and breaks. The env vars in `~/.zshenv` default to shared mode; the flag is belt-and-suspenders.
 
-After bootstrap, verify exactly one shared listener serves the new database:
+After bootstrap, verify exactly one shared listener serves the new database, and that auto-export is on:
 ```sh
 lsof -iTCP:3308 -sTCP:LISTEN     # one dolt process
 bd dolt show                     # database == new project's name, port 3308
+bd config get export.auto | grep -q true || bd config set export.auto true   # JSONL/dashboard freshness
 ```
 
 ## See also
