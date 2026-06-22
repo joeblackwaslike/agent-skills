@@ -1,8 +1,13 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/app/AGENTS.md"
-fetched_at: "2026-06-15T05:56:15.706Z"
-sha256: "0f30cbdccab8eb9335d59733978b5d328d70e56d7cce095bfc7a3a03534190a4"
+fetched_at: "2026-06-22T05:59:46.710Z"
+sha256: "6ad84d752791908326d30b96703136918b14a1822f1dd4424a2ebc7ebfa6c78b"
 ---
+
+## Priorities
+
+- Prioritise, in this order: stability, simplicity, performance.
+- Before changing session or timeline code, record a production benchmark baseline and compare it after the change.
 
 ## Debugging
 

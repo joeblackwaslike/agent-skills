@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Create React App"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/create-react-app.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "57e8e1f70409e09b3251d7679d8af2b5d0197115775e81c4be6873673d1e6dd0"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "6c868f2b28067baf8b74d3a81983ed601ae7d9a146ab7f18dbd1601fc4a1ecb2"
 ---
 
 # Create React App on Vercel
@@ -113,16 +113,14 @@ On Vercel, you can track your app's Core Web Vitals in your project's dashboard 
 
 Vercel's observability features help you monitor, analyze, and manage your projects. From your project's dashboard on Vercel, you can track website usage and performance, record team members' activities, and visualize real-time data from logs.
 
-[Activity Logs](/docs/observability/activity-log), which you can see in the Activity section in your project dashboard sidebar, are available on all account plans. The following observability products are available for Enterprise teams:
+[Activity Logs](/docs/activity-log), which you can see in the Activity section in your project dashboard sidebar, are available on all account plans. Observability features include:
 
-- **[Monitoring](/docs/observability/monitoring)**: A query editor that allows you to visualize, explore, and monitor your usage and traffic
-- **[Runtime Logs](/docs/runtime-logs)**: An interface that allows you to search and filter logs from static requests and Function invocations
-- **[Audit Logs](/docs/observability/audit-log)**: An interface that enables your team owners to track and analyze their team members' activity
-
-For Pro (and Enterprise) accounts:
-
-- **[Log Drains](/docs/drains)**: Export your log data for better debugging and analyzing, either from the dashboard, or using one of [our integrations](/integrations#logging)
-- **[OpenTelemetry (OTEL) collector](/docs/observability/audit-log)**: Send OTEL traces from your Vercel functions to application performance monitoring (APM) vendors
+- **[Runtime Logs](/docs/logs/runtime)**: Search and filter logs from static requests and Function invocations, with retention based on your plan and Observability Plus status
+- **[Web Analytics](/docs/analytics)**: Track page views, visitor activity, and custom events
+- **[Speed Insights](/docs/speed-insights)**: Track Core Web Vitals and page performance
+- **[Observability Plus](/docs/observability/observability-plus)**: Available on Pro and Enterprise for additional observability features, Query, and longer retention
+- **[Log Drains](/docs/drains)**: Available on Pro and Enterprise to export log data for debugging and analysis
+- **[Audit Logs](/docs/audit-log)**: Available on Enterprise for tracking team member activity
 
 **To summarize, using Vercel's observability features with CRA enable you to:**
 

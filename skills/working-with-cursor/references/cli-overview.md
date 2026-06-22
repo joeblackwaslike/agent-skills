@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/overview.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "65dc2eb141919eed4147665c6efd524a6309aabb0b711c43c81a4489f6ad4293"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "0f5dbcd035c6c0510dff5e9604283f0bb7293053bc89b21881662a5961188a83"
 ---
 
 # Cursor CLI
@@ -51,7 +51,7 @@ Use print mode for non-interactive scenarios like scripts, CI pipelines, or auto
 
 ```bash
 # Run with specific prompt and model
-agent -p "find and fix performance issues" --model "gpt-5.2"
+agent -p "find and fix performance issues" --model "gpt-5"
 
 # Use with git changes included for review
 agent -p "review these changes for security issues" --output-format text
@@ -73,7 +73,7 @@ Pick up your Cloud Agent tasks on web or mobile at [cursor.com/agents](https://c
 Resume previous conversations to maintain context across multiple interactions:
 
 ```bash
-# List all previous chats
+# Open previous chats and resume one
 agent ls
 
 # Resume latest conversation
@@ -92,9 +92,9 @@ Configure command execution settings with `/sandbox` or the `--sandbox <mode>` f
 
 [Media](https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/uploads/sandox.mp4)
 
-## Max Mode
+## Max mode
 
-Toggle [Max Mode](https://cursor.com/help/ai-features/max-mode.md) on models that support it using `/max-mode [on|off]`.
+Toggle [Max Mode](https://cursor.com/help/ai-features/max-mode.md) on models that support it using `/max-mode`.
 
 [Media](https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/uploads/max-mode.mp4)
 

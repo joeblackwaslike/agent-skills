@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/reference/authentication.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "6182415159c85c2d1f6a9feb9689ba4874f14149caa668de04979dc3693cdff3"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "c578539ee1ae3d574a75937230b22cea360f28e17da37529ddfceeedd04d2a1e"
 ---
 
 # Authentication
@@ -23,11 +23,11 @@ agent status
 agent logout
 ```
 
-The login command will open your default browser and prompt you to authenticate with your Cursor account. Once completed, your credentials are securely stored locally.
+The login command opens your default browser and prompts you to authenticate with your Cursor account. Set `NO_OPEN_BROWSER=1` to print the login URL without opening a browser. Once complete, your credentials are securely stored locally.
 
 ## API key authentication
 
-For automation, scripts, or CI/CD environments, use API key authentication:
+For automation, scripts, or CI environments, use API key authentication:
 
 ### Step 1: Generate an API key
 
@@ -67,8 +67,7 @@ This command will display:
 ## Troubleshooting
 
 - **"Not authenticated" errors:** Run `agent login` or ensure your API key is correctly set
-- **SSL certificate errors:** Use the `--insecure` flag for development environments
-- **Endpoint issues:** Use the `--endpoint` flag to specify a custom API endpoint
+- **Browser doesn't open:** Run `NO_OPEN_BROWSER=1 agent login` and open the printed URL manually
 
 
 ---

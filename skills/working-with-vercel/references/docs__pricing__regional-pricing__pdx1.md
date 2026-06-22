@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Portland, USA (pdx1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/pdx1.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7e6026805ae9bc49699565d97238ccfe5c4f195bbd021debb23fab1b0d4b545a"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "811264368be72a08998cf183cbdc2d7c9e8efbb9af6aa01dcb6ae8ead9ec141e"
 ---
 
 # Portland, USA (pdx1) pricing
@@ -44,8 +44,6 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.05 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.40 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.00 per 1M |
-| [Runtime Cache Writes](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $4.00 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $0.40 per 1,000,000 Read Units |
 | [Firewall Rate Limit Requests](/docs/security/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.50 per 1,000,000 Allowed Requests |
 | [Firewall OWASP Requests](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.80 per 1,000,000 Inspected Requests |
 | [Firewall OWASP Excess Bytes](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.20 per 1 GB of inspected request payload |

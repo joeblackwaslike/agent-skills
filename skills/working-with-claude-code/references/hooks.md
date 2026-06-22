@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/hooks.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "bd7d4bae3bd7139d4e5f12980b0c2339a7567094057c41e1d840f0e2d92fe461"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "af8f0c086fa59be60c7c3350bf2e2ef8d189844c20b3d8365e9f35d7a5c4cb88"
 ---
 
 > ## Documentation Index
@@ -1431,7 +1431,7 @@ In `PostToolUse`, `tool_response` for a completed Agent call carries the subagen
 
 For `run_in_background: true` calls, the tool returns immediately after launching the subagent, so `tool_response` carries no usage fields. It has `status: "async_launched"`, `agentId`, `description`, `prompt`, `outputFile`, and `resolvedModel`.
 
-The `resolvedModel` field names the model the subagent actually runs on, which can differ from the `model` value in `tool_input`. It requires Claude Code v2.1.174 or later.
+The `resolvedModel` field names the model the subagent actually runs on, which can differ from the `model` value in `tool_input`, such as when `availableModels` or another override applies. It requires Claude Code v2.1.174 or later.
 
 <a id="askuserquestion" />
 
@@ -1981,17 +1981,17 @@ In addition to the [common input fields](#common-input-fields), TaskCreated hook
   "task_subject": "Implement user authentication",
   "task_description": "Add login and signup endpoints",
   "teammate_name": "implementer",
-  "team_name": "my-project"
+  "team_name": "session-a1b2c3d4"
 }
 ```
 
-| Field              | Description                                           |
-| :----------------- | :---------------------------------------------------- |
-| `task_id`          | Identifier of the task being created                  |
-| `task_subject`     | Title of the task                                     |
-| `task_description` | Detailed description of the task. May be absent       |
-| `teammate_name`    | Name of the teammate creating the task. May be absent |
-| `team_name`        | Name of the team. May be absent                       |
+| Field              | Description                                                                |
+| :----------------- | :------------------------------------------------------------------------- |
+| `task_id`          | Identifier of the task being created                                       |
+| `task_subject`     | Title of the task                                                          |
+| `task_description` | Detailed description of the task. May be absent                            |
+| `teammate_name`    | Name of the teammate creating the task. May be absent                      |
+| `team_name`        | Deprecated. Session-derived team name; will be removed in a future release |
 
 #### TaskCreated decision control
 
@@ -2036,17 +2036,17 @@ In addition to the [common input fields](#common-input-fields), TaskCompleted ho
   "task_subject": "Implement user authentication",
   "task_description": "Add login and signup endpoints",
   "teammate_name": "implementer",
-  "team_name": "my-project"
+  "team_name": "session-a1b2c3d4"
 }
 ```
 
-| Field              | Description                                             |
-| :----------------- | :------------------------------------------------------ |
-| `task_id`          | Identifier of the task being completed                  |
-| `task_subject`     | Title of the task                                       |
-| `task_description` | Detailed description of the task. May be absent         |
-| `teammate_name`    | Name of the teammate completing the task. May be absent |
-| `team_name`        | Name of the team. May be absent                         |
+| Field              | Description                                                                |
+| :----------------- | :------------------------------------------------------------------------- |
+| `task_id`          | Identifier of the task being completed                                     |
+| `task_subject`     | Title of the task                                                          |
+| `task_description` | Detailed description of the task. May be absent                            |
+| `teammate_name`    | Name of the teammate completing the task. May be absent                    |
+| `team_name`        | Deprecated. Session-derived team name; will be removed in a future release |
 
 #### TaskCompleted decision control
 
@@ -2217,14 +2217,14 @@ In addition to the [common input fields](#common-input-fields), TeammateIdle hoo
   "permission_mode": "default",
   "hook_event_name": "TeammateIdle",
   "teammate_name": "researcher",
-  "team_name": "my-project"
+  "team_name": "session-a1b2c3d4"
 }
 ```
 
-| Field           | Description                                   |
-| :-------------- | :-------------------------------------------- |
-| `teammate_name` | Name of the teammate that is about to go idle |
-| `team_name`     | Name of the team                              |
+| Field           | Description                                                                |
+| :-------------- | :------------------------------------------------------------------------- |
+| `teammate_name` | Name of the teammate that is about to go idle                              |
+| `team_name`     | Deprecated. Session-derived team name; will be removed in a future release |
 
 #### TeammateIdle decision control
 

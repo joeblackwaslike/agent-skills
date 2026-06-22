@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/legal-and-compliance.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "ce1c6374458d4cc95cac62f1fc0e0c22806c54108ce387387d0030b425af8272"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "7dbbe118a9a7a46f6295ac93f28608d7c9325e6f54a303650a06546962afb274"
 ---
 
 > ## Documentation Index
@@ -11,10 +11,6 @@ sha256: "ce1c6374458d4cc95cac62f1fc0e0c22806c54108ce387387d0030b425af8272"
 # Legal and compliance
 
 > Legal agreements, compliance certifications, and security information for Claude Code.
-
-<Note>
-  Starting June 15, 2026, Agent SDK and `claude -p` usage on subscription plans will draw from a new monthly Agent SDK credit, separate from your interactive usage limits. See [Use the Claude Agent SDK with your Claude plan](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) for details.
-</Note>
 
 ## Legal agreements
 

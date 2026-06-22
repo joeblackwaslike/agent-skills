@@ -12,12 +12,12 @@ related:
   - /docs/passport
   - /docs/security/deployment-protection/methods-to-protect-deployments/password-protection
   - /docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips
-  - /docs/security/deployment-protection/protected-source-maps
+  - /docs/deployment-protection/methods-to-protect-deployments/trusted-ips
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bcde83786f1268bfe868ce65d459cf97694d43ede11e79b689947c28ff56edd1"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "57d4316861051f9c75bf786597cb338257194378970de1f30d0685b12b522faf"
 ---
 
 # Deployment Protection on Vercel
@@ -49,11 +49,11 @@ The protection scope determines which URLs you protect:
 - [**(Legacy) Standard Protection**](#legacy-standard-protection): Protects all preview URLs and deployment URLs. All up-to-date production URLs remain unprotected.
 - [**(Legacy) Pre-Production Deployments**](#legacy-pre-production-deployments): Protects only preview URLs. Does not protect past production deployments.
 
-To protect [**only production URLs**](#only-production-deployments), use [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips). This option is **only available on the Enterprise plan**.
+To protect [**only production URLs**](#only-production-deployments), use [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips). This option is **only available on the Enterprise plan**.
 
 ## Restrict access to source maps
 
-[Protected Source Maps](/docs/security/deployment-protection/protected-source-maps) gates `.map` file requests behind [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication), so you can ship browser source maps to production without exposing source code.
+[Protected Source Maps](/docs/deployment-protection/protected-source-maps) gates `.map` file requests behind [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), so you can ship browser source maps to production without exposing source code.
 
 ## Where to find Deployment Protection settings
 
@@ -115,7 +115,7 @@ const headers = { cookie: <incoming request header cookies> };
 fetch('<incoming request origin>/some/path', { headers });
 ```
 
-Bypassing protection using [Protection Bypass for Automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) is an option but not required for requests targeting the same domain.
+Bypassing protection using [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) is an option but not required for requests targeting the same domain.
 
 ## All Deployments
 

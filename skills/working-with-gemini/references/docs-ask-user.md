@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/ask-user.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "c28e0e318e1234690540c5a0ef504caa185160c7821f1254c470f0726ba7d2fc"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "0783a882a536c095a0d1600515192b79b89c15a1f5635bfeaaba8cc591fc0084"
 ---
 
 # Ask User Tool
@@ -17,6 +17,7 @@ confirmation.
 - **Display name:** Ask User
 - **File:** `ask-user.ts`
 - **Parameters:**
+
   - `questions` (array of objects, required): A list of 1 to 4 questions to ask.
     Each question object has the following properties:
     - `question` (string, required): The complete question text.
@@ -36,6 +37,7 @@ confirmation.
     - `placeholder` (string, optional): Hint text for input fields.
 
 - **Behavior:**
+
   - Presents an interactive dialog to the user with the specified questions.
   - Pauses execution until the user provides answers or dismisses the dialog.
   - Returns the user's answers to the model.

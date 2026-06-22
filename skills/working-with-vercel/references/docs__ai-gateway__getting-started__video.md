@@ -9,15 +9,15 @@ prerequisites:
   - /docs/ai-gateway/getting-started
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/capabilities/video-generation
-  - /docs/ai-gateway/capabilities/video-generation/image-to-video
-  - /docs/ai-gateway/capabilities/video-generation/motion-control
+  - /docs/ai-gateway/modalities/video-generation
+  - /docs/ai-gateway/modalities/video-generation/image-to-video
+  - /docs/ai-gateway/modalities/video-generation/motion-control
   - /docs/vercel-blob
 summary: Generate videos from text prompts, images, or video input using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c4cab49ed4a3932659af518d42e7fb5cab8f27cd32f9553edb539dd0f3d73cba"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "e7e792c479a6060e7cac79658cea19c00540a148328767e9f46b6d01dea4f831"
 ---
 
 # Video Generation Quickstart
@@ -94,15 +94,15 @@ This quickstart walks you through generating your first video with AI Gateway. S
   pnpm tsx index.ts
   ```
   > **💡 Note:** Video generation can take several minutes.
-  > If you hit timeout issues, see [extending timeouts for Node.js](/docs/ai-gateway/capabilities/video-generation#extending-timeouts-for-node.js).
+  > If you hit timeout issues, see [extending timeouts for Node.js](/docs/ai-gateway/modalities/video-generation#extending-timeouts-for-node.js).
   The generated video will be saved as `output.mp4` in your project directory.
 
 - ### Next steps
   - See [supported video generation models](https://vercel.com/ai-gateway/models?type=video)
-  - Learn about [image-to-video generation](/docs/ai-gateway/capabilities/video-generation/image-to-video) to animate images
-  - Explore [KlingAI motion control](/docs/ai-gateway/capabilities/video-generation/motion-control) for character animation
+  - Learn about [image-to-video generation](/docs/ai-gateway/modalities/video-generation/image-to-video) to animate images
+  - Explore [KlingAI motion control](/docs/ai-gateway/modalities/video-generation/motion-control) for character animation
 
-> **💡 Note:** Video models vary in their input formats and required parameters. Some accept buffers while others require URLs. Always check the [Video Generation docs](/docs/ai-gateway/capabilities/video-generation) for model-specific requirements.
+> **💡 Note:** Video models vary in their input formats and required parameters. Some accept buffers while others require URLs. Always check the [Video Generation docs](/docs/ai-gateway/modalities/video-generation) for model-specific requirements.
 
 ## More ways to generate video
 
@@ -267,7 +267,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 See the [Vercel Blob docs](/docs/vercel-blob) for more details on uploading and managing files.
 
-For more details, see the [Video Generation Capabilities docs](/docs/ai-gateway/capabilities/video-generation).
+For more details, see the [Video Generation Capabilities docs](/docs/ai-gateway/modalities/video-generation).
 
 
 ---

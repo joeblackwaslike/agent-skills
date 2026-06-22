@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/managed-mcp.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "5b64c78cb7bd2f86ec3771964df33f4b112107c899689e7c86e2dc85c8d9d903"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "f1c58e1befce1069343d4ea449ed9923b002d3cd36be0ac59945cc6bedab531a"
 ---
 
 > ## Documentation Index
@@ -151,8 +151,15 @@ Leaving `allowedMcpServers` unset is different from setting it to an empty array
 | `deniedMcpServers`  | No servers blocked  | No servers blocked | Matching servers blocked      |
 
 <Warning>
-  An allowlist that uses only `serverName` entries is not a security control. The name is the label a user assigns when running `claude mcp add` or editing a config file, not the underlying server, so a user can call any server `github`. To enforce which servers actually run, add `serverCommand` or `serverUrl` entries.
+  A `serverName` entry, in either list, is not a security control. The name is the label a user assigns when running `claude mcp add` or editing a config file, not the underlying server, so a user can call any server `github`. For claude.ai connectors the name is the display name returned by claude.ai, which can change. To enforce which servers actually run, add `serverCommand` or `serverUrl` entries.
 </Warning>
+
+The `serverName` validation differs between the two lists:
+
+* {/* min-version: 2.1.182 */}In `deniedMcpServers`, `serverName` accepts any non-empty string, so you can block [claude.ai connectors](/en/mcp#use-mcp-servers-from-claude-ai) by their display name. For example, `{ "serverName": "claude.ai Slack" }` blocks the Slack connector. Prefer a `serverUrl` entry when you need the deny to be robust to renames, or when a connector name collides and gains a ` (N)` suffix.
+* In `allowedMcpServers`, `serverName` is limited to letters, numbers, hyphens, and underscores. Use `serverUrl` to allowlist a claude.ai connector.
+
+To turn off all claude.ai connectors, see [`disableClaudeAiConnectors`](/en/mcp#disable-claude-ai-connectors).
 
 ### How a server is evaluated
 

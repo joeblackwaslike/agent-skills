@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/models/cursor-composer-2-5.md"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "efa057b53fcef70222668ece40600d611e65699a53da0d0ca4259a221bdee1af"
+---
+
 Composer 2.5 is Cursor's own agentic model. It builds on [Composer 2](https://cursor.com/docs/models/cursor-composer-2.md) with stronger intelligence on long agentic tasks, better effort calibration, tool selection, intent understanding, and reliability.
 
 ## Strengths

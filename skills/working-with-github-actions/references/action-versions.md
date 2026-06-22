@@ -2,16 +2,16 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-06-15
+Last updated: 2026-06-22
 
 ## GitHub Official
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `actions/checkout` | `v6.0.3` | `uses: actions/checkout@v6.0.3` |
+| `actions/checkout` | `v7.0.0` | `uses: actions/checkout@v7.0.0` |
 | `actions/setup-node` | `v6.4.0` | `uses: actions/setup-node@v6.4.0` |
 | `actions/setup-python` | `v6.2.0` | `uses: actions/setup-python@v6.2.0` |
-| `actions/setup-java` | `v5.2.0` | `uses: actions/setup-java@v5.2.0` |
+| `actions/setup-java` | `v5.3.0` | `uses: actions/setup-java@v5.3.0` |
 | `actions/setup-go` | `v6.4.0` | `uses: actions/setup-go@v6.4.0` |
 | `actions/cache` | `v5.0.5` | `uses: actions/cache@v5.0.5` |
 | `actions/upload-artifact` | `v7.0.1` | `uses: actions/upload-artifact@v7.0.1` |
@@ -25,7 +25,7 @@ Last updated: 2026-06-15
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `pnpm/action-setup` | `v6.0.8` | `uses: pnpm/action-setup@v6.0.8` |
+| `pnpm/action-setup` | `v6.0.9` | `uses: pnpm/action-setup@v6.0.9` |
 
 ## Docker
 
@@ -52,7 +52,7 @@ Last updated: 2026-06-15
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `googleapis/release-please-action` | `v5.0.0` | `uses: googleapis/release-please-action@v5.0.0` |
-| `softprops/action-gh-release` | `v3.0.0` | `uses: softprops/action-gh-release@v3.0.0` |
+| `softprops/action-gh-release` | `v3.0.1` | `uses: softprops/action-gh-release@v3.0.1` |
 | `peaceiris/actions-gh-pages` | `v4.1.0` | `uses: peaceiris/actions-gh-pages@v4.1.0` |
 
 ## Code Quality

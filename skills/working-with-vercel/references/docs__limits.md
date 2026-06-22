@@ -12,12 +12,12 @@ related:
   - /docs/deployments/concurrent-builds
   - /docs/builds/managing-builds
   - /docs/cron-jobs/usage-and-pricing
-  - /docs/image-optimization/legacy-pricing
-summary: Look up account limits, included usage, rate limits, and resource constraints for every Vercel plan.
+  - /docs/pricing/regional-pricing
+summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-06-15T22:56:22.423Z"
-sha256: "934bc8e4dfdec3bcd73da07d32241eec1a79ae9406f1e89b691507a67e404acc"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "cbd8970b060f68561c7c1aa91f86e84477f8c2a80bbe386f015d49d33f7c93a1"
 ---
 
 # Limits
@@ -40,56 +40,54 @@ To prevent abuse of our platform, we apply the following limits to all accounts.
 | Disk Size (GB)                                                                            | 32                                                                                 | 32 up to [64](/docs/builds/managing-builds#build-machine-types) | 32 up to [64](/docs/builds/managing-builds#build-machine-types) |
 | Cron Jobs (per project)                                                                   | [100\*](/docs/cron-jobs/usage-and-pricing)                                         | 100                                                             | 100                                                             |
 
-## Included usage
+## Usage summary
 
 |                                                                                           | Hobby       | Pro  |
 | ----------------------------------------------------------------------------------------- | ----------- | ---- |
-| Active CPU                                                                                | 4 CPU-hrs   | N/A  |
-| Provisioned Memory                                                                        | 360 GB-hrs  | N/A  |
-| Invocations                                                                               | 1 million   | N/A  |
+| Active CPU                                                                                | 4 CPU-hrs   | Usage-based |
+| Provisioned Memory                                                                        | 360 GB-hrs  | Usage-based |
+| Invocations                                                                               | 1 million   | Usage-based |
 | Fast Data Transfer                                                                        | 100 GB      | 1 TB |
-| Fast Origin Transfer                                                                      | Up to 10 GB | N/A  |
-| Build Execution                                                                           | 6,000 Mins  | N/A  |
-| [Image Optimization Source Images](/docs/image-optimization/legacy-pricing#source-images) | 1000 Images | N/A  |
+| Fast Origin Transfer                                                                      | Up to 10 GB | Usage-based |
 
-For Teams on the Pro plan, you can pay for [usage](/docs/limits#additional-resources) on-demand.
+For Teams on the Pro plan, a monthly usage credit applies to billable resources. After applicable included allowances and credit, Vercel bills usage [on demand](/docs/limits#on-demand-resources-for-pro).
 
 ## On-demand resources for Pro
 
-For members of our Pro plan, we offer an included credit that can be used across all resources and a pay-as-you-go model for additional consumption, giving you greater flexibility and control over your usage. The typical monthly usage guidelines above are still applicable, while extra usage will be automatically charged at the following rates:
+Pro includes a credit that you can use across billable resources and a pay-as-you-go model for additional consumption. Vercel automatically charges extra usage at the following rates:
 
 | Resource | Price | Included (Pro) |
 |----------|-------|----------------|
 | [Fast Data Transfer](/docs/pricing/regional-pricing) | Regional | First 1 TB |
-| [Function Invocations](/docs/functions/usage-and-pricing#managing-function-invocations) | $0.60 per 1,000,000 Invocations | First 1,000,000 |
+| [Function Invocations](/docs/functions/usage-and-pricing#invocations) | $0.60 per 1,000,000 Invocations | N/A |
 | [Fast Origin Transfer](/docs/pricing/regional-pricing) | Regional | N/A |
+| [Active CPU](/docs/functions/usage-and-pricing#active-cpu) | Starting at $0.128 per hour | N/A |
 | [Edge Requests](/docs/pricing/regional-pricing) | Regional | First 10,000,000 |
-| [Image Optimization Source Images (Legacy)](/docs/image-optimization/legacy-pricing#source-images) | $5.00 per 1,000 Images | First 5,000 |
-| [Edge Request Additional CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour |
-| [Edge Config Reads](/docs/edge-config/using-edge-config) | $3.00 | First 1,000,000 |
-| [Edge Config Writes](/docs/edge-config/using-edge-config) | $1.00 | First 1,000 |
-| [Web Analytics Events](/docs/analytics/limits-and-pricing#what-is-an-event-in-vercel-web-analytics) | $3.00 per 100,000 Events | None |
-| [Image Optimization Transformations](/docs/image-optimization) | Regional | 10K/month |
-| [Image Optimization Cache Reads](/docs/image-optimization) | Regional | 600K/month |
-| [Speed Insights Data Points](/docs/speed-insights/metrics#understanding-data-points) | $0.65 | First 10,000 |
-| [Image Optimization Cache Writes](/docs/image-optimization) | Regional | 200K/month |
-| [WAF Rate Limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) | Regional | First 1,000,000 Allowed Requests |
-| [Monitoring Events](/docs/monitoring/limits-and-pricing#how-are-events-counted) | $1.20 per 1,000,000 Events | 250,000 Included |
-| [Observability Plus Events](/docs/observability#tracked-events) | $1.20 | None |
+| [Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | Starting at $0.0106 per GB-hr | N/A |
+| [Edge Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour |
+| [Edge Config Reads](/docs/edge-config/using-edge-config) | $0.003 per 1K reads | N/A |
+| [Edge Config Writes](/docs/edge-config/using-edge-config) | $10 per 1K writes | N/A |
+| [Web Analytics Events](/docs/analytics/limits-and-pricing#what-is-an-event-in-vercel-web-analytics) | $0.03 | N/A |
+| [Image Optimization Transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.05 per 1K transformations | N/A |
+| [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.40 per 1M reads | N/A |
+| [Speed Insights Events](/docs/speed-insights/limits-and-pricing) | $0.65 | N/A |
+| [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.00 per 1M writes | N/A |
+| [WAF Rate Limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) | Regional | N/A |
+| [Observability Plus Events](/docs/observability#tracked-events) | $1.20 | N/A |
 | [OWASP CRS per request number](/docs/vercel-firewall/vercel-waf/managed-rulesets) | Regional | N/A |
 | [OWASP CRS per request size](/docs/vercel-firewall/vercel-waf/managed-rulesets) | Regional | 4KB of each inspected request |
-| [Blob Storage Size](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | 5GB/month |
-| [Blob Simple Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | First 100,000 |
-| [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | First 10,000 |
-| [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | First 100 GB |
+| [Blob Storage Size](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | N/A |
+| [Blob Simple Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | N/A |
+| [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | N/A |
+| [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional | N/A |
 | [Private Data Transfer](/docs/networking/static-ips) | Regional | N/A |
 | [Workflow Events](/docs/workflows/pricing) | $0.02 per 1K events | Based on usage |
 | [Workflow Data Written](/docs/workflows/pricing) | $0.50 per GB | Based on usage |
 | [Workflow Data Retained](/docs/workflows/pricing) | $0.50 per GB-month | Based on usage |
 | [Queue API Operations](/docs/queues/pricing) | Regional | N/A |
 | [Drains](/docs/drains#usage-and-pricing) | $0.50 per 1 GB | N/A |
-| [ISR Reads](/docs/runtime-cache) | Regional | First 10,000,000 |
-| [ISR Writes](/docs/runtime-cache) | Regional | First 2,000,000 |
+| [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing) | $0.0004 per 1K reads | N/A |
+| [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing) | $0.004 per 1K writes | N/A |
 
 
 ## Pro trial limits
@@ -134,7 +132,7 @@ There are two types of logs: **build logs** and **runtime logs**. Both have diff
 
 [Build logs](/docs/deployments/logs) are stored indefinitely for each deployment.
 
-[Runtime logs](/docs/runtime-logs) are stored for **1 hour** on Hobby, **1 day** on Pro, and for **3 days** on Enterprise accounts. To learn more about these log limits, [read here](/docs/runtime-logs#limits).
+[Runtime logs](/docs/logs/runtime) are stored for **1 hour** on Hobby, **1 day** on Pro, and for **3 days** on Enterprise accounts. To learn more about these log limits, [read here](/docs/logs/runtime#limits).
 
 ## Environment variables
 
@@ -327,6 +325,9 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Domain ownership claim attempts per minute. | 10 | 60 | `owner` |
 | Domain save attempts per minute. | 20 | 60 | `user` |
 | Domain unsave attempts per minute. | 20 | 60 | `user` |
+| Domain DNSSEC DS record listing per minute. | 50 | 60 | `user` |
+| Domain DNSSEC DS record creation per minute. | 30 | 60 | `owner` |
+| Domain DNSSEC DS record deletion per minute. | 30 | 60 | `owner` |
 | Events retrieval per minute. | 60 | 60 | `user` |
 | Event types listing per minute. | 60 | 60 | `user` |
 | Events retrieval per minute. | 10 | 60 | `user` |
@@ -606,6 +607,9 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Vade automations deletion requests per minute. | 30 | 60 | `owner` |
 | Vade automation manual trigger requests per minute. | 30 | 60 | `owner` |
 | Vade automation runs retrieval requests per minute. | 250 | 60 | `owner` |
+| Sandbox vCPUs created per 10 minutes for Hobby plan. | 40 | 600 | `owner` |
+| Sandbox vCPUs created per minute for Pro plan. | 200 | 60 | `owner` |
+| Sandbox vCPUs created per minute for Enterprise plan. | 400 | 60 | `owner` |
 | Sandbox control plane requests per minute for Hobby plan. | 1000 | 60 | `owner` |
 | Sandbox control plane requests per minute for Pro plan. | 10000 | 60 | `owner` |
 | Sandbox control plane requests per minute for Enterprise plan. | 100000 | 60 | `owner` |

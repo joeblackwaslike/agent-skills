@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/system-prompt.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "78dc737c79e0e30048ac5e9db6ead0c286c7e80d1e4d53c0d34e6dbcd721e755"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "46d42b94733e625d548b3022d99a3a01211ae6f73e7554413e9da45444528241"
 ---
 
 # System Prompt Override (GEMINI_SYSTEM_MD)
@@ -33,11 +33,13 @@ via a `.gemini/.env` file. See
 [Persisting Environment Variables](../get-started/authentication.mdx#persisting-environment-variables).
 
 - Use the project default path (`.gemini/system.md`):
+
   - `GEMINI_SYSTEM_MD=true` or `GEMINI_SYSTEM_MD=1`
   - The CLI reads `./.gemini/system.md` (relative to your current project
     directory).
 
 - Use a custom file path:
+
   - `GEMINI_SYSTEM_MD=/absolute/path/to/my-system.md`
   - Relative paths are supported and resolved from the current working
     directory.

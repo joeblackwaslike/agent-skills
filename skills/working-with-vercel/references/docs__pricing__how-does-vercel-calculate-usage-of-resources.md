@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a047a85298a735de60ccfd5d0087c14cd7368fba0dae293160bbc9252490679a"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "15052696194b99078d58c35373b14ed1a17bd4fb70ce17b2e4bc88c5b3cd7361"
 ---
 
 # Calculating usage of resources
@@ -90,7 +90,7 @@ Upon viewing a product, if the discount data is already in the Data Cache and st
 - :
   Charges for activating a function to update content
 - :
-  CPU runtime charges for the function processing the update
+  CPU time charges for the function processing the update
 
 ### 4. Dynamic interactions (Cart)
 
@@ -105,7 +105,7 @@ The user decides to add a product to their cart. The cart is a dynamic feature t
 - :
   Function activation charges for managing cart logic
 - :
-  CPU runtime charges for the function processing the cart logic
+  CPU time charges for the function processing the cart logic
 - :
   Data movement charges for fetching cart state from the cache
 - Redis Requests: Charges for reading and writing cart state to the Redis store

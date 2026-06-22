@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/mcp.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "7162582bb201c3701ea7f2fd4e8d3cc969a8eb46ee208a07af252b1dedea6a18"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "9408e4baa63f9a2f6f37a1896bfe61e43a623f14ce6a89ad6fdb7e11ce9658c3"
 ---
 
 # Model Context Protocol (MCP)
@@ -137,7 +137,7 @@ Add an `auth` object to remote server entries that use `url`:
 Cursor uses a **fixed OAuth redirect URL** for all MCP servers:
 
 ```text
-cursor://anysphere.cursor-mcp/oauth/callback
+https://www.cursor.com/agents/mcp/oauth/callback
 ```
 
 When configuring the MCP provider's OAuth app, register this URL as an allowed redirect URI. The server is identified via the OAuth `state` parameter, so one redirect URL works for all MCP servers.

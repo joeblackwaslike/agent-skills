@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/reference/configuration.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "87a1cccbf673c3a63ec3beb24bb481a33701dc98b52b3126a0c2f95622082792"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "1f9964df7fe389666e986d556770aa3fe4d5d0aa3c1594d9e26ad304ec4841cc"
 ---
 
 # Configuration
@@ -39,8 +39,21 @@ Override with environment variables:
 
 | Field                                 | Type    | Description                                                             |
 | :------------------------------------ | :------ | :---------------------------------------------------------------------- |
+| `channel`                             | string  | Release channel used for CLI updates                                    |
 | `model`                               | object  | Selected model configuration                                            |
+| `maxMode`                             | boolean | Persisted preference for max mode in the model picker                   |
 | `hasChangedDefaultModel`              | boolean | CLI-managed model override flag                                         |
+| `notifications`                       | boolean | Send a terminal notification when the agent finishes or needs input     |
+| `hints`                               | boolean | Show CLI hints while the agent is working                               |
+| `rewind`                              | boolean | Enable `/rewind` to restore an earlier message in the session           |
+| `suggestNextPrompt`                   | boolean | Suggest a follow-up prompt at the end of each turn                      |
+| `display.showLineNumbers`             | boolean | Show line numbers in rendered code blocks                               |
+| `display.showThinkingBlocks`          | boolean | Render model thinking blocks when available                             |
+| `display.showStatusIndicators`        | boolean | Enable terminal title status indicators                                 |
+| `display.showStatusLineRunningTime`   | boolean | Show elapsed running time in the status line                            |
+| `approvalMode`                        | string  | Approval mode: `allowlist` or `unrestricted`                            |
+| `sandbox.mode`                        | string  | Sandbox mode override                                                   |
+| `sandbox.networkAccess`               | string  | Network access setting for sandbox mode                                 |
 | `network.useHttp1ForAgent`            | boolean | Use HTTP/1.1 instead of HTTP/2 for agent connections (default: `false`) |
 | `attribution.attributeCommitsToAgent` | boolean | Add "Made with Cursor" trailer to Agent commits (default: `true`)       |
 | `attribution.attributePRsToAgent`     | boolean | Add "Made with Cursor" footer to Agent PRs (default: `true`)            |
@@ -105,8 +118,8 @@ You can select a model for the CLI using the `/model` slash command.
 
 ```bash
 /model auto
-/model gpt-5.2
-/model sonnet-4.5-thinking
+/model gpt-5
+/model sonnet-4-thinking
 ```
 
 See the [Slash commands](https://cursor.com/docs/cli/reference/slash-commands.md) docs for other commands.

@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/hooks.md"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "1f95ff77e1b2c91c64aa77ff5dae366aebeb0efe0761fdc128ec5321e4ef5e58"
+---
+
 # Hooks
 
 Hooks let you observe, control, and extend the agent loop using custom scripts. Hooks are spawned processes that communicate over stdio using JSON in both directions. They run before or after defined stages of the agent loop and can observe, block, or modify behavior.
@@ -388,6 +394,8 @@ type StopHookInput = {
   conversation_id: string;
   generation_id: string;
   model: string;
+  model_id?: string;
+  model_params?: Array<{ id: string; value: string }>;
   status: 'completed' | 'aborted' | 'error';
   loop_count: number;
 };
@@ -435,6 +443,8 @@ async function sendTelemetry(payload: StopHookInput, entry: MetricsEntry) {
       conversationId: payload.conversation_id,
       generationId: payload.generation_id,
       model: payload.model,
+      modelId: payload.model_id,
+      modelParams: payload.model_params,
       status: payload.status,
       errorCount: entry.errorCount,
       loopCount: payload.loop_count,
@@ -801,6 +811,8 @@ All hooks receive a base set of fields in addition to their hook-specific fields
   "conversation_id": "string",
   "generation_id": "string",
   "model": "string",
+  "model_id": "string",
+  "model_params": [{ "id": "string", "value": "string" }],
   "hook_event_name": "string",
   "cursor_version": "string",
   "workspace_roots": ["<path>"],
@@ -809,16 +821,18 @@ All hooks receive a base set of fields in addition to their hook-specific fields
 }
 ```
 
-| Field             | Type           | Description                                                                                               |
-| ----------------- | -------------- | --------------------------------------------------------------------------------------------------------- |
-| `conversation_id` | string         | Stable ID of the conversation across many turns                                                           |
-| `generation_id`   | string         | The current generation that changes with every user message                                               |
-| `model`           | string         | The model configured for the composer that triggered the hook                                             |
-| `hook_event_name` | string         | Which hook is being run                                                                                   |
-| `cursor_version`  | string         | Cursor application version (e.g. "1.7.2")                                                                 |
-| `workspace_roots` | string\[]      | The list of root folders in the workspace (normally just one, but multiroot workspaces can have multiple) |
-| `user_email`      | string \| null | Email address of the authenticated user, if available                                                     |
-| `transcript_path` | string \| null | Path to the main conversation transcript file (null if transcripts disabled)                              |
+| Field             | Type              | Description                                                                                               |
+| ----------------- | ----------------- | --------------------------------------------------------------------------------------------------------- |
+| `conversation_id` | string            | Stable ID of the conversation across many turns                                                           |
+| `generation_id`   | string            | The current generation that changes with every user message                                               |
+| `model`           | string            | Legacy model slug configured for the composer that triggered the hook                                     |
+| `model_id`        | string (optional) | Structured ID for the selected model, when available                                                      |
+| `model_params`    | array (optional)  | Selected model parameters, such as thinking, context, or effort. Each item has an `id` and `value`.       |
+| `hook_event_name` | string            | Which hook is being run                                                                                   |
+| `cursor_version`  | string            | Cursor application version (e.g. "1.7.2")                                                                 |
+| `workspace_roots` | string\[]         | The list of root folders in the workspace (normally just one, but multiroot workspaces can have multiple) |
+| `user_email`      | string \| null    | Email address of the authenticated user, if available                                                     |
+| `transcript_path` | string \| null    | Path to the main conversation transcript file (null if transcripts disabled)                              |
 
 App lifecycle hooks (`workspaceOpen`) fire outside any agent session, so the request omits `conversation_id`, `generation_id`, `model`, `session_id`, and `transcript_path`. They still receive `hook_event_name`, `cursor_version`, `workspace_roots`, and `user_email`.
 
@@ -835,7 +849,13 @@ Called before any tool execution. This is a generic hook that fires for all tool
   "tool_input": { "command": "npm install", "working_directory": "/project" },
   "tool_use_id": "abc123",
   "cwd": "/project",
-  "model": "claude-sonnet-4-20250514",
+  "model": "claude-opus-4-7-thinking-max",
+  "model_id": "claude-opus-4-7",
+  "model_params": [
+    { "id": "thinking", "value": "true" },
+    { "id": "context", "value": "1m" },
+    { "id": "effort", "value": "max" }
+  ],
   "agent_message": "Installing dependencies..."
 }
 
@@ -868,7 +888,13 @@ Called after successful tool execution. Useful for auditing, analytics, and inje
   "tool_use_id": "abc123",
   "cwd": "/project",
   "duration": 5432,
-  "model": "claude-sonnet-4-20250514"
+  "model": "claude-opus-4-7-thinking-max",
+  "model_id": "claude-opus-4-7",
+  "model_params": [
+    { "id": "thinking", "value": "true" },
+    { "id": "context", "value": "1m" },
+    { "id": "effort", "value": "max" }
+  ]
 }
 
 // Output

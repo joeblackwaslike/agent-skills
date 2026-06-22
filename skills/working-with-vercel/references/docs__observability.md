@@ -12,11 +12,12 @@ related:
   - /docs/observability/observability-plus
   - /docs/observability/insights
   - /docs/observability/debug-production-errors
+  - /docs/observability/monitoring
 summary: Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d168f2fa77d39d4beb08fea96c7f1926cd9ab7b7b2faa8744ca202bbd442429c"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "f0ea17c485cd4fc40a989869e6808da82a9881b6655b250e0201450b696ec85c"
 ---
 
 # Observability
@@ -100,6 +101,20 @@ For more information on pricing, see [Pricing](/docs/observability/observability
 ## CLI workflows
 
 For step-by-step debugging workflows using the Vercel CLI with Observability data, see [Debugging production 500 errors](/docs/observability/debug-production-errors).
+
+## Explore Observability
+
+**Insights**: Inspect requests, functions, middleware, and more. [Learn more →](/docs/observability/insights)
+
+**Observability Plus**: Higher limits, additional metrics, and longer retention. [Learn more →](/docs/observability/observability-plus)
+
+**Notebooks**: Save and organize Observability queries. [Learn more →](/docs/notebooks)
+
+**Monitoring**: Build dashboards and alerts on top of metrics. [Learn more →](/docs/observability/monitoring)
+
+**Debug production errors**: Step-by-step CLI workflow for debugging 500 errors. [Learn more →](/docs/observability/debug-production-errors)
+
+**Managing projects**: Control which projects are included in Observability Plus. [Learn more →](/docs/observability/observability-plus#managing-projects)
 
 
 ---

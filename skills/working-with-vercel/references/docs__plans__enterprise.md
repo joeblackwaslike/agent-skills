@@ -16,8 +16,8 @@ related:
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6d3c7e75bf7152b6225793b0ebc5fa08e4b298ef0f14b243579091886640f377"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "2fb56c973b8f762befb401c35da958baac728e8060e21143fc689725ded169ba"
 ---
 
 # Vercel Enterprise Plan
@@ -47,9 +47,9 @@ Data and infrastructure security is paramount in the Enterprise plan with advanc
 
 - [SSO/SAML Login](/docs/saml)
 - [Compliance measures](/docs/security)
-- Access management for your deployments such as [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection),
-  [Private Production Deployments](/docs/security/deployment-protection#configuring-deployment-protection),
-  and [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips)
+- Access management for your deployments such as [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection),
+  [Private Production Deployments](/docs/deployment-protection#only-production-deployments),
+  and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)
 - [Secure Compute](/docs/networking/secure-compute) (Paid add-on for Enterprise)
 - [Directory Sync](/docs/security/directory-sync)
 - [SIEM Integration](/docs/observability/audit-log#custom-siem-log-streaming) (Paid add-on for Enterprise)
@@ -72,7 +72,7 @@ Gain actionable insights with enhanced observability & logging.
 - [Audit Logs](/docs/observability/audit-log)
 - Increased retention with [Speed Insights](/docs/speed-insights/limits-and-pricing)
 - [Custom Events](/docs/analytics/custom-events) tracking and more filters, such as UTM Parameters
-- 3 days of [Runtime Logs](/docs/runtime-logs) and increased row data
+- 3 days of [Runtime Logs](/docs/logs/runtime)
 - Increased retention with [Vercel Monitoring](/docs/observability/monitoring)
 - [Tracing](/docs/tracing) support
 - Configurable [drains](/docs/drains/using-drains)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/communications-kit.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "662827e43c14c6068d878d495f0113695e4b87ce9332ff26078d2e6899d1edd4"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "3177bf94cdb93079039d674ac7047949290546d5bee20a566816911b43bcb5ab"
 ---
 
 > ## Documentation Index
@@ -255,7 +255,7 @@ None of these need setup. Just `cd` into your repo and run `claude`.
 *Try it now:* pick the bug you have been avoiding and paste the error
 message in.
 
-📖 Quickstart → https://code.claude.com/docs/en/quickstart
+📖 Quickstart ��� https://code.claude.com/docs/en/quickstart
 ```
 
 ### Project memory

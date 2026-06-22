@@ -9,52 +9,52 @@ prerequisites:
   - /docs/analytics
 related:
   - /docs/plans/pro-plan
-  - /docs/pricing/observability
+  - /docs/manage-and-optimize-observability
   - /docs/speed-insights/metrics
   - /docs/manage-cdn-usage
   - /docs/notifications
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a3d6e727f0d37de1cd0fd692ad918ce8dc796a25800cc212d8e71add8d739427"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "17b5f0060f74e59b84377f4a2f15a60b09c3afbc74d2abe5b1a3b51aa302f5e1"
 ---
 
 # Pricing for Web Analytics
 
 ## Pricing
 
-The Web Analytics pricing model is based on the number of [collected events](#what-is-an-event-in-vercel-web-analytics) across all projects of your team.
-Once you've enabled Vercel Web Analytics, you will have access to various features depending on your plan.
+Vercel prices Web Analytics by the number of [collected events](#what-is-an-event-in-vercel-web-analytics) across all projects in your team.
+After you enable Vercel Web Analytics, your plan determines which features you can use.
 
 |  | Hobby | Pro | Pro with Web Analytics Plus | Enterprise |
 | --- | --- | --- | --- | --- |
-| Included Events | 50,000 Events | N/A | N/A | None |
-| Additional Events | - | $3 / 100,000 Events (prorated) | $3 / 100,000 Events (prorated) | Custom |
+| Included Events | 50,000 events / month included | None | N/A | None |
+| Additional Events | N/A | $0.03 per 1K events | $0.03 per 1K events | Custom |
 | Included Projects | Unlimited | Unlimited | Unlimited | Unlimited |
 | Reporting Window | 1 Month | 12 Months | 24 Months | 24 Months |
 | Custom Events | - | Included | Included | Included |
 | Properties on Custom Events | - | 2 | 8 | 8 |
-| UTM Parameters | - | - | Included | Included |
+| UTM Parameters | - | N/A | Included | Included |
 
 
 Hobby teams can't purchase additional events. Once you reach the monthly limit, collection pauses until the next billing cycle or until you [upgrade to Pro](/docs/plans/pro-plan).
 
-On every billing cycle (every month for Hobby teams), you will be granted a certain number of events based on your plan.
+On every billing cycle, Hobby teams receive the included event allowance listed above.
 
-Once you exceed your included limit, you will be charged for additional events.
+Vercel charges Pro teams for collected events based on usage, subject to the Pro monthly usage credit.
 If your team is on the Hobby plan, we will [pause](#hobby) the collection, as you cannot be charged for extra events.
 
 Pro teams can also purchase the [Web Analytics Plus add-on](#pro-with-web-analytics-plus) for an additional $10.00/month per team, which grants access to more features and an extended reporting window.
 
 ## Usage
 
-The table below shows the metrics for the [**Observability**](/docs/pricing/observability) section of the **Usage** dashboard where you can view your Web Analytics usage.
+The table below shows the metrics for the [**Observability**](/docs/manage-and-optimize-observability) section of the **Usage** dashboard where you can view your Web Analytics usage.
 
 To view information on managing each resource, select the resource link in the **Metric** column.
 To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
-See the [manage and optimize Observability usage](/docs/pricing/observability) section for more information on how to optimize your usage.
+See the [manage and optimize Observability usage](/docs/manage-and-optimize-observability) section for more information on how to optimize your usage.
 
 > **💡 Note:** Speed Insights and Web Analytics require scripts to do collection of [data
 > points](/docs/speed-insights/metrics#understanding-data-points). These scripts

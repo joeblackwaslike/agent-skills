@@ -9,14 +9,14 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/authentication-and-byok/byok
-  - /docs/ai-gateway/capabilities/custom-reporting
-  - /docs/ai-gateway/capabilities/provider-allowlist
-  - /docs/ai-gateway/capabilities/zdr
+  - /docs/ai-gateway/observability-and-spend/custom-reporting
+  - /docs/ai-gateway/security-and-compliance/provider-allowlist
+  - /docs/ai-gateway/security-and-compliance/zdr
 summary: Learn about pricing for AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4637dad9f36e029adf4809ef3b1fb3b659964eea77f7fbe1e8c1ca3566367c52"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "4dde30894198b5fb12375a7820eb66b89a93898183e4d0a85f51e7cffc6b535e"
 ---
 
 # Pricing
@@ -26,13 +26,6 @@ AI Gateway uses a pay-as-you-go model with no markups. Purchase [AI Gateway Cred
 ## Free and paid tiers
 
 Every Vercel team account gets access to both a free tier and a paid tier for AI Gateway Credits. **For the paid tier, AI Gateway provides tokens with zero markup, including when you bring your own key.**
-
-|  | Free tier | Paid tier |
-| --- | --- | --- |
-| **Monthly credit** | $5/month included | None — pay as you go |
-| **Model access** | All available models | All available models |
-| **Commitment** | None | No lock-in |
-
 
 The free tier includes a subset of models, not the full catalog. To see which models you can use with free credits, [browse the Free Tier models](/ai-gateway/models?freeTier=true). To use any other model, purchase AI Gateway Credits.
 
@@ -67,7 +60,7 @@ Some AI Gateway capabilities are off by default. When you enable one, it incurs 
 
 ### Custom Reporting
 
-[Custom Reporting](/docs/ai-gateway/capabilities/custom-reporting) lets you attach tags, user IDs, and quota entity IDs to requests, then query that data through the reporting endpoint.
+[Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting) lets you attach tags, user IDs, and quota entity IDs to requests, then query that data through the reporting endpoint.
 
 | Charge type | Cost                                                  |
 | ----------- | ----------------------------------------------------- |
@@ -79,7 +72,7 @@ Some AI Gateway capabilities are off by default. When you enable one, it incurs 
 
 ### Provider Allowlist
 
-The [provider allowlist](/docs/ai-gateway/capabilities/provider-allowlist) is a team-wide setting that applies to every request. If you only need to restrict providers on individual requests, use the `only` parameter in `providerOptions` instead at no additional cost.
+The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) is a team-wide setting that applies to every request. If you only need to restrict providers on individual requests, use the `only` parameter in `providerOptions` instead at no additional cost.
 
 | Option                       | Cost                                | Availability       |
 | ---------------------------- | ----------------------------------- | ------------------ |
@@ -88,7 +81,7 @@ The [provider allowlist](/docs/ai-gateway/capabilities/provider-allowlist) is a 
 
 ### Zero Data Retention (ZDR)
 
-[Zero Data Retention (ZDR)](/docs/ai-gateway/capabilities/zdr) routes requests to providers that have agreed not to retain or train on prompt data.
+[Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr) routes requests to providers that have agreed not to retain or train on prompt data.
 
 | Option                          | Cost                     | Availability       |
 | ------------------------------- | ------------------------ | ------------------ |

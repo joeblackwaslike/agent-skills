@@ -16,16 +16,13 @@ related:
 summary: AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with built-in budgets, usage monitoring, and fallbacks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "234d9d5e12a3494139ec2046c1f380af797014b63253250aa53174646e0a6ad3"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "0ac4f686ca6d88781425adee928100a2a96f911694339789085012aa1912b79b"
 ---
 
 # AI Gateway
 
 > **🔒 Permissions Required**: AI Gateway
-
-The [AI Gateway](https://vercel.com/ai-gateway) provides a unified API to access [hundreds of models](https://vercel.com/ai-gateway/models) through a single endpoint.
-It gives you the ability to set budgets, monitor usage, load-balance requests, and manage fallbacks.
 
 AI Gateway works with [AI SDK v5 and v6](/docs/ai-gateway/getting-started), [OpenAI Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), [OpenAI Responses](/docs/ai-gateway/sdks-and-apis/responses), [Anthropic Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api), or your [preferred framework](/docs/ai-gateway/ecosystem/framework-integrations).
 
@@ -38,74 +35,35 @@ AI Gateway works with [AI SDK v5 and v6](/docs/ai-gateway/getting-started), [Ope
 - **Spend monitoring.** Monitor your spending across different providers
 - **No markup on tokens.** Tokens cost the same as they would from the provider directly, with zero markup, including with [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok)
 
-#### TypeScript
-
-```typescript filename="index.ts" {4}
-import { generateText } from 'ai';
-
-const { text } = await generateText({
-  model: 'anthropic/claude-opus-4.7',
-  prompt: 'What is the capital of France?',
-});
-
-```
-
-#### Python
-
-```python filename="index.py" {10}
-import os
-from openai import OpenAI
-
-client = OpenAI(
-  api_key=os.getenv('AI_GATEWAY_API_KEY'),
-  base_url='https://ai-gateway.vercel.sh/v1'
-)
-
-response = client.chat.completions.create(
-  model='xai/grok-4.3',
-  messages=[
-    {
-      'role': 'user',
-      'content': 'Why is the sky blue?'
-    }
-  ]
-)
-```
-
-#### cURL
-
-```bash filename="index.sh" {5}
-curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
--H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
--H "Content-Type: application/json" \
--d '{
-  "model": "openai/gpt-5.5",
-  "messages": [
-    {
-      "role": "user",
-      "content": "Why is the sky blue?"
-    }
-  ],
-  "stream": false
-}'
-```
-
 ## Get started and learn more
 
-- [Getting started with AI Gateway](/docs/ai-gateway/getting-started)
-- [Models and providers](/docs/ai-gateway/models-and-providers)
-- [Provider options (routing & fallbacks)](/docs/ai-gateway/models-and-providers/provider-options)
-- [Web search](/docs/ai-gateway/capabilities/web-search)
-- [Observability](/docs/ai-gateway/capabilities/observability)
-- [Coding Agents](/docs/ai-gateway/coding-agents)
-- [Anthropic compatibility](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api)
-- [OpenAI compatibility](/docs/ai-gateway/sdks-and-apis/openai-chat-completions)
-- [Disallow prompt training](/docs/ai-gateway/capabilities/disallow-prompt-training)
-- [Usage and billing](/docs/ai-gateway/capabilities/usage)
-- [Authentication](/docs/ai-gateway/authentication-and-byok)
-- [Bring your own key](/docs/ai-gateway/authentication-and-byok/byok)
-- [Framework integrations](/docs/ai-gateway/ecosystem/framework-integrations)
-- [App attribution](/docs/ai-gateway/ecosystem/app-attribution)
+**Getting started**: Make your first request to AI Gateway with the AI SDK. [Learn more →](/docs/ai-gateway/getting-started)
+
+**Models and providers**: Browse hundreds of models from leading providers. [Learn more →](/docs/ai-gateway/models-and-providers)
+
+**Provider options**: Configure routing, fallbacks, and provider preferences. [Learn more →](/docs/ai-gateway/models-and-providers/provider-options)
+
+**Web search**: Augment model responses with real-time web search. [Learn more →](/docs/ai-gateway/models-and-providers/web-search)
+
+**Observability**: Monitor usage, latency, and spend across providers. [Learn more →](/docs/ai-gateway/observability-and-spend/observability)
+
+**Coding Agents**: Build coding agents on top of AI Gateway. [Learn more →](/docs/ai-gateway/coding-agents)
+
+**Anthropic compatibility**: Use the Anthropic Messages API through AI Gateway. [Learn more →](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api)
+
+**OpenAI compatibility**: Use the OpenAI Chat Completions API through AI Gateway. [Learn more →](/docs/ai-gateway/sdks-and-apis/openai-chat-completions)
+
+**Disallow prompt training**: Control whether your prompts can be used for training. [Learn more →](/docs/ai-gateway/security-and-compliance/disallow-prompt-training)
+
+**Usage and billing**: Understand pricing, usage metrics, and billing. [Learn more →](/docs/ai-gateway/observability-and-spend/usage)
+
+**Authentication**: Authenticate requests with API keys or OIDC tokens. [Learn more →](/docs/ai-gateway/authentication-and-byok/authentication)
+
+**Bring your own key**: Use your own provider keys with AI Gateway. [Learn more →](/docs/ai-gateway/authentication-and-byok/byok)
+
+**Framework integrations**: Use AI Gateway with your preferred framework. [Learn more →](/docs/ai-gateway/ecosystem/framework-integrations)
+
+**App attribution**: Track which apps are making requests through AI Gateway. [Learn more →](/docs/ai-gateway/ecosystem/app-attribution)
 
 
 ---

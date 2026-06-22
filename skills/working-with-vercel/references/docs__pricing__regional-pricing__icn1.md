@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Seoul, South Korea (icn1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/icn1.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c879a61ff3ea084883965178c3e3f9dec88b62fc7df4ce8a74537c8b5c995a78"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "5a466da37b1678ef0c3d632d18a2a4da2ab5c2c506a3c6299b99578facc42a4e"
 ---
 
 # Seoul, South Korea (icn1) pricing
@@ -44,8 +44,6 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0595 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.52 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $5.20 per 1M |
-| [Runtime Cache Writes](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $5.20 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $0.52 per 1,000,000 Read Units |
 | [Firewall Rate Limit Requests](/docs/security/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.65 per 1,000,000 Allowed Requests |
 | [Firewall OWASP Requests](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $1.04 per 1,000,000 Inspected Requests |
 | [Firewall OWASP Excess Bytes](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.26 per 1 GB of inspected request payload |

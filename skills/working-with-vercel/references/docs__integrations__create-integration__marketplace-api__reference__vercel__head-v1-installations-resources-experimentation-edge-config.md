@@ -3,7 +3,7 @@ title: head-v1-installations-resources-experimentation-edge-config
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-edge-config
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-edge-config"
-last_updated: 2026-06-15
+last_updated: 2026-06-22
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about head-v1-installations-resources-experimentation-edge-config on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-edge-config.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d72f8d2b6a8e31dce69e2b7a59e4ab5c831914bcf417eed986f6e32ce3de94cf"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "64577ce1fd9ca73b29ec1557c9e0a5b4996774b88638c8ac427f02fa4db97ab6"
 ---
 
 # Get the data of a user-provided Edge Config

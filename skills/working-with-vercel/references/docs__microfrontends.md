@@ -16,8 +16,8 @@ related:
 summary: Learn about microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f924e28c9b2ed5276de414d3ea90f1709c60153554838ead11cb239f890c1008"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "42645050b16b99d0214868c6bd323e4c00e3a85a88c0b3b843308eea88d2d261"
 ---
 
 # Microfrontends
@@ -73,14 +73,14 @@ Once you have configured the basic structure of your microfrontends,
 
 ## Limits and pricing
 
-Users on all plans can use microfrontends support with some limits, while [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) users can use unlimited microfrontends projects and requests with the following pricing:
+Teams on all plans can use microfrontends support with plan-specific limits. Hobby and Pro include two microfrontend projects. Pro teams can add more projects, and Vercel bills Pro teams for routed requests as shown below. Enterprise pricing is custom.
 
-|  | Hobby | Pro / Enterprise |
-| --- | --- | --- |
-| Included Microfrontends Routing | 50K requests / month | N/A |
-| Additional Microfrontends Routing | - | $2 per 1M requests |
-| Included Microfrontends Projects | 2 projects | 2 projects |
-| Additional Microfrontends Projects | - | $250/project/month |
+|  | Hobby | Pro | Enterprise |
+| --- | --- | --- | --- |
+| Included Microfrontends Routing | 50K requests / month | N/A | Custom |
+| Additional Microfrontends Routing | - | $2 per 1M requests | Custom |
+| Included Microfrontends Projects | 2 projects | 2 projects | Custom |
+| Additional Microfrontends Projects | - | $250/project/month | Custom |
 
 
 Microfrontends usage can be viewed in the **Vercel Delivery Network** section of **Usage** section in the sidebar in the Vercel dashboard.

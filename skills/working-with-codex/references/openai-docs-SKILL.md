@@ -2,8 +2,8 @@
 name: "openai-docs"
 description: "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains."
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/SKILL.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "5cae604fb26d9ca3db47af72e16e9c1bffa47f9e6508b77566d2374dac75e610"
+fetched_at: "2026-06-22T05:56:37.291Z"
+sha256: "669a42ccf3323fe0ceda6e466730bcb05dddf1e0c220d6523ea504909fc49165"
 ---
 
 
@@ -138,7 +138,7 @@ If MCP tools fail or no OpenAI docs resources are available:
 5. Leave historical docs, examples, eval baselines, fixtures, provider comparisons, provider registries, pricing tables, alias defaults, low-cost fallback paths, and ambiguous older model usage unchanged unless the user explicitly asks to upgrade them.
 6. Keep SDK, tooling, IDE, plugin, shell, auth, and provider-environment migrations out of a model-and-prompt upgrade unless the user explicitly asks for them.
 7. If an upgrade needs API-surface changes, schema rewiring, tool-handler changes, or implementation work beyond a literal model-string replacement and prompt edits, report it as blocked or confirmation-needed.
-8. For general docs lookup, search docs with a precise query, fetch the best page and exact section needed, and answer with concise citations.
+8. For general docs lookup, start with a compact, title-like search query of 2-6 essential terms. Do not turn the full user question into a keyword list. Fetch the best page and exact section needed, and answer with concise citations.
 
 ## Reference map
 

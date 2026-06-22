@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/local-development.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "c8fbe6d7e915aa50ceb337977d83bfa4221d6e02f43cf27b716b01f8aecd7a16"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "80cf294a2a9d4e33ae6178c80b8d667134050ab81c9744f5097c3433db672b0b"
 ---
 
 # Local development guide
@@ -65,6 +65,7 @@ You can view traces in the Jaeger UI for local development.
 
     This command configures your workspace for local telemetry and provides a
     link to the Jaeger UI (usually `http://localhost:16686`).
+
     - **Collector logs:** `~/.gemini/tmp/<projectHash>/otel/collector.log`
 
 2.  **Run Gemini CLI:**
@@ -114,6 +115,7 @@ Trace for custom processing or routing.
 
     The script outputs links to view traces, metrics, and logs in the Google
     Cloud Console.
+
     - **Collector logs:** `~/.gemini/tmp/<projectHash>/otel/collector-gcp.log`
 
 3.  **Run Gemini CLI:**

@@ -11,13 +11,13 @@ related:
   - /docs/spend-management
   - /docs/speed-insights/package
   - /docs/speed-insights/managing-usage
-  - /docs/pricing/observability
+  - /docs/manage-and-optimize-observability
   - /docs/speed-insights/metrics
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4e9e106d9cfd703d7a40107c87e2ba07a0e918cedb8962ea488e8e8cd05c6d41"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "321c770431c0bb36006ad4448a49df1cd24a2411cc560b53a4d38ffcb2fafd93"
 ---
 
 # Limits and Pricing for Speed Insights
@@ -28,15 +28,15 @@ sha256: "4e9e106d9cfd703d7a40107c87e2ba07a0e918cedb8962ea488e8e8cd05c6d41"
 
 Speed Insights is available on the Hobby, Pro, and Enterprise plans.
 
-On the Hobby plan, Speed Insights is free and can be enabled on **one** project with a [set allotment](/docs/speed-insights/limits-and-pricing#limitations) of data points.
+On the Hobby plan, you can enable Speed Insights for **one** project at no extra cost with a [set allotment](/docs/speed-insights/limits-and-pricing#limitations) of events.
 
 On the Pro plan, the **base** fee for Speed Insights is $10.00 per-project, per-month.
 
 The following table outlines the price for each resource according to the plan you are on.
 
-| Resource | Pro Price |
-| --- | --- |
-| Speed Insights Data Points | $0.65 |
+| Resource | Hobby Included | On-demand Rates |
+| --- | --- | --- |
+| Speed Insights Events | First 10,000 events | $0.65 per 10,000 events |
 
 
 Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spend-amount) to get notified or to automatically take action, such as [using a webhook](/docs/spend-management#configuring-a-webhook) or pausing your projects when your usage hits a set spend amount.
@@ -47,18 +47,18 @@ Once you've enabled Speed Insights, different limitations are applied depending 
 
 |                                         | Hobby  | Pro     | Enterprise |
 | --------------------------------------- | ------ | ------- | ---------- |
-| Reporting Window for Data Points        | 7 Day  | 30 Days | 90 Days    |
-| Maximum Number of Data Points per Month | 10,000 | None    | None       |
+| Reporting Window for Events        | 7 Day  | 30 Days | 90 Days    |
+| Maximum Number of Events per Month | 10,000 | None    | None       |
 
-Once the maximum limit of data points is reached, no more data points will be recorded until the current day has passed. On the next day, the recording will resume. When recording is paused, you can still access all existing data points.
+After a Hobby team reaches the maximum event limit, Vercel pauses event recording until the next day. When recording is paused, you can still access all existing events.
 
-To remove the data point cap and extend your reporting window, you can start a Pro trial using the button below.
+To remove the event cap and extend your reporting window, you can start a Pro trial using the button below.
 
-You can reduce the number of data points collected by adjusting the [Sample Rate](#sample-rate) at the project level by using the `@vercel/speed-insights`. To learn more, see [Sample Rate](/docs/speed-insights/package#samplerate).
+You can reduce the number of events collected by adjusting the [Sample Rate](#sample-rate) at the project level by using the `@vercel/speed-insights`. To learn more, see [Sample Rate](/docs/speed-insights/package#samplerate).
 
 ## Sample rate
 
-By default, all incoming data points are used to calculate the scores you're being presented with on the Speed Insights view.
+By default, Speed Insights uses all incoming events to calculate the scores shown in the Speed Insights view.
 
 To reduce cost, you can change the sample rate at a project level by using the `@vercel/speed-insights` package as explained in [Sample rate](/docs/speed-insights/package#samplerate). For a comprehensive guide on reducing usage, including using `beforeSend` to filter specific pages, see [Managing Usage & Costs](/docs/speed-insights/managing-usage).
 
@@ -76,11 +76,11 @@ Teams on the Pro or Enterprise plan will immediately be charged the base fee whe
 
 ## Usage
 
-The table below shows the metrics for the [**Observability**](/docs/pricing/observability) section of the **Usage** dashboard where you can view your Speed Insights usage.
+The table below shows the metrics for the [**Observability**](/docs/manage-and-optimize-observability) section of the **Usage** dashboard where you can view your Speed Insights usage.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
-See the [manage and optimize Observability usage](/docs/pricing/observability) section for more information on how to optimize your usage.
+See the [manage and optimize Observability usage](/docs/manage-and-optimize-observability) section for more information on how to optimize your usage.
 
 > **💡 Note:** Speed Insights and Web Analytics require scripts to do collection of [data
 > points](/docs/speed-insights/metrics#understanding-data-points). These scripts

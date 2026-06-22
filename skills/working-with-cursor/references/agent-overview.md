@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/overview.md"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "87ed6500533feacada5b0bbfd908d25be97a426d17ed1a8c2b003f05e252c9eb"
+---
+
 # Cursor Agent
 
 Agent is Cursor's assistant that can complete complex coding tasks independently, run terminal commands, and edit code. Access in sidepane with Cmd+I.

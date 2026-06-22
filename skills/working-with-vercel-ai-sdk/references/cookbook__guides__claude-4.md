@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/claude-4.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "fc2d9f82e40c43f61966c84b8e40174da2fccffe3a853932bb62cfa587060d19"
+fetched_at: "2026-06-22T06:00:01.335Z"
+sha256: "75f99f4238ef00c50a5cd9d7e6c2157b91c3666683d94a69d83abf542fdd71f4"
 ---
 
 # Get started with Claude 4
@@ -45,7 +45,7 @@ console.log(text);
 
 ### Reasoning Ability
 
-Claude 4 enhances the extended thinking capabilities first introduced in Claude 3.7 Sonnet��the ability to solve complex problems with careful, step-by-step reasoning. Additionally, both Opus 4 and Sonnet 4 can now use tools during extended thinking, allowing Claude to alternate between reasoning and tool use to improve responses. You can enable extended thinking using the `thinking` provider option and specifying a thinking budget in tokens. For interleaved thinking (where Claude can think in between tool calls) you'll need to enable a beta feature using the `anthropic-beta` header:
+Claude 4 enhances the extended thinking capabilities first introduced in Claude 3.7 Sonnet���the ability to solve complex problems with careful, step-by-step reasoning. Additionally, both Opus 4 and Sonnet 4 can now use tools during extended thinking, allowing Claude to alternate between reasoning and tool use to improve responses. You can enable extended thinking using the `thinking` provider option and specifying a thinking budget in tokens. For interleaved thinking (where Claude can think in between tool calls) you'll need to enable a beta feature using the `anthropic-beta` header:
 
 ```ts
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';

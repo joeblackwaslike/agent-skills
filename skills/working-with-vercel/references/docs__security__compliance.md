@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "903b256f31ef1a7d2459ca9dc4acc0247736cb26249c012f8b2738e64df7230a"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "8a3921dcbafeb1f8c060f3f210a5b78c9e7b07a4c6685ecb5f1edf1508796aed"
 ---
 
 # Security & Compliance Measures
@@ -81,7 +81,7 @@ Vercel supports HIPAA compliance as a **business associate** by committing to th
 
 - Implementing and maintaining appropriate technical and organizational security measures designed to safeguard a customer's [Protected Health Information](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html#:~:text=Information%20is%20Protected-,Protected%20Health%20Information.,health%20information%20\(PHI\).%22 "What is PHI?") (PHI)
 - Notifying customers of any data breaches without undue delay
-- Signing Business Associate Agreements (BAAs) with enterprise customers
+- Signing Business Associate Agreements (BAAs) with eligible Pro and Enterprise customers
 
 #### Additional protection
 
@@ -94,7 +94,7 @@ Customers subject to HIPAA may enable [Vercel Secure Compute (available on Enter
 
 [Learn](https://security.vercel.com/?itemUid=aec41c33-0f3a-4030-ac59-49adfd4a975b\&source=click) about how Vercel supports HIPAA compliance.
 
-[Contact us](https://vercel.com/contact/sales/security) to request a **BAA** or to add Secure Compute to your plan.
+[Contact us](https://vercel.com/contact/sales/security) to request a **BAA**. Enterprise customers can also contact us to add Secure Compute to their plan.
 
 ### EU-U.S Data Privacy Framework
 

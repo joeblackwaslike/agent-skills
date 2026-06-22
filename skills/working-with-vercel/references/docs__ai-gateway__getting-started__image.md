@@ -9,14 +9,14 @@ prerequisites:
   - /docs/ai-gateway/getting-started
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/capabilities/image-generation/ai-sdk
-  - /docs/ai-gateway/capabilities/image-generation/openai
-  - /docs/ai-gateway/capabilities/image-generation
+  - /docs/ai-gateway/modalities/image-generation/ai-sdk
+  - /docs/ai-gateway/modalities/image-generation/openai
+  - /docs/ai-gateway/modalities/image-generation
 summary: Generate images from text prompts using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1284454121d35ee9d2c049243281a116af3348f0416becf01eca54afede2c5a4"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "0a3f1f4306b5dfef230989344a7935a353d62956d21c1fee6281c358f1fe4bbe"
 ---
 
 # Image Generation Quickstart
@@ -93,8 +93,8 @@ This quickstart walks you through generating your first image with AI Gateway.
 
 - ### Next steps
   - See [supported image generation models](https://vercel.com/ai-gateway/models?type=image)
-  - Learn about [multimodal LLMs](/docs/ai-gateway/capabilities/image-generation/ai-sdk#multimodal-llms) that can generate images alongside text
-  - Explore [image editing capabilities](/docs/ai-gateway/capabilities/image-generation/openai#editing-images) with OpenAI models
+  - Learn about [multimodal LLMs](/docs/ai-gateway/modalities/image-generation/ai-sdk#multimodal-llms) that can generate images alongside text
+  - Explore [image editing capabilities](/docs/ai-gateway/modalities/image-generation/openai#editing-images) with OpenAI models
 
 ## Alternative models
 
@@ -212,7 +212,7 @@ How you save images depends on the model type:
 | Nano Banana models                        | `generateText`               | `result.files`  | `uint8Array`    |
 | Image-only models (Flux, Recraft, Imagen) | `experimental_generateImage` | `result.images` | `base64` string |
 
-For more details, see the [Image Generation Capabilities docs](/docs/ai-gateway/capabilities/image-generation).
+For more details, see the [Image Generation Capabilities docs](/docs/ai-gateway/modalities/image-generation).
 
 
 ---

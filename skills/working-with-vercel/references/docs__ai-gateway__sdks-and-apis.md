@@ -16,8 +16,8 @@ related:
 summary: Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d0ac0a6aade2cf1e11e32319c0ed0816ce4dafb9d755ddf5592e429324b83da8"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "d1a9df694ad387e2c01d9a1b7d9d21e34dc7eb368a496a94d197aa2756f2e839"
 ---
 
 # SDKs & APIs
@@ -138,7 +138,7 @@ const response = await client.responses.create({
 
 - [Get your API key](/docs/ai-gateway/authentication-and-byok) to start making requests
 - [Browse available models](/docs/ai-gateway/models-and-providers) to find the right model for your use case
-- [Set up observability](/docs/ai-gateway/capabilities/observability) to monitor usage and debug requests
+- [Set up observability](/docs/ai-gateway/observability-and-spend/observability) to monitor usage and debug requests
 
 
 ---

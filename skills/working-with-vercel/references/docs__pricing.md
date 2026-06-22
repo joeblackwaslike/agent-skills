@@ -9,20 +9,20 @@ prerequisites:
   []
 related:
   - /docs/pricing/how-does-vercel-calculate-usage-of-resources
-  - /docs/functions/configuring-functions/duration
   - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
   - /docs/edge-config/edge-config-limits
+  - /docs/analytics/limits-and-pricing
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7991995594eb91918446d3e3d23cf2af5c629b2b866dfabf21033cf6dc3f2548"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "46046f42420c4bdf1aa6b37a83f7bb98d37cc442f8133856f06f9ea288eb0db9"
 ---
 
 # Pricing on Vercel
 
-This page provides an overview of Vercel's pricing model and outlines all billable metrics and their pricing models.
+Vercel's pricing model includes billable metrics and pricing models across Managed Infrastructure and Developer Experience Platform resources.
 
 For a full breakdown of Vercel's pricing by plan, see the [pricing page](/pricing).
 
@@ -32,13 +32,13 @@ To learn how resources are triggered through a real-world app scenario, see the 
 
 Vercel provides [Managed Infrastructure](https://vercel.com/products/managed-infrastructure) to deploy, scale, and secure your applications.
 
-These resources are usage based, and billed based on the amount of data transferred, the number of requests made, and the duration of compute resources used.
+Vercel bills these usage-based resources by the amount of data transferred, the number of requests made, and the duration of compute resources used.
 
-Each product's usage breaks down into resources, with each one billed based on the usage of a specific metric. For example, [Function Duration](/docs/functions/configuring-functions/duration) generates bills based on the total execution time of a Vercel Function.
+Each product's usage breaks down into resources. Vercel bills each resource by usage of a specific metric. For example, [Active CPU](/docs/functions/usage-and-pricing#active-cpu) generates bills based on the CPU time your function code actively consumes.
 
 ### Managed Infrastructure billable resources
 
-Most resources include an amount of usage your projects can use within your billing cycle. If you exceed the included amount, you are charged for the extra usage.
+Some resources include an amount of usage your projects can use within your billing cycle. Pro teams also receive a monthly usage credit and can use many resources on demand. If you exceed an included amount or credit, Vercel charges for the extra usage.
 
 #### [Vercel Functions](/docs/functions/usage-and-pricing)
 
@@ -73,20 +73,20 @@ Most resources include an amount of usage your projects can use within your bill
 
 |  | Hobby | Pro | Pro with Web Analytics Plus | Enterprise |
 | --- | --- | --- | --- | --- |
-| Included Events | 50,000 Events | N/A | N/A | None |
-| Additional Events | - | $3 / 100,000 Events (prorated) | $3 / 100,000 Events (prorated) | Custom |
+| Included Events | 50,000 events / month included | None | N/A | None |
+| Additional Events | N/A | $0.03 per 1K events | $0.03 per 1K events | Custom |
 | Included Projects | Unlimited | Unlimited | Unlimited | Unlimited |
 | Reporting Window | 1 Month | 12 Months | 24 Months | 24 Months |
 | Custom Events | - | Included | Included | Included |
 | Properties on Custom Events | - | 2 | 8 | 8 |
-| UTM Parameters | - | - | Included | Included |
+| UTM Parameters | - | N/A | Included | Included |
 
 
 #### [Speed Insights](/docs/speed-insights/limits-and-pricing)
 
-| Resource | Pro Price |
-| --- | --- |
-| Speed Insights Data Points | $0.65 |
+| Resource | Hobby Included | On-demand Rates |
+| --- | --- | --- |
+| Speed Insights Events | First 10,000 events | $0.65 per 10,000 events |
 
 
 #### [Drains](/docs/drains#usage-and-pricing)
@@ -118,12 +118,12 @@ Monitoring is now part of [Observability Plus](/docs/observability/observability
 
 #### [Microfrontends](/docs/microfrontends#limits-and-pricing)
 
-|  | Hobby | Pro / Enterprise |
-| --- | --- | --- |
-| Included Microfrontends Routing | 50K requests / month | N/A |
-| Additional Microfrontends Routing | - | $2 per 1M requests |
-| Included Microfrontends Projects | 2 projects | 2 projects |
-| Additional Microfrontends Projects | - | $250/project/month |
+|  | Hobby | Pro | Enterprise |
+| --- | --- | --- | --- |
+| Included Microfrontends Routing | 50K requests / month | N/A | Custom |
+| Additional Microfrontends Routing | - | $2 per 1M requests | Custom |
+| Included Microfrontends Projects | 2 projects | 2 projects | Custom |
+| Additional Microfrontends Projects | - | $250/project/month | Custom |
 
 
 #### [Bulk redirects](/docs/redirects/bulk-redirects#limits-and-pricing)
@@ -168,8 +168,10 @@ The below table lists the billable DX Platform resources for the Pro plan. Most 
 | [Preview Deployment Suffix](/docs/deployments/generated-urls#preview-deployment-suffix) | $100 / month | N/A |
 | [SAML Single Sign-On](/docs/saml) | $300 / month | N/A |
 | [HIPAA BAA](/docs/security/compliance#hipaa) | $350 / month | N/A |
+| [Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection) | $150 / month | N/A |
 | [Flags Explorer](/docs/flags/flags-explorer) | $250 / month | N/A |
 | [Observability Plus](/docs/observability/observability-plus) | $1.20 per 1,000,000 Events | N/A |
+| [Static IPs](/docs/networking/static-ips) | $100 / month per project, plus Private Data Transfer | N/A |
 | [Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus) | $10 / month | N/A |
 | [Speed Insights](/docs/speed-insights) | $10 / month per project | N/A |
 

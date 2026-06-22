@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/enterprise.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "8067aedee867aa5499136dd79879cacb12a742500ac0f364f763f85b5818530a"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "2632ef8a3a7017d12aad83581437404c095e38080c844e45d0bdc82ed4ce57ca"
 ---
 
 # Gemini CLI for the enterprise
@@ -291,7 +291,7 @@ environment to a blocklist.
 <!-- prettier-ignore -->
 > [!WARNING]
 > Blocklisting with `excludeTools` is less secure than
-> allowlisting with `coreTools`, as it relies on blocking known-bad commands,
+> allowlisting with `tools.core`, as it relies on blocking known-bad commands,
 > and clever users may find ways to bypass simple string-based blocks.
 > **Allowlisting is the recommended approach.**
 

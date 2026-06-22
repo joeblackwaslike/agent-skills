@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/collaboration-mode-templates/templates/plan.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "2338d0000e681c9cfedc598974e8ec2782c7aba2d6d6d94460ca32d3d9f41ca9"
+fetched_at: "2026-06-22T05:56:37.291Z"
+sha256: "d6d46c2d460a9d91ada2167605a8dfc56efde6b2ab61e101444c736c6fd6960a"
 ---
 
 # Plan Mode (Conversational)
@@ -131,4 +131,4 @@ Do not ask "should I proceed?" in the final output. The user can easily switch o
 
 Only produce at most one `<proposed_plan>` block per turn, and only when you are presenting a complete spec.
 
-If the user stays in Plan mode and asks for revisions after a prior `<proposed_plan>`, any new `<proposed_plan>` must be a complete replacement.
+If the user stays in Plan mode and asks for revisions after a prior `<proposed_plan>`, any new `<proposed_plan>` must be a complete replacement. If the user indicates that the prior plan is not acceptable but does not provide enough information to produce a complete replacement, address the concern and continue planning without producing a `<proposed_plan>` block. If the follow-up neither requires changes nor calls the plan into question (e.g. clarifying question), answer it before the block, then reproduce the prior `<proposed_plan>` unchanged.

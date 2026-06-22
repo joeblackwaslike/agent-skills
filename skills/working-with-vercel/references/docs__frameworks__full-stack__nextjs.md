@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b87b5afa1257e7f0f2094f462c2dc9815677c6577a895c48d7d90537a00487ba"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "7c85f5e176dfc8fc466911147ced6efcce73e69ae659517b27a8f3b46142f536"
 ---
 
 # Next.js on Vercel
@@ -206,20 +206,125 @@ Learn more about [Streaming](/docs/functions/streaming-functions) with Vercel Fu
 
 ## Partial Prerendering
 
-> **⚠️ Warning:** Partial Prerendering as an experimental feature. It is currently
-> &#x20;environments.
+Partial Prerendering (PPR) pre-generates the static portions of a page and serves them from the cache, while it streams the dynamic portions in a single HTTP request. This allows you to serve content back to the user quickly while also allowing for user personalization without hurting performance.
 
-Partial Prerendering (PPR) is an **experimental** feature in Next.js that allows the static portions of a page to be pre-generated and served from the cache, while the dynamic portions are streamed in a single HTTP request.
+As of Next.js 16, PPR is no longer experimental. It is built into the [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) model, and you opt in by enabling `cacheComponents` in your `next.config.ts`:
+
+```ts filename="next.config.ts" framework=nextjs
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  cacheComponents: true,
+};
+
+export default nextConfig;
+```
+
+With Cache Components, data is dynamic by default. You choose what to cache at the page, component, or function level with the [`use cache`](https://nextjs.org/docs/app/api-reference/directives/use-cache) directive. Next.js then prerenders a static HTML shell and streams the dynamic content into it.
 
 When a user visits a route:
 
-- A static route *shell* is served immediately, this makes the initial load fast.
-- The shell leaves *holes* where dynamic content will be streamed in to minimize the perceived overall page load time.
-- The async holes are loaded in parallel, reducing the overall load time of the page.
+- A static route *shell* is served immediately, which makes the initial load fast.
+- The shell leaves *holes* where dynamic content streams in. The holes load in parallel, which allows dynamic or personalized content to fill in when it becomes available.
 
-This approach is useful for pages like dashboards, where unique, per-request data coexists with static elements such as sidebars or layouts. This is different from how your application behaves today, where entire routes are either fully static or dynamic.
+This approach is useful for pages like dashboards, where unique, per-request data coexists with static elements such as sidebars or layouts. For example, this page caches its product list into the static shell with `use cache`, and streams the personalized greeting in at request time:
 
-See the [Partial Prerendering docs](https://nextjs.org/docs/app/api-reference/next-config-js/partial-prerendering) to learn more.
+```tsx filename="app/page.tsx" framework=nextjs
+import { Suspense } from 'react';
+import { cacheTag } from 'next/cache';
+import { cookies } from 'next/headers';
+
+type Product = { id: string; name: string };
+
+async function ProductsList() {
+  'use cache';
+  cacheTag('products-list');
+
+  const products: Product[] = await fetch(
+    'https://api.example.com/products',
+  ).then((res) => res.json());
+  return (
+    <ul>
+      {products.map((product) => (
+        <li key={product.id}>{product.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+async function Greeting() {
+  const user = (await cookies()).get('user')?.value;
+  return <p>Welcome back, {user}</p>;
+}
+
+export default function Page() {
+  return (
+    <section>
+      <h1>Dashboard</h1>
+
+      {/* Cached: prerendered into the static shell */}
+      <ProductsList />
+
+      {/* Dynamic: streamed in at request time */}
+      <Suspense fallback={<p>Loading…</p>}>
+        <Greeting />
+      </Suspense>
+    </section>
+  );
+}
+```
+
+```jsx filename="app/page.js" framework=nextjs
+import { Suspense } from 'react';
+import { cacheTag } from 'next/cache';
+import { cookies } from 'next/headers';
+
+async function ProductsList() {
+  'use cache';
+  cacheTag('products-list');
+
+  const products = await fetch('https://api.example.com/products').then((res) =>
+    res.json(),
+  );
+  return (
+    <ul>
+      {products.map((product) => (
+        <li key={product.id}>{product.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+async function Greeting() {
+  const user = (await cookies()).get('user')?.value;
+  return <p>Welcome back, {user}</p>;
+}
+
+export default function Page() {
+  return (
+    <section>
+      <h1>Dashboard</h1>
+
+      {/* Cached: prerendered into the static shell */}
+      <ProductsList />
+
+      {/* Dynamic: streamed in at request time */}
+      <Suspense fallback={<p>Loading…</p>}>
+        <Greeting />
+      </Suspense>
+    </section>
+  );
+}
+```
+
+When you deploy to Vercel, the static shell is served with [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration), while [Vercel Functions](/docs/functions) renders the dynamic holes and streams the content back in the same response.
+
+> **💡 Note:** If you use PPR with Next.js 15, stay on your current canary and follow the
+> [Cache Components migration
+> guide](https://nextjs.org/docs/app/guides/migrating-to-cache-components) when
+> you move to Next.js 16, where PPR behaves differently.
+
+See the [Cache Components docs](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) to learn more.
 
 ## Image Optimization
 

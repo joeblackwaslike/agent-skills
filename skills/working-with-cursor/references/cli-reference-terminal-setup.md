@@ -1,10 +1,10 @@
 ---
 source: "https://cursor.com/docs/cli/reference/terminal-setup.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "078f3ba5ed790e390e74241d425187f6060be41fd9b3b14c953b2f7aeb34fd4d"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "896ae449c38479eb86012dd6b16d310de788a767bde70480aa631317c09a27b8"
 ---
 
-# Terminal Setup
+# Terminal setup
 
 Configure your terminal for the best Cursor CLI experience. This guide covers keybindings for multi-line input, Vim mode, and theme synchronization.
 

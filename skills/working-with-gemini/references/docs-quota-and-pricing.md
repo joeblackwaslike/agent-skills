@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/quota-and-pricing.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "648eea80b4f1c537b76aba3b817467b7ee3189cb15a77f28364575210a65ec51"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "b843e3c26e76f53e3a667d86c9b0bde92dcfb7ebadc0a7924f75979eaf3428e4"
 ---
 
 # Gemini CLI: Quotas and pricing
@@ -133,6 +133,7 @@ Standard/Plus and AI Expanded, are not supported._
   license seats. For predictable costs, you can sign in with Google.
 
   This includes the following request limits:
+
   - Gemini Code Assist Standard edition:
     - 1500 maximum model requests / user / day
   - Gemini Code Assist Enterprise edition:

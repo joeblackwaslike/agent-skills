@@ -1,7 +1,7 @@
 ---
 source: "gh copilot --help @ 2.94.0"
-fetched_at: "2026-06-15T17:27:25.905Z"
-sha256: "a1c1a350ca41bc35d459302cb5a88e9953b6d1639eee682e6b118322f7e13bf1"
+fetched_at: "2026-06-22T05:59:23.731Z"
+sha256: "16eaa1df22b5c5bdfc3b165b2ae262602f1fb6b5e57d42112e8a649a1d70e149"
 ---
 
 Runs the GitHub Copilot CLI.
@@ -9,7 +9,7 @@ Runs the GitHub Copilot CLI.
 Executing the Copilot CLI through `gh` is currently in preview and subject to change.
 
 If already installed, `gh` will execute the Copilot CLI found in your `PATH`.
-If the Copilot CLI is not installed, it will be downloaded to /Users/joe/.local/share/gh/copilot.
+If the Copilot CLI is not installed, it will be downloaded to /home/runner/.local/share/gh/copilot.
 
 Use `--remove` to remove the downloaded Copilot CLI.
 

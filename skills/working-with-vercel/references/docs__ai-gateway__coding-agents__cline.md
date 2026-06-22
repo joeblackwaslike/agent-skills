@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/capabilities/observability
+  - /docs/ai-gateway/observability-and-spend/observability
 summary: Use Cline with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e7a42c430a241c40f60f610879821be22936b9e890b1cdab20674d0deba8a9a2"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "9b3d49028bf03bd80d07aa3d55b9b3207fd0b8d7428eff31249a2c2a48733f66"
 ---
 
 # Cline
@@ -51,7 +51,7 @@ sha256: "e7a42c430a241c40f60f610879821be22936b9e890b1cdab20674d0deba8a9a2"
   - Cached input and cache creation tokens
   - Latency metrics (average TTFT)
   - Per-project and per-model costs
-  See the [observability documentation](/docs/ai-gateway/capabilities/observability) for more details.
+  See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
   > **💡 Note:** Maintain separate API keys for different environments (dev, staging, production) to better track usage across your workflow.
 
 ## Troubleshooting

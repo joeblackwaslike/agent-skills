@@ -16,8 +16,8 @@ related:
 summary: This reference covers the dimensions and operators used to create a query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "035e30352e09ed51a285302e2ad1e4ab2f6cd5885d23ee3797f3dfa7a24d8268"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "5435038484e05046398b5bec0ea97b72fc882ac757a5ef65f3d9394421d87811"
 ---
 
 # Query Reference
@@ -33,8 +33,7 @@ The metric selects what query data is displayed. You can choose one field at a t
 | **Incoming Fast Data Transfer**   | The incoming amount of [Fast Data Transfer](/docs/pricing/networking#fast-data-transfer) used by the request.             | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Outgoing Fast Data Transfer**   | The outgoing amount of [Fast Data Transfer](/docs/pricing/networking#fast-data-transfer) used by the response.            | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Total Fast Data Transfer**      | The total amount of [Fast Data Transfer](/docs/pricing/networking#fast-data-transfer) used by the response.               | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Function Invocations**          | The number of [Function invocations](/docs/functions/usage-and-pricing#managing-function-invocations)                     | Count, Count per Second, Percentages                   |
-| **Function Duration**             | The amount of [Function duration](/docs/functions/usage-and-pricing#managing-function-duration), as measured in GB-hours. | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Function Invocations**          | The number of [function invocations](/docs/functions/usage-and-pricing#invocations)                                       | Count, Count per Second, Percentages                   |
 | **Function CPU Time**             | The amount of CPU time a Vercel Function has spent responding to requests, as measured in milliseconds.                   | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Incoming Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) used by the request.                  | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Outgoing Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) used by the response.                 | Sum, Sum per Second, Min/Max, Percentages, Percentiles |

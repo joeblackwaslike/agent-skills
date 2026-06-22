@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6bb9b08b46df745c2c07d9dda08dd53fdc19a37224883ee1d4398582e0203388"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "dfe9e7d81267cffe193658b9b5a509c341b0c9f3db41ec73fbab2552aecab504"
 ---
 
 # JS SDK Reference
@@ -1560,7 +1560,7 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 - **Operating system:** Amazon Linux 2023 with common build tools such as `git`, `tar`, `openssl`, and `dnf`.
 - **Available runtimes:** `node26`, `node24`, `node22`, and `python3.13` images with their respective package managers.
 - **Resources:** Choose the number of virtual CPUs (`vcpus`) per sandbox. Pricing and plan limits appear in the [Sandbox pricing table](/docs/sandbox/pricing#resource-limits).
-- **Timeouts:** The default timeout is 5 minutes. You can extend it programmatically up to 45 minutes on the Hobby plan and up to 5 hours on Pro and Enterprise plans.
+- **Timeouts:** The default timeout is 5 minutes. You can extend it programmatically up to 45 minutes on the Hobby plan and up to 24 hours on Pro and Enterprise plans.
 - **Sudo:** `sudo` commands run as `vercel-sandbox` with the root home directory set to `/root`.
 
 > **💡 Note:** The filesystem is ephemeral. You must export artifacts to durable storage if

@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "d5552f8ebc85dce1e70e04642b8e26a5123fdd515701ec27fd511c22068eafdf"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "88f15337efe1e31f6f850d3d3d82548c414a7eed08ad71b247d991bad7954ff9"
 ---
 
 # Cloud Agents
@@ -25,7 +25,7 @@ You can kick off cloud agents from wherever you work:
 1. **Cursor Web**: Start and manage agents from [cursor.com/agents](https://cursor.com/agents) on any device
 2. **Cursor Desktop**: Select **Cloud** in the dropdown under the agent input
 3. **Slack**: Use the @cursor command to kick off an agent
-4. **GitHub**: Comment `@cursor` on a PR or issue to kick off an agent
+4. **GitHub or Bitbucket**: Comment `@cursor` on a GitHub PR or issue, or on a Bitbucket PR, to kick off an agent
 5. **Linear**: Use the @cursor command to kick off an agent
 6. **API**: Use the API to kick off an agent
 
@@ -41,11 +41,11 @@ triggering agents and receiving notifications.
 
 ## How it works
 
-### GitHub or GitLab connection
+### Repository provider connection
 
-Cloud agents clone your repo from GitHub or GitLab and work on a separate branch, then push changes to your repo for handoff.
+Cloud agents clone your repo from GitHub, GitLab, Azure DevOps Services, or Bitbucket Cloud and work on a separate branch, then push changes to your repo for handoff.
 
-You need read-write privileges to your repo and any dependent repos or submodules. Support for other providers like Bitbucket is coming later.
+You need read-write privileges to your repo and any dependent repos or submodules.
 
 ### Environments
 
@@ -56,6 +56,14 @@ Not setting up a development environment for your cloud agents is like not givin
 You can configure environments with agent-led setup, a saved snapshot, or a Dockerfile in `.cursor/environment.json`. See [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md) to get started. Each cloud agent then starts from an environment selected for the repo or multi-repo group.
 
 The Cloud Agents dashboard shows which environment an agent used, along with environment details and version history. On the agent page, hover over the repository name at the top of the page to inspect the environment used for that run. See [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md) for configuration details.
+
+### Managed and self-hosted runtimes
+
+Cursor-managed Cloud Agents are the default path for most teams. You can add secrets, restrict outbound domains, connect to private networks with Tailscale or a similar client, and use private connectivity for supported source control paths.
+
+Use [My Machines](https://cursor.com/docs/cloud-agent/my-machines.md) or [Self-Hosted Pool](https://cursor.com/docs/cloud-agent/self-hosted-pool.md) when you want to own the machine that executes terminal commands, file edits, browser actions, and other tool calls. In both modes, the agent loop still runs in Cursor's cloud.
+
+See [Choose where Cloud Agents run](https://cursor.com/docs/cloud-agent/choose-runtime.md) for the [decision guide](https://cursor.com/docs/cloud-agent/choose-runtime.md#self-hosted-or-cursor-hosted-which-is-right-for-you) and full comparison.
 
 ## Models
 
@@ -92,6 +100,7 @@ See [Cloud agent capabilities](https://cursor.com/docs/cloud-agent/capabilities.
 
 - Learn more about [Cloud agent capabilities](https://cursor.com/docs/cloud-agent/capabilities.md).
 - Learn more about [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md).
+- Learn how to [choose where Cloud Agents run](https://cursor.com/docs/cloud-agent/choose-runtime.md).
 - Learn more about [Cloud agent security](https://cursor.com/docs/cloud-agent/security-network.md).
 - Learn more about [Cloud agent settings](https://cursor.com/docs/cloud-agent/settings.md).
 
@@ -103,7 +112,7 @@ Cloud Agents are charged at API pricing for the selected [model](https://cursor.
 
 ### Agent runs are not starting
 
-- Ensure you're logged in and have connected your GitHub or GitLab account.
+- Ensure you're logged in and have connected your GitHub, GitLab, Azure DevOps, or Bitbucket account.
 - Check that you have the necessary repository permissions.
 - You need to be on a paid Cursor plan.
 

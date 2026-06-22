@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the San Francisco, USA (sfo1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/sfo1.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1cdeaa8afb526d9c0be8f7174779356b0366bd6a0148be24116828585fa9a903"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "1635de6ab60fe8ace059cffa77054607ba476ade9cd49d0ad9ef2b4cf206eae9"
 ---
 
 # San Francisco, USA (sfo1) pricing
@@ -44,8 +44,6 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0658 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.48 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.80 per 1M |
-| [Runtime Cache Writes](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $4.80 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $0.48 per 1,000,000 Read Units |
 | [Firewall Rate Limit Requests](/docs/security/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.60 per 1,000,000 Allowed Requests |
 | [Firewall OWASP Requests](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.96 per 1,000,000 Inspected Requests |
 | [Firewall OWASP Excess Bytes](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.24 per 1 GB of inspected request payload |

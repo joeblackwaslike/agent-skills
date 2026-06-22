@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/capabilities/observability
+  - /docs/ai-gateway/observability-and-spend/observability
 summary: Use Superset with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/superset.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8907dd8479704ce5a12edf467e1ca787f9d21d999ed249be1c7739dd66f46394"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "dd007b8584c78c4370227f2d0d52a30570450af30dab1b03b1e56db42041d316"
 ---
 
 # Superset
@@ -88,7 +88,7 @@ Once configured, view your usage in the [**AI Gateway**](https://vercel.com/d?to
 - **Model usage**: Track which models your agents use
 - **Request traces**: Debug issues with full request and response logs
 
-See the [observability documentation](/docs/ai-gateway/capabilities/observability) for more details.
+See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
 
 ---

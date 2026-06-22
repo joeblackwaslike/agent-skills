@@ -10,15 +10,15 @@ prerequisites:
   - /docs/vercel-firewall
 related:
   - /docs/security/ddos-mitigation
-  - /docs/vercel-waf/custom-rules
+  - /docs/vercel-firewall/vercel-waf/custom-rules
   - /docs/vercel-firewall/vercel-waf/managed-rulesets
   - /docs/plans
   - /docs/plans/hobby
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5a4e21f04fd5aaca6c9d9262ce34938adaaebe824d5dd4631129a6ca6c799b5e"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "ac0a331e6a24e18d1986a56b68f285d9ed65a37adade3af1bf8af7c30cfd9c52"
 ---
 
 # WAF System Bypass Rules
@@ -30,7 +30,7 @@ While Vercel's system-level mitigations (such as [DDoS protection](/docs/securit
 You can ensure that specific IP addresses or CIDR ranges are never blocked by the Vercel Firewall's system mitigations with System Bypass Rules.
 
 > **💡 Note:** If you need to allow requests blocked by your own [WAF Custom
-> Rules](/docs/vercel-waf/custom-rules), use another [custom rule with a bypass
+> Rules](/docs/vercel-firewall/vercel-waf/custom-rules), use another [custom rule with a bypass
 > action](/docs/vercel-firewall/vercel-waf/managed-rulesets#bypassing-custom-rules).
 
 ## Get started

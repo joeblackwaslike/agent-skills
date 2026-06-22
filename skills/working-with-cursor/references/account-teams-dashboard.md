@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/account/teams/dashboard.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "470f667602c5a3b3352b3abd393dedae311625ab3d568b44e024cac8adc285a9"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "e6729af4f3f2e7c13bdc5465126096a0a09be48c6807b7e1396a3bd245f86c36"
 ---
 
 # Dashboard
@@ -45,6 +45,12 @@ Configure AWS Bedrock IAM roles for secure cloud integration.
 
 Set up SSO authentication for enterprise teams to streamline user access and
 improve security.
+
+### Protected Git Scopes
+
+Lock a Git organization, group, or namespace to your Cursor organization so
+only your teams can use its repositories with Cloud Agents, automations, and
+Bugbot. Learn more in [Protected Git Scopes](https://cursor.com/docs/enterprise/model-and-integration-management.md#protected-git-scopes).
 
 ### Cursor Admin API Keys
 

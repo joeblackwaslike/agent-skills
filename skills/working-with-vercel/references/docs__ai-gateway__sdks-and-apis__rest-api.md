@@ -17,8 +17,8 @@ related:
 summary: Learn about rest api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3647c3b7fd66cecd1a233d22f85060f622cae9857f7fefd9c45d71642da154ac"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "79cd7ea6b1cb57bdf2d17d317e43e1f64958278b0875c01016f733ed895724c1"
 ---
 
 # REST API Reference
@@ -427,7 +427,7 @@ print(generation)
 
 ## Custom Reporting
 
-Use the Custom Reporting API to break down spend and usage by model, user, tag, provider, or credential type. For concepts, how to attach tags and user IDs to requests, querying with the AI SDK, and the full response field reference, see the [Custom Reporting page](/docs/ai-gateway/capabilities/custom-reporting).
+Use the Custom Reporting API to break down spend and usage by model, user, tag, provider, or credential type. For concepts, how to attach tags and user IDs to requests, querying with the AI SDK, and the full response field reference, see the [Custom Reporting page](/docs/ai-gateway/observability-and-spend/custom-reporting).
 
 ### Query spend report
 
@@ -469,7 +469,7 @@ curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
 ```
 
-For the full response shape, sample JSON, and the per-field reference (which grouping fields appear with which `group_by` value, plus all metric fields), see [Response format](/docs/ai-gateway/capabilities/custom-reporting#response-format) and [Response fields](/docs/ai-gateway/capabilities/custom-reporting#response-fields) on the Custom Reporting page.
+For the full response shape, sample JSON, and the per-field reference (which grouping fields appear with which `group_by` value, plus all metric fields), see [Response format](/docs/ai-gateway/observability-and-spend/custom-reporting#response-format) and [Response fields](/docs/ai-gateway/observability-and-spend/custom-reporting#response-fields) on the Custom Reporting page.
 
 ## Error responses
 

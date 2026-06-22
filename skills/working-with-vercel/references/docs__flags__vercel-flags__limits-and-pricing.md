@@ -13,8 +13,8 @@ related:
 summary: Learn about limits and pricing for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d04d2ae36f8f21647a080c66496269d1202ac83fa12696b01fee9f4dcaf5f4f4"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "20e15211a451bff95355f7c1f9d7fd3a4aee8ff403d76cc727d80c12ff7bdeb5"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -23,12 +23,12 @@ sha256: "d04d2ae36f8f21647a080c66496269d1202ac83fa12696b01fee9f4dcaf5f4f4"
 
 ### Flag requests
 
-Vercel Flags is priced at \*\*$30 per 1 million flag requests\*\* ($0.00003 per event).
+Vercel Flags is priced at \*\*$0.03 per 1,000 flag requests\*\* for Pro teams. Enterprise pricing is custom.
 
 |  | Hobby | Pro | Enterprise |
 | --- | --- | --- | --- |
-| Maximum flag requests per month | 10,000 | None | None |
-| Additional flag requests | - | $30 per 1 million requests (prorated) | $30 per 1 million requests (prorated) |
+| Maximum flag requests per month | 10,000 | N/A | Custom |
+| Additional flag requests | - | $0.03 per 1,000 requests | Custom |
 
 
 A **flag request** is any request to your application that reads the underlying flags configuration. A single request evaluating multiple feature flags of the same source project still counts as one flag request.

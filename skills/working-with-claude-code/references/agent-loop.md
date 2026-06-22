@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/agent-loop.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "70bde8febfc50ec1337042cb11ee066ab96f4f42c402fa0f2fc20abff66245bb"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "f3e03bf933f1d0a5828c131fc362393c33e4bd8ddd4b7383f01c0924d5ca87e6"
 ---
 
 > ## Documentation Index
@@ -53,7 +53,14 @@ Without limits, the loop runs until Claude finishes on its own, which is fine fo
 
 As the loop runs, the SDK yields a stream of messages. Each message carries a type that tells you what stage of the loop it came from. The five core types are:
 
-* **`SystemMessage`:** session lifecycle events. The `subtype` field distinguishes them: `"init"` is the first message (session metadata), and `"compact_boundary"` fires after [compaction](#automatic-compaction). In TypeScript, the compact boundary is its own [`SDKCompactBoundaryMessage`](/en/agent-sdk/typescript#sdkcompactboundarymessage) type rather than a subtype of `SDKSystemMessage`.
+* **`SystemMessage`:** session lifecycle events. The `subtype` field distinguishes them:
+
+  * `"init"`: the first message with session metadata
+  * `"compact_boundary"`: fires after [compaction](#automatic-compaction)
+  * `"informational"`: plain-text status banners from the loop
+  * `"worker_shutting_down"`: the loop will end after the current turn because the host is exiting or Remote Control disconnected
+
+  In TypeScript, each subtype other than `"init"` is its own type in the [`SDKMessage` union](/en/agent-sdk/typescript#sdkmessage) rather than a subtype of `SDKSystemMessage`.
 * **`AssistantMessage`:** emitted after each Claude response, including the final text-only one. Contains text content blocks and tool call blocks from that turn.
 * **`UserMessage`:** emitted after each tool execution with the tool result content sent back to Claude. Also emitted for any user inputs you stream mid-loop.
 * **`StreamEvent`:** only emitted when partial messages are enabled. Contains raw API streaming events (text deltas, tool input chunks). See [Stream responses](/en/agent-sdk/streaming-output).

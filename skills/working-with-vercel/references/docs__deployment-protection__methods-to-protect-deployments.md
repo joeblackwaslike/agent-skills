@@ -12,12 +12,12 @@ related:
   - /docs/security/deployment-protection/methods-to-bypass-deployment-protection
   - /docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/passport
-  - /docs/security/deployment-protection/methods-to-protect-deployments/password-protection
+  - /docs/deployment-protection
 summary: "Vercel offers three methods to protect your deployments: Vercel Authentication, Password Protection, and Trusted IPs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2c566cd8413a97763e6700291476788ca395caf0fa92ce9cb97accc04bcc7ea9"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "24bbbdb9f25423ad667afd6edbbc6215de0a15183a70b84bcadcc52ea2c936d0"
 ---
 
 # Methods to Protect Deployments
@@ -50,7 +50,7 @@ Learn more about [Passport](/docs/passport) and how to enable it.
 
 > **🔒 Permissions Required**: Password Protection
 
-Password Protection on Vercel lets you restrict access to both non-public, and public deployments depending on the type of [environment protection](/docs/security/deployment-protection#understanding-deployment-protection-by-environment) you choose.
+Password Protection on Vercel lets you restrict access to both non-public, and public deployments depending on the type of [environment protection](/docs/deployment-protection#understanding-deployment-protection-by-environment) you choose.
 
 Learn more about [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection) and how to enable it.
 

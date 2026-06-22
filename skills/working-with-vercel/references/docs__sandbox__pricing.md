@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "067f309af616f26b202c9cedf70771ecd4d30e8c9736b738171035086bbfc7b8"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "30d9998bd47c405658ded60c81c4f52f464acbe96a07b9f6d5f682b471ad56de"
 ---
 
 # Vercel Sandbox pricing and limits
@@ -34,7 +34,7 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 | Sandbox Data Transfer | 20 GB/month | $0.15/GB | $0.15/GB |
 | Sandbox Storage | 15 GB (lifetime) | $0.08/GB-month | $0.08/GB-month |
 | Concurrent Sandboxes | 10 | 2,000 | 2,000 |
-| Max Runtime Duration | 45 minutes | 5 hours | 5 hours |
+| Max Runtime Duration | 45 minutes | 24 hours | 24 hours |
 | vCPU Allocation Rate | 40/10 min | 200/min | 400/min |
 
 
@@ -60,9 +60,7 @@ To control costs, configure [Spend Management](/docs/spend-management) to receiv
 
 ### Enterprise
 
-Enterprise plans use the same list pricing as Pro. Contact your account team for volume discounts or higher limits.
-
-[Contact sales](/contact/sales) for custom pricing.
+Enterprise plans have custom pricing and limits. [Contact sales](/contact/sales) to discuss your usage requirements.
 
 ## Understanding the metrics
 
@@ -128,8 +126,8 @@ The default timeout is 5 minutes. You can configure this using the `timeout` opt
 | Plan       | Maximum duration |
 | ---------- | ---------------- |
 | Hobby      | 45 minutes       |
-| Pro        | 5 hours          |
-| Enterprise | 5 hours          |
+| Pro        | 24 hours         |
+| Enterprise | 24 hours         |
 
 ### Concurrency limits
 
@@ -141,7 +139,7 @@ The number of concurrently running sandboxes is limited by plan.
 | ---------- | -------------------- |
 | Hobby      | 10                   |
 | Pro        | 2,000                |
-| Enterprise | 2,000                |
+| Enterprise | 2,000+               |
 
 ### Rate limits
 

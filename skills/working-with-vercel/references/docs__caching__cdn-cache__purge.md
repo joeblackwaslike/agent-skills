@@ -17,8 +17,8 @@ related:
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "744b607577d47806604e32f2ea3df2e057193fb3236b632347ca39344f9af9ee"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "287e8fe66ab67332d473c194b14e314a299fec7c937c91577b93230689526b15"
 ---
 
 # Purging Vercel CDN Cache
@@ -136,7 +136,7 @@ In some circumstances, you may need to purge cached responses and force revalida
 6. In the dialog, enter a tag or source image in the input. You can use `*` to purge the entire project.
 7. Finally, click the **Purge** button in the dialog to confirm.
 
-The purge event itself is not billed but it can temporarily increase Function Duration, Functions Invocations, Edge Function Executions, Fast Origin Transfer, Image Optimization Transformations, Image Optimization Cache Writes, and ISR Writes.
+Vercel does not bill the purge event itself, but purging can temporarily increase related usage, such as Active CPU, Provisioned Memory, Function Invocations, Fast Origin Transfer, Image Optimization Transformations, Image Optimization Cache Writes, and ISR Writes.
 
 > **💡 Note:** Purge is not the same as creating a new deployment because it will also purge
 > Image Optimization content, which is usually preserved between deployments, as

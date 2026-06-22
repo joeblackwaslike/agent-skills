@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/structured-outputs.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "60b36524a33772a42e662bfe83d65d787bc0d3f8c49dacde75acf47300672bf9"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "7ca343220a19c82b2148093ea074fc4dc7a2d94b0edc67fbdbde3558082dada8"
 ---
 
 > ## Documentation Index
@@ -352,14 +352,14 @@ The schema includes optional fields (`author` and `date`) since git blame inform
 
 ## Error handling
 
-Structured output generation can fail when the agent cannot produce valid JSON matching your schema. This typically happens when the schema is too complex for the task, the task itself is ambiguous, or the agent hits its retry limit trying to fix validation errors. It can also happen without any validation failure: a [model fallback](/en/model-config#automatic-model-fallback) can retract an already-completed output mid-stream, and if no retry replaces it the run ends with the same error. Check the result's `errors` text to tell the two causes apart before debugging your schema.
+Structured output generation can fail when the agent cannot produce valid JSON matching your schema. This typically happens when the schema is too complex for the task, the task itself is ambiguous, or the agent hits its retry limit trying to fix validation errors. It can also happen without any validation failure: a [model fallback](/en/model-config#automatic-model-fallback) can retract an already-completed output mid-stream, and if no retry replaces it the run ends with the same error. Check the `errors` field on the result message to tell the two causes apart before debugging your schema.
 
 When an error occurs, the result message has a `subtype` indicating what went wrong:
 
 | Subtype                               | Meaning                                                                                                                         |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `success`                             | Output was generated and validated successfully                                                                                 |
-| `error_max_structured_output_retries` | No valid output survived after multiple attempts (validation failures, or a model-fallback retraction with no successful retry) |
+| `error_max_structured_output_retries` | No valid output remained after multiple attempts (validation failures, or a model-fallback retraction with no successful retry) |
 
 The example below checks the `subtype` field to determine whether the output was generated successfully or if you need to handle a failure:
 

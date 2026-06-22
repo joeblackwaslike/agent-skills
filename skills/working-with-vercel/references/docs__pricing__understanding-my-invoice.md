@@ -12,11 +12,11 @@ related:
   - /docs/plans/pro-plan
   - /docs/plans/enterprise
   - /docs/pricing/manage-and-optimize-usage
-summary: Learn how Vercel invoices get structured for Pro and Enterprise plans. Learn how usage allotments and on-demand charges get included.
+summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f4e83cb73df4e4a1590afc5c7273affba71f4266bd545ebf69e0e94d9052eca5"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "baea2d7f7de8cffa92d33d5608e89525999687bfb92b1aa6c08fc9e4b190153e"
 ---
 
 # Billing & Invoices
@@ -42,23 +42,24 @@ When you access your invoice through the **Invoice** tab:
 
 ### Pro plan invoices
 
-Pro plan users receive invoices based on on-demand usage. Each feature under [Managed Infrastructure](/docs/pricing#managed-infrastructure-billable-resources) includes:
+Pro plan users receive invoices based on plan charges, usage credits, and on-demand usage. Under [Managed Infrastructure](/docs/pricing#managed-infrastructure-billable-resources):
 
-- A specific usage allotment. Charges incur on-demand when you exceed the usage allotment
-- [Managed Infrastructure](/docs/pricing#managed-infrastructure-billable-resources) charges get metered and billed on a monthly basis
-- [Developer Experience Platform](/docs/pricing#dx-platform-billable-resources) features get billed at fixed prices when purchased, and can include monthly or one-time charges
+- Some resources include a specific usage allowance. Charges incur on-demand when you exceed the allowance.
+- Your Pro monthly usage credit can cover other resources that are usage-based from the first unit before on-demand charges apply.
+- Vercel meters and bills [Managed Infrastructure](/docs/pricing#managed-infrastructure-billable-resources) charges monthly.
+- Vercel bills [Developer Experience Platform](/docs/pricing#dx-platform-billable-resources) features at fixed prices when purchased. These charges can include monthly or one-time charges.
 
-When viewing an invoice, Pro plan users will see a section called **[On-demand Charges](#pro-plan-on-demand-charges)**. This section has two categories: [Managed Infrastructure](/docs/pricing#managed-infrastructure) and [Developer Experience Platform](/docs/pricing#developer-experience-platform).
+When viewing an invoice, Pro plan users see a section called **[On-demand Charges](#pro-plan-on-demand-charges)**. This section has two categories: [Managed Infrastructure](/docs/pricing#managed-infrastructure) and [Developer Experience Platform](/docs/pricing#developer-experience-platform).
 
 #### Pro plan on-demand charges
 
-For Pro plan users, on-demand charges incur in two ways. Either when you exceed the usage allotment for a specific feature under [Managed Infrastructure](/docs/pricing#managed-infrastructure-billable-resources). Or when you purchase a product from [Developer Experience Platform](/docs/pricing#dx-platform-billable-resources) during the period of the invoice.
+For Pro plan users, on-demand charges incur in two ways: when usage under [Managed Infrastructure](/docs/pricing#managed-infrastructure-billable-resources) exceeds any applicable allowance or credit, or when you purchase a product from [Developer Experience Platform](/docs/pricing#dx-platform-billable-resources) during the period of the invoice.
 
 ![Image](https://vercel.com/front/docs/pricing/pro-plan-invoice-light.jpg)
 
 ### Enterprise plan invoices
 
-Enterprise customers' invoicing gets tailored around a flexible usage model. It's based on a periodic commitment to [Managed Infrastructure Units (MIU)](#managed-infrastructure-units-miu).
+Enterprise invoices follow a flexible usage model based on a periodic commitment to [Managed Infrastructure Units (MIU)](#managed-infrastructure-units-miu).
 
 The top of the invoice shows a summary of the commitment period, the total MIUs committed, and the current usage towards that commitment. If the commitment has been exceeded, the on-demand charges will be listed under the [**On-demand Charges**](#enterprise-on-demand-charges) section.
 
@@ -71,8 +72,6 @@ MIUs are a measure of the infrastructure consumption of an Enterprise project. T
 When Enterprise customers exceed their commitment for a period, they will see individual line items for the on-demand amount under the **On-demand Charges** section. This is the same as for Pro plan users.
 
 ![Image](https://vercel.com/front/docs/pricing/ent-on-demand-light.jpg)
-
-
 
 ## Partial invoices
 

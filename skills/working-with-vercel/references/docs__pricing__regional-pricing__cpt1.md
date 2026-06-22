@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Cape Town, South Africa (cpt1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cpt1.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "172c1e87c637c7e71772ab7ceb7f40c23bd105eec901aee3f4f00986012f00d6"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "d0b8493c1c916bef51ab9033d41246ba8acd5afffe3b9cf18d0c1c4752f5ad5f"
 ---
 
 # Cape Town, South Africa (cpt1) pricing
@@ -44,8 +44,6 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0735 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.56 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $5.60 per 1M |
-| [Runtime Cache Writes](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $5.60 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $0.56 per 1,000,000 Read Units |
 | [Firewall Rate Limit Requests](/docs/security/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.70 per 1,000,000 Allowed Requests |
 | [Firewall OWASP Requests](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $1.12 per 1,000,000 Inspected Requests |
 | [Firewall OWASP Excess Bytes](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.28 per 1 GB of inspected request payload |

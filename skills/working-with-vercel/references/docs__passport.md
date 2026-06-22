@@ -14,8 +14,8 @@ related:
 summary: Learn about passport on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d7a3668ff2a054d12159123c6cfd069410c1baa40af1dd767791189629a978ec"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "c350cb238da15b94ff4917e5b2465ce94229bc2c0cbc967dc1c6b2953fd3f0dd"
 ---
 
 # Restrict access to deployments with Passport
@@ -64,11 +64,7 @@ For Okta, Auth0, and similar providers, make sure the application uses a confide
 
 ## Pricing
 
-Passport is available on Enterprise teams.
-
-| Feature | Price |
-| - | - |
-| Passport | $100 per project per month |
+Passport is available as an Enterprise feature. Contact your Vercel account team for pricing.
 
 ## Configure Passport for a project
 

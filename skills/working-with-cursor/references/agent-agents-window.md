@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/agents-window.md"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "aaf48e56abb073ca29024d0720479b70ff5bca6e860757ce2439841b7f5a4d3b"
+---
+
 # Agents Window
 
 The Agents Window is Cursor's agent-first interface. It provides a unified workspace to build with agents across repos and environments, including local, cloud, remote SSH, and more. It combines the power of parallel agents with the depth and control of a development environment.
@@ -28,6 +34,7 @@ The following features are available in the Agents Window:
 - **New diffs view:** review and commit changes, and manage PRs without leaving Cursor.
 - **Parallel agents:** run many parallel agents in the cloud (and work with them from your phone, web, Slack, GitHub, and Linear).
 - **Easier handoff between local and cloud:** quickly move an agent from cloud to local to iterate quickly, and move it back to the cloud so it keeps working on its own.
+- **Cloud subagents:** hand off a task to a [cloud subagent](https://cursor.com/docs/subagents.md#cloud-subagents) with `/in-cloud`, or `/babysit` a PR, so long-running work runs on its own VM and branch while you keep working locally.
 - **Worktrees:** [run agents in isolated Git checkouts](https://cursor.com/docs/configuration/worktrees.md) so each task has its own files and changes.
 
 ## Choosing Between Agents Window and Editor

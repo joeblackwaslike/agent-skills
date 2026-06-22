@@ -10,12 +10,12 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/models-and-providers/provider-options
-  - /docs/ai-gateway/capabilities/observability
+  - /docs/ai-gateway/observability-and-spend/observability
 summary: Use OpenCode with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/opencode.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0c86019ca45830ae3439d3b6be909eefbd386aa33abbd0db1e3edd6b90e4f764"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "1fd6773c2c94ffb8ca21cfb087cdeff1e0169e8718d4b9c3d91b9cfd3c4bf1fa"
 ---
 
 # OpenCode
@@ -68,7 +68,7 @@ sha256: "0c86019ca45830ae3439d3b6be909eefbd386aa33abbd0db1e3edd6b90e4f764"
   See the [provider options documentation](/docs/ai-gateway/models-and-providers/provider-options) for more details on supported routing options.
 
 - ### (Optional) Monitor usage and spend
-  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/capabilities/observability) for more details.
+  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
 
 ---

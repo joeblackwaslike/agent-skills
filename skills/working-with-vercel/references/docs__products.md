@@ -3,7 +3,7 @@ title: Products
 product: vercel
 url: /docs/products
 canonical_url: "https://vercel.com/docs/products"
-last_updated: 2026-06-15
+last_updated: 2026-06-22
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about products on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/products.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "445e79539ccaf39550b2f37e24145284ed16fb0229d5f6b4168585a849e6d44f"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "f11f956116ead3ec1ccdaa60cdd1929109d7fc27fe74bf382fc2903d66e9cd1e"
 ---
 
 # Products

@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/chat-platforms
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/capabilities/observability
+  - /docs/ai-gateway/observability-and-spend/observability
 summary: Use Open WebUI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/open-webui.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "31a42c2911ab077be0cb747abe98470e0dfe791b8da1b78c48c91e5f9c3cfd33"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "423ef7354fc8083e2bf573765fc3f06de21673a1d4f2b7de261a2652cb240011"
 ---
 
 # Open WebUI
@@ -51,7 +51,7 @@ sha256: "31a42c2911ab077be0cb747abe98470e0dfe791b8da1b78c48c91e5f9c3cfd33"
   You can verify this by checking your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard.
 
 - ### (Optional) Monitor usage and spend
-  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/capabilities/observability) for more details.
+  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
 
 ---

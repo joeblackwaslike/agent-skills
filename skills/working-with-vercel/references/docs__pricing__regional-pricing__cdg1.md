@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Paris, France (cdg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cdg1.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "255ce8390d7252c62b156f53f6ec91632b5126d9b31124fe85e570329742d313"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "575cd7eb50b08e0e11c354cca7e9566c8949017b0e1038266ae1e8f721322655"
 ---
 
 # Paris, France (cdg1) pricing
@@ -44,8 +44,6 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0626 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.48 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.80 per 1M |
-| [Runtime Cache Writes](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $4.80 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $0.48 per 1,000,000 Read Units |
 | [Firewall Rate Limit Requests](/docs/security/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.60 per 1,000,000 Allowed Requests |
 | [Firewall OWASP Requests](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.96 per 1,000,000 Inspected Requests |
 | [Firewall OWASP Excess Bytes](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.24 per 1 GB of inspected request payload |

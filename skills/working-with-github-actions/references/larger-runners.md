@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/larger-runners.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "698b8be7d40ad7b5d788a346e5760c69beb799c48bab10bf46beb9e5eb7dd0bd"
+fetched_at: "2026-06-22T05:58:58.005Z"
+sha256: "27f683dff670400fb67ece03192788d78707ef01cdebbb6bb845dfe87cf73cd9"
 ---
 
 {% ifversion ghes %}
@@ -31,9 +31,7 @@ You can choose from several specifications for {% data variables.actions.hosted_
 | 64  | 256 GB        | 2040 GB       | x64          | Ubuntu, Windows       |
 | 96 | 384 GB         | 2040 GB       | x64          | Ubuntu, Windows        |
 
->[!NOTE] The 4-vCPU Windows runner only works with the Windows Server 2025 or the Base Windows 11 Desktop image.
-
->[!NOTE] The 5-vCPU macOS runner is in public preview and subject to change.
+> [!NOTE] The 4-vCPU Windows runner only works with the Windows Server 2025 or the Base Windows 11 Desktop image.
 
 ### Specifications for GPU {% data variables.actions.hosted_runners %}
 

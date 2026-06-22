@@ -16,8 +16,8 @@ related:
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c7b32da72e73ffb9f0fb27af790daa765074c971b73095e48c7850664e121714"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "bbd946cb38be744d182752620c5aee19fef295d9f6f0de7001f9acc80386a35d"
 ---
 
 # Error List
@@ -266,11 +266,13 @@ Project names can only consist of up to one hundred alphanumeric lowercase chara
 
 ## Repository connection limitation
 
-The amount of Vercel Projects that can be connected with the same Git repository is [limited depending on your plan](/docs/limits#general-limits).
+How many Vercel Projects you can connect to a single Git repository [depends on your plan](/docs/limits#general-limits).
 
-If you have reached the limitation and would like to connect a new project to the repository, you will need to disconnect an existing project from the same Git repository.
+When connecting another Project would exceed this limit, the request fails with the error code `repo_links_exceeded_limit`. You'll see this code in the API response and in the dashboard. To resolve it:
 
-To increase this limit, please [contact our Sales Team](/contact/sales).
+- **Hobby plan:** [Upgrade to Pro](https://vercel.com/dashboard?upgradeToPro=repo-link-limit) to connect more Projects per repository.
+- **Pro or Enterprise plan:** [Request a limit increase](/help) to connect more Projects.
+- **Any plan:** Alternatively, disconnect an existing Project from the repository under **Settings → Git**.
 
 ## Domain verification through CLI
 

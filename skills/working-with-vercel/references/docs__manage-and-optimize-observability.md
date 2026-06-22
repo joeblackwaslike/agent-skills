@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   []
 related:
-  - /docs/speed-insights/metrics
+  - /docs/speed-insights/limits-and-pricing
   - /docs/observability
+  - /docs/speed-insights/metrics
   - /docs/manage-cdn-usage
   - /docs/analytics
-  - /docs/analytics/package
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ed8883d9a6a5aa47f2c4f4238f3c918d12df89d8061fad098eca2d703a0f9275"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "dcfdeed5afe736b17e3b75080520a1032dc0f584a43472b95449cbc79a8e0952"
 ---
 
 # Manage and optimize usage for Observability
@@ -28,7 +28,7 @@ The Observability section covers usage for Observability, Monitoring, Web Analyt
 
 | Resource | Price |
 |----------|-------|
-| [Speed Insights Data Points](/docs/speed-insights/metrics#understanding-data-points) | $0.65 |
+| [Speed Insights Events](/docs/speed-insights/limits-and-pricing) | $0.65 |
 | [Observability Plus Events](/docs/observability#tracked-events) | $1.20 |
 
 
@@ -36,7 +36,7 @@ The Observability section covers usage for Observability, Monitoring, Web Analyt
 
 The **Events** chart shows the number of page views and custom events that were tracked across all of your projects. You can filter the data by **Count** or **Projects**.
 
-Hobby teams include 50,000 events per month. Pro, Pro with Web Analytics Plus, and Enterprise teams are billed based on collected event usage. You can see the total number of events used by your team by selecting **Count** in the chart.
+Hobby teams include 50,000 events per month. Vercel bills Pro, Pro with Web Analytics Plus, and Enterprise teams based on collected event usage. You can see the total number of events used by your team by selecting **Count** in the chart.
 
 > **💡 Note:** Speed Insights and Web Analytics require scripts to do collection of [data
 > points](/docs/speed-insights/metrics#understanding-data-points). These scripts
@@ -50,11 +50,11 @@ Hobby teams include 50,000 events per month. Pro, Pro with Web Analytics Plus, a
 - Reduce the amount of custom events they send. Users can find the most sent events in the [events panel](/docs/analytics#panels) in Web Analytics
 - Use [beforeSend](/docs/analytics/package#beforesend) to exclude page views and events that might not be relevant
 
-## Managing Speed Insights data points
+## Managing Speed Insights events
 
-You are initially billed a set amount for each project on which you enable Speed Insights. Each plan includes a set number of data points. After that, you're charged a set price per unit of additional data points.
+Vercel charges an initial set amount for each Pro project where you enable Speed Insights. Hobby teams include 10,000 events per month. Vercel bills Pro, Pro with Web Analytics Plus, and Enterprise teams based on collected event usage.
 
-Data points are a single unit of information that represent a measurement of a specific Web Vital metric during a user's visit to your website. Data points get collected on hard navigations. See [Understanding Data Points](/docs/speed-insights/metrics#understanding-data-points) for more information.
+Events are single units of information that represent a measurement of a specific Web Vital metric during a user's visit to your website. Vercel collects events on hard navigations.
 
 > **💡 Note:** Speed Insights and Web Analytics require scripts to do collection of [data
 > points](/docs/speed-insights/metrics#understanding-data-points). These scripts
@@ -62,24 +62,23 @@ Data points are a single unit of information that represent a measurement of a s
 > costs for [Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [Edge
 > Requests](/docs/manage-cdn-usage#edge-requests).
 
-### Optimizing Speed Insights data points
+### Optimizing Speed Insights events
 
-- To reduce cost, you can change the sample rate at a project level by using the `@vercel/speed-insights` package as explained in [Sample rate](/docs/speed-insights/package#samplerate). You can also provide a cost limit under your team's Billing settings page to ensure no more data points are collected for the rest of the billing period once the limit has been reached
+- To reduce cost, change the sample rate at a project level by using the `@vercel/speed-insights` package as explained in [Sample rate](/docs/speed-insights/package#samplerate). You can also set a cost limit under your team's Billing settings page to stop event collection for the rest of the billing period after your team reaches the limit
 - Use [beforeSend](/docs/speed-insights/package#beforesend) to exclude page views and events that might not be relevant
-- You may want to [disable speed insights](/docs/speed-insights/disable) for projects that no longer need it. This will stop data points getting collected for a project
+- [Disable Speed Insights](/docs/speed-insights/using-speed-insights#disabling-speed-insights) for projects that no longer need it. This stops Vercel from collecting events for a project
 
 ## Managing Monitoring events
 
-> **💡 Note:** Monitoring has become part of Observability, and is included with
-> Observability Plus at no additional cost. If you are currently paying for
-> Monitoring, you should
+> **💡 Note:** Monitoring is now part of Observability, and Observability Plus includes it
+> at no additional cost. If you are currently paying for Monitoring,
 > [migrate](/docs/observability#enabling-observability-plus) to Observability
 > Plus to get access to additional product features with a longer retention
 > period with no base fee.
 
 Vercel creates an event each time a request is made to your website. These events include unique parameters such as execution time and bandwidth used. For a complete list, see the [visualize](/docs/observability/monitoring/monitoring-reference#visualize) and [group by](/docs/observability/monitoring/monitoring-reference#group-by) docs.
 
-You pay for monitoring based on the **total** number of events used above the included limit included in your plan. You can see this number by selecting **Count** in the chart.
+Monitoring is deprecated and no longer exposed as a current top-level pricing resource. If you are still using Monitoring, migrate to Observability Plus for usage-based pricing and current observability features.
 
 You can also view the number of events used by each project in your team by selecting **Projects** in the chart. This will show you the number of events used by each project in your team, allowing you to optimize your usage.
 
@@ -98,7 +97,7 @@ You can optimize your log drains usage by:
 
 Vercel creates one or many events each time a request is made to your website. To learn more, see [Events](/docs/observability#tracked-events).
 
-You pay for Observability Plus based on the **total** number of events used above the included limit included in your plan.
+You pay for Observability Plus based on the **total** number of events generated by projects where Observability Plus is enabled.
 
 The Observability chart allows you to view by the total **Count**, **Event Type**, or **Projects** over the selected time period.
 

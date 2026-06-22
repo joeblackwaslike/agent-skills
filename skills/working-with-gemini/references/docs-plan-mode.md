@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/plan-mode.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "81ca2ea403d1cb8eb7c4941f8d446d56a8d49e97ab5af400c24dfd11be1d55b3"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "e05986bb6c7e6e93e63c2317715ea31ce7e0ac535e39a0c4527a6642e3ebe37b"
 ---
 
 # Plan Mode
@@ -70,6 +70,7 @@ Gemini CLI takes action.
     reach an informal agreement on the approach before proceeding.
 3.  **Review the plan:** Once you've agreed on the strategy, Gemini CLI creates
     a detailed implementation plan as a Markdown file in your plans directory.
+
     - **View:** You can open and read this file to understand the proposed
       changes.
     - **Edit:** Press `Ctrl+X` to open the plan directly in your configured

@@ -13,11 +13,11 @@ related:
   - /docs/image-optimization
   - /docs/cdn
   - /docs/cdn-cache
-summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
+summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and Edge Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7732cadfb9b75898a8cc95fc40473b40995994a6ec7e4392c08db5a66ad127e8"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "9ac2ab13a2823eeaa1845b30668c4174f9c1717c88b37160f08b4ef60b17d824"
 ---
 
 # CDN pricing and usage

@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "93bee17c592956cd7feeabdacd1ea3ba1c19a6b6bcd2d4c07ff53a3ee8e462c0"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "79853778d3e19578db2328f80f495d97de8694263fab13c9e676d40858220a61"
 ---
 
 # Frontends on Vercel
@@ -42,8 +42,8 @@ The following frontend frameworks are supported with zero-configuration.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/eleventy) | [View Demo](https://eleventy-template.vercel.app)
 - **Ember.js**: Ember.js helps webapp developers be more productive out of the box.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/ember) | [View Demo](https://ember-template.vercel.app)
-- **Eve**: A filesystem-first framework for durable backend agents on Vercel.
-  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/eve)
+- **eve**: A filesystem-first framework for durable backend agents on Vercel.
+  - [Deploy](https://vercel.com/new/clone?demo-title=eve+Chat+Template&demo-description=A+persisted+Next.js+chat+template+for+eve%2C+built+with+shadcn%2Fui%2C+Tailwind+CSS%2C+Streamdown%2C+Better+Auth%2C+Drizzle%2C+and+Neon.&demo-url=https%3A%2F%2Feve-chat-template.labs.vercel.dev%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2FYXYTquqpBmvVFbASdIvrC%2F04d5a87ebe706ed31adc65193f3b4cdd%2Feve-chat__1_.png&project-name=eve+Chat+Template&repository-name=eve-chat-template&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Feve-chat-template&from=templates&skippable-integrations=1) | [View Demo](https://eve-chat-template.labs.vercel.dev/)
 - **FastHTML**: The fastest way to create an HTML app
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/fasthtml) | [View Demo](https://fasthtml-template.vercel.app)
 - **Gatsby.js**: Gatsby helps developers build blazing fast websites and apps with React.

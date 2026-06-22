@@ -15,8 +15,8 @@ related:
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8730a73b6890c7d4b6264b3b3a8e8afcbe81151d576d6a7aceb2e0ef44b9f7f1"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "076b5539fd493302d4b93fc2592987bf223aebd5e8cf529f8b0e1020b016a029"
 ---
 
 # Usage & Pricing for Cron Jobs
@@ -27,7 +27,7 @@ Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage
 
 |                | **Number of cron jobs per project** | **Minimum interval** | **Scheduling precision** |
 | -------------- | ----------------------------------- | -------------------- | ------------------------ |
-| **Hobby**      | 100 cron jobs                       | Once per day         | Hourly (±59 min)         |
+| **Hobby**      | 100 cron jobs                       | Once per day         | Per-hour (±59 min)       |
 | **Pro**        | 100 cron jobs                       | Once per minute      | Per-minute               |
 | **Enterprise** | 100 cron jobs                       | Once per minute      | Per-minute               |
 
@@ -38,7 +38,7 @@ Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage
 
 Hobby plans have two restrictions on cron jobs:
 
-1. **Daily execution limit**: Cron jobs can only run once per day. Expressions like `0 * * * *` (hourly) or `*/30 * * * *` (every 30 minutes) will fail deployment with the error:
+1. **Daily execution limit**: Cron jobs can only run once per day. Expressions like `0 * * * *` (per-hour) or `*/30 * * * *` (every 30 minutes) will fail deployment with the error:
    *Hobby accounts are limited to daily cron jobs. This cron expression would run more than once per day.*
 
 2. **Timing precision**: Vercel cannot assure a timely cron job invocation. For example, a cron job configured as `0 1 * * *` (every day at 1 am) will trigger anywhere between 1:00 am and 1:59 am.

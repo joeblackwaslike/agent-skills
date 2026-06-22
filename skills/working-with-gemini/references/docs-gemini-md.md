@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/gemini-md.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "b84ac3ef9525bf7d1c4bfedea7e63c7d55f50ad04ce8948b8ac3740dd6ba4847"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "d00eeaef22453de4756a9862d8467750f772e239c4ee9b6f755709429b47c2cf"
 ---
 
 # Provide context with GEMINI.md files
@@ -22,10 +22,12 @@ sends them to the model with every prompt. The CLI loads files in the following
 order:
 
 1.  **Global context file:**
+
     - **Location:** `~/.gemini/GEMINI.md` (in your user home directory).
     - **Scope:** Provides default instructions for all your projects.
 
 2.  **Environment and workspace context files:**
+
     - **Location:** The CLI searches for `GEMINI.md` files in your configured
       workspace directories and their parent directories.
     - **Scope:** Provides context relevant to the projects you are currently

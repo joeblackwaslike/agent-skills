@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/troubleshoot-install.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "d82846b0a16df40b2db685e0b37ef1994e3515416b2a62659aa2fb079d6bf419"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "b84eb626cc45c320e721551f8543aa6f29c26f75ca737964bc6648e89e8d9f23"
 ---
 
 > ## Documentation Index
@@ -28,6 +28,7 @@ Match the error message or symptom you're seeing to a fix:
 | `TLS connect error` or `SSL/TLS secure channel`                                             | [Update CA certificates](#tls-or-ssl-connection-errors)                                                                 |
 | `Failed to fetch version` or can't reach download server                                    | [Check network and proxy settings](#check-network-connectivity)                                                         |
 | `irm is not recognized` or `&& is not valid`                                                | [Use the right command for your shell](#wrong-install-command-on-windows)                                               |
+| `Cask 'claude-code' is unavailable: No Cask with this name exists`                          | [Update Homebrew](#homebrew-cask-unavailable-or-outdated)                                                               |
 | `'bash' is not recognized as the name of a cmdlet`                                          | [Use the Windows installer command](#wrong-install-command-on-windows)                                                  |
 | `Claude Code on Windows requires either Git for Windows (for bash) or PowerShell`           | [Install a shell](#claude-code-on-windows-requires-either-git-for-windows-for-bash-or-powershell)                       |
 | `Claude Code does not support 32-bit Windows`                                               | [Open Windows PowerShell, not the x86 entry](#claude-code-does-not-support-32-bit-windows)                              |
@@ -381,6 +382,17 @@ The `curl ... | bash` command downloads the script and pipes it to Bash for exec
    ```powershell theme={null}
    winget install Anthropic.ClaudeCode
    ```
+
+### Homebrew cask unavailable or outdated
+
+Homebrew reports `Error: Cask 'claude-code' is unavailable: No Cask with this name exists` when your local copy of the Homebrew cask index predates the cask's publication. Refresh the index and retry:
+
+```bash theme={null}
+brew update
+brew install --cask claude-code
+```
+
+If Homebrew installs an older Claude Code version than you expect, the same stale index is usually the cause. The `claude-code` cask tracks the stable channel and is typically about one week behind the latest release; for the newest version run `brew install --cask claude-code@latest` instead. See [Configure release channel](/en/setup#configure-release-channel) for the difference between the two casks.
 
 ### TLS or SSL connection errors
 

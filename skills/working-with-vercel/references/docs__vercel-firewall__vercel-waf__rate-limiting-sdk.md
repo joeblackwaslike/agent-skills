@@ -9,14 +9,14 @@ prerequisites:
   - /docs/vercel-firewall/vercel-waf
   - /docs/vercel-firewall
 related:
-  - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
+  - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
   - /docs/environment-variables/system-environment-variables
-  - /docs/security/vercel-waf/rate-limiting
+  - /docs/vercel-firewall/vercel-waf/rate-limiting
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1c17d57804401bbd0c45096998a59ad19d80d27df0de7b9bdb6a575bf6ea1cdc"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "2a0351976f08332bc3606164833a7be84422cfb372749089a60859528ace41ff"
 ---
 
 # Rate Limiting SDK
@@ -70,7 +70,7 @@ You can configure a custom rule with rate limit in your code by using the [`@ver
 
 - ### Test in a preview deployment
   For your code to run when deployed in a preview deployment, you need to:
-  - Enable [Protection Bypass for Automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) in your project
+  - Enable [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) in your project
   - Ensure [System Environment Variables are automatically exposed](/docs/environment-variables/system-environment-variables#system-environment-variables)
 
 ## Custom rate limit keys
@@ -164,7 +164,7 @@ export async function POST(request: Request) {
 
 ## Learn more
 
-- [WAF Rate Limiting](/docs/security/vercel-waf/rate-limiting): Counting algorithms, limits, and pricing
+- [WAF Rate Limiting](/docs/vercel-firewall/vercel-waf/rate-limiting): Counting algorithms, limits, and pricing
 
 
 ---

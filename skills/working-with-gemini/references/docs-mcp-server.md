@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-server.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "4ab29862568ff4b8f1389ca068c653c0450da42f5048c59a0da776ca47798d12"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "c666e348477ac0f37ee3522a4d8fc0f133904f4082e8fbae54afdcc0f825ce8b"
 ---
 
 # MCP servers with Gemini CLI
@@ -774,6 +774,7 @@ defaults:
 
 - **Tool lists:** Tool lists are merged securely to ensure the most restrictive
   policy wins:
+
   - **Exclusions (`excludeTools`):** Arrays are combined (unioned). If either
     source blocks a tool, it remains disabled.
   - **Inclusions (`includeTools`):** Arrays are intersected. If both sources

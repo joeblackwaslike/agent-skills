@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/chrome.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "9da345d19488ad20df87143f5fd13aea4feff389efe5a68f1036d79639ab61e8"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "dc4a69f353a8118807a89be0e1f9697f6d529bc13e1d3aba98040f4f2b738fdc"
 ---
 
 > ## Documentation Index
@@ -174,7 +174,7 @@ Claude records the interaction sequence and saves it as a GIF file.
 
 ### Extension not detected
 
-If Claude Code's setup-issues line lists `chrome`:
+If Claude Code can't detect the Chrome extension:
 
 1. Verify the Chrome extension is installed and enabled in `chrome://extensions`
 2. Verify Claude Code is up to date by running `claude --version`

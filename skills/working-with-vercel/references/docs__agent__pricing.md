@@ -12,16 +12,16 @@ related:
 summary: Understand how Vercel Agent pricing works and how to manage your credits
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "98f3d18b78e5a6737e9caef9f07a4a920f36644b471aa569d154f614f567b437"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "44b6853e557a21126c519bd16b15dd161a0315f072aed4631941e2c86afe292b"
 ---
 
 # Vercel Agent Pricing
 
 Vercel Agent uses a credit-based system and all agent features and tools will use the same credit pool.
 
-All teams with Observability Plus have **10 investigations included in their subscription every billing cycle** at no extra cost.
-Additional investigations cost both:
+All teams with Observability Plus have 10 alert investigations included every billing cycle at no extra cost.
+Each Code Review and additional investigation costs both:
 
 | Cost component | Price                | Details                                                                        |
 | -------------- | -------------------- | ------------------------------------------------------------------------------ |

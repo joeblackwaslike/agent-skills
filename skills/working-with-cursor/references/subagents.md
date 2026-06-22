@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/subagents.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "a73d2bb65e9548a7040c6266656fb5c55806784cfd946cc7111aca08d2dc3507"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "1c2cad223525d7f6b8cba227868f0550798e4503aa9bab3bdeb2d4debe1d350e"
 ---
 
 # Subagents
@@ -225,6 +225,22 @@ Launch multiple subagents concurrently for maximum throughput:
 
 Agent sends multiple Task tool calls in a single message, so subagents run simultaneously.
 
+## Cloud subagents
+
+From a local agent session, you can hand off work to a cloud subagent that runs on its own VM and branch. Your local workspace stays clean and responsive while long-running or parallel work happens in the cloud. The parent agent keeps running locally or in the cloud without interruption. Cloud subagents run from the [Agents Window](https://cursor.com/docs/agent/agents-window.md) in the Cursor desktop app.
+
+### Start a cloud subagent with /in-cloud
+
+Type `/in-cloud` and the next task you submit runs as a cloud subagent. It spins up its own VM and branch to work on the task.
+
+This is useful for isolating long-running or parallel work, such as fixing CI, investigating an issue, or exploring a codebase while you keep working locally.
+
+### Babysit a PR with /babysit
+
+Ask a cloud subagent to babysit a pull request with `/babysit` or by clicking the quick-action pill. The cloud agent iterates remotely to prepare the PR for merge without tying up your local session.
+
+Cloud subagents use the [environment](https://cursor.com/docs/cloud-agent/setup.md) configured for your repo and follow the same model and capability rules as other [Cloud Agents](https://cursor.com/docs/cloud-agent.md). Because they run on a cloud VM, their [MCP servers](https://cursor.com/docs/cloud-agent/capabilities.md#mcp-tools) come from your team's configuration at [cursor.com/agents](https://cursor.com/agents), not from your local session.
+
 ## Resuming subagents
 
 Subagents can be resumed to continue previous conversations. This is useful for long-running tasks that span multiple invocations.
@@ -395,8 +411,8 @@ Cursor includes three built-in subagents: `explore` for codebase search, `bash` 
 
 ### Can subagents launch other subagents?
 
-Yes. Since Cursor 2.5, subagents can launch child subagents to create a tree of coordinated work.
-Nested launches require Task tool access in the current mode, and hooks or tool policies can block spawning.
+Yes, within a nesting limit. Since Cursor 2.5, subagents can launch child subagents to create a tree of coordinated work. The main agent and its direct subagents can launch subagents, but a subagent launched by another subagent can't launch further ones.
+Nested launches also need Task tool access in the current mode, and hooks or tool policies can block spawning.
 
 ### How do I see what a subagent is doing?
 
@@ -408,7 +424,7 @@ The subagent returns an error status to the parent agent. The parent can retry, 
 
 ### Can I use MCP tools in subagents?
 
-Yes. Subagents inherit all tools from the parent, including MCP tools from configured servers.
+Yes. Subagents inherit all tools from the parent, including MCP tools from configured servers. [Cloud subagents](https://cursor.com/docs/subagents.md#cloud-subagents) are the exception: they run on a cloud VM and use the MCP servers configured for your team at [cursor.com/agents](https://cursor.com/agents), not the servers from your local session.
 
 ### How do I debug a misbehaving subagent?
 

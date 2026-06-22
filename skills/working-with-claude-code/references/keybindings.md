@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/keybindings.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "76a9e551763a082f116e61dba2d9a4c087699304137c7e6e4b12a7ddf941366e"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "3ae85f7ddea406396b7c6a7d81dc93da0c76aeeed1bfe061de1222caff306f3d"
 ---
 
 > ## Documentation Index
@@ -307,13 +307,14 @@ Actions available in the `Plugin` context:
 
 ### Settings actions
 
-Actions available in the `Settings` context:
+Actions available in the `Settings` context. The `select:accept` and `confirm:no` actions are reused from the [Select](#select-actions) and [Confirmation](#confirmation-actions) contexts with Settings-specific behavior: changes apply to each setting as soon as you change it, so Escape closes the panel with your changes saved rather than declining.
 
-| Action            | Default | Description                                                                 |
-| :---------------- | :------ | :-------------------------------------------------------------------------- |
-| `settings:search` | /       | Enter search mode                                                           |
-| `settings:retry`  | R       | Retry loading usage data (on error)                                         |
-| `settings:close`  | Enter   | Save changes and close the config panel. Escape discards changes and closes |
+| Action            | Default      | Description                                     |
+| :---------------- | :----------- | :---------------------------------------------- |
+| `settings:search` | /            | Enter search mode                               |
+| `settings:retry`  | R            | Retry loading usage data on error               |
+| `select:accept`   | Enter, Space | Change the selected setting or open its submenu |
+| `confirm:no`      | Escape       | Close the panel. Changes are already saved      |
 
 ### Doctor actions
 

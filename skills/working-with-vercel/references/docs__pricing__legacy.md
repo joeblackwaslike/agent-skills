@@ -12,11 +12,11 @@ related:
   - /docs/incremental-static-regeneration
   - /docs/cdn
   - /docs/functions
-summary: Learn about Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution metrics.
+summary: Learn about legacy Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution metrics that apply to older usage models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/legacy.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3864965f935fded7a3fd2ffd3a79463f5e73a66b1db343c32c46de89488e2c06"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "29c247ab4ec10a2aa0bfb851a2b8d1062d6f8bb21d36caac6692c2f07b86de2d"
 ---
 
 # Legacy Metrics

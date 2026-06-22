@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/glossary.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "47a978a88ee5108c2c449a6c839aac0672c1f53b0ed64129c636cbba8580dc58"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "86c3623575556999dd25e37351bae58067083d9a72a4f51a691a93b7d970e55f"
 ---
 
 > ## Documentation Index
@@ -39,6 +39,12 @@ Learn more: [How Claude Code works](/en/how-claude-code-works)
 The cycle Claude works through for every task: gather context, take action, verify results, and repeat until done. Each tool use returns information that informs the next step. You can interrupt the loop at any point to redirect. Most extension points, including [hooks](#hook), [skills](#skill), and [MCP](#mcp-model-context-protocol), plug into specific phases of this loop.
 
 Learn more: [How Claude Code works](/en/how-claude-code-works#the-agentic-loop)
+
+### Artifact
+
+A live, interactive web page Claude Code publishes from your session to a private URL on claude.ai, so you can see output visually or share it inside your organization instead of reading terminal text. The page updates in place when the session republishes. Artifacts you create from Claude Code appear in the same gallery as artifacts created in claude.ai conversations, but their sharing stops at your organization and they cannot be made public.
+
+Learn more: [Share session output as artifacts](/en/artifacts)
 
 ### Auto memory
 

@@ -16,8 +16,8 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions with the Node.js runtime.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "82efecd4dbe2bf11ccc54011063e82df804ac8f2db4449d3734900ea7a5e997b"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "08b764b0a1c449c054852d8c5555ed6857564409f41b699d06c3fbb63f458d5c"
 ---
 
 # Vercel Functions Limits
@@ -69,8 +69,9 @@ With [fluid compute](/docs/fluid-compute) enabled, Vercel Functions have the fol
 > **💡 Note:** The 800 second maximum is generally available for Pro and Enterprise teams.
 > The 1800 second extended maximum is in beta. Values above 800 seconds require
 > function-level configuration and are only supported for specific Node.js and
-> Python runtime versions. Secure Compute does not support durations above 800
-> seconds during the beta. See [configuring maximum
+> Python runtime versions. [Secure Compute](/docs/networking/secure-compute)
+> and [Static IPs](/docs/networking/static-ips) do not support durations above
+> 800 seconds during the beta. See [configuring maximum
 > duration](/docs/functions/configuring-functions/duration#extended-max-duration)
 > for the supported runtimes and examples.
 

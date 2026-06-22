@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "cb009899e6ca5a9d03c71a32196a13d912d965c9201c46b589fa49dd7eb7de64"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "52ba15cd401a6eb2536874d2854dd53c92ae1b0ff2c71326fedc1e94e5c18307"
 ---
 
 # Notifications
@@ -64,7 +64,7 @@ You can receive feedback on your deployments with the Comments feature. When som
 
 > **🔒 Permissions Required**: Customizing on-demand usage notifications
 
-You'll receive notifications as you accrue usage past the [included amounts](/docs/limits#included-usage) for products like Vercel Functions, Image Optimization, and more.
+You'll receive notifications as you accrue usage past the [included amounts](/docs/limits#usage-summary) for products like Vercel Functions, Image Optimization, and more.
 
 **Team owners** on the **Pro** plan can customize which usage categories they want to receive notifications for based on percentage thresholds or absolute dollar values.
 

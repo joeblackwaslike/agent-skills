@@ -16,8 +16,8 @@ related:
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "564c87584e455b152d0610d3eb8147c2c35b9635506379be8eb9f659eb754a89"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "d69c338a67f0ffacda4c42d3b85be9347be963bfbac1530cb3d2d1a42fe68828"
 ---
 
 # Regional Pricing
@@ -43,12 +43,10 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | ISR Reads | 1,000,000 Read Units for $0.40 - $0.64 |
 | Fast Origin Transfer | 1 GB for $0.06 - $0.43 |
 | Queue API Operations | 1,000,000 Operations for $0.60 - $0.96 |
-| Edge Request Additional CPU Duration | 1 Hour for $0.30 - $0.48 |
+| Edge Request CPU Duration | 1 Hour for $0.30 - $0.48 |
 | Image Optimization Transformations | $0.05 - $0.0812 per 1K |
 | Image Optimization Cache Reads | $0.40 - $0.64 per 1M |
 | Image Optimization Cache Writes | $4.00 - $6.40 per 1M |
-| Runtime Cache Writes | 1,000,000 Write Units for $4.00 - $6.40 |
-| Runtime Cache Reads | 1,000,000 Read Units for $0.40 - $0.64 |
 | WAF Rate Limiting | 1,000,000 Allowed Requests for $0.50 - $0.80 |
 | OWASP CRS per request number | 1,000,000 Inspected Requests for $0.80 - $1.28 |
 | OWASP CRS per request size | 1 GB of inspected request payload for $0.20 - $0.32 |

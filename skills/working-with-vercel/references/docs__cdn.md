@@ -16,8 +16,8 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2db032b783bd389fb011fc1bb16012fbd6e6efaff445e514d0f6fcfc0f445dce"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "5de368081e3b5ec4882795a97b8a2459e260591110018915f57b59e7d5b6b979"
 ---
 
 # Vercel CDN overview
@@ -120,7 +120,7 @@ You can configure branded error pages for 5xx server errors so visitors see a co
 
 ## Pricing and usage
 
-CDN pricing covers three resources: Fast Data Transfer, Fast Origin Transfer, and CDN Requests. Each plan includes a usage allotment, and pricing varies by the region where requests originate.
+CDN pricing covers three billable resources: Edge Requests, Fast Data Transfer, and Fast Origin Transfer. Edge Requests and Fast Data Transfer include explicit Pro allowances; Vercel bills Fast Origin Transfer on demand on Pro. Pricing can vary by the region where requests originate.
 
 - [CDN pricing and usage](/docs/manage-cdn-usage)
 - [Networking usage details](/docs/pricing/networking)

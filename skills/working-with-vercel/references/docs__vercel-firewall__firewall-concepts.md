@@ -8,7 +8,7 @@ type: conceptual
 prerequisites:
   - /docs/vercel-firewall
 related:
-  - /docs/security/deployment-protection
+  - /docs/deployment-protection
   - /docs/security/vercel-waf
   - /docs/security/vercel-waf/custom-rules
   - /docs/vercel-firewall
@@ -16,15 +16,15 @@ related:
 summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "09063315196f41eb3a800af07a10d55ef079057103a509791842f7102e1c4898"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "3b6e61c5cc44a1b616554a80464900459473fa244b2a8ef17857514bf904d655"
 ---
 
 # Firewall concepts
 
 ## How Vercel secures requests
 
-To safeguard your application against malicious activity, Vercel's platform-wide firewall is the first line of defense, inspecting requests as they arrive at Vercel's CDN. Once a request passes this layer, [deployment protection](/docs/security/deployment-protection) checks whether it can continue based on access rules set at the level of your project.
+To safeguard your application against malicious activity, Vercel's platform-wide firewall is the first line of defense, inspecting requests as they arrive at Vercel's CDN. Once a request passes this layer, [deployment protection](/docs/deployment-protection) checks whether it can continue based on access rules set at the level of your project.
 
 If allowed to go through, the request is subject to the rules that you configured with the [Web Application Firewall (WAF)](/docs/security/vercel-waf) at the level of your project. If the request is not blocked by the WAF rules, your deployment can process and serve it.
 
@@ -52,7 +52,7 @@ The deny action blocks requests immediately when they match a rule. When a reque
 
 - A `403 Forbidden` response is returned.
 - The request does not reach your application.
-- The request does not incur [CDN Requests](/docs/manage-cdn-usage#cdn-requests) or [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer).
+- The request does not incur [Edge Requests](/docs/manage-cdn-usage#edge-requests) or [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer).
 
 This is the most restrictive action and you should use it for known malicious traffic patterns or IP addresses.
 

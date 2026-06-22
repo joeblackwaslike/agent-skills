@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/github-actions.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "27d8163948b9a4c786f7c7179395f2e3dd0d9879b4c7c8123ef9e27baa22313e"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "2bbbc370fb5f187d65355a9df8d72fe72d7594cdae5845fb440cb7ae62731bda"
 ---
 
 # GitHub Actions
@@ -22,7 +22,7 @@ Basic setup:
   env:
     CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
   run: |
-    agent -p "Your prompt here" --model gpt-5.2
+    agent -p "Your prompt here" --model gpt-5
 ```
 
 For Windows runners, use PowerShell: `irm 'https://cursor.com/install?win32=true' | iex`

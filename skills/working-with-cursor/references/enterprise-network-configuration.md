@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/network-configuration.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "323b38078d35de8589b535a61d8236e572f8c6b28bc6664c142b6b3c1250a0d1"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "5442cde4845c91277ab21e7785d94758f577069946fde8ea9c3773f9f9bb9a3a"
 ---
 
 # Network Configuration
@@ -162,7 +162,8 @@ Cloud Agents run on Cursor's infrastructure, not your local network. They can ac
 - Public GitHub repositories
 - GitHub Enterprise Cloud repositories you've granted access to
 - GitHub Enterprise Server (self-hosted GitHub Enterprise)
-- On-prem + cloud-based GitLab and Bitbucket
+- On-prem and cloud-based GitLab
+- Bitbucket Cloud repositories
 - Public package registries (npm, PyPI, etc.)
 
 Cloud Agents cannot access:

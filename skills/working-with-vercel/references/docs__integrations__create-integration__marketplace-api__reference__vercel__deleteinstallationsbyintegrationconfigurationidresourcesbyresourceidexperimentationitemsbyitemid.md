@@ -3,7 +3,7 @@ title: deleteinstallationsbyintegrationconfigurationidresourcesbyresourceidexper
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/deleteinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/deleteinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid"
-last_updated: 2026-06-15
+last_updated: 2026-06-22
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about deleteinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/deleteinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "587135e086c9654970e7ceea6f66930910dacd9f8564ed17ff85b1bd6028758b"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "8d755454a09952af7ed9ae99e54d8e188f407a700201b051c66cbd9d8ec8ceaf"
 ---
 
 # Delete an existing experimentation item

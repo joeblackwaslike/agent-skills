@@ -1,6 +1,6 @@
 ---
 source: "https://code.claude.com/docs/en/plugins.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
+fetched_at: "2026-06-22T05:55:28.947Z"
 sha256: "bbcd6c35fef84b2fcec3c9ada74538f8593f01e3ecf983fcd65bdac7d4057d55"
 ---
 

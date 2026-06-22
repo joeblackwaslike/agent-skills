@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5f0e43ee51f20d98aec1889f4321fcf71117353176ea363d356011e194a8f2ad"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "61eb7c307e5fea056d7087cf7c27d2ec953370a10d6922652973f3c621edb0d0"
 ---
 
 # Vercel Pro Plan
@@ -101,8 +101,11 @@ The following features are available as add-ons:
 
 - **[SAML Single Sign-On](/docs/saml)**: $300/month
 - **[HIPAA BAA](/docs/security/compliance#hipaa)**: Healthcare compliance agreements for $350/month
+- **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $150/month
 - **[Flags Explorer](/docs/flags/flags-explorer)**: $250/month
 - **[Observability Plus](/docs/observability/observability-plus)**: $1.20 per 1 million events
+- **[Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix)**: $100/month
+- **[Static IPs](/docs/networking/static-ips)**: $100/month per project, plus Private Data Transfer
 - **[Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus)**: $10/month
 - **[Speed Insights](/docs/speed-insights)**: $10/month per project
 
@@ -120,7 +123,6 @@ To downgrade from a Pro to Hobby plan without losing access to the team's projec
 When you downgrade a Pro team, all active members except for the original owner are removed.
 
 Due to restrictions in the downgrade flow, Pro teams will need to [manually transfer any connected Stores](/docs/storage#transferring-your-store) and/or [Domains](/docs/domains/working-with-domains/transfer-your-domain#transferring-domains-between-projects) to a new destination before proceeding with downgrade.
-
 
 
 ---

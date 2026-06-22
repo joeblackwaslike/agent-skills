@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/agent/tools/terminal.md"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "c88f999b0b0a3c51c00743d452311a4973c3ea12af62c35e40a52daf047983df"
+---
+
 # Terminal
 
 Cursor runs shell commands directly in your terminal, with safe sandbox execution on macOS, Linux, and Windows.
@@ -269,7 +275,6 @@ Choose how sandboxed commands access the network:
 | **MCP Allowlist**            | MCP tools that run without approval. In **Allowlist (with Sandbox)** mode, these run outside the sandbox; in **Allowlist** mode, they run normally without sandbox restrictions.         |
 | **Browser Protection**       | Prevent Cursor from automatically running [Browser](https://cursor.com/docs/agent/tools/browser.md) tools.                                                                               |
 | **File-Deletion Protection** | Prevent Cursor from deleting files automatically.                                                                                                                                        |
-| **Dotfile Protection**       | Prevent Cursor from modifying dot files like .gitignore automatically.                                                                                                                   |
 | **External-File Protection** | Prevent Cursor from creating or modifying files outside of the workspace automatically.                                                                                                  |
 
 ## Enterprise controls

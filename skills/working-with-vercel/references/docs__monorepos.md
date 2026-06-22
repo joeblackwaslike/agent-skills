@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b13e077d4d3278ea1680cd705f7a83cc75a598f53bd9cdc95a58049ada71e6ff"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "3b634baee62a38dc3855dab527de3b7e941c6a422d20ed3206a430a7dd2590fc"
 ---
 
 # Using Monorepos
@@ -152,9 +152,10 @@ changes that span both projects.
 
 - ### Retrieve Related Project Information
   The next deployment will have the `VERCEL_RELATED_PROJECTS` environment variable set containing the urls of the related projects for use.
-  > **💡 Note:** View the data provided for each project in the
-  > [`@vercel/related-projects`](https://github.com/vercel/vercel/blob/main/packages/related-projects/src/types.ts#L9-L58)
-  > package.
+  > **💡 Note:** If you're using [Turborepo Strict
+  > Mode](https://turborepo.com/docs/crafting-your-repository/using-environment-variables#strict-mode)
+  > for environment variables, add the `VERCEL_RELATED_PROJECTS` variable to
+  > `turbo.json`.
   To access this information, you can use the [`@vercel/related-projects`](https://github.com/vercel/vercel/tree/main/packages/related-projects) npm package:
   ```bash filename="Terminal" package-manager="npm"
   npm i @vercel/related-projects

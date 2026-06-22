@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/releases.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "0dd32ebb612cbf4d0aef4ab25db5321912ceec4aefa175eb73f89bece90bd349"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "c50335efe3dce02254275e113e5c380848b5d62e2ca0058e89e58548584e7059"
 ---
 
 # Gemini CLI releases
@@ -481,6 +481,7 @@ This stage happens _after_ the NPM publish and creates the single-file
 executable that enables `npx` usage directly from the GitHub repository.
 
 1.  **The JavaScript bundle is created:**
+
     - **What happens:** The built JavaScript from both `packages/core/dist` and
       `packages/cli/dist`, along with all third-party JavaScript dependencies,
       are bundled by `esbuild` into a single, executable JavaScript file (for
@@ -492,6 +493,7 @@ executable that enables `npx` usage directly from the GitHub repository.
       the `core` package) are included directly.
 
 2.  **The `bundle` directory is assembled:**
+
     - **What happens:** A temporary `bundle` folder is created at the project
       root. The single `gemini.js` executable is placed inside it, along with
       other essential files.

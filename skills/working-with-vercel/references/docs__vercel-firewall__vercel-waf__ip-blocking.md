@@ -9,13 +9,13 @@ prerequisites:
   - /docs/vercel-firewall/vercel-waf
   - /docs/vercel-firewall
 related:
-  - /docs/security/vercel-waf/custom-rules
+  - /docs/vercel-firewall/vercel-waf/custom-rules
   - /docs/rbac/access-roles
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "77d8e08fa169e068bf5f88d5e5505633d04cc4f5c8d31f3a7d305a610c6e0ccd"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "fd8f373a9960e2d1961fd580fb7bdfe92a7f44079e7ff671a5601a375d5c8121"
 ---
 
 # WAF IP Blocking
@@ -27,7 +27,7 @@ Common use cases for IP blocking on Vercel include:
 - Blocking known malicious IP addresses
 - Preventing competitors or scrapers from accessing your content
 
-In cases such as blocking based on complying with specific laws and regulations or to restrict access to or from a particular geographic area, we recommend using [Custom Rules](/docs/security/vercel-waf/custom-rules).
+For cases such as complying with specific laws and regulations or restricting access to or from a particular geographic area, use [Custom Rules](/docs/vercel-firewall/vercel-waf/custom-rules).
 
 ## Access roles
 

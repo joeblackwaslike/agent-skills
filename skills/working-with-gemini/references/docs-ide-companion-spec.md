@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/ide-integration/ide-companion-spec.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "b3a75285f3dc8836a1df837ff631515d39781f9dfdec47613261e984d77434a0"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "143b49bbf7817cc5d6c8c3c6e3e1b255cb2a0f4c710a039d756cf8028c68cd91"
 ---
 
 # Gemini CLI companion plugin: Interface specification
@@ -62,6 +62,7 @@ creating a "discovery file."
     }
   }
   ```
+
   - `port` (number, required): The port of the MCP server.
   - `workspacePath` (string, required): A list of all open workspace root paths,
     delimited by the OS-specific path separator (`:` for Linux/macOS, `;` for
@@ -193,6 +194,7 @@ The plugin **MUST** register an `openDiff` tool on its MCP server.
 - **Response (`CallToolResult`):** The tool **MUST** immediately return a
   `CallToolResult` to acknowledge the request and report whether the diff view
   was successfully opened.
+
   - On Success: If the diff view was opened successfully, the response **MUST**
     contain empty content (that is, `content: []`).
   - On Failure: If an error prevented the diff view from opening, the response

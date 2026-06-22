@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/sandboxing.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "0221b1971918952638508cc07732be0eb4b6d5d2d7ba68efbf4ccd7b5419ed54"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "18ec5c6c01773a338bdb4ac1d3b699dada2827e1ee5a0cb517f338d9e2123c14"
 ---
 
 > ## Documentation Index
@@ -347,6 +347,7 @@ Some commands fail inside the sandbox even though they work outside it. The fixe
 * **Commands fail with a host-not-allowed error**: many CLI tools need to reach specific hosts. Granting permission when prompted adds the host to your allowed list so the tool runs inside the sandbox in future.
 * **`jest` hangs or fails**: `watchman` is incompatible with the sandbox. Run `jest --no-watchman` instead.
 * **Go-based CLIs fail TLS verification on macOS**: tools such as `gh`, `gcloud`, and `terraform` may fail TLS verification under Seatbelt. List these tools in `excludedCommands` to run them outside the sandbox. If you are using `httpProxyPort` with a MITM proxy and custom CA, set [`enableWeakerNetworkIsolation`](/en/settings#sandbox-settings) to `true` instead.
+* **`open`, `osascript`, or browser-based auth flows fail with error `-600` on macOS**: the sandbox blocks Apple Events by default. Set [`allowAppleEvents`](/en/settings#sandbox-settings) to `true` in your user, managed, or CLI settings to allow them. Project settings are ignored for this key. Enabling it removes code-execution isolation, since sandboxed commands can then launch other applications unsandboxed with no user prompt and send AppleScript commands to running applications, subject to the macOS automation-consent prompt (TCC). Alternatively, add the command to `excludedCommands` to run it outside the sandbox.
 * **`docker` commands fail**: `docker` is incompatible with the sandbox. Add `docker *` to `excludedCommands` to run it outside the sandbox.
 * **Bubblewrap fails to start inside a container**: in an unprivileged container, bubblewrap cannot mount a fresh `/proc` filesystem. Set [`enableWeakerNestedSandbox`](/en/settings#sandbox-settings) to `true` so the inner sandbox bind-mounts the container's existing `/proc` instead. Only use this setting when the outer container already provides the isolation boundary you need, since it exposes process information to sandboxed commands that a fresh `/proc` mount would hide.
 * **Seccomp filter on Linux**: the seccomp filter is required to block Unix domain sockets. The Dependencies tab in `/sandbox` shows whether it is available. If it is missing, run `npm install -g @anthropic-ai/sandbox-runtime` to install the helper.
@@ -367,6 +368,7 @@ Sandboxing reduces risk but is not a complete isolation boundary. Review the lim
 * **Privilege escalation via Unix sockets**: the `allowUnixSockets` configuration can inadvertently grant access to powerful system services that could lead to sandbox bypasses. For example, allowing access to `/var/run/docker.sock` effectively grants access to the host system through the Docker socket. Consider carefully any Unix sockets that you allow through the sandbox.
 * **Filesystem permission escalation**: overly broad filesystem write permissions can enable privilege escalation attacks. Allowing writes to directories containing executables in `$PATH`, system configuration directories, or user shell configuration files such as `.bashrc` or `.zshrc` can lead to code execution in different security contexts when other users or system processes access these files.
 * **Linux sandbox strength**: the Linux implementation provides strong filesystem and network isolation but includes an `enableWeakerNestedSandbox` mode that enables it to work inside Docker environments without privileged namespaces, or on Linux hosts where unprivileged user namespaces are disabled by sysctl. This option considerably weakens security and should only be used when additional isolation is otherwise enforced.
+* **Apple Events on macOS**: the macOS sandbox blocks Apple Events by default. The `allowAppleEvents` setting lifts this restriction so tools such as `open` and `osascript` work, but it removes code-execution isolation: sandboxed commands can launch other applications unsandboxed with no user prompt, and can send AppleScript commands to running applications, subject to the per-app macOS automation-consent prompt (TCC). It is only honored from user, managed, or CLI settings. Project settings cannot enable it.
 * **Settings files protected**: the sandbox automatically denies write access to Claude Code's `settings.json` files at every scope and to the managed settings directory, so a sandboxed command cannot modify its own policy.
 
 ### Platform and tool compatibility

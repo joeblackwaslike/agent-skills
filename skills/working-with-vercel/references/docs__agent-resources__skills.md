@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/agent-resources
 related:
-  []
+  - /docs/eve
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "55feb3d08c84401af776fdfe3419d780597fcfe4828ebc67f469a09173d491f5"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "7eab44bc0f1fa7d831de35f2b73f3df2496b6ae107595c395507472e970a4568"
 ---
 
 # Agent Skills
@@ -26,17 +26,36 @@ Below you'll find the official directory of Vercel published skills. Each skill 
 
 Install any skill using the skills CLI:
 
-```bash
+```bash filename="Terminal"
 npx skills add <owner/repo>
 ```
 
 To install a specific skill from a repository with multiple skills:
 
-```bash
+```bash filename="Terminal"
 npx skills add <owner/repo> --skill <skill-name>
 ```
 
 Skills work with 18+ AI agents including Claude Code, GitHub Copilot, Cursor, Cline, and many others.
+
+## eve
+
+When you run the skills CLI from an [eve](/docs/eve) project directory, it auto-detects the project and prompts you to install the skills for your eve building agent:
+
+```bash filename="Terminal"
+npx skills add <owner/repo>
+```
+
+The CLI shows a confirmation prompt:
+
+```text filename="Terminal"
+Detected an eve project. Install skills for eve?
+● Yes / ○ No
+```
+
+Select **Yes** to install the skills into your project's `agent/skills/` directory. Select **No** to install them for your local AI coding agent.
+
+Learn more about [adding skills to your eve agent](/kb/guide/how-to-add-eve-skills).
 
 ## React and Next.js
 
@@ -78,7 +97,7 @@ General-purpose skills for agent workflows.
 
 Browse the [skills.sh directory](https://skills.sh) to discover skills from Vercel and the community. You can also search for skills using the CLI:
 
-```bash
+```bash filename="Terminal"
 npx skills find <query>
 ```
 

@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the São Paulo, Brazil (gru1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/gru1.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "85539d2234148e860ce5263446ecf8cb737f55d71e8f2735010f48f9981cde08"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "364f2226e67b8b01b1f954af5345932e17d361d41b5c6a03e31b9a6f580d4fe8"
 ---
 
 # São Paulo, Brazil (gru1) pricing
@@ -44,8 +44,6 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0812 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.64 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $6.40 per 1M |
-| [Runtime Cache Writes](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $6.40 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | $0.64 per 1,000,000 Read Units |
 | [Firewall Rate Limit Requests](/docs/security/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.80 per 1,000,000 Allowed Requests |
 | [Firewall OWASP Requests](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $1.28 per 1,000,000 Inspected Requests |
 | [Firewall OWASP Excess Bytes](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.32 per 1 GB of inspected request payload |

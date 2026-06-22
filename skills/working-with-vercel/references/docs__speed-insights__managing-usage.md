@@ -12,28 +12,28 @@ related:
   - /docs/speed-insights/package
   - /docs/speed-insights/migrating-from-legacy
   - /docs/speed-insights/limits-and-pricing
-summary: Learn how to measure and manage Speed Insights usage with this guide to reduce data points and avoid unexpected costs.
+summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a16692c507fcf64528887460966dcf60e406198247567bbc0c01f26d0ed993f0"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "b9dde7b03b712100fde76da2df8ec0360ed91da6bbe3f0aed66f16d8930f9924"
 ---
 
 # Managing Usage & Costs
 
 > **🔒 Permissions Required**: Speed Insights
 
-This guide covers how to measure and reduce your Speed Insights usage using the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-insights) package.
+Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-insights) package to measure and reduce your Speed Insights usage.
 
 ## Understanding usage
 
-Your Speed Insights usage over time is displayed under the **Speed Insights** section of the [Usage](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fusage%23speed-insights\&title=Go%20to%20Usage) section in the sidebar on your dashboard.
+The **Speed Insights** section of [Usage](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fusage%23speed-insights\&title=Go%20to%20Usage) in your dashboard sidebar shows your Speed Insights usage over time.
 
-To learn more about data points and how they are calculated, see [Understanding data points](/docs/speed-insights/metrics#understanding-data-points).
+Vercel bills Speed Insights usage in events. To learn more about the underlying data points and how Vercel calculates them, see [Understanding data points](/docs/speed-insights/metrics#understanding-data-points).
 
 ## Reducing usage
 
-To reduce the number of data points collected, you can configure the `@vercel/speed-insights` package with the following options. First, install the package if you haven't already:
+To reduce the number of events collected, you can configure the `@vercel/speed-insights` package with the following options. First, install the package if you haven't already:
 
 ```bash
 npm i @vercel/speed-insights
@@ -43,15 +43,15 @@ Then configure one or both of the following options:
 
 ### Adjusting `sampleRate`
 
-The [`sampleRate`](/docs/speed-insights/package#samplerate) option determines the percentage of events sent to Vercel. By default, all events are sent. Lowering this value reduces the number of data points collected, which can lower costs while still providing statistically meaningful performance data.
+The [`sampleRate`](/docs/speed-insights/package#samplerate) option determines the percentage of events sent to Vercel. By default, all events are sent. Lowering this value reduces the number of events collected, which can lower costs while still providing statistically meaningful performance data.
 
-For example, setting `sampleRate` to `0.5` means only 50% of page views will send performance metrics:
+For example, setting `sampleRate` to `0.5` sends performance metrics for 50% of page views:
 
 > **💡 Note:** Lower sample rates reduce costs but may decrease data accuracy for low-traffic pages.
 
 ### Filtering pages with `beforeSend`
 
-The [`beforeSend`](/docs/speed-insights/package#beforesend) option lets you filter or modify events before they reach Vercel. You can use this to exclude specific pages from tracking, which reduces the total number of data points collected.
+The [`beforeSend`](/docs/speed-insights/package#beforesend) option lets you filter or modify events before they reach Vercel. You can use this to exclude specific pages from tracking, which reduces the total number of events collected.
 
 Common use cases include:
 

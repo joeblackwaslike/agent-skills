@@ -1,13 +1,11 @@
 ---
 source: "https://vercel.com/docs/errors/range_missing_unit.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9b26cd2dc4cce2c230b4575870aea0f954979ca3a5172b9447eeba8b2343c345"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "e0328a5d1292d4c8f5c4e8637d509e365678d76dad03f75daff359f381b34791"
 ---
 
 # Page Not Found
 
-`/docs/errors/range_missing_unit` does not exist. Similar pages:
+`/docs/errors/range_missing_unit` does not exist.
 
-- [RANGE_MISSING_UNIT](/docs/errors/range_missing_unit.md): The RANGE_MISSING_UNIT error occurs when the unit identifier of the Range header in a request is missing. The Range header is used to request a
-
-All pages: [/llms.txt](/llms.txt)
+Browse all pages: [/llms.txt](/llms.txt) | [/docs/llms-full.txt](/docs/llms-full.txt)

@@ -16,8 +16,8 @@ related:
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6a962bc5843746572428bd6fd7e9e182311b7fc99c295b99e492314166c231d9"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "44f98fd7f6750497c3f894a7e46f399f0424d38c8168125ac774b6bcbaadcb6f"
 ---
 
 # Vercel Blob Pricing
@@ -51,7 +51,7 @@ See the [usage details](#usage-details) and [pricing example](#pricing-example) 
 
 > **💡 Note:** [Edge Requests](/docs/pricing/networking#edge-requests) and [Fast Origin
 > Transfer](/docs/pricing/networking#fast-origin-transfer) for blobs are billed
-> at standard [CDN rates](/docs/cdn#pricing). The included resource usage for
+> at standard [CDN rates](/docs/cdn#pricing-and-usage). The included resource usage for
 > the Hobby plan is shared across all Vercel services in your project.
 
 ## Usage details
@@ -98,7 +98,7 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 ## Enterprise
 
-Vercel Blob is available for all Enterprise teams at the same price as Pro. Contact your account team for pricing or support questions.
+Vercel Blob Enterprise pricing is custom. Contact your account team for contracted rates and support questions.
 
 ## Pricing Example
 

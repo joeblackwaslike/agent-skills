@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T05:52:46.055Z",
+  "generated_at": "2026-06-22T05:54:36.179Z",
   "source": "Official Dev Containers specification (containers.dev) and VS Code documentation",
   "docs": [
     {
@@ -70,9 +70,9 @@
       "title": "Available features index",
       "url": "https://containers.dev/features",
       "file": "features-index.md",
-      "fetched_at": "2026-06-15T05:52:46.055Z",
-      "sha256": "fd0f238f06cf79ba5d6c757bae9f0eb4287c02199850840753764dacf5c505dc",
-      "bytes": 148776
+      "fetched_at": "2026-06-22T05:54:36.179Z",
+      "sha256": "10eaf7dcabc9a38f41ca58d1e5403d9861d3999eb2fdb3f7e89eba67c77d6533",
+      "bytes": 149096
     },
     {
       "slug": "templates-index",

@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/chat-platforms
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/capabilities/observability
+  - /docs/ai-gateway/observability-and-spend/observability
 summary: Use OpenClaw (formerly Clawdbot) with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/openclaw.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b6979858bd3003d52f9bf976333b5977c3ae555e88ec8333a7cf6bbde7b56e6b"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "889b653fc2beab90cb1c056e686771b1077bcf891fe07c5a6abd3bf85112419a"
 ---
 
 # OpenClaw (Clawdbot)
@@ -71,7 +71,7 @@ sha256: "b6979858bd3003d52f9bf976333b5977c3ae555e88ec8333a7cf6bbde7b56e6b"
   Your requests will now be routed through AI Gateway. You can verify this by checking your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard.
 
 - ### (Optional) Monitor usage and spend
-  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/capabilities/observability) for more details.
+  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
 
 ---

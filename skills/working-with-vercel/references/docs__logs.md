@@ -9,15 +9,15 @@ prerequisites:
   []
 related:
   - /docs/deployments/logs
-  - /docs/drains
   - /docs/logs/runtime
-  - /docs/observability/activity-log
-  - /docs/observability/audit-log
+  - /docs/drains
+  - /docs/activity-log
+  - /docs/audit-log
 summary: Use logs to find information on deployment builds, function executions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c2d307b8d7c70fa79c518c8307051ab59f1e36ba8ebcd1ccf1afb7a5f3c676ff"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "b64033ea27c7074c595578851df343f4d7f66580794cd67dba0859aa16e796cf"
 ---
 
 # Logs
@@ -38,7 +38,7 @@ Learn more about [Build Logs](/docs/deployments/logs).
 
 > **🔒 Permissions Required**: Runtime Logs
 
-Runtime logs allow you to search, inspect, and share your team's runtime logs at a project level. You can search runtime logs from the deployments section inside the Vercel dashboard. Your log data is retained for 3 days. For longer log storage, you can use [Log Drains](/docs/drains).
+Runtime logs allow you to search, inspect, and share your team's runtime logs at a project level. You can search runtime logs from the deployments section inside the Vercel dashboard. Retention depends on your plan and whether Observability Plus is enabled; see [Runtime Logs](/docs/logs/runtime#limits) for current limits. For longer log storage, you can use [Log Drains](/docs/drains).
 
 ![Image](https://vercel.com/front/docs/observability/log-thumbnail-light.png?lightbox)
 
@@ -50,7 +50,7 @@ Activity Logs provide chronologically organized events on your personal or team 
 
 ![Image](`/docs-assets/static/docs/concepts/observability/Activity-Light.png`)
 
-Learn more about [Activity Logs](/docs/observability/activity-log).
+Learn more about [Activity Logs](/docs/activity-log).
 
 ## Audit logs
 
@@ -60,7 +60,7 @@ Audit Logs allow owners to track events performed by other team members. The fea
 
 ![Image](`/docs-assets/static/docs/concepts/teams/audit-logs-section-light.png`)
 
-Learn more about [Audit Logs](/docs/observability/audit-log).
+Learn more about [Audit Logs](/docs/audit-log).
 
 ## Log drains
 

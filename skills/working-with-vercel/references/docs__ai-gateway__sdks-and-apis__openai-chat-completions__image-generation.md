@@ -9,13 +9,13 @@ prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis
 related:
-  - /docs/ai-gateway/capabilities/image-generation/openai
-  - /docs/ai-gateway/capabilities/image-generation
+  - /docs/ai-gateway/modalities/image-generation/openai
+  - /docs/ai-gateway/modalities/image-generation
 summary: Generate images using AI models that support multimodal output through the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1bcb3400bd933e2468cca08270e10a12f4c704d02218cbde3c123f013f14299c"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "5cba1bd0faa20bfa023a5d4a944fed29770801a3da9c17c2b167badb69817396"
 ---
 
 # Image Generation
@@ -276,12 +276,12 @@ for chunk in stream:
 
 OpenAI's `openai/gpt-image-2` and other image-only models (for example, Imagen, Flux, Grok Imagine) do not accept the Chat Completions `modalities` parameter. They use the OpenAI-compatible Images endpoint (`/v1/images/generations`) instead of `/v1/chat/completions`, called via `openai.images.generate`.
 
-See the [image-only models examples](/docs/ai-gateway/capabilities/image-generation/openai#image-only-models) for `openai/gpt-image-2`, Imagen, Flux, and Grok Imagine.
+See the [image-only models examples](/docs/ai-gateway/modalities/image-generation/openai#image-only-models) for `openai/gpt-image-2`, Imagen, Flux, and Grok Imagine.
 
 > **💡 Note:** **Image generation support:** Multimodal image output through Chat Completions
 > `modalities` is supported by Google's Gemini 2.5 Flash Image. Generated images
 > are returned as base64-encoded data URIs. For more detail, see the [Image
-> Generation documentation](/docs/ai-gateway/capabilities/image-generation).
+> Generation documentation](/docs/ai-gateway/modalities/image-generation).
 
 
 ---

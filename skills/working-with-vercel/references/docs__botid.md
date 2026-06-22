@@ -16,8 +16,8 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c1441663cfe0364cbd2bd793f370616bf3ffef9f7716b536462aa025758ac7ad"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "926b7e76188034214bfcd99fd9ec5c2a593c7ab4d5b4f6ed3a1c3e98222aa8a1"
 ---
 
 # BotID
@@ -75,10 +75,11 @@ Deep Analysis counters the most advanced bots by:
 
 ## Pricing
 
-| Mode          | Plans Available    | Price                                      |
-| ------------- | ------------------ | ------------------------------------------ |
-| Basic         | All Plans          | Free                                       |
-| Deep Analysis | Pro and Enterprise | $1/1000 `checkBotId()` Deep Analysis calls |
+| Mode          | Plans Available | Price                                      |
+| ------------- | --------------- | ------------------------------------------ |
+| Basic         | All Plans       | Free                                       |
+| Deep Analysis | Pro             | $1/1000 `checkBotId()` Deep Analysis calls |
+| Deep Analysis | Enterprise      | Custom                                     |
 
 > **💡 Note:** Calling the `checkBotId()` function in your code triggers BotID Deep Analysis
 > charges. Passive page views or requests that don't invoke the `checkBotId()`

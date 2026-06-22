@@ -9,18 +9,18 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/ai-gateway
-  - /docs/ai-gateway/capabilities/routing-rules
+  - /docs/ai-gateway/models-and-providers/routing-rules
   - /docs/ai-gateway/authentication-and-byok/authentication
 summary: "Manage AI Gateway resources from the Vercel CLI: create and configure AI Gateway API keys."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0073d0071658b63cd3663a9ebabfed9854ae1e6af667c96be2df4279c60e0d65"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "8e4a0a839539980115b2eb49c78aca4ac238dcc000b0a6266bb23086afbcd0f1"
 ---
 
 # vercel ai-gateway
 
-The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources from the Vercel CLI, including API keys and [routing rules](/docs/ai-gateway/capabilities/routing-rules).
+The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources from the Vercel CLI, including API keys and [routing rules](/docs/ai-gateway/models-and-providers/routing-rules).
 
 ## Usage
 
@@ -68,7 +68,7 @@ vercel ai-gateway api-keys create --name my-key --budget 500 --refresh-period mo
 
 ### rules
 
-Manage [AI Gateway routing rules](/docs/ai-gateway/capabilities/routing-rules) for the current team. A rule rewrites a request from one model to another, or denies a model. See the [routing rules documentation](/docs/ai-gateway/capabilities/routing-rules) for concepts, request behavior, and propagation details.
+Manage [AI Gateway routing rules](/docs/ai-gateway/models-and-providers/routing-rules) for the current team. A rule rewrites a request from one model to another, or denies a model. See the [routing rules documentation](/docs/ai-gateway/models-and-providers/routing-rules) for concepts, request behavior, and propagation details.
 
 > **💡 Note:** AI Gateway routing rules are in beta and may change before general
 > availability.
@@ -149,7 +149,7 @@ every month.*
 ## Related
 
 - [AI Gateway overview](/docs/ai-gateway)
-- [AI Gateway routing rules](/docs/ai-gateway/capabilities/routing-rules)
+- [AI Gateway routing rules](/docs/ai-gateway/models-and-providers/routing-rules)
 - [AI Gateway authentication](/docs/ai-gateway/authentication-and-byok/authentication)
 
 

@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   - /docs/workflows
 related:
-  - /docs/pricing
-  - /docs/plans/hobby
   - /docs/functions/usage-and-pricing
   - /docs/fluid-compute
   - /docs/queues/pricing
+  - /docs/functions/limitations
+  - /docs/observability
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0b64c685b6fe48566571ae49b1c18ef5beff200857f2924a2f452c2420b4fa3b"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "11eb4e88d542ec03ba6070ceda5b59bd5ef3bf5dee15a164e67e97e31e611974"
 ---
 
 # Workflow Pricing and Limits
@@ -28,7 +28,7 @@ Vercel bills Workflows usage across three resources:
 - **Workflow Data Written**: The amount of data written to managed persistence for workflow state and event logs, including stream data.
 - **Workflow Data Retained**: The amount of data stored per month in managed persistence.
 
-Vercel bills each resource based on usage. Each plan has an [included allotment](/docs/pricing). See the [Hobby plan limits](/docs/plans/hobby) for included usage.
+Vercel bills each resource based on usage. Hobby includes monthly allowances for Workflow Events and Workflow Data Written. Workflow Data Retained is not available on Hobby, and Vercel bills Pro usage on demand.
 
 | Resource | Hobby Included | On-demand Rates |
 | --- | --- | --- |

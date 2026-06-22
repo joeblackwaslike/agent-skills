@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "c1f02a48f5a7cea69b647b9c6d8cd5d0cac6e434da3f27fee97df51d3ec0fa80"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "9b134f272742c98fef3015c5946d526ea64b1e4283be68b298db90392e815517"
 ---
 
 > ## Documentation Index
@@ -87,12 +87,12 @@ The `cwd` option determines where the SDK looks for project-level inputs. CLAUDE
 
 `settingSources` covers user, project, and local settings. A few inputs are read regardless of its value:
 
-| Input                                                              | Behavior                                                                                                                  | To disable                                                                                  |
-| :----------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------ |
-| Managed policy settings                                            | Always loaded when present on the host                                                                                    | Remove the managed settings file                                                            |
-| `~/.claude.json` global config                                     | Always read                                                                                                               | Relocate with `CLAUDE_CONFIG_DIR` in `env`                                                  |
-| Auto memory at `~/.claude/projects/<project>/memory/`              | Loaded by default into the system prompt                                                                                  | Set `autoMemoryEnabled: false` in settings, or `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1` in `env` |
-| [claude.ai MCP connectors](/en/mcp#use-mcp-servers-from-claude-ai) | Loaded when the active authentication method is a claude.ai subscription. Passing `mcpServers: {}` does not suppress them | Set `strictMcpConfig: true`, or `ENABLE_CLAUDEAI_MCP_SERVERS=false` in `env`                |
+| Input                                                              | Behavior                                                                                                                  | To disable                                                                                                                                                          |
+| :----------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Managed policy settings                                            | Always loaded when present on the host                                                                                    | Remove the managed settings file                                                                                                                                    |
+| `~/.claude.json` global config                                     | Always read                                                                                                               | Relocate with `CLAUDE_CONFIG_DIR` in `env`                                                                                                                          |
+| Auto memory at `~/.claude/projects/<project>/memory/`              | Loaded by default into the system prompt                                                                                  | Set `autoMemoryEnabled: false` in settings, or `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1` in `env`                                                                         |
+| [claude.ai MCP connectors](/en/mcp#use-mcp-servers-from-claude-ai) | Loaded when the active authentication method is a claude.ai subscription. Passing `mcpServers: {}` does not suppress them | Set `strictMcpConfig: true`, [`disableClaudeAiConnectors: true`](/en/mcp#disable-claude-ai-connectors) in settings, or `ENABLE_CLAUDEAI_MCP_SERVERS=false` in `env` |
 
 <Warning>
   Do not rely on default `query()` options for multi-tenant isolation. Because the inputs above are read regardless of `settingSources`, an SDK process can pick up host-level configuration and per-directory memory. For multi-tenant deployments, run each tenant in its own filesystem and set `settingSources: []` plus `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1` in `env`. See [Secure deployment](/en/agent-sdk/secure-deployment).

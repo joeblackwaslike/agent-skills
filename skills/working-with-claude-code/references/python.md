@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/python.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "984058e4428f63ca851cc85b2c2caa13982ed1e22bbb28ab406f13e96c7aaf2f"
+fetched_at: "2026-06-22T05:55:28.947Z"
+sha256: "dcd20d85f9ebe28b19646d667303e5faa3e96fa478cf3ec815d84895a7ecb5f7"
 ---
 
 > ## Documentation Index
@@ -1049,21 +1049,21 @@ class AgentDefinition:
     permissionMode: PermissionMode | None = None
 ```
 
-| Field             | Required | Description                                                                                                                                                  |
-| :---------------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description`     | Yes      | Natural language description of when to use this agent                                                                                                       |
-| `prompt`          | Yes      | The agent's system prompt                                                                                                                                    |
-| `tools`           | No       | Array of allowed tool names. If omitted, inherits all tools                                                                                                  |
-| `disallowedTools` | No       | Array of tool names to remove from the agent's tool set                                                                                                      |
-| `model`           | No       | Model override for this agent. Accepts an alias such as `"sonnet"`, `"opus"`, `"haiku"`, or `"inherit"`, or a full model ID. If omitted, uses the main model |
-| `skills`          | No       | List of skill names to preload into the agent's context at startup. Unlisted skills remain invocable through the Skill tool                                  |
-| `memory`          | No       | Memory source for this agent: `"user"`, `"project"`, or `"local"`                                                                                            |
-| `mcpServers`      | No       | MCP servers available to this agent. Each entry is a server name or an inline `{name: config}` dict                                                          |
-| `initialPrompt`   | No       | Auto-submitted as the first user turn when this agent runs as the main thread agent                                                                          |
-| `maxTurns`        | No       | Maximum number of agentic turns before the agent stops                                                                                                       |
-| `background`      | No       | Run this agent as a non-blocking background task when invoked                                                                                                |
-| `effort`          | No       | Reasoning effort level for this agent. Accepts a named level or an integer. See [`EffortLevel`](#effortlevel)                                                |
-| `permissionMode`  | No       | Permission mode for tool execution within this agent. See [`PermissionMode`](#permissionmode)                                                                |
+| Field             | Required | Description                                                                                                                                                                                                                      |
+| :---------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description`     | Yes      | Natural language description of when to use this agent                                                                                                                                                                           |
+| `prompt`          | Yes      | The agent's system prompt                                                                                                                                                                                                        |
+| `tools`           | No       | Array of allowed tool names. If omitted, inherits all tools                                                                                                                                                                      |
+| `disallowedTools` | No       | Array of tool names to remove from the agent's tool set. MCP server-level patterns are also accepted: `mcp__server` or `mcp__server__*` removes every tool from that server, and `mcp__*` removes every MCP tool from any server |
+| `model`           | No       | Model override for this agent. Accepts an alias such as `"sonnet"`, `"opus"`, `"haiku"`, or `"inherit"`, or a full model ID. If omitted, uses the main model                                                                     |
+| `skills`          | No       | List of skill names to preload into the agent's context at startup. Unlisted skills remain invocable through the Skill tool                                                                                                      |
+| `memory`          | No       | Memory source for this agent: `"user"`, `"project"`, or `"local"`                                                                                                                                                                |
+| `mcpServers`      | No       | MCP servers available to this agent. Each entry is a server name or an inline `{name: config}` dict                                                                                                                              |
+| `initialPrompt`   | No       | Auto-submitted as the first user turn when this agent runs as the main thread agent                                                                                                                                              |
+| `maxTurns`        | No       | Maximum number of agentic turns before the agent stops                                                                                                                                                                           |
+| `background`      | No       | Run this agent as a non-blocking background task when invoked                                                                                                                                                                    |
+| `effort`          | No       | Reasoning effort level for this agent. Accepts a named level or an integer. See [`EffortLevel`](#effortlevel)                                                                                                                    |
+| `permissionMode`  | No       | Permission mode for tool execution within this agent. See [`PermissionMode`](#permissionmode)                                                                                                                                    |
 
 <Note>
   `AgentDefinition` field names use camelCase, such as `disallowedTools`, `permissionMode`, and `maxTurns`. These names map directly to the wire format shared with the TypeScript SDK. This differs from `ClaudeAgentOptions`, which uses Python snake\_case for the equivalent top-level fields such as `disallowed_tools` and `permission_mode`. Because `AgentDefinition` is a dataclass, passing a snake\_case keyword raises a `TypeError` at construction time.

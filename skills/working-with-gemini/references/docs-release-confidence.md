@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/release-confidence.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "0ca1f6c8e7377b711d833f3dfe3527dff55fc6ff9369500928f3a4b9b7a18880"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "f514bbe0a116a40410983647f57ee2e7dae527791d756a8e62c37f4efd0d1999"
 ---
 
 # Release confidence strategy
@@ -76,6 +76,7 @@ Before promoting a `preview` release to `stable`, a release manager must
 manually run through this checklist.
 
 - **Setup:**
+
   - [ ] Uninstall any existing global version:
         `npm uninstall -g @google/gemini-cli`
   - [ ] Clear npx cache (optional but recommended): `npm cache clean --force`
@@ -83,24 +84,29 @@ manually run through this checklist.
   - [ ] Verify version: `gemini --version`
 
 - **Authentication:**
+
   - [ ] In interactive mode run `/auth` and verify all sign in flows work:
     - [ ] Sign in with Google
     - [ ] API Key
     - [ ] Vertex AI
 
 - **Basic prompting:**
+
   - [ ] Run `gemini "Tell me a joke"` and verify a sensible response.
   - [ ] Run in interactive mode: `gemini`. Ask a follow-up question to test
         context.
 
 - **Piped input:**
+
   - [ ] Run `echo "Summarize this" | gemini` and verify it processes stdin.
 
 - **Context management:**
+
   - [ ] In interactive mode, use `@file` to add a local file to context. Ask a
         question about it.
 
 - **Settings:**
+
   - [ ] In interactive mode run `/settings` and make modifications
   - [ ] Validate that setting is changed
 

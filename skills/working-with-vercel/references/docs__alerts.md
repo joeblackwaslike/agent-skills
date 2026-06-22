@@ -15,8 +15,8 @@ related:
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1dad3bd0276b2c55be1f79462bf1d591eb73b4e80f956ff0060142af4b08ae93"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "a6459fcd05779fbba0238ee5c4e5a3a62a7fd41fd383ca1097d1f75ffb05f773"
 ---
 
 # Alerts
@@ -44,7 +44,7 @@ Usage anomaly alerts support these metrics:
 - [Function CPU duration](/docs/functions/usage-and-pricing#active-cpu)
 - [Function duration](/docs/functions/usage-and-pricing)
 - [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer)
-- [Edge requests](/docs/manage-cdn-usage#cdn-requests)
+- [Edge requests](/docs/manage-cdn-usage#edge-requests)
 - [Function invocations](/docs/functions/usage-and-pricing)
 
 ## Configure alerts with alert rules

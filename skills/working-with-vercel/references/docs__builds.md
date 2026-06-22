@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-06-15T22:56:22.423Z"
-sha256: "d1b252b9e38258ff3cfa31298449fd3dfa8648c1f5ef62bbe313a2ab30d88f8b"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "cab0b77904bd53f7f967b1cfc762dc8fc0469b96ce2a3124b7a521fdc552ce82"
 ---
 
 # Builds
@@ -153,6 +153,10 @@ To explore more features and best practices for building and deploying with Verc
 - [Working with Monorepos](/docs/monorepos): Set up multiple projects in a single repository and streamline deployments.
 
 ## Pricing
+
+Vercel bills build usage as Build Minutes based on the build machine type used for each build. Vercel bills Standard, Enhanced, and Turbo build machines per build minute, and Elastic build machines per CPU minute.
+
+For current rates and build machine details, see [Managing Builds](/docs/builds/managing-builds#larger-build-machines).
 
 
 ---

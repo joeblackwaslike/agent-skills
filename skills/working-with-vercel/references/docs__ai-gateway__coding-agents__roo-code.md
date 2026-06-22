@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/capabilities/observability
+  - /docs/ai-gateway/observability-and-spend/observability
 summary: Use Roo Code with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fb5a710fa8045d18b92cf5fe8d5b0dedb57718db957400e310d35607e88b063e"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "2282bbc74eb2cf614719cf7366d2ecb9f21529dd5dd451e8d62413275b197d01"
 ---
 
 # Roo Code
@@ -44,7 +44,7 @@ sha256: "fb5a710fa8045d18b92cf5fe8d5b0dedb57718db957400e310d35607e88b063e"
   > **💡 Note:** Prompt caching is supported for Claude and GPT models, which can reduce costs by reusing previously processed prompts.
 
 - ### (Optional) Monitor usage and spend
-  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/capabilities/observability) for more details.
+  View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
 
 ---

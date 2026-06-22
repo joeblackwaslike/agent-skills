@@ -12,13 +12,13 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f6f37b83d6556df93db06d577437f5a7951f44545b62aa28e5dc3e4f08cc6cc5"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "c38e6c2d1216a08dd5fc5d594b597df80fd44e7a286c0f220d3b5d21e5519c1d"
 ---
 
 # Fluid compute pricing
 
-Vercel Functions on fluid compute are priced based on your plan and resource usage. Each plan includes a set amount of resources per month:
+Vercel prices Functions on fluid compute based on your plan and resource usage. Hobby includes monthly allowances for Active CPU, Provisioned Memory, and Invocations. Vercel bills Pro usage on demand, and your monthly Pro usage credit can offset those charges:
 
 | Resource | Hobby | Pro |
 | --- | --- | --- |
@@ -58,10 +58,11 @@ For example: If you have a 1GB function instance running for 1 hour handling mul
 
 - Counts each request to your function
 - Billed per incoming request
-- First million requests included in both Hobby and Pro plans
+- Hobby includes 1 million invocations per month
+- Vercel bills Pro invocations on demand
 - Counts regardless of request success or failure
 
-For example: If your function receives 1.5 million requests on a Pro plan, you'll be billed for the 500,000 requests beyond your included million at $0.60 per million (approximately $0.30).
+For example: If your function receives 1.5 million requests on a Pro plan, Vercel bills those invocations at $0.60 per million, subject to your monthly Pro usage credit.
 
 ## Regional pricing
 
@@ -95,7 +96,7 @@ The following table shows the regional pricing for fluid compute resources on Ve
 
 A function instance runs in a region, and its pricing is based on the resources it uses in that region. The cost for each invocation is calculated based on the **Active CPU** and **Provisioned memory** resources it uses in that region.
 
-When the first request arrives, Vercel starts an instance with your configured memory. Provisioned memory is billed continuously until the last in-flight request finishes. **Active CPU is billed only while your code is actually running. If the request is waiting on I/O, CPU billing pauses but memory billing continues**.
+When the first request arrives, Vercel starts an instance with your configured memory. Vercel bills Provisioned Memory continuously until the last in-flight request finishes. **Vercel bills Active CPU only while your code is actually running. If the request is waiting on I/O, CPU billing pauses but memory billing continues**.
 
 After all requests complete, the instance is paused, and no CPU or memory charges apply until the next invocation. This means, you pay for memory whenever work is in progress, never for idle CPU, and nothing at all between requests.
 

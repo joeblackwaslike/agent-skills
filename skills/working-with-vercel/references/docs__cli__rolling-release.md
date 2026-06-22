@@ -12,13 +12,15 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "580c4a43c435d781500f701fb24d643204674cc773ecaf5d69b9dfb575e99f1d"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "0d220982c324266ee0a50966193ebd964e7954c878847aee3d1643ac8176391f"
 ---
 
 # vercel rolling-release
 
-The `vercel rolling-release` command (also available as `vercel rr`) is used to manage your project's rolling releases. [Rolling releases](/docs/rolling-releases) allow you to gradually roll out new deployments to a small fraction of your users before promoting them to everyone.
+Use the `vercel rolling-release` command (also available as `vercel rr`) to manage your project's rolling releases. [Rolling releases](/docs/rolling-releases) allow you to gradually roll out new deployments to a small fraction of your users before promoting them to everyone.
+
+Vercel offers Rolling Releases on Pro and Enterprise. Pro teams can use Rolling Releases for one project. See [Rolling Releases](/docs/rolling-releases) for limits and setup details.
 
 ## Usage
 

@@ -16,8 +16,8 @@ related:
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "13e54131506ebc2769ac3b85441751e4db6c4bc08a6b0208596e6d513263e729"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "89997a802bb4623a1bc8c175a9e68b424e44ce64b9ab5a115cd265c932b0022c"
 ---
 
 # Manage and optimize usage
@@ -45,8 +45,6 @@ The usage dashboard helps you understand and project your usage. You can also se
 
 - **Spend Management**: Spend management is an opt-in feature. Pro teams can set up a spend amount for your team to trigger notifications or actions. For example a webhook or pausing your projects when you hit your set amount
 - **Usage Notifications**: Usage notifications are set up automatically. Pro teams can also [configure the threshold](/docs/notifications#on-demand-usage-notifications) for usage alerts to notify you when you're approaching your usage limits
-
-
 
 ## CDN
 
@@ -92,7 +90,7 @@ To view information on managing each resource, select the resource link in the *
 
 ## Observability
 
-The table below shows the metrics for the [Web Analytics](/docs/pricing/observability#managing-web-analytics-events), [Speed Insights](/docs/pricing/observability#managing-speed-insights-data-points), and [Monitoring](/docs/manage-and-optimize-observability#optimizing-monitoring-events) sections of the **Usage** dashboard.
+The table below shows the metrics for the [Web Analytics](/docs/manage-and-optimize-observability#managing-web-analytics-events), [Speed Insights](/docs/manage-and-optimize-observability#managing-speed-insights-events), and [Monitoring](/docs/manage-and-optimize-observability#optimizing-monitoring-events) sections of the **Usage** dashboard.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 

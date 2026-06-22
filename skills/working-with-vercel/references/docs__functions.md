@@ -8,25 +8,32 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/fluid-compute
   - /docs/frameworks
   - /docs/cdn
   - /docs/functions/functions-api-reference
   - /docs/functions/functions-api-reference?framework=nextjs
+  - /docs/functions/quickstart
 summary: Run server-side code on Vercel without managing a server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "236f66c56d3f81959fdc6ef56aa0f981d784ecb335cb4ad7c5c9cfd5b6531f10"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "a2062709d8a4faea0d5600a1b25906132ab83b602a420368d70fe1d730c2583c"
 ---
 
 # Vercel Functions
 
-Vercel Functions let you run server-side code without managing servers. They adapt automatically to user demand, handle connections to APIs and databases, and offer enhanced concurrency through [fluid compute](/docs/fluid-compute). This makes them well suited for AI workloads or any [I/O-bound](# "What does I/O bound mean?") tasks that require efficient scaling.
-
 When you deploy your application, Vercel automatically sets up the tools and optimizations for your chosen [framework](/docs/frameworks). It ensures low latency by routing traffic through Vercel's [CDN](/docs/cdn), and placing your functions in a specific region when you need more control over [data locality](/docs/functions#functions-and-your-data-source).
 
 ![Image](https://vercel.com/front/docs/vercel-functions/first_image_light.png)
+
+## What Vercel Functions provide
+
+- **Zero server management.** Deploy code that scales automatically with traffic
+- **Fluid compute.** Reduced cold starts, lower latency, and lower costs via optimized concurrency
+- **Multi-runtime support.** Use Node.js, Python, Go, and more
+- **Regional control.** Pin functions to a region close to your data source
+- **Framework-aware.** Vercel detects and optimizes for your framework automatically
+- **Built-in observability.** View invocations, errors, and cost metrics in the dashboard
 
 ## Create your first Vercel Function
 
@@ -114,7 +121,7 @@ You can view various performance and cost efficiency metrics using Vercel Observ
 2. Click on the **Observability** tab and select the **Vercel Functions** section.
 3. Click on the chevron icon to expand and see all charts.
 
-You'll see total consumed and saved GB-Hours, and the ratio of the saved usage. When you have [fluid](/docs/fluid-compute) enabled, you'll also see the amount of cost savings from the [optimized concurrency model](/docs/fluid-compute#optimized-concurrency).
+You'll see current function usage metrics, including Active CPU, Provisioned Memory, Invocations, and savings from the [optimized concurrency model](/docs/fluid-compute#optimized-concurrency) when fluid compute is enabled.
 
 ## How Vercel Functions pricing works
 
@@ -122,16 +129,23 @@ Vercel Functions are priced based on active CPU, provisioned memory, and invocat
 
 If your project is not using fluid compute, see the [legacy pricing documentation](/docs/functions/usage-and-pricing/legacy-pricing) for Vercel Functions.
 
-## Related
+## Explore Vercel Functions
 
-- [What is compute?](/docs/fundamentals/what-is-compute)
-- [Fluid compute](/docs/fluid-compute)
-- [Runtimes](/docs/functions/runtimes)
-- [Configuring functions](/docs/functions/configuring-functions)
-- [Streaming](/docs/functions/streaming-functions)
-- [Limits](/docs/functions/limitations)
-- [Functions logs](/docs/functions/logs)
-- [Debugging slow Vercel Functions](/docs/functions/debug-slow-functions)
+**What is compute?**: Understand how compute works on Vercel's platform. [Learn more →](/docs/fundamentals/what-is-compute)
+
+**Fluid compute**: Learn how fluid compute reduces cold starts and lowers cost. [Learn more →](/docs/fluid-compute)
+
+**Runtimes**: Choose between Node.js, Python, Go, and other runtimes. [Learn more →](/docs/functions/runtimes)
+
+**Configuring functions**: Set regions, memory, timeouts, and other function options. [Learn more →](/docs/functions/configuring-functions)
+
+**Streaming**: Stream responses to deliver content as it's generated. [Learn more →](/docs/functions/streaming-functions)
+
+**Limits**: Review function limits including duration, payload size, and memory. [Learn more →](/docs/functions/limitations)
+
+**Functions logs**: Inspect runtime logs for a deployment. [Learn more →](/docs/functions/logs)
+
+**Debugging slow functions**: Diagnose and fix functions that take too long to respond. [Learn more →](/docs/functions/debug-slow-functions)
 
 
 ---

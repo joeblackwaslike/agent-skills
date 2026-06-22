@@ -16,8 +16,8 @@ related:
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "436ef99d1c6a4873a38ff1fff202c0106597c8c7f2ca062663bcbd17860af8db"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "85d835c75673a722829c6eb872967ade34534a22d9ce7213fa14e2f415c93b58"
 ---
 
 # Working with Drains
@@ -107,7 +107,7 @@ Drains usage is billed based on the pricing table below. Pricing is the same reg
 | Drains Volume | $0.50 |
 
 
-See [Optimizing Drains](/docs/pricing/observability#optimizing-drains-usage) for information on how to manage costs associated with Drains.
+See [Optimizing Drains](/docs/manage-and-optimize-observability#optimizing-drains-usage) for information on how to manage costs associated with Drains.
 
 ## More resources
 

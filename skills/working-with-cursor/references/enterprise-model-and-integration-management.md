@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/model-and-integration-management.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "3344cac7a3a3f55546753a356798ed11f211c63acd030924ac8c792840583a02"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "6631d48715a0ed9de8bb455cb3cfb1ffd00ff4eef50be201af5acfc8960dfe90"
 ---
 
 # Model and Integration Management
@@ -127,6 +127,12 @@ The allowlist entry matches against the full URL `https://mcp.acme.com/sse`:
 You can prevent Cursor from accessing specific repositories.
 
 Add repository URLs or patterns in the [team dashboard](https://cursor.com/docs/account/teams/dashboard.md) under "Repository Blocklist" (Enterprise only). Cursor will refuse to index or work with blocked repositories.
+
+## Protected Git Scopes
+
+Lock a Git organization, group, or namespace to your Cursor organization so only your teams can use its repositories with [Cloud Agents](https://cursor.com/docs/cloud-agent.md), [automations](https://cursor.com/docs/cloud-agent/automations.md), and [Bugbot](https://cursor.com/docs/bugbot.md). Cursor always verifies that a user can access a repository's connected source before it runs an agent or Bugbot check. Protected Git Scopes adds an organization-level guarantee on top of that per-user check, so enterprises can be confident their code can't be reached through unsanctioned ("shadow IT") Cursor accounts or outside teams, even ones that already have legitimate Git access.
+
+Protect or remove a scope from the [Integrations & MCP](https://cursor.com/dashboard/integrations) tab of your dashboard (Teams and Enterprise). Claiming a scope requires a Cursor team admin who is also a Git provider admin. Works with cloud and self-hosted GitHub and GitLab.
 
 ## Integration: Slack
 

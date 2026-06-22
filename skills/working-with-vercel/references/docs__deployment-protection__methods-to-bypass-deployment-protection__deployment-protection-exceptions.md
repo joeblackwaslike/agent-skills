@@ -12,12 +12,12 @@ related:
   - /docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/security/deployment-protection/methods-to-protect-deployments/password-protection
   - /docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips
-  - /docs/security/deployment-protection
+  - /docs/deployment-protection
 summary: Disable Deployment Protection for a list of preview domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "24b35e451d6cac69f65f7b24829a53c46c62a51a6d7a9943cbe90b89a90fa002"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "cffdcd4b668d6d27e1edf3d137ac9fdc4c130dcba150ac60c130a2f66185408f"
 ---
 
 # Deployment Protection Exceptions
@@ -30,7 +30,7 @@ When you add a domain to Deployment Protection Exceptions, it becomes publicly a
 
 ![Image](https://vercel.com/front/docs/security/deployment-exception-light.png)
 
-Deployment Protection Exceptions is designed for Preview Deployment domains. If you wish to make a Production Deployment domain public, see [Configuring Deployment Protection](/docs/security/deployment-protection#configuring-deployment-protection).
+Deployment Protection Exceptions is designed for Preview Deployment domains. If you wish to make a Production Deployment domain public, see [Only Production Deployments](/docs/deployment-protection#only-production-deployments).
 
 ## Adding a Deployment Protection Exception
 

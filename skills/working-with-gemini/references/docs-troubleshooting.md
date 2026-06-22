@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/resources/troubleshooting.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "27cf11e83cc105c879c00f89c5eb2d24d2e2a39d34e25e5cadf5e26897caa1c7"
+fetched_at: "2026-06-22T05:57:43.917Z"
+sha256: "2d11eec3cf098af919a97c87cc3ecd313bd9e6ac9b7df2b706b21e052413f784"
 ---
 
 # Troubleshooting guide
@@ -18,6 +18,7 @@ topics on:
 
 - **Error:
   `You must be a named user on your organization's Gemini Code Assist Standard edition subscription to use this service. Please contact your administrator to request an entitlement to Gemini Code Assist Standard edition.`**
+
   - **Cause:** This error might occur if Gemini CLI detects the
     `GOOGLE_CLOUD_PROJECT` or `GOOGLE_CLOUD_PROJECT_ID` environment variable is
     defined. Setting these variables forces an organization subscription check.
@@ -25,6 +26,7 @@ topics on:
     linked to an organizational subscription.
 
   - **Solution:**
+
     - **Individual Users:** Unset the `GOOGLE_CLOUD_PROJECT` and
       `GOOGLE_CLOUD_PROJECT_ID` environment variables. Check and remove these
       variables from your shell configuration files (for example, `.bashrc`,
@@ -36,12 +38,14 @@ topics on:
 
 - **Error:
   `Failed to sign in. Message: Your current account is not eligible... because it is not currently available in your location.`**
+
   - **Cause:** Gemini CLI does not currently support your location. For a full
     list of supported locations, see the following pages:
     - Gemini Code Assist for individuals:
       [Available locations](https://developers.google.com/gemini-code-assist/resources/available-locations#americas)
 
 - **Error: `Failed to sign in. Message: Request contains an invalid argument`**
+
   - **Cause:** Users with Google Workspace accounts or Google Cloud accounts
     associated with their Gmail accounts may not be able to activate the free
     tier of the Google Code Assist plan.
@@ -72,6 +76,7 @@ topics on:
 ## Common error messages and solutions
 
 - **Error: `EADDRINUSE` (Address already in use) when starting an MCP server.**
+
   - **Cause:** Another process is already using the port that the MCP server is
     trying to bind to.
   - **Solution:** Either stop the other process that is using the port or
@@ -79,6 +84,7 @@ topics on:
 
 - **Error: Command not found (when attempting to run Gemini CLI with
   `gemini`).**
+
   - **Cause:** Gemini CLI is not correctly installed or it is not in your
     system's `PATH`.
   - **Solution:** The update depends on how you installed Gemini CLI:
@@ -91,6 +97,7 @@ topics on:
       then rebuild using the command `npm run build`.
 
 - **Error: `MODULE_NOT_FOUND` or import errors.**
+
   - **Cause:** Dependencies are not installed correctly, or the project hasn't
     been built.
   - **Solution:**
@@ -99,6 +106,7 @@ topics on:
     3.  Verify that the build completed successfully with `npm run start`.
 
 - **Error: "Operation not permitted", "Permission denied", or similar.**
+
   - **Cause:** When sandboxing is enabled, Gemini CLI may attempt operations
     that are restricted by your sandbox configuration, such as writing outside
     the project directory or system temp directory.
@@ -107,6 +115,7 @@ topics on:
     configuration.
 
 - **Gemini CLI is not running in interactive mode in "CI" environments**
+
   - **Issue:** Gemini CLI does not enter interactive mode (no prompt appears) if
     an environment variable starting with `CI_` (for example, `CI_TOKEN`) is
     set. This is because the `is-in-ci` package, used by the underlying UI
@@ -122,6 +131,7 @@ topics on:
     `env -u CI_TOKEN gemini`
 
 - **DEBUG mode not working from project .env file**
+
   - **Issue:** Setting `DEBUG=true` in a project's `.env` file doesn't enable
     debug mode for gemini-cli.
   - **Cause:** The `DEBUG` and `DEBUG_MODE` variables are automatically excluded
@@ -161,12 +171,14 @@ is especially useful for scripting and automation.
 ## Debugging tips
 
 - **CLI debugging:**
+
   - Use the `--debug` flag for more detailed output. In interactive mode, press
     F12 to view the debug console.
   - Check the CLI logs, often found in a user-specific configuration or cache
     directory.
 
 - **Core debugging:**
+
   - Check the server console output for error messages or stack traces.
   - Increase log verbosity if configurable. For example, set the `DEBUG_MODE`
     environment variable to `true` or `1`.
@@ -174,6 +186,7 @@ is especially useful for scripting and automation.
     step through server-side code.
 
 - **Tool issues:**
+
   - If a specific tool is failing, try to isolate the issue by running the
     simplest possible version of the command or operation the tool performs.
   - For `run_shell_command`, check that the command works directly in your shell

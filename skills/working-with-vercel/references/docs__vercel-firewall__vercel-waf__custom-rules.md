@@ -9,21 +9,21 @@ prerequisites:
   - /docs/vercel-firewall/vercel-waf
   - /docs/vercel-firewall
 related:
-  - /docs/security/vercel-waf/rate-limiting
+  - /docs/vercel-firewall/vercel-waf/rate-limiting
   - /docs/vercel-firewall/vercel-waf/usage-and-pricing
   - /docs/rbac/access-roles
-  - /docs/security/vercel-waf/rule-configuration
+  - /docs/vercel-firewall/vercel-waf/rule-configuration
   - /docs/vercel-firewall/firewall-concepts
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "13c32c935f61b535c0177626c142e0821ff0c77d7ebba90c105ecc8e0e407d14"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "9a3726ca260832933024676b3fb9f50f2961fbe8271f8acaad4e6c1d3aa68759"
 ---
 
 # WAF Custom Rules
 
-You can [configure](#custom-rule-configuration) specific rules to log, deny, challenge, bypass, or [rate limit](/docs/security/vercel-waf/rate-limiting) traffic to your site. You can [describe rules in natural language](#create-a-rule-with-natural-language) or [configure conditions step by step](#get-started). When you apply the configuration, it takes effect immediately and does not require re-deployment. For billing details, review [Usage & Pricing for Vercel WAF](/docs/vercel-firewall/vercel-waf/usage-and-pricing).
+You can [configure](#custom-rule-configuration) specific rules to log, deny, challenge, bypass, or [rate limit](/docs/vercel-firewall/vercel-waf/rate-limiting) traffic to your site. You can [describe rules in natural language](#create-a-rule-with-natural-language) or [configure conditions step by step](#get-started). When you apply the configuration, it takes effect immediately and does not require re-deployment. For billing details, review [Usage & Pricing for Vercel WAF](/docs/vercel-firewall/vercel-waf/usage-and-pricing).
 
 [Get started](#get-started) by reviewing the [Best practices for applying rules](#best-practices-for-applying-rules) section.
 
@@ -36,7 +36,7 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 
 ## Custom Rule configuration
 
-You can create multiple Custom Rules for the same project. Each rule can perform the following actions according to one or more logical condition(s) that you set based on the value of specific [parameters](/docs/security/vercel-waf/rule-configuration) in the incoming request:
+You can create multiple Custom Rules for the same project. Each rule can perform the following actions according to one or more logical condition(s) that you set based on the value of specific [parameters](/docs/vercel-firewall/vercel-waf/rule-configuration) in the incoming request:
 
 - [log](/docs/vercel-firewall/firewall-concepts#log)
 - [deny](/docs/vercel-firewall/firewall-concepts#deny)
@@ -52,13 +52,13 @@ When a rule denies or challenges the traffic to your site and the client has not
 
 After a **Log** rule runs, the rule execution continues. If no other rule matches and acts on the request, the **Log** rule that is last matched is reported.
 
-When you apply a [rate limiting](/docs/security/vercel-waf/rate-limiting) rule, you need to include a follow up action that will log, deny, challenge, or return a 429 response.
+When you apply a [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) rule, include a follow-up action that logs, denies, challenges, or returns a 429 response.
 
 ## Persistent actions
 
 > **🔒 Permissions Required**: Persistent Actions
 
-When a custom rule blocks a client's request, future requests that do not match the rule's condition from the same client, are allowed through. If you want to deny all requests from the client whose first request was blocked, you will need to identify who this client is through [traffic monitoring](/docs/security/vercel-waf#traffic-monitoring) and create an IP Address rule for that purpose.
+When a custom rule blocks a client's request, future requests from the same client can still pass through if they do not match the rule's condition. To deny all requests from that client, identify the client through [traffic monitoring](/docs/vercel-firewall/vercel-waf) and create an IP Address rule.
 
 With persistent actions, you can automatically block potential bad actors by adding a time-based block to the **Challenge** or **Deny** action of your custom rule. When you do so, any client whose request is challenged or denied, will be blocked for a period of time that you specify.
 
@@ -110,7 +110,7 @@ Learn how to create, test, and apply a Custom Rule.
    ![Image](`/docs-assets/static/docs/security/vercel-waf-custom-rule-configure-and-or-light.png`)
 
 6. Select **Log** for the **Then** action
-   - For **Rate Limit**, review [WAF Rate Limiting](/docs/security/vercel-waf/rate-limiting#get-started)
+   - For **Rate Limit**, review [WAF Rate Limiting](/docs/vercel-firewall/vercel-waf/rate-limiting#get-started)
 
 7. Select **Save Rule** to apply it
 
@@ -133,7 +133,7 @@ Learn how to create, test, and apply a Custom Rule.
 
 14. Apply the changes with the **Review Changes** button
 
-Review [Common Examples](/docs/security/vercel-waf/examples) for the application of specific rules in common situations.
+Review [Common Examples](/docs/vercel-firewall/vercel-waf/examples) for the application of specific rules in common situations.
 
 ## Create a rule with natural language
 

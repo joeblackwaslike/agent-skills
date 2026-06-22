@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "c643d8ab2c102754e006f2839ba23586c726b4b6c0310fcbed84ac195950b891"
+fetched_at: "2026-06-22T05:59:23.731Z"
+sha256: "a22acf03425e2351c4fb6b51d77052ea27f0bb3a2a864a070ffdfdbd1f8c2a8a"
 ---
 
 You can add sub-issues to an issue to break down larger pieces of work into tasks. Your sub-issues show their relationship to the parent issue allowing you to track your work across {% data variables.product.github %}. Parent issues and sub-issue progress is also available in your {% data variables.projects.projects_v2 %}, allowing you to build views, filter, and group by parent issue.
@@ -31,3 +31,26 @@ You can add up to {% data variables.projects.sub-issue_limit %} sub-issues per p
     * Select an issue from one of the suggestions.
     * In the "Search issues" field, type an issue title or issue number, then click on the results.
     * To add issues from other repositories, click {% octicon "arrow-left" aria-label="Back to repository selection" %} next to the repository name and select a different repository.
+
+## Working with sub-issues using {% data variables.product.prodname_cli %}
+
+{% data reusables.cli.about-cli %} To learn more about {% data variables.product.prodname_cli %}, see [AUTOTITLE](/github-cli/github-cli/about-github-cli).
+
+To create a new issue as a sub-issue of an existing parent, use the `--parent` flag with `gh issue create`. The parent can be specified by issue number or URL.
+
+```shell
+gh issue create --title "TITLE" --body "ISSUE-DESCRIPTION" --parent PARENT-ISSUE-NUMBER
+```
+
+To add existing issues as sub-issues of a parent, use the `--add-sub-issue` flag with `gh issue edit`. The flag accepts a comma-separated list of issue numbers or URLs.
+
+```shell
+gh issue edit PARENT-ISSUE-NUMBER --add-sub-issue SUB-ISSUE-NUMBER
+```
+
+To remove a sub-issue from its parent, use `--remove-sub-issue` on the parent or `--remove-parent` on the sub-issue.
+
+```shell
+gh issue edit PARENT-ISSUE-NUMBER --remove-sub-issue SUB-ISSUE-NUMBER
+gh issue edit SUB-ISSUE-NUMBER --remove-parent
+```

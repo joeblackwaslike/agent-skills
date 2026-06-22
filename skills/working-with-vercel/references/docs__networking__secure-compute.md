@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "465c3486a07538125b44d111e7e19f803f2c29ac1510b19da1ee5b8e827b4194"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "8aac8debc9755fe4b547a1083ef53875c7deff8210ca1a84b40fefe28852fef3"
 ---
 
 # Secure Compute
@@ -184,7 +184,7 @@ If your current security and compliance obligations require more than dedicated 
 
 ## Pricing
 
-Secure Compute starts at **$6.5K/year** for Enterprise teams.
+Secure Compute is available as an Enterprise feature. Contact your Vercel account team for pricing.
 
 ### Data transfer
 
@@ -208,6 +208,10 @@ Monitor your usage in the **Team Settings** **Usage** section in the sidebar und
 ### Build delay
 
 When connected to a Secure Compute network, builds experience up to a 5s delay as they provision a secure build container. When this happens, your build is marked as **Provisioning Container** in the dashboard.
+
+### Extended max duration beta
+
+The [extended max duration beta for Vercel Functions](/docs/functions/configuring-functions/duration#extended-max-duration) is not yet supported for projects using Secure Compute.
 
 ### Max projects per network
 

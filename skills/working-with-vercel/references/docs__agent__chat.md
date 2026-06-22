@@ -15,8 +15,8 @@ related:
 summary: Manage your Vercel infrastructure through conversation with Vercel Agent
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3afcfd1fddb4681326dc693b834bc34b8528c41b3962179e13e098cea1e421a2"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "2a0a5f71f700c612ad7c61fe18959d82ab0bbac0c2dadc191b317c14e35acefb"
 ---
 
 # Chat
@@ -104,7 +104,7 @@ Team Owners and Admins can view all chat sessions for their team in the [Agent >
 
 - "Where can I add caching to reduce my bill?"
 - "Why did I get charged more this month compared to last?"
-- "Which projects generated the highest Function Duration usage?"
+- "Which projects generated the highest Active CPU usage?"
 
 **Traffic and analytics**
 

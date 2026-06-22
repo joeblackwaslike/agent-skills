@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/akinomyoga/ble.sh/master/README.md"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "3e3684b0a9daf28512d24b0d674e84a7da368b9df5c2ea102fba89cd91a91af0"
+fetched_at: "2026-06-22T05:54:50.496Z"
+sha256: "5845f13960eb464369898886ad5d2bb38f9e2fb245d57b81a83232ade845230e"
 ---
 
 [ Languages: **English** | [日本語](README-ja_JP.md) (Japanese) ]
@@ -199,7 +199,7 @@ but soon realized that everything needs to be re-implemented for the authentic s
 I decided to make it as an independent script `ble.sh`.
 The name stemmed from that of Zsh's line editor, *ZLE* (*Zsh Line Editor*), but suffixed with `.sh` for the implication of being written in a shell script.
 I'm occasionally asked about the pronunciation of `ble.sh`, but you can pronounce it as you like.
-After the two-week experiment, I was satisfied with my conclusion that it is *possible* to implement a full-featured line editor in Bash that satisfies the actual daily uses.
+After the two-week experiment, I was satisfied with my conclusion that it is *possible* to implement a full-featured line editor in Bash that satisfies actual daily use.
 The real efforts to improve the prototype implementation for real uses started in February 2015.
 I released the initial version in the next December. Until then, the basic part of the line editor was completed.
 The implementation of vim mode was started in September 2017 and completed in the next March.
@@ -505,9 +505,9 @@ Basically you can simply delete the installed directory and the settings that th
 ## 1.7 Troubleshooting
 
 - [Performance](https://github.com/akinomyoga/ble.sh/wiki/Performance)
-  describes hints for perfomance issue.
+  provides hints for performance issues.
 - [Reporting Issue](https://github.com/akinomyoga/ble.sh/wiki/Reporting-Issue)
-  describes information that you may check before reporting an issue.
+  provides information you may check before reporting an issue.
 
 ### Clearing cache
 
@@ -553,7 +553,7 @@ For the vi/vim mode, check [the wiki page](https://github.com/akinomyoga/ble.sh/
 
 ## 2.2 Disable features
 
-One of frequently asked questions is the way to disable a specific feature that
+One frequently asked question is how to disable a specific feature that
 `ble.sh` adds.  Here the settings for disabling features are summarized.  See
 also the settings
 [`config/readline`](https://github.com/akinomyoga/blesh-contrib/blob/master/config/readline.bash),

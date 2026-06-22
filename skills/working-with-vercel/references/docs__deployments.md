@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage deployments on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "35b43e64f699211006465119bffb2caa807dc792bca56a4f2120b8a1582b4dd2"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "3e0cb362c1d45d4a0a405e4b0a9f126caa30495176aef55e4ef681893805aee8"
 ---
 
 # Deploying to Vercel
@@ -164,6 +164,26 @@ For step-by-step workflows using the Vercel CLI to manage deployments, see:
 
 - [Rolling back a production deployment](/docs/deployments/rollback-production-deployment)
 - [Deploying a project from the CLI](/docs/projects/deploy-from-cli)
+
+## Explore deployments
+
+**Vercel Drop**: Deploy a folder by dragging it into your browser. No Git or CLI required. [Learn more →](/docs/drop)
+
+**Deploy from Git**: Connect GitHub, GitLab, Bitbucket, or Azure DevOps for automatic deployments. [Learn more →](/docs/git)
+
+**Deploy with the CLI**: Deploy from your terminal or CI/CD pipeline. [Learn more →](/docs/cli)
+
+**Deploy Hooks**: Trigger deployments with a unique URL. [Learn more →](/docs/deploy-hooks)
+
+**Vercel REST API**: Create deployments programmatically via HTTP. [Learn more →](/docs/rest-api)
+
+**Environments**: Understand local, preview, and production environments. [Learn more →](/docs/deployments/environments)
+
+**Managing deployments**: Redeploy, inspect, assign domains, and promote to production. [Learn more →](/docs/deployments/managing-deployments)
+
+**Rolling back a production deployment**: Revert to a previous production deployment safely. [Learn more →](/docs/deployments/rollback-production-deployment)
+
+**Deploy from the CLI**: Deploy a project end-to-end using Vercel CLI. [Learn more →](/docs/projects/deploy-from-cli)
 
 
 ---

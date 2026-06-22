@@ -13,8 +13,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9ba1d060830e4961e106cd9d86a8f6c217ddf79bfeb5964eecc2ba1333d8af36"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "3d0670556d3147e4f686d21892949b88b29b8bd731ae1dea302d1325b3cd7a01"
 ---
 
 # Using the Activity Log
@@ -193,6 +193,7 @@ The table below shows a list of events logged on the Activity page.
 | edge-cache-invalidate-by-tags | Active | The CDN cache was invalidated by tags. |
 | edge-cache-purge-all | Active | The CDN cache was purged. |
 | edge-cache-rollback-purge | Active | The CDN cache purge was rolled back. |
+| edge-config-backup-restored | Active | An Edge Config was restored from a backup. |
 | edge-config-created | Active | An Edge Config was created. |
 | edge-config-deleted | Active | An Edge Config was deleted. |
 | edge-config-items-updated | Active | The values in an Edge Config were updated. |
@@ -235,6 +236,7 @@ The table below shows a list of events logged on the Activity page.
 | flags-sdk-key-deleted | Active | An SDK Key for Vercel Flags was deleted. |
 | flags-segment | Active | A Segment definition for the Flags tab was created, updated, or deleted. |
 | flags-settings | Active | Settings for the Flags tab were created, updated, or deleted. |
+| git_account_integration_link_added | Active | A GitHub account was linked to an additional Vercel account as an integration. |
 | instant-rollback-created | Active | An instant rollback was created. |
 | integration-configuration-owner-changed | Active | An integration configuration owner was changed. |
 | integration-configuration-scope-change-confirmed | Active | The permissions upgrade request from an installed integration was confirmed. |
@@ -406,6 +408,8 @@ The table below shows a list of events logged on the Activity page.
 | protected-git-scope-added | Active | A Protected Git Scope was added for the team. |
 | protected-git-scope-removed | Active | A Protected Git Scope was removed from the team. |
 | runtime-cache-purge-all | Active | All runtime cache was purged. |
+| sandbox-alias-assigned | Active | An alias was assigned to a sandbox. |
+| sandbox-alias-delete | Active | An alias was removed from a sandbox. |
 | scale | Active | A deployment was scaled. |
 | scale-auto | Active | Auto-scaling was configured for a deployment. |
 | secondary-email-added | Active | An email was added to the account |
@@ -489,6 +493,8 @@ The table below shows a list of events logged on the Activity page.
 | team-slug-update | Active | The slug of a team was updated. |
 | unlink-login-connection | Active | A login connection was unlinked. |
 | user-delete | Active | A user account was deleted. |
+| user-emu-account-archived | Active | A user archived their personal account during enterprise-managed user setup. |
+| user-emu-account-recovered | Active | A user recovered their archived account using a recovery code. |
 | user-mfa-challenge-verified | Active | A two-factor challenge was verified |
 | user-mfa-configuration-updated | Active | Two-factor configuration was updated |
 | user-mfa-recovery-codes-regenerated | Active | Two-factor recovery codes were regenerated |
@@ -500,6 +506,9 @@ The table below shows a list of events logged on the Activity page.
 | user-token-deleted | Active | A Token was deleted. |
 | user-tokens-deleted | Active | All Tokens (except the current one) were deleted. |
 | username | Active | The username of a personal account was updated. |
+| vercel-agent-elevated-permissions-approved | Active | A Vercel Agent elevated access request was approved. |
+| vercel-agent-elevated-permissions-requested | Active | A Vercel Agent plan requested elevated access. |
+| vercel-agent-session-created | Active | A Vercel Agent session was created. |
 | vercel-app-tokens-revoked | Active | A user revoked tokens for an app. |
 | vercel-toolbar | Active | The Vercel Toolbar setting was updated. |
 | vpc-peering-connection-accepted | Active | A VPC peering connection was accepted. |

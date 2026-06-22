@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8639415c9d47f111f62865dc9ef967c6e436ad75a58624f2b820f2154fb97ea9"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "64f2141348ab13106c1e7dde5c7cec03a697003fdb7bcca384ec33eda0d3753a"
 ---
 
 # Static Configuration with vercel.json
@@ -40,7 +40,6 @@ This file should be created in your project's root directory and allows you to s
 - [images](#images)
 - [installCommand](#installcommand)
 - [outputDirectory](#outputdirectory)
-- [public](#public)
 - [redirects](#redirects)
 - [bulkRedirectsPath](#bulkredirectspath)
 - [regions](#regions)
@@ -524,22 +523,6 @@ In the following example, the deployment will look for the `build` directory rat
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": "build"
-}
-```
-
-## public
-
-**Type**: `Boolean`.
-
-**Default Value**: `false`.
-
-This option is deprecated and no longer enables public access to deployment source or build logs.
-Deployments always keep [source view](/docs/builds/build-features#source-view) and [logs view](/docs/builds/build-features#logs-view) protected behind authentication.
-
-```json filename="vercel.json"
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "public": false
 }
 ```
 
@@ -1467,6 +1450,22 @@ When `trailingSlash: undefined`, visiting a path with or without a trailing slas
 For example, both `/about` and `/about/` will serve the same content without redirecting.
 
 This is not recommended because it could lead to search engines indexing two different pages with duplicate content.
+
+## public
+
+> **💡 Note:** The `public` property is no longer supported and **will cause deployment
+> failures**. Remove it from your `vercel.json` immediately to fix broken
+> deployments.
+
+Remove the `"public"` key from your `vercel.json`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json"
+}
+```
+
+Deployments always keep [source view](/docs/builds/build-features#source-view) and [logs view](/docs/builds/build-features#logs-view) protected behind authentication. The `public` property had no effect and is no longer accepted by the validator.
 
 ## Legacy
 

@@ -10,15 +10,15 @@ prerequisites:
   - /docs/query
 related:
   - /docs/manage-cdn-usage
-  - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
   - /docs/cdn-cache
   - /docs/errors
+  - /docs/deployments/environments
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e98eb9e7c123d3cc6abcdec6701d25c3ea81aac8434a70f4abb0470d099d90eb"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "df2646bf917476a10107fcdcd79d22d032310943fd444d14eebab07bf0c356f3"
 ---
 
 # Monitoring Reference
@@ -33,9 +33,7 @@ The `Visualize` clause selects what query data is displayed. You can select one 
 | **Duration**                      | The time spent serving a request, as measured by Vercel's CDN                                                                    | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Incoming Fast Data Transfer**   | The amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the request.                               | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Outgoing Fast Data Transfer**   | The amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the response.                              | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Function Duration**             | The amount of [Vercel Function duration](/docs/fluid-compute#pricing-and-usage), as measured in GB-hours.                        | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Function Invocations**          | The number of [Vercel Function invocations](/docs/functions/usage-and-pricing#managing-function-invocations)                     | Count, Count per Second, Percentages                   |
-| **Function Duration**             | The amount of [Vercel Function duration](/docs/functions/usage-and-pricing#managing-function-duration), as measured in GB-hours. | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Function Invocations**          | The number of [Vercel Function invocations](/docs/functions/usage-and-pricing#invocations)                                      | Count, Count per Second, Percentages                   |
 | **Function CPU Time**             | The amount of CPU time a Vercel Function has spent responding to requests, as measured in milliseconds.                          | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Incoming Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) used by the request.                           | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Outgoing Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) used by the response.                          | Sum, Sum per Second, Min/Max, Percentages, Percentiles |

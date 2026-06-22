@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d4f19f15220b25bfdb18c0625c6bfe70649f330b153d4bc33ba1bcc7d536518f"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "36e902fa9e9cac6901e3675053701b5cc46bb5c8db2096996b4bd56ebba5325c"
 ---
 
 # Rolling Releases
@@ -26,10 +26,12 @@ sha256: "d4f19f15220b25bfdb18c0625c6bfe70649f330b153d4bc33ba1bcc7d536518f"
 
 Rolling Releases allow you to roll out new deployments to a small fraction of your users before promoting them to everyone.
 
-Once Rolling Releases is enabled, new deployments won't be immediately served to 100% of traffic. Instead, Vercel will direct a configurable fraction of
-your visitors, for example, 5%, to the new deployment. The rest of your traffic will be routed to your previous production deployment.
+Vercel offers Rolling Releases on Pro and Enterprise. Pro teams can use Rolling Releases for one project. Enterprise limits are custom.
 
-You can leave your rollout in this state for as long as you want, and Vercel will show you a breakdown of key metrics, such as [Speed Insights](/docs/speed-insights),
+After you enable Rolling Releases, Vercel does not immediately serve new deployments to 100% of traffic. Instead, Vercel directs a configurable fraction of
+your visitors, for example, 5%, to the new deployment. The rest of your traffic routes to your previous production deployment.
+
+You can leave your rollout in this state for as long as you want, and Vercel shows you a breakdown of key metrics, such as [Speed Insights](/docs/speed-insights),
 between the canary and current deployment. You can also compare these deployments with other metrics you gather with your own observability dashboards. When you're ready,
 or when a configurable period of time has passed, you can promote the prospective deployment to 100% of traffic. At any point, you can use
 [Instant Rollback](/docs/instant-rollback) to revert from the current release candidate.
@@ -46,7 +48,7 @@ or when a configurable period of time has passed, you can promote the prospectiv
 > the matching deployment. Without Skew Protection, users may experience
 > inconsistencies between client and server versions during rollouts.
 
-Once you've enabled Rolling Releases, you need to configure two or more stages for your release. Stages are the distinct
+After you enable Rolling Releases, configure two or more stages for your release. Stages are the distinct
 traffic ratios you want to serve as your release candidate rolls out. Each stage must send a larger fraction of traffic
 to the release candidate. The last stage must always be 100%, representing the full promotion of the
 release candidate. Many projects only need two stages, with a single fractional stage before final promotion, but you can
@@ -58,9 +60,9 @@ configure more stages as needed.
 > [setting the rolling release cookie](#setting-the-rolling-release-cookie) for
 > more information.
 
-Once Rolling Releases are configured for the project, any subsequent rollout will use the project's current rolling
-release configuration. Each new rollout clones the rolling release configuration. Therefore, editing the configuration
-will not impact any rollouts that are currently in progress.
+After you configure Rolling Releases for the project, each subsequent rollout uses the project's current rolling
+release configuration. Each new rollout clones the rolling release configuration. Editing the configuration
+does not affect rollouts that are currently in progress.
 
 ## Managing Rolling Releases
 

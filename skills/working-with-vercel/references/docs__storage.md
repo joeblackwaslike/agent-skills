@@ -16,8 +16,8 @@ related:
 summary: "Store large files and global configuration with Vercel's storage products."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ea0b43c2fa307b6b3e4466829a754ec5b34c69f327a6c2e5b5693f582ced2bf5"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "d985c18ae8657c11e46a0f8e5753ee363a0bef27457532a3216645fcee101a1c"
 ---
 
 # Vercel Storage overview
@@ -133,6 +133,24 @@ When successful, you'll be taken to the **Storage** section in the sidebar of th
 ### Transfer Marketplace resources
 
 You can transfer [Marketplace](/docs/marketplace-storage) resources between teams from the resource's **Settings** page. See [Transfer a resource to another team](/docs/integrations/install-an-integration/product-integration#transfer-a-resource-to-another-team) for steps.
+
+## Explore storage products
+
+**Vercel Blob**: Store images, videos, and other large files. [Learn more →](/docs/storage/vercel-blob)
+
+**Edge Config**: Global, low-latency data store for runtime configuration. [Learn more →](/docs/edge-config)
+
+**Marketplace Storage**: Postgres, KV, NoSQL, and other databases from Neon, Upstash, and more. [Learn more →](/docs/marketplace-storage)
+
+**Blob quickstart**: Upload your first file to Vercel Blob from a server. [Learn more →](/docs/storage/vercel-blob/server-upload)
+
+**Edge Config quickstart**: Read your first value from Edge Config. [Learn more →](/docs/edge-config/get-started)
+
+**Provision from the CLI**: Use \`vercel install\` to provision Marketplace resources. [Learn more →](/docs/cli/install)
+
+**Browse Storage Integrations**: See every storage provider in the Vercel Marketplace. [Learn more →](https://vercel.com/marketplace?category=storage)
+
+**Native Integrations**: Add a Marketplace integration to your project. [Learn more →](/docs/integrations/install-an-integration/product-integration)
 
 
 ---

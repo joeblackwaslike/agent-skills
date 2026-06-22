@@ -9,12 +9,12 @@ prerequisites:
   - /docs/vercel-firewall/vercel-waf
   - /docs/vercel-firewall
 related:
-  []
+  - /docs/vercel-firewall/vercel-waf/custom-rules
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "78763053da5844b9f75a6330d9c3525e7c543161da74613a50fb7ca37b3e3cc1"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "e7fd0a3daabe01dd3610df4df51a73e9ed1a8724d0a4a89eb51aefd9854931d0"
 ---
 
 # WAF Rate Limiting
@@ -41,7 +41,7 @@ The use of rate limiting rules helps ensure that only intended traffic reaches y
       ![Image](`/docs-assets/static/docs/security/vercel-waf-custom-rule-configure-light.png`)
 
    3. For the **Then** action, select **Rate Limit**
-      - If this is the first time you are creating a rate limit rule, you will need to review the **Rate Limiting Pricing** dialog and select **Continue**
+      - If this is the first time you are creating a rate limit rule, review the **Rate Limiting Pricing** dialog and select **Continue**
 
    4. Select [Fixed Window (all plans)](# "About the Fixed Window algorithm") or [Token Bucket (Enterprise)](# "About the Token Bucket algorithm") for the limiting strategy
 
@@ -70,7 +70,9 @@ The use of rate limiting rules helps ensure that only intended traffic reaches y
 | Counting algorithm     | Fixed window                          | Fixed window                          | Fixed window, Token bucket                           |
 | Counting window        | Minimum: **10s**, Maximum: **10mins** | Minimum: **10s**, Maximum: **10mins** | Minimum: **10s**, Maximum: **1hr**                   |
 | Number of rules        | 1 per project                         | 40 per project                        | 1000 per project                                     |
-| Included requests      | 1,000,000 Allowed requests            | 1,000,000 Allowed requests            |                                                      |
+| Included requests      | 1,000,000 Allowed requests            | Usage-based                           | Custom                                               |
+
+The Hobby limit above applies to WAF Rate Limiting rules. Hobby projects can have up to 3 total [custom firewall rules](/docs/vercel-firewall/vercel-waf/custom-rules).
 
 ## Pricing
 

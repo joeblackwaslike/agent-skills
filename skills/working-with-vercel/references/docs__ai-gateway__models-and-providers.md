@@ -9,12 +9,15 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/models-and-providers/provider-options
-  - /docs/ai-gateway/sdks-and-apis/rest-api
+  - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
+  - /docs/ai-gateway/models-and-providers/model-fallbacks
+  - /docs/ai-gateway/models-and-providers/provider-timeouts
+  - /docs/ai-gateway/models-and-providers/routing-rules
 summary: Learn about models and providers for the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5a845cb80b5e2654cf2865414e73bac01afa214fe8008f6a55ee9b865ebc00bc"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "43c61159b5e791b81f9f9f391bb053afbe244c03179e32c1bfdbca2c561753a8"
 ---
 
 # Models & Providers
@@ -23,6 +26,14 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 
 > **💡 Note:** To view the list of supported models and providers, check out the [AI Gateway
 > models page](https://vercel.com/ai-gateway/models).
+
+### In this section
+
+Configure how AI Gateway selects providers and routes requests, and apply capabilities to any model:
+
+- **Routing and selection**: [Provider options](/docs/ai-gateway/models-and-providers/provider-options), [provider filtering and ordering](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering), [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks), [provider timeouts](/docs/ai-gateway/models-and-providers/provider-timeouts), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), and [virtual models](/docs/ai-gateway/models-and-providers/virtual-models)
+- **Performance and cost**: [Automatic caching](/docs/ai-gateway/models-and-providers/automatic-caching), [service tiers](/docs/ai-gateway/models-and-providers/service-tiers), [uptime and status](/docs/ai-gateway/models-and-providers/uptime), and [metrics](/docs/ai-gateway/models-and-providers/metrics)
+- **Model capabilities**: [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) and [web search](/docs/ai-gateway/models-and-providers/web-search)
 
 ### What are models and providers?
 

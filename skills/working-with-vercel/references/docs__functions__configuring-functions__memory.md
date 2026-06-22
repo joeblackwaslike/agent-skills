@@ -12,12 +12,11 @@ related:
   - /docs/fluid-compute
   - /docs/functions/limitations
   - /docs/functions/usage-and-pricing
-  - /docs/pricing/serverless-functions
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2ad8b6f812e5c329f1ed1bfdb93cdc1fab5cb8ba7bf6eb621ef0a5721b921c85"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "303d4fbce40a512a268ca3e4c276b1191d0001d7acbf72ae4910d68b11145330"
 ---
 
 # Configuring Memory and CPU for Vercel Functions
@@ -29,7 +28,7 @@ The memory configuration of a function determines how much memory and CPU a func
 You should consider the following points when changing the memory size of your functions:
 
 - **Performance**: Increasing memory size can improve the performance of your functions, allowing them to run faster
-- **Cost**: Vercel Functions are billed based on the function duration, which is affected by the memory size. While increasing the function CPU can increase costs if the function duration stays the same, the increase in CPU can also make functions execute faster. If your function executes faster, it is possible for it to incur less overall function duration usage. This is especially important if your function runs CPU-intensive tasks. See [Pricing](#pricing) for more information on how function duration is calculated
+- **Cost**: Vercel bills Functions on fluid compute based on Active CPU, Provisioned Memory, and Invocations. Increasing memory also increases available CPU, which can help CPU-intensive functions finish faster and reduce Active CPU time. Larger memory settings can increase Provisioned Memory usage while requests are in progress. See [Pricing](#pricing) for more information
 
 ## Setting your default function memory / CPU size
 
@@ -89,28 +88,12 @@ To learn more about the maximum size of your function's memory, see [Max memory 
 
 ## Pricing
 
-While memory / CPU size is not an explicitly billed metric, it is fundamental in how the billed metric of  is calculated.
+Memory / CPU size affects two current fluid compute pricing dimensions:
 
-> **⚠️ Warning:** **Legacy Billing Model**: This describes the legacy Function duration billing
-> model based on wall-clock time. For new projects, we recommend [Fluid
-> Compute](/docs/functions/usage-and-pricing) which bills separately for active
-> CPU time and provisioned memory time for more cost-effective and transparent
-> pricing.
+- **Active CPU**: CPU time your code actively consumes. More CPU can reduce Active CPU time for CPU-bound work if the function finishes faster.
+- **Provisioned Memory**: Memory allocated to the function instance while requests are in progress. Larger memory settings increase the GB-hour rate for this dimension.
 
-You are charged based on the duration your Vercel functions have run. This is sometimes called "wall-clock time", which refers to the *actual time* elapsed during a process, similar to how you would measure time passing on a wall clock. It includes all time spent from start to finish of the process, regardless of whether that time was actively used for processing or spent waiting for a streamed response. Function Duration is calculated in GB-Hours, which is the **memory allocated for each Function in GB** x **the time in hours they were running**.
-
-For example, if a function [has](/docs/functions/configuring-functions/memory) 1.7 GB (1769 MB) of memory and is executed **1 million times** at a **1-second duration**:
-
-- Total Seconds: 1M \* (1s) = 1,000,000 Seconds
-- Total GB-Seconds: 1769/1024 GB \* 1,000,000 Seconds = 1,727,539.06 GB-Seconds
-- Total GB-Hrs: 1,727,539.06 GB-Seconds / 3600 = 479.87 GB-Hrs
-- The total Vercel Function Execution is 479.87 GB-Hrs.
-
-To see your current usage, open **Usage** in the sidebar on your team's [Dashboard](/dashboard) and go to **Functions** > **Duration**. You can use the **Ratio** option to see the total amount of execution time across all projects within your team, including the completions, errors, and timeouts.
-
-You can also view [Invocations](/docs/functions/usage-and-pricing#managing-function-invocations)
-to see the number of times your Functions have been invoked. To learn more about
-the cost of Vercel Functions, see [Vercel Function Pricing](/docs/pricing/serverless-functions).
+Vercel bills Invocations separately per incoming request. To learn more, see [Vercel Functions pricing](/docs/functions/usage-and-pricing).
 
 
 ---

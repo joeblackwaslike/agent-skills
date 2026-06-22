@@ -15,15 +15,15 @@ related:
 summary: Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/limits-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3dbc8ce1e60a94b2c33e43784d4d8c195c2d0175307c50803172cdb9f245cdd6"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "7c6270a9ee11ed77cdc418f6f24957579ad651e3aeccda0a316bb6b1ae068f83"
 ---
 
 # Limits and Pricing for Monitoring
 
 ## Pricing
 
-Monitoring has become part of Observability, and is included with Observability Plus at no additional cost. If you are currently paying for Monitoring, you should [migrate](/docs/observability/observability-plus#enabling-observability-plus) to Observability Plus to get access to additional product features with a longer retention period with no base fee.
+Monitoring is now part of Observability, and Observability Plus includes it at no additional cost. If you are currently paying for Monitoring, [migrate](/docs/observability/observability-plus#enabling-observability-plus) to Observability Plus to get access to additional product features, usage-based pricing, and a longer retention period.
 
 Even if you choose not to migrate to Observability Plus, Vercel will automatically move you to the new pricing model of $1.20 per 1 million events, as shown below.
 

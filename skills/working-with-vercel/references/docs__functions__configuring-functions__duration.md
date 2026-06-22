@@ -13,17 +13,17 @@ related:
   - /docs/functions/usage-and-pricing
   - /docs/functions/limitations
   - /docs/project-configuration
-  - /docs/workflows
+  - /docs/networking/secure-compute
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c6d87492f1b38c22373d07b8850672e03474bd6f6a739c9da3f34f4fa3d71db9"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "8ab16f34223b2b7d36e2bb2e3024d328c2878806dfa881ad05c2bb7f89449898"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
 
-The maximum duration configuration determines the longest time that a function can run. This guide will walk you through configuring the maximum duration for your Vercel Functions.
+The maximum duration configuration determines the longest time that a function can run. You can configure the maximum duration for Vercel Functions.
 
 ## Consequences of changing the maximum duration
 
@@ -263,7 +263,7 @@ Extended max duration is supported for the following runtimes during the beta:
 - `python3.13`
 - `python3.14`
 
-Secure Compute does not support durations above 800 seconds during the beta. Support for additional runtimes is coming soon.
+[Secure Compute](/docs/networking/secure-compute) and [Static IPs](/docs/networking/static-ips) do not support durations above 800 seconds during the beta.
 
 > **💡 Note:** For long-running request handlers that keep a client connection open over
 > HTTP/2, Vercel sends connection-level HTTP/2 `PING` frames while the response

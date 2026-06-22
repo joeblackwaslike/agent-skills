@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/integrations/slack.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "aa1f4c07a594ff9c77ee8d926b4834ae8541d9a270018d8725582e00f65c135e"
+fetched_at: "2026-06-22T05:56:56.704Z"
+sha256: "344e3b28f6ec1ce6423566c0b68d456901c131fc2fce7f1502b569605b9d4546"
 ---
 
 # Slack
@@ -22,7 +22,7 @@ With Cursor's integration for Slack, you can use [Cloud Agents](https://cursor.c
 
 4. After installing in Slack, you'll be redirected back to Cursor to finalize setup
 
-   1. Connect GitHub (if not already connected) and pick a default repository
+   1. Connect a repository provider (if not already connected) and pick a default repository
    2. Enable usage-based pricing
    3. Confirm privacy settings
 

@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3f1bdfec051c2503e7318b2092ba7eac8c6c5785a08e4fbbd06fd058e8a32a8d"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "41e29ec23bf403cf9c1b0c49cf52d0d7c25933ca6e34b1d0e74efca60cdafb07"
 ---
 
 # Understanding Vercel
@@ -39,20 +39,19 @@ The Pro trial offers an opportunity to explore [Pro features](/docs/plans/pro-pl
 
 ## Trial Limitations
 
-The trial plan includes a $20 credit and follows the same [general limits](/docs/limits#general-limits) as a regular plan but with specified usage restrictions. See how these compare to the [non-trial usage limits](/docs/limits#included-usage):
+The trial plan includes a $20 credit and follows the same [general limits](/docs/limits#general-limits) as a regular plan but with specified usage restrictions. See how these compare to the [non-trial usage limits](/docs/limits#usage-summary):
 
 |                                                                                            | Pro Trial Limits     |
 | ------------------------------------------------------------------------------------------ | -------------------- |
 | Owner Members                                                                              | 1                    |
 | Team Members (total, including Owners)                                                     | 10                   |
 | Projects                                                                                   | 200                  |
-| [Active CPU](/docs/functions/usage-and-pricing)                                            | 8 CPU-hrs            |
-| [Provisioned Memory](/docs/functions/usage-and-pricing)                                    | 720 GB-hrs           |
+| [Active CPU](/docs/functions/usage-and-pricing)                                            | 16 CPU-hrs           |
+| [Provisioned Memory](/docs/functions/usage-and-pricing)                                    | 1,440 GB-hrs         |
 | [Function Invocations](/docs/functions/usage-and-pricing)                                  | 1,000,000/month      |
-| Build Execution                                                                            | Max. 200 Hrs         |
-| [Image transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | Max. 5K/month        |
-| [Image cache reads](/docs/image-optimization/limits-and-pricing#image-cache-reads)         | Max. 300K/month      |
-| [Image cache writes](/docs/image-optimization/limits-and-pricing#image-cache-writes)       | Max. 100K/month      |
+| [Image transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | Max. 10K/month       |
+| [Image cache reads](/docs/image-optimization/limits-and-pricing#image-cache-reads)         | Max. 600K/month      |
+| [Image cache writes](/docs/image-optimization/limits-and-pricing#image-cache-writes)       | Max. 200K/month      |
 | Domains per Project                                                                        | 50                   |
 
 To monitor the current usage of your Team's projects, see the [Usage](/docs/limits/usage) guide.
@@ -63,7 +62,6 @@ The following Pro features are **not available** on the trial:
 
 - [Log drains](/docs/log-drains)
 - [Account webhooks](/docs/webhooks#account-webhooks)
-- Certain models (GPT-5 and Claude) on [Vercel AI Playground](https://sdk.vercel.ai/)
 
 Once your usage of [Active CPU](/docs/functions/usage-and-pricing), [Provisioned Memory](/docs/functions/usage-and-pricing), or [Function Invocations](/docs/functions/usage-and-pricing) exceeds or reaches 100% of the Pro trial usage, your trial will be paused.
 

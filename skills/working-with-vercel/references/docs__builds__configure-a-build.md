@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a3ae1a47ba3b78b1f7949d2fd1f176416aacaa8bbd008e13b2b150a1d7c55ea9"
+fetched_at: "2026-06-22T06:01:12.033Z"
+sha256: "3406e4af041dfcf3a02db30f919a551b2af832920bd8933d13b6a533b04a7f6c"
 ---
 
 # Configuring a Build
@@ -73,8 +73,8 @@ Inside the Framework Preset settings, use the drop-down menu to select the frame
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/elysia)
 - **Ember.js**: Ember.js helps webapp developers be more productive out of the box.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/ember) | [View Demo](https://ember-template.vercel.app)
-- **Eve**: A filesystem-first framework for durable backend agents on Vercel.
-  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/eve)
+- **eve**: A filesystem-first framework for durable backend agents on Vercel.
+  - [Deploy](https://vercel.com/new/clone?demo-title=eve+Chat+Template&demo-description=A+persisted+Next.js+chat+template+for+eve%2C+built+with+shadcn%2Fui%2C+Tailwind+CSS%2C+Streamdown%2C+Better+Auth%2C+Drizzle%2C+and+Neon.&demo-url=https%3A%2F%2Feve-chat-template.labs.vercel.dev%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2FYXYTquqpBmvVFbASdIvrC%2F04d5a87ebe706ed31adc65193f3b4cdd%2Feve-chat__1_.png&project-name=eve+Chat+Template&repository-name=eve-chat-template&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Feve-chat-template&from=templates&skippable-integrations=1) | [View Demo](https://eve-chat-template.labs.vercel.dev/)
 - **Express**: Fast, unopinionated, minimalist web framework for Node.js
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/express) | [View Demo](https://express-vercel-example-demo.vercel.app/)
 - **FastAPI**: FastAPI framework, high performance, easy to learn, fast to code, ready for production

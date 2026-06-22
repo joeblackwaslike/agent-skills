@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/AGENTS.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "dcabd0e853cab090ae4b2b08989b84d33209943d8893447fd2b4c54901246ebf"
+fetched_at: "2026-06-22T05:56:37.291Z"
+sha256: "f5eb5137d51ce651df1535008d1f13ee1fab8e6f6bc760db642c423d8f264769"
 ---
 
 # Rust/codex-rs
@@ -111,6 +111,7 @@ Codex maintains a context (history of messages) that is sent to the model in inf
 Search for breaking changes in external integration surfaces:
 
 - app-server APIs
+- raw response item events (`rawResponseItem/*`), even while experimental
 - CLI parameters
 - configuration loading
 - resuming sessions from existing rollouts
@@ -267,6 +268,7 @@ These guidelines apply to app-server protocol work in `codex-rs`, especially:
   `*Params` for request payloads, `*Response` for responses, and `*Notification` for notifications.
 - Expose RPC methods as `<resource>/<method>` and keep `<resource>` singular (for example, `thread/read`, `app/list`).
 - Always expose fields as camelCase on the wire with `#[serde(rename_all = "camelCase")]` unless a tagged union or explicit compatibility requirement needs a targeted rename.
+- Always expose string enum values as camelCase on the wire with matching serde and TS `rename_all = "camelCase"` annotations unless an explicit compatibility requirement needs targeted renames.
 - Exception: config RPC payloads are expected to use snake_case to mirror config.toml keys (see the config read/write/list APIs in `app-server-protocol/src/protocol/v2.rs`).
 - Always set `#[ts(export_to = "v2/")]` on v2 request/response/notification types so generated TypeScript lands in the correct namespace.
 - Never use `#[serde(skip_serializing_if = "Option::is_none")]` for v2 API payload fields.

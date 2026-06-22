@@ -1,6 +1,6 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/getting-started.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
+fetched_at: "2026-06-22T05:56:37.291Z"
 sha256: "e1f2e928462849e683d52d04fb727530be2f6fd0031601d39072fce2263131c8"
 ---
 
