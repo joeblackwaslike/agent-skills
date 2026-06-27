@@ -26,6 +26,7 @@ agent-skills:git-github-workflows
 agent-skills:github-readme-overhaul
 agent-skills:interactive-system-docs
 agent-skills:multi-provider-plugins
+agent-skills:solid-principles
 agent-skills:vscode-extension-builder-lawvable
 agent-skills:web-research
 agent-skills:working-with-beads

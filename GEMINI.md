@@ -24,6 +24,7 @@ Invoke with `activate_skill("name")`:
 | `activate_skill("docusaurus-docs-builder")` | Building or updating Docusaurus documentation sites |
 | `activate_skill("github-readme-overhaul")` | Writing or overhauling a GitHub README |
 | `activate_skill("interactive-system-docs")` | Creating self-contained interactive HTML system visualizations |
+| `activate_skill("solid-principles")` | Designing/refactoring classes, modules, or interfaces with SOLID (SRP/OCP/LSP/ISP/DIP) — bad→good TypeScript + Python examples, an anti-pattern catalog (incl. over-applying SOLID), and one system refactored to honor all five. Skip for throwaway scripts and simple CRUD/glue |
 | `activate_skill("vscode-extension-builder-lawvable")` | Building VS Code extensions |
 
 ## Common Workflows
