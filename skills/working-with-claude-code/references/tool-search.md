@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/tool-search.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "1ebf110eb3cca0d9bb2dda624ad2decc5090d2c9347953be8c1f9f89f3ea7efa"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "795fb4c08e4911f4a6a6ed2580721a3e57804966d86021a112c8b98bc97be13f"
 ---
 
 > ## Documentation Index
@@ -19,7 +19,7 @@ This approach solves two challenges as tool libraries scale:
 * **Context efficiency:** Tool definitions can consume large portions of the context window (50 tools can use 10-20K tokens), leaving less room for actual work.
 * **Tool selection accuracy:** Tool selection accuracy degrades with more than 30-50 tools loaded at once.
 
-Tool search is enabled by default. This page covers [how it works](#how-tool-search-works), how to [configure it](#configure-tool-search), and how to [optimize tool discovery](#optimize-tool-discovery).
+Tool search is enabled by default.
 
 ## How tool search works
 

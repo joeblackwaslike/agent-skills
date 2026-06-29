@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-retry-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "9f7939c0ff9c1793aef686e700ea86cf70700c8fa1a572d0cf9d7142fe803519"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "978f7dc475a8e4cc7e13d2afbdc90d92ef34280ac2dfd152d0421d1b416950d8"
 ---
 
 # AI_RetryError
@@ -52,6 +52,7 @@ if (RetryError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

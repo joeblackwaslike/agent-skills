@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "7a62d2e8c0b2198aba7f4f418117171e56d59302797532de19be4d4f86e3c943"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "bdbac838f179bc21467ac2c916cf35d9fb30b1e0d3b0050af2e2c8f09bc73336"
 ---
 
 # Chatbot Resume Streams
@@ -102,8 +102,10 @@ import { openai } from '@ai-sdk/openai';
 import { readChat, saveChat } from '@util/chat-store';
 import {
   convertToModelMessages,
+  createUIMessageStreamResponse,
   generateId,
   streamText,
+  toUIMessageStream,
   type UIMessage,
 } from 'ai';
 import { after } from 'next/server';
@@ -131,13 +133,16 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    generateMessageId: generateId,
-    onFinish: ({ messages }) => {
-      // Clear the active stream when finished
-      saveChat({ id, messages, activeStreamId: null });
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages,
+      generateMessageId: generateId,
+      onEnd: ({ messages }) => {
+        // Clear the active stream when finished
+        saveChat({ id, messages, activeStreamId: null });
+      },
+    }),
     async consumeSseStream({ stream }) {
       const streamId = generateId();
 
@@ -353,10 +358,7 @@ export async function POST(
   const activeStreamId = chat.activeStreamId;
   const body = (await req.json().catch(() => ({}))) as StopRequest;
 
-  if (
-    body.activeStreamId != null &&
-    body.activeStreamId !== activeStreamId
-  ) {
+  if (body.activeStreamId != null && body.activeStreamId !== activeStreamId) {
     return Response.json({ success: true });
   }
 

@@ -3,7 +3,7 @@ title: Routing Middleware
 product: vercel
 url: /docs/routing-middleware
 canonical_url: "https://vercel.com/docs/routing-middleware"
-last_updated: 2026-01-28
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b5674bde5c15305fb4cc03a591b9a9eab98973114959e0fac1a63b01e0ddba39"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "fdc98f6cbdec9f83b2f0ce9630a5b38c6762bd2dfa727f38328d67e4c8efd14f"
 ---
 
 # Routing Middleware

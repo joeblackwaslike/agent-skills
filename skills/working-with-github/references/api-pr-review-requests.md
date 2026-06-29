@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/review-requests"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "d65c5d06efa568f87ed748e13d2f0ee6f902451b5be952fd886d67340ed6f86f"
+fetched_at: "2026-06-29T05:44:37.185Z"
+sha256: "1faf289a82cdf8e3fd73221728372605a20ad41c1d2691f960801c50d75d06c5"
 ---
 
 # REST API endpoints for review requests
@@ -102,6 +102,7 @@ curl -L \
   * `members_url`: required, string
   * `repositories_url`: required, string, format: uri
   * `type`: required, string, enum: `enterprise`, `organization`
+  * `access_source`: string, enum: `direct`, `organization`, `enterprise`
   * `organization_id`: integer
   * `enterprise_id`: integer
   * `parent`: required, any of:
@@ -355,6 +356,7 @@ curl -L \
   * `members_url`: required, string
   * `repositories_url`: required, string, format: uri
   * `type`: required, string, enum: `enterprise`, `organization`
+  * `access_source`: string, enum: `direct`, `organization`, `enterprise`
   * `organization_id`: integer
   * `enterprise_id`: integer
   * `parent`: required, any of:

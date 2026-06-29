@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/tool-calling-with-structured-outputs.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0b7b2e03b85f30eda7df476dddcf3d115d42217df34c8857b2ca663e67281cf7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e16a80d83cd0cf89cb006ea179001a14681ff58637382806a0708d4afde0d383"
 ---
 
 # Tool calling with structured outputs
@@ -41,7 +41,7 @@ const result = await generateText({
     },
   },
   // Add at least 1 to your intended step count to account for structured output
-  stopWhen: stepCountIs(3), // Now accounts for: tool call + tool result + structured output
+  stopWhen: isStepCount(3), // Now accounts for: tool call + tool result + structured output
   prompt: 'Analyze the data and provide a summary',
 });
 ```
@@ -67,7 +67,7 @@ For more information about using structured outputs with `generateText` and `str
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

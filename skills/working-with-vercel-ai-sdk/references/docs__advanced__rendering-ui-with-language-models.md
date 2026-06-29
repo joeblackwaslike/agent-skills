@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/rendering-ui-with-language-models.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ffe1c9ab0358e48b3c56a7a81b87e7d23d3e8fa3aa7c09123644256a708c4439"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c18f162f9522691dc6dcceab859cf02185c04477f7dd88c93931feea80aba91a"
 ---
 
 # Rendering User Interfaces with Language Models
@@ -11,7 +11,7 @@ Language models generate text, so at first it may seem like you would only need 
 ```tsx highlight="16" filename="app/actions.tsx"
 const text = generateText({
   model: __MODEL__,
-  system: 'You are a friendly assistant',
+  instructions: 'You are a friendly assistant',
   prompt: 'What is the weather in SF?',
   tools: {
     getWeather: {
@@ -36,7 +36,7 @@ Above, the language model is passed a [tool](/docs/ai-sdk-core/tools-and-tool-ca
 ```tsx highlight="18-23" filename="app/action.ts"
 const text = generateText({
   model: __MODEL__,
-  system: 'You are a friendly assistant',
+  instructions: 'You are a friendly assistant',
   prompt: 'What is the weather in SF?',
   tools: {
     getWeather: {
@@ -165,7 +165,7 @@ const uiStream = createStreamableUI();
 
 const text = generateText({
   model: __MODEL__,
-  system: 'you are a friendly assistant'
+  instructions: 'you are a friendly assistant'
   prompt: 'what is the weather in SF?'
   tools: {
     getWeather: {

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c0f9293723887bbb02771d34fc405ea7d38145f61c532c45c8508ebb7a29bf25"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "09f530eaada29801698e99f49fa3b5aced6a304fcc1d5dc09b5bc72e678911ee"
 ---
 
 # Kling AI Provider
@@ -361,7 +361,7 @@ The following provider options are available via `providerOptions.klingai`. Opti
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

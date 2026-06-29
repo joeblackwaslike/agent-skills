@@ -17,8 +17,8 @@ related:
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "796328c63c6c5fe1ebd27b8a4d56e6bb371bc514bc815f50c1505d92b90d5f48"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b47732f8dd93589bd0d4551f5020ecc077ba37e120386058318f446cd06019b0"
 ---
 
 # Legacy Usage & Pricing for Functions
@@ -82,8 +82,8 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 Enterprise agreements provide custom usage and pricing for Vercel Functions, including:
 
-- Custom [execution units](/docs/functions/runtimes/edge/edge-functions#managing-execution-units)
-- Increased [maximum duration](/docs/functions/configuring-functions/duration) up to 900 seconds
+- Custom [execution units](/docs/functions/runtimes/edge/edge-functions#pricing)
+- Increased [maximum duration](/docs/functions/configuring-functions/duration) up to 800 seconds
 - Multi-region deployments
 - [Vercel Function failover](/docs/functions/configuring-functions/region#automatic-failover)
 

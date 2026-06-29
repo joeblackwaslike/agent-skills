@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bd1bf6a043433a338516de159530766a0bd098f6224bbe9e7e8b01aed4776e6c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "5b765f0709fea1bd65009a5362e2c8d94c8c2531554ae2b7075bb5919016a971"
 ---
 
 # DeepInfra Provider
@@ -30,10 +30,10 @@ The DeepInfra provider is available via the `@ai-sdk/deepinfra` module. You can 
 
 ## Provider Instance
 
-You can import the default provider instance `deepinfra` from `@ai-sdk/deepinfra`:
+You can import the default provider instance `deepInfra` from `@ai-sdk/deepinfra`:
 
 ```ts
-import { deepinfra } from '@ai-sdk/deepinfra';
+import { deepInfra } from '@ai-sdk/deepinfra';
 ```
 
 If you need a customized setup, you can import `createDeepInfra` from `@ai-sdk/deepinfra` and create a provider instance with your settings:
@@ -41,7 +41,7 @@ If you need a customized setup, you can import `createDeepInfra` from `@ai-sdk/d
 ```ts
 import { createDeepInfra } from '@ai-sdk/deepinfra';
 
-const deepinfra = createDeepInfra({
+const deepInfra = createDeepInfra({
   apiKey: process.env.DEEPINFRA_API_KEY ?? '',
 });
 ```
@@ -77,11 +77,11 @@ You can use the following optional settings to customize the DeepInfra provider 
 You can create language models using a provider instance. The first argument is the model ID, for example:
 
 ```ts
-import { deepinfra } from '@ai-sdk/deepinfra';
+import { deepInfra } from '@ai-sdk/deepinfra';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: deepinfra('meta-llama/Meta-Llama-3.1-70B-Instruct'),
+  model: deepInfra('meta-llama/Meta-Llama-3.1-70B-Instruct'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -129,11 +129,11 @@ You can create DeepInfra image models using the `.image()` factory method.
 For more on image generation with the AI SDK see [generateImage()](/docs/reference/ai-sdk-core/generate-image).
 
 ```ts
-import { deepinfra } from '@ai-sdk/deepinfra';
+import { deepInfra } from '@ai-sdk/deepinfra';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
-  model: deepinfra.image('stabilityai/sd3.5'),
+  model: deepInfra.image('stabilityai/sd3.5'),
   prompt: 'A futuristic cityscape at sunset',
   aspectRatio: '16:9',
 });
@@ -151,11 +151,11 @@ const { image } = await generateImage({
 You can pass model-specific parameters using the `providerOptions.deepinfra` field:
 
 ```ts
-import { deepinfra } from '@ai-sdk/deepinfra';
+import { deepInfra } from '@ai-sdk/deepinfra';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
-  model: deepinfra.image('stabilityai/sd3.5'),
+  model: deepInfra.image('stabilityai/sd3.5'),
   prompt: 'A futuristic cityscape at sunset',
   aspectRatio: '16:9',
   providerOptions: {
@@ -178,7 +178,7 @@ Transform an existing image using text prompts:
 const imageBuffer = readFileSync('./input-image.png');
 
 const { images } = await generateImage({
-  model: deepinfra.image('Qwen/Qwen-Image-Edit'),
+  model: deepInfra.image('Qwen/Qwen-Image-Edit'),
   prompt: {
     text: 'Turn the cat into a golden retriever dog',
     images: [imageBuffer],
@@ -196,7 +196,7 @@ const image = readFileSync('./input-image.png');
 const mask = readFileSync('./mask.png');
 
 const { images } = await generateImage({
-  model: deepinfra.image('Qwen/Qwen-Image-Edit'),
+  model: deepInfra.image('Qwen/Qwen-Image-Edit'),
   prompt: {
     text: 'A sunlit indoor lounge area with a pool containing a flamingo',
     images: [image],
@@ -214,7 +214,7 @@ const cat = readFileSync('./cat.png');
 const dog = readFileSync('./dog.png');
 
 const { images } = await generateImage({
-  model: deepinfra.image('Qwen/Qwen-Image-Edit'),
+  model: deepInfra.image('Qwen/Qwen-Image-Edit'),
   prompt: {
     text: 'Create a scene with both animals together, playing as friends',
     images: [cat, dog],
@@ -259,11 +259,11 @@ You can create DeepInfra embedding models using the `.embeddingModel()` factory 
 For more on embedding models with the AI SDK see [embed()](/docs/reference/ai-sdk-core/embed).
 
 ```ts
-import { deepinfra } from '@ai-sdk/deepinfra';
+import { deepInfra } from '@ai-sdk/deepinfra';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: deepinfra.embeddingModel('BAAI/bge-large-en-v1.5'),
+  model: deepInfra.embeddingModel('BAAI/bge-large-en-v1.5'),
   value: 'sunny day at the beach',
 });
 ```
@@ -314,7 +314,7 @@ const { embedding } = await embed({
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

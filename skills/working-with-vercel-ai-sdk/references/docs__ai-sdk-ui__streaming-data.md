@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d25de54c231ea9d2c5ca7c6d13bdeca68c3979efbf64a3134451d4bd7fbac97b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "3375dc5163893a3e22536a317ee3a4b885e87433c9fabf8ab1be4439f88fa91d"
 ---
 
 # Streaming Custom Data
@@ -50,10 +50,11 @@ In your server-side route handler, you can create a `UIMessageStream` and then p
 ```tsx filename="route.ts"
 import { openai } from '@ai-sdk/openai';
 import {
+  convertToModelMessages,
   createUIMessageStream,
   createUIMessageStreamResponse,
   streamText,
-  convertToModelMessages,
+  toUIMessageStream,
 } from 'ai';
 __PROVIDER_IMPORT__;
 import type { MyUIMessage } from '@/ai/types';
@@ -92,7 +93,7 @@ export async function POST(req: Request) {
       const result = streamText({
         model: __MODEL__,
         messages: await convertToModelMessages(messages),
-        onFinish() {
+        onEnd() {
           // 4. Update the same data part (reconciliation)
           writer.write({
             type: 'data-weather',
@@ -113,7 +114,7 @@ export async function POST(req: Request) {
         },
       });
 
-      writer.merge(result.toUIMessageStream());
+      writer.merge(toUIMessageStream({ stream: result.stream }));
     },
   });
 
@@ -357,22 +358,25 @@ Both [message metadata](/docs/ai-sdk-ui/message-metadata) and data parts allow y
 Message metadata is best for **message-level information** that describes the message as a whole:
 
 - Attached at the message level via `message.metadata`
-- Sent using the `messageMetadata` callback in `toUIMessageStreamResponse`
+- Sent using the `messageMetadata` callback in `toUIMessageStream`
 - Ideal for: timestamps, model info, token usage, user context
 - Type-safe with custom metadata types
 
 ```ts
 // Server: Send metadata about the message
-return result.toUIMessageStreamResponse({
-  messageMetadata: ({ part }) => {
-    if (part.type === 'finish') {
-      return {
-        model: part.response.modelId,
-        totalTokens: part.totalUsage.totalTokens,
-        createdAt: Date.now(),
-      };
-    }
-  },
+return createUIMessageStreamResponse({
+  stream: toUIMessageStream({
+    stream: result.stream,
+    messageMetadata: ({ part }) => {
+      if (part.type === 'finish') {
+        return {
+          model: part.response.modelId,
+          totalTokens: part.totalUsage.totalTokens,
+          createdAt: Date.now(),
+        };
+      }
+    },
+  }),
 });
 ```
 

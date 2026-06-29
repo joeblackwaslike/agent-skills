@@ -3,7 +3,7 @@ title: Firewall concepts
 product: vercel
 url: /docs/vercel-firewall/firewall-concepts
 canonical_url: "https://vercel.com/docs/vercel-firewall/firewall-concepts"
-last_updated: 2026-06-01
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   - /docs/vercel-firewall
@@ -16,8 +16,8 @@ related:
 summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "3b6e61c5cc44a1b616554a80464900459473fa244b2a8ef17857514bf904d655"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "025739ced0cca445b86fa533f4fc562945b6bda7ba1d34cbe45d6f38009a4d75"
 ---
 
 # Firewall concepts

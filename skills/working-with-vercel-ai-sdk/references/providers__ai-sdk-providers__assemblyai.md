@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "284f56b72f126d630b0f29edf7ce7ebc75f9d1586eb1ce223817aa08f88f84fe"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "ae4ec066e3453bd215ef70dfb1930735c235610c37d6e649eaf54c5b93282759"
 ---
 
 # AssemblyAI Provider
@@ -79,7 +79,7 @@ const model = assemblyai.transcription('best');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `contentSafety` option will enable content safety filtering.
 
 ```ts highlight="7"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { assemblyai } from '@ai-sdk/assemblyai';
 import { type AssemblyAITranscriptionModelOptions } from '@ai-sdk/assemblyai';
 import { readFile } from 'fs/promises';
@@ -302,7 +302,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

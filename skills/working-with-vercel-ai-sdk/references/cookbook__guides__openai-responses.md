@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/openai-responses.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1364bce9ccd379989aab676ecd8d91d41eed53de072852a4d39398247c660051"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cd551db5e9a357766ef652cbdff69cb08af34a092942faaef8c31398990cd2df"
 ---
 
 # Get started with OpenAI Responses API
@@ -84,11 +84,11 @@ const { text } = await generateText({
       }),
     }),
   },
-  stopWhen: stepCountIs(5), // enable multi-step 'agentic' LLM calls
+  stopWhen: isStepCount(5), // enable multi-step 'agentic' LLM calls
 });
 ```
 
-This example demonstrates how `stopWhen` transforms a single LLM call into an agent. The `stopWhen: stepCountIs(5)` parameter allows the model to autonomously call tools, analyze results, and make additional tool calls as needed - turning what would be a simple one-shot completion into an intelligent agent that can chain multiple actions together to complete complex tasks.
+This example demonstrates how `stopWhen` transforms a single LLM call into an agent. The `stopWhen: isStepCount(5)` parameter allows the model to autonomously call tools, analyze results, and make additional tool calls as needed - turning what would be a simple one-shot completion into an intelligent agent that can chain multiple actions together to complete complex tasks.
 
 ### Web Search Tool
 
@@ -278,6 +278,7 @@ Ready to get started? Here's how you can dive in:
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

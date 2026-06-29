@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "97c034e868c2e1367fdd69c8eed1be028c62987339c0fbb1c45e1e840e8465fe"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "86d55bc11889020805eaa7eb9a60644083e74ab489e96fc4680582d7643d8b10"
 ---
 
 # Migrate AI SDK 4.x to 5.0
@@ -92,7 +92,7 @@ the following command from the root of your project:
 npx @ai-sdk/codemod upgrade
 ```
 
-To run only the v5 codemods (v4 → v5 migration):
+To run only the v5 codemods (v4 ��� v5 migration):
 
 ```sh
 npx @ai-sdk/codemod v5
@@ -1165,17 +1165,17 @@ const { messages } = useChat({
 ```
 
 ```tsx filename="AI SDK 5.0"
-import { stepCountIs, hasToolCall } from 'ai';
+import { isStepCount, hasToolCall } from 'ai';
 
 // V5: Server-side - flexible stopping conditions with stopWhen
 const result = await generateText({
   model: __MODEL__,
   messages,
   // Only triggers when last step has tool results
-  stopWhen: stepCountIs(5), // Stop at step 5 if tools were called
+  stopWhen: isStepCount(5), // Stop at step 5 if tools were called
 });
 
-// Server-side - stop when specific tool is called
+// Server-side - stop when a specific tool is called
 const result = await generateText({
   model: __MODEL__,
   messages,
@@ -1188,14 +1188,17 @@ const result = await generateText({
 ```tsx filename="AI SDK 5.0"
 // Stop after N steps (equivalent to old maxSteps)
 // Note: Only applies when the last step has tool results
-stopWhen: stepCountIs(5);
+stopWhen: isStepCount(5);
 
-// Stop when specific tool is called
+// Stop when a specific tool is called
 stopWhen: hasToolCall('finalizeTask');
+
+// Stop when either tool is called
+stopWhen: hasToolCall('submitOrder', 'finalizeTask');
 
 // Multiple conditions (stops if ANY condition is met)
 stopWhen: [
-  stepCountIs(10), // Maximum 10 steps
+  isStepCount(10), // Maximum 10 steps
   hasToolCall('submitOrder'), // Or when order is submitted
 ];
 
@@ -1275,13 +1278,13 @@ const { messages, sendMessage } = useChat({
 
 ```tsx filename="AI SDK 5.0"
 // Server-side: Use stopWhen for multi-step control
-import { streamText, convertToModelMessages, stepCountIs } from 'ai';
+import { streamText, convertToModelMessages, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 
 const result = await streamText({
   model: __MODEL__,
   messages: convertToModelMessages(messages),
-  stopWhen: stepCountIs(5), // Stop after 5 steps with tool calls
+  stopWhen: isStepCount(5), // Stop after 5 steps with tool calls
 });
 
 // Client-side: Configure automatic submission
@@ -3431,6 +3434,7 @@ for await (const chunk of result.fullStream) {
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

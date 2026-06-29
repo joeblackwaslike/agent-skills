@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "5b4eb5eed444c74de1e1d58c853655342b776d3489d6d26aa907e2d2f1e4d462"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "4681c465baa105c1f49efa12e82092320f003f66b6c5976b94558c8d2faab7b0"
 ---
 
 # AI_InvalidToolInputError
@@ -52,6 +52,7 @@ if (InvalidToolInputError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

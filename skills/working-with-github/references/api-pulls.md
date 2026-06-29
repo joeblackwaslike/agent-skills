@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/pulls"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "bab56221e7a7a3c363dc1c0d0b126913dc9b838bdda13ae7d8e478b98beaea08"
+fetched_at: "2026-06-29T05:44:37.185Z"
+sha256: "0974dd9020ce0dea607e78d86610a2d24fb20785087d2fb3803d559768ed55fc"
 ---
 
 # REST API endpoints for pull requests
@@ -280,6 +280,7 @@ Array of `Pull Request Simple`:
   * `members_url`: required, string
   * `repositories_url`: required, string, format: uri
   * `type`: required, string, enum: `enterprise`, `organization`
+  * `access_source`: string, enum: `direct`, `organization`, `enterprise`
   * `organization_id`: integer
   * `enterprise_id`: integer
   * `parent`: required, any of:

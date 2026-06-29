@@ -3,7 +3,7 @@ title: Investigation
 product: vercel
 url: /docs/agent/investigation
 canonical_url: "https://vercel.com/docs/agent/investigation"
-last_updated: 2026-02-27
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/agent
@@ -13,8 +13,8 @@ related:
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "c96a1aa3560e01ceb0c712365ade4fce27642bfd0363601a7e58da512c84f7ae"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "628a29f34d9ab74fb5cb2e5d4a6f3759111cdf0ad91ac1ca6944153580ca29cc"
 ---
 
 # Investigation

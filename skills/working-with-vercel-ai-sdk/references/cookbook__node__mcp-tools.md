@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/mcp-tools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bc451b179ed6d714d873c69e6c82c9824311e252a3c1145588f2d659fcadfdb0"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e4a1d81da6ddb195d05e84c7a43169321409627aa459439a77abb8d4c534bae4"
 ---
 
 # MCP Tools
@@ -14,7 +14,7 @@ If you prefer to use the official transports (optional), install the official Mo
 
 ```ts
 import { createMCPClient } from '@ai-sdk/mcp';
-import { generateText, stepCountIs } from 'ai';
+import { generateText, isStepCount } from 'ai';
 import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 import { openai } from '@ai-sdk/openai';
 // Optional: Official transports if you prefer them
@@ -83,7 +83,7 @@ try {
   const response = await generateText({
     model: 'openai/gpt-4o',
     tools,
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     messages: [
       {
         role: 'user',

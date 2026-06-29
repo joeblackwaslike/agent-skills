@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c2cef3f004eef78bd65e64046070112f062a14a8c3ca05e7e4d922b91addd716"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f1ffb29148847195d66dc57fc8437703bc7062b75934688c843986d9a5243016"
 ---
 
 # DeepSeek Provider
@@ -31,10 +31,10 @@ The DeepSeek provider is available via the `@ai-sdk/deepseek` module. You can in
 
 ## Provider Instance
 
-You can import the default provider instance `deepseek` from `@ai-sdk/deepseek`:
+You can import the default provider instance `deepSeek` from `@ai-sdk/deepseek`:
 
 ```ts
-import { deepseek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-sdk/deepseek';
 ```
 
 For custom configuration, you can import `createDeepSeek` and create a provider instance with your settings:
@@ -42,7 +42,7 @@ For custom configuration, you can import `createDeepSeek` and create a provider 
 ```ts
 import { createDeepSeek } from '@ai-sdk/deepseek';
 
-const deepseek = createDeepSeek({
+const deepSeek = createDeepSeek({
   apiKey: process.env.DEEPSEEK_API_KEY ?? '',
 });
 ```
@@ -72,11 +72,11 @@ You can use the following optional settings to customize the DeepSeek provider i
 You can create language models using a provider instance:
 
 ```ts
-import { deepseek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-sdk/deepseek';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: deepseek('deepseek-chat'),
+  model: deepSeek('deepseek-chat'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -84,9 +84,9 @@ const { text } = await generateText({
 You can also use the `.chat()` or `.languageModel()` factory methods:
 
 ```ts
-const model = deepseek.chat('deepseek-chat');
+const model = deepSeek.chat('deepseek-chat');
 // or
-const model = deepseek.languageModel('deepseek-chat');
+const model = deepSeek.languageModel('deepseek-chat');
 ```
 
 DeepSeek language models can be used in the `streamText` function
@@ -106,20 +106,23 @@ The following optional provider options are available for DeepSeek models:
   mapped to `max` server-side for compatibility with other providers. When
   using the top-level `reasoning` setting, `minimal` is sent as `low`, and
   `low`, `medium`, `high`, and `xhigh` pass through to DeepSeek's native
-  effort values. Ignored when thinking is explicitly disabled.
+  effort values.
 
 ```ts highlight="7-12"
-import { deepseek, type DeepSeekLanguageModelOptions } from '@ai-sdk/deepseek';
+import {
+  deepSeek,
+  type DeepSeekLanguageModelChatOptions,
+} from '@ai-sdk/deepseek';
 import { generateText } from 'ai';
 
 const { text, reasoning } = await generateText({
-  model: deepseek('deepseek-chat'),
+  model: deepSeek('deepseek-chat'),
   prompt: 'How many "r"s are in the word "strawberry"?',
   providerOptions: {
     deepseek: {
       thinking: { type: 'enabled' },
       reasoningEffort: 'high',
-    } satisfies DeepSeekLanguageModelOptions,
+    } satisfies DeepSeekLanguageModelChatOptions,
   },
 });
 ```
@@ -129,15 +132,15 @@ const { text, reasoning } = await generateText({
 DeepSeek has reasoning support for the `deepseek-reasoner` model. The reasoning is exposed through streaming:
 
 ```ts
-import { deepseek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-sdk/deepseek';
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: deepseek('deepseek-reasoner'),
+  model: deepSeek('deepseek-reasoner'),
   prompt: 'How many "r"s are in the word "strawberry"?',
 });
 
-for await (const part of result.fullStream) {
+for await (const part of result.stream) {
   if (part.type === 'reasoning') {
     // This is the reasoning text
     console.log('Reasoning:', part.text);
@@ -156,11 +159,11 @@ on how to integrate reasoning into your chatbot.
 DeepSeek provides context caching on disk technology that can significantly reduce token costs for repeated content. You can access the cache hit/miss metrics through the `providerMetadata` property in the response:
 
 ```ts
-import { deepseek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-sdk/deepseek';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: deepseek('deepseek-chat'),
+  model: deepSeek('deepseek-chat'),
   prompt: 'Your prompt here',
 });
 
@@ -212,7 +215,7 @@ The metrics include:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

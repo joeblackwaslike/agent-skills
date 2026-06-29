@@ -3,23 +3,24 @@ title: vercel flags
 product: vercel
 url: /docs/cli/flags
 canonical_url: "https://vercel.com/docs/cli/flags"
-last_updated: 2026-05-19
+last_updated: 2026-06-05
 type: reference
 prerequisites:
   - /docs/cli
 related:
   - /docs/flags/vercel-flags
   - /docs/flags/vercel-flags/dashboard
+  - /docs/flags/vercel-flags/dashboard/segments
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a09ac8758a5428bcf78da57f34baaface0b5ff3dd0147698245600ecea5004ee"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b8638652296f386116e83d5cd987f2d42d40115ffd2f0562bced6088e813beab"
 ---
 
 # vercel flags
 
-The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project directly from the command line. You can create, list, inspect, open, update, set, split traffic, roll out, enable, disable, archive, and delete feature flags, as well as manage SDK keys.
+The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project directly from the command line. You can create, list, inspect, open, update, set, split traffic, roll out, enable, disable, archive, and delete feature flags, as well as manage reusable segments and SDK keys.
 
 ## Usage
 
@@ -102,6 +103,12 @@ vercel flags rm [flag]
 ```
 
 *Using the \`vercel flags\` command to delete a feature flag.*
+
+```bash filename="terminal"
+vercel flags segments ls
+```
+
+*Using the \`vercel flags segments\` command to list reusable targeting segments.*
 
 ## Extended usage
 
@@ -288,6 +295,96 @@ vercel flags rm my-feature --yes
 
 *Deleting an archived flag without a confirmation prompt.*
 
+### Segments
+
+The `vercel flags segments` subcommand manages reusable [segments](/docs/flags/vercel-flags/dashboard/segments) for the linked project. A segment can include exact entity values, exclude exact entity values, and define rules based on entity attributes.
+
+```bash filename="terminal"
+vercel flags segments ls
+```
+
+*Listing all feature flag segments for the linked project.*
+
+```bash filename="terminal"
+vercel flags segments inspect beta-users --json
+```
+
+*Inspecting a segment and printing its full data as JSON.*
+
+Create a segment with exact included values by repeating `--add`:
+
+```bash filename="terminal"
+vercel flags segments create beta-users --label "Beta users" \
+  --add include:user.id=user_123 --add include:user.id=user_456
+```
+
+*Creating a segment that includes two users by \`user.id\`.*
+
+Create a segment from rules by using the `rule:` target:
+
+```bash filename="terminal"
+vercel flags segments create enterprise-users --label "Enterprise users" \
+  --add rule:user.plan:eq:enterprise
+```
+
+*Creating a segment for users whose plan equals \`enterprise\`.*
+
+Update a segment by adding or removing criteria:
+
+```bash filename="terminal"
+vercel flags segments update beta-users --add include:user.id=user_789 \
+  --remove include:user.id=user_123
+```
+
+*Adding one user and removing another user from a segment.*
+
+```bash filename="terminal"
+vercel flags segments update enterprise-users \
+  --add rule:user.email:ends-with:@company.com \
+  --remove rule:user.plan:eq:pro
+```
+
+*Adding and removing segment rules in one update.*
+
+Delete a segment with `rm`:
+
+```bash filename="terminal"
+vercel flags segments rm beta-users --yes
+```
+
+*Deleting a segment without a confirmation prompt.*
+
+Segments can't be deleted while they are referenced by flags or other segments. Remove every reference first, then run `vercel flags segments rm`.
+
+Segment criteria use these forms:
+
+| Form | Description | Example |
+| - | - | - |
+| `include:ENTITY.ATTRIBUTE=VALUE` | Adds an exact entity value to the segment. | `include:user.id=user_123` |
+| `exclude:ENTITY.ATTRIBUTE=VALUE` | Excludes an exact entity value from the segment. | `exclude:user.email=blocked@example.com` |
+| `rule:ENTITY.ATTRIBUTE:OPERATOR:VALUE` | Adds or removes a rule based on an entity attribute. | `rule:user.plan:eq:enterprise` |
+| `rule:RULE_ID` | Removes a rule by ID when using `--remove`. | `rule:rule_abc123` |
+
+Valid rule operators are `eq`, `!eq`, `oneOf`, `!oneOf`, `containsAllOf`, `containsAnyOf`, `containsNoneOf`, `startsWith`, `endsWith`, `contains`, `!contains`, `ex`, `!ex`, `gt`, `gte`, `lt`, and `lte`. The CLI also accepts readable aliases such as `equals`, `does-not-equal`, `starts-with`, and `ends-with`.
+
+For list operators such as `oneOf`, pass comma-separated values:
+
+```bash filename="terminal"
+vercel flags segments create paid-users --label "Paid users" \
+  --add rule:user.plan:oneOf:pro,enterprise
+```
+
+*Creating a segment with a list rule.*
+
+Use `--data` when you want to provide the full segment data JSON. The JSON object can include `rules`, `include`, and `exclude` fields:
+
+```bash filename="terminal"
+vercel flags segments create staff --label Staff \
+  --data '{"rules":[],"include":{"user":{"email":[{"value":"me@company.com"}]}},"exclude":{}}'
+```
+
+*Creating a segment from full JSON data.*
+
 ### SDK keys
 
 The `vercel flags sdk-keys` subcommand manages SDK keys for your project. SDK keys authenticate your application when evaluating flags. You can create keys for different environments and key types.
@@ -322,7 +419,7 @@ When you create an SDK key, the output includes:
 
 If you don't provide the `--environment` option, you'll be prompted to select one interactively.
 
-`vercel flags list --json` and `vercel flags sdk-keys ls --json` output the respective list as JSON for scripting and automation.
+`vercel flags list --json`, `vercel flags segments ls --json`, and `vercel flags sdk-keys ls --json` output the respective list as JSON for scripting and automation.
 
 ### Encrypting flag overrides
 
@@ -391,6 +488,16 @@ vercel flags ls --state archived
 *Using the \`vercel flags ls\` command with the
 \`--state\` option to list archived flags.*
 
+### JSON
+
+The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, and `vercel flags sdk-keys ls`.
+
+```bash filename="terminal"
+vercel flags segments inspect beta-users --json
+```
+
+*Using the \`vercel flags segments inspect\` command with the \`--json\` option.*
+
 ### Kind
 
 The `--kind` option, shorthand `-k`, specifies the type of a new flag when using `vercel flags create`. Valid values are `boolean`, `string`, `number`, and `json`. Defaults to `boolean`.
@@ -406,7 +513,7 @@ vercel flags create layout-config --kind json \
 
 ### Description
 
-The `--description` option, shorthand `-d`, sets a description for a new flag when using `vercel flags create`.
+The `--description` option, shorthand `-d`, sets a description for a new flag when using `vercel flags create`, or a segment description when using `vercel flags segments create` or `vercel flags segments update`.
 
 ```bash filename="terminal"
 vercel flags create my-feature --description "Controls the new onboarding flow"
@@ -414,6 +521,43 @@ vercel flags create my-feature --description "Controls the new onboarding flow"
 
 *Using the \`vercel flags create\` command with the
 \`--description\` option.*
+
+### Hint
+
+The `--hint` option sets help text that describes who belongs in a segment when using `vercel flags segments create` or `vercel flags segments update`. If you omit `--hint` while creating a segment, the CLI uses the segment description or label.
+
+```bash filename="terminal"
+vercel flags segments create beta-users --label "Beta users" \
+  --hint "Users enrolled in the beta program"
+```
+
+*Creating a segment with a hint.*
+
+### Data
+
+The `--data` option provides full segment data JSON when using `vercel flags segments create`, or replaces segment data when using `vercel flags segments update`. The JSON object can include `rules`, `include`, and `exclude` fields.
+
+```bash filename="terminal"
+vercel flags segments update staff \
+  --data '{"rules":[],"include":{"user":{"email":[{"value":"me@company.com"}]}},"exclude":{}}'
+```
+
+*Replacing a segment's data with JSON.*
+
+When updating a segment, if you combine `--data` with `--add` or `--remove`, the CLI applies the add and remove operations to the provided JSON before saving the segment.
+
+### Add and remove
+
+The `--add` option, shorthand `-a`, adds segment criteria when using `vercel flags segments create` or `vercel flags segments update`. The `--remove` option removes segment criteria when using `vercel flags segments update`.
+
+```bash filename="terminal"
+vercel flags segments update beta-users --add include:user.id=user_789 \
+  --remove include:user.id=user_123
+```
+
+*Using \`--add\` and \`--remove\` to update exact segment values.*
+
+For rules, use `rule:ENTITY.ATTRIBUTE:OPERATOR:VALUE`. To remove a rule by ID, use `--remove rule:RULE_ID`.
 
 ### Environment
 
@@ -491,7 +635,7 @@ vercel flags update welcome-message --variant control --value welcome-back
 
 ### Label
 
-The `--label` option, shorthand `-l`, sets a variant label when using `vercel flags update`, or an SDK key label when using `vercel flags sdk-keys add`.
+The `--label` option, shorthand `-l`, sets a variant label when using `vercel flags update`, a segment label when using `vercel flags segments create` or `vercel flags segments update`, or an SDK key label when using `vercel flags sdk-keys add`.
 
 ```bash filename="terminal"
 vercel flags update welcome-message --variant control --label "Welcome back"
@@ -545,7 +689,7 @@ vercel flags sdk-keys add --type server --environment production
 
 ### Yes
 
-The `--yes` option, shorthand `-y`, skips the confirmation prompt when archiving or deleting a flag, or when deleting an SDK key.
+The `--yes` option, shorthand `-y`, skips the confirmation prompt when archiving or deleting a flag, deleting a segment, or deleting an SDK key.
 
 ```bash filename="terminal"
 vercel flags archive my-feature --yes

@@ -3,7 +3,7 @@ title: Framework Integrations
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations"
-last_updated: 2026-05-19
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem
@@ -17,8 +17,8 @@ related:
 summary: Explore available community framework integrations with Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "26779677f3415fa4b8952419c948821e1d8be9361192d37894b5cb427995fd5c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9c2a447d67d39790cb31a4c08a41f79c5c2063c57221b7314c3010012d415f81"
 ---
 
 # Framework Integrations

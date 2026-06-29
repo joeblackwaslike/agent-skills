@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/soniox.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "879aae057e2ce98a619dff45979a974119194683d7a0e93754a4c22a2b37bc1a"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8e7acecc7776480138c0ed0178fdd23968f7bd74e8c031f19228ad830e219266"
 ---
 
 # Soniox Provider
@@ -35,7 +35,7 @@ Get your API key from the [Soniox Console](https://console.soniox.com).
 
 ```ts
 import { soniox } from '@soniox/vercel-ai-sdk-provider';
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 
 const { text } = await transcribe({
   model: soniox.transcription('stt-async-v3'),

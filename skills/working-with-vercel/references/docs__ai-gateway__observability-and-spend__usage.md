@@ -3,7 +3,7 @@ title: Usage & Billing
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/usage
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/ai-gateway/sdks-and-apis/rest-api
   - /docs/ai-gateway/observability-and-spend/custom-reporting
-summary: Learn about usage & billing on Vercel.
+summary: Monitor your AI Gateway credit balance, usage, and generation details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "b4c48b2f700c184e31b6cfdf9fed59e6e7db53315a4481783768bdda615935a4"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "52f5cc693c1079af8834434385758a8ef9a844eee224914483ae85a58a5d34c5"
 ---
 
 # Usage & Billing

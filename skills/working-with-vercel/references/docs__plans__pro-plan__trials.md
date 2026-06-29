@@ -3,7 +3,7 @@ title: "Understanding Vercel's Pro Plan Trial"
 product: vercel
 url: /docs/plans/pro-plan/trials
 canonical_url: "https://vercel.com/docs/plans/pro-plan/trials"
-last_updated: 2026-06-01
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/plans/pro-plan
@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "41e29ec23bf403cf9c1b0c49cf52d0d7c25933ca6e34b1d0e74efca60cdafb07"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9dfc025ec02f7a86e1b42b64793e44d92145c245915f0659bfdb89e38b08c402"
 ---
 
 # Understanding Vercel

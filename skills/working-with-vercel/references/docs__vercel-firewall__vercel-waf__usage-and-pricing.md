@@ -3,7 +3,7 @@ title: Usage & Pricing for Vercel WAF
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/usage-and-pricing
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing"
-last_updated: 2026-06-01
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -17,8 +17,8 @@ related:
 summary: Learn how the Vercel WAF can affect your usage and how specific features are priced.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "dbd5f87409909b38d1b44546477ff6f1306a043b444ca9ac86be4e92f46de80c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "de28189bef1ad5ae90c90a256d7d4dd8e1058e566810e604b0a14f3ce2bc110f"
 ---
 
 # Usage & Pricing for Vercel WAF

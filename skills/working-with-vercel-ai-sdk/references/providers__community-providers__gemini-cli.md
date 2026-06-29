@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/gemini-cli.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e2da55df958f173700b60303e1da49c0cc196edb0143b4c06b7479ee263146e0"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "297664c4ae5c95f97a13f6826cd18bef674b58366749dc90c38bf91b37904dfc"
 ---
 
 # Gemini CLI Provider
@@ -168,7 +168,7 @@ Then use OAuth authentication in your code with `authType: 'oauth-personal'`.
 
 ## Requirements
 
-- Node.js 20 or higher
+- Node.js 22 or higher
 - Gemini CLI installed globally for OAuth authentication
 - Valid Google account or Gemini API key
 

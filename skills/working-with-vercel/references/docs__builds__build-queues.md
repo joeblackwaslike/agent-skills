@@ -3,7 +3,7 @@ title: Build Queues
 product: vercel
 url: /docs/builds/build-queues
 canonical_url: "https://vercel.com/docs/builds/build-queues"
-last_updated: 2026-02-12
+last_updated: 2026-06-09
 type: conceptual
 prerequisites:
   - /docs/builds
@@ -11,12 +11,11 @@ related:
   - /docs/builds/managing-builds
   - /docs/pricing
   - /docs/deployments/managing-builds
-  - /docs/deployments/concurrent-builds
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "264b3f82dcce6fae7b497f2419e15d3391ddaa0c5c72466990a8bf9d007a3e5a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2e260118daaba74ac078c94bbe28004505144c0d8524e06b90c0427b8819201f"
 ---
 
 # Build Queues
@@ -54,11 +53,11 @@ This queue manages how many builds can run in parallel based on the number of [c
 
 Concurrent build slots are the key factor in concurrent build queuing. They control how many builds can run at the same time and ensure efficient use of resources while prioritizing the latest changes.
 
-Each account plan comes with a predefined number of build slots:
+Each account plan includes a number of build slots that apply only when On-Demand Concurrent Builds is disabled:
 
 - Hobby accounts allow one build at a time.
-- Pro accounts support up to 12 simultaneous builds.
-- Enterprise accounts can have [custom limits](/docs/deployments/concurrent-builds#usage-and-limits) based on their plan.
+- Pro accounts include 3 concurrent build slots by default. The first build slot is included, and standard build minutes within it are not billed.
+- Enterprise accounts can have [custom limits](/docs/builds/managing-builds#on-demand-concurrent-builds) based on their plan.
 
 ## Git branch queue
 

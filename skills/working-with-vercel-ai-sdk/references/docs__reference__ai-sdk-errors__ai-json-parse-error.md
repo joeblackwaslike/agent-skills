@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-json-parse-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "39bd5a0e5cdf8c536d743413c72605839f01e3834ee4f2062394fb9c5b2c14c7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "90b52f2c0e7ce808bb986c82ad5982f7a273b0d934f371c9e8f7a03ff6ca7d02"
 ---
 
 # AI_JSONParseError
@@ -50,6 +50,7 @@ if (JSONParseError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

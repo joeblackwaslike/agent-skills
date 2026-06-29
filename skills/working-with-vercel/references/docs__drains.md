@@ -3,7 +3,7 @@ title: Working with Drains
 product: vercel
 url: /docs/drains
 canonical_url: "https://vercel.com/docs/drains"
-last_updated: 2026-03-19
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "85d835c75673a722829c6eb872967ade34534a22d9ce7213fa14e2f415c93b58"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6378b669f28ed9dc4b1457e00855a7f61da6fa8fc69fc03847c0af8ec463ed83"
 ---
 
 # Working with Drains

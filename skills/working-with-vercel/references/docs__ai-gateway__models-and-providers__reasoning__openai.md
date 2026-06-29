@@ -1,20 +1,20 @@
 ---
-title: OpenAI
+title: OpenAI Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/openai
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-20
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
   - /docs/ai-gateway/models-and-providers
 related:
   []
-summary: Learn about openai on Vercel.
+summary: Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "0dfab0c15d8d97d3a5f5b01f314dfc1a647f4c785b1267cb6c3e9918c1ae0320"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "bd40d684d4582d476addf3868e6f55d961fcb89003347c0ea6cf0f14686fb9ab"
 ---
 
 # OpenAI Reasoning

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/testing.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9ffa906cc43c28aa04f9f080445eeed3e21c4b84c08495c9fcffc0a5668105fe"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f720f5bbd9cf861efa7045d969cb117ef79dbc6e531c8c015d496d89173a715a"
 ---
 
 # Testing
@@ -12,8 +12,8 @@ and calling them is slow and expensive.
 To enable you to unit test your code that uses the AI SDK, the AI SDK Core
 includes mock providers and test helpers. You can import the following helpers from `ai/test`:
 
-- `MockEmbeddingModelV3`: A mock embedding model using the [embedding model v3 specification](https://github.com/vercel/ai/blob/main/packages/provider/src/embedding-model/v3/embedding-model-v3.ts).
-- `MockLanguageModelV3`: A mock language model using the [language model v3 specification](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v3/language-model-v3.ts).
+- `MockEmbeddingModelV4`: A mock embedding model using the [embedding model v4 specification](https://github.com/vercel/ai/blob/main/packages/provider/src/embedding-model/v4/embedding-model-v4.ts).
+- `MockLanguageModelV4`: A mock language model using the [language model v4 specification](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v4/language-model-v4.ts).
 - `mockId`: Provides an incrementing integer ID.
 - `mockValues`: Iterates over an array of values with each call. Returns the last value when the array is exhausted.
 
@@ -31,10 +31,10 @@ You can use the test helpers with the AI Core functions in your unit tests:
 
 ```ts
 import { generateText } from 'ai';
-import { MockLanguageModelV3 } from 'ai/test';
+import { MockLanguageModelV4 } from 'ai/test';
 
 const result = await generateText({
-  model: new MockLanguageModelV3({
+  model: new MockLanguageModelV4({
     doGenerate: async () => ({
       content: [{ type: 'text', text: `Hello, world!` }],
       finishReason: { unified: 'stop', raw: undefined },
@@ -62,10 +62,10 @@ const result = await generateText({
 
 ```ts
 import { streamText, simulateReadableStream } from 'ai';
-import { MockLanguageModelV3 } from 'ai/test';
+import { MockLanguageModelV4 } from 'ai/test';
 
 const result = streamText({
-  model: new MockLanguageModelV3({
+  model: new MockLanguageModelV4({
     doStream: async () => ({
       stream: simulateReadableStream({
         chunks: [
@@ -104,11 +104,11 @@ const result = streamText({
 
 ```ts
 import { generateText, Output } from 'ai';
-import { MockLanguageModelV3 } from 'ai/test';
+import { MockLanguageModelV4 } from 'ai/test';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: new MockLanguageModelV3({
+  model: new MockLanguageModelV4({
     doGenerate: async () => ({
       content: [{ type: 'text', text: `{"content":"Hello, world!"}` }],
       finishReason: { unified: 'stop', raw: undefined },
@@ -137,11 +137,11 @@ const result = await generateText({
 
 ```ts
 import { streamText, Output, simulateReadableStream } from 'ai';
-import { MockLanguageModelV3 } from 'ai/test';
+import { MockLanguageModelV4 } from 'ai/test';
 import { z } from 'zod';
 
 const result = streamText({
-  model: new MockLanguageModelV3({
+  model: new MockLanguageModelV4({
     doStream: async () => ({
       stream: simulateReadableStream({
         chunks: [
@@ -227,21 +227,27 @@ export async function POST(req: Request) {
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

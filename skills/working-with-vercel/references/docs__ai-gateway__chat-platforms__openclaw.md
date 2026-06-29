@@ -3,7 +3,7 @@ title: OpenClaw (Clawdbot)
 product: vercel
 url: /docs/ai-gateway/chat-platforms/openclaw
 canonical_url: "https://vercel.com/docs/ai-gateway/chat-platforms/openclaw"
-last_updated: 2026-02-26
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/chat-platforms
@@ -13,8 +13,8 @@ related:
 summary: Use OpenClaw (formerly Clawdbot) with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/openclaw.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "889b653fc2beab90cb1c056e686771b1077bcf891fe07c5a6abd3bf85112419a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "af05a36741823a07812c53ba8ccee9079ba7990bcde2ab03f0f9baffbdbd3bfb"
 ---
 
 # OpenClaw (Clawdbot)

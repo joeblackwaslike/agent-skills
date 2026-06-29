@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-4.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f985be6714939a0e28dfd68a8ed25d85ed8b62c863bc0224781fd6dbe8ff4e9e"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "4803da3480ab658f41ec1507d0b3a385d77c72d880b97a7f871095d4263aa5b7"
 ---
 
 # Migrate AI SDK 3.3 to 3.4
@@ -18,6 +18,7 @@ No breaking changes in this release.
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

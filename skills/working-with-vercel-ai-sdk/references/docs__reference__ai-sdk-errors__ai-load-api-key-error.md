@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-load-api-key-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "8a2589e000b91c0457fd9cd6196e84749f1fe6f98f3c3888b49068611b4afe1a"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cd63b98e48143184007aa1e7221e2b15a4aa12a2c37e6c8553b47a9f6cbdaa6d"
 ---
 
 # AI_LoadAPIKeyError
@@ -49,6 +49,7 @@ if (LoadAPIKeyError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

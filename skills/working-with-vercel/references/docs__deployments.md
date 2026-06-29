@@ -3,7 +3,7 @@ title: Deploying to Vercel
 product: vercel
 url: /docs/deployments
 canonical_url: "https://vercel.com/docs/deployments"
-last_updated: 2026-02-26
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage deployments on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "3e0cb362c1d45d4a0a405e4b0a9f126caa30495176aef55e4ef681893805aee8"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4118b03b55e9818998dd8c359051446dcd1cd142c5b7aa1ebaa4ad5a521a3ce6"
 ---
 
 # Deploying to Vercel

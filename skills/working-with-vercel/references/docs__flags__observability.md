@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/flags/observability
 canonical_url: "https://vercel.com/docs/flags/observability"
-last_updated: 2026-03-09
+last_updated: 2026-06-08
 type: conceptual
 prerequisites:
   - /docs/flags
@@ -13,8 +13,8 @@ related:
 summary: Track feature flag evaluations and analyze their impact with Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2ff8a485a21f4a825ec3e3f6bc296ded38bded3c2959e5ec5c71e0b1804830ac"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "df3a89b30447d70375d1752f0aa3e139d15d4b0874d58f896e7bbe2e617b8a0f"
 ---
 
 # Observability

@@ -3,7 +3,7 @@ title: Vercel Storage overview
 product: vercel
 url: /docs/storage
 canonical_url: "https://vercel.com/docs/storage"
-last_updated: 2026-05-06
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Store large files and global configuration with Vercel's storage products."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "d985c18ae8657c11e46a0f8e5753ee363a0bef27457532a3216645fcee101a1c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0e1fa1b543eb07a9a156e26a3678fa23c06e568bc02a64976c395c6f8e49245c"
 ---
 
 # Vercel Storage overview

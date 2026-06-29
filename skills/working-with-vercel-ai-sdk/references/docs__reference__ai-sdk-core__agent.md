@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/agent.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0c5d84c419b85e20e8e5726f0aa9ffa3d17a3c4d8f18b476b1cfcc97e18906f3"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "beb5138b7f180daf7d8ab0fb418235fafd642a4a37223d968dd84db62619537d"
 ---
 
 # `Agent` (interface)
@@ -13,7 +13,10 @@ Implementations of the `Agent` interface—such as `ToolLoopAgent`—fulfill the
 ## Interface Definition
 
 ```ts
-import { ModelMessage } from '@ai-sdk/provider-utils';
+import {
+  ModelMessage,
+  Experimental_SandboxSession,
+} from '@ai-sdk/provider-utils';
 import { ToolSet } from '../generate-text/tool-set';
 import { Output } from '../generate-text/output';
 import { GenerateTextResult } from '../generate-text/generate-text-result';
@@ -67,9 +70,45 @@ export type AgentCallParameters<CALL_OPTIONS, TOOLS extends ToolSet = {}> = ([
      */
     timeout?: number | { totalMs?: number };
     /**
-     * Callback that is called when each step (LLM call) is finished, including intermediate steps.
+     * Experimental sandbox environment that is passed through to tool execution.
      */
-    onStepFinish?: ToolLoopAgentOnStepFinishCallback<TOOLS>;
+    experimental_sandbox?: Experimental_SandboxSession;
+    /**
+     * Callback that is called when the agent operation begins, before any LLM calls.
+     */
+    onStart?: GenerateTextOnStartCallback<TOOLS>;
+    /**
+     * Callback that is called when a step (LLM call) begins, before the provider is called.
+     */
+    onStepStart?: GenerateTextOnStepStartCallback<TOOLS>;
+    /**
+     * Callback that is called before each tool execution begins.
+     */
+    onToolExecutionStart?: OnToolExecutionStartCallback<TOOLS>;
+    /**
+     * Callback that is called after each tool execution completes.
+     */
+    onToolExecutionEnd?: OnToolExecutionEndCallback<TOOLS>;
+    /**
+     * Callback that is called when each step (LLM call) ends, including intermediate steps.
+     */
+    onStepEnd?: GenerateTextOnStepEndCallback<TOOLS>;
+    /**
+     * Callback that is called when each step (LLM call) ends, including intermediate steps.
+     *
+     * @deprecated Use `onStepEnd` instead.
+     */
+    onStepFinish?: GenerateTextOnStepFinishCallback<TOOLS>;
+    /**
+     * Callback that is called when all steps are finished and the response is complete.
+     */
+    onEnd?: GenerateTextOnEndCallback<TOOLS>;
+    /**
+     * Callback that is called when all steps are finished and the response is complete.
+     *
+     * @deprecated Use `onEnd` instead.
+     */
+    onFinish?: GenerateTextOnEndCallback<TOOLS>;
   };
 
 /**
@@ -143,7 +182,15 @@ Both `generate()` and `stream()` accept an `AgentCallParameters<CALL_OPTIONS, TO
 - `options` (optional): Additional call options when `CALL_OPTIONS` is not `never`
 - `abortSignal` (optional): An `AbortSignal` to cancel the operation
 - `timeout` (optional): A timeout in milliseconds. Can be specified as a number or as an object with a `totalMs` property. The call will be aborted if it takes longer than the specified timeout. Can be used alongside `abortSignal`.
-- `onStepFinish` (optional): A callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage or logging.
+- `experimental_sandbox` (optional): An experimental sandbox environment forwarded to tool execution.
+- `onStart` (optional): Callback invoked when the agent operation begins, before any LLM calls.
+- `onStepStart` (optional): Callback invoked when a step (LLM call) begins, before the provider is called.
+- `onToolExecutionStart` (optional): Callback invoked right before a tool's execute function runs.
+- `onToolExecutionEnd` (optional): Callback invoked right after a tool's execute function completes or errors.
+- `onStepEnd` (optional): A callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage, per-step performance, or logging.
+- `onStepFinish` (optional): Deprecated alias for `onStepEnd`.
+- `onEnd` (optional): A callback invoked when all steps are finished and the response is complete.
+- `onFinish` (optional): Deprecated alias for `onEnd`.
 
 ## Example: Custom Agent Implementation
 
@@ -222,6 +269,8 @@ for await (const chunk of stream) {
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -230,27 +279,31 @@ for await (const chunk of stream) {
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

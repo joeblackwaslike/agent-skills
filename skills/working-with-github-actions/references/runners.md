@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/github-hosted-runners.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "5356e416730717a5e2b539d41a3e5fc038fda457dec9b30236a22a3aabea561d"
+fetched_at: "2026-06-29T05:44:12.355Z"
+sha256: "998404bcdc2c936fdbe7b2b1f8034cb9319ffcee820baa12ce5c2dcf6ca42dc6"
 ---
 
 {% ifversion ghes %}
@@ -56,6 +56,8 @@ Single-CPU runners follow the same concurrency model as other {% data variables.
 The job timeout for single-CPU runners is 15 minutes. If a job reaches this limit, the job is terminated and fails.
 
 ### {% data variables.actions.hosted_runner_caps %}s
+
+{% data variables.actions.hosted_runner_caps %}s are available for organizations and enterprises on {% data variables.product.prodname_team %} and {% data variables.product.prodname_ghe_cloud %} plans.
 
 {% data reusables.actions.about-larger-runners %}
 

@@ -3,7 +3,7 @@ title: Roo Code
 product: vercel
 url: /docs/ai-gateway/coding-agents/roo-code
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code"
-last_updated: 2026-04-29
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Use Roo Code with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "2282bbc74eb2cf614719cf7366d2ecb9f21529dd5dd451e8d62413275b197d01"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0af3818ea47a8f2eea5cd160f40cdacc6f2b46ee8b203a211da8fc4a24e27755"
 ---
 
 # Roo Code

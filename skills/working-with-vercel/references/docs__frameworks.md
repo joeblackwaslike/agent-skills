@@ -3,7 +3,7 @@ title: Frameworks on Vercel
 product: vercel
 url: /docs/frameworks
 canonical_url: "https://vercel.com/docs/frameworks"
-last_updated: 2025-09-24
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter what tool you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a7745593ea5635707700eced4de64e96f6e3c669b65aafa4ca1a4b73d3d902fb"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "01f60c59a9e3ec07646e3f0e225927edb07d90bb7cb72595965a0006ea1d614a"
 ---
 
 # Frameworks on Vercel

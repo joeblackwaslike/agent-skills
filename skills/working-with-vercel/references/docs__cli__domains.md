@@ -3,7 +3,7 @@ title: vercel domains
 product: vercel
 url: /docs/cli/domains
 canonical_url: "https://vercel.com/docs/cli/domains"
-last_updated: 2026-05-28
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,13 +12,13 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "559c6070f827434dec8e7a55ebf7aac44beaf70c6d878a14cecab4ccea68de64"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "c66ad72052bdd1ca6d21072bf7924889d8a877cb5ad757981b0396c15b5ac46a"
 ---
 
 # vercel domains
 
-The `vercel domains` command manages domains under the current scope. With it, you can list, inspect, add, remove, purchase, move, transfer in, search, price, and check the availability of domains.
+The `vercel domains` command manages domains under the current scope. With it, you can list, inspect, verify, add, remove, purchase, move, transfer in, search, price, and check the availability of domains.
 
 > **💡 Note:** You can manage domains with further options and greater control under a Vercel
 > Project's Domains section in the sidebar from the Vercel Dashboard.
@@ -40,6 +40,13 @@ vercel domains inspect [domain]
 
 *Using the \`vercel domains\` command to retrieve
 information about a specific domain.*
+
+```bash filename="terminal"
+vercel domains verify [domain]
+```
+
+*Using the \`vercel domains\` command to verify the DNS
+configuration of a domain.*
 
 ```bash filename="terminal"
 vercel domains add [domain] [project]
@@ -206,6 +213,37 @@ vercel domains search acme --format=json
 
 *Using the \`vercel domains search\` command with the
 \`--format=json\` option.*
+
+You can also use the `--format=json` option with `verify` to return structured JSON output describing the current and expected DNS records for the domain.
+
+```bash filename="terminal"
+vercel domains verify my-domain.com --format=json
+```
+
+*Using the \`vercel domains verify\` command with the
+\`--format=json\` option.*
+
+### Project
+
+Use the `--project` option with `verify` to check the DNS configuration against the records expected by a specific Vercel Project.
+
+```bash filename="terminal"
+vercel domains verify my-domain.com --project my-project
+```
+
+*Using the \`vercel domains verify\` command with the
+\`--project\` option.*
+
+### Strict
+
+Use the `--strict` option with `verify` to check DNS for the exact domain only, without falling back to the parent zone's configuration.
+
+```bash filename="terminal"
+vercel domains verify my-domain.com --strict
+```
+
+*Using the \`vercel domains verify\` command with the
+\`--strict\` option.*
 
 
 ---

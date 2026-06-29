@@ -3,7 +3,7 @@ title: Fluid compute
 product: vercel
 url: /docs/fluid-compute
 canonical_url: "https://vercel.com/docs/fluid-compute"
-last_updated: 2026-05-14
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to run your functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5164f4f6e0ef440588adda1d7ae412b89601ab1ec928155edde774e80fe8e87e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7f4e80380ef8da6172efd5fa327d17d53e412b19633c421a967d32be492d7b9f"
 ---
 
 # Fluid compute

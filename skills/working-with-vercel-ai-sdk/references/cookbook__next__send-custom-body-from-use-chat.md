@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/send-custom-body-from-use-chat.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2e713aa571f7bc4c09e5eef669eec69dfcfe4300268c549d88c9cb14507cdd26"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "3dc03659b21fcf706ca852b4c7db84c44626c7f6674d2cbc1b26e163f93f59d7"
 ---
 
 # Send Custom Body from useChat
@@ -83,8 +83,13 @@ export default function Chat() {
 We need to adjust the server to receive the custom request format with the chat ID and last message.
 The rest of the message history can be loaded from storage.
 
-```tsx filename='app/api/chat/route.ts' highlight="8,11,12,16"
-import { convertToModelMessages, streamText } from 'ai';
+```tsx filename='app/api/chat/route.ts' highlight="12,15-16,21"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -103,11 +108,14 @@ export async function POST(req: Request) {
   });
 
   // Respond with the stream
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    onFinish: ({ messages: newMessages }) => {
-      saveMessages(id, newMessages);
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages,
+      onFinish: ({ messages: newMessages }) => {
+        saveMessages(id, newMessages);
+      },
+    }),
   });
 }
 ```

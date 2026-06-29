@@ -3,7 +3,7 @@ title: Provider Allowlist
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/provider-allowlist
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/authentication-and-byok/byok
-summary: Learn about provider allowlist on Vercel.
+summary: Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "113983255ef0a08191f954426fbd1758c90d9692fcde5bd1da21a7fe056c192e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "460b53fe7304e0128a2269e0ce9a03006c3cf05c4612c148ad2f0783d0195b4d"
 ---
 
 # Provider Allowlist

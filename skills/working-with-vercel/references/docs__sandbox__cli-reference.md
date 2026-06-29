@@ -3,7 +3,7 @@ title: Sandbox CLI Reference
 product: vercel
 url: /docs/sandbox/cli-reference
 canonical_url: "https://vercel.com/docs/sandbox/cli-reference"
-last_updated: 2026-05-29
+last_updated: 2026-06-15
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "488f7cee52eb578b0b5cb54d2d8f87afeea41aec532779ce6718dcf741177618"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9b238bb7ecd907d3283409eb606844ebaf222bf588032aff582b9a3bf0f904a8"
 ---
 
 # Sandbox CLI Reference

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/use-chat-custom-request-options.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4a2341a35a36d05a87244cda64d0824416d874049d7278a6ff1fb77f4c9b0775"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "21a74d1e0720f0a168f5f6d72ecc3bcc0fd80759393e0e3fba5eae6cfe5926f6"
 ---
 
 # Custom headers, body, and credentials not working with useChat
@@ -168,7 +168,7 @@ For more details on request configuration, see the [Request Configuration](/docs
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

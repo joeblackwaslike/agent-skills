@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/react-native-apple.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f55514c3308729c47ec931de3ac4193d5265435bb91556848ae90b0df71dbb34"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "de4bd5366d80f56735667eaf5e7b91a64f6d9c4358f9e6ebe2a07d7d49f90642"
 ---
 
 # React Native Apple Provider
@@ -161,7 +161,7 @@ const result = await generateText({
 
 <Note>
   Since tools are executed by Apple Intelligence rather than the AI SDK,
-  multi-step features like `maxSteps`, `onStepStart`, and `onStepFinish` are not
+  multi-step features like `stopWhen`, `onStepStart`, and `onStepEnd` are not
   supported.
 </Note>
 
@@ -185,9 +185,9 @@ Apple provides speech-to-text transcription using `SpeechAnalyzer` and `SpeechTr
 
 ```ts
 import { apple } from '@react-native-ai/apple';
-import { experimental_transcribe } from 'ai';
+import { transcribe } from 'ai';
 
-const response = await experimental_transcribe({
+const response = await transcribe({
   model: apple.transcriptionModel(),
   audio: audioBuffer,
 });
@@ -205,9 +205,9 @@ Convert text to speech:
 
 ```ts
 import { apple } from '@react-native-ai/apple';
-import { experimental_generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
-const response = await experimental_generateSpeech({
+const response = await generateSpeech({
   model: apple.speechModel(),
   text: 'Hello from Apple on-device speech!',
   language: 'en-US',
@@ -219,7 +219,7 @@ const response = await experimental_generateSpeech({
 You can configure the voice to use for speech synthesis by passing its identifier to the `voice` option.
 
 ```ts
-const response = await experimental_generateSpeech({
+const response = await generateSpeech({
   model: apple.speechModel(),
   text: 'Custom voice example',
   voice: 'com.apple.ttsbundle.Samantha-compact',

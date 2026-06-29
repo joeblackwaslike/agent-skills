@@ -13,8 +13,8 @@ related:
 summary: Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4524b3498adf5dd2916665d08a21bc5678eb068fa983500851e71ec51c220236"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "936658ee677fc485da8ea548e19e9b32630b1591540281db3056eca0ee75b684"
 ---
 
 # Rolling out a new feature
@@ -36,7 +36,7 @@ Progressive rollouts bucket traffic by an entity attribute. In the dashboard, op
 
 ## 3. Pull environment variables
 
-The `FLAGS` environment variable contains your SDK keys. Pull it into your local `.env.local`:
+The environment variables include the Vercel OpenID Connect (OIDC) token used by the SDK. Pull them into your local `.env.local`:
 
 ```bash filename="terminal"
 vercel env pull
@@ -50,7 +50,7 @@ pnpm add flags @flags-sdk/vercel
 
 ## 5. Define the flag and identify the user
 
-Create a flag definition using the Flags SDK. The `vercelAdapter` reads the `FLAGS` environment variable automatically, and `identify` provides the entity data used for rollout bucketing:
+Create a flag definition using the Flags SDK. The `vercelAdapter` connects the flag to Vercel Flags, and `identify` provides the entity data used for rollout bucketing:
 
 ```ts filename="flags.ts"
 import { dedupe, flag } from 'flags/next';

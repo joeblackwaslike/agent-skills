@@ -3,7 +3,7 @@ title: Usage & Pricing for Cron Jobs
 product: vercel
 url: /docs/cron-jobs/usage-and-pricing
 canonical_url: "https://vercel.com/docs/cron-jobs/usage-and-pricing"
-last_updated: 2026-03-04
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/cron-jobs
@@ -15,8 +15,8 @@ related:
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "076b5539fd493302d4b93fc2592987bf223aebd5e8cf529f8b0e1020b016a029"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7538ec060cb2ed1169fba2d90fc27b9f3c7a2a8bc75137697e315ca56be47f0b"
 ---
 
 # Usage & Pricing for Cron Jobs

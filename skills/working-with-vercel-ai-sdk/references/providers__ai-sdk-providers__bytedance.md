@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f529f5f48fed9113ce14a0cad92cba88abeaeec1953c15b6f9c1672c43874cb9"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "4b8af9674270782819bd5abb6e4bd953f6314971f7db21810f9215af91f35f50"
 ---
 
 # ByteDance Provider
@@ -255,8 +255,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
   model: byteDance.video('dreamina-seedance-2-0-260128'),
-  prompt:
-    'A serene mountain landscape at sunrise with gentle camera movement',
+  prompt: 'A serene mountain landscape at sunrise with gentle camera movement',
   aspectRatio: '16:9',
   duration: 4,
   providerOptions: {
@@ -339,15 +338,15 @@ The following provider options are available via `providerOptions.bytedance`:
 
 ### Video Model Capabilities
 
-| Model                   | Model ID                            | Capabilities                                                                                                                   |
-| ----------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Seedance 2.0            | `dreamina-seedance-2-0-260128`      | T2V, I2V, reference videos (up to 3), reference audio (up to 3), audio-video sync. Duration: 4-15s. Resolution: 480p, 720p.                 |
+| Model                   | Model ID                            | Capabilities                                                                                                                                     |
+| ----------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Seedance 2.0            | `dreamina-seedance-2-0-260128`      | T2V, I2V, reference videos (up to 3), reference audio (up to 3), audio-video sync. Duration: 4-15s. Resolution: 480p, 720p.                      |
 | Seedance 2.0 Fast       | `dreamina-seedance-2-0-fast-260128` | T2V, I2V, reference videos (up to 3), reference audio (up to 3), audio-video sync. Optimized for speed. Duration: 4-15s. Resolution: 480p, 720p. |
-| Seedance 1.5 Pro        | `seedance-1-5-pro-251215`           | T2V, I2V (first frame), I2V (first+last frame), audio-video sync, draft mode. Duration: 4-12s. Resolution: 480p, 720p, 1080p. |
-| Seedance 1.0 Pro        | `seedance-1-0-pro-250528`      | T2V, I2V (first frame), I2V (first+last frame). Duration: 2-12s. Resolution: 480p, 720p, 1080p.                               |
-| Seedance 1.0 Pro Fast   | `seedance-1-0-pro-fast-251015` | T2V, I2V (first frame). Optimized for speed and cost. Duration: 2-12s.                                                        |
-| Seedance 1.0 Lite (T2V) | `seedance-1-0-lite-t2v-250428` | Text-to-video only. Duration: 2-12s. Resolution: 480p, 720p, 1080p.                                                           |
-| Seedance 1.0 Lite (I2V) | `seedance-1-0-lite-i2v-250428` | I2V (first frame), I2V (first+last frame), multi-reference images (1-4). Duration: 2-12s. Resolution: 480p, 720p.             |
+| Seedance 1.5 Pro        | `seedance-1-5-pro-251215`           | T2V, I2V (first frame), I2V (first+last frame), audio-video sync, draft mode. Duration: 4-12s. Resolution: 480p, 720p, 1080p.                    |
+| Seedance 1.0 Pro        | `seedance-1-0-pro-250528`           | T2V, I2V (first frame), I2V (first+last frame). Duration: 2-12s. Resolution: 480p, 720p, 1080p.                                                  |
+| Seedance 1.0 Pro Fast   | `seedance-1-0-pro-fast-251015`      | T2V, I2V (first frame). Optimized for speed and cost. Duration: 2-12s.                                                                           |
+| Seedance 1.0 Lite (T2V) | `seedance-1-0-lite-t2v-250428`      | Text-to-video only. Duration: 2-12s. Resolution: 480p, 720p, 1080p.                                                                              |
+| Seedance 1.0 Lite (I2V) | `seedance-1-0-lite-i2v-250428`      | I2V (first frame), I2V (first+last frame), multi-reference images (1-4). Duration: 2-12s. Resolution: 480p, 720p.                                |
 
 Supported aspect ratios: `16:9`, `4:3`, `1:1`, `3:4`, `9:16`, `21:9`, `adaptive` (image-to-video only).
 
@@ -378,7 +377,7 @@ All models output MP4 video at 24 fps.
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

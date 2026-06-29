@@ -3,7 +3,7 @@ title: Provider Options
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-options
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options"
-last_updated: 2026-06-01
+last_updated: 2026-06-22
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1b9cfa8d5e9fd2bf6ee05ec9fb9cc4b45f8f6fbe83c8b3bf573d2e76adde4371"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "addb16d44f2bb43e0a96514951f0cbfa119f296c77720f9bcc202162ba22e4e1"
 ---
 
 # Provider Options
@@ -227,12 +227,14 @@ or in the public [models page](https://vercel.com/ai-gateway/models).
 | `prodia`     | Prodia            | [prodia.com](https://www.prodia.com)                             |
 | `quiverai`   | QuiverAI          | [quiver.ai](https://quiver.ai)                                   |
 | `recraft`    | Recraft           | [recraft.ai](https://www.recraft.ai)                             |
+| `sakana`     | Sakana AI         | [sakana.ai](https://sakana.ai)                                   |
 | `sambanova`  | SambaNova         | [sambanova.ai](https://sambanova.ai/)                            |
 | `stepfun`    | StepFun           | [platform.stepfun.ai](https://platform.stepfun.ai)               |
 | `streamlake` | StreamLake        | [streamlake.ai](https://streamlake.ai/)                          |
 | `togetherai` | Together AI       | [together.ai](https://together.ai/)                              |
 | `vertex`     | Vertex AI         | [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai) |
 | `voyage`     | Voyage AI         | [voyageai.com](https://www.voyageai.com)                         |
+| `wafer`      | Wafer             | [wafer.ai](https://wafer.ai/)                                    |
 | `xiaomi`     | Xiaomi            | [mimo.xiaomi.com](https://mimo.xiaomi.com)                       |
 | `xai`        | xAI               | [x.ai](https://x.ai)                                             |
 | `zai`        | Z.ai              | [z.ai](https://z.ai/model-api)                                   |

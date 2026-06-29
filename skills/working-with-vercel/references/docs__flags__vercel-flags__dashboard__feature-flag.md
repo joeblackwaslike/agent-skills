@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure individual feature flags in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "cc23203674bddaeb8288e067b153e537dee25a37d99a24149ec42ddd5c81988e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e0fbbe7bb9a2977241ba6c6cbaf51cb61aea062377787f22b96d77776c01aa7c"
 ---
 
 # Feature Flag Configuration
@@ -59,13 +59,16 @@ Each flag can be configured differently for Production, Preview, and Development
 
 ### How environments work
 
-When your application evaluates a flag, the [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) determines which environment's configuration is used:
+When your application evaluates a flag with the default Vercel OpenID Connect (OIDC) authentication, Vercel Flags uses the environment associated with the current deployment or local project context. If you configure an [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) manually, the key determines which environment's configuration is used:
 
-- **Production SDK Key** → Production configuration
-- **Preview SDK Key** → Preview configuration
-- **Development SDK Key** → Development configuration
+| Authentication | Configuration used |
+| -------------- | ------------------ |
+| Vercel OIDC | The current Vercel environment |
+| Production SDK Key | Production configuration |
+| Preview SDK Key | Preview configuration |
+| Development SDK Key | Development configuration |
 
-Each environment has its own configuration that determines how the flag is evaluated. A configuration consists of [evaluation](#evaluation) rules and [outcomes](#outcome). See [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys) to learn how Vercel automatically manages the `FLAGS` environment variable for each environment.
+Each environment has its own configuration that determines how the flag is evaluated. A configuration consists of [evaluation](#evaluation) rules and [outcomes](#outcome). See [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys) to learn when to use manual SDK Key authentication.
 
 A common setup enables a feature in Development and Preview while keeping it off in Production:
 
@@ -150,7 +153,7 @@ Use a weighted split to serve a feature to a percentage of users. Set up an [Ent
 4. Select a **Fallback** variant, used in case the entity or attribute the split is based on wasn't provided
 5. Set the percentages or weights for the split. Vercel Flags supports weights, so you can set 1, 1, 1 for an equal three-way split
 
-You can also use a weighted split as the outcome of an individual rule, not just as the fallthrough.
+You can also use a weighted split as the outcome of an individual rule, not only as the fallthrough.
 
 ### Progressive rollout
 
@@ -199,12 +202,12 @@ Changes to the source environment will automatically apply to linked environment
 
 ### Custom environments
 
-Vercel Flags supports three flag environments: Production, Preview, and Development. [Vercel Custom Environments](/docs/deployments/environments#custom-environments) use the Preview SDK Key by default, so the `FLAGS` environment variable in a custom environment points to your Preview flag configuration.
+Vercel Flags supports three flag environments: Production, Preview, and Development. [Vercel Custom Environments](/docs/deployments/environments#custom-environments) use Preview flag configuration by default.
 
 To use a different flag environment for a custom environment:
 
 1. Find the SDK Key you want in the [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys) section of the **Flags** section in the sidebar, or create a new one for the desired environment
-2. Reconfigure the `FLAGS` environment variable in your custom environment and set its value to that SDK Key
+2. Add or update an environment variable in your custom environment, such as `FLAGS`, and set its value to that SDK Key
 3. Redeploy the custom environment
 
 This means you configure your flags once per flag environment rather than repeating the setup for every custom environment.

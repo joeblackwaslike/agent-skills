@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/prompts.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "cd04f7917a108cd38740b84d63264135aa381ebb4295d80958e31974b4655f1e"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b01eae7bcba7787d8e6f4f08d6875ced0606421460c4165daee9941ba303101c"
 ---
 
 # Prompts
@@ -44,22 +44,21 @@ const result = await generateText({
 ## System Prompts
 
 System prompts are the initial set of instructions given to models that help guide and constrain the models' behaviors and responses.
-You can set system prompts using the `system` property.
+You can set system prompts using the `instructions` property.
 System prompts work with both the `prompt` and the `messages` properties.
-System messages in `prompt` or `messages` are allowed by default with a warning; use the `system` property for system instructions, set `allowSystemInMessages: true` when you need to send existing message histories that contain system messages, or set `allowSystemInMessages: false` to reject them.
+System messages in `prompt` or `messages` are rejected by default; use the `instructions` property for system instructions, or set `allowSystemInMessages: true` when you need to send existing message histories that contain system messages.
 
 <Note type="warning">
-  System messages in `prompt` or `messages` can create a prompt injection
-  attack risk, where users can override or set the system prompt by injecting
-  system messages. Ideally, provide system instructions through the `system`
-  option instead. Set `allowSystemInMessages: true` to suppress the warning, or
-  `allowSystemInMessages: false` to throw an error.
+  Opting in with `allowSystemInMessages` can create a prompt injection risk
+  where users can override or set the system prompt by injecting system
+  messages. In most cases, only trusted server-side code should set system
+  instructions via the `instructions` property.
 </Note>
 
 ```ts highlight="3-6"
 const result = await generateText({
   model: __MODEL__,
-  system:
+  instructions:
     `You help planning travel itineraries. ` +
     `Respond to the users' request with a list ` +
     `of the best stops to make in their destination.`,
@@ -125,7 +124,7 @@ For granular control over applying provider options at the message level, you ca
 ```ts
 const result = await generateText({
   model: __MODEL__,
-  system: {
+  instructions: {
     role: 'system',
     content: 'Cached system message',
     providerOptions: {
@@ -156,9 +155,9 @@ const messages: ModelMessage[] = [
         },
       },
       {
-        type: 'image',
-        image:
-          'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+        type: 'file',
+        mediaType: 'image',
+        data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
         // Sets image detail configuration for image part:
         providerOptions: {
           openai: { imageDetail: 'low' },
@@ -231,8 +230,9 @@ const result = await generateText({
       content: [
         { type: 'text', text: 'Describe the image in detail.' },
         {
-          type: 'image',
-          image: fs.readFileSync('./data/comic-cat.png'),
+          type: 'file',
+          mediaType: 'image',
+          data: fs.readFileSync('./data/comic-cat.png'),
         },
       ],
     },
@@ -251,8 +251,9 @@ const result = await generateText({
       content: [
         { type: 'text', text: 'Describe the image in detail.' },
         {
-          type: 'image',
-          image: fs.readFileSync('./data/comic-cat.png').toString('base64'),
+          type: 'file',
+          mediaType: 'image',
+          data: fs.readFileSync('./data/comic-cat.png').toString('base64'),
         },
       ],
     },
@@ -271,9 +272,9 @@ const result = await generateText({
       content: [
         { type: 'text', text: 'Describe the image in detail.' },
         {
-          type: 'image',
-          image:
-            'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+          type: 'file',
+          mediaType: 'image',
+          data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
         },
       ],
     },
@@ -285,8 +286,8 @@ const result = await generateText({
 
 <Note type="warning">
   Only a few providers and models currently support file parts: [Google
-  Generative AI](/providers/ai-sdk-providers/google-generative-ai), [Google
-  Vertex AI](/providers/ai-sdk-providers/google-vertex),
+  Generative AI](/providers/ai-sdk-providers/google), [Google Vertex
+  AI](/providers/ai-sdk-providers/google-vertex),
   [OpenAI](/providers/ai-sdk-providers/openai) (for `wav` and `mp3` audio with
   `gpt-4o-audio-preview`), [Anthropic](/providers/ai-sdk-providers/anthropic),
   [OpenAI](/providers/ai-sdk-providers/openai) (for `pdf`).
@@ -504,7 +505,11 @@ const result = await generateText({
           type: 'text',
           text: 'How many calories are in this block of cheese?',
         },
-        { type: 'image', image: fs.readFileSync('./data/roquefort.jpg') },
+        {
+          type: 'file',
+          mediaType: 'image',
+          data: fs.readFileSync('./data/roquefort.jpg'),
+        },
       ],
     },
     {
@@ -586,7 +591,7 @@ const result = await generateText({
                 text: 'Here is the nutrition data for the cheese:',
               },
               {
-                type: 'image-data',
+                type: 'file-data',
                 data: fs
                   .readFileSync('./data/roquefort-nutrition-data.png')
                   .toString('base64'),
@@ -604,7 +609,7 @@ const result = await generateText({
 ### System Messages
 
 System messages are messages that are sent to the model before the user messages to guide the assistant's behavior.
-You can alternatively use the `system` property.
+You can alternatively use the `instructions` property.
 
 ```ts highlight="4"
 const result = await generateText({

@@ -3,7 +3,7 @@ title: Native Integration Flows
 product: vercel
 url: /docs/integrations/create-integration/marketplace-flows
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-flows"
-last_updated: 2026-02-26
+last_updated: 2026-06-10
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "93fb8a991b657092f89453b831704e2795da631ef1e2e1f73b0605b869709afb"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "5734cb554b08510b07d650e8278971eabb0622e45a345235662386f4ecbeb812"
 ---
 
 # Native Integration Flows

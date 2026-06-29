@@ -3,7 +3,7 @@ title: Account Plans on Vercel
 product: vercel
 url: /docs/plans
 canonical_url: "https://vercel.com/docs/plans"
-last_updated: 2026-03-19
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2b7829755c91912082d6cb3b77bd42f09ee79ae8727bbc3d2b8ee910b2a47efd"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0e6c07a3c7291535af4cd380df240824050f1bbacddfa7e02de99e0872761fdc"
 ---
 
 # Account Plans on Vercel

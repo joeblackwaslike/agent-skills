@@ -3,7 +3,7 @@ title: Notifications
 product: vercel
 url: /docs/notifications
 canonical_url: "https://vercel.com/docs/notifications"
-last_updated: 2026-03-17
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "52ba15cd401a6eb2536874d2854dd53c92ae1b0ff2c71326fedc1e94e5c18307"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "244065fdd82e776cfce399d4002b5127ea52e9e47eeb9ecbd0e9e9eee1446a8b"
 ---
 
 # Notifications

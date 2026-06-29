@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-06-16T12:24:33.275Z"
-sha256: "c3d8a0296bc43d141256abcaffef4e7e47e83915d60335a18efef65f5fd28f59"
+fetched_at: "2026-06-29T05:45:05.522Z"
+sha256: "0258d98b0101b0fae825a008359e65637964a3940db3c1808e59c8bbda8150c5"
 ---
 
 # Language Support
@@ -61,7 +61,8 @@ Some languages require additional installations or setup steps, as noted.
 * **C/C++**  
   (by default, uses the clangd language server (language `cpp`) but we also support ccls (language `cpp_ccls`);
   for best results, provide a `compile_commands.json` at the repository root;
-  see the [C/C++ Setup Guide](../03-special-guides/cpp_setup) for details.)
+  see the [C/C++ Setup Guide](../03-special-guides/cpp_setup) for details;
+  for Unreal Engine 5 projects, see the [Unreal Engine Setup Guide](../03-special-guides/unreal_engine_setup_guide_for_serena).)
 * **Clojure**
 * **Crystal**  
   (requires [Crystalline](https://github.com/elbywan/crystalline) language server to be installed and available on PATH;
@@ -103,6 +104,10 @@ Some languages require additional installations or setup steps, as noted.
 * **Julia**
 * **Kotlin**  
   (uses the pre-alpha [official kotlin LS](https://github.com/Kotlin/kotlin-lsp), some issues may appear)
+* **LaTeX**  
+  (experimental; must be explicitly enabled via language `latex`; uses [texlab](https://github.com/latex-lsp/texlab),
+  auto-downloaded as a SHA-256-verified prebuilt binary; supports `.tex`, `.bib`, `.sty`, and `.cls` files; texlab is
+  GPL-3.0 and runs as a separate downloaded process)
 * **Lean 4**  
   (requires `lean` and `lake` installed via [elan](https://github.com/leanprover/elan); uses the built-in Lean 4 LSP;
   the project must be a Lake project with `lake build` run before use)
@@ -123,8 +128,14 @@ Some languages require additional installations or setup steps, as noted.
   (requires installation of Perl::LanguageServer)
 * **PHP**  
   (by default, uses the Intelephense language server (language `php`), set `INTELEPHENSE_LICENSE_KEY` environment variable for premium features;
-  we also support [Phpactor](https://github.com/phpactor/phpactor) (language `php_phpactor`), which requires PHP 8.1+)
+  we also support [Phpactor](https://github.com/phpactor/phpactor) (language `php_phpactor`), which requires PHP 8.1+;
+  and the experimental [PHPantom](https://github.com/PHPantom-dev/phpantom_lsp) backend (language `php_phpantom`)
 * **Python**
+  (by default, uses [Pyright](https://github.com/microsoft/pyright) (language `python`);
+  alternatives: [ty](https://github.com/astral-sh/ty) (language `python_ty`),
+  [pyrefly](https://github.com/facebook/pyrefly) (language `python_pyrefly`),
+  [Jedi](https://github.com/palotas/jedi-language-server) (language `python_jedi`);
+  ty and pyrefly require `uv`/`uvx` in PATH)
 * **R**  
   (requires installation of the `languageserver` R package)
 * **Ruby**  

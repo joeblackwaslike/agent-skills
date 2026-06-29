@@ -8,16 +8,24 @@ type: how-to
 prerequisites:
   - /docs/analytics
 related:
+  - /docs/analytics/web-analytics-api
+  - /docs/analytics/accessing-metrics-with-vercel-cli
   - /docs/analytics/filtering
   - /docs/analytics/limits-and-pricing
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ac917fffb28827f819cb9d71bc065f8a8de6241e4b4fe0e29b6a5181086c0133"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b7710626ca59e60e43dd437d78fcb65eb96bebffdc61cb74504ae5e2026b3b52"
 ---
 
 # Using Web Analytics
+
+> **💡 Note:** You can also [use the Web Analytics API](/docs/analytics/web-analytics-api)
+> to build reports, embed metrics, or combine Web Analytics with your own
+> business data. You can also [access Web Analytics metrics with Vercel
+> CLI](/docs/analytics/accessing-metrics-with-vercel-cli) to query production
+> metrics, filter events, and compare projects from your terminal.
 
 ## Accessing Web Analytics
 

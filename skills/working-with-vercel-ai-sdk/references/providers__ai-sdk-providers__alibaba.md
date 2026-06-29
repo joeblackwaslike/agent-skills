@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "020d555498fbb3d4e89681ddcd665340d4caaf0680cd81c51f062b982f6e38a1"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "49441193e2bc85d154a606743f4f3683820899f50d82c8251d72edaeb1b08da2"
 ---
 
 # Alibaba Provider
@@ -130,7 +130,7 @@ The following optional provider options are available for Alibaba models:
 Alibaba's Qwen models support thinking/reasoning mode for complex problem-solving:
 
 ```ts
-import { alibaba, type AlibabaLanguageModelOptions } from '@ai-sdk/alibaba';
+import { alibaba, type AlibabaLanguageModelChatOptions } from '@ai-sdk/alibaba';
 import { generateText } from 'ai';
 
 const { text, reasoning } = await generateText({
@@ -139,7 +139,7 @@ const { text, reasoning } = await generateText({
     alibaba: {
       enableThinking: true,
       thinkingBudget: 2048,
-    } satisfies AlibabaLanguageModelOptions,
+    } satisfies AlibabaLanguageModelChatOptions,
   },
   prompt: 'How many "r"s are in the word "strawberry"?',
 });
@@ -500,7 +500,7 @@ a string if needed.
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

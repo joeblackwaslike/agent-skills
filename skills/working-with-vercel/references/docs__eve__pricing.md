@@ -1,9 +1,9 @@
 ---
-title: Eve Pricing and Limits
+title: Pricing and Limits
 product: vercel
 url: /docs/eve/pricing
 canonical_url: "https://vercel.com/docs/eve/pricing"
-last_updated: 2018-10-20
+last_updated: 2026-06-19
 type: reference
 prerequisites:
   - /docs/eve
@@ -13,11 +13,11 @@ related:
   - /docs/sandbox/pricing
   - /docs/ai-gateway/pricing
   - /docs/functions/limitations
-summary: Understand how Eve usage maps to Vercel resources and inherited platform limits.
+summary: Understand how eve usage maps to Vercel resources and inherited platform limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "1049a08c459cf152938f564ec08af1019c9d3f6a080365e1b25011011315e6ee"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "af2fc13c7b2082d87109d82f77a054369f8f820a82e5503521d95ee43523c1a9"
 ---
 
 # Pricing and Limits

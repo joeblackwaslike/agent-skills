@@ -3,7 +3,7 @@ title: Routing
 product: vercel
 url: /docs/routing
 canonical_url: "https://vercel.com/docs/routing"
-last_updated: 2026-03-05
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your application."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fb7e24c872ae3dd90efe66a82aed986b22351bbc958a1d9ac2d1755c2107e2c9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b83ddb8b011725036d6cfe8fc7dd4060a7dd25cf36f985fd64c51b450bf6e7b3"
 ---
 
 # Routing

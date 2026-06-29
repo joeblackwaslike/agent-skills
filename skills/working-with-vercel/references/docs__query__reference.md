@@ -3,7 +3,7 @@ title: Query Reference
 product: vercel
 url: /docs/query/reference
 canonical_url: "https://vercel.com/docs/query/reference"
-last_updated: 2025-12-18
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/query
@@ -16,8 +16,8 @@ related:
 summary: This reference covers the dimensions and operators used to create a query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "5435038484e05046398b5bec0ea97b72fc882ac757a5ef65f3d9394421d87811"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4e7b468644733229ad042f42a5db9977479096d423ad7a2a5b4f75dd3e014aeb"
 ---
 
 # Query Reference

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9e3a1b6af31d2055e42bdc8fde63dd0cb6af205e7ddf2f9de1e3c0cf6332a304"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "be8dbb1b3cf9e5af455ba8f69514784293b4a55050b08534c65bafbf53c91fba"
 ---
 
 # Language Model Middleware
@@ -298,11 +298,11 @@ This example shows how to log the parameters and generated text of a language mo
 
 ```ts
 import type {
-  LanguageModelV3Middleware,
-  LanguageModelV3StreamPart,
+  LanguageModelV4Middleware,
+  LanguageModelV4StreamPart,
 } from '@ai-sdk/provider';
 
-export const yourLogMiddleware: LanguageModelV3Middleware = {
+export const yourLogMiddleware: LanguageModelV4Middleware = {
   wrapGenerate: async ({ doGenerate, params }) => {
     console.log('doGenerate called');
     console.log(`params: ${JSON.stringify(params, null, 2)}`);
@@ -325,8 +325,8 @@ export const yourLogMiddleware: LanguageModelV3Middleware = {
     const textBlocks = new Map<string, string>();
 
     const transformStream = new TransformStream<
-      LanguageModelV3StreamPart,
-      LanguageModelV3StreamPart
+      LanguageModelV4StreamPart,
+      LanguageModelV4StreamPart
     >({
       transform(chunk, controller) {
         switch (chunk.type) {
@@ -371,11 +371,11 @@ export const yourLogMiddleware: LanguageModelV3Middleware = {
 This example shows how to build a simple cache for the generated text of a language model call.
 
 ```ts
-import type { LanguageModelV3Middleware } from '@ai-sdk/provider';
+import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
 const cache = new Map<string, any>();
 
-export const yourCacheMiddleware: LanguageModelV3Middleware = {
+export const yourCacheMiddleware: LanguageModelV4Middleware = {
   wrapGenerate: async ({ doGenerate, params }) => {
     const cacheKey = JSON.stringify(params);
 
@@ -405,9 +405,9 @@ This example shows how to use RAG as middleware.
 </Note>
 
 ```ts
-import type { LanguageModelV3Middleware } from '@ai-sdk/provider';
+import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
-export const yourRagMiddleware: LanguageModelV3Middleware = {
+export const yourRagMiddleware: LanguageModelV4Middleware = {
   transformParams: async ({ params }) => {
     const lastUserMessageText = getLastUserMessageText({
       prompt: params.prompt,
@@ -434,9 +434,9 @@ Guard rails are a way to ensure that the generated text of a language model call
 is safe and appropriate. This example shows how to use guardrails as middleware.
 
 ```ts
-import type { LanguageModelV3Middleware } from '@ai-sdk/provider';
+import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
-export const yourGuardrailMiddleware: LanguageModelV3Middleware = {
+export const yourGuardrailMiddleware: LanguageModelV4Middleware = {
   wrapGenerate: async ({ doGenerate }) => {
     const { text, ...rest } = await doGenerate();
 
@@ -459,9 +459,9 @@ To send and access custom metadata in Middleware, you can use `providerOptions`.
 ```ts
 import { generateText, wrapLanguageModel } from 'ai';
 __PROVIDER_IMPORT__;
-import type { LanguageModelV3Middleware } from '@ai-sdk/provider';
+import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
-export const yourLogMiddleware: LanguageModelV3Middleware = {
+export const yourLogMiddleware: LanguageModelV4Middleware = {
   wrapGenerate: async ({ doGenerate, params }) => {
     console.log('METADATA', params?.providerMetadata?.yourLogMiddleware);
     const result = await doGenerate();
@@ -493,21 +493,27 @@ console.log(text);
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

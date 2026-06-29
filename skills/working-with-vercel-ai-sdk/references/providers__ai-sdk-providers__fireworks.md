@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "aa13d2f9c730dc8d24beef2a7b5d3a2dd7970741aee9612256f9d678b144833b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "11d6c1cb1b377d87c0fac15091dbcf7bdeb23a88a2cca1f504fe1ff9e159d1b9"
 ---
 
 # Fireworks Provider
@@ -123,7 +123,7 @@ import {
 import { generateText } from 'ai';
 
 const { text, reasoningText } = await generateText({
-  model: fireworks('accounts/fireworks/models/kimi-k2p5'),
+  model: fireworks('accounts/fireworks/models/kimi-k2p6'),
   providerOptions: {
     fireworks: {
       thinking: { type: 'enabled', budgetTokens: 4096 },
@@ -136,10 +136,16 @@ const { text, reasoningText } = await generateText({
 
 The following optional provider options are available for Fireworks chat models:
 
+- **promptCacheKey** _string_
+
+  A stable, opaque key that improves prompt cache hit rates by routing requests
+  with shared prompt prefixes to the same Fireworks replica. Reuse the same key
+  for all steps and calls in one conversation, and use different keys for
+  unrelated conversations.
+
 - **thinking** _object_
 
-  Configuration for thinking/reasoning models like Kimi K2.5.
-
+  Configuration for thinking/reasoning models like Kimi K2.6.
   - **type** _'enabled' | 'disabled'_
 
     Whether to enable thinking mode.
@@ -151,10 +157,93 @@ The following optional provider options are available for Fireworks chat models:
 - **reasoningHistory** _'disabled' | 'interleaved' | 'preserved'_
 
   Controls how reasoning history is handled in multi-turn conversations:
-
   - `'disabled'`: Remove reasoning from history
   - `'interleaved'`: Include reasoning between tool calls within a single turn
   - `'preserved'`: Keep all reasoning in history
+
+### Prompt Cache Affinity
+
+[Fireworks prompt caching](https://docs.fireworks.ai/guides/prompt-caching)
+is automatic, but cached prefixes are local to a replica. Set
+`promptCacheKey` to an opaque session or conversation identifier to improve
+cache affinity. The provider sends it as Fireworks'
+[`prompt_cache_key`](https://docs.fireworks.ai/api-reference/post-chatcompletions)
+request field.
+
+The AI SDK reuses the same provider options for every model step in a
+multi-step `generateText` or `streamText` call, so one key covers the complete
+tool loop:
+
+```ts
+import {
+  fireworks,
+  type FireworksLanguageModelOptions,
+} from '@ai-sdk/fireworks';
+import { generateText, isStepCount, tool } from 'ai';
+import { z } from 'zod';
+
+const sessionId = 'conversation-123';
+
+const result = await generateText({
+  model: fireworks('accounts/fireworks/models/kimi-k2p6'),
+  providerOptions: {
+    fireworks: {
+      promptCacheKey: sessionId,
+    } satisfies FireworksLanguageModelOptions,
+  },
+  tools: {
+    weather: tool({
+      description: 'Get the weather for a city.',
+      inputSchema: z.object({ city: z.string() }),
+      execute: async ({ city }) => `It is sunny in ${city}.`,
+    }),
+  },
+  stopWhen: isStepCount(5),
+  prompt: 'What is the weather in San Francisco?',
+});
+
+console.log(result.usage.inputTokenDetails.cacheReadTokens);
+```
+
+For a reusable `ToolLoopAgent`, use call options to supply a key for each
+conversation. Pass the same key again for later agent calls that continue that
+conversation:
+
+```ts
+import {
+  fireworks,
+  type FireworksLanguageModelOptions,
+} from '@ai-sdk/fireworks';
+import { ToolLoopAgent } from 'ai';
+import { z } from 'zod';
+import { weatherTool } from './weather-tool';
+
+const agent = new ToolLoopAgent({
+  model: fireworks('accounts/fireworks/models/kimi-k2p6'),
+  callOptionsSchema: z.object({
+    sessionId: z.string(),
+  }),
+  prepareCall: ({ options, ...settings }) => ({
+    ...settings,
+    providerOptions: {
+      fireworks: {
+        promptCacheKey: options.sessionId,
+      } satisfies FireworksLanguageModelOptions,
+    },
+  }),
+  tools: { weather: weatherTool },
+});
+
+const result = await agent.generate({
+  prompt: 'What is the weather in San Francisco?',
+  options: {
+    sessionId: 'conversation-123',
+  },
+});
+```
+
+Use non-identifying values for cache keys rather than email addresses or other
+personal information.
 
 ### Completion Models
 
@@ -189,7 +278,7 @@ const model = fireworks.completionModel(
 | `accounts/fireworks/models/yi-large`                       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
 | `accounts/fireworks/models/kimi-k2-instruct`               | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
 | `accounts/fireworks/models/kimi-k2-thinking`               | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/kimi-k2p5`                      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
+| `accounts/fireworks/models/kimi-k2p6`                      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
 | `accounts/fireworks/models/minimax-m2`                     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
 
 <Note>
@@ -360,7 +449,7 @@ support for these models:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

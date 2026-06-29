@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/model-as-router.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b3fca7d3469b91d02b7e11e1bfe21d99c7d97f81efeede436063a3256446cde7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "2a39d45fa6d15906552306b22d058c2c651e45fbd42e41e0c8c3fcd31d5367f3"
 ---
 
 # Generative User Interfaces
@@ -25,7 +25,7 @@ When language models are provided with a set of function definitions and instruc
 const sendMessage = (prompt: string) =>
   generateText({
     model: __MODEL__,
-    system: 'you are a friendly weather assistant!',
+    instructions: 'you are a friendly weather assistant!',
     prompt,
     tools: {
       getWeather: {

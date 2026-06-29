@@ -16,8 +16,8 @@ related:
 summary: Learn about testing & troubleshooting on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d9b7b49f923d0e6ca1c48168230f371d983f240ebacf0be902f7ccb505c8c352"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a5a20ef12fd4eaddb1bbf8934e77dbc101033943496cf2a48a5655bb079c3476"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -171,6 +171,39 @@ To validate where requests are being routed to in production, follow these steps
 
 1. [Verify](/docs/microfrontends/path-routing#identifying-microfrontends-by-path) that the path is covered by the microfrontends routing configuration.
 2. Inspect the [debug headers](/docs/microfrontends/troubleshooting#debug-headers) or view a [page trace](/docs/microfrontends/troubleshooting#tracing) to verify the expected path was matched.
+
+### Pages Router pages fail during client-side navigation
+
+Pages Router pages that use `getStaticProps` or `getServerSideProps` rely on
+`/_next/data/...json` requests during client-side navigation. If Pages Router
+support or the required proxy and routing behavior is missing, the page can work
+on direct load but fail when you navigate to it from another microfrontend. This
+can happen when navigating from an App Router page to a Pages Router page.
+
+Check for these symptoms:
+
+- `/_next/data` requests return a `404` response.
+- `/_next/data` requests route to the wrong microfrontend.
+- The page loads stale or incorrect data after navigation.
+
+For any Next.js microfrontend that uses the Pages Router, enable
+`supportPagesRouter` in `withMicrofrontends()`.
+
+See [Set up microfrontends with your framework](/docs/microfrontends/quickstart#set-up-microfrontends-with-your-framework).
+
+## QA checklist for Pages Router microfrontends
+
+Use this checklist before promoting a microfrontends change that includes any
+Next.js Pages Router routes:
+
+- Test a direct page load.
+- Test client-side navigation from another microfrontend into the Pages Router page.
+- Test navigation from App Router pages to Pages Router pages.
+- Test Pages Router pages that use `getStaticProps`.
+- Test Pages Router pages that use `getServerSideProps`.
+- Inspect network requests for `/_next/data`.
+- Test through the [local microfrontends proxy](/docs/microfrontends/local-development#accessing-the-microfrontends-proxy).
+- Test on a Preview deployment.
 
 
 ---

@@ -3,7 +3,7 @@ title: Vercel and Sitecore XM Cloud Integration
 product: vercel
 url: /docs/integrations/cms/sitecore
 canonical_url: "https://vercel.com/docs/integrations/cms/sitecore"
-last_updated: 2026-02-18
+last_updated: 2026-06-11
 type: tutorial
 prerequisites:
   - /docs/integrations/cms
@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Sitecore XM Cloud to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sitecore.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3dc846d1dab4efbbd531b0c58dd4a2eec61d3fd54404b609744554c0403aede1"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ade11fbcab0382693200d4e19a8a636732b5b03d2f2d5d5d4f07f4c4549e0fa9"
 ---
 
 # Vercel and Sitecore XM Cloud Integration

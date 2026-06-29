@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "9c689d01b90a2effe73d1ecd645fd82250640496570b9b7b66406401bd7626ae"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a18449810989b694ce7df90f1e956ee872ee2c9408539cd9487750f426dd1ba8"
 ---
 
 # AI_InvalidToolApprovalError
@@ -49,6 +49,7 @@ if (InvalidToolApprovalError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

@@ -3,7 +3,7 @@ title: Configuring a Build
 product: vercel
 url: /docs/builds/configure-a-build
 canonical_url: "https://vercel.com/docs/builds/configure-a-build"
-last_updated: 2026-03-17
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "3406e4af041dfcf3a02db30f919a551b2af832920bd8933d13b6a533b04a7f6c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3b8dc5b92c7614b27ea03e6865d73f096177d8486e58153d9c7a97a4b9ffd0fa"
 ---
 
 # Configuring a Build
@@ -57,6 +57,8 @@ Inside the Framework Preset settings, use the drop-down menu to select the frame
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/astro) | [View Demo](https://astro-template.vercel.app)
 - **Brunch**: Brunch is a fast and simple webapp build tool with seamless incremental compilation for rapid development.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/brunch) | [View Demo](https://brunch-template.vercel.app)
+- **Container**: Deploy any project as a container image built from a Dockerfile.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/container)
 - **React**: Create React App allows you to get going with React in no time.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app) | [View Demo](https://create-react-template.vercel.app)
 - **Django**: Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-tool-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "5b260605da89befd13600ac852764563d31ecd59f5079e6a00b64487e4e11ef9"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "31b0a79f449272920073e8dbb3ee0d41a64a4dea6d08ac51c7c14e29f8325160"
 ---
 
 # AI_NoSuchToolError
@@ -51,6 +51,7 @@ if (NoSuchToolError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

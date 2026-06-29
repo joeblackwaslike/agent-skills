@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/codex-app-server.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a83817c42dd79821686fec18559a616ade352ecf6fe18b337b0251c71b50e130"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "9c39e84a05691dea21c96ed620d047f65e54422df849df1f29cfbfd7999a419b"
 ---
 
 # Codex CLI (App Server) Provider
@@ -204,7 +204,7 @@ Use the **Codex CLI provider** for simple one-shot tasks. Use the **Codex App Se
 
 ## Requirements
 
-- Node.js 18 or higher
+- Node.js 22 or higher
 - Codex CLI installed globally (v0.60.0+ recommended)
 - ChatGPT Plus/Pro subscription or OpenAI API key
 

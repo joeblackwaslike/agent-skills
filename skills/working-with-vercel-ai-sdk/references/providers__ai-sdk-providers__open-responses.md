@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "43dd4839e242cc8e62f6fe62d2ae0e3734585f208da2b596c32051ceb3550ccc"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "221d910b673491f6e3bb54a8f0a9160162ebdbe67ade762f2be23ec8a69426f5"
 ---
 
 # Open Responses Provider
@@ -119,7 +119,7 @@ const { text } = await generateText({
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

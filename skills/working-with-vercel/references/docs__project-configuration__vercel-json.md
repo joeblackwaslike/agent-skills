@@ -3,7 +3,7 @@ title: Static Configuration with vercel.json
 product: vercel
 url: /docs/project-configuration/vercel-json
 canonical_url: "https://vercel.com/docs/project-configuration/vercel-json"
-last_updated: 2026-03-11
+last_updated: 2026-06-17
 type: reference
 prerequisites:
   - /docs/project-configuration
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "64f2141348ab13106c1e7dde5c7cec03a697003fdb7bcca384ec33eda0d3753a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3ef3876a226f2610d0256557abdd9581ffe776fe7c2056cfce490295b3f1ee31"
 ---
 
 # Static Configuration with vercel.json
@@ -231,7 +231,7 @@ A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern that matches t
 
 - `runtime` (optional): The npm package name of a [Runtime](/docs/functions/runtimes), including its version.
 - `memory`: Memory cannot be set in `vercel.json` with [Fluid compute](/docs/fluid-compute) enabled. Instead set it in the **Functions** section in your project dashboard sidebar. See [setting default function memory](/docs/functions/configuring-functions/memory#setting-your-default-function-memory-/-cpu-size) for more information.
-- `maxDuration` (optional): An integer defining how long your Vercel Function should be allowed to run on every request in seconds (between `1` and the maximum limit of your plan, as mentioned below).
+- `maxDuration` (optional): How long your Vercel Function can run on each request. Set an integer number of seconds between `1` and your plan's maximum limit, or set `max` to use your plan's maximum allowed duration. See [duration limits](/docs/functions/configuring-functions/duration#duration-limits).
 - `supportsCancellation` (optional): A boolean defining whether your Vercel Function should [support request cancellation](/docs/functions/functions-api-reference#cancel-requests). This is only available when you're using the Node.js runtime.
 - `includeFiles` (optional): A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern to match files that should be included in your Vercel Function. If you’re using a Community Runtime, the behavior might vary. Please consult its documentation for more details. (Not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats) in `next.config.js` )
 - `excludeFiles` (optional): A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern to match files that should be excluded from your Vercel Function. If you’re using a Community Runtime, the behavior might vary. Please consult its documentation for more details. (Not supported in Next.js, instead use [`outputFileTracingExcludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats) in `next.config.js` )
@@ -248,12 +248,12 @@ The `functions` property cannot be used in combination with `builds`. Since the 
 
 Because [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration) uses Vercel functions, the same configurations apply. The ISR route can be defined using a glob pattern, and accepts the same properties as when using Vercel functions.
 
-When deployed, each Vercel Function receives the following properties:
+When deployed, each Vercel Function uses your project's default memory and maximum duration. These defaults depend on your plan and whether [Fluid compute](/docs/fluid-compute) is enabled:
 
-- **Memory:** 1024 MB (1 GB) - **(Optional)**
-- **Maximum Duration:** 10s default - 60s / 1 minute (Hobby), 15s default - 300s / 5 minutes (Pro), or 15s default - 900s / 15 minutes (Enterprise). This [can be configured](/docs/functions/configuring-functions/duration) up to the respective plan limit) - **(Optional)**
+- **Memory:** See [memory and CPU defaults](/docs/functions/configuring-functions/memory#memory-/-cpu-type).
+- **Maximum duration:** See [duration limits](/docs/functions/configuring-functions/duration#duration-limits).
 
-To configure them, you can add the `functions` property.
+With Fluid compute enabled, set memory in the **Functions** section of your project dashboard, not in `vercel.json`. To override the maximum duration for matched functions, add the `functions` property.
 
 #### `functions` property with Vercel functions
 
@@ -262,11 +262,9 @@ To configure them, you can add the `functions` property.
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/test.js": {
-      "memory": 3009,
       "maxDuration": 30
     },
     "api/*.js": {
-      "memory": 3009,
       "maxDuration": 30
     }
   }
@@ -280,7 +278,7 @@ To configure them, you can add the `functions` property.
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "pages/blog/[hello].tsx": {
-      "memory": 1024
+      "maxDuration": 5
     },
     "src/pages/isr/**/*": {
       "maxDuration": 10
@@ -1044,10 +1042,10 @@ This example configures custom routes that map to static files and [Vercel funct
 
 | Property | Type                                  | Description                                                                                                                                                                                                                                                                                                |
 | -------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`   | `String`                              | Must be either `request.query`, `request.headers`, or `response.headers`. This specifies the scope of what your transforms will apply to.                                                                                                                                                                  |
-| `op`     | `String`                              | These specify the possible operations:- `append` appends `args` to the value of the key, and will set if missing- `set` sets the key and value if missing- `delete` deletes the key entirely if `args` is not provided; otherwise, it will delete the value of `args` from the matching key |
-| `target` | `Object`                              | An object with key `key`, which is either a `String` or an `Object`. If it is a string, the transform uses it as the header or query key. If it is an object, it may contain one or more of the properties [seen below.](#transform-target-object-definition)                                              |
-| `args`   | `String` or `String[]` or `undefined` | If `args` is a string or string array, it will be used as the value for the target according to the `op` property.When `env` is also set, `$VAR` and `${VAR}` references in `args` are replaced with environment variable values at request time.                                                |
+| `type`   | `String`                              | Must be `request.query`, `request.headers`, `response.headers`, or `request.path`. This specifies the scope of what your transforms will apply to.                                                                                                                                                         |
+| `op`     | `String`                              | These specify the possible operations:- `append` appends `args` to the value of the key, and will set if missing- `set` sets the key and value if missing- `delete` deletes the key entirely if `args` is not provided; otherwise, it will delete the value of `args` from the matching keyThe `request.path` transform only supports `set`. |
+| `target` | `Object`                              | An object with key `key`, which is either a `String` or an `Object`. If it is a string, the transform uses it as the header or query key. If it is an object, it may contain one or more of the properties [seen below.](#transform-target-object-definition)Not used for `request.path` transforms, which operate on the request path as a whole rather than a named key. |
+| `args`   | `String` or `String[]` or `undefined` | If `args` is a string or string array, it will be used as the value for the target according to the `op` property.The `request.path` transform requires `args` to be a single `String`; an array is rejected.When `env` is also set, `$VAR` and `${VAR}` references in `args` are replaced with environment variable values at request time.                                                |
 | `env`    | `String[]` or `undefined`             | A whitelist of [environment variable](/docs/environment-variables) names whose values replace `$VAR` or `${VAR}` references in `args` at request time. Only variables listed here are available for expansion. A maximum of 64 entries. See [using environment variables in transforms](#in-transforms).   |
 
 #### Transform target object definition
@@ -1074,6 +1072,44 @@ When the `key` property is an object, it can contain one or more of the followin
 | `gte`    | `Number`             | Check if value is greater than or equal to |
 | `lt`     | `Number`             | Check if value is less than                |
 | `lte`    | `Number`             | Check if value is less than or equal to    |
+
+#### Request path transform
+
+The `request.path` transform overrides the path that the target runtime observes for a request. This is the URL path your Function reads from `req.url`. It does not change route selection or the destination, and it does not terminate routing. Routing continues after the override, so later routes can still match and rewrite. Adjusting the path and rewriting are separate steps, so you can do both.
+
+Because the path is a single value rather than a named target or key, the only supported `op` is `set`, and `args` must be a single string:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "/home",
+      "transforms": [
+        {
+          "type": "request.path",
+          "op": "set",
+          "args": "/new/path"
+        }
+      ]
+    }
+  ]
+}
+```
+
+The `args` value must follow these rules, otherwise the transform is rejected with an error:
+
+- It must start with `/`.
+- It must not be scheme-relative (no leading `//host`).
+- It must not contain a query string.
+- It must not contain whitespace or control characters. Carriage return and line feed characters are rejected as a request-smuggling guard.
+
+You can use the same substitution support as the other transforms in `args`:
+
+- Capture groups from the matched route `src`: numbered (`$1`), named (`$name`), and the built-ins `$host` and `$wildcard`.
+- Environment variable expansion when the transform declares an `env` allowlist.
+
+When multiple matching routes set `request.path`, the transform composes across them and is last-write-wins. A later `request.path` set overrides an earlier one. The override is included in the CDN cache key, so two requests that differ only by their `request.path` override are cached as separate entries.
 
 #### Transform examples
 
@@ -1169,6 +1205,26 @@ In this example, you delete any header that begins with `x-react-router-` for al
               "pre": "x-react-router-"
             }
           }
+        }
+      ]
+    }
+  ]
+}
+```
+
+In this example, you rewrite the path the runtime observes using a capture group from the matched `src`. A request to `/articles/42` reaches the same destination, but the Function reads `/posts/42` from `req.url`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "/articles/(?<id>[^/]+)",
+      "transforms": [
+        {
+          "type": "request.path",
+          "op": "set",
+          "args": "/posts/$id"
         }
       ]
     }

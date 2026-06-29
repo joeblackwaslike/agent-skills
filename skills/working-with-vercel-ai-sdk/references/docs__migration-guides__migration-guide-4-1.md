@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-1.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "557f1e48ec6bae0e3820344a23fe872e85b58669c3711a66303bb20705a84971"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1da662957a5e49ecf81d7785c6ec287060474fd46967502f3b71da8e54ad45f6"
 ---
 
 # Migrate AI SDK 4.0 to 4.1
@@ -18,6 +18,7 @@ No breaking changes in this release.
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

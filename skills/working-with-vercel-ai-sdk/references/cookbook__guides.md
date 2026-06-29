@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "6aae8d0ac612da899b15148d89cf9a2245163eafadf43be5088da4e3f4e8c282"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c5bb8091f7f287647111f690254edf216e8ad3e1f725ffc368b83d56bb8280cd"
 ---
 
 # Guides
@@ -44,6 +44,12 @@ These use-case specific guides are intended to help you build real applications 
       description:
         'Extend your agent with specialized capabilities loaded at runtime from markdown files.',
       href: '/cookbook/guides/agent-skills',
+    },
+    {
+      title: 'Compact Agent Context',
+      description:
+        'Compact agent context by mutating message state between steps with prepareStep.',
+      href: '/cookbook/guides/agent-context-compaction',
     },
     {
       title: 'Get started with Gemini 2.5',
@@ -105,6 +111,7 @@ These use-case specific guides are intended to help you build real applications 
   - [Get started with Computer Use](/cookbook/guides/computer-use)
   - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
   - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+  - [Compact Agent Context](/cookbook/guides/agent-context-compaction)
   - [Get started with Gemini 3](/cookbook/guides/gemini)
   - [Get started with Claude 4](/cookbook/guides/claude-4)
   - [OpenAI Responses API](/cookbook/guides/openai-responses)

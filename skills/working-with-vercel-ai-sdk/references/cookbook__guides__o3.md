@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/o3.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f1bf017b52880745e07bb21244ae22428c7f2c9f85142840111db53855a0e850"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a6c415f46da025ef855238084da07a1d6a7a7c57463165ea2ffc3e956b5f923b"
 ---
 
 # Get started with OpenAI o3-mini
@@ -165,7 +165,13 @@ Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 // Allow responses up to 5 minutes
 export const maxDuration = 300;
@@ -178,7 +184,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -231,6 +239,7 @@ Ready to get started? Here's how you can dive in:
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

@@ -3,7 +3,7 @@ title: Limits and Pricing for Monitoring
 product: vercel
 url: /docs/query/monitoring/limits-and-pricing
 canonical_url: "https://vercel.com/docs/query/monitoring/limits-and-pricing"
-last_updated: 2026-05-28
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/query/monitoring
@@ -15,8 +15,8 @@ related:
 summary: Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/limits-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "7c6270a9ee11ed77cdc418f6f24957579ad651e3aeccda0a316bb6b1ae068f83"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "5044ea33c920ad013454f7fd45206273aec63f82b02cde012274f64c2a31d3eb"
 ---
 
 # Limits and Pricing for Monitoring

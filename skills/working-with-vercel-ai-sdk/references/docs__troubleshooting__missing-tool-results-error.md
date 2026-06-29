@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/missing-tool-results-error.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "51b1cba80bfa471783cd5ca45add6b491c2c392e6d2aace377d16a129ac0a2fb"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "3fadd93aadaa2c9ff101a7aff2d20e14cb11ee13f04cefd4434448ffd2f946f1"
 ---
 
 # Missing Tool Results Error
@@ -101,7 +101,7 @@ const messages = [
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

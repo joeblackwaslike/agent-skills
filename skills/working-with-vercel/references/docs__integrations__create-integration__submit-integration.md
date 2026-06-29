@@ -3,7 +3,7 @@ title: Requirements for listing an Integration
 product: vercel
 url: /docs/integrations/create-integration/submit-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration/submit-integration"
-last_updated: 2026-05-12
+last_updated: 2026-06-10
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b948b69cbe9c79e2a12e4f54d46aed526dabae396943e53bdd2a0094a1aeb36b"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d6806d80dcaead26620fe8c784aa66f95137be3deffd983b93fa4beb4961a1e3"
 ---
 
 # Requirements for listing an Integration

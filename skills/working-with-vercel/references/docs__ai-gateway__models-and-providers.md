@@ -3,7 +3,7 @@ title: Models & Providers
 product: vercel
 url: /docs/ai-gateway/models-and-providers
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers"
-last_updated: 2026-05-11
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -13,11 +13,11 @@ related:
   - /docs/ai-gateway/models-and-providers/model-fallbacks
   - /docs/ai-gateway/models-and-providers/provider-timeouts
   - /docs/ai-gateway/models-and-providers/routing-rules
-summary: Learn about models and providers for the AI Gateway.
+summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, virtual models, uptime and..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "43c61159b5e791b81f9f9f391bb053afbe244c03179e32c1bfdbca2c561753a8"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4c01fbeec65e192470fdb37fac276d52811a06838f59298f5ee3b8a0fad1f751"
 ---
 
 # Models & Providers
@@ -31,7 +31,7 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 
 Configure how AI Gateway selects providers and routes requests, and apply capabilities to any model:
 
-- **Routing and selection**: [Provider options](/docs/ai-gateway/models-and-providers/provider-options), [provider filtering and ordering](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering), [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks), [provider timeouts](/docs/ai-gateway/models-and-providers/provider-timeouts), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), and [virtual models](/docs/ai-gateway/models-and-providers/virtual-models)
+- **Routing and selection**: [Provider options](/docs/ai-gateway/models-and-providers/provider-options), [provider filtering and ordering](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering), [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks), [provider timeouts](/docs/ai-gateway/models-and-providers/provider-timeouts), and [routing rules](/docs/ai-gateway/models-and-providers/routing-rules)
 - **Performance and cost**: [Automatic caching](/docs/ai-gateway/models-and-providers/automatic-caching), [service tiers](/docs/ai-gateway/models-and-providers/service-tiers), [uptime and status](/docs/ai-gateway/models-and-providers/uptime), and [metrics](/docs/ai-gateway/models-and-providers/metrics)
 - **Model capabilities**: [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) and [web search](/docs/ai-gateway/models-and-providers/web-search)
 

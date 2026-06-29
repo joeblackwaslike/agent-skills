@@ -3,7 +3,7 @@ title: Blackbox AI
 product: vercel
 url: /docs/ai-gateway/coding-agents/blackbox
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/blackbox"
-last_updated: 2026-04-29
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Use the Blackbox AI CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/blackbox.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "da69cc17462b9d678d775d05d55e44067196d646aff0586d3512c3b04c97bdca"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4a91e83598b1ca46d94be4d23153962339d74e6351208911c06ff9e1720e0cbc"
 ---
 
 # Blackbox AI

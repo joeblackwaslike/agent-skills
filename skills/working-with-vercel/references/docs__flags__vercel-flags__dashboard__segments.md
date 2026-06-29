@@ -10,13 +10,14 @@ prerequisites:
   - /docs/flags/vercel-flags
 related:
   - /docs/flags/vercel-flags/dashboard/entities
+  - /docs/cli/flags
   - /docs/flags/vercel-flags/dashboard/feature-flag
   - /docs/flags/vercel-flags/sdks
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c85a4f163ede226832f41a1b06453ba36ab4e92d6885e14d05b8222bf408ac79"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "49be45c900b43bb5f94f15108d0badf2476036411e6ec2a49a904cfb85b99dcc"
 ---
 
 # Segments
@@ -92,6 +93,21 @@ When you edit a segment's rules, the change applies everywhere the segment is us
 4. Save your changes
 
 All flags using this segment will immediately use the updated rules.
+
+## How to manage segments from the CLI
+
+Use `vercel flags segments` to list, inspect, create, update, and delete segments from a linked project:
+
+```bash filename="terminal"
+vercel flags segments ls
+vercel flags segments inspect beta-users
+vercel flags segments create beta-users --label "Beta users" \
+  --add include:user.id=user_123
+vercel flags segments update beta-users --add rule:user.plan:eq:enterprise
+vercel flags segments rm beta-users --yes
+```
+
+See the [`vercel flags` CLI reference](/docs/cli/flags#segments) for the full command syntax, including JSON output, rule operators, and `--data` examples.
 
 ## How to delete a segment
 

@@ -3,7 +3,7 @@ title: Projects overview
 product: vercel
 url: /docs/projects
 canonical_url: "https://vercel.com/docs/projects"
-last_updated: 2026-02-26
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: A project is the application that you have deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b80ccddbd26ef51acc678960b4885ef180e139b1d1cef8a94ad9028589232528"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3cdd253ab40d513871d68d20e3598bb8644a8e85e67060d76aa812ee875f7bf2"
 ---
 
 # Projects overview

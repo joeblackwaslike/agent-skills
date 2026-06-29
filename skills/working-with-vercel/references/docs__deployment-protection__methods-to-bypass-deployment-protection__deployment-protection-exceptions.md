@@ -3,7 +3,7 @@ title: Deployment Protection Exceptions
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions"
-last_updated: 2026-04-30
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -16,8 +16,8 @@ related:
 summary: Disable Deployment Protection for a list of preview domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "cffdcd4b668d6d27e1edf3d137ac9fdc4c130dcba150ac60c130a2f66185408f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "5573b86cb82e1a03c4e9f0d268ff82ab4212489c9a17b36881508f429a932ed1"
 ---
 
 # Deployment Protection Exceptions

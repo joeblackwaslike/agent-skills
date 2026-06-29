@@ -3,7 +3,7 @@ title: Vercel CDN overview
 product: vercel
 url: /docs/cdn
 canonical_url: "https://vercel.com/docs/cdn"
-last_updated: 2026-03-24
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "5de368081e3b5ec4882795a97b8a2459e260591110018915f57b59e7d5b6b979"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "33e89ed59418be1ff506ff52aa77a47974301957f862e4279f27507b708fa203"
 ---
 
 # Vercel CDN overview

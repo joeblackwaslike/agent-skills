@@ -3,7 +3,7 @@ title: Support Center
 product: vercel
 url: /docs/support-center
 canonical_url: "https://vercel.com/docs/support-center"
-last_updated: 2026-03-19
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "326c1ac3db9457505477e24ec61f7f633fa1fdc9bd092312c6f2e5890e7b68b8"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "1251b1cafb81176134443a9b84e3feee337c11f561c13873b75d3260ffc66fa7"
 ---
 
 # Support Center

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/hono.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c4bed424d66a2662ba357d3356dc82aaa85e926ca91ed0a8d855806636fbab47"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "32c19e7591cf6d69d3b1e5dfd82ff50ee9874677c4b27d62e285ffa6de213894"
 ---
 
 # Hono
@@ -25,11 +25,15 @@ curl -X POST http://localhost:8080
 
 ### UI Message Stream
 
-You can use the `toUIMessageStreamResponse` method to create a properly formatted streaming response.
+You can use `createUIMessageStreamResponse` with `toUIMessageStream` to create a properly formatted streaming response.
 
 ```ts filename='index.ts'
 import { serve } from '@hono/node-server';
-import { streamText } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 import { Hono } from 'hono';
 
 const app = new Hono();
@@ -39,7 +43,9 @@ app.post('/', async c => {
     model: 'openai/gpt-4o',
     prompt: 'Invent a new holiday and describe its traditions.',
   });
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 });
 
 serve({ fetch: app.fetch, port: 8080 });
@@ -47,11 +53,11 @@ serve({ fetch: app.fetch, port: 8080 });
 
 ### Text Stream
 
-You can use the `toTextStreamResponse` method to return a text stream response.
+You can use `createTextStreamResponse` with `toTextStream` to return a text stream response.
 
 ```ts filename='index.ts'
 import { serve } from '@hono/node-server';
-import { streamText } from 'ai';
+import { createTextStreamResponse, streamText, toTextStream } from 'ai';
 import { Hono } from 'hono';
 
 const app = new Hono();
@@ -61,7 +67,9 @@ app.post('/text', async c => {
     model: 'openai/gpt-4o',
     prompt: 'Write a short poem about coding.',
   });
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 });
 
 serve({ fetch: app.fetch, port: 8080 });
@@ -77,6 +85,7 @@ import {
   createUIMessageStream,
   createUIMessageStreamResponse,
   streamText,
+  toUIMessageStream,
 } from 'ai';
 import { Hono } from 'hono';
 
@@ -101,7 +110,8 @@ app.post('/stream-data', async c => {
       });
 
       writer.merge(
-        result.toUIMessageStream({
+        toUIMessageStream({
+          stream: result.stream,
           sendStart: false,
           onError: error => {
             // Error messages are masked by default for security reasons.

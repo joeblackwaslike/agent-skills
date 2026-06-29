@@ -3,7 +3,7 @@ title: vercel rolling-release
 product: vercel
 url: /docs/cli/rolling-release
 canonical_url: "https://vercel.com/docs/cli/rolling-release"
-last_updated: 2026-05-28
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "0d220982c324266ee0a50966193ebd964e7954c878847aee3d1643ac8176391f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d05f196903817fbd65ca71b8e17d26129d7d07703f7d18eb3d9e21ca2ec94bce"
 ---
 
 # vercel rolling-release
@@ -152,7 +152,7 @@ approval between stages.*
 
 ### Stage
 
-The `--stage` option adds a rollout stage. Repeat it to add multiple stages. The format is `PERCENTAGE[,DURATION]`, where `PERCENTAGE` is between 1 and 99 and `DURATION` (only valid with `--advancement-type=automatic`) is a duration like `5m`. A final 100% stage is added automatically.
+The `--stage` option adds a release stage. Repeat it to add multiple stages. The format is `PERCENTAGE[,DURATION]`, where `PERCENTAGE` is between 1 and 99 and `DURATION` (only valid with `--advancement-type=automatic`) is a duration like `5m`. A final 100% stage is added automatically.
 
 ```bash filename="terminal"
 vercel rolling-release configure --enable --advancement-type=automatic --stage=10,5m --stage=50,10m

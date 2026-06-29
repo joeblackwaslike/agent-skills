@@ -3,7 +3,7 @@ title: Build image overview
 product: vercel
 url: /docs/builds/build-image
 canonical_url: "https://vercel.com/docs/builds/build-image"
-last_updated: 2026-03-17
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/builds
@@ -11,13 +11,13 @@ related:
   - /docs/builds
   - /docs/functions/runtimes
   - /docs/functions/runtimes/node-js
-  - /docs/functions/runtimes/edge-runtime
   - /docs/functions/runtimes/python
+  - /docs/functions/runtimes/ruby
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2db9adb5cc7bc8b19d64dfc49f344f0181601fbbca066f470608afdf90431b18"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ecf87571240193dffba71d078782ccd87d312ca3d4dc2f50024d4429a1c5c3e3"
 ---
 
 # Build image overview
@@ -28,10 +28,10 @@ Vercel supports [multiple runtimes](/docs/functions/runtimes).
 | Runtime                                                           | [Build image](/docs/builds/build-image)                 |
 | ----------------------------------------------------------------- | ------------------------------------------------------- |
 | [Node.js](/docs/functions/runtimes/node-js)                       | `24.x` `22.x` `20.x`                                    |
-| [Edge](/docs/functions/runtimes/edge-runtime)                     |  |
-| [Python](/docs/functions/runtimes/python)                         | `3.12`                                                  |
+| [Python](/docs/functions/runtimes/python)                         | `3.14`, `3.13`, `3.12`                                  |
 | [Ruby](/docs/functions/runtimes/ruby)                             | `3.3.x`                                                 |
 |                                                  |  |
+| [Edge](/docs/functions/runtimes/edge-runtime)                     |  |
 | [Community Runtimes](/docs/functions/runtimes#community-runtimes) |  |
 
 The build image uses [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/) as its base image.

@@ -3,18 +3,18 @@ title: API Key Budgets
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/api-key-budgets
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/api-key-budgets"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-20
+type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/authentication-and-byok/api-keys
-summary: Learn about api key budgets on Vercel.
+summary: Cap how much an AI Gateway API key can spend with per-key budgets, refresh periods, and spend tracking from the dashboard, CLI, or API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/api-key-budgets.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "5ceac6f6801e98bd1eb7da99c587cb99c28029a33290f44f1dab3b67e3e69f7f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "663398902b5e079f1dd4358fc1e9eb4ea9b670b5057734cc071acc07550ee1b4"
 ---
 
 # API Key Budgets

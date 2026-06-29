@@ -3,7 +3,7 @@ title: vercel ai-gateway
 product: vercel
 url: /docs/cli/ai-gateway
 canonical_url: "https://vercel.com/docs/cli/ai-gateway"
-last_updated: 2026-05-29
+last_updated: 2026-06-20
 type: reference
 prerequisites:
   - /docs/cli
@@ -11,11 +11,11 @@ related:
   - /docs/ai-gateway
   - /docs/ai-gateway/models-and-providers/routing-rules
   - /docs/ai-gateway/authentication-and-byok/authentication
-summary: "Manage AI Gateway resources from the Vercel CLI: create and configure AI Gateway API keys."
+summary: "Manage AI Gateway resources from the Vercel CLI: API keys and routing rules."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "8e4a0a839539980115b2eb49c78aca4ac238dcc000b0a6266bb23086afbcd0f1"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7290cb60adb638c86684b344908613d51f0af3683583f7f166396fdf0aa325b5"
 ---
 
 # vercel ai-gateway
@@ -64,7 +64,6 @@ vercel ai-gateway api-keys create --name my-key --budget 500 --refresh-period mo
 | `--name <NAME>` | String | Human-readable name for the API key |
 | `--budget <AMOUNT>` | Number | Quota budget amount in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `none`) |
-| `--include-byok` | Boolean | Include BYOK (Bring Your Own Key) usage in the quota (default `false`) |
 
 ### rules
 

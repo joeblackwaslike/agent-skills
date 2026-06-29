@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/building-agents.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "7508b822ba19eb467fd3ad7835ee6a5c64ef58954fe71f968947dd6481d7a12a"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f1389b644130666f48a7495f94fd7e7fe3b355cd4b17bd368d667b2599979f25"
 ---
 
 # Building Agents
@@ -78,19 +78,148 @@ const codeAgent = new ToolLoopAgent({
 });
 ```
 
+### Context and Agent State
+
+Use `runtimeContext` as the agent's shared runtime state. It flows through the
+agent loop and is available in `prepareStep`, lifecycle callbacks, and final
+results. If a tool needs server-side values such as credentials, scoped
+permissions, or default settings, pass them through `toolsContext` and declare
+them with the tool's `contextSchema`.
+
+```ts highlight="12-15,20-27,31-40"
+import { ToolLoopAgent, tool } from 'ai';
+import { z } from 'zod';
+
+const agent = new ToolLoopAgent({
+  model: __MODEL__,
+  tools: {
+    searchTickets: tool({
+      description: 'Search support tickets',
+      inputSchema: z.object({
+        query: z.string(),
+      }),
+      contextSchema: z.object({
+        apiKey: z.string(),
+        accountId: z.string(),
+      }),
+      execute: async ({ query }, { context }) =>
+        searchTickets(query, context.accountId, context.apiKey),
+    }),
+  },
+  prepareStep: async ({ runtimeContext }) => {
+    if (runtimeContext.escalated) {
+      return { temperature: 0.1 };
+    }
+
+    return {};
+  },
+});
+
+const result = await agent.generate({
+  prompt: 'Find open billing tickets for this account.',
+  runtimeContext: {
+    requestId: 'req_abc',
+    escalated: false,
+  },
+  toolsContext: {
+    searchTickets: {
+      apiKey: process.env.SUPPORT_API_KEY!,
+      accountId: 'acct_123',
+    },
+  },
+});
+```
+
+For the full model, including sensitive context filtering and where each context
+value is available, see [Runtime and Tool
+Context](/docs/ai-sdk-core/runtime-and-tool-context).
+
+### Tools That Use Experimental Sandboxes
+
+Pass `experimental_sandbox` when an agent tool needs a command or code execution
+environment. The experimental sandbox is a per-call value, so provide it to `generate()`,
+`stream()`, or the agent UI stream helper that invokes the agent.
+
+```ts highlight="13,19-23,31"
+const agent = new ToolLoopAgent({
+  model: __MODEL__,
+  instructions: 'You are a coding assistant. Use the shell tool when needed.',
+  tools: {
+    shell: tool({
+      description: 'Execute shell commands in the experimental sandbox.',
+      inputSchema: z.object({
+        command: z.string(),
+        workingDirectory: z.string().optional(),
+      }),
+      execute: async (
+        { command, workingDirectory },
+        { abortSignal, experimental_sandbox },
+      ) => {
+        if (!experimental_sandbox) {
+          throw new Error('Experimental sandbox is not available');
+        }
+
+        return experimental_sandbox.run({
+          command,
+          workingDirectory,
+          abortSignal,
+        });
+      },
+    }),
+  },
+});
+
+const result = await agent.generate({
+  prompt: `Run the tests.\n\nSandbox:\n${experimental_sandbox.description}`,
+  experimental_sandbox,
+});
+```
+
+The experimental sandbox description is not added to the model prompt automatically. Include
+it in the prompt or instructions when the model needs to know environment
+details. Passing an experimental sandbox does not sandbox the tool itself; the tool must
+explicitly delegate operations to the experimental sandbox. See the
+[Experimental Sandbox section in Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling#experimental-sandbox)
+for more details.
+
+You can also require approval before a tool executes. Configure approval on the
+`ToolLoopAgent` with `toolApproval`:
+
+```ts
+const agent = new ToolLoopAgent({
+  model: __MODEL__,
+  tools: {
+    runCode: tool({
+      description: 'Execute Python code',
+      inputSchema: z.object({
+        code: z.string(),
+      }),
+      execute: async ({ code }) => ({ output: code }),
+    }),
+  },
+  toolApproval: {
+    runCode: 'user-approval',
+  },
+});
+```
+
+For manual approvals, automatic approvals and denials, dynamic policy functions,
+and `useChat` integration, see [Tool
+Approvals](/docs/agents/tool-approvals).
+
 ### Loop Control
 
-By default, agents run for 20 steps (`stopWhen: stepCountIs(20)`). In each step, the model either generates text or calls a tool. If it generates text, the agent completes. If it calls a tool, the AI SDK executes that tool.
+By default, agents run for 20 steps (`stopWhen: isStepCount(20)`). In each step, the model either generates text or calls a tool. If it generates text, the agent completes. If it calls a tool, the AI SDK executes that tool.
 
 You can configure `stopWhen` differently to allow more steps. After each tool execution, the agent triggers a new generation where the model can call another tool or generate text:
 
 ```ts
-import { ToolLoopAgent, stepCountIs } from 'ai';
+import { ToolLoopAgent, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
   model: __MODEL__,
-  stopWhen: stepCountIs(50), // Increase default from 20 to 50.
+  stopWhen: isStepCount(50), // Increase default from 20 to 50.
 });
 ```
 
@@ -104,13 +233,13 @@ Each step represents one generation (which results in either text or a tool call
 You can combine multiple conditions:
 
 ```ts
-import { ToolLoopAgent, stepCountIs } from 'ai';
+import { ToolLoopAgent, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
   model: __MODEL__,
   stopWhen: [
-    stepCountIs(20), // Maximum 20 steps
+    isStepCount(20), // Maximum 20 steps
     yourCustomCondition(), // Custom logic for when to stop
   ],
 });
@@ -329,31 +458,75 @@ export async function POST(request: Request) {
 }
 ```
 
-### Track Step Progress
+### Lifecycle Callbacks
 
-Use `onStepFinish` to track each step's progress, including token usage.
-The callback receives a `stepNumber` (zero-based) to identify which step just completed:
+Agents provide lifecycle callbacks that let you hook into different phases of the agent execution.
+These are useful for logging, observability, debugging, and custom telemetry.
 
 ```ts
 const result = await myAgent.generate({
   prompt: 'Research and summarize the latest AI trends',
-  onStepFinish: async ({ stepNumber, usage, finishReason, toolCalls }) => {
-      console.log(`Step ${stepNumber} completed:`, {
+
+  onStart({ modelId }) {
+    console.log('Agent started', { modelId });
+  },
+
+  onStepStart({ stepNumber, modelId }) {
+    console.log(`Step ${stepNumber} starting`, { modelId });
+  },
+
+  onToolExecutionStart({ toolCall }) {
+    console.log(`Tool call starting: ${toolCall.toolName}`);
+  },
+
+  onToolExecutionEnd({ toolCall, toolExecutionMs, toolOutput }) {
+    console.log(
+      `Tool call finished: ${toolCall.toolName} (${toolExecutionMs}ms)`,
+      {
+        success: toolOutput.type === 'tool-result',
+      },
+    );
+  },
+
+  onStepEnd({ stepNumber, usage, performance, finishReason, toolCalls }) {
+    console.log(`Step ${stepNumber} completed:`, {
       inputTokens: usage.inputTokens,
       outputTokens: usage.outputTokens,
+      outputTokensPerSecond: performance.effectiveOutputTokensPerSecond,
+      stepTimeMs: performance.stepTimeMs,
       finishReason,
       toolsUsed: toolCalls?.map(tc => tc.toolName),
+    });
+  },
+
+  onEnd({ usage, steps }) {
+    console.log('Agent finished:', {
+      totalSteps: steps.length,
+      totalTokens: usage.totalTokens,
     });
   },
 });
 ```
 
-You can also define `onStepFinish` in the constructor for agent-wide tracking. When both constructor and method callbacks are provided, both are called (constructor first, then the method callback):
+The available lifecycle callbacks are:
+
+- **`onStart`**: Called once when the agent operation begins, before any LLM calls. Receives model info, messages, settings, and `runtimeContext`.
+- **`onStepStart`**: Called before each step (LLM call). Receives the step number, model, messages being sent, tools, and prior steps.
+- **`onToolExecutionStart`**: Called right before a tool's `execute` function runs. Receives the tool call object, messages, and `toolContext`.
+- **`onToolExecutionEnd`**: Called right after a tool's `execute` function completes or errors. Receives the tool call, `toolExecutionMs`, and a `toolOutput` discriminated union (`type: 'tool-result'` with `output`, or `type: 'tool-error'` with `error`).
+- **`onStepEnd`**: Called after each step finishes. Receives step results including usage, performance, finish reason, and tool calls.
+- **`onEnd`**: Called when all steps are finished and the response is complete. Receives all step results, total usage, and `runtimeContext`.
+
+For the full event data reference, see [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks). `ToolLoopAgent` uses the same generation lifecycle event types for `onStart`, `onStepStart`, `onToolExecutionStart`, `onToolExecutionEnd`, `onStepEnd`, and `onEnd`.
+
+#### Constructor vs. Method Callbacks
+
+All lifecycle callbacks can be defined in the constructor for agent-wide tracking, in the `generate()`/`stream()` call for per-call tracking, or both. When both are provided, both are called (constructor first, then the method callback):
 
 ```ts
 const agent = new ToolLoopAgent({
   model: __MODEL__,
-  onStepFinish: async ({ stepNumber, usage }) => {
+  onStepEnd: async ({ stepNumber, usage }) => {
     // Agent-wide logging
     console.log(`Agent step ${stepNumber}:`, usage.totalTokens);
   },
@@ -362,7 +535,7 @@ const agent = new ToolLoopAgent({
 // Method-level callback runs after constructor callback
 const result = await agent.generate({
   prompt: 'Hello',
-  onStepFinish: async ({ stepNumber, usage }) => {
+  onStepEnd: async ({ stepNumber, usage }) => {
     // Per-call tracking (e.g., for billing)
     await trackUsage(stepNumber, usage);
   },
@@ -415,7 +588,11 @@ Now that you understand building agents, you can:
 - [Loop Control](/docs/agents/loop-control)
 - [Configuring Call Options](/docs/agents/configuring-call-options)
 - [Memory](/docs/agents/memory)
+- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
 - [Subagents](/docs/agents/subagents)
+- [Tool Approvals](/docs/agents/tool-approvals)
+- [WorkflowAgent](/docs/agents/workflow-agent)
+- [Terminal UI](/docs/agents/terminal-ui)
 
 
 [Full Sitemap](/sitemap.md)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8f1e35e95191e8bba93d0d0313962002ef232738b3adce680936bc46de1d99a1"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "5de653040181619342407efd9a2296bbab6de4ff0acc18991315f294d86dd42a"
 ---
 
 # Migrate AI SDK 5.x to 6.0
@@ -88,10 +88,10 @@ npx @ai-sdk/codemod v6/rename-text-embedding-to-embedding src/
 The `Experimental_Agent` class has been replaced with the `ToolLoopAgent` class. Two key changes:
 
 1. The `system` parameter has been renamed to `instructions`
-2. The default `stopWhen` has changed from `stepCountIs(1)` to `stepCountIs(20)`
+2. The default `stopWhen` has changed from `isStepCount(1)` to `isStepCount(20)`
 
 ```tsx filename="AI SDK 5"
-import { Experimental_Agent as Agent, stepCountIs } from 'ai';
+import { Experimental_Agent as Agent, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 
 const agent = new Agent({
@@ -100,7 +100,7 @@ const agent = new Agent({
   tools: {
     // your tools here
   },
-  stopWhen: stepCountIs(20), // Required for multi-step agent loops
+  stopWhen: isStepCount(20), // Required for multi-step agent loops
 });
 
 const result = await agent.generate({
@@ -118,7 +118,7 @@ const agent = new ToolLoopAgent({
   tools: {
     // your tools here
   },
-  // stopWhen defaults to stepCountIs(20)
+  // stopWhen defaults to isStepCount(20)
 });
 
 const result = await agent.generate({
@@ -827,6 +827,7 @@ import {
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

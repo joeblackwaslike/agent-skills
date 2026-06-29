@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/object-generation.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "90caece8c17d9ec126b917a2383b883e76bf0eb0f03f7285b00c2ba439335730"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "600bdc227f2ca8c1595de67ff62b06ab998903f77ef74ebf76d4b20d0231deb1"
 ---
 
 # Object Generation
@@ -78,7 +78,7 @@ export default function Page() {
 On the server, we use [`streamText`](/docs/reference/ai-sdk-core/stream-text) with [`Output.object()`](/docs/reference/ai-sdk-core/output#output-object) to stream the object generation process.
 
 ```typescript filename='app/api/notifications/route.ts'
-import { streamText, Output } from 'ai';
+import { createTextStreamResponse, Output, streamText, toTextStream } from 'ai';
 __PROVIDER_IMPORT__;
 import { notificationSchema } from './schema';
 
@@ -95,7 +95,9 @@ export async function POST(req: Request) {
       `Generate 3 notifications for a messages app in this context:` + context,
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -140,7 +142,7 @@ export default function ClassifyPage() {
 On the server, use `streamText` with `Output.choice()` to stream the classification result:
 
 ```typescript filename='app/api/classify/route.ts'
-import { streamText, Output } from 'ai';
+import { createTextStreamResponse, Output, streamText, toTextStream } from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
@@ -152,7 +154,9 @@ export async function POST(req: Request) {
     prompt: `Classify this statement as true or false: ${context}`,
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 

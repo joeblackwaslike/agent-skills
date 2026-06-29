@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/manual-agent-loop.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "940529b8efc6935448bb9fd5a9a5446a7c8af9cbea106ff5a6276dc8a991bb71"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "de9932fb980e2b2287684fa0ac6f8551cfadc7ffc1bd4c29687cb9e950f3975b"
 ---
 
 # Manual Agent Loop
@@ -51,7 +51,7 @@ async function main() {
     });
 
     // Stream the response (only necessary for providing updates to the user)
-    for await (const chunk of result.fullStream) {
+    for await (const chunk of result.stream) {
       if (chunk.type === 'text-delta') {
         process.stdout.write(chunk.text);
       }
@@ -62,7 +62,7 @@ async function main() {
     }
 
     // Add LLM generated messages to the message history
-    const responseMessages = (await result.response).messages;
+    const responseMessages = await result.responseMessages;
     messages.push(...responseMessages);
 
     const finishReason = await result.finishReason;
@@ -107,7 +107,7 @@ main().catch(console.error);
 The example maintains a `messages` array that tracks the entire conversation history. After each model response, the generated messages are added to this history:
 
 ```ts
-const responseMessages = (await result.response).messages;
+const responseMessages = await result.responseMessages;
 messages.push(...responseMessages);
 ```
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langsmith.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e07110a6e53bbbf8bef0d7a9a00c575cd16d5880c049fc8b41f62c570a0a307b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "5cf485d382436ef7d7df5817a48e9c6861d8bcd6bf7f77dc98557eafbf04c1a2"
 ---
 
 # LangSmith Observability
@@ -73,7 +73,7 @@ You can also trace runs with tool calls:
 
 ```ts
 import * as ai from 'ai';
-import { tool, stepCountIs } from 'ai';
+import { tool, isStepCount } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
@@ -103,7 +103,7 @@ await generateText({
         `Here is the tracking information for ${orderId}`,
     }),
   },
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
 });
 ```
 
@@ -118,7 +118,7 @@ want to group runs together in LangSmith:
 
 ```ts
 import * as ai from 'ai';
-import { tool, stepCountIs } from 'ai';
+import { tool, isStepCount } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
@@ -151,7 +151,7 @@ const wrapper = traceable(
             `Here is the tracking information for ${orderId}`,
         }),
       },
-      stopWhen: stepCountIs(5),
+      stopWhen: isStepCount(5),
     });
     return text;
   },
@@ -198,6 +198,7 @@ And once you've set up LangSmith tracing for your project, try gathering a datas
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

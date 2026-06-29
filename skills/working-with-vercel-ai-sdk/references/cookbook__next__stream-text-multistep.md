@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text-multistep.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d898da5ac3128be3293b629989fa2358e931bf5f5d5358507ea4aeb2ee833e89"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "60a1d38b29175bec54c166aae90c8817bcef326a158991961a66e851096479a5"
 ---
 
 # streamText Multi-Step Agent
@@ -21,6 +21,7 @@ import {
   createUIMessageStream,
   createUIMessageStreamResponse,
   streamText,
+  toUIMessageStream,
   tool,
 } from 'ai';
 import { z } from 'zod';
@@ -45,7 +46,9 @@ export async function POST(req: Request) {
       });
 
       // forward the initial result to the client without the finish event:
-      writer.merge(result1.toUIMessageStream({ sendFinish: false }));
+      writer.merge(
+        toUIMessageStream({ stream: result1.stream, sendFinish: false }),
+      );
 
       // note: you can use any programming construct here, e.g. if-else, loops, etc.
       // workflow programming is normal programming with this approach.
@@ -64,7 +67,9 @@ export async function POST(req: Request) {
       });
 
       // forward the 2nd result to the client (incl. the finish event):
-      writer.merge(result2.toUIMessageStream({ sendStart: false }));
+      writer.merge(
+        toUIMessageStream({ stream: result2.stream, sendStart: false }),
+      );
     },
   });
 

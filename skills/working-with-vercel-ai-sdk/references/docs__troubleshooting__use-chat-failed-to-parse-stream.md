@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/use-chat-failed-to-parse-stream.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ad95262a4c272400a53d09ec0ca6d0a7f97e8188445e7fc748455f9af8edcdc0"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a3176acf606df9ff99ab03293264397700cc687ec20d149da19830a063582461"
 ---
 
 # `useChat` "Failed to Parse Stream String" Error
@@ -45,7 +45,7 @@ const { messages, append } = useChat({ streamProtocol: 'text' });
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

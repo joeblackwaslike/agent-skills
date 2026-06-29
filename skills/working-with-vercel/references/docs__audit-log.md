@@ -3,7 +3,7 @@ title: Audit Logs
 product: vercel
 url: /docs/audit-log
 canonical_url: "https://vercel.com/docs/audit-log"
-last_updated: 2026-03-17
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "97d3a4652e6df7d9402d3c56dcf3f5a7ee582cbaedac052b4383967d9cd4baf2"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "33e0340b5af9acf8b6c7ccfd7b1a006d91431f15eb37595e83327e366a165a12"
 ---
 
 # Audit Logs

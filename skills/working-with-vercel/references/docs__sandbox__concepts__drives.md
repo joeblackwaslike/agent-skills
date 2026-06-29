@@ -3,7 +3,7 @@ title: Drives
 product: vercel
 url: /docs/sandbox/concepts/drives
 canonical_url: "https://vercel.com/docs/sandbox/concepts/drives"
-last_updated: 2018-10-20
+last_updated: 2026-06-05
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -13,11 +13,11 @@ related:
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/cli-reference
   - /docs/sandbox/sdk-reference
-summary: Learn about drives on Vercel.
+summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bbc68c4e58274c9d436f64e7b503ffe0b276901c85a1947c52b54d3fa7cf3fa8"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "1331aabfef6ba34c98b06b25b039de090578474b99322114c6166647f7905130"
 ---
 
 # Drives

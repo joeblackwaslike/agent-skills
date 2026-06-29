@@ -3,7 +3,7 @@ title: Marketplace Partner API
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner"
-last_updated: 2026-06-22
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about marketplace partner api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "768662889581e4bc759d97cf79f31356a8ea487922d3cecaebb94f85e6f768b9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e3ebc03a5ca1c6192212847243079b95f4ee18b1811b4d34169dd4c50df92f8c"
 ---
 
 # Partner API Reference

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1a22d00aa229d3b12f476b2b44e4edccb0e2b094659f6292f6a252357ec0caed"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "4b2ad4847dde5ed5dfebbe84de7676d8a4fde73999774bdaefaae0a68a918f80"
 ---
 
 # Anthropic Provider
@@ -150,7 +150,6 @@ The following optional provider options are available for Anthropic models:
 - `structuredOutputMode` _"outputFormat" | "jsonTool" | "auto"_
 
   Determines how structured outputs are generated. Optional.
-
   - `"outputFormat"`: Use the `output_format` parameter to specify the structured output format.
   - `"jsonTool"`: Use a special `"json"` tool to specify the structured output format.
   - `"auto"`: Use `"outputFormat"` when supported, otherwise fall back to `"jsonTool"` (default).
@@ -158,7 +157,6 @@ The following optional provider options are available for Anthropic models:
 - `metadata` _object_
 
   Optional. Metadata to include with the request. See the [Anthropic API documentation](https://platform.claude.com/docs/en/api/messages/create) for details.
-
   - `userId` _string_ - An external identifier for the end-user. Should be a UUID, hash, or other opaque identifier. Must not contain PII.
 
 ### Structured Outputs and Tool Input Streaming
@@ -343,7 +341,8 @@ When a fallback serves the turn, it is recorded in the per-model usage breakdown
 // set up `result` with a `streamText` call passing `fallbacks` as shown
 // above, then consume the stream
 
-const { iterations } = (await result.providerMetadata)?.anthropic ?? {};
+const { iterations } =
+  (await result.finalStep).providerMetadata?.anthropic ?? {};
 const servedByFallback = iterations?.some(
   iteration => iteration.type === 'fallback_message',
 );
@@ -414,9 +413,9 @@ console.log(text);
 ```
 
 <Note>
-  If you stream reasoning to users with `claude-opus-4-7`, the default `"omitted"` display will
-  cause a long pause before output begins. Set `display: "summarized"` to restore visible
-  progress during thinking.
+  If you stream reasoning to users with `claude-opus-4-7`, the default
+  `"omitted"` display will cause a long pause before output begins. Set
+  `display: "summarized"` to restore visible progress during thinking.
 </Note>
 
 #### Budget-Based Thinking
@@ -566,7 +565,7 @@ When compaction occurs, the model generates a summary of the earlier context. Th
 When using `streamText`, you can detect compaction summaries by checking the `providerMetadata` on `text-start` events:
 
 ```ts
-for await (const part of result.fullStream) {
+for await (const part of result.stream) {
   switch (part.type) {
     case 'text-start': {
       const isCompaction =
@@ -642,13 +641,12 @@ For more details, see [Anthropic's Context Management documentation](https://doc
 In the messages and message parts, you can use the `providerOptions` property to set cache control breakpoints.
 You need to set the `anthropic` property in the `providerOptions` object to `{ cacheControl: { type: 'ephemeral' } }` to set a cache control breakpoint.
 
-The cache creation input tokens are then returned in the `providerMetadata` object
-for `generateText`, again under the `anthropic` property.
-When you use `streamText`, the response contains a promise
-that resolves to the metadata. Alternatively you can receive it in the
-`onFinish` callback.
+Cache read and cache write (creation) token counts are returned on the standard
+`usage` object for both `generateText` and `streamText`. You can access them at
+`result.usage.inputTokenDetails.cacheReadTokens` and
+`result.usage.inputTokenDetails.cacheWriteTokens`.
 
-```ts highlight="8,18-20,29-30"
+```ts highlight="8,18-20,29-32"
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -675,8 +673,14 @@ const result = await generateText({
 });
 
 console.log(result.text);
-console.log(result.providerMetadata?.anthropic);
-// e.g. { cacheCreationInputTokens: 2118 }
+console.log(
+  'Cache read tokens:',
+  result.usage.inputTokenDetails.cacheReadTokens,
+);
+console.log(
+  'Cache write tokens:',
+  result.usage.inputTokenDetails.cacheWriteTokens,
+);
 ```
 
 You can also use cache control on system messages by providing multiple system messages at the head of your messages array:
@@ -779,14 +783,31 @@ For more on prompt caching with Anthropic, see [Anthropic's Cache Control docume
 
 ### Bash Tool
 
-The Bash Tool allows running bash commands. Here's how to create and use it:
+The Bash Tool allows running bash commands. By default, the tool executes
+commands through the `experimental_sandbox` that you pass to `generateText` or `streamText`:
 
 ```ts
-const bashTool = anthropic.tools.bash_20250124({
-  execute: async ({ command, restart }) => {
-    // Implement your bash command execution logic here
-    // Return the result of the command execution
+import { anthropic } from '@ai-sdk/anthropic';
+import { generateText, isStepCount } from 'ai';
+
+const result = await generateText({
+  model: anthropic('claude-opus-4-8'),
+  tools: {
+    bash: anthropic.tools.bash_20250124(),
   },
+  experimental_sandbox: {
+    description: 'A sandboxed shell environment.',
+    run: async ({ command }) => {
+      // Run the command in your sandbox and return the result.
+      return {
+        exitCode: 0,
+        stdout: `Executed: ${command}`,
+        stderr: '',
+      };
+    },
+  },
+  stopWhen: isStepCount(2),
+  prompt: 'List the files in the current directory.',
 });
 ```
 
@@ -799,6 +820,9 @@ Parameters:
   Two versions are available: `bash_20250124` (recommended) and `bash_20241022`.
   Only certain Claude versions are supported.
 </Note>
+
+You can also provide a custom `execute` function when you want to handle bash
+execution directly instead of using the request experimental sandbox.
 
 ### Memory Tool
 
@@ -899,7 +923,7 @@ const computerTool = anthropic.tools.computer_20251124({
   toModelOutput({ output }) {
     return typeof output === 'string'
       ? [{ type: 'text', text: output }]
-      : [{ type: 'image', data: output.data, mediaType: 'image/png' }];
+      : [{ type: 'file-data', data: output.data, mediaType: 'image/png' }];
   },
 });
 ```
@@ -1311,6 +1335,48 @@ const result = await generateText({
   file operations), and `codeExecution_20250522` (supports Bash only).
 </Note>
 
+#### Uploading Files for Code Execution
+
+You can upload files via the [Files API](https://docs.anthropic.com/en/docs/build-with-claude/files) and make them available inside the code execution sandbox. First upload the file, then reference it in your message using `containerUpload: true` in the provider options:
+
+```ts
+import { anthropic } from '@ai-sdk/anthropic';
+import { generateText, uploadFile } from 'ai';
+import * as fs from 'fs';
+
+const { providerReference } = await uploadFile({
+  api: anthropic.files(),
+  data: fs.readFileSync('./data.csv'),
+  filename: 'data.csv',
+  mediaType: 'text/csv',
+});
+
+const result = await generateText({
+  model: anthropic('claude-sonnet-4-5'),
+  tools: {
+    code_execution: anthropic.tools.codeExecution_20250825(),
+  },
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'Analyze this CSV data' },
+        {
+          type: 'file',
+          mediaType: 'text/csv',
+          data: { type: 'reference', reference: providerReference },
+          providerOptions: {
+            anthropic: { containerUpload: true },
+          },
+        },
+      ],
+    },
+  ],
+});
+```
+
+Supported file types include CSV, Excel, JSON, XML, images (JPEG, PNG, GIF, WebP), and text files.
+
 #### Error Handling
 
 Code execution errors are handled differently depending on whether you're using streaming or non-streaming:
@@ -1370,12 +1436,12 @@ import {
   anthropic,
   forwardAnthropicContainerIdFromLastStep,
 } from '@ai-sdk/anthropic';
-import { generateText, tool, stepCountIs } from 'ai';
+import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
   model: anthropic('claude-sonnet-4-5'),
-  stopWhen: stepCountIs(10),
+  stopWhen: isStepCount(10),
   prompt:
     'Get the weather for Tokyo, Sydney, and London, then calculate the average temperature.',
   tools: {
@@ -1599,7 +1665,7 @@ and the `mediaType` should be set to `'application/pdf'`.
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

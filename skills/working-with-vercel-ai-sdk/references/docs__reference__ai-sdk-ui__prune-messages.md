@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "622a7745fdc2de3035ce5d77174dedf857a144fcee0926fef06a720647ca4d06"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "eec68aff2a5d09d1cb8f60cc40a3218ad412e734714d1cb2c5c56e67f4232285"
 ---
 
 # `pruneMessages()`
@@ -9,7 +9,12 @@ sha256: "622a7745fdc2de3035ce5d77174dedf857a144fcee0926fef06a720647ca4d06"
 The `pruneMessages` function is used to prune or filter an array of `ModelMessage` objects. This is useful for reducing message context (to save tokens), removing intermediate reasoning, or trimming tool calls and empty messages before sending to an LLM.
 
 ```ts filename="app/api/chat/route.ts"
-import { pruneMessages, streamText } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  pruneMessages,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
@@ -27,7 +32,9 @@ export async function POST(req: Request) {
     messages: prunedMessages,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -114,6 +121,7 @@ For advanced usage and the full list of possible message parts, see [`ModelMessa
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -122,6 +130,7 @@ For advanced usage and the full list of possible message parts, see [`ModelMessa
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

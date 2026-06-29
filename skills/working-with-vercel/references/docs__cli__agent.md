@@ -3,7 +3,7 @@ title: vercel agent
 product: vercel
 url: /docs/cli/agent
 canonical_url: "https://vercel.com/docs/cli/agent"
-last_updated: 2018-10-20
+last_updated: 2026-06-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/agent.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2f67f0c8e792c46d7d82b3b0f285801a7483066beaa5ad4e364b1ab94fe8db3e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "f547e7aeae3d0e7db9d5db09837620b2bee43daf98eb26f133e0a2f569fc255a"
 ---
 
 # vercel agent

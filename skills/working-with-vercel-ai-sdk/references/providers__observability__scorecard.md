@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/scorecard.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2e5a0c874b31f7b77e4968a601157cc11d9a85475ede1d1dceaec6a918fc307b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7014f5e8f9b1147fadc86415dcb43a590ae234c428cfb7cdcacd4259d220c751"
 ---
 
 # Scorecard
@@ -23,10 +23,14 @@ OTEL_EXPORTER_OTLP_ENDPOINT=https://tracing.scorecard.io/otel/v1/traces
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer <Your Scorecard API Key>"
 ```
 
-Next, create an `instrumentation.ts` file in your project root to initialize OpenTelemetry (You can configure it as needed):
+Next, install `@ai-sdk/otel` and create an `instrumentation.ts` file in your project root to initialize OpenTelemetry and register the AI SDK telemetry integration:
 
-```typescript
+```typescript filename="instrumentation.ts"
+import { registerTelemetry } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { registerOTel } from '@vercel/otel';
+
+registerTelemetry(new LegacyOpenTelemetry());
 
 export function register() {
   registerOTel({
@@ -35,16 +39,15 @@ export function register() {
 }
 ```
 
-You can then use the `experimental_telemetry` option to enable telemetry on supported AI SDK function calls:
+Once the integration is registered, telemetry is captured automatically for all AI SDK calls:
 
-```typescript"
-import { openai } from '@ai-sdk/openai';
+```typescript
 import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
   model: openai('gpt-4o-mini'),
   prompt: 'Tell me a joke',
-  experimental_telemetry: { isEnabled: true },
 });
 ```
 
@@ -55,7 +58,7 @@ After integrating, you'll be able to view in your Scorecard dashboard:
 - **LLM call traces**: Detailed information about each AI SDK call
 - **Performance metrics**: Latency, token usage, and cost tracking
 - **Model information**: Which models and providers were used
-- **Custom metadata**: Any additional context you provide via telemetry
+- **Custom context**: Any additional context you provide via the `context` option
 - **Error tracking**: Failed requests and debugging information
 - **Usage analytics**: Patterns and trends in your LLM usage
 
@@ -81,6 +84,7 @@ After integrating, you'll be able to view in your Scorecard dashboard:
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

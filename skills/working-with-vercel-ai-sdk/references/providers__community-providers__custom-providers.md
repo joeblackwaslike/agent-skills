@@ -1,20 +1,20 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/custom-providers.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "77325befadf60b57ed09e4ec4b586dfe073375b4a39b50a390020192d6ee602b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8622aecd75a9a2078a71e8d655da95cdd0b7da33c3e898025866c1af5f97f519"
 ---
 
 # Writing a Custom Provider
 
-The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v2) that enables you to create custom providers compatible with the AI SDK. This specification ensures consistency across different providers.
+The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4) that enables you to create custom providers compatible with the AI SDK. This specification ensures consistency across different providers.
 
 ## Publishing Your Provider
 
-Please publish your custom provider in your own GitHub repository and as an NPM package. You are responsible for hosting and maintaining your provider. Once published, you can submit a PR to the AI SDK repository to add your provider to the [Community Providers](/providers/community-providers) documentation section. Use the [OpenRouter provider documentation](https://github.com/vercel/ai/blob/main/content/providers/03-community-providers/13-openrouter.mdx) as a template for your documentation.
+Please publish your custom provider in your own GitHub repository and as an NPM package. You are responsible for hosting and maintaining your provider. Once published, you can submit a PR to the AI SDK repository to add your provider to the [Community Providers](/providers/community-providers) documentation section. Use the [OpenRouter provider documentation](https://github.com/vercel/ai/blob/main/content/providers/05-community-providers/32-openrouter.mdx) as a template for your documentation.
 
 ## Why the Language Model Specification?
 
-The Language Model Specification V3 is a standardized specification for interacting with language models that provides a unified abstraction layer across all AI providers. This specification creates a consistent interface that works seamlessly with different language models, ensuring that developers can interact with any provider using the same patterns and methods. It enables:
+The Language Model Specification V4 is a standardized specification for interacting with language models that provides a unified abstraction layer across all AI providers. This specification creates a consistent interface that works seamlessly with different language models, ensuring that developers can interact with any provider using the same patterns and methods. It enables:
 
 <Note>
   If you open-source a provider, we'd love to promote it here. Please send us a
@@ -22,69 +22,69 @@ The Language Model Specification V3 is a standardized specification for interact
   section.
 </Note>
 
-## Understanding the V3 Specification
+## Understanding the V4 Specification
 
-The Language Model Specification V3 creates a robust abstraction layer that works across all current and future AI providers. By establishing a standardized interface, it provides the flexibility to support emerging LLM capabilities while ensuring your application code remains provider-agnostic and future-ready.
+The Language Model Specification V4 creates a robust abstraction layer that works across all current and future AI providers. By establishing a standardized interface, it provides the flexibility to support emerging LLM capabilities while ensuring your application code remains provider-agnostic and future-ready.
 
 ### Architecture
 
-At its heart, the V2 specification defines three main interfaces:
+At its heart, the V4 specification defines three main interfaces:
 
-1. **ProviderV3**: The top-level interface that serves as a factory for different model types
-2. **LanguageModelV3**: The primary interface for text generation models
-3. **EmbeddingModelV3** and **ImageModelV3**: Interfaces for embeddings and image generation
+1. **ProviderV4**: The top-level interface that serves as a factory for different model types
+2. **LanguageModelV4**: The primary interface for text generation models
+3. **EmbeddingModelV4** and **ImageModelV4**: Interfaces for embeddings and image generation
 
-### `ProviderV3`
+### `ProviderV4`
 
-The `ProviderV3` interface acts as the entry point:
+The `ProviderV4` interface acts as the entry point:
 
 ```ts
-interface ProviderV3 {
-  languageModel(modelId: string): LanguageModelV3;
-  .embeddingModel(modelId: string): EmbeddingModelV3<string>;
-  imageModel(modelId: string): ImageModelV3;
+interface ProviderV4 {
+  languageModel(modelId: string): LanguageModelV4;
+  .embeddingModel(modelId: string): EmbeddingModelV4<string>;
+  imageModel(modelId: string): ImageModelV4;
 }
 ```
 
-### `LanguageModelV3`
+### `LanguageModelV4`
 
-The `LanguageModelV3` interface defines the methods your provider must implement:
+The `LanguageModelV4` interface defines the methods your provider must implement:
 
 ```ts
-interface LanguageModelV3 {
-  specificationVersion: 'V3';
+interface LanguageModelV4 {
+  specificationVersion: 'V4';
   provider: string;
   modelId: string;
   supportedUrls: Record<string, RegExp[]>;
 
-  doGenerate(options: LanguageModelV3CallOptions): Promise<GenerateResult>;
-  doStream(options: LanguageModelV3CallOptions): Promise<StreamResult>;
+  doGenerate(options: LanguageModelV4CallOptions): Promise<GenerateResult>;
+  doStream(options: LanguageModelV4CallOptions): Promise<StreamResult>;
 }
 ```
 
 Key aspects:
 
-- **specificationVersion**: Must be 'V3'
+- **specificationVersion**: Must be 'V4'
 - **supportedUrls**: Declares which URLs (for file parts) the provider can handle natively
 - **doGenerate/doStream**: methods for non-streaming and streaming generation
 
 ### Understanding Input vs Output
 
-Before diving into the details, it's important to understand the distinction between two key concepts in the V3 specification:
+Before diving into the details, it's important to understand the distinction between two key concepts in the V4 specification:
 
-1. **LanguageModelV3Content**: The specification for what the models generate
-2. **LanguageModelV3Prompt**: The specification for what you send to the model
+1. **LanguageModelV4Content**: The specification for what the models generate
+2. **LanguageModelV4Prompt**: The specification for what you send to the model
 
-### `LanguageModelV3Content`
+### `LanguageModelV4Content`
 
-The V3 specification supports five distinct content types that models can generate, each designed for specific use cases:
+The V4 specification supports five distinct content types that models can generate, each designed for specific use cases:
 
 #### Text Content
 
 The fundamental building block for all text generation:
 
 ```ts
-type LanguageModelV3Text = {
+type LanguageModelV4Text = {
   type: 'text';
   text: string;
 };
@@ -97,7 +97,7 @@ This is used for standard model responses, system messages, and any plain text o
 Enable models to invoke functions with structured arguments:
 
 ```ts
-type LanguageModelV3ToolCall = {
+type LanguageModelV4ToolCall = {
   type: 'tool-call';
   toolCallType: 'function';
   toolCallId: string;
@@ -113,7 +113,7 @@ The `toolCallId` is crucial for correlating tool results back to their calls, es
 Support for multimodal output generation:
 
 ```ts
-type LanguageModelV3File = {
+type LanguageModelV4File = {
   type: 'file';
   mediaType: string; // IANA media type (e.g., 'image/png', 'audio/mp3')
   data: string | Uint8Array; // Generated file data as base64 encoded strings or binary data
@@ -127,14 +127,14 @@ This enables models to generate images, audio, documents, and other file types d
 Dedicated support for chain-of-thought reasoning (essential for models like OpenAI's o1):
 
 ```ts
-type LanguageModelV3Reasoning = {
+type LanguageModelV4Reasoning = {
   type: 'reasoning';
   text: string;
 
   /**
    * Optional provider-specific metadata for the reasoning part.
    */
-  providerMetadata?: SharedV2ProviderMetadata;
+  providerMetadata?: SharedV4ProviderMetadata;
 };
 ```
 
@@ -143,19 +143,19 @@ Reasoning content is tracked separately from regular text, allowing for proper t
 #### Sources
 
 ```ts
-type LanguageModelV3Source = {
+type LanguageModelV4Source = {
   type: 'source';
   sourceType: 'url';
   id: string;
   url: string;
   title?: string;
-  providerMetadata?: SharedV2ProviderMetadata;
+  providerMetadata?: SharedV4ProviderMetadata;
 };
 ```
 
-### `LanguageModelV3Prompt`
+### `LanguageModelV4Prompt`
 
-The V3 prompt format (`LanguageModelV3Prompt`) is designed as a flexible message array that supports multimodal inputs:
+The V4 prompt format (`LanguageModelV4Prompt`) is designed as a flexible message array that supports multimodal inputs:
 
 #### Message Roles
 
@@ -170,23 +170,23 @@ Each message has a specific role with allowed content types:
 - **User**: Human inputs supporting text and files
 
   ```ts
-  { role: 'user', content: Array<LanguageModelV3TextPart | LanguageModelV3FilePart> }
+  { role: 'user', content: Array<LanguageModelV4TextPart | LanguageModelV4FilePart> }
   ```
 
 - **Assistant**: Model outputs with full content type support
 
   ```ts
-  { role: 'assistant', content: Array<LanguageModelV3TextPart | LanguageModelV3FilePart | LanguageModelV3ReasoningPart | LanguageModelV3ToolCallPart> }
+  { role: 'assistant', content: Array<LanguageModelV4TextPart | LanguageModelV4FilePart | LanguageModelV4ReasoningPart | LanguageModelV4ToolCallPart> }
   ```
 
 - **Tool**: Results from tool executions
   ```ts
-  { role: 'tool', content: Array<LanguageModelV3ToolResultPart> }
+  { role: 'tool', content: Array<LanguageModelV4ToolResultPart> }
   ```
 
 #### Prompt Parts
 
-Prompt parts are the building blocks of messages in the prompt structure. While `LanguageModelV3Content` represents the model's output content, prompt parts are specifically designed for constructing input messages. Each message role supports different types of prompt parts:
+Prompt parts are the building blocks of messages in the prompt structure. While `LanguageModelV4Content` represents the model's output content, prompt parts are specifically designed for constructing input messages. Each message role supports different types of prompt parts:
 
 - **System messages**: Only support text content
 - **User messages**: Support text and file parts
@@ -200,10 +200,10 @@ Let's explore each prompt part type:
 The most basic prompt part, containing plain text content:
 
 ```ts
-interface LanguageModelV3TextPart {
+interface LanguageModelV4TextPart {
   type: 'text';
   text: string;
-  providerOptions?: SharedV2ProviderOptions;
+  providerOptions?: SharedV4ProviderOptions;
 }
 ```
 
@@ -212,10 +212,10 @@ interface LanguageModelV3TextPart {
 Used in assistant messages to capture the model's reasoning process:
 
 ```ts
-interface LanguageModelV3ReasoningPart {
+interface LanguageModelV4ReasoningPart {
   type: 'reasoning';
   text: string;
-  providerOptions?: SharedV2ProviderOptions;
+  providerOptions?: SharedV4ProviderOptions;
 }
 ```
 
@@ -224,12 +224,12 @@ interface LanguageModelV3ReasoningPart {
 Enable multimodal inputs by including files in prompts:
 
 ```ts
-interface LanguageModelV3FilePart {
+interface LanguageModelV4FilePart {
   type: 'file';
   filename?: string;
-  data: LanguageModelV3DataContent;
+  data: LanguageModelV4DataContent;
   mediaType: string;
-  providerOptions?: SharedV2ProviderOptions;
+  providerOptions?: SharedV4ProviderOptions;
 }
 ```
 
@@ -244,12 +244,12 @@ The `data` field offers flexibility:
 Represent tool calls made by the assistant:
 
 ```ts
-interface LanguageModelV3ToolCallPart {
+interface LanguageModelV4ToolCallPart {
   type: 'tool-call';
   toolCallId: string;
   toolName: string;
   args: unknown;
-  providerOptions?: SharedV2ProviderOptions;
+  providerOptions?: SharedV4ProviderOptions;
 }
 ```
 
@@ -258,7 +258,7 @@ interface LanguageModelV3ToolCallPart {
 Contain the results of executed tool calls:
 
 ```ts
-interface LanguageModelV3ToolResultPart {
+interface LanguageModelV4ToolResultPart {
   type: 'tool-result';
   toolCallId: string;
   toolName: string;
@@ -270,7 +270,7 @@ interface LanguageModelV3ToolResultPart {
     data?: string; // base64 encoded image data
     mediaType?: string;
   }>;
-  providerOptions?: SharedV2ProviderOptions;
+  providerOptions?: SharedV4ProviderOptions;
 }
 ```
 
@@ -283,7 +283,6 @@ The optional `content` field enables rich tool results including images, providi
 The streaming system uses typed events for different stages:
 
 1. **Stream Lifecycle Events**:
-
    - `stream-start`: Initial event with any warnings about unsupported features
    - `response-metadata`: Model information and response headers
    - `finish`: Final event with usage statistics and finish reason
@@ -310,7 +309,7 @@ Example stream sequence:
 Enhanced usage information:
 
 ```ts
-type LanguageModelV3Usage = {
+type LanguageModelV4Usage = {
   inputTokens: number | undefined;
   outputTokens: number | undefined;
   totalTokens: number | undefined;
@@ -321,14 +320,14 @@ type LanguageModelV3Usage = {
 
 ### Tools
 
-The V3 specification supports two types of tools:
+The V4 specification supports two types of tools:
 
 #### Function Tools
 
 Standard user-defined functions with JSON Schema validation:
 
 ```ts
-type LanguageModelV3FunctionTool = {
+type LanguageModelV4FunctionTool = {
   type: 'function';
   name: string;
   description?: string;
@@ -341,7 +340,7 @@ type LanguageModelV3FunctionTool = {
 Native provider capabilities exposed as tools:
 
 ```ts
-export type LanguageModelV3ProviderClientDefinedTool = {
+export type LanguageModelV4ProviderClientDefinedTool = {
   type: 'provider-defined-client';
   id: string; // e.g., 'anthropic.computer-use'
   name: string; // Human-readable name
@@ -388,7 +387,7 @@ providerOptions: {
 
 Provider options can be specified at multiple levels:
 
-- **Call level**: In `LanguageModelV3CallOptions`
+- **Call level**: In `LanguageModelV4CallOptions`
 - **Message level**: On individual messages
 - **Part level**: On specific content parts (text, file, etc.)
 
@@ -396,7 +395,7 @@ This layered approach allows fine-grained control while maintaining compatibilit
 
 ### Error Handling
 
-The V2 specification emphasizes robust error handling:
+The V4 specification emphasizes robust error handling:
 
 1. **Streaming Errors**: Can be emitted at any point via `{ type: 'error', error: unknown }`
 2. **Warnings**: Non-fatal issues reported in `stream-start` and response objects
@@ -440,11 +439,11 @@ import {
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-sdk/provider-utils';
-import { ProviderV3 } from '@ai-sdk/provider';
+import { ProviderV4 } from '@ai-sdk/provider';
 import { CustomChatLanguageModel } from './custom-chat-language-model';
 
-// Define your provider interface extending ProviderV3
-interface CustomProvider extends ProviderV3 {
+// Define your provider interface extending ProviderV4
+interface CustomProvider extends ProviderV4 {
   (modelId: string, settings?: CustomChatSettings): CustomChatLanguageModel;
 
   // Add specific methods for different model types
@@ -514,14 +513,14 @@ const custom = createCustom();
 
 ### Step 2: Implement the Language Model
 
-Create a `custom-chat-language-model.ts` file that implements `LanguageModelV3`:
+Create a `custom-chat-language-model.ts` file that implements `LanguageModelV4`:
 
 ```ts filename="custom-chat-language-model.ts"
-import { LanguageModelV3, LanguageModelV3CallOptions } from '@ai-sdk/provider';
+import { LanguageModelV4, LanguageModelV4CallOptions } from '@ai-sdk/provider';
 import { postJsonToApi } from '@ai-sdk/provider-utils';
 
-class CustomChatLanguageModel implements LanguageModelV3 {
-  readonly specificationVersion = 'V3';
+class CustomChatLanguageModel implements LanguageModelV4 {
+  readonly specificationVersion = 'V4';
   readonly provider: string;
   readonly modelId: string;
 
@@ -536,8 +535,8 @@ class CustomChatLanguageModel implements LanguageModelV3 {
   }
 
   // Convert AI SDK prompt to provider format
-  private getArgs(options: LanguageModelV3CallOptions) {
-    const warnings: SharedV3Warning[] = [];
+  private getArgs(options: LanguageModelV4CallOptions) {
+    const warnings: SharedV4Warning[] = [];
 
     // Map messages to provider format
     const messages = this.convertToProviderMessages(options.prompt);
@@ -561,7 +560,7 @@ class CustomChatLanguageModel implements LanguageModelV3 {
     return { args: body, warnings };
   }
 
-  async doGenerate(options: LanguageModelV3CallOptions) {
+  async doGenerate(options: LanguageModelV4CallOptions) {
     const { args, warnings } = this.getArgs(options);
 
     // Make API call
@@ -573,7 +572,7 @@ class CustomChatLanguageModel implements LanguageModelV3 {
     });
 
     // Convert provider response to AI SDK format
-    const content: LanguageModelV3Content[] = [];
+    const content: LanguageModelV4Content[] = [];
 
     // Extract text content
     if (response.choices[0].message.content) {
@@ -610,7 +609,7 @@ class CustomChatLanguageModel implements LanguageModelV3 {
     };
   }
 
-  async doStream(options: LanguageModelV3CallOptions) {
+  async doStream(options: LanguageModelV4CallOptions) {
     const { args, warnings } = this.getArgs(options);
 
     // Create streaming response
@@ -647,7 +646,7 @@ class CustomChatLanguageModel implements LanguageModelV3 {
 Map AI SDK messages to your provider's format:
 
 ```ts filename="custom-chat-language-model.ts#L50-100"
-private convertToProviderMessages(prompt: LanguageModelV3Prompt) {
+private convertToProviderMessages(prompt: LanguageModelV4Prompt) {
   return prompt.map((message) => {
     switch (message.role) {
       case 'system':
@@ -693,10 +692,10 @@ private convertToProviderMessages(prompt: LanguageModelV3Prompt) {
 Create a streaming transformer that converts provider chunks to AI SDK stream parts:
 
 ```ts filename="custom-chat-language-model.ts#L150-200"
-private createTransformer(warnings: SharedV3Warning[]) {
+private createTransformer(warnings: SharedV4Warning[]) {
   let isFirstChunk = true;
 
-  return new TransformStream<ParsedChunk, LanguageModelV3StreamPart>({
+  return new TransformStream<ParsedChunk, LanguageModelV4StreamPart>({
     async transform(chunk, controller) {
       // Send warnings with first chunk
       if (isFirstChunk) {
@@ -775,13 +774,75 @@ private handleError(error: unknown): never {
 }
 ```
 
+### Step 6: Add Workflow Serialization Support
+
+To make your provider compatible with [Workflow DevKit](https://useworkflow.dev), model instances need to be serializable when they cross workflow step boundaries. The AI SDK provides helpers that make this straightforward.
+
+First, make `headers` optional in your config type so deserialized models work without pre-configured auth:
+
+```ts filename="custom-chat-language-model.ts"
+type CustomChatConfig = {
+  provider: string;
+  baseURL: string;
+  headers?: () => Record<string, string | undefined>; // must be optional
+  fetch?: FetchFunction;
+  generateId?: () => string;
+};
+```
+
+Then add the static serialization methods to your model class:
+
+```ts filename="custom-chat-language-model.ts"
+import {
+  serializeModel,
+  deserializeModel,
+  WORKFLOW_SERIALIZE,
+  WORKFLOW_DESERIALIZE,
+} from '@ai-sdk/provider-utils';
+
+class CustomChatLanguageModel implements LanguageModelV4 {
+  // Note: classId is generated automatically by the workflow SWC compiler at build time
+
+  static [WORKFLOW_SERIALIZE](model: CustomChatLanguageModel) {
+    return serializeModel(model);
+  }
+
+  static [WORKFLOW_DESERIALIZE](options: {
+    modelId: string;
+    config: CustomChatConfig;
+  }) {
+    return deserializeModel(CustomChatLanguageModel, options);
+  }
+
+  // ... rest of class
+}
+```
+
+`serializeModel()` automatically extracts only serializable config properties (strings, numbers, booleans), filtering out functions like `headers`, `fetch`, and `generateId`.
+
+Since headers are not serialized, update any call sites to use optional chaining:
+
+```ts
+// Before
+headers: combineHeaders(this.config.headers(), options.headers),
+
+// After
+headers: combineHeaders(this.config.headers?.(), options.headers),
+```
+
+<Note>
+  The deserialized model will not have auth headers. In a workflow context,
+  authentication is typically handled through environment variables or
+  request-level options available in the step execution environment.
+</Note>
+
 ## Next Steps
 
-- Dig into the [Language Model Specification V3](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v3)
+- Dig into the [Language Model Specification V4](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4)
 - Check out the [Mistral provider](https://github.com/vercel/ai/tree/main/packages/mistral) reference implementation
 - Check out [provider utilities](https://github.com/vercel/ai/tree/main/packages/provider-utils) for helpful functions
 - Test your provider with the AI SDK's built-in examples
-- Explore the V2 types in detail at [`@ai-sdk/provider`](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/V2)
+- Explore the V4 types in detail at [`@ai-sdk/provider`](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4)
 
 
 ## Navigation

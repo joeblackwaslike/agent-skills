@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-ui-message-stream-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "4c1f06ea0ef748be5defc727c71b2a8428a003fe0af288a062bbb7710f08ef3b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "bd408ece560cb0169ea0fad934e74e1396c73fc1fde54eaac32b02b0d040255c"
 ---
 
 # AI_UIMessageStreamError
@@ -92,6 +92,7 @@ if (UIMessageStreamError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

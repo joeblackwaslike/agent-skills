@@ -3,7 +3,7 @@ title: Agent Resources
 product: vercel
 url: /docs/agent-resources
 canonical_url: "https://vercel.com/docs/agent-resources"
-last_updated: 2026-04-29
+last_updated: 2026-06-16
 type: integration
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5f2210ad9ac2ed13bdb7a12858faded4a30465be4a4ec03a07f5e31d09d13642"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4af93acf5af8ffe9a22c8bbd2418287abec22e2f4e3e1b1c0a6b2e7b0c604c0b"
 ---
 
 # Agent Resources

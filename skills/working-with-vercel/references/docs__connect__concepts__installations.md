@@ -3,7 +3,7 @@ title: Installations
 product: vercel
 url: /docs/connect/concepts/installations
 canonical_url: "https://vercel.com/docs/connect/concepts/installations"
-last_updated: 2026-06-03
+last_updated: 2026-06-09
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -15,8 +15,8 @@ related:
 summary: Installations let one connector serve many tenants. One Slack connector, for example, can serve many Slack workspaces, each with its own grant.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/installations.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "11d53420d1dfa09a9f2d93cff2148f1320b9a5a16df0a156d3853f93b24340bb"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "c91c8805b622a93b8657aecec12ee75f66c5aac27588c9b6afc58d2cbea5b9e7"
 ---
 
 # Installations

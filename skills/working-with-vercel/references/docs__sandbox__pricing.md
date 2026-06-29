@@ -3,7 +3,7 @@ title: Vercel Sandbox pricing and limits
 product: vercel
 url: /docs/sandbox/pricing
 canonical_url: "https://vercel.com/docs/sandbox/pricing"
-last_updated: 2026-05-29
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "30d9998bd47c405658ded60c81c4f52f464acbe96a07b9f6d5f682b471ad56de"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b4a4207574d777d7c03e9d8083c8e458abcdd2985be954f71f9bdcfc14cf3511"
 ---
 
 # Vercel Sandbox pricing and limits

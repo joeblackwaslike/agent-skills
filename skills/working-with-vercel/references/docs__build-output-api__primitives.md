@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3f5768b90e79d4a9cf913b0612ebd44b8ff68e8c1377d97dc4f274539dbeb5d1"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "168cf9036ce5f1187a1be40e30db4a856f31f28127aaafbaf56027918794dac9"
 ---
 
 # Vercel Primitives
@@ -87,9 +87,9 @@ type ServerlessFunctionConfig = {
 | ----------------------------- | ----------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **runtime**                   | [String](/docs/rest-api/reference#types)       | Yes      | Specifies which "runtime" will be used to execute the Vercel Function. See [Runtimes](/docs/functions/runtimes) for more information.                     |
 | **handler**                   | [String](/docs/rest-api/reference#types)       | Yes      | Indicates the initial file where code will be executed for the Vercel Function.                                                                           |
-| **memory**                    | [Integer](/docs/rest-api/reference#types)      | No       | Amount of memory (RAM in MB) that will be allocated to the Vercel Function. See [size limits](/docs/functions/runtimes#size-limits) for more information. |
+| **memory**                    | [Integer](/docs/rest-api/reference#types)      | No       | Amount of memory (RAM in MB) that will be allocated to the Vercel Function. See [memory size limits](/docs/functions/limitations#memory-size-limits) for more information. |
 | **architecture**              | [String](/docs/rest-api/reference#types)       | No       | Specifies the instruction set "architecture" the Vercel Function supports. Either `x86_64` or `arm64`. The default value is `x86_64`.                     |
-| **maxDuration**               | [Integer](/docs/rest-api/reference#types)      | No       | Maximum duration (in seconds) that will be allowed for the Vercel Function. See [size limits](/docs/functions/runtimes#size-limits) for more information. |
+| **maxDuration**               | [Integer](/docs/rest-api/reference#types)      | No       | Maximum duration (in seconds) that will be allowed for the Vercel Function. See [max duration](/docs/functions/limitations#max-duration) for more information. |
 | **environment**               | [Map](/docs/rest-api/reference#types)          | No       | Map of additional environment variables that will be available to the Vercel Function, in addition to the env vars specified in the Project Settings.     |
 | **regions**                   | [String\[\]](/docs/rest-api/reference#types)     | No       | List of Vercel Regions where the Vercel Function will be deployed to.                                                                                     |
 | **supportsWrapper**           | [Boolean](/docs/rest-api/reference#types)      | No       | True if a custom runtime has support for Lambda runtime wrappers.                                                                                         |

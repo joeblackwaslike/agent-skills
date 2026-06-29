@@ -1,18 +1,16 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "47566559e6655967e9934e984fe6f4ffe58908c289ebce5cbaac62a53afeba08"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "6e97118b20697d1cccb73fc6dbccad9a919b62c657b38a5bc44630bd5307d443"
 ---
 
 # Speech
-
-<Note type="warning">Speech is an experimental feature.</Note>
 
 The AI SDK provides the [`generateSpeech`](/docs/reference/ai-sdk-core/generate-speech)
 function to generate speech from text using a speech model.
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const audio = await generateSpeech({
@@ -27,7 +25,7 @@ const audio = await generateSpeech({
 You can specify the language for speech generation (provider support varies):
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { lmnt } from '@ai-sdk/lmnt';
 
 const audio = await generateSpeech({
@@ -52,7 +50,7 @@ const audioBase64 = result.audio.base64; // audio data as base64 string
 You can set model-specific settings with the `providerOptions` parameter.
 
 ```ts highlight="7-11"
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const audio = await generateSpeech({
@@ -74,7 +72,7 @@ that you can use to abort the speech generation process or set a timeout.
 
 ```ts highlight="7"
 import { openai } from '@ai-sdk/openai';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
 const audio = await generateSpeech({
   model: openai.speech('tts-1'),
@@ -90,7 +88,7 @@ that you can use to add custom headers to the speech generation request.
 
 ```ts highlight="7"
 import { openai } from '@ai-sdk/openai';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
 const audio = await generateSpeech({
   model: openai.speech('tts-1'),
@@ -105,7 +103,7 @@ Warnings (e.g. unsupported parameters) are available on the `warnings` property.
 
 ```ts
 import { openai } from '@ai-sdk/openai';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
 const audio = await generateSpeech({
   model: openai.speech('tts-1'),
@@ -130,10 +128,7 @@ The error preserves the following information to help you log the issue:
 - `cause`: The cause of the error. You can use this for more detailed error handling.
 
 ```ts
-import {
-  experimental_generateSpeech as generateSpeech,
-  NoSpeechGeneratedError,
-} from 'ai';
+import { generateSpeech, NoSpeechGeneratedError } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 try {
@@ -152,20 +147,28 @@ try {
 
 ## Speech Models
 
-| Provider                                                           | Model                    |
-| ------------------------------------------------------------------ | ------------------------ |
-| [OpenAI](/providers/ai-sdk-providers/openai#speech-models)         | `tts-1`                  |
-| [OpenAI](/providers/ai-sdk-providers/openai#speech-models)         | `tts-1-hd`               |
-| [OpenAI](/providers/ai-sdk-providers/openai#speech-models)         | `gpt-4o-mini-tts`        |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models) | `eleven_v3`              |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models) | `eleven_multilingual_v2` |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models) | `eleven_flash_v2_5`      |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models) | `eleven_flash_v2`        |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models) | `eleven_turbo_v2_5`      |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models) | `eleven_turbo_v2`        |
-| [LMNT](/providers/ai-sdk-providers/lmnt#speech-models)             | `aurora`                 |
-| [LMNT](/providers/ai-sdk-providers/lmnt#speech-models)             | `blizzard`               |
-| [Hume](/providers/ai-sdk-providers/hume#speech-models)             | `default`                |
+| Provider                                                                 | Model                               |
+| ------------------------------------------------------------------------ | ----------------------------------- |
+| [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `tts-1`                             |
+| [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `tts-1-hd`                          |
+| [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `gpt-4o-mini-tts`                   |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_v3`                         |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_multilingual_v2`            |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_flash_v2_5`                 |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_flash_v2`                   |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_turbo_v2_5`                 |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_turbo_v2`                   |
+| [LMNT](/providers/ai-sdk-providers/lmnt#speech-models)                   | `aurora`                            |
+| [LMNT](/providers/ai-sdk-providers/lmnt#speech-models)                   | `blizzard`                          |
+| [Hume](/providers/ai-sdk-providers/hume#speech-models)                   | `default`                           |
+| [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-2.5-flash-preview-tts`      |
+| [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-2.5-pro-preview-tts`        |
+| [Google](/providers/ai-sdk-providers/google#speech-models)               | `gemini-3.1-flash-tts-preview`      |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-2.5-flash-tts`              |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-2.5-pro-tts`                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-2.5-flash-lite-preview-tts` |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-3.1-flash-tts-preview`      |
+| [xAI](/providers/ai-sdk-providers/xai#speech-models)                     | `default`                           |
 
 Above are a small subset of the speech models supported by the AI SDK providers. For more, see the respective provider documentation.
 
@@ -177,21 +180,27 @@ Above are a small subset of the speech models supported by the AI SDK providers.
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

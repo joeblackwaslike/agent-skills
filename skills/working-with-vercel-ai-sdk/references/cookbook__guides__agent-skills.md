@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/agent-skills.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3192d15195c0e0cce2f5a0cd33a141a138e2ba0a30ef05dee358b0f74c8dfb02"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b60acec11921a9669378503ff2a4da1bb2329b333e1aa75031fa1f16217c9c7a"
 ---
 
 # Add Skills to Your Agent
@@ -186,8 +186,8 @@ const loadSkillTool = tool({
   inputSchema: z.object({
     name: z.string().describe('The skill name to load'),
   }),
-  execute: async ({ name }, { experimental_context }) => {
-    const { sandbox, skills } = experimental_context as {
+  execute: async ({ name }, { context }) => {
+    const { sandbox, skills } = context as {
       sandbox: Sandbox;
       skills: SkillMetadata[];
     };
@@ -230,8 +230,8 @@ const callOptionsSchema = z.object({
 const readFileTool = tool({
   description: 'Read a file from the filesystem',
   inputSchema: z.object({ path: z.string() }),
-  execute: async ({ path }, { experimental_context }) => {
-    const { sandbox } = experimental_context as { sandbox: Sandbox };
+  execute: async ({ path }, { context }) => {
+    const { sandbox } = context as { sandbox: Sandbox };
     return sandbox.readFile(path, 'utf-8');
   },
 });
@@ -239,8 +239,8 @@ const readFileTool = tool({
 const bashTool = tool({
   description: 'Execute a bash command',
   inputSchema: z.object({ command: z.string() }),
-  execute: async ({ command }, { experimental_context }) => {
-    const { sandbox } = experimental_context as { sandbox: Sandbox };
+  execute: async ({ command }, { context }) => {
+    const { sandbox } = context as { sandbox: Sandbox };
     return sandbox.exec(command);
   },
 });
@@ -256,7 +256,7 @@ const agent = new ToolLoopAgent({
   prepareCall: ({ options, ...settings }) => ({
     ...settings,
     instructions: `${settings.instructions}\n\n${buildSkillsPrompt(options.skills)}`,
-    experimental_context: {
+    context: {
       sandbox: options.sandbox,
       skills: options.skills,
     },
@@ -321,6 +321,7 @@ The agent sees the skill directory path in the tool result and prepends it when 
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

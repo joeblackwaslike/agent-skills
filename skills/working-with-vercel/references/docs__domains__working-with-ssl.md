@@ -3,7 +3,7 @@ title: Working with SSL Certificates
 product: vercel
 url: /docs/domains/working-with-ssl
 canonical_url: "https://vercel.com/docs/domains/working-with-ssl"
-last_updated: 2026-03-05
+last_updated: 2026-06-08
 type: conceptual
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel uses SSL certification to keep your site secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-ssl.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "547cdabed0e1c450a2c872b06800319d5d10023d51ad8f29222efa95652c5953"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6d31e95b5a49d12c3307a32ae6335f00a13a0453ccac27afe962249e7bf00ea2"
 ---
 
 # Working with SSL Certificates

@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "40c14f4f9d900b7a339efee3320cf432ff59b02113ecf56c66b5f48a372ac9ce"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "12284be54f5fb3f62810883fb9c456b7133f27167b235d7242404012f917d36e"
 ---
 
 # Configuring regions for Vercel Functions
@@ -103,7 +103,7 @@ The number of regions your functions can run in depends on your plan:
 | Plan       | Function regions |
 | ---------- | ---------------- |
 | Hobby      | Single region    |
-| Pro        | 5 regions        |
+| Pro        | 3 regions        |
 | Enterprise | All regions      |
 
 Deploying to more regions than your plan allows causes the deployment to fail before the [build step](/docs/deployments/configure-a-build).

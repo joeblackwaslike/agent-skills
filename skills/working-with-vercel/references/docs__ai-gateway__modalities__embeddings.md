@@ -3,18 +3,18 @@ title: Embeddings
 product: vercel
 url: /docs/ai-gateway/modalities/embeddings
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/embeddings"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings
-summary: Learn about embeddings on Vercel.
+summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "7465ae6190ecc3d6806a4eb8606ba0ed72514c6bd154115bc17aeb46b268cc84"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "767e869f88c3fa34b5e513517ef456991e2cd9b0526afb4fd7c1813d3a52615e"
 ---
 
 # Embeddings

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "fbc698814b923fb0418fa2e72b6719ae011b6006d3d562d9343f3042bf272bca"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a20ee0a6a528ed3200d30daa5d969f7aba9dac85801253d7e25c60c171814ac5"
 ---
 
 # AI_TooManyEmbeddingValuesForCallError
@@ -52,6 +52,7 @@ if (TooManyEmbeddingValuesForCallError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

@@ -3,7 +3,7 @@ title: Working with Checks
 product: vercel
 url: /docs/checks
 canonical_url: "https://vercel.com/docs/checks"
-last_updated: 2025-09-15
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Checks in your Vercel workflow...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "508e545ced1f3a0aa87f9ecfc23f7e49653b4045714cdf1bebe675fc4791c7f2"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e03284c14f4e2a20aa7e9339ea4cde3c6c07dbeddd941e76063c3baa55e873a0"
 ---
 
 # Working with Checks

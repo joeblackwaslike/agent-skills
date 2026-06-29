@@ -16,8 +16,8 @@ related:
 summary: Learn about getting started on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f384da2a249f0865c543ae257f1f1eed4b4bc6a69d2f358b8eea7b3de874456c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "de2e04a8284c79d96549b59d0eeecf0400e23816ced89577163628e61d21a1bf"
 ---
 
 # Getting started with microfrontends
@@ -124,7 +124,22 @@ Before diving into implementation, it's helpful to understand these core concept
   > For \['nextjs-app', 'nextjs']:
   To handle JavaScript and CSS assets in Next.js, add the `withMicrofrontends`
   wrapper to your `next.config.js` file.
+  > For \['nextjs-app']:
+  If this application also has routed pages in `pages/`, pass
+  `supportPagesRouter: true` to `withMicrofrontends()`. This applies to mixed
+  App Router and Pages Router applications.
+  > For \['nextjs']:
+  Next.js microfrontends that use the Pages Router must enable Pages Router
+  support. This applies to any application with routed pages in `pages/`,
+  including mixed App Router and Pages Router applications.
   > For \['nextjs-app', 'nextjs']:
+  > For \['nextjs-app', 'nextjs']:
+  Use `supportPagesRouter` only when a Next.js microfrontend includes Pages
+  Router routes. The option enables Pages Router support in the Next.js config
+  transform. It changes Webpack chunk behavior to use deterministic module and
+  chunk IDs, and it generates a build ID for child applications so Pages Router
+  `/_next/data` requests route to the correct microfrontend. Applications that
+  already set `generateBuildId` manually cannot use `supportPagesRouter`.
   > For \['nextjs-app', 'nextjs']:
   The `withMicrofrontends` function will automatically add an [asset
   prefix](/docs/microfrontends/path-routing#asset-prefix) to the application so

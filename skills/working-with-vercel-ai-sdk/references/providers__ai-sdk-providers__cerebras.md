@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "79c262f85436e8d601fcb441f925c842207e41b6f0d5da2087dc3f33bf0e9fa7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "42229a58b4e0dabe7e017f29f16c5011120b461ee1e74583ae805a9b305de9e5"
 ---
 
 # Cerebras Provider
@@ -118,7 +118,7 @@ const result = streamText({
   prompt: 'How many "r"s are in the word "strawberry"?',
 });
 
-for await (const part of result.fullStream) {
+for await (const part of result.stream) {
   if (part.type === 'reasoning') {
     console.log('Reasoning:', part.text);
   } else if (part.type === 'text-delta') {
@@ -186,7 +186,7 @@ The following optional provider options are available for Cerebras language mode
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

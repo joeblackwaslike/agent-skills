@@ -1,14 +1,14 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/has-tool-call.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "016e33000910cc284260e2ebfbafcd46c293e128d1a41024ccebe86b670ee731"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "051c72f1436f6b9c3c9b39969161c284a8f10b7b13570c4579497ea0617f96e2"
 ---
 
 # `hasToolCall()`
 
-Creates a stop condition that stops when a specific tool is called.
+Creates a stop condition that stops when any specified tool is called in the most recent step.
 
-This function is used with `stopWhen` in `generateText` and `streamText` to control when a tool-calling loop should stop based on whether a particular tool has been invoked.
+This function is used with `stopWhen` in `generateText` and `streamText` to control when a tool-calling loop should stop based on whether one of the specified tools has been invoked.
 
 ```ts
 import { generateText, hasToolCall } from 'ai';
@@ -36,17 +36,17 @@ const result = await generateText({
 <PropertiesTable
   content={[
     {
-      name: 'toolName',
-      type: 'string',
+      name: '...toolNames',
+      type: 'string[]',
       description:
-        'The name of the tool that should trigger the stop condition when called.',
+        'One or more tool names. The stop condition triggers when any of them is called in the most recent step.',
     },
   ]}
 />
 
 ### Returns
 
-A `StopCondition` function that returns `true` when the specified tool is called in the current step. The function can be used with the `stopWhen` parameter in `generateText` and `streamText`.
+A `StopCondition` function that returns `true` when any of the specified tools is called in the most recent step. The function can be used with the `stopWhen` parameter in `generateText` and `streamText`.
 
 ## Examples
 
@@ -67,12 +67,30 @@ const result = await generateText({
 });
 ```
 
+### Match Multiple Tools
+
+Stop when any of several tools is called in the most recent step:
+
+```ts
+import { generateText, hasToolCall } from 'ai';
+
+const result = await generateText({
+  model: yourModel,
+  tools: {
+    weather: weatherTool,
+    search: searchTool,
+    finalAnswer: finalAnswerTool,
+  },
+  stopWhen: hasToolCall('weather', 'finalAnswer'),
+});
+```
+
 ### Combining with Other Conditions
 
 You can combine multiple stop conditions in an array:
 
 ```ts
-import { generateText, hasToolCall, stepCountIs } from 'ai';
+import { generateText, hasToolCall, isStepCount } from 'ai';
 
 const result = await generateText({
   model: yourModel,
@@ -85,7 +103,7 @@ const result = await generateText({
   stopWhen: [
     hasToolCall('weather'),
     hasToolCall('finalAnswer'),
-    stepCountIs(5),
+    isStepCount(5),
   ],
 });
 ```
@@ -116,7 +134,7 @@ const result = await generateText({
 
 ## See also
 
-- [`stepCountIs()`](/docs/reference/ai-sdk-core/step-count-is)
+- [`isStepCount()`](/docs/reference/ai-sdk-core/is-step-count)
 - [`generateText()`](/docs/reference/ai-sdk-core/generate-text)
 - [`streamText()`](/docs/reference/ai-sdk-core/stream-text)
 
@@ -132,6 +150,8 @@ const result = await generateText({
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -140,27 +160,31 @@ const result = await generateText({
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

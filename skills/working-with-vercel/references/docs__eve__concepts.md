@@ -1,9 +1,9 @@
 ---
-title: Eve Concepts
+title: Concepts
 product: vercel
 url: /docs/eve/concepts
 canonical_url: "https://vercel.com/docs/eve/concepts"
-last_updated: 2018-10-20
+last_updated: 2026-06-19
 type: conceptual
 prerequisites:
   - /docs/eve
@@ -13,11 +13,11 @@ related:
   - /docs/functions
   - /docs/fluid-compute
   - /docs/environment-variables
-summary: Learn how Eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "605249a99a32b9647fed67d87834f4f68e29279321527da4790e5eb43962eceb"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "63900cc3d6cd1fe47319944822f293ab0380fb603a1f8610ccbf62d29311f0ef"
 ---
 
 # Concepts

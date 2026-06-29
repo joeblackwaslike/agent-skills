@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-06-15T05:52:52.261Z"
-sha256: "dacfb8c0ced3876965bdd6ce44b52cac48126ca5dcc73ec27d3481f6cf46d3b1"
+fetched_at: "2026-06-29T05:39:40.241Z"
+sha256: "a4272b8225906a965414bb3ff4ab61952daac5a08b8cea997a4f2afa193e5ad3"
 ---
 
 # Contribution Points
@@ -14,6 +14,8 @@ Source: https://code.visualstudio.com/api/references/contribution-points
 - [authentication](https://code.visualstudio.com/api/references/contribution-points#contributes.authentication)
 
 - [breakpoints](https://code.visualstudio.com/api/references/contribution-points#contributes.breakpoints)
+
+- [chatAgents](https://code.visualstudio.com/api/references/contribution-points#contributes.chatAgents)
 
 - [chatInstructions](https://code.visualstudio.com/api/references/contribution-points#contributes.chatInstructions)
 
@@ -44,6 +46,10 @@ Source: https://code.visualstudio.com/api/references/contribution-points
 - [keybindings](https://code.visualstudio.com/api/references/contribution-points#contributes.keybindings)
 
 - [languages](https://code.visualstudio.com/api/references/contribution-points#contributes.languages)
+
+- [languageModelChatProviders](https://code.visualstudio.com/api/references/contribution-points#contributes.languageModelChatProviders)
+
+- [languageModelTools](https://code.visualstudio.com/api/references/contribution-points#contributes.languageModelTools)
 
 - [menus](https://code.visualstudio.com/api/references/contribution-points#contributes.menus)
 
@@ -120,6 +126,50 @@ Usually a debugger extension will also have a `contributes.breakpoints` entry wh
 }
 ```
 
+
+## contributes.chatAgents
+
+Contributes [custom agents](https://code.visualstudio.com/docs/agent-customization/custom-agents) for Copilot Chat. Custom agents are pre-configured AI personas with specific instructions and tool restrictions. Use this contribution point to bundle reusable custom agents with your extension so they appear alongside user-defined agents in the agents dropdown.
+
+Each entry requires a `path` to a `.agent.md` file relative to the extension root. You can optionally specify a `when` clause to conditionally enable the agent. Specify the agent's `name`, `description`, and other metadata inside the `.agent.md` frontmatter rather than in the contribution point.
+
+
+```
+{
+  "contributes": {
+    "chatAgents": [
+      {
+        "path": "./agents/planner.agent.md"
+      }
+    ]
+  }
+}
+```
+
+
+### chatAgents properties
+
+Property
+Type
+Required
+Description
+
+`path`
+`string`
+Yes
+Path to the `.agent.md` file relative to the extension root. The path must resolve to a location inside the extension.
+
+`when`
+`string`
+No
+A [when clause](https://code.visualstudio.com/api/references/when-clause-contexts) condition that must be true for this entry to be enabled.
+
+`sessionTypes`
+`string[]`
+No
+The chat session types where this agent should be offered.
+
+See [Custom agents in VS Code](https://code.visualstudio.com/docs/agent-customization/custom-agents) for the required `.agent.md` file format, including the `name`, `description`, `tools`, and `model` frontmatter fields.
 
 ## contributes.chatInstructions
 
@@ -1009,6 +1059,156 @@ You can contribute a human-readable using the `aliases` field. The first item in
 }
 ```
 
+
+## contributes.languageModelChatProviders
+
+Contributes a language model chat provider to VS Code, enabling extensions to supply custom language models that users can select in the model picker. Each provider manages its own set of models and handles chat requests on their behalf.
+
+Register one entry per provider, giving it a unique `vendor` ID. Then use `vscode.lm.registerLanguageModelChatProvider` in your extension activation to wire up the implementation.
+
+
+```
+{
+  "contributes": {
+    "languageModelChatProviders": [
+      {
+        "vendor": "my-provider",
+        "displayName": "My Provider"
+      }
+    ]
+  }
+}
+```
+
+To let users configure the provider (for example, to enter API keys), add a `configuration` schema. Mark sensitive fields with `"secret": true` so they are stored securely:
+
+### languageModelChatProviders properties
+
+Property
+Type
+Required
+Description
+
+`vendor`
+`string`
+Yes
+Unique identifier for the provider, used as the first argument to `vscode.lm.registerLanguageModelChatProvider`.
+
+`displayName`
+`string`
+Yes
+Human-readable name shown in the model picker UI.
+
+`configuration`
+`object`
+No
+A JSON schema describing configuration options for the provider (for example, API keys). Properties can be marked `"secret": true` to store them securely. This is the recommended way to let users configure a provider.
+
+`managementCommand`
+`string`
+No
+_Deprecated. Use `configuration` instead._ Command ID that opens a UI for managing this provider. Must be declared in `contributes.commands`.
+
+`when`
+`string`
+No
+A [when clause](https://code.visualstudio.com/api/references/when-clause-contexts) that controls whether this provider appears in the Manage Models list.
+
+See the [Language Model Chat Provider API guide](https://code.visualstudio.com/api/extension-guides/ai/language-model-chat-provider) for full implementation details.
+
+## contributes.languageModelTools
+
+Contributes [language model tools](https://code.visualstudio.com/api/extension-guides/ai/tools) that the language model can invoke automatically as part of an agentic coding workflow. Tools extend agent mode with domain-specific capabilities such as querying databases, calling external APIs, or interacting with the editor.
+
+Define each tool in the `contributes.languageModelTools` section, then register the implementation with `vscode.lm.registerTool` in your extension activation.
+
+
+```
+{
+  "contributes": {
+    "languageModelTools": [
+      {
+        "name": "my-extension_queryDatabase",
+        "displayName": "Query Database",
+        "modelDescription": "Executes a read-only SQL query against the project database and returns the results as JSON. Use this tool when the user asks about data stored in the database.",
+        "canBeReferencedInPrompt": true,
+        "toolReferenceName": "queryDatabase",
+        "icon": "$(database)",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The SQL SELECT statement to execute."
+            }
+          },
+          "required": ["query"]
+        }
+      }
+    ]
+  }
+}
+```
+
+
+### languageModelTools properties
+
+Property
+Type
+Required
+Description
+
+`name`
+`string`
+Yes
+Unique name of the tool used in the extension implementation. Use the `{verb}_{noun}` format and prefix with your extension name to avoid collisions.
+
+`displayName`
+`string`
+Yes
+User-friendly name displayed in the UI.
+
+`modelDescription`
+`string`
+Yes
+Description used by the language model to decide when and how to invoke the tool. Be precise: explain what the tool does, what it returns, and when it should or should not be used.
+
+`userDescription`
+`string`
+No
+User-facing description displayed in the UI alongside the tool name.
+
+`canBeReferencedInPrompt`
+`boolean`
+No
+Set to `true` to allow the tool to be used by agents or referenced via `#` in a chat prompt. When `true`, users can enable or disable the tool in the Chat view.
+
+`toolReferenceName`
+`string`
+No
+The name users type after `#` to reference this tool in a chat prompt (for example, `#queryDatabase`). Required when `canBeReferencedInPrompt` is `true`.
+
+`icon`
+`string`
+No
+Icon shown in the UI, using the [icon ID](https://code.visualstudio.com/api/references/icons-in-labels) format (for example, `$(database)`).
+
+`inputSchema`
+`object`
+No
+JSON Schema that describes the tool's input parameters. The schema must describe an `object` with typed properties.
+
+`when`
+`string`
+No
+A [when clause](https://code.visualstudio.com/api/references/when-clause-contexts) that controls when the tool is available. For example, restrict a debugging tool with `"debugState == 'running'"`.
+
+`tags`
+`string[]`
+No
+Tags used to categorize or group the tool.
+
+See the [Language Model Tool API guide](https://code.visualstudio.com/api/extension-guides/ai/tools) for implementation details, including how to handle confirmations, stream results, and define typed input parameters.
 
 ## contributes.menus
 
@@ -1905,4 +2105,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 6/10/2026
+ 6/24/2026

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/mcp-tools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c0832607b8a2c44e7ba7792db7d15f1c36e90a6737164756d27bf5de221fbf5b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "0085e8471bf432745d4b44e033f019a21668f6064c8220a6c59917b018d747d6"
 ---
 
 # MCP Tools
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
       tools,
       prompt,
       // When streaming, the client should be closed after the response is finished:
-      onFinish: async () => {
+      onEnd: async () => {
         await stdioClient.close();
         await httpClient.close();
         await sseClient.close();

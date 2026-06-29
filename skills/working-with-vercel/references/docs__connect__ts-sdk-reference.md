@@ -1,9 +1,9 @@
 ---
-title: TS SDK Reference
+title: SDK Reference
 product: vercel
 url: /docs/connect/ts-sdk-reference
 canonical_url: "https://vercel.com/docs/connect/ts-sdk-reference"
-last_updated: 2026-06-03
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/connect
@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6e05d71acfacb4bb9050c71c3ebb2c144ec5063c07844cfa62944a2c7fa1d389"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "50fe580b52cc8c047106822a6d310bd92f19aabf93a88486bf3ba14e5ef61964"
 ---
 
 # SDK Reference

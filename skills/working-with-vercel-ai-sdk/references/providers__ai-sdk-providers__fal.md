@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a364e2fff2b7bfe763e0a27bdaf33c3b3dc69f442baf9979635175ab40f4b1a2"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "20487db12002328e546cfc3d0b40684e5949d131d59ee0806089bc34c46f9b65"
 ---
 
 # Fal Provider
@@ -220,7 +220,7 @@ const model = fal.transcription('wizper');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `batchSize` option will increase the number of audio chunks processed in parallel.
 
 ```ts highlight="6"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { fal, type FalTranscriptionModelOptions } from '@ai-sdk/fal';
 import { readFile } from 'fs/promises';
 
@@ -278,7 +278,7 @@ You can create models that call Fal text-to-speech endpoints using the `.speech(
 ### Basic Usage
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { fal } from '@ai-sdk/fal';
 
 const result = await generateSpeech({
@@ -304,7 +304,6 @@ const result = await generateSpeech({
 Pass provider-specific options via `providerOptions.fal` depending on the model:
 
 - **voice_setting** _object_
-
   - `voice_id` (string): predefined voice ID
   - `speed` (number): 0.5–2.0
   - `vol` (number): 0–10
@@ -343,7 +342,7 @@ Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_aud
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

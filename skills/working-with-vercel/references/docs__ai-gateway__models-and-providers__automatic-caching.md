@@ -9,12 +9,13 @@ prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 summary: Enable automatic prompt caching across providers with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fbcec0b35c0855078367faa0cd6251eb9b90772dba7fd126b31590333a0caacf"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3ede4276f65c99b8cab5cdd79e2ec1b72331cce3774b2a15ce725e492525b5f7"
 ---
 
 # Automatic Caching
@@ -29,6 +30,10 @@ When you set `caching: 'auto'` and the request routes to a provider that require
 
 > **💡 Note:** **Supported providers:** Automatic caching works with Anthropic (direct,
 > Vertex, and Bedrock) and MiniMax.
+
+> **💡 Note:** To restrict routing to only models that cache automatically (implicit
+> caching), use `has: ['implicit-caching']`. See [Model
+> Filtering](/docs/ai-gateway/models-and-providers/model-filtering).
 
 ## Examples
 

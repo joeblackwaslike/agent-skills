@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/codex-cli.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "23ce0223809d65400831c2c6f3646641905903d8f3b142aafcf18555337a359e"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "dc472301cb29a1cc0f39657d912e5114caa31172fe7950ee02f986c2797567a6"
 ---
 
 # Codex CLI Provider
@@ -165,7 +165,7 @@ Alternatively, you can use an OpenAI API key by setting the `OPENAI_API_KEY` env
 
 ## Requirements
 
-- Node.js 18 or higher
+- Node.js 22 or higher
 - Codex CLI installed globally (v0.42.0+ for JSON support, v0.60.0+ recommended for latest models)
 - ChatGPT Plus/Pro subscription or OpenAI API key
 

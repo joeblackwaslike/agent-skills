@@ -3,7 +3,7 @@ title: Pricing on Vercel
 product: vercel
 url: /docs/pricing
 canonical_url: "https://vercel.com/docs/pricing"
-last_updated: 2026-05-28
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "46046f42420c4bdf1aa6b37a83f7bb98d37cc442f8133856f06f9ea288eb0db9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2a6248bd39703c42dd25e0cea4491be6ac3eb993ab020f36f3fb220fa5df4905"
 ---
 
 # Pricing on Vercel

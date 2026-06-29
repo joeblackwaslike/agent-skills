@@ -3,7 +3,7 @@ title: Account Management
 product: vercel
 url: /docs/accounts
 canonical_url: "https://vercel.com/docs/accounts"
-last_updated: 2026-05-08
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "cfb16f1199c7d1f59651634a3058d74f960162e6817ca934faf1692ac83ca944"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2cce2f3319b78d847734ca43e7b64bba79954c3c89e726b190f6ec84a9d6a572"
 ---
 
 # Account Management

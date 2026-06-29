@@ -3,7 +3,7 @@ title: Skew Protection
 product: vercel
 url: /docs/skew-protection
 canonical_url: "https://vercel.com/docs/skew-protection"
-last_updated: 2026-05-08
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9d33ff15ff586a055d2333a02a9136c5dc43419489a536f51f543c61f220fb9d"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9eb2dfc94ce0995197e5a33036c9f54ae44dbb9e9b7e2e0add5501a224bc77ce"
 ---
 
 # Skew Protection
@@ -30,7 +30,7 @@ Vercel's Skew Protection resolves this problem at the platform and framework lay
 
 ![Image](`/front/docs/deployments-basics/nested-layouts-light.png`)
 
-By implementing Skew Protection, you can reduce user-facing errors during new rollouts and boost developer productivity, minimizing concerns about API compatibility across versions.
+By implementing Skew Protection, you can reduce user-facing errors during new rolling releases and boost developer productivity, minimizing concerns about API compatibility across versions.
 
 ## How it works
 

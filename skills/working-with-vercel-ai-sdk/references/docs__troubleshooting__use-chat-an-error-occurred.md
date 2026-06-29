@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/use-chat-an-error-occurred.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a07d88985c3f905a4954ca456805f105eb6a256026ff8b455c8b620bcb6833e3"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1dd8e20345afbb6b8aa11e2808caa918d2f99d8abca8868d388d866d5ac509a7"
 ---
 
 # `useChat` "An error occurred"
@@ -12,12 +12,12 @@ I am using [`useChat`](/docs/reference/ai-sdk-ui/use-chat) and I get the error "
 
 ## Background
 
-Error messages from `streamText` are masked by default when using `toDataStreamResponse` for security reasons (secure-by-default).
+Error messages from `streamText` are masked by default when using `toUIMessageStream` for security reasons (secure-by-default).
 This prevents leaking sensitive information to the client.
 
 ## Solution
 
-To forward error details to the client or to log errors, use the `getErrorMessage` function when calling `toDataStreamResponse`.
+To forward error details to the client or to log errors, use the `onError` function when calling `toUIMessageStream`.
 
 ```tsx
 export function errorHandler(error: unknown) {
@@ -42,8 +42,11 @@ const result = streamText({
   // ...
 });
 
-return result.toUIMessageStreamResponse({
-  getErrorMessage: errorHandler,
+return createUIMessageStreamResponse({
+  stream: toUIMessageStream({
+    stream: result.stream,
+    onError: errorHandler,
+  }),
 });
 ```
 
@@ -78,7 +81,7 @@ const response = createDataStreamResponse({
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

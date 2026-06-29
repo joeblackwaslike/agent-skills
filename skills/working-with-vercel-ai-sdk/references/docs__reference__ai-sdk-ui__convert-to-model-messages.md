@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/convert-to-model-messages.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b8c76926c430c4e4466edf04b06f4b3df02150e6c9c788a81f54c64c0621f00c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "fa9f39017e7d96d0512ec269b77be8e00e95d1ac8179bc913c6eb2bc0c26ec4e"
 ---
 
 # `convertToModelMessages()`
@@ -9,7 +9,12 @@ sha256: "b8c76926c430c4e4466edf04b06f4b3df02150e6c9c788a81f54c64c0621f00c"
 The `convertToModelMessages` function is used to transform an array of UI messages from the `useChat` hook into an array of `ModelMessage` objects. These `ModelMessage` objects are compatible with AI core functions like `streamText`.
 
 ```ts filename="app/api/chat/route.ts"
-import { convertToModelMessages, streamText } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
@@ -20,7 +25,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -64,6 +71,15 @@ A Promise that resolves to an array of [`ModelMessage`](/docs/reference/ai-sdk-c
   ]}
 />
 
+## Tool Approval States
+
+`convertToModelMessages` preserves tool approval state from UI messages when converting them back into `ModelMessage`s for a follow-up `generateText` or `streamText` call.
+
+- Tool parts in `approval-requested` state become `tool-approval-request` content parts.
+- Tool parts in `approval-responded` state become `tool-approval-response` content parts, including `reason` when present.
+- Automatic approval metadata is preserved by forwarding `approval.isAutomatic` to the `tool-approval-request` part.
+- Denied tool approvals also produce a synthetic `tool-result` with `output: { type: 'execution-denied', reason?: string }`, so the model receives a complete tool lifecycle and can respond to the denial in the next step.
+
 ## Multi-modal Tool Responses
 
 The `convertToModelMessages` function supports tools that can return multi-modal content. This is useful when tools need to return non-text content like images.
@@ -76,7 +92,9 @@ import { z } from 'zod';
 const screenshotTool = tool({
   inputSchema: z.object({}),
   execute: async () => 'imgbase64',
-  toModelOutput: ({ output }) => [{ type: 'image', data: output }],
+  toModelOutput: ({ output }) => [
+    { type: 'file-data', data: output, mediaType: 'image/png' },
+  ],
 });
 
 const result = streamText({
@@ -100,7 +118,12 @@ The `convertToModelMessages` function supports converting custom data parts atta
 By default, data parts in user messages are filtered out during conversion. To include them, provide a `convertDataPart` callback that transforms data parts into text or file parts that the model can understand:
 
 ```ts filename="app/api/chat/route.ts"
-import { convertToModelMessages, streamText } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 
 type CustomUIMessage = UIMessage<
   never,
@@ -138,7 +161,9 @@ export async function POST(req: Request) {
     }),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -237,6 +262,7 @@ convertToModelMessages<MyUIMessage>(messages, {
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -245,6 +271,7 @@ convertToModelMessages<MyUIMessage>(messages, {
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

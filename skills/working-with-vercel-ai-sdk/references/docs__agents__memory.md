@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/memory.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "fd873317fba3404fc2321f3beed75f9a1340fea3eb083366529ae84597cfd832"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "d13fdd8249282f5d60ffe2f59d55549d8914e15df7a8cb325796e632ca5bd2f7"
 ---
 
 # Memory
@@ -208,6 +208,55 @@ The `bankId` identifies the memory store and is typically a user ID. In multi-us
 
 See the [Hindsight provider documentation](/providers/community-providers/hindsight) for full setup and configuration.
 
+### MongoDB
+
+[`@mongodb-developer/vercel-ai-memory`](https://www.npmjs.com/package/@mongodb-developer/vercel-ai-memory) provides MongoDB Atlas-backed persistent memory with five structured tiers: **Session**, **Semantic**, **Procedural**, **Episodic**, and **Scratchpad**. Retrieval is powered by Atlas Vector Search using any AI SDK embedding model, with automatic index creation and per-type retention policies.
+
+```bash
+pnpm add @mongodb-developer/vercel-ai-memory
+```
+
+This integration targets AI SDK v6 because it relies on v6 APIs such as `ModelMessage`, `ToolLoopAgent`, and `isLoopFinished()`:
+
+```json
+{
+  "peerDependencies": {
+    "ai": "^6.0.0",
+    "mongodb": "^6.0.0",
+    "zod": "^3.0.0"
+  }
+}
+```
+
+```ts
+import { createMongoDBMemory } from '@mongodb-developer/vercel-ai-memory';
+import { openai } from '@ai-sdk/openai';
+import { ToolLoopAgent, isLoopFinished } from 'ai';
+
+// Create the memory instance once at module/server level
+const mongodbMemory = createMongoDBMemory({
+  uri: process.env.MONGODB_URI!,
+  embedder: openai.embedding('text-embedding-3-small'),
+});
+
+// Scope to a user and session per request
+const agent = new ToolLoopAgent({
+  model: openai('gpt-4.1'),
+  tools: mongodbMemory({ userId: 'alice', sessionId: 'sess-001' }),
+  stopWhen: isLoopFinished(),
+});
+
+const result = await agent.generate({
+  prompt: 'My name is Alice and I love hiking. Remember that.',
+});
+```
+
+`isLoopFinished()` lets the agent keep running until the tool loop naturally finishes, which is useful when memory tools need to read and write before the final response.
+
+Session memory supports two modes: **tool-driven** (the LLM decides when to read/write — good for prototypes) and **hook-driven** (the runtime persists every turn via `prepareCall` + `onEnd` hooks — recommended for production). The other memory tiers (semantic, procedural, episodic, scratchpad) are always LLM-controlled and selective by design.
+
+MongoDB memory works with any AI SDK model and embedding provider, with no vendor lock-in beyond MongoDB Atlas.
+
 **When to use memory providers**: these providers are a good fit when you want memory without building any storage infrastructure. The tradeoff is that the provider controls memory behavior, so you have less visibility into what gets stored and how it is retrieved. You also take on a dependency on an external service.
 
 ## Custom Tool
@@ -230,7 +279,11 @@ For a full walkthrough of implementing a custom memory tool with a bash-backed i
 - [Loop Control](/docs/agents/loop-control)
 - [Configuring Call Options](/docs/agents/configuring-call-options)
 - [Memory](/docs/agents/memory)
+- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
 - [Subagents](/docs/agents/subagents)
+- [Tool Approvals](/docs/agents/tool-approvals)
+- [WorkflowAgent](/docs/agents/workflow-agent)
+- [Terminal UI](/docs/agents/terminal-ui)
 
 
 [Full Sitemap](/sitemap.md)

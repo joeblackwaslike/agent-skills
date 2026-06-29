@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/markdown-chatbot-with-memoization.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "afc87efae4f47017f2a5548974a57f856eaee901255db3dbb49bfb9558086a40"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cd158ee8b11089d2e6383846cb5dd7d198f27e272fa6f18d7074b8b3fea83e54"
 ---
 
 # Markdown Chatbot with Memoization
@@ -25,7 +25,13 @@ npm install react-markdown marked
 On the server, you use a simple route handler that streams the response from the language model.
 
 ```tsx filename='app/api/chat/route.ts'
-import { convertToModelMessages, streamText, type UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  type UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
@@ -37,7 +43,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

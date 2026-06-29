@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/streamable-ui-errors.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ae5900b67fced7a02c4b0c88fcf8568c74d34b6f7e4d491f5af295098d84f49c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "95680337f075b2a1f83de03f308245481dfa223f588c593720a5636990a3b6d7"
 ---
 
 # Streamable UI Component Error
@@ -35,7 +35,7 @@ If you encounter these errors when working with streamable UIs within server act
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

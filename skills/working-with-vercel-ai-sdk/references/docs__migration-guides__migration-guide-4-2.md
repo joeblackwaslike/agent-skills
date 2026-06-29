@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-2.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f41f5b6f4cc040915de75e3e655747a76f8566f0ea9c04a3b7a10b9420065661"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1558f78d34b74c694ad931876bb9558a7af12e3fd73bad4200c5668358d067c1"
 ---
 
 # Migrate AI SDK 4.1 to 4.2
@@ -103,6 +103,7 @@ function Chat() {
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

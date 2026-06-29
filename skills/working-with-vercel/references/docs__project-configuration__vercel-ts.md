@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "26886ad79d0c3495bdb142b0918687523dce6d0a206b21744bea96eca261b70d"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "f8ac04751a62abd5ca8c6b5634f13257463b681db3c215e4e4f8279fb6a89d18"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -376,7 +376,7 @@ A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern that matches t
 
 - `runtime` (optional): The npm package name of a [Runtime](/docs/functions/runtimes), including its version.
 - `memory`: Memory cannot be set in `vercel.ts` with [Fluid compute](/docs/fluid-compute) enabled. Instead set it in the **Functions** section in your project dashboard sidebar. See [setting default function memory](/docs/functions/configuring-functions/memory#setting-your-default-function-memory-/-cpu-size) for more information.
-- `maxDuration` (optional): An integer defining how long your Vercel Function should be allowed to run on every request in seconds (between `1` and the maximum limit of your plan, as mentioned below).
+- `maxDuration` (optional): How long your Vercel Function can run on each request. Set an integer number of seconds between `1` and your plan's maximum limit, or set `max` to use your plan's maximum allowed duration. See [duration limits](/docs/functions/configuring-functions/duration#duration-limits).
 - `supportsCancellation` (optional): A boolean defining whether your Vercel Function should [support request cancellation](/docs/functions/functions-api-reference#cancel-requests). This is only available when you're using the Node.js runtime.
 - `includeFiles` (optional): A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern to match files that should be included in your Vercel Function. If you're using a Community Runtime, the behavior might vary. Please consult its documentation for more details. (Not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats) in `next.config.js` )
 - `excludeFiles` (optional): A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern to match files that should be excluded from your Vercel Function. If you're using a Community Runtime, the behavior might vary. Please consult its documentation for more details. (Not supported in Next.js, instead use [`outputFileTracingExcludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats) in `next.config.js` )
@@ -393,12 +393,12 @@ The `functions` property cannot be used in combination with `builds`. Since the 
 
 Because [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration) uses Vercel functions, the same configurations apply. The ISR route can be defined using a glob pattern, and accepts the same properties as when using Vercel functions.
 
-When deployed, each Vercel Function receives the following properties:
+When deployed, each Vercel Function uses your project's default memory and maximum duration. These defaults depend on your plan and whether [Fluid compute](/docs/fluid-compute) is enabled:
 
-- **Memory:** 1024 MB (1 GB) - **(Optional)**
-- **Maximum Duration:** 10s default - 60s / 1 minute (Hobby), 15s default - 300s / 5 minutes (Pro), or 15s default - 900s / 15 minutes (Enterprise). This [can be configured](/docs/functions/configuring-functions/duration) up to the respective plan limit) - **(Optional)**
+- **Memory:** See [memory and CPU defaults](/docs/functions/configuring-functions/memory#memory-/-cpu-type).
+- **Maximum duration:** See [duration limits](/docs/functions/configuring-functions/duration#duration-limits).
 
-To configure them, you can add the `functions` property.
+With Fluid compute enabled, set memory in the **Functions** section of your project dashboard, not in `vercel.ts`. To override the maximum duration for matched functions, add the `functions` property.
 
 #### `functions` property with Vercel functions
 
@@ -408,11 +408,9 @@ import type { VercelConfig } from '@vercel/config/v1';
 export const config: VercelConfig = {
   functions: {
     'api/test.js': {
-      memory: 3009,
       maxDuration: 30,
     },
     'api/*.js': {
-      memory: 3009,
       maxDuration: 30,
     },
   },
@@ -427,7 +425,7 @@ import type { VercelConfig } from '@vercel/config/v1';
 export const config: VercelConfig = {
   functions: {
     'pages/blog/[hello].tsx': {
-      memory: 1024,
+      maxDuration: 5,
     },
     'src/pages/isr/**/*': {
       maxDuration: 10,

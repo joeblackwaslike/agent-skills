@@ -3,7 +3,7 @@ title: Vercel Connect
 product: vercel
 url: /docs/connect
 canonical_url: "https://vercel.com/docs/connect"
-last_updated: 2026-06-03
+last_updated: 2026-06-22
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Connect to create connectors, authorize provider access, request provider tokens at runtime, and run agent workflows without long-lived...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "20d6a57376410d02958127b013b14c6e6a971467eabc4343357d4e17a20f952c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6699c145fa7cc1643ba110a00ae95168f034980579325635c973d79b3a989ac7"
 ---
 
 # Vercel Connect

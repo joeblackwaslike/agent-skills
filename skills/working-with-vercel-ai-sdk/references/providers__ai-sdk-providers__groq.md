@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "eed95cc2c99ff1535a1a2cd10602bf99d9888898dc91aee4be456d1caa9c2c0c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "d90ffb6f34676e85d0a9afe4a6a7134290e3288107526eb5319a0048ac12808d"
 ---
 
 # Groq Provider
@@ -87,7 +87,7 @@ You can configure how the reasoning is exposed in the generated text by using th
 It supports the options `parsed`, `hidden`, and `raw`.
 
 ```ts
-import { groq, type GroqLanguageModelOptions } from '@ai-sdk/groq';
+import { groq, type GroqLanguageModelChatOptions } from '@ai-sdk/groq';
 import { generateText } from 'ai';
 
 const result = await generateText({
@@ -99,7 +99,7 @@ const result = await generateText({
       parallelToolCalls: true, // Enable parallel function calling (default: true)
       user: 'user-123', // Unique identifier for end-user (optional)
       serviceTier: 'flex', // Use flex tier for higher throughput (optional)
-    } satisfies GroqLanguageModelOptions,
+    } satisfies GroqLanguageModelChatOptions,
   },
   prompt: 'How many "r"s are in the word "strawberry"?',
 });
@@ -116,7 +116,6 @@ The following optional provider options are available for Groq language models:
 - **reasoningEffort** _'low' | 'medium' | 'high' | 'none' | 'default'_
 
   Controls the level of effort the model will put into reasoning.
-
   - `qwen/qwen3-32b`
     - Supported values:
       - `none`: Disable reasoning. The model will not use any reasoning tokens.
@@ -156,7 +155,6 @@ The following optional provider options are available for Groq language models:
 - **serviceTier** _'on_demand' | 'performance' | 'flex' | 'auto'_
 
   Service tier for the request. Defaults to `'on_demand'`.
-
   - `'on_demand'`: Default tier with consistent performance and fairness
   - `'performance'`: Prioritized tier for latency-sensitive workloads
   - `'flex'`: Higher throughput tier (10x rate limits) optimized for workloads that can handle occasional request failures
@@ -196,7 +194,7 @@ console.log(JSON.stringify(result.output, null, 2));
 You can disable structured outputs for models that don't support them:
 
 ```ts highlight="9"
-import { groq, type GroqLanguageModelOptions } from '@ai-sdk/groq';
+import { groq, type GroqLanguageModelChatOptions } from '@ai-sdk/groq';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
@@ -205,7 +203,7 @@ const result = await generateText({
   providerOptions: {
     groq: {
       structuredOutputs: false,
-    } satisfies GroqLanguageModelOptions,
+    } satisfies GroqLanguageModelChatOptions,
   },
   output: Output.object({
     schema: z.object({
@@ -260,8 +258,9 @@ const { text } = await generateText({
       content: [
         { type: 'text', text: 'What do you see in this image?' },
         {
-          type: 'image',
-          image: 'https://example.com/image.jpg',
+          type: 'file',
+          mediaType: 'image',
+          data: 'https://example.com/image.jpg',
         },
       ],
     },
@@ -286,8 +285,9 @@ const { text } = await generateText({
       content: [
         { type: 'text', text: 'Describe this image in detail.' },
         {
-          type: 'image',
-          image: `data:image/jpeg;base64,${imageData}`,
+          type: 'file',
+          mediaType: 'image',
+          data: `data:image/jpeg;base64,${imageData}`,
         },
       ],
     },
@@ -377,7 +377,7 @@ const result = streamText({
   toolChoice: 'required',
 });
 
-for await (const delta of result.fullStream) {
+for await (const delta of result.stream) {
   if (delta.type === 'text-delta') {
     process.stdout.write(delta.text);
   }
@@ -438,7 +438,7 @@ const model = groq.transcription('whisper-large-v3');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format will improve accuracy and latency.
 
 ```ts highlight="6"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { groq, type GroqTranscriptionModelOptions } from '@ai-sdk/groq';
 import { readFile } from 'fs/promises';
 
@@ -505,7 +505,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

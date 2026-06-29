@@ -3,7 +3,7 @@ title: Fluid compute pricing
 product: vercel
 url: /docs/functions/usage-and-pricing
 canonical_url: "https://vercel.com/docs/functions/usage-and-pricing"
-last_updated: 2026-03-19
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/functions
@@ -12,8 +12,8 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "c38e6c2d1216a08dd5fc5d594b597df80fd44e7a286c0f220d3b5d21e5519c1d"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "890150dab7b42024283161a9183a8e4a6238b2f728746536d43a28c76a832d35"
 ---
 
 # Fluid compute pricing

@@ -3,7 +3,7 @@ title: Observability Plus
 product: vercel
 url: /docs/observability/observability-plus
 canonical_url: "https://vercel.com/docs/observability/observability-plus"
-last_updated: 2026-06-01
+last_updated: 2026-06-05
 type: reference
 prerequisites:
   - /docs/observability
@@ -13,8 +13,8 @@ related:
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e931cc29031d2d433ff24f3b97553c1c10116f1e533da33cf8d6d911a1c66db5"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "aa8befd5985733c6b24d44ed0eaf1d76908e9107d60b22be964f80226811a594"
 ---
 
 # Observability Plus

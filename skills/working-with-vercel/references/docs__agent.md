@@ -3,7 +3,7 @@ title: Vercel Agent
 product: vercel
 url: /docs/agent
 canonical_url: "https://vercel.com/docs/agent"
-last_updated: 2026-05-27
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: AI-powered development tools that speed up your workflow and help resolve issues faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "aac5cc2d3e23504a001e480aac4d2951ff5e2f54f539175f20a8b09f97404d93"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7c6f21fd82d25add4e76384e70973f1ced1e3b1be4ad476ec18d5333e689de08"
 ---
 
 # Vercel Agent

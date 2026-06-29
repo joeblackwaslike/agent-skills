@@ -3,7 +3,7 @@ title: Project Configuration
 product: vercel
 url: /docs/project-configuration
 canonical_url: "https://vercel.com/docs/project-configuration"
-last_updated: 2026-05-07
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, functions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "dfe174016a082666125d8192f70cfefa6bde96ce46fe27ef96d2c843dd0d5691"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b90ae5c8ec84502293e25361057706d87352907e478f5471caa4bde0593059b3"
 ---
 
 # Project Configuration

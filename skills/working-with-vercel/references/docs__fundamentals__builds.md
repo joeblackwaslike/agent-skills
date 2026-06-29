@@ -3,7 +3,7 @@ title: How Vercel builds your application
 product: vercel
 url: /docs/fundamentals/builds
 canonical_url: "https://vercel.com/docs/fundamentals/builds"
-last_updated: 2026-03-19
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   - /docs/fundamentals
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/builds.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "02185e12fb341d8c31403c86817871b5b1948f5e7038e2ce68c5cdc1693d8347"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "469de9614046c39116efc75a38d210f12423cfe288004f580f576f043929ba87"
 ---
 
 # How Vercel builds your application

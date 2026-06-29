@@ -3,7 +3,7 @@ title: Package Managers
 product: vercel
 url: /docs/package-managers
 canonical_url: "https://vercel.com/docs/package-managers"
-last_updated: 2026-03-17
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -15,8 +15,8 @@ related:
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ac95866ff6cf755cceda035fcd5f77bf5acfc85c0c458be72c5874d92ddecae0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7e8f543d469182f2e64b4244a922b6ec6a2e56bc63b45619df7c967e919732db"
 ---
 
 # Package Managers

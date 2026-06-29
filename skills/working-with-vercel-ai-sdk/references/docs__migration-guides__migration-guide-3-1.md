@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-1.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "43f3a166404291782d32438598b7fa52041020d316f77b28dd3dfee61f38d3e7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "9fb9d8e848a4a537d8bf98ebc90cd4ee61ffeada79737ab4d3eaadfc85f69be1"
 ---
 
 # Migrate AI SDK 3.0 to 3.1
@@ -172,6 +172,7 @@ async function submitMessage(userInput = 'What is the weather in SF?') {
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

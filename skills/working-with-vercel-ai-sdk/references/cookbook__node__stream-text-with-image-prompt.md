@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-text-with-image-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "fb7c413894848830f262c4812bf06b48c9efada62e86bf7ab749c36f8d5600d4"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c37e5ec746d4327f69170a213285c25883a56dc281e6750525bda7d15d7b91f6"
 ---
 
 # Stream Text with Image Prompt
@@ -22,7 +22,11 @@ async function main() {
         role: 'user',
         content: [
           { type: 'text', text: 'Describe the image in detail.' },
-          { type: 'image', image: fs.readFileSync('./data/comic-cat.png') },
+          {
+            type: 'file',
+            mediaType: 'image',
+            data: fs.readFileSync('./data/comic-cat.png'),
+          },
         ],
       },
     ],

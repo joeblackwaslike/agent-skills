@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/render-visual-interface-in-chat.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c24c45d407c87352386e62a830016490f7ac4e379af80eee4011c3ce7c818184"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "3055a89321b22c09ec703b70bf07f40694d11462d8383900e74b78f0326a8744"
 ---
 
 # Render Visual Interface in Chat
@@ -211,8 +211,10 @@ import {
   type UIDataTypes,
   type UIMessage,
   convertToModelMessages,
-  stepCountIs,
+  createUIMessageStreamResponse,
+  isStepCount,
   streamText,
+  toUIMessageStream,
   tool,
 } from 'ai';
 import { z } from 'zod';
@@ -264,10 +266,12 @@ export async function POST(request: Request) {
     model: 'openai/gpt-4.1',
     messages: await convertToModelMessages(messages),
     tools,
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

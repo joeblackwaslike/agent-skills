@@ -3,7 +3,7 @@ title: vercel crons
 product: vercel
 url: /docs/cli/crons
 canonical_url: "https://vercel.com/docs/cli/crons"
-last_updated: 2026-05-29
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,8 +13,8 @@ related:
 summary: "Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/crons.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "929b61e7e4570f856eb0dc376f4e19fad27abe9a253cff6d13bf8962f1911843"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3baed894fc81f0d56d5b94acf3e41c9d55b2adfc99fec5939e7b38f29c554d14"
 ---
 
 # vercel crons

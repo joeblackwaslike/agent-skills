@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ae27405a381a5bc2028f053cf7cd83c091622861d6a59af50f0c83c2bae1bf9f"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "68839c2eee0946499d4c5dc63436685d72a02ea1930e3b1ee6961d88ef734244"
 ---
 
 # `streamUI`
@@ -36,10 +36,10 @@ To see `streamUI` in action, check out [these examples](#examples).
       description: 'The initial UI to render.',
     },
     {
-      name: 'system',
-      type: 'string | SystemModelMessage | SystemModelMessage[]',
+      name: 'instructions',
+      type: 'Instructions',
       description:
-        'The system prompt to use that specifies the behavior of the model.',
+        'Instructions to use that specify the behavior of the model.'
     },
     {
       name: 'prompt',
@@ -261,7 +261,7 @@ To see `streamUI` in action, check out [these examples](#examples).
       type: 'boolean',
       isOptional: true,
       description:
-        'Whether system messages are allowed in the `prompt` or `messages` fields. When unset, system messages are allowed with a warning because they can create a prompt injection attack risk. Ideally, use the `system` option instead. Set to `true` to suppress the warning, or `false` to reject system messages in `prompt` or `messages`.',
+        'Whether system messages are allowed in the `prompt` or `messages` fields. Defaults to false. System messages in the `instructions` option are always allowed. Enabling this for user-controlled messages can create a prompt injection risk.',
     },
     {
       name: 'maxOutputTokens',

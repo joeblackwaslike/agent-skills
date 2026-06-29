@@ -1,17 +1,17 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/stream-abort-handling.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "6f0bbfa596b64f2937223f88bceb9bdd56144a147254d01defebcf37eb4b2bf2"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "60b4d067c55b17cc666d9b3b52dedcbcf101bf5dd3e34be79c4deef2eef0be99"
 ---
 
-# onFinish not called when stream is aborted
+# onEnd not called when stream is aborted
 
 ## Issue
 
-When using `toUIMessageStreamResponse` with an `onFinish` callback, the callback may not execute when the stream is aborted. This happens because the abort handler immediately terminates the response, preventing the `onFinish` callback from being triggered.
+When using `toUIMessageStream` with an `onEnd` callback, the callback may not execute when the stream is aborted. This happens because the abort handler immediately terminates the response, preventing the `onEnd` callback from being triggered.
 
 ```tsx
-// Server-side code where onFinish isn't called on abort
+// Server-side code where onEnd isn't called on abort
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
@@ -21,32 +21,39 @@ export async function POST(req: Request) {
     abortSignal: req.signal,
   });
 
-  return result.toUIMessageStreamResponse({
-    onFinish: async ({ isAborted }) => {
-      // This isn't called when the stream is aborted!
-      if (isAborted) {
-        console.log('Stream was aborted');
-        // Handle abort-specific cleanup
-      } else {
-        console.log('Stream completed normally');
-        // Handle normal completion
-      }
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      onEnd: async ({ isAborted }) => {
+        // This isn't called when the stream is aborted!
+        if (isAborted) {
+          console.log('Stream was aborted');
+          // Handle abort-specific cleanup
+        } else {
+          console.log('Stream completed normally');
+          // Handle normal completion
+        }
+      },
+    }),
   });
 }
 ```
 
 ## Background
 
-When a stream is aborted, the response is immediately terminated. Without proper handling, the `onFinish` callback has no chance to execute, preventing important cleanup operations like saving partial results or logging abort events.
+When a stream is aborted, the response is immediately terminated. Without proper handling, the `onEnd` callback has no chance to execute, preventing important cleanup operations like saving partial results or logging abort events.
 
 ## Solution
 
-Add `consumeStream` to the `toUIMessageStreamResponse` configuration. This ensures that abort events are properly captured and forwarded to the `onFinish` callback, allowing it to execute even when the stream is aborted.
+Add `consumeSseStream: consumeStream` to the `createUIMessageStreamResponse` configuration. This ensures that abort events are properly captured and forwarded to the `onEnd` callback, allowing it to execute even when the stream is aborted.
 
 ```tsx
 // other imports...
-import { consumeStream } from 'ai';
+import {
+  consumeStream,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -57,18 +64,21 @@ export async function POST(req: Request) {
     abortSignal: req.signal,
   });
 
-  return result.toUIMessageStreamResponse({
-    onFinish: async ({ isAborted }) => {
-      // Now this WILL be called even when aborted!
-      if (isAborted) {
-        console.log('Stream was aborted');
-        // Handle abort-specific cleanup
-      } else {
-        console.log('Stream completed normally');
-        // Handle normal completion
-      }
-    },
-    consumeSseStream: consumeStream, // This enables onFinish to be called on abort
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      onEnd: async ({ isAborted }) => {
+        // Now this WILL be called even when aborted!
+        if (isAborted) {
+          console.log('Stream was aborted');
+          // Handle abort-specific cleanup
+        } else {
+          console.log('Stream completed normally');
+          // Handle normal completion
+        }
+      },
+    }),
+    consumeSseStream: consumeStream, // This enables onEnd to be called on abort
   });
 }
 ```
@@ -92,7 +102,7 @@ export async function POST(req: Request) {
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d52ba91d4b60b9ea14ecacabe00bf43afe604f38bbf27784510a19f36cbb35ba"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "ae96ee3209b2e5b2a7871978c47fa186011f80502b13be584267b4dcc449286b"
 ---
 
 # Baseten Provider
@@ -268,7 +268,7 @@ try {
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

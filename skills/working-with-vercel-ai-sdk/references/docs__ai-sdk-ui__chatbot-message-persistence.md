@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "302416b5077440daf0d3a6fd66979e5edd6936fd6ad15e48130869375622f6b6"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "4b319b55eb1df4a225ccb22c75a5f353a46e86417b9137f6cce2770cc740d163"
 ---
 
 # Chatbot Message Persistence
@@ -97,10 +97,12 @@ When processing messages on the server that contain tool calls, custom metadata,
 
 When your messages include tool calls, validate them against your tool definitions:
 
-```tsx filename="app/api/chat/route.ts" highlight="7-25,32-37"
+```tsx filename="app/api/chat/route.ts" highlight="9-27,34-39"
 import {
   convertToModelMessages,
+  createUIMessageStreamResponse,
   streamText,
+  toUIMessageStream,
   UIMessage,
   validateUIMessages,
   tool,
@@ -148,11 +150,14 @@ export async function POST(req: Request) {
     tools,
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    onFinish: ({ messages }) => {
-      saveChat({ chatId: id, messages });
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages,
+      onEnd: ({ messages }) => {
+        saveChat({ chatId: id, messages });
+      },
+    }),
   });
 }
 ```
@@ -286,13 +291,19 @@ parts, validate them using `validateUIMessages` before processing (see the
 
 </Note>
 
-Storing messages is done in the `onFinish` callback of the `toUIMessageStreamResponse` function.
-`onFinish` receives the complete messages including the new AI response as `UIMessage[]`.
+Storing messages is done in the `onEnd` callback of the `toUIMessageStream` function.
+`onEnd` receives the complete messages including the new AI response as `UIMessage[]`.
 
-```tsx filename="app/api/chat/route.ts" highlight="6,11-17"
+```tsx filename="app/api/chat/route.ts" highlight="12,17-25"
 import { openai } from '@ai-sdk/openai';
 import { saveChat } from '@util/chat-store';
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages, chatId }: { messages: UIMessage[]; chatId: string } =
@@ -303,11 +314,14 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    onFinish: ({ messages }) => {
-      saveChat({ chatId, messages });
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages,
+      onEnd: ({ messages }) => {
+        saveChat({ chatId, messages });
+      },
+    }),
   });
 }
 ```
@@ -352,15 +366,20 @@ However, **for persistence, you need server-side generated IDs** to ensure consi
 
 When implementing persistence, you have two options for generating server-side IDs:
 
-1. **Using `generateMessageId` in `toUIMessageStreamResponse`**
+1. **Using `generateMessageId` in `toUIMessageStream`**
 2. **Setting IDs in your start message part with `createUIMessageStream`**
 
-#### Option 1: Using `generateMessageId` in `toUIMessageStreamResponse`
+#### Option 1: Using `generateMessageId` in `toUIMessageStream`
 
 You can control the ID format by providing ID generators using [`createIdGenerator()`](/docs/reference/ai-sdk-core/create-id-generator):
 
-```tsx filename="app/api/chat/route.ts" highlight="7-11"
-import { createIdGenerator, streamText } from 'ai';
+```tsx filename="app/api/chat/route.ts" highlight="18-22"
+import {
+  createIdGenerator,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 
 export async function POST(req: Request) {
   // ...
@@ -368,16 +387,19 @@ export async function POST(req: Request) {
     // ...
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    // Generate consistent server-side IDs for persistence:
-    generateMessageId: createIdGenerator({
-      prefix: 'msg',
-      size: 16,
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages,
+      // Generate consistent server-side IDs for persistence:
+      generateMessageId: createIdGenerator({
+        prefix: 'msg',
+        size: 16,
+      }),
+      onEnd: ({ messages }) => {
+        saveChat({ chatId, messages });
+      },
     }),
-    onFinish: ({ messages }) => {
-      saveChat({ chatId, messages });
-    },
   });
 }
 ```
@@ -386,12 +408,13 @@ export async function POST(req: Request) {
 
 Alternatively, you can use `createUIMessageStream` to control the message ID by writing a start message part:
 
-```tsx filename="app/api/chat/route.ts" highlight="8-18"
+```tsx filename="app/api/chat/route.ts" highlight="9-19"
 import {
   generateId,
   streamText,
   createUIMessageStream,
   createUIMessageStreamResponse,
+  toUIMessageStream,
 } from 'ai';
 
 export async function POST(req: Request) {
@@ -410,10 +433,12 @@ export async function POST(req: Request) {
         messages: await convertToModelMessages(messages),
       });
 
-      writer.merge(result.toUIMessageStream({ sendStart: false })); // omit start message part
+      writer.merge(
+        toUIMessageStream({ stream: result.stream, sendStart: false }),
+      ); // omit start message part
     },
     originalMessages: messages,
-    onFinish: ({ responseMessage }) => {
+    onEnd: ({ responseMessage }) => {
       // save your chat here
     },
   });
@@ -468,8 +493,14 @@ const {
 
 On the server, you can then load the previous messages and append the new message to the previous messages. If your messages contain tools, metadata, or custom data parts, you should validate them:
 
-```tsx filename="app/api/chat/route.ts" highlight="2-11,14-18"
-import { convertToModelMessages, UIMessage, validateUIMessages } from 'ai';
+```tsx filename="app/api/chat/route.ts" highlight="18-24"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+  UIMessage,
+  validateUIMessages,
+} from 'ai';
 // import your tools and schemas
 
 export async function POST(req: Request) {
@@ -493,11 +524,14 @@ export async function POST(req: Request) {
     messages: convertToModelMessages(validatedMessages),
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: validatedMessages,
-    onFinish: ({ messages }) => {
-      saveChat({ chatId: id, messages });
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: validatedMessages,
+      onEnd: ({ messages }) => {
+        saveChat({ chatId: id, messages });
+      },
+    }),
   });
 }
 ```
@@ -516,7 +550,13 @@ and then save the result as usual.
 meaning that the result is stored even when the client has already disconnected.
 
 ```tsx filename="app/api/chat/route.ts" highlight="19-21"
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 import { saveChat } from '@util/chat-store';
 
 export async function POST(req: Request) {
@@ -528,15 +568,18 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  // consume the stream to ensure it runs to completion & triggers onFinish
+  // consume the stream to ensure it runs to completion & triggers onEnd
   // even when the client response is aborted:
   result.consumeStream(); // no await
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    onFinish: ({ messages }) => {
-      saveChat({ chatId, messages });
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages,
+      onEnd: ({ messages }) => {
+        saveChat({ chatId, messages });
+      },
+    }),
   });
 }
 ```

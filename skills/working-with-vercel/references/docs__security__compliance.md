@@ -3,7 +3,7 @@ title: Security & Compliance Measures
 product: vercel
 url: /docs/security/compliance
 canonical_url: "https://vercel.com/docs/security/compliance"
-last_updated: 2026-05-12
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/security
@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "8a3921dcbafeb1f8c060f3f210a5b78c9e7b07a4c6685ecb5f1edf1508796aed"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "735c4674fab0be1d197faed467def8a203bc703a334ae36fe684bee7449e7a09"
 ---
 
 # Security & Compliance Measures

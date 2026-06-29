@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3dd32f800a150807023712747238fa53a529412bb2c4c0861f071e42491b9244"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7af32fd503f4a290c94cc664cb8c20617813efc4c6499acfd69dedadfb9e4eaf"
 ---
 
 # Getting Timeouts When Deploying on Vercel
@@ -79,7 +79,7 @@ The maximum duration you can set depends on your Vercel plan:
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

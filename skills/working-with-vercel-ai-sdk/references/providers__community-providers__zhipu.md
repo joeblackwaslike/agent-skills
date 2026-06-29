@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/zhipu.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "91726adbd0e687379e00fda744f22f6f5d0dc2620440abed7687a6166cf55074"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "4801226873b718e99227e97b844b227fe0231b950fd0d8275dfb336ee8fa4bf9"
 ---
 
 # Zhipu AI (Z.AI) Provider
@@ -53,11 +53,9 @@ const zhipu = createZhipu({
 You can use the following optional settings to customize the Zhipu provider instance:
 
 - **baseURL**: _string_
-
   - Use a different URL prefix for API calls, e.g. to use proxy servers. The default prefix is `https://open.bigmodel.cn/api/paas/v4`.
 
 - **apiKey**: _string_
-
   - Your API key for Zhipu [BigModel Platform](https://bigmodel.cn/). If not provided, the provider will attempt to read the API key from the environment variable `ZHIPU_API_KEY`.
 
 - **headers**: _Record\<string, string\>_

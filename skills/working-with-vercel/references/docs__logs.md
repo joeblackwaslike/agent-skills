@@ -3,7 +3,7 @@ title: Logs
 product: vercel
 url: /docs/logs
 canonical_url: "https://vercel.com/docs/logs"
-last_updated: 2026-02-23
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Use logs to find information on deployment builds, function executions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "b64033ea27c7074c595578851df343f4d7f66580794cd67dba0859aa16e796cf"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "170e39b79e73c828eb3f08faed83835f2c980b18abc55a8cd6e8028e09c5fe1c"
 ---
 
 # Logs

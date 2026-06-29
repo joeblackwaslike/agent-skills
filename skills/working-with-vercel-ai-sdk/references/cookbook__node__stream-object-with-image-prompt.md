@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-object-with-image-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "033d2e6c29c5d3f60ebde7ae75824df5f0e9800b13088a3f207161a104132244"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "bfd64b18ae7ee8ae7ec35808f2626ac2c85ff969463818df9b9df272328ad15b"
 ---
 
 # Stream Object with Image Prompt
@@ -40,8 +40,9 @@ async function main() {
             text: 'list all the stamps in these passport pages?',
           },
           {
-            type: 'image',
-            image: new URL(
+            type: 'file',
+            mediaType: 'image',
+            data: new URL(
               'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/WW2_Spanish_official_passport.jpg/1498px-WW2_Spanish_official_passport.jpg',
             ),
           },
@@ -92,8 +93,9 @@ async function main() {
             text: 'list all the stamps in these passport pages?',
           },
           {
-            type: 'image',
-            image: fs.readFileSync('./data/passport.png', {
+            type: 'file',
+            mediaType: 'image',
+            data: fs.readFileSync('./data/passport.png', {
               encoding: 'base64',
             }),
           },

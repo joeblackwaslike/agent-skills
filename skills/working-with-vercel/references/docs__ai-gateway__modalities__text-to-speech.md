@@ -3,7 +3,7 @@ title: Text to Speech
 product: vercel
 url: /docs/ai-gateway/modalities/text-to-speech
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/ai-gateway/modalities/realtime
   - /docs/ai-gateway/modalities/speech-to-text
-summary: Learn about text to speech on Vercel.
+summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "43de2dfa008219a9882a724b44789876c88d9bac4dfccb3731c5b0e385b76b54"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a564079f7f7587e743702bed274c6daf0dfd1b09760749599914d2571244164f"
 ---
 
 # Text to Speech

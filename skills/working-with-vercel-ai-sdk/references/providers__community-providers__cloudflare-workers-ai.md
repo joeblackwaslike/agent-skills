@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-workers-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "6d4841bf9397603aa6e0b3c4d7c818fade011dcae4b0707644a55c06720c4121"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b044f1049288d370fddb3e12c8878b65be090f96dfef8d5e79948070e757c148"
 ---
 
 # Cloudflare Workers AI
@@ -96,7 +96,7 @@ export default {
 
 ```typescript
 import { createWorkersAI } from 'workers-ai-provider';
-import { streamText } from 'ai';
+import { createTextStreamResponse, streamText, toTextStream } from 'ai';
 
 type Env = {
   AI: Ai;
@@ -110,7 +110,8 @@ export default {
       prompt: 'Write a 50-word essay about hello world.',
     });
 
-    return result.toTextStreamResponse({
+    return createTextStreamResponse({
+      stream: toTextStream({ stream: result.stream }),
       headers: {
         // add these headers to ensure that the
         // response is chunked and streamed

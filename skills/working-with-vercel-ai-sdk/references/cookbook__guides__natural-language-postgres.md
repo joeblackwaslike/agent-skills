@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/natural-language-postgres.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e03a8525470caa86ecb86a8f046231b885b8a8709a77b6a83e124ca570c670f5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1921d8c50ee4ca9d5870599c8bde1751e8c9a20c87952d5eb8d68195b59ccf52"
 ---
 
 # Natural Language Postgres Guide
@@ -710,6 +710,7 @@ You could, for example, extend the application to use your own data sources or a
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

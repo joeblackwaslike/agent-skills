@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "896cba5e5af5ebc60fcaf841ac20cffecc3f1c9faa3c06416dc7309ebd1c6982"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a8d17c2854fd7849d7537d5a45e9ca8c3a847cce6e14bc86c3a7206a594ee740"
 ---
 
 # Rev.ai Provider
@@ -79,7 +79,7 @@ const model = revai.transcription('machine');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format can sometimes improve transcription performance if known beforehand.
 
 ```ts highlight="7"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { revai } from '@ai-sdk/revai';
 import { type RevaiTranscriptionModelOptions } from '@ai-sdk/revai';
 import { readFile } from 'fs/promises';
@@ -102,7 +102,6 @@ The following provider options are available:
 - **notification_config** _object_
 
   Configuration for webhook notifications when job is complete.
-
   - **url** _string_ - URL to send the notification to.
   - **auth_headers** _object_ - Optional authorization headers for the notification request.
     - **Authorization** _string_ - Authorization header value.
@@ -126,14 +125,12 @@ The following provider options are available:
 - **segments_to_transcribe** _Array_
 
   Specific segments of the audio to transcribe.
-
   - **start** _number_ - Start time of the segment in seconds.
   - **end** _number_ - End time of the segment in seconds.
 
 - **speaker_names** _Array_
 
   Names to assign to speakers in the transcription.
-
   - **display_name** _string_ - Display name for the speaker.
 
 - **skip_diarization** _boolean_
@@ -187,7 +184,6 @@ The following provider options are available:
 - **summarization_config** _object_
 
   Configuration for generating a summary of the transcription.
-
   - **model** _string_ - Model to use for summarization. Possible values: "standard" (default), "premium".
   - **type** _string_ - Format of the summary. Possible values: "paragraph" (default), "bullets".
   - **prompt** _string_ - Custom prompt for the summarization (mutually exclusive with type).
@@ -195,7 +191,6 @@ The following provider options are available:
 - **translation_config** _object_
 
   Configuration for translating the transcription.
-
   - **target_languages** _Array_ - Target languages for translation. Each item is an object with:
     - **language** _string_ - Language code. Possible values: "en", "en-us", "en-gb", "ar", "pt", "pt-br", "pt-pt", "fr", "fr-ca", "es", "es-es", "es-la", "it", "ja", "ko", "de", "ru".
   - **model** _string_ - Model to use for translation. Possible values: "standard" (default), "premium".
@@ -210,7 +205,6 @@ The following provider options are available:
   Default is `false`.
 
   Currently supported languages:
-
   - English (en, en-us, en-gb)
   - French (fr)
   - Italian (it)
@@ -247,7 +241,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

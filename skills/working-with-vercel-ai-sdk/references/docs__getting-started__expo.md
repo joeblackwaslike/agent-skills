@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/expo.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "cc56547e72a7129070f95eaf02e3c7f11cf2afc0193237a4ea908b9b31efaede"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8134608e500445d372cf20a7baac7314100d7e3d7c9f417a80a2c9332827206c"
 ---
 
 # Expo Quickstart
@@ -14,7 +14,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 
 To follow this quickstart, you'll need:
 
-- Node.js 18+ and pnpm installed on your local development machine.
+- Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
@@ -83,7 +83,13 @@ Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key.
 Create a route handler, `app/api/chat+api.ts` and add the following code:
 
 ```tsx filename="app/api/chat+api.ts"
-import { streamText, UIMessage, convertToModelMessages } from 'ai';
+import {
+  streamText,
+  UIMessage,
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
@@ -94,7 +100,8 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
     headers: {
       'Content-Type': 'application/octet-stream',
       'Content-Encoding': 'none',
@@ -107,7 +114,7 @@ Let's take a look at what is happening in this code:
 
 1. Define an asynchronous `POST` request handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation between you and the chatbot and provides the chatbot with the necessary context to make the next generation.
 2. Call [`streamText`](/docs/reference/ai-sdk-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (imported from `ai`) and `messages` (defined in step 1). You can pass additional [settings](/docs/ai-sdk-core/settings) to further customize the model's behavior.
-3. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-sdk-core/stream-text#result-object). This result object contains the [ `toUIMessageStreamResponse` ](/docs/reference/ai-sdk-core/stream-text#to-ui-message-stream-response) function which converts the result to a streamed response object.
+3. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-sdk-core/stream-text#result-object). Pass its `stream` to `toUIMessageStream` and return it with `createUIMessageStreamResponse` to create a streamed response object.
 4. Finally, return the result to the client to stream the response.
 
 This API route creates a POST request endpoint at `/api/chat`.
@@ -316,8 +323,15 @@ Let's enhance your chatbot by adding a simple weather tool.
 
 Modify your `app/api/chat+api.ts` file to include the new weather tool:
 
-```tsx filename="app/api/chat+api.ts" highlight="2,11-25"
-import { streamText, UIMessage, convertToModelMessages, tool } from 'ai';
+```tsx filename="app/api/chat+api.ts" highlight="9,18-32"
+import {
+  streamText,
+  UIMessage,
+  convertToModelMessages,
+  tool,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
 
@@ -344,7 +358,8 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse({
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
     headers: {
       'Content-Type': 'application/octet-stream',
       'Content-Encoding': 'none',
@@ -357,7 +372,6 @@ In this updated code:
 
 1. You import the `tool` function from the `ai` package and `z` from `zod` for schema validation.
 2. You define a `tools` object with a `weather` tool. This tool:
-
    - Has a description that helps the model understand when to use it.
    - Defines `inputSchema` using a Zod schema, specifying that it requires a `location` string to execute this tool. The model will attempt to extract this input from the context of the conversation. If it can't, it will ask the user for the missing information.
    - Defines an `execute` function that simulates getting weather data (in this case, it returns a random temperature). This is an asynchronous function running on the server so you can fetch real data from an external API.
@@ -468,19 +482,21 @@ Now, when you ask about the weather, you'll see the tool call and its result dis
 
 You may have noticed that while the tool results are visible in the chat interface, the model isn't using this information to answer your original query. This is because once the model generates a tool call, it has technically completed its generation.
 
-To solve this, you can enable multi-step tool calls using `stopWhen`. By default, `stopWhen` is set to `stepCountIs(1)`, which means generation stops after the first step when there are tool results. By changing this condition, you can allow the model to automatically send tool results back to itself to trigger additional generations until your specified stopping condition is met. In this case, you want the model to continue generating so it can use the weather tool results to answer your original question.
+To solve this, you can enable multi-step tool calls using `stopWhen`. By default, `stopWhen` is set to `isStepCount(1)`, which means generation stops after the first step when there are tool results. By changing this condition, you can allow the model to automatically send tool results back to itself to trigger additional generations until your specified stopping condition is met. In this case, you want the model to continue generating so it can use the weather tool results to answer your original question.
 
 ### Update Your API Route
 
 Modify your `app/api/chat+api.ts` file to include the `stopWhen` condition:
 
-```tsx filename="app/api/chat+api.ts" highlight="10"
+```tsx filename="app/api/chat+api.ts" highlight="19"
 import {
   streamText,
   UIMessage,
   convertToModelMessages,
   tool,
-  stepCountIs,
+  isStepCount,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
 } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
@@ -491,7 +507,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: __MODEL__,
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools: {
       weather: tool({
         description: 'Get the weather in a location (fahrenheit)',
@@ -509,7 +525,8 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse({
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
     headers: {
       'Content-Type': 'application/octet-stream',
       'Content-Encoding': 'none',
@@ -525,19 +542,21 @@ export async function POST(req: Request) {
 
 Head back to the Expo app and ask about the weather in a location. You should now see the model using the weather tool results to answer your question.
 
-By setting `stopWhen: stepCountIs(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Fahrenheit to Celsius.
+By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Fahrenheit to Celsius.
 
 ### Add More Tools
 
 Update your `app/api/chat+api.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```tsx filename="app/api/chat+api.ts" highlight="28-41"
+```tsx filename="app/api/chat+api.ts" highlight="34-47"
 import {
   streamText,
   UIMessage,
   convertToModelMessages,
   tool,
-  stepCountIs,
+  isStepCount,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
 } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
@@ -548,7 +567,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: __MODEL__,
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools: {
       weather: tool({
         description: 'Get the weather in a location (fahrenheit)',
@@ -580,7 +599,8 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse({
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
     headers: {
       'Content-Type': 'application/octet-stream',
       'Content-Encoding': 'none',
@@ -598,7 +618,7 @@ export async function POST(req: Request) {
 
 To display the temperature conversion tool invocation in your UI, update your `app/(tabs)/index.tsx` file to handle the new tool part:
 
-```tsx filename="app/(tabs)/index.tsx" highlight="37-42"
+```tsx filename="app/(tabs)/index.tsx" highlight="39-45"
 import { generateAPIUrl } from '@/utils';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
@@ -730,13 +750,11 @@ import structuredClone from '@ungap/structured-clone';
 
 if (Platform.OS !== 'web') {
   const setupPolyfills = async () => {
-    const { polyfillGlobal } = await import(
-      'react-native/Libraries/Utilities/PolyfillFunctions'
-    );
+    const { polyfillGlobal } =
+      await import('react-native/Libraries/Utilities/PolyfillFunctions');
 
-    const { TextEncoderStream, TextDecoderStream } = await import(
-      '@stardazed/streams-text-encoding'
-    );
+    const { TextEncoderStream, TextDecoderStream } =
+      await import('@stardazed/streams-text-encoding');
 
     if (!('structuredClone' in global)) {
       polyfillGlobal('structuredClone', () => structuredClone);

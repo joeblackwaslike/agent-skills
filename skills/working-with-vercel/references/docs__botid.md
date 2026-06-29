@@ -3,7 +3,7 @@ title: BotID
 product: vercel
 url: /docs/botid
 canonical_url: "https://vercel.com/docs/botid"
-last_updated: 2026-02-17
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "926b7e76188034214bfcd99fd9ec5c2a593c7ab4d5b4f6ed3a1c3e98222aa8a1"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b4ee1398974bab40c375d33d2500b61c63d393b56c42c85971af7c2fe5d18a17"
 ---
 
 # BotID

@@ -3,7 +3,7 @@ title: Working with DNS
 product: vercel
 url: /docs/domains/working-with-dns
 canonical_url: "https://vercel.com/docs/domains/working-with-dns"
-last_updated: 2025-10-02
+last_updated: 2026-06-08
 type: conceptual
 prerequisites:
   - /docs/domains
@@ -13,8 +13,8 @@ related:
 summary: Learn how DNS works in order to properly configure your domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-dns.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4c15d9919eee00a8fddd7b17401a4a134d2fd36c7f1d4f1c956044f963a0f60c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "f83dd1c4624741bd574f1d4e9ce33f9a794dc66b8b36e54d5af41530ec8005c1"
 ---
 
 # Working with DNS

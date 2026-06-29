@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/generate-text-with-image-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "25ca1da4ae5e7ea2bbb568dd800d7758e579c5f1a2060d9931179e426a49c724"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "37a0d7c71aa2cdb4fa625e63617c64dea90f01190a3d96a9a37feed2541f013f"
 ---
 
 # Generate Text with Image Prompt
@@ -25,8 +25,9 @@ const result = await generateText({
           text: 'what are the red things in this image?',
         },
         {
-          type: 'image',
-          image: new URL(
+          type: 'file',
+          mediaType: 'image',
+          data: new URL(
             'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2024_Solar_Eclipse_Prominences.jpg/720px-2024_Solar_Eclipse_Prominences.jpg',
           ),
         },
@@ -56,8 +57,9 @@ const result = await generateText({
           text: 'what are the red things in this image?',
         },
         {
-          type: 'image',
-          image: fs.readFileSync('./node/attachments/eclipse.jpg', {
+          type: 'file',
+          mediaType: 'image',
+          data: fs.readFileSync('./node/attachments/eclipse.jpg', {
             encoding: 'base64',
           }),
         },

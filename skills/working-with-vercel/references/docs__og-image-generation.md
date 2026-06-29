@@ -3,7 +3,7 @@ title: Open Graph (OG) Image Generation
 product: vercel
 url: /docs/og-image-generation
 canonical_url: "https://vercel.com/docs/og-image-generation"
-last_updated: 2026-02-17
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0bbd75f12ae0e665bfec8faf9a0478000eb68353a10cc3db5eacfb13cb323915"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2f41dc1d5ce0c1c5437be32a9ea3fffc0f1b073733112a82ad6fdf66d3fb53c1"
 ---
 
 # Open Graph (OG) Image Generation

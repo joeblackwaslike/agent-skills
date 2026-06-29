@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "dfb4eb39ebc842874dc29ddc1df3582eb9bbbb0c78932edd7372d915918b2c18"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e16266540010318ba65407a89f9c17eaab96e59a2b1762aa588928d685884830"
 ---
 
 # `pipeUIMessageStreamToResponse`
@@ -83,6 +83,7 @@ pipeUIMessageStreamToResponse({
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -91,6 +92,7 @@ pipeUIMessageStreamToResponse({
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

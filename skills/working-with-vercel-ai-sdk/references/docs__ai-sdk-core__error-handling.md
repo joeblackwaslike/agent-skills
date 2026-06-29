@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3ee5a1994a718a3d8c48410e68ed754ad4aee2a977d00f9143d0f0b688d48715"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "9a243906c8c26b9ad58f4a47a4e892c43245d8e2a1ece4e0f7dfc0899e1d1a0b"
 ---
 
 # Error Handling
@@ -52,7 +52,7 @@ try {
 
 ## Handling streaming errors (streaming with `error` support)
 
-Full streams support error parts.
+The `stream` result supports error parts.
 You can handle those parts similar to other parts.
 It is recommended to also add a try-catch block for errors that
 happen outside of the streaming.
@@ -62,12 +62,12 @@ import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
 try {
-  const { fullStream } = streamText({
+  const { stream } = streamText({
     model: __MODEL__,
     prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   });
 
-  for await (const part of fullStream) {
+  for await (const part of stream) {
     switch (part.type) {
       // ... handle other part types
 
@@ -98,7 +98,7 @@ try {
 
 When streams are aborted (e.g., via chat stop button), you may want to perform cleanup operations like updating stored messages in your UI. Use the `onAbort` callback to handle these cases.
 
-The `onAbort` callback is called when a stream is aborted via `AbortSignal`, but `onFinish` is not called. This ensures you can still update your UI state appropriately.
+The `onAbort` callback is called when a stream is aborted via `AbortSignal`, but `onEnd` is not called. This ensures you can still update your UI state appropriately.
 
 ```ts highlight="5-9"
 import { streamText } from 'ai';
@@ -111,7 +111,7 @@ const { textStream } = streamText({
     // Update stored messages or perform cleanup
     console.log('Stream aborted after', steps.length, 'steps');
   },
-  onFinish: ({ steps, totalUsage }) => {
+  onEnd: ({ steps, totalUsage }) => {
     // This is called on normal completion
     console.log('Stream completed normally');
   },
@@ -132,12 +132,12 @@ You can also handle abort events directly in the stream:
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
-const { fullStream } = streamText({
+const { stream } = streamText({
   model: __MODEL__,
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 
-for await (const chunk of fullStream) {
+for await (const chunk of stream) {
   switch (chunk.type) {
     case 'abort': {
       // Handle abort directly in stream
@@ -157,21 +157,27 @@ for await (const chunk of fullStream) {
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

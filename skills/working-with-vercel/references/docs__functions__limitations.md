@@ -3,32 +3,32 @@ title: Vercel Functions Limits
 product: vercel
 url: /docs/functions/limitations
 canonical_url: "https://vercel.com/docs/functions/limitations"
-last_updated: 2026-06-02
+last_updated: 2026-06-19
 type: reference
 prerequisites:
   - /docs/functions
 related:
   - /docs/functions/configuring-functions/duration
-  - /docs/functions/runtimes
   - /docs/functions/runtimes/python
   - /docs/functions/concurrency-scaling
+  - /docs/functions/runtimes
   - /docs/functions/configuring-functions/region
 summary: Learn about the limits and restrictions of using Vercel Functions with the Node.js runtime.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "08b764b0a1c449c054852d8c5555ed6857564409f41b699d06c3fbb63f458d5c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e01a18b26a359471563104293585c9bf3fef88021403b7885f76d8a2b7ba90b9"
 ---
 
 # Vercel Functions Limits
 
-The table below outlines the limits and restrictions of using Vercel Functions with the Node.js runtime:
+The table below outlines the limits and restrictions of using Vercel Functions:
 
 | Feature                                                                          | Node.js                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Maximum memory](/docs/functions/limitations#memory-size-limits)                 | Hobby: 2 GB, Pro and Ent: 4 GB                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [Maximum duration](/docs/functions/limitations#max-duration)                     | Hobby: 300s (default and maximum), Pro and Ent: 300s (default) - [configurable](/docs/functions/configuring-functions/duration) up to 800s. [Extended max duration](/docs/functions/configuring-functions/duration#extended-max-duration) supports up to 1800s . See [max durations](/docs/functions/limitations#max-duration) for more information.                                                                                                                                  |
-| [Size](/docs/functions/runtimes#bundle-size-limits) (after gzip compression)     | 250 MB (500 MB for [Python](/docs/functions/runtimes/python))                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [Maximum duration](/docs/functions/limitations#max-duration)                     | Hobby: 300s (default and maximum), Pro and Ent: 300s (default) - [configurable](/docs/functions/configuring-functions/duration) up to 800s. [Extended max duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta) supports up to 1800s . See [max durations](/docs/functions/limitations#max-duration) for more information.                                                                                                                                  |
+| [Size](/docs/functions/limitations#bundle-size-limits) (uncompressed)            | 250 MB (500 MB for [Python](/docs/functions/runtimes/python))                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Concurrency](/docs/functions/concurrency-scaling#automatic-concurrency-scaling) | Auto-scales up to 30,000 (Hobby and Pro) or 100,000+ (Enterprise) concurrency                                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Cost](/docs/functions/runtimes)                                                 | Pay for active CPU time and provisioned memory time                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Regions](/docs/functions/runtimes#location)                                     | Runs in a single region by default (`iad1`), which you can [change](/docs/functions/configuring-functions/region#setting-your-default-region). Pro and Enterprise teams can set [multiple regions](/docs/functions/configuring-functions/region#limits)                                                                                                                                                                                                                                                               |
@@ -48,7 +48,7 @@ Vercel places restrictions on the maximum size of the deployment bundle for func
 
 For Vercel Functions, the maximum uncompressed size is **250 MB** including layers which are automatically used depending on [runtimes](/docs/functions/runtimes). These limits are [enforced by AWS](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html). For [Python functions](/docs/functions/runtimes/python), the maximum uncompressed size is **500 MB**.
 
-You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration#functions) to specify items which may affect the function size, however the limits cannot be configured. These configurations are not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/next-config-js/output).
+You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration#functions) to specify items which may affect the function size. These configurations are not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/next-config-js/output).
 
 ## Max duration
 
@@ -87,10 +87,10 @@ Vercel Functions using the [Edge runtime](/docs/functions/runtimes/edge) must be
 
 Vercel Functions have the following defaults and maximum limits:
 
-|                 | Default       | Maximum       |
-| --------------- | ------------- | ------------- |
-| Hobby           | 2 GB / 1 vCPU | 2 GB / 1 vCPU |
-| Pro /Enterprise | 2 GB / 1 vCPU | 4 GB / 2 vCPU |
+|                  | Default       | Maximum       |
+| ---------------- | ------------- | ------------- |
+| Hobby            | 2 GB / 1 vCPU | 2 GB / 1 vCPU |
+| Pro / Enterprise | 2 GB / 1 vCPU | 4 GB / 2 vCPU |
 
 Users on Pro and Enterprise plans can [configure the default memory size](/docs/functions/configuring-functions/memory#setting-your-default-function-memory-/-cpu-size) for all functions in the dashboard.
 
@@ -129,7 +129,7 @@ To manage file descriptors effectively, consider the following:
 
 ## API support
 
-|                        | Node.js runtime (and more)                               |
+|                        | Support                                                  |
 | ---------------------- | -------------------------------------------------------- |
 | Geolocation data       | [Yes](/docs/headers/request-headers#x-vercel-ip-country) |
 | Access request headers | Yes                                                      |

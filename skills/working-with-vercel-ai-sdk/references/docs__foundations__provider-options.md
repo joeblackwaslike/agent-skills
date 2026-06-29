@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/provider-options.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4f865d7c07a1d7aefc896b5f30141049d8f84bc74fcddb21a612041bd558e796"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c196ff51ca8b54f32740eebd29e492a158a8f58e7fea83c1ef75aed3dbc94e73"
 ---
 
 # Provider Options
@@ -21,6 +21,14 @@ const result = await generateText({
 ```
 
 Provider options are namespaced by the provider name (e.g. `openai`, `anthropic`) so you can even include options for multiple providers in the same call — only the options matching the active provider are used. See [Prompts: Provider Options](/docs/foundations/prompts#provider-options) for details on applying options at the message and message-part level.
+
+<Note>
+  For controlling reasoning effort, consider using the top-level [`reasoning`
+  parameter](/docs/ai-sdk-core/reasoning) instead of provider-specific options.
+  It provides a portable setting that works across all providers that support
+  reasoning. Use provider-specific options only when you need features like
+  exact token budgets.
+</Note>
 
 ## Common Provider Options
 
@@ -44,7 +52,7 @@ import {
 } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
-const { text, usage, providerMetadata } = await generateText({
+const result = await generateText({
   model: openai('gpt-5.2'),
   prompt: 'Invent a new holiday and describe its traditions.',
   providerOptions: {
@@ -54,7 +62,12 @@ const { text, usage, providerMetadata } = await generateText({
   },
 });
 
-console.log('Reasoning tokens:', providerMetadata?.openai?.reasoningTokens);
+console.log('Text:', result.text);
+console.log('Usage:', result.usage);
+console.log(
+  'Reasoning tokens:',
+  result.finalStep.providerMetadata?.openai?.reasoningTokens,
+);
 ```
 
 | Value       | Behavior                                   |
@@ -75,6 +88,8 @@ console.log('Reasoning tokens:', providerMetadata?.openai?.reasoningTokens);
 
 When working with reasoning models, you may want to see _how_ the model arrived at its answer. The `reasoningSummary` option surfaces the model's thought process.
 
+When `reasoningEffort` is set to a value other than `'none'`, the OpenAI Responses provider defaults `reasoningSummary` to `'detailed'`. Set `reasoningSummary: null` to omit reasoning summaries.
+
 #### Streaming
 
 ```ts
@@ -94,7 +109,7 @@ const result = streamText({
   },
 });
 
-for await (const part of result.fullStream) {
+for await (const part of result.stream) {
   if (part.type === 'reasoning') {
     console.log(`Reasoning: ${part.textDelta}`);
   } else if (part.type === 'text-delta') {
@@ -122,7 +137,7 @@ const result = await generateText({
   },
 });
 
-console.log('Reasoning:', result.reasoning);
+console.log('Reasoning:', result.finalStep.reasoning);
 ```
 
 | Value        | Behavior                       |

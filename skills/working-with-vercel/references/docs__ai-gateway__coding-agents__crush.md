@@ -3,7 +3,7 @@ title: Crush
 product: vercel
 url: /docs/ai-gateway/coding-agents/crush
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/crush"
-last_updated: 2026-04-29
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Use Crush with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/crush.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "5ab19d824c4061af39552b52329a1f47f317f34de74bc6357ac92575c4f72bd5"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "867922162f17010d18b10805b7218756f1c4ce6382f50a43a78fecf61219375d"
 ---
 
 # Crush

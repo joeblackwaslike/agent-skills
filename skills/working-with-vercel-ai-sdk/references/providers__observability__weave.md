@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/weave.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b776504f0466ca3d296a07e037ac10b5c20737583df91de13298d7aaddec6bd7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8eabac23c9ebc5a4f37ab6373210b478bfb7fb7afe289e6f6fc949c95a72ed9d"
 ---
 
 # Weave Observability
@@ -43,17 +43,25 @@ OTEL_EXPORTER_OTLP_ENDPOINT="https://trace.wandb.ai/otel/v1/traces"
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=Basic <BASE64_AUTH_STRING>,project_id=<YOUR_TEAM_NAME>/<YOUR_PROJECT_NAME>"
 ```
 
-You can then use the `experimental_telemetry` option to enable telemetry on supported AI SDK function calls:
+Install `@ai-sdk/otel` and register the `LegacyOpenTelemetry` in your `instrumentation.ts` file:
+
+```typescript filename="instrumentation.ts"
+import { registerTelemetry } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+
+registerTelemetry(new LegacyOpenTelemetry());
+```
+
+You can then use the `telemetry` option to enable telemetry on supported AI SDK function calls:
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
   model: openai('gpt-4o-mini'),
   prompt: 'What is 2 + 2?',
-  experimental_telemetry: {
-    isEnabled: true,
+  telemetry: {
     metadata: {
       query: 'math',
       difficulty: 'easy',
@@ -85,6 +93,7 @@ const result = await generateText({
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

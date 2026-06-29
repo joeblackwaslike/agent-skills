@@ -3,7 +3,7 @@ title: vercel tokens
 product: vercel
 url: /docs/cli/tokens
 canonical_url: "https://vercel.com/docs/cli/tokens"
-last_updated: 2026-05-29
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b452330dee8718a24fd6f56a018d079d3c32f03a272655c08f79632058f9e063"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2fbcd90df8c5b13d2aae613533f26fc2b46ff1fa7501e425c27c366b4fd4a285"
 ---
 
 # vercel tokens

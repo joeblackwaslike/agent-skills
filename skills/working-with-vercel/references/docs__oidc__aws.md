@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "058d92ef25b274541c6300d4e1dd0d18cc6587b7daf8ee486aae05a3b6343d31"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "de325d60e5f092cd0ec2ae1113f13127086c0fbf01a2be08616398cd7e8e1561"
 ---
 
 # Connect to Amazon Web Services (AWS)
@@ -99,6 +99,35 @@ To understand how AWS supports OIDC, and for a detailed user guide on creating a
 
 > **⚠️ Warning:** **`AWS_REGION` is not stable by default.** Vercel sets `AWS_REGION` automatically to your function's execution region. With multi-region routing or failover, the value can change depending on which region your function runs in. This may route your AWS calls to a region where your resources don't exist. To prevent this, [declare `AWS_REGION` as an environment variable](/docs/environment-variables#creating-environment-variables) in your Vercel project with the value set to the AWS region where your resources live.
 
+## Custom audience
+
+By default, the OIDC token's `aud` claim is set to `https://vercel.com/[TEAM_SLUG]`. If your AWS trust policy expects a different audience value, you can pass an `audience` option to `awsCredentialsProvider`. This exchanges the default token for a new one with the custom `aud` claim.
+
+For example, to set the audience to `sts.amazonaws.com`:
+
+```ts filename="/api/example/route.ts"
+import { awsCredentialsProvider } from '@vercel/oidc-aws-credentials-provider';
+
+const credentials = awsCredentialsProvider({
+  roleArn: process.env.AWS_ROLE_ARN!,
+  audience: 'sts.amazonaws.com',
+});
+```
+
+When using a custom audience, update your AWS trust policy's `aud` condition to match:
+
+```json filename="trust-policy.json"
+{
+  "Condition": {
+    "StringEquals": {
+      "oidc.vercel.com/[TEAM_SLUG]:aud": "sts.amazonaws.com"
+    }
+  }
+}
+```
+
+You must also add the custom audience value to the OIDC identity provider in the AWS Console. Navigate to **IAM**, then **Identity Providers**, select your provider, and add the audience value under **Audiences**.
+
 ## Examples
 
 In the following examples, you create a [Vercel function](/docs/functions/quickstart#create-a-vercel-function) in the Vercel project where you have defined the OIDC role ARN environment variable. The function will connect to a specific resource in your AWS backend using OIDC and perform a specific action using the AWS SDK.
@@ -147,6 +176,7 @@ const s3client = new S3.S3Client({
   region: AWS_REGION,
   // Use the Vercel AWS SDK credentials provider
   credentials: awsCredentialsProvider({
+    audience: 'sts.amazonaws.com',
     roleArn: AWS_ROLE_ARN,
   }),
 });
@@ -210,6 +240,7 @@ const AWS_ROLE_ARN = process.env.AWS_ROLE_ARN!;
 const signer = new Signer({
   // Use the Vercel AWS SDK credentials provider
   credentials: awsCredentialsProvider({
+    audience: 'sts.amazonaws.com',
     roleArn: AWS_ROLE_ARN,
   }),
   region: AWS_REGION,

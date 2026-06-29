@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/call-tools-with-image-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9622d4c16828debb0d0002faa2575194fd4f6c0ef5c8527c9365e04fa526ffe2"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "28d2957aa086f28c86c07d472182dfd4c39ea47ac2de261fb9db1dea8ab4f351"
 ---
 
 # Call Tools with Image Prompt
@@ -20,8 +20,9 @@ const result = await generateText({
       content: [
         { type: 'text', text: 'can you log this meal for me?' },
         {
-          type: 'image',
-          image: new URL(
+          type: 'file',
+          mediaType: 'image',
+          data: new URL(
             'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cheeseburger_%2817237580619%29.jpg/640px-Cheeseburger_%2817237580619%29.jpg',
           ),
         },

@@ -3,7 +3,7 @@ title: Legacy Metrics
 product: vercel
 url: /docs/pricing/legacy
 canonical_url: "https://vercel.com/docs/pricing/legacy"
-last_updated: 2026-02-18
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/pricing
@@ -12,11 +12,11 @@ related:
   - /docs/incremental-static-regeneration
   - /docs/cdn
   - /docs/functions
-summary: Learn about legacy Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution metrics that apply to older usage models.
+summary: Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/legacy.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "29c247ab4ec10a2aa0bfb851a2b8d1062d6f8bb21d36caac6692c2f07b86de2d"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6c79faf9a36b5f3e2b0b175d6ea6fd02288ad0ab6677280eb4674ce63c34286a"
 ---
 
 # Legacy Metrics

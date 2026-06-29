@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2d0baaac94e453e5a7c437d1f9d216a1d098b45ee8e1857b224844eddaa64a12"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "946bbf62035ea95466d902a972a55c904198073e3ec71ef9528543c5ba6e36be"
 ---
 
 # Stream Text
@@ -47,7 +47,11 @@ export default function Page() {
 Let's create a route handler for `/api/completion` that will generate text based on the input prompt. The route will call the `streamText` function from the `ai` module, which will then generate text based on the input prompt and stream it to the client.
 
 ```typescript filename='app/api/completion/route.ts'
-import { streamText } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();
@@ -58,7 +62,9 @@ export async function POST(req: Request) {
     prompt,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b957d9ae819cac0d8597b3bff642f1657a15e309ba7cc0b2a9edef16740e3e54"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b01c4350a543597a978fa452d6afb58999354718be7128976268e04369ed94be"
 ---
 
 # Hume Provider
@@ -77,7 +77,7 @@ const model = hume.speech();
 You can pass standard speech generation options like `voice`, `speed`, `instructions`, and `outputFormat`:
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { hume } from '@ai-sdk/hume';
 
 const result = await generateSpeech({
@@ -124,7 +124,7 @@ const result = await generateSpeech({
 You can pass additional provider-specific options using the `providerOptions` argument:
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { hume } from '@ai-sdk/hume';
 import { type HumeSpeechModelOptions } from '@ai-sdk/hume';
 
@@ -146,7 +146,6 @@ The following provider options are available:
 - **context** _object_
 
   Context for the speech synthesis request. Can be either:
-
   - `{ generationId: string }` - ID of a previously generated speech synthesis to use as context.
   - `{ utterances: Utterance[] }` - An array of utterance objects for context, where each utterance has:
     - `text` _string_ (required) - The text content.
@@ -181,7 +180,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

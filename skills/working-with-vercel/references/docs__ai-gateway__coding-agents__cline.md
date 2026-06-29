@@ -3,7 +3,7 @@ title: Cline
 product: vercel
 url: /docs/ai-gateway/coding-agents/cline
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/cline"
-last_updated: 2026-04-29
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Use Cline with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "9b3d49028bf03bd80d07aa3d55b9b3207fd0b8d7428eff31249a2c2a48733f66"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "efe78b0c37779583991182e9245a46745c75abfb8d8f683615cd21b2c221ef88"
 ---
 
 # Cline

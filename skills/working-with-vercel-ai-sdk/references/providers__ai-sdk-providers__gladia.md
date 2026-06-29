@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bcb276ebe8e121de3673fabbd8129d2ea8f7096b41082dd4668e9ace84a5ba2b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "05fb4792578c49d5b568e739654fdffad471b4fd0b650881e9f0f67b0a70daac"
 ---
 
 # Gladia Provider
@@ -77,7 +77,7 @@ const model = gladia.transcription();
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `summarize` option will enable summaries for sections of content.
 
 ```ts highlight="7"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { gladia } from '@ai-sdk/gladia';
 import { type GladiaTranscriptionModelOptions } from '@ai-sdk/gladia';
 import { readFile } from 'fs/promises';
@@ -114,7 +114,6 @@ The following provider options are available:
 
   Configuration for custom vocabulary.
   Optional.
-
   - **vocabulary** _Array&lt;string | \{ value: string, intensity?: number, pronunciations?: string[], language?: string \}&gt;_
   - **defaultIntensity** _number_
 
@@ -132,7 +131,6 @@ The following provider options are available:
 
   Configuration for code switching.
   Optional.
-
   - **languages** _string[]_
 
 - **language** _string_
@@ -149,7 +147,6 @@ The following provider options are available:
 
   Configuration for callback.
   Optional.
-
   - **url** _string_
   - **method** _'POST' | 'PUT'_
 
@@ -162,7 +159,6 @@ The following provider options are available:
 
   Configuration for subtitles.
   Optional.
-
   - **formats** _Array&lt;'srt' | 'vtt'&gt;_
   - **minimumDuration** _number_
   - **maximumDuration** _number_
@@ -179,7 +175,6 @@ The following provider options are available:
 
   Configuration for diarization.
   Optional.
-
   - **numberOfSpeakers** _number_
   - **minSpeakers** _number_
   - **maxSpeakers** _number_
@@ -194,7 +189,6 @@ The following provider options are available:
 
   Configuration for translation.
   Optional.
-
   - **targetLanguages** _string[]_
   - **model** _'base' | 'enhanced'_
   - **matchOriginalUtterances** _boolean_
@@ -208,7 +202,6 @@ The following provider options are available:
 
   Configuration for summarization.
   Optional.
-
   - **type** _'general' | 'bullet_points' | 'concise'_
 
 - **moderation** _boolean_
@@ -240,7 +233,6 @@ The following provider options are available:
 
   Configuration for custom spelling.
   Optional.
-
   - **spellingDictionary** _Record&lt;string, string[]&gt;_
 
 - **structuredDataExtraction** _boolean_
@@ -252,7 +244,6 @@ The following provider options are available:
 
   Configuration for structured data extraction.
   Optional.
-
   - **classes** _string[]_
 
 - **sentimentAnalysis** _boolean_
@@ -269,7 +260,6 @@ The following provider options are available:
 
   Configuration for audio to LLM.
   Optional.
-
   - **prompts** _string[]_
 
 - **customMetadata** _Record&lt;string, any&gt;_
@@ -318,7 +308,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

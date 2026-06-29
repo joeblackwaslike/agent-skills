@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "54ef1fff785c64cd488ad9fe70b35a9c395846faca176b629777d913f9551c10"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "bcb7887ade4df56675b9c6d6645729fbf44cfed4894c709c5e68128054aa95ab"
 ---
 
 # Claude Platform on AWS Provider
@@ -106,18 +106,18 @@ const anthropicAws = createAnthropicAws({
 
 ### Provider Settings
 
-| Setting | Description |
-| --- | --- |
-| `region` | AWS region for the Claude Platform on AWS endpoint. Reads from `AWS_REGION` if omitted. Required — no fallback default. |
-| `workspaceId` | Anthropic workspace ID for this AWS account. Sent on every request via the `anthropic-workspace-id` header. Reads from `ANTHROPIC_AWS_WORKSPACE_ID` if omitted. |
-| `apiKey` | API key for `x-api-key` authentication. When provided, used instead of SigV4. Reads from `ANTHROPIC_AWS_API_KEY` if omitted. |
-| `accessKeyId` | AWS access key ID for SigV4. Reads from `AWS_ACCESS_KEY_ID`. |
-| `secretAccessKey` | AWS secret access key for SigV4. Reads from `AWS_SECRET_ACCESS_KEY`. |
-| `sessionToken` | AWS session token for SigV4 (temporary credentials only). Reads from `AWS_SESSION_TOKEN`. |
-| `baseURL` | Base URL override. Defaults to `https://aws-external-anthropic.{region}.api.aws/v1`. |
-| `headers` | Custom headers to include on every request. |
-| `fetch` | Custom fetch implementation for testing or middleware. |
-| `credentialProvider` | Function returning dynamic AWS credentials. Overrides `accessKeyId`, `secretAccessKey`, and `sessionToken`. |
+| Setting              | Description                                                                                                                                                     |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `region`             | AWS region for the Claude Platform on AWS endpoint. Reads from `AWS_REGION` if omitted. Required — no fallback default.                                         |
+| `workspaceId`        | Anthropic workspace ID for this AWS account. Sent on every request via the `anthropic-workspace-id` header. Reads from `ANTHROPIC_AWS_WORKSPACE_ID` if omitted. |
+| `apiKey`             | API key for `x-api-key` authentication. When provided, used instead of SigV4. Reads from `ANTHROPIC_AWS_API_KEY` if omitted.                                    |
+| `accessKeyId`        | AWS access key ID for SigV4. Reads from `AWS_ACCESS_KEY_ID`.                                                                                                    |
+| `secretAccessKey`    | AWS secret access key for SigV4. Reads from `AWS_SECRET_ACCESS_KEY`.                                                                                            |
+| `sessionToken`       | AWS session token for SigV4 (temporary credentials only). Reads from `AWS_SESSION_TOKEN`.                                                                       |
+| `baseURL`            | Base URL override. Defaults to `https://aws-external-anthropic.{region}.api.aws/v1`.                                                                            |
+| `headers`            | Custom headers to include on every request.                                                                                                                     |
+| `fetch`              | Custom fetch implementation for testing or middleware.                                                                                                          |
+| `credentialProvider` | Function returning dynamic AWS credentials. Overrides `accessKeyId`, `secretAccessKey`, and `sessionToken`.                                                     |
 
 ## Language Models
 
@@ -171,7 +171,7 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

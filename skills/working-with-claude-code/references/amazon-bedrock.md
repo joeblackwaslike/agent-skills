@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/amazon-bedrock.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "cde48cd809e194f638ae9486b262e4d80bfce546fecc0aee60089c4dfb44fb6e"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "c9bc7d423b81c3383e727091474d10e42b39307b2fe22465b177a605c7b6fb5a"
 ---
 
 > ## Documentation Index
@@ -443,11 +443,11 @@ export CLAUDE_CODE_USE_BEDROCK=1
 export CLAUDE_CODE_USE_MANTLE=1
 ```
 
-To surface a Mantle model in the `/model` picker, list its ID in `availableModels` in your [settings file](/en/settings). This setting also restricts the picker to the listed entries, so include every alias you want to keep available:
+To surface a Mantle model in the `/model` picker, list its ID in `availableModels` in your [settings file](/en/settings). This setting also restricts the picker to the listed entries. Listing `anthropic.claude-haiku-4-5` removes the bare `haiku` alias from the picker, so also list version prefixes or full IDs for the versions you want to keep selectable. The Mantle ID and the `haiku` alias resolve to the same model family, so the merge keeps only the more specific entry. See [Merge behavior](/en/model-config#merge-behavior):
 
 ```json theme={null}
 {
-  "availableModels": ["opus", "sonnet", "haiku", "anthropic.claude-haiku-4-5"]
+  "availableModels": ["opus", "sonnet", "claude-haiku-4-5", "anthropic.claude-haiku-4-5"]
 }
 ```
 

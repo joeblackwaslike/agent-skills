@@ -3,7 +3,7 @@ title: WAF Examples
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/examples
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples"
-last_updated: 2025-11-25
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Vercel WAF to protect your site in specific situations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "df1f0c83489b2119e32f41c99033cf520082ed75a9ce9903af154659d45e9bea"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2922f25e2b253ccb5d543d7ef0e33dc6b3648ada7ebcfe4996beef294f94f40a"
 ---
 
 # WAF Examples

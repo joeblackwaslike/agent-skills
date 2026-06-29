@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/custom-providers.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e6214d9705856a16deb6c78b369a7e197a31ea9dfa70dd00afa50f01bbe7d66e"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "70d91f7cb13624bb081aa8cb88df62581a5cc0b2af2a7e0ca03506f52ed77e49"
 ---
 
 # Writing a Custom Provider
@@ -42,7 +42,7 @@ The completion, embedding, and image settings are implemented similarly to the c
 2. **example-provider.ts** - Main provider implementation:
 
 ```ts
-import { LanguageModelV1, EmbeddingModelV3 } from '@ai-sdk/provider';
+import { LanguageModelV4, EmbeddingModelV4 } from '@ai-sdk/provider';
 import {
   OpenAICompatibleChatLanguageModel,
   OpenAICompatibleCompletionLanguageModel,
@@ -87,7 +87,7 @@ Creates a model for text generation.
   (
     modelId: ExampleChatModelId,
     settings?: ExampleChatSettings,
-  ): LanguageModelV1;
+  ): LanguageModelV4;
 
   /**
 Creates a chat model for text generation.
@@ -95,7 +95,7 @@ Creates a chat model for text generation.
   chatModel(
     modelId: ExampleChatModelId,
     settings?: ExampleChatSettings,
-  ): LanguageModelV1;
+  ): LanguageModelV4;
 
   /**
 Creates a completion model for text generation.
@@ -103,7 +103,7 @@ Creates a completion model for text generation.
   completionModel(
     modelId: ExampleCompletionModelId,
     settings?: ExampleCompletionSettings,
-  ): LanguageModelV1;
+  ): LanguageModelV4;
 
   /**
 Creates a text embedding model for text generation.
@@ -111,7 +111,7 @@ Creates a text embedding model for text generation.
   .embeddingModel(
     modelId: ExampleEmbeddingModelId,
     settings?: ExampleEmbeddingSettings,
-  ): EmbeddingModelV3<string>;
+  ): EmbeddingModelV4<string>;
 
   /**
 Creates an image model for image generation.
@@ -119,7 +119,7 @@ Creates an image model for image generation.
   imageModel(
     modelId: ExampleImageModelId,
     settings?: ExampleImageSettings,
-  ): ImageModelV3;
+  ): ImageModelV4;
 }
 
 export function createExample(

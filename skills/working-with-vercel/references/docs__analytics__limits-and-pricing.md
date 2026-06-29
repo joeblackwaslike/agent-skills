@@ -3,12 +3,12 @@ title: Pricing for Web Analytics
 product: vercel
 url: /docs/analytics/limits-and-pricing
 canonical_url: "https://vercel.com/docs/analytics/limits-and-pricing"
-last_updated: 2026-06-02
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/analytics
 related:
-  - /docs/plans/pro-plan
+  - /docs/plans/hobby
   - /docs/manage-and-optimize-observability
   - /docs/speed-insights/metrics
   - /docs/manage-cdn-usage
@@ -16,8 +16,8 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "17b5f0060f74e59b84377f4a2f15a60b09c3afbc74d2abe5b1a3b51aa302f5e1"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "1a22e8c62a9a5ae3203db4051c797a66d5410d12b2d478cafcbe5bcb711df4e8"
 ---
 
 # Pricing for Web Analytics
@@ -38,7 +38,7 @@ After you enable Vercel Web Analytics, your plan determines which features you c
 | UTM Parameters | - | N/A | Included | Included |
 
 
-Hobby teams can't purchase additional events. Once you reach the monthly limit, collection pauses until the next billing cycle or until you [upgrade to Pro](/docs/plans/pro-plan).
+Hobby teams can't purchase additional events. Once you reach the monthly limit, collection pauses until the next billing cycle or until you [upgrade to Pro](/docs/plans/hobby#upgrading-to-pro).
 
 On every billing cycle, Hobby teams receive the included event allowance listed above.
 

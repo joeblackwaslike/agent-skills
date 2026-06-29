@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "47f4f163256357eea2b997749ede6af256987fd21b6bb61d399509fa4e115b1f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3100f12a84530e6756db2c36da09af2f96af0ef3bb4ca9a9a13ea859fd5f0076"
 ---
 
 # Backends on Vercel
@@ -65,9 +65,11 @@ If you are transitioning from a fully managed server or containerized environmen
 
 The following are generally applicable to serverless, and therefore Vercel Functions (running with or without Fluid compute).
 
-### Websockets
+### WebSockets
 
-Serverless functions have maximum execution limits and should respond as quickly as possible. They should not subscribe to data events. Instead, we need a client that subscribes to data events and a serverless functions that publishes new data. Consider using a serverless friendly realtime data provider.
+Vercel Functions can serve WebSocket connections when [Fluid compute](/docs/fluid-compute) is enabled. WebSocket connections follow [Vercel Function limits](/docs/functions/limitations), including maximum duration, so clients should handle reconnects when a connection closes.
+
+Store persistent state, rooms, presence, and pub/sub coordination in an external data store instead of relying on in-memory state. Learn more in the [WebSockets documentation](/docs/functions/websockets).
 
 ### Database Connections
 

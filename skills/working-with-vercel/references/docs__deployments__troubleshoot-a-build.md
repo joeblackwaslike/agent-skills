@@ -3,7 +3,7 @@ title: Troubleshooting Build Errors
 product: vercel
 url: /docs/deployments/troubleshoot-a-build
 canonical_url: "https://vercel.com/docs/deployments/troubleshoot-a-build"
-last_updated: 2026-02-27
+last_updated: 2026-06-15
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-06-15T22:56:22.423Z"
-sha256: "8170513237dba421b9c41f493696430c41bc0ea22e139d6bd07e2e97f7da47d2"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6d4d55b6f0cf4fd00c25268241a2bfb444d514d50b3c832d40b3b54dcd331c05"
 ---
 
 # Troubleshooting Build Errors

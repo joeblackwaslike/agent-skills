@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1661ed3767a96c81713009dc5cbb56ed33cd63adf94025b3d9269c32a9b398f0"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "0401d27f87023e5c270285f6e7772fa3fce024eb65e4c11a6a6cb9e48bdd4ccd"
 ---
 
 # Mistral AI Provider
@@ -81,10 +81,10 @@ const model = mistral('mistral-large-latest');
 ```
 
 Mistral chat models also support additional model settings that are not part of the [standard call settings](/docs/ai-sdk-core/settings).
-You can pass them as an options argument and utilize `MistralLanguageModelOptions` for typing:
+You can pass them as an options argument and utilize `MistralLanguageModelChatOptions` for typing:
 
 ```ts
-import { mistral, type MistralLanguageModelOptions } from '@ai-sdk/mistral';
+import { mistral, type MistralLanguageModelChatOptions } from '@ai-sdk/mistral';
 const model = mistral('mistral-large-latest');
 
 await generateText({
@@ -93,7 +93,7 @@ await generateText({
     mistral: {
       safePrompt: true, // optional safety prompt injection
       parallelToolCalls: false, // disable parallel tool calls (one tool per response)
-    } satisfies MistralLanguageModelOptions,
+    } satisfies MistralLanguageModelChatOptions,
   },
 });
 ```
@@ -138,7 +138,7 @@ Mistral chat models support document OCR for PDF files.
 You can optionally set image and page limits using the provider options.
 
 ```ts
-import { mistral, type MistralLanguageModelOptions } from '@ai-sdk/mistral';
+import { mistral, type MistralLanguageModelChatOptions } from '@ai-sdk/mistral';
 import { generateText } from 'ai';
 
 const result = await generateText({
@@ -166,7 +166,7 @@ const result = await generateText({
     mistral: {
       documentImageLimit: 8,
       documentPageLimit: 64,
-    } satisfies MistralLanguageModelOptions,
+    } satisfies MistralLanguageModelChatOptions,
   },
 });
 ```
@@ -200,20 +200,17 @@ The SDK automatically parses Mistral's native reasoning format and provides sepa
 
 #### Configurable Reasoning
 
-Some Mistral models support configurable reasoning, which you can control via the `reasoningEffort` option.
+Some Mistral models support configurable reasoning, which you can control via the `reasoning` parameter.
+You can use the AI SDK's top-level `reasoning` setting to control reasoning effort:
 
 ```ts
-import { mistral, type MistralLanguageModelOptions } from '@ai-sdk/mistral';
+import { mistral } from '@ai-sdk/mistral';
 import { generateText } from 'ai';
 
 const result = await generateText({
   model: mistral('mistral-small-latest'),
+  reasoning: 'high',
   prompt: 'What is 15 * 24?',
-  providerOptions: {
-    mistral: {
-      reasoningEffort: 'high',
-    } satisfies MistralLanguageModelOptions,
-  },
 });
 
 console.log('REASONING:', result.reasoningText);
@@ -270,7 +267,7 @@ console.log(JSON.stringify(result.output, null, 2));
 You can enable strict JSON Schema validation using a provider option:
 
 ```ts highlight="7-11"
-import { mistral, type MistralLanguageModelOptions } from '@ai-sdk/mistral';
+import { mistral, type MistralLanguageModelChatOptions } from '@ai-sdk/mistral';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
@@ -279,7 +276,7 @@ const result = await generateText({
   providerOptions: {
     mistral: {
       strictJsonSchema: true,
-    } satisfies MistralLanguageModelOptions,
+    } satisfies MistralLanguageModelChatOptions,
   },
   output: Output.object({
     schema: z.object({
@@ -377,7 +374,7 @@ const { embedding } = await embed({
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

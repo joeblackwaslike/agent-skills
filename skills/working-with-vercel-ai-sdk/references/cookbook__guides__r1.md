@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/r1.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "831c72c6366676c26aa201f3b3b72c2878f365eff7eede76f92fbd4320e7eb21"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7ba992a49b0766e30adb00f734c5ad97ebd08974f73a71e1ce4b6ea865e0b244"
 ---
 
 # Get started with DeepSeek R1
@@ -47,11 +47,11 @@ The AI SDK abstracts away the differences between model providers, eliminates bo
 At the center of the AI SDK is [AI SDK Core](/docs/ai-sdk-core/overview), which provides a unified API to call any LLM. The code snippet below is all you need to call DeepSeek R1 with the AI SDK:
 
 ```ts
-import { deepseek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-sdk/deepseek';
 import { generateText } from 'ai';
 
 const { reasoningText, text } = await generateText({
-  model: deepseek('deepseek-reasoner'),
+  model: deepSeek('deepseek-reasoner'),
   prompt: 'Explain quantum entanglement.',
 });
 ```
@@ -141,26 +141,35 @@ In a new Next.js application, first install the AI SDK and the DeepSeek provider
 Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
-import { deepseek } from '@ai-sdk/deepseek';
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import { deepSeek } from '@ai-sdk/deepseek';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: deepseek('deepseek-reasoner'),
+    model: deepSeek('deepseek-reasoner'),
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    sendReasoning: true,
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      sendReasoning: true,
+    }),
   });
 }
 ```
 
 <Note>
   You can forward the model's reasoning tokens to the client with
-  `sendReasoning: true` in the `toUIMessageStreamResponse` method.
+  `sendReasoning: true` in the `toUIMessageStream` helper.
 </Note>
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
@@ -247,6 +256,7 @@ DeepSeek R1 opens new opportunities for reasoning-intensive AI applications. Sta
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

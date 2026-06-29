@@ -3,7 +3,7 @@ title: Vercel Hobby Plan
 product: vercel
 url: /docs/plans/hobby
 canonical_url: "https://vercel.com/docs/plans/hobby"
-last_updated: 2026-06-01
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/plans
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "312ee44052bbb762c7e9c0a01b037819d23456102d4b8eb1c9067136ee9a91c8"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "780dff8e21da5c946992501e25195e770c05f8d9cf307ea8aff3c450d490285d"
 ---
 
 # Vercel Hobby Plan

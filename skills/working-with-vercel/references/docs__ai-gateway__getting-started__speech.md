@@ -1,9 +1,9 @@
 ---
-title: Speech
+title: Speech to Text and Text to Speech Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/speech
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/speech"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -13,11 +13,11 @@ related:
   - /docs/ai-gateway/modalities/text-to-speech
   - /docs/ai-gateway/modalities/speech-to-text
   - /docs/ai-gateway/getting-started/realtime
-summary: Learn about speech on Vercel.
+summary: Generate speech from text and transcribe audio back to text with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "18ce479cad76a4fe3dc95324423ed5de4b50c826142b95abf0f7d5b6747818c2"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e156d9d919f760b7a9f39676584a8d2fdf3b558c276e04887377468c0ffae80a"
 ---
 
 # Speech to Text and Text to Speech Quickstart

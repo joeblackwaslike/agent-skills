@@ -1,16 +1,16 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-object-record-final-object.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a554ef887a3aa644a0793872ceade76af7f0eecf9007e1977add3d39df7c5514"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "9b71bec891375c5a1474b7dd1a4e7a1b3bdb8bf13972d7066bd841b380d42104"
 ---
 
 # Record Final Object after Streaming Object
 
 When you're streaming structured data, you may want to record the final object for logging or other purposes.
 
-## `onFinish` and `output`
+## `onEnd` and `output`
 
-Use `onFinish` for metadata like token usage and await `result.output` for the final structured object.
+Use `onEnd` for metadata like token usage and await `result.output` for the final structured object.
 
 ```ts file='index.ts' highlight={"15-29"}
 import { streamText, Output } from 'ai';
@@ -28,7 +28,7 @@ const result = streamText({
     }),
   }),
   prompt: 'Generate a lasagna recipe.',
-  onFinish({ usage }) {
+  onEnd({ usage }) {
     console.log('Token usage:', usage);
   },
 });

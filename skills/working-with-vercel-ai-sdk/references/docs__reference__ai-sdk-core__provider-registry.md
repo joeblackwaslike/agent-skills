@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a6922bb997111a67fc98a4ac7f3906625ecd617ce14e8ec31dd34846465e63de"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "2303c648b2cf91b2f9886374dd4877ba2dbcde1f4beea0615623b30aa4370335"
 ---
 
 # `createProviderRegistry()`
@@ -11,6 +11,10 @@ in a central place and access the models through simple string ids.
 
 `createProviderRegistry` lets you create a registry with multiple providers that you
 can access by their ids in the format `providerId:modelId`.
+
+In TypeScript, registry model IDs are inferred from the registered provider IDs.
+When a provider exposes literal model ID types, editors can suggest the combined
+`providerId:modelId` values.
 
 ### Setup
 
@@ -94,6 +98,28 @@ const { image } = await generateImage({
 });
 ```
 
+### Video models
+
+You can access video models by using the `videoModel` method on the registry.
+The provider id will become the prefix of the model id: `providerId:modelId`.
+
+```ts highlight={"7"}
+import { fal } from '@ai-sdk/fal';
+import { createProviderRegistry, experimental_generateVideo } from 'ai';
+
+const registry = createProviderRegistry({ fal });
+
+const { videos } = await experimental_generateVideo({
+  model: registry.videoModel('fal:luma-dream-machine/ray-2'),
+  prompt: 'A cat walking on a beach at sunset',
+});
+```
+
+### Files and skills
+
+You can access a provider's files and skills interfaces by calling
+`registry.files(providerId)` and `registry.skills(providerId)`.
+
 ## Import
 
 <Snippet text={`import { createProviderRegistry } from "ai"`} prompt={false} />
@@ -129,6 +155,46 @@ const { image } = await generateImage({
               name: 'imageModel',
               type: '(id: string) => ImageModel',
               description: 'A function that returns an image model by its id.',
+            },
+            {
+              name: 'transcriptionModel',
+              type: '(id: string) => TranscriptionModel',
+              isOptional: true,
+              description:
+                'A function that returns a transcription model by its id.',
+            },
+            {
+              name: 'speechModel',
+              type: '(id: string) => SpeechModel',
+              isOptional: true,
+              description: 'A function that returns a speech model by its id.',
+            },
+            {
+              name: 'rerankingModel',
+              type: '(id: string) => RerankingModel',
+              isOptional: true,
+              description:
+                'A function that returns a reranking model by its id.',
+            },
+            {
+              name: 'videoModel',
+              type: '(id: string) => VideoModelV4',
+              isOptional: true,
+              description: 'A function that returns a video model by its id.',
+            },
+            {
+              name: 'files',
+              type: '() => FilesV4',
+              isOptional: true,
+              description:
+                'A function that returns the provider files API interface.',
+            },
+            {
+              name: 'skills',
+              type: '() => SkillsV4',
+              isOptional: true,
+              description:
+                'A function that returns the provider skills API interface.',
             },
           ],
         },
@@ -195,6 +261,42 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
       description:
         'A function that returns an image model by its id (format: providerId:modelId)',
     },
+    {
+      name: 'transcriptionModel',
+      type: '(id: string) => TranscriptionModel',
+      description:
+        'A function that returns a transcription model by its id (format: providerId:modelId)',
+    },
+    {
+      name: 'speechModel',
+      type: '(id: string) => SpeechModel',
+      description:
+        'A function that returns a speech model by its id (format: providerId:modelId)',
+    },
+    {
+      name: 'rerankingModel',
+      type: '(id: string) => RerankingModel',
+      description:
+        'A function that returns a reranking model by its id (format: providerId:modelId)',
+    },
+    {
+      name: 'videoModel',
+      type: '(id: string) => VideoModelV4',
+      description:
+        'A function that returns a video model by its id (format: providerId:modelId)',
+    },
+    {
+      name: 'files',
+      type: '(providerId: string) => FilesV4',
+      description:
+        'A function that returns a provider files API interface by provider id.',
+    },
+    {
+      name: 'skills',
+      type: '(providerId: string) => SkillsV4',
+      description:
+        'A function that returns a provider skills API interface by provider id.',
+    },
   ]}
 />
 
@@ -210,6 +312,8 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -218,27 +322,31 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

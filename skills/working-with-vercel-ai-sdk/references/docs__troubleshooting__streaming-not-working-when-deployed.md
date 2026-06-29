@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/streaming-not-working-when-deployed.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "140d4f8a3ab0f6a857e0c8570b9942fcf11e3b6ac2fa05ff87ab9b0f1bd187c9"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c9f298fad42caaa1043ad6a50bfa627af0c59b902b497279b734918bbeb7eb9d"
 ---
 
 # Streaming Not Working When Deployed
@@ -23,7 +23,8 @@ You can try the following:
 - add `'Transfer-Encoding': 'chunked'` and/or `Connection: 'keep-alive'` headers
 
   ```tsx
-  return result.toUIMessageStreamResponse({
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
     headers: {
       'Transfer-Encoding': 'chunked',
       Connection: 'keep-alive',
@@ -50,7 +51,7 @@ You can try the following:
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

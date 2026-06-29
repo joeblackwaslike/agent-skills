@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/vercel.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a6d2b87912eef8e01ce262f8f6b350ea064921791d76b6c801d3e09084407a21"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b50912348611d1a48f6014728cf12b8471967827db13ba7daf93a0d123a6e86c"
 ---
 
 # Vercel Provider
@@ -149,7 +149,7 @@ All v0 models have the following capabilities:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

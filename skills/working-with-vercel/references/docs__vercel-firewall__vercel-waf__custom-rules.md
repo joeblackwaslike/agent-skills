@@ -3,7 +3,7 @@ title: WAF Custom Rules
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/custom-rules
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules"
-last_updated: 2026-06-01
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "9a3726ca260832933024676b3fb9f50f2961fbe8271f8acaad4e6c1d3aa68759"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0c929d1c8150327c4ef2c93c578dd8e3b361a5cc3ca5a986530072bf38d93a0c"
 ---
 
 # WAF Custom Rules

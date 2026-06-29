@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "fe2aad4da8daa6b750d46f415dc1056489a8612bfd98931454dbddded4a5c68d"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "aa95f666776c76746ee7622797999e35d9bf0869d7455eea1023c3fc17f19ae0"
 ---
 
 # Together.ai Provider
@@ -406,7 +406,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

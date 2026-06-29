@@ -3,7 +3,7 @@ title: vercel sandbox
 product: vercel
 url: /docs/cli/sandbox
 canonical_url: "https://vercel.com/docs/cli/sandbox"
-last_updated: 2018-10-20
+last_updated: 2026-06-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: "Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from your terminal."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/sandbox.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c831fd9997d8043f905a0e539ba1485ff94579686229e2612fe86fd9022543ba"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "26b71f77bbc88e28b36e27f21ee37a67788b5d1eaec45af130c3b427d3263cf1"
 ---
 
 # vercel sandbox

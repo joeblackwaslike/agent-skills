@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/provider-model.md"
-fetched_at: "2026-06-15T05:56:15.706Z"
-sha256: "7f9c4df1adc6358d03e279df526acf7d9ab4d0c177fe967442afb94cda7ef0a3"
+fetched_at: "2026-06-29T05:44:53.501Z"
+sha256: "1b1ff086c8e7649912e71854e5a374261cb700f92b84d36cb72de95d28edf853"
 ---
 
 # Provider and Model Catalog
@@ -11,7 +11,7 @@ sha256: "7f9c4df1adc6358d03e279df526acf7d9ab4d0c177fe967442afb94cda7ef0a3"
 ```ts
 export const ID = Schema.String.pipe(
   Schema.brand("ProviderV2.ID"),
-  withStatics((schema) => ({
+  statics((schema) => ({
     opencode: schema.make("opencode"),
     anthropic: schema.make("anthropic"),
     openai: schema.make("openai"),

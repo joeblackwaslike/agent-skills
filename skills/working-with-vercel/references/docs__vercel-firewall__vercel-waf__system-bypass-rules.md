@@ -3,7 +3,7 @@ title: WAF System Bypass Rules
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/system-bypass-rules
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules"
-last_updated: 2026-03-26
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "ac0a331e6a24e18d1986a56b68f285d9ed65a37adade3af1bf8af7c30cfd9c52"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "05c0a54e0e91faf7f18475e39fc12cd7caf9c5c9048123be139047820809a427"
 ---
 
 # WAF System Bypass Rules

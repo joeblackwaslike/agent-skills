@@ -13,8 +13,8 @@ related:
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "71cd4b4902bc703b955f227178f6eab5c4bee90f323d6b6cb2c218c092a51762"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "c47bdd63bd5363c9f7e74d0839ba69d4a7998e41961b2b84c5883b3ff90b6ed7"
 ---
 
 # App Attribution
@@ -37,7 +37,7 @@ You can set these headers directly in your server-side requests to AI Gateway.
 
 ## Examples
 
-#### \[&#xA;    'TypeScript (AI SDK)'
+#### \[&#xA;  'TypeScript (AI SDK)'
 
 ```typescript filename="ai-sdk.ts"
 import { streamText } from 'ai';

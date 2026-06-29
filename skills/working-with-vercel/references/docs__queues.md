@@ -3,7 +3,7 @@ title: Vercel Queues
 product: vercel
 url: /docs/queues
 canonical_url: "https://vercel.com/docs/queues"
-last_updated: 2026-04-16
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Durable event streaming for serverless. Publish messages to topics and process them reliably with managed consumer groups, automatic scaling, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d240b65cefb1ef857dc00d9cd9789c69f8404d73438ddb3da7949aecec410326"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "fbd07fbe9c9e4f5c435bb99b443f49d6dbee17c60bf2f7f9b44333186923e2be"
 ---
 
 # Vercel Queues

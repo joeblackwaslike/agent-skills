@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cbccb9d2ab574765c35c6f32f1a6eddd3f40812643034a93fdfda2d8e08699a0"
 ---
 
 # AI SDK Core
@@ -30,6 +30,23 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
       href: '/docs/ai-sdk-core/tools-and-tool-calling',
     },
     {
+      title: 'Realtime',
+      description: 'Learn how to build realtime voice conversations.',
+      href: '/docs/ai-sdk-core/realtime',
+    },
+    {
+      title: 'MCP Apps',
+      description:
+        'Learn how to render interactive MCP tool UIs with the AI SDK.',
+      href: '/docs/ai-sdk-core/mcp-apps',
+    },
+    {
+      title: 'Runtime and Tool Context',
+      description:
+        'Learn how to pass shared runtime state and per-tool context through generations and agents.',
+      href: '/docs/ai-sdk-core/runtime-and-tool-context',
+    },
+    {
       title: 'Prompt Engineering',
       description: 'Learn how to write prompts with AI SDK Core.',
       href: '/docs/ai-sdk-core/prompt-engineering',
@@ -39,6 +56,12 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
       description:
         'Learn how to set up settings for language models generations.',
       href: '/docs/ai-sdk-core/settings',
+    },
+    {
+      title: 'Reasoning',
+      description:
+        'Learn how to control reasoning across providers with the top-level reasoning parameter.',
+      href: '/docs/ai-sdk-core/reasoning',
     },
     {
       title: 'Embeddings',
@@ -64,6 +87,11 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
       title: 'Speech',
       description: 'Learn how to generate speech with AI SDK Core.',
       href: '/docs/ai-sdk-core/speech',
+    },
+    {
+      title: 'File Uploads',
+      description: 'Learn how to upload files to providers with the AI SDK.',
+      href: '/docs/ai-sdk-core/file-uploads',
     },
     {
       title: 'Provider Management',
@@ -122,28 +150,47 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
   - [Loop Control](/docs/agents/loop-control)
   - [Configuring Call Options](/docs/agents/configuring-call-options)
   - [Memory](/docs/agents/memory)
+  - [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
   - [Subagents](/docs/agents/subagents)
+  - [Tool Approvals](/docs/agents/tool-approvals)
+  - [WorkflowAgent](/docs/agents/workflow-agent)
+  - [Terminal UI](/docs/agents/terminal-ui)
 - [AI SDK Core](/docs/ai-sdk-core)
   - [Overview](/docs/ai-sdk-core/overview)
   - [Generating Text](/docs/ai-sdk-core/generating-text)
   - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
   - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
   - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+  - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+  - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
   - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
   - [Settings](/docs/ai-sdk-core/settings)
+  - [Reasoning](/docs/ai-sdk-core/reasoning)
   - [Embeddings](/docs/ai-sdk-core/embeddings)
   - [Reranking](/docs/ai-sdk-core/reranking)
   - [Image Generation](/docs/ai-sdk-core/image-generation)
+  - [Realtime](/docs/ai-sdk-core/realtime)
   - [Transcription](/docs/ai-sdk-core/transcription)
   - [Speech](/docs/ai-sdk-core/speech)
   - [Video Generation](/docs/ai-sdk-core/video-generation)
+  - [File Uploads](/docs/ai-sdk-core/file-uploads)
   - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+  - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
   - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
   - [Error Handling](/docs/ai-sdk-core/error-handling)
   - [Testing](/docs/ai-sdk-core/testing)
   - [Telemetry](/docs/ai-sdk-core/telemetry)
   - [DevTools](/docs/ai-sdk-core/devtools)
-  - [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+  - [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+- [AI SDK Harnesses](/docs/ai-sdk-harnesses)
+  - [Overview](/docs/ai-sdk-harnesses/overview)
+  - [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
+  - [Tools](/docs/ai-sdk-harnesses/tools)
+  - [Skills](/docs/ai-sdk-harnesses/skills)
+  - [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
+  - [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
+  - [UI](/docs/ai-sdk-harnesses/ui)
+  - [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
 - [AI SDK UI](/docs/ai-sdk-ui)
   - [Overview](/docs/ai-sdk-ui/overview)
   - [Chatbot](/docs/ai-sdk-ui/chatbot)
@@ -193,6 +240,8 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+    - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+    - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
     - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
     - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
     - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -201,27 +250,31 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
     - [tool](/docs/reference/ai-sdk-core/tool)
     - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
     - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+    - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
     - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
     - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
     - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
     - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
     - [Output](/docs/reference/ai-sdk-core/output)
+    - [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
     - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
     - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
     - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
     - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+    - [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
     - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
     - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
     - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
     - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
     - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-    - [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+    - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-    - [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+    - [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
     - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
     - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
     - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
@@ -233,6 +286,7 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
     - [useChat](/docs/reference/ai-sdk-ui/use-chat)
     - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
     - [useObject](/docs/reference/ai-sdk-ui/use-object)
+    - [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
     - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
     - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
     - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -241,6 +295,7 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
     - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
     - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
     - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+    - [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
     - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
   - [AI SDK RSC](/docs/reference/ai-sdk-rsc)
     - [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
@@ -255,6 +310,9 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
     - [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
     - [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
     - [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+  - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
+    - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
+    - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
   - [AI SDK Errors](/docs/reference/ai-sdk-errors)
     - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
     - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -278,6 +336,7 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
     - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
     - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
     - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+    - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
     - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
     - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
     - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
@@ -288,8 +347,11 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
     - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
     - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
     - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)
+  - [AI SDK TUI](/docs/reference/ai-sdk-tui)
+    - [runAgentTUI](/docs/reference/ai-sdk-tui/run-agent-tui)
 - [Migration Guides](/docs/migration-guides)
   - [Versioning](/docs/migration-guides/versioning)
+  - [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
   - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
   - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
   - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
@@ -317,7 +379,7 @@ sha256: "c52f3e3438867f6f5376f3cf0aa3417a05cd5841f57ec6f110e53e80414983db"
   - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
   - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
   - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-  - [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+  - [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
   - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
   - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
   - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

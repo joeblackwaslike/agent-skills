@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/comments"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "5439c96f6ce8a06b3fc4ccdde793db619a2202a622c2b53535cc9fe42f241d7b"
+fetched_at: "2026-06-29T05:44:37.185Z"
+sha256: "4a4da70adea4bf9c6d96774200636cc153cce776e1d5dc2a9480f5f6ad5e9ea2"
 ---
 
 # REST API endpoints for issue comments
@@ -221,6 +221,10 @@ Array of `Issue Comment`:
         * `site_admin`: required, boolean
         * `starred_at`: string
         * `user_view_type`: string
+* `minimized`: any of:
+  * **null**
+  * **Minimized Issue Comment**
+    * `reason`: required, string or null
 
 ## Get an issue comment
 
@@ -406,6 +410,10 @@ curl -L \
         * `site_admin`: required, boolean
         * `starred_at`: string
         * `user_view_type`: string
+* `minimized`: any of:
+  * **null**
+  * **Minimized Issue Comment**
+    * `reason`: required, string or null
 
 ## Update an issue comment
 

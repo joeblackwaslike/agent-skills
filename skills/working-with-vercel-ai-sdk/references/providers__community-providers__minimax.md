@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/minimax.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "30d0459c938f62218cfafed5d4841757785bc6dd5da86708b69ed7476017c82f"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "657d79a8bc8acab84267a3854b10c183b628d1ef3c4ed39d18f7bf5edbe5596a"
 ---
 
 # MiniMax Provider
@@ -74,7 +74,6 @@ You can use the following optional settings to customize the MiniMax provider in
 - **baseURL** _string_
 
   Use a different URL prefix for API calls.
-
   - Anthropic-compatible default: `https://api.minimax.io/anthropic/v1`
   - OpenAI-compatible default: `https://api.minimax.io/v1`
 

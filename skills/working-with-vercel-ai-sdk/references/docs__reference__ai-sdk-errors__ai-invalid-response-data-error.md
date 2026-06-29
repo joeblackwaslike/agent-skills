@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-response-data-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "22d510d792dc518adca7674b90bf459bc4c276f70ab19c538ecb5bee30e458d7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a51cc49e6e2ebec511070ddfb693e556a68d8a6ad248e75e92638d3762d0c03b"
 ---
 
 # AI_InvalidResponseDataError
@@ -50,6 +50,7 @@ if (InvalidResponseDataError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

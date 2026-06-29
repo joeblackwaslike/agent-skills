@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/slackbot.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "032d06b341f8582a512446b48544cb115b8d57fd388a91dbf85f67241db6b7ba"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1e49fef5b56d97d621cd8c89290223c2c32982377f3686bdc0aad0a98f0fb3ad"
 ---
 
 # Building an AI Agent in Slack with the AI SDK
@@ -349,7 +349,7 @@ This basic implementation:
 The real power of the AI SDK comes from tools that enable your bot to perform actions. Let's add two useful tools:
 
 ```typescript filename="lib/generate-response.ts"
-import { generateText, tool, ModelMessage, stepCountIs } from 'ai';
+import { generateText, tool, ModelMessage, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
 import { exa } from './utils';
@@ -365,7 +365,7 @@ export const generateResponse = async (
     - Current date is: ${new Date().toISOString().split('T')[0]}
     - Always include sources in your final response if you use web search.`,
     messages,
-    stopWhen: stepCountIs(10),
+    stopWhen: isStepCount(10),
     tools: {
       getWeather: tool({
         description: 'Get the current weather at a location',
@@ -429,11 +429,10 @@ export const generateResponse = async (
 In this updated implementation:
 
 1. You added two tools:
-
    - `getWeather`: Fetches weather data for a specified location
    - `searchWeb`: Searches the web for information using the Exa API
 
-2. You set `stopWhen: stepCountIs(10)` to enable multi-step conversations. This defines the stopping conditions of your agent, when the model generates a tool call. This will automatically send any tool results back to the LLM to trigger additional tool calls or responses as the LLM deems necessary. This turns your LLM call from a one-off operation into a multi-step agentic flow.
+2. You set `stopWhen: isStepCount(10)` to enable multi-step conversations. This defines the stopping conditions of your agent, when the model generates a tool call. This will automatically send any tool results back to the LLM to trigger additional tool calls or responses as the LLM deems necessary. This turns your LLM call from a one-off operation into a multi-step agentic flow.
 
 ## How It Works
 
@@ -512,6 +511,7 @@ You've built a Slack chatbot powered by the AI SDK! Here are some ways you could
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ec6f798611dfa56fe6ced1e79de9cbbe9e413070ae35d5610ea07d1be5c49752"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "072be936092583315bc6db0bac3c4d22a6147eae6fd83e81472adadbac62e774"
 ---
 
 # Getting Started with Coding Agents
@@ -88,27 +88,24 @@ Install the DevTools package:
   </Tabs>
 </div>
 
-### Add the middleware
+### Register the integration
 
-Wrap your language model with the DevTools middleware using [`wrapLanguageModel`](/docs/ai-sdk-core/middleware):
+Register `DevToolsTelemetry` globally so it captures all AI SDK calls:
 
 ```ts
-import { wrapLanguageModel, gateway } from 'ai';
-import { devToolsMiddleware } from '@ai-sdk/devtools';
+import { registerTelemetry } from 'ai';
+import { DevToolsTelemetry } from '@ai-sdk/devtools';
 
-const model = wrapLanguageModel({
-  model: gateway('anthropic/claude-sonnet-4.5'),
-  middleware: devToolsMiddleware(),
-});
+registerTelemetry(DevToolsTelemetry());
 ```
 
-Use the wrapped model with any AI SDK Core function:
+Once an integration is registered, [telemetry](/docs/ai-sdk-core/telemetry) is enabled automatically for all your AI SDK calls:
 
 ```ts
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model, // wrapped model with DevTools middleware
+  model: openai('gpt-4o'),
   prompt: 'What cities are in the United States?',
 });
 ```
@@ -137,7 +134,7 @@ For multi-step agent interactions, DevTools groups everything into **runs** (a c
 You can also log tool results directly in code during development:
 
 ```ts
-import { streamText, tool, stepCountIs } from 'ai';
+import { streamText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
@@ -155,8 +152,8 @@ const result = streamText({
       }),
     }),
   },
-  stopWhen: stepCountIs(5),
-  onStepFinish: async ({ toolResults }) => {
+  stopWhen: isStepCount(5),
+  onStepEnd: async ({ toolResults }) => {
     if (toolResults.length) {
       console.log(JSON.stringify(toolResults, null, 2));
     }
@@ -164,7 +161,7 @@ const result = streamText({
 });
 ```
 
-The `onStepFinish` callback fires after each LLM step and prints any tool results to your terminal — useful for quick debugging without opening the DevTools UI.
+The `onStepEnd` callback fires after each LLM step and prints any tool results to your terminal — useful for quick debugging without opening the DevTools UI.
 
 <Note>
   DevTools stores all AI interactions in a local `.devtools/generations.json`

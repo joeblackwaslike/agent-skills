@@ -3,7 +3,7 @@ title: Vercel WAF
 product: vercel
 url: /docs/vercel-firewall/vercel-waf
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf"
-last_updated: 2026-06-01
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/vercel-firewall
@@ -16,8 +16,8 @@ related:
 summary: Learn how to secure your website with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "cf859e4c65a491bae2d3362c3901341c8bd9d3341d3309915842a634598d9ebc"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ba953a521982a298c7cfa663cce91964209ffcff88b19c76c58f89bfc08fc64f"
 ---
 
 # Vercel WAF

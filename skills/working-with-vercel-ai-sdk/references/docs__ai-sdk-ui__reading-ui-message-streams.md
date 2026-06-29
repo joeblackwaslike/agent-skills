@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/reading-ui-message-streams.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "688683f92dbf3da2a2350cbfd94d5c55e9ff6871d59ff86d4f02bef2991f56f8"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f07d83135113835f97d8046d721f180a8066093a851359697e7836a00f053b18"
 ---
 
 # Reading UI Message Streams
@@ -13,7 +13,7 @@ The `readUIMessageStream` helper transforms a stream of `UIMessageChunk` objects
 ## Basic Usage
 
 ```tsx
-import { readUIMessageStream, streamText } from 'ai';
+import { readUIMessageStream, streamText, toUIMessageStream } from 'ai';
 __PROVIDER_IMPORT__;
 
 async function main() {
@@ -23,7 +23,7 @@ async function main() {
   });
 
   for await (const uiMessage of readUIMessageStream({
-    stream: result.toUIMessageStream(),
+    stream: toUIMessageStream({ stream: result.stream }),
   })) {
     console.log('Current message state:', uiMessage);
   }
@@ -35,7 +35,7 @@ async function main() {
 Handle streaming responses that include tool calls:
 
 ```tsx
-import { readUIMessageStream, streamText, tool } from 'ai';
+import { readUIMessageStream, streamText, toUIMessageStream, tool } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
 
@@ -58,7 +58,7 @@ async function handleToolCalls() {
   });
 
   for await (const uiMessage of readUIMessageStream({
-    stream: result.toUIMessageStream(),
+    stream: toUIMessageStream({ stream: result.stream }),
   })) {
     // Handle different part types
     uiMessage.parts.forEach(part => {
@@ -83,7 +83,7 @@ async function handleToolCalls() {
 Resume streaming from a previous message state:
 
 ```tsx
-import { readUIMessageStream, streamText } from 'ai';
+import { readUIMessageStream, streamText, toUIMessageStream } from 'ai';
 __PROVIDER_IMPORT__;
 
 async function resumeConversation(lastMessage: UIMessage) {
@@ -96,7 +96,7 @@ async function resumeConversation(lastMessage: UIMessage) {
 
   // Resume from the last message
   for await (const uiMessage of readUIMessageStream({
-    stream: result.toUIMessageStream(),
+    stream: toUIMessageStream({ stream: result.stream }),
     message: lastMessage, // Resume from this message
   })) {
     console.log('Resumed message:', uiMessage);

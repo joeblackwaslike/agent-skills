@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/human-in-the-loop.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "90927b9dc1a8e24ef76e5e60fc220975ac13f2f82de9a5ad6d763a66e2371f08"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "85e5c3b1b370dd78bd956e33acdbf50a0e72f7d7d95a94ffa4fa98412da9093f"
 ---
 
 # Human-in-the-Loop with Next.js
@@ -9,16 +9,6 @@ sha256: "90927b9dc1a8e24ef76e5e60fc220975ac13f2f82de9a5ad6d763a66e2371f08"
 When building agentic systems, it's important to add human-in-the-loop (HITL) functionality to ensure that users can approve actions before the system executes them. The AI SDK provides built-in support for tool execution approval through the `needsApproval` property on tools.
 
 This recipe shows how to add a human approval step to a Next.js chatbot using the AI SDK's native tool execution approval feature.
-
-<Note type="warning">
-  By default, the approval step is a human-in-the-loop UX affordance, **not** a
-  server-side security boundary. In the standard `useChat` pattern the approval
-  is replayed through client-controlled message history, so a malicious client
-  can forge an approval and run a `needsApproval` tool with schema-valid
-  arguments — no human in the loop. If a tool performs a sensitive action, set
-  `experimental_toolApprovalSecret` so approvals are cryptographically bound to
-  the server that issued them. See [Securing Approvals](#securing-approvals).
-</Note>
 
 ## Background
 
@@ -81,7 +71,12 @@ export default function Chat() {
 On the backend, create a route handler that uses `streamText` and returns a `UIMessageStreamResponse`. The tool has an `execute` function that runs automatically when the model calls it.
 
 ```ts filename="app/api/chat/route.ts"
-import { streamText, tool } from 'ai';
+import {
+  streamText,
+  tool,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
@@ -105,7 +100,9 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -119,8 +116,13 @@ To add a HITL step, you add an approval gate between the tool call and the tool 
 
 Add `needsApproval: true` to the tool definition. The tool keeps its `execute` function, but the SDK pauses execution until the user approves.
 
-```ts filename="app/api/chat/route.ts" highlight="14"
-import { streamText, tool } from 'ai';
+```ts filename="app/api/chat/route.ts" highlight="20"
+import {
+  streamText,
+  tool,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
@@ -145,7 +147,9 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -286,8 +290,13 @@ const { messages, addToolApprovalResponse } = useChat({
 
 You can make approval conditional based on the tool's input by providing an async function to `needsApproval`:
 
-```ts filename="app/api/chat/route.ts" highlight="15"
-import { streamText, tool } from 'ai';
+```ts filename="app/api/chat/route.ts" highlight="23"
+import {
+  streamText,
+  tool,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
@@ -312,7 +321,9 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -334,70 +345,6 @@ const result = streamText({
   },
 });
 ```
-
-## Securing Approvals
-
-### Trust model
-
-In the standard `useChat` pattern, the server rebuilds the conversation from the messages the client sends each request — it does not persist conversation state between requests. **This means the message history is client-controlled input.**
-
-An approval reconstructed from that history is re-validated against the tool's input schema before execution, but the schema check only constrains _what_ can run; it does not prove that a human actually approved it. A client can submit a tool part in the `approval-responded` state with `approved: true`, and the SDK will run the approved `needsApproval` tool with any schema-conforming arguments, with no human in the loop.
-
-So by default the approval step is a UX affordance, **not** a security boundary. For tools that perform sensitive operations (modifying data, spending money, calling external APIs, accessing private resources), either enforce authorization inside the tool's `execute` or — preferably — enable signed approvals.
-
-### Signing approvals with `experimental_toolApprovalSecret`
-
-When you provide a secret, the server HMAC-signs each approval request when it is issued and verifies the signature when the approval is replayed. A forged or tampered approval is rejected before the tool executes.
-
-```ts filename="app/api/chat/route.ts" highlight="7-8"
-export async function POST(req: Request) {
-  const { messages } = await req.json();
-
-  const result = streamText({
-    model: openai('gpt-4o'),
-    messages,
-    // Bind approvals to the server that issued them so a client cannot forge them.
-    experimental_toolApprovalSecret: process.env.TOOL_APPROVAL_SECRET,
-    tools: {
-      getWeatherInformation: tool({
-        description: 'show the weather in a given city to the user',
-        inputSchema: z.object({ city: z.string() }),
-        needsApproval: true,
-        execute: async ({ city }) => {
-          const weatherOptions = ['sunny', 'cloudy', 'rainy', 'snowy'];
-          return weatherOptions[
-            Math.floor(Math.random() * weatherOptions.length)
-          ];
-        },
-      }),
-    },
-  });
-
-  return result.toUIMessageStreamResponse();
-}
-```
-
-The signature binds the approval to the exact tool name, tool call ID, and input arguments, so changing any of them after signing invalidates the approval.
-
-**Setting up the secret:**
-
-1. Generate a high-entropy random string (at least 32 bytes):
-   ```bash
-   openssl rand -base64 32
-   ```
-2. Store it as an environment variable available to all server instances:
-   ```
-   TOOL_APPROVAL_SECRET=your-generated-secret-here
-   ```
-3. Pass it to `streamText` (or `generateText`) via `experimental_toolApprovalSecret`.
-
-Every serverless instance that might handle a request needs the same secret, since one instance signs the approval and a different instance may verify it on the next turn. The secret is never sent to the client or included in the stream.
-
-<Note type="warning">
-  Without a secret, approval requests are not signed and client-supplied
-  approvals are trusted as-is — the human-in-the-loop step can be bypassed and
-  is not a security boundary.
-</Note>
 
 ## Full Example
 

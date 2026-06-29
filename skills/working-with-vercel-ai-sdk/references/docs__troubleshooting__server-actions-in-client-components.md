@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/server-actions-in-client-components.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "cae28921ab3d3e1b896cae12ec8a65b7ab32a8f2f8f87e401645d735710cedb5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "94a2e9fa14680f2cb269f81289a55b812afe0b9a971d8ae6b059daa306f5eeef"
 ---
 
 # Server Actions in Client Components
@@ -59,7 +59,7 @@ export async function getAnswer(question: string) {
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

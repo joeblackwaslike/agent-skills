@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/third-party-integrations.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "b7b7771952d3c9327032f7f523e7c127320ddc5e62d81d2916d2f9e65671df51"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "df77afd9abeba314e1ecf81295058c3c8433ea17db4f8aae093ae6c40a609886"
 ---
 
 > ## Documentation Index
@@ -194,6 +194,8 @@ If your organization has specific infrastructure requirements, compare the optio
   </tbody>
 </table>
 
+For a feature-by-feature breakdown of what's available on each option, see [Feature availability](/en/feature-availability).
+
 Select a deployment option to view setup instructions:
 
 * [Claude for Teams or Enterprise](/en/authentication#claude-for-teams-or-enterprise)
@@ -208,7 +210,7 @@ Select a deployment option to view setup instructions:
 Most organizations can use a cloud provider directly without additional configuration. However, you may need to configure a corporate proxy or LLM gateway if your organization has specific network or management requirements. These are different configurations that can be used together:
 
 * **Corporate proxy**: Routes traffic through an HTTP/HTTPS proxy. Use this if your organization requires all outbound traffic to pass through a proxy server for security monitoring, compliance, or network policy enforcement. Configure with the `HTTPS_PROXY` or `HTTP_PROXY` environment variables. Learn more in [Enterprise network configuration](/en/network-config).
-* **LLM Gateway**: A service that sits between Claude Code and the cloud provider to handle authentication and routing. Use this if you need centralized usage tracking across teams, custom rate limiting or budgets, or centralized authentication management. Configure with the `ANTHROPIC_BASE_URL`, `ANTHROPIC_BEDROCK_BASE_URL`, `ANTHROPIC_AWS_BASE_URL`, or `ANTHROPIC_VERTEX_BASE_URL` environment variables. Learn more in [LLM gateway configuration](/en/llm-gateway).
+* **LLM Gateway**: A service that sits between Claude Code and the cloud provider to handle authentication and routing. Use this if you need centralized usage tracking across teams, custom rate limiting or budgets, or centralized authentication management. Configure with the `ANTHROPIC_BASE_URL`, `ANTHROPIC_BEDROCK_BASE_URL`, `ANTHROPIC_AWS_BASE_URL`, or `ANTHROPIC_VERTEX_BASE_URL` environment variables. Learn more in [LLM gateways](/en/llm-gateway).
 
 The following examples show the environment variables to set in your shell or shell profile (`.bashrc`, `.zshrc`). See [Settings](/en/settings) for other configuration methods.
 
@@ -268,7 +270,7 @@ The following examples show the environment variables to set in your shell or sh
 
     # Configure LLM gateway
     export ANTHROPIC_FOUNDRY_BASE_URL='https://your-llm-gateway.com'
-    export CLAUDE_CODE_SKIP_FOUNDRY_AUTH=1  # If gateway handles Azure auth
+    export ANTHROPIC_FOUNDRY_API_KEY=your-gateway-key  # Sent as x-api-key
     ```
   </Tab>
 </Tabs>
@@ -300,6 +302,8 @@ The following examples show the environment variables to set in your shell or sh
     # Configure LLM gateway
     export ANTHROPIC_VERTEX_BASE_URL='https://your-llm-gateway.com/vertex'
     export CLAUDE_CODE_SKIP_VERTEX_AUTH=1  # If gateway handles GCP auth
+    export ANTHROPIC_VERTEX_PROJECT_ID=your-gcp-project-id
+    export CLOUD_ML_REGION=us-east5
     ```
   </Tab>
 </Tabs>

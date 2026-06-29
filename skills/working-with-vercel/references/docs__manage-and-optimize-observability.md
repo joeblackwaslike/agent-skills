@@ -3,7 +3,7 @@ title: Manage and optimize usage for Observability
 product: vercel
 url: /docs/manage-and-optimize-observability
 canonical_url: "https://vercel.com/docs/manage-and-optimize-observability"
-last_updated: 2026-06-02
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "dcfdeed5afe736b17e3b75080520a1032dc0f584a43472b95449cbc79a8e0952"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ceec0bbf1e3c668c6c7183d9533d0f8fc77316aed2ede755738fde05dddc210e"
 ---
 
 # Manage and optimize usage for Observability

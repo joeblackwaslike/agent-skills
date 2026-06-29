@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/generate-object-with-file-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8600580302efda60812d9cae9e18653f4c3ef6da412c6aefa46ac12aab75170c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a5473f33ab3e7458c7c0284d2b9f0b5e6baa43672d7045e4dbe3b6fd21681ab1"
 ---
 
 # Generate Object with File Prompt through Form Submission
@@ -10,8 +10,8 @@ sha256: "8600580302efda60812d9cae9e18653f4c3ef6da412c6aefa46ac12aab75170c"
   This feature is limited to models/providers that support PDF inputs
   ([Anthropic](/providers/ai-sdk-providers/anthropic#pdf-support),
   [OpenAI](/providers/ai-sdk-providers/openai#pdf-support), [Google
-  Gemini](/providers/ai-sdk-providers/google-generative-ai#file-inputs), and
-  [Google Vertex](/providers/ai-sdk-providers/google-vertex#file-inputs)).
+  Gemini](/providers/ai-sdk-providers/google#file-inputs), and [Google
+  Vertex](/providers/ai-sdk-providers/google-vertex#file-inputs)).
 </Note>
 
 With select models, you can send PDFs (files) as part of your prompt. Let's create a simple Next.js application that allows a user to upload a PDF send it to an LLM for summarization.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e71fc82cfed34c23133b6266c3c242a2aa7da6fcf1d0494e958c4a844ff637b6"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "167df232bf1df1a565df3ddf37b5693abfd779fe0ae6717d1d8007c4edc50268"
 ---
 
 # Moonshot AI Provider
@@ -127,7 +127,6 @@ The following optional provider options are available for Moonshot AI language m
 - **thinking** _object_
 
   Configuration for thinking/reasoning models like Kimi K2 Thinking.
-
   - **type** _'enabled' | 'disabled'_
 
     Whether to enable thinking mode
@@ -139,7 +138,6 @@ The following optional provider options are available for Moonshot AI language m
 - **reasoningHistory** _'disabled' | 'interleaved' | 'preserved'_
 
   Controls how reasoning history is handled in multi-turn conversations:
-
   - `'disabled'`: Remove reasoning from history
   - `'interleaved'`: Include reasoning between tool calls within a single turn
   - `'preserved'`: Keep all reasoning in history
@@ -183,7 +181,7 @@ The following optional provider options are available for Moonshot AI language m
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

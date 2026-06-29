@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/plugin-creator/references/plugin-json-spec.md"
-fetched_at: "2026-06-22T05:56:37.291Z"
-sha256: "f1f17b861ee66498b478e4e5d1ea2a313b6c8d5129213caf185dc2c5df0bb57a"
+fetched_at: "2026-06-29T05:41:54.371Z"
+sha256: "eeb640130f69636affaa299d4170d5a7ae6a0ff978296ddf75c409ce6dd87b91"
 ---
 
 # Plugin JSON sample spec
@@ -42,6 +42,7 @@ sha256: "f1f17b861ee66498b478e4e5d1ea2a313b6c8d5129213caf185dc2c5df0bb57a"
     "brandColor": "#3B82F6",
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png",
     "screenshots": [
       "./assets/screenshot1.png",
       "./assets/screenshot2.png",
@@ -111,6 +112,7 @@ Or as an object directly in `plugin.json`:
 - `brandColor` (`string`): Theme color for the plugin card.
 - `composerIcon` (`string`): Path to icon asset.
 - `logo` (`string`): Path to logo asset.
+- `logoDark` (`string`): Optional path to the logo asset used in dark mode.
 - `screenshots` (`array` of `string`): List of screenshot asset paths.
   - Screenshot entries must be PNG filenames and stored under `./assets/`.
   - Keep file paths relative to plugin root.
@@ -211,7 +213,7 @@ personal marketplace unless the caller explicitly requests a repo-local destinat
 - `version` must use strict semver.
 - `websiteURL`, `privacyPolicyURL`, and `termsOfServiceURL` must be absolute `https://` URLs when
   present.
-- `composerIcon`, `logo`, and `screenshots` must point to real files inside the plugin archive when
+- `composerIcon`, `logo`, `logoDark`, and `screenshots` must point to real files inside the plugin archive when
   present.
 - `apps` should appear in `plugin.json` only when `.app.json` actually exists.
 - `mcpServers` may point to `.mcp.json` or contain the MCP server object directly in

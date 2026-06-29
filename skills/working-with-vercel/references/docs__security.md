@@ -3,7 +3,7 @@ title: Vercel security overview
 product: vercel
 url: /docs/security
 canonical_url: "https://vercel.com/docs/security"
-last_updated: 2026-02-18
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel provides built-in and customizable features to ensure that your site is secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "78efe1489c580f751cec0002b82ac3997ee94a8916cedf2a80f6c5906ecd9cd4"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "f673ea88565b5c4b7b937e55668d4ea17897a038916510bb485c4f86a914501a"
 ---
 
 # Vercel security overview

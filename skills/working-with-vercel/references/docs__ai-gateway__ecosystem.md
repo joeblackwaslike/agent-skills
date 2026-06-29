@@ -3,7 +3,7 @@ title: Ecosystem
 product: vercel
 url: /docs/ai-gateway/ecosystem
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem"
-last_updated: 2026-05-11
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Explore community framework integrations and ecosystem features for the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a01f45f05199b3203979895097010b573bf8a3ef2c29d36f70e14b5cbb2a72d9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a83b2198d3463b157ca28f2bfd266506daea071b968d57a3e0bca628fb098b74"
 ---
 
 # Ecosystem

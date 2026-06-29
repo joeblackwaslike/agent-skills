@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0ca93af18bcd0e9f4a705cb04ccf48ea33551a2f662daf091d19553e774ca56a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "990b2023316589bd6663804837c92f205cacb124ab68f1cba45fd4685ffddc56"
 ---
 
 # Connect to Microsoft Azure
@@ -42,8 +42,9 @@ To understand how Azure supports OIDC through Workload Identity Federation, cons
     - Replace `[PROJECT_NAME]` with your [project's name](https://vercel.com/docs/projects/overview#project-name) in your
       [project's settings](https://vercel.com/docs/projects/overview#project-settings)
   - In the **Name** field, use a name for your own reference such as: `[Project name] - [Environment]`
-  - In the **Audience** field use: `https://vercel.com/[TEAM_SLUG]`
-    - Replace `[TEAM_SLUG]` with your team identifier from the Vercel's team URL
+  - In the **Audience** field, you have two options:
+    - **Default**: Enter `https://vercel.com/[TEAM_SLUG]`, replacing `[TEAM_SLUG]` with your team identifier from the Vercel team URL
+    - **Recommended**: Enter `api://AzureADTokenExchange`. When using this value, you must also pass a matching `audience` in your code. See the [custom audience section](#custom-audience) below
   > **💡 Note:** Azure does not allow for partial claim conditions so you must specify the
   > `Subject` and `Audience` fields exactly. However, it is possible to create
   > mutliple federated credentials on the same managed identity to allow for the
@@ -56,7 +57,21 @@ To understand how Azure supports OIDC through Workload Identity Federation, cons
 
   You are now ready to connect to your Azure service from your project's code. Review the example below.
 
-## Example
+## Custom audience
+
+By default, the OIDC token's `aud` claim is set to `https://vercel.com/[TEAM_SLUG]`. Azure recommends using `api://AzureADTokenExchange` as the audience for workload identity federation. To use this value, pass the `audience` option to `getVercelOidcToken`:
+
+```ts
+import { getVercelOidcToken } from '@vercel/oidc';
+
+const token = await getVercelOidcToken({
+  audience: 'api://AzureADTokenExchange',
+});
+```
+
+When using a custom audience, set the **Audience** field in your federated credential to the same value (`api://AzureADTokenExchange`).
+
+## Examples
 
 In the following example, you create a [Vercel function](/docs/functions/quickstart#create-a-vercel-function) in a Vercel project where you have [defined Azure account environment variables](/docs/environment-variables#creating-environment-variables). The function will connect to Azure using OIDC and use a specific resource that you have allowed the Managed Identity to access.
 
@@ -116,6 +131,48 @@ const tokenCredentials = new ClientAssertionCredential(
   AZURE_TENANT_ID,
   AZURE_CLIENT_ID,
   getVercelOidcToken,
+);
+
+const cosmosClient = new cosmos.CosmosClient({
+  endpoint: COSMOS_DB_ENDPOINT,
+  aadCredentials: tokenCredentials,
+});
+
+const container = cosmosClient
+  .database(COSMOS_DB_ID)
+  .container(COSMOS_DB_CONTAINER_ID);
+
+export async function GET() {
+  const { resources } = await container.items
+    .query('SELECT * FROM my_table')
+    .fetchAll();
+
+  return Response.json(resources);
+}
+```
+
+### Query an Azure CosmosDB instance with custom audience
+
+This example uses Azure's recommended `api://AzureADTokenExchange` audience:
+
+```ts filename="/api/azure-cosmosdb/route.ts"
+import {
+  ClientAssertionCredential,
+  AuthenticationRequiredError,
+} from '@azure/identity';
+import * as cosmos from '@azure/cosmos';
+import { getVercelOidcToken } from '@vercel/oidc';
+
+const AZURE_TENANT_ID = process.env.AZURE_TENANT_ID!;
+const AZURE_CLIENT_ID = process.env.AZURE_CLIENT_ID!;
+const COSMOS_DB_ENDPOINT = process.env.COSMOS_DB_ENDPOINT!;
+const COSMOS_DB_ID = process.env.COSMOS_DB_ID!;
+const COSMOS_DB_CONTAINER_ID = process.env.COSMOS_DB_CONTAINER_ID!;
+
+const tokenCredentials = new ClientAssertionCredential(
+  AZURE_TENANT_ID,
+  AZURE_CLIENT_ID,
+  () => getVercelOidcToken({ audience: 'api://AzureADTokenExchange' }),
 );
 
 const cosmosClient = new cosmos.CosmosClient({

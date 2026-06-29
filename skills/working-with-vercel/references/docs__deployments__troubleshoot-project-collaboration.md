@@ -8,15 +8,15 @@ type: reference
 prerequisites:
   - /docs/deployments
 related:
+  - /docs/accounts
   - /docs/plans/hobby
   - /docs/plans/pro-plan
-  - /docs/accounts
   - /docs/git
 summary: Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-project-collaboration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a8b17823e93cbb8bd991c990894159e75a066517a4394b8d69cf95c81a8421f9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4a232d4eb1f887654e27d02a284b1e6b6657836fab7531f98b99f1df17dd5535"
 ---
 
 # Troubleshoot project collaboration
@@ -24,6 +24,15 @@ sha256: "a8b17823e93cbb8bd991c990894159e75a066517a4394b8d69cf95c81a8421f9"
 This guide will help you troubleshoot deployment failures related to project collaboration.
 
 For private repositories, a deployment can fail if Vercel cannot identify the commit author, or if your team requires manual approval before adding the committer. You can use the following checklist to make sure your Vercel team is properly configured:
+
+- Ensure contributors who push code have Vercel accounts linked to their git
+  provider and can be added to your team through
+  [collaboration settings](/docs/accounts#collaboration-settings).
+
+* For each team member, verify their Vercel account is connected to their git
+  provider.
+
+- Confirm bot commits are properly configured by the git provider.
 
 > **💡 Note:** Collaboration is free for public repositories.
 

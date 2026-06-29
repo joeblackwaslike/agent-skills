@@ -1,23 +1,23 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sap-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c173055a3f36b44c3a6eb7cd49a207b402e6d53799048e8b3ce1a5d2033dbaed"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f8cbf5da95162fabe541f3302416030f44d7d083e24d71e9b65acc97809efcca"
 ---
 
 # SAP AI Core Provider
 
-The AI SDK supports [SAP AI Core](https://help.sap.com/docs/ai-core) through two community providers:
+[jerome-benoit/sap-ai-provider](https://github.com/jerome-benoit/sap-ai-provider) is a community provider for SAP AI Core built on the official **@sap-ai-sdk/orchestration** and **@sap-ai-sdk/foundation-models** packages.
 
-- [jerome-benoit/sap-ai-provider](https://github.com/jerome-benoit/sap-ai-provider) - Language Model V3 for AI SDK 5.x & 6.x (recommended)
-- [jerome-benoit/sap-ai-provider-v2](https://github.com/jerome-benoit/sap-ai-provider-v2) - Language Model V2 for AI SDK 5.x
+Two npm packages are published from this repository:
 
-Both providers are built on the official **@sap-ai-sdk/orchestration** and **@sap-ai-sdk/foundation-models** packages, providing language model and embedding support through the familiar AI SDK interface.
+- `@jerome-benoit/sap-ai-provider` - Language Model V4 for AI SDK 5.x & 6.x (recommended)
+- `@jerome-benoit/sap-ai-provider-v2` - Language Model V2 for AI SDK 5.x
 
 ## Features
 
 Both providers offer:
 
-- **Dual API Support**: Choose between Orchestration API (with data masking, content filtering, document grounding, translation) or Foundation Models API (direct model access)
+- **Dual API Support**: Choose between Orchestration API (with data masking, content filtering, document grounding, translation) or Foundation Models API (`logprobs`, `seed`, `dataSources`)
 - **Tool calling** and **multi-modal input** (images)
 - **Streaming support** for real-time text generation
 - **Text embeddings** for RAG and semantic search
@@ -89,9 +89,13 @@ You can use the following optional settings to customize the SAP AI provider ins
 
   Specific deployment ID. If not provided, the SDK resolves deployment automatically.
 
-- **api** _string_
+- **api** _'orchestration' | 'foundation-models'_
 
-  API to use: `'orchestration'` (default) or `'foundation-models'`. Orchestration API supports data masking, content filtering, document grounding, and translation.
+  API to use. Defaults to `'orchestration'`. Can be overridden per model or per call via `providerOptions`.
+
+- **name** _string_
+
+  Provider name used as key in `providerOptions`. Defaults to `'sap-ai'`.
 
 - **defaultSettings** _object_
 
@@ -102,7 +106,7 @@ You can use the following optional settings to customize the SAP AI provider ins
 You can create models that call the SAP AI Core API using the provider instance. The first argument is the model id. Model naming follows SAP AI Core conventions with vendor prefixes:
 
 ```ts
-const model = sapai('gpt-4o');
+const model = sapai('gpt-4.1');
 const claudeModel = sapai('anthropic--claude-3.5-sonnet');
 const geminiModel = sapai('gemini-2.0-flash');
 ```
@@ -117,7 +121,7 @@ const geminiModel = sapai('gemini-2.0-flash');
 You can create models that call the SAP AI Core embeddings API using the `.embeddingModel()` factory method:
 
 ```ts
-const model = sapai.embeddingModel('text-embedding-ada-002');
+const model = sapai.embeddingModel('text-embedding-3-small');
 ```
 
 

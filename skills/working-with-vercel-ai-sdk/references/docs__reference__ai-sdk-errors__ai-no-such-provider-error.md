@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-provider-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "ffe33e1835a2db682e2cc0d1df6fa0f88e7e2a401c50cc9229821a2bcbfa8932"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "d685fc26f4c71fa1d42615d53db61d1d48e10c3190f8d4ccf06e9e598ebb35f9"
 ---
 
 # AI_NoSuchProviderError
@@ -53,6 +53,7 @@ if (NoSuchProviderError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

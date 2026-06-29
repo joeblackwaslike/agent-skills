@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/sonnet-3-7.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2ca6ba788d9f78aedee6918cca1f73b3d84485817c959e10f5a84136ddea5d8a"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "787155c14ddbb1c425b33bbea90a9f710682a0165afe678d931b422031fe1b66"
 ---
 
 # Get started with Claude 3.7 Sonnet
@@ -42,11 +42,11 @@ console.log(text); // text response
 The unified interface also means that you can easily switch between providers by changing just two lines of code. For example, to use Claude 3.7 Sonnet via Amazon Bedrock:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const { reasoning, text } = await generateText({
-  model: bedrock('anthropic.claude-3-7-sonnet-20250219-v1:0'),
+  model: amazonBedrock('anthropic.claude-3-7-sonnet-20250219-v1:0'),
   prompt: 'How many people will live in the world in 2040?',
 });
 ```
@@ -92,7 +92,13 @@ Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
-import { streamText, convertToModelMessages, type UIMessage } from 'ai';
+import {
+  streamText,
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+  type UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
@@ -107,15 +113,18 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse({
-    sendReasoning: true,
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      sendReasoning: true,
+    }),
   });
 }
 ```
 
 <Note>
   You can forward the model's reasoning tokens to the client with
-  `sendReasoning: true` in the `toUIMessageStreamResponse` method.
+  `sendReasoning: true` in the `toUIMessageStream` helper.
 </Note>
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
@@ -199,6 +208,7 @@ Claude 3.7 Sonnet opens new opportunities for reasoning-intensive AI application
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

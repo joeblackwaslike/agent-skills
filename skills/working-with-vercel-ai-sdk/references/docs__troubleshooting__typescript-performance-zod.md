@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/typescript-performance-zod.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f4b7ad880897753050363e9028cf1efc6e7badc1ba56709c3fb5ee47d95ea7dc"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "169a17f47fba74e8231ee8d2afb7a20940678f9e56803272bc85baa0383e7c19"
 ---
 
 # TypeScript performance issues with Zod and AI SDK 5
@@ -65,7 +65,7 @@ This resolves the TypeScript performance issues while allowing you to continue u
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

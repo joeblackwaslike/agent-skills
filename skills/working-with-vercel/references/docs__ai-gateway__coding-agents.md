@@ -3,7 +3,7 @@ title: Coding Agents
 product: vercel
 url: /docs/ai-gateway/coding-agents
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents"
-last_updated: 2026-05-28
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "87c49e4bdc20ff3e41d936eca95ba8f63af56f953d2b66201a836b0d2317dffe"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "82acbdc4e6beccc32eb11af72769d63bedba81e382d67621ad3750c1bcc45696"
 ---
 
 # Coding Agents
@@ -75,7 +75,7 @@ For full configuration options, see [Configure OpenAI Codex](/docs/ai-gateway/co
 
 ### OpenCode
 
-[OpenCode](https://github.com/opencode-ai/opencode) is an open-source, terminal-based AI coding assistant with native support. Connect directly from within the tool:
+[OpenCode](https://opencode.ai/) is an open-source, terminal-based AI coding assistant with native support. Connect directly from within the tool:
 
 ```bash
 opencode

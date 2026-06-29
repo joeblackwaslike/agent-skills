@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "209a0fe9b373bc178d29b6cfe8da43fd67087b1328f9355467ed3478b67e03f9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "47a29d8f02c684817a9d0ecd6794a8828f13ce65b6b6a5092622800dd7347fbc"
 ---
 
 # @vercel/blob
@@ -44,7 +44,7 @@ Vercel Blob works with any frontend framework. begin by installing the package:
 
 - ### Prepare your local project
   When you create the Blob store, Vercel adds one environment variable to the projects you selected:
-  - `BLOB_READ_WRITE_TOKEN`: a long-lived static read-write token. The SDK reads this by default. Use it for code that runs outside Vercel or for client uploads.
+  - `BLOB_READ_WRITE_TOKEN`: a long-lived static read-write token. Use it for code that runs outside Vercel or to generate client tokens for browser uploads.
   To use this environment variable locally, use the Vercel CLI to [pull the values into your local project](/docs/cli/env#exporting-development-environment-variables):
   ```bash
   vercel env pull

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/infer-ui-tools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f5a45400f3db29b12782d4a9d20809e8ba40717f1008b66b2e59890b4af11545"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c4da6f0fddee30371e042383591c3db449d9555d4b42c79645696d55a4c1b1d6"
 ---
 
 # InferUITools
@@ -105,6 +105,7 @@ type MyUITools = InferUITools<typeof tools>;
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -113,6 +114,7 @@ type MyUITools = InferUITools<typeof tools>;
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

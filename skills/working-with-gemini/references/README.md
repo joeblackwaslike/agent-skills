@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/README.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "6940f5925adc095c67261210796bc05c46d0eb425f62ac3fce609469624723b1"
+fetched_at: "2026-06-29T05:43:04.440Z"
+sha256: "4efad468387059f7b25f48220db3f0e38ae17c3425abbbe1e306d32b88c7e251"
 ---
 
 # Gemini API skills
@@ -53,8 +53,8 @@ You can browse and install skills using either the [Vercel skills CLI](https://s
 # Interactively browse and install skills.
 npx skills add google-gemini/gemini-skills --list
 
-# Install a specific skill (e.g., gemini-api-dev).
-npx skills add google-gemini/gemini-skills --skill gemini-api-dev --global
+# Install a specific skill (e.g., gemini-interactions-api).
+npx skills add google-gemini/gemini-skills --skill gemini-interactions-api
 ```
 
 ### Using [Context7 skills CLI](https://context7.com)
@@ -63,27 +63,10 @@ npx skills add google-gemini/gemini-skills --skill gemini-api-dev --global
 # Interactively browse and install skills.
 npx ctx7 skills install /google-gemini/gemini-skills
 
-# Install a specific skill (e.g., gemini-api-dev).
-npx ctx7 skills install /google-gemini/gemini-skills gemini-api-dev
+# Install a specific skill (e.g., gemini-interactions-api).
+npx ctx7 skills install /google-gemini/gemini-skills gemini-interactions-api
 ```
 
-## Gemini API docs MCP
-
-A public Model Context Protocol (MCP) server for the Gemini API is available at
-`https://gemini-api-docs-mcp.dev`. Connecting your coding agent to this server ensures that
-all queries have access to the latest APIs, code updates, and optimal configuration examples.
-
-Run the following command in your agent's terminal or project root to install
-the server:
-
-    npx add-mcp "https://gemini-api-docs-mcp.dev"
-
-This server adds a `search_docs` tool that your agent can use to
-retrieve real-time API definitions and integration patterns from the official
-Gemini API documentation.
-
-Note that the `gemini-api-dev` skill works with or without the MCP server, so
-we recommend installing them both.
 
 ## More info
 

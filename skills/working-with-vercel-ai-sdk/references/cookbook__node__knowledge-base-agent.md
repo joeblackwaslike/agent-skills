@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/knowledge-base-agent.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b83855ff724d01786b1aa20f76fb76c6f3c9033a6be83f5ecbbeb7980b421153"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e331f316005244bacdc6977c990e311fbf5d6d14c278c77bbd12566a8e8ef490"
 ---
 
 In this recipe, you'll learn how to build an AI agent that can interact with a knowledge base using [Upstash Search](https://upstash.com/docs/search). The agent will be able to both retrieve information from the knowledge base and add new resources to it, leveraging AI SDK tools.
@@ -113,7 +113,7 @@ Navigate to the Upstash Console and check the data browser of your Search databa
 Now let's create an agent that can interact with this knowledge base. Create a new file called `agent.ts`:
 
 ```ts filename="agent.ts"
-import { tool, stepCountIs, generateText, generateId } from 'ai';
+import { tool, isStepCount, generateText, generateId } from 'ai';
 import { z } from 'zod';
 import { Search } from '@upstash/search';
 
@@ -136,7 +136,7 @@ async function main(prompt: string) {
   const { text } = await generateText({
     model: 'openai/gpt-4o',
     prompt,
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools: {
       addResource: tool({
         description:
@@ -212,7 +212,7 @@ async function main(prompt: string) {
       }),
     },
     // log out intermediate steps
-    onStepFinish: ({ toolResults }) => {
+    onStepEnd: ({ toolResults }) => {
       if (toolResults.length > 0) {
         console.log('Tool results:');
         console.dir(toolResults, { depth: null });

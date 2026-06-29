@@ -3,7 +3,7 @@ title: Using OpenFeature with Vercel Flags
 product: vercel
 url: /docs/flags/vercel-flags/sdks/openfeature
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature"
-last_updated: 2026-02-11
+last_updated: 2026-06-11
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/sdks
@@ -15,19 +15,19 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c76277ccd0ae909f8365cd7e529e1dda6fec90de6602b44e20eb005f9849222e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d318b9092e865df725e1a3d99c796f69c5c971209e8d9a92d4e72af58abad4f7"
 ---
 
 # Using OpenFeature with Vercel Flags
 
 [OpenFeature](https://openfeature.dev/) is a vendor-neutral, open standard for feature flags. Vercel Flags provides an OpenFeature provider so you can use the standard OpenFeature API while Vercel manages your flags.
 
-The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers creating a flag in the dashboard, pulling environment variables, and evaluating a flag with OpenFeature. This page goes deeper into initialization options, typed evaluation methods, context passing, and debugging.
+The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers creating a flag in the dashboard, pulling local OpenID Connect (OIDC) credentials, and evaluating a flag with OpenFeature. This page goes deeper into initialization options, typed evaluation methods, context passing, and debugging.
 
 ## Setup
 
-OpenFeature requires you to register a provider before you can evaluate flags. In a real application you'll want to do this once and reuse the client everywhere. Create a helper that handles initialization with retry logic:
+OpenFeature requires you to register a provider before you can evaluate flags. The `flagsClient` used below authenticates with Vercel OIDC by default. In a real application you'll want to do this once and reuse the client everywhere. Create a helper that handles initialization with retry logic:
 
 ```ts filename="lib/openfeature.ts"
 import { OpenFeature } from '@openfeature/server-sdk';

@@ -3,7 +3,7 @@ title: JS SDK Reference
 product: vercel
 url: /docs/sandbox/sdk-reference
 canonical_url: "https://vercel.com/docs/sandbox/sdk-reference"
-last_updated: 2026-05-29
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "dfe9e7d81267cffe193658b9b5a509c341b0c9f3db41ec73fbab2552aecab504"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4ae8fb50e7a607988cf68633ce5723f0dbcc4b3ca1205e6f1c1438df81244179"
 ---
 
 # JS SDK Reference

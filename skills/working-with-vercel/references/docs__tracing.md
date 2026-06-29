@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a11b2199829d72fdd2e8f9d465db1dd3b9d097eb8a0e1297ca6194e3082e2706"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "362b79bda129485949cc5ef4778b270ac75351217d147af0498de3d4933eee43"
 ---
 
 # Tracing
@@ -65,11 +65,11 @@ Once you have enabled session tracing, you can visualize traces in your dashboar
 3. Use the tracing icon  in the filter bar to filter to traces. You can filter traces using [all the same filters available](/docs/runtime-logs#log-filters) in the **Logs** section in the sidebar of the dashboard. To view traces for requests to your browser, press the user icon next to the Traces icon.
 4. Find the request you want to view traces for and click the **Trace** button at the bottom of the request details panel. This will open the traces for that request:
 
-   ![Image](https://vercel.com/front/docs/observability/trace-panel-2-light.png?lightbox)
+![Image](https://vercel.com/front/docs/observability/trace-timeline-view-light.png?lightbox)
 
 ### Anatomy of a trace
 
-When you view a trace in the dashboard, you see a timeline visualization of how a request flows through your application and Vercel's infrastructure. Each horizontal bar in the visualization is a **span**, which represents a single unit of work with a start time, end time, and duration.
+When you view a trace in the dashboard, you see a visualization of how a request flows through your application and Vercel's infrastructure. Each horizontal bar in the visualization is a **span**, which represents a single unit of work with a start time, end time, and duration.
 
 When session tracing is enabled, your traces display the following types of spans:
 

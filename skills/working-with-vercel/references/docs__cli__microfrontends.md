@@ -3,7 +3,7 @@ title: vercel microfrontends
 product: vercel
 url: /docs/cli/microfrontends
 canonical_url: "https://vercel.com/docs/cli/microfrontends"
-last_updated: 2026-04-01
+last_updated: 2026-06-04
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects, and pull configuration for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/microfrontends.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b0053aa06842d5736e75f6e64f9c7e815ff5ea57db6075bae11a85e1f25d2bd9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a46dbfa0650ac0ccbbe3ac295682df1bc89c367a19585b3af64223265e9e7f0b"
 ---
 
 # vercel microfrontends

@@ -3,7 +3,7 @@ title: Limits and Pricing for Speed Insights
 product: vercel
 url: /docs/speed-insights/limits-and-pricing
 canonical_url: "https://vercel.com/docs/speed-insights/limits-and-pricing"
-last_updated: 2026-03-30
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/speed-insights
@@ -16,8 +16,8 @@ related:
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "321c770431c0bb36006ad4448a49df1cd24a2411cc560b53a4d38ffcb2fafd93"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a0f5d40ee0a9b019a0f2df788c1e481efa40302fc5bc8a89a0bbd3d02cb7b7e6"
 ---
 
 # Limits and Pricing for Speed Insights

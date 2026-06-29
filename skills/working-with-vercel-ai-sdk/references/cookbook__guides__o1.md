@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/o1.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5050854ff1de7d7c49f5b848101726fad0158bb463da6e34734f2ad07e239a38"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "4708ef1ef83bcafce8849baa4759d1dad9f6e038c1b124e6300c37a41433d7aa"
 ---
 
 # Get started with OpenAI o1
@@ -183,7 +183,13 @@ Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK,
 
 ```tsx filename="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 // Allow responses up to 5 minutes
 export const maxDuration = 300;
@@ -196,7 +202,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -247,6 +255,7 @@ Ready to get started? Here's how you can dive in:
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

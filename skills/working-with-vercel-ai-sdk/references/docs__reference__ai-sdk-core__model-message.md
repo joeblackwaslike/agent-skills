@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/model-message.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e456dcc15ff6d0c3142ba060d7b7c9e002fb56450f4f30cd9853f518c92b33cc"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "0a61811d6dcff2d90a392fbc4062b5559e82d04bb3af59a7b70377759f99b42b"
 ---
 
 # `ModelMessage`
@@ -27,11 +27,10 @@ type SystemModelMessage = {
 You can access the Zod schema for `SystemModelMessage` with the `systemModelMessageSchema` export.
 
 <Note>
-  Use the top-level `system` property instead of a system message for system
-  instructions. AI SDK functions allow system messages in `prompt` or
-  `messages` by default with a warning. Set `allowSystemInMessages` to `true`
-  to suppress the warning, or `false` to reject them. System messages in
-  `prompt` or `messages` can create a prompt injection attack risk.
+  Use the top-level `instructions` property instead of a system message for
+  system instructions. AI SDK functions reject system messages in `prompt` or
+  `messages` by default unless `allowSystemInMessages` is set to `true`. Opting
+  in can create a prompt injection risk if users can inject system messages.
 </Note>
 
 ### `UserModelMessage`
@@ -59,7 +58,7 @@ type AssistantModelMessage = {
   content: AssistantContent;
 };
 
-type AssistantContent = string | Array<TextPart | ToolCallPart>;
+type AssistantContent = string | Array<TextPart | CustomPart | ToolCallPart>;
 ```
 
 You can access the Zod schema for `AssistantModelMessage` with the `assistantModelMessageSchema` export.
@@ -95,11 +94,19 @@ export interface TextPart {
 }
 ```
 
-### `ImagePart`
+### `ImagePart` <Note type="warning">Deprecated</Note>
+
+<Note type="warning">
+  `ImagePart` is deprecated. Use [`FilePart`](#filepart) with `mediaType:
+  'image'` (or a more specific `image/*` subtype) instead.
+</Note>
 
 Represents an image part in a user message.
 
 ```typescript
+/**
+ * @deprecated Use `FilePart` with `mediaType: 'image'` instead.
+ */
 export interface ImagePart {
   type: 'image';
 
@@ -107,8 +114,9 @@ export interface ImagePart {
    * Image data. Can either be:
    * - data: a base64-encoded string, a Uint8Array, an ArrayBuffer, or a Buffer
    * - URL: a URL that points to the image
+   * - ProviderReference: a provider reference from `uploadFile`
    */
-  image: DataContent | URL;
+  image: DataContent | URL | ProviderReference;
 
   /**
    * Optional IANA media type of the image.
@@ -127,11 +135,10 @@ export interface FilePart {
   type: 'file';
 
   /**
-   * File data. Can either be:
-   * - data: a base64-encoded string, a Uint8Array, an ArrayBuffer, or a Buffer
-   * - URL: a URL that points to the file
+   * File data. Use the tagged `FileData` shape.
+   * Bare `DataContent`, `URL`, and `ProviderReference` shorthands are also supported.
    */
-  data: DataContent | URL;
+  data: FileData | DataContent | URL | ProviderReference;
 
   /**
    * Optional filename of the file.
@@ -139,9 +146,40 @@ export interface FilePart {
   filename?: string;
 
   /**
-   * IANA media type of the file.
+   * Either a full IANA media type (`type/subtype`, e.g. `image/png`) or just
+   * the top-level IANA segment (e.g. `image`, `audio`, `video`, `text`).
    */
   mediaType: string;
+}
+
+export type FileData =
+  // Raw bytes as a base64 string, Uint8Array, ArrayBuffer, or Buffer.
+  | { type: 'data'; data: DataContent }
+  // A URL that points to the file.
+  | { type: 'url'; url: URL }
+  // A provider reference from `uploadFile`.
+  | { type: 'reference'; reference: ProviderReference }
+  // Inline text content.
+  | { type: 'text'; text: string };
+```
+
+### `CustomPart`
+
+Represents a provider-specific custom content part. The `kind` field identifies the content type in the format `{provider}.{provider-type}`.
+
+```typescript
+export interface CustomPart {
+  type: 'custom';
+
+  /**
+   * The kind of custom content, in the format `{provider}.{provider-type}`.
+   */
+  kind: `${string}.${string}`;
+
+  /**
+   * Additional provider-specific metadata.
+   */
+  providerOptions?: ProviderOptions;
 }
 ```
 
@@ -191,7 +229,7 @@ export interface ToolResultPart {
   /**
    * Result of the tool call. This is a JSON-serializable object.
    */
-  output: LanguageModelV3ToolResultOutput;
+  output: LanguageModelV4ToolResultOutput;
 
   /**
   Additional provider-specific metadata. They are passed through
@@ -202,7 +240,7 @@ export interface ToolResultPart {
 }
 ```
 
-### `LanguageModelV3ToolResultOutput`
+### `LanguageModelV4ToolResultOutput`
 
 ```ts
 /**
@@ -321,11 +359,21 @@ IANA media type.
             url: string;
 
             /**
+             * IANA media type of the file.
+             * Used by providers to determine how to handle the file (e.g. image vs document).
+             * Optional; if omitted, the SDK will attempt to infer it from the URL file extension.
+             */
+            mediaType?: string;
+
+            /**
              * Provider-specific options.
              */
             providerOptions?: ProviderOptions;
           }
         | {
+            /**
+             * @deprecated Use file-reference instead.
+             */
             type: 'file-id';
 
             /**
@@ -344,7 +392,22 @@ IANA media type.
             providerOptions?: ProviderOptions;
           }
         | {
+            type: 'file-reference';
+
             /**
+             * Provider-specific references for the file.
+             * The key is the provider name, e.g. 'openai' or 'anthropic'.
+             */
+            providerReference: ProviderReference;
+
+            /**
+             * Provider-specific options.
+             */
+            providerOptions?: ProviderOptions;
+          }
+        | {
+            /**
+             * @deprecated Use file-data instead.
              * Images that are referenced using base64 encoded data.
              */
             type: 'image-data';
@@ -367,6 +430,7 @@ IANA media type.
           }
         | {
             /**
+             * @deprecated Use file-url instead.
              * Images that are referenced using a URL.
              */
             type: 'image-url';
@@ -383,6 +447,7 @@ IANA media type.
           }
         | {
             /**
+             * @deprecated Use file-reference instead.
              * Images that are referenced using a provider file id.
              */
             type: 'image-file-id';
@@ -396,6 +461,24 @@ IANA media type.
              * name, e.g. 'openai' or 'anthropic'.
              */
             fileId: string | Record<string, string>;
+
+            /**
+             * Provider-specific options.
+             */
+            providerOptions?: ProviderOptions;
+          }
+        | {
+            /**
+             * @deprecated Use file-reference instead.
+             * Images that are referenced using a provider reference.
+             */
+            type: 'image-file-reference';
+
+            /**
+             * Provider-specific references for the image file.
+             * The key is the provider name, e.g. 'openai' or 'anthropic'.
+             */
+            providerReference: ProviderReference;
 
             /**
              * Provider-specific options.
@@ -430,6 +513,8 @@ IANA media type.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -438,27 +523,31 @@ IANA media type.
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

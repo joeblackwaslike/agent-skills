@@ -3,20 +3,21 @@ title: SDKs
 product: vercel
 url: /docs/flags/vercel-flags/sdks
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/sdks"
-last_updated: 2026-02-11
+last_updated: 2026-06-08
 type: conceptual
 prerequisites:
   - /docs/flags/vercel-flags
   - /docs/flags
 related:
+  - /docs/flags/vercel-flags/dashboard/sdk-keys
   - /docs/flags/vercel-flags/sdks/flags-sdk
   - /docs/flags/vercel-flags/sdks/openfeature
   - /docs/flags/vercel-flags/sdks/core
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "495d6723498342e960cd53d7955cb6f9de88d40871b47f5041e1dadd0079e478"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "85d410ae3f7d03072cb75db9b5ccbab49b5f31b2cae6672e39988c726b2368ec"
 ---
 
 # SDKs
@@ -45,20 +46,19 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 
 ## How the SDKs relate to each other
 
-The Flags SDK and OpenFeature are both provider-agnostic — they don't evaluate flags themselves, but instead delegate to a provider. The `@vercel/flags-core` library is that provider for Vercel Flags.
+The Flags SDK and OpenFeature are both provider-agnostic. They don't evaluate flags themselves, but instead delegate to a provider. The `@vercel/flags-core` library is that provider for Vercel Flags.
 
 The difference between the Flags SDK and OpenFeature is scope. The Flags SDK is designed for specific frameworks like Next.js and SvelteKit, so it can offer deeper integrations like Flags Explorer and precomputation. OpenFeature is a broader standard that works across languages and frameworks, but leaves those framework-specific capabilities to you.
 
 Both have adapters that connect them to `@vercel/flags-core`: `@flags-sdk/vercel` for the Flags SDK, and `@vercel/flags-core/openfeature` for OpenFeature.
 
-## Environment variables
+## Authentication and environment variables
 
-All integration methods use the same environment variables:
+All integration methods authenticate with Vercel OpenID Connect (OIDC) by default. Vercel deployments receive the OIDC token automatically. For local development, run `vercel link` and `vercel env pull` so the SDK can authenticate with the linked project.
 
-- **`FLAGS`**: Connection string that identifies your Vercel Flags project. Vercel automatically sets this with different values for Production, Preview, and Development environments.
-- **`FLAGS_SECRET`**: Secret key used by Flags Explorer for secure overrides. Required if you want to use Flags Explorer.
+For manual credentials, such as reading flags from another project or running outside Vercel, create an [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) and store it in an environment variable such as `FLAGS`.
 
-When you create your first flag in the Vercel Dashboard, these variables are automatically added to your project.
+Set the separate `FLAGS_SECRET` environment variable when you use Flags Explorer for secure overrides.
 
 ## Next steps
 

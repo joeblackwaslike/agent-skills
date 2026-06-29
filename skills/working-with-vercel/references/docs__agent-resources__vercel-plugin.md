@@ -3,7 +3,7 @@ title: Vercel Plugin for AI Coding Agents
 product: vercel
 url: /docs/agent-resources/vercel-plugin
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-plugin"
-last_updated: 2026-06-01
+last_updated: 2026-06-11
 type: reference
 prerequisites:
   - /docs/agent-resources
@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "455d04b128d580dd7b27fbf13c60e4d210b777c1bcbabd74cd2758a662d4fad0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "cff11ec36658eea6b878c763768a732c110d6db8373ea3837005019be2ce43eb"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -51,7 +51,7 @@ After installation, session context is injected automatically only for empty dir
 | Component               | Description                                                                                                                                    |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Ecosystem graph**     | A relational knowledge graph covering every Vercel product, library, CLI, API, and service, with decision matrices and cross-product workflows |
-| **[25 skills](#available-skills)**           | Deep-dive guidance for specific Vercel products, libraries, and workflows                                                                      |
+| **[28 skills](#available-skills)**           | Deep-dive guidance for specific Vercel products, libraries, and workflows                                                                      |
 | **3 specialist agents** | Purpose-built agents for deployment, performance optimization, and AI architecture                                                             |
 | **5 slash commands**    | Quick actions for deploying, managing environment variables, bootstrapping projects, and more                                                  |
 
@@ -78,7 +78,7 @@ The skills remain available on demand, and the plugin includes the injection eng
 
 ## Available skills
 
-The plugin includes 25 skills covering the Vercel ecosystem:
+The plugin includes 28 skills covering the Vercel ecosystem:
 
 | Skill                   | Covers                                                                                                  |
 | ----------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -91,6 +91,7 @@ The plugin includes 25 skills covering the Vercel ecosystem:
 | `env-vars`              | Environment variable management, including `.env` files, `vercel env`, and OIDC tokens                 |
 | `knowledge-update`      | Knowledge update guidance for the plugin                                                                 |
 | `marketplace`           | Integration discovery and installation with `vercel install`, auto-provisioned environment variables, and unified billing |
+| `microfrontends`        | Microfrontends on Vercel, including path routing, project composition, local development, and troubleshooting |
 | `next-cache-components` | Next.js 16 Cache Components, including PPR, `use cache`, cacheLife, cacheTag, and updateTag            |
 | `next-forge`            | The production SaaS monorepo starter with Turborepo, Clerk, Prisma or Neon, Stripe, and shadcn/ui      |
 | `next-upgrade`          | Next.js upgrades, codemods, migration guides, and dependency updates                                    |
@@ -102,6 +103,8 @@ The plugin includes 25 skills covering the Vercel ecosystem:
 | `turbopack`             | The Next.js bundler, including configuration, HMR, and Turbopack versus Webpack guidance               |
 | `vercel-agent`          | AI-powered code review, incident investigation, SDK installation, and pull request analysis             |
 | `vercel-cli`            | Vercel CLI commands for deploy, env, dev, domains, cache management, MCP integration, and Marketplace provisioning with `vercel install` |
+| `vercel-connect`        | Vercel Connect guidance for scoped OAuth tokens, third-party services, MCP servers, Slack, GitHub, and Eve agent connections |
+| `vercel-firewall`       | Vercel Firewall guidance for bot protection, WAF rules, attack challenge mode, and security configuration |
 | `vercel-functions`      | Vercel Functions, including Serverless, Edge, Fluid Compute, streaming, and Cron Jobs                  |
 | `vercel-sandbox`        | Ephemeral Firecracker microVMs for running untrusted or AI-generated code safely                        |
 | `vercel-storage`        | Blob, Edge Config, Neon Postgres, Upstash Redis, one-command Marketplace provisioning with `vercel install`, and migration from sunset packages |

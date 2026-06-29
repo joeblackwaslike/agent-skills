@@ -1,14 +1,14 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/custom-stream-format.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "758154ec9457b993e127dd8d94daf7b71075eda0f21b750144c23c6a3cefbd68"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c066c042af1bd5ba3d3a5e66eafcb133b434d23c31b8a962799e03381f3ae313"
 ---
 
 # Streaming with Custom Format
 
 Create a custom stream to control the streaming format and structure of tool calls instead of using the built-in AI SDK data stream format (`toUIMessageStream()`).
 
-`fullStream` (on `StreamTextResult`) gives you direct access to all model events. You can transform, filter, and structure these events into your own streaming format. This gives you the benefits of the AI SDK's unified provider interface without prescribing how you consume the stream.
+`stream` (on `StreamTextResult`) gives you direct access to all model events. You can transform, filter, and structure these events into your own streaming format. This gives you the benefits of the AI SDK's unified provider interface without prescribing how you consume the stream.
 
 You can:
 
@@ -27,7 +27,7 @@ Create a route handler that calls a model and then streams the responses in a cu
 
 ```tsx filename="app/api/stream/route.ts"
 import { tools } from '@/ai/tools'; // your tools
-import { stepCountIs, streamText } from 'ai';
+import { isStepCount, streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
 export type StreamEvent =
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
     prompt,
     model: __MODEL__,
     tools,
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
   });
 
   const transformStream = new TransformStream({
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return new Response(result.fullStream.pipeThrough(transformStream), {
+  return new Response(result.stream.pipeThrough(transformStream), {
     headers: { 'Content-Type': 'text/event-stream' },
   });
 }

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/braintrust.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2d02cffb121c7fb6ccc873521283316fbadf879f4aeef781e3ced0e6d0cc5224"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b846b2fb3a7cafa658d8703d54afb6103c610ea0895e7291a678d42d21404169"
 ---
 
 # Braintrust Observability
@@ -16,11 +16,14 @@ Braintrust natively supports OpenTelemetry and works out of the box with the AI 
 
 If you are using Next.js, use the Braintrust exporter with `@vercel/otel`:
 
-```typescript
+```typescript filename="instrumentation"
+import { registerTelemetry } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { registerOTel } from '@vercel/otel';
 import { BraintrustExporter } from 'braintrust';
 
-// In your instrumentation.ts file
+registerTelemetry(new LegacyOpenTelemetry());
+
 export function register() {
   registerOTel({
     serviceName: 'my-braintrust-app',
@@ -34,18 +37,18 @@ export function register() {
 
 Traced LLM calls will appear under the Braintrust project or experiment provided in the `parent` field.
 
-When you call the AI SDK, make sure to set `experimental_telemetry`:
+Once the integration is registered, telemetry is captured automatically. You can pass additional metadata via the `context` option:
 
 ```typescript
+import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
+
 const result = await generateText({
   model: openai('gpt-4o-mini'),
   prompt: 'What is 2 + 2?',
-  experimental_telemetry: {
-    isEnabled: true,
-    metadata: {
-      query: 'weather',
-      location: 'San Francisco',
-    },
+  context: {
+    query: 'weather',
+    location: 'San Francisco',
   },
 });
 ```
@@ -63,7 +66,6 @@ export async function POST(req: Request) {
   const result = await streamText({
     model: openai('gpt-4o-mini'),
     prompt,
-    experimental_telemetry: { isEnabled: true },
   });
 
   return result.toDataStreamResponse();
@@ -79,14 +81,15 @@ If you are using Node.js without a framework, you must configure the `NodeSDK` d
 First, install the necessary dependencies:
 
 ```bash
-npm install ai @ai-sdk/openai braintrust @opentelemetry/sdk-node @opentelemetry/sdk-trace-base zod
+npm install ai @ai-sdk/openai @ai-sdk/otel braintrust @opentelemetry/sdk-node @opentelemetry/sdk-trace-base zod
 ```
 
 Then, set up the OpenTelemetry SDK:
 
 ```typescript
 import { NodeSDK } from '@opentelemetry/sdk-node';
-import { generateText, tool } from 'ai';
+import { registerTelemetry, generateText, tool, isStepCount } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 import { BraintrustSpanProcessor } from 'braintrust';
@@ -101,6 +104,7 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
+registerTelemetry(new LegacyOpenTelemetry());
 
 async function main() {
   const result = await generateText({
@@ -125,15 +129,14 @@ async function main() {
           `Here is the tracking information for ${orderId}`,
       }),
     },
-    experimental_telemetry: {
-      isEnabled: true,
-      functionId: 'my-awesome-function',
-      metadata: {
-        something: 'custom',
-        someOtherThing: 'other-value',
-      },
+    context: {
+      something: 'custom',
+      someOtherThing: 'other-value',
     },
-    maxSteps: 10,
+    telemetry: {
+      functionId: 'my-awesome-function',
+    },
+    stopWhen: isStepCount(10),
   });
 
   await sdk.shutdown();
@@ -169,6 +172,7 @@ After you log your application in Braintrust, explore other workflows like:
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

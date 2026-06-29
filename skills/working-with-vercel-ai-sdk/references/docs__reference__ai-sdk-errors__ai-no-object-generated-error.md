@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-object-generated-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "1ecb70e3cd8485aa1e28b3985bb3d651ec595322d537e708e6e438bbcc7910b2"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "888eab36ede653f21db6a30efc7b30f0ac98375472b966dc00e305f9a1f6eb47"
 ---
 
 # AI_NoObjectGeneratedError
@@ -68,6 +68,7 @@ try {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

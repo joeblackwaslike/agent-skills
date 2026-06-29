@@ -3,7 +3,7 @@ title: Vercel Connect Concepts
 product: vercel
 url: /docs/connect/concepts
 canonical_url: "https://vercel.com/docs/connect/concepts"
-last_updated: 2026-06-03
+last_updated: 2026-06-09
 type: conceptual
 prerequisites:
   - /docs/connect
@@ -16,8 +16,8 @@ related:
 summary: "Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and authentication."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "47247c1f1707d5ac85442c7b35cbcbd913da4d12a53592616eb90e92d500c72c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "79328ed0c1921e8073abf65977e15c12d1a52a6791c7568090474dc483d7c8a1"
 ---
 
 # Vercel Connect Concepts

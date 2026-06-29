@@ -3,18 +3,18 @@ title: Reranking
 product: vercel
 url: /docs/ai-gateway/modalities/reranking
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/reranking"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
 related:
   []
-summary: Learn about reranking on Vercel.
+summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "ec7b3820a7b39a0854bb698851d37f8eb4b3b32f3fc41b613a0c7ea29ca69bb6"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "137b4b28d5fe2618a9a3e9d9c7fefbcdc12ee2cf4d195aee4d2729300662e46a"
 ---
 
 # Reranking

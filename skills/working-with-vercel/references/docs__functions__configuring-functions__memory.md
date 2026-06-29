@@ -3,7 +3,7 @@ title: Configuring Memory and CPU for Vercel Functions
 product: vercel
 url: /docs/functions/configuring-functions/memory
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/memory"
-last_updated: 2026-02-27
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/functions/configuring-functions
@@ -15,8 +15,8 @@ related:
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "303d4fbce40a512a268ca3e4c276b1191d0001d7acbf72ae4910d68b11145330"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3a120b3ff302db6beb4b6ea5a3136d0ee7b320a594f4dc0e50975db63dc09275"
 ---
 
 # Configuring Memory and CPU for Vercel Functions

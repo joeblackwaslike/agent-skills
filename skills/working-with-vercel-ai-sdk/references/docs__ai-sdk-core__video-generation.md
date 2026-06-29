@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1efec92d0386f7fa1d0aa2a86fc90f67f95da9a425b1d620d9f1c5f5f2f76676"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "689f32dfdd6092d9e9de6d6d460667d23eb55890822fe4c0fd5728f6d8ed190d"
 ---
 
 # Video Generation
@@ -92,6 +92,21 @@ const { video } = await generateVideo({
   model: __VIDEO_MODEL__,
   prompt: 'A hummingbird in slow motion',
   fps: 24,
+});
+```
+
+### Audio Generation
+
+Some video models can generate audio alongside the video. Use the `generateAudio` option to control this:
+
+```tsx highlight={"7"}
+import { experimental_generateVideo as generateVideo } from 'ai';
+__PROVIDER_IMPORT__;
+
+const { video } = await generateVideo({
+  model: __VIDEO_MODEL__,
+  prompt: 'A jazz band playing in a cozy club',
+  generateAudio: true,
 });
 ```
 
@@ -348,20 +363,20 @@ try {
 
 ## Video Models
 
-| Provider                                                                | Model                       | Features                               |
-| ----------------------------------------------------------------------- | --------------------------- | -------------------------------------- |
-| [FAL](/providers/ai-sdk-providers/fal#video-models)                     | `luma-dream-machine/ray-2`  | Text-to-video, image-to-video          |
-| [FAL](/providers/ai-sdk-providers/fal#video-models)                     | `minimax-video`             | Text-to-video                          |
-| [Google](/providers/ai-sdk-providers/google-generative-ai#video-models) | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.1-generate-001`      | Text-to-video, audio generation        |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.1-fast-generate-001` | Text-to-video, audio generation        |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.0-generate-001`      | Text-to-video, audio generation        |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.0-fast-generate-001` | Text-to-video, audio generation        |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call |
-| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-t2v`            | Text-to-video                          |
-| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-i2v`            | Image-to-video                         |
-| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-motion-control` | Motion control                         |
-| [Replicate](/providers/ai-sdk-providers/replicate#video-models)         | `minimax/video-01`          | Text-to-video                          |
+| Provider                                                                | Model                       | Features                                               |
+| ----------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------ |
+| [FAL](/providers/ai-sdk-providers/fal#video-models)                     | `luma-dream-machine/ray-2`  | Text-to-video, image-to-video                          |
+| [FAL](/providers/ai-sdk-providers/fal#video-models)                     | `minimax-video`             | Text-to-video                                          |
+| [Google](/providers/ai-sdk-providers/google#video-models)               | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call                 |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.1-generate-001`      | Text-to-video, audio generation                        |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.1-fast-generate-001` | Text-to-video, audio generation                        |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.0-generate-001`      | Text-to-video, audio generation                        |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.0-fast-generate-001` | Text-to-video, audio generation                        |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call                 |
+| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-t2v`            | Text-to-video                                          |
+| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-i2v`            | Image-to-video                                         |
+| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-motion-control` | Motion control                                         |
+| [Replicate](/providers/ai-sdk-providers/replicate#video-models)         | `minimax/video-01`          | Text-to-video                                          |
 | [xAI](/providers/ai-sdk-providers/xai#video-models)                     | `grok-imagine-video`        | Text-to-video, image-to-video, editing, extension, R2V |
 
 Above are a small subset of the video models supported by the AI SDK providers. For more, see the respective provider documentation.
@@ -374,21 +389,27 @@ Above are a small subset of the video models supported by the AI SDK providers. 
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

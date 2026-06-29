@@ -1,10 +1,10 @@
 ---
 source: "https://cursor.com/docs/cli/reference/output-format.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "87622f82c25faca7979fbcb0587b5298b7b08379ea5261e10a5cbb13c1b2912e"
+fetched_at: "2026-06-29T05:42:13.025Z"
+sha256: "add17086b1b46485b73e24e995a5f69f16bcdb0f5f9f94f5f86cadb506063d69"
 ---
 
-# Output Format
+# Output format
 
 The Cursor Agent CLI provides multiple output formats with the `--output-format` option when combined with `--print`. These formats include structured formats for programmatic use (`json`, `stream-json`) and a simplified text format for human-readable output (`text`).
 
@@ -232,7 +232,7 @@ The command to move this branch onto main is `git rebase --onto main HEAD~3`.
 
 Only the final assistant message (after the last tool call) is output, with no tool call summaries or intermediate text.
 
-## Implementation notes
+## Notes
 
 - Each event is emitted as a single line terminated by `\n`
 - `thinking` events are suppressed in print mode and will not appear in any output format

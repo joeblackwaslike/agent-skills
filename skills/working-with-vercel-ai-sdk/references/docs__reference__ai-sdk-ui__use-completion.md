@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-completion.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "db2699fb99cbd25c23491f00f8b6d833dbf03084b04632eda3ae809a5407dc92"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a8df65f52c69e12afd47fb89be538c7c06b58b725f3b5d425b6d51abe0360031"
 ---
 
 # `useCompletion()`
@@ -191,6 +191,7 @@ Allows you to create text completion based capabilities for your application. It
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -199,6 +200,7 @@ Allows you to create text completion based capabilities for your application. It
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

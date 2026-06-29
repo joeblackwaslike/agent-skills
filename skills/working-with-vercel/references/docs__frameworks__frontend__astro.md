@@ -3,7 +3,7 @@ title: Astro on Vercel
 product: vercel
 url: /docs/frameworks/frontend/astro
 canonical_url: "https://vercel.com/docs/frameworks/frontend/astro"
-last_updated: 2026-03-17
+last_updated: 2026-06-15
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Astro"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/astro.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5d380571656f52f998400a876407583b05ee49b528481c531180e916eabef28f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "939d6b648cdf4456d76e8981eb7fe086d2e9096d2ed840caf4df82ab6afc1bc9"
 ---
 
 # Astro on Vercel

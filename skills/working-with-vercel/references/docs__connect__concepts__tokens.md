@@ -3,7 +3,7 @@ title: Tokens
 product: vercel
 url: /docs/connect/concepts/tokens
 canonical_url: "https://vercel.com/docs/connect/concepts/tokens"
-last_updated: 2026-06-03
+last_updated: 2026-06-09
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -16,8 +16,8 @@ related:
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8fb0f8b5ca6f9d5111a8406c22da540adc167f1f173f3fae4298a56af4fed505"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2411df04d9a766eb06d1ee6fe58fb73004a08f9bcf60e20bf15f3b3078c05cca"
 ---
 
 # Tokens

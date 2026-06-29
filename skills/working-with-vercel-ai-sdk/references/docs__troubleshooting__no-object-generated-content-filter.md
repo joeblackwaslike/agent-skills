@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/no-object-generated-content-filter.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d7999fc78712129ed8e70520d244e77cc6e2756824329d14253fe2d981a85e89"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "eaa59b072f642493b0df1fa4c9e495fa18e79368a4fb349322b7b451ba42dae2"
 ---
 
 # Object generation failed with OpenAI
@@ -95,7 +95,7 @@ console.log(result.output);
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

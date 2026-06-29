@@ -3,7 +3,7 @@ title: Snapshots
 product: vercel
 url: /docs/sandbox/concepts/snapshots
 canonical_url: "https://vercel.com/docs/sandbox/concepts/snapshots"
-last_updated: 2026-05-29
+last_updated: 2026-06-10
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "28a2e7a0084373cfbdb4941fe8822494531899ffbf10ef41beff3839a19c4265"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "8cfc09eb41902c2fa28403abab83b34f02ecf5f8ab3e134e9f0f0f52b0314743"
 ---
 
 # Snapshots

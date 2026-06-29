@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/model-is-not-assignable-to-type.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0c602f986c7ae62e4e4266d42d4c3774f17080cb4d0b20b842a764fd17142680"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1a3a7dfdadaaf1abd5c854244386adcc3bed6d26c37a32755b0cdf5bdad2bad9"
 ---
 
 # Model is not assignable to type "LanguageModelV1"
@@ -10,7 +10,7 @@ sha256: "0c602f986c7ae62e4e4266d42d4c3774f17080cb4d0b20b842a764fd17142680"
 
 I have updated the AI SDK and now I get the following error: `Type 'SomeModel' is not assignable to type 'LanguageModelV1'.`
 
-<Note>Similar errors can occur with `EmbeddingModelV3` as well.</Note>
+<Note>Similar errors can occur with `EmbeddingModelV4` as well.</Note>
 
 ## Background
 
@@ -40,7 +40,7 @@ Update your provider packages and the AI SDK to the latest version.
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

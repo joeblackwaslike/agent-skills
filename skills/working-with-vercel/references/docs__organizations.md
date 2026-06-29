@@ -3,7 +3,7 @@ title: Organizations
 product: vercel
 url: /docs/organizations
 canonical_url: "https://vercel.com/docs/organizations"
-last_updated: 2026-06-03
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/organizations.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "93533bcbba6b7729ce62f51841a733d01dfd6ed16dfaff51d8806e099de18f0e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a296f44c81d2d629d63b804616c679167976da83c0f49c16848e78c0c2f24194"
 ---
 
 # Organizations

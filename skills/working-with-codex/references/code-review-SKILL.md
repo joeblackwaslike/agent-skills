@@ -2,11 +2,11 @@
 name: code-review
 description: Run a final code review on a pull request
 source: "https://raw.githubusercontent.com/openai/codex/main/.codex/skills/code-review/SKILL.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "430f6588651da6c95647ab33a00711ed5e323310220ebbea7689805051933f25"
+fetched_at: "2026-06-29T05:41:54.371Z"
+sha256: "9446d3939a620b337685a393b4fdc3b456c5d330e920615cc530342355131e2a"
 ---
 
-Use subagents to review code using all code-review-* skills in this repository other than this orchestrator. One subagent per skill. Pass full skill path to subagents. Use xhigh reasoning.
+Use subagents to review code using all code-review-* skills other than this orchestrator. One subagent per skill. Pass full skill path to subagents. Use xhigh reasoning.
 
 You must return every single issue from every subagent. You can return an unlimited number of findings.
 Use raw Markdown to report findings.

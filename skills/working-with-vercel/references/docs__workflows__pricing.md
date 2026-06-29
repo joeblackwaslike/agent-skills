@@ -3,7 +3,7 @@ title: Workflow Pricing and Limits
 product: workflows
 url: /docs/workflows/pricing
 canonical_url: "https://vercel.com/docs/workflows/pricing"
-last_updated: 2026-06-02
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/workflows
@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "11eb4e88d542ec03ba6070ceda5b59bd5ef3bf5dee15a164e67e97e31e611974"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "404909621b9e8cfd19f9da874e12083e85990b7ce7e5d5cfbb7bccbc82ed8954"
 ---
 
 # Workflow Pricing and Limits

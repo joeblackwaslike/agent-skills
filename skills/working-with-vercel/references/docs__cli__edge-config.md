@@ -3,7 +3,7 @@ title: vercel edge-config
 product: vercel
 url: /docs/cli/edge-config
 canonical_url: "https://vercel.com/docs/cli/edge-config"
-last_updated: 2026-05-29
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -15,13 +15,13 @@ related:
 summary: "Manage Edge Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items and read tokens."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/edge-config.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d5d2368205b6d721e235f1b3f5b963374ba11bec3bb291fb090faab4e1ee765e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "8260aeaa5ec00c7069571d3e28eae898c8680c0adc3b4b306d4d8537fd956c1d"
 ---
 
 # vercel edge-config
 
-The `vercel edge-config` command manages [Edge Config](/docs/edge-config) stores from the CLI. It mirrors the dashboard API surface: create stores, inspect metadata, patch items in batch, list items, and manage read tokens. For an overview of Edge Config and how to read from it at runtime, see [Vercel Edge Config](/docs/edge-config).
+The `vercel edge-config` command manages [Edge Config](/docs/edge-config) stores from the CLI. It mirrors the dashboard API surface: create stores, inspect metadata, patch items in batch, list items, manage read tokens, and restore backups. For an overview of Edge Config and how to read from it at runtime, see [Vercel Edge Config](/docs/edge-config).
 
 ## Usage
 
@@ -197,6 +197,38 @@ vercel edge-config tokens flags --remove tok_abc123 --yes
 | `-y, --yes` | Boolean | Skip the confirmation prompt |
 | `-F, --format <FORMAT>` | String | Output format (`json`) |
 
+### backups
+
+Lists backups for an Edge Config store, fetches a single backup version with `--backup-version`, or restores items from a backup with `--restore`.
+
+```bash filename="terminal"
+vercel edge-config backups flags
+vercel edge-config backups flags --backup-version backup_version_abc123 --format json
+vercel edge-config backups flags --restore backup_version_abc123 --yes
+```
+
+*List, inspect, or restore backups for a store.*
+
+> **⚠️ Warning:** Restoring a backup updates live Edge Config items immediately. Use `--yes` to
+> skip the confirmation prompt in non-interactive environments.
+
+#### Arguments
+
+| Argument | Required | Description |
+| --- | --- | --- |
+| `id-or-slug` | Yes | Store ID or slug |
+
+#### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--backup-version <VERSION_ID>` | String | Fetch a single backup version by ID |
+| `--restore <VERSION_ID>` | String | Restore items from a backup version. Cannot be used with `--backup-version` |
+| `--limit <NUMBER>` | Number | Maximum number of backups to list (`0` to `50`) |
+| `--next <CURSOR>` | String | Pagination cursor from a previous backup list response |
+| `-y, --yes` | Boolean | Skip the confirmation prompt when restoring |
+| `-F, --format <FORMAT>` | String | Output format (`json`) |
+
 ## Examples
 
 ### Create a store and seed initial items
@@ -227,6 +259,14 @@ vercel edge-config tokens flags --add "Production read"
 
 *Create a labeled read token. The CLI prints the plaintext token (and its ID)
 once; capture it before it scrolls away.*
+
+### Restore a backup
+
+```bash filename="terminal"
+vercel edge-config backups flags --restore backup_version_abc123 --yes
+```
+
+*Restore \`flags\` from a backup version and skip the confirmation prompt.*
 
 The Edge Config SDK reads from an `EDGE_CONFIG` environment variable that contains a full **connection string**, not just the token. The connection string format is:
 

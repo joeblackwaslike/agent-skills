@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/opencode-sdk.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f074bc368b6f231ce4ad93a1d87b33093330d5cbf29eab11619d3e6403a7cee1"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b2aeb53addbd3a29e80ba3e6d12ce897e6c2e151377876079629420510caa0c5"
 ---
 
 # OpenCode Provider
@@ -163,7 +163,7 @@ The client manager automatically cleans up on process exit (SIGINT, SIGTERM).
 
 ## Requirements
 
-- Node.js 18 or higher
+- Node.js 22 or higher
 - OpenCode CLI installed (`npm install -g opencode`)
 - Provider credentials configured in OpenCode (Anthropic, OpenAI, or Google API keys)
 

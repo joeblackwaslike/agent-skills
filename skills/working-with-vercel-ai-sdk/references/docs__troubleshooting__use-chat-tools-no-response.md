@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/use-chat-tools-no-response.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "28dec8ae4add18ace5dec2944e961edb9b78479cb8d3b677fb46ddf483df5159"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c0d4030d766c028845ea7dfc3c020cbdef7abf45aa46252d6b9ccc2038ceaa02"
 ---
 
 # `useChat` No Response
@@ -15,9 +15,14 @@ When I log the incoming messages on the server, I can see the tool call and the 
 
 To resolve this issue, convert the incoming messages to the `ModelMessage` format using the [`convertToModelMessages`](/docs/reference/ai-sdk-ui/convert-to-model-messages) function.
 
-```tsx highlight="9"
+```tsx highlight="15"
 import { openai } from '@ai-sdk/openai';
-import { convertToModelMessages, streamText } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
@@ -28,7 +33,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -51,7 +58,7 @@ export async function POST(req: Request) {
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

@@ -3,7 +3,7 @@ title: Vercel Functions
 product: vercel
 url: /docs/functions
 canonical_url: "https://vercel.com/docs/functions"
-last_updated: 2026-03-19
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Run server-side code on Vercel without managing a server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "a2062709d8a4faea0d5600a1b25906132ab83b602a420368d70fe1d730c2583c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "f4f03ab55e88ec9b6a11759194c7805ec28141067f5651ce3817a18e05137351"
 ---
 
 # Vercel Functions

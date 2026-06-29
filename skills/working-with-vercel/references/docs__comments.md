@@ -3,7 +3,7 @@ title: Comments Overview
 product: vercel
 url: /docs/comments
 canonical_url: "https://vercel.com/docs/comments"
-last_updated: 2026-05-15
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments in this overview.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6ff6dd4ab568529c83a64a0c487f7b904f43eb7696b1ff3d43109402306057d0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9855798af9d5304af4ee85865026b86dd4d6a53730bad1b5ded3b1331c46fda4"
 ---
 
 # Comments Overview

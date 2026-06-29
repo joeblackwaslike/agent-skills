@@ -1,31 +1,45 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/laminar.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "dd9e1f34cff8f1b4135a2e00b820528ad0bca68814d6e24e9e89b32275fafea7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "2980b5e669ea5671a773679306166a99503e79eafe968adca22a71bfdbce46ab"
 ---
 
 # Laminar observability
 
-[Laminar](https://laminar.sh) is the open-source platform for tracing and evaluating AI applications.
+[Laminar](https://laminar.sh) is an [open-source](https://github.com/lmnr-ai/lmnr), Otel-native observability platform purpose-built for AI agents.
 
 Laminar features:
 
-- [Tracing compatible with AI SDK and more](https://docs.lmnr.ai/tracing/introduction),
-- [Evaluations](https://docs.lmnr.ai/evaluations/introduction),
-- [Browser agent observability](https://docs.lmnr.ai/tracing/browser-agent-observability)
+- [Tracing compatible with AI SDK and more](https://laminar.sh/docs/tracing/introduction),
+- [Signals and alerts about your agent behavior](https://laminar.sh/docs/signals/introduction),
+- [Evaluations](https://laminar.sh/docs/evaluations/introduction),
+- [Agent Debugger](https://laminar.sh/docs/debugger/introduction)
 
 <Note>
   A version of this guide is available in [Laminar's
-  docs](https://docs.lmnr.ai/tracing/integrations/vercel-ai-sdk).
+  docs](https://laminar.sh/docs/tracing/integrations/vercel-ai-sdk).
 </Note>
 
 ## Setup
 
-Laminar's tracing is based on OpenTelemetry. It supports AI SDK [telemetry](/docs/ai-sdk-core/telemetry).
+You can use your coding agent to install Laminar or install it manually.
 
-### Installation
+### Setup with your coding agent
 
-To start with Laminar's tracing, first [install](https://docs.lmnr.ai/installation) the `@lmnr-ai/lmnr` package.
+Copy the prompt below and paste it to your coding agent, for it to integrate fully automatically.
+
+```markdown
+1. Run `npx lmnr-cli setup` at the project root to get started with Laminar. This command will authenticate the user, save a new project API key to .env, and install the Laminar skill.
+2. Instrument this project with Laminar using the installed skill or the docs:
+   https://laminar.sh/docs/tracing/integrations/vercel-ai-sdk
+3. Run a traced path inside your application.
+4. Verify instrumentation:
+   `lmnr-cli sql query "SELECT * FROM traces ORDER BY start_time DESC LIMIT 1" --json`
+```
+
+### Manual setup
+
+To setup Laminar manually, first install the `@lmnr-ai/lmnr` package.
 
 <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
   <Tab>
@@ -47,28 +61,26 @@ To start with Laminar's tracing, first [install](https://docs.lmnr.ai/installati
 
 Then, either sign up on [Laminar](https://laminar.sh) or self-host an instance ([github](https://github.com/lmnr-ai/lmnr)) and create a new project.
 
-In the project settings, create and copy the API key.
+Use `npx lmnr-cli@latest setup`. This will:
 
-In your .env
-
-```bash
-LMNR_PROJECT_API_KEY=...
-```
+- authenticate your device with Laminar,
+- create a new project API key and save it to your .env as `LMNR_PROJECT_API_KEY`,
+- install Laminar skill that your coding agent will use to instrument your agent using Laminar SDK
 
 ## Next.js
 
 ### Initialize tracing
 
-In Next.js, Laminar initialization should be done in `instrumentation.{ts,js}`:
+In Next.js, Laminar initialization and the AI SDK telemetry integration should both be done in `instrumentation.{ts,js}`:
 
 ```javascript
 export async function register() {
   // prevent this from running in the edge runtime
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { Laminar } = await import('@lmnr-ai/lmnr');
-    Laminar.initialize({
-      projectApiKey: process.env.LMNR_PROJECT_API_KEY,
-    });
+    const { registerTelemetry } = await import('ai');
+    const { LaminarAiSdkTelemetry } = await import('@lmnr-ai/lmnr');
+
+    registerTelemetry(new LaminarAiSdkTelemetry());
   }
 }
 ```
@@ -89,20 +101,15 @@ This is because Laminar depends on OpenTelemetry, which uses some Node.js-specif
 
 ### Tracing AI SDK calls
 
-Then, when you call AI SDK functions in any of your API routes, add the Laminar tracer to the `experimental_telemetry` option.
+Once the integration is registered, telemetry is captured automatically on every AI SDK call:
 
-```javascript highlight="3,8-11"
+```javascript
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
-import { getTracer } from '@lmnr-ai/lmnr';
 
 const { text } = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-5.4-mini'),
   prompt: 'What is Laminar flow?',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: getTracer(),
-  },
 });
 ```
 
@@ -128,7 +135,7 @@ module.exports = {
 };
 ```
 
-For more information, see Laminar's [Next.js guide](https://docs.lmnr.ai/tracing/nextjs) and Next.js [instrumentation docs](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation). You can also learn how to enable all traces for Next.js in the docs.
+For more information, see Laminar's [AI SDK Integration guide](https://laminar.sh/docs/tracing/integrations/vercel-ai-sdk) and Next.js [instrumentation docs](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation). You can also learn how to enable all traces for Next.js in the docs.
 
 ### Usage with `@vercel/otel`
 
@@ -141,13 +148,19 @@ Laminar can live alongside `@vercel/otel` and trace AI SDK calls. The default La
 import { registerOTel } from '@vercel/otel';
 
 export async function register() {
-  registerOTel('my-service-name');
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { Laminar } = await import('@lmnr-ai/lmnr');
-    // Make sure to initialize Laminar **after** `@registerOTel`
-    Laminar.initialize({
-      projectApiKey: process.env.LMNR_PROJECT_API_KEY,
+    const { registerTelemetry } = await import('ai');
+    const { initializeLaminarInstrumentations, LaminarAiSdkTelemetry } =
+      await import('@lmnr-ai/lmnr');
+
+    // Next.js telemetry
+    registerOTel({
+      serviceName: 'my-service',
+      instrumentations: initializeLaminarInstrumentations(),
     });
+
+    // Laminar AI SDK telemetry
+    registerTelemetry(new LaminarAiSdkTelemetry());
   }
 }
 ```
@@ -166,17 +179,16 @@ This will ensure that
 ```javascript
 export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
+    const { registerTelemetry } = await import('ai');
     const Sentry = await import('@sentry/node');
-    const { Laminar } = await import('@lmnr-ai/lmnr');
+    const { LaminarAiSdkTelemetry } = await import('@lmnr-ai/lmnr');
 
     Sentry.init({
       dsn: process.env.SENTRY_DSN,
     });
 
     // Make sure to initialize Laminar **after** `Sentry.init`
-    Laminar.initialize({
-      projectApiKey: process.env.LMNR_PROJECT_API_KEY,
-    });
+    registerTelemetry(new LaminarAiSdkTelemetry());
   }
 }
 ```
@@ -188,31 +200,27 @@ export async function register() {
 Then, initialize tracing in your application:
 
 ```javascript
-import { Laminar } from '@lmnr-ai/lmnr';
+import { registerTelemetry } from 'ai';
+import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
 
-Laminar.initialize();
+registerTelemetry(new LaminarAiSdkTelemetry());
 ```
 
 This must be done once in your application, as early as possible, but _after_ other tracing libraries (e.g. `@sentry/node`) are initialized.
 
-Read more in Laminar [docs](https://docs.lmnr.ai/tracing/introduction).
+Read more in Laminar [docs](https://laminar.sh/docs/tracing/introduction).
 
 ### Tracing AI SDK calls
 
-Then, when you call AI SDK functions in any of your API routes, add the Laminar tracer to the `experimental_telemetry` option.
+Once the integration is registered, telemetry is captured automatically on every AI SDK call:
 
-```javascript highlight="3,8-11"
+```javascript
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
-import { getTracer } from '@lmnr-ai/lmnr';
 
 const { text } = await generateText({
-  model: openai('gpt-4o-mini'),
+  model: openai('gpt-5.4-mini'),
   prompt: 'What is Laminar flow?',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: getTracer(),
-  },
 });
 ```
 
@@ -231,16 +239,15 @@ This will create spans for `ai.generateText`. Laminar collects and displays the 
 Laminar can work with `@sentry/node` to trace AI SDK calls. Make sure to initialize Laminar **after** `Sentry.init`:
 
 ```javascript
+const { LaminarAiSdkTelemetry } = await import('@lmnr-ai/lmnr');
 const Sentry = await import('@sentry/node');
-const { Laminar } = await import('@lmnr-ai/lmnr');
+const { registerTelemetry } = await import('ai');
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
 });
 
-Laminar.initialize({
-  projectApiKey: process.env.LMNR_PROJECT_API_KEY,
-});
+registerTelemetry(new LaminarAiSdkTelemetry());
 ```
 
 This will ensure that
@@ -252,19 +259,61 @@ The two libraries allow for additional advanced configuration, but the default s
 
 ## Additional configuration
 
+### Laminar options
+
+`LaminarAiSdkTelemetry` can pass options to Laminar.initialize(). For self-hosting users,
+
+```javascript
+import { registerTelemetry } from 'ai';
+import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
+
+registerTelemetry(new LaminarAiSdkTelemetry({
+  laminarOptions: {
+    projectApiKey: process.env.LMNR_PROJECT_API_KEY,
+    baseUrl: "http://localhost",
+    httpPort: 8000,
+    grpcPort: 8001,
+  },
+})));
+```
+
+### Do not record inputs or outputs
+
+By default, Laminar integration records all inputs and outputs, but you can disable these in the constructor options.
+
+```javascript
+import { registerTelemetry } from 'ai';
+import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
+
+registerTelemetry(new LaminarAiSdkTelemetry({
+  recordInputs: false, // default true
+  recordOutputs: false, // default true
+})));
+```
+
+### Adding a span for every agent step
+
+AI SDK telemetry integrations emit step spans for every agent step. By default, Laminar ignores these spans. You can
+configure this in the constructor options.
+
+```javascript
+import { registerTelemetry } from 'ai';
+import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
+
+registerTelemetry(new LaminarAiSdkTelemetry({
+  createStepSpan: true, // default false
+})));
+```
+
 ### Span name
 
 If you want to override the default span name, you can set the `functionId` inside the `telemetry` option.
 
 ```javascript
-import { getTracer } from '@lmnr-ai/lmnr';
-
 const { text } = await generateText({
-  model: openai('gpt-4.1-nano'),
+  model: openai('gpt-5.4-mini'),
   prompt: `Write a poem about Laminar flow.`,
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: getTracer(),
+  telemetry: {
     functionId: 'poem-writer',
   },
 });
@@ -275,7 +324,7 @@ const { text } = await generateText({
 If you want to trace not just the AI SDK calls, but also other functions in your application, you can use Laminar's `observe` wrapper.
 
 ```javascript highlight="3"
-import { getTracer, observe } from '@lmnr-ai/lmnr';
+import { observe } from '@lmnr-ai/lmnr';
 
 const result = await observe({ name: 'my-function' }, async () => {
   // ... some work
@@ -295,7 +344,7 @@ const result = await observe(
   { name: 'poem writer' },
   async (topic: string, mood: string) => {
     const { text } = await generateText({
-      model: openai('gpt-4.1-nano'),
+      model: openai('gpt-5.4-mini'),
       prompt: `Write a poem about ${topic} in ${mood} mood.`,
     });
     return text;
@@ -310,14 +359,10 @@ const result = await observe(
 In Laminar, metadata is set on the trace level. Metadata contains key-value pairs and can be used to filter traces.
 
 ```javascript
-import { getTracer } from '@lmnr-ai/lmnr';
-
 const { text } = await generateText({
-  model: openai('gpt-4.1-nano'),
+  model: openai('gpt-5.4-mini'),
   prompt: `Write a poem about Laminar flow.`,
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: getTracer(),
+  telemetry: {
     metadata: {
       'my-key': 'my-value',
       'another-key': 'another-value',
@@ -326,23 +371,19 @@ const { text } = await generateText({
 });
 ```
 
-This is converted to Laminar's [metadata](https://docs.lmnr.ai/tracing/structure/metadata) and stored in the trace.
+This is converted to Laminar's [metadata](https://laminar.sh/docs/tracing/structure/metadata) and stored in the trace.
 
 ### Tags
 
-One of the reserved metadata keys is `tags`. It can be used to add [tags](https://docs.lmnr.ai/tracing/structure/tags) to the span.
+One of the reserved metadata keys is `tags`. It can be used to add [tags](https://laminar.sh/docs/tracing/structure/tags) to the span.
 
 Tags can subsequently be used to filter traces in Laminar.
 
 ```javascript
-import { getTracer } from '@lmnr-ai/lmnr';
-
 const { text } = await generateText({
-  model: openai('gpt-4.1-nano'),
+  model: openai('gpt-5.4-mini'),
   prompt: `Write a poem about Laminar flow.`,
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: getTracer(),
+  telemetry: {
     metadata: {
       tags: ['fallback-model', 'api-handler'],
     },
@@ -352,18 +393,14 @@ const { text } = await generateText({
 
 ### Session ID and User ID
 
-Traces in Laminar can be grouped into [sessions](https://docs.lmnr.ai/tracing/structure/session) or by [user ID](https://docs.lmnr.ai/tracing/structure/user-id). These are also
+Traces in Laminar can be grouped into [sessions](https://laminar.sh/docs/tracing/structure/sessions) or by [user ID](https://laminar.sh/docs/tracing/structure/user-id). These are also
 reserved metadata keys.
 
 ```javascript
-import { getTracer } from '@lmnr-ai/lmnr';
-
 const { text } = await generateText({
-  model: openai('gpt-4.1-nano'),
+  model: openai('gpt-5.4-mini'),
   prompt: `Write a poem about Laminar flow.`,
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: getTracer(),
+  telemetry: {
     metadata: {
       sessionId: 'session-123',
       userId: 'user-123',
@@ -389,6 +426,7 @@ const { text } = await generateText({
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

@@ -3,7 +3,7 @@ title: AI SDK
 product: ai-sdk
 url: /docs/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-sdk"
-last_updated: 2026-01-03
+last_updated: 2026-06-17
 type: integration
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "8e7335a36074f733834d0223eb61e8882c041db23cfc623124cad2d5d93eccd4"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "93403d934f1011378f389862ce9fb036631cc2180165a58bdc9bde8496125c4b"
 ---
 
 # AI SDK

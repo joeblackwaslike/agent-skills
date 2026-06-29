@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/react-maximum-update-depth-exceeded.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "489a6d69cc1b403c682d1ffe9380c8220c0bbd243ce114844ffe76026439108d"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "424cd995d7c2c303ad820fd395fd12dce5436c943167d52a00b58c12cd27d8dc"
 ---
 
 # React error "Maximum update depth exceeded"
@@ -58,7 +58,7 @@ const { completion, ... } = useCompletion({
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

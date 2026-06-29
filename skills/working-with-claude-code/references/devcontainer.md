@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/devcontainer.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "f806dba4afa929c1654a728a1b3276431eec3abcdde7b538db5caed215a7b82a"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "158c774564d5c3f8c0ac3002cf626d1a608d43af80086720bcef06952a88b43b"
 ---
 
 > ## Documentation Index
@@ -14,12 +14,7 @@ sha256: "f806dba4afa929c1654a728a1b3276431eec3abcdde7b538db5caed215a7b82a"
 
 A [development container](https://containers.dev/), or dev container, lets you define an identical, isolated environment that every engineer on your team can run. With Claude Code installed in that container, commands Claude runs execute inside it rather than on the host machine, while edits to your project files appear in your local repository as you work.
 
-This page covers [installing Claude Code in a dev container](#add-claude-code-to-your-dev-container) and the configuration topics that follow. Each topic is self-contained, so jump to the ones that match what you need to set up:
-
-* [Persist authentication and settings across rebuilds](#persist-authentication-and-settings-across-rebuilds)
-* [Enforce organization policy](#enforce-organization-policy)
-* [Restrict network egress](#restrict-network-egress)
-* [Run without permission prompts](#run-without-permission-prompts)
+This page covers [installing Claude Code in a dev container](#add-claude-code-to-your-dev-container), then a set of self-contained configuration topics: persisting authentication across rebuilds, enforcing organization policy, restricting network egress, and running without permission prompts. Read the ones that match your setup.
 
 <Warning>
   While the dev container provides substantial protections, no system is completely immune to all attacks.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "67aeb2387087435c3e19773e343622944e4117334836556760318553154564f8"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "55b5598341ecc9110f4ebccd5134d6b17f770c3393396b604b8a8f2943250caa"
 ---
 
 # Amazon Bedrock Provider
@@ -131,7 +131,7 @@ _Usage:_
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 
-const bedrock = createAmazonBedrock({
+const amazonBedrock = createAmazonBedrock({
   region: 'us-east-1',
   credentialProvider: fromNodeProviderChain(),
 });
@@ -139,10 +139,10 @@ const bedrock = createAmazonBedrock({
 
 ## Provider Instance
 
-You can import the default provider instance `bedrock` from `@ai-sdk/amazon-bedrock`:
+You can import the default provider instance `amazonBedrock` from `@ai-sdk/amazon-bedrock`:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 ```
 
 If you need a customized setup, you can import `createAmazonBedrock` from `@ai-sdk/amazon-bedrock` and create a provider instance with your settings:
@@ -150,7 +150,7 @@ If you need a customized setup, you can import `createAmazonBedrock` from `@ai-s
 ```ts
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
 
-const bedrock = createAmazonBedrock({
+const amazonBedrock = createAmazonBedrock({
   region: 'us-east-1',
   accessKeyId: 'xxxxxxxxx',
   secretAccessKey: 'xxxxxxxxx',
@@ -161,8 +161,8 @@ const bedrock = createAmazonBedrock({
 <Note>
   Omitted options use the environment variables below. When **both**
   `accessKeyId` and `secretAccessKey` are strings, SigV4 uses a **`sessionToken`
-  only if you pass one** - not `AWS_SESSION_TOKEN` from the environment - so static
-  keys are not mixed with workload tokens (e.g. EKS IRSA).
+  only if you pass one** - not `AWS_SESSION_TOKEN` from the environment - so
+  static keys are not mixed with workload tokens (e.g. EKS IRSA).
 </Note>
 
 You can use the following optional settings to customize the Amazon Bedrock provider instance:
@@ -221,14 +221,14 @@ You can create models that call the Bedrock API using the provider instance.
 The first argument is the model id, e.g. `meta.llama3-70b-instruct-v1:0`.
 
 ```ts
-const model = bedrock('meta.llama3-70b-instruct-v1:0');
+const model = amazonBedrock('meta.llama3-70b-instruct-v1:0');
 ```
 
 Amazon Bedrock models also support some model specific provider options that are not part of the [standard call settings](/docs/ai-sdk-core/settings).
 You can pass them in the `providerOptions` argument:
 
 ```ts
-const model = bedrock('anthropic.claude-3-sonnet-20240229-v1:0');
+const model = amazonBedrock('anthropic.claude-3-sonnet-20240229-v1:0');
 
 await generateText({
   model,
@@ -245,11 +245,11 @@ Documentation for additional settings based on the selected model can be found w
 You can use Amazon Bedrock language models to generate text with the `generateText` function:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: bedrock('meta.llama3-70b-instruct-v1:0'),
+  model: amazonBedrock('meta.llama3-70b-instruct-v1:0'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -267,11 +267,11 @@ Amazon Bedrock language models can also be used in the `streamText` function
 The Amazon Bedrock provider supports file inputs, e.g. PDF files.
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: bedrock('anthropic.claude-3-haiku-20240307-v1:0'),
+  model: amazonBedrock('anthropic.claude-3-haiku-20240307-v1:0'),
   messages: [
     {
       role: 'user',
@@ -293,10 +293,10 @@ const result = await generateText({
 You can use the `bedrock` provider options to utilize [Amazon Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/):
 
 ```ts
-import { type AmazonBedrockLanguageModelOptions } from '@ai-sdk/amazon-bedrock';
+import { type AmazonBedrockLanguageModelChatOptions } from '@ai-sdk/amazon-bedrock';
 
 const result = await generateText({
-  model: bedrock('anthropic.claude-3-sonnet-20240229-v1:0'),
+  model: amazonBedrock('anthropic.claude-3-sonnet-20240229-v1:0'),
   prompt: 'Write a story about space exploration.',
   providerOptions: {
     bedrock: {
@@ -306,7 +306,7 @@ const result = await generateText({
         trace: 'enabled' as const,
         streamProcessingMode: 'async',
       },
-    } satisfies AmazonBedrockLanguageModelOptions,
+    } satisfies AmazonBedrockLanguageModelChatOptions,
   },
 });
 ```
@@ -329,13 +329,13 @@ Amazon Bedrock supports citations for document-based inputs across compatible mo
 - Models can cite specific parts of documents you provide, making it easier to trace information back to its source (Not Supported Yet)
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 import fs from 'fs';
 
 const result = await generateText({
-  model: bedrock('apac.anthropic.claude-sonnet-4-20250514-v1:0'),
+  model: amazonBedrock('apac.anthropic.claude-sonnet-4-20250514-v1:0'),
   output: Output.object({
     schema: z.object({
       summary: z.string().describe('Summary of the PDF document'),
@@ -403,14 +403,14 @@ Cache usage information is returned in the `providerMetadata` object. See exampl
 </Note>
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const cyberpunkAnalysis =
   '... literary analysis of cyberpunk themes and concepts ...';
 
 const result = await generateText({
-  model: bedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
+  model: amazonBedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
   messages: [
     {
       role: 'system',
@@ -439,14 +439,14 @@ console.log(result.providerMetadata?.bedrock?.usage);
 Cache points also work with streaming responses:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { streamText } from 'ai';
 
 const cyberpunkAnalysis =
   '... literary analysis of cyberpunk themes and concepts ...';
 
 const result = streamText({
-  model: bedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
+  model: amazonBedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
   messages: [
     {
       role: 'assistant',
@@ -503,19 +503,19 @@ Amazon Bedrock supports model creator-specific reasoning features:
 
 ```ts
 import {
-  bedrock,
-  type AmazonBedrockLanguageModelOptions,
+  amazonBedrock,
+  type AmazonBedrockLanguageModelChatOptions,
 } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 // Anthropic example
 const anthropicResult = await generateText({
-  model: bedrock('us.anthropic.claude-sonnet-4-5-20250929-v1:0'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-4-5-20250929-v1:0'),
   prompt: 'How many people will live in the world in 2040?',
   providerOptions: {
     bedrock: {
       reasoningConfig: { type: 'enabled', budgetTokens: 1024 },
-    } satisfies AmazonBedrockLanguageModelOptions,
+    } satisfies AmazonBedrockLanguageModelChatOptions,
   },
 });
 
@@ -524,12 +524,12 @@ console.log(anthropicResult.text); // text response
 
 // Nova 2 example
 const amazonResult = await generateText({
-  model: bedrock('us.amazon.nova-2-lite-v1:0'),
+  model: amazonBedrock('us.amazon.nova-2-lite-v1:0'),
   prompt: 'How many people will live in the world in 2040?',
   providerOptions: {
     bedrock: {
       reasoningConfig: { type: 'enabled', maxReasoningEffort: 'medium' },
-    } satisfies AmazonBedrockLanguageModelOptions,
+    } satisfies AmazonBedrockLanguageModelChatOptions,
   },
 });
 
@@ -546,18 +546,18 @@ Amazon Bedrock supports selecting an inference service tier per request via the 
 
 ```ts
 import {
-  bedrock,
-  type AmazonBedrockLanguageModelOptions,
+  amazonBedrock,
+  type AmazonBedrockLanguageModelChatOptions,
 } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: bedrock('us.anthropic.claude-sonnet-4-20250514-v1:0'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-4-20250514-v1:0'),
   prompt: 'Summarize this support ticket backlog.',
   providerOptions: {
     bedrock: {
       serviceTier: 'priority',
-    } satisfies AmazonBedrockLanguageModelOptions,
+    } satisfies AmazonBedrockLanguageModelChatOptions,
   },
 });
 ```
@@ -577,18 +577,18 @@ Claude Sonnet 4 models on Amazon Bedrock support an extended context window of u
 
 ```ts
 import {
-  bedrock,
-  type AmazonBedrockLanguageModelOptions,
+  amazonBedrock,
+  type AmazonBedrockLanguageModelChatOptions,
 } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: bedrock('us.anthropic.claude-sonnet-4-20250514-v1:0'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-4-20250514-v1:0'),
   prompt: 'analyze this large document...',
   providerOptions: {
     bedrock: {
       anthropicBeta: ['context-1m-2025-08-07'],
-    } satisfies AmazonBedrockLanguageModelOptions,
+    } satisfies AmazonBedrockLanguageModelChatOptions,
   },
 });
 ```
@@ -613,7 +613,7 @@ They are available via the `tools` property of the provider instance.
 The Bash Tool allows running bash commands. Here's how to create and use it:
 
 ```ts
-const bashTool = bedrock.tools.bash_20241022({
+const bashTool = amazonBedrock.tools.bash_20241022({
   execute: async ({ command, restart }) => {
     // Implement your bash command execution logic here
     // Return the result of the command execution
@@ -633,7 +633,7 @@ The Text Editor Tool provides functionality for viewing and editing text files.
 **For Claude 4 models (Opus & Sonnet):**
 
 ```ts
-const textEditorTool = bedrock.tools.textEditor_20250429({
+const textEditorTool = amazonBedrock.tools.textEditor_20250429({
   execute: async ({
     command,
     path,
@@ -653,7 +653,7 @@ const textEditorTool = bedrock.tools.textEditor_20250429({
 **For Claude 3.5 Sonnet and earlier models:**
 
 ```ts
-const textEditorTool = bedrock.tools.textEditor_20241022({
+const textEditorTool = amazonBedrock.tools.textEditor_20241022({
   execute: async ({
     command,
     path,
@@ -689,7 +689,7 @@ When using the Text Editor Tool, make sure to name the key in the tools object c
 ```ts
 // For Claude 4 models
 const response = await generateText({
-  model: bedrock('us.anthropic.claude-sonnet-4-20250514-v1:0'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-4-20250514-v1:0'),
   prompt:
     "Create a new file called example.txt, write 'Hello World' to it, and run 'cat example.txt' in the terminal",
   tools: {
@@ -699,7 +699,7 @@ const response = await generateText({
 
 // For Claude 3.5 Sonnet and earlier
 const response = await generateText({
-  model: bedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
+  model: amazonBedrock('anthropic.claude-3-5-sonnet-20241022-v2:0'),
   prompt:
     "Create a new file called example.txt, write 'Hello World' to it, and run 'cat example.txt' in the terminal",
   tools: {
@@ -713,7 +713,7 @@ const response = await generateText({
 The Computer Tool enables control of keyboard and mouse actions on a computer:
 
 ```ts
-const computerTool = bedrock.tools.computer_20241022({
+const computerTool = amazonBedrock.tools.computer_20241022({
   displayWidthPx: 1920,
   displayHeightPx: 1080,
   displayNumber: 0, // Optional, for X11 environments
@@ -746,7 +746,7 @@ const computerTool = bedrock.tools.computer_20241022({
   toModelOutput({ output }) {
     return typeof output === 'string'
       ? [{ type: 'text', text: output }]
-      : [{ type: 'image', data: output.data, mediaType: 'image/png' }];
+      : [{ type: 'file-data', data: output.data, mediaType: 'image/png' }];
   },
 });
 ```
@@ -836,18 +836,18 @@ You can create models that call the Bedrock API [Bedrock API](https://docs.aws.a
 using the `.embedding()` factory method.
 
 ```ts
-const model = bedrock.embedding('amazon.titan-embed-text-v1');
+const model = amazonBedrock.embedding('amazon.titan-embed-text-v1');
 ```
 
 Bedrock Titan embedding model amazon.titan-embed-text-v2:0 supports several additional settings.
 You can pass them as an options argument:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { type AmazonBedrockEmbeddingModelOptions } from '@ai-sdk/amazon-bedrock';
 import { embed } from 'ai';
 
-const model = bedrock.embedding('amazon.titan-embed-text-v2:0');
+const model = amazonBedrock.embedding('amazon.titan-embed-text-v2:0');
 
 const { embedding } = await embed({
   model,
@@ -876,12 +876,12 @@ The following optional provider options are available for Bedrock Titan embeddin
 Amazon Nova embedding models support additional provider options:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { type AmazonBedrockEmbeddingModelOptions } from '@ai-sdk/amazon-bedrock';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: bedrock.embedding('amazon.nova-embed-text-v2:0'),
+  model: amazonBedrock.embedding('amazon.nova-embed-text-v2:0'),
   value: 'sunny day at the beach',
   providerOptions: {
     bedrock: {
@@ -912,12 +912,12 @@ The following optional provider options are available for Nova embedding models:
 Cohere embedding models on Bedrock require an `inputType` and support truncation:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { type AmazonBedrockEmbeddingModelOptions } from '@ai-sdk/amazon-bedrock';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: bedrock.embedding('cohere.embed-english-v3'),
+  model: amazonBedrock.embedding('cohere.embed-english-v3'),
   value: 'sunny day at the beach',
   providerOptions: {
     bedrock: {
@@ -954,13 +954,13 @@ You can create models that call the [Bedrock Rerank API](https://docs.aws.amazon
 using the `.reranking()` factory method.
 
 ```ts
-const model = bedrock.reranking('cohere.rerank-v3-5:0');
+const model = amazonBedrock.reranking('cohere.rerank-v3-5:0');
 ```
 
 You can use Amazon Bedrock reranking models to rerank documents with the `rerank` function:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { rerank } from 'ai';
 
 const documents = [
@@ -970,7 +970,7 @@ const documents = [
 ];
 
 const { ranking } = await rerank({
-  model: bedrock.reranking('cohere.rerank-v3-5:0'),
+  model: amazonBedrock.reranking('cohere.rerank-v3-5:0'),
   documents,
   query: 'talk about rain',
   topN: 2,
@@ -986,11 +986,11 @@ console.log(ranking);
 Amazon Bedrock reranking models support additional provider options that can be passed via `providerOptions.bedrock`:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { rerank } from 'ai';
 
 const { ranking } = await rerank({
-  model: bedrock.reranking('cohere.rerank-v3-5:0'),
+  model: amazonBedrock.reranking('cohere.rerank-v3-5:0'),
   documents: ['sunny day at the beach', 'rainy afternoon in the city'],
   query: 'talk about rain',
   providerOptions: {
@@ -1032,17 +1032,17 @@ Overview](https://docs.aws.amazon.com/ai/responsible-ai/nova-canvas/overview.htm
 </Note>
 
 ```ts
-const model = bedrock.image('amazon.nova-canvas-v1:0');
+const model = amazonBedrock.image('amazon.nova-canvas-v1:0');
 ```
 
 You can then generate images with the `generateImage` function:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: 'A beautiful sunset over a calm ocean',
   size: '512x512',
   seed: 42,
@@ -1052,11 +1052,11 @@ const { image } = await generateImage({
 You can also pass the `providerOptions` object to the `generateImage` function to customize the generation behavior:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: 'A beautiful sunset over a calm ocean',
   size: '512x512',
   seed: 42,
@@ -1109,7 +1109,7 @@ Create variations of an existing image while maintaining its core characteristic
 const imageBuffer = readFileSync('./input-image.png');
 
 const { images } = await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: {
     text: 'Modernize the style, photo-realistic, 8k, hdr',
     images: [imageBuffer],
@@ -1138,7 +1138,7 @@ Edit specific parts of an image. You can define the area to modify using either 
 const imageBuffer = readFileSync('./input-image.png');
 
 const { images } = await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: {
     text: 'a cute corgi dog in the same style',
     images: [imageBuffer],
@@ -1159,7 +1159,7 @@ const image = readFileSync('./input-image.png');
 const mask = readFileSync('./mask.png'); // White pixels = area to change
 
 const { images } = await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: {
     text: 'A sunlit indoor lounge area with a pool containing a flamingo',
     images: [image],
@@ -1180,7 +1180,7 @@ Extend an image beyond its original boundaries:
 const imageBuffer = readFileSync('./input-image.png');
 
 const { images } = await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: {
     text: 'A beautiful sunset landscape with mountains',
     images: [imageBuffer],
@@ -1207,7 +1207,7 @@ Remove the background from an image:
 const imageBuffer = readFileSync('./input-image.png');
 
 const { images } = await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: {
     images: [imageBuffer],
   },
@@ -1250,7 +1250,7 @@ You can customize the generation behavior with optional options:
 
 ```ts
 await generateImage({
-  model: bedrock.image('amazon.nova-canvas-v1:0'),
+  model: amazonBedrock.image('amazon.nova-canvas-v1:0'),
   prompt: 'A beautiful sunset over a calm ocean',
   size: '512x512',
   seed: 42,
@@ -1285,11 +1285,11 @@ The Amazon Bedrock provider will return the response headers associated with
 network requests made of the Bedrock servers.
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: bedrock('meta.llama3-70b-instruct-v1:0'),
+  model: amazonBedrock('meta.llama3-70b-instruct-v1:0'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 
@@ -1312,11 +1312,11 @@ be useful for correlating Bedrock API calls with requests made by the AI SDK:
 This information is also available with `streamText`:
 
 ```ts
-import { bedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: bedrock('meta.llama3-70b-instruct-v1:0'),
+  model: amazonBedrock('meta.llama3-70b-instruct-v1:0'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 for await (const textPart of result.textStream) {
@@ -1446,7 +1446,6 @@ The following optional provider options are available for Bedrock Anthropic mode
 - `metadata` _object_
 
   Optional. Metadata to include with the request. See the [Anthropic API documentation](https://platform.claude.com/docs/en/api/messages/create) for details.
-
   - `userId` _string_ - An external identifier for the end-user.
 
 ### Cache Control
@@ -1502,7 +1501,7 @@ They are available via the `tools` property of the provider instance.
 
 ```ts
 import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
-import { generateText, stepCountIs } from 'ai';
+import { generateText, isStepCount } from 'ai';
 
 const result = await generateText({
   model: bedrockAnthropic('us.anthropic.claude-sonnet-4-5-20250929-v1:0'),
@@ -1515,7 +1514,7 @@ const result = await generateText({
     }),
   },
   prompt: 'List the files in my directory.',
-  stopWhen: stepCountIs(2),
+  stopWhen: isStepCount(2),
 });
 ```
 
@@ -1523,7 +1522,7 @@ const result = await generateText({
 
 ```ts
 import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
-import { generateText, stepCountIs } from 'ai';
+import { generateText, isStepCount } from 'ai';
 
 const result = await generateText({
   model: bedrockAnthropic('us.anthropic.claude-sonnet-4-5-20250929-v1:0'),
@@ -1536,7 +1535,7 @@ const result = await generateText({
     }),
   },
   prompt: 'Update my README file.',
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
 });
 ```
 
@@ -1544,7 +1543,7 @@ const result = await generateText({
 
 ```ts
 import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
-import { generateText, stepCountIs } from 'ai';
+import { generateText, isStepCount } from 'ai';
 import fs from 'fs';
 
 const result = await generateText({
@@ -1579,7 +1578,7 @@ const result = await generateText({
     }),
   },
   prompt: 'Take a screenshot.',
-  stopWhen: stepCountIs(3),
+  stopWhen: isStepCount(3),
 });
 ```
 
@@ -1832,7 +1831,7 @@ Static IAM user keys do not require `sessionToken`.
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

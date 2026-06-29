@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-argument-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "795e438edc995dc69ca42af77f48bd889c3db57d3cb19ee9fda8d00ae51f0b66"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8986ec559766cdeccea6a225d471c2988532ea5c599db4e99c2c8c5069b7c345"
 ---
 
 # AI_InvalidArgumentError
@@ -51,6 +51,7 @@ if (InvalidArgumentError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

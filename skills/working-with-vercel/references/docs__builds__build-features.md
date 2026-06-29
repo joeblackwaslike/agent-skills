@@ -3,7 +3,7 @@ title: Build Features for Customizing Deployments
 product: vercel
 url: /docs/builds/build-features
 canonical_url: "https://vercel.com/docs/builds/build-features"
-last_updated: 2026-05-13
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c2e114afd999018d5d5c96919ea08efc501652f2409e508686120d35fef19b02"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0f53f5cffafcb0c9b4ea4cc17d4a64fe51ab72e5e73525282e802967ea01bf9b"
 ---
 
 # Build Features for Customizing Deployments

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/error-handling.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "79b6a89c323dcd2f7132215de752878bd58f29874329c876c6df81c8c974ad69"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "bc1dd22d7c8ddd996034d026cc0ebd2c442f66aa0db1ea5a0172848db41f9fa5"
 ---
 
 # Error Handling and warnings
@@ -63,7 +63,7 @@ You can use the error object to show an error message, disable the submit button
   server.
 </Note>
 
-```tsx file="app/page.tsx" highlight="7,18-25,31"
+```tsx file="app/page.tsx" highlight="8,28-35,41"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -116,7 +116,7 @@ export default function Chat() {
 
 Alternatively you can write a custom submit handler that replaces the last message when an error is present.
 
-```tsx file="app/page.tsx" highlight="17-23,35"
+```tsx file="app/page.tsx" highlight="13-15,17-18,35"
 'use client';
 
 import { useChat } from '@ai-sdk/react';

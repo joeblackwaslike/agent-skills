@@ -16,8 +16,8 @@ related:
 summary: An Edge Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "68086c0844e91680cc40c54f5e48621eaeb72d1ead6c86230aa13746034d0d98"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "fd7bf1ec65ad166688d47d4e46f1c038ef9d62aba51faff3a12eb6e8ec5286ae"
 ---
 
 # Vercel Edge Config
@@ -38,6 +38,16 @@ You can use an Edge Config in [Middleware](/docs/routing-middleware) and [Vercel
 ## Use cases
 
 Edge Configs are great for data that is accessed frequently and updated infrequently. Here are some examples of storage data suitable for Edge Config:
+
+- : When you need to redirect a URL urgently,
+  Edge Configs offer a fast solution that doesn't require you to redeploy your
+  website. With Middleware, you can read from your Edge Config to redirect users
+  visiting incorrect URLs. For an example, see the [Maintenance Page
+  template](https://vercel.com/templates/next.js/maintenance-page).
+
+* : Store a set of
+  malicious IPs in your Edge Config, then block them upon detection without
+  invoking upstream servers
 
 ## Getting started
 

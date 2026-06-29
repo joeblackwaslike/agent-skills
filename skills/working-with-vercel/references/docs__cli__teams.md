@@ -3,7 +3,7 @@ title: vercel teams
 product: vercel
 url: /docs/cli/teams
 canonical_url: "https://vercel.com/docs/cli/teams"
-last_updated: 2026-03-17
+last_updated: 2026-06-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,8 +13,8 @@ related:
 summary: Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d3e8c3bfef0ee2f14da1483b0b4d259422c23ec15841360fe13cccb34fffba14"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e232f92567fad88aa4376ae5f2509db8bf3433cffb21607fac8451b160f98154"
 ---
 
 # vercel teams

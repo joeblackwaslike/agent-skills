@@ -3,7 +3,7 @@ title: vercel oauth-apps
 product: vercel
 url: /docs/cli/oauth-apps
 canonical_url: "https://vercel.com/docs/cli/oauth-apps"
-last_updated: 2026-05-29
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: "Register Vercel Apps (OAuth) and manage team installations from the CLI: register new apps, list and dismiss installation requests, install apps to a..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/oauth-apps.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "140eb07faa0b97beef18136283a733725c99e41669dc76876be27a820e32802f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "68144140f7b80f19ead979b712be055c8e3926cdf25227e0755032e8b47da852"
 ---
 
 # vercel oauth-apps

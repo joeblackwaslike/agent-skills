@@ -16,8 +16,8 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "e2a56ef22a030d0e5cad5b9f5fed2774590797d75478f6980a71591961723a28"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6b81feff3a24457c007b927db58f1a333dc4c10ad5265d74dfd8e24747ffb7f0"
 ---
 
 # Supported Frameworks on Vercel
@@ -58,6 +58,8 @@ The frameworks listed below can be deployed to Vercel with minimal configuration
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/astro) | [View Demo](https://astro-template.vercel.app)
 - **Brunch**: Brunch is a fast and simple webapp build tool with seamless incremental compilation for rapid development.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/brunch) | [View Demo](https://brunch-template.vercel.app)
+- **Container**: Deploy any project as a container image built from a Dockerfile.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/container)
 - **React**: Create React App allows you to get going with React in no time.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app) | [View Demo](https://create-react-template.vercel.app)
 - **Django**: Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 

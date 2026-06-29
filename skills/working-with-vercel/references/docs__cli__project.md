@@ -3,7 +3,7 @@ title: vercel project
 product: vercel
 url: /docs/cli/project
 canonical_url: "https://vercel.com/docs/cli/project"
-last_updated: 2026-03-17
+last_updated: 2026-06-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, rename, remove, and configure access, checks,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5d51f830b08bee45eef492afd4b1e54aa9c3014e74d9dc37a276564234075035"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "066789e60ea2759d524e6e70467f321937972903ba8ea50038e9c2883e483d64"
 ---
 
 # vercel project

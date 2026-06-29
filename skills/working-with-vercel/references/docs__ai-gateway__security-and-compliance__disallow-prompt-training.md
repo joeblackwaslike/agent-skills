@@ -3,19 +3,19 @@ title: Disallow Prompt Training
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/disallow-prompt-training
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-20
+type: integration
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/security-and-compliance/zdr
   - /docs/ai-gateway/byok
-summary: Learn about disallow prompt training on Vercel.
+summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "d765b2b826d81237535e82e98f08570c47dcdb860bc883eda37771c7f4380503"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "de6562a8e3896928f28c38b9217dbeab93016ff020f5d509139b779ca5cda325"
 ---
 
 # Disallow Prompt Training

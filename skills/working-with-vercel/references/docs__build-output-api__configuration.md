@@ -3,7 +3,7 @@ title: Build Output Configuration
 product: vercel
 url: /docs/build-output-api/configuration
 canonical_url: "https://vercel.com/docs/build-output-api/configuration"
-last_updated: 2025-08-15
+last_updated: 2026-06-09
 type: conceptual
 prerequisites:
   - /docs/build-output-api
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7f11c3b43d98580fbb826f86d12c20b5d50d717332383e096ee4b7d2c425af42"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6b54d49e8964dc6c0168204dacc3c1f0461d8e44c506e5e45b53b4758bd85c53"
 ---
 
 # Build Output Configuration
@@ -193,22 +193,28 @@ type Mitigate = {
 ##### Source route: `Transform`
 
 ```ts
-type Transform = {
-  type: 'request.headers' | 'request.query' | 'response.headers';
-  op: 'append' | 'set' | 'delete';
-  target: {
-    key: string | Omit<MatchableValue, 're'>; // re is not supported for transforms
-  };
-  args?: string | string[];
-};
+type Transform =
+  | {
+      type: 'request.headers' | 'request.query' | 'response.headers';
+      op: 'append' | 'set' | 'delete';
+      target: {
+        key: string | Omit<MatchableValue, 're'>; // re is not supported for transforms
+      };
+      args?: string | string[];
+    }
+  | {
+      type: 'request.path';
+      op: 'set';
+      args: string; // a single string; an array is rejected
+    };
 ```
 
 | Key        | [Type](/docs/rest-api/reference#types)                                                                  | Required | Description                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------- |
-| **type**   | "request.headers" | "response.headers" | "request.query"                                                                               | Yes      | The type of transform to apply.                                            |
-| **op**     | "append" | "set" | "delete"                                                                                                            | Yes      | The operation to perform on the target.                                    |
-| **target** | `{ key: string \| Omit<MatchableValue, 're'> }`                                                                                          | Yes      | The target of the transform. Regular expression matching is not supported. |
-| **args**   | [String](/docs/rest-api/reference#types) | [String\[\]](/docs/rest-api/reference#types) | No       | The arguments to pass to the transform.                                    |
+| **type**   | "request.headers" | "response.headers" | "request.query" | "request.path"                                                            | Yes      | The type of transform to apply.                                            |
+| **op**     | "append" | "set" | "delete"                                                                                                            | Yes      | The operation to perform on the target. The `request.path` transform only supports `set`. |
+| **target** | `{ key: string \| Omit<MatchableValue, 're'> }`                                                                                          | No       | The target of the transform. Regular expression matching is not supported. Not used for `request.path` transforms. |
+| **args**   | [String](/docs/rest-api/reference#types) | [String\[\]](/docs/rest-api/reference#types) | No       | The arguments to pass to the transform. For `request.path`, this must be a single `String` that overrides the path the runtime observes (`req.url`). It must start with `/`, must not be scheme-relative, and must not contain a query string, whitespace, or control characters. |
 
 #### Handler route
 

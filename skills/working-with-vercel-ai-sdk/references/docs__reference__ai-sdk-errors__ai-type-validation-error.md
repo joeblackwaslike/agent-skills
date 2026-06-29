@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-type-validation-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "11dba607ed3a210fb8f13f357545606dbbc4e8508fedae90b7edfa9b5ed7fd7e"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a482436f48767a8c7437201989c266a60e78aba06e5df4e39eb163f930bbb5cd"
 ---
 
 # AI_TypeValidationError
@@ -50,6 +50,7 @@ if (TypeValidationError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

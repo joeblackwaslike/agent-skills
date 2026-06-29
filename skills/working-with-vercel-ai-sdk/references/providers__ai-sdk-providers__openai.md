@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0f9c956c53bfa7f0c0ec5e088adb73833c99e996321521464d9af6d70fdda412"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b3569b34ae8c9fe3e505e0dd720144917188a4e0fd2659c1b3ed27f3bdfb947d"
 ---
 
 # OpenAI Provider
@@ -243,7 +243,6 @@ The following provider options are available:
 
 - **truncation** _string_
   The truncation strategy to use for the model response.
-
   - Auto: If the input to this Response exceeds the model's context window size, the model will truncate the response to fit the context window by dropping items from the beginning of the conversation.
   - disabled (default): If the input size will exceed the context window size for a model, the request will fail with a 400 error.
 
@@ -261,6 +260,11 @@ The following provider options are available:
 
 - **forceReasoning** _boolean_
   Force treating this model as a reasoning model. This is useful for "stealth" reasoning models (e.g. via a custom baseURL) where the model ID is not recognized by the SDK's allowlist. When enabled, the SDK applies reasoning-model parameter compatibility rules and defaults `systemMessageMode` to `developer` unless overridden.
+
+- **contextManagement** _Array&lt;object&gt;_
+  Enable server-side context management (compaction). When configured, the server automatically compresses conversation context when token usage crosses a specified threshold. Each object in the array should have:
+  - `type`: `'compaction'`
+  - `compactThreshold`: _number_ — the token count at which compaction is triggered
 
 The OpenAI responses provider also returns provider-specific metadata:
 
@@ -295,7 +299,7 @@ The following OpenAI-specific metadata may be returned:
 
 #### Reasoning Output
 
-For reasoning models like `gpt-5`, you can enable reasoning summaries to see the model's thought process. Different models support different summarizers—for example, `o4-mini` supports detailed summaries. Set `reasoningSummary: "auto"` to automatically receive the richest level available.
+For reasoning models like `gpt-5`, you can enable reasoning summaries to see the model's thought process. Different models support different summarizers—for example, `o4-mini` supports detailed summaries. Set `reasoningSummary: "auto"` to automatically receive the richest level available. When `reasoningEffort` is set to a value other than `'none'`, the OpenAI Responses provider defaults `reasoningSummary` to `'detailed'`; set `reasoningSummary: null` to omit reasoning summaries.
 
 ```ts highlight="8-9,16"
 import {
@@ -314,7 +318,7 @@ const result = streamText({
   },
 });
 
-for await (const part of result.fullStream) {
+for await (const part of result.stream) {
   if (part.type === 'reasoning') {
     console.log(`Reasoning: ${part.textDelta}`);
   } else if (part.type === 'text-delta') {
@@ -638,7 +642,7 @@ const result = streamText({
   },
 });
 
-for await (const part of result.fullStream) {
+for await (const part of result.stream) {
   if (part.type == 'tool-result' && !part.dynamic) {
     const base64Image = part.output.result;
   }
@@ -733,7 +737,6 @@ The MCP tool can be configured with:
 - **allowedTools** _string[] | object_ (optional)
 
   Controls which tools from the MCP server are available. Can be:
-
   - An array of tool names: `['tool1', 'tool2']`
   - An object with filters:
     ```ts
@@ -754,7 +757,6 @@ The MCP tool can be configured with:
 - **requireApproval** _'always' | 'never' | object_ (optional)
 
   Controls which MCP tool calls require user approval before execution. Can be:
-
   - `'always'`: All MCP tool calls require approval
   - `'never'`: No MCP tool calls require approval (default)
   - An object with filters:
@@ -801,7 +803,7 @@ const result = await generateText({
     }),
   },
   prompt: 'List the files in my home directory.',
-  stopWhen: stepCountIs(2),
+  stopWhen: isStepCount(2),
 });
 ```
 
@@ -959,7 +961,7 @@ const result = await generateText({
     }),
   },
   prompt: 'Use the skill to solve this problem.',
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
 });
 ```
 
@@ -974,7 +976,7 @@ enabling iterative, multi-step code editing workflows.
 
 ```ts
 import { openai } from '@ai-sdk/openai';
-import { generateText, stepCountIs } from 'ai';
+import { generateText, isStepCount } from 'ai';
 
 const result = await generateText({
   model: openai('gpt-5.1'),
@@ -986,7 +988,7 @@ const result = await generateText({
     }),
   },
   prompt: 'Create a python file that calculates the factorial of a number',
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
 });
 ```
 
@@ -1014,13 +1016,13 @@ Add `openai.tools.toolSearch()` with no arguments and mark your tools with `defe
 
 ```ts
 import { openai } from '@ai-sdk/openai';
-import { generateText, tool, stepCountIs } from 'ai';
+import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
   model: openai.responses('gpt-5.4'),
   prompt: 'What is the weather in San Francisco?',
-  stopWhen: stepCountIs(10),
+  stopWhen: isStepCount(10),
   tools: {
     toolSearch: openai.tools.toolSearch(),
 
@@ -1111,13 +1113,13 @@ a `description`, `parameters` schema, and an `execute` callback:
 
 ```ts
 import { openai } from '@ai-sdk/openai';
-import { generateText, tool, stepCountIs } from 'ai';
+import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
   model: openai.responses('gpt-5.4'),
   prompt: 'What is the weather in San Francisco?',
-  stopWhen: stepCountIs(10),
+  stopWhen: isStepCount(10),
   tools: {
     toolSearch: openai.tools.toolSearch({
       execution: 'client',
@@ -1191,13 +1193,12 @@ SQL queries, code snippets, or any output that must match a specific pattern.
 
 ```ts
 import { openai } from '@ai-sdk/openai';
-import { generateText, stepCountIs } from 'ai';
+import { generateText, isStepCount } from 'ai';
 
 const result = await generateText({
   model: openai.responses('gpt-5.2-codex'),
   tools: {
     write_sql: openai.tools.customTool({
-      name: 'write_sql',
       description: 'Write a SQL SELECT query to answer the user question.',
       format: {
         type: 'grammar',
@@ -1213,7 +1214,7 @@ const result = await generateText({
   },
   toolChoice: 'required',
   prompt: 'Write a SQL query to get all users older than 25.',
-  stopWhen: stepCountIs(3),
+  stopWhen: isStepCount(3),
 });
 ```
 
@@ -1227,7 +1228,6 @@ const result = streamText({
   model: openai.responses('gpt-5.2-codex'),
   tools: {
     write_sql: openai.tools.customTool({
-      name: 'write_sql',
       description: 'Write a SQL SELECT query to answer the user question.',
       format: {
         type: 'grammar',
@@ -1240,7 +1240,7 @@ const result = streamText({
   prompt: 'Write a SQL query to get all users older than 25.',
 });
 
-for await (const chunk of result.fullStream) {
+for await (const chunk of result.stream) {
   if (chunk.type === 'tool-call') {
     console.log(`Tool: ${chunk.toolName}`);
     console.log(`Input: ${chunk.input}`);
@@ -1250,7 +1250,6 @@ for await (const chunk of result.fullStream) {
 
 The custom tool can be configured with:
 
-- **name** _string_ (required) - The name of the custom tool. Used to identify the tool in tool calls.
 - **description** _string_ (optional) - A description of what the tool does, to help the model understand when to use it.
 - **format** _object_ (optional) - The output format constraint. Omit for unconstrained text output.
   - **type** _'grammar' | 'text'_ - The format type. Use `'grammar'` for constrained output or `'text'` for explicit unconstrained text.
@@ -1275,8 +1274,9 @@ const result = await generateText({
           text: 'Please describe the image.',
         },
         {
-          type: 'image',
-          image: readFileSync('./data/image.png'),
+          type: 'file',
+          mediaType: 'image',
+          data: readFileSync('./data/image.png'),
         },
       ],
     },
@@ -1291,8 +1291,9 @@ You can also pass a file-id from the OpenAI Files API.
 
 ```ts
 {
-  type: 'image',
-  image: 'file-8EFBcWHsQxZV7YGezBC1fq'
+  type: 'file',
+  mediaType: 'image',
+  data: 'file-8EFBcWHsQxZV7YGezBC1fq'
 }
 ```
 
@@ -1300,8 +1301,9 @@ You can also pass the URL of an image.
 
 ```ts
 {
-  type: 'image',
-  image: 'https://sample.edu/image.png',
+  type: 'file',
+  mediaType: 'image',
+  data: 'https://sample.edu/image.png',
 }
 ```
 
@@ -1402,7 +1404,6 @@ This metadata includes the following fields:
   If no annotations are present, this property itself may be omitted (`undefined`).
 
   Each element in `annotations` is a discriminated union with a required `type` field. Supported types include, for example:
-
   - `url_citation`
   - `file_citation`
   - `container_file_citation`
@@ -1597,6 +1598,125 @@ for (const part of result.content) {
   are fields like `filename` that are directly available on the source object.
 </Note>
 
+#### Compaction
+
+The OpenAI Responses API supports server-side context compaction. When enabled, the server automatically compresses conversation context when token usage crosses a configured threshold. This is useful for long-running conversations or agent loops where you want to stay within token limits without manually managing context.
+
+The compaction item returned by the server is opaque and encrypted — it carries forward key prior state and reasoning into the next turn using fewer tokens. The AI SDK handles this automatically: compaction items are returned as text parts with special `providerMetadata`, and when passed back in subsequent requests they are sent as compaction input items.
+
+```ts highlight="7-11"
+import {
+  openai,
+  type OpenAILanguageModelResponsesOptions,
+} from '@ai-sdk/openai';
+import { generateText } from 'ai';
+
+const result = await generateText({
+  model: openai.responses('gpt-5.2'),
+  messages: conversationHistory,
+  providerOptions: {
+    openai: {
+      store: false,
+      contextManagement: [{ type: 'compaction', compactThreshold: 50000 }],
+    } satisfies OpenAILanguageModelResponsesOptions,
+  },
+});
+```
+
+**Configuration:**
+
+- **type** — Must be `'compaction'`
+- **compactThreshold** — The token count at which compaction is triggered. When the rendered input token count crosses this threshold, the server runs a compaction pass before continuing inference.
+
+<Note>
+  Server-side compaction is ZDR-friendly when you set `store: false` on your
+  requests.
+</Note>
+
+##### Detecting Compaction in Streams
+
+When using `streamText`, you can detect compaction by checking the `providerMetadata` on `text-start` and `text-end` events:
+
+```ts
+import {
+  openai,
+  type OpenAILanguageModelResponsesOptions,
+} from '@ai-sdk/openai';
+import { streamText } from 'ai';
+
+const result = streamText({
+  model: openai.responses('gpt-5.2'),
+  messages: conversationHistory,
+  providerOptions: {
+    openai: {
+      store: false,
+      contextManagement: [{ type: 'compaction', compactThreshold: 50000 }],
+    } satisfies OpenAILanguageModelResponsesOptions,
+  },
+});
+
+for await (const part of result.stream) {
+  switch (part.type) {
+    case 'text-start': {
+      const isCompaction = part.providerMetadata?.openai?.type === 'compaction';
+      if (isCompaction) {
+        // ... your logic
+      }
+      break;
+    }
+    case 'text-end': {
+      const isCompaction = part.providerMetadata?.openai?.type === 'compaction';
+      if (isCompaction) {
+        // ... your logic
+      }
+      break;
+    }
+    case 'text-delta': {
+      process.stdout.write(part.text);
+      break;
+    }
+  }
+}
+```
+
+##### Compaction in UI Applications
+
+When using `useChat` or other UI hooks, compaction items appear as text parts with `providerMetadata`. You can detect and style them differently in your UI:
+
+```tsx
+{
+  message.parts.map((part, index) => {
+    if (part.type === 'text') {
+      const isCompaction =
+        (part.providerMetadata?.openai as { type?: string } | undefined)
+          ?.type === 'compaction';
+
+      if (isCompaction) {
+        return (
+          <div
+            key={index}
+            className="bg-yellow-100 border-l-4 border-yellow-500 p-2"
+          >
+            <span className="font-bold">[Context Compacted]</span>
+            <p className="text-sm text-yellow-700">
+              The server compressed the conversation context to reduce token
+              usage.
+            </p>
+          </div>
+        );
+      }
+      return <div key={index}>{part.text}</div>;
+    }
+  });
+}
+```
+
+The metadata includes the following fields:
+
+- **type** — Always `'compaction'`
+- **itemId** _string_ — The ID of the compaction item in the Responses API
+- **encryptedContent** _string_ (optional) — The encrypted compaction state. This is automatically sent back to the API when the message is included in subsequent requests.
+
 ### Chat Models
 
 You can create models that call the [OpenAI chat API](https://platform.openai.com/docs/api-reference/chat) using the `.chat()` factory method.
@@ -1736,7 +1856,6 @@ Reasoning models currently only generate text, have several limitations, and are
 They support additional settings and response metadata:
 
 - You can use `providerOptions` to set
-
   - the `reasoningEffort` option (or alternatively the `reasoningEffort` model setting), which determines the amount of reasoning the model performs.
 
 - You can use response `providerMetadata` to access the number of reasoning tokens that the model generated.
@@ -1768,7 +1887,6 @@ console.log('Usage:', {
 </Note>
 
 - You can control how system messages are handled by providerOptions `systemMessageMode`:
-
   - `developer`: treat the prompt as a developer message (default for reasoning models).
   - `system`: keep the system message as a system-level instruction.
   - `remove`: remove the system message from the messages.
@@ -1893,8 +2011,9 @@ const result = await generateText({
           text: 'Please describe the image.',
         },
         {
-          type: 'image',
-          image: readFileSync('./data/image.png'),
+          type: 'file',
+          mediaType: 'image',
+          data: readFileSync('./data/image.png'),
         },
       ],
     },
@@ -1909,8 +2028,9 @@ You can also pass the URL of an image.
 
 ```ts
 {
-  type: 'image',
-  image: 'https://sample.edu/image.png',
+  type: 'file',
+  mediaType: 'image',
+  data: 'https://sample.edu/image.png',
 }
 ```
 
@@ -2027,9 +2147,9 @@ const result = await generateText({
       content: [
         { type: 'text', text: 'Describe the image in detail.' },
         {
-          type: 'image',
-          image:
-            'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+          type: 'file',
+          mediaType: 'image',
+          data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
 
           // OpenAI specific options - image detail:
           providerOptions: {
@@ -2295,6 +2415,31 @@ The following optional provider options are available for OpenAI completion mode
   provider model ID as a string if needed.
 </Note>
 
+## Realtime Models
+
+<Note type="warning">Realtime is an experimental feature.</Note>
+
+You can create models that call the [OpenAI Realtime API](https://platform.openai.com/docs/guides/realtime)
+using the `.experimental_realtime()` factory method.
+
+```ts
+import { openai } from '@ai-sdk/openai';
+
+const model = openai.experimental_realtime('gpt-realtime');
+```
+
+Realtime sessions run in the browser and require a short-lived token created on
+your server with `openai.experimental_realtime.getToken()`:
+
+```ts
+const token = await openai.experimental_realtime.getToken({
+  model: 'gpt-realtime',
+});
+```
+
+See [Realtime](/docs/ai-sdk-core/realtime) for the complete setup and tool
+calling pattern.
+
 ## Embedding Models
 
 You can create models that call the [OpenAI embeddings API](https://platform.openai.com/docs/api-reference/embeddings)
@@ -2359,7 +2504,7 @@ const model = openai.image('dall-e-3');
 
 ### Image Editing
 
-OpenAI's `gpt-image-1` model supports powerful image editing capabilities. Pass input images via `prompt.images` to transform, combine, or edit existing images.
+OpenAI's `gpt-image-*` models support powerful image editing capabilities. Pass input images via `prompt.images` to transform, combine, or edit existing images.
 
 #### Basic Image Editing
 
@@ -2369,7 +2514,7 @@ Transform an existing image using text prompts:
 const imageBuffer = readFileSync('./input-image.png');
 
 const { images } = await generateImage({
-  model: openai.image('gpt-image-1'),
+  model: openai.image('gpt-image-2'),
   prompt: {
     text: 'Turn the cat into a dog but retain the style of the original image',
     images: [imageBuffer],
@@ -2386,7 +2531,7 @@ const image = readFileSync('./input-image.png');
 const mask = readFileSync('./mask.png'); // Transparent areas = edit regions
 
 const { images } = await generateImage({
-  model: openai.image('gpt-image-1'),
+  model: openai.image('gpt-image-2'),
   prompt: {
     text: 'A sunlit indoor lounge area with a pool containing a flamingo',
     images: [image],
@@ -2397,7 +2542,7 @@ const { images } = await generateImage({
 
 #### Background Removal
 
-Remove the background from an image by setting `background` to `transparent`:
+Remove the background from an image by setting `background` to `transparent` on a model that supports transparent backgrounds:
 
 ```ts
 import { openai, type OpenAIImageModelEditOptions } from '@ai-sdk/openai';
@@ -2406,7 +2551,7 @@ import { generateImage } from 'ai';
 const imageBuffer = readFileSync('./input-image.png');
 
 const { images } = await generateImage({
-  model: openai.image('gpt-image-1'),
+  model: openai.image('gpt-image-1.5'),
   prompt: {
     text: 'do not change anything',
     images: [imageBuffer],
@@ -2422,7 +2567,7 @@ const { images } = await generateImage({
 
 #### Multi-Image Combining
 
-Combine multiple reference images into a single output. `gpt-image-1` supports up to 16 input images:
+Combine multiple reference images into a single output. `gpt-image-*` models support up to 16 input images:
 
 ```ts
 const cat = readFileSync('./cat.png');
@@ -2431,7 +2576,7 @@ const owl = readFileSync('./owl.png');
 const bear = readFileSync('./bear.png');
 
 const { images } = await generateImage({
-  model: openai.image('gpt-image-1'),
+  model: openai.image('gpt-image-2'),
   prompt: {
     text: 'Combine these animals into a group photo, retaining the original style',
     images: [cat, dog, owl, bear],
@@ -2441,31 +2586,29 @@ const { images } = await generateImage({
 
 <Note>
   Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
-  base64-encoded strings. For `gpt-image-1`, each image should be a `png`,
-  `webp`, or `jpg` file less than 50MB.
+  base64-encoded strings. For `gpt-image-*` models, each image should be a
+  `png`, `webp`, or `jpg` file less than 50MB.
 </Note>
 
 ### Model Capabilities
 
 | Model              | Sizes                           |
 | ------------------ | ------------------------------- |
+| `gpt-image-2`      | 1024x1024, 1536x1024, 1024x1536 |
 | `gpt-image-1.5`    | 1024x1024, 1536x1024, 1024x1536 |
 | `gpt-image-1-mini` | 1024x1024, 1536x1024, 1024x1536 |
 | `gpt-image-1`      | 1024x1024, 1536x1024, 1024x1536 |
 | `dall-e-3`         | 1024x1024, 1792x1024, 1024x1792 |
 | `dall-e-2`         | 256x256, 512x512, 1024x1024     |
 
-You can pass optional `providerOptions` to the image model. These are prone to change by OpenAI and are model dependent. For example, the `gpt-image-1` model supports the `quality` option:
+You can pass optional `providerOptions` to the image model. These are prone to change by OpenAI and are model dependent. For example, the `gpt-image-*` models support the `quality` option:
 
 ```ts
-import {
-  openai,
-  type OpenAIImageModelGenerationOptions,
-} from '@ai-sdk/openai';
+import { openai, type OpenAIImageModelGenerationOptions } from '@ai-sdk/openai';
 import { generateImage } from 'ai';
 
 const { image, providerMetadata } = await generateImage({
-  model: openai.image('gpt-image-1.5'),
+  model: openai.image('gpt-image-2'),
   prompt: 'A salamander at sunrise in a forest pond in the Seychelles.',
   providerOptions: {
     openai: { quality: 'high' } satisfies OpenAIImageModelGenerationOptions,
@@ -2482,7 +2625,6 @@ is available:
 - **images** _Array&lt;object&gt;_
 
   Array of image-specific metadata. Each image object may contain:
-
   - `revisedPrompt` _string_ - The revised prompt that was actually used to generate the image (OpenAI may modify your prompt for safety or clarity)
   - `created` _number_ - The Unix timestamp (in seconds) of when the image was created
   - `size` _string_ - The size of the generated image. One of `1024x1024`, `1024x1536`, or `1536x1024`
@@ -2506,7 +2648,7 @@ const model = openai.transcription('whisper-1');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format will improve accuracy and latency.
 
 ```ts highlight="6"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { openai, type OpenAITranscriptionModelOptions } from '@ai-sdk/openai';
 
 const result = await transcribe({
@@ -2521,7 +2663,7 @@ const result = await transcribe({
 To get word-level timestamps, specify the granularity:
 
 ```ts highlight="8-9"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { openai, type OpenAITranscriptionModelOptions } from '@ai-sdk/openai';
 
 const result = await transcribe({
@@ -2585,7 +2727,7 @@ const model = openai.speech('tts-1');
 The `voice` argument can be set to one of OpenAI's available voices: `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, or `shimmer`.
 
 ```ts highlight="6"
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateSpeech({
@@ -2598,7 +2740,7 @@ const result = await generateSpeech({
 You can also pass additional provider-specific options using the `providerOptions` argument:
 
 ```ts highlight="7-9"
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { openai, type OpenAISpeechModelOptions } from '@ai-sdk/openai';
 
 const result = await generateSpeech({
@@ -2652,7 +2794,7 @@ const result = await generateSpeech({
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

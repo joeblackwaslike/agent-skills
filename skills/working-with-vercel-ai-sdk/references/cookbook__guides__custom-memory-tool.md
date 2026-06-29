@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/custom-memory-tool.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ffd5147b2c19e115ba4fe183c4fc0c4fb044ea19facbde7ba3cf6ee9159c45b5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "22629b4a0c9ef909156e6c3260fcdf918b83e14e326f1515535a5ee7f40ef382"
 ---
 
 # Build a Custom Memory Tool
@@ -567,6 +567,7 @@ export function findUnapprovedCommand(commandLine: string): string | null {
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

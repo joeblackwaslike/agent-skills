@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/hindsight.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8b12338db9245dc4ef98414db7e20e64a9411838b240d8a315fbe5655e2a8cea"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "aa0fb406deb9a750673dc9c42c6d4a5c784e2277a17250011b3620b278e3dc22"
 ---
 
 # Hindsight
@@ -88,7 +88,7 @@ const tools = createHindsightTools({
 ```ts
 import { HindsightClient } from '@vectorize-io/hindsight-client';
 import { createHindsightTools } from '@vectorize-io/hindsight-ai-sdk';
-import { generateText, stepCountIs } from 'ai';
+import { generateText, isStepCount } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const client = new HindsightClient({ baseUrl: process.env.HINDSIGHT_API_URL });
@@ -97,7 +97,7 @@ const tools = createHindsightTools({ client, bankId: 'user-123' });
 const { text } = await generateText({
   model: openai('gpt-4o'),
   tools,
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
   system: 'You are a helpful assistant with long-term memory.',
   prompt: 'Remember that I prefer dark mode and large fonts.',
 });
@@ -130,7 +130,13 @@ In multi-user applications, create tools inside your request handler so each req
 
 ```ts
 // app/api/chat/route.ts
-import { streamText, stepCountIs, convertToModelMessages } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  isStepCount,
+  convertToModelMessages,
+  toUIMessageStream,
+} from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { HindsightClient } from '@vectorize-io/hindsight-client';
 import { createHindsightTools } from '@vectorize-io/hindsight-ai-sdk';
@@ -147,13 +153,17 @@ export async function POST(req: Request) {
     bankId: userId,
   });
 
-  return streamText({
+  const result = streamText({
     model: openai('gpt-4o'),
     tools,
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     system: 'You are a helpful assistant with long-term memory.',
     messages: await convertToModelMessages(messages),
-  }).toUIMessageStreamResponse();
+  });
+
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

@@ -3,8 +3,8 @@ title: Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-20
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
@@ -14,11 +14,11 @@ related:
   - /docs/ai-gateway/models-and-providers/reasoning/google
   - /docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock
   - /docs/ai-gateway/models-and-providers/provider-options
-summary: Learn about reasoning on Vercel.
+summary: Enable reasoning and extended thinking across providers with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "ff1d1c761a2aaf96618d7bd27d5e21f40e526b461756b8295d52dbeace028496"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9aae3760c85e014247f16752a22f12d9db0a449a278ffc121d2da89618105282"
 ---
 
 # Reasoning

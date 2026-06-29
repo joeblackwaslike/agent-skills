@@ -1,18 +1,16 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/transcription.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4ac58c05f8e25407093fd5d5740f99e91470e0215071a9c545c3318a7be9cf6b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "255563fe9d24db9b5c7581c02967c604d59b02708bd51d9a0bebac071b95c3e8"
 ---
 
 # Transcription
-
-<Note type="warning">Transcription is an experimental feature.</Note>
 
 The AI SDK provides the [`transcribe`](/docs/reference/ai-sdk-core/transcribe)
 function to transcribe audio using a transcription model.
 
 ```ts
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { readFile } from 'fs/promises';
 
@@ -40,7 +38,7 @@ const durationInSeconds = transcript.durationInSeconds; // duration of the trans
 Transcription models often have provider or model-specific settings which you can set using the `providerOptions` parameter.
 
 ```ts highlight="8-12"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { readFile } from 'fs/promises';
 
@@ -61,7 +59,7 @@ When `audio` is a URL, the SDK downloads the file with a default **2 GiB** size 
 You can customize this using `createDownload`:
 
 ```ts highlight="1,8"
-import { experimental_transcribe as transcribe, createDownload } from 'ai';
+import { transcribe, createDownload } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const transcript = await transcribe({
@@ -74,7 +72,7 @@ const transcript = await transcribe({
 You can also provide a fully custom download function:
 
 ```ts highlight="6-12"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const transcript = await transcribe({
@@ -93,7 +91,7 @@ const transcript = await transcribe({
 If a download exceeds the size limit, a `DownloadError` is thrown:
 
 ```ts
-import { experimental_transcribe as transcribe, DownloadError } from 'ai';
+import { transcribe, DownloadError } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 try {
@@ -118,7 +116,7 @@ This is particularly useful when combined with URL downloads to prevent long-run
 
 ```ts highlight="8"
 import { openai } from '@ai-sdk/openai';
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 
 const transcript = await transcribe({
   model: openai.transcription('whisper-1'),
@@ -134,7 +132,7 @@ that you can use to add custom headers to the transcription request.
 
 ```ts highlight="8"
 import { openai } from '@ai-sdk/openai';
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 
 const transcript = await transcribe({
@@ -150,7 +148,7 @@ Warnings (e.g. unsupported parameters) are available on the `warnings` property.
 
 ```ts
 import { openai } from '@ai-sdk/openai';
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 
 const transcript = await transcribe({
@@ -176,10 +174,7 @@ The error preserves the following information to help you log the issue:
 - `cause`: The cause of the error. You can use this for more detailed error handling.
 
 ```ts
-import {
-  experimental_transcribe as transcribe,
-  NoTranscriptGeneratedError,
-} from 'ai';
+import { transcribe, NoTranscriptGeneratedError } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { readFile } from 'fs/promises';
 
@@ -199,31 +194,35 @@ try {
 
 ## Transcription Models
 
-| Provider                                                                  | Model                    |
-| ------------------------------------------------------------------------- | ------------------------ |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)         | `whisper-1`              |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)         | `gpt-4o-transcribe`      |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)         | `gpt-4o-mini-transcribe` |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models) | `scribe_v1`              |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models) | `scribe_v1_experimental` |
-| [Groq](/providers/ai-sdk-providers/groq#transcription-models)             | `whisper-large-v3-turbo` |
-| [Groq](/providers/ai-sdk-providers/groq#transcription-models)             | `whisper-large-v3`       |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)    | `whisper-1`              |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)    | `gpt-4o-transcribe`      |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)    | `gpt-4o-mini-transcribe` |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)          | `machine`                |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)          | `low_cost`               |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)          | `fusion`                 |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)     | `base` (+ variants)      |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)     | `enhanced` (+ variants)  |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)     | `nova` (+ variants)      |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)     | `nova-2` (+ variants)    |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)     | `nova-3` (+ variants)    |
-| [Gladia](/providers/ai-sdk-providers/gladia#transcription-models)         | `default`                |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models) | `best`                   |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models) | `nano`                   |
-| [Fal](/providers/ai-sdk-providers/fal#transcription-models)               | `whisper`                |
-| [Fal](/providers/ai-sdk-providers/fal#transcription-models)               | `wizper`                 |
+| Provider                                                                        | Model                    |
+| ------------------------------------------------------------------------------- | ------------------------ |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)               | `whisper-1`              |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)               | `gpt-4o-transcribe`      |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)               | `gpt-4o-mini-transcribe` |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)       | `scribe_v1`              |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)       | `scribe_v1_experimental` |
+| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                   | `whisper-large-v3-turbo` |
+| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                   | `whisper-large-v3`       |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)          | `whisper-1`              |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)          | `gpt-4o-transcribe`      |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)          | `gpt-4o-mini-transcribe` |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                | `machine`                |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                | `low_cost`               |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                | `fusion`                 |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `base` (+ variants)      |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `enhanced` (+ variants)  |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `nova` (+ variants)      |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `nova-2` (+ variants)    |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `nova-3` (+ variants)    |
+| [Gladia](/providers/ai-sdk-providers/gladia#transcription-models)               | `default`                |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)       | `best`                   |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)       | `nano`                   |
+| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                     | `whisper`                |
+| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                     | `wizper`                 |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models) | `chirp_2`                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models) | `chirp_3`                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models) | `telephony`              |
+| [xAI](/providers/ai-sdk-providers/xai#transcription-models)                     | `default`                |
 
 Above are a small subset of the transcription models supported by the AI SDK providers. For more, see the respective provider documentation.
 
@@ -235,21 +234,27 @@ Above are a small subset of the transcription models supported by the AI SDK pro
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

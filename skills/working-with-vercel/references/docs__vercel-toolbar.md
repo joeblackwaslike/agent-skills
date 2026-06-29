@@ -3,7 +3,7 @@ title: Vercel Toolbar
 product: vercel
 url: /docs/vercel-toolbar
 canonical_url: "https://vercel.com/docs/vercel-toolbar"
-last_updated: 2025-09-24
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, use Draft Mode for previewing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2b22ad14aee110f749b7192fcd4a35f4966b3361fc640978ed9534d8f0e4f721"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "99c589b73720c143f4588e9af9772125a533c99cd0604f814013a2930611f188"
 ---
 
 # Vercel Toolbar

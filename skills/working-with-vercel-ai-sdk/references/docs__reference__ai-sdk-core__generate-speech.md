@@ -1,17 +1,15 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d57a8ce4af5f086f77693f0cbf11a873b8ebb7889828d6c75e4f075de093a73f"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8adc5100b5004b662aee4dff60109ebb51964b15acb4f63cd96d0c07f43caa6f"
 ---
 
 # `generateSpeech()`
 
-<Note type="warning">`generateSpeech` is an experimental feature.</Note>
-
 Generates speech audio from text.
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const { audio } = await generateSpeech({
@@ -28,7 +26,7 @@ console.log(audio);
 ### OpenAI
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const { audio } = await generateSpeech({
@@ -41,11 +39,11 @@ const { audio } = await generateSpeech({
 ### ElevenLabs
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
-import { elevenlabs } from '@ai-sdk/elevenlabs';
+import { generateSpeech } from 'ai';
+import { elevenLabs } from '@ai-sdk/elevenlabs';
 
 const { audio } = await generateSpeech({
-  model: elevenlabs.speech('eleven_multilingual_v2'),
+  model: elevenLabs.speech('eleven_multilingual_v2'),
   text: 'Hello from the AI SDK!',
   voice: 'your-voice-id', // Required: get this from your ElevenLabs account
 });
@@ -53,10 +51,7 @@ const { audio } = await generateSpeech({
 
 ## Import
 
-<Snippet
-  text={`import { experimental_generateSpeech as generateSpeech } from "ai"`}
-  prompt={false}
-/>
+<Snippet text={`import { generateSpeech } from "ai"`} prompt={false} />
 
 ## API Signature
 
@@ -66,7 +61,7 @@ const { audio } = await generateSpeech({
   content={[
     {
       name: 'model',
-      type: 'SpeechModelV3',
+      type: 'SpeechModelV4',
       description: 'The speech model to use.',
     },
     {
@@ -233,6 +228,8 @@ const { audio } = await generateSpeech({
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -241,27 +238,31 @@ const { audio } = await generateSpeech({
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

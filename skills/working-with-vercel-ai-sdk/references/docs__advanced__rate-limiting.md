@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/rate-limiting.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "98d5c7e498f1e130901e93d49042796852a754c99bd79ee14949f6a8aa250b9b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b04c36a30b406885828ce1af97c3ab857e02820514caeef25af5855579d88c9e"
 ---
 
 # Rate Limiting
@@ -19,7 +19,11 @@ and [Upstash Ratelimit](https://github.com/upstash/ratelimit).
 
 ```tsx filename='app/api/generate/route.ts'
 import kv from '@vercel/kv';
-import { streamText } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 import { Ratelimit } from '@upstash/ratelimit';
 import { NextRequest } from 'next/server';
@@ -50,7 +54,9 @@ export async function POST(req: NextRequest) {
     messages,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

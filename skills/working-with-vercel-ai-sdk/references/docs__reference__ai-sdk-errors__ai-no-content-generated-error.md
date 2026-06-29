@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-content-generated-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "c52ab30db9a08dc6a77e8ab688064ca439e1ac6b7629086eeb43aafb22de18a5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "08258080d971ae2b568987d6b4023c2b809f44c328378a3c69777e7615b2a8a9"
 ---
 
 # AI_NoContentGeneratedError
@@ -49,6 +49,7 @@ if (NoContentGeneratedError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

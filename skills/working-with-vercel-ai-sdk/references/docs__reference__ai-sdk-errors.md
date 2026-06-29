@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1e6d4338f339ad3a556ecd32c816ab0501b1bf091329c4e667c4c1f026625ab9"
 ---
 
 # AI SDK Errors
@@ -29,6 +29,7 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
 - [AI_NoOutputGeneratedError](/docs/reference/ai-sdk-errors/ai-no-output-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
@@ -51,6 +52,8 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+  - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+  - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
   - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
   - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
   - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -59,27 +62,31 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
   - [tool](/docs/reference/ai-sdk-core/tool)
   - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
   - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+  - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+  - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
   - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
   - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
   - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
   - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
   - [Output](/docs/reference/ai-sdk-core/output)
+  - [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
   - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
   - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
   - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
   - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+  - [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
   - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
   - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
   - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
   - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
   - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-  - [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+  - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
   - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
   - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
   - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
   - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
   - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-  - [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+  - [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
   - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
   - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
   - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
@@ -91,6 +98,7 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
   - [useChat](/docs/reference/ai-sdk-ui/use-chat)
   - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
   - [useObject](/docs/reference/ai-sdk-ui/use-object)
+  - [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
   - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
   - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
   - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -99,6 +107,7 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
   - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
   - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
   - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+  - [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
   - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 - [AI SDK RSC](/docs/reference/ai-sdk-rsc)
   - [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
@@ -113,6 +122,9 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
   - [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
   - [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
   - [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+- [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
+  - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
+  - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
 - [AI SDK Errors](/docs/reference/ai-sdk-errors)
   - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
   - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
@@ -136,6 +148,7 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
   - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
   - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
   - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+  - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
   - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
   - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
   - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
@@ -146,6 +159,8 @@ sha256: "9c7f57995c6ae9555b4fea3924dc08783d4a677862651ad6063d5d3d2ab5349d"
   - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
   - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
   - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)
+- [AI SDK TUI](/docs/reference/ai-sdk-tui)
+  - [runAgentTUI](/docs/reference/ai-sdk-tui/run-agent-tui)
 
 
 [Full Sitemap](/sitemap.md)

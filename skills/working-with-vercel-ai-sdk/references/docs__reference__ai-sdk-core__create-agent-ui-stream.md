@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "6fb35a343cb6e7f7e75c682fb77c4b8d2294e0880f86438d51efbe1104d643e5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "701ef3c9adf0aa2556fd32b1cebb092759517b3d21a30a563e9db0934364d1e7"
 ---
 
 # `createAgentUIStream`
@@ -32,6 +32,7 @@ export async function* streamAgent(
     agent,
     uiMessages,
     abortSignal,
+    // experimental_sandbox, // optional: pass an experimental sandbox through to tool execution
     // ...other options (see below)
   });
 
@@ -74,6 +75,13 @@ export async function* streamAgent(
         'Timeout in milliseconds. Can be specified as a number or as an object with a totalMs property. The call will be aborted if it takes longer than the specified timeout. Can be used alongside abortSignal.',
     },
     {
+      name: 'experimental_sandbox',
+      type: 'Experimental_SandboxSession',
+      isRequired: false,
+      description:
+        'Optional experimental sandbox environment that is passed through to tool execution. Tools can access it from their execution context.',
+    },
+    {
       name: 'options',
       type: 'CALL_OPTIONS',
       isRequired: false,
@@ -88,11 +96,18 @@ export async function* streamAgent(
         'Optional transformations to apply to the agent output stream (experimental).',
     },
     {
-      name: 'onStepFinish',
-      type: 'ToolLoopAgentOnStepFinishCallback',
+      name: 'onStepEnd',
+      type: 'GenerateTextOnStepEndCallback',
       isRequired: false,
       description:
-        'Callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage or logging intermediate steps.',
+        'Callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage, per-step performance, or logging intermediate steps.',
+    },
+    {
+      name: 'onStepFinish',
+      type: 'GenerateTextOnStepFinishCallback',
+      isRequired: false,
+      description:
+        'Deprecated. Use `onStepEnd` instead. This alias is only used as a fallback when `onStepEnd` is not provided.',
     },
     {
       name: '...UIMessageStreamOptions',
@@ -119,6 +134,7 @@ const stream = await createAgentUIStream({
   agent,
   uiMessages: [{ role: 'user', content: 'What is the weather in SF today?' }],
   abortSignal: controller.signal,
+  // experimental_sandbox, // optional
   sendStart: true,
   // ...other UIMessageStreamOptions
 });
@@ -135,7 +151,7 @@ for await (const chunk of stream) {
 
 1. **UI Message Validation:** The input `uiMessages` array is validated and normalized using the agent's `tools` definition. Any invalid messages cause an error.
 2. **Conversion to Model Messages:** The validated UI messages are converted into model-specific message format, as required by the agent.
-3. **Agent Streaming:** The agent's `.stream({ prompt, ... })` method is invoked with the converted model messages, optional call options, abort signal, and any experimental transforms.
+3. **Agent Streaming:** The agent's `.stream({ prompt, ... })` method is invoked with the converted model messages, optional call options, abort signal, experimental_sandbox, and any experimental transforms.
 4. **UI Message Stream Building:** The result stream is converted and exposed as a streaming async iterable of UI message chunks for you to consume.
 
 ## Notes
@@ -145,6 +161,7 @@ for await (const chunk of stream) {
 - The `uiMessages` parameter is named `uiMessages`, **not** just `messages`.
 - You can provide advanced options via `UIMessageStreamOptions` (for example, to include sources or usage).
 - To cancel the stream, pass an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) via the `abortSignal` parameter.
+- Pass `experimental_sandbox` when your agent tools need an experimental sandbox environment during execution.
 
 ## See Also
 
@@ -166,6 +183,8 @@ for await (const chunk of stream) {
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -174,27 +193,31 @@ for await (const chunk of stream) {
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

@@ -3,7 +3,7 @@ title: WAF Managed Rulesets
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/managed-rulesets
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets"
-last_updated: 2026-02-27
+last_updated: 2026-06-10
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a776a73347c7fd019fd5fb7174fbadb9c77dd3bddd95042701444d388e144e06"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "bc5a901cbdea4598881d0dcf45c98d7ce4cf3c4cbd8c9b5b20d26a46f6a61399"
 ---
 
 # WAF Managed Rulesets

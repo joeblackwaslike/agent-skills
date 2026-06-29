@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/call-tools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1894ba67ad3f786e6f82bee8b93a2ab345c37e5126bf429e435fdbfb106c8f6c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7e0ad9457985589263d813034d9e047bdc0f946a095247129b4e3c57f6aab23d"
 ---
 
 # Call Tools
@@ -101,8 +101,10 @@ import {
   type UIDataTypes,
   type UIMessage,
   convertToModelMessages,
-  stepCountIs,
+  createUIMessageStreamResponse,
+  isStepCount,
   streamText,
+  toUIMessageStream,
   tool,
 } from 'ai';
 import { z } from 'zod';
@@ -138,11 +140,13 @@ export async function POST(req: Request) {
     model: 'openai/gpt-4o',
     system: 'You are a helpful assistant.',
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

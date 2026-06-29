@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/whats-new/index.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "647cc64251d7047ba6b4c5b06824b57a78ec9a140cd96e3f5f874514ecf7649d"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "7a133201c8530c4cfa4c58520f0eee7bb78fadc7d4bcef69bc3bafe7914451b1"
 ---
 
 > ## Documentation Index
@@ -13,6 +13,22 @@ sha256: "647cc64251d7047ba6b4c5b06824b57a78ec9a140cd96e3f5f874514ecf7649d"
 > A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.
 
 The weekly dev digest highlights the features most likely to change how you work. Each entry includes runnable code, a short demo, and a link to the full docs. For every bug fix and minor improvement, see the [changelog](/en/changelog).
+
+<Update label="Week 26" description="June 22–26, 2026" tags={["v2.1.185–v2.1.193"]}>
+  **`claude mcp login`**: authenticate a configured MCP server from your shell instead of the interactive `/mcp` menu, and clear its stored credentials later with `claude mcp logout`.
+
+  Also this week: **shell mode responds to command output** (`! npm test` gets an explanation without a second prompt); **`/rewind`** can resume a conversation from before `/clear` was run; and **background subagents** now surface permission prompts in the main session instead of auto-denying.
+
+  [Read the Week 26 digest →](/en/whats-new/2026-w26)
+</Update>
+
+<Update label="Week 25" description="June 15–19, 2026" tags={["v2.1.178–v2.1.183"]}>
+  **Artifacts**: turn a session's output into a live, shareable page on claude.ai that updates in place as the session works, now in beta on Team and Enterprise plans.
+
+  Also this week: **deny and ask rules match tool parameters** with `Tool(param:value)`, for example `Agent(model:opus)`; **`/config key=value`** sets any setting from the prompt, in `-p` mode, and from Remote Control; and **auto mode blocks destructive git commands** when you didn't ask to discard local work.
+
+  [Read the Week 25 digest →](/en/whats-new/2026-w25)
+</Update>
 
 <Update label="Week 24" description="June 8–12, 2026" tags={["v2.1.166–v2.1.176"]}>
   **`/cd`**: move the current session to a new working directory mid-conversation without rebuilding the prompt cache.

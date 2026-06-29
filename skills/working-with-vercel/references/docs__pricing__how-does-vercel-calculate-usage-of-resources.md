@@ -3,7 +3,7 @@ title: Calculating usage of resources
 product: vercel
 url: /docs/pricing/how-does-vercel-calculate-usage-of-resources
 canonical_url: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources"
-last_updated: 2026-02-18
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   - /docs/pricing
@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "15052696194b99078d58c35373b14ed1a17bd4fb70ce17b2e4bc88c5b3cd7361"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3e65b190fd5854d2550018d3b92e69f36d1650a9d8250b327bd92f7975e4819c"
 ---
 
 # Calculating usage of resources

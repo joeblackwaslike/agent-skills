@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-tool-call-repair-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "db7e2b3b7acb0ed443169c4514bbb7ed1a407fddc85b6ce4fe93bb5ea1e78a78"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c713e8d46f3e33ae3f19c60dd9b444009a1f054112af671ad703a422d1ba96ed"
 ---
 
 # ToolCallRepairError
@@ -53,6 +53,7 @@ if (ToolCallRepairError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

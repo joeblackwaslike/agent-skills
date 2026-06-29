@@ -1,14 +1,14 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mcp-sampling.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1353166b67eadc551066d9ce50ec31c2d8a80be1a954e1aeedba8691ff64e38c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e856f249e2e9d7b5696c6734d3d3e08395c0d87aad755dfa33eb9fffdb43f4c7"
 ---
 
 # MCP Sampling AI Provider
 
 The [MCP Sampling AI Provider](https://github.com/mcpc-tech/mcpc/tree/main/packages/mcp-sampling-ai-provider) allows MCP servers to use AI models through the AI SDK by leveraging your existing client subscriptions (like VS Code Copilot). This transforms your MCP server into an agentic tool that can reason and make decisions, without requiring separate API keys or subscriptions.
 
-The provider implements `LanguageModelV2` by forwarding requests through MCP's [sampling feature](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling) to the MCP client, offering unique advantages:
+The provider implements `LanguageModelV4` by forwarding requests through MCP's [sampling feature](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling) to the MCP client, offering unique advantages:
 
 - **Server-Side AI Integration**: Enable MCP servers to call language models directly through AI SDK's standard interface
 - **No Direct Model Management**: Forward AI requests to MCP clients, eliminating the need for multiple API keys
@@ -327,7 +327,7 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 import { createMCPSamplingProvider } from '@mcpc-tech/mcp-sampling-ai-provider';
-import { generateText } from 'ai';
+import { generateText, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const server = new Server(
@@ -377,7 +377,7 @@ server.setRequestHandler(CallToolRequestSchema, async request => {
       prompt:
         request.params.arguments?.question ||
         'What is the weather in San Francisco?',
-      maxSteps: 5,
+      stopWhen: isStepCount(5),
     });
 
     return { content: [{ type: 'text', text: result.text }] };

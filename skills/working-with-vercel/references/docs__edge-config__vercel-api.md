@@ -3,7 +3,7 @@ title: Managing Edge Configs with Vercel REST API
 product: vercel
 url: /docs/edge-config/vercel-api
 canonical_url: "https://vercel.com/docs/edge-config/vercel-api"
-last_updated: 2026-03-17
+last_updated: 2026-06-08
 type: conceptual
 prerequisites:
   - /docs/edge-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Edge Configs. You can also read data stored in Edge Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config/vercel-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9f622ebddac11703bc74253ffc6e3dfcf37baf8fe32eeda4b45e52f2b9633ff0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "61e1547fd83bc227ef565927eef5b1a049ec508c82d320089c733f644f7b910a"
 ---
 
 # Managing Edge Configs with Vercel REST API

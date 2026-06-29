@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sarvam.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d185f38e119b6f15698465e0a5adda39072223ef1cfafdfeee4b433d801fc2c2"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "80cfd4d94d95d7560ecab18009a753cfbf4c79d4d634c6c499f343c9befa4c8a"
 ---
 
 # Sarvam Provider
@@ -51,7 +51,7 @@ const sarvam = createSarvam({
 - Transcribe speech to text
 
 ```ts
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 
 await transcribe({

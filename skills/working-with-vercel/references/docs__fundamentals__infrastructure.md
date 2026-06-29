@@ -3,7 +3,7 @@ title: How requests flow through Vercel
 product: vercel
 url: /docs/fundamentals/infrastructure
 canonical_url: "https://vercel.com/docs/fundamentals/infrastructure"
-last_updated: 2026-03-19
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   - /docs/fundamentals
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel routes, secures, and serves requests from your users to your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9dd577df5b38e6c3b3ed9eedf7b437ea5284d5b7f2e06a4ef329a512375834db"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2b30f5c5ae0a0222c5038fd591804b1acb4084ae4f8c868e87ecac5d246aa22b"
 ---
 
 # How requests flow through Vercel

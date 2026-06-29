@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/transport.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "359a960a8cb032fe813e1d327bb233489bdf198578cb3d52dd6b2df63b9447d9"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "38bef1e4990fab8ac06fd16891107362970335193954c328ec2d485793bd4b9a"
 ---
 
 # Transport
@@ -156,6 +156,44 @@ const transport = new DirectChatTransport({
 </Note>
 
 For complete API details, see the [DirectChatTransport reference](/docs/reference/ai-sdk-ui/direct-chat-transport).
+
+## Workflow Transport
+
+For chat apps built on the [Workflow SDK](/docs/agents/workflow-agent), `WorkflowChatTransport` from `@ai-sdk/workflow` provides automatic stream reconnection. It handles the common scenario where a workflow function times out mid-stream — the transport detects the missing `finish` event and reconnects to resume from where it left off.
+
+```tsx
+import { useChat } from '@ai-sdk/react';
+import { WorkflowChatTransport } from '@ai-sdk/workflow';
+import { useMemo } from 'react';
+
+export default function Chat() {
+  const transport = useMemo(
+    () =>
+      new WorkflowChatTransport({
+        api: '/api/chat',
+        maxConsecutiveErrors: 5,
+        initialStartIndex: -50, // On page refresh, fetch last 50 chunks
+        onChatEnd: ({ chatId, chunkIndex }) => {
+          console.log(`Chat complete: ${chunkIndex} chunks`);
+        },
+      }),
+    [],
+  );
+
+  const { messages, sendMessage } = useChat({ transport });
+
+  // ... render chat UI
+}
+```
+
+Key features:
+
+- **Automatic reconnection**: Detects interrupted streams (no `finish` event) and reconnects via GET to `{api}/{runId}/stream`
+- **Page refresh recovery**: `initialStartIndex` with negative values (e.g., `-50`) fetches only the tail of the stream instead of replaying everything
+- **Configurable retries**: `maxConsecutiveErrors` controls how many consecutive reconnection failures to tolerate
+- **Lifecycle callbacks**: `onChatSendMessage` and `onChatEnd` for tracking chat state
+
+For the full API reference, see [`WorkflowChatTransport`](/docs/reference/ai-sdk-workflow/workflow-chat-transport). For server-side endpoint setup, see the [WorkflowAgent guide](/docs/agents/workflow-agent#resumable-streaming-with-workflowchattransport).
 
 ## Building Custom Transports
 

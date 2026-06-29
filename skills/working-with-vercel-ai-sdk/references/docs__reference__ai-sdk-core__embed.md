@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4a27fba8692f551be8882ee93c395dc0121abf9fd6232d95c0e3ba8cb79dbbb2"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7677a41c2c7a01677fcf60859df43734e8e07c7bf595c449970a3139ef5df94e"
 ---
 
 # `embed()`
@@ -69,20 +69,20 @@ const { embedding } = await embed({
         'Provider-specific options that are passed through to the provider.',
     },
     {
-      name: 'experimental_telemetry',
-      type: 'TelemetrySettings',
+      name: 'telemetry',
+      type: 'TelemetryOptions',
       isOptional: true,
-      description: 'Telemetry configuration. Experimental feature.',
+      description: 'Telemetry configuration.',
       properties: [
         {
-          type: 'TelemetrySettings',
+          type: 'TelemetryOptions',
           parameters: [
             {
               name: 'isEnabled',
               type: 'boolean',
               isOptional: true,
               description:
-                'Enable or disable telemetry. Disabled by default while experimental.',
+                'Enable or disable telemetry. Enabled by default. Set to `false` to opt out.',
             },
             {
               name: 'recordInputs',
@@ -106,17 +106,124 @@ const { embedding } = await embed({
                 'Identifier for this function. Used to group telemetry data by function.',
             },
             {
-              name: 'metadata',
+              name: 'integrations',
               isOptional: true,
-              type: 'Record<string, string | number | boolean | Array<null | undefined | string> | Array<null | undefined | number> | Array<null | undefined | boolean>>',
+              type: 'Telemetry | Telemetry[]',
               description:
-                'Additional information to include in the telemetry data.',
+                'Per-call telemetry integrations that receive lifecycle events. When provided, these replace any globally registered integrations for this call.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'onStart',
+      type: '(event: EmbedStartEvent) => PromiseLike<void> | void',
+      isOptional: true,
+      description:
+        'Callback that is called when the embed operation begins, before the embedding model is called. Errors thrown in this callback are silently caught and do not break the embedding flow.',
+      properties: [
+        {
+          type: 'EmbedStartEvent',
+          parameters: [
+            {
+              name: 'callId',
+              type: 'string',
+              description: 'Unique identifier for this embed call.',
             },
             {
-              name: 'tracer',
-              type: 'Tracer',
-              isOptional: true,
-              description: 'A custom tracer to use for the telemetry data.',
+              name: 'operationId',
+              type: 'string',
+              description: "Identifies the operation type ('ai.embed').",
+            },
+            {
+              name: 'model',
+              type: '{ provider: string; modelId: string }',
+              description: 'The embedding model being used.',
+            },
+            {
+              name: 'value',
+              type: 'string | Array<string>',
+              description: 'The value being embedded.',
+            },
+            {
+              name: 'maxRetries',
+              type: 'number',
+              description: 'Maximum number of retries for failed requests.',
+            },
+            {
+              name: 'abortSignal',
+              type: 'AbortSignal | undefined',
+              description: 'Abort signal for cancelling the operation.',
+            },
+            {
+              name: 'headers',
+              type: 'Record<string, string | undefined> | undefined',
+              description: 'Additional HTTP headers sent with the request.',
+            },
+            {
+              name: 'providerOptions',
+              type: 'ProviderOptions | undefined',
+              description: 'Additional provider-specific options.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'onEnd',
+      type: '(event: EmbedEndEvent) => PromiseLike<void> | void',
+      isOptional: true,
+      description:
+        'Callback that is called when the embed operation completes, after the embedding model returns. Errors thrown in this callback are silently caught and do not break the embedding flow.',
+      properties: [
+        {
+          type: 'EmbedEndEvent',
+          parameters: [
+            {
+              name: 'callId',
+              type: 'string',
+              description: 'Unique identifier for this embed call.',
+            },
+            {
+              name: 'operationId',
+              type: 'string',
+              description: "Identifies the operation type ('ai.embed').",
+            },
+            {
+              name: 'model',
+              type: '{ provider: string; modelId: string }',
+              description: 'The embedding model that was used.',
+            },
+            {
+              name: 'value',
+              type: 'string | Array<string>',
+              description: 'The value that was embedded.',
+            },
+            {
+              name: 'embedding',
+              type: 'Embedding | Array<Embedding>',
+              description: 'The resulting embedding vector.',
+            },
+            {
+              name: 'usage',
+              type: 'EmbeddingModelUsage',
+              description: 'Token usage for the embedding operation.',
+            },
+            {
+              name: 'warnings',
+              type: 'Array<Warning>',
+              description: 'Warnings from the embedding model.',
+            },
+            {
+              name: 'providerMetadata',
+              type: 'ProviderMetadata | undefined',
+              description: 'Optional provider-specific metadata.',
+            },
+            {
+              name: 'response',
+              type: '{ headers?: Record<string, string>; body?: unknown } | undefined',
+              description: 'Optional response data including headers and body.',
             },
           ],
         },
@@ -209,6 +316,8 @@ const { embedding } = await embed({
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -217,27 +326,31 @@ const { embedding } = await embed({
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

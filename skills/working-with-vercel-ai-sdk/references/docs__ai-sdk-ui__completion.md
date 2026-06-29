@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/completion.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3ab68b459094e688c85df42e45c06ee6c413be6d0d178ee455e0af7ff372b110"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "1fc3489483c0986161e78ec446d1b20776b3806f0d57e5dcba500ad3bf1b1962"
 ---
 
 # Completion
@@ -42,7 +42,11 @@ export default function Page() {
 ```
 
 ```ts filename='app/api/completion/route.ts'
-import { streamText } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
@@ -56,7 +60,9 @@ export async function POST(req: Request) {
     prompt,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/prompt-library.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "d59bbc4216bf34945dc0cfdc22b1c9385c92e9a6ee6e6c09b1c9cfcac1d8744d"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "b39d81a97db424ed2d641fc4481b80911410a1cba6d77fbeb557ce96c297f46a"
 ---
 
 > ## Documentation Index
@@ -1223,7 +1223,7 @@ export const text = {
   "review-your-changes-before": {
     title: "Review your changes before you commit",
     teaches: "Catch problems while they're still cheap to fix. Claude reads the changed files in full, not just the diff lines, so it spots issues a quick self-review misses.",
-    next: "Run `/review` for the same check in one command"
+    next: "Run `/code-review` for the same check in one command"
   },
   "review-a-pull-request": {
     title: "Review a pull request",

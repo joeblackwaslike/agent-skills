@@ -3,7 +3,7 @@ title: WAF IP Blocking
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/ip-blocking
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking"
-last_updated: 2026-02-27
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -14,8 +14,8 @@ related:
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "fd8f373a9960e2d1961fd580fb7bdfe92a7f44079e7ff671a5601a375d5c8121"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0ac49c295958798ceadebb66e3267b685c4d0e4a6dcb848aa154b5d571bb7d9e"
 ---
 
 # WAF IP Blocking

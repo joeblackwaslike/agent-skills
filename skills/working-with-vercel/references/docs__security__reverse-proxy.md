@@ -3,7 +3,7 @@ title: Reverse Proxy Servers and Vercel
 product: vercel
 url: /docs/security/reverse-proxy
 canonical_url: "https://vercel.com/docs/security/reverse-proxy"
-last_updated: 2026-03-19
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   - /docs/security
@@ -12,8 +12,8 @@ related:
 summary: "Learn why reverse proxy servers are not recommended with Vercel's firewall."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/reverse-proxy.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9560e75ef5f3ea7bb7131aaa7416680ba718548dceaf492bdb757a6a9c32ddb0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3ad64bbe68b0010c0e68ec2403c7b52f6d9eafe0cb51e9c86539fde945aef2a8"
 ---
 
 # Reverse Proxy Servers and Vercel

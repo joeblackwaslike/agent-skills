@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-message-role-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "1bae46d6e15a42544b910600dce765c5866e65754ece9c5bc464633119640a05"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cb6f697c86be36d3b9424d6b6fa14cfb5eed4232df6ac1d988f8eb26833c9650"
 ---
 
 # AI_InvalidMessageRoleError
@@ -50,6 +50,7 @@ if (InvalidMessageRoleError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

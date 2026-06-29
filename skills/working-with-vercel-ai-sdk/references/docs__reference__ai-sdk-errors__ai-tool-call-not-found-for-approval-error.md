@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "656fc49e6682f9dd8b297ddf7f2dde778efb6a9a01122c90eea6f62465126027"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "ea61dd6a3486da0e138b2f4e4dff365ea805790f108dce4b05d47cd07938deb0"
 ---
 
 # AI_ToolCallNotFoundForApprovalError
@@ -50,6 +50,7 @@ if (ToolCallNotFoundForApprovalError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

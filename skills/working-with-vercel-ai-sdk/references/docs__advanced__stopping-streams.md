@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/stopping-streams.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b946ce82290cd7eabc08047993e1242816d43852a591309101962338e6c3019c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f409dc96261ac8fe83b36599c153888605d3bd2bb655d8c8859ea21fa638a8e8"
 ---
 
 # Stopping Streams
@@ -18,7 +18,7 @@ You would use this if you want to cancel a stream from the server side to the LL
 forwarding the `abortSignal` from the request.
 
 ```tsx highlight="10,11,12-16"
-import { streamText } from 'ai';
+import { createTextStreamResponse, streamText, toTextStream } from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
@@ -36,7 +36,9 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -52,7 +54,7 @@ This will cancel the stream from the client side to the server.
   both.
 </Note>
 
-```tsx file="app/page.tsx" highlight="9,18-20"
+```tsx file="app/page.tsx" highlight="6,11-14"
 'use client';
 
 import { useCompletion } from '@ai-sdk/react';
@@ -81,10 +83,10 @@ export default function Chat() {
 
 When streams are aborted, you may need to perform cleanup operations such as persisting partial results or cleaning up resources. The `onAbort` callback provides a way to handle these scenarios on the server side.
 
-Unlike `onFinish`, which is called when a stream completes normally, `onAbort` is specifically called when a stream is aborted via `AbortSignal`. This distinction allows you to handle normal completion and aborted streams differently.
+Unlike `onEnd`, which is called when a stream completes normally, `onAbort` is specifically called when a stream is aborted via `AbortSignal`. This distinction allows you to handle normal completion and aborted streams differently.
 
 <Note>
-  For UI message streams (`toUIMessageStreamResponse`), the `onFinish` callback
+  For UI message streams (`toUIMessageStreamResponse`), the `onEnd` callback
   also receives an `isAborted` parameter that indicates whether the stream was
   aborted. This allows you to handle both completion and abort scenarios in a
   single callback.
@@ -103,7 +105,7 @@ const result = streamText({
     await savePartialResults(steps);
     await logAbortEvent(steps.length);
   },
-  onFinish: ({ steps, totalUsage }) => {
+  onEnd: ({ steps, totalUsage }) => {
     // Called when stream completes normally
     await saveFinalResults(steps, totalUsage);
   },
@@ -123,8 +125,8 @@ This is particularly useful for:
 
 You can also handle abort events directly in the stream using the `abort` stream part:
 
-```tsx highlight="8-12"
-for await (const part of result.fullStream) {
+```tsx highlight="6-9"
+for await (const part of result.stream) {
   switch (part.type) {
     case 'text-delta':
       // Handle text delta content
@@ -140,14 +142,16 @@ for await (const part of result.fullStream) {
 
 ## UI Message Streams
 
-When using `toUIMessageStreamResponse`, you need to handle stream abortion slightly differently. The `onFinish` callback receives an `isAborted` parameter, and you should pass the `consumeStream` function to ensure proper abort handling:
+When using `toUIMessageStream`, you need to handle stream abortion slightly differently. The `onEnd` callback receives an `isAborted` parameter, and you should pass `consumeStream` to `createUIMessageStreamResponse` to ensure proper abort handling:
 
-```tsx highlight="5,19,20-24,26"
+```tsx highlight="3,21,24-30,34"
 import { openai } from '@ai-sdk/openai';
 import {
   consumeStream,
   convertToModelMessages,
+  createUIMessageStreamResponse,
   streamText,
+  toUIMessageStream,
   UIMessage,
 } from 'ai';
 __PROVIDER_IMPORT__;
@@ -161,16 +165,19 @@ export async function POST(req: Request) {
     abortSignal: req.signal,
   });
 
-  return result.toUIMessageStreamResponse({
-    onFinish: async ({ isAborted }) => {
-      if (isAborted) {
-        console.log('Stream was aborted');
-        // Handle abort-specific cleanup
-      } else {
-        console.log('Stream completed normally');
-        // Handle normal completion
-      }
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      onEnd: async ({ isAborted }) => {
+        if (isAborted) {
+          console.log('Stream was aborted');
+          // Handle abort-specific cleanup
+        } else {
+          console.log('Stream completed normally');
+          // Handle normal completion
+        }
+      },
+    }),
     consumeSseStream: consumeStream,
   });
 }

@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/oidc
 related:
-  []
+  - /docs/oidc/aws
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "69ce1f021dc9658f769bf717d206a42b320c79b35af54f9f596c6d2966ef4fb7"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "58936cce69bfc22339dc68f497f5a7c21e9cf436866a5b51035f756963375250"
 ---
 
 # OIDC Federation Reference
@@ -31,6 +31,8 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 AWS SDK client. It exchanges the OIDC token for short-lived credentials with AWS by calling the `AssumeRoleWithWebIdentity`
 operation.
 
+You can pass an optional `audience` to exchange the default OIDC token for one with a custom `aud` claim. This is useful when your AWS trust policy expects a specific audience value. See [Custom audience](/docs/oidc/aws#custom-audience) for more details.
+
 #### AWS S3 usage example
 
 ```ts
@@ -41,6 +43,8 @@ const s3client = new s3.S3Client({
   region: process.env.AWS_REGION!,
   credentials: awsCredentialsProvider({
     roleArn: process.env.AWS_ROLE_ARN!,
+    // optional custom audience
+    audience: 'https://sts.amazonaws.com',
   }),
 });
 ```
@@ -49,6 +53,8 @@ const s3client = new s3.S3Client({
 
 `getVercelOidcToken()` returns the OIDC token from the `VERCEL_OIDC_TOKEN` environment variable in
 builds and local development environments or the `x-vercel-oidc-token` in Vercel functions.
+
+You can pass an optional `audience` to exchange the default token for one with a custom `aud` claim:
 
 #### Azure / CosmosDB example
 
@@ -60,7 +66,10 @@ import { CosmosClient } from '@azure/cosmos';
 const credentialsProvider = new ClientAssertionCredential(
   process.env.AZURE_TENANT_ID,
   process.env.AZURE_CLIENT_ID,
-  getVercelOidcToken,
+  () => getVercelOidcToken({
+    // optional custom audience
+    audience: 'api://AzureADTokenExchange',
+  }),
 );
 
 const cosmosClient = new CosmosClient({
@@ -192,7 +201,7 @@ This is a list of standard tokens that you can expect from an OpenID Connect JWT
 | Claim | Kind       | Description                                                                                                                                                                                |
 | ----- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `iss` | Issuer     | When using the **team** issuer mode, the issuer is set to `https://oidc.vercel.com/[TEAM_SLUG]`When using the **global** issuer mode, the issuer is set to `https://oidc.vercel.com` |
-| `aud` | Audience   | The audience is set to `https://vercel.com/[TEAM_SLUG]`                                                                                                                                    |
+| `aud` | Audience   | Defaults to `https://vercel.com/[TEAM_SLUG]`. You can set a custom audience by passing the `audience` option to `getVercelOidcToken()` or `awsCredentialsProvider()` |
 | `sub` | Subject    | The subject is set to `owner:[TEAM_SLUG]:project:[PROJECT_NAME]:environment:[ENVIRONMENT]`                                                                                                 |
 | `iat` | Issued at  | The time the token was created                                                                                                                                                             |
 | `nbf` | Not before | The token is not valid before this time                                                                                                                                                    |

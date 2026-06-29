@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/generate-image-with-chat-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b70899999ca1a43545e670cb543290f9d57bf9cd8411622ed3a9880ec73bd276"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "77d73bb23ecbffb6b860baa75bd3a5cc6a42ade0f2abdb37c5ab0ecb0b689e31"
 ---
 
 # Generate Image with Chat Prompt
@@ -35,9 +35,11 @@ export const generateImageTool = tool({
 ```typescript filename='app/api/chat/route.ts'
 import {
   convertToModelMessages,
+  createUIMessageStreamResponse,
   type InferUITools,
-  stepCountIs,
+  isStepCount,
   streamText,
+  toUIMessageStream,
   type UIMessage,
 } from 'ai';
 
@@ -55,11 +57,13 @@ export async function POST(request: Request) {
   const result = streamText({
     model: 'openai/gpt-4o',
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

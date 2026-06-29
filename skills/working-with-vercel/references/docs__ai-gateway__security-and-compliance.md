@@ -3,7 +3,7 @@ title: Security and Compliance
 product: vercel
 url: /docs/ai-gateway/security-and-compliance
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -11,11 +11,11 @@ related:
   - /docs/ai-gateway/security-and-compliance/zdr
   - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
-summary: Learn about security and compliance on Vercel.
+summary: "AI Gateway data privacy and governance controls: zero data retention, prompt training policies, and provider allowlists."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "231866a037b2717aea6293a3f1a55bcbd5a00c7a15d8150618e162aff4c87fb7"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "124050f94100a1e90e5b017fbc9ef95c7ee4a628af1b8889f8e193c4d54c67b6"
 ---
 
 # Security and Compliance

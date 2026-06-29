@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-download-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "dacd24924fe45791300dcac61490ee77b5f98a86c9def6b611ee65da251db167"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "d1a3fba9da933e1fbe6e452d26bf66953c7f6be97a905918289b604422e5bd9f"
 ---
 
 # AI_DownloadError
@@ -53,6 +53,7 @@ if (DownloadError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

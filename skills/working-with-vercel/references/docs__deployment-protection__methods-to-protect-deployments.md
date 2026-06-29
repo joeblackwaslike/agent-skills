@@ -3,7 +3,7 @@ title: Methods to Protect Deployments
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments"
-last_updated: 2026-03-23
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   - /docs/deployment-protection
@@ -13,11 +13,11 @@ related:
   - /docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/passport
   - /docs/deployment-protection
-summary: "Vercel offers three methods to protect your deployments: Vercel Authentication, Password Protection, and Trusted IPs."
+summary: "Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Trusted IPs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "24bbbdb9f25423ad667afd6edbbc6215de0a15183a70b84bcadcc52ea2c936d0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9dc01750ce7b2890b5ac9e13843dd28888df2626b4a0c2fda56409425c70ce4b"
 ---
 
 # Methods to Protect Deployments
@@ -41,6 +41,8 @@ When a Vercel user visits your protected deployment but doesn't have permission 
 Learn more about [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) and how to enable it.
 
 ## Passport
+
+> **🔒 Permissions Required**: Passport
 
 Passport restricts access to visitors who authenticate through your identity provider. Use Passport when you want to protect deployments with an OpenID Connect compatible provider, such as Okta or Auth0.
 

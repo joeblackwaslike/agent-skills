@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b802faee4be4969ac472bbfba0a9973585b56109b3aa804b261a5e5324dc7f94"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a2c9e7bc36d00b53bc06c9f30290ed28faa214164789d0e34b88083bc70515cf"
 ---
 
 # Luma Provider
@@ -286,7 +286,7 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

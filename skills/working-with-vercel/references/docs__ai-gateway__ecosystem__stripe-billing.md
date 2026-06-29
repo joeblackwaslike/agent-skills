@@ -3,7 +3,7 @@ title: Stripe Billing
 product: vercel
 url: /docs/ai-gateway/ecosystem/stripe-billing
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing"
-last_updated: 2026-05-11
+last_updated: 2026-06-11
 type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem
@@ -13,8 +13,8 @@ related:
 summary: Add usage-based billing to your AI application with Stripe and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8aafec242b20ae6235773b2afb4f70b447f9b1b74859a6c4064c7a5f404706a6"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "96a189d54e4ddcb4361504a6682934abc52d5d30f894134d1f5b9cb40242d177"
 ---
 
 # Stripe Billing
@@ -55,7 +55,7 @@ Both headers must be present for meter events to fire. If either is missing, the
 
 ## Examples
 
-#### \[&#xA;    'AI SDK'
+#### \[&#xA;  'AI SDK'
 
 You can pass Stripe headers at the gateway level (applies to all requests) or per-request.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/repeated-assistant-messages.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b3dc43a85cee2b8b9d44f844da60601feaf38eaeb1d12a21d9c6beb44b624d39"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c82e6fb41f2926ae56475bae5d25e96a214359ade44213c2cb4f16bc93179e92"
 ---
 
 # Repeated assistant messages in useChat
@@ -31,17 +31,19 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
 ## Background
 
-The duplication occurs because `toUIMessageStreamResponse` generates new message IDs for each new message.
+The duplication occurs because UI message streams generate new message IDs for each new message.
 
 ## Solution
 
-Pass the original messages array to `toUIMessageStreamResponse` using the `originalMessages` option. By passing `originalMessages`, the method can reuse existing message IDs instead of generating new ones, ensuring the client properly updates existing messages rather than creating duplicates.
+Pass the original messages array to `toUIMessageStream` using the `originalMessages` option. By passing `originalMessages`, the helper can reuse existing message IDs instead of generating new ones, ensuring the client properly updates existing messages rather than creating duplicates.
 
 ```tsx
 export async function POST(req: Request) {
@@ -63,12 +65,15 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages, // Pass the original messages here
-    generateMessageId: generateId,
-    onFinish: ({ messages }) => {
-      saveChat({ id, messages });
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages, // Pass the original messages here
+      generateMessageId: generateId,
+      onEnd: ({ messages }) => {
+        saveChat({ id, messages });
+      },
+    }),
   });
 }
 ```
@@ -92,7 +97,7 @@ export async function POST(req: Request) {
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

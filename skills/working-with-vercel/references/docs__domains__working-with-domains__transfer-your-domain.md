@@ -3,7 +3,7 @@ title: Transferring Domains to Another Team or Project
 product: vercel
 url: /docs/domains/working-with-domains/transfer-your-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/transfer-your-domain"
-last_updated: 2026-04-08
+last_updated: 2026-06-04
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -16,8 +16,8 @@ related:
 summary: Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how to transfer domains with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/transfer-your-domain.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "15b3d81906a907ed796db0e39325a9381087356efd9afdad1a77bd332a60794c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7e78860c6009779d71c3268f2047447e997d1652d60e0e9cc33bbba8623df9c9"
 ---
 
 # Transferring Domains to Another Team or Project

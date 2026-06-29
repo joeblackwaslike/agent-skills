@@ -1,23 +1,23 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/confident-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "69113389626cd38aad35ffe915ff0f82aa08dcf5fb2c52c565bfa8ab8603d786"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c0c8045ae28b2c41adffbb811d662c4b9f362503e4ea7366008692936d3e3be0"
 ---
 
 # Confident AI Observability
 
 [Confident AI](https://confident-ai.com/) is an LLM observability and evaluation platform for teams to build reliable AI applications in both development and production.
 
-The `deepeval-ts` package integrates with the AI SDK's `experimental_telemetry` API to provide tracing, online evaluations, and session analytics.
+The `deepeval-ts` package integrates with the AI SDK to provide tracing, online evaluations, and session analytics.
 
 ## Setup
 
-To enable tracing, install `deepeval-ts`, configure your API key, and initialize a tracer using `configureAiSdkTracing`.
+To enable tracing, install `deepeval-ts`, configure your API key, and register the Confident AI integration globally.
 
 ### 1. Install deepeval-ts
 
 ```bash
-npm install deepeval-ts
+npm install deepeval-ts @ai-sdk/otel
 ```
 
 ### 2. Set Environment Variables
@@ -28,27 +28,31 @@ Sign up or log in to [Confident AI](https://app.confident-ai.com) to get your AP
 CONFIDENT_API_KEY="YOUR-PROJECT-API-KEY"
 ```
 
-### 3. Configure Tracing
+### 3. Register the OpenTelemetry Integration
 
-Import and call `configureAiSdkTracing` to create a `tracer`:
+Register the `LegacyOpenTelemetry` globally at application startup so the AI SDK emits OpenTelemetry spans that Confident AI can collect:
 
 ```typescript
+import { registerTelemetry } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { configureAiSdkTracing } from 'deepeval-ts';
 
-const tracer = configureAiSdkTracing();
+configureAiSdkTracing();
+registerTelemetry(new LegacyOpenTelemetry());
 ```
 
 ## Tracing Your Application
 
-You can now pass the `tracer` object into the `experimental_telemetry` field of any AI SDK call to get your traces on the Confident AI platform.
+You can now pass the `tracer` object into the `telemetry` field of any AI SDK call to get your traces on the Confident AI platform.
 
 Here are some of the examples on how to trace various AI SDK functions using Confident AI's tracer:
 
 ### Generate text
 
-```typescript highlight="3,5,12"
+```typescript
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { configureAiSdkTracing } from 'deepeval-ts';
 
 const tracer = configureAiSdkTracing();
@@ -56,18 +60,18 @@ const tracer = configureAiSdkTracing();
 const { text } = await generateText({
   model: openai('gpt-4o'),
   prompt: 'What are LLMs?',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer,
+  telemetry: {
+    integrations: new LegacyOpenTelemetry({ tracer }),
   },
 });
 ```
 
 ### Stream text
 
-```typescript highlight="3,5,12"
+```typescript
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { configureAiSdkTracing } from 'deepeval-ts';
 
 const tracer = configureAiSdkTracing();
@@ -75,9 +79,8 @@ const tracer = configureAiSdkTracing();
 const result = streamText({
   model: openai('gpt-4o'),
   prompt: 'Invent a new holiday and describe its traditions.',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer,
+  telemetry: {
+    integrations: new LegacyOpenTelemetry({ tracer }),
   },
 });
 
@@ -88,11 +91,12 @@ for await (const textPart of result.textStream) {
 
 ### Generate text with tool calls
 
-```typescript highlight="3,6,26"
-import { generateText, tool, stepCountIs } from 'ai';
+```typescript
+import { generateText, tool, isStepCount } from 'ai';
 import { openai } from '@ai-sdk/openai';
-import { configureAiSdkTracing } from 'deepeval-ts';
 import { z } from 'zod';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { configureAiSdkTracing } from 'deepeval-ts';
 
 const tracer = configureAiSdkTracing();
 
@@ -110,22 +114,22 @@ const result = await generateText({
       }),
     }),
   },
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
   prompt: 'What is the weather in San Francisco?',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer,
+  telemetry: {
+    integrations: new LegacyOpenTelemetry({ tracer }),
   },
 });
 ```
 
 ### Generate structured output
 
-```typescript highlight="3,6,20"
+```typescript
 import { generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai';
-import { configureAiSdkTracing } from 'deepeval-ts';
 import { z } from 'zod';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { configureAiSdkTracing } from 'deepeval-ts';
 
 const tracer = configureAiSdkTracing();
 
@@ -139,9 +143,8 @@ const { object } = await generateObject({
     }),
   }),
   prompt: 'Generate a lasagna recipe.',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer,
+  telemetry: {
+    integrations: new LegacyOpenTelemetry({ tracer }),
   },
 });
 ```
@@ -166,8 +169,9 @@ You can customize trace grouping and evaluation behavior by passing options to `
 You can pass attributes like `name`, `threadId`, `userId` and `environment` to make it easier to find and filter your traces.
 
 ```typescript
-import { generateText } from 'ai';
+import { registerTelemetry, generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { configureAiSdkTracing } from 'deepeval-ts';
 
 const tracer = configureAiSdkTracing({
@@ -177,13 +181,11 @@ const tracer = configureAiSdkTracing({
   environment: 'production',
 });
 
+registerTelemetry(new LegacyOpenTelemetry({ tracer }));
+
 const { text } = await generateText({
   model: openai('gpt-4o'),
   prompt: 'How do you make the best coffee?',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: tracer,
-  },
 });
 ```
 
@@ -192,8 +194,9 @@ const { text } = await generateText({
 If you use Confident AI Prompt Management, you can associate traces with a specific prompt version. Pass a `Prompt` object to `configureAiSdkTracing` to associate your traces with the prompt version used at runtime.
 
 ```typescript
-import { generateText } from 'ai';
+import { registerTelemetry, generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { configureAiSdkTracing, Prompt } from 'deepeval-ts';
 
 const prompt = new Prompt({ alias: 'my-prompt-alias' });
@@ -202,14 +205,11 @@ await prompt.pull();
 const tracer = configureAiSdkTracing({
   confidentPrompt: prompt,
 });
+registerTelemetry(new LegacyOpenTelemetry({ tracer }));
 
 const { text } = await generateText({
   model: openai('gpt-4o'),
   prompt: 'How do you make the best coffee?',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: tracer,
-  },
 });
 ```
 
@@ -234,8 +234,9 @@ Confident AI supports automatic online evaluation of your traces by passing a me
 Here's an example of how to attach metric collections to your traces:
 
 ```typescript
-import { generateText } from 'ai';
+import { registerTelemetry, generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { configureAiSdkTracing } from 'deepeval-ts';
 
 const tracer = configureAiSdkTracing({
@@ -243,14 +244,11 @@ const tracer = configureAiSdkTracing({
   llmMetricCollection: 'my-llm-metrics',
   toolMetricCollection: 'my-tool-metrics',
 });
+registerTelemetry(new LegacyOpenTelemetry({ tracer }));
 
 const { text } = await generateText({
   model: openai('gpt-4o'),
   prompt: 'How do you make the best coffee?',
-  experimental_telemetry: {
-    isEnabled: true,
-    tracer: tracer,
-  },
 });
 ```
 
@@ -284,6 +282,7 @@ You can find a more comprehensive guide on AI SDK tracing with `deepeval-ts` in 
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

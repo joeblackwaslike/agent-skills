@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-load-setting-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "403838bd75438d20a74adbd2248342bbd4c4e8d4fcf0345df6ad6428e00794d7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "395d2f27fba9db0643c02f1e2b7d643d853a21e7787bdd1c6e5d9ef431e42510"
 ---
 
 # AI_LoadSettingError
@@ -49,6 +49,7 @@ if (LoadSettingError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text-with-image-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f4dc69842be363d39d8b6287cff45a7742e6c01e0337c1bcca9520cc2bd09284"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b4e5b936b5e2b3a61b1dbc5ad76e1c82e72c7fd1772520ac04c4e6df655e6016"
 ---
 
 # Stream Text with Image Prompt
@@ -14,8 +14,13 @@ Vision models such as GPT-4o can process both text and images. In this example, 
 
 The server route uses `convertToModelMessages` to handle the conversion from `UIMessage`s to model messages, which automatically handles multimodal content including images.
 
-```tsx filename='app/api/chat/route.ts' highlight="8,9,23"
-import { streamText } from 'ai';
+```tsx filename='app/api/chat/route.ts' highlight="16,20-22"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 
 export const maxDuration = 60;
 
@@ -29,7 +34,9 @@ export async function POST(req: Request) {
   });
 
   // Respond with the stream
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

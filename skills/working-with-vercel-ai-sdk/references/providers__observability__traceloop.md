@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/traceloop.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ac886d8194a627057945c76cf7b1f31d5f5bf80670e4cb7d1eb624907a1ef3b5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "34ed1a5438290cffc00e7cd91a00c1f6fe8adb2d77cf5d13e7ff7fcbc0994e21"
 ---
 
 # Traceloop
@@ -23,17 +23,25 @@ OTEL_EXPORTER_OTLP_ENDPOINT=https://api.traceloop.com
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer <Your API Key>"
 ```
 
-You can then use the `experimental_telemetry` option to enable telemetry on supported AI SDK function calls:
+Install `@ai-sdk/otel` and register the `LegacyOpenTelemetry` in your `instrumentation.ts` file:
 
-```typescript highlight="7-13"
-import { openai } from '@ai-sdk/openai';
+```typescript filename="instrumentation.ts"
+import { registerTelemetry } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+
+registerTelemetry(new LegacyOpenTelemetry());
+```
+
+You can then use the `telemetry` option to enable telemetry on supported AI SDK function calls:
+
+```typescript highlight="7-12"
 import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
   model: openai('gpt-4o-mini'),
   prompt: 'What is 2 + 2?',
-  experimental_telemetry: {
-    isEnabled: true,
+  telemetry: {
     metadata: {
       query: 'weather',
       location: 'San Francisco',
@@ -64,6 +72,7 @@ const result = await generateText({
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

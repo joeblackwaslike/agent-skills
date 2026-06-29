@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "7e7497c69ceca8523f08f7e4d7697f9b508d644da780aa40d2e23fdd00683425"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cfe27d8d9b854226151ccc336b82229b96e5be44c0a2d5b30ac5ce1e00c41aea"
 ---
 
 ## Navigation
@@ -14,6 +14,7 @@ sha256: "7e7497c69ceca8523f08f7e4d7697f9b508d644da780aa40d2e23fdd00683425"
   - [Get started with Computer Use](/cookbook/guides/computer-use)
   - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
   - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+  - [Compact Agent Context](/cookbook/guides/agent-context-compaction)
   - [Get started with Gemini 3](/cookbook/guides/gemini)
   - [Get started with Claude 4](/cookbook/guides/claude-4)
   - [OpenAI Responses API](/cookbook/guides/openai-responses)

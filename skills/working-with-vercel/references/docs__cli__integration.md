@@ -3,18 +3,18 @@ title: vercel integration
 product: vercel
 url: /docs/cli/integration
 canonical_url: "https://vercel.com/docs/cli/integration"
-last_updated: 2026-02-27
+last_updated: 2026-06-12
 type: reference
 prerequisites:
   - /docs/cli
 related:
   - /docs/integrations
   - /docs/cli/project
-summary: Learn how to manage marketplace native integrations, provision resources, and discover available products using the vercel integration CLI command.
+summary: Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover available products using the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9f93667fd9c06098788c5638f14c3b01d33392d5141fba7e2c8cd1dcb1594430"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2bc3e9c04a03099b093aa2dd2b39869637325eaa4a536e2243469f0a0df7c142"
 ---
 
 # vercel integration

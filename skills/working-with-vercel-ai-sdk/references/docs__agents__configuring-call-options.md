@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/configuring-call-options.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5ff96e439012018cd22282da0d1eda6d15446508c743a73eb49b7ea5c47909de"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c18a4e436a8016366781f72be8e15ed6f0796412da105edc0449b3654a93dfff"
 ---
 
 # Configuring Call Options
@@ -10,7 +10,7 @@ Call options allow you to pass type-safe structured inputs to your agent. Use th
 
 ## Why Use Call Options?
 
-When you need agent behavior to change based on runtime context:
+When you need agent behavior to change based on runtime inputs:
 
 - **Add dynamic context** - Inject retrieved documents, user preferences, or session data into prompts
 - **Select models dynamically** - Choose faster or more capable models based on request complexity
@@ -107,7 +107,7 @@ await agent.generate({
 
 ### Dynamic Tool Configuration
 
-Configure tools based on runtime context:
+Configure tools based on runtime inputs:
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -295,7 +295,11 @@ export async function POST(request: Request) {
 - [Loop Control](/docs/agents/loop-control)
 - [Configuring Call Options](/docs/agents/configuring-call-options)
 - [Memory](/docs/agents/memory)
+- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
 - [Subagents](/docs/agents/subagents)
+- [Tool Approvals](/docs/agents/tool-approvals)
+- [WorkflowAgent](/docs/agents/workflow-agent)
+- [Terminal UI](/docs/agents/terminal-ui)
 
 
 [Full Sitemap](/sitemap.md)

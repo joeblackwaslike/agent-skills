@@ -1,0 +1,197 @@
+---
+source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e788cffc9d2c0ed21826960e2f8c2d6ac12ef672ace7298a06841bea3683fb9e"
+---
+
+# AI SDK Harnesses
+
+AI SDK harness adapters connect `HarnessAgent` to established agent runtimes.
+They are separate from model providers, but they expose AI SDK-compatible stream
+and response primitives.
+
+<IndexCards
+  cards={[
+    {
+      title: 'Claude Code',
+      description: 'Use Claude Code through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/claude-code',
+    },
+    {
+      title: 'Codex',
+      description: 'Use Codex through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/codex',
+    },
+    {
+      title: 'OpenCode',
+      description: 'Use OpenCode through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/opencode',
+    },
+    {
+      title: 'Pi',
+      description: 'Use Pi through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/pi',
+    },
+  ]}
+/>
+
+## Usage
+
+All harness adapters are used with `HarnessAgent`:
+
+```ts
+import { HarnessAgent } from '@ai-sdk/harness/agent';
+import { codex } from '@ai-sdk/harness-codex';
+import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+
+const agent = new HarnessAgent({
+  harness: codex,
+  sandbox: createVercelSandbox({
+    runtime: 'node24',
+    ports: [4000],
+  }),
+});
+```
+
+Read the [Harnesses](/docs/ai-sdk-harnesses) documentation for sessions,
+tools, UI, and terminal usage.
+
+
+## Navigation
+
+- [AI SDK Providers](/providers/ai-sdk-providers)
+  - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
+  - [xAI Grok](/providers/ai-sdk-providers/xai)
+  - [Vercel](/providers/ai-sdk-providers/vercel)
+  - [OpenAI](/providers/ai-sdk-providers/openai)
+  - [Azure OpenAI](/providers/ai-sdk-providers/azure)
+  - [Anthropic](/providers/ai-sdk-providers/anthropic)
+  - [Open Responses](/providers/ai-sdk-providers/open-responses)
+  - [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
+  - [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
+  - [Groq](/providers/ai-sdk-providers/groq)
+  - [Fal](/providers/ai-sdk-providers/fal)
+  - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+  - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
+  - [Deepgram](/providers/ai-sdk-providers/deepgram)
+  - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
+  - [Gladia](/providers/ai-sdk-providers/gladia)
+  - [LMNT](/providers/ai-sdk-providers/lmnt)
+  - [Google](/providers/ai-sdk-providers/google)
+  - [Hume](/providers/ai-sdk-providers/hume)
+  - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
+  - [Rev.ai](/providers/ai-sdk-providers/revai)
+  - [Baseten](/providers/ai-sdk-providers/baseten)
+  - [Hugging Face](/providers/ai-sdk-providers/huggingface)
+  - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+  - [Mistral AI](/providers/ai-sdk-providers/mistral)
+  - [Together.ai](/providers/ai-sdk-providers/togetherai)
+  - [Cohere](/providers/ai-sdk-providers/cohere)
+  - [Fireworks](/providers/ai-sdk-providers/fireworks)
+  - [Voyage AI](/providers/ai-sdk-providers/voyage)
+  - [DeepSeek](/providers/ai-sdk-providers/deepseek)
+  - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
+  - [Alibaba](/providers/ai-sdk-providers/alibaba)
+  - [Cerebras](/providers/ai-sdk-providers/cerebras)
+  - [Replicate](/providers/ai-sdk-providers/replicate)
+  - [Prodia](/providers/ai-sdk-providers/prodia)
+  - [Perplexity](/providers/ai-sdk-providers/perplexity)
+  - [Luma](/providers/ai-sdk-providers/luma)
+  - [ByteDance](/providers/ai-sdk-providers/bytedance)
+  - [Kling AI](/providers/ai-sdk-providers/klingai)
+  - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [AI SDK Harnesses](/providers/ai-sdk-harnesses)
+  - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
+  - [Codex](/providers/ai-sdk-harnesses/codex)
+  - [Pi](/providers/ai-sdk-harnesses/pi)
+  - [OpenCode](/providers/ai-sdk-harnesses/opencode)
+  - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+- [Observability Integrations](/providers/observability)
+  - [Arize AX](/providers/observability/arize-ax)
+  - [Axiom](/providers/observability/axiom)
+  - [Braintrust](/providers/observability/braintrust)
+  - [Confident AI](/providers/observability/confident-ai)
+  - [Helicone](/providers/observability/helicone)
+  - [Laminar](/providers/observability/laminar)
+  - [Langfuse](/providers/observability/langfuse)
+  - [LangSmith](/providers/observability/langsmith)
+  - [LangWatch](/providers/observability/langwatch)
+  - [Latitude](/providers/observability/latitude)
+  - [Maxim](/providers/observability/maxim)
+  - [MLflow](/providers/observability/mlflow)
+  - [Patronus](/providers/observability/patronus)
+  - [PostHog](/providers/observability/posthog)
+  - [Raindrop](/providers/observability/raindrop)
+  - [Respan](/providers/observability/respan)
+  - [Scorecard](/providers/observability/scorecard)
+  - [SigNoz](/providers/observability/signoz)
+  - [Traceloop](/providers/observability/traceloop)
+  - [Weave](/providers/observability/weave)
+- [OpenAI Compatible Providers](/providers/openai-compatible-providers)
+  - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
+  - [LM Studio](/providers/openai-compatible-providers/lmstudio)
+  - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
+  - [Clarifai](/providers/openai-compatible-providers/clarifai)
+  - [Heroku](/providers/openai-compatible-providers/heroku)
+  - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+- [Community Providers](/providers/community-providers)
+  - [Writing a Custom Provider](/providers/community-providers/custom-providers)
+  - [A2A](/providers/community-providers/a2a)
+  - [ACP (Agent Client Protocol)](/providers/community-providers/acp)
+  - [Aihubmix](/providers/community-providers/aihubmix)
+  - [AI/ML API](/providers/community-providers/aimlapi)
+  - [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
+  - [Automatic1111](/providers/community-providers/automatic1111)
+  - [Azure AI](/providers/community-providers/azure-ai)
+  - [Browser AI](/providers/community-providers/browser-ai)
+  - [Claude Code](/providers/community-providers/claude-code)
+  - [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
+  - [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
+  - [Codex CLI](/providers/community-providers/codex-cli)
+  - [Crosshatch](/providers/community-providers/crosshatch)
+  - [Dify](/providers/community-providers/dify)
+  - [Firemoon](/providers/community-providers/firemoon)
+  - [FriendliAI](/providers/community-providers/friendliai)
+  - [Gemini CLI](/providers/community-providers/gemini-cli)
+  - [Helicone](/providers/community-providers/helicone)
+  - [Inflection AI](/providers/community-providers/inflection-ai)
+  - [Jina AI](/providers/community-providers/jina-ai)
+  - [LangDB](/providers/community-providers/langdb)
+  - [Letta](/providers/community-providers/letta)
+  - [llama.cpp](/providers/community-providers/llama-cpp)
+  - [LlamaGate](/providers/community-providers/llamagate)
+  - [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
+  - [Mem0](/providers/community-providers/mem0)
+  - [MiniMax](/providers/community-providers/minimax)
+  - [Mixedbread](/providers/community-providers/mixedbread)
+  - [Ollama](/providers/community-providers/ollama)
+  - [OpenCode](/providers/community-providers/opencode-sdk)
+  - [OpenRouter](/providers/community-providers/openrouter)
+  - [Portkey](/providers/community-providers/portkey)
+  - [Qwen](/providers/community-providers/qwen)
+  - [React Native Apple](/providers/community-providers/react-native-apple)
+  - [Requesty](/providers/community-providers/requesty)
+  - [Runpod](/providers/community-providers/runpod)
+  - [SambaNova](/providers/community-providers/sambanova)
+  - [SAP AI Core](/providers/community-providers/sap-ai)
+  - [Sarvam](/providers/community-providers/sarvam)
+  - [Soniox](/providers/community-providers/soniox)
+  - [Spark](/providers/community-providers/spark)
+  - [Supermemory](/providers/community-providers/supermemory)
+  - [Voyage AI](/providers/community-providers/voyage-ai)
+  - [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
+  - [vectorstores](/providers/community-providers/vectorstores)
+  - [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
+  - [Apertis](/providers/community-providers/apertis)
+  - [OLLM](/providers/community-providers/ollm)
+  - [Cencori](/providers/community-providers/cencori)
+  - [Hindsight](/providers/community-providers/hindsight)
+  - [Nia](/providers/community-providers/nia)
+  - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Flowise](/providers/community-providers/flowise)
+- [Adapters](/providers/adapters)
+  - [LangChain](/providers/adapters/langchain)
+  - [LlamaIndex](/providers/adapters/llamaindex)
+
+
+[Full Sitemap](/sitemap.md)

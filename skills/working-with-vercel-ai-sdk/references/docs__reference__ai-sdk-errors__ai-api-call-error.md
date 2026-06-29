@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-api-call-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "faeda55c2ec564c400c3afa21e439804a9cd7848b4a7dd2ac15d4c611e56f679"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f2263666717c9c44bd9d229897fe028e71d1cbda32e4f2409ad14a8dc474c357"
 ---
 
 # AI_APICallError
@@ -56,6 +56,7 @@ if (APICallError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

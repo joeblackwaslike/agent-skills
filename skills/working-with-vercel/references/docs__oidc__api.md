@@ -12,8 +12,8 @@ related:
 summary: "Learn how to configure your own API to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "593cfa25ed2ecb992367e0d242730683efe96b33a97c2d6b10ae67821e4bad87"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "36b35e254b23287ee5db77cf5a9d00afb531f6780a3bca744912bb84d3718d14"
 ---
 
 # Connect to your own API
@@ -140,6 +140,37 @@ export const GET = async () => {
 
   return Response.json(await result.json());
 };
+```
+
+### Use a custom audience
+
+By default, the OIDC token's `aud` claim is set to `https://vercel.com/[TEAM_SLUG]`. If your API expects a different audience value, pass the `audience` option to `getVercelOidcToken`. This exchanges the default token for a new one with the custom `aud` claim.
+
+```ts filename="/api/custom-api/route.ts"
+import { getVercelOidcToken } from '@vercel/oidc';
+
+export const GET = async () => {
+  const token = await getVercelOidcToken({
+    audience: 'https://api.example.com',
+  });
+
+  const result = await fetch('https://api.example.com', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return Response.json(await result.json());
+};
+```
+
+When validating the token on your API server, update the expected `audience` to match:
+
+```ts filename="server.ts"
+const { payload } = jose.jwtVerify(token, JWKS, {
+  issuer: ISSUER_URL,
+  audience: 'https://api.example.com',
+});
 ```
 
 

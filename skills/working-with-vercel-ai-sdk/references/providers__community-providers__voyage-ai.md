@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/voyage-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bb4f2c924414e3cd0131aaf16ad2c81683c4981e2261e9f9c6f3483be0ab00b0"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "77626dab86653138d9a245ede426af24eb55600e53beec575aaab6abd17ecc48"
 ---
 
 # Voyage AI Provider
@@ -119,25 +119,21 @@ The following [provider options](https://docs.voyageai.com/reference/embeddings-
 - **inputType** _'query' | 'document' | 'null'_
 
   Specifies the type of input passed to the model. Defaults to `'null'`.
-
   - `'null'`: When `inputType` is `'null'`, the embedding model directly converts the inputs into numerical vectors.
 
   For retrieval/search purposes it is recommended to use `'query'` or `'document'`.
-
   - `'query'`: The input is a search query, e.g., "Represent the query for retrieving supporting documents: ...".
   - `'document'`: The input is a document to be stored in a vector database, e.g., "Represent the document for retrieval: ...".
 
 - **outputDimension** _number_
 
   The number of dimensions for the resulting output embeddings. Default is `'null'`.
-
   - For example, `voyage-code-3` and `voyage-3-large` support: 2048, 1024 (default), 512, and 256.
   - Refer to the [model documentation](https://docs.voyageai.com/docs/embeddings) for supported values.
 
 - **outputDtype** _'float' | 'int8' | 'uint8' | 'binary' | 'ubinary'_
 
   The data type for the output embeddings. Defaults to `'float'`.
-
   - `'float'`: 32-bit floating-point numbers (supported by all models).
   - `'int8'`, `'uint8'`: 8-bit integer types (supported by `voyage-3-large`, `voyage-3.5`, `voyage-3.5-lite`, and `voyage-code-3`).
   - `'binary'`, `'ubinary'`: Bit-packed, quantized single-bit embedding values (`voyage-3-large`, `voyage-3.5`, `voyage-3.5-lite`, and `voyage-code-3`). The returned list length is 1/8 of `outputDimension`. `'binary'` uses offset binary encoding.
@@ -294,14 +290,12 @@ The following provider options are available:
   Specifies the type of input passed to the model. Defaults to `'query'`.
 
   When `inputType` is specified as `'query'` or `'document'`, Voyage automatically prepends a prompt to your inputs before vectorizing them, creating vectors tailored for retrieval/search tasks:
-
   - `'query'`: Prepends "Represent the query for retrieving supporting documents: "
   - `'document'`: Prepends "Represent the document for retrieval: "
 
 - **outputEncoding** _'base64'_
 
   The data encoding for the resulting output embeddings. Defaults to `null` (list of 32-bit floats).
-
   - If `null`, embeddings are returned as a list of floating-point numbers (float32).
   - If `'base64'`, embeddings are returned as a Base64-encoded NumPy array of single-precision floats.
 

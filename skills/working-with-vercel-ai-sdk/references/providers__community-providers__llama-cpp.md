@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/llama-cpp.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "abbc33614bbf563d600db438143c4045735ca0b7a7feb31ee4474c8d5d2daab7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "ce354632a0284789d334f4f1b2f14c6523af9128045fdd26f170173de0d51a0e"
 ---
 
 # llama.cpp Provider
@@ -30,7 +30,7 @@ This provider loads llama.cpp directly into Node.js memory, eliminating the need
 Before installing, ensure you have the following:
 
 - **macOS** (Apple Silicon or Intel)
-- **Node.js** >= 18.0.0
+- **Node.js** >= 22.0.0
 - **CMake** >= 3.15
 - **Xcode Command Line Tools**
 

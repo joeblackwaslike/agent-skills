@@ -3,7 +3,7 @@ title: Environment variables
 product: vercel
 url: /docs/environment-variables
 canonical_url: "https://vercel.com/docs/environment-variables"
-last_updated: 2026-02-23
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ec6bb3fd1c8dc36a027281ffce20fa931b19bfefde225b6ceed7eafd8396b45f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "233d229e3cfc4504317bf08f72c6d0499933bb706eb3935cfca2a9cb3ebfd240"
 ---
 
 # Environment variables

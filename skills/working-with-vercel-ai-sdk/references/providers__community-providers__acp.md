@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/acp.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "91e1cd61236093e9bcffab3f76025920fc23af1315114cfc72b2e61fad973531"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "53521d6348b46dc1a2b79f9dd7f2f4a1ca0a6a93f5b83cc13bc60ee91a6114a2"
 ---
 
 # ACP (Agent Client Protocol)
@@ -74,7 +74,6 @@ The provider accepts the following configuration:
 - **session** _ACPSessionConfig_ (required)
 
   Session configuration including:
-
   - `cwd`: Working directory for the agent
   - `mcpServers`: Array of MCP server configurations to provide tools to the agent
 

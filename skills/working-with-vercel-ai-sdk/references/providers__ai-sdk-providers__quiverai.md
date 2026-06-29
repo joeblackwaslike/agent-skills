@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "30b6eb94a5c5ebf225e98a0f24bebb0533b175064fce75e0271e8e46b4f52b8a"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "701936ece8bf2b85ab09b461e74791ed3aac72325624b866883c2b12ea5e13ee"
 ---
 
 # QuiverAI Provider
@@ -224,7 +224,7 @@ fs.writeFileSync('logo.svg', image.uint8Array);
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

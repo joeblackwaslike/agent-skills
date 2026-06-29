@@ -3,7 +3,7 @@ title: Deployment Retention
 product: vercel
 url: /docs/deployment-retention
 canonical_url: "https://vercel.com/docs/deployment-retention"
-last_updated: 2026-04-01
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -15,8 +15,8 @@ related:
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "cc4ecebc881c486cf54ec8bc04dd69c7f2e1c9b99159fc2672e16ab48a7a2bac"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "c0b42ff84bbbc7e1d38a488ae4c4e4674830091dd5507ae4219f347ce3c03e44"
 ---
 
 # Deployment Retention

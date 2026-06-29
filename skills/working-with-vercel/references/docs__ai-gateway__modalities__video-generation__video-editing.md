@@ -3,18 +3,18 @@ title: Video Editing
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/video-editing
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
 related:
   []
-summary: Learn about video editing on Vercel.
+summary: Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "ed18f550885ad3e483251b3bb4a92698abddca23b3ff7d1a7cfeebbed7ed4d70"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3f985928176dcd2b99589c7669fadf8c7bbeea61bb1e5ce72b7cd60b3ba66db1"
 ---
 
 # Video Editing

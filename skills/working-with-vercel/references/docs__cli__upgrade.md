@@ -3,7 +3,7 @@ title: vercel upgrade
 product: vercel
 url: /docs/cli/upgrade
 canonical_url: "https://vercel.com/docs/cli/upgrade"
-last_updated: 2026-05-29
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/upgrade.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1468c5b6352bbb18c508620005b94699b578451c8ec40939dd0fa8820b9c091a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "fa0018273b4079d2e3019e0656cce409f6061fcd2196d52d87caa353417eb15f"
 ---
 
 # vercel upgrade

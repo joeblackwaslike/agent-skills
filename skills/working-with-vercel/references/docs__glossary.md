@@ -3,7 +3,7 @@ title: Glossary
 product: vercel
 url: /docs/glossary
 canonical_url: "https://vercel.com/docs/glossary"
-last_updated: 2026-05-25
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d0ce74ca54471a9eeb008d750e838934c26dd600ce3c9f77d9e26e862bfc8045"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "336cf39c0d8d56b1f0fe615762c7c00c84a43ed938e7ba7b2263d4b380832735"
 ---
 
 # Glossary

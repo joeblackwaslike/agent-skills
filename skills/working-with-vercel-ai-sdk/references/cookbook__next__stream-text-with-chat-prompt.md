@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text-with-chat-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b525ed27e8c965db1f82e3b47d9c88ef7510d8e4a51f975df57a3d2ac6487d0b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "edef6ef1ecf82c3ee21fb1dadcdcbeb3240849d345acab9967b2f0ec5d308293"
 ---
 
 # Stream Text with Chat Prompt
@@ -78,7 +78,13 @@ export default function Page() {
 Next, let's create the `/api/chat` endpoint that generates the assistant's response based on the conversation history.
 
 ```typescript filename='app/api/chat/route.ts'
-import { convertToModelMessages, streamText, type UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  type UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
@@ -89,7 +95,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

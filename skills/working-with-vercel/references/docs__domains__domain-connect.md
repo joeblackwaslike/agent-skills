@@ -3,7 +3,7 @@ title: Domain Connect
 product: vercel
 url: /docs/domains/domain-connect
 canonical_url: "https://vercel.com/docs/domains/domain-connect"
-last_updated: 2026-04-14
+last_updated: 2026-06-08
 type: how-to
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5bb24abfb02b449814400f96d5255f64dedfee966bfc17c2c5b35d364e028027"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b957f2d80674fbe323cfe14ee1cf8ecfe30dc7d7f107f72679678bc038a5d3c0"
 ---
 
 # Domain Connect

@@ -3,7 +3,7 @@ title: Chatbox
 product: vercel
 url: /docs/ai-gateway/chat-platforms/chatbox
 canonical_url: "https://vercel.com/docs/ai-gateway/chat-platforms/chatbox"
-last_updated: 2026-02-26
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/chat-platforms
@@ -13,8 +13,8 @@ related:
 summary: Use Chatbox with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/chatbox.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "8cf814c150460689d5a597c2cf138662c4196a416bd9e1126e05ff1f2dfc12d8"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4b251a6ac16c3b9d9aa1757760aba5ef86a2486089b72184568fd44f24911dbc"
 ---
 
 # Chatbox

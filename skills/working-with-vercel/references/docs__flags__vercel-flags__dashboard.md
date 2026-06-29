@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c87a3447208cc03cf3c800be78ce3d3e72d6b8b6b7d571917a41527d26b42569"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b803fdc4c0653b46c5e62d3b777b5573c678ca60292796ba39a093150dfbe6c5"
 ---
 
 # Managing flags in the dashboard
@@ -50,9 +50,8 @@ When you create a JSON flag, give variants clear labels so they're easier to dis
 
 During creation, you can configure which variant each environment receives. Boolean flags default to `true` in Development and `false` in Preview and Production, so your feature is visible while you develop but hidden after merging. You can refine these rules at any time after creating the flag.
 
-When you create a flag, Vercel automatically configures these environment variables for your project:
+When you create a flag, Vercel automatically configures this environment variable for your project:
 
-- `FLAGS`: Connection string to your Vercel Flags project
 - `FLAGS_SECRET`: Secret key used by the Flags Explorer for overrides
 
 See [Feature Flag Configuration](/docs/flags/vercel-flags/dashboard/feature-flag) for more information on how to configure individual flags.
@@ -85,7 +84,7 @@ For more information on entities, see [Entities](/docs/flags/vercel-flags/dashbo
 
 ### SDK Keys
 
-SDK Keys authenticate your application and determine which environment's configuration is used. Vercel automatically manages keys through the `FLAGS` environment variable, but you can view and rotate them here if needed.
+SDK Keys are secrets for manual authentication and cross-project flag evaluation.
 
 To share flags across projects, such as in a microfrontend setup, create a dedicated SDK Key in one project and add it to the other project's environment variables. See [How to use flags of another project](/docs/flags/vercel-flags/dashboard/sdk-keys#how-to-use-flags-of-another-project) for details.
 

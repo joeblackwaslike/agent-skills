@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d3ff9b3780bca3208e0030a4a05fab381ee373895d09e76ff61c08f4efc24530"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cbaf0c129ceff094f438f6bc43175864979ae99b5915989ae948b5699f8c7afb"
 ---
 
 # Stream Protocols
@@ -26,8 +26,8 @@ When you use `useChat` or `useCompletion`, you need to enable text streaming
 by setting the `streamProtocol` options to `text`.
 
 You can generate text streams with `streamText` in the backend.
-When you call `toTextStreamResponse()` on the result object,
-a streaming HTTP response is returned.
+Pass the result's `stream` to `toTextStream` and return it with
+`createTextStreamResponse` to create a streaming HTTP response.
 
 <Note>
   Text streams only support basic text data. If you need to stream other types
@@ -85,7 +85,13 @@ export default function Chat() {
 ```
 
 ```ts filename='app/api/chat/route.ts'
-import { streamText, UIMessage, convertToModelMessages } from 'ai';
+import {
+  convertToModelMessages,
+  createTextStreamResponse,
+  streamText,
+  toTextStream,
+  UIMessage,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
@@ -99,7 +105,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -215,6 +223,19 @@ data: {"type":"reasoning-end","id":"reasoning_123"}
 
 ```
 
+### Reasoning File Part
+
+Reasoning file parts contain references to files generated as part of reasoning, such as images produced during the reasoning process.
+
+Format: Server-Sent Event with JSON object
+
+Example:
+
+```
+data: {"type":"reasoning-file","url":"data:image/png;base64,iVBOR...","mediaType":"image/png"}
+
+```
+
 ### Source Parts
 
 Source parts provide references to external content sources.
@@ -255,6 +276,19 @@ Example:
 
 ```
 data: {"type":"file","url":"https://example.com/file.png","mediaType":"image/png"}
+
+```
+
+### Custom Part
+
+Custom parts represent provider-specific content that doesn't fit into the standard part types. The `kind` field identifies the specific custom content type in the format `{provider}.{provider-type}`.
+
+Format: Server-Sent Event with JSON object
+
+Example:
+
+```
+data: {"type":"custom","kind":"openai.compaction","providerMetadata":{"openai":{"itemId":"cmp_123"}}}
 
 ```
 
@@ -325,6 +359,36 @@ data: {"type":"tool-input-available","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar
 
 ```
 
+### Tool Approval Request Part
+
+Indicates that a tool call requires approval, or records that the approval decision was made automatically.
+
+Format: Server-Sent Event with JSON object
+
+Example:
+
+```
+data: {"type":"tool-approval-request","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","approvalId":"approval_123","isAutomatic":true}
+
+```
+
+When `isAutomatic` is omitted, the request expects an explicit approval response from the client.
+
+### Tool Approval Response Part
+
+Records the approval decision for a tool call.
+
+Format: Server-Sent Event with JSON object
+
+Example:
+
+```
+data: {"type":"tool-approval-response","approvalId":"approval_123","approved":false,"reason":"User denied the request"}
+
+```
+
+For provider-executed tools, the response can also include `providerExecuted: true`.
+
 ### Tool Output Available Part
 
 Contains the result of tool execution.
@@ -335,6 +399,19 @@ Example:
 
 ```
 data: {"type":"tool-output-available","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","output":{"city":"San Francisco","weather":"sunny"}}
+
+```
+
+### Tool Output Denied Part
+
+Indicates that tool execution was denied after the approval flow completed.
+
+Format: Server-Sent Event with JSON object
+
+Example:
+
+```
+data: {"type":"tool-output-denied","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar"}
 
 ```
 
@@ -409,7 +486,7 @@ The data stream protocol is supported
 by `useChat` and `useCompletion` on the frontend and used by default.
 `useCompletion` only supports the `text` and `data` stream parts.
 
-On the backend, you can use `toUIMessageStreamResponse()` from the `streamText` result object to return a streaming HTTP response.
+On the backend, you can pass the `streamText` result stream to `toUIMessageStream` and return it with `createUIMessageStreamResponse`.
 
 ### UI Message Stream Example
 
@@ -459,7 +536,13 @@ export default function Chat() {
 ```
 
 ```ts filename='app/api/chat/route.ts'
-import { streamText, UIMessage, convertToModelMessages } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
@@ -473,7 +556,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

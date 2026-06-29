@@ -3,7 +3,7 @@ title: Next.js on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/nextjs
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/nextjs"
-last_updated: 2026-03-02
+last_updated: 2026-06-18
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "7c85f5e176dfc8fc466911147ced6efcce73e69ae659517b27a8f3b46142f536"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "99a51b768966f242e413c0a87835f8efec8867f3eea0a6006f76ae2503fd3af6"
 ---
 
 # Next.js on Vercel
@@ -980,7 +980,7 @@ See [our Frameworks documentation page](/docs/frameworks) to learn about the ben
 Learn more about deploying Next.js projects on Vercel with the following resources:
 
 - [Build a fullstack Next.js app](/kb/guide/nextjs-prisma-postgres)
-- [Build a multi-tenant app](/docs/multi-tenant)
+- [Build a multi-tenant app](/docs/platforms)
 - [Next.js with Contenful](/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms)
 - [Next.js with Stripe Checkout and Typescript](/kb/guide/getting-started-with-nextjs-typescript-stripe)
 - [Next.js with Magic.link](/kb/guide/add-auth-to-nextjs-with-magic)

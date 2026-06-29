@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/node-http-server.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ea4743754a32b2dc1c61686222af2a64269b6056dc03d7bfa2489aaee4f1c042"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8fd7f02a175dabbed7de8dc50392dca4f8bb45e1396bb12375c6bcfd5dd78b32"
 ---
 
 # Node.js HTTP Server
@@ -25,10 +25,14 @@ curl -X POST http://localhost:8080
 
 ### UI Message Stream
 
-You can use the `pipeUIMessageStreamToResponse` method to pipe the stream data to the server response.
+You can use the `pipeUIMessageStreamToResponse` helper to pipe the stream data to the server response.
 
 ```ts filename='index.ts'
-import { streamText } from 'ai';
+import {
+  pipeUIMessageStreamToResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 import { createServer } from 'http';
 
 createServer(async (req, res) => {
@@ -37,7 +41,10 @@ createServer(async (req, res) => {
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 
-  result.pipeUIMessageStreamToResponse(res);
+  pipeUIMessageStreamToResponse({
+    response: res,
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }).listen(8080);
 ```
 
@@ -50,6 +57,7 @@ import {
   createUIMessageStream,
   pipeUIMessageStreamToResponse,
   streamText,
+  toUIMessageStream,
 } from 'ai';
 import { createServer } from 'http';
 
@@ -74,7 +82,8 @@ createServer(async (req, res) => {
           });
 
           writer.merge(
-            result.toUIMessageStream({
+            toUIMessageStream({
+              stream: result.stream,
               sendStart: false,
               onError: error => {
                 // Error messages are masked by default for security reasons.
@@ -99,7 +108,7 @@ createServer(async (req, res) => {
 You can send a text stream to the client using `pipeTextStreamToResponse`.
 
 ```ts filename='index.ts'
-import { streamText } from 'ai';
+import { pipeTextStreamToResponse, streamText, toTextStream } from 'ai';
 import { createServer } from 'http';
 
 createServer(async (req, res) => {
@@ -108,7 +117,10 @@ createServer(async (req, res) => {
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 
-  result.pipeTextStreamToResponse(res);
+  pipeTextStreamToResponse({
+    response: res,
+    stream: toTextStream({ stream: result.stream }),
+  });
 }).listen(8080);
 ```
 

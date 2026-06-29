@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/computer-use.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "58f21a9da81a583c26abdb27a0b4f4b0a8cba0a457fdc3f1fb84a6137c08abde"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "061fa935e827fab89b62d8cf6c01c64e2fec3a6bd0c3582b30083dc9bad70577"
 ---
 
 # Get started with Computer Use
@@ -117,7 +117,7 @@ const computerTool = anthropic.tools.computer_20250124({
   toModelOutput({ output }) {
     return typeof output === 'string'
       ? [{ type: 'text', text: output }]
-      : [{ type: 'image', data: output.data, mediaType: 'image/png' }];
+      : [{ type: 'file-data', data: output.data, mediaType: 'image/png' }];
   },
 });
 ```
@@ -167,13 +167,13 @@ for await (const chunk of result.textStream) {
 To allow the model to perform multiple steps without user intervention, use the `stopWhen` parameter. This will automatically send any tool results back to the model to trigger a subsequent generation:
 
 ```ts highlight="1,7"
-import { stepCountIs } from 'ai';
+import { isStepCount } from 'ai';
 
 const stream = streamText({
   model: 'anthropic/claude-sonnet-4-20250514',
   prompt: 'Open the browser and navigate to vercel.com',
   tools: { computer: computerTool },
-  stopWhen: stepCountIs(10), // experiment with this value based on your use case
+  stopWhen: isStepCount(10), // experiment with this value based on your use case
 });
 ```
 
@@ -263,6 +263,7 @@ Remember, Computer Use is a beta feature. Please be aware that it poses unique r
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

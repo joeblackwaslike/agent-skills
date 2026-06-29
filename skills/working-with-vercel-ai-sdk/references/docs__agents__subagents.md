@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/subagents.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "f8e3dd297eba51d501de7d530c76e233912cf22e067f64a1f08dc03729a65a17"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "3ce10df00ddd3068e417867db4d9ac38f62c7622c69b3eccea7c36ee205252d4"
 ---
 
 # Subagents
@@ -154,7 +154,7 @@ Each `yield` **replaces** the previous output entirely (it does not append). Thi
 The `readUIMessageStream` utility handles this. It reads each chunk from the stream and builds an ever-growing `UIMessage` containing all parts received so far:
 
 ```ts
-import { readUIMessageStream, tool } from 'ai';
+import { readUIMessageStream, toUIMessageStream, tool } from 'ai';
 import { z } from 'zod';
 
 const researchTool = tool({
@@ -171,7 +171,7 @@ const researchTool = tool({
 
     // Each iteration yields a complete, accumulated UIMessage
     for await (const message of readUIMessageStream({
-      stream: result.toUIMessageStream(),
+      stream: toUIMessageStream({ stream: result.stream }),
     })) {
       yield message;
     }
@@ -202,7 +202,7 @@ const researchTool = tool({
     });
 
     for await (const message of readUIMessageStream({
-      stream: result.toUIMessageStream(),
+      stream: toUIMessageStream({ stream: result.stream }),
     })) {
       yield message;
     }
@@ -335,7 +335,9 @@ export function Chat() {
 
 ### No Tool Approvals in Subagents
 
-Subagent tools cannot use `needsApproval`. All tools must execute automatically without user confirmation.
+Subagent tools cannot use approval flows such as `toolApproval` (or the
+deprecated `needsApproval`). All tools must execute automatically without user
+confirmation.
 
 ### Subagent Context is Isolated
 
@@ -371,7 +373,11 @@ The basic pattern (no streaming) is simpler to implement and debug. Only add str
 - [Loop Control](/docs/agents/loop-control)
 - [Configuring Call Options](/docs/agents/configuring-call-options)
 - [Memory](/docs/agents/memory)
+- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
 - [Subagents](/docs/agents/subagents)
+- [Tool Approvals](/docs/agents/tool-approvals)
+- [WorkflowAgent](/docs/agents/workflow-agent)
+- [Terminal UI](/docs/agents/terminal-ui)
 
 
 [Full Sitemap](/sitemap.md)

@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/observability
 canonical_url: "https://vercel.com/docs/observability"
-last_updated: 2026-06-01
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "f0ea17c485cd4fc40a989869e6808da82a9881b6655b250e0201450b696ec85c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "c8718a5fb2de13cb336c1290fc6ce58ccc02254e99847b23b545225d5b35324d"
 ---
 
 # Observability

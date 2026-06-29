@@ -3,7 +3,7 @@ title: OpenCode
 product: vercel
 url: /docs/ai-gateway/coding-agents/opencode
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/opencode"
-last_updated: 2026-05-11
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Use OpenCode with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/opencode.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "1fd6773c2c94ffb8ca21cfb087cdeff1e0169e8718d4b9c3d91b9cfd3c4bf1fa"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "984dbb384f59d09d0f752f0093529050074912795c5cbfdcaeb272e3e715622c"
 ---
 
 # OpenCode

@@ -17,8 +17,8 @@ related:
 summary: Learn how to bypass Vercel Deployment Protection for automated tooling (e.g. E2E testing).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9eec96067f603997a78ad2588cba9e47441fe77583cdcde33043b0c0bca092b3"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "8eb03aa324dd94e4ce352f3c8f729e260602fc1a1fac0e0baeaee4424c9d8cae"
 ---
 
 # Protection Bypass for Automation
@@ -55,7 +55,7 @@ You can create multiple bypass secrets per project to manage access independentl
 
 You can use each available secret to bypass Deployment Protection on all deployments in a project until the secret is revoked. When you build a deployment, Vercel sets the environment variable value, so regenerating or deleting the secret in the project settings will invalidate previous deployments. You will need to redeploy your app if you update the secret in order to use the new value.
 
-![Image](<&#xA;    '/docs-assets/static/docs/deployment-protection/protection-bypass-light.png'&#xA;  >)
+![Image](<&#xA;  '/docs-assets/static/docs/deployment-protection/protection-bypass-light.png'&#xA;>)
 
 ## Permissions for Protection Bypass for Automation
 

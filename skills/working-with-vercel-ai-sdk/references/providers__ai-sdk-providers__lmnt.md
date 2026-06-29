@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/lmnt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8938c7940aa5aedda36b303592ece96d7880c24b2ca2c0e79919f2eb6dbab6a3"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "05a9aecd32e9cd7e9088e8c1831572af5674e4837e4e017af3f8e2cd074f5bcc"
 ---
 
 # LMNT Provider
@@ -79,7 +79,7 @@ const model = lmnt.speech('aurora');
 The `voice` parameter can be set to a voice ID from LMNT. You can find available voices in the [LMNT documentation](https://docs.lmnt.com/api-reference/voices/list-voices).
 
 ```ts highlight="7"
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { lmnt } from '@ai-sdk/lmnt';
 
 const result = await generateSpeech({
@@ -93,7 +93,7 @@ const result = await generateSpeech({
 You can also pass additional provider-specific options using the `providerOptions` argument:
 
 ```ts highlight="10-14"
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { lmnt } from '@ai-sdk/lmnt';
 import { type LMNTSpeechModelOptions } from '@ai-sdk/lmnt';
 
@@ -174,7 +174,7 @@ The LMNT provider accepts the following options via `providerOptions.lmnt`:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

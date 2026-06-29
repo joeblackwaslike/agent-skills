@@ -3,7 +3,7 @@ title: Pricing
 product: vercel
 url: /docs/ai-gateway/pricing
 canonical_url: "https://vercel.com/docs/ai-gateway/pricing"
-last_updated: 2026-05-22
+last_updated: 2026-06-20
 type: reference
 prerequisites:
   - /docs/ai-gateway
@@ -15,8 +15,8 @@ related:
 summary: Learn about pricing for AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "4dde30894198b5fb12375a7820eb66b89a93898183e4d0a85f51e7cffc6b535e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9f5a26a16013d91cbc75ae263fbe509b70e80839a297d18bb4aaf71ae47850aa"
 ---
 
 # Pricing

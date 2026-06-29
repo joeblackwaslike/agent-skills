@@ -3,7 +3,7 @@ title: Deploying Git Repositories with Vercel
 product: vercel
 url: /docs/git
 canonical_url: "https://vercel.com/docs/git"
-last_updated: 2026-03-12
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLab, and Bitbucket projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c03f8b7b7bcb277630779e1b0395d5b65acee02d9afeb09c4e5e16785b8069f4"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "61419b0bcdca9046059118cb1bd561fa77beb4b047f7ae3142d7ad1bba34288a"
 ---
 
 # Deploying Git Repositories with Vercel

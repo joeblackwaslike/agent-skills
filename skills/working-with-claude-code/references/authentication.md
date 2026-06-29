@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/authentication.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "57890342e80867c27c71891884fcd6cc73bc31f2828df608864fcff09d0d81e2"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "4ec8130d29ec5ce78861f0428f68dde211942b496823343e1df87eb342eb963f"
 ---
 
 > ## Documentation Index
@@ -130,7 +130,7 @@ Claude Code securely manages your authentication credentials:
 * **Refresh intervals**: by default, `apiKeyHelper` is called after 5 minutes or on HTTP 401 response. Set `CLAUDE_CODE_API_KEY_HELPER_TTL_MS` environment variable for custom refresh intervals.
 * **Slow helper notice**: if `apiKeyHelper` takes longer than 10 seconds to return a key, Claude Code displays a warning notice in the prompt bar showing the elapsed time. If you see this notice regularly, check whether your credential script can be optimized.
 
-`apiKeyHelper`, `ANTHROPIC_API_KEY`, and `ANTHROPIC_AUTH_TOKEN` apply to terminal CLI sessions only. Claude Desktop and cloud sessions use OAuth exclusively and do not call `apiKeyHelper` or read API key environment variables.
+`apiKeyHelper`, `ANTHROPIC_API_KEY`, and `ANTHROPIC_AUTH_TOKEN` apply to the CLI and the surfaces that wrap it, including the VS Code extension, the Agent SDK, and GitHub Actions. Claude Desktop and cloud sessions do not call `apiKeyHelper` or read these environment variables: they use OAuth, except desktop sessions running an [organization-distributed third-party inference configuration](/en/llm-gateway-connect#desktop-app), which authenticate with that configuration's credential.
 
 ### Authentication precedence
 

@@ -3,7 +3,7 @@ title: Access Control
 product: vercel
 url: /docs/security/access-control
 canonical_url: "https://vercel.com/docs/security/access-control"
-last_updated: 2026-02-18
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/security
@@ -15,8 +15,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation, SOC 2 compliance and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/access-control.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "c17721ebc27ba6991da8113f7ceb5f38203a224720f6c758e436fb87bc69c69a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "eb2042fdd7b38c74c7d54d340b2b193b136bd78cd9d7e82329d5b5bba11448e6"
 ---
 
 # Access Control

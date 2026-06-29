@@ -3,7 +3,7 @@ title: vercel skills
 product: vercel
 url: /docs/cli/skills
 canonical_url: "https://vercel.com/docs/cli/skills"
-last_updated: 2018-10-20
+last_updated: 2026-06-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Discover agent skills relevant to your project using the vercel skills CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/skills.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8bf306151c45b172de1816b0348f9e81161a62768f3bcba72829fdadab948e19"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a30c7e8e870e849a746a6fa7fcd7e974c4bf82e830e78a55b5fdeb3995b3c097"
 ---
 
 # vercel skills

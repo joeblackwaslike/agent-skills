@@ -3,7 +3,7 @@ title: Builds
 product: vercel
 url: /docs/builds
 canonical_url: "https://vercel.com/docs/builds"
-last_updated: 2026-06-03
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "cab0b77904bd53f7f967b1cfc762dc8fc0469b96ce2a3124b7a521fdc552ce82"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "c74435896b7d54dcc740b5e43adeda4adb1c8782c9c3d6e74e285206c15370d7"
 ---
 
 # Builds

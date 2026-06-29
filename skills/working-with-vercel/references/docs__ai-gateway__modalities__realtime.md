@@ -3,7 +3,7 @@ title: Realtime
 product: vercel
 url: /docs/ai-gateway/modalities/realtime
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/realtime"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -12,11 +12,11 @@ related:
   - /docs/ai-gateway/getting-started/realtime
   - /docs/ai-gateway/modalities/speech-to-text
   - /docs/ai-gateway/modalities/text-to-speech
-summary: Learn about realtime on Vercel.
+summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "b4ae2ae686945987505f1264356ecba769691a2519b2ddb53bd986398a0ff34d"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "30cccab83c833cab68b70567fdef978f5a4d28f67e3ab8ca78f60f476242bc77"
 ---
 
 # Realtime

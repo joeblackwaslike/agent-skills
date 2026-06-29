@@ -3,7 +3,7 @@ title: Vercel fundamental concepts
 product: vercel
 url: /docs/fundamentals
 canonical_url: "https://vercel.com/docs/fundamentals"
-last_updated: 2026-03-19
+last_updated: 2026-06-17
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about the core concepts of Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "46f478acc54444a0403107d2e21f449e1209d9551210089f9be3b6183d738677"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4f87e2e7ce511e76cb70c1853f31265d2e539c95629c8b26d641eb978e22cc11"
 ---
 
 # Vercel fundamental concepts

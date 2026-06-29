@@ -8,19 +8,23 @@ type: how-to
 prerequisites:
   - /docs/speed-insights
 related:
+  - /docs/speed-insights/accessing-metrics-with-vercel-cli
   - /docs/analytics/using-web-analytics
   - /docs/analytics/filtering
   - /docs/speed-insights/metrics
-  - /docs/cli/metrics
-  - /docs/observability/observability-plus
+  - /docs/speed-insights/limits-and-pricing
 summary: "Learn how to use Speed Insights to analyze your application's performance data."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/using-speed-insights.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "72173424ef129c824b70df9be484ca790936c7b3e6437e81e7b5fd746025deaf"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "71bb6cd0fb6c4f993426c18208157303c5a656f34a5e82fc278fe2666f51884d"
 ---
 
 # Using Speed Insights
+
+> **💡 Note:** You can also [access Speed Insights metrics with Vercel CLI](/docs/speed-insights/accessing-metrics-with-vercel-cli)
+> to query production metrics, filter Core Web Vitals, and compare projects from
+> your terminal.
 
 ## Accessing Speed Insights
 
@@ -74,14 +78,6 @@ To view a geographical breakdown of your application's performance:
 4. The map is colored based on the experience metric per country. Click on a country to view more detailed data.
 
 ![Image](`/docs-assets/static/docs/concepts/speed-insights/v2/country-map-light.png`)
-
-## Querying performance metrics with the Vercel CLI
-
-You can use the [`vercel metrics`](/docs/cli/metrics) command to query Core Web Vitals from the command line, which is useful for scripts, agents, and CI checks. For what each metric measures, see [Speed Insights Metrics](/docs/speed-insights/metrics).
-
-> **💡 Note:** `vercel metrics` requires [Observability Plus](/docs/observability/observability-plus), and Speed Insights must be [enabled](/docs/speed-insights/quickstart) on the project you are querying.
-
-To discover the available Speed Insights metrics, their dimensions, and aggregations, run `vercel metrics schema` from an authenticated session that has a team scope selected. If you're not in a linked project, switch to the right team first with `vercel switch <team>` or pass `--scope <team>`. For usage, options, and example queries, see the [`vercel metrics` reference](/docs/cli/metrics).
 
 ## Disabling Speed Insights
 

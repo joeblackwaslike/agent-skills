@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nodejs.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c7bc0df5be667c1111d930205ea0fc8f1e895e1462c46d0bcafdfd153e5adaa6"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "23e462a206283b78839a4d6cf8cafbc4864d7ac00525255c6ea385d974d9b7e2"
 ---
 
 # Node.js Quickstart
@@ -16,7 +16,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 
 To follow this quickstart, you'll need:
 
-- Node.js 18+ and pnpm installed on your local development machine.
+- Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
@@ -197,7 +197,7 @@ Let's enhance your agent by adding a simple weather tool.
 
 Modify your `index.ts` file to include the new weather tool:
 
-```ts filename="index.ts" highlight="2,4,24-37"
+```ts filename="index.ts" highlight="2,4,24-38"
 import { ModelMessage, streamText, tool } from 'ai';
 __PROVIDER_IMPORT__;
 import 'dotenv/config';
@@ -258,7 +258,6 @@ In this updated code:
 
 1. You import the `tool` function from the `ai` package.
 2. You define a `tools` object with a `weather` tool. This tool:
-
    - Has a description that helps the agent understand when to use it.
    - Defines `inputSchema` using a Zod schema, specifying that it requires a `location` string to execute this tool. The agent will attempt to extract this input from the context of the conversation. If it can't, it will ask the user for the missing information.
    - Defines an `execute` function that simulates getting weather data (in this case, it returns a random temperature). This is an asynchronous function running on the server so you can fetch real data from an external API.
@@ -340,8 +339,8 @@ To solve this, you can enable multi-step tool calls using `stopWhen`. This featu
 
 Modify your `index.ts` file to configure stopping conditions with `stopWhen`:
 
-```ts filename="index.ts" highlight="38-41"
-import { ModelMessage, streamText, tool, stepCountIs } from 'ai';
+```ts filename="index.ts" highlight="1,40-45"
+import { ModelMessage, streamText, tool, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 import 'dotenv/config';
 import { z } from 'zod';
@@ -380,8 +379,8 @@ async function main() {
           },
         }),
       },
-      stopWhen: stepCountIs(5),
-      onStepFinish: async ({ toolResults }) => {
+      stopWhen: isStepCount(5),
+      onStepEnd: async ({ toolResults }) => {
         if (toolResults.length) {
           console.log(JSON.stringify(toolResults, null, 2));
         }
@@ -405,19 +404,19 @@ main().catch(console.error);
 
 In this updated code:
 
-1. You set `stopWhen` to be when `stepCountIs` 5, allowing the agent to use up to 5 "steps" for any given generation.
-2. You add an `onStepFinish` callback to log any `toolResults` from each step of the interaction, helping you understand the agent's tool usage. This means we can also delete the `toolCall` and `toolResult` `console.log` statements from the previous example.
+1. You set `stopWhen` to be when `isStepCount` 5, allowing the agent to use up to 5 "steps" for any given generation.
+2. You add an `onStepEnd` callback to log any `toolResults` from each step of the interaction, helping you understand the agent's tool usage. This means we can also delete the `toolCall` and `toolResult` `console.log` statements from the previous example.
 
 Now, when you ask about the weather in a location, you should see the agent using the weather tool results to answer your question.
 
-By setting `stopWhen: stepCountIs(5)`, you're allowing the agent to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the agent to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Celsius to Fahrenheit.
+By setting `stopWhen: isStepCount(5)`, you're allowing the agent to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the agent to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Celsius to Fahrenheit.
 
 ### Adding a second tool
 
 Update your `index.ts` file to add a new tool to convert the temperature from Celsius to Fahrenheit:
 
-```ts filename="index.ts" highlight="37-48"
-import { ModelMessage, streamText, tool, stepCountIs } from 'ai';
+```ts filename="index.ts" highlight="39-52"
+import { ModelMessage, streamText, tool, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 import 'dotenv/config';
 import { z } from 'zod';
@@ -470,8 +469,8 @@ async function main() {
           },
         }),
       },
-      stopWhen: stepCountIs(5),
-      onStepFinish: async ({ toolResults }) => {
+      stopWhen: isStepCount(5),
+      onStepEnd: async ({ toolResults }) => {
         if (toolResults.length) {
           console.log(JSON.stringify(toolResults, null, 2));
         }

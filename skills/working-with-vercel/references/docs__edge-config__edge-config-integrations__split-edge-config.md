@@ -3,7 +3,7 @@ title: Using Edge Config with Split
 product: vercel
 url: /docs/edge-config/edge-config-integrations/split-edge-config
 canonical_url: "https://vercel.com/docs/edge-config/edge-config-integrations/split-edge-config"
-last_updated: 2026-02-26
+last_updated: 2026-06-11
 type: tutorial
 prerequisites:
   - /docs/edge-config/edge-config-integrations
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Edge Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config/edge-config-integrations/split-edge-config.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2e9506cfddba097edb43cdb57207f5b9a6dbf47e8092435ea52695026c34f4a3"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "25b3e52cc97b8bb00587bfd7c355c2e2f47ed3934804755ef01741cc939cec6b"
 ---
 
 # Using Edge Config with Split

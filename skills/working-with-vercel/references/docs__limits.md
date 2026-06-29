@@ -3,21 +3,21 @@ title: Limits
 product: vercel
 url: /docs/limits
 canonical_url: "https://vercel.com/docs/limits"
-last_updated: 2026-05-20
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
 related:
   - /docs/functions/runtimes
-  - /docs/deployments/concurrent-builds
   - /docs/builds/managing-builds
   - /docs/cron-jobs/usage-and-pricing
   - /docs/pricing/regional-pricing
+  - /docs/functions/usage-and-pricing
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "cbd8970b060f68561c7c1aa91f86e84477f8c2a80bbe386f015d49d33f7c93a1"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9bc9a5ac3291df4ab7e6d8cb5746632136120a5d06c1b822ea83b8fb18da1811"
 ---
 
 # Limits
@@ -32,11 +32,11 @@ To prevent abuse of our platform, we apply the following limits to all accounts.
 | Deployments Created per Day                                                               | 100                                                                                | 6000                                                            | Custom                                                          |
 | Functions Created per Deployment                                                          | [Framework-dependent\*](/docs/functions/runtimes#functions-created-per-deployment) | ∞                                                               | ∞                                                               |
 | [Proxied Request Timeout](#proxied-request-timeout) (Seconds)                             | 120                                                                                | 120                                                             | 120                                                             |
-| [Vercel Projects Connected per Git Repository](#connecting-a-project-to-a-git-repository) | 10                                                                                 | 150                                                             | Custom                                                          |
+| [Vercel Projects Connected per Git Repository](#connecting-a-project-to-a-git-repository) | 25                                                                                 | 150                                                             | Custom                                                          |
 | [Routes created per Deployment](#routes-created-per-deployment)                           | 2048                                                                               | 2048                                                            | Custom                                                          |
 | [Build Time per Deployment](#build-time-per-deployment) (Minutes)                         | 45                                                                                 | 45                                                              | 45                                                              |
 | [Static File uploads](#static-file-uploads)                                               | 100 MB                                                                             | 1 GB                                                            | N/A                                                             |
-| [Concurrent Builds](/docs/deployments/concurrent-builds)                                  | 1                                                                                  | 12                                                              | Custom                                                          |
+| [Concurrent Deployments](/docs/builds/managing-builds#on-demand-concurrent-builds)        | 1                                                                                  | [Up to 500\*](/docs/builds/managing-builds#on-demand-concurrent-builds)             | Custom                                                          |
 | Disk Size (GB)                                                                            | 32                                                                                 | 32 up to [64](/docs/builds/managing-builds#build-machine-types) | 32 up to [64](/docs/builds/managing-builds#build-machine-types) |
 | Cron Jobs (per project)                                                                   | [100\*](/docs/cron-jobs/usage-and-pricing)                                         | 100                                                             | 100                                                             |
 
@@ -64,14 +64,15 @@ Pro includes a credit that you can use across billable resources and a pay-as-yo
 | [Active CPU](/docs/functions/usage-and-pricing#active-cpu) | Starting at $0.128 per hour | N/A |
 | [Edge Requests](/docs/pricing/regional-pricing) | Regional | First 10,000,000 |
 | [Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | Starting at $0.0106 per GB-hr | N/A |
+| [Build CPU Minutes](/docs/builds/managing-builds) | Starting at $0.0035 per CPU Minute | N/A |
 | [Edge Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour |
 | [Edge Config Reads](/docs/edge-config/using-edge-config) | $0.003 per 1K reads | N/A |
 | [Edge Config Writes](/docs/edge-config/using-edge-config) | $10 per 1K writes | N/A |
 | [Web Analytics Events](/docs/analytics/limits-and-pricing#what-is-an-event-in-vercel-web-analytics) | $0.03 | N/A |
 | [Image Optimization Transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.05 per 1K transformations | N/A |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.40 per 1M reads | N/A |
-| [Speed Insights Events](/docs/speed-insights/limits-and-pricing) | $0.65 | N/A |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.00 per 1M writes | N/A |
+| [Speed Insights Events](/docs/speed-insights/limits-and-pricing) | $0.65 | N/A |
 | [WAF Rate Limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) | Regional | N/A |
 | [Observability Plus Events](/docs/observability#tracked-events) | $1.20 | N/A |
 | [OWASP CRS per request number](/docs/vercel-firewall/vercel-waf/managed-rulesets) | Regional | N/A |
@@ -164,12 +165,6 @@ We recommend using [Incremental Static Regeneration](/docs/incremental-static-re
 The amount of time (in seconds) that a proxied request (`rewrites` or `routes` with an external destination) is allowed to process an HTTP request. The maximum timeout is **120 seconds** (2 minutes).
 If the external server does not reply until the maximum timeout is reached, an error with the message `ROUTER_EXTERNAL_TARGET_ERROR` will be returned.
 
-## WebSockets
-
-[Vercel Functions](/docs/functions) do not support acting as a WebSocket server.
-
-We recommend third-party [solutions](/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) to enable realtime communication for [Deployments](/docs/deployments).
-
 ## Web Analytics
 
 See the [Limits and Pricing section](/docs/analytics/limits-and-pricing) for more details about the limits of Vercel Web Analytics.
@@ -190,7 +185,7 @@ Vercel Workflows limits include concurrency limits of up to 100,000, 50 MB max p
 
 The limits of Vercel functions are based on the [runtime](/docs/functions/runtimes) that you use.
 
-For example, different runtimes allow for different [bundle sizes](/docs/functions/runtimes#bundle-size-limits), [maximum duration](/docs/functions/runtimes/edge#maximum-execution-duration), and [memory](/docs/functions/runtimes#memory-size-limits).
+For example, different runtimes allow for different [bundle sizes](/docs/functions/limitations#bundle-size-limits), [maximum duration](/docs/functions/runtimes/edge#maximum-execution-duration), and [memory](/docs/functions/limitations#memory-size-limits).
 
 If you have an existing project, deployed to Vercel before April 23rd 2025 and **not using Fluid compute**, Vercel Functions have the following defaults and maximum limits for the duration of a function:
 
@@ -614,6 +609,12 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Sandbox control plane requests per minute for Pro plan. | 10000 | 60 | `owner` |
 | Sandbox control plane requests per minute for Enterprise plan. | 100000 | 60 | `owner` |
 | Manual AI code review requests per minute. | 30 | 60 | `owner` |
+| VCR management API requests per minute for Hobby plan. | 100 | 60 | `owner` |
+| VCR management API requests per minute for Pro plan. | 500 | 60 | `owner` |
+| VCR management API requests per minute for Enterprise plan. | 1000 | 60 | `owner` |
+| VCR registry (Docker) requests per minute for Hobby plan. | 1000 | 60 | `owner` |
+| VCR registry (Docker) requests per minute for Pro plan. | 5000 | 60 | `owner` |
+| VCR registry (Docker) requests per minute for Enterprise plan. | 10000 | 60 | `owner` |
 
 
 ---

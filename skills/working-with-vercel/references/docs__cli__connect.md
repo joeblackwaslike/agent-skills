@@ -3,7 +3,7 @@ title: vercel connect
 product: vercel
 url: /docs/cli/connect
 canonical_url: "https://vercel.com/docs/cli/connect"
-last_updated: 2026-06-03
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "88ca21d5b238d93aa94ddeca00acc8a9f70c6cc7469834073d128564b8eed250"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "1b1957734e4868466d8398ec73aee36c50a6394d35369ad151b92521a0e47a56"
 ---
 
 # vercel connect

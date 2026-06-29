@@ -3,7 +3,7 @@ title: Working with domains
 product: vercel
 url: /docs/domains/working-with-domains
 canonical_url: "https://vercel.com/docs/domains/working-with-domains"
-last_updated: 2026-03-17
+last_updated: 2026-06-08
 type: conceptual
 prerequisites:
   - /docs/domains
@@ -16,8 +16,8 @@ related:
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "408a44195a1c350af4d532fcafdee93a344672e47ed3ec80f06d713fc227085d"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a4b117054c832ba8cc3138ac5bae5c59ac6de8763cebfc6683d40044cf3eb950"
 ---
 
 # Working with domains

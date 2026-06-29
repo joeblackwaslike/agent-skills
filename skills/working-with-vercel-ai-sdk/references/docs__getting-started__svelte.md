@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/svelte.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b8c1a119d9c7e0d5d35688f249451cfffc4b060049b83d0aa1551f95ef36640b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "3eaa41cc121ada552aab159bc481811955e5b2713caba70b2321aee7ada7fea1"
 ---
 
 # Svelte Quickstart
@@ -16,7 +16,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 
 To follow this quickstart, you'll need:
 
-- Node.js 18+ and pnpm installed on your local development machine.
+- Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
@@ -89,6 +89,8 @@ import {
   type UIMessage,
   convertToModelMessages,
   createGateway,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
 } from 'ai';
 
 import { AI_GATEWAY_API_KEY } from '$env/static/private';
@@ -105,7 +107,9 @@ export async function POST({ request }) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -119,7 +123,7 @@ Let's take a look at what is happening in this code:
 1. Create a gateway provider instance with the `createGateway` function from the `ai` package.
 2. Define a `POST` request handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation between you and the chatbot and provides the chatbot with the necessary context to make the next generation. The `messages` are of UIMessage type, which are designed for use in application UI - they contain the entire message history and associated metadata like timestamps.
 3. Call [`streamText`](/docs/reference/ai-sdk-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (defined in step 1) and `messages` (defined in step 2). You can pass additional [settings](/docs/ai-sdk-core/settings) to further customize the model's behavior. The `messages` key expects a `ModelMessage[]` array. This type is different from `UIMessage` in that it does not include metadata, such as timestamps or sender information. To convert between these types, we use the `convertToModelMessages` function, which strips the UI-specific metadata and transforms the `UIMessage[]` array into the `ModelMessage[]` format that the model expects.
-4. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-sdk-core/stream-text#result-object). This result object contains the [ `toUIMessageStreamResponse` ](/docs/reference/ai-sdk-core/stream-text#to-ui-message-stream-response) function which converts the result to a streamed response object.
+4. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-sdk-core/stream-text#result-object). Pass its `stream` to `toUIMessageStream` and return it with `createUIMessageStreamResponse` to create a streamed response object.
 5. Return the result to the client to stream the response.
 
 ## Choosing a Provider
@@ -253,14 +257,16 @@ Let's enhance your chatbot by adding a simple weather tool.
 
 Modify your `src/routes/api/chat/+server.ts` file to include the new weather tool:
 
-```tsx filename="src/routes/api/chat/+server.ts" highlight="2,3,17-31"
+```tsx filename="src/routes/api/chat/+server.ts" highlight="5-8,25-39"
 import {
   createGateway,
   streamText,
   type UIMessage,
   convertToModelMessages,
   tool,
-  stepCountIs,
+  isStepCount,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
 } from 'ai';
 import { z } from 'zod';
 
@@ -293,7 +299,9 @@ export async function POST({ request }) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -301,7 +309,6 @@ In this updated code:
 
 1. You import the `tool` function from the `ai` package and `z` from `zod` for schema validation.
 2. You define a `tools` object with a `weather` tool. This tool:
-
    - Has a description that helps the model understand when to use it.
    - Defines `inputSchema` using a Zod schema, specifying that it requires a `location` string to execute this tool. The model will attempt to extract this input from the context of the conversation. If it can't, it will ask the user for the missing information.
    - Defines an `execute` function that simulates getting weather data (in this case, it returns a random temperature). This is an asynchronous function running on the server so you can fetch real data from an external API.
@@ -368,20 +375,22 @@ Now, when you ask about the weather, you'll see the tool call and its result dis
 
 You may have noticed that while the tool is now visible in the chat interface, the model isn't using this information to answer your original query. This is because once the model generates a tool call, it has technically completed its generation.
 
-To solve this, you can enable multi-step tool calls using `stopWhen`. By default, `stopWhen` is set to `stepCountIs(1)`, which means generation stops after the first step when there are tool results. By changing this condition, you can allow the model to automatically send tool results back to itself to trigger additional generations until your specified stopping condition is met. In this case, you want the model to continue generating so it can use the weather tool results to answer your original question.
+To solve this, you can enable multi-step tool calls using `stopWhen`. By default, `stopWhen` is set to `isStepCount(1)`, which means generation stops after the first step when there are tool results. By changing this condition, you can allow the model to automatically send tool results back to itself to trigger additional generations until your specified stopping condition is met. In this case, you want the model to continue generating so it can use the weather tool results to answer your original question.
 
 ### Update Your API Route
 
 Modify your `src/routes/api/chat/+server.ts` file to include the `stopWhen` condition:
 
-```ts filename="src/routes/api/chat/+server.ts" highlight="15"
+```ts filename="src/routes/api/chat/+server.ts" highlight="25"
 import {
   createGateway,
   streamText,
   type UIMessage,
   convertToModelMessages,
   tool,
-  stepCountIs,
+  isStepCount,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
 } from 'ai';
 import { z } from 'zod';
 
@@ -397,7 +406,7 @@ export async function POST({ request }) {
   const result = streamText({
     model: gateway('anthropic/claude-sonnet-4.5'),
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools: {
       weather: tool({
         description: 'Get the weather in a location (fahrenheit)',
@@ -415,26 +424,30 @@ export async function POST({ request }) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
 Head back to the browser and ask about the weather in a location. You should now see the model using the weather tool results to answer your question.
 
-By setting `stopWhen: stepCountIs(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Fahrenheit to Celsius.
+By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Fahrenheit to Celsius.
 
 ### Add another tool
 
 Update your `src/routes/api/chat/+server.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```tsx filename="src/routes/api/chat/+server.ts" highlight="32-45"
+```tsx filename="src/routes/api/chat/+server.ts" highlight="40-53"
 import {
   createGateway,
   streamText,
   type UIMessage,
   convertToModelMessages,
   tool,
-  stepCountIs,
+  isStepCount,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
 } from 'ai';
 import { z } from 'zod';
 
@@ -450,7 +463,7 @@ export async function POST({ request }) {
   const result = streamText({
     model: gateway('anthropic/claude-sonnet-4.5'),
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools: {
       weather: tool({
         description: 'Get the weather in a location (fahrenheit)',
@@ -482,7 +495,9 @@ export async function POST({ request }) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -490,7 +505,7 @@ export async function POST({ request }) {
 
 Update your UI to handle the new temperature conversion tool by modifying the tool part handling:
 
-```svelte filename="src/routes/+page.svelte" highlight="17"
+```svelte filename="src/routes/+page.svelte" highlight="23-24"
 <script lang="ts">
   import { Chat } from '@ai-sdk/svelte';
 

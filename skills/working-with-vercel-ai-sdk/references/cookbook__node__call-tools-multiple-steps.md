@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/call-tools-multiple-steps.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e449cb21ed4f5f157c0c9fbbf570125e2abdbfee90408ed25a8701765bc882fd"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "bec0f9dc2f001dd18ff83cbd1f5f5d37a2008a33a29238663eb5e185bd1f4d28"
 ---
 
 # Call Tools in Multiple Steps
@@ -13,12 +13,12 @@ You can enable multi-step tool calls in `generateText` by defining stopping cond
 This allows you to define the conditions for which your agent should stop when the model generates a tool call.
 
 ```ts highlight={"7"}
-import { generateText, tool, stepCountIs } from 'ai';
+import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
 const { text, steps } = await generateText({
   model: 'openai/gpt-4.1',
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
   tools: {
     weather: tool({
       description: 'Get the weather in a location',

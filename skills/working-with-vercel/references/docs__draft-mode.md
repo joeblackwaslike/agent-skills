@@ -3,7 +3,7 @@ title: Draft Mode
 product: vercel
 url: /docs/draft-mode
 canonical_url: "https://vercel.com/docs/draft-mode"
-last_updated: 2026-04-11
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Vercel's Draft Mode enables you to view your unpublished headless CMS content on your site before publishing it."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/draft-mode.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1aadec0dce976eda9757cdd208240bf4a1b189e74c1609a94fb86a9f8f9d0ac2"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "08e9a67538647d52d5038684cf868478307221378e4b0deb445dcc62452e69e4"
 ---
 
 # Draft Mode

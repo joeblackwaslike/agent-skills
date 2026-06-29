@@ -15,8 +15,8 @@ related:
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5bf7e62582c342987838f3c7908db280688bbe7e11919ee4713e09eca4db59c0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "b8007c060db3171c9815e6c82da655849b36b9c0948dd96b5b8e9d3f38f47b5c"
 ---
 
 # Security
@@ -25,7 +25,7 @@ sha256: "5bf7e62582c342987838f3c7908db280688bbe7e11919ee4713e09eca4db59c0"
 
 ## Private storage
 
-For files that require authentication, use [private storage](/docs/vercel-blob/private-storage). Private Blob stores require the `BLOB_READ_WRITE_TOKEN` for all read and write operations. Files in private Blob stores cannot be accessed via public URLs. You deliver them to your users through [Vercel Functions](/docs/functions) where you implement your own authentication logic.
+For files that require authentication, use [private storage](/docs/vercel-blob/private-storage). Private Blob stores require authentication for all read and write operations. When your code runs on Vercel, the SDK uses OpenID Connect (OIDC) by default. OIDC is preferred over the long-lived `BLOB_READ_WRITE_TOKEN` because its tokens rotate automatically. Use `BLOB_READ_WRITE_TOKEN` when code runs outside Vercel or for client uploads. Files in private Blob stores cannot be accessed via public URLs. You deliver them to your users through [Vercel Functions](/docs/functions) where you implement your own authentication logic.
 
 ## Public storage security
 

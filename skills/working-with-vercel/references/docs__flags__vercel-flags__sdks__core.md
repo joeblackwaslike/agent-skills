@@ -17,8 +17,8 @@ related:
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3ccd26ddbf0ab2aea049e14b883efb74bef3ad6a6d7709db6760349f8865b816"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "40abfdf5f76861d6a1b2da902dccbc29a7fc2416655bf8ec4c7d0a830fb9213e"
 ---
 
 # Using the Core Library
@@ -63,15 +63,7 @@ The `@vercel/flags-core` library provides direct access to the Vercel Flags eval
 
 ## Creating a client
 
-Create a `FlagsClient` using the [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) from the `FLAGS` environment variable:
-
-```ts
-import { createClient } from '@vercel/flags-core';
-
-const client = createClient(process.env.FLAGS);
-```
-
-Or use the default client, which reads from the `FLAGS` environment variable automatically:
+Use the default client to authenticate with either Vercel OpenID Connect (OIDC) or the `FLAGS` environment variable:
 
 ```ts
 import { flagsClient } from '@vercel/flags-core';
@@ -79,14 +71,30 @@ import { flagsClient } from '@vercel/flags-core';
 const result = await flagsClient.evaluate('flag-name', false);
 ```
 
-### Client options
-
-`createClient` accepts an optional second argument to configure how the client fetches and updates flag definitions:
+Or create a client with the default Vercel OIDC authentication or the `FLAGS` environment variable:
 
 ```ts
 import { createClient } from '@vercel/flags-core';
 
-const client = createClient(process.env.FLAGS, {
+const client = createClient();
+```
+
+Use an [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) for manual authentication, such as reading flags from another project or running outside Vercel:
+
+```ts
+import { createClient } from '@vercel/flags-core';
+
+const client = createClient(process.env.FLAGS_SDK_KEY);
+```
+
+### Client options
+
+`createClient` accepts an optional second argument to configure how the client fetches and updates flag definitions. Pass `undefined` as the first argument to keep the default Vercel OIDC authentication:
+
+```ts
+import { createClient } from '@vercel/flags-core';
+
+const client = createClient(undefined, {
   stream: { initTimeoutMs: 5000 },
   polling: { intervalMs: 60000, initTimeoutMs: 10000 },
 });
@@ -190,18 +198,18 @@ The client uses a fallback chain to resolve flag definitions. The chain differs 
 
 During a build step (detected when `CI=1` or `NEXT_PHASE=phase-production-build`, or when `buildStep: true` is set), the client avoids network connections and resolves definitions in this order:
 
-1. **Provided datafile** — Uses the `datafile` option if provided
-2. **Embedded definitions** — Uses definitions [embedded at build time](#embedded-definitions)
-3. **Fetch** — Last resort network fetch
+1. **Provided datafile**: Uses the `datafile` option if provided
+2. **Embedded definitions**: Uses definitions [embedded at build time](#embedded-definitions)
+3. **Fetch**: Last resort network fetch
 
 ### Runtime behavior
 
 At runtime (the default, or when `buildStep: false` is set), the client uses real-time mechanisms first and falls back to static sources:
 
-1. **Stream** — Real-time updates via SSE, waits up to `initTimeoutMs` (default: 3000ms)
-2. **Polling** — Interval-based HTTP requests, waits up to `initTimeoutMs` (default: 10000ms)
-3. **Provided datafile** — Uses the `datafile` option if provided
-4. **Embedded definitions** — Uses definitions [embedded at build time](#embedded-definitions)
+1. **Stream**: Real-time updates via SSE, waits up to `initTimeoutMs` (default: 3000ms)
+2. **Polling**: Interval-based HTTP requests, waits up to `initTimeoutMs` (default: 10000ms)
+3. **Provided datafile**: Uses the `datafile` option if provided
+4. **Embedded definitions**: Uses definitions [embedded at build time](#embedded-definitions)
 
 Key behaviors:
 
@@ -216,12 +224,12 @@ Use the `buildStep` option to explicitly control which fallback chain the client
 
 ```ts
 // Force build step mode (skip network connections)
-const client = createClient(process.env.FLAGS, {
+const client = createClient(undefined, {
   buildStep: true,
 });
 
 // Force runtime mode (use streaming and polling)
-const client = createClient(process.env.FLAGS, {
+const client = createClient(undefined, {
   buildStep: false,
 });
 ```
@@ -230,10 +238,10 @@ This is useful when auto-detection doesn't match your environment. If you pass c
 
 ## Embedded definitions
 
-When you deploy to Vercel, the build process fetches your latest flag definitions once at build time and bundles them into the deployment. This happens automatically when your project has at least one environment variable containing an SDK Key for Vercel Flags. This serves two purposes:
+When you deploy to Vercel, the build process fetches your latest flag definitions once at build time and bundles them into the deployment. This happens automatically when the project uses `@flags-sdk/vercel` or `@vercel/flags-core` and the build can authenticate with Vercel OIDC or an SDK Key. This serves two purposes:
 
 - **Build consistency**: Every function in the build uses the same snapshot of flag definitions, fetched once at the start of the build. Without embedding, each function may fetch definitions independently, which could lead to inconsistent behavior if definitions change mid-build.
-- **Runtime resilience**: If the Vercel Flags service is temporarily unreachable at runtime, the SDK falls back to the embedded snapshot instead of returning hardcoded default values. Because the snapshot preserves your full configuration — targeting rules, segments, and percentages — your flags continue to evaluate accurately. Since the snapshot is from build time, users may see slightly outdated values until the service recovers.
+- **Runtime resilience**: If the Vercel Flags service is temporarily unreachable at runtime, the SDK falls back to the embedded snapshot instead of returning hardcoded default values. Because the snapshot preserves your full configuration, including targeting rules, segments, and percentages, your flags continue to evaluate accurately. Since the snapshot is from build time, users may see slightly outdated values until the service recovers.
 
 > **💡 Note:** You can opt out of embedding by setting
 > `VERCEL_FLAGS_DISABLE_DEFINITION_EMBEDDING=1` in your project's environment

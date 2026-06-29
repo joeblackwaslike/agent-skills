@@ -3,7 +3,7 @@ title: Deployment Protection on Vercel
 product: vercel
 url: /docs/deployment-protection
 canonical_url: "https://vercel.com/docs/deployment-protection"
-last_updated: 2026-05-14
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "57d4316861051f9c75bf786597cb338257194378970de1f30d0685b12b522faf"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "06e4114054ee96f61bc298cd99db2fcb006fb78455d8dc07f20fed4b3ef52dfc"
 ---
 
 # Deployment Protection on Vercel
@@ -160,8 +160,9 @@ Advanced Deployment Protection features are available to Enterprise customers by
 
 - [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection)
 - [Private Production Deployments](/docs/security/deployment-protection#all-deployments)
-- [Passport](/docs/passport)
 - [Deployment Protection Exceptions](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions)
+
+[Passport](/docs/passport) is available on the Enterprise plan only and is not included in the Advanced Deployment Protection add-on.
 
 ### Enabling Advanced Deployment Protection
 

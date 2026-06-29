@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/aihubmix.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bfc9b901a04b125cd6466b7c119eccefe394966786af16f5272650b39b8511d1"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "2508f8ae1a04c07b5570e904ef884e78f873da880be077a6a44a322191bdb67a"
 ---
 
 # Aihubmix Provider
@@ -121,7 +121,7 @@ const { embedding } = await embed({
 
 ```ts
 import { aihubmix } from '@aihubmix/ai-sdk-provider';
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 
 const { text } = await transcribe({
   model: aihubmix.transcription('whisper-1'),
@@ -241,7 +241,7 @@ console.log('Usage:', usage);
 
 ```ts
 import { aihubmix } from '@aihubmix/ai-sdk-provider';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
 const { audio } = await generateSpeech({
   model: aihubmix.speech('tts-1'),

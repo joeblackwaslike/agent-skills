@@ -3,7 +3,7 @@ title: vercel deploy-hooks
 product: vercel
 url: /docs/cli/deploy-hooks
 canonical_url: "https://vercel.com/docs/cli/deploy-hooks"
-last_updated: 2026-05-29
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: "Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger new deployments when called."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy-hooks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5d5a15f12d27fa1276380bcaa3987c6073c9cdf04f8e86ffd8dfd289d6b313e5"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9b01b6214f602c19e09bb77d58c4f72f4e18ae9aa16dd4159c2408b13d621aee"
 ---
 
 # vercel deploy-hooks

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/message-metadata.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "aad798fba258e6997ae4bd37b3672528d97d4ed208bc70b746cefb6d9db04064"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "dcf260a197490ad32ed7418117ab8a1747d2cce869ebb543f66ea77cad765944"
 ---
 
 # Message Metadata
@@ -39,10 +39,15 @@ export type MyUIMessage = UIMessage<MessageMetadata>;
 
 ### Sending Metadata from the Server
 
-Use the `messageMetadata` callback in `toUIMessageStreamResponse` to send metadata at different streaming stages:
+Use the `messageMetadata` callback in `toUIMessageStream` to send metadata at different streaming stages:
 
-```ts filename="app/api/chat/route.ts" highlight="11-20"
-import { convertToModelMessages, streamText } from 'ai';
+```ts filename="app/api/chat/route.ts" highlight="21-29,31-37"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 __PROVIDER_IMPORT__;
 import type { MyUIMessage } from '@/types';
 
@@ -54,24 +59,27 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages, // pass this in for type-safe return objects
-    messageMetadata: ({ part }) => {
-      // Send metadata when streaming starts
-      if (part.type === 'start') {
-        return {
-          createdAt: Date.now(),
-          model: 'your-model-id',
-        };
-      }
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages, // pass this in for type-safe return objects
+      messageMetadata: ({ part }) => {
+        // Send metadata when streaming starts
+        if (part.type === 'start') {
+          return {
+            createdAt: Date.now(),
+            model: 'your-model-id',
+          };
+        }
 
-      // Send additional metadata when streaming completes
-      if (part.type === 'finish') {
-        return {
-          totalTokens: part.totalUsage.totalTokens,
-        };
-      }
-    },
+        // Send additional metadata when streaming completes
+        if (part.type === 'finish') {
+          return {
+            totalTokens: part.totalUsage.totalTokens,
+          };
+        }
+      },
+    }),
   });
 }
 ```
@@ -85,7 +93,7 @@ export async function POST(req: Request) {
 
 Access metadata through the `message.metadata` property:
 
-```tsx filename="app/page.tsx" highlight="8,18-23"
+```tsx filename="app/page.tsx" highlight="8,20-23,33-36"
 'use client';
 
 import { useChat } from '@ai-sdk/react';

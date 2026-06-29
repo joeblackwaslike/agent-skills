@@ -3,7 +3,7 @@ title: Concurrency scaling
 product: vercel
 url: /docs/functions/concurrency-scaling
 canonical_url: "https://vercel.com/docs/functions/concurrency-scaling"
-last_updated: 2026-06-01
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel automatically scales your functions to handle traffic surges.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/concurrency-scaling.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6e8c93e00065356a4f365d5ce757243bdde6c978b3b83716cd2cd049b731a71e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "58bda58a4fc222311f9df270e7368aa78966aec18bab0b4b8d93e08a97425aaf"
 ---
 
 # Concurrency scaling

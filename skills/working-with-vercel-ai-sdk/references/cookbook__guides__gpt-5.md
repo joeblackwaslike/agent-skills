@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/gpt-5.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8fe224994ee863f6a7164a2c2375828b6213e1857bd330796a546217afea23ad"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "6625237134ee112c39e19bfe54f5f2f5fa017236361701e2ac18176989854ebd"
 ---
 
 # Get started with OpenAI GPT-5
@@ -199,7 +199,7 @@ const result = streamText({
 });
 
 // Stream reasoning and text separately
-for await (const part of result.fullStream) {
+for await (const part of result.stream) {
   if (part.type === 'reasoning') {
     console.log(part.textDelta);
   } else if (part.type === 'text-delta') {
@@ -253,7 +253,13 @@ Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 // Allow responses up to 30 seconds
 export const maxDuration = 30;
@@ -266,7 +272,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -337,6 +345,7 @@ Ready to get started? Here's how you can dive in:
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

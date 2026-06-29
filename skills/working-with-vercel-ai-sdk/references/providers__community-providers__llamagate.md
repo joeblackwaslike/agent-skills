@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/llamagate.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1272ba5bcd0a7f3d872e4a493f2cdc2af41eab8fefad48aa66715b9c8660a466"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "5dfa1a774d3acc811fefb52e286758902b3dce87e499ef3d6b001e554f095a80"
 ---
 
 # LlamaGate
@@ -182,7 +182,11 @@ const { text } = await generateText({
       role: 'user',
       content: [
         { type: 'text', text: 'What is in this image?' },
-        { type: 'image', image: new URL('https://example.com/image.jpg') },
+        {
+          type: 'file',
+          mediaType: 'image',
+          data: new URL('https://example.com/image.jpg'),
+        },
       ],
     },
   ],

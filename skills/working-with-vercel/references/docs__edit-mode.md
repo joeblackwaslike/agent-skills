@@ -3,7 +3,7 @@ title: Edit Mode
 product: vercel
 url: /docs/edit-mode
 canonical_url: "https://vercel.com/docs/edit-mode"
-last_updated: 2026-04-07
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: "Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless collaboration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edit-mode.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bbb2190095660a2ef160b7074b4e4ae163cf019d617c1e8b1618f319ef9f6771"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7d5cc32a94a00d623ce88ec4368da6b05b18f0d917e7a432b8f7673ef888cbcf"
 ---
 
 # Edit Mode

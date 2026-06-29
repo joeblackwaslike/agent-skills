@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/03-special-guides/cpp_setup.md"
-fetched_at: "2026-06-16T12:24:33.275Z"
-sha256: "dddecdd44be0e7ea80cffe1fc4b21272dc48d9a56ec0934959d8ea7c8189f6f8"
+fetched_at: "2026-06-29T05:45:05.522Z"
+sha256: "7c391bcede5ff13c3dbffd0d267ce3f228396db873b1b13c8469c5e7884c91db"
 ---
 
 # C/C++ Setup Guide
@@ -106,3 +106,8 @@ the language server is restarted.
 - Clangd official documentation: https://clangd.llvm.org/
 - Clangd project setup: https://clangd.llvm.org/installation#project-setup
 - CCLS repository: https://github.com/MaskRay/ccls
+
+## Unreal Engine projects
+
+For Unreal Engine 5 projects (reflection macros, UnrealBuildTool), see the
+[Unreal Engine Setup Guide](unreal_engine_setup_guide_for_serena.md).

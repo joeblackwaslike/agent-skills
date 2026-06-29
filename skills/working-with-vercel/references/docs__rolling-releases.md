@@ -3,7 +3,7 @@ title: Rolling Releases
 product: vercel
 url: /docs/rolling-releases
 canonical_url: "https://vercel.com/docs/rolling-releases"
-last_updated: 2026-06-03
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "36e902fa9e9cac6901e3675053701b5cc46bb5c8db2096996b4bd56ebba5325c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "97fd3fb07e966f3e703b293b63df53bf6059831600b9db61b4ee1a4ffda7c2f5"
 ---
 
 # Rolling Releases
@@ -31,7 +31,7 @@ Vercel offers Rolling Releases on Pro and Enterprise. Pro teams can use Rolling 
 After you enable Rolling Releases, Vercel does not immediately serve new deployments to 100% of traffic. Instead, Vercel directs a configurable fraction of
 your visitors, for example, 5%, to the new deployment. The rest of your traffic routes to your previous production deployment.
 
-You can leave your rollout in this state for as long as you want, and Vercel shows you a breakdown of key metrics, such as [Speed Insights](/docs/speed-insights),
+You can leave your rolling release in this state for as long as you want, and Vercel shows you a breakdown of key metrics, such as [Speed Insights](/docs/speed-insights),
 between the canary and current deployment. You can also compare these deployments with other metrics you gather with your own observability dashboards. When you're ready,
 or when a configurable period of time has passed, you can promote the prospective deployment to 100% of traffic. At any point, you can use
 [Instant Rollback](/docs/instant-rollback) to revert from the current release candidate.
@@ -46,7 +46,7 @@ or when a configurable period of time has passed, you can promote the prospectiv
 > Rolling Releases. This ensures that every user, whether they get the prior
 > deployment or the release candidate, communicates with the backend code from
 > the matching deployment. Without Skew Protection, users may experience
-> inconsistencies between client and server versions during rollouts.
+> inconsistencies between client and server versions during rolling releases.
 
 After you enable Rolling Releases, configure two or more stages for your release. Stages are the distinct
 traffic ratios you want to serve as your release candidate rolls out. Each stage must send a larger fraction of traffic
@@ -60,9 +60,7 @@ configure more stages as needed.
 > [setting the rolling release cookie](#setting-the-rolling-release-cookie) for
 > more information.
 
-After you configure Rolling Releases for the project, each subsequent rollout uses the project's current rolling
-release configuration. Each new rollout clones the rolling release configuration. Editing the configuration
-does not affect rollouts that are currently in progress.
+After you configure Rolling Releases for the project, every new promotion snapshots the current project configuration. Changes to that configuration apply only to future releases, not ones already in progress.
 
 ## Managing Rolling Releases
 
@@ -166,7 +164,7 @@ configured for 0% of traffic.
 > * `|forced` is appended when routing was set via `vcrrForceCanary=true` or
 >   `vcrrForceStable=true`.`vcrrForceCanary=true` sets the bucket to `0` (canary).
 > `vcrrForceStable=true` sets the bucket to `1` (base release while the
-> rollout is below 100%).For example, both `?vcrrForceCanary=true` and `?vcrrForceStable=true` may
+> rolling release is below 100%).For example, both `?vcrrForceCanary=true` and `?vcrrForceStable=true` may
 > return a cookie that starts with the same canary deployment ID, but only the
 > canary URL includes `|0|forced` and serves the release candidate. The stable
 > URL includes `|1|forced` and serves the base deployment.
@@ -207,11 +205,11 @@ The following are the supported REST API endpoints for rolling releases and roll
 
 To stop an active rolling release programmatically, use one of these approaches:
 
-1. **Roll back (revert traffic to the previous production deployment):** Use the project rollback endpoint: `POST /v1/projects/{projectId}/rollback/{deploymentId}`. Pass the deployment ID of the previous production deployment (the one you want traffic to revert to). This stops the rollout and routes 100% of traffic back to that deployment. See [Instant Rollback](/docs/instant-rollback) for details.
+1. **Roll back (revert traffic to the previous production deployment):** Use the project rollback endpoint: `POST /v1/projects/{projectId}/rollback/{deploymentId}`. Pass the deployment ID of the previous production deployment (the one you want traffic to revert to). This stops the rolling release and routes 100% of traffic back to that deployment. See [Instant Rollback](/docs/instant-rollback) for details.
 
 2. **Promote the canary to 100%:** Call `POST /v1/projects/{idOrName}/rolling-release/complete`. The canary deployment then serves all production traffic and the rolling release is complete.
 
-If you disable Rolling Releases via the config endpoint (PATCH or DELETE) while a rollout is in progress, the config change alone does not stop the current rollout—it only affects future deployments. After disabling, you must still call the complete endpoint or the rollback endpoint to resolve the active rollout.
+If you disable Rolling Releases via the config endpoint (PATCH or DELETE) while a rolling release is in progress, the config change alone does not stop the current rolling release—it only affects future deployments. After disabling, you must still call the complete endpoint or the rollback endpoint to resolve the active rolling release.
 
 For detailed API specifications, request/response schemas, and code examples:
 

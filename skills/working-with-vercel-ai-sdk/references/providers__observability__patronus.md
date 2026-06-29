@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/patronus.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "65ce8104da81e6ab4dd6ab06f674bba70490048b4f8714ea7ede80223f005c3b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "46c0c5a1797764c0df41326ee99727fc114417e67d1b9863d83ee89c7da367c1"
 ---
 
 # Patronus Observability
@@ -29,6 +29,8 @@ OTEL_EXPORTER_OTLP_HEADERS="x-api-key:<PATRONUS_API_KEY>"
 import { registerOTel } from '@vercel/otel';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
 import { BatchSpanProcessor } from '@opentelemetry/sdk-trace-node';
+import { registerTelemetry } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 
 export function register() {
   registerOTel({
@@ -45,6 +47,8 @@ export function register() {
     ],
   });
 }
+
+registerTelemetry(new LegacyOpenTelemetry());
 ```
 
 <Note>
@@ -53,9 +57,9 @@ export function register() {
   `https://otel.patronus.ai:4317`.
 </Note>
 
-### 2. Enable telemetry on individual calls
+### 2. Register the integration and enable telemetry
 
-The AI SDK emits a span only when you opt in with `experimental_telemetry`:
+Once you've installed `@ai-sdk/otel` and added `registerTelemetry` to your `instrumentation.ts`, telemetry is captured automatically. Pass `telemetry` to attach metadata:
 
 ```ts
 import { generateText } from 'ai';
@@ -64,8 +68,7 @@ import { openai } from '@ai-sdk/openai';
 const result = await generateText({
   model: openai('gpt-4o'),
   prompt: 'Write a haiku about spring.',
-  experimental_telemetry: {
-    isEnabled: true,
+  telemetry: {
     functionId: 'spring-haiku', // span name
     metadata: {
       userId: 'user-123', // custom attrs surface in Patronus UI
@@ -93,7 +96,7 @@ export async function POST(req: Request) {
       const answer = await generateText({
         model: openai('gpt-4o'),
         prompt: body.prompt,
-        experimental_telemetry: { isEnabled: true, functionId: 'chat' },
+        telemetry: { functionId: 'chat' },
       });
 
       /* 2️⃣ run Patronus evaluation inside the same trace */
@@ -151,6 +154,7 @@ Result: a single trace containing the root HTTP request, the LLM generation span
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

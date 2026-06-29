@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/respan.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "21a1992eebd5b0949854c7a246b10a6ef7d01268df202bc4efbb3b7d0dacbcbc"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "28003614dd6810327982dbebe625e42dfa05ac82a4bce9f0a290ac7b8a6c3ae7"
 ---
 
 # Respan Observability
@@ -143,6 +143,7 @@ The same gateway endpoint accepts Anthropic and Google models when used with the
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

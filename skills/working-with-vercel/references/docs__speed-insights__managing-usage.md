@@ -3,7 +3,7 @@ title: Managing Usage & Costs
 product: vercel
 url: /docs/speed-insights/managing-usage
 canonical_url: "https://vercel.com/docs/speed-insights/managing-usage"
-last_updated: 2026-02-26
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/speed-insights
@@ -15,8 +15,8 @@ related:
 summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "b9dde7b03b712100fde76da2df8ec0360ed91da6bbe3f0aed66f16d8930f9924"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "04de754c9ae19ece6ec5bca03320e9975dbc740e7513ab5f54bf24e9b5666c76"
 ---
 
 # Managing Usage & Costs

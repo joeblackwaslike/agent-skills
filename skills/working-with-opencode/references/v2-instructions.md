@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/instructions.md"
-fetched_at: "2026-06-15T05:56:15.706Z"
-sha256: "b5696f98d2d08e2c54a127b831553d89c240885e03c1ccabb0f38b934fa17a1d"
+fetched_at: "2026-06-29T05:44:53.501Z"
+sha256: "42c5acde4bbea7ac1cf08a5293e4fb93bff790995eac451fc692955babc1f881"
 ---
 
 # V2 Core Instructions
@@ -98,7 +98,7 @@ Use Effect schemas as the public contract:
 - branded schemas for ids
 - `Schema.Class` or `Schema.Struct` for domain data
 - `Schema.TaggedErrorClass` for expected errors
-- existing core helpers like `DeepMutable`, `withStatics`, and integer schemas where appropriate
+- existing core helpers like `DeepMutable`, `statics`, and integer schemas where appropriate
 
 Prefer `Info` objects as the stored domain records. Add static `empty(...)` constructors when update APIs need to create records on first mutation.
 

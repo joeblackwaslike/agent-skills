@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-06-22
+Last updated: 2026-06-29
 
 ## GitHub Official
 
@@ -10,10 +10,10 @@ Last updated: 2026-06-22
 |--------|-----------|-----------|
 | `actions/checkout` | `v7.0.0` | `uses: actions/checkout@v7.0.0` |
 | `actions/setup-node` | `v6.4.0` | `uses: actions/setup-node@v6.4.0` |
-| `actions/setup-python` | `v6.2.0` | `uses: actions/setup-python@v6.2.0` |
-| `actions/setup-java` | `v5.3.0` | `uses: actions/setup-java@v5.3.0` |
-| `actions/setup-go` | `v6.4.0` | `uses: actions/setup-go@v6.4.0` |
-| `actions/cache` | `v5.0.5` | `uses: actions/cache@v5.0.5` |
+| `actions/setup-python` | `v6.3.0` | `uses: actions/setup-python@v6.3.0` |
+| `actions/setup-java` | `v5.4.0` | `uses: actions/setup-java@v5.4.0` |
+| `actions/setup-go` | `v6.5.0` | `uses: actions/setup-go@v6.5.0` |
+| `actions/cache` | `v6.1.0` | `uses: actions/cache@v6.1.0` |
 | `actions/upload-artifact` | `v7.0.1` | `uses: actions/upload-artifact@v7.0.1` |
 | `actions/download-artifact` | `v8.0.1` | `uses: actions/download-artifact@v8.0.1` |
 | `actions/github-script` | `v9.0.0` | `uses: actions/github-script@v9.0.0` |
@@ -41,7 +41,7 @@ Last updated: 2026-06-22
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `aws-actions/configure-aws-credentials` | `v6.2.0` | `uses: aws-actions/configure-aws-credentials@v6.2.0` |
+| `aws-actions/configure-aws-credentials` | `v6.2.1` | `uses: aws-actions/configure-aws-credentials@v6.2.1` |
 | `aws-actions/amazon-ecr-login` | `v2.1.6` | `uses: aws-actions/amazon-ecr-login@v2.1.6` |
 | `google-github-actions/auth` | `v3` | `uses: google-github-actions/auth@v3` |
 | `google-github-actions/setup-gcloud` | `v3.0.1` | `uses: google-github-actions/setup-gcloud@v3.0.1` |
@@ -60,8 +60,6 @@ Last updated: 2026-06-22
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `codecov/codecov-action` | `v7.0.0` | `uses: codecov/codecov-action@v7.0.0` |
-| `github/codeql-action/init` | `codeql-bundle-v2.25.6` | `uses: github/codeql-action/init@codeql-bundle-v2.25.6` |
-| `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 
 ## Pinning to SHA (recommended for production)
 

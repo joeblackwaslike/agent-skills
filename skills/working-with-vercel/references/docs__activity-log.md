@@ -3,7 +3,7 @@ title: Using the Activity Log
 product: vercel
 url: /docs/activity-log
 canonical_url: "https://vercel.com/docs/activity-log"
-last_updated: 2026-03-13
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "3d0670556d3147e4f686d21892949b88b29b8bd731ae1dea302d1325b3cd7a01"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "027f90fbbeb0c31f5dea3765d35c5c847eb420809bec0490a5443a3307da2934"
 ---
 
 # Using the Activity Log
@@ -74,6 +74,12 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-byok-credential-created | Active | A user created an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-deleted | Active | A user deleted an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-updated | Active | A user updated an AI Gateway BYOK credential. |
+| ai-gateway-private-model-created | Active | A user created an AI Gateway private model. |
+| ai-gateway-private-model-deleted | Active | A user removed an AI Gateway private model. |
+| ai-gateway-private-model-updated | Active | A user updated an AI Gateway private model. |
+| ai-gateway-private-provider-created | Active | A user created an AI Gateway private provider. |
+| ai-gateway-private-provider-deleted | Active | A user removed an AI Gateway private provider. |
+| ai-gateway-private-provider-updated | Active | A user updated an AI Gateway private provider. |
 | ai-gateway-provider-allowlist-providers-updated | Active | Providers were added to or removed from the AI Gateway provider allowlist. |
 | ai-gateway-provider-allowlist-toggled | Active | The AI Gateway provider allowlist was enabled or disabled for a team. |
 | ai-gateway-rule-created | Active | A user created an AI Gateway routing rule. |
@@ -135,6 +141,7 @@ The table below shows a list of events logged on the Activity page.
 | connect-github-limited | Active | A GitHub account was connected with limited access. |
 | connect-gitlab | Active | A GitLab account was connected to a personal. |
 | connect-gitlab-app | Active | A GitLab app was connected. |
+| connect-import-tokens | Active | Connector tokens were imported |
 | connect-revoke-all-tokens | Active | All matching Connector tokens were revoked |
 | connect-update-connector | Active | A Connector was updated |
 | connect-update-trigger-destinations | Active | Connector trigger destinations were updated |
@@ -205,6 +212,7 @@ The table below shows a list of events logged on the Activity page.
 | edge-config-transfer-out | Active | An Edge Config was transferred out. |
 | edge-config-updated | Active | An Edge Config was updated. |
 | email | Active | The email of the current user was updated. |
+| emu-member-removed-unverified-domain | Active | A team member was removed because their email domain is not a verified enterprise managed domain. |
 | enforce-sensitive-environment-variables | Active | Sensitive environment variable enforcement was updated. |
 | env-variable-add | Active | An automatically encrypted environment variable was added to a project. |
 | env-variable-delete | Active | An existing environment variable was deleted from a project. |
@@ -278,6 +286,7 @@ The table below shows a list of events logged on the Activity page.
 | observability-plus-project-enabled | Active | Observability Plus was enabled for a project. |
 | page-integrity-config-updated | Active | Page Integrity configuration was updated. |
 | page-integrity-header-approved | Active | A header was approved in Page Integrity. |
+| page-integrity-header-rejected | Active | A header was rejected in Page Integrity. |
 | page-integrity-inventory-cleared | Active | The Page Integrity resource inventory was cleared. |
 | page-integrity-resource-approved | Active | A resource was approved in Page Integrity. |
 | page-integrity-resource-deleted | Active | A resource was deleted from the Page Integrity resource inventory. |
@@ -370,6 +379,7 @@ The table below shows a list of events logged on the Activity page.
 | project-oidc-token-created | Active | A project OIDC token was created. |
 | project-options-allowlist | Active | OPTIONS Allowlist was modified. |
 | project-output-directory-updated | Active | The output directory for a project was updated. |
+| project-passport-updated | Active | The Passport configuration was updated for a project. |
 | project-password-protection | Active | Password Protection for a project was modified. |
 | project-paused | Active | A project was paused. |
 | project-preview-deployment-suffix | Active | The preview deployment suffix was updated for a project. |
@@ -459,6 +469,7 @@ The table below shows a list of events logged on the Activity page.
 | team | Active | A team was created in a personal account. |
 | team-avatar-update | Active | The avatar of a specific team was updated. |
 | team-default-build-machine-updated | Active | The default build machine for a team was updated. |
+| team-default-passport-updated | Active | The default Passport configuration was updated for a team. |
 | team-delete | Active | A specific team was deleted. |
 | team-deployment-policy-updated | Active | Team deployment policy was updated. |
 | team-email-domain-update | Active | The team email domain was updated. |
@@ -506,6 +517,8 @@ The table below shows a list of events logged on the Activity page.
 | user-token-deleted | Active | A Token was deleted. |
 | user-tokens-deleted | Active | All Tokens (except the current one) were deleted. |
 | username | Active | The username of a personal account was updated. |
+| vcr-image-deleted | Active | A container image was deleted from a registry repository. |
+| vcr-repository-created | Active | A container registry repository was created for a project. |
 | vercel-agent-elevated-permissions-approved | Active | A Vercel Agent elevated access request was approved. |
 | vercel-agent-elevated-permissions-requested | Active | A Vercel Agent plan requested elevated access. |
 | vercel-agent-session-created | Active | A Vercel Agent session was created. |

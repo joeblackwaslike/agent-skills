@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream-response.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c298661155585286bb1608e5fbd1c13121fa2c2a17c96cd7574198dc5618fd82"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "762260d66d5258efea14fa3f3e09eed15269d5019c99e23a58d80dc9c6517ade"
 ---
 
 # `createUIMessageStreamResponse`
@@ -22,6 +22,7 @@ import {
   createUIMessageStream,
   createUIMessageStreamResponse,
   streamText,
+  toUIMessageStream,
 } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -68,7 +69,7 @@ const response = createUIMessageStreamResponse({
         prompt: 'Say hello',
       });
 
-      writer.merge(result.toUIMessageStream());
+      writer.merge(toUIMessageStream({ stream: result.stream }));
     },
   }),
 });
@@ -125,6 +126,7 @@ A Response object that streams UI message chunks with the specified status, head
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -133,6 +135,7 @@ A Response object that streams UI message chunks with the specified status, head
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

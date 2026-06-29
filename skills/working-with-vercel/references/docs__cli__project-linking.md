@@ -3,7 +3,7 @@ title: Linking Projects with Vercel CLI
 product: vercel
 url: /docs/cli/project-linking
 canonical_url: "https://vercel.com/docs/cli/project-linking"
-last_updated: 2026-03-17
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to link existing Vercel Projects with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project-linking.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d059becf05a71884a658adcc3cb7de607bec67fa8e4c3767a96f1fcdd03e9261"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "6abf4880bd6e3eacdf0dfe0ab6273ed1f472b45b2d7526cce1ffd3e7daa3346a"
 ---
 
 # Linking Projects with Vercel CLI

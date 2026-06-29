@@ -1,8 +1,8 @@
 ---
 title: "Web Extensions"
 source: "https://code.visualstudio.com/api/extension-guides/web-extensions"
-fetched_at: "2026-06-15T05:52:52.261Z"
-sha256: "4f96a91f2cd648dc9c69cc18c183b27f1cddc164c3fdfeaa6307a18bcb35feb0"
+fetched_at: "2026-06-29T05:39:40.241Z"
+sha256: "93ad10c2f0fcd1982bde29aca26fa3cdb4eb921d0eda30e848df674b8c3573ea"
 ---
 
 # Web Extensions
@@ -821,4 +821,4 @@ export function run(): Promise&#x3C;void> {
 - [lsp-web-extension-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample)
 
  
- 6/10/2026
+ 6/24/2026

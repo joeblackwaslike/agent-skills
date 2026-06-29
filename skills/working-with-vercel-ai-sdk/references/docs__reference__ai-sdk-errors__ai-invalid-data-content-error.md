@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-data-content-error.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "66e07b43029af03855294fbe39b559c3895ec6afd1997d94502c126bc635eb2b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "6ca0ccc857014a5638802c142977ae720bf9d4c531817bf5011844650633dd80"
 ---
 
 # AI_InvalidDataContentError
@@ -51,6 +51,7 @@ if (InvalidDataContentError.isInstance(error)) {
 - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
 - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
 - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)

@@ -3,7 +3,7 @@ title: Configuring Maximum Duration for Vercel Functions
 product: vercel
 url: /docs/functions/configuring-functions/duration
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/duration"
-last_updated: 2026-05-14
+last_updated: 2026-06-19
 type: how-to
 prerequisites:
   - /docs/functions/configuring-functions
@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "8ab16f34223b2b7d36e2bb2e3024d328c2878806dfa881ad05c2bb7f89449898"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "49d4ac71f3e36dbc2aac3dcdf1a72c624da48cc0dad99ac3129f910d7edc20b5"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -250,7 +250,7 @@ If your Next.js project is configured to use [src directory](https://nextjs.org/
 
 ## Extended max duration&#x20;
 
-Pro and Enterprise teams can set individual Vercel Functions using supported Node.js and Python runtime versions to run for up to 30 minutes with [fluid compute](/docs/fluid-compute).
+Pro and Enterprise teams can set individual Vercel Functions using supported Node.js and Python runtime versions to run for up to 30 minutes.
 
 During the beta, durations above 800 seconds must be configured for each function in code or in `vercel.json`. Project-level defaults above 800 seconds are not supported yet.
 
@@ -364,6 +364,21 @@ Vercel Functions have the following defaults and maximum limits for the duration
 | Enterprise | 300s (5 minutes) | 800s | 1800s (30 minutes)  |
 
 The 800 second maximum is generally available for Pro and Enterprise teams. For beta requirements and examples, see [extended max duration](#extended-max-duration).
+
+Instead of a fixed number of seconds, you can set `maxDuration` to the string `"max"` to use your plan's maximum allowed duration. Vercel resolves `"max"` at deploy time, so your function uses the current plan limit without you tracking the exact value:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/long-task.js": {
+      "maxDuration": "max"
+    }
+  }
+}
+```
+
+Today, `"max"` resolves to your plan's generally available maximum: 800 seconds on Pro and Enterprise, and 300 seconds on Hobby. It does not opt your function into the [extended 1800-second maximum](#extended-max-duration), which is in beta and must be enabled separately.
 
 > **💡 Note:** For workloads that require unlimited execution time, use [Vercel
 > Workflows](/docs/workflows), which allow your code to pause, resume, and

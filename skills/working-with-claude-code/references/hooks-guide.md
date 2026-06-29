@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/hooks-guide.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "527cb9e1914de025886e6b331f9f9623aff529ff4e6e60a49ca0ef373ce2451b"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "e623e705dabb65c052e53683653f82b156a114b91e64188dc5f75dc785b88ea3"
 ---
 
 > ## Documentation Index
@@ -196,7 +196,7 @@ Type `/hooks` and select `Notification` to confirm the hook is registered. For t
 
 Automatically run [Prettier](https://prettier.io/) on every file Claude edits, so formatting stays consistent without manual intervention.
 
-This hook uses the `PostToolUse` event with an `Edit|Write` matcher, so it runs only after file-editing tools. The command extracts the edited file path with [`jq`](https://jqlang.github.io/jq/) and passes it to Prettier. Add this to `.claude/settings.json` in your project root:
+This hook uses the `PostToolUse` event with an `Edit|Write` matcher, so it runs only after file-editing tools. {/* min-version: 2.1.191 */}On Claude Code v2.1.191 or later you can also write the matcher as `Edit,Write`, since `|` and `,` are interchangeable list separators for tool-name matchers on those versions. The command extracts the edited file path with [`jq`](https://jqlang.github.io/jq/) and passes it to Prettier. Add this to `.claude/settings.json` in your project root:
 
 ```json theme={null}
 {

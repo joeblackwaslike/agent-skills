@@ -3,7 +3,7 @@ title: Purging Vercel CDN Cache
 product: vercel
 url: /docs/caching/cdn-cache/purge
 canonical_url: "https://vercel.com/docs/caching/cdn-cache/purge"
-last_updated: 2026-05-13
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/caching/cdn-cache
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "287e8fe66ab67332d473c194b14e314a299fec7c937c91577b93230689526b15"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3e7f0c00f3c3b1a95820ec26c0ad0788549b5ce539c783296e640037d3edf060"
 ---
 
 # Purging Vercel CDN Cache

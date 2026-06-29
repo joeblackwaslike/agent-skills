@@ -3,7 +3,7 @@ title: Setting Up Webhooks
 product: vercel
 url: /docs/webhooks
 canonical_url: "https://vercel.com/docs/webhooks"
-last_updated: 2026-03-18
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8b43f8b98d1ed89c74ce1d9ab6a096ec0967634bd8949a2905b25eb6b3240691"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "be9fc3a30743cf2a0c9e2a7d6385ffb80d352e083c83196d7b6c9e8530593301"
 ---
 
 # Setting Up Webhooks

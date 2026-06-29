@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/maxim.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e1b41667aa00165b4f191f2d4e80406509da4ade2ba1061333c980abfbe4d654"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "b3edbcac5dd399c29bfdf70e7559022e072a70e5c7793dc96c9348353b0bd97d"
 ---
 
 # Maxim Observability
@@ -305,7 +305,6 @@ export default function Chat() {
 ## Learn more
 
 - After setting up Maxim tracing for the Vercel AI SDK, you can explore other Maxim platform capabilities:
-
   - Prompt Management: Version, manage, and dynamically apply prompts across environments and agents.
   - Evaluations: Run automated and manual evaluations on traces, generations, and full agent trajectories.
   - Simulations: Test agents in real-world scenarios with simulated multi-turn interactions and workflows.
@@ -329,6 +328,7 @@ For further details, checkout Vercel AI SDK's [Maxim integration documentation](
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

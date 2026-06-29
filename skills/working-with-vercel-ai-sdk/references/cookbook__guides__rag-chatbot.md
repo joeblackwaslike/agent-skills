@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/rag-chatbot.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "670ccea9dbb6714e57ff745827b4a191abf1b191ce27bad3cbc9705f4be3c11e"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "377fdfa7eba485020efaf39c7f6ea90727f3961dedbabdf36c4a72372d4321cd"
 ---
 
 # RAG Agent Guide
@@ -301,7 +301,7 @@ This will install the [AI SDK](/docs) and the AI SDK's React hooks.
 
 Let’s add a function to generate embeddings. Copy the following code into your `lib/ai/embedding.ts` file.
 
-```tsx filename="lib/ai/embedding.ts" highlight="1-2,4,13-22"
+```tsx filename="lib/ai/embedding.ts" highlight="1-2,4,13-21"
 import { embedMany } from 'ai';
 
 const embeddingModel = 'openai/text-embedding-ada-002';
@@ -477,7 +477,13 @@ Create a file at `app/api/chat/route.ts` by running the following command:
 Open the file and add the following code:
 
 ```tsx filename="app/api/chat/route.ts"
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -490,7 +496,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -504,8 +512,14 @@ While you now have a working agent, it isn't doing anything special.
 
 Let’s add system instructions to refine and restrict the model’s behavior. In this case, you want the model to only use information it has retrieved to generate responses. Update your route handler with the following code:
 
-```tsx filename="app/api/chat/route.ts" highlight="12-14"
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+```tsx filename="app/api/chat/route.ts" highlight="18-20"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -521,7 +535,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -539,9 +555,16 @@ Let’s see how you can create a tool to give the model the ability to create, e
 
 Update your route handler with the following code:
 
-```tsx filename="app/api/chat/route.ts" highlight="18-29"
+```tsx filename="app/api/chat/route.ts" highlight="25-36"
 import { createResource } from '@/lib/actions/resources';
-import { convertToModelMessages, streamText, tool, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  tool,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 import { z } from 'zod';
 
 // Allow streaming responses up to 30 seconds
@@ -570,7 +593,9 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -662,14 +687,16 @@ The AI SDK has a feature called [`stopWhen`](/docs/ai-sdk-core/tools-and-tool-ca
 
 Open your root page (`api/chat/route.ts`) and add the following key to the `streamText` configuration object:
 
-```tsx filename="api/chat/route.ts" highlight="8,24"
+```tsx filename="api/chat/route.ts" highlight="10,26"
 import { createResource } from '@/lib/actions/resources';
 import {
   convertToModelMessages,
+  createUIMessageStreamResponse,
   streamText,
   tool,
+  toUIMessageStream,
   UIMessage,
-  stepCountIs,
+  isStepCount,
 } from 'ai';
 import { z } from 'zod';
 
@@ -685,7 +712,7 @@ export async function POST(req: Request) {
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools: {
       addResource: tool({
         description: `add a resource to your knowledge base.
@@ -700,7 +727,9 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -712,7 +741,7 @@ The model can now add and embed arbitrary information to your knowledge base. Ho
 
 To find similar content, you will need to embed the users query, search the database for semantic similarities, then pass those items to the model as context alongside the query. To achieve this, let’s update your embedding logic file (`lib/ai/embedding.ts`):
 
-```tsx filename="lib/ai/embedding.ts" highlight="1,3-5,27-34,36-49"
+```tsx filename="lib/ai/embedding.ts" highlight="1,3-5,27-34,36-48"
 import { embed, embedMany } from 'ai';
 import { db } from '../db';
 import { cosineDistance, desc, gt, sql } from 'drizzle-orm';
@@ -772,14 +801,16 @@ With that done, it’s onto the final step: creating the tool.
 
 Go back to your route handler (`api/chat/route.ts`) and add a new tool called `getInformation`:
 
-```ts filename="api/chat/route.ts" highlight="11,37-43"
+```ts filename="api/chat/route.ts" highlight="13,38-45"
 import { createResource } from '@/lib/actions/resources';
 import {
   convertToModelMessages,
+  createUIMessageStreamResponse,
   streamText,
   tool,
+  toUIMessageStream,
   UIMessage,
-  stepCountIs,
+  isStepCount,
 } from 'ai';
 import { z } from 'zod';
 import { findRelevantContent } from '@/lib/ai/embedding';
@@ -793,7 +824,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: 'openai/gpt-4o',
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     system: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
@@ -818,7 +849,9 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -849,6 +882,7 @@ If you're using the Vercel setup above, you can run the command directly by eith
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

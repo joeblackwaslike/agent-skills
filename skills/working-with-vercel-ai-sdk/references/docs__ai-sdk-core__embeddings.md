@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "6f9a9332c763a94e0571f052e23243cde4a41f7ecdea7de8c90aa5ebec2b1e38"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f3c197398f41f733c0437dd9844584a930700e169245ffb4e8f9cba6f555e072"
 ---
 
 # Embeddings
@@ -103,6 +103,8 @@ const { embedding } = await embed({
   },
 });
 ```
+
+Google's `gemini-embedding-2` model (also available as `gemini-embedding-2-preview`) supports multimodal embedding content through `providerOptions.google.content`. Each entry corresponds to the value at the same index and can contain `{ text: string }`, `{ inlineData: { mimeType: string; data: string } }`, or `{ fileData: { fileUri: string; mimeType: string } }` parts. `fileUri` can reference remote content such as HTTP URLs or Google Cloud Storage URIs (`gs://...`).
 
 ### Parallel Requests
 
@@ -218,23 +220,24 @@ const embeddingModelWithDefaults = wrapEmbeddingModel({
 
 Several providers offer embedding models:
 
-| Provider                                                                                  | Model                           | Embedding Dimensions | Multimodal          |
-| ----------------------------------------------------------------------------------------- | ------------------------------- | -------------------- | ------------------- |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                             | `text-embedding-3-large`        | 3072                 | <Cross size={18} /> |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                             | `text-embedding-3-small`        | 1536                 | <Cross size={18} /> |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                             | `text-embedding-ada-002`        | 1536                 | <Cross size={18} /> |
-| [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai#embedding-models) | `gemini-embedding-001`          | 3072                 | <Cross size={18} /> |
-| [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai#embedding-models) | `gemini-embedding-2-preview`    | 3072                 | <Check size={18} /> |
-| [Mistral](/providers/ai-sdk-providers/mistral#embedding-models)                           | `mistral-embed`                 | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                             | `embed-english-v3.0`            | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                             | `embed-multilingual-v3.0`       | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                             | `embed-english-light-v3.0`      | 384                  | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                             | `embed-multilingual-light-v3.0` | 384                  | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                             | `embed-english-v2.0`            | 4096                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                             | `embed-english-light-v2.0`      | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                             | `embed-multilingual-v2.0`       | 768                  | <Cross size={18} /> |
-| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models)             | `amazon.titan-embed-text-v1`    | 1536                 | <Cross size={18} /> |
-| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models)             | `amazon.titan-embed-text-v2:0`  | 1024                 | <Cross size={18} /> |
+| Provider                                                                      | Model                           | Embedding Dimensions | Multimodal          |
+| ----------------------------------------------------------------------------- | ------------------------------- | -------------------- | ------------------- |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-large`        | 3072                 | <Cross size={18} /> |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-small`        | 1536                 | <Cross size={18} /> |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-ada-002`        | 1536                 | <Cross size={18} /> |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-001`          | 3072                 | <Cross size={18} /> |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2`            | 3072                 | <Check size={18} /> |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2-preview`    | 3072                 | <Check size={18} /> |
+| [Mistral](/providers/ai-sdk-providers/mistral#embedding-models)               | `mistral-embed`                 | 1024                 | <Cross size={18} /> |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v3.0`            | 1024                 | <Cross size={18} /> |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v3.0`       | 1024                 | <Cross size={18} /> |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v3.0`      | 384                  | <Cross size={18} /> |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-light-v3.0` | 384                  | <Cross size={18} /> |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v2.0`            | 4096                 | <Cross size={18} /> |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v2.0`      | 1024                 | <Cross size={18} /> |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v2.0`       | 768                  | <Cross size={18} /> |
+| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v1`    | 1536                 | <Cross size={18} /> |
+| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v2:0`  | 1024                 | <Cross size={18} /> |
 
 
 ## Navigation
@@ -244,21 +247,27 @@ Several providers offer embedding models:
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

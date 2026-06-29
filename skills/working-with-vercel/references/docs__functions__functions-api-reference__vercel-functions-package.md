@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fec2a584d9e7152f80d26d094c5db3295b011180dcb96da9ba0a0b11de6dcf42"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3d1178fbfd67130c7a95c065b2043dd35430689c202925f4a62082218ffcf29d"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -405,6 +405,98 @@ The following Runtime Cache limits apply:
 - The maximum tag length is 256 bytes.
 
 Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [regional pricing docs](/docs/pricing/regional-pricing).
+
+### `experimental_upgradeWebSocket`
+
+**Description**: Upgrades an incoming HTTP GET request to a WebSocket connection.
+
+`experimental_upgradeWebSocket()` requires the `ws` package in your project. Install `ws` and import the API from `@vercel/functions`.
+
+<CodeBlock>
+  <Code tab="pnpm">
+    ```bash
+    pnpm i ws
+    ```
+  </Code>
+  <Code tab="yarn">
+    ```bash
+    yarn i ws
+    ```
+  </Code>
+  <Code tab="npm">
+    ```bash
+    npm i ws
+    ```
+  </Code>
+  <Code tab="bun">
+    ```bash
+    bun i ws
+    ```
+  </Code>
+</CodeBlock>
+
+| Name      | Type                                                            | Description                                      |
+| :-------- | :-------------------------------------------------------------- | :----------------------------------------------- |
+| `handler` | `(ws: WebSocket) => void \| Promise<void>`                      | Function called after the WebSocket is upgraded. |
+| `options` | `UpgradeWebSocketOptions`                                       | Optional configuration for the WebSocket upgrade. |
+
+The `UpgradeWebSocketOptions` object accepts the following properties:
+
+| Name         | Type     | Default   | Description                              |
+| :----------- | :------- | :-------- | :--------------------------------------- |
+| `maxPayload` | `number` | 262144 (256 KiB) | Maximum allowed message size in bytes. |
+
+```ts filename="app/api/ws/route.ts"
+import {
+  experimental_upgradeWebSocket,
+  type WebSocketData,
+} from '@vercel/functions';
+
+export async function GET() {
+  return experimental_upgradeWebSocket((ws) => {
+    ws.on('message', (data: WebSocketData) => {
+      ws.send(data);
+    });
+  }, {
+    maxPayload: 256 * 1024
+  });
+}
+```
+
+When using `experimental_upgradeWebSocket()` in a Next.js app with Cache
+Components enabled, call [`connection()`](https://nextjs.org/docs/app/api-reference/functions/connection)
+before `experimental_upgradeWebSocket()`. This opts the route handler out of
+static prerendering, so the WebSocket upgrade runs only at request time.
+
+```ts {1,8} filename="app/api/ws/route.ts"
+import { connection } from 'next/server';
+import {
+  experimental_upgradeWebSocket,
+  type WebSocketData,
+} from '@vercel/functions';
+
+export async function GET() {
+  await connection();
+
+  return experimental_upgradeWebSocket((ws) => {
+    ws.on('message', (data: WebSocketData) => {
+      ws.send(data);
+    });
+  });
+}
+```
+
+Learn more about [using WebSockets on Vercel Functions](/docs/functions/websockets).
+
+#### Limits and usage
+
+You can use `experimental_upgradeWebSocket()` to handle incoming WebSocket connections in any Vercel Function, including Next.js Route Handlers and other frameworks’ equivalents. However, this API only works on the Vercel platform and gives you less control over the request lifecycle; when possible, you should handle WebSocket connections using native Node.js APIs instead.
+
+#### Local development
+
+When developing a Next.js app that uses `experimental_upgradeWebSocket()` locally, you must run the development server using `vc dev` with [Vercel CLI 54.14.2 or above](/docs/cli#updating-vercel-cli) instead of `next dev`.
+
+Next.js is the only framework that supports local development with `experimental_upgradeWebSocket()`. No other instances of this API run in a local development environment.
 
 ### Database Connection Pool Management
 

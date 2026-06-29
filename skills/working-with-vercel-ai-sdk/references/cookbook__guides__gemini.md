@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/gemini.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9c157570213188c7a4606763c8b072a04b3c88b93350b09d6ee35d744d22b237"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "43cabac5a987782db86a6e48e34b6168d55918ba97875fd67c2cbc726228a8d6"
 ---
 
 # Get started with Gemini 3
@@ -76,7 +76,7 @@ Gemini 3 excels at tool calling with improved reliability and consistency for mu
 
 ```ts
 import { z } from 'zod';
-import { generateText, tool, stepCountIs } from 'ai';
+import { generateText, tool, isStepCount } from 'ai';
 import { google } from '@ai-sdk/google';
 
 const result = await generateText({
@@ -94,7 +94,7 @@ const result = await generateText({
       }),
     }),
   },
-  stopWhen: stepCountIs(5), // enables multi-step calling
+  stopWhen: isStepCount(5), // enables multi-step calling
 });
 
 console.log(result.text);
@@ -108,7 +108,7 @@ With [search grounding](https://ai.google.dev/gemini-api/docs/google-search), Ge
 
 ```ts
 import { google } from '@ai-sdk/google';
-import { GoogleGenerativeAIProviderMetadata } from '@ai-sdk/google';
+import { GoogleProviderMetadata } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const { text, sources, providerMetadata } = await generateText({
@@ -123,9 +123,7 @@ const { text, sources, providerMetadata } = await generateText({
 
 // access the grounding metadata. Casting to the provider metadata type
 // is optional but provides autocomplete and type safety.
-const metadata = providerMetadata?.google as
-  | GoogleGenerativeAIProviderMetadata
-  | undefined;
+const metadata = providerMetadata?.google as GoogleProviderMetadata | undefined;
 const groundingMetadata = metadata?.groundingMetadata;
 const safetyRatings = metadata?.safetyRatings;
 
@@ -142,7 +140,7 @@ With three main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`use
 
 Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK, and Gemini 3 Pro:
 
-In a new Next.js application, first install the AI SDK and the Google Generative AI provider:
+In a new Next.js application, first install the AI SDK and the Google provider:
 
 <Snippet text="pnpm install ai @ai-sdk/google" />
 
@@ -150,7 +148,13 @@ Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
 import { google } from '@ai-sdk/google';
-import { streamText, UIMessage, convertToModelMessages } from 'ai';
+import {
+  streamText,
+  UIMessage,
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
@@ -160,7 +164,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -218,7 +224,7 @@ Ready to dive in? Here's how you can begin:
 2. Check out practical examples at [ai-sdk.dev/examples](/examples) to see the SDK in action.
 3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) at [ai-sdk.dev/docs/guides](/cookbook/guides).
 4. Use ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
-5. Read more about the [Google Generative AI provider](/providers/ai-sdk-providers/google-generative-ai).
+5. Read more about the [Google provider](/providers/ai-sdk-providers/google).
 
 
 ## Navigation
@@ -230,6 +236,7 @@ Ready to dive in? Here's how you can begin:
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

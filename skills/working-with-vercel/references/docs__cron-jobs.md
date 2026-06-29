@@ -3,7 +3,7 @@ title: Cron Jobs
 product: vercel
 url: /docs/cron-jobs
 canonical_url: "https://vercel.com/docs/cron-jobs"
-last_updated: 2026-05-26
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a092f11d2968bf363970fc9f04dc731048780609da14da8f7c5bbaccb9e43f61"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d09af1620cf402dd22494b031d0c4b7f1c6cba295d033ad03446018d6f988911"
 ---
 
 # Cron Jobs

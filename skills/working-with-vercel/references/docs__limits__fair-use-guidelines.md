@@ -3,7 +3,7 @@ title: Fair Use Guidelines
 product: vercel
 url: /docs/limits/fair-use-guidelines
 canonical_url: "https://vercel.com/docs/limits/fair-use-guidelines"
-last_updated: 2026-02-27
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/limits
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "56643942530cbb1213a96469c2fb4ef01cca90621b9d1a2583d85565b58fcd37"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4ba6e9e2bbfda7a2f588011937e080885edcb82bd68219834bfc6caaede19b1f"
 ---
 
 # Fair Use Guidelines

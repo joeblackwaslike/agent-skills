@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c7996302c8fca4e2e6954513de81bddf7ebb93e61b73b2e8c0af22140fd59860"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "0f00764ad18c993b224793b0118267270486066635e224219f6d43757d4033df"
 ---
 
 # `DirectChatTransport`
@@ -339,6 +339,7 @@ export default function Chat() {
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -347,6 +348,7 @@ export default function Chat() {
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

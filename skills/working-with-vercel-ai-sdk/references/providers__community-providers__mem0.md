@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mem0.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c23c93cee906d23f44c5f62ca3f78f1e645b36dcf71a47bddcf38fac55023b04"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f08db67c585263999b7f0123274f7e1aea470aaaece1b08db310502f56bf197c"
 ---
 
 # Mem0 Provider
@@ -71,10 +71,10 @@ const mem0 = createMem0({
 - Add Memories to Enhance Context:
 
 ```ts
-import { LanguageModelV3Prompt } from '@ai-sdk/provider';
+import { LanguageModelV4Prompt } from '@ai-sdk/provider';
 import { addMemories } from '@mem0/vercel-ai-provider';
 
-const messages: LanguageModelV3Prompt = [
+const messages: LanguageModelV4Prompt = [
   { role: 'user', content: [{ type: 'text', text: 'I love red cars.' }] },
 ];
 

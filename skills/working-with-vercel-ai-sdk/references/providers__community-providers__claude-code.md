@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/claude-code.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "82cf0cf1ad24d2d2fddca35a170bb696a5c1cb04e93e0d49c1942c02f4ac3d79"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "6f907274ab202b29973f100ae0fe4a8c863d12b13b894e2e35bdd6a7aa8902a6"
 ---
 
 # Claude Code Provider
@@ -142,7 +142,7 @@ This opens a browser window for authentication. Once authenticated, the provider
 
 ## Requirements
 
-- Node.js 18 or higher
+- Node.js 22 or higher
 - Claude Code CLI installed (`npm install -g @anthropic-ai/claude-code`)
 - Claude Pro or Max subscription
 

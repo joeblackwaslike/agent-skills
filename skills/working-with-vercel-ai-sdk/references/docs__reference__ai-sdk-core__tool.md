@@ -1,17 +1,28 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d256ab2b0225f158b4ca8fd7f4ad7a003a8cfc21b27d96104f8cbe1816c50966"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e753fa541a809a6492ca349b448ccb1d3ef40f92047619de60e9d240d1a77158"
 ---
 
 # `tool()`
 
-Tool is a helper function that infers the tool input for its `execute` method.
+Tool is a helper function that infers the tool input and context for its `execute` method and lifecycle callbacks.
 
-It does not have any runtime behavior, but it helps TypeScript infer the types of the input for the `execute` method.
+It does not have any runtime behavior, but it helps TypeScript infer the types for the tool callbacks.
 
-Without this helper function, TypeScript is unable to connect the `inputSchema` property to the `execute` method,
-and the argument types of `execute` cannot be inferred.
+Without this helper function, TypeScript is unable to connect the `inputSchema` and `contextSchema` properties to the tool callbacks,
+and the callback argument types cannot be inferred.
+
+For the full model of `runtimeContext`, `toolsContext`, tool `context`, and
+sensitive context filtering, see [Runtime and Tool
+Context](/docs/ai-sdk-core/runtime-and-tool-context).
+
+The `Tool` type is a union of four tool kinds:
+
+- `FunctionTool`: a user-defined function-style tool with known input and output types.
+- `DynamicTool`: a function-style tool defined at runtime, with `unknown` input and output types.
+- `ProviderDefinedTool`: a provider-defined tool that your code executes.
+- `ProviderExecutedTool`: a provider-defined tool that the provider executes.
 
 ```ts highlight={"1,4,9,10"}
 import { tool } from 'ai';
@@ -51,22 +62,23 @@ export const weatherTool = tool({
             {
               name: 'description',
               isOptional: true,
-              type: 'string',
+              type: 'string | ((options: { context: CONTEXT; experimental_sandbox?: Experimental_SandboxSession }) => string)',
               description:
-                'Information about the purpose of the tool including details on how and when it can be used by the model.',
+                'Information about the purpose of the tool including details on how and when it can be used by the model. Provide a string for a fixed description, or a function to derive the description from the tool-specific context and optional experimental sandbox before each model call.',
             },
             {
               name: 'title',
               isOptional: true,
               type: 'string',
-              description: 'A human-readable title for the tool.',
+              description:
+                'Deprecated. Use `providerMetadata` for source-specific tool display metadata.',
             },
             {
               name: 'needsApproval',
               isOptional: true,
-              type: 'boolean | ((options: { args: INPUT }) => boolean | Promise<boolean>)',
+              type: 'boolean | ((input: INPUT, options: { toolCallId: string; messages: ModelMessage[]; context: CONTEXT }) => boolean | Promise<boolean>)',
               description:
-                'Whether the tool needs user approval before execution. Can be a boolean or a function that receives the tool arguments and returns a boolean.',
+                'Deprecated. For `generateText`, `streamText`, and `ToolLoopAgent`, configure approval with `toolApproval` instead. Existing `needsApproval` usages still work as a compatibility fallback. When used, it can be a boolean or a function that receives the tool input plus execution metadata, including the typed `context`.',
             },
             {
               name: 'inputSchema',
@@ -82,6 +94,13 @@ export const weatherTool = tool({
                 'An optional list of input examples that show the language model what the input should look like.',
             },
             {
+              name: 'contextSchema',
+              isOptional: true,
+              type: 'Zod Schema | JSON Schema',
+              description:
+                "An optional schema that describes the tool-specific context expected by the tool. When provided, the `context` type in `execute`, `needsApproval`, and the input lifecycle callbacks is inferred from this schema. The value is supplied via the tool's entry in `toolsContext`.",
+            },
+            {
               name: 'strict',
               isOptional: true,
               type: 'boolean',
@@ -91,12 +110,12 @@ export const weatherTool = tool({
             {
               name: 'execute',
               isOptional: true,
-              type: 'async (input: INPUT, options: ToolExecutionOptions) => RESULT | Promise<RESULT> | AsyncIterable<RESULT>',
+              type: 'async (input: INPUT, options: ToolExecutionOptions<CONTEXT>) => RESULT | Promise<RESULT> | AsyncIterable<RESULT>',
               description:
                 'An async function that is called with the arguments from the tool call and produces a result or a results iterable. If an iterable is provided, all results but the last one are considered preliminary. If not provided, the tool will not be executed automatically.',
               properties: [
                 {
-                  type: 'ToolExecutionOptions',
+                  type: 'ToolExecutionOptions<CONTEXT>',
                   parameters: [
                     {
                       name: 'toolCallId',
@@ -118,11 +137,17 @@ export const weatherTool = tool({
                         'An optional abort signal that indicates that the overall operation should be aborted.',
                     },
                     {
-                      name: 'experimental_context',
-                      type: 'unknown',
+                      name: 'context',
+                      type: 'CONTEXT',
+                      description:
+                        'Tool-specific context passed into tool execution. When `contextSchema` is provided, this type is inferred from that schema and supplied from the matching entry in `toolsContext`.',
+                    },
+                    {
+                      name: 'experimental_sandbox',
+                      type: 'Experimental_SandboxSession',
                       isOptional: true,
                       description:
-                        'Context that is passed into tool execution. Experimental (can break in patch releases).',
+                        'Optional experimental sandbox environment passed from the generation or agent call. Use it when a tool needs to execute commands or code in an experimental sandbox.',
                     },
                   ],
                 },
@@ -140,26 +165,26 @@ export const weatherTool = tool({
               isOptional: true,
               type: '({toolCallId: string; input: INPUT; output: OUTPUT}) => ToolResultOutput | PromiseLike<ToolResultOutput>',
               description:
-                'Optional conversion function that maps the tool result to an output that can be used by the language model. If not provided, the tool result will be sent as a JSON object.',
+                'Optional conversion function that maps the tool result to an output that can be used by the language model. If not provided, the tool result will be sent as a JSON object. This function is invoked on the server by "convertToModelMessages", so ensure that you pass the same "tools" (ToolSet) to both "convertToModelMessages" and "streamText" (or other generation APIs).',
             },
             {
               name: 'onInputStart',
               isOptional: true,
-              type: '(options: ToolExecutionOptions) => void | PromiseLike<void>',
+              type: '(options: ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>',
               description:
                 'Optional function that is called when the argument streaming starts. Only called when the tool is used in a streaming context.',
             },
             {
               name: 'onInputDelta',
               isOptional: true,
-              type: '(options: { inputTextDelta: string } & ToolExecutionOptions) => void | PromiseLike<void>',
+              type: '(options: { inputTextDelta: string } & ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>',
               description:
                 'Optional function that is called when an argument streaming delta is available. Only called when the tool is used in a streaming context.',
             },
             {
               name: 'onInputAvailable',
               isOptional: true,
-              type: '(options: { input: INPUT } & ToolExecutionOptions) => void | PromiseLike<void>',
+              type: '(options: { input: INPUT } & ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>',
               description:
                 'Optional function that is called when a tool call can be started, even if the execute function is not provided.',
             },
@@ -180,30 +205,37 @@ export const weatherTool = tool({
             {
               name: 'type',
               isOptional: true,
-              type: "'function' | 'provider-defined'",
+              type: "'function' | 'dynamic' | 'provider'",
               description:
-                'The type of the tool. Defaults to "function" for regular tools. Use "provider-defined" for provider-specific tools.',
+                'The type of the tool. Defaults to "function" for regular tools. Use "dynamic" for tools defined at runtime and "provider" for provider-specific tools.',
             },
             {
               name: 'id',
               isOptional: true,
-              type: 'string',
+              type: '`${string}.${string}`',
               description:
-                'The ID of the tool for provider-defined tools. Should follow the format `<provider-name>.<unique-tool-name>`. Required when type is "provider-defined".',
+                'The ID of a provider tool. Must follow the format `<provider-name>.<unique-tool-name>`. Required when type is "provider".',
             },
             {
-              name: 'name',
+              name: 'isProviderExecuted',
               isOptional: true,
-              type: 'string',
+              type: 'boolean',
               description:
-                'The name of the tool that the user must use in the tool set. Required when type is "provider-defined".',
+                'Whether a provider tool is executed by the provider. Set to `false` for `ProviderDefinedTool` and `true` for `ProviderExecutedTool`. Required when type is "provider".',
             },
             {
               name: 'args',
               isOptional: true,
               type: 'Record<string, unknown>',
               description:
-                'The arguments for configuring the tool. Must match the expected arguments defined by the provider for this tool. Required when type is "provider-defined".',
+                'The arguments for configuring a provider tool. Must match the expected arguments defined by the provider for this tool. Required when type is "provider".',
+            },
+            {
+              name: 'supportsDeferredResults',
+              isOptional: true,
+              type: 'boolean',
+              description:
+                'Whether a provider-executed tool supports results that arrive without a matching tool call in the current response. Only available for `ProviderExecutedTool`.',
             },
           ],
         },
@@ -228,6 +260,8 @@ The tool that was passed in.
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -236,27 +270,31 @@ The tool that was passed in.
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

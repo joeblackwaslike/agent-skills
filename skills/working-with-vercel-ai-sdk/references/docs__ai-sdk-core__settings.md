@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/settings.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e31579b3f28d56bd5e8afafd10738d77d0d91937812f451eca48526a77da9e94"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f8e9e825c41bc0ed0abad544be6f5095885064d6bb5057caf17b142bd674b92c"
 ---
 
 # Settings
@@ -10,12 +10,13 @@ Large language models (LLMs) typically provide settings to augment their output.
 
 All AI SDK functions support the following common settings in addition to the model, the [prompt](./prompts), and additional provider-specific settings:
 
-```ts highlight="3-5"
+```ts highlight="3-6"
 const result = await generateText({
   model: __MODEL__,
   maxOutputTokens: 512,
   temperature: 0.3,
   maxRetries: 5,
+  timeout: 10000,
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```
@@ -26,6 +27,10 @@ const result = await generateText({
   the `warnings` property in the result object to see if any warnings were
   generated.
 </Note>
+
+## Language Model Call Options
+
+Language model call options (`LanguageModelCallOptions`) are settings that influence how the language model generates its response — token limits, sampling behavior, penalties, stop sequences, seed, and reasoning. They are forwarded to the underlying model.
 
 ### `maxOutputTokens`
 
@@ -85,6 +90,28 @@ Providers may have limits on the number of stop sequences.
 It is the seed (integer) to use for random sampling.
 If set and supported by the model, calls will generate deterministic results.
 
+### `reasoning`
+
+Controls how much reasoning the model performs before generating a response.
+
+| Value                | Behavior                                                             |
+| -------------------- | -------------------------------------------------------------------- |
+| `'provider-default'` | Use the provider's default reasoning behavior (default when omitted) |
+| `'none'`             | Disable reasoning                                                    |
+| `'minimal'`          | Bare-minimum reasoning                                               |
+| `'low'`              | Fast, concise reasoning                                              |
+| `'medium'`           | Balanced reasoning                                                   |
+| `'high'`             | Thorough reasoning                                                   |
+| `'xhigh'`            | Maximum reasoning                                                    |
+
+If you also set reasoning-related options in `providerOptions` (e.g. `openai.reasoningEffort` or `anthropic.thinking`), the provider-specific options take precedence and the top-level `reasoning` parameter is ignored.
+
+See the [reasoning guide](/docs/ai-sdk-core/reasoning) for details on per-provider mapping and migration from `providerOptions`.
+
+## Request Options
+
+Request options (`RequestOptions`) are settings that affect transport, retries, cancellation, and timeouts — not model generation behavior. They control how the SDK communicates with the provider's API.
+
 ### `maxRetries`
 
 Maximum number of retries. Set to 0 to disable retries. Default: `2`.
@@ -112,11 +139,13 @@ An optional timeout in milliseconds. The call will be aborted if it takes longer
 
 This is a convenience parameter that creates an abort signal internally. It can be used alongside `abortSignal` - if both are provided, the call will abort when either condition is met.
 
-You can specify the timeout either as a number (milliseconds) or as an object with `totalMs`, `stepMs`, and/or `chunkMs` properties:
+You can specify the timeout either as a number (milliseconds) or as an object with the following properties:
 
 - `totalMs`: The total timeout for the entire call including all steps.
 - `stepMs`: The timeout for each individual step (LLM call). This is useful for multi-step generations where you want to limit the time spent on each step independently.
 - `chunkMs`: The timeout between stream chunks (streaming only). The call will abort if no new chunk is received within this duration. This is useful for detecting stalled streams.
+- `toolMs`: The default timeout for all tool executions. If a tool takes longer, it aborts and returns a tool-error so the model can respond or retry.
+- `tools`: Per-tool timeout overrides using `{toolName}Ms` keys (e.g. `weatherMs`, `slowApiMs`). Takes precedence over `toolMs`. Tool names are type-checked for autocomplete.
 
 #### Example: 5 second timeout (number format)
 
@@ -171,6 +200,36 @@ const result = streamText({
 });
 ```
 
+#### Example: Tool execution timeout
+
+```ts
+const result = await generateText({
+  model: __MODEL__,
+  tools: { weather: weatherTool, slowApi: slowApiTool },
+  timeout: {
+    toolMs: 5000, // 5 seconds default for all tools
+  },
+  prompt: 'What is the weather in San Francisco?',
+});
+```
+
+#### Example: Per-tool timeout overrides
+
+```ts
+const result = await generateText({
+  model: __MODEL__,
+  tools: { weather: weatherTool, slowApi: slowApiTool },
+  timeout: {
+    toolMs: 5000, // default for all tools
+    tools: {
+      weatherMs: 3000, // 3 seconds for weather tool
+      slowApiMs: 10000, // 10 seconds for slow API tool
+    },
+  },
+  prompt: 'What is the weather in San Francisco?',
+});
+```
+
 ### `headers`
 
 Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
@@ -206,21 +265,27 @@ const result = await generateText({
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

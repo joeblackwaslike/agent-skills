@@ -3,7 +3,7 @@ title: Bring Your Own Key (BYOK)
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/byok
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok"
-last_updated: 2026-05-30
+last_updated: 2026-06-12
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "33faf1738eaec19be6f462a17da0431795c457e16a5ebdf0c85dd3c528733547"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7ebb056d53db767c9b32184ded6af1fc369fc41d21d339c5604f316274068091"
 ---
 
 # Bring Your Own Key (BYOK)

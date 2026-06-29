@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/ontoolcall-type-narrowing.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "53d0817e6790d787cacb4ce0b6bfd1617a12501df0233e7e21f59af2ae273eaa"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7659ffdb8f77facba08eff9d4569ce6e9b3043fbb65a846252450d388e3fb3c7"
 ---
 
 # Type Error with onToolCall
@@ -85,7 +85,7 @@ const { messages, sendMessage, addToolOutput } = useChat({
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

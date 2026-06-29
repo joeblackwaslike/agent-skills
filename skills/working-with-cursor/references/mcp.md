@@ -1,14 +1,14 @@
 ---
 source: "https://cursor.com/docs/mcp.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "9408e4baa63f9a2f6f37a1896bfe61e43a623f14ce6a89ad6fdb7e11ce9658c3"
+fetched_at: "2026-06-29T05:42:13.025Z"
+sha256: "4ba62a740513baf65977930c4d45cbd99aba35fb9f9c66e1030da4f6e1706301"
 ---
 
 # Model Context Protocol (MCP)
 
 ## What is MCP?
 
-[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) enables Cursor to connect to external tools and data sources.
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) enables Cursor to connect to external tools and data sources. Install and manage MCP servers from the [Customize](https://cursor.com/docs/customize-cursor.md) page or configure them in `mcp.json`.
 
 ### Why use MCP?
 
@@ -26,7 +26,7 @@ Cursor supports three transport methods:
 
 | Transport             | Execution environment | Deployment       | Users          | Input                   | Auth   |
 | :-------------------- | :-------------------- | :--------------- | :------------- | :---------------------- | :----- |
-| **`stdio`**           | Local                 | Cursor manages   | Single user    | Shell command           | Manual |
+| **`stdio`**           | Local                 | Cursor manages   | Single user    | shell command           | Manual |
 | **`SSE`**             | Local/Remote          | Deploy as server | Multiple users | URL to an SSE endpoint  | OAuth  |
 | **`Streamable HTTP`** | Local/Remote          | Deploy as server | Multiple users | URL to an HTTP endpoint | OAuth  |
 
@@ -53,7 +53,7 @@ MCP Apps follow progressive enhancement. If a host cannot render app UI, the sam
 
 ### One-click installation
 
-Browse the [Cursor Marketplace](/marketplace) for official plugins with one-click install. For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory). Click "Add to Cursor" on a marketplace entry to install it and authenticate with OAuth.
+Browse the [Cursor Marketplace](/marketplace) for official plugins with one-click install from **Customize**, or configure custom servers with `mcp.json`. For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory). Click "Add to Cursor" on a marketplace entry to install it and authenticate with OAuth.
 
 ### Using `mcp.json`
 
@@ -242,9 +242,36 @@ MCP servers use environment variables for authentication. Pass API keys and toke
 
 Cursor supports OAuth for servers that require it.
 
+## Enterprise admin controls
+
+Team and Enterprise admins can control which MCP servers users may run from the Cursor dashboard. Open **Dashboard > Settings > MCP** to configure the team's MCP policy.
+
+### MCP Allowlist
+
+Use the MCP Allowlist to define approved servers:
+
+- **Command entries** approve local `stdio` MCP servers by command pattern.
+- **URL entries** approve remote HTTP/SSE MCP servers by URL entry pattern.
+- **Tool allowlists** restrict which tools from an approved server can run automatically. Leave a tool allowlist empty to allow all tools from that server.
+
+### Network controls
+
+Remote MCP URLs are restricted to the configured URL entry pattern.
+
+Local command-based MCP servers use their per-server network mode:
+
+- **Allow all**: allow outbound network access.
+- **Allowlist**: allow only listed destinations.
+- **Deny all**: block outbound network access.
+- **No sandbox**: run without command or network sandboxing.
+
+### User MCP extensions
+
+Admins can allow users to configure their own MCP servers outside admin-defined command or URL patterns. For user MCPs that do not match an admin-defined pattern, the User MCP Network Denylist can block matching network destinations.
+
 ## Using MCP in chat
 
-Cursor automatically uses MCP tools listed under `Available Tools` when relevant. This includes [Plan Mode](https://cursor.com/docs/agent/plan-mode.md#plan). Ask for a specific tool by name or describe what you need. Enable or disable tools from settings.
+Cursor automatically uses MCP tools listed under `Available Tools` when relevant. This includes [Plan Mode](https://cursor.com/docs/agent/plan-mode.md#plan). Ask for a specific tool by name or describe what you need. Enable or disable MCP servers from **Customize** in the sidebar.
 
 ### Tool approval
 
@@ -254,9 +281,7 @@ Cursor asks for approval before using MCP tools by default. Click the arrow next
 
 #### Run Mode
 
-Let Cursor use MCP tools without asking. MCP [follows the same modes as terminal commands](https://cursor.com/docs/agent/tools/terminal.md#editor-configuration). In **Auto-review** mode (Cursor 3.6 and above, the default), allowlisted MCP tools run immediately and everything else is routed through the safety classifier described in the [Run Mode reference](https://cursor.com/docs/agent/tools/terminal.md#run-mode).
-
-To pre-configure which MCP tools can run without approval, add them to [`permissions.json`](https://cursor.com/docs/reference/permissions.md). You can also steer the **Auto-review** classifier per server or tool with [`autoRun` instructions](https://cursor.com/docs/reference/permissions.md#autorun-configuration) in the same file.
+MCP [follows the same Run Modes as terminal commands](https://cursor.com/docs/agent/security/run-modes.md#run-mode). For example, in **Auto-review** mode, allowlisted MCP tools run immediately and everything else is routed through the classifier.
 
 ### Tool response
 
@@ -326,9 +351,9 @@ The logs show server initialization, tool calls, and error messages.
 
 Yes! Toggle servers on/off without removing them:
 
-1. Open Settings (Cmd+Shift+J)
-2. Go to Features → Model Context Protocol
-3. Click the toggle next to any server to enable/disable
+1. Open **Customize** in the sidebar
+2. Find the MCP server you want to change
+3. Use the toggle to enable or disable it
 
 Disabled servers won't load or appear in chat. This is useful for troubleshooting or reducing tool clutter.
 
@@ -347,7 +372,7 @@ Cursor isolates server failures to prevent one server from affecting others.
 
 For npm-based servers:
 
-1. Remove the server from settings
+1. Remove the server from **Customize**
 2. Clear npm cache: `npm cache clean --force`
 3. Re-add the server to get the latest version
 

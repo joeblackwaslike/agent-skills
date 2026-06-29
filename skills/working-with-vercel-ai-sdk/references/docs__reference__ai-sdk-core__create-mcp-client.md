@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "bf20802e096903247dbe47d072632f358cfda75840d98219e63ad6ef686f8a6b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "de7fb2c3316128d6b36c1669eb71a092925f45420917daa14f4cd8658e3be8c7"
 ---
 
 # `createMCPClient()`
@@ -87,7 +87,7 @@ It currently does not support accepting notifications from an MCP server, and cu
                   parameters: [
                     {
                       name: 'type',
-                      type: "'sse' | 'http",
+                      type: "'sse' | 'http'",
                       description: 'Use Server-Sent Events for communication',
                     },
                     {
@@ -114,7 +114,49 @@ It currently does not support accepting notifications from an MCP server, and cu
                       type: "'follow' | 'error'",
                       isOptional: true,
                       description:
-                        "Controls how HTTP redirects are handled for transport requests. Set to 'error' to reject any redirect response, preventing servers from redirecting requests to unintended hosts. Defaults to 'follow'.",
+                        "Controls how HTTP redirects are handled for transport requests. Set to 'follow' to allow redirect responses. Defaults to 'error' to reject any redirect response, preventing servers from redirecting requests to unintended hosts.",
+                    },
+                    {
+                      name: 'initialSessionId',
+                      type: 'string',
+                      isOptional: true,
+                      description:
+                        'Initial MCP session id to send with resumed Streamable HTTP requests after initialization. Pair with initialInitializeResult when using createMCPClient. Only used by the HTTP transport.',
+                    },
+                    {
+                      name: 'initialProtocolVersion',
+                      type: 'string',
+                      isOptional: true,
+                      description:
+                        'Initial MCP protocol version to send before initialize negotiates one. Only used by the HTTP transport.',
+                    },
+                    {
+                      name: 'onSessionIdChange',
+                      type: '(sessionId: string | undefined) => void',
+                      isOptional: true,
+                      description:
+                        'Callback invoked when the Streamable HTTP server creates, changes, or clears the MCP session id. Only used by the HTTP transport.',
+                    },
+                    {
+                      name: 'onSessionExpired',
+                      type: '(sessionId: string) => void',
+                      isOptional: true,
+                      description:
+                        'Callback invoked when a Streamable HTTP request returns 404 for an existing MCP session id. The transport clears the session id before reporting the underlying HTTP error. Only used by the HTTP transport.',
+                    },
+                    {
+                      name: 'terminateSessionOnClose',
+                      type: 'boolean',
+                      isOptional: true,
+                      description:
+                        'Whether close() should send DELETE for the current MCP session id. Set to false when the application intends to reattach to the session later. Defaults to true. Only used by the HTTP transport.',
+                    },
+                    {
+                      name: 'fetch',
+                      type: 'FetchFunction',
+                      isOptional: true,
+                      description:
+                        'Optional custom fetch implementation to use for HTTP requests. Useful for runtimes that need a request-local fetch.',
                     },
                   ],
                 },
@@ -124,8 +166,7 @@ It currently does not support accepting notifications from an MCP server, and cu
               name: 'clientName',
               type: 'string',
               isOptional: true,
-              description:
-                'Client name. Defaults to "ai-sdk-mcp-client".',
+              description: 'Client name. Defaults to "ai-sdk-mcp-client".',
             },
             {
               name: 'name',
@@ -147,6 +188,13 @@ It currently does not support accepting notifications from an MCP server, and cu
               description: 'Handler for uncaught errors',
             },
             {
+              name: 'initialInitializeResult',
+              type: 'InitializeResult',
+              isOptional: true,
+              description:
+                'Initialize result from a previous MCP session. When provided, the client starts the transport and reuses this metadata without sending a new initialize request.',
+            },
+            {
               name: 'capabilities',
               type: 'ClientCapabilities',
               isOptional: true,
@@ -166,6 +214,12 @@ Returns a Promise that resolves to an `MCPClient` with the following properties 
 
 <PropertiesTable
   content={[
+    {
+      name: 'initializeResult',
+      type: 'InitializeResult',
+      description:
+        'The full initialize result used by this client, either from the server during initialization or from initialInitializeResult.',
+    },
     {
       name: 'serverInfo',
       type: 'Configuration',
@@ -213,6 +267,98 @@ Returns a Promise that resolves to an `MCPClient` with the following properties 
               isOptional: true,
               description:
                 'Zod schema or JSON schema defining the expected output structure. When provided, the client extracts and validates structuredContent from tool results, giving you typed outputs.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'listTools',
+      type: `async (options?: {
+        params?: PaginatedRequest['params'];
+        options?: RequestOptions;
+      }) => Promise<ListToolsResult>`,
+      description:
+        'Lists available tool definitions from the MCP server without converting them to AI SDK tools.',
+      properties: [
+        {
+          type: 'options',
+          parameters: [
+            {
+              name: 'params',
+              type: "PaginatedRequest['params']",
+              isOptional: true,
+              description: 'Optional pagination parameters including cursor.',
+            },
+            {
+              name: 'options',
+              type: 'RequestOptions',
+              isOptional: true,
+              description:
+                'Optional request options including signal and timeout.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'callTool',
+      type: `async (args: {
+        name: string;
+        arguments?: Record<string, unknown>;
+        options?: RequestOptions;
+      }) => Promise<CallToolResult>`,
+      description:
+        'Calls a tool on the MCP server. This is useful for host-mediated calls, such as MCP Apps iframe requests.',
+      properties: [
+        {
+          type: 'args',
+          parameters: [
+            {
+              name: 'name',
+              type: 'string',
+              description: 'The name of the MCP tool to call.',
+            },
+            {
+              name: 'arguments',
+              type: 'Record<string, unknown>',
+              isOptional: true,
+              description: 'Arguments to pass to the MCP tool.',
+            },
+            {
+              name: 'options',
+              type: 'RequestOptions',
+              isOptional: true,
+              description:
+                'Optional request options including signal and timeout.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'toolsFromDefinitions',
+      type: `(definitions: ListToolsResult, options?: {
+        schemas?: TOOL_SCHEMAS
+      }) => McpToolSet<TOOL_SCHEMAS>`,
+      description:
+        'Converts existing MCP tool definitions into AI SDK tools without listing tools again.',
+      properties: [
+        {
+          type: 'parameters',
+          parameters: [
+            {
+              name: 'definitions',
+              type: 'ListToolsResult',
+              description:
+                'Tool definitions, typically returned by `listTools`.',
+            },
+            {
+              name: 'schemas',
+              type: 'TOOL_SCHEMAS',
+              isOptional: true,
+              description:
+                'Optional schema definitions for compile-time type checking and typed outputs.',
             },
           ],
         },
@@ -456,6 +602,8 @@ For unknown errors, the client exposes an `onUncaughtError` callback that can be
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -464,27 +612,31 @@ For unknown errors, the client exposes an `onUncaughtError` callback that can be
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

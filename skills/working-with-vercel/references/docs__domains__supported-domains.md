@@ -12,8 +12,8 @@ related:
 summary: Learn about supported domains on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/supported-domains.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "df5b787d80af3fd915493edb1bf07e9745fc2f445bba20b0610c230d7eede4ff"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "dbcada19426b2de7eaa3b0d541977c3952744bd0958f83a254276bbe1eb79929"
 ---
 
 # Supported domains
@@ -407,7 +407,6 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 | `.promo` | Yes | Yes |
 | `.properties` | Yes | Yes |
 | `.property` | Yes | Yes |
-| `.pt` | No | No |
 | `.pub` | Yes | Yes |
 | `.pw` | Yes | Yes |
 | `.qpon` | Yes | Yes |
@@ -458,7 +457,6 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 | `.shop` | Yes | Yes |
 | `.shopping` | Yes | Yes |
 | `.show` | Yes | Yes |
-| `.si` | Yes | No |
 | `.singles` | Yes | Yes |
 | `.site` | Yes | Yes |
 | `.ski` | Yes | Yes |

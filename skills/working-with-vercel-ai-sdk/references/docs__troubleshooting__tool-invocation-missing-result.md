@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/tool-invocation-missing-result.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "93ba6cee838c6d9695763636e24192382a4feac1899bf7e42d614b3ba3be1c4d"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "ec37fa5f84ccc7b84df133e0269f9c78ffd6c8864b85821c05add2da2efdbcaa"
 ---
 
 # Tool Invocation Missing Result Error
@@ -125,7 +125,7 @@ const { messages, sendMessage, addToolOutput } = useChat({
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e042573cea300d1e46c0410554dbe19b5f42c22a0a4cf9b685df364498945438"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f682503e8d8c83291bf598773a66bd26eac782cacc81b10681d7aa689fe13c80"
 ---
 
 # Migrate AI SDK 3.4 to 4.0
@@ -1161,6 +1161,7 @@ of codemods. For more, see the [Codemods](#codemods) section.
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

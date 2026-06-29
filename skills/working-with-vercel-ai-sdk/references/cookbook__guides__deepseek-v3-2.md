@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/deepseek-v3-2.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a8d7d1aa1b9102b03089d7221e9e83734391ebb475d1bb851eb435457943f3c5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "88e3f51ce40ab46ded04e4469a30cda0b5163240df4254d06a1d72eb98235fdb"
 ---
 
 # Get started with DeepSeek V3.2
@@ -57,11 +57,11 @@ The AI SDK abstracts away the differences between model providers, eliminates bo
 At the center of the AI SDK is [AI SDK Core](/docs/ai-sdk-core/overview), which provides a unified API to call any LLM. The code snippet below is all you need to call DeepSeek V3.2 with the AI SDK:
 
 ```ts
-import { deepseek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-sdk/deepseek';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: deepseek('deepseek-chat'),
+  model: deepSeek('deepseek-chat'),
   prompt: 'Explain the concept of sparse attention in transformers.',
 });
 ```
@@ -83,18 +83,26 @@ In a new Next.js application, first install the AI SDK and the DeepSeek provider
 Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
-import { deepseek } from '@ai-sdk/deepseek';
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import { deepSeek } from '@ai-sdk/deepseek';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: deepseek('deepseek-reasoner'),
+    model: deepSeek('deepseek-reasoner'),
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({ sendReasoning: true });
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream, sendReasoning: true }),
+  });
 }
 ```
 
@@ -155,12 +163,14 @@ One of the key strengths of DeepSeek V3.2 is its agentic capabilities. You can e
 Let's add a weather tool to your agent. Update your route handler at `app/api/chat/route.ts`:
 
 ```tsx filename="app/api/chat/route.ts"
-import { deepseek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-sdk/deepseek';
 import {
   convertToModelMessages,
-  stepCountIs,
+  createUIMessageStreamResponse,
+  isStepCount,
   streamText,
   tool,
+  toUIMessageStream,
   UIMessage,
 } from 'ai';
 import { z } from 'zod';
@@ -169,7 +179,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: deepseek('deepseek-reasoner'),
+    model: deepSeek('deepseek-reasoner'),
     messages: await convertToModelMessages(messages),
     tools: {
       weather: tool({
@@ -184,14 +194,16 @@ export async function POST(req: Request) {
         }),
       }),
     },
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
   });
 
-  return result.toUIMessageStreamResponse({ sendReasoning: true });
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream, sendReasoning: true }),
+  });
 }
 ```
 
-This adds a weather tool that the model can call when needed. The `stopWhen: stepCountIs(5)` parameter allows the agent to continue executing for multiple steps (up to 5), enabling it to use tools and reason iteratively before stopping. Learn more about [loop control](/docs/agents/loop-control) to customize when and how your agent stops execution.
+This adds a weather tool that the model can call when needed. The `stopWhen: isStepCount(5)` parameter allows the agent to continue executing for multiple steps (up to 5), enabling it to use tools and reason iteratively before stopping. Learn more about [loop control](/docs/agents/loop-control) to customize when and how your agent stops execution.
 
 ## Get Started
 
@@ -212,6 +224,7 @@ Ready to dive in? Here's how you can begin:
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

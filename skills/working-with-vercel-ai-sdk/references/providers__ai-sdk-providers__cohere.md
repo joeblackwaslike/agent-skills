@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5e7d512df8e4373713c49acff06a9455b04c74afe8b926be96f2b850d31e793c"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c04d425ffe8b7230206814cdb034f1febdeffbb9eff9f0c9733cba97d8470518"
 ---
 
 # Cohere Provider
@@ -146,7 +146,7 @@ const { text } = await generateText({
         { type: 'text', text: 'Describe the image in detail.' },
         {
           type: 'file',
-          mediaType: 'image/png',
+          mediaType: 'image',
           data: readFileSync('./data/comic-cat.png'),
         },
       ],
@@ -170,7 +170,7 @@ const { text } = await generateText({
         { type: 'text', text: 'Describe the image in detail.' },
         {
           type: 'file',
-          mediaType: 'image/png',
+          mediaType: 'image',
           data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
 
           // Cohere specific options - image detail:
@@ -189,7 +189,7 @@ const { text } = await generateText({
 Cohere has introduced reasoning with the `command-a-reasoning-08-2025` model. You can learn more at https://docs.cohere.com/docs/reasoning.
 
 ```ts
-import { cohere, type CohereLanguageModelOptions } from '@ai-sdk/cohere';
+import { cohere, type CohereLanguageModelChatOptions } from '@ai-sdk/cohere';
 import { generateText } from 'ai';
 
 async function main() {
@@ -204,7 +204,7 @@ async function main() {
           type: 'enabled',
           tokenBudget: 100,
         },
-      } satisfies CohereLanguageModelOptions,
+      } satisfies CohereLanguageModelChatOptions,
     },
   });
 
@@ -264,7 +264,6 @@ The following provider options are available:
 - **inputType** _'search_document' | 'search_query' | 'classification' | 'clustering'_
 
   Specifies the type of input passed to the model. Default is `search_query`.
-
   - `search_document`: Used for embeddings stored in a vector database for search use-cases.
   - `search_query`: Used for embeddings of search queries run against a vector DB to find relevant documents.
   - `classification`: Used for embeddings passed through a text classifier.
@@ -274,7 +273,6 @@ The following provider options are available:
 
   Specifies how the API will handle inputs longer than the maximum token length.
   Default is `END`.
-
   - `NONE`: If selected, when the input exceeds the maximum input token length will return an error.
   - `START`: Will discard the start of the input until the remaining input is exactly the maximum input token length for the model.
   - `END`: Will discard the end of the input until the remaining input is exactly the maximum input token length for the model.
@@ -383,7 +381,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

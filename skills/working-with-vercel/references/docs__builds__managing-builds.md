@@ -3,28 +3,28 @@ title: Managing Builds
 product: vercel
 url: /docs/builds/managing-builds
 canonical_url: "https://vercel.com/docs/builds/managing-builds"
-last_updated: 2026-04-30
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   - /docs/builds
 related:
   - /docs/fluid-compute
   - /docs/cdn
-  - /docs/plans/pro-plan
+  - /docs/plans/hobby
   - /docs/builds/build-queues
   - /docs/pricing
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-06-15T22:56:22.423Z"
-sha256: "33bd38181068c5e2ea59a801ad955d66477e1ca74940b67c49a46e5da93c36c7"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2cd6c05622d2aa18823ec29c65b396f68a9d1d9a37ec5231a52b1a1dadb2bf98"
 ---
 
 # Managing Builds
 
 When you build your application code, Vercel runs compute to install dependencies, run your build script, and sends the build output to our [Compute](/docs/fluid-compute) and [CDN](/docs/cdn).
 
-By default, we enable [elastic builds](/docs/builds/managing-builds#elastic-build-machines) for paid teams. If you're on a Hobby plan and looking for faster builds, we recommend [upgrading to Pro](/docs/plans/pro-plan).
+By default, we enable [elastic builds](/docs/builds/managing-builds#elastic-build-machines) for paid teams. If you're on a Hobby plan and looking for faster builds, we recommend [upgrading to Pro](/docs/plans/hobby#upgrading-to-pro).
 
 [Visit Build Diagnostics in the Observability section in the Vercel dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fbuild-diagnostics\&title=Visit+Build+Diagnostics) to find your build durations. You can also use this table to quickly identify which solution fits your needs:
 
@@ -62,6 +62,12 @@ Enterprise customers who have Enhanced build machines enabled via contract will 
 On-demand concurrent builds allow your builds to skip the queue and run immediately. By default, projects have on-demand concurrent builds enabled with full concurrency. Learn more about [concurrency modes](/docs/builds/build-queues#with-on-demand-concurrent-builds).
 
 You are charged for on-demand concurrent builds based on the number of concurrent builds required to allow the builds to proceed. See [Pricing](/docs/pricing#builds) for more information.
+
+### Concurrency limits by plan
+
+- **Hobby:** 1 concurrent deployment. Builds beyond this run sequentially.
+- **Pro:** Up to 500 concurrent deployments with on-demand concurrency (3 if on demand is off). You are billed for the build minutes you use.
+- **Enterprise:** Custom concurrency limits tailored to your organization's needs.
 
 ### Project-level on-demand concurrent builds
 

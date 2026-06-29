@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/jina-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d095e9e36673c28efeee2ab97ae3e2922f10f8cc8d1aa6247ef5c6b97fcbf6e0"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8eb4fc1f44786e2774bfcaddd0062b3354644b045dfed281cfb8177bad130b45"
 ---
 
 # Jina AI Provider
@@ -149,7 +149,6 @@ Pass Jina embedding options via `providerOptions.jina`. The following options ar
 - **inputType** _'text-matching' | 'retrieval.query' | 'retrieval.passage' | 'separation' | 'classification'_
 
   Intended downstream application to help the model produce better embeddings. Defaults to `'retrieval.passage'`.
-
   - `'retrieval.query'`: input is a search query.
   - `'retrieval.passage'`: input is a document/passage.
   - `'text-matching'`: for semantic textual similarity tasks.
@@ -159,7 +158,6 @@ Pass Jina embedding options via `providerOptions.jina`. The following options ar
 - **outputDimension** _number_
 
   Number of dimensions for the output embeddings. See model documentation for valid ranges.
-
   - `jina-embeddings-v3`: min 32, max 1024.
   - `jina-clip-v2`: min 64, max 1024.
   - `jina-clip-v1`: fixed 768.

@@ -3,7 +3,7 @@ title: Mastra
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/mastra
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra"
-last_updated: 2026-03-24
+last_updated: 2026-06-11
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with Mastra to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b641440a5d0fc00b2a9ee316bec65c7483accca2468b6ca3e7d5be2b9eb31814"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e5c93f7336544d9179a0a68f0348313d49c2236b1afa84e9046a4e5047d16cd7"
 ---
 
 # Mastra

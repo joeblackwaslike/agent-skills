@@ -1,12 +1,12 @@
 ---
 source: "https://cursor.com/docs/hooks.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "1f95ff77e1b2c91c64aa77ff5dae366aebeb0efe0761fdc128ec5321e4ef5e58"
+fetched_at: "2026-06-29T05:42:13.025Z"
+sha256: "d3130030d3e80caea4202ac09f5cd91146ab8a12e8870ef2cc45450d88e2b5b7"
 ---
 
 # Hooks
 
-Hooks let you observe, control, and extend the agent loop using custom scripts. Hooks are spawned processes that communicate over stdio using JSON in both directions. They run before or after defined stages of the agent loop and can observe, block, or modify behavior.
+Hooks let you observe, control, and extend the agent loop using custom scripts. Define hooks in `hooks.json` files at the project or user level, or install them through plugins from **Customize**. Hooks are spawned processes that communicate over stdio using JSON in both directions. They run before or after defined stages of the agent loop and can observe, block, or modify behavior.
 
 [Media](/docs-static/images/agent/hooks.mp4)
 
@@ -1441,7 +1441,7 @@ Session-scoped environment variables from `sessionStart` hooks are passed to all
 
 **How to confirm hooks are active**
 
-There is a Hooks tab in Cursor Settings to debug configured and executed hooks, as well as a Hooks output channel to see errors.
+There is a Hooks tab in **Customize** and a Hooks output channel to debug configured and executed hooks and see errors.
 
 **If hooks are not working**
 

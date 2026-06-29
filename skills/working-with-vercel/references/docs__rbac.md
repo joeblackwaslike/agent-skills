@@ -3,7 +3,7 @@ title: Role-based access control (RBAC)
 product: vercel
 url: /docs/rbac
 canonical_url: "https://vercel.com/docs/rbac"
-last_updated: 2025-05-23
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "af3bcf6a5ca2632b88811dc823381a48af4d12f5be27fccd5c4b956276e1505a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "575468727d301f9e23c6478cc4a91c6f10a5efdfb2281383db45d50fa3d61d66"
 ---
 
 # Role-based access control (RBAC)

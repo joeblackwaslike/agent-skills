@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/local-caching-middleware.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1d71f6d02ad0fda36a690c1d516f5eb07ae30e1ad2ee05808f7c5389f9381108"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "a6d3d5258d44abe3e42a82416f4148df4ad4ddd27a1d0773429b62bdc2842734"
 ---
 
 # Local Caching Middleware
@@ -37,10 +37,10 @@ The middleware handles all transformations needed to make cached responses indis
 
 ```ts
 import {
-  type LanguageModelV3Middleware,
-  type LanguageModelV3StreamPart,
-  type LanguageModelV3CallOptions,
-  type LanguageModelV3,
+  type LanguageModelV4Middleware,
+  type LanguageModelV4StreamPart,
+  type LanguageModelV4CallOptions,
+  type LanguageModelV4,
 } from '@ai-sdk/provider';
 import { safeParseJSON } from '@ai-sdk/provider-utils';
 import 'dotenv/config';
@@ -50,7 +50,7 @@ import { wrapLanguageModel, simulateReadableStream } from 'ai';
 
 const CACHE_FILE = path.join(process.cwd(), '.cache/ai-cache.json');
 
-export const cached = (model: LanguageModelV3) =>
+export const cached = (model: LanguageModelV4) =>
   wrapLanguageModel({
     middleware: cacheMiddleware,
     model,
@@ -104,7 +104,7 @@ const updateCache = (key: string, value: any) => {
   }
 };
 
-const cleanPrompt = (prompt: LanguageModelV3CallOptions['prompt']) => {
+const cleanPrompt = (prompt: LanguageModelV4CallOptions['prompt']) => {
   return prompt.map(m => {
     if (m.role === 'assistant') {
       return {
@@ -129,8 +129,8 @@ const cleanPrompt = (prompt: LanguageModelV3CallOptions['prompt']) => {
   });
 };
 
-export const cacheMiddleware: LanguageModelV3Middleware = {
-  specificationVersion: 'v3',
+export const cacheMiddleware: LanguageModelV4Middleware = {
+  specificationVersion: 'v4',
   wrapGenerate: async ({ doGenerate, params, model }) => {
     const cacheKey = JSON.stringify({
       prompt: cleanPrompt(params.prompt),
@@ -170,7 +170,7 @@ export const cacheMiddleware: LanguageModelV3Middleware = {
 
     if (cached && cached !== null) {
       const { chunks, ...rest } = cached;
-      const formattedChunks = (chunks as LanguageModelV3StreamPart[]).map(p => {
+      const formattedChunks = (chunks as LanguageModelV4StreamPart[]).map(p => {
         if (p.type === 'response-metadata' && p.timestamp) {
           return { ...p, timestamp: new Date(p.timestamp) };
         }
@@ -189,11 +189,11 @@ export const cacheMiddleware: LanguageModelV3Middleware = {
 
     const { stream, ...rest } = await doStream();
 
-    const fullResponse: LanguageModelV3StreamPart[] = [];
+    const fullResponse: LanguageModelV4StreamPart[] = [];
 
     const transformStream = new TransformStream<
-      LanguageModelV3StreamPart,
-      LanguageModelV3StreamPart
+      LanguageModelV4StreamPart,
+      LanguageModelV4StreamPart
     >({
       transform(chunk, controller) {
         fullResponse.push(chunk);

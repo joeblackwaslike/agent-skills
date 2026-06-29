@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "fd1d8c57a09eefc5ebf1eba1312b04bb1ce4e586679dcf41fd07e9d8d245f72d"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "62b75d8b420f454dca7a67fdf3e09c4962d8191a04bccab99efb6ed74c71bb7c"
 ---
 
 # Perplexity Provider
@@ -235,7 +235,7 @@ respond to questions about it.
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

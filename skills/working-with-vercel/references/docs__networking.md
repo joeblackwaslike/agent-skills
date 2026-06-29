@@ -3,7 +3,7 @@ title: Networking
 product: vercel
 url: /docs/networking
 canonical_url: "https://vercel.com/docs/networking"
-last_updated: 2026-05-15
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1ae0d0209c2de7a9e3731f9a93c77b4299d41b7d9165a95b898a0fe1564ac167"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "eae86e3ddcecb5acf3afc7468e99c906071b272cb3097807bcd2ef838d30128d"
 ---
 
 # Networking

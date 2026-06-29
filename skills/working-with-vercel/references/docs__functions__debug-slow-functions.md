@@ -16,8 +16,8 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "42c71599a51e2b04c2121592864bab210d6378dc01d9ca6a419701f9bc480e84"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "bc2c5ba203710af6f1f56cdaf8c99d5b99ee819a03c1afe481358b1d6eacfaaf"
 ---
 
 # Debugging slow Vercel Functions
@@ -108,7 +108,7 @@ vercel inspect <deployment-url>
 
 Key things to check:
 
-- **Memory**: Functions with too little memory get CPU-throttled. If your function does heavy computation, increasing memory from the default 1024 MB can reduce execution time
+- **Memory**: Functions with too little memory get CPU-throttled. If your function does heavy computation, increasing memory from the default 2 GB can reduce execution time
 - **Region**: If your function is far from your data source, every database query adds latency. Check that your function region matches your database region
 - **Max duration**: If your function is hitting the maximum duration limit, it may be getting terminated before completing
 

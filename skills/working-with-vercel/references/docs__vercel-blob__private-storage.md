@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "995a5b8ed29e816dcfd78318a9e76f827c8fc4d1645d0e529695eb8c4c50951d"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d91cedc1dbf490c134894ea9592ecdb1bac607880051dcc82f2652ed49525da3"
 ---
 
 # Private Storage
@@ -67,7 +67,7 @@ See the [server uploads](/docs/storage/vercel-blob/server-upload) and [client up
 
 ## Delivering private blobs
 
-Every file uploaded to a private Blob store gets a URL in the form of `https://<store-id>.private.blob.vercel-storage.com/<pathname>`. This URL is not publicly accessible. You can only fetch its content using the [`get()`](/docs/vercel-blob/using-blob-sdk#get) SDK method or by passing the `BLOB_READ_WRITE_TOKEN` directly (see [accessing without the SDK](#accessing-without-the-sdk)).
+Every file uploaded to a private Blob store gets a URL in the form of `https://<store-id>.private.blob.vercel-storage.com/<pathname>`. This URL is not publicly accessible. Fetch its content with the [`get()`](/docs/vercel-blob/using-blob-sdk#get) SDK method. The SDK supports OpenID Connect (OIDC) and `BLOB_READ_WRITE_TOKEN` authentication. When your code runs on Vercel, it defaults to OIDC, which is preferred because its short-lived tokens rotate automatically. See [accessing without the SDK](#accessing-without-the-sdk).
 
 To serve private blobs to your users, create a route that authenticates the request, fetches the blob using `get()`, and streams the response. For example, a route like `https://example.com/api/file?pathname=documents/report.pdf`:
 
@@ -245,7 +245,14 @@ See the [`get()` API reference](/docs/vercel-blob/using-blob-sdk#get) for full o
 
 ## Accessing without the SDK
 
-You can access private blobs directly using the `BLOB_READ_WRITE_TOKEN`:
+To access a private blob directly from code running on Vercel, pass the short-lived `VERCEL_OIDC_TOKEN` in the `Authorization` header. OIDC is preferred over the long-lived `BLOB_READ_WRITE_TOKEN` because it rotates automatically:
+
+```bash filename="Terminal"
+curl https://my-store-id.private.blob.vercel-storage.com/my-file.png \
+  -H "Authorization: Bearer $VERCEL_OIDC_TOKEN"
+```
+
+When code runs outside Vercel or you need a static credential, pass `BLOB_READ_WRITE_TOKEN` instead:
 
 ```bash filename="Terminal"
 curl https://my-store-id.private.blob.vercel-storage.com/my-file.png \

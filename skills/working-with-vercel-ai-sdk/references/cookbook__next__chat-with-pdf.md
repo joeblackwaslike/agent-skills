@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/chat-with-pdf.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2c38dec0eb47f4bca89a76482268d35267ac5de06d409f41887f0f7b516a2584"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "9185c3845198768781131836977e9e0ef63c819d6b55d1192c101a4839c8cd87"
 ---
 
 # Chat with PDFs
@@ -22,7 +22,13 @@ Some language models like Anthropic's Claude Sonnet 3.5 and Google's Gemini 2.0 
 Create a route handler that will use Anthropic's Claude model to process messages and PDFs:
 
 ```tsx filename="app/api/chat/route.ts"
-import { convertToModelMessages, streamText, type UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  type UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
@@ -32,7 +38,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

@@ -3,21 +3,21 @@ title: Vercel Enterprise Plan
 product: vercel
 url: /docs/plans/enterprise
 canonical_url: "https://vercel.com/docs/plans/enterprise"
-last_updated: 2026-05-12
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/plans
 related:
   - /docs/functions/runtimes
   - /docs/functions/configuring-functions/region
+  - /docs/functions/limitations
   - /docs/functions
   - /docs/domains
-  - /docs/domains/custom-SSL-certificate
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "2fb56c973b8f762befb401c35da958baac728e8060e21143fc689725ded169ba"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "084fe66b00d9bd5b1134fe1ff2bbd1633cbc2b4349801bdb03b310e11c482630"
 ---
 
 # Vercel Enterprise Plan
@@ -31,8 +31,8 @@ The Enterprise plan uses isolated build infrastructure on high-grade hardware wi
 - Greater function limits for [Vercel Functions](/docs/functions/runtimes) including bundle size, duration, memory, and concurrency
 - Automatic failover regions for [Vercel Functions](/docs/functions/configuring-functions/region#automatic-failover)
 - Greater multi-region limits for [Vercel Functions](/docs/functions/configuring-functions/region#project-configuration)
-- Vercel functions memory [configurable](/docs/functions/runtimes#size-limits) to 3009 MB
-- Configurable [Vercel Function](/docs/functions) up to a [maximum duration](/docs/functions/runtimes#max-duration) of 900-seconds
+- Vercel functions memory [configurable](/docs/functions/limitations#memory-size-limits) to 3009 MB
+- Configurable [Vercel Function](/docs/functions) up to a [maximum duration](/docs/functions/limitations#max-duration) of 800 seconds
 - Unlimited [domains](/docs/domains) per project
 - [Custom SSL Certificates](/docs/domains/custom-SSL-certificate)
 - Automatic concurrency scaling up to 100,000 for [Vercel Functions](/docs/functions/concurrency-scaling#automatic-concurrency-scaling)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0bf8e9c0235079da70668a6a1bd335f88b9edc9cf14d7ed831481aca290b691f"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "26f1e9a8c37a8dd1fe88a64fde020a1ff5e755219aab71d78fae9711c0fa6205"
 ---
 
 # Loop Control
@@ -17,7 +17,7 @@ The AI SDK provides built-in loop control through two parameters: `stopWhen` for
 
 ## Stop Conditions
 
-The `stopWhen` parameter controls when to stop execution when there are tool results in the last step. By default, agents stop after 20 steps using `stepCountIs(20)`. This default is a safety measure to prevent runaway loops that could result in excessive API calls and costs.
+The `stopWhen` parameter controls when to stop execution when there are tool results in the last step. By default, agents stop after 20 steps using `isStepCount(20)`. This default is a safety measure to prevent runaway loops that could result in excessive API calls and costs.
 
 When you provide `stopWhen`, the agent continues executing after tool calls until a stopping condition is met. When the condition is an array, execution stops when any of the conditions are met.
 
@@ -25,14 +25,14 @@ When you provide `stopWhen`, the agent continues executing after tool calls unti
 
 The AI SDK provides several built-in stopping conditions:
 
-- `stepCountIs(count)` — stops after a specified number of steps
-- `hasToolCall(toolName)` — stops when a specific tool is called
+- `isStepCount(count)` — stops after a specified number of steps
+- `hasToolCall(...toolNames)` — stops when any of the specified tools is called
 - `isLoopFinished()` — never triggers, letting the loop run until the agent is naturally finished
 
 ### Run Up to a Maximum Number of Steps
 
 ```ts
-import { ToolLoopAgent, stepCountIs } from 'ai';
+import { ToolLoopAgent, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
@@ -40,7 +40,7 @@ const agent = new ToolLoopAgent({
   tools: {
     // your tools
   },
-  stopWhen: stepCountIs(50), // Increasing the default of 20 to 50.
+  stopWhen: isStepCount(50), // Increasing the default of 20 to 50.
 });
 
 const result = await agent.generate({
@@ -80,7 +80,7 @@ const result = await agent.generate({
 Combine multiple stopping conditions. The loop stops when it meets any condition:
 
 ```ts
-import { ToolLoopAgent, stepCountIs, hasToolCall } from 'ai';
+import { ToolLoopAgent, isStepCount, hasToolCall } from 'ai';
 __PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
@@ -89,8 +89,8 @@ const agent = new ToolLoopAgent({
     // your tools
   },
   stopWhen: [
-    stepCountIs(20), // Maximum 20 steps
-    hasToolCall('someTool'), // Stop after calling 'someTool'
+    isStepCount(20), // Maximum 20 steps
+    hasToolCall('someTool', 'done'), // Stop after calling either tool
   ],
 });
 
@@ -149,6 +149,8 @@ const budgetExceeded: StopCondition<typeof tools> = ({ steps }) => {
 
 The `prepareStep` callback runs before each step in the loop and defaults to the initial settings if you don't return any changes. Use it to modify settings, manage context, or implement dynamic behavior based on execution history.
 
+It receives `messages` for the current step, plus `initialMessages` and `responseMessages` when you need to distinguish the original input from assistant/tool messages accumulated in earlier steps. Treat `messages` as the loop's current message state: if you return a `messages` override, that override persists as the base for later steps, together with the response messages from each completed step.
+
 ### Dynamic Model Selection
 
 Switch models based on step requirements:
@@ -181,11 +183,21 @@ const result = await agent.generate({
 
 ### Context Management
 
-Manage growing conversation history in long-running loops:
+Long-running agents can accumulate large tool results, reasoning parts, and assistant messages. Use `prepareStep` to mutate the message state that will be used by later steps. This is useful for compaction, and you decide when compaction should happen.
+
+The `messages` value contains the messages that will be sent for the current step. When you return a `messages` override from `prepareStep`, that changed list becomes the base for later steps. New assistant and tool response messages are appended to it as the loop continues. If you need to rebuild a step from the discrete pieces instead of the persisted message state, use `initialMessages` for the original input and `responseMessages` for the model/tool response messages accumulated so far.
+
+The `pruneMessages` helper provides a built-in way to remove selected messages. You can use it inside `prepareStep` when you want a simple compaction strategy.
 
 ```ts
-import { ToolLoopAgent } from 'ai';
+import { ToolLoopAgent, pruneMessages, type ModelMessage } from 'ai';
 __PROVIDER_IMPORT__;
+
+const COMPACTION_THRESHOLD = 100_000;
+
+const estimateTokens = (messages: ModelMessage[]) => {
+  return JSON.stringify(messages).length / 4;
+};
 
 const agent = new ToolLoopAgent({
   model: __MODEL__,
@@ -193,16 +205,16 @@ const agent = new ToolLoopAgent({
     // your tools
   },
   prepareStep: async ({ messages }) => {
-    // Keep only recent messages to stay within context limits
-    if (messages.length > 20) {
+    if (estimateTokens(messages) > COMPACTION_THRESHOLD) {
       return {
-        messages: [
-          messages[0], // Keep system instructions
-          ...messages.slice(-10), // Keep last 10 messages
-        ],
+        messages: pruneMessages({
+          messages,
+          reasoning: 'all',
+          toolCalls: 'before-last-3-messages',
+          emptyMessages: 'remove',
+        }),
       };
     }
-    return {};
   },
 });
 
@@ -210,6 +222,8 @@ const result = await agent.generate({
   prompt: '...',
 });
 ```
+
+The token estimator above is intentionally simple and only demonstrates one way to decide when to compact. The main point is that `prepareStep` can return a new `messages` array, and that array becomes the message state for following steps. The same pattern also works with `generateText` and `streamText`.
 
 ### Tool Selection
 
@@ -279,7 +293,7 @@ prepareStep: async ({ stepNumber }) => {
 
 ### Message Modification
 
-Transform messages before sending them to the model:
+Transform messages before sending them to the model. Returned messages carry forward to later steps, so later `messages` values include your transformed messages plus the assistant/tool response messages from completed steps:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
@@ -310,6 +324,40 @@ const result = await agent.generate({
   prompt: '...',
 });
 ```
+
+### Experimental Sandbox Selection
+
+Switch the experimental sandbox used for tool execution in a single step:
+
+```ts
+import { ToolLoopAgent } from 'ai';
+__PROVIDER_IMPORT__;
+
+const agent = new ToolLoopAgent({
+  model: __MODEL__,
+  tools: {
+    runCommand,
+  },
+  experimental_sandbox: defaultSandbox,
+  prepareStep: async ({ stepNumber }) => {
+    if (stepNumber === 0) {
+      return {
+        experimental_sandbox: setupSandbox,
+      };
+    }
+
+    return {};
+  },
+});
+
+const result = await agent.generate({
+  prompt: '...',
+});
+```
+
+Unlike `runtimeContext` and `toolsContext`, an experimental sandbox returned from `prepareStep`
+only applies to tool execution in that step. Later steps use the top-level
+`experimental_sandbox` unless they return their own experimental sandbox override.
 
 ## Access Step Information
 
@@ -407,7 +455,7 @@ while (step < maxSteps) {
     },
   });
 
-  messages.push(...result.response.messages);
+  messages.push(...result.responseMessages);
 
   if (result.text) {
     break; // Stop when model generates text
@@ -436,7 +484,11 @@ This manual approach gives you complete control over:
 - [Loop Control](/docs/agents/loop-control)
 - [Configuring Call Options](/docs/agents/configuring-call-options)
 - [Memory](/docs/agents/memory)
+- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
 - [Subagents](/docs/agents/subagents)
+- [Tool Approvals](/docs/agents/tool-approvals)
+- [WorkflowAgent](/docs/agents/workflow-agent)
+- [Terminal UI](/docs/agents/terminal-ui)
 
 
 [Full Sitemap](/sitemap.md)

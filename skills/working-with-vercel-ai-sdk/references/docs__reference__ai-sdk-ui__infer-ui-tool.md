@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/infer-ui-tool.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "cd51666711ebaa29c785c79330d39eeafdaa173654e76f0d2efe015884d77b4b"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "dcb4030c2c609911e41e1dbc6335f7073ae320d7a25382d22a284787c16fc854"
 ---
 
 # InferUITool
@@ -81,6 +81,7 @@ type WeatherUITool = InferUITool<typeof weatherTool>;
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -89,6 +90,7 @@ type WeatherUITool = InferUITool<typeof weatherTool>;
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

@@ -3,7 +3,7 @@ title: Domains Overview
 product: vercel
 url: /docs/domains
 canonical_url: "https://vercel.com/docs/domains"
-last_updated: 2026-02-17
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "718896fc893bfc66330d63c4b775d5bae706c31378771c0ca82532d25ec0f7b0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0cebb9714641b46bca3b769247ce1aa40951e5ef722ee293de5ebbf57e839114"
 ---
 
 # Domains Overview

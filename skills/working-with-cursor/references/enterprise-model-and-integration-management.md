@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/model-and-integration-management.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "6631d48715a0ed9de8bb455cb3cfb1ffd00ff4eef50be201af5acfc8960dfe90"
+fetched_at: "2026-06-29T05:42:13.025Z"
+sha256: "4051cf2b338501e32d7b864c7312cd83865c02e63d8dc263bce5f4e5e8cb3d0f"
 ---
 
 # Model and Integration Management
@@ -44,6 +44,8 @@ Because MCP servers have significant capabilities, you need to manage which serv
 ### MCP Allowlist
 
 Enterprise teams can control which MCP servers team members are allowed to use. Configure this in the [team dashboard](https://cursor.com/docs/account/teams/dashboard.md) under "MCP Configuration" (Enterprise only).
+
+Add each approved server as a command or URL entry, then configure its tool controls and network policy. Approving a trusted set of servers and domains is usually enough; apply stricter tool and network controls per server when you need them.
 
 You can also distribute `~/.cursor/permissions.json` through MDM to set the per-user MCP auto-run allowlist from a managed file.
 
@@ -121,6 +123,25 @@ The allowlist entry matches against the full URL `https://mcp.acme.com/sse`:
 | `https://mcp.acme.com/sse` | This exact URL                          |
 | `https://*.acme.com/*`     | Any subdomain and path under `acme.com` |
 | `https://mcp.acme.com/*`   | Any path on this host                   |
+
+### Per-server tool controls
+
+Tool controls live in the MCP Configuration section and are set per server, not in a separate auto-run list. For each approved server, restrict which tools can run by listing them in that server's Tools field. Leave the field empty to allow all tools from that server.
+
+### Per-server network controls
+
+Each approved server has its own network policy, so you control what it can reach.
+
+Remote (URL) MCP servers are restricted to the configured URL entry pattern.
+
+Local command-based (`stdio`) servers run in a sandbox with one of these network modes:
+
+| Network mode   | Behavior                                                |
+| :------------- | :------------------------------------------------------ |
+| **Allow all**  | No egress restrictions.                                 |
+| **Allowlist**  | Only listed destinations are reachable.                 |
+| **Deny all**   | Run the server locally with no outbound network access. |
+| **No sandbox** | Run without command or network sandboxing.              |
 
 ## Git repository blocklist
 

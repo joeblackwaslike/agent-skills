@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "7d25dfcdc218d55b4443e3b70dab0bdfd625a59fe5c7f85e0a2d4c8957f7de31"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8012fe932931fe46b538bf7ad6d8095601188dc2c5bd0516de9ca7ff84d544a4"
 ---
 
 # Dynamic Prompt Caching
@@ -106,11 +106,11 @@ export function addCacheControlToMessages({
 
 ## Using the Utility
 
-Integrate the utility into your agent using the `prepareStep` callback with `generateText` and `maxSteps`:
+Integrate the utility into your agent using the `prepareStep` callback with `generateText` and `stopWhen`:
 
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';
-import { generateText, tool } from 'ai';
+import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 import { addCacheControlToMessages } from './add-cache-control-to-messages';
 
@@ -118,7 +118,7 @@ async function main() {
   const result = await generateText({
     model: anthropic('claude-sonnet-4-5'),
     prompt: 'Help me analyze this codebase and suggest improvements.',
-    maxSteps: 10,
+    stopWhen: isStepCount(10),
     tools: {
       // your tools here
       analyzeFile: tool({

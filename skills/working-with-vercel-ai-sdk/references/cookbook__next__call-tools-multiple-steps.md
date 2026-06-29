@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/call-tools-multiple-steps.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1a827ac8d50fc48376b561ff5c3db917e2720e05d36c6f1ec106e61dc4bf9566"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "887be21376bf8a100254bfd9881e82061357fc1969e40c5efc6054c494e0a524"
 ---
 
 # Call Tools in Multiple Steps
@@ -77,7 +77,7 @@ You will use the [`tools`](/docs/reference/ai-sdk-core/generate-text#tools) para
 
 You will add the two functions mentioned earlier and use zod to specify the schema for its parameters.
 
-To call tools in multiple steps, you can use the `stopWhen` option to specify the stopping conditions for when the model generates a tool call. In this example, you will set it to `stepCountIs(5)` to allow for multiple consecutive tool calls (steps).
+To call tools in multiple steps, you can use the `stopWhen` option to specify the stopping conditions for when the model generates a tool call. In this example, you will set it to `isStepCount(5)` to allow for multiple consecutive tool calls (steps).
 
 ```ts filename='app/api/chat/route.ts'
 import {
@@ -86,8 +86,10 @@ import {
   type UIDataTypes,
   type UIMessage,
   convertToModelMessages,
-  stepCountIs,
+  createUIMessageStreamResponse,
+  isStepCount,
   streamText,
+  toUIMessageStream,
   tool,
 } from 'ai';
 import { z } from 'zod';
@@ -131,11 +133,13 @@ export async function POST(req: Request) {
     model: 'openai/gpt-4o',
     system: 'You are a helpful assistant.',
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

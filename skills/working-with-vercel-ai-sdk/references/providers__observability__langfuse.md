@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langfuse.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9154aeb512c39a3d5137e86762f2eb854f6c3242f8a0756f1ea755f1bad96ef1"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "d47ff23465b15c825583d70956f39538c192b3f6deb5ac70a20ce82fd9c434f6"
 ---
 
 # Langfuse Observability
@@ -16,22 +16,19 @@ sha256: "9154aeb512c39a3d5137e86762f2eb854f6c3242f8a0756f1ea755f1bad96ef1"
 
 ## Setup
 
-The AI SDK supports tracing via OpenTelemetry. With the `LangfuseSpanProcessor` you can collect these traces in Langfuse.
-While telemetry is experimental ([docs](/docs/ai-sdk-core/telemetry#enabling-telemetry)), you can enable it by setting `experimental_telemetry` on each request that you want to trace.
+The AI SDK v7 uses a callback-based telemetry system. Langfuse integrates with it through `@langfuse/vercel-ai-sdk`, while `LangfuseSpanProcessor` exports the resulting OpenTelemetry spans to Langfuse.
 
-```ts highlight="4"
-const result = await generateText({
-  model: openai('gpt-4o'),
-  prompt: 'Write a short story about a cat.',
-  experimental_telemetry: { isEnabled: true },
-});
+Install the AI SDK and Langfuse integration packages:
+
+```bash
+npm install ai @ai-sdk/openai @langfuse/client @langfuse/vercel-ai-sdk @langfuse/tracing @langfuse/otel @opentelemetry/sdk-node
 ```
 
-To collect the traces in Langfuse, you need to add the `LangfuseSpanProcessor` to your application.
+The `@langfuse/vercel-ai-sdk` package targets AI SDK v7 and requires Node.js 22 or later.
 
 You can set the Langfuse credentials via environment variables or directly to the `LangfuseSpanProcessor` constructor.
 
-To get your Langfuse API keys, you can [self-host Langfuse](https://langfuse.com/docs/deployment/self-host) or sign up for Langfuse Cloud [here](https://cloud.langfuse.com). Create a project in the Langfuse dashboard to get your `secretKey` and `publicKey.`
+To get your Langfuse API keys, you can [self-host Langfuse](https://langfuse.com/docs/deployment/self-host) or sign up for Langfuse Cloud [here](https://cloud.langfuse.com). Create a project in the Langfuse dashboard to get your `secretKey` and `publicKey`.
 
 <Tabs items={["Environment Variables", "Constructor"]}>
 
@@ -40,7 +37,7 @@ To get your Langfuse API keys, you can [self-host Langfuse](https://langfuse.com
 ```bash filename=".env"
 LANGFUSE_SECRET_KEY="sk-lf-..."
 LANGFUSE_PUBLIC_KEY="pk-lf-..."
-LANGFUSE_BASEURL="https://cloud.langfuse.com" # 🇪🇺 EU region, use "https://us.cloud.langfuse.com" for US region
+LANGFUSE_BASE_URL="https://cloud.langfuse.com" # EU region, use "https://us.cloud.langfuse.com" for US region
 ```
 
 </Tab>
@@ -53,64 +50,52 @@ import { LangfuseSpanProcessor } from '@langfuse/otel';
 new LangfuseSpanProcessor({
   secretKey: 'sk-lf-...',
   publicKey: 'pk-lf-...',
-  baseUrl: 'https://cloud.langfuse.com', // 🇪🇺 EU region
-  // baseUrl: "https://us.cloud.langfuse.com", // 🇺🇸 US region
+  baseUrl: 'https://cloud.langfuse.com', // EU region
+  // baseUrl: 'https://us.cloud.langfuse.com', // US region
 });
 ```
 
 </Tab>
 </Tabs>
 
-Now you need to register this span processor via the OpenTelemetry SDK.
+Now register the Langfuse span processor with OpenTelemetry and register the Langfuse AI SDK telemetry integration once at application startup.
 
 <Tabs items={["Next.js","Node.js"]}>
 <Tab>
 
 Next.js has support for OpenTelemetry instrumentation on the framework level. Learn more about it in the [Next.js OpenTelemetry guide](https://nextjs.org/docs/app/building-your-application/optimizing/open-telemetry).
 
-Install dependencies:
-
-```bash
-npm install @langfuse/otel @langfuse/tracing @opentelemetry/sdk-trace-node
-```
-
-Add `LangfuseSpanProcessor` to your instrumentation using a manual OpenTelemetry setup via `NodeTracerProvider`:
+Create or update your `instrumentation.ts` file:
 
 ```ts filename="instrumentation.ts"
-import { LangfuseSpanProcessor, ShouldExportSpan } from '@langfuse/otel';
-import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
+import { registerTelemetry } from 'ai';
+import { LangfuseSpanProcessor } from '@langfuse/otel';
+import { LangfuseVercelAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
+import { NodeSDK } from '@opentelemetry/sdk-node';
 
-// Optional: filter out Next.js infra spans
-const shouldExportSpan: ShouldExportSpan = span => {
-  return span.otelSpan.instrumentationScope.name !== 'next.js';
-};
+export const langfuseSpanProcessor = new LangfuseSpanProcessor();
 
-export const langfuseSpanProcessor = new LangfuseSpanProcessor({
-  shouldExportSpan,
-});
-
-const tracerProvider = new NodeTracerProvider({
+const sdk = new NodeSDK({
   spanProcessors: [langfuseSpanProcessor],
 });
 
-tracerProvider.register();
+sdk.start();
+
+registerTelemetry(new LangfuseVercelAiSdkIntegration());
 ```
+
+If you stream responses from a serverless route, flush the span processor after the response is scheduled so traces are exported before the function exits.
 
 </Tab>
 <Tab>
 
-Install dependencies:
+Add `LangfuseSpanProcessor` to your OpenTelemetry setup and register `LangfuseVercelAiSdkIntegration` with the AI SDK:
 
-```bash
-npm install ai @ai-sdk/openai @langfuse/otel @opentelemetry/sdk-node
-```
-
-Add `LangfuseSpanProcessor` to your OpenTelemetry setup:
-
-```ts highlight="3-4, 6-8"
+```ts
 import { openai } from '@ai-sdk/openai';
-import { generateText } from 'ai';
+import { registerTelemetry, generateText } from 'ai';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
+import { LangfuseVercelAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 
 const sdk = new NodeSDK({
@@ -118,19 +103,15 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
+registerTelemetry(new LangfuseVercelAiSdkIntegration());
 
 async function main() {
   const result = await generateText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-5.5'),
     maxOutputTokens: 50,
     prompt: 'Invent a new holiday and describe its traditions.',
-    experimental_telemetry: {
-      isEnabled: true,
+    telemetry: {
       functionId: 'my-awesome-function',
-      metadata: {
-        something: 'custom',
-        someOtherThing: 'other-value',
-      },
     },
   });
 
@@ -145,50 +126,128 @@ main().catch(console.error);
 </Tab>
 </Tabs>
 
-Done! All traces that contain AI SDK spans are automatically captured in Langfuse.
+Done! Once the integration is registered, AI SDK v7 calls emit telemetry by default and Langfuse maps the spans into traces, generations, tool calls, embeddings, and reranks.
 
 ## Example Application
 
-Check out the sample repository ([langfuse/langfuse-vercel-ai-nextjs-example](https://github.com/langfuse/langfuse-vercel-ai-nextjs-example)) based
-on the [next-openai](https://github.com/vercel/ai/tree/main/examples/next-openai) template to showcase the integration of Langfuse with Next.js and AI SDK.
+For the current setup, see Langfuse's [Vercel AI SDK integration guide](https://langfuse.com/integrations/frameworks/vercel-ai-sdk). Langfuse also maintains a sample repository at [langfuse/langfuse-vercel-ai-nextjs-example](https://github.com/langfuse/langfuse-vercel-ai-nextjs-example).
 
 ## Configuration
 
-### Group multiple executions in one trace
+### Pass Custom Attributes
 
-You can open a Langfuse trace and pass the trace ID to AI SDK calls to group multiple execution spans under one trace. The passed name in `functionId` will be the root span name of the respective execution.
+Use `propagateAttributes` from `@langfuse/tracing` to attach Langfuse trace attributes such as users, sessions, tags, and trace metadata to all observations created inside the callback.
 
 ```ts
-import { randomUUID } from 'crypto';
-import { Langfuse } from 'langfuse';
+import { propagateAttributes } from '@langfuse/tracing';
 
-const langfuse = new Langfuse();
-const parentTraceId = randomUUID();
+const result = await propagateAttributes(
+  {
+    traceName: 'story-generation',
+    userId: 'user-123',
+    sessionId: 'session-456',
+    tags: ['story', 'cat'],
+    metadata: {
+      route: 'api/story',
+      experiment: 'variant-a',
+    },
+  },
+  () =>
+    generateText({
+      model: openai('gpt-5.5'),
+      prompt: 'Write a short story about a cat.',
+      telemetry: {
+        functionId: 'story-generation',
+      },
+    }),
+);
+```
 
-langfuse.trace({
-  id: parentTraceId,
-  name: 'holiday-traditions',
+### Include Runtime Context in Langfuse Metadata
+
+AI SDK v7 excludes `runtimeContext` from telemetry events unless each top-level key is explicitly included. Langfuse maps included runtime context keys to observation metadata.
+
+```ts
+const result = await generateText({
+  model: openai('gpt-5.5'),
+  prompt: 'Write a short story about a cat.',
+  runtimeContext: {
+    route: 'api/story',
+    feature: 'cat-story',
+  },
+  telemetry: {
+    functionId: 'story-generation',
+    includeRuntimeContext: {
+      route: true,
+      feature: true,
+    },
+  },
+});
+```
+
+### Link Langfuse Prompts to Generations
+
+You can link Langfuse Prompt Management versions to AI SDK model-call observations by passing the fetched prompt through `runtimeContext.langfusePrompt` and including that key in telemetry.
+
+```typescript
+import { openai } from '@ai-sdk/openai';
+import { generateText } from 'ai';
+import { LangfuseClient } from '@langfuse/client';
+
+const langfuseClient = new LangfuseClient();
+const langfusePrompt = await langfuseClient.getPrompt('support-chat/default');
+
+const result = await generateText({
+  model: openai('gpt-5.5'),
+  prompt: langfusePrompt.compile({ topic: 'RAG' }),
+  runtimeContext: {
+    route: 'support-chat',
+    langfusePrompt,
+  },
+  telemetry: {
+    functionId: 'support-chat',
+    includeRuntimeContext: {
+      route: true,
+      langfusePrompt: true,
+    },
+  },
+});
+```
+
+Langfuse maps included runtime context keys to observation metadata, except `langfusePrompt`, which is used for prompt linking. Learn more about prompts in Langfuse [here](https://langfuse.com/docs/prompts/get-started).
+
+### Group Multiple Executions in One Trace
+
+Create an active Langfuse observation and run multiple AI SDK calls inside it. The AI SDK observations become children of the active observation.
+
+```ts
+import { propagateAttributes, startActiveObservation } from '@langfuse/tracing';
+
+await startActiveObservation('holiday-traditions', async () => {
+  await propagateAttributes(
+    {
+      traceName: 'holiday-traditions',
+      userId: 'user-123',
+      sessionId: 'session-456',
+      tags: ['holiday-generator'],
+    },
+    async () => {
+      for (let i = 0; i < 3; i++) {
+        const result = await generateText({
+          model: openai('gpt-5.5'),
+          maxOutputTokens: 50,
+          prompt: 'Invent a new holiday and describe its traditions.',
+          telemetry: {
+            functionId: `holiday-tradition-${i}`,
+          },
+        });
+
+        console.log(result.text);
+      }
+    },
+  );
 });
 
-for (let i = 0; i < 3; i++) {
-  const result = await generateText({
-    model: openai('gpt-3.5-turbo'),
-    maxOutputTokens: 50,
-    prompt: 'Invent a new holiday and describe its traditions.',
-    experimental_telemetry: {
-      isEnabled: true,
-      functionId: `holiday-tradition-${i}`,
-      metadata: {
-        langfuseTraceId: parentTraceId,
-        langfuseUpdateParent: false, // Do not update the parent trace with execution results
-      },
-    },
-  });
-
-  console.log(result.text);
-}
-
-await langfuse.flushAsync();
 await sdk.shutdown();
 ```
 
@@ -200,58 +259,36 @@ The resulting trace hierarchy will be:
 
 By default, the exporter captures the input and output of each request. You can disable this behavior by setting the `recordInputs` and `recordOutputs` options to `false`.
 
-### Link Langfuse prompts to traces
-
-You can link Langfuse prompts to AI SDK generations by setting the `langfusePrompt` property in the `metadata` field:
-
-```typescript
-import { generateText } from 'ai';
-import { Langfuse } from 'langfuse';
-
-const langfuse = new Langfuse();
-
-const fetchedPrompt = await langfuse.getPrompt('my-prompt');
-
+```ts
 const result = await generateText({
-  model: openai('gpt-4o'),
-  prompt: fetchedPrompt.prompt,
-  experimental_telemetry: {
-    isEnabled: true,
-    metadata: {
-      langfusePrompt: fetchedPrompt.toJSON(),
-    },
+  model: openai('gpt-5.5'),
+  prompt: 'Write a short story about a cat.',
+  telemetry: {
+    recordInputs: false,
+    recordOutputs: false,
   },
 });
 ```
 
-The resulting generation will have the prompt linked to the trace in Langfuse. Learn more about prompts in Langfuse [here](https://langfuse.com/docs/prompts/get-started).
+### Disable Telemetry for One Call
 
-### Pass Custom Attributes
+Telemetry is enabled by default when a telemetry integration is registered. You can opt out for a single AI SDK call:
 
-All of the `metadata` fields are automatically captured by the exporter. You can also pass custom trace attributes to e.g. track users or sessions.
-
-```ts highlight="6-12"
+```ts
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: openai('gpt-5.5'),
   prompt: 'Write a short story about a cat.',
-  experimental_telemetry: {
-    isEnabled: true,
-    functionId: 'my-awesome-function', // Trace name
-    metadata: {
-      langfuseTraceId: 'trace-123', // Langfuse trace
-      tags: ['story', 'cat'], // Custom tags
-      userId: 'user-123', // Langfuse user
-      sessionId: 'session-456', // Langfuse session
-      foo: 'bar', // Any custom attribute recorded in metadata
-    },
+  telemetry: {
+    isEnabled: false,
   },
 });
 ```
 
 ## Troubleshooting
 
-- If you deploy on Vercel, Vercel's OpenTelemetry Collector is only available on Pro and Enterprise Plans ([docs](https://vercel.com/docs/observability/otel-overview)).
-- You need to be on `"ai": "^3.3.0"` to use the telemetry feature. In case of any issues, please update to the latest version.
+- Make sure your application is on Node.js 22 or later.
+- Use the latest AI SDK package and install `@langfuse/vercel-ai-sdk`;
+- If `runtimeContext` values are missing in Langfuse, add each top-level key to `telemetry.includeRuntimeContext`.
 - On Next.js, make sure that you only have a single instrumentation file.
 - If you use Sentry, make sure to either:
   - set `skipOpenTelemetrySetup: true` in Sentry.init
@@ -263,6 +300,7 @@ const result = await generateText({
   - [Prompt Management](https://langfuse.com/docs/prompts): Collaboratively manage and iterate on prompts, use them with low-latency in production.
   - [Evaluations](https://langfuse.com/docs/scores): Test the application holistically in development and production using user feedback, LLM-as-a-judge evaluators, manual reviews, or custom evaluation pipelines.
   - [Experiments](https://langfuse.com/docs/datasets): Iterate on prompts, models, and application design in a structured manner with datasets and evaluations.
+- For more information about Langfuse's AI SDK v7 integration, see the [Langfuse Vercel AI SDK integration guide](https://langfuse.com/integrations/frameworks/vercel-ai-sdk).
 - For more information, see the [telemetry documentation](/docs/ai-sdk-core/telemetry) of the AI SDK.
 
 
@@ -282,6 +320,7 @@ const result = await generateText({
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

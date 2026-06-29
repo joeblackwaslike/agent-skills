@@ -9,16 +9,16 @@ prerequisites:
   - /docs/functions/runtimes
   - /docs/functions
 related:
+  - /docs/functions/limitations
   - /docs/functions/functions-api-reference
   - /docs/functions/functions-api-reference?framework=other\&language=ts
   - /docs/services
   - /docs/functions/runtimes/node-js/advanced-node-configuration
-  - /docs/functions/runtimes/node-js/node-js-versions
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6515a80151b14d6ef149bbf29744a5950ed56910c1fe7f5bd8ab4fc5f818316e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ead7f9884254a4aacf9ec3e26227ff057955c6ef3ea0bcd2dc2727fcfcbce47e"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -27,7 +27,7 @@ Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions writt
 
 [Node.js](/docs/functions/runtimes/node-js)-powered functions are suited to computationally intense or large functions and provide benefits like:
 
-- **More RAM and CPU power**: For computationally intense workloads, or functions that have bundles up to 250 MB in size, this runtime is ideal
+- **More RAM and CPU power**: For computationally intense workloads, or functions that need the [Node.js bundle size limits](/docs/functions/limitations#bundle-size-limits), this runtime is ideal
 - **Complete Node.js compatibility**: The Node.js runtime offers access to all Node.js APIs, making it a powerful tool for many applications
 
 ## Deploy a Node.js server
@@ -173,7 +173,7 @@ Vercel additionally provides helper methods inside of the Request and Response o
 | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `request.query`                                         | An object containing the request's [query string](https://en.wikipedia.org/wiki/Query_string), or `{}` if the request does not have a query string.                                                 | Request  |
 | `request.cookies`                                       | An object containing the cookies sent by the request, or `{}` if the request contains no cookies.                                                                                                   | Request  |
-| [`request.body`](#node.js-request-and-response-objects) | An object containing the body sent by the request, or `null` if no body is sent.                                                                                                                    | Request  |
+| [`request.body`](#request-body)                         | An object containing the body sent by the request, or `null` if no body is sent.                                                                                                                    | Request  |
 | `response.status(code)`                                 | A function to set the status code sent with the response where `code` must be a valid [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). Returns `response` for chaining. | Response |
 | `response.send(body)`                                   | A function to set the content of the response where `body` can be a `string`, an `object` or a `Buffer`.                                                                                            | Response |
 | `response.json(obj)`                                    | A function to send a JSON response where `obj` is the JSON object to send.                                                                                                                          | Response |
@@ -202,7 +202,7 @@ module.exports = (request: VercelRequest, response: VercelResponse) => {
 
 *Example Node.js Vercel Function using the \`request.query\`, \`request.cookies\`,
 and \`request.body\` helpers. It returns greetings for the user specified using
-\`request.send()\`.*
+\`response.send()\`.*
 
 > **💡 Note:** If needed, you can opt-out of Vercel providing `helpers` using [advanced
 > configuration](#disabling-helpers-for-node.js).
@@ -217,7 +217,7 @@ We follow a set of rules on the `Content-type` header sent by the request to do 
 | ----------------------------------- | --------------------------------------------------------------------------------------- |
 | No header                           | `undefined`                                                                             |
 | `application/json`                  | An object representing the parsed JSON sent by the request.                             |
-| `application/x-www-form-urlencoded` | An object representing the parsed data sent by with the request.                        |
+| `application/x-www-form-urlencoded` | An object representing the parsed data sent with the request.                           |
 | `text/plain`                        | A string containing the text sent by the request.                                       |
 | `application/octet-stream`          | A [Buffer](https://nodejs.org/api/buffer.html) containing the data sent by the request. |
 

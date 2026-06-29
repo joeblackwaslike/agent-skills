@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/dynamic-tool.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4addb950970fc408f4317e5bf361cfaa6af3f2322c58c874a0714a89420f9bc7"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "951bd5a53baa4780ca245c2ef959c17067f0bb40f1913dcc7b5d0e81fa626507"
 ---
 
 # `dynamicTool()`
@@ -55,23 +55,23 @@ export const customTool = dynamicTool({
             {
               name: 'description',
               isOptional: true,
-              type: 'string',
+              type: 'string | ((options: { context: Context; experimental_sandbox?: Experimental_SandboxSession }) => string)',
               description:
-                'Information about the purpose of the tool including details on how and when it can be used by the model.'
+                'Information about the purpose of the tool including details on how and when it can be used by the model. Provide a string for a fixed description, or a function to derive the description from the tool-specific context and optional experimental sandbox before each model call.'
             },
             {
               name: 'title',
               isOptional: true,
               type: 'string',
               description:
-                'A human-readable title for the tool.'
+                'Deprecated. Use `providerMetadata` for source-specific tool display metadata.'
             },
             {
               name: 'needsApproval',
               isOptional: true,
-              type: 'boolean | ((options: { args: unknown }) => boolean | Promise<boolean>)',
+              type: 'boolean | ((input: unknown, options: { toolCallId: string; messages: ModelMessage[]; context: Context }) => boolean | Promise<boolean>)',
               description:
-                'Whether the tool needs user approval before execution. Can be a boolean or a function that receives the tool arguments and returns a boolean.'
+                'Deprecated. For `generateText`, `streamText`, and `ToolLoopAgent`, configure approval with `toolApproval` instead. Existing `needsApproval` usages still work as a compatibility fallback. When used, it can be a boolean or a function that receives the tool input plus execution metadata.'
             },
             {
               name: 'inputSchema',
@@ -81,12 +81,12 @@ export const customTool = dynamicTool({
             },
             {
               name: 'execute',
-              type: 'ToolExecuteFunction<unknown, unknown>',
+              type: 'ToolExecuteFunction<unknown, unknown, Context>',
               description:
                 'An async function that is called with the arguments from the tool call. The input is typed as unknown and must be validated/cast at runtime.',
                 properties: [
                   {
-                    type: "ToolExecutionOptions",
+                    type: "ToolExecutionOptions<Context>",
                     parameters: [
                       {
                       name: 'toolCallId',
@@ -105,10 +105,9 @@ export const customTool = dynamicTool({
                         description: "An optional abort signal."
                       },
                       {
-                        name: "experimental_context",
-                        type: "unknown",
-                        isOptional: true,
-                        description: "Context that is passed into tool execution. Experimental (can break in patch releases)."
+                        name: "context",
+                        type: "Context",
+                        description: "Tool-specific context passed into tool execution. This value comes from the matching entry in `toolsContext`."
                       }
                     ]
                   }
@@ -130,21 +129,21 @@ export const customTool = dynamicTool({
             {
               name: 'onInputStart',
               isOptional: true,
-              type: '(options: ToolExecutionOptions) => void | PromiseLike<void>',
+              type: '(options: ToolExecutionOptions<Context>) => void | PromiseLike<void>',
               description:
                 'Optional function that is called when the argument streaming starts. Only called when the tool is used in a streaming context.'
             },
             {
               name: 'onInputDelta',
               isOptional: true,
-              type: '(options: { inputTextDelta: string } & ToolExecutionOptions) => void | PromiseLike<void>',
+              type: '(options: { inputTextDelta: string } & ToolExecutionOptions<Context>) => void | PromiseLike<void>',
               description:
                 'Optional function that is called when an argument streaming delta is available. Only called when the tool is used in a streaming context.'
             },
             {
               name: 'onInputAvailable',
               isOptional: true,
-              type: '(options: { input: unknown } & ToolExecutionOptions) => void | PromiseLike<void>',
+              type: '(options: { input: unknown } & ToolExecutionOptions<Context>) => void | PromiseLike<void>',
               description:
                 'Optional function that is called when a tool call can be started, even if the execute function is not provided.'
             },
@@ -188,7 +187,7 @@ const result = await generateText({
       /* ... */
     }),
   },
-  onStepFinish: ({ toolCalls, toolResults }) => {
+  onStepEnd: ({ toolCalls, toolResults }) => {
     for (const toolCall of toolCalls) {
       if (toolCall.dynamic) {
         // Dynamic tool: input/output are 'unknown'
@@ -242,6 +241,8 @@ When used with useChat (`UIMessage` format), dynamic tools appear as `dynamic-to
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
 - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
 - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
 - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
@@ -250,27 +251,31 @@ When used with useChat (`UIMessage` format), dynamic tools appear as `dynamic-to
 - [tool](/docs/reference/ai-sdk-core/tool)
 - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
 - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
 - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
 - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
 - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
 - [Output](/docs/reference/ai-sdk-core/output)
+- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
 - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
 - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
 - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
 - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
 - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
 - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
 - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV3Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [stepCountIs](/docs/reference/ai-sdk-core/step-count-is)
+- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
 - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
 - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
 - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)

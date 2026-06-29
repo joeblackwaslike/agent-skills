@@ -3,7 +3,7 @@ title: @vercel/edge-config
 product: vercel
 url: /docs/edge-config/edge-config-sdk
 canonical_url: "https://vercel.com/docs/edge-config/edge-config-sdk"
-last_updated: 2026-01-13
+last_updated: 2026-06-08
 type: reference
 prerequisites:
   - /docs/edge-config
@@ -16,8 +16,8 @@ related:
 summary: The Edge Config client SDK is the most ergonomic way to read data from Edge Configs. Learn how to set up the SDK so you can start reading Edge...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config/edge-config-sdk.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8bc1dd544b47b7ef994651fececc7c7b09a50242c2dfb0690818d3b40d202833"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2c792fec1ac1d9d0d1b65c922c49f145371a46b5b8e83dea568282ec06b2fd15"
 ---
 
 # @vercel/edge-config

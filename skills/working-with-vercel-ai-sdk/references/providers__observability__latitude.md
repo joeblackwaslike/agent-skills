@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/latitude.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "dbe61f99209d7aeb3d55b74cfc2092b66c8c12182e8f7c02ac5ac97dc4de9acb"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f74aaa737903c93ea20116be1d451f1551447c887a0b97faffd7ab83475e0fba"
 ---
 
 # Latitude Observability
@@ -14,22 +14,22 @@ sha256: "dbe61f99209d7aeb3d55b74cfc2092b66c8c12182e8f7c02ac5ac97dc4de9acb"
 
 ## Setup
 
-Latitude ships an SDK that wires up OpenTelemetry under the hood. The AI SDK emits spans through its `experimental_telemetry` flag and Latitude collects them.
+Latitude's SDK registers a global OpenTelemetry tracer. Once you register the AI SDK's telemetry integration, every AI SDK call emits spans automatically.
 
-Install the SDK:
+Install both packages:
 
 <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
   <Tab>
-    <Snippet text="pnpm add @latitude-data/telemetry" dark />
+    <Snippet text="pnpm add @latitude-data/telemetry @ai-sdk/otel" dark />
   </Tab>
   <Tab>
-    <Snippet text="npm install @latitude-data/telemetry" dark />
+    <Snippet text="npm install @latitude-data/telemetry @ai-sdk/otel" dark />
   </Tab>
   <Tab>
-    <Snippet text="yarn add @latitude-data/telemetry" dark />
+    <Snippet text="yarn add @latitude-data/telemetry @ai-sdk/otel" dark />
   </Tab>
   <Tab>
-    <Snippet text="bun add @latitude-data/telemetry" dark />
+    <Snippet text="bun add @latitude-data/telemetry @ai-sdk/otel" dark />
   </Tab>
 </Tabs>
 
@@ -40,11 +40,12 @@ LATITUDE_API_KEY="..."
 LATITUDE_PROJECT_SLUG="..."
 ```
 
-Initialize Latitude once at startup and set `experimental_telemetry.isEnabled` to `true` on AI SDK calls:
+Initialize Latitude and register telemetry once at startup. After that, every AI SDK call emits traces automatically:
 
 ```ts
-import { Latitude, capture } from '@latitude-data/telemetry';
-import { generateText } from 'ai';
+import { Latitude } from '@latitude-data/telemetry';
+import { registerTelemetry, generateText } from 'ai';
+import { OpenTelemetry } from '@ai-sdk/otel';
 import { openai } from '@ai-sdk/openai';
 
 const latitude = new Latitude({
@@ -52,21 +53,29 @@ const latitude = new Latitude({
   project: process.env.LATITUDE_PROJECT_SLUG!,
 });
 
-await capture('generate-support-reply', async () => {
-  const { text } = await generateText({
-    model: openai('gpt-4o'),
-    prompt: 'Hello',
-    experimental_telemetry: {
-      isEnabled: true,
-    },
-  });
-  return text;
+registerTelemetry(new OpenTelemetry());
+
+const { text } = await generateText({
+  model: openai('gpt-4o'),
+  prompt: 'Hello',
 });
 
 await latitude.shutdown();
 ```
 
-The `capture()` wrapper groups all AI SDK calls inside the callback under a single named trace. `shutdown()` flushes pending spans before the process exits.
+For named traces and per-call metadata (tags, user IDs, session IDs), wrap calls in Latitude's `capture()` helper:
+
+```ts
+import { capture } from '@latitude-data/telemetry';
+
+await capture('generate-support-reply', async () => {
+  const { text } = await generateText({
+    model: openai('gpt-4o'),
+    prompt: 'Hello',
+  });
+  return text;
+});
+```
 
 ## Resources
 
@@ -91,6 +100,7 @@ The `capture()` wrapper groups all AI SDK calls inside the callback under a sing
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

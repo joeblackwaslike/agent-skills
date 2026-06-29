@@ -3,7 +3,7 @@ title: Sign in with Vercel
 product: vercel
 url: /docs/sign-in-with-vercel
 canonical_url: "https://vercel.com/docs/sign-in-with-vercel"
-last_updated: 2025-12-18
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "04bfaae2bc0d55da374173a2c6fe7384af61212d2acbf7bf566d10bbc3fc5ed5"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d0f22be32511798b3106d57b30348e4ae813c6bd7498e0a9f83be5ff6dba1570"
 ---
 
 # Sign in with Vercel

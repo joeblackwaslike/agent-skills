@@ -3,7 +3,7 @@ title: Flags
 product: vercel
 url: /docs/flags
 canonical_url: "https://vercel.com/docs/flags"
-last_updated: 2026-02-26
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "18da1c56192c9908a42e09dddd07a0a0b976d0abf10de26ebef83131d55558b0"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7e5d003e4b0a9c8576e18d55a34ef08efd721af3e26866db9f53084070dd0813"
 ---
 
 # Flags

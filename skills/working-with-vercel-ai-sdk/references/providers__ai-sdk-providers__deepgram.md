@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "854059cd20743d55ab34ff60c5b562533f1fc105ab25e3a114992a1bf52d29f0"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "41fc3d56c1ceb0179537bc75e0e529910e51f69f2e9ed28d1797de39410c429c"
 ---
 
 # Deepgram Provider
@@ -79,7 +79,7 @@ const model = deepgram.speech('aura-2-helena-en');
 You can use the model with the `generateSpeech` function:
 
 ```ts
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { deepgram } from '@ai-sdk/deepgram';
 
 const result = await generateSpeech({
@@ -91,7 +91,7 @@ const result = await generateSpeech({
 You can also pass additional provider-specific options using the `providerOptions` argument:
 
 ```ts highlight="7-11"
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 import { deepgram, type DeepgramSpeechModelOptions } from '@ai-sdk/deepgram';
 
 const result = await generateSpeech({
@@ -183,7 +183,7 @@ const model = deepgram.transcription('nova-3');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `summarize` option will enable summaries for sections of content.
 
 ```ts highlight="6"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import {
   deepgram,
   type DeepgramTranscriptionModelOptions,
@@ -302,7 +302,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

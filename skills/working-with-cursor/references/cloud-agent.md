@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "88f15337efe1e31f6f850d3d3d82548c414a7eed08ad71b247d991bad7954ff9"
+fetched_at: "2026-06-29T05:42:13.025Z"
+sha256: "93d368e059e565c748c4bfe96bc6ac4f0508cdbca7519c5470bf524061ffe7dd"
 ---
 
 # Cloud Agents
@@ -19,6 +19,8 @@ Because they have access to their own virtual machine, cloud agents can build, t
 Cloud agents can also run in multi-repo environments. Use one when a task spans separate frontend, backend, infrastructure, or shared-library repositories. The agent can inspect the full workspace, make coordinated changes, and open pull requests in the repos it changes.
 
 ## How to access
+
+Before anyone can start a cloud agent from a repository, a Cursor account admin needs to connect source control for the account. Set up [GitHub (Cloud and Enterprise Server)](https://cursor.com/docs/integrations/github.md), [GitLab (Cloud and Self-Hosted)](https://cursor.com/docs/integrations/gitlab.md), [Bitbucket Cloud](https://cursor.com/docs/integrations/bitbucket.md), or [Azure DevOps](https://cursor.com/docs/integrations/azure-devops.md).
 
 You can kick off cloud agents from wherever you work:
 

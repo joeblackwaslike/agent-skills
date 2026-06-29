@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/prompt-engineering.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "490c60eb121d7decf35f5fae541f1d3f95f12916f8fe6ea4f92db51f0c20beb9"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "79701fc7b1435ad2a0437322c09ae9e0f8f4efc617f1c54947eaef2377d7b397"
 ---
 
 # Prompt Engineering
@@ -130,12 +130,27 @@ const result = await generateText({
 console.log(result.warnings);
 ```
 
+### Request Messages
+
+You can inspect the input messages that were sent to the model for the final step using `request.messages`.
+Set `include.requestMessages` to `true` to include these messages in step results.
+
+```ts highlight="4,7"
+const result = await generateText({
+  model: __MODEL__,
+  prompt: 'Hello, world!',
+  include: { requestMessages: true },
+});
+
+console.log(result.finalStep.request.messages);
+```
+
 ### HTTP Request Bodies
 
 You can inspect the raw HTTP request bodies for models that expose them, e.g. [OpenAI](/providers/ai-sdk-providers/openai).
 This allows you to inspect the exact payload that is sent to the model provider in the provider-specific way.
 
-Request bodies are available via the `request.body` property of the response:
+Request bodies are available via the `finalStep.request.body` property of the response:
 
 ```ts highlight="6"
 const result = await generateText({
@@ -143,7 +158,7 @@ const result = await generateText({
   prompt: 'Hello, world!',
 });
 
-console.log(result.request.body);
+console.log(result.finalStep.request.body);
 ```
 
 
@@ -154,21 +169,27 @@ console.log(result.request.body);
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

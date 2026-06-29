@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/generate-text-with-chat-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "53aac51db592cd830dd31fb832870a9da4118c2bc0966c0bed977461c0838f3a"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "fd8ab57e4e0c09de7351985e7946db7152890b083715c77340f1b338d4d2bcc2"
 ---
 
 # Generate Text with Chat Prompt
@@ -95,13 +95,13 @@ import { generateText, type ModelMessage } from 'ai';
 export async function POST(req: Request) {
   const { messages }: { messages: ModelMessage[] } = await req.json();
 
-  const { response } = await generateText({
+  const { responseMessages } = await generateText({
     model: 'openai/gpt-4o',
     system: 'You are a helpful assistant.',
     messages,
   });
 
-  return Response.json({ messages: response.messages });
+  return Response.json({ messages: responseMessages });
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/axiom.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bcde75cc7d8226072549325b063861503f0b3816b3803a01df571f02a046e9ba"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "dd65b261c1c90ce811d7492b357465f857d69c4612b861f20fc5b34750fbc009"
 ---
 
 # Axiom Observability
@@ -195,6 +195,7 @@ To learn more about these features, see the [Axiom AI SDK Instrumentation guide]
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

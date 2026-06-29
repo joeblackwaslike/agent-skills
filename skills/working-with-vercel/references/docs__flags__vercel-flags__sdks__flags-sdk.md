@@ -17,21 +17,21 @@ related:
 summary: Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "43afaaa79db3cb4f6e17d80a01c22ee5ff9ee4e57c32aa91f05d001fad2a7e78"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "701dea7ddaa0dcaceb28b4e215cbd4543f829231b2078ece830cb9b8a23e458a"
 ---
 
 # Using the Flags SDK with Vercel Flags
 
 The [Flags SDK](/docs/flags/flags-sdk-reference) is the recommended way to use Vercel Flags in Next.js and SvelteKit applications. It provides a framework-native experience with full TypeScript support and automatic integration with Flags Explorer.
 
-The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers installing packages, pulling environment variables, defining a flag, and evaluating it in a component. This page builds on that and goes deeper into the adapter, Flags Explorer, targeting, and SvelteKit.
+The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers installing packages, pulling local OpenID Connect (OIDC) credentials, defining a flag, and evaluating it in a component. This page builds on that and goes deeper into the adapter, Flags Explorer, targeting, and SvelteKit.
 
 ## The Vercel adapter
 
-The `@flags-sdk/vercel` package provides the adapter that connects the Flags SDK to your Vercel Flags project. The [Getting Started guide](/docs/flags/vercel-flags/quickstart) uses `vercelAdapter()`, which reads the `FLAGS` environment variable automatically and initializes lazily on first evaluation.
+The `@flags-sdk/vercel` package provides the adapter that connects the Flags SDK to your Vercel Flags project. The [Getting Started guide](/docs/flags/vercel-flags/quickstart) uses `vercelAdapter()`, which authenticates with Vercel OIDC by default and initializes lazily on first evaluation.
 
-If you need to connect to a different [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) — for example, when working with multiple Vercel Flags projects — use `createVercelAdapter` instead. See [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys#with-the-flags-sdk) for details.
+If you need to connect with a specific [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys), for example when working with multiple Vercel Flags projects, use `createVercelAdapter` instead. See [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys#with-the-flags-sdk) for details.
 
 ## Declaring options
 
@@ -75,7 +75,7 @@ export const GET = createFlagsDiscoveryEndpoint(async (request) => {
 });
 ```
 
-`getProviderData` reads the metadata from your flag definitions — keys, descriptions, and options — and returns it in the format Flags Explorer expects.
+`getProviderData` reads the metadata from your flag definitions, including keys, descriptions, and options, and returns it in the format Flags Explorer expects.
 
 ## Passing evaluation context
 

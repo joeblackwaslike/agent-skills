@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ecabf1cc1f2bea74ae499cb4d0daadc1c2391c168b618adf6d5e10b800394e91"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "63beb0537ff73acc0e9154e54c8102b0b25a5627814cf2066c628e6bbe355003"
 ---
 
 # `useChat()`
@@ -30,7 +30,7 @@ Allows you to easily create a conversational user interface for your chatbot app
     <Snippet text="import { Chat } from '@ai-sdk/svelte'" dark prompt={false} />
   </Tab>
   <Tab>
-    <Snippet text="import { Chat } from '@ai-sdk/vue'" dark prompt={false} />
+    <Snippet text="import { useChat } from '@ai-sdk/vue'" dark prompt={false} />
   </Tab>
   <Tab>
     <Snippet
@@ -499,6 +499,7 @@ Allows you to easily create a conversational user interface for your chatbot app
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -507,6 +508,7 @@ Allows you to easily create a conversational user interface for your chatbot app
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

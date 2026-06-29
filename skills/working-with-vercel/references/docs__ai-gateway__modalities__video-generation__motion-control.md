@@ -1,20 +1,20 @@
 ---
-title: Motion Control
+title: Motion Control Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/motion-control
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
 related:
   - /docs/vercel-blob
-summary: Learn about motion control on Vercel.
+summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "6f3a7410503149bdf8a74cceeb4c5ba55eb7118bd0af8615376620410e0b4e71"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "0fbe7638fe0fbd5378f7bd976a38c3677e9db192d0dfa8398591a1c7c008ab35"
 ---
 
 # Motion Control Video Generation

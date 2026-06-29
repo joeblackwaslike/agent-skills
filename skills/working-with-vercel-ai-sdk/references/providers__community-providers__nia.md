@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/nia.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e68a586ef7082214de9e77196b2566f5272d62972200c427d5b367b1c9ae37db"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "d73210897c18435625d2615c8008a4bd0eb059f70d1361b2b2eaa4ca8b983e4d"
 ---
 
 # Nia
@@ -22,7 +22,7 @@ Learn more in the [Nia documentation](https://docs.trynia.ai/).
 
 The Nia adapter is available in the `@nozomioai/nia-ai-sdk` package. You can install it with:
 
-<Tabs items={["pnpm", "npm", "yarn", "bun"]}>
+<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
   <Tab>
     <Snippet text="pnpm add @nozomioai/nia-ai-sdk" dark />
   </Tab>
@@ -103,21 +103,21 @@ Use middleware when you want Nia to enrich the last user message before your bas
 ### `withOracleContext`
 
 ```ts
-import { generateText } from "ai";
-import { openai } from "@ai-sdk/openai";
-import { withOracleContext } from "@nozomioai/nia-ai-sdk";
+import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
+import { withOracleContext } from '@nozomioai/nia-ai-sdk';
 
-const model = withOracleContext(openai("gpt-4.1"), {
+const model = withOracleContext(openai('gpt-4.1'), {
   apiKey: process.env.NIA_API_KEY!,
   defaultRequest: {
-    repositories: ["vercel/ai"],
-    dataSources: ["Vercel AI SDK"],
+    repositories: ['vercel/ai'],
+    dataSources: ['Vercel AI SDK'],
   },
 });
 
 const result = await generateText({
   model,
-  prompt: "How should I think about AI SDK middleware for retrieval?",
+  prompt: 'How should I think about AI SDK middleware for retrieval?',
 });
 
 console.log(result.text);
@@ -137,17 +137,17 @@ If you want raw Nia job events, use the direct streaming helpers:
 - `streamDocumentAgent()`
 
 ```ts
-import { streamTracer } from "@nozomioai/nia-ai-sdk";
+import { streamTracer } from '@nozomioai/nia-ai-sdk';
 
 const session = await streamTracer(
   {
     apiKey: process.env.NIA_API_KEY!,
   },
   {
-    query: "How does generateText stream responses?",
-    repositories: ["vercel/ai"],
-    mode: "tracer-fast",
-  }
+    query: 'How does generateText stream responses?',
+    repositories: ['vercel/ai'],
+    mode: 'tracer-fast',
+  },
 );
 
 for await (const event of session.events) {

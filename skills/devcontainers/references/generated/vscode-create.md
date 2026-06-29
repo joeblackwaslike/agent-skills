@@ -1,8 +1,8 @@
 ---
 title: "VS Code create dev container"
 source: "https://code.visualstudio.com/docs/devcontainers/create-dev-container"
-fetched_at: "2026-06-15T05:52:46.055Z"
-sha256: "adc37aad8d28e041ec987fe5b136d4bb3dde248666a958039a94b45a1dd20e2b"
+fetched_at: "2026-06-29T05:39:22.452Z"
+sha256: "2c61d89c07c36b6b95c8de00972bf44501b468fb9cd62bc14629e3fefaf69763"
 ---
 
 # VS Code create dev container
@@ -604,4 +604,4 @@ The path used for looking up the configuration is derived from the output of `gi
 
                 
                 
-                6/10/2026
+                6/24/2026

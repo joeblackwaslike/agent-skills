@@ -1,9 +1,9 @@
 ---
-title: Eve
+title: eve
 product: vercel
 url: /docs/eve
 canonical_url: "https://vercel.com/docs/eve"
-last_updated: 2026-06-16
+last_updated: 2026-06-19
 type: conceptual
 prerequisites:
   []
@@ -13,11 +13,11 @@ related:
   - /docs/sandbox
   - /docs/ai-gateway
   - /docs/connect
-summary: Eve is a filesystem-first framework for building durable backend AI agents that run on Vercel.
+summary: eve is a filesystem-first framework for building durable backend AI agents that run on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "e4f96a395c7c1c435dc37b09f63a96de1d26b3d7ba234cd90334a5a871f12f0a"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ac7485555aad6304541674fff798f702bd28c7d5b72fba0511e42c22429c1763"
 ---
 
 # eve

@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9860c07f83aa5f62fd9913dd2e3466810af035ac543a68e54987fef8a32c928f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "44b5b5944e9bc408c769372703bd6834fc34de0a2c6e47d9ccfb32adc39b90fc"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -35,16 +35,16 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 Override the automatic environment detection.
 
 > For \[
-> &#x20;   'nextjs',
-> &#x20;   'nextjs-app',
-> &#x20;   'sveltekit',
-> &#x20;   'remix',
-> &#x20;   'create-react-app',
-> &#x20;   'nuxt',
-> &#x20;   'vue',
-> &#x20;   'other',
-> &#x20;   'astro',
-> &#x20; ]:
+> &#x20; 'nextjs',
+> &#x20; 'nextjs-app',
+> &#x20; 'sveltekit',
+> &#x20; 'remix',
+> &#x20; 'create-react-app',
+> &#x20; 'nuxt',
+> &#x20; 'vue',
+> &#x20; 'other',
+> &#x20; 'astro',
+> ]:
 
 This option allows you to force a specific environment for the package.
 If not defined, it will use `auto` which tries to set the `development` or `production` mode based on available environment variables such as `NODE_ENV`.
@@ -336,16 +336,16 @@ inject({
 ## `debug`
 
 > For \[
-> &#x20;   'nextjs',
-> &#x20;   'nextjs-app',
-> &#x20;   'sveltekit',
-> &#x20;   'remix',
-> &#x20;   'create-react-app',
-> &#x20;   'nuxt',
-> &#x20;   'vue',
-> &#x20;   'other',
-> &#x20;   'astro',
-> &#x20; ]:
+> &#x20; 'nextjs',
+> &#x20; 'nextjs-app',
+> &#x20; 'sveltekit',
+> &#x20; 'remix',
+> &#x20; 'create-react-app',
+> &#x20; 'nuxt',
+> &#x20; 'vue',
+> &#x20; 'other',
+> &#x20; 'astro',
+> ]:
 
 You'll see all analytics events in the browser's console with the debug mode.
 This option is **automatically enabled** if the `NODE_ENV` environment
@@ -354,16 +354,16 @@ variable is available and either `development` or `test`.
 You can manually disable it to prevent debug messages in your browsers console.
 
 > For \[
-> &#x20;   'nextjs',
-> &#x20;   'nextjs-app',
-> &#x20;   'sveltekit',
-> &#x20;   'remix',
-> &#x20;   'create-react-app',
-> &#x20;   'nuxt',
-> &#x20;   'vue',
-> &#x20;   'other',
-> &#x20;   'astro',
-> &#x20; ]:
+> &#x20; 'nextjs',
+> &#x20; 'nextjs-app',
+> &#x20; 'sveltekit',
+> &#x20; 'remix',
+> &#x20; 'create-react-app',
+> &#x20; 'nuxt',
+> &#x20; 'vue',
+> &#x20; 'other',
+> &#x20; 'astro',
+> ]:
 
 To disable the debug mode for server-side events, you need to set the
 `VERCEL_WEB_ANALYTICS_DISABLE_LOGS` environment variable to `true`.

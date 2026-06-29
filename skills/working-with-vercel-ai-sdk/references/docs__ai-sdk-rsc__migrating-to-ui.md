@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "807d8e58a9c76eea393cf93f9a1d167325a34d1886dcb2229d49629956e42420"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cb9bc420276cafbb85efd98347f6b68a05d57758aef3dda259a5c4b4aef41376"
 ---
 
 # Migrating from RSC to UI
@@ -49,7 +49,7 @@ export async function sendMessage(message: string) {
 
   const { value: stream } = await streamUI({
     model: openai('gpt-4o'),
-    system: 'you are a friendly assistant!',
+    instructions: 'you are a friendly assistant!',
     messages: messages.get(),
     text: async function* ({ content, done }) {
       // process text
@@ -103,7 +103,11 @@ The `streamUI` function combines generating text and rendering the user interfac
 The `streamText` function executes as part of a route handler and streams the response to the client. The `useChat` hook on the client decodes this stream and renders the response within the chat interface.
 
 ```ts filename="@/app/api/chat/route.ts"
-import { streamText } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 export async function POST(request) {
@@ -111,14 +115,16 @@ export async function POST(request) {
 
   const result = streamText({
     model: __MODEL__,
-    system: 'you are a friendly assistant!',
+    instructions: 'you are a friendly assistant!',
     messages,
     tools: {
       // tool definitions
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -166,7 +172,7 @@ With AI SDK UI, `useChat` comes with built-in support for parallel tool calls. Y
 
 In AI SDK RSC, `streamUI` does not support multi-step tool calls. You will have to use a combination of `streamText`, `createStreamableUI` and `createStreamableValue`.
 
-With AI SDK UI, `useChat` comes with built-in support for multi-step tool calls. You can set `maxSteps` in the `streamText` function to define the number of steps the language model can make in a single call. The `useChat` hook will then handle the multi-step tool calls for you automatically.
+With AI SDK UI, `useChat` comes with built-in support for multi-step tool calls. You can set `stopWhen` in the `streamText` function to define when the model should stop making tool calls. The `useChat` hook will then handle the multi-step tool calls for you automatically.
 
 ### Generative User Interfaces
 
@@ -183,7 +189,7 @@ import { Weather } from '@/components/weather';
 
 const { value: stream } = await streamUI({
   model: openai('gpt-4o'),
-  system: 'you are a friendly assistant!',
+  instructions: 'you are a friendly assistant!',
   messages,
   text: async function* ({ content, done }) {
     // process text
@@ -217,14 +223,18 @@ The `streamText` function streams the props data as response to the client, whil
 import { z } from 'zod';
 import { openai } from '@ai-sdk/openai';
 import { getWeather } from '@/utils/queries';
-import { streamText } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 
 export async function POST(request) {
   const { messages } = await request.json();
 
   const result = streamText({
     model: __MODEL__,
-    system: 'you are a friendly assistant!',
+    instructions: 'you are a friendly assistant!',
     messages,
     tools: {
       displayWeather: {
@@ -241,7 +251,9 @@ export async function POST(request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -355,7 +367,6 @@ export function ListFlights({ chatId, flights }) {
   const { append } = useChat({
     id: chatId,
     body: { id: chatId },
-    maxSteps: 5,
   });
 
   return (
@@ -390,7 +401,7 @@ import { streamUI } from '@ai-sdk/rsc';
 
 const { value: stream } = await streamUI({
   model: openai('gpt-4o'),
-  system: 'you are a friendly assistant!',
+  instructions: 'you are a friendly assistant!',
   messages,
   initial: <div>Loading...</div>,
   text: async function* ({ content, done }) {
@@ -479,12 +490,17 @@ export const AI = createAI({
 
 #### After: Save chats using callback function of `streamText`
 
-With AI SDK UI, you will save chats using the `onFinish` callback function of `streamText` in your route handler.
+With AI SDK UI, you will save chats using the `onEnd` callback function of `streamText` in your route handler.
 
 ```ts filename="@/app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import { saveChat } from '@/utils/queries';
-import { streamText, convertToModelMessages } from 'ai';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  convertToModelMessages,
+} from 'ai';
 
 export async function POST(request) {
   const { id, messages } = await request.json();
@@ -493,13 +509,13 @@ export async function POST(request) {
 
   const result = streamText({
     model: __MODEL__,
-    system: 'you are a friendly assistant!',
+    instructions: 'you are a friendly assistant!',
     messages: coreMessages,
-    onFinish: async ({ response }) => {
+    onEnd: async ({ responseMessages }) => {
       try {
         await saveChat({
           id,
-          messages: [...coreMessages, ...response.messages],
+          messages: [...coreMessages, ...responseMessages],
         });
       } catch (error) {
         console.error('Failed to save chat');
@@ -507,7 +523,9 @@ export async function POST(request) {
     },
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -617,7 +635,7 @@ export async function generateSampleNotifications() {
   (async () => {
     const { partialOutputStream } = streamText({
       model: __MODEL__,
-      system: 'generate sample ios messages for testing',
+      instructions: 'generate sample ios messages for testing',
       prompt: 'messages from a family group chat during diwali, max 4',
       output: Output.object({ schema: notificationsSchema }),
     });
@@ -673,7 +691,7 @@ To migrate to AI SDK UI, you should use the `useObject` hook and implement `stre
 #### After: Replace with route handler and stream text response
 
 ```ts filename="@/app/api/object/route.ts"
-import { Output, streamText } from 'ai';
+import { Output, createTextStreamResponse, streamText, toTextStream } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { notificationSchema } from '@/utils/schemas';
 
@@ -687,7 +705,9 @@ export async function POST(req: Request) {
       `Generate 3 notifications for a messages app in this context:` + context,
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 

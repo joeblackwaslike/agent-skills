@@ -12,8 +12,8 @@ related:
 summary: Inspect a request trace in the terminal or open it in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6b351087a2a2a7f2c16239c3953dba387caa3a5751e3dc6830b2ac812be107a2"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "23a98f9ac28740c4f8da67c53b9fec2e011372d60e075e1688058cae9cb7974a"
 ---
 
 # vercel traces
@@ -76,29 +76,12 @@ vercel traces get req_1234567890 --open
 
 `--open` cannot be combined with `--json`.
 
-### View
-
-Use `--view` with `--open` to set the initial Dashboard view. Supported values are `timeline`, `tree`, and `gantt`.
-
-```bash filename="terminal"
-vercel traces get req_1234567890 --open --view=tree
-vercel traces get req_1234567890 --open --view=gantt
-```
-
-`--view` requires `--open`.
-
 ## Examples
 
 Fetch a trace from a specific team and project:
 
 ```bash filename="terminal"
 vercel traces get req_1234567890 --scope my-team --project my-app
-```
-
-Open a trace in the dashboard tree view:
-
-```bash filename="terminal"
-vercel traces get req_1234567890 --open --view=tree
 ```
 
 Get JSON output for automation:

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "580c8a8d70a10c8b17aa91cdfa6ea213563a8bad32cb478d8e412f6eaaf751cb"
+fetched_at: "2026-06-29T05:44:37.185Z"
+sha256: "eed3c24bec0f9b76260babbb51eab23271384668bbd980eacec207a77fd8aef4"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -260,7 +260,9 @@ Metadata restrictions block "ref updates." If a contributor pushes work that inc
 
 Metadata restrictions can increase friction for people contributing to a repository. Generally, if you impose metadata restrictions, you should do so on a limited set of branches to avoid impacting contributors' daily work. For example, instead of requiring consistent commit messages on any topic branch that a contributor might work on, you should require consistent commit messages on `main` only, then require pull requests into `main`.
 
-If you use squash merges, the individual commits in the pull request are ignored. Instead, restrictions are only validated against the metadata of the single, resulting merge commit. The pull request page validates this information before the merge is allowed, ensuring the final commit is compliant. For metadata restrictions that apply to committer emails, the pattern must also include `noreply@github.com` for squash merges to satisfy the restriction.
+If you use squash merges, the individual commits in the pull request are ignored. Instead, restrictions are only validated against the metadata of the single, resulting merge commit. The pull request page validates this information before the merge is allowed, ensuring the final commit is compliant.
+
+For metadata restrictions that apply to committer emails, to satisfy the restriction, the pattern must also include `noreply@github.com` for web-based merges and other commits created on {% data variables.product.prodname_dotcom_the_website %}.
 
 When you add metadata restrictions to an existing branch or tag, the rules are enforced for new commits pushed to the branch or tag from that point forward, but they are not enforced against the existing history of the branch or tag.
 

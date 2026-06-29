@@ -1,9 +1,9 @@
 ---
-title: Eve observability
+title: Observability
 product: vercel
 url: /docs/eve/observability
 canonical_url: "https://vercel.com/docs/eve/observability"
-last_updated: 2026-06-08
+last_updated: 2026-06-19
 type: conceptual
 prerequisites:
   - /docs/eve
@@ -13,8 +13,8 @@ related:
 summary: View agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/observability.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "2709e38007de5f784230f2177bf240627827fba9fb1de2ff6186231afa4e6c98"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9e5e2fd5baf707e119aaa2870b34d5e6a089a29a95739115367acb0d5d957da4"
 ---
 
 # Observability
@@ -80,7 +80,7 @@ export default defineInstrumentation({
 });
 ```
 
-Any OpenTelemetry-compatible backend works, such as Braintrust, Honeycomb, Datadog, or Jaeger. Install the
+Any OpenTelemetry-compatible backend works, such as Braintrust, Raindrop, Arize, Honeycomb, Datadog, or Jaeger. Install the
 exporter you need and configure it in the callback. The agent name is resolved at compile time from
 your project, so you never hard-code a service name.
 

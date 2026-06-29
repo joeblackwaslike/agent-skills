@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langwatch.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c5a66e55664eaa72ce9857cde12d4de0faddaea9ec11106161d076c7f3e01b08"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8995b4d8724b68e04d9a227d3680536be262cfd8a7cecd85fa5d7dd1741855e5"
 ---
 
 # LangWatch Observability
@@ -71,7 +71,7 @@ The AI SDK supports tracing via Next.js OpenTelemetry integration. By using the 
 First, you need to install the necessary dependencies:
 
 ```bash
-npm install @vercel/otel langwatch @opentelemetry/api-logs @opentelemetry/instrumentation @opentelemetry/sdk-logs
+npm install @vercel/otel langwatch @opentelemetry/api-logs @opentelemetry/instrumentation @opentelemetry/sdk-logs @ai-sdk/otel
 ```
 
 Then, set up the OpenTelemetry for your application, follow one of the tabs below depending whether you are using AI SDK with Next.js or on Node.js:
@@ -95,8 +95,12 @@ module.exports = nextConfig;
 Next, you need to create a file named `instrumentation.ts` (or `.js`) in the **root directory** of the project (or inside `src` folder if using one), with `LangWatchExporter` as the traceExporter:
 
 ```typescript
+import { registerTelemetry } from 'ai';
+import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { registerOTel } from '@vercel/otel';
 import { LangWatchExporter } from 'langwatch';
+
+registerTelemetry(new LegacyOpenTelemetry());
 
 export function register() {
   registerOTel({
@@ -108,15 +112,17 @@ export function register() {
 
 (Read more about Next.js OpenTelemetry configuration [on the official guide](https://nextjs.org/docs/app/building-your-application/optimizing/open-telemetry#manual-opentelemetry-configuration))
 
-Finally, enable `experimental_telemetry` tracking on the AI SDK calls you want to trace:
+Finally, enable `telemetry` tracking on the AI SDK calls you want to trace:
 
 ```typescript
+import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
+
 const result = await generateText({
   model: openai('gpt-4o-mini'),
   prompt:
     'Explain why a chicken would make a terrible astronaut, be creative and humorous about it.',
-  experimental_telemetry: {
-    isEnabled: true,
+  telemetry: {
     // optional metadata
     metadata: {
       userId: 'myuser-123',
@@ -230,6 +236,7 @@ If you have questions or need help, join our community:
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

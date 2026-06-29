@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/navigating-the-library.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1a1071b23bb7fbaad328fb037669437ede62702e067bbc1556fef8020796c68d"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "67620d9f9779b999be43ef9b4ce64606f3fc8f79701864c1c55f9249c07b80e4"
 ---
 
 # Navigating the Library
@@ -57,6 +57,7 @@ AI SDK UI supports the following frameworks: [React](https://react.dev/), [Sve
 | [useChat](/docs/reference/ai-sdk-ui/use-chat) tool calling | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
 | [useCompletion](/docs/reference/ai-sdk-ui/use-completion)  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [useObject](/docs/reference/ai-sdk-ui/use-object)          | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| [MCP Apps](/docs/ai-sdk-core/mcp-apps)                     | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
 
 <Note>
   [Contributions](https://github.com/vercel/ai/blob/main/CONTRIBUTING.md) are

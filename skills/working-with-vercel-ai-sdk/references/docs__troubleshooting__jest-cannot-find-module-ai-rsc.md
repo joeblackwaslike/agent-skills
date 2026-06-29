@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/jest-cannot-find-module-ai-rsc.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "de4be9c710384da8b1d706288ce4168b43ea4f939e84f29df9a3c2cf8bb88989"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "ac84bdea6b46e98af6e3d63b7f2ff499df6162ba2bd2ac01f4e224f8676b4e8e"
 ---
 
 # Jest: cannot find module '@ai-sdk/rsc'
@@ -41,7 +41,7 @@ Configure the module resolution via `jest config update` in `moduleNameMapper`:
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

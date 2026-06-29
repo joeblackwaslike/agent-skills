@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1ee2373d8993698eb8a33b6fb4f67037d622cac0049304c1b278c0b40f69239c"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "981b0ae5ef0d9ddaf30c03b464e5d881bad308c0794c6dd2d5d887d95f2581ee"
 ---
 
 # Connect to Google Cloud Platform (GCP)
@@ -43,8 +43,10 @@ To understand how GCP supports OIDC through Workload Identity Federation, consul
      - **Team**: `https://oidc.vercel.com/[TEAM_SLUG]`, replacing `[TEAM_SLUG]` with the path from your Vercel team URL
      - **Global**: `https://oidc.vercel.com`
   5. Leave JWK file (JSON) empty
-  6. Select `Allowed audiences` from "Audience"
-  7. Enter `https://vercel.com/[TEAM_SLUG]` in the "Audience 1" field and click "Continue"
+  6. For the **Audience** field, you have two options:
+     - **Default audience (recommended)**: Select `Default audience`. GCP generates the audience URL automatically based on your provider configuration. You can copy this value from the provider details page after creation. When using this option, you must pass the same URL as the `audience` in your code. See the [custom audience section](#custom-audience) below
+     - **Allowed audiences**: Select `Allowed audiences` and enter `https://vercel.com/[TEAM_SLUG]` in the "Audience 1" field. This works without any additional code configuration
+  7. Click **Continue**
   ![Image](`/docs-assets/static/docs/concepts/oidc-tokens/gcp-create-id-pool-2.png`)
 
 - ### Configure the provider attributes
@@ -89,7 +91,31 @@ To understand how GCP supports OIDC through Workload Identity Federation, consul
 
   You are now ready to connect to your GCP resource from your project's code. Review the example below.
 
-## Example
+## Custom audience
+
+By default, the OIDC token's `aud` claim is set to `https://vercel.com/[TEAM_SLUG]`. Google [recommends using the default audience](https://cloud.google.com/iam/docs/best-practices-for-using-workload-identity-federation#provider-audience) for your workload identity pool provider, which follows the format:
+
+```
+https://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/providers/PROVIDER_ID
+```
+
+You can copy this URL from the provider details page in the Google Cloud Console after creating the provider.
+
+To use this audience, select **Default audience** when configuring the provider, and pass the same URL as the `audience` to `getVercelOidcToken` in your code:
+
+```ts
+import { getVercelOidcToken } from '@vercel/oidc';
+
+const GCP_AUDIENCE = process.env.GCP_AUDIENCE!;
+
+const token = await getVercelOidcToken({
+  audience: GCP_AUDIENCE,
+});
+```
+
+Add `GCP_AUDIENCE` as an [environment variable](/docs/environment-variables#creating-environment-variables) in your Vercel project, set to the default audience URL from the provider details page.
+
+## Examples
 
 In the following example, you create a [Vercel function](/docs/functions/quickstart#create-a-vercel-function) in the Vercel project where you have defined the GCP account environment variables. The function will connect to GCP using OIDC and use a specific resource provided by Google Cloud services.
 
@@ -162,6 +188,57 @@ const vertex = createVertex({
 });
 
 // Export the route handler
+export const GET = async (req: Request) => {
+  const result = generateText({
+    model: vertex('gemini-1.5-flash'),
+    prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  });
+  return Response.json(result);
+};
+```
+
+### Return GCP Vertex AI generated text with custom audience
+
+This example uses GCP's recommended default audience for the workload identity pool provider:
+
+```ts filename="/api/gcp-vertex-ai/route.ts"
+import { getVercelOidcToken } from '@vercel/oidc';
+import { ExternalAccountClient } from 'google-auth-library';
+import { createVertex } from '@ai-sdk/google-vertex';
+import { generateText } from 'ai';
+
+const GCP_PROJECT_ID = process.env.GCP_PROJECT_ID;
+const GCP_PROJECT_NUMBER = process.env.GCP_PROJECT_NUMBER;
+const GCP_SERVICE_ACCOUNT_EMAIL = process.env.GCP_SERVICE_ACCOUNT_EMAIL;
+const GCP_WORKLOAD_IDENTITY_POOL_ID = process.env.GCP_WORKLOAD_IDENTITY_POOL_ID;
+const GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID =
+  process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID;
+
+const GCP_AUDIENCE = `https://iam.googleapis.com/projects/${GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`;
+
+const authClient = ExternalAccountClient.fromJSON({
+  type: 'external_account',
+  audience: GCP_AUDIENCE,
+  subject_token_type: 'urn:ietf:params:oauth:token-type:jwt',
+  token_url: 'https://sts.googleapis.com/v1/token',
+  service_account_impersonation_url: `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${GCP_SERVICE_ACCOUNT_EMAIL}:generateAccessToken`,
+  subject_token_supplier: {
+    getSubjectToken: () =>
+      getVercelOidcToken({
+        audience: GCP_AUDIENCE,
+      }),
+  },
+});
+
+const vertex = createVertex({
+  project: GCP_PROJECT_ID,
+  location: 'us-central1',
+  googleAuthOptions: {
+    authClient,
+    projectId: GCP_PROJECT_ID,
+  },
+});
+
 export const GET = async (req: Request) => {
   const result = generateText({
     model: vertex('gemini-1.5-flash'),

@@ -9,13 +9,14 @@ prerequisites:
   - /docs/microfrontends
 related:
   - /docs/microfrontends/quickstart
+  - /docs/microfrontends/troubleshooting
   - /docs/deployment-protection
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 summary: Learn about local development on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "44347e931012a09dfd5bfdd9ffd3128a5e07522a31baa088c0bd679dda5946fb"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "48df8b199df46f9e1badf6f4c7ea37a443d9e1e7cda5e1c4e74b1c2bd40607a2"
 ---
 
 # Microfrontends local development
@@ -166,6 +167,12 @@ Therefore, the microfrontends proxy allows developers to run only the microfront
 
 - ### Accessing the microfrontends proxy
   When testing locally, you should use the port from the microfrontends proxy to test your application. For example, if `docs` runs on port `3001` and the microfrontends proxy is on port `3024`, you should visit `http://localhost:3024/docs` to test all parts of their application.
+
+  When testing Next.js Pages Router routes, navigate through the proxy and inspect
+  `/_next/data` requests.
+
+  See the [Pages Router QA checklist](/docs/microfrontends/troubleshooting#qa-checklist-for-pages-router-microfrontends)
+  for cross-app navigation cases to verify.
 
   You can change the port of the local development proxy by setting `options.localProxyPort` in `microfrontends.json`:
   ```json {6} filename="microfrontends.json"

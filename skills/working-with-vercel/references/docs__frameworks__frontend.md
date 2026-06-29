@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "79853778d3e19578db2328f80f495d97de8694263fab13c9e676d40858220a61"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d9d660676fc3982e493b96dd2f9f42bfc63bf3f2dacd731fff860b71902f230f"
 ---
 
 # Frontends on Vercel
@@ -30,6 +30,8 @@ The following frontend frameworks are supported with zero-configuration.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/astro) | [View Demo](https://astro-template.vercel.app)
 - **Brunch**: Brunch is a fast and simple webapp build tool with seamless incremental compilation for rapid development.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/brunch) | [View Demo](https://brunch-template.vercel.app)
+- **Container**: Deploy any project as a container image built from a Dockerfile.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/container)
 - **React**: Create React App allows you to get going with React in no time.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app) | [View Demo](https://create-react-template.vercel.app)
 - **Docusaurus (v1)**: Docusaurus makes it easy to maintain Open Source documentation websites.

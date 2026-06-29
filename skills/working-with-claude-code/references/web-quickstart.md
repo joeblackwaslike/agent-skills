@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/web-quickstart.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "4bc908bec82703037e32f2d6062e61c319234e696d6ede064175414372ab56aa"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "77c853eac06bf2d38f67c015f6368837a732231f01e57c35ec1900396bdf6bb2"
 ---
 
 > ## Documentation Index
@@ -190,13 +190,13 @@ Cloud sessions require a connected GitHub account. Connect via the browser flow 
 
 ### "Not available for the selected organization"
 
-Enterprise organizations may need an admin to enable Claude Code on the web. Contact your Anthropic account team.
+Enterprise organizations may need an Owner to enable Claude Code on the web. Contact your Anthropic account team.
 
-### `/web-setup` returns "Unknown command"
+### `/web-setup` shows "No commands match" or "Unknown command"
 
 `/web-setup` runs inside the Claude Code CLI, not your shell. Launch `claude` first, then type `/web-setup` at the prompt.
 
-If you typed it inside Claude Code and still see the error, your CLI is older than v2.1.80 or you're authenticated with an API key or third-party provider instead of a claude.ai subscription. Run `claude update`, then `/login` to sign in with your claude.ai account.
+If you typed it inside Claude Code and the command menu shows `No commands match "/web-setup"`, or submitting it returns `Unknown command: /web-setup`, the command is hidden because a requirement isn't met. The cause is usually that your CLI is older than v2.1.80 or you're authenticated with an API key or third-party provider instead of a claude.ai subscription. Run `claude update`, then `/login` to sign in with your claude.ai account.
 
 ### "Could not create a cloud environment" or "No cloud environment available" when using `--remote` or ultraplan
 

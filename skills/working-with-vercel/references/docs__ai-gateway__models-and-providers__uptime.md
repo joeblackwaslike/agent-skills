@@ -3,7 +3,7 @@ title: Uptime and Status
 product: vercel
 url: /docs/ai-gateway/models-and-providers/uptime
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime"
-last_updated: 2026-05-22
+last_updated: 2026-06-04
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b213be411656b07a76b1fe4067ad089ad4b056d2689b46a6ec36f32a61aa0e03"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "58059ddbc236a461538592837aca7681055dae8420ea74afc661b6803696fafb"
 ---
 
 # Uptime and Status

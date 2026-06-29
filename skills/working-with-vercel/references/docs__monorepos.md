@@ -3,7 +3,7 @@ title: Using Monorepos
 product: vercel
 url: /docs/monorepos
 canonical_url: "https://vercel.com/docs/monorepos"
-last_updated: 2026-03-17
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "3b634baee62a38dc3855dab527de3b7e941c6a422d20ed3206a430a7dd2590fc"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "84cb7d57ab7f577dab5d8c8232c0eb667964f34961e8f9c94c077df4710b929c"
 ---
 
 # Using Monorepos

@@ -3,7 +3,7 @@ title: Getting started with Vercel
 product: vercel
 url: /docs/getting-started-with-vercel
 canonical_url: "https://vercel.com/docs/getting-started-with-vercel"
-last_updated: 2026-05-06
+last_updated: 2026-06-16
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/getting-started-with-vercel.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4911352a1545004f7fc94928634af87199224279fda763cb9db81dedaf4a82b1"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "44796a2f42d4b58b1d53804f418b4beea5fd543cbed540ec80568eb7537a4998"
 ---
 
 # Getting started with Vercel

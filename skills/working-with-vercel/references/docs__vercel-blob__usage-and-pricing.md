@@ -3,7 +3,7 @@ title: Vercel Blob Pricing
 product: vercel
 url: /docs/vercel-blob/usage-and-pricing
 canonical_url: "https://vercel.com/docs/vercel-blob/usage-and-pricing"
-last_updated: 2026-06-01
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "44f98fd7f6750497c3f894a7e46f399f0424d38c8168125ac774b6bcbaadcb6f"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "78ce44e92273b9f862315fbd18586354a283b13713a99e95aff9e84cc040b18b"
 ---
 
 # Vercel Blob Pricing

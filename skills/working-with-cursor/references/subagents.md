@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/subagents.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "1c2cad223525d7f6b8cba227868f0550798e4503aa9bab3bdeb2d4debe1d350e"
+fetched_at: "2026-06-29T05:42:13.025Z"
+sha256: "51ff48d8816de156514eee0050aaca932521c1d0c8e11096cb7ead083e0f89ab"
 ---
 
 # Subagents
@@ -370,7 +370,7 @@ Create a subagent file at .cursor/agents/test-runner.md with YAML frontmatter co
 
 - **Vague descriptions** — "Use for general tasks" gives Agent no signal about when to delegate. Be specific: "Use when implementing authentication flows with OAuth providers."
 - **Overly long prompts** — A 2,000-word prompt doesn't make a subagent smarter. It makes it slower and harder to maintain.
-- **Duplicating slash commands** — If a task is single-purpose and doesn't need context isolation, use a [slash command](https://cursor.com/help/customization/rules.md) instead.
+- **Duplicating slash commands** — If a task is single-purpose and doesn't need context isolation, use a [skill](https://cursor.com/docs/skills.md) or [command](https://cursor.com/docs/customize-cursor.md#extension-components) instead.
 - **Too many subagents** — Start with 2-3 focused subagents. Add more only when you have clear, distinct use cases.
 
 ## Managing subagents

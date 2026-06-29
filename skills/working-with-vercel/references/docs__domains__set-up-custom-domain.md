@@ -3,7 +3,7 @@ title: Setting up a custom domain
 product: vercel
 url: /docs/domains/set-up-custom-domain
 canonical_url: "https://vercel.com/docs/domains/set-up-custom-domain"
-last_updated: 2026-05-28
+last_updated: 2026-06-15
 type: how-to
 prerequisites:
   - /docs/domains
@@ -16,8 +16,8 @@ related:
 summary: Add and configure a custom domain for your Vercel project using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6d24d57e4bd79b8533d3fbe473d60248a64dd484e54acbafca85e327760b4bb3"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "40367045e4a1ea5f9786d7a123db023d4102aa0e3021c8f32a1a71d90f493c33"
 ---
 
 # Setting up a custom domain

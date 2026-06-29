@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5daa6d35b346b769df08d85f0dacab61d7016be38d31e19f967dda1e37ad84cb"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "367c492e43fb8d025dacc4f07c12e9a6c03c2cd289d17e5b5d24f2c316f7e0d3"
 ---
 
 # Azure OpenAI Provider
@@ -194,8 +194,9 @@ const messages = [
         text: 'What is the capital of the moon?',
       },
       {
-        type: 'image',
-        image: 'https://example.com/image.png',
+        type: 'file',
+        mediaType: 'image',
+        data: 'https://example.com/image.png',
         providerOptions: {
           openai: { imageDetail: 'low' },
         },
@@ -296,20 +297,17 @@ const model = azure.deepseek('your-deepseek-deployment-name');
 
 Use this factory for Azure DeepSeek models that support DeepSeek's chat
 reasoning fields, such as `deepseek-v4-pro` and `deepseek-v4-flash`. The
-factory parses streamed `reasoning_content` as AI SDK reasoning parts.
+factory maps top-level `reasoning` to DeepSeek `reasoning_effort` request
+settings, and parses streamed `reasoning_content` as AI SDK reasoning parts.
 
 ```ts
 import { azure, type AzureDeepSeekLanguageModelOptions } from '@ai-sdk/azure';
 import { generateText } from 'ai';
 
-const result = await generateText({
+const result = generateText({
   model: azure.deepseek('your-deepseek-deployment-name'),
   prompt: 'How many "r"s are in the word "strawberry"?',
-  providerOptions: {
-    azure: {
-      reasoningEffort: 'high',
-    } satisfies AzureDeepSeekLanguageModelOptions,
-  },
+  reasoning: 'high',
 });
 ```
 
@@ -513,7 +511,7 @@ import { generateText } from 'ai';
 
 const azure = createAzure({
   headers: {
-    'x-ms-oai-image-generation-deployment': 'gpt-image-1', // use your own image model deployment
+    'x-ms-oai-image-generation-deployment': 'gpt-image-2', // use your own image model deployment
   },
 });
 
@@ -657,7 +655,6 @@ This metadata includes the following fields:
   If no annotations are present, this property itself may be omitted (`undefined`).
 
   Each element in `annotations` is a discriminated union with a required `type` field. Supported types include, for example:
-
   - `url_citation`
   - `file_citation`
   - `container_file_citation`
@@ -1060,7 +1057,7 @@ When using useDeploymentBasedUrls, the default api-version is not valid. You mus
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format will improve accuracy and latency.
 
 ```ts highlight="6"
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { azure, type OpenAITranscriptionModelOptions } from '@ai-sdk/azure';
 import { readFile } from 'fs/promises';
 
@@ -1121,7 +1118,7 @@ const model = azure.speech('your-tts-deployment-name');
 
 ```ts
 import { azure } from '@ai-sdk/azure';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
 const result = await generateSpeech({
   model: azure.speech('your-tts-deployment-name'),
@@ -1134,7 +1131,7 @@ You can also pass additional provider-specific options using the `providerOption
 
 ```ts
 import { azure, type OpenAISpeechModelOptions } from '@ai-sdk/azure';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
 const result = await generateSpeech({
   model: azure.speech('your-tts-deployment-name'),
@@ -1191,7 +1188,7 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

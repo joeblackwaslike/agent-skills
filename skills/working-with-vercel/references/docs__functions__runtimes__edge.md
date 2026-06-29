@@ -3,7 +3,7 @@ title: Edge Runtime
 product: vercel
 url: /docs/functions/runtimes/edge
 canonical_url: "https://vercel.com/docs/functions/runtimes/edge"
-last_updated: 2025-12-08
+last_updated: 2026-06-10
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -17,8 +17,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6a685f6d0f2fa950f4a0f24dcb26f3659e7128265ec9f785e8fb312f168385a9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "1ea8cf98d6175473f73615c2fe71440da04d7802c69e77183e2ccf545fc91735"
 ---
 
 # Edge Runtime

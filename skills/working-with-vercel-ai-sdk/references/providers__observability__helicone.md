@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/helicone.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "551422b7d26a292d1d51b15478e04f8d20e4e72cc7aae5242d022efdf0b3b160"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7ab086e709123eb7aa4f39678ab917fd8603fbb0cce4b187b47f4c55b05ecc11"
 ---
 
 # Helicone Observability
@@ -307,6 +307,7 @@ for await (const chunk of result.textStream) {
 - [MLflow](/providers/observability/mlflow)
 - [Patronus](/providers/observability/patronus)
 - [PostHog](/providers/observability/posthog)
+- [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
 - [SigNoz](/providers/observability/signoz)

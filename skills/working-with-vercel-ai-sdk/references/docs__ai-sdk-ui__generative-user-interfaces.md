@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/generative-user-interfaces.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "24ca935a43d314a1ea00f0918165dd9d65386f7e78aa922cfa748e9d0eebe2a3"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "2846d26bb767affc181ba5e376027493ed9ad68483d1624117edcf8f57085a76"
 ---
 
 # Generative User Interfaces
@@ -77,7 +77,14 @@ export default function Page() {
 To handle the chat requests and model responses, set up an API route:
 
 ```ts filename="app/api/chat/route.ts"
-import { streamText, convertToModelMessages, UIMessage, stepCountIs } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  isStepCount,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(request: Request) {
@@ -85,12 +92,14 @@ export async function POST(request: Request) {
 
   const result = streamText({
     model: __MODEL__,
-    system: 'You are a friendly assistant!',
+    instructions: 'You are a friendly assistant!',
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -128,8 +137,15 @@ In this file, you've created a tool called `weatherTool`. This tool simulates fe
 
 Update the API route to include the tool you've defined:
 
-```ts filename="app/api/chat/route.ts" highlight="3,8,14"
-import { streamText, convertToModelMessages, UIMessage, stepCountIs } from 'ai';
+```ts filename="app/api/chat/route.ts" highlight="10,15,20"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  isStepCount,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 __PROVIDER_IMPORT__;
 import { tools } from '@/ai/tools';
 
@@ -138,13 +154,15 @@ export async function POST(request: Request) {
 
   const result = streamText({
     model: __MODEL__,
-    system: 'You are a friendly assistant!',
+    instructions: 'You are a friendly assistant!',
     messages: await convertToModelMessages(messages),
-    stopWhen: stepCountIs(5),
+    stopWhen: isStepCount(5),
     tools,
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

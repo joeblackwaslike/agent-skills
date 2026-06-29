@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/express.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "13ef7f0ee69ea82d967d607978117ab93c8f4336a0372de39f950c5c74704049"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f64b14642b51921ef7ce00d752060e8b0f6aece96b32f9385cdb14936807f310"
 ---
 
 # Express
@@ -25,10 +25,14 @@ curl -X POST http://localhost:8080
 
 ### UI Message Stream
 
-You can use the `pipeUIMessageStreamToResponse` method to pipe the stream data to the server response.
+You can use the `pipeUIMessageStreamToResponse` helper to pipe the stream data to the server response.
 
 ```ts filename='index.ts'
-import { streamText } from 'ai';
+import {
+  pipeUIMessageStreamToResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 import express, { Request, Response } from 'express';
 
 const app = express();
@@ -39,7 +43,10 @@ app.post('/', async (req: Request, res: Response) => {
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 
-  result.pipeUIMessageStreamToResponse(res);
+  pipeUIMessageStreamToResponse({
+    response: res,
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 });
 
 app.listen(8080, () => {
@@ -56,6 +63,7 @@ import {
   createUIMessageStream,
   pipeUIMessageStreamToResponse,
   streamText,
+  toUIMessageStream,
 } from 'ai';
 import express, { Request, Response } from 'express';
 
@@ -80,7 +88,9 @@ app.post('/custom-data-parts', async (req: Request, res: Response) => {
           prompt: 'Invent a new holiday and describe its traditions.',
         });
 
-        writer.merge(result.toUIMessageStream({ sendStart: false }));
+        writer.merge(
+          toUIMessageStream({ stream: result.stream, sendStart: false }),
+        );
       },
     }),
   });
@@ -96,7 +106,7 @@ app.listen(8080, () => {
 You can send a text stream to the client using `pipeTextStreamToResponse`.
 
 ```ts filename='index.ts'
-import { streamText } from 'ai';
+import { pipeTextStreamToResponse, streamText, toTextStream } from 'ai';
 import express, { Request, Response } from 'express';
 
 const app = express();
@@ -107,7 +117,10 @@ app.post('/', async (req: Request, res: Response) => {
     prompt: 'Invent a new holiday and describe its traditions.',
   });
 
-  result.pipeTextStreamToResponse(res);
+  pipeTextStreamToResponse({
+    response: res,
+    stream: toTextStream({ stream: result.stream }),
+  });
 });
 
 app.listen(8080, () => {

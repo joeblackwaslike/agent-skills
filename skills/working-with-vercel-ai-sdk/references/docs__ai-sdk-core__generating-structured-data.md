@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9a0e1a15156cb311cd03fb32234e606e80e0cba51c824856f46c09eb244e633f"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "81205c4487bcf28c4fceee18256bfa2b8a22034d538f0c0d9e37b5e21fdf2099"
 ---
 
 # Generating Structured Data
@@ -282,7 +282,7 @@ For more advanced validation or different structures, see [the Output API refere
 One of the key advantages of using structured output with `generateText` and `streamText` is the ability to combine it with tool calling.
 
 ```ts
-import { generateText, Output, tool, stepCountIs } from 'ai';
+import { generateText, Output, tool, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
 
@@ -304,7 +304,7 @@ const { output } = await generateText({
       recommendation: z.string(),
     }),
   }),
-  stopWhen: stepCountIs(5),
+  stopWhen: isStepCount(5),
   prompt: 'What should I wear in San Francisco today?',
 });
 ```
@@ -506,21 +506,27 @@ You can see structured output generation in action using various frameworks in t
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

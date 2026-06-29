@@ -1,19 +1,19 @@
 ---
-title: Legal
+title: Vercel Connect product terms
 product: vercel
 url: /docs/connect/legal
 canonical_url: "https://vercel.com/docs/connect/legal"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-09
+type: reference
 prerequisites:
   - /docs/connect
 related:
   - /docs/connect
-summary: Learn about legal on Vercel.
+summary: Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, and Vercel Assisted Setup.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/legal.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "823c44582dd02e93dbd41ff77d91317f1e4ef0433b65fd9d76e83fd142ad5109"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "5554e364d8e8f605e694ef74d10a9bd788f6a759e06dc45e69bebcad64b27e4a"
 ---
 
 # Vercel Connect product terms

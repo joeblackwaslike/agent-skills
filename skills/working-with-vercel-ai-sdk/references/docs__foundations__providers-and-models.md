@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a57039b1663f85f6fb34ce07d1c2e657c7aabb7de6946ccad551caba0ddcc9b5"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "cf5971f663313c114dcbb30ccc0b5794958be85f654f8372873a24bafe9df995"
 ---
 
 # Providers and Models
@@ -30,7 +30,7 @@ The AI SDK comes with a wide range of providers that you can use to interact wit
 - [Azure OpenAI Provider](/providers/ai-sdk-providers/azure) (`@ai-sdk/azure`)
 - [Anthropic Provider](/providers/ai-sdk-providers/anthropic) (`@ai-sdk/anthropic`)
 - [Amazon Bedrock Provider](/providers/ai-sdk-providers/amazon-bedrock) (`@ai-sdk/amazon-bedrock`)
-- [Google Generative AI Provider](/providers/ai-sdk-providers/google-generative-ai) (`@ai-sdk/google`)
+- [Google Provider](/providers/ai-sdk-providers/google) (`@ai-sdk/google`)
 - [Google Vertex Provider](/providers/ai-sdk-providers/google-vertex) (`@ai-sdk/google-vertex`)
 - [Mistral Provider](/providers/ai-sdk-providers/mistral) (`@ai-sdk/mistral`)
 - [Together.ai Provider](/providers/ai-sdk-providers/togetherai) (`@ai-sdk/togetherai`)
@@ -83,7 +83,7 @@ The open-source community has created the following providers:
 - [Browser AI Provider](/providers/community-providers/browser-ai) (`browser-ai`)
 - [Gemini CLI Provider](/providers/community-providers/gemini-cli) (`ai-sdk-provider-gemini-cli`)
 - [A2A Provider](/providers/community-providers/a2a) (`a2a-ai-provider`)
-- [SAP-AI Provider](/providers/community-providers/sap-ai) (`@mymediset/sap-ai-provider`)
+- [SAP AI Core Provider](/providers/community-providers/sap-ai) (`@jerome-benoit/sap-ai-provider`)
 - [AI/ML API Provider](/providers/community-providers/aimlapi) (`@ai-ml.api/aimlapi-vercel-ai`)
 - [MCP Sampling Provider](/providers/community-providers/mcp-sampling) (`@mcpc-tech/mcp-sampling-ai-provider`)
 - [ACP Provider](/providers/community-providers/acp) (`@mcpc-tech/acp-ai-provider`)

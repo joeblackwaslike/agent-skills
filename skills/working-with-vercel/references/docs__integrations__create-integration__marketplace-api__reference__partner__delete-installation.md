@@ -3,7 +3,7 @@ title: delete-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/delete-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-installation"
-last_updated: 2026-06-22
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about delete-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-installation.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "215c704e4cbe9200d12015380fb502668d85d0e7e8aed0b04553517b9ebfc3a4"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "f9be86c893b2a695e5098e449794a5f03908b0bba22a03dbedd2b9e9619c50f1"
 ---
 
 # Delete Installation

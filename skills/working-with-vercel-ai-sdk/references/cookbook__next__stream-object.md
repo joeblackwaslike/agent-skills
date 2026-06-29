@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-object.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3c7a3c91ce7b4a0c846171b0dc393a5cedc74ae6d6f79554672be7de5b900e8d"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "47606d3133982b35cfae6b1afbb30166886213dc3a939439b373390044ffdc22"
 ---
 
 # Stream Object
@@ -101,7 +101,7 @@ export default function Page() {
 On the server, we use [`streamText`](/docs/reference/ai-sdk-core/stream-text) with `Output.object` to stream the object generation process.
 
 ```typescript filename='app/api/use-object/route.ts'
-import { streamText, Output } from 'ai';
+import { streamText, Output, createTextStreamResponse, toTextStream } from 'ai';
 import { notificationSchema } from './schema';
 
 export const maxDuration = 30;
@@ -116,7 +116,9 @@ export async function POST(req: Request) {
       `Generate 3 notifications for a messages app in this context:` + context,
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -235,7 +237,7 @@ export default function Page() {
 On the server, specify `Output.array` to generate an array of objects.
 
 ```typescript filename='app/api/use-object/route.ts'
-import { streamText, Output } from 'ai';
+import { streamText, Output, createTextStreamResponse, toTextStream } from 'ai';
 import { notificationSchema } from './schema';
 
 export const maxDuration = 30;
@@ -250,7 +252,9 @@ export async function POST(req: Request) {
       `Generate 3 notifications for a messages app in this context:` + context,
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -301,7 +305,7 @@ export default function Page() {
 On the server, specify `Output.json()`.
 
 ```typescript filename='app/api/use-object/route.ts'
-import { streamText, Output } from 'ai';
+import { streamText, Output, createTextStreamResponse, toTextStream } from 'ai';
 
 export const maxDuration = 30;
 
@@ -316,7 +320,9 @@ export async function POST(req: Request) {
       context,
   });
 
-  return result.toTextStreamResponse();
+  return createTextStreamResponse({
+    stream: toTextStream({ stream: result.stream }),
+  });
 }
 ```
 

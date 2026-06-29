@@ -1,10 +1,10 @@
 ---
-title: Vercel Drop
+title: Deploying with Vercel Drop
 product: vercel
 url: /docs/drop
 canonical_url: "https://vercel.com/docs/drop"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-16
+type: how-to
 prerequisites:
   []
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/rest-api
   - /docs/deployments/environments
   - /docs/deployments/managing-deployments
-summary: Learn about vercel drop on Vercel.
+summary: Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c9155864993c91338e84399feaf847bf6a06f7fc060e0efc4ffd369d59eabb44"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "9dee87d1738f74a0aac0d888a07841f91bbedd59c36a39a5cefe84e24057d321"
 ---
 
 # Deploying with Vercel Drop

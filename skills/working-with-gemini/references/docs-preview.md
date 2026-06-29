@@ -1,12 +1,12 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/changelogs/preview.md"
-fetched_at: "2026-06-22T05:57:43.917Z"
-sha256: "75bfae7aa9dc9ec05a7456dba359e1429ae101771cc15f8e72429d426c7a4ea1"
+fetched_at: "2026-06-29T05:43:04.440Z"
+sha256: "c3a14f16fff690efd06b41f3ff9ab2e40595b456262eff561ffa8003a2bee5c8"
 ---
 
-# Preview release: v0.48.0-preview.0
+# Preview release: v0.50.0-preview.1
 
-Released: June 17, 2026
+Released: June 25, 2026
 
 Our preview release includes the latest, new, and experimental features. This
 release may not be as stable as our [latest weekly release](latest.md).
@@ -33,6 +33,14 @@ npm install -g @google/gemini-cli@preview
 
 ## What's Changed
 
+- fix/verify release npm ci ignore scripts by @rmedranollamas in
+  [#28116](https://github.com/google-gemini/gemini-cli/pull/28116)
+- fix(ci): prevent workspace binary shadowing in release verification by @galz10
+  in [#28132](https://github.com/google-gemini/gemini-cli/pull/28132)
+- Feat/tool registry discovery by @ved015 in
+  [#28113](https://github.com/google-gemini/gemini-cli/pull/28113)
+- fix(ci): prevent bad NPM releases and promote job crashes by @galz10 in
+  [#28147](https://github.com/google-gemini/gemini-cli/pull/28147)
 - chore(release): bump version to 0.48.0-nightly.20260609.g3a13b8eeb by
   @gemini-cli-robot in
   [#27779](https://github.com/google-gemini/gemini-cli/pull/27779)
@@ -73,4 +81,4 @@ npm install -g @google/gemini-cli@preview
   [#27992](https://github.com/google-gemini/gemini-cli/pull/27992)
 
 **Full Changelog**:
-https://github.com/google-gemini/gemini-cli/compare/v0.47.0-preview.0...v0.48.0-preview.0
+https://github.com/google-gemini/gemini-cli/compare/v0.47.0-preview.0...v0.50.0-preview.1

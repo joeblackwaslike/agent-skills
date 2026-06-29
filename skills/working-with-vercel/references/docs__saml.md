@@ -3,7 +3,7 @@ title: SAML Single Sign-On
 product: vercel
 url: /docs/saml
 canonical_url: "https://vercel.com/docs/saml"
-last_updated: 2026-02-27
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   []
@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "74f33f81140f58dcb2fce01c9987ea5209eae2ce3ec8022d28b3620dece86453"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "cb237289f504e8805b85266b1259dd971e642d83263172152d6d74b1e14c4831"
 ---
 
 # SAML Single Sign-On

@@ -3,7 +3,7 @@ title: Vercel Connect pricing and limits
 product: vercel
 url: /docs/connect/pricing
 canonical_url: "https://vercel.com/docs/connect/pricing"
-last_updated: 2026-06-03
+last_updated: 2026-06-09
 type: reference
 prerequisites:
   - /docs/connect
@@ -13,11 +13,11 @@ related:
   - /docs/plans/enterprise
   - /docs/connect/ts-sdk-reference
   - /docs/connect/concepts/project-links
-summary: How Vercel Connect is billed across plans, how to stop being billed, and the platform limits that apply during Beta.
+summary: How Vercel Connect is billed across plans, how to stop being billed, and the platform limits that apply during beta.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c69069daa574e901b7dc654521e96e8adf1853e7ab41e42e3761407af00a5998"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "d48797cac911c2f2e24ab6822b0ec8a4475feee6a516bccd4104039af99b1420"
 ---
 
 # Vercel Connect pricing and limits

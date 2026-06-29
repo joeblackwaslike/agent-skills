@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/overview.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "04d9ed441a714928708837e60921977ddc7298388890c5889faae7f5c529c33f"
+fetched_at: "2026-06-29T05:40:33.754Z"
+sha256: "91dfbc96bc0dfa4e35ff94e91f95138a35cabefebf853799c01de79cd8c6b5dc"
 ---
 
 > ## Documentation Index
@@ -45,6 +45,8 @@ Choose your environment to get started. Most surfaces require a [Claude subscrip
         ```
 
         If you see `The token '&&' is not a valid statement separator`, you're in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you're in CMD, not PowerShell. Your prompt shows `PS C:\` when you're in PowerShell and `C:\` without the `PS` when you're in CMD.
+
+        If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](/en/troubleshoot-install#find-your-error) to match the error to a fix and for alternative install methods.
 
         [Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 

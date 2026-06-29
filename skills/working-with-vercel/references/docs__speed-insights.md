@@ -3,7 +3,7 @@ title: Speed Insights Overview
 product: vercel
 url: /docs/speed-insights
 canonical_url: "https://vercel.com/docs/speed-insights"
-last_updated: 2026-03-10
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7272a0f1ca6fe8eee9dadc999d8b9105dfe78839a36d520e6ab1332019d98a4e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "2261d0a2080dc8e79a4f6849ca30ce671aac18b81675e90db32cc54ed6f5b140"
 ---
 
 # Speed Insights Overview

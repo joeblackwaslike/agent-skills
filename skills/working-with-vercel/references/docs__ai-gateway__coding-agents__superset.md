@@ -3,7 +3,7 @@ title: Superset
 product: vercel
 url: /docs/ai-gateway/coding-agents/superset
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/superset"
-last_updated: 2026-04-29
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Use Superset with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/superset.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "dd007b8584c78c4370227f2d0d52a30570450af30dab1b03b1e56db42041d316"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "20009eefc2b2bc419864f1172c41e8e1a0ceb7d05b11e29d56f3b36528dabebf"
 ---
 
 # Superset

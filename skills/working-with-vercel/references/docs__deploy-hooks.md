@@ -3,7 +3,7 @@ title: Creating & Triggering Deploy Hooks
 product: vercel
 url: /docs/deploy-hooks
 canonical_url: "https://vercel.com/docs/deploy-hooks"
-last_updated: 2026-02-17
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-hooks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "03f2c607790d25b317dff57ae2f445254009dc2383794e832b095fbecb50ec15"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ecaf1917a800deaa98d210cbe080f18af05000cc9b7d79ca46f11f4a77544ff9"
 ---
 
 # Creating & Triggering Deploy Hooks

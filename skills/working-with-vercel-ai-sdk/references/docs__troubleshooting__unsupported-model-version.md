@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/unsupported-model-version.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8e87270f1e01e9c8bab6a5e1a5ce3a70e655b8374147f77fe50de5b2788e7df1"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "2822394623b47f93ef65a0dc1c09964da098879e07b3d8f300c9574496a607b9"
 ---
 
 # Unsupported model version error
@@ -69,7 +69,7 @@ For more information on migrating to AI SDK 5, see the [AI SDK 5.0 migration gui
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

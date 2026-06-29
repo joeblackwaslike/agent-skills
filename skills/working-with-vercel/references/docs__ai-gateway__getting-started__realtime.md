@@ -1,20 +1,20 @@
 ---
-title: Realtime
+title: Realtime Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/realtime
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/realtime"
-last_updated: 2018-10-20
+last_updated: 2026-06-20
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/modalities/realtime
-summary: Learn about realtime on Vercel.
+summary: Build a low-latency, speech-to-speech voice agent with AI Gateway and the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "ee3351f39b140dd1f267ff8f40588de884c78e3889ee8fbd62f3b6c3001d2a82"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "4bc8841b5b5b5a1fb53bee1b8243cd1d818ed8a1f0ed17694cb2d90359f46a55"
 ---
 
 # Realtime Quickstart

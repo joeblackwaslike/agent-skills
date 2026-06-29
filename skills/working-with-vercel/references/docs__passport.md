@@ -1,21 +1,21 @@
 ---
-title: Passport
+title: Restrict access to deployments with Passport
 product: vercel
 url: /docs/passport
 canonical_url: "https://vercel.com/docs/passport"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-18
+type: how-to
 prerequisites:
   []
 related:
   - /docs/deployment-protection
   - /docs/deployment-protection/methods-to-protect-deployments
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
-summary: Learn about passport on Vercel.
+summary: Learn how to protect deployments with Passport by using your identity provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "c350cb238da15b94ff4917e5b2465ce94229bc2c0cbc967dc1c6b2953fd3f0dd"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "3901f93340bb670f393f858d2a27b4b55adff08811d32920983e63bd00ea1441"
 ---
 
 # Restrict access to deployments with Passport

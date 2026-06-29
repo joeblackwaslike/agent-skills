@@ -16,13 +16,13 @@ related:
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d2bea7b3717233a6e70128060ee608022ec6f0de79f9dcd963055d43e8f2e0ad"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7a77815e280e626a976eb89b8f79a18d8137ce5b37e0745c850e6e29e4372c54"
 ---
 
 # Performing a rolling release deployment
 
-Use this guide to gradually roll out a new production deployment using rolling releases. You'll configure traffic stages, monitor for errors between stages, and either complete the rollout or abort if problems arise.
+Use this guide to gradually roll out a new production deployment using rolling releases. You'll configure traffic stages, monitor for errors between stages, and either complete the rolling release or abort if problems arise.
 
 > **💡 Note:** This guide requires a [linked Vercel project](/docs/cli/project-linking). Run
 > `vercel link` in your project directory if you haven't already. Rolling
@@ -42,17 +42,17 @@ vercel deploy --prod
 # 3. Start the rolling release
 vercel rolling-release start --dpl <deployment-url>
 
-# 4. Monitor the rollout
+# 4. Monitor the release
 vercel rolling-release fetch
 vercel logs --environment production --level error --since 5m
 
 # 5. Advance to the next stage (if manual approval is configured)
 vercel rolling-release approve --dpl <deployment-url> --currentStageIndex 0
 
-# IF errors spike during rollout:
+# IF errors spike during the release:
 vercel rolling-release abort --dpl <deployment-url>
 
-# 6. Complete the rollout (100% traffic)
+# 6. Complete the release (100% traffic)
 vercel rolling-release complete --dpl <deployment-url>
 ```
 
@@ -92,7 +92,7 @@ vercel rolling-release start --dpl <deployment-url>
 
 This starts at the first stage (10% of traffic in the example configuration above).
 
-## 4. Monitor the rollout
+## 4. Monitor the release
 
 Check the current stage, traffic split, and overall progress:
 
@@ -100,7 +100,7 @@ Check the current stage, traffic split, and overall progress:
 vercel rolling-release fetch
 ```
 
-While the rollout is in progress, monitor production logs for errors coming from the new deployment:
+While the rolling release is in progress, monitor production logs for errors coming from the new deployment:
 
 ```bash filename="terminal"
 vercel logs --environment production --level error --since 5m
@@ -112,7 +112,7 @@ To filter for specific error patterns:
 vercel logs --environment production --level error --query "TypeError" --since 5m --expand
 ```
 
-Run these checks periodically between stage transitions. If your stages have automatic durations, the rollout advances on its own. If you configured manual approval stages, you'll need to explicitly approve each one.
+Run these checks periodically between stage transitions. If your stages have automatic durations, the rolling release advances on its own. If you configured manual approval stages, you'll need to explicitly approve each one.
 
 ## 5. Advance to the next stage
 
@@ -124,15 +124,15 @@ vercel rolling-release approve --dpl <deployment-url> --currentStageIndex <stage
 
 The `--currentStageIndex` flag specifies which stage you're approving. Stage indexes start at 0.
 
-## 6. Complete the rollout
+## 6. Complete the rolling release
 
-After all stages pass, complete the rollout to send 100% of traffic to the new deployment:
+After all stages pass, complete the rolling release to send 100% of traffic to the new deployment:
 
 ```bash filename="terminal"
 vercel rolling-release complete --dpl <deployment-url>
 ```
 
-Verify that production is healthy after the full rollout:
+Verify that production is healthy after the full rolling release:
 
 ```bash filename="terminal"
 vercel logs --environment production --level error --since 5m
@@ -146,7 +146,7 @@ If you see a spike in errors during any stage, abort the rolling release immedia
 vercel rolling-release abort --dpl <deployment-url>
 ```
 
-After aborting, investigate the errors and fix them before attempting another rollout:
+After aborting, investigate the errors and fix them before attempting another rolling release:
 
 ```bash filename="terminal"
 vercel logs --environment production --level error --since 30m --expand

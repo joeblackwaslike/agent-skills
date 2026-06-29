@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflows.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9fdce0fc17f939e8bc81cca60a91d57599a6b5c1de2d86391065ca25f4f4d9c2"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "821b556d82a8291098561bdbf7bfffee0bb902ccd566b8f1404037089d5d0256"
 ---
 
 # Workflow Patterns
@@ -132,7 +132,7 @@ async function handleCustomerQuery(query: string) {
       classification.complexity === 'simple'
         ? 'openai/gpt-4o-mini'
         : 'openai/o4-mini',
-    system: {
+    instructions: {
       general:
         'You are an expert customer service agent handling general inquiries.',
       refund:
@@ -165,7 +165,7 @@ async function parallelCodeReview(code: string) {
     await Promise.all([
       generateText({
         model,
-        system:
+        instructions:
           'You are an expert in code security. Focus on identifying security vulnerabilities, injection risks, and authentication issues.',
         output: Output.object({
           schema: z.object({
@@ -180,7 +180,7 @@ async function parallelCodeReview(code: string) {
 
       generateText({
         model,
-        system:
+        instructions:
           'You are an expert in code performance. Focus on identifying performance bottlenecks, memory leaks, and optimization opportunities.',
         output: Output.object({
           schema: z.object({
@@ -195,7 +195,7 @@ async function parallelCodeReview(code: string) {
 
       generateText({
         model,
-        system:
+        instructions:
           'You are an expert in code quality. Focus on code structure, readability, and adherence to best practices.',
         output: Output.object({
           schema: z.object({
@@ -218,7 +218,7 @@ async function parallelCodeReview(code: string) {
   // Aggregate results using another model instance
   const { text: summary } = await generateText({
     model,
-    system: 'You are a technical lead summarizing multiple code reviews.',
+    instructions: 'You are a technical lead summarizing multiple code reviews.',
     prompt: `Synthesize these code review results into a concise summary with key actions:
     ${JSON.stringify(reviews, null, 2)}`,
   });
@@ -252,7 +252,7 @@ async function implementFeature(featureRequest: string) {
         estimatedComplexity: z.enum(['low', 'medium', 'high']),
       }),
     }),
-    system:
+    instructions:
       'You are a senior software architect planning feature implementations.',
     prompt: `Analyze this feature request and create an implementation plan:
     ${featureRequest}`,
@@ -279,7 +279,7 @@ async function implementFeature(featureRequest: string) {
             code: z.string(),
           }),
         }),
-        system: workerSystemPrompt,
+        instructions: workerSystemPrompt,
         prompt: `Implement the changes for ${file.filePath} to support:
         ${file.purpose}
 
@@ -318,7 +318,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
   // Initial translation
   const { text: translation } = await generateText({
     model: __MODEL__,
-    system: 'You are an expert literary translator.',
+    instructions: 'You are an expert literary translator.',
     prompt: `Translate this text to ${targetLanguage}, preserving tone and cultural nuances:
     ${text}`,
   });
@@ -340,7 +340,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
           improvementSuggestions: z.array(z.string()),
         }),
       }),
-      system: 'You are an expert in evaluating literary translations.',
+      instructions: 'You are an expert in evaluating literary translations.',
       prompt: `Evaluate this translation:
 
       Original: ${text}
@@ -366,7 +366,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
     // Generate improved translation based on feedback
     const { text: improvedTranslation } = await generateText({
       model: __MODEL__,
-      system: 'You are an expert literary translator.',
+      instructions: 'You are an expert literary translator.',
       prompt: `Improve this translation based on the following feedback:
       ${evaluation.specificIssues.join('\n')}
       ${evaluation.improvementSuggestions.join('\n')}
@@ -395,7 +395,11 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
 - [Loop Control](/docs/agents/loop-control)
 - [Configuring Call Options](/docs/agents/configuring-call-options)
 - [Memory](/docs/agents/memory)
+- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
 - [Subagents](/docs/agents/subagents)
+- [Tool Approvals](/docs/agents/tool-approvals)
+- [WorkflowAgent](/docs/agents/workflow-agent)
+- [Terminal UI](/docs/agents/terminal-ui)
 
 
 [Full Sitemap](/sitemap.md)

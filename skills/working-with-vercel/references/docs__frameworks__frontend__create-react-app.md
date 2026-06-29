@@ -3,7 +3,7 @@ title: Create React App on Vercel
 product: vercel
 url: /docs/frameworks/frontend/create-react-app
 canonical_url: "https://vercel.com/docs/frameworks/frontend/create-react-app"
-last_updated: 2026-02-26
+last_updated: 2026-06-16
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Create React App"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/create-react-app.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "6c868f2b28067baf8b74d3a81983ed601ae7d9a146ab7f18dbd1601fc4a1ecb2"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "fec6012e2826baa8da52252e762453ebb85b4ed7e8c465a1d7901ad801fe562e"
 ---
 
 # Create React App on Vercel

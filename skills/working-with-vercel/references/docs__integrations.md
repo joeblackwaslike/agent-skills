@@ -3,21 +3,21 @@ title: Vercel Integrations
 product: vercel
 url: /docs/integrations
 canonical_url: "https://vercel.com/docs/integrations"
-last_updated: 2026-05-26
+last_updated: 2026-06-22
 type: conceptual
 prerequisites:
   []
 related:
   - /docs/storage
   - /docs/agent-resources/integrations-for-models
+  - /docs/connect
   - /docs/integrations/install-an-integration/product-integration
   - /docs/cli/integration
-  - /docs/agent-resources/integrations-for-models/adding-a-provider
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5cabdd796a157f7dcc70adcdf075fdc7713684fc043e7f7cd522e101d11ed0cd"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "70c0be66d26ef6253e941d6c3036944217d3ee32ebe69250030bb1f6c7072e0f"
 ---
 
 # Vercel Integrations
@@ -29,6 +29,8 @@ Integrations allow you to extend the capabilities of Vercel by connecting with t
 - Send logs to services
 - Integrate with testing tools
 - Connect your CMS and ecommerce platform
+
+If you need delegated, runtime credentials for agent workflows, see [Vercel Connect](/docs/connect).
 
 To extend and automate your workflow, the [Vercel Marketplace](https://vercel.com/marketplace) page provides you with two types of integrations, depending on your needs:
 

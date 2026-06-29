@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d2533bb5cb07ad3565bd84167d65cde8b6f22d54ede1f638bf3b1af37362ba60"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "7d6dbacf08f310937bf8a321ac670b40c96dcd2a24f959efde9f3e49acd0f01b"
 ---
 
 # Voyage AI Provider
@@ -113,7 +113,6 @@ The following provider options are available:
 - **inputType** _'query' | 'document' | null_
 
   Specifies the type of input passed to the model. Defaults to `null`.
-
   - `null`: The embedding model directly converts the inputs into numerical vectors.
   - `'query'`: Used for embeddings of search queries run against a vector DB to find relevant documents.
   - `'document'`: Used for embeddings stored in a vector database for search use-cases.
@@ -131,7 +130,6 @@ The following provider options are available:
 - **outputDtype** _'float' | 'int8' | 'uint8' | 'binary' | 'ubinary'_
 
   The data type for the output embeddings. Defaults to `'float'`.
-
   - `'float'`: 32-bit floating-point numbers.
   - `'int8'`, `'uint8'`: 8-bit integer types.
   - `'binary'`, `'ubinary'`: Bit-packed, quantized single-bit embedding values.
@@ -225,14 +223,14 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model              | Context Length |
-| ------------------ | -------------- |
-| `rerank-2.5`       | 32,000         |
-| `rerank-2.5-lite`  | 32,000         |
-| `rerank-2`         | 16,000         |
-| `rerank-2-lite`    | 8,000          |
-| `rerank-1`         | 8,000          |
-| `rerank-lite-1`    | 4,000          |
+| Model             | Context Length |
+| ----------------- | -------------- |
+| `rerank-2.5`      | 32,000         |
+| `rerank-2.5-lite` | 32,000         |
+| `rerank-2`        | 16,000         |
+| `rerank-2-lite`   | 8,000          |
+| `rerank-1`        | 8,000          |
+| `rerank-lite-1`   | 4,000          |
 
 
 ## Navigation
@@ -254,7 +252,7 @@ The following provider options are available:
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

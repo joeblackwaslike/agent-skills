@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d259aeef95c8b13fa46f8aa901e61c79f530664c76e985af193f152478129b36"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "24d1838e61071a8ff9304c1bdbb7ddec11029c9de1d60246cf002d80af7004f3"
 ---
 
 # Replicate Provider
@@ -301,7 +301,7 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

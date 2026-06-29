@@ -3,7 +3,7 @@ title: Billing & Invoices
 product: vercel
 url: /docs/pricing/understanding-my-invoice
 canonical_url: "https://vercel.com/docs/pricing/understanding-my-invoice"
-last_updated: 2026-04-27
+last_updated: 2026-06-17
 type: reference
 prerequisites:
   - /docs/pricing
@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "baea2d7f7de8cffa92d33d5608e89525999687bfb92b1aa6c08fc9e4b190153e"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "1d13e766a02e5cebec646408fa4831efd89436ceb93327a5ed700725011c68b0"
 ---
 
 # Billing & Invoices

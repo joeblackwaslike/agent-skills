@@ -3,7 +3,7 @@ title: Secure Compute
 product: vercel
 url: /docs/networking/secure-compute
 canonical_url: "https://vercel.com/docs/networking/secure-compute"
-last_updated: 2026-05-22
+last_updated: 2026-06-19
 type: reference
 prerequisites:
   - /docs/networking
@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "8aac8debc9755fe4b547a1083ef53875c7deff8210ca1a84b40fefe28852fef3"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "1131231e272e6edf1ecb52f732de310667901f2be0a4b97a4c41d7ae7626eb17"
 ---
 
 # Secure Compute

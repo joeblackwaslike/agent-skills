@@ -3,24 +3,25 @@ title: Provider Filtering, Ordering & Sorting
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering"
-last_updated: 2026-04-30
+last_updated: 2026-06-04
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/sdks-and-apis/rest-api
 summary: Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "72cdfa8092abe774fbb0e4c6b7de4071d1b80c39799d7718d47a33baa56be642"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a072865bfa35ba12aa11bb980b7bc420124cf35510cfe690d87a9aaee41a6dd2"
 ---
 
 # Provider Filtering, Ordering & Sorting
 
-By default, AI Gateway dynamically chooses providers based on recent uptime and latency. You can override this behavior to control which providers handle your requests and in what order using `order`, `only`, and `sort` in `providerOptions.gateway`.
+By default, AI Gateway dynamically chooses providers based on recent uptime and latency. You can override this behavior to control which providers handle your requests and in what order using `order`, `only`, and `sort` in `providerOptions.gateway`. To instead filter by a capability of the model itself, see [Model Filtering](/docs/ai-gateway/models-and-providers/model-filtering).
 
 ## Provider ordering
 
@@ -362,6 +363,8 @@ This means sort optimizes for your chosen metric while still avoiding unhealthy 
 | `sort`  | `'cost'` | `'ttft'` | `'tps'` | Sort providers by cost, time to first token, or tokens per second |
 
 All options are set under `providerOptions.gateway` in the AI SDK, or under `providerOptions` in the REST API / OpenAI-compatible Chat Completions API. The Chat Completions API also accepts a top-level `provider` shorthand (e.g., `"provider": { "sort": "tps" }`). See [Available Providers](/docs/ai-gateway/models-and-providers/provider-options#available-providers) for the full list of provider slugs.
+
+To filter by a capability of the model itself (rather than by provider), see [Model Filtering](/docs/ai-gateway/models-and-providers/model-filtering).
 
 
 ---

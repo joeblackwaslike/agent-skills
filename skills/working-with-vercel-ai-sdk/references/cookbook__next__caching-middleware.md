@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/caching-middleware.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "fd868c319a36039be999e78f1763a19c215e1efe96a7db52b6dd7f33bb486783"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "6a0fe1f383dfee01964c841ac991ac02cac9bceb91ae6bbba600065bacabdf83"
 ---
 
 # Caching Middleware
@@ -67,9 +67,9 @@ You can control the initial delay and delay between chunks by adjusting the `ini
 ```tsx filename='ai/middleware.ts'
 import { Redis } from '@upstash/redis';
 import {
-  type LanguageModelV1,
-  type LanguageModelV3Middleware,
-  type LanguageModelV1StreamPart,
+  type LanguageModelV4,
+  type LanguageModelV4Middleware,
+  type LanguageModelV4StreamPart,
   simulateReadableStream,
 } from 'ai';
 
@@ -78,12 +78,12 @@ const redis = new Redis({
   token: process.env.KV_TOKEN,
 });
 
-export const cacheMiddleware: LanguageModelV3Middleware = {
+export const cacheMiddleware: LanguageModelV4Middleware = {
   wrapGenerate: async ({ doGenerate, params }) => {
     const cacheKey = JSON.stringify(params);
 
     const cached = (await redis.get(cacheKey)) as Awaited<
-      ReturnType<LanguageModelV1['doGenerate']>
+      ReturnType<LanguageModelV4['doGenerate']>
     > | null;
 
     if (cached !== null) {
@@ -113,7 +113,7 @@ export const cacheMiddleware: LanguageModelV3Middleware = {
     // If cached, return a simulated ReadableStream that yields the cached result
     if (cached !== null) {
       // Format the timestamps in the cached response
-      const formattedChunks = (cached as LanguageModelV1StreamPart[]).map(p => {
+      const formattedChunks = (cached as LanguageModelV4StreamPart[]).map(p => {
         if (p.type === 'response-metadata' && p.timestamp) {
           return { ...p, timestamp: new Date(p.timestamp) };
         } else return p;
@@ -130,11 +130,11 @@ export const cacheMiddleware: LanguageModelV3Middleware = {
     // If not cached, proceed with streaming
     const { stream, ...rest } = await doStream();
 
-    const fullResponse: LanguageModelV1StreamPart[] = [];
+    const fullResponse: LanguageModelV4StreamPart[] = [];
 
     const transformStream = new TransformStream<
-      LanguageModelV1StreamPart,
-      LanguageModelV1StreamPart
+      LanguageModelV4StreamPart,
+      LanguageModelV4StreamPart
     >({
       transform(chunk, controller) {
         fullResponse.push(chunk);
@@ -165,7 +165,13 @@ Finally, you will create an API route for `api/chat` to handle the assistant's m
 
 ```tsx filename='app/api/chat/route.ts'
 import { cacheMiddleware } from '@/ai/middleware';
-import { wrapLanguageModel, streamText, tool } from 'ai';
+import {
+  wrapLanguageModel,
+  streamText,
+  tool,
+  createUIMessageStreamResponse,
+  toUIMessageStream,
+} from 'ai';
 import { z } from 'zod';
 
 const wrappedModel = wrapLanguageModel({
@@ -192,7 +198,9 @@ export async function POST(req: Request) {
       }),
     },
   });
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

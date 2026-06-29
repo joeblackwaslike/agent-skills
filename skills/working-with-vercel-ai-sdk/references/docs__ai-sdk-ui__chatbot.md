@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "b72b2e6856cdba837ec80faa70180431287c9a7983c26e59142bfd85cc31bd64"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "0d514a421c3e2a23e6690decba4aeaef6380f83b67bd0ec64a8ea6d1af6e080e"
 ---
 
 # Chatbot
@@ -71,7 +71,13 @@ export default function Page() {
 ```
 
 ```ts filename='app/api/chat/route.ts'
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
@@ -82,11 +88,13 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: __MODEL__,
-    system: 'You are a helpful assistant.',
+    instructions: 'You are a helpful assistant.',
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -123,7 +131,7 @@ You can use `status` for e.g. the following purposes:
 - To show a "Stop" button to abort the current message.
 - To disable the submit button.
 
-```tsx filename='app/page.tsx' highlight="6,22-29,36"
+```tsx filename='app/page.tsx' highlight="8,26-33,47,50"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -193,7 +201,7 @@ It can be used to display an error message, disable the submit button, or show a
   server.
 </Note>
 
-```tsx file="app/page.tsx" highlight="6,20-27,33"
+```tsx file="app/page.tsx" highlight="8,26-33,47"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -453,7 +461,7 @@ The request-level options are merged with hook-level options, with request-level
 You can configure custom `body` fields on a per-request basis using the second parameter of the `sendMessage` function.
 This is useful if you want to pass in additional information to your backend that is not part of the message list.
 
-```tsx filename="app/page.tsx" highlight="20-25"
+```tsx filename="app/page.tsx" highlight="25-32"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -514,21 +522,24 @@ You can attach custom metadata to messages for tracking information like timesta
 
 ```ts
 // Server: Send metadata about the message
-return result.toUIMessageStreamResponse({
-  messageMetadata: ({ part }) => {
-    if (part.type === 'start') {
-      return {
-        createdAt: Date.now(),
-        model: 'gpt-5.1',
-      };
-    }
+return createUIMessageStreamResponse({
+  stream: toUIMessageStream({
+    stream: result.stream,
+    messageMetadata: ({ part }) => {
+      if (part.type === 'start') {
+        return {
+          createdAt: Date.now(),
+          model: 'gpt-5.1',
+        };
+      }
 
-    if (part.type === 'finish') {
-      return {
-        totalTokens: part.totalUsage.totalTokens,
-      };
-    }
-  },
+      if (part.type === 'finish') {
+        return {
+          totalTokens: part.totalUsage.totalTokens,
+        };
+      }
+    },
+  }),
 });
 ```
 
@@ -597,7 +608,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -666,7 +679,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 
@@ -729,10 +744,16 @@ With `streamText`, you can control how error messages and usage information are 
 
 By default, the error message is masked for security reasons.
 The default error message is "An error occurred."
-You can forward error messages or send your own error message by providing a `getErrorMessage` function:
+You can forward error messages or send your own error message by providing an `onError` function:
 
-```ts filename="app/api/chat/route.ts" highlight="13-27"
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+```ts filename="app/api/chat/route.ts" highlight="21-35"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 __PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
@@ -743,22 +764,25 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    onError: error => {
-      if (error == null) {
-        return 'unknown error';
-      }
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      onError: error => {
+        if (error == null) {
+          return 'unknown error';
+        }
 
-      if (typeof error === 'string') {
-        return error;
-      }
+        if (typeof error === 'string') {
+          return error;
+        }
 
-      if (error instanceof Error) {
-        return error.message;
-      }
+        if (error instanceof Error) {
+          return error.message;
+        }
 
-      return JSON.stringify(error);
-    },
+        return JSON.stringify(error);
+      },
+    }),
   });
 }
 ```
@@ -777,7 +801,9 @@ Usage data is attached as metadata to messages and becomes available once the mo
 import { openai } from '@ai-sdk/openai';
 import {
   convertToModelMessages,
+  createUIMessageStreamResponse,
   streamText,
+  toUIMessageStream,
   UIMessage,
   type LanguageModelUsage,
 } from 'ai';
@@ -799,14 +825,17 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    originalMessages: messages,
-    messageMetadata: ({ part }) => {
-      // Send total usage when generation is finished
-      if (part.type === 'finish') {
-        return { totalUsage: part.totalUsage };
-      }
-    },
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      originalMessages: messages,
+      messageMetadata: ({ part }) => {
+        // Send total usage when generation is finished
+        if (part.type === 'finish') {
+          return { totalUsage: part.totalUsage };
+        }
+      },
+    }),
   });
 }
 ```
@@ -908,8 +937,14 @@ and Anthropic `claude-sonnet-4-5-20250929` support reasoning tokens.
 These tokens are typically sent before the message content.
 You can forward them to the client with the `sendReasoning` option:
 
-```ts filename="app/api/chat/route.ts" highlight="13"
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+```ts filename="app/api/chat/route.ts" highlight="20"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
@@ -919,8 +954,11 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    sendReasoning: true,
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      sendReasoning: true,
+    }),
   });
 }
 ```
@@ -948,16 +986,26 @@ messages.map(message => (
 ));
 ```
 
+Some models may also produce files as part of reasoning (e.g. images).
+These are available as `reasoning-file` parts (`ReasoningFileUIPart`) with
+`mediaType` and `url` properties, similar to regular file parts.
+
 ## Sources
 
 Some providers such as [Perplexity](/providers/ai-sdk-providers/perplexity#sources) and
-[Google Generative AI](/providers/ai-sdk-providers/google-generative-ai#sources) include sources in the response.
+[Google](/providers/ai-sdk-providers/google#sources) include sources in the response.
 
 Currently sources are limited to web pages that ground the response.
 You can forward them to the client with the `sendSources` option:
 
-```ts filename="app/api/chat/route.ts" highlight="13"
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+```ts filename="app/api/chat/route.ts" highlight="20"
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
@@ -967,8 +1015,11 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse({
-    sendSources: true,
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      sendSources: true,
+    }),
   });
 }
 ```
@@ -1205,6 +1256,9 @@ export default function Page() {
   );
 }
 ```
+
+Files generated as part of model reasoning are available as `reasoning-file`
+parts (`ReasoningFileUIPart`) with the same `mediaType` and `url` properties.
 
 ## Type Inference for Tools
 

@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/frameworks/nextjs
   - /docs/cli
-  - /docs/flags/vercel-flags/dashboard/sdk-keys
   - /docs/flags/vercel-flags/dashboard/entities
   - /docs/flags/vercel-flags/sdks/core
+  - /docs/flags/vercel-flags/dashboard/segments
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "346b35005b025ee08bb850652d6cee1641716075a6ffdbabc2b1c13a38a37def"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "928344c4e7b42f4de69e25281031fb84fca6b4bc42465046bf724e14a50385ad"
 ---
 
 # Getting Started with Vercel Flags
@@ -36,8 +36,8 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
   3. Create a new flag named `marketing-banner`.
   4. Leave the **Type** set to **Boolean** and configure the environment settings to be **on** for Development and **off** for Preview and Production.
 
-- ### Pull environment variables
-  When you create your first flag, Vercel provisions [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys) for each environment and stores them in a `FLAGS` environment variable on your project. Pull them into your local `.env.local` file:
+- ### Pull local OpenID Connect credentials
+  Vercel Flags authenticates with the Vercel OpenID Connect (OIDC) token associated with your project. Vercel deployments receive this token automatically. For local development, pull environment variables into your `.env.local` file:
   ```bash filename="terminal"
   vercel env pull
   ```
@@ -53,7 +53,7 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 
 ## Built-in resilience
 
-When you deploy to Vercel, the build process fetches your latest flag definitions once at build time and bundles them into the deployment. This guarantees every function uses the same snapshot during the build, and provides a runtime fallback if the Vercel Flags service is temporarily unreachable. Definitions are only fetched when your project has at least one environment variable containing an SDK key for Vercel Flags.
+When you deploy to Vercel, the build process fetches your latest flag definitions once at build time and bundles them into the deployment. This guarantees every function uses the same snapshot during the build, and provides a runtime fallback if the Vercel Flags service is temporarily unreachable. Definitions are only fetched when you are using the Flags SDK packages or when your project has at least one environment variable containing an SDK key for Vercel Flags.
 
 Learn more about [embedded definitions](/docs/flags/vercel-flags/sdks/core#embedded-definitions).
 

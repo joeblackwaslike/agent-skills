@@ -1,21 +1,21 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/devtools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ae46f5be239a11967873840dfc3e2e75b651d1724b566bcb18a9d591fa092ef8"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "893e281f0fa00f08eac1288e2d1ce02dc22f9f94129e15b3c5de90f41733959a"
 ---
 
 # DevTools
 
 <Note type="warning">
-  AI SDK DevTools is experimental and intended for local development only. Do
-  not use in production environments.
+  AI SDK DevTools is intended for local development only. Do not use in
+  production environments.
 </Note>
 
 AI SDK DevTools gives you full visibility over your AI SDK calls with [`generateText`](/docs/reference/ai-sdk-core/generate-text), [`streamText`](/docs/reference/ai-sdk-core/stream-text), and [`ToolLoopAgent`](/docs/reference/ai-sdk-core/tool-loop-agent). It helps you debug and inspect LLM requests, responses, tool calls, and multi-step interactions through a web-based UI.
 
 DevTools is composed of two parts:
 
-1. **Middleware**: Captures runs and steps from your AI SDK calls
+1. **Telemetry Integration**: Captures runs and steps from your AI SDK calls via the [telemetry](/docs/ai-sdk-core/telemetry) system
 2. **Viewer**: A web UI to inspect the captured data
 
 ## Installation
@@ -28,33 +28,45 @@ pnpm add @ai-sdk/devtools
 
 ## Requirements
 
-- AI SDK v6 beta (`ai@^6.0.0-beta.0`)
+- AI SDK v7 (`ai@latest`)
 - Node.js compatible runtime
 
 ## Using DevTools
 
-### Add the middleware
+### Register the integration
 
-Wrap your language model with the DevTools middleware using [`wrapLanguageModel`](/docs/ai-sdk-core/middleware):
+Register `DevToolsTelemetry` globally so it captures all AI SDK calls:
 
 ```ts
-import { wrapLanguageModel, gateway } from 'ai';
-import { devToolsMiddleware } from '@ai-sdk/devtools';
+import { registerTelemetry } from 'ai';
+import { DevToolsTelemetry } from '@ai-sdk/devtools';
 
-const model = wrapLanguageModel({
-  model: gateway('anthropic/claude-sonnet-4.5'),
-  middleware: devToolsMiddleware(),
-});
+registerTelemetry(DevToolsTelemetry());
 ```
 
-The wrapped model can be used with any AI SDK Core function:
+Telemetry is enabled automatically once an integration is registered — no per-call configuration is needed:
 
-```ts highlight="4"
+```ts
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model, // wrapped model with DevTools
+  model: openai('gpt-4o'),
   prompt: 'What cities are in the United States?',
+});
+```
+
+You can also pass the integration to individual calls instead of registering it globally:
+
+```ts highlight="7-9"
+import { streamText } from 'ai';
+import { DevToolsTelemetry } from '@ai-sdk/devtools';
+
+const result = streamText({
+  model: openai('gpt-4o'),
+  prompt: 'Hello!',
+  telemetry: {
+    integrations: [DevToolsTelemetry()],
+  },
 });
 ```
 
@@ -81,7 +93,7 @@ npx @ai-sdk/devtools
 
 ## Captured data
 
-The DevTools middleware captures the following information from your AI SDK calls:
+DevTools captures the following information from your AI SDK calls:
 
 - **Input parameters and prompts**: View the complete input sent to your LLM
 - **Output content and tool calls**: Inspect generated text and tool invocations
@@ -95,14 +107,14 @@ DevTools organizes captured data into runs and steps:
 - **Run**: A complete multi-step AI interaction, grouped by the initial prompt
 - **Step**: A single LLM call within a run (e.g., one `generateText` or `streamText` call)
 
-Multi-step interactions, such as those created by tool calling or agent loops, are grouped together as a single run with multiple steps.
+Multi-step interactions, such as those created by tool calling or agent loops, are grouped together as a single run with multiple steps. Nested sub-agent calls are linked to their parent run, making it easy to trace the full execution tree.
 
 ## How it works
 
-The DevTools middleware intercepts all `generateText` and `streamText` calls through the [language model middleware](/docs/ai-sdk-core/middleware) system. Captured data is stored locally in a JSON file (`.devtools/generations.json`) and served through a web UI built with Hono and React.
+The `DevToolsTelemetry` integration hooks into the AI SDK [telemetry](/docs/ai-sdk-core/telemetry) lifecycle to capture all `generateText`, `streamText`, `generateObject`, and `streamObject` calls. Captured data is stored locally in a JSON file (`.devtools/generations.json`) and served through a web UI built with Hono and React.
 
 <Note type="warning">
-  The middleware automatically adds `.devtools` to your `.gitignore` file.
+  The integration automatically adds `.devtools` to your `.gitignore` file.
   Verify that `.devtools` is in your `.gitignore` to ensure you don't commit
   sensitive AI interaction data to your repository.
 </Note>
@@ -126,21 +138,27 @@ DevTools stores all AI interactions locally in plain text files, including:
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

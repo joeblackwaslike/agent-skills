@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-06-15T05:52:46.055Z"
-sha256: "d174a9be9427f4bf72f2a0184f846c6945af4d28392e0bb71d37116b1819e109"
+fetched_at: "2026-06-29T05:39:22.452Z"
+sha256: "bde263e8324ef8545e282fe50a8d1db5b3a07fce9454f0a78f6e3d21891f493a"
 ---
 
 # Available templates index
@@ -263,6 +263,7 @@ Templates
 | Typo3 | thucke | `ghcr.io/thucke/devcontainer-templates/typo3:0.8.2` | `0.8.2` |
 | Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.1.0` | `0.1.0` |
 | Magento Open Source | Doug Hatcher | `ghcr.io/doughatcher/devcontainer-templates/magento:0.3.0` | `0.3.0` |
+| Ansible Development Tools (AI & Claude Code) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.2.6` | `1.2.6` |
 
 
             

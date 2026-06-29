@@ -3,7 +3,7 @@ title: Open WebUI
 product: vercel
 url: /docs/ai-gateway/chat-platforms/open-webui
 canonical_url: "https://vercel.com/docs/ai-gateway/chat-platforms/open-webui"
-last_updated: 2026-02-26
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/chat-platforms
@@ -13,8 +13,8 @@ related:
 summary: Use Open WebUI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/open-webui.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "423ef7354fc8083e2bf573765fc3f06de21673a1d4f2b7de261a2652cb240011"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "72554f29649553e45a6e2884843471fcddfba69a6fef8df4689cf14ccc5b54c8"
 ---
 
 # Open WebUI

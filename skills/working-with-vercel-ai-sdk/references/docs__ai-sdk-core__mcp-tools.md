@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-06-15T05:56:27.795Z"
-sha256: "e48a521ae07b824beaf57971073a89b741bab0bdc873af03934decf7c06223c6"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e24fe5787bdb1a58e24d5d729e0f0ece0889050371a6bd04f0c97cb0ac83bd72"
 ---
 
 # Model Context Protocol (MCP)
@@ -44,11 +44,58 @@ const mcpClient = await createMCPClient({
     // optional: provide an OAuth client provider for automatic authorization
     authProvider: myOAuthClientProvider,
 
-    // optional: reject redirect responses to prevent SSRF
-    redirect: 'error',
+    // optional: allow redirect responses (default is 'error' to prevent SSRF)
+    redirect: 'follow',
   },
 });
 ```
+
+If the MCP server uses Streamable HTTP sessions, you can reattach to a saved
+session by restoring both the previous session id and initialize result:
+
+```typescript
+import { createMCPClient } from '@ai-sdk/mcp';
+
+const savedSession = await loadMcpSession();
+let currentSessionId = savedSession?.sessionId;
+
+const mcpClient = await createMCPClient({
+  transport: {
+    type: 'http',
+    url: 'https://your-server.com/mcp',
+    initialSessionId: savedSession?.sessionId,
+    initialProtocolVersion: savedSession?.initializeResult.protocolVersion,
+    terminateSessionOnClose: false,
+
+    onSessionIdChange: sessionId => {
+      currentSessionId = sessionId;
+    },
+
+    onSessionExpired: sessionId => {
+      if (currentSessionId === sessionId) {
+        currentSessionId = undefined;
+        void clearMcpSession();
+      }
+    },
+  },
+  initialInitializeResult: savedSession?.initializeResult,
+});
+
+if (currentSessionId) {
+  await saveMcpSession({
+    sessionId: currentSessionId,
+    initializeResult: mcpClient.initializeResult,
+  });
+}
+```
+
+When `initialInitializeResult` is provided, `createMCPClient` reuses the cached
+initialize metadata and does not send another `initialize` request. When
+`onSessionExpired` is called, the transport has already cleared the session id
+and the request still fails with the underlying HTTP error. Retry by creating a
+fresh client without `initialSessionId` or `initialInitializeResult`.
+Set `terminateSessionOnClose` to `false` when closing only the local client but
+keeping the MCP session available for a later reattach.
 
 Alternatively, you can use `StreamableHTTPClientTransport` from MCP's official TypeScript SDK:
 
@@ -82,8 +129,8 @@ const mcpClient = await createMCPClient({
     // optional: provide an OAuth client provider for automatic authorization
     authProvider: myOAuthClientProvider,
 
-    // optional: reject redirect responses to prevent SSRF
-    redirect: 'error',
+    // optional: allow redirect responses (default is 'error' to prevent SSRF)
+    redirect: 'follow',
   },
 });
 ```
@@ -117,8 +164,8 @@ You can also bring your own transport by implementing the `MCPTransport` interfa
 <Note>
   The client returned by the `createMCPClient` function is a
   lightweight client intended for use in tool conversion. It currently does not
-  support all features of the full MCP client, such as: session
-  management, resumable streams, and receiving notifications.
+  support all features of the full MCP client, such as automatic session
+  persistence, resumable streams, and receiving notifications.
 
 Authorization via OAuth is supported when using the AI SDK MCP HTTP or SSE
 transports by providing an `authProvider`.
@@ -164,7 +211,7 @@ After initialization, you should close the MCP client based on your usage patter
 - For short-lived usage (e.g., single requests), close the client when the response is finished
 - For long-running clients (e.g., command line apps), keep the client open but ensure it's closed when the application terminates
 
-When streaming responses, you can close the client when the LLM response has finished. For example, when using `streamText`, you should use the `onFinish` callback:
+When streaming responses, you can close the client when the LLM response has finished. For example, when using `streamText`, you should use the `onEnd` callback:
 
 ```typescript
 const mcpClient = await createMCPClient({
@@ -177,7 +224,7 @@ const result = await streamText({
   model: __MODEL__,
   tools,
   prompt: 'What is the weather in Brooklyn, New York?',
-  onFinish: async () => {
+  onEnd: async () => {
     await mcpClient.close();
   },
 });
@@ -412,6 +459,10 @@ You can see MCP in action in the following examples:
       title: 'Learn to handle MCP elicitation requests in Node.js',
       link: '/cookbook/node/mcp-elicitation',
     },
+    {
+      title: 'Learn to render MCP Apps',
+      link: '/docs/ai-sdk-core/mcp-apps',
+    },
   ]}
 />
 
@@ -423,21 +474,27 @@ You can see MCP in action in the following examples:
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)

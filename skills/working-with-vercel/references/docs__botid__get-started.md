@@ -3,7 +3,7 @@ title: Get Started with BotID
 product: vercel
 url: /docs/botid/get-started
 canonical_url: "https://vercel.com/docs/botid/get-started"
-last_updated: 2026-02-26
+last_updated: 2026-06-08
 type: tutorial
 prerequisites:
   - /docs/botid
@@ -13,8 +13,8 @@ related:
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "603a13652afb642e0727de596dbe6c254b48cf70ff8078592ffe0aae48c847f3"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "daa6237dee9e9f17d1f5133e0b2ade67e1c2d2376adee13dc25fb49ff2595b19"
 ---
 
 # Get Started with BotID

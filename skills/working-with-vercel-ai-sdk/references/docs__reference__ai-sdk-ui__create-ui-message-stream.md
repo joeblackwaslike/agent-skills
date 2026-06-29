@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c74317a6b88a2f0a1ee20cfb5a86819452f32089f32b5b15e06d90aa8cdc99eb"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "8ffa8542f7c4ec4082e88f244d7255062c2d59c0e82ad5b008bd66cd245fe7bd"
 ---
 
 # `createUIMessageStream`
@@ -48,12 +48,12 @@ const stream = createUIMessageStream({
       prompt: 'Write a haiku about AI',
     });
 
-    writer.merge(result.toUIMessageStream());
+    writer.merge(toUIMessageStream({ stream: result.stream }));
   },
   onError: error => `Custom error: ${error.message}`,
   originalMessages: existingMessages,
-  onFinish: ({ messages, isContinuation, responseMessage }) => {
-    console.log('Stream finished with messages:', messages);
+  onEnd: ({ messages, isContinuation, responseMessage }) => {
+    console.log('Stream ended with messages:', messages);
   },
 });
 ```
@@ -107,13 +107,12 @@ const stream = createUIMessageStream({
         'The original messages. If provided, persistence mode is assumed and a message ID is provided for the response message.',
     },
     {
-      name: 'onFinish',
+      name: 'onEnd',
       type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
-      description:
-        'A callback function that is called when the stream finishes.',
+      description: 'A callback function that is called when the stream ends.',
       properties: [
         {
-          type: 'FinishOptions',
+          type: 'EndOptions',
           parameters: [
             {
               name: 'messages',
@@ -148,6 +147,11 @@ const stream = createUIMessageStream({
       ],
     },
     {
+      name: 'onFinish',
+      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
+      description: 'Deprecated alias for `onEnd`.',
+    },
+    {
       name: 'generateId',
       type: 'IdGenerator | undefined',
       description:
@@ -168,6 +172,7 @@ A readable stream that emits UI message chunks. The stream automatically handles
 - [useChat](/docs/reference/ai-sdk-ui/use-chat)
 - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
 - [useObject](/docs/reference/ai-sdk-ui/use-object)
+- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
 - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
 - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
 - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
@@ -176,6 +181,7 @@ A readable stream that emits UI message chunks. The stream automatically handles
 - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
 - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
 
 

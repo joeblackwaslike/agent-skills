@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "850a7c357b8a5182869de3264b230e9182996b3d8cfb93b8441fa5f1d7ef9e10"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "d878c873eb7504d68c35fcac96e21f5f099422e26af032ee5b55929fd94418e7"
 ---
 
 # Black Forest Labs Provider
@@ -279,7 +279,7 @@ const blackForestLabs = createBlackForestLabs({
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
 - [Gladia](/providers/ai-sdk-providers/gladia)
 - [LMNT](/providers/ai-sdk-providers/lmnt)
-- [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai)
+- [Google](/providers/ai-sdk-providers/google)
 - [Hume](/providers/ai-sdk-providers/hume)
 - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
 - [Rev.ai](/providers/ai-sdk-providers/revai)

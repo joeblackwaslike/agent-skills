@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/050_configuration.md"
-fetched_at: "2026-06-16T12:24:33.275Z"
-sha256: "0a12acf7b837909ede4fe78fb91480f153916ed39a6546677e88e29f2144479d"
+fetched_at: "2026-06-29T05:45:05.522Z"
+sha256: "272c6deaed1f6bfdc4b83164e64b87b205b0d3bae6d5bc2dc517e189dc09f37b"
 ---
 
 # Configuration
@@ -33,10 +33,11 @@ Some of the configurable settings include:
     this can also be [overridden per project](per-project-language-backend)
   * UI settings affecting the [Serena Dashboard and GUI tool](060_dashboard.md)
   * the set of tools to enable/disable by default
-  * the set of modes to use by default
+  * the set of [modes](modes) to use by default
   * tool execution parameters (timeout, max. answer length)
   * global ignore rules
   * logging settings
+  * the set of trusted project paths
   * advanced settings specific to individual language servers (see [below](ls-specific-settings))
 
 The global configuration settings apply to all projects.
@@ -205,9 +206,12 @@ Most users will not need to adjust these settings.
 :::
 
 Under the key `ls_specific_settings` in `serena_config.yml`, you can you pass global per-language, 
-language server-specific configuration. You can use the same key in the project configuration files (`project.yml`
+language server-specific configuration. 
+
+You can use the same key in the project configuration files (`project.yml`
 and `project.local.yml` ) to override or extend the global settings for a specific project.
-The settings are merged on top-level, meaning that project-level settings for a language will replace global settings for the same language.
+The settings are merged on top-level, meaning that project-level settings for a language will replace global settings for the same language.  
+Note: Project-level settings are considered only for *trusted projects* (which are defined in the [global configuration](global-config)).
 
 Structure:
 

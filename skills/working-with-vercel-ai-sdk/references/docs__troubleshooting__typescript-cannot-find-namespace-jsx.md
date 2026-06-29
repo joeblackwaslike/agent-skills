@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/typescript-cannot-find-namespace-jsx.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5c9d9b425f1700dbedbe3c20dea162bbbff7a523afca4e5ac77347f08233c760"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "c073f2f58c53d71cf0a102277bd3b217ddef44433498c455315c0fafdd4a1cff"
 ---
 
 # TypeScript error "Cannot find namespace 'JSX'"
@@ -43,7 +43,7 @@ npm install @types/react
 - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
 - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
 - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onFinish not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
 - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
 - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
 - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)

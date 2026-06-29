@@ -3,7 +3,7 @@ title: Using the Go Runtime with Vercel Functions
 product: vercel
 url: /docs/functions/runtimes/go
 canonical_url: "https://vercel.com/docs/functions/runtimes/go"
-last_updated: 2026-03-17
+last_updated: 2026-06-08
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Go runtime to run Go APIs on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/go.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "743aabc9f913cdf4fd148e00f143f47c91b85ec19f1e1a18d1c092f3eb33bb29"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "fcab84744c8b7c98c4c08a490f245711b87d9e3548d3a03c8368ca0328202b05"
 ---
 
 # Using the Go Runtime with Vercel Functions

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0-data.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a7b7baec0fedc5104d3e0519516499e4acd33a57c792804ec47ed182ed5f56e3"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "e3ad8720509c7e210691d57a652baa7b022a9a8d69a6d12717f8a1150df8e50b"
 ---
 
 # Migrate Your Data to AI SDK 5.0
@@ -886,6 +886,7 @@ For more API change details, see the [main migration guide](/docs/migration-guid
 ## Navigation
 
 - [Versioning](/docs/migration-guides/versioning)
+- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
 - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
 - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
 - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)

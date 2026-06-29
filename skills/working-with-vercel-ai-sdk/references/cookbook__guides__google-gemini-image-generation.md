@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3432edab844923dfb58d8bb02bb77af453fec48442b70ad1e298b522041e0fbd"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "22d32bb6735d3ee0e316c378298ab2281be267e3e140393d62e327d9e01cbd23"
 ---
 
 # Generate and Edit Images with Google Gemini 2.5 Flash
@@ -68,9 +68,9 @@ async function editImage() {
             text: 'Add a small wizard hat to this cat. Keep everything else the same.',
           },
           {
-            type: 'image',
-            // image: DataContent (string | Uint8Array | ArrayBuffer | Buffer) or URL
-            image: new URL(
+            type: 'file',
+            // data: DataContent (string | Uint8Array | ArrayBuffer | Buffer) or URL
+            data: new URL(
               'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
             ),
             mediaType: 'image/jpeg',
@@ -114,6 +114,7 @@ For more advanced techniques, integration patterns, and practical examples, chec
 - [Get started with Computer Use](/cookbook/guides/computer-use)
 - [Add Skills to Your Agent](/cookbook/guides/agent-skills)
 - [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
+- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 - [Get started with Gemini 3](/cookbook/guides/gemini)
 - [Get started with Claude 4](/cookbook/guides/claude-4)
 - [OpenAI Responses API](/cookbook/guides/openai-responses)

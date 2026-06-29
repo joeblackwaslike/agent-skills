@@ -3,7 +3,7 @@ title: SDKs & APIs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis"
-last_updated: 2026-05-30
+last_updated: 2026-06-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "d1a9df694ad387e2c01d9a1b7d9d21e34dc7eb368a496a94d197aa2756f2e839"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "ef0f5d7ad3acf8755356933bdecaa99d519850847fd1bca19ee013d36336bfd6"
 ---
 
 # SDKs & APIs

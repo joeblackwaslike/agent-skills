@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/use-shared-chat-context.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "448f039413def3849b881524056522c75d55448f558d103a10666a18a5ad4d31"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "10f1a4b70ee1a87710294456e294c34640fbed106dd78df614d24eca036b75eb"
 ---
 
 # Share useChat State Across Components
@@ -159,7 +159,13 @@ export default function ChatInput() {
 Create an API route to handle the chat messages using the AI SDK.
 
 ```tsx filename='app/api/chat/route.ts'
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+  UIMessage,
+} from 'ai';
 
 export const maxDuration = 30;
 
@@ -171,7 +177,9 @@ export async function POST(req: Request) {
     messages: await convertToModelMessages(messages),
   });
 
-  return result.toUIMessageStreamResponse();
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream }),
+  });
 }
 ```
 

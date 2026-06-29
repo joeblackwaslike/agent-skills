@@ -1,20 +1,20 @@
 ---
-title: Amazon Bedrock
+title: Amazon Bedrock Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-20
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
   - /docs/ai-gateway/models-and-providers
 related:
   []
-summary: Learn about amazon bedrock on Vercel.
+summary: Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "519d334198d7b25c9442b66aea28bbe0c626e73b9c25cc758e06f604c61eca5b"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "7203631ef3a7f57377aa9f062d96bafb68b4bf690e13850ccdc741e561890568"
 ---
 
 # Amazon Bedrock Reasoning

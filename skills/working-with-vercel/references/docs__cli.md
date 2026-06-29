@@ -3,7 +3,7 @@ title: Vercel CLI Overview
 product: vercel
 url: /docs/cli
 canonical_url: "https://vercel.com/docs/cli"
-last_updated: 2026-06-01
+last_updated: 2026-06-22
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2e091ffa7569595ff6d8ad16650252e4a2e3888b68dd671ade864b04f0b1d4bd"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "e1dc1efcf909aa9c646832f5e85a440a907e13b92edca0b1445c6aee3a21932e"
 ---
 
 # Vercel CLI Overview
@@ -270,6 +270,23 @@ vercel certs rm [certificate-id]
 
 [Learn more about the certs command](/docs/cli/certs)
 
+### connect
+
+Manage connectors: create, list, attach to projects, request runtime tokens, and remove them. This is a beta command.
+
+```bash
+vercel connect create <type>
+vercel connect list
+vercel connect token <id>
+vercel connect attach <id>
+vercel connect detach <id>
+vercel connect update <id>
+vercel connect remove <id>
+vercel connect open <id>
+```
+
+[Learn more about the connect command](/docs/cli/connect)
+
 ### contract
 
 View contract commitment information for your Vercel account.
@@ -369,13 +386,14 @@ vercel domains check [domain] [...domain]
 
 ### edge-config
 
-Manage [Edge Config](/docs/edge-config) stores: list, create, inspect, update, remove, and manage items and read tokens.
+Manage [Edge Config](/docs/edge-config) stores: list, create, inspect, update, remove, and manage items, read tokens, and backups.
 
 ```bash
 vercel edge-config list
 vercel edge-config add flags
 vercel edge-config items flags --key betaUiEnabled
 vercel edge-config tokens flags --add "Production read"
+vercel edge-config backups flags
 ```
 
 [Learn more about the edge-config command](/docs/cli/edge-config)
@@ -417,6 +435,8 @@ Manage feature flags for your Vercel Project.
 vercel flags list
 vercel flags create [slug]
 vercel flags set [flag] --environment [environment] --variant [variant]
+vercel flags segments ls
+vercel flags segments create beta-users --add include:user.id=user_123
 vercel flags open [flag]
 ```
 
@@ -593,12 +613,13 @@ vercel mcp --project
 
 ### metrics
 
-Query observability metrics and inspect available metrics, dimensions, and aggregations.
+Query metrics from your terminal and inspect the schema to discover the metrics, dimensions, and aggregations available to your account.
 
 ```bash
-vercel metrics vercel.request.count
 vercel metrics schema
-vercel metrics schema vercel.request
+vercel metrics schema <metric-or-prefix>
+vercel metrics <metric-id> --since 7d --granularity 1d --project project-name --prod
+vercel metrics <metric-id> --all --group-by project_id --since 24h --prod
 ```
 
 [Learn more about the metrics command](/docs/cli/metrics)
@@ -833,7 +854,7 @@ Inspect request traces for your project.
 ```bash
 vercel traces get [request-id]
 vercel traces [request-id]
-vercel traces get [request-id] --open --view=tree
+vercel traces get [request-id] --open
 ```
 
 [Learn more about the traces command](/docs/cli/traces)

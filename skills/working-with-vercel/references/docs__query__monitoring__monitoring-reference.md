@@ -3,7 +3,7 @@ title: Monitoring Reference
 product: vercel
 url: /docs/query/monitoring/monitoring-reference
 canonical_url: "https://vercel.com/docs/query/monitoring/monitoring-reference"
-last_updated: 2026-03-17
+last_updated: 2026-06-16
 type: reference
 prerequisites:
   - /docs/query/monitoring
@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "df2646bf917476a10107fcdcd79d22d032310943fd444d14eebab07bf0c356f3"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "098dbbd70e94c032aef372fc9b143950207fc718de3edf77e73acd08a747c3e0"
 ---
 
 # Monitoring Reference

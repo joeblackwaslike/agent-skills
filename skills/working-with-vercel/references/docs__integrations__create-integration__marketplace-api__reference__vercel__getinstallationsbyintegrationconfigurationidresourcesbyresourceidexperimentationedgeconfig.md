@@ -3,7 +3,7 @@ title: getinstallationsbyintegrationconfigurationidresourcesbyresourceidexperime
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/getinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/getinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig"
-last_updated: 2026-06-22
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about getinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/getinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "b441e11d417e8e009c28c251ec2751ed28a031167dd6b0aa12073181a13626d9"
+fetched_at: "2026-06-29T05:46:34.852Z"
+sha256: "a451c736d6c3956ef5b799e8dd2991494108d6f78a01c86d792e6b1c4f7cd6e3"
 ---
 
 # Get the data of a user-provided Edge Config

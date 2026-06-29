@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "42ac55300e1c925573f974ffada0fc4570233e6a740bd04f197e235c953adb82"
+fetched_at: "2026-06-29T05:45:09.899Z"
+sha256: "f068ed2128e37285f9ea8df4feeee5450645f02dab9cf597a92adf63806477ea"
 ---
 
 # Provider & Model Management
@@ -135,6 +135,46 @@ export const myProvider = customProvider({
 });
 ```
 
+### Example: files and skills interfaces
+
+You can attach a provider's `files` or `skills` interface to your custom provider. This allows you to use `uploadFile` and `uploadSkill` through the same provider abstraction.
+
+```ts
+import { anthropic } from '@ai-sdk/anthropic';
+import { openai } from '@ai-sdk/openai';
+import { customProvider, uploadFile, uploadSkill } from 'ai';
+
+// custom provider with files interface:
+const myOpenAI = customProvider({
+  languageModels: {
+    'gpt-4o-mini': openai.responses('gpt-4o-mini'),
+  },
+  files: openai.files(),
+});
+
+// custom provider with skills interface:
+const myAnthropic = customProvider({
+  languageModels: {
+    sonnet: anthropic('claude-sonnet-4-5'),
+  },
+  skills: anthropic.skills(),
+});
+
+// usage:
+await uploadFile({
+  api: myOpenAI.files!(),
+  data: fileData,
+  filename: 'image.png',
+});
+await uploadSkill({
+  api: myAnthropic.skills!(),
+  files: skillFiles,
+  displayTitle: 'My Skill',
+});
+```
+
+If no `files` or `skills` option is set but a `fallbackProvider` is configured, the custom provider will inherit those interfaces from the fallback.
+
 ## Provider Registry
 
 You can create a [provider registry](/docs/reference/ai-sdk-core/provider-registry) with multiple providers and models using `createProviderRegistry`.
@@ -219,6 +259,87 @@ import { registry } from './registry';
 const { image } = await generateImage({
   model: registry.imageModel('openai:dall-e-3'),
   prompt: 'A beautiful sunset over a calm ocean',
+});
+```
+
+### Example: Use video models
+
+You can access video models by using the `videoModel` method on the registry.
+The provider id will become the prefix of the model id: `providerId:modelId`.
+
+```ts highlight={"8"}
+import { experimental_generateVideo } from 'ai';
+import { fal } from '@ai-sdk/fal';
+import { createProviderRegistry } from 'ai';
+
+const registry = createProviderRegistry({ fal });
+
+const { videos } = await experimental_generateVideo({
+  model: registry.videoModel('fal:luma-dream-machine/ray-2'),
+  prompt: 'A cat walking on a beach at sunset',
+});
+```
+
+### Example: Use files interface
+
+You can access a provider's files interface by calling `registry.files(providerId)`.
+This is useful when you want to upload files through a provider in the registry before referencing them in model requests.
+
+```ts highlight={"12,17"}
+import { openai } from '@ai-sdk/openai';
+import {
+  createProviderRegistry,
+  customProvider,
+  generateText,
+  uploadFile,
+} from 'ai';
+
+const registry = createProviderRegistry({
+  openai: customProvider({
+    languageModels: { 'gpt-4o-mini': openai.responses('gpt-4o-mini') },
+    files: openai.files(),
+  }),
+});
+
+const { providerReference } = await uploadFile({
+  api: registry.files('openai'),
+  data: fileData,
+  filename: 'image.png',
+});
+
+const { text } = await generateText({
+  model: registry.languageModel('openai:gpt-4o-mini'),
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'Describe what you see in this image.' },
+        { type: 'file', mediaType: 'image', data: providerReference },
+      ],
+    },
+  ],
+});
+```
+
+### Example: Use skills interface
+
+You can access a provider's skills interface by calling `registry.skills(providerId)`.
+
+```ts highlight={"7,12"}
+import { anthropic } from '@ai-sdk/anthropic';
+import { createProviderRegistry, customProvider, uploadSkill } from 'ai';
+
+const registry = createProviderRegistry({
+  anthropic: customProvider({
+    languageModels: { sonnet: anthropic('claude-sonnet-4-5') },
+    skills: anthropic.skills(),
+  }),
+});
+
+await uploadSkill({
+  api: registry.skills('anthropic'),
+  files: skillFiles,
+  displayTitle: 'My Skill',
 });
 ```
 
@@ -357,21 +478,27 @@ This simplifies provider usage and makes it easier to switch between providers w
 - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
 - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
+- [Reasoning](/docs/ai-sdk-core/reasoning)
 - [Embeddings](/docs/ai-sdk-core/embeddings)
 - [Reranking](/docs/ai-sdk-core/reranking)
 - [Image Generation](/docs/ai-sdk-core/image-generation)
+- [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
+- [File Uploads](/docs/ai-sdk-core/file-uploads)
 - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
 - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
 - [Error Handling](/docs/ai-sdk-core/error-handling)
 - [Testing](/docs/ai-sdk-core/testing)
 - [Telemetry](/docs/ai-sdk-core/telemetry)
 - [DevTools](/docs/ai-sdk-core/devtools)
-- [Event Callbacks](/docs/ai-sdk-core/event-listeners)
+- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
 
 
 [Full Sitemap](/sitemap.md)
