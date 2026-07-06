@@ -15,8 +15,8 @@ related:
 summary: Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/provider-options.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d72d94ea36367a4cf326676bf07b336629ab932ae692ea7f1e3a83d7329768df"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "042b079d21c2c6c54e54047a306012a0bb9e0b5ed93c2fe306493f599e3ad240"
 ---
 
 # Provider Options
@@ -37,11 +37,11 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     Authorization: `Bearer ${apiKey}`,
   },
   body: JSON.stringify({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     input: [{ type: 'message', role: 'user', content: 'Tell me a fun fact about octopuses.' }],
     providerOptions: {
       gateway: {
-        models: ['anthropic/claude-opus-4.7', 'openai/gpt-5.5', 'google/gemini-3.1-pro-preview'],
+        models: ['anthropic/claude-opus-4.8', 'openai/gpt-5.5', 'google/gemini-3.1-pro-preview'],
       },
     },
   }),

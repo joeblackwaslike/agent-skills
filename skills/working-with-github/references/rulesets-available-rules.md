@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-06-29T05:44:37.185Z"
-sha256: "eed3c24bec0f9b76260babbb51eab23271384668bbd980eacec207a77fd8aef4"
+fetched_at: "2026-07-06T05:37:45.074Z"
+sha256: "1df1b85360931a8d5983402daa9ba6a68b77d5548b99bc8a2b0f5932c1fa5a80"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -201,6 +201,20 @@ If your repositories are configured with {% data variables.product.prodname_code
 * {% data variables.product.prodname_code_quality_short %} found a result of a severity of the level defined in the ruleset, or a higher severity.
 
 For more information, see [AUTOTITLE](/code-security/code-quality/concepts/about-code-quality) and [AUTOTITLE](/code-security/code-quality/how-tos/set-pr-thresholds).
+
+## Restrict code coverage
+
+> [!NOTE]
+> This feature is in {% data variables.release-phases.public_preview %} and subject to change.
+
+If your repository has {% data variables.product.prodname_code_quality %} enabled and code coverage data is being uploaded, you can use rulesets to prevent pull requests from being merged based on code coverage thresholds. For more information about uploading coverage data, see [AUTOTITLE](/code-security/how-tos/maintain-quality-code/set-up-code-coverage).
+
+This rule blocks a pull request from being merged when either of two code coverage thresholds is not met:
+
+* **Minimum coverage percentage**: the aggregated code coverage for the pull request branch is below the configured percentage.
+* **Maximum coverage drop**: code coverage drops by more than the configured number of percentage points relative to the default branch.
+
+For how to configure the thresholds, the prerequisite for uploading coverage data, and how to roll the rule out safely, see [AUTOTITLE](/code-security/how-tos/maintain-quality-code/restrict-code-coverage).
 
 {% endif %}
 

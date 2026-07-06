@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/streaming-output.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "373f30b609f22d74493bb8fd4e3f020b36e55ebc4ad2aeebefdf0ab891fbb7b5"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "881fecf52ff379c6fa3b10404e9ffe5a3eabe147c6ac42523b611a8eb3196a20"
 ---
 
 > ## Documentation Index
@@ -93,7 +93,7 @@ Both contain raw Claude API events, not accumulated text. You need to extract an
       uuid: str  # Unique identifier for this event
       session_id: str  # Session identifier
       event: dict[str, Any]  # The raw Claude API stream event
-      parent_tool_use_id: str | None  # Parent tool ID if from a subagent
+      parent_tool_use_id: str | None  # Always None
   ```
 
   ```typescript TypeScript theme={null}
@@ -107,6 +107,8 @@ Both contain raw Claude API events, not accumulated text. You need to extract an
   };
   ```
 </CodeGroup>
+
+The `parent_tool_use_id` field is always `None` in Python and `null` in TypeScript. Stream events are emitted for the main session only; token-level deltas from subagents aren't forwarded. To attribute output to a subagent, use complete messages, which carry `parent_tool_use_id`. See [Detect subagent invocation](/en/agent-sdk/subagents#detect-subagent-invocation).
 
 The `event` field contains the raw streaming event from the [Claude API](https://platform.claude.com/docs/en/build-with-claude/streaming#event-types). Common event types include:
 

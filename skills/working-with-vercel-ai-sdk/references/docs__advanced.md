@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6707c9dd6b10483e3e4c1f57928f8633ad48162ba9667d8bbc18649e8c8b07ba"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "f1a9ea3d19c4e1189a623181e9b299c93ef65e64984aae4e75b66deb0bf836a4"
 ---
 
 # Advanced
@@ -126,6 +126,7 @@ After these concepts, you should have a better understanding of the paradigms be
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -1,7 +1,7 @@
 ---
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_modularize_imports.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3a74e9eb2dbc692fca6eaa3c882bb93e261dd760ed8689a3a91b17c0f6723b8d"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "618dac17afa1212cff62f916c8338c11dc74556d271618f60f7dee5251a23761"
 ---
 
 # Page Not Found
@@ -10,7 +10,7 @@ sha256: "3a74e9eb2dbc692fca6eaa3c882bb93e261dd760ed8689a3a91b17c0f6723b8d"
 
 - [Conformance Rules](/docs/conformance/rules.md): Conformance is available on Enterprise plans This page lists all the builtin rules that Conformance will check for by default in your application.
 - [NEXTJS_MISSING_MODULARIZE_IMPORTS](/docs/conformance/rules/nextjs_missing_modularize_imports.md): Conformance is available on Enterprise plans This rule has been deprecated as of version 1.10.0and will be removed in 1.10.0. modularizeImports is a
-- [NEXTJS_MISSING_OPTIMIZE_PACKAGE_IMPORTS](/docs/conformance/rules/nextjs_missing_optimize_package_imports.md): Conformance is available on Enterprise plans optimizePackageImports is a feature added in Next 13.5 that improves compilation speed when importing
 - [Conformance changelog](/docs/conformance/changelog.md): Conformance is available on Enterprise plans Upgrade instructions Terminal pnpm update latest recursive @vercelprivate/conformance Releases 1.12.3
+- [NEXTJS_MISSING_OPTIMIZE_PACKAGE_IMPORTS](/docs/conformance/rules/nextjs_missing_optimize_package_imports.md): Conformance is available on Enterprise plans optimizePackageImports is a feature added in Next 13.5 that improves compilation speed when importing
 
 All pages: [/llms.txt](/llms.txt)

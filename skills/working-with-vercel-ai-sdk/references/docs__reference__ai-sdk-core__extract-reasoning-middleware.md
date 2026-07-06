@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/extract-reasoning-middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e22fac00d4a73a28cf8a5791982bfc5a662bdb38d58f519b1321199a9fc74d34"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "39b11755868a9340424d94c75def70763d7d9531734d1f29ad109c4590e31944"
 ---
 
 # `extractReasoningMiddleware()`
@@ -77,6 +77,7 @@ The middleware works with the `LanguageModelV4StreamPart` type for streaming res
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

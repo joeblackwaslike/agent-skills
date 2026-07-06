@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/context-window.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "039ed0642ae19bbb63bb54b4154aadb7151de517b6d2e64316ea8155498f1afa"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "a6d66f6299ab4a8cf97b8bcd696d0d59754c7f8cec9146b2ddf18c5f7ea6f6bd"
 ---
 
 > ## Documentation Index
@@ -1589,7 +1589,7 @@ The session walks through a realistic flow with representative token counts:
 
 ## What survives compaction
 
-When a long session compacts, Claude Code summarizes the conversation history to fit the context window. What happens to your instructions depends on how they were loaded:
+When a long session compacts, Claude Code summarizes the conversation history to fit the context window. {/* min-version: 2.1.198 */}As of v2.1.198, the summarization request inherits your session's [extended thinking](/en/model-config#extended-thinking) configuration, so it reasons with thinking enabled when your session has it enabled and stays off otherwise. Thinking affects only how the summary is produced; your session settings are unchanged afterward. What happens to your instructions depends on how they were loaded:
 
 | Mechanism                                 | After compaction                                                                            |
 | :---------------------------------------- | :------------------------------------------------------------------------------------------ |
@@ -1615,7 +1615,7 @@ You can also act before the automatic pass runs:
 * **Clear between tasks**: run `/clear` when switching to unrelated work. Old conversation crowds out the files you need next and costs tokens on every message.
 * **Delegate large reads**: send research to a [subagent](/en/sub-agents) so the file contents stay in its context window, not yours.
 
-If you need a larger window rather than a smaller conversation, Fable 5, Opus 4.6 and later, and Sonnet 4.6 support a 1 million token context window. See [Extended context](/en/model-config#extended-context) for availability by plan and how to select a `[1m]` model variant. Compaction works the same way at the larger limit.
+If you need a larger window rather than a smaller conversation, Fable 5, Sonnet 5, Opus 4.6 and later, and Sonnet 4.6 support a 1 million token context window. See [Extended context](/en/model-config#extended-context) for availability by plan and how to select a `[1m]` model variant. Sonnet 5 runs at 1M with no `[1m]` variant to select; see [Sonnet 5 context window](/en/model-config#sonnet-5-context-window) for its auto-compaction thresholds and the LLM gateway exception. Compaction works the same way at the larger limit.
 
 ## Check your own session
 

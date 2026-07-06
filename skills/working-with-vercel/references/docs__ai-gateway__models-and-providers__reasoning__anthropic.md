@@ -13,8 +13,8 @@ related:
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7a7448047c4b526c20b798fd91f21de141edcad0d115f53dd2a6b3c3453111af"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "3a0c06f80bea2d07bc4b9554c69c4dd463b5625cdbe54a14a0eb8a63cec1cae3"
 ---
 
 # Anthropic Reasoning
@@ -43,7 +43,7 @@ When you enable adaptive thinking, set the `effort` parameter to control depth. 
 
 | Model                         | Effort levels                             | Default |
 | ----------------------------- | ----------------------------------------- | ------- |
-| `anthropic/claude-opus-4.7`   | `low`, `medium`, `high`, `xhigh`, `max`   | `high`  |
+| `anthropic/claude-opus-4.8`   | `low`, `medium`, `high`, `xhigh`, `max`   | `high`  |
 | `anthropic/claude-opus-4.6`   | `low`, `medium`, `high`, `max`            | `high`  |
 | `anthropic/claude-sonnet-4.6` | `low`, `medium`, `high`                   | `high`  |
 
@@ -92,7 +92,7 @@ On Claude Opus 4.7, set `display: 'summarized'` to receive reasoning text — it
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Explain quantum entanglement in simple terms.',
   providerOptions: {
     anthropic: {
@@ -159,7 +159,7 @@ Starting with Claude Opus 4.7, thinking content is **omitted from the response b
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Explain quantum entanglement in simple terms.',
   providerOptions: {
     anthropic: {

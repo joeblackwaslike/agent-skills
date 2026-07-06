@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/get-realtime-tool-definitions.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b3cfcca326a6235bab157aad43b311d946c94ba77eeab1396dfb06298ece4b6c"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "ee6305bceee15d946685c08316375d6503b9d4bdafd32e3348e7a23e303adb7c"
 ---
 
 # `experimental_getRealtimeToolDefinitions()`
@@ -135,6 +135,7 @@ Each returned definition contains:
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

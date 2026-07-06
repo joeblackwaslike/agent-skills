@@ -9,15 +9,15 @@ prerequisites:
   - /docs/rolling-releases
 related:
   - /docs/cli/project-linking
+  - /docs/rolling-releases
   - /docs/cli/rolling-release
   - /docs/cli/deploy
   - /docs/cli/logs
-  - /docs/rolling-releases
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7a77815e280e626a976eb89b8f79a18d8137ce5b37e0745c850e6e29e4372c54"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "5e781b4e91d8085d0e00034b54f9dc6d242a414ae630c8713bd730607b5454c0"
 ---
 
 # Performing a rolling release deployment
@@ -90,7 +90,9 @@ Begin the rolling release to start shifting traffic to the new deployment:
 vercel rolling-release start --dpl <deployment-url>
 ```
 
-This starts at the first stage (10% of traffic in the example configuration above).
+This starts at the first stage (10% of traffic in the example configuration above). The start command is idempotent. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
+
+To send 100% of traffic to the canary, run [`vercel rolling-release complete`](/docs/cli/rolling-release#complete). See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
 
 ## 4. Monitor the release
 

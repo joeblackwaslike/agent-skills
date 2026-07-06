@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/reference/configuration.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "1f9964df7fe389666e986d556770aa3fe4d5d0aa3c1594d9e26ad304ec4841cc"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "d6921fd7a44cf73c0e09063d42aeebd01695fdc1848505df515b573dbf8d579d"
 ---
 
 # Configuration
@@ -51,7 +51,7 @@ Override with environment variables:
 | `display.showThinkingBlocks`          | boolean | Render model thinking blocks when available                             |
 | `display.showStatusIndicators`        | boolean | Enable terminal title status indicators                                 |
 | `display.showStatusLineRunningTime`   | boolean | Show elapsed running time in the status line                            |
-| `approvalMode`                        | string  | Approval mode: `allowlist` or `unrestricted`                            |
+| `approvalMode`                        | string  | Approval mode: `allowlist`, `auto-review`, or `unrestricted`            |
 | `sandbox.mode`                        | string  | Sandbox mode override                                                   |
 | `sandbox.networkAccess`               | string  | Network access setting for sandbox mode                                 |
 | `network.useHttp1ForAgent`            | boolean | Use HTTP/1.1 instead of HTTP/2 for agent connections (default: `false`) |

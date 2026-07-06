@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/ultraplan.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "da4a30a211896239913bea7e753dafac6b1b79ca8f57f30057f753ed4603ab44"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "efcf21af4e0bc3d7f8a235ca3905c64cd9ab2e2a4bd3d1835905543b43fc4b63"
 ---
 
 > ## Documentation Index
@@ -24,7 +24,7 @@ This is useful when you want a richer review surface than the terminal offers:
 * **Hands-off drafting**: the plan is generated remotely, so your terminal stays free for other work
 * **Flexible execution**: approve the plan to run on the web and open a pull request, or send it back to your terminal
 
-Ultraplan requires a [Claude Code on the web](/en/claude-code-on-the-web) account and a GitHub repository. Because it runs on Anthropic's cloud infrastructure, it is not available when using Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. The cloud session runs in your account's default [cloud environment](/en/claude-code-on-the-web#the-cloud-environment). If you don't have a cloud environment yet, ultraplan creates one automatically when it first launches.
+Ultraplan requires a [Claude Code on the web](/en/claude-code-on-the-web) account and a GitHub repository. Because it runs on Anthropic's cloud infrastructure, it is not available when using Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry. The cloud session runs in your account's default [cloud environment](/en/claude-code-on-the-web#the-cloud-environment). If you don't have a cloud environment yet, ultraplan creates one automatically when it first launches.
 
 ## Launch ultraplan from the CLI
 

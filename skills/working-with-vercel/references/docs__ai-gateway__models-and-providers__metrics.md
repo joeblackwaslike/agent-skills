@@ -15,8 +15,8 @@ related:
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9151ceba2e8d5e1ff9bdad275e889c6049ece1fa5ecad6b9bd0edb892c16df25"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "9b17382ea59a438a5848d4bf6542c5f58505f898ef38401a809e7a3aa23826d5"
 ---
 
 # Metrics
@@ -57,11 +57,11 @@ Select **Share** in the top-right corner to export the current view as an image.
 Each endpoint returned by the [model endpoints API](/docs/ai-gateway/sdks-and-apis/rest-api#get-model-endpoints) includes rolling one-hour metrics for that provider:
 
 ```bash
-curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-4.7/endpoints \
+curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-4.8/endpoints \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
 ```
 
-Replace `anthropic/claude-opus-4.7` with the model ID you want to inspect, and set `AI_GATEWAY_API_KEY` to a valid [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys). Each endpoint object includes:
+Replace `anthropic/claude-opus-4.8` with the model ID you want to inspect, and set `AI_GATEWAY_API_KEY` to a valid [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys). Each endpoint object includes:
 
 | Field                    | Type   | Description                                         |
 | ------------------------ | ------ | --------------------------------------------------- |
@@ -75,7 +75,7 @@ Example response excerpt:
 ```json
 {
   "data": {
-    "id": "anthropic/claude-opus-4.7",
+    "id": "anthropic/claude-opus-4.8",
     "endpoints": [
       {
         "provider_name": "anthropic",

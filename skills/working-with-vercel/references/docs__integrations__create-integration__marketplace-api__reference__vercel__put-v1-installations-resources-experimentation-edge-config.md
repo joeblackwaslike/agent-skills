@@ -3,7 +3,7 @@ title: put-v1-installations-resources-experimentation-edge-config
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-edge-config
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-edge-config"
-last_updated: 2026-06-29
+last_updated: 2026-07-06
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about put-v1-installations-resources-experimentation-edge-config on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-edge-config.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4122fea9eda1280ac4406b152e6e2ab0082a7fe620d5f9c3586ddf857675ff17"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "f36558a4ae771cf7a2657dba64b9961673eb88f3dd20a586c38ff96eb9c72cdc"
 ---
 
 # Push data into a user-provided Edge Config

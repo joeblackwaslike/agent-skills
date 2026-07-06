@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/fast-mode.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "8443f1b64add29642c72afc518e50404581b270a4a9d5e59e069b29ee17fe146"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "52711b9ccee798b09432f1b1571eb64328c34dcc989f63e71e55fb959c485229"
 ---
 
 > ## Documentation Index
@@ -99,7 +99,7 @@ You can combine both: use fast mode with a lower [effort level](/en/model-config
 
 Fast mode requires all of the following:
 
-* **Anthropic API or subscription only**: fast mode is available through the Anthropic Console API and for Claude subscription plans using usage credits. It is not available on Amazon Bedrock, Google Vertex AI, Microsoft Azure Foundry, or Claude Platform on AWS.
+* **Anthropic API or subscription only**: fast mode is available through the Anthropic Console API and for Claude subscription plans using usage credits. It is not available on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS.
 * **Usage credits turned on**: your account must have usage credits turned on, which allows billing beyond your plan's included usage. For individual accounts, turn this on in your [Console billing settings](https://platform.claude.com/settings/organization/billing). For Team and Enterprise, an admin must turn on usage credits for the organization.
 
 <Note>

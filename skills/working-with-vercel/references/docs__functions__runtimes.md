@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "597beb7ffb17b685afe15645c053edabdae0ff6a95e6e99d14ee947e3fcffa61"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "1993fd5655307494c3dc1efea587d8dcf4205271bed8489aa96bddf1923e5525"
 ---
 
 # Runtimes
@@ -43,7 +43,7 @@ Vercel Functions support the following official runtimes:
 
 ## Community runtimes
 
-If you would like to use a language that Vercel does not support by default, you can use a community runtime by setting the [`functions` property](/docs/project-configuration#functions) in `vercel.json`. For more information on configuring other runtimes, see [Configuring your function runtime](/docs/functions/configuring-functions/runtime#other-runtimes).
+If you would like to use a language that Vercel does not support by default, you can use a community runtime by setting the [`functions` property](/docs/project-configuration/vercel-json#functions) in `vercel.json`. For more information on configuring other runtimes, see [Configuring your function runtime](/docs/functions/configuring-functions/runtime#other-runtimes).
 
 The following community runtimes are recommended by Vercel:
 
@@ -54,6 +54,10 @@ The following community runtimes are recommended by Vercel:
 | PHP     | `vercel-php`   | https://github.com/vercel-community/php  |
 
 You can create a community runtime by using the [Runtime API](https://github.com/vercel/vercel/blob/main/DEVELOPING_A_RUNTIME.md). Alternatively, you can use the [Build Output API](/docs/build-output-api/v3).
+
+## Container Images
+
+Vercel Functions support deploying custom OCI container images stored in the [Vercel Container Registry (VCR)](/docs/container-registry). Learn more about [deploying container images](/docs/functions/container-images).
 
 ## Features
 
@@ -73,7 +77,7 @@ Location refers to where your functions are **executed**. Each function runs in 
 
 Vercel's failover mode refers to the system's behavior when a function fails to execute because of data center downtime.
 
-Vercel provides [redundancy](/docs/regions#outage-resiliency) and automatic failover for Vercel Functions using the Edge runtime. For Vercel Functions on the Node.js runtime, you can use the [`functionFailoverRegions` configuration](/docs/project-configuration#functionfailoverregions) in your `vercel.json` file to specify which regions the function should automatically failover to.
+Vercel provides [redundancy](/docs/regions#outage-resiliency) and automatic failover for Vercel Functions using the Edge runtime. For Vercel Functions on the Node.js runtime, you can use the [`functionFailoverRegions` configuration](/docs/project-configuration/vercel-json#functionfailoverregions) in your `vercel.json` file to specify which regions the function should automatically failover to.
 
 ### Isolation boundary
 

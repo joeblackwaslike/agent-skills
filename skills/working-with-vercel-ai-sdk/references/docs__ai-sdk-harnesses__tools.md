@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/tools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "45aaf3970a6b61853917f72dc398e0801d71ad7f9cd6b10afcb59c39e9286f9a"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "6af46a679e63e9cb09a8f605a92a778df71f1d58ee0d3ef56b84612e2a67920e"
 ---
 
 # Harness Tools
@@ -91,6 +91,55 @@ const agent = new HarnessAgent({
 
 When the harness calls `weather`, `HarnessAgent` executes the tool in your host
 process, then submits the result back to the harness runtime.
+
+## Tool Filtering
+
+Use `activeTools` or `inactiveTools` on `HarnessAgent` to control which tools the
+harness can call. Both settings accept tool names from the combined tool set:
+the built-in tools declared by the harness adapter and the AI SDK tools passed
+with `tools`.
+
+`activeTools` is an allowlist:
+
+```ts
+const agent = new HarnessAgent({
+  harness: claudeCode,
+  sandbox: createVercelSandbox({
+    runtime: 'node24',
+    ports: [4000],
+  }),
+  tools: { weather },
+  activeTools: ['weather'],
+});
+```
+
+`inactiveTools` is a denylist:
+
+```ts
+const agent = new HarnessAgent({
+  harness: claudeCode,
+  sandbox: createVercelSandbox({
+    runtime: 'node24',
+    ports: [4000],
+  }),
+  tools: { weather },
+  inactiveTools: ['bash', 'write'],
+});
+```
+
+Pass either `activeTools` or `inactiveTools`, not both. The TypeScript settings
+type prevents combining them, and `HarnessAgent` also throws at runtime when
+both are specified.
+
+For host-executed tools, inactive tools are not passed to the underlying
+harness runtime. If the runtime still attempts to call one, `HarnessAgent`
+returns an execution-denied tool result.
+
+For built-in tools, support depends on the harness adapter. Some adapters can
+filter built-ins natively. Others enforce filtering through their built-in tool
+approval mechanism by denying inactive built-in calls before they execute,
+without emitting approval request or response stream parts. Adapters that
+support neither mechanism throw when you filter built-in tools.
 
 ## Sandbox in Tool Execution
 

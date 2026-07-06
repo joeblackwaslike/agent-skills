@@ -12,12 +12,12 @@ related:
   - /docs/rbac/access-roles
   - /docs/limits/fair-use-guidelines
   - /docs/projects/overview
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "f2578f99da3bf815f3bc80836249bb5419014feebd9ed2a6b6f69b938be01cea"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "261889289d4442ce6fd71128218323c5163b0121bab5fa53aba630afc16418d1"
 ---
 
 # Error List
@@ -84,13 +84,13 @@ A [Project](/docs/projects/overview) has several settings that can be found in t
 
 However, the **Build & Development Settings** are only applied to [zero-configuration](/kb/guide/upgrade-to-zero-configuration) deployments.
 
-If a deployment defines the [`builds`](/docs/project-configuration#builds) configuration property, the **Build & Development Settings** are ignored.
+If a deployment defines the [`builds`](/docs/project-configuration/vercel-json#builds) configuration property, the **Build & Development Settings** are ignored.
 
 ## Unused Vercel Function region setting
 
 A [project](/docs/projects/overview) has several settings that can be found in the dashboard. One of those settings, **Vercel Function Region**, is used to select the [region](/docs/regions) where your Vercel functions execute.
 
-If a deployment defines the [`regions`](/docs/project-configuration#regions) configuration property in `vercel.json`, the **Vercel Function Region** setting is ignored.
+If a deployment defines the [`regions`](/docs/project-configuration/vercel-json#regions) configuration property in `vercel.json`, the **Vercel Function Region** setting is ignored.
 
 If a CLI Deployment defines the [`--regions`](/docs/cli/deploy#regions) option, the **Vercel Function Region** setting is ignored.
 
@@ -173,7 +173,7 @@ These conflicting configuration errors occur if:
 
 ## Conflicting functions and builds configuration
 
-There are two ways to configure Vercel functions in your project: [functions](/docs/project-configuration#functions) *or* [`builds`](/docs/project-configuration#builds). However, only one of them may be used at a time - they cannot be used in conjunction.
+There are two ways to configure Vercel functions in your project: [functions](/docs/project-configuration/vercel-json#functions) *or* [`builds`](/docs/project-configuration/vercel-json#builds). However, only one of them may be used at a time - they cannot be used in conjunction.
 
 For most cases, it is recommended to use the `functions` property because it supports more features, such as:
 
@@ -181,11 +181,11 @@ For most cases, it is recommended to use the `functions` property because it sup
 - More reliable because it requires a specific npm package version for the `runtime` property
 - Supports "clean URLs" by default, which means that the Vercel functions are automatically accessible without their file extension in the URL
 
-However, the [`builds`](/docs/project-configuration#builds) property will remain supported for backward compatibility purposes.
+However, the [`builds`](/docs/project-configuration/vercel-json#builds) property will remain supported for backward compatibility purposes.
 
 ## Unsupported functions configuration with Nextjs
 
-When using Next.js, only `memory` and `maxDuration` can be configured within the [functions](/docs/project-configuration#functions) property. Next.js automatically handles the other configuration values for you.
+When using Next.js, only `memory` and `maxDuration` can be configured within the [functions](/docs/project-configuration/vercel-json#functions) property. Next.js automatically handles the other configuration values for you.
 
 ## Deploying Vercel functions to multiple regions
 
@@ -197,7 +197,7 @@ To select the region closest to you, read our [guide](/docs/functions/configurin
 
 ## Unmatched function pattern
 
-The [functions](/docs/project-configuration#functions) property uses a glob pattern for each key. This pattern must match Vercel Function source files within the `api` directory.
+The [functions](/docs/project-configuration/vercel-json#functions) property uses a glob pattern for each key. This pattern must match Vercel Function source files within the `api` directory.
 
 If you are using Next.js, Vercel functions source files can be created in the following:
 

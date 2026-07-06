@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-language-model.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7f3c0ccb31bc6b9893a6188ea9a95929d7aab5d339e6594e8193ac274e46c591"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "37358bd54b8289f086a5435c885eee8d7147f935ccc3be27b5587469de41bb73"
 ---
 
 # `wrapLanguageModel()`
@@ -68,6 +68,7 @@ A new `LanguageModelV4` instance with middleware applied.
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

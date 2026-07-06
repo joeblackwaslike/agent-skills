@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "55b5598341ecc9110f4ebccd5134d6b17f770c3393396b604b8a8f2943250caa"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "27d5e20f752e6c530d83405ceb1d132f187aa389c0a0d65dc020b6e00795b1c7"
 ---
 
 # Amazon Bedrock Provider
@@ -1586,6 +1586,7 @@ const result = await generateText({
 
 Anthropic has reasoning support for Claude 3.7 and Claude 4 models on Bedrock, including:
 
+- `us.anthropic.claude-sonnet-5`
 - `us.anthropic.claude-fable-5`
 - `us.anthropic.claude-opus-4-8`
 - `us.anthropic.claude-opus-4-7`
@@ -1625,6 +1626,7 @@ on how to integrate reasoning into your chatbot.
 
 | Model                                          | Image Input         | Object Generation   | Tool Usage          | Computer Use        | Reasoning           |
 | ---------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
+| `us.anthropic.claude-sonnet-5`                 | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | `us.anthropic.claude-fable-5`                  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | `us.anthropic.claude-opus-4-8`                 | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | `us.anthropic.claude-opus-4-7`                 | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |

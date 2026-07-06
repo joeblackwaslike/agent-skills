@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e788cffc9d2c0ed21826960e2f8c2d6ac12ef672ace7298a06841bea3683fb9e"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "7d4d8f6d8d5498a1e16e6068c61aa2b3f1e36399f2e70611eec3fe7427991e9d"
 ---
 
 # AI SDK Harnesses
@@ -124,6 +124,7 @@ tools, UI, and terminal usage.
   - [Raindrop](/providers/observability/raindrop)
   - [Respan](/providers/observability/respan)
   - [Scorecard](/providers/observability/scorecard)
+  - [Sentry](/providers/observability/sentry)
   - [SigNoz](/providers/observability/signoz)
   - [Traceloop](/providers/observability/traceloop)
   - [Weave](/providers/observability/weave)

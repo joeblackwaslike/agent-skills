@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/latitude.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f74aaa737903c93ea20116be1d451f1551447c887a0b97faffd7ab83475e0fba"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "cc8d3110120ce3462000eb139cdfb52c7164142755361453a2521677d8991be3"
 ---
 
 # Latitude Observability
@@ -103,6 +103,7 @@ await capture('generate-support-reply', async () => {
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8323953203e03a657dbaf950ed94c2e02a002715967645c47d56a7dbe4ab2e05"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "ecf96d824e26c0e734e9b4e2d1f6f0733b29e08d5adccde8845ce5c05e86d605"
 ---
 
 # Foundations
@@ -165,6 +165,7 @@ sha256: "8323953203e03a657dbaf950ed94c2e02a002715967645c47d56a7dbe4ab2e05"
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

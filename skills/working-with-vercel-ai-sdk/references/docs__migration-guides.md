@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "5fcbbbb64f447e96c467963f10dccb837cb25082ddbb269c150e7c5ef62a156c"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "5b15aeb45e5c6d8f1d7943c7ed44cf101e105e65eb89a811d0aa815688f76e24"
 ---
 
 # Migration Guides
@@ -138,6 +138,7 @@ sha256: "5fcbbbb64f447e96c467963f10dccb837cb25082ddbb269c150e7c5ef62a156c"
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

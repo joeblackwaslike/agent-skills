@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/projects/overview
   - /docs/functions
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/cron-jobs
   - /docs/deployments/environments
 summary: Learn how to schedule cron jobs to run at specific times or intervals.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/quickstart.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0437c9f3a52a7f5e928667cde65125387c7a3f51a0b688a6477ab1f870c92470"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "9e7005f38ebe06588a1eb182b1734aa1d4ceab62c00beb98ebee76f9eea996a3"
 ---
 
 # Getting started with cron jobs
@@ -64,7 +64,7 @@ This guide will help you get started with using cron jobs on Vercel. Cron jobs a
   ```
 
 - ### Create or update your `vercel.json` file
-  Create or go to your [`vercel.json`](/docs/project-configuration#functions) file and add the following code:
+  Create or go to your [`vercel.json`](/docs/project-configuration/vercel-json#functions) file and add the following code:
   ```json filename="vercel.json"
   {
     "$schema": "https://openapi.vercel.sh/vercel.json",

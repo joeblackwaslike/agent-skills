@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e24fe5787bdb1a58e24d5d729e0f0ece0889050371a6bd04f0c97cb0ac83bd72"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "bc8b5a203fbeb855b2ef6240a41e25b63b7387399ac0a2c33f698c63611cd737"
 ---
 
 # Model Context Protocol (MCP)
@@ -204,6 +204,34 @@ This hook is called before the SDK fetches authorization server metadata, so a
 rejected URL is not requested. It is optional and does not change existing OAuth
 flows unless you implement it.
 
+### Retrying Transient Tool Failures
+
+MCP tool calls can fail for transient transport reasons, such as rate limits,
+temporary overload, or gateway timeouts. You can opt into automatic retries for
+`tools/call` requests by passing `maxRetries` when creating the client:
+
+```typescript
+const mcpClient = await createMCPClient({
+  transport: {
+    type: 'http',
+    url: 'https://your-server.com/mcp',
+  },
+  maxRetries: 2,
+});
+```
+
+Retries are disabled by default. Built-in retry matching is intended for
+transient HTTP and network failures only. JSON-RPC application errors, such as
+invalid tool arguments, are surfaced immediately without retrying. Successful
+MCP tool responses with `isError: true` are also returned to the model without
+retrying.
+
+<Note type="warning">
+  Only enable retries for MCP tools where retrying is safe. Retrying
+  non-idempotent tools, such as tools that send emails or create records, can
+  duplicate side effects.
+</Note>
+
 ### Closing the MCP Client
 
 After initialization, you should close the MCP client based on your usage pattern:
@@ -360,6 +388,52 @@ Resource templates are dynamic URI patterns that allow flexible queries. List al
 ```typescript
 const templates = await mcpClient.listResourceTemplates();
 ```
+
+## Using MCP Completions
+
+MCP servers can provide autocompletion suggestions for prompt arguments and
+resource template variables when they advertise the `completions` capability.
+Use `complete` to ask the server for suggestions based on the current partial
+argument value:
+
+```typescript
+const completion = await mcpClient.complete({
+  ref: {
+    type: 'ref/resource',
+    uri: 'file:///{path}',
+  },
+  argument: {
+    name: 'path',
+    value: 'doc',
+  },
+});
+
+console.log(completion.completion.values);
+```
+
+For resource templates or prompts with multiple arguments, pass already resolved
+values through `context.arguments`:
+
+```typescript
+const completion = await mcpClient.complete({
+  ref: {
+    type: 'ref/resource',
+    uri: 'kubernetes://namespaced/{plural}/{namespace}',
+  },
+  argument: {
+    name: 'namespace',
+    value: 'auth',
+  },
+  context: {
+    arguments: {
+      plural: 'deployments',
+    },
+  },
+});
+```
+
+If the connected server does not advertise `capabilities.completions`, the
+client throws an `MCPClientError`.
 
 ## Using MCP Prompts
 

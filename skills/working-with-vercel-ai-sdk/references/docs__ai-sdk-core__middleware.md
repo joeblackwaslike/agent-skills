@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "be8dbb1b3cf9e5af455ba8f69514784293b4a55050b08534c65bafbf53c91fba"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "a1e0223c7d4e82c340ae575d42e84207c0a1b0992c8288a689e1846f7d99a3cd"
 ---
 
 # Language Model Middleware
@@ -272,15 +272,15 @@ Find more examples at this [link](https://github.com/minpeter/ai-sdk-tool-call-m
 <Note>
   Implementing language model middleware is advanced functionality and requires
   a solid understanding of the [language model
-  specification](https://github.com/vercel/ai/blob/v5/packages/provider/src/language-model/v2/language-model-v2.ts).
+  specification](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v4/language-model-v4.ts).
 </Note>
 
 You can implement any of the following three function to modify the behavior of the language model:
 
 1. `transformParams`: Transforms the parameters before they are passed to the language model, for both `doGenerate` and `doStream`.
-2. `wrapGenerate`: Wraps the `doGenerate` method of the [language model](https://github.com/vercel/ai/blob/v5/packages/provider/src/language-model/v2/language-model-v2.ts).
+2. `wrapGenerate`: Wraps the `doGenerate` method of the [language model](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v4/language-model-v4.ts).
    You can modify the parameters, call the language model, and modify the result.
-3. `wrapStream`: Wraps the `doStream` method of the [language model](https://github.com/vercel/ai/blob/v5/packages/provider/src/language-model/v2/language-model-v2.ts).
+3. `wrapStream`: Wraps the `doStream` method of the [language model](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v4/language-model-v4.ts).
    You can modify the parameters, call the language model, and modify the result.
 
 Here are some examples of how to implement language model middleware:
@@ -308,9 +308,13 @@ export const yourLogMiddleware: LanguageModelV4Middleware = {
     console.log(`params: ${JSON.stringify(params, null, 2)}`);
 
     const result = await doGenerate();
+    const generatedText = result.content
+      .filter(part => part.type === 'text')
+      .map(part => part.text)
+      .join('');
 
     console.log('doGenerate finished');
-    console.log(`generated text: ${result.text}`);
+    console.log(`generated text: ${generatedText}`);
 
     return result;
   },
@@ -438,12 +442,16 @@ import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
 export const yourGuardrailMiddleware: LanguageModelV4Middleware = {
   wrapGenerate: async ({ doGenerate }) => {
-    const { text, ...rest } = await doGenerate();
+    const result = await doGenerate();
 
     // filtering approach, e.g. for PII or other sensitive information:
-    const cleanedText = text?.replace(/badword/g, '<REDACTED>');
+    const content = result.content.map(part =>
+      part.type === 'text'
+        ? { ...part, text: part.text.replace(/badword/g, '<REDACTED>') }
+        : part,
+    );
 
-    return { text: cleanedText, ...rest };
+    return { ...result, content };
   },
 
   // here you would implement the guardrail logic for streaming

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/loop-finished.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "143ada15bad7a1bdc84d371c6f155299b78e8dcda7903a9223991a7403296db3"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "98431615c3d767a1b189b4dfe760141af696d4ac09a3b7a6324eee306a084048"
 ---
 
 # `isLoopFinished()`
@@ -92,6 +92,7 @@ In practice, this does not make much sense in this context, since you could just
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "bbcd6c35fef84b2fcec3c9ada74538f8593f01e3ecf983fcd65bdac7d4057d55"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "9e4fe10ddab345d553980eae3b6330083bb70487ce89007a7bfc1abb74bcab9b"
 ---
 
 > ## Documentation Index
@@ -60,11 +60,13 @@ This quickstart walks you through creating a plugin with a custom skill. You'll 
 
 <Steps>
   <Step title="Create the plugin directory">
-    Every plugin lives in its own directory containing your skills, agents, or hooks, optionally alongside a `.claude-plugin/plugin.json` manifest. Create one now:
+    Every plugin lives in its own directory containing your skills, agents, or hooks, optionally alongside a `.claude-plugin/plugin.json` manifest. The location doesn't matter for this quickstart because you'll point Claude Code at the directory with `--plugin-dir` in the test step. Create it anywhere convenient, such as a scratch folder or a projects directory:
 
     ```bash theme={null}
     mkdir my-first-plugin
     ```
+
+    The remaining steps run from the parent directory and reference paths like `my-first-plugin/...` relative to it.
   </Step>
 
   <Step title="Create the plugin manifest">
@@ -330,7 +332,7 @@ When a `--plugin-dir` plugin has the same name as an installed marketplace plugi
 As you make changes to your plugin, run `/reload-plugins` to pick up the updates without restarting. This reloads plugins, skills, agents, hooks, plugin MCP servers, and plugin LSP servers. Test your plugin components:
 
 * Try your skills with `/plugin-name:skill-name`
-* Check that agents appear in `/agents`
+* Check that agents appear in `/context` under Custom Agents, or @-mention one by its scoped name
 * Verify hooks work as expected
 
 <Tip>
@@ -408,7 +410,7 @@ If you already have skills or hooks in your `.claude/` directory, you can conver
 
 <Steps>
   <Step title="Create the plugin structure">
-    Create a new plugin directory:
+    Create a new plugin directory in your project root, alongside the existing `.claude/` folder, so the relative `cp` paths in the next step resolve:
 
     ```bash theme={null}
     mkdir -p my-plugin/.claude-plugin
@@ -470,7 +472,7 @@ If you already have skills or hooks in your `.claude/` directory, you can conver
     claude --plugin-dir ./my-plugin
     ```
 
-    Test each component: run your commands, check agents appear in `/agents`, and verify hooks trigger correctly.
+    Test each component: run your commands, check that agents appear in `/context`, and verify hooks trigger correctly.
   </Step>
 </Steps>
 

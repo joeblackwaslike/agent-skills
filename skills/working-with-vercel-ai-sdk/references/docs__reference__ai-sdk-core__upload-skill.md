@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/upload-skill.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0d9fe9455a3ff6c0030b04cf3c979fb7417df2e6603c6ff8ab3ea82554910a5c"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "7e448472d2cfeb2b4758b0a6ef2c269870c315384c8462efabba0f3bc285a975"
 ---
 
 # `uploadSkill()`
@@ -123,6 +123,7 @@ const { providerReference } = await uploadSkill({
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

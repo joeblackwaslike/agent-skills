@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b245025f6b380c6d86255139b7a48747342fade52e9a1ea06b964dff97544c2e"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "96e7f395936c34a1b140d8b191221e5a51423a4e5f1fe60a68790fdb53657ee1"
 ---
 
 # `experimental_generateVideo()`
@@ -110,6 +110,18 @@ console.log(videos);
       type: 'number',
       isOptional: true,
       description: 'Seed for the video generation.',
+    },
+    {
+      name: 'frameImages',
+      type: 'Array<{ image: DataContent; frameType: "first_frame" | "last_frame" }>',
+      isOptional: true,
+      description: 'Role-tagged image inputs for first-last-frame generation.',
+    },
+    {
+      name: 'inputReferences',
+      type: 'Array<DataContent>',
+      isOptional: true,
+      description: 'Reference image inputs for reference-to-video generation.',
     },
     {
       name: 'generateAudio',
@@ -281,6 +293,7 @@ console.log(videos);
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -12,12 +12,12 @@ related:
   - /docs/functions/runtimes/node-js/node-js-versions
   - /docs/deployments/concurrent-builds
   - /docs/deployments/managing-builds
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3b8dc5b92c7614b27ea03e6865d73f096177d8486e58153d9c7a97a4b9ffd0fa"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "c1404becc11c617197816c7767986d23283b3c7a6b5897e8d321c241d88dc2f5"
 ---
 
 # Configuring a Build
@@ -177,7 +177,7 @@ Inside the Framework Preset settings, use the drop-down menu to select the frame
 
 However, if no framework is detected, "Other" will be selected. In this case, the Override toggle for the Build Command will be enabled by default so that you can enter the build command manually. The remaining deployment process is that for default frameworks.
 
-If you would like to override Framework Preset for a **specific deployment**, add [`framework`](/docs/project-configuration#framework) to your `vercel.json` configuration.
+If you would like to override Framework Preset for a **specific deployment**, add [`framework`](/docs/project-configuration/vercel-json#framework) to your `vercel.json` configuration.
 
 ### Build Command
 
@@ -190,7 +190,7 @@ For example, if [Next.js](https://nextjs.org) is your framework:
 
 If you'd like to override the Build Command for **all deployments** in your Project, you can turn on the Override toggle and specify the custom command.
 
-If you would like to override the Build Command for a **specific deployment**, add [`buildCommand`](/docs/project-configuration#buildcommand) to your `vercel.json` configuration.
+If you would like to override the Build Command for a **specific deployment**, add [`buildCommand`](/docs/project-configuration/vercel-json#buildcommand) to your `vercel.json` configuration.
 
 > **💡 Note:** If you update the  setting, it will be applied on your next
 > deployment.
@@ -210,7 +210,7 @@ For projects that [do not require building](#skip-build-step), you might want to
 - If your project doesn’t have a `public` directory, it will serve the files from the root directory
 - Alternatively, you can turn on the **Override** toggle and leave the field empty (in which case, the build step will be skipped)
 
-If you would like to override the Output Directory for a **specific deployment**, add [`outputDirectory`](/docs/project-configuration#outputdirectory) to your `vercel.json` configuration.
+If you would like to override the Output Directory for a **specific deployment**, add [`outputDirectory`](/docs/project-configuration/vercel-json#outputdirectory) to your `vercel.json` configuration.
 
 ### Install Command
 
@@ -260,7 +260,7 @@ If you’d like to use a custom command for `vercel dev`, you can turn on the **
 - If the development command is not specified, `vercel dev` will fail. If you've selected "Other" as the framework preset, the default development command will be empty
 - You must create a deployment and have your local project linked to the project on Vercel (using `vercel`). Otherwise, `vercel dev` will not work correctly
 
-If you would like to override the Development Command, add [`devCommand`](/docs/project-configuration#devcommand) to your `vercel.json` configuration.
+If you would like to override the Development Command, add [`devCommand`](/docs/project-configuration/vercel-json#devcommand) to your `vercel.json` configuration.
 
 ### Skip Build Step
 

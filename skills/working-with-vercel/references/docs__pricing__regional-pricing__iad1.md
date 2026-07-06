@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Washington D.C., USA (iad1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/iad1.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "f69857d042dd2f81bc23edd71fbf07b912527ff4df03ce646c6e04abb54d60cf"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "0835eb13033342eae78b31f7f6b85d35ea8acdb93e04ab0412b50d646a66e78a"
 ---
 
 # Washington D.C., USA (iad1) pricing
@@ -38,6 +38,8 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Edge Requests](/docs/manage-cdn-usage#edge-requests) | Included First 10,000,000, then $2.00 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $4.00 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.40 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache) | $4.00 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.40 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.06 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.60 per 1,000,000 Operations |
 | [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.30 per 1 Hour |
@@ -52,6 +54,7 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | $5.00 per 1M |
 | [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | $0.05 per GB |
 | [Private Data Transfer](/docs/networking/static-ips) | $0.15 per 1 GB |
+| [Service Requests](/docs/services/pricing) | $0.50 per 1,000,000 Requests |
 
 
 Learn more about the different regions available on Vercel in the [regions](/docs/regions) documentation. See the [pricing](/docs/pricing#managed-infrastructure) documentation for more information on Managed Infrastructure.

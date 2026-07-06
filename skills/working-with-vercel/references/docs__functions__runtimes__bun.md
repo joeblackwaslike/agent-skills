@@ -9,7 +9,7 @@ prerequisites:
   - /docs/functions/runtimes
   - /docs/functions
 related:
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/incremental-static-regeneration
   - /docs/routing-middleware
   - /docs/functions/runtimes/node-js
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b7102b72999ad1fc37015fa34292f410b01f8645a7362fee3da268583c838456"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "fde5aae67b0871c50625cb51b10104d1ffafb757af284dbe93bd8bccbce1be64"
 ---
 
 # Using the Bun Runtime with Vercel Functions
@@ -31,7 +31,7 @@ Bun provides Node.js API compatibility and is generally faster than Node.js for 
 
 ## Configuring the runtime
 
-For all frameworks, including Next.js, you can configure the runtime in your `vercel.json` file using the [`bunVersion`](/docs/project-configuration#bunversion) property.
+For all frameworks, including Next.js, you can configure the runtime in your `vercel.json` file using the [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) property.
 
 Once you configure the runtime version, Vercel manages the Bun minor and patch versions automatically, meaning you only need to set the major version. Currently, `"1.x"` is the only valid value.
 

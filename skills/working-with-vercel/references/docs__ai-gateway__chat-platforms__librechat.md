@@ -13,8 +13,8 @@ related:
 summary: Use LibreChat with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/librechat.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "411ca9c271b4ff53de9b12d1e4ee9222ad0bda47015ebe320ca3abf3daaeea05"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "966bfe2c5ded84618ad9acf731bdd58fcdec64f96c5f194e67f50ab209aa5791"
 ---
 
 # LibreChat
@@ -69,7 +69,7 @@ sha256: "411ca9c271b4ff53de9b12d1e4ee9222ad0bda47015ebe320ca3abf3daaeea05"
         models:
           default:
             - "openai/gpt-5.5"
-            - "anthropic/claude-opus-4.7"
+            - "anthropic/claude-opus-4.8"
             - "google/gemini-3.1-pro-preview"
           fetch: true
         titleModel: "openai/gpt-5.5"

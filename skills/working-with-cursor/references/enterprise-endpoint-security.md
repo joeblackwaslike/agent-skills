@@ -1,3 +1,9 @@
+---
+source: "https://cursor.com/docs/enterprise/endpoint-security.md"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "1c49f05834f2f0590bc8e260f87f8b0e8931bc415d1187cd58430d59879c38e5"
+---
+
 # Endpoint Security Configuration
 
 Cursor loads JavaScript modules and performs file I/O during startup. Endpoint security software that intercepts file operations or injects into processes can slow startup past internal timeouts, causing features like Agent to fail. This page covers how to configure exclusions so Cursor works alongside your security stack.
@@ -8,13 +14,16 @@ Add the following processes and paths to your security product's exclusion list.
 
 ### Windows
 
-**Processes:**
+**Processes:** each process has a user install path and a system install path. Add the path that matches your install type.
 
-| Process            | User install path                                                                                | System install path                                                                     |
-| ------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| `Cursor.exe`       | `%LOCALAPPDATA%\Programs\cursor\Cursor.exe`                                                      | `%ProgramFiles%\cursor\Cursor.exe`                                                      |
-| `rg.exe`           | `%LOCALAPPDATA%\Programs\cursor\resources\app\node_modules\@vscode\ripgrep\bin\rg.exe`           | `%ProgramFiles%\cursor\resources\app\node_modules\@vscode\ripgrep\bin\rg.exe`           |
-| `inno_updater.exe` | `%LOCALAPPDATA%\Programs\cursor\resources\app\node_modules\cursor-inno-updater\inno_updater.exe` | `%ProgramFiles%\cursor\resources\app\node_modules\cursor-inno-updater\inno_updater.exe` |
+| Process            | Install type | Path                                                                                             |
+| ------------------ | ------------ | ------------------------------------------------------------------------------------------------ |
+| `Cursor.exe`       | User         | `%LOCALAPPDATA%\Programs\cursor\Cursor.exe`                                                      |
+| `Cursor.exe`       | System       | `%ProgramFiles%\cursor\Cursor.exe`                                                               |
+| `rg.exe`           | User         | `%LOCALAPPDATA%\Programs\cursor\resources\app\node_modules\@vscode\ripgrep\bin\rg.exe`           |
+| `rg.exe`           | System       | `%ProgramFiles%\cursor\resources\app\node_modules\@vscode\ripgrep\bin\rg.exe`                    |
+| `inno_updater.exe` | User         | `%LOCALAPPDATA%\Programs\cursor\resources\app\node_modules\cursor-inno-updater\inno_updater.exe` |
+| `inno_updater.exe` | System       | `%ProgramFiles%\cursor\resources\app\node_modules\cursor-inno-updater\inno_updater.exe`          |
 
 **Paths:**
 
@@ -22,6 +31,7 @@ Add the following processes and paths to your security product's exclusion list.
 | --------------------------------- | --------------------------------------------------------- |
 | `%LOCALAPPDATA%\Programs\cursor\` | Application binaries and bundled modules (user install)   |
 | `%ProgramFiles%\cursor\`          | Application binaries and bundled modules (system install) |
+| `%APPDATA%\Cursor\`               | User data, settings, and workspace storage                |
 
 ### macOS
 

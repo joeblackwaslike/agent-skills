@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/model-message.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0a61811d6dcff2d90a392fbc4062b5559e82d04bb3af59a7b70377759f99b42b"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "a0a10e7b485c2592b138e165fa1adccd93cbacf4440aad03c8fa97decaa0b7bc"
 ---
 
 # `ModelMessage`
@@ -510,6 +510,7 @@ IANA media type.
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

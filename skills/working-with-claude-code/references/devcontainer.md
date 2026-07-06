@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/devcontainer.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "158c774564d5c3f8c0ac3002cf626d1a608d43af80086720bcef06952a88b43b"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "49fd24b5bc9cc078bf3f4f75f6e068d4b4f61443c9f4c744cb34eb31ea342288"
 ---
 
 > ## Documentation Index
@@ -79,9 +79,9 @@ When you open the container in VS Code or Codespaces, the feature also adds the 
 What you see at the authentication prompt depends on your provider:
 
 * **Anthropic**: sign in through a browser with your Claude or Anthropic Console account
-* **[Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/en/third-party-integrations)**: Claude Code uses your cloud provider credentials, with no browser prompt
+* **[Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry](/en/third-party-integrations)**: Claude Code uses your cloud provider credentials, with no browser prompt
 
-For cloud providers, pass credentials into the container as environment variables through `containerEnv`, a Codespaces secret, or your cloud's workload identity rather than mounting credential files from the host. See [Amazon Bedrock](/en/amazon-bedrock), [Google Vertex AI](/en/google-vertex-ai), or [Microsoft Foundry](/en/microsoft-foundry) for the credential chain Claude Code reads.
+For cloud providers, pass credentials into the container as environment variables through `containerEnv`, a Codespaces secret, or your cloud's workload identity rather than mounting credential files from the host. See [Amazon Bedrock](/en/amazon-bedrock), [Google Cloud's Agent Platform](/en/google-vertex-ai), or [Microsoft Foundry](/en/microsoft-foundry) for the credential chain Claude Code reads.
 
 See [Choose your API provider](/en/admin-setup#choose-your-api-provider) to decide which path fits your organization.
 

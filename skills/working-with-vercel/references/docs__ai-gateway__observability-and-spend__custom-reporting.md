@@ -17,8 +17,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b9d83e518fac9ac55166d36b9f38c422677b9fe2f5774caa8621e96e6cc76af1"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "e8167da7b4b6c9919e7afb9ad2739fa6bf5691a0496fce12b6efa5bf9e68cb62"
 ---
 
 # Custom Reporting
@@ -57,7 +57,7 @@ The AI SDK supports user and tag submission through the gateway provider. See th
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Tell me about San Francisco.',
   providerOptions: {
     gateway: {
@@ -559,7 +559,7 @@ import { gateway, streamText } from 'ai';
 
 // 1. Make requests with tags
 const result = streamText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Summarize this quarter's results',
   providerOptions: {
     gateway: {
@@ -597,7 +597,7 @@ When streaming, the generation ID is injected on the first content chunk, so you
 import { gateway, generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Explain quantum entanglement briefly',
 });
 
@@ -617,7 +617,7 @@ console.log(`Completion tokens: ${generation.completionTokens}`);
 import { gateway, streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Explain quantum entanglement briefly',
 });
 

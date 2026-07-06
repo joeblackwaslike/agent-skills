@@ -11,12 +11,12 @@ related:
   - /docs/deployments/builds
   - /docs/deployments/configure-a-build
   - /docs/deployments/logs
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7e8f543d469182f2e64b4244a922b6ec6a2e56bc63b45619df7c967e919732db"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "d80d23e4d91b5d350edc8d497de472d7f987813a90009c2f1068a5d028e2c5f5"
 ---
 
 # Package Managers
@@ -63,7 +63,7 @@ The npm and pnpm package managers create a `lockfileVersion` property when they 
 > will prefer 10, while older prefer 9. Check [build
 > logs](/docs/deployments/logs) to see which version is used for your project.
 
-When no lock file exists, Vercel uses npm by default. Npm's default version aligns with the Node.js version as described in the table above. Defaults can be overridden using [`installCommand`](/docs/project-configuration#installcommand) or [Corepack](/docs/deployments/configure-a-build#corepack) for specific package manager versions.
+When no lock file exists, Vercel uses npm by default. Npm's default version aligns with the Node.js version as described in the table above. Defaults can be overridden using [`installCommand`](/docs/project-configuration/vercel-json#installcommand) or [Corepack](/docs/deployments/configure-a-build#corepack) for specific package manager versions.
 
 ## Manually specifying a package manager
 
@@ -85,7 +85,7 @@ To specify a package manager for all deployments in your project, use the **Over
 
 ### Deployment override
 
-To specify a package manager for a deployment, use the [`installCommand`](/docs/project-configuration#installcommand) property in your projects `vercel.json`.
+To specify a package manager for a deployment, use the [`installCommand`](/docs/project-configuration/vercel-json#installcommand) property in your projects `vercel.json`.
 
 ```json filename="vercel.json"
 {

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "69104564e9b02398880f605b560ff130a9bcaf6121d3fc1498ef14ca34e88f00"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "a7af6049c9fbb7530164e5f6129bfa11b04cdf6a086a7bf7ab67e818bf5d72eb"
 ---
 
 # Migrate AI SDK 6.x to 7.0
@@ -1883,6 +1883,25 @@ Every type, class, and function in `@ai-sdk/google` that contained `GoogleGenera
 The old names still work as deprecated aliases, but you should migrate to the new names, if you currently reference them.
 
 The main entry point the `google` constant, remains unchanged, so if that's all you use from the provider, no changes are required.
+
+## xAI Provider
+
+### Default Model Now Uses the Responses API
+
+In AI SDK 7, `xai(modelId)` (and `xai.languageModel(modelId)`) uses the xAI Responses API by default instead of the Chat Completions API. Both APIs were already available in AI SDK 6 via `xai.chat(modelId)` and `xai.responses(modelId)`; AI SDK 7 only changes which one `xai(modelId)` uses by default. To keep using the Chat Completions API, use `xai.chat(modelId)`.
+
+```tsx filename="AI SDK 6"
+// used the Chat Completions API
+const model = xai('grok-4.3');
+```
+
+```tsx filename="AI SDK 7"
+// now uses the Responses API
+const model = xai('grok-4.3');
+
+// use the Chat Completions API explicitly
+const chatModel = xai.chat('grok-4.3');
+```
 
 # Migration Skill
 

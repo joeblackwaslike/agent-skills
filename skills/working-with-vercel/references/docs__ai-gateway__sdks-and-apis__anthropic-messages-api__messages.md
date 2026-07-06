@@ -13,8 +13,8 @@ related:
 summary: Create messages using the Anthropic Messages API format with support for streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b2672a81bf70b96d4d9c3ed2543fdfcb429b909328b3473b44c7e177159f7b10"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "a1c1a11b203d0f3d30217d6d7ccee5e25cb3acd1e1efc499b2e73f6455899136"
 ---
 
 # Messages
@@ -46,7 +46,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 150,
   messages: [
     {
@@ -75,7 +75,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=150,
     messages=[
         {
@@ -103,7 +103,7 @@ Response format
       "text": "Once upon a time, a gentle unicorn with a shimmering silver mane danced through moonlit clouds, sprinkling stardust dreams upon sleeping children below."
     }
   ],
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "stop_reason": "end_turn",
   "usage": {
     "input_tokens": 15,
@@ -131,7 +131,7 @@ const anthropic = new Anthropic({
 });
 
 const stream = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 150,
   messages: [
     {
@@ -166,7 +166,7 @@ client = anthropic.Anthropic(
 )
 
 with client.messages.stream(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=150,
     messages=[
         {

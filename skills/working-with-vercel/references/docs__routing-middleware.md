@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "fdc98f6cbdec9f83b2f0ce9630a5b38c6762bd2dfa727f38328d67e4c8efd14f"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "cb43dc2b66db9a41a8cb54e2a2e80cc552c228aac0920d0a230e31f45ad61404"
 ---
 
 # Routing Middleware
@@ -95,7 +95,7 @@ The following limits apply to requests processed by Routing Middleware:
 
 Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js), [Bun](/docs/functions/runtimes/bun), and [Edge](/docs/functions/runtimes/edge) runtimes. The default runtime for Routing Middleware is Edge. You can change the runtime to Node.js by exporting a [`config`](/docs/routing-middleware/api#config-object) object with a `runtime` property in your  file.
 
-To use the Bun runtime, set [`bunVersion`](/docs/project-configuration#bunversion) in your `vercel.json` file and your runtime config to `nodejs`.
+To use the Bun runtime, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file and your runtime config to `nodejs`.
 
 ```ts filename="middleware.ts" framework=nextjs-app
 export const config = {

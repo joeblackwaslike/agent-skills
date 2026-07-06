@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a955a68e42f07f03a0b9a4585757a094782832252820de3ef26ca34483c8616d"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "1c435c549fc7a72f9e9bbfbe81c51de4cca854801f31e482dec59bd3255045f9"
 ---
 
 # `rerank()`
@@ -326,6 +326,7 @@ const { ranking } = await rerank({
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

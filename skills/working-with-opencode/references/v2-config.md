@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/specs/v2/config.md"
-fetched_at: "2026-06-29T05:44:53.501Z"
-sha256: "0102586bd02385149d24bbf075a30e72f3b8fff0c00872813740a71502bd6dfe"
+fetched_at: "2026-07-06T05:38:06.766Z"
+sha256: "80b15a6db2c24ecec2dfd25a05bba9e54fd5828f9e3c037393a35d57838e0593"
 ---
 
 # V2 Config Review
@@ -18,6 +18,8 @@ This document breaks the legacy configuration schema into small review groups. W
 ## Schema Scope
 
 Use one v2 config schema for now. Some fields, such as `autoupdate`, are intended for global/user configuration, but there is not yet enough benefit to enforce that with separate global and location schemas. Revisit this if more scope-sensitive fields survive the review.
+
+V2 core discovers config documents named `opencode.json` or `opencode.jsonc` in the global config directory, ancestor project directories, and `.opencode` config directories. The legacy `config.json` filename is not supported in V2.
 
 ## Group 1: File Metadata
 

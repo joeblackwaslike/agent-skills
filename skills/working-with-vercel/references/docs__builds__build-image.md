@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ecf87571240193dffba71d078782ccd87d312ca3d4dc2f50024d4429a1c5c3e3"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "702524bf0260b202458a4fd95e11e6aed568a37e6db91825c360a9b9bdd236a2"
 ---
 
 # Build image overview
@@ -52,7 +52,7 @@ When you are done, run `exit` to return.
 
 ## Installing additional packages
 
-You can install additional packages into the build container by configuring the [Install Command](/docs/deployments/configure-a-build#install-command) within the dashboard or the [`"installCommand"`](/docs/project-configuration#installcommand) in your `vercel.json` to use any of the following commands.
+You can install additional packages into the build container by configuring the [Install Command](/docs/deployments/configure-a-build#install-command) within the dashboard or the [`"installCommand"`](/docs/project-configuration/vercel-json#installcommand) in your `vercel.json` to use any of the following commands.
 
 The build image includes access to repositories with stable versions of popular packages. You can list all packages with the following command:
 

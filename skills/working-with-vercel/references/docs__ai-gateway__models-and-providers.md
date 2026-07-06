@@ -16,8 +16,8 @@ related:
 summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, virtual models, uptime and..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4c01fbeec65e192470fdb37fac276d52811a06838f59298f5ee3b8a0fad1f751"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "1d333b60c23513c5ce2d1279d2b8f7cc32223e04e46180ebd49d7221c8732175"
 ---
 
 # Models & Providers
@@ -109,7 +109,7 @@ import { NextRequest } from 'next/server';
 
 export async function GET() {
   const result = await generateText({
-    model: gateway('anthropic/claude-opus-4.7'),
+    model: gateway('anthropic/claude-opus-4.8'),
     prompt: 'Tell me the history of the San Francisco Mission-style burrito.',
   });
   return Response.json(result);
@@ -129,7 +129,7 @@ const gateway = createGateway({
 
 export async function GET() {
   const result = await generateText({
-    model: gateway('anthropic/claude-opus-4.7'),
+    model: gateway('anthropic/claude-opus-4.8'),
     prompt: 'Why is the sky blue?',
   });
   return Response.json(result);

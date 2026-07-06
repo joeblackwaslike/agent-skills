@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/reviews"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "8f4dca56f4efac9e8a779332208a26cd6b2ac51c8c78d76f73f3c2cb78e7fde3"
+fetched_at: "2026-07-06T05:37:45.074Z"
+sha256: "11d615a46345370471ad36f96559daf176ae9931928371bf6e55426145e7e065"
 ---
 
 # REST API endpoints for pull request reviews
@@ -546,10 +546,8 @@ Array of `Legacy Review Comment`:
   * `_links`: required, object:
     * `self`: required, `Link`:
       * `href`: required, string
-    * `html`: required, `Link`:
-      * `href`: required, string
-    * `pull_request`: required, `Link`:
-      * `href`: required, string
+    * `html`: required, `Link` (see above)
+    * `pull_request`: required, `Link` (see above)
   * `body_text`: string
   * `body_html`: string
   * `reactions`: `Reaction Rollup`:

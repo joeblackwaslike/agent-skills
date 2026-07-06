@@ -12,13 +12,13 @@ related:
   - /docs/cdn-cache
   - /docs/regions
   - /docs/pricing/regional-pricing/iad1
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/cli/deploy
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "12284be54f5fb3f62810883fb9c456b7133f27167b235d7242404012f917d36e"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "175a633dbd612bf2af5cf56b71cdfd6e8ee0c46308e833e9dcead8c5c547ff43"
 ---
 
 # Configuring regions for Vercel Functions
@@ -49,7 +49,7 @@ To change the default regions in the dashboard:
 
 ### Project configuration
 
-To change the default region in your `vercel.json` [configuration file](/docs/project-configuration#regions), add the region code(s) to the `"regions"` key:
+To change the default region in your `vercel.json` [configuration file](/docs/project-configuration/vercel-json#regions), add the region code(s) to the `"regions"` key:
 
 ```json filename="vercel.json"
 {
@@ -60,11 +60,11 @@ To change the default region in your `vercel.json` [configuration file](/docs/pr
 
 Additionally, Pro and Enterprise teams can deploy Vercel Functions to multiple regions. See [Limits](#limits) for the number of regions available on each plan.
 
-Enterprise users can also use [`functionFailoverRegions`](/docs/project-configuration#functionfailoverregions) to specify regions that a Vercel Function should failover to if the default region is out of service.
+Enterprise users can also use [`functionFailoverRegions`](/docs/project-configuration/vercel-json#functionfailoverregions) to specify regions that a Vercel Function should failover to if the default region is out of service.
 
 ### Per-function configuration
 
-You can override the project-level `regions` and `functionFailoverRegions` settings for individual functions using the [`functions`](/docs/project-configuration#functions) property in your project configuration. This is useful when different functions access different data sources in different regions.
+You can override the project-level `regions` and `functionFailoverRegions` settings for individual functions using the [`functions`](/docs/project-configuration/vercel-json#functions) property in your project configuration. This is useful when different functions access different data sources in different regions.
 
 ```json filename="vercel.json"
 {
@@ -103,7 +103,7 @@ The number of regions your functions can run in depends on your plan:
 | Plan       | Function regions |
 | ---------- | ---------------- |
 | Hobby      | Single region    |
-| Pro        | 3 regions        |
+| Pro        | 5 regions        |
 | Enterprise | All regions      |
 
 Deploying to more regions than your plan allows causes the deployment to fail before the [build step](/docs/deployments/configure-a-build).
@@ -136,7 +136,7 @@ To automatically failover to the closest region in the event of an outage:
 
    ![Image](`/docs-assets/static/docs/concepts/functions/function-failover-light.png`)
 
-To manually specify the fallback region, you can pass one or more regions to the [`functionFailoverRegions`](/docs/project-configuration#functionfailoverregions) property in your `vercel.json` file:
+To manually specify the fallback region, you can pass one or more regions to the [`functionFailoverRegions`](/docs/project-configuration/vercel-json#functionfailoverregions) property in your `vercel.json` file:
 
 ```json filename="vercel.json"
 {
@@ -145,11 +145,11 @@ To manually specify the fallback region, you can pass one or more regions to the
 }
 ```
 
-You can also set `functionFailoverRegions` on a per-function basis using the [`functions`](/docs/project-configuration#functions) property. See [per-function configuration](#per-function-configuration) above.
+You can also set `functionFailoverRegions` on a per-function basis using the [`functions`](/docs/project-configuration/vercel-json#functions) property. See [per-function configuration](#per-function-configuration) above.
 
-The region(s) set in the `functionFailoverRegions` property **must be different** from the default region(s) specified in the [`regions`](/docs/project-configuration#regions) property.
+The region(s) set in the `functionFailoverRegions` property **must be different** from the default region(s) specified in the [`regions`](/docs/project-configuration/vercel-json#regions) property.
 
-During an automatic failover, Vercel will reroute application traffic to the next closest region, meaning the order of the regions in `functionFailoverRegions` does not matter. For more information on how failover routing works, see [`functionFailoverRegions`](/docs/project-configuration#functionfailoverregions).
+During an automatic failover, Vercel will reroute application traffic to the next closest region, meaning the order of the regions in `functionFailoverRegions` does not matter. For more information on how failover routing works, see [`functionFailoverRegions`](/docs/project-configuration/vercel-json#functionfailoverregions).
 
 You can view your default and failover regions through the [deployment summary](/docs/deployments#resources-tab-and-deployment-summary):
 

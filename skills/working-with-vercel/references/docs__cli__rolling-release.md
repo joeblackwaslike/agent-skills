@@ -12,8 +12,8 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d05f196903817fbd65ca71b8e17d26129d7d07703f7d18eb3d9e21ca2ec94bce"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "b7cc197fbfa16644ac785c19db377ffb82dc3d71122a608e283f710bdf93c3d7"
 ---
 
 # vercel rolling-release
@@ -46,7 +46,7 @@ set up a rolling release with manual approval stages of 10%, 50%, and 100%.*
 
 ### start
 
-Start a rolling release for a specific deployment.
+Start a rolling release for a specific deployment. This command calls `POST /v1/projects/{idOrName}/rolling-release/start`. The start endpoint is idempotent. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
 
 ```bash filename="terminal"
 vercel rolling-release start --dpl=dpl_abc
@@ -94,7 +94,7 @@ stop an active rolling release.*
 
 ### complete
 
-Complete an active rolling release, promoting the deployment to 100% of traffic.
+Complete an active rolling release, promoting the deployment to 100% of traffic. This command calls `POST /v1/projects/{idOrName}/rolling-release/complete`. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api) for CI/CD usage.
 
 ```bash filename="terminal"
 vercel rolling-release complete --dpl=dpl_abc

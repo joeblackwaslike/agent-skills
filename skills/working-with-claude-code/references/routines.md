@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/routines.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "73bf0bdb4a684b43efa4b1d55537447fb1b347385e49d9ef1db3e067733448ff"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "65b7b088d136b3e8fa3d30134b38a6f9c48b27c1f33540c4d236d3c3013bd387"
 ---
 
 > ## Documentation Index
@@ -376,7 +376,7 @@ One-off runs do not count against the daily routine cap. They draw down your reg
 
 The CLI hides `/schedule` when one of its requirements isn't met, so the command menu shows `No commands match "/schedule"` while you type, and submitting it returns `Unknown command: /schedule`. The cause is usually one of the following:
 
-* You are authenticated with a Console API key or a cloud provider such as Bedrock, Vertex, or Foundry. `/schedule` requires a claude.ai subscription login. If `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` is set in your shell, or `apiKeyHelper` is set in `settings.json`, remove it first, since these take precedence over a claude.ai login
+* You are authenticated with a Console API key or a cloud provider such as Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry. `/schedule` requires a claude.ai subscription login. If `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` is set in your shell, or `apiKeyHelper` is set in `settings.json`, remove it first, since these take precedence over a claude.ai login
 * `DISABLE_TELEMETRY`, `DO_NOT_TRACK`, `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`, or `DISABLE_GROWTHBOOK` is set in your shell environment or in the `env` block of a [`settings.json` file](/en/settings#available-settings). These disable feature-flag fetching, which `/schedule` depends on
 * You are inside a Claude Code on the web session. Manage routines from the [web UI](https://claude.ai/code/routines) instead
 * {/* min-version: 2.1.81 */}Your CLI is older than v2.1.81. Run `claude update`

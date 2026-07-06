@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/patronus.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "46c0c5a1797764c0df41326ee99727fc114417e67d1b9863d83ee89c7da367c1"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "97b790edc225a193bd4d2892796672a7f065e589403ba9d66b8411de237023f7"
 ---
 
 # Patronus Observability
@@ -157,6 +157,7 @@ Result: a single trace containing the root HTTP request, the LLM generation span
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

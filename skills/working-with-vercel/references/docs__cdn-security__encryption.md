@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4e295d76ef8e641472320a0994e666ad0bb8df6893b6e8c29a39dec2acbb90ea"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "46fdd96875814bb626db6c5a499ef032b698b69a7bcd2368dab6addca187dbe6"
 ---
 
 # Encryption and TLS
@@ -62,9 +62,8 @@ Supported cipher algorithms:
 - `ECDHE-RSA-AES256-GCM-SHA384` (TLS 1.2)
 - `ECDHE-ECDSA-CHACHA20-POLY1305` (TLS 1.2)
 - `ECDHE-RSA-CHACHA20-POLY1305` (TLS 1.2)
-- `DHE-RSA-AES256-GCM-SHA384` (TLS 1.2)
 
-This is the [recommended configuration from Mozilla](https://wiki.mozilla.org/Security/Server_Side_TLS#Intermediate_compatibility_.28recommended.29).
+This is the [recommended configuration from TLSRef](https://docs.tlsref.org/server-side-tls.html#intermediate-compatibility).
 
 ## Post-quantum cryptography
 

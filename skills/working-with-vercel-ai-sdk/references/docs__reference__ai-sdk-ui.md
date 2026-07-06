@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1b8bd933ab5eb83647dcbafa3c9038e389436f931bc871a2bf579da7992c5ad9"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "4c143876243451f5cf43804306758a4422c58a18f422d990fd97898a33cf5ec5"
 ---
 
 # AI SDK UI
@@ -108,6 +108,7 @@ Here is a comparison of the supported functions across these frameworks:
   - [embedMany](/docs/reference/ai-sdk-core/embed-many)
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+  - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

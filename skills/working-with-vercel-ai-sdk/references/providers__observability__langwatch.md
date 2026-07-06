@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langwatch.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8995b4d8724b68e04d9a227d3680536be262cfd8a7cecd85fa5d7dd1741855e5"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "9392f51f1d3892719f36bdd9d8b1a81ae835ed062ec3bfc9901920e68fd98448"
 ---
 
 # LangWatch Observability
@@ -239,6 +239,7 @@ If you have questions or need help, join our community:
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

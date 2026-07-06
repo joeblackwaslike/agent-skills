@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-06-29T05:39:22.452Z"
-sha256: "9a93f5ca892d7b4687fe160b89866891724a4f4056096b4497f1caa26d8124da"
+fetched_at: "2026-07-06T05:30:15.132Z"
+sha256: "0a594f1e0ebdb57ada6b5d4e6fb56ac5d5d744943f114ef7d2dff3759b5e2784"
 ---
 
 # Available features index
@@ -111,11 +111,11 @@ Features
 | Common Utilities | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/common-utils:2` | `2.5.9` |
 | Conda | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/conda:2` | `2.0.1` |
 | GitHub Copilot CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/copilot-cli:1` | `1.1.3` |
-| Light-weight Desktop | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/desktop-lite:1` | `1.2.9` |
+| Light-weight Desktop | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/desktop-lite:1` | `1.2.10` |
 | Docker (Docker-in-Docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-in-docker:4` | `4.0.0` |
 | Docker (docker-outside-of-docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-outside-of-docker:1` | `1.10.0` |
 | Dotnet CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/dotnet:2` | `2.5.0` |
-| Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.5` |
+| Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.7` |
 | Git Large File Support (LFS) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git-lfs:1` | `1.2.5` |
 | GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.0` |
 | Go | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/go:1` | `1.3.4` |
@@ -125,7 +125,7 @@ Features
 | Nix Package Manager | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/nix:1` | `1.3.1` |
 | Node.js (via nvm), yarn and pnpm. | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/node:2` | `2.1.0` |
 | NVIDIA CUDA | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/nvidia-cuda:3` | `3.0.0` |
-| Oryx | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/oryx:2` | `2.0.0` |
+| Oryx | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/oryx:2` | `2.0.1` |
 | PHP | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/php:1` | `1.1.5` |
 | PowerShell | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/powershell:2` | `2.0.2` |
 | Python | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/python:1` | `1.8.0` |
@@ -409,7 +409,7 @@ Features
 | Gel CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gel-cli:1` | `1.0.0` |
 | Github CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:1` | `1.0.3` |
 | Lamdera | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/lamdera:1` | `1.0.2` |
-| Mount pnpm Store | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1` | `1.0.2` |
+| Mount pnpm Store | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1` | `1.0.3` |
 | Terraform CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/terraform-cli-persistence:1` | `1.0.2` |
 | Stripe CLI | Thanan Traiongthawon | `ghcr.io/nullcoder/devcontainer-features/stripe-cli:1` | `1.0.0` |
 | npm registry | jayree | `ghcr.io/jayree/devcontainer-features/npm-registry:1` | `1.0.1` |
@@ -494,7 +494,7 @@ Features
 | alpine-patch | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-patch:0` | `0.0.2` |
 | alpine-pgsql-client | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-pgsql-client:0` | `0.0.3` |
 | alpine-php-bcmath | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-bcmath:0` | `0.0.2` |
-| alpine-php-composer | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-composer:0` | `0.0.33` |
+| alpine-php-composer | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-composer:0` | `0.0.34` |
 | alpine-php-ftp | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-ftp:0` | `0.0.3` |
 | alpine-php-gd | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-gd:0` | `0.0.2` |
 | alpine-php-intl | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-php-intl:0` | `0.0.3` |
@@ -597,9 +597,10 @@ Features
 | Chrome Testing | kreemer | `ghcr.io/kreemer/features/chrometesting:1` | `1.0.1` |
 | devsense | kreemer | `ghcr.io/kreemer/features/devsense:1` | `1.0.0` |
 | Helix | kreemer | `ghcr.io/kreemer/features/helix:1` | `1.0.2` |
-| JDTLS | kreemer | `ghcr.io/kreemer/features/jdtls:1` | `1.0.0` |
+| JDTLS | kreemer | `ghcr.io/kreemer/features/jdtls:1` | `1.0.1` |
 | Marksman | kreemer | `ghcr.io/kreemer/features/marksman:1` | `1.0.0` |
 | Stow | kreemer | `ghcr.io/kreemer/features/stow:1` | `1.1.0` |
+| Yazi | kreemer | `ghcr.io/kreemer/features/yazi:1` | `1.0.2` |
 | Frida Core devkit | Vero | `ghcr.io/veronoicc/devcontainer-features/frida-core-devkit:1` | `1.0.3` |
 | Frida Gum devkit | Vero | `ghcr.io/veronoicc/devcontainer-features/frida-gum-devkit:1` | `1.0.1` |
 | LuaJIT 2.1.0-beta3 | Vero | `ghcr.io/veronoicc/devcontainer-features/luajit-2.1.0-beta3:1` | `1.0.0` |
@@ -608,10 +609,10 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.115` |
-| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.34` |
-| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.34` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.65` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.118` |
+| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.35` |
+| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.35` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.66` |
 | Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.33` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.25` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |

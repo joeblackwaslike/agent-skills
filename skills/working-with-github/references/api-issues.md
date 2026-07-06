@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-06-29T05:44:37.185Z"
-sha256: "427b8abbf39837736c17b6457da6e1708bebe38f99778f98f330bef52f579c33"
+fetched_at: "2026-07-06T05:37:45.074Z"
+sha256: "df4b2430be7fb8885a46d892b1291ecb94727eefa49cad4e4bf28f2e1f6e4384"
 ---
 
 # REST API endpoints for issues
@@ -146,29 +146,7 @@ Array of `Issue`:
       * `starred_at`: string
       * `user_view_type`: string
   * `labels`: required, array of object
-  * `assignees`: array of `Simple User`:
-    * `name`: string or null
-    * `email`: string or null
-    * `login`: required, string
-    * `id`: required, integer, format: int64
-    * `node_id`: required, string
-    * `avatar_url`: required, string, format: uri
-    * `gravatar_id`: required, string or null
-    * `url`: required, string, format: uri
-    * `html_url`: required, string, format: uri
-    * `followers_url`: required, string, format: uri
-    * `following_url`: required, string
-    * `gists_url`: required, string
-    * `starred_url`: required, string
-    * `subscriptions_url`: required, string, format: uri
-    * `organizations_url`: required, string, format: uri
-    * `repos_url`: required, string, format: uri
-    * `events_url`: required, string
-    * `received_events_url`: required, string, format: uri
-    * `type`: required, string
-    * `site_admin`: required, boolean
-    * `starred_at`: string
-    * `user_view_type`: string
+  * `assignees`: array of `Simple User` (see above)
   * `milestone`: required, any of:
     * **null**
     * **Milestone**
@@ -183,29 +161,7 @@ Array of `Issue`:
       * `description`: required, string or null
       * `creator`: required, any of:
         * **null**
-        * **Simple User**
-          * `name`: string or null
-          * `email`: string or null
-          * `login`: required, string
-          * `id`: required, integer, format: int64
-          * `node_id`: required, string
-          * `avatar_url`: required, string, format: uri
-          * `gravatar_id`: required, string or null
-          * `url`: required, string, format: uri
-          * `html_url`: required, string, format: uri
-          * `followers_url`: required, string, format: uri
-          * `following_url`: required, string
-          * `gists_url`: required, string
-          * `starred_url`: required, string
-          * `subscriptions_url`: required, string, format: uri
-          * `organizations_url`: required, string, format: uri
-          * `repos_url`: required, string, format: uri
-          * `events_url`: required, string
-          * `received_events_url`: required, string, format: uri
-          * `type`: required, string
-          * `site_admin`: required, boolean
-          * `starred_at`: string
-          * `user_view_type`: string
+        * **Simple User** (see above)
       * `open_issues`: required, integer
       * `closed_issues`: required, integer
       * `created_at`: required, string, format: date-time
@@ -227,29 +183,7 @@ Array of `Issue`:
   * `draft`: boolean
   * `closed_by`: any of:
     * **null**
-    * **Simple User**
-      * `name`: string or null
-      * `email`: string or null
-      * `login`: required, string
-      * `id`: required, integer, format: int64
-      * `node_id`: required, string
-      * `avatar_url`: required, string, format: uri
-      * `gravatar_id`: required, string or null
-      * `url`: required, string, format: uri
-      * `html_url`: required, string, format: uri
-      * `followers_url`: required, string, format: uri
-      * `following_url`: required, string
-      * `gists_url`: required, string
-      * `starred_url`: required, string
-      * `subscriptions_url`: required, string, format: uri
-      * `organizations_url`: required, string, format: uri
-      * `repos_url`: required, string, format: uri
-      * `events_url`: required, string
-      * `received_events_url`: required, string, format: uri
-      * `type`: required, string
-      * `site_admin`: required, boolean
-      * `starred_at`: string
-      * `user_view_type`: string
+    * **Simple User** (see above)
   * `body_html`: string
   * `body_text`: string
   * `timeline_url`: string, format: uri
@@ -283,29 +217,7 @@ Array of `Issue`:
       * `triage`: boolean
       * `push`: required, boolean
       * `maintain`: boolean
-    * `owner`: required, `Simple User`:
-      * `name`: string or null
-      * `email`: string or null
-      * `login`: required, string
-      * `id`: required, integer, format: int64
-      * `node_id`: required, string
-      * `avatar_url`: required, string, format: uri
-      * `gravatar_id`: required, string or null
-      * `url`: required, string, format: uri
-      * `html_url`: required, string, format: uri
-      * `followers_url`: required, string, format: uri
-      * `following_url`: required, string
-      * `gists_url`: required, string
-      * `starred_url`: required, string
-      * `subscriptions_url`: required, string, format: uri
-      * `organizations_url`: required, string, format: uri
-      * `repos_url`: required, string, format: uri
-      * `events_url`: required, string
-      * `received_events_url`: required, string, format: uri
-      * `type`: required, string
-      * `site_admin`: required, boolean
-      * `starred_at`: string
-      * `user_view_type`: string
+    * `owner`: required, `Simple User` (see above)
     * `private`: required, boolean, default: `false`
     * `html_url`: required, string, format: uri
     * `description`: required, string or null
@@ -403,29 +315,7 @@ Array of `Issue`:
       * `node_id`: required, string
       * `client_id`: string
       * `owner`: required, one of:
-        * **Simple User**
-          * `name`: string or null
-          * `email`: string or null
-          * `login`: required, string
-          * `id`: required, integer, format: int64
-          * `node_id`: required, string
-          * `avatar_url`: required, string, format: uri
-          * `gravatar_id`: required, string or null
-          * `url`: required, string, format: uri
-          * `html_url`: required, string, format: uri
-          * `followers_url`: required, string, format: uri
-          * `following_url`: required, string
-          * `gists_url`: required, string
-          * `starred_url`: required, string
-          * `subscriptions_url`: required, string, format: uri
-          * `organizations_url`: required, string, format: uri
-          * `repos_url`: required, string, format: uri
-          * `events_url`: required, string
-          * `received_events_url`: required, string, format: uri
-          * `type`: required, string
-          * `site_admin`: required, boolean
-          * `starred_at`: string
-          * `user_view_type`: string
+        * **Simple User** (see above)
         * **Enterprise**
           * `description`: string or null
           * `html_url`: required, string, format: uri
@@ -480,129 +370,22 @@ Array of `Issue`:
       * `html_url`: required, string, format: uri
       * `user`: required, any of:
         * **null**
-        * **Simple User**
-          * `name`: string or null
-          * `email`: string or null
-          * `login`: required, string
-          * `id`: required, integer, format: int64
-          * `node_id`: required, string
-          * `avatar_url`: required, string, format: uri
-          * `gravatar_id`: required, string or null
-          * `url`: required, string, format: uri
-          * `html_url`: required, string, format: uri
-          * `followers_url`: required, string, format: uri
-          * `following_url`: required, string
-          * `gists_url`: required, string
-          * `starred_url`: required, string
-          * `subscriptions_url`: required, string, format: uri
-          * `organizations_url`: required, string, format: uri
-          * `repos_url`: required, string, format: uri
-          * `events_url`: required, string
-          * `received_events_url`: required, string, format: uri
-          * `type`: required, string
-          * `site_admin`: required, boolean
-          * `starred_at`: string
-          * `user_view_type`: string
+        * **Simple User** (see above)
       * `created_at`: required, string, format: date-time
       * `updated_at`: required, string, format: date-time
       * `issue_url`: required, string, format: uri
       * `author_association`: string, enum: `COLLABORATOR`, `CONTRIBUTOR`, `FIRST_TIMER`, `FIRST_TIME_CONTRIBUTOR`, `MANNEQUIN`, `MEMBER`, `NONE`, `OWNER`
       * `performed_via_github_app`: any of:
         * **null**
-        * **GitHub app**
-          * `id`: required, integer
-          * `slug`: string
-          * `node_id`: required, string
-          * `client_id`: string
-          * `owner`: required, one of:
-            * **Simple User**
-              * `name`: string or null
-              * `email`: string or null
-              * `login`: required, string
-              * `id`: required, integer, format: int64
-              * `node_id`: required, string
-              * `avatar_url`: required, string, format: uri
-              * `gravatar_id`: required, string or null
-              * `url`: required, string, format: uri
-              * `html_url`: required, string, format: uri
-              * `followers_url`: required, string, format: uri
-              * `following_url`: required, string
-              * `gists_url`: required, string
-              * `starred_url`: required, string
-              * `subscriptions_url`: required, string, format: uri
-              * `organizations_url`: required, string, format: uri
-              * `repos_url`: required, string, format: uri
-              * `events_url`: required, string
-              * `received_events_url`: required, string, format: uri
-              * `type`: required, string
-              * `site_admin`: required, boolean
-              * `starred_at`: string
-              * `user_view_type`: string
-            * **Enterprise**
-              * `description`: string or null
-              * `html_url`: required, string, format: uri
-              * `website_url`: string or null, format: uri
-              * `id`: required, integer
-              * `node_id`: required, string
-              * `name`: required, string
-              * `slug`: required, string
-              * `created_at`: required, string or null, format: date-time
-              * `updated_at`: required, string or null, format: date-time
-              * `avatar_url`: required, string, format: uri
-          * `name`: required, string
-          * `description`: required, string or null
-          * `external_url`: required, string, format: uri
-          * `html_url`: required, string, format: uri
-          * `created_at`: required, string, format: date-time
-          * `updated_at`: required, string, format: date-time
-          * `permissions`: required, object, additional properties: string:
-            * `issues`: string
-            * `checks`: string
-            * `metadata`: string
-            * `contents`: string
-            * `deployments`: string
-          * `events`: required, array of string
-          * `installations_count`: integer
-      * `reactions`: `Reaction Rollup`:
-        * `url`: required, string, format: uri
-        * `total_count`: required, integer
-        * `+1`: required, integer
-        * `-1`: required, integer
-        * `laugh`: required, integer
-        * `confused`: required, integer
-        * `heart`: required, integer
-        * `hooray`: required, integer
-        * `eyes`: required, integer
-        * `rocket`: required, integer
+        * **GitHub app** (see above)
+      * `reactions`: `Reaction Rollup` (see above)
       * `pin`: any of:
         * **null**
         * **Pinned Issue Comment**
           * `pinned_at`: required, string, format: date-time
           * `pinned_by`: required, any of:
             * **null**
-            * **Simple User**
-              * `name`: string or null
-              * `email`: string or null
-              * `login`: required, string
-              * `id`: required, integer, format: int64
-              * `node_id`: required, string
-              * `avatar_url`: required, string, format: uri
-              * `gravatar_id`: required, string or null
-              * `url`: required, string, format: uri
-              * `html_url`: required, string, format: uri
-              * `followers_url`: required, string, format: uri
-              * `following_url`: required, string
-              * `gists_url`: required, string
-              * `starred_url`: required, string
-              * `subscriptions_url`: required, string, format: uri
-              * `organizations_url`: required, string, format: uri
-              * `repos_url`: required, string, format: uri
-              * `events_url`: required, string
-              * `received_events_url`: required, string, format: uri
-              * `type`: required, string
-              * `site_admin`: required, boolean
-              * `starred_at`: string
-              * `user_view_type`: string
+            * **Simple User** (see above)
       * `minimized`: any of:
         * **null**
         * **Minimized Issue Comment**
@@ -970,29 +753,7 @@ curl -L \
     * `starred_at`: string
     * `user_view_type`: string
 * `labels`: required, array of object
-* `assignees`: array of `Simple User`:
-  * `name`: string or null
-  * `email`: string or null
-  * `login`: required, string
-  * `id`: required, integer, format: int64
-  * `node_id`: required, string
-  * `avatar_url`: required, string, format: uri
-  * `gravatar_id`: required, string or null
-  * `url`: required, string, format: uri
-  * `html_url`: required, string, format: uri
-  * `followers_url`: required, string, format: uri
-  * `following_url`: required, string
-  * `gists_url`: required, string
-  * `starred_url`: required, string
-  * `subscriptions_url`: required, string, format: uri
-  * `organizations_url`: required, string, format: uri
-  * `repos_url`: required, string, format: uri
-  * `events_url`: required, string
-  * `received_events_url`: required, string, format: uri
-  * `type`: required, string
-  * `site_admin`: required, boolean
-  * `starred_at`: string
-  * `user_view_type`: string
+* `assignees`: array of `Simple User` (see above)
 * `milestone`: required, any of:
   * **null**
   * **Milestone**
@@ -1007,29 +768,7 @@ curl -L \
     * `description`: required, string or null
     * `creator`: required, any of:
       * **null**
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
     * `open_issues`: required, integer
     * `closed_issues`: required, integer
     * `created_at`: required, string, format: date-time
@@ -1051,29 +790,7 @@ curl -L \
 * `draft`: boolean
 * `closed_by`: any of:
   * **null**
-  * **Simple User**
-    * `name`: string or null
-    * `email`: string or null
-    * `login`: required, string
-    * `id`: required, integer, format: int64
-    * `node_id`: required, string
-    * `avatar_url`: required, string, format: uri
-    * `gravatar_id`: required, string or null
-    * `url`: required, string, format: uri
-    * `html_url`: required, string, format: uri
-    * `followers_url`: required, string, format: uri
-    * `following_url`: required, string
-    * `gists_url`: required, string
-    * `starred_url`: required, string
-    * `subscriptions_url`: required, string, format: uri
-    * `organizations_url`: required, string, format: uri
-    * `repos_url`: required, string, format: uri
-    * `events_url`: required, string
-    * `received_events_url`: required, string, format: uri
-    * `type`: required, string
-    * `site_admin`: required, boolean
-    * `starred_at`: string
-    * `user_view_type`: string
+  * **Simple User** (see above)
 * `body_html`: string
 * `body_text`: string
 * `timeline_url`: string, format: uri
@@ -1107,29 +824,7 @@ curl -L \
     * `triage`: boolean
     * `push`: required, boolean
     * `maintain`: boolean
-  * `owner`: required, `Simple User`:
-    * `name`: string or null
-    * `email`: string or null
-    * `login`: required, string
-    * `id`: required, integer, format: int64
-    * `node_id`: required, string
-    * `avatar_url`: required, string, format: uri
-    * `gravatar_id`: required, string or null
-    * `url`: required, string, format: uri
-    * `html_url`: required, string, format: uri
-    * `followers_url`: required, string, format: uri
-    * `following_url`: required, string
-    * `gists_url`: required, string
-    * `starred_url`: required, string
-    * `subscriptions_url`: required, string, format: uri
-    * `organizations_url`: required, string, format: uri
-    * `repos_url`: required, string, format: uri
-    * `events_url`: required, string
-    * `received_events_url`: required, string, format: uri
-    * `type`: required, string
-    * `site_admin`: required, boolean
-    * `starred_at`: string
-    * `user_view_type`: string
+  * `owner`: required, `Simple User` (see above)
   * `private`: required, boolean, default: `false`
   * `html_url`: required, string, format: uri
   * `description`: required, string or null
@@ -1227,29 +922,7 @@ curl -L \
     * `node_id`: required, string
     * `client_id`: string
     * `owner`: required, one of:
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
       * **Enterprise**
         * `description`: string or null
         * `html_url`: required, string, format: uri
@@ -1304,129 +977,22 @@ curl -L \
     * `html_url`: required, string, format: uri
     * `user`: required, any of:
       * **null**
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
     * `created_at`: required, string, format: date-time
     * `updated_at`: required, string, format: date-time
     * `issue_url`: required, string, format: uri
     * `author_association`: string, enum: `COLLABORATOR`, `CONTRIBUTOR`, `FIRST_TIMER`, `FIRST_TIME_CONTRIBUTOR`, `MANNEQUIN`, `MEMBER`, `NONE`, `OWNER`
     * `performed_via_github_app`: any of:
       * **null**
-      * **GitHub app**
-        * `id`: required, integer
-        * `slug`: string
-        * `node_id`: required, string
-        * `client_id`: string
-        * `owner`: required, one of:
-          * **Simple User**
-            * `name`: string or null
-            * `email`: string or null
-            * `login`: required, string
-            * `id`: required, integer, format: int64
-            * `node_id`: required, string
-            * `avatar_url`: required, string, format: uri
-            * `gravatar_id`: required, string or null
-            * `url`: required, string, format: uri
-            * `html_url`: required, string, format: uri
-            * `followers_url`: required, string, format: uri
-            * `following_url`: required, string
-            * `gists_url`: required, string
-            * `starred_url`: required, string
-            * `subscriptions_url`: required, string, format: uri
-            * `organizations_url`: required, string, format: uri
-            * `repos_url`: required, string, format: uri
-            * `events_url`: required, string
-            * `received_events_url`: required, string, format: uri
-            * `type`: required, string
-            * `site_admin`: required, boolean
-            * `starred_at`: string
-            * `user_view_type`: string
-          * **Enterprise**
-            * `description`: string or null
-            * `html_url`: required, string, format: uri
-            * `website_url`: string or null, format: uri
-            * `id`: required, integer
-            * `node_id`: required, string
-            * `name`: required, string
-            * `slug`: required, string
-            * `created_at`: required, string or null, format: date-time
-            * `updated_at`: required, string or null, format: date-time
-            * `avatar_url`: required, string, format: uri
-        * `name`: required, string
-        * `description`: required, string or null
-        * `external_url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `created_at`: required, string, format: date-time
-        * `updated_at`: required, string, format: date-time
-        * `permissions`: required, object, additional properties: string:
-          * `issues`: string
-          * `checks`: string
-          * `metadata`: string
-          * `contents`: string
-          * `deployments`: string
-        * `events`: required, array of string
-        * `installations_count`: integer
-    * `reactions`: `Reaction Rollup`:
-      * `url`: required, string, format: uri
-      * `total_count`: required, integer
-      * `+1`: required, integer
-      * `-1`: required, integer
-      * `laugh`: required, integer
-      * `confused`: required, integer
-      * `heart`: required, integer
-      * `hooray`: required, integer
-      * `eyes`: required, integer
-      * `rocket`: required, integer
+      * **GitHub app** (see above)
+    * `reactions`: `Reaction Rollup` (see above)
     * `pin`: any of:
       * **null**
       * **Pinned Issue Comment**
         * `pinned_at`: required, string, format: date-time
         * `pinned_by`: required, any of:
           * **null**
-          * **Simple User**
-            * `name`: string or null
-            * `email`: string or null
-            * `login`: required, string
-            * `id`: required, integer, format: int64
-            * `node_id`: required, string
-            * `avatar_url`: required, string, format: uri
-            * `gravatar_id`: required, string or null
-            * `url`: required, string, format: uri
-            * `html_url`: required, string, format: uri
-            * `followers_url`: required, string, format: uri
-            * `following_url`: required, string
-            * `gists_url`: required, string
-            * `starred_url`: required, string
-            * `subscriptions_url`: required, string, format: uri
-            * `organizations_url`: required, string, format: uri
-            * `repos_url`: required, string, format: uri
-            * `events_url`: required, string
-            * `received_events_url`: required, string, format: uri
-            * `type`: required, string
-            * `site_admin`: required, boolean
-            * `starred_at`: string
-            * `user_view_type`: string
+          * **Simple User** (see above)
     * `minimized`: any of:
       * **null**
       * **Minimized Issue Comment**
@@ -1585,13 +1151,16 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
   The reason for the state change. Ignored unless state is changed.
   Can be one of: `completed`, `not_planned`, `duplicate`, `reopened`, `null`
 
+- **`duplicate_issue_id`** (integer)
+  The ID of the issue to mark as the canonical duplicate when state_reason is duplicate. The issue must exist and be accessible to the authenticated user. Ignored when state_reason is not duplicate.
+
 - **`milestone`** (null or string or integer)
   The number of the milestone to associate this issue with or use null to remove the current milestone. Only users with push access can set the milestone for issues. Without push access to the repository, milestone changes are silently dropped.
 
 - **`labels`** (array)
   Labels to associate with this issue. Pass one or more labels to replace the set of labels on this issue. Send an empty array ([]) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
 
-- **`assignees`** (array of strings)
+- **`assignees`** (array)
   Usernames to assign to this issue. Pass one or more user logins to replace the set of assignees on this issue. Send an empty array ([]) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
 
 - **`issue_field_values`** (array of objects)
@@ -1687,29 +1256,7 @@ curl -L \
         * `starred_at`: string
         * `user_view_type`: string
     * `labels`: required, array of object
-    * `assignees`: array of `Simple User`:
-      * `name`: string or null
-      * `email`: string or null
-      * `login`: required, string
-      * `id`: required, integer, format: int64
-      * `node_id`: required, string
-      * `avatar_url`: required, string, format: uri
-      * `gravatar_id`: required, string or null
-      * `url`: required, string, format: uri
-      * `html_url`: required, string, format: uri
-      * `followers_url`: required, string, format: uri
-      * `following_url`: required, string
-      * `gists_url`: required, string
-      * `starred_url`: required, string
-      * `subscriptions_url`: required, string, format: uri
-      * `organizations_url`: required, string, format: uri
-      * `repos_url`: required, string, format: uri
-      * `events_url`: required, string
-      * `received_events_url`: required, string, format: uri
-      * `type`: required, string
-      * `site_admin`: required, boolean
-      * `starred_at`: string
-      * `user_view_type`: string
+    * `assignees`: array of `Simple User` (see above)
     * `milestone`: required, any of:
       * **null**
       * **Milestone**
@@ -1724,29 +1271,7 @@ curl -L \
         * `description`: required, string or null
         * `creator`: required, any of:
           * **null**
-          * **Simple User**
-            * `name`: string or null
-            * `email`: string or null
-            * `login`: required, string
-            * `id`: required, integer, format: int64
-            * `node_id`: required, string
-            * `avatar_url`: required, string, format: uri
-            * `gravatar_id`: required, string or null
-            * `url`: required, string, format: uri
-            * `html_url`: required, string, format: uri
-            * `followers_url`: required, string, format: uri
-            * `following_url`: required, string
-            * `gists_url`: required, string
-            * `starred_url`: required, string
-            * `subscriptions_url`: required, string, format: uri
-            * `organizations_url`: required, string, format: uri
-            * `repos_url`: required, string, format: uri
-            * `events_url`: required, string
-            * `received_events_url`: required, string, format: uri
-            * `type`: required, string
-            * `site_admin`: required, boolean
-            * `starred_at`: string
-            * `user_view_type`: string
+          * **Simple User** (see above)
         * `open_issues`: required, integer
         * `closed_issues`: required, integer
         * `created_at`: required, string, format: date-time
@@ -1768,29 +1293,7 @@ curl -L \
     * `draft`: boolean
     * `closed_by`: any of:
       * **null**
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
     * `body_html`: string
     * `body_text`: string
     * `timeline_url`: string, format: uri
@@ -1824,29 +1327,7 @@ curl -L \
         * `triage`: boolean
         * `push`: required, boolean
         * `maintain`: boolean
-      * `owner`: required, `Simple User`:
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * `owner`: required, `Simple User` (see above)
       * `private`: required, boolean, default: `false`
       * `html_url`: required, string, format: uri
       * `description`: required, string or null
@@ -1944,29 +1425,7 @@ curl -L \
         * `node_id`: required, string
         * `client_id`: string
         * `owner`: required, one of:
-          * **Simple User**
-            * `name`: string or null
-            * `email`: string or null
-            * `login`: required, string
-            * `id`: required, integer, format: int64
-            * `node_id`: required, string
-            * `avatar_url`: required, string, format: uri
-            * `gravatar_id`: required, string or null
-            * `url`: required, string, format: uri
-            * `html_url`: required, string, format: uri
-            * `followers_url`: required, string, format: uri
-            * `following_url`: required, string
-            * `gists_url`: required, string
-            * `starred_url`: required, string
-            * `subscriptions_url`: required, string, format: uri
-            * `organizations_url`: required, string, format: uri
-            * `repos_url`: required, string, format: uri
-            * `events_url`: required, string
-            * `received_events_url`: required, string, format: uri
-            * `type`: required, string
-            * `site_admin`: required, boolean
-            * `starred_at`: string
-            * `user_view_type`: string
+          * **Simple User** (see above)
           * **Enterprise**
             * `description`: string or null
             * `html_url`: required, string, format: uri
@@ -2021,129 +1480,22 @@ curl -L \
         * `html_url`: required, string, format: uri
         * `user`: required, any of:
           * **null**
-          * **Simple User**
-            * `name`: string or null
-            * `email`: string or null
-            * `login`: required, string
-            * `id`: required, integer, format: int64
-            * `node_id`: required, string
-            * `avatar_url`: required, string, format: uri
-            * `gravatar_id`: required, string or null
-            * `url`: required, string, format: uri
-            * `html_url`: required, string, format: uri
-            * `followers_url`: required, string, format: uri
-            * `following_url`: required, string
-            * `gists_url`: required, string
-            * `starred_url`: required, string
-            * `subscriptions_url`: required, string, format: uri
-            * `organizations_url`: required, string, format: uri
-            * `repos_url`: required, string, format: uri
-            * `events_url`: required, string
-            * `received_events_url`: required, string, format: uri
-            * `type`: required, string
-            * `site_admin`: required, boolean
-            * `starred_at`: string
-            * `user_view_type`: string
+          * **Simple User** (see above)
         * `created_at`: required, string, format: date-time
         * `updated_at`: required, string, format: date-time
         * `issue_url`: required, string, format: uri
         * `author_association`: string, enum: `COLLABORATOR`, `CONTRIBUTOR`, `FIRST_TIMER`, `FIRST_TIME_CONTRIBUTOR`, `MANNEQUIN`, `MEMBER`, `NONE`, `OWNER`
         * `performed_via_github_app`: any of:
           * **null**
-          * **GitHub app**
-            * `id`: required, integer
-            * `slug`: string
-            * `node_id`: required, string
-            * `client_id`: string
-            * `owner`: required, one of:
-              * **Simple User**
-                * `name`: string or null
-                * `email`: string or null
-                * `login`: required, string
-                * `id`: required, integer, format: int64
-                * `node_id`: required, string
-                * `avatar_url`: required, string, format: uri
-                * `gravatar_id`: required, string or null
-                * `url`: required, string, format: uri
-                * `html_url`: required, string, format: uri
-                * `followers_url`: required, string, format: uri
-                * `following_url`: required, string
-                * `gists_url`: required, string
-                * `starred_url`: required, string
-                * `subscriptions_url`: required, string, format: uri
-                * `organizations_url`: required, string, format: uri
-                * `repos_url`: required, string, format: uri
-                * `events_url`: required, string
-                * `received_events_url`: required, string, format: uri
-                * `type`: required, string
-                * `site_admin`: required, boolean
-                * `starred_at`: string
-                * `user_view_type`: string
-              * **Enterprise**
-                * `description`: string or null
-                * `html_url`: required, string, format: uri
-                * `website_url`: string or null, format: uri
-                * `id`: required, integer
-                * `node_id`: required, string
-                * `name`: required, string
-                * `slug`: required, string
-                * `created_at`: required, string or null, format: date-time
-                * `updated_at`: required, string or null, format: date-time
-                * `avatar_url`: required, string, format: uri
-            * `name`: required, string
-            * `description`: required, string or null
-            * `external_url`: required, string, format: uri
-            * `html_url`: required, string, format: uri
-            * `created_at`: required, string, format: date-time
-            * `updated_at`: required, string, format: date-time
-            * `permissions`: required, object, additional properties: string:
-              * `issues`: string
-              * `checks`: string
-              * `metadata`: string
-              * `contents`: string
-              * `deployments`: string
-            * `events`: required, array of string
-            * `installations_count`: integer
-        * `reactions`: `Reaction Rollup`:
-          * `url`: required, string, format: uri
-          * `total_count`: required, integer
-          * `+1`: required, integer
-          * `-1`: required, integer
-          * `laugh`: required, integer
-          * `confused`: required, integer
-          * `heart`: required, integer
-          * `hooray`: required, integer
-          * `eyes`: required, integer
-          * `rocket`: required, integer
+          * **GitHub app** (see above)
+        * `reactions`: `Reaction Rollup` (see above)
         * `pin`: any of:
           * **null**
           * **Pinned Issue Comment**
             * `pinned_at`: required, string, format: date-time
             * `pinned_by`: required, any of:
               * **null**
-              * **Simple User**
-                * `name`: string or null
-                * `email`: string or null
-                * `login`: required, string
-                * `id`: required, integer, format: int64
-                * `node_id`: required, string
-                * `avatar_url`: required, string, format: uri
-                * `gravatar_id`: required, string or null
-                * `url`: required, string, format: uri
-                * `html_url`: required, string, format: uri
-                * `followers_url`: required, string, format: uri
-                * `following_url`: required, string
-                * `gists_url`: required, string
-                * `starred_url`: required, string
-                * `subscriptions_url`: required, string, format: uri
-                * `organizations_url`: required, string, format: uri
-                * `repos_url`: required, string, format: uri
-                * `events_url`: required, string
-                * `received_events_url`: required, string, format: uri
-                * `type`: required, string
-                * `site_admin`: required, boolean
-                * `starred_at`: string
-                * `user_view_type`: string
+              * **Simple User** (see above)
         * `minimized`: any of:
           * **null**
           * **Minimized Issue Comment**

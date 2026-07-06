@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "af6c04aeb8e67de67592331d49fd6238027cddad2aaa37bbf4f523cb9b21b5de"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "a51438f0a47a6df947cf2ee246cfbc30b079eea439229896669f7448d0af2e83"
 ---
 
 # Getting Started
@@ -160,6 +160,7 @@ You can also use [AI SDK Core](/docs/ai-sdk-core/overview) and [AI SDK UI](/docs
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

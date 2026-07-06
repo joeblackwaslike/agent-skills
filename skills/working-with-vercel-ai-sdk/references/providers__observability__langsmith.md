@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langsmith.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "5cf485d382436ef7d7df5817a48e9c6861d8bcd6bf7f77dc98557eafbf04c1a2"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "2121a32a1bc1876aa7b68238a97ac2d4864e29a1e913869e3bfe8c1bb1a3527a"
 ---
 
 # LangSmith Observability
@@ -201,6 +201,7 @@ And once you've set up LangSmith tracing for your project, try gathering a datas
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

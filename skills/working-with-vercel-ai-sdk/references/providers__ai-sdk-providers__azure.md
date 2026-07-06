@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "367c492e43fb8d025dacc4f07c12e9a6c03c2cd289d17e5b5d24f2c316f7e0d3"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "5c669b086a1592a6499d84940b97a3dd2297846e71cd0416abd5c929d64bde9c"
 ---
 
 # Azure OpenAI Provider
@@ -99,7 +99,9 @@ You can use the following optional settings to customize the OpenAI provider ins
   Either this or `resourceName` can be used.
   When a baseURL is provided, the resourceName is ignored.
 
-  With a baseURL, the resolved URL is `{baseURL}/v1{path}`.
+  With an Azure OpenAI baseURL, the resolved URL is `{baseURL}/v1{path}`.
+  With a non-Azure custom gateway baseURL, the resolved URL is `{baseURL}{path}`;
+  the SDK does not append `/v1` or an `api-version` query parameter in this mode.
 
 - **headers** _Record&lt;string,string&gt;_
 

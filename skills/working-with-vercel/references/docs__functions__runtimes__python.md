@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bc70f16e7d21c34849c2e3c3713732047cf8d4eeed27b8d660dfad0749eefeef"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "175ffcd3e63116d5bab616389ad3fcd1529cc7b489c311271cdbefffaec2fb71"
 ---
 
 # Using the Python Runtime with Vercel Functions
@@ -62,7 +62,8 @@ entrypoint = "my_package.api:app"
 ```
 
 *The \`tool.vercel.entrypoint\` value tells Vercel to load the \`app\` variable
-from \`my\_package/api.py\`.*
+from \`my\_package/api.py\`, which is also the key you'd use in
+\`functions\`.*
 
 Vercel still supports `[project.scripts] app = "module:variable"` for existing
 projects. Use `tool.vercel.entrypoint` for new projects.
@@ -140,8 +141,10 @@ Make sure your `pyproject.toml` or `requirements.txt` only lists packages
 necessary at runtime. Explicitly exclude files you don't need to keep bundles
 small and avoid hitting size limits.
 
-> **💡 Note:** Python functions have a maximum uncompressed bundle size of . See the
-> .
+> **💡 Note:** Python functions have a maximum uncompressed bundle size of .
+> See the
+>
+> for larger bundle options.
 
 To exclude unnecessary files (tests, static assets, test data), configure
 `excludeFiles` in `vercel.json` under the `functions` key. The pattern is a

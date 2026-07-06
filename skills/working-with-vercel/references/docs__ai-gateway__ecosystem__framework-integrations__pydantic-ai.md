@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c182ad08a4fd3df1cfa33411580da69a8e5471944646beb803037d66c9ecad45"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "419fe6a6ecc8d900061fad3b740cf762fc2099d6aa87d47c92cf60952868dd0b"
 ---
 
 # Pydantic AI
@@ -67,7 +67,7 @@ with Pydantic AI to access various AI models and providers.
       famous_for: str
 
   agent = Agent(
-      OpenAIModel('anthropic/claude-opus-4.7', provider=VercelProvider()),
+      OpenAIModel('anthropic/claude-opus-4.8', provider=VercelProvider()),
       output_type=CityInfo,
       system_prompt='Provide accurate city information.'
   )

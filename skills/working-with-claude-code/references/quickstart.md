@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/quickstart.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "29c63fc0ce22b4f915ca195ed125857c899c6a88074a4ab9e98e55a60375134a"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "441ef18b1db89ccf18970d3148a9b346bdb412fc62624ce7b22ddfbfc1fe5cf1"
 ---
 
 > ## Documentation Index
@@ -105,7 +105,8 @@ You can log in using any of these account types:
 
 * [Claude Pro, Max, Team, or Enterprise](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=quickstart_login) (recommended)
 * [Claude Console](https://console.anthropic.com/) (API access with pre-paid credits). On first login, a "Claude Code" workspace is automatically created in the Console for centralized cost tracking.
-* [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/en/third-party-integrations) (enterprise cloud providers)
+* [Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry](/en/third-party-integrations) (enterprise cloud providers)
+* A self-hosted [Claude apps gateway](/en/claude-apps-gateway), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
 
 Once logged in, your credentials are stored and you won't need to log in again.
 

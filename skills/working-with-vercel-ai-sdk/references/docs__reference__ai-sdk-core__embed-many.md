@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed-many.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cec0faaed0fb26b07b0eb238b4b819e261c56c4ea2fbf1052527f98e20a5f8aa"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "54876d5dda54d344648492e11bc02cf81c4e53a06e065f5ef320ea6c73977fc2"
 ---
 
 # `embedMany()`
@@ -311,6 +311,7 @@ const { embeddings } = await embedMany({
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

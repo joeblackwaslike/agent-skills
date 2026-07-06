@@ -1,9 +1,9 @@
 ---
 name: gemini-interactions-api
-description: Use this skill when writing code that calls the Gemini API for text generation, multi-turn chat, multimodal understanding, image generation, streaming responses, background research tasks, function calling, structured output, or migrating from the old generateContent API. This skill covers the Interactions API, the recommended way to use Gemini models and agents in Python and TypeScript.
+description: Use this skill when writing code that calls the Gemini API for text generation, multi-turn chat, multimodal understanding, image generation, video generation, streaming responses, background research tasks, function calling, structured output, or migrating from the old generateContent API. This skill covers the Interactions API, the recommended way to use Gemini models and agents in Python and TypeScript.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-interactions-api/SKILL.md"
-fetched_at: "2026-06-29T05:43:04.440Z"
-sha256: "6d3745c37898f9c7168d47210124b1c9b06ceae3bba33e86be5c172d886135f1"
+fetched_at: "2026-07-06T05:35:43.833Z"
+sha256: "5661e1f7781bfb41e2ffbd3c5fa9e59f53e60eb9d6249fe5b322b4ad31ba1533"
 ---
 
 # Gemini Interactions API Skill
@@ -18,9 +18,11 @@ sha256: "6d3745c37898f9c7168d47210124b1c9b06ceae3bba33e86be5c172d886135f1"
 - `gemini-3.5-flash`: 1M tokens, fast, balanced performance, multimodal
 - `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research
 - `gemini-3.1-flash-lite`: cost-efficient, fastest performance for high-frequency, lightweight tasks
-- `gemini-3-pro-image`: 65k / 32k tokens, image generation and editing
-- `gemini-3.1-flash-image`: 65k / 32k tokens, image generation and editing
+- `gemini-3-pro-image` (Nano Banana Pro): 65k / 32k tokens, high-quality image generation and editing
+- `gemini-3.1-flash-image` (Nano Banana 2): 65k / 32k tokens, fast, efficient image generation and editing
+- `gemini-3.1-flash-lite-image` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing
 - `gemini-3.1-flash-tts-preview`: expressive text-to-speech with Director's Chair prompting
+- `gemini-omni-flash-preview`: video generation, image-referenced video generation, first-frame-to-video, and video editing
 - `gemma-4-31b-it`: Gemma 4 dense model, 31B parameters
 - `gemma-4-26b-a4b-it`: Gemma 4 MoE model, 26B total / 4B active parameters
 

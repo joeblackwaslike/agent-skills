@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/network-configuration.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "5442cde4845c91277ab21e7785d94758f577069946fde8ea9c3773f9f9bb9a3a"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "ecb533133b8debde090854640e05fd2c3f42148bdf2b505ada4ab2106f954578"
 ---
 
 # Network Configuration
@@ -31,6 +31,8 @@ Cursor's services are already encrypted end-to-end. We recommend disabling SSL i
 - `marketplace.cursorapi.com`
 - `authenticate.cursor.sh`
 - `authenticator.cursor.sh`
+- `*.cursorvm.com`
+- `*.*.cursorvm.com`
 
 If your security policy requires SSL inspection on all traffic, your proxy must support:
 
@@ -86,6 +88,8 @@ Rather than maintaining IP address lists (which can change), configure your fire
 - `*.cursor.sh`
 - `*.cursor-cdn.com`
 - `*.cursorapi.com`
+- `*.cursorvm.com`
+- `*.*.cursorvm.com`
 
 We generally recommend allowlisting with the domain patterns above. However, if your firewall mandates granular subdomain allowlists without wildcards, use the following list:
 

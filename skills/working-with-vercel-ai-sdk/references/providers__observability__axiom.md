@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/axiom.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "dd65b261c1c90ce811d7492b357465f857d69c4612b861f20fc5b34750fbc009"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "dfc1e78694e57df83ef29374cce23c228021260d248d5002d8c100510668a0b7"
 ---
 
 # Axiom Observability
@@ -198,6 +198,7 @@ To learn more about these features, see the [Axiom AI SDK Instrumentation guide]
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

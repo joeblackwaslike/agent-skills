@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cf5971f663313c114dcbb30ccc0b5794958be85f654f8372873a24bafe9df995"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "5a082ecd0bfda53b81b234cf02d4fda8c4e543c44d225837c5d2e733c70380dd"
 ---
 
 # Providers and Models
@@ -134,6 +134,7 @@ Here are the capabilities of popular models:
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.1`                                   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5-codex`                               | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5-chat-latest`                         | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-5`                           | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5`                            | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-8`                           | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-7`                           | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |

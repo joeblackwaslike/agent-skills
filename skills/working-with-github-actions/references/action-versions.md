@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-06-29
+Last updated: 2026-07-06
 
 ## GitHub Official
 
@@ -31,11 +31,11 @@ Last updated: 2026-06-29
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `docker/login-action` | `v4.2.0` | `uses: docker/login-action@v4.2.0` |
-| `docker/build-push-action` | `v7.2.0` | `uses: docker/build-push-action@v7.2.0` |
-| `docker/metadata-action` | `v6.1.0` | `uses: docker/metadata-action@v6.1.0` |
-| `docker/setup-buildx-action` | `v4.1.0` | `uses: docker/setup-buildx-action@v4.1.0` |
-| `docker/setup-qemu-action` | `v4.1.0` | `uses: docker/setup-qemu-action@v4.1.0` |
+| `docker/login-action` | `v4.4.0` | `uses: docker/login-action@v4.4.0` |
+| `docker/build-push-action` | `v7.3.0` | `uses: docker/build-push-action@v7.3.0` |
+| `docker/metadata-action` | `v6.2.0` | `uses: docker/metadata-action@v6.2.0` |
+| `docker/setup-buildx-action` | `v4.2.0` | `uses: docker/setup-buildx-action@v4.2.0` |
+| `docker/setup-qemu-action` | `v4.2.0` | `uses: docker/setup-qemu-action@v4.2.0` |
 
 ## Cloud Deployments
 
@@ -60,6 +60,8 @@ Last updated: 2026-06-29
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `codecov/codecov-action` | `v7.0.0` | `uses: codecov/codecov-action@v7.0.0` |
+| `github/codeql-action/init` | `codeql-bundle-v2.25.6` | `uses: github/codeql-action/init@codeql-bundle-v2.25.6` |
+| `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 
 ## Pinning to SHA (recommended for production)
 

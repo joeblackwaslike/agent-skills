@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9a4faca07dd74fa26d596bc3351b0a93eedc59ad4e077af0e4c2ab0ab44e720f"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "b94a4a02ffd0fb4ceddf0e46397bc5bf1e5012f486c1546b14abe8dad9693a16"
 ---
 
 # API Reference
@@ -154,6 +154,7 @@ sha256: "9a4faca07dd74fa26d596bc3351b0a93eedc59ad4e077af0e4c2ab0ab44e720f"
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

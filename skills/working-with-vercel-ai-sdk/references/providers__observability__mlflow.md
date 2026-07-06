@@ -1,12 +1,24 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/mlflow.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "436f85e353c5fd8ff418becb5b98e68097ddc0d446eee3a5a150b1a322d96e96"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "6ae800461eaaf4a5f4b0203cdcfe0474883bf3c6985cf10176e4215e435b4d9e"
 ---
 
 # MLflow Observability
 
-![MLflow Tracing Vercel AI SDK](https://mlflow.org/docs/latest/images/llms/tracing/vercel-ai-tracing.mp4)
+<video
+  src="https://mlflow.org/docs/latest/images/llms/tracing/vercel-ai-tracing.mp4"
+  autoplay
+  muted
+  loop
+  controls
+  playsinline
+  aria-label="MLflow Tracing Vercel AI SDK"
+>
+  <a href="https://mlflow.org/docs/latest/images/llms/tracing/vercel-ai-tracing.mp4">
+    MLflow Tracing Vercel AI SDK demo video
+  </a>
+</video>
 
 [MLflow Tracing](https://mlflow.org/docs/latest/genai/tracing) provides automatic tracing for applications built with the [Vercel AI SDK](https://ai-sdk.dev/) (the `ai` package) via OpenTelemetry, unlocking observability for TypeScript and JavaScript apps.
 
@@ -185,6 +197,7 @@ To disable tracing for Vercel AI SDK, set `telemetry: { isEnabled: false }` on t
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

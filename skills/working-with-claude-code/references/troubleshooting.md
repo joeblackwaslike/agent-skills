@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/troubleshooting.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "1bda7d934121ad2e8a1ad8106ea10dda8b94d7d94cbab2be31f5e5b33f4c7424"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "56d710fc809b3aa7764a84acbe66846677c5ce424e00fd98e15c5b45b1ccc0e8"
 ---
 
 > ## Documentation Index
@@ -14,16 +14,16 @@ sha256: "1bda7d934121ad2e8a1ad8106ea10dda8b94d7d94cbab2be31f5e5b33f4c7424"
 
 This page covers performance, stability, and search problems once Claude Code is running. For other issues, start with the page that matches where you're stuck:
 
-| Symptom                                                                                                 | Go to                                                                                    |
-| :------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------- |
-| `command not found`, install fails, PATH issues, `EACCES`, TLS errors                                   | [Troubleshoot installation and login](/en/troubleshoot-install)                          |
-| Login loops, OAuth errors, `403 Forbidden`, "organization disabled", Bedrock/Vertex/Foundry credentials | [Troubleshoot installation and login](/en/troubleshoot-install#login-and-authentication) |
-| Settings not applying, hooks not firing, MCP servers not loading                                        | [Debug your configuration](/en/debug-your-config)                                        |
-| `API Error: 5xx`, `529 Overloaded`, `429`, request validation errors                                    | [Error reference](/en/errors)                                                            |
-| `model not found` or `you may not have access to it`                                                    | [Error reference](/en/errors#there%E2%80%99s-an-issue-with-the-selected-model)           |
-| VS Code extension not connecting or detecting Claude                                                    | [VS Code integration](/en/vs-code#fix-common-issues)                                     |
-| JetBrains plugin or IDE not detected                                                                    | [JetBrains integration](/en/jetbrains#troubleshooting)                                   |
-| High CPU or memory, slow responses, hangs, search not finding files                                     | [Performance and stability](#performance-and-stability) below                            |
+| Symptom                                                                                                                                              | Go to                                                                                    |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
+| `command not found`, install fails, PATH issues, `EACCES`, TLS errors                                                                                | [Troubleshoot installation and login](/en/troubleshoot-install)                          |
+| Login loops, OAuth errors, `403 Forbidden`, "organization disabled", Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry credentials | [Troubleshoot installation and login](/en/troubleshoot-install#login-and-authentication) |
+| Settings not applying, hooks not firing, MCP servers not loading                                                                                     | [Debug your configuration](/en/debug-your-config)                                        |
+| `API Error: 5xx`, `529 Overloaded`, `429`, request validation errors                                                                                 | [Error reference](/en/errors)                                                            |
+| `model not found` or `you may not have access to it`                                                                                                 | [Error reference](/en/errors#there%E2%80%99s-an-issue-with-the-selected-model)           |
+| VS Code extension not connecting or detecting Claude                                                                                                 | [VS Code integration](/en/vs-code#fix-common-issues)                                     |
+| JetBrains plugin or IDE not detected                                                                                                                 | [JetBrains integration](/en/jetbrains#troubleshooting)                                   |
+| High CPU or memory, slow responses, hangs, search not finding files                                                                                  | [Performance and stability](#performance-and-stability) below                            |
 
 If you're not sure which applies, run `/doctor` inside Claude Code for an automated check of your installation, settings, MCP servers, and context usage. If `claude` won't start at all, run `claude doctor` from your shell instead.
 

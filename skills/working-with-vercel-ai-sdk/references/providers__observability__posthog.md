@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/posthog.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1e27331cf7b3d4e981e25b61cae227f77533795872399924e7b5a462208ce980"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "1986660328dd0c0ffc9c591fc9f55c573f0620484b13856240494622de893148"
 ---
 
 # PostHog LLM Analytics
@@ -190,6 +190,7 @@ const result = await generateText({
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

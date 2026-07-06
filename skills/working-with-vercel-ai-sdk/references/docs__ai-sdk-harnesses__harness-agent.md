@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "aa971a5a61ab2a181cbba330cb5eeef7b06c8fda82e82b4c1fc451aca8d476cc"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "9d34239286212ff11b8e1711bd43235aac5cd70771a709dc79ab2cf78170db80"
 ---
 
 # HarnessAgent
@@ -346,6 +346,10 @@ console.log(preparation.identity);
 - `id`: optional stable agent identifier.
 - `instructions`: instructions applied once to a fresh session.
 - `tools`: AI SDK tools executed by the host when the harness calls them.
+- `activeTools`: allowlist of built-in and host-executed tools the harness can
+  call.
+- `inactiveTools`: denylist of built-in and host-executed tools the harness
+  cannot call.
 - `skills`: instruction bundles surfaced by the adapter.
 - `permissionMode`: built-in tool permission mode.
 - `toolApproval`: approval status map for host-executed tools.

@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b001b491fa4142103182cad8c5fe7be95dc52be7bfe3fa1276c7514e47be85b4"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "c03881c274564880c585d3e25a19f56308d9af67a983df28b024d8ffc4a16a4e"
 ---
 
 # Text Generation Quickstart
@@ -116,7 +116,7 @@ const client = new OpenAI({
 
 async function main() {
   const response = await client.chat.completions.create({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     messages: [
       {
         role: 'user',
@@ -146,7 +146,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -177,7 +177,7 @@ const client = new Anthropic({
 
 async function main() {
   const message = await client.messages.create({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     max_tokens: 1024,
     messages: [
       {
@@ -208,7 +208,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     messages=[
         {
@@ -240,7 +240,7 @@ async function main() {
       Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-opus-4.7',
+      model: 'anthropic/claude-opus-4.8',
       input: [
         {
           type: 'message',
@@ -274,7 +274,7 @@ response = requests.post(
         'Authorization': f'Bearer {os.getenv("AI_GATEWAY_API_KEY")}',
     },
     json={
-        'model': 'anthropic/claude-opus-4.7',
+        'model': 'anthropic/claude-opus-4.8',
         'input': [
             {
                 'type': 'message',
@@ -296,7 +296,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-opus-4.7",
+    "model": "anthropic/claude-opus-4.8",
     "input": [
       {
         "type": "message",

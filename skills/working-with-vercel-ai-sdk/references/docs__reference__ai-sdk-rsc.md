@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "14bd8613947c3865c2110c3c07421d51f6ec7e3b8dffb6fac976f562dceb21f7"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "346faddbec36d5bfdfe3536a57ec8464a2a9e330e806fbe02973d7e654b405e0"
 ---
 
 # AI SDK RSC
@@ -76,6 +76,7 @@ sha256: "14bd8613947c3865c2110c3c07421d51f6ec7e3b8dffb6fac976f562dceb21f7"
   - [embedMany](/docs/reference/ai-sdk-core/embed-many)
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+  - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

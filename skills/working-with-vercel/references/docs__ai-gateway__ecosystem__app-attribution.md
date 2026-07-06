@@ -13,8 +13,8 @@ related:
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "c47bdd63bd5363c9f7e74d0839ba69d4a7998e41961b2b84c5883b3ff90b6ed7"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "4cb6e3d10ecd60b060d72397b31217f6ca50328e9dbd5033f80bb58dcaf4daa7"
 ---
 
 # App Attribution
@@ -37,7 +37,7 @@ You can set these headers directly in your server-side requests to AI Gateway.
 
 ## Examples
 
-#### \[&#xA;  'TypeScript (AI SDK)'
+#### \[&#xA;    'TypeScript (AI SDK)'
 
 ```typescript filename="ai-sdk.ts"
 import { streamText } from 'ai';
@@ -47,7 +47,7 @@ const result = streamText({
     'http-referer': 'https://myapp.vercel.app',
     'x-title': 'MyApp',
   },
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Hello, world!',
 });
 
@@ -68,7 +68,7 @@ const openai = new OpenAI({
 
 const response = await openai.chat.completions.create(
   {
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     messages: [
       {
         role: 'user',
@@ -99,7 +99,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -133,7 +133,7 @@ const gateway = createGateway({
 });
 
 const result = streamText({
-  model: gateway('anthropic/claude-opus-4.7'),
+  model: gateway('anthropic/claude-opus-4.8'),
   prompt: 'Hello, world!',
 });
 
@@ -162,7 +162,7 @@ globalThis.AI_SDK_DEFAULT_PROVIDER = gateway;
 
 // Now you can use plain string model IDs and they'll use your custom provider
 const result = streamText({
-  model: 'anthropic/claude-opus-4.7', // Uses the gateway provider with headers
+  model: 'anthropic/claude-opus-4.8', // Uses the gateway provider with headers
   prompt: 'Hello, world!',
 });
 

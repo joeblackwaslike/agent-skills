@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "bd45ca50d2f923216468ae2500d26bc128c4f9692111a06e44af90e36917f80d"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "3b78d747bea3ae02a96b34e53b8a2d1a6ca1947867728c5dac420b2f28918f95"
 ---
 
 # AI SDK Providers
@@ -38,6 +38,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4.1-mini`                                      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4o`                                            | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-4o-mini`                                       | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-5`                                   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5`                                    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-8`                                   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-7`                                   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
@@ -173,6 +174,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Raindrop](/providers/observability/raindrop)
   - [Respan](/providers/observability/respan)
   - [Scorecard](/providers/observability/scorecard)
+  - [Sentry](/providers/observability/sentry)
   - [SigNoz](/providers/observability/signoz)
   - [Traceloop](/providers/observability/traceloop)
   - [Weave](/providers/observability/weave)

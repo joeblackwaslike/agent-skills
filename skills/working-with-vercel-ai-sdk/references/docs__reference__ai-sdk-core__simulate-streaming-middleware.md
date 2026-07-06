@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/simulate-streaming-middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "5ecd1078432f10baf744db0202996e66e50c5df85a31435a0d32f55eae9e8bf8"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "d9779f2069a59beac03bc3b969de7ce00ba717ba440539f2eeaf1ca871beeab5"
 ---
 
 # `simulateStreamingMiddleware()`
@@ -80,6 +80,7 @@ The middleware:
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Tokyo, Japan (hnd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hnd1.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "e145455c2f86970d96763bf735481b9e9f2f2bda9fc104e8da82e8fe6efc0124"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "d539af5cc1b268d5db0eb63c5af4095accdace6c3b4681f85841a72d29d5d0f7"
 ---
 
 # Tokyo, Japan (hnd1) pricing
@@ -38,6 +38,8 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Edge Requests](/docs/manage-cdn-usage#edge-requests) | Included First 10,000,000, then $2.60 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $5.20 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.52 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache) | $5.20 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.52 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.27 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.8544 per 1,000,000 Operations |
 | [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.39 per 1 Hour |
@@ -52,6 +54,7 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | $4.70 per 1M |
 | [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | $0.053 per GB |
 | [Private Data Transfer](/docs/networking/static-ips) | $0.207 per 1 GB |
+| [Service Requests](/docs/services/pricing) | $0.65 per 1,000,000 Requests |
 
 
 Learn more about the different regions available on Vercel in the [regions](/docs/regions) documentation. See the [pricing](/docs/pricing#managed-infrastructure) documentation for more information on Managed Infrastructure.

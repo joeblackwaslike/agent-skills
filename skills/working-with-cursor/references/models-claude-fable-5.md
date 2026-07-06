@@ -1,11 +1,8 @@
 ---
 source: "https://cursor.com/docs/models/claude-fable-5.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "602da2c70e7417997607b412cb45472a187d208ea745dca479d7066dfc628240"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "11a80c2045f504df76cffc49238fdbba251d9afec4727f285b83a2aa2bba06bc"
 ---
-
-Anthropic has removed access to this model for all customers.
-[Read More](https://www.anthropic.com/news/fable-mythos-access)
 
 Claude Fable 5 is Anthropic's most capable generally available model for autonomous knowledge work and coding. It is a Mythos-class model with strong safeguards, built to handle long-running, complex, and asynchronous tasks where earlier models needed more frequent check-ins.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/scop/bash-completion/main/README.md"
-fetched_at: "2026-06-29T05:39:55.926Z"
-sha256: "8dd0e124ea252147cfb4260335fc92e7a338d2ec78561de96f9020f0f92572ef"
+fetched_at: "2026-07-06T05:31:53.371Z"
+sha256: "158d74058936a79fa34971ef23be93952758e7ca8e280ccb6a9c6e20ffd32c02"
 ---
 
 # bash-completion
@@ -11,10 +11,15 @@ sha256: "8dd0e124ea252147cfb4260335fc92e7a338d2ec78561de96f9020f0f92572ef"
 
 ## Introduction
 
-bash-completion is a collection of command line command completions for the
-[Bash shell](https://www.gnu.org/software/bash/), collection of helper
-functions to assist in creating new completions, and set of facilities for
-loading completions automatically on demand, as well as installing them.
+bash-completion is a collection of
+[command-line completion](https://en.wikipedia.org/wiki/Command-line_completion)
+recipes for a number of commands for the completion system of the
+[Bash shell](https://www.gnu.org/software/bash/).
+These recipes enhance Bash's typical plain completion of filenames to
+provide better suggestions of options and arguments for many commands.
+Also provided is a collection of helper functions to assist in creating new
+recipes, and a set of facilities for loading recipes automatically on
+demand, as well as installing them.
 
 ## Installation
 
@@ -39,7 +44,7 @@ If you have older bash versions in use, their loading of `bash_completion`
 should be prevented. See further for more info.
 
 If you don't have the package readily available for your distribution, or
-you simply don't want to use one, you can install bash completion using the
+you simply don't want to use one, you can install bash-completion using the
 standard commands for GNU autotools packages:
 
 ```shell
@@ -131,7 +136,7 @@ tracing on in it before doing anything else there.
 
 ## FAQ
 
-**Q1. The bash completion code inhibits some commands from completing on
+**Q1. The bash-completion code inhibits some commands from completing on
    files with extensions that are legitimate in my environment. Do I
    have to disable completion for that command in order to complete on
    the files that I need to?**

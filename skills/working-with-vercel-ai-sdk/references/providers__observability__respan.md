@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/respan.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "28003614dd6810327982dbebe625e42dfa05ac82a4bce9f0a290ac7b8a6c3ae7"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "02c3a08490369722a1893a000539e527a9d7e903e88baad66856e952cbaed6ef"
 ---
 
 # Respan Observability
@@ -146,6 +146,7 @@ The same gateway endpoint accepts Anthropic and Google models when used with the
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

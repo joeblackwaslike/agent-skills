@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/introduction.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8a558601d74deef1867f74a56f70e346fd31b417a51d5c46089c4eb56b35a034"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "e0863af8d1f19f25e1f92635a66f5324ff2f9314559cd5af9eabf2a8c0f6fc5a"
 ---
 
 # AI SDK
@@ -199,6 +199,7 @@ Based on the above documentation, answer the following:
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

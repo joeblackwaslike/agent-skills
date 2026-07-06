@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e0a5cea51257dc092ffcca4f767a1bbe3d3f8987caecdfaaf010cac202471262"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "3cb1ae3624f8330abe0b52f5ce593b3b777b62e4ca8e2b86a69e18ca55235b74"
 ---
 
 # `generateText()`
@@ -3184,6 +3184,7 @@ Limits a generation step to the listed tool names. `undefined` means no tool res
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

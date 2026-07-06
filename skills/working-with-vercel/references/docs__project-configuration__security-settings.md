@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/attack-mode
   - /docs/cli/deploy
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/rbac/managing-team-members
   - /docs/oidc
 summary: Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibility, Git Fork Protection, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f94719804e65e1d83c71d66eb3573b3af1bca3e592a68543a7fb9cc06447794b"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "00f0d7a97ed00677b92460bc4ebf61aa7a216cbc231b56aa41da792bb4a4aa4e"
 ---
 
 # Security settings
@@ -44,7 +44,7 @@ None of your existing deployments will be affected when you toggle this
 setting. If you’d like to make the source code or logs private on your
 existing deployments, the only option is to delete these deployments.
 
-This setting is overwritten when a deployment is created using Vercel CLI with the [`--public` option](/docs/cli/deploy#public) or the [`public` property](/docs/project-configuration#public) is used in `vercel.json`.
+This setting is overwritten when a deployment is created using Vercel CLI with the [`--public` option](/docs/cli/deploy#public) or the [`public` property](/docs/project-configuration/vercel-json#public) is used in `vercel.json`.
 
 > **💡 Note:** For deployments created before July 9th, 2020 at 7:05 AM (UTC), only the
 > Project Settings is considered for determining whether the deployment's Logs

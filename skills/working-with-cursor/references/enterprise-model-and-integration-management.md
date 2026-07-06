@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/model-and-integration-management.md"
-fetched_at: "2026-06-29T05:42:13.025Z"
-sha256: "4051cf2b338501e32d7b864c7312cd83865c02e63d8dc263bce5f4e5e8cb3d0f"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "60fb0a527a8a6ac2cb6ec88a173edb7bbb3271de446fe7330a193695bbee530a"
 ---
 
 # Model and Integration Management
@@ -69,6 +69,8 @@ Higher-priority sources replace lower-priority ones. They do not merge.
 When an allowlist is active, only servers matching an allowlist entry can run. Servers that don't match are blocked.
 
 Adding a server to the allowlist does not push it to users' machines. Team members still need to configure the server in their own [Cursor settings](https://cursor.com/docs/mcp.md).
+
+To distribute an approved server, add it to a [team marketplace](https://cursor.com/docs/plugins.md#team-marketplaces). Admins can link existing standalone Team MCP servers to the Default marketplace so teammates can install and configure them in the Agent Window, IDE, and CLI.
 
 All allowlist entries support wildcards using `*` to match any sequence of characters.
 

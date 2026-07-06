@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7ebb056d53db767c9b32184ded6af1fc369fc41d21d339c5604f316274068091"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "ee3f0170795ebbc9c5e63abf3f962f3407993018d0bb4807c7419d45b464b1d3"
 ---
 
 # Bring Your Own Key (BYOK)
@@ -62,7 +62,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Hello, world!',
   providerOptions: {
     gateway: {

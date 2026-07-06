@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5b0f9986e9a037424359285ed7a9011a9f5f800bf7ad8345e138ea04c797be89"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "d6b15f4c2ef6343f3d6ab3a83457489183a9abeb6b1d614bc05c3a028aed7539"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -50,7 +50,7 @@ To run a FastAPI application on Vercel, define an `app` instance that initialize
 
 For example:
 
-```py filename="src/index.py"
+```py filename="app/main.py"
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 ```
 
 > **💡 Note:** If you define a [Build
-> Command](https://vercel.com/docs/project-configuration#buildcommand) in
+> Command](https://vercel.com/docs/project-configuration/vercel-json#buildcommand) in
 > `vercel.json` or in the Project Settings dashboard, it takes precedence over a
 > build script in `pyproject.toml`.
 
@@ -168,6 +168,26 @@ app = FastAPI(lifespan=lifespan)
 When you deploy a FastAPI app to Vercel, it becomes a single [Vercel
 Function](/docs/functions). Vercel uses [Fluid
 compute](/docs/fluid-compute) by default, so the function scales with traffic.
+
+To configure that function, add an entry to the [`functions`
+object](/docs/project-configuration/vercel-json#functions) in `vercel.json` keyed by your
+resolved entrypoint file. For example, to let an app defined in `app/main.py`
+run for up to 60 seconds, set `maxDuration`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app/main.py": {
+      "maxDuration": 60
+    }
+  }
+}
+```
+
+For more options, see [Configuring
+functions](/docs/functions/configuring-functions) and the [`functions`
+property](/docs/project-configuration/vercel-json#functions).
 
 ## Limitations
 

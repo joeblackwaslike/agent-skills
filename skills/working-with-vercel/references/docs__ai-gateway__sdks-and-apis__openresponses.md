@@ -17,8 +17,8 @@ related:
 summary: Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "847c1073aed1adedf3169eb857f8060d14cbf16141fc9caae598b3e1118158b6"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "1af3e507800e9b8629080abe3b2fbed4c82b3fcd24def6e9b96dd7b6ccf1c225"
 ---
 
 # OpenResponses API
@@ -68,7 +68,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     Authorization: `Bearer ${apiKey}`,
   },
   body: JSON.stringify({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     input: [
       {
         type: 'message',
@@ -95,7 +95,7 @@ client = OpenAI(
 )
 
 response = client.responses.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     input=[
         {
             'type': 'message',
@@ -112,7 +112,7 @@ print(response.output[0].content[0].text)
 
 ### Required parameters
 
-- `model` (string): The model ID in `provider/model` format (e.g., `openai/gpt-5.5`, `anthropic/claude-opus-4.7`)
+- `model` (string): The model ID in `provider/model` format (e.g., `openai/gpt-5.5`, `anthropic/claude-opus-4.8`)
 - `input` (array): Array of message objects containing `type`, `role`, and `content` fields
 
 ### Optional parameters
@@ -138,7 +138,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
   },
   body: JSON.stringify({
-    model: 'anthropic/claude-opus-4.7', // provider/model format
+    model: 'anthropic/claude-opus-4.8', // provider/model format
     input: [
       {
         type: 'message',
@@ -153,7 +153,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     },
     providerOptions: {
       gateway: {
-        models: ['anthropic/claude-opus-4.7', 'openai/gpt-5.5'], // fallbacks
+        models: ['anthropic/claude-opus-4.8', 'openai/gpt-5.5'], // fallbacks
       },
     },
   }),

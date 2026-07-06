@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "24ae8f8b9412f7c29e4ca6fa43458a9abf07400823a87a151f598ddc3607b0ef"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "92117084ae14f6e22377a606dd9b6620ee856a4681d6529306e6f84a10c98635"
 ---
 
 # Configuring the Runtime for Vercel Functions
@@ -108,8 +108,10 @@ the Go Runtime with Vercel Functions](/docs/functions/runtimes/go).
 ## Python
 
 For Python, write an ASGI (Asynchronous Server Gateway Interface) or
-WSGI (Web Server Gateway Interface) application that exposes an `app` variable in
-`app.py`, `index.py`, `server.py`, or `main.py`. Here's a FastAPI example:
+WSGI (Web Server Gateway Interface) application. Vercel includes framework
+presets for FastAPI, Flask, and Django, and loads your app from a supported
+[Python entrypoint](/docs/functions/runtimes/python#python-entrypoints). Here's a
+FastAPI example:
 
 ```python filename="app.py"
 from fastapi import FastAPI

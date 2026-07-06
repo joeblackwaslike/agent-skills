@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "cee23d621b077edee31b4016dccfdd94bd722712ab31c0271c05459b2faf3bd9"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "6cb5f452f3cd184a3b80ac599e47759f939f718ac9a86cb0b8a4091ac81a995b"
 ---
 
 # Enterprise
@@ -25,6 +25,7 @@ Our certifications include SOC2 Type II, and we maintain GDPR compliance. Visit 
 
 Learn how to deploy, configure, and manage Cursor for your organization. This documentation covers:
 
+- [Security and Privacy Hardening](https://cursor.com/docs/enterprise/security-hardening.md) - One-page checklist of security and privacy controls with links to configure each one
 - [Organizations](https://cursor.com/docs/enterprise/organizations.md) - Org-wide team membership sync and organization groups
 - [Identity & access](https://cursor.com/docs/enterprise/identity-and-access-management.md) - SSO, SCIM, RBAC, and MDM policies
 - [Privacy & data governance](https://cursor.com/docs/enterprise/privacy-and-data-governance.md) - Data flows, Privacy Mode, and data residency
@@ -121,7 +122,7 @@ Learn how to deploy, configure, and manage Cursor for your organization. This do
 | [Privacy Mode](https://cursor.com/docs/enterprise/privacy-and-data-governance.md#privacy-mode-enforcement)              | User choice      | Enforce org-wide       | Enforce org-wide                                                                     |
 | [Team Rules](https://cursor.com/docs/rules.md#team-rules)                                                               |                  | Enforceable + Optional | Enforceable + Optional                                                               |
 | [Hooks for Logging,Auditing, and more](https://cursor.com/docs/hooks.md#hooks)                                          | ✓                | MDM Distribution       | [MDM & Server-side distribution](https://cursor.com/docs/hooks.md#team-distribution) |
-| [Agent Sandbox Mode](https://cursor.com/docs/agent/tools/terminal.md#sandbox)                                           | ✓                | ✓                      | Enforce org-wide                                                                     |
+| [Agent Sandbox Mode](https://cursor.com/docs/agent/security/run-modes.md#sandboxing)                                    | ✓                | ✓                      | Enforce org-wide                                                                     |
 | [Repository Blocklist](https://cursor.com/docs/enterprise/model-and-integration-management.md#git-repository-blocklist) |                  |                        | ✓                                                                                    |
 | [Model Access Restrictions](https://cursor.com/docs/enterprise/model-and-integration-management.md)                     |                  |                        | ✓                                                                                    |
 | [Auto-run, Browser, and Network Controls](https://cursor.com/docs/enterprise/llm-safety-and-controls.md)                |                  |                        | ✓                                                                                    |

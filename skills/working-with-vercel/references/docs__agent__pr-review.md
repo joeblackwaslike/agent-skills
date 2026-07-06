@@ -16,15 +16,15 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "aa74df140ccf7d804995ca6071aba7d0ed65fd9f24f6cd672753cf203c652042"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "b201904c0b8cedbb284bfbd8ab01bdff5873a31345e0d4348f18788217628571"
 ---
 
 # Code Review
 
 > **🔒 Permissions Required**: Vercel Agent Code Review
 
-AI Code Review is part of [Vercel Agent](/docs/agent), a suite of AI-powered development tools. When you open a pull request, it automatically analyzes your changes using multi-step reasoning to catch security vulnerabilities, logic errors, and performance issues.
+Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validated suggestions on your pull requests as one capability within the broader Vercel Agent.
 
 It generates patches and runs them in [secure sandboxes](/docs/sandbox) with your real builds, tests, and linters to validate fixes before suggesting them. Only validated suggestions that pass these checks appear in your PR, allowing you to apply specific code changes with one click.
 

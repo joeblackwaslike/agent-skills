@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/maxim.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b3edbcac5dd399c29bfdf70e7559022e072a70e5c7793dc96c9348353b0bd97d"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "ab7773513426b506fe7a85e0943acc75938ab7d9bd395c5635fa39cfa7c96fe2"
 ---
 
 # Maxim Observability
@@ -331,6 +331,7 @@ For further details, checkout Vercel AI SDK's [Maxim integration documentation](
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

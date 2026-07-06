@@ -3,7 +3,7 @@ title: import-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource"
-last_updated: 2026-06-29
+last_updated: 2026-07-06
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about import-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "85485f8d0fdfb5922d8ee671d1c6ada34b85ec539a39cb9ee3e4a83dc0eecc2d"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "22769fc1a307dd27f7094a13638ed982fe777393630b58cff0885ec76bc28365"
 ---
 
 # Import Resource

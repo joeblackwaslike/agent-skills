@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cbccb9d2ab574765c35c6f32f1a6eddd3f40812643034a93fdfda2d8e08699a0"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "1485197c5986788544ce84bde4608bce9756a80e1766fc4360aa1163315355dd"
 ---
 
 # AI SDK Core
@@ -237,6 +237,7 @@ sha256: "cbccb9d2ab574765c35c6f32f1a6eddd3f40812643034a93fdfda2d8e08699a0"
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

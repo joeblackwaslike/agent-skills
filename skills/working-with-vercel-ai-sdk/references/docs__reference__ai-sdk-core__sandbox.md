@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/sandbox.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c21746f4d433d3c40f446fb25ae9d909c44cbb3bb511af668d88ec53b6622177"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "05fc05a424891649dd8da6990aebd22cc2448e9e83384665adde4fc89b82d592"
 ---
 
 # `Experimental_SandboxSession`
@@ -146,6 +146,7 @@ const shell = tool({
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

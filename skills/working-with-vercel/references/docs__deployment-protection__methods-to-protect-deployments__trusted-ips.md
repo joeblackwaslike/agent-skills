@@ -17,8 +17,8 @@ related:
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "8a71ac3d392b56a1a086200d7d5131f96539d140eb0082382ada563bef00fe47"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "3acbe98a398c4e7d4f65b04781654416110806b6066dafa43e94e797bc6d2b87"
 ---
 
 # Restrict deployment access by IP address
@@ -39,7 +39,7 @@ The tables below outline key considerations and security implications when using
 
 | Consideration             | Description                                                                                                                                                                                                                                                                            |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Environment Configuration | Can be enabled for different environments. See [Understanding Deployment Protection by environment](/docs/deployment-protection#understanding-deployment-protection-by-environment)                                                                                           |
+| Environment Configuration | Can be enabled for different environments. See [Understanding Deployment Protection by environment](/docs/deployment-protection#choose-which-urls-to-protect)                                                                                           |
 | Compatibility             | Operates as a required layer on top of [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) and [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection).          |
 | Bypass Methods            | Can be bypassed using [Shareable Links](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection Bypass for Automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
 | IP Address Support        | Supports IPv4 addresses and IPv4 CIDR ranges                                                                                                                                                                                                                                           |
@@ -78,7 +78,7 @@ You can manage Trusted IPs through the dashboard, API, or Terraform.
 - #### Manage Trusted IPs
   From the **Trusted IPs** section:
   1. Use the toggle to enable the feature
-  2. Select the [deployment environment](/docs/deployment-protection#understanding-deployment-protection-by-environment) you want to protect
+  2. Select the [deployment environment](/docs/deployment-protection#choose-which-urls-to-protect) you want to protect
   3. Enter your list of IPv4 addresses and IPv4 CIDR ranges with an optional note describing the address
   4. Finally, select **Save**
   All your existing and future deployments will be protected with Trusted IPs for that project. Visitors to your project deployments from IP addresses not included in your list will see a [No Deployment Found](/docs/errors/platform-error-codes#404:-deployment_not_found) error page.

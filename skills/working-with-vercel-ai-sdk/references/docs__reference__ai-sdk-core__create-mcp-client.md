@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "de7fb2c3316128d6b36c1669eb71a092925f45420917daa14f4cd8658e3be8c7"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "efb299b47d98d62e6a8aab5d3bd5f7a4ec2085fa336a92c984271500240e2f6a"
 ---
 
 # `createMCPClient()`
@@ -11,6 +11,7 @@ Creates a lightweight Model Context Protocol (MCP) client that connects to an MC
 - **Tools**: Automatic conversion between MCP tools and AI SDK tools
 - **Resources**: Methods to list, read, and discover resource templates from MCP servers
 - **Prompts**: Methods to list available prompts and retrieve prompt messages
+- **Completions**: Methods to request autocompletion suggestions for prompt arguments and resource template variables
 - **Elicitation**: Support for handling server requests for additional input during tool execution
 
 It currently does not support accepting notifications from an MCP server, and custom configuration of the client.
@@ -186,6 +187,13 @@ It currently does not support accepting notifications from an MCP server, and cu
               type: '(error: unknown) => void',
               isOptional: true,
               description: 'Handler for uncaught errors',
+            },
+            {
+              name: 'maxRetries',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Maximum number of retries for transient MCP tool call failures. Set to 0 to disable retries. Defaults to 0. Retries are opt-in and apply to tools/call requests.',
             },
             {
               name: 'initialInitializeResult',
@@ -442,6 +450,47 @@ Returns a Promise that resolves to an `MCPClient` with the following properties 
       ],
     },
     {
+      name: 'complete',
+      type: `async (args: CompleteRequestParams & {
+        options?: RequestOptions;
+      }) => Promise<CompleteResult>`,
+      description:
+        'Requests autocompletion suggestions for a prompt argument or resource template variable. The server must advertise the completions capability.',
+      properties: [
+        {
+          type: 'args',
+          parameters: [
+            {
+              name: 'ref',
+              type: "{ type: 'ref/prompt'; name: string } | { type: 'ref/resource'; uri: string }",
+              description:
+                'Reference to the prompt or resource template being completed.',
+            },
+            {
+              name: 'argument',
+              type: '{ name: string; value: string }',
+              description:
+                'Argument name and current partial value to complete.',
+            },
+            {
+              name: 'context',
+              type: '{ arguments: Record<string, string> }',
+              isOptional: true,
+              description:
+                'Previously resolved argument values used to provide context for multi-argument prompts or resource templates.',
+            },
+            {
+              name: 'options',
+              type: 'RequestOptions',
+              isOptional: true,
+              description:
+                'Optional request options including signal and timeout.',
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'experimental_listPrompts',
       type: `async (options?: {
         params?: PaginatedRequest['params'];
@@ -599,6 +648,7 @@ For unknown errors, the client exposes an `onUncaughtError` callback that can be
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6b82a06ba30a3f277b4e7c31bb0426be36080e242feec6a68d15160644657eed"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "0a43714b550efffae78ad01c2b099519a5d0c611aa7441695c63f33ca26a3c3b"
 ---
 
 # `ToolLoopAgent`
@@ -1102,6 +1102,7 @@ console.log(approvedResult.text);
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

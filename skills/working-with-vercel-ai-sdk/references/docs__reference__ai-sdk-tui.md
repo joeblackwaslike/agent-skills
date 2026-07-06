@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-tui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "91031858026163335e22133b2e70392d21ca024a54fe79e59152a7699fb94589"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "d84b62375f884426f73d46ee2dfbd3c4f8e8746a255d01532ebaada00d5ae903"
 ---
 
 # AI SDK TUI
@@ -30,6 +30,7 @@ from free-form terminal input.
   - [embedMany](/docs/reference/ai-sdk-core/embed-many)
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+  - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

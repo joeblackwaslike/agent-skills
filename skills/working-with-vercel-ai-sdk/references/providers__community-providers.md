@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "4995f7dc593da1a7c9a9ec093b691c06b168b2971b315bbae9eb642f32328407"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "2e3084b173e9ab13e1b6dd946085910ddc7d0c9ff2cd0e690b2e5bc7422c5b25"
 ---
 
 # Community Providers
@@ -81,6 +81,7 @@ Here are the community providers that implement the Language Model Specification
   - [Raindrop](/providers/observability/raindrop)
   - [Respan](/providers/observability/respan)
   - [Scorecard](/providers/observability/scorecard)
+  - [Sentry](/providers/observability/sentry)
   - [SigNoz](/providers/observability/signoz)
   - [Traceloop](/providers/observability/traceloop)
   - [Weave](/providers/observability/weave)

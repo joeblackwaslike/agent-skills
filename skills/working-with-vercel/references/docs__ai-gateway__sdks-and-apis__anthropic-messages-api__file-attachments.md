@@ -13,8 +13,8 @@ related:
 summary: Send images and PDF documents as part of your Anthropic API message requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/file-attachments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "276b8749d65988f9c71e16427e0d3d550d5a4c3bf521eed6131fe1f0e11503ca"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "236d21a283ebac8d34c62bdc211fa49c216ab4021b8b09e4fde772125cc395dd"
 ---
 
 # File Attachments
@@ -44,7 +44,7 @@ const pdfBase64 = pdfData.toString('base64');
 const imageBase64 = imageData.toString('base64');
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 1024,
   messages: [
     {
@@ -100,7 +100,7 @@ with open('./image.png', 'rb') as f:
     image_base64 = base64.b64encode(f.read()).decode('utf-8')
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     messages=[
         {

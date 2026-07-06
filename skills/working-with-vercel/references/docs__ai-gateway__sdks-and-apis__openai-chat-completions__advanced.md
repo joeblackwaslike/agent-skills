@@ -17,8 +17,8 @@ related:
 summary: Configure reasoning, provider options, model fallbacks, BYOK credentials, and prompt caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f3c181c1140a90ee0020dd15879e0c4c805b9ce2de3434ed113277ce55b98189"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "ffe15baa8df910d00ac1cd1f0b5dc931546bec1451bdb0dbfae14494176b3723"
 ---
 
 # Advanced Configuration
@@ -43,7 +43,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error - reasoning parameter not yet in OpenAI types
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -79,7 +79,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -133,7 +133,7 @@ When reasoning is enabled, the response includes reasoning content:
   "id": "chatcmpl-123",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "choices": [
     {
       "index": 0,
@@ -172,7 +172,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error - reasoning parameter not yet in OpenAI types
 const stream = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -212,7 +212,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -275,7 +275,7 @@ For Anthropic models:
   "id": "chatcmpl-123",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "choices": [
     {
       "index": 0,
@@ -362,7 +362,7 @@ For Anthropic models:
   "id": "chatcmpl-123",
   "object": "chat.completion.chunk",
   "created": 1677652288,
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "choices": [
     {
       "index": 0,
@@ -447,7 +447,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -482,7 +482,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -532,7 +532,7 @@ const openai = new OpenAI({
 const completion = await openai.chat.completions.create({
   model: 'openai/gpt-5.5', // Primary model
   // @ts-ignore - models is a gateway extension
-  models: ['anthropic/claude-opus-4.7', 'google/gemini-3.1-pro-preview'], // Fallback models
+  models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
   messages: [
     {
       role: 'user',
@@ -572,7 +572,7 @@ completion = client.chat.completions.create(
     stream=False,
     # models is a gateway extension for fallback models
     extra_body={
-        'models': ['anthropic/claude-opus-4.7', 'google/gemini-3.1-pro-preview']  # Fallback models
+        'models': ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview']  # Fallback models
     }
 )
 
@@ -611,7 +611,7 @@ const completion = await openai.chat.completions.create({
   // Model fallbacks via provider options
   providerOptions: {
     gateway: {
-      models: ['anthropic/claude-opus-4.7', 'google/gemini-3.1-pro-preview'], // Fallback models
+      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
     },
   },
 });
@@ -646,7 +646,7 @@ completion = client.chat.completions.create(
     extra_body={
         'providerOptions': {
             'gateway': {
-                'models': ['anthropic/claude-opus-4.7', 'google/gemini-3.1-pro-preview']  # Fallback models
+                'models': ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview']  # Fallback models
             }
         }
     }
@@ -663,7 +663,7 @@ print('Model used:', completion.model)
 Both configurations will:
 
 1. Try the primary model (`openai/gpt-5.5`) first
-2. If it fails, try `anthropic/claude-opus-4.7`
+2. If it fails, try `anthropic/claude-opus-4.8`
 3. If that also fails, try `google/gemini-3.1-pro-preview`
 4. Return the result from the first model that succeeds
 
@@ -685,7 +685,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error
 const stream = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -723,7 +723,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -928,7 +928,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error - byok is a gateway extension
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -961,7 +961,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -1042,7 +1042,7 @@ const openai = new OpenAI({
 });
 
 const response = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -1071,7 +1071,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/default-settings-middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7866f887aadca029039ba87fdc8a0cef69d7009f37d952bf14faa42b43d1b1a4"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "3bbeec5795bae4e1c36c06a7acdef44bed3c82db5b7a5a86df2a052721ccc827"
 ---
 
 # `defaultSettingsMiddleware()`
@@ -89,6 +89,7 @@ The middleware:
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

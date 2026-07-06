@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/safe-validate-ui-messages.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d869685984e883218617ecb0c33d74f29df42f3d1bbee2729431a5161c2e47de"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "8d8f1a35d2c0398ddefb82988a6319e0e48291fe536b984bf205bdc2de988f95"
 ---
 
 # `safeValidateUIMessages`
@@ -122,6 +122,7 @@ if (!result.success) {
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

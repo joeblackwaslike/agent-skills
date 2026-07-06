@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calls.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e6edf2fe3e6364f86a5b2cda24c7bfc2d6103cf3adf9c45f0552d3d81839513a"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "33cc572411abec8295138d7052181b9db93f17ee71960728c05f4fb0067c5186"
 ---
 
 # Tool Calls
@@ -61,7 +61,7 @@ const tools: OpenAI.Chat.Completions.ChatCompletionTool[] = [
 ];
 
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -116,7 +116,7 @@ tools = [
 ]
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -144,7 +144,7 @@ When the model makes tool calls, the response includes tool call information:
   "id": "chatcmpl-123",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "choices": [
     {
       "index": 0,

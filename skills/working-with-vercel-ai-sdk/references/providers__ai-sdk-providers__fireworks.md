@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "11d6c1cb1b377d87c0fac15091dbcf7bdeb23a88a2cca1f504fe1ff9e159d1b9"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "d105df24a2f057d30be34c6e8a978098d6fdbfe2b8d12a8f8b85ac1f47e1e5b0"
 ---
 
 # Fireworks Provider
@@ -143,6 +143,11 @@ The following optional provider options are available for Fireworks chat models:
   for all steps and calls in one conversation, and use different keys for
   unrelated conversations.
 
+- **serviceTier** _'priority'_
+
+  Uses the Fireworks Priority serving path for higher reliability during peak
+  traffic. The provider sends it as Fireworks' `service_tier` request field.
+
 - **thinking** _object_
 
   Configuration for thinking/reasoning models like Kimi K2.6.
@@ -244,6 +249,30 @@ const result = await agent.generate({
 
 Use non-identifying values for cache keys rather than email addresses or other
 personal information.
+
+### Priority Service Tier
+
+[Fireworks Priority tier](https://docs.fireworks.ai/serverless/serving-paths)
+prioritizes supported models above Standard traffic. Set `serviceTier` to
+`'priority'` to send Fireworks' `service_tier` request field:
+
+```ts
+import {
+  fireworks,
+  type FireworksLanguageModelOptions,
+} from '@ai-sdk/fireworks';
+import { generateText } from 'ai';
+
+const result = await generateText({
+  model: fireworks('accounts/fireworks/models/glm-5p2'),
+  providerOptions: {
+    fireworks: {
+      serviceTier: 'priority',
+    } satisfies FireworksLanguageModelOptions,
+  },
+  prompt: 'Write a haiku about reliable inference.',
+});
+```
 
 ### Completion Models
 

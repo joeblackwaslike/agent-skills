@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e6ff4aa2cb71bdefbc4af5ae7664f3b60991fc58298c65db9300c3730c2eea55"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "f5b62fcfc4e3b6cdce0e5c2340f2a9aed7e2df7fb6865a35ff702771aaab201b"
 ---
 
 # Observability Integrations
@@ -24,7 +24,7 @@ Several LLM observability providers offer integrations with the AI SDK telemetry
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
-- [Sentry](https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/integrations/vercelai/)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)
@@ -106,6 +106,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Raindrop](/providers/observability/raindrop)
   - [Respan](/providers/observability/respan)
   - [Scorecard](/providers/observability/scorecard)
+  - [Sentry](/providers/observability/sentry)
   - [SigNoz](/providers/observability/signoz)
   - [Traceloop](/providers/observability/traceloop)
   - [Weave](/providers/observability/weave)

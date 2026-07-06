@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/tool-search.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "795fb4c08e4911f4a6a6ed2580721a3e57804966d86021a112c8b98bc97be13f"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "76477c337d4d558eab483e8c7a369bb5a40f71109acd3e99820e4b9c400f3875"
 ---
 
 > ## Documentation Index
@@ -35,15 +35,15 @@ For details on the underlying API mechanism, see [Tool search in the API](https:
 
 ## Configure tool search
 
-Tool search is on by default. It is disabled by default on Vertex AI, where it is supported for Claude Sonnet 4.5 and later and Claude Opus 4.5 and later. It is also disabled when `ANTHROPIC_BASE_URL` points to a non-first-party host, since most proxies do not forward `tool_reference` blocks. You can override either default with the `ENABLE_TOOL_SEARCH` environment variable:
+Tool search is on by default. It is disabled by default on Google Cloud's Agent Platform, where it is supported for Claude Sonnet 4.5 and later and Claude Opus 4.5 and later. It is also disabled when `ANTHROPIC_BASE_URL` points to a non-first-party host, since most proxies do not forward `tool_reference` blocks. You can override either default with the `ENABLE_TOOL_SEARCH` environment variable:
 
-| Value    | Behavior                                                                                                                                                                                                                         |
-| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| (unset)  | Tool search is on. Tool definitions are deferred and discovered on demand. Falls back to loading upfront on Vertex AI or a non-first-party `ANTHROPIC_BASE_URL`.                                                                 |
-| `true`   | Tool search is always on. The SDK sends the beta header even on Vertex AI and through proxies. Requests fail on Vertex AI models earlier than Sonnet 4.5 or Opus 4.5, or on proxies that do not support `tool_reference` blocks. |
-| `auto`   | Checks the combined token count of all tool definitions against the model's context window. If they exceed 10%, tool search activates. If they're under 10%, all tools are loaded into context normally.                         |
-| `auto:N` | Same as `auto` with a custom percentage. `auto:5` activates when tool definitions exceed 5% of the context window. Lower values activate sooner.                                                                                 |
-| `false`  | Tool search is off. All tool definitions are loaded into context on every turn.                                                                                                                                                  |
+| Value    | Behavior                                                                                                                                                                                                                                                                 |
+| :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (unset)  | Tool search is on. Tool definitions are deferred and discovered on demand. Falls back to loading upfront on Google Cloud's Agent Platform or a non-first-party `ANTHROPIC_BASE_URL`.                                                                                     |
+| `true`   | Tool search is always on. The SDK sends the beta header even on Google Cloud's Agent Platform and through proxies. Requests fail on Google Cloud's Agent Platform models earlier than Sonnet 4.5 or Opus 4.5, or on proxies that do not support `tool_reference` blocks. |
+| `auto`   | Checks the combined token count of all tool definitions against the model's context window. If they exceed 10%, tool search activates. If they're under 10%, all tools are loaded into context normally.                                                                 |
+| `auto:N` | Same as `auto` with a custom percentage. `auto:5` activates when tool definitions exceed 5% of the context window. Lower values activate sooner.                                                                                                                         |
+| `false`  | Tool search is off. All tool definitions are loaded into context on every turn.                                                                                                                                                                                          |
 
 Tool search applies to all registered tools, whether they come from remote MCP servers or [custom SDK MCP servers](/en/agent-sdk/custom-tools). When using `auto`, the threshold is based on the combined size of all tool definitions across all servers.
 

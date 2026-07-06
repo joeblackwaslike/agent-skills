@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/smooth-stream.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "61f80b8850392a5c611c944366c1e37533ef0c78e012bbf1209c2c0ad1494c95"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "333d91f5c54c9067ef438ea4c640bf3f38c688f4fa6f2315863adabd30c5aaad"
 ---
 
 # `smoothStream()`
@@ -154,6 +154,7 @@ Returns a `TransformStream` that:
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

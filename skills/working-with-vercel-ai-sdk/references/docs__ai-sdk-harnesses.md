@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0b6d083fa695593919781f87996c9472083638ea81ace97601c0a737413df563"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "6ebcd88c68cf4a323efdf39d84f5699140a654299b5e00c802f034553c9cea12"
 ---
 
 # AI SDK Harnesses
@@ -176,6 +176,7 @@ running established agent harnesses such as Claude Code, Codex, and Pi.
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

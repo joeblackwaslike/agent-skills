@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "49441193e2bc85d154a606743f4f3683820899f50d82c8251d72edaeb1b08da2"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "d1225962f801a50cfc2c767706b70f8169947282c4a211eaf2fb61074ce727bb"
 ---
 
 # Alibaba Provider
@@ -377,6 +377,30 @@ const { video } = await generateVideo({
 });
 ```
 
+You can also pass the first frame using the top-level `frameImages` option:
+
+```ts
+import { alibaba, type AlibabaVideoModelOptions } from '@ai-sdk/alibaba';
+import { experimental_generateVideo as generateVideo } from 'ai';
+
+const { video } = await generateVideo({
+  model: alibaba.video('wan2.6-i2v'),
+  prompt: 'Camera slowly pans across the landscape',
+  frameImages: [
+    {
+      image: 'https://example.com/landscape.jpg',
+      frameType: 'first_frame',
+    },
+  ],
+  duration: 5,
+  providerOptions: {
+    alibaba: {
+      pollTimeoutMs: 600000, // 10 minutes
+    } satisfies AlibabaVideoModelOptions,
+  },
+});
+```
+
 ### Reference-to-Video
 
 Generate videos using reference images and/or videos for character consistency. Use character identifiers
@@ -391,9 +415,9 @@ const { video } = await generateVideo({
   prompt: 'character1 walks through a beautiful garden and waves at the camera',
   resolution: '1280x720',
   duration: 5,
+  inputReferences: ['https://example.com/character-reference.jpg'],
   providerOptions: {
     alibaba: {
-      referenceUrls: ['https://example.com/character-reference.jpg'],
       pollTimeoutMs: 600000, // 10 minutes
     } satisfies AlibabaVideoModelOptions,
   },
@@ -431,6 +455,7 @@ The following provider options are available via `providerOptions.alibaba`:
 - **referenceUrls** _string[]_
 
   Array of reference image/video URLs for reference-to-video mode. Supports 0-5 images and 0-3 videos, max 5 total.
+  Prefer the top-level `inputReferences` option when passing reference images.
 
 - **pollIntervalMs** _number_
 

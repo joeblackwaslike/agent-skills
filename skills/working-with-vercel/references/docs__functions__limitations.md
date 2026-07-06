@@ -8,27 +8,27 @@ type: reference
 prerequisites:
   - /docs/functions
 related:
-  - /docs/functions/configuring-functions/duration
   - /docs/functions/runtimes/python
   - /docs/functions/concurrency-scaling
   - /docs/functions/runtimes
   - /docs/functions/configuring-functions/region
+  - /docs/functions/runtimes/node-js
 summary: Learn about the limits and restrictions of using Vercel Functions with the Node.js runtime.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e01a18b26a359471563104293585c9bf3fef88021403b7885f76d8a2b7ba90b9"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "1d8bc57d1a4af01d736f096d5e108778838df264fce66841a1494f8f9f810e15"
 ---
 
 # Vercel Functions Limits
 
-The table below outlines the limits and restrictions of using Vercel Functions:
+The table below outlines the limits and restrictions of using Vercel Functions with Fluid compute:
 
-| Feature                                                                          | Node.js                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Feature                                                                          | Limits                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Maximum memory](/docs/functions/limitations#memory-size-limits)                 | Hobby: 2 GB, Pro and Ent: 4 GB                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [Maximum duration](/docs/functions/limitations#max-duration)                     | Hobby: 300s (default and maximum), Pro and Ent: 300s (default) - [configurable](/docs/functions/configuring-functions/duration) up to 800s. [Extended max duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta) supports up to 1800s . See [max durations](/docs/functions/limitations#max-duration) for more information.                                                                                                                                  |
-| [Size](/docs/functions/limitations#bundle-size-limits) (uncompressed)            | 250 MB (500 MB for [Python](/docs/functions/runtimes/python))                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [Maximum duration](/docs/functions/limitations#max-duration)                     | Hobby: 300s default and maximum. Pro and Enterprise: 300s default, 800s maximum, and 1800s extended maximum . See [max duration](/docs/functions/limitations#max-duration) for requirements and configuration.                                                                                                                                                                                                        |
+| [Size](/docs/functions/limitations#bundle-size-limits) (uncompressed)            | 250 MB, or 500 MB for [Python](/docs/functions/runtimes/python). [Large functions](/docs/functions/limitations#large-functions-beta) support up to 5 GB .                                                                                                                                                                                                                                                        |
 | [Concurrency](/docs/functions/concurrency-scaling#automatic-concurrency-scaling) | Auto-scales up to 30,000 (Hobby and Pro) or 100,000+ (Enterprise) concurrency                                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Cost](/docs/functions/runtimes)                                                 | Pay for active CPU time and provisioned memory time                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Regions](/docs/functions/runtimes#location)                                     | Runs in a single region by default (`iad1`), which you can [change](/docs/functions/configuring-functions/region#setting-your-default-region). Pro and Enterprise teams can set [multiple regions](/docs/functions/configuring-functions/region#limits)                                                                                                                                                                                                                                                               |
@@ -48,7 +48,34 @@ Vercel places restrictions on the maximum size of the deployment bundle for func
 
 For Vercel Functions, the maximum uncompressed size is **250 MB** including layers which are automatically used depending on [runtimes](/docs/functions/runtimes). These limits are [enforced by AWS](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html). For [Python functions](/docs/functions/runtimes/python), the maximum uncompressed size is **500 MB**.
 
-You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration#functions) to specify items which may affect the function size. These configurations are not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/next-config-js/output).
+You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration/vercel-json#functions) to specify items which may affect the function size. These configurations are not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/next-config-js/output).
+
+## Large functions&#x20;
+
+Large functions let you deploy uncompressed bundles up to **5 GB**. Use them for workloads that ship large dependencies, model files, or binaries. Large functions are supported on Node.js and Python runtimes.
+
+Large functions require [fluid compute](/docs/fluid-compute) with [Active CPU](/docs/functions/usage-and-pricing#active-cpu) enabled. Fluid compute is enabled by default for new projects.
+
+### Enable large functions
+
+New projects are eligible for large functions by default. For existing projects, opt in by setting the `VERCEL_SUPPORT_LARGE_FUNCTIONS` [environment variable](/docs/environment-variables).
+
+The environment variable always takes precedence over the project default. Set it to `1` to enable support for large functions, or `0` to disable, for both new and existing projects.
+
+You can set `VERCEL_SUPPORT_LARGE_FUNCTIONS` as a project [environment variable](/docs/environment-variables) in your project settings or with the [Vercel CLI](/docs/cli/env).
+
+In eligible projects, Vercel only uses the large functions beta for Functions that exceed the standard bundle size limit. Functions that fit within the standard limit continue to use the standard path.
+
+### Supported runtimes
+
+Large functions are supported on the following runtimes:
+
+- [`nodejs`](/docs/functions/runtimes/node-js)
+- [`python`](/docs/functions/runtimes/python)
+
+> **💡 Note:** Large functions are not yet supported for projects using
+> [Secure Compute](/docs/networking/secure-compute) or
+> [Static IPs](/docs/networking/static-ips).
 
 ## Max duration
 
@@ -72,7 +99,7 @@ With [fluid compute](/docs/fluid-compute) enabled, Vercel Functions have the fol
 > Python runtime versions. [Secure Compute](/docs/networking/secure-compute)
 > and [Static IPs](/docs/networking/static-ips) do not support durations above
 > 800 seconds during the beta. See [configuring maximum
-> duration](/docs/functions/configuring-functions/duration#extended-max-duration)
+> duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta)
 > for the supported runtimes and examples.
 
 > **💡 Note:** For workloads that require unlimited execution time, use [Vercel

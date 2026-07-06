@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b4bee9cb2da603367f885dc87b688849a19d238ee08d1708a2a84f234be4c035"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "26d22dc4b80d8c994443a68849c2b58c3c05b69bfe8c54feefe14c9a507c1f6b"
 ---
 
 # OpenAI Compatible Providers
@@ -648,6 +648,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Raindrop](/providers/observability/raindrop)
   - [Respan](/providers/observability/respan)
   - [Scorecard](/providers/observability/scorecard)
+  - [Sentry](/providers/observability/sentry)
   - [SigNoz](/providers/observability/signoz)
   - [Traceloop](/providers/observability/traceloop)
   - [Weave](/providers/observability/weave)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c46df6d50889d6ae0291e42a6e632a0b49e873d54d02b518e5a5329ff0744a5b"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "8c72b492cfded426c16185a18423d45b915d4aba7c56399eab01a9f21df1d39d"
 ---
 
 # xAI Grok Provider
@@ -80,7 +80,12 @@ first argument is the model id, e.g. `grok-4.20-non-reasoning`.
 const model = xai('grok-4.20-non-reasoning');
 ```
 
-By default, `xai(modelId)` uses the Responses API. To use the [Chat Completions API](https://docs.x.ai/docs/api-reference#chat-completions) (legacy), use `xai.chat(modelId)`.
+<Note>
+  Since AI SDK 7, `xai(modelId)` uses the xAI Responses API by default. To use
+  the [Chat Completions
+  API](https://docs.x.ai/docs/api-reference#chat-completions) (legacy), use
+  `xai.chat(modelId)`.
+</Note>
 
 ### Example
 
@@ -166,7 +171,7 @@ calling pattern.
 
 ## Responses API (Agentic Tools)
 
-The xAI Responses API is the default when using `xai(modelId)`. You can also use `xai.responses(modelId)` explicitly. This enables the model to autonomously orchestrate tool calls and research on xAI's servers.
+The xAI Responses API is the default when using `xai(modelId)` (since AI SDK 7). You can also use `xai.responses(modelId)` explicitly. This enables the model to autonomously orchestrate tool calls and research on xAI's servers.
 
 ```ts
 const model = xai.responses('grok-4.20-non-reasoning');
@@ -721,11 +726,38 @@ const result = await transcribe({
 
   Includes filler words such as `uh` and `um` in the transcript.
 
+- **streaming** _object_
+
+  Options for streaming speech-to-text over WebSocket. Use with `experimental_streamTranscribe`.
+  - **interimResults** _boolean_
+
+    Emits partial transcripts while speech is being processed.
+
+  - **endpointing** _number_
+
+    Silence duration in milliseconds before an utterance-final event. Range: 0-5000.
+
+  - **smartTurn** _number_
+
+    End-of-turn detection threshold. When set, enables Smart Turn. Range: 0.0-1.0.
+
+  - **smartTurnTimeout** _number_
+
+    Maximum silence duration in milliseconds before forcing `speech_final`. Range: 1-5000.
+
 ### Model Capabilities
 
-| Model     | Word Timestamps     | Diarization         | Multichannel        |
-| --------- | ------------------- | ------------------- | ------------------- |
-| `default` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model     | Request/Response    | Streaming           | Word Timestamps     | Diarization         | Multichannel        |
+| --------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
+| `default` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+
+<Note>
+  Word timestamps, diarization results, and segments are only returned on the
+  request/response path (`transcribe`). Streaming transcription
+  (`experimental_streamTranscribe`) emits partial and final transcript text with
+  utterance-level timing, but does not surface per-word timestamps, speaker
+  labels, or segments.
+</Note>
 
 ## Image Models
 
@@ -908,6 +940,37 @@ const { video } = await generateVideo({
 });
 ```
 
+You can also pass the starting frame via the top-level `frameImages` option using the `first_frame` role. This is provider-agnostic and accepts file data (e.g. a `Buffer`) or a `{ type: 'url', url }` object:
+
+```ts
+import { xai, type XaiVideoModelOptions } from '@ai-sdk/xai';
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const { video } = await generateVideo({
+  model: xai.video('grok-imagine-video'),
+  prompt: 'The cat slowly turns its head and blinks',
+  frameImages: [
+    {
+      image: fs.readFileSync('./start-frame.png'),
+      frameType: 'first_frame',
+    },
+  ],
+  duration: 5,
+  providerOptions: {
+    xai: {
+      pollTimeoutMs: 600000, // 10 minutes
+    } satisfies XaiVideoModelOptions,
+  },
+});
+```
+
+<Note>
+  xAI does not support first-last-frame interpolation. A `last_frame` entry in
+  `frameImages` is ignored with a warning — use the `extend-video` mode to
+  continue from a video's last frame instead.
+</Note>
+
 ### Video Editing
 
 Edit an existing video using a text prompt by providing a source video URL via provider options:
@@ -1065,9 +1128,38 @@ const { video } = await generateVideo({
 
 Use `<IMAGE_1>`, `<IMAGE_2>`, etc. in your prompt to reference specific images. Up to 7 reference images are supported per request.
 
+Alternatively, use the provider-agnostic top-level `inputReferences` option. Providing it automatically selects reference-to-video mode, and it accepts file data (e.g. a `Buffer`) or `{ type: 'url', url }` objects:
+
+```ts
+import { xai, type XaiVideoModelOptions } from '@ai-sdk/xai';
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const { video } = await generateVideo({
+  model: xai.video('grok-imagine-video'),
+  prompt:
+    'The comic cat and the comic dog are having a playful chase ' +
+    'through a sunlit park. Cinematic slow-motion, warm afternoon light.',
+  inputReferences: [
+    fs.readFileSync('./comic-cat.png'),
+    fs.readFileSync('./comic-dog.png'),
+  ],
+  duration: 8,
+  aspectRatio: '16:9',
+  providerOptions: {
+    xai: {
+      pollTimeoutMs: 600000,
+    } satisfies XaiVideoModelOptions,
+  },
+});
+```
+
 <Note>
   Reference-to-video supports `duration`, `aspectRatio`, and `resolution`. Use
-  `mode` to select the operation — each mode is mutually exclusive.
+  `mode` to select the operation — each mode is mutually exclusive. When both
+  are provided, `frameImages` takes precedence over `inputReferences`, and
+  `inputReferences` takes precedence over the legacy `referenceImageUrls`
+  provider option. Reference-to-video requires the `grok-imagine-video` model.
 </Note>
 
 ### Video Provider Options

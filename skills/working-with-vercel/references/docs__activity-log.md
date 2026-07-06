@@ -9,12 +9,13 @@ prerequisites:
   []
 related:
   - /docs/accounts
+  - /docs/audit-log
   - /docs/cli/activity
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "027f90fbbeb0c31f5dea3765d35c5c847eb420809bec0490a5443a3307da2934"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "ba836cd1119f28c0badb325cc4c58de5e68dc68f8b1cc4cd5a3dce862dc06c92"
 ---
 
 # Using the Activity Log
@@ -42,6 +43,10 @@ Common use cases for viewing the Activity log include:
 - If a user was removed or deleted by mistake, use the list to find when the event happened and who requested it
 - A domain can be disconnected from your deployment. Use the list to see if a domain related event was recently triggered
 - Check if a specific user was removed from a team
+
+## When to use Audit Logs
+
+Enterprise team owners can use [Audit Logs](/docs/audit-log) for security review, CSV exports, and external audit storage. Audit Logs include Activity Log events and additional audit metadata.
 
 ## CLI access
 
@@ -74,6 +79,8 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-byok-credential-created | Active | A user created an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-deleted | Active | A user deleted an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-updated | Active | A user updated an AI Gateway BYOK credential. |
+| ai-gateway-model-allowlist-models-updated | Active | Models were added to or removed from the AI Gateway model allowlist. |
+| ai-gateway-model-allowlist-toggled | Active | The AI Gateway model allowlist was enabled or disabled for a team. |
 | ai-gateway-private-model-created | Active | A user created an AI Gateway private model. |
 | ai-gateway-private-model-deleted | Active | A user removed an AI Gateway private model. |
 | ai-gateway-private-model-updated | Active | A user updated an AI Gateway private model. |
@@ -428,6 +435,9 @@ The table below shows a list of events logged on the Activity page.
 | secret-add | Active | An encrypted environment variable was added to a project. (Only possible through the API and CLI) |
 | secret-delete | Deprecated | An encrypted environment variable was deleted from a project. (Only possible through the API and CLI) |
 | secret-rename | Active | An encrypted environment variable was renamed in a project. (Only possible through the API and CLI) |
+| security-list-created | Active | A team security list was created. |
+| security-list-deleted | Active | A team security list was deleted. |
+| security-list-updated | Active | A team security list was updated. |
 | security-plus-updated | Active | Security Plus configuration was updated. |
 | set-scale | Deprecated | If a deployment needs to be scaled up or down by increasing or decreasing the docker container size, this event is created. |
 | shared-env-variable-create | Active | An automatically encrypted shared environment variable was created. |
@@ -474,6 +484,8 @@ The table below shows a list of events logged on the Activity page.
 | team-deployment-policy-updated | Active | Team deployment policy was updated. |
 | team-email-domain-update | Active | The team email domain was updated. |
 | team-ended-trial | Active | A team trial ended. |
+| team-firewall-config-modified | Active | A team-scoped firewall configuration was modified. |
+| team-firewall-config-promoted | Active | A team-scoped firewall configuration was published. |
 | team-git-repository-dispatch-events-toggled | Active | The team-wide repository dispatch events default setting was updated. |
 | team-git-require-verified-commits-toggled | Active | The team-wide verified commits requirement setting was updated. |
 | team-invite-bulk-delete | Active | One or more team invites were deleted. |
@@ -518,7 +530,9 @@ The table below shows a list of events logged on the Activity page.
 | user-tokens-deleted | Active | All Tokens (except the current one) were deleted. |
 | username | Active | The username of a personal account was updated. |
 | vcr-image-deleted | Active | A container image was deleted from a registry repository. |
+| vcr-image-pushed | Active | A container image was pushed to a registry repository. |
 | vcr-repository-created | Active | A container registry repository was created for a project. |
+| vcr-repository-deleted | Active | A container registry repository was deleted from a project. |
 | vercel-agent-elevated-permissions-approved | Active | A Vercel Agent elevated access request was approved. |
 | vercel-agent-elevated-permissions-requested | Active | A Vercel Agent plan requested elevated access. |
 | vercel-agent-session-created | Active | A Vercel Agent session was created. |

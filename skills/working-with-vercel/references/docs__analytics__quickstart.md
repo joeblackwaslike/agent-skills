@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a6e547152c82be69d4b9bd20b251fd6359f97c44c596bac678522b2e15db9793"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "08e3bcc939466f15eb550e513bc209f9e651116357b2a641ab001f5962e6d122"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -74,13 +74,13 @@ This guide will help you get started with using Vercel Web Analytics on your pro
   > For \['html']:
 
 - > For \[
-  > &#x20; 'nextjs',
-  > &#x20; 'nextjs-app',
-  > &#x20; 'remix',
-  > &#x20; 'create-react-app',
-  > &#x20; 'vue',
-  > &#x20; 'astro',
-  > ]:
+  > &#x20;   'nextjs',
+  > &#x20;   'nextjs-app',
+  > &#x20;   'remix',
+  > &#x20;   'create-react-app',
+  > &#x20;   'vue',
+  > &#x20;   'astro',
+  > &#x20; ]:
   ### Add the `Analytics` component to your app
   > For \['nuxt']:
   ### Enable the Nuxt module

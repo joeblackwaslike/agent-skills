@@ -10,13 +10,14 @@ prerequisites:
 related:
   - /docs/project-configuration
   - /docs/build-output-api/v3/configuration
+  - /docs/project-configuration/vercel-json
   - /docs/build-output-api/v3/
   - /docs/build-output-api/v3/primitives
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "93b7f7ead160008981aef1b208be32a04661482bdf4cb88954bc9b0c226a477c"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "0d542e859837e0dc15fce675221982ea5d2f9295306cf6c56b7887687c494ec2"
 ---
 
 # Features
@@ -57,7 +58,7 @@ writeFileSync('.vercel/output/config.json', JSON.stringify(config));
 
 #### `cleanUrls`
 
-The [`cleanUrls: true` routing feature](/docs/project-configuration#cleanurls) is a special case because, in addition to the routes
+The [`cleanUrls: true` routing feature](/docs/project-configuration/vercel-json#cleanurls) is a special case because, in addition to the routes
 generated with the helper function above, it *also* requires that the static HTML files
 have their `.html` suffix removed.
 

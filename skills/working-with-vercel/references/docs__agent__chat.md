@@ -15,22 +15,22 @@ related:
 summary: Manage your Vercel infrastructure through conversation with Vercel Agent
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "cbefa32a892957cab843a6325e4f300ca79d9c1d11004fbe5a07cb9f6a6b0a48"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "6dc700395c4899dfec7eea1cd6dfac6e5155412d93821bf542f5b1297664c9a8"
 ---
 
 # Chat
 
 > **🔒 Permissions Required**: Vercel Agent Chat
 
-Click **New Chat** in your dashboard to start a conversation. Vercel Agent can answer questions about your projects, help troubleshoot issues, and make configuration changes on your behalf.
+Click **New Chat** in your dashboard to start a conversation. Vercel Agent can answer questions about your projects, investigate what's happening in production, and take action on your behalf.
 
 The Vercel Agent can only access the data you can access on the currently selected team, including all projects for that team. Vercel Agent cannot access other teams, and their projects, even if you're a member of multiple teams.
 
 ## What you can do with Vercel Agent
 
-- Ask questions about deployments, projects, domains, and logs
-- Investigate issues across your linked repositories
+- Ask questions about your projects and get answers grounded in your real deployment data
+- Point Agent at a failed deploy, runtime error, or cost spike so it can trace the cause and recommend a fix
 - Create, update, and delete environment variables
 - Trigger deployments, rollbacks, and redeployments
 - Configure observability alerts and dashboards

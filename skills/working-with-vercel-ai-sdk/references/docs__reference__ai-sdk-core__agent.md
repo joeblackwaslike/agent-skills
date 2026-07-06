@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/agent.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "beb5138b7f180daf7d8ab0fb418235fafd642a4a37223d968dd84db62619537d"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "75ce83b11af15a002b220a190040e3b0d1ae82b996095bdfbec2d12fe6141701"
 ---
 
 # `Agent` (interface)
@@ -266,6 +266,7 @@ for await (const chunk of stream) {
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

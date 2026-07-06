@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "780dff8e21da5c946992501e25195e770c05f8d9cf307ea8aff3c450d490285d"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "9cd0c952abb9b83ff40fe419e168e4c4742b210b36568389bf52cb0b9e3d84e9"
 ---
 
 # Vercel Hobby Plan
@@ -61,16 +61,16 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Edge Requests | Up to 1,000,000 requests | 10,000,000 requests included, then on-demand |
 | Projects | 200 | Unlimited |
-| Vercel Function maximum duration | 300s (5 minutes) | 300s (default) - [configurable up to 800s](/docs/functions/configuring-functions/duration); [extended max duration up to 1800s](/docs/functions/configuring-functions/duration#extended-max-duration) (30 minutes, beta) |
-| Build vCPUs | 4 | 30 |
-| Build memory (GB) | 8 | 60 |
-| Build disk size | 32 GB | 32 GB up to [64 GB](/docs/builds/managing-builds#build-machine-types) |
+| Vercel Function maximum duration | 300s (5 minutes) | 300s (default) - [configurable up to 800s](/docs/functions/configuring-functions/duration); [extended max duration up to 1800s](/docs/functions/configuring-functions/duration#extended-max-duration-beta) (30 minutes, beta) |
+| Build vCPUs | 2 | 4, up to [30](/docs/builds/managing-builds#build-machine-types) |
+| Build memory (GB) | 8 | 8GB, up to [60GB](/docs/builds/managing-builds#build-machine-types) |
+| Build disk size | 32 GB | 32 GB, up to [64 GB](/docs/builds/managing-builds#build-machine-types) |
 | Team collaboration features | - | Yes |
 | Domains per project | 50 | Unlimited |
 | Deployments per day | 100 | 6,000 |
 | Analytics | 50,000 included Events 1 month of data | On-demand events Web Analytics Plus add-on |
 | Email support | - | Yes |
-| [RBAC](/docs/rbac/access-roles) available | N/A | [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role), [Billing](/docs/rbac/access-roles#billing-role), [Viewer Pro](/docs/rbac/access-roles#viewer-pro-role) |
+| [RBAC](/docs/rbac/access-roles) available | N/A | [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role), [Billing](/docs/rbac/access-roles#billing-role), [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) |
 | [Comments](/docs/comments) | Available | Available for team collaboration |
 | Log Drains | - | [Configurable](/docs/drains/using-drains) (not on a trial) |
 | Spend Management | N/A | [Configurable](/docs/spend-management) |

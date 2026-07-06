@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-image.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "834e29772d8be106fd01615ae9c1117b72acf599c43af86e38784bdafe7cf25a"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "65b3014818aee1d04f8fc6b751c03ceefb1f5a57f4bebde4ebc723bdffeeea0c"
 ---
 
 # `generateImage()`
@@ -261,6 +261,7 @@ console.log(images);
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/README.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "37b3270d3fc0095e754040bae4484c95eb4fc4d825a30323c0897abcd3ea0c21"
+fetched_at: "2026-07-06T05:34:27.261Z"
+sha256: "8ef3dd9dd00c7dd39d1f0b77de69d25cff4dd3fe7768ec3a3cd1fc9c0aa5b76c"
 ---
 
 <p align="center"><strong>Codex CLI</strong> is a coding agent from OpenAI that runs locally on your computer.
@@ -27,7 +27,7 @@ curl -fsSL https://chatgpt.com/codex/install.sh | sh
 
 Run the following on Windows to install Codex CLI:
 
-```
+```shell
 powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
 ```
 

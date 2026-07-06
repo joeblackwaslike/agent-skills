@@ -13,8 +13,8 @@ related:
 summary: Learn about Web Analytics Drains - data formats and custom events configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/analytics.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "99b8321657f2c3f0f5a4164e37bd19ee4c9035b82601d036422306a04ef1551b"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "999242f03e430d55863bbae0ff239aaf3e73bcaa69e5bfd45a81031f2880a9d0"
 ---
 
 # Web Analytics Drains Reference
@@ -34,7 +34,6 @@ The following table describes the possible fields that are sent via Web Analytic
 | `timestamp`            | number | Unix timestamp when the event was recorded | 1694723400000                                    |
 | `projectId`            | string | Identifier for the Vercel project          | `Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2` |
 | `ownerId`              | string | Identifier for the project owner           | `team_nLlpyC6REAqxydlFKbrMDlud`                  |
-| `sessionId`            | number | Unique session identifier                  | 12345                                            |
 | `deviceId`             | number | Unique device identifier                   | 67890                                            |
 | `origin`               | string | Origin URL where the event was recorded    | `https://example.com`                            |
 | `path`                 | string | URL path where the event was recorded      | `/dashboard`                                     |
@@ -72,8 +71,8 @@ Vercel sends Web Analytics data as JSON arrays containing event objects:
 
 ```json
 [
-  { "schema": "vercel.analytics.v2", "eventType": "pageview", "timestamp": 1694723400000, "projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2", "ownerId": "team_nLlpyC6REAqxydlFKbrMDlud", "sessionId": 12345, "deviceId": 67890, "origin": "https://example.com", "path": "/dashboard" },
-  { "schema": "vercel.analytics.v2", "eventType": "event", "eventName": "button_click", "eventData": "{\"button\": \"signup\"}", "timestamp": 1694723405000, "projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2", "ownerId": "team_nLlpyC6REAqxydlFKbrMDlud", "sessionId": 12345, "deviceId": 67890, "origin": "https://example.com", "path": "/signup" }
+  { "schema": "vercel.analytics.v2", "eventType": "pageview", "timestamp": 1694723400000, "projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2", "ownerId": "team_nLlpyC6REAqxydlFKbrMDlud", "deviceId": 67890, "origin": "https://example.com", "path": "/dashboard" },
+  { "schema": "vercel.analytics.v2", "eventType": "event", "eventName": "button_click", "eventData": "{\"button\": \"signup\"}", "timestamp": 1694723405000, "projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2", "ownerId": "team_nLlpyC6REAqxydlFKbrMDlud", "deviceId": 67890, "origin": "https://example.com", "path": "/signup" }
 ]
 ```
 
@@ -82,8 +81,8 @@ Vercel sends Web Analytics data as JSON arrays containing event objects:
 Vercel sends Web Analytics data as newline-delimited JSON objects:
 
 ```json
-{"schema": "vercel.analytics.v2","eventType": "pageview","timestamp": 1694723400000,"projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2","ownerId": "team_nLlpyC6REAqxydlFKbrMDlud","sessionId": 12345,"deviceId": 67890,"origin": "https://example.com","path": "/dashboard"}
-{"schema": "vercel.analytics.v2","eventType": "event","eventName": "button_click","eventData": "{\"button\": \"signup\"}","timestamp": 1694723405000,"projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2","ownerId": "team_nLlpyC6REAqxydlFKbrMDlud","sessionId": 12345,"deviceId": 67890,"origin": "https://example.com","path": "/signup"}
+{"schema": "vercel.analytics.v2","eventType": "pageview","timestamp": 1694723400000,"projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2","ownerId": "team_nLlpyC6REAqxydlFKbrMDlud","deviceId": 67890,"origin": "https://example.com","path": "/dashboard"}
+{"schema": "vercel.analytics.v2","eventType": "event","eventName": "button_click","eventData": "{\"button\": \"signup\"}","timestamp": 1694723405000,"projectId": "Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2","ownerId": "team_nLlpyC6REAqxydlFKbrMDlud","deviceId": 67890,"origin": "https://example.com","path": "/signup"}
 ```
 
 ## Sampling Rate

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/scorecard.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7014f5e8f9b1147fadc86415dcb43a590ae234c428cfb7cdcacd4259d220c751"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "7befba9f4374c9a3a43d46e7cb07f668a30016f3126f3e15bb70f232a646e279"
 ---
 
 # Scorecard
@@ -87,6 +87,7 @@ After integrating, you'll be able to view in your Scorecard dashboard:
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

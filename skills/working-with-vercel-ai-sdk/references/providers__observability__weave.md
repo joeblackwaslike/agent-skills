@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/weave.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8eabac23c9ebc5a4f37ab6373210b478bfb7fb7afe289e6f6fc949c95a72ed9d"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "9b03b257933c21cb8ba37876901bc98971b8f1c255e8830bf3f2bf62497dbed7"
 ---
 
 # Weave Observability
@@ -96,6 +96,7 @@ const result = await generateText({
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

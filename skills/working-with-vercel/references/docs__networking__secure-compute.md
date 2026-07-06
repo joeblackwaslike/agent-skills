@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1131231e272e6edf1ecb52f732de310667901f2be0a4b97a4c41d7ae7626eb17"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "8103ebcf3f1e6ff5d9d018de7b40ad458d705a54ea0af0d3778a7eddcc7fff8b"
 ---
 
 # Secure Compute
@@ -209,9 +209,13 @@ Monitor your usage in the **Team Settings** **Usage** section in the sidebar und
 
 When connected to a Secure Compute network, builds experience up to a 5s delay as they provision a secure build container. When this happens, your build is marked as **Provisioning Container** in the dashboard.
 
-### Extended max duration beta
+### Vercel Functions limitations
 
-The [extended max duration beta for Vercel Functions](/docs/functions/configuring-functions/duration#extended-max-duration) is not yet supported for projects using Secure Compute.
+Projects using Secure Compute do not support the extended max duration beta or large functions beta. See [Vercel Functions limits](/docs/functions/limitations) for current limits and compatibility.
+
+### Container Images
+
+[Container Images for Vercel Functions](/docs/functions/container-images) are not yet supported for projects using Secure Compute.
 
 ### Max projects per network
 

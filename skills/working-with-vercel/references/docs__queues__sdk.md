@@ -13,8 +13,8 @@ related:
 summary: Publish and consume messages with the @vercel/queue SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d824c6a8b75baef33380ec22f0317e1f6dcbea733babbea11d88bda1f1c5dcb3"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "b9fa67469a630732351651a44df63ce0c36fd87a6ee0ae7ee95a8e19f4ccf885"
 ---
 
 # SDK Reference
@@ -231,6 +231,63 @@ The `retry` callback can return:
 | `{ afterSeconds: number }` | Retry after the specified delay         |
 | `{ acknowledge: true }`    | Acknowledge the message (stop retrying) |
 | `undefined`                | Use default retry behavior              |
+
+## Framework integrations
+
+### Nitro
+
+[Nitro v3](https://nitro.build) and frameworks built on it integrate with Vercel Queues through the Vercel preset. You declare your topic triggers in `nitro.config.ts`, and Nitro generates the consumer function and its trigger configuration during the build, so you don't edit `vercel.json` yourself.
+
+Declare the topics you want to subscribe to under `vercel.queues.triggers`:
+
+```ts filename="nitro.config.ts"
+export default defineConfig({
+  vercel: {
+    queues: {
+      triggers: [
+        { topic: 'orders' },
+        {
+          topic: 'notifications',
+          retryAfterSeconds: 60,
+          initialDelaySeconds: 5,
+        },
+      ],
+    },
+  },
+});
+```
+
+Each trigger accepts the following options:
+
+| Option                | Type     | Required | Description                                               |
+| --------------------- | -------- | -------- | --------------------------------------------------------- |
+| `topic`               | `string` | Yes      | Topic to subscribe to                                     |
+| `retryAfterSeconds`   | `number` | No       | Delay before a failed message is retried                  |
+| `initialDelaySeconds` | `number` | No       | Delay before a newly published message is first delivered |
+
+Process incoming messages with the `vercel:queue` runtime hook in a [Nitro plugin](https://nitro.build/guide/plugins). The hook receives the decoded `message`, its `metadata`, and a `send` function for publishing follow-up messages:
+
+```ts filename="server/plugins/queues.ts"
+export default definePlugin((nitro) => {
+  nitro.hooks.hook('vercel:queue', ({ message, metadata }) => {
+    console.log(`[${metadata.topicName}] ${metadata.messageId}`, message);
+  });
+});
+```
+
+Send messages with `send` from `@vercel/queue` in any server route, the same as in other frameworks:
+
+```ts filename="server/routes/api/orders.post.ts"
+import { send } from '@vercel/queue';
+
+export default defineHandler(async (event) => {
+  const order = await event.req.json();
+  const { messageId } = await send('orders', order);
+  return { messageId };
+});
+```
+
+Queues also run in `nitro dev`. Run `vercel link` and `vercel env pull` first so the SDK can authenticate, then `send` delivers messages straight to your `vercel:queue` hook for local testing. If the hook throws, the message is retried locally, honoring `retryAfterSeconds` from the matching trigger.
 
 ## Error handling
 

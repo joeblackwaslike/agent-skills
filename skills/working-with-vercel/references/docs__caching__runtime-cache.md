@@ -16,8 +16,8 @@ related:
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d8b3dd469a1e73128d20191a42301a0549430f8f0c61f994272167a899995d3d"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "78f431e0ef3f8515056ec4b5fd4a77ab21ccc0f91e9ae20d28fa1aa68c2c2e77"
 ---
 
 # Runtime Cache
@@ -679,7 +679,7 @@ You can also see a tabular list of runtime cache tags used in your project with 
 | Runtime Cache property | Limit     |
 | ---------------------- | --------- |
 | Item size              | 2 MB      |
-| Tags per item          | 64 tags   |
+| Tags per item          | 128 tags  |
 | Maximum tag length     | 256 bytes |
 
 > **💡 Note:** TTL and tag updates aren't reconciled between deployments. If you need to update cache behavior after a deployment, purge the runtime cache or modify the cache key.

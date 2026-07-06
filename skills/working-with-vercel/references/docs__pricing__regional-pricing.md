@@ -16,8 +16,8 @@ related:
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "d69c338a67f0ffacda4c42d3b85be9347be963bfbac1530cb3d2d1a42fe68828"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "a60fda8dda27cb3371e50353f112dfce7b7f8b308a9c9039894172fec88d5a81"
 ---
 
 # Regional Pricing
@@ -41,6 +41,8 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | --- | --- |
 | ISR Writes | 1,000,000 Write Units for $4.00 - $6.40 |
 | ISR Reads | 1,000,000 Read Units for $0.40 - $0.64 |
+| Runtime Cache Writes | 1,000,000 Write Units for $4.00 - $6.40 |
+| Runtime Cache Reads | 1,000,000 Read Units for $0.40 - $0.64 |
 | Fast Origin Transfer | 1 GB for $0.06 - $0.43 |
 | Queue API Operations | 1,000,000 Operations for $0.60 - $0.96 |
 | Edge Request CPU Duration | 1 Hour for $0.30 - $0.48 |
@@ -55,6 +57,7 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | Blob Advanced Operations | 1,000,000 for $4.50 - $7.00 |
 | Blob Data Transfer | 1 GB for $0.05 - $0.117 |
 | Private Data Transfer | 1 GB for $0.15 - $0.31 |
+| Service Requests | 1,000,000 Requests for $0.50 - $0.80 |
 
 
 ## Specific region pricing

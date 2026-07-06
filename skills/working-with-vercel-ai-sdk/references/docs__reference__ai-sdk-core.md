@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "dd51ae20e3882a937f990873ea39f1ef8e32ed4b9f7ac057d8a3d526ea616c35"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "d660a00832d8c847f5950f1445ef0f184514011f4a454099b546b58631b44cdf"
 ---
 
 # AI SDK Core
@@ -59,6 +59,11 @@ AI SDK Core contains the following main functions:
       href: '/docs/reference/ai-sdk-core/transcribe',
     },
     {
+      title: 'experimental_streamTranscribe()',
+      description: 'Stream a transcript from live raw audio.',
+      href: '/docs/reference/ai-sdk-core/stream-transcribe',
+    },
+    {
       title: 'generateSpeech()',
       description: 'Generate speech audio from text.',
       href: '/docs/reference/ai-sdk-core/generate-speech',
@@ -105,6 +110,11 @@ It also contains the following helper functions:
       title: 'createMCPClient()',
       description: 'Creates a client for connecting to MCP servers.',
       href: '/docs/reference/ai-sdk-core/create-mcp-client',
+    },
+    {
+      title: 'validateJSONRPCMessage()',
+      description: 'Validates unknown values as MCP JSON-RPC messages.',
+      href: '/docs/reference/ai-sdk-core/validate-json-rpc-message',
     },
     {
       title: 'MCP Apps',
@@ -219,6 +229,7 @@ It also contains the following helper functions:
   - [embedMany](/docs/reference/ai-sdk-core/embed-many)
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+  - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

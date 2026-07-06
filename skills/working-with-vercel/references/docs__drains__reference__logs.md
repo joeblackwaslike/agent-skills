@@ -11,13 +11,13 @@ related:
   - /docs/drains/using-drains
   - /docs/functions
   - /docs/deployments/configure-a-build
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/rewrites
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "61e73d580b623631c131be2b7445324120fe659afe9046cdecb08405ffa4b1ae"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "244961f51b9516a6eb560b1b427424bf566a483eea381defe87a597bbd5aaab2"
 ---
 
 # Log Drains Reference
@@ -116,9 +116,9 @@ When you configure a Log Drain, select which sources to collect in **Additional 
 | `lambda`   | Output from Vercel Functions like [API Routes](/docs/functions)                                                                                                |
 | `edge`     | Output from Vercel Functions using Edge runtime                                                                                                                |
 | `build`    | Output from the [Build Step](/docs/deployments/configure-a-build)                                                                                              |
-| `external` | External [rewrites](/docs/project-configuration#rewrites) to a different domain. Includes [cached external rewrites](/docs/rewrites#caching-external-rewrites) |
+| `external` | External [rewrites](/docs/project-configuration/vercel-json#rewrites) to a different domain. Includes [cached external rewrites](/docs/rewrites#caching-external-rewrites) |
 | `firewall` | Outputs log data from requests denied by [Vercel Firewall](/docs/vercel-firewall) rules                                                                        |
-| `redirect` | Requests that are redirected by [redirect rules](/docs/project-configuration#redirects)                                                                        |
+| `redirect` | Requests that are redirected by [redirect rules](/docs/project-configuration/vercel-json#redirects)                                                                        |
 
 ## Log Environments
 

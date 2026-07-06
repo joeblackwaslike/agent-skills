@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/checks/suites"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "de8312ba4a377e0ddafc17994d0cab1bc1d71b0cdeb102ff21047ba3709a2da5"
+fetched_at: "2026-07-06T05:37:45.074Z"
+sha256: "b7868efc5c5bac1581757d9a403fdadd518f9861db5ba005299321bca1164d47"
 ---
 
 # REST API endpoints for check suites
@@ -161,29 +161,7 @@ curl -L \
   * `node_id`: required, string
   * `name`: required, string
   * `full_name`: required, string
-  * `owner`: required, `Simple User`:
-    * `name`: string or null
-    * `email`: string or null
-    * `login`: required, string
-    * `id`: required, integer, format: int64
-    * `node_id`: required, string
-    * `avatar_url`: required, string, format: uri
-    * `gravatar_id`: required, string or null
-    * `url`: required, string, format: uri
-    * `html_url`: required, string, format: uri
-    * `followers_url`: required, string, format: uri
-    * `following_url`: required, string
-    * `gists_url`: required, string
-    * `starred_url`: required, string
-    * `subscriptions_url`: required, string, format: uri
-    * `organizations_url`: required, string, format: uri
-    * `repos_url`: required, string, format: uri
-    * `events_url`: required, string
-    * `received_events_url`: required, string, format: uri
-    * `type`: required, string
-    * `site_admin`: required, boolean
-    * `starred_at`: string
-    * `user_view_type`: string
+  * `owner`: required, `Simple User` (see above)
   * `private`: required, boolean
   * `html_url`: required, string, format: uri
   * `description`: required, string or null
@@ -427,29 +405,7 @@ curl -L \
   * `node_id`: required, string
   * `name`: required, string
   * `full_name`: required, string
-  * `owner`: required, `Simple User`:
-    * `name`: string or null
-    * `email`: string or null
-    * `login`: required, string
-    * `id`: required, integer, format: int64
-    * `node_id`: required, string
-    * `avatar_url`: required, string, format: uri
-    * `gravatar_id`: required, string or null
-    * `url`: required, string, format: uri
-    * `html_url`: required, string, format: uri
-    * `followers_url`: required, string, format: uri
-    * `following_url`: required, string
-    * `gists_url`: required, string
-    * `starred_url`: required, string
-    * `subscriptions_url`: required, string, format: uri
-    * `organizations_url`: required, string, format: uri
-    * `repos_url`: required, string, format: uri
-    * `events_url`: required, string
-    * `received_events_url`: required, string, format: uri
-    * `type`: required, string
-    * `site_admin`: required, boolean
-    * `starred_at`: string
-    * `user_view_type`: string
+  * `owner`: required, `Simple User` (see above)
   * `private`: required, boolean
   * `html_url`: required, string, format: uri
   * `description`: required, string or null
@@ -1053,29 +1009,7 @@ curl -L \
     * `node_id`: required, string
     * `name`: required, string
     * `full_name`: required, string
-    * `owner`: required, `Simple User`:
-      * `name`: string or null
-      * `email`: string or null
-      * `login`: required, string
-      * `id`: required, integer, format: int64
-      * `node_id`: required, string
-      * `avatar_url`: required, string, format: uri
-      * `gravatar_id`: required, string or null
-      * `url`: required, string, format: uri
-      * `html_url`: required, string, format: uri
-      * `followers_url`: required, string, format: uri
-      * `following_url`: required, string
-      * `gists_url`: required, string
-      * `starred_url`: required, string
-      * `subscriptions_url`: required, string, format: uri
-      * `organizations_url`: required, string, format: uri
-      * `repos_url`: required, string, format: uri
-      * `events_url`: required, string
-      * `received_events_url`: required, string, format: uri
-      * `type`: required, string
-      * `site_admin`: required, boolean
-      * `starred_at`: string
-      * `user_view_type`: string
+    * `owner`: required, `Simple User` (see above)
     * `private`: required, boolean
     * `html_url`: required, string, format: uri
     * `description`: required, string or null

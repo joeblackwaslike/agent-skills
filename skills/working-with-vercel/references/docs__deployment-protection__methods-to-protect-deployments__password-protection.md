@@ -17,8 +17,8 @@ related:
 summary: Require visitors to enter a password before they can view your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b4e786b945ff2c6b9fffcd7b7323dac8ad2871ab2ef35c5f7fc106848b5ac74a"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "177b17b87411645aa69b1dbd4671d8110273b7e2c4eec4b8c3066db9b0adf7c8"
 ---
 
 # Password Protection
@@ -35,7 +35,7 @@ The table below outlines key considerations and security implications when using
 
 | Consideration                 | Description                                                                                                                                                                                                                                                                            |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Environment Configuration** | Can be enabled for different environments. See [Understanding Deployment Protection by environment](/docs/deployment-protection#understanding-deployment-protection-by-environment)                                                                                           |
+| **Environment Configuration** | Can be enabled for different environments. See [Understanding Deployment Protection by environment](/docs/deployment-protection#choose-which-urls-to-protect)                                                                                           |
 | **Compatibility**             | Compatible with [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) and [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                  |
 | **Bypass Methods**            | Can be bypassed using [Shareable Links](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
 | **Password Persistence**      | Users only need to enter the password once per deployment, or when the password changes, due to cookie set by the feature being invalidated on password change                                                                                                                         |
@@ -55,7 +55,7 @@ You can manage Password Protection through the dashboard, API, or Terraform.
 - ### Configure Password Protection
   From the **Password Protection** section:
   1. Use the toggle to enable the feature
-  2. Select the [deployment environment](/docs/deployment-protection#understanding-deployment-protection-by-environment) you want to protect
+  2. Select the [deployment environment](/docs/deployment-protection#choose-which-urls-to-protect) you want to protect
   3. **Enter a password** of your choice
   4. Finally, select **Save**
   All your existing and future deployments will be protected with a password for the project. The next time you access a deployment, you'll need to enter the password. After you enter it, a cookie is set in your browser for that deployment URL so you don't need to enter the password again.

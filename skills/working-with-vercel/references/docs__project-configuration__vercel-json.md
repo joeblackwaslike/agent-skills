@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3ef3876a226f2610d0256557abdd9581ffe776fe7c2056cfce490295b3f1ee31"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "9aa1f799b4a3dbbcbcb7f5a20ae36f3d4b2d33164c08a4279c0dc322e7c89ce5"
 ---
 
 # Static Configuration with vercel.json
@@ -231,12 +231,12 @@ A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern that matches t
 
 - `runtime` (optional): The npm package name of a [Runtime](/docs/functions/runtimes), including its version.
 - `memory`: Memory cannot be set in `vercel.json` with [Fluid compute](/docs/fluid-compute) enabled. Instead set it in the **Functions** section in your project dashboard sidebar. See [setting default function memory](/docs/functions/configuring-functions/memory#setting-your-default-function-memory-/-cpu-size) for more information.
-- `maxDuration` (optional): How long your Vercel Function can run on each request. Set an integer number of seconds between `1` and your plan's maximum limit, or set `max` to use your plan's maximum allowed duration. See [duration limits](/docs/functions/configuring-functions/duration#duration-limits).
+- `maxDuration` (optional): How long your Vercel Function can run on each request. Set an integer number of seconds between `1` and your plan's maximum limit. See [max duration](/docs/functions/limitations#max-duration).
 - `supportsCancellation` (optional): A boolean defining whether your Vercel Function should [support request cancellation](/docs/functions/functions-api-reference#cancel-requests). This is only available when you're using the Node.js runtime.
 - `includeFiles` (optional): A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern to match files that should be included in your Vercel Function. If you’re using a Community Runtime, the behavior might vary. Please consult its documentation for more details. (Not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats) in `next.config.js` )
 - `excludeFiles` (optional): A [glob](https://github.com/isaacs/node-glob#glob-primer) pattern to match files that should be excluded from your Vercel Function. If you’re using a Community Runtime, the behavior might vary. Please consult its documentation for more details. (Not supported in Next.js, instead use [`outputFileTracingExcludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats) in `next.config.js` )
-- `regions` (optional): An array of [region](/docs/regions) identifiers specifying where this specific function should be deployed. This overrides the project-level [`regions`](/docs/project-configuration#regions) setting for the matched functions. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
-- `functionFailoverRegions` (optional): An array of [region](/docs/regions) identifiers specifying passive regions this specific function can fail over to during an outage. This overrides the project-level [`functionFailoverRegions`](/docs/project-configuration#functionfailoverregions) setting for the matched functions. Enterprise only. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
+- `regions` (optional): An array of [region](/docs/regions) identifiers specifying where this specific function should be deployed. This overrides the project-level [`regions`](/docs/project-configuration/vercel-json#regions) setting for the matched functions. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
+- `functionFailoverRegions` (optional): An array of [region](/docs/regions) identifiers specifying passive regions this specific function can fail over to during an outage. This overrides the project-level [`functionFailoverRegions`](/docs/project-configuration/vercel-json#functionfailoverregions) setting for the matched functions. Enterprise only. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
 
 ### Description
 
@@ -248,10 +248,7 @@ The `functions` property cannot be used in combination with `builds`. Since the 
 
 Because [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration) uses Vercel functions, the same configurations apply. The ISR route can be defined using a glob pattern, and accepts the same properties as when using Vercel functions.
 
-When deployed, each Vercel Function uses your project's default memory and maximum duration. These defaults depend on your plan and whether [Fluid compute](/docs/fluid-compute) is enabled:
-
-- **Memory:** See [memory and CPU defaults](/docs/functions/configuring-functions/memory#memory-/-cpu-type).
-- **Maximum duration:** See [duration limits](/docs/functions/configuring-functions/duration#duration-limits).
+When deployed, each Vercel Function uses your project's default memory and maximum duration. See [Vercel Functions limits](/docs/functions/limitations) for plan limits and defaults.
 
 With Fluid compute enabled, set memory in the **Functions** section of your project dashboard, not in `vercel.json`. To override the maximum duration for matched functions, add the `functions` property.
 
@@ -772,7 +769,7 @@ Function responses [can be cached](/docs/cdn-cache) in the requested regions. Se
 }
 ```
 
-You can also set `regions` on individual functions using the [`functions`](/docs/project-configuration#functions) property to override the project-level default. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
+You can also set `regions` on individual functions using the [`functions`](/docs/project-configuration/vercel-json#functions) property to override the project-level default. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
 
 ## functionFailoverRegions
 
@@ -791,9 +788,9 @@ Set this property to specify the [region](/docs/functions/regions) to which a Ve
 }
 ```
 
-You can also set `functionFailoverRegions` on individual functions using the [`functions`](/docs/project-configuration#functions) property to override the project-level default. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
+You can also set `functionFailoverRegions` on individual functions using the [`functions`](/docs/project-configuration/vercel-json#functions) property to override the project-level default. See [per-function region configuration](/docs/functions/configuring-functions/region#per-function-configuration) for more details.
 
-These regions serve as a fallback to any regions specified in the [`regions` configuration](/docs/project-configuration#regions). The region Vercel selects to invoke your function depends on availability and ingress. For instance:
+These regions serve as a fallback to any regions specified in the [`regions` configuration](/docs/project-configuration/vercel-json#regions). The region Vercel selects to invoke your function depends on availability and ingress. For instance:
 
 - Vercel always attempts to invoke the function in the primary region. If you specify more than one primary region in the `regions` property, Vercel selects the region geographically closest to the request
 - If all primary regions are unavailable, Vercel automatically fails over to the regions specified in `functionFailoverRegions`, selecting the region geographically closest to the request
@@ -1110,6 +1107,39 @@ You can use the same substitution support as the other transforms in `args`:
 - Environment variable expansion when the transform declares an `env` allowlist.
 
 When multiple matching routes set `request.path`, the transform composes across them and is last-write-wins. A later `request.path` set overrides an earlier one. The override is included in the CDN cache key, so two requests that differ only by their `request.path` override are cached as separate entries.
+
+#### Request path transform in a service
+
+Within a [service](/docs/services), a `request.path` transform in the service's own `routes` changes the path the service's runtime observes. A top-level rewrite selects which service handles a request, and the service receives the original path. A `request.path` transform inside the service then rewrites the path its code reads from a request, without changing what was routed.
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "my_backend": {
+      "root": "backend/",
+      "entrypoint": "main:app",
+      "routes": [
+        {
+          "src": "/api/(.*)",
+          "transforms": [
+            {
+              "type": "request.path",
+              "op": "set",
+              "args": "/$1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": { "service": "my_backend" } }
+  ]
+}
+```
+
+A public request to `/api/users` is routed to `my_backend`, and the service's code observes `/users`. See [Services routing](/docs/services/routing) for how the path a service sees relates to route selection.
 
 #### Transform examples
 

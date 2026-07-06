@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1e6d4338f339ad3a556ecd32c816ab0501b1bf091329c4e667c4c1f026625ab9"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "5ab36c0fd29034988e9eefb1764076751697bc5790b0369e247a5a0bae7e5c6a"
 ---
 
 # AI SDK Errors
@@ -49,6 +49,7 @@ sha256: "1e6d4338f339ad3a556ecd32c816ab0501b1bf091329c4e667c4c1f026625ab9"
   - [embedMany](/docs/reference/ai-sdk-core/embed-many)
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+  - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

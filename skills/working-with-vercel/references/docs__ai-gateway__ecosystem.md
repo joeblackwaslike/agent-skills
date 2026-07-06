@@ -16,8 +16,8 @@ related:
 summary: Explore community framework integrations and ecosystem features for the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a83b2198d3463b157ca28f2bfd266506daea071b968d57a3e0bca628fb098b74"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "90ea91467204d70cfbe4fcd8702b4e1381893b2b58f3fb543b51a732f22930cf"
 ---
 
 # Ecosystem
@@ -45,7 +45,7 @@ Connect LangChain through the Chat Completions endpoint:
 from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(
-    model="anthropic/claude-opus-4.7",
+    model="anthropic/claude-opus-4.8",
     api_key=os.getenv("AI_GATEWAY_API_KEY"),
     base_url="https://ai-gateway.vercel.sh/v1"
 )
@@ -65,7 +65,7 @@ pip install llama-index-llms-vercel-ai-gateway
 from llama_index.llms.vercel_ai_gateway import VercelAIGateway
 
 llm = VercelAIGateway(
-    model="anthropic/claude-opus-4.7",
+    model="anthropic/claude-opus-4.8",
     api_key=os.getenv("AI_GATEWAY_API_KEY")
 )
 ```
@@ -79,7 +79,7 @@ from pydantic_ai import Agent
 from pydantic_ai.providers.vercel import VercelProvider
 
 agent = Agent(
-    VercelProvider(model="anthropic/claude-opus-4.7"),
+    VercelProvider(model="anthropic/claude-opus-4.8"),
     system_prompt="You are a helpful assistant"
 )
 

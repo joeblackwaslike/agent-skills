@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "84cb7d57ab7f577dab5d8c8232c0eb667964f34961e8f9c94c077df4710b929c"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "e1f749b4c20dbd570e35241872c6aa3bad9df574752da1da365b17ea1441822a"
 ---
 
 # Using Monorepos
@@ -110,6 +110,10 @@ script](/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel) when
 redeploying or promoting your app to production. This can be done through the
 dashboard when you click on the **Redeploy** button, and unchecking the **Use
 project's Ignore Build Step** checkbox.
+
+## Filtered installs
+
+You can speed up dependency installs by only installing the dependencies for the project being deployed and its workspace dependencies. Set a custom [Install Command](/docs/deployments/configure-a-build#install-command) in the project's `vercel.json` or [update your project's Build and Deployment settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23framework-settings\&title=Build+and+Deployment+settings):
 
 ## How to link projects together in a monorepo
 

@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent.md"
-fetched_at: "2026-06-29T05:42:13.025Z"
-sha256: "93d368e059e565c748c4bfe96bc6ac4f0508cdbca7519c5470bf524061ffe7dd"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "3f2dacefb7c4be0979bdd533b441f0382c1d20481c2b142b325d024ec90b2ca2"
 ---
 
 # Cloud Agents
@@ -24,17 +24,18 @@ Before anyone can start a cloud agent from a repository, a Cursor account admin 
 
 You can kick off cloud agents from wherever you work:
 
-1. **Cursor Web**: Start and manage agents from [cursor.com/agents](https://cursor.com/agents) on any device
-2. **Cursor Desktop**: Select **Cloud** in the dropdown under the agent input
-3. **Slack**: Use the @cursor command to kick off an agent
-4. **GitHub or Bitbucket**: Comment `@cursor` on a GitHub PR or issue, or on a Bitbucket PR, to kick off an agent
-5. **Linear**: Use the @cursor command to kick off an agent
-6. **API**: Use the API to kick off an agent
+1. **Cursor for iOS**: Start and manage agents from the [Cursor iOS app](https://cursor.com/docs/cloud-agent/mobile.md)
+2. **Cursor Web**: Start and manage agents from [cursor.com/agents](https://cursor.com/agents) on any device
+3. **Cursor Desktop**: Select **Cloud** in the dropdown under the agent input
+4. **Slack**: Use the @cursor command to kick off an agent
+5. **GitHub or Bitbucket**: Comment `@cursor` on a GitHub PR or issue, or on a Bitbucket PR, to kick off an agent
+6. **Linear**: Use the @cursor command to kick off an agent
+7. **API**: Use the API to kick off an agent
 
-For a native-feeling mobile experience, install Cursor as a Progressive Web
-App (PWA). On **iOS**, open [cursor.com/agents](https://cursor.com/agents) in
-Safari, tap the share button, then "Add to Home Screen". On **Android**, open
-the URL in Chrome, tap the menu, then "Install App".
+On **Android**, use [cursor.com/agents](https://cursor.com/agents) in Chrome
+and tap **Install App** for a Progressive Web App (PWA). See [Cursor for
+iOS](https://cursor.com/docs/cloud-agent/mobile.md) for the native iPhone app and more mobile
+options.
 
 ### Use Cursor in Slack
 
@@ -78,6 +79,8 @@ There is no toggle to turn Max Mode off for Cloud Agents.
 Cloud agents can use [MCP (Model Context Protocol)](https://cursor.com/docs/mcp.md) servers configured for your team. Add and manage MCP servers through the MCP dropdown in [cursor.com/agents](https://cursor.com/agents).
 
 Both HTTP and stdio transports are supported. OAuth is supported for MCP servers that need it. See [Cloud Agent capabilities](https://cursor.com/docs/cloud-agent/capabilities.md) for setup details.
+
+Cloud Agents also include a built-in [Cursor Cloud MCP](https://cursor.com/docs/cloud-agent/capabilities.md#cursor-cloud-mcp) for run diagnostics, including transcripts, environment details, and setup logs.
 
 ## Hooks support
 

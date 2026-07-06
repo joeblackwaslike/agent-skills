@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "167df232bf1df1a565df3ddf37b5693abfd779fe0ae6717d1d8007c4edc50268"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "74c9819c3c835ce38bdedf3a696e51f5c6f92808b7c48d6c54277a602bdc9161"
 ---
 
 # Moonshot AI Provider
@@ -91,6 +91,14 @@ const model = moonshotai.languageModel('kimi-k2.5');
 
 Moonshot AI language models can be used in the `streamText` function
 (see [AI SDK Core](/docs/ai-sdk-core)).
+
+#### Structured Outputs
+
+Native structured outputs are enabled for Moonshot models whose model ID starts with `kimi-`.
+
+For other Moonshot models, object generation falls back to JSON mode instead of schema-constrained decoding.
+
+For best reliability, it is strongly recommended to include your schema requirements in your prompt in addition to passing the schema through `Output`.
 
 ### Reasoning Models
 

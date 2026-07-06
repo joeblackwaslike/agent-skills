@@ -11,20 +11,20 @@ related:
   - /docs/functions/runtimes/node-js
   - /docs/functions/runtimes/bun
   - /docs/functions/runtimes/edge
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/routing-middleware/api
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a796e5833e95dd484a0d49516a0294f0e0bd70b044004e6abceb3cfb839e9e67"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "152b01a8945a35ae03c94b0320990c9ef7bef91e492c294568fddd878ddab157"
 ---
 
 # Getting Started with Routing Middleware
 
 Routing Middleware lets you to run code before your pages load, giving you control over incoming requests. It runs close to your users for fast response times and are perfect for redirects, authentication, and request modification.
 
-Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js), [Bun](/docs/functions/runtimes/bun), and [Edge](/docs/functions/runtimes/edge) runtimes. Edge is the default runtime for Routing Middleware. To use Node.js, configure the `runtime` in your middleware config. To use Bun, set [`bunVersion`](/docs/project-configuration#bunversion) in your `vercel.json` file.
+Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js), [Bun](/docs/functions/runtimes/bun), and [Edge](/docs/functions/runtimes/edge) runtimes. Edge is the default runtime for Routing Middleware. To use Node.js, configure the `runtime` in your middleware config. To use Bun, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file.
 
 > For \['nextjs', 'nextjs-app']:
 
@@ -59,7 +59,7 @@ The following steps will guide you through creating your first Routing Middlewar
   - Every request to your site will trigger this function
   - You log the request URL to see what's being accessed
   - You return a response to prove the middleware is running
-  - The `runtime` config is optional and defaults to `edge`. To use Bun, set [`bunVersion`](/docs/project-configuration#bunversion) in `vercel.json` instead
+  - The `runtime` config is optional and defaults to `edge`. To use Bun, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in `vercel.json` instead
   Deploy your project and visit any page. You should see "Logging request URL from Middleware" instead of your normal page content.
 
 - ### Redirecting users

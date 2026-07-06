@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0c929d1c8150327c4ef2c93c578dd8e3b361a5cc3ca5a986530072bf38d93a0c"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "6f62446a86336ae7571ec4880c58e6bf6f0804eeb545b9aff8d7aacda2818b5e"
 ---
 
 # WAF Custom Rules
@@ -31,7 +31,7 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 
 ## Access roles
 
-- You need to be a [Developer](/docs/rbac/access-roles#developer-role) or viewer ([Viewer Pro](/docs/rbac/access-roles#viewer-pro-role) or [Viewer Enterprise](/docs/rbac/access-roles#viewer-enterprise-role)) in the team to view the Firewall overview page and list the rules
+- You need to be a [Developer](/docs/rbac/access-roles#developer-role) or viewer ([Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) or [Viewer Enterprise](/docs/rbac/access-roles#enterprise-viewer-role)) in the team to view the Firewall overview page and list the rules
 - You need to be a [Project administrator](/docs/rbac/access-roles#project-administrators), [Team member](/docs/rbac/access-roles#member-role), or [Security](/docs/rbac/access-roles#security-role) to configure, save and apply any rule and configuration
 
 ## Custom Rule configuration
@@ -206,7 +206,7 @@ In this example:
 
 ### Route configuration
 
-For complete documentation on route configuration options, including `has`, `missing`, and other conditional matching properties, see the [routes documentation](/docs/project-configuration#routes).
+For complete documentation on route configuration options, including `has`, `missing`, and other conditional matching properties, see the [routes documentation](/docs/project-configuration/vercel-json#routes).
 
 
 ---

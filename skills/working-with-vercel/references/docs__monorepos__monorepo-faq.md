@@ -9,15 +9,15 @@ prerequisites:
   - /docs/monorepos
 related:
   - /docs/deployments/concurrent-builds
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/cli/project-linking
   - /docs/cli/global-options
   - /docs/environment-variables
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "afb75ba89c999bb61cfb184e52873d319e8f77880efbcb72a04cce8bbbd4457b"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "995a07e47d82f05b6c57c399fa8ed1d43942d6237b089c8457ef1ef7a6171fd2"
 ---
 
 # Monorepos FAQ
@@ -40,7 +40,7 @@ on a separate domain.
 If you'd like to host multiple projects under a single domain, you can
 create a new project, assign the domain in the project settings, and proxy
 requests to the other upstream projects. The proxy can be implemented
-using a `vercel.json` file with the [rewrites](/docs/project-configuration#rewrites) property, where each
+using a `vercel.json` file with the [rewrites](/docs/project-configuration/vercel-json#rewrites) property, where each
 `source` is the path under the main domain and each `destination` is the
 upstream project domain.
 

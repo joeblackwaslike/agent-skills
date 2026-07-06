@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/dynamic-tool.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "951bd5a53baa4780ca245c2ef959c17067f0bb40f1913dcc7b5d0e81fa626507"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "8c9267f16a4184c263bb19052f8cfa128be024b3b0f353a15ade707453a293fd"
 ---
 
 # `dynamicTool()`
@@ -238,6 +238,7 @@ When used with useChat (`UIMessage` format), dynamic tools appear as `dynamic-to
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

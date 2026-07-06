@@ -10,14 +10,14 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/deployments/configure-a-build
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/services
   - /docs/environment-variables
 summary: Learn how to use the Go runtime to run Go APIs on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/go.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "fcab84744c8b7c98c4c08a490f245711b87d9e3548d3a03c8368ca0328202b05"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "7eb7a0f4259ef3fa6536a104b523ff97f6f1ed28baff131672f296954ae1d742"
 ---
 
 # Using the Go Runtime with Vercel Functions
@@ -36,7 +36,7 @@ detects a root `go.mod` file and one of these entrypoints: `main.go`,
 `PORT` environment variable.
 
 Running a Go server requires the
-[`framework`](/docs/project-configuration#framework) preset to be set to `go`.
+[`framework`](/docs/project-configuration/vercel-json#framework) preset to be set to `go`.
 
 ```go filename="main.go"
 package main
@@ -113,7 +113,7 @@ from the output binary and is the default when \`GO\_BUILD\_FLAGS\` is not set.*
 ### Custom build command
 
 Override the default `go build` step entirely with
-[`buildCommand`](/docs/project-configuration#buildcommand) in `vercel.json`.
+[`buildCommand`](/docs/project-configuration/vercel-json#buildcommand) in `vercel.json`.
 The command runs with the selected Go toolchain on `PATH`, and `GOOS=linux`
 already set.
 

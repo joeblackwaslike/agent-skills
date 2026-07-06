@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b3569b34ae8c9fe3e505e0dd720144917188a4e0fd2659c1b3ed27f3bdfb947d"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "0c37c6d9180ff45452c86f725d66960632eb4f064ea6b29d5469553ac3b80932"
 ---
 
 # OpenAI Provider
@@ -55,6 +55,10 @@ You can use the following optional settings to customize the OpenAI provider ins
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.openai.com/v1`.
+  The default OpenAI model factory (`openai('model-id')`) uses the Responses
+  API. If your custom base URL only supports the Chat Completions API, create
+  chat models with `openai.chat('model-id')` instead, or use the
+  [OpenAI-compatible provider](/providers/openai-compatible-providers).
 
 - **apiKey** _string_
 
@@ -1722,6 +1726,8 @@ The metadata includes the following fields:
 You can create models that call the [OpenAI chat API](https://platform.openai.com/docs/api-reference/chat) using the `.chat()` factory method.
 The first argument is the model id, e.g. `gpt-4`.
 The OpenAI chat models support tool calls and some have multi-modal capabilities.
+Use this factory when a custom `baseURL` points at an OpenAI-compatible endpoint
+that implements Chat Completions but not the Responses API.
 
 ```ts
 const model = openai.chat('gpt-5');
@@ -1858,13 +1864,13 @@ They support additional settings and response metadata:
 - You can use `providerOptions` to set
   - the `reasoningEffort` option (or alternatively the `reasoningEffort` model setting), which determines the amount of reasoning the model performs.
 
-- You can use response `providerMetadata` to access the number of reasoning tokens that the model generated.
+- You can use the response `usage` to access the number of reasoning tokens that the model generated via `usage.outputTokenDetails.reasoningTokens`.
 
 ```ts highlight="4,7-11,17"
 import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
-const { text, usage, providerMetadata } = await generateText({
+const { text, usage } = await generateText({
   model: openai.chat('gpt-5'),
   prompt: 'Invent a new holiday and describe its traditions.',
   providerOptions: {
@@ -1875,10 +1881,7 @@ const { text, usage, providerMetadata } = await generateText({
 });
 
 console.log(text);
-console.log('Usage:', {
-  ...usage,
-  reasoningTokens: providerMetadata?.openai?.reasoningTokens,
-});
+console.log('Reasoning tokens:', usage.outputTokenDetails.reasoningTokens);
 ```
 
 <Note>
@@ -2210,7 +2213,7 @@ including `gpt-4o` and `gpt-4o-mini`.
 
 - Prompt caching is automatically enabled for these models, when the prompt is 1024 tokens or longer. It does
   not need to be explicitly enabled.
-- You can use response `providerMetadata` to access the number of prompt tokens that were a cache hit.
+- You can use the response `usage` to access the number of prompt tokens that were a cache hit via `usage.inputTokenDetails.cacheReadTokens`.
 - Note that caching behavior is dependent on load on OpenAI's infrastructure. Prompt prefixes generally remain in the
   cache following 5-10 minutes of inactivity before they are evicted, but during off-peak periods they may persist for up
   to an hour.
@@ -2219,15 +2222,12 @@ including `gpt-4o` and `gpt-4o-mini`.
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
-const { text, usage, providerMetadata } = await generateText({
+const { text, usage } = await generateText({
   model: openai.chat('gpt-4o-mini'),
   prompt: `A 1024-token or longer prompt...`,
 });
 
-console.log(`usage:`, {
-  ...usage,
-  cachedPromptTokens: providerMetadata?.openai?.cachedPromptTokens,
-});
+console.log('Cached tokens:', usage.inputTokenDetails.cacheReadTokens);
 ```
 
 To improve cache hit rates, you can manually control caching using the `promptCacheKey` option:
@@ -2236,7 +2236,7 @@ To improve cache hit rates, you can manually control caching using the `promptCa
 import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
-const { text, usage, providerMetadata } = await generateText({
+const { text, usage } = await generateText({
   model: openai.chat('gpt-5'),
   prompt: `A 1024-token or longer prompt...`,
   providerOptions: {
@@ -2246,10 +2246,7 @@ const { text, usage, providerMetadata } = await generateText({
   },
 });
 
-console.log(`usage:`, {
-  ...usage,
-  cachedPromptTokens: providerMetadata?.openai?.cachedPromptTokens,
-});
+console.log('Cached tokens:', usage.inputTokenDetails.cacheReadTokens);
 ```
 
 For GPT-5.1 models, you can enable extended prompt caching that keeps cached prefixes active for up to 24 hours:
@@ -2258,7 +2255,7 @@ For GPT-5.1 models, you can enable extended prompt caching that keeps cached pre
 import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
-const { text, usage, providerMetadata } = await generateText({
+const { text, usage } = await generateText({
   model: openai.chat('gpt-5.1'),
   prompt: `A 1024-token or longer prompt...`,
   providerOptions: {
@@ -2269,10 +2266,7 @@ const { text, usage, providerMetadata } = await generateText({
   },
 });
 
-console.log(`usage:`, {
-  ...usage,
-  cachedPromptTokens: providerMetadata?.openai?.cachedPromptTokens,
-});
+console.log('Cached tokens:', usage.inputTokenDetails.cacheReadTokens);
 ```
 
 #### Audio Input
@@ -2705,13 +2699,23 @@ The following provider options are available:
 - **include** _string[]_
   Additional information to include in the transcription response.
 
+- **streaming** _object_
+  Options for streaming transcription models such as `gpt-realtime-whisper`.
+  Use with `experimental_streamTranscribe`.
+  - **delay** _'minimal' | 'low' | 'medium' | 'high' | 'xhigh'_
+    Latency/accuracy tradeoff for realtime transcription.
+
+  - **include** _string[]_
+    Additional fields to include in realtime transcription events, such as `item.input_audio_transcription.logprobs`.
+
 ### Model Capabilities
 
-| Model                    | Transcription       | Duration            | Segments            | Language            |
-| ------------------------ | ------------------- | ------------------- | ------------------- | ------------------- |
-| `whisper-1`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gpt-4o-mini-transcribe` | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-4o-transcribe`      | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Model                    | Transcription       | Streaming           | Duration            | Segments            | Language            |
+| ------------------------ | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
+| `whisper-1`              | <Check size={18} /> | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| `gpt-4o-mini-transcribe` | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| `gpt-4o-transcribe`      | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| `gpt-realtime-whisper`   | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
 
 ## Speech Models
 

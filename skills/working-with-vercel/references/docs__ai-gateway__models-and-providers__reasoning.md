@@ -17,8 +17,8 @@ related:
 summary: Enable reasoning and extended thinking across providers with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9aae3760c85e014247f16752a22f12d9db0a449a278ffc121d2da89618105282"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "43ab9c9daeac9210d4688fc7ae3fafdb4d25705969036c947f72fb8d2c60b56c"
 ---
 
 # Reasoning
@@ -69,7 +69,7 @@ for await (const part of result.fullStream) {
 
 ## Reasoning with provider fallbacks
 
-Models like `anthropic/claude-opus-4.7` are available through multiple providers (Anthropic, Amazon Bedrock, Google Vertex). When you combine reasoning with [provider routing](/docs/ai-gateway/models-and-providers/provider-options), AI Gateway routes to the first available provider.
+Models like `anthropic/claude-opus-4.8` are available through multiple providers (Anthropic, Amazon Bedrock, Google Vertex). When you combine reasoning with [provider routing](/docs/ai-gateway/models-and-providers/provider-options), AI Gateway routes to the first available provider.
 
 Each provider has its own reasoning configuration format. Set the provider-specific options in `providerOptions`, and the provider that handles the request uses its matching entry:
 
@@ -77,7 +77,7 @@ Each provider has its own reasoning configuration format. Set the provider-speci
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Prove that there are infinitely many primes.',
   providerOptions: {
     anthropic: {

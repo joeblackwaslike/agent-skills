@@ -14,8 +14,8 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Wan through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e87c196892673c4549d2427a425c612d60dc85356a6a3ccfce2b56277542df5d"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "400f2ab92036b7828a0996e5eefa03e3869d14782c157ecb11b243a8332a3200"
 ---
 
 # Reference-to-Video Generation
@@ -30,12 +30,7 @@ For example, you could provide photos of a cat and a dog, then prompt "character
 
 Wan's reference-to-video models can incorporate multiple characters from reference media into a generated video. References must be URLs (use [Vercel Blob](/docs/vercel-blob) for local files). Use `character1`, `character2`, etc. in your prompt to refer to each reference.
 
-### Wan models
-
-| Model                        | Description               |
-| ---------------------------- | ------------------------- |
-| `alibaba/wan-v2.6-r2v`       | Standard model with audio |
-| `alibaba/wan-v2.6-r2v-flash` | Fast generation           |
+[Browse the latest Wan video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
 ### Wan parameters
 
@@ -45,7 +40,7 @@ Wan's reference-to-video models can incorporate multiple characters from referen
 | `resolution`                             | `string`                | No       | `'1280x720'` or `'1920x1080'`                                                                                                                                           |
 | `duration`                               | `number`                | No       | 2-10 seconds                                                                                                                                                            |
 | `providerOptions.alibaba.referenceUrls`  | `string[]`              | Yes      | Array of URLs to reference images or videos. The first URL maps to `character1`, the second to `character2`, and so on. Supports 0-5 images and 0-3 videos, max 5 total |
-| `providerOptions.alibaba.audio`          | `boolean`               | No       | Generate audio. Standard models default to `true`, flash models default to `false`                                                                                      |
+| `generateAudio`                          | `boolean`               | No       | Generate audio. Standard models default to `true`, flash models default to `false`                                                                                      |
 | `providerOptions.alibaba.negativePrompt` | `string`                | No       | What to avoid in the video. Max 500 characters                                                                                                                          |
 | `providerOptions.alibaba.shotType`       | `'single'` | `'multi'` | No       | `'single'` for continuous shot. `'multi'` for multiple camera angles                                                                                                    |
 | `providerOptions.alibaba.watermark`      | `boolean`               | No       | Add watermark to the video. Defaults to `false`                                                                                                                         |

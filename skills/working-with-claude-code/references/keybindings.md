@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/keybindings.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "3ae85f7ddea406396b7c6a7d81dc93da0c76aeeed1bfe061de1222caff306f3d"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "4cd635fa59612a9a941147a36b633e48e6fbdb49fd230babdd56242fb888a768"
 ---
 
 > ## Documentation Index
@@ -83,13 +83,13 @@ Actions follow a `namespace:action` format, such as `chat:submit` to send a mess
 
 Actions available in the `Global` context:
 
-| Action                 | Default   | Description                 |
-| :--------------------- | :-------- | :-------------------------- |
-| `app:interrupt`        | Ctrl+C    | Cancel current operation    |
-| `app:exit`             | Ctrl+D    | Exit Claude Code            |
-| `app:redraw`           | (unbound) | Force terminal redraw       |
-| `app:toggleTodos`      | Ctrl+T    | Toggle task list visibility |
-| `app:toggleTranscript` | Ctrl+O    | Toggle verbose transcript   |
+| Action                 | Default   | Description                                                                                                  |
+| :--------------------- | :-------- | :----------------------------------------------------------------------------------------------------------- |
+| `app:interrupt`        | Ctrl+C    | Cancel current operation                                                                                     |
+| `app:exit`             | Ctrl+D    | Exit Claude Code                                                                                             |
+| `app:redraw`           | (unbound) | Force terminal redraw                                                                                        |
+| `app:toggleTodos`      | Ctrl+T    | Toggle visibility of Claude's to-do checklist. This is not the [`/tasks`](/en/commands) background-task view |
+| `app:toggleTranscript` | Ctrl+O    | Toggle verbose transcript                                                                                    |
 
 ### History actions
 
@@ -419,11 +419,19 @@ Set an action to `null` to unbind a default shortcut:
 }
 ```
 
-This also works for chord bindings. Unbinding every chord that shares a prefix frees that prefix for use as a single-key binding:
+This also works for chord bindings. Unbinding every chord that shares a prefix frees that prefix for use as a single-key binding. A chord in any active context keeps its prefix reserved, so you must unbind each chord in the context that defines it.
+
+The default `Ctrl+X` family spans two contexts: `ctrl+x ctrl+k` and `ctrl+x ctrl+e` in `Chat`, and `ctrl+x ctrl+b` in `Task`. To reclaim `ctrl+x` itself as a single-key binding, unbind all of them:
 
 ```json theme={null}
 {
   "bindings": [
+    {
+      "context": "Task",
+      "bindings": {
+        "ctrl+x ctrl+b": null
+      }
+    },
     {
       "context": "Chat",
       "bindings": {

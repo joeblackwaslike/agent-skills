@@ -17,21 +17,21 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "8ca696a6d7391e95b0a918d269d270d20542b109019a2159a36d51853615cd82"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "127dc6a843a89498b69dcbb369e504f0b208089c1167dcae9c5c7813ee4fc239"
 ---
 
 # Video Generation
 
-> **⚠️ Warning:** Video generation requires **AI SDK v6** and uses the `experimental_generateVideo` function. This API is experimental and subject to change in future releases.
+> **⚠️ Warning:** Video generation requires **AI SDK 6 or later** and uses the `experimental_generateVideo` function. This API is experimental and subject to change in future releases.
 
 AI Gateway supports video generation, letting you create videos from text prompts, images, or video input. You can control resolution, duration, aspect ratio, and audio through a unified API across multiple providers.
 
-To see all supported video models, use the **Video** filter at the [AI Gateway Models page](https://vercel.com/ai-gateway/models?type=video).
+To see all supported video models, use the **Video** filter at the [AI Gateway Models page](https://vercel.com/ai-gateway/models?capabilities=video-generation).
 
 ## Capabilities
 
-Some video models are tagged by capability in their model name. You can also see capability tags on the [AI Gateway Models page](https://vercel.com/ai-gateway/models?type=video) or via the `/v1/models` endpoint, which is useful for models that support multiple capabilities:
+Some video models are tagged by capability in their model name. You can also see capability tags on the [AI Gateway Models page](https://vercel.com/ai-gateway/models?capabilities=video-generation) or via the `/v1/models` endpoint, which is useful for models that support multiple capabilities:
 
 | Tag              | Capability                                                                              | Description                                                         |
 | ---------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
@@ -40,6 +40,7 @@ Some video models are tagged by capability in their model name. You can also see
 | `r2v`            | [Reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video) | Generate video featuring characters from reference images or videos |
 | `motion-control` | [Motion control](/docs/ai-gateway/modalities/video-generation/motion-control)         | Transfer motion from a reference video onto a character image       |
 | -                | [Video editing](/docs/ai-gateway/modalities/video-generation/video-editing)           | Edit existing videos using text prompts                             |
+| -                | [Video extension](/docs/ai-gateway/modalities/video-generation/video-extension)       | Continue a video from its last frame                                |
 
 For example, `klingai/kling-v2.6-t2v` is a text-to-video model, `alibaba/wan-v2.6-i2v` is an image-to-video model, and `bytedance/seedance-v1.5-pro` supports both text-to-video and image-to-video.
 
@@ -47,12 +48,13 @@ For example, `klingai/kling-v2.6-t2v` is a text-to-video model, `alibaba/wan-v2.
 
 These parameters work across all video models, though support varies by provider.
 
-| Parameter     | Type                          | Description                                                                                  |
-| ------------- | ----------------------------- | -------------------------------------------------------------------------------------------- |
-| `prompt`      | `string` or `{ image, text }` | Text description of the video. For image-to-video, use object format with `image` and `text` |
-| `duration`    | `number`                      | Video length in seconds. Supported range varies by model                                     |
-| `aspectRatio` | `string`                      | Aspect ratio as `{width}:{height}` (e.g., `'16:9'`, `'9:16'`)                                |
-| `resolution`  | `string`                      | Resolution as `{width}x{height}` (e.g., `'1920x1080'`, `'1280x720'`)                         |
+| Parameter       | Type                          | Description                                                                                   |
+| --------------- | ----------------------------- | --------------------------------------------------------------------------------------------- |
+| `prompt`        | `string` or `{ image, text }` | Text description of the video. For image-to-video, use object format with `image` and `text`  |
+| `duration`      | `number`                      | Video length in seconds. Supported range varies by model                                      |
+| `aspectRatio`   | `string`                      | Aspect ratio as `{width}:{height}` (e.g., `'16:9'`, `'9:16'`)                                 |
+| `resolution`    | `string`                      | Resolution as `{width}x{height}` (e.g., `'1920x1080'`, `'1280x720'`)                          |
+| `generateAudio` | `boolean`                     | Whether to generate audio alongside the video. Support varies by model                        |
 
 ## Saving videos
 

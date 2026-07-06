@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9bc9a5ac3291df4ab7e6d8cb5746632136120a5d06c1b822ea83b8fb18da1811"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "14c4a51830c67186536171b0dd74004219470926cd6188aa47a90b46a8ef5298"
 ---
 
 # Limits
@@ -87,6 +87,7 @@ Pro includes a credit that you can use across billable resources and a pay-as-yo
 | [Workflow Data Retained](/docs/workflows/pricing) | $0.50 per GB-month | Based on usage |
 | [Queue API Operations](/docs/queues/pricing) | Regional | N/A |
 | [Drains](/docs/drains#usage-and-pricing) | $0.50 per 1 GB | N/A |
+| [Service Requests](/docs/services/pricing) | Regional | N/A |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing) | $0.0004 per 1K reads | N/A |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing) | $0.004 per 1K writes | N/A |
 
@@ -99,7 +100,7 @@ See the [Pro trial limitations](/docs/plans/pro-plan/trials#trial-limitations) s
 
 The limit of "Routes created per Deployment" encapsulates several options that can be configured on Vercel:
 
-- If you are using a `vercel.json` configuration file, each [rewrite](/docs/project-configuration#rewrites), [redirect](/docs/project-configuration#redirects), or [header](/docs/project-configuration#headers) is counted as a Route
+- If you are using a `vercel.json` configuration file, each [rewrite](/docs/project-configuration/vercel-json#rewrites), [redirect](/docs/project-configuration/vercel-json#redirects), or [header](/docs/project-configuration/vercel-json#headers) is counted as a Route
 - If you are using the [Build Output API](/docs/build-output-api/v3), you might configure [routes](/docs/build-output-api/v3/configuration#routes) for your deployments
 
 Note that most frameworks will create Routes automatically for you. For example, Next.js will create a set of Routes corresponding to your use of [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes), [redirects](https://nextjs.org/docs/app/building-your-application/routing/redirecting), [rewrites](https://nextjs.org/docs/api-reference/next.config.js/rewrites) and [custom headers](https://nextjs.org/docs/api-reference/next.config.js/headers).

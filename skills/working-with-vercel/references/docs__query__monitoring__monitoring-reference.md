@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "098dbbd70e94c032aef372fc9b143950207fc718de3edf77e73acd08a747c3e0"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "160bebdf1659155aaddff1cc3db0c28ec2506e1a3026cc48baf7bcf18d3eb488"
 ---
 
 # Monitoring Reference
@@ -124,7 +124,7 @@ All your project's resources like pages, functions, and images have a path type:
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `static`          | A static asset (`.js`, `.css`, `.png`, etc.)                                                                                        |
 | `func`            | A [Vercel Function](/docs/functions)                                                                                                |
-| `external`        | A resource that is outside of Vercel. This is usually caused when you have [rewrite rules](/docs/project-configuration#rewrites)    |
+| `external`        | A resource that is outside of Vercel. This is usually caused when you have [rewrite rules](/docs/project-configuration/vercel-json#rewrites)    |
 | `edge`            | A [Vercel Function](/docs/functions) using [Edge runtime](/docs/functions/runtimes/edge)                                            |
 | `prerender`       | A pre-rendered page built using [Incremental Static Regeneration](/docs/incremental-static-regeneration)                            |
 | `streaming_func`  | A [streaming Vercel Function](/docs/functions/streaming-functions)                                                                  |

@@ -1,11 +1,14 @@
 ---
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-06-15T23:49:03.939Z"
-sha256: "cc97ba4b5c2ee7a9d0b8c518fd39e3618dacb79879fe0087b06e0144e8e33a0d"
+fetched_at: "2026-07-06T05:40:17.345Z"
+sha256: "0ab87d68bd1bc2bd6ee36d6bbc53e413c5a8928d947c54d8c66d3fda78f5a6a0"
 ---
 
 # Page Not Found
 
-`/docs/rest-api` does not exist.
+`/docs/rest-api` does not exist. Similar pages:
 
-Browse all pages: [/llms.txt](/llms.txt) | [/docs/llms-full.txt](/docs/llms-full.txt)
+- [Get a repository](/docs/rest-api/vcr/get-a-repository.md): titlegetarepository productvercel url/docs/restapi/vcr/getarepository canonical_url"https//vercel.com/docs/restapi/vcr/getarepository"
+- [Get a repository image](/docs/rest-api/vcr/get-a-repository-image.md): titlegetarepositoryimage productvercel url/docs/restapi/vcr/getarepositoryimage canonical_url"https//vercel.com/docs/restapi/vcr/getarepositoryimage"
+
+All pages: [/llms.txt](/llms.txt)

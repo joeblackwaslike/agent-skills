@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Anthropic Messages API to allow models to call tools and functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calls.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f15f28de92584e431c67a1f0e23b6cbe211c720c64e3a49a8f201193b476f7a0"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "3a8cc0a395bce6621fcb08535cb4e60822f7c28e8f2eb5966cd319ad20559912"
 ---
 
 # Tool Calls
@@ -36,7 +36,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 1024,
   tools: [
     {
@@ -84,7 +84,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     tools=[
         {
@@ -138,7 +138,7 @@ When the model makes tool calls, the response includes tool use blocks:
       }
     }
   ],
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "stop_reason": "tool_use",
   "usage": {
     "input_tokens": 82,

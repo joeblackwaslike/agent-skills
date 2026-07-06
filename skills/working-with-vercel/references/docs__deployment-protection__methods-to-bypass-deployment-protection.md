@@ -16,8 +16,8 @@ related:
 summary: Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a9dbf5d606fc26eb62cffcc63ae633634e527ee585bf4d5f51ce76351880b5a4"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "0d498cdd9cb8bd3e8afade09394eb397d70722f68cb4bb778756d3f5663600cc"
 ---
 
 # Bypass Deployment Protection for testing, sharing, and automation
@@ -82,7 +82,7 @@ Learn more about [Shareable Links](/docs/security/deployment-protection/methods-
 
 ## Related resources for Deployment Protection
 
-- [Understanding Deployment Protection by environment](/docs/deployment-protection#understanding-deployment-protection-by-environment)
+- [Understanding Deployment Protection by environment](/docs/deployment-protection#choose-which-urls-to-protect)
 - [Methods to protect deployments](/docs/deployment-protection/methods-to-protect-deployments)
 
 

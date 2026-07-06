@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6968d778a6b7ebeeab63c5d364cab9025fbeec340d16b05155b5e78e1d9620b2"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "b3ee02494e193dd70a8e19b6c567ecb5cf7c54d3c5accaa1015ebe53aa80c94e"
 ---
 
 # Access Groups
@@ -70,7 +70,7 @@ When configuring Access Groups, there are some key things to be aware of:
 
 - Team roles cannot be overridden. An Access Group manages project roles only
 - Only a subset of team role and project role combinations are valid:
-  - **[Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role), [Billing](/docs/rbac/access-roles#billing-role), [Viewer Pro](/docs/rbac/access-roles#viewer-pro-role), [Viewer Enterprise](/docs/rbac/access-roles#viewer-enterprise-role)**: All project role assignments are ignored
+  - **[Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role), [Billing](/docs/rbac/access-roles#billing-role), [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role), [Viewer Enterprise](/docs/rbac/access-roles#enterprise-viewer-role)**: All project role assignments are ignored
   - **[Developer](/docs/rbac/access-roles#developer-role)**: [Admin](/docs/rbac/access-roles#project-administrators) assignment is valid on selected projects. [Project Developer](/docs/rbac/access-roles#project-developer) and [Project Viewer](/docs/rbac/access-roles#project-viewer) role assignments are ignored
   - **[Contributor](/docs/rbac/access-roles#contributor-role)**: `Admin`, `Project Developer`, or `Project Viewer` roles are valid in selected projects
 - When a `Contributor` belongs to **multiple** access groups the computed role will be:

@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/rules.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "7dc7288dd2632f6aba7049761a1ffa9cc801a7a73f0b9c6c65fad4fbe1957906"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "cf6fc312cacbdab72daca7d7661b762f263662fcdeec58b0e11c6ed0ff78f7c3"
 ---
 
 # Rules
@@ -149,7 +149,7 @@ Use `globs` to scope a rule to specific files or directories. Separate multiple 
 There are two ways to create rules:
 
 - **`/create-rule` in chat**: Type `/create-rule` in Agent and describe what you want. Agent generates the rule file with proper frontmatter and saves it to `.cursor/rules`.
-- **From settings**: Open `Cursor Settings > Rules, Commands` and click `+ Add Rule`. This creates a new rule file in `.cursor/rules`. From settings you can see all rules and their status.
+- **From Customize**: Open **Customize** in the sidebar, go to **Rules**, and click **Add Rule**. This creates a new rule file in `.cursor/rules`. From Customize you can see all rules and their status.
 
 ## Best practices
 
@@ -302,7 +302,7 @@ Once team rules are created, they automatically apply to all team members and ar
 ### Activation and enforcement
 
 - **Enable this rule immediately**: When checked, the rule is active as soon as you create it. When unchecked, the rule is saved as a draft and does not apply until you enable it later.
-- **Enforce this rule**: When enabled, the rule is required for all team members and cannot be disabled in their Cursor settings. When not enforced, team members can toggle the rule off in `Cursor Settings → Rules` under the Team Rules section.
+- **Enforce this rule**: When enabled, the rule is required for all team members and cannot be disabled in Customize. When not enforced, team members can toggle the rule off under **Team Rules** in Customize.
 
 By default, non‑enforced Team Rules can be disabled by users. Use Enforce this rule to prevent that.
 
@@ -323,10 +323,11 @@ You can import rules from external sources to reuse existing configurations or b
 
 Import rules directly from any GitHub repository you have access to—public or private.
 
-1. Open **Cursor Settings → Rules, Commands**
-2. Click `+ Add Rule` next to `Project Rules`, then select Remote Rule (Github)
-3. Paste the GitHub repository URL containing the rules. Cursor will scan for all `.mdc` files in the repo.
-4. Cursor will pull and sync the rule(s) into your project
+1. Open **Customize** in the sidebar
+2. Go to **Rules** and click **Add Rule**
+3. Select **Remote Rule (Github)**
+4. Paste the GitHub repository URL containing the rules. Cursor will scan for all `.mdc` files in the repo.
+5. Cursor will pull and sync the rule(s) into your project
 
 Rules will be placed in `.cursor/rules/imported/<repoName>`. Rules will also keep their relative paths, so `dir/rule.mdc` will be imported as `.cursor/rule/imported/<repoName>/dir/rule.mdc`.
 
@@ -376,7 +377,7 @@ Instructions from nested `AGENTS.md` files are combined with parent directories,
 
 ## User Rules
 
-User Rules are global preferences defined in **Cursor Settings → Rules** that apply across all projects. They are used by Agent (Chat) and are perfect for setting preferred communication style or coding conventions:
+User Rules are global preferences defined in **Customize → Rules** that apply across all projects. They are used by Agent (Chat) and are perfect for setting preferred communication style or coding conventions:
 
 ```md
 Please reply in a concise style. Avoid unnecessary repetition or filler language.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "97fd3fb07e966f3e703b293b63df53bf6059831600b9db61b4ee1a4ffda7c2f5"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "e0b83b9ac7e87335cc29470599112dd3dac185357d67436ac210081dd2d07b48"
 ---
 
 # Rolling Releases
@@ -80,6 +80,12 @@ The rolling release will proceed to its first stage, sending a portion of traffi
 If a rolling release is in progress when one of the **promote** actions triggers, the project's
 state won't change. The active rolling release must be resolved (either completed or aborted) before starting
 a new one.
+
+#### CI/CD pipelines
+
+- Use [`vercel rolling-release start`](/docs/cli/rolling-release#start) and [`vercel rolling-release complete`](/docs/cli/rolling-release#complete), or the matching [REST API endpoints](#starting-and-completing-via-the-api), to control rollout lifecycle in automation.
+- Avoid the promote API and [`vercel promote`](/docs/cli/promote) for start and complete steps. See [Starting and completing via the API](#starting-and-completing-via-the-api).
+- Call start again when [auto-assign custom domains](/docs/project-configuration/project-settings#domains) already started a rollout on deploy ready. The start endpoint is idempotent.
 
 ### Observability
 
@@ -197,9 +203,40 @@ The following are the supported REST API endpoints for rolling releases and roll
 | PATCH  | [PATCH /v1/projects/{idOrName}/rolling-release/config](/docs/rest-api/reference/endpoints/rolling-release#update-rolling-release-config)                                                       |
 | GET    | [GET /v1/projects/{idOrName}/rolling-release](/docs/rest-api/reference/endpoints/rolling-release#get-active-rolling-release)                                                                   |
 | POST   | [POST /v1/projects/{idOrName}/rolling-release/approve-stage](/docs/rest-api/reference/endpoints/rolling-release#advance-rolling-release-to-next-stage)                                         |
+| POST   | `POST /v1/projects/{idOrName}/rolling-release/start`                                                                                                                                            |
 | POST   | [POST /v1/projects/{idOrName}/rolling-release/complete](/docs/rest-api/reference/endpoints/rolling-release#complete-rolling-release)                                                           |
 | POST   | [POST /v1/projects/{projectId}/rollback/{deploymentId}](/docs/rest-api/reference/endpoints/instant-rollback#rollback-a-project-to-a-previous-deployment)                                       |
 | PATCH  | [PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description](/docs/rest-api/reference/endpoints/instant-rollback#update-the-description-of-a-project-rollback-to-a-deployment) |
+
+### Starting and completing via the API
+
+The start endpoint is **idempotent**. If a rolling release is already active for the same `canaryDeploymentId`, the request succeeds and returns the current state. It does not advance stages or complete the rollout.
+
+For CI/CD and automation, use the dedicated start and complete endpoints with [`vercel rolling-release start`](/docs/cli/rolling-release#start) and [`vercel rolling-release complete`](/docs/cli/rolling-release#complete). Do not use the promote API or [`vercel promote`](/docs/cli/promote) to start or complete a rollout. Calling promote when a rolling release is already active for the deployment completes the rollout to 100%.
+
+1. **Start a rolling release:** Call `POST /v1/projects/{idOrName}/rolling-release/start` with body `{ "canaryDeploymentId": "dpl_..." }`.
+
+2. **Complete a rolling release:** Call `POST /v1/projects/{idOrName}/rolling-release/complete` with body `{ "canaryDeploymentId": "dpl_..." }`. The canary deployment then serves all production traffic and the rolling release is complete.
+
+Example start request:
+
+```bash filename="terminal"
+curl -X POST "https://api.vercel.com/v1/projects/my-project/rolling-release/start?teamId=team_123" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"canaryDeploymentId":"dpl_abc123"}'
+```
+
+Example complete request:
+
+```bash filename="terminal"
+curl -X POST "https://api.vercel.com/v1/projects/my-project/rolling-release/complete?teamId=team_123" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"canaryDeploymentId":"dpl_abc123"}'
+```
+
+The promote API (`POST /v10/projects/{projectId}/promote/{deploymentId}`) serves dashboard and general promotion flows. Use the start and complete endpoints in pipelines so each step has a single, explicit purpose.
 
 ### Stopping a rolling release with the API or SDK
 

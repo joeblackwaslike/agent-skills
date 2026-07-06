@@ -17,8 +17,8 @@ related:
 summary: Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/python.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f809772d0c66d3b068c225faae15df31e015c8bb31216149ad88f6e0085226e6"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "e711c1e960c986af26041df89dfe6d1d6186c140d05803db02a7a5f4bc4e47cf"
 ---
 
 # Python
@@ -64,7 +64,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {'role': 'user', 'content': 'Explain quantum computing in one paragraph.'}
     ]
@@ -85,7 +85,7 @@ client = OpenAI(
 )
 
 response = client.responses.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     input='Explain quantum computing in one paragraph.',
 )
 
@@ -104,7 +104,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     messages=[
         {'role': 'user', 'content': 'Explain quantum computing in one paragraph.'}
@@ -147,7 +147,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {'role': 'user', 'content': 'Write a short story about a robot.'}
     ],
@@ -171,7 +171,7 @@ client = OpenAI(
 )
 
 stream = client.responses.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     input='Write a short story about a robot.',
     stream=True,
 )
@@ -193,7 +193,7 @@ client = anthropic.Anthropic(
 )
 
 with client.messages.stream(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     messages=[
         {'role': 'user', 'content': 'Write a short story about a robot.'}
@@ -221,7 +221,7 @@ client = AsyncOpenAI(
 
 async def main():
     response = await client.chat.completions.create(
-        model='anthropic/claude-opus-4.7',
+        model='anthropic/claude-opus-4.8',
         messages=[
             {'role': 'user', 'content': 'Hello!'}
         ]
@@ -245,7 +245,7 @@ client = AsyncOpenAI(
 
 async def main():
     response = await client.responses.create(
-        model='anthropic/claude-opus-4.7',
+        model='anthropic/claude-opus-4.8',
         input='Hello!',
     )
     print(response.output_text)
@@ -267,7 +267,7 @@ client = anthropic.AsyncAnthropic(
 
 async def main():
     message = await client.messages.create(
-        model='anthropic/claude-opus-4.7',
+        model='anthropic/claude-opus-4.8',
         max_tokens=1024,
         messages=[
             {'role': 'user', 'content': 'Hello!'}
@@ -313,7 +313,7 @@ tools = [{
 }]
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {'role': 'user', 'content': "What's the weather in Tokyo?"}
     ],
@@ -390,7 +390,7 @@ tools = [{
 }]
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     messages=[
         {'role': 'user', 'content': "What's the weather in Tokyo?"}
@@ -421,7 +421,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {'role': 'user', 'content': 'Extract: John is 30 years old and lives in NYC'}
     ],

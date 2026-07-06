@@ -16,8 +16,8 @@ related:
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "02f086db4dbf3d4391d3abf4ac3f961b47eb7205356f3dffb2757a26f2117865"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "110148ea3e34d715b1f650f666af92974e2eb215bdd48f7ca1d6a4a85c4aea7b"
 ---
 
 # Static IPs
@@ -106,7 +106,7 @@ When you configure static IPs in a project, they apply to all the [environments]
 
 - Static IP addresses are shared across a small group of customers in the same region
 - Project-level configuration: You cannot isolate static IPs to specific deployment environments
-- The [extended max duration beta for Vercel Functions](/docs/functions/configuring-functions/duration#extended-max-duration) is not yet supported for projects using Static IPs
+- Static IPs do not support the extended max duration beta, large functions beta or [container images](/docs/functions/container-images) beta. See [Vercel Functions limits](/docs/functions/limitations) for current limits and compatibility
 
 ### Pricing
 

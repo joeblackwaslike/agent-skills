@@ -11,11 +11,12 @@ related:
   - /docs/queues/concepts
   - /docs/cron-jobs
   - /docs/fluid-compute
+  - /docs/services
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8645e095528cd17880a09b9ed4956f5741cd80164a0fa27f71b9c2a7c24bc2ed"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "720d28db88b6d1559a3e5e9e61aad250ec1b1d9a604e66a09dafe579390b80e1"
 ---
 
 # Poll Mode
@@ -174,6 +175,12 @@ POST https://iad1.vercel-queue.com/api/v3/topic/orders/consumer/fulfillment
 | **Scaling**             | Automatic with [fluid compute](/docs/fluid-compute) | Managed by your application              |
 | **Latency**             | Lower (messages delivered as they arrive)           | Depends on your polling interval         |
 | **Delivery guarantees** | At-least-once                                       | At-least-once                            |
+
+## Poll mode in services
+
+Consumer groups are not scoped to a [service](/docs/services). A group is identified only by its name on a topic, shared across the whole project and deployment rather than isolated per service.
+
+When consumers in different services poll the same topic, scope their consumer group names manually to prevent collisions across services.
 
 
 ---

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/default-generated-file.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b1a2cc14463d219dc3d70994bc46092ceeadabf3d1d68f0b94362e7e15923111"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "01d900c1a2f296930c92e78c7ceb58a4035c273fe942be7985f5a96cc0ea5bc9"
 ---
 
 # `DefaultGeneratedFile`
@@ -77,6 +77,7 @@ console.log(file.uint8Array); // Original Uint8Array
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

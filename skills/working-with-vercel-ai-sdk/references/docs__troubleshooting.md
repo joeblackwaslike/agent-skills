@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "10c445bb8004baf84a2931287207739398dbb90f940e3643f548de9a38b9ae38"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "093d2199c1a31a6de949e06aa217722f59b04ab0aaaffcd520e1cadf98e385bd"
 ---
 
 # Troubleshooting
@@ -126,6 +126,7 @@ This section is designed to help you quickly identify and resolve common issues 
     - [embedMany](/docs/reference/ai-sdk-core/embed-many)
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

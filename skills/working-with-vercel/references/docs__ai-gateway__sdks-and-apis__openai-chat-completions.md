@@ -17,8 +17,8 @@ related:
 summary: Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ef31e7502f91e784eed9767d50e2cbfd97b847b52940f2e87352fd0e7eead478"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "aff4f2f06e199408dd67dfc42797697beb0fb77553c43e4a7d7c1a5fa11f53b6"
 ---
 
 # OpenAI Chat Completions API
@@ -78,7 +78,7 @@ const openai = new OpenAI({
 });
 
 const response = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [{ role: 'user', content: 'Hello, world!' }],
 });
 ```
@@ -95,7 +95,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {'role': 'user', 'content': 'Hello, world!'}
     ]
@@ -117,7 +117,7 @@ const gateway = createOpenAICompatible({
 });
 
 const response = await generateText({
-  model: gateway('anthropic/claude-opus-4.7'),
+  model: gateway('anthropic/claude-opus-4.8'),
   prompt: 'Hello, world!',
 });
 ```
@@ -172,7 +172,7 @@ The response follows the OpenAI API format:
   "object": "list",
   "data": [
     {
-      "id": "anthropic/claude-opus-4.7",
+      "id": "anthropic/claude-opus-4.8",
       "object": "model",
       "created": 1677610602,
       "owned_by": "anthropic"
@@ -199,7 +199,7 @@ GET /models/{model}
 
 Parameters
 
-- `model` (required): The model ID to retrieve (e.g., `anthropic/claude-opus-4.7`)
+- `model` (required): The model ID to retrieve (e.g., `anthropic/claude-opus-4.8`)
 
 Example request
 
@@ -213,7 +213,7 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-const model = await openai.models.retrieve('anthropic/claude-opus-4.7');
+const model = await openai.models.retrieve('anthropic/claude-opus-4.8');
 console.log(model);
 ```
 
@@ -228,7 +228,7 @@ client = OpenAI(
     base_url='https://ai-gateway.vercel.sh/v1'
 )
 
-model = client.models.retrieve('anthropic/claude-opus-4.7')
+model = client.models.retrieve('anthropic/claude-opus-4.8')
 print(model)
 ```
 
@@ -236,7 +236,7 @@ Response format
 
 ```json
 {
-  "id": "anthropic/claude-opus-4.7",
+  "id": "anthropic/claude-opus-4.8",
   "object": "model",
   "created": 1677610602,
   "owned_by": "anthropic"

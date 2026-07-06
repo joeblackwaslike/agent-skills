@@ -8,59 +8,116 @@ type: conceptual
 prerequisites:
   - /docs/services
 related:
-  []
+  - /docs/services
+  - /docs/routing
+  - /docs/project-configuration/vercel-json
+  - /docs/services/bindings
 summary: Learn how Vercel routes requests between services and how services communicate with each other.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/routing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "abcf1fae4dc5754685fe662c403c23628439eff400b50f6c61bcac53ed535de3"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "4e7e66b0100c2e851767009c2497f0b4b137e2a8e2993c0f75a8e70d7fb96476"
 ---
 
-# Services routing and communication
+# Services routing
 
-When a project has multiple services, Vercel merges their routes into a single routing table and distributes incoming requests based on each service's route prefix.
+Your `vercel.json` controls all public routing for the deployment. A service
+receives public traffic only when there is a top-level rewrite that routes
+requests to it. Each service then handles its own routes, and the routes of one
+service are never mixed with another, so every public routing rule has a single
+owner. For how services are defined and built, see [Services](/docs/services).
+
+Where usual [rewrite rules](/docs/routing) target URLs, service rewrites target
+services instead. Set the `destination` value in a rewrite rule to an object
+like `{ "service": "my_backend" }`. For example:
+
+```json filename="vercel.json"
+{
+  "services": {
+    "my_frontend": {
+      "root": "frontend/"
+    },
+    "my_backend": {
+      "root": "backend/",
+      "entrypoint": "main:app"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": { "service": "my_backend" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "my_frontend" }
+    }
+  ]
+}
+```
+
+The destination object accepts the following fields:
+
+| Field     | Required | Description                                                                                                           |
+| --------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| `service` | Yes      | Name of a service in the same deployment, from your `services` configuration.                                         |
+| `path`    | No       | The path used to select a route inside the service. It changes which route runs, not the path your code sees. See [Rules inside a service](#rules-inside-a-service) for an example. |
 
 ## How requests are routed
 
-Each web service has a `routePrefix` that determines which requests it receives. Vercel evaluates prefixes from longest to shortest (most specific first), with the primary service (prefix `/`) as the catch-all.
+Vercel evaluates your top-level rewrites in order and routes each request to the first matching service. Using the configuration above, where `/api/(.*)` routes to `my_backend` and everything else routes to `my_frontend`:
 
-For example, with a Next.js frontend at `/` and a FastAPI backend at `/svc/api`:
+| Request               | Handled by    | Service receives  |
+| --------------------- | ------------- | ----------------- |
+| `GET /dashboard`      | `my_frontend` | `/dashboard`      |
+| `GET /api/users`      | `my_backend`  | `/api/users`      |
+| `POST /api/orders`    | `my_backend`  | `/api/orders`     |
 
-| Request               | Handled by         | Application receives |
-| --------------------- | ------------------ | -------------------- |
-| `GET /dashboard`      | Frontend (Next.js) | `/dashboard`         |
-| `POST /svc/api/users` | Backend (FastAPI)  | `/svc/api/users`     |
-| `GET /svc/api/docs`   | Backend (FastAPI)  | `/svc/api/docs`      |
+The service receives the original request path. `GET /api/users` reaches `my_backend` as `/api/users`, not `/users`.
 
-When you configure `routePrefix`, Vercel automatically mounts backend services at that base path, so you do not need to configure a framework-specific root path for backends.
+Once a request is routed to a service, that service handles the rest of routing. If nothing inside the service matches, the service is expected to return its own 404 or 405 response.
 
-For frontend frameworks such as Next.js mounted on a subpath, you still need to configure the app's base path (for example, `basePath` in `next.config.js`) to match `routePrefix`.
+> **💡 Note:** Routing into a service is final. If no route matches inside the service,
+> Vercel does not fall back to your other top-level rewrites. It returns the
+> service's not-found response.
 
-## Environment variables
+## Rules inside a service
 
-Vercel automatically generates environment variables so services can communicate with each other.
+A service can define its own `headers`, `redirects`, `rewrites`, and `routes`, using the same syntax as the [top-level configuration](/docs/project-configuration/vercel-json). These run only after a top-level rewrite routes a request into the service, and they can match on the state the rewrite passed in.
 
-### Service URL variables
+For example, capture an organization slug at the top level, pass it to the service as query state, and let the service add a response header based on it:
 
-For each web service, Vercel injects:
+```json filename="vercel.json"
+{
+  "services": {
+    "my_backend": {
+      "root": "backend/",
+      "entrypoint": "main:app",
+      "headers": [
+        {
+          "source": "/(.*)",
+          "has": [{ "type": "query", "key": "org", "value": "(?<org>.*)" }],
+          "headers": [{ "key": "x-org-id", "value": ":org" }]
+        }
+      ]
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/org/:orgSlug/api/:path*",
+      "destination": {
+        "service": "my_backend",
+        "path": "/:path*?org=:orgSlug"
+      }
+    }
+  ]
+}
+```
 
-| Variable                        | Example value                            | Availability            | Use case                               |
-| ------------------------------- | ---------------------------------------- | ----------------------- | -------------------------------------- |
-| `{SERVICENAME}_URL`             | `https://your-deploy.vercel.app/svc/api` | Server-side in services | Server-side requests between services  |
-| `NEXT_PUBLIC_{SERVICENAME}_URL` | `/svc/api`                               | Client-side in Next.js  | Client-side requests from the frontend |
+For example, `GET /org/acme/api/users` routes to `my_backend` with the route lookup path `/users` and the query state `org=acme`. The service's own `headers` rule matches `org=acme` and adds `x-org-id: acme` to the response. Your service code still observes the original path `/org/acme/api/users`: the destination `path` only selects which route runs and the query state these rules match against, not the path your code sees. To change the path your service code observes, add a [`request.path` transform](/docs/project-configuration/vercel-json#request-path-transform-in-a-service) to the service's own `routes`.
 
-For example, for a project with two services, a Next.js "frontend" mounted at the root and a FastAPI "backend" mounted at "svc/api", Vercel would generate the following environment variables:
+## Internal calls between services
 
-| Variable                   | Value                                    | Availability            | Use case                               |
-| -------------------------- | ---------------------------------------- | ----------------------- | -------------------------------------- |
-| `FRONTEND_URL`             | `https://your-deploy.vercel.app`         | Server-side in services | Server-side redirects to the frontend  |
-| `BACKEND_URL`              | `https://your-deploy.vercel.app/svc/api` | Server-side in services | Server-side requests to the backend    |
-| `NEXT_PUBLIC_FRONTEND_URL` | `/`                                      | Client-side in Next.js  | Client-side requests to the frontend   |
-| `NEXT_PUBLIC_BACKEND_URL`  | `/svc/api`                               | Client-side in Next.js  | Client-side requests from the frontend |
-
-Client-side variables use relative paths (the route prefix only) to avoid CORS issues. The browser resolves them against the current origin, so they work across preview deployments and custom domains.
-
-If you define an environment variable with the same name in your project settings, your value takes precedence.
+Top-level rewrites are public ingress. To let one service call another over the internal network, server-side and without a public route, use a [service binding](/docs/services/bindings) instead.
 
 
 ---

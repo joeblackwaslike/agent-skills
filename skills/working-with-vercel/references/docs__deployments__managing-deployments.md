@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f7026ae798d09385e7abe2e32954e00e2778bdb6cf7a74dd9c00b76441cef0f4"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "31b002af2426558b86227885e101d25b50e724cd9b2ccccac8690986c9ace51e"
 ---
 
 # Managing Deployments
@@ -96,7 +96,7 @@ You can set the retention policy for your deployments to automatically delete th
 
 ## Deployment protection
 
-Vercel provides a way to protect your deployments from being accessed by unauthorized users. You can use [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) to restrict access to your deployments to only Vercel users with [suitable access rights](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication#who-can-access-protected-deployments). You can also configure which [environments](/docs/security/deployment-protection#understanding-deployment-protection-by-environment) are protected.
+Vercel provides a way to protect your deployments from being accessed by unauthorized users. You can use [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) to restrict access to your deployments to only Vercel users with [suitable access rights](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication#who-can-access-protected-deployments). You can also configure which [environments](/docs/deployment-protection#choose-which-urls-to-protect) are protected.
 
 In addition, Enterprise teams can use [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips) and [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection) to further secure their deployments. Password protection is also available as a paid add-on for Pro teams.
 

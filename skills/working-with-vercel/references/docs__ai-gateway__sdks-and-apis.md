@@ -16,8 +16,8 @@ related:
 summary: Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ef0f5d7ad3acf8755356933bdecaa99d519850847fd1bca19ee013d36336bfd6"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "66499a4edaf04a1522c14087ccce56863710afe995f025aaa82bd3f3483344b9"
 ---
 
 # SDKs & APIs
@@ -38,7 +38,7 @@ npm i ai
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'Hello!',
 });
 ```
@@ -54,7 +54,7 @@ const client = new OpenAI({
 });
 
 const response = await client.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [{ role: 'user', content: 'Hello!' }],
 });
 ```
@@ -70,7 +70,7 @@ const client = new OpenAI({
 });
 
 const response = await client.responses.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   input: 'Hello!',
 });
 ```
@@ -86,7 +86,7 @@ const client = new Anthropic({
 });
 
 const message = await client.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 1024,
   messages: [{ role: 'user', content: 'Hello!' }],
 });
@@ -103,7 +103,7 @@ const client = new OpenAI({
 });
 
 const response = await client.responses.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   input: 'Hello!',
 });
 ```

@@ -13,8 +13,8 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers through AI Gateway, available via...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e335a107b795a670d7d81f8ceb51d607a995c86a2322c3ed1a544b401f06a079"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "251d58a1a7cb9e4efac30e5f88bedd173dc0e68d9596bb08ef067f4f96fb5079"
 ---
 
 # Service Tiers
@@ -50,7 +50,7 @@ The example below applies to any provider that serves the model and supports the
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.1-flash-lite-preview',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -131,7 +131,7 @@ const client = new Anthropic({
 });
 
 const message = await client.messages.create({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.1-flash-lite-preview',
   max_tokens: 1024,
   messages: [
     {
@@ -187,7 +187,7 @@ console.log('Usage:', usage);
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.1-flash-lite-preview',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -210,7 +210,7 @@ console.log('Usage:', usage);
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.1-flash-lite-preview',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -233,7 +233,7 @@ The tier the provider actually served appears on the response as `providerMetada
 
 ```typescript
 const { providerMetadata } = await generateText({
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-3.1-flash-lite-preview',
   prompt: 'Hello',
   providerOptions: {
     gateway: {

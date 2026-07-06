@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the San Francisco, USA (sfo1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/sfo1.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "1635de6ab60fe8ace059cffa77054607ba476ade9cd49d0ad9ef2b4cf206eae9"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "c1fedb75d2c295311af2152f50aef22fca3cbf54f1c8ac0f302dca5b5d3cbc60"
 ---
 
 # San Francisco, USA (sfo1) pricing
@@ -38,6 +38,8 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Edge Requests](/docs/manage-cdn-usage#edge-requests) | Included First 10,000,000, then $2.40 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $4.80 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.48 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache) | $4.80 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.48 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.06 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.72 per 1,000,000 Operations |
 | [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.36 per 1 Hour |
@@ -52,6 +54,7 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | $5.50 per 1M |
 | [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | $0.05 per GB |
 | [Private Data Transfer](/docs/networking/static-ips) | $0.16 per 1 GB |
+| [Service Requests](/docs/services/pricing) | $0.60 per 1,000,000 Requests |
 
 
 Learn more about the different regions available on Vercel in the [regions](/docs/regions) documentation. See the [pricing](/docs/pricing#managed-infrastructure) documentation for more information on Managed Infrastructure.

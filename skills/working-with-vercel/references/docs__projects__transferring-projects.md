@@ -11,13 +11,13 @@ related:
   - /docs/rbac/access-roles
   - /docs/deployments
   - /docs/environment-variables
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/configuration
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "24a51fdf61f72e901200edca32d3dfd6f00608683b57310476af7a42ee01ec96"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "ecfd902e2efefe1092c34a99fa2dbd241d5bf62c11a79a695b3f56e813edb969"
 ---
 
 # Transferring a project
@@ -59,7 +59,7 @@ Transferring a project may take between 10 seconds and 10 minutes, depending on 
 ## What is transferred?
 
 - [Deployments](/docs/deployments)
-- [Environment variables](/docs/environment-variables) are copied to the target team, except for those defined in the [`env`](/docs/project-configuration#env) and [`build.env`](/docs/configuration#project/build-env) configurations of `vercel.json`.
+- [Environment variables](/docs/environment-variables) are copied to the target team, except for those defined in the [`env`](/docs/project-configuration/vercel-json#env) and [`build.env`](/docs/configuration#project/build-env) configurations of `vercel.json`.
 - The project's configuration details
 - [Domains and Aliases](#transferring-domains)
 - Administrators
@@ -86,7 +86,7 @@ Once you transfer a project from a Hobby team to a Pro or Enterprise team, you m
 - [Edge Configs](/docs/edge-config) have [a separate transfer mechanism](/docs/storage#transferring-your-store)
 - Usage is reset on transfer
 - The Active Branches section under **Project** will be empty
-- Environment variables defined in the [`env`](/docs/project-configuration#env) and [`build.env`](/docs/configuration#project/build-env) configurations of `vercel.json` must be [migrated to Environment Variables](/kb/guide/how-do-i-migrate-away-from-vercel-json-env-and-build-env) in the Project Settings or configured again on the target team after the transfer is complete
+- Environment variables defined in the [`env`](/docs/project-configuration/vercel-json#env) and [`build.env`](/docs/configuration#project/build-env) configurations of `vercel.json` must be [migrated to Environment Variables](/kb/guide/how-do-i-migrate-away-from-vercel-json-env-and-build-env) in the Project Settings or configured again on the target team after the transfer is complete
 - [Monitoring](/docs/observability/monitoring) data is not transferred
 - Log data ([Runtime](/docs/runtime-logs) + [build](/docs/deployments/logs) time)
 - [Custom Log Drains](/docs/drains) are not transferred

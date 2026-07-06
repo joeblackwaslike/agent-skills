@@ -13,8 +13,8 @@ related:
 summary: Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7203631ef3a7f57377aa9f062d96bafb68b4bf690e13850ccdc741e561890568"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "00a666cd18b87851ba4021e078e1e8390f367ff5f2120bb8e75d97cb45d79281"
 ---
 
 # Amazon Bedrock Reasoning
@@ -40,7 +40,7 @@ Amazon Bedrock exposes Anthropic Claude reasoning through model-creator-specific
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   prompt: 'How many "r"s are in the word "strawberry"?',
   providerOptions: {
     bedrock: {

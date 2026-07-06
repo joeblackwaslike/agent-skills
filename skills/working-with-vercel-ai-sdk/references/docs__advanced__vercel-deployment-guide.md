@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2b32112d785d3945d7c2bc6d0c9a5f33e101a4d728a8e258f0e6c45b5aa82918"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "7ee3f38f6f80eca10d9cef178ce78d4a689dcc8212e31fd40e8072f5532e03e4"
 ---
 
 # Vercel Deployment Guide
@@ -41,7 +41,7 @@ You can create a GitHub repository from within your terminal, or on [github.com]
 
 To create your GitHub repository:
 
-1. Navigate to [github.com](http://github.com/)
+1. Navigate to [github.com](https://github.com/)
 2. In the top right corner, click the "plus" icon and select "New repository"
 3. Pick a name for your repository (this can be anything)
 4. Click "Create repository"

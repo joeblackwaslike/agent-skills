@@ -8,6 +8,7 @@ type: conceptual
 prerequisites:
   - /docs/sandbox
 related:
+  - /docs/sandbox/concepts/images
   - /docs/sandbox/pricing
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/cli-reference
@@ -15,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "04ae0a58c34e37a687647d36407957528f599c79675412fcb4dfdfee3c082a04"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "16da28d5ac2009dd9c79b95cee9f477cb57d8f5d6dc6f1a381c83b0f6deff362"
 ---
 
 # Working with Sandbox
@@ -28,6 +29,16 @@ Use Vercel Sandbox to run code, stream command output, manage files, capture sna
 ## Create a sandbox and run code
 
 Create a sandbox, write a file into it, run the file, and inspect the command output.
+
+To start from your own system packages and tooling instead of a base runtime, pass a custom `image` from Vercel Container Registry. See [Images](/docs/sandbox/concepts/images) for how images work and how to push one:
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({
+  image: 'my-repository:latest',
+});
+```
 
 ## Resume a long-lived sandbox
 

@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway for seamless integration with Anthropic SDK tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6dec3af7db0307f87b66f4959c12ceebb7aebb42e40d965a176a6c8934dc7663"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "9c733b125b3b6cb0bb6b97a9389749d99184c6595dda90cf55bcaacb0e017316"
 ---
 
 # Anthropic Messages API
@@ -133,7 +133,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 1024,
   messages: [{ role: 'user', content: 'Hello, world!' }],
 });
@@ -151,7 +151,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     messages=[
         {'role': 'user', 'content': 'Hello, world!'}
@@ -165,7 +165,7 @@ The messages endpoint supports the following parameters:
 
 ### Required parameters
 
-- `model` (string): The model to use (e.g., `anthropic/claude-opus-4.7`)
+- `model` (string): The model to use (e.g., `anthropic/claude-opus-4.8`)
 - `max_tokens` (integer): Maximum number of tokens to generate
 - `messages` (array): Array of message objects with `role` and `content` fields
 
@@ -202,7 +202,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 1024,
   system: [
     {
@@ -246,7 +246,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=1024,
     system=[
         {

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/reference/supply-chain-security/dependabot-options-reference.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "0521a36f57ad35df795fd500201f97ab23ed324f6515c0b8ae606b95bfa279a9"
+fetched_at: "2026-07-06T05:37:45.074Z"
+sha256: "63aeaff32ee188ac2ddb7c1ac5b270a1c73eef886b7938ef62015c0cb8c8926c"
 ---
 
 This article provides reference information for the configuration options available in the `dependabot.yml` file. Use these options to customize how {% data variables.product.prodname_dependabot %} monitors package ecosystems, schedules updates, and creates pull requests. For an overview of the `dependabot.yml` file and how it works, see [AUTOTITLE](/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file).
@@ -1022,3 +1022,22 @@ For more information about  OIDC support for {% data variables.product.prodname_
 ### `url` and `replaces-base`
 
 The `url` parameter defines where to access a registry. When the optional `replaces-base` parameter is enabled (`true`), {% data variables.product.prodname_dependabot %} resolves dependencies using the value of `url` rather than the base URL of that specific ecosystem.
+
+{% ifversion dependabot-npm-scope %}
+
+### `scope`
+
+The `scope` parameter is available for `npm-registry` type registries. It specifies which npm scope should be associated with the registry. The value must start with `@`, for example `@my-company`. To associate multiple scopes with the same registry URL, create a separate registry entry for each scope.
+
+When `scope` is provided, {% data variables.product.prodname_dependabot %} generates the `.npmrc` configuration from your registry credentials. This generated configuration takes precedence over any committed `.npmrc` file or lockfile-based inference.
+
+#### Priority order for npm registry resolution
+
+When determining which registry to use for npm dependencies, {% data variables.product.prodname_dependabot %} follows this priority order:
+
+1. **Credential-based generation (`scope` or `replaces-base`):** If `scope` or `replaces-base` is configured on any `npm-registry` credential in `dependabot.yml`, {% data variables.product.prodname_dependabot %} generates the `.npmrc` from those credentials. This always takes priority, overriding any committed `.npmrc` file.
+1. **Committed `.npmrc` in the repository:** If no `scope` is set, {% data variables.product.prodname_dependabot %} uses any `.npmrc` file committed to the repository.
+1. **Lockfile inference (transitional):** If there is no `scope` and no committed `.npmrc`, {% data variables.product.prodname_dependabot %} attempts to infer registry configuration from the lockfile.
+1. **Error generation:** If none of the above methods succeed, {% data variables.product.prodname_dependabot %} reports an error with guidance to add explicit configuration.
+
+{% endif %}

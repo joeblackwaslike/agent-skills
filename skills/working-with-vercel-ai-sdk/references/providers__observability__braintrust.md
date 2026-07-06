@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/braintrust.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b846b2fb3a7cafa658d8703d54afb6103c610ea0895e7291a678d42d21404169"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "bcebb80bf11d55550137d9802613be471fba0e70ccadea4be75d4790c1df2170"
 ---
 
 # Braintrust Observability
@@ -175,6 +175,7 @@ After you log your application in Braintrust, explore other workflows like:
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

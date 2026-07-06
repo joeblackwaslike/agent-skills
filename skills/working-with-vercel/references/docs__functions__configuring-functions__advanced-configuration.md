@@ -13,11 +13,12 @@ related:
   - /docs/functions/configuring-functions
   - /docs/project-configuration
   - /docs/functions/streaming-functions
+  - /docs/project-configuration/vercel-json
 summary: Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/advanced-configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2a8334a649555d3680a232f94dc61ebbe53b5f18dc6357e0ffdad4e628ab7151"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "8d1441e1f9b459e18cb7ae5cf710a5891d5836bb0a43167bd77c644a92bbedca"
 ---
 
 # Advanced Configuration
@@ -40,7 +41,7 @@ If your file uses any of the above, it will **not** be turned into a function.
 
 In order to optimize resources, Vercel uses a process to bundle as many routes as possible into a single Vercel Function.
 
-To provide more control over the bundling process, you can use the [`functions` property](/docs/project-configuration#functions) in your `vercel.json` file to define the configuration for a route. If a configuration is present, Vercel will bundle functions based on the configuration first. Vercel will then bundle together the remaining routes, optimizing for how many functions are created.
+To provide more control over the bundling process, you can use the [`functions` property](/docs/project-configuration/vercel-json#functions) in your `vercel.json` file to define the configuration for a route. If a configuration is present, Vercel will bundle functions based on the configuration first. Vercel will then bundle together the remaining routes, optimizing for how many functions are created.
 
 This bundling process is currently only enabled for Next.js, but it will be enabled in other scenarios in the future.
 

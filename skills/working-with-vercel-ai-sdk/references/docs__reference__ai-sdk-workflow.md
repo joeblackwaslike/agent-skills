@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1237380da1ab9a91c0e33c62c43bc42540f485260e8cf1b1e1f369f8ebbee2cd"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "b241333f1a56d61581c121e10f27d07532e0bac2c4a1957c084abccba46c2e31"
 ---
 
 # AI SDK Workflow
@@ -35,6 +35,7 @@ sha256: "1237380da1ab9a91c0e33c62c43bc42540f485260e8cf1b1e1f369f8ebbee2cd"
   - [embedMany](/docs/reference/ai-sdk-core/embed-many)
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+  - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

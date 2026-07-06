@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "bac612bbcabb6e97302960dbf881c032dda6d6136d928d075f3570d118573741"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "c2d64e5d06bda3b9e04ac5e3ae4969d7cd5b4009a16d49da3f4a09a1a341bb77"
 ---
 
 # Vercel Pro Plan
@@ -82,7 +82,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Viewer team seat
 
-Each viewer team seat has the [Viewer Pro](/docs/rbac/access-roles#viewer-pro-role) role with the following access:
+Each viewer team seat has the [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) role with the following access:
 
 - Read-only access to Vercel to view analytics, speed insights, or access project deployments
 - Ability to comment and collaborate on deployed previews
@@ -93,7 +93,7 @@ Viewers cannot configure or deploy projects.
 
 - Seats with [Owner](/docs/rbac/access-roles#owner-role) or [Member](/docs/rbac/access-roles#member-role) roles: $20/month each
   - These team seats have the ability to configure & deploy projects
-- [Viewer Pro](/docs/rbac/access-roles#viewer-pro-role) (read-only) seats: Free
+- [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) (read-only) seats: Free
 
 ## Paid add-ons
 

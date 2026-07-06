@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "69df7860a20e2f7a7f96b54c53b2fbc58b378c83350360c2fc07921ec5eced2b"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "6c588eee47c39651d67ac3a90e5b249cd3eb2218416dce2290e9a78c1af46312"
 ---
 
 # REST API Reference
@@ -377,7 +377,7 @@ print(generation)
     "upstream_inference_cost": 0,
     "usage": 0.00123,
     "created_at": "2026-05-22T00:00:00.000Z",
-    "model": "anthropic/claude-opus-4.7",
+    "model": "anthropic/claude-opus-4.8",
     "is_byok": false,
     "provider_name": "anthropic",
     "streamed": true,

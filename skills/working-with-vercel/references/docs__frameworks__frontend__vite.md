@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Vite."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/vite.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "49ff2198d4e539df3f48134de39a24b079603e530512292fada2055ceb1bac67"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "f2755bf33ae84d46140511bd1906536a319e07545aea577a74f773fbca68e14a"
 ---
 
 # Vite on Vercel
@@ -119,7 +119,7 @@ To enable deep linking in SPA Vite apps, create a `vercel.json` file at the root
 }
 ```
 
-> **💡 Note:** If [`cleanUrls`](/docs/project-configuration#cleanurls) is set to `true` in
+> **💡 Note:** If [`cleanUrls`](/docs/project-configuration/vercel-json#cleanurls) is set to `true` in
 > your project's `vercel.json`, do not include the file extension in the source
 > or destination path. For example, `/index.html` would be `/`
 

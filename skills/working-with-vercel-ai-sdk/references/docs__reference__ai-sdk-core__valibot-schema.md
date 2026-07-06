@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/valibot-schema.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b660622a387db360782a4e4d074776c8b16b94e5b5265b5b09dd337a5d8ee7e7"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "e384a1898a392df30f50851e7938fd482a2407496e1996f14e5067b9ca6a03f8"
 ---
 
 # `valibotSchema()`
@@ -67,6 +67,7 @@ A Schema object that is compatible with the AI SDK, containing both the JSON sch
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

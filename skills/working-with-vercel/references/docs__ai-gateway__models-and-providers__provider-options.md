@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "addb16d44f2bb43e0a96514951f0cbfa119f296c77720f9bcc202162ba22e4e1"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "64a22b689e87f56e3abff3b8e59512073534bd214ec2692cb1b505c40d3f77c3"
 ---
 
 # Provider Options
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     providerOptions: {
       anthropic: {
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     providerOptions: {
       gateway: {

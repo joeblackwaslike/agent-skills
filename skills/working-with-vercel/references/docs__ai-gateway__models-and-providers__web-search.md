@@ -13,8 +13,8 @@ related:
 summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "adc910a684aba40e1062f328b9890e75c6c9d059da85d2e52a8a5fcf3aea5a1f"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "a0eb1ad3aaca8c6076426b3d2482477a0e2c5ed09091e7c2c266af5624cb853f"
 ---
 
 # Web Search
@@ -23,7 +23,7 @@ AI Gateway provides built-in web search capabilities that allow AI models to acc
 
 AI Gateway supports two types of web search:
 
-- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search) or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
+- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
 - **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), or [Google](#google-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
 
 ## Using Perplexity Search
@@ -154,6 +154,149 @@ export async function POST(request: Request) {
 }
 ```
 
+## Using Exa Search
+
+The `exaSearch` tool can be used with any model regardless of the model provider or creator. [Exa](https://exa.ai/) returns web results and extracted content for agent workflows that need current information, domain filters, date filters, and token-efficient excerpts.
+
+To use Exa Search, import `gateway` from `ai` and pass `gateway.tools.exaSearch()` to the `tools` parameter. When the model needs current information, it calls the tool and AI Gateway routes the request to [Exa's Search API](https://exa.ai/docs/reference/search-api-guide-for-coding-agents).
+
+> **💡 Note:** Exa web search requests are charged at $7 per 1,000 requests. Each request
+> includes up to 10 results. Additional requested results beyond 10 are charged
+> at $1 per 1,000 additional results.
+
+#### streamText
+
+```typescript filename="exa-web-search.ts" {10-12}
+import { gateway, streamText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const result = streamText({
+    model: 'openai/gpt-5.5', // Works with any model
+    prompt,
+    tools: {
+      exa_search: gateway.tools.exaSearch(),
+    },
+  });
+
+  for await (const part of result.fullStream) {
+    if (part.type === 'text-delta') {
+      process.stdout.write(part.text);
+    } else if (part.type === 'tool-call') {
+      console.log('Tool call:', part.toolName);
+    } else if (part.type === 'tool-result') {
+      console.log('Search results received');
+    }
+  }
+
+  return result.toDataStreamResponse();
+}
+```
+
+#### generateText
+
+```typescript filename="exa-web-search.ts" {10-12}
+import { gateway, generateText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'openai/gpt-5.5', // Works with any model
+    prompt,
+    tools: {
+      exa_search: gateway.tools.exaSearch(),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+### Exa parameters
+
+You can configure the `exaSearch` tool with these parameters:
+
+- `type`: Search mode. Values: `'auto'` (default), `'fast'`, or `'instant'`.
+- `numResults`: Maximum number of results to return (1-100). Defaults to 10.
+- `category`: Content category. Values: `'company'`, `'people'`, `'research paper'`, `'news'`, `'personal site'`, or `'financial report'`.
+- `userLocation`: Two-letter ISO country code, such as `'US'`, for location-aware search.
+- `includeDomains`: List of domains to restrict search results to.
+- `excludeDomains`: List of domains to exclude from search results.
+- `startPublishedDate`: Only return results published after this ISO 8601 date.
+- `endPublishedDate`: Only return results published before this ISO 8601 date.
+- `contents`: Controls extracted page content and freshness.
+  - `text`: Return page text. You can set `maxCharacters`, `includeHtmlTags`, `verbosity`, `includeSections`, and `excludeSections`.
+  - `highlights`: Return concise excerpts. You can set `query` and `maxCharacters`.
+  - `maxAgeHours`: Maximum age of cached content in hours.
+  - `livecrawlTimeout`: Timeout for live crawling in milliseconds.
+  - `subpages`: Number of related subpages to crawl.
+  - `subpageTarget`: Target page or pages for subpage crawling.
+  - `extras`: Extract links or image links from pages with `links` and `imageLinks`.
+
+#### streamText
+
+```typescript filename="exa-web-search-params.ts" {10-21}
+import { gateway, streamText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const result = streamText({
+    model: 'openai/gpt-5.5',
+    prompt,
+    tools: {
+      exa_search: gateway.tools.exaSearch({
+        type: 'fast',
+        numResults: 5,
+        category: 'news',
+        includeDomains: ['reuters.com', 'bbc.com', 'nytimes.com'],
+        contents: {
+          highlights: true,
+          maxAgeHours: 24,
+        },
+      }),
+    },
+  });
+
+  return result.toDataStreamResponse();
+}
+```
+
+#### generateText
+
+```typescript filename="exa-web-search-params.ts" {10-21}
+import { gateway, generateText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'openai/gpt-5.5',
+    prompt,
+    tools: {
+      exa_search: gateway.tools.exaSearch({
+        type: 'fast',
+        numResults: 5,
+        category: 'news',
+        includeDomains: ['reuters.com', 'bbc.com', 'nytimes.com'],
+        contents: {
+          highlights: true,
+          maxAgeHours: 24,
+        },
+      }),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+This initial AI Gateway integration supports Exa's standard Search modes and content extraction controls. Deep synthesis modes and generated summaries are not exposed yet because they have separate pricing.
+
+For more details on search parameters and API options, see the [Exa Search API documentation](https://exa.ai/docs/reference/search-api-guide-for-coding-agents).
+
 ## Using Parallel Search
 
 The `parallelSearch` tool can be used with any model regardless of the model provider or creator. [Parallel AI](https://parallel.ai/) provides LLM-optimized web search that extracts relevant excerpts from web pages, making it ideal for research tasks and information retrieval.
@@ -173,7 +316,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.7', // Works with any model
+    model: 'anthropic/claude-opus-4.8', // Works with any model
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch(),
@@ -203,7 +346,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.7', // Works with any model
+    model: 'anthropic/claude-opus-4.8', // Works with any model
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch(),
@@ -240,7 +383,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch({
@@ -270,7 +413,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch({
@@ -315,7 +458,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305(),
@@ -336,7 +479,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305(),
@@ -366,7 +509,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305({
@@ -398,7 +541,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305({

@@ -8,7 +8,7 @@ type: conceptual
 prerequisites:
   - /docs/build-output-api
 related:
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/rest-api/reference
   - /docs/image-optimization
   - /docs/domains
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "6b54d49e8964dc6c0168204dacc3c1f0461d8e44c506e5e45b53b4758bd85c53"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "2252a5422dcad46e04954ddaef85ae61c907a3d869e5dcd265126f4d62dc41c8"
 ---
 
 # Build Output Configuration
@@ -65,7 +65,7 @@ The version described in this document is version `3`.
 
 ### routes
 
-The `routes` property describes the routing rules that will be applied to the Deployment. It uses the same syntax as the [`routes` property of the `vercel.json` file](/docs/project-configuration#routes).
+The `routes` property describes the routing rules that will be applied to the Deployment. It uses the same syntax as the [`routes` property of the `vercel.json` file](/docs/project-configuration/vercel-json#routes).
 
 Routes may be used to point certain URL paths to others on your Deployment, attach response headers to paths, and various other routing-related use-cases.
 

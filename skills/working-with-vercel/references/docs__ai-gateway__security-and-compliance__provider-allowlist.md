@@ -14,8 +14,8 @@ related:
 summary: Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "460b53fe7304e0128a2269e0ce9a03006c3cf05c4612c148ad2f0783d0195b4d"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "79d808de912503b93fe343c24b1dcbcb1283b8446b88624fbc3065ace5926fb1"
 ---
 
 # Provider Allowlist
@@ -58,7 +58,7 @@ Disabling a provider removes it from the routing candidates for any request. If 
 }
 ```
 
-The allowlist filters by provider only. A model like `openai/gpt-5-mini` is served by both `openai` and `azure`; disabling `openai` alone still routes that model through `azure`. To block a model entirely, disable every provider that serves it.
+The allowlist filters by provider only. A model like `openai/gpt-5.4-mini` is served by both `openai` and `azure`; disabling `openai` alone still routes that model through `azure`. To block a model entirely, disable every provider that serves it.
 
 ## New providers
 

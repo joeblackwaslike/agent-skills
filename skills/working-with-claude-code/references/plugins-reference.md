@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins-reference.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "1427291b1a372c78e9ac4826f2e9073d5a8336716f9d34febcf70fca4ff9065d"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "931b787ea4627bbaa9bd6a5ff9792683e25b2085087ca8047822dc8d80df96f3"
 ---
 
 > ## Documentation Index
@@ -79,7 +79,7 @@ Plugin agents support `name`, `description`, `model`, `effort`, `maxTurns`, `too
 
 **Integration points**:
 
-* Agents appear in the `/agents` interface
+* Agents appear in the [@-mention typeahead](/en/sub-agents#invoke-subagents-explicitly) under their scoped name, such as `my-plugin:code-reviewer`, once the plugin is enabled
 * Claude can invoke agents automatically based on task context
 * Agents can be invoked manually by users
 * Plugin agents work alongside built-in Claude agents
@@ -452,9 +452,9 @@ The manifest is optional. If omitted, Claude Code auto-discovers components in [
 
 If you include a manifest, `name` is the only required field.
 
-| Field  | Type   | Description                               | Example              |
-| :----- | :----- | :---------------------------------------- | :------------------- |
-| `name` | string | Unique identifier (kebab-case, no spaces) | `"deployment-tools"` |
+| Field  | Type   | Description                                                                                                                                                                                                                       | Example              |
+| :----- | :----- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------- |
+| `name` | string | Unique identifier (kebab-case, no spaces). When a [marketplace entry](/en/plugin-marketplaces#plugin-entries) lists the plugin under a different name, the marketplace entry name is what `enabledPlugins` keys and `/plugin` use | `"deployment-tools"` |
 
 This name is used for namespacing components. For example, in the UI, the
 agent `agent-creator` for the plugin with name `plugin-dev` will appear as

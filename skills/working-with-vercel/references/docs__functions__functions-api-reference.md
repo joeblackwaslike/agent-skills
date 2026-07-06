@@ -9,15 +9,15 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/functions/functions-api-reference/vercel-functions-package
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/functions/configuring-functions
   - /docs/functions/configuring-functions/runtime
   - /docs/functions/configuring-functions/region
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fd16b28912653054421ef3252bc6533289da1db1cc8490aa3c4216f2095c2a34"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "509eec4bcead85c7466c4b85dae7b16bf98ec1d692d2e61ae6fbcf5c3d3bb449"
 ---
 
 # Functions API Reference
@@ -124,7 +124,7 @@ This differs from a standalone Node.js server, where your process continues runn
 
 #### Enable cancellation
 
-Cancellation is opt-in. In your `vercel.json`, add `"supportsCancellation": true` to the [specific paths](/docs/project-configuration#key-definition) you want to enable it for:
+Cancellation is opt-in. In your `vercel.json`, add `"supportsCancellation": true` to the [specific paths](/docs/project-configuration/vercel-json#key-definition) you want to enable it for:
 
 ```json filename="vercel.json" {5}
 {
@@ -258,11 +258,11 @@ The table below shows a highlight of the valid config options. For detailed info
 
 ## `SIGTERM` signal
 
-> **💡 Note:** This feature is supported on the Node.js and Python runtimes.
+> **💡 Note:** This feature is supported on the Node.js, Bun, Rust, and Python runtimes, and container images.
 
 A `SIGTERM` signal is sent to a function when it is about to be terminated, such as during scale-down events. This allows you to perform any necessary cleanup operations before the function instance is terminated.
 
-Your code can run for up to 500 milliseconds after receiving a `SIGTERM` signal. After this period, the function instance will be terminated immediately.
+Your code can run for up to 500 milliseconds (30 seconds for container images) after receiving a `SIGTERM` signal. After this period, the function instance will be terminated immediately.
 
 ```ts filename="api/hello.ts" framework=all
 process.on('SIGTERM', () => {

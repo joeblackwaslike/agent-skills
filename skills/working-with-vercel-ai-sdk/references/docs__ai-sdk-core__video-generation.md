@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "689f32dfdd6092d9e9de6d6d460667d23eb55890822fe4c0fd5728f6d8ed190d"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "ed2bab20204e4cd4c3fc30ef9b6cc704bc353019cf8e52c7002478676a105eee"
 ---
 
 # Video Generation
@@ -169,6 +169,46 @@ const { video } = await generateVideo({
     image: imageBase64String, // or imageUint8Array
     text: 'Animate this image',
   },
+});
+```
+
+### First and Last Frame
+
+Some video models support first-last-frame generation, where you provide the
+starting and/or ending frames of the video. Use the `frameImages` option to pass
+role-tagged images in a provider-agnostic way:
+
+```tsx highlight={"5-16"}
+const { video } = await generateVideo({
+  model: __VIDEO_MODEL__,
+  prompt: 'The cat walks across the scene and transforms into a dog by the end',
+  frameImages: [
+    {
+      image: 'https://example.com/first-frame.png',
+      frameType: 'first_frame',
+    },
+    {
+      image: 'https://example.com/last-frame.png',
+      frameType: 'last_frame',
+    },
+  ],
+});
+```
+
+### Reference Images
+
+Some video models support reference-to-video generation, where you provide one or
+more reference images that the model incorporates into the generated video. Use the `inputReferences` option to pass
+these images in a provider-agnostic way:
+
+```tsx highlight={"5-8"}
+const { video } = await generateVideo({
+  model: __VIDEO_MODEL__,
+  prompt: 'The two characters meet in a bustling market',
+  inputReferences: [
+    'https://example.com/character-1.png',
+    'https://example.com/character-2.png',
+  ],
 });
 ```
 

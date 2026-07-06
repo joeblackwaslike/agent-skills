@@ -16,8 +16,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e132e12ba8d2ca0a00dd922fee1117ec36c7d7552e3d090f60be2e12a2c801ad"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "495973e0d8657c13f29b7b0d97480d333aebe44769218604db2dadbec96dcdaf"
 ---
 
 # Video Generation Quickstart
@@ -98,7 +98,7 @@ This quickstart walks you through generating your first video with AI Gateway. S
   The generated video will be saved as `output.mp4` in your project directory.
 
 - ### Next steps
-  - See [supported video generation models](https://vercel.com/ai-gateway/models?type=video)
+  - See [supported video generation models](https://vercel.com/ai-gateway/models?capabilities=video-generation)
   - Learn about [image-to-video generation](/docs/ai-gateway/modalities/video-generation/image-to-video) to animate images
   - Explore [KlingAI motion control](/docs/ai-gateway/modalities/video-generation/motion-control) for character animation
 

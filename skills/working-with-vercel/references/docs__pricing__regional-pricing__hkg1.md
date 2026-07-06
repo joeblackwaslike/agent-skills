@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Hong Kong (hkg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hkg1.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "8c12e8bef0a031de7246a405a22363a0fee58c50f2052b2e67498f32550d841d"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "39df0873b829ccb57d5c1a28a24a8467c787889fbb904873d8b6bb20bdb6b6e8"
 ---
 
 # Hong Kong (hkg1) pricing
@@ -38,6 +38,8 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Edge Requests](/docs/manage-cdn-usage#edge-requests) | Included First 10,000,000, then $2.80 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $5.60 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.56 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache) | $5.60 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.56 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.27 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.84 per 1,000,000 Operations |
 | [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.42 per 1 Hour |
@@ -52,6 +54,7 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | $5.00 per 1M |
 | [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | $0.053 per GB |
 | [Private Data Transfer](/docs/networking/static-ips) | $0.217 per 1 GB |
+| [Service Requests](/docs/services/pricing) | $0.70 per 1,000,000 Requests |
 
 
 Learn more about the different regions available on Vercel in the [regions](/docs/regions) documentation. See the [pricing](/docs/pricing#managed-infrastructure) documentation for more information on Managed Infrastructure.

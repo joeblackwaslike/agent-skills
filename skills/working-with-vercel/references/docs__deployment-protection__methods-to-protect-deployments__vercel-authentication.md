@@ -17,8 +17,8 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "44a67a713cd113fc1bd4e59fb991286095c19a513a85f859934c65844b024001"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "3c69ac219db6903a38e9f2a2b677a21bb9312f680a99eb306ddb9a15dfd96afd"
 ---
 
 # Restrict access to deployments with Vercel Authentication
@@ -33,7 +33,7 @@ After login, Vercel redirects the user and sets a cookie in the browser if they 
 
 ## Who can access protected deployments?
 
-- Logged in [team members](/docs/rbac/access-roles#team-level-roles) with at least a viewer role ([Viewer Pro](/docs/rbac/access-roles#viewer-pro-role) or [Viewer Enterprise](/docs/rbac/access-roles#viewer-enterprise-role))
+- Logged in [team members](/docs/rbac/access-roles#team-level-roles) with at least a viewer role ([Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) or [Viewer Enterprise](/docs/rbac/access-roles#enterprise-viewer-role))
 - Logged in [project members](/docs/rbac/access-roles#project-level-roles) with at least the [project Viewer](/docs/rbac/access-roles#project-viewer) role
 - Logged in members of an [access group](/docs/rbac/access-groups) that has access to the project the deployment belongs to
 - Logged in Vercel users who have been [granted access](#access-requests)
@@ -76,7 +76,7 @@ Disabling Vercel Authentication renders all existing deployments unprotected. Wh
 
 | Consideration                 | Description                                                                                                                                                                                                                                                                            |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Environment configuration** | Can be enabled for different environments. See [Understanding Deployment Protection by environment](/docs/deployment-protection#understanding-deployment-protection-by-environment)                                                                                           |
+| **Environment configuration** | Can be enabled for different environments. See [Choose which URLs to protect](/docs/deployment-protection#choose-which-urls-to-protect)                                                                                           |
 | **Compatibility**             | Works alongside [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection) and [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                      |
 | **Bypass methods**            | Can be bypassed using [Shareable Links](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
 | **Disabling**                 | All existing deployments become unprotected when Vercel Authentication is disabled                                                                                                                                                                                                     |

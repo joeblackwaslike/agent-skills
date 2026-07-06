@@ -8,16 +8,16 @@ type: conceptual
 prerequisites:
   - /docs/sandbox
 related:
+  - /docs/container-registry
+  - /docs/sandbox/concepts/images
   - /docs/sandbox/cli-reference
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/python-sdk-reference
-  - /docs/sandbox/concepts/snapshots
-  - /docs/sandbox/concepts/firewall
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b59e2a03334192da960a4b7e3e99d8f1a597ef47f7897ff52c1e3012541583e3"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "f1a38eb865aa17946d700077a748da23995456ada1470e4b6a406ff8b4c38614"
 ---
 
 # Understanding Sandboxes
@@ -28,8 +28,8 @@ Vercel Sandboxes provide on-demand, isolated compute environments for running un
 
 A sandbox is an isolated Linux environment that you create programmatically with the SDK or CLI. Think of it as a secure virtual machine that:
 
-- Boots from either a clean image or a saved snapshot
-- Uses Amazon Linux 2023 as the base image
+- Boots from a built-in runtime image, a custom [VCR image](/docs/container-registry), or a saved snapshot
+- Uses Amazon Linux 2023 for built-in runtime images
 - Has network access for installing packages and making API calls
 - Automatically stops after a configurable timeout
 - Provides full root access to install any package or binary
@@ -51,11 +51,11 @@ Unlike Docker containers, each sandbox runs in its own [Firecracker](https://fir
 | **Startup time** | Sub-second                                                | Milliseconds (Firecracker optimized for fast boot)             |
 | **Use case**     | Packaging and deploying applications                      | Running arbitrary, untrusted code safely                       |
 
-If you already use Docker images to define your environment, you can replicate that setup in a sandbox by installing the same packages using [`dnf` and your language's package manager](/kb/guide/how-to-install-system-packages-in-vercel-sandbox), or by taking a snapshot after initial setup.
+If you already use Docker images to define your environment, store the image in [Vercel Container Registry (VCR)](/docs/container-registry) and create the sandbox with a custom image. See [Images](/docs/sandbox/concepts/images). You can also install packages with [`dnf` and your language's package manager](/kb/guide/how-to-install-system-packages-in-vercel-sandbox), or take a snapshot after setup when a Docker image is not needed.
 
 ## How sandboxes work
 
-When you call `Sandbox.create()`, Vercel provisions a Firecracker microVM on its infrastructure. This microVM boots an Amazon Linux 2023 image with your specified runtime (Node.js or Python) pre-installed.
+When you call `Sandbox.create()`, Vercel provisions a Firecracker microVM on its infrastructure. This microVM boots a built-in Amazon Linux 2023 runtime image, a custom image from VCR, or a saved snapshot.
 
 The sandbox runs on Vercel's global infrastructure, so you don't need to manage servers, scale capacity, or worry about availability. Sandboxes automatically provision in `iad1` region.
 

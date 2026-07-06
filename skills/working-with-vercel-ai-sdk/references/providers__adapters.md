@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b9878c2cede68e44ca2c38e3576e88b9c169c71be3ebd2f55fdf286b91189c83"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "302b0257b2290163ed4614287e35734930c4f9a65010038b4f287187d6557463"
 ---
 
 # Adapters
@@ -83,6 +83,7 @@ The following adapters are currently available:
   - [Raindrop](/providers/observability/raindrop)
   - [Respan](/providers/observability/respan)
   - [Scorecard](/providers/observability/scorecard)
+  - [Sentry](/providers/observability/sentry)
   - [SigNoz](/providers/observability/signoz)
   - [Traceloop](/providers/observability/traceloop)
   - [Weave](/providers/observability/weave)

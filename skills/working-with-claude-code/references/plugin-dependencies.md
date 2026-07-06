@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugin-dependencies.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "292332ed6193fe49ba27bf122dff68899f0cf7d74ad1222afc6155128d83c816"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "28d20d7c0f0f1bed3782f343f93e923eba486aca7d8b91b486a474b760ff1c22"
 ---
 
 > ## Documentation Index
@@ -99,6 +99,11 @@ The `claude plugin tag` command derives the tag name from the plugin's manifest 
 The plugin name prefix lets one marketplace repository host multiple plugins with independent version lines. The `--v` separator is parsed as a prefix match on the full plugin name, so plugin names that contain hyphens are handled correctly.
 
 When you install a plugin that declares `{ "name": "secrets-vault", "version": "~2.1.0" }`, Claude Code lists the marketplace's tags, filters to those starting with `secrets-vault--v`, and fetches the highest version satisfying `~2.1.0`. If no matching tag exists, the dependent plugin is disabled with an error listing the available versions.
+
+A marketplace added as a local folder path resolves tags the same way when the folder is a git repository. This requires Claude Code v2.1.196 or later. In two cases Claude Code installs the dependency from the folder's current contents instead:
+
+* Earlier versions don't read tags from a local-folder marketplace, so a constrained dependency loads only if that copy satisfies the range.
+* A local folder that isn't a git repository has no tags, regardless of version.
 
 The resolved tag's semver is recorded separately from `plugin.json`'s `version`, so constraint checks use the tag that was actually fetched even if `plugin.json` at that commit has a stale value. The cache directory name for a tag-resolved install includes a 12-character commit-SHA suffix, so if a maintainer force-moves a tag to a different commit, the next install gets a fresh cache directory instead of reusing stale content.
 

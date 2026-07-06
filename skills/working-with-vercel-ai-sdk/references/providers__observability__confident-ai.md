@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/confident-ai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c0c8045ae28b2c41adffbb811d662c4b9f362503e4ea7366008692936d3e3be0"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "d13f8c617d9c99ce290508201141d59402cb0c8ff40fd5e2074c73db5c58cf6d"
 ---
 
 # Confident AI Observability
@@ -285,6 +285,7 @@ You can find a more comprehensive guide on AI SDK tracing with `deepeval-ts` in 
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

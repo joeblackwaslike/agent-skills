@@ -17,8 +17,8 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, and viewing runtime logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3b1faed0b6c75cabd9414b26f78018c5a2a020c81e237c31be8787eb82de98f5"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "3efd259de0daae01647d1dce1e5f8f04a76fd4724d6418eda4767d21635a61ea"
 ---
 
 # Tools
@@ -130,6 +130,75 @@ Get runtime logs for a project or deployment. Runtime logs include application o
 
 **Sample prompt:** "Show me the runtime error logs for my project from the last hour"
 
+## Agent Runs Observability Tools
+
+[Agent Runs](https://eve.dev/docs/guides/deployment) are the observability layer for agents built with the eve framework on Vercel. Use these tools to find projects with eve agent activity, list recent runs, inspect one run, and retrieve trace data for debugging agent behavior.
+
+### list\_agent\_run\_projects
+
+List projects in a Vercel team that have Agent Runs observability data for eve agents. The response includes run counts and average duration rollups for each project.
+
+| Parameter     | Type   | Required | Default      | Description                                                                                                                                                                                     |
+| ------------- | ------ | -------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `teamId`      | string | Yes      | -            | The team ID to list projects for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool. |
+| `environment` | string | No       | `production` | Agent run environment, usually `production` or `preview`                                                                                                                                        |
+| `period`      | string | No       | -            | Preset time range. Supports `5m`, `15m`, `1h`, `6h`, `12h`, `1d`, `3d`, `7d`, `14d`, `30d`, and `90d`. Ignored when both `from` and `to` are provided.                                          |
+| `from`        | string | No       | -            | Start time as ISO 8601, Unix seconds, Unix milliseconds, or a relative duration like `12h`. Must be used with `to`.                                                                             |
+| `to`          | string | No       | -            | End time as ISO 8601, Unix seconds, Unix milliseconds, a relative duration like `1h`, or `now`. Must be used with `from`.                                                                       |
+
+**Sample prompt:** "Which projects in my team have Agent Runs in the last 24 hours?"
+
+### list\_agent\_runs
+
+List Agent Runs for a Vercel project. The response includes summaries, status, model, trigger, token usage, time series, and pagination metadata for eve agent activity.
+
+| Parameter     | Type   | Required | Default      | Description                                                                                                                                                                                             |
+| ------------- | ------ | -------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `teamId`      | string | Yes      | -            | The team ID to list Agent Runs for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool.       |
+| `projectId`   | string | Yes      | -            | The project ID to list Agent Runs for. Alternatively the project slug can be used. Project IDs start with 'prj\_'. Can be found by reading `.vercel/project.json` (projectId) or using `list_projects`. |
+| `environment` | string | No       | `production` | Agent run environment, usually `production` or `preview`                                                                                                                                                |
+| `period`      | string | No       | -            | Preset time range. Supports `5m`, `15m`, `1h`, `6h`, `12h`, `1d`, `3d`, `7d`, `14d`, `30d`, and `90d`. Ignored when both `from` and `to` are provided.                                                  |
+| `from`        | string | No       | -            | Start time as ISO 8601, Unix seconds, Unix milliseconds, or a relative duration like `12h`. Must be used with `to`.                                                                                     |
+| `to`          | string | No       | -            | End time as ISO 8601, Unix seconds, Unix milliseconds, a relative duration like `1h`, or `now`. Must be used with `from`.                                                                               |
+| `page`        | number | No       | 1            | Page number                                                                                                                                                                                             |
+| `pageSize`    | number | No       | -            | Number of runs per page. The dashboard endpoint caps this at 100.                                                                                                                                       |
+| `search`      | string | No       | -            | Server-side title search for Agent Runs                                                                                                                                                                 |
+
+**Sample prompt:** "Show me the latest production Agent Runs for my project"
+
+### get\_agent\_run
+
+Get detailed metadata for a single eve Agent Run, including events, workflow metadata, usage, and subagent breakout data. Use `list_agent_runs` first if you need to find a run ID.
+
+| Parameter     | Type   | Required | Default      | Description                                                                                                                                                                                        |
+| ------------- | ------ | -------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `teamId`      | string | Yes      | -            | The team ID for the Agent Run. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool.       |
+| `projectId`   | string | Yes      | -            | The project ID for the Agent Run. Alternatively the project slug can be used. Project IDs start with 'prj\_'. Can be found by reading `.vercel/project.json` (projectId) or using `list_projects`. |
+| `runId`       | string | Yes      | -            | The Agent Run ID to inspect                                                                                                                                                                        |
+| `environment` | string | No       | `production` | Agent run environment, usually `production` or `preview`                                                                                                                                           |
+| `period`      | string | No       | -            | Preset time range. Supports `5m`, `15m`, `1h`, `6h`, `12h`, `1d`, `3d`, `7d`, `14d`, `30d`, and `90d`. Ignored when both `from` and `to` are provided.                                             |
+| `from`        | string | No       | -            | Start time as ISO 8601, Unix seconds, Unix milliseconds, or a relative duration like `12h`. Must be used with `to`.                                                                                |
+| `to`          | string | No       | -            | End time as ISO 8601, Unix seconds, Unix milliseconds, a relative duration like `1h`, or `now`. Must be used with `from`.                                                                          |
+
+**Sample prompt:** "Inspect Agent Run wrun\_123 for my project"
+
+### get\_agent\_run\_trace
+
+Get the trace for a single eve Agent Run, including turns, messages, reasoning, tool calls, token usage, and tool input or output when available. Use this tool to debug exact agent behavior in production.
+
+| Parameter        | Type   | Required | Default      | Description                                                                                                                                                                                        |
+| ---------------- | ------ | -------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `teamId`         | string | Yes      | -            | The team ID for the Agent Run. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool.       |
+| `projectId`      | string | Yes      | -            | The project ID for the Agent Run. Alternatively the project slug can be used. Project IDs start with 'prj\_'. Can be found by reading `.vercel/project.json` (projectId) or using `list_projects`. |
+| `runId`          | string | Yes      | -            | The Agent Run ID to inspect                                                                                                                                                                        |
+| `environment`    | string | No       | `production` | Agent run environment, usually `production` or `preview`                                                                                                                                           |
+| `period`         | string | No       | -            | Preset time range. Supports `5m`, `15m`, `1h`, `6h`, `12h`, `1d`, `3d`, `7d`, `14d`, `30d`, and `90d`. Ignored when both `from` and `to` are provided.                                             |
+| `from`           | string | No       | -            | Start time as ISO 8601, Unix seconds, Unix milliseconds, or a relative duration like `12h`. Must be used with `to`.                                                                                |
+| `to`             | string | No       | -            | End time as ISO 8601, Unix seconds, Unix milliseconds, a relative duration like `1h`, or `now`. Must be used with `from`.                                                                          |
+| `maxFieldLength` | number | No       | 8000         | Maximum length for individual string fields in the returned trace. Use 0 to disable truncation.                                                                                                    |
+
+**Sample prompt:** "Show me the tool calls and messages from Agent Run wrun\_123"
+
 ## Domain Management Tools
 
 ### check\_domain\_availability\_and\_price
@@ -194,16 +263,16 @@ The Vercel Toolbar lets your team leave [comments](/docs/comments) on deployment
 
 List [Vercel Toolbar](/docs/vercel-toolbar) comment threads for a team. Returns unresolved threads by default.
 
-| Parameter   | Type   | Required | Default      | Description                                                                                                                                                                                       |
-| ----------- | ------ | -------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `teamId`    | string | Yes      | -            | The team ID to list threads for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool.    |
-| `projectId` | string | No       | -            | Filter by project ID                                                                                                                                                                              |
-| `branch`    | string | No       | -            | Filter by branch name                                                                                                                                                                             |
-| `status`    | string | No       | `unresolved` | Filter by status: `resolved` or `unresolved`                                                                                                                                                      |
-| `page`      | string | No       | -            | Filter by page path (e.g. `/docs`) or glob (e.g. `/docs*`)                                                                                                                                        |
-| `search`    | string | No       | -            | Search text in comments                                                                                                                                                                           |
-| `limit`     | number | No       | 20           | Maximum number of results to return                                                                                                                                                               |
-| `offset`    | number | No       | -            | Pagination offset                                                                                                                                                                                 |
+| Parameter   | Type   | Required | Default      | Description                                                                                                                                                                                    |
+| ----------- | ------ | -------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `teamId`    | string | Yes      | -            | The team ID to list threads for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool. |
+| `projectId` | string | No       | -            | Filter by project ID                                                                                                                                                                           |
+| `branch`    | string | No       | -            | Filter by branch name                                                                                                                                                                          |
+| `status`    | string | No       | `unresolved` | Filter by status: `resolved` or `unresolved`                                                                                                                                                   |
+| `page`      | string | No       | -            | Filter by page path (e.g. `/docs`) or glob (e.g. `/docs*`)                                                                                                                                     |
+| `search`    | string | No       | -            | Search text in comments                                                                                                                                                                        |
+| `limit`     | number | No       | 20           | Maximum number of results to return                                                                                                                                                            |
+| `offset`    | number | No       | -            | Pagination offset                                                                                                                                                                              |
 
 **Sample prompt:** "Show me unresolved toolbar comments on my blog project"
 
@@ -211,10 +280,10 @@ List [Vercel Toolbar](/docs/vercel-toolbar) comment threads for a team. Returns 
 
 Get a specific toolbar thread by ID, including all messages and context.
 
-| Parameter  | Type   | Required | Default | Description                                                                                                                                                                              |
-| ---------- | ------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `threadId` | string | Yes      | -       | The thread ID to retrieve                                                                                                                                                                |
-| `teamId`   | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`.   |
+| Parameter  | Type   | Required | Default | Description                                                                                                                                                                            |
+| ---------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `threadId` | string | Yes      | -       | The thread ID to retrieve                                                                                                                                                              |
+| `teamId`   | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
 
 **Sample prompt:** "Show me the full conversation on toolbar thread tbt\_123"
 
@@ -222,11 +291,11 @@ Get a specific toolbar thread by ID, including all messages and context.
 
 Change the resolve status of a toolbar thread. Use this to mark a thread as resolved or unresolve a previously resolved thread.
 
-| Parameter  | Type    | Required | Default | Description                                                                                                                                                                              |
-| ---------- | ------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `threadId` | string  | Yes      | -       | The thread ID to update                                                                                                                                                                  |
-| `teamId`   | string  | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`.   |
-| `resolved` | boolean | Yes      | -       | Set to `true` to resolve the thread, `false` to unresolve it                                                                                                                             |
+| Parameter  | Type    | Required | Default | Description                                                                                                                                                                            |
+| ---------- | ------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `threadId` | string  | Yes      | -       | The thread ID to update                                                                                                                                                                |
+| `teamId`   | string  | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| `resolved` | boolean | Yes      | -       | Set to `true` to resolve the thread, `false` to unresolve it                                                                                                                           |
 
 **Sample prompt:** "Mark toolbar thread tbt\_123 as resolved"
 
@@ -234,11 +303,11 @@ Change the resolve status of a toolbar thread. Use this to mark a thread as reso
 
 Add a reply message to an existing toolbar thread.
 
-| Parameter  | Type   | Required | Default | Description                                                                                                                                                                              |
-| ---------- | ------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `threadId` | string | Yes      | -       | The thread ID to reply to                                                                                                                                                                |
-| `teamId`   | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`.   |
-| `markdown` | string | Yes      | -       | The message content in markdown format                                                                                                                                                   |
+| Parameter  | Type   | Required | Default | Description                                                                                                                                                                            |
+| ---------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `threadId` | string | Yes      | -       | The thread ID to reply to                                                                                                                                                              |
+| `teamId`   | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| `markdown` | string | Yes      | -       | The message content in markdown format                                                                                                                                                 |
 
 **Sample prompt:** "Reply to toolbar thread tbt\_123 with 'Fixed in the latest deploy'"
 
@@ -246,12 +315,12 @@ Add a reply message to an existing toolbar thread.
 
 Edit an existing message in a toolbar thread.
 
-| Parameter   | Type   | Required | Default | Description                                                                                                                                                                              |
-| ----------- | ------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `threadId`  | string | Yes      | -       | The thread ID containing the message                                                                                                                                                     |
-| `messageId` | string | Yes      | -       | The message ID to edit                                                                                                                                                                   |
-| `teamId`    | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`.   |
-| `markdown`  | string | Yes      | -       | The updated message content in markdown format                                                                                                                                           |
+| Parameter   | Type   | Required | Default | Description                                                                                                                                                                            |
+| ----------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `threadId`  | string | Yes      | -       | The thread ID containing the message                                                                                                                                                   |
+| `messageId` | string | Yes      | -       | The message ID to edit                                                                                                                                                                 |
+| `teamId`    | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| `markdown`  | string | Yes      | -       | The updated message content in markdown format                                                                                                                                         |
 
 **Sample prompt:** "Update my last toolbar message to clarify the fix"
 
@@ -259,12 +328,12 @@ Edit an existing message in a toolbar thread.
 
 Add an emoji reaction to a message in a toolbar thread.
 
-| Parameter   | Type   | Required | Default | Description                                                                                                                                                                              |
-| ----------- | ------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `threadId`  | string | Yes      | -       | The thread ID containing the message                                                                                                                                                     |
-| `messageId` | string | Yes      | -       | The message ID to react to                                                                                                                                                               |
-| `teamId`    | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`.   |
-| `emoji`     | string | Yes      | -       | The emoji to add as a reaction (e.g. 👍)                                                                                                                                                 |
+| Parameter   | Type   | Required | Default | Description                                                                                                                                                                            |
+| ----------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `threadId`  | string | Yes      | -       | The thread ID containing the message                                                                                                                                                   |
+| `messageId` | string | Yes      | -       | The message ID to react to                                                                                                                                                             |
+| `teamId`    | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| `emoji`     | string | Yes      | -       | The emoji to add as a reaction (e.g. 👍)                                                                                                                                               |
 
 **Sample prompt:** "Add a 👍 reaction to message msg\_456 on toolbar thread tbt\_123"
 

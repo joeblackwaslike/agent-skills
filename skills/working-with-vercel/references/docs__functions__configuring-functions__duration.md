@@ -12,13 +12,13 @@ related:
   - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
   - /docs/functions/limitations
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/networking/secure-compute
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "49d4ac71f3e36dbc2aac3dcdf1a72c624da48cc0dad99ac3129f910d7edc20b5"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "eb743a0aa6b11881f051a2612d36e6ffa33e9bea17e87c21388387ad3c934153"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -27,7 +27,7 @@ The maximum duration configuration determines the longest time that a function c
 
 ## Consequences of changing the maximum duration
 
-Changing the maximum duration gives an invocation more time before Vercel terminates it. With [fluid compute](/docs/fluid-compute), Vercel can reuse function instances and process multiple invocations in the same instance with [optimized concurrency](/docs/fluid-compute#optimized-concurrency). Provisioned memory is billed for running instances, not as a separate memory allocation for every request. Active CPU billing applies while your code is executing, and pauses while your function is waiting on I/O. To learn more, see [Managing function duration](/docs/functions/usage-and-pricing#managing-function-duration).
+Changing the maximum duration gives an invocation more time before Vercel terminates it. With [fluid compute](/docs/fluid-compute), Vercel can reuse function instances and process multiple invocations in the same instance with [optimized concurrency](/docs/fluid-compute#optimized-concurrency). Provisioned memory is billed for running instances, not as a separate memory allocation for every request. Active CPU billing applies while your code is executing, and pauses while your function is waiting on I/O. To learn more, see [how pricing works](/docs/functions/usage-and-pricing#how-pricing-works).
 
 For this reason, Vercel has set a [default maximum duration](/docs/functions/limitations#max-duration) for functions, which can be useful for preventing runaway functions from consuming resources indefinitely.
 
@@ -42,7 +42,8 @@ The method of configuring the maximum duration depends on your framework and run
 
 #### Node.js, Next.js (>= 13.5 or higher), SvelteKit, Astro, Nuxt, and Remix
 
-For these runtimes / frameworks, you can configure the number of seconds directly in your function:
+Configure the duration in your function definition.
+For example, Next.js pages router and Node.js /api routes use an exported config object, while the Next.js app router uses a named maxDuration export.
 
 ```ts v0="build" {1} filename="app/api/my-function/route.ts" framework=nextjs-app
 export const maxDuration = 5; // This function can run for a maximum of 5 seconds
@@ -207,23 +208,34 @@ export default defineNitroConfig({
 });
 ```
 
-```json {5,8} filename="vercel.json" framework=other
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": {
-    "api/test.js": {
-      "maxDuration": 30 // This function can run for a maximum of 30 seconds
-    },
-    "api/*.js": {
-      "maxDuration": 15 // These functions can run for a maximum of 15 seconds
-    }
-  }
+```ts {3-5} filename="api/my-function.ts" framework=other
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+export const config = {
+  maxDuration: 500, // This function can run for a maximum of 500 seconds
+};
+
+export default function handler(
+  request: VercelRequest,
+  response: VercelResponse,
+) {
+  response.status(200).json({ message: 'Hello from Vercel!' });
 }
 ```
 
-#### Other Frameworks and runtimes, Next.js versions older than 13.5, Go, Python, or Ruby
+```js {1-3} filename="api/my-function.js" framework=other
+export const config = {
+  maxDuration: 500, // This function can run for a maximum of 500 seconds
+};
 
-For these runtimes and frameworks, configure the `maxDuration` property of the [`functions` object](/docs/project-configuration#functions) in your `vercel.json` file:
+export default function handler(request, response) {
+  response.status(200).json({ message: 'Hello from Vercel!' });
+}
+```
+
+#### Other Frameworks and runtimes, Next.js versions older than 13.5, Rust, Go, Python, or Ruby
+
+For these runtimes and frameworks, configure the `maxDuration` property of the [`functions` object](/docs/project-configuration/vercel-json#functions) in your `vercel.json` file:
 
 ```json {5,8,11} filename="vercel.json"
 {
@@ -244,9 +256,22 @@ For these runtimes and frameworks, configure the `maxDuration` property of the [
 
 If your Next.js project is configured to use [src directory](https://nextjs.org/docs/app/building-your-application/configuring/src-directory), you will need to prefix your function routes with `/src/` for them to be detected.
 
+For Python framework apps (FastAPI, Flask, or Django), the whole app builds into a single Vercel Function from its resolved entrypoint. Key the `functions` entry on that entrypoint file (for example `app/main.py` or `myproject/wsgi.py`):
+
+```json {5} filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app/main.py": {
+      "maxDuration": 60
+    }
+  }
+}
+```
+
 > **💡 Note:** The order in which you specify file patterns is important. For more
 > information, see [Glob
-> pattern](/docs/project-configuration#glob-pattern-order).
+> pattern](/docs/project-configuration/vercel-json#functions).
 
 ## Extended max duration&#x20;
 
@@ -294,6 +319,8 @@ For supported Node.js and Python functions outside Next.js App Router, set `maxD
 }
 ```
 
+For Python framework apps, key the entry on the resolved entrypoint file (for example `app/main.py`) instead of an `/api` route.
+
 ## Setting a default maximum duration
 
 While Vercel specifies [defaults](/docs/functions/limitations#max-duration) for the maximum duration of a function, you can also override it in the following ways:
@@ -304,7 +331,7 @@ While Vercel specifies [defaults](/docs/functions/limitations#max-duration) for 
 2. From the left side, open [**Functions**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ffunctions\&title=Go+to+Functions+Settings) in the sidebar and scroll to the **Function Max Duration** section.
 3. Update the **Default Max Duration** field value and select **Save**.
 
-The dashboard sets the project default. During the extended max duration beta, use [per-function configuration](#extended-max-duration) for durations above 800 seconds.
+The dashboard sets the project default. During the extended max duration beta, use [per-function configuration](#extended-max-duration-beta) for durations above 800 seconds.
 
 ### `vercel.json` file
 
@@ -363,22 +390,7 @@ Vercel Functions have the following defaults and maximum limits for the duration
 | Pro        | 300s (5 minutes) | 800s | 1800s (30 minutes)  |
 | Enterprise | 300s (5 minutes) | 800s | 1800s (30 minutes)  |
 
-The 800 second maximum is generally available for Pro and Enterprise teams. For beta requirements and examples, see [extended max duration](#extended-max-duration).
-
-Instead of a fixed number of seconds, you can set `maxDuration` to the string `"max"` to use your plan's maximum allowed duration. Vercel resolves `"max"` at deploy time, so your function uses the current plan limit without you tracking the exact value:
-
-```json filename="vercel.json"
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": {
-    "api/long-task.js": {
-      "maxDuration": "max"
-    }
-  }
-}
-```
-
-Today, `"max"` resolves to your plan's generally available maximum: 800 seconds on Pro and Enterprise, and 300 seconds on Hobby. It does not opt your function into the [extended 1800-second maximum](#extended-max-duration), which is in beta and must be enabled separately.
+The 800 second maximum is generally available for Pro and Enterprise teams. For beta requirements and examples, see [extended max duration](#extended-max-duration-beta).
 
 > **💡 Note:** For workloads that require unlimited execution time, use [Vercel
 > Workflows](/docs/workflows), which allow your code to pause, resume, and

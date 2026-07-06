@@ -16,8 +16,8 @@ related:
 summary: Learn about websockets on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1b1ecf4cb048d0eedd9aa269ed1121422f1f115c6b01cc7faa3b18459642f402"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "5636a332cdb38843df8f869adbaec908b14acd116037f85b240b5c8c041d2ce9"
 ---
 
 # WebSockets
@@ -165,7 +165,13 @@ Store durable state, presence, counters, rooms, and pub/sub coordination in an e
 
 ## Use with frameworks
 
-Most Node.js server frameworks can serve WebSocket connections on Vercel without additional configuration. For example, you can serve a WebSocket echo endpoint with Express or Hono:
+Frameworks with native WebSocket support can serve WebSocket connections on Vercel Functions without additional configuration. If your app uses Nitro, either directly or through a framework like Nuxt, you can use Nitro’s native WebSocket support on Vercel.
+
+View the [Nitro](https://vercel.com/templates/nitro/nitro-websockets-starter) and [Nuxt](https://vercel.com/templates/nuxt/nuxt-websockets-starter) examples.
+
+### Node.js server frameworks
+
+Node.js server frameworks such as Express, Hono, and h3 can also serve WebSocket connections on Vercel:
 
 ```ts filename="api/server.ts" framework=express
 import { createServer } from 'node:http';
@@ -211,7 +217,51 @@ const server = serve({
 export default server;
 ```
 
-If your app uses Nitro, either directly or through a framework like Nuxt, you can use Nitro’s native WebSocket support on Vercel. View the [Nitro](https://vercel.com/templates/nitro/nitro-websockets-starter) and [Nuxt](https://vercel.com/templates/nuxt/nuxt-websockets-starter) examples.
+```ts filename="api/server.ts" framework=h3
+import { H3, serve, defineWebSocketHandler } from 'h3';
+import { plugin as ws } from 'crossws/server';
+
+const app = new H3();
+
+app.get(
+  '/ws',
+  defineWebSocketHandler({
+    message(peer, message) {
+      peer.send(message);
+    },
+  }),
+);
+
+export default serve(app, {
+  plugins: [ws({ resolve: async (req) => (await app.fetch(req)).crossws })],
+});
+```
+
+### Nitro
+
+Nitro has native WebSocket support powered by [crossws](https://crossws.h3.dev/guide). Enable it in your Nitro config:
+
+```ts filename="nitro.config.ts"
+import { defineConfig } from 'nitro';
+
+export default defineConfig({
+  features: {
+    websocket: true,
+  },
+});
+```
+
+Then export a handler with `defineWebSocketHandler()` from a route file. The route path is the connection path, so `routes/_ws.ts` handles connections on `/_ws`:
+
+```ts filename="routes/_ws.ts"
+import { defineWebSocketHandler } from 'nitro';
+
+export default defineWebSocketHandler({
+  message(peer, message) {
+    peer.send(message.text());
+  },
+});
+```
 
 ### Next.js
 
@@ -231,8 +281,6 @@ export async function GET() {
   });
 }
 ```
-
-Python ASGI apps don't need this workaround because Vercel Python runtime handles the connection upgrade natively.
 
 [Learn more about how to use this API with Next.js.](/docs/functions/functions-api-reference/vercel-functions-package#experimental_upgradewebsocket)
 

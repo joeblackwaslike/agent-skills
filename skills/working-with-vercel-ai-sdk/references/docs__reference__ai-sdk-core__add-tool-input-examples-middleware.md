@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/add-tool-input-examples-middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b85d9ead7d7c63d194b7d77c577ea5fa0730129bd091a58fdfb62a6bd4dd9975"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "a1909d8361de7274b337751cab2f415a8764fa70e259fe17ff50c0c7ddcf69bb"
 ---
 
 # `addToolInputExamplesMiddleware`
@@ -163,6 +163,7 @@ Input Examples:
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

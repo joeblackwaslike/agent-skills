@@ -11,13 +11,13 @@ related:
   - /docs/ai-gateway
   - /docs/ai-sdk
   - /docs/sandbox
+  - /docs/container-registry
   - /docs/workflows
-  - /docs/agent
 summary: Explore all Vercel products and capabilities.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/products.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "65435b3eab9d88e589022b960fbfbd57f09289dc6b25ce0d9e16b137a621bb3f"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "31c740582394182e2e70d5a7432856b2338b63912b8a087bdc2e7a232347e94f"
 ---
 
 # Products
@@ -29,6 +29,7 @@ Browse every Vercel product. Build with AI, deploy and scale your apps, and oper
 - [AI Gateway](/docs/ai-gateway): One endpoint, all models
 - [AI SDK](/docs/ai-sdk): AI toolkit
 - [Sandbox](/docs/sandbox): Run AI code safely
+- [Container Registry](/docs/container-registry): Store OCI images
 - [Workflow](/docs/workflows): Durable tasks
 - [Vercel Agent](/docs/agent): AI app assistant
 - [v0](https://v0.app): Prompt-to-UI

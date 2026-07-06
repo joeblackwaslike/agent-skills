@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/arize-ax.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "10ca3acdfe72d2edc67fe88c8ee317ad77986028a1a39a9113257a41f9db496e"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "34eed2daa64acccb0673b645271601d9703de521e62f622e1c88908fa3442618"
 ---
 
 # Arize AX Observability
@@ -231,6 +231,7 @@ AX has a [TypeScript client](https://www.npmjs.com/package/@arizeai/ax-client) f
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

@@ -17,8 +17,8 @@ related:
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "cc2ddd8ad51c4a63ddb1b592324b020c20edb15b1ad31d1316b2f48d25d1cc4f"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "e39c0e434477a998a9cf2129007851fbd1ded09771d92a2f12d591741c848d8b"
 ---
 
 # Deploy a Flask app on Vercel
@@ -50,7 +50,7 @@ To run a Flask application on Vercel, define an `app` instance that initializes 
 
 For example:
 
-```py filename="src/index.py"
+```py filename="main.py"
 from flask import Flask
 
 app = Flask(__name__)
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 ```
 
 > **💡 Note:** If you define a [Build
-> Command](https://vercel.com/docs/project-configuration#buildcommand) in
+> Command](https://vercel.com/docs/project-configuration/vercel-json#buildcommand) in
 > `vercel.json` or in the Project Settings dashboard, it takes precedence over a
 > build script in `pyproject.toml`.
 
@@ -143,6 +143,26 @@ def favicon():
 When you deploy a Flask app to Vercel, it becomes a single [Vercel
 Function](/docs/functions). Vercel uses [Fluid
 compute](/docs/fluid-compute) by default, so the function scales with traffic.
+
+To configure that function, add an entry to the [`functions`
+object](/docs/project-configuration/vercel-json#functions) in `vercel.json` keyed by your
+resolved entrypoint file. For example, to let an app defined in `main.py`
+run for up to 60 seconds, set `maxDuration`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "main.py": {
+      "maxDuration": 60
+    }
+  }
+}
+```
+
+For more options, see [Configuring
+functions](/docs/functions/configuring-functions) and the [`functions`
+property](/docs/project-configuration/vercel-json#functions).
 
 ## Limitations
 

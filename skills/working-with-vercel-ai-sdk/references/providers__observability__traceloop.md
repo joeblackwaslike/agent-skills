@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/traceloop.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "34ed1a5438290cffc00e7cd91a00c1f6fe8adb2d77cf5d13e7ff7fcbc0994e21"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "619054375ce0f7779e02de148933125ea6b6e60a074e78a73196b8f4b3dd7a4b"
 ---
 
 # Traceloop
@@ -75,6 +75,7 @@ const result = await generateText({
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

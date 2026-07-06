@@ -8,15 +8,15 @@ type: reference
 prerequisites:
   - /docs/routing-middleware
 related:
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/functions/edge-functions/edge-functions-api
   - /docs/functions/functions-api-reference/vercel-functions-package
   - /docs/regions
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "97e3bd86400578e1438f49908a801918fd40f00e037f7b2bb7ff2fc6ede0dd8b"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "ac2c47ae1d7712698321c88b1aa51fbf8bee9e167bb67236bd49aee3d8c6eede"
 ---
 
 # Routing Middleware API
@@ -123,7 +123,7 @@ export const config = {
 };
 ```
 
-To use the Bun runtime with Routing Middleware, set the [`bunVersion`](/docs/project-configuration#bunversion) property in your `vercel.json` file as well as using the `runtime` config shown above to `nodejs`:
+To use the Bun runtime with Routing Middleware, set the [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) property in your `vercel.json` file as well as using the `runtime` config shown above to `nodejs`:
 
 ```json filename="vercel.json"
 {
@@ -648,7 +648,7 @@ export default function middleware(request) {
 
 ### `RequestContext`
 
-The `RequestContext` is an extension of the standard `Request` object, which contains the [`waitUntil`](#waitUntil) function. The following example works in middleware for all frameworks:
+The `RequestContext` is an extension of the standard `Request` object, which contains the [`waitUntil`](#waituntil) function. The following example works in middleware for all frameworks:
 
 ```ts filename="middleware.ts" framework=all
 import type { RequestContext } from '@vercel/functions';

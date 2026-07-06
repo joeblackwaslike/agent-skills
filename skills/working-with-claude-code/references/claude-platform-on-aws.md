@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-platform-on-aws.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "acc773e4437b667d6e9ee65f92eb36a8cfed8442c20f6123ba6f4a74157c2813"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "a9b930e6dc8bc5ee2570f40fff2685a730f1c50f1750fd779a7bd3f831b19fde"
 ---
 
 > ## Documentation Index
@@ -230,7 +230,7 @@ export AWS_PROFILE=my-profile
 
 For CI and automation, give the runner an IAM role with permission to invoke the Anthropic service and set `AWS_REGION`. The credential chain picks the role up automatically.
 
-If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](/en/amazon-bedrock#advanced-credential-configuration) so Claude Code re-runs your login command and retries instead of failing. Add the command to your `settings.json`:
+If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](/en/amazon-bedrock#advanced-credential-configuration) so Claude Code re-runs your login command and retries instead of failing. Automatic refresh on Claude Platform on AWS requires Claude Code v2.1.198 or later; earlier versions stop with a prompt to run `/login`, which can't refresh AWS credentials. Add the command to your `settings.json`:
 
 ```json theme={null}
 {
@@ -268,7 +268,7 @@ export AWS_REGION=us-east-1
 
 `ANTHROPIC_AWS_WORKSPACE_ID` is required and is sent on every request as the `anthropic-workspace-id` header. The base URL is computed from `AWS_REGION` as `https://aws-external-anthropic.{region}.api.aws`. To override the URL directly, set `ANTHROPIC_AWS_BASE_URL`.
 
-Claude Platform on AWS is opt-in even when AWS credentials are present in your environment. Bedrock and Foundry take precedence in provider routing, so unset `CLAUDE_CODE_USE_BEDROCK` and `CLAUDE_CODE_USE_FOUNDRY` if they're set.
+Claude Platform on AWS is opt-in even when AWS credentials are present in your environment. Amazon Bedrock and Microsoft Foundry take precedence in provider routing, so unset `CLAUDE_CODE_USE_BEDROCK` and `CLAUDE_CODE_USE_FOUNDRY` if they're set.
 
 ### 3. Pin model versions
 
@@ -279,7 +279,7 @@ If you deploy Claude Code to a team, pin the model IDs explicitly so a new relea
 ```bash theme={null}
 export ANTHROPIC_DEFAULT_FABLE_MODEL=claude-fable-5
 export ANTHROPIC_DEFAULT_OPUS_MODEL=claude-opus-4-7
-export ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-4-6
+export ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-5
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-4-5
 ```
 

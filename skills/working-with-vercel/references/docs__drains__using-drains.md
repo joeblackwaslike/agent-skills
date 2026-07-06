@@ -16,19 +16,19 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints and add integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3525be12a7cc8a192a2ad4e5b933688756620946bc08053ebc683cc539fe83d7"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "f1dff848d3e9f0c78a797f43503033dcaafe68af85ff07340747764982e1d6b8"
 ---
 
 # Using Drains
 
 > **🔒 Permissions Required**: Drains
 
-You can add drains to your project by following the configuration steps below. When you configure the destination, choose between sending data to a [custom HTTP endpoint](#custom-endpoint) and using a [native integration](#native-integrations) or an [external integration](#external-integrations) to send your data to popular services.
+You can add drains to your project by following the configuration steps below. When you configure the destination, choose whether to send data to a [custom HTTP endpoint](#custom-endpoint), write Audit Log data to an [S3 bucket](#s3-bucket), or use a [native integration](#native-integrations) or [external integration](#external-integrations) to send your data to popular services.
 
 ## Configuring Drains
 
-Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) plans can configure drains to forward observability data. You can send logs, traces, speed insights, and analytics data to a custom HTTP endpoint or use integrations from the [Vercel Marketplace](/marketplace) to send logs and traces data to popular services.
+Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) plans can configure drains to forward observability data. Audit Log Drains are available only on [Enterprise](/docs/plans/enterprise) plans. You can send data to custom HTTP endpoints, send Audit Log data to Amazon S3, or use [Vercel Marketplace](/marketplace) integrations for logs and traces.
 
 - ### Add a drain
   From the Vercel dashboard, go to **Team Settings** > [**Drains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fdrains\&title=Go+to+Drains+settings) and click **Add Drain**.
@@ -39,6 +39,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   - **Traces**: Distributed tracing data using [OTLP/HTTP](https://opentelemetry.io/docs/specs/otlp/#otlphttp) (OTLP/gRPC is not supported)
   - **Speed Insights**: Performance metrics and web vitals
   - **Web Analytics**: Page views and custom events
+  - **Audit Log**: Team activity events
   At any time, you can also add an [external integration](#external-integrations) to available [connectable account](/docs/integrations#connectable-accounts) log drain integrations by clicking the **External Integrations** link on the top right of the **Add Drain** side bar.
 
 - ### Configure the drain
@@ -49,6 +50,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   - **Trace**: Configure the project and advanced sampling rate controls.
   - **Speed Insights**: Configure the project and a basic sampling rate.
   - **Web Analytics**: Configure the project and a basic sampling rate.
+  - **Audit Log**: Applies to the whole team. Project selection, filters, and sampling rules are not available.
   Configure the sampling rate to control the volume of data sent to your drain. This can help manage costs when you have high traffic volumes. For detailed log source, environment, and sampling options, see [Additional configuration for logs](/docs/drains/reference/logs#log-sources).
 
 - ### Configure the sampling rules (optional)
@@ -63,7 +65,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   Rules run from top to bottom. Requests that match a rule use that rule’s sampling rate, and any other requests are dropped. If you do not add rules, the drain forwards **100%** of data to the destination.
 
 - ### Configure destination
-  Choose how you want to receive your drain data by selecting either the [**Custom Endpoint**](#custom-endpoint) or [**Native Integrations**](#native-integrations) section in the sidebar.
+  Choose how you want to receive your drain data by selecting the [**Custom Endpoint**](#custom-endpoint), [**S3 Bucket**](#s3-bucket), [**Splunk**](#splunk), or [**Native Integrations**](#native-integrations) section in the sidebar.
   #### Custom endpoint
   Configure a custom HTTP endpoint to receive drain data for any data type.
 
@@ -78,6 +80,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   - **Traces**: JSON or Protobuf over OTLP/HTTP (see [Traces reference](/docs/drains/reference/traces))
   - **Speed Insights**: JSON or NDJSON (see [Speed Insights reference](/docs/drains/reference/speed-insights))
   - **Web Analytics**: JSON or NDJSON (see [Analytics reference](/docs/drains/reference/analytics))
+  - **Audit Log**: JSON or NDJSON (see [Audit Log Drains reference](/docs/drains/reference/audit-logs))
   **Signature Verification Secret (Optional)**
 
   You can secure your endpoint by comparing the `x-vercel-signature` header with this secret. See [Securing your Drains](/docs/drains/security#secure-drains) for implementation details.
@@ -92,6 +95,14 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   - **Identification**: Custom headers to identify the source or type of data
   - **Content negotiation**: Headers to specify preferred response formats
   Format headers as `Header-Name: Header-Value` with one header per line.
+  #### S3 bucket
+  Configure an S3 bucket destination to write Audit Log data directly to Amazon S3. S3 bucket destinations are available only for Audit Log Drains.
+
+  Before creating the drain, configure AWS IAM permissions and collect the S3 bucket path, encoding, role ARN, region, and any server-side encryption or Object ACL values required by your bucket. See [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3) for the full AWS setup.
+  #### Splunk
+  Configure a Splunk destination to forward Audit Log data to your Splunk HTTP Event Collector (HEC). Splunk destinations are available only for Audit Log Drains.
+
+  Enter your HEC host and HEC token. Vercel wraps each event in the Splunk HEC event envelope. See [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk) for HEC setup.
   #### Native integrations
   Native integrations are available for log and traces data. You have 2 options:
   1. Installed Products
@@ -170,6 +181,7 @@ For more information on Drains and how to use them, check out the following reso
 - [Traces reference](/docs/drains/reference/traces)
 - [Speed Insights reference](/docs/drains/reference/speed-insights)
 - [Analytics reference](/docs/drains/reference/analytics)
+- [Audit Log Drains reference](/docs/drains/reference/audit-logs)
 
 
 ---

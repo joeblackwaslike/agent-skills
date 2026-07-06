@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/memory.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "0779fd7c75a659fda0cd814be6cb68ae39ff0c30f768abb9f97ddf3c502fec4a"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "f2f39cd88ed36a50618e81ea47200be6e5b57239af98f4c1caa7cc423cc0350f"
 ---
 
 > ## Documentation Index
@@ -215,7 +215,7 @@ paths:
 - Include OpenAPI documentation comments
 ```
 
-Rules without a `paths` field are loaded unconditionally and apply to all files. Path-scoped rules trigger when Claude reads files matching the pattern, not on every tool use.
+Rules without a `paths` field are loaded unconditionally and apply to all files. Path-scoped rules trigger when Claude reads files matching the pattern, not on every tool use. {/* min-version: 2.1.198 */}As of v2.1.198, matching also works when Claude reaches a file through a symlinked path to the project directory, for example in a symlinked checkout.
 
 Use glob patterns in the `paths` field to match files by extension, directory, or any combination:
 

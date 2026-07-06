@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "4b2ad4847dde5ed5dfebbe84de7676d8a4fde73999774bdaefaae0a68a918f80"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "687d2981146ff83fcf66d3d269a0c6baa0ed82198088271711f0b31a0233991e"
 ---
 
 # Anthropic Provider
@@ -190,7 +190,7 @@ const result = streamText({
 
 ### Effort
 
-Anthropic introduced an `effort` option with `claude-opus-4-5` that affects thinking, text responses, and function calls. Effort defaults to `high` and you can set it to `medium` or `low` to save tokens and to lower time-to-last-token latency (TTLT). `claude-opus-4-7` additionally supports `xhigh` for maximum reasoning effort.
+Anthropic introduced an `effort` option with `claude-opus-4-5` that affects thinking, text responses, and function calls. Effort defaults to `high` and you can set it to `medium` or `low` to save tokens and to lower time-to-last-token latency (TTLT). `claude-opus-4-7`, `claude-opus-4-8`, `claude-fable-5`, and `claude-sonnet-5` additionally support `xhigh` for maximum reasoning effort.
 
 ```ts highlight="8-10"
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
@@ -1626,6 +1626,7 @@ and the `mediaType` should be set to `'application/pdf'`.
 
 | Model               | Image Input         | Object Generation   | Tool Usage          | Computer Use        | Web Search          | Tool Search         | Compaction          |
 | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
+| `claude-sonnet-5`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | `claude-fable-5`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | `claude-opus-4-8`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
 | `claude-opus-4-7`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |

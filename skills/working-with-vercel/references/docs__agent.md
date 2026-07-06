@@ -16,25 +16,29 @@ related:
 summary: AI-powered development tools that speed up your workflow and help resolve issues faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7c6f21fd82d25add4e76384e70973f1ced1e3b1be4ad476ec18d5333e689de08"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "08f4ca81b1a80f17851ff4787ea8d429843cc9122d4b190ccf9e4f8aca767e38"
 ---
 
 # Vercel Agent
 
 > **🔒 Permissions Required**: Vercel Agent
 
-Vercel Agent is a suite of AI-powered development tools built to speed up your workflow. Instead of spending hours debugging production issues or waiting for code reviews, Agent helps you catch problems faster and resolve incidents quickly.
+Vercel Agent lives in your dashboard and can investigate what's happening in production, answer questions about your projects, and take action on your behalf.
 
-Agent works because it already understands your application. Vercel builds your code, deploys your functions, and serves your traffic. Agent uses this deep context about your codebase, deployment history, and runtime behavior to provide intelligent assistance right where you need it.
+Because Agent is built into Vercel's platform that deploys and serves your app, it can read the signals around it: deployments, logs, metrics, project configuration, usage, and connected repositories. That context is what turns a question into an answer and a problem into a fix.
 
-Everything runs on [Vercel's AI Cloud](https://vercel.com/ai), infrastructure designed specifically for AI workloads. This means Agent can use secure sandboxes to reproduce issues, access the latest models, and provide reliable results you can trust.
+Vercel Agent runs on [Vercel's AI Cloud](https://vercel.com/ai). It can use secure sandboxes to reproduce issues, validate generated code, and run checks before suggested changes reach production.
+
+## Availability
+
+Dashboard chat, investigations, and approved actions are in public beta for Pro and Enterprise teams. Rollout will be gradual. If you don't have access yet, you can [request access](/products/early-access).
 
 ## Features
 
 ### Code Review
 
-Get automatic code reviews on every pull request. Code Review analyzes your changes, identifies potential issues, and suggests fixes you can apply directly.
+Get automatic code reviews on every pull request. Code Review gives you Sandbox-validated suggestions on your pull requests as one capability within the broader Vercel Agent.
 
 What it does:
 
@@ -48,7 +52,7 @@ Learn more in the [Code Review docs](/docs/agent/pr-review).
 
 ### Investigation
 
-When anomaly alerts fire, Vercel Agent Investigations can analyze what's happening to help you debug faster. Instead of manually digging through logs and metrics, AI does the analysis and shows you what might be causing the issue.
+When anomaly alerts fire, Vercel Agent Investigations can analyze what is happening in production. Point Agent at a failed deploy, a runtime error, or a cost spike, and it traces the cause and recommends a fix.
 
 What it does:
 
@@ -58,11 +62,23 @@ What it does:
 
 Learn more in the [Agent Investigation docs](/docs/agent/investigation).
 
+### Approved actions
+
+When a task requires write access, Vercel Agent presents a scoped plan and waits for your approval. With your sign-off, Agent can open a pull request, roll back, or update a config to remediate an issue.
+
+Agent is read-only by default and cannot make changes until you approve the plan.
+
 ### Installation
 
 Add [Web Analytics](/docs/analytics) and [Speed Insights](/docs/speed-insights) to your project using Vercel Agent. Instead of manually installing and writing integration code, Vercel Agent analyzes your repository, installs dependencies, writes integration code, and creates a pull request. All you need to do is review and merge.
 
 Learn more in the [Agent Installation docs](/docs/agent/installation).
+
+## Control and permissions
+
+Vercel Agent runs under its own identity and is bounded by the requesting user's permissions. It is read-only by default.
+
+When Agent needs elevated access, it requests a scoped plan and makes no changes until you approve it. Generated code runs in Vercel Sandbox before it reaches production, and elevated actions are attributed to Agent, the requester, and the approver.
 
 ## Getting started
 

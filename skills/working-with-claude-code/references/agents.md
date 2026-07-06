@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agents.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "075530b8e4f0b6682b8ed571781e4cca0012ae2ffa69508a24106d7a123314d0"
+fetched_at: "2026-07-06T05:32:38.128Z"
+sha256: "34405b9185f224e864e70f0ce7e04e0270b1059f0b49806eab025b6d6825d66f"
 ---
 
 > ## Documentation Index
@@ -55,7 +55,7 @@ The right approach depends on who coordinates the work, whether the workers need
 The command for checking on running work depends on which approach you used:
 
 * For background sessions, `claude agents` opens [agent view](/en/agent-view): one screen showing every session, its state, and which ones need your input.
-* For subagents in the current session, `/agents` opens a panel with a **Running** tab listing live subagents and a **Library** tab where you [create and edit custom subagents](/en/sub-agents#use-the-%2Fagents-command). Despite the similar name, this is separate from `claude agents`.
+* For subagents in the current session, named background subagents appear in the @-mention typeahead with their status. {/* min-version: 2.1.198 */}As of v2.1.198, `/agents` no longer opens a panel; it prints a notice pointing to the subagent file locations. To [create and edit custom subagents](/en/sub-agents#configure-subagents), ask Claude or edit the files directly. Despite the similar name, `/agents` is separate from `claude agents`.
 * For anything running in the background of the current session, `/tasks` lists each item and lets you check on, attach to, or stop it.
 * For dynamic workflows, `/workflows` lists running and completed runs, the phase each is in, and how many agents have finished.
 

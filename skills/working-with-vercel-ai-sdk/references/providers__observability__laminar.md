@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/laminar.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "2980b5e669ea5671a773679306166a99503e79eafe968adca22a71bfdbce46ab"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "c503f42d20f6263dd9bbcc9af1c9d669a268197123e165f6eab098af25907d4c"
 ---
 
 # Laminar observability
@@ -429,6 +429,7 @@ const { text } = await generateText({
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0a16f2ba97c655107fb67e4f52b44a3fd5304d89582844154417ead6b031af73"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "276241db162297552be4c367d156c5247023f79f4a9903ec778038af612664b8"
 ---
 
 # Codex Harness
@@ -173,9 +173,15 @@ fit a common tool shape.
 Codex file changes may also appear as dynamic `fileChange` tool parts because
 some Codex file mutations do not originate from a visible model-callable tool.
 
+## Known Limitations
+
 Codex does not currently support built-in tool approval requests. Use
 `permissionMode: 'allow-all'` with this adapter. Host-executed AI SDK tool
 approvals still work.
+
+Codex does not currently support built-in tool filtering. You can still use
+`activeTools` and `inactiveTools` to filter host-executed tools, but filtering
+Codex built-ins such as `bash` or `webSearch` will throw.
 
 ## Related
 

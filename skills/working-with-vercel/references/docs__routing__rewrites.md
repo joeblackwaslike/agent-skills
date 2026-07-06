@@ -8,7 +8,7 @@ type: conceptual
 prerequisites:
   - /docs/routing
 related:
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/caching/cache-control-headers
   - /docs/caching/cdn-cache/purge
   - /docs/headers/cache-control-headers
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6afc0a25391fe2aa2e8ccb0f12fd1df0f2ff588c04f66b1cc337679a762532a6"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "768a627d6999743d30dcf0909f97d8d34a0c56d780c1bd9075ad1ab962301d28"
 ---
 
 # Rewrites on Vercel
@@ -49,7 +49,7 @@ Rewrites are defined in a `vercel.json` file in your project's root directory:
 }
 ```
 
-For all configuration options, see the [project configuration](/docs/project-configuration#rewrites) docs.
+For all configuration options, see the [project configuration](/docs/project-configuration/vercel-json#rewrites) docs.
 
 ## Same-application rewrites
 
@@ -263,6 +263,24 @@ To get started, configure a [logs drain](/docs/drains/using-drains).
 You can observe your external origin performance using Observability. The **External Origins** tab shows request counts, connection latency, and traffic patterns for your proxied requests, helping you monitor backend performance and validate that rewrites are working as expected.
 
 Learn more in the [Observability Insights](/docs/observability/insights#external-rewrites) documentation.
+
+## Rewrites to a service
+
+If your project uses [Services](/docs/services), a rewrite can target a service instead of a URL. Set `destination` to an object with a `service` key:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": { "service": "my_backend" }
+    }
+  ]
+}
+```
+
+This routes matching public requests to the `my_backend` service. Services are internal by default, so a service receives public traffic only when a top-level rewrite like this targets it. See [Services routing](/docs/services/routing) for how requests reach services and how to control the path a service sees.
 
 ## Framework considerations
 

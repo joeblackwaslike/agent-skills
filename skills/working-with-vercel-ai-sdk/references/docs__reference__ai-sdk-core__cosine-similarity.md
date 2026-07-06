@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/cosine-similarity.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "2881d92e8fbf815a4e8326a0c26f9e0c3d351cc84cfe68a3d8528e7cd30bd7d2"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "882ca4ef31e15cf04030b7563c45ac8b1d46ccbea8eb10885cc5c71cc3d78253"
 ---
 
 # `cosineSimilarity()`
@@ -61,6 +61,7 @@ A number between -1 and 1 representing the cosine similarity between the two vec
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

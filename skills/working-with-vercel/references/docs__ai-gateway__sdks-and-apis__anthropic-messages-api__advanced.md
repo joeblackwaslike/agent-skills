@@ -14,8 +14,8 @@ related:
 summary: Advanced Anthropic API features including extended thinking, web search, and automatic caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "97105bc34503c49bb221566c7b07067894ef7866e618db7687ec8bd2bd309744"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "aeb5dff54e4644a66e1372c6efe87237c32f28f71ef30fa53d501c1111de2225"
 ---
 
 # Advanced Features
@@ -39,7 +39,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 2048,
   thinking: {
     type: 'enabled',
@@ -76,7 +76,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=2048,
     thinking={
         'type': 'enabled',
@@ -122,7 +122,7 @@ When thinking is enabled, the response includes thinking blocks:
       "text": "Quantum entanglement is like having two magic coins..."
     }
   ],
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "stop_reason": "end_turn",
   "usage": {
     "input_tokens": 15,
@@ -150,7 +150,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   max_tokens: 2048,
   tools: [
     {
@@ -189,7 +189,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     max_tokens=2048,
     tools=[
         {

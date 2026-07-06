@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reasoning.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7f7dddf65b409279a3f1186a3830ba60f15ea98586f1bcc4c643e71db2830a6a"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "6dff93467c641595d2050c1e6ac83cb51999e0698bac4490086218416125e2bc"
 ---
 
 # Reasoning
@@ -14,7 +14,7 @@ Many language models support an internal "reasoning" phase (sometimes also calle
 import { generateText } from 'ai';
 
 const { text, reasoning, reasoningText } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6,
+  model: 'anthropic/claude-sonnet-4.6',
   reasoning: 'medium',
   prompt: 'How many people will live in the world in 2040?',
 });

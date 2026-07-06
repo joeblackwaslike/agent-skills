@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-image-model.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6f3327d572255f881b46e0cb0004cbac942a18a6b04a93489eeba7811c7b01b6"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "02f7ee3721754649adc2fc2e9fb6276266227b0703feda88e0c2e54742f0b567"
 ---
 
 # `wrapImageModel()`
@@ -73,6 +73,7 @@ A new `ImageModelV4` instance with middleware applied.
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

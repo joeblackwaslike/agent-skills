@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/mcp.md"
-fetched_at: "2026-06-29T05:42:13.025Z"
-sha256: "4ba62a740513baf65977930c4d45cbd99aba35fb9f9c66e1030da4f6e1706301"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "af142f86d4a64bd91e0669c9bc4565df7ffdfd69b1084b5375f04df964476f59"
 ---
 
 # Model Context Protocol (MCP)
@@ -54,6 +54,8 @@ MCP Apps follow progressive enhancement. If a host cannot render app UI, the sam
 ### One-click installation
 
 Browse the [Cursor Marketplace](/marketplace) for official plugins with one-click install from **Customize**, or configure custom servers with `mcp.json`. For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory). Click "Add to Cursor" on a marketplace entry to install it and authenticate with OAuth.
+
+Team admins can also distribute MCP servers through a [team marketplace](https://cursor.com/docs/plugins.md#team-marketplaces). Team-distributed servers appear in Customize alongside personal and workspace MCP servers.
 
 ### Using `mcp.json`
 
@@ -134,13 +136,17 @@ Add an `auth` object to remote server entries that use `url`:
 
 #### Static redirect URL
 
-Cursor uses a **fixed OAuth redirect URL** for all MCP servers:
+Cursor uses fixed OAuth redirect URLs for MCP servers. Register the callback for each surface your users authenticate from:
 
 ```text
 https://www.cursor.com/agents/mcp/oauth/callback
+cursor://anysphere.cursor-mcp/oauth/callback
 ```
 
-When configuring the MCP provider's OAuth app, register this URL as an allowed redirect URI. The server is identified via the OAuth `state` parameter, so one redirect URL works for all MCP servers.
+- **Web and Cursor Agents**: `https://www.cursor.com/agents/mcp/oauth/callback`
+- **Desktop app**: `cursor://anysphere.cursor-mcp/oauth/callback`
+
+When configuring the MCP provider's OAuth app, register both URLs as allowed redirect URIs if users authenticate from both web and desktop. The server is identified via the OAuth `state` parameter, so these redirect URLs work for all MCP servers.
 
 #### Combining with config interpolation
 
@@ -244,9 +250,19 @@ Cursor supports OAuth for servers that require it.
 
 ## Enterprise admin controls
 
-Team and Enterprise admins can control which MCP servers users may run from the Cursor dashboard. Open **Dashboard > Settings > MCP** to configure the team's MCP policy.
+MCP distribution and MCP policy are configured separately. Team admins can distribute shared MCP servers. Enterprise admins can configure MCP policy.
+
+### Team MCP distribution
+
+Configure shared Team MCP servers under **Dashboard > Integrations & MCP**. These servers are available to Cloud Agents.
+
+To make an existing standalone Team MCP server available in the Agent Window, IDE, and CLI, select **Add to Team Marketplace** under **Team MCP Servers**. Cursor links the server to the Default team marketplace without interrupting Cloud Agent access. Teammates can then install and configure it from Customize.
+
+Linking an MCP server to a marketplace does not install or enable it for everyone. Configure **Marketplace Access** and plugin installation modes under **Dashboard > Plugins**. See [Migrate existing Team MCPs](https://cursor.com/docs/plugins.md#migrate-existing-team-mcps) for the full flow.
 
 ### MCP Allowlist
+
+Enterprise admins can control which MCP servers users may run from the Cursor dashboard. Open [Team Settings > MCP Configuration](https://cursor.com/dashboard/team-settings#mcp-configuration) to configure which servers and tools the team may run. Allowlisting approves an MCP configuration. It does not distribute or install the server.
 
 Use the MCP Allowlist to define approved servers:
 

@@ -9,15 +9,15 @@ prerequisites:
   []
 related:
   - /docs/compression
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/headers/request-headers
   - /docs/headers/response-headers
   - /docs/caching/cache-control-headers
 summary: This reference covers the list of request, response, cache-control, and custom response headers included with deployments with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5c97aa51812ea0a68270f0e305356800c2fd89a47af2053cdf1266f48e48c8de"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "642c62f03d62927e5be36b8e971a377e9a02ac90d077a347dc369eac3a993842"
 ---
 
 # System Headers
@@ -30,7 +30,7 @@ By using headers effectively, you can optimize the performance and security of y
 
 1. [Use caching headers](#cache-control-header): Caching headers instruct the client and server to cache resources like images, CSS files, and JavaScript files, so they don't need to be reloaded every time a user visits your site. By using caching headers, you can significantly reduce the time it takes for your site to load.
 2. [Use compression headers](/docs/compression#compression-with-vercel-cdn): Use the `Accept-Encoding` header to tell the client and server to compress data before it's sent over the network. By using compression, you can reduce the amount of data that needs to be sent, resulting in faster load times.
-3. Use custom headers: You can also use custom headers in your `vercel.json` file to add metadata specific to your application. For example, you could add a header that indicates the user's preferred language or the version of your application. See [Project Configuration](/docs/project-configuration#headers) docs for more information.
+3. Use custom headers: You can also use custom headers in your `vercel.json` file to add metadata specific to your application. For example, you could add a header that indicates the user's preferred language or the version of your application. See [Project Configuration](/docs/project-configuration/vercel-json#headers) docs for more information.
 
 ## Request headers
 

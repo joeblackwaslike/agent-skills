@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream-response.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "dcf6722c5be9d8e8b38a1635e2ec5cb42ba8c7863394353214675eac719a7984"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "38270838586d08f07353d8c1e517aba81fdb2c72e086dd372b4bedfc42cb7773"
 ---
 
 # `createAgentUIStreamResponse`
@@ -199,6 +199,7 @@ export async function POST(request: Request) {
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -13,8 +13,8 @@ related:
 summary: Configure per-provider timeouts for fast failover when a provider is slow to respond.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ef25990d9d99d5664ec8c855e554629a1bd350cf5703ac730ebf4da0f278e2d1"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "3c2a7092b6888dfd83f8c0fe99ace5168fb9dc5e06e3d8a56c96c05ecc731e13"
 ---
 
 # Provider Timeouts
@@ -76,7 +76,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.7',
+    model: 'anthropic/claude-opus-4.8',
     prompt,
     providerOptions: {
       gateway: {

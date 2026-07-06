@@ -1,7 +1,7 @@
 ---
 source: "https://vercel.com/docs/conformance/rules/no_instanceof_error.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "68193b66ad1010bbddec2dc55c516362c08ea4af63dc70cbcd1a1d5b2eaf6aac"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "97756e4820bb0ea82fd7f32a8d934037cd0b269d648ce6ddc413d605aef83927"
 ---
 
 # Page Not Found
@@ -12,6 +12,6 @@ sha256: "68193b66ad1010bbddec2dc55c516362c08ea4af63dc70cbcd1a1d5b2eaf6aac"
 - [Conformance Rules](/docs/conformance/rules.md): Requires that ESLint is configured for React. ESLINT\_RULES\_REQUIRED Requires that Next.js applications that use libraries with barrel exports use
 - [TESTS_NO_CONDITIONAL_ASSERTIONS](/docs/conformance/rules/tests_no_conditional_assertions.md): Conformance is available on Enterprise plans When possible, conditional test assertions should be avoided as they can lead to false test passes if
 - [Conformance Custom Rules](/docs/conformance/custom-rules.md): Conformance is available on Enterprise plans Vercel's builtin Conformance rules are crafted from extensive experience in developing largescale
-- [1.7.0](/docs/conformance/changelog.md): This minor update captures and sends Conformance runs metrics to Vercel. Your team will be able to view those metrics in the Vercel dashboard. The
+- [1.6.0](/docs/conformance/changelog.md): This minor update introduces multiple new rules, fixes and improvements for existing rules and the CLI, and updates to some dependencies for
 
 All pages: [/llms.txt](/llms.txt)

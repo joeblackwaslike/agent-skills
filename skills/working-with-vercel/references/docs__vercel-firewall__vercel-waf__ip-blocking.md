@@ -14,8 +14,8 @@ related:
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0ac49c295958798ceadebb66e3267b685c4d0e4a6dcb848aa154b5d571bb7d9e"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "b61e75783306de561d80b9c3303ab969a4deca89edb3ad5b661a6acd7374a95e"
 ---
 
 # WAF IP Blocking
@@ -31,7 +31,7 @@ For cases such as complying with specific laws and regulations or restricting ac
 
 ## Access roles
 
-- You need to be a [Developer](/docs/rbac/access-roles#developer-role) or viewer ([Viewer Pro](/docs/rbac/access-roles#viewer-pro-role) or [Viewer Enterprise](/docs/rbac/access-roles#viewer-enterprise-role)) in the team to view the Firewall overview page and list the rules
+- You need to be a [Developer](/docs/rbac/access-roles#developer-role) or viewer ([Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) or [Viewer Enterprise](/docs/rbac/access-roles#enterprise-viewer-role)) in the team to view the Firewall overview page and list the rules
 - You need to be a [Project administrator](/docs/rbac/access-roles#project-administrators), [Team member](/docs/rbac/access-roles#member-role), or [Security](/docs/rbac/access-roles#security-role) to configure, save and apply any rule and configuration
 
 ## Project level IP Blocking

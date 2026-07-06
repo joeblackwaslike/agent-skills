@@ -16,8 +16,8 @@ related:
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "448e2831cade53bf281ea96e43f789be7aa0ed2ae8eb24682cb1801fab442ec3"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "6f605dc58063e2537933d5574d9ccb8835edadf0be4ec3b5568b3644cdc00ca3"
 ---
 
 # Getting started with Speed Insights
@@ -76,13 +76,13 @@ To view instructions on using the Vercel Speed Insights in your project for your
   > For \['html']:
 
 - > For \[
-  > &#x20; 'nextjs',
-  > &#x20; 'nextjs-app',
-  > &#x20; 'remix',
-  > &#x20; 'create-react-app',
-  > &#x20; 'vue',
-  > &#x20; 'astro',
-  > ]:
+  > &#x20;   'nextjs',
+  > &#x20;   'nextjs-app',
+  > &#x20;   'remix',
+  > &#x20;   'create-react-app',
+  > &#x20;   'vue',
+  > &#x20;   'astro',
+  > &#x20; ]:
   ### Add the `SpeedInsights` component to your app
   > For \['nuxt']:
   ### Enable the Nuxt module

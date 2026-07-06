@@ -13,8 +13,8 @@ related:
 summary: Learn about the project level roles and their permissions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/project-level-roles.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7b7820f717d436227d29b4d525ca3f2c601d3c5425d930edd60069cbdd79e0ad"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "59da85c95bb632c560eb06dce5f9ae16b6b522349631b43a44ff2c5e0fe4f450"
 ---
 
 # Project Level Roles
@@ -28,7 +28,7 @@ Project level roles are assigned to a team member on a project level. This means
 In the table below, the relationship between team and project roles is indicated by the column headers. For example, the team role "Developer" is equivalent to the "Project Developer" role.
 
 - The [**Developer**](/docs/rbac/access-roles#developer-role) team role is equivalent to the [**Project Developer**](/docs/rbac/access-roles#project-developer) role
-- The [**Viewer Pro**](/docs/rbac/access-roles#viewer-pro-role), [**Viewer Enterprise**](/docs/rbac/access-roles#viewer-enterprise-role), and [**Billing**](/docs/rbac/access-roles#billing-role) team roles are equivalent to the [**Project Viewer**](/docs/rbac/access-roles#project-viewer) role
+- The [**Viewer Pro**](/docs/rbac/access-roles#pro-viewer-role), [**Viewer Enterprise**](/docs/rbac/access-roles#enterprise-viewer-role), and [**Billing**](/docs/rbac/access-roles#billing-role) team roles are equivalent to the [**Project Viewer**](/docs/rbac/access-roles#project-viewer) role
 - The [**Owner**](/docs/rbac/access-roles#owner-role) and [**Member**](/docs/rbac/access-roles#member-role) team roles are equivalent to the [**Project Admin**](/docs/rbac/access-roles#project-administrators) role
 
 All project level roles can be assigned to those with the [**Contributor**](/docs/rbac/access-roles#team-level-roles) team role.

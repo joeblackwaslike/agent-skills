@@ -12,12 +12,12 @@ related:
   - /docs/sandbox/python-sdk-reference
   - /docs/sandbox/cli-reference
   - /docs/sandbox/concepts/authentication
-  - /docs/sandbox/system-specifications
+  - /docs/sandbox/concepts/runtimes
 summary: Vercel Sandbox allows you to run arbitrary code in isolated, ephemeral Linux VMs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7ba1142bc52bd27c7e1804e687fb4f10016ec95711f2e7adec7489be2aa7aac0"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "e2efe0504d4c75a2084b2c07a5c4bf073163606010f0497dda647b0ccc67b55b"
 ---
 
 # Vercel Sandbox
@@ -52,13 +52,13 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 
 Sandboxes run on Amazon Linux 2023 with `node26`, `node24`, `node22`, and `python3.13` runtimes available. The default runtime is `node24`. Each sandbox runs as the `vercel-sandbox` user with `sudo` access and a default working directory of `/vercel/sandbox`.
 
-For detailed information about runtimes, available packages, and sudo configuration, see [System Specifications](/docs/sandbox/system-specifications).
+For detailed information about runtimes, available packages, and sudo configuration, see [System Specifications](/docs/sandbox/concepts/runtimes).
 
 ## Features
 
 - **[Isolation](/docs/sandbox/concepts#isolation-architecture)**: Each sandbox runs in a secure Firecracker microVM with its own filesystem and network. Run untrusted code without affecting production.
-- **[Node.js and Python runtimes](/docs/sandbox/system-specifications#runtimes)**: Choose from `node26`, `node24`, `node22`, or `python3.13` with full root access. [Install any package or binary you need](/kb/guide/how-to-install-system-packages-in-vercel-sandbox).
-- **[System-privileged processes](/docs/sandbox/system-specifications#system-privileged-processes)**: Run workloads that need system-level privileges, such as container runtimes like Docker, VPN clients, and FUSE filesystem drivers.
+- **[Node.js and Python runtimes](/docs/sandbox/concepts/runtimes#runtimes)**: Choose from `node26`, `node24`, `node22`, or `python3.13` with full root access. [Install any package or binary you need](/kb/guide/how-to-install-system-packages-in-vercel-sandbox).
+- **[System-privileged processes](/docs/sandbox/concepts/runtimes#system-privileged-processes)**: Run workloads that need system-level privileges, such as container runtimes like Docker, VPN clients, and FUSE filesystem drivers.
 - **[Fast startup](/docs/sandbox/concepts#how-sandboxes-work)**: Sandboxes start in milliseconds, making them ideal for real-time user interactions and latency-sensitive workloads.
 - **[Persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes)**: Sandboxes that auto-save state on stop and resume where you left off. Persistence is the default. No manual snapshot management needed.
 - **[Snapshotting](/docs/sandbox/concepts/snapshots)**: Save the state of a running sandbox to resume later. Skip dependency installation on subsequent runs.
@@ -81,6 +81,10 @@ For detailed information about runtimes, available packages, and sudo configurat
 **CLI Reference**: Manage sandboxes from the command line. [Learn more →](/docs/sandbox/cli-reference)
 
 **Pricing**: Review costs and resource limits. [Learn more →](/docs/sandbox/pricing)
+
+**Images**: Start sandboxes from custom images in VCR. [Learn more →](/docs/sandbox/concepts/images)
+
+**Container Registry**: Store custom images for Sandbox in VCR. [Learn more →](/docs/container-registry)
 
 **Sandbox Repo**: View the Sandbox repository on GitHub contained the SDK and CLI codebase. [Learn more →](https://github.com/vercel/sandbox)
 

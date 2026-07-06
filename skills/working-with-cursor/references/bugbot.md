@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/bugbot.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "839ac6dc86b7baa2e1620209d0815b5ab41a54ea886dd4771c34273fec0bff2c"
+fetched_at: "2026-07-06T05:34:52.640Z"
+sha256: "e9ce5ad1055226d83081cc39aad8ddb31715b07844960c8f8763ff0c48de9ae5"
 ---
 
 # Bugbot
@@ -16,7 +16,7 @@ Bugbot analyzes PR diffs and leaves comments with explanations and fix suggestio
 
 - Runs **automatic reviews** on every PR update
 - **Manual trigger** by commenting `cursor review` or `bugbot run` on any PR
-- **Uses existing PR comments as context**: reads GitHub PR comments (top‑level and inline) to avoid duplicate suggestions and build on prior feedback
+- **Uses existing PR comments as context**: reads connected PR comments (top-level and inline) to avoid duplicate suggestions and build on prior feedback
 - **Fix in Cursor** links open issues directly in Cursor
 - **Fix in Web** links open issues directly in [cursor.com/agents](https://cursor.com/agents)
 
@@ -26,18 +26,19 @@ Connect your repositories through the Cursor dashboard to start using Bugbot.
 
 - **GitHub** (including GitHub Enterprise Server): See the [GitHub integration page](https://cursor.com/docs/integrations/github.md)
 - **GitLab** (including GitLab Self-Hosted): See the [GitLab integration page](https://cursor.com/docs/integrations/gitlab.md)
+- **Bitbucket** (including Bitbucket Data Center): See the [Bitbucket integration page](https://cursor.com/docs/integrations/bitbucket.md)
 
 After connecting, return to the [Bugbot dashboard](https://cursor.com/dashboard/bugbot) to enable Bugbot on specific repositories.
 
 ## CI check statuses
 
-Bugbot publishes a GitHub check named `Cursor Bugbot` for each review run. The check uses these conclusions:
+Bugbot publishes a status for each review run. On GitHub, this appears as a check named `Cursor Bugbot`. On Bitbucket, this appears as a build status with the key `cursor-bugbot`. The status uses these conclusions:
 
 - `success`: Bugbot found no issues, and there are no unresolved Bugbot comments from earlier runs.
 - `neutral`: Bugbot found issues, the run was cancelled by a newer commit, or Bugbot hit an internal error. This is the default conclusion when Bugbot reports findings.
 - `failure`: Bugbot found issues and the check is configured to fail on unresolved issues.
 
-If you use branch protection, require the `Cursor Bugbot` check to make sure Bugbot runs before merge. Requiring the check alone does not block merges on findings because findings default to `neutral`. If fail-on-unresolved-issues behavior is available for your organization, enable it to make unresolved findings produce a failing check. Bugbot does not emit a `skipped` conclusion.
+If you use branch protection, require the Bugbot check or build status to make sure Bugbot runs before merge. Requiring the status alone does not block merges on findings because findings default to `neutral`. If fail-on-unresolved-issues behavior is available for your organization, enable it to make unresolved findings produce a failing status. Bugbot does not emit a `skipped` conclusion.
 
 When Bugbot Autofix is enabled, GitHub may also show a separate `Cursor Bugbot Autofix` check. That check only uses `success` or `neutral`.
 
@@ -75,6 +76,160 @@ Team members can override settings for their own PRs:
 ## Analytics
 
 ![Bugbot dashboard](/docs-static/images/bugbot/bugbot-dashboard.png)
+
+## API
+
+Enterprise teams can use the Bugbot API to trigger reviews and retrieve per-review analytics. Create an API key from [Cursor Dashboard → API Keys](https://cursor.com/dashboard/api) and authenticate with [Basic Authentication](https://cursor.com/docs/api.md#basic-authentication).
+
+### Trigger a review
+
+/bugbot/review
+
+Queue a Bugbot review for a pull request or merge request. The request returns when the review is queued; the review runs asynchronously.
+
+Requires an API key with `admin:*` scope. The endpoint is limited to 30 requests per minute per team.
+
+#### Request Body
+
+`prUrl` string (required)
+
+Full GitHub pull request or GitLab merge request URL.
+
+```bash
+curl --request POST \
+  --url https://api.cursor.com/bugbot/review \
+  -u YOUR_API_KEY: \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "prUrl": "https://github.com/your-org/your-repo/pull/42"
+  }'
+```
+
+**Response:**
+
+```json
+{
+  "outcome": "success",
+  "message": "Bugbot review queued",
+  "request_id": "6e0d261c-86a2-4383-89f0-9162c1c10662"
+}
+```
+
+Save `request_id` so you can match the completed review in the analytics endpoint.
+
+If Bugbot cannot review the pull request, the endpoint returns `400 Bad Request` with the reason:
+
+```json
+{
+  "outcome": "error",
+  "message": "Bugbot is disabled for this repository"
+}
+```
+
+### Review analytics
+
+/analytics/team/bugbot-reviews
+
+Return one item per completed Bugbot review, including the reviewed commit, findings count, billed cost, and per-finding resolution data.
+
+Requires an API key with `read:*` scope.
+
+#### Query Parameters
+
+`startDate` string (optional)
+
+Start of the analytics range. Defaults to 7 days ago. See [Date Formats](https://cursor.com/docs/account/teams/analytics-api.md#date-formats).
+
+`endDate` string (optional)
+
+End of the analytics range. Defaults to now. See [Date Formats](https://cursor.com/docs/account/teams/analytics-api.md#date-formats).
+
+`repo` string (optional)
+
+Repository filter in `host/owner/repo` form. Protocol and `.git` suffix are optional.
+
+`prNumber` number (optional)
+
+Pull request or merge request number.
+
+`page` number (optional)
+
+Page number for pagination. Default: `1`.
+
+`pageSize` number (optional)
+
+Number of reviews per page. Default: `100`, max: `250`.
+
+```bash
+curl --get https://api.cursor.com/analytics/team/bugbot-reviews \
+  -u YOUR_API_KEY: \
+  --data-urlencode 'startDate=2026-06-01' \
+  --data-urlencode 'endDate=2026-06-29' \
+  --data-urlencode 'repo=github.com/your-org/your-repo' \
+  --data-urlencode 'prNumber=42' \
+  --data-urlencode 'page=1' \
+  --data-urlencode 'pageSize=100'
+```
+
+**Response:**
+
+```json
+{
+  "data": [
+    {
+      "request_id": "6e0d261c-86a2-4383-89f0-9162c1c10662",
+      "timestamp": "2026-06-29T19:42:18.000Z",
+      "repo": "github.com/your-org/your-repo",
+      "repo_node_id": "R_kgDOABCDEF",
+      "pr_number": 42,
+      "commit_sha": "9f3c2a1b7d8e4f5061728394a5b6c7d8e9f0a1b2",
+      "bugs_found": 2,
+      "cost_cents": 42.5,
+      "bugs": [
+        {
+          "comment_id": "2147483999",
+          "resolution_status": "resolved",
+          "severity": "high"
+        },
+        {
+          "comment_id": "2147484000",
+          "resolution_status": "unresolved",
+          "severity": "medium"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "pageSize": 100,
+    "totalItems": 1,
+    "totalPages": 1,
+    "hasNextPage": false,
+    "hasPreviousPage": false
+  },
+  "params": {
+    "metric": "bugbot-reviews",
+    "teamId": 12345,
+    "startDate": "2026-06-01",
+    "endDate": "2026-06-29",
+    "repo": "github.com/your-org/your-repo",
+    "prNumber": 42,
+    "page": 1,
+    "pageSize": 100
+  }
+}
+```
+
+`repo_node_id`, `pr_number`, `commit_sha`, `cost_cents`, `bugs[].comment_id`, `bugs[].resolution_status`, and `bugs[].severity` may be `null` when unavailable. `cost_cents` is `null` when the review is not billed separately.
+
+### Trigger and retrieve a review
+
+1. Call `POST /bugbot/review` with the pull request URL.
+2. Save the returned `request_id`.
+3. Poll `GET /analytics/team/bugbot-reviews`, filtering by `repo` and `prNumber`.
+4. Find the item whose `request_id` matches the trigger response.
+
+Analytics may take a short time to become available after a review is queued.
 
 ## Incremental reviews
 
@@ -217,7 +372,7 @@ Use the `/review-bugbot` or `/review` skills to run Bugbot from your agent befor
 
 ### Sync with your pull request
 
-`/review-bugbot` reviews stay in sync with Bugbot on your connected SCM (GitHub or GitLab).
+`/review-bugbot` reviews stay in sync with Bugbot on your connected SCM (GitHub, GitLab, or Bitbucket).
 
 Under the hood, `/review-bugbot` stores the [patch ID](https://git-scm.com/docs/git-patch-id) of the reviewed diff. When Bugbot on your SCM sees a diff with the same patch ID, it skips the review and leaves a comment noting it already reviewed that diff.
 
@@ -302,8 +457,8 @@ Authorization: Bearer $API_KEY
 
 To create an API key:
 
-1. Visit the [Settings tab in the Cursor dashboard](https://cursor.com/dashboard/settings)
-2. Under **Advanced**, click **New Admin API Key**
+1. Visit [API Keys in the Cursor dashboard](https://cursor.com/dashboard/api)
+2. Click **New API Key**
 3. Save the API key
 
 All endpoints are rate-limited to 60 requests per minute per team.
@@ -318,7 +473,8 @@ curl -X POST https://api.cursor.com/bugbot/repo/update \
   -H "Content-Type: application/json" \
   -d '{
     "repoUrl": "https://github.com/your-org/your-repo",
-    "enabled": true
+    "enabled": true,
+    "manualTriggerOnly": false
   }'
 ```
 
@@ -326,6 +482,7 @@ curl -X POST https://api.cursor.com/bugbot/repo/update \
 
 - `repoUrl` (string, required): The full URL of the repository
 - `enabled` (boolean, required): `true` to enable Bugbot, `false` to disable it
+- `manualTriggerOnly` (boolean, optional): When `true`, Bugbot won't run automatically on PR updates for this repository. Manual triggers, such as commenting `cursor review` or `bugbot run`, still work.
 
 The dashboard UI may take a moment to reflect changes made through the API due to caching. The API response shows the current state in the database.
 
@@ -342,7 +499,7 @@ The response includes each repository's enabled status, manual-only setting, and
 
 ### Managing user access
 
-Use the `/bugbot/user/update` endpoint to control which GitHub or GitLab users can use your team's Bugbot licenses. Enterprises use this to integrate Bugbot provisioning with internal access-request tools.
+Use the `/bugbot/user/update` endpoint to control which GitHub, GitLab, or Bitbucket users can use your team's Bugbot licenses. Enterprises use this to integrate Bugbot provisioning with internal access-request tools.
 
 #### Prerequisites
 
@@ -367,7 +524,7 @@ curl -X POST https://api.cursor.com/bugbot/user/update \
 
 **Parameters:**
 
-- `username` (string, required): The GitHub or GitLab username (case-insensitive)
+- `username` (string, required): The GitHub, GitLab, or Bitbucket username (case-insensitive)
 - `allow` (boolean, required): Whether to grant or revoke access
 
 How `allow` behaves depends on the active mode:
@@ -388,7 +545,7 @@ How `allow` behaves depends on the active mode:
 }
 ```
 
-The allowlist is stored at the team level and applies across all GitHub and GitLab installations owned by that team. Usernames are normalized to lowercase.
+The allowlist is stored at the team level and applies across all GitHub, GitLab, and Bitbucket installations owned by that team. Usernames are normalized to lowercase.
 
 #### Example: provisioning users through an internal tool
 
@@ -400,7 +557,7 @@ Connect this API to an internal access-request portal. When an employee requests
 curl -X POST https://api.cursor.com/bugbot/user/update \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"username": "employee-github-name", "allow": true}'
+  -d '{"username": "employee-scm-username", "allow": true}'
 ```
 
 **Revoke access:**
@@ -409,7 +566,7 @@ curl -X POST https://api.cursor.com/bugbot/user/update \
 curl -X POST https://api.cursor.com/bugbot/user/update \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"username": "employee-github-name", "allow": false}'
+  -d '{"username": "employee-scm-username", "allow": false}'
 ```
 
 ## Pricing
@@ -459,15 +616,15 @@ If Bugbot isn't working:
 
 1. **Enable verbose mode** by commenting `cursor review verbose=true` or `bugbot run verbose=true` for detailed logs and request ID
 2. **Check permissions** to verify Bugbot has repository access
-3. **Verify installation** to confirm the GitHub app is installed and enabled
+3. **Verify installation** to confirm your repository provider integration is installed and enabled
 
 Include the request ID from verbose mode when reporting issues.
 
 ## FAQ
 
-### Does Bugbot read GitHub PR comments?
+### Does Bugbot read PR comments?
 
-Yes. Bugbot reads both top‑level and inline GitHub pull request comments and includes them as context during reviews. This helps avoid duplicate suggestions and allows Bugbot to build on prior feedback from reviewers.
+Yes. Bugbot reads both top-level and inline pull request comments from connected providers and includes them as context during reviews. This helps avoid duplicate suggestions and allows Bugbot to build on prior feedback from reviewers.
 
 ### Is Bugbot privacy-mode compliant?
 
@@ -477,12 +634,13 @@ Yes, Bugbot follows the same privacy compliance as Cursor and processes data ide
 
 When you use all included Bugbot usage, additional Bugbot reviews bill from on-demand spend.
 
-### How do I give Bugbot access to my GitLab or GitHub Enterprise Server instance?
+### How do I give Bugbot access to a self-hosted source control instance?
 
 See the setup and networking guides on the respective integration pages:
 
 - [GitHub Enterprise Server](https://cursor.com/docs/integrations/github.md#setup)
 - [GitLab Self-Hosted](https://cursor.com/docs/integrations/gitlab.md#setup)
+- [Bitbucket Data Center](https://cursor.com/docs/integrations/bitbucket.md#setup)
 
 
 ---

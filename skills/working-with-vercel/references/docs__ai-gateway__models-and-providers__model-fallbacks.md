@@ -9,12 +9,13 @@ prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
   - /docs/ai-gateway/models-and-providers/provider-options
 summary: Configure model-level failover to try backup models when the primary model is unavailable
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "be463dca9e341a28f193a31c20fc3612201326680ebe99738118eba601afccc7"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "36a2747189bde2940c823b7abfc4cb9520ec2d256c71df29ef6909834f9e5ad4"
 ---
 
 # Model Fallbacks
@@ -23,20 +24,22 @@ You can configure model failover to specify backups that are tried in order if t
 
 ## Using the `models` option
 
-Use the `models` array in `providerOptions.gateway` to specify fallback models:
+Add a `models` array to `providerOptions.gateway` to list fallback models. The same option works across every AI Gateway API format. Select your API below:
 
-```typescript filename="app/api/chat/route.ts" {7,11}
+#### AI SDK
+
+```typescript filename="app/api/chat/route.ts" {11}
 import { streamText } from 'ai';
 
 export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5', // Primary model
+    model: 'anthropic/claude-fable-5', // Primary model
     prompt,
     providerOptions: {
       gateway: {
-        models: ['anthropic/claude-opus-4.7', 'google/gemini-3.1-pro-preview'], // Fallback models
+        models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
       },
     },
   });
@@ -45,12 +48,120 @@ export async function POST(request: Request) {
 }
 ```
 
-In this example:
+#### Chat Completions
 
-- The gateway first attempts the primary model (`openai/gpt-5.5`)
-- If that fails, it tries `anthropic/claude-opus-4.7`
+```typescript filename="chat-completions.ts" {14}
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const completion = await openai.chat.completions.create({
+  model: 'anthropic/claude-fable-5', // Primary model
+  messages: [{ role: 'user', content: 'Write a haiku about TypeScript.' }],
+  // @ts-expect-error - providerOptions is a gateway extension
+  providerOptions: {
+    gateway: {
+      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+    },
+  },
+});
+
+console.log('Model used:', completion.model);
+```
+
+#### Messages API
+
+```typescript filename="messages.ts" {15}
+import Anthropic from '@anthropic-ai/sdk';
+
+const anthropic = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const message = await anthropic.messages.create({
+  model: 'anthropic/claude-fable-5', // Primary model
+  max_tokens: 1024,
+  messages: [{ role: 'user', content: 'Write a haiku about TypeScript.' }],
+  // @ts-expect-error - providerOptions is a gateway extension
+  providerOptions: {
+    gateway: {
+      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+    },
+  },
+});
+
+console.log('Model used:', message.model);
+```
+
+#### OpenAI Responses
+
+```typescript filename="responses.ts" {14}
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const response = await client.responses.create({
+  model: 'anthropic/claude-fable-5', // Primary model
+  input: 'Write a haiku about TypeScript.',
+  // @ts-expect-error - providerOptions is a gateway extension
+  providerOptions: {
+    gateway: {
+      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+    },
+  },
+});
+
+console.log('Model used:', response.model);
+```
+
+#### OpenResponses
+
+```typescript filename="openresponses.ts" {18}
+const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
+  },
+  body: JSON.stringify({
+    model: 'anthropic/claude-fable-5', // Primary model
+    input: [
+      {
+        type: 'message',
+        role: 'user',
+        content: 'Write a haiku about TypeScript.',
+      },
+    ],
+    providerOptions: {
+      gateway: {
+        models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+      },
+    },
+  }),
+});
+```
+
+In each example:
+
+- The gateway first attempts the primary model (`anthropic/claude-fable-5`)
+- If that fails, it tries `anthropic/claude-opus-4.8`
 - If that also fails, it tries `google/gemini-3.1-pro-preview`
 - The response comes from the first model that succeeds
+
+> **💡 Note:** Because the `providerOptions.gateway` fields aren't part of the OpenAI or
+> Anthropic SDK types, TypeScript needs a `// @ts-expect-error` comment above the
+> option. In Python, pass the same object through the SDK's `extra_body`
+> parameter. The Chat Completions API also accepts a top-level `models` shorthand.
+> See [Chat Completions advanced
+> configuration](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced#model-fallbacks)
+> for Python examples and both approaches.
 
 ## Combining with provider routing
 
@@ -67,7 +178,7 @@ export async function POST(request: Request) {
     prompt,
     providerOptions: {
       gateway: {
-        models: ['openai/gpt-5.4-nano', 'anthropic/claude-opus-4.7'],
+        models: ['openai/gpt-5.4-nano', 'anthropic/claude-opus-4.8'],
         order: ['azure', 'openai'], // Provider preference for each model
       },
     },
@@ -81,7 +192,9 @@ This configuration:
 
 1. Tries `openai/gpt-5.5` via Azure, then OpenAI
 2. If both fail, tries `openai/gpt-5.4-nano` via Azure first, then OpenAI
-3. If those fail, it tries `anthropic/claude-opus-4.7` via available providers
+3. If those fail, it tries `anthropic/claude-opus-4.8` via available providers
+
+The `models` and `order` fields both live under `providerOptions.gateway`, so you can combine them the same way in the Chat Completions, Messages, OpenAI Responses, and OpenResponses APIs. For all available routing fields, see [Provider Options](/docs/ai-gateway/models-and-providers/provider-options).
 
 ## How failover works
 
@@ -127,15 +240,15 @@ When model fallbacks occur, the `modelAttempts` array in the provider metadata s
     ]
   },
   {
-    "modelId": "anthropic:claude-opus-4-7",
-    "canonicalSlug": "anthropic/claude-opus-4.7",
+    "modelId": "anthropic:claude-opus-4-8",
+    "canonicalSlug": "anthropic/claude-opus-4.8",
     "success": true,
     "providerAttemptCount": 1,
     "providerAttempts": [
       {
         "attemptNumber": 1,
         "provider": "anthropic",
-        "modelId": "anthropic:claude-opus-4-7",
+        "modelId": "anthropic:claude-opus-4-8",
         "success": true,
         "credentialType": "system",
         "statusCode": 200,

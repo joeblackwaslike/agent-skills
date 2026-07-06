@@ -16,8 +16,8 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "8c1f0ff5cc5ffc9b5eece730c1e7c7e33dc9c76c53676fd0aa5ee4b21585da62"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "76216394a3e0ad56a2e0c68de576a7ffb3a72ed11e8db135a4870ed89ba55d52"
 ---
 
 # Routing Rules
@@ -49,10 +49,10 @@ vercel ai-gateway rules list --scope your-team
 Create a rewrite rule with a source model (`--source`) and a destination model (`--destination`):
 
 ```bash filename="terminal"
-vercel ai-gateway rules add --type rewrite --source anthropic/claude-opus-4.7 --destination anthropic/claude-haiku-4.5
+vercel ai-gateway rules add --type rewrite --source anthropic/claude-opus-4.8 --destination anthropic/claude-haiku-4.5
 ```
 
-Once the rule is active, AI Gateway serves any request for `anthropic/claude-opus-4.7` with `anthropic/claude-haiku-4.5`. Your application keeps requesting the source model and AI Gateway substitutes the destination.
+Once the rule is active, AI Gateway serves any request for `anthropic/claude-opus-4.8` with `anthropic/claude-haiku-4.5`. Your application keeps requesting the source model and AI Gateway substitutes the destination.
 
 ## Deny a model
 

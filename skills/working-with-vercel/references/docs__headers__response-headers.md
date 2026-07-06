@@ -16,8 +16,8 @@ related:
 summary: Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/response-headers.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c36f2478e0166ce1e3c5fba7a31d90f6b896fb960ed3dc4cabac050a540f6e47"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "76d939e0aa1db793411e2b62726b07e982ebaad4706d0b9adf1593bd7081b01c"
 ---
 
 # Response headers
@@ -64,7 +64,7 @@ We add this header automatically with a value of `noindex` to **prevent** search
 You can prevent this header from being added to your Preview Deployment by:
 
 - [Assigning a production domain](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) to it
-- Disabling it manually [using vercel.json](/docs/project-configuration#headers)
+- Disabling it manually [using vercel.json](/docs/project-configuration/vercel-json#headers)
 
 ## `x-vercel-cache`
 

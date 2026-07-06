@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/comments"
-fetched_at: "2026-06-29T05:44:37.185Z"
-sha256: "4a4da70adea4bf9c6d96774200636cc153cce776e1d5dc2a9480f5f6ad5e9ea2"
+fetched_at: "2026-07-06T05:37:45.074Z"
+sha256: "b73ff127c831c55cf12595d0b82221781cbfaa6282a29d25456c735079f20123"
 ---
 
 # REST API endpoints for issue comments
@@ -133,29 +133,7 @@ Array of `Issue Comment`:
     * `node_id`: required, string
     * `client_id`: string
     * `owner`: required, one of:
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
       * **Enterprise**
         * `description`: string or null
         * `html_url`: required, string, format: uri
@@ -198,29 +176,7 @@ Array of `Issue Comment`:
     * `pinned_at`: required, string, format: date-time
     * `pinned_by`: required, any of:
       * **null**
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
 * `minimized`: any of:
   * **null**
   * **Minimized Issue Comment**
@@ -322,29 +278,7 @@ curl -L \
     * `node_id`: required, string
     * `client_id`: string
     * `owner`: required, one of:
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
       * **Enterprise**
         * `description`: string or null
         * `html_url`: required, string, format: uri
@@ -387,29 +321,7 @@ curl -L \
     * `pinned_at`: required, string, format: date-time
     * `pinned_by`: required, any of:
       * **null**
-      * **Simple User**
-        * `name`: string or null
-        * `email`: string or null
-        * `login`: required, string
-        * `id`: required, integer, format: int64
-        * `node_id`: required, string
-        * `avatar_url`: required, string, format: uri
-        * `gravatar_id`: required, string or null
-        * `url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `followers_url`: required, string, format: uri
-        * `following_url`: required, string
-        * `gists_url`: required, string
-        * `starred_url`: required, string
-        * `subscriptions_url`: required, string, format: uri
-        * `organizations_url`: required, string, format: uri
-        * `repos_url`: required, string, format: uri
-        * `events_url`: required, string
-        * `received_events_url`: required, string, format: uri
-        * `type`: required, string
-        * `site_admin`: required, boolean
-        * `starred_at`: string
-        * `user_view_type`: string
+      * **Simple User** (see above)
 * `minimized`: any of:
   * **null**
   * **Minimized Issue Comment**

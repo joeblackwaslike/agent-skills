@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e032c1e57a5f2fb5dfeac52f995ab0f1c3ec18dc6f7854abdcc828aadd1b40b1"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "b216159fa2eb22f960a55f902c11e45d6a0ac242e925c212dccb1d83d4d5a547"
 ---
 
 # Queues concepts
@@ -266,6 +266,45 @@ Vercel Queues delivers messages in **approximate write order**. Messages are gen
 - **No FIFO guarantee.** Even with a single consumer and max concurrency set to 1, message order is not strictly first-in-first-out.
 
 If your workload requires strict ordering, design your consumers to handle messages in any order, or include sequence numbers in your message payloads to reorder on the consumer side.
+
+## Queues with services
+
+Queue consumers work the same inside a [service](/docs/services). You add a `queue/v2beta` trigger to a function to make it a consumer, and several services can consume the same topic at once:
+
+```json filename="vercel.json"
+{
+  "services": {
+    "orders": {
+      "root": "orders",
+      "functions": {
+        "app/api/queues/fulfill-order/route.ts": {
+          "experimentalTriggers": [{ "type": "queue/v2beta", "topic": "orders" }]
+        }
+      }
+    },
+    "analytics": {
+      "root": "analytics",
+      "functions": {
+        "app/api/queues/track-order/route.ts": {
+          "experimentalTriggers": [{ "type": "queue/v2beta", "topic": "orders" }]
+        }
+      }
+    }
+  }
+}
+```
+
+### Topics are project-scoped
+
+Topics belong to the project and deployment, not to an individual service. Every service in the deployment publishes to and consumes from the same set of topics.
+
+### Consumers stay private
+
+A queue consumer is never reachable from the internet, the same as in a single-application project. Adding a top-level rewrite to expose a service does not expose its consumers, because the rewrite only routes public traffic while consumers are invoked by Vercel's internal queue infrastructure. A consumer is also unreachable over a [service binding](/docs/services/bindings): bindings let other services call the service's exposed routes, but a queue consumer can only be triggered by Vercel Queues.
+
+### Consumer groups across services
+
+In push mode, triggers in different services have independent [consumer groups](#topics-and-consumer-groups), so each consumer in a service receives its own copy of every message. In [poll mode](/docs/queues/poll-mode#poll-mode-in-services), you need to manage consumer groups manually to avoid collisions across services.
 
 
 ---

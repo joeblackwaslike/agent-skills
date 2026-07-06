@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/zdharma-continuum/zinit/main/README.md"
-fetched_at: "2026-06-16T01:06:56.418Z"
-sha256: "9dc94cfea02fd5c25af380ab4cb216cf1244c5182e56fa3a42ebbecb64fa88be"
+fetched_at: "2026-07-06T05:53:11.910Z"
+sha256: "94c6641a6cce15f23baf04518c3b0e0e9683380cafe0e3c8f0c4fc3a723cf355"
 ---
 
 <p align="center">
@@ -1155,6 +1155,22 @@ declare -A ZINIT  # initial Zinit's hash definition, if configuring before loadi
 
 There is also `$ZPFX`, set by default to `~/.local/share/zinit/polaris` – a directory where software with `Makefile`,
 etc. can be pointed to, by e.g. `atclone'./configure --prefix=$ZPFX'`.
+
+#### Configuring via `zstyle`
+
+As an alternative to pre-setting the `$ZINIT` hash, the same settings can be configured with `zstyle` under the
+`:zinit:config` context. The attribute name is the hash field lowercased with `_` replaced by `-` (e.g.
+`ZINIT[HOME_DIR]` ⇄ `zstyle ':zinit:config' home-dir`). This works for every field in the table above, as well as
+`services-dir`, `module-dir`, `polaris-dir` and `zpfx`.
+
+Precedence is: an explicitly-set `ZINIT[KEY]` wins over a `zstyle`, which in turn wins over the built-in default. So the
+`zstyle` only fills fields you did not set in the hash, keeping the setup fully backward-compatible.
+
+```zsh
+zstyle ':zinit:config' home-dir      ~/.zinit
+zstyle ':zinit:config' bin-dir       ~/.zinit/zinit.git
+zstyle ':zinit:config' mute-warnings 1
+```
 
 ### Non-GitHub (Local) Plugins<a name="non-github-local-plugins"></a>
 

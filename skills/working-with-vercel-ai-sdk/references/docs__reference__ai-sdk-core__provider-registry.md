@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "2303c648b2cf91b2f9886374dd4877ba2dbcde1f4beea0615623b30aa4370335"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "b8a85d05f22e5240409cdac53dfae0118ba4a78cfa219e23f7496e7270a85d67"
 ---
 
 # `createProviderRegistry()`
@@ -309,6 +309,7 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

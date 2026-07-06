@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-adapters.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1d171a7485dc987cf66e563c5b842ff654daa6f24282d861ac16d01e5f345d38"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "2126f2f5e9e7d71277ba42f73ecd84b9da53fecfb3466b82bd85fdcbeb8df895"
 ---
 
 # Harness Adapters
@@ -29,13 +29,13 @@ The AI SDK includes the following harness adapters:
 
 ## Adapter Capabilities
 
-| Adapter                                                | Runtime location | Custom tools        | Custom skills       | Built-in tool approval |
-| ------------------------------------------------------ | ---------------- | ------------------- | ------------------- | ---------------------- |
-| [Claude Code](/providers/ai-sdk-harnesses/claude-code) | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    |
-| [Codex](/providers/ai-sdk-harnesses/codex)             | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Cross size={18} />    |
-| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)  | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    |
-| [OpenCode](/providers/ai-sdk-harnesses/opencode)       | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    |
-| [Pi](/providers/ai-sdk-harnesses/pi)                   | Host process     | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    |
+| Adapter                                                | Runtime location | Custom tools        | Custom skills       | Built-in tool approval | Built-in tool filtering                |
+| ------------------------------------------------------ | ---------------- | ------------------- | ------------------- | ---------------------- | -------------------------------------- |
+| [Claude Code](/providers/ai-sdk-harnesses/claude-code) | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    | <Check size={18} />                    |
+| [Codex](/providers/ai-sdk-harnesses/codex)             | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Cross size={18} />    | <Cross size={18} />                    |
+| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)  | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    | <Check size={18} /> via auto-rejection |
+| [OpenCode](/providers/ai-sdk-harnesses/opencode)       | Sandbox bridge   | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    | <Check size={18} /> via auto-rejection |
+| [Pi](/providers/ai-sdk-harnesses/pi)                   | Host process     | <Check size={18} /> | <Check size={18} /> | <Check size={18} />    | <Check size={18} />                    |
 
 
 ## Navigation

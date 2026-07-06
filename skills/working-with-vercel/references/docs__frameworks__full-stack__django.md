@@ -10,15 +10,15 @@ prerequisites:
   - /docs/frameworks
 related:
   - /docs/cli/init
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/cli/deploy
   - /docs/cdn
   - /docs/environment-variables
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "644f83c22f4598c400d94567cc60c8ce71c6468b71f89d9e99e305c871b28386"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "752fc8a72eb29bd80e04ef180410da8030275b9693f801d6d452defe57c1ed3c"
 ---
 
 # Deploy a Django app on Vercel
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     main()
 ```
 
-A [Build Command](/docs/project-configuration#buildcommand) defined in `vercel.json` or in the Project Settings dashboard takes precedence over a build script in `pyproject.toml`.
+A [Build Command](/docs/project-configuration/vercel-json#buildcommand) defined in `vercel.json` or in the Project Settings dashboard takes precedence over a build script in `pyproject.toml`.
 
 > **💡 Note:** There is no need to call `collectstatic` in a build script. Vercel runs it
 > automatically. See [Serving static assets](#serving-static-assets) for more
@@ -224,6 +224,28 @@ environ.Env.read_env(".env.local")
 When you deploy a Django app to Vercel, it becomes a single [Vercel
 Function](/docs/functions). Vercel uses [Fluid
 compute](/docs/fluid-compute) by default, so the function scales with traffic.
+
+To configure that function, add an entry to the [`functions`
+object](/docs/project-configuration/vercel-json#functions) in `vercel.json` keyed by your
+resolved entrypoint file. For example, to let a WSGI app defined in
+`myproject/wsgi.py` run for up to 60 seconds, set `maxDuration`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "myproject/wsgi.py": {
+      "maxDuration": 60
+    }
+  }
+}
+```
+
+For an ASGI app, key the entry on `myproject/asgi.py` instead. If your
+`manage.py` lives in a subdirectory, prefix the key with that directory (for
+example `backend/myproject/wsgi.py`). For more options, see [Configuring
+functions](/docs/functions/configuring-functions) and the [`functions`
+property](/docs/project-configuration/vercel-json#functions).
 
 ## Limitations
 

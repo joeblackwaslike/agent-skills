@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/signoz.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c588ebc7f7078e007a177b699b253b9d9aff591e3487332b3642f7d8b4482dec"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "7db156285d399ba307f285c3dfc7410f6332f36bd42440f6fd1aba01f4f8fa08"
 ---
 
 # SigNoz Observability
@@ -165,6 +165,7 @@ Finally, you should be able to view this data in Signoz Cloud under the traces t
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

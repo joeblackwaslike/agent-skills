@@ -10,12 +10,12 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/persistent-sandboxes
-  - /docs/sandbox/system-specifications
+  - /docs/sandbox/concepts/runtimes
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "186dbf1c1c8e88f8a912b23c7da42cb71272c64b33aaee4c742a2fc4830d235a"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "306b7077a34bbd6f182331142379f049e4f93a1a590f0a484d5d0a4af7de496e"
 ---
 
 # Sandbox firewall
@@ -132,7 +132,7 @@ Matcher supports exact, prefix, or regex matching:
 
 In order to apply transformation and forwarding rules within requests, the firewall needs to terminate TLS connections. Only connections targeting domains with defined transformation rules are terminated in the proxy.
 
-A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/system-specifications#proxy-ca-certificates).
+A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/concepts/runtimes#proxy-ca-certificates).
 
 ## Sandbox creation
 

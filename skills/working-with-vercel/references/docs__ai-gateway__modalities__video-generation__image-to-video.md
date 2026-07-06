@@ -14,8 +14,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "c71103e921764812566c33a50147b50472f2e525bc510ffcf9ac13f12edf6720"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "37e3df53dbfb247c52a0fbc29dab8f534a7600c920146b46cb648e8187b0f545"
 ---
 
 # Image-to-Video Generation
@@ -28,14 +28,7 @@ This is different from [reference-to-video](/docs/ai-gateway/modalities/video-ge
 
 Google's Veo models support image-to-video generation, animating a starting image into a video.
 
-### Veo models
-
-| Model                              | Description                      |
-| ---------------------------------- | -------------------------------- |
-| `google/veo-3.1-generate-001`      | Latest model with audio          |
-| `google/veo-3.1-fast-generate-001` | Fast generation                  |
-| `google/veo-3.0-generate-001`      | Previous generation, 1080p max   |
-| `google/veo-3.0-fast-generate-001` | Faster generation, lower quality |
+[Browse the latest Veo video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
 
 ### Veo parameters
 
@@ -45,7 +38,7 @@ Google's Veo models support image-to-video generation, animating a starting imag
 | `prompt.text`                             | `string`                                           | No       | Description of the motion or animation                               |
 | `duration`                                | `4` | `6` | `8`                                  | No       | Video length in seconds. Defaults to 8                               |
 | `resolution`                              | `string`                                           | No       | Resolution (`'720p'`, `'1080p'`). Defaults to `'720p'`               |
-| `providerOptions.vertex.generateAudio`    | `boolean`                                          | No       | Generate audio alongside the video                                   |
+| `generateAudio`                           | `boolean`                                          | No       | Generate audio alongside the video                                   |
 | `providerOptions.vertex.resizeMode`       | `'pad'` | `'crop'`                                | No       | How to resize the image to fit video dimensions. Defaults to `'pad'` |
 | `providerOptions.vertex.enhancePrompt`    | `boolean`                                          | No       | Use Gemini to enhance prompts. Defaults to `true`                    |
 | `providerOptions.vertex.negativePrompt`   | `string`                                           | No       | What to discourage in the generated video                            |
@@ -66,10 +59,10 @@ const result = await generateVideo({
     text: 'Camera slowly pans across the scene as clouds drift by',
   },
   resolution: '1080p',
+  generateAudio: true,
   providerOptions: {
     vertex: {
       resizeMode: 'crop',
-      generateAudio: true,
     },
   },
 });
@@ -83,13 +76,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 KlingAI's image-to-video models animate images with standard or professional quality modes.
 
-### KlingAI models
-
-| Model                          | Description                                            |
-| ------------------------------ | ------------------------------------------------------ |
-| `klingai/kling-v3.0-i2v`       | Multi-shot generation, 15s clips, enhanced consistency |
-| `klingai/kling-v2.6-i2v`       | Audio-visual co-generation, cinematic motion           |
-| `klingai/kling-v2.5-turbo-i2v` | Faster generation, lower cost                          |
+[Browse the latest KlingAI video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
 ### KlingAI parameters
 
@@ -101,8 +88,8 @@ KlingAI's image-to-video models animate images with standard or professional qua
 | `providerOptions.klingai.mode`           | `'std'` | `'pro'` | No       | `'std'` for standard quality. `'pro'` for professional quality. Defaults to `'std'`.                                                                 |
 | `providerOptions.klingai.negativePrompt` | `string`           | No       | What to avoid in the video. Max 2500 characters.                                                                                                     |
 | `providerOptions.klingai.cfgScale`       | `number`           | No       | Prompt adherence (0-1). Higher = stricter. Defaults to `0.5`. Not supported on v2.x.                                                                 |
-| `providerOptions.klingai.sound`          | `'on'` | `'off'`  | No       | Generate audio. Defaults to `'off'`. Requires v2.6+.                                                                                                 |
-| `providerOptions.klingai.voiceList`      | `array`            | No       | Voice IDs for speech. Max 2 voices. Requires v3.0+ with `sound: 'on'`. Cannot coexist with `elementList`. See [voice generation](#voice-generation). |
+| `generateAudio`                          | `boolean`          | No       | Generate audio. Defaults to `false`. Requires v2.6+.                                                                                                 |
+| `providerOptions.klingai.voiceList`      | `array`            | No       | Voice IDs for speech. Max 2 voices. Requires v3.0+ with `generateAudio: true`. Cannot coexist with `elementList`. See [voice generation](#voice-generation). |
 | `providerOptions.klingai.multiShot`      | `boolean`          | No       | Enable multi-shot generation. Requires v3.0+. See [multi-shot](#multi-shot).                                                                         |
 | `providerOptions.klingai.elementList`    | `array`            | No       | Reference elements for element control. Up to 3 elements. Requires v3.0+. Cannot coexist with `voiceList`.                                           |
 | `providerOptions.klingai.watermarkInfo`  | `object`           | No       | Set `{ enabled: true }` to generate watermarked result.                                                                                              |
@@ -192,7 +179,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ### KlingAI voice generation
 
-Add speech to your video using voice IDs. Requires v2.6+ models with `sound: 'on'`.
+Add speech to your video using voice IDs. Requires v2.6+ models with `generateAudio: true`.
 
 Reference voices in your prompt using `<<<voice_1>>>` syntax, where the number matches the order in `voiceList`:
 
@@ -206,10 +193,10 @@ const result = await generateVideo({
     image: 'https://example.com/person.png',
     text: 'The person<<<voice_1>>> says: "Hello, welcome to my channel"',
   },
+  generateAudio: true,
   providerOptions: {
     klingai: {
       mode: 'std',
-      sound: 'on',
       voiceList: [{ voiceId: 'your_voice_id' }],
     },
   },
@@ -356,6 +343,7 @@ const result = await generateVideo({
   },
   aspectRatio: '16:9',
   duration: 10,
+  generateAudio: true,
   providerOptions: {
     klingai: {
       mode: 'pro',
@@ -378,7 +366,6 @@ const result = await generateVideo({
           duration: '3',
         },
       ],
-      sound: 'on',
     },
   },
 });
@@ -392,12 +379,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 Wan offers image-to-video with standard and flash variants. Both support audio generation. Wan requires image URLs (not buffers). Use [Vercel Blob](/docs/vercel-blob) to host local images.
 
-### Wan models
-
-| Model                        | Description               |
-| ---------------------------- | ------------------------- |
-| `alibaba/wan-v2.6-i2v`       | Standard model with audio |
-| `alibaba/wan-v2.6-i2v-flash` | Fast generation           |
+[Browse the latest Wan video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
 ### Wan parameters
 
@@ -407,7 +389,7 @@ Wan offers image-to-video with standard and flash variants. Both support audio g
 | `prompt.text`                            | `string`  | Yes      | Description of the motion or animation                                             |
 | `resolution`                             | `string`  | No       | `'1280x720'` or `'1920x1080'`                                                      |
 | `duration`                               | `number`  | No       | 2-15 seconds                                                                       |
-| `providerOptions.alibaba.audio`          | `boolean` | No       | Generate audio. Standard models default to `true`, flash models default to `false` |
+| `generateAudio`                          | `boolean` | No       | Generate audio. Standard models default to `true`, flash models default to `false` |
 | `providerOptions.alibaba.negativePrompt` | `string`  | No       | What to avoid in the video. Max 500 characters                                     |
 | `providerOptions.alibaba.audioUrl`       | `string`  | No       | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB)                  |
 | `providerOptions.alibaba.watermark`      | `boolean` | No       | Add watermark to the video. Defaults to `false`                                    |
@@ -427,11 +409,7 @@ const result = await generateVideo({
     text: 'The cat waves hello and smiles',
   },
   duration: 5,
-  providerOptions: {
-    alibaba: {
-      audio: true,
-    },
-  },
+  generateAudio: true,
 });
 
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
@@ -443,11 +421,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 Grok Imagine Video (by xAI) can animate images into videos. The output defaults to the input image's aspect ratio. If you specify `aspectRatio`, it will override this and stretch the image to the desired ratio.
 
-### Grok models
-
-| Model                    | Duration | Resolution |
-| ------------------------ | -------- | ---------- |
-| `xai/grok-imagine-video` | 1-15s    | 480p, 720p |
+[Browse the latest Grok video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
 
 ### Grok parameters
 
@@ -490,14 +464,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ByteDance's Seedance models animate images into videos with support for first-and-last-frame control, multi-reference images, and optional audio generation. All models output MP4 at 24fps. Seedance requires image URLs (not buffers). Use [Vercel Blob](/docs/vercel-blob) to host local images.
 
-### Seedance models
-
-| Model                              | Description                                                                        |
-| ---------------------------------- | ---------------------------------------------------------------------------------- |
-| `bytedance/seedance-v1.5-pro`      | Latest model with audio sync. First frame and first+last frame. 4-12s, up to 1080p |
-| `bytedance/seedance-v1.0-pro`      | First frame and first+last frame. 2-12s, up to 1080p                               |
-| `bytedance/seedance-v1.0-pro-fast` | First frame only. Optimized for speed. 2-12s                                       |
-| `bytedance/seedance-v1.0-lite-i2v` | First frame, first+last frame, multi-reference (1-4 images). 2-12s, up to 720p     |
+[Browse the latest Seedance video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
 
 ### Seedance parameters
 
@@ -510,7 +477,7 @@ ByteDance's Seedance models animate images into videos with support for first-an
 | `duration`                                  | `number`                | No       | Video length in seconds. v1.5: 4-12s. v1.0: 2-12s                                                                                      |
 | `providerOptions.bytedance.lastFrameImage`  | `string`                | No       | URL of the last frame image. Enables first+last frame mode. See [first and last frame](#seedance-first-and-last-frame)                 |
 | `providerOptions.bytedance.referenceImages` | `string[]`              | No       | 1-4 reference image URLs. Lite I2V only. See [multi-reference images](#seedance-multi-reference-images)                                |
-| `providerOptions.bytedance.generateAudio`   | `boolean`               | No       | Generate synchronized audio. Seedance v1.5 Pro only                                                                                    |
+| `generateAudio`                             | `boolean`               | No       | Generate synchronized audio. Seedance v1.5 Pro and Seedance 2.0 series only                                                                                    |
 | `providerOptions.bytedance.watermark`       | `boolean`               | No       | Add a watermark to the video                                                                                                           |
 | `providerOptions.bytedance.cameraFixed`     | `boolean`               | No       | Fix the camera position during generation                                                                                              |
 | `providerOptions.bytedance.returnLastFrame` | `boolean`               | No       | Return the last frame of the generated video. Useful for chaining consecutive videos                                                   |
@@ -563,10 +530,10 @@ const result = await generateVideo({
     text: 'Create a 360-degree orbiting camera shot based on this photo',
   },
   duration: 5,
+  generateAudio: true,
   providerOptions: {
     bytedance: {
       lastFrameImage: 'https://example.com/last-frame.jpg',
-      generateAudio: true,
       watermark: false,
       pollTimeoutMs: 600000,
     },

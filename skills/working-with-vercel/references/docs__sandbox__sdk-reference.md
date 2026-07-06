@@ -11,13 +11,13 @@ related:
   - /docs/sandbox/python-sdk-reference
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/tags
-  - /docs/sandbox/concepts/snapshots
-  - /docs/sandbox/concepts/firewall
+  - /docs/container-registry
+  - /docs/sandbox/concepts/images
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4ae8fb50e7a607988cf68633ce5723f0dbcc4b3ca1205e6f1c1438df81244179"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "175f6a1df7f7d7ed759030ac842a5b99b42570562a3c5b73602c8e3b848256d8"
 ---
 
 # JS SDK Reference
@@ -309,25 +309,28 @@ Sandboxes are persistent by default: when the sandbox stops, the filesystem is a
 
 **Returns:** `Promise<Sandbox>`.
 
-| Parameter            | Type                       | Required | Details / Values                                                                                                                                       |
-| -------------------- | -------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name`               | `string`                   | No       | Unique sandbox name within the project. A random name is generated if omitted. Cannot be changed after creation.                                       |
-| `source`             | `git`                      | No       | Clone a Git repository.  `url`: string `username`: string `password`: string `depth`?: number `revision`?: string  |
-| `source`             | `tarball`                  | No       | Mount a tarball.  `url`: string                                                                                                            |
-| `source`             | `snapshot`                 | No       | Create from a snapshot.  `snapshotId`: string                                                                                              |
-| `resources.vcpus`    | `number`                   | No       | Number of vCPUs (2048 MB RAM per vCPU). Defaults to 2.                                                                                                 |
-| `runtime`            | `string`                   | No       | Runtime image such as `"node26"`, `"node24"`, `"node22"`, or `"python3.13"`.                                                                           |
-| `ports`              | `number[]`                 | No       | Ports to expose for `sandbox.domain()`. Up to 15.                                                                                                      |
-| `timeout`            | `number`                   | No       | Session timeout in milliseconds. Defaults to 5 minutes.                                                                                                |
-| `networkPolicy`      | `NetworkPolicy`            | No       | Firewall rules for sandbox egress traffic. Defaults to `"allow-all"`.                                                                                  |
-| `env`                | `Record<string, string>`   | No       | Default environment variables for commands run in this sandbox. Per-command `runCommand({ env })` values override these defaults.                      |
-| `mounts`             | `SandboxMounts`            | No       | Drives to attach to the sandbox, keyed by absolute mount path. Drives can be mounted as `"read-write"` (default) or `"read-only"`.                    |
-| `tags`               | `Record<string, string>`   | No       | Up to five key-value [tags](/docs/sandbox/concepts/tags).                                                                                              |
-| `persistent`         | `boolean`                  | No       | Auto-snapshot the filesystem on stop and restore on resume. Defaults to `true`.                                                                        |
-| `snapshotExpiration` | `number`                   | No       | Default snapshot TTL in milliseconds. Use `0` for no expiration.                                                                                       |
-| `keepLastSnapshots`  | `object`                   | No       | Retention policy that keeps only the N most recent snapshots. `{ count: 1-10, expiration?: number, deleteEvicted?: boolean }`. See [`keepLastSnapshots`](#keeplastsnapshots) for field details. |
-| `onResume`           | `(sandbox) => Promise<void>` | No     | Fires whenever a session resumes (including after auto-resume). Use to restart background services or rehydrate caches.                                |
-| `signal`             | `AbortSignal`              | No       | Cancel sandbox creation.                                                                                                                               |
+| Parameter            | Type                         | Required | Details                                                                                                                                                                                                                                                      |
+| -------------------- | ---------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `name`               | `string`                     | No       | Unique sandbox name within the project. A random name is generated if omitted. Cannot be changed after creation.                                                                                                                                             |
+| `source`             | `git`                        | No       | Clone a Git repository.  `url`: string  `username`: string  `password`: string  `depth`?: number  `revision`?: string                                                                                                          |
+| `source`             | `tarball`                    | No       | Mount a tarball.  `url`: string                                                                                                                                                                                                                        |
+| `source`             | `snapshot`                   | No       | Create from a snapshot.  `snapshotId`: string                                                                                                                                                                                                          |
+| `resources.vcpus`    | `number`                     | No       | Number of vCPUs (2048 MB RAM per vCPU). Defaults to 2.                                                                                                                                                                                                       |
+| `runtime`            | `string`                     | No       | Runtime image such as `"node26"`, `"node24"`, `"node22"`, or `"python3.13"`.                                                                                                                                                                                 |
+| `image`              | `string`                     | No       | VCR custom image reference for the authenticated project. Bare repository names use the `latest` tag.  Example: `"my-repository"`, `"my-repository:v1"`, `"my-repository@sha256:..."`, and `"vcr.vercel.com/my-team/my-project/my-repository:latest"`. |
+| `ports`              | `number[]`                   | No       | Ports to expose for `sandbox.domain()`. Up to 15.                                                                                                                                                                                                            |
+| `timeout`            | `number`                     | No       | Session timeout in milliseconds. Defaults to 5 minutes.                                                                                                                                                                                                      |
+| `networkPolicy`      | `NetworkPolicy`              | No       | Firewall rules for sandbox egress traffic. Defaults to `"allow-all"`.                                                                                                                                                                                        |
+| `env`                | `Record<string, string>`     | No       | Default environment variables for commands run in this sandbox. Per-command `runCommand({ env })` values override these defaults.                                                                                                                            |
+| `mounts`             | `SandboxMounts`              | No       | Drives to attach to the sandbox, keyed by absolute mount path. Drives can be mounted as `"read-write"` (default) or `"read-only"`.                                                                                                                           |
+| `tags`               | `Record<string, string>`     | No       | Up to five key-value [tags](/docs/sandbox/concepts/tags).                                                                                                                                                                                                    |
+| `persistent`         | `boolean`                    | No       | Auto-snapshot the filesystem on stop and restore on resume. Defaults to `true`.                                                                                                                                                                              |
+| `snapshotExpiration` | `number`                     | No       | Default snapshot TTL in milliseconds. Use `0` for no expiration.                                                                                                                                                                                             |
+| `keepLastSnapshots`  | `object`                     | No       | Retention policy that keeps only the N most recent snapshots. `{ count: 1-10, expiration?: number, deleteEvicted?: boolean }`. See [`keepLastSnapshots`](#keeplastsnapshots) for field details.                                                              |
+| `onResume`           | `(sandbox) => Promise<void>` | No       | Fires whenever a session resumes, including after auto-resume. Use to restart background services or rehydrate caches.                                                                                                                                       |
+| `signal`             | `AbortSignal`                | No       | Cancel sandbox creation.                                                                                                                                                                                                                                     |
+
+For VCR repository setup and push commands, see [Vercel Container Registry](/docs/container-registry). For how custom images work in Sandbox, see [Images](/docs/sandbox/concepts/images).
 
 ```ts
 const sandbox = await Sandbox.create({

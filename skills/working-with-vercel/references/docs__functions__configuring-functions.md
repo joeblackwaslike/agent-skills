@@ -9,15 +9,15 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/functions/runtimes
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/functions/configuring-functions/region
   - /docs/functions/limitations
   - /docs/functions/configuring-functions/duration
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d1f7704c2dd1e8549438e1de75a658b00c988755ee141d62b2648af1f852f542"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "9804d58b9a843ff5ca1e3cd08238f7d2766c04699689f64ae466a5c97e3e4a55"
 ---
 
 # Configuring Functions
@@ -34,7 +34,7 @@ With Vercel, you can configure the runtime of a function in any of the following
 
 - **Node.js**: When working with a TypeScript or JavaScript function, you can use the Node.js runtime by setting a config option within the function. For more information, see the [runtimes](/docs/functions/runtimes).
 - **Ruby**, **Python**, **Go**: These have similar functionality and limitations as Node.js functions. The configuration for these runtimes gets based on the file extension.
-- **Community runtimes**: You can specify any other [runtime](/docs/functions/runtimes#community-runtimes), by using the [`functions`](/docs/project-configuration#functions) property in your `vercel.json` file.
+- **Community runtimes**: You can specify any other [runtime](/docs/functions/runtimes#community-runtimes), by using the [`functions`](/docs/project-configuration/vercel-json#functions) property in your `vercel.json` file.
 
 See [choosing a runtime](/docs/functions/runtimes) for more information.
 

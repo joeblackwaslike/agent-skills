@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/checks/runs"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "1809824f23713c2012be6a14feb06bb7c59cedc3596209f6410f04228b4c4dce"
+fetched_at: "2026-07-06T05:37:45.074Z"
+sha256: "2aab32239b41d7f9fe809b0c84715c94085e3caabb276614eb27567d79147cba"
 ---
 
 # REST API endpoints for check runs
@@ -187,60 +187,7 @@ curl -L \
   * `production_environment`: boolean
   * `performed_via_github_app`: any of:
     * **null**
-    * **GitHub app**
-      * `id`: required, integer
-      * `slug`: string
-      * `node_id`: required, string
-      * `client_id`: string
-      * `owner`: required, one of:
-        * **Simple User**
-          * `name`: string or null
-          * `email`: string or null
-          * `login`: required, string
-          * `id`: required, integer, format: int64
-          * `node_id`: required, string
-          * `avatar_url`: required, string, format: uri
-          * `gravatar_id`: required, string or null
-          * `url`: required, string, format: uri
-          * `html_url`: required, string, format: uri
-          * `followers_url`: required, string, format: uri
-          * `following_url`: required, string
-          * `gists_url`: required, string
-          * `starred_url`: required, string
-          * `subscriptions_url`: required, string, format: uri
-          * `organizations_url`: required, string, format: uri
-          * `repos_url`: required, string, format: uri
-          * `events_url`: required, string
-          * `received_events_url`: required, string, format: uri
-          * `type`: required, string
-          * `site_admin`: required, boolean
-          * `starred_at`: string
-          * `user_view_type`: string
-        * **Enterprise**
-          * `description`: string or null
-          * `html_url`: required, string, format: uri
-          * `website_url`: string or null, format: uri
-          * `id`: required, integer
-          * `node_id`: required, string
-          * `name`: required, string
-          * `slug`: required, string
-          * `created_at`: required, string or null, format: date-time
-          * `updated_at`: required, string or null, format: date-time
-          * `avatar_url`: required, string, format: uri
-      * `name`: required, string
-      * `description`: required, string or null
-      * `external_url`: required, string, format: uri
-      * `html_url`: required, string, format: uri
-      * `created_at`: required, string, format: date-time
-      * `updated_at`: required, string, format: date-time
-      * `permissions`: required, object, additional properties: string:
-        * `issues`: string
-        * `checks`: string
-        * `metadata`: string
-        * `contents`: string
-        * `deployments`: string
-      * `events`: required, array of string
-      * `installations_count`: integer
+    * **GitHub app** (see above)
 
 #### Example of a completed conclusion
 
@@ -410,60 +357,7 @@ curl -L \
   * `production_environment`: boolean
   * `performed_via_github_app`: any of:
     * **null**
-    * **GitHub app**
-      * `id`: required, integer
-      * `slug`: string
-      * `node_id`: required, string
-      * `client_id`: string
-      * `owner`: required, one of:
-        * **Simple User**
-          * `name`: string or null
-          * `email`: string or null
-          * `login`: required, string
-          * `id`: required, integer, format: int64
-          * `node_id`: required, string
-          * `avatar_url`: required, string, format: uri
-          * `gravatar_id`: required, string or null
-          * `url`: required, string, format: uri
-          * `html_url`: required, string, format: uri
-          * `followers_url`: required, string, format: uri
-          * `following_url`: required, string
-          * `gists_url`: required, string
-          * `starred_url`: required, string
-          * `subscriptions_url`: required, string, format: uri
-          * `organizations_url`: required, string, format: uri
-          * `repos_url`: required, string, format: uri
-          * `events_url`: required, string
-          * `received_events_url`: required, string, format: uri
-          * `type`: required, string
-          * `site_admin`: required, boolean
-          * `starred_at`: string
-          * `user_view_type`: string
-        * **Enterprise**
-          * `description`: string or null
-          * `html_url`: required, string, format: uri
-          * `website_url`: string or null, format: uri
-          * `id`: required, integer
-          * `node_id`: required, string
-          * `name`: required, string
-          * `slug`: required, string
-          * `created_at`: required, string or null, format: date-time
-          * `updated_at`: required, string or null, format: date-time
-          * `avatar_url`: required, string, format: uri
-      * `name`: required, string
-      * `description`: required, string or null
-      * `external_url`: required, string, format: uri
-      * `html_url`: required, string, format: uri
-      * `created_at`: required, string, format: date-time
-      * `updated_at`: required, string, format: date-time
-      * `permissions`: required, object, additional properties: string:
-        * `issues`: string
-        * `checks`: string
-        * `metadata`: string
-        * `contents`: string
-        * `deployments`: string
-      * `events`: required, array of string
-      * `installations_count`: integer
+    * **GitHub app** (see above)
 
 ## Get a check run
 
@@ -976,60 +870,7 @@ curl -L \
     * `production_environment`: boolean
     * `performed_via_github_app`: any of:
       * **null**
-      * **GitHub app**
-        * `id`: required, integer
-        * `slug`: string
-        * `node_id`: required, string
-        * `client_id`: string
-        * `owner`: required, one of:
-          * **Simple User**
-            * `name`: string or null
-            * `email`: string or null
-            * `login`: required, string
-            * `id`: required, integer, format: int64
-            * `node_id`: required, string
-            * `avatar_url`: required, string, format: uri
-            * `gravatar_id`: required, string or null
-            * `url`: required, string, format: uri
-            * `html_url`: required, string, format: uri
-            * `followers_url`: required, string, format: uri
-            * `following_url`: required, string
-            * `gists_url`: required, string
-            * `starred_url`: required, string
-            * `subscriptions_url`: required, string, format: uri
-            * `organizations_url`: required, string, format: uri
-            * `repos_url`: required, string, format: uri
-            * `events_url`: required, string
-            * `received_events_url`: required, string, format: uri
-            * `type`: required, string
-            * `site_admin`: required, boolean
-            * `starred_at`: string
-            * `user_view_type`: string
-          * **Enterprise**
-            * `description`: string or null
-            * `html_url`: required, string, format: uri
-            * `website_url`: string or null, format: uri
-            * `id`: required, integer
-            * `node_id`: required, string
-            * `name`: required, string
-            * `slug`: required, string
-            * `created_at`: required, string or null, format: date-time
-            * `updated_at`: required, string or null, format: date-time
-            * `avatar_url`: required, string, format: uri
-        * `name`: required, string
-        * `description`: required, string or null
-        * `external_url`: required, string, format: uri
-        * `html_url`: required, string, format: uri
-        * `created_at`: required, string, format: date-time
-        * `updated_at`: required, string, format: date-time
-        * `permissions`: required, object, additional properties: string:
-          * `issues`: string
-          * `checks`: string
-          * `metadata`: string
-          * `contents`: string
-          * `deployments`: string
-        * `events`: required, array of string
-        * `installations_count`: integer
+      * **GitHub app** (see above)
 
 ## List check runs for a Git reference
 

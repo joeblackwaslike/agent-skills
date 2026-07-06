@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-06-29T05:39:22.452Z"
-sha256: "bde263e8324ef8545e282fe50a8d1db5b3a07fce9454f0a78f6e3d21891f493a"
+fetched_at: "2026-07-06T05:30:15.132Z"
+sha256: "bad76b863ae224ae45792cb00637d82307fc4cd7c2998a50973c4a26001f8432"
 ---
 
 # Available templates index
@@ -251,8 +251,8 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:7.2.0` | `7.2.0` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:7.2.0` | `7.2.0` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:7.2.1` | `7.2.1` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:7.2.1` | `7.2.1` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
@@ -263,7 +263,16 @@ Templates
 | Typo3 | thucke | `ghcr.io/thucke/devcontainer-templates/typo3:0.8.2` | `0.8.2` |
 | Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.1.0` | `0.1.0` |
 | Magento Open Source | Doug Hatcher | `ghcr.io/doughatcher/devcontainer-templates/magento:0.3.0` | `0.3.0` |
-| Ansible Development Tools (AI & Claude Code) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.2.6` | `1.2.6` |
+| Ansible Development Tools (AI & Claude Code) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.4.3` | `1.4.3` |
+| Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.0.0` | `1.0.0` |
+| Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.2.1` | `1.2.1` |
+| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.2.1` | `1.2.1` |
+| mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.2.1` | `1.2.1` |
+| Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.0.0` | `1.0.0` |
+| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rust:1.2.1` | `1.2.1` |
+| Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.0.0` | `1.0.0` |
+| Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.0` | `1.0.0` |
+| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.1` | `1.2.1` |
 
 
             

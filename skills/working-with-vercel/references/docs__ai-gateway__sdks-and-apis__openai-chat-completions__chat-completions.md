@@ -14,8 +14,8 @@ related:
 summary: Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "296acc5e87fbf1fe5e04c6ff114c8406dd11881b9bf15b4b92af26a6cb04b6d5"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "2461feafe140deadbf9bc6e27c0ad197daba8d105857dc76f4416a36722ff9e8"
 ---
 
 # Chat Completions
@@ -47,7 +47,7 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -75,7 +75,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -96,7 +96,7 @@ Response format
   "id": "chatcmpl-123",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "anthropic/claude-opus-4.7",
+  "model": "anthropic/claude-opus-4.8",
   "choices": [
     {
       "index": 0,
@@ -134,7 +134,7 @@ const openai = new OpenAI({
 });
 
 const stream = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -166,7 +166,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -189,9 +189,9 @@ Streaming responses are sent as [Server-Sent Events (SSE)](https://developer.moz
 The response format follows the OpenAI streaming specification:
 
 ```http
-data: {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1677652288,"model":"anthropic/claude-opus-4.7","choices":[{"index":0,"delta":{"content":"Once"},"finish_reason":null}]}
+data: {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1677652288,"model":"anthropic/claude-opus-4.8","choices":[{"index":0,"delta":{"content":"Once"},"finish_reason":null}]}
 
-data: {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1677652288,"model":"anthropic/claude-opus-4.7","choices":[{"index":0,"delta":{"content":" upon"},"finish_reason":null}]}
+data: {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1677652288,"model":"anthropic/claude-opus-4.8","choices":[{"index":0,"delta":{"content":" upon"},"finish_reason":null}]}
 
 data: [DONE]
 ```
@@ -236,7 +236,7 @@ const imageBuffer = fs.readFileSync('./path/to/image.png');
 const imageBase64 = imageBuffer.toString('base64');
 
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -278,7 +278,7 @@ with open('./path/to/image.png', 'rb') as image_file:
     image_base64 = base64.b64encode(image_file.read()).decode('utf-8')
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -325,7 +325,7 @@ const pdfBuffer = fs.readFileSync('./path/to/document.pdf');
 const pdfBase64 = pdfBuffer.toString('base64');
 
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.7',
+  model: 'anthropic/claude-opus-4.8',
   messages: [
     {
       role: 'user',
@@ -371,7 +371,7 @@ with open('./path/to/document.pdf', 'rb') as pdf_file:
     pdf_base64 = base64.b64encode(pdf_file.read()).decode('utf-8')
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.7',
+    model='anthropic/claude-opus-4.8',
     messages=[
         {
             'role': 'user',
@@ -404,7 +404,7 @@ The chat completions endpoint supports the following parameters:
 
 #### Required parameters
 
-- `model` (string): The model to use for the completion (e.g., `anthropic/claude-opus-4.7`)
+- `model` (string): The model to use for the completion (e.g., `anthropic/claude-opus-4.8`)
 - `messages` (array): Array of message objects with `role` and `content` fields
 
 #### Optional parameters

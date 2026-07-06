@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/extract-json-middleware.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "fa8f5e60eb1e3cda7cad1abcd72dd07fad7505d178e6757195963fc5c2d293c6"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "0488398835d636de4bacf678c7f33c7c8153ac2fdf145fe328850c4f34fae0ac"
 ---
 
 # `extractJsonMiddleware()`
@@ -156,6 +156,7 @@ This approach ensures efficient streaming while correctly handling code fences t
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

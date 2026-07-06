@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "09f530eaada29801698e99f49fa3b5aced6a304fcc1d5dc09b5bc72e678911ee"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "4bfb8ad09e498acdb24fab47a8cd752134f0489d6e8f5abb68aa5a2f7f728b4e"
 ---
 
 # Kling AI Provider
@@ -77,7 +77,7 @@ You can use the following optional settings to customize the Kling AI provider i
 You can create Kling AI video models using the `.video()` factory method.
 For more on video generation with the AI SDK see [generateVideo()](/docs/reference/ai-sdk-core/generate-video).
 
-This provider currently supports three video generation modes: text-to-video, image-to-video, and motion control.
+This provider currently supports four video generation modes: text-to-video, image-to-video, reference-to-video (multi-image), and motion control.
 
 <Note>
   Not all options are supported by every model version and mode combination. See
@@ -175,6 +175,31 @@ const { videos } = await generateVideo({
 ```
 
 Multi-shot also works with image-to-video by combining a start frame image with per-shot prompts.
+
+### Reference-to-Video (Multi-Image)
+
+Generate a video that combines reference images using the top-level `inputReferences` option.
+
+```ts
+import { klingai, type KlingAIVideoModelOptions } from '@ai-sdk/klingai';
+import { experimental_generateVideo as generateVideo } from 'ai';
+
+const { videos } = await generateVideo({
+  model: klingai.video('kling-v1.6-i2v'),
+  prompt: 'The two characters meet and walk together through a sunny park',
+  inputReferences: [
+    'https://example.com/character-1.png',
+    'https://example.com/character-2.png',
+  ],
+  aspectRatio: '16:9',
+  duration: 5,
+  providerOptions: {
+    klingai: {
+      mode: 'std',
+    } satisfies KlingAIVideoModelOptions,
+  },
+});
+```
 
 ### Motion Control
 

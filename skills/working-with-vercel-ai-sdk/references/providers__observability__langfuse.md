@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langfuse.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d47ff23465b15c825583d70956f39538c192b3f6deb5ac70a20ce82fd9c434f6"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "44ada89112eebe9ae5528178446ed4163bb18a6763cb872581c30337982a6b04"
 ---
 
 # Langfuse Observability
@@ -323,6 +323,7 @@ const result = await generateText({
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

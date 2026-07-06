@@ -10,13 +10,13 @@ prerequisites:
 related:
   - /docs/cdn-cache
   - /docs/manage-cdn-usage
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/functions
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d39941b7d47e54143242d35bf77fc38c676bd4898f272705d0b1c1f850212579"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "d9ddd28a1327562a3c7c721992c3082fb9d9bd781d6198104b5daa7be4176d2f"
 ---
 
 # Cache-Control headers
@@ -281,7 +281,7 @@ export default function handler(response: VercelResponse) {
 
 Using configuration, you can assign custom headers to each response.
 
-Custom headers can be configured with the `headers` property in [`next.config.js`](https://nextjs.org/docs/api-reference/next.config.js/headers) for Next.js projects, or it can be configured in [`vercel.json`](/docs/project-configuration#headers) for all other projects.
+Custom headers can be configured with the `headers` property in [`next.config.js`](https://nextjs.org/docs/api-reference/next.config.js/headers) for Next.js projects, or it can be configured in [`vercel.json`](/docs/project-configuration/vercel-json#headers) for all other projects.
 
 Alternatively, a [Vercel Function](/docs/functions) can assign headers to the [Response](https://nodejs.org/api/http.html#http_response_setheader_name_value) object.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e753fa541a809a6492ca349b448ccb1d3ef40f92047619de60e9d240d1a77158"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "e3df83a355a2b731e199f34fba046adb9b558641a22aea2cce54d8028c30a3b9"
 ---
 
 # `tool()`
@@ -257,6 +257,7 @@ The tool that was passed in.
 - [embedMany](/docs/reference/ai-sdk-core/embed-many)
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

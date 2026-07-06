@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/raindrop.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9e09ed795e6db0145cfcaa67f9578853ae3c5c8ed6f955ce9f48cba6185932f4"
+fetched_at: "2026-07-06T05:38:28.608Z"
+sha256: "e563bb30a33fe19e65dd1e7f1852fdac7c9176a5f0091792a1af97ab23694a85"
 ---
 
 # Raindrop Observability
@@ -189,6 +189,7 @@ Credential-shaped values in provider options are stripped from traces by default
 - [Raindrop](/providers/observability/raindrop)
 - [Respan](/providers/observability/respan)
 - [Scorecard](/providers/observability/scorecard)
+- [Sentry](/providers/observability/sentry)
 - [SigNoz](/providers/observability/signoz)
 - [Traceloop](/providers/observability/traceloop)
 - [Weave](/providers/observability/weave)

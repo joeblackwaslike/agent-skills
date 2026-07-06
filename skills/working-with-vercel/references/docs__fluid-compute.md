@@ -11,13 +11,13 @@ related:
   - /docs/fundamentals/what-is-compute
   - /docs/functions/functions-api-reference/vercel-functions-package
   - /docs/functions/configuring-functions/region
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/functions/runtimes/node-js
 summary: Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to run your functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7f4e80380ef8da6172efd5fa327d17d53e412b19633c421a967d32be492d7b9f"
+fetched_at: "2026-07-06T05:40:24.878Z"
+sha256: "bf5fe55aaef4a5d2e81a28d9c29ddfcca3b600453b274fee4ce4fc0400ea4f25"
 ---
 
 # Fluid compute
@@ -54,7 +54,7 @@ When you enable it through the dashboard, fluid compute applies to all deploymen
 
 ### Enable for specific environments and deployments
 
-You can programmatically enable fluid compute using the [`fluid` property](/docs/project-configuration#fluid) in your `vercel.json` file. This approach is particularly useful for:
+You can programmatically enable fluid compute using the [`fluid` property](/docs/project-configuration/vercel-json#fluid) in your `vercel.json` file. This approach is particularly useful for:
 
 - **Testing on specific environments**: Enable fluid compute only for custom environments environments when using branch tracking
 - **Per-deployment configuration**: Test fluid compute on individual deployments before enabling it project-wide
@@ -115,7 +115,7 @@ Fluid Compute includes default settings that vary by plan:
 | -------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------ | ------------------------------------ |
 | [**CPU configuration**](/docs/functions/configuring-functions/memory#memory-/-cpu-type)      | Standard                            | Standard / Performance               | Standard / Performance               |
 | [**Default / Max duration**](/docs/functions/limitations#max-duration)                       | 300s (5 minutes) / 300s (5 minutes) | 300s (5 minutes) / 800s | 300s (5 minutes) / 800s |
-| [**Extended max duration**](/docs/functions/configuring-functions/duration#extended-max-duration) | -                                   | 1800s (30 minutes)  | 1800s (30 minutes)  |
+| [**Extended max duration**](/docs/functions/configuring-functions/duration#extended-max-duration-beta) | -                                   | 1800s (30 minutes)  | 1800s (30 minutes)  |
 | [**Multi-region failover**](/docs/functions/configuring-functions/region#automatic-failover) |                       |                        |                    |
 | [**Multi-region functions**](/docs/functions/runtimes#location)                              |                       | Up to 3                              | All                                  |
 
@@ -124,7 +124,7 @@ Fluid Compute includes default settings that vary by plan:
 > runtime versions. To set values above 800 seconds, configure `maxDuration` on
 > each Function rather than as a project default. Secure Compute does not
 > support durations above 800 seconds during the beta. See [configuring maximum
-> duration](/docs/functions/configuring-functions/duration#extended-max-duration)
+> duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta)
 > for the supported runtimes and examples.
 
 > **💡 Note:** For workloads that require unlimited execution time, use [Vercel
