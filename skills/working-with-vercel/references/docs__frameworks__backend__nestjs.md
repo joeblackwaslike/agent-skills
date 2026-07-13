@@ -3,7 +3,7 @@ title: NestJS on Vercel
 product: vercel
 url: /docs/frameworks/backend/nestjs
 canonical_url: "https://vercel.com/docs/frameworks/backend/nestjs"
-last_updated: 2026-05-12
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Deploy NestJS applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nestjs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0d13b0941c8d941615fcdb403a14f8edbddc88ac262603d0f097b50cf923e6ba"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "44fc8c3707779b4863f73793d03bd5d7d20f8096b67832b0c98c2e387fa29a9e"
 ---
 
 # NestJS on Vercel
@@ -88,7 +88,7 @@ When you deploy a NestJS app to Vercel, your NestJS application becomes a single
 
 ## Limitations
 
-All [Vercel Functions limitations](/docs/functions/limitations) apply to the NestJS application, including the size of the application being limited to 250MB.
+All [Vercel Functions limitations](/docs/functions/limitations) apply to the NestJS application, including the standard bundle size limit of 250MB for Node.js applications. [Large Functions](/docs/functions/limitations#large-functions-beta) support Node.js bundles up to 5GB on Fluid compute when enabled (public beta).
 
 ## More resources
 

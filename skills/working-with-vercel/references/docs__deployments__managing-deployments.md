@@ -3,7 +3,7 @@ title: Managing Deployments
 product: vercel
 url: /docs/deployments/managing-deployments
 canonical_url: "https://vercel.com/docs/deployments/managing-deployments"
-last_updated: 2026-02-27
+last_updated: 2026-07-01
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "31b002af2426558b86227885e101d25b50e724cd9b2ccccac8690986c9ace51e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "0d482d9f3e92b7c3b971e21107db6490ee606076cc10d235eff8475e5025458a"
 ---
 
 # Managing Deployments

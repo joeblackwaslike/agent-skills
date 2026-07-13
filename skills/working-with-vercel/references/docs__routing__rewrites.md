@@ -3,7 +3,7 @@ title: Rewrites on Vercel
 product: vercel
 url: /docs/routing/rewrites
 canonical_url: "https://vercel.com/docs/routing/rewrites"
-last_updated: 2026-04-05
+last_updated: 2026-07-01
 type: conceptual
 prerequisites:
   - /docs/routing
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "768a627d6999743d30dcf0909f97d8d34a0c56d780c1bd9075ad1ab962301d28"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "069cbb6dcd4c1aca6654870665886d9d5e5dfee83750d14de1ce207b55c7eb38"
 ---
 
 # Rewrites on Vercel

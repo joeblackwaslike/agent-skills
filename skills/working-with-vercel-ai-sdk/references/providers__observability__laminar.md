@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/laminar.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "c503f42d20f6263dd9bbcc9af1c9d669a268197123e165f6eab098af25907d4c"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "178b7bbc3a2e6a2d57bfcb728da684249a59a992129926108d0b1c2b66a49e03"
 ---
 
 # Laminar observability
@@ -41,21 +41,7 @@ Copy the prompt below and paste it to your coding agent, for it to integrate ful
 
 To setup Laminar manually, first install the `@lmnr-ai/lmnr` package.
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @lmnr-ai/lmnr" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @lmnr-ai/lmnr" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @lmnr-ai/lmnr" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @lmnr-ai/lmnr" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@lmnr-ai/lmnr" />
 
 ### Get your project API key and set in the environment
 

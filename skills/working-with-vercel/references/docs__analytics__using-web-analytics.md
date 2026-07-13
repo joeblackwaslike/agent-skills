@@ -3,7 +3,7 @@ title: Using Web Analytics
 product: vercel
 url: /docs/analytics/using-web-analytics
 canonical_url: "https://vercel.com/docs/analytics/using-web-analytics"
-last_updated: 2026-02-27
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b7710626ca59e60e43dd437d78fcb65eb96bebffdc61cb74504ae5e2026b3b52"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "90a3b130daeb8b21c8d968e5b1003ee03a7105328757294644641d56f2015f91"
 ---
 
 # Using Web Analytics

@@ -3,7 +3,7 @@ title: Supported domains
 product: vercel
 url: /docs/domains/supported-domains
 canonical_url: "https://vercel.com/docs/domains/supported-domains"
-last_updated: 2025-12-10
+last_updated: 2026-06-23
 type: reference
 prerequisites:
   - /docs/domains
@@ -12,8 +12,8 @@ related:
 summary: Learn about supported domains on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/supported-domains.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "dbcada19426b2de7eaa3b0d541977c3952744bd0958f83a254276bbe1eb79929"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "77d4bdb86ef4a98ec747180da3ba7e96a9f70422a5bc54cf5cbda0ea2e91b776"
 ---
 
 # Supported domains

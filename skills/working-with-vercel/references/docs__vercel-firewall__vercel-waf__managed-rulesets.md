@@ -17,8 +17,8 @@ related:
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "63293b3277e3abb43d5cb2d46eb64abcbf683ab6e7bd8a9d0e72b89148d1b0d6"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "223c254ed7549fb02f6f64470219da4076e969598f6ba9e63f1def7e0674b339"
 ---
 
 # WAF Managed Rulesets
@@ -60,6 +60,8 @@ To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-t
 
 > **🔒 Permissions Required**: Bot Protection Managed Ruleset
 
+The ruleset is **inactive by default**. In the dashboard this is labeled **Off**. Matching traffic is not evaluated and reaches your application.
+
 To enable and configure [bot protection](/docs/bot-management#bot-protection-managed-ruleset) for your project, follow these steps:
 
 1. From your project's dashboard, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Open+Firewall) in the sidebar.
@@ -74,6 +76,8 @@ To enable and configure [bot protection](/docs/bot-management#bot-protection-man
 ## Configure AI Bots Managed Ruleset
 
 > **🔒 Permissions Required**: AI Bots Managed Ruleset
+
+The ruleset is **inactive by default**. In the dashboard this is labeled **Allow**. Matching traffic is not evaluated and reaches your application.
 
 To manage AI bots for your project, follow these steps:
 

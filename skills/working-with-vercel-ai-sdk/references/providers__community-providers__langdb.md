@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/langdb.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9b5a8c6de29ce433f8963df604e669a00ffca09a7d0173519af326c0b7f2d4d6"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "ce837cc6090e8baec96e7d918d8f68e0623316c1bd12959668564568d7e270b8"
 ---
 
 # LangDB
@@ -25,21 +25,7 @@ LangDB provides OpenAI-compatible APIs, enabling developers to connect with mult
 
 The LangDB provider is available via the `@langdb/vercel-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @langdb/vercel-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @langdb/vercel-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @langdb/vercel-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @langdb/vercel-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@langdb/vercel-provider" />
 
 ## Provider Instance
 

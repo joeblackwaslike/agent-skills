@@ -3,7 +3,7 @@ title: Python
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/python
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/python"
-last_updated: 2026-05-30
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/python.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "e711c1e960c986af26041df89dfe6d1d6186c140d05803db02a7a5f4bc4e47cf"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "19f19fb5a38ae25792fba779fe50fa6eb6c6ec25ffbe9080ea28951e794baebe"
 ---
 
 # Python

@@ -3,8 +3,8 @@ title: Deploy Files
 product: vercel
 url: /docs/platforms/platform-elements/actions/deploy-files
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/actions/deploy-files"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements/actions
   - /docs/platforms/platform-elements
@@ -12,11 +12,11 @@ related:
   - /docs/platforms/platform-elements/blocks/claim-deployment
   - /docs/platforms/platform-elements/blocks/deploy-popover
   - /docs/platforms/multi-project-platforms/quickstart
-summary: Learn about deploy files on Vercel.
+summary: Server action for programmatically deploying files to Vercel on behalf of platform users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions/deploy-files.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4b2d74365b0824b75f1068bbf47d1198ca9d1150fe7ebcacaf6f57792456565f"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "5961346d9944654df3ae47ebd4a56715536569a3d4bb39448c0a4549e6913787"
 ---
 
 # Deploy Files

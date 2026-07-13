@@ -3,7 +3,7 @@ title: Build image overview
 product: vercel
 url: /docs/builds/build-image
 canonical_url: "https://vercel.com/docs/builds/build-image"
-last_updated: 2026-06-09
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "702524bf0260b202458a4fd95e11e6aed568a37e6db91825c360a9b9bdd236a2"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "2666dc8e2f63da27260737c8668055def3c32a44c4d911744cd54af15eac6367"
 ---
 
 # Build image overview

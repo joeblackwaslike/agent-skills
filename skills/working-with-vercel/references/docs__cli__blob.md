@@ -15,8 +15,8 @@ related:
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5b2bfec7f29ad38f2bbd6f3942c4563b41fb463298886c620f1d81687b86b042"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "42d70bd110893c8bb90b4899e592b02d6274cbd988186589d022be211c7f3317"
 ---
 
 # vercel blob
@@ -40,7 +40,7 @@ The `vercel blob` command supports the following operations:
 - [`list-stores`](#list-stores-ls-stores) - List all Blob stores
 - [`empty-store`](#empty-store) - Delete all blobs in a Blob store
 
-For authentication, the CLI reads the `BLOB_READ_WRITE_TOKEN` value from your env file or you can use the [`--rw-token` option](#rw-token).
+In a linked project with a connected Blob store, the CLI authenticates using OIDC by default: Vercel auto-populates `VERCEL_OIDC_TOKEN` and pairs it with `BLOB_STORE_ID`. If OIDC is not available, the CLI falls back to reading `BLOB_READ_WRITE_TOKEN` from your env file, or you can supply it directly with the [`--rw-token` option](#rw-token). For example, this can happen for an unlinked project, outside of Vercel, or during local development.
 
 ### list (ls)
 
@@ -149,7 +149,7 @@ These are options that only apply to the `vercel blob` command.
 
 ### Rw token
 
-You can use the `--rw-token` option to specify your Blob read-write token.
+You can use the `--rw-token` option to specify your Blob read-write token. This is a fallback authentication method for cases where OIDC is not available such as unlinked projects, environments outside of Vercel, or local development.
 
 ```bash filename="terminal"
 vercel blob put image.jpg --rw-token [rw-token]

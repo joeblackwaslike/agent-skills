@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/r1.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7ba992a49b0766e30adb00f734c5ad97ebd08974f73a71e1ce4b6ea865e0b244"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "5facf65a36d4f5f383de2f155cf70021fc98894b4a44ade788a860364a39a8a9"
 ---
 
 # Get started with DeepSeek R1
@@ -116,7 +116,7 @@ You can use DeepSeek R1 with the AI SDK through various providers. Here's a comp
 
 | Provider                                                | Model ID                                                                                                          | Reasoning Tokens    |
 | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [DeepSeek](/providers/ai-sdk-providers/deepseek)        | [`deepseek-reasoner`](https://api-docs.deepseek.com/guides/reasoning_model)                                       | <Check size={18} /> |
+| [DeepSeek](/providers/ai-sdk-providers/deepseek)        | [`deepseek-reasoner`](https://api-docs.deepseek.com/guides/reasoning_model)                                       | <Check />           |
 | [Fireworks](/providers/ai-sdk-providers/fireworks)      | [`accounts/fireworks/models/deepseek-r1`](https://fireworks.ai/models/fireworks/deepseek-r1)                      | Requires Middleware |
 | [Groq](/providers/ai-sdk-providers/groq)                | [`deepseek-r1-distill-llama-70b`](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B)               | Requires Middleware |
 | [Azure](/providers/ai-sdk-providers/azure)              | [`DeepSeek-R1`](https://ai.azure.com/explore/models/DeepSeek-R1/version/1/registry/azureml-deepseek#code-samples) | Requires Middleware |

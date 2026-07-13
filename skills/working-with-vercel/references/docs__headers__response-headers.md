@@ -3,7 +3,7 @@ title: Response headers
 product: vercel
 url: /docs/headers/response-headers
 canonical_url: "https://vercel.com/docs/headers/response-headers"
-last_updated: 2026-03-05
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/headers
@@ -16,8 +16,8 @@ related:
 summary: Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/response-headers.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "76d939e0aa1db793411e2b62726b07e982ebaad4706d0b9adf1593bd7081b01c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9c9c1e23ea9cc1ba63b79b3dbc83ed643daa545739f27dade7247538d2024d6f"
 ---
 
 # Response headers
@@ -70,55 +70,14 @@ You can prevent this header from being added to your Preview Deployment by:
 
 The `x-vercel-cache` header indicates the cache status of static assets and responses from Vercel's CDN. For dynamic routes and fetch requests that use the [runtime cache](/docs/caching/runtime-cache), this header often shows `MISS` even if the data is served from the runtime cache. Use [custom headers](/docs/headers/cache-control-headers#custom-response-headers) or [runtime logs](/docs/runtime-logs) to check whether a fetch response was served from the runtime cache.
 
-The following values are possible when the content being served [is static](/docs/caching/cdn-cache#static-files-caching) or uses [a Cache-Control header](/docs/headers#cache-control-header):
+The header returns one of the following values. For what each one means in depth, including the reasons behind a miss, bypass, or stale response, see [Cache Status and Reasons](/docs/caching/cache-status):
 
-### `MISS`
-
-The response was not found in the cache and was fetched from the origin server.
-
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-miss2x.png?lightbox`)
-
-### `HIT`
-
-The response was served from the cache.
-
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-hit2x.png?lightbox`)
-
-### `STALE`
-
-The response was served from the cache but the content is no longer fresh, so a background request to the origin server was made to update the content.
-
-Cached content can go stale for several different reasons such as:
-
-- Response included `stale-while-revalidate` Cache-Control response header.
-- Response was served from [ISR](/docs/incremental-static-regeneration) with a revalidation time in frameworks like Next.js.
-- On-demand using `@vercel/functions` like [`invalidateByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#invalidatebytag).
-- On-demand using framework-specific functions like [`revalidatePath()`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath) or [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) with lifetimes in Next.js.
-- On-demand using the Vercel dashboard [project purge settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fcaches\&title=Cache+Purge+Settings) to invalidate by tag.
-
-See [purging the cache](/docs/caching/cdn-cache/purge) for more information.
-
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-stale2x.png?lightbox`)
-
-### `PRERENDER`
-
-The response was served from static storage. An example of prerender is in `Next.js`, when setting `fallback:true` in `getStaticPaths`. However, `fallback:blocking` will not return prerender.
-
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-prerender2x.png?lightbox`)
-
-### `REVALIDATED`
-
-The response was served from the origin server after the cache was deleted so it must be revalidated in the foreground.
-
-The cached content can be deleted in several ways such as:
-
-- On-demand using `@vercel/functions` like [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag).
-- On-demand using framework-specific functions like [`revalidatePath()`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath) or [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) without a lifetime in Next.js.
-- On-demand using the Vercel dashboard [project purge settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fcaches\&title=Cache+Purge+Settings) to delete by tag.
-
-See [purging the cache](/docs/caching/cdn-cache/purge) for more information.
-
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-revalidated2x.png?lightbox`)
+- [`HIT`](/docs/caching/cache-status#hit): the response was served from the cache.
+- [`MISS`](/docs/caching/cache-status#miss): the response wasn't in the cache and was generated from your function or origin.
+- [`STALE`](/docs/caching/cache-status#stale): a cached response was served while Vercel refreshed it in the background.
+- [`PRERENDER`](/docs/caching/cache-status#prerender): the response was served from static storage.
+- [`REVALIDATED`](/docs/caching/cache-status#revalidated): the response was regenerated in the foreground after the cached entry was deleted.
+- [`BYPASS`](/docs/caching/cache-status#bypass): Vercel skipped the cache and served fresh content from your function or origin.
 
 ## `x-vercel-id`
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/best-practices-for-using-the-rest-api.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "d679c711a207a9455f36a66dbf57a2728c0919f04d431158da1ec8845282ed02"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "9a34e7087be8cbcf14f0601c87de8f464d0fb21b0c89079209dce8d8bb1c0e6b"
 ---
 
 {% ifversion ghes %}
@@ -17,7 +17,7 @@ You should subscribe to webhook events instead of polling the API for data. This
 
 ## Make authenticated requests
 
-Authenticated requests have a higher primary rate limit than unauthenticated requests. To avoid exceeding the rate limit, you should make authenticated requests. For more information, see [AUTOTITLE](/rest/overview/rate-limits-for-the-rest-api).
+Authenticated requests have a higher primary rate limit than unauthenticated requests. To avoid exceeding the rate limit, you should make authenticated requests. For more information, see [AUTOTITLE](/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 
 ## Avoid concurrent requests
 
@@ -54,7 +54,7 @@ Other redirection status codes may be used in accordance with HTTP specification
 
 Many API endpoints return URL values for fields in the response body. You should not try to parse these URLs or to predict the structure of future URLs. This can cause your integration to break if {% data variables.product.company_short %} changes the structure of the URL in the future. Instead, you should look for a field that contains the information that you need. For example, the endpoint to create an issue returns an `html_url` field with a value like `https://github.com/octocat/Hello-World/issues/1347` and a `number` field with a value like `1347`. If you need to know the number of the issue, use the `number` field instead of parsing the `html_url` field.
 
-Similarly, you should not try to manually construct pagination queries. Instead, you should use the link headers to determine what pages of results you can request. For more information, see [AUTOTITLE](/rest/guides/using-pagination-in-the-rest-api).
+Similarly, you should not try to manually construct pagination queries. Instead, you should use the link headers to determine what pages of results you can request. For more information, see [AUTOTITLE](/rest/using-the-rest-api/using-pagination-in-the-rest-api).
 
 ## Use conditional requests if appropriate
 

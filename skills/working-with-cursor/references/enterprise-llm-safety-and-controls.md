@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/llm-safety-and-controls.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "8a4ccbff0a2d8ec389f1c9322d4c54dff268048bd05d50f41ff22b7c862b9cf8"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "9301c7356685c2e133a35845c83b1788e857f344f07510ca7c95599cba207812"
 ---
 
 # LLM Safety and Controls
@@ -42,11 +42,11 @@ You can enable auto-approval for terminal commands, but understand the risks. Ag
 
 #### Run Mode configuration
 
-Enterprise teams can configure Run Mode policies in the team dashboard. In Cursor 3.6 and above, end users choose between **Auto-review** (the default), **Allowlist**, **Allowlist (with Sandbox)**, and **Run Everything** modes. **Auto-review** runs allowlisted calls, sandboxes what it can, and routes the rest through an LLM classifier that returns allow or block based on safety and how well the call matches the user's intent. The older modes are still available, and you can create an allowlist of commands that don't require approval, such as `npm install`, `pip install`, `cargo build`, or `make test`.
+Enterprise teams can configure Run Mode policies in the team dashboard. In Cursor 3.6 and above, end users choose between **Auto-review** (the default), **Allowlist**, and **Run Everything** modes. **Auto-review** runs allowlisted calls, sandboxes shell commands when it can, and routes the rest through an LLM classifier that returns allow or block based on safety and how well the call matches the user's intent. You can create an allowlist of commands that don't require approval, such as `npm install`, `pip install`, `cargo build`, or `make test`.
 
 The allowlist is best-effort, not a security boundary. Determined agents or prompt injection might bypass it. Always combine allowlists with other security controls like hooks.
 
-See [Terminal Run Mode](https://cursor.com/docs/agent/tools/terminal.md#run-mode) and [Agent Security](https://cursor.com/docs/agent/security.md) for details.
+See [Run Modes](https://cursor.com/docs/agent/security/run-modes.md#run-mode) and [Agent Security](https://cursor.com/docs/agent/security.md) for details.
 
 ### Enforcement hooks
 
@@ -106,10 +106,8 @@ Not all files in your repositories should be accessible to AI. Configuration fil
 
 The `.cursorignore` file works like `.gitignore` but controls what Cursor can access. Files matching patterns in `.cursorignore` are excluded from:
 
-- [Semantic search](https://cursor.com/docs/agent/tools/search.md)
 - Agent file reading
 - Context selection
-- Semantic search
 
 `.cursorignore` is not a security boundary. It's a convenience feature to exclude files from AI processing, but:
 
@@ -247,7 +245,7 @@ However, this approach significantly slows down the development experience. Agen
 
 ### Model provider safety
 
-All model providers (OpenAI, Anthropic, Google, xAI) implement safety systems that filter harmful content. These systems reject prompts requesting harmful information, refuse to generate dangerous code, and filter outputs for safety.
+All model providers (OpenAI, Anthropic, Google, SpaceXAI) implement safety systems that filter harmful content. These systems reject prompts requesting harmful information, refuse to generate dangerous code, and filter outputs for safety.
 
 Cursor works with providers to ensure models meet safety standards before deployment to users. Providers continuously evaluate models for safety issues. However, these are not security boundaries. Safety systems can be bypassed or tricked. Always implement your own controls through hooks and access policies.
 

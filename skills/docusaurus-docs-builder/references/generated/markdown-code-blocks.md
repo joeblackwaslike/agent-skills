@@ -1,15 +1,15 @@
 ---
 title: "Markdown Code Blocks"
 source: "https://docusaurus.io/docs/markdown-features/code-blocks"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "700920a9f88d6e84762ad0567045a3a57795a5c0e2933b4eeb701657494dae73"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "87491628e6fe716975c60b941f7c6d47801eb98379bb9aab657c040fbfa6de1c"
 ---
 
 # Markdown Code Blocks
 
 Source: https://docusaurus.io/docs/markdown-features/code-blocks
 
-GuidesMarkdown FeaturesCode blocksVersion: 3.10.1On this page
+GuidesMarkdown FeaturesCode blocksVersion: 3.10.2On this page
 # Code blocks
 
 Code blocks within documentation are super-powered 💪.
@@ -398,4 +398,4 @@ The props accepted are `language`, `title` and `showLineNumbers`, in the same wa
 
 Although discouraged, you can also pass in a `metastring` prop like `metastring='{1-2} title="/src/components/HelloCodeTitle.js" showLineNumbers'`, which is how Markdown code blocks are handled under the hood. However, we recommend you use comments for highlighting lines.
 
-As previously stated, syntax highlighting is only applied when the children is a simple string.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+As previously stated, syntax highlighting is only applied when the children is a simple string.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

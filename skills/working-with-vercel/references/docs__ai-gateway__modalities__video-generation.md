@@ -3,7 +3,7 @@ title: Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation"
-last_updated: 2026-06-20
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -17,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "127dc6a843a89498b69dcbb369e504f0b208089c1167dcae9c5c7813ee4fc239"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "d0e94ad6e6ea6b2a57bce648f49e72a6e8860c7781c701c86131a4ab53976513"
 ---
 
 # Video Generation

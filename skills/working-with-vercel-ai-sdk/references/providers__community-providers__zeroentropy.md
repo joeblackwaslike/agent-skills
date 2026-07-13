@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/zeroentropy.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "91efe9503538b77344c9de6576c494586b8a94e7565173a7799553485e13620b"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e456fb76a96badfbeadf26d82d2a78fa41436a1ec15a886cb2856ca1b1099da1"
 ---
 
 # ZeroEntropy Provider
@@ -12,20 +12,7 @@ sha256: "91efe9503538b77344c9de6576c494586b8a94e7565173a7799553485e13620b"
 
 The ZeroEntropy provider is available in the `zeroentropy-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add zeroentropy-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install zeroentropy-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add zeroentropy-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add zeroentropy-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="zeroentropy-ai-provider" />
 
 ## Provider Instance
 

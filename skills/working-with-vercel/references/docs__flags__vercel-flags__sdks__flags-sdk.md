@@ -3,7 +3,7 @@ title: Using the Flags SDK with Vercel Flags
 product: vercel
 url: /docs/flags/vercel-flags/sdks/flags-sdk
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk"
-last_updated: 2026-04-15
+last_updated: 2026-06-24
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/sdks
@@ -17,8 +17,8 @@ related:
 summary: Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "701dea7ddaa0dcaceb28b4e215cbd4543f829231b2078ece830cb9b8a23e458a"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ad5821e168e2e887e58600e2c4cacbf245727490517974256db3644c773c38ca"
 ---
 
 # Using the Flags SDK with Vercel Flags

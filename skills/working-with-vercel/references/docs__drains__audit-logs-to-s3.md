@@ -3,7 +3,7 @@ title: Drain Audit Logs to S3
 product: vercel
 url: /docs/drains/audit-logs-to-s3
 canonical_url: "https://vercel.com/docs/drains/audit-logs-to-s3"
-last_updated: 2018-10-20
+last_updated: 2026-06-29
 type: how-to
 prerequisites:
   - /docs/drains
@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-s3.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "b262d7dada604c0659e7ef1e0aa5785271e2fdfc25c73d0403160fa873c38dcb"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "4555b2a8a27fc33bfef31b6c951ee5e29303b8a48bb55695f89ef616bf2fbc2b"
 ---
 
 # Drain Audit Logs to S3

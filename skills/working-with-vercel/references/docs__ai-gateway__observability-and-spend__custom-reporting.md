@@ -3,7 +3,7 @@ title: Custom Reporting
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/custom-reporting
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting"
-last_updated: 2026-06-20
+last_updated: 2026-06-29
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -17,8 +17,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "e8167da7b4b6c9919e7afb9ad2739fa6bf5691a0496fce12b6efa5bf9e68cb62"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "f4423dd2a226c3a7b9631275e5f2d1cf93e78df5042207b3555ed7c8a1f9c92a"
 ---
 
 # Custom Reporting

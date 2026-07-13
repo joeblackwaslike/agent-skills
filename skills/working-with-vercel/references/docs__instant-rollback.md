@@ -11,12 +11,13 @@ related:
   - /docs/cron-jobs
   - /docs/deployments/promoting-a-deployment
   - /docs/cli/promote
-  - /docs/deployments/environments
+  - /docs/rbac/access-roles
+  - /docs/rbac/access-roles/extended-permissions
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9093a9c42b4bce43052ed736ff383e63790591a112172e2ff6be1564dd8c5e73"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "d7e5012c0844afff8f1b02e2877d78beb4e1b947de327912601c32f7d84786c4"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -107,7 +108,12 @@ This has the same effect as undoing from the dashboard: it promotes the specifie
 ## Who can roll back deployments?
 
 - **Hobby** plan: On the hobby plan you can roll back to the previous deployment
-- **Pro** and **Enterprise** plan: Owners and Members on these plans can roll back to any [eligible deployment](#eligible-deployments).
+- **Pro** and **Enterprise** plan: Owners, Members, and Developers on these plans can roll back to any [eligible deployment](#eligible-deployments).
+
+Rollback can also be initiated by:
+
+- A [Project Administrator](/docs/rbac/access-roles#project-administrators) on a given project
+- Anyone with the [**Full Production Deployment**](/docs/rbac/access-roles/extended-permissions#full-production-deployment) permission set on an [access group](/docs/rbac/access-groups)
 
 ## Eligible deployments
 

@@ -3,7 +3,7 @@ title: Configuring the Runtime for Vercel Functions
 product: vercel
 url: /docs/functions/configuring-functions/runtime
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/runtime"
-last_updated: 2026-03-17
+last_updated: 2026-06-29
 type: how-to
 prerequisites:
   - /docs/functions/configuring-functions
@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "92117084ae14f6e22377a606dd9b6620ee856a4681d6529306e6f84a10c98635"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "3571e102f10623125f4b2cd95efca68b801db26aab1e26746cfad518e2c080ea"
 ---
 
 # Configuring the Runtime for Vercel Functions

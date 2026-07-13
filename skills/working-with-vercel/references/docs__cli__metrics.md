@@ -3,7 +3,7 @@ title: vercel metrics
 product: vercel
 url: /docs/cli/metrics
 canonical_url: "https://vercel.com/docs/cli/metrics"
-last_updated: 2026-05-28
+last_updated: 2026-06-25
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a6d03a90feb0fcb55a07fca381f634e58e55fe55852cf37fb122fe88659b8686"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "459007dc6e8de4c05d7058d0b8bc168b78d74253abdfecd7c5d10f649f6eabcf"
 ---
 
 # vercel metrics

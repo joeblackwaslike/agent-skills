@@ -3,7 +3,7 @@ title: Next.js on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/nextjs
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/nextjs"
-last_updated: 2026-06-18
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "99a51b768966f242e413c0a87835f8efec8867f3eea0a6006f76ae2503fd3af6"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c505c45b267c6fdb3a234e331f6b4c3f71dcb599fab6bb8c48a18766eca8d464"
 ---
 
 # Next.js on Vercel

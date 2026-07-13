@@ -3,19 +3,19 @@ title: Images
 product: vercel
 url: /docs/sandbox/concepts/images
 canonical_url: "https://vercel.com/docs/sandbox/concepts/images"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-30
+type: how-to
 prerequisites:
   - /docs/sandbox/concepts
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/snapshots
   - /docs/container-registry
-summary: Learn about images on Vercel.
+summary: Start sandboxes from custom OCI images stored in Vercel Container Registry to ship your own system packages, tooling, and filesystem layout.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/images.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "091d30f63da5410178594b39fc7f34ff09a9d1d16eebca29115628e8dd333cdb"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "74dbcb0fac8f71149456aeb9d34f8b08a3fae3d1d70bd6457ab3ac14226cb7f4"
 ---
 
 # Images

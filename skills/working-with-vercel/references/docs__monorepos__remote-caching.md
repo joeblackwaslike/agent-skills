@@ -16,8 +16,8 @@ related:
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a400725fdf3a664d3efa4bb1143bac1c43e939c71ca57cbaec98b4ce18c87905"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a727b220e2bf1bd7c9ce3c9c9f9720114aed13bee33af242db4c1c4db5fd1e66"
 ---
 
 # Remote Caching
@@ -185,6 +185,12 @@ To use Vercel Remote Caching with Turborepo from an external CI/CD system, you c
 
 When these environment variables are set, Turborepo will use Vercel Remote Caching to store task artifacts.
 
+## Clear the Remote Cache
+
+You can delete all of your team's cached artifacts [from the dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23remote-caching\&title=Clear+your+team%27s+Remote+Cache). This is useful if you believe there are poisoned  artifacts in your cache.
+
+> **💡 Note:** Only team owners can clear the Remote Cache.
+
 ## Usage
 
 Vercel Remote Cache is free for all plans, subject to fair use guidelines.
@@ -205,7 +211,7 @@ Vercel Remote Cache is free for all plans, subject to fair use guidelines.
 
 Artifacts are blobs of data or files that are uploaded and downloaded using the [Vercel Remote Cache API](/docs/monorepos/remote-caching), including calls made using [Turborepo](/docs/monorepos/turborepo#setup-remote-caching-for-turborepo-on-vercel) and the [Remote Cache SDK](https://github.com/vercel/remote-cache). Once uploaded, artifacts can be downloaded during the [build](/docs/deployments/configure-a-build) by any [team members](/docs/accounts/team-members-and-roles).
 
-Vercel automatically expires uploaded artifacts after 7 days to avoid unbounded cache growth.
+Vercel automatically expires uploaded artifacts after 7 days to avoid unbounded cache growth. Team owners can also [clear the Remote Cache](#clear-the-remote-cache) manually at any time.
 
 #### Time Saved
 

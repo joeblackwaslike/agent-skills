@@ -3,7 +3,7 @@ title: Using Speed Insights
 product: vercel
 url: /docs/speed-insights/using-speed-insights
 canonical_url: "https://vercel.com/docs/speed-insights/using-speed-insights"
-last_updated: 2026-05-28
+last_updated: 2026-06-25
 type: how-to
 prerequisites:
   - /docs/speed-insights
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Speed Insights to analyze your application's performance data."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/using-speed-insights.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "71bb6cd0fb6c4f993426c18208157303c5a656f34a5e82fc278fe2666f51884d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "b76bd439c966f57f24996cfc0257d1615b8a7acf0023b219d4a94d2fa9716b57"
 ---
 
 # Using Speed Insights

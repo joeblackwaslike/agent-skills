@@ -1,10 +1,10 @@
 ---
-title: Reference
+title: Multi-Project Platforms Reference
 product: vercel
 url: /docs/platforms/multi-project-platforms/reference
 canonical_url: "https://vercel.com/docs/platforms/multi-project-platforms/reference"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/multi-project-platforms
   - /docs/platforms
@@ -14,11 +14,11 @@ related:
   - /docs/rest-api/reference/endpoints/projects/create-a-new-project
   - /docs/rest-api/reference/endpoints/deployments/create-a-new-deployment
   - /docs/rest-api/reference/endpoints/deployments/list-deployments
-summary: Learn about reference on Vercel.
+summary: API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "5ed56a58f6cb0441f8e84e9b03473fd545cdbe70f8ac03c9ae31a7eac2011bdf"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c49a2cab13d50f1852f3d132886e3b3e2325965d51505142ec4157d44742f252"
 ---
 
 # Multi-Project Platforms Reference

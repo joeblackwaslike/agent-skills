@@ -3,7 +3,7 @@ title: Managing Edge Configs with the Dashboard
 product: vercel
 url: /docs/edge-config/edge-config-dashboard
 canonical_url: "https://vercel.com/docs/edge-config/edge-config-dashboard"
-last_updated: 2026-06-08
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/edge-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Edge Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config/edge-config-dashboard.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "f7790c6b235fc74daa740ead6be283e2a129fb027e1a7315d08c74a05d0e3ed0"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "99f1afaae6991df8beb87372604b418abd916bcc1fcebd068de6928bee955453"
 ---
 
 # Managing Edge Configs with the Dashboard

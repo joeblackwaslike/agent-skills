@@ -3,7 +3,7 @@ title: replaceinstallationsbyintegrationconfigurationidresourcesbyresourceidexpe
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/replaceinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/replaceinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig"
-last_updated: 2026-07-06
+last_updated: 2026-07-13
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about replaceinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/replaceinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "8a42dd17d6ddc6be87f731557bd6a47bd5fc26506408edb3c3da068cd79034c9"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "b72771c6642e20c6ae910d1c0e1bf98c06a726ecaa3721479435ae8971495235"
 ---
 
 # Push data into a user-provided Edge Config

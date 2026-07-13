@@ -1,15 +1,15 @@
 ---
 title: "Blog Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "bb4555e75550357ffd2129386e138453d692510744860fbbe85fd135b84f6e01"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "acf119162f1fd7f0e3824991df1892ea4ed377e6756bfd1161942786a54eb6b5"
 ---
 
 # Blog Plugin
 
 Source: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog
 
-- Plugins📦 plugin-content-blogVersion: 3.10.1On this page
+- Plugins📦 plugin-content-blogVersion: 3.10.2On this page
 # 📦 plugin-content-blog
 
 Provides the Blog feature and is the default blog plugin for Docusaurus.
@@ -221,4 +221,4 @@ Read the i18n introduction first.
 ```
 website/i18n/[locale]/docusaurus-plugin-content-blog││ # translations for website/blog├── authors.yml├── first-blog-post.md├── second-blog-post.md││ # translations for the plugin options that will be rendered└── options.json
 ```
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

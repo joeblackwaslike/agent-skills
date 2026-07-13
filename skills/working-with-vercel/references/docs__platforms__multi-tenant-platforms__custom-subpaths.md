@@ -1,20 +1,20 @@
 ---
-title: Custom Subpaths
+title: Configuring Custom Subpaths
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/custom-subpaths
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
   []
-summary: Learn about custom subpaths on Vercel.
+summary: Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d564aac1b423cbdfdc3b471bc1155c38b8f5cc74c7aab947e31f772ccca02b29"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "2fbf11ec7d10cbafe576bb86b59d1a092a1364d2f7d9f36dac1f1e2b0540b1e5"
 ---
 
 # Configuring Custom Subpaths

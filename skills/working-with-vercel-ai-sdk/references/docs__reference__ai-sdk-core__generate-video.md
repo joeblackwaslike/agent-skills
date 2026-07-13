@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "96e7f395936c34a1b140d8b191221e5a51423a4e5f1fe60a68790fdb53657ee1"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "31dd2b05815fce3dec03f9322dd2d6831c0530347585b84ae183ba1455bf9623"
 ---
 
 # `experimental_generateVideo()`
@@ -119,9 +119,10 @@ console.log(videos);
     },
     {
       name: 'inputReferences',
-      type: 'Array<DataContent>',
+      type: 'Array<DataContent | { data: DataContent; mediaType?: string }>',
       isOptional: true,
-      description: 'Reference image inputs for reference-to-video generation.',
+      description:
+        'Reference image or video inputs for reference-to-video generation. Use the object form with an explicit mediaType for URL-based video references. Providers route each reference by its media type and warn when a reference kind is unsupported.',
     },
     {
       name: 'generateAudio',

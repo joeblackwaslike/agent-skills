@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/jina-ai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8eb4fc1f44786e2774bfcaddd0062b3354644b045dfed281cfb8177bad130b45"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b44b1f4c161326390ca8595d8f763f99edca5f6aced3ec7782a57778c8e737c6"
 ---
 
 # Jina AI Provider
@@ -12,20 +12,7 @@ sha256: "8eb4fc1f44786e2774bfcaddd0062b3354644b045dfed281cfb8177bad130b45"
 
 The Jina provider is available in the `jina-ai-provider` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add jina-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install jina-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add jina-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add jina-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="jina-ai-provider" />
 
 ## Provider Instance
 

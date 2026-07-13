@@ -3,7 +3,7 @@ title: Connect to Amazon Web Services (AWS)
 product: vercel
 url: /docs/oidc/aws
 canonical_url: "https://vercel.com/docs/oidc/aws"
-last_updated: 2026-05-18
+last_updated: 2026-06-23
 type: how-to
 prerequisites:
   - /docs/oidc
@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "de325d60e5f092cd0ec2ae1113f13127086c0fbf01a2be08616398cd7e8e1561"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "dae267a5e9a8b126662e2c1bb983b35ef5cf776c8d6d524238b3164e8a7f23e8"
 ---
 
 # Connect to Amazon Web Services (AWS)

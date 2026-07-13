@@ -3,7 +3,7 @@ title: Pricing for Web Analytics
 product: vercel
 url: /docs/analytics/limits-and-pricing
 canonical_url: "https://vercel.com/docs/analytics/limits-and-pricing"
-last_updated: 2026-06-16
+last_updated: 2026-06-26
 type: reference
 prerequisites:
   - /docs/analytics
@@ -16,8 +16,8 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1a22e8c62a9a5ae3203db4051c797a66d5410d12b2d478cafcbe5bcb711df4e8"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "7b8b8345063935f7ccd73eca3dfd2d8ad3cb778ae9703b8e4b063d6cd015fa23"
 ---
 
 # Pricing for Web Analytics

@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "63da2cb5dc39af78de7ff72092dc4fb29909e125eb49c9e2b30f19d6b0c9e7fb"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "76b4f78b4299e97b9d98feef4bbfba6564b24dea44c49100143867a04fa34d6c"
 ---
 
 # Using the Integrations REST API
@@ -188,6 +188,47 @@ https://vercel.com/sso/integrations/aws-marketplace-integration-demo/icfg_PSFtkF
 2. Vercel validates the SSO request and confirms user access
 3. After successfully validating the request, Vercel redirects the user back to the provider using the same flow described in the [Vercel Initiated SSO](#vercel-initiated-sso)
 4. The user gains authenticated access to the requested resource
+
+### Deep links
+
+Deep links let your integration send a user straight to the relevant page for an installation in the Vercel dashboard. Use them in your own UI, emails, or notifications to bring users back to Vercel with a single URL.
+
+You don't need to know the user's team to build a deep link. Vercel resolves the team from the installation, confirms the signed-in user has access, and then redirects to the destination. If the user isn't signed in, Vercel prompts them to sign in first.
+
+All deep links share the same base:
+
+```
+https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}{path}
+```
+
+- [`URLSlug`](/docs/integrations/create-integration/submit-integration#url-slug): The unique identifier for your integration in the Vercel Integrations Marketplace
+- [`installationId`](/docs/integrations/create-integration/marketplace-api#installations): The ID of the specific installation for the user
+- `path`: The optional path segment that selects the destination, as described below
+
+#### Supported deep links
+
+Vercel supports the following deep links:
+
+| Destination           | URL                                                                             | Description                                                                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Installation overview | `https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}`         | The installation's page in the user's team, where they manage settings, usage, and invoices.                                                      |
+| Installation projects | `https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}/projects` | The projects connected to the installation.                                                                                                       |
+| Resource              | `https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}/resources/{resourceId}` | A specific resource that belongs to the installation. `resourceId` accepts either Vercel's resource ID or the external ID you assigned to it. |
+
+#### Example
+
+Say you have an AWS integration with the following details:
+
+- `URLSlug`: `aws-marketplace-integration-demo`
+- `installationId`: `icfg_PSFtkFqr5djKRtOkNtOHIfSd`
+
+To send the user to the installation's projects page, construct this URL:
+
+```
+https://vercel.com/d/dashboard/integrations/aws-marketplace-integration-demo/icfg_PSFtkFqr5djKRtOkNtOHIfSd/projects
+```
+
+Vercel resolves the team, verifies access, and redirects the user to the projects page for that installation.
 
 ## Working with member information
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "63beb0537ff73acc0e9154e54c8102b0b25a5627814cf2066c628e6bbe355003"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "6940c6e73377bf31883dee4327b46daa31bcb982c9d1f2105575f92593ad1452"
 ---
 
 # `useChat()`
@@ -335,7 +335,7 @@ Allows you to easily create a conversational user interface for your chatbot app
         'Optional callback function that is called when a data part is received.',
     },
     {
-      name: 'experimental_throttle',
+      name: 'throttle',
       type: 'number',
       isOptional: true,
       description:

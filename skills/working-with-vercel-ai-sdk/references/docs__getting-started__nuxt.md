@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nuxt.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "99acb8556a28e404c8485153ff6da096e28f307200652947bda3f7e63b37c626"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "733a14dfc07446ffb01d040b440ef11af05382177e23afc7c516e4088154ef8b"
 ---
 
 # Vue.js (Nuxt) Quickstart
@@ -42,24 +42,7 @@ Install `ai` and `@ai-sdk/vue`. The Vercel AI Gateway provider ships with the `a
   [building custom providers](/providers/community-providers/custom-providers)
   in the [providers](/providers) section.
 </Note>
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add ai @ai-sdk/vue zod" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install ai @ai-sdk/vue zod" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add ai @ai-sdk/vue zod" dark />
-    </Tab>
-
-    <Tab>
-      <Snippet text="bun add ai @ai-sdk/vue zod" dark />
-    </Tab>
-
-  </Tabs>
-</div>
+<InstallPackages packages="ai @ai-sdk/vue zod" />
 
 ### Configure Vercel AI Gateway API key
 
@@ -162,24 +145,7 @@ model: gateway('anthropic/claude-sonnet-4.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add @ai-sdk/openai" dark />
-    </Tab>
-
-    <Tab>
-      <Snippet text="bun add @ai-sdk/openai" dark />
-    </Tab>
-
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/openai" />
 
 ```ts
 import { openai } from '@ai-sdk/openai';

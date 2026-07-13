@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/ultrareview.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "14102faa7e58629b9dc8686c54d48cc026cbdee97003e107dc58861bc894a4dd"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "ab45205188722ba9865c88db88e55ffa06a5cee83b89620a624de5cfd4020a18"
 ---
 
 > ## Documentation Index
@@ -21,7 +21,7 @@ Ultrareview is a deep code review that runs on Claude Code on the web infrastruc
 Compared to a local `/code-review` or `/review`, ultrareview offers:
 
 * **Higher signal**: every reported finding is independently reproduced and verified, so the results focus on real bugs rather than style suggestions
-* **Broader coverage**: a larger fleet of reviewer agents explores the change in parallel, which surfaces issues that a medium-effort local review can miss
+* **Broader coverage**: a larger fleet of reviewer agents explores the change in parallel, which surfaces issues that a local review can miss
 * **No local resource use**: the review runs entirely in a remote sandbox, so your terminal stays free for other work while it runs
 
 Ultrareview requires authentication with a Claude.ai account because it runs on Claude Code on the web infrastructure. If you are signed in with an API key only, run `/login` and authenticate with Claude.ai first. Ultrareview is not available when using Claude Code with Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry, and it is not available to organizations that have enabled Zero Data Retention.
@@ -99,14 +99,14 @@ For automatic reviews on GitHub pull requests, [Code Review](/en/code-review) in
 
 All three commands review code, but they target different stages of your workflow.
 
-|          | `/code-review`                  | `/review <pr>`                             | `/code-review ultra`                                            |
-| -------- | ------------------------------- | ------------------------------------------ | --------------------------------------------------------------- |
-| Target   | your working diff               | a GitHub pull request                      | your working diff or a pull request                             |
-| Runs     | locally in your session         | locally in your session                    | remotely in a cloud sandbox                                     |
-| Depth    | scales with the effort argument | the medium `/code-review` engine           | multi-agent fleet with independent verification                 |
-| Duration | seconds to a few minutes        | a few minutes                              | roughly 5 to 10 minutes                                         |
-| Cost     | counts toward normal usage      | counts toward normal usage                 | free runs, then roughly \$5 to \$20 per review as usage credits |
-| Best for | quick feedback while iterating  | reviewing a teammate's PR before approving | pre-merge confidence on substantial changes                     |
+|          | `/code-review`                  | `/review <pr>`                               | `/code-review ultra`                                            |
+| -------- | ------------------------------- | -------------------------------------------- | --------------------------------------------------------------- |
+| Target   | your working diff               | a GitHub pull request                        | your working diff or a pull request                             |
+| Runs     | locally in your session         | locally in your session                      | remotely in a cloud sandbox                                     |
+| Depth    | scales with the effort argument | a single-pass review at the session's effort | multi-agent fleet with independent verification                 |
+| Duration | seconds to a few minutes        | seconds to a few minutes                     | roughly 5 to 10 minutes                                         |
+| Cost     | counts toward normal usage      | counts toward normal usage                   | free runs, then roughly \$5 to \$20 per review as usage credits |
+| Best for | quick feedback while iterating  | reviewing a teammate's PR before approving   | pre-merge confidence on substantial changes                     |
 
 Use `/code-review` for fast feedback as you work. Use `/review <pr>` to look over a pull request the same way you would before approving it. Use `/code-review ultra` before merging a substantial change when you want a deeper pass that catches issues a local review might miss.
 

@@ -1,15 +1,15 @@
 ---
 title: "Markdown Front Matter"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "56056b083a6e38597189693a023352b528d82fb413da4fb62c26fea97c22abc1"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "e645fd3d1d330a5c75c3a80cbdef20c1efc230e86b64b2c4b65f36e57f467b11"
 ---
 
 # Markdown Front Matter
 
 Source: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
 
-- Plugins📦 plugin-content-docsVersion: 3.10.1On this page
+- Plugins📦 plugin-content-docsVersion: 3.10.2On this page
 # 📦 plugin-content-docs
 
 Provides the Docs functionality and is the default docs plugin for Docusaurus.
@@ -164,4 +164,4 @@ Read the i18n introduction first.
 ```
 website/i18n/[locale]/docusaurus-plugin-content-docs││ # translations for website/docs├── current│   ├── api│   │   └── config.md│   └── getting-started.md├── current.json││ # translations for website/versioned_docs/version-1.0.0├── version-1.0.0│   ├── api│   │   └── config.md│   └── getting-started.md└── version-1.0.0.json
 ```
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

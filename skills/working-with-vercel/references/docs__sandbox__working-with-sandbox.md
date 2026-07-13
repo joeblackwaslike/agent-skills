@@ -3,7 +3,7 @@ title: Working with Sandbox
 product: vercel
 url: /docs/sandbox/working-with-sandbox
 canonical_url: "https://vercel.com/docs/sandbox/working-with-sandbox"
-last_updated: 2026-06-17
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "16da28d5ac2009dd9c79b95cee9f477cb57d8f5d6dc6f1a381c83b0f6deff362"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "dec9f6a9b1cde7ec89dee4a4a2233f5e4bdaf50bae7eff0d503e7237575657ab"
 ---
 
 # Working with Sandbox

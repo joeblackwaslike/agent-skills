@@ -3,8 +3,8 @@ title: Custom Domain
 product: vercel
 url: /docs/platforms/platform-elements/blocks/custom-domain
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements/blocks
   - /docs/platforms/platform-elements
@@ -12,11 +12,11 @@ related:
   - /docs/platforms/platform-elements/blocks/dns-table
   - /docs/platforms/platform-elements/actions/add-custom-domain
   - /docs/platforms/multi-tenant-platforms/configuring-domains
-summary: Learn about custom domain on Vercel.
+summary: A complete domain management interface with DNS verification and real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "73dab1a1dba03fa0639155a45d0f5b4414f323e9e5558b3aab177e4b9d5fbbdf"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "5aed5a64cac4ebb794b56d6b8841bc1a639cb7316b3e41b48b6589caeb0d8117"
 ---
 
 # Custom Domain

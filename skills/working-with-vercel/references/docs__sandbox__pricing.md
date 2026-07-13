@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b4a4207574d777d7c03e9d8083c8e458abcdd2985be954f71f9bdcfc14cf3511"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "be451b9602c02b1b0a80037c21a5c626a2b55a42125c9f2433076552a2bbb9dc"
 ---
 
 # Vercel Sandbox pricing and limits
@@ -32,7 +32,7 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 | Sandbox Provisioned Memory | 420 GB-hours/month | $0.0212/GB-hour | $0.0212/GB-hour |
 | Sandbox Creations | 5,000/month | $0.60/1M | $0.60/1M |
 | Sandbox Data Transfer | 20 GB/month | $0.15/GB | $0.15/GB |
-| Sandbox Storage | 15 GB (lifetime) | $0.08/GB-month | $0.08/GB-month |
+| Snapshot Storage | 15 GB (lifetime) | $0.08/GB-month | $0.08/GB-month |
 | Concurrent Sandboxes | 10 | 2,000 | 2,000 |
 | Max Runtime Duration | 45 minutes | 24 hours | 24 hours |
 | vCPU Allocation Rate | 40/10 min | 200/min | 400/min |

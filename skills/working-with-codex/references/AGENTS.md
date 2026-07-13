@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/AGENTS.md"
-fetched_at: "2026-06-29T05:41:54.371Z"
-sha256: "fdab2a6e75a26121c51edd70eee73e4565c9849c471caa283d666fea8b85bcce"
+fetched_at: "2026-07-13T06:55:09.770Z"
+sha256: "c3f80e8386eb170b00af1e21de40d770c4941e464915687e728e2d14a7e79480"
 ---
 
 # Rust/codex-rs
@@ -259,7 +259,7 @@ Use `just bench-smoke` to dry-run the benchmark for a single iteration to ensure
 
 - Tests should exercise app-server's public JSON-RPC API.
 - Use similar server mocking as for core integration tests.
-- Use `TestAppServer::new_with_auto_env()` and `TestAppServer::send_thread_start_request_with_auto_env()`
+- Use `TestAppServer::builder().build()` and `TestAppServer::send_thread_start_request_with_auto_env()`
   by default to ensure that new tests work with foreign app/exec OSes. See `$remote-tests` for
   details.
 

@@ -9,11 +9,12 @@ prerequisites:
   - /docs/vercel-blob
 related:
   - /docs/vercel-blob/using-blob-sdk
+  - /docs/vercel-blob
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1761006964fb7b94f9f44816e8e53edcdad718371b66641810ea9404d5f7c53d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "85139054ccee734864ae50365c27a863cc5ecd33bc0c1b2a6f120adb601a6b7a"
 ---
 
 # Vercel Signed URLs
@@ -85,6 +86,8 @@ It accepts the following parameters:
 
 For `'put'` operations, `options` also accepts upload-shaping fields (`allowedContentTypes`, `maximumSizeInBytes`, `addRandomSuffix`, `allowOverwrite`, `cacheControlMaxAge`, `ifMatch`, and `onUploadCompleted`).
 
+For `'get'` operations, `options` also accepts `useCache`. Set it to `false` to append a `cache=0` query parameter so fetches bypass the CDN cache and read the latest content directly from origin storage. See the [`GET` example](#get---get-a-blob) below.
+
 For `'delete'` operations, `options` also accepts `ifMatch` to require a specific ETag on the target blob. `'head'` accepts no additional fields beyond the ones in the table above.
 
 `presignUrl()` returns:
@@ -121,6 +124,19 @@ const { presignedUrl } = await presignUrl(token, {
   pathname: 'media/photo.png',
   access: 'private',
   validUntil: Date.now() + 5 * 60 * 1000,
+});
+
+const res = await fetch(presignedUrl);
+```
+
+Fetches of a presigned `GET` URL are served through Vercel's [CDN cache](/docs/vercel-blob#caching) by default. When you overwrite a blob at the same pathname, the changes may take up to 60 seconds to propagate through our cache, so the URL can return the previous version during that window. When the fetch must reflect the latest write, pass `useCache: false`:
+
+```ts
+const { presignedUrl } = await presignUrl(token, {
+  operation: 'get',
+  pathname: 'media/photo.png',
+  access: 'private',
+  useCache: false, // appends cache=0 so fetches read from origin storage
 });
 
 const res = await fetch(presignedUrl);

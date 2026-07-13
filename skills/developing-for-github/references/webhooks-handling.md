@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/webhooks/using-webhooks/handling-webhook-deliveries.md"
-fetched_at: "2026-06-15T17:31:37.352Z"
-sha256: "3e5bea57321c38c8a41ed46c5733a2735037909e2bca6264e39d5e539b1b9a8b"
+fetched_at: "2026-07-13T06:52:36.914Z"
+sha256: "4e1d841e0b2429a7ac95057b8085c3c6d9556eee943df536888aeb75b2ce986c"
 ---
 
 ## Introduction
@@ -291,7 +291,7 @@ This article gave basic examples that print a message when a webhook delivery is
 
 ### Verify that the delivery is from {% data variables.product.company_short %}
 
-In your code that handles webhook deliveries, you should validate that the delivery is from {% data variables.product.company_short %} before processing the delivery further. For more information, see [AUTOTITLE](/webhooks/using-webhooks/securing-your-webhooks).
+In your code that handles webhook deliveries, you should validate that the delivery is from {% data variables.product.company_short %} before processing the delivery further. For more information, see [AUTOTITLE](/webhooks/using-webhooks/validating-webhook-deliveries).
 
 ### Deploy your code to a server
 

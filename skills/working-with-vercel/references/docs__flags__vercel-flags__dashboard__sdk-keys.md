@@ -3,7 +3,7 @@ title: SDK Keys
 product: vercel
 url: /docs/flags/vercel-flags/dashboard/sdk-keys
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys"
-last_updated: 2026-05-06
+last_updated: 2026-06-24
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/dashboard
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/flags/vercel-flags/dashboard/feature-flag
   - /docs/flags/vercel-flags/sdks/flags-sdk
-summary: Manage SDK Keys that connect your application to Vercel Flags.
+summary: Manage SDK Keys for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "5b2b70b7801da806245b85d81fa5277ccb3f903ecdfa346735a58d8444f9ccf1"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "cbad22151e74db97c593f776edaa9d95c99a74018fc862495877cf6c96328be4"
 ---
 
 # SDK Keys

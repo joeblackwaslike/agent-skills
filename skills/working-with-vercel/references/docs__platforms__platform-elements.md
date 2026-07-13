@@ -3,18 +3,18 @@ title: Platform Elements
 product: vercel
 url: /docs/platforms/platform-elements
 canonical_url: "https://vercel.com/docs/platforms/platform-elements"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms
 related:
   - /docs/platforms/platform-elements/actions
   - /docs/platforms/platform-elements/blocks
-summary: Learn about platform elements on Vercel.
+summary: Prebuilt server actions and UI blocks you can install to speed up common platform tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "6e046e5cf34b7bac0e0d9778ebf5216c85c3e34a942cbd10cd9a74c5ba4b324c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "6f0c8d8e87e96b58af6f4ac32a15ba55f4ec172058cb8fcc4ffc58923eadfd5c"
 ---
 
 # Platform Elements

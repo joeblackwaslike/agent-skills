@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9c05c6684fe54bf3224d9ded7ab27c46581d94059f2de7656f7f04d9d7c8fb94"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a57fea6bab265d3d7596980d76148f790030c9dee7c262c4f1ddf91e7b0346d0"
 ---
 
 # Claude Code Harness
@@ -18,32 +18,7 @@ WebSocket.
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet
-      text="pnpm add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm install @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="bun add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel" />
 
 The adapter bootstraps the Claude Code bridge dependencies inside the sandbox
 when the first session starts.
@@ -106,7 +81,10 @@ Use `createClaudeCode()` to configure the runtime:
 const harness = createClaudeCode({
   model: 'claude-sonnet-4-6',
   maxTurns: 10,
-  thinking: 'adaptive',
+  thinking: {
+    type: 'adaptive',
+    display: 'summarized',
+  },
 });
 ```
 
@@ -115,7 +93,10 @@ Settings:
 - `auth`: direct Anthropic or AI Gateway authentication settings.
 - `model`: Anthropic model id passed to the underlying Claude Code runtime.
 - `maxTurns`: maximum internal turns before yielding.
-- `thinking`: `off`, `on`, or `adaptive`.
+- `thinking`: extended-thinking configuration. `type` can be `enabled`,
+  `disabled`, or `adaptive`. For enabled or adaptive thinking, `display` can be
+  `summarized` or `omitted`. Defaults to
+  `{ type: 'adaptive', display: 'summarized' }`.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
 

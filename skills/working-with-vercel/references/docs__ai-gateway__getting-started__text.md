@@ -3,7 +3,7 @@ title: Text Generation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/text
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/text"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "c03881c274564880c585d3e25a19f56308d9af67a983df28b024d8ffc4a16a4e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "dc97a5df6617a4a539ba40199f5f295a205b2f9aa877fd8ab6c50162c6347d51"
 ---
 
 # Text Generation Quickstart

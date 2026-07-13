@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d0336bda42ca6b9da976606db48f26cbba47aeffb3119721ba3e7abb5478dcdb"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "968a238d884547edc887c0bd7bfb663dddb8ed5b1592780f7617d0b3d28acb93"
 ---
 
 # AI Gateway Provider
@@ -507,7 +507,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const { text } = await generateText({
-  model: 'xai/grok-4',
+  model: 'xai/grok-4.5',
   prompt: 'What is the weather like in San Francisco?',
   tools: {
     getWeather: tool({

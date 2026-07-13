@@ -3,18 +3,18 @@ title: Platform Template
 product: vercel
 url: /docs/platforms/examples/platform-template
 canonical_url: "https://vercel.com/docs/platforms/examples/platform-template"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: tutorial
 prerequisites:
   - /docs/platforms/examples
   - /docs/platforms
 related:
   []
-summary: Learn about platform template on Vercel.
+summary: Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/platform-template.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "f4b945fe648019d2a1bf6d4f6fea8a45071b83dd3580cd921db471afd9263dda"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a481f46782a2ab62a290b9f8405917ce2ea04947424b0bc9d29cce98b6b70f16"
 ---
 
 # Platform Template

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/issues/tracking-your-work-with-issues/using-issues/assigning-issues-and-pull-requests-to-other-github-users.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "04768b43170a5997732c9970a0df948215398ba207264652b20f6f13b2eee711"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "c1c9da0ecddfa3039bc964450d5a3f4bf032e5d55bd33629957c71a82c5d1881"
 ---
 
 ## About issue and pull request assignees
@@ -46,4 +46,4 @@ If you assign an issue to {% data variables.product.prodname_copilot_short %}, {
 
 ## Further reading
 
-* [AUTOTITLE](/issues/tracking-your-work-with-issues/filtering-and-searching-issues-and-pull-requests)
+* [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/filtering-and-searching-issues-and-pull-requests)

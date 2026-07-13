@@ -3,7 +3,7 @@ title: get-integration-resources
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resources
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resources"
-last_updated: 2026-07-06
+last_updated: 2026-07-13
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-integration-resources on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resources.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "82832d5f026329ec4014c952883769886cc8e9ebc45b4ee7a3264bb74efaa412"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "6a2ac6f0d465c79333f7cbdc6a3c4681f8787647a450f5e2d6179b59a40fa53d"
 ---
 
 # Get Integration Resources

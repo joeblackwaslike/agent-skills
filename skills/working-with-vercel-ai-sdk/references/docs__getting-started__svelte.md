@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/svelte.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "3eaa41cc121ada552aab159bc481811955e5b2713caba70b2321aee7ada7fea1"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "8c3886a6221236999905b548f3ecd799bb0c610eea4c2379bd83eb41ca9be35f"
 ---
 
 # Svelte Quickstart
@@ -41,22 +41,7 @@ Install `ai` and `@ai-sdk/svelte`, the AI package and AI SDK's Svelte bindings. 
   provider or model by installing its package. Check out available [AI SDK
   providers](/providers/ai-sdk-providers) for more information.
 </Note>
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add -D ai @ai-sdk/svelte zod" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install -D ai @ai-sdk/svelte zod" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add -D ai @ai-sdk/svelte zod" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="bun add -d ai @ai-sdk/svelte zod" dark />
-    </Tab>
-  </Tabs>
-</div>
+<InstallPackages packages="ai @ai-sdk/svelte zod" dev />
 
 ### Configure your AI Gateway API key
 
@@ -152,24 +137,7 @@ model: gateway('anthropic/claude-sonnet-4.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add @ai-sdk/openai" dark />
-    </Tab>
-
-    <Tab>
-      <Snippet text="bun add @ai-sdk/openai" dark />
-    </Tab>
-
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/openai" />
 
 ```ts
 import { openai } from '@ai-sdk/openai';

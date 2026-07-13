@@ -3,7 +3,7 @@ title: Monorepos FAQ
 product: vercel
 url: /docs/monorepos/monorepo-faq
 canonical_url: "https://vercel.com/docs/monorepos/monorepo-faq"
-last_updated: 2026-03-11
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/monorepos
@@ -16,8 +16,8 @@ related:
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "995a07e47d82f05b6c57c399fa8ed1d43942d6237b089c8457ef1ef7a6171fd2"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "217e0da06067b84f33a141140c4cb42947f427e2fca321715ab2d125185529e1"
 ---
 
 # Monorepos FAQ

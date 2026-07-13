@@ -3,18 +3,18 @@ title: Runtimes
 product: vercel
 url: /docs/sandbox/concepts/runtimes
 canonical_url: "https://vercel.com/docs/sandbox/concepts/runtimes"
-last_updated: 2018-10-20
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/firewall
-summary: Learn about runtimes on Vercel.
+summary: Detailed specifications for the Vercel Sandbox environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/runtimes.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "d993595e1a0434fa63daa3570f9af9a38488355c0a06eed07ffa7cec5a054afd"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "3528a38485c75ef3e68182801e56adfed2cc5a7859bcd85085cfbfffbd2b7b45"
 ---
 
 # Runtimes

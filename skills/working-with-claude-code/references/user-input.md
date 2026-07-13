@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/user-input.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "62848e3eb2f0cfc2ad35025a9ba06018cecde3104cb67badff6b2e0b54c1217f"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "623f77c10246bbcb772cc200afa00129798f333eadcc884072a56c9b5f3bbd37"
 ---
 
 > ## Documentation Index
@@ -200,7 +200,7 @@ The following example asks Claude to create and delete a test file. When Claude 
 </CodeGroup>
 
 <Note>
-  In Python, `can_use_tool` requires [streaming mode](/en/agent-sdk/streaming-vs-single-mode) and a `PreToolUse` hook that returns `{"continue_": True}` to keep the stream open. Without this hook, the stream closes before the permission callback can be invoked.
+  In Python, `can_use_tool` requires [streaming mode](/en/agent-sdk/streaming-vs-single-mode). When you pass a finite message stream through `query(prompt=generator)` or `ClaudeSDKClient.connect(prompt=async_iterable)`, the SDK closes the input stream after the last message, before the permission callback can be invoked, unless a registered hook or in-process MCP server is keeping it open. The example above keeps it open with a `PreToolUse` hook that returns `{"continue_": True}`. Connecting with no prompt and sending messages through `ClaudeSDKClient.query()` keeps the stream open on its own and needs no hook.
 </Note>
 
 This example uses a `y/n` flow where any input other than `y` is treated as a denial. In practice, you might build a richer UI that lets users modify the request, provide feedback, or redirect Claude entirely. See [Respond to tool requests](#respond-to-tool-requests) for all the ways you can respond.

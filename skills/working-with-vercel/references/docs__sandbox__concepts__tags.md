@@ -3,7 +3,7 @@ title: Tags
 product: vercel
 url: /docs/sandbox/concepts/tags
 canonical_url: "https://vercel.com/docs/sandbox/concepts/tags"
-last_updated: 2026-05-25
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -16,8 +16,8 @@ related:
 summary: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/tags.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5b5bec23504a24c8e74c6401e824d924c83d97f57ca8cb7acf09534d635deb2a"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "936a9274976faa7cc5a8a8d1ebe4a20dc3652de1e19458b83f9824ade469e3e6"
 ---
 
 # Tags

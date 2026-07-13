@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/clarifai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "c19e751bac65f5a1646feadf9cbc3c001e1b7a1548dd96a87cca2efe2a5f8908"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e51f9842a75209239cc3aa5705d98282ea16b5a8c444ba0b7a6dd6ea9c08ab9f"
 ---
 
 # Clarifai Provider
@@ -12,17 +12,7 @@ sha256: "c19e751bac65f5a1646feadf9cbc3c001e1b7a1548dd96a87cca2efe2a5f8908"
 
 The Clarifai provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/openai-compatible" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/openai-compatible" />
 
 ## Provider Instance
 

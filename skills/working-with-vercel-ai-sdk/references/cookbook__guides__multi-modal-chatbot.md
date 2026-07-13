@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/multi-modal-chatbot.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "3581591724ab26f392f5c2c665633ecb8937869ebf100fb873ad7a496fa52ae8"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "65cd56dc651898d94bd3b1b58eb81612cf3cf5e910b8a465cff1b8e643dafc70"
 ---
 
 # Multi-Modal Agent
@@ -55,24 +55,7 @@ Install `ai` and `@ai-sdk/react`, the AI SDK package and the AI SDK's React pack
   [building custom providers](/providers/community-providers/custom-providers)
   in the [providers](/providers) section.
 </Note>
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add ai @ai-sdk/react" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install ai @ai-sdk/react" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add ai @ai-sdk/react" dark />
-    </Tab>
-
-    <Tab>
-      <Snippet text="bun add ai @ai-sdk/react" dark />
-    </Tab>
-
-  </Tabs>
-</div>
+<InstallPackages packages="ai @ai-sdk/react" />
 
 ### Configure your Vercel AI Gateway API key
 

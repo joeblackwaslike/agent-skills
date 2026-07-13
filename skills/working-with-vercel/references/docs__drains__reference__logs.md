@@ -3,7 +3,7 @@ title: Log Drains Reference
 product: vercel
 url: /docs/drains/reference/logs
 canonical_url: "https://vercel.com/docs/drains/reference/logs"
-last_updated: 2025-11-24
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/drains
@@ -16,8 +16,8 @@ related:
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "244961f51b9516a6eb560b1b427424bf566a483eea381defe87a597bbd5aaab2"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "8c92497040d3310efead7a7ed1bd5732b3e956c026ef5f6018db6ffd0bb641d5"
 ---
 
 # Log Drains Reference

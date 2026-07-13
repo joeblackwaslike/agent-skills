@@ -3,7 +3,7 @@ title: Runtime Cache
 product: vercel
 url: /docs/caching/runtime-cache
 canonical_url: "https://vercel.com/docs/caching/runtime-cache"
-last_updated: 2026-03-05
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/caching
@@ -16,8 +16,8 @@ related:
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "78f431e0ef3f8515056ec4b5fd4a77ab21ccc0f91e9ae20d28fa1aa68c2c2e77"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "8dfc5ecf609f8b8095135b2391411e56d96a73a72ee717c44d8ad97a77e92b6c"
 ---
 
 # Runtime Cache

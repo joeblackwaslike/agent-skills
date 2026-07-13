@@ -1,6 +1,6 @@
 ---
 source: "https://code.claude.com/docs/en/sessions.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
+fetched_at: "2026-07-13T06:53:38.588Z"
 sha256: "9c3d8fcf25854f820a0660c81283c229d1fe64a8289175ae8e975385354fcbc5"
 ---
 

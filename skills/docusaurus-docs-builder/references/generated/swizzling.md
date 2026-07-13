@@ -1,15 +1,15 @@
 ---
 title: "Swizzling"
 source: "https://docusaurus.io/docs/swizzling"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "307154631ba4e70e689634ea50cb29b120826fa8c13b0c801594269070bd3f2a"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "c239f1694dbe93a4de8f7d43662ee2721277e9a5ac58d4be0339bd5558e0bf7a"
 ---
 
 # Swizzling
 
 Source: https://docusaurus.io/docs/swizzling
 
-- GuidesSwizzlingVersion: 3.10.1On this page
+- GuidesSwizzlingVersion: 3.10.2On this page
 # Swizzling
 
 In this section, we will introduce how customization of layout is done in Docusaurus.
@@ -268,4 +268,4 @@ src/theme/Root.js
 import React from 'react';// Default implementation, that you can customizeexport default function Root({children}) {  return <>{children}</>;}
 ```
 
-tipUse this component to render React Context providers.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+tipUse this component to render React Context providers.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

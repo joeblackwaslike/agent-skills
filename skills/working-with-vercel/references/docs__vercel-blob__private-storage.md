@@ -3,7 +3,7 @@ title: Private Storage
 product: vercel
 url: /docs/vercel-blob/private-storage
 canonical_url: "https://vercel.com/docs/vercel-blob/private-storage"
-last_updated: 2026-05-19
+last_updated: 2026-06-24
 type: conceptual
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d91cedc1dbf490c134894ea9592ecdb1bac607880051dcc82f2652ed49525da3"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "e31f246b3d36de8d00731c006c7dab43bbde5466db654a645447817e8ef8131e"
 ---
 
 # Private Storage
@@ -283,6 +283,18 @@ return new NextResponse(result.stream, {
 ```
 
 For sensitive data (tokens, banking, PII), use `Cache-Control: private, no-store` instead. Nothing is stored on disk and every request is a full fetch.
+
+### Consistent reads
+
+Reads are served through Vercel's [CDN cache](/docs/vercel-blob#caching) by default. When you overwrite a blob at the same pathname, the changes may take up to 60 seconds to propagate through our cache. During that window, [`get()`](/docs/vercel-blob/using-blob-sdk#get) can return the previous version. When a read must reflect the latest write, such as fetching a file right after updating it, pass `useCache: false`:
+
+```ts
+const result = await get(pathname, { access: 'private', useCache: false });
+```
+
+This serves the read directly from origin storage and guarantees the latest content. These reads are slower and incur [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) on each request. Keep the default for content that doesn't change after upload, such as blobs uploaded with unique pathnames or with [`addRandomSuffix: true`](/docs/vercel-blob#alternatives-to-overwriting).
+
+[Presigned `GET` URLs](/docs/vercel-blob/vercel-signed-urls#get---get-a-blob) accept the same `useCache` option in [`presignUrl()`](/docs/vercel-blob/vercel-signed-urls#presignurl).
 
 ### Browser caching with conditional requests
 

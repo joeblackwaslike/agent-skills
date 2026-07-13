@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "5c669b086a1592a6499d84940b97a3dd2297846e71cd0416abd5c929d64bde9c"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "be70620912d3c289073da07925780bbf0cc48e17eb09ef23b482102b2b6dd912"
 ---
 
 # Azure OpenAI Provider
@@ -12,21 +12,7 @@ The [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai
 
 The Azure OpenAI provider is available in the `@ai-sdk/azure` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/azure" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/azure" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/azure" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/azure" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/azure" />
 
 ## Provider Instance
 
@@ -1100,11 +1086,11 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                    | Transcription       | Duration            | Segments            | Language            |
-| ------------------------ | ------------------- | ------------------- | ------------------- | ------------------- |
-| `whisper-1`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gpt-4o-mini-transcribe` | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-4o-transcribe`      | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Model                    | Transcription | Duration  | Segments  | Language  |
+| ------------------------ | ------------- | --------- | --------- | --------- |
+| `whisper-1`              | <Check />     | <Check /> | <Check /> | <Check /> |
+| `gpt-4o-mini-transcribe` | <Check />     | <Cross /> | <Cross /> | <Cross /> |
+| `gpt-4o-transcribe`      | <Check />     | <Cross /> | <Cross /> | <Cross /> |
 
 ## Speech Models
 
@@ -1164,11 +1150,11 @@ The following provider options are available:
 
 Azure OpenAI supports TTS models through deployments. The capabilities depend on which model version your deployment is using:
 
-| Model Version     | Instructions        |
-| ----------------- | ------------------- |
-| `tts-1`           | <Cross size={18} /> |
-| `tts-1-hd`        | <Cross size={18} /> |
-| `gpt-4o-mini-tts` | <Check size={18} /> |
+| Model Version     | Instructions |
+| ----------------- | ------------ |
+| `tts-1`           | <Cross />    |
+| `tts-1-hd`        | <Cross />    |
+| `gpt-4o-mini-tts` | <Check />    |
 
 
 ## Navigation

@@ -1,9 +1,9 @@
 ---
-title: Limits
+title: Multi-tenant Limits
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/limits
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/limits"
-last_updated: 2018-10-20
+last_updated: 2026-06-26
 type: reference
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
@@ -12,11 +12,11 @@ related:
   - /docs/projects/domains/working-with-nameservers
   - /docs/domains/custom-SSL-certificate
   - /docs/rest-api
-summary: Learn about limits on Vercel.
+summary: Understand the limits and features available for Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/limits.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e33681b19ddd14abc644d2e9d0a9d06c9d3914c82521042a62d84835e63a04e7"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "121701752f36045e4901486fcd358c3868e2dad91e3d9f9c74dc950cae21d86d"
 ---
 
 # Multi-tenant Limits

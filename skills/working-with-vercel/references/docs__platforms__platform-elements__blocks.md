@@ -3,8 +3,8 @@ title: Blocks
 product: vercel
 url: /docs/platforms/platform-elements/blocks
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements
   - /docs/platforms
@@ -14,11 +14,11 @@ related:
   - /docs/platforms/platform-elements/blocks/deploy-popover
   - /docs/platforms/platform-elements/blocks/dns-table
   - /docs/platforms/platform-elements/blocks/report-abuse
-summary: Learn about blocks on Vercel.
+summary: Prebuilt UI components for common platform flows like claiming deployments and managing domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "fb243dd36d5b4e85fee88869789726b948794cea13b8a04a9f02bc49cca9968a"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "089425a2e8be6061209f4c64f974627102dc6b0293b2507355437ccd2e0b2a1a"
 ---
 
 # Blocks

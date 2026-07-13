@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "24d1838e61071a8ff9304c1bdbb7ddec11029c9de1d60246cf002d80af7004f3"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "2863471725031f1aea7ed6b1d1eefff30fe51c0c188816ce1a0ec10cdb1edd4c"
 ---
 
 # Replicate Provider
@@ -13,21 +13,7 @@ It is a popular choice for running image generation models.
 
 The Replicate provider is available via the `@ai-sdk/replicate` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/replicate" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/replicate" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/replicate" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/replicate" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/replicate" />
 
 ## Provider Instance
 

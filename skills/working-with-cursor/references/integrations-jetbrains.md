@@ -1,14 +1,14 @@
 ---
 source: "https://cursor.com/docs/integrations/jetbrains.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "541923271c2a3b0e2d2fdbc7e6cb4b399058750131137a0c3e68b8a52d305212"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "088e79280216081e3ff4af6fe92db294633268912f6efd22f5575c68bf46a18f"
 ---
 
 # JetBrains
 
 Use Cursor's AI agent in IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs through the [Agent Client Protocol](https://agentclientprotocol.com/) (ACP).
 
-ACP lets you stay in your JetBrains IDE while Cursor handles agent-driven development. You get access to frontier models from OpenAI, Anthropic, Google, and Cursor, along with secure codebase indexing and semantic search.
+ACP lets you stay in your JetBrains IDE while Cursor handles agent-driven development. You get access to frontier models from OpenAI, Anthropic, Google, and Cursor.
 
 ## Prerequisites
 
@@ -38,7 +38,6 @@ Send a prompt in the AI Chat panel. Cursor's agent reads your project, edits fil
 Cursor ACP in JetBrains IDEs provides many of the same agent capabilities available across other Cursor surfaces.
 
 - **Model selection** — Choose from [frontier models](https://cursor.com/docs/models-and-pricing.md) suited to your task. Different models handle different kinds of work better; switch between them as needed.
-- **Codebase understanding** — Cursor indexes your codebase and uses semantic search to find relevant code across large projects.
 - **File editing** — The agent reads and writes files in your project, with changes reflected in your JetBrains editor.
 - **Terminal commands** — The agent runs shell commands in the IDE's integrated terminal.
 

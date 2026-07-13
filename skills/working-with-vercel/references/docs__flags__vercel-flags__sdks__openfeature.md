@@ -3,7 +3,7 @@ title: Using OpenFeature with Vercel Flags
 product: vercel
 url: /docs/flags/vercel-flags/sdks/openfeature
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature"
-last_updated: 2026-06-11
+last_updated: 2026-06-24
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/sdks
@@ -15,8 +15,8 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d318b9092e865df725e1a3d99c796f69c5c971209e8d9a92d4e72af58abad4f7"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a4ab7c622e4211a6b69e3751c98573998b5d6c04a1c41a990a515039b6be3ef5"
 ---
 
 # Using OpenFeature with Vercel Flags

@@ -1,20 +1,20 @@
 ---
-title: Using with CLI
+title: Accessing Metrics with Vercel CLI
 product: vercel
 url: /docs/analytics/accessing-metrics-with-vercel-cli
 canonical_url: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-25
+type: how-to
 prerequisites:
   - /docs/analytics
 related:
   - /docs/observability/observability-plus
   - /docs/cli/metrics
-summary: Learn about using with cli on Vercel.
+summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "5bc208f4288fff73b84dee813cfa5a9a864d27499b3b5004866cdaf2c5f31a93"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9513c2cc1519a254006b2b6e205801ae196dd74faf40fdaf6e1beb093b4950d8"
 ---
 
 # Accessing Metrics with Vercel CLI

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "05fb4792578c49d5b568e739654fdffad471b4fd0b650881e9f0f67b0a70daac"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "589c79b12a28908ed6626d2fa62df2eada6af0e3e84872ad05b026f63b2b2bdf"
 ---
 
 # Gladia Provider
@@ -12,21 +12,7 @@ The [Gladia](https://gladia.io/) provider contains language model support for th
 
 The Gladia provider is available in the `@ai-sdk/gladia` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/gladia" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/gladia" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/gladia" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/gladia" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/gladia" />
 
 ## Provider Instance
 
@@ -284,9 +270,9 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model     | Transcription       | Duration            | Segments            | Language            |
-| --------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `Default` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model     | Transcription | Duration  | Segments  | Language  |
+| --------- | ------------- | --------- | --------- | --------- |
+| `Default` | <Check />     | <Check /> | <Check /> | <Check /> |
 
 
 ## Navigation

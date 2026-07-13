@@ -1,28 +1,28 @@
 ---
-title: Container Registry
+title: Vercel Container Registry
 product: vercel
 url: /docs/container-registry
 canonical_url: "https://vercel.com/docs/container-registry"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-30
+type: how-to
 prerequisites:
   []
 related:
-  - /docs/container-registry/limits-and-pricing
-  - /docs/sandbox/concepts/images
   - /docs/functions/container-images
-summary: Learn about container registry on Vercel.
+  - /docs/sandbox/concepts/images
+  - /docs/container-registry/limits-and-pricing
+summary: Vercel Container Registry stores project-scoped OCI images that you can push and pull with Docker-compatible tooling.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "ac0fab83647bbd592fb644d77e0add25f30c90850e2ee7abb3f7ac4bb1bbf5ca"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ed49911dd285a7d9094999e1b939a06128450e6a85203dfe1656e72bdcbf28f8"
 ---
 
 # Vercel Container Registry
 
-Vercel Container Registry (VCR) is a project-scoped registry for OCI container images. Use VCR to store, push, and pull Docker images on Vercel.
+Vercel Container Registry (VCR) is a Docker-compatible container registry built into Vercel. Use VCR to store, push, and pull the Docker images you build from a Dockerfile or Containerfile, then run them on [Vercel Functions](/docs/functions/container-images) or use them as custom [Vercel Sandbox](/docs/sandbox/concepts/images) images.
 
-VCR supports the Docker Registry HTTP API v2. You can use Docker-compatible tooling to authenticate, push images, and pull images from `vcr.vercel.com`.
+VCR uses the Docker Registry HTTP API v2 using the OCI format. You can use Docker-compatible tooling to authenticate, push images, and pull images from `vcr.vercel.com`.
 
 ## How VCR repositories work
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "ed2bab20204e4cd4c3fc30ef9b6cc704bc353019cf8e52c7002478676a105eee"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "1fbd5b6f0d8e68df7396bd616a93d3d8cb13619118d005c254620d32c2fa4ef5"
 ---
 
 # Video Generation
@@ -195,11 +195,11 @@ const { video } = await generateVideo({
 });
 ```
 
-### Reference Images
+### Reference Inputs
 
 Some video models support reference-to-video generation, where you provide one or
-more reference images that the model incorporates into the generated video. Use the `inputReferences` option to pass
-these images in a provider-agnostic way:
+more reference images or videos that the model incorporates into the generated video. Use the `inputReferences` option to pass
+these inputs in a provider-agnostic way:
 
 ```tsx highlight={"5-8"}
 const { video } = await generateVideo({
@@ -211,6 +211,25 @@ const { video } = await generateVideo({
   ],
 });
 ```
+
+For URL-based video references, use the object form with an explicit `mediaType`:
+
+```tsx highlight={"5-10"}
+const { video } = await generateVideo({
+  model: __VIDEO_MODEL__,
+  prompt: 'Match the motion in the reference clip',
+  inputReferences: [
+    {
+      data: 'https://example.com/reference.mp4',
+      mediaType: 'video/mp4',
+    },
+  ],
+});
+```
+
+Providers route each reference by its media type (image vs. video) and emit a
+warning when a reference kind is unsupported (for example, providers that accept
+only image references warn and ignore a video reference).
 
 ### Providing a Seed
 

@@ -3,7 +3,7 @@ title: Configuring Maximum Duration for Vercel Functions
 product: vercel
 url: /docs/functions/configuring-functions/duration
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/duration"
-last_updated: 2026-06-19
+last_updated: 2026-07-01
 type: how-to
 prerequisites:
   - /docs/functions/configuring-functions
@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "eb743a0aa6b11881f051a2612d36e6ffa33e9bea17e87c21388387ad3c934153"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "74b98dde39cff4bdfd428a45ffcea5379ba53b0ca3260e85e49adfa8045be127"
 ---
 
 # Configuring Maximum Duration for Vercel Functions

@@ -3,7 +3,7 @@ title: Video Generation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/video
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/video"
-last_updated: 2026-06-20
+last_updated: 2026-06-30
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -16,8 +16,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "495973e0d8657c13f29b7b0d97480d333aebe44769218604db2dadbec96dcdaf"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ce299c29d6e76bd24fb7dc9bee166fd03e99c72def3f58b9cff8b78ba6048657"
 ---
 
 # Video Generation Quickstart

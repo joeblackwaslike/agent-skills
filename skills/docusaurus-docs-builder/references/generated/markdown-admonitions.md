@@ -1,15 +1,15 @@
 ---
 title: "Markdown Admonitions"
 source: "https://docusaurus.io/docs/markdown-features/admonitions"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "ca67e7b1adfc5a4b20c6d44ddc3fb12f933b0840c44fd92c1acc48c2937a2ae8"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "93d4838af422d1a8c97ebc15f7ad8929b12cfbb03db3f307b3b61418d2a4f5e4"
 ---
 
 # Markdown Admonitions
 
 Source: https://docusaurus.io/docs/markdown-features/admonitions
 
-- GuidesMarkdown FeaturesAdmonitionsVersion: 3.10.1On this page
+- GuidesMarkdown FeaturesAdmonitionsVersion: 3.10.2On this page
 # Admonitions
 
 In addition to the basic Markdown syntax, we have a special admonitions syntax by wrapping text with a set of 3 colons, followed by a label denoting its type.
@@ -152,4 +152,4 @@ Now you can use your new admonition keyword in a Markdown file, and it will be p
 :::my-custom-admonition[My Title]It works!:::
 ```
 
-http://localhost:3000My TitleIt works!Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+http://localhost:3000My TitleIt works!Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

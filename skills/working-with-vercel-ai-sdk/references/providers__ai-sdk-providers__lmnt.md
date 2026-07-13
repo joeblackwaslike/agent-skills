@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/lmnt.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "05a9aecd32e9cd7e9088e8c1831572af5674e4837e4e017af3f8e2cd074f5bcc"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "cff5624eb5bf970a7978ea67a84737b9f4a0c8efad841c4bc0e3316e0b8a81d1"
 ---
 
 # LMNT Provider
@@ -12,21 +12,7 @@ The [LMNT](https://lmnt.com/) provider contains speech model support for the LMN
 
 The LMNT provider is available in the `@ai-sdk/lmnt` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/lmnt" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/lmnt" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/lmnt" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/lmnt" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/lmnt" />
 
 ## Provider Instance
 
@@ -149,10 +135,10 @@ The LMNT provider accepts the following options via `providerOptions.lmnt`:
 
 ### Model Capabilities
 
-| Model      | Instructions        |
-| ---------- | ------------------- |
-| `aurora`   | <Cross size={18} /> |
-| `blizzard` | <Cross size={18} /> |
+| Model      | Instructions |
+| ---------- | ------------ |
+| `aurora`   | <Cross />    |
+| `blizzard` | <Cross />    |
 
 
 ## Navigation

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e53adc90585d80bff7b5ca5fcd189fb8753f2ae883408265ff438d9ce57025c1"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "fc25cf69f278b8d46bb38386f8b38e0c5999afb8bb764072ee0b38030fe4a7e7"
 ---
 
 # Prodia Provider
@@ -12,21 +12,7 @@ sha256: "e53adc90585d80bff7b5ca5fcd189fb8753f2ae883408265ff438d9ce57025c1"
 
 The Prodia provider is available via the `@ai-sdk/prodia` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/prodia" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/prodia" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/prodia" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/prodia" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/prodia" />
 
 ## Provider Instance
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "d105df24a2f057d30be34c6e8a978098d6fdbfe2b8d12a8f8b85ac1f47e1e5b0"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "12d7fcf73b0639f15e8e3bc1fb968e725433dddf378bc9eec1a2960b14c9f881"
 ---
 
 # Fireworks Provider
@@ -12,21 +12,7 @@ sha256: "d105df24a2f057d30be34c6e8a978098d6fdbfe2b8d12a8f8b85ac1f47e1e5b0"
 
 The Fireworks provider is available via the `@ai-sdk/fireworks` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/fireworks" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/fireworks" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/fireworks" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/fireworks" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/fireworks" />
 
 ## Provider Instance
 
@@ -286,29 +272,29 @@ const model = fireworks.completionModel(
 
 ### Model Capabilities
 
-| Model                                                      | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ---------------------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `accounts/fireworks/models/firefunction-v1`                | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `accounts/fireworks/models/deepseek-r1`                    | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/deepseek-v3`                    | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/llama-v3p1-405b-instruct`       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `accounts/fireworks/models/llama-v3p1-8b-instruct`         | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/llama-v3p2-3b-instruct`         | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/llama-v3p3-70b-instruct`        | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/mixtral-8x7b-instruct`          | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/mixtral-8x7b-instruct-hf`       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/mixtral-8x22b-instruct`         | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/qwen2p5-coder-32b-instruct`     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/qwen2p5-72b-instruct`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/qwen-qwq-32b-preview`           | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/qwen2-vl-72b-instruct`          | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/llama-v3p2-11b-vision-instruct` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/qwq-32b`                        | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/yi-large`                       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/kimi-k2-instruct`               | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/kimi-k2-thinking`               | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/kimi-k2p6`                      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `accounts/fireworks/models/minimax-m2`                     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
+| Model                                                      | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ---------------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `accounts/fireworks/models/firefunction-v1`                | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `accounts/fireworks/models/deepseek-r1`                    | <Cross />   | <Check />         | <Cross />  | <Cross />      |
+| `accounts/fireworks/models/deepseek-v3`                    | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/llama-v3p1-405b-instruct`       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `accounts/fireworks/models/llama-v3p1-8b-instruct`         | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/llama-v3p2-3b-instruct`         | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/llama-v3p3-70b-instruct`        | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/mixtral-8x7b-instruct`          | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/mixtral-8x7b-instruct-hf`       | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/mixtral-8x22b-instruct`         | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/qwen2p5-coder-32b-instruct`     | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/qwen2p5-72b-instruct`           | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/qwen-qwq-32b-preview`           | <Cross />   | <Check />         | <Cross />  | <Cross />      |
+| `accounts/fireworks/models/qwen2-vl-72b-instruct`          | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `accounts/fireworks/models/llama-v3p2-11b-vision-instruct` | <Check />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/qwq-32b`                        | <Cross />   | <Check />         | <Cross />  | <Cross />      |
+| `accounts/fireworks/models/yi-large`                       | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/kimi-k2-instruct`               | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/kimi-k2-thinking`               | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/kimi-k2p6`                      | <Check />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/minimax-m2`                     | <Cross />   | <Check />         | <Check />  | <Cross />      |
 
 <Note>
   The table above lists popular models. Please see the [Fireworks models
@@ -352,13 +338,19 @@ You can create Fireworks image models using the `.image()` factory method.
 For more on image generation with the AI SDK see [generateImage()](/docs/reference/ai-sdk-core/generate-image).
 
 ```ts
-import { fireworks } from '@ai-sdk/fireworks';
+import { fireworks, type FireworksImageModelOptions } from '@ai-sdk/fireworks';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
   model: fireworks.image('accounts/fireworks/models/flux-1-dev-fp8'),
   prompt: 'A futuristic cityscape at sunset',
   aspectRatio: '16:9',
+  providerOptions: {
+    fireworks: {
+      guidance_scale: 4.5,
+      num_inference_steps: 8,
+    } satisfies FireworksImageModelOptions,
+  },
 });
 ```
 
@@ -368,6 +360,48 @@ const { image } = await generateImage({
   or check the model's documentation on [Fireworks models
   page](https://fireworks.ai/models) for more details.
 </Note>
+
+### Provider Options
+
+Fireworks image models support flexible provider options through the `providerOptions.fireworks` object. Use the `FireworksImageModelOptions` type to validate known Fireworks image options while still allowing model-specific options to pass through.
+
+The following typed provider options are available:
+
+- **guidance_scale** _number_
+
+  Classifier-free guidance scale for the image diffusion process.
+
+- **num_inference_steps** _number_
+
+  Number of denoising steps for FLUX workflow image generation.
+
+- **output_format** _'jpeg' | 'png'_
+
+  Desired output format for FLUX Kontext image generation and editing.
+
+- **prompt_upsampling** _boolean_
+
+  Whether Fireworks should automatically modify the prompt for more creative generation.
+
+- **safety_tolerance** _number_
+
+  Moderation tolerance level for inputs and outputs, from `0` to `6`. Fireworks limits image-to-image requests to `2`.
+
+- **webhook_url** _string_
+
+  URL to receive webhook notifications for async Kontext requests.
+
+- **webhook_secret** _string_
+
+  Secret for webhook signature verification.
+
+- **cfg_scale** _number_
+
+  Guidance scale for legacy `image_generation` models.
+
+- **steps** _number_
+
+  Number of generation steps for legacy `image_generation` models.
 
 ### Image Editing
 
@@ -394,7 +428,8 @@ const { images } = await generateImage({
   providerOptions: {
     fireworks: {
       output_format: 'jpeg',
-    },
+      safety_tolerance: 2,
+    } satisfies FireworksImageModelOptions,
   },
 });
 ```
@@ -432,17 +467,17 @@ For all models supporting size, the following sizes are supported:
 
 `640 x 1536, 768 x 1344, 832 x 1216, 896 x 1152, 1024x1024 (default), 1152 x 896, 1216 x 832, 1344 x 768, 1536 x 640`
 
-| Model                                                        | Dimensions Specification | Image Editing       |
-| ------------------------------------------------------------ | ------------------------ | ------------------- |
-| `accounts/fireworks/models/flux-kontext-pro`                 | Aspect Ratio             | <Check size={18} /> |
-| `accounts/fireworks/models/flux-kontext-max`                 | Aspect Ratio             | <Check size={18} /> |
-| `accounts/fireworks/models/flux-1-dev-fp8`                   | Aspect Ratio             | <Cross size={18} /> |
-| `accounts/fireworks/models/flux-1-schnell-fp8`               | Aspect Ratio             | <Cross size={18} /> |
-| `accounts/fireworks/models/playground-v2-5-1024px-aesthetic` | Size                     | <Cross size={18} /> |
-| `accounts/fireworks/models/japanese-stable-diffusion-xl`     | Size                     | <Cross size={18} /> |
-| `accounts/fireworks/models/playground-v2-1024px-aesthetic`   | Size                     | <Cross size={18} /> |
-| `accounts/fireworks/models/SSD-1B`                           | Size                     | <Cross size={18} /> |
-| `accounts/fireworks/models/stable-diffusion-xl-1024-v1-0`    | Size                     | <Cross size={18} /> |
+| Model                                                        | Dimensions Specification | Image Editing |
+| ------------------------------------------------------------ | ------------------------ | ------------- |
+| `accounts/fireworks/models/flux-kontext-pro`                 | Aspect Ratio             | <Check />     |
+| `accounts/fireworks/models/flux-kontext-max`                 | Aspect Ratio             | <Check />     |
+| `accounts/fireworks/models/flux-1-dev-fp8`                   | Aspect Ratio             | <Cross />     |
+| `accounts/fireworks/models/flux-1-schnell-fp8`               | Aspect Ratio             | <Cross />     |
+| `accounts/fireworks/models/playground-v2-5-1024px-aesthetic` | Size                     | <Cross />     |
+| `accounts/fireworks/models/japanese-stable-diffusion-xl`     | Size                     | <Cross />     |
+| `accounts/fireworks/models/playground-v2-1024px-aesthetic`   | Size                     | <Cross />     |
+| `accounts/fireworks/models/SSD-1B`                           | Size                     | <Cross />     |
+| `accounts/fireworks/models/stable-diffusion-xl-1024-v1-0`    | Size                     | <Cross />     |
 
 For more details, see the [Fireworks models page](https://fireworks.ai/models).
 

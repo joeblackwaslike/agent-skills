@@ -1,15 +1,12 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-object.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "36a4080aa375c4eb71118404b6dcb4655c2832cafa0d17997d1975b13118a6ab"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b98193e3e494006b645313b67ea66ad29f9dc20d6364c8a021871bd3f9b45556"
 ---
 
-# `experimental_useObject()`
+# `useObject()`
 
-<Note>
-  `useObject` is an experimental feature and only available in React, Svelte,
-  and Vue.
-</Note>
+<Note>`useObject` is only available in React, Svelte, and Vue.</Note>
 
 Allows you to consume text streams that represent a JSON object and parse them into a complete object based on a schema.
 You can use it together with [`streamText`](/docs/reference/ai-sdk-core/stream-text) and [`Output.object()`](/docs/reference/ai-sdk-core/output#output-object) in the backend.
@@ -17,7 +14,7 @@ You can use it together with [`streamText`](/docs/reference/ai-sdk-core/stream-t
 ```tsx
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 
 export default function Page() {
   const { object, submit } = useObject({
@@ -39,21 +36,21 @@ export default function Page() {
 <Tabs items={['React', 'Svelte', 'Vue']}>
   <Tab>
     <Snippet
-      text="import { experimental_useObject as useObject } from '@ai-sdk/react'"
+      text="import { useObject } from '@ai-sdk/react'"
       dark
       prompt={false}
     />
   </Tab>
   <Tab>
     <Snippet
-      text="import { Experimental_StructuredObject } from '@ai-sdk/svelte'"
+      text="import { StructuredObject } from '@ai-sdk/svelte'"
       dark
       prompt={false}
     />
   </Tab>
   <Tab>
     <Snippet
-      text="import { experimental_useObject } from '@ai-sdk/vue'"
+      text="import { useObject } from '@ai-sdk/vue'"
       dark
       prompt={false}
     />

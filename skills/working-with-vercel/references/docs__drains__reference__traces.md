@@ -3,19 +3,19 @@ title: Trace Drains Reference
 product: vercel
 url: /docs/drains/reference/traces
 canonical_url: "https://vercel.com/docs/drains/reference/traces"
-last_updated: 2026-04-29
+last_updated: 2026-07-06
 type: reference
 prerequisites:
   - /docs/drains
 related:
   - /docs/drains/using-drains
-  - /docs/functions/runtimes/edge
+  - /docs/tracing
   - /docs/drains
 summary: Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/traces.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "860397d9520e7b1ce641570e71ae70837eccb930dcad40f055a3ebcfe2f35d90"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "52a3f5b88996c3673d3319595fda3fb778315c5433ccdfe3dae42c1c7ca75bf0"
 ---
 
 # Trace Drains Reference
@@ -70,11 +70,13 @@ Example workflows:
 
 Rules run from top to bottom. Requests that match a rule use that rule’s sampling rate, and any other requests are dropped. If you do not add rules, the drain forwards **100%** of data to the destination.
 
+## Attribute truncation
+
+Trace Drains follow the shared [attribute truncation behavior](/docs/tracing#attribute-truncation).
+
 ## Limitations
 
-- Each traced request is limited to **10 MB of compressed trace data**.
-- Individual spans larger than **1 MB of compressed data** will be dropped and not appear in your trace.
-- Custom spans from functions using the [Edge runtime](/docs/functions/runtimes/edge) are not forwarded via the Trace Drain.
+Trace Drains follow the shared [Tracing limitations](/docs/tracing#limitations).
 
 ## More resources
 

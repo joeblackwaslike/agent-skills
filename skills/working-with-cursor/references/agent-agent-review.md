@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/agent/agent-review.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "ca27ca033c0d14178c5d8cc091e7c0efb1a6aa7d697307183a35adf6edaec048"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "3715e5c3d9d013fdfaa8109e1cef9081d516038b8750f4eee2a995180f4fbb61"
 ---
 
 # Agent Review
@@ -15,6 +15,8 @@ To configure Agent Review:
 1. Open **Cursor Settings**
 2. Go to **Agents**
 3. Find **Agent Review** and configure your preferences
+
+Starting in Cursor 3.11, this setting moves to **Git & PRs** > **Pull Requests**.
 
 Agent Review also reads repository rules from `BUGBOT.md` files. To set up these rule files, see [BugBot docs](https://cursor.com/docs/bugbot.md).
 

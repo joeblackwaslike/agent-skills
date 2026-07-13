@@ -3,7 +3,7 @@ title: Vite on Vercel
 product: vercel
 url: /docs/frameworks/frontend/vite
 canonical_url: "https://vercel.com/docs/frameworks/frontend/vite"
-last_updated: 2026-03-09
+last_updated: 2026-07-01
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Vite."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/vite.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "f2755bf33ae84d46140511bd1906536a319e07545aea577a74f773fbca68e14a"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "8975eb8857d690644f326f1207a54ca203ad7213c9191ac1e59aadf6293a71d0"
 ---
 
 # Vite on Vercel

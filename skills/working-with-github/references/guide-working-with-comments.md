@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/guides/working-with-comments.md"
-fetched_at: "2026-06-15T19:06:28.402Z"
-sha256: "2e34b16a17d379682ab7fb0e29d0cfcd25670bb0222c09b43fad6448f6944c41"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "e9ea7b53bc7253d61a98aafec6227c5f795426fcbb7d0085561dba508b44c6d1"
 ---
 
 For any Pull Request, {% data variables.product.github %} provides three kinds of comment views:
@@ -21,7 +21,7 @@ Request is just an Issue with code, it makes sense to use these endpoints to
 create comments on a Pull Request.
 
 We'll demonstrate fetching Pull Request comments by creating a Ruby script using
-[Octokit.rb](https://github.com/octokit/octokit.rb). You'll also want to create a [{% data variables.product.pat_generic %}](/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+[Octokit.rb](https://github.com/octokit/octokit.rb). You'll also want to create a [{% data variables.product.pat_generic %}](/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
 The following code should help you get started accessing comments from a Pull Request
 using Octokit.rb:

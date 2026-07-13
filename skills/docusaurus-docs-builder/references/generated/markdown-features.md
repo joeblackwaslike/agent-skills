@@ -1,15 +1,15 @@
 ---
 title: "Markdown Features"
 source: "https://docusaurus.io/docs/markdown-features"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "0a7f2e6c0d6b62053eb71890d6a70b9949296f9995f52bfad9ebb7723e01d9b5"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "5fefb84d613984898d9115ed8d4047f0c4916a56274cba775f58ddfb81f98208"
 ---
 
 # Markdown Features
 
 Source: https://docusaurus.io/docs/markdown-features
 
-- GuidesMarkdown FeaturesVersion: 3.10.1On this page
+- GuidesMarkdown FeaturesVersion: 3.10.2On this page
 # Markdown Features
 
 Docusaurus uses **Markdown** as its main content authoring format.
@@ -112,4 +112,4 @@ Toggle me!This is the detailed content
 console.log("Markdown features including the code block are available");
 ```
 You can use Markdown here including **bold** and _italic_ text, and inline linkNested toggle! Some surprise inside...😲😲😲😲😲
-infoYou may want to keep your `<summary>` on a single line. Keep in mind that MDX creates extra HTML `<p>` paragraphs for line breaks.. When in doubt, use the MDX playground to troubleshoot `<details>` rendering problems.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+infoYou may want to keep your `<summary>` on a single line. Keep in mind that MDX creates extra HTML `<p>` paragraphs for line breaks.. When in doubt, use the MDX playground to troubleshoot `<details>` rendering problems.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

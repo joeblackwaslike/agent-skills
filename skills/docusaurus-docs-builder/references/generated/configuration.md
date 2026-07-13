@@ -1,15 +1,15 @@
 ---
 title: "Configuration"
 source: "https://docusaurus.io/docs/configuration"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "404e7132fa4592c532487bdf2a65cbe3f6501aefe36f5bc242eeccdb7dddfe44"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "92dba27219ab282c16ff81c8964c9ff486eda3ad69c833fe57a45e7409e44df0"
 ---
 
 # Configuration
 
 Source: https://docusaurus.io/docs/configuration
 
-- Getting StartedConfigurationVersion: 3.10.1On this page
+- Getting StartedConfigurationVersion: 3.10.2On this page
 # Configuration
 
 infoCheck the **`docusaurus.config.js` API reference** for an exhaustive list of options.
@@ -191,4 +191,4 @@ babel.config.js
 export default {  presets: ['@docusaurus/babel/preset'],};
 ```
 
-Most of the time, the default preset configuration will work just fine. If you want to customize your Babel configuration (e.g. to add support for Flow), you can directly edit this file. For your changes to take effect, you need to restart the Docusaurus dev server.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Most of the time, the default preset configuration will work just fine. If you want to customize your Babel configuration (e.g. to add support for Flow), you can directly edit this file. For your changes to take effect, you need to restart the Docusaurus dev server.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

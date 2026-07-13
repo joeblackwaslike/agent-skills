@@ -1,21 +1,21 @@
 ---
-title: Configuring Domains
+title: Configuring Custom Domains
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/configuring-domains
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
   - /docs/projects/domains/working-with-nameservers
   - /docs/sdk
-summary: Learn about configuring domains on Vercel.
+summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2e341e7d1d7412ea1c0bcefdd1199c53d6a2209db7c9e0205d5c7aff96c24408"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "f2100828e3bbbfd6968dc4586b5bc8a05473b8cb986ab8c8856f2c0340744645"
 ---
 
 # Configuring Custom Domains

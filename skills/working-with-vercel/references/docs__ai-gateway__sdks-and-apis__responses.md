@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
+  - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d890c2524c9a2f4099422a67b97709b9fc082b7e1e77fd6fac33d993a7b53cc6"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "6b06afef17fa0bcf48d1460a960674aecb06dc6aaa4a500a9cee14be808ecfe1"
 ---
 
 # OpenAI Responses API
@@ -437,7 +438,9 @@ The `effort` parameter accepts `none`, `minimal`, `low`, `medium`, `high`, or `x
 | `previous_response_id` | string           | ID of a previous response for multi-turn conversations                                                                                                                                                        |
 | `store`                | boolean          | Stores the response for later retrieval                                                                                                                                                                       |
 | `metadata`             | object           | Up to 16 key-value pairs for tracking (keys max 64 chars, values max 512 chars)                                                                                                                               |
-| `caching`              | string           | Enables prompt caching. Only `auto` is supported                                                                                                                                                              |
+| `caching`              | string           | Enables [automatic prompt caching](/docs/ai-gateway/models-and-providers/automatic-caching). Only `auto` is supported                                                                                          |
+| `cache_anchor_items`   | integer          | Declares how many leading input items stay unchanged so automatic caching can add a stable-prefix [cache anchor](/docs/ai-gateway/models-and-providers/automatic-caching#cache-anchor)                           |
+| `cache_ttl`            | string           | Sets the automatic [cache lifetime](/docs/ai-gateway/models-and-providers/automatic-caching#cache-lifetime). Accepts `5m` (five minutes) or `1h` (one hour) and requires `caching: 'auto'`                        |
 | `prompt_cache_key`     | string           | Key to identify cached prompts (max 64 characters)                                                                                                                                                            |
 
 ## Error handling

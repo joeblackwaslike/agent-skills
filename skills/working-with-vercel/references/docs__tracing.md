@@ -3,7 +3,7 @@ title: Tracing
 product: vercel
 url: /docs/tracing
 canonical_url: "https://vercel.com/docs/tracing"
-last_updated: 2026-02-26
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "362b79bda129485949cc5ef4778b270ac75351217d147af0498de3d4933eee43"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9732bc41bf90ee46e6d181f6b786fc8acda337d342509c6ba8ec88e3d44d456d"
 ---
 
 # Tracing
@@ -101,6 +101,20 @@ To use both together, configure Sentry to work with your custom OpenTelemetry se
 > `skipOpenTelemetrySetup: true` to your Sentry initialization in your
 > `instrumentation.ts` file. This resolves conflicts between Vercel's OTel and
 > Sentry v8+ that can prevent traces from reaching downstream providers.
+
+## Attribute truncation
+
+When a span exceeds **1 MB of compressed data**, Vercel may truncate
+oversized attributes to keep the span within the size limit. Vercel starts
+with the largest attributes and adds a matching
+`<attribute_name>.truncated` boolean attribute set to `true` for each truncated
+attribute.
+
+## Limitations
+
+- Each traced request is limited to **10 MB of compressed trace data**.
+- Spans that still exceed **1 MB of compressed data** after [attribute truncation](#attribute-truncation) are dropped.
+- Custom spans from functions using the [Edge runtime](/docs/functions/runtimes/edge) don't appear in Session Tracing or Trace Drains.
 
 ## More resources
 

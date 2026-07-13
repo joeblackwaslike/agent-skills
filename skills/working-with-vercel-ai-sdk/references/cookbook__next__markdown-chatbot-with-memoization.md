@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/markdown-chatbot-with-memoization.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cd158ee8b11089d2e6383846cb5dd7d198f27e272fa6f18d7074b8b3fea83e54"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "ccd64aea4ac5d237e16440f132c2a93ca46167e3d4ea13c1917efc7b04dbe5b3"
 ---
 
 # Markdown Chatbot with Memoization
@@ -90,7 +90,7 @@ MemoizedMarkdown.displayName = 'MemoizedMarkdown';
 
 ## Client
 
-Finally, on the client, use the `useChat` hook to manage the chat state and render the chat interface. You can use the `MemoizedMarkdown` component to render the message contents in Markdown format without compromising on performance. Additionally, you can render the form in its own component so as to not trigger unnecessary re-renders of the chat messages. You can also use the `experimental_throttle` option that will throttle data updates to a specified interval, helping to manage rendering performance.
+Finally, on the client, use the `useChat` hook to manage the chat state and render the chat interface. You can use the `MemoizedMarkdown` component to render the message contents in Markdown format without compromising on performance. Additionally, you can render the form in its own component so as to not trigger unnecessary re-renders of the chat messages. You can also use the `throttle` option that will throttle data updates to a specified interval, helping to manage rendering performance.
 
 ```typescript filename='app/page.tsx'
 "use client";
@@ -107,7 +107,7 @@ const chat = new Chat({
 });
 
 export default function Page() {
-  const { messages } = useChat({ chat, experimental_throttle: 50 });
+  const { messages } = useChat({ chat, throttle: 50 });
 
   return (
     <div className="flex flex-col w-full max-w-xl py-24 mx-auto stretch">

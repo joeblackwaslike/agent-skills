@@ -3,8 +3,8 @@ title: DNS Table
 product: vercel
 url: /docs/platforms/platform-elements/blocks/dns-table
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements/blocks
   - /docs/platforms/platform-elements
@@ -12,11 +12,11 @@ related:
   - /docs/platforms/platform-elements/blocks/custom-domain
   - /docs/platforms/platform-elements/actions/add-custom-domain
   - /docs/platforms/multi-tenant-platforms/configuring-domains
-summary: Learn about dns table on Vercel.
+summary: A DNS record display component with one-click copying for guiding users through domain configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "5d5acdaef0d4fb050c2882c8b052c31b6e19687aa7b6227bdd275f072db6c6c6"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a212cf46de6adce78c491ea2b8363a73c228c84c1a9e4cf5bfb718768290dbb9"
 ---
 
 # DNS Table

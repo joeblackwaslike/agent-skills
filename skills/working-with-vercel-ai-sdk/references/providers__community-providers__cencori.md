@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cencori.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d747b1a21767201d226cde2e3ddbf94de644b394722cad939f340b3df07bcd4e"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a3cb98908f853ca93a08c50af3eca05f9dff367ab38075d4116bec894d4af9bb"
 ---
 
 # Cencori
@@ -19,11 +19,7 @@ With Cencori, you get:
 
 The Cencori provider is available in the `cencori` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>```bash pnpm add cencori ```</Tab>
-  <Tab>```bash npm install cencori ```</Tab>
-  <Tab>```bash yarn add cencori ```</Tab>
-</Tabs>
+<InstallPackages packages="cencori" />
 
 ## Provider Instance
 

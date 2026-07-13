@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nearai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5de0f92a236c2ab51891f18f804dadf02a398d3dcf6d97a40ba4fc6a2dd53fbd"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "114a01c1c57dbf8d17a8471e5f116bfaeaf8e83bbe2e03666a54ff5d68e5c211"
 ---
 
 # NEAR AI Cloud Provider
@@ -12,20 +12,7 @@ sha256: "5de0f92a236c2ab51891f18f804dadf02a398d3dcf6d97a40ba4fc6a2dd53fbd"
 
 The NEAR AI Cloud provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ai-sdk/openai-compatible" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/openai-compatible" />
 
 ## Provider Instance
 

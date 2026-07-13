@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "28d3950bde1fb8cac48f4328f1e777d7930663faa29493e917fef064098347bd"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "ee38378bcf02def2cf6c01d1bc4c622fbf2888a7e4d9b1e80e1491f7917e29db"
 ---
 
 # WorkflowAgent
@@ -703,7 +703,7 @@ For persistence, store `UIMessage[]` as your source of truth and call [`convertT
 
 ### Everything else
 
-Other options carry over with the same names: `prepareStep`, `onStepEnd`, `onEnd`, `onError`, `toolChoice`, `activeTools`, `timeout`, `experimental_repairToolCall`, `experimental_sandbox`, and the usual generation settings (`temperature`, `maxOutputTokens`, `topP`, …). `WorkflowAgent` additionally adds `prepareCall` (runs once before the loop) and the `experimental_onStart` / `experimental_onStepStart` / `onToolExecutionStart` / `onToolExecutionEnd` lifecycle callbacks documented above.
+Other options carry over with the same names: `prepareStep`, `onStepEnd`, `onEnd`, `onError`, `toolChoice`, `activeTools`, `timeout`, `repairToolCall`, `experimental_sandbox`, and the usual generation settings (`temperature`, `maxOutputTokens`, `topP`, …). `WorkflowAgent` additionally adds `prepareCall` (runs once before the loop) and the `experimental_onStart` / `experimental_onStepStart` / `onToolExecutionStart` / `onToolExecutionEnd` lifecycle callbacks documented above.
 
 ## Next Steps
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/terminal-ui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8218a36c81958878303a8b14eef58470d9be6e72e9953fb2e6e42c19903d2152"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e99c8033ea80ddb9e15ed3e636b816948e4f2d5e6b5a75936c731a01cfcf2e9a"
 ---
 
 # Harnesses with Terminal UI
@@ -13,34 +13,7 @@ session for the lifetime of the terminal UI.
 
 ## Installation
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet
-        text="pnpm add @ai-sdk/tui @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-    <Tab>
-      <Snippet
-        text="npm install @ai-sdk/tui @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-    <Tab>
-      <Snippet
-        text="yarn add @ai-sdk/tui @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-    <Tab>
-      <Snippet
-        text="bun add @ai-sdk/tui @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/tui @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel" />
 
 ## Example
 

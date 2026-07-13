@@ -3,7 +3,7 @@ title: REST API Reference
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/rest-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api"
-last_updated: 2026-06-20
+last_updated: 2026-06-29
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "6c588eee47c39651d67ac3a90e5b249cd3eb2218416dce2290e9a78c1af46312"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9c8c31b69f96998d6bf814145f31fcb10e1e04ca71de12a657aeaa8072957e28"
 ---
 
 # REST API Reference

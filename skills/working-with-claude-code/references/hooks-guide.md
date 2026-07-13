@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/hooks-guide.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "a41151e102a17253ed6ad05d1573b4e6e973a8fae297c06b0e2c4a69849bbd86"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "e1ac93b138a51c7f750decc994249876e0c3254e764ed537f00520c690e18a7c"
 ---
 
 > ## Documentation Index
@@ -669,7 +669,7 @@ The tabs below show a few more matchers on different event types.
   </Tab>
 
   <Tab title="Match MCP tools">
-    MCP tools use a different naming convention than built-in tools: `mcp__<server>__<tool>`, where `<server>` is the MCP server name and `<tool>` is the tool it provides. For example, `mcp__github__search_repositories` or `mcp__filesystem__read_file`. Use a regex matcher to target all tools from a specific server, or match across servers with a pattern like `mcp__.*__write.*`. See [Match MCP tools](/en/hooks#match-mcp-tools) in the reference for the full list of examples.
+    MCP tools use a different naming convention than built-in tools: `mcp__<server>__<tool>`, where `<server>` is the MCP server name and `<tool>` is the tool it provides. For example, `mcp__github__search_repositories` or `mcp__filesystem__read_file`. Tools from a [plugin-bundled server](/en/mcp#plugin-provided-mcp-servers) use a scoped server segment instead, such as `mcp__plugin_my-plugin_db__query`. Use a regex matcher to target all tools from a specific server, or match across servers with a pattern like `mcp__.*__write.*`. See [Match MCP tools](/en/hooks#match-mcp-tools) in the reference for the full list of examples.
 
     The command below extracts the tool name from the hook's JSON input with `jq` and writes it to stderr. Writing to stderr keeps stdout clean for JSON output and sends the message to the [debug log](/en/hooks#debug-hooks):
 

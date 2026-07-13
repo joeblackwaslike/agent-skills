@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/codex-cli.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "dc472301cb29a1cc0f39657d912e5114caa31172fe7950ee02f986c2797567a6"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "7de7c74200d95a3b1496cd61fe62e15bcf80dbac7a5d215d43e5a2d554f4b017"
 ---
 
 # Codex CLI Provider
@@ -25,20 +25,7 @@ npm install ai-sdk-provider-codex-cli@ai-sdk-v5 ai@^5.0.0
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ai-sdk-provider-codex-cli" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ai-sdk-provider-codex-cli" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ai-sdk-provider-codex-cli" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add ai-sdk-provider-codex-cli" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ai-sdk-provider-codex-cli" />
 
 ## Provider Instance
 
@@ -134,15 +121,15 @@ const model = codexCli('gpt-5.1-codex-max', {
 
 ### Model Capabilities
 
-| Model                | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| -------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `gpt-5.3-codex`      | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-5.2-codex`      | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-5.2`            | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-5.1-codex-max`  | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-5.1-codex-mini` | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-5.1`            | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `gpt-5.1-codex`      | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Model                | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| -------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `gpt-5.3-codex`      | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `gpt-5.2-codex`      | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `gpt-5.2`            | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `gpt-5.1-codex-max`  | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `gpt-5.1-codex-mini` | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `gpt-5.1`            | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `gpt-5.1-codex`      | <Check />   | <Check />         | <Cross />  | <Cross />      |
 
 <Note>
   Tool Usage and Tool Streaming show ❌ because this provider does not support

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/graphql/overview/about-the-graphql-api.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "e8f6f2500c420e8924d5c538b98c66529263df2b476d49a82b50fc9000dbed51"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "525e141956e10514eb7e2c99bc4770976df40d1ac1c2c1691d93984494d29b0e"
 ---
 
 ## Overview
@@ -11,10 +11,10 @@ Here are some quick links to get you up and running with the GraphQL API:
 * [Authentication](/graphql/guides/forming-calls-with-graphql#authenticating-with-graphql)
 * [Root endpoint](/graphql/guides/forming-calls-with-graphql#the-graphql-endpoint)
 * [Schema introspection](/graphql/guides/introduction-to-graphql#discovering-the-graphql-api)
-* [Rate limits](/graphql/overview/resource-limitations)
+* [Rate limits](/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api)
 * [Migrating from REST](/graphql/guides/migrating-from-rest-to-graphql)
 
-For more information about {% data variables.product.company_short %}'s APIs, see [AUTOTITLE](/rest/overview/about-githubs-apis).
+For more information about {% data variables.product.company_short %}'s APIs, see [AUTOTITLE](/rest/about-the-rest-api/comparing-githubs-rest-api-and-graphql-api).
 
 ## About GraphQL
 

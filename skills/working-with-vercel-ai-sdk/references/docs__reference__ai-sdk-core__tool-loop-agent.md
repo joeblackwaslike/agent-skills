@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "0a43714b550efffae78ad01c2b099519a5d0c611aa7441695c63f33ca26a3c3b"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "8425f726e950f538520bc5e6cd60d35212874be596446cb88c7f0372d4a418c2"
 ---
 
 # `ToolLoopAgent`
@@ -134,7 +134,7 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
         'Settings for controlling what data is included in step results. requestBody, requestMessages, and responseBody apply to generate(); requestBody, requestMessages, and rawChunks apply to stream().',
     },
     {
-      name: 'experimental_repairToolCall',
+      name: 'repairToolCall',
       type: 'ToolCallRepairFunction',
       isOptional: true,
       description:

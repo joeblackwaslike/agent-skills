@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "26d22dc4b80d8c994443a68849c2b58c3c05b69bfe8c54feefe14c9a507c1f6b"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "744fe252d4c53f378edb10ed61561ca076d0bf2c24d3f402cceaaba13ed2936a"
 ---
 
 # OpenAI Compatible Providers
@@ -24,21 +24,7 @@ The general setup and provider instance creation is the same for all of these pr
 
 The OpenAI Compatible provider is available via the `@ai-sdk/openai-compatible` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/openai-compatible" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/openai-compatible" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/openai-compatible" />
 
 ## Provider Instance
 

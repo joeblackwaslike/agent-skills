@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sap-ai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f8cbf5da95162fabe541f3302416030f44d7d083e24d71e9b65acc97809efcca"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "37f84b275319fed31411c2cd9b12d9e82784d8a89299e1234943796e779938a5"
 ---
 
 # SAP AI Core Provider
@@ -26,37 +26,11 @@ Both providers offer:
 
 ### @jerome-benoit/sap-ai-provider (recommended)
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @jerome-benoit/sap-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @jerome-benoit/sap-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @jerome-benoit/sap-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @jerome-benoit/sap-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@jerome-benoit/sap-ai-provider" />
 
 ### @jerome-benoit/sap-ai-provider-v2
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @jerome-benoit/sap-ai-provider-v2" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @jerome-benoit/sap-ai-provider-v2" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @jerome-benoit/sap-ai-provider-v2" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @jerome-benoit/sap-ai-provider-v2" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@jerome-benoit/sap-ai-provider-v2" />
 
 Authentication is handled automatically via the `AICORE_SERVICE_KEY` environment variable (local) or `VCAP_SERVICES` (SAP BTP).
 

@@ -1,15 +1,15 @@
 ---
 title: "MDX Plugins"
 source: "https://docusaurus.io/docs/markdown-features/plugins"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "0268efa80db0e7cb0fa3dd450efc83f4c3637f77b0e522adfc531fd3b864f829"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "6b9e2f1e33e3b6d522c5d866b6efce0e7d76598a405e733d1a66d33602d218cd"
 ---
 
 # MDX Plugins
 
 Source: https://docusaurus.io/docs/markdown-features/plugins
 
-- GuidesMarkdown FeaturesMDX PluginsVersion: 3.10.1On this page
+- GuidesMarkdown FeaturesMDX PluginsVersion: 3.10.2On this page
 # MDX Plugins
 
 Sometimes, you may want to extend or tweak your Markdown syntax. For example:
@@ -125,4 +125,4 @@ noteThe default plugins of Docusaurus would operate before the custom remark plu
 ```
 export default {  presets: [    [      '@docusaurus/preset-classic',      {        docs: {          beforeDefaultRemarkPlugins: [sectionPrefix],        },      },    ],  ],};
 ```
-This would make the table of contents generated contain the `Section X.` prefix as well.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+This would make the table of contents generated contain the `Section X.` prefix as well.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

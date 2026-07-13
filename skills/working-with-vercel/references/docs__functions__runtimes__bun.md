@@ -3,7 +3,7 @@ title: Using the Bun Runtime with Vercel Functions
 product: vercel
 url: /docs/functions/runtimes/bun
 canonical_url: "https://vercel.com/docs/functions/runtimes/bun"
-last_updated: 2025-11-10
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "fde5aae67b0871c50625cb51b10104d1ffafb757af284dbe93bd8bccbce1be64"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "55ebc16150a2adff5df57402853aa4ea58834ff46b579c7dbc8ba393d1618d52"
 ---
 
 # Using the Bun Runtime with Vercel Functions

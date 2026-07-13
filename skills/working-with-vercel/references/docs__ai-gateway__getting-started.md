@@ -3,7 +3,7 @@ title: Getting Started
 product: vercel
 url: /docs/ai-gateway/getting-started
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started"
-last_updated: 2026-06-20
+last_updated: 2026-06-26
 type: tutorial
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice agents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "604926f4c9a1de4ceefc134b71866a814a91fbd91ef5b7a43bf8afebb942cd2d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "11a39c0824eee2e5913c926e5e398760997a3d2ab6c2f198ad99f40de88b07cd"
 ---
 
 # Getting Started

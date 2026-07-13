@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters/langchain.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c7b558f68de7b157554ce6b5b74985b533573161a30e73b7aa81c4ec913e7a2a"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b76038dfe4b953b211f6d6ff62fb7a08a4effc2aaabb9862dec6e25eeda18c62"
 ---
 
 # LangChain
@@ -19,17 +19,7 @@ enabling you to use LangChain models and LangGraph agents with AI SDK UI compone
 
 ## Installation
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/langchain @langchain/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/langchain @langchain/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/langchain @langchain/core" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/langchain @langchain/core" />
 
 <Note>`@langchain/core` is a required peer dependency.</Note>
 

@@ -3,7 +3,7 @@ title: @vercel/functions API Reference (Node.js)
 product: vercel
 url: /docs/functions/functions-api-reference/vercel-functions-package
 canonical_url: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package"
-last_updated: 2026-03-19
+last_updated: 2026-06-22
 type: reference
 prerequisites:
   - /docs/functions/functions-api-reference
@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3d1178fbfd67130c7a95c065b2043dd35430689c202925f4a62082218ffcf29d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "8e198bab51b8a441a944934038c07f3db9cfff2059d0ef352c9383c1f8132f3f"
 ---
 
 # @vercel/functions API Reference (Node.js)

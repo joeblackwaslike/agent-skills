@@ -3,7 +3,7 @@ title: Using the Activity Log
 product: vercel
 url: /docs/activity-log
 canonical_url: "https://vercel.com/docs/activity-log"
-last_updated: 2026-06-16
+last_updated: 2026-06-29
 type: reference
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "ba836cd1119f28c0badb325cc4c58de5e68dc68f8b1cc4cd5a3dce862dc06c92"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "de546f7d0c7f64e5329bcba4cc6da6407c45fb49b831f41e61eb51e3c97a071d"
 ---
 
 # Using the Activity Log
@@ -79,6 +79,7 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-byok-credential-created | Active | A user created an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-deleted | Active | A user deleted an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-updated | Active | A user updated an AI Gateway BYOK credential. |
+| ai-gateway-guardrails-updated | Active | A user updated the AI Gateway guardrail settings. |
 | ai-gateway-model-allowlist-models-updated | Active | Models were added to or removed from the AI Gateway model allowlist. |
 | ai-gateway-model-allowlist-toggled | Active | The AI Gateway model allowlist was enabled or disabled for a team. |
 | ai-gateway-private-model-created | Active | A user created an AI Gateway private model. |
@@ -97,6 +98,7 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-virtual-model-config-restored | Active | A user restored an AI Gateway virtual model. |
 | ai-gateway-virtual-model-config-updated | Active | A user updated an AI Gateway virtual model. |
 | ai-omniagent | Active | Vercel Agent was configured for a team. |
+| alert-investigation-project-allowlist-updated | Active | Alert Investigation project allowlist was updated. |
 | alert-rule-created | Active | An alert rule was created. |
 | alert-rule-deleted | Active | An alert rule was deleted. |
 | alert-rule-updated | Active | An alert rule was updated. |
@@ -301,6 +303,7 @@ The table below shows a list of events logged on the Activity page.
 | passkey-created | Active | A new passkey was created. |
 | passkey-deleted | Active | An existing passkey was deleted. |
 | passkey-updated | Active | The name of the existing passkey was updated. |
+| passport-access-granted | Active | A visitor authenticated to a Passport-protected project. |
 | password-protection-disabled | Active | Advanced Deployment Protection was disabled for the team. |
 | password-protection-enabled | Active | Advanced Deployment Protection was enabled for the team. |
 | payment-method-added | Active | A payment method was added to the account. |
@@ -473,6 +476,7 @@ The table below shows a list of events logged on the Activity page.
 | storage-upgrade-project-connection-to-oidc | Active | A storage project connection was upgraded to OIDC. |
 | storage-view-secret | Active | Viewed a secret for a store |
 | strict-deployment-protection-settings | Active | Strict deployment protection settings were updated. |
+| strict-password-protection-settings | Active | Strict password protection settings were updated. |
 | strict-shareable-links | Active | Strict shareable links settings were updated. |
 | subscription-product-added | Active | A self-serve product was added to a subscription. |
 | subscription-product-removed | Active | A self-serve product was removed from a subscription. |
@@ -510,6 +514,7 @@ The table below shows a list of events logged on the Activity page.
 | team-name-update | Active | The name of a team was updated. |
 | team-paid-invoice | Active | A team invoice was paid. |
 | team-program-enrollment-changed | Active | Program enrollment was updated for a team. |
+| team-remote-caching-purge | Active | All Remote Cache artifacts were deleted. |
 | team-remote-caching-update | Active | The Remote Caching status was changed. |
 | team-saml-enforced | Active | SAML enforcement was configured for a team. |
 | team-saml-roles | Active | SAML roles were configured for a team. |
@@ -517,6 +522,7 @@ The table below shows a list of events logged on the Activity page.
 | unlink-login-connection | Active | A login connection was unlinked. |
 | user-delete | Active | A user account was deleted. |
 | user-emu-account-archived | Active | A user archived their personal account during enterprise-managed user setup. |
+| user-emu-account-deleted | Active | A user deleted their personal account during enterprise-managed user setup. |
 | user-emu-account-recovered | Active | A user recovered their archived account using a recovery code. |
 | user-mfa-challenge-verified | Active | A two-factor challenge was verified |
 | user-mfa-configuration-updated | Active | Two-factor configuration was updated |

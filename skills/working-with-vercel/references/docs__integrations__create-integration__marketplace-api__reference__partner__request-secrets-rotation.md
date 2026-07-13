@@ -3,7 +3,7 @@ title: request-secrets-rotation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation"
-last_updated: 2026-07-06
+last_updated: 2026-07-13
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about request-secrets-rotation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "7c96ba415a37a5c38278a4e047cdefc609d27a6e95c6b8da629c29b3199ed1c6"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "3b223e34f311d6ed11dc1512351a84cf95856e7983ef5211b94ae39268300adf"
 ---
 
 # Request Secrets Rotation

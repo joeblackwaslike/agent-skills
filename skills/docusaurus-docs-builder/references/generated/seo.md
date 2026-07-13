@@ -1,15 +1,15 @@
 ---
 title: "SEO"
 source: "https://docusaurus.io/docs/seo"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "f492eb56b2b3878077b7246e3ae40687ff592cdc396df81a8b3aa4817bae3736"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "cf4eb30cfe198a4e605ab2ab944e613af702c9596d346501c0ed0a14bde85239"
 ---
 
 # SEO
 
 Source: https://docusaurus.io/docs/seo
 
-- GuidesSEOVersion: 3.10.1On this page
+- GuidesSEOVersion: 3.10.2On this page
 # Search engine optimization (SEO)
 
 Docusaurus supports search engine optimization in a variety of ways.
@@ -114,4 +114,4 @@ Docusaurus uses your file names as links, but you can always change that using s
 
 Search engines rely on the HTML markup such as `<h2>`, `<table>`, etc., to understand the structure of your webpage. When Docusaurus renders your pages, semantic markup, e.g. `<aside>`, `<nav>`, `<main>`, are used to divide the different sections of the page, helping the search engine to locate parts like sidebar, navbar, and the main page content.
 
-Most CommonMark syntaxes have their corresponding HTML tags. By using Markdown consistently in your project, you will make it easier for search engines to understand your page content.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Most CommonMark syntaxes have their corresponding HTML tags. By using Markdown consistently in your project, you will make it easier for search engines to understand your page content.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

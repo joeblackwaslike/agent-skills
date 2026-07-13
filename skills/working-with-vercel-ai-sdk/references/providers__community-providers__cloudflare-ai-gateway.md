@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d561e03ae9ac2e623e0c7560686b3e019fc157bb3296575b4f95baf32e37d670"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "6fe47a1d76e75bc5ac6a38a5be03fa20c47bee5bca89e62b4d337d1e028ae5b5"
 ---
 
 # Cloudflare AI Gateway
@@ -20,21 +20,7 @@ The Cloudflare AI Gateway Provider is a library that integrates Cloudflare's AI 
 
 The Cloudflare AI Gateway Provider is available in the `ai-gateway-provider` module. Install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ai-gateway-provider" />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ai-gateway-provider" />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ai-gateway-provider" />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add ai-gateway-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ai-gateway-provider" />
 
 ## Provider Instance
 

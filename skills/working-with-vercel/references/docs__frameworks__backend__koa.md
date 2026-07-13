@@ -3,7 +3,7 @@ title: Koa on Vercel
 product: vercel
 url: /docs/frameworks/backend/koa
 canonical_url: "https://vercel.com/docs/frameworks/backend/koa"
-last_updated: 2026-05-12
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Deploy Koa applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/koa.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7c571bd26d16f086f041e3b49b88202739849bedaee0912c0500afc3edd30a5b"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "dfada0de3a5c082630bfcfd644d9b98eabc39319210682a6bf2da91cd8436048"
 ---
 
 # Koa on Vercel
@@ -89,7 +89,7 @@ When you deploy a Koa app to Vercel, your Koa application becomes a single [Verc
 
 ## Limitations
 
-All [Vercel Functions limitations](/docs/functions/limitations) apply to the Koa application, including the size of the application being limited to 250MB.
+All [Vercel Functions limitations](/docs/functions/limitations) apply to the Koa application, including the standard bundle size limit of 250MB for Node.js applications. [Large Functions](/docs/functions/limitations#large-functions-beta) support Node.js bundles up to 5GB on Fluid compute when enabled (public beta).
 
 ## More resources
 

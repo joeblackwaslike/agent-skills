@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/axiom.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "dfc1e78694e57df83ef29374cce23c228021260d248d5002d8c100510668a0b7"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e21c43722da519acfe91a17132d25be543fc34acad9e7c286466accb16f800d0"
 ---
 
 # Axiom Observability
@@ -24,21 +24,7 @@ First, you'll need an Axiom organization, a dataset to send traces to, and an AP
 
 Install the Axiom package in your project:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add axiom" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install axiom" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add axiom" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add axiom" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="axiom" />
 
 ### 3. Set Environment Variables
 
@@ -66,32 +52,7 @@ To send data to Axiom, configure a tracer. For example, use a dedicated instrume
 
 1. Install dependencies:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet
-      text="pnpm i dotenv @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources @opentelemetry/sdk-node @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions @opentelemetry/api"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm i dotenv @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources @opentelemetry/sdk-node @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions @opentelemetry/api"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add dotenv @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources @opentelemetry/sdk-node @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions @opentelemetry/api"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="bun add dotenv @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources @opentelemetry/sdk-node @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions @opentelemetry/api"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="dotenv @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources @opentelemetry/sdk-node @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions @opentelemetry/api" />
 
 2. Create instrumentation file:
 

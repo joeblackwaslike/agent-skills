@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mem0.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f08db67c585263999b7f0123274f7e1aea470aaaece1b08db310502f56bf197c"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b7fac540e15a5d3a9501f5828f0c54bf5d65409a406fe1e80baee96334d8ddaa"
 ---
 
 # Mem0 Provider
@@ -18,20 +18,7 @@ This library brings enhanced AI interaction capabilities to your applications by
 
 The Mem0 provider is available in the `@mem0/vercel-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @mem0/vercel-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @mem0/vercel-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @mem0/vercel-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @mem0/vercel-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@mem0/vercel-ai-provider" />
 
 ## Provider Instance
 

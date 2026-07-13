@@ -3,7 +3,7 @@ title: Multi-Project Platforms
 product: vercel
 url: /docs/platforms/multi-project-platforms
 canonical_url: "https://vercel.com/docs/platforms/multi-project-platforms"
-last_updated: 2018-10-20
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   - /docs/platforms
@@ -11,11 +11,11 @@ related:
   - /docs/platforms/multi-project-platforms/concepts
   - /docs/platforms/multi-project-platforms/quickstart
   - /docs/platforms/multi-project-platforms/reference
-summary: Learn about multi-project platforms on Vercel.
+summary: Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9a5f29deafeac32fa1d538be06e73ee34c7b600c58041207717b1a0484224d3d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "df63045690701580bef01189b846d707e21bd476c8d9f79a7e462d2e098217e5"
 ---
 
 # Multi-Project Platforms

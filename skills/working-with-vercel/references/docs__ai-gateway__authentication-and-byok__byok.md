@@ -3,7 +3,7 @@ title: Bring Your Own Key (BYOK)
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/byok
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok"
-last_updated: 2026-06-12
+last_updated: 2026-06-29
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "ee3f0170795ebbc9c5e63abf3f962f3407993018d0bb4807c7419d45b464b1d3"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ff9a4960654fad63e2d0f09460c0b6fef78d4ebf4dbe827eb40348fd376bd35a"
 ---
 
 # Bring Your Own Key (BYOK)
@@ -87,6 +87,10 @@ Each provider has its own credential structure:
 | Amazon Bedrock   | `{ accessKeyId: string, secretAccessKey: string, region?: string }`                                     |
 
 For detailed credential parameters for each provider, see the [AI SDK providers documentation](https://ai-sdk.dev/providers/ai-sdk-providers).
+
+> **⚠️ Warning:** Amazon Bedrock reranking requires SigV4 credentials (`accessKeyId` and
+> `secretAccessKey`) and does not accept API keys. If you BYOK and plan to use
+> reranking models through Bedrock, you must use SigV4 credentials.
 
 ### Multiple credentials
 

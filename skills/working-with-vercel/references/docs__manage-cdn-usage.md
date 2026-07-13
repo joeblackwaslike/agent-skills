@@ -3,7 +3,7 @@ title: CDN pricing and usage
 product: vercel
 url: /docs/manage-cdn-usage
 canonical_url: "https://vercel.com/docs/manage-cdn-usage"
-last_updated: 2026-06-16
+last_updated: 2026-06-23
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "6e4c0f7a11dc096a4758cb4823b1406ec94bb4b26a98f993c3f779c11ef1eeee"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "bdcf5b713e09c342f3312f13298c6b9c6e0ece1f7257805f896c9e31474756db"
 ---
 
 # CDN pricing and usage

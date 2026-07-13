@@ -1,15 +1,15 @@
 ---
 title: "Search"
 source: "https://docusaurus.io/docs/search"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "c41ab85913b7aea7bebd5e45a211756586ba8304b1b3f5f948cf5f1a808a2684"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "6c91115d71e8f8fb27db3d23a605ed87507d5863207d05c620e83792d6f056b4"
 ---
 
 # Search
 
 Source: https://docusaurus.io/docs/search
 
-- GuidesSearchVersion: 3.10.1On this page
+- GuidesSearchVersion: 3.10.2On this page
 # Search
 
 There are a few options you can use to add search to your website:
@@ -267,4 +267,4 @@ bun run swizzle @docusaurus/theme-classic SearchBar
 
 This will create an `src/theme/SearchBar` file in your project folder. Restart your dev server and edit the component, you will see that Docusaurus uses your own `SearchBar` component now.
 
-**Notes**: You can alternatively swizzle from Algolia SearchBar and create your own search component from there.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+**Notes**: You can alternatively swizzle from Algolia SearchBar and create your own search component from there.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

@@ -3,7 +3,7 @@ title: Getting started with cron jobs
 product: vercel
 url: /docs/cron-jobs/quickstart
 canonical_url: "https://vercel.com/docs/cron-jobs/quickstart"
-last_updated: 2026-03-20
+last_updated: 2026-07-01
 type: tutorial
 prerequisites:
   - /docs/cron-jobs
@@ -16,8 +16,8 @@ related:
 summary: Learn how to schedule cron jobs to run at specific times or intervals.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/quickstart.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "9e7005f38ebe06588a1eb182b1734aa1d4ceab62c00beb98ebee76f9eea996a3"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c36223cea69cda30482d7575087330c5a348f38cc908f1d145c8a9e25ec410d3"
 ---
 
 # Getting started with cron jobs

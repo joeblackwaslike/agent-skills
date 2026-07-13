@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/supermemory.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "703bf09cb0ed978ec65deae4d84957533d5a68e53f0403405f50f403725708af"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "43ae1216279ee09ebdb1979e895abcf99cd27b17df0d9fd4a9190cead27d7a14"
 ---
 
 # Supermemory
@@ -21,20 +21,7 @@ Learn more about Supermemory's capabilities in the [Supermemory Documentation](h
 
 The Supermemory provider is available in the `@supermemory/tools` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @supermemory/tools" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @supermemory/tools" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @supermemory/tools" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @supermemory/tools" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@supermemory/tools" />
 
 ## Provider Instance
 

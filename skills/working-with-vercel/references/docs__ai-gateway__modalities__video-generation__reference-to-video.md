@@ -3,7 +3,7 @@ title: Reference-to-Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/reference-to-video
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video"
-last_updated: 2026-06-20
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
@@ -14,8 +14,8 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Wan through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "400f2ab92036b7828a0996e5eefa03e3869d14782c157ecb11b243a8332a3200"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "5d4b77626edb061082055eb8506401d5e78aacdab1fee73279834875c2c16f20"
 ---
 
 # Reference-to-Video Generation

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/heroku.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e62d6a3cb6b170f886bd45160986fc22ce25c29e1e23843213e58c7d2383d29c"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "8ff801516765d643b4db7b34aacb606b0a5542ea41aaa89ecbd90f4b6ca4d166"
 ---
 
 # Heroku Provider
@@ -14,17 +14,7 @@ You can deploy models that are OpenAI API compatible and use them with the AI SD
 The Heroku provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/openai-compatible" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/openai-compatible" />
 
 ### Heroku Setup
 

@@ -3,7 +3,7 @@ title: get-member
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-member
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member"
-last_updated: 2026-07-06
+last_updated: 2026-07-13
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-member on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "88ae2065abfd5b21b244705d8c799cc37a7b06957b604c4c3d9622bdc1a13d71"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "461af974352e76f8e8457aa934fd28ac15b03f7bf875379777f0590e24e984fb"
 ---
 
 # Get Member Information

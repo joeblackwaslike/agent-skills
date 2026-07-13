@@ -3,7 +3,7 @@ title: "Use Vercel's MCP server"
 product: vercel
 url: /docs/agent-resources/vercel-mcp
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-mcp"
-last_updated: 2026-06-11
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   - /docs/agent-resources
@@ -12,8 +12,8 @@ related:
 summary: Vercel MCP has tools available for searching docs along with managing teams, projects, and deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "5bc075466080aa476d067e69c7ec1354243df1c2162c132f397dfd50610e50f7"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9d3e29468b119e57bb459769a28c8d2ad2005a192fbed21806d32418d76713e9"
 ---
 
 # Use Vercel

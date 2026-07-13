@@ -3,7 +3,7 @@ title: File Attachments
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/file-attachments
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/file-attachments"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -13,8 +13,8 @@ related:
 summary: Send images and PDF documents as part of your Anthropic API message requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/file-attachments.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "236d21a283ebac8d34c62bdc211fa49c216ab4021b8b09e4fde772125cc395dd"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "620106b656489b3aabd0ad65044a4efd4741e8a1b5235889b1c791b13f545d92"
 ---
 
 # File Attachments

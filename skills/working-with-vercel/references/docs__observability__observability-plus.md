@@ -3,18 +3,19 @@ title: Observability Plus
 product: vercel
 url: /docs/observability/observability-plus
 canonical_url: "https://vercel.com/docs/observability/observability-plus"
-last_updated: 2026-06-05
+last_updated: 2026-07-06
 type: reference
 prerequisites:
   - /docs/observability
 related:
   - /docs/observability
   - /docs/plans/pro-plan
+  - /docs/query
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "aa8befd5985733c6b24d44ed0eaf1d76908e9107d60b22be964f80226811a594"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "df546d310c124c9e3f25d1b2642b71fd04a7573d6749e2fcecc5774b915c1df3"
 ---
 
 # Observability Plus
@@ -51,6 +52,43 @@ Observability Plus access depends on your plan:
 * **Pro Trial**: Observability Plus is not available during trial. Convert to a Paid Pro plan to access it.
 
 - **Enterprise**: Enable Observability Plus using the steps above.
+
+### Managing projects
+
+By default, Observability Plus applies to all projects in your team. You can exclude specific projects to control costs. Excluded projects revert to the free-tier observability experience with limited retention and no access to advanced metrics or [Query](/docs/query).
+
+#### Excluding a project
+
+You can exclude a project from Observability Plus in three ways:
+
+**During initial enablement:**
+
+When [enabling Observability Plus](#enabling-observability-plus) for the first time, the setup flow includes a project selection step where you can choose which projects to exclude. This modal shows your top projects by usage. To exclude other projects, use the project-level option described below.
+
+**From billing settings:**
+
+1. Navigate to your team's [**Billing** settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23observability).
+2. In the **Observability Plus** section, click **Manage projects**.
+3. Toggle off the projects you want to exclude.
+
+This modal also shows your top projects by usage. To exclude projects not listed in the modal, use the project-level option below.
+
+**From the project observability dashboard:**
+
+1. Navigate to your project's [**Observability** dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability\&title=Go+to+Observability).
+2. Click the more options button () at the top right of the page, then select **Exclude Project from Plus**.
+3. Confirm the exclusion in the modal.
+
+Events from excluded projects won't count toward your Observability Plus usage.
+
+#### Including a project
+
+To re-enable Observability Plus for an excluded project:
+
+- **From billing settings**: Navigate to **Billing** > **Observability Plus** > **Manage projects** and toggle the project back on.
+- **From the [project observability dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability\&title=Go+to+Observability)**: Click the more options button () at the top right of the page, then select **Include Project in Plus**.
+
+The project immediately regains access to Observability Plus features.
 
 ### Disabling Observability Plus
 

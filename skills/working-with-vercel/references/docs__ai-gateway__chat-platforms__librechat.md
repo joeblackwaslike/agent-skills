@@ -3,7 +3,7 @@ title: LibreChat
 product: vercel
 url: /docs/ai-gateway/chat-platforms/librechat
 canonical_url: "https://vercel.com/docs/ai-gateway/chat-platforms/librechat"
-last_updated: 2026-06-20
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/chat-platforms
@@ -13,8 +13,8 @@ related:
 summary: Use LibreChat with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/librechat.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "966bfe2c5ded84618ad9acf731bdd58fcdec64f96c5f194e67f50ab209aa5791"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "6d5d9daeed17c3b4822afb3d253e783b86adae3abb041066e578968930066844"
 ---
 
 # LibreChat

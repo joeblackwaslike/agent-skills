@@ -3,7 +3,7 @@ title: Deployment Checks
 product: vercel
 url: /docs/deployment-checks
 canonical_url: "https://vercel.com/docs/deployment-checks"
-last_updated: 2026-06-16
+last_updated: 2026-07-02
 type: reference
 prerequisites:
   []
@@ -15,8 +15,8 @@ related:
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "8478a6bdef9a2b8ab12b2feae44697e8512834c7240249d464c3886fcf318adb"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a11a5cbf293077a067c78cc3ec5ef2f38df1acb9f29282ca5dfb68aa724a4b5e"
 ---
 
 # Deployment Checks

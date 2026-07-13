@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/completion.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1fc3489483c0986161e78ec446d1b20776b3806f0d57e5dcba500ad3bf1b1962"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "5ae5980259c78c553025ad651f1705c9901b59856d6fd86648e824fb7c3f3d95"
 ---
 
 # Completion
@@ -144,12 +144,12 @@ When the user clicks the "Stop" button, the fetch request will be aborted. This 
 <Note>This feature is currently only available for React.</Note>
 
 By default, the `useCompletion` hook will trigger a render every time a new chunk is received.
-You can throttle the UI updates with the `experimental_throttle` option.
+You can throttle the UI updates with the `throttle` option.
 
 ```tsx filename="page.tsx" highlight="2-3"
 const { completion, ... } = useCompletion({
   // Throttle the completion and data updates to 50ms:
-  experimental_throttle: 50
+  throttle: 50
 })
 ```
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/claude-code.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6f907274ab202b29973f100ae0fe4a8c863d12b13b894e2e35bdd6a7aa8902a6"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "1f704be2f782bb3448e7c1e980a96e00e434178f33016ecfbb31c0b651f4456c"
 ---
 
 # Claude Code Provider
@@ -29,20 +29,7 @@ npm install ai-sdk-provider-claude-code@ai-sdk-v4 ai@^4.0.0
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ai-sdk-provider-claude-code" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ai-sdk-provider-claude-code" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ai-sdk-provider-claude-code" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add ai-sdk-provider-claude-code" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ai-sdk-provider-claude-code" />
 
 ## Provider Instance
 
@@ -115,11 +102,11 @@ const { text } = await generateText({
 
 ### Model Capabilities
 
-| Model    | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| -------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `opus`   | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `sonnet` | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `haiku`  | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Model    | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| -------- | ----------- | ----------------- | ---------- | -------------- |
+| `opus`   | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `sonnet` | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `haiku`  | <Check />   | <Check />         | <Cross />  | <Cross />      |
 
 <Note>
   Tool Usage and Tool Streaming show ❌ because this provider does not support

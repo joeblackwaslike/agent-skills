@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "9f8c57f6b5242a59dccf4639f440a109cd497af932b5cfdb36cd375e6b8ef651"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "1f4a3618af3b5920f233d1c5c6cf2b3f751f34a285abd551b804d33281847207"
 ---
 
 ## About branch protection rules
@@ -160,7 +160,7 @@ If someone force pushes to a branch, the force push may mean commits that other 
 
 Enabling force pushes will not override any other branch protection rules. For example, if a branch requires a linear commit history, you cannot force push merge commits to that branch.
 
-{% ifversion ghes %}You cannot enable force pushes for a protected branch if a site administrator has blocked force pushes to all branches in your repository. For more information, see [AUTOTITLE](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise).
+{% ifversion ghes %}You cannot enable force pushes for a protected branch if a site administrator has blocked force pushes to all branches in your repository. For more information, see [AUTOTITLE](/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise).
 
 If a site administrator has blocked force pushes to the default branch only, you can still enable force pushes for any other protected branch.{% endif %}
 

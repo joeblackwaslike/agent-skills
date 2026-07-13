@@ -3,7 +3,7 @@ title: Queues concepts
 product: vercel
 url: /docs/queues/concepts
 canonical_url: "https://vercel.com/docs/queues/concepts"
-last_updated: 2026-04-16
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/queues
@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "b216159fa2eb22f960a55f902c11e45d6a0ac242e925c212dccb1d83d4d5a547"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9b82952e55b9c71371802f7f13e4b22796759e4a891d5eea317f8f4b10fa4959"
 ---
 
 # Queues concepts

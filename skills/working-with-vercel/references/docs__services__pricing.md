@@ -1,9 +1,9 @@
 ---
-title: Pricing and Limits
+title: Services Pricing and Limits
 product: vercel
 url: /docs/services/pricing
 canonical_url: "https://vercel.com/docs/services/pricing"
-last_updated: 2018-10-20
+last_updated: 2026-06-30
 type: reference
 prerequisites:
   - /docs/services
@@ -13,11 +13,11 @@ related:
   - /docs/services/bindings
   - /docs/pricing/regional-pricing
   - /docs/pricing
-summary: Learn about pricing and limits on Vercel.
+summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "77b95291b19f6fe5b39664447ad6590103174157b3b9705a0c32c8fc57bc8b31"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "99da700f1abebd25afe87a4b10ac8821bb9f14aa401abf2d97f1792444bb7277"
 ---
 
 # Services Pricing and Limits

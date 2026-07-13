@@ -1,8 +1,8 @@
 ---
 title: "Web Extensions"
 source: "https://code.visualstudio.com/api/extension-guides/web-extensions"
-fetched_at: "2026-07-06T05:31:17.487Z"
-sha256: "d960b76deb6d9f2ed3882b957a62f8e74335a378034cc98b5c9c599c968f40b2"
+fetched_at: "2026-07-13T06:52:49.921Z"
+sha256: "631305654b1a188f2351aa290478c6a2dd6be6f82f9aeb20bd1d16c96215f3df"
 ---
 
 # Web Extensions
@@ -383,7 +383,7 @@ npx: installed 78 in 2.196s
    └────────────────────────────────────────────────────┘
 ```
 
-Finally, open [vscode.dev](https://vscode.dev), run **Developer: Install Extension From Location...** from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)), paste the URL from above, `https://localhost:5000` in the example, and select **Install**.
+Finally, open [vscode.dev](https://vscode.dev), run **Developer: Install Extension From Location...** from the Command Palette (⇧⌘P (Windows, Linux Shift+cmd+P)), paste the URL from above, `https://localhost:5000` in the example, and select **Install**.
 
 **Check the logs**
 
@@ -821,4 +821,4 @@ export function run(): Promise&#x3C;void> {
 - [lsp-web-extension-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample)
 
  
- 7/1/2026
+ 7/8/2026

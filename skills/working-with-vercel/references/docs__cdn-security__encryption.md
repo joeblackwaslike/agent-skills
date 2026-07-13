@@ -3,7 +3,7 @@ title: Encryption and TLS
 product: vercel
 url: /docs/cdn-security/encryption
 canonical_url: "https://vercel.com/docs/cdn-security/encryption"
-last_updated: 2026-03-05
+last_updated: 2026-07-02
 type: conceptual
 prerequisites:
   - /docs/cdn-security
@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "46fdd96875814bb626db6c5a499ef032b698b69a7bcd2368dab6addca187dbe6"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "382c78351be560fd0044c73178985d18f60436b872ca7960e773386e01ce5598"
 ---
 
 # Encryption and TLS

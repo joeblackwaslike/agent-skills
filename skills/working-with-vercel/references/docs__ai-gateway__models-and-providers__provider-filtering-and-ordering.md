@@ -3,7 +3,7 @@ title: Provider Filtering, Ordering & Sorting
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering"
-last_updated: 2026-06-04
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a072865bfa35ba12aa11bb980b7bc420124cf35510cfe690d87a9aaee41a6dd2"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "f34a590d87a0dbd5a407f0c866c6663cbd957d97669aed4385a8660be5628b4d"
 ---
 
 # Provider Filtering, Ordering & Sorting

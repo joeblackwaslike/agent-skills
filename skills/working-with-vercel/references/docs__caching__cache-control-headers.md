@@ -3,7 +3,7 @@ title: Cache-Control headers
 product: vercel
 url: /docs/caching/cache-control-headers
 canonical_url: "https://vercel.com/docs/caching/cache-control-headers"
-last_updated: 2026-03-05
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/caching
@@ -15,8 +15,8 @@ related:
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "d9ddd28a1327562a3c7c721992c3082fb9d9bd781d6198104b5daa7be4176d2f"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9a2ba55cbb5b6824759a5db97a2a44e148a7441f03c791d7040d8e93cbe4e63b"
 ---
 
 # Cache-Control headers

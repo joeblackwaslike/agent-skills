@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/vercel.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b50912348611d1a48f6014728cf12b8471967827db13ba7daf93a0d123a6e86c"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "bce38d81fbcf2471dbefdcf3af56d9ac8c63ed7e50d21ae4ff5c697ab80e9db0"
 ---
 
 # Vercel Provider
@@ -28,21 +28,7 @@ You can create your Vercel API key at [v0.dev](https://v0.dev/chat/settings/keys
 
 The Vercel provider is available via the `@ai-sdk/vercel` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/vercel" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/vercel" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/vercel" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/vercel" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/vercel" />
 
 ## Provider Instance
 
@@ -123,11 +109,11 @@ All v0 models have the following capabilities:
 
 ## Model Capabilities
 
-| Model       | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ----------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `v0-1.5-md` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `v0-1.5-lg` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `v0-1.0-md` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model       | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ----------- | ----------- | ----------------- | ---------- | -------------- |
+| `v0-1.5-md` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `v0-1.5-lg` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `v0-1.0-md` | <Check />   | <Check />         | <Check />  | <Check />      |
 
 
 ## Navigation

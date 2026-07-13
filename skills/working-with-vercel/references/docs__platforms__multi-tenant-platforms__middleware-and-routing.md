@@ -3,18 +3,18 @@ title: Middleware and Routing
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/middleware-and-routing
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
   []
-summary: Learn about middleware and routing on Vercel.
+summary: Resolve tenants and route requests by subdomain, custom domain, or path using Next.js middleware on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "80919853e9cbc818b3479ea22378fb2fdd67794c356e5c6b82bcdaba47d7d9ef"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "71ba3eb1682d74d30b1ddc2474a333b1c3acd2a0469a8fb40bf4bf23961bbc78"
 ---
 
 # Middleware and Routing

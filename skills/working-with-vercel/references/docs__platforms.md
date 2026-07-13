@@ -3,7 +3,7 @@ title: Vercel for Platforms
 product: vercel
 url: /docs/platforms
 canonical_url: "https://vercel.com/docs/platforms"
-last_updated: 2018-10-20
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   []
@@ -13,11 +13,11 @@ related:
   - /docs/sdk
   - /docs/platforms/examples/multi-tenant-template
   - /docs/platforms/platform-elements/blocks/claim-deployment
-summary: Learn about vercel for platforms on Vercel.
+summary: Build platforms that serve multiple customers from a single codebase, with custom domains, wildcard subdomains, and automatic SSL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "df50c0749be64e40db91ce62e847937a9a0c26f06ba638f96fe02e83fbde086d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "49a66b04b187cf0b9a0503c9b916368c69f6967e7a9203f4d89dfc1ea6643c1b"
 ---
 
 # Vercel for Platforms

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/about-the-rest-api/api-versions.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "c64a88a82f6ee7e149b7e41dce3375814a1a1dcaceb164e436e1091bbb11342e"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "845622233fced8789adefa424a345bff3946809709fc0c9cb18ead393f538af6"
 ---
 
 ## About API versioning
@@ -32,7 +32,7 @@ If you specify an API version that is no longer supported, you will receive a `4
 
 ## Upgrading to a new API version
 
-Before upgrading to a new REST API version, you should read the changelog of breaking changes for the new API version to understand what breaking changes are included and to learn more about how to upgrade to that specific API version. For more information, see [AUTOTITLE](/rest/overview/breaking-changes).
+Before upgrading to a new REST API version, you should read the changelog of breaking changes for the new API version to understand what breaking changes are included and to learn more about how to upgrade to that specific API version. For more information, see [AUTOTITLE](/rest/about-the-rest-api/breaking-changes).
 
 When you update your integration to specify the new API version in the `X-GitHub-Api-Version` header, you'll also need to make any changes required for your integration to work with the new API version.
 

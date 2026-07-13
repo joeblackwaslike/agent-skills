@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/anthropic-vertex-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "bdd7b456001df8fd8d6878212b6c6a9b1bca76278d313043b6beb05bff0ce755"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "cb9e084543056ee5078b3ba8e2d7b6b19231a126cb375651a776b693b1daaa17"
 ---
 
 # AnthropicVertex Provider
@@ -23,21 +23,7 @@ sha256: "bdd7b456001df8fd8d6878212b6c6a9b1bca76278d313043b6beb05bff0ce755"
 
 The AnthropicVertex provider is available in the `anthropic-vertex-ai` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add anthropic-vertex-ai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install anthropic-vertex-ai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add anthropic-vertex-ai" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add anthropic-vertex-ai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="anthropic-vertex-ai" />
 
 ## Provider Instance
 
@@ -115,12 +101,12 @@ AnthropicVertex language models can also be used in the `streamText` function an
 
 ### Model Capabilities
 
-| Model                        | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ---------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `claude-3-5-sonnet@20240620` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `claude-3-opus@20240229`     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `claude-3-sonnet@20240229`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `claude-3-haiku@20240307`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                        | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ---------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `claude-3-5-sonnet@20240620` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `claude-3-opus@20240229`     | <Check />   | <Check />         | <Check />  | <Check />      |
+| `claude-3-sonnet@20240229`   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `claude-3-haiku@20240307`    | <Check />   | <Check />         | <Check />  | <Check />      |
 
 ## Environment Variables
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/friendliai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "61118a389ddeb29886db4716b5f6fadfa36a4e24cad45514c61cca8686ed9a60"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b82210821097796c149cb7a611a6722f986ddca700c2882f52b687ba82af2a3b"
 ---
 
 # FriendliAI Provider
@@ -15,21 +15,7 @@ It creates language model objects that can be used with the `generateText` and `
 The Friendli provider is available via the `@friendliai/ai-provider` module.
 You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @friendliai/ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @friendliai/ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @friendliai/ai-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @friendliai/ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@friendliai/ai-provider" />
 
 ### Credentials
 
@@ -209,11 +195,11 @@ FriendliAI language models can also be used in the `streamText` function and sup
 
 ### Model Capabilities
 
-| Model                         | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ----------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `deepseek-r1`                 | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta-llama-3.3-70b-instruct` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `meta-llama-3.1-8b-instruct`  | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                         | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ----------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `deepseek-r1`                 | <Cross />   | <Check />         | <Cross />  | <Cross />      |
+| `meta-llama-3.3-70b-instruct` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `meta-llama-3.1-8b-instruct`  | <Cross />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   To access [more models](https://friendli.ai/models), visit the [Friendli

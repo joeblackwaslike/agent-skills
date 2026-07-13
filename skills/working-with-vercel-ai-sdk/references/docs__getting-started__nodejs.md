@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nodejs.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "23e462a206283b78839a4d6cf8cafbc4864d7ac00525255c6ea385d974d9b7e2"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b62009a899cf99fc0f1d4c589b332ee87d1f316a4f096d62beea0d6e3ab17d98"
 ---
 
 # Node.js Quickstart
@@ -158,24 +158,7 @@ model: gateway('anthropic/claude-sonnet-4.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add @ai-sdk/openai" dark />
-    </Tab>
-
-    <Tab>
-      <Snippet text="bun add @ai-sdk/openai" dark />
-    </Tab>
-
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/openai" />
 
 ```ts
 import { openai } from '@ai-sdk/openai';

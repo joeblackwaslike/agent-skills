@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "89783a19cf8b3955bd12a9d95a204e6cfa5296e382af8ad9cd574b37e39d173d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "e8c62c59283e598714fe4c82e6b3702a4e7298642a4c7c2edff607d7565c7587"
 ---
 
 # Bot Management
@@ -68,6 +68,8 @@ To learn more about how the ruleset works, review the [Challenge](/docs/vercel-f
 
 ### Enable the ruleset
 
+The ruleset is **inactive by default**. In the dashboard this is labeled **Off**. Matching traffic is not evaluated and reaches your application.
+
 You can apply the ruleset to your project in [log](/docs/vercel-firewall/firewall-concepts#log) or [challenge](/docs/vercel-firewall/firewall-concepts#challenge) mode. Learn how to [configure the bot protection managed ruleset](/docs/vercel-waf/managed-rulesets#configure-bot-protection-managed-ruleset).
 
 ### Bot protection ruleset with reverse proxies
@@ -92,6 +94,8 @@ Vercel's AI bots managed ruleset allows you to control traffic from AI bots that
 When new AI bots emerge, Vercel automatically adds them to its managed list and handles them according to your existing configured action without requiring any changes on your part.
 
 ### Enable the ruleset
+
+The ruleset is **inactive by default**. In the dashboard this is labeled **Allow**. Matching traffic is not evaluated and reaches your application.
 
 You can apply the ruleset to your project in [log](/docs/vercel-firewall/firewall-concepts#log) or [deny](/docs/vercel-firewall/firewall-concepts#deny) mode. Learn how to [configure the AI bots managed ruleset](/docs/vercel-waf/managed-rulesets#configure-ai-bots-managed-ruleset).
 

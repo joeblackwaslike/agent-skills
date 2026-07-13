@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/best-practices.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "d8ffc2bd98e07eb4721d84f28cbf6fe05de5230bcece728047f90fec2879ec5e"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "48ef5015212118c04321179198abc37119c5792b6b26af8d8e0032f51bcde8cc"
 ---
 
 # Best Practices
@@ -29,6 +29,14 @@ Think of the agent as a smart, but low-context human developer. The best way to 
 For example, at Cursor our agents.md lists tips for running and debugging the most commonly used microservices in our mono-repo. We also have lots of skills about how to test and debug key services, each with clear instructions on when to use the skill.
 
 The skills contain in-depth details, such as how to debug a specific microservice or how to set up a third-party dependency when needed for testing.
+
+## Use rules to enforce conventions
+
+Cloud Agents can read and follow [Rules](https://cursor.com/docs/rules.md) at three levels:
+
+- **User rules**: Set in Cursor Settings, these apply to your sessions across all repositories. Best for rules you only want to apply to you personally.
+- **Team rules**: Set in the [Rules, Commands, Hooks dashboard](https://cursor.com/dashboard/team-content), these apply to all team members across every repository. Best for org-wide conventions.
+- **Repo rules**: `.cursor/rules/*.mdc` files committed to the repository, these apply to all agents using that repository. Best for repo/project-specific conventions.
 
 ## Give the agent the tools it needs
 

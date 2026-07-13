@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/o1.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "4708ef1ef83bcafce8849baa4759d1dad9f6e038c1b124e6300c37a41433d7aa"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "149a70c7ebe5508a7db2dae4419a653e9b4324e8b4f7024627b7c83c70bc61c9"
 ---
 
 # Get started with OpenAI o1
@@ -18,9 +18,9 @@ The main reasoning model available in the API is:
 
 1. [**o1**](https://platform.openai.com/docs/models#o1): Designed to reason about hard problems using broad general knowledge about the world.
 
-| Model | Streaming           | Tools               | Object Generation   | Reasoning Effort    |
-| ----- | ------------------- | ------------------- | ------------------- | ------------------- |
-| o1    | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model | Streaming | Tools     | Object Generation | Reasoning Effort |
+| ----- | --------- | --------- | ----------------- | ---------------- |
+| o1    | <Cross /> | <Check /> | <Check />         | <Check />        |
 
 ### Benchmarks
 

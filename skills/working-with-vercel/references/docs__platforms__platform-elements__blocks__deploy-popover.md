@@ -3,19 +3,19 @@ title: Deploy Popover
 product: vercel
 url: /docs/platforms/platform-elements/blocks/deploy-popover
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements/blocks
   - /docs/platforms/platform-elements
 related:
   - /docs/platforms/platform-elements/actions/deploy-files
   - /docs/platforms/platform-elements/blocks/claim-deployment
-summary: Learn about deploy popover on Vercel.
+summary: A popover interface for deploying files to Vercel with real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b8ad254de36f576183bc5cc422058b580c0172d01d965568f5408951d1aa34a6"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "73f5d177eefdeef73cecbcfb7c12e0df3791b172664e32101c3ec75c4b8ba2ce"
 ---
 
 # Deploy Popover

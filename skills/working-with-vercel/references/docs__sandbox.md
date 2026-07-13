@@ -3,7 +3,7 @@ title: Vercel Sandbox
 product: vercel
 url: /docs/sandbox
 canonical_url: "https://vercel.com/docs/sandbox"
-last_updated: 2026-06-17
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel Sandbox allows you to run arbitrary code in isolated, ephemeral Linux VMs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "e2efe0504d4c75a2084b2c07a5c4bf073163606010f0497dda647b0ccc67b55b"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "122806bc11d0a443c4ae893cdc1f341810d9396c7ca2d04d3c4833869d80ad0d"
 ---
 
 # Vercel Sandbox

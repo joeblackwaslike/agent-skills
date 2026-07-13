@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/amazon-bedrock.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "c74e0e7c1af7763eaedb889201c500de12ec49d2f4f90ee93b394e42fe3da754"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "41817cbb1796483f79995af53b104378b0072647f3a17eccf0e9a7258ce07162"
 ---
 
 > ## Documentation Index
@@ -253,7 +253,7 @@ When enabling Amazon Bedrock for Claude Code, keep the following in mind:
 
 Set these environment variables to specific Amazon Bedrock model IDs.
 
-Without `ANTHROPIC_DEFAULT_OPUS_MODEL`, the `opus` alias on Amazon Bedrock resolves to Opus 4.6. Set it to the Opus 4.8 ID to use the latest model:
+Without these variables, the `opus` alias on Amazon Bedrock resolves to Opus 4.8 and the `sonnet` alias resolves to Sonnet 4.5. Set each variable to pin its alias to a specific version:
 
 ```bash theme={null}
 export ANTHROPIC_DEFAULT_OPUS_MODEL='us.anthropic.claude-opus-4-8'
@@ -265,10 +265,10 @@ These variables use cross-region inference profile IDs (with the `us.` prefix). 
 
 Claude Code uses these default models when no pinning variables are set:
 
-| Model type       | Default value                                  |
-| :--------------- | :--------------------------------------------- |
-| Primary model    | `us.anthropic.claude-sonnet-4-5-20250929-v1:0` |
-| Small/fast model | Same as primary model                          |
+| Model type       | Default value                  |
+| :--------------- | :----------------------------- |
+| Primary model    | `us.anthropic.claude-opus-4-8` |
+| Small/fast model | Same as primary model          |
 
 Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Amazon Bedrock, Claude Code defaults this to the primary model because Haiku may not be enabled in every account or region. To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a model ID that is available in your account.
 

@@ -3,7 +3,7 @@ title: Understanding Sandboxes
 product: vercel
 url: /docs/sandbox/concepts
 canonical_url: "https://vercel.com/docs/sandbox/concepts"
-last_updated: 2026-06-05
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "f1a38eb865aa17946d700077a748da23995456ada1470e4b6a406ff8b4c38614"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "99d3e842146afde7152e11813eacfb965d453455d1bedbb4b44fccb30c4e4868"
 ---
 
 # Understanding Sandboxes

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/zhipu.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "4801226873b718e99227e97b844b227fe0231b950fd0d8275dfb336ee8fa4bf9"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "62e2635fffd70efc91554395be6ec0c9234735bab8ae01f4e9e435cb96f91d89"
 ---
 
 # Zhipu AI (Z.AI) Provider
@@ -10,20 +10,7 @@ sha256: "4801226873b718e99227e97b844b227fe0231b950fd0d8275dfb336ee8fa4bf9"
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add zhipu-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm i zhipu-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add zhipu-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add zhipu-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="zhipu-ai-provider" />
 
 Set up your `.env` file / environment with your API key.
 

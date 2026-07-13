@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/authentication/keeping-your-api-credentials-secure.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "12b18005b5cc6faec97f72604e7ec36b64878d31577d1e73e064c200d785c283"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "67d4d80abfd5673975d3a1540c8a99ba38c6233e00829a2a7e4f573b7120fe79"
 ---
 
 ## Choose an appropriate authentication method
@@ -20,9 +20,9 @@ When creating a {% data variables.product.pat_generic %}, only select the minimu
 
 {% data reusables.user-settings.token_access_capabilities %}
 
-When creating a {% data variables.product.prodname_github_app %}, select the minimum permissions that your {% data variables.product.prodname_github_app %} will need. For more information, see [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/best-practices-for-creating-a-github-app).
+When creating a {% data variables.product.prodname_github_app %}, select the minimum permissions that your {% data variables.product.prodname_github_app %} will need. For more information, see [AUTOTITLE](/apps/creating-github-apps/about-creating-github-apps/best-practices-for-creating-a-github-app).
 
-When authenticating with `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow, only give the minimum amount of permissions needed. For more information, see [AUTOTITLE](/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token).
+When authenticating with `GITHUB_TOKEN` in a {% data variables.product.prodname_actions %} workflow, only give the minimum amount of permissions needed. For more information, see [AUTOTITLE](/actions/tutorials/authenticate-with-github_token#modifying-the-permissions-for-the-github_token).
 
 ## Store your authentication credentials securely
 
@@ -30,20 +30,20 @@ Treat authentication credentials the same way you would treat your passwords or 
 
 * Don't share authentication credentials using an unencrypted messaging or email system.
 * Don't pass your {% data variables.product.pat_generic %} as plain text in the command line. For more information, see [AUTOTITLE](/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#keeping-your-personal-access-tokens-secure).
-* Don't push unencrypted authentication credentials like tokens or keys to any repository, even if the repository is private. Instead consider using a {% data variables.product.prodname_actions %} secret{% ifversion fpt or ghec %} or Codespaces secret{% endif %}. For more information, see [AUTOTITLE](/actions/security-guides/encrypted-secrets){% ifversion fpt or ghec %} and [AUTOTITLE](/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces){% endif %}.
-* You can use secret scanning to discover tokens, private keys, and other secrets that were pushed to a repository, or to block future pushes that contain secrets. For more information, see [AUTOTITLE](/code-security/secret-scanning/introduction/about-secret-scanning).
+* Don't push unencrypted authentication credentials like tokens or keys to any repository, even if the repository is private. Instead consider using a {% data variables.product.prodname_actions %} secret{% ifversion fpt or ghec %} or Codespaces secret{% endif %}. For more information, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets){% ifversion fpt or ghec %} and [AUTOTITLE](/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces){% endif %}.
+* You can use secret scanning to discover tokens, private keys, and other secrets that were pushed to a repository, or to block future pushes that contain secrets. For more information, see [AUTOTITLE](/code-security/concepts/secret-security/secret-scanning).
 
 ## Limit who can access your authentication credentials
 
-Don't share your {% data variables.product.pat_generic %} with others. Instead of sharing a {% data variables.product.pat_generic %}, consider creating a {% data variables.product.prodname_github_app %}. For more information, see [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps).
+Don't share your {% data variables.product.pat_generic %} with others. Instead of sharing a {% data variables.product.pat_generic %}, consider creating a {% data variables.product.prodname_github_app %}. For more information, see [AUTOTITLE](/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps).
 
 If you need to share credentials with a team, store the credentials in a secure shared system. For example, you could store and share passwords securely using [1Password](https://1password.com/), or you could store keys in [Azure KeyVault](https://azure.microsoft.com/en-gb/products/key-vault) and manage access with your IAM (Identity and access management).
 
-If you're creating a {% data variables.product.prodname_actions %} workflow that needs to access the API, you can store your credentials in an encrypted secret, and access the encrypted secret from the workflow. For more information, see [AUTOTITLE](/actions/security-guides/encrypted-secrets) and [AUTOTITLE](/apps/creating-github-apps/guides/making-authenticated-api-requests-with-a-github-app-in-a-github-actions-workflow).
+If you're creating a {% data variables.product.prodname_actions %} workflow that needs to access the API, you can store your credentials in an encrypted secret, and access the encrypted secret from the workflow. For more information, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) and [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/making-authenticated-api-requests-with-a-github-app-in-a-github-actions-workflow).
 
 ## Use authentication credentials securely in your code
 
-Never hardcode authentication credentials like tokens, keys, or app-related secrets into your code. Instead, consider using a secret manager such as [Azure Key Vault](https://azure.microsoft.com/products/key-vault) or [HashiCorp Vault](https://www.hashicorp.com/products/vault). For more information about securing {% data variables.product.prodname_github_app %} credentials, see [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/best-practices-for-creating-a-github-app).
+Never hardcode authentication credentials like tokens, keys, or app-related secrets into your code. Instead, consider using a secret manager such as [Azure Key Vault](https://azure.microsoft.com/products/key-vault) or [HashiCorp Vault](https://www.hashicorp.com/products/vault). For more information about securing {% data variables.product.prodname_github_app %} credentials, see [AUTOTITLE](/apps/creating-github-apps/about-creating-github-apps/best-practices-for-creating-a-github-app).
 
 {% ifversion fpt or ghec %}
 
@@ -56,7 +56,7 @@ If you find another user's {% data variables.product.pat_generic %} exposed on {
 {% endif %}
 {% endif %}
 
-When using a {% data variables.product.pat_generic %} in a script, consider storing your token as a {% data variables.product.prodname_actions %} secret and running your script through {% data variables.product.prodname_actions %}.{% ifversion fpt or ghec %} You can also store your token as a Codespaces secret and run your script in Codespaces.{% endif %} For more information, see [AUTOTITLE](/actions/security-guides/encrypted-secrets){% ifversion fpt or ghec %} and [AUTOTITLE](/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces){% endif %}.
+When using a {% data variables.product.pat_generic %} in a script, consider storing your token as a {% data variables.product.prodname_actions %} secret and running your script through {% data variables.product.prodname_actions %}.{% ifversion fpt or ghec %} You can also store your token as a Codespaces secret and run your script in Codespaces.{% endif %} For more information, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets){% ifversion fpt or ghec %} and [AUTOTITLE](/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces){% endif %}.
 
 If none of these options are possible, you can store authentication credentials in a `.env` file. Make sure to encrypt your `.env` file, and never push it to any repository.
 
@@ -68,6 +68,6 @@ You should create a plan to handle any security breaches in a timely manner. In 
 * Replace the old credential with the new one everywhere that you are storing or accessing the credential.
 * Delete the old compromised credential.
 
-For information about rotating compromised credentials for a {% data variables.product.prodname_github_app %}, see [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/best-practices-for-creating-a-github-app).
+For information about rotating compromised credentials for a {% data variables.product.prodname_github_app %}, see [AUTOTITLE](/apps/creating-github-apps/about-creating-github-apps/best-practices-for-creating-a-github-app).
 
 For information about creating and deleting {% data variables.product.pat_generic %}s, see [AUTOTITLE](/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).

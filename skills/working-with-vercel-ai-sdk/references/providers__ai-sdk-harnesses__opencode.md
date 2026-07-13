@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "4143235b89f2e8392b6e069df2ca703e308e2c058a4ac275848fba85c3cb59fd"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "5fa669d8d1c25197feb50a9ee02c5f606eb9ab12cd9c3df8fc85921800aeb6e2"
 ---
 
 # OpenCode Harness
@@ -18,32 +18,7 @@ the host over a sandbox-exposed WebSocket.
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet
-      text="pnpm add @ai-sdk/harness @ai-sdk/harness-opencode @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm install @ai-sdk/harness @ai-sdk/harness-opencode @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @ai-sdk/harness @ai-sdk/harness-opencode @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="bun add @ai-sdk/harness @ai-sdk/harness-opencode @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-opencode @ai-sdk/sandbox-vercel" />
 
 The adapter bootstraps the OpenCode bridge dependencies inside the sandbox when
 the first session starts. The bridge package depends on `@opencode-ai/sdk` and

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-code-on-the-web.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "4411aabbe5b226742b3c80bc77cd4e520d6cced06c20fe874b725205bb58a578"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "82785d0929fe47cdec256116b3d0184d10e780c35144eb7597fba23b42795d46"
 ---
 
 > ## Documentation Index
@@ -695,7 +695,7 @@ Sessions appear in the sidebar at claude.ai/code. From there you can review chan
 
 ### Manage context
 
-Cloud sessions support [built-in commands](/en/commands) that produce text output. Commands that open an interactive terminal picker, like `/model` or `/config`, are not available.
+Cloud sessions support [built-in commands](/en/commands) that produce text output. Commands that only run in the terminal interface, such as `/plugin` or `/resume`, aren't available. {/* min-version: 2.1.205 */}`/model`, `/effort`, `/fast`, `/color`, and `/rename` work with the value as an argument, for example `/model sonnet`, instead of opening the terminal picker or slider; the argument forms require Claude Code v2.1.205 or later in the session's environment and follow each command's [availability notes](/en/commands#all-commands), so `/effort` reports `Not applied` while a model's [launch-default effort hold](/en/model-config#adjust-effort-level) is in force and `/fast` works only in a session that started with fast mode turned on. `/config` sets a setting when you pass `key=value`.
 
 For context management specifically:
 

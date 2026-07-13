@@ -1,10 +1,10 @@
 ---
-title: Quickstart
+title: Multi-Project Platforms Quickstart
 product: vercel
 url: /docs/platforms/multi-project-platforms/quickstart
 canonical_url: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: tutorial
 prerequisites:
   - /docs/platforms/multi-project-platforms
   - /docs/platforms
@@ -14,11 +14,11 @@ related:
   - /docs/rest-api/reference/endpoints/deployments/create-a-new-deployment
   - /docs/platforms/platform-elements/actions/deploy-files
   - /docs/platforms/multi-tenant-platforms/configuring-domains
-summary: Learn about quickstart on Vercel.
+summary: Programmatically host code for user-generated or AI-generated applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "5f4b28dc04b95cb71b1abd89438f26ba5076ff8cd742613c14c70dd8f26b844c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ae40289446f23b4cad43ff304bae3f026b613dbf88f65aae2422ad9c66d339d9"
 ---
 
 # Multi-Project Platforms Quickstart

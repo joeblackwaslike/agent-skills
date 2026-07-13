@@ -3,7 +3,7 @@ title: OpenResponses API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses"
-last_updated: 2026-05-30
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "1af3e507800e9b8629080abe3b2fbed4c82b3fcd24def6e9b96dd7b6ccf1c225"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "24dc022bb5c77925c93170bf72331e7c7bcd417ac987fc7df256647ab1822d13"
 ---
 
 # OpenResponses API

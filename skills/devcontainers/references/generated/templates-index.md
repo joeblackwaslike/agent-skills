@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-07-06T05:30:15.132Z"
-sha256: "bad76b863ae224ae45792cb00637d82307fc4cd7c2998a50973c4a26001f8432"
+fetched_at: "2026-07-13T06:52:34.202Z"
+sha256: "d2fb97ad893ccf3525b853b17a0a819bb0aa7cf60d4d2121d8e71c38b8320ac7"
 ---
 
 # Available templates index
@@ -263,16 +263,16 @@ Templates
 | Typo3 | thucke | `ghcr.io/thucke/devcontainer-templates/typo3:0.8.2` | `0.8.2` |
 | Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.1.0` | `0.1.0` |
 | Magento Open Source | Doug Hatcher | `ghcr.io/doughatcher/devcontainer-templates/magento:0.3.0` | `0.3.0` |
-| Ansible Development Tools (AI & Claude Code) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.4.3` | `1.4.3` |
-| Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.0.0` | `1.0.0` |
-| Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.2.1` | `1.2.1` |
-| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.2.1` | `1.2.1` |
-| mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.2.1` | `1.2.1` |
-| Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.0.0` | `1.0.0` |
-| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rust:1.2.1` | `1.2.1` |
-| Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.0.0` | `1.0.0` |
-| Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.0` | `1.0.0` |
-| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.1` | `1.2.1` |
+| Ansible Development Tools (AI-enhanced ansible-dev-tools) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.4.13` | `1.4.13` |
+| Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.0.2` | `1.0.2` |
+| Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.2.3` | `1.2.3` |
+| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.2.3` | `1.2.3` |
+| mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.2.3` | `1.2.3` |
+| Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.0.2` | `1.0.2` |
+| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rust:1.2.3` | `1.2.3` |
+| Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.2.1` | `1.2.1` |
+| Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.2` | `1.0.2` |
+| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.3` | `1.2.3` |
 
 
             

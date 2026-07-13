@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sambanova.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "25032061ef35b6048904100e2a7289de10ffac34aa0b299e3498122be40a5044"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "57985dd2ed171fe348fa6c9e6620ce9e9162ad6efc9ddb3d48dd48c5bcfaf297"
 ---
 
 # SambaNova Provider
@@ -14,21 +14,7 @@ API keys can be obtained from the [SambaNova Cloud Platform](https://cloud.samba
 
 The SambaNova provider is available via the `sambanova-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add sambanova-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install sambanova-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add sambanova-ai-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add sambanova-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="sambanova-ai-provider" />
 
 ### Environment variables
 
@@ -90,9 +76,9 @@ This provider is capable of generating and streaming text, and interpreting imag
 
 At least it has been tested with the following features (which use the `/chat/completion` endpoint):
 
-| Chat completion     | Image input         |
-| ------------------- | ------------------- |
-| <Check size={18} /> | <Check size={18} /> |
+| Chat completion | Image input |
+| --------------- | ----------- |
+| <Check />       | <Check />   |
 
 ### Image input
 

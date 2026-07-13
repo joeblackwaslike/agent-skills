@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "74c9819c3c835ce38bdedf3a696e51f5c6f92808b7c48d6c54277a602bdc9161"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "d17ebe6d68e51461b0e44a61f7f24e02dfa996c93892d5d9e784b03967d2baf3"
 ---
 
 # Moonshot AI Provider
@@ -14,20 +14,7 @@ API keys can be obtained from the [Moonshot Platform](https://platform.moonshot.
 
 The Moonshot AI provider is available via the `@ai-sdk/moonshotai` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/moonshotai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/moonshotai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/moonshotai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ai-sdk/moonshotai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/moonshotai" />
 
 ## Provider Instance
 
@@ -152,16 +139,16 @@ The following optional provider options are available for Moonshot AI language m
 
 ## Model Capabilities
 
-| Model                    | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ------------------------ | ------------------- | ------------------- | ------------------- | ------------------- |
-| `moonshot-v1-8k`         | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `moonshot-v1-32k`        | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `moonshot-v1-128k`       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `kimi-k2`                | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `kimi-k2.5`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `kimi-k2-thinking`       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `kimi-k2-thinking-turbo` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `kimi-k2-turbo`          | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                    | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ------------------------ | ----------- | ----------------- | ---------- | -------------- |
+| `moonshot-v1-8k`         | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `moonshot-v1-32k`        | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `moonshot-v1-128k`       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2`                | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2.5`              | <Check />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2-thinking`       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2-thinking-turbo` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2-turbo`          | <Cross />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   Please see the [Moonshot AI docs](https://platform.moonshot.ai/docs/intro) for

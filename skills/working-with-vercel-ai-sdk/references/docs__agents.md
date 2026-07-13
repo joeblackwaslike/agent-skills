@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "072be936092583315bc6db0bac3c4d22a6147eae6fd83e81472adadbac62e774"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e8bed90b1c5c756659bd74e613a669e6f68453e2c5f3f75a8219ac8ee3683d5b"
 ---
 
 # Getting Started with Coding Agents
@@ -34,22 +34,7 @@ Once you've installed the `ai` package, you already have the full AI SDK documen
 
 Install the `ai` package if you haven't already:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add ai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install ai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add ai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="bun add ai" dark />
-    </Tab>
-  </Tabs>
-</div>
+<InstallPackages packages="ai" />
 
 After installation, your agent can reference the bundled source code and documentation at paths like:
 
@@ -71,22 +56,7 @@ AI SDK DevTools gives you full visibility into your AI SDK calls during developm
 
 Install the DevTools package:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add @ai-sdk/devtools" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install @ai-sdk/devtools" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add @ai-sdk/devtools" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="bun add @ai-sdk/devtools" dark />
-    </Tab>
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/devtools" />
 
 ### Register the integration
 

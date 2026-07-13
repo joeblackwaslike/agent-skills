@@ -3,7 +3,7 @@ title: Promoting Deployments
 product: vercel
 url: /docs/deployments/promoting-a-deployment
 canonical_url: "https://vercel.com/docs/deployments/promoting-a-deployment"
-last_updated: 2026-02-27
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -15,8 +15,8 @@ related:
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2020740cb19fa7133cac8d53a718dc0369b45f2d1bbb3c6caf4b42d6e3cf566b"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "4a8b81f3316712cbcb6dbd89feed7e4e2b7b0ff965d8de9c5e90c66b06112296"
 ---
 
 # Promoting Deployments

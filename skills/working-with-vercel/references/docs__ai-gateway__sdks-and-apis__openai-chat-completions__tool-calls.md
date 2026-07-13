@@ -3,7 +3,7 @@ title: Tool Calls
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calls
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calls"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calls.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "33cc572411abec8295138d7052181b9db93f17ee71960728c05f4fb0067c5186"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "59e9c91754ed6c4c626ba869062629f38d0ee22b325b9812e7d33d9e491722ff"
 ---
 
 # Tool Calls

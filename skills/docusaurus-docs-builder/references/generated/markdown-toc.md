@@ -1,15 +1,15 @@
 ---
 title: "Markdown Table of Contents"
 source: "https://docusaurus.io/docs/markdown-features/toc"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "b01cc73a591c7e5e536d171938fe33e2ea6f2b240cd30bcee58f65bdb61031d9"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "97d9d10febd32c1be2d7916eb54887e1615ddb9b33d4b290ad06dfbefdc07318"
 ---
 
 # Markdown Table of Contents
 
 Source: https://docusaurus.io/docs/markdown-features/toc
 
-- GuidesMarkdown FeaturesHeadings and Table of contentsVersion: 3.10.1On this page
+- GuidesMarkdown FeaturesHeadings and Table of contentsVersion: 3.10.2On this page
 # Headings and Table of contents
 
 ## Markdown headings​
@@ -235,4 +235,4 @@ Lorem ipsum
 #### Example subsubsection 3 c II​
 
 #### Example subsubsection 3 c III​
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

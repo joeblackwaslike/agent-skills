@@ -3,7 +3,7 @@ title: Anthropic Messages API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api"
-last_updated: 2026-05-26
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway for seamless integration with Anthropic SDK tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "9c733b125b3b6cb0bb6b97a9389749d99184c6595dda90cf55bcaacb0e017316"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "7c4b0e18d327083389b921705c66c52881f3fbb3926c65d02ce6c90dd5ffa21d"
 ---
 
 # Anthropic Messages API

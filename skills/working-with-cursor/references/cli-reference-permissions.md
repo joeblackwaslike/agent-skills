@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/reference/permissions.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "6a2c0e5dc920465bffa5fc963e356218c196283e3426503c484138da6257c54c"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "9f8264f5d8136496f008e0949cdad81760b8fa7784e3d6a2a04757c13c960f15"
 ---
 
 # Permissions
@@ -41,7 +41,7 @@ Controls read access to files and directories. Supports glob patterns.
 
 **Format:** `Write(pathOrGlob)`
 
-Controls write access to files and directories. Supports glob patterns. When using in print mode, `--force` is required to write files.
+Controls write access to files and directories. Supports glob patterns. Print mode can use write and shell tools. Use `permissions.allow`, `permissions.deny`, and `--force` to control what runs without prompts.
 
 | Example               | Description                           |
 | --------------------- | ------------------------------------- |

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/letta.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3f3b774342a7edb6c7ce1a8229712234321871b2515aeae05bba96721c65f1a6"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "60f89af4db1f5476654d58c949456af2e3fed25c6af5c32bc4363db0759c3c3a"
 ---
 
 # Letta Provider
@@ -25,20 +25,7 @@ See the [Letta documentation](https://docs.letta.com/connecting-model-providers/
 
 You can install the Letta provider with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @letta-ai/vercel-ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @letta-ai/vercel-ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @letta-ai/vercel-ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @letta-ai/vercel-ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@letta-ai/vercel-ai-sdk-provider" />
 
 ## Provider Instance
 

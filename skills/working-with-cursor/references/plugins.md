@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/plugins.md"
-fetched_at: "2026-06-29T05:42:13.025Z"
-sha256: "374c525a250e5f8f4e38d86c64053eac3fe56bda46f638fa158d9df8efa990d6"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "a04ce36f0724c0b0579e993ed8cd9344c815decfd5146c0eb60a355eb151afb0"
 ---
 
 # Plugins
@@ -43,31 +43,59 @@ Team marketplaces are available on Teams and Enterprise plans.
 
 [Contact sales](https://cursor.com/contact-sales?source=docs-plugins) for unlimited team marketplaces and Enterprise admin controls.
 
-The **Team Marketplaces** section appears below **Plugins** in dashboard settings.
+Open **Dashboard -> Plugins** to manage Team Marketplaces.
 
-On Enterprise plans, only admins can add team marketplaces from **Dashboard ->
-Settings -> Plugins**.
+On Enterprise plans, only admins can add team marketplaces from **Dashboard
+-> Plugins**.
 
-### Required vs optional plugins
+### Default team marketplace
 
-When you assign a plugin to a distribution group, you can set it as required or optional:
+The **Default** team marketplace connects shared plugins and MCP servers across Cursor. Admins can add Team MCP servers that are already available to Cloud Agents, then make the same servers available for teammates to install and configure in the Agent Window, IDE, and CLI.
 
-- **Required**: After you click **Save**, the plugin is installed automatically for everyone in that distribution group.
-- **Optional**: The plugin is available to everyone in that distribution group, and each developer can choose whether to install it.
+Adding a Team MCP server to the Default marketplace does not install or enable it for every developer. Admins still control marketplace access and plugin installation modes. Each developer may also need to authenticate with the MCP provider.
 
-### How do distribution groups work with SCIM?
+### Migrate existing Team MCPs
 
-Distribution groups can be controlled with [SCIM](https://cursor.com/docs/account/teams/scim.md)-synced directory groups. If your organization uses SCIM, manage group membership in your identity provider, and Cursor will sync those group updates.
+Admins can link standalone Team MCP servers to the Default marketplace:
+
+1. Open **Dashboard -> Integrations & MCP**.
+2. Find **Team MCP Servers**.
+3. Select **Add to Team Marketplace** in the migration prompt.
+4. Open **Dashboard -> Plugins** to review the Default marketplace, its access, and plugin installation modes.
+
+Cursor creates the Default marketplace if needed and links the existing MCP servers to it. The servers remain available to Cloud Agents while teammates gain the option to install and configure them locally.
+
+Removing a linked MCP plugin from the marketplace or deleting the marketplace
+can delete the Team MCP server. This removes it for local users and Cloud
+Agents. Review the confirmation message before continuing.
+
+### Marketplace access
+
+Team marketplaces are available to everyone in their team by default. Under **Marketplace Settings -> Marketplace Access**, admins can restrict a marketplace to selected [Organization Groups](https://cursor.com/docs/enterprise/organization-groups.md). Only members of the marketplace's team who belong to a selected group receive access. Team admins retain access.
+
+### How does SCIM work?
+
+Organization Groups can sync membership from your identity provider through [SCIM](https://cursor.com/docs/account/teams/scim.md). Manage membership in your identity provider, and Cursor syncs those updates to the Organization Group.
+
+Existing marketplaces that use team-level SCIM directory groups keep that configuration. Cursor does not migrate those assignments automatically. Organizations without Organization Groups continue to use SCIM directory groups.
+
+### Plugin installation modes
+
+After setting marketplace access, choose how each plugin is distributed to that audience:
+
+- **Default Off**: Developers can find the plugin and choose whether to install it.
+- **Default On**: The plugin is installed by default, but developers can opt out.
+- **Required**: The plugin is always installed and cannot be uninstalled.
 
 ## Add a team marketplace
 
 Use this flow to import a GitHub repository as a team marketplace:
 
-1. Go to **Dashboard -> Settings -> Plugins**.
+1. Go to **Dashboard -> Plugins**.
 2. In **Team Marketplaces**, click **Add Marketplace**.
 3. Follow the instructions to create a marketplace from scratch, or use "Import from Repo" if importing from GitHub.
 4. Add and review plugins using "Add to Marketplace".
-5. Set Team Access groups, optionally enable Auto Refresh, then save.
+5. Under **Marketplace Settings**, set **Marketplace Access**, optionally enable Auto Refresh, then save.
 
 Example repository to try:
 
@@ -88,8 +116,10 @@ Developers can find team marketplaces in Customize.
 
 - Open **Customize** in the sidebar
 - Look for plugins from your team marketplace.
-- Install optional plugins directly from that panel.
-- Required plugins are installed automatically when admins save the required setting for your distribution group.
+- Install Default Off plugins directly from that panel.
+- Default On plugins are installed automatically, but developers can opt out.
+- Required plugins are installed automatically and cannot be uninstalled.
+- Install and configure marketplace MCP servers for use in the Agent Window, IDE, and CLI.
 
 ## Installing plugins
 
@@ -111,7 +141,7 @@ Open **Customize** in the sidebar to manage plugins, MCP servers, rules, and ski
 
 ### MCP servers
 
-Toggle MCP servers on or off from Customize:
+Toggle personal and team-distributed MCP servers on or off from Customize:
 
 1. Open **Customize** in the sidebar
 2. Find the MCP server you want to change

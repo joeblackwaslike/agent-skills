@@ -3,7 +3,7 @@ title: Security
 product: vercel
 url: /docs/vercel-blob/security
 canonical_url: "https://vercel.com/docs/vercel-blob/security"
-last_updated: 2026-05-19
+last_updated: 2026-06-24
 type: conceptual
 prerequisites:
   - /docs/vercel-blob
@@ -15,8 +15,8 @@ related:
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b8007c060db3171c9815e6c82da655849b36b9c0948dd96b5b8e9d3f38f47b5c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "0c44511c9d156db268fb12b2cc282475a8592b9ec324823bc76c72b518ffcc71"
 ---
 
 # Security

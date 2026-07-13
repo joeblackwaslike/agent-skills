@@ -1,15 +1,15 @@
 ---
 title: "Installation"
 source: "https://docusaurus.io/docs/installation"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "e6fdf1e528c278451e4f3d1331f737dfcb750e70bedba6e311a813a37c606cd8"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "3af694ec3f5b843e0654f72606f538bc64c9026a2bac2d245148231d81ecc1dc"
 ---
 
 # Installation
 
 Source: https://docusaurus.io/docs/installation
 
-- Getting StartedInstallationVersion: 3.10.1On this page
+- Getting StartedInstallationVersion: 3.10.2On this page
 # Installation
 
 Docusaurus consists of a set of npm packages.
@@ -162,7 +162,7 @@ There are many ways to update your Docusaurus version. One guaranteed way is to 
 
 package.json
 ```
-{  "dependencies": {    "@docusaurus/core": "3.10.1",    "@docusaurus/preset-classic": "3.10.1",    // ...  }}
+{  "dependencies": {    "@docusaurus/core": "3.10.2",    "@docusaurus/preset-classic": "3.10.2",    // ...  }}
 ```
 
 Then, in the directory containing `package.json`, run your package manager's install command:
@@ -205,4 +205,4 @@ tipUse new unreleased features of Docusaurus with the `@canary` npm dist tag
 
 ## Problems?​
 
-Ask for help on Stack Overflow, on our GitHub repository, our Discord server, or X.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Ask for help on Stack Overflow, on our GitHub repository, our Discord server, or X.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

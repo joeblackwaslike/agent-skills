@@ -3,7 +3,7 @@ title: Image Optimization with Vercel
 product: vercel
 url: /docs/image-optimization
 canonical_url: "https://vercel.com/docs/image-optimization"
-last_updated: 2026-03-05
+last_updated: 2026-06-23
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5f76ead8bf013a90a8286429981a1365a05c917fcebd00a938cd35e488ce7f32"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "fd0a81c8f12896a28221fafa622d88a197e5f178bbe30826c4ac37c98307de8a"
 ---
 
 # Image Optimization with Vercel

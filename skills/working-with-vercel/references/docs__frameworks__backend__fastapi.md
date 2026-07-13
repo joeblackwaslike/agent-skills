@@ -3,7 +3,7 @@ title: Deploy a FastAPI app on Vercel
 product: vercel
 url: /docs/frameworks/backend/fastapi
 canonical_url: "https://vercel.com/docs/frameworks/backend/fastapi"
-last_updated: 2026-05-04
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "d6b15f4c2ef6343f3d6ab3a83457489183a9abeb6b1d614bc05c3a028aed7539"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "374e030d35946867165c765ba700ae158ac34a5a4734dcfacad71e868c84b135"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -193,7 +193,7 @@ property](/docs/project-configuration/vercel-json#functions).
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to FastAPI applications, including:
 
-- **Application size**: The FastAPI application becomes a single bundle, which must fit within the 500MB limit of Vercel Functions. Our bundling process removes `__pycache__` and `.pyc` files from the deployment's bundle to reduce size, but does not perform application bundling.
+- **Application size**: The FastAPI application becomes a single bundle, which has a standard bundle size limit of 500MB. [Large Functions](/docs/functions/limitations#large-functions-beta) support Python bundles up to 5GB on Fluid compute when enabled (public beta). Our bundling process removes `__pycache__` and `.pyc` files from the deployment's bundle to reduce size, but does not perform application bundling.
 
 ## More resources
 

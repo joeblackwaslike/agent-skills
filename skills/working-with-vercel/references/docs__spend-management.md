@@ -3,7 +3,7 @@ title: Spend Management
 product: vercel
 url: /docs/spend-management
 canonical_url: "https://vercel.com/docs/spend-management"
-last_updated: 2026-06-16
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9d4b004c1f7e66adfff33d9e2e60b439053f56100c3c29288c6e86b952dfa418"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c7dba22bb14ad7284277317c3f20c8dc4e00c8774b00329858fe3fbd70a17c52"
 ---
 
 # Spend Management

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugin-dependencies.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "28d20d7c0f0f1bed3782f343f93e923eba486aca7d8b91b486a474b760ff1c22"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "9f4f3068d104d4de07591b8a38a7ae349a9ae14dbd030845d4df4e195dd273c5"
 ---
 
 > ## Documentation Index
@@ -121,7 +121,7 @@ When several installed plugins constrain the same dependency, Claude Code inters
 | `~2.1`            | `~3.0`            | Install of plugin B fails with `range-conflict`. Plugin A and the dependency stay as they were. |
 | `=2.1.0`          | none              | The dependency stays at `2.1.0`. Auto-update skips newer versions while plugin A is installed.  |
 
-Auto-update fetches a constrained dependency at the highest git tag that satisfies every installed plugin's range, rather than at the marketplace's latest version, so the dependency continues to receive updates within its allowed range. If no tag satisfies all ranges, the update is skipped and the skip appears in `/doctor` and the `/plugin` Errors tab, naming the constraining plugin.
+Auto-update fetches a constrained dependency at the highest git tag that satisfies every installed plugin's range, rather than at the marketplace's latest version, so the dependency continues to receive updates within its allowed range. If no tag satisfies all ranges, auto-update skips that dependency and lists the skip in the `/plugin` Errors tab, naming the constraining plugin.
 
 When you uninstall the last plugin that constrains a dependency, the dependency is no longer held and resumes tracking its marketplace entry on the next update.
 
@@ -171,7 +171,7 @@ claude plugin uninstall deploy-kit --prune
 
 ## Resolve dependency errors
 
-Dependency problems surface in `claude plugin list`, in the `/plugin` interface, and in `/doctor`. The affected plugin is disabled until you resolve the error. The most common errors and their fixes are listed below.
+Dependency problems appear in `claude plugin list` and in the `/plugin` interface. Claude Code disables the affected plugin until you resolve the error. The table below lists the most common errors and how to resolve them.
 
 | Error                            | Meaning                                                                                                                                                                                                                           | How to resolve                                                                                                                                                                                                                                                          |
 | :------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

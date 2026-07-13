@@ -3,7 +3,7 @@ title: update-resource-secrets-by-id
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets-by-id
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets-by-id"
-last_updated: 2026-07-06
+last_updated: 2026-07-13
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about update-resource-secrets-by-id on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets-by-id.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "20ac980ce91f1378660fab8c5305410784f12880317cf7c8e98cfc19dd681fef"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "2ea7fb4c43ccb35ab05e38a2335742075fe406b62d5c21d751f5918c1dced2c6"
 ---
 
 # Update Resource Secrets

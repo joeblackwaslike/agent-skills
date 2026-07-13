@@ -1,15 +1,12 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/object-generation.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "600bdc227f2ca8c1595de67ff62b06ab998903f77ef74ebf76d4b20d0231deb1"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "4e92b36eed1f0344fb8749a2d39c591f4154884b4f059f5fd27f79e2abfd130e"
 ---
 
 # Object Generation
 
-<Note>
-  `useObject` is an experimental feature and only available in React, Svelte,
-  and Vue.
-</Note>
+<Note>`useObject` is only available in React, Svelte, and Vue.</Note>
 
 The [`useObject`](/docs/reference/ai-sdk-ui/use-object) hook allows you to create interfaces that represent a structured JSON object that is being streamed.
 
@@ -47,7 +44,7 @@ Please note the code for handling `undefined` values in the JSX.
 ```tsx filename='app/page.tsx'
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 import { notificationSchema } from './api/notifications/schema';
 
 export default function Page() {
@@ -116,7 +113,7 @@ When using `useObject` with enum output mode, your schema must be an object with
 ```tsx filename='app/classify/page.tsx'
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 import { z } from 'zod';
 
 export default function ClassifyPage() {
@@ -175,7 +172,7 @@ purposes:
 ```tsx filename='app/page.tsx' highlight="6,13-20,24"
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 
 export default function Page() {
   const { isLoading, object, submit } = useObject({
@@ -212,7 +209,7 @@ The `stop` function can be used to stop the object generation process. This can 
 ```tsx filename='app/page.tsx' highlight="6,14-16"
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 
 export default function Page() {
   const { isLoading, stop, object, submit } = useObject({
@@ -257,7 +254,7 @@ It can be used to display an error message, or to disable the submit button:
 ```tsx file="app/page.tsx" highlight="6,13"
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 
 export default function Page() {
   const { error, object, submit } = useObject({
@@ -296,7 +293,7 @@ These callbacks can be used to trigger additional actions, such as logging, anal
 ```tsx filename='app/page.tsx' highlight="10-20"
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 import { notificationSchema } from './api/notifications/schema';
 
 export default function Page() {

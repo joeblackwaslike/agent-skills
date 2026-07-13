@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "62b75d8b420f454dca7a67fdf3e09c4962d8191a04bccab99efb6ed74c71bb7c"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "023ace1bce137fd5a0e14c3f3137d9e2f64a12e46c433ee8365b5f8c26169e8b"
 ---
 
 # Perplexity Provider
@@ -14,21 +14,7 @@ API keys can be obtained from the [Perplexity Platform](https://docs.perplexity.
 
 The Perplexity provider is available via the `@ai-sdk/perplexity` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/perplexity" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/perplexity" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/perplexity" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/perplexity" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/perplexity" />
 
 ## Provider Instance
 
@@ -104,6 +90,12 @@ The Perplexity provider includes additional metadata in the response through `pr
 Additional configuration options are available through `providerOptions`.
 
 ```ts
+import {
+  perplexity,
+  type PerplexityLanguageModelOptions,
+} from '@ai-sdk/perplexity';
+import { generateText } from 'ai';
+
 const result = await generateText({
   model: perplexity('sonar-pro'),
   prompt: 'What are the latest developments in quantum computing?',
@@ -111,7 +103,7 @@ const result = await generateText({
     perplexity: {
       return_images: true, // Enable image responses (Tier-2 Perplexity users only)
       search_recency_filter: 'week', // Filter search results by recency
-    },
+    } satisfies PerplexityLanguageModelOptions,
   },
 });
 
@@ -138,7 +130,7 @@ The following provider-specific options are available:
 
 - **search_recency_filter** _string_
 
-  Filter search results by recency. Possible values: `'hour'`, `'day'`, `'week'`, `'month'`. If not specified, defaults to all time.
+  Filter search results by recency. Possible values: `'hour'`, `'day'`, `'week'`, `'month'`, `'year'`. If not specified, defaults to all time.
 
 <Note>
   Any other [Perplexity API
@@ -202,13 +194,13 @@ respond to questions about it.
 
 ## Model Capabilities
 
-| Model                 | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| --------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `sonar-deep-research` | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `sonar-reasoning-pro` | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `sonar-reasoning`     | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `sonar-pro`           | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `sonar`               | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Model                 | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| --------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `sonar-deep-research` | <Cross />   | <Check />         | <Cross />  | <Cross />      |
+| `sonar-reasoning-pro` | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `sonar-reasoning`     | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `sonar-pro`           | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `sonar`               | <Check />   | <Check />         | <Cross />  | <Cross />      |
 
 <Note>
   Please see the [Perplexity docs](https://docs.perplexity.ai) for detailed API

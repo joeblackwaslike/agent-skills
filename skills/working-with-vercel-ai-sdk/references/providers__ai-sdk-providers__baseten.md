@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "ae96ee3209b2e5b2a7871978c47fa186011f80502b13be584267b4dcc449286b"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "09ee0ac6bfbf8d0828cfe6475da9ba8ec669298d6e969a22eb9d92225e87ae81"
 ---
 
 # Baseten Provider
@@ -12,17 +12,7 @@ sha256: "ae96ee3209b2e5b2a7871978c47fa186011f80502b13be584267b4dcc449286b"
 
 The Baseten provider is available via the `@ai-sdk/baseten` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/baseten" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/baseten" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/baseten" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/baseten" />
 
 ## Provider Instance
 

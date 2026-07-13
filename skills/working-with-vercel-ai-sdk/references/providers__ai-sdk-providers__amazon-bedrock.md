@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "27d5e20f752e6c530d83405ceb1d132f187aa389c0a0d65dc020b6e00795b1c7"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "874760c1fd7865876454e03ad632bc483c0a346a354ce971170cb66148fd477f"
 ---
 
 # Amazon Bedrock Provider
@@ -12,21 +12,7 @@ The Amazon Bedrock provider for the [AI SDK](/docs) contains language model supp
 
 The Bedrock provider is available in the `@ai-sdk/amazon-bedrock` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/amazon-bedrock" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/amazon-bedrock" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/amazon-bedrock" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/amazon-bedrock" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/amazon-bedrock" />
 
 ### Prerequisites
 
@@ -111,21 +97,7 @@ _Usage:_
 
 `@aws-sdk/credential-providers` package provides a set of credential providers that can be used to create a credential provider chain.
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @aws-sdk/credential-providers" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @aws-sdk/credential-providers" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @aws-sdk/credential-providers" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @aws-sdk/credential-providers" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@aws-sdk/credential-providers" />
 
 ```ts
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
@@ -761,67 +733,67 @@ These tools can be used in conjunction with the `anthropic.claude-3-5-sonnet-202
 
 ### Model Capabilities
 
-| Model                                          | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ---------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `amazon.titan-tg1-large`                       | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `amazon.titan-text-express-v1`                 | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `amazon.titan-text-lite-v1`                    | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `us.amazon.nova-premier-v1:0`                  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.amazon.nova-pro-v1:0`                      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.amazon.nova-lite-v1:0`                     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.amazon.nova-micro-v1:0`                    | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-haiku-4-5-20251001-v1:0`     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-sonnet-4-20250514-v1:0`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-sonnet-4-5-20250929-v1:0`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-opus-4-20250514-v1:0`        | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-opus-4-1-20250805-v1:0`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-3-5-sonnet-20241022-v2:0`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-3-5-sonnet-20240620-v1:0`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-3-opus-20240229-v1:0`        | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-3-sonnet-20240229-v1:0`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-3-haiku-20240307-v1:0`       | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-20250514-v1:0`     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-3-5-sonnet-20240620-v1:0` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-3-sonnet-20240229-v1:0`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-3-opus-20240229-v1:0`     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-3-haiku-20240307-v1:0`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `anthropic.claude-v2`                          | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `anthropic.claude-v2:1`                        | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `anthropic.claude-instant-v1`                  | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `cohere.command-text-v14`                      | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `cohere.command-light-text-v14`                | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `cohere.command-r-v1:0`                        | <Cross size={18} /> | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `cohere.command-r-plus-v1:0`                   | <Cross size={18} /> | <Cross size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `us.deepseek.r1-v1:0`                          | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `meta.llama3-8b-instruct-v1:0`                 | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-70b-instruct-v1:0`                | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-1-8b-instruct-v1:0`               | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-1-70b-instruct-v1:0`              | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-1-405b-instruct-v1:0`             | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-2-1b-instruct-v1:0`               | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-2-3b-instruct-v1:0`               | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-2-11b-instruct-v1:0`              | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `meta.llama3-2-90b-instruct-v1:0`              | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `us.meta.llama3-2-1b-instruct-v1:0`            | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama3-2-3b-instruct-v1:0`            | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama3-2-11b-instruct-v1:0`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama3-2-90b-instruct-v1:0`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama3-1-8b-instruct-v1:0`            | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama3-1-70b-instruct-v1:0`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama3-3-70b-instruct-v1:0`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama4-scout-17b-instruct-v1:0`       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.meta.llama4-maverick-17b-instruct-v1:0`    | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral.mistral-7b-instruct-v0:2`             | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `mistral.mixtral-8x7b-instruct-v0:1`           | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `mistral.mistral-large-2402-v1:0`              | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `mistral.mistral-small-2402-v1:0`              | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `us.mistral.pixtral-large-2502-v1:0`           | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `openai.gpt-oss-120b-1:0`                      | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `openai.gpt-oss-20b-1:0`                       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                                          | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ---------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `amazon.titan-tg1-large`                       | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `amazon.titan-text-express-v1`                 | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `amazon.titan-text-lite-v1`                    | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `us.amazon.nova-premier-v1:0`                  | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.amazon.nova-pro-v1:0`                      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.amazon.nova-lite-v1:0`                     | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.amazon.nova-micro-v1:0`                    | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-haiku-4-5-20251001-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-sonnet-4-20250514-v1:0`      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-sonnet-4-5-20250929-v1:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-opus-4-20250514-v1:0`        | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-opus-4-1-20250805-v1:0`      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-3-5-sonnet-20241022-v2:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-3-5-sonnet-20240620-v1:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-3-opus-20240229-v1:0`        | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-3-sonnet-20240229-v1:0`      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-3-haiku-20240307-v1:0`       | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-opus-4-20250514-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-3-5-sonnet-20240620-v1:0` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-3-sonnet-20240229-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-3-opus-20240229-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />      |
+| `us.anthropic.claude-3-haiku-20240307-v1:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
+| `anthropic.claude-v2`                          | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `anthropic.claude-v2:1`                        | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `anthropic.claude-instant-v1`                  | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `cohere.command-text-v14`                      | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `cohere.command-light-text-v14`                | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `cohere.command-r-v1:0`                        | <Cross />   | <Cross />         | <Check />  | <Cross />      |
+| `cohere.command-r-plus-v1:0`                   | <Cross />   | <Cross />         | <Check />  | <Cross />      |
+| `us.deepseek.r1-v1:0`                          | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `meta.llama3-8b-instruct-v1:0`                 | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-70b-instruct-v1:0`                | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-1-8b-instruct-v1:0`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-1-70b-instruct-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-1-405b-instruct-v1:0`             | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-2-1b-instruct-v1:0`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-2-3b-instruct-v1:0`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-2-11b-instruct-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta.llama3-2-90b-instruct-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `us.meta.llama3-2-1b-instruct-v1:0`            | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama3-2-3b-instruct-v1:0`            | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama3-2-11b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama3-2-90b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama3-1-8b-instruct-v1:0`            | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama3-1-70b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama3-3-70b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama4-scout-17b-instruct-v1:0`       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `us.meta.llama4-maverick-17b-instruct-v1:0`    | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `mistral.mistral-7b-instruct-v0:2`             | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `mistral.mixtral-8x7b-instruct-v0:1`           | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `mistral.mistral-large-2402-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `mistral.mistral-small-2402-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `us.mistral.pixtral-large-2502-v1:0`           | <Check />   | <Check />         | <Check />  | <Check />      |
+| `openai.gpt-oss-120b-1:0`                      | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `openai.gpt-oss-20b-1:0`                       | <Cross />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   The table above lists popular models. Please see the [Amazon Bedrock
@@ -940,13 +912,13 @@ The following provider options are available for Cohere embedding models:
 
 ### Model Capabilities
 
-| Model                          | Default Dimensions | Custom Dimensions   |
-| ------------------------------ | ------------------ | ------------------- |
-| `amazon.titan-embed-text-v1`   | 1536               | <Cross size={18} /> |
-| `amazon.titan-embed-text-v2:0` | 1024               | <Check size={18} /> |
-| `amazon.nova-embed-text-v2:0`  | 1024               | <Check size={18} /> |
-| `cohere.embed-english-v3`      | 1024               | <Cross size={18} /> |
-| `cohere.embed-multilingual-v3` | 1024               | <Cross size={18} /> |
+| Model                          | Default Dimensions | Custom Dimensions |
+| ------------------------------ | ------------------ | ----------------- |
+| `amazon.titan-embed-text-v1`   | 1536               | <Cross />         |
+| `amazon.titan-embed-text-v2:0` | 1024               | <Check />         |
+| `amazon.nova-embed-text-v2:0`  | 1024               | <Check />         |
+| `cohere.embed-english-v3`      | 1024               | <Cross />         |
+| `cohere.embed-multilingual-v3` | 1024               | <Cross />         |
 
 ## Reranking Models
 
@@ -1049,10 +1021,13 @@ const { image } = await generateImage({
 });
 ```
 
-You can also pass the `providerOptions` object to the `generateImage` function to customize the generation behavior:
+You can also pass the `providerOptions` object to the `generateImage` function to customize the generation behavior. Use the `AmazonBedrockImageModelOptions` type to validate Amazon Bedrock image provider options. The preferred provider option key is `providerOptions.amazonBedrock`; the legacy `providerOptions.bedrock` key remains supported for backward compatibility:
 
 ```ts
-import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
+import {
+  amazonBedrock,
+  type AmazonBedrockImageModelOptions,
+} from '@ai-sdk/amazon-bedrock';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
@@ -1061,12 +1036,12 @@ const { image } = await generateImage({
   size: '512x512',
   seed: 42,
   providerOptions: {
-    bedrock: {
+    amazonBedrock: {
       quality: 'premium',
       negativeText: 'blurry, low quality',
       cfgScale: 7.5,
       style: 'PHOTOREALISM',
-    },
+    } satisfies AmazonBedrockImageModelOptions,
   },
 });
 ```
@@ -1115,18 +1090,18 @@ const { images } = await generateImage({
     images: [imageBuffer],
   },
   providerOptions: {
-    bedrock: {
+    amazonBedrock: {
       taskType: 'IMAGE_VARIATION',
-      similarityStrength: 0.7, // 0-1, higher = closer to original
+      similarityStrength: 0.7, // 0.2-1.0, higher = closer to original
       negativeText: 'bad quality, low resolution',
-    },
+    } satisfies AmazonBedrockImageModelOptions,
   },
 });
 ```
 
 - **similarityStrength** _number_
 
-  Controls how similar the output is to the input image. Values range from 0 to 1, where higher values produce results closer to the original.
+  Controls how similar the output is to the input image. Values range from 0.2 to 1.0, where higher values produce results closer to the original.
 
 #### Inpainting
 
@@ -1144,9 +1119,9 @@ const { images } = await generateImage({
     images: [imageBuffer],
   },
   providerOptions: {
-    bedrock: {
+    amazonBedrock: {
       maskPrompt: 'cat', // Describe what to replace
-    },
+    } satisfies AmazonBedrockImageModelOptions,
   },
   seed: 42,
 });
@@ -1186,11 +1161,11 @@ const { images } = await generateImage({
     images: [imageBuffer],
   },
   providerOptions: {
-    bedrock: {
+    amazonBedrock: {
       taskType: 'OUTPAINTING',
       maskPrompt: 'background',
       outPaintingMode: 'DEFAULT', // or 'PRECISE'
-    },
+    } satisfies AmazonBedrockImageModelOptions,
   },
 });
 ```
@@ -1212,9 +1187,9 @@ const { images } = await generateImage({
     images: [imageBuffer],
   },
   providerOptions: {
-    bedrock: {
+    amazonBedrock: {
       taskType: 'BACKGROUND_REMOVAL',
-    },
+    } satisfies AmazonBedrockImageModelOptions,
   },
 });
 ```
@@ -1238,7 +1213,7 @@ The following additional provider options are available for image editing:
 
 - **similarityStrength** _number_
 
-  For `IMAGE_VARIATION`: Controls similarity to the original (0-1).
+  For `IMAGE_VARIATION`: Controls similarity to the original (0.2-1.0).
 
 - **outPaintingMode** _string_
 
@@ -1624,20 +1599,20 @@ on how to integrate reasoning into your chatbot.
 
 ### Model Capabilities
 
-| Model                                          | Image Input         | Object Generation   | Tool Usage          | Computer Use        | Reasoning           |
-| ---------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `us.anthropic.claude-sonnet-5`                 | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-fable-5`                  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-8`                 | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-7`                 | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-6-v1`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-5-20251101-v1:0`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-20250514-v1:0`     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-haiku-4-5-20251001-v1:0`  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Model                                          | Image Input | Object Generation | Tool Usage | Computer Use | Reasoning |
+| ---------------------------------------------- | ----------- | ----------------- | ---------- | ------------ | --------- |
+| `us.anthropic.claude-sonnet-5`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-fable-5`                  | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-opus-4-8`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-opus-4-7`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-opus-4-6-v1`              | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-opus-4-5-20251101-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-opus-4-20250514-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-haiku-4-5-20251001-v1:0`  | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
+| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | <Check />   | <Check />         | <Check />  | <Cross />    | <Cross /> |
 
 <Note>
   The Bedrock Anthropic provider uses the native InvokeModel API and supports
@@ -1788,12 +1763,12 @@ const { text } = await generateText({
 
 ### Model Capabilities
 
-| Model                           | Chat Completions    | Responses API       |
-| ------------------------------- | ------------------- | ------------------- |
-| `openai.gpt-oss-20b`            | <Check size={18} /> | <Check size={18} /> |
-| `openai.gpt-oss-120b`           | <Check size={18} /> | <Check size={18} /> |
-| `openai.gpt-oss-safeguard-20b`  | <Check size={18} /> | <Cross size={18} /> |
-| `openai.gpt-oss-safeguard-120b` | <Check size={18} /> | <Cross size={18} /> |
+| Model                           | Chat Completions | Responses API |
+| ------------------------------- | ---------------- | ------------- |
+| `openai.gpt-oss-20b`            | <Check />        | <Check />     |
+| `openai.gpt-oss-120b`           | <Check />        | <Check />     |
+| `openai.gpt-oss-safeguard-20b`  | <Check />        | <Cross />     |
+| `openai.gpt-oss-safeguard-120b` | <Check />        | <Cross />     |
 
 <Note>
   The Bedrock Mantle provider uses the OpenAI-compatible API format. Models

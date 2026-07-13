@@ -3,7 +3,7 @@ title: Coding Agents
 product: vercel
 url: /docs/ai-gateway/coding-agents
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents"
-last_updated: 2026-06-20
+last_updated: 2026-06-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "82acbdc4e6beccc32eb11af72769d63bedba81e382d67621ad3750c1bcc45696"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c679a10ae08c1948e6354b17c6a34983acedfff349e0c31c4f1c825fbb6db961"
 ---
 
 # Coding Agents

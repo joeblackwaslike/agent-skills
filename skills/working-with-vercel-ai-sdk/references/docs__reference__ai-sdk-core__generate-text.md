@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "3cb1ae3624f8330abe0b52f5ce593b3b777b62e4ca8e2b86a69e18ca55235b74"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "2fa47ff2eaffc6928c88a6011c55b9add73de8790259983d0b8900b7fd4c829a"
 ---
 
 # `generateText()`
@@ -812,7 +812,7 @@ To see `generateText` in action, check out [these examples](#examples).
       ],
     },
     {
-      name: 'experimental_repairToolCall',
+      name: 'repairToolCall',
       type: '(options: ToolCallRepairOptions) => Promise<LanguageModelV4ToolCall | null>',
       isOptional: true,
       description:

@@ -1,15 +1,15 @@
 ---
 title: "Docs Introduction"
 source: "https://docusaurus.io/docs/docs-introduction"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "037f5e4d9ea1ecd1749120a7a333dd6cbabb95a7c6a3893bb162f766b967445f"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "185ec0cbaaf54953c129c29f484bc2ea1f5c0920217c368554e378829930961e"
 ---
 
 # Docs Introduction
 
 Source: https://docusaurus.io/docs/docs-introduction
 
-- GuidesDocsVersion: 3.10.1On this page
+- GuidesDocsVersion: 3.10.2On this page
 # Docs Introduction
 
 The docs feature provides users with a way to organize Markdown files in a hierarchical format.
@@ -69,4 +69,4 @@ Now, the site's structure will be like the following:
 example.com/                       -> generated from `docs/intro.md`example.com/tutorial-basics/...    -> generated from `docs/tutorial-basics/...`...
 ```
 
-tipThere's also a "blog-only mode" for those who only want to use the blog feature of Docusaurus. You can use the same method detailed above. Follow the setup instructions on Blog-only mode.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+tipThere's also a "blog-only mode" for those who only want to use the blog feature of Docusaurus. You can use the same method detailed above. Follow the setup instructions on Blog-only mode.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

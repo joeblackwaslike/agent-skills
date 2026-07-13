@@ -3,7 +3,7 @@ title: Image-to-Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/image-to-video
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video"
-last_updated: 2026-06-20
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
@@ -14,8 +14,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "37e3df53dbfb247c52a0fbc29dab8f534a7600c920146b46cb648e8187b0f545"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "6735204b90eb7f7f1b213e815ff6bad3511145da25188d44058357c49cf2ab4b"
 ---
 
 # Image-to-Video Generation

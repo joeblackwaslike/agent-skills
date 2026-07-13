@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/overview.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "91dfbc96bc0dfa4e35ff94e91f95138a35cabefebf853799c01de79cd8c6b5dc"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "95b77981c46268fc0eab26acd8bda3ecc2a6bb629a29071f79cd462e9c12a20f"
 ---
 
 > ## Documentation Index
@@ -16,7 +16,7 @@ Claude Code is an AI-powered coding assistant that helps you build features, fix
 
 ## Get started
 
-Choose your environment to get started. Most surfaces require a [Claude subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=overview_pricing) or [Anthropic Console](https://console.anthropic.com/) account. The Terminal CLI and VS Code also support [third-party providers](/en/third-party-integrations).
+Claude Code runs on several surfaces: the terminal, IDE extensions, a desktop app, and the web. Choose one from the tabs below to get started. Most surfaces require a [Claude subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=overview_pricing) or [Anthropic Console](https://console.anthropic.com/) account. The Terminal CLI and VS Code also support [third-party providers](/en/third-party-integrations).
 
 <Tabs>
   <Tab title="Terminal">
@@ -209,7 +209,7 @@ Here are some of the ways you can use Claude Code:
   </Accordion>
 
   <Accordion title="Work from anywhere" icon="globe">
-    Sessions aren't tied to a single surface. Move work between environments as your context changes:
+    Sessions aren't tied to a single surface. Move work between them as your context changes:
 
     * Step away from your desk and keep working from your phone or any browser with [Remote Control](/en/remote-control)
     * Message [Dispatch](/en/desktop#sessions-from-dispatch) a task from your phone and open the Desktop session it creates
@@ -221,9 +221,9 @@ Here are some of the ways you can use Claude Code:
 
 ## Use Claude Code everywhere
 
-Each surface connects to the same underlying Claude Code engine, so your CLAUDE.md files, settings, and MCP servers work across all of them.
+Each [surface](/en/glossary#surface) connects to the same underlying Claude Code engine, so your CLAUDE.md files, settings, and MCP servers work across all of them.
 
-Beyond the [Terminal](/en/quickstart), [VS Code](/en/vs-code), [JetBrains](/en/jetbrains), [Desktop](/en/desktop), and [Web](/en/claude-code-on-the-web) environments above, Claude Code integrates with CI/CD, chat, and browser workflows:
+Beyond the [Terminal](/en/quickstart), [VS Code](/en/vs-code), [JetBrains](/en/jetbrains), [Desktop](/en/desktop), and [Web](/en/claude-code-on-the-web) surfaces above, Claude Code integrates with CI/CD, chat, and browser workflows:
 
 | I want to...                                                                    | Best option                                                                                                        |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |

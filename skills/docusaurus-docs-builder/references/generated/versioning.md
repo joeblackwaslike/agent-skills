@@ -1,15 +1,15 @@
 ---
 title: "Versioning"
 source: "https://docusaurus.io/docs/versioning"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "03e01629a76ad973f00af4e29c00319f18ba21a6b747c273c9fae075f12682de"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "681decac43c7542ce36d57fef2ead0da6365d1cefa6456579d555448b754b6c8"
 ---
 
 # Versioning
 
 Source: https://docusaurus.io/docs/versioning
 
-- GuidesDocsVersioningVersion: 3.10.1On this page
+- GuidesDocsVersioningVersion: 3.10.2On this page
 # Versioning
 
 You can use the versioning CLI to create a new documentation version based on the latest content in the `docs` directory. That specific set of documentation will then be preserved and accessible even as the documentation in the `docs` directory continues to evolve.
@@ -269,4 +269,4 @@ If your assets are global, put them in `/static` and use absolute paths:
 ```
 ![img alt](/myImage.png)[download this file](/file.pdf)
 ```
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

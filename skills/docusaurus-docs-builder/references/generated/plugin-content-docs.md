@@ -1,15 +1,15 @@
 ---
 title: "Docs Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "156074bef7b2e1b0aa1679182da83cda696966cb4c3912d8d2684e9e17bf30c9"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "522aa5d581602e69b391ccb7ea2da36a7a99511d021683e7a7a1c1ba7852ca4a"
 ---
 
 # Docs Plugin
 
 Source: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs
 
-- Plugins📦 plugin-content-docsVersion: 3.10.1On this page
+- Plugins📦 plugin-content-docsVersion: 3.10.2On this page
 # 📦 plugin-content-docs
 
 Provides the Docs functionality and is the default docs plugin for Docusaurus.
@@ -164,4 +164,4 @@ Read the i18n introduction first.
 ```
 website/i18n/[locale]/docusaurus-plugin-content-docs││ # translations for website/docs├── current│   ├── api│   │   └── config.md│   └── getting-started.md├── current.json││ # translations for website/versioned_docs/version-1.0.0├── version-1.0.0│   ├── api│   │   └── config.md│   └── getting-started.md└── version-1.0.0.json
 ```
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

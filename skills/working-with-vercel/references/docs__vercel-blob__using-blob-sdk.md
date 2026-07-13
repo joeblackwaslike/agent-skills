@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "47a29d8f02c684817a9d0ecd6794a8828f13ce65b6b6a5092622800dd7347fbc"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "998f1ae3f8a30395fec318b0e6448114d3a7604f49aafef903c853c56309c1a0"
 ---
 
 # @vercel/blob
@@ -226,6 +226,7 @@ It accepts the following parameters:
 | `oidcToken`   | No       | A Vercel OIDC token, used in place of `process.env.VERCEL_OIDC_TOKEN`. Pair with `storeId` (or `BLOB_STORE_ID`). Useful when your framework does not load `.env.local` into `process.env` automatically. See [Authentication](#authentication). |
 | `storeId`     | No       | The Blob store id, used with OIDC. Defaults to `process.env.BLOB_STORE_ID`. The SDK accepts either `store_<id>` or `<id>` form. See [Authentication](#authentication). |
 | `ifNoneMatch` | No       | An ETag value. When the blob's current ETag matches, returns `statusCode: 304` with `stream: null` instead of the full response. See [browser caching with conditional requests](/docs/vercel-blob/private-storage#browser-caching-with-conditional-requests) for a full example. |
+| `useCache`    | No       | Set to `false` to guarantee the read returns the latest version of the blob, at the cost of slower reads. Defaults to `true`. See [Consistent reads](/docs/vercel-blob/private-storage#consistent-reads).                                                     |
 | `headers`     | No       | Additional headers to include in the fetch request. The authorization header is set automatically.                                                                                                                                                                                |
 | `abortSignal` | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation                                                                                                                                                                            |
 
@@ -657,6 +658,79 @@ An example blob is:
   "contentDisposition": "attachment; filename=\"user-12345-copy.txt\"",
   "url": "https://ce0rcu23vrrdzqap.public.blob.vercel-storage.com/profilesv1/user-12345-copy.txt",
   "downloadUrl": "https://ce0rcu23vrrdzqap.public.blob.vercel-storage.com/profilesv1/user-12345-copy.txt?download=1",
+  "etag": "\"a1b2c3d4e5f6\""
+}
+```
+
+## Rename a blob
+
+This example renames an existing blob to a new path in the store:
+
+```ts
+import { rename } from '@vercel/blob';
+
+const blob = await rename('user-uploads/avatar-old.png', 'user-uploads/avatar.png', {
+  access: 'private', // or 'public'
+});
+```
+
+### `rename()`
+
+The `rename` method moves an existing blob object to a new path inside the blob store. It copies the blob to the new path, then deletes the source blob. The source blob is only deleted after the copy succeeds. If the copy fails, the rename aborts and the source blob is untouched.
+
+Like `copy()`, the `contentType` and `cacheControlMaxAge` will not be carried over from the source blob. If the values should be kept on the renamed blob, they need to be defined again in the options object.
+
+By default, `rename()` throws an error if a blob already exists at `toPathname`. Pass `allowOverwrite: true` to replace it, or `addRandomSuffix: true` to generate a unique pathname instead.
+
+If the source blob cannot be deleted after a successful copy, the method throws and the blob exists at both paths. Retry the rename with `allowOverwrite: true` to complete it.
+
+`rename()` cannot be called with a [client token](#client-uploads).
+
+```js
+rename(fromUrlOrPathname, toPathname, options);
+```
+
+It accepts the following parameters:
+
+- `fromUrlOrPathname`: (Required) A blob URL or pathname identifying an already existing blob
+- `toPathname`: (Required) A string specifying the new path inside the blob store. This will be the base value of the return URL
+- `options`: (Required) A `JSON` object with the following required and optional parameters:
+
+| Parameter            | Required | Values                                                                                                                                                                                                                                                                                                            |
+| -------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `access`             | Yes      | [`'private'` or `'public'`](/docs/vercel-blob#private-and-public-storage). Determines the access level of the blob.                                                                                                                                                                                               |
+| `contentType`        | No       | A string indicating the [media type](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type). By default, it's extracted from the toPathname's extension.                                                                                                                                               |
+| `token`              | No       | A static read-write token. Defaults to `process.env.BLOB_READ_WRITE_TOKEN`. Its default value is not used when OIDC credentials are present, but an explicitly passed token always takes priority. See [Authentication](#authentication). |
+| `oidcToken`          | No       | A Vercel OIDC token, used in place of `process.env.VERCEL_OIDC_TOKEN`. Pair with `storeId` (or `BLOB_STORE_ID`). Useful when your framework does not load `.env.local` into `process.env` automatically. See [Authentication](#authentication). |
+| `storeId`            | No       | The Blob store id, used with OIDC. Defaults to `process.env.BLOB_STORE_ID`. The SDK accepts either `store_<id>` or `<id>` form. See [Authentication](#authentication). |
+| `addRandomSuffix`    | No       | A boolean specifying whether to add a random suffix to the pathname. It defaults to `false`. |
+| `allowOverwrite`     | No       | A boolean to allow overwriting blobs. By default an error will be thrown if a blob already exists at `toPathname`.                                                                                                                                                                                                |
+| `cacheControlMaxAge` | No       | A number in seconds to configure the edge and browser cache. Defaults to one month. See the [caching](/docs/storage/vercel-blob/#caching) documentation for more details.                                                                                                                                         |
+| `ifMatch`            | No       | An ETag value. The rename only succeeds if the source blob's current ETag matches this value. Use this for [conditional writes](/docs/vercel-blob#conditional-writes) to prevent renaming a blob that has been modified since you last read it. Throws `BlobPreconditionFailedError` if the ETag doesn't match. |
+| `abortSignal`        | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation                                                                                                                                                                                                            |
+
+`rename()` returns a `JSON` object with the following data for the renamed blob object:
+
+```ts
+{
+  pathname: string;
+  contentType: string;
+  contentDisposition: string;
+  url: string;
+  downloadUrl: string;
+  etag: string;
+}
+```
+
+An example blob is:
+
+```json
+{
+  "pathname": "profilesv1/user-12345-renamed.txt",
+  "contentType": "text/plain",
+  "contentDisposition": "attachment; filename=\"user-12345-renamed.txt\"",
+  "url": "https://ce0rcu23vrrdzqap.public.blob.vercel-storage.com/profilesv1/user-12345-renamed.txt",
+  "downloadUrl": "https://ce0rcu23vrrdzqap.public.blob.vercel-storage.com/profilesv1/user-12345-renamed.txt?download=1",
   "etag": "\"a1b2c3d4e5f6\""
 }
 ```

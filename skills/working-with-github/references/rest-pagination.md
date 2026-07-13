@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/using-pagination-in-the-rest-api.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "031bf9f6a9b8e21812a03fee23c26f58689d7c6e46ca26a59127d119bfba0717"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "b5ab0a2a0e66c0547d81fe14ad4e366a9a5e3f59a261516bad74f0b4621d1c9e"
 ---
 
 ## About pagination
@@ -49,11 +49,11 @@ curl --include --request GET \
 --header "Accept: application/vnd.github+json"
 ```
 
-The URLs in the `link` header use query parameters to indicate which page of results to return. The query parameters in the `link` URLs may differ between endpoints, however each paginated endpoint will use the `page`, `before`/`after`, or `since` query parameters. (Some endpoints use the `since` parameter for something other than pagination.) In all cases, you can use the URLs in the `link` header to fetch additional pages of results. For more information about query parameters see [AUTOTITLE](/rest/guides/getting-started-with-the-rest-api#using-query-parameters).
+The URLs in the `link` header use query parameters to indicate which page of results to return. The query parameters in the `link` URLs may differ between endpoints, however each paginated endpoint will use the `page`, `before`/`after`, or `since` query parameters. (Some endpoints use the `since` parameter for something other than pagination.) In all cases, you can use the URLs in the `link` header to fetch additional pages of results. For more information about query parameters see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api#using-query-parameters).
 
 ## Changing the number of items per page
 
-If an endpoint supports the `per_page` query parameter, then you can control how many results are returned on a page. For more information about query parameters see [AUTOTITLE](/rest/guides/getting-started-with-the-rest-api#using-query-parameters).
+If an endpoint supports the `per_page` query parameter, then you can control how many results are returned on a page. For more information about query parameters see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api#using-query-parameters).
 
 For example, this request uses the `per_page` query parameter to return two items per page:
 
@@ -73,7 +73,7 @@ link: <https://api.github.com/repositories/1300192/issues?per_page=2&page=2>; re
 
 Instead of manually copying URLs from the `link` header, you can write a script to fetch multiple pages of results.
 
-The following examples use JavaScript and {% data variables.product.company_short %}'s Octokit.js library. For more information about Octokit.js, see [AUTOTITLE](/rest/guides/getting-started-with-the-rest-api?tool=javascript) and [the Octokit.js README](https://github.com/octokit/octokit.js/#readme).
+The following examples use JavaScript and {% data variables.product.company_short %}'s Octokit.js library. For more information about Octokit.js, see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api?tool=javascript) and [the Octokit.js README](https://github.com/octokit/octokit.js/#readme).
 
 ### Example using the Octokit.js pagination method
 

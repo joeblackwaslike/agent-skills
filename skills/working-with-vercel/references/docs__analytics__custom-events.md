@@ -3,7 +3,7 @@ title: Tracking custom events
 product: vercel
 url: /docs/analytics/custom-events
 canonical_url: "https://vercel.com/docs/analytics/custom-events"
-last_updated: 2026-04-07
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -16,8 +16,8 @@ related:
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "dd27f3900b9bb91f6d16897f1b251e9cdcde30b5b9bebb91cbef5f75c3e82efe"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "10df704a5be9583026aa5c2496b3e094cedc491c35e581550a68d7a780a51179"
 ---
 
 # Tracking custom events

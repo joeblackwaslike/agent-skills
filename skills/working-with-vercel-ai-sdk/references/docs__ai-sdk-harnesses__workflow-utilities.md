@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "89021504a388367637599110d7b5113bc3f49e833844feb7a59c8f3dc399f385"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "bd102e6ba585ee2c844d095f003c941a9866857890f0c2a3f0a1223d3b95b7c9"
 ---
 
 # Workflow Utilities
@@ -19,22 +19,7 @@ integration.
 
 ## Installation
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add @ai-sdk/workflow-harness workflow" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install @ai-sdk/workflow-harness workflow" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add @ai-sdk/workflow-harness workflow" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="bun add @ai-sdk/workflow-harness workflow" dark />
-    </Tab>
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/workflow-harness workflow" />
 
 Install the core harness package, a harness adapter, and a sandbox provider as
 shown in [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent).

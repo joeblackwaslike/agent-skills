@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/a2a.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "5afc64d9b45ed98d113726a856d15972cefbb75d1a4dc4807fc97885f1b3ec0a"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "cb2d9d516573dd86ffd0b9dfb4f915c865ddf12939eb5872cab71660636aec89"
 ---
 
 # A2A
@@ -25,21 +25,7 @@ Learn more about A2A at the [A2A Project Site](https://a2aproject.github.io/A2A/
 
 Install the `a2a-ai-provider` from npm:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add a2a-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install a2a-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add a2a-ai-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add a2a-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="a2a-ai-provider" />
 
 ## Provider Instance
 

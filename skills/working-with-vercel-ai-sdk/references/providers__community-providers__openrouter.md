@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/openrouter.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9f0063aaabec844752b5ce7545aa2aa7e5a6ec0d9d11140e4cfb38ca1bf2be33"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "79ae011ef600728b534bdf67d989da4982c01f0b67a00971de7a5fbb326a9c59"
 ---
 
 # OpenRouter
@@ -21,21 +21,7 @@ Learn more about OpenRouter's capabilities in the [OpenRouter Documentation](htt
 
 The OpenRouter provider is available in the `@openrouter/ai-sdk-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @openrouter/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @openrouter/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @openrouter/ai-sdk-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @openrouter/ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@openrouter/ai-sdk-provider" />
 
 ## Provider Instance
 

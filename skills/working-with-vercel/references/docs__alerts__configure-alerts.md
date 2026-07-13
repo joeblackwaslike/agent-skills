@@ -3,7 +3,7 @@ title: Configure alerts
 product: vercel
 url: /docs/alerts/configure-alerts
 canonical_url: "https://vercel.com/docs/alerts/configure-alerts"
-last_updated: 2018-10-20
+last_updated: 2026-07-03
 type: how-to
 prerequisites:
   - /docs/alerts
@@ -13,8 +13,8 @@ related:
 summary: Configure alert rules and notification destinations for Vercel Observability alerts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "f4a52790e3ab7b93be00fcd502a7fe4b9347f3ea096a4022a88274de5b511907"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "82ee536b04ea32da03fc93847f46247108d6ae0d108d7bc9f77f029a55b4e7e5"
 ---
 
 # Configure alerts

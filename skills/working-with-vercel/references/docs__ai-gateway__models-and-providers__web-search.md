@@ -3,7 +3,7 @@ title: Web Search
 product: vercel
 url: /docs/ai-gateway/models-and-providers/web-search
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search"
-last_updated: 2026-06-20
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -13,8 +13,8 @@ related:
 summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "a0eb1ad3aaca8c6076426b3d2482477a0e2c5ed09091e7c2c266af5624cb853f"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "3f99a26149d8f90e0e9db04dc27a36c67ce72e42a6e065c7ae3e21c61bbcb5da"
 ---
 
 # Web Search
@@ -24,7 +24,7 @@ AI Gateway provides built-in web search capabilities that allow AI models to acc
 AI Gateway supports two types of web search:
 
 - **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
-- **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), or [Google](#google-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
+- **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), [Google](#google-web-search), or [xAI](#xai-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
 
 ## Using Perplexity Search
 
@@ -38,7 +38,7 @@ To use Perplexity Search, import `gateway` from `ai` and pass `gateway.tools.per
 
 #### streamText
 
-```typescript filename="perplexity-web-search.ts" {10-12}
+```typescript filename="perplexity-web-search.ts" {9-11}
 import { gateway, streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -62,13 +62,13 @@ export async function POST(request: Request) {
     }
   }
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
 #### generateText
 
-```typescript filename="perplexity-web-search.ts" {10-12}
+```typescript filename="perplexity-web-search.ts" {9-11}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -100,7 +100,7 @@ You can configure the `perplexitySearch` tool with these parameters:
 
 #### streamText
 
-```typescript filename="perplexity-web-search-params.ts" {10-20}
+```typescript filename="perplexity-web-search-params.ts" {9-19}
 import { gateway, streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -122,13 +122,13 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
 #### generateText
 
-```typescript filename="perplexity-web-search-params.ts" {10-20}
+```typescript filename="perplexity-web-search-params.ts" {9-19}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -166,7 +166,7 @@ To use Exa Search, import `gateway` from `ai` and pass `gateway.tools.exaSearch(
 
 #### streamText
 
-```typescript filename="exa-web-search.ts" {10-12}
+```typescript filename="exa-web-search.ts" {9-11}
 import { gateway, streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -190,13 +190,13 @@ export async function POST(request: Request) {
     }
   }
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
 #### generateText
 
-```typescript filename="exa-web-search.ts" {10-12}
+```typescript filename="exa-web-search.ts" {9-11}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -237,7 +237,7 @@ You can configure the `exaSearch` tool with these parameters:
 
 #### streamText
 
-```typescript filename="exa-web-search-params.ts" {10-21}
+```typescript filename="exa-web-search-params.ts" {9-20}
 import { gateway, streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -260,13 +260,13 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
 #### generateText
 
-```typescript filename="exa-web-search-params.ts" {10-21}
+```typescript filename="exa-web-search-params.ts" {9-20}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -309,7 +309,7 @@ To use Parallel Search, import `gateway` from `ai` and pass `gateway.tools.paral
 
 #### streamText
 
-```typescript filename="parallel-web-search.ts" {10-12}
+```typescript filename="parallel-web-search.ts" {9-11}
 import { gateway, streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -333,13 +333,13 @@ export async function POST(request: Request) {
     }
   }
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
 #### generateText
 
-```typescript filename="parallel-web-search.ts" {10-12}
+```typescript filename="parallel-web-search.ts" {9-11}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -376,7 +376,7 @@ You can configure the `parallelSearch` tool with these parameters:
 
 #### streamText
 
-```typescript filename="parallel-web-search-params.ts" {10-22}
+```typescript filename="parallel-web-search-params.ts" {9-21}
 import { gateway, streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -400,13 +400,13 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
 #### generateText
 
-```typescript filename="parallel-web-search-params.ts" {10-22}
+```typescript filename="parallel-web-search-params.ts" {9-21}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -438,7 +438,7 @@ For more details on search parameters and API options, see the [Parallel AI Sear
 
 ## Provider-specific search
 
-Use native web search tools from Anthropic, OpenAI, or Google. These tools are optimized for their respective providers and may offer additional features.
+Use native web search tools from Anthropic, OpenAI, Google, or xAI. These tools are optimized for their respective providers and may offer additional features.
 
 > **💡 Note:** Pricing for provider-specific web search tools depends on the model you use.
 > See the Web Search price column on the [model detail
@@ -465,7 +465,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -527,7 +527,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -586,7 +586,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -636,7 +636,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -685,7 +685,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -731,7 +731,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -749,6 +749,109 @@ export async function POST(request: Request) {
     prompt,
     tools: {
       google_search: google.tools.googleSearch({}),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+### xAI web search
+
+For xAI Grok models, you can use the native web search tool provided by the `@ai-sdk/xai` package. Import `xai` from `@ai-sdk/xai` and pass `xai.tools.webSearch({})` to the `tools` parameter. The tool returns source information including titles and URLs, which you can access through the `source` event type in the stream.
+
+#### streamText
+
+```typescript filename="xai-web-search.ts" {10-12}
+import { streamText } from 'ai';
+import { xai } from '@ai-sdk/xai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const result = streamText({
+    model: 'xai/grok-4.20-non-reasoning',
+    prompt,
+    tools: {
+      web_search: xai.tools.webSearch({}),
+    },
+  });
+
+  return result.toUIMessageStreamResponse();
+}
+```
+
+#### generateText
+
+```typescript filename="xai-web-search.ts" {10-12}
+import { generateText } from 'ai';
+import { xai } from '@ai-sdk/xai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'xai/grok-4.20-non-reasoning',
+    prompt,
+    tools: {
+      web_search: xai.tools.webSearch({}),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+#### xAI parameters
+
+The following parameters are supported:
+
+- `allowedDomains`: Optional list of domains to restrict searches to (max 5). Cannot be combined with `excludedDomains`.
+- `excludedDomains`: Optional list of domains to exclude from searches (max 5). Cannot be combined with `allowedDomains`.
+- `enableImageSearch`: Let the model use image search as a separate mode.
+- `enableImageUnderstanding`: Let the model analyze images found during the search.
+
+#### streamText
+
+```typescript filename="xai-web-search-params.ts" {10-15}
+import { streamText } from 'ai';
+import { xai } from '@ai-sdk/xai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const result = streamText({
+    model: 'xai/grok-4.20-non-reasoning',
+    prompt,
+    tools: {
+      web_search: xai.tools.webSearch({
+        allowedDomains: ['arxiv.org', 'openai.com'],
+        enableImageUnderstanding: true,
+      }),
+    },
+  });
+
+  return result.toUIMessageStreamResponse();
+}
+```
+
+#### generateText
+
+```typescript filename="xai-web-search-params.ts" {10-15}
+import { generateText } from 'ai';
+import { xai } from '@ai-sdk/xai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'xai/grok-4.20-non-reasoning',
+    prompt,
+    tools: {
+      web_search: xai.tools.webSearch({
+        allowedDomains: ['arxiv.org', 'openai.com'],
+        enableImageUnderstanding: true,
+      }),
     },
   });
 

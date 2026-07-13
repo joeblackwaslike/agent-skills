@@ -3,7 +3,7 @@ title: Performing a rolling release deployment
 product: vercel
 url: /docs/rolling-releases/rolling-release-deployment
 canonical_url: "https://vercel.com/docs/rolling-releases/rolling-release-deployment"
-last_updated: 2026-02-24
+last_updated: 2026-06-30
 type: how-to
 prerequisites:
   - /docs/rolling-releases
@@ -16,8 +16,8 @@ related:
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "5e781b4e91d8085d0e00034b54f9dc6d242a414ae630c8713bd730607b5454c0"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "d246c7ecb694c87396d441490f2ae303c22a6799e539f759f6e71f7883dd903b"
 ---
 
 # Performing a rolling release deployment

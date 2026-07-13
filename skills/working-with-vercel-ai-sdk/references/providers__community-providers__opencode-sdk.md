@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/opencode-sdk.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b2aeb53addbd3a29e80ba3e6d12ce897e6c2e151377876079629420510caa0c5"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "57c74c7a6179488d53832e94d9b4e78e85820cef9aad41a453f3ec791259139f"
 ---
 
 # OpenCode Provider
@@ -25,20 +25,7 @@ npm install ai-sdk-provider-opencode-sdk@ai-sdk-v5 ai@^5.0.0
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ai-sdk-provider-opencode-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ai-sdk-provider-opencode-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ai-sdk-provider-opencode-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add ai-sdk-provider-opencode-sdk" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ai-sdk-provider-opencode-sdk" />
 
 ## Provider Instance
 
@@ -131,11 +118,11 @@ const model = opencode('anthropic/claude-opus-4-5-20251101', {
 
 ### Model Capabilities
 
-| Provider  | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| --------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| Anthropic | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| OpenAI    | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| Google    | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Provider  | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| --------- | ----------- | ----------------- | ---------- | -------------- |
+| Anthropic | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| OpenAI    | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| Google    | <Check />   | <Check />         | <Cross />  | <Cross />      |
 
 <Note>
   Tool Usage and Tool Streaming show ❌ because this provider does not support

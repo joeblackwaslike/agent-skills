@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/firemoon.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0b0cee54899c99a630d9c1110cc451fadc10352fdfa8d719d9590fa300b94438"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "5122725b4a8c0e3e1ebaeb195887b4f138052c4290821966dce4e7668a0c90f9"
 ---
 
 # Firemoon Provider
@@ -18,20 +18,7 @@ The Firemoon provider for the AI SDK enables you to use these models with a simp
 
 The Firemoon provider is available via the `@firemoon/ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @firemoon/ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @firemoon/ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @firemoon/ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @firemoon/ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@firemoon/ai-provider" />
 
 ## Provider Instance
 

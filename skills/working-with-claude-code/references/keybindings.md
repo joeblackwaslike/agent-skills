@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/keybindings.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "4cd635fa59612a9a941147a36b633e48e6fbdb49fd230babdd56242fb888a768"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
 ---
 
 > ## Documentation Index
@@ -73,7 +73,8 @@ Each binding block specifies a **context** where the bindings apply:
 | `Select`          | Generic select/list components                               |
 | `Plugin`          | Plugin dialog (browse, discover, manage)                     |
 | `Scroll`          | Conversation scrolling and text selection in fullscreen mode |
-| `Doctor`          | `/doctor` diagnostics screen                                 |
+
+{/* max-version: 2.1.204 */}Before v2.1.205, a `Doctor` context and a `doctor:fix` action existed for the `/doctor` diagnostics screen.
 
 ## Available actions
 
@@ -316,14 +317,6 @@ Actions available in the `Settings` context. The `select:accept` and `confirm:no
 | `select:accept`   | Enter, Space | Change the selected setting or open its submenu |
 | `confirm:no`      | Escape       | Close the panel. Changes are already saved      |
 
-### Doctor actions
-
-Actions available in the `Doctor` context:
-
-| Action       | Default | Description                                                                                         |
-| :----------- | :------ | :-------------------------------------------------------------------------------------------------- |
-| `doctor:fix` | F       | Send the diagnostics report to Claude to fix the reported issues. Only active when issues are found |
-
 ### Voice actions
 
 Actions available in the `Chat` context when [voice dictation](/en/voice-dictation) is enabled:
@@ -488,4 +481,4 @@ Claude Code validates your keybindings and shows warnings for:
 * Terminal multiplexer conflicts
 * Duplicate bindings in the same context
 
-Run `/doctor` to see any keybinding warnings.
+Claude Code reports warnings when the file loads and writes each one to the debug log. Start Claude Code with [`--debug`](/en/cli-reference#cli-flags) to see the details.

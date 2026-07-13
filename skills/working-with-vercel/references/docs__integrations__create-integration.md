@@ -3,7 +3,7 @@ title: Create an Integration
 product: vercel
 url: /docs/integrations/create-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration"
-last_updated: 2026-05-12
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/integrations
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b1d58fdaac5705db8b8fb557e8aec9233023ab986a4846f2809e30be1d2f4924"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "e5d09e72532044ab08d8ac703beea8273adb824c29aa03404fc5d62b69a01730"
 ---
 
 # Create an Integration

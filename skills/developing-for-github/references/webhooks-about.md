@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/webhooks/about-webhooks.md"
-fetched_at: "2026-06-15T17:31:37.352Z"
-sha256: "c703d541bb27dfb9a37564a9806d31b9845c3ddc0d7c32f7a3ee51ceb32e6411"
+fetched_at: "2026-07-13T06:52:36.914Z"
+sha256: "a4cf5c7d406f9314cd81558de94876e47d2c1fe924731afa6a9f0f2268283dd9"
 ---
 
 ## About webhooks
@@ -25,7 +25,7 @@ For example, you could subscribe your webhook to events that occur when code is 
 
 You must create a webhook within a specific repository, organization, {% ifversion ghes or ghec %}{% data variables.product.prodname_enterprise %}, {% endif %} {% ifversion fpt or ghec %}{% data variables.product.prodname_marketplace %} account, {% endif %} {% ifversion fpt or ghec %}{% data variables.product.prodname_sponsors %} account, {% endif %} or {% data variables.product.prodname_github_app %}. The webhook can only access resources that are available in the repository, organization, {% ifversion ghes or ghec %}{% data variables.product.prodname_enterprise %}, {% endif %} {% ifversion fpt or ghec %}{% data variables.product.prodname_marketplace %} account, {% endif %} {% ifversion fpt or ghec %}{% data variables.product.prodname_sponsors %} account, {% endif %} or {% data variables.product.prodname_github_app %} where it is installed. For more information, see [AUTOTITLE](/webhooks/types-of-webhooks).
 
-For more information about creating webhooks, see [AUTOTITLE](/webhooks/using-webhooks/creating-webhooks). For more information about the types of events you can subscribe to, see [AUTOTITLE](/webhooks/webhook-events-and-payloads). For more information about configuring your server to take an action in response to a payload delivery, see [AUTOTITLE](/webhooks/using-webhooks/configuring-your-server-to-receive-payloads).
+For more information about creating webhooks, see [AUTOTITLE](/webhooks/using-webhooks/creating-webhooks). For more information about the types of events you can subscribe to, see [AUTOTITLE](/webhooks/webhook-events-and-payloads). For more information about configuring your server to take an action in response to a payload delivery, see [AUTOTITLE](/webhooks/using-webhooks/handling-webhook-deliveries).
 
 {% data reusables.webhooks.webhooks-ipv6 %}
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/google-vertex-ai.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "103560f508e98808dc4d7c9abe2d2be0ab4349907687a2b88977f4d118b18e8b"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "f8ce3682f4f21e8273f153620358804bc417aa0f24da01ec11ed5763cd02596d"
 ---
 
 > ## Documentation Index
@@ -218,7 +218,7 @@ Claude Code disables [MCP tool search](/en/mcp#scale-with-mcp-tool-search) by de
 
 Set these environment variables to specific Google Cloud's Agent Platform model IDs.
 
-Without `ANTHROPIC_DEFAULT_OPUS_MODEL`, the `opus` alias on Google Cloud's Agent Platform resolves to Opus 4.6. Set it to the Opus 4.8 ID to use the latest model:
+Without these variables, the `opus` alias on Google Cloud's Agent Platform resolves to Opus 4.8 and the `sonnet` alias resolves to Sonnet 4.5. Set each variable to pin its alias to a specific version:
 
 ```bash theme={null}
 export ANTHROPIC_DEFAULT_OPUS_MODEL='claude-opus-4-8'
@@ -230,10 +230,10 @@ For current and legacy model IDs, see [Models overview](https://platform.claude.
 
 Claude Code uses these default models when no pinning variables are set:
 
-| Model type       | Default value                |
-| :--------------- | :--------------------------- |
-| Primary model    | `claude-sonnet-4-5@20250929` |
-| Small/fast model | Same as primary model        |
+| Model type       | Default value         |
+| :--------------- | :-------------------- |
+| Primary model    | `claude-opus-4-8`     |
+| Small/fast model | Same as primary model |
 
 Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Google Cloud's Agent Platform, Claude Code defaults this to the primary model because Haiku may not be enabled in every project or region. To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a model ID that is available in your project.
 

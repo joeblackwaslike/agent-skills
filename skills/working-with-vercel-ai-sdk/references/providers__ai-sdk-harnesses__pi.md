@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "41a401cd1d20af8fcc705ab83366fe10800cb32cad70e18990fca3a453b17da4"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "4a42634c62882675a4a2e79a19f3c5dc89a3fb106432e5c5a16692f3d1dabb46"
 ---
 
 # Pi Harness
@@ -18,32 +18,7 @@ inside the sandbox.
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet
-      text="pnpm add @ai-sdk/harness @ai-sdk/harness-pi @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm install @ai-sdk/harness @ai-sdk/harness-pi @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @ai-sdk/harness @ai-sdk/harness-pi @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="bun add @ai-sdk/harness @ai-sdk/harness-pi @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-pi @ai-sdk/sandbox-vercel" />
 
 ## Import
 

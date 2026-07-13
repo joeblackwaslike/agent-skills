@@ -3,7 +3,7 @@ title: System Headers
 product: vercel
 url: /docs/headers
 canonical_url: "https://vercel.com/docs/headers"
-last_updated: 2026-03-05
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: This reference covers the list of request, response, cache-control, and custom response headers included with deployments with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "642c62f03d62927e5be36b8e971a377e9a02ac90d077a347dc369eac3a993842"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "8e7907665a4c88c576ad9f1af233e65240fd4b5b6340504ae0d09d4f91112ffc"
 ---
 
 # System Headers

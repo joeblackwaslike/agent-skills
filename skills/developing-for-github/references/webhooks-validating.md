@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/webhooks/using-webhooks/validating-webhook-deliveries.md"
-fetched_at: "2026-06-15T17:31:37.352Z"
-sha256: "84b218ba6fed0f1be301776dc3fe4d43dadce9fcbd4a544ad06377f8c830f105"
+fetched_at: "2026-07-13T06:52:36.914Z"
+sha256: "c39c728291a2ba470a9710d283a6414b7a1f708784641f6875ffcbd6448d101f"
 ---
 
 ## About validating webhook deliveries
@@ -23,7 +23,7 @@ You can create a new webhook with a secret token, or you can add a secret token 
 
 ## Securely storing the secret token
 
-After creating a secret token, you should store it in a secure location that your server can access. Never hardcode a token into an application or push a token to any repository. For more information about how to use authentication credentials securely in your code, see [AUTOTITLE](/rest/overview/keeping-your-api-credentials-secure#use-authentication-credentials-securely-in-your-code).
+After creating a secret token, you should store it in a secure location that your server can access. Never hardcode a token into an application or push a token to any repository. For more information about how to use authentication credentials securely in your code, see [AUTOTITLE](/rest/authentication/keeping-your-api-credentials-secure#use-authentication-credentials-securely-in-your-code).
 
 ## Validating webhook deliveries
 

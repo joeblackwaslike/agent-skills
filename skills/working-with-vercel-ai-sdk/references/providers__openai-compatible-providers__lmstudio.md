@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a27c993ad24e06cd161a56ad9de39d549cafdcef69b6bd83836dabf95776d3b4"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "56bd00f4a24de4c409c3c32e79e5c117adfc27b1a667a71388c4173dfd9ba91e"
 ---
 
 # LM Studio Provider
@@ -16,21 +16,7 @@ You can start the local server under the [Local Server tab](https://lmstudio.ai/
 The LM Studio provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/openai-compatible" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/openai-compatible" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/openai-compatible" />
 
 ## Provider Instance
 

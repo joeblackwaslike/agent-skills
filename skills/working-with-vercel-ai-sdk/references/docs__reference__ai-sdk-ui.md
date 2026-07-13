@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "4c143876243451f5cf43804306758a4422c58a18f422d990fd97898a33cf5ec5"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "6119e8d81b063b2d75d53e61fe1a9f40a33794f4769a6c67ca8f07e5f0b094e0"
 ---
 
 # AI SDK UI
@@ -87,11 +87,11 @@ Here is a comparison of the supported functions across these frameworks:
 
 |                                                                 | [useChat](/docs/reference/ai-sdk-ui/use-chat) | [useCompletion](/docs/reference/ai-sdk-ui/use-completion) | [useObject](/docs/reference/ai-sdk-ui/use-object) | [MCP Apps](/docs/ai-sdk-core/mcp-apps) |
 | --------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------- | -------------------------------------- |
-| React `@ai-sdk/react`                                           | <Check size={18} />                           | <Check size={18} />                                       | <Check size={18} />                               | <Check size={18} />                    |
-| Vue.js `@ai-sdk/vue`                                            | <Check size={18} /> Chat                      | <Check size={18} />                                       | <Check size={18} />                               | <Cross size={18} />                    |
-| Svelte `@ai-sdk/svelte`                                         | <Check size={18} /> Chat                      | <Check size={18} /> Completion                            | <Check size={18} /> StructuredObject              | <Cross size={18} />                    |
-| Angular `@ai-sdk/angular`                                       | <Check size={18} /> Chat                      | <Check size={18} /> Completion                            | <Check size={18} /> StructuredObject              | <Cross size={18} />                    |
-| [SolidJS](https://github.com/kodehort/ai-sdk-solid) (community) | <Check size={18} />                           | <Check size={18} />                                       | <Check size={18} />                               | <Cross size={18} />                    |
+| React `@ai-sdk/react`                                           | <Check />                                     | <Check />                                                 | <Check />                                         | <Check />                              |
+| Vue.js `@ai-sdk/vue`                                            | <Check /> Chat                                | <Check />                                                 | <Check />                                         | <Cross />                              |
+| Svelte `@ai-sdk/svelte`                                         | <Check /> Chat                                | <Check /> Completion                                      | <Check /> StructuredObject                        | <Cross />                              |
+| Angular `@ai-sdk/angular`                                       | <Check /> Chat                                | <Check /> Completion                                      | <Check /> StructuredObject                        | <Cross />                              |
+| [SolidJS](https://github.com/kodehort/ai-sdk-solid) (community) | <Check />                                     | <Check />                                                 | <Check />                                         | <Cross />                              |
 
 <Note>
   [Contributions](https://github.com/vercel/ai/blob/main/CONTRIBUTING.md) are

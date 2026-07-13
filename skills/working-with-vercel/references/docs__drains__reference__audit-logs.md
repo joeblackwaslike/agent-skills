@@ -3,7 +3,7 @@ title: Audit Log Drains Reference
 product: vercel
 url: /docs/drains/reference/audit-logs
 canonical_url: "https://vercel.com/docs/drains/reference/audit-logs"
-last_updated: 2018-10-20
+last_updated: 2026-07-03
 type: reference
 prerequisites:
   - /docs/drains
@@ -16,8 +16,8 @@ related:
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "e999c25ac4fd79721950a24f15df3041d3b8ea06d6c502027bade09454303950"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "7122dce8f915330c77a5c8b3abd8111f6d8c4b5a9c3e10a4b13e5b72ae6d9f3f"
 ---
 
 # Audit Log Drains Reference

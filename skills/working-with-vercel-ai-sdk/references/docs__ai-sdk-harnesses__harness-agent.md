@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "9d34239286212ff11b8e1711bd43235aac5cd70771a709dc79ab2cf78170db80"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "16ab775e21139e7726c1b3de507e7684a79045d8b8c9f482c45b743045f91c3a"
 ---
 
 # HarnessAgent
@@ -14,34 +14,7 @@ results while a preconfigured harness powers these results.
 
 Install the core harness package, a harness adapter, and a sandbox provider:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet
-        text="pnpm add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-    <Tab>
-      <Snippet
-        text="npm install @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-    <Tab>
-      <Snippet
-        text="yarn add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-    <Tab>
-      <Snippet
-        text="bun add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel"
-        dark
-      />
-    </Tab>
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel" />
 
 Bridge-backed harnesses such as Claude Code and Codex require using real network sandbox
 like `@ai-sdk/sandbox-vercel`. Host-runtime harnesses such as Pi can also run with

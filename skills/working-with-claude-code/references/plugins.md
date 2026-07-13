@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "9e4fe10ddab345d553980eae3b6330083bb70487ce89007a7bfc1abb74bcab9b"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "9938e50ba2c6c86b9798d1fc39257ee14691e07957ca235690bd4ac0f83097e5"
 ---
 
 > ## Documentation Index
@@ -197,6 +197,8 @@ You've created a plugin with a skill, but plugins can include much more: custom 
 
 <Warning>
   **Common mistake**: Don't put `commands/`, `agents/`, `skills/`, or `hooks/` inside the `.claude-plugin/` directory. Only `plugin.json` goes inside `.claude-plugin/`. All other directories must be at the plugin root level.
+
+  The plugin root is the individual plugin's own directory: the one containing `.claude-plugin/plugin.json`. It is never `~/.claude/`. For example, Claude Code doesn't read a `.mcp.json` placed at `~/.claude/.mcp.json`.
 </Warning>
 
 | Directory         | Location    | Purpose                                                                        |

@@ -3,7 +3,7 @@ title: Debugging slow Vercel Functions
 product: vercel
 url: /docs/functions/debug-slow-functions
 canonical_url: "https://vercel.com/docs/functions/debug-slow-functions"
-last_updated: 2026-02-24
+last_updated: 2026-06-25
 type: how-to
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "bc2c5ba203710af6f1f56cdaf8c99d5b99ee819a03c1afe481358b1d6eacfaaf"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "b051cf5ecd16c3b74f19913befa41e8abedb34b30db1fc67fb4c048ee541b62e"
 ---
 
 # Debugging slow Vercel Functions

@@ -1,9 +1,9 @@
 ---
-title: Services routing and communication
+title: Services routing
 product: vercel
 url: /docs/services/routing
 canonical_url: "https://vercel.com/docs/services/routing"
-last_updated: 2026-03-02
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/services
@@ -12,11 +12,11 @@ related:
   - /docs/routing
   - /docs/project-configuration/vercel-json
   - /docs/services/bindings
-summary: Learn how Vercel routes requests between services and how services communicate with each other.
+summary: Learn how Vercel routes public requests to services and how each service handles its own routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/routing.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "4e7e66b0100c2e851767009c2497f0b4b137e2a8e2993c0f75a8e70d7fb96476"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "376ec81b1c78b1fc0c027914d3aee199308fbd5366058898f91d8477963f4e17"
 ---
 
 # Services routing

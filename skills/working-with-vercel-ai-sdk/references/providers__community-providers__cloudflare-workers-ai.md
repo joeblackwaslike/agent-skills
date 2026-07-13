@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-workers-ai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b044f1049288d370fddb3e12c8878b65be090f96dfef8d5e79948070e757c148"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "8a2bd52f0e76bbf69e132daf8388609b4893ac5b55990a7a1a3f44b61b499a5f"
 ---
 
 # Cloudflare Workers AI
@@ -12,21 +12,7 @@ sha256: "b044f1049288d370fddb3e12c8878b65be090f96dfef8d5e79948070e757c148"
 
 The Cloudflare Workers AI provider is available in the `workers-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add workers-ai-provider" />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install workers-ai-provider" />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add workers-ai-provider" />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add workers-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="workers-ai-provider" />
 
 Then, setup an AI binding in your Cloudflare Workers project `wrangler.toml` file:
 

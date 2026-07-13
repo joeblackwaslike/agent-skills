@@ -3,8 +3,8 @@ title: Service configuration reference
 product: vercel
 url: /docs/services/config-reference
 canonical_url: "https://vercel.com/docs/services/config-reference"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-30
+type: reference
 prerequisites:
   - /docs/services
 related:
@@ -12,11 +12,11 @@ related:
   - /docs/functions/runtimes
   - /docs/services/bindings
   - /docs/services/routing
-summary: Learn about service configuration reference on Vercel.
+summary: Options available for service configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/config-reference.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "e89ff4ac7f5e4587df9801d83044311c5c3d1c1f3f00cb7272920a2e84371436"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "614e9adb588583a2f3fd36ae06e1aa8ddd5c4cf8a2580883a9707534d2ff31da"
 ---
 
 # Service configuration reference

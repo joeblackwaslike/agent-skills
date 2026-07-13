@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "90c9a31b12b10895b0168911b507a562f4c5981d60fc0468e769e8a867988a4d"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b50207d38bf8e3355adce9dabdf292d41b01500555afca5ede1b76984fea0dbe"
 ---
 
 # Hugging Face Provider
@@ -14,21 +14,7 @@ API keys can be obtained from [Hugging Face Settings](https://huggingface.co/set
 
 The Hugging Face provider is available via the `@ai-sdk/huggingface` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/huggingface" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/huggingface" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/huggingface" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/huggingface" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/huggingface" />
 
 ## Provider Instance
 
@@ -220,21 +206,21 @@ You can also pass image URLs:
 
 ## Model Capabilities
 
-| Model                                           | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ----------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `meta-llama/Llama-3.1-8B-Instruct`              | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `meta-llama/Llama-3.1-70B-Instruct`             | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `meta-llama/Llama-3.3-70B-Instruct`             | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `meta-llama/Llama-4-Maverick-17B-128E-Instruct` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `deepseek-ai/DeepSeek-V3.1`                     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `deepseek-ai/DeepSeek-V3-0324`                  | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `deepseek-ai/DeepSeek-R1`                       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `Qwen/Qwen3-32B`                                | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `Qwen/Qwen3-Coder-480B-A35B-Instruct`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `Qwen/Qwen2.5-VL-7B-Instruct`                   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `google/gemma-3-27b-it`                         | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `moonshotai/Kimi-K2-Instruct`                   | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                                           | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ----------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `meta-llama/Llama-3.1-8B-Instruct`              | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `meta-llama/Llama-3.1-70B-Instruct`             | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `meta-llama/Llama-3.3-70B-Instruct`             | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `meta-llama/Llama-4-Maverick-17B-128E-Instruct` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `deepseek-ai/DeepSeek-V3.1`                     | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `deepseek-ai/DeepSeek-V3-0324`                  | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `deepseek-ai/DeepSeek-R1`                       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`     | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `Qwen/Qwen3-32B`                                | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `Qwen/Qwen3-Coder-480B-A35B-Instruct`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `Qwen/Qwen2.5-VL-7B-Instruct`                   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `google/gemma-3-27b-it`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `moonshotai/Kimi-K2-Instruct`                   | <Cross />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   The table above lists popular models. You can explore all available models on

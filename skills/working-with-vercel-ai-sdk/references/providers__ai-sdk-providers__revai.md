@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a8d17c2854fd7849d7537d5a45e9ca8c3a847cce6e14bc86c3a7206a594ee740"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "d4f973a20a583af8664b21f4723052de0b7632aa0072d4da60f96e96940428c4"
 ---
 
 # Rev.ai Provider
@@ -12,21 +12,7 @@ The [Rev.ai](https://www.rev.ai/) provider contains language model support for t
 
 The Rev.ai provider is available in the `@ai-sdk/revai` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/revai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/revai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/revai" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/revai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/revai" />
 
 ## Provider Instance
 
@@ -215,11 +201,11 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model      | Transcription       | Duration            | Segments            | Language            |
-| ---------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `machine`  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `low_cost` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `fusion`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model      | Transcription | Duration  | Segments  | Language  |
+| ---------- | ------------- | --------- | --------- | --------- |
+| `machine`  | <Check />     | <Check /> | <Check /> | <Check /> |
+| `low_cost` | <Check />     | <Check /> | <Check /> | <Check /> |
+| `fusion`   | <Check />     | <Check /> | <Check /> | <Check /> |
 
 
 ## Navigation

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "86d55bc11889020805eaa7eb9a60644083e74ab489e96fc4680582d7643d8b10"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "899f66feac063c24c8f3802853ef142b5773d259547e6f89feea78529007c162"
 ---
 
 # Migrate AI SDK 4.x to 5.0
@@ -92,7 +92,7 @@ the following command from the root of your project:
 npx @ai-sdk/codemod upgrade
 ```
 
-To run only the v5 codemods (v4 ��� v5 migration):
+To run only the v5 codemods (v4 → v5 migration):
 
 ```sh
 npx @ai-sdk/codemod v5

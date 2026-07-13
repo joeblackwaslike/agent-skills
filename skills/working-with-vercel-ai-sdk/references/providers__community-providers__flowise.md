@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/flowise.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "17ead2272f1317a453b20c73e4736d019e44028cd96ce70513104aeac7327df4"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "95f33b7b16b4433a660e5fb95be3227d7366ad38e7e86f26c8e46dadc4a090e8"
 ---
 
 # Flowise Provider
@@ -12,26 +12,7 @@ The **[Flowise provider](https://github.com/ahmedrowaihi/flowise-ai-sdk-provider
 
 The Flowise provider is available in the `@ahmedrowaihi/flowise-vercel-ai-sdk-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-    <Snippet
-      text="pnpm add @ahmedrowaihi/flowise-vercel-ai-sdk-provider"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm install @ahmedrowaihi/flowise-vercel-ai-sdk-provider"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @ahmedrowaihi/flowise-vercel-ai-sdk-provider"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ahmedrowaihi/flowise-vercel-ai-sdk-provider" />
 
 ## Provider Instance
 

@@ -3,7 +3,7 @@ title: Using the Core Library
 product: vercel
 url: /docs/flags/vercel-flags/sdks/core
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/sdks/core"
-last_updated: 2026-03-20
+last_updated: 2026-06-24
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/sdks
@@ -17,8 +17,8 @@ related:
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "40abfdf5f76861d6a1b2da902dccbc29a7fc2416655bf8ec4c7d0a830fb9213e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "cfcfc07a879ef1104fa5b4ea13c1877eec6b90bb9cff74c16274dad5b599cfbc"
 ---
 
 # Using the Core Library

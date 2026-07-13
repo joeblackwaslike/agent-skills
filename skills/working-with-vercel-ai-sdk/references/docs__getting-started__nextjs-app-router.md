@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-app-router.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d21e94e007c36bc659927ed2d83fcbce0d1ebb375a6b89cd1d35ca0f58c89db9"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e05529a9a801a26b878f4b98b5531d7ebb16c8b8d346dd057f222018fc25703d"
 ---
 
 # Next.js App Router Quickstart
@@ -50,24 +50,7 @@ Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The A
   providers](/providers/ai-sdk-providers) for more information.
 </Note>
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add ai @ai-sdk/react zod" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install ai @ai-sdk/react zod" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add ai @ai-sdk/react zod" dark />
-    </Tab>
-
-    <Tab>
-      <Snippet text="bun add ai @ai-sdk/react zod" dark />
-    </Tab>
-
-  </Tabs>
-</div>
+<InstallPackages packages="ai @ai-sdk/react zod" />
 
 ### Configure your AI Gateway API key
 
@@ -151,24 +134,7 @@ model: gateway('anthropic/claude-sonnet-4.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install @ai-sdk/openai" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add @ai-sdk/openai" dark />
-    </Tab>
-
-    <Tab>
-      <Snippet text="bun add @ai-sdk/openai" dark />
-    </Tab>
-
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/openai" />
 
 ```ts
 import { openai } from '@ai-sdk/openai';

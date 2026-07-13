@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "35899c0824a6f1853052feef58c01589c5801708d5a730d7337b9e430681eba3"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "85b6b640f7642e2dbeecc0659867866b118f53f5770ab4c30617452b52cd0359"
 ---
 
 # ElevenLabs Provider
@@ -12,21 +12,7 @@ The [ElevenLabs](https://elevenlabs.io/) provider contains language model suppor
 
 The ElevenLabs provider is available in the `@ai-sdk/elevenlabs` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/elevenlabs" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/elevenlabs" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/elevenlabs" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/elevenlabs" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/elevenlabs" />
 
 ## Provider Instance
 
@@ -167,16 +153,16 @@ const result = await generateSpeech({
 
 ### Model Capabilities
 
-| Model                    | Instructions        |
-| ------------------------ | ------------------- |
-| `eleven_v3`              | <Check size={18} /> |
-| `eleven_multilingual_v2` | <Check size={18} /> |
-| `eleven_flash_v2_5`      | <Check size={18} /> |
-| `eleven_flash_v2`        | <Check size={18} /> |
-| `eleven_turbo_v2_5`      | <Check size={18} /> |
-| `eleven_turbo_v2`        | <Check size={18} /> |
-| `eleven_monolingual_v1`  | <Check size={18} /> |
-| `eleven_multilingual_v1` | <Check size={18} /> |
+| Model                    | Instructions |
+| ------------------------ | ------------ |
+| `eleven_v3`              | <Check />    |
+| `eleven_multilingual_v2` | <Check />    |
+| `eleven_flash_v2_5`      | <Check />    |
+| `eleven_flash_v2`        | <Check />    |
+| `eleven_turbo_v2_5`      | <Check />    |
+| `eleven_turbo_v2`        | <Check />    |
+| `eleven_monolingual_v1`  | <Check />    |
+| `eleven_multilingual_v1` | <Check />    |
 
 ## Transcription Models
 
@@ -250,10 +236,10 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                    | Transcription       | Duration            | Segments            | Language            |
-| ------------------------ | ------------------- | ------------------- | ------------------- | ------------------- |
-| `scribe_v1`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `scribe_v1_experimental` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                    | Transcription | Duration  | Segments  | Language  |
+| ------------------------ | ------------- | --------- | --------- | --------- |
+| `scribe_v1`              | <Check />     | <Check /> | <Check /> | <Check /> |
+| `scribe_v1_experimental` | <Check />     | <Check /> | <Check /> | <Check /> |
 
 
 ## Navigation

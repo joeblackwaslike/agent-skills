@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/authentication.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "00d1982f1234ac40f6ee82d617742e2e213aa72c0827a8424c1a7da7c77d5855"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "f8caf67914459b922980c717c577fe95a9cc36a29f1795d3490095277ea3959a"
 ---
 
 > ## Documentation Index
@@ -133,6 +133,16 @@ Claude Code securely manages your authentication credentials:
 * **Slow helper notice**: if `apiKeyHelper` takes longer than 10 seconds to return a key, Claude Code displays a warning notice in the prompt bar showing the elapsed time. If you see this notice regularly, check whether your credential script can be optimized.
 
 `apiKeyHelper`, `ANTHROPIC_API_KEY`, and `ANTHROPIC_AUTH_TOKEN` apply to the CLI and the surfaces that wrap it, including the VS Code extension, the Agent SDK, and GitHub Actions. Claude Desktop and cloud sessions do not call `apiKeyHelper` or read these environment variables: they use OAuth, except desktop sessions running an [organization-distributed third-party inference configuration](/en/llm-gateway-connect#desktop-app), which authenticate with that configuration's credential.
+
+### Renew an expiring login
+
+When the login you created with `/login` is within five days of expiring, Claude Code shows a warning at startup: `Your login expires in 3 days · run /login to renew`. Requires Claude Code v2.1.203 or later.
+
+Run `/login` to renew. The warning is informational and never blocks a request: authentication keeps working until the login actually expires. The login lifetime itself is unchanged; the advance warning is what v2.1.203 adds.
+
+The warning appears only when a claude.ai or Claude Console login is the active credential, and not when a cloud provider, `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, or `apiKeyHelper` supplies the credential.
+
+Renewing early matters most for sessions that run unattended. A [background session in agent view](/en/agent-view) or a [Remote Control](/en/remote-control) session that outlives the login stops making progress once the credential expires and can't recover until you sign in again.
 
 ### Authentication precedence
 

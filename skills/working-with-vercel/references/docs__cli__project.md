@@ -14,13 +14,13 @@ related:
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, rename, remove, and configure access, checks,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "066789e60ea2759d524e6e70467f321937972903ba8ea50038e9c2883e483d64"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "17a287fdab050c1bff6355eebedd9d52af2380bc2b9c8bbc448b8cdf0dc93a01"
 ---
 
 # vercel project
 
-The `vercel project` command manages your Vercel Projects from the terminal: list, add, inspect, rename, and remove projects, plus configure deployment checks, deployment protection, access groups, member access, Web Analytics, Speed Insights, and project-scoped OIDC tokens.
+The `vercel project` command manages your Vercel Projects from the terminal: list, add, inspect, update, rename, and remove projects, plus configure framework and build settings, deployment checks, deployment protection, access groups, member access, Web Analytics, Speed Insights, and project-scoped OIDC tokens.
 
 `vercel projects` is an alias for the same command.
 
@@ -98,6 +98,42 @@ vercel project inspect
 
 # Inspect a project by name
 vercel project inspect my-project
+```
+
+### `update`
+
+Aliases: `set`.
+
+Update the framework preset and build settings for a project. Only the settings you pass are changed; omitted settings remain unchanged. Defaults to the linked project. At least one setting option is required.
+
+```bash filename="terminal"
+vercel project update [name] [options]
+```
+
+#### Options
+
+| Option                        | Description                                                                                                                       |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `--framework <SLUG>`          | Set the framework preset by slug (for example `nextjs`). Use `other` to clear the preset.                                          |
+| `--build-command <COMMAND>`   | Set the build command.                                                                                                             |
+| `--dev-command <COMMAND>`     | Set the development command.                                                                                                       |
+| `--install-command <COMMAND>` | Set the install command.                                                                                                           |
+| `--output-directory <DIR>`    | Set the output directory.                                                                                                          |
+| `--auto-detect <SETTING>`     | Reset a setting to automatic detection: `build-command`, `dev-command`, `install-command`, or `output-directory`. Repeat the flag or pass a comma-separated list. Can't be combined with the explicit flag for the same setting. |
+| `--format`                    | Output format. Supports `json`.                                                                                                    |
+
+#### Examples
+
+```bash filename="terminal"
+vercel project update --framework nextjs
+
+vercel project update my-project --framework vite
+
+vercel project update my-project --build-command "pnpm build" --output-directory dist
+
+vercel project update my-project --auto-detect build-command --auto-detect output-directory
+
+vercel project update my-project --framework other --format json
 ```
 
 ### `rename`

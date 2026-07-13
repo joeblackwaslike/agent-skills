@@ -3,7 +3,7 @@ title: Direct REST API Usage
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -13,8 +13,8 @@ related:
 summary: Use the AI Gateway API directly without client libraries using curl and fetch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "403eb2d70a2ad70a3e37e6b77f8dc70088da6a6354ede9740f8420b9c37d8d6d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "1acbf7e5ee904668c7bb86dcfd09f16e1cbdcd7c69998f24f3e0b205ecae4f9c"
 ---
 
 # Direct REST API Usage

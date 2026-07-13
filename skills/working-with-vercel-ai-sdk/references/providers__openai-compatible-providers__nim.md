@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nim.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "72660165110ba1b45af13309e6b85386a24adb64d00bbcca134d845a75205dd8"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "30f3ca6e3070019b42842b0023b543f7aa177c3d4dc09b910d7bd67d2d8a8b37"
 ---
 
 # NVIDIA NIM Provider
@@ -13,21 +13,7 @@ sha256: "72660165110ba1b45af13309e6b85386a24adb64d00bbcca134d845a75205dd8"
 The NVIDIA NIM provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/openai-compatible" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/openai-compatible" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/openai-compatible" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/openai-compatible" />
 
 ## Provider Instance
 

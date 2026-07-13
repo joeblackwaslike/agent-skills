@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/microsoft-foundry.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "eb39f9e61f95de2b6eed3c11d194658b7d246c65c75d744a3aad57a183a4851b"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "dbac07cec93c5882e3aebe8261ef9b82327ab755d8c811c8d5deb709de9f77a8"
 ---
 
 > ## Documentation Index
@@ -111,7 +111,7 @@ First, create a Claude resource in Azure:
 
 ### 2. Configure Azure credentials
 
-Claude Code supports two authentication methods for Microsoft Foundry. Choose the method that best fits your security requirements.
+Claude Code supports three authentication methods for Microsoft Foundry. Choose the method that best fits your security requirements.
 
 **Option A: API key authentication**
 
@@ -126,7 +126,7 @@ export ANTHROPIC_FOUNDRY_API_KEY=your-azure-api-key
 
 **Option B: Microsoft Entra ID authentication**
 
-When `ANTHROPIC_FOUNDRY_API_KEY` is not set, Claude Code automatically uses the Azure SDK [default credential chain](https://learn.microsoft.com/en-us/azure/developer/javascript/sdk/authentication/credential-chains#defaultazurecredential-overview).
+When neither `ANTHROPIC_FOUNDRY_API_KEY` nor `ANTHROPIC_FOUNDRY_AUTH_TOKEN` is set, Claude Code automatically uses the Azure SDK [default credential chain](https://learn.microsoft.com/en-us/azure/developer/javascript/sdk/authentication/credential-chains#defaultazurecredential-overview).
 This supports a variety of methods for authenticating local and remote workloads.
 
 On local environments, you commonly may use the Azure CLI:
@@ -134,6 +134,18 @@ On local environments, you commonly may use the Azure CLI:
 ```bash theme={null}
 az login
 ```
+
+**Option C: Bearer token authentication**
+
+{/* min-version: 2.1.203 */}Claude Code sends the value of `ANTHROPIC_FOUNDRY_AUTH_TOKEN` on every request as the `Authorization: Bearer` header. Use this option when another process, such as a host application or a sign-in script, has already obtained an access token for you. Requires Claude Code v2.1.203 or later.
+
+Set the variable to a bearer token that Microsoft Entra ID issued for your resource:
+
+```bash theme={null}
+export ANTHROPIC_FOUNDRY_AUTH_TOKEN=your-entra-access-token
+```
+
+`ANTHROPIC_FOUNDRY_AUTH_TOKEN` takes precedence over `ANTHROPIC_FOUNDRY_API_KEY` and over the default credential chain.
 
 <Note>
   When using Microsoft Foundry, the `/logout` command is unavailable since authentication is handled through Azure credentials.

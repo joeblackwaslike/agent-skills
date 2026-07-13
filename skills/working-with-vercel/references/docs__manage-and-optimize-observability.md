@@ -3,7 +3,7 @@ title: Manage and optimize usage for Observability
 product: vercel
 url: /docs/manage-and-optimize-observability
 canonical_url: "https://vercel.com/docs/manage-and-optimize-observability"
-last_updated: 2026-06-16
+last_updated: 2026-07-06
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ceec0bbf1e3c668c6c7183d9533d0f8fc77316aed2ede755738fde05dddc210e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "28cc3941f2fb1cb5195549b6ccd7739725008578730b33fed82b76068923d931"
 ---
 
 # Manage and optimize usage for Observability
@@ -103,7 +103,9 @@ The Observability chart allows you to view by the total **Count**, **Event Type*
 
 ### Optimizing Observability events
 
-Because events are based on the amount of requests to your site, there is no way to optimize the number of events used.
+To reduce Observability Plus costs, you can [exclude specific projects](/docs/observability/observability-plus#managing-projects) that don't need advanced observability. Excluded projects revert to the free tier and stop generating metered Observability Plus events.
+
+You can manage project inclusions from your team's **Billing** settings or from a project's **Observability** dashboard. See [Managing projects](/docs/observability/observability-plus#managing-projects) for details.
 
 
 ---

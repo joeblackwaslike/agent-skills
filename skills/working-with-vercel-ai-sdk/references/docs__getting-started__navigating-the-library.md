@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/navigating-the-library.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "67620d9f9779b999be43ef9b4ce64606f3fc8f79701864c1c55f9249c07b80e4"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "783d54582f0aa7322f65d3aa9011501395e7d699dd10023b34d69dc3f986315d"
 ---
 
 # Navigating the Library
@@ -32,11 +32,11 @@ The following table outlines AI SDK compatibility based on environment:
 
 | Environment           | [AI SDK Core](/docs/ai-sdk-core/overview) | [AI SDK UI](/docs/ai-sdk-ui/overview) | [AI SDK RSC](/docs/ai-sdk-rsc/overview) |
 | --------------------- | ----------------------------------------- | ------------------------------------- | --------------------------------------- |
-| None / Node.js / Deno | <Check size={18} />                       | <Cross size={18} />                   | <Cross size={18} />                     |
-| Vue / Nuxt            | <Check size={18} />                       | <Check size={18} />                   | <Cross size={18} />                     |
-| Svelte / SvelteKit    | <Check size={18} />                       | <Check size={18} />                   | <Cross size={18} />                     |
-| Next.js Pages Router  | <Check size={18} />                       | <Check size={18} />                   | <Cross size={18} />                     |
-| Next.js App Router    | <Check size={18} />                       | <Check size={18} />                   | <Check size={18} />                     |
+| None / Node.js / Deno | <Check />                                 | <Cross />                             | <Cross />                               |
+| Vue / Nuxt            | <Check />                                 | <Check />                             | <Cross />                               |
+| Svelte / SvelteKit    | <Check />                                 | <Check />                             | <Cross />                               |
+| Next.js Pages Router  | <Check />                                 | <Check />                             | <Cross />                               |
+| Next.js App Router    | <Check />                                 | <Check />                             | <Check />                               |
 
 ## When to use AI SDK UI
 
@@ -51,13 +51,13 @@ AI SDK UI provides a set of framework-agnostic hooks for quickly building **prod
 
 AI SDK UI supports the following frameworks: [React](https://react.dev/), [Svelte](https://svelte.dev/), and [Vue.js](https://vuejs.org/). Here is a comparison of the supported functions across these frameworks:
 
-| Function                                                   | React               | Svelte              | Vue.js              |
-| ---------------------------------------------------------- | ------------------- | ------------------- | ------------------- |
-| [useChat](/docs/reference/ai-sdk-ui/use-chat)              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| [useChat](/docs/reference/ai-sdk-ui/use-chat) tool calling | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| [useCompletion](/docs/reference/ai-sdk-ui/use-completion)  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| [useObject](/docs/reference/ai-sdk-ui/use-object)          | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| [MCP Apps](/docs/ai-sdk-core/mcp-apps)                     | <Check size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Function                                                   | React     | Svelte    | Vue.js    |
+| ---------------------------------------------------------- | --------- | --------- | --------- |
+| [useChat](/docs/reference/ai-sdk-ui/use-chat)              | <Check /> | <Check /> | <Check /> |
+| [useChat](/docs/reference/ai-sdk-ui/use-chat) tool calling | <Check /> | <Check /> | <Cross /> |
+| [useCompletion](/docs/reference/ai-sdk-ui/use-completion)  | <Check /> | <Check /> | <Check /> |
+| [useObject](/docs/reference/ai-sdk-ui/use-object)          | <Check /> | <Cross /> | <Cross /> |
+| [MCP Apps](/docs/ai-sdk-core/mcp-apps)                     | <Check /> | <Cross /> | <Cross /> |
 
 <Note>
   [Contributions](https://github.com/vercel/ai/blob/main/CONTRIBUTING.md) are

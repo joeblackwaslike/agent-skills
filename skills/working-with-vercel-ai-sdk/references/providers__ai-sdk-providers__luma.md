@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a2c9e7bc36d00b53bc06c9f30290ed28faa214164789d0e34b88083bc70515cf"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "13aeb49f3d3397b155170f4ac9d260e6e4c8b34c3116f07339641c6366481c76"
 ---
 
 # Luma Provider
@@ -12,21 +12,7 @@ sha256: "a2c9e7bc36d00b53bc06c9f30290ed28faa214164789d0e34b88083bc70515cf"
 
 The Luma provider is available via the `@ai-sdk/luma` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/luma" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/luma" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/luma" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/luma" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/luma" />
 
 ## Provider Instance
 

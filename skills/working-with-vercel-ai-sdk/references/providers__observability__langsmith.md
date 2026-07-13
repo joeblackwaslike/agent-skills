@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langsmith.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "2121a32a1bc1876aa7b68238a97ac2d4864e29a1e913869e3bfe8c1bb1a3527a"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "95b13470332d7e677a0269921562d61c3fd88e223ed706230cdd5a19358ce545"
 ---
 
 # LangSmith Observability
@@ -25,20 +25,7 @@ Use of LangChain's open-source frameworks is not necessary.
 Install an [AI SDK model provider](/providers/ai-sdk-providers) and the [LangSmith client SDK](https://npmjs.com/package/langsmith).
 The code snippets below will use the [AI SDK's OpenAI provider](/providers/ai-sdk-providers/openai), but you can use any [other supported provider](/providers/ai-sdk-providers) as well.
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/openai langsmith" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/openai langsmith" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/openai langsmith" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ai-sdk/openai langsmith" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/openai langsmith" />
 
 Next, set required environment variables.
 

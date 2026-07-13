@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "eeedb5bf6d2daf7ea1b6539f0cdaf9af622712e485c5726a573e4178af751c50"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "c9cc72041bcbebc3c8869324afd0c60fe33934195b791121f248f631d315bcb4"
 ---
 
 # AssemblyAI Provider
@@ -12,21 +12,7 @@ The [AssemblyAI](https://assemblyai.com/) provider contains transcription model 
 
 The AssemblyAI provider is available in the `@ai-sdk/assemblyai` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/assemblyai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/assemblyai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/assemblyai" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/assemblyai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/assemblyai" />
 
 ## Provider Instance
 
@@ -400,12 +386,12 @@ AssemblyAI's documentation for per-language availability.
 
 ### Model Capabilities
 
-| Model               | Transcription       | Duration            | Segments            | Language            |
-| ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `universal-3-5-pro` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `universal-3-pro`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `universal-2`       | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `best`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model               | Transcription | Duration  | Segments  | Language  |
+| ------------------- | ------------- | --------- | --------- | --------- |
+| `universal-3-5-pro` | <Check />     | <Check /> | <Check /> | <Check /> |
+| `universal-3-pro`   | <Check />     | <Check /> | <Check /> | <Check /> |
+| `universal-2`       | <Check />     | <Check /> | <Check /> | <Check /> |
+| `best`              | <Check />     | <Check /> | <Check /> | <Check /> |
 
 
 ## Navigation

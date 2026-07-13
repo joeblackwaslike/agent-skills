@@ -3,7 +3,7 @@ title: Web Analytics Drains Reference
 product: vercel
 url: /docs/drains/reference/analytics
 canonical_url: "https://vercel.com/docs/drains/reference/analytics"
-last_updated: 2026-03-19
+last_updated: 2026-07-03
 type: reference
 prerequisites:
   - /docs/drains
@@ -13,8 +13,8 @@ related:
 summary: Learn about Web Analytics Drains - data formats and custom events configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/analytics.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "999242f03e430d55863bbae0ff239aaf3e73bcaa69e5bfd45a81031f2880a9d0"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "96c3f2df14010100f62e13ba818c695e40cc53f6849cb42fc95832ea1a2a1360"
 ---
 
 # Web Analytics Drains Reference

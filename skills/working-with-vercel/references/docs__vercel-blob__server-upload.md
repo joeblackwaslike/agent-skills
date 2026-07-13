@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "dda6b520e7c5cd9bd6360dd89bac339bac4da3ddb6a494ad92a69d768c21e6a5"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "5d1d2c7259605b3b90f37c801a347abc3d8474aace94f63ea52492460f5c5459"
 ---
 
 # Server Uploads with Vercel Blob
@@ -45,9 +45,14 @@ Vercel Blob works with any frontend framework. First, install the package:
   Once created, you are taken to the Vercel Blob store page.
 
 - ### Prepare your local project
-  Since you created the Blob store in a project, we automatically created and added the following Environment Variable to the project for you.
-  - `BLOB_READ_WRITE_TOKEN`
-  To use this Environment Variable locally, we recommend pulling it with the Vercel CLI:
+  Since you created the Blob store in a project, we automatically created and added the following Environment Variables to the project for you.
+
+  By default, connected stores use OIDC-based authentication with short-lived, automatically rotated credentials:
+  - `BLOB_STORE_ID` — identifies your Blob store
+  - `VERCEL_OIDC_TOKEN` — a short-lived token issued at runtime; rotated automatically
+  The following variable is also added as a fallback for code running outside Vercel or to generate client tokens for browser uploads:
+  - `BLOB_READ_WRITE_TOKEN` — a long-lived static read-write token
+  To use these Environment Variables locally, we recommend pulling them with the Vercel CLI:
   ```bash
   vercel env pull
   ```

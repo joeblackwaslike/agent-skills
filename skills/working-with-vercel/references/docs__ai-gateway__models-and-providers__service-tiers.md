@@ -3,7 +3,7 @@ title: Service Tiers
 product: vercel
 url: /docs/ai-gateway/models-and-providers/service-tiers
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers"
-last_updated: 2026-06-20
+last_updated: 2026-06-29
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -13,8 +13,8 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers through AI Gateway, available via...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "251d58a1a7cb9e4efac30e5f88bedd173dc0e68d9596bb08ef067f4f96fb5079"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "d23305dced5860f3d4b87f501a0799f1744e7ee8a307269f5646ebae877c3803"
 ---
 
 # Service Tiers
@@ -32,6 +32,12 @@ OpenAI, Google AI Studio, and Google Vertex AI offer different processing tiers 
 | `flex`     | Lower cost with potentially higher latency                  |
 
 If you don't specify a service tier, requests use the standard tier.
+
+## Best-effort routing
+
+Service tier is a best-effort routing hint, not a hard guarantee. If the provider serving a request doesn't support service tiers, the tier is ignored and the request runs on the default tier. If a provider supports the tier but doesn't grant it (for example, when priority capacity is full), the request is downgraded to the default tier. In both cases the request still succeeds and is billed at the default rate.
+
+The only request that fails over a service tier is one that passes an invalid value to the native `gateway.serviceTier` option, which accepts `flex` or `priority`.
 
 ## Setting the service tier
 

@@ -1,7 +1,7 @@
 ---
 source: "https://zsh.sourceforge.io/FAQ/zshfaq.txt"
-fetched_at: "2026-06-16T01:06:56.418Z"
-sha256: "538420fbe4db099d7ef525a1bc49bc709316a17a0eef779c2d98c3f7e92b5f00"
+fetched_at: "2026-07-13T07:11:22.546Z"
+sha256: "4884691faed5d2eeea82b1fd40df774f8603519bc51572df0fb6d8bc6c1dfe47"
 ---
 
 This document contains a list of frequently-asked (or otherwise
@@ -239,7 +239,7 @@ Chapter 1: Introducing zsh and how to install it
 1.5: What's the latest version?
 
 
-  Zsh 5.9.1 is the latest production version.  For details of all the
+  Zsh 5.9.2 is the latest production version.  For details of all the
   changes, see the NEWS file in the source distribution.
 
   A beta of the next version is sometimes available.  Development of zsh is

@@ -3,7 +3,7 @@ title: Nuxt on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/nuxt
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/nuxt"
-last_updated: 2026-03-17
+last_updated: 2026-07-03
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Nuxt."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nuxt.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0326a014aac59c4eeb514baf65ada59eee812137f83bf22eabe5a103a3576554"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "e2175482e200cd84925add51b0103929bd4153eadc090c8f1851608b09190d90"
 ---
 
 # Nuxt on Vercel

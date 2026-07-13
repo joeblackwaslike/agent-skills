@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/latitude.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "cc8d3110120ce3462000eb139cdfb52c7164142755361453a2521677d8991be3"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "362ff3065591e086ed5bbed6e2b309dd7d20dd5189d3cc12b76e8fff3d15d3bf"
 ---
 
 # Latitude Observability
@@ -18,20 +18,7 @@ Latitude's SDK registers a global OpenTelemetry tracer. Once you register the AI
 
 Install both packages:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @latitude-data/telemetry @ai-sdk/otel" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @latitude-data/telemetry @ai-sdk/otel" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @latitude-data/telemetry @ai-sdk/otel" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @latitude-data/telemetry @ai-sdk/otel" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@latitude-data/telemetry @ai-sdk/otel" />
 
 Sign in at [app.latitude.so](https://app.latitude.so) and grab your API key and project slug from the dashboard. Set them in your environment:
 

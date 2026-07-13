@@ -3,7 +3,7 @@ title: Redacting Sensitive Data from Web Analytics Events
 product: vercel
 url: /docs/analytics/redacting-sensitive-data
 canonical_url: "https://vercel.com/docs/analytics/redacting-sensitive-data"
-last_updated: 2025-03-04
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -12,8 +12,8 @@ related:
 summary: Learn how to redact sensitive data from your Web Analytics events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/redacting-sensitive-data.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2c1ee2d64ccc41c117a7c973d37d39a96d2978e19bc32503374bb5eab50e4c6e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "682cce23b06e059e486a22f85f065afd26429101e91b92c416118607e22112ae"
 ---
 
 # Redacting Sensitive Data from Web Analytics Events

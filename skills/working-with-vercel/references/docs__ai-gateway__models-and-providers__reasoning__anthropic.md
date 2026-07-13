@@ -3,7 +3,7 @@ title: Anthropic Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/anthropic
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic"
-last_updated: 2026-06-20
+last_updated: 2026-06-29
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
@@ -13,8 +13,8 @@ related:
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "3a0c06f80bea2d07bc4b9554c69c4dd463b5625cdbe54a14a0eb8a63cec1cae3"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "7ccbbb3d2579411b67ba8928d02839f2aa495ca6fb3e25e01c5b181eaa68a951"
 ---
 
 # Anthropic Reasoning

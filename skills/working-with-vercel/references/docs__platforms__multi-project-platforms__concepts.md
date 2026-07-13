@@ -1,9 +1,9 @@
 ---
-title: Concepts
+title: Multi-Project Platforms Concepts
 product: vercel
 url: /docs/platforms/multi-project-platforms/concepts
 canonical_url: "https://vercel.com/docs/platforms/multi-project-platforms/concepts"
-last_updated: 2018-10-20
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   - /docs/platforms/multi-project-platforms
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/platforms/multi-project-platforms/quickstart
   - /docs/platforms/multi-project-platforms/reference
-summary: Learn about concepts on Vercel.
+summary: Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/concepts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2e92474add6164bc2a22946ef001a45ee8cdb3441f9aa963ee9a2ff15485ad2b"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9d99ef7d944fcec55df133c15c3d62f0c5cb642d1df411025717dd685f0fd52c"
 ---
 
 # Multi-Project Platforms Concepts

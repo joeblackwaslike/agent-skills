@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/portkey.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d3e4a567200f697a8726aa03a36f05269e2fdca59e28b0948da808f040bd4af5"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "8086ce2ac99576b69e31a6825dcbdcc3498e0847ae354fb735622069bb14f57d"
 ---
 
 # Portkey Provider
@@ -21,21 +21,7 @@ Learn more at [Portkey docs for the AI SDK](https://docs.portkey.ai/docs/integra
 
 The Portkey provider is available in the `@portkey-ai/vercel-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @portkey-ai/vercel-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @portkey-ai/vercel-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @portkey-ai/vercel-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @portkey-ai/vercel-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@portkey-ai/vercel-provider" />
 
 ## Provider Instance
 

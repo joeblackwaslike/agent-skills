@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/browser-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0da362adca931d1112b0157ce090d17e7a4ac166c5d0cbe093c4f1b371288624"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "034f61f79fd396eab7ecce2ab0970dfb6419d4c7e8c115f854ce9d864300699d"
 ---
 
 # Browser AI model providers
@@ -15,54 +15,15 @@ It currently provides a model provider for Chrome & Edge's native browser AI mod
 
 The `@browser-ai/core` (formerly `@built-in-ai`) package is the AI SDK provider for Chrome and Edge browser's built-in AI models. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @browser-ai/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @browser-ai/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @browser-ai/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @browser-ai/core" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@browser-ai/core" />
 
 The `@browser-ai/web-llm` package is the AI SDK provider for popular open-source models using the WebLLM inference engine. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @browser-ai/web-llm" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @browser-ai/web-llm" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @browser-ai/web-llm" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @browser-ai/web-llm" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@browser-ai/web-llm" />
 
 The `@browser-ai/transformers-js` package is the AI SDK provider for popular open-source models using Transformers.js. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @browser-ai/transformers-js" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @browser-ai/transformers-js" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @browser-ai/transformers-js" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @browser-ai/transformers-js" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@browser-ai/transformers-js" />
 
 ## Provider Instances
 

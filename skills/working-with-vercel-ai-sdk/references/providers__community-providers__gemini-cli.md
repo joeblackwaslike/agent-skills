@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/gemini-cli.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "297664c4ae5c95f97a13f6826cd18bef674b58366749dc90c38bf91b37904dfc"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a01b60962b1c223020b0e8724f7923afe670560ab06a32003515acd245ce5e44"
 ---
 
 # Gemini CLI Provider
@@ -29,20 +29,7 @@ npm install ai-sdk-provider-gemini-cli@ai-sdk-v4 ai@^4.0.0
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ai-sdk-provider-gemini-cli" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ai-sdk-provider-gemini-cli" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ai-sdk-provider-gemini-cli" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add ai-sdk-provider-gemini-cli" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ai-sdk-provider-gemini-cli" />
 
 ## Provider Instance
 
@@ -135,13 +122,13 @@ const model = gemini('gemini-3.1-pro-preview', {
 
 ### Model Capabilities
 
-| Model                    | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ------------------------ | ------------------- | ------------------- | ------------------- | ------------------- |
-| `gemini-3.1-pro-preview` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3-pro-preview`   | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3-flash-preview` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-pro`         | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-flash`       | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                    | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ------------------------ | ----------- | ----------------- | ---------- | -------------- |
+| `gemini-3.1-pro-preview` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-3-pro-preview`   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-3-flash-preview` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.5-pro`         | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.5-flash`       | <Check />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   Images must be provided as base64-encoded data. Image URLs are not supported.

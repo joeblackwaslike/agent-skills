@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/eve/observability
 canonical_url: "https://vercel.com/docs/eve/observability"
-last_updated: 2026-06-19
+last_updated: 2026-06-24
 type: conceptual
 prerequisites:
   - /docs/eve
@@ -13,8 +13,8 @@ related:
 summary: View agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/observability.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9e5e2fd5baf707e119aaa2870b34d5e6a089a29a95739115367acb0d5d957da4"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "eca2703fbe38fed37bcf52f61007394868c076fc2b111bd8fad8c5167c6561c2"
 ---
 
 # Observability

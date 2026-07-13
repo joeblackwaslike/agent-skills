@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "735c4674fab0be1d197faed467def8a203bc703a334ae36fe684bee7449e7a09"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "0c912c65106ccc07c99843878c15e501c71a8866e954e93622d276be11c0711f"
 ---
 
 # Security & Compliance Measures
@@ -70,7 +70,7 @@ PCI DSS compliance is a shared responsibility between Vercel and its customers. 
 
 A copy of our PCI DSS compliance documentation can be obtained through our [Trust Center](https://security.vercel.com).
 
-[Contact us](https://vercel.com/contact/sales/security) for more details about our SAQ-D and SAQ-A AOC reports or Responsibility Matrix.
+[Contact us](https://vercel.com/contact/sales) for more details about our SAQ-D and SAQ-A AOC reports or Responsibility Matrix.
 
 ### HIPAA
 
@@ -94,7 +94,7 @@ Customers subject to HIPAA may enable [Vercel Secure Compute (available on Enter
 
 [Learn](https://security.vercel.com/?itemUid=aec41c33-0f3a-4030-ac59-49adfd4a975b\&source=click) about how Vercel supports HIPAA compliance.
 
-[Contact us](https://vercel.com/contact/sales/security) to request a **BAA**. Enterprise customers can also contact us to add Secure Compute to their plan.
+[Contact us](https://vercel.com/contact/sales) to request a **BAA**. Enterprise customers can also contact us to add Secure Compute to their plan.
 
 ### EU-U.S Data Privacy Framework
 
@@ -120,7 +120,7 @@ Vercel has achieved TISAX Assessment Level 2 (AL2), which covers requirements fo
 
 TISAX results are not intended for the general public. Vercel's assessment results are available to registered ENX participants through the [ENX Portal](https://portal.enx.com/en-US/TISAX/tisaxassessmentresults).
 
-[Contact us](https://vercel.com/contact/sales/security) for more information.
+[Contact us](https://vercel.com/contact/sales) for more information.
 
 ## Infrastructure
 

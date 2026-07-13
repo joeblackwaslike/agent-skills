@@ -3,7 +3,7 @@ title: Fastify on Vercel
 product: vercel
 url: /docs/frameworks/backend/fastify
 canonical_url: "https://vercel.com/docs/frameworks/backend/fastify"
-last_updated: 2026-05-12
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Deploy Fastify applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastify.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "50784cabd7dbd9453115852c1a90c5bef04e3be6f0edf1e197cee9171e80d42d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "bb025283f8460997767d5e4baf6cbc4fe360dfa0e1610d762be7bd34368e207b"
 ---
 
 # Fastify on Vercel
@@ -88,7 +88,7 @@ When you deploy a Fastify app to Vercel, your Fastify application becomes a sing
 
 ## Limitations
 
-All [Vercel Functions limitations](/docs/functions/limitations) apply to the Fastify application, including the size of the application being limited to 250MB.
+All [Vercel Functions limitations](/docs/functions/limitations) apply to the Fastify application, including the standard bundle size limit of 250MB for Node.js applications. [Large Functions](/docs/functions/limitations#large-functions-beta) support Node.js bundles up to 5GB on Fluid compute when enabled (public beta).
 
 ## More resources
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/requesty.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "525494356ee0636b9f8fdad3934567201ea98ebe5b52426e001ed72b400b3f09"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "6c2eafda2ed68da21c816f67daeda0f2fdb9d40d944a3aa672abc4dfbe17ec8a"
 ---
 
 # Requesty
@@ -22,21 +22,7 @@ Learn more about Requesty's capabilities in the [Requesty Documentation](https:/
 
 The Requesty provider is available in the `@requesty/ai-sdk` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @requesty/ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @requesty/ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @requesty/ai-sdk" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @requesty/ai-sdk" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@requesty/ai-sdk" />
 
 ## API Key Setup
 

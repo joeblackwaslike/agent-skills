@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mixedbread.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a258f7df584c30979f6356db3505fc57bc78613ebd394bda722f85eec016f10a"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "4a9f8630d47bcc8e70926256388b3b02135533c81d8ef3c9908f071f4ee366b2"
 ---
 
 # Mixedbread Provider
@@ -12,21 +12,7 @@ sha256: "a258f7df584c30979f6356db3505fc57bc78613ebd394bda722f85eec016f10a"
 
 The Mixedbread provider is available in the `mixedbread-ai-provider` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add mixedbread-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install mixedbread-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add mixedbread-ai-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add mixedbread-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="mixedbread-ai-provider" />
 
 ## Provider Instance
 
@@ -127,12 +113,12 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                             | Context Length | Dimension | Custom Dimensions   |
-| --------------------------------- | -------------- | --------- | ------------------- |
-| `mxbai-embed-large-v1`            | 512            | 1024      | <Check size={18} /> |
-| `mxbai-embed-2d-large-v1`         | 512            | 1024      | <Check size={18} /> |
-| `deepset-mxbai-embed-de-large-v1` | 512            | 1024      | <Check size={18} /> |
-| `mxbai-embed-xsmall-v1`           | 4096           | 384       | <Cross size={18} /> |
+| Model                             | Context Length | Dimension | Custom Dimensions |
+| --------------------------------- | -------------- | --------- | ----------------- |
+| `mxbai-embed-large-v1`            | 512            | 1024      | <Check />         |
+| `mxbai-embed-2d-large-v1`         | 512            | 1024      | <Check />         |
+| `deepset-mxbai-embed-de-large-v1` | 512            | 1024      | <Check />         |
+| `mxbai-embed-xsmall-v1`           | 4096           | 384       | <Cross />         |
 
 <Note>
   The table above lists popular models. Please see the [Mixedbread

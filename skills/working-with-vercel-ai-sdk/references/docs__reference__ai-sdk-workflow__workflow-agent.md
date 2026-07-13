@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8b118c256a29f99d360c28ce9bb34a5929888a0c9eb9437de2501ba9ab7bbcc6"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "42c494e7f1b1bb63179f794cc7a50c1603080960505c3fd05b2bbf2d154e6d33"
 ---
 
 # `WorkflowAgent`
@@ -117,7 +117,7 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
         'Default structured output specification. Per-stream values override this default.',
     },
     {
-      name: 'experimental_repairToolCall',
+      name: 'repairToolCall',
       type: 'ToolCallRepairFunction',
       isOptional: true,
       description:
@@ -529,7 +529,7 @@ const result = await agent.stream({
       description: 'Include raw, unprocessed chunks from the provider in the stream. Default: false.',
     },
     {
-      name: 'experimental_repairToolCall',
+      name: 'repairToolCall',
       type: 'ToolCallRepairFunction',
       isOptional: true,
       description: 'Callback to attempt automatic recovery when a tool call cannot be parsed.',

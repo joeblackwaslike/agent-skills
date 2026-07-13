@@ -1,15 +1,15 @@
 ---
 title: "Markdown Assets"
 source: "https://docusaurus.io/docs/markdown-features/assets"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "89e36547a67be32b3575908636337b6eae408bf5b4eca68c785f20ef9ee33491"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "25944dce39eee7f4278a5a61ad4b94c9d9db545feb35ac32b1b3c611409b2767"
 ---
 
 # Markdown Assets
 
 Source: https://docusaurus.io/docs/markdown-features/assets
 
-- GuidesMarkdown FeaturesAssetsVersion: 3.10.1On this page
+- GuidesMarkdown FeaturesAssetsVersion: 3.10.2On this page
 # Assets
 
 Sometimes you want to link to assets (e.g. docx files, images...) directly from Markdown files, and it is convenient to co-locate the asset next to the Markdown file using it.
@@ -132,4 +132,4 @@ If you intend to write URLs, you can use the `pathname://` protocol to disable a
 ![banner](pathname:///img/docusaurus-asset-example-banner.png)
 ```
 
-This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

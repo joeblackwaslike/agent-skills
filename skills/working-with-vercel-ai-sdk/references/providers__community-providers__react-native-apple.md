@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/react-native-apple.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "de4bd5366d80f56735667eaf5e7b91a64f6d9c4358f9e6ebe2a07d7d49f90642"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "919c73759ba0fbd93356070b27d1aa290f98da233f1e292c7aeca6352828ec67"
 ---
 
 # React Native Apple Provider
@@ -12,20 +12,7 @@ sha256: "de4bd5366d80f56735667eaf5e7b91a64f6d9c4358f9e6ebe2a07d7d49f90642"
 
 The Apple provider is available in the `@react-native-ai/apple` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @react-native-ai/apple" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @react-native-ai/apple" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @react-native-ai/apple" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @react-native-ai/apple" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@react-native-ai/apple" />
 
 ### Prerequisites
 

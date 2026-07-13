@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/get-started/using-github/github-flow.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "82cc9a9dc5ac4a37db766abaa189710c7eefc8a715ff36231d4134bbbd773e77"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "6bd8b640f24c1b4a38709f04590a98af2879d4a8f343e14ae5eb43b5fc1564a3"
 ---
 
 ## Introduction
@@ -44,7 +44,7 @@ Continue to make, commit, and push changes to your branch until you are ready to
 
 Create a pull request to ask collaborators for feedback on your changes. Pull request review is so valuable that some repositories require an approving review before pull requests can be merged. If you want early feedback or advice before you complete your changes, you can mark your pull request as a draft. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
-When you create a pull request, include a summary of the changes and what problem they solve. You can include images, links, and tables to help convey this information. If your pull request addresses an issue, link the issue so that issue stakeholders are aware of the pull request and vice versa. If you link with a keyword, the issue will close automatically when the pull request merges. For more information, see [AUTOTITLE](/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) and [AUTOTITLE](/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
+When you create a pull request, include a summary of the changes and what problem they solve. You can include images, links, and tables to help convey this information. If your pull request addresses an issue, link the issue so that issue stakeholders are aware of the pull request and vice versa. If you link with a keyword, the issue will close automatically when the pull request merges. For more information, see [AUTOTITLE](/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) and [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue).
 
 In addition to filling out the body of the pull request, you can add comments to specific lines of the pull request to explicitly point something out to the reviewers.
 

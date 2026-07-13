@@ -3,7 +3,7 @@ title: Query Reference
 product: vercel
 url: /docs/query/reference
 canonical_url: "https://vercel.com/docs/query/reference"
-last_updated: 2026-06-16
+last_updated: 2026-07-06
 type: reference
 prerequisites:
   - /docs/query
@@ -16,8 +16,8 @@ related:
 summary: This reference covers the dimensions and operators used to create a query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4e7b468644733229ad042f42a5db9977479096d423ad7a2a5b4f75dd3e014aeb"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "2f3e8de2a0b1296f7e7779146a77d62b94078001cca0bd255901809159587627"
 ---
 
 # Query Reference
@@ -51,6 +51,12 @@ The metric selects what query data is displayed. You can choose one field at a t
 | **Optimized Size**                | The optimized size of image optimizations                                                                                 | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Compression Ratio**             | The compression ratio of image optimizations                                                                              | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Size Change**                   | The size change of image optimizations                                                                                    | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Sandbox Active CPU Time**       | The total CPU time consumed by sandboxes, measured in milliseconds and displayed as time.                                 | Sum, Sum per Second, Min/Max, Percentiles              |
+| **Sandbox CPU Usage**             | The percentage of CPU used by sandboxes.                                                                                  | Min/Max, Percentiles                                   |
+| **Sandbox Provisioned Memory**    | The amount of memory provisioned to sandboxes.                                                                            | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Sandbox Peak Memory**           | The maximum amount of memory used by sandboxes.                                                                           | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Sandbox Data Transfer In**      | The amount of public network data transferred into sandboxes.                                                             | Sum, Sum per Second, Min/Max, Percentiles              |
+| **Sandbox Data Transfer Out**     | The amount of public network data transferred out of sandboxes.                                                           | Sum, Sum per Second, Min/Max, Percentiles              |
 
 ### Aggregations
 
@@ -114,6 +120,8 @@ There are several fields available for use within the [Filter](#filter) and [gro
 | `WAF Action`        | Group by the WAF action taken by the [Vercel Firewall](/docs/security/vercel-waf) (`deny`, `challenge`, `rate_limit`, `bypass` or `log`)                                                                                                                                         |
 | `WAF Rule ID`       | Group by the firewall rule ID                                                                                                                                                                                                                                                    |
 | `Skew Protection`   | When `active`, the request would have been subject to [version skew](/docs/skew-protection) but was protected, otherwise `inactive`.                                                                                                                                             |
+| `Sandbox Name`      | Group by the sandbox name                                                                                                                                                                                                                                                        |
+| `Sandbox Session ID` | Group by the sandbox session ID                                                                                                                                                                                                                                                  |
 
 
 ---

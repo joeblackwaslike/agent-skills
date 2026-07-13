@@ -1,20 +1,20 @@
 ---
-title: Concepts
+title: Multi-Tenant Platform Concepts
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/concepts
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts"
-last_updated: 2018-10-20
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
   []
-summary: Learn about concepts on Vercel.
+summary: Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d9390e216c1306e44031b314a36f4fbe097f871fd8365180026271d079a1fa37"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "52d898d4b44fd04aa91e4d9cd5601ed424e547e9cd8c2b7bdeec21ed3d7c24c3"
 ---
 
 # Multi-Tenant Platform Concepts

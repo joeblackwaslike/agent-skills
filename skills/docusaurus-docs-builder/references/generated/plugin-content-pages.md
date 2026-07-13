@@ -1,15 +1,15 @@
 ---
 title: "Pages Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "c34dab44841def06d39dcfbb25054b0b4ec7779bcb236891f91bd4d6cd67a0f5"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "6736f5818ca7935b78aeba854003ac1ffde7cfcd30ba5677a33cb033469403cf"
 ---
 
 # Pages Plugin
 
 Source: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages
 
-- Plugins📦 plugin-content-pagesVersion: 3.10.1On this page
+- Plugins📦 plugin-content-pagesVersion: 3.10.2On this page
 # 📦 plugin-content-pages
 
 The default pages plugin for Docusaurus. The classic template ships with this plugin with default configurations. This plugin provides creating pages functionality.
@@ -102,4 +102,4 @@ Read the i18n introduction first.
 ```
 website/i18n/[locale]/docusaurus-plugin-content-pages││ # translations for website/src/pages├── first-markdown-page.md└── second-markdown-page.md
 ```
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

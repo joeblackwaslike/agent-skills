@@ -3,7 +3,7 @@ title: Agent Skills
 product: vercel
 url: /docs/agent-resources/skills
 canonical_url: "https://vercel.com/docs/agent-resources/skills"
-last_updated: 2026-06-19
+last_updated: 2026-06-30
 type: reference
 prerequisites:
   - /docs/agent-resources
@@ -12,8 +12,8 @@ related:
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "caae677bb62596b064247741ada73a98130eb6f439109309d453d5442bb93852"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "8e7f190a74d1a2575b4cc7b33e7fd20d3b694f5ba3b73954a8e2608259031242"
 ---
 
 # Agent Skills

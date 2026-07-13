@@ -3,7 +3,7 @@ title: Alerts
 product: vercel
 url: /docs/alerts
 canonical_url: "https://vercel.com/docs/alerts"
-last_updated: 2026-06-16
+last_updated: 2026-07-01
 type: how-to
 prerequisites:
   []
@@ -15,8 +15,8 @@ related:
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "c3dbefae1afad9751c006b67ad338ce9bfa722353754678f995ef126a1cf3f94"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "23f6aaa53467e8e76535db87bd33d3873c4ffacb075634d223485c0fead0d552"
 ---
 
 # Alerts

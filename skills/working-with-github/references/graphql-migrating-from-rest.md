@@ -1,12 +1,12 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/graphql/guides/migrating-from-rest-to-graphql.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "0e35f8aa3fca378bced86ae66c55cd069bce6f7e10eec900654d5513fa036841"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "b98a789347a3320236de0cbef881c1b1c74571a5ed98ce06bb94dc821ff8cecc"
 ---
 
 ## Differences in API logic
 
-{% data variables.product.company_short %} provides two APIs: a REST API and a GraphQL API. For more information about {% data variables.product.company_short %}'s APIs, see [AUTOTITLE](/rest/overview/about-githubs-apis).
+{% data variables.product.company_short %} provides two APIs: a REST API and a GraphQL API. For more information about {% data variables.product.company_short %}'s APIs, see [AUTOTITLE](/rest/about-the-rest-api/comparing-githubs-rest-api-and-graphql-api).
 
 Migrating from REST to GraphQL represents a significant shift in API logic. The differences between REST as a style and GraphQL as a specification make it difficult&mdash;and often undesirable&mdash;to replace REST API calls with GraphQL API queries on a one-to-one basis. We've included specific examples of migration below.
 

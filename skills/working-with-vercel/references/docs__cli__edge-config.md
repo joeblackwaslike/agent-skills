@@ -3,7 +3,7 @@ title: vercel edge-config
 product: vercel
 url: /docs/cli/edge-config
 canonical_url: "https://vercel.com/docs/cli/edge-config"
-last_updated: 2026-06-09
+last_updated: 2026-06-25
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,11 +12,11 @@ related:
   - /docs/rest-api/reference/endpoints/edge-config/update-edge-config-items-in-batch
   - /docs/edge-config/edge-config-dashboard
   - /docs/rest-api/reference/endpoints/edge-config
-summary: "Manage Edge Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items and read tokens."
+summary: "Manage Edge Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/edge-config.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "8260aeaa5ec00c7069571d3e28eae898c8680c0adc3b4b306d4d8537fd956c1d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "1b889a269cee07b41d2bbadb734803b78625bd09630faa97893fcebd8a6d56da"
 ---
 
 # vercel edge-config

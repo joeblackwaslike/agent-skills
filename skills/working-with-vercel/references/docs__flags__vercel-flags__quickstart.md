@@ -3,7 +3,7 @@ title: Getting Started with Vercel Flags
 product: vercel
 url: /docs/flags/vercel-flags/quickstart
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/quickstart"
-last_updated: 2026-03-20
+last_updated: 2026-06-24
 type: tutorial
 prerequisites:
   - /docs/flags/vercel-flags
@@ -17,8 +17,8 @@ related:
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "928344c4e7b42f4de69e25281031fb84fca6b4bc42465046bf724e14a50385ad"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "f61bd466f97d0a26cb891df837f49fe468a69221021e27482b435bbdf643ef26"
 ---
 
 # Getting Started with Vercel Flags

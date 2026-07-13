@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/050_configuration.md"
-fetched_at: "2026-07-06T05:38:23.051Z"
-sha256: "ff9a8800fc548f927a4a7aa39aa15fb171fa66458b1ca6cf605d7d5eca855645"
+fetched_at: "2026-07-13T06:58:57.510Z"
+sha256: "a8bf0949e27afaf8477f822ab03ac97a68f1ef382e8ababfe1b4b8291bfcb13f"
 ---
 
 # Configuration
@@ -701,8 +701,8 @@ The following settings are supported for the Java language server:
 | `maven_user_settings` | `~/.m2/settings.xml` | Path to Maven `settings.xml` |
 | `gradle_user_home` | `~/.gradle` | Path to Gradle user home directory |
 | `gradle_wrapper_enabled` | `false` | Use the project's Gradle wrapper (`gradlew`) instead of the bundled Gradle distribution. Enable this for projects with custom plugins or repositories. |
-| `gradle_java_home` | `null` | Path to the JDK used by Gradle. When unset, Gradle uses the bundled JRE. |
-| `use_system_java_home` | `false` | Use the system's `JAVA_HOME` environment variable for JDTLS itself. Enable this if your project requires a specific JDK vendor or version for Gradle's JDK checks. |
+| `gradle_java_home` | `null` | Path to the JDK used by Gradle. When unset, Gradle uses `JAVA_HOME` if `use_system_java_home` is enabled and `JAVA_HOME` is set; otherwise it falls back to Serena's bundled JRE. |
+| `use_system_java_home` | `false` | Use the system's `JAVA_HOME` environment variable for JDTLS itself and, when `gradle_java_home` is unset, Gradle import. Enable this if your project requires a specific JDK vendor or version for Gradle's JDK checks. |
 | `gradle_version` | `8.14.2` | (vscode-java mode only) Override the Gradle distribution version Serena downloads by default. |
 | `vscode_java_version` | `1.54.0-923` | (vscode-java mode only) Override the bundled `vscode-java` runtime bundle version Serena downloads by default. |
 | `intellicode_version` | `1.2.30` | (vscode-java mode only) Override the IntelliCode VSIX version Serena downloads by default. |
@@ -877,6 +877,34 @@ Notes:
 - Use the FPC compiler driver (`fpc`/`fpc.exe`), not backend compilers like `ppc386.exe`.
 - These settings are passed as environment variables to the pasls process.
 
+#### Perl
+
+Serena uses [Perl::LanguageServer](https://metacpan.org/pod/Perl::LanguageServer) for Perl support. Install Perl and the server with `cpanm Perl::LanguageServer`; Linux and macOS only (the server does not run on Windows).
+
+Perl::LanguageServer only indexes files whose extension is in its `perl.fileFilter` and skips directories listed in `perl.ignoreDirs`. Both are exposed below so projects with non-standard extensions (e.g. `.cgi` / `.psgi` web handlers) can make those files visible (#1449).
+
+**Configuration:**
+
+Configure the language server via `ls_specific_settings.perl` in `serena_config.yml`:
+
+| Setting        | Default                                                                                     | Description                                                                                                    |
+| -------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `file_filter`  | `[".pm", ".pl", ".t"]`                                                                      | File extensions (with leading dot) that Perl::LanguageServer should index, e.g. `[".pm", ".pl", ".t", ".cgi"]`. |
+| `ignore_dirs`  | `[".git", ".svn", "blib", "local", ".carton", "vendor", "_build", "cover_db"]`             | Directory names Perl::LanguageServer should skip when indexing.                                               |
+
+Example configuration:
+
+```yaml
+ls_specific_settings:
+  perl:
+    file_filter: [".pm", ".pl", ".t", ".cgi", ".psgi"]
+    ignore_dirs: [".git", "blib", "local", "vendor", "cover_db"]
+```
+
+Notes:
+- Extensions added via `file_filter` are also synced into Serena's Perl source-file matcher, so `find_symbol` and symbol indexing treat the same files as the language server. Defaults are unchanged when these keys are omitted.
+- The matcher is reset on every language server activation, so one project's `file_filter` does not leak into another.
+
 #### PHP (`Intelephense`)
 
 Serena uses Intelephense for the `php` language key.
@@ -1037,6 +1065,7 @@ Supported settings:
 | `typescript_language_server_version` | `5.1.3` | Override the bundled `typescript-language-server` npm package version Serena installs when `ls_path` is not set. |
 | `npm_registry` | `null` | Override the npm registry Serena uses for the managed install. |
 | `indexing_timeout` | `30.0` | Timeout in seconds for waiting on tsserver's `$/progress` project-indexing signal (both at startup and before the first cross-file reference query). If indexing does not complete within this window, Serena logs a warning and proceeds anyway. Increase it for very large projects. |
+| `server_ready_timeout` | `10.0` | Timeout in seconds for waiting on the server-ready signal after initialization. If the signal does not arrive within this window, Serena logs a message and proceeds anyway. |
 
 #### Svelte
 
@@ -1054,7 +1083,14 @@ Supported settings:
 | `typescript_language_server_version` | `5.1.3` (falls back to `ls_specific_settings.typescript.typescript_language_server_version`) | Override the `typescript-language-server` npm package version for the companion server. |
 | `typescript_svelte_plugin_version` | `0.3.52` | Override the `typescript-svelte-plugin` npm package version used for `.svelte`-aware TS resolution. |
 | `npm_registry` | `null` | Override the npm registry Serena uses for all managed installs. |
+| `indexing_timeout` | `120.0` (falls back to `ls_specific_settings.typescript.indexing_timeout`) | Timeout in seconds for the companion TS server to finish indexing `.svelte` files. On timeout, startup fails with a diagnostic indexing-state summary instead of serving cross-file results from a partially indexed program. |
 | `initialization_options_configuration` | `{}` | Deep-merge overrides for any of the ten plugin configuration sections (`svelte`, `prettier`, `emmet`, `typescript`, `javascript`, `js/ts`, `css`, `less`, `scss`, `html`). |
+
+Unlike the plain TypeScript server, the companion is strict about readiness: it raises on server-ready and
+indexing timeouts instead of proceeding with a cold or partially indexed program (which would silently degrade
+cross-file renames and references). The companion reads `server_ready_timeout` and `indexing_timeout` from
+`ls_specific_settings.typescript` with raised defaults (30s and 120s respectively); `ls_specific_settings.svelte.indexing_timeout`
+takes precedence for the `.svelte`-file indexing wait.
 
 All four packages are tracked via a version file; changing any version setting triggers a clean reinstall.
 

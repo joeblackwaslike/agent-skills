@@ -3,7 +3,7 @@ title: SDKs & APIs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis"
-last_updated: 2026-06-20
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "66499a4edaf04a1522c14087ccce56863710afe995f025aaa82bd3f3483344b9"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "458a67426f342a61bc5d30b465a4c44a8c7edae9fcf805283e01f59f07dcaede"
 ---
 
 # SDKs & APIs
@@ -125,6 +125,7 @@ const response = await client.responses.create({
 | [OpenAI Chat Completions API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions) | Existing OpenAI integrations, broad language support                 | [Chat](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions), [Tools](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calls), [Embeddings](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings) |
 | [Anthropic Messages API](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api)       | Claude Code, Anthropic SDK users                                     | [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages), [Tools](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calls), [Files](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/file-attachments)       |
 | [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses)                         | New projects, provider-agnostic design                               | [Streaming](/docs/ai-gateway/sdks-and-apis/openresponses/streaming), [Tools](/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling), [Vision](/docs/ai-gateway/sdks-and-apis/openresponses/image-input)                                  |
+| [Cohere Rerank API](/docs/ai-gateway/sdks-and-apis/cohere-rerank)                     | Reranking documents with the Cohere SDK or plain HTTP                | [Rerank](/docs/ai-gateway/sdks-and-apis/cohere-rerank#supported-endpoints), [Provider routing](/docs/ai-gateway/sdks-and-apis/cohere-rerank#provider-routing)                                                                                |
 | [Python](/docs/ai-gateway/sdks-and-apis/python)                                       | Python developers                                                    | [Async](/docs/ai-gateway/sdks-and-apis/python#async-support), [Streaming](/docs/ai-gateway/sdks-and-apis/python#streaming), [Frameworks](/docs/ai-gateway/sdks-and-apis/python#framework-integrations)                                       |
 
 ## Choosing an API

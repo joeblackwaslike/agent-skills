@@ -3,7 +3,7 @@ title: Models & Providers
 product: vercel
 url: /docs/ai-gateway/models-and-providers
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers"
-last_updated: 2026-06-20
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -13,11 +13,11 @@ related:
   - /docs/ai-gateway/models-and-providers/model-fallbacks
   - /docs/ai-gateway/models-and-providers/provider-timeouts
   - /docs/ai-gateway/models-and-providers/routing-rules
-summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, virtual models, uptime and..."
+summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, uptime and metrics, plus..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "1d333b60c23513c5ce2d1279d2b8f7cc32223e04e46180ebd49d7221c8732175"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a89827874871a1e3a74a3a6f4d7aefdfd29870f3ec25b6d72fd84127e27de9a0"
 ---
 
 # Models & Providers

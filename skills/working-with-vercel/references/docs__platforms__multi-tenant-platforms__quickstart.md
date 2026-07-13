@@ -1,21 +1,21 @@
 ---
-title: Quickstart
+title: Multi-Tenant Platform Quickstart
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/quickstart
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: tutorial
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
   - /docs/projects/domains/working-with-nameservers
   - /docs/sdk
-summary: Learn about quickstart on Vercel.
+summary: Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4b43039b4e80b74bf76c6ca2cc3440f00e2851bc57850e24ab5bd3d58f0db558"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "04cdfd120d38cfeaa5d041418df9da9c0cde3050477e23a51bf2eeea25f9c8af"
 ---
 
 # Multi-Tenant Platform Quickstart

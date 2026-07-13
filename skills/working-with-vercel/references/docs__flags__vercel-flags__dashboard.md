@@ -3,7 +3,7 @@ title: Managing flags in the dashboard
 product: vercel
 url: /docs/flags/vercel-flags/dashboard
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/dashboard"
-last_updated: 2026-04-16
+last_updated: 2026-06-24
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags
@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b803fdc4c0653b46c5e62d3b777b5573c678ca60292796ba39a093150dfbe6c5"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "4b7860116587c9b83d9a4a78d3c2e2ed39f07e93faa65a064d4177ed45df2d21"
 ---
 
 # Managing flags in the dashboard

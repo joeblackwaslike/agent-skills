@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sarvam.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "80cfd4d94d95d7560ecab18009a753cfbf4c79d4d634c6c499f343c9befa4c8a"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "58d2e07cf76811f95693362f15621783f83a607608869c009285569a22c8e68a"
 ---
 
 # Sarvam Provider
@@ -12,20 +12,7 @@ The Sarvam AI Provider is a library developed to integrate with the AI SDK. This
 
 The Sarvam provider is available in the `sarvam-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add sarvam-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install sarvam-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add sarvam-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add sarvam-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="sarvam-ai-provider" />
 
 ## Provider Instance
 

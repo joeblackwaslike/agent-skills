@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "553c0107b63f1879eeea9fcc9ba6fdd2d99d99d7ea5c28d2491e06e034e004af"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a926352f323776c1b86129d7cf4402259e6112497fe7083975976f0cabe98f9c"
 ---
 
 # `streamText()`
@@ -856,7 +856,7 @@ To see `streamText` in action, check out [these examples](#examples).
       ],
     },
     {
-      name: 'experimental_repairToolCall',
+      name: 'repairToolCall',
       type: '(options: ToolCallRepairOptions) => Promise<LanguageModelV4ToolCall | null>',
       isOptional: true,
       description:

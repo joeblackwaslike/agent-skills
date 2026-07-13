@@ -3,7 +3,7 @@ title: Access Groups
 product: vercel
 url: /docs/rbac/access-groups
 canonical_url: "https://vercel.com/docs/rbac/access-groups"
-last_updated: 2026-02-27
+last_updated: 2026-07-01
 type: how-to
 prerequisites:
   - /docs/rbac
@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "b3ee02494e193dd70a8e19b6c567ecb5cf7c54d3c5accaa1015ebe53aa80c94e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "baa936bb38a17f320ae6422017ba5ccfb263547fda474a20c60e58a1e2e09d97"
 ---
 
 # Access Groups

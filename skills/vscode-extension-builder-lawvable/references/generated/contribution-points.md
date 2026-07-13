@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-07-06T05:31:17.487Z"
-sha256: "16d28dfafdb1629053042c515ffa5c789d18b9ec844ff44dceccff0fcb743486"
+fetched_at: "2026-07-13T06:52:49.921Z"
+sha256: "8bd51704b1deb03f46b9f46f34d082a59e9d33f51d2a9dcbb60354747635070c"
 ---
 
 # Contribution Points
@@ -342,7 +342,7 @@ const errorColor = new vscode.ThemeColor('superstatus.error');
 
 ## contributes.commands
 
-Contribute the UI for a command consisting of a title and (optionally) an icon, category, and enabled state. Enablement is expressed with [when clauses](https://code.visualstudio.com/api/references/when-clause-contexts). By default, commands show in the **Command Palette** (⇧⌘P (Windows, Linux Ctrl+Shift+P)) but they can also show in other [menus](https://code.visualstudio.com/api/references/contribution-points#contributes.menus).
+Contribute the UI for a command consisting of a title and (optionally) an icon, category, and enabled state. Enablement is expressed with [when clauses](https://code.visualstudio.com/api/references/when-clause-contexts). By default, commands show in the **Command Palette** (⇧⌘P (Windows, Linux Shift+cmd+P)) but they can also show in other [menus](https://code.visualstudio.com/api/references/contribution-points#contributes.menus).
 
 Presentation of contributed commands depends on the containing menu. The **Command Palette**, for
 instance, prefixes commands with their `category`, allowing for easy grouping. However, the
@@ -1375,7 +1375,7 @@ Here's a submenu menu item:
 
 ### Context specific visibility of Command Palette menu items
 
-When registering commands in `package.json`, they will automatically be shown in the **Command Palette** (⇧⌘P (Windows, Linux Ctrl+Shift+P)). To allow more control over command visibility, there is the `commandPalette` menu item. It allows you to define a `when` condition to control if a command should be visible in the **Command Palette** or not.
+When registering commands in `package.json`, they will automatically be shown in the **Command Palette** (⇧⌘P (Windows, Linux Shift+cmd+P)). To allow more control over command visibility, there is the `commandPalette` menu item. It allows you to define a `when` condition to control if a command should be visible in the **Command Palette** or not.
 
 The snippet below makes the 'Hello World' command only visible in the **Command Palette** when something is selected in the editor:
 
@@ -2105,4 +2105,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 7/1/2026
+ 7/8/2026

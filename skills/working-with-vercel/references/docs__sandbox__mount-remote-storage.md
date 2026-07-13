@@ -3,7 +3,7 @@ title: Mount remote storage
 product: vercel
 url: /docs/sandbox/mount-remote-storage
 canonical_url: "https://vercel.com/docs/sandbox/mount-remote-storage"
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 type: how-to
 prerequisites:
   - /docs/sandbox
@@ -14,8 +14,8 @@ related:
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "983dc5a34583542cfe0049c08d3a9169372ddb1e3c1627e326f7e3befe414dfc"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "795cb7778845e1e56ffc0538ad3ac699bfa4d30de4cbf6a711911d733e3103b7"
 ---
 
 # Mount remote storage

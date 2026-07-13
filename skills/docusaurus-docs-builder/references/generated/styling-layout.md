@@ -1,15 +1,15 @@
 ---
 title: "Styling and Layout"
 source: "https://docusaurus.io/docs/styling-layout"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "da9399ff738492afd333678ab7d2d1d618f683fee58af201c3f57633dc293905"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "58e92bbf95536bfbde0fba34232865c1858d028a3bdef050da0387f7aeebd287"
 ---
 
 # Styling and Layout
 
 Source: https://docusaurus.io/docs/styling-layout
 
-- GuidesStyling and LayoutVersion: 3.10.1On this page
+- GuidesStyling and LayoutVersion: 3.10.2On this page
 # Styling and Layout
 
 tipThis section is focused on styling through stylesheets. For more advanced customizations (DOM structure, React code...), refer to the swizzling guide.
@@ -203,4 +203,4 @@ To enable TypeScript support for Sass/SCSS modules, the TypeScript configuration
 ```
 {  "extends": "@docusaurus/tsconfig",  "compilerOptions": {    ...+    "types": ["docusaurus-plugin-sass"]  }}
 ```
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

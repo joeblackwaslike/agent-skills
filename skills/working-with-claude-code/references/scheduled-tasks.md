@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/scheduled-tasks.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "1b27199c442b7f8ba27f0061e5789af3d419e844ce23ade7085b7b3e2aa2cc0d"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "11d9153e981d6486951108fa80448ce489bd2fae5bd27e8af44f65fb74439ccb"
 ---
 
 > ## Documentation Index
@@ -137,7 +137,9 @@ Edits to `loop.md` take effect on the next iteration, so you can refine the inst
 
 To stop a `/loop` while it is waiting for the next iteration, press `Esc`. This clears the pending wakeup so the loop does not fire again. Tasks you scheduled by [asking Claude directly](#manage-scheduled-tasks) are not affected by `Esc` and stay in place until you delete them.
 
-In [self-paced mode](#let-claude-choose-the-interval), Claude can also end the loop on its own by not scheduling the next wakeup once the task is provably complete. Loops on a fixed interval keep running until you stop them or [seven days elapse](#seven-day-expiry).
+In [self-paced mode](#let-claude-choose-the-interval), Claude can also end the loop on its own once the task is complete. Claude calls the [`ScheduleWakeup` tool](/en/tools-reference) with `stop: true`, which cancels the pending wakeup immediately. If an iteration ends without either rescheduling or stopping, Claude Code schedules one fallback wakeup about 20 minutes later and ends the loop when that iteration doesn't reschedule either. Before v2.1.202, not rescheduling was the only way Claude could end a loop on its own.
+
+Loops on a fixed interval keep running until you stop them or [seven days elapse](#seven-day-expiry).
 
 ## Set a one-time reminder
 

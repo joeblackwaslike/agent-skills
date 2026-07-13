@@ -2,8 +2,8 @@
 title: "What is DoltHub"
 description: The hosted Git server for Dolt databases — browsing, pull requests, discovery, and a public data catalog.
 source: "https://www.dolthub.com/docs/products/dolthub.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "1ac30285c9bc8ca17553dd6a7355c37f782f84553b7775312991feb8620ef98c"
+fetched_at: "2026-07-13T06:56:02.638Z"
+sha256: "44c34ae36421b653375a606d60f8da1fb5abcadcbba2737a0526fefbd9367714"
 ---
 
 
@@ -23,11 +23,12 @@ This documentation will walk you through discovering data on DoltHub, cloning a 
 
 ## DoltHub API
 
-DoltHub exposes [three independent HTTP APIs](/products/dolthub/api/):
+DoltHub exposes [several independent HTTP APIs](/products/dolthub/api/):
 
-1. [v1alpha1 API](/products/dolthub/api/v1alpha1) — the resource-oriented surface for SQL, databases, branches, pull requests, releases, tags, file uploads, jobs, and the authenticated user.
-2. [CSV](/products/dolthub/api/csv) — bulk export and import of table data as CSV.
-3. [Webhooks](/products/dolthub/api/hooks) — HTTP callbacks for database events like push and pull request.
+1. [v2 API](/products/dolthub/api/v2) — the current generation, an explicit, versioned, OpenAPI-defined contract for SQL, databases, branches, pull requests, releases, tags, file uploads, and the authenticated user. New integrations should start here.
+2. [v1alpha1 API](/products/dolthub/api/v1alpha1) — the original API. Still supported, but new endpoints are being added to v2 only.
+3. [CSV](/products/dolthub/api/csv) — bulk export and import of table data as CSV.
+4. [Webhooks](/products/dolthub/api/hooks) — HTTP callbacks for database events like push and pull request.
 
 ## Guides
 

@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/checks/suites"
-fetched_at: "2026-07-06T05:37:45.074Z"
-sha256: "b7868efc5c5bac1581757d9a403fdadd518f9861db5ba005299321bca1164d47"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "ce74aeb60d5e384b2c05308785e251596b77918ab98f1900e1cfd78c4a0723f8"
 ---
 
 # REST API endpoints for check suites
@@ -12,7 +12,7 @@ Use the REST API to manage check suites.
 > Write permission for the REST API to interact with checks is only available to GitHub Apps. OAuth apps and authenticated users can view check runs and check suites, but they are not able to create them. If you aren't building a GitHub App, you might be interested in using the REST API to interact with [commit statuses](/en/rest/commits#commit-statuses).
 
 > \[!NOTE]
-> A GitHub App usually only receives one [`check_suite`](/en/webhooks-and-events/webhooks/webhook-events-and-payloads#check_suite) event per commit SHA, even if you push the commit SHA to more than one branch. To find out when a commit SHA is pushed to a branch, you can subscribe to branch [`create`](/en/webhooks-and-events/webhooks/webhook-events-and-payloads#create) events.
+> A GitHub App usually only receives one [`check_suite`](/en/webhooks/webhook-events-and-payloads#check_suite) event per commit SHA, even if you push the commit SHA to more than one branch. To find out when a commit SHA is pushed to a branch, you can subscribe to branch [`create`](/en/webhooks/webhook-events-and-payloads#create) events.
 
 > \[!NOTE]
 > Most endpoints use `Authorization: Bearer <YOUR-TOKEN>` and `Accept: application/vnd.github+json` headers, plus `X-GitHub-Api-Version: 2026-03-10`. Curl examples below omit these standard headers for brevity.

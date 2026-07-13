@@ -3,7 +3,7 @@ title: Limits
 product: vercel
 url: /docs/limits
 canonical_url: "https://vercel.com/docs/limits"
-last_updated: 2026-06-16
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "14c4a51830c67186536171b0dd74004219470926cd6188aa47a90b46a8ef5298"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "4662ca013b97fd601157131e5b0b3ae4960324ad2c7d4b83119cfa50d76840d8"
 ---
 
 # Limits
@@ -258,6 +258,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Requests per minute to fetch the microfrontends config for a team. | 30 | 60 | `owner` |
 | Requests per minute to fetch the deployment of the best default app. | 30 | 60 | `owner` |
 | Artifacts requests per minute (Paid). | 10000 | 60 | `owner` |
+| Remote Cache purge requests per minute. | 5 | 60 | `owner` |
 | Project production deployment per minute. | 500 | 60 | `user` |
 | Project expiration updates per minute. | 100 | 60 | `owner` |
 | Project expiration lock requests per minute. | 200 | 60 | `owner` |

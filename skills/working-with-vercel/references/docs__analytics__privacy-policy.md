@@ -3,7 +3,7 @@ title: Privacy and Compliance
 product: vercel
 url: /docs/analytics/privacy-policy
 canonical_url: "https://vercel.com/docs/analytics/privacy-policy"
-last_updated: 2026-03-18
+last_updated: 2026-06-26
 type: reference
 prerequisites:
   - /docs/analytics
@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/privacy-policy.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bac4a4a8de6be962136adc8bc3e1ef0f6eb05c43088a6e2da9afbd0aaa4dc904"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "3f085176f32d53148eed08625b067ff632063a4586f1b2bfd6abd10509d85677"
 ---
 
 # Privacy and Compliance

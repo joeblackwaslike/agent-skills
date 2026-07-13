@@ -1,14 +1,12 @@
 ---
 source: "https://cursor.com/docs/security-agents.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "981fd4e9c54aed3a019ab10bc04af683c03f9769571227de95b63e243e7107a6"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "15eeee21ee5dac6f0ce74d4a28a4aa53174215afb281197ed4038fa796a7012e"
 ---
 
 # Security Agents
 
 Security Agents scan your code for security bugs, risky patterns, and vulnerabilities.
-
-This feature is available only for Teams and Enterprise plans.
 
 ## How it works
 

@@ -3,7 +3,7 @@ title: Sandbox firewall
 product: vercel
 url: /docs/sandbox/concepts/firewall
 canonical_url: "https://vercel.com/docs/sandbox/concepts/firewall"
-last_updated: 2026-05-25
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -14,8 +14,8 @@ related:
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "306b7077a34bbd6f182331142379f049e4f93a1a590f0a484d5d0a4af7de496e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "643101f03fd2e94a7d684a147ce2ad4b9f5073b8e5f6931a3b128911e006312a"
 ---
 
 # Sandbox firewall

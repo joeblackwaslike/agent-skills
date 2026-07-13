@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/account/teams/dashboard.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "9aa3ab1aab174f9eac2235983443f7b9d3d9713761226e4c946f5f4f5e0a243b"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "a7da95add8fc913ef055f2a71dee3f3d74fae6d333264d78c064f5ab8ebb5a4a"
 ---
 
 # Dashboard
@@ -143,9 +143,7 @@ Connect Cursor with your favorite tools and services. Configure integrations wit
 
 ## Cloud Agents
 
-![Cloud agents](/docs-static/images/account/team/integrations.png)
-
-Monitor and manage cloud agents running in your workspace. View agent status, logs, and resource usage.
+Monitor and manage cloud agents running in your workspace. View agent status, logs, and resource usage. See [Cloud Agent settings](https://cursor.com/docs/cloud-agent/settings.md) for configuration details.
 
 ## Bugbot
 

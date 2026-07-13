@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "276241db162297552be4c367d156c5247023f79f4a9903ec778038af612664b8"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "9837ca157ea4b4bffd222d5f3efc767e2f41cadc20bff6de1aefedff41391116"
 ---
 
 # Codex Harness
@@ -17,32 +17,7 @@ Codex thread events back to the host over a sandbox-exposed WebSocket.
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet
-      text="pnpm add @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm install @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="bun add @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel" />
 
 The adapter bootstraps the Codex bridge dependencies inside the sandbox when
 the first session starts.

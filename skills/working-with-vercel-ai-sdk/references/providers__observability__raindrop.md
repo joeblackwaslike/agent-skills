@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/raindrop.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "e563bb30a33fe19e65dd1e7f1852fdac7c9176a5f0091792a1af97ab23694a85"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a5c2e2689d94732441ba46ec57b439f0fcdb93fc75f85bf92974b5a7f61b00c6"
 ---
 
 # Raindrop Observability
@@ -14,20 +14,7 @@ Raindrop supports the AI SDK v7 telemetry interface directly, so you can use `re
 
 Install the Raindrop AI SDK integration:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @raindrop-ai/ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @raindrop-ai/ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @raindrop-ai/ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @raindrop-ai/ai-sdk" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@raindrop-ai/ai-sdk" />
 
 Set your Raindrop write key (create one in the [Raindrop dashboard](https://www.raindrop.ai/)):
 

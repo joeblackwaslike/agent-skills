@@ -3,7 +3,7 @@ title: Observability Insights
 product: vercel
 url: /docs/observability/insights
 canonical_url: "https://vercel.com/docs/observability/insights"
-last_updated: 2026-05-25
+last_updated: 2026-06-26
 type: reference
 prerequisites:
   - /docs/observability
@@ -16,8 +16,8 @@ related:
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e428d0afd66f212cb78a604d65919b94e19aff4923859695919bc1d1a48972e8"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "1e3e3d655ec031b32d79c035ba42006ea1a55ffa577589b0cdb149afb0ce3fbd"
 ---
 
 # Observability Insights

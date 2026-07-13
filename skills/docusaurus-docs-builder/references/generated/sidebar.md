@@ -1,15 +1,15 @@
 ---
 title: "Sidebar"
 source: "https://docusaurus.io/docs/sidebar"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "0b935f91485739595e5651ed9f4cd5f3f65db7ce845b4ca503b2f6d3384d203d"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "3e0332e168314a56eadbcea41d427ed5ee63d7d28ace531a8efadf0f76970538"
 ---
 
 # Sidebar
 
 Source: https://docusaurus.io/docs/sidebar
 
-- GuidesDocsSidebarVersion: 3.10.1On this page
+- GuidesDocsSidebarVersion: 3.10.2On this page
 # Sidebar
 
 Creating a sidebar is useful to:

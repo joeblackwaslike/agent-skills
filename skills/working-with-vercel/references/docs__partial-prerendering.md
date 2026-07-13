@@ -3,7 +3,7 @@ title: Partial Prerendering (PPR)
 product: vercel
 url: /docs/partial-prerendering
 canonical_url: "https://vercel.com/docs/partial-prerendering"
-last_updated: 2026-06-17
+last_updated: 2026-06-23
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d073675ee32759142814bd2add637440824bc93d3e9f00cab41e2fc4da0fb280"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "812a4152bfc6704d5fabf6df07d9461b20bb4d66bebf5413f5787845c807b3e4"
 ---
 
 # Partial Prerendering (PPR)

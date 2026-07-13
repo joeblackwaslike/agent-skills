@@ -3,7 +3,7 @@ title: Provider Options
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-options
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options"
-last_updated: 2026-06-22
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/automatic-caching
+  - /docs/ai-gateway/sdks-and-apis/responses
   - /docs/ai-gateway/models-and-providers/provider-timeouts
   - /docs/ai-gateway/models-and-providers/model-fallbacks
-  - /docs/ai-gateway/authentication-and-byok/byok
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "64a22b689e87f56e3abff3b8e59512073534bd214ec2692cb1b505c40d3f77c3"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "e80afc50028ec7d07141f2f0a00bdbe5cea75f189e2a206360eba13de2ecbab3"
 ---
 
 # Provider Options
@@ -70,6 +70,13 @@ providerOptions: {
 ```
 
 For full details, supported providers, and examples across all APIs, see [Automatic Caching](/docs/ai-gateway/models-and-providers/automatic-caching).
+
+Clients on the [Responses API](/docs/ai-gateway/sdks-and-apis/responses) can also set these top-level request fields:
+
+- `cache_anchor_items` pins a cache marker at a known-stable prefix position. See [Cache anchor](/docs/ai-gateway/models-and-providers/automatic-caching#cache-anchor).
+- `cache_ttl` selects a five-minute or one-hour cache lifetime. See [Cache lifetime](/docs/ai-gateway/models-and-providers/automatic-caching#cache-lifetime).
+
+These fields belong at the top level of the Responses API request, not inside `providerOptions.gateway`.
 
 ## Provider timeouts
 
@@ -189,55 +196,6 @@ You can view the available models for a provider
 in the [**Model List**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fmodels\&title=Go+to+Model+List) section under
 the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in your Vercel dashboard sidebar
 or in the public [models page](https://vercel.com/ai-gateway/models).
-
-| **Slug**     | **Name**          | **Website**                                                      |
-| ------------ | ----------------- | ---------------------------------------------------------------- |
-| `alibaba`    | Alibaba Cloud     | [alibabacloud.com](https://www.alibabacloud.com)                 |
-| `anthropic`  | Anthropic         | [anthropic.com](https://anthropic.com)                           |
-| `arcee-ai`   | Arcee AI          | [arcee.ai](https://arcee.ai)                                     |
-| `azure`      | Azure             | [ai.azure.com](https://ai.azure.com/)                            |
-| `baseten`    | Baseten           | [baseten.co](https://www.baseten.co/)                            |
-| `bedrock`    | Amazon Bedrock    | [aws.amazon.com/bedrock](https://aws.amazon.com/bedrock)         |
-| `bfl`        | Black Forest Labs | [bfl.ai](https://bfl.ai/)                                        |
-| `blackbox`   | Blackbox          | [blackbox.ai](https://www.blackbox.ai)                           |
-| `bytedance`  | ByteDance         | [byteplus.com](https://www.byteplus.com/en)                      |
-| `cerebras`   | Cerebras          | [cerebras.net](https://www.cerebras.net)                         |
-| `claudeaws`  | Claude Platform on AWS | [aws.amazon.com/claude-platform](https://aws.amazon.com/claude-platform/) |
-| `cohere`     | Cohere            | [cohere.com](https://cohere.com)                                 |
-| `crusoe`     | Crusoe            | [crusoe.ai](https://crusoe.ai)                                   |
-| `deepinfra`  | DeepInfra         | [deepinfra.com](https://deepinfra.com)                           |
-| `deepseek`   | DeepSeek          | [deepseek.ai](https://deepseek.ai)                               |
-| `fireworks`  | Fireworks         | [fireworks.ai](https://fireworks.ai)                             |
-| `google`     | Google            | [ai.google.dev](https://ai.google.dev/)                          |
-| `groq`       | Groq              | [groq.com](https://groq.com)                                     |
-| `inception`  | Inception         | [inceptionlabs.ai](https://inceptionlabs.ai)                     |
-| `inceptron`  | Inceptron         | [inceptron.io](https://inceptron.io)                             |
-| `interfaze`  | Interfaze         | [interfaze.ai](https://interfaze.ai)                             |
-| `klingai`    | Kling AI          | [klingai.com/](http://klingai.com/)                              |
-| `meituan`    | Meituan           | [longcat.ai](https://longcat.ai/)                                |
-| `minimax`    | MiniMax           | [minimax.io](https://www.minimax.io/)                            |
-| `mistral`    | Mistral           | [mistral.ai](https://mistral.ai)                                 |
-| `moonshotai` | Moonshot AI       | [moonshot.ai](https://www.moonshot.ai)                           |
-| `morph`      | Morph             | [morphllm.com](https://morphllm.com)                             |
-| `nebius`     | Nebius            | [nebius.com](https://nebius.com)                                 |
-| `novita`     | Novita            | [novita.ai](https://novita.ai/)                                  |
-| `openai`     | OpenAI            | [openai.com](https://openai.com)                                 |
-| `parasail`   | Parasail          | [parasail.io](https://www.parasail.io)                           |
-| `perplexity` | Perplexity        | [perplexity.ai](https://www.perplexity.ai)                       |
-| `prodia`     | Prodia            | [prodia.com](https://www.prodia.com)                             |
-| `quiverai`   | QuiverAI          | [quiver.ai](https://quiver.ai)                                   |
-| `recraft`    | Recraft           | [recraft.ai](https://www.recraft.ai)                             |
-| `sakana`     | Sakana AI         | [sakana.ai](https://sakana.ai)                                   |
-| `sambanova`  | SambaNova         | [sambanova.ai](https://sambanova.ai/)                            |
-| `stepfun`    | StepFun           | [platform.stepfun.ai](https://platform.stepfun.ai)               |
-| `streamlake` | StreamLake        | [streamlake.ai](https://streamlake.ai/)                          |
-| `togetherai` | Together AI       | [together.ai](https://together.ai/)                              |
-| `vertex`     | Vertex AI         | [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai) |
-| `voyage`     | Voyage AI         | [voyageai.com](https://www.voyageai.com)                         |
-| `wafer`      | Wafer             | [wafer.ai](https://wafer.ai/)                                    |
-| `xiaomi`     | Xiaomi            | [mimo.xiaomi.com](https://mimo.xiaomi.com)                       |
-| `xai`        | xAI               | [x.ai](https://x.ai)                                             |
-| `zai`        | Z.ai              | [z.ai](https://z.ai/model-api)                                   |
 
 > **💡 Note:** Provider availability may vary by model. Some models may only be available
 > through specific providers or may have different capabilities depending on the

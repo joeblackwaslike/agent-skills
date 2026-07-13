@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/reference/slash-commands.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "8556d27e708c15f267bf281759138dab660e7ee57ed6b0b507b860acd7bfa7c1"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "ef78befcdfb6a2ce7780cadb93ea3d384c4e5b933db6fae8b130a6ba6e9d8548"
 ---
 
 # Slash commands
@@ -21,7 +21,6 @@ sha256: "8556d27e708c15f267bf281759138dab660e7ee57ed6b0b507b860acd7bfa7c1"
 | `/resume`                              | Open recent chats and resume one                                                                                       |
 | `/fork`                                | Fork the current chat into a new session                                                                               |
 | `/summarize`                           | Summarize the conversation to reduce context. `/compress` is an alias.                                                 |
-| `/context`                             | Show what's consuming the context window, broken down by category                                                      |
 | `/rewind`                              | Jump back to a previous message                                                                                        |
 | `/vim`                                 | Toggle Vim keys                                                                                                        |
 | `/line-numbers`                        | Toggle line numbers in code blocks                                                                                     |

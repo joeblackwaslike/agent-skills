@@ -1,10 +1,10 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/self-hosted-pool.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "d9fbbacee9beda8324e3057336a8563ed984becd76139a913f9a1026ccd82b91"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "88a3b859e50d127cf8f50e8df449a4c2eaaa2509a97d07a710fb571bb31a1a34"
 ---
 
-# Self-Hosted Pool
+# Self-Hosted Agents
 
 Self-Hosted Pool is for Enterprise teams that want Cloud Agents to run inside company-managed infrastructure. Instead of each developer starting a worker on a personal machine, admins operate a pool of workers that can be assigned to agents across the organization.
 

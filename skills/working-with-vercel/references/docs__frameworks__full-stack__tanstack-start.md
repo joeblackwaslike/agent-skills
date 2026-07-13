@@ -14,8 +14,8 @@ related:
 summary: "Learn how to use Vercel's features with TanStack Start."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ead5418a00849c2fe3a17b2e5e42310de88e0a8be3f0f600c6cc18e09f332104"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "67e92423925b95c0acc844f8b9f89cf974c7f1bcf40c0ef04166cc3a5788dc5d"
 ---
 
 # TanStack Start on Vercel
@@ -71,6 +71,19 @@ export default defineConfig({
 ### Vercel Functions
 
 TanStack Start apps on Vercel benefit from the advantages of [Vercel Functions](/docs/functions) and use [Fluid Compute](/docs/fluid-compute) by default. This means your TanStack Start app will automatically scale up and down based on traffic.
+
+## Lovable
+
+[Lovable](https://lovable.dev) projects use TanStack Start as their underlying framework, so they deploy to Vercel with zero configuration. Lovable uses [Nitro](https://v3.nitro.build/), the same universal server toolkit that powers TanStack Start on Vercel, so no manual build configuration is required.
+
+To deploy a Lovable project to Vercel:
+
+1. Sync your Lovable project to GitHub. See the [Lovable GitHub integration docs](https://docs.lovable.dev/integrations/github) for setup.
+2. Import the repository from [vercel.com/new](https://vercel.com/new). Vercel detects the framework and deploys the project automatically.
+
+Once connected, every change you make in Lovable syncs to GitHub and triggers a new deployment on Vercel.
+
+> **💡 Note:** Zero-configuration detection requires `@lovable.dev/vite-tanstack-config` version `^2.6.2` or higher in your project. If your project uses an older version, update it before deploying.
 
 ## More resources
 

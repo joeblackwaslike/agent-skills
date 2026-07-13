@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/glossary.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "ff42daf04ec3f4f82c545d841c0af8fcbeeefbce6cc26664647df6a9e0b25e9c"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "d9c1b41f8368b3d483b44ab58cdffc5caa234e535ca534ec5fd570d757e39428"
 ---
 
 > ## Documentation Index
@@ -54,7 +54,7 @@ Learn more: [Auto memory](/en/memory#auto-memory)
 
 ### Auto mode
 
-A [permission mode](#permission-mode) where a separate classifier model reviews actions in the background, so most run without approval prompts; explicit ask rules still prompt. The classifier blocks scope escalation, untrusted infrastructure, and [prompt injection](#prompt-injection). It never sees tool results, so injected instructions cannot influence its decisions. Auto mode is a research preview.
+A [permission mode](#permission-mode) where a separate classifier model reviews actions in the background, so most run without approval prompts; explicit ask rules still prompt. The classifier blocks scope escalation, untrusted infrastructure, and [prompt injection](#prompt-injection). It never sees tool results, so injected instructions cannot influence its decisions.
 
 Learn more: [Eliminate prompts with auto mode](/en/permission-modes#eliminate-prompts-with-auto-mode)
 

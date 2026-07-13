@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "bcb7887ade4df56675b9c6d6645729fbf44cfed4894c709c5e68128054aa95ab"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "15393bcee4d1ba1ba0e18011aa816183a15d8a71137f65b6441608883bdea04b"
 ---
 
 # Claude Platform on AWS Provider
@@ -14,20 +14,7 @@ This differs from [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock) i
 
 The Claude Platform on AWS provider is available in the `@ai-sdk/anthropic-aws` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/anthropic-aws" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/anthropic-aws" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/anthropic-aws" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ai-sdk/anthropic-aws" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/anthropic-aws" />
 
 ### Prerequisites
 

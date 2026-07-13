@@ -3,7 +3,7 @@ title: Project Level Roles
 product: vercel
 url: /docs/rbac/access-roles/project-level-roles
 canonical_url: "https://vercel.com/docs/rbac/access-roles/project-level-roles"
-last_updated: 2025-10-10
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/rbac/access-roles
@@ -13,8 +13,8 @@ related:
 summary: Learn about the project level roles and their permissions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/project-level-roles.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "59da85c95bb632c560eb06dce5f9ae16b6b522349631b43a44ff2c5e0fe4f450"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "7b6d71c58edb177bdf2b6d129f7f36dc9cdd16377dc6324c429e907fbec10153"
 ---
 
 # Project Level Roles

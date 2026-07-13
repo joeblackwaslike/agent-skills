@@ -3,7 +3,7 @@ title: Configuring a Build
 product: vercel
 url: /docs/builds/configure-a-build
 canonical_url: "https://vercel.com/docs/builds/configure-a-build"
-last_updated: 2026-06-09
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "c1404becc11c617197816c7767986d23283b3c7a6b5897e8d321c241d88dc2f5"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a565b9dedbbe0261cdb3375b202aaaa464f892b004f5857f9f8297cb78e2c47b"
 ---
 
 # Configuring a Build
@@ -159,6 +159,8 @@ Inside the Framework Preset settings, use the drop-down menu to select the frame
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/sveltekit-1) | [View Demo](https://sveltekit-1-template.vercel.app)
 - **TanStack Start**: Full-stack Framework powered by TanStack Router for React and Solid.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/tanstack-start)
+- **TanStack Start**: Full-stack Framework powered by TanStack Router imported from Lovable
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/tanstack-start-lovable)
 - **UmiJS**: UmiJS is an extensible enterprise-level React application framework.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/umijs) | [View Demo](https://umijs-template.vercel.app)
 - **Vite**: Vite is a new breed of frontend build tool that significantly improves the frontend development experience.

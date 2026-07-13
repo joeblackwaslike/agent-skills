@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/qwen.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "e42e7a8b28b58558eff0770592ba8fce38885168db326adf92725ab83cd59032"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "971a58507c2ceb830fa82a22ea05d0f9f327474e106de01cdc3b03c905755ca1"
 ---
 
 # Qwen Provider
@@ -18,21 +18,7 @@ sha256: "e42e7a8b28b58558eff0770592ba8fce38885168db326adf92725ab83cd59032"
 
 The Qwen provider is available in the `qwen-ai-provider` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add qwen-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install qwen-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add qwen-ai-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add qwen-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="qwen-ai-provider" />
 
 ## Provider Instance
 
@@ -105,14 +91,14 @@ Qwen language models can also be used in the `streamText` function and support s
 
 ### Model Capabilities
 
-| Model                     | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `qwen-vl-max`             | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `qwen-plus-latest`        | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `qwen-max`                | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `qwen2.5-72b-instruct`    | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `qwen2.5-14b-instruct-1m` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `qwen2.5-vl-72b-instruct` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                     | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `qwen-vl-max`             | <Check />   | <Check />         | <Check />  | <Check />      |
+| `qwen-plus-latest`        | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `qwen-max`                | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `qwen2.5-72b-instruct`    | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `qwen2.5-14b-instruct-1m` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `qwen2.5-vl-72b-instruct` | <Check />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   The table above lists popular models. Please see the [Qwen

@@ -3,33 +3,112 @@ title: Automatic Caching
 product: vercel
 url: /docs/ai-gateway/models-and-providers/automatic-caching
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching"
-last_updated: 2026-03-16
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/sdks-and-apis/responses
   - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 summary: Enable automatic prompt caching across providers with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3ede4276f65c99b8cab5cdd79e2ec1b72331cce3774b2a15ce725e492525b5f7"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "f109382d31a1b8a2170089aaad1d869e37993bb99ffdeca844c3d11fc7eff559"
 ---
 
 # Automatic Caching
 
 Some providers like Anthropic and MiniMax require explicit cache control markers to enable prompt caching, while others like OpenAI, Google, and DeepSeek cache automatically (sometimes called "implicit caching"). Use `caching: 'auto'` to let AI Gateway handle this for you. It applies the appropriate caching strategy based on the provider.
 
+> **💡 Note:** **Supported providers:** Automatic caching works with Anthropic (direct,
+> Vertex, and Bedrock) and MiniMax.
+
 ## How it works
 
-When you set `caching: 'auto'` and the request routes to a provider that requires explicit cache markers (Anthropic or MiniMax), AI Gateway adds a `cache_control` breakpoint at the end of your static content. For providers with implicit caching (OpenAI, Google, DeepSeek), no modification is needed and caching works automatically.
+When you set `caching: 'auto'` and the request routes to a provider that requires explicit cache markers, AI Gateway adds `cache_control` breakpoints to your messages. This covers Anthropic and MiniMax, which serves an Anthropic-compatible API and uses the same `cache_control` format. For providers with implicit caching (OpenAI, Google, DeepSeek), no modification is needed and caching works automatically.
+
+For explicit-caching providers, AI Gateway places markers at two positions:
+
+- **On the last message.** Each request writes a cache entry covering the full prompt, and the next request in the conversation reads that entry as a prefix, paying full price only for what it appends. Multi-turn and agentic traffic caches well because of this marker: tool-use loops and agent conversations extend the previous request instead of repeating a static prefix.
+- **On the message before the last user message** (falling back to the system message). A request whose tail changed still reads the cache up to this stable prefix.
+
+You can add a third marker with a cache anchor (see below).
 
 **Default behavior**: When `caching` is not set, AI Gateway passes your request through without modification. Providers with implicit caching still cache automatically. For Anthropic, you'll need to set `caching: 'auto'` or manually add cache markers to your messages.
 
-> **💡 Note:** **Supported providers:** Automatic caching works with Anthropic (direct,
-> Vertex, and Bedrock) and MiniMax.
+### Cache lifetime
+
+Anthropic cache entries expire after five minutes by default. If your agentic workflow pauses for longer than five minutes, you can request a one-hour lifetime with the `cache_ttl` field on the [Responses API](/docs/ai-gateway/sdks-and-apis/responses):
+
+```typescript
+body: JSON.stringify({
+  model: 'anthropic/claude-sonnet-4.6',
+  caching: 'auto',
+  cache_ttl: '1h',
+  input: 'Review this codebase and suggest improvements.',
+}),
+```
+
+The field accepts `5m` (five minutes) or `1h` (one hour). AI Gateway applies the selected lifetime to every automatic breakpoint, including a breakpoint created by `cache_anchor_items`. The field has no effect unless you also set `caching: 'auto'`.
+
+Anthropic charges different cache-write rates for each lifetime:
+
+| `cache_ttl` value | Lifetime     | Cache write price | Cache read price |
+| ----------------- | ------------ | ----------------- | ---------------- |
+| Omitted or `5m`   | Five minutes | 1.25× base input  | 0.1× base input  |
+| `1h`              | One hour     | 2× base input     | 0.1× base input  |
+
+A one-hour entry costs an additional 0.75× base input to write. One read after the five-minute entry would have expired saves 0.9× base input and repays that premium. Use one hour for long-running agents and conversations that commonly pause for more than five minutes. Keep the five-minute default when requests normally continue within five minutes.
+
+`cache_ttl` is advisory. AI Gateway uses the default lifetime for unsupported values and never rejects the request because of the hint. The response includes an `unsupported` warning in `provider_metadata.gateway.warnings`:
+
+```json
+{
+  "provider_metadata": {
+    "gateway": {
+      "warnings": [
+        {
+          "type": "unsupported",
+          "feature": "cache_ttl",
+          "details": "Unsupported cache_ttl; the default cache lifetime was used."
+        }
+      ]
+    }
+  }
+}
+```
+
+For streaming requests, the warning appears on the terminal `response.completed` or `response.incomplete` event.
+
+### Cache anchor
+
+The two default markers assume the conversation only grows at the tail. Agentic clients often rewrite the middle of the prompt instead: summarizing older turns, pruning tool output, or compacting history. When that happens, both default markers land after the mutation point and the cache read misses everything.
+
+If your client knows how much of the prompt is stable, it can say so with the `cache_anchor_items` field on the [Responses API](/docs/ai-gateway/sdks-and-apis/responses):
+
+```typescript
+body: JSON.stringify({
+  model: 'anthropic/claude-sonnet-4.6',
+  caching: 'auto',
+  cache_anchor_items: 12,
+  input: [
+    /* the first 12 input items are byte-stable across future requests */
+  ],
+}),
+```
+
+`cache_anchor_items: N` declares that the first `N` items of `input` will be sent byte-for-byte identically on future requests. AI Gateway places an additional cache marker at that position, so a request that later mutates the prompt *after* the anchor still reads the cache up to it.
+
+The anchor is advisory. Values that can't be used (not a positive integer, past the end of the prompt, or colliding with a marker that's already placed) are ignored, and caching degrades to the two-marker behavior above. An unusable anchor never causes a request to fail.
+
+The anchor only applies when `caching: 'auto'` is set, and like the other markers it only modifies requests to explicit-caching providers.
+
+## Cost tradeoff
+
+On Anthropic, cache writes cost 1.25× the base input rate and cache reads cost 0.1×. The break-even is a single read: one follow-up request that reuses the cached prompt saves 0.9× per token read, more than offsetting the 0.25× write premium. Multi-turn conversations, agents, and tool-use loops re-read everything the previous turn wrote on every turn, so they come out well ahead. For true one-shot requests, where no follow-up ever reads the cache entry, the write premium is a small net cost. If your traffic is strictly one-shot, prefer manual cache markers (or no caching) over `caching: 'auto'`.
 
 > **💡 Note:** To restrict routing to only models that cache automatically (implicit
 > caching), use `has: ['implicit-caching']`. See [Model
@@ -237,10 +316,10 @@ For fine-grained control over what gets cached, you can manually add cache marke
 | OpenAI                  | Implicit     | No change needed. Caching happens automatically.  |
 | Google                  | Implicit     | No change needed. Caching happens automatically.  |
 | DeepSeek                | Implicit     | No change needed. Caching happens automatically.  |
-| Anthropic               | Explicit     | Adds `cache_control` breakpoint to static content |
-| Anthropic (via Vertex)  | Explicit     | Adds `cache_control` breakpoint to static content |
-| Anthropic (via Bedrock) | Explicit     | Adds `cache_control` breakpoint to static content |
-| MiniMax                 | Explicit     | Adds cache markers to static content              |
+| Anthropic               | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
+| Anthropic (via Vertex)  | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
+| Anthropic (via Bedrock) | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
+| MiniMax                 | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
 
 
 ---

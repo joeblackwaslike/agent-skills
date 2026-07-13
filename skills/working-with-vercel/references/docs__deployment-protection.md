@@ -3,7 +3,7 @@ title: Deployment Protection on Vercel
 product: vercel
 url: /docs/deployment-protection
 canonical_url: "https://vercel.com/docs/deployment-protection"
-last_updated: 2026-06-16
+last_updated: 2026-06-26
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "06e4114054ee96f61bc298cd99db2fcb006fb78455d8dc07f20fed4b3ef52dfc"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c453783f4b3a781810843b448e92c331dec686478647576a2e196960767e5fa8"
 ---
 
 # Deployment Protection on Vercel

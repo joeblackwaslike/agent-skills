@@ -3,7 +3,7 @@ title: Feature Flag Configuration
 product: vercel
 url: /docs/flags/vercel-flags/dashboard/feature-flag
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag"
-last_updated: 2026-05-11
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/dashboard
@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure individual feature flags in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e0fbbe7bb9a2977241ba6c6cbaf51cb61aea062377787f22b96d77776c01aa7c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "457faf31b7bf100e8ca6b7aa34632142c1e0529539577d4a642b63b851a8cb0f"
 ---
 
 # Feature Flag Configuration

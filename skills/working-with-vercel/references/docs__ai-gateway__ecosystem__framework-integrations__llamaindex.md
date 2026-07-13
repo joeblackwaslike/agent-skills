@@ -3,7 +3,7 @@ title: LlamaIndex
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/llamaindex
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "6a64d6108d547d8bc4a67883db298dced033471d7873113e5a146b58ced80ade"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "89605d8cffcba621ca06a12817e57f21061694e5151692c28f0085946e6de04f"
 ---
 
 # LlamaIndex

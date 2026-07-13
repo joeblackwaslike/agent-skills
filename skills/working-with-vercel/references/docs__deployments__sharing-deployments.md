@@ -3,7 +3,7 @@ title: Sharing a Preview Deployment
 product: vercel
 url: /docs/deployments/sharing-deployments
 canonical_url: "https://vercel.com/docs/deployments/sharing-deployments"
-last_updated: 2025-09-24
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2e2706d2822970f8a69045b7705d394b4ccaa9f9392e99574fba2750f01eb973"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "16e8301c030c3c95549125aff678673fcf2c7f895f75c384d49ee0e2445b5d0e"
 ---
 
 # Sharing a Preview Deployment

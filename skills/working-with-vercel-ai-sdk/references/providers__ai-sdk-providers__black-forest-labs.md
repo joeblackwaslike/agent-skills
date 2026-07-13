@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d878c873eb7504d68c35fcac96e21f5f099422e26af032ee5b55929fd94418e7"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "428b8cfafd1b19f8d77746a6122559229eae39050eb0fb028c42fb8f3f9c7742"
 ---
 
 # Black Forest Labs Provider
@@ -12,21 +12,7 @@ sha256: "d878c873eb7504d68c35fcac96e21f5f099422e26af032ee5b55929fd94418e7"
 
 The Black Forest Labs provider is available via the `@ai-sdk/black-forest-labs` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/black-forest-labs" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/black-forest-labs" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/black-forest-labs" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/black-forest-labs" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/black-forest-labs" />
 
 ## Provider Instance
 

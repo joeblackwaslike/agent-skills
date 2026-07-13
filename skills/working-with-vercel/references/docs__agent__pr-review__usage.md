@@ -3,7 +3,7 @@ title: Managing Code Reviews
 product: vercel
 url: /docs/agent/pr-review/usage
 canonical_url: "https://vercel.com/docs/agent/pr-review/usage"
-last_updated: 2026-02-26
+last_updated: 2026-06-26
 type: integration
 prerequisites:
   - /docs/agent/pr-review
@@ -14,8 +14,8 @@ related:
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b30674ebf3c55bad4fbd6acb1eaef7eff994a040f4427800a9634294b6413fbc"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "6605d8874e3caa95824c6ede5c53b239b40cf70bd5f35e63017424d3c7395b8d"
 ---
 
 # Managing Code Reviews

@@ -3,7 +3,7 @@ title: Services
 product: vercel
 url: /docs/services
 canonical_url: "https://vercel.com/docs/services"
-last_updated: 2026-06-16
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "5caed59178d68be0c7df4606e19f2c3b33e2706b9a24b8e5d9b2e8da1b4f8842"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "019568f644ca40cb7ec5ccd5b8cf231992754a2dad6c6c84fa50c922e66352da"
 ---
 
 # Services

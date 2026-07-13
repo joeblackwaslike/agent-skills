@@ -3,7 +3,7 @@ title: Using the Node.js Runtime with Vercel Functions
 product: vercel
 url: /docs/functions/runtimes/node-js
 canonical_url: "https://vercel.com/docs/functions/runtimes/node-js"
-last_updated: 2026-05-19
+last_updated: 2026-06-25
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ead7f9884254a4aacf9ec3e26227ff057955c6ef3ea0bcd2dc2727fcfcbce47e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "da80dc84e0b3c06d45e26e164b83835bfa547d460e3b0424a934616553cac05e"
 ---
 
 # Using the Node.js Runtime with Vercel Functions

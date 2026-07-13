@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/guides/scripting-with-the-rest-api-and-javascript.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "bfa64c37ad3a4fda24cac7af474b3187a9a3e92aa5df10e72454abc653617888"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "aee71e0535f42390d4b0bd78aa2f902b601e9184c0cfd55447f3f04d44a04269"
 ---
 
 ## About Octokit.js
@@ -10,7 +10,7 @@ If you want to write a script using JavaScript to interact with {% data variable
 
 ## Prerequisites
 
-This guide assumes that you are familiar with JavaScript and the {% data variables.product.company_short %} REST API. For more information about the REST API, see [AUTOTITLE](/rest/guides/getting-started-with-the-rest-api).
+This guide assumes that you are familiar with JavaScript and the {% data variables.product.company_short %} REST API. For more information about the REST API, see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api).
 
 You must install and import `octokit` in order to use the Octokit.js library. This guide uses import statements in accordance with ES6. For more information about different installation and import methods, see [the Octokit.js README's Usage section](https://github.com/octokit/octokit.js/#usage).
 
@@ -19,17 +19,17 @@ You must install and import `octokit` in order to use the Octokit.js library. Th
 > [!WARNING]
 > Treat your authentication credentials like a password.
 >
-> To keep your credentials secure, you can store your credentials as a secret and run your script through {% data variables.product.prodname_actions %}. For more information, see [AUTOTITLE](/actions/security-guides/encrypted-secrets).
+> To keep your credentials secure, you can store your credentials as a secret and run your script through {% data variables.product.prodname_actions %}. For more information, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 {% ifversion ghec or fpt %}
 >
-> You can also store your credentials as a {% data variables.product.prodname_codespaces %} secret and run your script in {% data variables.product.prodname_codespaces %}. For more information, see [AUTOTITLE](/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces).
+> You can also store your credentials as a {% data variables.product.prodname_codespaces %} secret and run your script in {% data variables.product.prodname_codespaces %}. For more information, see [AUTOTITLE](/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces).
 {% endif %}
 >
 > If {% ifversion ghec or fpt %}these options are not possible{% else %}this is not possible{% endif %}, consider using another CLI service to store your credentials securely.
 
 ### Authenticating with a {% data variables.product.pat_generic %}
 
-If you want to use the {% data variables.product.company_short %} REST API for personal use, you can create a {% data variables.product.pat_generic %}. For more information about creating a {% data variables.product.pat_generic %}, see [AUTOTITLE](/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+If you want to use the {% data variables.product.company_short %} REST API for personal use, you can create a {% data variables.product.pat_generic %}. For more information about creating a {% data variables.product.pat_generic %}, see [AUTOTITLE](/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
 First, import `Octokit` from `octokit`. Then, pass your {% data variables.product.pat_generic %} when you create an instance of `Octokit`. In the following example, replace `YOUR-TOKEN` with a reference to your {% data variables.product.pat_generic %}.{% ifversion ghes %} Replace `HOSTNAME` with the name of {% data variables.location.product_location %}.{% endif %}
 
@@ -44,7 +44,7 @@ const octokit = new Octokit({ {% ifversion ghes %}
 
 ### Authenticating with a {% data variables.product.prodname_github_app %}
 
-If you want to use the API on behalf of an organization or another user, {% data variables.product.company_short %} recommends that you use a {% data variables.product.prodname_github_app %}. If an endpoint is available to {% data variables.product.prodname_github_apps %}, the REST reference documentation for that endpoint will indicate what type of {% data variables.product.prodname_github_app %} token is required. For more information, see [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/creating-a-github-app) and [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/about-authentication-with-a-github-app).
+If you want to use the API on behalf of an organization or another user, {% data variables.product.company_short %} recommends that you use a {% data variables.product.prodname_github_app %}. If an endpoint is available to {% data variables.product.prodname_github_apps %}, the REST reference documentation for that endpoint will indicate what type of {% data variables.product.prodname_github_app %} token is required. For more information, see [AUTOTITLE](/apps/creating-github-apps/registering-a-github-app/registering-a-github-app) and [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/about-authentication-with-a-github-app).
 
 Instead of importing `Octokit` from `octokit`, import `App`. In the following example, replace `APP_ID` with a reference to your app's ID. Replace `PRIVATE_KEY` with a reference to your app's private key. Replace `INSTALLATION_ID` with the ID of the installation of your app that you want to authenticate on behalf of. You can find your app's ID and generate a private key on the settings page for your app. For more information, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/managing-private-keys-for-github-apps). You can get an installation ID with the `GET /users/{username}/installation`, `GET /repos/{owner}/{repo}/installation`, or `GET /orgs/{org}/installation` endpoints. For more information, see [AUTOTITLE](/rest/apps/apps).{% ifversion ghes %} Replace `HOSTNAME` with the name of {% data variables.location.product_location %}.{% endif %}
 
@@ -66,7 +66,7 @@ const octokit = await app.getInstallationOctokit(INSTALLATION_ID);
 
 If you want to use the API in a {% data variables.product.prodname_actions %} workflow, {% data variables.product.company_short %} recommends that you authenticate with the built-in `GITHUB_TOKEN` instead of creating a token. You can grant permissions to the `GITHUB_TOKEN` with the `permissions` key. For more information about `GITHUB_TOKEN`, see [AUTOTITLE](/actions/concepts/security/github_token).
 
-If your workflow needs to access resources outside of the workflow's repository, then you will not be able to use `GITHUB_TOKEN`. In that case, store your credentials as a secret and replace `GITHUB_TOKEN` in the examples below with the name of your secret. For more information about secrets, see [AUTOTITLE](/actions/security-guides/encrypted-secrets).
+If your workflow needs to access resources outside of the workflow's repository, then you will not be able to use `GITHUB_TOKEN`. In that case, store your credentials as a secret and replace `GITHUB_TOKEN` in the examples below with the name of your secret. For more information about secrets, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 
 If you use the `run` keyword to execute your JavaScript script in your {% data variables.product.prodname_actions %} workflows, you can store the value of `GITHUB_TOKEN` as an environment variable. Your script can access the environment variable as `process.env.VARIABLE_NAME`.
 
@@ -222,7 +222,7 @@ const iterator = octokit.paginate.iterator(octokit.rest.issues.listForRepo, {
 });
 ```
 
-For more information about pagination, see [AUTOTITLE](/rest/guides/using-pagination-in-the-rest-api).
+For more information about pagination, see [AUTOTITLE](/rest/using-the-rest-api/using-pagination-in-the-rest-api).
 
 ## Catching errors
 

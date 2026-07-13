@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/agent/agents-window.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "aaf48e56abb073ca29024d0720479b70ff5bca6e860757ce2439841b7f5a4d3b"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "e9dba4de79bf5dd69f8c7ce6ddbd553fe175f72b34a38f5758b99e63b9c31af3"
 ---
 
 # Agents Window
@@ -16,11 +16,11 @@ If you're in the editor, type Cmd+Shift+P → Open Agents Window to open the Age
 
 ![Command Palette showing the Open Agents Window command](/docs-static/images/agent/open-agents-window-final.png)
 
-## Switch Back to the Editor
+## Switch Back to the IDE
 
-To return to the classic Cursor editor, type Cmd+Shift+P → Open Editor Window. This opens the current workspace in the editor.
+To return to the classic Cursor IDE, type Cmd+Shift+P → Open IDE. This opens the current workspace in the editor.
 
-![Actions menu showing the Open Editor Window command](/docs-static/images/agent/open-editor-window-final.png)
+![Actions menu showing the Open IDE command](/docs-static/images/agent/open-editor-window-final.png)
 
 If you want to view or edit files without leaving the Agents Window, you can type Cmd+P to search files, or Cmd+Shift+F to search all files.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/aihubmix.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "2508f8ae1a04c07b5570e904ef884e78f873da880be077a6a44a322191bdb67a"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "78a790af67b3482cea6db031eb83ee5a1a65a00d48780edada14ea0f3f7b10fe"
 ---
 
 # Aihubmix Provider
@@ -12,17 +12,7 @@ The [Aihubmix](https://aihubmix.com/) provider contains unified access to multip
 
 The Aihubmix provider is available in the `@aihubmix/ai-sdk-provider` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-    <Snippet text="pnpm add @aihubmix/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @aihubmix/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @aihubmix/ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@aihubmix/ai-sdk-provider" />
 
 ## Provider Instance
 

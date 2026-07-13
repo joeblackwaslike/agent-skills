@@ -3,7 +3,7 @@ title: Managing Domain Renewals and Redemptions
 product: vercel
 url: /docs/domains/working-with-domains/renew-a-domain
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain"
-last_updated: 2026-02-26
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a07261b46ed47e6a2718e58803dbc92f77c32d573142abe70fc91a00cc89fbcc"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c1430a8e072cc3e50aeeb0bc9a3bb778c3c755407e5c5de66c4720aa705fb131"
 ---
 
 # Managing Domain Renewals and Redemptions

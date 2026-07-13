@@ -1,15 +1,15 @@
 ---
 title: "Classic Theme"
 source: "https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "f12df121d84a82e0400ec75e2d888536fa8e34bb5b431dff2d6a02aec3ece0c2"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "2d280a49aed57e0aaa830065d597fd9375434ed6560cdc811a9897ca141eac4c"
 ---
 
 # Classic Theme
 
 Source: https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic
 
-Themes📦 theme-classicVersion: 3.10.1On this page
+Themes📦 theme-classicVersion: 3.10.2On this page
 # 📦 theme-classic
 
 The classic theme for Docusaurus.
@@ -56,4 +56,4 @@ If you are using a standalone plugin, provide options directly to the plugin:doc
 ```
 module.exports = {  plugins: [    [      '@docusaurus/theme-classic',      {        customCss: './src/css/custom.css',      },    ],  ],};
 ```
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

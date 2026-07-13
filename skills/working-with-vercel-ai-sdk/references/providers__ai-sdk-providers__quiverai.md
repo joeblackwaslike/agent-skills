@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "701936ece8bf2b85ab09b461e74791ed3aac72325624b866883c2b12ea5e13ee"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "df255502996c248b1caa35f50167479a47a0e3894cbf181eecba2ffddedf30bd"
 ---
 
 # QuiverAI Provider
@@ -12,21 +12,7 @@ sha256: "701936ece8bf2b85ab09b461e74791ed3aac72325624b866883c2b12ea5e13ee"
 
 The QuiverAI provider is available via the `@ai-sdk/quiverai` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/quiverai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/quiverai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/quiverai" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/quiverai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/quiverai" />
 
 ## Provider Instance
 

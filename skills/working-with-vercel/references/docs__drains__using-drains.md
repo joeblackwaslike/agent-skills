@@ -3,7 +3,7 @@ title: Using Drains
 product: vercel
 url: /docs/drains/using-drains
 canonical_url: "https://vercel.com/docs/drains/using-drains"
-last_updated: 2026-04-07
+last_updated: 2026-07-03
 type: how-to
 prerequisites:
   - /docs/drains
@@ -13,11 +13,11 @@ related:
   - /docs/integrations
   - /docs/drains/reference/logs
   - /docs/drains/reference/traces
-summary: Learn how to configure drains to forward observability data to custom HTTP endpoints and add integrations.
+summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, S3 buckets, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "f1dff848d3e9f0c78a797f43503033dcaafe68af85ff07340747764982e1d6b8"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "62c599753afff27e9516c7dd0086b4161b1c6d2816eb623a465632a4813bdf38"
 ---
 
 # Using Drains
@@ -156,7 +156,7 @@ You can create Drains with native integrations for the following data types by u
 
 1. From the Vercel dashboard, go to **Team Settings** > [**Drains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fdrains\&title=Go+to+Drains+settings) and click **Add Drain**.
 2. Click the **External Integrations** link on the top right of the **Add Drain** side modal.
-3. From the **External Integration Log Drains** modal, select the installed or available external integration you would like to use and follow the steps to create the drain to that service.
+3. From the **External Integration Drains** modal, select the installed or available external integration you would like to use and follow the steps to create the drain to that service.
 
 Learn more about [native integrations](/docs/integrations#native-integrations) and [external (connectable accounts) integrations](/docs/integrations#connectable-accounts).
 

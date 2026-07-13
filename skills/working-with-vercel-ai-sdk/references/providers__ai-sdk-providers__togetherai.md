@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "aa95f666776c76746ee7622797999e35d9bf0869d7455eea1023c3fc17f19ae0"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "598b0918692f849f4e457e683f69adb1adbcd7dfd4580f869c34f70b5e3fabdf"
 ---
 
 # Together.ai Provider
@@ -13,21 +13,7 @@ The [Together.ai](https://together.ai) provider contains support for 200+ open-s
 The Together.ai provider is available via the `@ai-sdk/togetherai` module. You can
 install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/togetherai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/togetherai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/togetherai" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/togetherai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/togetherai" />
 
 ## Provider Instance
 
@@ -117,16 +103,16 @@ The Together.ai provider also supports [completion models](https://docs.together
 
 ## Model Capabilities
 
-| Model                                               | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| --------------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `moonshotai/Kimi-K2.5`                              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `Qwen/Qwen3.5-397B-A17B`                            | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `MiniMaxAI/MiniMax-M2.5`                            | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `zai-org/GLM-5`                                     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `deepseek-ai/DeepSeek-V3.1`                         | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `openai/gpt-oss-120b`                               | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `openai/gpt-oss-20b`                                | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                                               | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| --------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `moonshotai/Kimi-K2.5`                              | <Check />   | <Check />         | <Check />  | <Check />      |
+| `Qwen/Qwen3.5-397B-A17B`                            | <Check />   | <Check />         | <Check />  | <Check />      |
+| `MiniMaxAI/MiniMax-M2.5`                            | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `zai-org/GLM-5`                                     | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `deepseek-ai/DeepSeek-V3.1`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `openai/gpt-oss-120b`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `openai/gpt-oss-20b`                                | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | <Check />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   The table above lists popular models. Please see the [Together.ai

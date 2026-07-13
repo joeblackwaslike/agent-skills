@@ -3,7 +3,7 @@ title: Tools
 product: vercel
 url: /docs/agent-resources/vercel-mcp/tools
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-mcp/tools"
-last_updated: 2026-05-01
+last_updated: 2026-07-02
 type: conceptual
 prerequisites:
   - /docs/agent-resources/vercel-mcp
@@ -14,11 +14,11 @@ related:
   - /docs/deployments
   - /docs/functions
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links
-summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, and viewing runtime logs.
+summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, runtime logs, and Agent Runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "3efd259de0daae01647d1dce1e5f8f04a76fd4724d6418eda4767d21635a61ea"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c498443ec85729949274f30304a2e451dd8d539e0871ab51d08d89381a4a1bb8"
 ---
 
 # Tools

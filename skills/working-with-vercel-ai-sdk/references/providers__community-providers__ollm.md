@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/ollm.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "147b93ac2d44e25cd4ed4bc04c99843ec336558ff335e0e5a6d7aef2d89bfaac"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "71ec9291f59fd812ba835c919f5e6111154e6200036fdd2a4703cd5f12d86bee"
 ---
 
 # OLLM
@@ -20,20 +20,7 @@ Learn more about OLLM's capabilities in the [OLLM Website](https://ollm.com).
 
 The OLLM provider is available in the `@ofoundation/ollm` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ofoundation/ollm" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ofoundation/ollm" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ofoundation/ollm" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ofoundation/ollm" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ofoundation/ollm" />
 
 ## Provider Instance
 

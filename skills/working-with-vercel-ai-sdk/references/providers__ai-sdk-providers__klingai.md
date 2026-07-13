@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "4bfb8ad09e498acdb24fab47a8cd752134f0489d6e8f5abb68aa5a2f7f728b4e"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "0324445d75921c700b757d6d3792731d7cfe4cff8474a1346959beeb2383b125"
 ---
 
 # Kling AI Provider
@@ -12,21 +12,7 @@ The [Kling AI](https://klingai.com/) provider contains support for Kling AI's vi
 
 The Kling AI provider is available in the `@ai-sdk/klingai` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/klingai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/klingai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/klingai" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/klingai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/klingai" />
 
 ## Provider Instance
 

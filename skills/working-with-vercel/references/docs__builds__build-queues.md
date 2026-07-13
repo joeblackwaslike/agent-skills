@@ -3,7 +3,7 @@ title: Build Queues
 product: vercel
 url: /docs/builds/build-queues
 canonical_url: "https://vercel.com/docs/builds/build-queues"
-last_updated: 2026-06-09
+last_updated: 2026-06-24
 type: conceptual
 prerequisites:
   - /docs/builds
@@ -14,8 +14,8 @@ related:
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2e260118daaba74ac078c94bbe28004505144c0d8524e06b90c0427b8819201f"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "158d87f4185504353db0beade78a356d92ccd817347fba57babd1b653edfb68e"
 ---
 
 # Build Queues

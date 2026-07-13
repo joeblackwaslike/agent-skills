@@ -3,7 +3,7 @@ title: vercel rolling-release
 product: vercel
 url: /docs/cli/rolling-release
 canonical_url: "https://vercel.com/docs/cli/rolling-release"
-last_updated: 2026-06-16
+last_updated: 2026-06-30
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "b7cc197fbfa16644ac785c19db377ffb82dc3d71122a608e283f710bdf93c3d7"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "247807a51c16734c4355e2351a4d7b9735c12f621edfb4bd1b121ea3700f6333"
 ---
 
 # vercel rolling-release

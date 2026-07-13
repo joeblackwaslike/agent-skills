@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langwatch.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "9392f51f1d3892719f36bdd9d8b1a81ae835ed062ec3bfc9901920e68fd98448"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a75fe83479bfaa3ffc8b3db70b5b32ef26820213c7da3ceee69d2d22059a2c96"
 ---
 
 # LangWatch Observability
@@ -12,21 +12,7 @@ sha256: "9392f51f1d3892719f36bdd9d8b1a81ae835ed062ec3bfc9901920e68fd98448"
 
 Obtain your `LANGWATCH_API_KEY` from the [LangWatch dashboard](https://app.langwatch.com/).
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add langwatch" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install langwatch" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add langwatch" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add langwatch" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="langwatch" />
 
 Ensure `LANGWATCH_API_KEY` is set:
 

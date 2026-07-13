@@ -3,7 +3,7 @@ title: Advanced Features
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -14,8 +14,8 @@ related:
 summary: Advanced Anthropic API features including extended thinking, web search, and automatic caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "aeb5dff54e4644a66e1372c6efe87237c32f28f71ef30fa53d501c1111de2225"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "5e4914f2bdac960d0d93003e9595d19a6aef9dd5bdcc2d5a0676399e1c4fee97"
 ---
 
 # Advanced Features

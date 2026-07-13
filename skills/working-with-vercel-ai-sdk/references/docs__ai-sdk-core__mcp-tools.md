@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "bc8b5a203fbeb855b2ef6240a41e25b63b7387399ac0a2c33f698c63611cd737"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "22259889692fdfe349aca86fc8e312fe2681473df4ed02706af36d689ef1fb11"
 ---
 
 # Model Context Protocol (MCP)
@@ -518,6 +518,50 @@ Your handler must return an object with an `action` field that can be one of:
 - `'accept'`: User provided the requested information. Must include `content` with the data.
 - `'decline'`: User chose not to provide the information.
 - `'cancel'`: User cancelled the operation entirely.
+
+## Detecting tool-definition drift ("rug pull")
+
+An MCP server sends tool definitions (name, description, input schema) when your
+app first connects, and you typically review and approve them at that point.
+Nothing in the protocol prevents the server from later serving a _different_
+definition for the same tool name — for example a description carrying injected
+instructions, or an input schema widened with an extra field. Because the SDK
+uses whatever tools you pass on each call, a mutated definition returned by a
+later `mcpClient.tools()` fetch would be used without any comparison to what was
+approved. This is the MCP ["rug pull"](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+class of attack.
+
+The AI SDK provides two functions to pin the approved definitions and detect
+changes. `fingerprintTools` digests the server-controlled, security-relevant
+fields of each tool (string `description`, resolved input schema, and `title`)
+into a stable map of tool name to digest. `detectToolDrift` diffs two such maps.
+Your app owns baseline storage and the response to drift (block, force
+re-approval, or alert):
+
+```typescript
+import { fingerprintTools, detectToolDrift } from 'ai';
+
+// Trust time (first connect, human-reviewed): capture and persist the baseline.
+const baseline = await fingerprintTools(await mcpClient.tools());
+
+// Every later fetch, before handing tools to generateText:
+const tools = await mcpClient.tools();
+const drift = detectToolDrift(await fingerprintTools(tools), baseline);
+
+if (drift.changed.length || drift.added.length) {
+  // A pinned definition changed, or a new tool appeared. Block, re-approve,
+  // or alert per your policy — do not silently pass `tools` to the model.
+}
+```
+
+<Note>
+  This detects mutation of a tool's description, input schema, or title — the
+  prompt-injection and schema-widening vectors. It cannot detect a
+  behavior/endpoint swap where the name, description, and schema are all
+  unchanged, because the tool runs remotely on the MCP server and that change is
+  invisible to the client. Core stays unopinionated: it does not persist
+  baselines or block calls — those are your app's responsibility.
+</Note>
 
 ## Examples
 

@@ -3,8 +3,8 @@ title: Add Custom Domain
 product: vercel
 url: /docs/platforms/platform-elements/actions/add-custom-domain
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements/actions
   - /docs/platforms/platform-elements
@@ -12,11 +12,11 @@ related:
   - /docs/platforms/platform-elements/blocks/custom-domain
   - /docs/platforms/platform-elements/blocks/dns-table
   - /docs/platforms/multi-tenant-platforms/configuring-domains
-summary: Learn about add custom domain on Vercel.
+summary: Server action for programmatically adding custom domains to Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d4d4145ec626575cb4bc18b0bcee899d164fc41e0c3566262a18882945723065"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "68880ef2667a3e55da8d24216b4df811f45a9ac023397241a99cc9a5da56c76d"
 ---
 
 # Add Custom Domain

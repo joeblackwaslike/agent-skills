@@ -3,7 +3,7 @@ title: Vercel Plugin for AI Coding Agents
 product: vercel
 url: /docs/agent-resources/vercel-plugin
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-plugin"
-last_updated: 2026-06-11
+last_updated: 2026-06-25
 type: reference
 prerequisites:
   - /docs/agent-resources
@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "cff11ec36658eea6b878c763768a732c110d6db8373ea3837005019be2ce43eb"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "43b8b3c4849b283df6b4798c4421d4a0937cda24638840d068ec82725d2dc3de"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -24,7 +24,7 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 
 ### Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [OpenAI Codex](https://openai.com/codex), [Grok Build](https://x.ai/news/grok-build-cli), [Cursor](https://www.cursor.com), or [GitHub Copilot](https://github.com/features/copilot)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [OpenAI Codex](https://openai.com/codex), [Grok Build](https://x.ai/news/grok-build-cli), [Cursor](https://www.cursor.com), [GitHub Copilot](https://github.com/features/copilot), or [Kimi Code](https://kimi.com)
 - Node.js 18 or later
 - [Bun](https://bun.sh)
 
@@ -64,6 +64,7 @@ After installation, session context is injected automatically only for empty dir
 | [Grok Build](https://x.ai/news/grok-build-cli)                 | Supported   |
 | [Cursor](https://www.cursor.com)                              | Supported   |
 | [GitHub Copilot](https://github.com/features/copilot)          | Supported   |
+| [Kimi Code](https://kimi.com)                                  | Supported   |
 
 ## How it works
 

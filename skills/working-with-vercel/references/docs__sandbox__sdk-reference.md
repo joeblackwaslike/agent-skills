@@ -3,7 +3,7 @@ title: JS SDK Reference
 product: vercel
 url: /docs/sandbox/sdk-reference
 canonical_url: "https://vercel.com/docs/sandbox/sdk-reference"
-last_updated: 2026-06-16
+last_updated: 2026-06-30
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "175f6a1df7f7d7ed759030ac842a5b99b42570562a3c5b73602c8e3b848256d8"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a5164a9925a34035185d4fc4d75d1de97b9d5f07f0ef1ee0382332ac97b76a48"
 ---
 
 # JS SDK Reference
@@ -907,11 +907,11 @@ const hasCache = await sandbox.fs.exists('/tmp/cache.db');
 
 `Command` instances represent processes that run inside a sandbox. Detached executions created through `sandbox.runCommand({ detached: true, ... })` return a `Command` immediately so that you can stream logs or stop the process later. Blocking executions that do not set `detached` still expose these methods through the `CommandFinished` object they resolve to.
 
-### Command class properties
+### Command class accessors
 
 #### `exitCode`
 
-The `exitCode` property holds the process exit status once the command finishes. For detached commands, this value starts as `null` and gets populated after you await `command.wait()`, so check for `null` to determine if the command is still running.
+The `exitCode` property holds the process exit status once the command finishes. For detached commands, this value starts as `null` and gets populated after you await [`command.wait()`](#wait), so check for `null` to determine if the command is still running.
 
 ```ts
 if (command.exitCode !== null) {
@@ -921,7 +921,17 @@ if (command.exitCode !== null) {
 
 **Returns:** `number | null`.
 
-### Command class accessors
+#### `durationMs`
+
+The `durationMs` property measures how long the command took to execute in milliseconds. For detached commands, the value starts as `undefined` and gets populated after you await [`command.wait()`](#wait).
+
+```ts
+if (command.durationMs) {
+  console.log(`Command ran for: ${command.durationMs}ms`);
+}
+```
+
+**Returns:** `number | undefined`.
 
 #### `cmdId`
 
@@ -1073,7 +1083,7 @@ await command.kill('SIGKILL');
 
 `CommandFinished` is the result you receive after a sandbox command exits. It extends the `Command` class, so you keep access to streaming helpers such as `logs()` or `stdout()`, but you also get the final exit metadata immediately. You usually receive this object from `sandbox.runCommand()` or by awaiting `command.wait()` on a detached process.
 
-### CommandFinished class properties
+### CommandFinished class accessors
 
 #### `exitCode`
 
@@ -1087,7 +1097,17 @@ if (result.exitCode === 0) {
 
 **Returns:** `number`.
 
-### CommandFinished class accessors
+#### `durationMs`
+
+The `durationMs` property measures how long the command took to execute in milliseconds. Use this value to measure performance metrics or detect unusually long-running commands. The value is `undefined` for older commands that were executed before this property existed.
+
+```ts
+if (result.durationMs) {
+  console.log(`Command ran for ${result.durationMs}ms`);
+}
+```
+
+**Returns:** `number | undefined`.
 
 #### `cmdId`
 

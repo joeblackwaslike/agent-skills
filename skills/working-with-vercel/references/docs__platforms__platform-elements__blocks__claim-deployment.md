@@ -3,19 +3,19 @@ title: Claim Deployment
 product: vercel
 url: /docs/platforms/platform-elements/blocks/claim-deployment
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements/blocks
   - /docs/platforms/platform-elements
 related:
   - /docs/platforms/platform-elements/actions/deploy-files
   - /docs/platforms/platform-elements/blocks/deploy-popover
-summary: Learn about claim deployment on Vercel.
+summary: A component for users to claim ownership of Vercel deployments created on their behalf.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1ba811413b587431b988f843372ce10133b4838f1970b66a77789d6dc74bbe7e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "806bddff211bdd0a0618b4472bd5453575cad4bc126a05e49445bf53ea395d0a"
 ---
 
 # Claim Deployment

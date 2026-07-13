@@ -3,7 +3,7 @@ title: Backends on Vercel
 product: vercel
 url: /docs/frameworks/backend
 canonical_url: "https://vercel.com/docs/frameworks/backend"
-last_updated: 2025-10-21
+last_updated: 2026-06-22
 type: conceptual
 prerequisites:
   - /docs/frameworks
@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3100f12a84530e6756db2c36da09af2f96af0ef3bb4ca9a9a13ea859fd5f0076"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "d59a5f691ad3e3be77f216e2c10e23570882edd17a10a2fae2c050876d1a53e8"
 ---
 
 # Backends on Vercel

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/structured-outputs.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "7ca343220a19c82b2148093ea074fc4dc7a2d94b0edc67fbdbde3558082dada8"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "b1293b567da61a3496bf86f227c40595b630e7572b51196e6aec2b6f6ed3d1bf"
 ---
 
 > ## Documentation Index
@@ -244,6 +244,10 @@ The `outputFormat` (TypeScript) or `output_format` (Python) option accepts an ob
 * `schema`: A [JSON Schema](https://json-schema.org/understanding-json-schema/about) object defining your output structure. You can generate this from a Zod schema with `z.toJSONSchema()` or a Pydantic model with `.model_json_schema()`
 
 The SDK supports standard JSON Schema features including all basic types (object, array, string, number, boolean, null), `enum`, `const`, `required`, nested objects, and `$ref` definitions. For the full list of supported features and limitations, see [JSON Schema limitations](https://platform.claude.com/docs/en/build-with-claude/structured-outputs#json-schema-limitations).
+
+A schema that isn't valid JSON Schema fails the run at startup with an error naming the problem. Before v2.1.205, an invalid schema was silently ignored and the agent returned unstructured text.
+
+The `format` keyword, such as `"format": "email"`, is accepted as an annotation and isn't enforced by the SDK's validator. Before v2.1.205, any schema containing `format` was treated as invalid.
 
 ## Example: TODO tracking agent
 

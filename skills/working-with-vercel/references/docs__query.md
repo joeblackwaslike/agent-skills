@@ -3,7 +3,7 @@ title: Query
 product: vercel
 url: /docs/query
 canonical_url: "https://vercel.com/docs/query"
-last_updated: 2026-03-30
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "775181622cdb29e51dfa3303987c64103c3a1b9d8f29c1068c83ebad171d55ea"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9c44b21983de0881a9137ace7513aa4930604d2c934bd7f7fe394e485cf9de2f"
 ---
 
 # Query

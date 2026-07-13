@@ -3,7 +3,7 @@ title: Rolling Releases
 product: vercel
 url: /docs/rolling-releases
 canonical_url: "https://vercel.com/docs/rolling-releases"
-last_updated: 2026-06-16
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "e0b83b9ac7e87335cc29470599112dd3dac185357d67436ac210081dd2d07b48"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "656e22bace11d0040d52b883e7e970ea9747a3f6a17575254403abde14095529"
 ---
 
 # Rolling Releases

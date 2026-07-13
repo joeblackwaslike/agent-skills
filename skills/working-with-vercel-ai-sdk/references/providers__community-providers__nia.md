@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/nia.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d73210897c18435625d2615c8008a4bd0eb059f70d1361b2b2eaa4ca8b983e4d"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a902d574a577f32ec9a177b4395ada9d52a7e5db932c508431860ca707992944"
 ---
 
 # Nia
@@ -22,20 +22,7 @@ Learn more in the [Nia documentation](https://docs.trynia.ai/).
 
 The Nia adapter is available in the `@nozomioai/nia-ai-sdk` package. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @nozomioai/nia-ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @nozomioai/nia-ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @nozomioai/nia-ai-sdk" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @nozomioai/nia-ai-sdk" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@nozomioai/nia-ai-sdk" />
 
 If you want to use Nia middleware with a model provider, install that provider as well. For example:
 

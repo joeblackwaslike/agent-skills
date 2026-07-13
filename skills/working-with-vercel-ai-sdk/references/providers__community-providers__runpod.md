@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/runpod.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "14dadbeddfad1803f33fc5f270cd5617bcca304e211b1661257e448f0713074f"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "36d04682c1ff093d09d24a88824d0e01385faeacb3b31d34440a0e3a4cded48d"
 ---
 
 # Runpod
@@ -12,20 +12,7 @@ The official [Runpod](https://runpod.io) provider contains language model and im
 
 The Runpod provider is available in the `@runpod/ai-sdk-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @runpod/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @runpod/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @runpod/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @runpod/ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@runpod/ai-sdk-provider" />
 
 ## Provider Instance
 
@@ -113,10 +100,10 @@ for await (const delta of textStream) {
 
 ### Model Capabilities
 
-| Model ID              | Description                                                         | Streaming           | Object Generation   | Tool Usage          | Reasoning Notes           |
-| --------------------- | ------------------------------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------------- |
-| `qwen/qwen3-32b-awq`  | 32B parameter multilingual model with strong reasoning capabilities | <Check size={18} /> | <Cross size={18} /> | <Check size={18} /> | Standard reasoning events |
-| `openai/gpt-oss-120b` | 120B parameter open-source GPT model                                | <Check size={18} /> | <Cross size={18} /> | <Check size={18} /> | Standard reasoning events |
+| Model ID              | Description                                                         | Streaming | Object Generation | Tool Usage | Reasoning Notes           |
+| --------------------- | ------------------------------------------------------------------- | --------- | ----------------- | ---------- | ------------------------- |
+| `qwen/qwen3-32b-awq`  | 32B parameter multilingual model with strong reasoning capabilities | <Check /> | <Cross />         | <Check />  | Standard reasoning events |
+| `openai/gpt-oss-120b` | 120B parameter open-source GPT model                                | <Check /> | <Cross />         | <Check />  | Standard reasoning events |
 
 **Note:** An up-to-date list of all available models can be found in the [Runpod Public Endpoint Reference](https://docs.runpod.io/hub/public-endpoint-reference).
 

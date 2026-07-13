@@ -3,7 +3,7 @@ title: Model Fallbacks
 product: vercel
 url: /docs/ai-gateway/models-and-providers/model-fallbacks
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks"
-last_updated: 2026-05-11
+last_updated: 2026-07-02
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -14,8 +14,8 @@ related:
 summary: Configure model-level failover to try backup models when the primary model is unavailable
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "36a2747189bde2940c823b7abfc4cb9520ec2d256c71df29ef6909834f9e5ad4"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "86c656d1abff7aaf30e5a5c141ced0395a0379b88f4c1e890d2a6f204a08a758"
 ---
 
 # Model Fallbacks

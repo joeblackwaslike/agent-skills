@@ -3,7 +3,7 @@ title: Shared environment variables
 product: vercel
 url: /docs/environment-variables/shared-environment-variables
 canonical_url: "https://vercel.com/docs/environment-variables/shared-environment-variables"
-last_updated: 2026-03-03
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/environment-variables
@@ -14,8 +14,8 @@ related:
 summary: Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can link to multiple projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/shared-environment-variables.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6d928764921e6224f80af7b0c8ddff4410cce8ea5cd2cfa1ca331eb380900a8c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ba8877af58194dc87846df2152308b74b5d355cd49a4484ea31faa7bebabeea9"
 ---
 
 # Shared environment variables

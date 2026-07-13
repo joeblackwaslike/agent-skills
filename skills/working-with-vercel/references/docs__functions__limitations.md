@@ -3,7 +3,7 @@ title: Vercel Functions Limits
 product: vercel
 url: /docs/functions/limitations
 canonical_url: "https://vercel.com/docs/functions/limitations"
-last_updated: 2026-06-19
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/functions
@@ -13,11 +13,11 @@ related:
   - /docs/functions/runtimes
   - /docs/functions/configuring-functions/region
   - /docs/functions/runtimes/node-js
-summary: Learn about the limits and restrictions of using Vercel Functions with the Node.js runtime.
+summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "1d8bc57d1a4af01d736f096d5e108778838df264fce66841a1494f8f9f810e15"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "31713884a0f83c080ef99355a0d436f6cccb459338332116a2b41e11ac8a3a8f"
 ---
 
 # Vercel Functions Limits

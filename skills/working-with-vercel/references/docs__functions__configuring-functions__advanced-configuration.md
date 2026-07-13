@@ -3,7 +3,7 @@ title: Advanced Configuration
 product: vercel
 url: /docs/functions/configuring-functions/advanced-configuration
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/advanced-configuration"
-last_updated: 2025-05-21
+last_updated: 2026-07-01
 type: conceptual
 prerequisites:
   - /docs/functions/configuring-functions
@@ -17,8 +17,8 @@ related:
 summary: Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/advanced-configuration.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "8d1441e1f9b459e18cb7ae5cf710a5891d5836bb0a43167bd77c644a92bbedca"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "399ee6b5e271e7356a1f99430f1eee99023c7ab85d47fe8534a92365d0db14ba"
 ---
 
 # Advanced Configuration

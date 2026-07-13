@@ -3,7 +3,7 @@ title: Deploy a Django app on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/django
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/django"
-last_updated: 2026-05-04
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "752fc8a72eb29bd80e04ef180410da8030275b9693f801d6d452defe57c1ed3c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "d95fbea5f4a6d09d7fe11d3d5895c3fe335de9b542dca7b6bc391cd1a9876fc6"
 ---
 
 # Deploy a Django app on Vercel
@@ -251,7 +251,7 @@ property](/docs/project-configuration/vercel-json#functions).
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to Django applications, including:
 
-- **Application size**: The Django application becomes a single bundle, which must fit within the 500 MB limit of Vercel Functions. The bundling process removes `__pycache__` and `.pyc` files from the deployment's bundle to reduce size, but does not perform application bundling.
+- **Application size**: The Django application becomes a single bundle, which has a standard bundle size limit of 500MB. [Large Functions](/docs/functions/limitations#large-functions-beta) support Python bundles up to 5GB on Fluid compute when enabled (public beta). The bundling process removes `__pycache__` and `.pyc` files from the deployment's bundle to reduce size, but does not perform application bundling.
 
 ## More resources
 

@@ -1,10 +1,10 @@
 ---
-title: Reference
+title: Multi-tenant Reference
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/reference
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
@@ -14,11 +14,11 @@ related:
   - /docs/rest-api/reference/endpoints/domains/add-an-existing-domain-to-the-vercel-platform
   - /docs/rest-api/reference/endpoints/domains/get-information-for-a-single-domain
   - /docs/rest-api/reference/endpoints/domains/get-a-domains-configuration
-summary: Learn about reference on Vercel.
+summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a3cc0cacae712e10f30f0afbd8726fe2e8cbc7739dc06b1f18d3fb516dc8606c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "18c057a1981edbb988973df89d74e09de9b8de0ebb0da1e809a02f784f17480b"
 ---
 
 # Multi-tenant Reference

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/apertis.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "901737f1325d4455b06a1ba7abd97283d89bfb8885e3ef5f1e8960056ff59a8e"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e522fcf520f338c1b1ae9b620648a6141339f1668cc1848ce25b0f16e7441554"
 ---
 
 # Apertis Provider
@@ -18,17 +18,7 @@ sha256: "901737f1325d4455b06a1ba7abd97283d89bfb8885e3ef5f1e8960056ff59a8e"
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-    <Snippet text="pnpm add @apertis/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @apertis/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @apertis/ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@apertis/ai-sdk-provider" />
 
 ## Provider Instance
 

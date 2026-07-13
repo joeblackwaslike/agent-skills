@@ -1,9 +1,9 @@
 ---
-title: Persistent sandboxes
+title: Persistence
 product: vercel
 url: /docs/sandbox/concepts/persistent-sandboxes
 canonical_url: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes"
-last_updated: 2026-05-29
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "1ec3b635d9a5989da4d26685fc7cf45f572bfb347a351b04371df3c3612904e5"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "88fbc6192da8cc230f05e2f7111bdd75c40b74a9d5fdf43df045cf96ec115df1"
 ---
 
 # Persistence

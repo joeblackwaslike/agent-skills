@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "41fc3d56c1ceb0179537bc75e0e529910e51f69f2e9ed28d1797de39410c429c"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "c9fe66b40ea5cfd3dcb2d71413809278e5e67fe85898a8a81c4f6d9e197e87d9"
 ---
 
 # Deepgram Provider
@@ -12,21 +12,7 @@ The [Deepgram](https://deepgram.com/) provider contains language model support f
 
 The Deepgram provider is available in the `@ai-sdk/deepgram` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/deepgram" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/deepgram" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/deepgram" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/deepgram" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/deepgram" />
 
 ## Provider Instance
 
@@ -274,13 +260,13 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                                                                                              | Transcription       | Duration            | Segments            | Language            |
-| -------------------------------------------------------------------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `nova-3` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-3))     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `nova-2` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-2))     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `nova` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova))         | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `enhanced` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#enhanced)) | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `base` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#base))         | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
+| Model                                                                                              | Transcription | Duration  | Segments  | Language  |
+| -------------------------------------------------------------------------------------------------- | ------------- | --------- | --------- | --------- |
+| `nova-3` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-3))     | <Check />     | <Check /> | <Check /> | <Cross /> |
+| `nova-2` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-2))     | <Check />     | <Check /> | <Check /> | <Cross /> |
+| `nova` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova))         | <Check />     | <Check /> | <Check /> | <Cross /> |
+| `enhanced` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#enhanced)) | <Check />     | <Check /> | <Check /> | <Cross /> |
+| `base` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#base))         | <Check />     | <Check /> | <Check /> | <Cross /> |
 
 
 ## Navigation

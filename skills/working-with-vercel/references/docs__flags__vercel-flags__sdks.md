@@ -3,7 +3,7 @@ title: SDKs
 product: vercel
 url: /docs/flags/vercel-flags/sdks
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/sdks"
-last_updated: 2026-06-08
+last_updated: 2026-06-24
 type: conceptual
 prerequisites:
   - /docs/flags/vercel-flags
@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "85d410ae3f7d03072cb75db9b5ccbab49b5f31b2cae6672e39988c726b2368ec"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "fe86ee4d2dcf2fafeafd7f03861fb732373e0220387041cdb0a6b7c365492f31"
 ---
 
 # SDKs

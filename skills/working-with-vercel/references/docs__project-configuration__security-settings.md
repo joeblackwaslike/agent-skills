@@ -3,7 +3,7 @@ title: Security settings
 product: vercel
 url: /docs/project-configuration/security-settings
 canonical_url: "https://vercel.com/docs/project-configuration/security-settings"
-last_updated: 2026-05-08
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/project-configuration
@@ -16,8 +16,8 @@ related:
 summary: Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibility, Git Fork Protection, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "00f0d7a97ed00677b92460bc4ebf61aa7a216cbc231b56aa41da792bb4a4aa4e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "94734d47540d980a89658e33e5e05e825598537974d75a6d076e855beb8f9ccd"
 ---
 
 # Security settings

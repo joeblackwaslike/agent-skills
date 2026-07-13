@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/llamagate.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "5dfa1a774d3acc811fefb52e286758902b3dce87e499ef3d6b001e554f095a80"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "897f6ebd597c924744a885be6bdb73fa2789b80303e1da61e4606209a66842ca"
 ---
 
 # LlamaGate
@@ -22,20 +22,7 @@ Learn more about LlamaGate's capabilities in the [LlamaGate Documentation](https
 
 The LlamaGate provider is available in the `@llamagate/ai-sdk-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @llamagate/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @llamagate/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @llamagate/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @llamagate/ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@llamagate/ai-sdk-provider" />
 
 ## Provider Instance
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f3c197398f41f733c0437dd9844584a930700e169245ffb4e8f9cba6f555e072"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "4082daa8a1e37b6f29601517084ae7c3f65b886a92492e446ed6c997c0d7e503"
 ---
 
 # Embeddings
@@ -220,24 +220,24 @@ const embeddingModelWithDefaults = wrapEmbeddingModel({
 
 Several providers offer embedding models:
 
-| Provider                                                                      | Model                           | Embedding Dimensions | Multimodal          |
-| ----------------------------------------------------------------------------- | ------------------------------- | -------------------- | ------------------- |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-large`        | 3072                 | <Cross size={18} /> |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-small`        | 1536                 | <Cross size={18} /> |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-ada-002`        | 1536                 | <Cross size={18} /> |
-| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-001`          | 3072                 | <Cross size={18} /> |
-| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2`            | 3072                 | <Check size={18} /> |
-| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2-preview`    | 3072                 | <Check size={18} /> |
-| [Mistral](/providers/ai-sdk-providers/mistral#embedding-models)               | `mistral-embed`                 | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v3.0`            | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v3.0`       | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v3.0`      | 384                  | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-light-v3.0` | 384                  | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v2.0`            | 4096                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v2.0`      | 1024                 | <Cross size={18} /> |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v2.0`       | 768                  | <Cross size={18} /> |
-| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v1`    | 1536                 | <Cross size={18} /> |
-| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v2:0`  | 1024                 | <Cross size={18} /> |
+| Provider                                                                      | Model                           | Embedding Dimensions | Multimodal |
+| ----------------------------------------------------------------------------- | ------------------------------- | -------------------- | ---------- |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-large`        | 3072                 | <Cross />  |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-small`        | 1536                 | <Cross />  |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-ada-002`        | 1536                 | <Cross />  |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-001`          | 3072                 | <Cross />  |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2`            | 3072                 | <Check />  |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2-preview`    | 3072                 | <Check />  |
+| [Mistral](/providers/ai-sdk-providers/mistral#embedding-models)               | `mistral-embed`                 | 1024                 | <Cross />  |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v3.0`            | 1024                 | <Cross />  |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v3.0`       | 1024                 | <Cross />  |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v3.0`      | 384                  | <Cross />  |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-light-v3.0` | 384                  | <Cross />  |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v2.0`            | 4096                 | <Cross />  |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v2.0`      | 1024                 | <Cross />  |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v2.0`       | 768                  | <Cross />  |
+| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v1`    | 1536                 | <Cross />  |
+| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v2:0`  | 1024                 | <Cross />  |
 
 
 ## Navigation

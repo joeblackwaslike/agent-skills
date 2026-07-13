@@ -3,7 +3,7 @@ title: Poll Mode
 product: vercel
 url: /docs/queues/poll-mode
 canonical_url: "https://vercel.com/docs/queues/poll-mode"
-last_updated: 2026-02-27
+last_updated: 2026-06-30
 type: conceptual
 prerequisites:
   - /docs/queues
@@ -15,8 +15,8 @@ related:
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "720d28db88b6d1559a3e5e9e61aad250ec1b1d9a604e66a09dafe579390b80e1"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a75dc0c8c541758ee247de9e510cbf976fd6b985a82116c95007692264ad47b2"
 ---
 
 # Poll Mode

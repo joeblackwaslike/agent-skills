@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "7da1b83e8cf37cb4896639065e2d0c3571443736618cd6b0af51b1bcc0b3fa56"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "7b591d43a20e75416037b225c76b258b5a40e273979b57f2e53b038a2559340a"
 ---
 
 # Google Vertex Provider
@@ -21,24 +21,7 @@ The Google Vertex provider for the [AI SDK](/docs) contains language model suppo
 
 The Google Vertex, Google Vertex Anthropic, Google Vertex xAI, and Google Vertex MaaS providers are available in the `@ai-sdk/google-vertex` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/google-vertex" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/google-vertex" dark />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @ai-sdk/google-vertex @google-cloud/vertexai"
-      dark
-    />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/google-vertex" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/google-vertex" />
 
 ## Google Vertex Provider Usage
 
@@ -871,13 +854,13 @@ The following Zod features are known to not work with Google Vertex:
 
 ### Model Capabilities
 
-| Model                  | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ---------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `gemini-3.5-flash`     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3-pro-preview` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-pro`       | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-flash`     | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.0-flash-001` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                  | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ---------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `gemini-3.5-flash`     | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-3-pro-preview` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.5-pro`       | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.5-flash`     | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.0-flash-001` | <Check />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   The table above lists popular models. Please see the [Google Vertex AI
@@ -946,11 +929,11 @@ The following optional provider options are available for Google Vertex AI embed
 
 #### Model Capabilities
 
-| Model                        | Max Values Per Call | Parallel Calls      | Multimodal          |
-| ---------------------------- | ------------------- | ------------------- | ------------------- |
-| `text-embedding-005`         | 2048                | <Check size={18} /> | <Cross size={18} /> |
-| `gemini-embedding-2`         | 2048                | <Check size={18} /> | <Check size={18} /> |
-| `gemini-embedding-2-preview` | 2048                | <Check size={18} /> | <Check size={18} /> |
+| Model                        | Max Values Per Call | Parallel Calls | Multimodal |
+| ---------------------------- | ------------------- | -------------- | ---------- |
+| `text-embedding-005`         | 2048                | <Check />      | <Cross />  |
+| `gemini-embedding-2`         | 2048                | <Check />      | <Check />  |
+| `gemini-embedding-2-preview` | 2048                | <Check />      | <Check />  |
 
 <Note>
   The table above lists popular models. You can also pass any available provider
@@ -1214,11 +1197,11 @@ const { image } = await generateImage({
 
 ##### Gemini Image Model Capabilities
 
-| Model                            | Image Generation    | Image Editing       | Aspect Ratios                                       |
-| -------------------------------- | ------------------- | ------------------- | --------------------------------------------------- |
-| `gemini-3.1-flash-image-preview` | <Check size={18} /> | <Check size={18} /> | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3-pro-image-preview`     | <Check size={18} /> | <Check size={18} /> | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-2.5-flash-image`         | <Check size={18} /> | <Check size={18} /> | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| Model                            | Image Generation | Image Editing | Aspect Ratios                                       |
+| -------------------------------- | ---------------- | ------------- | --------------------------------------------------- |
+| `gemini-3.1-flash-image-preview` | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-3-pro-image-preview`     | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-2.5-flash-image`         | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
 
 <Note>
   `gemini-3-pro-image-preview` supports additional features including up to 14
@@ -1406,12 +1389,12 @@ rate is reported in `result.providerMetadata.google.sampleRate`.
 
 #### Speech Model Capabilities
 
-| Model                               | Multi-speaker       | Style via instructions |
-| ----------------------------------- | ------------------- | ---------------------- |
-| `gemini-2.5-flash-tts`              | <Check size={18} /> | <Check size={18} />    |
-| `gemini-2.5-pro-tts`                | <Check size={18} /> | <Check size={18} />    |
-| `gemini-2.5-flash-lite-preview-tts` | <Check size={18} /> | <Check size={18} />    |
-| `gemini-3.1-flash-tts-preview`      | <Check size={18} /> | <Check size={18} />    |
+| Model                               | Multi-speaker | Style via instructions |
+| ----------------------------------- | ------------- | ---------------------- |
+| `gemini-2.5-flash-tts`              | <Check />     | <Check />              |
+| `gemini-2.5-pro-tts`                | <Check />     | <Check />              |
+| `gemini-2.5-flash-lite-preview-tts` | <Check />     | <Check />              |
+| `gemini-3.1-flash-tts-preview`      | <Check />     | <Check />              |
 
 ### Transcription Models
 
@@ -1983,15 +1966,15 @@ These tools can be used in conjunction with supported Claude models to enable mo
 The latest Anthropic model list on Vertex AI is available [here](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude#model-list).
 See also [Anthropic Model Comparison](https://docs.anthropic.com/en/docs/about-claude/models#model-comparison).
 
-| Model                           | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      | Computer Use        |
-| ------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `claude-3-7-sonnet@20250219`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `claude-3-5-sonnet-v2@20241022` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `claude-3-5-sonnet@20240620`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `claude-3-5-haiku@20241022`     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `claude-3-sonnet@20240229`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `claude-3-haiku@20240307`       | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
-| `claude-3-opus@20240229`        | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
+| Model                           | Image Input | Object Generation | Tool Usage | Tool Streaming | Computer Use |
+| ------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------ |
+| `claude-3-7-sonnet@20250219`    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
+| `claude-3-5-sonnet-v2@20241022` | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
+| `claude-3-5-sonnet@20240620`    | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
+| `claude-3-5-haiku@20241022`     | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross />    |
+| `claude-3-sonnet@20240229`      | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
+| `claude-3-haiku@20240307`       | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
+| `claude-3-opus@20240229`        | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
 
 <Note>
   The table above lists popular models. You can also pass any available provider

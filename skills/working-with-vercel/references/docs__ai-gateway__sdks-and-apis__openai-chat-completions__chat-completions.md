@@ -3,7 +3,7 @@ title: Chat Completions
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -14,8 +14,8 @@ related:
 summary: Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "2461feafe140deadbf9bc6e27c0ad197daba8d105857dc76f4416a36722ff9e8"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "e15a6ef37ba012c3b3d8abc99cf3ecd8c2f3cc3e8b29508525f8bd70275da23b"
 ---
 
 # Chat Completions

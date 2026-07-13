@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
 related:
-  []
+  - /docs/ai-gateway/sdks-and-apis/cohere-rerank
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "137b4b28d5fe2618a9a3e9d9c7fefbcdc12ee2cf4d195aee4d2729300662e46a"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "2ab5f1f770d747bf4c3ce3d483222e426aad6855efdea73a46e8f30e8da07d6f"
 ---
 
 # Reranking
@@ -22,6 +22,10 @@ sha256: "137b4b28d5fe2618a9a3e9d9c7fefbcdc12ee2cf4d195aee4d2729300662e46a"
 Rerank documents by relevance to a search query. Reranking is useful for improving search results in retrieval-augmented generation (RAG) pipelines by re-scoring candidate documents after an initial retrieval step.
 
 To see which models AI Gateway supports for reranking, use the **Reranking** filter at the [AI Gateway Models page](https://vercel.com/ai-gateway/models?capabilities=reranking).
+
+> **💡 Note:** Reranking is also available through the Cohere-compatible [Cohere Rerank
+> API](/docs/ai-gateway/sdks-and-apis/cohere-rerank) (`/v1/rerank` and
+> `/v2/rerank`), for use with the Cohere SDK or plain HTTP.
 
 ## Basic usage
 
@@ -81,8 +85,13 @@ export async function GET() {
 }
 ```
 
-> **💡 Note:** Reranking models are available through the AI SDK only. They are not supported
-> through the OpenAI-compatible or Anthropic-compatible endpoints.
+> **💡 Note:** Reranking is available through the AI SDK and through the Cohere-compatible
+> `/v1/rerank` and `/v2/rerank` REST endpoints. It is not supported through the
+> OpenAI-compatible or Anthropic-compatible endpoints.
+
+> **⚠️ Warning:** Amazon Bedrock reranking requires SigV4 credentials (`accessKeyId` and
+> `secretAccessKey`) and does not accept API keys. If you BYOK and plan to use
+> reranking models through Bedrock, you must use SigV4 credentials.
 
 
 ---

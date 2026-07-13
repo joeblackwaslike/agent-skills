@@ -1,15 +1,15 @@
 ---
 title: "Markdown Links"
 source: "https://docusaurus.io/docs/markdown-features/links"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "c7d8b48948232ebeac831b48086730f08d23d27befe6e5483ce3f5e89626ee30"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "3692492e23ae60fd7fa8ae759395bc64587df32824372dbf2d9fb7573a7bbe45"
 ---
 
 # Markdown Links
 
 Source: https://docusaurus.io/docs/markdown-features/links
 
-- GuidesMarkdown FeaturesMarkdown linksVersion: 3.10.1
+- GuidesMarkdown FeaturesMarkdown linksVersion: 3.10.2
 # Markdown links
 
 There are two ways of adding a link to another page: through a **URL path** and a **file path**.
@@ -60,4 +60,4 @@ Using relative _file_ paths (with `.md` extensions) instead of relative _URL_ li
 
 - Relative URL links are very likely to break if you update the `trailingSlash` config
 
-warningMarkdown file references only work when the source and target files are processed by the same plugin instance. This is a technical limitation of our Markdown processing architecture and will be fixed in the future. If you are linking files between plugins (e.g. linking to a doc page from a blog post), you have to use URL links.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+warningMarkdown file references only work when the source and target files are processed by the same plugin instance. This is a technical limitation of our Markdown processing architecture and will be fixed in the future. If you are linking files between plugins (e.g. linking to a doc page from a blog post), you have to use URL links.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

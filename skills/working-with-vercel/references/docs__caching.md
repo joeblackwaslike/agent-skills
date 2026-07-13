@@ -3,7 +3,7 @@ title: Caching
 product: vercel
 url: /docs/caching
 canonical_url: "https://vercel.com/docs/caching"
-last_updated: 2026-03-05
+last_updated: 2026-06-23
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "56057434d3b20a2ca8abf4d5ee1963f1dc2a3f8147fa9fcb3acbaf773d0abb47"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "aee74665f00ca8ef9eb362d0a4cb0ff396e1da0a6251b4e88011d31e03c6388b"
 ---
 
 # Caching

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b01c4350a543597a978fa452d6afb58999354718be7128976268e04369ed94be"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "0e24672adebef0d8a63bf51fcecee864ebe403cac682ebe8e063630dec9433f2"
 ---
 
 # Hume Provider
@@ -12,21 +12,7 @@ The [Hume](https://hume.ai/) provider contains support for the Hume text-to-spee
 
 The Hume provider is available in the `@ai-sdk/hume` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/hume" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/hume" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/hume" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/hume" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/hume" />
 
 ## Provider Instance
 
@@ -156,9 +142,9 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model     | Instructions        | Speed               | Output Formats |
-| --------- | ------------------- | ------------------- | -------------- |
-| `default` | <Check size={18} /> | <Check size={18} /> | mp3, pcm, wav  |
+| Model     | Instructions | Speed     | Output Formats |
+| --------- | ------------ | --------- | -------------- |
+| `default` | <Check />    | <Check /> | mp3, pcm, wav  |
 
 
 ## Navigation

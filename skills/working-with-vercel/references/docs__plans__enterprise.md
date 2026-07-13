@@ -3,7 +3,7 @@ title: Vercel Enterprise Plan
 product: vercel
 url: /docs/plans/enterprise
 canonical_url: "https://vercel.com/docs/plans/enterprise"
-last_updated: 2026-06-16
+last_updated: 2026-06-29
 type: reference
 prerequisites:
   - /docs/plans
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "5ee27443f90b92868d18ec04ed5ac205489355144fe2dc250199e32132cfac6e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ac6f349b576257fd3f7c8af44f6ce20362a6a6103405721267c407e0a8a79128"
 ---
 
 # Vercel Enterprise Plan

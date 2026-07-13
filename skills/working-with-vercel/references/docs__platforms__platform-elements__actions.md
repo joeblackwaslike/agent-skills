@@ -3,19 +3,19 @@ title: Actions
 product: vercel
 url: /docs/platforms/platform-elements/actions
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/actions"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements
   - /docs/platforms
 related:
   - /docs/platforms/platform-elements/actions/add-custom-domain
   - /docs/platforms/platform-elements/actions/deploy-files
-summary: Learn about actions on Vercel.
+summary: Server actions you can install to run common platform tasks against the Vercel API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "75a5a65f6492e1140b0bba3a5036076de07a25119cab410f8035487598ee3569"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "6faca543263963b3829510738939bc5317d6e31505c296f92e08cd431458c8d5"
 ---
 
 # Actions

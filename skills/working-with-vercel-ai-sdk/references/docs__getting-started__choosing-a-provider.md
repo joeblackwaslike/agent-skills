@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/choosing-a-provider.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8a51d35b30582c2787e74feca96d0aa74e9dd30b8ede6e03fd905ba61140c4d7"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "9ed68071e0de4fe03896a3ecf7f62ee9977eb3aa293831d80470d6ff7bb99749"
 ---
 
 # Choosing a Provider
@@ -67,22 +67,7 @@ model: gateway('anthropic/claude-sonnet-4.5');
 
 You can also use [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) provider packages directly. Install the package and create a provider instance. For example, to use Anthropic:
 
-<div className="my-4">
-  <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-    <Tab>
-      <Snippet text="pnpm add @ai-sdk/anthropic" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="npm install @ai-sdk/anthropic" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="yarn add @ai-sdk/anthropic" dark />
-    </Tab>
-    <Tab>
-      <Snippet text="bun add @ai-sdk/anthropic" dark />
-    </Tab>
-  </Tabs>
-</div>
+<InstallPackages packages="@ai-sdk/anthropic" />
 
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';

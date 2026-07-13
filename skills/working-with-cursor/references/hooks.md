@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/hooks.md"
-fetched_at: "2026-06-29T05:42:13.025Z"
-sha256: "d3130030d3e80caea4202ac09f5cd91146ab8a12e8870ef2cc45450d88e2b5b7"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "cfc732d8d2f210cc34f5eb060eba7fd65a891159dc1cdb228f6171fb9cd1018a"
 ---
 
 # Hooks
@@ -57,6 +57,8 @@ Cloud agents run command-based hooks from your repository. If you have hooks def
 
 On Enterprise plans, cloud agents also run team hooks and enterprise-managed hooks configured through the [web dashboard](https://cursor.com/dashboard/team-content?section=hooks).
 
+Cloud agents sometimes begin in a read-only environment for early exploratory turns. Hooks do not run during those turns. They start once the agent has a writable environment.
+
 ### Supported hooks
 
 The following hooks run in cloud agents:
@@ -72,21 +74,23 @@ The following hooks run in cloud agents:
 | `postToolUseFailure`   | Yes       |
 | `subagentStart`        | Yes       |
 | `subagentStop`         | Yes       |
+| `beforeSubmitPrompt`   | Yes       |
 | `preCompact`           | Yes       |
+| `afterAgentResponse`   | Yes       |
+| `afterAgentThought`    | Yes       |
+| `stop`                 | Yes       |
 
 ### Hooks not available in cloud agents
 
 Some hooks don't apply to cloud agents due to differences in the execution environment:
 
-| Hook                                       | Reason                                                                                                                                                                                                        |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sessionStart` / `sessionEnd`              | Cloud agent VMs are provisioned after a task is submitted. There is no VM running when the session starts on [cursor.com/agents](https://cursor.com/agents), so these hooks have no equivalent trigger point. |
-| `beforeSubmitPrompt`                       | The prompt is submitted from the web before the VM exists, so this hook can't run in the cloud environment.                                                                                                   |
-| `beforeTabFileRead` / `afterTabFileEdit`   | Tab completions are an IDE feature and don't run in cloud agents.                                                                                                                                             |
-| `workspaceOpen`                            | This is an IDE lifecycle hook and doesn't apply to cloud agents.                                                                                                                                              |
-| `beforeMCPExecution` / `afterMCPExecution` | Not yet wired for cloud agents.                                                                                                                                                                               |
-| `afterAgentResponse` / `afterAgentThought` | Not yet wired for cloud agents.                                                                                                                                                                               |
-| `stop`                                     | Not yet wired for cloud agents.                                                                                                                                                                               |
+| Hook                                       | Reason                                                                                                                                                                                                   |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sessionStart`                             | Deferred while cloud agents can still start in a read-only environment. Hooks don't load there, so a cloud `sessionStart` would fire too late (after the first write) rather than at true session start. |
+| `sessionEnd`                               | Cloud agents have no editor-lifetime session boundary. `sessionEnd` is tied to the IDE session, not a cloud agent chat.                                                                                  |
+| `beforeMCPExecution` / `afterMCPExecution` | Deferred while cloud agents can still start in a read-only environment, where hooks don't load and MCP hook timing is unclear.                                                                           |
+| `beforeTabFileRead` / `afterTabFileEdit`   | Tab completions are an IDE feature and don't run in cloud agents.                                                                                                                                        |
+| `workspaceOpen`                            | This is an IDE lifecycle hook and doesn't apply to cloud agents.                                                                                                                                         |
 
 ### Configuration sources
 

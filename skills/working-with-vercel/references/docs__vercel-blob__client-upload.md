@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ab40ee804e8a8b2d2c2b9f8d4500596356a01781ad653c5ea468d41f4b65c465"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "0b95793492ad6e975c7ffbe06691fb2fd0465c4b4ab5998d1d6873703229286c"
 ---
 
 # Client Uploads with Vercel Blob
@@ -63,9 +63,14 @@ Vercel Blob works with any frontend framework. First, install the package:
   Once created, you are taken to the Vercel Blob store page.
 
 - ### Prepare your local project
-  Since you created the Blob store in a project, we automatically created and added the following Environment Variable to the project for you.
-  - `BLOB_READ_WRITE_TOKEN`
-  To use this Environment Variable locally, we recommend pulling it with the Vercel CLI:
+  Since you created the Blob store in a project, we automatically created and added the following Environment Variables to the project for you.
+
+  The default setup uses OIDC authentication with short-lived, auto-rotated credentials:
+  - `BLOB_STORE_ID` — identifies your Blob store
+  - `VERCEL_OIDC_TOKEN` — a short-lived token automatically rotated by Vercel; used with `BLOB_STORE_ID` for server-side access
+  A long-lived static token is also added as a fallback and is required for generating client upload tokens:
+  - `BLOB_READ_WRITE_TOKEN` — a long-lived static read-write token; required by `handleUpload` and `handleUploadPresigned` to generate client tokens for browser uploads, and for code that runs outside Vercel
+  To use these Environment Variables locally, we recommend pulling them with the Vercel CLI:
   ```bash
   vercel env pull
   ```

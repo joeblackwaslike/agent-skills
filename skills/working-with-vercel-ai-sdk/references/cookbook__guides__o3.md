@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/o3.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a6c415f46da025ef855238084da07a1d6a7a7c57463165ea2ffc3e956b5f923b"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b29b1fa8be84aee91cc5673a2710dee375b6364c11d05abbc9ecd43d5f303f37"
 ---
 
 # Get started with OpenAI o3-mini
@@ -20,9 +20,9 @@ o3-mini offers three reasoning effort levels:
 2. [**Medium**]: Balanced approach matching o1's performance levels
 3. [**High**]: Enhanced reasoning power exceeding o1 in many STEM domains
 
-| Model   | Streaming           | Tool Calling        | Structured Output   | Reasoning Effort    | Image Input         |
-| ------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| o3-mini | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> |
+| Model   | Streaming | Tool Calling | Structured Output | Reasoning Effort | Image Input |
+| ------- | --------- | ------------ | ----------------- | ---------------- | ----------- |
+| o3-mini | <Check /> | <Check />    | <Check />         | <Check />        | <Cross />   |
 
 ### Benchmarks
 

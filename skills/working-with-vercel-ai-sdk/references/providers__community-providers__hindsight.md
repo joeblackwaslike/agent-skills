@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/hindsight.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "aa0fb406deb9a750673dc9c42c6d4a5c784e2277a17250011b3620b278e3dc22"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "4783667c57985b3f23bb5e8236cff6c52f4b10da2dc9a66a58b85bcc6891677b"
 ---
 
 # Hindsight
@@ -38,32 +38,7 @@ Sign up and get your API URL from the [Hindsight dashboard](https://ui.hindsight
 
 ## Installation
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet
-      text="pnpm add @vectorize-io/hindsight-ai-sdk @vectorize-io/hindsight-client"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm install @vectorize-io/hindsight-ai-sdk @vectorize-io/hindsight-client"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @vectorize-io/hindsight-ai-sdk @vectorize-io/hindsight-client"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="bun add @vectorize-io/hindsight-ai-sdk @vectorize-io/hindsight-client"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@vectorize-io/hindsight-ai-sdk @vectorize-io/hindsight-client" />
 
 ## Creating Tools
 

@@ -3,18 +3,18 @@ title: Report Abuse
 product: vercel
 url: /docs/platforms/platform-elements/blocks/report-abuse
 canonical_url: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: reference
 prerequisites:
   - /docs/platforms/platform-elements/blocks
   - /docs/platforms/platform-elements
 related:
   - /docs/platforms/platform-elements/blocks/custom-domain
-summary: Learn about report abuse on Vercel.
+summary: A content moderation interface for reporting abuse with categorization, validation, and privacy-focused design.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "75f1a244bccfbca672dde975b776fabd9fbb0d927a1f6a4233aee0201d2deb0c"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "b50f4fb395a7cec67a3f068a71d41cedc57f9c27111c5c4c702a8cdee8d7fb4e"
 ---
 
 # Report Abuse

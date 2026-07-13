@@ -3,7 +3,7 @@ title: vercel traces
 product: vercel
 url: /docs/cli/traces
 canonical_url: "https://vercel.com/docs/cli/traces"
-last_updated: 2026-05-27
+last_updated: 2026-06-22
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Inspect a request trace in the terminal or open it in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "23a98f9ac28740c4f8da67c53b9fec2e011372d60e075e1688058cae9cb7974a"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "4610cb42a33e18084600e0d7d787a693f6f8e3e894058568db24b73adb9cd3d3"
 ---
 
 # vercel traces

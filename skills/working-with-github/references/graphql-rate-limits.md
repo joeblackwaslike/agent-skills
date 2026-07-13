@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "932804db70363e8f2743843fa7c99a22765b2deccc00e0bcdadca75a281eab0d"
+fetched_at: "2026-07-13T06:58:22.643Z"
+sha256: "072ee29650d664cce27f98f08535f0c01c85ff92eb67308a81e9bae544b01c0f"
 ---
 
 ## Primary rate limit
@@ -10,15 +10,15 @@ sha256: "932804db70363e8f2743843fa7c99a22765b2deccc00e0bcdadca75a281eab0d"
 
 Rate limits are disabled by default for {% data variables.product.prodname_ghe_server %}. Contact your site administrator to confirm the rate limits for your instance.
 
-If you are a site administrator, you can set rate limits for your instance. For more information, see [AUTOTITLE](/admin/configuration/configuring-user-applications-for-your-enterprise/configuring-rate-limits).
+If you are a site administrator, you can set rate limits for your instance. For more information, see [AUTOTITLE](/admin/configuring-settings/configuring-user-applications-for-your-enterprise/configuring-rate-limits).
 
-If you are developing an app for users or organizations outside of your instance, the standard {% data variables.product.github %} rate limits apply. For more information, see [AUTOTITLE](/free-pro-team@latest/graphql/overview/resource-limitations) in the {% data variables.product.prodname_free_user %} documentation.
+If you are developing an app for users or organizations outside of your instance, the standard {% data variables.product.github %} rate limits apply. For more information, see [AUTOTITLE](/free-pro-team@latest/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api) in the {% data variables.product.prodname_free_user %} documentation.
 
 {% else %}
 
 The GraphQL API assigns points to each query and limits the points that you can use within a specific amount of time. This limit helps prevent abuse and denial-of-service attacks, and ensures that the API remains available for all users.
 
-The REST API also has a separate primary rate limit. For more information, see [AUTOTITLE](/rest/overview/rate-limits-for-the-rest-api).
+The REST API also has a separate primary rate limit. For more information, see [AUTOTITLE](/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 
 In general, you can calculate your primary rate limit for the GraphQL API based on your method of authentication:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "49bcaa98efd2c05ea85b6aae1d17b88baf6e8f6c344011409c7954d92d490a37"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "87a94478b73e3a794f84cb70c1f254bfb7b823f491130a9e62d2d2b0424514ad"
 ---
 
 # Deep Agents Harness
@@ -19,32 +19,7 @@ sandbox-exposed WebSocket.
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet
-      text="pnpm add @ai-sdk/harness @ai-sdk/harness-deepagents @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="npm install @ai-sdk/harness @ai-sdk/harness-deepagents @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="yarn add @ai-sdk/harness @ai-sdk/harness-deepagents @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="bun add @ai-sdk/harness @ai-sdk/harness-deepagents @ai-sdk/sandbox-vercel"
-      dark
-    />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-deepagents @ai-sdk/sandbox-vercel" />
 
 The adapter bootstraps the bridge's Node dependencies (the `deepagents` package
 and LangChain) inside the sandbox via `pnpm` when the first session starts.

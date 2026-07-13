@@ -3,7 +3,7 @@ title: Rolling out a new feature
 product: vercel
 url: /docs/flags/vercel-flags/cli/roll-out-feature
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature"
-last_updated: 2026-04-16
+last_updated: 2026-06-24
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags
@@ -13,8 +13,8 @@ related:
 summary: Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "936658ee677fc485da8ea548e19e9b32630b1591540281db3056eca0ee75b684"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "f74e3fffa580e396c2039760113223c373be63b2da9ad59a665057289f4558df"
 ---
 
 # Rolling out a new feature

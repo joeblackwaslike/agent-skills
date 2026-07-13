@@ -1,15 +1,15 @@
 ---
 title: "Deployment"
 source: "https://docusaurus.io/docs/deployment"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "5525435f1d1042e1c742d04d5db5fcfdafd44977b9ad63d346ca6c76d495bb52"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "7f86bed5d807255bf7b234dde6c0308d678df79b43d8c123114439dbcb9e11af"
 ---
 
 # Deployment
 
 Source: https://docusaurus.io/docs/deployment
 
-- GuidesDeploymentVersion: 3.10.1On this page
+- GuidesDeploymentVersion: 3.10.2On this page
 # Deployment
 
 To build the static files of your website for production, run:
@@ -641,4 +641,4 @@ Azure Static Web Apps is a service that automatically builds and deploys full-st
 
 Kinsta Static Site Hosting lets you deploy up to 100 static sites for free, custom domains with SSL, 100 GB monthly bandwidth, and 260+ Cloudflare CDN locations.
 
-Get started in just a few clicks by following our Docusaurus on Kinsta article.Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Get started in just a few clicks by following our Docusaurus on Kinsta article.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

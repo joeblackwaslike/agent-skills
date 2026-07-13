@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/observability
 canonical_url: "https://vercel.com/docs/observability"
-last_updated: 2026-06-17
+last_updated: 2026-07-06
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "c8718a5fb2de13cb336c1290fc6ce58ccc02254e99847b23b545225d5b35324d"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "d07a06f034d8f3f8cf8b6f50a47d161cd8d0c3aa1a1256316b43ae12f03a9c09"
 ---
 
 # Observability
@@ -90,11 +90,15 @@ Vercel creates one or more of these events each time a request is made to your s
 
 Vercel tracks events at the team level, counting them across all projects in the team.
 
+If you've [excluded specific projects](/docs/observability/observability-plus#managing-projects) from Observability Plus, those projects won't generate metered events.
+
 ## Pricing and limitations
 
 Users on all plans can use Observability at no additional cost, with some [limitations](/docs/observability/observability-plus#limitations). The Observability section in the sidebar is available on the project dashboard for all projects in the team.
 
 Paid Pro and Enterprise teams can use [Observability Plus](/docs/observability/observability-plus) for additional features, higher limits, and increased retention.
+
+You can also [manage which projects](/docs/observability/observability-plus#managing-projects) are included in your Observability Plus subscription to control costs.
 
 For more information on pricing, see [Pricing](/docs/observability/observability-plus#pricing).
 

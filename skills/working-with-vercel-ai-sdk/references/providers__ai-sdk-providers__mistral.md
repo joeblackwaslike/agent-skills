@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0401d27f87023e5c270285f6e7772fa3fce024eb65e4c11a6a6cb9e48bdd4ccd"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "e19c0dfd2ba076c4835d7b62d563feac38a71f204068be29f19f33c6fa8e367c"
 ---
 
 # Mistral AI Provider
@@ -12,21 +12,7 @@ The [Mistral AI](https://mistral.ai/) provider contains language model support f
 
 The Mistral provider is available in the `@ai-sdk/mistral` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/mistral" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/mistral" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/mistral" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/mistral" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/mistral" />
 
 ## Provider Instance
 
@@ -299,26 +285,26 @@ const result = await generateText({
 
 ### Model Capabilities
 
-| Model                   | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ----------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `pixtral-large-latest`  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral-large-latest`  | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral-medium-latest` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral-medium-3`      | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral-medium-2508`   | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral-medium-2505`   | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral-medium-3.5`    | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `mistral-small-latest`  | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `magistral-small-2507`  | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `magistral-medium-2507` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `magistral-small-2506`  | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `magistral-medium-2506` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `ministral-3b-latest`   | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `ministral-8b-latest`   | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `pixtral-12b-2409`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `open-mistral-7b`       | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `open-mixtral-8x7b`     | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `open-mixtral-8x22b`    | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                   | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ----------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `pixtral-large-latest`  | <Check />   | <Check />         | <Check />  | <Check />      |
+| `mistral-large-latest`  | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `mistral-medium-latest` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `mistral-medium-3`      | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `mistral-medium-2508`   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `mistral-medium-2505`   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `mistral-medium-3.5`    | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `mistral-small-latest`  | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `magistral-small-2507`  | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `magistral-medium-2507` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `magistral-small-2506`  | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `magistral-medium-2506` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `ministral-3b-latest`   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `ministral-8b-latest`   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `pixtral-12b-2409`      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `open-mistral-7b`       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `open-mixtral-8x7b`     | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `open-mixtral-8x22b`    | <Cross />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   The table above lists popular models. Please see the [Mistral
@@ -343,10 +329,47 @@ import { mistral } from '@ai-sdk/mistral';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: mistral.embedding('mistral-embed'),
-  value: 'sunny day at the beach',
+  model: mistral.embedding('codestral-embed-2505'),
+  value: 'function add(a: number, b: number) { return a + b; }',
 });
 ```
+
+Mistral embedding models support additional provider options through
+`providerOptions.mistral`. You can validate them with
+`MistralEmbeddingModelOptions`:
+
+```ts
+import { mistral, type MistralEmbeddingModelOptions } from '@ai-sdk/mistral';
+import { embed } from 'ai';
+
+const { embedding } = await embed({
+  model: mistral.embedding('mistral-embed'),
+  value: 'sunny day at the beach',
+  providerOptions: {
+    mistral: {
+      metadata: { source: 'knowledge-base' },
+      outputDimension: 1024,
+      outputDtype: 'float',
+    } satisfies MistralEmbeddingModelOptions,
+  },
+});
+```
+
+The following optional provider options are available for Mistral embedding
+models:
+
+- **metadata** _Record&lt;string, unknown&gt;_
+
+  Additional metadata to attach to the embedding request.
+
+- **outputDimension** _number_
+
+  The dimension of the output embeddings when supported by the model.
+
+- **outputDtype** _string_
+
+  The data type of the output embeddings when supported by the model. Accepts
+  `'float'`, `'int8'`, `'uint8'`, `'binary'`, or `'ubinary'`.
 
 ### Model Capabilities
 

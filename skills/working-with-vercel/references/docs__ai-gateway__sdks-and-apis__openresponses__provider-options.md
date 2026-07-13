@@ -3,7 +3,7 @@ title: Provider Options
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses/provider-options
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/provider-options"
-last_updated: 2026-05-11
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openresponses
@@ -15,8 +15,8 @@ related:
 summary: Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/provider-options.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "042b079d21c2c6c54e54047a306012a0bb9e0b5ed93c2fe306493f599e3ad240"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "3a74ea0e63bf985872a349d61bd3c1fe7b57427db8c09c109bded6489ee5bd6b"
 ---
 
 # Provider Options

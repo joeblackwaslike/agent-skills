@@ -3,7 +3,7 @@ title: Vercel Web Analytics Troubleshooting
 product: vercel
 url: /docs/analytics/troubleshooting
 canonical_url: "https://vercel.com/docs/analytics/troubleshooting"
-last_updated: 2026-03-18
+last_updated: 2026-06-26
 type: reference
 prerequisites:
   - /docs/analytics
@@ -12,8 +12,8 @@ related:
 summary: Learn how to troubleshoot common issues with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/troubleshooting.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "da0356fe57b454ca6352c92ac6b7d0e48b734a6ce12d94f34c6118812b734152"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "54158c443dfab9f7f67d108aea99ab0d91bd078cbba743cb4f4200f68ff9a6b7"
 ---
 
 # Vercel Web Analytics Troubleshooting

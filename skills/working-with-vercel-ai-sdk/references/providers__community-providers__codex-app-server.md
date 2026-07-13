@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/codex-app-server.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9c39e84a05691dea21c96ed620d047f65e54422df849df1f29cfbfd7999a419b"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "53d79663a988928da7abb0ed3c030320e92ae8239999442c10631a99041f9e91"
 ---
 
 # Codex CLI (App Server) Provider
@@ -23,20 +23,7 @@ The [ai-sdk-provider-codex-app-server](https://github.com/pablof7z/ai-sdk-provid
 
 ## Setup
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ai-sdk-provider-codex-app-server" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ai-sdk-provider-codex-app-server" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ai-sdk-provider-codex-app-server" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add ai-sdk-provider-codex-app-server" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ai-sdk-provider-codex-app-server" />
 
 ## Provider Instance
 
@@ -183,22 +170,22 @@ const result = await streamText({
 
 ## Model Capabilities
 
-| Model                | Image Input         | Object Generation   | Tool Streaming      | Mid-Execution       |
-| -------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `gpt-5.3-codex`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gpt-5.2-codex`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gpt-5.1-codex-max`  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gpt-5.1-codex-mini` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                | Image Input | Object Generation | Tool Streaming | Mid-Execution |
+| -------------------- | ----------- | ----------------- | -------------- | ------------- |
+| `gpt-5.3-codex`      | <Check />   | <Check />         | <Check />      | <Check />     |
+| `gpt-5.2-codex`      | <Check />   | <Check />         | <Check />      | <Check />     |
+| `gpt-5.1-codex-max`  | <Check />   | <Check />         | <Check />      | <Check />     |
+| `gpt-5.1-codex-mini` | <Check />   | <Check />         | <Check />      | <Check />     |
 
 ## Comparison with Codex CLI Provider
 
-| Feature              | Codex CLI Provider  | Codex App Server    |
-| -------------------- | ------------------- | ------------------- |
-| Mid-execution inject | <Cross size={18} /> | <Check size={18} /> |
-| Persistent threads   | <Cross size={18} /> | <Check size={18} /> |
-| Session control      | <Cross size={18} /> | <Check size={18} /> |
-| Tool streaming       | <Cross size={18} /> | <Check size={18} /> |
-| One-shot execution   | <Check size={18} /> | <Check size={18} /> |
+| Feature              | Codex CLI Provider | Codex App Server |
+| -------------------- | ------------------ | ---------------- |
+| Mid-execution inject | <Cross />          | <Check />        |
+| Persistent threads   | <Cross />          | <Check />        |
+| Session control      | <Cross />          | <Check />        |
+| Tool streaming       | <Cross />          | <Check />        |
+| One-shot execution   | <Check />          | <Check />        |
 
 Use the **Codex CLI provider** for simple one-shot tasks. Use the **Codex App Server provider** when you need human-in-the-loop workflows, real-time course correction, or collaborative coding.
 

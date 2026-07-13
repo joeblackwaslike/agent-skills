@@ -3,7 +3,7 @@ title: OIDC Federation Reference
 product: vercel
 url: /docs/oidc/reference
 canonical_url: "https://vercel.com/docs/oidc/reference"
-last_updated: 2025-10-27
+last_updated: 2026-06-23
 type: reference
 prerequisites:
   - /docs/oidc
@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "58936cce69bfc22339dc68f497f5a7c21e9cf436866a5b51035f756963375250"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "ae3ed303cf76830e9c44d263f336e345f761af154be200071856b0829f66052a"
 ---
 
 # OIDC Federation Reference

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/vectorstores.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "3fd21c91da322c49d75f582223e95087e3afbd3441a0e572baffc1515484d979"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "59ce55aa062f79945f40d72f99e4ebaeaf9af09ce3ff6dfb4bbb3294ef0abd44"
 ---
 
 # vectorstores Provider
@@ -12,20 +12,7 @@ The [vectorstores provider](https://www.vectorstores.org/integration/vercel/) in
 
 The vectorstores provider is available in the `@vectorstores/vercel` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @vectorstores/vercel @vectorstores/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @vectorstores/vercel @vectorstores/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @vectorstores/vercel @vectorstores/core" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @vectorstores/vercel @vectorstores/core" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@vectorstores/vercel @vectorstores/core" />
 
 ## Document Indexing
 

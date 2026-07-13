@@ -3,7 +3,7 @@ title: Static IPs
 product: vercel
 url: /docs/networking/static-ips
 canonical_url: "https://vercel.com/docs/networking/static-ips"
-last_updated: 2026-06-19
+last_updated: 2026-06-30
 type: reference
 prerequisites:
   - /docs/networking
@@ -16,8 +16,8 @@ related:
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "110148ea3e34d715b1f650f666af92974e2eb215bdd48f7ca1d6a4a85c4aea7b"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9eb8f1772c514b4c20ff748bcd2d250e4815aff57b5241d0919352193c652d92"
 ---
 
 # Static IPs

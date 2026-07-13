@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files of any size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "40a523b67d7f914993452953ce18479827426df7f45aecdd889caf223da94c85"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "b453cbf539cf08de290ab35cbbb8329428c35cbf197bea5b5d6832ff1e12a5c4"
 ---
 
 # Vercel Blob
@@ -102,6 +102,8 @@ When you delete or update (overwrite) a blob, the changes may take up to 60 seco
 />
 ```
 
+For private blobs served through your [Functions](/docs/functions), your server code can skip the propagation delay entirely and read the latest version with [`useCache: false`](/docs/vercel-blob/private-storage#consistent-reads).
+
 For more information about updating existing blobs, see the [overwriting blobs](#overwriting-blobs) section.
 
 ### Best practice: Treat blobs as immutable
@@ -140,7 +142,7 @@ Overwriting blobs can be appropriate for certain use cases:
 1. **Regularly updated files**: For files that need to maintain the same URL but contain updated content (like JSON data files or configuration files)
 2. **Content with predictable update patterns**: For data that changes on a schedule and where consumers expect updates at the same URL
 
-When overwriting blobs, be aware that due to [caching](#caching), changes won't be immediately visible. The minimum time for changes to propagate is 60 seconds, and browser caches may need to be explicitly refreshed.
+When overwriting blobs, be aware that due to [caching](#caching), changes won't be immediately visible. The minimum time for changes to propagate is 60 seconds, and browser caches may need to be explicitly refreshed. For private blobs, you can read the latest version immediately by passing [`useCache: false`](/docs/vercel-blob/private-storage#consistent-reads) to `get()`.
 
 ### Alternatives to overwriting
 

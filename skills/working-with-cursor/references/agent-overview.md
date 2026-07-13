@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/agent/overview.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "87ed6500533feacada5b0bbfd908d25be97a426d17ed1a8c2b003f05e252c9eb"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "200ac95ea6bcb9ec61c65efd53eff388c1b5f3620b9420f9fc0953f0b2279ac4"
 ---
 
 # Cursor Agent
@@ -27,10 +27,6 @@ Tools are the building blocks of Agent. They are used to search your codebase an
 To understand how tool calling works under the hood, see our [tool calling fundamentals](https://cursor.com/learn/tool-calling.md).
 
 There is no limit on the number of tool calls Agent can make during a task.
-
-### Semantic search
-
-Perform semantic searches within your [indexed codebase](https://cursor.com/docs/agent/tools/search.md). Finds code by meaning, not just exact matches.
 
 ### Search files and folders
 

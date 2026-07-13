@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/subagents.md"
-fetched_at: "2026-06-29T05:42:13.025Z"
-sha256: "51ff48d8816de156514eee0050aaca932521c1d0c8e11096cb7ead083e0f89ab"
+fetched_at: "2026-07-13T06:55:43.454Z"
+sha256: "20689c5a050ba6d7a08e9e838ba976a5045c620a32216a8c90092085b19f29a0"
 ---
 
 # Subagents
@@ -138,12 +138,36 @@ Report findings by severity:
 
 The `model` field controls which model a subagent uses. There are two options:
 
-| Value               | Behavior                                                                                                                                                          |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `inherit`           | Uses the same model as the parent agent. This is the default.                                                                                                     |
-| A specific model ID | Uses the exact model you specify, such as `composer-2` or `gpt-5.5`. See the [models reference](https://cursor.com/docs/models-and-pricing.md) for available IDs. |
+| Value               | Behavior                                                                                                                                                              |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `inherit`           | Uses the same model as the parent agent. This is the default.                                                                                                         |
+| A specific model ID | Uses the exact model you specify, such as `composer-2` or `gpt-5.6-sol`. See the [models reference](https://cursor.com/docs/models-and-pricing.md) for available IDs. |
 
 Choose `inherit` when the subagent needs the same reasoning power as the parent. Use a specific model ID when you need a particular model's capabilities regardless of what the parent uses.
+
+#### Model parameters
+
+Append square brackets to a model ID to set per-model options like speed, reasoning effort, and context window. Write options as `id=value` pairs, and separate multiple options with commas.
+
+| Example                                     | Behavior                                                                                 |
+| :------------------------------------------ | :--------------------------------------------------------------------------------------- |
+| `composer-2.5[]`                            | Pins the base model. Empty brackets select the standard variant instead of the fast one. |
+| `composer-2.5[fast=false]`                  | Selects the standard (non-fast) variant explicitly.                                      |
+| `claude-opus-4-8[effort=high]`              | Sets reasoning effort to `high`.                                                         |
+| `claude-opus-4-8[context=300k]`             | Sets the context window to 300k tokens.                                                  |
+| `claude-opus-4-8[effort=high,context=300k]` | Combines options.                                                                        |
+
+Available options depend on the model, and use the same `id=value` pairs as the SDK's [model parameters](https://cursor.com/docs/sdk/typescript.md#model-parameters).
+
+```markdown
+---
+name: planner
+description: Plans complex changes before implementation.
+model: claude-opus-4-8[effort=high]
+---
+
+Break the task into a clear, ordered implementation plan.
+```
 
 #### When the configured model won't be used
 
@@ -179,7 +203,7 @@ Search the codebase and return relevant file paths and code snippets.
 ---
 name: reasoning-agent
 description: Handles complex architectural decisions.
-model: gpt-5.5
+model: gpt-5.6-sol
 ---
 
 Analyze the architecture and recommend changes with detailed reasoning.

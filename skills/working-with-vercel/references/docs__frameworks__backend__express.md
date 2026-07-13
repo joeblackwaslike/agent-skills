@@ -3,7 +3,7 @@ title: Express on Vercel
 product: vercel
 url: /docs/frameworks/backend/express
 canonical_url: "https://vercel.com/docs/frameworks/backend/express"
-last_updated: 2026-05-12
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/express.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "45bbe4f1b53d0f33053ee35046fd8c4955cf3115748d6b9b22292befd1d6bd60"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "2c8685e3870e6956758e292b0f79a05092d6181b6c8e0506d3fb80e74181f31d"
 ---
 
 # Express on Vercel
@@ -164,7 +164,7 @@ When you deploy an Express app to Vercel, your Express application becomes a sin
 
 Additionally, all [Vercel Functions limitations](/docs/functions/limitations) apply to the Express application, including:
 
-- **Application size**: The Express application becomes a single bundle, which must fit within the 250MB limit of Vercel Functions. Our bundling process removes all unneeded files from the deployment's bundle to reduce size, but does not perform application bundling (e.g., Webpack or Rollup).
+- **Application size**: The Express application becomes a single bundle, which has a standard bundle size limit of 250MB. [Large Functions](/docs/functions/limitations#large-functions-beta) support Node.js bundles up to 5GB on Fluid compute when enabled (public beta). Our bundling process removes all unneeded files from the deployment's bundle to reduce size, but does not perform application bundling (e.g., Webpack or Rollup).
 - **Error handling**: Express.js will swallow errors that can put the main function into an undefined state unless properly handled. Express.js will render its own error pages (500), which prevents Vercel from discarding the function and resetting its state. Implement robust error handling to ensure errors are properly managed and do not interfere with the serverless function's lifecycle.
 
 ## More resources

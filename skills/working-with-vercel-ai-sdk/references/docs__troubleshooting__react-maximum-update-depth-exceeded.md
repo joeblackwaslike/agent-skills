@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/react-maximum-update-depth-exceeded.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "424cd995d7c2c303ad820fd395fd12dce5436c943167d52a00b58c12cd27d8dc"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "ae14667d8f7cfaf314077f9d34ed7d45d80047a999b87b3ef32158ea194503eb"
 ---
 
 # React error "Maximum update depth exceeded"
@@ -19,14 +19,14 @@ need updating (e.g. Markdown). Throttling can mitigate this.
 
 ## Solution
 
-Use the `experimental_throttle` option to throttle the UI updates:
+Use the `throttle` option to throttle the UI updates:
 
 ### `useChat`
 
 ```tsx filename="page.tsx" highlight="2-3"
 const { messages, ... } = useChat({
   // Throttle the messages and data updates to 50ms:
-  experimental_throttle: 50
+  throttle: 50
 })
 ```
 
@@ -35,7 +35,7 @@ const { messages, ... } = useChat({
 ```tsx filename="page.tsx" highlight="2-3"
 const { completion, ... } = useCompletion({
   // Throttle the completion and data updates to 50ms:
-  experimental_throttle: 50
+  throttle: 50
 })
 ```
 

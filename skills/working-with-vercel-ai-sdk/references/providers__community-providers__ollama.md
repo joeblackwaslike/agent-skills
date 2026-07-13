@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/ollama.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ae021155a7858e1e73254be209f5533f4e3000621c05baaaa40b0cbaf9c59c60"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "925b16d7972c41ac83129cfd3314bde8919ef3fd04439b3db506c61125a2afac"
 ---
 
 # Ollama Provider
@@ -45,37 +45,11 @@ Choose and install your preferred Ollama provider:
 
 ### ollama-ai-provider-v2
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ollama-ai-provider-v2" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ollama-ai-provider-v2" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ollama-ai-provider-v2" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add ollama-ai-provider-v2" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ollama-ai-provider-v2" />
 
 ### ai-sdk-ollama
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add ai-sdk-ollama" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install ai-sdk-ollama" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add ai-sdk-ollama" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add ai-sdk-ollama" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="ai-sdk-ollama" />
 
 ## Provider Instance
 

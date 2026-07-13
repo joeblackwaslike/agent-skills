@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/mcp-quickstart.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "f43273b572b5d8119f4fe89fa2b8baa8c5b7fa8e7b6fd4900828957e6ea9b136"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "b040ff54a8aa7f7a47e3e91451e4de3ab6d5212d25b66950c2342b032c64a4f1"
 ---
 
 > ## Documentation Index
@@ -295,7 +295,7 @@ If a server doesn't connect, check its status with `/mcp` inside a session or `c
     Claude Code didn't find any servers for the current directory. The most common causes:
 
     * You ran `claude mcp add` from a different project. Local-scoped servers are tied to the project where you added them: the repository root, or the exact directory if you weren't in a git repository. Re-add the server from the project you're in now, or add it with `--scope user` so it isn't tied to a project.
-    * You edited a configuration file at the wrong path. The correct files are `~/.claude.json` and `<project>/.mcp.json`. Claude Code doesn't read paths such as `~/.claude/config/mcp.json`, `~/.claude/mcp.json`, or `%APPDATA%\Claude\mcp.json`.
+    * You edited a configuration file at the wrong path. The correct files are `~/.claude.json` and `<project>/.mcp.json`. Claude Code doesn't read paths such as `~/.claude/.mcp.json`, `~/.claude/config/mcp.json`, `~/.claude/mcp.json`, or `%APPDATA%\Claude\mcp.json`. For user-scoped servers, run `claude mcp add --scope user`, which writes to the `mcpServers` key in `~/.claude.json`; for project-scoped servers, edit `.mcp.json` at the project root.
   </Accordion>
 
   <Accordion title="Status shows Failed to connect or Connection error">

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/crosshatch.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "92aa5ef5cd58c5f119e01ee6b40415ac069c65434b12afcdfe99026d28e09f20"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "5be7d0952ecf77257272f882ea2e0e20e48e4bdad481233a5790afc840cbe000"
 ---
 
 # Crosshatch Provider
@@ -21,21 +21,7 @@ It creates language model objects that can be used with the `generateText` and `
 The Crosshatch provider is available via the `@crosshatch/ai-provider` module.
 You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @crosshatch/ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @crosshatch/ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @crosshatch/ai-provider" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @crosshatch/ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@crosshatch/ai-provider" />
 
 The [Crosshatch](https://crosshatch.io/) provider supports all of their available models such as OpenAI's GPT and Anthropic's Claude. This provider also supports the querying interface for controlling Crosshatch's custom data integration behaviors. This provider wraps the existing underlying providers ([@ai-sdk/openai](/providers/ai-sdk-providers/openai), [@ai-sdk/anthropic](/providers/ai-sdk-providers/openai).
 

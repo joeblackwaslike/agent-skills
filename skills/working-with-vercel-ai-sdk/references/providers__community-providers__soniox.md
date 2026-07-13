@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/soniox.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8e7acecc7776480138c0ed0178fdd23968f7bd74e8c031f19228ad830e219266"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "d4d4038088653c3c60852bb917080be3c06fa8b243c9677db0e8531bd1de1ff3"
 ---
 
 # Soniox Provider
@@ -11,20 +11,7 @@ For more information, see the [Soniox Documentation](https://soniox.com/docs).
 
 ## Installation
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @soniox/vercel-ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @soniox/vercel-ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @soniox/vercel-ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @soniox/vercel-ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@soniox/vercel-ai-sdk-provider" />
 
 ## Authentication
 

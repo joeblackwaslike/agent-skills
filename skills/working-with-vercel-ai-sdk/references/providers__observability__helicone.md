@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/helicone.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "58faa192816c4548b1e8a8fd680b422d1ea5fc9585240a10965fe06cf5981ff5"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "9a4728832be86a3e4d470df6991ce29d68dff8c0d50b7c22b1b1a973bb3836b8"
 ---
 
 # Helicone Observability
@@ -12,20 +12,7 @@ sha256: "58faa192816c4548b1e8a8fd680b422d1ea5fc9585240a10965fe06cf5981ff5"
 
 The Helicone provider is available in the `@helicone/ai-sdk-provider` package. Install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @helicone/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @helicone/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @helicone/ai-sdk-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @helicone/ai-sdk-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@helicone/ai-sdk-provider" />
 
 Setting up Helicone:
 

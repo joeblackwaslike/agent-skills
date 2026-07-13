@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-completion.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a8df65f52c69e12afd47fb89be538c7c06b58b725f3b5d425b6d51abe0360031"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a9174c6764f2df5901ad52b76b5528172431c47fff28fe40c8c639d5de9f9c75"
 ---
 
 # `useCompletion()`
@@ -114,7 +114,7 @@ Allows you to create text completion based capabilities for your application. It
         'Optional. A custom fetch function to be used for the API call. Defaults to the global fetch function.',
     },
     {
-      name: 'experimental_throttle',
+      name: 'throttle',
       type: 'number',
       isOptional: true,
       description:

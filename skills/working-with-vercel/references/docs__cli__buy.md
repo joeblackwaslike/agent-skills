@@ -3,7 +3,7 @@ title: vercel buy
 product: vercel
 url: /docs/cli/buy
 canonical_url: "https://vercel.com/docs/cli/buy"
-last_updated: 2026-05-28
+last_updated: 2026-07-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "afe841780f5627490270d7de76e281d9a1cad6303fa908caa5c4aea3575d3c5e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "20c65c54f3aeb607910e5e1cf7ff651e883bd8ac148096a999d46e4c85acd15a"
 ---
 
 # vercel buy
@@ -106,19 +106,6 @@ vercel buy pro
 
 *Using the \`vercel buy pro\` command to upgrade the
 current team to Vercel Pro.*
-
-### `v0`
-
-Purchase a v0 subscription for your team.
-
-```bash filename="terminal"
-vercel buy v0
-```
-
-*Using the \`vercel buy v0\` command to purchase a v0
-subscription for the current team.*
-
-> **💡 Note:** v0 subscription purchase is not yet available via the CLI.
 
 ### `domain`
 

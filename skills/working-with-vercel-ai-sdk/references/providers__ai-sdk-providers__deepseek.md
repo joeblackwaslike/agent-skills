@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f1ffb29148847195d66dc57fc8437703bc7062b75934688c843986d9a5243016"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "53182755328b56c8fc4c4bbdcaedfab7a302dc41b6bd18475c6845c3269f0572"
 ---
 
 # DeepSeek Provider
@@ -14,20 +14,7 @@ API keys can be obtained from the [DeepSeek Platform](https://platform.deepseek.
 
 The DeepSeek provider is available via the `@ai-sdk/deepseek` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/deepseek" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/deepseek" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/deepseek" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ai-sdk/deepseek" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/deepseek" />
 
 ## Provider Instance
 
@@ -183,10 +170,10 @@ The metrics include:
 
 ## Model Capabilities
 
-| Model               | Text Generation     | Object Generation   | Image Input         | Tool Usage          | Tool Streaming      |
-| ------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `deepseek-chat`     | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `deepseek-reasoner` | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model               | Text Generation | Object Generation | Image Input | Tool Usage | Tool Streaming |
+| ------------------- | --------------- | ----------------- | ----------- | ---------- | -------------- |
+| `deepseek-chat`     | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
+| `deepseek-reasoner` | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
 
 <Note>
   Please see the [DeepSeek

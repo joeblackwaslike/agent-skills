@@ -3,7 +3,7 @@ title: Flags Explorer
 product: vercel
 url: /docs/flags/flags-explorer
 canonical_url: "https://vercel.com/docs/flags/flags-explorer"
-last_updated: 2026-02-11
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/flags
@@ -16,8 +16,8 @@ related:
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "74c073b0e77b64372d503e52a16347d86861706725c370ed96f01249f5ddd1e5"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "0c1c606a6f0ecace46f20f07e6dcd7c90d2fc942c32e20b5a5bbf59a8bed7376"
 ---
 
 # Flags Explorer

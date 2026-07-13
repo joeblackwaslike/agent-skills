@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-object.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "47606d3133982b35cfae6b1afbb30166886213dc3a939439b373390044ffdc22"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "4cdb9b78806f92d4cc00d7ddd878ac6564ce55c68a6f36897fd71e4b08461263"
 ---
 
 # Stream Object
@@ -70,7 +70,7 @@ Please note the code for handling `undefined` values in the JSX.
 ```tsx filename='app/page.tsx'
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 import { notificationSchema } from './api/use-object/schema';
 
 export default function Page() {
@@ -130,7 +130,7 @@ You can also use the `stop` function to stop the object generation process.
 ```tsx filename='app/page.tsx' highlight="7,16,21,24"
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 import { notificationSchema } from './api/use-object/schema';
 
 export default function Page() {
@@ -193,7 +193,7 @@ On the client, you wrap the schema in `z.array()` to generate an array of object
 ```tsx filename='app/page.tsx'
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 import { notificationSchema } from '../api/use-object/schema';
 import z from 'zod';
 
@@ -267,7 +267,7 @@ export async function POST(req: Request) {
 ```tsx filename='app/page.tsx'
 'use client';
 
-import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-sdk/react';
 import { z } from 'zod';
 
 export default function Page() {

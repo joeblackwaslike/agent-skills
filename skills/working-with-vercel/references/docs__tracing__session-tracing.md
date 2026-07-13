@@ -3,7 +3,7 @@ title: Session tracing
 product: vercel
 url: /docs/tracing/session-tracing
 canonical_url: "https://vercel.com/docs/tracing/session-tracing"
-last_updated: 2026-05-28
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/tracing
@@ -12,12 +12,12 @@ related:
   - /docs/cli/curl
   - /docs/cli/traces
   - /docs/runtime-logs
-  - /docs/functions/runtimes/edge
+  - /docs/tracing
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5039bdcf7c6a02caa2593497415ea15b971bc5d3cffccb8906e0b56d354e8485"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a6a553043515fad8542696edf71cc5e5186f738a1c2db361b349bd17976a7fe4"
 ---
 
 # Session tracing
@@ -90,11 +90,13 @@ Tracing is available on all plans with a limit up to **1 million spans per month
 | Pro        | 1 million                   |
 | Enterprise | 1 million                   |
 
+## Attribute truncation
+
+Session Tracing follows the shared [attribute truncation behavior](/docs/tracing#attribute-truncation).
+
 ## Limitations
 
-- Each traced request is limited to **10 MB of compressed trace data**.
-- Individual spans larger than **1 MB of compressed data** will be dropped and not appear in your trace.
-- Custom spans from functions using the [Edge runtime](/docs/functions/runtimes/edge) are not supported.
+Session Tracing follows the shared [Tracing limitations](/docs/tracing#limitations).
 
 ## More resources
 

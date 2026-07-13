@@ -1,15 +1,15 @@
 ---
 title: "Markdown Diagrams"
 source: "https://docusaurus.io/docs/markdown-features/diagrams"
-fetched_at: "2026-06-15T05:52:48.352Z"
-sha256: "c6e8f507db369575594ecc793b7c7df2a4814fd0e93b0f34689dada7ac76ace6"
+fetched_at: "2026-07-13T06:52:46.761Z"
+sha256: "fe305eef1f228ce49523c82271b0d6cc0ae20b9a1cac089ec48904a3c3d33afd"
 ---
 
 # Markdown Diagrams
 
 Source: https://docusaurus.io/docs/markdown-features/diagrams
 
-- GuidesMarkdown FeaturesDiagramsVersion: 3.10.1On this page
+- GuidesMarkdown FeaturesDiagramsVersion: 3.10.2On this page
 # Diagrams
 
 Diagrams can be rendered using Mermaid in a code block.
@@ -98,4 +98,4 @@ The `dagre` layout engine is supported by default in Docusaurus.
 ```mermaid---config:  layout: elk---graph TD;    A-->B;    A-->C;    B-->D;    C-->D;```
 ```
 
-Edit this pageLast updated on Apr 30, 2026 by Sébastien Lorber
+Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber

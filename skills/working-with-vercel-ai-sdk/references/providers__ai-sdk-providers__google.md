@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0f717c443116e3f64fa007c2d8298b20fca0c0f06a09816b679e96467e6170cf"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "a5c63681157024425dd569f9a7a9831136dd38d856d07685ab3cc0c59525d5f8"
 ---
 
 # Google Provider
@@ -13,21 +13,7 @@ the [Google](https://ai.google.dev/api/rest) APIs.
 
 The Google provider is available in the `@ai-sdk/google` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/google" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/google" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/google" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/google" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/google" />
 
 ## Provider Instance
 
@@ -1044,20 +1030,20 @@ The following Zod features are known to not work with Google:
 
 ### Model Capabilities
 
-| Model                                 | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      | Google Search       | URL Context         |
-| ------------------------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `gemini-3.5-flash`                    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3.1-pro-preview`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3.1-flash-image-preview`      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3.1-flash-lite-preview`       | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3-pro-preview`                | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3-pro-image-preview`          | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-3-flash-preview`              | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-pro`                      | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-flash`                    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-flash-lite`               | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.5-flash-lite-preview-06-17` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `gemini-2.0-flash`                    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model                                 | Image Input | Object Generation | Tool Usage | Tool Streaming | Google Search | URL Context |
+| ------------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------- | ----------- |
+| `gemini-3.5-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3.1-pro-preview`              | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3.1-flash-image-preview`      | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3.1-flash-lite-preview`       | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3-pro-preview`                | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3-pro-image-preview`          | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3-flash-preview`              | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-2.5-pro`                      | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-2.5-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-2.5-flash-lite`               | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-2.5-flash-lite-preview-06-17` | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-2.0-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
 
 <Note>
   The table above lists popular models. Please see the [Google Generative AI
@@ -1837,11 +1823,11 @@ The following optional provider options are available for Google embedding model
 
 ### Model Capabilities
 
-| Model                        | Default Dimensions | Custom Dimensions   | Multimodal          |
-| ---------------------------- | ------------------ | ------------------- | ------------------- |
-| `gemini-embedding-001`       | 3072               | <Check size={18} /> | <Cross size={18} /> |
-| `gemini-embedding-2`         | 3072               | <Check size={18} /> | <Check size={18} /> |
-| `gemini-embedding-2-preview` | 3072               | <Check size={18} /> | <Check size={18} /> |
+| Model                        | Default Dimensions | Custom Dimensions | Multimodal |
+| ---------------------------- | ------------------ | ----------------- | ---------- |
+| `gemini-embedding-001`       | 3072               | <Check />         | <Cross />  |
+| `gemini-embedding-2`         | 3072               | <Check />         | <Check />  |
+| `gemini-embedding-2-preview` | 3072               | <Check />         | <Check />  |
 
 ## Image Models
 
@@ -1989,11 +1975,11 @@ console.log(result.providerMetadata?.google?.groundingMetadata);
 
 #### Gemini Image Model Capabilities
 
-| Model                            | Image Generation    | Image Editing       | Aspect Ratios                                       |
-| -------------------------------- | ------------------- | ------------------- | --------------------------------------------------- |
-| `gemini-2.5-flash-image`         | <Check size={18} /> | <Check size={18} /> | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3-pro-image-preview`     | <Check size={18} /> | <Check size={18} /> | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3.1-flash-image-preview` | <Check size={18} /> | <Check size={18} /> | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| Model                            | Image Generation | Image Editing | Aspect Ratios                                       |
+| -------------------------------- | ---------------- | ------------- | --------------------------------------------------- |
+| `gemini-2.5-flash-image`         | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-3-pro-image-preview`     | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-3.1-flash-image-preview` | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
 
 <Note>
   `gemini-3-pro-image-preview` supports additional features including up to 14
@@ -2073,11 +2059,11 @@ const result = await generateSpeech({
 
 ### Model Capabilities
 
-| Model                          | Multi-speaker       | Style via instructions |
-| ------------------------------ | ------------------- | ---------------------- |
-| `gemini-2.5-flash-preview-tts` | <Check size={18} /> | <Check size={18} />    |
-| `gemini-2.5-pro-preview-tts`   | <Check size={18} /> | <Check size={18} />    |
-| `gemini-3.1-flash-tts-preview` | <Check size={18} /> | <Check size={18} />    |
+| Model                          | Multi-speaker | Style via instructions |
+| ------------------------------ | ------------- | ---------------------- |
+| `gemini-2.5-flash-preview-tts` | <Check />     | <Check />              |
+| `gemini-2.5-pro-preview-tts`   | <Check />     | <Check />              |
+| `gemini-3.1-flash-tts-preview` | <Check />     | <Check />              |
 
 
 ## Navigation

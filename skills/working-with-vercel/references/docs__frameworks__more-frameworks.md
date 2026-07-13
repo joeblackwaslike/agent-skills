@@ -16,8 +16,8 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "6b81feff3a24457c007b927db58f1a333dc4c10ad5265d74dfd8e24747ffb7f0"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "594c59b115d68f9264f8c0435b66c812581a5a196f574d884ee24b4442cca27f"
 ---
 
 # Supported Frameworks on Vercel
@@ -160,6 +160,8 @@ The frameworks listed below can be deployed to Vercel with minimal configuration
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/sveltekit-1) | [View Demo](https://sveltekit-1-template.vercel.app)
 - **TanStack Start**: Full-stack Framework powered by TanStack Router for React and Solid.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/tanstack-start)
+- **TanStack Start**: Full-stack Framework powered by TanStack Router imported from Lovable
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/tanstack-start-lovable)
 - **UmiJS**: UmiJS is an extensible enterprise-level React application framework.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/umijs) | [View Demo](https://umijs-template.vercel.app)
 - **Vite**: Vite is a new breed of frontend build tool that significantly improves the frontend development experience.

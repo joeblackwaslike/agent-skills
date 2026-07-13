@@ -16,8 +16,8 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c87bd9db57e86445bbfcea0997c8774ea7474a45863b269d86230871235e9f57"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "9c318b1bc2230a3d5a7af550b208f7b020d0da674b6840ddbde4d183873f0d73"
 ---
 
 # Runtime Logs
@@ -128,7 +128,7 @@ You can filter your logs based on the actual URL path requested by users. Reques
 
 ### Cache
 
-You can filter your logs based on the cache behavior such as `HIT` or `MISS`. See [`x-vercel-cache`](/docs/headers/response-headers#x-vercel-cache) for the possible values.
+You can filter your logs based on the cache behavior such as `HIT` or `MISS`. See [`x-vercel-cache`](/docs/caching/cache-status) for the possible values. For [ISR](/docs/incremental-static-regeneration) and [Partial Prerendering](/docs/partial-prerendering) static shells that weren't a plain hit, the [log details](#log-details) also show a **Cache Reason** explaining why the request missed, bypassed, or served stale.
 
 ### Status Code
 
@@ -198,7 +198,10 @@ You can view details for each request to analyze and improve your debugging expe
 | **Search Params**      | Search parameters of the request path                                                                                       |
 | **Region**             | The edge region where the request was processed                                                                             |
 | **Firewall**           | If request was allowed through firewall                                                                                     |
-| **Vercel Cache**       | The Vercel CDN Cache status, see [`x-vercel-cache`](/docs/headers/response-headers#x-vercel-cache) for the possible values. |
+| **Vercel Cache**       | The Vercel CDN Cache status, see [`x-vercel-cache`](/docs/caching/cache-status) for the possible values. |
+| **Cache Reason**       | Why the response missed, bypassed, or served stale for static requests. See [Cache Status and Reasons](/docs/caching/cache-status). |
+| **Cache Age**          | For ISR responses, how long ago the served cache entry was generated                                                        |
+| **Cache TTL**          | For ISR responses, how long the cache entry stays fresh before it revalidates                                               |
 | **Middleware**         | Metadata about middleware execution such as location and duration                                                           |
 | **Function**           | Metadata about function execution including function name, location, runtime, duration, memory usage, and start type        |
 | **Deployment**         | Metadata about the deployment that produced the logs including id, environment, and branch                                  |

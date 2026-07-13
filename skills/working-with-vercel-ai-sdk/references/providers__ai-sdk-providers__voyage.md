@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7d6dbacf08f310937bf8a321ac670b40c96dcd2a24f959efde9f3e49acd0f01b"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "8127cb908bf347019428a09c1c3492ee63dbdae36a6d0fefe90c00a78b0b17fb"
 ---
 
 # Voyage AI Provider
@@ -12,20 +12,7 @@ The [Voyage AI](https://www.voyageai.com/) provider contains embedding and reran
 
 The Voyage AI provider is available in the `@ai-sdk/voyage` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/voyage" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/voyage" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/voyage" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ai-sdk/voyage" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/voyage" />
 
 ## Provider Instance
 

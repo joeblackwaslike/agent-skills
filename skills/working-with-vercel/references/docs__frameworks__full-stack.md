@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0262772794240c811897d60236e47212d0f5edb0cf11e1f6f0cb6ff076075292"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "0884177fb02f1278c9b3388f0fb6ba6d9cddab9afc2063dce5d2beae708f38e9"
 ---
 
 # Full-stack frameworks on Vercel
@@ -38,6 +38,8 @@ The following full-stack frameworks are supported with zero-configuration.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/sveltekit-1) | [View Demo](https://sveltekit-1-template.vercel.app)
 - **TanStack Start**: Full-stack Framework powered by TanStack Router for React and Solid.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/tanstack-start)
+- **TanStack Start**: Full-stack Framework powered by TanStack Router imported from Lovable
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/tanstack-start-lovable)
 
 
 ## Frameworks infrastructure support matrix

@@ -3,7 +3,7 @@ title: Query Web Analytics with the API
 product: vercel
 url: /docs/analytics/web-analytics-api
 canonical_url: "https://vercel.com/docs/analytics/web-analytics-api"
-last_updated: 2026-06-25
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -16,8 +16,8 @@ related:
 summary: Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/web-analytics-api.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3fe17b92f20a3d8ea41ad6dde17033107e31b603f08c79a3124d269723da04f1"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "bb4352b375a5c440c7440fb0a6d651d0aa1f591c7eb1b89b8c78cd33ffed9934"
 ---
 
 # Query Web Analytics with the API

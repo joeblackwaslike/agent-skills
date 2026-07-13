@@ -3,7 +3,7 @@ title: Connect to your own API
 product: vercel
 url: /docs/oidc/api
 canonical_url: "https://vercel.com/docs/oidc/api"
-last_updated: 2026-03-19
+last_updated: 2026-06-23
 type: how-to
 prerequisites:
   - /docs/oidc
@@ -12,8 +12,8 @@ related:
 summary: "Learn how to configure your own API to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/api.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "36b35e254b23287ee5db77cf5a9d00afb531f6780a3bca744912bb84d3718d14"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "3c2cd333c40af087f260b64b1bc3d720380d2227a11c3ad42c588cf1143ff176"
 ---
 
 # Connect to your own API

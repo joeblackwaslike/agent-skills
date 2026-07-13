@@ -1,20 +1,20 @@
 ---
-title: OSS Coding Agent
+title: OSS AI Vibe Coding Platform
 product: vercel
 url: /docs/platforms/examples/oss-coding-agent
 canonical_url: "https://vercel.com/docs/platforms/examples/oss-coding-agent"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-26
+type: tutorial
 prerequisites:
   - /docs/platforms/examples
   - /docs/platforms
 related:
   []
-summary: Learn about oss coding agent on Vercel.
+summary: Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/oss-coding-agent.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "17d22fbf62d179eb8f8a5a5edc35dbeff546d5b41788150dfe1949c0f81a883e"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "a6add63f4b95f95525151af1d8ebf7304c056c7cbf5eacb2497e46381c3199e3"
 ---
 
 # OSS AI Vibe Coding Platform

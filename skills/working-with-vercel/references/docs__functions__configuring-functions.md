@@ -3,7 +3,7 @@ title: Configuring Functions
 product: vercel
 url: /docs/functions/configuring-functions
 canonical_url: "https://vercel.com/docs/functions/configuring-functions"
-last_updated: 2025-06-25
+last_updated: 2026-07-01
 type: how-to
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "9804d58b9a843ff5ca1e3cd08238f7d2766c04699689f64ae466a5c97e3e4a55"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "b5b393f322af2c535a1f50a288c73b5db46342a0ed68672cfafb82cbcd297bf2"
 ---
 
 # Configuring Functions

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "20487db12002328e546cfc3d0b40684e5949d131d59ee0806089bc34c46f9b65"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "4e0a49433eeb9f494bc8a2c3902e0d24699a1012f32a7ba17529be3edf850135"
 ---
 
 # Fal Provider
@@ -12,21 +12,7 @@ sha256: "20487db12002328e546cfc3d0b40684e5949d131d59ee0806089bc34c46f9b65"
 
 The Fal provider is available via the `@ai-sdk/fal` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/fal" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/fal" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/fal" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/fal" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/fal" />
 
 ## Provider Instance
 
@@ -266,10 +252,10 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model     | Transcription       | Duration            | Segments            | Language            |
-| --------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `whisper` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `wizper`  | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model     | Transcription | Duration  | Segments  | Language  |
+| --------- | ------------- | --------- | --------- | --------- |
+| `whisper` | <Check />     | <Check /> | <Check /> | <Check /> |
+| `wizper`  | <Check />     | <Check /> | <Check /> | <Check /> |
 
 ## Speech Models
 

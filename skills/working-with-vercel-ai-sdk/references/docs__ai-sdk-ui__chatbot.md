@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0d514a421c3e2a23e6690decba4aeaef6380f83b67bd0ec64a8ea6d1af6e080e"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "22843b8235d76c33dc3add3f08c8b737b988a0d50a2543498e62a41e5df66464"
 ---
 
 # Chatbot
@@ -327,12 +327,12 @@ When the user clicks the "Regenerate" button, the AI provider will regenerate th
 <Note>This feature is currently only available for React.</Note>
 
 By default, the `useChat` hook will trigger a render every time a new chunk is received.
-You can throttle the UI updates with the `experimental_throttle` option.
+You can throttle the UI updates with the `throttle` option.
 
 ```tsx filename="page.tsx" highlight="2-3"
 const { messages, ... } = useChat({
   // Throttle the messages and data updates to 50ms:
-  experimental_throttle: 50
+  throttle: 50
 })
 ```
 

@@ -3,7 +3,7 @@ title: Filtering Analytics
 product: vercel
 url: /docs/analytics/filtering
 canonical_url: "https://vercel.com/docs/analytics/filtering"
-last_updated: 2026-02-27
+last_updated: 2026-06-26
 type: how-to
 prerequisites:
   - /docs/analytics
@@ -15,8 +15,8 @@ related:
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9e86f04f3c01c58c034776e7e0484669253b90eace2b81abbb6abfd800b0bf15"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "0a976656f272addd154103713380a854bc00c2cfacd4c996c7e68562ffe99cd4"
 ---
 
 # Filtering Analytics

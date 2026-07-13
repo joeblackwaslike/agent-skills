@@ -3,7 +3,7 @@ title: Custom error pages
 product: vercel
 url: /docs/custom-error-pages
 canonical_url: "https://vercel.com/docs/custom-error-pages"
-last_updated: 2026-02-17
+last_updated: 2026-06-23
 type: how-to
 prerequisites:
   []
@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure custom error pages for 5xx server errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/custom-error-pages.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d0d06784e856b397892b74af20dbc18f583795096c3c12cdae1b5cf759f019fb"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "23d416adfb934a427ac8a2bf2a07a792afd2863ef59dd317cc5c6deee610fe62"
 ---
 
 # Custom error pages

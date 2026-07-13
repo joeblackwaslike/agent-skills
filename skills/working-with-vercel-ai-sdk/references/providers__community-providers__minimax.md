@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/minimax.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "657d79a8bc8acab84267a3854b10c183b628d1ef3c4ed39d18f7bf5edbe5596a"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "74f499d87b7c8760f02e1a3f45b82e234399a0c7f2caf973169d3c30e6361044"
 ---
 
 # MiniMax Provider
@@ -14,20 +14,7 @@ API keys can be obtained from the [MiniMax Platform](https://platform.minimax.io
 
 The MiniMax provider is available via the `vercel-minimax-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add vercel-minimax-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install vercel-minimax-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add vercel-minimax-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add vercel-minimax-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="vercel-minimax-ai-provider" />
 
 ## Provider Instance
 
@@ -103,10 +90,10 @@ Both formats access the same MiniMax models with the same capabilities.
 
 ## Model Capabilities
 
-| Model               | Text Generation     | Object Generation   | Image Input         | Tool Usage          | Tool Streaming      |
-| ------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `MiniMax-M2`        | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `MiniMax-M2-Stable` | <Check size={18} /> | <Check size={18} /> | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model               | Text Generation | Object Generation | Image Input | Tool Usage | Tool Streaming |
+| ------------------- | --------------- | ----------------- | ----------- | ---------- | -------------- |
+| `MiniMax-M2`        | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
+| `MiniMax-M2-Stable` | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
 
 <Note>
   Please see the [MiniMax

@@ -1,21 +1,21 @@
 ---
-title: Using with CLI
+title: Accessing Metrics with Vercel CLI
 product: vercel
 url: /docs/speed-insights/accessing-metrics-with-vercel-cli
 canonical_url: "https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-25
+type: how-to
 prerequisites:
   - /docs/speed-insights
 related:
   - /docs/observability/observability-plus
   - /docs/cli/metrics
   - /docs/speed-insights/metrics
-summary: Learn about using with cli on Vercel.
+summary: Use the Vercel CLI to query Speed Insights metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0491cee59b6ae2d7ec115cbb8b2fb8e1d58ed51b6dfc84f8953f1585560a72e8"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "7822222f6924ae3a5edabf218a5e501681d2b6ab2012ab49996fd043f5254f22"
 ---
 
 # Accessing Metrics with Vercel CLI

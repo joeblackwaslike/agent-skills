@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c04d425ffe8b7230206814cdb034f1febdeffbb9eff9f0c9733cba97d8470518"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "7922512d11e83a46f8a19a9bea32b1882e4f6e2a3561fe4240a997c534fd1b57"
 ---
 
 # Cohere Provider
@@ -12,21 +12,7 @@ The [Cohere](https://cohere.com/) provider contains language and embedding model
 
 The Cohere provider is available in the `@ai-sdk/cohere` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/cohere" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/cohere" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/cohere" dark />
-  </Tab>
-
-  <Tab>
-    <Snippet text="bun add @ai-sdk/cohere" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-sdk/cohere" />
 
 ## Provider Instance
 
@@ -105,21 +91,21 @@ and support structured data generation with [`Output`](/docs/reference/ai-sdk-co
 
 ### Model Capabilities
 
-| Model                         | Image Input         | Object Generation   | Tool Usage          | Tool Streaming      |
-| ----------------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `command-a-03-2025`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-a-reasoning-08-2025` | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-a-vision-07-2025`    | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-r7b-12-2024`         | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-r-plus-04-2024`      | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-r-plus`              | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-r-08-2024`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-r-03-2024`           | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command-r`                   | <Cross size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
-| `command`                     | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `command-nightly`             | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `command-light`               | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
-| `command-light-nightly`       | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> | <Cross size={18} /> |
+| Model                         | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ----------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `command-a-03-2025`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command-a-reasoning-08-2025` | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command-a-vision-07-2025`    | <Check />   | <Check />         | <Check />  | <Check />      |
+| `command-r7b-12-2024`         | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command-r-plus-04-2024`      | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command-r-plus`              | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command-r-08-2024`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command-r-03-2024`           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command-r`                   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `command`                     | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `command-nightly`             | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `command-light`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `command-light-nightly`       | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
 
 <Note>
   The table above lists popular models. Please see the [Cohere

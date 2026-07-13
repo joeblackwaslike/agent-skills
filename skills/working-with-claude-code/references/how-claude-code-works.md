@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/how-claude-code-works.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "16bc98d8cd7b95632771146a5dea64272e970577304713339e418fab2ac36e0f"
+fetched_at: "2026-07-13T06:53:38.588Z"
+sha256: "5b99bf05ca1f0fc804b5d37440154fcbb691a0ed900a73d8721085f973c35390"
 ---
 
 > ## Documentation Index
@@ -160,10 +160,10 @@ Checkpoints are local to your session, separate from git. They only cover file c
 
 Press `Shift+Tab` to cycle through permission modes:
 
-* **Default**: Claude asks before file edits and shell commands
-* **Auto-accept edits**: Claude edits files and runs common filesystem commands like `mkdir` and `mv` without asking, still asks for other commands
-* **Plan mode**: Claude explores and proposes a plan without editing your source files; permission prompts still apply as in default mode
-* **Auto mode**: Claude evaluates all actions with background safety checks. Currently a research preview
+* **Manual**: Claude asks before file edits and shell commands
+* **Accept edits**: Claude edits files and runs common filesystem commands like `mkdir` and `mv` without asking, still asks for other commands
+* **Plan**: Claude explores and proposes a plan without editing your source files; permission prompts still apply as in Manual mode
+* **Auto**: Claude evaluates all actions with background safety checks
 
 You can also allow specific commands in `.claude/settings.json` so Claude doesn't ask each time. This is useful for trusted commands like `npm test` or `git status`. Settings can be scoped from organization-wide policies down to personal preferences. See [Permissions](/en/permissions) for details.
 
@@ -180,7 +180,7 @@ Claude Code can teach you how to use it. Ask questions like "how do I set up hoo
 Built-in commands also guide you through setup:
 
 * `/init` walks you through creating a CLAUDE.md for your project
-* `/doctor` diagnoses common issues with your installation
+* `/doctor` runs a setup checkup that diagnoses installation and configuration issues and can fix them
 
 ### It's a conversation
 

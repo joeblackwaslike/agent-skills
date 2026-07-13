@@ -3,7 +3,7 @@ title: Connect to Google Cloud Platform (GCP)
 product: vercel
 url: /docs/oidc/gcp
 canonical_url: "https://vercel.com/docs/oidc/gcp"
-last_updated: 2026-03-19
+last_updated: 2026-06-23
 type: how-to
 prerequisites:
   - /docs/oidc
@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "981b0ae5ef0d9ddaf30c03b464e5d881bad308c0794c6dd2d5d887d95f2581ee"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "b210843d1aaa9c1b95038646579f1ee9cb2644ce5cb06c17a78e575d9b2699d8"
 ---
 
 # Connect to Google Cloud Platform (GCP)

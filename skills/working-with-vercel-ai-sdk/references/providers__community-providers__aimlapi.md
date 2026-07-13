@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/aimlapi.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "73d05b26a473a1127d0d6624612d8874598d2c8609fd63f344f0a0d6719c3f78"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b70c5f5dbe86e717c2326fb22c08feeb2646c9bb3131433d540cb38344ae65dc"
 ---
 
 # AI/ML API Provider
@@ -12,20 +12,7 @@ The [AI/ML API](https://aimlapi.com/?utm_source=aimlapi-vercel-ai&utm_medium=git
 
 The AI/ML API provider is available via the `@ai-ml.api/aimlapi-vercel-ai` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-ml.api/aimlapi-vercel-ai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-ml.api/aimlapi-vercel-ai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-ml.api/aimlapi-vercel-ai" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @ai-ml.api/aimlapi-vercel-ai" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@ai-ml.api/aimlapi-vercel-ai" />
 
 ### API Key
 

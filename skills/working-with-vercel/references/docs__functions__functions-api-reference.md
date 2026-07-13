@@ -3,7 +3,7 @@ title: Functions API Reference
 product: vercel
 url: /docs/functions/functions-api-reference
 canonical_url: "https://vercel.com/docs/functions/functions-api-reference"
-last_updated: 2026-04-26
+last_updated: 2026-07-01
 type: reference
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "509eec4bcead85c7466c4b85dae7b16bf98ec1d692d2e61ae6fbcf5c3d3bb449"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "63e0715d266fe6ad62126cc8d993aab24d7000ff3f621b67bbffac9393ee3ed7"
 ---
 
 # Functions API Reference

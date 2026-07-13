@@ -3,7 +3,7 @@ title: Advanced Web Analytics Config with @vercel/analytics
 product: vercel
 url: /docs/analytics/package
 canonical_url: "https://vercel.com/docs/analytics/package"
-last_updated: 2026-03-18
+last_updated: 2026-06-26
 type: reference
 prerequisites:
   - /docs/analytics
@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "9860c07f83aa5f62fd9913dd2e3466810af035ac543a68e54987fef8a32c928f"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "c64bd83632308605fa42a2b310f690e6d1a16ea77b7e6058c9bbea411d46e7b6"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics

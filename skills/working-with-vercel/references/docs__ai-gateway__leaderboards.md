@@ -3,17 +3,17 @@ title: Leaderboards
 product: vercel
 url: /docs/ai-gateway/leaderboards
 canonical_url: "https://vercel.com/docs/ai-gateway/leaderboards"
-last_updated: 2018-10-20
+last_updated: 2026-06-29
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/ecosystem/app-attribution
-summary: Learn about leaderboards on Vercel.
+summary: See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the underlying data.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/leaderboards.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "5fbaa69f7afd289d2611cd0139326276aba5388abc692b8355598a2634735871"
+fetched_at: "2026-07-13T07:00:47.058Z"
+sha256: "06f0f9f60206facd7cb07c22c6e3d9e0131695004bb4d55680507075089e70cf"
 ---
 
 # Leaderboards

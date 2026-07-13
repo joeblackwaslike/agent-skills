@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/acp.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "53521d6348b46dc1a2b79f9dd7f2f4a1ca0a6a93f5b83cc13bc60ee91a6114a2"
+fetched_at: "2026-07-13T06:59:02.188Z"
+sha256: "b43aa13c3c00b197fc8f253d50b2181c1a7c8b2d0f3f51ea6b5324a61103fc5f"
 ---
 
 # ACP (Agent Client Protocol)
@@ -23,20 +23,7 @@ Learn more about ACP in the [Agent Client Protocol Documentation](https://agentc
 
 The ACP provider is available in the `@mcpc-tech/acp-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @mcpc-tech/acp-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @mcpc-tech/acp-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @mcpc-tech/acp-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @mcpc-tech/acp-ai-provider" dark />
-  </Tab>
-</Tabs>
+<InstallPackages packages="@mcpc-tech/acp-ai-provider" />
 
 ## Provider Instance
 
