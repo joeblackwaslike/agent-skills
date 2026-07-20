@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-pages-router.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "09050cd1f3e8f7f063fd168ef9b2e258111296add758eb45c670377ecd72c6c9"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "74fa34ce33408cca149322e54bbd6c2f9eab4b62e9265e90689ba2f173400d75"
 ---
 
 # Next.js Pages Router Quickstart
@@ -403,7 +403,7 @@ By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 
 
 Update your `app/api/chat/route.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```tsx filename="app/api/chat/route.ts" highlight="33-48"
+```tsx filename="app/api/chat/route.ts" highlight="34-47"
 import {
   streamText,
   UIMessage,

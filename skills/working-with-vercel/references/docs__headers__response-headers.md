@@ -3,7 +3,7 @@ title: Response headers
 product: vercel
 url: /docs/headers/response-headers
 canonical_url: "https://vercel.com/docs/headers/response-headers"
-last_updated: 2026-07-01
+last_updated: 2026-07-08
 type: reference
 prerequisites:
   - /docs/headers
@@ -16,8 +16,8 @@ related:
 summary: Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/response-headers.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9c9c1e23ea9cc1ba63b79b3dbc83ed643daa545739f27dade7247538d2024d6f"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "9822e877c05c3108cd6aeac16f509365ede5af3005b43c3717ec1ccbb1816ce9"
 ---
 
 # Response headers

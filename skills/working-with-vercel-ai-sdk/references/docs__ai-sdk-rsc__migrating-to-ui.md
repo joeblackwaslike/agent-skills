@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cb9bc420276cafbb85efd98347f6b68a05d57758aef3dda259a5c4b4aef41376"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b6b6ebf6149fc15ddf5b273d1e685eb7769597965e3f997ea87b3068fe1d8dd9"
 ---
 
 # Migrating from RSC to UI
@@ -26,7 +26,7 @@ Due to these limitations, AI SDK RSC is marked as experimental, and we do not re
 
 As a result, we strongly recommend migrating to AI SDK UI, which has undergone extensive development to provide a more stable and production grade experience.
 
-In building [v0](https://v0.dev), we have invested considerable time exploring how to create the best chat experience on the web. AI SDK UI ships with many of these best practices and commonly used patterns like [language model middleware](/docs/ai-sdk-core/middleware), [multi-step tool calls](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls), [attachments](/docs/ai-sdk-ui/chatbot#attachments-experimental), [telemetry](/docs/ai-sdk-core/telemetry), [provider registry](/docs/ai-sdk-core/provider-management#provider-registry), and many more. These features have been considerately designed into a neat abstraction that you can use to reliably integrate AI into your applications.
+In building [v0](https://v0.dev), we have invested considerable time exploring how to create the best chat experience on the web. AI SDK UI ships with many of these best practices and commonly used patterns like [language model middleware](/docs/ai-sdk-core/middleware), [multi-step tool calls](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls-using-stopwhen), [attachments](/docs/ai-sdk-ui/chatbot#attachments), [telemetry](/docs/ai-sdk-core/telemetry), [provider registry](/docs/ai-sdk-core/provider-management#provider-registry), and many more. These features have been considerately designed into a neat abstraction that you can use to reliably integrate AI into your applications.
 
 ## Streaming Chat Completions
 

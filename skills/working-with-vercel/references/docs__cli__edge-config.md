@@ -15,8 +15,8 @@ related:
 summary: "Manage Edge Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/edge-config.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "1b889a269cee07b41d2bbadb734803b78625bd09630faa97893fcebd8a6d56da"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "8ccda426edaf53266042a1b0d2a43253e58c8f659e2e9b6195e4b9fe6afc6d0e"
 ---
 
 # vercel edge-config
@@ -209,7 +209,7 @@ vercel edge-config backups flags --restore backup_version_abc123 --yes
 
 *List, inspect, or restore backups for a store.*
 
-> **⚠️ Warning:** Restoring a backup updates live Edge Config items immediately. Use `--yes` to
+> **💡 Note:** Restoring a backup updates live Edge Config items immediately. Use `--yes` to
 > skip the confirmation prompt in non-interactive environments.
 
 #### Arguments

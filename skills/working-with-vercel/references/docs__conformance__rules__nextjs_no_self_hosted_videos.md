@@ -1,15 +1,41 @@
 ---
+title: NEXTJS_NO_SELF_HOSTED_VIDEOS
+product: vercel
+url: /docs/conformance/rules/NEXTJS_NO_SELF_HOSTED_VIDEOS
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_NO_SELF_HOSTED_VIDEOS"
+last_updated: 2025-11-25
+type: conceptual
+prerequisites:
+  []
+related:
+  - /docs/storage/vercel-blob
+  - /docs/storage/vercel-blob/server-upload
+  - /docs/storage/vercel-blob/client-upload
+summary: Prevent video files from being added to Next.js applications.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_self_hosted_videos.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "fa4a1d6e8326e115abe932f82f23fb5840ff32b07f2a2bd59d554580e9701980"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "879df482e2dc34166facda715a7e3fea7a89a05b18acccdf762402ed5ff33554"
 ---
 
-# Page Not Found
+# NEXTJS_NO_SELF_HOSTED_VIDEOS
 
-`/docs/conformance/rules/nextjs_no_self_hosted_videos` does not exist. Similar pages:
+Video files, which are typically large, can consume a lot of bandwidth for
+your Next.js application. Video files are better served from a dedicated video
+CDN that is optimized for serving videos.
 
-- [Conformance Rules](/docs/conformance/rules.md): reInteractive strategy in Script (next/script) elements as this can cause performance issues. NEXTJS\_NO\_CLIENT\_DEPS\_IN\_MIDDLEWARE Prevent usage
-- [NEXTJS_NO_SELF_HOSTED_VIDEOS](/docs/conformance/rules/nextjs_no_self_hosted_videos.md): Video files, which are typically large, can consume a lot of bandwidth for your Next.js application. Video files are better served from a dedicated
-- [NEXTJS_NO_BEFORE_INTERACTIVE](/docs/conformance/rules/nextjs_no_before_interactive.md): Conformance is available on Enterprise plans The default loading strategy for next/script is optimised for fast page loads. Setting the strategy to
+## How to fix
 
-All pages: [/llms.txt](/llms.txt)
+Vercel Blob can be used for storing and serving large files such as videos.
+
+You can use either [server uploads or client uploads](/docs/storage/vercel-blob#server-and-client-uploads) depending on the file size:
+
+- [Server uploads](/docs/storage/vercel-blob/server-upload) are suitable for files up to **4.5 MB**
+- [Client uploads](/docs/storage/vercel-blob/client-upload) allow for uploading larger files directly from the browser to Vercel Blob, supporting files up to **5 TB (5,000 GB)**
+
+See the [best practices for hosting videos on Vercel](/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) guide to learn more about various other options for hosting videos.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

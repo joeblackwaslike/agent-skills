@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "3df90acd47f9100b4b3e5b8048d0cf528c847404103ee192aa3e2a421d279563"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "838a80eb1d25ffc216bf0a1be03b63d0f9e9db81c020d7bcc358c6d678fe47dc"
 ---
 
 # Configuring regions for Vercel Functions
@@ -110,7 +110,7 @@ Deploying to more regions than your plan allows causes the deployment to fail be
 
 Vercel deploys [Routing Middleware](/docs/routing-middleware) to all regions by default, regardless of your region settings. On the Hobby plan, Routing Middleware runs in fewer regions.
 
-> **⚠️ Warning:** If your functions communicate with external services, choosing regions far
+> **💡 Note:** If your functions communicate with external services, choosing regions far
 > from those services increases latency. Select only regions close to your
 > external services.
 

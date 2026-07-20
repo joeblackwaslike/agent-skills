@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/dependency-caching.md"
-fetched_at: "2026-07-06T05:37:15.750Z"
-sha256: "3bb843fb7730fe81c0b3d49b3d49f3c400f3f254a81b765ad91ee5e05d7db0e0"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "5ba876f016151897c5de7497996f959974cd849e785967016648309174c9e62c"
 ---
 
 ## About workflow dependency caching
@@ -19,7 +19,7 @@ Workflow runs often reuse the same outputs or downloaded dependencies from one r
 
 {% data reusables.actions.comparing-artifacts-caching %}
 
-For more information on workflow run artifacts, see [AUTOTITLE](/actions/using-workflows/storing-workflow-data-as-artifacts).
+For more information on workflow run artifacts, see [AUTOTITLE](/actions/tutorials/store-and-share-data).
 
 ## Cache security
 
@@ -27,8 +27,8 @@ Caches are shared based on the branch or tag a workflow run uses, not on the ide
 
 Untrusted workflows can read sensitive cache contents, such as when a `pull_request` from a fork restores a cache. Poisoned caches can lead to code execution in trusted workflows. To limit the risk of cache poisoning, {% data variables.product.github %} gives workflows that run in response to low-trust triggers read-only access to caches in the default branch's scope.
 
-For details on cache scope, access restrictions, and best practices for using caches securely, see [AUTOTITLE](/actions/reference/dependency-caching-reference#cache-access-for-low-trust-workflow-triggers).
+For details on cache scope, access restrictions, and best practices for using caches securely, see [AUTOTITLE](/actions/reference/workflows-and-actions/dependency-caching#cache-access-for-low-trust-workflow-triggers).
 
 ## Next steps
 
-To implement dependency caching in your workflows, see [AUTOTITLE](/actions/reference/dependency-caching-reference).
+To implement dependency caching in your workflows, see [AUTOTITLE](/actions/reference/workflows-and-actions/dependency-caching).

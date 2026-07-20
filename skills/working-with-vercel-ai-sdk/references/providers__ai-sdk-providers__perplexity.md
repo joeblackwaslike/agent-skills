@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "023ace1bce137fd5a0e14c3f3137d9e2f64a12e46c433ee8365b5f8c26169e8b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "bae40185ba1d90e1f0586d55056128ae4677747bf56e1dea2ce8710ce6a905ae"
 ---
 
 # Perplexity Provider
@@ -250,6 +250,7 @@ respond to questions about it.
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

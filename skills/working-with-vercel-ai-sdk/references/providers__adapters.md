@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "302b0257b2290163ed4614287e35734930c4f9a65010038b4f287187d6557463"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "f6434e6bb94374eb528b086767e1f56287a2f29a8a65b7eef40b0f93004111cf"
 ---
 
 # Adapters
@@ -59,6 +59,7 @@ The following adapters are currently available:
   - [ByteDance](/providers/ai-sdk-providers/bytedance)
   - [Kling AI](/providers/ai-sdk-providers/klingai)
   - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+  - [Cartesia](/providers/ai-sdk-providers/cartesia)
 - [AI SDK Harnesses](/providers/ai-sdk-harnesses)
   - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
   - [Codex](/providers/ai-sdk-harnesses/codex)

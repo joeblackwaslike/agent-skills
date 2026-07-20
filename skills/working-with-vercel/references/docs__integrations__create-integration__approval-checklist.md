@@ -17,8 +17,8 @@ related:
 summary: Review this checklist before submitting your native or connectable account integration for approval on the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/approval-checklist.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "62945398db9d43bc18fad50107531183d70e1decfef40f039f7e900cac86c462"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a6c50a1bfef4a2af8658c466d6b9529474c0a4bde1697ab0cb9baf3a61aeb263"
 ---
 
 # Integration Approval Checklist
@@ -47,7 +47,7 @@ Use this checklist if you're building a [native integration](/docs/integrations/
 - Include documentation links (setup guides, FAQs) in your listing. Set the **Documentation URL** in the integration console.
 - Verify category placement in the Marketplace (for example, AI, Observability, Database) matches your product.
 - Confirm feature parity with your direct offering, including any features tailored for the Marketplace.
-- Ensure your  are high quality (1440x960px, 3:2 ratio) and readable in both light and dark mode. Verify the first image is suitable for the auto-generated Open Graph image.
+- Ensure your  are high quality (1920x1080px, 16:9 ratio) and readable in both light and dark mode. Verify the first image is suitable for the auto-generated Open Graph image.
 - If your integration supports both native and connectable account flows, ensure the connectable account flow works. Otherwise, remove the **Redirect URL** from the integration console.
 - Add a Marketplace [template](/docs/deployments/deploy-button/source#store-product-integration) as a deploy option in the product flow. This is required.
 

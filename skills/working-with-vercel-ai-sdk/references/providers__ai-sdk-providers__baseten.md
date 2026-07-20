@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "09ee0ac6bfbf8d0828cfe6475da9ba8ec669298d6e969a22eb9d92225e87ae81"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "bee74ce9dda271d08675edf5ee3b490f27da8f17d7b1abf2581862598ee97085"
 ---
 
 # Baseten Provider
@@ -281,6 +281,7 @@ try {
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

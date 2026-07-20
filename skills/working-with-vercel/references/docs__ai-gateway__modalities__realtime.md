@@ -15,8 +15,8 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "30cccab83c833cab68b70567fdef978f5a4d28f67e3ab8ca78f60f476242bc77"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "8f27a42dd5c775a1efee18fce875ce5052310ac02a6af8578fe19250dd1665eb"
 ---
 
 # Realtime
@@ -75,7 +75,7 @@ export default function Page() {
 }
 ```
 
-> **⚠️ Warning:** Keep `AI_GATEWAY_API_KEY` on the server. `getToken` exchanges it for a
+> **💡 Note:** Keep `AI_GATEWAY_API_KEY` on the server. `getToken` exchanges it for a
 > single-use, short-lived client secret that the browser uses to connect, so the
 > key never reaches the client.
 

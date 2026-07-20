@@ -14,13 +14,13 @@ related:
 summary: Learn about nameservers and the benefits Vercel nameservers provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-nameservers.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d720a9d40e89313e68b120dd864cb241a6098bc0efe597d1130f7d83b4f06bc5"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "aa47629ad4ac5fbc25cfe85e739e6f32a0f50cafba89af39ff1145a87e16e45e"
 ---
 
 # Working with nameservers
 
-> **⚠️ Warning:** Before moving your domain to use Vercel's nameservers, you should ensure that
+> **💡 Note:** Before moving your domain to use Vercel's nameservers, you should ensure that
 > you own the domain listed on the [Domains](/domains) page of your account."
 
 Nameservers are the actual servers on the network that are responsible for resolving domain names to the IP addresses where your site is hosted. Most domain registrars, including Vercel, [provide their own nameservers](/docs/domains/managing-nameservers). For Vercel these are:

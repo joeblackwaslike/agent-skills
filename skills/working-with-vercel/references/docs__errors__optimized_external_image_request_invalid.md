@@ -1,16 +1,38 @@
 ---
+title: OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID
+product: vercel
+url: /docs/errors/OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID
+canonical_url: "https://vercel.com/docs/errors/OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: The external image request is invalid. This is a request error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/optimized_external_image_request_invalid.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "5b4291dd87ee564a7560a352bc54205dfc6af87ddf9551a1d0a99380bfdca71f"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "73e0824b2097b2efe93cd2ea6bd5168b4eecadae8338d166c7f0471b119953ab"
 ---
 
-# Page Not Found
+# OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID
 
-`/docs/errors/optimized_external_image_request_invalid` does not exist. Similar pages:
+The `OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID` error occurs when the external image request is invalid.
 
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID](/docs/errors/optimized_external_image_request_invalid.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID error occurs when the external image request is invalid. 502
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED](/docs/errors/optimized_external_image_request_unauthorized.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED error occurs when the external image request is unauthorized. 502
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED](/docs/errors/optimized_external_image_request_failed.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED error occurs when the request for an optimized external image fails. 502
-- [INVALID_IMAGE_OPTIMIZE_REQUEST](/docs/errors/invalid_image_optimize_request.md): The INVALID_IMAGE_OPTIMIZE_REQUEST error occurs when the query string is using an invalid value for q (quality) or w (width), or url returns a
+**Error Code:** `502`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Bad Gateway
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Verify external URL:** Ensure that the external image URL is absolute and correctly formatted
+2. **Check query parameters:** Ensure that any query parameters are valid
+3. **Validate source configuration:** Verify that the external source is configured correctly and accessible
+
+
+---
+
+[View full sitemap](/docs/sitemap)

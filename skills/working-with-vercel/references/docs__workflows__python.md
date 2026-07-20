@@ -12,8 +12,8 @@ related:
 summary: Build durable workflows and AI agents in Python with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/python.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "48641683cbb70841aa1b0e14ba0f7b851e8c7a055ea9fc81f36e4108555be503"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "1b69a49f4712efe2c6acdd9f533403c54354fb6c8ec1ccbe48525be3affe057d"
 ---
 
 # Workflows with Python
@@ -23,29 +23,23 @@ You can build durable workflows in Python using the
 pause, resume, and maintain state, just like the JavaScript and TypeScript
 Workflow SDK.
 
-> **⚠️ Warning:** Workflow support in the Python SDK is currently in **beta**. APIs and behavior may change.
+> **💡 Note:** Workflow support in the Python SDK is currently in **beta**. APIs and behavior may change.
 
 ## Getting started
 
-Install the `vercel` package:
+Add the `vercel` package and workflow entrypoint to `pyproject.toml`:
 
-```bash filename="Terminal"
-pip install vercel
+```toml filename="pyproject.toml"
+[project]
+requires-python = ">=3.12"
+dependencies = ["vercel"]
+
+[[tool.vercel.workflows]]
+entrypoint = "app.workflows:wf"
 ```
 
-Configure `experimentalServices` in your `vercel.json`:
-
-```json filename="vercel.json"
-{
-  "experimentalServices": {
-    "ai_content_workflow": {
-      "type": "worker",
-      "entrypoint": "app/workflows/ai_content_workflow.py",
-      "topics": ["__wkf_*"]
-    }
-  }
-}
-```
+The workflow `entrypoint` uses the `module:object` format and points to the
+exported `Workflows` registry.
 
 ## Workflows
 
@@ -71,6 +65,16 @@ async def ai_content_workflow(*, topic: str):
         "draft": draft,
         "summary": summary,
     }
+```
+
+Export the registry from the workflow package and import the module containing
+your workflow so its definitions are registered:
+
+```python filename="app/workflows/__init__.py"
+from app.workflow import wf
+from app.workflows import ai_content_workflow
+
+__all__ = ["ai_content_workflow", "wf"]
 ```
 
 ## Steps

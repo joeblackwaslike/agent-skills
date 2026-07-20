@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-gitlab.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "922b3bfd6ef5ce8600fe7e71575efde6cc2a505b5124893f44ce24e11f5bbfac"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "8cd77d2e4818982995e88898d67abf515ec62684eab6c433b206199db9427f2b"
 ---
 
 # Deploying GitLab Projects with Vercel
@@ -194,6 +194,16 @@ When Secure Backend Access with OpenID Connect (OIDC) Federation is enabled in P
 
 ```bash
 VERCEL_OIDC_TOKEN=secret
+```
+
+### `VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VERCEL_HASH_SALT=1783933175
 ```
 
 ### `VERCEL_GIT_PROVIDER`

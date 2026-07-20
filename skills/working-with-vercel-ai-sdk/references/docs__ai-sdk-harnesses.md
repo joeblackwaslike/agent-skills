@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "6ebcd88c68cf4a323efdf39d84f5699140a654299b5e00c802f034553c9cea12"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "bfaf7bbfa06987b15f227508f9e88154db1957a45caa9aef7a8148df9a4aef80"
 ---
 
 # AI SDK Harnesses
@@ -168,6 +168,7 @@ running established agent harnesses such as Claude Code, Codex, and Pi.
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

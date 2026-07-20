@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/security-network.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "963bc73a10ef710a432898b8379741e1bc95c315c31f49fa704245e703119059"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "55a400e3b515dfa5bbdbc606e9c59fd5749ec8a21beb26d861874ec8c5b3e264"
 ---
 
 # Security & Network
@@ -104,8 +104,6 @@ For TCP targets such as private databases, use a tunnel client that exposes a lo
 
 For private GitHub Enterprise Server, GitLab Enterprise, source control APIs, and related webhook traffic, Enterprise teams can use [private connectivity](https://cursor.com/docs/enterprise/private-connectivity.md) with AWS PrivateLink or Cloudflare Tunnel.
 
-Use [My Machines](https://cursor.com/docs/cloud-agent/my-machines.md) or [Self-Hosted Pool](https://cursor.com/docs/cloud-agent/self-hosted-pool.md) when you want to own the machine that executes agent tool calls, not as the default path for private network access. See [Choose where Cloud Agents run](https://cursor.com/docs/cloud-agent/choose-runtime.md) for the comparison.
-
 ### Access modes
 
 Three modes control outbound network access for Cloud Agents:
@@ -123,8 +121,6 @@ Even in **Allowlist only** mode, a small set of domains remain accessible so Clo
 Cloud Agents upload [artifacts](https://cursor.com/docs/cloud-agent/capabilities.md#demos-and-artifacts) (screenshots, videos, and log references shown on PRs) to `cloud-agent-artifacts.s3.us-east-1.amazonaws.com`.
 
 If you use **Default + allowlist** or **Allowlist only**, add the exact host to your allowlist so artifact uploads succeed. Don't broaden the entry to `*.s3.us-east-1.amazonaws.com`: the wildcard opens egress to every bucket in the region and creates an exfiltration path for a prompt-injected agent. Blocking the host disables uploads; agent sessions and other tool calls keep working.
-
-Self-hosted workers upload artifacts over the same host. For self-hosted deployments, allow it through any firewall between the worker and the public internet. See [My Machines networking](https://cursor.com/docs/cloud-agent/my-machines.md#networking) and [Self-Hosted Pool networking](https://cursor.com/docs/cloud-agent/self-hosted-pool.md#networking).
 
 ### User-level settings
 

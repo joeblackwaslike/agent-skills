@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "89f5b0e008b1944480cda16e7faae911b63b08d8a3039a222568892e394ceb3f"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "1497c2f2186f0aad648a41d23a46c5bba0f0d6a140b0ae1f4e6b8de4f5ea5edb"
 ---
 
 # AI SDK RSC
@@ -170,6 +170,7 @@ sha256: "89f5b0e008b1944480cda16e7faae911b63b08d8a3039a222568892e394ceb3f"
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

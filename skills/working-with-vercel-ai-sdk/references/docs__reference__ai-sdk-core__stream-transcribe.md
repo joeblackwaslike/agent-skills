@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-transcribe.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "fc8845c6ef8cbec0f1ab51f940d4d1958464479d8ca0f762ceb33b9eb42e3ca7"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "bf773d1da75e589ef24a8617632210a062a2ea41767af862683140d75c294bc2"
 ---
 
 # `experimental_streamTranscribe()`
@@ -49,7 +49,7 @@ console.log(await result.text);
       name: 'model',
       type: 'TranscriptionModelV4',
       description:
-        'The transcription model to use. The model must support streaming (`doStream`). String model IDs resolve through the global provider (AI Gateway by default), which does not support streaming transcription yet.',
+        "The transcription model to use. The model must support streaming (`doStream`). String model IDs resolve through the global provider (AI Gateway by default), which supports streaming transcription for supported models (e.g. `openai/gpt-realtime-whisper`, `xai/grok-stt`): `experimental_streamTranscribe({ model: 'openai/gpt-realtime-whisper', ... })`.",
     },
     {
       name: 'audio',
@@ -100,7 +100,7 @@ console.log(await result.text);
       name: 'fullStream',
       type: 'AsyncIterableStream<TranscriptionStreamPart>',
       description:
-        'A stream of transcription parts: `transcript-delta`, `transcript-partial`, `transcript-final`, `raw`, and `error`.',
+        'A single-consumer live stream of transcription parts: `transcript-delta`, `transcript-partial`, `transcript-final`, `raw`, and `error`. Access it once, before any result promise, when both stream parts and final results are needed. Accessing a result promise first consumes the stream internally and makes `fullStream` unavailable.',
     },
     {
       name: 'text',
@@ -148,6 +148,18 @@ console.log(await result.text);
   `fullStream` early (e.g. `break` out of the loop), the underlying provider
   connection is closed and pending result promises reject.
 </Note>
+
+## Wire format (experimental)
+
+Streaming transcription over WebSocket is serialized with the experimental
+transcription-stream envelope defined in `@ai-sdk/provider-utils`
+(`experimental_parseTranscriptionStreamClientFrame`,
+`experimental_serializeTranscriptionStreamPart`,
+`experimental_parseTranscriptionStreamPart`): the client sends one
+`transcription-stream.start` TEXT frame, audio as BINARY frames, and a
+`transcription-stream.audio-done` TEXT frame; each server TEXT frame is one
+JSON-serialized transcription stream part. AI Gateway implements the server
+side of this envelope.
 
 
 ## Navigation

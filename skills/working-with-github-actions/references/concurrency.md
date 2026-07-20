@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/concurrency.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "f69806cd25f3fbb3b26af855c1a3803471a7ac0edeed1603c10ef91f8e53dc9b"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "bb24ff5e99efa913b58532183be9a06a916c8fc2e60d5479b08bb19d42478950"
 ---
 
 By default, {% data variables.product.prodname_actions %} allows multiple jobs within the same workflow, multiple workflow runs within the same repository, and multiple workflow runs across a repository owner's account to run concurrently. This means that multiple instances of the same workflow or job can run at the same time, performing the same steps.
@@ -14,4 +14,4 @@ When you limit concurrency, by default only one run can be pending in a concurre
 
 {% endif %}
 
-To start controlling concurrency in your own workflows with the `concurrency` keyword, see [AUTOTITLE](/actions/how-tos/writing-workflows/choosing-when-your-workflow-runs/control-the-concurrency-of-workflows-and-jobs).
+To start controlling concurrency in your own workflows with the `concurrency` keyword, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency).

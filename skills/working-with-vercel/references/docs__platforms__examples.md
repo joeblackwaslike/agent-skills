@@ -3,7 +3,7 @@ title: Examples
 product: vercel
 url: /docs/platforms/examples
 canonical_url: "https://vercel.com/docs/platforms/examples"
-last_updated: 2026-06-26
+last_updated: 2026-07-07
 type: tutorial
 prerequisites:
   - /docs/platforms
@@ -14,8 +14,8 @@ related:
 summary: Clone working multi-tenant and multi-project starters to begin your platform build.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "03554a332b3163db509ca02abfaf2e0828a712177b68fff098cca5122af4416d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "4cce890d55273003233ebdf002ffd5e7c9d443fc2189e32e17a5e1b43bb0f3ce"
 ---
 
 # Examples

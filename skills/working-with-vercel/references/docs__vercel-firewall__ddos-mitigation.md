@@ -16,8 +16,8 @@ related:
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d0a2ea84e2b945bf7129c4fdb9680b3f95bc1dd5435a5112019a7d1b70aab182"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "da8e5af893621be1ec7486c96ee829ced1d2624b6bca5cb225f549f0d982bea0"
 ---
 
 # DDoS Mitigation
@@ -70,7 +70,7 @@ To resume the automatic mitigations **before** the 24 hour period ends:
 2. Select **Resume System Mitigations**.
 3. Select **Resume** from the **Resume System Mitigations** dialog.
 
-> **⚠️ Warning:** You are responsible for all usage fees incurred when using this feature,
+> **💡 Note:** You are responsible for all usage fees incurred when using this feature,
 > including illegitimate traffic that may otherwise have been blocked.
 
 ### System Bypass Rules

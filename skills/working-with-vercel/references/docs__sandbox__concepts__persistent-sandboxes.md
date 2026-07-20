@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "88fbc6192da8cc230f05e2f7111bdd75c40b74a9d5fdf43df045cf96ec115df1"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "4c70aecc64dfa188013072eb8bf1c5630fd27734bbf78570af86ac95cf466a52"
 ---
 
 # Persistence
@@ -70,7 +70,7 @@ Every sandbox has a **name** that is unique within your project. The name is the
 
 You can set a default expiration for the automatic snapshots, plus a retention policy that keeps only the N most recent snapshots:
 
-- **`snapshotExpiration`**: Default TTL for any snapshot of this sandbox, measured from the snapshot's last use. The timer resets each time the snapshot is used. Use `0` (or `"none"` in the CLI) to keep snapshots indefinitely. Falls back to the system default if unset.
+- **`snapshotExpiration`**: Default TTL for any snapshot of this sandbox, measured from the snapshot's last use. The timer resets each time the snapshot is used. Defaults to 30 days (`2,592,000,000` ms). Use `0` (or `"none"` in the CLI) to keep snapshots indefinitely.
 - **`keepLastSnapshots`**: Keep only the N (1–10) most recent snapshots, optionally with a different expiration and an option to delete evicted snapshots immediately.
 
 ```ts filename="index.ts"

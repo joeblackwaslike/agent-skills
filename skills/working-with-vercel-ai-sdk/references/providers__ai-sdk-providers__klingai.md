@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "0324445d75921c700b757d6d3792731d7cfe4cff8474a1346959beeb2383b125"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "30ec037881c5a7207213c23e4dd168c7e5daaca20dcc673dc92cec97d1f8c34d"
 ---
 
 # Kling AI Provider
@@ -395,6 +395,7 @@ The following provider options are available via `providerOptions.klingai`. Opti
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

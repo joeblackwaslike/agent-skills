@@ -13,13 +13,13 @@ related:
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1b1957734e4868466d8398ec73aee36c50a6394d35369ad151b92521a0e47a56"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "3ba0c80b44f9300aed53c2ee12a3d27b78a6c1f9658c6b046deca23ed2f48a6e"
 ---
 
 # vercel connect
 
-> **⚠️ Warning:** The `vercel connect` command is currently in beta. Features and behavior may
+> **💡 Note:** The `vercel connect` command is currently in beta. Features and behavior may
 > change.
 
 The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors. Use it to create connectors, attach them to projects, request runtime tokens, and remove them.

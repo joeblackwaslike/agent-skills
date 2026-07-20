@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "968a238d884547edc887c0bd7bfb663dddb8ed5b1592780f7617d0b3d28acb93"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "cb221617f0fcd639989aecd92dcc942ec5a83a84fc256345649f8a3a6059cce2"
 ---
 
 # AI Gateway Provider
@@ -1305,6 +1305,7 @@ Model capabilities depend on the specific provider and model you're using. For d
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

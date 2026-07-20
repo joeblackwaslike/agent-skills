@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-cloud-providers.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "cf6823b6fd1281ff671a320992a79d0ccb8a360627b7f2f8f45fc65524d9e16d"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "1ef970ac405b705c93f76f55df33b6e850cbf98c61826583af43ac7d796ab895"
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -54,7 +54,7 @@ To update your workflows using this approach, you will need to make three change
 
 ### Requesting the JWT using the Actions core toolkit
 
-The following example demonstrates how to use `actions/github-script` with the `core` toolkit to request the JWT from {% data variables.product.prodname_dotcom %}'s OIDC provider. For more information, see [AUTOTITLE](/actions/creating-actions/creating-a-javascript-action#adding-actions-toolkit-packages).
+The following example demonstrates how to use `actions/github-script` with the `core` toolkit to request the JWT from {% data variables.product.prodname_dotcom %}'s OIDC provider. For more information, see [AUTOTITLE](/actions/tutorials/create-actions/create-a-javascript-action#adding-actions-toolkit-packages).
 
 ```yaml
 jobs:
@@ -78,7 +78,7 @@ jobs:
 
 The following example demonstrates how to use environment variables to request a JSON Web Token.
 
-For your deployment job, you will need to define the token settings, using `actions/github-script` with the `core` toolkit. For more information, see [AUTOTITLE](/actions/creating-actions/creating-a-javascript-action#adding-actions-toolkit-packages).
+For your deployment job, you will need to define the token settings, using `actions/github-script` with the `core` toolkit. For more information, see [AUTOTITLE](/actions/tutorials/create-actions/create-a-javascript-action#adding-actions-toolkit-packages).
 
 For example:
 

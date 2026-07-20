@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/tool-calling-with-structured-outputs.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e16a80d83cd0cf89cb006ea179001a14681ff58637382806a0708d4afde0d383"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "04b1d8b9d5133291e4ee1985102000cf601f792fc6b0d316941f5ca53822ffdd"
 ---
 
 # Tool calling with structured outputs
@@ -46,7 +46,7 @@ const result = await generateText({
 });
 ```
 
-For more information about using structured outputs with `generateText` and `streamText` see [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data#structured-outputs-with-generatetext-and-streamtext).
+For more information about using structured outputs with `generateText` and `streamText` see [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data#generating-structured-outputs).
 
 
 ## Navigation

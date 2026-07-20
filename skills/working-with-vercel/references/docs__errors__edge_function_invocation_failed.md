@@ -1,17 +1,40 @@
 ---
+title: EDGE_FUNCTION_INVOCATION_FAILED
+product: vercel
+url: /docs/errors/EDGE_FUNCTION_INVOCATION_FAILED
+canonical_url: "https://vercel.com/docs/errors/EDGE_FUNCTION_INVOCATION_FAILED"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  - /docs/deployments/build-features
+summary: The request for a Edge Function was not completed successfully. This is an application error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/edge_function_invocation_failed.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9c2919bf9438b1b934f9f4c7e23bab5c1854466a6806fa89f8b6b5c9cc0be3f4"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "873108137c0ae464b6c185ff6cfeba30c1eea4ad3fdd5a439998e539abf6f914"
 ---
 
-# Page Not Found
+# EDGE_FUNCTION_INVOCATION_FAILED
 
-`/docs/errors/edge_function_invocation_failed` does not exist. Similar pages:
+The `EDGE_FUNCTION_INVOCATION_FAILED` error occurs when there is an issue with the Edge Function being invoked on the CDN. This error can be caused by a variety of issues, including unhandled exceptions, timeouts, or malformed requests.
 
-- [EDGE_FUNCTION_INVOCATION_FAILED](/docs/errors/edge_function_invocation_failed.md): The EDGE_FUNCTION_INVOCATION_FAILED error occurs when there is an issue with the Edge Function being invoked on the CDN. This error can be caused by
-- [INTERNAL_EDGE_FUNCTION_INVOCATION_FAILED](/docs/errors/internal_edge_function_invocation_failed.md): The INTERNAL_EDGE_FUNCTION_INVOCATION_FAILED error occurs when there is an issue with the Edge Function being invoked on the CDN. This error can be
-- [EDGE_FUNCTION_INVOCATION_TIMEOUT](/docs/errors/edge_function_invocation_timeout.md): The EDGE_FUNCTION_INVOCATION_TIMEOUT error occurs when an Edge Function takes longer than the allowed execution time to complete or doesn't send a
-- [INTERNAL_EDGE_FUNCTION_INVOCATION_TIMEOUT](/docs/errors/internal_edge_function_invocation_timeout.md): The INTERNAL_EDGE_FUNCTION_INVOCATION_TIMEOUT error occurs when an Edge Function takes longer than the allowed execution time to complete. This can
-- [FUNCTION_INVOCATION_FAILED](/docs/errors/function_invocation_failed.md): The FUNCTION_INVOCATION_FAILED error occurs when a function invocation fails. This could be due to an error within the function itself, or an issue
+**Error Code:** `500`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Internal Server Error
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Check application logs**: Review the application logs to identify any specific errors related to the Edge Function being invoked. They can be found at the host URL under [the `/_logs` path](/docs/deployments/build-features#logs-view)
+2. **Review deployment configuration**: Double-check the deployment configuration to ensure that the Edge Function is being deployed correctly
+3. **Investigate build errors**: If the error occurs during the build process, troubleshoot any build errors that might be preventing the necessary resources from being deployed.
+4. **Check function code**: Ensure that the code for the Edge Function is correct and does not contain any errors or infinite loops
+5. **Use Vercel's status page**: If you have tried the steps above and are still experiencing the error, check Vercel's [status page](https://www.vercel-status.com/) for any reported outages in the CDN, which can sometimes cause this error
+
+
+---
+
+[View full sitemap](/docs/sitemap)

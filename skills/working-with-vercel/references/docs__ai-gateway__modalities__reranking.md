@@ -3,7 +3,7 @@ title: Reranking
 product: vercel
 url: /docs/ai-gateway/modalities/reranking
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/reranking"
-last_updated: 2026-06-20
+last_updated: 2026-07-07
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -13,8 +13,8 @@ related:
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "2ab5f1f770d747bf4c3ce3d483222e426aad6855efdea73a46e8f30e8da07d6f"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "30fd12e08b00a47ed2f53e3b414d085986389f329ed3c750196158e896fa0039"
 ---
 
 # Reranking
@@ -89,7 +89,7 @@ export async function GET() {
 > `/v1/rerank` and `/v2/rerank` REST endpoints. It is not supported through the
 > OpenAI-compatible or Anthropic-compatible endpoints.
 
-> **⚠️ Warning:** Amazon Bedrock reranking requires SigV4 credentials (`accessKeyId` and
+> **💡 Note:** Amazon Bedrock reranking requires SigV4 credentials (`accessKeyId` and
 > `secretAccessKey`) and does not accept API keys. If you BYOK and plan to use
 > reranking models through Bedrock, you must use SigV4 credentials.
 

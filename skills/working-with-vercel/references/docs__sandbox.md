@@ -16,8 +16,8 @@ related:
 summary: Vercel Sandbox allows you to run arbitrary code in isolated, ephemeral Linux VMs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "122806bc11d0a443c4ae893cdc1f341810d9396c7ca2d04d3c4833869d80ad0d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "997202d0912a28c884832458f02403e1406c063fd22cb020e3c3ca6c1b0831c0"
 ---
 
 # Vercel Sandbox
@@ -60,6 +60,7 @@ For detailed information about runtimes, available packages, and sudo configurat
 - **[Node.js and Python runtimes](/docs/sandbox/concepts/runtimes#runtimes)**: Choose from `node26`, `node24`, `node22`, or `python3.13` with full root access. [Install any package or binary you need](/kb/guide/how-to-install-system-packages-in-vercel-sandbox).
 - **[System-privileged processes](/docs/sandbox/concepts/runtimes#system-privileged-processes)**: Run workloads that need system-level privileges, such as container runtimes like Docker, VPN clients, and FUSE filesystem drivers.
 - **[Fast startup](/docs/sandbox/concepts#how-sandboxes-work)**: Sandboxes start in milliseconds, making them ideal for real-time user interactions and latency-sensitive workloads.
+- **[Multi-agent isolation](/docs/sandbox/multi-agent)**: Give each AI agent its own Linux user with a private home directory, and share files between agents with groups.
 - **[Persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes)**: Sandboxes that auto-save state on stop and resume where you left off. Persistence is the default. No manual snapshot management needed.
 - **[Snapshotting](/docs/sandbox/concepts/snapshots)**: Save the state of a running sandbox to resume later. Skip dependency installation on subsequent runs.
 - **[Tags](/docs/sandbox/concepts/tags)**: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
@@ -73,6 +74,8 @@ For detailed information about runtimes, available packages, and sudo configurat
 **Working with Sandbox**: Task-oriented guides for common operations. [Learn more →](/docs/sandbox/working-with-sandbox)
 
 **Concepts**: Understand how sandboxes work under the hood. [Learn more →](/docs/sandbox/concepts)
+
+**Multi-Agent Sandboxes**: Isolate agents with users and share files through groups. [Learn more →](/docs/sandbox/multi-agent)
 
 **JS SDK Reference**: Full API documentation for JavaScript and TypeScript. [Learn more →](/docs/sandbox/sdk-reference)
 

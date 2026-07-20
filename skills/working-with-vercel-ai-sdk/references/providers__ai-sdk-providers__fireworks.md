@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "12d7fcf73b0639f15e8e3bc1fb968e725433dddf378bc9eec1a2960b14c9f881"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b5469003e516c5a47a570ee1d150eb970ce29ed4fc73997f60ad9e2cd47f4477"
 ---
 
 # Fireworks Provider
@@ -536,6 +536,7 @@ support for these models:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

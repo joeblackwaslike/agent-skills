@@ -17,13 +17,13 @@ related:
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "236094f188eba6f45d7142ded831f0ddfbe6bff04ce2c3d2435a85170502ec1e"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a51927ee4c4919e305fbada0c8cc8ad026a4591b6ef80f139d8dcb13050c9571"
 ---
 
 # Legacy Usage & Pricing for Functions
 
-> **⚠️ Warning:** **Legacy Billing Model**: This page describes the legacy billing model and
+> **💡 Note:** **Legacy Billing Model**: This page describes the legacy billing model and
 > relates to functions which  use Fluid Compute. All new projects
 > use [Fluid Compute](/docs/fluid-compute) by default, which bills separately
 > for active CPU time and provisioned memory time for more cost-effective and
@@ -119,7 +119,7 @@ Executing a Vercel Function will increase Edge Request usage as well. Caching yo
 
 ## Managing function duration
 
-> **⚠️ Warning:** **Legacy Billing Model**: This describes the legacy Function duration billing
+> **💡 Note:** **Legacy Billing Model**: This describes the legacy Function duration billing
 > model based on wall-clock time. For new projects, we recommend [Fluid
 > Compute](/docs/functions/usage-and-pricing) which bills separately for active
 > CPU time and provisioned memory time for more cost-effective and transparent

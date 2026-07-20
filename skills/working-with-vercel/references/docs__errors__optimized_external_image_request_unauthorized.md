@@ -1,15 +1,39 @@
 ---
+title: OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED
+product: vercel
+url: /docs/errors/OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED
+canonical_url: "https://vercel.com/docs/errors/OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: The external image request is unauthorized. This is a request error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/optimized_external_image_request_unauthorized.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "3ec6a153140ee600f89798a66f870646e85f2305c231d3b1854831cfab1314a5"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "3e54817d203ea0471ce69e8dab15b1500c10a91eb3f2d5bb0a36e19979d4fdf7"
 ---
 
-# Page Not Found
+# OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED
 
-`/docs/errors/optimized_external_image_request_unauthorized` does not exist. Similar pages:
+The `OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED` error occurs when the external image request is unauthorized.
 
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED](/docs/errors/optimized_external_image_request_unauthorized.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED error occurs when the external image request is unauthorized. 502
-- [Error Codes](/docs/errors.md): IZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED) OPTIMIZED\_EXTERNAL\_IMAGE\_TOO\_MANY\_REDIRECTS Image 502 RANGE\_END\_NOT\_VALID Request 416
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED](/docs/errors/optimized_external_image_request_failed.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED error occurs when the request for an optimized external image fails. 502
+**Error Code:** `502`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Bad Gateway
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Check permissions:** Ensure that you have the necessary permissions to access the external image
+2. **Verify authentication:** Check for any authentication or authorization issues with the external source
+3. **Update credentials:** Ensure that any required credentials or tokens are correctly set and not expired
+4. **Remove filters**: Remove any filters that may be blocking the request, such as headers or IP restrictions
+
+
+---
+
+[View full sitemap](/docs/sitemap)

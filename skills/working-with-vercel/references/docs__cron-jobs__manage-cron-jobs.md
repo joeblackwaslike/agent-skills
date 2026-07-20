@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7f930cf012b47494e46815660cdba6e56929f6f23b31af2795687f0aed604ccf"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "9d0c998dc62c7ba87d668e23b1f77609d29b68da5176cf61bc8e8abd0055f96d"
 ---
 
 # Managing Cron Jobs
@@ -37,7 +37,7 @@ To view your active cron jobs:
 - **Deleting Cron Jobs**: Remove the configuration from the `vercel.json` file or the function's configuration, and then redeploy
 - **Disabling Cron Jobs**: Click the **Disable Cron Jobs** button
 
-> **⚠️ Warning:** Disabled cron jobs will still be listed and will count towards your [cron jobs
+> **💡 Note:** Disabled cron jobs will still be listed and will count towards your [cron jobs
 > limits](/docs/cron-jobs/usage-and-pricing)
 
 ## Securing cron jobs

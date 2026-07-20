@@ -17,8 +17,8 @@ related:
 summary: Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4ab011ee6f8d426e306e2907056c7fa099c8b6a626e1113c07d335e83ea35bed"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "3038b16ed29719060b20eb0c17401642eb2cb2979aab822d7ca1ea95b5675b3c"
 ---
 
 # Trusted Sources
@@ -106,7 +106,7 @@ To customize:
 3. The editor opens with the default `from` and `to` rules prefilled. Tweak, add, or remove rules to match the access you want.
 4. Select **Add rules** (first time) or **Save rules** (when editing).
 
-> **⚠️ Warning:** Saved rules replace the defaults. If you still want production to reach production, preview to reach preview, or development to reach preview for CLI access, keep those rows in the editor.
+> **💡 Note:** Saved rules replace the defaults. If you still want production to reach production, preview to reach preview, or development to reach preview for CLI access, keep those rows in the editor.
 
 To return to the default, open the menu on the same row and select **Reset to default**.
 
@@ -184,7 +184,7 @@ For GitLab, Bitbucket, Vercel OIDC, or any custom OIDC provider, fill in the cla
 
 For GitHub Actions, you can switch to this raw form with **Edit raw claims** if you need to match on a claim the guided form doesn't expose, such as `actor` or `workflow_ref`.
 
-> **⚠️ Warning:** Every claim you configure must match exactly. Claims you don't list are not checked, so a missing claim is the same as accepting any value for it. Scope on `repository` (GitHub), `project_path` (GitLab), or `workspaceUuid` (Bitbucket) at minimum, and add `ref` or `environment` if you also want to lock to a specific branch or environment.
+> **💡 Note:** Every claim you configure must match exactly. Claims you don't list are not checked, so a missing claim is the same as accepting any value for it. Scope on `repository` (GitHub), `project_path` (GitLab), or `workspaceUuid` (Bitbucket) at minimum, and add `ref` or `environment` if you also want to lock to a specific branch or environment.
 
 To allow the same provider to reach different environments with different claims, for example a production audience and a preview audience, add one entry per environment.
 
@@ -252,7 +252,7 @@ pipelines:
             -H "x-vercel-trusted-oidc-idp-token: $BITBUCKET_STEP_OIDC_TOKEN"
 ```
 
-> **⚠️ Warning:** Bitbucket only publishes the OIDC discovery document after Pipelines OIDC is enabled in the workspace and at least one pipeline has run. If Vercel can't fetch the discovery document when you add the trusted source, run a pipeline once and try again.
+> **💡 Note:** Bitbucket only publishes the OIDC discovery document after Pipelines OIDC is enabled in the workspace and at least one pipeline has run. If Vercel can't fetch the discovery document when you add the trusted source, run a pipeline once and try again.
 
 #### Other providers
 

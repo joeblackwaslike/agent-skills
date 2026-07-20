@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6e97118b20697d1cccb73fc6dbccad9a919b62c657b38a5bc44630bd5307d443"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b783ae30e0cf2981c6291d3416de58085cf5198a3738d5cce6089e5d7b1d0376"
 ---
 
 # Speech
@@ -152,6 +152,7 @@ try {
 | [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `tts-1`                             |
 | [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `tts-1-hd`                          |
 | [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `gpt-4o-mini-tts`                   |
+| [Mistral](/providers/ai-sdk-providers/mistral#speech-models)             | `voxtral-mini-tts-2603`             |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_v3`                         |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_multilingual_v2`            |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_flash_v2_5`                 |
@@ -169,6 +170,10 @@ try {
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-2.5-flash-lite-preview-tts` |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#speech-models) | `gemini-3.1-flash-tts-preview`      |
 | [xAI](/providers/ai-sdk-providers/xai#speech-models)                     | `default`                           |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#speech-models)           | `sonic-3.5`                         |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#speech-models)           | `sonic-3`                           |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#speech-models)           | `sonic-2`                           |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#speech-models)           | `sonic-turbo`                       |
 
 Above are a small subset of the speech models supported by the AI SDK providers. For more, see the respective provider documentation.
 

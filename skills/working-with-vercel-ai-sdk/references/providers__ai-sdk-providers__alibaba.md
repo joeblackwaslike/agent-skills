@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "301624bae0a601a3b45f88e43c762f861f422e7247f35801049b76f95db9f0bd"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "f08485e50c8fb36a73075fb1117e806df28822043e704e24bfd1169745a46407"
 ---
 
 # Alibaba Provider
@@ -621,6 +621,7 @@ a string if needed.
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

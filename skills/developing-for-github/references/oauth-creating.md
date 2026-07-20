@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app.md"
-fetched_at: "2026-06-15T17:31:37.352Z"
-sha256: "260d4eec0d2b80a870f1b06718fb1f8891af0efe63f7eddc27ef90fef1730ed7"
+fetched_at: "2026-07-20T06:45:20.604Z"
+sha256: "3ceba7d0276f0b6e7f1398221450c7ad853948f81503c25218ac2cc7ab4b5f24"
 ---
 
 > [!NOTE]
@@ -13,7 +13,7 @@ sha256: "260d4eec0d2b80a870f1b06718fb1f8891af0efe63f7eddc27ef90fef1730ed7"
 >
 > {% data variables.product.prodname_github_apps %} use fine-grained permissions, give the user more control over which repositories the app can access, and use short-lived tokens.
 >
-> For more information, see [AUTOTITLE](/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps) and [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/about-creating-github-apps).
+> For more information, see [AUTOTITLE](/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps) and [AUTOTITLE](/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps).
 
 {% ifversion fpt or ghec %}
 

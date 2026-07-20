@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "13aeb49f3d3397b155170f4ac9d260e6e4c8b34c3116f07339641c6366481c76"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "fb4152aba545ec6e13fcf37a5cb74da154d49beb93caf5955032a22f954ca838"
 ---
 
 # Luma Provider
@@ -295,6 +295,7 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

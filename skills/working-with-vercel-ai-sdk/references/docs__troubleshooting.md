@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "093d2199c1a31a6de949e06aa217722f59b04ab0aaaffcd520e1cadf98e385bd"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "8c6b3521052f86150cb7f2181e26685dd0427abc9bcb0fdb3e04b581fa12174a"
 ---
 
 # Troubleshooting
@@ -118,6 +118,7 @@ This section is designed to help you quickly identify and resolve common issues 
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

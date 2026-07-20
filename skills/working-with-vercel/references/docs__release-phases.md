@@ -12,8 +12,8 @@ related:
 summary: Learn about the different phases of the Vercel Product release cycle and the requirements that a Product must meet before being assigned to a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/release-phases.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "cf94816e2dd7666bef07ae18c5f8c922a8f7761c44bd3aa37444f936f481e575"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "b90279529c82b9db1d3fecc213d0df31874532aa8ea906b556b15197c061fb65"
 ---
 
 # Release Phases for Vercel
@@ -40,7 +40,7 @@ An example of this is when there is a need for more information or feedback from
 
 Releases in the Beta state have a committed timeline for getting to GA and are actively worked on.
 
-> **⚠️ Warning:** Products in a Beta state, are  covered under the [Service
+> **💡 Note:** Products in a Beta state, are  covered under the [Service
 > Level Agreement](https://vercel.com/legal/sla) (SLA) for Enterprise plans.
 > Vercel  recommend using Beta products in a full
 > production environment.

@@ -1,15 +1,66 @@
 ---
+title: PACKAGE_MANAGEMENT_NO_CIRCULAR_IMPORTS
+product: vercel
+url: /docs/conformance/rules/PACKAGE_MANAGEMENT_NO_CIRCULAR_IMPORTS
+canonical_url: "https://vercel.com/docs/conformance/rules/PACKAGE_MANAGEMENT_NO_CIRCULAR_IMPORTS"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Circular imports between two files are not allowed.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_management_no_circular_imports.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "df83fa943d6d16548ad3a22879bdcc7fe878338ae9be886c7221ee16f01574db"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ad059e56f329007ebadf4ea6900bafabc6ca01431e70a411ec6758b1fb01ca0d"
 ---
 
-# Page Not Found
+# PACKAGE_MANAGEMENT_NO_CIRCULAR_IMPORTS
 
-`/docs/conformance/rules/package_management_no_circular_imports` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [Conformance Rules](/docs/conformance/rules.md): PACKAGE\_MANAGEMENT\_NO\_CIRCULAR\_IMPORTS Import statements that can not be resolved to a local file or a package from package.json dependencies are
-- [PACKAGE_MANAGEMENT_NO_CIRCULAR_IMPORTS](/docs/conformance/rules/package_management_no_circular_imports.md): Conformance is available on Enterprise plans This check ensures that there is no path through import statements back to the original file. This helps
-- [PACKAGE_MANAGEMENT_NO_UNRESOLVED_IMPORTS](/docs/conformance/rules/package_management_no_unresolved_imports.md): Conformance is available on Enterprise plans All imports must be able to be resolved to a file local to the workspace or a package declared as a
+This check ensures that there is no path through import statements back to the
+original file. This helps to keep dependencies between files clean, which aids
+in dependency analysis and refactoring.
 
-All pages: [/llms.txt](/llms.txt)
+## Example
+
+```ts filename="component-a.ts"
+import Badge from './component-b';
+
+export function withHigherOrderComponent({ children }) {
+  return <div>{children}</div>;
+}
+
+export function Page() {
+  return (
+    <div>
+      <Badge />
+    </div>
+  );
+}
+```
+
+```ts filename="component-b.ts"
+import { withHigherOrderComponent } from './component-a';
+
+function Badge() {
+  return <div>Badge</div>;
+}
+
+export default withHigherOrderComponent(Badge);
+```
+
+## How to fix
+
+The exports in the file that has a circular import should be refactored so that
+the circular import doesn't exist anymore. This might be fixed by moving some
+of the exports in a file to a separate file so that the imports don't cause a
+circular import. In some cases, it may be necessary to refactor the code to
+avoid the circular import.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

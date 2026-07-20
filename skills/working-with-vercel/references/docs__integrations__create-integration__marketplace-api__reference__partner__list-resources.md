@@ -3,7 +3,7 @@ title: list-resources
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-resources
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources"
-last_updated: 2026-07-13
+last_updated: 2026-07-20
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about list-resources on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b1244140b28fce814628a1855c0b988b6a2fd4aea583e384d0ae8d774500ee18"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "3a79c36d7bdf32849836280095b285f0459964189e1c1eda804e197ba25e4113"
 ---
 
 # List Resources (Deprecated)

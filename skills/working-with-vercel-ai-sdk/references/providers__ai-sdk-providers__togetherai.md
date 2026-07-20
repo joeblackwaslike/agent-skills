@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "598b0918692f849f4e457e683f69adb1adbcd7dfd4580f869c34f70b5e3fabdf"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "f1e74b74b900792a4d9d7125d4aa21aa1b0c58286210a9357ca68219f05f012c"
 ---
 
 # Together.ai Provider
@@ -415,6 +415,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

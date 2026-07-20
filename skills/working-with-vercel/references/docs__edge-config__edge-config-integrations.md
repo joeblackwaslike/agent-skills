@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/edge-config/integrations/launchdarkly-edge-config
   - /docs/edge-config/integrations/statsig-edge-config
-  - /docs/edge-config/integrations/hypertune-edge-config
   - /docs/edge-config/integrations/split-edge-config
   - /docs/edge-config/integrations/devcycle-edge-config
+  - /docs/edge-config/get-started
 summary: Learn how to use Edge Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config/edge-config-integrations.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b221c1e0257d269e079000499171b6cda383392ff92733498e43cb53074ac94c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "b850ee9ab60a06b6b7ad4f2b700683180f2653c1c3bde269ec6437dcbe5ab27e"
 ---
 
 # Using Edge Config with an integration
@@ -32,7 +32,6 @@ You can get started with any of these Edge Config integrations by following the 
 
 - **[LaunchDarkly](/docs/edge-config/integrations/launchdarkly-edge-config)**
 - **[Statsig](/docs/edge-config/integrations/statsig-edge-config)**
-- **[Hypertune](/docs/edge-config/integrations/hypertune-edge-config)**
 - **[Split](/docs/edge-config/integrations/split-edge-config)**
 - **[DevCycle](/docs/edge-config/integrations/devcycle-edge-config)**
 

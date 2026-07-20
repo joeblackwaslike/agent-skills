@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d17ea0be9e52086724e534f36381ab5558649267b8322d75d058b05dbe8c391d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "d815d18d6aa30036d1ea565b2108dbee0dafe4b6c0f087ec2fcdcd959e4098a3"
 ---
 
 # Monitoring Reference
@@ -76,7 +76,7 @@ The `Where` clause defines the conditions to filter your query data. It only fet
 | `startsWith` | Filter data values that begin with some specific characters                                                                                                                                                                                                                                                                                                                                         |
 | `match`      | The operator used to search for patterns based on a regular expression ([`Re2`](https://github.com/google/re2/wiki/Syntax) syntax). For example, `match(user_agent, 'Chrome/97.*')`                                                                                                                                                                                                                 |
 
-> **⚠️ Warning:** String literals must be surrounded by single quotes. For example, `host =
+> **💡 Note:** String literals must be surrounded by single quotes. For example, `host =
 >   'vercel.com'`.
 
 ## Group by

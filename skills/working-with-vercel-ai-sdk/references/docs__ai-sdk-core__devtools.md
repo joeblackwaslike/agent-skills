@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/devtools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "893e281f0fa00f08eac1288e2d1ce02dc22f9f94129e15b3c5de90f41733959a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "5504432173a2d292cc352831c0e4d28ca47b2c4b658cc7c2b985beb6733e6330"
 ---
 
 # DevTools
@@ -75,7 +75,7 @@ const result = streamText({
 Start the DevTools viewer:
 
 ```bash
-npx @ai-sdk/devtools
+npx @ai-sdk/devtools@latest
 ```
 
 Open [http://localhost:4983](http://localhost:4983) to view your AI SDK interactions.
@@ -88,8 +88,12 @@ For example, if your API is in `apps/api`, run:
 
 ```bash
 cd apps/api
-npx @ai-sdk/devtools
+npx @ai-sdk/devtools@latest
 ```
+
+The explicit `@latest` tag ensures that `npx` installs an executable copy
+instead of selecting a transitive dependency whose binary is not linked into
+the workspace.
 
 ## Captured data
 

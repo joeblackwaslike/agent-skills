@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/rag-chatbot.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "3969c98ccb54546811a06f8f68453e5a5d7ed76ab985a7ac9d28ea2a3af06e8b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "c15eb3b184215ff17de4457c2885cf4653d73bf04efb208587d29f7bcc36fea4"
 ---
 
 # RAG Agent Guide
@@ -301,7 +301,7 @@ This will install the [AI SDK](/docs) and the AI SDK's React hooks.
 
 Let’s add a function to generate embeddings. Copy the following code into your `lib/ai/embedding.ts` file.
 
-```tsx filename="lib/ai/embedding.ts" highlight="1-2,4,13-21"
+```tsx filename="lib/ai/embedding.ts" highlight="1,3,12-21"
 import { embedMany } from 'ai';
 
 const embeddingModel = 'openai/text-embedding-ada-002';

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/hosting.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "999613d9688e9b4c93e2c6ff071eb59244089a19b7ebc8968cc5c9a01f0f591d"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "eb14647932dc27dd2a57c6140e3c8c897ff771883322509cca02e1f2a3e9a923"
 ---
 
 > ## Documentation Index
@@ -110,16 +110,26 @@ The pattern hinges on resuming a session by ID with a shared store attached:
   ```
 
   ```python Python theme={null}
-  from claude_agent_sdk import query, ClaudeAgentOptions
+  from claude_agent_sdk import query, ClaudeAgentOptions, SessionStore
+  import asyncio
 
-  async for message in query(
-      prompt=user_input,
-      options=ClaudeAgentOptions(
-          resume=session_id,            # looked up from your database by user
-          session_store=session_store,  # S3, Redis, Postgres, or your own adapter
-      ),
-  ):
-      ...
+  user_input: str = ...
+  session_id: str = ...              # looked up from your database by user
+  session_store: SessionStore = ...  # S3, Redis, Postgres, or your own adapter
+
+
+  async def main():
+      async for message in query(
+          prompt=user_input,
+          options=ClaudeAgentOptions(
+              resume=session_id,
+              session_store=session_store,
+          ),
+      ):
+          ...
+
+
+  asyncio.run(main())
   ```
 </CodeGroup>
 
@@ -275,19 +285,29 @@ The example below applies the four SDK-level options together. Construct `tenant
 
   ```python Python theme={null}
   from claude_agent_sdk import query, ClaudeAgentOptions
+  import asyncio
 
-  async for message in query(
-      prompt=prompt,
-      options=ClaudeAgentOptions(
-          cwd=tenant_dir,
-          setting_sources=[],
-          env={
-              "CLAUDE_CONFIG_DIR": config_dir,
-              "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
-          },
-      ),
-  ):
-      ...
+  prompt: str = ...
+  tenant_dir: str = ...
+  config_dir: str = ...
+
+
+  async def main():
+      async for message in query(
+          prompt=prompt,
+          options=ClaudeAgentOptions(
+              cwd=tenant_dir,
+              setting_sources=[],
+              env={
+                  "CLAUDE_CONFIG_DIR": config_dir,
+                  "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
+              },
+          ),
+      ):
+          ...
+
+
+  asyncio.run(main())
   ```
 </CodeGroup>
 

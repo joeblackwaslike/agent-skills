@@ -3,7 +3,7 @@ title: JS SDK Reference
 product: vercel
 url: /docs/sandbox/sdk-reference
 canonical_url: "https://vercel.com/docs/sandbox/sdk-reference"
-last_updated: 2026-06-30
+last_updated: 2026-07-07
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -11,13 +11,13 @@ related:
   - /docs/sandbox/python-sdk-reference
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/tags
+  - /docs/sandbox/pricing
   - /docs/container-registry
-  - /docs/sandbox/concepts/images
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a5164a9925a34035185d4fc4d75d1de97b9d5f07f0ef1ee0382332ac97b76a48"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "0cf9447d160eed045e3abb0b4ac4c9e892728a7dea6ecd1b9e758ba8ed436048"
 ---
 
 # JS SDK Reference
@@ -63,6 +63,7 @@ After installation:
 | Class                                       | What it does                                       | Example                                         |
 | ------------------------------------------- | -------------------------------------------------- | ----------------------------------------------- |
 | [`Sandbox`](#sandbox-class)                 | Creates and manages isolated microVM environments  | `const sandbox = await Sandbox.create()`        |
+| [`SandboxUser`](#sandboxuser-class)         | Runs commands and file operations as a Linux user  | `const user = await sandbox.createUser('alice')` |
 | [`Session`](#session-class)                 | Represents a single running VM inside a sandbox    | `const session = sandbox.currentSession()`      |
 | [`FileSystem`](#filesystem-class)           | Provides a `node:fs/promises`-compatible API       | `await sandbox.fs.readFile('/tmp/a.txt')`       |
 | [`Command`](#command-class)                 | Handles running commands inside the sandbox        | `const cmd = await sandbox.runCommand()`        |
@@ -198,7 +199,7 @@ console.log(sandbox.currentSnapshotId);
 
 #### `snapshotExpiration`
 
-Default expiration (in milliseconds) applied to snapshots automatically created for this sandbox. `0` means no expiration. Falls back to the system default if undefined.
+Default expiration (in milliseconds) applied to snapshots automatically created for this sandbox. `0` means no expiration. If undefined, snapshots expire after 30 days (`2,592,000,000` ms).
 
 **Returns:** `number | undefined`.
 
@@ -250,7 +251,7 @@ console.log(sandbox.networkTransfer);
 
 #### `totalDurationMs`, `totalActiveCpuDurationMs`, `totalIngressBytes`, `totalEgressBytes`
 
-Cumulative usage across every session this sandbox has run. Use these for long-running, persistent sandboxes where the most recent session does not represent total cost.
+Cumulative usage across every session this sandbox has run. Use these for long-running, persistent sandboxes where the most recent session does not represent total usage. Network ingress and egress are usage metrics, not billing totals. See [Pricing and Limits](/docs/sandbox/pricing#network) to understand which traffic is billable.
 
 **Returns:** `number | undefined`.
 
@@ -325,7 +326,7 @@ Sandboxes are persistent by default: when the sandbox stops, the filesystem is a
 | `mounts`             | `SandboxMounts`              | No       | Drives to attach to the sandbox, keyed by absolute mount path. Drives can be mounted as `"read-write"` (default) or `"read-only"`.                                                                                                                           |
 | `tags`               | `Record<string, string>`     | No       | Up to five key-value [tags](/docs/sandbox/concepts/tags).                                                                                                                                                                                                    |
 | `persistent`         | `boolean`                    | No       | Auto-snapshot the filesystem on stop and restore on resume. Defaults to `true`.                                                                                                                                                                              |
-| `snapshotExpiration` | `number`                     | No       | Default snapshot TTL in milliseconds. Use `0` for no expiration.                                                                                                                                                                                             |
+| `snapshotExpiration` | `number`                     | No       | Default snapshot TTL in milliseconds. Defaults to 30 days (`2,592,000,000` ms). Use `0` for no expiration.                                                                                                                                                    |
 | `keepLastSnapshots`  | `object`                     | No       | Retention policy that keeps only the N most recent snapshots. `{ count: 1-10, expiration?: number, deleteEvicted?: boolean }`. See [`keepLastSnapshots`](#keeplastsnapshots) for field details.                                                              |
 | `onResume`           | `(sandbox) => Promise<void>` | No       | Fires whenever a session resumes, including after auto-resume. Use to restart background services or rehydrate caches.                                                                                                                                       |
 | `signal`             | `AbortSignal`                | No       | Cancel sandbox creation.                                                                                                                                                                                                                                     |
@@ -776,6 +777,257 @@ const newSandbox = await Sandbox.create({
 
 **Returns:** `Promise<Snapshot>`.
 
+#### `sandbox.createUser()`
+
+`sandbox.createUser()` adds a Linux user with an isolated home directory at `/home/<username>`. The user gets `/bin/bash` as their login shell, and their home directory is private to other users but readable by the SDK. Use this to give each agent in a [multi-agent workflow](/docs/sandbox/multi-agent) its own workspace.
+
+```ts
+const alice = await sandbox.createUser('alice');
+console.log(alice.username, alice.homeDir); // "alice" "/home/alice"
+```
+
+| Parameter     | Type          | Required | Details                                                                             |
+| ------------- | ------------- | -------- | ----------------------------------------------------------------------------------- |
+| `username`    | `string`      | Yes      | Linux username. Must match `/^[a-z_][a-z0-9_-]*$/` and be at most 32 characters.     |
+| `opts.signal` | `AbortSignal` | No       | Cancel the operation.                                                               |
+
+**Returns:** `Promise<SandboxUser>`.
+
+#### `sandbox.asUser()`
+
+`sandbox.asUser()` returns a [`SandboxUser`](#sandboxuser-class) handle for a user that already exists, without creating it. Use it for users restored from a snapshot or created outside the SDK, such as `root`.
+
+```ts
+const bob = sandbox.asUser('bob');
+```
+
+| Parameter  | Type     | Required | Details                                                                         |
+| ---------- | -------- | -------- | ------------------------------------------------------------------------------- |
+| `username` | `string` | Yes      | Linux username. Must match `/^[a-z_][a-z0-9_-]*$/` and be at most 32 characters. |
+
+**Returns:** `SandboxUser`.
+
+#### `sandbox.createGroup()`
+
+`sandbox.createGroup()` creates a Linux group with a shared directory at `/shared/<groupname>`. The directory uses the setgid bit, so files created inside it inherit the group, and every member can read one another's files and add their own. Add members with [`sandbox.addUserToGroup()`](#sandboxaddusertogroup).
+
+```ts
+const devs = await sandbox.createGroup('devs');
+console.log(devs.sharedDir); // "/shared/devs"
+```
+
+| Parameter     | Type          | Required | Details                                                                            |
+| ------------- | ------------- | -------- | --------------------------------------------------------------------------------- |
+| `groupname`   | `string`      | Yes      | Group name. Must match `/^[a-z_][a-z0-9_-]*$/` and be at most 32 characters.       |
+| `opts.signal` | `AbortSignal` | No       | Cancel the operation.                                                             |
+
+**Returns:** `Promise<{ groupname: string; sharedDir: string }>`.
+
+#### `sandbox.addUserToGroup()`
+
+`sandbox.addUserToGroup()` adds a user to a group. Once added, the user can access the group's shared directory at `/shared/<groupname>`, where every member can read one another's files and add their own.
+
+```ts
+await sandbox.addUserToGroup('alice', 'devs');
+```
+
+| Parameter     | Type          | Required | Details                          |
+| ------------- | ------------- | -------- | -------------------------------- |
+| `username`    | `string`      | Yes      | The user to add.                 |
+| `groupname`   | `string`      | Yes      | The group to add the user to.    |
+| `opts.signal` | `AbortSignal` | No       | Cancel the operation.            |
+
+**Returns:** `Promise<void>`.
+
+#### `sandbox.removeUserFromGroup()`
+
+`sandbox.removeUserFromGroup()` removes a user from a group, revoking their access to the group's shared directory. Revocation applies to new commands immediately. Processes already running as that user keep the group until they exit.
+
+```ts
+await sandbox.removeUserFromGroup('alice', 'devs');
+```
+
+| Parameter     | Type          | Required | Details                             |
+| ------------- | ------------- | -------- | ----------------------------------- |
+| `username`    | `string`      | Yes      | The user to remove.                 |
+| `groupname`   | `string`      | Yes      | The group to remove the user from.  |
+| `opts.signal` | `AbortSignal` | No       | Cancel the operation.               |
+
+**Returns:** `Promise<void>`.
+
+## SandboxUser class
+
+A `SandboxUser` runs commands and file operations as a specific Linux user. Commands execute as that user, and file methods resolve relative paths against the user's home directory. Get an instance from [`sandbox.createUser()`](#sandboxcreateuser) or [`sandbox.asUser()`](#sandboxasuser). See [Multi-agent sandboxes](/docs/sandbox/multi-agent) for a task-oriented guide.
+
+Multi-user support is available in the JS SDK (`@vercel/sandbox`) only, and the sandbox image must include `/bin/bash`.
+
+### SandboxUser class accessors
+
+#### `username`
+
+The Linux username this instance runs as.
+
+**Returns:** `string`.
+
+#### `homeDir`
+
+The user's home directory. This is `/home/<username>` for users created with `createUser()`, and `/root` for the `root` user.
+
+**Returns:** `string`.
+
+```ts
+const alice = await sandbox.createUser('alice');
+console.log(alice.homeDir); // "/home/alice"
+```
+
+### SandboxUser class instance methods
+
+#### `user.runCommand()`
+
+`user.runCommand()` runs a command as this user. It accepts the same arguments as [`sandbox.runCommand()`](#sandboxruncommand), with two differences: the working directory defaults to the user's home directory, and passing `sudo: true` escalates that single command to root.
+
+**Returns:** `Promise<CommandFinished>` when `detached` is `false`; `Promise<Command>` when `detached` is `true`.
+
+| Parameter         | Type                     | Required | Details                                                        |
+| ----------------- | ------------------------ | -------- | -------------------------------------------------------------- |
+| `command`         | `string`                 | Yes      | Command to execute (string overload).                          |
+| `args`            | `string[]`               | No       | Arguments for the string overload.                             |
+| `opts.signal`     | `AbortSignal`            | No       | Cancel the command (string overload).                          |
+| `params.cmd`      | `string`                 | Yes      | Command to execute when using the object overload.             |
+| `params.args`     | `string[]`               | No       | Arguments for the object overload.                             |
+| `params.cwd`      | `string`                 | No       | Working directory. Defaults to the user's home directory.      |
+| `params.env`      | `Record<string, string>` | No       | Additional environment variables.                              |
+| `params.sudo`     | `boolean`                | No       | Run the command as root instead of this user.                  |
+| `params.detached` | `boolean`                | No       | Return immediately with a live `Command` object.               |
+| `params.stdout`   | `Writable`               | No       | Stream standard output to a writable.                          |
+| `params.stderr`   | `Writable`               | No       | Stream standard error to a writable.                           |
+| `params.signal`   | `AbortSignal`            | No       | Cancel the command when using the object overload.             |
+
+```ts
+const whoami = await alice.runCommand('whoami');
+console.log(await whoami.stdout()); // "alice\n"
+
+// Object form with environment variables and a custom working directory
+await alice.runCommand({
+  cmd: 'node',
+  args: ['index.js'],
+  env: { API_KEY: 'your_api_key_here' },
+  cwd: '/tmp',
+});
+```
+
+#### `user.writeFiles()`
+
+`user.writeFiles()` writes files as this user. Relative paths resolve to the user's home directory, and the written files are owned by the user.
+
+```ts
+await alice.writeFiles([
+  { path: 'app.js', content: Buffer.from('console.log("hi")') },
+]);
+```
+
+| Parameter       | Type                                                  | Required | Details                                                              |
+| --------------- | ----------------------------------------------------- | -------- | ------------------------------------------------------------------- |
+| `files`         | `{ path: string; content: string \| Uint8Array; mode?: number; }[]` | Yes      | File descriptors to write. Relative paths resolve to the home directory. |
+| `opts.signal`   | `AbortSignal`                                         | No       | Cancel the operation.                                              |
+
+**Returns:** `Promise<void>`.
+
+#### `user.readFile()`
+
+`user.readFile()` reads a file as this user and returns a stream, or `null` if the file does not exist. Relative paths resolve to the user's home directory.
+
+```ts
+const stream = await alice.readFile({ path: 'app.js' });
+// stream is a Node.js ReadableStream, or null if the file does not exist.
+// For a Buffer instead of a stream, use readFileToBuffer().
+```
+
+| Parameter     | Type                          | Required | Details                                                     |
+| ------------- | ----------------------------- | -------- | ----------------------------------------------------------- |
+| `file`        | `{ path: string; cwd?: string }` | Yes   | File to read. A relative `path` resolves to the home directory. |
+| `opts.signal` | `AbortSignal`                 | No       | Cancel the operation.                                      |
+
+**Returns:** `Promise<NodeJS.ReadableStream | null>`.
+
+#### `user.readFileToBuffer()`
+
+`user.readFileToBuffer()` reads a file as this user and returns a `Buffer`, or `null` if the file does not exist. Relative paths resolve to the user's home directory.
+
+```ts
+const buf = await alice.readFileToBuffer({ path: 'app.js' });
+console.log(buf?.toString());
+```
+
+| Parameter     | Type                             | Required | Details                                                     |
+| ------------- | -------------------------------- | -------- | ---------------------------------------------------------- |
+| `file`        | `{ path: string; cwd?: string }` | Yes      | File to read. A relative `path` resolves to the home directory. |
+| `opts.signal` | `AbortSignal`                    | No       | Cancel the operation.                                      |
+
+**Returns:** `Promise<Buffer | null>`.
+
+#### `user.downloadFile()`
+
+`user.downloadFile()` reads a file as this user and writes it to the local filesystem, returning the absolute local path, or `null` if the source file does not exist.
+
+```ts
+await alice.downloadFile({ path: 'app.js' }, { path: './app.js' });
+```
+
+| Parameter             | Type                             | Required | Details                                                         |
+| --------------------- | -------------------------------- | -------- | ------------------------------------------------------------- |
+| `src`                 | `{ path: string; cwd?: string }` | Yes      | Source file in the sandbox. A relative `path` resolves to the home directory. |
+| `dst`                 | `{ path: string; cwd?: string }` | Yes      | Destination on the local machine.                             |
+| `opts.mkdirRecursive` | `boolean`                        | No       | Create parent directories on the local machine if they are missing. |
+| `opts.signal`         | `AbortSignal`                    | No       | Cancel the operation.                                        |
+
+**Returns:** `Promise<string | null>`.
+
+#### `user.mkDir()`
+
+`user.mkDir()` creates a directory owned by this user. Relative paths resolve to the user's home directory.
+
+```ts
+await alice.mkDir('projects/my-app');
+```
+
+| Parameter     | Type          | Required | Details                                                       |
+| ------------- | ------------- | -------- | ------------------------------------------------------------ |
+| `path`        | `string`      | Yes      | Directory to create. A relative path resolves to the home directory. |
+| `opts.signal` | `AbortSignal` | No       | Cancel the operation.                                       |
+
+**Returns:** `Promise<void>`.
+
+#### `user.addToGroup()`
+
+`user.addToGroup()` adds this user to a group. It is a convenience wrapper around [`sandbox.addUserToGroup()`](#sandboxaddusertogroup).
+
+```ts
+await alice.addToGroup('devs');
+```
+
+| Parameter     | Type          | Required | Details                       |
+| ------------- | ------------- | -------- | ----------------------------- |
+| `groupname`   | `string`      | Yes      | The group to join.            |
+| `opts.signal` | `AbortSignal` | No       | Cancel the operation.         |
+
+**Returns:** `Promise<void>`.
+
+#### `user.removeFromGroup()`
+
+`user.removeFromGroup()` removes this user from a group. It is a convenience wrapper around [`sandbox.removeUserFromGroup()`](#sandboxremoveuserfromgroup).
+
+```ts
+await alice.removeFromGroup('devs');
+```
+
+| Parameter     | Type          | Required | Details                       |
+| ------------- | ------------- | -------- | ----------------------------- |
+| `groupname`   | `string`      | Yes      | The group to leave.           |
+| `opts.signal` | `AbortSignal` | No       | Cancel the operation.         |
+
+**Returns:** `Promise<void>`.
+
 ## Session class
 
 A `Session` represents a single running VM instance inside a sandbox. Sessions are created and resumed for you whenever the sandbox transitions from `stopped` to `running`. Use `sandbox.currentSession()` to inspect the active one, or `sandbox.listSessions()` to enumerate every session the sandbox has run.
@@ -1174,7 +1426,7 @@ Matching is based on:
 
 Encryption is not intercepted if no transformation or forwarding rules are defined, allowing end-to-end data confidentiality.
 
-The `allow` property can be set as an object providing the websites to allow traffic to, with optional additional transformation or forwarding rules.
+The `allow` property can be set as an object providing the websites to allow traffic to, with additional transformation or forwarding rules. Only one of `transform` or `forwardURL` can be defined per rule.
 When such rules are defined, encryption is intercepted to allow request alteration.
 
 Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions will be transformed or forwarded. Learn more about transformation rules and forwarding rules in the [firewall documentation](/docs/sandbox/concepts/firewall).

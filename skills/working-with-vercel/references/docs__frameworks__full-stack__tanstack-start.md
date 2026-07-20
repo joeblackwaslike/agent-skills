@@ -3,7 +3,7 @@ title: TanStack Start on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/tanstack-start
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/tanstack-start"
-last_updated: 2026-03-02
+last_updated: 2026-07-10
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -14,8 +14,8 @@ related:
 summary: "Learn how to use Vercel's features with TanStack Start."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "67e92423925b95c0acc844f8b9f89cf974c7f1bcf40c0ef04166cc3a5788dc5d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "fdef405781531e93421b4df077caff9bc5efb219b48c76478c52a035573b6e0b"
 ---
 
 # TanStack Start on Vercel

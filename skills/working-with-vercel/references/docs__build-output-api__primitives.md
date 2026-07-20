@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/cdn
   - /docs/build-output-api/v3/configuration
+  - /docs/skew-protection
+  - /docs/environment-variables/system-environment-variables
   - /docs/functions
-  - /docs/rest-api/reference
-  - /docs/functions/runtimes
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "168cf9036ce5f1187a1be40e30db4a856f31f28127aaafbaf56027918794dac9"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "341f0958ab2ffffe95d0633205a944a95f34192e5e91bf645ca0dc66aa4eb1a9"
 ---
 
 # Vercel Primitives
@@ -44,6 +44,33 @@ However, certain properties of static files (such as the `Content-Type` response
 ### Directory structure for static files
 
 The following example shows static files placed into the `.vercel/output/static` directory:
+
+### Immutable static files
+
+Regular static files are scoped to a particular deployment (see also [Skew Protection](/docs/skew-protection)), but with immutable static files, you can have files that are shared across deployments by omitting the `?dpl` query parameter from the URL, which improves cross-deployment request caching.
+For example a request like `/_vercel/immutable/chunks/031du1f_9y2qz.js` will continue to be routed to the same file even if the latest deployment does not contain that file anymore (and would thus have resulted in a 404 because of Skew Protection).
+
+These files must be content-addressed by their filepath and newer deployments must never overwrite an existing file with a different content.
+
+One difference between regular static files and immutable static files is that immutable static files are always served with the routing config of the latest deployment, even if the file is being requested from a previous deployment.
+
+The `VERCEL_HASH_SALT` ([system environment variable](/docs/environment-variables/system-environment-variables)) should be factored into the hashes to provide a way to rotate the file names.
+
+In addition to the files in `.vercel/output/static`, you have to emit a manifest `.vercel/output/immutable.json` that contains a mapping of all immutable static files and their full content hashes (because the filename might only contain a truncated hash):
+
+```jsonc
+{
+  "version": 1,
+  "hashes": {
+    "/_vercel/immutable/chunks/031du1f_9y2qz.js": "031du1f_9y2qzq-eul6pnkg4f",
+    ...
+  }
+}
+```
+
+The deployment will fail if a hash collision was detected (i.e. a file already exists but with a different content hash). In this unlikely event, `VERCEL_HASH_SALT` can be rotated to generate a different filename to unblock the deployment.
+
+Note that it's entirely valid to just specify the filename as the full content hash in the manifest, if you feel comfortable with the entropy already contained in the filename.
 
 ## Functions
 

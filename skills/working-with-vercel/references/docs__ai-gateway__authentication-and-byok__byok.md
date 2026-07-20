@@ -3,7 +3,7 @@ title: Bring Your Own Key (BYOK)
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/byok
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok"
-last_updated: 2026-06-29
+last_updated: 2026-07-07
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -11,11 +11,12 @@ prerequisites:
 related:
   - /docs/ai-gateway/pricing
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
+  - /docs/ai-gateway/security-and-compliance/zdr
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ff9a4960654fad63e2d0f09460c0b6fef78d4ebf4dbe827eb40348fd376bd35a"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "05b866d3b805085e869b1a586635478627d6af96712f6b2a00f7351238174012"
 ---
 
 # Bring Your Own Key (BYOK)
@@ -88,7 +89,7 @@ Each provider has its own credential structure:
 
 For detailed credential parameters for each provider, see the [AI SDK providers documentation](https://ai-sdk.dev/providers/ai-sdk-providers).
 
-> **⚠️ Warning:** Amazon Bedrock reranking requires SigV4 credentials (`accessKeyId` and
+> **💡 Note:** Amazon Bedrock reranking requires SigV4 credentials (`accessKeyId` and
 > `secretAccessKey`) and does not accept API keys. If you BYOK and plan to use
 > reranking models through Bedrock, you must use SigV4 credentials.
 
@@ -155,6 +156,15 @@ You can also configure model mappings in the dashboard when adding or editing BY
 > resource is in a different region, your actual costs may vary. For
 > region-specific pricing, see [Azure OpenAI
 > pricing](https://azure.microsoft.com/en-us/pricing/details/azure-openai/).
+
+## Zero Data Retention (ZDR)
+
+When ZDR is enabled, either team-wide or per-request, AI Gateway skips your BYOK keys by default. BYOK keys operate under your own agreements and permissions with providers, which can differ from the ZDR agreements Vercel has negotiated for AI Gateway system credentials.
+
+If you have your own ZDR agreement with a provider, mark an individual BYOK key as ZDR-compliant to include it in the ZDR routing set. This applies to both team-wide and request-level ZDR.
+
+> **💡 Note:** For the full behavior and configuration steps, see [ZDR and
+> BYOK](/docs/ai-gateway/security-and-compliance/zdr#byok).
 
 ## Testing your credentials
 

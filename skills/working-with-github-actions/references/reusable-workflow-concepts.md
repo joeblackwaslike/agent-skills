@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/reusing-workflow-configurations.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "62a6723a943933fa9296f3c351e3305ee7bd5dcc3e1d98e6981f296d6f886756"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "91ccb247b6e158520bff0e811c1c33ba97bfb36389e8ab2a7617c32f4da23a55"
 ---
 
 ## Reusable workflows
@@ -24,7 +24,7 @@ A workflow that uses another workflow is referred to as a "caller" workflow. The
 
 If you reuse a workflow from a different repository, any actions in the called workflow run as if they were part of the caller workflow. For example, if the called workflow uses `actions/checkout`, the action checks out the contents of the repository that hosts the caller workflow, not the called workflow.
 
-You can view the reused workflows referenced in your {% data variables.product.prodname_actions %} workflows as dependencies in the dependency graph of the repository containing your workflows. For more information, see “[About the dependency graph](/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph).”
+You can view the reused workflows referenced in your {% data variables.product.prodname_actions %} workflows as dependencies in the dependency graph of the repository containing your workflows. For more information, see “[About the dependency graph](/code-security/concepts/supply-chain-security/dependency-graph).”
 
 ### Reusable workflows versus composite actions
 
@@ -55,7 +55,7 @@ Let's compare some aspects of each solution:
 
 Workflow templates allow everyone in your organization who has permission to create workflows to do so more quickly and easily. When people create a new workflow, they can choose a workflow template and some or all of the work of writing the workflow will be done for them. Within a workflow template, you can also reference reusable workflows to make it easy for people to benefit from reusing centrally managed workflow code.
 
-If you use a commit SHA when referencing the reusable workflow, you can ensure that everyone who reuses that workflow will always be using the same YAML code. However, if you reference a reusable workflow by a tag or branch, be sure that you can trust that version of the workflow. For more information, see [AUTOTITLE](/actions/security-guides/security-hardening-for-github-actions#reusing-third-party-workflows).
+If you use a commit SHA when referencing the reusable workflow, you can ensure that everyone who reuses that workflow will always be using the same YAML code. However, if you reference a reusable workflow by a tag or branch, be sure that you can trust that version of the workflow. For more information, see [AUTOTITLE](/actions/reference/security/secure-use#reusing-third-party-workflows).
 
 {% data variables.product.github %} offers workflow templates for a variety of languages and tooling. When you set up workflows in your repository, {% data variables.product.github %} analyzes the code in your repository and recommends workflows based on the language and framework in your repository. For example, if you use Node.js, {% data variables.product.github %} will suggest a workflow template file that installs your Node.js packages and runs your tests. You can search and filter to find relevant workflow templates.
 
@@ -63,7 +63,7 @@ If you use a commit SHA when referencing the reusable workflow, you can ensure t
 
 {% data reusables.actions.workflow-templates-repo-link %}
 
-For more information, see [AUTOTITLE](/actions/using-workflows/creating-starter-workflows-for-your-organization).
+For more information, see [AUTOTITLE](/actions/how-tos/reuse-automations/create-workflow-templates).
 
 {% ifversion fpt or ghec %}
 
@@ -77,6 +77,6 @@ For reference information and examples, see [AUTOTITLE](/actions/reference/workf
 
 ## Next steps
 
-To start reusing your workflows, see [AUTOTITLE](/actions/how-tos/sharing-automations/reuse-workflows).
+To start reusing your workflows, see [AUTOTITLE](/actions/how-tos/reuse-automations/reuse-workflows).
 
-To find information on the intricacies of reusing workflows, see [AUTOTITLE](/actions/reference/reusable-workflows-reference).
+To find information on the intricacies of reusing workflows, see [AUTOTITLE](/actions/reference/workflows-and-actions/reusing-workflow-configurations).

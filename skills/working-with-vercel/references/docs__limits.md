@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "4662ca013b97fd601157131e5b0b3ae4960324ad2c7d4b83119cfa50d76840d8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "06888ca73bcb39d39bf038cb09b2653aaf637515c6ea955889118e9f4781f018"
 ---
 
 # Limits
@@ -330,6 +330,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Events retrieval per minute. | 10 | 60 | `user` |
 | Download Audit Log exports per minute. | 5 | 60 | `user` |
 | Setup up Audit Log Stream per minute | 10 | 60 | `user` |
+| Check Audit Log Stream status per minute | 30 | 60 | `user` |
 | Plan retrieval per minute. | 120 | 60 | `owner` |
 | Plan update per hour. | 60 | 3600 | `owner` |
 | Requests to self-unblock per hour. | 5 | 3600 | `owner` |
@@ -363,7 +364,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Requests to get the status of a merge per minute. | 120 | 60 | `user` |
 | Requests to create merge plans per minute. | 20 | 60 | `user` |
 | Requests to create merge plans per minute. | 20 | 60 | `user` |
-| Organizations retrieval per minute. | 120 | 60 | `user` |
+| Organizations retrieval per minute. | 120 | 60 | `owner` |
 | User retrieval per minute. | 500 | 60 | `owner` |
 | User update per minute. | 60 | 60 | `owner` |
 | Username update per week. | 6 | 604800 | `owner` |
@@ -400,7 +401,6 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Deployments deletion per ten minutes. | 200 | 600 | `owner` |
 | Integration job creation per five minutes. | 100 | 300 | `owner` |
 | Integration retrieval per minute (All). | 100 | 60 | `user` |
-| V0-enabled integrations retrieval per minute. | 60 | 60 | `user` |
 | Integration retrieval per minute (Single). | 100 | 60 | `user` |
 | Integration creation per minute. | 120 | 3600 | `user` |
 | Integration update per minute. | 120 | 3600 | `user` |
@@ -581,6 +581,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Project Bulk Redirect version updates per minute | 20 | 60 | `owner` |
 | Project Bulk Redirect settings reads per minute | 300 | 60 | `owner` |
 | Project Bulk Redirect settings updates per minute | 10 | 60 | `owner` |
+| Project custom environment pack settings updates per minute | 10 | 60 | `owner` |
 | AI rule generation per minute. | 60 | 60 | `owner` |
 | Project Routes reads per minute | 200 | 60 | `owner` |
 | Project Routes mutations per minute | 60 | 60 | `owner` |
@@ -617,6 +618,9 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | VCR registry (Docker) requests per minute for Hobby plan. | 1000 | 60 | `owner` |
 | VCR registry (Docker) requests per minute for Pro plan. | 5000 | 60 | `owner` |
 | VCR registry (Docker) requests per minute for Enterprise plan. | 10000 | 60 | `owner` |
+| Compliance document downloads per minute. | 30 | 60 | `user` |
+| Compliance document list requests per minute. | 120 | 60 | `user` |
+| Compliance item detail requests per minute. | 120 | 60 | `user` |
 
 
 ---

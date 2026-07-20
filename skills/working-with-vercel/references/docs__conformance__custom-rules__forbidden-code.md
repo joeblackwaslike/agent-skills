@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow code and code patterns through string and regular expression matches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-code.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "af505b895b5f193fbf3c3b72f8390e15c69a1592418eaf76b67e3c56ee07ddfa"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "26312b03dfacc59f7b25a90c39877f6b7ba0ec6cf6a8d0e419ddb03ca1f90dfb"
 ---
 
 # forbidden-code
@@ -51,7 +51,7 @@ required properties:
 | `patterns`     | `(string \| { pattern: string, flags: string })[]`                        | An array of regular expression patterns to match against.                                             |
 | `strings`      | `string[]`                                                                | An array of exact string to match against (case sensitive).                                           |
 
-> **⚠️ Warning:** Multi-line strings and patterns are currently unsupported by this custom rule
+> **💡 Note:** Multi-line strings and patterns are currently unsupported by this custom rule
 > type.
 
 ### Example configuration

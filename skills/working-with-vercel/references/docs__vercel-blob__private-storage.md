@@ -3,7 +3,7 @@ title: Private Storage
 product: vercel
 url: /docs/vercel-blob/private-storage
 canonical_url: "https://vercel.com/docs/vercel-blob/private-storage"
-last_updated: 2026-06-24
+last_updated: 2026-07-08
 type: conceptual
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "e31f246b3d36de8d00731c006c7dab43bbde5466db654a645447817e8ef8131e"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "d1c423d31dbe00ada2c183f0ea565e1bc71c9141d2d8c88bf3a0c5fc40dab9c1"
 ---
 
 # Private Storage
@@ -557,7 +557,7 @@ How it works:
 1. **First request**: `get()` returns `statusCode: 200` with `stream` and an `ETag`. The browser caches the response.
 2. **Subsequent requests**: The browser sends `If-None-Match` with the cached ETag. When forwarded to the blob store, `get()` returns `statusCode: 304` with `stream: null` — no data is re-downloaded.
 
-> **⚠️ Warning:** Avoid caching private blob responses in Vercel's CDN cache (e.g. with
+> **💡 Note:** Avoid caching private blob responses in Vercel's CDN cache (e.g. with
 > `s-maxage`) and avoid relying on middleware for auth. While both can work, a
 > middleware bug or misconfiguration could expose cached private content to the
 > wrong users.Instead, always verify auth directly in your route handler, right next to the

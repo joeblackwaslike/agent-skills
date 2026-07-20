@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "dae267a5e9a8b126662e2c1bb983b35ef5cf776c8d6d524238b3164e8a7f23e8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "950118a9feb56576512cd30f280572db3220889e8b6f44df567a906831c0462d"
 ---
 
 # Connect to Amazon Web Services (AWS)
@@ -97,7 +97,7 @@ To understand how AWS supports OIDC, and for a detailed user guide on creating a
   ```
   You are now ready to connect to your AWS resource in your project's code. Review the examples below.
 
-> **⚠️ Warning:** **`AWS_REGION` is not stable by default.** Vercel sets `AWS_REGION` automatically to your function's execution region. With multi-region routing or failover, the value can change depending on which region your function runs in. This may route your AWS calls to a region where your resources don't exist. To prevent this, [declare `AWS_REGION` as an environment variable](/docs/environment-variables#creating-environment-variables) in your Vercel project with the value set to the AWS region where your resources live.
+> **💡 Note:** **`AWS_REGION` is not stable by default.** Vercel sets `AWS_REGION` automatically to your function's execution region. With multi-region routing or failover, the value can change depending on which region your function runs in. This may route your AWS calls to a region where your resources don't exist. To prevent this, [declare `AWS_REGION` as an environment variable](/docs/environment-variables#creating-environment-variables) in your Vercel project with the value set to the AWS region where your resources live.
 
 ## Custom audience
 

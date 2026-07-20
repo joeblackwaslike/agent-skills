@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a565b9dedbbe0261cdb3375b202aaaa464f892b004f5857f9f8297cb78e2c47b"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "4bfe67e5b61b4540019fe61d76b5f23c09522477e0cbc4551ff1a6c344f01d1d"
 ---
 
 # Configuring a Build
@@ -224,7 +224,7 @@ To learn what package managers are supported on Vercel, see the [package manager
 
 #### Corepack
 
-> **⚠️ Warning:** Corepack is considered
+> **💡 Note:** Corepack is considered
 > [experimental](https://nodejs.org/docs/latest-v16.x/api/documentation.html#stability-index)
 > and therefore, breaking changes or removal may occur in any future release of
 > Node.js.

@@ -16,8 +16,8 @@ related:
 summary: "Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations using the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1ba64efece9c7ab3353919cdfffd63190daca2c5b83353b1bd945297560b1714"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "566ad87b8cdb961713f7407a671b722d2744277433481e16279abddaa8fd0e60"
 ---
 
 # vercel firewall
@@ -545,7 +545,7 @@ Vercel automatically [mitigates DDoS attacks](/docs/vercel-firewall/ddos-mitigat
 
 Pause automatic DDoS protection and system-level traffic filtering for 24 hours. Mitigations automatically resume after 24 hours unless you run [`resume`](#system-mitigations-resume) sooner.
 
-> **⚠️ Warning:** Pausing system mitigations removes DDoS protection from your project. Only pause when debugging false positives or during testing. You are responsible for usage fees from traffic that would otherwise have been blocked, including abusive or illegitimate requests.
+> **💡 Note:** Pausing system mitigations removes DDoS protection from your project. Only pause when debugging false positives or during testing. You are responsible for usage fees from traffic that would otherwise have been blocked, including abusive or illegitimate requests.
 
 ```bash filename="terminal"
 vercel firewall system-mitigations pause --yes

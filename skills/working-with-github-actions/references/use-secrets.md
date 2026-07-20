@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "9fc3f187de9bc0cbcfa1d20bcb43eb6906b7cc72b4808b7ea6411233b246ce04"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "2582e0e17777e9ed57906bd80ead8b8119f92e4aa84c58024f6ff252bd4d5e06"
 ---
 
 ## Creating secrets for a repository
@@ -148,13 +148,13 @@ You can check which access policies are being applied to a secret in your organi
 
 > [!NOTE]
 > * {% data reusables.actions.forked-secrets %}
-> * Secrets are not automatically passed to reusable workflows. For more information, see [AUTOTITLE](/actions/using-workflows/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow).
-> * Secrets are not available to workflows triggered by {% data variables.product.prodname_dependabot %} events. For more information, see [AUTOTITLE](/code-security/dependabot/troubleshooting-dependabot/troubleshooting-dependabot-on-github-actions#accessing-secrets).
+> * Secrets are not automatically passed to reusable workflows. For more information, see [AUTOTITLE](/actions/how-tos/reuse-automations/reuse-workflows#passing-inputs-and-secrets-to-a-reusable-workflow).
+> * Secrets are not available to workflows triggered by {% data variables.product.prodname_dependabot %} events. For more information, see [AUTOTITLE](/code-security/reference/supply-chain-security/troubleshoot-dependabot/dependabot-on-actions#accessing-secrets).
 > * {% data reusables.actions.about-oidc-short-overview %}
 
 > [!WARNING] Mask all sensitive information that is not a {% data variables.product.prodname_dotcom %} secret by using `::add-mask::VALUE`. This causes the value to be treated as a secret and redacted from logs.
 
-To provide an action with a secret as an input or environment variable, you can use the `secrets` context to access secrets you've created in your repository. For more information, see [AUTOTITLE](/actions/learn-github-actions/contexts) and [AUTOTITLE](/actions/using-workflows/workflow-syntax-for-github-actions).
+To provide an action with a secret as an input or environment variable, you can use the `secrets` context to access secrets you've created in your repository. For more information, see [AUTOTITLE](/actions/reference/workflows-and-actions/contexts) and [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-syntax).
 
 {% raw %}
 
@@ -169,7 +169,7 @@ steps:
 
 {% endraw %}
 
-Secrets cannot be directly referenced in `if:` conditionals. Instead, consider setting secrets as job-level environment variables, then referencing the environment variables to conditionally run steps in the job. For more information, see [AUTOTITLE](/actions/learn-github-actions/contexts#context-availability) and [`jobs.<job_id>.steps[*].if`](/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsif).
+Secrets cannot be directly referenced in `if:` conditionals. Instead, consider setting secrets as job-level environment variables, then referencing the environment variables to conditionally run steps in the job. For more information, see [AUTOTITLE](/actions/reference/workflows-and-actions/contexts#context-availability) and [`jobs.<job_id>.steps[*].if`](/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsif).
 
 If a secret has not been set, the return value of an expression referencing the secret (such as {% raw %}`${{ secrets.SuperSecret }}`{% endraw %} in the example) will be an empty string.
 
@@ -297,11 +297,11 @@ To use secrets that are larger than 48 KB, you can use a workaround to store sec
 
 ## Storing Base64 binary blobs as secrets
 
-You can use Base64 encoding to store small binary blobs as secrets. You can then reference the secret in your workflow and decode it for use on the runner. For the size limits, see [AUTOTITLE](/actions/security-guides/using-secrets-in-github-actions#limits-for-secrets).
+You can use Base64 encoding to store small binary blobs as secrets. You can then reference the secret in your workflow and decode it for use on the runner. For the size limits, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets#limits-for-secrets).
 
 > [!NOTE]
 > * Note that Base64 only converts binary to text, and is not a substitute for actual encryption.
-> * Using another shell might require different commands for decoding the secret to a file. On Windows runners, we recommend [using a bash shell](/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell) with `shell: bash` to use the commands in the `run` step above.
+> * Using another shell might require different commands for decoding the secret to a file. On Windows runners, we recommend [using a bash shell](/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsshell) with `shell: bash` to use the commands in the `run` step above.
 
 1. Use `base64` to encode your file into a Base64 string. For example:
 
@@ -348,4 +348,4 @@ You can use Base64 encoding to store small binary blobs as secrets. You can then
 
 ## Next steps
 
-For reference information, see [AUTOTITLE](/actions/reference/secrets-reference).
+For reference information, see [AUTOTITLE](/actions/reference/security/secrets).

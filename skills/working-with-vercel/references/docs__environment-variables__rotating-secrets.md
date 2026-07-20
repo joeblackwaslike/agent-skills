@@ -16,8 +16,8 @@ related:
 summary: Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1690c87e1fc73b475f23a211d9e9db3f0bd3d4521919302da13350aafe02101e"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "8464ff4da298c50647ca0e1ffba6d8cef58b78f85fde03ece996275f9319b666"
 ---
 
 # Rotating environment variables
@@ -74,7 +74,7 @@ If your secret is configured at the [team level](/docs/environment-variables/sha
    - Click the three dots and select **Redeploy**.
 10. Once all deployments succeed and you've verified they work, go back to your third-party service and invalidate the old credential.
 
-> **⚠️ Warning:** If you invalidate the old credential before all projects are redeployed, any project still using the old value will fail until you redeploy it.
+> **💡 Note:** If you invalidate the old credential before all projects are redeployed, any project still using the old value will fail until you redeploy it.
 
 ## Rotating credentials for integrations
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "7922512d11e83a46f8a19a9bea32b1882e4f6e2a3561fe4240a997c534fd1b57"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "a37159bea0a1214e9432d5f56c97acfbc853beb290ff4cd26aa5d4e3a632d27f"
 ---
 
 # Cohere Provider
@@ -390,6 +390,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

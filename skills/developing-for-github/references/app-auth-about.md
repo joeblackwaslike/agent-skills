@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/authenticating-with-a-github-app/about-authentication-with-a-github-app.md"
-fetched_at: "2026-06-15T17:31:37.352Z"
-sha256: "f6afcd1492dcd6ba499f9f7c61694ddd7099d084302108924a3f221b5ad75502"
+fetched_at: "2026-07-20T06:45:20.604Z"
+sha256: "d48c56320e19d2168d8a936fca3d659f9873b356690b514b123fd1ce7c37657a"
 ---
 
 ## Authentication as a {% data variables.product.prodname_github_app %}
@@ -14,4 +14,4 @@ To authenticate as an installation, your app will use an installation access tok
 
 ## Authentication on behalf of a user
 
-To authenticate on behalf of a user, your app will use a user access token. Your app should authenticate on behalf of a user when you want to attribute app activity to a user. Similar to authenticating as an app installation, your app can access resources that are owned by the user or organization that installed the app. Authenticating on behalf of a user is ideal when you want to ensure that your app only takes actions that could be performed by a specific user. For more information, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/identifying-and-authorizing-users-for-github-apps) and [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app).
+To authenticate on behalf of a user, your app will use a user access token. Your app should authenticate on behalf of a user when you want to attribute app activity to a user. Similar to authenticating as an app installation, your app can access resources that are owned by the user or organization that installed the app. Authenticating on behalf of a user is ideal when you want to ensure that your app only takes actions that could be performed by a specific user. For more information, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user) and [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app).

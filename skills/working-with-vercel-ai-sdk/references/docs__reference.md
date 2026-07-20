@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "b94a4a02ffd0fb4ceddf0e46397bc5bf1e5012f486c1546b14abe8dad9693a16"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "a7e99f2f69e77a267e72ac04558e71e1484bf16018aa9c696a51a4057d5bbbed"
 ---
 
 # API Reference
@@ -146,6 +146,7 @@ sha256: "b94a4a02ffd0fb4ceddf0e46397bc5bf1e5012f486c1546b14abe8dad9693a16"
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

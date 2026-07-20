@@ -3,20 +3,21 @@ title: Deployment Policies
 product: vercel
 url: /docs/deployments/deployment-policy
 canonical_url: "https://vercel.com/docs/deployments/deployment-policy"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-06-24
+type: how-to
 prerequisites:
   - /docs/deployments
 related:
+  - /docs/deployments
+  - /docs/cli
+  - /docs/rest-api
   - /docs/deploy-hooks
   - /docs/integrations
-  - /docs/deployments/managing-deployments
-  - /docs/deployments/environments
-summary: Learn about deployment policies on Vercel.
+summary: Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4baf26a0815861252b5a3808a4dca77e7337f0f7b08247e7833ac482029e4d29"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "cf9c6145eb6a8daf504a90af2497e781aaca37b20d12bf1a4ac94db95fbd955f"
 ---
 
 # Deployment Policies
@@ -60,9 +61,10 @@ Deployment Sources rules limit which mechanisms can deploy to the selected envir
 
 | Source                       | Description                                              |
 | ---------------------------- | -------------------------------------------------------- |
-| **Git**                      | Deployments from a connected Git provider.               |
-| **Vercel CLI**               | Deployments created with the Vercel CLI.                 |
-| **REST API**                 | Deployments created through the REST API.                |
+| **Git**                      | Deployments from a connected [Git provider](/docs/deployments#git). |
+| **Vercel CLI**               | Deployments created with the [Vercel CLI](/docs/cli).    |
+| **v0**                       | Deployments created from [v0](https://v0.app) projects without a Git connection. |
+| **REST API**                 | Deployments created through the [REST API](/docs/rest-api). |
 | **Deploy Hooks**             | Deployments triggered by a project [Deploy Hook](/docs/deploy-hooks) URL. |
 | **Marketplace Integrations** | Deployments from a third-party [Marketplace](/docs/integrations) integration. |
 

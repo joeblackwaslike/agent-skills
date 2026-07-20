@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/raindrop.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a5c2e2689d94732441ba46ec57b439f0fcdb93fc75f85bf92974b5a7f61b00c6"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "0fc469e8dca56566bd26dd04dd0edf247e614fb95b0cef7b62142ff189cf4e79"
 ---
 
 # Raindrop Observability
@@ -54,7 +54,7 @@ Raindrop records an event once a `userId` is available, so set the Raindrop `con
 
 If Raindrop event fields such as `userId`, `convoId`, or `eventName` change per request, pass a Raindrop integration through `telemetry.integrations` for that call:
 
-```ts highlight="12-22"
+```ts highlight="8-10,15-19,21"
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { raindrop } from '@raindrop-ai/ai-sdk';

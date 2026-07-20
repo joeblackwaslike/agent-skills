@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b76d5ee8770babfc3b83d0158c8dd3f104bfa006d5a462e25579eaf38bb5d8ca"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "c4eb97188545f0c9b8be2de4cd772df821cc9c88133ed3ec6c041e3009981dee"
 ---
 
 # xAI Grok Provider
@@ -1307,6 +1307,7 @@ and `resolution` just like text-to-video.
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

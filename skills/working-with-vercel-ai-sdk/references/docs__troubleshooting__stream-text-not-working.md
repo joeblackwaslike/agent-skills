@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/stream-text-not-working.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "26c753e24f7961967c27234c80ec12999397cea5f28b095aa27b2e92e4d20965"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "7d6fc606fe690e1247a08c6c0022a6f86b6ec1d9c7d4c20a311aa8998f95ef2e"
 ---
 
 # `streamText` is not working
@@ -20,7 +20,7 @@ Errors become part of the stream and are not thrown to prevent e.g. servers from
 
 To log errors, you can provide an `onError` callback that is triggered when an error occurs.
 
-```tsx highlight="6-8"
+```tsx highlight="7-9"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 

@@ -3,7 +3,7 @@ title: Server Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/server-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/server-upload"
-last_updated: 2026-05-19
+last_updated: 2026-07-10
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "5d1d2c7259605b3b90f37c801a347abc3d8474aace94f63ea52492460f5c5459"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "5a960c3747510fc57e15a5103243364f168c0e709a6cb22e873cf067bdc6e3a5"
 ---
 
 # Server Uploads with Vercel Blob
@@ -27,7 +27,7 @@ In this guide, you'll learn how to do the following:
 - Use the Vercel dashboard to create a Blob store connected to a project
 - Upload a file using the Blob SDK from the server
 
-> **⚠️ Warning:** Vercel has a [4.5 MB request body size
+> **💡 Note:** Vercel has a [4.5 MB request body size
 > limit](/docs/functions/runtimes#request-body-size) on Vercel Functions. If you
 > need to upload larger files, use [client
 > uploads](/docs/storage/vercel-blob/client-upload).

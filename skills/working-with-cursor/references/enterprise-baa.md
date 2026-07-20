@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/baa.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "2794a431fe47059d86b7b4f5b012422c4cc9765f1ff62a3df5459f7fe0fa01c2"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "9ef7128c12bc964b94399b343e7d9af0ddda67d94047a06940fe59ef4a2c083c"
 ---
 
 # HIPAA Business Associate Agreements
@@ -42,7 +42,8 @@ Third-party services and integrations are not automatically covered by Cursor's 
 The listed Eligible Services are covered for Enterprise customers with Privacy Mode enabled and locked organization-wide:
 
 - Desktop IDE, including Agent, Tab, Edit, local agent mode, and inline edit
-- Cloud Agents and self-hosted Cloud Agents
+- Cloud Agents
+- Cursor for iOS
 - CLI
 - Tab
 - BugBot

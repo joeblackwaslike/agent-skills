@@ -1,10 +1,10 @@
 ---
-title: Cache Status
+title: Cache Status and Reasons
 product: vercel
 url: /docs/caching/cache-status
 canonical_url: "https://vercel.com/docs/caching/cache-status"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-07-08
+type: reference
 prerequisites:
   - /docs/caching
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/caching/runtime-cache
   - /docs/incremental-static-regeneration
   - /docs/partial-prerendering
-summary: Learn about cache status on Vercel.
+summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "4402a108b05e820d26e3e2ec389d780a575a6a5fffd746691a8a6bd32067f677"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "4a0a8276d47c31e74fd144b608062981317d5991723736c55bca48f4e40df652"
 ---
 
 # Cache Status and Reasons

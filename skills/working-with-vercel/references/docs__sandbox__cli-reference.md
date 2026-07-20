@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9b238bb7ecd907d3283409eb606844ebaf222bf588032aff582b9a3bf0f904a8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "e7db53ea075384a0d2946ec5b87c1dcff77565034a8be1a38602f0104196b86d"
 ---
 
 # Sandbox CLI Reference
@@ -213,7 +213,7 @@ sandbox create --mount cache:/data:read-only
 | `--env <key=value>`                 | `-e`     | Default environment variables for sandbox commands. Repeatable.                                                                                                  |
 | `--tag <key=value>`                 | `-t`     | Key-value tag. Up to five. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                  |
 | `--mount <drive:path[:mode]>`       | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `read-only`. See [Drives](/docs/sandbox/concepts/drives) to access the beta. |
-| `--snapshot-expiration <duration>`  | -        | Default snapshot TTL (e.g. `7d`, `30d`). Use `none` or `0` for no expiration.                                                                                    |
+| `--snapshot-expiration <duration>`  | -        | Default snapshot TTL. Defaults to `30d`. Use `none` or `0` for no expiration.                                                                                    |
 | `--keep-last-snapshots <count>`     | -        | Retention policy: keep only the N (1–10) most recent snapshots of this sandbox.                                                                                  |
 | `--keep-last-snapshots-for <dur>`   | -        | Expiration applied to kept snapshots. Use `none` or `0` for no expiration.                                                                                       |
 | `--delete-evicted-snapshots <bool>` | -        | `true` (default) deletes evicted snapshots immediately; `false` keeps them until their existing expiration. See [Snapshot retention](#snapshot-retention).       |

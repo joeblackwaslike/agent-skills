@@ -3,7 +3,7 @@ title: Client Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/client-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/client-upload"
-last_updated: 2026-03-27
+last_updated: 2026-07-10
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "0b95793492ad6e975c7ffbe06691fb2fd0465c4b4ab5998d1d6873703229286c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c3de6ebe5d01c33aa171f483982a1ca6bed316488cdc523161d1cb8ba7b1a51b"
 ---
 
 # Client Uploads with Vercel Blob
@@ -77,7 +77,7 @@ Vercel Blob works with any frontend framework. First, install the package:
 
 When you need to upload files larger than 4.5 MB, you can use client uploads. The file goes directly from the browser to Vercel Blob, secured by a token exchange between your server and Vercel Blob.
 
-> **⚠️ Warning:** **You must authenticate and authorize users** in the `onBeforeGenerateToken` callback of your server route before generating a client token. Without authentication, anyone can upload files to your Blob store. See [authenticating client uploads](#authenticating-client-uploads) for details.
+> **💡 Note:** **You must authenticate and authorize users** in the `onBeforeGenerateToken` callback of your server route before generating a client token. Without authentication, anyone can upload files to your Blob store. See [authenticating client uploads](#authenticating-client-uploads) for details.
 
 - ### Create a client upload page
   This page allows you to upload files to Vercel Blob. The files will go directly from the browser to Vercel Blob without going through your server.

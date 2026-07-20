@@ -1,13 +1,36 @@
 ---
+title: INTERNAL_CACHE_LOCK_FULL
+product: vercel
+url: /docs/errors/INTERNAL_CACHE_LOCK_FULL
+canonical_url: "https://vercel.com/docs/errors/INTERNAL_CACHE_LOCK_FULL"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: An unexpected error happened when CDN is accessing internal cache.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_cache_lock_full.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a9d0d5e927907c4f5d5b7ca1ce122b92ad744fb6b3796a46af75ed0327d91e27"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "9bc5da38cd0f05cb9a159d4d28263faf709eca65db984a6be10e973e1f1eb30c"
 ---
 
-# Page Not Found
+# INTERNAL_CACHE_LOCK_FULL
 
-`/docs/errors/internal_cache_lock_full` does not exist. Similar pages:
+The `INTERNAL_CACHE_LOCK_FULL` error occurs when CDN is accessing internal cache. This error is usually caused by a temporary issue with the internal cache.
 
-- [INTERNAL_CACHE_LOCK_FULL](/docs/errors/internal_cache_lock_full.md): The INTERNAL_CACHE_LOCK_FULL error occurs when CDN is accessing internal cache. This error is usually caused by a temporary issue with the internal
+**Error Code:** `500`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Internal Server Error
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Contact support:** If the error persists, [contact support](/help#issues) for further assistance
+
+
+---
+
+[View full sitemap](/docs/sitemap)

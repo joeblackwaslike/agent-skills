@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with the AI Gateway and configure your own provider keys.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ed07ad3576ddc6e0ea79591798b86e3aad7d17efc9fe54b08c0377d96d6bebc2"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ddeeed0ec2dc5be7746fba0dc436960dd7cf5ead665538bf911ceaa4cf1054af"
 ---
 
 # Authentication & BYOK
@@ -44,7 +44,7 @@ If you are using a different SDK, you may need to pass the API key manually.
 
 API keys work anywhere, whether it's local development, external servers, or CI pipelines. They never expire unless you revoke them. To create, view, or delete keys, see [API keys](/docs/ai-gateway/authentication-and-byok/api-keys). To cap how much a key can spend, see [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets).
 
-> **⚠️ Warning:** When a team member leaves your team, Vercel deactivates any API keys
+> **💡 Note:** When a team member leaves your team, Vercel deactivates any API keys
 > they created. If you need authentication that isn't tied to a
 > specific person, use [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc)
 > on Vercel deployments.

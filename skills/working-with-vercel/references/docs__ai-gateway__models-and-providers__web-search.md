@@ -3,7 +3,7 @@ title: Web Search
 product: vercel
 url: /docs/ai-gateway/models-and-providers/web-search
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search"
-last_updated: 2026-06-30
+last_updated: 2026-07-09
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -13,8 +13,8 @@ related:
 summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "3f99a26149d8f90e0e9db04dc27a36c67ce72e42a6e065c7ae3e21c61bbcb5da"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "1aa8af7abc035c6113db1e8af6c57d108f594e729eb50f5e7bc71eb779a1874a"
 ---
 
 # Web Search

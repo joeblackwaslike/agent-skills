@@ -1,14 +1,14 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/api-reference.md"
-fetched_at: "2026-06-29T05:41:54.371Z"
-sha256: "2f4b47070fdf79d6bd61c433c92a51ba113f83477330290160320a7c34bb94e6"
+fetched_at: "2026-07-20T06:48:25.540Z"
+sha256: "cd9948e7d014c52ba826e86517bb502b8f97044d2e677bf7aec197252e7ab495"
 ---
 
-# OpenAI Codex Python SDK (Beta) - API Reference
+# OpenAI Codex Python SDK - API Reference
 
 Public surface of `openai_codex` for Codex workflows.
 
-This SDK is in beta. Public APIs may change before `1.0`. Turn streams are routed by turn ID so one client can consume multiple active turns concurrently.
+Turn streams are routed by turn ID so one client can consume multiple active turns concurrently.
 Thread starts default to `ApprovalMode.auto_review`; turn starts accept an optional `approval_mode` override.
 
 ## Package Entry

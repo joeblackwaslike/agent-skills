@@ -1,15 +1,15 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/terminal-ui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7c038645cf918bdb450c5873036c454742238e371c0607f57e7dabbbf2eddec3"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "64277be7471dfb9c9876a531537da02cb22d223bbeb4bc8aa799afdf8ede39a7"
 ---
 
 # Terminal UI
 
-The `@ai-sdk/tui` package lets you run a `ToolLoopAgent` in an interactive
-terminal interface. It is useful for local development, demos, and internal
-tools where a terminal experience is enough and you do not want to build a
-custom UI.
+The `@ai-sdk/tui` package lets you run a local `ToolLoopAgent` or connect to a
+remote agent through a `ChatTransport` in an interactive terminal interface.
+It is useful for local development, demos, and internal tools where a terminal
+experience is enough and you do not want to build a custom UI.
 
 The terminal UI handles prompt input, streamed assistant responses, markdown
 rendering, tool cards, reasoning sections, scrolling, and tool approval prompts.
@@ -55,6 +55,27 @@ await runAgentTUI({
 ```
 
 `runAgentTUI` runs until the user exits with `Esc` or `Ctrl+C`.
+
+## Connecting to a Remote Agent
+
+Pass a `ChatTransport` instead of an `agent` to connect the terminal UI to a
+remote AI SDK UI message endpoint:
+
+```ts
+import { runAgentTUI } from '@ai-sdk/tui';
+import { DefaultChatTransport } from 'ai';
+
+await runAgentTUI({
+  title: 'Remote Agent',
+  transport: new DefaultChatTransport({
+    api: 'https://example.com/api/chat',
+  }),
+});
+```
+
+The transport controls the endpoint, authentication, request body, and other
+remote communication behavior. The terminal UI keeps its internal chat id and
+message history private to the transport contract.
 
 ## Sandbox
 
@@ -135,10 +156,10 @@ await runAgentTUI({ title: 'Weather Agent', agent });
 
 ## Compatibility
 
-`runAgentTUI` is designed for agents that can be run directly from terminal user
-input. The agent must not require per-call options and must not use structured
+When using the `agent` option, the agent must be runnable directly from terminal
+user input. It must not require per-call options and must not use structured
 output, because the terminal UI cannot infer those values from a free-form
-prompt.
+prompt. Use a `transport` for remote agents that need custom request handling.
 
 Use `agent.generate()` or `agent.stream()` directly for examples or apps that
 need fixed prompts, call options, structured output, custom result inspection, or

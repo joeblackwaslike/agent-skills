@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "075d7a8256638d8d123d42bc01d6b9ca10fe0a48189fbfe7d4b99f6a57a34e5e"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "6dfd2ca18dede9812242f2d5157de3daf7e2d809b31d163e68a9321a56781b20"
 ---
 
 # Anthropic Provider
@@ -1490,7 +1490,7 @@ To use skills, you need to:
 1. Enable the code execution tool
 2. Specify the container with skills in `providerOptions`
 
-```ts highlight="4,9-17,19-23"
+```ts highlight="6-8,10-23"
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -1520,7 +1520,7 @@ const result = await generateText({
 
 You can also use custom skills by specifying `type: 'custom'`:
 
-```ts highlight="9-11"
+```ts highlight="11-15"
 const result = await generateText({
   model: anthropic('claude-sonnet-4-5'),
   tools: {
@@ -1675,6 +1675,7 @@ and the `mediaType` should be set to `'application/pdf'`.
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

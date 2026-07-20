@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "3375dc5163893a3e22536a317ee3a4b885e87433c9fabf8ab1be4439f88fa91d"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "c28d07938d8168bb3797b944906699307b2739ee461c0ff8a819cf54ce7f7e44"
 ---
 
 # Streaming Custom Data
@@ -125,7 +125,7 @@ export async function POST(req: Request) {
 <Note>
   You can also send stream data from custom backends, e.g. Python / FastAPI,
   using the [UI Message Stream
-  Protocol](/docs/ai-sdk-ui/stream-protocol#ui-message-stream-protocol).
+  Protocol](/docs/ai-sdk-ui/stream-protocol#data-stream-protocol).
 </Note>
 
 ## Types of Streamable Data

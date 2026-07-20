@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "8127cb908bf347019428a09c1c3492ee63dbdae36a6d0fefe90c00a78b0b17fb"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "f758c2f5339e1b8f1da001218b6e13bc42e3ffcd54ffa2ff9fc8e055f9fc3aa7"
 ---
 
 # Voyage AI Provider
@@ -262,6 +262,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "be451b9602c02b1b0a80037c21a5c626a2b55a42125c9f2433076552a2bbb9dc"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "bec6820661ae50473a92a4f379d876012d03f6a1cc648ad43adc5b570cf14ee6"
 ---
 
 # Vercel Sandbox pricing and limits
@@ -86,7 +86,9 @@ The number of times you call `Sandbox.create()`. Each creation counts as one, re
 
 ### Network
 
-The total data transferred in and out of your sandbox, measured in GB. This includes package downloads, API calls, and traffic through exposed ports.
+Data your sandbox sends to the internet, plus all traffic to and from exposed ports, is billable and measured in GB. Data your sandbox downloads from the internet, such as packages, Git repositories, artifacts, and datasets, is free.
+
+For example, downloading an npm package is free. If you run a web server on an exposed port, both the request it receives and the response it sends are billable.
 
 ### Snapshot Storage
 

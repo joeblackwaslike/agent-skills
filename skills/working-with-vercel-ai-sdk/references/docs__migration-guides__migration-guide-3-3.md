@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-3.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "72f027f299610b86cc7dd2628400a0f691f5f73a21b86f0e8d4378d16f6b7113"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "727f561bcf2fb35fe525cb3d4d52524ba390bcb218a000f8d08ac1d9df7a3aea"
 ---
 
 # Migrate AI SDK 3.2 to 3.3
@@ -21,7 +21,7 @@ introducing significant improvements and new features across the AI SDK and its 
 
 ### Open Telemetry Support
 
-- Added experimental [OpenTelemetry support](/docs/ai-sdk-core/telemetry#telemetry) for all [AI SDK Core functions](/docs/ai-sdk-core/overview#ai-sdk-core-functions), enabling better observability and tracing capabilities.
+- Added experimental [OpenTelemetry support](/docs/ai-sdk-core/telemetry) for all [AI SDK Core functions](/docs/ai-sdk-core/overview#ai-sdk-core-functions), enabling better observability and tracing capabilities.
 
 ### AI SDK UI Improvements
 

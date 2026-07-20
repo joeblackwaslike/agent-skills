@@ -1,17 +1,39 @@
 ---
+title: INTERNAL_FUNCTION_INVOCATION_FAILED
+product: vercel
+url: /docs/errors/INTERNAL_FUNCTION_INVOCATION_FAILED
+canonical_url: "https://vercel.com/docs/errors/INTERNAL_FUNCTION_INVOCATION_FAILED"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  - /docs/deployments/build-features
+summary: "The internal invocation of a function failed. This is Vercel's error."
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_function_invocation_failed.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "8dffb27727b6e706856e9d0b5c9ca2e696cfecc5cc369675d1bbd103adb21158"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "36518f30b73cca4d9ffb78edb369bee7f1dc1765cf985b43005f699f7542cf84"
 ---
 
-# Page Not Found
+# INTERNAL_FUNCTION_INVOCATION_FAILED
 
-`/docs/errors/internal_function_invocation_failed` does not exist. Similar pages:
+The `INTERNAL_FUNCTION_INVOCATION_FAILED` error occurs when a function invocation fails. This could be due to an error within the function itself, or an issue with the environment in which the function is running.
 
-- [INTERNAL_FUNCTION_INVOCATION_FAILED](/docs/errors/internal_function_invocation_failed.md): The INTERNAL_FUNCTION_INVOCATION_FAILED error occurs when a function invocation fails. This could be due to an error within the function itself, or
-- [INTERNAL_EDGE_FUNCTION_INVOCATION_FAILED](/docs/errors/internal_edge_function_invocation_failed.md): The INTERNAL_EDGE_FUNCTION_INVOCATION_FAILED error occurs when there is an issue with the Edge Function being invoked on the CDN. This error can be
-- [INTERNAL_FUNCTION_NOT_FOUND](/docs/errors/internal_function_not_found.md): The INTERNAL_FUNCTION_NOT_FOUND error occurs when an attempt to invoke a function fails because the function could not be found. This could happen if
-- [FUNCTION_INVOCATION_FAILED](/docs/errors/function_invocation_failed.md): The FUNCTION_INVOCATION_FAILED error occurs when a function invocation fails. This could be due to an error within the function itself, or an issue
-- [INTERNAL_FUNCTION_INVOCATION_TIMEOUT](/docs/errors/internal_function_invocation_timeout.md): The INTERNAL_FUNCTION_INVOCATION_TIMEOUT error occurs when a function invocation takes longer than the allowed execution time. This could be due to
+**Error Code:** `500`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Internal Server Error
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Check application logs:** Review the application logs to identify any specific errors related to the internal function invocation. They can be found at the host URL under [the `/_logs` path](/docs/deployments/build-features#logs-view)
+2. **Review function code:** Ensure that the code for the function is correct and does not contain any errors or infinite loops
+3. **Verify function configuration:** Double-check the function configuration to ensure that it's set up correctly, including any environment variables or other settings
+4. **Check external dependencies:** If the function relies on external services or APIs, ensure they are responding in a timely manner
+
+
+---
+
+[View full sitemap](/docs/sitemap)

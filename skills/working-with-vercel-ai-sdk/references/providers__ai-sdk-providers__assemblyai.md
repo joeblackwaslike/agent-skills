@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "c9cc72041bcbebc3c8869324afd0c60fe33934195b791121f248f631d315bcb4"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "1951dc2850bfec161aa08bb6ce372a657949220e8fbba1c5b5f2de8cfa0439ed"
 ---
 
 # AssemblyAI Provider
@@ -436,6 +436,7 @@ AssemblyAI's documentation for per-language availability.
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

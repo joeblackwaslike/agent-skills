@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f682503e8d8c83291bf598773a66bd26eac782cacc81b10681d7aa689fe13c80"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b3d4a06413c6675d3e642843e0df4a9942e6da08330157d9e68087354771c99b"
 ---
 
 # Migrate AI SDK 3.4 to 4.0
@@ -818,7 +818,7 @@ The following options have been removed from the `useChat` hook:
 - `maxAutomaticRoundtrips`
 - `maxToolRoundtrips`
 
-Please use the [`maxSteps`](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls) option instead.
+Please use the [`maxSteps`](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls-using-stopwhen) option instead.
 The value of `maxSteps` is equal to roundtrips + 1.
 
 ```ts filename="AI SDK 3.4"

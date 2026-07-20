@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/pulls"
-fetched_at: "2026-07-06T05:37:45.074Z"
-sha256: "f013220e6a3d1b7c41cb506a7a6ba7f6d7cbaa4dc9ddf5edf155019c5cb1a267"
+fetched_at: "2026-07-20T06:52:02.847Z"
+sha256: "8fc9039055bd82b4a8041fc5d767b81207251f48b18a0f5ec08642318fc91b84"
 ---
 
 # REST API endpoints for pull requests
@@ -378,6 +378,14 @@ Array of `Pull Request Simple`:
   * `merge_method`: required, string, enum: `merge`, `squash`, `rebase`
   * `commit_title`: required, string
   * `commit_message`: required, string
+* `stack`: `Pull Request Stack`:
+  * `base`: required, object:
+    * `ref`: required, string
+    * `sha`: required, string
+  * `size`: integer
+  * `position`: integer
+  * `id`: integer
+  * `number`: integer
 * `draft`: boolean
 
 ## Create a pull request
@@ -696,6 +704,14 @@ curl -L \
   * `merge_method`: required, string, enum: `merge`, `squash`, `rebase`
   * `commit_title`: required, string
   * `commit_message`: required, string
+* `stack`: `Pull Request Stack`:
+  * `base`: required, object:
+    * `ref`: required, string
+    * `sha`: required, string
+  * `size`: integer
+  * `position`: integer
+  * `id`: integer
+  * `number`: integer
 * `draft`: boolean
 * `merged`: required, boolean
 * `mergeable`: required, boolean or null

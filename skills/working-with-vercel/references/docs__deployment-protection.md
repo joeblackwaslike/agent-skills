@@ -16,15 +16,15 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c453783f4b3a781810843b448e92c331dec686478647576a2e196960767e5fa8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "dbdacb12da6322dab6dbf077553951b9775f4cc81156ccee361cb8c752e8c5d1"
 ---
 
 # Deployment Protection on Vercel
 
 Deployment Protection lets you control who can access your preview and production URLs. You configure it at the project level, choosing both a **protection method** (how you protect) and a **protection scope** (what you protect).
 
-> **⚠️ Warning:** On the Hobby plan, Vercel Authentication with Standard Protection is
+> **💡 Note:** On the Hobby plan, Vercel Authentication with Standard Protection is
 > available. This protects your preview deployments and deployment URLs, but your
 > production domain remains publicly accessible. To protect production domains,
 > you need a Pro or Enterprise plan.

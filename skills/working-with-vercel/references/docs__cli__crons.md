@@ -13,13 +13,13 @@ related:
 summary: "Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/crons.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3baed894fc81f0d56d5b94acf3e41c9d55b2adfc99fec5939e7b38f29c554d14"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "1d4eb6d3b9149738362d701ac10bc88c6968fdd4a11db942956ac4eaec2f7d4b"
 ---
 
 # vercel crons
 
-> **⚠️ Warning:** `vercel crons` is currently in beta. Subcommands and flags may change before
+> **💡 Note:** `vercel crons` is currently in beta. Subcommands and flags may change before
 > general availability. In `vercel --help` the command appears tagged with
 > `[beta]`.
 

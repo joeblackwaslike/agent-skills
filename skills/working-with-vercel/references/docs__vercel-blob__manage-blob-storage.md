@@ -14,8 +14,8 @@ related:
 summary: Create blob stores, upload files, list contents, and manage storage using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/manage-blob-storage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e65f96a5f77f2fa98190ea133a3391d9c68dfc089f2cd56b8c2d228ad0de983d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "32da63f952cde1721a4234f92f473da82d6fa531f47e4e31fc0beeb9f0d80d0f"
 ---
 
 # Managing Vercel Blob storage from the CLI
@@ -132,6 +132,8 @@ This creates a new blob at the destination path without modifying the original.
 
 Remove a blob you no longer need:
 
+> **💡 Note:** This action is permanent and cannot be undone.
+
 ```bash filename="terminal"
 vercel blob del images/old-logo.png
 ```
@@ -145,6 +147,8 @@ vercel blob get-store <store-id>
 ```
 
 To remove a store entirely:
+
+> **💡 Note:** This action is permanent and cannot be undone.
 
 ```bash filename="terminal"
 vercel blob delete-store <store-id>

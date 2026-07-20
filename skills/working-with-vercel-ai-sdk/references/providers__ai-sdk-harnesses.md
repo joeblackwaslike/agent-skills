@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "7d4d8f6d8d5498a1e16e6068c61aa2b3f1e36399f2e70611eec3fe7427991e9d"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "325ea9d252e3d0ab67426d642ba99c68ad40e1549ac2f6386cc1a88775d0bc98"
 ---
 
 # AI SDK Harnesses
@@ -100,6 +100,7 @@ tools, UI, and terminal usage.
   - [ByteDance](/providers/ai-sdk-providers/bytedance)
   - [Kling AI](/providers/ai-sdk-providers/klingai)
   - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+  - [Cartesia](/providers/ai-sdk-providers/cartesia)
 - [AI SDK Harnesses](/providers/ai-sdk-harnesses)
   - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
   - [Codex](/providers/ai-sdk-harnesses/codex)

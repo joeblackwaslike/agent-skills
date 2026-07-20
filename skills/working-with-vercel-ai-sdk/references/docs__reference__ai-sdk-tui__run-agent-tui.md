@@ -1,14 +1,14 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-tui/run-agent-tui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1d04d68d43a9cba3e3f757e6a96a6fbff031ceb886534fa55d4c984c78368e34"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ae8b9d3368d26df3804dbcf7a18f585a9e96a656bb6703ece72ab409d3cc7348"
 ---
 
 # `runAgentTUI()`
 
-Runs a `ToolLoopAgent` in an interactive terminal UI. The terminal UI reads user
-prompts, streams assistant responses, renders markdown, displays tool and
-reasoning sections, and handles manual tool approvals.
+Runs a local agent or chat transport in an interactive terminal UI. The
+terminal UI reads user prompts, streams assistant responses, renders markdown,
+displays tool and reasoning sections, and handles manual tool approvals.
 
 `runAgentTUI` runs until the user exits with `Esc` or `Ctrl+C`.
 
@@ -50,9 +50,16 @@ await runAgentTUI({
             {
               name: 'agent',
               type: 'AgentTUIAgent',
-              isRequired: true,
+              isOptional: true,
               description:
-                'The agent to run. The agent must not require per-call options and must not use structured output.',
+                'The agent to run. Provide exactly one of `agent` or `transport`. The agent must not require per-call options and must not use structured output.',
+            },
+            {
+              name: 'transport',
+              type: 'ChatTransport<UIMessage>',
+              isOptional: true,
+              description:
+                'The transport used to communicate with a remote agent. Provide exactly one of `agent` or `transport`.',
             },
             {
               name: 'title',
@@ -169,6 +176,19 @@ await runAgentTUI({
 });
 ```
 
+## Example with a Chat Transport
+
+```ts
+import { DefaultChatTransport } from 'ai';
+
+await runAgentTUI({
+  title: 'Remote Assistant',
+  transport: new DefaultChatTransport({
+    api: 'https://example.com/api/chat',
+  }),
+});
+```
+
 ## Example with Sandbox
 
 ```ts
@@ -193,8 +213,9 @@ working directory or exposed ports.
 
 ## Compatibility
 
-Use `runAgentTUI` for agents that can run directly from free-form user input.
-Use `agent.generate()` or `agent.stream()` directly when you need fixed prompts,
+Use the `agent` option for agents that can run directly from free-form user
+input. Use the `transport` option to communicate with a remote agent. Use
+`agent.generate()` or `agent.stream()` directly when you need fixed prompts,
 per-call options, structured output, custom result inspection, or custom stream
 processing.
 
@@ -202,7 +223,7 @@ processing.
 
 - [Terminal UI guide](/docs/agents/terminal-ui)
 - [Building Agents](/docs/agents/building-agents)
-- [ToolLoopAgent guide](/docs/agents/overview#tooloopagent-class)
+- [ToolLoopAgent guide](/docs/agents/overview#toolloopagent-class)
 
 
 ## Navigation

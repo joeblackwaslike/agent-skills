@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "c9fe66b40ea5cfd3dcb2d71413809278e5e67fe85898a8a81c4f6d9e197e87d9"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b873afee07f2c10e319546cbdc818d15371530101304efdfd242e8059ec1f36b"
 ---
 
 # Deepgram Provider
@@ -168,7 +168,7 @@ const model = deepgram.transcription('nova-3');
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `summarize` option will enable summaries for sections of content.
 
-```ts highlight="6"
+```ts highlight="11-15"
 import { transcribe } from 'ai';
 import {
   deepgram,
@@ -311,6 +311,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

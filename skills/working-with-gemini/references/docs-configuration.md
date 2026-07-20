@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/configuration.md"
-fetched_at: "2026-06-22T05:57:43.917Z"
-sha256: "aba46eb76f364355220412611dbf29b5c43942f66b27f030e93bc1146b4891cb"
+fetched_at: "2026-07-20T06:49:41.276Z"
+sha256: "e96c6ebd5870b733c65e0624bce50064e7c75456fdfc4d6bb702a76f26244d15"
 ---
 
 # Gemini CLI configuration
@@ -2742,10 +2742,10 @@ the `advanced.excludedEnvVars` setting in your `settings.json` file.
   - Run the CLI once with this set to generate the file.
 - **`SEATBELT_PROFILE`** (macOS specific):
   - Switches the Seatbelt (`sandbox-exec`) profile on macOS.
-  - `permissive-open`: (Default) Restricts writes to the project folder (and a
-    few other folders, see
-    `packages/cli/src/utils/sandbox-macos-permissive-open.sb`) but allows other
-    operations.
+  - `permissive-open`: (Default) Denies operations by default, confining writes
+    to the project folder (and a few other folders, see
+    `packages/cli/src/utils/sandbox-macos-permissive-open.sb`) while allowing
+    broad file reads and network access.
   - `restrictive-open`: Declines operations by default, allows network.
   - `strict-open`: Restricts both reads and writes to the working directory,
     allows network.

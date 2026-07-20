@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/030_clients.md"
-fetched_at: "2026-06-29T05:45:05.522Z"
-sha256: "6f5c7056f20029f197e0cc160af6bd6a796cc868fdaba9d5065cbee0e61c27c6"
+fetched_at: "2026-07-20T06:52:31.491Z"
+sha256: "a1fc0cc3afc707ca5be4a144ffed9f411fa50ba0524d36c2c4cfb5e6a986eabe"
 ---
 
 # Connecting Your MCP Client
@@ -403,7 +403,7 @@ Add the `serena` MCP server configuration
       "command": "serena",
       "args": [
         "start-mcp-server",
-        "--context=claude-desktop"
+        "--context=desktop-app"
       ]
     }
   }

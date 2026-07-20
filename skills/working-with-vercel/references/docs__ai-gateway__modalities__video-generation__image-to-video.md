@@ -11,11 +11,12 @@ prerequisites:
 related:
   - /docs/ai-gateway/modalities/video-generation/reference-to-video
   - /docs/vercel-blob
+  - /docs/ai-gateway/modalities/video-generation/video-extension
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "6735204b90eb7f7f1b213e815ff6bad3511145da25188d44058357c49cf2ab4b"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "babde133236f93c91ef00041233798957a86e78689e3e1062aa03a7caa627316"
 ---
 
 # Image-to-Video Generation
@@ -23,6 +24,22 @@ sha256: "6735204b90eb7f7f1b213e815ff6bad3511145da25188d44058357c49cf2ab4b"
 Animate a static image into a video. The image you provide becomes the video content itself - you're adding motion to that exact scene.
 
 This is different from [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video), where reference images show the model what characters look like, but the video is a completely new scene.
+
+## Passing frames
+
+The provider-agnostic `frameImages` field is the recommended way to pass frames. Each entry pairs an image with a `frameType`:
+
+- One `first_frame` entry animates from that image. This is equivalent to `prompt.image`, and a `first_frame` takes priority if you pass both.
+- Adding a `last_frame` entry transitions between the two frames. Veo, KlingAI, and Seedance honor `last_frame`; Grok Imagine Video and Wan ignore it with a warning.
+
+```typescript
+frameImages: [
+  { image: 'https://example.com/start.png', frameType: 'first_frame' },
+  { image: 'https://example.com/end.png', frameType: 'last_frame' },
+];
+```
+
+Each provider below also documents its own `providerOptions` keys (like `imageTail` or `lastFrameImage`). Those still work when you omit `frameImages`.
 
 ## Google Veo
 
@@ -65,6 +82,29 @@ const result = await generateVideo({
       resizeMode: 'crop',
     },
   },
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
+
+### Veo first and last frame
+
+Veo can transition between a starting and ending image. Pass both frames through `frameImages`, tagging one `first_frame` and one `last_frame`. Veo animates from the first frame toward the last.
+
+```typescript filename="veo-first-last-frame.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'google/veo-3.1-generate-001',
+  prompt: '360 pan from the first frame to the last frame',
+  frameImages: [
+    { image: 'https://example.com/start.png', frameType: 'first_frame' },
+    { image: 'https://example.com/end.png', frameType: 'last_frame' },
+  ],
+  aspectRatio: '16:9',
+  resolution: '720p',
+  duration: 8,
 });
 
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
@@ -140,18 +180,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ### KlingAI first and last frame
 
-Generate a video that transitions between a starting and ending image. The model interpolates the motion between the two frames.
-
-| Parameter                           | Type               | Required | Description                                                                |
-| ----------------------------------- | ------------------ | -------- | -------------------------------------------------------------------------- |
-| `prompt.image`                      | `string \| Buffer` | Yes      | The first frame (starting image).                                          |
-| `providerOptions.klingai.imageTail` | `string \| Buffer` | Yes      | The last frame (ending image). Same format requirements as `prompt.image`. |
-
-When using `imageTail`, the following features are mutually exclusive and cannot be combined:
-
-- First/last frame (`image` + `imageTail`)
-- Motion brush (`dynamicMasks` / `staticMask`)
-- Camera control (`cameraControl`)
+Generate a video that transitions between a starting and ending image. The model interpolates the motion between the two frames. Pass both frames through `frameImages`, tagging one `first_frame` and one `last_frame`.
 
 ```typescript filename="first-last-frame.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
@@ -162,13 +191,13 @@ const lastFrame = fs.readFileSync('end.png');
 
 const result = await generateVideo({
   model: 'klingai/kling-v2.6-i2v',
-  prompt: {
-    image: firstFrame,
-    text: 'Smooth transition between the two scenes',
-  },
+  prompt: 'Smooth transition between the two scenes',
+  frameImages: [
+    { image: firstFrame, frameType: 'first_frame' },
+    { image: lastFrame, frameType: 'last_frame' },
+  ],
   providerOptions: {
     klingai: {
-      imageTail: lastFrame,
       mode: 'pro',
     },
   },
@@ -176,6 +205,13 @@ const result = await generateVideo({
 
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 ```
+
+First and last frame is mutually exclusive with these features, which cannot be combined with it:
+
+- Motion brush (`dynamicMasks` / `staticMask`)
+- Camera control (`cameraControl`)
+
+If you omit `frameImages`, you can still set the last frame through the legacy `providerOptions.klingai.imageTail` key (a `string` or `Buffer` with the same format requirements as the first frame), with `prompt.image` as the first frame.
 
 ### KlingAI voice generation
 
@@ -381,20 +417,24 @@ Wan offers image-to-video with standard and flash variants. Both support audio g
 
 [Browse the latest Wan video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
+> **💡 Note:** Wan does not support first-last-frame interpolation. A `last_frame` entry in
+> `frameImages` is ignored with a warning.
+
 ### Wan parameters
 
-| Parameter                                | Type      | Required | Description                                                                        |
-| ---------------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------- |
-| `prompt.image`                           | `string`  | Yes      | URL of the image to animate (URLs only, not buffers)                               |
-| `prompt.text`                            | `string`  | Yes      | Description of the motion or animation                                             |
-| `resolution`                             | `string`  | No       | `'1280x720'` or `'1920x1080'`                                                      |
-| `duration`                               | `number`  | No       | 2-15 seconds                                                                       |
-| `generateAudio`                          | `boolean` | No       | Generate audio. Standard models default to `true`, flash models default to `false` |
-| `providerOptions.alibaba.negativePrompt` | `string`  | No       | What to avoid in the video. Max 500 characters                                     |
-| `providerOptions.alibaba.audioUrl`       | `string`  | No       | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB)                  |
-| `providerOptions.alibaba.watermark`      | `boolean` | No       | Add watermark to the video. Defaults to `false`                                    |
-| `providerOptions.alibaba.pollIntervalMs` | `number`  | No       | How often to check task status. Defaults to `5000`                                 |
-| `providerOptions.alibaba.pollTimeoutMs`  | `number`  | No       | Maximum wait time. Defaults to `600000` (10 minutes)                               |
+| Parameter                                | Type                          | Required | Description                                                                        |
+| ---------------------------------------- | ----------------------------- | -------- | ---------------------------------------------------------------------------------- |
+| `prompt`                                 | `string` or `{ image, text }` | Yes      | Text description of the motion or animation                                        |
+| `frameImages`                            | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. URLs only. Takes priority over `prompt.image` |
+| `prompt.image`                           | `string`                      | No       | URL of the image to animate (URLs only, not buffers). Used when `frameImages` is omitted |
+| `resolution`                             | `string`                      | No       | `'1280x720'` or `'1920x1080'`                                                      |
+| `duration`                               | `number`                      | No       | 2-15 seconds                                                                       |
+| `generateAudio`                          | `boolean`                     | No       | Generate audio. Standard models default to `true`, flash models default to `false` |
+| `providerOptions.alibaba.negativePrompt` | `string`                      | No       | What to avoid in the video. Max 500 characters                                     |
+| `providerOptions.alibaba.audioUrl`       | `string`                      | No       | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB)                  |
+| `providerOptions.alibaba.watermark`      | `boolean`                     | No       | Add watermark to the video. Defaults to `false`                                    |
+| `providerOptions.alibaba.pollIntervalMs` | `number`                      | No       | How often to check task status. Defaults to `5000`                                 |
+| `providerOptions.alibaba.pollTimeoutMs`  | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                               |
 
 ### Wan example
 
@@ -404,16 +444,18 @@ import fs from 'node:fs';
 
 const result = await generateVideo({
   model: 'alibaba/wan-v2.6-i2v-flash',
-  prompt: {
-    image: 'https://example.com/cat.png',
-    text: 'The cat waves hello and smiles',
-  },
+  prompt: 'The cat waves hello and smiles',
+  frameImages: [
+    { image: 'https://example.com/cat.png', frameType: 'first_frame' },
+  ],
   duration: 5,
   generateAudio: true,
 });
 
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 ```
+
+If you omit `frameImages`, you can still pass the first frame through `prompt.image` with `prompt.text`.
 
 ***
 
@@ -423,17 +465,23 @@ Grok Imagine Video (by xAI) can animate images into videos. The output defaults 
 
 [Browse the latest Grok video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
 
+> **💡 Note:** Grok Imagine Video does not support first-last-frame interpolation. A
+> `last_frame` entry in `frameImages` is ignored with a warning. To continue
+> from a video's last frame, use [video extension](/docs/ai-gateway/modalities/video-generation/video-extension)
+> mode instead.
+
 ### Grok parameters
 
-| Parameter                            | Type                 | Required | Description                                                   |
-| ------------------------------------ | -------------------- | -------- | ------------------------------------------------------------- |
-| `prompt.image`                       | `string`             | Yes      | URL of the image to animate                                   |
-| `prompt.text`                        | `string`             | No       | Description of the motion or animation                        |
-| `duration`                           | `number`             | No       | Video length in seconds (1-15)                                |
-| `aspectRatio`                        | `string`             | No       | Override the input image's aspect ratio (stretches the image) |
-| `providerOptions.xai.resolution`     | `'480p'` | `'720p'` | No       | Video resolution. Defaults to 480p                            |
-| `providerOptions.xai.pollIntervalMs` | `number`             | No       | How often to check task status. Defaults to `5000`            |
-| `providerOptions.xai.pollTimeoutMs`  | `number`             | No       | Maximum wait time. Defaults to `600000` (10 minutes)          |
+| Parameter                            | Type                          | Required | Description                                                                                   |
+| ------------------------------------ | ----------------------------- | -------- | --------------------------------------------------------------------------------------------- |
+| `prompt`                             | `string` or `{ image, text }` | Yes      | Text description of the motion or animation                                                   |
+| `frameImages`                        | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. Takes priority over `prompt.image`       |
+| `prompt.image`                       | `string`                      | No       | URL of the image to animate. Used when `frameImages` is omitted                               |
+| `duration`                           | `number`                      | No       | Video length in seconds (1-15)                                                                |
+| `aspectRatio`                        | `string`                      | No       | Override the input image's aspect ratio (stretches the image)                                 |
+| `providerOptions.xai.resolution`     | `'480p'` | `'720p'`          | No       | Video resolution. Defaults to 480p                                                            |
+| `providerOptions.xai.pollIntervalMs` | `number`                      | No       | How often to check task status. Defaults to `5000`                                            |
+| `providerOptions.xai.pollTimeoutMs`  | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                          |
 
 ### Grok example
 
@@ -443,10 +491,10 @@ import fs from 'node:fs';
 
 const result = await generateVideo({
   model: 'xai/grok-imagine-video',
-  prompt: {
-    image: 'https://example.com/cat.png',
-    text: 'The cat slowly turns its head and blinks',
-  },
+  prompt: 'The cat slowly turns its head and blinks',
+  frameImages: [
+    { image: 'https://example.com/cat.png', frameType: 'first_frame' },
+  ],
   duration: 5,
   providerOptions: {
     xai: {
@@ -457,6 +505,8 @@ const result = await generateVideo({
 
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 ```
+
+If you omit `frameImages`, you can still pass the first frame through `prompt.image` with optional `prompt.text`.
 
 ***
 
@@ -510,14 +560,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ### Seedance first and last frame
 
-Generate a video that transitions smoothly between a starting and ending image. Provide the first frame via `prompt.image` and the last frame via `lastFrameImage`.
-
-| Parameter                                  | Type     | Required | Description                                                             |
-| ------------------------------------------ | -------- | -------- | ----------------------------------------------------------------------- |
-| `prompt.image`                             | `string` | Yes      | The first frame (starting image)                                        |
-| `providerOptions.bytedance.lastFrameImage` | `string` | Yes      | The last frame (ending image). Model transitions between the two frames |
-
-Supported by Seedance v1.5 Pro, v1.0 Pro, and v1.0 Lite I2V.
+Generate a video that transitions smoothly between a starting and ending image. Pass both frames through `frameImages`, tagging one `first_frame` and one `last_frame`. Seedance requires image URLs (not buffers), so host local images on [Vercel Blob](/docs/vercel-blob) first.
 
 ```typescript filename="seedance-first-last-frame.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
@@ -525,15 +568,18 @@ import fs from 'node:fs';
 
 const result = await generateVideo({
   model: 'bytedance/seedance-v1.5-pro',
-  prompt: {
-    image: 'https://example.com/first-frame.jpg',
-    text: 'Create a 360-degree orbiting camera shot based on this photo',
-  },
+  prompt: 'Create a 360-degree orbiting camera shot based on this photo',
+  frameImages: [
+    {
+      image: 'https://example.com/first-frame.jpg',
+      frameType: 'first_frame',
+    },
+    { image: 'https://example.com/last-frame.jpg', frameType: 'last_frame' },
+  ],
   duration: 5,
   generateAudio: true,
   providerOptions: {
     bytedance: {
-      lastFrameImage: 'https://example.com/last-frame.jpg',
       watermark: false,
       pollTimeoutMs: 600000,
     },
@@ -543,9 +589,15 @@ const result = await generateVideo({
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 ```
 
+If you omit `frameImages`, you can still set the first frame via `prompt.image` and the last frame via the legacy `providerOptions.bytedance.lastFrameImage` key.
+
 ### Seedance multi-reference images
 
 Provide 1-4 reference images that the model uses to faithfully reproduce object shapes, colors, and textures. Use `[Image 1]`, `[Image 2]`, etc. in your prompt to reference each image. Requires the `seedance-v1.0-lite-i2v` model.
+
+You can pass these through the provider-agnostic `inputReferences` field, or the legacy `providerOptions.bytedance.referenceImages` key shown below. Either way, refer to each image with `[Image 1]`, `[Image 2]`, and so on in your prompt. When using `inputReferences` with URLs, tag each entry with an explicit media type (for example, `{ data: url, mediaType: 'image/png' }`). Seedance treats untyped URL references as images and emits a warning.
+
+For reference-to-video generation with Seedance 2.0, including video references, see [Seedance reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video#bytedance-seedance).
 
 | Parameter                                   | Type       | Required | Description                       |
 | ------------------------------------------- | ---------- | -------- | --------------------------------- |

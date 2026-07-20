@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "22843b8235d76c33dc3add3f08c8b737b988a0d50a2543498e62a41e5df66464"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "9b9a4497dd58b85e8ce9f13eefc4ced6a221207b54e76742eb55e064c92cb3b6"
 ---
 
 # Chatbot
@@ -1093,8 +1093,8 @@ By using `FileList`, you can send multiple files as attachments along with a mes
 <Note>
   Currently, only `image/*` and `text/*` content types get automatically
   converted into [multi-modal content
-  parts](/docs/foundations/prompts#multi-modal-messages). You will need to
-  handle other content types manually.
+  parts](/docs/foundations/prompts#file-parts). You will need to handle other
+  content types manually.
 </Note>
 
 ```tsx filename="app/page.tsx"

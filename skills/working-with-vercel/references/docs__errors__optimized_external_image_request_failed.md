@@ -1,17 +1,37 @@
 ---
+title: OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED
+product: vercel
+url: /docs/errors/OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED
+canonical_url: "https://vercel.com/docs/errors/OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: The request for an optimized external image failed. This is a server error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/optimized_external_image_request_failed.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "f094cdd39c393a971c99a5213f51566202055022e75481015ac85c3b67949566"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "53de70b5605314004f9359ea7198f4d98c72b3ab8187e9a7b7ce659ebd79dc6c"
 ---
 
-# Page Not Found
+# OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED
 
-`/docs/errors/optimized_external_image_request_failed` does not exist. Similar pages:
+The `OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED` error occurs when the request for an optimized external image fails.
 
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED](/docs/errors/optimized_external_image_request_failed.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED error occurs when the request for an optimized external image fails. 502
-- [INTERNAL_OPTIMIZED_IMAGE_REQUEST_FAILED](/docs/errors/internal_optimized_image_request_failed.md): The INTERNAL_OPTIMIZED_IMAGE_REQUEST_FAILED error occurs when the request for an internally optimized image fails. 502
-- [OPTIMIZED_EXTERNAL_IMAGE_TOO_MANY_REDIRECTS](/docs/errors/optimized_external_image_too_many_redirects.md): The OPTIMIZED_EXTERNAL_IMAGE_TOO_MANY_REDIRECTS error occurs when the external image request encounters too many redirects. 502
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED](/docs/errors/optimized_external_image_request_unauthorized.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED error occurs when the external image request is unauthorized. 502
-- [OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID](/docs/errors/optimized_external_image_request_invalid.md): The OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID error occurs when the external image request is invalid. 502
+**Error Code:** `502`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Bad Gateway
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Verify external URL:** Ensure that the external image URL is correct and accessible
+2. **Check query parameters:** Ensure that any query parameters are valid
+
+
+---
+
+[View full sitemap](/docs/sitemap)

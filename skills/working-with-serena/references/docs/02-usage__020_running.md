@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/020_running.md"
-fetched_at: "2026-06-16T12:24:33.275Z"
-sha256: "ade5c3c8658030d2e58cb11fb839843d6dee86e9fba53a7af933bff7d7ae828e"
+fetched_at: "2026-07-20T06:52:31.491Z"
+sha256: "a9598a2baeda92fcd0e050a848261b2c6a209a5e11f289bd1fefc658d0ee06fa"
 ---
 
 # Running Serena
@@ -247,7 +247,7 @@ docker run --rm -i --network host -v /path/to/your/projects:/workspaces/projects
 This command mounts your projects into the container under `/workspaces/projects`, so when working with projects,
 you need to refer to them using the respective path (e.g. `/workspaces/projects/my-project`).
 
-Alternatively, you may use Docker compose with the `compose.yml` file provided in the repository.
+Alternatively, you may use Docker compose. Adjust the file `compose.yml`, which is provided in the repository, according to your needs.
 See our [advanced Docker usage](https://github.com/oraios/serena/blob/main/DOCKER.md) documentation for more detailed instructions, configuration options, and limitations.
 
 :::{note}

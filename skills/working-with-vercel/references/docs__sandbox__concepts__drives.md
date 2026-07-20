@@ -16,8 +16,8 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d466c0ac5797f90f00cd262a21cec67382f017bdc71b618e5b38801786348ec2"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ab106309c7137a8f5013ef591ac8b05e32789b7f457b5bd23e30c83e95e61e30"
 ---
 
 # Drives
@@ -84,7 +84,7 @@ Mount a drive by passing the drive name and mount path when creating a sandbox. 
 
 Drives can be mounted in `read-write` or `read-only` mode. By default, drives are mounted in `read-write` mode.
 
-> **⚠️ Warning:** Drives are currently single reader, single writer. Support for multiple readers is coming soon.
+> **💡 Note:** Drives are currently single reader, single writer. Support for multiple readers is coming soon.
 
 ### Listing drives
 

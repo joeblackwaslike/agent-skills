@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "53182755328b56c8fc4c4bbdcaedfab7a302dc41b6bd18475c6845c3269f0572"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "f234c21efc3eb432473a245cfd609090d2651ca9a1b3bf1078bd6d8481e9d858"
 ---
 
 # DeepSeek Provider
@@ -225,6 +225,7 @@ The metrics include:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

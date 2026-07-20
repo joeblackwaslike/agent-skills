@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/langsmith.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "95b13470332d7e677a0269921562d61c3fd88e223ed706230cdd5a19358ce545"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "d8b9759c54df6bf84630b9150e94a9dbf074b9c1a6551e10340a78546966668b"
 ---
 
 # LangSmith Observability
@@ -40,7 +40,7 @@ export OPENAI_API_KEY=<your-openai-api-key> # The examples use OpenAI (replace w
 
 To start tracing, you will need to import and call the `wrapAISDK` method at the start of your code:
 
-```ts highlight="6-7"
+```ts highlight="6"
 import { openai } from '@ai-sdk/openai';
 import * as ai from 'ai';
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/expressions.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "ea00646fe39f25869c7842bfa5e1d1606ede15160ceea8556a1506fce3021c82"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "ee2afa4eeac426a1f365b1d19fdfd4f2cadf8007bae497dc9a94f5279b7b8fd9"
 ---
 
 ## Literals
@@ -54,7 +54,7 @@ env:
 
   > [!NOTE]
   > * {% data variables.product.company_short %} ignores case when comparing strings.
-  > * `steps.<step_id>.outputs.<output_name>` evaluates as a string. {% data reusables.actions.expressions-syntax-evaluation %} For more information, see [AUTOTITLE](/actions/learn-github-actions/contexts#steps-context).
+  > * `steps.<step_id>.outputs.<output_name>` evaluates as a string. {% data reusables.actions.expressions-syntax-evaluation %} For more information, see [AUTOTITLE](/actions/reference/workflows-and-actions/contexts#steps-context).
   > * For numerical comparison, the `fromJSON()` function can be used to convert a string to a number. For more information on the `fromJSON()` function, see [fromJSON](#fromjson).
 
 {% data variables.product.prodname_dotcom %} performs loose equality comparisons.
@@ -303,9 +303,9 @@ Sets `MY_ENV_VAR` based on the branch: `production` for `main`, `staging` for `s
 
 ## Status check functions
 
-You can use the following status check functions as expressions in `if` conditionals. A default status check of `success()` is applied unless you include one of these functions. For more information about `if` conditionals, see [AUTOTITLE](/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idif) and [AUTOTITLE](/actions/creating-actions/metadata-syntax-for-github-actions#runsstepsif).
+You can use the following status check functions as expressions in `if` conditionals. A default status check of `success()` is applied unless you include one of these functions. For more information about `if` conditionals, see [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idif) and [AUTOTITLE](/actions/reference/workflows-and-actions/metadata-syntax#runsstepsif).
 
-Outside `if` conditionals, you can use `job.status` to access the job status. For more information, see [AUTOTITLE](/actions/reference/contexts-reference#job-context).
+Outside `if` conditionals, you can use `job.status` to access the job status. For more information, see [AUTOTITLE](/actions/reference/workflows-and-actions/contexts#job-context).
 
 ### success
 

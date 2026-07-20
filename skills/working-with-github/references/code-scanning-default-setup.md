@@ -1,20 +1,20 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/tutorials/customize-code-scanning/evaluate-default-setup.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "e779435ca428ccc86bc1f5be670b2af2a24037c104c33198992b56279f96d4f0"
+fetched_at: "2026-07-20T06:52:02.847Z"
+sha256: "22647150a845cef335b28ae94814a0071e597b3f71a304bc86dbd3f71dd4c746"
 ---
 
 When you first start using {% data variables.product.prodname_code_scanning %}, you'll likely use default setup. This guide describes how to evaluate how default setup for {% data variables.product.prodname_code_scanning %} is working for you, and what steps to take if something isn't working as you expect. This guide also describes how you can customize {% data variables.product.prodname_code_scanning %} if you find that you have a specific use case that your new configuration doesn't fit.
 
 ## Customizing {% data variables.product.prodname_code_scanning %}
 
-When you first configure default setup, or after an initial analysis of your code, you can edit which languages default setup will analyze and the query suite run during analysis. The `default` query suite contains a set of queries that are carefully designed to look for the most relevant security issues, while minimizing false positive results. However, you can use the `security-extended` suite to run additional queries, which have slightly lower precision. For more information on the available query suites, see [AUTOTITLE](/code-security/code-scanning/managing-your-code-scanning-configuration/codeql-query-suites).
+When you first configure default setup, or after an initial analysis of your code, you can edit which languages default setup will analyze and the query suite run during analysis. The `default` query suite contains a set of queries that are carefully designed to look for the most relevant security issues, while minimizing false positive results. However, you can use the `security-extended` suite to run additional queries, which have slightly lower precision. For more information on the available query suites, see [AUTOTITLE](/code-security/concepts/code-scanning/codeql/codeql-query-suites).
 
-For more information about customizing default setup, see [AUTOTITLE](/code-security/code-scanning/managing-your-code-scanning-configuration/editing-your-configuration-of-default-setup).
+For more information about customizing default setup, see [AUTOTITLE](/code-security/how-tos/find-and-fix-code-vulnerabilities/manage-your-configuration/edit-default-setup).
 
 ### Using advanced setup
 
-If you've found that you still need more granular control over {% data variables.product.prodname_code_scanning %}, you can use advanced setup. Advanced setup requires significantly more effort to configure, customize, and maintain, so we recommend enabling default setup first. For more information about advanced setup, see [AUTOTITLE](/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning) and [AUTOTITLE](/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/customizing-your-advanced-setup-for-code-scanning).
+If you've found that you still need more granular control over {% data variables.product.prodname_code_scanning %}, you can use advanced setup. Advanced setup requires significantly more effort to configure, customize, and maintain, so we recommend enabling default setup first. For more information about advanced setup, see [AUTOTITLE](/code-security/how-tos/find-and-fix-code-vulnerabilities/configure-code-scanning/configuring-advanced-setup-for-code-scanning) and [AUTOTITLE](/code-security/reference/code-scanning/workflow-configuration-options).
 
 ## Evaluating {% data variables.product.prodname_code_scanning %} with the {% data variables.code-scanning.tool_status_page %}
 
@@ -22,6 +22,6 @@ The {% data variables.code-scanning.tool_status_page %} shows useful information
 
 Using the {% data variables.code-scanning.tool_status_page %}, you can download the list of rules that {% data variables.product.prodname_code_scanning %} is checking against, in CSV format. For integrated tools like {% data variables.product.prodname_codeql %}, you can also see more detailed information, including a percentage of files scanned and specific error messages.
 
-If you find that default setup doesn't scan all your files, you may need to customize {% data variables.product.prodname_code_scanning %}. For more information, see [Customizing code scanning](#customizing-code-scanning) in this article. Alternatively, or if something else isn't working as you expect, you may find our dedicated troubleshooting documentation useful. For more information, see [AUTOTITLE](/code-security/code-scanning/troubleshooting-code-scanning).
+If you find that default setup doesn't scan all your files, you may need to customize {% data variables.product.prodname_code_scanning %}. For more information, see [Customizing code scanning](#customizing-code-scanning) in this article. Alternatively, or if something else isn't working as you expect, you may find our dedicated troubleshooting documentation useful. For more information, see [AUTOTITLE](/code-security/reference/code-scanning/troubleshoot-analysis-errors).
 
-For more detailed information about the {% data variables.code-scanning.tool_status_page %}, see [AUTOTITLE](/code-security/code-scanning/managing-your-code-scanning-configuration/about-the-tool-status-page#viewing-the-tool-status-page-for-a-repository).
+For more detailed information about the {% data variables.code-scanning.tool_status_page %}, see [AUTOTITLE](/code-security/how-tos/find-and-fix-code-vulnerabilities/manage-your-configuration/use-the-tools-status-page-for-code-scanning#viewing-the-tool-status-page-for-a-repository).

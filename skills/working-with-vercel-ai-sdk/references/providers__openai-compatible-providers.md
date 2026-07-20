@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "744fe252d4c53f378edb10ed61561ca076d0bf2c24d3f402cceaaba13ed2936a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ad653f49dd524ef7de379a5b4aadc5686f3471532cab06206c8cc3a654d6986d"
 ---
 
 # OpenAI Compatible Providers
@@ -610,6 +610,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [ByteDance](/providers/ai-sdk-providers/bytedance)
   - [Kling AI](/providers/ai-sdk-providers/klingai)
   - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+  - [Cartesia](/providers/ai-sdk-providers/cartesia)
 - [AI SDK Harnesses](/providers/ai-sdk-harnesses)
   - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
   - [Codex](/providers/ai-sdk-harnesses/codex)

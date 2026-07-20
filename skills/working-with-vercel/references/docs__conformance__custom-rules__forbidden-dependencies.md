@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from depending on one or more predefined module
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5a80013b75c40e72bfd1da135e9bc32977a077f490dffe4f6a2e02ed1592a85e"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "45f3ea84b1e3f1edf3483a6cec49c8cd1666af3edba952ad9ea71a6d00f386b1"
 ---
 
 # forbidden-dependencies
@@ -76,7 +76,7 @@ the required properties below:
 | `paths`               | `string[]` (optional)                                                     | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to. This acts as the overridable default value for `paths`\*. |
 | `traverseNodeModules` | `boolean` (optional)                                                      | When `true`, this rule will also traverse `node_modules` for transient dependencies.                                                                                                                                                                                                                                                |
 
-> **⚠️ Warning:** When using `traverseNodeModules`, module names currently need to be prefixed
+> **💡 Note:** When using `traverseNodeModules`, module names currently need to be prefixed
 > with `node_modules` (i.e., `["disallowed", "node_modules/disallowed"]`). We're
 > working to improve this.
 

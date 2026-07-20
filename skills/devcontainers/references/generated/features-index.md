@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-07-13T06:52:34.202Z"
-sha256: "3848833de10f487ba50a36bf427ad6ceecf31878008b3a743458c394ef3e5eaf"
+fetched_at: "2026-07-20T06:45:13.409Z"
+sha256: "0ba4fda40519f9f8278ff845a2b3426c7da7dcbac3f027dbab5df09ddfcaef45"
 ---
 
 # Available features index
@@ -130,9 +130,9 @@ Features
 | PowerShell | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/powershell:2` | `2.0.2` |
 | Python | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/python:1` | `1.8.0` |
 | Ruby (via ruby-build) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/ruby:2` | `2.0.0` |
-| Rust | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/rust:1` | `1.5.0` |
+| Rust | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/rust:1` | `1.5.1` |
 | SSH server | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/sshd:1` | `1.1.0` |
-| Terraform, tflint, and TFGrunt | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/terraform:1` | `1.4.3` |
+| Terraform, tflint, and TFGrunt | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/terraform:1` | `1.4.4` |
 | Data Version Control | Iterative, Inc | `ghcr.io/iterative/features/dvc:1` | `1.0.4` |
 | nvtop - GPUs Process monitoring | Iterative, Inc | `ghcr.io/iterative/features/nvtop:1` | `1.0.0` |
 | apt packages | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/apt-packages:1` | `1.0.2` |
@@ -409,6 +409,7 @@ Features
 | Google Cloud CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1` | `1.0.4` |
 | Gel CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gel-cli:1` | `1.0.0` |
 | Github CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:1` | `1.0.4` |
+| Google Cloud CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/google-cloud-cli:1` | `1.0.0` |
 | Lamdera | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/lamdera:1` | `1.0.2` |
 | Mount pnpm Store | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1` | `1.1.0` |
 | Terraform CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/terraform-cli-persistence:1` | `1.0.3` |
@@ -610,12 +611,12 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.119` |
-| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.35` |
-| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.35` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.67` |
-| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.34` |
-| Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.26` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.120` |
+| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.36` |
+| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.36` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.68` |
+| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.35` |
+| Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.27` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
 | dmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/dmnlint:1` | `1.0.1` |
 | Verilator | dalance | `ghcr.io/veryl-lang/devcontainer-features/verilator:1` | `1.0.0` |
@@ -1368,7 +1369,7 @@ Features
 | Bundler cache | Rails Core Team | `ghcr.io/rails/devcontainer/features/bundler-cache:1` | `1.0.1` |
 | MySQL Client | Rails Core Team | `ghcr.io/rails/devcontainer/features/mysql-client:1` | `1.1.1` |
 | Postgres Client | Rails Core Team | `ghcr.io/rails/devcontainer/features/postgres-client:1` | `1.2.0` |
-| Ruby | Rails Core Team | `ghcr.io/rails/devcontainer/features/ruby:2` | `2.2.3` |
+| Ruby | Rails Core Team | `ghcr.io/rails/devcontainer/features/ruby:2` | `2.2.4` |
 | SQLite3 | Rails Core Team | `ghcr.io/rails/devcontainer/features/sqlite3:1` | `1.0.0` |
 | Go Air | NLstn | `ghcr.io/nlstn/devcontainer-features/go-air:1` | `1.0.0` |
 | PostgreSQL Client (psql) | NLstn | `ghcr.io/nlstn/devcontainer-features/psql:1` | `1.0.0` |
@@ -1463,7 +1464,7 @@ Features
 | Set a specific timezone | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/timezone:1` | `1.0.0` |
 | Vault CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/vault-cli:1` | `1.0.0` |
 | Zig | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/zig:1` | `1.0.0` |
-| Just (via GitHub Releases) | NicoVIII | `ghcr.io/nicoviii/devcontainer-features/just:0` | `0.1.0` |
+| Claude config mount | NicoVIII | `ghcr.io/nicoviii/devcontainer-features/claude-mount:0` | `0.1.0` |
 | Firefox-Variant-Installer | soup-bowl | `ghcr.io/soup-bowl/features/firefox-set:0` | `0.1.1` |
 | Copilot CLI Persistence | rosstaco | `ghcr.io/rosstaco/devcontainer-features/copilot-persistence:1` | `1.1.0` |
 | GitLab CI Local | rosstaco | `ghcr.io/rosstaco/devcontainer-features/gitlab-ci-local:1` | `1.0.0` |
@@ -1479,6 +1480,7 @@ Features
 | Package Manager - tlmgr | nkaaf | `ghcr.io/nkaaf/devcontainer-features/package-manager-tlmgr:0` | `0.1.4` |
 | Pi Coding Agent | RodriBus | `ghcr.io/rodribus/devcontainer-features/pi-coding-agent:0` | `0.1.0` |
 | Antigravity CLI | aqua | `ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1` | `1.0.2` |
+| Claude Code | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/claudecode:1` | `1.1.1` |
 | Qoder CLI | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/qodercli:1` | `1.0.0` |
 | Google Cloud CLI | aqua | `ghcr.io/aqua/devcontainer-gcloud/gcloud:1` | `1.0.2` |
 | betterleaks | kuju63 | `ghcr.io/kuju63/devcontainer-features/betterleaks:1` | `1.2.0` |

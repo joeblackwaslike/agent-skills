@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/reference/slash-commands.md"
-fetched_at: "2026-07-13T06:55:43.454Z"
-sha256: "ef78befcdfb6a2ce7780cadb93ea3d384c4e5b933db6fae8b130a6ba6e9d8548"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "76389688bd520a359b304880d6b34372275e89ed1a74bcbfb9bfe54507d2ea31"
 ---
 
 # Slash commands
@@ -15,7 +15,7 @@ sha256: "ef78befcdfb6a2ce7780cadb93ea3d384c4e5b933db6fae8b130a6ba6e9d8548"
 | `/debug [prompt]`                      | Toggle Debug mode or submit a prompt in Debug mode                                                                     |
 | `/logs`                                | Show the debug log path and copy it to the clipboard                                                                   |
 | `/update`                              | Update Cursor Agent to the latest version                                                                              |
-| `/max-mode`                            | Toggle max mode on the selected model                                                                                  |
+| `/max-mode`                            | Toggle Max Mode on legacy request-based plans                                                                          |
 | `/rename <name>`                       | Rename the current chat session                                                                                        |
 | `/clear`                               | Start a new chat session. `/new`, `/new-chat`, and `/newchat` are aliases.                                             |
 | `/resume`                              | Open recent chats and resume one                                                                                       |

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/lmnt.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "cff5624eb5bf970a7978ea67a84737b9f4a0c8efad841c4bc0e3316e0b8a81d1"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "42e0b1a4d0efff35760322a10cd71efc94ca11b279cd56b2d1d914fd36eb37fb"
 ---
 
 # LMNT Provider
@@ -183,6 +183,7 @@ The LMNT provider accepts the following options via `providerOptions.lmnt`:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "2863471725031f1aea7ed6b1d1eefff30fe51c0c188816ce1a0ec10cdb1edd4c"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "d929348f750971b972cf940e67819720d64813ed7953a6d09b30252c5577fd37"
 ---
 
 # Replicate Provider
@@ -310,6 +310,7 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

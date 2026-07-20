@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/prompt-engineering.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8c2aab398eba671ccd18f949a332a5f13b9671a9e99c77ee3fab05fd3250ba93"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "9737c0c684f835ab19f52959f67d2973902aef73adb6e51466bb279f2f9db23e"
 ---
 
 # Prompt Engineering
@@ -110,6 +110,7 @@ Prompt Engineering is evolving rapidly, with new methods and research papers sur
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

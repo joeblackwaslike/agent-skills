@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/whats-new/index.md"
-fetched_at: "2026-07-13T06:53:38.588Z"
-sha256: "99fb12a23ce414d58a7017212b208d45a327fb4d1a486f3a706e49a95754833d"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "5ccb0e79c18799db3932a72f56efedb9c48d68356bcdfd2d923d07bca19e2e92"
 ---
 
 > ## Documentation Index
@@ -13,6 +13,14 @@ sha256: "99fb12a23ce414d58a7017212b208d45a327fb4d1a486f3a706e49a95754833d"
 > A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.
 
 The weekly dev digest highlights the features most likely to change how you work. Each entry includes runnable code, a short demo, and a link to the full docs. For every bug fix and minor improvement, see the [changelog](/en/changelog).
+
+<Update label="Week 29" description="July 13–17, 2026" tags={["v2.1.207–v2.1.212"]}>
+  **Artifacts call your MCP connectors**: a published artifact can pull live data and take actions through each viewer's own MCP connectors when they open the page, and this week also adds public sharing links, editor roles on Team and Enterprise, and artifacts created from Claude Tag sessions.
+
+  Also this week: **screen reader mode** replaces the visual terminal interface with plain, linear text for screen readers such as VoiceOver and NVDA; **`/fork`** copies your conversation into a new background session while you keep working; and **auto mode** no longer needs an opt-in variable on Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry.
+
+  [Read the Week 29 digest →](/en/whats-new/2026-w29)
+</Update>
 
 <Update label="Week 28" description="July 6–10, 2026" tags={["v2.1.202–v2.1.206"]}>
   **In-app browser on Desktop**: Claude Code on desktop gets a built-in browser, so Claude can pull up docs, designs, or any other site and interact with pages the same way it does with your local dev server previews.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/track-agent-token-usage.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "3ebbf120c211f2844bed46c5215c931357e55f770784834ab449253dc0b87478"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "fd0f1caa3dae59596c251cdb728b9d1b51ed3b2fb9a89cd1e753ad9761254c4a"
 ---
 
 # Track Agent Token Usage
@@ -100,7 +100,7 @@ export default function Chat() {
 
 To track token usage, attach it to each message using the `messageMetadata` callback. First, define a metadata type and pass it as a second generic to `InferAgentUIMessage`.
 
-```typescript filename='ai/agent.ts' highlight="1,15-16"
+```typescript filename='ai/agent.ts' highlight="2-3,20-21"
 import {
   type InferAgentUIMessage,
   type LanguageModelUsage,

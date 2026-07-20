@@ -12,8 +12,8 @@ related:
 summary: Fine-grained control over BotID detection levels and backend domain configuration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ebbf145c407924d23cf2b72dbe287d737c7e1bacd6a5f92068c77b299ba29065"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "dfc1b9b32f1b6f69c525c51a49c9ad620034713431271df56feda3eb19c0f63d"
 ---
 
 # Advanced BotID Configuration
@@ -22,7 +22,7 @@ sha256: "ebbf145c407924d23cf2b72dbe287d737c7e1bacd6a5f92068c77b299ba29065"
 
 When you need fine-grained control over BotID's detection levels, you can specify `advancedOptions` to choose between basic and deep analysis modes on a per-route basis. **This configuration takes precedence over the project-level BotID settings in your Vercel dashboard.**
 
-> **⚠️ Warning:** **Important**: The `checkLevel` in both client and server configurations must
+> **💡 Note:** **Important**: The `checkLevel` in both client and server configurations must
 > be identical for each protected route. A mismatch between client and server
 > configurations will cause BotID verification to fail, potentially blocking
 > legitimate traffic or allowing bots through. This feature is available in

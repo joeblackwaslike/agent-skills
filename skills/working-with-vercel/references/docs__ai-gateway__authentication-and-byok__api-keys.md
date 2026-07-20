@@ -17,8 +17,8 @@ related:
 summary: Create, view, and delete AI Gateway API keys from the dashboard, CLI, or API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "684ed275385215cc5d5c7bb2e74e2424c66bc281d5aacbda55a927ad42024d4c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c5c62482534e05ada603cabef2fbd5c092bc17f6149761eb5fbb6efcacb03bad"
 ---
 
 # API Keys
@@ -31,7 +31,7 @@ API keys authenticate your requests to the AI Gateway. This page covers how to:
 
 You can optionally give any key a **budget** to cap how much it can spend; see [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets). For how to use a key in your code, see [Authentication](/docs/ai-gateway/authentication-and-byok#api-keys).
 
-> **⚠️ Warning:** When a team member leaves your team, Vercel deactivates any API keys they
+> **💡 Note:** When a team member leaves your team, Vercel deactivates any API keys they
 > created. If you need authentication that isn't tied to a specific person, use
 > [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc)
 > on Vercel deployments.

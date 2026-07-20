@@ -12,12 +12,12 @@ related:
   - /docs/drains/using-drains
   - /docs/drains/audit-logs-to-s3
   - /docs/drains/audit-logs-to-splunk
-  - /docs/audit-log
+  - /docs/drains
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "7122dce8f915330c77a5c8b3abd8111f6d8c4b5a9c3e10a4b13e5b72ae6d9f3f"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f300c92fccc9cfeddcc892e142b184ce731325835275cd8a49473d4569597c17"
 ---
 
 # Audit Log Drains Reference
@@ -136,9 +136,13 @@ When the destination is Splunk, Vercel wraps each event in the [Splunk HTTP Even
 
 See [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk) for HEC setup and destination fields.
 
+### Datadog
+
+When the destination is Datadog, Vercel sends events as JSON to the [Datadog Logs API](https://docs.datadoghq.com/api/latest/logs/) for your selected [Datadog site](https://docs.datadoghq.com/getting_started/site/). Each event contains the audit log fields at the top level, tagged with `ddsource` set to `vercel` and `service` set to `audit-logs` so you can filter and route Vercel audit log events in Datadog.
+
 ## Audit Log actions
 
-The `action` value identifies the team activity that created the audit log event. For a list of audit log action values, see [Audit Logs actions](/docs/audit-log#actions).
+The `action` value identifies the team activity that created the audit log event. For the full list of `action` values, see [Events logged](/docs/activity-log#events-logged).
 
 The `payload` object contains action-specific metadata. Its fields depend on the `action` value.
 
@@ -151,6 +155,7 @@ For more information on Audit Log Drains and how to use them, check out the foll
 - [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3)
 - [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk)
 - [Audit Logs](/docs/audit-log)
+- [Migrating from Custom SIEM Log Streaming](/docs/audit-log/migrating-to-drains)
 
 
 ---

@@ -1,15 +1,58 @@
 ---
+title: NEXTJS_SAFE_URL_IMPORTS
+product: vercel
+url: /docs/conformance/rules/NEXTJS_SAFE_URL_IMPORTS
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_SAFE_URL_IMPORTS"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  - /docs/conformance/customize
+summary: Prevent unsafe URL Imports from being added to Next.js applications.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_safe_url_imports.md"
-fetched_at: "2026-06-15T22:56:22.423Z"
-sha256: "363a6ebed78754ded849f9b628dd714058f7a81f19a654c1a6001e8331632034"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "273e77766e35542e98e96dea9f948b58aa3f9f567fc3add757060388e9195e04"
 ---
 
-# Page Not Found
+# NEXTJS_SAFE_URL_IMPORTS
 
-`/docs/conformance/rules/nextjs_safe_url_imports` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NEXTJS_SAFE_URL_IMPORTS](/docs/conformance/rules/nextjs_safe_url_imports.md): Conformance is available on Enterprise plans URL imports are an experimental feature that allows you to import modules directly from external servers
-- [Conformance Rules](/docs/conformance/rules.md): production source maps so that they don't publicly share source code. NEXTJS\_SAFE\_NEXT\_PUBLIC\_ENV\_USAGE Prevent dangerouslyAllowSVG without
-- [NO_EXTERNAL_CSS_AT_IMPORTS](/docs/conformance/rules/no_external_css_at_imports.md): Conformance is available on Enterprise plans Importing CSS through (@import) is render blocking, causing browsers to sequentially download and parse
+URL imports are an experimental feature that allows you to import modules directly
+from external servers (instead of from the local disk). When you opt-in, and
+supply URL prefixes inside `next.config.js`, like so:
 
-All pages: [/llms.txt](/llms.txt)
+```js filename="next.config.js"
+module.exports = {
+  experimental: {
+    urlImports: ['https://example.com/assets/', 'https://cdn.skypack.dev'],
+  },
+};
+```
+
+If any of the URLs have not been added to the safe import comformance configuration,
+then this will cause this rule to fail.
+
+## How to fix
+
+Engineers should reach out to the appropriate engineer(s) or team(s) for a
+security review of the URL import configuration.
+
+When requesting a review, please provide as much information as possible around
+the proposed URL being added, and if there any security implications for using
+the URL.
+
+If this URL is deemed safe for general use, it can be added to the list of approved URL imports. This can be done by following the [Customizing Conformance](/docs/conformance/customize#configuring-a-conformance-rule) docs to add the URL to your `conformance.config.jsonc` file:
+
+```json filename="conformance.config.jsonc"
+"NEXTJS_SAFE_URL_IMPORTS": {
+  urlImports: [theUrlToAdd],
+}
+```
+
+
+---
+
+[View full sitemap](/docs/sitemap)

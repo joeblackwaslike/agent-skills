@@ -1,17 +1,35 @@
 ---
+title: NEXTJS_NO_FETCH_IN_SERVER_PROPS
+product: vercel
+url: /docs/conformance/rules/NEXTJS_NO_FETCH_IN_SERVER_PROPS
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_NO_FETCH_IN_SERVER_PROPS"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Prevent relative fetch calls in getServerSideProps from being added to Next.js applications.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_fetch_in_server_props.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "7ea60c94b5070f4296fc9ceb00bcb5ca724d0d56a46af54406c81a1d06a9988c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "73ed033937b5c1fe62daee0bd9cf9f89a97fa523d7a863f9754b3b967be296d5"
 ---
 
-# Page Not Found
+# NEXTJS_NO_FETCH_IN_SERVER_PROPS
 
-`/docs/conformance/rules/nextjs_no_fetch_in_server_props` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NEXTJS_NO_FETCH_IN_SERVER_PROPS](/docs/conformance/rules/nextjs_no_fetch_in_server_props.md): Conformance is available on Enterprise plans Since both getServerSideProps and API routes run on the server, calling fetch on a nonrelative URL will
-- [Conformance Rules](/docs/conformance/rules.md): reInteractive strategy in Script (next/script) elements as this can cause performance issues. NEXTJS\_NO\_CLIENT\_DEPS\_IN\_MIDDLEWARE Prevent usage
-- [NEXTJS_NO_GET_INITIAL_PROPS](/docs/conformance/rules/nextjs_no_get_initial_props.md): Conformance is available on Enterprise plans getInitialProps is an older Next.js API for serverside rendering that can usually be replaced with
-- [NEXTJS_UNNEEDED_GET_SERVER_SIDE_PROPS](/docs/conformance/rules/nextjs_unneeded_get_server_side_props.md): Conformance is available on Enterprise plans This rule will analyze each Next.js page's getServerSideProps to see if the context parameter is being
-- [NO_FETCH_FROM_MIDDLEWARE](/docs/conformance/rules/no_fetch_from_middleware.md): Conformance is available on Enterprise plans Next.js middleware runs code at the Edge. This means that the code is globally distributed. When
+Since both `getServerSideProps` and API routes run on the server, calling `fetch` on a non-relative
+URL will trigger an additional network request.
 
-All pages: [/llms.txt](/llms.txt)
+## How to fix
+
+Instead of using `fetch` to make a call to the API route, you can instead share the code in a shared
+library or module to avoid another network request. You can then import this hared logic and call directly
+within your `getServerSideProps` function, avoiding additional network requests entirely.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -11,13 +11,13 @@ related:
   - /docs/rbac/managing-team-members
   - /docs/rbac/access-roles
   - /docs/plans/enterprise
-  - /docs/cli/alias
-  - /docs/cli/certs
+  - /docs/drains/reference/audit-logs
+  - /docs/audit-log/migrating-to-drains
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "33e0340b5af9acf8b6c7ccfd7b1a006d91431f15eb37595e83327e366a165a12"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "450544fdd03d4ecb07c5d5fd269488fe0675a72fd0d5aa057418c148a982ff0e"
 ---
 
 # Audit Logs
@@ -43,6 +43,11 @@ Reports generated for the last 90 days (three months) will not impact your billi
 ## Custom SIEM Log Streaming
 
 > **🔒 Permissions Required**: Custom SIEM Log Streaming
+
+> **⚠️ Warning:** Vercel is replacing Custom SIEM Log Streaming with [Audit Log
+> Drains](/docs/drains/reference/audit-logs). If you stream audit logs to a SIEM,
+> see [Migrating from Custom SIEM Log Streaming to Audit Log
+> Drains](/docs/audit-log/migrating-to-drains) to move your integration.
 
 In addition to the standard audit log functionalities, Vercel supports custom log streaming to your Security Information and Event Management (SIEM) system of choice. This allows you to integrate Vercel audit logs with your existing observability and security infrastructure.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-object-record-token-usage.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7f8c59ddb6b3b984c69cae863b1e115b539706209596d21ebc9097938abaa79a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "a0a5792762fb6e106f83c1e6238d2758b1e83aaa424a9bb3cf5f846c79a87064"
 ---
 
 # Record Token Usage After Streaming Object
@@ -14,7 +14,7 @@ you may want to record the token usage for billing purposes.
 You can use the `onEnd` callback to record token usage.
 It is called when the stream is finished.
 
-```ts file='index.ts' highlight={"15-17"}
+```ts file='index.ts' highlight={"16-18"}
 import { streamText, Output } from 'ai';
 import { z } from 'zod';
 

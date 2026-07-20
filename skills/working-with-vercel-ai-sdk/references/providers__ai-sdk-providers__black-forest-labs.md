@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "428b8cfafd1b19f8d77746a6122559229eae39050eb0fb028c42fb8f3f9c7742"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "75d0365402811e4071e46f2922690c6a074c60d5e2f881133873ef9a90096a48"
 ---
 
 # Black Forest Labs Provider
@@ -288,6 +288,7 @@ const blackForestLabs = createBlackForestLabs({
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

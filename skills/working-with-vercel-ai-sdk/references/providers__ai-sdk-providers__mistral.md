@@ -1,12 +1,13 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "e19c0dfd2ba076c4835d7b62d563feac38a71f204068be29f19f33c6fa8e367c"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "98dcb92395f0b98f0e8c79981b531cea3d7e4dca68acede2bf5858750d50a70a"
 ---
 
 # Mistral AI Provider
 
-The [Mistral AI](https://mistral.ai/) provider contains language model support for the Mistral chat API.
+The [Mistral AI](https://mistral.ai/) provider contains language model,
+embedding model, and speech model support for Mistral APIs.
 
 ## Setup
 
@@ -313,6 +314,75 @@ const result = await generateText({
   also pass any available provider model ID as a string if needed.
 </Note>
 
+## Speech Models
+
+You can create models that call the
+[Mistral speech API](https://docs.mistral.ai/api/endpoint/audio/speech) using
+the `.speech()` factory method:
+
+```ts
+const model = mistral.speech('voxtral-mini-tts-2603');
+```
+
+Use a preset or saved voice ID with [`generateSpeech`](/docs/reference/ai-sdk-core/generate-speech):
+
+```ts
+import { mistral } from '@ai-sdk/mistral';
+import { generateSpeech } from 'ai';
+
+const result = await generateSpeech({
+  model: mistral.speech('voxtral-mini-tts-2603'),
+  text: 'Hello from the AI SDK!',
+  voice: 'en_paul_neutral',
+  outputFormat: 'mp3',
+});
+
+const audio = result.audio.uint8Array;
+```
+
+The Mistral speech model maps `voice` to Mistral's `voice_id`. It supports
+`mp3`, `wav`, `pcm`, `flac`, and `opus` output formats and defaults to `mp3`.
+The `instructions`, `speed`, and `language` settings are not supported and
+produce warnings when provided.
+
+Mistral also supports one-off voice cloning with base64-encoded reference
+audio. Pass it through `providerOptions.mistral.refAudio` and use
+`MistralSpeechModelOptions` for type checking:
+
+```ts highlight="9-13"
+import { readFile } from 'node:fs/promises';
+import { mistral, type MistralSpeechModelOptions } from '@ai-sdk/mistral';
+import { generateSpeech } from 'ai';
+
+const referenceAudio = await readFile('./reference.mp3');
+
+const result = await generateSpeech({
+  model: mistral.speech('voxtral-mini-tts-2603'),
+  text: 'Hello from the AI SDK!',
+  providerOptions: {
+    mistral: {
+      refAudio: referenceAudio.toString('base64'),
+    } satisfies MistralSpeechModelOptions,
+  },
+});
+```
+
+When `refAudio` is provided, it takes precedence over `voice`. Reference audio
+is redacted from request metadata and API call errors returned by the provider.
+
+<Note>
+  Only use reference audio with the speaker's explicit consent. Follow Mistral's
+  voice cloning usage policy and disclose AI-generated audio when required. This
+  provider integration supports non-streaming speech generation; Mistral's
+  streaming speech API is not exposed through `SpeechModelV4`.
+</Note>
+
+### Model Capabilities
+
+| Model                   | Saved Voices | Reference Audio | Non-Streaming |
+| ----------------------- | ------------ | --------------- | ------------- |
+| `voxtral-mini-tts-2603` | <Check />    | <Check />       | <Check />     |
+
 ## Embedding Models
 
 You can create models that call the [Mistral embeddings API](https://docs.mistral.ai/api/#operation/createEmbedding)
@@ -420,6 +490,7 @@ models:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "adaf164895f2e09b8397d09fb452c15bf7ce0bf1cf21282bea24a84b61ee9089"
+fetched_at: "2026-07-20T06:52:02.847Z"
+sha256: "263610674c8b7fb142c67c0f3e5adcd231d8018a82dd9705e9759eeaa02646db"
 ---
 
 The `dependabot.yml` file is an optional configuration file that gives you fine-grained control over how {% data variables.product.prodname_dependabot %} monitors and updates dependencies (mainly _version updates_ but also _security updates_) in your repository.
@@ -11,7 +11,7 @@ Without a `dependabot.yml` file, {% data variables.product.prodname_dependabot %
 The `dependabot.yml` file uses YAML syntax. If you're new to YAML and want to learn more, see [Learn YAML in five minutes](https://learnxinyminutes.com/yaml/).
 
 > [!NOTE]
-> {% data variables.product.prodname_dependabot_alerts %} are configured in the repository or organization "Settings" tab and not in the `dependabot.yml` file, see [AUTOTITLE](/code-security/dependabot/dependabot-alerts/configuring-dependabot-alerts).
+> {% data variables.product.prodname_dependabot_alerts %} are configured in the repository or organization "Settings" tab and not in the `dependabot.yml` file, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-dependabot-alerts).
 
 ## What the `dependabot.yml` file does
 
@@ -64,4 +64,4 @@ updates:
 
 ## Next step
 
-* Configure your repository so that Dependabot automatically updates the packages you use, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configuring-dependabot-version-updates)
+* Configure your repository so that Dependabot automatically updates the packages you use, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-version-updates)

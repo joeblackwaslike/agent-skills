@@ -1,10 +1,10 @@
 ---
-title: Lovable
+title: Deploy a Lovable app on Vercel
 product: vercel
 url: /docs/integrations/lovable
 canonical_url: "https://vercel.com/docs/integrations/lovable"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-07-10
+type: how-to
 prerequisites:
   - /docs/integrations
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/frameworks/more-frameworks
   - /docs/git
   - /docs/deployments
-summary: Learn about lovable on Vercel.
+summary: Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/lovable.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "888493573a8fa479b620d9e136871e0ef1b8c772f3c5d8c13224bcfdde5d8489"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "b92ed9ec6b771be89e547c19f87e5db22ba5321ea81314cc10598ffbe17873ee"
 ---
 
 # Deploy a Lovable app on Vercel

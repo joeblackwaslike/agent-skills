@@ -3,7 +3,7 @@ title: Runtime Logs
 product: vercel
 url: /docs/logs/runtime
 canonical_url: "https://vercel.com/docs/logs/runtime"
-last_updated: 2026-05-28
+last_updated: 2026-07-08
 type: reference
 prerequisites:
   - /docs/logs
@@ -16,8 +16,8 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9c318b1bc2230a3d5a7af550b208f7b020d0da674b6840ddbde4d183873f0d73"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "d940c21adc0830966d6c50cc035b6b5bccfba39e43a44138244eb3dc1957c84e"
 ---
 
 # Runtime Logs

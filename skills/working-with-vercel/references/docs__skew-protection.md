@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ffbdeafe80575eec17881c9402e9169e460edd7f7614e3b988f3e702320bfb73"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "1f9ece88a0ee2cc1dfcf197a5e7c9d93a7830411975b123956cf408fc7b5a433"
 ---
 
 # Skew Protection
@@ -98,7 +98,7 @@ You can add up to 12 domains. Each entry accepts:
 
 Inputs are normalized automatically: full URLs are reduced to their hostname, ports and paths are stripped, and values are lowercased.
 
-> **⚠️ Warning:** When using cross-site Skew Protection, set the maximum age to a value greater than your typical deployment interval. If the serving project redeploys and the pinned deployment ages out of the maximum age window, cross-site requests will fail even with allowed domains configured.
+> **💡 Note:** When using cross-site Skew Protection, set the maximum age to a value greater than your typical deployment interval. If the serving project redeploys and the pinned deployment ages out of the maximum age window, cross-site requests will fail even with allowed domains configured.
 
 ## Configure Maximum Age
 
@@ -193,7 +193,7 @@ and then appending the value of `VERCEL_DEPLOYMENT_ID` to each request using **o
 
 ### Skew Protection with Next.js
 
-> **⚠️ Warning:** If you're building outside of Vercel using `vercel build` and then deploying with `vercel
+> **💡 Note:** If you're building outside of Vercel using `vercel build` and then deploying with `vercel
 >   deploy --prebuilt`, Skew Protection requires a custom deployment ID so the
 > build-time ID matches the one Vercel assigns at deploy time.For more information on prebuilt workflows, see [When not to use --prebuilt](/docs/cli/deploy#when-not-to-use---prebuilt).
 

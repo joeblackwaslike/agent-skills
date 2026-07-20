@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-bitbucket.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "690f13032816a0bc5b3efc9ef91a0d7fec87be5a93bbd4473b9b693b3e817be6"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "87570ed7a21d097634c65a2dd4e836db7876add5040c003c09e62e5f9e536fcb"
 ---
 
 # Deploying Bitbucket Projects with Vercel
@@ -194,6 +194,16 @@ When Secure Backend Access with OpenID Connect (OIDC) Federation is enabled in P
 
 ```bash
 VERCEL_OIDC_TOKEN=secret
+```
+
+### `VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VERCEL_HASH_SALT=1783933175
 ```
 
 ### `VERCEL_GIT_PROVIDER`

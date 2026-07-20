@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d6806d80dcaead26620fe8c784aa66f95137be3deffd983b93fa4beb4961a1e3"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "4fbb38b237c205387834ca9d4f62a4d884ec857ff1f410a6ce8ff6b69672418f"
 ---
 
 # Requirements for listing an Integration
@@ -168,9 +168,9 @@ Also consider the 20% safe zone around the edges of the image by placing the mos
 
 Your media should adhere to the following dimensions and aspect ratios:
 
-| Spec Name      | Ratio | Size       | Notes                                                                                                                         |
-| -------------- | ----- | ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Gallery Images | 3:2   | 1440x960px | High resolution bitmap image, non-transparent PNG. Minimum 3 images, up to 5 can be uploaded. You can upload 1 video link too |
+| Spec Name      | Ratio | Size        | Notes                                                                                                                         |
+| -------------- | ----- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Gallery Images | 16:9  | 1920x1080px | High resolution bitmap image, non-transparent PNG. Minimum 3 images, up to 5 can be uploaded. You can upload 1 video link too |
 
 ## External Integration Settings
 

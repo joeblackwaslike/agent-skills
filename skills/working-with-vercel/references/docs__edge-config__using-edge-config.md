@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Edge Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config/using-edge-config.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6fdfd5c7059d5c71fef5555f1b8918edc6f0df79c1164ea1471de026316e19bf"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a9197fcd459ef0642b79f84f6068036430f686ef937f3715d4c835e4fdef4a63"
 ---
 
 # Using Edge Config
@@ -88,7 +88,7 @@ https://api.vercel.com/v1/edge-config?teamId=<teamId>
 
 A read access token is automatically generated when you connect an Edge Config to a project.
 
-> **⚠️ Warning:** Vercel shows the full token value only once, right after creation, whether
+> **💡 Note:** Vercel shows the full token value only once, right after creation, whether
 > you use the dashboard or the API. Copy it immediately and store it somewhere
 > safe. If you lose the token, delete it and create a new one.
 
@@ -103,7 +103,7 @@ First, you'll need an access token for Vercel REST API, which you must add to an
 
 Then you can send a `POST` request to the [`/edge-config/<edgeConfigId>/token`](/docs/rest-api/reference/endpoints/edge-config/create-an-edge-config) path, as shown below, inserting [your Edge Config's ID](#finding-your-edge-config-id) where appropriate:
 
-> **⚠️ Warning:** Copy the token from the response immediately and store it somewhere safe.
+> **💡 Note:** Copy the token from the response immediately and store it somewhere safe.
 > This is the only time Vercel returns the full token value. Later requests
 > return only a truncated preview.
 

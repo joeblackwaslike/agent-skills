@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "874760c1fd7865876454e03ad632bc483c0a346a354ce971170cb66148fd477f"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "97dba8b9c4785099e6a81e0d4218911076b9445ee5c07c54ccc3fb299b691b7d"
 ---
 
 # Amazon Bedrock Provider
@@ -1831,6 +1831,7 @@ Static IAM user keys do not require `sessionToken`.
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

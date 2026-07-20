@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/dynamic-tool.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "8c9267f16a4184c263bb19052f8cfa128be024b3b0f353a15ade707453a293fd"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "5043b9cd1f811c1012dde716711bcaffefd2917d6636f8ab68bfee8e29dddc2c"
 ---
 
 # `dynamicTool()`
@@ -15,7 +15,7 @@ The `dynamicTool` function creates tools where the input and output types are no
 
 Unlike the regular `tool` function, `dynamicTool` accepts and returns `unknown` types, allowing you to work with tools that have runtime-determined schemas.
 
-```ts highlight={"1,4,9,10,11"}
+```ts highlight={"1,4,9,11"}
 import { dynamicTool } from 'ai';
 import { z } from 'zod';
 

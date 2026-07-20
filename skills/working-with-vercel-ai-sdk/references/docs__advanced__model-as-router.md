@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/model-as-router.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "2a39d45fa6d15906552306b22d058c2c651e45fbd42e41e0c8c3fcd31d5367f3"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "4300e64300ca3707d128039accb4d3d4e83858cf9c6719f494aa125d32f4d78b"
 ---
 
 # Generative User Interfaces
@@ -134,6 +134,7 @@ To learn more, check out these [examples](/examples/next-app/interface) using th
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

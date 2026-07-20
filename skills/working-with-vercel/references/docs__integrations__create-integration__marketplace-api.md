@@ -3,7 +3,7 @@ title: Using the Integrations REST API
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api"
-last_updated: 2026-02-27
+last_updated: 2026-07-10
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "76b4f78b4299e97b9d98feef4bbfba6564b24dea44c49100143867a04fa34d6c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f78d04645ecf251a3c77654fed91e0a3a964d59bee1f53ae45f238bd290e7326"
 ---
 
 # Using the Integrations REST API

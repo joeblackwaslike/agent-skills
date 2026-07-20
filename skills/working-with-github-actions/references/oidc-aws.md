@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "9a6e83990a276009abe6ae8b274fda4249e6d484bc2f3ad683a8de8c21b3e75e"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "74b13bb4abc4a9c0c1f0303d985fe25f6d8810bf3e667612cd6c568234e0f789"
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -59,7 +59,7 @@ Edit the trust policy, adding the `sub` field to the validation conditions. For 
 }
 ```
 
-For repositories created after July 15, 2026, or that have opted in to immutable subject claims, the `sub` claim includes immutable owner and repository IDs (not available on {% data variables.product.prodname_ghe_server %}). Make sure your trust policy matches the format your repository uses. For more information, see [AUTOTITLE](/actions/reference/openid-connect-reference#immutable-subject-claims).
+For repositories created after July 15, 2026, or that have opted in to immutable subject claims, the `sub` claim includes immutable owner and repository IDs (not available on {% data variables.product.prodname_ghe_server %}). Make sure your trust policy matches the format your repository uses. For more information, see [AUTOTITLE](/actions/reference/security/oidc#immutable-subject-claims).
 
 ```json copy
 "Condition": {
@@ -70,7 +70,7 @@ For repositories created after July 15, 2026, or that have opted in to immutable
 }
 ```
 
-If you use a workflow with an environment, the `sub` field must reference the environment name: `repo:ORG-NAME/REPO-NAME:environment:ENVIRONMENT-NAME`. For more information, see [AUTOTITLE](/actions/reference/openid-connect-reference#filtering-for-a-specific-environment).
+If you use a workflow with an environment, the `sub` field must reference the environment name: `repo:ORG-NAME/REPO-NAME:environment:ENVIRONMENT-NAME`. For more information, see [AUTOTITLE](/actions/reference/security/oidc#filtering-for-a-specific-environment).
 
 {% data reusables.actions.oidc-deployment-protection-rules %}
 

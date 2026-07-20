@@ -1,14 +1,14 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/settings.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f8e9e825c41bc0ed0abad544be6f5095885064d6bb5057caf17b142bd674b92c"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b70ed913988b9a8e9d095513adcba392a2ca17227a7278c3aaff30cce8279be0"
 ---
 
 # Settings
 
 Large language models (LLMs) typically provide settings to augment their output.
 
-All AI SDK functions support the following common settings in addition to the model, the [prompt](./prompts), and additional provider-specific settings:
+All AI SDK functions support the following common settings in addition to the model, the [prompt](/docs/foundations/prompts), and additional provider-specific settings:
 
 ```ts highlight="3-6"
 const result = await generateText({

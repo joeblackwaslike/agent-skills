@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "074f28f095e20dfb76e7546ea28b0964c490b05a5f4e34cbadd254c226268419"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "f05cfbae42edf1496a427e2e6810da2482e31205e2a4f317a8efea89fcd4ad18"
 ---
 
 # Chatbot Message Persistence
@@ -97,7 +97,7 @@ When processing messages on the server that contain tool calls, custom metadata,
 
 When your messages include tool calls, validate them against your tool definitions:
 
-```tsx filename="app/api/chat/route.ts" highlight="9-27,34-39"
+```tsx filename="app/api/chat/route.ts" highlight="7-8,14-27,35-45"
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -287,7 +287,7 @@ export default function Chat({
 
 When loading messages from storage that contain tools, metadata, or custom data
 parts, validate them using `validateUIMessages` before processing (see the
-[validation section](#validating-messages-from-database) above).
+[validation section](#validating-messages-on-the-server) above).
 
 </Note>
 
@@ -417,7 +417,7 @@ export async function POST(req: Request) {
 
 Alternatively, you can use `createUIMessageStream` to control the message ID by writing a start message part:
 
-```tsx filename="app/api/chat/route.ts" highlight="9-19"
+```tsx filename="app/api/chat/route.ts" highlight="14-18,25-27"
 import {
   generateId,
   streamText,

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/testing.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f720f5bbd9cf861efa7045d969cb117ef79dbc6e531c8c015d496d89173a715a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ace14389bb7f4377d6a8abaf1e381a0fb9d89ccb6a540a121348568df25ebd39"
 ---
 
 # Testing
@@ -182,7 +182,7 @@ const result = streamText({
 
 ### Simulate UI Message Stream Responses
 
-You can also simulate [UI Message Stream](/docs/ai-sdk-ui/stream-protocol#ui-message-stream) responses for testing,
+You can also simulate [UI Message Stream](/docs/ai-sdk-ui/stream-protocol#ui-message-stream-example) responses for testing,
 debugging, or demonstration purposes.
 
 Here is a Next example:

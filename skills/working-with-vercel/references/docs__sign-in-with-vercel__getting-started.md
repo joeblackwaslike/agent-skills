@@ -16,15 +16,15 @@ related:
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d9f0b2b4953ffe6c636c4654119dc5d3491f04514872d6732be6c729571e9ca9"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "bb1bbf2c4c7345764db3311fe93a02d41e215dc618d338559e4a14ddc776282c"
 ---
 
 # Getting started with Sign in with Vercel
 
 This guide uses Next.js App Router. You'll create a Sign in with Vercel button that redirects to the authorization endpoint, add a callback route to exchange the authorization code for tokens, and set authentication cookies.
 
-> **💡 Note:** View a live version of this tutorial to see the sign in flow in action.
+> **💡 Note:**&#x20;
 
 ### Prerequisites
 

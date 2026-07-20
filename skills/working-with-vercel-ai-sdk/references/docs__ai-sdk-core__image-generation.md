@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b4e380cc14444880f8856fd769e2493c670d9952062d20c0720f9ddc04a85ccb"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "c7455614bcf62cd2fdeb4bba5a6fa38596ea623e3bbe576a3c953dc0693d2fa4"
 ---
 
 # Image Generation
@@ -120,7 +120,7 @@ You can pass such settings to the `generateImage` function
 using the `providerOptions` parameter. The options for the provider
 (`openai` in the example below) become request body properties.
 
-```tsx highlight={"12"}
+```tsx highlight={"8-13"}
 import { generateImage } from 'ai';
 import { openai, type OpenAIImageModelGenerationOptions } from '@ai-sdk/openai';
 

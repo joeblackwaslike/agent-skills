@@ -1,15 +1,39 @@
 ---
+title: SANDBOX_STOPPED
+product: vercel
+url: /docs/errors/SANDBOX_STOPPED
+canonical_url: "https://vercel.com/docs/errors/SANDBOX_STOPPED"
+last_updated: 2026-05-25
+type: reference
+prerequisites:
+  []
+related:
+  - /docs/sandbox/concepts/persistent-sandboxes
+  - /docs/sandbox/sdk-reference
+summary: The Sandbox was stopped and is no longer reachable. This is a platform error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_stopped.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "071e8bc7ce0a8e93187d7c3622fbe57807a418bf36abe8e747e78fc98a6be234"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "52a45e7ba37df3e9c18149d1295c61eeabbcd4ada39ef1dcdbd053cc97edd429"
 ---
 
-# Page Not Found
+# SANDBOX_STOPPED
 
-`/docs/errors/sandbox_stopped` does not exist. Similar pages:
+The `SANDBOX_STOPPED` error occurs when you are trying to access a Sandbox that has been stopped. This could happen if the Sandbox was manually stopped by the owner, or if the session reached its configured timeout.
 
-- [SANDBOX_STOPPED](/docs/errors/sandbox_stopped.md): The SANDBOX_STOPPED error occurs when you are trying to access a Sandbox that has been stopped. This could happen if the Sandbox was manually stopped
-- [SANDBOX_STOPPING](/docs/errors/sandbox_stopping.md): The SANDBOX_STOPPING error occurs when a request lands on a Sandbox whose current session is shutting down. The session is past the point where it
-- [SANDBOX_SNAPSHOTTING](/docs/errors/sandbox_snapshotting.md): The SANDBOX_SNAPSHOTTING error occurs when a request lands on a Sandbox whose current session is in the middle of creating a snapshot. The session no
+**Error Code:** `410`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Gone
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Resume the sandbox:** For [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes) (the default), call `Sandbox.get({ name })` and run a command — the SDK auto-resumes the sandbox from its last snapshot.
+2. **Verify the Sandbox status:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the one you are accessing, and check the history section to learn why it was stopped.
+3. **Increase the timeout:** By default, Sandboxes have a session timeout of 5 minutes. You can extend it by passing the `timeout` property to [`Sandbox.create()`](/docs/sandbox/sdk-reference#sandbox.create).
+
+
+---
+
+[View full sitemap](/docs/sitemap)

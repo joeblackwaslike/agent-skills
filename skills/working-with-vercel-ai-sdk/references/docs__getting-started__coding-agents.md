@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/coding-agents.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "e8bed90b1c5c756659bd74e613a669e6f68453e2c5f3f75a8219ac8ee3683d5b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "728c199951cb5039e951f0ece61f4dbf917920a8001f042bc16fc1282ff3c3bd"
 ---
 
 # Getting Started with Coding Agents
@@ -85,7 +85,7 @@ const result = await generateText({
 Start the DevTools viewer in a separate terminal:
 
 ```bash
-npx @ai-sdk/devtools
+npx @ai-sdk/devtools@latest
 ```
 
 Open [http://localhost:4983](http://localhost:4983) to inspect your AI SDK interactions in real time.

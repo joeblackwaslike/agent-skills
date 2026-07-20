@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/overview.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c9305848630732c12b7db0d5467d33aa30f21f6fa4dca1730026f5f064c2b909"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "32a3ab29e36cde823d3124b769015ecacef22b6621d8a65285c5a2d1670e5cb3"
 ---
 
 # AI SDK Core
@@ -18,7 +18,7 @@ For example, here’s how you can generate text with various models using the AI
 ## AI SDK Core Functions
 
 AI SDK Core has various functions designed for [text generation](./generating-text), [structured data generation](./generating-structured-data), and [tool usage](./tools-and-tool-calling).
-These functions take a standardized approach to setting up [prompts](./prompts) and [settings](./settings), making it easier to work with different models.
+These functions take a standardized approach to setting up [prompts](/docs/foundations/prompts) and [settings](./settings), making it easier to work with different models.
 
 - [`generateText`](/docs/ai-sdk-core/generating-text): Generates text and [tool calls](./tools-and-tool-calling).
   This function is ideal for non-interactive use cases such as automation tasks where you need to write text (e.g. drafting email or summarizing web pages) and for agents that use tools.

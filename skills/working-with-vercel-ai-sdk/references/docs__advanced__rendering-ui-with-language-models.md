@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/rendering-ui-with-language-models.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c18f162f9522691dc6dcceab859cf02185c04477f7dd88c93931feea80aba91a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "95c6f9b37e6f04d3b585565fe1085ba461758b9b704d7093726d1c59d7dfc43b"
 ---
 
 # Rendering User Interfaces with Language Models
@@ -239,6 +239,7 @@ Check out this [example](/examples/next-app/interface/stream-component-updates) 
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

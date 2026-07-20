@@ -3,7 +3,7 @@ title: Using Drains
 product: vercel
 url: /docs/drains/using-drains
 canonical_url: "https://vercel.com/docs/drains/using-drains"
-last_updated: 2026-07-03
+last_updated: 2026-07-09
 type: how-to
 prerequisites:
   - /docs/drains
@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, S3 buckets, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "62c599753afff27e9516c7dd0086b4161b1c6d2816eb623a465632a4813bdf38"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "6b6d9319a3954030d4d9a5d581a74d39c23f6b71aeb7c72ec8d514c7834eb9bc"
 ---
 
 # Using Drains

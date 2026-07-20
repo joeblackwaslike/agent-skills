@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cli/overview.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "0f5dbcd035c6c0510dff5e9604283f0bb7293053bc89b21881662a5961188a83"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "c56ae1d766654ca892b2cfb513a2f7f5ef0082f107d225fb4319fa9f20109e85"
 ---
 
 # Cursor CLI
@@ -91,12 +91,6 @@ agent --resume="chat-id-here"
 Configure command execution settings with `/sandbox` or the `--sandbox <mode>` flag (`enabled` or `disabled`). Toggle sandbox mode on or off and control network access through an interactive menu. Settings persist across sessions.
 
 [Media](https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/uploads/sandox.mp4)
-
-## Max mode
-
-Toggle [Max Mode](https://cursor.com/help/ai-features/max-mode.md) on models that support it using `/max-mode`.
-
-[Media](https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/uploads/max-mode.mp4)
 
 ## Sudo password prompting
 

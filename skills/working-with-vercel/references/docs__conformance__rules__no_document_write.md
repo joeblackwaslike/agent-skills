@@ -1,16 +1,35 @@
 ---
+title: NO_DOCUMENT_WRITE
+product: vercel
+url: /docs/conformance/rules/NO_DOCUMENT_WRITE
+canonical_url: "https://vercel.com/docs/conformance/rules/NO_DOCUMENT_WRITE"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Prevent unsafe usage of document.write() in your application.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_document_write.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0d8500f206a6d15f995635e527d91651dc860e71c1ae5c088263ebc80d83768c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f4db79a69af40cfda13eac89e8e178ea7a9c9b9ec25ca3da4ff8376af163b832"
 ---
 
-# Page Not Found
+# NO_DOCUMENT_WRITE
 
-`/docs/conformance/rules/no_document_write` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NO_DOCUMENT_WRITE](/docs/conformance/rules/no_document_write.md): Conformance is available on Enterprise plans Calls to document.write() or document.writeln() manipulate DOM directly without any sanitization and
-- [Conformance Rules](/docs/conformance/rules.md): production source maps so that they don't publicly share source code. NEXTJS\_SAFE\_NEXT\_PUBLIC\_ENV\_USAGE Prevent dangerouslyAllowSVG without
-- [Example configuration](/docs/conformance/custom-rules/forbidden-properties.md): The example below configures a rule named NO_DOCUMENT_WRITE_CALLS that disallows calling document.write. conformance.config.jsonc { "customRules"[ {
-- [Conformance Custom Rules](/docs/conformance/custom-rules.md): Conformance is available on Enterprise plans Vercel's builtin Conformance rules are crafted from extensive experience in developing largescale
+Calls to `document.write()` or `document.writeln()` manipulate DOM directly without any sanitization and should be avoided.
 
-All pages: [/llms.txt](/llms.txt)
+Furthermore, these APIs can also cause performance issues and trigger will clear the page contents if used after page load.
+
+## How to fix
+
+Avoid usage of `document.write()` entirely in your application, and instead either use UI framework like React to handle writing to the document,
+or use safer DOM APIs, such as `document.createElement()` instead.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

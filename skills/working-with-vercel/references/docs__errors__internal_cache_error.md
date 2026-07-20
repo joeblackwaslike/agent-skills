@@ -1,17 +1,36 @@
 ---
+title: INTERNAL_CACHE_ERROR
+product: vercel
+url: /docs/errors/INTERNAL_CACHE_ERROR
+canonical_url: "https://vercel.com/docs/errors/INTERNAL_CACHE_ERROR"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: An unexpected error happened when CDN is fetching data from the Vercel CDN cache.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_cache_error.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "49229c5cc5361d8c1b1a9029895699509c02bbe3c3fbd84418ed1a8b48245c6d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a7f84542df2146b84c35facada16148727f0749c6e2e98e831746e26de62ddb5"
 ---
 
-# Page Not Found
+# INTERNAL_CACHE_ERROR
 
-`/docs/errors/internal_cache_error` does not exist. Similar pages:
+The `INTERNAL_CACHE_ERROR` error occurs during an unexpected issue in the CDN while retrieving data from the Vercel CDN cache.
 
-- [INTERNAL_CACHE_ERROR](/docs/errors/internal_cache_error.md): The INTERNAL_CACHE_ERROR error occurs during an unexpected issue in the CDN while retrieving data from the Vercel CDN cache. 500
-- [INTERNAL_CACHE_LOCK_FULL](/docs/errors/internal_cache_lock_full.md): The INTERNAL_CACHE_LOCK_FULL error occurs when CDN is accessing internal cache. This error is usually caused by a temporary issue with the internal
-- [INTERNAL_CACHE_KEY_TOO_LONG](/docs/errors/internal_cache_key_too_long.md): The INTERNAL_CACHE_KEY_TOO_LONG error occurs when the CDN is unable to fetch from the internal cache due to a cache key being too long. This error
-- [INTERNAL_CACHE_LOCK_TIMEOUT](/docs/errors/internal_cache_lock_timeout.md): The INTERNAL_CACHE_LOCK_TIMEOUT error occurs when CDN is accessing internal cache. 500 INTERNAL\_CACHE\_LOCK\_TIMEOUTInternal Server Error
-- [INTERNAL_MISSING_RESPONSE_FROM_CACHE](/docs/errors/internal_missing_response_from_cache.md): The INTERNAL_MISSING_RESPONSE_FROM_CACHE error occurs when an unexpected error happened during the CDN accessing the internal cache. 500
+**Error Code:** `500`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Internal Server Error
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Contact support:** If the error persists, [contact support](/help#issues) for further assistance
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -1,17 +1,47 @@
 ---
+title: PACKAGE_JSON_NAME_REQUIRED
+product: vercel
+url: /docs/conformance/rules/PACKAGE_JSON_NAME_REQUIRED
+canonical_url: "https://vercel.com/docs/conformance/rules/PACKAGE_JSON_NAME_REQUIRED"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  - /docs/conformance/rules/PACKAGE_JSON_DESCRIPTION_REQUIRED
+  - /docs/conformance/rules/PACKAGE_JSON_PRIVATE_REQUIRED
+  - /docs/conformance/rules/PACKAGE_JSON_TYPE_REQUIRED
+  - /docs/conformance/rules/PACKAGE_JSON_SIDE_EFFECTS_REQUIRED
+summary: Requires that every package.json file has the name field set to ensure each workspace has a unique identifier.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_name_required.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "9a6d21928ef2924fdb085f7a595fc6a4716a071231e3e844b7272e65635d7a43"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "d081e24e2805b8b1ec094bfc13d08dd426a58368560b88aba6c07d5c80251907"
 ---
 
-# Page Not Found
+# PACKAGE_JSON_NAME_REQUIRED
 
-`/docs/conformance/rules/package_json_name_required` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [PACKAGE_JSON_NAME_REQUIRED](/docs/conformance/rules/package_json_name_required.md): Conformance is available on Enterprise plans This check ensures that every package.json has a name field. This field is important because it used to
-- [PACKAGE_JSON_PRIVATE_REQUIRED](/docs/conformance/rules/package_json_private_required.md): Conformance is available on Enterprise plans This check ensures that every package.json has the private field set to true or false. This field
-- [PACKAGE_JSON_DESCRIPTION_REQUIRED](/docs/conformance/rules/package_json_description_required.md): Conformance is available on Enterprise plans This check ensures that every package.json has a description field. This field is used to describe the
-- [PACKAGE_JSON_TYPE_REQUIRED](/docs/conformance/rules/package_json_type_required.md): Conformance is available on Enterprise plans This check ensures that every package.json has a type field. This field determines how files within the
-- [PACKAGE_JSON_PRIVATE_REQUIREDPACKAGE_JSON_SIDE_EFFECTS_REQUIRED](/docs/conformance/rules/package_json_side_effects_required.md): Conformance is available on Enterprise plans This check ensures that every package.json has a sideEffects field. The sideEffects field is required
+This check ensures that every `package.json` has a `name` field. This field is important because
+it used to identify the workspace in the monorepo.
 
-All pages: [/llms.txt](/llms.txt)
+See the [Node.js docs](https://nodejs.org/api/packages.html#name) for more information.
+
+## Related Rules
+
+- [PACKAGE\_JSON\_DESCRIPTION\_REQUIRED](/docs/conformance/rules/PACKAGE_JSON_DESCRIPTION_REQUIRED)
+- [PACKAGE\_JSON\_PRIVATE\_REQUIRED](/docs/conformance/rules/PACKAGE_JSON_PRIVATE_REQUIRED)
+- [PACKAGE\_JSON\_TYPE\_REQUIRED](/docs/conformance/rules/PACKAGE_JSON_TYPE_REQUIRED)
+- [PACKAGE\_JSON\_SIDE\_EFFECTS\_REQUIRED](/docs/conformance/rules/PACKAGE_JSON_SIDE_EFFECTS_REQUIRED)
+
+## How to fix
+
+Add the `name` field to the `package.json` file that contains a unique name for
+this package. The name should be understandable by someone viewing or using the
+package as to what it does.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-quickstart.md"
-fetched_at: "2026-07-13T06:53:38.588Z"
-sha256: "b862c1b4e2f57a712ffa044aae13a98f5c2ff3f3cf1170dbf54f081d48519624"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "c41fc802c86452fd070af0eb8351ce8785beab102b886fe55c57b5ba83737afd"
 ---
 
 > ## Documentation Index
@@ -39,10 +39,10 @@ This page walks through installing the app and starting your first session. If y
 The desktop app has three tabs:
 
 * **Chat**: General conversation with no file access, similar to claude.ai.
-* **Cowork**: An autonomous background agent that works on tasks in a cloud VM with its own environment. It can run independently while you do other work.
+* **Cowork**: An autonomous background agent that works on tasks in a sandboxed virtual machine with its own environment, running independently while you do other work. On-device Cowork sessions run the VM on your computer; remote Cowork sessions run on an Anthropic-managed VM instead.
 * **Code**: An interactive coding assistant with direct access to your local files. You review and approve each change in real time.
 
-Chat and Cowork are covered in the [Claude Desktop support articles](https://support.claude.com/en/collections/16163169-claude-desktop). This page focuses on the **Code** tab.
+Chat and Cowork are covered in the [Claude Help Center](https://support.claude.com/); installing and deploying the desktop app is covered in the [Claude Desktop support articles](https://support.claude.com/en/collections/16163169-claude-desktop). This page focuses on the **Code** tab.
 
 ## Install
 
@@ -74,6 +74,7 @@ With the Code tab open, choose a project and give Claude something to do.
 
     * **Remote**: Run sessions on Anthropic's cloud infrastructure that continue even if you close the app. Cloud sessions use the same infrastructure as [Claude Code on the web](/en/claude-code-on-the-web).
     * **SSH**: Connect to a remote machine over SSH, such as your own servers, cloud VMs, or dev containers. Desktop installs Claude Code on the remote machine automatically the first time you connect.
+    * **WSL** (Windows): Run the session inside a [WSL 2 distribution](/en/desktop-wsl); Claude Code, tools, and git execute on the Linux side with native paths.
   </Step>
 
   <Step title="Choose a model">

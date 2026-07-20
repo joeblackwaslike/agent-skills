@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "f7a84c81c0958ce90f088a65c5f418862f206706632226fc460ea7430edd3c94"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f5bcdc27f537a3ccc693121c6c2e980c0812989bacc6ee84e695d3c8e160f4c0"
 ---
 
 # Vercel Pro Plan
@@ -28,7 +28,7 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 
 - **[Credit-based billing](#monthly-credit)**: Pro includes monthly credit that can be used flexibly across [usage dimensions](/docs/pricing#managed-infrastructure-billable-resources)
 - **[Free viewer seats](#viewer-team-seat)**: Unlimited read-only access to the Vercel dashboard so that project collaborators can view deployments, check analytics, and comment on previews
-- **[Turbo build machines](/docs/builds/managing-builds#larger-build-machines)**: New projects use Turbo build machines (30 vCPUs, 60 GB memory) by default
+- **[Elastic build machines](/docs/builds/managing-builds#elastic-build-machines)**: New teams use Elastic build machines by default. Elastic automatically selects a machine for each project based on its build workload
 - **[Paid add-ons](#paid-add-ons)**: Additional enterprise-grade features are available as add-ons
 
 For a full breakdown of the features included in the Pro plan, see the [pricing page](https://vercel.com/pricing).

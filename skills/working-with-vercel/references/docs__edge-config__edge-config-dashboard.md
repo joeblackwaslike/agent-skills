@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Edge Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edge-config/edge-config-dashboard.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "99f1afaae6991df8beb87372604b418abd916bcc1fcebd068de6928bee955453"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a5a42458f7c22b12881b90c18d612fff13dd417b2b678ca45671686f71abeb10"
 ---
 
 # Managing Edge Configs with the Dashboard
@@ -162,7 +162,7 @@ To generate a new token, click the **Generate Token** button, type a name slug i
 
 Copy whichever value you need before closing the dialog. After you click **Done**, the tokens list only shows a truncated preview, and you can't retrieve the full token or connection string from the dashboard again.
 
-> **⚠️ Warning:** Vercel shows the full token and connection string only once, right after
+> **💡 Note:** Vercel shows the full token and connection string only once, right after
 > creation. Copy them immediately and store them somewhere safe. If you lose
 > the token, delete it and create a new one.
 

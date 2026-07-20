@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/sandbox.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "1dbc39a3fa336ce0ce8aa9475b6f16f3c207abb3c7667ac1d3c61db67f90019a"
+fetched_at: "2026-07-20T06:49:41.276Z"
+sha256: "2d2c13347d2d6e26dfdc3a33d7b43f12d242fa679eb1220c85153b824e8c0df4"
 ---
 
 # Sandboxing in Gemini CLI
@@ -93,8 +93,9 @@ preferred container solution.
 
 Lightweight, built-in sandboxing using `sandbox-exec`.
 
-**Default profile**: `permissive-open` - restricts writes outside project
-directory but allows most other operations.
+**Default profile**: `permissive-open` - denies operations by default; confines
+writes to the project directory while allowing broad file reads and network
+access.
 
 Built-in profiles (set via `SEATBELT_PROFILE` env var):
 

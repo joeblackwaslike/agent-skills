@@ -15,8 +15,8 @@ related:
 summary: Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploying-from-cli.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1407e1308478b1f3d7eda7abde6f7bd9281aacc8715a9262c64c7cf07453a4ec"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "88e3dfeab9e2bf0578df44f17dbd4af3fdb4917fe4541824c887eb5f10225cdb"
 ---
 
 # Deploying Projects from Vercel CLI
@@ -96,7 +96,7 @@ vercel deploy --prebuilt
 *Deploy the build outputs in \`.vercel/output\` produced
 by \`vercel build\`.*
 
-> **⚠️ Warning:** Review the [When not to use
+> **💡 Note:** Review the [When not to use
 > \--prebuilt](/docs/cli/deploy#when-not-to-use---prebuilt) section to understand
 > when you should not use the `--prebuilt` flag.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/stopping-streams.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f409dc96261ac8fe83b36599c153888605d3bd2bb655d8c8859ea21fa638a8e8"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "f800bdd13bcabd363136bd5bc44161c84bc104bd12ae14ed398d9c704b67e374"
 ---
 
 # Stopping Streams
@@ -205,6 +205,7 @@ The `consumeStream` function is necessary for proper abort handling in UI messag
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

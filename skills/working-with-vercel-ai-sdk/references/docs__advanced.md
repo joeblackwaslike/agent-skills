@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "f1a9ea3d19c4e1189a623181e9b299c93ef65e64984aae4e75b66deb0bf836a4"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "d900da04f12f8a85737dc9bae614c12fb16e5cef7fa0df66358e716ea20a7463"
 ---
 
 # Advanced
@@ -118,6 +118,7 @@ After these concepts, you should have a better understanding of the paradigms be
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

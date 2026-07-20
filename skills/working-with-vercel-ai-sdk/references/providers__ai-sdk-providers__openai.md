@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "3f30bb0591e7405a26f1a1f43e3cef1b7d10a6a450c9fdd8444ef5c599689e6b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "09a74fde23817065ee67b47d21657ae09b4f73b060da07c4d697e4f29276255e"
 ---
 
 # OpenAI Provider
@@ -301,7 +301,7 @@ The following OpenAI-specific metadata may be returned:
 
 For reasoning models like `gpt-5`, you can enable reasoning summaries to see the model's thought process. Different models support different summarizers—for example, `o4-mini` supports detailed summaries. Set `reasoningSummary: "auto"` to automatically receive the richest level available. When `reasoningEffort` is set to a value other than `'none'`, the OpenAI Responses provider defaults `reasoningSummary` to `'detailed'`; set `reasoningSummary: null` to omit reasoning summaries.
 
-```ts highlight="8-9,16"
+```ts highlight="10-14,17-23"
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
@@ -768,6 +768,95 @@ The MCP tool can be configured with:
   a built-in provider-defined tool that allows OpenAI models to directly connect
   to MCP servers, while the general MCP client requires you to convert MCP tools
   to AI SDK tools first.
+</Note>
+
+#### Computer Tool
+
+The OpenAI Responses API supports the GA computer tool through
+`openai.tools.computer`. The model returns an ordered batch of browser or
+desktop actions for your application to execute, and your application returns
+an updated screenshot.
+
+```ts
+import { openai } from '@ai-sdk/openai';
+import { generateText, isStepCount } from 'ai';
+import { captureScreenshot, executeComputerAction } from '@/utils/computer-use';
+
+const result = await generateText({
+  model: openai.responses('gpt-5.4'),
+  tools: {
+    computer: openai.tools.computer({
+      needsApproval: ({ pendingSafetyChecks }) =>
+        pendingSafetyChecks.length > 0,
+
+      execute: async ({ actions, pendingSafetyChecks }) => {
+        for (const action of actions) {
+          await executeComputerAction(action);
+        }
+
+        return {
+          output: {
+            type: 'computer_screenshot',
+            imageUrl: `data:image/png;base64,${await captureScreenshot()}`,
+            detail: 'original',
+          },
+          acknowledgedSafetyChecks: pendingSafetyChecks,
+        };
+      },
+    }),
+  },
+  prompt: 'Open the settings page and enable dark mode.',
+  stopWhen: isStepCount(10),
+});
+```
+
+The execute callback receives:
+
+- **actions** - An ordered array of `click`, `double_click`, `drag`,
+  `keypress`, `move`, `screenshot`, `scroll`, `type`, and `wait` actions.
+  Execute every action in order before capturing the next screenshot.
+- **pendingSafetyChecks** - Safety checks returned by OpenAI. Review these
+  before continuing and include accepted checks in
+  `acknowledgedSafetyChecks`.
+- **status** - The computer call status.
+
+The action union is also exported as `OpenAIComputerAction`. Action-specific
+fields are:
+
+| Action         | Fields                                               |
+| -------------- | ---------------------------------------------------- |
+| `click`        | `button`, `x`, `y`, optional `keys`                  |
+| `double_click` | `x`, `y`, optional `keys`                            |
+| `drag`         | `path` containing `{ x, y }` points, optional `keys` |
+| `keypress`     | `keys`                                               |
+| `move`         | `x`, `y`, optional `keys`                            |
+| `screenshot`   | No additional fields                                 |
+| `scroll`       | `x`, `y`, `scrollX`, `scrollY`, optional `keys`      |
+| `type`         | `text`                                               |
+| `wait`         | No additional fields                                 |
+
+Safety checks use the exported `OpenAIComputerSafetyCheck` type.
+
+Return a `computer_screenshot` with either:
+
+- **imageUrl** - A fully qualified URL or image data URL.
+- **fileId** - The ID of an uploaded screenshot file.
+
+`detail` can be `auto`, `low`, `high`, or `original`. `original` preserves the
+captured resolution and is recommended when accurate coordinates are
+important.
+
+Computer calls and `computer_call_output` screenshot results are carried
+through multi-step generations when using `store`, `previousResponseId`, or
+OpenAI conversations. You can also set `store: false`; the provider will
+serialize the complete call and screenshot result into each follow-up request.
+
+<Note type="warning">
+  Run computer use in an isolated browser or VM. Restrict reachable domains,
+  accounts, credentials, environment variables, and file-system access. Treat
+  on-screen content as untrusted prompt-injection input, require confirmation
+  immediately before consequential actions, and avoid exposing sensitive
+  information in screenshots.
 </Note>
 
 #### Local Shell Tool
@@ -1855,7 +1944,7 @@ They support additional settings and response metadata:
 
 - You can use the response `usage` to access the number of reasoning tokens that the model generated via `usage.outputTokenDetails.reasoningTokens`.
 
-```ts highlight="4,7-11,17"
+```ts highlight="4,7-11,15"
 import { openai, type OpenAILanguageModelChatOptions } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
@@ -2113,7 +2202,7 @@ const result = streamText({
 OpenAI provides usage information for predicted outputs (`acceptedPredictionTokens` and `rejectedPredictionTokens`).
 You can access it in the `providerMetadata` object.
 
-```ts highlight="11"
+```ts highlight="3-4"
 const openaiMetadata = (await result.providerMetadata)?.openai;
 
 const acceptedPredictionTokens = openaiMetadata?.acceptedPredictionTokens;
@@ -2208,7 +2297,7 @@ including `gpt-4o` and `gpt-4o-mini`.
 - For GPT-5.6 and later models, `usage.inputTokenDetails.cacheWriteTokens` reports tokens written to the cache.
 - For GPT-5.6 and later models, `promptCacheOptions.ttl` sets a minimum cache lifetime of 30 minutes. Earlier models generally retain in-memory prefixes for 5-10 minutes of inactivity, up to one hour.
 
-```ts highlight="11"
+```ts highlight="9"
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
@@ -2857,6 +2946,7 @@ const result = await generateSpeech({
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

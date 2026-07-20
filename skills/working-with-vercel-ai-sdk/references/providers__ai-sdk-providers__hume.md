@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "0e24672adebef0d8a63bf51fcecee864ebe403cac682ebe8e063630dec9433f2"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "cc00044753ed93db4aaa251499482d767e4dea552e6ba6e0fffa89814e7a4c7f"
 ---
 
 # Hume Provider
@@ -189,6 +189,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

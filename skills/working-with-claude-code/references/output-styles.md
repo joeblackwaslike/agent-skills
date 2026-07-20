@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/output-styles.md"
-fetched_at: "2026-06-22T05:55:28.947Z"
-sha256: "553ad5da3d4aeb768cd5594b8c18b82745eff97164e34cf99b9e712f04b84b21"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "54d1fb85f0e20fa083e9cc76b29b37b674dd6c447499c1a62645ebae47155953"
 ---
 
 > ## Documentation Index
@@ -106,6 +106,8 @@ Output styles directly modify Claude Code's system prompt.
 * All output styles have their own custom instructions added to the end of the system prompt.
 * All output styles trigger reminders for Claude to adhere to the output style instructions during the conversation.
 * Custom output styles leave out Claude Code's built-in software engineering instructions, such as how to scope changes, write comments, and verify work, unless `keep-coding-instructions` is set to `true`.
+
+Output styles apply to the main conversation only: a [subagent runs its own system prompt](/en/sub-agents#what-loads-at-startup), so styles don't change how subagents respond. A [fork](/en/sub-agents#fork-the-current-conversation) is the exception, because it inherits the parent's full system prompt.
 
 Token usage depends on the style. Adding instructions to the system prompt increases input tokens, though prompt caching reduces this cost after the first request in a session. The built-in Explanatory and Learning styles produce longer responses than Default by design, which increases output tokens. For custom styles, output token usage depends on what your instructions tell Claude to produce.
 

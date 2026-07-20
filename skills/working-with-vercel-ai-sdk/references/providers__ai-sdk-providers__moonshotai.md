@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "d17ebe6d68e51461b0e44a61f7f24e02dfa996c93892d5d9e784b03967d2baf3"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "80dac0d246c510aae3f85467ffee25462ef5e5783962ae66f22263c4e99c5ea3"
 ---
 
 # Moonshot AI Provider
@@ -199,6 +199,7 @@ The following optional provider options are available for Moonshot AI language m
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

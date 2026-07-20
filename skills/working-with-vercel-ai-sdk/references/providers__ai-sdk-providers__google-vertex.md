@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "7b591d43a20e75416037b225c76b258b5a40e273979b57f2e53b038a2559340a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ba66ca94d77f0b0e2462d6bb597bdd9bff73bfda4f6ccdb7de98e8dec65cc1a6"
 ---
 
 # Google Vertex Provider
@@ -321,6 +321,51 @@ The following optional provider options are available for Google Vertex models:
   Optional. Defines labels used in billing reports.
 
   Consult [Google's Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/add-labels-to-api-calls) for usage details.
+
+- **imageConfig** _object_
+
+  Optional. Configuration for image generation. Only supported by Gemini image models.
+
+  See [Google's GenerationConfig documentation](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/v1/GenerationConfig) for usage details.
+  - **aspectRatio** _string_
+
+    Optional. The aspect ratio of generated images. Defaults to 1:1 squares, or to matching the output image size to that of an input image. Can be one of the following:
+    - 1:1
+    - 2:3
+    - 3:2
+    - 3:4
+    - 4:3
+    - 4:5
+    - 5:4
+    - 9:16
+    - 16:9
+    - 21:9
+
+  - **imageSize** _string_
+
+    Optional. Controls the output image resolution. Defaults to 1K. Can be one of the following:
+    - 1K
+    - 2K
+    - 4K
+
+  - **personGeneration** _string_
+
+    Optional. Controls the generation of people in images. Can be one of the following:
+    - `PERSON_GENERATION_UNSPECIFIED`
+    - `ALLOW_ALL`
+    - `ALLOW_ADULT`
+    - `ALLOW_NONE`
+
+  - **prominentPeople** _string_
+
+    Optional. Controls whether generation of prominent people (celebrities) is allowed. When set together with `personGeneration`, `personGeneration` takes precedence. Can be one of the following:
+    - `PROMINENT_PEOPLE_UNSPECIFIED`
+    - `ALLOW_PROMINENT_PEOPLE`
+    - `BLOCK_PROMINENT_PEOPLE`
+
+  - **imageOutputOptions** _\{ mimeType?: 'image/jpeg' | 'image/png', compressionQuality?: number \}_
+
+    Optional. The image output format for generated images.
 
 - **streamFunctionCallArguments** _boolean_
 
@@ -2348,6 +2393,7 @@ The following models are available through the MaaS provider. You can also pass 
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

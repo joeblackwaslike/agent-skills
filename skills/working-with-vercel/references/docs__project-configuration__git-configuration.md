@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure Git for your project through vercel.json or vercel.ts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e2855531844e28e6715c3c56d78813a262858786df401bbeb94d4ab85da03183"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "607bd4bc527d47be4adda22aacc57c826c57bc4d6191eb2b7df1aacb15721648"
 ---
 
 # Git Configuration
@@ -159,7 +159,7 @@ export const config: VercelConfig = {
 
 When set to `false`, [Vercel for GitHub](/docs/git/vercel-for-github) will create preview deployments upon merge.
 
-> **⚠️ Warning:** Follow the [deploying a staged production
+> **💡 Note:** Follow the [deploying a staged production
 > build](/docs/deployments/promoting-a-deployment#staging-and-promoting-a-production-deployment)
 > workflow instead of this setting.
 

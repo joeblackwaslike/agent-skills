@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/settings.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "354ec4abb332a3a20ced24c37e2d01950612b9c0c94f0faed10e8339e9539609"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "73b45864414757193469b99568ec59e77059dbbbf6c884d727d7659e2954638b"
 ---
 
 # Cloud Agents settings
@@ -25,7 +25,7 @@ Use **Update with Agent** when you want Cursor to inspect the current environmen
 
 ## Default settings
 
-- **Default model** – the model used when a run does not specify one. Pick any model that supports Max Mode.
+- **Default model** – the model used when a run does not specify one. Pick any model available for cloud agents.
 - **Default repository** – when empty, agents ask the user to choose a repo. Supplying a repo here lets users skip that step.
 - **Base branch** – the branch agents fork from when creating pull requests. Leave blank to use the repository’s default branch.
 

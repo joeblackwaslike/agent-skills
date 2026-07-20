@@ -14,8 +14,8 @@ related:
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "643101f03fd2e94a7d684a147ce2ad4b9f5073b8e5f6931a3b128911e006312a"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "108d744ce232870394e858d8a4f9f9168460688d9d79d219dfa148f24cbc1d58"
 ---
 
 # Sandbox firewall
@@ -50,7 +50,7 @@ This is useful to reduce the chance of data exfiltration when running untrusted 
 
 Most specific policy, denying all traffic by default, while allowing users to get fine-grain control on their sandbox setup. Users can define:
 
-- a list of domains to allow traffic to. Domain-based policies are easy to use and maintain fine-grain access control for services like S3 (per bucket) or behind virtual hosting (as Vercel). Wildcard support (`*`) allows easier management for complex websites. Each domain can have specific rules attached to it, such as [credentials brokering](/docs/sandbox/concepts/firewall#credentials-brokering) or [requests proxying](/docs/sandbox/concepts/firewall#requests-proxying).
+- a list of domains to allow traffic to. Domain-based policies are easy to use and maintain fine-grain access control for services like S3 (per bucket) or behind virtual hosting (as Vercel). Wildcard support (`*`) allows easier management for complex websites. Each domain can have specific rules attached to it, such as [credentials brokering](/docs/sandbox/concepts/firewall#credentials-brokering) via the `transform` field or [requests proxying](/docs/sandbox/concepts/firewall#requests-proxying) via the `forwardURL` field. Only one of these feature can be defined per rule.
 - a list of address ranges to allow traffic to. Those ranges will not enforce per-domain rules, supporting non-encrypted traffic. This is recommended when using secure-compute to connect to your private network securely.
 - a list of address ranges to deny traffic to. Those range will take precedence to block traffic. This is useful when using secure-compute, allowing Internet access to be granted while blocking internal network.
 

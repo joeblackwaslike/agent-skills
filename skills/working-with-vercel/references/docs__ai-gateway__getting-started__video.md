@@ -16,8 +16,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ce299c29d6e76bd24fb7dc9bee166fd03e99c72def3f58b9cff8b78ba6048657"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "9638be251063341aa63ca60dbe91eff381d4a9e92dbd584520569bf908271e59"
 ---
 
 # Video Generation Quickstart
@@ -117,10 +117,10 @@ import 'dotenv/config';
 
 const result = await generateVideo({
   model: 'alibaba/wan-v2.6-i2v',
-  prompt: {
-    image: 'https://example.com/your-image.png',
-    text: 'The scene slowly comes to life with gentle movement',
-  },
+  prompt: 'The scene slowly comes to life with gentle movement',
+  frameImages: [
+    { image: 'https://example.com/your-image.png', frameType: 'first_frame' },
+  ],
   duration: 5,
 });
 
@@ -196,13 +196,13 @@ const result = await generateVideo({
   prompt: 'character1 and character2 have a friendly conversation in a cozy cafe',
   resolution: '1920x1080',
   duration: 4,
+  // References can be images or videos
+  inputReferences: [
+    'https://example.com/cat.png',
+    'https://example.com/dog.png',
+  ],
   providerOptions: {
     alibaba: {
-      // References can be images or videos
-      referenceUrls: [
-        'https://example.com/cat.png',
-        'https://example.com/dog.png',
-      ],
       shotType: 'single',
     },
   },

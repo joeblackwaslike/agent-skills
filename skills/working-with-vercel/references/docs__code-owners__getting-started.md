@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up Code Owners for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/getting-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "653694d95b5ade9197a261084be5ebc532bcb1a09594e1c7e78e9b3f0a3fee6c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ddd7fc3e2f7057f777be07c67b4fba01940bfa4a8a14bc75c29cd3f55a09fbf2"
 ---
 
 # Getting Started with Code Owners
@@ -86,7 +86,7 @@ enforcing review checks for merging PRs.
       ```
     </Code>
   </CodeBlock>
-  > **⚠️ Warning:** `yarn dlx` only works with Yarn version 2 or newer, for Yarn v1 use the npx
+  > **💡 Note:** `yarn dlx` only works with Yarn version 2 or newer, for Yarn v1 use the npx
   > command.
   After running, check the installation success by executing:
   <CodeBlock>

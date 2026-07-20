@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/sequential-generations.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "ebd06304421cf1476945a5ba2b58d0c869078a2fe8085c37c486189ad18c134a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "619ccd20fda9b2440f918e8352ae7c4dfbbcacc294c4e4f2a78e1ed1fdbd5742"
 ---
 
 # Sequential Generations
@@ -69,6 +69,7 @@ In this example, we first generate ideas for a blog post, then pick the best ide
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

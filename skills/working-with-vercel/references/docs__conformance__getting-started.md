@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up Conformance for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/getting-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "00de90d6937eac35f2b025fa0836b3a9bd7fa85ecf852a4087dda29c73370e0e"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a25314c858c3ccd0aa1d5ee1b704000f924a57a0dca6b553f1db928c5b124096"
 ---
 
 # Getting Started with Conformance
@@ -82,7 +82,7 @@ This section guides you through setting up Conformance for your repository.
       ```
     </Code>
   </CodeBlock>
-  > **⚠️ Warning:** `yarn dlx` only works with Yarn version 2 or newer, for Yarn v1 use&#x20;
+  > **💡 Note:** `yarn dlx` only works with Yarn version 2 or newer, for Yarn v1 use&#x20;
   > `yarn -DW add @vercel-private/conformance && yarn vercel-conformance init`
   After running, check the installation success by executing:
   <CodeBlock>

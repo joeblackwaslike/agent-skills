@@ -1,12 +1,12 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/getting-started.md"
-fetched_at: "2026-07-13T06:55:09.770Z"
-sha256: "e1f2e928462849e683d52d04fb727530be2f6fd0031601d39072fce2263131c8"
+fetched_at: "2026-07-20T06:48:25.540Z"
+sha256: "9c0fc427ee73c1e5a20d99bd82bf88e9fb20a5df9d98078b03eabda8f890c3a8"
 ---
 
 # Getting Started
 
-This guide gets a published OpenAI Codex Python SDK beta installation running
+This guide gets a published OpenAI Codex Python SDK installation running
 with a multi-turn thread.
 
 ## 1. Install
@@ -22,10 +22,8 @@ Requirements:
 - Python `>=3.10`
 - An existing Codex account session, or one of the login flows below
 
-The SDK installs its compatible `openai-codex-cli-bin` runtime dependency
-automatically. While beta releases are the only published SDK releases, this
-normal install command selects the latest beta. After a stable release exists,
-use `pip install --pre openai-codex` to opt into a newer prerelease.
+The SDK installs its matching `openai-codex-cli-bin` runtime dependency
+automatically. SDK release versions track the corresponding Codex CLI release.
 
 ## 2. Authenticate When Needed
 

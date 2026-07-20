@@ -1,17 +1,41 @@
 ---
+title: DEPLOYMENT_DELETED
+product: vercel
+url: /docs/errors/DEPLOYMENT_DELETED
+canonical_url: "https://vercel.com/docs/errors/DEPLOYMENT_DELETED"
+last_updated: 2026-02-26
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: The deployment has been removed
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_deleted.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "45f69251acd78262eb85603c3093036810d354e01bc302208bba3c7c55c5d494"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "b9eeca4afe6ec7f08cef32aef24d2266642deaeae1e5592157a2419de054fe17"
 ---
 
-# Page Not Found
+# DEPLOYMENT_DELETED
 
-`/docs/errors/deployment_deleted` does not exist. Similar pages:
+The `DEPLOYMENT_DELETED` error occurs when a request is made for a deployment that has been removed based on the projects deployment retention policy.
 
-- [DEPLOYMENT_DELETED](/docs/errors/deployment_deleted.md): The DEPLOYMENT_DELETED error occurs when a request is made for a deployment that has been removed based on the projects deployment retention policy.
-- [Delete a Deployment](/docs/rest-api/deployments/delete-a-deployment.md): titledeleteadeployment productvercel url/docs/restapi/deployments/deleteadeployment
-- [Delete a Deployment](/docs/rest-api/sdk/deployments/delete-a-deployment.md): APIs & SDKs Vercel SDK Delete a Deployment DELhttps//api.vercel.com/v13/deployments/{id} This API allows you to delete a deployment, either by
-- [Managing Deployments](/docs/deployments/managing-deployments.md): You can manage all current and previous deployments regardless of environment, status, or branch from the dashboard. To manage a deployment from the
-- [More resources](/docs/deployment-retention.md): View Deployment Retention Policies Troubleshoot Deployment Retention Errors
+**Error Code:** `410`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Deployment Deleted
+
+## Troubleshoot
+
+Recently deleted deployments can be restored within 30 days of deletion.
+
+To restore a deleted deployment, open **Settings** in the sidebar of your project:
+
+1. Select **Security** on the side panel of the project settings page
+2. Scroll down to the **Recently Deleted** section
+3. Find the deployment that needs to be restored, and click on the dropdown menu item **Restore**
+4. Complete the modal
+
+
+---
+
+[View full sitemap](/docs/sitemap)

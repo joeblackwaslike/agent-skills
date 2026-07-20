@@ -14,8 +14,8 @@ related:
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "795cb7778845e1e56ffc0538ad3ac699bfa4d30de4cbf6a711911d733e3103b7"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a865bb59ffbb47b062911991443b5779edf9d41767e0dc3a197ef8cf54cc1a64"
 ---
 
 # Mount remote storage
@@ -38,7 +38,7 @@ This example uses Mountpoint for Amazon S3, the official FUSE driver for S3. Ins
 
 After the mount succeeds, `ls -la /mnt/s3` prints the objects in your bucket. Any command in the sandbox can now read from and write to `/mnt/s3`.
 
-> **⚠️ Warning:** Passing credentials to `mount-s3` exposes them inside the sandbox for the life of the process. Use a narrowly scoped, short-lived IAM role that grants access only to the bucket and actions you need, and prefer temporary credentials (`AWS_SESSION_TOKEN`) over long-lived keys.
+> **💡 Note:** Passing credentials to `mount-s3` exposes them inside the sandbox for the life of the process. Use a narrowly scoped, short-lived IAM role that grants access only to the bucket and actions you need, and prefer temporary credentials (`AWS_SESSION_TOKEN`) over long-lived keys.
 
 ## Mount other providers
 

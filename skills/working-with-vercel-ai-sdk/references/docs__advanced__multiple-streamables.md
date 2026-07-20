@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/multiple-streamables.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "4b52e30c482fd34b892af149f037c174677ed93031af49c4607ad0a530082a16"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ec046317d2c49760641f4e6625c74d97331e32d9b5b0c405603898069294457f"
 ---
 
 # Multiple Streams
@@ -82,6 +82,7 @@ async function getStockHistoryChart({ symbol: string }) {
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

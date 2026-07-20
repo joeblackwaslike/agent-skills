@@ -3,7 +3,7 @@ title: Remote Caching
 product: vercel
 url: /docs/monorepos/remote-caching
 canonical_url: "https://vercel.com/docs/monorepos/remote-caching"
-last_updated: 2026-02-26
+last_updated: 2026-07-08
 type: tutorial
 prerequisites:
   - /docs/monorepos
@@ -16,8 +16,8 @@ related:
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a727b220e2bf1bd7c9ce3c9c9f9720114aed13bee33af242db4c1c4db5fd1e66"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f6455f075bc6eb172999f81b5790e47f8faa028495c1c0a484d7071eae8b6736"
 ---
 
 # Remote Caching
@@ -135,7 +135,7 @@ For this guide, your monorepo should be using [Turborepo](/docs/monorepos/turbor
   You will be prompted to enable Remote Caching for the current repo. Enter `Y` for yes to enable Remote Caching.
 
   Next, select the team scope you'd like to connect to. Selecting the scope tells Vercel who the cache should be shared with and allows for ease of [billing](#billing-information). Once completed, Turborepo will use Vercel Remote Caching to store your team's cache artifacts.
-  > **⚠️ Warning:** If you run these commands but the owner has [disabled Remote
+  > **💡 Note:** If you run these commands but the owner has [disabled Remote
   > Caching](#enabling-and-disabling-remote-caching-for-your-team) for your team,
   > Turborepo will present you with an error message: "Please contact your account
   > owner to enable Remote Caching on Vercel."

@@ -14,8 +14,8 @@ related:
 summary: Archive unused feature flags and restore them when needed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f30f3d8d872578db2886931d1fee26250db41972ddc55d97df20daa3dc953c1a"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "5d33fe6e20a866a4083153b06fc5dbc139461f4c99ec73ccb038fb888b567944"
 ---
 
 # Archive
@@ -82,7 +82,7 @@ The flag returns to your active flags list with all its previous configuration i
 3. Click **Delete**
 4. Confirm the permanent deletion
 
-> **⚠️ Warning:** Deleting a flag is permanent and cannot be undone. All configuration, including variants, targeting rules, and change history, will be lost.
+> **💡 Note:** Deleting a flag is permanent and cannot be undone. All configuration, including variants, targeting rules, and change history, will be lost.
 
 ## Next steps
 

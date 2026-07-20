@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "d660a00832d8c847f5950f1445ef0f184514011f4a454099b546b58631b44cdf"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "c7c6a29caeadd29faac163879e108632dada20cdc1a5f820d43b65a260eecf1d"
 ---
 
 # AI SDK Core
@@ -110,11 +110,6 @@ It also contains the following helper functions:
       title: 'createMCPClient()',
       description: 'Creates a client for connecting to MCP servers.',
       href: '/docs/reference/ai-sdk-core/create-mcp-client',
-    },
-    {
-      title: 'validateJSONRPCMessage()',
-      description: 'Validates unknown values as MCP JSON-RPC messages.',
-      href: '/docs/reference/ai-sdk-core/validate-json-rpc-message',
     },
     {
       title: 'MCP Apps',

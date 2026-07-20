@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "758f546db380483c450a98181c3c1e95e7eb64f9deb121a450e383f8987d1351"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ed109abbf205cc4466c5747cff0be35af8cc21c4b2b8de482114b8300ee69c22"
 ---
 
 # AI SDK Providers
@@ -155,6 +155,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [ByteDance](/providers/ai-sdk-providers/bytedance)
   - [Kling AI](/providers/ai-sdk-providers/klingai)
   - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+  - [Cartesia](/providers/ai-sdk-providers/cartesia)
 - [AI SDK Harnesses](/providers/ai-sdk-harnesses)
   - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
   - [Codex](/providers/ai-sdk-harnesses/codex)

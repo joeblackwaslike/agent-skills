@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "bbfd26abb92cc25de48d5cc377effb0cc1fdb100290afae5c1c773cb815b58a9"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "737db51b98873a648187e5bcd04668bc87056ac48f6f23688f2e02cdd47b0c79"
 ---
 
 # Providers and Models
@@ -15,10 +15,13 @@ To solve these challenges, AI SDK Core offers a standardized approach to interac
 Here is an overview of the AI SDK Provider Architecture:
 
 <MDXImage
+  alt="Diagram showing the AI SDK Core API, provider specifications, and provider implementations"
   srcLight="/images/ai-sdk-diagram.png"
   srcDark="/images/ai-sdk-diagram-dark.png"
-  width={800}
-  height={800}
+  width={1694}
+  height={1206}
+  widthDark={2541}
+  heightDark={1884}
 />
 
 ## AI SDK Providers

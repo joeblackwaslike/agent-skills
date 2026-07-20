@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "868ff8c932c72056069d158183a0f6e5b85834101d775ad49051602a2d2954ea"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "1b35bd09576ba14bc7b2f066f181eb8edeffa13b7f031f89f47581a88f652d19"
 ---
 
 # Generating and Streaming Text
@@ -30,7 +30,7 @@ const { text } = await generateText({
 });
 ```
 
-You can use more [advanced prompts](./prompts) to generate text with more complex instructions and content:
+You can use more [advanced prompts](/docs/foundations/prompts) to generate text with more complex instructions and content:
 
 ```tsx
 import { generateText } from 'ai';
@@ -98,7 +98,7 @@ When using `generateText`, you can provide an `onEnd` callback that is triggered
 ).
 It contains the text, usage information, finish reason, messages, steps, total usage, and more:
 
-```tsx highlight="6-8"
+```tsx highlight="7-10"
 import { generateText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -263,7 +263,7 @@ Errors become part of the stream and are not thrown to prevent e.g. servers from
 
 To log errors, you can provide an `onError` callback that is triggered when an error occurs.
 
-```tsx highlight="6-8"
+```tsx highlight="7-9"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -309,7 +309,7 @@ It receives all stream part types from `stream`, including:
 - `error`
 - `raw`
 
-```tsx highlight="6-11"
+```tsx highlight="7-12"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -332,7 +332,7 @@ When using `streamText`, you can provide an `onEnd` callback that is triggered w
 ).
 It contains the text, usage information, finish reason, messages, steps, total usage, and more:
 
-```tsx highlight="6-8"
+```tsx highlight="7-10"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 

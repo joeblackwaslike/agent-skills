@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/integrations/bitbucket.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "22d44b6e5f2ebf7db30ba859221f8573463cc84bc90194314e3e8fb9a441d48c"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "0a83a45c1d924505c15556bcea87db79e6a80f41ab6cffcc894d0696382bc7de"
 ---
 
 # Bitbucket
@@ -14,10 +14,10 @@ Connect Bitbucket Cloud repositories to [Cloud Agents](https://cursor.com/docs/c
 
 The Bitbucket Cloud integration is in public beta. It supports repositories on `bitbucket.org`.
 
-Bitbucket Cloud setup has two parts:
+Bitbucket Cloud setup has two parts, and each part requires a different role:
 
 - Each developer connects their Bitbucket account so Cursor can clone repositories, push branches, and open pull requests as that user.
-- A Bitbucket workspace admin installs the Cursor app so Bugbot and Cloud Agent status comments can appear as Cursor.
+- A Bitbucket workspace admin installs the Cursor app so Bugbot and Cloud Agent status comments can appear as Cursor. Linking the installed app to your Cursor team requires a Cursor team admin with access to the Bitbucket workspace.
 
 ### Connect your Bitbucket account
 
@@ -35,6 +35,8 @@ Each person who starts Cloud Agents or opens pull requests from Cursor should co
 ### Install the Cursor app in Bitbucket
 
 A Bitbucket workspace admin must install the Cursor app for the workspace. This gives Cursor a stable app identity for repository events, Bugbot review comments, inline comments, and status updates.
+
+Steps 1 through 4 require a Bitbucket workspace admin. Steps 5 and 6 require a Cursor team admin with access to the Bitbucket workspace. If one person handles the full setup, they need both roles.
 
 1. Go to [Integrations in the dashboard](https://cursor.com/dashboard/integrations)
 2. Find Bitbucket and open the manage menu
@@ -157,6 +159,11 @@ Available for Enterprise customers. Run a reverse proxy tunnel on-premises that 
 ### Cursor cannot find my Bitbucket workspace
 
 Bitbucket app installation events can take a few minutes to sync. Wait and retry the **Connect to Cursor** step from Bitbucket workspace settings.
+
+### I installed the Cursor app but cannot link it to my Cursor team
+
+- Confirm you are a Cursor team admin. Installing the app requires a Bitbucket workspace admin, but linking the workspace to a Cursor team requires a Cursor team admin.
+- Confirm your Bitbucket user has access to the workspace you are linking.
 
 ### Bugbot comments do not appear as Cursor
 

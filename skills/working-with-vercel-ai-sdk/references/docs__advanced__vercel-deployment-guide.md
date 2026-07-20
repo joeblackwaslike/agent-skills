@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "7ee3f38f6f80eca10d9cef178ce78d4a689dcc8212e31fd40e8072f5532e03e4"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "8f6847515cded1f3bf416fefc7896c88a56d9f4613d0a80f6eb0a47a889fd8dc"
 ---
 
 # Vercel Deployment Guide
@@ -131,6 +131,7 @@ A firewall helps protect your applications and websites from DDoS attacks and u
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/authenticating-with-a-github-app/refreshing-user-access-tokens.md"
-fetched_at: "2026-06-15T17:31:37.352Z"
-sha256: "bbd1f7e29b25b7cdd6e84218f5be55aa5bf8e892adf5fdfbc3b42e3059bfac87"
+fetched_at: "2026-07-20T06:45:20.604Z"
+sha256: "73f85b6dfb5f0f7849c288ddc772e590fe887b3ffe3a0c9b09511e17761b7a6d"
 ---
 
 ## About user access tokens that expire
@@ -17,7 +17,7 @@ If your refresh token expires before you use it, you can regenerate a user acces
 
 ## Configuring your app to use user access tokens that expire
 
-When you create your app, expiration of user access tokens is enabled unless you opt out. For more information, see [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/creating-a-github-app). You can also configure this setting after your app has been created.
+When you create your app, expiration of user access tokens is enabled unless you opt out. For more information, see [AUTOTITLE](/apps/creating-github-apps/registering-a-github-app/registering-a-github-app). You can also configure this setting after your app has been created.
 
 {% data reusables.apps.settings-step %}
 {% data reusables.apps.enterprise-apps-steps %}

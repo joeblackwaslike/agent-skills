@@ -3,7 +3,7 @@ title: Model Allowlist
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/model-allowlist
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist"
-last_updated: 2018-10-20
+last_updated: 2026-07-08
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -11,11 +11,11 @@ prerequisites:
 related:
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
   - /docs/ai-gateway/authentication-and-byok/byok
-summary: Learn about model allowlist on Vercel.
+summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9fe67f1cf194aad911a3d79b1e0a34d97c25d73d974f6723bce6c68d5e08f9a6"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "01d0599afa7745cc238fb103d126742d1852e00ef6447d48fb1c114901dc5a06"
 ---
 
 # Model Allowlist

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/vercel.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "bce38d81fbcf2471dbefdcf3af56d9ac8c63ed7e50d21ae4ff5c697ab80e9db0"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "756c7014941e214cc9369633a1ba6b42cf8f07587a4245051ceaaf0d2624d603"
 ---
 
 # Vercel Provider
@@ -158,6 +158,7 @@ All v0 models have the following capabilities:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

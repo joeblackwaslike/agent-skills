@@ -1,16 +1,61 @@
 ---
+title: NEXTJS_NO_TURBO_CACHE
+product: vercel
+url: /docs/conformance/rules/NEXTJS_NO_TURBO_CACHE
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_NO_TURBO_CACHE"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Prevent Turborepo from caching the Next.js .next/cache folder to prevent an oversized cache.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_turbo_cache.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "4a1b79e20adc885fbfe84240093daf1bec52338e1c99c705ca14cc77435e66c1"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ae7b57e8998237031d02d89e4b45bb8a2cb46a7e440f6b8d08e36481b86b0957"
 ---
 
-# Page Not Found
+# NEXTJS_NO_TURBO_CACHE
 
-`/docs/conformance/rules/nextjs_no_turbo_cache` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NEXTJS_NO_TURBO_CACHE](/docs/conformance/rules/nextjs_no_turbo_cache.md): Conformance is available on Enterprise plans This rule prevents the .next/cache folder from being added to the Turborepo cache. This is important
-- [Conformance Rules](/docs/conformance/rules.md): reInteractive strategy in Script (next/script) elements as this can cause performance issues. NEXTJS\_NO\_CLIENT\_DEPS\_IN\_MIDDLEWARE Prevent usage
-- [NEXTJS_NO_BEFORE_INTERACTIVE](/docs/conformance/rules/nextjs_no_before_interactive.md): Conformance is available on Enterprise plans The default loading strategy for next/script is optimised for fast page loads. Setting the strategy to
-- [Conformance changelog](/docs/conformance/changelog.md): Conformance is available on Enterprise plans Upgrade instructions Terminal pnpm update latest recursive @vercelprivate/conformance Releases 1.12.3
+This rule prevents the `.next/cache` folder from being added to the Turborepo cache.
+This is important because including the `.next/cache` folder in the Turborepo cache can cause
+the cache to grow to an excessive size. Vercel also already includes this cache in the build
+container cache.
 
-All pages: [/llms.txt](/llms.txt)
+## Examples
+
+The following `turbo.json` config will be caught by this rule for Next.js apps:
+
+```json filename="turbo.json" {5}
+{
+  "extends": ["//"],
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**"]
+    }
+  }
+}
+```
+
+## How to fix
+
+To fix, add `"!.next/cache/**"` to the list of outputs for the task.
+
+```json filename="turbo.json" {5}
+{
+  "extends": ["//"],
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"]
+    }
+  }
+}
+```
+
+
+---
+
+[View full sitemap](/docs/sitemap)

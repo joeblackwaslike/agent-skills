@@ -1,16 +1,78 @@
 ---
+title: NEXTJS_NO_CLIENT_DEPS_IN_MIDDLEWARE
+product: vercel
+url: /docs/conformance/rules/NEXTJS_NO_CLIENT_DEPS_IN_MIDDLEWARE
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_NO_CLIENT_DEPS_IN_MIDDLEWARE"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Disallows dependency on client libraries inside of middleware to improve performance of middleware.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_client_deps_in_middleware.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "c0d2849344f4e7a1ab0da9f7df78d1205b957ac32ccdaf9045c2e1ba395ca138"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "10ae060c486b3973456a0aee1913845a3a76fd837f6b45c11e18b58d8b27e976"
 ---
 
-# Page Not Found
+# NEXTJS_NO_CLIENT_DEPS_IN_MIDDLEWARE
 
-`/docs/conformance/rules/nextjs_no_client_deps_in_middleware` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NEXTJS_NO_CLIENT_DEPS_IN_MIDDLEWARE](/docs/conformance/rules/nextjs_no_client_deps_in_middleware.md): Conformance is available on Enterprise plans This check disallows dependencies on client libraries, such as react and next/router in Next.js
-- [Conformance Rules](/docs/conformance/rules.md): reInteractive strategy in Script (next/script) elements as this can cause performance issues. NEXTJS\_NO\_CLIENT\_DEPS\_IN\_MIDDLEWARE Prevent usage
-- [Conformance changelog](/docs/conformance/changelog.md): Conformance is available on Enterprise plans Upgrade instructions Terminal pnpm update latest recursive @vercelprivate/conformance Releases 1.12.3
-- [NO_FETCH_FROM_MIDDLEWARE](/docs/conformance/rules/no_fetch_from_middleware.md): Conformance is available on Enterprise plans Next.js middleware runs code at the Edge. This means that the code is globally distributed. When
+This check disallows dependencies on client libraries, such as `react` and
+`next/router` in Next.js middleware. Since middleware runs on the server and
+runs on every request, this code is not able to run any client side code and it
+should have a small bundle size to improve loading and execution times.
 
-All pages: [/llms.txt](/llms.txt)
+## Example
+
+An example of when this check could manifest is when middleware transitively
+depends on a file that also uses `react` within the same file.
+
+For example:
+
+```ts filename="experiments.ts"
+import { createContext, type Context } from 'react';
+
+export function createExperimentContext(): Context<ExperimentContext> {
+  return createContext<ExperimentContext>({
+    experiments: () => {
+      return EXPERIMENT_DEFAULTS;
+    },
+  });
+}
+
+export async function getExperiments() {
+  return activeExperiments;
+}
+```
+
+```ts filename="middleware.ts"
+export async function middleware(
+  request: NextRequest,
+  event: NextFetchEvent,
+): Promise<Response> {
+  const experiments = await getExperiments();
+
+  if (experiments.includes('new-marketing-page)) {
+    return NextResponse.rewrite(MARKETING_PAGE_URL);
+  }
+  return NextResponse.next();
+}
+```
+
+In this example, the `experiments.ts` file both fetches the active experiments
+as well as provides helper functions to use experiments on the client in React.
+
+## How to fix
+
+Client dependencies used or transitively depended on by middleware files should
+be refactored to avoid depending on the client libraries. In the example above,
+the code that is used by middleware to fetch experiments should be moved to a
+separate file from the code that provides the React functionality.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

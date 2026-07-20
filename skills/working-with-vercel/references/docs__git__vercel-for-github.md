@@ -16,8 +16,8 @@ related:
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "21a1f8caef243b53e6f7b436927a14d2c514a930a674693869f588f67b15d2c3"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "70931d5fe5445b34f788d34fcd46c7390e133f47bee4816b2e37a2d8a9efcd90"
 ---
 
 # Deploying GitHub Projects with Vercel
@@ -213,6 +213,16 @@ When Secure Backend Access with OpenID Connect (OIDC) Federation is enabled in P
 
 ```bash
 VERCEL_OIDC_TOKEN=secret
+```
+
+### `VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VERCEL_HASH_SALT=1783933175
 ```
 
 ### `VERCEL_GIT_PROVIDER`
@@ -426,7 +436,7 @@ You can disable `deployment_status` events by:
 - [Going to the Git settings for your project](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fgit\&title=Project+Git+settings)
 - Disabling the `deployment_status` Events toggle
 
-> **⚠️ Warning:** Before doing this, ensure that you aren't depending on `deployment_status`
+> **💡 Note:** Before doing this, ensure that you aren't depending on `deployment_status`
 > events in your GitHub Actions workflows. If you are, we encourage [migrating
 > to `repository_dispatch` events](#migrating-from-deployment_status).
 

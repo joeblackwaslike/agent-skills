@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "004f61f2b00f763922fc4faee33994a2de0ece4f0d5fa391e70b34288fed7533"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "2731a968f524c83043d4517a236747288152ce97acf86cc42ec2e83682c97e2c"
 ---
 
 # Billing FAQ for Pro Plan
@@ -60,7 +60,7 @@ When an account goes overdue, some account features are restricted until you mak
 - You can't add new team members
 - You can't redeploy existing projects
 
-> **⚠️ Warning:** For subscription renewals, payment must be successfully made within 14 days,
+> **💡 Note:** For subscription renewals, payment must be successfully made within 14 days,
 > else all deployments on your account will be paused. For new subscriptions,
 > the initial payment must be successfully made within 24 hours.
 

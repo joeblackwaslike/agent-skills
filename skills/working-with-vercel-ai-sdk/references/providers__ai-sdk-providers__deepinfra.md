@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "3c2f4c38359d51bebdde07e534acdc2460112e86e7c7bc3084eb9182b4a5f3ea"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "43672f8514b4a3b36605e0721b852b93fe22184f9701c69dfd4e5c977290abb5"
 ---
 
 # DeepInfra Provider
@@ -365,6 +365,7 @@ const { embedding } = await embed({
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

@@ -17,13 +17,13 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1ea8cf98d6175473f73615c2fe71440da04d7802c69e77183e2ccf545fc91735"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "433504a5064bdcda51363500c3bb4a5109444da5db197f2a2d0df7c8ef96574d"
 ---
 
 # Edge Runtime
 
-> **⚠️ Warning:** We recommend migrating from edge to Node.js for improved performance and
+> **💡 Note:** We recommend migrating from edge to Node.js for improved performance and
 > reliability. Both runtimes run on [Fluid compute](/docs/fluid-compute) with
 > [Active CPU pricing](/docs/functions/usage-and-pricing).
 

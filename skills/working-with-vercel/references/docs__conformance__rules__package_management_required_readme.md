@@ -1,15 +1,37 @@
 ---
+title: PACKAGE_MANAGEMENT_REQUIRED_README
+product: vercel
+url: /docs/conformance/rules/PACKAGE_MANAGEMENT_REQUIRED_README
+canonical_url: "https://vercel.com/docs/conformance/rules/PACKAGE_MANAGEMENT_REQUIRED_README"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Every workspace is required to have a README.md file in the root of the workspace.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_management_required_readme.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "19755b0f53a4255ed3a3c785f81063c1b73c1e98926bdbd605e2f8d9181e5b28"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "29925879afb6e64a9e1fcc7b296def6f75aeb2281fa70edc55fa84d57151d288"
 ---
 
-# Page Not Found
+# PACKAGE_MANAGEMENT_REQUIRED_README
 
-`/docs/conformance/rules/package_management_required_readme` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [PACKAGE_MANAGEMENT_REQUIRED_README](/docs/conformance/rules/package_management_required_readme.md): Conformance is available on Enterprise plans A README.md file helps orient readers to the purpose of a workspace and instructions how to use it,
-- [Conformance Rules](/docs/conformance/rules.md): PACKAGE\_MANAGEMENT\_NO\_CIRCULAR\_IMPORTS Import statements that can not be resolved to a local file or a package from package.json dependencies are
-- [PACKAGE_MANAGEMENT_NO_UNRESOLVED_IMPORTS](/docs/conformance/rules/package_management_no_unresolved_imports.md): Conformance is available on Enterprise plans All imports must be able to be resolved to a file local to the workspace or a package declared as a
+A `README.md` file helps orient readers to the purpose of a workspace and
+instructions how to use it, which makes it straightforward for people browsing the code
+to understand its purpose, whether they should use it, and how to make changes
+to the code.
 
-All pages: [/llms.txt](/llms.txt)
+## How to fix
+
+Add a `README.md` file in the workspace directory. This file can contain a
+description of the package, and any instructions for developers or users to
+build or use the package.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

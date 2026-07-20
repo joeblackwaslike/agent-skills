@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/legal-and-compliance.md"
-fetched_at: "2026-07-06T05:32:38.128Z"
-sha256: "ed47ef940b51160be30b89d27f5217b896f9ef93d6f780c6770d22cd1759e2fd"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "69c673bb776250e503d4e8e65020c3b6e180a1d70aa78294ff4aad4fe9bd28eb"
 ---
 
 > ## Documentation Index
@@ -41,7 +41,7 @@ Claude Code usage is subject to the [Anthropic Usage Policy](https://www.anthrop
 
 Claude Code authenticates with Anthropic's servers using OAuth tokens or API keys. These authentication methods serve different purposes:
 
-* **OAuth authentication** is intended exclusively for purchasers of Claude Free, Pro, Max, Team, and Enterprise subscription plans and is designed to support ordinary use of Claude Code and other native Anthropic applications. More information about how users can authenticate with OAuth tokens can be found in [Logging in to your Claude account](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account).
+* **OAuth authentication** is intended exclusively for purchasers of Claude Free, Pro, Max, Team, and Enterprise subscription plans and is designed to support ordinary use of Claude Code and other native Anthropic applications. For the sign-in steps, see [Logging in to your Claude account](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account); for how Claude Code performs OAuth authentication, see [Authentication](/en/authentication).
 * **Developers** building products or services that interact with Claude's capabilities, including those using the [Agent SDK](/en/agent-sdk/overview), should use API key authentication through [Claude Console](https://platform.claude.com/) or a supported cloud provider. Anthropic does not permit third-party developers to offer Claude.ai login or to route requests through Free, Pro, or Max plan credentials on behalf of their users.
 
 Anthropic reserves the right to take measures to enforce these restrictions and may do so without prior notice.

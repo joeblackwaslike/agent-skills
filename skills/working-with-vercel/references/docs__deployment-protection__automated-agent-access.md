@@ -16,8 +16,8 @@ related:
 summary: Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Protection enabled.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/automated-agent-access.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8d878755c7a6878a304442d9a3b673733bd5f7c2c93a0e9e2a70b1b39311f767"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c9cae635235d5d6f9b2bafab43962bb9897098c85b497e11ae69681f5f0e70d0"
 ---
 
 # Automated & Agent Access
@@ -75,7 +75,7 @@ Deployment Protection Exceptions make an entire preview domain publicly accessib
   https://your-deployment.vercel.app/api/webhook?x-vercel-protection-bypass=your_bypass_secret_here
   ```
   Use the query parameter approach for services like Slack, Stripe, or GitHub that send webhook requests to your endpoints but don't support custom headers.
-  > **⚠️ Warning:** When using the query parameter method, the secret appears in the URL. URLs are
+  > **💡 Note:** When using the query parameter method, the secret appears in the URL. URLs are
   > often logged by proxies, CDNs, and server access logs. Prefer the header
   > method when your tool supports custom headers.
 
@@ -93,7 +93,7 @@ For full details on how the bypass works, what it skips, and what it can't overr
 
 If your automated system needs to access a specific preview domain without any authentication, you can add that domain to Deployment Protection Exceptions. The domain becomes publicly accessible, bypassing all Deployment Protection methods.
 
-> **⚠️ Warning:** Deployment Protection Exceptions make the specified domain accessible to
+> **💡 Note:** Deployment Protection Exceptions make the specified domain accessible to
 > anyone, not only your automated systems. Use this option only when public
 > access to that preview domain is acceptable.
 
@@ -242,7 +242,7 @@ Third-party services like Slack, Stripe, and GitHub send webhook requests to you
 https://your-app.vercel.app/api/webhooks/stripe?x-vercel-protection-bypass=your_bypass_secret_here
 ```
 
-> **⚠️ Warning:** The bypass secret is visible in the URL when using the query parameter method.
+> **💡 Note:** The bypass secret is visible in the URL when using the query parameter method.
 > If this is a concern, consider using [Deployment Protection
 > Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions)
 > for the specific domain instead, or host the webhook endpoint on a production

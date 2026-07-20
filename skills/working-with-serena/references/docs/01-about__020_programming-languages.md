@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-06-29T05:45:05.522Z"
-sha256: "0258d98b0101b0fae825a008359e65637964a3940db3c1808e59c8bbda8150c5"
+fetched_at: "2026-07-20T06:52:31.491Z"
+sha256: "a165f92b05d04bbdc8f66533e87e3ceb12c93cdfe6deea1600079fb38482a067"
 ---
 
 # Language Support
@@ -136,6 +136,8 @@ Some languages require additional installations or setup steps, as noted.
   [pyrefly](https://github.com/facebook/pyrefly) (language `python_pyrefly`),
   [Jedi](https://github.com/palotas/jedi-language-server) (language `python_jedi`);
   ty and pyrefly require `uv`/`uvx` in PATH)
+* **QML**
+  (requires Qt 6, provides `qmlls` or `qmlls6` on PATH; see the [Qt qmlls documentation](https://doc.qt.io/qt-6/qtqml-tool-qmlls.html))
 * **R**  
   (requires installation of the `languageserver` R package)
 * **Ruby**  

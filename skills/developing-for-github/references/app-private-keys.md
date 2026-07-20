@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/authenticating-with-a-github-app/managing-private-keys-for-github-apps.md"
-fetched_at: "2026-06-15T17:31:37.352Z"
-sha256: "59c3db52ba2aa564c83650292ba12daa3ce9d333a56bdbdf80db96b201e73e76"
+fetched_at: "2026-07-20T06:45:20.604Z"
+sha256: "bc31742eba8663d30b4733e3003bffe8254c2cddc37ff32a447e5146770af750"
 ---
 
 ## About private keys for {% data variables.product.prodname_github_apps %}
@@ -65,4 +65,4 @@ Alternatively, you can store the key as an environment variable. This is not as 
 
 You should not hard-code your private key in your app, even if your code is stored in a private repository.
 
-For more information, see [AUTOTITLE](/apps/creating-github-apps/setting-up-a-github-app/best-practices-for-creating-a-github-app).
+For more information, see [AUTOTITLE](/apps/creating-github-apps/about-creating-github-apps/best-practices-for-creating-a-github-app).

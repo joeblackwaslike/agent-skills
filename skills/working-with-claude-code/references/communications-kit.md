@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/communications-kit.md"
-fetched_at: "2026-07-13T06:53:38.588Z"
-sha256: "2893d5a6cf46be31e70e29957835fc91e3f6d2af21c3074ef9ffd829cacb0551"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "5b916679049ada750674617ad366ea7a4fdb7364129996a60fd1f3d88bf32c7a"
 ---
 
 > ## Documentation Index
@@ -411,7 +411,7 @@ and it's pointing at line 47-ish"? Screenshot it.
 
 Drag a screenshot straight into the terminal and Claude sees it: error
 dialogs, UI mockups, whiteboard photos, Figma exports. *Ctrl+V* pastes from
-clipboard (use Ctrl+V on macOS too, not Cmd+V).
+clipboard (Ctrl+V works on macOS too, and Cmd+V works in iTerm2).
 
 *Try it now:* next time something visual breaks, screenshot it and paste it
 right into the prompt. Then just type "what's wrong here?"

@@ -14,8 +14,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "de546f7d0c7f64e5329bcba4cc6da6407c45fb49b831f41e61eb51e3c97a071d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "3e80d60044e805ba89d50625243b32316a7953dcfba9591c35912717f7837793"
 ---
 
 # Using the Activity Log
@@ -131,6 +131,7 @@ The table below shows a list of events logged on the Activity page.
 | cert-renew | Replaced | An SSL certificate was renewed. (Replaced by cert-autorenew) |
 | cert-replace | Deprecated | An SSL certificate connected to a custom domain was successfully replaced by a new one, such as by uploading a new certificate in the dashboard. |
 | cert-system-create | Active | A system SSL certificate was created. |
+| compliance-document-downloaded | Active | A compliance document was downloaded. |
 | concurrent-builds-update | Active | The concurrent builds limit was updated. |
 | connect-attach-project | Active | A Connector was attached to a project |
 | connect-bitbucket | Active | A BitBucket account was connected to a personal. |
@@ -158,6 +159,7 @@ The table below shows a list of events logged on the Activity page.
 | custom-alert-created | Active | A custom alert was created. |
 | custom-alert-deleted | Active | A custom alert was deleted. |
 | custom-alert-updated | Active | A custom alert was updated. |
+| custom-environments-settings-updated | Active | The purchased custom environment pack quantity was updated for a project. |
 | custom-suffix-clear | Active | A custom deployment suffix was cleared. |
 | custom-suffix-disable | Replaced | A custom suffix for a project was disabled. (Replaced by preview-deployment-suffix-disabled) |
 | custom-suffix-enable | Replaced | A custom suffix for a project was enabled. (Replaced by preview-deployment-suffix-enabled) |
@@ -266,6 +268,13 @@ The table below shows a list of events logged on the Activity page.
 | integration-installation-removed | Active | An integration was removed from a project or personal account or team. |
 | integration-resource-sql-query-executed | Active | A SQL query was executed against a marketplace database resource. |
 | integration-scope-changed | Active | The scopes for an integration were changed. |
+| kms-issuer-created | Active | A KMS signing issuer was created. |
+| kms-issuer-deleted | Active | A KMS signing issuer was deleted. |
+| kms-issuer-key-rotated | Active | The signing key for a KMS issuer was rotated. |
+| kms-issuer-policy-created | Active | A policy was added to a KMS issuer. |
+| kms-issuer-policy-deleted | Active | A policy was removed from a KMS issuer. |
+| kms-issuer-policy-updated | Active | A policy on a KMS issuer was updated. |
+| kms-issuer-updated | Active | A KMS signing issuer was updated. |
 | log-drain-created | Replaced | A log drain was created. (Replaced by drain-created) |
 | log-drain-deleted | Replaced | A log drain was deleted. (Replaced by drain-deleted) |
 | log-drain-disabled | Replaced | A log drain was disabled. (Replaced by drain-updated) |
@@ -480,12 +489,14 @@ The table below shows a list of events logged on the Activity page.
 | strict-shareable-links | Active | Strict shareable links settings were updated. |
 | subscription-product-added | Active | A self-serve product was added to a subscription. |
 | subscription-product-removed | Active | A self-serve product was removed from a subscription. |
-| team | Active | A team was created in a personal account. |
+| team | Active | A team was created. |
 | team-avatar-update | Active | The avatar of a specific team was updated. |
 | team-default-build-machine-updated | Active | The default build machine for a team was updated. |
 | team-default-passport-updated | Active | The default Passport configuration was updated for a team. |
 | team-delete | Active | A specific team was deleted. |
 | team-deployment-policy-updated | Active | Team deployment policy was updated. |
+| team-domain-verification-created | Active | A domain was added to a managed team. |
+| team-domain-verification-verified | Active | A domain was verified for a managed team. |
 | team-email-domain-update | Active | The team email domain was updated. |
 | team-ended-trial | Active | A team trial ended. |
 | team-firewall-config-modified | Active | A team-scoped firewall configuration was modified. |
@@ -539,6 +550,8 @@ The table below shows a list of events logged on the Activity page.
 | vcr-image-pushed | Active | A container image was pushed to a registry repository. |
 | vcr-repository-created | Active | A container registry repository was created for a project. |
 | vcr-repository-deleted | Active | A container registry repository was deleted from a project. |
+| vcr-repository-permission-added | Active | A team was granted access to a container registry repository. |
+| vcr-repository-permission-removed | Active | A team's access to a container registry repository was revoked. |
 | vercel-agent-elevated-permissions-approved | Active | A Vercel Agent elevated access request was approved. |
 | vercel-agent-elevated-permissions-requested | Active | A Vercel Agent plan requested elevated access. |
 | vercel-agent-session-created | Active | A Vercel Agent session was created. |
@@ -553,7 +566,6 @@ The table below shows a list of events logged on the Activity page.
 | webhook-created | Active | A webhook was created. |
 | webhook-deleted | Active | A webhook was deleted. |
 | webhook-updated | Active | A webhook was updated. |
-| workflow-deployment-key-accessed | Active | A workflow deployment key was accessed. |
 
 
 ---

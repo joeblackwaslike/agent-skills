@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "a7af6049c9fbb7530164e5f6129bfa11b04cdf6a086a7bf7ab67e818bf5d72eb"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "4bb52278ab3d93b100b3fc36bc69164ab94c7768e95a2e699ed52d1dc9213617"
 ---
 
 # Migrate AI SDK 6.x to 7.0
@@ -1903,7 +1903,7 @@ const model = xai('grok-4.3');
 const chatModel = xai.chat('grok-4.3');
 ```
 
-# Migration Skill
+## Migration Skill
 
 Use the command below to add the migration skill and guide your agent
 

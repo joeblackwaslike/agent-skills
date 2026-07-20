@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/tools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9c222c6193410e1014947ef57c36999d6efa8c901fd71efe504b166457a3c390"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "a14795763a6d8bd5e05a83a191d451f18d78bc49c4c404685270b192b4c26fc9"
 ---
 
 # Tools
@@ -38,7 +38,7 @@ Tools with an `execute` function are run automatically when these calls are gene
 The output of the tool calls are returned using tool result objects.
 
 You can automatically pass tool results back to the LLM
-using [multi-step calls](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls) with `streamText` and `generateText`.
+using [multi-step calls](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls-using-stopwhen) with `streamText` and `generateText`.
 
 ## Types of Tools
 

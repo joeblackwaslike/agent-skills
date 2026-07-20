@@ -8,21 +8,27 @@ type: conceptual
 prerequisites:
   - /docs/ai-gateway
 related:
+  - /docs/cli/ai-gateway
   - /docs/ai-gateway/coding-agents/claude-code
   - /docs/ai-gateway/coding-agents/openai-codex
   - /docs/ai-gateway/coding-agents/opencode
   - /docs/ai-gateway/coding-agents/blackbox
-  - /docs/ai-gateway/coding-agents/cline
 summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c679a10ae08c1948e6354b17c6a34983acedfff349e0c31c4f1c825fbb6db961"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "25fe48837f9322de62d8d65aafad1a450c38d2d6bf0fba31f402fd772a0a466a"
 ---
 
 # Coding Agents
 
 AI coding agents are transforming how developers write, debug, and refactor code. Route these agents through AI Gateway to get a single dashboard for spend tracking, access to any model, and automatic fallbacks, all while using the familiar interfaces of your favorite tools.
+
+> **💡 Note:** You can connect [supported coding agents](/docs/cli/ai-gateway#supported-coding-agents)
+> without editing any config files: the
+> [`vercel ai-gateway coding-agents setup`](/docs/cli/ai-gateway#setup) CLI
+> command detects the agents on your machine, provisions an API key, and
+> writes their configuration for you.
 
 ## Why route coding agents here?
 

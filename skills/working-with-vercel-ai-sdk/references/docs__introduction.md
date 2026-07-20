@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/introduction.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "e0863af8d1f19f25e1f92635a66f5324ff2f9314559cd5af9eabf2a8c0f6fc5a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "741086b0df840b03ca136b15159d4b40e36d85f61dcbd6c33ad92ba5ad83f2e5"
 ---
 
 # AI SDK
@@ -191,6 +191,7 @@ Based on the above documentation, answer the following:
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

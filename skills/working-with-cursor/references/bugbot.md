@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/bugbot.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "e9ce5ad1055226d83081cc39aad8ddb31715b07844960c8f8763ff0c48de9ae5"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "a5acc69831c30da4a4acac933677b2347d07645eb045535a7337a9cb9fcb17fa"
 ---
 
 # Bugbot
@@ -89,11 +89,17 @@ Queue a Bugbot review for a pull request or merge request. The request returns w
 
 Requires an API key with `admin:*` scope. The endpoint is limited to 30 requests per minute per team.
 
+Set `dryRun` to `true` to run the full analysis pipeline without posting review comments, inline comments, checks, or other SCM side effects. Dry-run reviews still persist findings and are billed like normal reviews. Retrieve them with `GET /analytics/team/bugbot-reviews`. Dry-run requests have an additional limit of 10 requests per minute per team.
+
 #### Request Body
 
 `prUrl` string (required)
 
 Full GitHub pull request or GitLab merge request URL.
+
+`dryRun` boolean (optional)
+
+When `true`, run analysis and persist findings without posting anything to the SCM provider. Default: `false`.
 
 ```bash
 curl --request POST \
@@ -105,15 +111,29 @@ curl --request POST \
   }'
 ```
 
+```bash
+curl --request POST \
+  --url https://api.cursor.com/bugbot/review \
+  -u YOUR_API_KEY: \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "prUrl": "https://github.com/your-org/your-repo/pull/42",
+    "dryRun": true
+  }'
+```
+
 **Response:**
 
 ```json
 {
   "outcome": "success",
   "message": "Bugbot review queued",
-  "request_id": "6e0d261c-86a2-4383-89f0-9162c1c10662"
+  "request_id": "6e0d261c-86a2-4383-89f0-9162c1c10662",
+  "dry_run": false
 }
 ```
+
+A dry-run response uses `"message": "Bugbot dry-run review queued"` and `"dry_run": true`.
 
 Save `request_id` so you can match the completed review in the analytics endpoint.
 
@@ -131,6 +151,8 @@ If Bugbot cannot review the pull request, the endpoint returns `400 Bad Request`
 /analytics/team/bugbot-reviews
 
 Return one item per completed Bugbot review, including the reviewed commit, findings count, billed cost, and per-finding resolution data.
+
+Includes both posted reviews and dry-run reviews. Posted findings are identified by `comment_id` and `resolution_status`. Dry-run findings return `title`, `description`, and `locations` instead because nothing is posted to the SCM.
 
 Requires an API key with `read:*` scope.
 
@@ -160,6 +182,10 @@ Page number for pagination. Default: `1`.
 
 Number of reviews per page. Default: `100`, max: `250`.
 
+`dryRun` boolean (optional)
+
+Filter to dry-run (`true`) or posted (`false`) reviews only.
+
 ```bash
 curl --get https://api.cursor.com/analytics/team/bugbot-reviews \
   -u YOUR_API_KEY: \
@@ -171,7 +197,15 @@ curl --get https://api.cursor.com/analytics/team/bugbot-reviews \
   --data-urlencode 'pageSize=100'
 ```
 
-**Response:**
+```bash
+curl --get https://api.cursor.com/analytics/team/bugbot-reviews \
+  -u YOUR_API_KEY: \
+  --data-urlencode 'dryRun=true' \
+  --data-urlencode 'repo=github.com/your-org/your-repo' \
+  --data-urlencode 'prNumber=42'
+```
+
+**Response (posted review):**
 
 ```json
 {
@@ -185,6 +219,8 @@ curl --get https://api.cursor.com/analytics/team/bugbot-reviews \
       "commit_sha": "9f3c2a1b7d8e4f5061728394a5b6c7d8e9f0a1b2",
       "bugs_found": 2,
       "cost_cents": 42.5,
+      "dry_run": false,
+      "publication_status": "posted",
       "bugs": [
         {
           "comment_id": "2147483999",
@@ -220,13 +256,65 @@ curl --get https://api.cursor.com/analytics/team/bugbot-reviews \
 }
 ```
 
-`repo_node_id`, `pr_number`, `commit_sha`, `cost_cents`, `bugs[].comment_id`, `bugs[].resolution_status`, and `bugs[].severity` may be `null` when unavailable. `cost_cents` is `null` when the review is not billed separately.
+**Response (dry-run review):**
+
+```json
+{
+  "data": [
+    {
+      "request_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "timestamp": "2026-06-29T20:15:03.000Z",
+      "repo": "github.com/your-org/your-repo",
+      "repo_node_id": "R_kgDOABCDEF",
+      "pr_number": 42,
+      "commit_sha": "9f3c2a1b7d8e4f5061728394a5b6c7d8e9f0a1b2",
+      "bugs_found": 1,
+      "cost_cents": null,
+      "dry_run": true,
+      "publication_status": "dry_run",
+      "bugs": [
+        {
+          "comment_id": null,
+          "resolution_status": null,
+          "severity": "medium",
+          "title": "Unbounded retry loop",
+          "description": "retry() recurses without a ceiling.",
+          "locations": [
+            { "file": "src/net.ts", "start_line": 5, "end_line": 9 }
+          ]
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "pageSize": 100,
+    "totalItems": 1,
+    "totalPages": 1,
+    "hasNextPage": false,
+    "hasPreviousPage": false
+  },
+  "params": {
+    "metric": "bugbot-reviews",
+    "teamId": 12345,
+    "startDate": "2026-06-01",
+    "endDate": "2026-06-29",
+    "repo": "github.com/your-org/your-repo",
+    "prNumber": 42,
+    "dryRun": true,
+    "page": 1,
+    "pageSize": 100
+  }
+}
+```
+
+`repo_node_id`, `pr_number`, `commit_sha`, `cost_cents`, `bugs[].comment_id`, `bugs[].resolution_status`, and `bugs[].severity` may be `null` when unavailable. `cost_cents` is `null` when the review is not billed separately. For dry-run reviews, `bugs[].title`, `bugs[].description`, and `bugs[].locations` carry the finding content. Dry-run findings have `comment_id: null` and `resolution_status: null` because nothing is posted to the SCM.
 
 ### Trigger and retrieve a review
 
-1. Call `POST /bugbot/review` with the pull request URL.
+1. Call `POST /bugbot/review` with the pull request URL. Pass `"dryRun": true` to analyze without posting to the SCM.
 2. Save the returned `request_id`.
-3. Poll `GET /analytics/team/bugbot-reviews`, filtering by `repo` and `prNumber`.
+3. Poll `GET /analytics/team/bugbot-reviews`, filtering by `repo` and `prNumber`. Use `dryRun=true` when you triggered a dry-run review.
 4. Find the item whose `request_id` matches the trigger response.
 
 Analytics may take a short time to become available after a review is queued.

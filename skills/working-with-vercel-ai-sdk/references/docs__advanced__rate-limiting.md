@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/rate-limiting.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "b04c36a30b406885828ce1af97c3ab857e02820514caeef25af5855579d88c9e"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "22ffb5b275defc879263a668758135b2dc9c23474d646daf3a162a31a080e206"
 ---
 
 # Rate Limiting
@@ -80,6 +80,7 @@ how it can be configured to your needs, see [Ratelimit Documentation](https://up
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

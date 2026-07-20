@@ -16,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "dec9f6a9b1cde7ec89dee4a4a2233f5e4bdaf50bae7eff0d503e7237575657ab"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c34063176cf2d90e078fd0ddb46d2210a98163b400ebbd66b82370fd96f077a7"
 ---
 
 # Working with Sandbox
@@ -119,7 +119,7 @@ View your sandboxes in the [Sandboxes dashboard](https://vercel.com/d?to=%2F%5Bt
 Track compute usage across projects in the [Usage dashboard](https://vercel.com/d?to=%2Fdashboard%2F%5Bteam%5D%2Fusage\&title=Show+Usage+Page), which measures:
 
 - **Sandbox Provisioned Memory**: Memory allocated to your sandboxes
-- **Sandbox Data Transfer**: Data transferred in and out
+- **Sandbox Data Transfer**: Data your sandboxes send to the internet, plus all traffic to and from exposed ports, is billable. Data your sandboxes download from the internet is free
 - **Sandbox Active CPU**: CPU time consumed
 - **Sandbox Creations**: Number of sandboxes created
 - **Snapshot Storage**: Sandbox snapshot storage

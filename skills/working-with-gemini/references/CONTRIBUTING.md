@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/CONTRIBUTING.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "2ef930c36793e73056cded82740adcaddb725b1952e998b5d426478f6283bb52"
+fetched_at: "2026-07-20T06:49:41.276Z"
+sha256: "b9cd98e07df3d36ba7267e5a5edeae1166d85e78b41ff1d960648f5d3bed60c0"
 ---
 
 # How to contribute
@@ -427,9 +427,9 @@ To debug the CLI's React-based UI, you can use React DevTools.
 
 On macOS, `gemini` uses Seatbelt (`sandbox-exec`) under a `permissive-open`
 profile (see `packages/cli/src/utils/sandbox-macos-permissive-open.sb`) that
-restricts writes to the project folder but otherwise allows all other operations
-and outbound network traffic ("open") by default. You can switch to a
-`strict-open` profile (see
+denies operations by default, confining writes to the project folder while
+allowing broad file reads and outbound network traffic ("open") by default. You
+can switch to a `strict-open` profile (see
 `packages/cli/src/utils/sandbox-macos-strict-open.sb`) that restricts both reads
 and writes to the working directory while allowing outbound network traffic by
 setting `SEATBELT_PROFILE=strict-open` in your environment or `.env` file.

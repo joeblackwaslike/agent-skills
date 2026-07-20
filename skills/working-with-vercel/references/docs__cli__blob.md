@@ -3,7 +3,7 @@ title: vercel blob
 product: vercel
 url: /docs/cli/blob
 canonical_url: "https://vercel.com/docs/cli/blob"
-last_updated: 2026-04-13
+last_updated: 2026-07-10
 type: reference
 prerequisites:
   - /docs/cli
@@ -15,8 +15,8 @@ related:
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "42d70bd110893c8bb90b4899e592b02d6274cbd988186589d022be211c7f3317"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "e877c02e4d88895defeefa7db2717faa47a8554a28307c20aeb3140dd8f582e4"
 ---
 
 # vercel blob
@@ -62,6 +62,8 @@ the Blob store.*
 
 ### del
 
+> **💡 Note:** This action is permanent and cannot be undone.
+
 ```bash filename="terminal"
 vercel blob del [url-or-pathname]
 ```
@@ -104,6 +106,8 @@ to connect (repeatable).*
 
 ### delete-store
 
+> **💡 Note:** This action is permanent and cannot be undone.
+
 ```bash filename="terminal"
 vercel blob delete-store [store-id] [--yes]
 ```
@@ -134,6 +138,8 @@ stores regardless of project. In a terminal, an interactive selector lets you
 browse store details.*
 
 ### empty-store
+
+> **💡 Note:** This action is permanent and cannot be undone.
 
 ```bash filename="terminal"
 vercel blob empty-store [store-id] [--yes]

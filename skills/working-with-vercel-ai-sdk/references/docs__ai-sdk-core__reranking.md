@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reranking.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d87565a8e0fbe6fc465163dd4a2681b8fc7421548133b8c06593059cfde66e19"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "8df9594a48b37e452a99dadef99f9f399433f3fa02b70389829db6b7f17c9571"
 ---
 
 # Reranking
@@ -102,7 +102,7 @@ Each item in the `ranking` array contains:
 
 Use `topN` to limit the number of results returned. This is useful for retrieving only the most relevant documents:
 
-```ts highlight={"7"}
+```ts highlight={"8"}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -140,7 +140,7 @@ The `rerank` function accepts an optional `maxRetries` parameter of type `number
 that you can use to set the maximum number of retries for the reranking process.
 It defaults to `2` retries (3 attempts in total). You can set it to `0` to disable retries.
 
-```ts highlight={"7"}
+```ts highlight={"8"}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -158,7 +158,7 @@ The `rerank` function accepts an optional `abortSignal` parameter of
 type [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 that you can use to abort the reranking process or set a timeout.
 
-```ts highlight={"7"}
+```ts highlight={"8"}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -175,7 +175,7 @@ const { ranking } = await rerank({
 The `rerank` function accepts an optional `headers` parameter of type `Record<string, string>`
 that you can use to add custom headers to the reranking request.
 
-```ts highlight={"7"}
+```ts highlight={"8"}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 

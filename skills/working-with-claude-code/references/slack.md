@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/slack.md"
-fetched_at: "2026-06-29T05:40:33.754Z"
-sha256: "89423c1dce0090ba53e9e48d7aea6ece120a9fec171c568222586cc5ec0b074d"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "8c8449a9d4c2e517ce49a1eac3cead877f3a2cbed7f821128152e960fd09ab64"
 ---
 
 > ## Documentation Index
@@ -13,7 +13,7 @@ sha256: "89423c1dce0090ba53e9e48d7aea6ece120a9fec171c568222586cc5ec0b074d"
 > Delegate coding tasks directly from your Slack workspace
 
 <Note>
-  Claude Code in Slack is being replaced by [Claude Tag](https://claude.com/docs/claude-tag/overview) for Team and Enterprise workspaces. Claude Tag runs @Claude as your organization's shared identity with admin-configured access, under the same Slack app, so there is nothing to reinstall and existing setups continue to work during the transition. To switch a workspace, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier).
+  Claude Code in Slack is being replaced by [Claude Tag](https://claude.com/product/tag) for Team and Enterprise workspaces. Claude Tag runs @Claude as your organization's shared identity with admin-configured access, under the same Slack app, so there is nothing to reinstall and existing setups continue to work during the transition. To switch a workspace, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier).
 </Note>
 
 Claude Code in Slack brings the power of Claude Code directly into your Slack workspace. When you mention `@Claude` with a coding task, Claude automatically detects the intent and creates a Claude Code session on the web, allowing you to delegate development work without leaving your team conversations.

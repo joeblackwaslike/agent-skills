@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "646ee54227eb3a1ce1072169963f80929c110d03e1248522a512281f196cb1ab"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "57998911e76a33c3f0fc2cbd194204e1d5e728fce1068f8d2201bd47d472ffee"
 ---
 
 # vercel deploy
@@ -206,7 +206,7 @@ vercel --prod
 
 ### Skip Domain
 
-> **⚠️ Warning:** This CLI option will override the [Auto-assign Custom Production
+> **💡 Note:** This CLI option will override the [Auto-assign Custom Production
 > Domains](/docs/deployments/promoting-a-deployment#staging-and-promoting-a-production-deployment)
 > project setting.
 

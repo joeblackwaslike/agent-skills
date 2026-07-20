@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "5b15aeb45e5c6d8f1d7943c7ed44cf101e105e65eb89a811d0aa815688f76e24"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ca08d5c4168c64b7405e38b284dc585e5d80d1ec7fbb4114428b19dd764b57a1"
 ---
 
 # Migration Guides
@@ -130,6 +130,7 @@ sha256: "5b15aeb45e5c6d8f1d7943c7ed44cf101e105e65eb89a811d0aa815688f76e24"
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

@@ -17,13 +17,13 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d0e94ad6e6ea6b2a57bce648f49e72a6e8860c7781c701c86131a4ab53976513"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "225f65780302cebadf7abb4835a6e20c4c3583b2f09f4f6166f298430e168a9c"
 ---
 
 # Video Generation
 
-> **⚠️ Warning:** Video generation requires **AI SDK 6 or later** and uses the `experimental_generateVideo` function. This API is experimental and subject to change in future releases.
+> **💡 Note:** Video generation requires **AI SDK 6 or later** and uses the `experimental_generateVideo` function. This API is experimental and subject to change in future releases.
 
 AI Gateway supports video generation, letting you create videos from text prompts, images, or video input. You can control resolution, duration, aspect ratio, and audio through a unified API across multiple providers.
 
@@ -48,13 +48,58 @@ For example, `klingai/kling-v2.6-t2v` is a text-to-video model, `alibaba/wan-v2.
 
 These parameters work across all video models, though support varies by provider.
 
-| Parameter       | Type                          | Description                                                                                   |
-| --------------- | ----------------------------- | --------------------------------------------------------------------------------------------- |
-| `prompt`        | `string` or `{ image, text }` | Text description of the video. For image-to-video, use object format with `image` and `text`  |
-| `duration`      | `number`                      | Video length in seconds. Supported range varies by model                                      |
-| `aspectRatio`   | `string`                      | Aspect ratio as `{width}:{height}` (e.g., `'16:9'`, `'9:16'`)                                 |
-| `resolution`    | `string`                      | Resolution as `{width}x{height}` (e.g., `'1920x1080'`, `'1280x720'`)                          |
-| `generateAudio` | `boolean`                     | Whether to generate audio alongside the video. Support varies by model                        |
+| Parameter         | Type                                     | Description                                                                                                                                        |
+| ----------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prompt`          | `string` or `{ image, text }`            | Text description of the video. For image-to-video, use object format with `image` and `text`                                                       |
+| `duration`        | `number`                                 | Video length in seconds. Supported range varies by model                                                                                           |
+| `aspectRatio`     | `string`                                 | Aspect ratio as `{width}:{height}` (e.g., `'16:9'`, `'9:16'`)                                                                                      |
+| `resolution`      | `string`                                 | Resolution as `{width}x{height}` (e.g., `'1920x1080'`, `'1280x720'`)                                                                               |
+| `generateAudio`   | `boolean`                                | Whether to generate audio alongside the video. Support varies by model                                                                             |
+| `frameImages`     | `Array<{ image, frameType }>`            | Role-tagged start and end frames for [image-to-video](/docs/ai-gateway/modalities/video-generation/image-to-video). Support varies by provider     |
+| `inputReferences` | `Array<image \| video>`                  | Reference images or videos for [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video). Support varies by provider   |
+
+## Frame and reference images
+
+`frameImages` and `inputReferences` are provider-agnostic, top-level fields for passing images and videos into video generation. Use them instead of learning each provider's own keys (like `providerOptions.klingai.imageTail` or `providerOptions.bytedance.referenceImages`). The exact behavior still varies by provider, so check the mode page for the model you use.
+
+Use `frameImages` to control the start and end of an [image-to-video](/docs/ai-gateway/modalities/video-generation/image-to-video) generation. Each entry pairs an image with a `frameType`:
+
+```typescript
+frameImages: [
+  { image: 'https://example.com/start.png', frameType: 'first_frame' },
+  { image: 'https://example.com/end.png', frameType: 'last_frame' },
+];
+```
+
+The `image` accepts the same forms as `prompt.image`: a URL, a base64-encoded string, or a `Buffer`. Pass a single `first_frame` to animate from one image, or add a `last_frame` to transition between two. Veo, KlingAI, and Seedance honor `last_frame`; Grok Imagine Video and Wan ignore it with a warning. See the [image-to-video](/docs/ai-gateway/modalities/video-generation/image-to-video) page for details.
+
+Use `inputReferences` for [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video), where reference images or videos tell the model what your characters or objects look like while the prompt describes a new scene:
+
+```typescript
+inputReferences: [
+  'https://example.com/character-1.png',
+  'https://example.com/character-2.png',
+];
+```
+
+Each entry is a URL, a base64-encoded string, or a `Buffer`. To pass a video reference by URL, use the object form with an explicit `mediaType`, since providers can't infer the type from a bare URL:
+
+```typescript
+inputReferences: [
+  { data: 'https://example.com/scene.mp4', mediaType: 'video/mp4' },
+];
+```
+
+Providers route each reference by its media type and treat untyped references as images. Wan and Seedance 2.0 accept video references; Veo, KlingAI, and Grok Imagine Video accept image references only and ignore video references with a warning.
+
+The syntax you use in the prompt to refer to each reference stays provider-specific (for example, `character1` for Wan, `<IMAGE_1>` for Grok, or `[Image 1]` and `[Video 1]` for Seedance). KlingAI and Veo have no token syntax. Describe the scene directly. See the [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video) page for details.
+
+Two precedence rules apply when fields overlap:
+
+- A `first_frame` in `frameImages` takes priority over `prompt.image`.
+- `frameImages` takes priority over `inputReferences`. If you pass both, the model ignores `inputReferences` and emits a warning.
+
+Legacy `providerOptions` keys still work when you omit `frameImages` and `inputReferences`, so existing code keeps running unchanged.
 
 ## Saving videos
 

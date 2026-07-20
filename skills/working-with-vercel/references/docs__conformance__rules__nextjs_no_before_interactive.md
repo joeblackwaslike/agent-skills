@@ -1,14 +1,59 @@
 ---
+title: NEXTJS_NO_BEFORE_INTERACTIVE
+product: vercel
+url: /docs/conformance/rules/NEXTJS_NO_BEFORE_INTERACTIVE
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_NO_BEFORE_INTERACTIVE"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Requires review of usage of the beforeInteractive strategy in Script (next/script) elements.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_before_interactive.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9b13b9cc2d9e623be618797c59c80eb0a861152c69e2002b449dd8639f81fe8a"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "61d8f1eb34f0ae73dffdb082d9157ec5fedc91ce546c620fc0dbac6afe1c67bf"
 ---
 
-# Page Not Found
+# NEXTJS_NO_BEFORE_INTERACTIVE
 
-`/docs/conformance/rules/nextjs_no_before_interactive` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [Conformance Rules](/docs/conformance/rules.md): Conformance is available on Enterprise plans This page lists all the builtin rules that Conformance will check for by default in your application.
-- [NEXTJS_NO_BEFORE_INTERACTIVE](/docs/conformance/rules/nextjs_no_before_interactive.md): Conformance is available on Enterprise plans The default loading strategy for next/script is optimised for fast page loads. Setting the strategy to
+The default [loading strategy](https://nextjs.org/docs/basic-features/script#strategy)
+for [`next/script`](https://nextjs.org/docs/basic-features/script) is optimised
+for fast page loads.
 
-All pages: [/llms.txt](/llms.txt)
+Setting the strategy to [`beforeInteractive`](https://nextjs.org/docs/api-reference/next/script#beforeinteractive)
+forces the script to load before any Next.js code and before hydration occurs,
+which delays the page from becoming interactive.
+
+For further reading, see:
+
+- [Loading strategy in Next.js](https://nextjs.org/docs/basic-features/script#strategy)
+- [`next/script` docs](https://nextjs.org/docs/api-reference/next/script#beforeinteractive)
+- [Chrome blog on the Next.js Script component](https://developer.chrome.com/blog/script-component/#the-nextjs-script-component)
+
+## Examples
+
+This rule will catch the following code.
+
+```ts {5}
+import Script from 'next/script';
+
+export default function MyPage() {
+  return (
+    <Script src="https://example.com/script.js" strategy="beforeInteractive" />
+  );
+}
+```
+
+## How to fix
+
+This rule flags any usage of `beforeInteractive` for review. If approved, the
+exception should be added to the allowlist.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

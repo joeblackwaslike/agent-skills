@@ -16,8 +16,8 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c7dba22bb14ad7284277317c3f20c8dc4e00c8774b00329858fe3fbd70a17c52"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c71cbc5a6b4c31f6ca2f665067366cadd564d064cde10f8da2693003f6c417af"
 ---
 
 # Spend Management
@@ -30,7 +30,7 @@ Spend management is a way for you to notify or to automatically take action on y
 - [Trigger a webhook](/docs/spend-management#configuring-a-webhook)
 - [Pause the production deployment of all your projects](/docs/spend-management#pausing-projects)
 
-  > **⚠️ Warning:** Setting a spend amount does not automatically stop usage. If you want to pause
+  > **💡 Note:** Setting a spend amount does not automatically stop usage. If you want to pause
   > all your projects at a certain amount, you must [enable the
   > option](#pausing-projects).
 
@@ -98,7 +98,7 @@ Vercel provides an option to automatically pause the production deployment for a
 3. Confirm the action by entering the team name and select **Continue**. Your changes save automatically
 4. When your team reaches the spend amount, Vercel automatically pauses the production deployment for **all projects** on your team
 
-> **⚠️ Warning:** Pausing is not instantaneous. Because Vercel [checks your spend](#how-vercel-checks-your-spend-amount) every few minutes, projects can keep serving traffic and accruing usage for several minutes after you cross the spend amount.
+> **💡 Note:** Pausing is not instantaneous. Because Vercel [checks your spend](#how-vercel-checks-your-spend-amount) every few minutes, projects can keep serving traffic and accruing usage for several minutes after you cross the spend amount.
 
 When visitors access your production deployment while it is paused, they will see a [503 DEPLOYMENT\_PAUSED error](/docs/errors/DEPLOYMENT_PAUSED).
 

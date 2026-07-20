@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "85b6b640f7642e2dbeecc0659867866b118f53f5770ab4c30617452b52cd0359"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "263624bf5388bfb1ea2739f9cd25c43588c38f245664d59602a65fa251a72252"
 ---
 
 # ElevenLabs Provider
@@ -177,7 +177,7 @@ const model = elevenLabs.transcription('scribe_v1');
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format can sometimes improve transcription performance if known beforehand.
 
-```ts highlight="6"
+```ts highlight="10-14"
 import { transcribe } from 'ai';
 import {
   elevenLabs,
@@ -284,6 +284,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

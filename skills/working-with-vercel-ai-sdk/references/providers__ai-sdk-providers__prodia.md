@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "fc25cf69f278b8d46bb38386f8b38e0c5999afb8bb764072ee0b38030fe4a7e7"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "aa9d8aaa2f0fcd3c10eb4391060caad670a984e02d50bf532772b49be2e2b678"
 ---
 
 # Prodia Provider
@@ -226,6 +226,7 @@ console.log('Elapsed:', metadata?.elapsed);
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

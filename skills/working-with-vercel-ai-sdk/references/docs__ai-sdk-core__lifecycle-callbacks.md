@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d370c908f91200f8ccd30ee240b412d6f36a3d2dad1d736eef00e7707396c130"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "d989061659c0e9d523dee0b6a6ba7db1d6a45985e96fcbfb9212dbfd3701e425"
 ---
 
 # Lifecycle Callbacks
@@ -56,7 +56,7 @@ Because callbacks run as part of the lifecycle, keep them fast or enqueue expens
 Use `onStart` and `onEnd` to record one application log for the beginning and end of a call.
 The `callId` is available across lifecycle events, so you can correlate logs from the same request.
 
-```tsx highlight="8-20"
+```tsx highlight="8-23"
 import { generateText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -125,7 +125,7 @@ Use step events when you want timing that includes SDK-managed work such as loca
 When you use tools with `generateText` or `streamText`, a single user request can involve multiple model calls.
 Each model call is a step. The model may call a tool in one step, receive the tool result, and then produce a final answer in the next step.
 
-```tsx highlight="10-29"
+```tsx highlight="17-31"
 import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 __PROVIDER_IMPORT__;
@@ -172,7 +172,7 @@ This helps answer questions such as:
 Tool execution callbacks run around the tool's `execute` function.
 Use them to record tool usage, latency, successful results, and tool errors.
 
-```tsx highlight="17-35"
+```tsx highlight="19-36"
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 __PROVIDER_IMPORT__;
@@ -219,7 +219,7 @@ const result = await generateText({
 Embedding and reranking callbacks are simpler: they expose `onStart` and `onEnd` around the operation.
 This is useful for retrieval pipelines where you want to understand how often you are embedding, how many values you embed, and how reranking changes result sets.
 
-```tsx highlight="10-23"
+```tsx highlight="10-24,32-37"
 import { embedMany, rerank } from 'ai';
 import { cohere } from '@ai-sdk/cohere';
 
@@ -294,7 +294,7 @@ This distinction matters when the step includes local tool execution: the step d
 Lifecycle callbacks receive the full `runtimeContext` and `toolsContext` values that flow through the call.
 This makes callbacks useful for attaching application context without changing prompts or tool inputs.
 
-```tsx highlight="8-17,23-28"
+```tsx highlight="8-24,26-39"
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 __PROVIDER_IMPORT__;

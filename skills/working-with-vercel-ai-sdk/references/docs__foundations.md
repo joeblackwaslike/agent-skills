@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "ecf96d824e26c0e734e9b4e2d1f6f0733b29e08d5adccde8845ce5c05e86d605"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "47311b885bec923a89d49437497b921bcd47a206df771a53aefe361b3485232c"
 ---
 
 # Foundations
@@ -157,6 +157,7 @@ sha256: "ecf96d824e26c0e734e9b4e2d1f6f0733b29e08d5adccde8845ce5c05e86d605"
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

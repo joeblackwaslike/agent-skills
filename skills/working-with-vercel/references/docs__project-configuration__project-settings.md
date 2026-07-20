@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "62b63465ad962f96452019b5ccd0e59726e3cc47e5965fce24e394c3a56f488b"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "01b99c87abcf4f270729fdf7f14bffd74ae786194b129d54459e4bd3e36d7d1f"
 ---
 
 # Project settings
@@ -80,7 +80,7 @@ To ignore the build step:
    - If the command exits with code `1`, the build continues as normal
    - If the command exits with code `0`, the build is immediately aborted, and the deployment state is set to `CANCELED`
 
-> **⚠️ Warning:** Canceled builds are counted as full deployments as they execute a build
+> **💡 Note:** Canceled builds are counted as full deployments as they execute a build
 > command in the build step. This means that any canceled builds initiated using
 > the ignore build step will still count towards your [deployment quotas](/docs/limits#deployments-per-day-hobby) and [concurrent build slots](/docs/deployments/concurrent-builds).You may be able to optimize your deployment queue by [skipping builds](/docs/monorepos#skipping-unaffected-projects) for projects within a monorepo that are unaffected by a change.
 

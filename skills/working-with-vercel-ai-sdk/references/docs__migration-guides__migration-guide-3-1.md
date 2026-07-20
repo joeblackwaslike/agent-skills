@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-1.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9fb9d8e848a4a537d8bf98ebc90cd4ee61ffeada79737ab4d3eaadfc85f69be1"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b601b52b3bd1d5b3069bf52f332d8019164966c2c6373934ad739ed289f9b4ab"
 ---
 
 # Migrate AI SDK 3.0 to 3.1
@@ -130,7 +130,7 @@ async function submitMessage(userInput = 'What is the weather in SF?') {
 }
 ```
 
-With the new [`streamUI`](/docs/reference/ai-sdk-rsc/stream-ui) function, you can now use any compatible AI SDK provider. In this example, you import the AI SDK OpenAI provider. Then, you pass it to the [`model`](/docs/reference/ai-sdk-rsc/stream-ui#model) key of the new [`streamUI`](/docs/reference/ai-sdk-rsc/stream-ui) function. Finally, you declare a tool and return a React Server Component, defined in the [`generate`](/docs/reference/ai-sdk-rsc/stream-ui#tools-generate) key of the tool.
+With the new [`streamUI`](/docs/reference/ai-sdk-rsc/stream-ui) function, you can now use any compatible AI SDK provider. In this example, you import the AI SDK OpenAI provider. Then, you pass it to the [`model`](/docs/reference/ai-sdk-rsc/stream-ui#model) key of the new [`streamUI`](/docs/reference/ai-sdk-rsc/stream-ui) function. Finally, you declare a tool and return a React Server Component, defined in the [`generate`](/docs/reference/ai-sdk-rsc/stream-ui#tools.tool.generate) key of the tool.
 
 ```tsx
 import { streamUI } from '@ai-sdk/rsc';

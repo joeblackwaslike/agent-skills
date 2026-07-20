@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/stream-object-record-final-object.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9b71bec891375c5a1474b7dd1a4e7a1b3bdb8bf13972d7066bd841b380d42104"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ad48657e45b3805fabe58a7cf7681cd195731c4063fd95248b7b297b8ade3cf9"
 ---
 
 # Record Final Object after Streaming Object
@@ -12,7 +12,7 @@ When you're streaming structured data, you may want to record the final object f
 
 Use `onEnd` for metadata like token usage and await `result.output` for the final structured object.
 
-```ts file='index.ts' highlight={"15-29"}
+```ts file='index.ts' highlight={"16-18,24-29"}
 import { streamText, Output } from 'ai';
 import { z } from 'zod';
 
@@ -49,7 +49,7 @@ try {
 The `streamText` result contains an `output` promise that resolves to the final object.
 The object is fully typed. When the type validation according to the schema fails, the promise will be rejected with a `TypeValidationError`.
 
-```ts file='index.ts' highlight={"17-26"}
+```ts file='index.ts' highlight={"21-26"}
 import { streamText, Output } from 'ai';
 import { z } from 'zod';
 

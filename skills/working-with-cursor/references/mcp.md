@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/mcp.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "af142f86d4a64bd91e0669c9bc4565df7ffdfd69b1084b5375f04df964476f59"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "1bbd67fb28afd37b34ac961d63c0e1577f3ec4fe94ecab08b1bdefa4c751715d"
 ---
 
 # Model Context Protocol (MCP)
@@ -140,11 +140,11 @@ Cursor uses fixed OAuth redirect URLs for MCP servers. Register the callback for
 
 ```text
 https://www.cursor.com/agents/mcp/oauth/callback
-cursor://anysphere.cursor-mcp/oauth/callback
+http://localhost:8787/callback
 ```
 
 - **Web and Cursor Agents**: `https://www.cursor.com/agents/mcp/oauth/callback`
-- **Desktop app**: `cursor://anysphere.cursor-mcp/oauth/callback`
+- **Desktop app**: `http://localhost:8787/callback`
 
 When configuring the MCP provider's OAuth app, register both URLs as allowed redirect URIs if users authenticate from both web and desktop. The server is identified via the OAuth `state` parameter, so these redirect URLs work for all MCP servers.
 

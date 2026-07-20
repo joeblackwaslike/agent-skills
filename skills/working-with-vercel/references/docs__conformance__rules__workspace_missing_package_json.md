@@ -1,17 +1,51 @@
 ---
+title: WORKSPACE_MISSING_PACKAGE_JSON
+product: vercel
+url: /docs/conformance/rules/WORKSPACE_MISSING_PACKAGE_JSON
+canonical_url: "https://vercel.com/docs/conformance/rules/WORKSPACE_MISSING_PACKAGE_JSON"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: All directories that match a workspace glob must include a package.json file.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/workspace_missing_package_json.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "fd0afcca45531b59b3e6fe8634e2f492b0022a3bc53fc88ae55b349d2f60807e"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "bb11cb2e7e3481fcd6a4ba9ae584e1763bb0079af0f0043d058a1711d921a8f6"
 ---
 
-# Page Not Found
+# WORKSPACE_MISSING_PACKAGE_JSON
 
-`/docs/conformance/rules/workspace_missing_package_json` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [WORKSPACE_MISSING_PACKAGE_JSON](/docs/conformance/rules/workspace_missing_package_json.md): Conformance is available on Enterprise plans All directories that match a glob used to configure package manager workspaces must be defined as a
-- [WORKSPACE_MISSING_CONFORMANCE_SCRIPT](/docs/conformance/rules/workspace_missing_conformance_script.md): Conformance is available on Enterprise plans Conformance requires a script to exist in every workspace in the repository. This makes sure that
-- [PACKAGE_MANAGEMENT_NO_UNRESOLVED_IMPORTS](/docs/conformance/rules/package_management_no_unresolved_imports.md): Conformance is available on Enterprise plans All imports must be able to be resolved to a file local to the workspace or a package declared as a
-- [Conformance Rules](/docs/conformance/rules.md): PACKAGE\_MANAGEMENT\_NO\_CIRCULAR\_IMPORTS Import statements that can not be resolved to a local file or a package from package.json dependencies are
-- [PACKAGE_JSON_DUPLICATE_DEPENDENCIES](/docs/conformance/rules/package_json_duplicate_dependencies.md): Conformance is available on Enterprise plans Packages that are listed in the dependencies section of package.json should not be listed in
+All directories that match a glob used to configure package manager workspaces
+must be defined as a package and contain a `package.json` file. This check
+prevents confusion where a new directory may be placed within a directory that
+is configured to be a workspace but the new directory is not actually a
+workspace.
 
-All pages: [/llms.txt](/llms.txt)
+## Example
+
+The repository configures pnpm workspaces in this file:
+
+```yaml filename="pnpm-workspace.yaml"
+packages:
+  - 'apps/*'
+  - 'packages/*'
+```
+
+If a directory is defined in `packages/not-a-package`, then this test will fail
+saying that the `not-a-package` directory must contain a `package.json` file.
+
+## How to fix
+
+Directories that match a workspace glob but do not have a `package.json` file
+should either be converted to a package, be moved to a different directory, or
+be excluded in the workspaces configuration.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

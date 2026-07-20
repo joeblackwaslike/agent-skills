@@ -1,16 +1,66 @@
 ---
+title: NEXTJS_USE_NATIVE_FETCH
+product: vercel
+url: /docs/conformance/rules/NEXTJS_USE_NATIVE_FETCH
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_USE_NATIVE_FETCH"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  - /docs/conformance/customize
+summary: Requires using native `fetch` which Next.js provides, removing the need for third-party fetch libraries.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_native_fetch.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "f0604fb3da17938edda5371fb5cb6ede0a8ab7ac7393d786be95712bad7e3b9a"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "5f098af285c9c5003928b01ee5d67e007b9e75dd2d979d7df1e2269a635dcbee"
 ---
 
-# Page Not Found
+# NEXTJS_USE_NATIVE_FETCH
 
-`/docs/conformance/rules/nextjs_use_native_fetch` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NEXTJS_USE_NATIVE_FETCH](/docs/conformance/rules/nextjs_use_native_fetch.md): Conformance is available on Enterprise plans This rule is available from version 1.1.0. Next.js extends the native Web fetch API with additional
-- [Conformance Rules](/docs/conformance/rules.md): SIDE\_PROPS](/docs/conformance/rules/NEXTJS_UNNEEDED_GET_SERVER_SIDE_PROPS) Requires using native fetch which Next.js provides, removing the need for
-- [1.3.0](/docs/conformance/changelog.md): This minor update introduces new rules to improve Next.js app performance, resolves an issue where TypeScript's baseUrl wasn't respected when
-- [NEXTJS_NO_FETCH_IN_SERVER_PROPS](/docs/conformance/rules/nextjs_no_fetch_in_server_props.md): Conformance is available on Enterprise plans Since both getServerSideProps and API routes run on the server, calling fetch on a nonrelative URL will
+Next.js extends the native [Web `fetch` API](https://nextjs.org/docs/app/api-reference/functions/fetch)
+with additional caching capabilities which means third-party fetch libraries are not needed.
+Including these libraries in your app can increase bundle size and negatively impact performance.
 
-All pages: [/llms.txt](/llms.txt)
+This rule will detect any usage of the following third-party fetch libraries:
+
+- `isomorphic-fetch`
+- `whatwg-fetch`
+- `node-fetch`
+- `cross-fetch`
+- `axios`
+
+If there are more libraries you would like to restrict,
+consider using a [custom rule](https://vercel.com/docs/conformance/custom-rules).
+
+By default, this rule is disabled. You can enable it by
+[customizing Conformance](/docs/conformance/customize).
+
+For further reading, see:
+
+- https://nextjs.org/docs/app/api-reference/functions/fetch
+- https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API
+
+## Examples
+
+This rule will catch the following code.
+
+```tsx {1}
+import fetch from 'isomorphic-fetch';
+
+export async function getAuth() {
+  const auth = await fetch('/api/auth');
+  return auth.json();
+}
+```
+
+## How to fix
+
+Replace the third-party fetch library with the native `fetch` API Next.js provides.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -14,8 +14,8 @@ related:
 summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4834abab6c9d9dc99245d55befac18d3dd1adafb0abe87f293db65ee3dbf1eb7"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "8184eb6d25d20ea525ffe70ef7662f36252d8e3d101ae06eb3ca038cafacabe0"
 ---
 
 # Flags SDK Reference
@@ -153,7 +153,6 @@ The Flags SDK works with many providers out of the box:
 - [Vercel](https://flags-sdk.dev/docs/providers/vercel)
 - [LaunchDarkly](https://flags-sdk.dev/docs/adapters/supported-providers#launchdarkly)
 - [Statsig](https://flags-sdk.dev/docs/adapters/supported-providers#statsig)
-- [Hypertune](https://flags-sdk.dev/docs/adapters/supported-providers#hypertune)
 - [ConfigCat](https://flags-sdk.dev/docs/adapters/supported-providers#configcat)
 - [DevCycle](https://flags-sdk.dev/docs/adapters/supported-providers#devcycle)
 - [Flipt](https://flags-sdk.dev/docs/adapters/supported-providers#flipt)

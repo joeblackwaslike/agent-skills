@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "1fbd5b6f0d8e68df7396bd616a93d3d8cb13619118d005c254620d32c2fa4ef5"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "9d0e47c66f36507803b278bab705dccec5e10fe4d17e8635f3d157524b2171fc"
 ---
 
 # Video Generation
@@ -147,7 +147,7 @@ const { videos } = await generateVideo({
 
 Some video models support generating videos from an input image. You can provide an image using the prompt object:
 
-```tsx highlight={"7-10"}
+```tsx highlight={"6-9"}
 import { experimental_generateVideo as generateVideo } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -178,7 +178,7 @@ Some video models support first-last-frame generation, where you provide the
 starting and/or ending frames of the video. Use the `frameImages` option to pass
 role-tagged images in a provider-agnostic way:
 
-```tsx highlight={"5-16"}
+```tsx highlight={"4-13"}
 const { video } = await generateVideo({
   model: __VIDEO_MODEL__,
   prompt: 'The cat walks across the scene and transforms into a dog by the end',
@@ -201,7 +201,7 @@ Some video models support reference-to-video generation, where you provide one o
 more reference images or videos that the model incorporates into the generated video. Use the `inputReferences` option to pass
 these inputs in a provider-agnostic way:
 
-```tsx highlight={"5-8"}
+```tsx highlight={"4-7"}
 const { video } = await generateVideo({
   model: __VIDEO_MODEL__,
   prompt: 'The two characters meet in a bustling market',
@@ -214,7 +214,7 @@ const { video } = await generateVideo({
 
 For URL-based video references, use the object form with an explicit `mediaType`:
 
-```tsx highlight={"5-10"}
+```tsx highlight={"4-9"}
 const { video } = await generateVideo({
   model: __VIDEO_MODEL__,
   prompt: 'Match the motion in the reference clip',
@@ -296,7 +296,7 @@ Video generation is an asynchronous process that can take several minutes to com
 
 You can configure the polling timeout using provider-specific options. Each provider exports a type for its options that you can use with `satisfies` for type safety:
 
-```tsx highlight={"10-12"}
+```tsx highlight={"8-12"}
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { fal, type FalVideoModelOptions } from '@ai-sdk/fal';
 

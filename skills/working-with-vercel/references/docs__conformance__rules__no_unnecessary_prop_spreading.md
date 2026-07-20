@@ -1,15 +1,62 @@
 ---
+title: NO_UNNECESSARY_PROP_SPREADING
+product: vercel
+url: /docs/conformance/rules/NO_UNNECESSARY_PROP_SPREADING
+canonical_url: "https://vercel.com/docs/conformance/rules/NO_UNNECESSARY_PROP_SPREADING"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Disallows the usage of object spreading in a JSX component.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_unnecessary_prop_spreading.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "20c9ecc523d84b78268da43c0a23690292a8a53cb56be9a91499a9eed4801669"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ae8abffd9b89fc470fdcb04a5f0322913a6dc66f22b6b684732077fe0d060c1e"
 ---
 
-# Page Not Found
+# NO_UNNECESSARY_PROP_SPREADING
 
-`/docs/conformance/rules/no_unnecessary_prop_spreading` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NO_UNNECESSARY_PROP_SPREADING](/docs/conformance/rules/no_unnecessary_prop_spreading.md): Conformance is available on Enterprise plans This rule is available from version 1.6.0. This rule detects the usage of the spread operator when
-- [Conformance Rules](/docs/conformance/rules.md): Requires that ESLint is configured for React. ESLINT\_RULES\_REQUIRED Requires that Next.js applications that use libraries with barrel exports use
-- [1.6.0](/docs/conformance/changelog.md): This minor update introduces multiple new rules, fixes and improvements for existing rules and the CLI, and updates to some dependencies for
+This rule detects the usage of the spread operator when spreading an object as a prop within a JSX component.
 
-All pages: [/llms.txt](/llms.txt)
+When spreading an object in the component, the data types of the object's properties are not validated, potentially causing unexpected runtime errors or unintended behavior.
+
+## Examples
+
+In the following example, the `Header` component contains an object with the spread operator being applied to it.
+
+We don't know if the props that the `Header` component reads will accept all the values contained in the `foo` object.
+
+```tsx filename="app/dashboard/page.tsx" {2}
+function HomePage() {
+  return <Header {...{ foo }}>Hello World</Header>;
+}
+
+export default HomePage;
+```
+
+## How to fix
+
+You can remove the spread operator from the JSX component, and list all props explicitly.
+
+```tsx filename="app/dashboard/page.tsx" {2}
+function HomePage() {
+  return (
+    <Header bar={foo.bar} baz={foo.baz}>
+      Hello World
+    </Header>
+  );
+}
+
+export default HomePage;
+```
+
+In the example above, [TypeScript](https://www.typescriptlang.org/) will be able to type-check all props.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/api-servers/fastify.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "430a0c629510364391c55209e34110c98823b0ff2b8381c304a0163468d9b9d8"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "a8f7fb4389b45708ba50d945a2418a9deb8bbbf2868917d76f77e5c067e4b0b9"
 ---
 
 # Fastify
@@ -51,7 +51,7 @@ fastify.listen({ port: 8080 });
 
 `createUIMessageStream` can be used to send custom data to the client.
 
-```ts filename='index.ts' highlight="8-11,18"
+```ts filename='index.ts' highlight="12-17"
 import { createUIMessageStream, streamText, toUIMessageStream } from 'ai';
 import Fastify from 'fastify';
 
@@ -98,7 +98,7 @@ fastify.listen({ port: 8080 });
 
 You can use the `textStream` property to get a text stream from the result and then pipe it to the response.
 
-```ts filename='index.ts' highlight="15"
+```ts filename='index.ts' highlight="14"
 import { streamText } from 'ai';
 import Fastify from 'fastify';
 

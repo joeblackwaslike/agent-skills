@@ -14,13 +14,13 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "21c96b894226d87a87b0ef52d61a3779839718b96f6da8ff530cacdee48c8935"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "96ff67af9cc33ad71742caa53aa4dc33501fef7e93330751404d564583227fa8"
 ---
 
 # vercel flags
 
-The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project directly from the command line. You can create, list, inspect, open, update, set, split traffic, roll out, enable, disable, archive, and delete feature flags, as well as manage reusable segments and SDK keys.
+The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project directly from the command line. You can create, list, inspect, view version history, open, update, set, split traffic, roll out, enable, disable, archive, and delete feature flags, as well as manage conditional rules, reusable segments, and SDK keys.
 
 ## Usage
 
@@ -43,6 +43,20 @@ vercel flags inspect [flag]
 
 *Using the \`vercel flags\` command to display information
 about a feature flag.*
+
+```bash filename="terminal"
+vercel flags versions [flag]
+```
+
+*Using the \`vercel flags versions\` command to list the version history of a
+feature flag.*
+
+```bash filename="terminal"
+vercel flags versions diff [flag] --revision [number]
+```
+
+*Using the \`vercel flags versions diff\` command to show what changed in a
+revision.*
 
 ```bash filename="terminal"
 vercel flags open [flag]
@@ -77,6 +91,13 @@ vercel flags rollout [flag]
 
 *Using the \`vercel flags\` command to configure a progressive rollout in an
 environment.*
+
+```bash filename="terminal"
+vercel flags rules ls [flag]
+```
+
+*Using the \`vercel flags rules\` command to list conditional rules for a
+feature flag.*
 
 ```bash filename="terminal"
 vercel flags enable [flag]
@@ -160,6 +181,132 @@ vercel flags open welcome-message
 ```
 
 *Opening a specific feature flag in the Vercel dashboard.*
+
+### Viewing version history
+
+Use `vercel flags versions` to list saved revisions for a flag. The default table output includes the revision number, author, change message, timestamp, and changed environments. You can also run `vercel flags versions list [flag]` for the same list output.
+
+```bash filename="terminal"
+vercel flags versions welcome-message
+```
+
+*Listing the version history for the \`welcome-message\` flag.*
+
+By default, `vercel flags versions` uses the linked project. To query another project, pass the project name or ID with `--project`.
+
+Filter versions by changed environment with `--environment` or `-e`:
+
+```bash filename="terminal"
+vercel flags versions welcome-message --environment production
+```
+
+*Listing only versions that changed the production environment.*
+
+The command returns up to 20 versions per page by default. Use `--limit` to set a page size from 1 to 100. When another page is available, the CLI prints a next-page command with `--cursor`:
+
+```bash filename="terminal"
+vercel flags versions welcome-message --limit 10
+vercel flags versions welcome-message --limit 10 --cursor next_page_cursor
+```
+
+*Requesting up to 10 versions, then using the cursor from the previous response
+to get the next page.*
+
+The table output stays summary-only. Use `--json` for scripting and automation when you need the full version snapshot. Each version includes a `data` object with the flag configuration for that revision:
+
+```bash filename="terminal"
+vercel flags versions welcome-message --json
+```
+
+```json
+{
+  "versions": [
+    {
+      "id": "flag_version_3",
+      "flagId": "flag_abc123",
+      "revision": 3,
+      "author": "Ada Lovelace",
+      "createdBy": "user_456",
+      "message": "Updated production targeting",
+      "createdAt": 1783602795208,
+      "changedEnvironments": ["production"],
+      "data": {
+        "description": "My awesome feature flag",
+        "variants": [
+          { "id": "off", "value": false, "label": "Off" },
+          { "id": "on", "value": true, "label": "On" }
+        ],
+        "environments": {
+          "production": {
+            "active": true,
+            "rules": [
+              {
+                "id": "rule_pro_users",
+                "conditions": [
+                  {
+                    "lhs": {
+                      "type": "entity",
+                      "kind": "user",
+                      "attribute": "plan"
+                    },
+                    "cmp": "eq",
+                    "rhs": "pro"
+                  }
+                ],
+                "outcome": { "type": "variant", "variantId": "on" }
+              }
+            ],
+            "pausedOutcome": { "type": "variant", "variantId": "off" },
+            "fallthrough": { "type": "variant", "variantId": "off" },
+            "targets": {
+              "user": {
+                "id": {
+                  "on": [{ "value": "user_123", "note": "Beta customer" }]
+                }
+              }
+            },
+            "revision": 3
+          }
+        },
+        "seed": 12345,
+        "state": "active"
+      }
+    }
+  ],
+  "pagination": {
+    "next": null
+  }
+}
+```
+
+*Output shape for \`vercel flags versions welcome-message --json\`.*
+
+Use `vercel flags versions diff` to compare a revision with the immediately preceding revision:
+
+```bash filename="terminal"
+vercel flags versions diff welcome-message --revision 4
+```
+
+*Showing the changes introduced in revision \`4\` by comparing it with revision
+\`3\`.*
+
+The diff output is a readable summary of the flag change. It starts with the revision, flag, and project context, then shows the author, message, changed environments, and sections for changed settings and environments. Revision `0` appears in version history as the creation revision, but it can't be diffed because it has no previous revision.
+
+Use `--json` to output a normalized, structured diff:
+
+```bash filename="terminal"
+vercel flags versions diff welcome-message --revision 4 --json
+```
+
+*Outputting the structured diff between revisions \`4\` and \`3\` as JSON.*
+
+The diff JSON includes `flag`, `revision`, `previousRevision`, `version`, `previousVersion`, and `changes`. The `version` and `previousVersion` fields use the same summary fields as the version list output. Every item in `changes` includes `path` and `action`. The remaining fields depend on the action:
+
+- `action: "added"` includes only `after`
+- `action: "removed"` includes only `before`
+- `action: "changed"` includes both `before` and `after`
+
+If revision `0` has no saved message, version history shows `Flag created`. When a diff has no semantic changes, the command prints `No changes detected.` If the requested revision is unavailable, the error reports how many revisions are available.
 
 ### Updating variants
 
@@ -257,6 +404,100 @@ vercel flags rollout welcome-message --environment production --by user.id \
 For Boolean flags, `vercel flags rollout` defaults to rolling from `false` to `true` and using the `false` variant as the fallback. For String, Number, and JSON flags, pass `--from-variant`, `--to-variant`, and optionally `--default-variant`. These options accept either a variant ID or a variant value, and using the ID is often easier for JSON variants.
 
 If you rerun `vercel flags rollout` for an environment that already has a rollout, you can update only the stages and keep the current bucketing attribute, start time, and variants.
+
+### Managing conditional rules
+
+Use `vercel flags rules` to manage targeting rules in a flag environment. Rules evaluate from top to bottom before the environment's fallthrough outcome. The first matching rule determines the outcome Vercel Flags serves.
+
+```bash filename="terminal"
+vercel flags rules ls my-feature --environment production
+```
+
+*Listing conditional rules for \`my-feature\` in production.*
+
+Add a rule by passing one or more conditions and an outcome:
+
+```bash filename="terminal"
+vercel flags rules add my-feature --environment production \
+  --condition user.plan:eq:pro --variant on \
+  --message "Enable Pro users"
+```
+
+*Adding a production rule that serves the \`on\` variant to Pro users.*
+
+Rule conditions use these forms:
+
+| Form | Description | Example |
+| - | - | - |
+| `ENTITY.ATTRIBUTE:OPERATOR:VALUE` | Matches an entity attribute. | `user.plan:eq:pro` |
+| `segment:OPERATOR:SEGMENT` | Matches a reusable segment by segment ID. | `segment:eq:seg_beta123` |
+
+Repeat `--condition` to add multiple conditions. You can also separate conditions with semicolons in one value:
+
+```bash filename="terminal"
+vercel flags rules add my-feature --environment production \
+  --condition "user.plan:eq:pro;team.tier:eq:enterprise" --variant on
+```
+
+*Adding a rule that only matches when both conditions are true.*
+
+See [available rule operators](#available-rule-operators) for the complete operator list, including aliases and value formats.
+
+Use the same outcome options as `vercel flags set`, `vercel flags split`, and `vercel flags rollout` when adding or updating a rule. For example, a matching rule can serve one variant, split traffic across variants, or run a progressive rollout:
+
+```bash filename="terminal"
+vercel flags rules add my-feature --environment production \
+  --condition user.plan:eq:pro --by user.id \
+  --weight off=90 --weight on=10 --position 1
+```
+
+*Adding a rule at the top of the list that splits matching Pro users.*
+
+Use the rule ID from `vercel flags rules ls` to update, move, or remove a rule:
+
+```bash filename="terminal"
+vercel flags rules update my-feature rule_123 --environment production \
+  --condition user.plan:eq:enterprise
+```
+
+```bash filename="terminal"
+vercel flags rules move my-feature rule_123 --environment production \
+  --position 1
+```
+
+```bash filename="terminal"
+vercel flags rules rm my-feature rule_123 --environment production
+```
+
+*Updating, moving, and removing an existing conditional rule.*
+
+When you update, move, or remove a rule in an environment that reuses another environment's configuration, the CLI copies the effective rules into the selected environment and disables configuration reuse for that environment.
+
+### Available rule operators
+
+Use these operators in `vercel flags rules` conditions and `vercel flags segments` rule criteria. Operators can compare entity attributes or segments, depending on the command syntax.
+
+| Operator | Meaning | Accepted aliases |
+| - | - | - |
+| `eq` | Is equal to the value. | `=`, `==`, `equals`, `equal` |
+| `!eq` | Is not equal to the value. | `does-not-equal`, `not-equals`, `not-equal`, `!=` |
+| `oneOf` | Is in a comma-separated list of values. | `in`, `oneof`, `one-of` |
+| `!oneOf` | Is not in a comma-separated list of values. | `not-in`, `not-one-of`, `!oneof` |
+| `containsAllOf` | Contains all values in a comma-separated list. | `containsallof`, `contains-all-of` |
+| `containsAnyOf` | Contains at least one value in a comma-separated list. | `containsanyof`, `contains-any-of` |
+| `containsNoneOf` | Contains none of the values in a comma-separated list. | `containsnoneof`, `contains-none-of` |
+| `startsWith` | Starts with the value. | `startswith`, `starts-with` |
+| `endsWith` | Ends with the value. | `endswith`, `ends-with` |
+| `contains` | Contains the value. | None |
+| `!contains` | Does not contain the value. | `does-not-contain`, `notcontains`, `not-contains`, `notContains` |
+| `ex` | Has any value. | `exists` |
+| `!ex` | Has no value. | `!exists`, `not-exists` |
+| `gt` | Is greater than the value. | `>` |
+| `gte` | Is greater than or equal to the value. | `>=` |
+| `lt` | Is less than the value. | `<` |
+| `lte` | Is less than or equal to the value. | `<=` |
+
+The list operators `oneOf`, `!oneOf`, `containsAllOf`, `containsAnyOf`, and `containsNoneOf` accept comma-separated values, such as `user.plan:oneOf:pro,enterprise`. The existence operators `ex` and `!ex` don't require a value, such as `user.email:ex`.
 
 ### Enabling and disabling flags
 
@@ -365,7 +606,7 @@ Segment criteria use these forms:
 | `rule:ENTITY.ATTRIBUTE:OPERATOR:VALUE` | Adds or removes a rule based on an entity attribute. | `rule:user.plan:eq:enterprise` |
 | `rule:RULE_ID` | Removes a rule by ID when using `--remove`. | `rule:rule_abc123` |
 
-Valid rule operators are `eq`, `!eq`, `oneOf`, `!oneOf`, `containsAllOf`, `containsAnyOf`, `containsNoneOf`, `startsWith`, `endsWith`, `contains`, `!contains`, `ex`, `!ex`, `gt`, `gte`, `lt`, and `lte`. The CLI also accepts readable aliases such as `equals`, `does-not-equal`, `starts-with`, and `ends-with`.
+Segment rules use the same operators as conditional flag rules. See [available rule operators](#available-rule-operators) for the complete operator list, including aliases and value formats.
 
 For list operators such as `oneOf`, pass comma-separated values:
 
@@ -415,11 +656,11 @@ When you create an SDK key, the output includes:
 - **SDK key**: The full key value, shown only at creation time
 - **Connection string**: A `flags:` URI containing all configuration needed to connect to Vercel Flags
 
-> **⚠️ Warning:** Copy the SDK key from the create output immediately and store it somewhere safe. Vercel returns the full value only once, at creation time. `vercel flags sdk-keys ls` returns a masked preview (for example, `vf_server_abc********`). If you lose the value, delete the key with `vercel flags sdk-keys rm` and create a new one.
+> **💡 Note:** Copy the SDK key from the create output immediately and store it somewhere safe. Vercel returns the full value only once, at creation time. `vercel flags sdk-keys ls` returns a masked preview (for example, `vf_server_abc********`). If you lose the value, delete the key with `vercel flags sdk-keys rm` and create a new one.
 
 If you don't provide the `--environment` option, you'll be prompted to select one interactively.
 
-`vercel flags list --json`, `vercel flags segments ls --json`, and `vercel flags sdk-keys ls --json` output the respective list as JSON for scripting and automation.
+`vercel flags list --json`, `vercel flags versions [flag] --json`, `vercel flags versions diff [flag] --revision [number] --json`, `vercel flags rules ls --json`, `vercel flags segments ls --json`, and `vercel flags sdk-keys ls --json` output JSON for scripting and automation.
 
 ### Encrypting flag overrides
 
@@ -490,13 +731,43 @@ vercel flags ls --state archived
 
 ### JSON
 
-The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, and `vercel flags sdk-keys ls`.
+The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags versions`, `vercel flags versions diff`, `vercel flags rules ls`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, and `vercel flags sdk-keys ls`.
 
 ```bash filename="terminal"
 vercel flags segments inspect beta-users --json
 ```
 
 *Using the \`vercel flags segments inspect\` command with the \`--json\` option.*
+
+### Limit
+
+`vercel flags versions` and `vercel flags versions list` return up to 20 versions per page by default. Use `--limit` to request a different page size. The value must be an integer from 1 through 100.
+
+```bash filename="terminal"
+vercel flags versions welcome-message --limit 10
+```
+
+*Using the \`vercel flags versions\` command with the \`--limit\` option.*
+
+### Cursor
+
+The `--cursor` option gets the next page from a previous `vercel flags versions` or `vercel flags versions list` response. Human-readable output prints a next-page command when another page is available. JSON output returns the next cursor as `pagination.next`.
+
+```bash filename="terminal"
+vercel flags versions welcome-message --limit 10 --cursor next_page_cursor
+```
+
+*Using the \`vercel flags versions\` command with the \`--cursor\` option.*
+
+### Revision
+
+The required `--revision` option selects the revision to compare when using `vercel flags versions diff`. The selected revision is compared with the immediately preceding revision, so revision `0` can't be diffed.
+
+```bash filename="terminal"
+vercel flags versions diff welcome-message --revision 4
+```
+
+*Using the \`vercel flags versions diff\` command with the \`--revision\` option.*
 
 ### Kind
 
@@ -557,11 +828,23 @@ vercel flags segments update beta-users --add include:user.id=user_789 \
 
 *Using \`--add\` and \`--remove\` to update exact segment values.*
 
-For rules, use `rule:ENTITY.ATTRIBUTE:OPERATOR:VALUE`. To remove a rule by ID, use `--remove rule:RULE_ID`.
+For rules, use `rule:ENTITY.ATTRIBUTE:OPERATOR:VALUE`. See [available rule operators](#available-rule-operators) for `OPERATOR` values. To remove a rule by ID, use `--remove rule:RULE_ID`.
+
+### Condition
+
+The `--condition` option, shorthand `-c`, defines a condition when using `vercel flags rules add` or replaces all conditions when using `vercel flags rules update`. Use `ENTITY.ATTRIBUTE:OPERATOR:VALUE` for entity attributes or `segment:OPERATOR:SEGMENT` for reusable segments. See [available rule operators](#available-rule-operators) for `OPERATOR` values. Repeat `--condition` or separate conditions with semicolons to add multiple conditions.
+
+```bash filename="terminal"
+vercel flags rules add my-feature --environment production \
+  --condition user.plan:eq:pro --condition team.tier:eq:enterprise \
+  --variant on
+```
+
+*Using repeated \`--condition\` options to require multiple rule matches.*
 
 ### Environment
 
-The `--environment` option, shorthand `-e`, specifies the target environment for `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, `vercel flags disable`, and `vercel flags sdk-keys add`. Valid values are `production`, `preview`, and `development`.
+The `--environment` option, shorthand `-e`, specifies the target environment for `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, `vercel flags disable`, `vercel flags rules`, and `vercel flags sdk-keys add`. When using `vercel flags versions` or `vercel flags versions list`, it filters versions by the environment that changed. Valid values are `production`, `preview`, and `development`.
 
 ```bash filename="terminal"
 vercel flags set welcome-message --environment production --variant control
@@ -572,7 +855,7 @@ vercel flags set welcome-message --environment production --variant control
 
 ### Variant
 
-The `--variant` option, shorthand `-v`, defines variants on `vercel flags create`, and selects a variant by ID or value on `vercel flags update`, `vercel flags set`, and `vercel flags disable`.
+The `--variant` option, shorthand `-v`, defines variants on `vercel flags create`, and selects a variant by ID or value on `vercel flags update`, `vercel flags set`, `vercel flags disable`, `vercel flags rules add`, and `vercel flags rules update`.
 
 For JSON flags, create variants with `--variant '<JSON>'` or `--variant '<JSON>'=Label`. When you update a JSON flag, the selector can be a variant ID or the current JSON value, but not the label.
 
@@ -586,7 +869,7 @@ variants.*
 
 ### By
 
-The `--by` option selects the entity attribute used for consistent bucketing when using `vercel flags split` or `vercel flags rollout`. Use the format `<entity.attribute>`, such as `user.id`.
+The `--by` option selects the entity attribute used for consistent bucketing when using `vercel flags split`, `vercel flags rollout`, `vercel flags rules add`, or `vercel flags rules update`. Use the format `<entity.attribute>`, such as `user.id`.
 
 ```bash filename="terminal"
 vercel flags rollout redesigned-checkout --environment production --by user.id \
@@ -597,7 +880,7 @@ vercel flags rollout redesigned-checkout --environment production --by user.id \
 
 ### Weight
 
-The `--weight` option, shorthand `-w`, adds a variant weight when using `vercel flags split`. Use the format `VARIANT=WEIGHT`, and repeat the option for every variant. `VARIANT` can be a variant ID or value. Vercel Flags normalizes weights into percentages, and a weight of `0` excludes a variant from receiving traffic.
+The `--weight` option, shorthand `-w`, adds a variant weight when using `vercel flags split`, `vercel flags rules add`, or `vercel flags rules update`. Use the format `VARIANT=WEIGHT`, and repeat the option for every variant. `VARIANT` can be a variant ID or value. Vercel Flags normalizes weights into percentages, and a weight of `0` excludes a variant from receiving traffic.
 
 ```bash filename="terminal"
 vercel flags split ai-summary-model --environment production --by user.id \
@@ -611,9 +894,9 @@ model.*
 
 The `--from-variant`, `--to-variant`, and `--default-variant` options control which variants a rollout uses. `--from-variant` is the current variant, `--to-variant` is the rollout target, and `--default-variant` is served when the bucketing attribute is missing.
 
-The `--default-variant` option also applies to `vercel flags split`. Boolean splits default to the `false` variant. For String, Number, and JSON splits, pass `--default-variant` to choose the fallback variant served when the split's bucketing attribute is missing. The split default variant accepts either a variant ID or a variant value.
+The `--default-variant` option also applies to `vercel flags split` and split outcomes for `vercel flags rules`. Boolean splits default to the `false` variant. For String, Number, and JSON splits, pass `--default-variant` to choose the fallback variant served when the split's bucketing attribute is missing. The split default variant accepts either a variant ID or a variant value.
 
-For Boolean flags, these values default to `false`, `true`, and `false`. For String, Number, and JSON flags, pass them explicitly. Each option accepts either a variant ID or a variant value.
+For Boolean flag rollouts, these values default to `false`, `true`, and `false`. For String, Number, and JSON flag rollouts, pass them explicitly. Each option accepts either a variant ID or a variant value. The rollout options also apply to rollout outcomes for `vercel flags rules`.
 
 ```bash filename="terminal"
 vercel flags rollout welcome-message --environment production --by user.id \
@@ -645,7 +928,7 @@ vercel flags update welcome-message --variant control --label "Welcome back"
 
 ### Message
 
-The `--message` option sets an optional revision message when using `vercel flags update`, `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, or `vercel flags disable`.
+The `--message` option sets an optional revision message when using `vercel flags update`, `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, `vercel flags disable`, `vercel flags rules add`, `vercel flags rules update`, `vercel flags rules move`, or `vercel flags rules rm`.
 
 ```bash filename="terminal"
 vercel flags set welcome-message -e preview --variant control \
@@ -656,7 +939,7 @@ vercel flags set welcome-message -e preview --variant control \
 
 ### Stage
 
-The `--stage` option, shorthand `-s`, adds a rollout stage when using `vercel flags rollout`. Each stage uses the format `PERCENTAGE,DURATION`, for example `5,6h`. Repeat `--stage` to build a longer schedule.
+The `--stage` option, shorthand `-s`, adds a rollout stage when using `vercel flags rollout`, `vercel flags rules add`, or `vercel flags rules update`. Each stage uses the format `PERCENTAGE,DURATION`, for example `5,6h`. Repeat `--stage` to build a longer schedule.
 
 ```bash filename="terminal"
 vercel flags rollout redesigned-checkout --environment production --by user.id \
@@ -667,7 +950,7 @@ vercel flags rollout redesigned-checkout --environment production --by user.id \
 
 ### Start
 
-The `--start` option controls when `vercel flags rollout` begins. Use `now`, a future relative duration like `1h`, or an ISO 8601 datetime.
+The `--start` option controls when a rollout begins when using `vercel flags rollout`, `vercel flags rules add`, or `vercel flags rules update`. Use `now`, a future relative duration like `1h`, or an ISO 8601 datetime.
 
 ```bash filename="terminal"
 vercel flags rollout welcome-message --environment production --by user.id \
@@ -676,6 +959,17 @@ vercel flags rollout welcome-message --environment production --by user.id \
 ```
 
 *Scheduling a rollout to start at a specific time.*
+
+### Position
+
+The `--position` option, shorthand `-p`, sets the 1-based position for a conditional rule when using `vercel flags rules add` or `vercel flags rules move`. If you omit `--position` when adding a rule, the CLI adds the rule at the end.
+
+```bash filename="terminal"
+vercel flags rules move my-feature rule_123 --environment production \
+  --position 1
+```
+
+*Moving a conditional rule to the top of the production rule list.*
 
 ### Type
 

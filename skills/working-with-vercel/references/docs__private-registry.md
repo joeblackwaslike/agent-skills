@@ -14,8 +14,8 @@ related:
 summary: "Learn how to set up Vercel's private registry for use locally, in Vercel, and in your CI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/private-registry.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d16875a3977b74e5dbded4e0fcc3efbcb524446a0919217f3085399212845090"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "bd58680fe1fb677d9db607087d21dcfa19f6522c2afd545f10a8c71e2d67c504"
 ---
 
 # Working with Vercel
@@ -99,7 +99,7 @@ This guide covers Vercel's private registry packages. For information on using y
       ```
     </Code>
   </CodeBlock>
-  > **⚠️ Warning:** The minimum required version of npm to log into the registry is 8.14.0. For
+  > **💡 Note:** The minimum required version of npm to log into the registry is 8.14.0. For
   > pnpm, version 7.0.0 or higher is required.
   During this process, you will be asked to log in to your Vercel account. Ensure
   that the account that you log in to has access to the Vercel product(s) that
@@ -143,7 +143,7 @@ This guide covers Vercel's private registry packages. For information on using y
       ```
     </Code>
   </CodeBlock>
-  > **⚠️ Warning:** The Yarn command only works with Yarn version 2 or newer, use the npm command
+  > **💡 Note:** The Yarn command only works with Yarn version 2 or newer, use the npm command
   > if using Yarn v1.
   You should see your Vercel username returned if everything is set up correctly.
 

@@ -16,8 +16,8 @@ related:
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "32897bf12d4e32462b42996c20ac27eecfcd92b27192521a88c9606253b738dc"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ca579728ec5dc5bd5201f9347d51b43c3f8145a5be773d384f678645ee4a28df"
 ---
 
 # Segments
@@ -107,7 +107,7 @@ vercel flags segments update beta-users --add rule:user.plan:eq:enterprise
 vercel flags segments rm beta-users --yes
 ```
 
-See the [`vercel flags` CLI reference](/docs/cli/flags#segments) for the full command syntax, including JSON output, rule operators, and `--data` examples.
+See the [`vercel flags` CLI reference](/docs/cli/flags#segments) for the full command syntax, including JSON output and `--data` examples. For operator values, see [available rule operators](/docs/cli/flags#available-rule-operators).
 
 ## How to delete a segment
 

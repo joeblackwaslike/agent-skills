@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/concepts/supply-chain-security/dependabot-version-updates.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "a2173e98883732acb630f84eb162d331b4d82c9be951d20fe4793eebfd572c0d"
+fetched_at: "2026-07-20T06:52:02.847Z"
+sha256: "5dd092107e1f55d15ab5bf82c59f124d72a166b71b436e9d21c585517023e6b9"
 ---
 
 {% data reusables.dependabot.enterprise-enable-dependabot %}
@@ -24,9 +24,15 @@ The `dependabot.yml` file can also be configured to tell {% data variables.produ
 
 For certain package managers, {% data variables.product.prodname_dependabot_version_updates %} also supports vendoring. Vendored (or cached) dependencies are dependencies that are checked in to a specific directory in a repository rather than referenced in a manifest. Vendored dependencies are available at build time even if package servers are unavailable. {% data variables.product.prodname_dependabot_version_updates %} can be configured to check vendored dependencies for new versions and update them if necessary.
 
-When {% data variables.product.prodname_dependabot %} identifies an outdated dependency, it raises a pull request to update the manifest to the latest version of the dependency. For vendored dependencies, {% data variables.product.prodname_dependabot %} raises a pull request to replace the outdated dependency with the new version directly. You check that your tests pass, review the changelog and release notes included in the pull request summary, and then merge it. For more information, see [AUTOTITLE](/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates).
+When {% data variables.product.prodname_dependabot %} identifies an outdated dependency, it raises a pull request to update the manifest to the latest version of the dependency. For vendored dependencies, {% data variables.product.prodname_dependabot %} raises a pull request to replace the outdated dependency with the new version directly. You check that your tests pass, review the changelog and release notes included in the pull request summary, and then merge it. For more information, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-version-updates).
 
-If you enable _security updates_, {% data variables.product.prodname_dependabot %} also raises pull requests to update vulnerable dependencies. For more information, see [AUTOTITLE](/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates).
+{% ifversion dependabot-cooldown-default-days %}
+
+{% data reusables.dependabot.default-cooldown-period %} This gives new releases time to stabilize before you receive a pull request. You can customize the cooldown periods, and the dependencies they apply to, with the `cooldown` option. For more information, see [AUTOTITLE](/code-security/reference/supply-chain-security/dependabot-options-reference#cooldown-).
+
+{% endif %}
+
+If you enable _security updates_, {% data variables.product.prodname_dependabot %} also raises pull requests to update vulnerable dependencies. For more information, see [AUTOTITLE](/code-security/concepts/supply-chain-security/dependabot-security-updates).
 
 ## Updates for actions
 
@@ -36,7 +42,7 @@ For each action in the file, {% data variables.product.prodname_dependabot %} ch
 
 {% data variables.product.prodname_dependabot %} also checks workflow files for uses of reusable workflows, and updates the Git reference for these called reusable workflows.
 
-To enable this feature, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/keeping-your-actions-up-to-date-with-dependabot).
+To enable this feature, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/auto-update-actions).
 
 ## About automatic deactivation of {% data variables.product.prodname_dependabot_updates %}
 
@@ -44,4 +50,4 @@ To enable this feature, see [AUTOTITLE](/code-security/how-tos/secure-your-suppl
 
 ## About notifications for {% data variables.product.prodname_dependabot %} version updates
 
-You can filter your notifications on {% data variables.product.company_short %} to show notifications for pull requests created by {% data variables.product.prodname_dependabot %}. For more information, see [AUTOTITLE](/account-and-profile/managing-subscriptions-and-notifications-on-github/viewing-and-triaging-notifications/managing-notifications-from-your-inbox).
+You can filter your notifications on {% data variables.product.company_short %} to show notifications for pull requests created by {% data variables.product.prodname_dependabot %}. For more information, see [AUTOTITLE](/subscriptions-and-notifications/how-tos/viewing-and-triaging-notifications/managing-notifications-from-your-inbox).

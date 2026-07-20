@@ -1,14 +1,42 @@
 ---
+title: SET_COOKIE_VALIDATION
+product: vercel
+url: /docs/conformance/rules/SET_COOKIE_VALIDATION
+canonical_url: "https://vercel.com/docs/conformance/rules/SET_COOKIE_VALIDATION"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Prevents usage of cookies that do not conform to the allowed cookie policy.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/set_cookie_validation.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0c8b56ab96f209076677e447a14c380fec6de33e5707dd9c78c334821c52db3b"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "13236fd932ec6b74660a60eb5f3971abac399af6cc70af089623c8844bda308c"
 ---
 
-# Page Not Found
+# SET_COOKIE_VALIDATION
 
-`/docs/conformance/rules/set_cookie_validation` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [SET_COOKIE_VALIDATION](/docs/conformance/rules/set_cookie_validation.md): Conformance is available on Enterprise plans It's a good practice to enforce a cookie policy across a workspace to ensure only certain cookies are
-- [Conformance Rules](/docs/conformance/rules.md): production source maps so that they don't publicly share source code. NEXTJS\_SAFE\_NEXT\_PUBLIC\_ENV\_USAGE Prevent dangerouslyAllowSVG without
+It's a good practice to enforce a cookie policy across a workspace to ensure only
+certain cookies are allowed to be set.
 
-All pages: [/llms.txt](/llms.txt)
+## How to fix
+
+Engineers should reach out to the appropriate engineer(s) or team(s) for a
+review of the defined cookie and request the cookie name be added to the
+allowed cookie policy list. This can be set in the `conformance.config.jsonc` configuration
+file as follows:
+
+```json filename="conformance.config.jsonc"
+"SET_COOKIE_VALIDATION": {
+  "cookieAllowList": ["some-cookie-name"]
+}
+```
+
+
+---
+
+[View full sitemap](/docs/sitemap)

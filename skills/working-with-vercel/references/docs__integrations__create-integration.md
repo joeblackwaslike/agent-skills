@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "e5d09e72532044ab08d8ac703beea8273adb824c29aa03404fc5d62b69a01730"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "626ba2898f07cf694e8acb92174c2cceab9529ee208e11af174c0f84de8ee7db"
 ---
 
 # Create an Integration
@@ -71,7 +71,7 @@ The **Create Integration** form must be completed in full before you can submit 
 | [Privacy Policy URL](/docs/integrations/create-integration/submit-integration#urls)                                                                | The URL to your Privacy Policy for your integration.                                                                                     |     |
 | [Overview](/docs/integrations/create-integration/submit-integration#overview)                                                                      | A detailed overview of your integration.                                                                                                 |     |
 | [Additional Information](/docs/integrations/create-integration/submit-integration#additional-information)                                          | Additional information about configuring your integration.                                                                               |  |
-| [Feature Media](/docs/integrations/create-integration/submit-integration#feature-media)                                                            | A featured image or video for your integration. You can link up to 5 images or videos for your integration with the aspect ratio of 3:2. |     |
+| [Feature Media](/docs/integrations/create-integration/submit-integration#feature-media)                                                            | A featured image or video for your integration. You can link up to 5 images or videos for your integration with an aspect ratio of 16:9. |     |
 | [Redirect URL](/docs/integrations/create-integration/submit-integration#redirect-url)                                                              | The URL the user sees during installation.                                                                                               |     |
 | [API Scopes](/docs/integrations/create-integration/submit-integration#api-scopes)                                                                  | The API scopes for your integration.                                                                                                     |  |
 | [Webhook URL](/docs/integrations/create-integration/submit-integration#webhook-url)                                                                | The URL to receive webhooks from Vercel.                                                                                                 |  |

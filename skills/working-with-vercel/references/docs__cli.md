@@ -3,7 +3,7 @@ title: Vercel CLI Overview
 product: vercel
 url: /docs/cli
 canonical_url: "https://vercel.com/docs/cli"
-last_updated: 2026-06-25
+last_updated: 2026-07-08
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b22945655f15c226c521d3e3c25c586633f54d0621c5c3a02b5d77f38265efda"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "e2b56c35dafd23389a7f47c4f9aa333fb2952c78069c44c37edaa4ec7e6195d0"
 ---
 
 # Vercel CLI Overview
@@ -434,6 +434,8 @@ Manage feature flags for your Vercel Project.
 ```bash
 vercel flags list
 vercel flags create [slug]
+vercel flags versions [flag] --limit 10
+vercel flags versions diff [flag] --revision [number]
 vercel flags set [flag] --environment [environment] --variant [variant]
 vercel flags segments ls
 vercel flags segments create beta-users --add include:user.id=user_123
@@ -883,6 +885,17 @@ vercel usage --breakdown daily
 ```
 
 [Learn more about the usage command](/docs/cli/usage)
+
+### vcr
+
+Manage [Vercel Container Registry](/docs/container-registry) repositories, tags, and images from the terminal. See the [Container Registry CLI Reference](/docs/container-registry/cli-reference) for the full surface.
+
+```bash
+vercel vcr ls
+vercel vcr login docker
+```
+
+[Learn more about the vcr command](/docs/cli/vcr)
 
 ### webhooks
 

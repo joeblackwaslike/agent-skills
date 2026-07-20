@@ -1,15 +1,40 @@
 ---
+title: NO_POSTINSTALL_SCRIPT
+product: vercel
+url: /docs/conformance/rules/NO_POSTINSTALL_SCRIPT
+canonical_url: "https://vercel.com/docs/conformance/rules/NO_POSTINSTALL_SCRIPT"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: "Prevent the use of `\"postinstall\"` script in packages."
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_postinstall_script.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "273683b2213cea6f62841d30207860e2a49e4b04389438d78be16f2b90465e15"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "59d0318fd51e03a2aef19410707ab6deeecb531f000c8793ec12f166f6dee278"
 ---
 
-# Page Not Found
+# NO_POSTINSTALL_SCRIPT
 
-`/docs/conformance/rules/no_postinstall_script` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NO_POSTINSTALL_SCRIPT](/docs/conformance/rules/no_postinstall_script.md): Conformance is available on Enterprise plans This rule is available from version 1.4.0. Modifying, adding, or updating any dependencies in your
-- [Conformance Rules](/docs/conformance/rules.md): NO\_EXTERNAL\_CSS\_AT\_IMPORTS Requires that any fetch call that is depended on transitively by Next.js middleware be reviewed and approved before
-- [1.6.0](/docs/conformance/changelog.md): This minor update introduces multiple new rules, fixes and improvements for existing rules and the CLI, and updates to some dependencies for
+Modifying, adding, or updating any dependencies in your application triggers the execution of the `"postinstall"` script. Consequently, incorporating a `"postinstall"` script in your application's package.json leads to increased installation times for all users.
 
-All pages: [/llms.txt](/llms.txt)
+## How to fix
+
+If you hit this issue, you can resolve it by removing the `"postinstall"` script in the `package.json` file.
+
+```JSX filename="package.json" {3}
+{
+  "scripts": {
+    "postinstall": "sleep 360"
+  },
+}
+```
+
+
+---
+
+[View full sitemap](/docs/sitemap)

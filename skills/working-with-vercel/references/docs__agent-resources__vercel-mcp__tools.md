@@ -9,21 +9,23 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp
   - /docs/agent-resources
 related:
+  - /docs/agent-resources/vercel-mcp
   - /docs/accounts
   - /docs/projects
   - /docs/deployments
   - /docs/functions
-  - /docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, runtime logs, and Agent Runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c498443ec85729949274f30304a2e451dd8d539e0871ab51d08d89381a4a1bb8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f7f8cd26d88cf121210e5d51707fa7019793f43a598ca43cd6a4a961a0f4d751"
 ---
 
 # Tools
 
 The Vercel MCP server provides [MCP tools](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) that let AI assistants search documentation, manage projects, view deployments, and more.
+
+Each tool below includes a sample prompt: a message you can send to your AI assistant (such as Claude Code, Cursor, or ChatGPT) after [connecting it to Vercel MCP](/docs/agent-resources/vercel-mcp). The assistant selects and calls the appropriate tools for you.
 
 > **💡 Note:** To enhance security, enable human confirmation for tool execution and exercise
 > caution when using Vercel MCP alongside other servers to prevent prompt
@@ -211,27 +213,141 @@ Check if domain names are available for purchase and get pricing information.
 
 **Sample prompt:** "Check if mydomain.com is available"
 
+To purchase a domain, see [`buy_domain`](#buy_domain) below.
+
+## Purchase tools
+
+These tools make purchases on behalf of a team. Charges go to the team's payment method immediately and are non-refundable. Purchase tools are being rolled out gradually and may not yet be available on your connection.
+
+> **💡 Note:** Purchase tools execute real, non-refundable charges. Enable confirmation
+> prompts in your MCP client for any tool call that includes `confirm: true`.
+
+### How purchases work
+
+Every purchase uses the same quote-then-confirm flow:
+
+1. **Quote**: Call [`get_purchase_quote`](#get_purchase_quote) with the product and its parameters. This tool is read-only and nothing is charged. The response includes the cost (when Vercel can quote one), the applicable spend limit, and an `idempotencyKey` that encodes the quoted terms. Quoting is required before the `buy_*` tools can be used.
+2. **Review**: Review the quote and approve it. Charges are immediate and non-refundable.
+3. **Confirm**: Call the matching `buy_*` tool with `confirm: true`, the same parameters, and the `idempotencyKey` from the quote. Quotes expire after 5 minutes: an expired or mismatched key is rejected and you must quote again.
+
+The flow provides these guarantees:
+
+- Submitting the same `idempotencyKey` twice does not create a second charge.
+- The `idempotencyKey` is a signed token of the quoted terms. The server rejects a confirmation call whose parameters don't exactly match the quote.
+- Purchases require a valid payment method on the team. If no payment method is on file, nothing is charged and the response includes a `billingUrl` where you can add one before retrying.
+- Your MCP client may prompt you before executing a `confirm: true` call (see the note above). Declining the prompt never triggers a charge.
+- A successful confirmation returns a `billingUrl` (team billing settings, where the charge appears) and a `proofUrl` showing the purchase. Billing history may take a few minutes to update.
+
+### get\_purchase\_quote
+
+Get a price quote for any purchase. This is a read-only action that never charges. It is the only source of an `idempotencyKey`, so it is the required first step before any `buy_*` tool usage. For products with no API price (add-ons, Pro), the quote includes a `priceNote` and a billing or pricing URL to review instead of a number.
+
+You typically won't invoke this tool directly. Your AI client calls it automatically as the first step of any purchase and presents the quote for your approval.
+
+| Parameter      | Type    | Required      | Default     | Description                                                                                                                                                                     |
+| -------------- | ------- | ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `product`      | string  | Yes           | -           | Which purchase to quote: `credits`, `domain`, `addon`, or `pro`                                                                                                                 |
+| `teamId`       | string  | Yes           | -           | The team ID the purchase is for. Alternatively, the team slug can be used. Team IDs start with 'team\_' and can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| `creditType`   | string  | For `credits` | -           | Which credit balance to top up: `v0`, `gateway` (AI Gateway), or `agent` (Vercel Agent)                                                                                         |
+| `amount`       | number  | For `credits` | -           | Amount to purchase, in whole US dollars (1–1000)                                                                                                                                |
+| `domain`       | string  | For `domain`  | -           | The domain to register (e.g., example.com)                                                                                                                                     |
+| `years`        | number  | No            | TLD minimum | For `domain` — registration term in years (max 10)                                                                                                                             |
+| `autoRenew`    | boolean | No            | true        | For `domain` — whether to auto-renew at the end of the term                                                                                                                     |
+| `productAlias` | string  | For `addon`   | -           | The add-on to quote. Only `siem` is available today                                                                                                                             |
+| `quantity`     | number  | For `addon`   | -           | Number of units                                                                                                                                                                 |
+
+**Sample prompt:** "How much would it cost to register example.com for 3 years?"
+
+### buy\_pro
+
+Upgrade a team to a Vercel Pro subscription. This starts recurring Pro billing immediately at the standard Pro price. Vercel's API doesn't return the Pro subscription price, so the quote includes a `pricingUrl` pointing to [current Pro pricing](https://vercel.com/pricing) to review before confirming.
+
+| Parameter        | Type    | Required | Default | Description                                                                                                                                                                           |
+| ---------------- | ------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `teamId`         | string  | Yes      | -       | The team ID to upgrade. Alternatively the team slug can be used. Team IDs start with 'team\_' and can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool. |
+| `confirm`        | boolean | Yes      | -       | Set `true` to execute the upgrade                                                                                                                                                     |
+| `idempotencyKey` | string  | Yes      | -       | The `idempotencyKey` returned by `get_purchase_quote`                                                                                                                                 |
+
+**Sample prompt:** "Upgrade my team to Vercel Pro"
+
+### buy\_credits
+
+Purchase prepaid credits for [v0](https://v0.dev), [AI Gateway](/docs/ai-gateway), or [Vercel Agent](/docs/agent). The amount is quoted directly, since credits cost exactly what you buy.
+
+Some credit types have plan prerequisites: Vercel Agent credits require the team to be on [Vercel Pro](/docs/plans/pro) (upgrade first with `buy_pro`), and v0 credits require a paid v0 plan. AI Gateway credits have no prerequisite. If a required plan is missing, the purchase is rejected with guidance and nothing is charged.
+
+| Parameter        | Type    | Required | Default | Description                                                                                                                                                                                    |
+| ---------------- | ------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `creditType`     | string  | Yes      | -       | Which credit balance to top up: `v0`, `gateway` (AI Gateway), or `agent` (Vercel Agent)                                                                                                        |
+| `amount`         | number  | Yes      | -       | Amount to purchase, in whole US dollars (1–1000)                                                                                                                                               |
+| `teamId`         | string  | Yes      | -       | The team ID to purchase credits for. Alternatively the team slug can be used. Team IDs start with 'team\_' and can be found by reading `.vercel/project.json` (orgId) or using `list_teams`.      |
+| `confirm`        | boolean | Yes      | -       | Set `true` to execute the charge                                                                                                                                                               |
+| `idempotencyKey` | string  | Yes      | -       | The `idempotencyKey` returned by `get_purchase_quote`                                                                                                                                          |
+
+**Sample prompt:** "Buy $25 of AI Gateway credits for my team"
+
+### buy\_addon
+
+Purchase a Vercel add-on for a team, by integer quantity. Currently only the `siem` add-on ([SIEM log drains](/docs/drains)) is available, and the team must be on the Flex plan.
+
+Vercel's API doesn't return a price for add-ons, so the quote includes a `priceNote` and a link to the team's billing settings where you can review the unit price before confirming.
+
+| Parameter        | Type    | Required | Default | Description                                                                                                                                                                                  |
+| ---------------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `productAlias`   | string  | Yes      | -       | The add-on to purchase. Only `siem` is available today                                                                                                                                       |
+| `quantity`       | number  | Yes      | -       | Number of units to purchase                                                                                                                                                                  |
+| `teamId`         | string  | Yes      | -       | The team ID to purchase the add-on for. Alternatively the team slug can be used. Team IDs start with 'team\_' and can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| `confirm`        | boolean | Yes      | -       | Set `true` to execute the charge                                                                                                                                                             |
+| `idempotencyKey` | string  | Yes      | -       | The `idempotencyKey` returned by `get_purchase_quote`                                                                                                                                        |
+
+**Sample prompt:** "Buy 2 units of the SIEM add-on for my team"
+
 ### buy\_domain
 
-Purchase a domain name with registrant information.
+Register (purchase) a single [domain](/docs/domains) for a team. The quote (`get_purchase_quote` with `product: domain`) checks availability and returns the live `purchasePrice` for the requested term. The **confirm** step must echo that price back as `expectedPrice`, and the order is rejected if the live price no longer matches, so you are never charged more than the amount you saw quoted.
 
-| Parameter       | Type    | Required | Default | Description                                                     |
-| --------------- | ------- | -------- | ------- | --------------------------------------------------------------- |
-| `name`          | string  | Yes      | -       | The domain name to purchase (e.g., example.com)                 |
-| `expectedPrice` | number  | No       | -       | The price you expect to be charged for the purchase             |
-| `renew`         | boolean | No       | true    | Whether the domain should be automatically renewed              |
-| `country`       | string  | Yes      | -       | The country of the domain registrant (e.g., US)                 |
-| `orgName`       | string  | No       | -       | The company name of the domain registrant                       |
-| `firstName`     | string  | Yes      | -       | The first name of the domain registrant                         |
-| `lastName`      | string  | Yes      | -       | The last name of the domain registrant                          |
-| `address1`      | string  | Yes      | -       | The street address of the domain registrant                     |
-| `city`          | string  | Yes      | -       | The city of the domain registrant                               |
-| `state`         | string  | Yes      | -       | The state/province of the domain registrant                     |
-| `postalCode`    | string  | Yes      | -       | The postal code of the domain registrant                        |
-| `phone`         | string  | Yes      | -       | The phone number of the domain registrant (e.g., +1.4158551452) |
-| `email`         | string  | Yes      | -       | The email address of the domain registrant                      |
+The registration term (`years`) is priced in the quote and required at the **confirm** step. The server never guesses the term, so TLDs with multi-year minimum registrations work correctly. Vercel stores no reusable registrant profile: the full WHOIS `contact` must be supplied on every confirm, and it is passed through to the registrar without being logged or stored by the MCP server.
+
+Domain registration completes asynchronously: a successful **confirm** step returns an `orderId` that you can use with [`get_domain_order`](#get_domain_order) to check whether the registration completed.
+
+| Parameter        | Type    | Required            | Default | Description                                                                                                                                                                              |
+| ---------------- | ------- | ------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `domain`         | string  | Yes                 | -       | The domain to register (e.g., example.com)                                                                                                                                              |
+| `years`          | number  | Yes                 | -       | Registration term in years (max 10). Must match the term shown in the quote                                                                                                              |
+| `autoRenew`      | boolean | No                  | true    | Whether to auto-renew at the end of the term                                                                                                                                             |
+| `expectedPrice`  | number  | Yes                 | -       | The `purchasePrice` (USD) from the quote. The order is rejected if it no longer matches the live price                                                                                   |
+| `contact`        | object  | Yes                 | -       | Registrant (WHOIS) contact: see the fields below                                                                                                                                        |
+| `teamId`         | string  | Yes                 | -       | The team ID to register the domain for. Alternatively the team slug can be used. Team IDs start with 'team\_' and can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| `confirm`        | boolean | Yes                 | -       | Set `true` to execute the purchase                                                                                                                                                       |
+| `idempotencyKey` | string  | Yes                 | -       | The `idempotencyKey` returned by `get_purchase_quote`                                                                                                                                    |
+
+The `contact` object requires the following fields with an optional `companyName`:
+
+| Field         | Type   | Description                                                  |
+| ------------- | ------ | ------------------------------------------------------------ |
+| `firstName`   | string | The first name of the domain registrant                      |
+| `lastName`    | string | The last name of the domain registrant                       |
+| `email`       | string | The email address of the domain registrant                   |
+| `phone`       | string | The phone number in E.164 format (e.g., +14155550123)        |
+| `address1`    | string | The street address of the domain registrant                  |
+| `city`        | string | The city of the domain registrant                            |
+| `state`       | string | The state/province of the domain registrant                  |
+| `zip`         | string | The postal code of the domain registrant                     |
+| `country`     | string | Two-letter ISO country code (e.g., US)                       |
+| `companyName` | string | The company name of the domain registrant (optional)         |
 
 **Sample prompt:** "Buy the domain mydomain.com"
+
+### get\_domain\_order
+
+Get the status of a domain purchase order returned by `buy_domain`, to confirm whether the asynchronous registration completed. It is read-only action.
+
+| Parameter | Type   | Required | Default | Description                                                                                       |
+| --------- | ------ | -------- | ------- | ------------------------------------------------------------------------------------------------- |
+| `orderId` | string | Yes      | -       | The `orderId` returned by `buy_domain`                                                            |
+| `teamId`  | string | No       | -       | The team ID the domain was purchased for. Alternatively the team slug can be used.                |
+
+**Sample prompt:** "Did my domain purchase go through?"
 
 ## Access Tools
 

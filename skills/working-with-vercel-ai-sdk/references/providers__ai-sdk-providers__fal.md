@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "4e0a49433eeb9f494bc8a2c3902e0d24699a1012f32a7ba17529be3edf850135"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "34ef2b8dbcde7a92d35fd1216e6292a85989758d0958e925c760944d112960db"
 ---
 
 # Fal Provider
@@ -351,6 +351,7 @@ Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_aud
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

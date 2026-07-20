@@ -13,8 +13,8 @@ related:
 summary: "Framework environment variables are automatically populated by the Vercel, based on your project's framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/framework-environment-variables.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c24dda17fd7aa9fad2022527cdd957884cbf452c58714148e31b2f2d1cbaf683"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "e1074e8a3b75ff186c31d6b716f60ac0a85751776d8885e2b217228ac1aab1a1"
 ---
 
 # Framework environment variables
@@ -89,6 +89,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `NEXT_PUBLIC_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+NEXT_PUBLIC_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `NEXT_PUBLIC_VERCEL_GIT_PROVIDER`
@@ -245,6 +255,16 @@ A production domain name of the project. We select the shortest production custo
 NUXT_ENV_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
 ```
 
+### `NUXT_ENV_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+NUXT_ENV_VERCEL_HASH_SALT=1783933175
+```
+
 ### `NUXT_ENV_VERCEL_GIT_PROVIDER`
 
 **Available at:&#x20;**&#x42;oth build and runtime
@@ -397,6 +417,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 REACT_APP_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `REACT_APP_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+REACT_APP_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `REACT_APP_VERCEL_GIT_PROVIDER`
@@ -553,6 +583,16 @@ A production domain name of the project. We select the shortest production custo
 GATSBY_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
 ```
 
+### `GATSBY_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+GATSBY_VERCEL_HASH_SALT=1783933175
+```
+
 ### `GATSBY_VERCEL_GIT_PROVIDER`
 
 **Available at:&#x20;**&#x42;oth build and runtime
@@ -705,6 +745,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 VITE_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `VITE_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VITE_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `VITE_VERCEL_GIT_PROVIDER`
@@ -861,6 +911,16 @@ A production domain name of the project. We select the shortest production custo
 VITE_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
 ```
 
+### `VITE_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VITE_VERCEL_HASH_SALT=1783933175
+```
+
 ### `VITE_VERCEL_GIT_PROVIDER`
 
 **Available at:&#x20;**&#x42;oth build and runtime
@@ -1013,6 +1073,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `NEXT_PUBLIC_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+NEXT_PUBLIC_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `NEXT_PUBLIC_VERCEL_GIT_PROVIDER`
@@ -1169,6 +1239,16 @@ A production domain name of the project. We select the shortest production custo
 PUBLIC_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
 ```
 
+### `PUBLIC_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+PUBLIC_VERCEL_HASH_SALT=1783933175
+```
+
 ### `PUBLIC_VERCEL_GIT_PROVIDER`
 
 **Available at:&#x20;**&#x42;oth build and runtime
@@ -1321,6 +1401,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 VITE_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `VITE_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VITE_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `VITE_VERCEL_GIT_PROVIDER`
@@ -1477,6 +1567,16 @@ A production domain name of the project. We select the shortest production custo
 VUE_APP_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
 ```
 
+### `VUE_APP_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VUE_APP_VERCEL_HASH_SALT=1783933175
+```
+
 ### `VUE_APP_VERCEL_GIT_PROVIDER`
 
 **Available at:&#x20;**&#x42;oth build and runtime
@@ -1629,6 +1729,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 REDWOOD_ENV_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `REDWOOD_ENV_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+REDWOOD_ENV_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `REDWOOD_ENV_VERCEL_GIT_PROVIDER`
@@ -1785,6 +1895,16 @@ A production domain name of the project. We select the shortest production custo
 PUBLIC_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
 ```
 
+### `PUBLIC_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+PUBLIC_VERCEL_HASH_SALT=1783933175
+```
+
 ### `PUBLIC_VERCEL_GIT_PROVIDER`
 
 **Available at:&#x20;**&#x42;oth build and runtime
@@ -1937,6 +2057,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 VITE_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `VITE_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VITE_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `VITE_VERCEL_GIT_PROVIDER`
@@ -2093,6 +2223,16 @@ A production domain name of the project. We select the shortest production custo
 SANITY_STUDIO_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
 ```
 
+### `SANITY_STUDIO_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+SANITY_STUDIO_VERCEL_HASH_SALT=1783933175
+```
+
 ### `SANITY_STUDIO_VERCEL_GIT_PROVIDER`
 
 **Available at:&#x20;**&#x42;oth build and runtime
@@ -2245,6 +2385,16 @@ A production domain name of the project. We select the shortest production custo
 
 ```bash
 SANITY_STUDIO_VERCEL_PROJECT_PRODUCTION_URL=my-site.com
+```
+
+### `SANITY_STUDIO_VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+SANITY_STUDIO_VERCEL_HASH_SALT=1783933175
 ```
 
 ### `SANITY_STUDIO_VERCEL_GIT_PROVIDER`

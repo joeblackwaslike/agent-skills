@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/how-claude-code-works.md"
-fetched_at: "2026-07-13T06:53:38.588Z"
-sha256: "5b99bf05ca1f0fc804b5d37440154fcbb691a0ed900a73d8721085f973c35390"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "c3e93b24c01d1624301dddb578d73d2c839a1d087bf03391dfdbdc12f27e2cf7"
 ---
 
 > ## Documentation Index
@@ -92,7 +92,7 @@ Claude Code runs in three environments, each with different tradeoffs for where 
 | ------------------ | --------------------------------------- | ---------------------------------------------------------- |
 | **Local**          | Your machine                            | Default. Full access to your files, tools, and environment |
 | **Cloud**          | Anthropic-managed VMs                   | Offload tasks, work on repos you don't have locally        |
-| **Remote Control** | Your machine, controlled from a browser | Use the web UI while keeping everything local              |
+| **Remote Control** | Your machine, controlled from a browser | Use the web UI while execution and your files stay local   |
 
 ### Interfaces
 
@@ -154,7 +154,7 @@ Claude has two safety mechanisms: checkpoints let you undo file changes, and per
 
 **Every file edit is reversible.** Before Claude edits any file, it snapshots the current contents. If something goes wrong, press `Esc` twice to rewind to a previous state, or ask Claude to undo.
 
-Checkpoints are local to your session, separate from git. They only cover file changes. Actions that affect remote systems (databases, APIs, deployments) can't be checkpointed, which is why Claude asks before running commands with external side effects.
+Checkpoints are separate from git and remain available when you resume a conversation. They only cover file changes. Actions that affect remote systems (databases, APIs, deployments) can't be checkpointed, which is why Claude asks before running commands with external side effects.
 
 ### Control what Claude can do
 
@@ -162,7 +162,7 @@ Press `Shift+Tab` to cycle through permission modes:
 
 * **Manual**: Claude asks before file edits and shell commands
 * **Accept edits**: Claude edits files and runs common filesystem commands like `mkdir` and `mv` without asking, still asks for other commands
-* **Plan**: Claude explores and proposes a plan without editing your source files; permission prompts still apply as in Manual mode
+* **Plan**: Claude explores and proposes a plan without editing your source files
 * **Auto**: Claude evaluates all actions with background safety checks
 
 You can also allow specific commands in `.claude/settings.json` so Claude doesn't ask each time. This is useful for trusted commands like `npm test` or `git status`. Settings can be scoped from organization-wide policies down to personal preferences. See [Permissions](/en/permissions) for details.

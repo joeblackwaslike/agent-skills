@@ -17,8 +17,8 @@ related:
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d95fbea5f4a6d09d7fe11d3d5895c3fe335de9b542dca7b6bc391cd1a9876fc6"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "936e9bf6e5d2a78f5e0d5290eb77d8b7daab9da7692edf0b4d806f45e39e5bca"
 ---
 
 # Deploy a Django app on Vercel
@@ -216,7 +216,7 @@ import environ
 environ.Env.read_env(".env.local")
 ```
 
-> **⚠️ Warning:** Never commit `.env.local` to version control. Add it to your `.gitignore` file
+> **💡 Note:** Never commit `.env.local` to version control. Add it to your `.gitignore` file
 > to avoid exposing secrets.
 
 ## Vercel Functions

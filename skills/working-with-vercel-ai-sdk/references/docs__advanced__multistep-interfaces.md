@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/multistep-interfaces.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1d38b2eff09976d635d7469d6eab2e343c58b05c4eadafeece979152ffa8aae7"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "52d7e830c6c2a3fa409807957750a215482b39833379c9003aa0224d682a44ed"
 ---
 
 # Multistep Interfaces
@@ -129,6 +129,7 @@ As a result, the more tools you design that can be composed together, the more c
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

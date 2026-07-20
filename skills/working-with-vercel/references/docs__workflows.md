@@ -12,11 +12,12 @@ related:
   - /docs/queues
   - /docs/workflows/concepts
   - /docs/workflows/pricing
+  - /docs/regions
 summary: Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents with the Workflow SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ba3569c6f162bdebf088eb1d149a659c930d2be23a16ed1298be3ef7abcc7267"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "a851f97bb4aa30506ca73b1798d35394cdd610ed677079ae8ddc33d5aaa2be8a"
 ---
 
 # Vercel Workflows
@@ -89,8 +90,39 @@ Follow the [Workflow SDK getting started guide](https://workflow-sdk.dev/docs/ge
 - [**Sleep and hooks**](/docs/workflows/concepts#sleep): Pause for minutes to months, or wait for external events.
 - [**Observability**](/docs/workflows#observability): Track runs in real time, trace failures, and analyze performance.
 - [**Streams**](https://workflow-sdk.dev/docs/foundations/streaming): Stream data in and out of workflows with managed persistence.
+- [**Multi-region**](/docs/workflows#multi-region): Run workflows close to your users across all Vercel Function regions.
 - [**Skew Protection**](/docs/workflows/concepts#skew-protection): Protect your workflows from version skew.
 - [**Usage-based pricing**](/docs/workflows/pricing): Pay only for Events, Data Written, and Data Retained.
+
+## Multi-region
+
+Workflows runs in every [Vercel Function region](/docs/regions). When a run starts, Workflows pins it to a single region and keeps its state, queue dispatch, and streams there for the run's lifetime. This avoids cross-region round trips on the hot path and contains the blast radius of a regional event to the runs pinned there.
+
+Reads, hook resumes, and stream consumers can come from anywhere. The platform routes them to the run's region automatically.
+
+### Automatic region pinning
+
+By default, Workflows pins a run to the region of the function that started it. No configuration needed:
+
+- Deploy your app to a single region and every run lives in that region.
+- Deploy your app to multiple regions and each run is pinned to the region that served the user who triggered it.
+
+### Explicit region selection
+
+To pin a run to a specific region, pass the `region` option to `start()`:
+
+```typescript filename="app/api/start-workflow/route.ts"
+import { start } from 'workflow/api';
+import { myWorkflow } from '@/workflows/my-workflow';
+
+const run = await start(myWorkflow, [input], { region: 'sfo1' });
+```
+
+The `region` option controls where the run's data is stored and where its queue messages are dispatched from. It does not deploy your code to that region. For step execution to happen in the selected region, deploy your app there. To do this, [configure Function regions](/docs/functions/configuring-functions/region) through the `regions` key in `vercel.json` or the Function Regions project setting. If you deploy your app to a region other than the requested one, the run's data stays in the requested region while its steps execute in the nearest deployed region.
+
+### Version and migration
+
+Multi-region requires `workflow` version `5.0.0-beta.33` or later. Runs created by the 4.x release line always live in `iad1`. Workflows locks each run's region at creation. To run in a different region, start a new run. Upgrading the SDK does not migrate runs created before the upgrade.
 
 ## Observability
 

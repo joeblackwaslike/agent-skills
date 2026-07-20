@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/review-requests"
-fetched_at: "2026-07-06T05:37:45.074Z"
-sha256: "14138e344c9ee0c0c745686b181b19a2f8beeff4ba10d8f2f7f1b6d6cde1c6fe"
+fetched_at: "2026-07-20T06:52:02.847Z"
+sha256: "694632a41d3fddfbd4ab6964dc70ba035852fac8c516c3a24fb247703fab41b6"
 ---
 
 # REST API endpoints for review requests
@@ -454,6 +454,14 @@ curl -L \
   * `merge_method`: required, string, enum: `merge`, `squash`, `rebase`
   * `commit_title`: required, string
   * `commit_message`: required, string
+* `stack`: `Pull Request Stack`:
+  * `base`: required, object:
+    * `ref`: required, string
+    * `sha`: required, string
+  * `size`: integer
+  * `position`: integer
+  * `id`: integer
+  * `number`: integer
 * `draft`: boolean
 
 ## Remove requested reviewers from a pull request

@@ -1,14 +1,47 @@
 ---
+title: NO_ASSIGN_WINDOW_LOCATION
+product: vercel
+url: /docs/conformance/rules/NO_ASSIGN_WINDOW_LOCATION
+canonical_url: "https://vercel.com/docs/conformance/rules/NO_ASSIGN_WINDOW_LOCATION"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Prevent unsafe assignment to window.location.href in your application.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_assign_window_location.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "25cea9cccaeaf396e5e1dbec1c9689d042eaabeee4a155b0abdf8bf31d04f8ad"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c521de9d8582b32b637c1217bed710adb2a0cdac6ece5f88e8db93a23cd7832c"
 ---
 
-# Page Not Found
+# NO_ASSIGN_WINDOW_LOCATION
 
-`/docs/conformance/rules/no_assign_window_location` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [NO_ASSIGN_WINDOW_LOCATION](/docs/conformance/rules/no_assign_window_location.md): Conformance is available on Enterprise plans Direct assignments to "window.location.href" or "window.location" should be avoided due to possible XSS
-- [Conformance Rules](/docs/conformance/rules.md): Requires that ESLint is configured for React. ESLINT\_RULES\_REQUIRED Requires that Next.js applications that use libraries with barrel exports use
+Direct assignments to "window.location.href" or "window.location" should be avoided due to possible XSS attacks that can occur from lack
+of sanitization of input to the "href".
 
-All pages: [/llms.txt](/llms.txt)
+## How to fix
+
+The recommended approach for Next.js applications is to use a custom `redirectTo` function. This provides a clear way to use `router.push()`
+or `window.location.href` to provide an experience that is best for the user (client-side navigation only, or a full page refresh).
+Here's an example of how you might do this using Next.js:
+
+Before:
+
+```js filename="my-site.js"
+windows.location.href = '/login';
+```
+
+After:
+
+```js filename="my-site.js"
+router.push('/login');
+```
+
+
+---
+
+[View full sitemap](/docs/sitemap)

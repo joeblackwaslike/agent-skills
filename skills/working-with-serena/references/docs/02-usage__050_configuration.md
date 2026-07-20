@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/050_configuration.md"
-fetched_at: "2026-07-13T06:58:57.510Z"
-sha256: "a8bf0949e27afaf8477f822ab03ac97a68f1ef382e8ababfe1b4b8291bfcb13f"
+fetched_at: "2026-07-20T06:52:31.491Z"
+sha256: "491666aca57764b3de220a1a65354f11b67a1371f4ef72db3119a40f6f4d75f7"
 ---
 
 # Configuration
@@ -703,6 +703,7 @@ The following settings are supported for the Java language server:
 | `gradle_wrapper_enabled` | `false` | Use the project's Gradle wrapper (`gradlew`) instead of the bundled Gradle distribution. Enable this for projects with custom plugins or repositories. |
 | `gradle_java_home` | `null` | Path to the JDK used by Gradle. When unset, Gradle uses `JAVA_HOME` if `use_system_java_home` is enabled and `JAVA_HOME` is set; otherwise it falls back to Serena's bundled JRE. |
 | `use_system_java_home` | `false` | Use the system's `JAVA_HOME` environment variable for JDTLS itself and, when `gradle_java_home` is unset, Gradle import. Enable this if your project requires a specific JDK vendor or version for Gradle's JDK checks. |
+| `runtimes` | `[]` | Extra JRE/JDK entries registered with JDT-LS via `java.configuration.runtimes`. Use this when a project's source/target level exceeds the JDK JDT-LS itself runs on (currently JDK 21 in default vscode-java VSIX mode). Each entry is a mapping with required `name` (e.g. `JavaSE-25`, matching the `JavaSE-NN` container the build tool requests) and `path` (JDK/JRE home directory; must exist), plus optional `default`, `sources`, and `javadoc` (passed through to JDT-LS). Entries extend rather than replace the bundled `JavaSE-21` runtime; an entry that reuses the `JavaSE-21` name overrides the bundled one. Changing this setting invalidates the JDTLS workspace hash so a fresh import is performed. |
 | `gradle_version` | `8.14.2` | (vscode-java mode only) Override the Gradle distribution version Serena downloads by default. |
 | `vscode_java_version` | `1.54.0-923` | (vscode-java mode only) Override the bundled `vscode-java` runtime bundle version Serena downloads by default. |
 | `intellicode_version` | `1.2.30` | (vscode-java mode only) Override the IntelliCode VSIX version Serena downloads by default. |
@@ -722,6 +723,10 @@ Notes:
 - In upstream-jdtls mode the `gradle_version`, `vscode_java_version`, `intellicode_version`,
   `intellicode_xmx`, `intellicode_xms` settings are silently ignored — they only apply to the
   vscode-java VSIX mode.
+- Without `runtimes`, JDT-LS only knows about the bundled `JavaSE-21` JRE. Projects that request a newer
+  container (e.g. `sourceCompatibility = JavaVersion.VERSION_25`) then fail to resolve JDK types such as
+  `java.lang.Object`. Register the matching installed JDK via `runtimes` instead of symlinking over Serena's
+  bundled JRE directory.
 
 Example: upstream-jdtls mode (offline / corporate network):
 
@@ -740,6 +745,19 @@ ls_specific_settings:
   java:
     gradle_wrapper_enabled: true
     use_system_java_home: true
+```
+
+Example: register an additional JDK for a project targeting a newer Java version:
+
+```yaml
+ls_specific_settings:
+  java:
+    runtimes:
+      - name: JavaSE-21
+        path: /usr/lib/jvm/java-21-openjdk
+      - name: JavaSE-25
+        path: /home/user/Java/jdk25
+        default: true
 ```
 
 #### Kotlin

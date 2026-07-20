@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security-guidance.md"
-fetched_at: "2026-07-13T06:53:38.588Z"
-sha256: "bd2b4ceb96df0ff4a650b9b8dfd47de0122f36aeed5713368e71c2c500ef7616"
+fetched_at: "2026-07-20T06:46:20.159Z"
+sha256: "22461c6098f964fc8c14effe2c685d51a85110f248b00b3f5ea93c7ea9a7539f"
 ---
 
 > ## Documentation Index
@@ -28,13 +28,18 @@ On first run the plugin creates a virtual environment under `~/.claude/security/
 
 ## Install the plugin
 
-In a Claude Code session, install from the [official Anthropic marketplace](/en/discover-plugins#official-anthropic-marketplace):
+In a terminal Claude Code session, install from the [official Anthropic marketplace](/en/discover-plugins#official-anthropic-marketplace):
 
 ```text theme={null}
 /plugin install security-guidance@claude-plugins-official
 ```
 
-The install prompts for a scope. Choose user scope to write the plugin to your user settings, so it loads in every new local session you start on this machine. If Claude Code reports that the marketplace is not found, run `/plugin marketplace add anthropics/claude-plugins-official` first, then retry the install.
+`/plugin` opens an interactive panel and is available only in the terminal CLI. If Claude replies that `/plugin` isn't available in this environment, install another way:
+
+* **Claude desktop app, local or SSH session**: open the [plugin browser](/en/desktop#install-plugins) by clicking the **+** button next to the prompt, then **Plugins**, then **Add plugin**
+* **Claude Code on the web or a desktop cloud session**: declare the plugin in `.claude/settings.json` as shown under [Enable in cloud sessions](#enable-in-cloud-sessions-and-shared-repositories)
+
+The terminal install prompts for a scope. Choose user scope to write the plugin to your user settings, so it loads in every new local session you start on this machine. If Claude Code reports `Marketplace "claude-plugins-official" not found`, add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`. If it reports that the plugin is not found in the marketplace, your local copy is outdated: refresh it with `/plugin marketplace update claude-plugins-official`. Then retry the install.
 
 Then activate it in the current session with `/reload-plugins`, which applies pending plugin changes without a restart:
 

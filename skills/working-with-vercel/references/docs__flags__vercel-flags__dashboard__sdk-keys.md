@@ -14,8 +14,8 @@ related:
 summary: Manage SDK Keys for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "cbad22151e74db97c593f776edaa9d95c99a74018fc862495877cf6c96328be4"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ad2e377c1efe6b3b3d8262679572b02b6f8d0a54315078d6d360d309d13658f0"
 ---
 
 # SDK Keys
@@ -139,7 +139,7 @@ Create SDK Keys for manual credentials, such as cross-project evaluation or exte
 2. Click **Create SDK Key**, select the target environment, and give the key a descriptive label
 3. Copy the SDK key from the confirmation dialog, then click **Done**
 
-> **⚠️ Warning:** The SDK key is shown only once, immediately after creation. Copy it to a password manager or your environment variables before dismissing the dialog. If you lose it, delete the key and create a new one.
+> **💡 Note:** The SDK key is shown only once, immediately after creation. Copy it to a password manager or your environment variables before dismissing the dialog. If you lose it, delete the key and create a new one.
 
 ## How to use flags of another project
 

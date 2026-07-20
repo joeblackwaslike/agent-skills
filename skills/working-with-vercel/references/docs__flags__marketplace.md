@@ -16,8 +16,8 @@ related:
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3521b4d0ff8cc999f9cd1f6c701be496b8c2dcb2963f9db9b23c5cfbe3409138"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "10e527156c65c900548fe9f5f7a7b2d37b15abc557620bbd35950c8c64d16eeb"
 ---
 
 # Marketplace
@@ -35,7 +35,6 @@ You can find popular feature flag and experimentation platforms in the Vercel Ma
 Native integrations are purchased through the Marketplace, let you sign in with your Vercel account, show flags directly in the Vercel dashboard, and sync flag values to Edge Config for faster reads.
 
 - [Statsig](/marketplace/statsig)
-- [Hypertune](/marketplace/hypertune)
 - [PostHog](/marketplace/posthog)
 - [GrowthBook](/marketplace/growthbook)
 
@@ -65,7 +64,6 @@ See these integration guides for setup instructions:
 
 - [Using Edge Config with LaunchDarkly](/docs/edge-config/edge-config-integrations/launchdarkly-edge-config)
 - [Using Edge Config with Statsig](/docs/edge-config/edge-config-integrations/statsig-edge-config)
-- [Using Edge Config with Hypertune](/docs/edge-config/edge-config-integrations/hypertune-edge-config)
 
 ## Platform integration
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "4082daa8a1e37b6f29601517084ae7c3f65b886a92492e446ed6c997c0d7e503"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "a93b7f8505578175969e57e0a79d4d3638b0747c32ee0088e61396ee88d6c401"
 ---
 
 # Embeddings
@@ -110,7 +110,7 @@ Google's `gemini-embedding-2` model (also available as `gemini-embedding-2-previ
 
 The `embedMany` function now supports parallel processing with configurable `maxParallelCalls` to optimize performance:
 
-```ts highlight={"3"}
+```ts highlight={"4"}
 import { embedMany } from 'ai';
 
 const { embeddings, usage } = await embedMany({

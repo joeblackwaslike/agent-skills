@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3e87496c58e3bf6ec29b41110fac67b46f2571d7f853b18eb6ba5a3d84effe1b"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "4d16dd1c03df4ea5d254b9f256e5a7cb78e707020844b96d4fb3a90d7f733b02"
 ---
 
 # Workflow Concepts
@@ -130,7 +130,7 @@ Use hooks to pause execution until external data arrives:
 import { defineHook } from 'workflow';
 
 // Human approval for AI-generated drafts
-const approvalHook = defineHook<{
+export const approvalHook = defineHook<{
   decision: 'approved' | 'changes';
   notes?: string;
 }>();

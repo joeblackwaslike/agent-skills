@@ -12,8 +12,8 @@ related:
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6588559b47eec30b99da27471b45d1496f7e8fc94d44e6c50e8c0e7bf51df750"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "d1b86ea5f2d54eee36b032574003beff1c33659648d58c724310b543d313af9c"
 ---
 
 # System environment variables
@@ -28,7 +28,7 @@ To enable these environment variables to your deployments:
 2. Select [**Environment Variables**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fenvironment-variables\&title=Go+to+Environment+Variables) in the sidebar.
 3. Select the **Enable access to System Environment Variables** checkbox.
 
-> **⚠️ Warning:** If you disable this setting, no deployment ID will be made available for supported frameworks (like Next.js) to use, which means [Skew Protection](/docs/skew-protection) will also be disabled.
+> **💡 Note:** If you disable this setting, no deployment ID will be made available for supported frameworks (like Next.js) to use, which means [Skew Protection](/docs/skew-protection) will also be disabled.
 
 ## System environment variables
 
@@ -170,6 +170,16 @@ When Secure Backend Access with OpenID Connect (OIDC) Federation is enabled in P
 
 ```bash
 VERCEL_OIDC_TOKEN=secret
+```
+
+### `VERCEL_HASH_SALT`
+
+**Available at:&#x20;**&#x42;uild time
+
+A salt to rotate the filenames of framework-generated content-addressed output. See also Immutable Static Files.
+
+```bash
+VERCEL_HASH_SALT=1783933175
 ```
 
 ### `VERCEL_GIT_PROVIDER`

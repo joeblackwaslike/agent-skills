@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/backpressure.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8d695b4ece2a37780a5b58da9d4b6615fc8615f4276024e9ad832f93302e452a"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "409c9d5bfaecf3fb7cb567a8f85be15621cd499904949bd8913554e152582687"
 ---
 
 # Stream Back-pressure and Cancellation
@@ -187,6 +187,7 @@ With the lazy approach, this is taken care of for you. Because the stream will o
 - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
 - [Sequential Generations](/docs/advanced/sequential-generations)
 - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 
 
 [Full Sitemap](/sitemap.md)

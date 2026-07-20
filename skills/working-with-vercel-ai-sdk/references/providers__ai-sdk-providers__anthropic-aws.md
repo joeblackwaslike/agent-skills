@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "15393bcee4d1ba1ba0e18011aa816183a15d8a71137f65b6441608883bdea04b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "003a0bbf628e0b7078e9cfc5c222f7f8dcba941c7108d4131fcab9e67f0a9ed7"
 ---
 
 # Claude Platform on AWS Provider
@@ -181,6 +181,7 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

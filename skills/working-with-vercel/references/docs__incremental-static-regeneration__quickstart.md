@@ -11,12 +11,11 @@ related:
   - /docs/build-output-api/v3
   - /docs/incremental-static-regeneration
   - /docs/incremental-static-regeneration/limits-and-pricing
-  - /docs/observability/monitoring
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f5ff32cdbd1121af1b99ee102be6e62b66b6e9f91ca8678497c341702008cb89"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "2363324b291fdcb5154549c7005dd6f04743de5c2c293c30cb127f9edd8665b8"
 ---
 
 # Getting started with ISR
@@ -386,6 +385,17 @@ export async function GET(request) {
 
 See the [time-based revalidation section above](#time-based-revalidation) for a full ISR example.
 
+## Observability
+
+You can observe your project's ISR usage in the [**ISR**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fisr\&title=Go+to+ISR+Observability) section of the [**Observability**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fobservability\&title=Try+Observability) tab in the Vercel dashboard.
+
+The **ISR** section provides graphs to help you understand cache behavior and spend:
+
+- **ISR Usage**: The read and write units you're billed for. Correlate data here with the revalidation graphs to find what drives your spend.
+- **Request Caching**: The amount of hits vs misses and the share of requests that Vercel serves from which cache layer.
+- **Time-based Revalidations**: How often pages are regenerated based on a timer. Use time-based revalidations when content needs to update but you don't have a webhook. Otherwise, use tag-based invalidation to only regenerate when you know the content has changed.
+- **Tag Revalidations**: How often a page is regenerated due to an on-demand tag revalidation. Tag content with unique keys and invalidate only the pages that need to update when the content change.
+
 ## Templates
 
 ## Next steps
@@ -393,7 +403,7 @@ See the [time-based revalidation section above](#time-based-revalidation) for a 
 - [How ISR works](/docs/incremental-static-regeneration#how-isr-works): Understand the request flow from build time through revalidation
 - [Caching on Vercel](/docs/incremental-static-regeneration#caching-on-vercel): Compare ISR with other caching strategies
 - [ISR usage and pricing](/docs/incremental-static-regeneration/limits-and-pricing): Understand costs and optimization strategies
-- [Monitor ISR on Vercel](/docs/observability/monitoring): Track ISR performance in your dashboard
+- [Monitor ISR](#observability): Track ISR reads, writes, and revalidations in your dashboard
 
 
 ---

@@ -1,15 +1,39 @@
 ---
+title: RANGE_UNIT_NOT_SUPPORTED
+product: vercel
+url: /docs/errors/RANGE_UNIT_NOT_SUPPORTED
+canonical_url: "https://vercel.com/docs/errors/RANGE_UNIT_NOT_SUPPORTED"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: The unit identifier of the Range header in the request is not supported. This is a request error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/range_unit_not_supported.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "ff76c2e36e8b4c63b06df204eb71c209a4557844cbcc8298c0649948d1b4409c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "5c2d42a581e4c5466570f367216f47eb5e2295b29751c430f1c5c3fa6b9c577d"
 ---
 
-# Page Not Found
+# RANGE_UNIT_NOT_SUPPORTED
 
-`/docs/errors/range_unit_not_supported` does not exist. Similar pages:
+The `RANGE_UNIT_NOT_SUPPORTED` error occurs when the unit identifier of the `Range` header in a request is not supported by the server. The `Range` header is used to request a specific portion of a resource from the server, and the unit identifier indicates the unit in which the range is specified, such as bytes.
 
-- [RANGE_UNIT_NOT_SUPPORTED](/docs/errors/range_unit_not_supported.md): The RANGE_UNIT_NOT_SUPPORTED error occurs when the unit identifier of the Range header in a request is not supported by the server. The Range header
-- [RANGE_MISSING_UNIT](/docs/errors/range_missing_unit.md): The RANGE_MISSING_UNIT error occurs when the unit identifier of the Range header in a request is missing. The Range header is used to request a
-- [Error Codes](/docs/errors.md): IZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED) OPTIMIZED\_EXTERNAL\_IMAGE\_TOO\_MANY\_REDIRECTS Image 502 RANGE\_END\_NOT\_VALID Request 416
+**Error Code:** `416`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Requested Range Not Satisfiable
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Verify supported Range units:** Check the documentation for the server or service you are interacting with to determine the supported range units
+2. **Correct Range unit:** If the `Range` header in your request specifies an unsupported unit, correct it to use a supported unit
+3. **Check configuration:** If the `Range` header values are being set automatically by some part of your system, check the configuration to ensure a supported unit identifier is being used
+4. **Debugging:** If the error persists, log the `Range` header values in your server logs to debug and understand what values are being sent in requests
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -1,22 +1,20 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/sdk/python/docs/faq.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "ef254ecd4b88ade60991ab27e6caddd6578d2b5ef76fa40b8228de1f7f70435c"
+fetched_at: "2026-07-20T06:48:25.540Z"
+sha256: "d406d41705e32424db6985c0a80e2922a59bb8cfa3608bb0fbf2567c088c89d0"
 ---
 
 # FAQ
 
 ## Is the Python SDK stable?
 
-`openai-codex` is a public beta. Install it with
-`pip install openai-codex`; public APIs may change before `1.0`. While beta
-releases are the only published SDK releases, pip selects the latest beta.
-After a stable release exists, pass `--pre` to opt into newer prereleases.
+`openai-codex` publishes stable releases. Install the latest one with
+`pip install openai-codex`.
 
 ## Why does the SDK install a runtime package?
 
-The SDK and runtime packages are versioned independently. Each SDK release
-pins and installs one compatible runtime dependency automatically.
+The SDK version tracks the corresponding Codex CLI release. Each SDK release
+pins and installs its matching runtime dependency automatically.
 
 ## Thread vs turn
 

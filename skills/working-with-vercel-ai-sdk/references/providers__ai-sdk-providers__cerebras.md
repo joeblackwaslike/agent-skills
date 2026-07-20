@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a2363125933e06e6b4f584732c6e827528916895e02d64ca3ec8ed779b6d472b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "cd751ca5101578fc3f535859cb6fb508b590a884318d786bb9e795522f07d3ab"
 ---
 
 # Cerebras Provider
@@ -195,6 +195,7 @@ The following optional provider options are available for Cerebras language mode
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "2e3084b173e9ab13e1b6dd946085910ddc7d0c9ff2cd0e690b2e5bc7422c5b25"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "5e2f5eb7c3bbf23fd2b585e51143f3bd7fdc7fb740b71bc919dd3663c6ced887"
 ---
 
 # Community Providers
@@ -57,6 +57,7 @@ Here are the community providers that implement the Language Model Specification
   - [ByteDance](/providers/ai-sdk-providers/bytedance)
   - [Kling AI](/providers/ai-sdk-providers/klingai)
   - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+  - [Cartesia](/providers/ai-sdk-providers/cartesia)
 - [AI SDK Harnesses](/providers/ai-sdk-harnesses)
   - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
   - [Codex](/providers/ai-sdk-harnesses/codex)

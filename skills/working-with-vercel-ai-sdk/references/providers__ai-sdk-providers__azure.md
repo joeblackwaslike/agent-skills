@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "be70620912d3c289073da07925780bbf0cc48e17eb09ef23b482102b2b6dd912"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "679840d6d72d21490714c232696b3d655604c285c79bf3f1598e5f8c05838ca1"
 ---
 
 # Azure OpenAI Provider
@@ -1199,6 +1199,7 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

@@ -15,8 +15,8 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2918bfcad0dbf3e643597dbcb02d495450d13c5d907575de2890a6a52f868805"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "1fbb3141d91e4f626302b544033dfddcb8c727a12999b1240306d9bae433af70"
 ---
 
 # Zero Data Retention
@@ -399,7 +399,7 @@ To mark a BYOK key as ZDR:
 2. Add a new key or edit an existing one.
 3. Toggle on **Zero Data Retention**.
 
-> **⚠️ Warning:** You take responsibility for any BYOK key you mark as ZDR. Vercel has no
+> **💡 Note:** You take responsibility for any BYOK key you mark as ZDR. Vercel has no
 > visibility into your agreements with providers, so confirm your contract
 > covers zero data retention before marking a key.
 

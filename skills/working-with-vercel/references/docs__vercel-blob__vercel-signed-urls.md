@@ -3,7 +3,7 @@ title: Vercel Signed URLs
 product: vercel
 url: /docs/vercel-blob/vercel-signed-urls
 canonical_url: "https://vercel.com/docs/vercel-blob/vercel-signed-urls"
-last_updated: 2026-05-19
+last_updated: 2026-07-08
 type: reference
 prerequisites:
   - /docs/vercel-blob
@@ -13,8 +13,8 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "85139054ccee734864ae50365c27a863cc5ecd33bc0c1b2a6f120adb601a6b7a"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f0bae805ef3d95f0d2805dedaf815ab46a487329f0c4ff26efaa89923c898f60"
 ---
 
 # Vercel Signed URLs

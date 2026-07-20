@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "58048f815d6870e0f3d7977fb9edd65f841adfa302e72386e57c59965d0ee4d8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "649d1420d081259f99e45bc697685a2e6a49a81aa189c0d9ea1da7740354f7b8"
 ---
 
 # Directory Sync
@@ -73,6 +73,7 @@ If access is lost due to removal of team owners, use the following group names t
 | `vercel-role-billing`     | [Billing](/docs/rbac/access-roles#billing-role)                                                                              |
 | `vercel-role-viewer`      | [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) or [Viewer Enterprise](/docs/rbac/access-roles#enterprise-viewer-role) |
 | `vercel-role-contributor` | [Contributor](/docs/rbac/access-roles#contributor-role)                                                                      |
+| `vercel-role-security`    | [Security](/docs/rbac/access-roles#security-role)                                                                            |
 
 
 ---

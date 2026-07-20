@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/custom-actions.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "f75cd9395a7d5ac80ba57a6a084455a7ae3353b5d455bac0ad590e9771e2a446"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "f03af1d85215eb33d9bb3bef62e68e5f4998a700196a0e70a86921225777fc9a"
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -48,8 +48,8 @@ If you're developing a Node.js project, the {% data variables.product.prodname_a
 
 ### Composite Actions
 
-A _composite_ action allows you to combine multiple workflow steps within one action. For example, you can use this feature to bundle together multiple run commands into an action, and then have a workflow that executes the bundled commands as a single step using that action. To see an example, check out [AUTOTITLE](/actions/creating-actions/creating-a-composite-action).
+A _composite_ action allows you to combine multiple workflow steps within one action. For example, you can use this feature to bundle together multiple run commands into an action, and then have a workflow that executes the bundled commands as a single step using that action. To see an example, check out [AUTOTITLE](/actions/tutorials/create-actions/create-a-composite-action).
 
 ## Next steps
 
-To learn about how to manage your custom actions, see [AUTOTITLE](/actions/how-tos/administering-github-actions/managing-custom-actions).
+To learn about how to manage your custom actions, see [AUTOTITLE](/actions/how-tos/create-and-publish-actions/manage-custom-actions).

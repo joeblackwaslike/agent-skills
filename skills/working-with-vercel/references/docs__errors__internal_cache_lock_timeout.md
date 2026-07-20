@@ -1,13 +1,36 @@
 ---
+title: INTERNAL_CACHE_LOCK_TIMEOUT
+product: vercel
+url: /docs/errors/INTERNAL_CACHE_LOCK_TIMEOUT
+canonical_url: "https://vercel.com/docs/errors/INTERNAL_CACHE_LOCK_TIMEOUT"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  []
+summary: An unexpected error happened when CDN is accessing internal cache.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_cache_lock_timeout.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "831de812fcbcb06c224a284980aac03b34296788bcd8e5a026ba3793144fcde7"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "da861e3351ca8bc67475c491cfe1910ae1a690aa5290b7bf215d56c3dbe37bd8"
 ---
 
-# Page Not Found
+# INTERNAL_CACHE_LOCK_TIMEOUT
 
-`/docs/errors/internal_cache_lock_timeout` does not exist. Similar pages:
+The `INTERNAL_CACHE_LOCK_TIMEOUT` error occurs when CDN is accessing internal cache.
 
-- [INTERNAL_CACHE_LOCK_TIMEOUT](/docs/errors/internal_cache_lock_timeout.md): The INTERNAL_CACHE_LOCK_TIMEOUT error occurs when CDN is accessing internal cache. 500 INTERNAL\_CACHE\_LOCK\_TIMEOUTInternal Server Error
+**Error Code:** `500`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Internal Server Error
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Contact support:** If the error persists, [contact support](/help#issues) for further assistance
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -3,19 +3,21 @@ title: Vercel Container Registry
 product: vercel
 url: /docs/container-registry
 canonical_url: "https://vercel.com/docs/container-registry"
-last_updated: 2026-06-30
+last_updated: 2026-07-10
 type: how-to
 prerequisites:
   []
 related:
   - /docs/functions/container-images
   - /docs/sandbox/concepts/images
-  - /docs/container-registry/limits-and-pricing
-summary: Vercel Container Registry stores project-scoped OCI images that you can push and pull with Docker-compatible tooling.
+  - /docs/cli
+  - /docs/cli/link
+  - /docs/container-registry/cli-reference
+summary: Store and manage Docker container images on Vercel. Push images built from a Dockerfile, then run them on Vercel Functions or in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ed49911dd285a7d9094999e1b939a06128450e6a85203dfe1656e72bdcbf28f8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "1b2f764c7198b198464fb77fc0619de3befc55dfd6814355176ba6d391d3446d"
 ---
 
 # Vercel Container Registry
@@ -44,27 +46,20 @@ Create a VCR repository from your project dashboard:
 
 You can also push to a new repository path with Docker-compatible tooling. VCR creates the repository automatically when your authenticated account has access to the project.
 
-## Authenticate Docker to VCR
+## Authenticate a container tool to VCR
 
-Use OpenID Connect (OIDC) when `VERCEL_OIDC_TOKEN` is available in your shell. Vercel provides this token automatically in deployments.
+The recommended way to authenticate is with OpenID Connect (OIDC) through the [Vercel CLI](/docs/cli). In a [linked project](/docs/cli/link), `vercel vcr login` authenticates a container tool with VCR. It supports Docker, Podman, and Buildah:
 
-For local development, link your project, pull the token into `.env.local`, source it, and sign in to Docker:
-
-```bash filename="Terminal"
+```bash filename="terminal"
 vercel link
-vercel env pull .env.local
-source .env.local
-
-printf '%s' "$VERCEL_OIDC_TOKEN" | docker login vcr.vercel.com \
-  --username oidc \
-  --password-stdin
+vercel vcr login docker
 ```
 
-The Docker username is `oidc` for OIDC authentication.
+Vercel mints a short-lived, project-scoped OIDC token and passes it to the container tool with the username `oidc`. The credentials are valid for 12 hours. Re-run the command to refresh them. Use `--project` to authenticate a different project.
 
 Or create a Vercel token from the [Account Tokens page](/account/tokens), then set `VERCEL_TOKEN` to that value:
 
-```bash filename="Terminal"
+```bash filename="terminal"
 printf '%s' "$VERCEL_TOKEN" | docker login vcr.vercel.com \
   --username "$VERCEL_TEAM_ID" \
   --password-stdin
@@ -84,7 +79,7 @@ To use zstd compression, build and push the image with Docker Buildx:
 
 > **💡 Note:** Vercel recommends zstd compression for images pushed to VCR.
 
-```bash filename="Terminal"
+```bash filename="terminal"
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
   --output "type=image,name=vcr.vercel.com/team-slug/project-slug/my-repository:latest,push=true,oci-mediatypes=true,compression=zstd,compression-level=3,force-compression=true" \
@@ -93,7 +88,7 @@ docker buildx build \
 
 If Docker Buildx is unavailable, you can build and push the image with Docker. This command does not set zstd compression:
 
-```bash filename="Terminal"
+```bash filename="terminal"
 docker build \
   -t vcr.vercel.com/team-slug/project-slug/my-repository:latest \
   .
@@ -105,9 +100,13 @@ docker push vcr.vercel.com/team-slug/project-slug/my-repository:latest
 
 Pull a VCR image with the same full repository path:
 
-```bash filename="Terminal"
+```bash filename="terminal"
 docker pull vcr.vercel.com/team-slug/project-slug/my-repository:latest
 ```
+
+## Manage repositories from the CLI
+
+Use the `vercel vcr` command group in the [Vercel CLI](/docs/cli) to list, inspect, create, and delete repositories, and to manage their tags and images. For all commands, subcommands, and options, see the [Container Registry CLI Reference](/docs/container-registry/cli-reference).
 
 ## Limits and pricing
 

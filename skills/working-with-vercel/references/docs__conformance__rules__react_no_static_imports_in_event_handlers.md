@@ -1,14 +1,62 @@
 ---
+title: REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS
+product: vercel
+url: /docs/conformance/rules/REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS
+canonical_url: "https://vercel.com/docs/conformance/rules/REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  - /docs/conformance/customize
+summary: Prevent static imports that are referenced only in React event handlers from being eagerly loaded in React components.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/react_no_static_imports_in_event_handlers.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "fc7629d9c3d7920c18fbe44e57d0450d577576b53e72a575430fe8e5dd5c6837"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c2cebe2ca1e61064b04391b4200bf328c917007ef10d7e69f818a35fee839840"
 ---
 
-# Page Not Found
+# REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS
 
-`/docs/conformance/rules/react_no_static_imports_in_event_handlers` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS](/docs/conformance/rules/react_no_static_imports_in_event_handlers.md): Conformance is available on Enterprise plans This rule has been deprecated as of version 1.8.0and will be removed in 2.0.0. React event handlers are
-- [Conformance Rules](/docs/conformance/rules.md): NO\_EXTERNAL\_CSS\_AT\_IMPORTS Requires that any fetch call that is depended on transitively by Next.js middleware be reviewed and approved before
+React event handlers are async, and as such, this means we can defer loading the
+associated code until we interact with the UI, triggering that event handler. Specifically, this
+means we can improve initial code size and the overhead of loading the code until it is actually needed.
 
-All pages: [/llms.txt](/llms.txt)
+## How to fix
+
+Instead of using static imports at the top of your module, you can use dynamic imports as needed in your React event handlers.
+
+Before:
+
+```js
+import foo from 'foo';
+
+const onClick = () => {
+  foo.doSomething();
+};
+```
+
+After:
+
+```js
+const onClick = () => {
+  import('foo').then((foo) => {
+    foo.doSomething();
+  });
+};
+```
+
+Additionally, you can [configure](/docs/conformance/customize) the rule for only specific React event handlers:
+
+```json
+"REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS": {
+  eventAllowList: ['onClick'],
+}
+```
+
+
+---
+
+[View full sitemap](/docs/sitemap)

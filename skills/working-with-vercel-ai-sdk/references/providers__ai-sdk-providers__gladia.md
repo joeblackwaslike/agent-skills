@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "589c79b12a28908ed6626d2fa62df2eada6af0e3e84872ad05b026f63b2b2bdf"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "3310609a8b07408fe3767dcd199d90f04ef6aadb4ae6601a076f9e50e50d9df0"
 ---
 
 # Gladia Provider
@@ -317,6 +317,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

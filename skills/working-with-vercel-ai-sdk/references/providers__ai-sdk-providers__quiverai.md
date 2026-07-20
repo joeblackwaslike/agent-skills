@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "df255502996c248b1caa35f50167479a47a0e3894cbf181eecba2ffddedf30bd"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "85b1e65826b7efbf0f9f58c15fd34c10ce10d473bddb04d1ef3f42e75a5d4be7"
 ---
 
 # QuiverAI Provider
@@ -233,6 +233,7 @@ fs.writeFileSync('logo.svg', image.uint8Array);
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

@@ -13,8 +13,8 @@ related:
 summary: Use LibreChat with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/librechat.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "6d5d9daeed17c3b4822afb3d253e783b86adae3abb041066e578968930066844"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f1d55a7beb13e8d9c9e687e004bdd43721d6ab9b72bfe9050f66ecc537678a5d"
 ---
 
 # LibreChat
@@ -52,7 +52,7 @@ sha256: "6d5d9daeed17c3b4822afb3d253e783b86adae3abb041066e578968930066844"
   ```bash filename=".env"
   AI_GATEWAY_API_KEY=your-ai-gateway-api-key
   ```
-  > **⚠️ Warning:** Use the `${"${VARIABLE_NAME}"}` pattern to reference environment variables. Do not include raw API keys in the YAML file.
+  > **💡 Note:** Use the `${"${VARIABLE_NAME}"}` pattern to reference environment variables. Do not include raw API keys in the YAML file.
 
 - ### Configure custom endpoint
   Create a `librechat.yaml` file in your LibreChat root directory:

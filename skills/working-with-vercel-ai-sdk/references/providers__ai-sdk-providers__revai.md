@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "d4f973a20a583af8664b21f4723052de0b7632aa0072d4da60f96e96940428c4"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "174988ebcc9a583b081ab48ef0b5f626c080e434e5e25068d9c356c175bbee20"
 ---
 
 # Rev.ai Provider
@@ -250,6 +250,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

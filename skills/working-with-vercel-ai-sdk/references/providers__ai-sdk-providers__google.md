@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a5c63681157024425dd569f9a7a9831136dd38d856d07685ab3cc0c59525d5f8"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "5c14fc101ce145107a2d58d7b980d41abd5b8f719a83dc298d1dfb92cf1217fd"
 ---
 
 # Google Provider
@@ -499,7 +499,7 @@ The response will contain the tool calls and results from the code execution.
 With [Google Search grounding](https://ai.google.dev/gemini-api/docs/google-search),
 the model has access to the latest information using Google Search.
 
-```ts highlight="8,17-20"
+```ts highlight="8,17-19"
 import { google } from '@ai-sdk/google';
 import { GoogleProviderMetadata } from '@ai-sdk/google';
 import { generateText } from 'ai';
@@ -658,7 +658,7 @@ Google provides a provider-defined URL context tool.
 
 The URL context tool allows you to provide specific URLs that you want the model to analyze directly in from the prompt.
 
-```ts highlight="9,13-17"
+```ts highlight="9,13-15"
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
@@ -819,7 +819,7 @@ This enables the model to provide answers based on your specific data sources an
   Google provider (`@ai-sdk/google`) to use this feature.
 </Note>
 
-```ts highlight="8,17-20"
+```ts highlight="5-8,13-17,25-27"
 import { createGoogleVertex } from '@ai-sdk/google-vertex';
 import { GoogleProviderMetadata } from '@ai-sdk/google';
 import { generateText } from 'ai';
@@ -2025,7 +2025,7 @@ spoken text, so `instructions: 'Say cheerfully'` with `text: 'Hello'` speaks `Sa
 For multi-speaker dialogue, pass a `multiSpeakerVoiceConfig` through `providerOptions`. Each speaker
 name must match a name used in the input text. When set, it overrides the top-level `voice`.
 
-```ts highlight="8-23"
+```ts highlight="7-22"
 import { generateSpeech } from 'ai';
 import { google, type GoogleSpeechModelOptions } from '@ai-sdk/google';
 
@@ -2108,6 +2108,7 @@ const result = await generateSpeech({
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

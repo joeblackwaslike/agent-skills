@@ -16,8 +16,8 @@ related:
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "20a03f0c305bd83b63b489ce243d7b5edfb1e56d9b706ae75893f542939df74c"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "84dab6cfbaff1dc99b2dca5695a13955ae224c396c0626ec766b36cece5e529c"
 ---
 
 # ISR Usage and Pricing
@@ -84,6 +84,10 @@ If you're seeing unexpected writes, the content has changed between revalidation
 - Check that you're not using `new Date()` in the ISR output
 - Check that you're not using `Math.random()` in the ISR output
 - Check that no other non-deterministic code is included in the ISR output
+
+For users with [Observability+](/docs/observability/observability-plus), the [**ISR Observability**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fisr\&title=Go+to+ISR+Observability) page contains a **Write Utilization** metric that shows the number of total requests served by the cache per ISR write. Use this metric to find pages that are regenerating often but not receiving many requests per regeneration. Increasing the revalidation interval or switching to on-demand revalidation for these pages can improve ISR costs.
+
+For a step-by-step walkthrough of these strategies, see [How to reduce ISR revalidation costs](/kb/guide/how-to-reduce-isr-revalidation-costs).
 
 ## ISR reads chart
 

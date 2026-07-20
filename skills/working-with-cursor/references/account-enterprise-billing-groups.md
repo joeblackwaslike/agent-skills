@@ -1,14 +1,14 @@
 ---
 source: "https://cursor.com/docs/account/enterprise/billing-groups.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "fa29a3e5a0a8ab9112b73b153b458be898a710fd1a507eb42a0550658d99488e"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "a843395d3da31213651c8e55d156e9aa38d9fa76f4e796fd1eab9e1db440484a"
 ---
 
 # Billing Groups
 
 [Billing groups](https://cursor.com/dashboard/members?subtab=billing-groups) allow Enterprise admins to understand and manage spend across groups of users. This functionality is useful for reporting, internal chargebacks, and budgeting.
 
-For org-level groups across linked teams, see [Organizations](https://cursor.com/docs/enterprise/organizations.md).
+For org-level cohorts across linked teams, see [Organization Groups](https://cursor.com/docs/enterprise/organization-groups.md).
 
 ## Billing group architecture
 

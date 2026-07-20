@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "e571645a8432656cd93978379fc5e95c49822d39945ce28b25382c2da8b79079"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "558efa74c27a497912ba666d7b51d52bfa839d01a08343c8cc98b35b6531cc89"
 ---
 
 # Open Responses Provider
@@ -281,6 +281,7 @@ provider.
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

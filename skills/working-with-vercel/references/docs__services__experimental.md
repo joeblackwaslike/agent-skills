@@ -13,15 +13,15 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "247189527e335757414f9ddaa2a65fe4e89764fcc002d16216f91df303945a40"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "ce43c105d1de20cd566a2524b364b43ca84766cd286a870f56d18cb9f4c7771a"
 ---
 
 # Experimental Services
 
 > **🔒 Permissions Required**: Services
 
-> **⚠️ Warning:** This page documents the earlier `experimentalServices` configuration model. New
+> **💡 Note:** This page documents the earlier `experimentalServices` configuration model. New
 > projects should use the [`services`](/docs/services) model. The
 > `experimentalServices` model remains available while you migrate.
 

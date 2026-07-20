@@ -16,13 +16,13 @@ related:
 summary: Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/httpstat.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "14b5f44c65549c8dae8a373366fde58b751f4ebe4c8a274697ed0727f62382a0"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "7d001b5349a521b5a3dc0af1b031e9e8db165f8dad8793be27a07db1c62cf4bf"
 ---
 
 # vercel httpstat
 
-> **⚠️ Warning:** The `vercel httpstat` command is currently in beta. Features and behavior may change.
+> **💡 Note:** The `vercel httpstat` command is currently in beta. Features and behavior may change.
 
 The `vercel httpstat` command works like `httpstat`, but automatically handles deployment protection bypass tokens for you. It provides visualization of HTTP timing statistics, showing how long each phase of an HTTP request takes. When your project has [Deployment Protection](/docs/security/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
 

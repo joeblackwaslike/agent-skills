@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "f5b62fcfc4e3b6cdce0e5c2340f2a9aed7e2df7fb6865a35ff702771aaab201b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "3efdbffbaaaaa03b142232dffe04481e79d1bed8652b2102db71e224db727d4a"
 ---
 
 # Observability Integrations
@@ -82,6 +82,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [ByteDance](/providers/ai-sdk-providers/bytedance)
   - [Kling AI](/providers/ai-sdk-providers/klingai)
   - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+  - [Cartesia](/providers/ai-sdk-providers/cartesia)
 - [AI SDK Harnesses](/providers/ai-sdk-harnesses)
   - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
   - [Codex](/providers/ai-sdk-harnesses/codex)

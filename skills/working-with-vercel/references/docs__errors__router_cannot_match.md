@@ -1,13 +1,40 @@
 ---
+title: ROUTER_CANNOT_MATCH
+product: vercel
+url: /docs/errors/ROUTER_CANNOT_MATCH
+canonical_url: "https://vercel.com/docs/errors/ROUTER_CANNOT_MATCH"
+last_updated: 2026-02-09
+type: reference
+prerequisites:
+  []
+related:
+  - /docs/redirects
+  - /docs/deployments/logs
+summary: The router cannot match the route to any of the known patterns. This is a routing error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/router_cannot_match.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3846a340396d2af2cc22ab183c0a5f82daa379daf5479ad463f85693ecd10716"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "5137c3453ef83b39790cd85b6f0ef7569191124db8e8d971d0214e2e53ab7936"
 ---
 
-# Page Not Found
+# ROUTER_CANNOT_MATCH
 
-`/docs/errors/router_cannot_match` does not exist. Similar pages:
+The `ROUTER_CANNOT_MATCH` error occurs when the router is unable to match the requested route to any of the known patterns. This could happen due to a misconfiguration in the routing setup or an erroneous request path.
 
-- [ROUTER_CANNOT_MATCH](/docs/errors/router_cannot_match.md): The ROUTER_CANNOT_MATCH error occurs when the router is unable to match the requested route to any of the known patterns. This could happen due to a
+**Error Code:** `502`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Bad Gateway
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Review routing configuration:** Check the [routing configuration](/docs/redirects#configuration-redirects) to ensure that it is correctly set up to handle the requested route
+2. **Verify request path:** Ensure that the request path is correct and adheres to the expected patterns defined in the routing configuration
+3. **Check for typos:** Look for any typos or misconfigurations in the routing setup that might be causing the mismatch
+4. **Review application logs:** Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to routing
+
+
+---
+
+[View full sitemap](/docs/sitemap)

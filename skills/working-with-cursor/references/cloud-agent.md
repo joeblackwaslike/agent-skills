@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent.md"
-fetched_at: "2026-07-13T06:55:43.454Z"
-sha256: "33919f13b1d2d24799bcdb5480c0d4b55abe3237156e6fbbfbf282094968f3d3"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "ff363ef90b95c9eba13011bd3e69407fcb3c46eb3a7fcb1dff317f0523ec5116"
 ---
 
 # Cloud Agents
@@ -60,19 +60,15 @@ You can configure environments with agent-led setup, a saved snapshot, or a Dock
 
 The Cloud Agents dashboard shows which environment an agent used, along with environment details and version history. On the agent page, hover over the repository name at the top of the page to inspect the environment used for that run. See [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md) for configuration details.
 
-### Managed and self-hosted runtimes
+### Runtime and environment controls
 
-Cursor-managed Cloud Agents are the default path for most teams. You can add secrets, restrict outbound domains, connect to private networks with Tailscale or a similar client, and use private connectivity for supported source control paths.
+Cursor manages VM provisioning, isolation, snapshots, startup, artifacts, and capacity for every Cloud Agent. You can add secrets, restrict outbound domains, connect to private networks with Tailscale or a similar client, and use private connectivity for supported source control paths.
 
-Use [My Machines](https://cursor.com/docs/cloud-agent/my-machines.md) or [Self-Hosted Pool](https://cursor.com/docs/cloud-agent/self-hosted-pool.md) when you want to own the machine that executes terminal commands, file edits, browser actions, and other tool calls. In both modes, the agent loop still runs in Cursor's cloud.
-
-See [Choose where Cloud Agents run](https://cursor.com/docs/cloud-agent/choose-runtime.md) for the [decision guide](https://cursor.com/docs/cloud-agent/choose-runtime.md#self-hosted-or-cursor-hosted-which-is-right-for-you) and full comparison.
+See [Cloud Agent security and network](https://cursor.com/docs/cloud-agent/security-network.md) for the full set of environment and network controls. If you're weighing whether to self-host, see [why most teams start with Cursor Cloud](https://cursor.com/docs/cloud-agent/self-hosted.md).
 
 ## Models
 
-Cloud Agents use a curated selection of models that always run in [Max Mode](https://cursor.com/docs/models-and-pricing.md#max-mode).
-
-There is no toggle to turn Max Mode off for Cloud Agents.
+Cloud Agents use a curated selection of models. You can select the context window size for supported models.
 
 ## MCP support
 
@@ -105,13 +101,12 @@ See [Cloud agent capabilities](https://cursor.com/docs/cloud-agent/capabilities.
 
 - Learn more about [Cloud agent capabilities](https://cursor.com/docs/cloud-agent/capabilities.md).
 - Learn more about [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md).
-- Learn how to [choose where Cloud Agents run](https://cursor.com/docs/cloud-agent/choose-runtime.md).
 - Learn more about [Cloud agent security](https://cursor.com/docs/cloud-agent/security-network.md).
 - Learn more about [Cloud agent settings](https://cursor.com/docs/cloud-agent/settings.md).
 
 ## Billing
 
-Cloud Agents are charged at API pricing for the selected [model](https://cursor.com/docs/models-and-pricing.md#model-pricing). You'll be asked to set a spend limit when you first start using them.
+Cloud Agents are charged at API pricing for the selected [model](https://cursor.com/docs/models-and-pricing.md#model-pricing). You can select the context window size, and a larger context window can increase token usage and costs. You'll be asked to set a spend limit when you first start using them.
 
 ## Troubleshooting
 

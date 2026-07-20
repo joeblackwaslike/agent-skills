@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/zdharma-continuum/zinit/main/README.md"
-fetched_at: "2026-07-06T05:53:11.910Z"
-sha256: "94c6641a6cce15f23baf04518c3b0e0e9683380cafe0e3c8f0c4fc3a723cf355"
+fetched_at: "2026-07-20T06:59:40.537Z"
+sha256: "97c0d6c4f8018b4755203c981deb7b0615d743715b3a140903dd6d312d2fc1bb"
 ---
 
 <p align="center">
@@ -799,8 +799,18 @@ You may safely assume a given ice works with both plugins and snippets unless ex
 
 ### Order of Execution<a name="order-of-execution"></a>
 
-Order of execution of related Ice-mods: `atinit` -> `atpull!` -> `make'!!'` -> `mv` -> `cp` -> `make!` ->
-`atclone`/`atpull` -> `make` -> `(plugin script loading)` -> `src` -> `multisrc` -> `atload`.
+Order of execution of related Ice-mods: `atinit` -> `atpull!` -> `make'!!'` -> `mv` -> `cp` ->
+`[compile, unless nocompile is set]` -> `make!` -> `atclone`/`atpull` -> `make` -> `cmake` ->
+`[compile when nocompile'!']` -> `(plugin script loading)` -> `src` -> `multisrc` -> `atload`.
+
+Compilation runs in one of two phases. **By default** the `pick`-pointed files are compiled early –
+right after `cp`, and **before** the `atclone`/`atpull` hooks run – so files already present in the
+repository (or moved into place by `mv`/`cp`) are compiled automatically. A file that is **created by an
+`atclone` or `atpull` hook does not yet exist** at that point, so the default compile skips it. Passing
+the bang form `nocompile'!'` disables the early compile and **defers** compilation to a second phase that
+runs **after** `make''` and `atclone''`/`atpull''`, once the generated file exists (see the `nocompile`
+ice). Bare `nocompile` disables compilation entirely. `make'!!'` is the extra-early make phase before
+`mv`/`cp`/`extract` and the default compile phase.
 
 ## Zinit Commands<a name="zinit-commands"></a>
 

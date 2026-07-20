@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started/nodejs.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b62009a899cf99fc0f1d4c589b332ee87d1f316a4f096d62beea0d6e3ab17d98"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "ee05eb5b017cf109c946e0c9641e7f7139874f46b88f4cd4fb3d96ed3fd5999b"
 ---
 
 # Node.js Quickstart
@@ -251,7 +251,7 @@ Try asking something like "What's the weather in New York?" and see how the agen
 
 Notice the blank "assistant" response? This is because instead of generating a text response, the agent generated a tool call. You can access the tool call and subsequent tool result in the `toolCall` and `toolResult` keys of the result object.
 
-```typescript highlight="46-47"
+```typescript highlight="50-51"
 import { ModelMessage, streamText, tool } from 'ai';
 __PROVIDER_IMPORT__;
 import 'dotenv/config';

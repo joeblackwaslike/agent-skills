@@ -3,7 +3,7 @@ title: Automatic Caching
 product: vercel
 url: /docs/ai-gateway/models-and-providers/automatic-caching
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching"
-last_updated: 2026-06-26
+last_updated: 2026-07-08
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: Enable automatic prompt caching across providers with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "f109382d31a1b8a2170089aaad1d869e37993bb99ffdeca844c3d11fc7eff559"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "08312ae9dddf8d2ea6c768a309ad2a43b7a8d59a211ec20516650017f2664eec"
 ---
 
 # Automatic Caching

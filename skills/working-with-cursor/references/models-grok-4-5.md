@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/models/grok-4-5.md"
-fetched_at: "2026-07-13T06:55:43.454Z"
-sha256: "8d46752b60cfcb21e320c2a40de167c41290c212ab79020487d1547c7f1c7186"
+fetched_at: "2026-07-20T06:48:56.322Z"
+sha256: "7a39929bf367c2160f45ecb903e2208d18874e0da1a5c170f8ca80d5b2fd1f14"
 ---
 
 Grok 4.5 is a joint model from Cursor and SpaceXAI for long-running tasks across software engineering and knowledge work. It combines the Grok base with continued training on trillions of tokens of Cursor data and reinforcement learning on difficult, realistic problems.
@@ -20,11 +20,9 @@ Learn more about [how tools work](https://cursor.com/docs/agent/overview.md#tool
 
 ## Pricing
 
-Grok 4.5 is not yet available in the European Union in accordance with the [EU AI Act](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act).
-
 Grok 4.5 is part of the [First-party models pool](https://cursor.com/docs/models-and-pricing.md#first-party-models-pool) on individual and team plans. This pool also includes Auto and Composer 2.5.
 
-Included usage is doubled through July 15, 2026. Standard on-demand usage is priced at $2/M input tokens and $6/M output tokens. The Fast variant is priced at $4/M input tokens and $18/M output tokens. All prices are per million tokens.
+Included usage is doubled through July 21, 2026. Standard on-demand usage is priced at $2/M input tokens and $6/M output tokens. The Fast variant is priced at $4/M input tokens and $18/M output tokens. All prices are per million tokens.
 
 
 ---

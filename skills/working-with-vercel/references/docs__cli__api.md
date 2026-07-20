@@ -14,13 +14,13 @@ related:
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c7c883b6d0c0fc574ea5e7fce9baba695c3db5cda8683ee9e8ceb76767c9544d"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "d90c32982ba2cfb0368e46ce617352760e7f438f663ac29201f4b3cd44cf47ac"
 ---
 
 # vercel api
 
-> **⚠️ Warning:** The `vercel api` command is currently in beta. Features and behavior may change.
+> **💡 Note:** The `vercel api` command is currently in beta. Features and behavior may change.
 
 The `vercel api` command lets you make authenticated HTTP requests to the Vercel API directly from your terminal. It handles authentication automatically using your CLI session, supports interactive endpoint discovery, and provides features like automatic pagination and request body construction.
 

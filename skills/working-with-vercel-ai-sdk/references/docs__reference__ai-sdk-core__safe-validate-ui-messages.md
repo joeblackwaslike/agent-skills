@@ -1,12 +1,12 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/safe-validate-ui-messages.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "8d8f1a35d2c0398ddefb82988a6319e0e48291fe536b984bf205bdc2de988f95"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "4afafb66769cd75b76568739bc5946e866ca40ca9a68d961901282f2f7246a19"
 ---
 
 # `safeValidateUIMessages`
 
-`safeValidateUIMessages` is an async function that validates UI messages like [`validateUIMessages`](https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages), but instead of throwing it returns an object with a `success` key and either `data` or `error`.
+`safeValidateUIMessages` is an async function that validates UI messages like [`validateUIMessages`](/docs/reference/ai-sdk-core/validate-ui-messages), but instead of throwing it returns an object with a `success` key and either `data` or `error`.
 
 ## Basic Usage
 

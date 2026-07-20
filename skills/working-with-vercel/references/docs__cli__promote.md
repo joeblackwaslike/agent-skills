@@ -12,15 +12,15 @@ related:
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "597ba9e75eeb680ef646dd7d574fcef6952b63005cfd846c81ffd35b8c6416c9"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "78d730b8486fe2d694402976e450e280d192e36f00fec1125ec7061294e6d7d7"
 ---
 
 # vercel promote
 
 The `vercel promote` command is used to promote an existing deployment to be the current deployment.
 
-> **⚠️ Warning:** Deployments built for the Production environment are the typical promote
+> **💡 Note:** Deployments built for the Production environment are the typical promote
 > target. You can promote Deployments built for the Preview environment, but you
 > will be asked to confirm that action and will result in a new production
 > deployment. You can bypass this prompt by using the `--yes` option.

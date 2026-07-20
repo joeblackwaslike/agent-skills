@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters/llamaindex.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "fee321a477502873a63f39b7dd293c1cd0d3bc9703458d7e9d54ee410814659d"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "03eba9c8dc4b46f941bad503bde4616bf1204063caa2e1ebebabcda2df15e514"
 ---
 
 # LlamaIndex
@@ -14,7 +14,7 @@ Here is a basic example that uses both AI SDK and LlamaIndex together with the [
 
 The AI SDK `@ai-sdk/llamaindex` package uses the stream result from calling the `chat` method on a [LlamaIndex ChatEngine](https://ts.llamaindex.ai/modules/chat_engine) or the `query` method on a [LlamaIndex QueryEngine](https://ts.llamaindex.ai/modules/query_engines) to pipe text to the client.
 
-```tsx filename="app/api/completion/route.ts" highlight="17"
+```tsx filename="app/api/completion/route.ts" highlight="18-20"
 import { OpenAI, SimpleChatEngine } from 'llamaindex';
 import { toUIMessageStream } from '@ai-sdk/llamaindex';
 import { createUIMessageStreamResponse } from 'ai';

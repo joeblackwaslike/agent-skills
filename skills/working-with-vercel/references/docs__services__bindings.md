@@ -14,8 +14,8 @@ related:
 summary: Call one service from another using caller-declared service bindings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/bindings.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ac8bce56278a1fe18912b259cc0a552b30f1e3d76313e24c6b7b2cb85e8458b8"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "20ec2845895abda490e47e553d216b386b4e97cf78a4bca0f4bf9caaf2393178"
 ---
 
 # Service bindings
@@ -61,7 +61,7 @@ The top-level rewrite is the only public entry point. A request from the public 
 await fetch(new URL('items/123', process.env.INVENTORY_URL));
 ```
 
-> **⚠️ Warning:** Service bindings aren't available yet for services that use the Go or Rust
+> **💡 Note:** Service bindings aren't available yet for services that use the Go or Rust
 > runtime. If your service uses one of these runtimes and declares bindings,
 > build it as a [container image](/docs/services#using-custom-container-images-with-services)
 > instead. A container image service can use bindings. Runtimes such as Node.js and Python

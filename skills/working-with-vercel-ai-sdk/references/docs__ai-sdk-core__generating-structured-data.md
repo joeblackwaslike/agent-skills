@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "81205c4487bcf28c4fceee18256bfa2b8a22034d538f0c0d9e37b5e21fdf2099"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "b8afb5d994fa0aa309cd5e0251de18b980d3bc9d8991f922903b45b2b2d4b793"
 ---
 
 # Generating Structured Data
@@ -115,7 +115,7 @@ You can consume the structured output on the client with the [`useObject`](/docs
 
 To handle errors, provide an `onError` callback:
 
-```tsx highlight="5-7"
+```tsx highlight="6-8"
 import { streamText, Output } from 'ai';
 
 const result = streamText({
@@ -319,7 +319,7 @@ const { output } = await generateText({
 
 You can add `.describe("...")` to individual schema properties to give the model hints about what each property is for. This helps improve the quality and accuracy of generated structured data:
 
-```ts highlight="5,9"
+```ts highlight="9,16,19-20"
 import { generateText, Output } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
@@ -356,7 +356,7 @@ Property descriptions are particularly useful for:
 
 You can optionally specify a `name` and `description` for the output. These are used by some providers for additional LLM guidance, e.g. via tool or schema name.
 
-```ts highlight="6-7"
+```ts highlight="8-9"
 import { generateText, Output } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';

@@ -14,15 +14,15 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8ea123b0beaf8f1003d93af6deb441eb983548f5c48efe840d688c64931be539"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "37800d64a04cf85fc5bcb00901a221422368ff02ffcc989a71401dd3f6bc7e65"
 ---
 
 # Implementing secrets rotation
 
 When your integration provisions resources with credentials (like API keys, database passwords, or access tokens), you must implement secrets rotation to allow Vercel users to rotate these credentials securely without reprovisioning the resource.
 
-> **⚠️ Warning:** This functionality must be turned on by Vercel for your integration. Contact your partner support team in Slack to have it enabled on your test integration(s) to begin development and then on your production integration once you're ready to go live.
+> **💡 Note:** This functionality must be turned on by Vercel for your integration. Contact your partner support team in Slack to have it enabled on your test integration(s) to begin development and then on your production integration once you're ready to go live.
 
 ## How it works
 
@@ -34,7 +34,7 @@ Vercel calls your partner API to trigger a rotation. This happens when a user or
 4. Once Vercel has the new secrets for the resource, the customer's linked projects will be redeployed to pick up the new secrets.
 5. After the period of time specified in `delayOldSecretsExpirationHours`, the old secrets should stop working and be deleted by your code
 
-> **⚠️ Warning:** It's critical that you keep the old secrets active for the amount of time specified in the request to your rotate secrets endpoint. Failing to do so will prevent customer's applications from being able to connect to the resource until their projects are redeployed. This may take a long time for customers that have many linked projects.
+> **💡 Note:** It's critical that you keep the old secrets active for the amount of time specified in the request to your rotate secrets endpoint. Failing to do so will prevent customer's applications from being able to connect to the resource until their projects are redeployed. This may take a long time for customers that have many linked projects.
 
 ## Endpoint specification
 

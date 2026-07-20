@@ -16,8 +16,8 @@ related:
 summary: Learn about path routing on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/path-routing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "721dfc5f33caafc547db9d950d694d86a0fd019c703330914f93fef354385df2"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "7bdc5f99d457111e7396158965cd3e2939064cc773e823aef8d471dd1bfd1d4f"
 ---
 
 # Microfrontends path routing
@@ -52,7 +52,7 @@ The routing for this new path will take effect when the code is merged and the d
 
 Additionally, if you need to revert, you can use [Instant Rollback](/docs/instant-rollback) to rollback the project to a deployment before the routing change to restore the old routing rules.
 
-> **⚠️ Warning:** Changes to separate microfrontends are not rolled out in lockstep. If you need
+> **💡 Note:** Changes to separate microfrontends are not rolled out in lockstep. If you need
 > to modify `microfrontends.json`, make sure that the new application can handle
 > the requests before merging the change. Otherwise use
 > [flags](#roll-out-routing-changes-safely-with-flags) to control whether the
@@ -96,7 +96,7 @@ If you would like to use a human readable asset prefix, you can also set the ass
 }
 ```
 
-> **⚠️ Warning:** Changing the asset prefix is not guaranteed to be backwards compatible. Make
+> **💡 Note:** Changing the asset prefix is not guaranteed to be backwards compatible. Make
 > sure that the asset prefix that you choose is routed to the correct project in
 > production before changing the `assetPrefix` field.
 

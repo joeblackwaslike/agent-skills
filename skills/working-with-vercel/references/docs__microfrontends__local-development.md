@@ -15,8 +15,8 @@ related:
 summary: Learn about local development on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "48df8b199df46f9e1badf6f4c7ea37a443d9e1e7cda5e1c4e74b1c2bd40607a2"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "d49d55de7d32521e70891933a69e12b4b6f5d9e367a6296b3a011925f5759ad0"
 ---
 
 # Microfrontends local development
@@ -53,7 +53,7 @@ A developer working on `/docs` only runs the **Docs** microfrontend, while a dev
 
 Therefore, the microfrontends proxy allows developers to run only the microfrontend they are working on locally and be able to test paths in other microfrontends.
 
-> **⚠️ Warning:** When developing locally with Next.js any traffic a child application receives
+> **💡 Note:** When developing locally with Next.js any traffic a child application receives
 > will be redirected to the local proxy. Setting the environment variable
 > `MFE_DISABLE_LOCAL_PROXY_REWRITE=1` will disable the redirect and allow you to
 > visit the child application directly.

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/workflow-artifacts.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "278de1c94fbfc083b9989edcaeda8aca31381174b93b966c7a9300bd1fe1f704"
+fetched_at: "2026-07-20T06:51:31.659Z"
+sha256: "96c291de62f135cc2ef32d9db72dfd0aeb97c599c4f610f4d51446aaefc294d4"
 ---
 
 ## About workflow artifacts
@@ -19,7 +19,7 @@ Common artifacts include:
 
 {% data reusables.actions.comparing-artifacts-caching %}
 
-For more information on dependency caching, see [AUTOTITLE](/actions/using-workflows/caching-dependencies-to-speed-up-workflows#comparing-artifacts-and-dependency-caching).
+For more information on dependency caching, see [AUTOTITLE](/actions/reference/workflows-and-actions/dependency-caching#comparing-artifacts-and-dependency-caching).
 
 {% ifversion artifact-attestations %}
 
@@ -29,7 +29,7 @@ For more information on dependency caching, see [AUTOTITLE](/actions/using-workf
 
 You can access attestations after a build run, underneath the list of the artifacts the build produced.
 
-For more information, see [AUTOTITLE](/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
+For more information, see [AUTOTITLE](/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations).
 
 {% endif %}
 

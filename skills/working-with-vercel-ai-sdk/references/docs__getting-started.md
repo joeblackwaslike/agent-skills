@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "a51438f0a47a6df947cf2ee246cfbc30b079eea439229896669f7448d0af2e83"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "37cf437f8837fcc9a621837f1dc0b403b85d3df9dd8e41d4a52a699ea81bde0c"
 ---
 
 # Getting Started
@@ -152,6 +152,7 @@ You can also use [AI SDK Core](/docs/ai-sdk-core/overview) and [AI SDK UI](/docs
   - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
   - [Sequential Generations](/docs/advanced/sequential-generations)
   - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
 - [Reference](/docs/reference)
   - [AI SDK Core](/docs/reference/ai-sdk-core)
     - [generateText](/docs/reference/ai-sdk-core/generate-text)

@@ -2,17 +2,17 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-07-13
+Last updated: 2026-07-20
 
 ## GitHub Official
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `actions/checkout` | `v7.0.0` | `uses: actions/checkout@v7.0.0` |
-| `actions/setup-node` | `v6.4.0` | `uses: actions/setup-node@v6.4.0` |
-| `actions/setup-python` | `v6.3.0` | `uses: actions/setup-python@v6.3.0` |
-| `actions/setup-java` | `v5.5.0` | `uses: actions/setup-java@v5.5.0` |
-| `actions/setup-go` | `v6.5.0` | `uses: actions/setup-go@v6.5.0` |
+| `actions/setup-node` | `v7.0.0` | `uses: actions/setup-node@v7.0.0` |
+| `actions/setup-python` | `v7.0.0` | `uses: actions/setup-python@v7.0.0` |
+| `actions/setup-java` | `v5.6.0` | `uses: actions/setup-java@v5.6.0` |
+| `actions/setup-go` | `v7.0.0` | `uses: actions/setup-go@v7.0.0` |
 | `actions/cache` | `v6.1.0` | `uses: actions/cache@v6.1.0` |
 | `actions/upload-artifact` | `v7.0.1` | `uses: actions/upload-artifact@v7.0.1` |
 | `actions/download-artifact` | `v8.0.1` | `uses: actions/download-artifact@v8.0.1` |
@@ -52,7 +52,7 @@ Last updated: 2026-07-13
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `googleapis/release-please-action` | `v5.0.0` | `uses: googleapis/release-please-action@v5.0.0` |
-| `softprops/action-gh-release` | `v3.0.1` | `uses: softprops/action-gh-release@v3.0.1` |
+| `softprops/action-gh-release` | `v3.0.2` | `uses: softprops/action-gh-release@v3.0.2` |
 | `peaceiris/actions-gh-pages` | `v4.1.0` | `uses: peaceiris/actions-gh-pages@v4.1.0` |
 
 ## Code Quality
@@ -60,7 +60,7 @@ Last updated: 2026-07-13
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `codecov/codecov-action` | `v7.0.0` | `uses: codecov/codecov-action@v7.0.0` |
-| `github/codeql-action/init` | `codeql-bundle-v2.26.0` | `uses: github/codeql-action/init@codeql-bundle-v2.26.0` |
+| `github/codeql-action/init` | `codeql-bundle-v2.26.1` | `uses: github/codeql-action/init@codeql-bundle-v2.26.1` |
 | `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 
 ## Pinning to SHA (recommended for production)

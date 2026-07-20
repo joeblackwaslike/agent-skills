@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "28e54b7a1e2ed006752962289141c744cba0a134645df3f2ec5a81c156258392"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "48b51dbdb84bf4a9b3b1cb6be6b93b6f963a77d010dcd4b3fd4f28d13e7c7b87"
 ---
 
 # Groq Provider
@@ -514,6 +514,7 @@ The following provider options are available:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

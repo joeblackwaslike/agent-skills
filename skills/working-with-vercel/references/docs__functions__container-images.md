@@ -3,7 +3,7 @@ title: Container Images
 product: vercel
 url: /docs/functions/container-images
 canonical_url: "https://vercel.com/docs/functions/container-images"
-last_updated: 2026-06-30
+last_updated: 2026-07-07
 type: how-to
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/container-images.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "5a20e1ad63a4fc138ca70e664ada36aff530cb987bda90aeff574732c73074af"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "6fbcd206d021a0acf327ebbcdda42de048fe2828790312db29170bcf71048b16"
 ---
 
 # Container Images

@@ -1,15 +1,40 @@
 ---
+title: NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN
+product: vercel
+url: /docs/conformance/rules/NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN
+canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: "Applications using Next 13 should use the \"next\" TypeScript plugin."
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_next13_typescript_plugin.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "71e8d51d42f83029dda46a889f2640811c90695c20ea1b2a6b71cc87e27168ea"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "132715b92ba81ec1afaec747caf34d2c2f681b59f3f16233167f167f54cf436d"
 ---
 
-# Page Not Found
+# NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN
 
-`/docs/conformance/rules/nextjs_missing_next13_typescript_plugin` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [Conformance Rules](/docs/conformance/rules.md): Conformance is available on Enterprise plans This page lists all the builtin rules that Conformance will check for by default in your application.
-- [NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN](/docs/conformance/rules/nextjs_missing_next13_typescript_plugin.md): Conformance is available on Enterprise plans Next 13 introduced a TypeScript plugin to provide richer information for Next.js applications using
-- [NEXTJS_MISSING_MODULARIZE_IMPORTS](/docs/conformance/rules/nextjs_missing_modularize_imports.md): Conformance is available on Enterprise plans This rule has been deprecated as of version 1.10.0and will be removed in 1.10.0. modularizeImports is a
+Next 13 introduced a TypeScript plugin to provide richer information for
+Next.js applications using TypeScript. See the [Next.js docs](https://nextjs.org/docs/app/building-your-application/configuring/typescript#using-the-typescript-plugin) for more information.
 
-All pages: [/llms.txt](/llms.txt)
+## How to fix
+
+Add the following to `plugins` in the `compilerOptions` of your `tsconfig.json`
+file.
+
+```json filename="tsconfig.json"
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }]
+  }
+```
+
+
+---
+
+[View full sitemap](/docs/sitemap)

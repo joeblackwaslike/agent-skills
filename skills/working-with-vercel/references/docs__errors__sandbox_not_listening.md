@@ -1,13 +1,37 @@
 ---
+title: SANBDOX_NOT_LISTENING
+product: vercel
+url: /docs/errors/SANDBOX_NOT_LISTENING
+canonical_url: "https://vercel.com/docs/errors/SANDBOX_NOT_LISTENING"
+last_updated: 2026-05-25
+type: reference
+prerequisites:
+  []
+related:
+  - /docs/sandbox
+summary: The Sandbox is not listening on the requested port. This is an application error.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_not_listening.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6e59115cad24cecb1750f3ffb877fb8261b830cfea873b66973111118e082dc5"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "f35749583022768a7bbd3101964781047c475d9ee2a6899cad25204fb9560e94"
 ---
 
-# Page Not Found
+# SANBDOX_NOT_LISTENING
 
-`/docs/errors/sandbox_not_listening` does not exist. Similar pages:
+The `SANDBOX_NOT_LISTENING` error occurs when you are trying to access a Sandbox that is not listening on the requested port. This could happen if the port is malconfigured, or the process running on that port has exited.
 
-- [SANBDOX_NOT_LISTENING](/docs/errors/sandbox_not_listening.md): The SANDBOX_NOT_LISTENING error occurs when you are trying to access a Sandbox that is not listening on the requested port. This could happen if the
+**Error Code:** `502`
 
-All pages: [/llms.txt](/llms.txt)
+**Name:** Bad Gateway
+
+## Troubleshoot
+
+To troubleshoot this error, follow these steps:
+
+1. **Verify the configured port:** Make sure that the `ports` field used in `Sandbox.create` matches the port your application is listening on. Follow the [documentation](/docs/sandbox) to learn more
+2. **Check the Sandbox history:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the one you are accessing, and check the history section to see which commands were run and if any errors occurred
+
+
+---
+
+[View full sitemap](/docs/sitemap)

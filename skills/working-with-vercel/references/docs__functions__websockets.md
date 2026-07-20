@@ -3,7 +3,7 @@ title: WebSockets
 product: vercel
 url: /docs/functions/websockets
 canonical_url: "https://vercel.com/docs/functions/websockets"
-last_updated: 2026-07-02
+last_updated: 2026-07-06
 type: how-to
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "f72dfd819d668fee5110920071d689c9d4c55647ccd879d74da70e7039981d2a"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "56399382058dd4f8d3eb0dacbcce0051891321466cb9efebace5ffd20fc2c898"
 ---
 
 # WebSockets

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b50207d38bf8e3355adce9dabdf292d41b01500555afca5ede1b76984fea0dbe"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "79e2c1103b32fd07f6ee8eb012c4f45c1535645ad8d720e855e58bc74abfd5b5"
 ---
 
 # Hugging Face Provider
@@ -273,6 +273,7 @@ You can also pass image URLs:
 - [ByteDance](/providers/ai-sdk-providers/bytedance)
 - [Kling AI](/providers/ai-sdk-providers/klingai)
 - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
+- [Cartesia](/providers/ai-sdk-providers/cartesia)
 
 
 [Full Sitemap](/sitemap.md)

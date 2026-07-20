@@ -1,17 +1,58 @@
 ---
+title: PACKAGE_JSON_DUPLICATE_DEPENDENCIES
+product: vercel
+url: /docs/conformance/rules/PACKAGE_JSON_DUPLICATE_DEPENDENCIES
+canonical_url: "https://vercel.com/docs/conformance/rules/PACKAGE_JSON_DUPLICATE_DEPENDENCIES"
+last_updated: 2025-03-04
+type: conceptual
+prerequisites:
+  []
+related:
+  []
+summary: Found duplicate dependencies between the list of dependencies and devDependencies or peerDependencies in a package.json file..
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_duplicate_dependencies.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "b7b1c86b6c0e08d7f37df83341c6c8e56a67d8dee395b967691e7bbfa3e5b132"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "b6a90a84e89f3503ea6941b5b00c69e9bcbb569e0dbf8196ba4dcbbe0f21664f"
 ---
 
-# Page Not Found
+# PACKAGE_JSON_DUPLICATE_DEPENDENCIES
 
-`/docs/conformance/rules/package_json_duplicate_dependencies` does not exist. Similar pages:
+> **🔒 Permissions Required**: Conformance
 
-- [PACKAGE_JSON_DUPLICATE_DEPENDENCIES](/docs/conformance/rules/package_json_duplicate_dependencies.md): Conformance is available on Enterprise plans Packages that are listed in the dependencies section of package.json should not be listed in
-- [Conformance Rules](/docs/conformance/rules.md): Requires that ESLint is configured for React. ESLINT\_RULES\_REQUIRED Requires that Next.js applications that use libraries with barrel exports use
-- [PACKAGE_MANAGEMENT_NO_UNRESOLVED_IMPORTS](/docs/conformance/rules/package_management_no_unresolved_imports.md): Conformance is available on Enterprise plans All imports must be able to be resolved to a file local to the workspace or a package declared as a
-- [Forbiddenpackages](/docs/conformance/custom-rules/forbidden-packages.md): Conformance is available on Enterprise plans The forbiddenpackages rule type enables you to disallow packages from being listed as dependencies in
-- [REQUIRE_CARET_DEPENDENCIES](/docs/conformance/rules/require_caret_dependencies.md): Conformance is available on Enterprise plans This rule is available from version 1.4.0. Using a caret ("^") as a prefix in the version of your
+Packages that are listed in the `dependencies` section of `package.json` should
+not be listed in `devDependencies` or `peerDependencies`. A package in the
+`dependencies` section says that the package are required for the functionality
+of your workspace, in which case there is no reason to also list it in
+`devDependencies` or `peerDependencies`.
 
-All pages: [/llms.txt](/llms.txt)
+## Example
+
+This `package.json` file would cause the check to fail:
+
+```json filename="package.json"
+{
+  "name": "workspace",
+  "dependencies": {
+    "@next/mdx": "13.1.5"
+  },
+  "devDependencies": {
+    "@next/mdx": "13.1.5"
+  }
+}
+```
+
+## How to fix
+
+If the package is needed to use the package from your workspace, you can remove
+the package from the `devDependencies` and `peerDependencies` sections. If the
+package is only needed for development of your workspace or if the package is
+only needed to express version compatibility requirements and it is not needed
+for the functionality of your workspace when people use your package, then it
+can be left in `devDependencies` or `peerDependencies` and be removed from
+`dependencies`.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

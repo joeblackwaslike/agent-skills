@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9a243906c8c26b9ad58f4a47a4e892c43245d8e2a1ece4e0f7dfc0899e1d1a0b"
+fetched_at: "2026-07-20T06:52:37.869Z"
+sha256: "bffbb5faf71fa1c48dcabc2cdb723a5b2cfac2beaf2a43269b559682a287fad1"
 ---
 
 # Error Handling
@@ -10,7 +10,7 @@ sha256: "9a243906c8c26b9ad58f4a47a4e892c43245d8e2a1ece4e0f7dfc0899e1d1a0b"
 
 Regular errors are thrown and can be handled using the `try/catch` block.
 
-```ts highlight="3,8-10"
+```ts highlight="4,9-11"
 import { generateText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -32,7 +32,7 @@ When errors occur during streams that do not support error chunks,
 the error is thrown as a regular error.
 You can handle these errors using the `try/catch` block.
 
-```ts highlight="3,12-14"
+```ts highlight="4,13-15"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -57,7 +57,7 @@ You can handle those parts similar to other parts.
 It is recommended to also add a try-catch block for errors that
 happen outside of the streaming.
 
-```ts highlight="13-21"
+```ts highlight="14-22"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -100,7 +100,7 @@ When streams are aborted (e.g., via chat stop button), you may want to perform c
 
 The `onAbort` callback is called when a stream is aborted via `AbortSignal`, but `onEnd` is not called. This ensures you can still update your UI state appropriately.
 
-```ts highlight="5-9"
+```ts highlight="6-10"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 
@@ -128,7 +128,7 @@ The `onAbort` callback receives:
 
 You can also handle abort events directly in the stream:
 
-```ts highlight="10-13"
+```ts highlight="11-14"
 import { streamText } from 'ai';
 __PROVIDER_IMPORT__;
 

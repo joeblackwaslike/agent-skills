@@ -1,17 +1,75 @@
 ---
+title: Uploading Custom SSL Certificates
+product: vercel
+url: /docs/domains/custom-SSL-certificate
+canonical_url: "https://vercel.com/docs/domains/custom-SSL-certificate"
+last_updated: 2026-02-26
+type: how-to
+prerequisites:
+  - /docs/domains
+related:
+  - /docs/rest-api/reference/endpoints/certs/upload-a-cert
+summary: By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own custom SSL certificate.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/custom-ssl-certificate.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "2784e155f1f4750e6ead6db2193e8f2ef79612ea428bd886ae61fcfae0fca539"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "c507965bd5c7c91169fe53135a193641ad6d34b7582135e0aed2309c18d21a5e"
 ---
 
-# Page Not Found
+# Uploading Custom SSL Certificates
 
-`/docs/domains/custom-ssl-certificate` does not exist. Similar pages:
+> **🔒 Permissions Required**: Uploading Custom SSL Certificates
 
-- [Uploading Custom SSL Certificates](/docs/domains/custom-ssl-certificate.md): Uploading Custom SSL Certificates are available on Enterprise plans By default, Vercel provides all domains with custom SSL certificates. However,
-- [Working with SSL Certificates](/docs/domains/working-with-ssl.md): An SSL certificate enables encrypted communication between user's browser and your web server to be encrypted. The certificate is installed on the
-- [PreGenerate SSL Certificates](/docs/domains/pre-generating-ssl-certs.md): This page is part the domains transfer experience. See this page for the full set of steps to transfer a domain to Vercel. This article guides you
-- [MultiTenant Platform Quickstart](/docs/platforms/multi-tenant-platforms/quickstart.md): Watch the walkthrough on YouTube. Types of domains This guide walks you through setting up domains for your multitenant application. There are two
-- [Multitenant Limits](/docs/platforms/multi-tenant-platforms/limits.md): This page provides an overview of the limits and feature availability for Vercel for Platforms across different plan types. Feature availability
+By default, Vercel provides all domains with custom SSL certificates. However, Enterprise teams can upload a custom SSL certificate. This allows for Enterprise teams to serve their own SSL certificate on a **Custom Domain** on Vercel's global network, rather than the automatically generated certificate.
 
-All pages: [/llms.txt](/llms.txt)
+Custom SSL certificates can be uploaded through the [**Domains** section in the sidebar on your team's dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page), or by using the [Vercel REST API](/docs/rest-api/reference/endpoints/certs/upload-a-cert#upload-a-cert).
+
+Uploading a custom certificate follows a three step process:
+
+1. Providing the private key for the certificate
+2. Providing the certificate itself
+3. Providing the Certificate Authority root certificate such as one of [Let's Encrypt's ISRG root certificates](https://letsencrypt.org/certificates/). This will be provided by your certificate issuer and is different to the core certificate. This may be included in their download process or available for download on their website.
+
+The content of each element must be copied and pasted into the input box directly. The certificate and private key can be extracted from the [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) files that are provided by your certificate issuer, and should be in the following format:
+
+```text filename="certificate.pem"
+-----BEGIN CERTIFICATE-----
+<Certificate body will be here>
+-----END CERTIFICATE-----
+```
+
+```text filename="private-key.pem"
+-----BEGIN PRIVATE KEY-----
+<Private key body will be here>
+-----END PRIVATE KEY-----
+```
+
+## SSL best practices
+
+When uploading your SSL certificate, you should note the following:
+
+1. The automatically generated certificate will remain in place, but a custom certificate is prioritized over the existing certificate. This means that if a custom certificate is uploaded and then later removed, Vercel will revert to the automatically generated certificate.
+2. You can include canonical names CN's (CN's) for other subdomains on the certificate without needing to add these domains to Vercel. The certificate will be served on these domains if or when they are added.
+3. Wildcards certificates can be uploaded.
+4. Certificates with an explicitly defined subdomain are prioritized over a wildcard certificate when both are valid for a given subdomain.
+5. Vercel cannot automatically renew custom certificates. If a custom certificate is within 5 days of expiration, an automatically generated certificate will be served in its place to prevent downtime.
+6. Certificates imported to Vercel require the Subject Alternative Name (SAN) to be present
+
+## Using self-signed certificates
+
+In rare cases, you may need to upload a self-signed certificate to Vercel. You can generate a custom self-signed certificate for your domain with OpenSSL:
+
+```bash
+openssl req -x509 -newkey rsa:4096 \
+  -keyout key.pem -out cert.pem \
+  -sha256 -days 360 -nodes \
+  -subj "/CN=sub.example.com" \
+  -addext "subjectAltName=DNS:sub.example.com"
+```
+
+This generates a `key.pem` file containing the private key and a `cert.pem` file containing the self-signed certificate. When uploading this certificate to Vercel, use `cert.pem` also for the Certificate Authority field.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

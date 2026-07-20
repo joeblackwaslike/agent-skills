@@ -3,7 +3,7 @@ title: @vercel/blob
 product: vercel
 url: /docs/vercel-blob/using-blob-sdk
 canonical_url: "https://vercel.com/docs/vercel-blob/using-blob-sdk"
-last_updated: 2026-05-19
+last_updated: 2026-07-08
 type: reference
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "998f1ae3f8a30395fec318b0e6448114d3a7604f49aafef903c853c56309c1a0"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "52984ad982a58cd885bf164cacee18c00a0385a84d4c2c927609627bc3ba49eb"
 ---
 
 # @vercel/blob
@@ -777,7 +777,7 @@ This method gives you full control over the multipart upload process. It consist
 
 **Phase 2: Upload all the parts**
 
-> **⚠️ Warning:** In the multipart uploader process, it's necessary for you to manage both
+> **💡 Note:** In the multipart uploader process, it's necessary for you to manage both
 > memory usage and concurrent upload requests. Additionally, each part must be a
 > minimum of 5MB, except the last one which can be smaller, and all parts should
 > be of equal size.
@@ -869,7 +869,7 @@ This results in a simpler API, but still requires you to handle memory usage and
 
 **Phase 2: Upload all the parts**
 
-> **⚠️ Warning:** In the multipart uploader process, it's necessary for you to manage both
+> **💡 Note:** In the multipart uploader process, it's necessary for you to manage both
 > memory usage and concurrent upload requests. Additionally, each part must be a
 > minimum of 5MB, except the last one which can be smaller, and all parts should
 > be of equal size.

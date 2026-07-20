@@ -15,8 +15,8 @@ related:
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "7538ec060cb2ed1169fba2d90fc27b9f3c7a2a8bc75137697e315ca56be47f0b"
+fetched_at: "2026-07-20T06:54:28.409Z"
+sha256: "887a5e2db3b9a68eabfa79bc5d33cf183bd77e3bf4f4a6db2718c4c1b2fac45c"
 ---
 
 # Usage & Pricing for Cron Jobs
@@ -33,7 +33,7 @@ Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage
 
 ### Hobby scheduling limits
 
-> **⚠️ Warning:** Hobby accounts are limited to cron jobs that run **once per day**. Cron
+> **💡 Note:** Hobby accounts are limited to cron jobs that run **once per day**. Cron
 > expressions that would run more frequently will fail during deployment.
 
 Hobby plans have two restrictions on cron jobs:
