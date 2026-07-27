@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sambanova.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "57985dd2ed171fe348fa6c9e6620ce9e9162ad6efc9ddb3d48dd48c5bcfaf297"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "1f4273dfe3c1493f7c17940f0030365e26de9601863d8e13668696c8dfd7013e"
 ---
 
 # SambaNova Provider
@@ -221,6 +221,7 @@ Body {
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

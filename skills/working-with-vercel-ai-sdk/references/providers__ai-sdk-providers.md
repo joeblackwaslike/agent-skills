@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "ed109abbf205cc4466c5747cff0be35af8cc21c4b2b8de482114b8300ee69c22"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "002f2921b4f98d2eb7e45c61b7fdcbc1598d07ea3ad56e60edbc3438853d5e3a"
 ---
 
 # AI SDK Providers
@@ -75,6 +75,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [DeepSeek](/providers/ai-sdk-providers/deepseek)           | `deepseek-chat`                                     | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [DeepSeek](/providers/ai-sdk-providers/deepseek)           | `deepseek-reasoner`                                 | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Moonshot AI](/providers/ai-sdk-providers/moonshotai)      | `kimi-k2.5`                                         | <Check />   | <Check />         | <Check />  | <Check />      |
+| [Moonshot AI](/providers/ai-sdk-providers/moonshotai)      | `kimi-k3`                                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Moonshot AI](/providers/ai-sdk-providers/moonshotai)      | `kimi-k2-thinking`                                  | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Groq](/providers/ai-sdk-providers/groq)                   | `meta-llama/llama-4-scout-17b-16e-instruct`         | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Groq](/providers/ai-sdk-providers/groq)                   | `llama-3.3-70b-versatile`                           | <Cross />   | <Check />         | <Check />  | <Check />      |
@@ -245,6 +246,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

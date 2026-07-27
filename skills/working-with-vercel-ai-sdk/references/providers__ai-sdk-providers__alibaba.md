@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f08485e50c8fb36a73075fb1117e806df28822043e704e24bfd1169745a46407"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "f7ae1d740e79fbbe194c26ff4a83f4f278706e074dc4e6c08e03d48ca56d2c76"
 ---
 
 # Alibaba Provider
@@ -151,7 +151,7 @@ const { text } = await generateText({
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
-      parameters: z.object({
+      inputSchema: z.object({
         location: z.string().describe('The location to get the weather for'),
       }),
       execute: async ({ location }) => ({

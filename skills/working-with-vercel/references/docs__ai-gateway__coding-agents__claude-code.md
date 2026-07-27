@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-compat
+  - /docs/ai-gateway/models-and-providers/fast-mode
 summary: Use Claude Code and the Claude Agent SDK with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "09dc6bbaa58000fd86fc4641ad1d64e31b6997c9bbccc482743da63348b81c8c"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "97a2756a59666526a44130ec255704925f267ab89a3c47c7c883f807a91621f4"
 ---
 
 # Claude Code and Claude Agent SDK
@@ -102,7 +103,7 @@ Your requests will now be routed through Vercel AI Gateway using your Claude sub
 
 [Fast mode](https://code.claude.com/docs/en/fast-mode) makes Claude Opus 4.6 and Opus 4.7 responses up to 2.5x faster at a higher per-token cost. It uses the same model with the same quality, just with a configuration that prioritizes speed.
 
-To use fast mode with AI Gateway on Opus 4.6, set the `CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK` variable. You can either add it to your shell configuration file (e.g., `~/.zshrc` or `~/.bashrc`):
+To use fast mode with AI Gateway, set `CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK`. You can either add it to your shell configuration file (e.g., `~/.zshrc` or `~/.bashrc`):
 
 ```bash
 export CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK=1
@@ -136,7 +137,7 @@ export CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK=1
 
 Then toggle fast mode on or off inside Claude Code by typing `/fast`.
 
-Fast mode usage is billed as extra usage at $30/$150 per million input/output tokens, even if you have remaining usage on your plan. When you hit the fast mode rate limit, Claude Code automatically falls back to standard Opus speed and pricing.
+Fast mode usage is billed at the fast tier rate for the model that was served. When you hit the fast mode rate limit, Claude Code automatically falls back to standard Opus speed and pricing. For current rates, see [Fast Mode](/docs/ai-gateway/models-and-providers/fast-mode#pricing).
 
 ## With the Claude Agent SDK
 

@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "336cf39c0d8d56b1f0fe615762c7c00c84a43ed938e7ba7b2263d4b380832735"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "ab680501d986c1b7d0153f7bae4eba11ea8cd4c69fbc015fe4148cd479b80bde"
 ---
 
 # Glossary
@@ -60,7 +60,7 @@ A network topology that shares an IP address among multiple nodes, routing reque
 
 ### Audit Logs
 
-A record of team member activity for compliance and security review. Available to team owners on Enterprise plans, with optional Custom SIEM Log Streaming to AWS S3, Splunk, Datadog, and other destinations. See [Audit Logs](/docs/audit-log).
+A record of team member activity for compliance and security review. Available to team owners on Enterprise plans. Use [Audit Log Drains](/docs/drains/reference/audit-logs) to send audit logs to AWS S3, Splunk, Datadog, and other destinations. See [Audit Logs](/docs/audit-log).
 
 ## B
 
@@ -539,6 +539,10 @@ A beta feature that lets you deploy multiple backends and frontends within a sin
 ### Skew Protection
 
 A feature that prevents version mismatches between client and server during a deployment by pinning framework-managed requests to a specific deployment ID. On by default for projects created after November 19, 2024. Available on Pro and Enterprise plans. See [Skew Protection](/docs/skew-protection).
+
+### SNI (Server Name Indication)
+
+A TLS extension where the client sends the destination hostname in plain text at the start of the handshake, before encryption begins. The [Sandbox firewall](/docs/sandbox/concepts/firewall) uses the SNI to identify and filter HTTPS traffic by domain. Connections without an SNI cannot be matched to a domain rule.
 
 ### Speed Insights
 

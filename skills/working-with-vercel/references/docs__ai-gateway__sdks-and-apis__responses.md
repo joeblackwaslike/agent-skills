@@ -10,12 +10,13 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
+  - /docs/ai-gateway/sdks-and-apis/responses/websockets
   - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4390d9e4cf1f7bc4f676b6936315349c8314910a14109ab7611bd9289fe97b19"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "3bc2a922be06c120b223284743f50caad386329db07ebb4f411e4f488579d422"
 ---
 
 # OpenAI Responses API
@@ -111,6 +112,10 @@ for event in stream:
     if event.type == 'response.output_text.delta':
         print(event.delta, end='', flush=True)
 ```
+
+### WebSocket mode
+
+For agent loops that make many requests in a row, you can hold one connection open and send each turn as a frame instead of opening a new HTTP request per turn. See [Responses API over WebSocket](/docs/ai-gateway/sdks-and-apis/responses/websockets).
 
 ## Tool calling
 

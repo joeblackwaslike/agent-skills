@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/concepts/code-scanning/codeql/codeql-for-compiled-languages.md"
-fetched_at: "2026-06-15T17:25:57.300Z"
-sha256: "9932a6fa0816c2493aca9d4c002f61881e447b543add0d1f83ec5917173639fa"
+fetched_at: "2026-07-27T07:36:12.022Z"
+sha256: "14b50e1033d0669df4393a9bab98566a4f49a6147e48af007b8caaf83b478c5a"
 ---
 
 ## About the {% data variables.code-scanning.codeql_workflow %} and compiled languages
@@ -20,13 +20,13 @@ The {% data variables.product.prodname_codeql %} action supports three different
 * `autobuild` - {% data variables.product.prodname_codeql %} detects the most likely build method and uses this to attempt to build the codebase and create a database for analysis (supported for {% data variables.code-scanning.autobuild_support %}).
 * `manual` - you define the build steps to use for the codebase in the workflow (supported for {% data variables.code-scanning.manual_build_support %}).
 
-For language-specific `autobuild` behavior, runner requirements, and guidance for manual builds, see [AUTOTITLE](/code-security/reference/code-scanning/codeql/codeql-build-options-and-steps-for-compiled-languages).
+For language-specific `autobuild` behavior, runner requirements, and guidance for manual builds, see [AUTOTITLE](/code-security/reference/code-scanning/codeql/build-options-for-compiled-languages).
 
 ## About dependency caching for {% data variables.product.prodname_codeql %}
 
-You can use dependency caching with {% data variables.product.prodname_codeql %} to store dependencies as a {% data variables.product.prodname_actions %} cache instead of downloading them from registries. This reduces the risk of losing alerts when third party registries don't work well, and may result in a performance improvement for projects that have a large number of dependencies or work with slow registries. To read more about how caching dependencies can speed up workflows, see [AUTOTITLE](/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows).
+You can use dependency caching with {% data variables.product.prodname_codeql %} to store dependencies as a {% data variables.product.prodname_actions %} cache instead of downloading them from registries. This reduces the risk of losing alerts when third party registries don't work well, and may result in a performance improvement for projects that have a large number of dependencies or work with slow registries. To read more about how caching dependencies can speed up workflows, see [AUTOTITLE](/actions/reference/workflows-and-actions/dependency-caching).
 
 Dependency caching works with all build modes, and is supported by {% data variables.code-scanning.codeql_dependency_caching_languages %}.
 
->[!NOTE]
-> Using dependency caching will store {% data variables.product.prodname_codeql %}-specific caches that will be subject to cache quotas for a repository. See [AUTOTITLE](/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy).
+> [!NOTE]
+> Using dependency caching will store {% data variables.product.prodname_codeql %}-specific caches that will be subject to cache quotas for a repository. See [AUTOTITLE](/actions/reference/workflows-and-actions/dependency-caching#usage-limits-and-eviction-policy).

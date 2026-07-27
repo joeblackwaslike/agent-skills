@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/openrouter.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "79ae011ef600728b534bdf67d989da4982c01f0b67a00971de7a5fbb326a9c59"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "c19598a8f7928f2c7ffbd8c769281a59f6b1c53e8f59044c791659a2c75257f2"
 ---
 
 # OpenRouter
@@ -175,6 +175,7 @@ For more information about these features and advanced configuration options, vi
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

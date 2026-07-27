@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4bfe67e5b61b4540019fe61d76b5f23c09522477e0cbc4551ff1a6c344f01d1d"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "4191df22c6090962f1298344a563da915fcc7924432a9fc1065ecdad94477324"
 ---
 
 # Configuring a Build
@@ -147,6 +147,8 @@ Inside the Framework Preset settings, use the drop-down menu to select the frame
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/sanity-v2) | [View Demo](https://sanity-studio-template.vercel.app)
 - **Scully**: Scully is a static site generator for Angular.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/scully) | [View Demo](https://scully-template.vercel.app)
+- **Services**: Multiple services deployed as serverless functions within your project.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/services)
 - **SolidStart (v0)**: Simple and performant reactivity for building user interfaces.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/solidstart) | [View Demo](https://solid-start-template.vercel.app)
 - **SolidStart (v1)**: Simple and performant reactivity for building user interfaces.

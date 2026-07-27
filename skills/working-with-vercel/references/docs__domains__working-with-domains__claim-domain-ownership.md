@@ -13,8 +13,8 @@ related:
 summary: Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fd7e512cf1bb588a9902688909d7e14b90688d5c4e06322b9ef569fd6c7daa62"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "5c410283901aadb2e1a5b9b9c9b4b93e0b68bc4e0dad14fa7af4e9b412616bca"
 ---
 
 # Claiming Domain Ownership
@@ -23,7 +23,7 @@ If a domain is registered with another Vercel account and you need to take owner
 
 ## When claiming is required
 
-When you add an existing domain via the **Add Existing** button on your team's Domains page, Vercel automatically checks if you already registered the domain with another Vercel account. If so, you'll be prompted to verify ownership before you can use it.
+When you add an existing domain via the **Connect External** button on your team's Domains page, Vercel automatically checks if you already registered the domain with another Vercel account. If so, you'll be prompted to verify ownership before you can use it.
 
 Use this flow when:
 
@@ -45,7 +45,7 @@ Use this flow when:
 ### Claim a domain
 
 - ### Navigate to your team's Domains page
-  Go to the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page) and click **Add Existing**.
+  Go to the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page) and click **Connect External**.
 
 - ### Enter the domain name
   In the modal, enter the domain you want to add (for example, `example.com`) and click **Continue**.

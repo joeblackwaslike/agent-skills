@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/browser-ai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "034f61f79fd396eab7ecce2ab0970dfb6419d4c7e8c115f854ce9d864300699d"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "86ef8adcf25b5c5b28e901da3066da80ade432be66a59cef0e8f76ccedd2b986"
 ---
 
 # Browser AI model providers
@@ -190,6 +190,7 @@ For more examples and API reference, check out the [documentation](https://www.b
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -12,8 +12,8 @@ related:
 summary: Vercel MCP has tools available for searching docs along with managing teams, projects, and deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9d3e29468b119e57bb459769a28c8d2ad2005a192fbed21806d32418d76713e9"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "cca2cc07039cb3be5eb03a8b43aff0756d7062135290aa847e74418e000cae06"
 ---
 
 # Use Vercel
@@ -34,6 +34,7 @@ It integrates with popular AI assistants like Claude, enabling you to:
 - Search and navigate Vercel documentation
 - Manage projects and deployments
 - Analyze deployment logs
+- Query visitors, page views, and custom events
 
 Vercel MCP implements the latest [MCP Authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
 and [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http)
@@ -41,7 +42,7 @@ specifications.
 
 ## Available tools
 
-Vercel MCP provides a comprehensive set of tools for searching documentation and managing your Vercel projects. See the [tools reference](/docs/agent-resources/vercel-mcp/tools) for detailed information about each available tool and the two main categories: public tools (available without authentication) and authenticated tools (requiring Vercel authentication).
+Vercel MCP provides a comprehensive set of tools for searching documentation, managing your Vercel projects, and querying Web Analytics. See the [tools reference](/docs/agent-resources/vercel-mcp/tools) for detailed information about each available tool and the two main categories: public tools (available without authentication) and authenticated tools (requiring Vercel authentication).
 
 ## Connecting to Vercel MCP
 

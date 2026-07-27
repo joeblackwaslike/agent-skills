@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/helicone.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "5567a18f22df2ff5b40e247c5c24a98034be522d3f6f30dc4346357336c19ab8"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "53ae5189a170ba9a3fa2a5ab3259f6ed0e9ff8bee49e46e92cb72c7139b1615a"
 ---
 
 # Helicone
@@ -160,6 +160,7 @@ For more information about these features and advanced configuration options, vi
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

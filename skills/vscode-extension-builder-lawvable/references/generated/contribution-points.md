@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-07-20T06:45:35.555Z"
-sha256: "b057ea0c4e284b6e2e8b22c0829005b1fdaf06d36af94b805126be921c03983c"
+fetched_at: "2026-07-27T07:31:06.590Z"
+sha256: "c849e52e1eb5ec2e5f5a69655323ac9f789d6876c043e2ba41eff32e4a815f4f"
 ---
 
 # Contribution Points
@@ -342,7 +342,7 @@ const errorColor = new vscode.ThemeColor('superstatus.error');
 
 ## contributes.commands
 
-Contribute the UI for a command consisting of a title and (optionally) an icon, category, and enabled state. Enablement is expressed with [when clauses](https://code.visualstudio.com/api/references/when-clause-contexts). By default, commands show in the **Command Palette** (⇧⌘P (Windows, Linux Shift+cmd+P)) but they can also show in other [menus](https://code.visualstudio.com/api/references/contribution-points#contributes.menus).
+Contribute the UI for a command consisting of a title and (optionally) an icon, category, and enabled state. Enablement is expressed with [when clauses](https://code.visualstudio.com/api/references/when-clause-contexts). By default, commands show in the **Command Palette** (⇧⌘P (Windows, Linux Ctrl+Shift+P)) but they can also show in other [menus](https://code.visualstudio.com/api/references/contribution-points#contributes.menus).
 
 Presentation of contributed commands depends on the containing menu. The **Command Palette**, for
 instance, prefixes commands with their `category`, allowing for easy grouping. However, the
@@ -1375,7 +1375,7 @@ Here's a submenu menu item:
 
 ### Context specific visibility of Command Palette menu items
 
-When registering commands in `package.json`, they will automatically be shown in the **Command Palette** (⇧⌘P (Windows, Linux Shift+cmd+P)). To allow more control over command visibility, there is the `commandPalette` menu item. It allows you to define a `when` condition to control if a command should be visible in the **Command Palette** or not.
+When registering commands in `package.json`, they will automatically be shown in the **Command Palette** (⇧⌘P (Windows, Linux Ctrl+Shift+P)). To allow more control over command visibility, there is the `commandPalette` menu item. It allows you to define a `when` condition to control if a command should be visible in the **Command Palette** or not.
 
 The snippet below makes the 'Hello World' command only visible in the **Command Palette** when something is selected in the editor:
 

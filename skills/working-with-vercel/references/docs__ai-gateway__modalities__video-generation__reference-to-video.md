@@ -16,8 +16,8 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Wan through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "db087c876e8738912d6ceed726d1587c83dc3325cb059f516ef507e65b432d33"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "495db4511af840076337e1387660c0ee4535c10bdf100895e9298895697827f3"
 ---
 
 # Reference-to-Video Generation
@@ -59,7 +59,7 @@ For Seedance multi-reference image generation on image-to-video models, see [See
 
 Veo 3.1 can incorporate reference images into a generated video. The references guide assets and style in the scene you describe in the prompt. They are not used as the first frame.
 
-[Browse the latest Veo video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
+[Browse the latest Veo video models](/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
 
 ### Veo parameters
 
@@ -112,7 +112,7 @@ If you omit `inputReferences`, you can still pass references through the legacy 
 
 KlingAI image-to-video models support reference-to-video when you pass `inputReferences`. The model combines the reference images into a new scene described by your prompt. Do not pass a separate start frame or `frameImages` alongside `inputReferences`.
 
-[Browse the latest KlingAI video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
+[Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
 ### KlingAI parameters
 
@@ -163,7 +163,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 Wan's reference-to-video models can incorporate multiple characters from reference media into a generated video. References must be URLs (use [Vercel Blob](/docs/vercel-blob) for local files). Use `character1`, `character2`, etc. in your prompt to refer to each reference.
 
-[Browse the latest Wan video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
+[Browse the latest Wan video models](/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
 ### Wan parameters
 
@@ -248,7 +248,7 @@ Grok Imagine Video can generate a new scene from reference images. The reference
 
 To edit or extend an existing video instead, see [Video editing](/docs/ai-gateway/modalities/video-generation/video-editing) and [Video extension](/docs/ai-gateway/modalities/video-generation/video-extension).
 
-[Browse the latest Grok video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
+[Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
 
 > **💡 Note:** Reference-to-video requires `xai/grok-imagine-video`. Set
 > `providerOptions.xai.mode: 'reference-to-video'`, or pass `inputReferences`
@@ -308,7 +308,7 @@ If you omit `inputReferences`, you can still pass references through `providerOp
 
 Seedance 2.0 can generate a new scene from a mix of image and video references. Use `[Image 1]`, `[Image 2]`, and `[Video 1]`, `[Video 2]`, and so on in your prompt to refer to each reference, in the order you pass them.
 
-[Browse the latest Seedance video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
+[Browse the latest Seedance video models](/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
 
 > **💡 Note:** Seedance requires an explicit `mediaType` on URL references to route them as
 > images or videos. An untyped URL reference is treated as an image and emits a

@@ -13,8 +13,8 @@ related:
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "eecbcfa8194941c792401a24c636fd9ed0a7cc8462ce8d0351cb3e4afe6ed29a"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "0f64e5a239a0b585fc14d57f50cdf68b0ab1ff8b976dc9c9d0ca2d64853fe1cc"
 ---
 
 # Motion Control Video Generation
@@ -25,7 +25,7 @@ Transfer motion from a reference video to a character in an image. The model ana
 
 KlingAI's motion control models transfer motion from a reference video to a character image. The character image accepts buffers, URLs, or base64. The reference video must be a URL (use [Vercel Blob](/docs/vercel-blob) for local files).
 
-[Browse the latest KlingAI video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
+[Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
 ### KlingAI parameters
 

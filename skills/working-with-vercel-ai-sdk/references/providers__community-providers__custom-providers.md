@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/custom-providers.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "8622aecd75a9a2078a71e8d655da95cdd0b7da33c3e898025866c1af5f97f519"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "ccb3633f5e802f042682b2fd3eb66c9ea0b9d85c0091c5db53462ea15a31641d"
 ---
 
 # Writing a Custom Provider
@@ -331,7 +331,7 @@ type LanguageModelV4FunctionTool = {
   type: 'function';
   name: string;
   description?: string;
-  parameters: JSONSchema7; // Full JSON Schema support
+  inputSchema: JSONSchema7; // Full JSON Schema support
 };
 ```
 
@@ -900,6 +900,7 @@ headers: combineHeaders(this.config.headers?.(), options.headers),
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -16,8 +16,8 @@ related:
 summary: Learn about migrating from siem on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ac76df83b1f5ac127cd5bb9e24eab354a10a2de03b5acdd92406379866a89578"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "5ee16fb5926916ecb331c9f42a4e3f351fcfda205bc9975a5f3b577eded04264"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
@@ -34,7 +34,7 @@ You can run Audit Log Drains and Custom SIEM Log Streaming at the same time. Kee
 | -------------- | ------------------------------------- | ------------------------------------------------------------ |
 | Setup location | Team Settings > Security & Privacy > Audit Log | [Team Settings > Drains](/docs/drains/using-drains)          |
 | Event coverage | Audit log events only                 | Activity Log events plus audit metadata                      |
-| Destinations   | AWS S3, Splunk, Datadog, HTTP          | Custom HTTPS endpoint, [Amazon S3](/docs/drains/audit-logs-to-s3), [Splunk](/docs/drains/audit-logs-to-splunk), or Datadog |
+| Destinations   | AWS S3, Splunk, Datadog, HTTP          | Custom HTTPS endpoint, [Amazon S3](/docs/drains/audit-logs-to-s3), [Splunk](/docs/drains/audit-logs-to-splunk), Datadog, or [Panther](/docs/drains/audit-logs-to-panther) |
 | Schema         | Events with `actor`, `context`, and `targets` objects | `vercel.audit_log.v1` with `actor` and `payload` objects    |
 
 Audit Log Drains are available to all [Enterprise](/docs/plans/enterprise) teams and billed on the volume of data exported. See [Drains usage and pricing](/docs/drains#usage-and-pricing) for details.
@@ -50,7 +50,11 @@ Audit Log Drains are available to all [Enterprise](/docs/plans/enterprise) teams
   - **S3 bucket**: Write events straight to Amazon S3. See [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3) for the AWS IAM setup.
   - **Splunk**: Send events to your Splunk HTTP Event Collector (HEC). See [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk) for the HEC setup.
   - **Datadog**: Send events to Datadog Logs. Select your [Datadog site](https://docs.datadoghq.com/getting_started/site/) and enter a Datadog API key.
-  For custom endpoints and S3, select **JSON** or **NDJSON** to match the format your SIEM expects. The Splunk destination always sends the [HEC event envelope](/docs/drains/reference/audit-logs#splunk-hec), and the Datadog destination always sends [JSON tagged for Datadog](/docs/drains/reference/audit-logs#datadog).
+  - **Panther**: Send events to Panther's built-in Vercel source. See [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther) for source and destination setup.
+  For custom endpoints and S3, select **JSON** or **NDJSON** to match the format your SIEM expects. Splunk, Datadog, and Panther use fixed formats:
+  - Splunk uses the [HEC event envelope](/docs/drains/reference/audit-logs#splunk-hec).
+  - Datadog uses [JSON tagged for Datadog](/docs/drains/reference/audit-logs#datadog).
+  - Panther uses the [standard Audit Log Drain JSON format](/docs/drains/reference/audit-logs#panther) with Bearer authentication.
 
 - ### Update your SIEM parsing
   Map your existing fields to the [`vercel.audit_log.v1` schema](/docs/drains/reference/audit-logs#audit-log-schema). The `context` fields move to top-level `ipAddress` and `userAgent` fields, the previous and next state in `targets` becomes a single action-specific `payload`, and the ISO 8601 `occurred_at` becomes a `timestamp` in Unix milliseconds. Audit Log Drains also emit a different set of events than the legacy stream, so review any rules that match on specific `action` values. See [Map the schema](#map-the-schema) for the full field mapping.
@@ -104,6 +108,7 @@ A migrated event looks like this:
 - [Configure Drains](/docs/drains/using-drains)
 - [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3)
 - [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk)
+- [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther)
 - [Audit Logs](/docs/audit-log)
 
 

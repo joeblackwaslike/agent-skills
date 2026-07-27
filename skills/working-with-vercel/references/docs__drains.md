@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/drains/using-drains
   - /docs/drains/audit-logs-to-s3
+  - /docs/drains/audit-logs-to-splunk
+  - /docs/drains/audit-logs-to-panther
   - /docs/drains/reference/logs
-  - /docs/drains/reference/traces
-  - /docs/drains/reference/speed-insights
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "189ff19fc4a7f29e94065cca1e0ab30cb0ec124fa67695564a2e2bcd626be37c"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "e1b5044f301c58cae82da8161ead6d2403668ebe65f623bb37bc87dfad33900c"
 ---
 
 # Working with Drains
@@ -33,11 +33,11 @@ Drains let you forward observability data from your applications to external ser
 
 ## Getting started with Drains
 
-You can add Drains in two ways:
+You can add Drains in the following ways:
 
 - Custom endpoints: [Configure](/docs/drains/using-drains#configuring-drains) any data type to send to a [custom HTTP endpoint](/docs/drains/using-drains#custom-endpoint)
+- Audit Log destinations: Configure Audit Log Drains to send data to [Amazon S3](/docs/drains/audit-logs-to-s3), [Splunk](/docs/drains/audit-logs-to-splunk), Datadog, or [Panther](/docs/drains/audit-logs-to-panther)
 - Native integrations: [Configure](/docs/drains/using-drains#configuring-drains) logs and trace data types to send to popular services like Dash0 and Braintrust using [native integrations](/docs/drains/using-drains#native-integrations)
-- AWS S3: [Configure](/docs/drains/audit-logs-to-s3) Drains to write data directly to your AWS S3 bucket (only available for Audit Logs)
 
 Learn how to [manage your active drains](/docs/drains/using-drains#managing-your-active-drains).
 
@@ -49,7 +49,7 @@ Drains support the following data types:
 - **Traces**: Distributed tracing data in OpenTelemetry format (supports custom endpoints and native integrations)
 - **Speed Insights**: Performance metrics and web vitals (custom endpoints only)
 - **Web Analytics**: Page views and custom events (custom endpoints only)
-- **Audit Logs**: Team activity events (custom endpoints and AWS S3)
+- **Audit Logs**: Team activity events
 
 ### Data type references
 

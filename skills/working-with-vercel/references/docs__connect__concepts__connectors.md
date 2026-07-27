@@ -9,15 +9,16 @@ prerequisites:
   - /docs/connect/concepts
   - /docs/connect
 related:
+  - /docs/connect
+  - /docs/connect/legal
   - /docs/cli/connect
   - /docs/connect/concepts/installations
   - /docs/connect/concepts/project-links
-  - /docs/connect/quickstart
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ea73701bedaa609b448dbfa8e8c29089e282122e2be9fd83a8d8a1755c426ee9"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "69b6fb04a76812d5199962faf064cb2026eb2b9e42a6aee5f0721dbd197723a4"
 ---
 
 # Connectors
@@ -40,13 +41,31 @@ When you call `getToken('slack/acme-slack', ...)`, the string `slack/acme-slack`
 | Type         | Auth model                                                                              | Multi-tenant installations | Triggers |
 | ------------ | --------------------------------------------------------------------------------------- | -------------------------- | -------- |
 | Slack        | Slack app install (per workspace)                                                       | yes                        | yes      |
-| GitHub       | GitHub app install (per org or user)                                                    | yes                        | no       |
+| GitHub       | GitHub app install (per org or user)                                                    | yes                        | yes      |
+| Linear       | Linear app install (per workspace)                                                      | yes                        | yes      |
 | Snowflake    | Snowflake Partner Connect JWT                                                           | no                         | no       |
 | Salesforce   | Managed OAuth flow                                                                      | no                         | no       |
 | API Key      | Static credential supplied at create time                                               | no                         | no       |
 | Custom OAuth | OAuth 2.0 / OIDC authorization-code flow with PKCE against any URL-identified service   | no                         | no       |
 
 The capability matrix above is the current beta set and may change. Connector types may be added or removed without notice. New types are added behind feature flags; check the dashboard for what's available to your team.
+
+## Setting up a custom OAuth connector
+
+Slack, GitHub, Snowflake, Linear, and Salesforce are [Vercel Managed Connectors](/docs/connect#managed-connectors): Vercel registers the OAuth app, and you authorize it to access your account or workspace. For any other provider, you can create a **Custom OAuth** connector, and Vercel does as much of the setup as the provider supports:
+
+- **Discover endpoints from a URL**: Enter a server URL, such as `mcp.linear.app`, and Vercel reads the provider's published OAuth metadata to fill in the authorization and token endpoints.
+- **Bring your own client**: Add the client ID and client secret from the OAuth app you registered with the provider.
+- **Let Vercel register the client**: When a provider supports automatic client registration, [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup) creates the OAuth client for you, so you don't need to register an app or manage a client secret.
+
+## Presets: pre-filled setup for popular services
+
+A **preset** is a pre-filled starting point for a specific service. When you create a connector, search for the provider by name. If a preset exists, Vercel fills in the information it already knows and you only need to complete what is specific to your account.
+
+Presets work with the following:
+
+- **OAuth**: Vercel fills in the authorization and token endpoints and the provider's default scopes. You add your client ID and secret, or let [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup) register the client where the provider supports it.
+- **API key**: Vercel links you to where the provider issues keys. Generate the key there, then paste it into the connector when you create it.
 
 ## Branding
 

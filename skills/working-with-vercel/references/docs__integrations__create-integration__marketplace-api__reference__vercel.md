@@ -3,7 +3,7 @@ title: Marketplace Vercel API
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about marketplace vercel api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "203bc3e69a26e2a9a2e478d1ccafa764eb0704e628ae228da1157d4fa18a5df3"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "e71404016b9731ad303891e690292c7def7070c784ac9c69832a2036022c3ada"
 ---
 
 # Vercel API Reference

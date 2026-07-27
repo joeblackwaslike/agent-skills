@@ -8,16 +8,16 @@ type: how-to
 prerequisites:
   - /docs/projects
 related:
+  - /docs/deployments/environments
   - /docs/cli/link
   - /docs/cli/env
   - /docs/cli/deploy
   - /docs/cli/domains
-  - /docs/cli
 summary: Set up and deploy a Vercel project using the CLI, from linking to production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/deploy-from-cli.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ffd10d4b909819e73e1628752eb6bfcb62ee6bf7b3bd46b336ca50864ed39efb"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "937facfa852e2c694c6a5237759b2380a5475ba648f8e822aa1220a6b92cfb79"
 ---
 
 # Deploying a project from the CLI
@@ -122,7 +122,11 @@ When you're ready to test your changes in a production-like environment, create 
 vercel deploy
 ```
 
-This outputs a preview URL. Preview deployments use your preview environment variables and are useful for testing before going live.
+This outputs a deployment URL. For an existing project that already has a production deployment, this creates a preview deployment and uses your preview environment variables.
+
+> **💡 Note:** If this is the [first deployment](/docs/deployments/environments#first-deployment)
+> of a new project, Vercel creates a production deployment even without
+> `--prod`. After that, `vercel deploy` creates preview deployments.
 
 If you want to see the build logs while deploying:
 

@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/authentication-and-byok
+  - /docs/ai-gateway/sdks-and-apis/responses/websockets
 summary: Use OpenAI Codex CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "931cf6f9c481645b24c3a8971adbd1b9e6537577436887c634e2c95560be65ae"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "655b454f2cd91351ce0ad277cbb63feba84889e7cc7dc0f2e10393b22b4d934d"
 ---
 
 # OpenAI Codex
@@ -68,7 +69,7 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   Vercel AI Gateway routes your requests. To confirm, check your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard.
 
 - ### (Optional) Enable WebSocket streaming
-  Codex can stream Responses API traffic over a persistent WebSocket connection, reducing per-turn latency. Enable it in your config:
+  Codex can stream Responses API traffic over a persistent WebSocket connection, reducing per-turn latency. This uses AI Gateway's [Responses API WebSocket mode](/docs/ai-gateway/sdks-and-apis/responses/websockets). Enable it in your config:
   ```toml filename="~/.codex/config.toml"
   [features]
   responses_websockets_v2 = true

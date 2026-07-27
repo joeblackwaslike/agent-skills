@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/account/teams/dashboard.md"
-fetched_at: "2026-07-13T06:55:43.454Z"
-sha256: "a7da95add8fc913ef055f2a71dee3f3d74fae6d333264d78c064f5ab8ebb5a4a"
+fetched_at: "2026-07-27T07:33:35.768Z"
+sha256: "bcb42cd72ab0c9506e1607d638e97fc3795f50b2af705978f4cbcf2556ac81be"
 ---
 
 # Dashboard
@@ -30,6 +30,12 @@ Control data sharing preferences for your team. Configure whether your data can 
 
 Enable usage-based pricing and set spending limits. Configure monthly team
 spending limits. Control whether only admins can modify these settings.
+
+### Cursor Router
+
+Enable model routing for Auto, choose which optimization modes team members
+can select, control routed model visibility, and set Auto as the team
+default. Learn more in [Cursor Router](https://cursor.com/docs/cursor-router.md).
 
 ### Team Marketplaces
 

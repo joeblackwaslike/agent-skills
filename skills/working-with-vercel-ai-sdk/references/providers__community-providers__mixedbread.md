@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mixedbread.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "4a9f8630d47bcc8e70926256388b3b02135533c81d8ef3c9908f071f4ee366b2"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "b4f5f4e42e956b5a84deec8aae7603cb2a16e1e5031ef532dc1182669bd38598"
 ---
 
 # Mixedbread Provider
@@ -182,6 +182,7 @@ The following provider options are available:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

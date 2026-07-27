@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers guide"
 source: "https://code.visualstudio.com/docs/devcontainers/containers"
-fetched_at: "2026-07-20T06:45:13.409Z"
-sha256: "e70f7b6d7abfd592687300bbe06cfd04fd68d0a534779ea88b3fa88149bbfe90"
+fetched_at: "2026-07-27T07:30:29.835Z"
+sha256: "8a2dba3f78dc262b5562df317a508b94476864304c3bdb956b1de94404e71b45"
 ---
 
 # VS Code Dev Containers guide
@@ -224,7 +224,7 @@ To do so:
 
 4. Follow the quick start for the Remote - SSH extension to connect to a host and open a folder there.
 
-5. Use the Dev Containers: Reopen in Container command from the Command Palette (F1, ⇧⌘P (Windows, Linux Shift+cmd+P)).
+5. Use the Dev Containers: Reopen in Container command from the Command Palette (F1, ⇧⌘P (Windows, Linux Ctrl+Shift+P)).
 
 
 The rest of the Dev Containers quick start applies as-is. You can learn more about the Remote - SSH extension in its documentation. You can also see the Develop on a remote Docker host article for other options if this model does not meet your needs.
@@ -245,7 +245,7 @@ To do so:
 
 3. Follow the steps for the Remote - Tunnels extension to connect to a tunnel host and open a folder there.
 
-4. Use the Dev Containers: Reopen in Container command from the Command Palette (F1, ⇧⌘P (Windows, Linux Shift+cmd+P)).
+4. Use the Dev Containers: Reopen in Container command from the Command Palette (F1, ⇧⌘P (Windows, Linux Ctrl+Shift+P)).
 
 
 The rest of the Dev Containers quick start applies as-is. You can learn more about the Remote - Tunnels extension in its documentation. You can also see the Develop on a remote Docker host article for other options if this model does not meet your needs.
@@ -648,7 +648,7 @@ After selecting a port, a notification will tell you the localhost port you shou
 This same information is available in the Forwarded Ports section of the Remote Explorer if you need to access it later.
 
 
-If you would like VS Code to remember any ports you have forwarded, check Remote: Restore Forwarded Ports in the Settings editor (⌘, (Windows, Linux cmd+,)) or set `"remote.restoreForwardedPorts": true` in `settings.json`.
+If you would like VS Code to remember any ports you have forwarded, check Remote: Restore Forwarded Ports in the Settings editor (⌘, (Windows, Linux Ctrl+,)) or set `"remote.restoreForwardedPorts": true` in `settings.json`.
 
 
 ### Publishing a port
@@ -751,7 +751,7 @@ Dotfiles are files whose filename begins with a dot (`.`) and typically contain 
 A common way to do this is to store these dotfiles in a GitHub repository and then use a utility to clone and apply them. The Dev Containers extension has built-in support for using these with your own containers. If you are new to the idea, take a look at the different dotfiles bootstrap repositories that exist.
 
 
-To use it, add your dotfiles GitHub repository to VS Code's User Settings (⌘, (Windows, Linux cmd+,)) as follows:
+To use it, add your dotfiles GitHub repository to VS Code's User Settings (⌘, (Windows, Linux Ctrl+,)) as follows:
 
 
 Or in `settings.json`:

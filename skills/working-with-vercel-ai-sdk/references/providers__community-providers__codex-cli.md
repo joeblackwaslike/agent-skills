@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/codex-cli.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "7de7c74200d95a3b1496cd61fe62e15bcf80dbac7a5d215d43e5a2d554f4b017"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "ed89ce78a061ba03fe82d614a07a6637d721ee81d1706196bef07476e4b2a2e6"
 ---
 
 # Codex CLI Provider
@@ -214,6 +214,7 @@ For more details, see the [provider documentation](https://github.com/ben-vargas
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

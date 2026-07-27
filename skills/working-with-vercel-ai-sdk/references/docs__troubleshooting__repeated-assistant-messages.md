@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/repeated-assistant-messages.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c82e6fb41f2926ae56475bae5d25e96a214359ade44213c2cb4f16bc93179e92"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "389cb28e204fefa0e3c0dc606c76c9cefe98ecf417e9afe550a9b448c51a8b7a"
 ---
 
 # Repeated assistant messages in useChat
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     tools: {
       weather: {
         description: 'Get the weather for a location',
-        parameters: z.object({
+        inputSchema: z.object({
           location: z.string(),
         }),
         execute: async ({ location }) => {
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
     tools: {
       weather: {
         description: 'Get the weather for a location',
-        parameters: z.object({
+        inputSchema: z.object({
           location: z.string(),
         }),
         execute: async ({ location }) => {

@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-07-20T06:45:13.409Z"
-sha256: "2a3f68aa779ca859690028e3fe7ff20779501bf84258848b759f3cd08d57c94d"
+fetched_at: "2026-07-27T07:30:29.835Z"
+sha256: "b9443153f1d826d21650925d26fb636e7d8fb5f12471682e5bfe36b2ef236ebb"
 ---
 
 # Available templates index
@@ -251,8 +251,10 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:7.2.1` | `7.2.1` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:7.2.1` | `7.2.1` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.0.1` | `8.0.1` |
+| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.0.1` | `8.0.1` |
+| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.0.1` | `8.0.1` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.0.1` | `8.0.1` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
@@ -270,7 +272,7 @@ Templates
 | Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.2.5` | `1.2.5` |
 | mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.3.1` | `1.3.1` |
 | Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.0.4` | `1.0.4` |
-| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rust:1.3.1` | `1.3.1` |
+| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rustup:1.4.0` | `1.4.0` |
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.2.4` | `1.2.4` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.4` | `1.0.4` |
 | Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.5` | `1.2.5` |

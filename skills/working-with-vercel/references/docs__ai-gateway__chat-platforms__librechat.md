@@ -13,8 +13,8 @@ related:
 summary: Use LibreChat with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/librechat.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f1d55a7beb13e8d9c9e687e004bdd43721d6ab9b72bfe9050f66ecc537678a5d"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "75056d536260015dd0036f47986f718ffcff98fcef54acab795b31a92d99b047"
 ---
 
 # LibreChat
@@ -74,7 +74,7 @@ sha256: "f1d55a7beb13e8d9c9e687e004bdd43721d6ab9b72bfe9050f66ecc537678a5d"
           fetch: true
         titleModel: "openai/gpt-5.5"
   ```
-  > **💡 Note:** Setting `fetch: true` automatically fetches all available models from AI Gateway. Browse the full catalog on the [models page](https://vercel.com/ai-gateway/models).
+  > **💡 Note:** Setting `fetch: true` automatically fetches all available models from AI Gateway. Browse the full catalog on the [models page](/ai-gateway/models).
 
 - ### Start LibreChat
   Start or restart your LibreChat instance to apply the configuration:

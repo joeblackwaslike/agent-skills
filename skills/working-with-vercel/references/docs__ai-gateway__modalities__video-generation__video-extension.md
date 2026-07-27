@@ -13,8 +13,8 @@ related:
 summary: Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "7a7756cb766de3dda13819c15400ff14c97bb3be178bc27955ba4d16fb034e2f"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "377ca2a95dfaea725d0f7349bbecd6f0fc6f1dedbf55a46585a0c6fec4dd4e3c"
 ---
 
 # Video Extension
@@ -27,7 +27,7 @@ Grok Imagine Video (by xAI) can extend existing videos using text prompts. Provi
 
 To edit an existing video instead of extending it, see [Video editing](/docs/ai-gateway/modalities/video-generation/video-editing).
 
-[Browse the latest Grok video models](https://vercel.com/ai-gateway/models?providers=xai\&capabilities=video-generation) on the AI Gateway Models page.
+[Browse the latest Grok video models](/ai-gateway/models?providers=xai\&capabilities=video-generation) on the AI Gateway Models page.
 
 Only `xai/grok-imagine-video` supports extension. The `xai/grok-imagine-video-1.5` and `xai/grok-imagine-video-1.5-preview` models support image-to-video only.
 

@@ -16,8 +16,8 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "594c59b115d68f9264f8c0435b66c812581a5a196f574d884ee24b4442cca27f"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "438e6d493bfbe540b446208e1950c8dd15516a487acc49ce72425b57f484e806"
 ---
 
 # Supported Frameworks on Vercel
@@ -148,6 +148,8 @@ The frameworks listed below can be deployed to Vercel with minimal configuration
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/sanity-v2) | [View Demo](https://sanity-studio-template.vercel.app)
 - **Scully**: Scully is a static site generator for Angular.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/scully) | [View Demo](https://scully-template.vercel.app)
+- **Services**: Multiple services deployed as serverless functions within your project.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/services)
 - **SolidStart (v0)**: Simple and performant reactivity for building user interfaces.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/solidstart) | [View Demo](https://solid-start-template.vercel.app)
 - **SolidStart (v1)**: Simple and performant reactivity for building user interfaces.

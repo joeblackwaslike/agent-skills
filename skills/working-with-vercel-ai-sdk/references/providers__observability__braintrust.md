@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability/braintrust.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "bcebb80bf11d55550137d9802613be471fba0e70ccadea4be75d4790c1df2170"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "19d59f5d85f5dd460222e9efe24db91562cff60a94fa062eead48c8a1eda93ad"
 ---
 
 # Braintrust Observability
@@ -118,13 +118,13 @@ async function main() {
     tools: {
       listOrders: tool({
         description: 'list all orders',
-        parameters: z.object({ userId: z.string() }),
+        inputSchema: z.object({ userId: z.string() }),
         execute: async ({ userId }) =>
           `User ${userId} has the following orders: 1`,
       }),
       viewTrackingInformation: tool({
         description: 'view tracking information for a specific order',
-        parameters: z.object({ orderId: z.string() }),
+        inputSchema: z.object({ orderId: z.string() }),
         execute: async ({ orderId }) =>
           `Here is the tracking information for ${orderId}`,
       }),

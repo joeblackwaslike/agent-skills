@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugin-dependencies.md"
-fetched_at: "2026-07-20T06:46:20.159Z"
-sha256: "5cdc588c46d96cd8a4236d79f64abef268fad765be6e439caeb870f52885bbdb"
+fetched_at: "2026-07-27T07:31:29.456Z"
+sha256: "4630a5fb450f9a96aa3b7d9f5e21ca0c124ff58e4b77b10c30baee9158d37898"
 ---
 
 > ## Documentation Index
@@ -16,7 +16,7 @@ A plugin can depend on other plugins by listing them in `plugin.json` or in its 
 
 When you install a plugin that declares dependencies, Claude Code resolves and installs them automatically and lists which dependencies were added at the end of the install output. If a dependency later goes missing, `/reload-plugins` and the background plugin auto-update reinstall it, provided its marketplace is already in your configured marketplaces. Re-running `claude plugin install` on the dependent plugin, or adding a marketplace with `claude plugin marketplace add`, also resolves any outstanding missing dependencies. Dependencies from a marketplace you have not added are left unresolved.
 
-This guide is for plugin authors who declare dependencies in `plugin.json` and for marketplace maintainers who tag releases. To install plugins that have dependencies, see [Discover and install plugins](/en/discover-plugins). For the full manifest schema, see the [Plugins reference](/en/plugins-reference).
+This guide is for plugin authors who declare dependencies in `plugin.json` and for marketplace maintainers who tag releases. To install plugins that have dependencies, see [Discover and install plugins](/docs/en/discover-plugins). For the full manifest schema, see the [Plugins reference](/docs/en/plugins-reference).
 
 ## Why constrain dependency versions
 
@@ -80,7 +80,7 @@ To add a tool to the standard set later, publish a new `backend-standard` versio
 * Enable auto-update for the marketplace in `/plugin`. The next auto-update moves the bundle to the new version and installs any dependencies it adds.
 * Run `claude plugin update backend-standard`, then `/reload-plugins` to install the newly added dependencies.
 
-To roll bundles out across an organization, add the bundle plugin to `enabledPlugins` in [managed settings](/en/settings#enabledplugins).
+To roll bundles out across an organization, add the bundle plugin to `enabledPlugins` in [managed settings](/docs/en/settings#enabledplugins).
 
 ## Depend on a plugin from another marketplace
 
@@ -170,7 +170,7 @@ When you enable a plugin, Claude Code also enables its dependencies at the same 
 | A dependency is set to `false` at a scope with higher precedence than the target scope | Enable fails. Enable the dependency at that scope, or pass `--scope` to write there.                                   |
 | All dependencies are installed and allowed                                             | Enable succeeds and writes `true` for the plugin and each dependency that was not already enabled at the target scope. |
 
-This holds even when a dependency sets [`defaultEnabled: false`](/en/plugins-reference#default-enablement) in its manifest, because Claude Code writes an explicit `true` for it. The same applies at install: a dependency pulled in to satisfy an active plugin installs with `true` regardless of its own default.
+This holds even when a dependency sets [`defaultEnabled: false`](/docs/en/plugins-reference#default-enablement) in its manifest, because Claude Code writes an explicit `true` for it. The same applies at install: a dependency pulled in to satisfy an active plugin installs with `true` regardless of its own default.
 
 When you disable a plugin, Claude Code refuses if another enabled plugin still depends on it. The error names the plugins that depend on it and gives you a chained command that disables them in the right order, ending with the one you asked for.
 
@@ -224,7 +224,7 @@ To check for these errors programmatically, run `claude plugin list --json`. Plu
 
 ## See also
 
-* [Create plugins](/en/plugins): build plugins with skills, agents, and hooks
-* [Create and distribute a plugin marketplace](/en/plugin-marketplaces): host plugins for your team
-* [Plugins reference](/en/plugins-reference#plugin-manifest-schema): the full `plugin.json` schema
-* [Version management](/en/plugins-reference#version-management): how a plugin's own version is resolved and used as the cache key
+* [Create plugins](/docs/en/plugins): build plugins with skills, agents, and hooks
+* [Create and distribute a plugin marketplace](/docs/en/plugin-marketplaces): host plugins for your team
+* [Plugins reference](/docs/en/plugins-reference#plugin-manifest-schema): the full `plugin.json` schema
+* [Version management](/docs/en/plugins-reference#version-management): how a plugin's own version is resolved and used as the cache key

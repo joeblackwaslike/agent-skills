@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/voyage-ai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "472dce6bf2f42eb77315eca60e124e6d14780daa1a2158812e8c9938d24cc8ea"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "15767a5423c5085db221a62040aa1244b4395bb07babb4072d43d81f4c2809e6"
 ---
 
 # Voyage AI Provider
@@ -354,6 +354,7 @@ The following provider options are available:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "cb221617f0fcd639989aecd92dcc942ec5a83a84fc256345649f8a3a6059cce2"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "f9ee5d1b57d5b3544a091598fa518fed9b52534dc52217316901eb8eeff03ea5"
 ---
 
 # AI Gateway Provider
@@ -512,7 +512,7 @@ const { text } = await generateText({
   tools: {
     getWeather: tool({
       description: 'Get the current weather for a location',
-      parameters: z.object({
+      inputSchema: z.object({
         location: z.string().describe('The location to get weather for'),
       }),
       execute: async ({ location }) => {
@@ -1038,10 +1038,6 @@ The following gateway provider options are available:
 
   Restricts routing to providers that have agreements with Vercel for AI Gateway to not use prompts for model training. When using BYOK credentials, this filter is not applied. If BYOK credentials fail and the request falls back to system credentials, only providers that do not train on prompt data will be used. If there are no providers available for the model that disallow prompt training, the request will fail.
 
-- **hipaaCompliant** _boolean_
-
-  Restricts routing to models and tools from providers that have signed a BAA with Vercel for the use of AI Gateway (requires Vercel HIPAA BAA add on). BYOK credentials are skipped when `hipaaCompliant` is set to `true` to ensure that requests are only routed to providers that support HIPAA compliance.
-
 - **quotaEntityId** _string_
 
   The unique identifier for the entity against which quota is tracked. Used for quota management and enforcement purposes.
@@ -1066,7 +1062,7 @@ The following gateway provider options are available:
   per-provider option each provider expects, and overrides any tier
   also set in the per-provider options. Leave unset for provider
   default. See the [OpenAI](/providers/ai-sdk-providers/openai),
-  [Google Generative AI](/providers/ai-sdk-providers/google-generative-ai),
+  [Google Generative AI](/providers/ai-sdk-providers/google),
   and [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
   provider docs for tier semantics, model availability, and graceful
   downgrade behavior on each provider.
@@ -1162,25 +1158,6 @@ const { text } = await generateText({
   providerOptions: {
     gateway: {
       disallowPromptTraining: true,
-    } satisfies GatewayProviderOptions,
-  },
-});
-```
-
-#### HIPAA Compliance Example
-
-Set `hipaaCompliant` to true to route requests only to models or tools by providers that have signed a BAA with Vercel for the use of AI Gateway. If the model or tool does not have a HIPAA-compliant provider, the request will fail. When `hipaaCompliant` is `false` or not specified, there is no enforcement of restricting routing. BYOK credentials are skipped when `hipaaCompliant` is set to `true` to ensure that requests are only routed to providers that support HIPAA compliance.
-
-```ts
-import type { GatewayProviderOptions } from '@ai-sdk/gateway';
-import { generateText } from 'ai';
-
-const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
-  prompt: 'Analyze this patient data...',
-  providerOptions: {
-    gateway: {
-      hipaaCompliant: true,
     } satisfies GatewayProviderOptions,
   },
 });

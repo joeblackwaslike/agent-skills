@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/sdk/python.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "f3e14e5c9b8317fbf350d109ea1d1432fbc65489b412cb01a93c7995ccc25a26"
+fetched_at: "2026-07-27T07:33:35.768Z"
+sha256: "fd26186b795a9ae16619c71ab50e41f776381dbbf9cac9a755667601731f2f84"
 ---
 
 # Cursor Python SDK
@@ -14,11 +14,10 @@ For the REST API, see the [Cloud Agents API](https://cursor.com/docs/cloud-agent
 
 The SDK wraps local and cloud runtimes behind one interface. You write the same code regardless of where the agent runs.
 
-| Runtime                   | What it does                                                                                           | When to use                                                                                                                |
-| :------------------------ | :----------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| **Local**                 | Runs the agent against local files on disk.                                                            | Dev scripts and CI checks against a working tree.                                                                          |
-| **Cloud (Cursor-hosted)** | Runs in an isolated VM with your repo cloned in. Cursor runs the VMs.                                  | When the caller doesn't have the repo, you want many agents in parallel, or runs need to survive the caller disconnecting. |
-| **Cloud (self-hosted)**   | Same shape, but targets a [self-hosted pool](https://cursor.com/docs/cloud-agent/self-hosted-pool.md). | Same reasons as Cursor-hosted, plus code, secrets, and build artifacts must stay in your environment.                      |
+| Runtime                   | What it does                                                          | When to use                                                                                                                |
+| :------------------------ | :-------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| **Local**                 | Runs the agent against local files on disk.                           | Dev scripts and CI checks against a working tree.                                                                          |
+| **Cloud (Cursor-hosted)** | Runs in an isolated VM with your repo cloned in. Cursor runs the VMs. | When the caller doesn't have the repo, you want many agents in parallel, or runs need to survive the caller disconnecting. |
 
 Set the runtime by passing `local` or `cloud` to `Agent.create()`.
 
@@ -151,20 +150,6 @@ cloud_agent = Agent.create(
 )
 ```
 
-To target a [self-hosted pool](https://cursor.com/docs/cloud-agent/self-hosted-pool.md), set `env` on `CloudAgentOptions`:
-
-```python
-from cursor_sdk import CloudAgentOptions, CloudEnvironment, CloudRepository
-
-cloud_agent = Agent.create(
-    model="composer-2.5",
-    cloud=CloudAgentOptions(
-        env=CloudEnvironment(type="pool", name="acme-prod-pool"),
-        repos=[CloudRepository(url="https://github.com/your-org/your-repo")],
-    ),
-)
-```
-
 `agent.agent_id` is populated immediately. Local agents get an `agent-<uuid>` ID; cloud agents get a `bc-<uuid>` ID. `agent.model` is a typed `ModelSelection`, so `agent.model.id` and `agent.model.params` work directly.
 
 Cloud agents started by the SDK are filtered out of the default agent list. To
@@ -190,9 +175,36 @@ These values are encrypted at rest, injected into the cloud agent's shell, and d
 
 For values that should only exist during a single run, pass them on `agent.send()` instead. See [Per-run environment variables](https://cursor.com/docs/sdk/python.md#per-run-environment-variables).
 
+### Agent metadata
+
+Use a raw `cloud` mapping to attach your own identifiers to a cloud agent when you create it. Metadata can link an agent to a user, tenant, workflow, or ticket in your system.
+
+```python
+from cursor_sdk import Agent
+
+with Agent.create(
+    model="composer-2.5",
+    cloud={
+        "repos": [{"url": "https://github.com/your-org/your-repo"}],
+        "metadata": {
+            "end_user_id": "user-123",
+            "ticket_id": "ENG-456",
+        },
+    },
+) as agent:
+    print(agent.agent_id)
+```
+
+Metadata is available for cloud agents at creation time. You can attach up to 50 key-value pairs. Keys must be non-empty and no more than 255 characters. Values must be strings no larger than 4096 bytes. Empty string values are allowed, and an empty mapping is treated as no metadata.
+
+The typed `CloudAgentOptions` and `SDKAgentInfo` classes don't expose metadata
+yet. Pass it through a raw mapping as shown above. If metadata isn't enabled
+for the API key's account, creating an agent with a non-empty map returns
+`403 feature_unavailable`.
+
 ### Model parameters
 
-Use `ModelSelection.params` to pass per-model options such as reasoning effort or max mode. Parameter IDs and values vary by model. Use [`Cursor.models.list()`](https://cursor.com/docs/sdk/python.md#the-cursor-namespace) to discover supported parameters and preset variants for your account.
+Use `ModelSelection.params` to pass per-model options such as reasoning effort. Parameter IDs and values vary by model. Use [`Cursor.models.list()`](https://cursor.com/docs/sdk/python.md#the-cursor-namespace) to discover supported parameters and preset variants for your account.
 
 ```python
 from cursor_sdk import Agent, LocalAgentOptions, ModelParameterValue, ModelSelection
@@ -471,6 +483,7 @@ class Run:
     created_at: str | None
     usage: TokenUsage | None  # cumulative; property on the live handle
 
+    def stream(self) -> Iterator[SDKMessage]: ...
     def messages(self) -> Iterator[SDKMessage]: ...
     def events(self) -> Iterator[RunStreamEvent]: ...
     def iter_text(self) -> Iterator[str]: ...
@@ -490,7 +503,7 @@ class Run:
 
 `run.stream()` is an alias for `run.messages()`. Iterating `run` directly yields `RunStreamEvent` envelopes, the same as `run.events()`.
 
-`AsyncRun` exposes the same state fields, including `usage`. Methods that do I/O are async: `async for message in run.messages()`, `async for event in run.events()`, `async for text in run.iter_text()`, `await run.text()`, `await run.wait()`, `await run.cancel()`, `await run.conversation()`, `await run.conversation_json()`, and `async for event in run.observe()`.
+`AsyncRun` exposes the same state fields, including `usage`. Methods that do I/O are async: `async for message in run.stream()`, `async for message in run.messages()`, `async for event in run.events()`, `async for text in run.iter_text()`, `await run.text()`, `await run.wait()`, `await run.cancel()`, `await run.conversation()`, `await run.conversation_json()`, and `async for event in run.observe()`.
 
 ### Streaming
 
@@ -1046,7 +1059,7 @@ models = await AsyncCursor.models.list(client=client)
 repositories = await AsyncCursor.repositories.list(client=client)
 ```
 
-Use `Cursor.models.list()` to discover valid model IDs and per-model parameters before calling `Agent.create()` or `agent.send()`. Parameters are model-specific. Common examples include reasoning effort and max mode.
+Use `Cursor.models.list()` to discover valid model IDs and per-model parameters before calling `Agent.create()` or `agent.send()`. Parameters are model-specific. Common examples are reasoning effort and context window size.
 
 ```python
 models = Cursor.models.list()
@@ -1351,7 +1364,7 @@ The Python SDK accepts helper dataclasses and raw dictionaries. Dataclasses use 
 
 | Property                 | Type                                             | Default             | Description                                                                                                                                                                                |
 | :----------------------- | :----------------------------------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `env`                    | `CloudEnvironment \| Mapping[str, Any]`          | `{ type: "cloud" }` | Execution environment. `cloud` uses Cursor-hosted VMs; `pool` and `machine` target a [self-hosted pool](https://cursor.com/docs/cloud-agent/self-hosted-pool.md).                          |
+| `env`                    | `CloudEnvironment \| Mapping[str, Any]`          | `{ type: "cloud" }` | Execution environment. `cloud` uses Cursor-hosted VMs; `pool` and `machine` target self-hosted workers you run.                                                                            |
 | `repos`                  | `Sequence[CloudRepository \| Mapping[str, Any]]` | `None`              | Repositories to clone into the VM. Omit `repos` and leave `env` at the default for a no-repo agent with an empty workspace. Pass `pr_url` on a repo to attach the agent to an existing PR. |
 | `work_on_current_branch` | `bool`                                           | `False`             | Push commits to the existing branch instead of a new one.                                                                                                                                  |
 | `auto_create_pr`         | `bool`                                           | `False`             | Open a PR when the run finishes.                                                                                                                                                           |

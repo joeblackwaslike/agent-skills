@@ -13,15 +13,15 @@ related:
 summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "767e869f88c3fa34b5e513517ef456991e2cd9b0526afb4fd7c1813d3a52615e"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "45d9b4a8f7914c1a1b6a4bebbcd0664201cee112239a0b288897fb90b9651262"
 ---
 
 # Embeddings
 
 Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG).
 
-To see which models AI Gateway supports for embeddings, use the **Embedding** filter at the [AI Gateway Models page](https://vercel.com/ai-gateway/models?capabilities=embedding).
+To see which models AI Gateway supports for embeddings, use the **Embedding** filter at the [AI Gateway Models page](/ai-gateway/models?capabilities=embedding).
 
 The examples below use the AI SDK. If you call AI Gateway through the OpenAI-compatible REST API instead, see [Embeddings with the OpenAI-Compatible API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings).
 

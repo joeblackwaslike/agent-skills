@@ -13,8 +13,8 @@ related:
 summary: Use Cline with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "efe78b0c37779583991182e9245a46745c75abfb8d8f683615cd21b2c221ef88"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "bef4b095e69a834f5abe33114c80d3f46bea48f9b7b17210bb71374f06b0c978"
 ---
 
 # Cline
@@ -37,13 +37,13 @@ sha256: "efe78b0c37779583991182e9245a46745c75abfb8d8f683615cd21b2c221ef88"
   1. Select **Vercel AI Gateway** as your API Provider
   2. Paste your AI Gateway API Key
   3. Choose a model from the auto-populated catalog, or enter a specific model ID
-  Cline automatically fetches all available models from AI Gateway. You can browse the full catalog on the [models page](https://vercel.com/ai-gateway/models).
+  Cline automatically fetches all available models from AI Gateway. You can browse the full catalog on the [models page](/ai-gateway/models).
 
 - ### Start coding
   Your requests will now be routed through AI Gateway. You can verify this by checking your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard.
 
 - ### (Optional) Use specific model IDs
-  Models follow the `creator/model-name` format. Check the [models catalog](https://vercel.com/ai-gateway/models) for the right slug to avoid "404 Model Not Found" errors.
+  Models follow the `creator/model-name` format. Check the [models catalog](/ai-gateway/models) for the right slug to avoid "404 Model Not Found" errors.
 
 - ### (Optional) Monitor usage and spend
   View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. The observability dashboard tracks:

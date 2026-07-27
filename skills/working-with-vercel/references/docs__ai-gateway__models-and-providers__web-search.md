@@ -13,8 +13,8 @@ related:
 summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "1aa8af7abc035c6113db1e8af6c57d108f594e729eb50f5e7bc71eb779a1874a"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "8251bc367c2a4620a5c3c09e91ec1d012ae9d530831b6d5f34d5b3aa64fd5d58"
 ---
 
 # Web Search
@@ -442,7 +442,7 @@ Use native web search tools from Anthropic, OpenAI, Google, or xAI. These tools 
 
 > **💡 Note:** Pricing for provider-specific web search tools depends on the model you use.
 > See the Web Search price column on the [model detail
-> pages](https://vercel.com/ai-gateway/models) for exact pricing.
+> pages](/ai-gateway/models) for exact pricing.
 
 ### Anthropic web search
 

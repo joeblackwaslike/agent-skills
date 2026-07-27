@@ -8,12 +8,13 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/drains/reference/audit-logs
   - /docs/cli/domains
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "20c65c54f3aeb607910e5e1cf7ff651e883bd8ac148096a999d46e4c85acd15a"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "034193e5b214c3e0348b6ee3df6a4c04439cbabdc2edacbba4f47371c0e54384"
 ---
 
 # vercel buy
@@ -76,6 +77,9 @@ vercel buy credits agent 50
 
 Purchase a Vercel addon for your team. Your team must be on the Flex plan to purchase addons. Run `vercel buy addon --help` to see all available addon options.
 
+> **⚠️ Warning:** The `siem` addon is deprecated. To send audit logs to external systems, use
+> [Audit Log Drains](/docs/drains/reference/audit-logs).
+
 ```bash filename="terminal"
 vercel buy addon [addon-name] [quantity]
 ```
@@ -83,18 +87,10 @@ vercel buy addon [addon-name] [quantity]
 *Using the \`vercel buy addon\` command to purchase an
 addon for the current team.*
 
-| Argument     | Required | Description                           |
-| ------------ | -------- | ------------------------------------- |
-| `addon-name` | Yes      | Name of the addon to purchase: `siem` |
-| `quantity`   | Yes      | Number of units to purchase           |
-
-#### Example
-
-```bash filename="terminal"
-vercel buy addon siem 1
-```
-
-*Purchase one unit of the SIEM addon.*
+| Argument     | Required | Description                    |
+| ------------ | -------- | ------------------------------ |
+| `addon-name` | Yes      | Name of the addon to purchase  |
+| `quantity`   | Yes      | Number of units to purchase    |
 
 ### `pro`
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode.md"
-fetched_at: "2026-07-20T06:46:20.159Z"
-sha256: "1e1433fe43358dc8e5efa9723333e04df680bbf79fe9281972f81510c5c407e3"
+fetched_at: "2026-07-27T07:31:29.456Z"
+sha256: "2870c21f7ed23cb85cf8de342b9ec3fa3f2c43701a0d44c3ad41a1077271c8f7"
 ---
 
 > ## Documentation Index
@@ -216,7 +216,7 @@ These examples read an image named `diagram.png` from the working directory. Cre
   ```
 </CodeGroup>
 
-When you run the example, the TypeScript version prints each response as it completes. The Python version's `receive_response()` loop ends at the first result message, so it prints the security analysis; to read both responses, use one `query()` and `receive_response()` pair per message as shown in the [Python reference's example of continuing a conversation](/en/agent-sdk/python#example-continuing-a-conversation).
+When you run the example, the TypeScript version prints each response as it completes. The Python version's `receive_response()` loop ends at the first result message, so it prints the security analysis; to read both responses, use one `query()` and `receive_response()` pair per message as shown in the [Python reference's example of continuing a conversation](/docs/en/agent-sdk/python#example-continuing-a-conversation).
 
 <Note>
   In the TypeScript SDK, if your message generator throws, for example when a file it reads is missing, the stream ends with an error that reads `Claude Code process aborted by user` instead of the original error, so check the code inside your generator first when you see that message. The error may also be preceded by a long minified line of bundled SDK source, so read to the end of the output for the error text.
@@ -247,7 +247,7 @@ Use single message input when:
   * Natural multi-turn conversations
 </Warning>
 
-If a query ends with an error result, such as `error_max_turns`, a single message `query()` call raises an error that includes the failure text after yielding the final result message, so wrap the loop in a try block if your code needs to continue. See [Handle the result](/en/agent-sdk/agent-loop#handle-the-result) for the result subtypes.
+If a query ends with an error result, such as `error_max_turns`, a single message `query()` call raises an error that includes the failure text after yielding the final result message, so wrap the loop in a try block if your code needs to continue. See [Handle the result](/docs/en/agent-sdk/agent-loop#handle-the-result) for the result subtypes.
 
 ### Implementation Example
 

@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/account/teams/analytics.md"
-fetched_at: "2026-07-13T06:55:43.454Z"
-sha256: "d40f675fe20bd0b9cb0defc145eb7d17afc481d3052a44783df24163efc1e649"
+fetched_at: "2026-07-27T07:33:35.768Z"
+sha256: "7cc631212b5169a94a44abb2a90e3db0e429711aad3cff21229e3e407eacd0cc"
 ---
 
 # Usage Analytics
@@ -172,7 +172,7 @@ All classification runs on-device. Default classifiers ensure no PII or sensitiv
 
 ### Pricing
 
-Conversation Insights is free during the preview period. Starting January 1st, 2026, customers will be charged for inference. The Cursor Token Rate applies only when the underlying request is a non-Auto third-party model request.
+Conversation Insights is free during the preview period. Starting January 1st, 2026, customers will be charged for inference. The Cursor Token Rate applies when the underlying request is a third-party model request subject to the rate, including when Auto Balance or Auto Intelligence routes to a third-party model.
 
 ## Cloud Agent Usage
 

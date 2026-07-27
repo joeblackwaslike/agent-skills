@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "57998911e76a33c3f0fc2cbd194204e1d5e728fce1068f8d2201bd47d472ffee"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "2fde8c794d002c3a5769230b22c5377a8315d273b385b6a7ffa88a823cf9bf1c"
 ---
 
 # vercel deploy
@@ -203,6 +203,10 @@ vercel --prod
 
 *Using the \`vercel\` command with the
 \`--prod\` option.*
+
+> **💡 Note:** The [first deployment](/docs/deployments/environments#first-deployment) of a
+> new project is always a production deployment, even when you omit `--prod`.
+> Use `--prod` for later production deployments after that first one exists.
 
 ### Skip Domain
 

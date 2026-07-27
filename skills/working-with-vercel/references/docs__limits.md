@@ -11,13 +11,13 @@ related:
   - /docs/functions/runtimes
   - /docs/builds/managing-builds
   - /docs/cron-jobs/usage-and-pricing
+  - /docs/deploy-hooks
   - /docs/pricing/regional-pricing
-  - /docs/functions/usage-and-pricing
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "06888ca73bcb39d39bf038cb09b2653aaf637515c6ea955889118e9f4781f018"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "d5a084f68a04a06d9908509c446fadf5ade621f20b677c0e18784adf93e40ecc"
 ---
 
 # Limits
@@ -39,6 +39,7 @@ To prevent abuse of our platform, we apply the following limits to all accounts.
 | [Concurrent Deployments](/docs/builds/managing-builds#on-demand-concurrent-builds)        | 1                                                                                  | [Up to 500\*](/docs/builds/managing-builds#on-demand-concurrent-builds)             | Custom                                                          |
 | Disk Size (GB)                                                                            | 32                                                                                 | 32 up to [64](/docs/builds/managing-builds#build-machine-types) | 32 up to [64](/docs/builds/managing-builds#build-machine-types) |
 | Cron Jobs (per project)                                                                   | [100\*](/docs/cron-jobs/usage-and-pricing)                                         | 100                                                             | 100                                                             |
+| [Deploy Hooks](/docs/deploy-hooks) (per project)                                          | 5                                                                                  | 5                                                               | 10                                                              |
 
 ## Usage summary
 
@@ -219,10 +220,11 @@ The **rate limits** table consists of the following four columns:
   - `owner` - Rate limit applies to the team or to an individual user, depending on the resource.
   - `user` - Rate limit applies to an individual user.
   - `team` - Rate limit applies to the team.
+  - `project` - Rate limit applies to an individual project.
 
 ### Rate limit examples
 
-Below are five examples that provide further information on how rate limits work.
+Below are six examples that provide further information on how rate limits work.
 
 #### Domain deletion
 
@@ -247,6 +249,10 @@ You are able to build `100` [Deployments](/docs/deployments) every `3600` second
 #### Deployments per day (Hobby)
 
 You are able to deploy `100` times every `86400` seconds (1 day). Should you hit the rate limit, you will need to wait another day before you can deploy again.
+
+#### Deploy hook triggers
+
+You can trigger [deploy hooks](/docs/deploy-hooks) up to `60` times every `3600` seconds (1 hour) per project, across all deploy hooks in the project. This corresponds to the "Deploy hook triggers per hour" limit in the table below.
 
 The following table lists all API rate limits that apply when using the [Vercel REST API](/docs/rest-api#api-basics). These limits apply to actions such as deployments, domain management, team operations, and more.
 
@@ -464,13 +470,14 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | List of memberships retrieval per minute for a user. | 60 | 60 | `user` |
 | Integration resource usage retrieval per minute. | 120 | 60 | `user` |
 | Integration resource sql query execution per minute. | 60 | 60 | `user` |
+| Integration resource Redis command execution per minute. | 600 | 60 | `user` |
 | Installation prepayment balance submissions per minute. | 10 | 60 | `user` |
 | Installation billing data submissions per minute. | 10 | 60 | `user` |
 | Installation invoice submissions per minute. | 10 | 60 | `user` |
 | Marketplace installation updates per minute | 10 | 60 | `user` |
 | Installation resources retrieval per minute. | 1000 | 60 | `user` |
 | Installation resource deletion per minute. | 100 | 60 | `user` |
-| Installation invoice retrieval per minute. | 60 | 60 | `user` |
+| Integration invoice retrieval per minute. | 120 | 60 | `user` |
 | Integration resource retrieval per minute. | 1000 | 60 | `user` |
 | Start resource import per minute. | 60 | 60 | `user` |
 | Complete resource import per minute. | 60 | 60 | `user` |

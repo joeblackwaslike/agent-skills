@@ -3,7 +3,7 @@ title: Rest API
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about rest api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-07-20T06:54:24.493Z"
-sha256: "04f5d512b0638091093e2d36186a65d2096b3bfc4752c0c959d39708c6aaab19"
+fetched_at: "2026-07-27T07:38:06.408Z"
+sha256: "01fc70502c25b0b43948b7ee40a27a20b04ad0c879e738d8a3ed0448fc92457a"
 ---
 
 # Vercel REST API Reference
@@ -115,6 +115,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/token/{connector}/import`](/docs/rest-api/connect/import-connect-tokens.md) | Import Connect tokens |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
+| **POST** | [`/v1/connect/install/{connector}`](/docs/rest-api/connect/create-a-connect-installation-request.md) | Create a Connect installation request |
 
 ## deployments
 
@@ -460,6 +461,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/fs/mkdir`](/docs/rest-api/sandboxes/create-a-directory.md) | Create a directory |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/fs/write`](/docs/rest-api/sandboxes/write-files.md) | Write files |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/snapshot`](/docs/rest-api/sandboxes/create-a-snapshot.md) | Create a snapshot |
+| **POST** | [`/v2/sandboxes/{name}/fork`](/docs/rest-api/sandboxes/fork-a-named-sandbox.md) | Fork a named sandbox |
 
 ## security
 

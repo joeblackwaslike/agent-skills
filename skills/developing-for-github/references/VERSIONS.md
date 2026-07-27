@@ -1,12 +1,12 @@
 ---
 source: "generated"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "ed52cd2db5538bef0ce39b5a42f337328dd0dc679493ed0977d36b4e717dc73b"
+fetched_at: "2026-07-27T07:30:54.769Z"
+sha256: "0817322f16e362b90f3732dfd40a903126cccfd3d8f6ffbfb5337916d3fa57b5"
 ---
 
 # SDK versions
 
-Auto-stamped by `scripts/update_docs.js`. Last run: 2026-07-20
+Auto-stamped by `scripts/update_docs.js`. Last run: 2026-07-27
 
 Latest published versions on the npm registry (the README snapshots in `references/octokit/` track each repo default branch):
 

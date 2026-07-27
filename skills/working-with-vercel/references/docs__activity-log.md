@@ -14,8 +14,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3e80d60044e805ba89d50625243b32316a7953dcfba9591c35912717f7837793"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "1acf79cbbf6b4ec71b88550709598580d2153275736152e101d83574d5669952"
 ---
 
 # Using the Activity Log
@@ -131,6 +131,7 @@ The table below shows a list of events logged on the Activity page.
 | cert-renew | Replaced | An SSL certificate was renewed. (Replaced by cert-autorenew) |
 | cert-replace | Deprecated | An SSL certificate connected to a custom domain was successfully replaced by a new one, such as by uploading a new certificate in the dashboard. |
 | cert-system-create | Active | A system SSL certificate was created. |
+| code-owners-config-updated | Active | A repository's Code Owners settings were updated. |
 | compliance-document-downloaded | Active | A compliance document was downloaded. |
 | concurrent-builds-update | Active | The concurrent builds limit was updated. |
 | connect-attach-project | Active | A Connector was attached to a project |
@@ -159,7 +160,7 @@ The table below shows a list of events logged on the Activity page.
 | custom-alert-created | Active | A custom alert was created. |
 | custom-alert-deleted | Active | A custom alert was deleted. |
 | custom-alert-updated | Active | A custom alert was updated. |
-| custom-environments-settings-updated | Active | The purchased custom environment pack quantity was updated for a project. |
+| custom-environments-settings-updated | Active | The purchased custom environment capacity was updated for a project. |
 | custom-suffix-clear | Active | A custom deployment suffix was cleared. |
 | custom-suffix-disable | Replaced | A custom suffix for a project was disabled. (Replaced by preview-deployment-suffix-disabled) |
 | custom-suffix-enable | Replaced | A custom suffix for a project was enabled. (Replaced by preview-deployment-suffix-enabled) |
@@ -207,6 +208,7 @@ The table below shows a list of events logged on the Activity page.
 | drain-updated | Active | A drain was updated. |
 | edge-cache-dangerously-delete-by-src-images | Active | The CDN cache was dangerously deleted by source images. |
 | edge-cache-dangerously-delete-by-tags | Active | The CDN cache was dangerously deleted by tags. |
+| edge-cache-dangerously-delete-immutable-static | Active | The immutable static assets cache was dangerously deleted by path. |
 | edge-cache-invalidate-by-src-images | Active | The CDN cache was invalidated by source images. |
 | edge-cache-invalidate-by-tags | Active | The CDN cache was invalidated by tags. |
 | edge-cache-purge-all | Active | The CDN cache was purged. |
@@ -266,6 +268,7 @@ The table below shows a list of events logged on the Activity page.
 | integration-installation-completed | Active | An integration was installed in one or all projects under a personal account or team. |
 | integration-installation-permission-updated | Active | The permissions for an installed integration was updated. |
 | integration-installation-removed | Active | An integration was removed from a project or personal account or team. |
+| integration-resource-redis-command-executed | Active | A redis command was executed against a marketplace database resource. |
 | integration-resource-sql-query-executed | Active | A SQL query was executed against a marketplace database resource. |
 | integration-scope-changed | Active | The scopes for an integration were changed. |
 | kms-issuer-created | Active | A KMS signing issuer was created. |
@@ -309,6 +312,8 @@ The table below shows a list of events logged on the Activity page.
 | page-integrity-resource-approved | Active | A resource was approved in Page Integrity. |
 | page-integrity-resource-deleted | Active | A resource was deleted from the Page Integrity resource inventory. |
 | page-integrity-resource-rejected | Active | A resource was rejected in Page Integrity. |
+| page-integrity-script-approval-rule-created | Active | A Page Integrity script approval rule was created. |
+| page-integrity-script-approval-rule-deleted | Active | A Page Integrity script approval rule was deleted. |
 | passkey-created | Active | A new passkey was created. |
 | passkey-deleted | Active | An existing passkey was deleted. |
 | passkey-updated | Active | The name of the existing passkey was updated. |
@@ -530,6 +535,8 @@ The table below shows a list of events logged on the Activity page.
 | team-saml-enforced | Active | SAML enforcement was configured for a team. |
 | team-saml-roles | Active | SAML roles were configured for a team. |
 | team-slug-update | Active | The slug of a team was updated. |
+| tracing-configured | Active | Tracing was configured for a project. |
+| tracing-disabled | Active | Tracing was disabled for a project. |
 | unlink-login-connection | Active | A login connection was unlinked. |
 | user-delete | Active | A user account was deleted. |
 | user-emu-account-archived | Active | A user archived their personal account during enterprise-managed user setup. |
@@ -552,6 +559,7 @@ The table below shows a list of events logged on the Activity page.
 | vcr-repository-deleted | Active | A container registry repository was deleted from a project. |
 | vcr-repository-permission-added | Active | A team was granted access to a container registry repository. |
 | vcr-repository-permission-removed | Active | A team's access to a container registry repository was revoked. |
+| vcr-repository-permissions-cleared | Active | Every team's access to a container registry repository was revoked. |
 | vercel-agent-elevated-permissions-approved | Active | A Vercel Agent elevated access request was approved. |
 | vercel-agent-elevated-permissions-requested | Active | A Vercel Agent plan requested elevated access. |
 | vercel-agent-session-created | Active | A Vercel Agent session was created. |

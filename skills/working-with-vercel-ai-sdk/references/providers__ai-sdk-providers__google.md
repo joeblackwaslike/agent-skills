@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "5c14fc101ce145107a2d58d7b980d41abd5b8f719a83dc298d1dfb92cf1217fd"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "051e27e70b664739a8239e369e6a48cee7edf963a8ec403761fe0f9478ccfe9e"
 ---
 
 # Google Provider
@@ -92,6 +92,16 @@ Google language models can also be used in the `streamText` function
 and support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output)
 (see [AI SDK Core](/docs/ai-sdk-core)).
 
+<Note>
+  To remain forward-compatible, the provider treats unrecognized `gemini-*`
+  model IDs and `-latest` aliases like the newest supported Gemini generation.
+  Currently, this means Gemini 3 request behavior for provider-defined and mixed
+  tools, `thinkingLevel` reasoning, multimodal function responses, and thought
+  signatures. Known legacy Gemini model IDs keep their generation-specific
+  request behavior. This SDK default controls request serialization; the
+  selected model must still support each feature in the Google API.
+</Note>
+
 Google also supports some model specific settings that are not part of the [standard call settings](/docs/ai-sdk-core/settings).
 You can pass them as an options argument:
 
@@ -164,7 +174,7 @@ The following optional provider options are available for Google models:
   Optional. Configuration for the model's thinking process. Only supported by specific [Google models](https://ai.google.dev/gemini-api/docs/thinking).
   - **thinkingLevel** _'minimal' | 'low' | 'medium' | 'high'_
 
-    Optional. Controls the thinking depth for Gemini 3 models. Gemini 3.1 Pro supports 'low', 'medium', and 'high', Gemini 3 Pro supports 'low' and 'high', while Gemini 3 Flash supports all four levels: 'minimal', 'low', 'medium', and 'high'. Only supported by Gemini 3 models.
+    Optional. Controls the thinking depth for Gemini 3 and later models. Gemini 3.1 Pro supports 'low', 'medium', and 'high', Gemini 3 Pro supports 'low' and 'high', while Gemini 3 Flash supports all four levels: 'minimal', 'low', 'medium', and 'high'.
 
   - **thinkingBudget** _number_
 
@@ -172,7 +182,7 @@ The following optional provider options are available for Google models:
     For more information about the possible value ranges for each model see [Google thinking documentation](https://ai.google.dev/gemini-api/docs/thinking#set-budget).
 
     <Note>
-      This option is for Gemini 2.5 models. Gemini 3 models should use
+      This option is for Gemini 2.5 models. Gemini 3 and later models should use
       `thinkingLevel` instead.
     </Note>
 
@@ -243,11 +253,11 @@ The following optional provider options are available for Google models:
 
 ### Thinking
 
-The Gemini 2.5 and Gemini 3 series models use an internal "thinking process" that significantly improves their reasoning and multi-step planning abilities, making them highly effective for complex tasks such as coding, advanced mathematics, and data analysis. For more information see [Google thinking documentation](https://ai.google.dev/gemini-api/docs/thinking).
+The Gemini 2.5 and Gemini 3-and-later series models use an internal "thinking process" that significantly improves their reasoning and multi-step planning abilities, making them highly effective for complex tasks such as coding, advanced mathematics, and data analysis. For more information see [Google thinking documentation](https://ai.google.dev/gemini-api/docs/thinking).
 
-#### Gemini 3 Models
+#### Gemini 3 and Later Models
 
-For Gemini 3 models, use the `thinkingLevel` parameter to control the depth of reasoning:
+For Gemini 3 and later models, use the `thinkingLevel` parameter to control the depth of reasoning:
 
 ```ts
 import { google, GoogleLanguageModelOptions } from '@ai-sdk/google';
@@ -629,7 +639,7 @@ Enterprise Web Search provides the following benefits:
 
 ### File Search
 
-The [File Search tool](https://ai.google.dev/gemini-api/docs/file-search) lets Gemini retrieve context from your own documents that you have indexed in File Search stores. Only Gemini 2.5 and Gemini 3 models support this feature.
+The [File Search tool](https://ai.google.dev/gemini-api/docs/file-search) lets Gemini retrieve context from your own documents that you have indexed in File Search stores. The provider enables this tool for Gemini 2.5 and Gemini 3-and-later model IDs, including unrecognized future Gemini IDs.
 
 ```ts highlight="9-13"
 import { google } from '@ai-sdk/google';
@@ -1032,7 +1042,9 @@ The following Zod features are known to not work with Google:
 
 | Model                                 | Image Input | Object Generation | Tool Usage | Tool Streaming | Google Search | URL Context |
 | ------------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------- | ----------- |
+| `gemini-3.6-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
 | `gemini-3.5-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3.5-flash-lite`               | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
 | `gemini-3.1-pro-preview`              | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
 | `gemini-3.1-flash-image-preview`      | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
 | `gemini-3.1-flash-lite-preview`       | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
@@ -1077,6 +1089,11 @@ const token = await google.experimental_realtime.getToken({
 Google realtime models may require provider-specific audio formats, depending
 on the model and modality. See [Realtime](/docs/ai-sdk-core/realtime) for the
 complete setup and tool calling pattern.
+
+Gemini lifecycle signals that do not have provider-neutral equivalents are
+emitted as custom events. Inspect `rawType` for `goAway`,
+`sessionResumptionUpdate`, and `generationComplete` and use the event's `raw`
+payload for provider-specific details.
 
 ### Live Translation
 

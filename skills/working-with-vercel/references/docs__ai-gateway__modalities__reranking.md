@@ -13,15 +13,15 @@ related:
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "30fd12e08b00a47ed2f53e3b414d085986389f329ed3c750196158e896fa0039"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "5d17298eedba103779825047cc8ed603277d77c4a35b0b2d62365266bd482773"
 ---
 
 # Reranking
 
 Rerank documents by relevance to a search query. Reranking is useful for improving search results in retrieval-augmented generation (RAG) pipelines by re-scoring candidate documents after an initial retrieval step.
 
-To see which models AI Gateway supports for reranking, use the **Reranking** filter at the [AI Gateway Models page](https://vercel.com/ai-gateway/models?capabilities=reranking).
+To see which models AI Gateway supports for reranking, use the **Reranking** filter at the [AI Gateway Models page](/ai-gateway/models?capabilities=reranking).
 
 > **💡 Note:** Reranking is also available through the Cohere-compatible [Cohere Rerank
 > API](/docs/ai-gateway/sdks-and-apis/cohere-rerank) (`/v1/rerank` and

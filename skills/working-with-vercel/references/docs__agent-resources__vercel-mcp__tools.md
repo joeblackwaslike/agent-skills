@@ -17,13 +17,13 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, runtime logs, and Agent Runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f7f8cd26d88cf121210e5d51707fa7019793f43a598ca43cd6a4a961a0f4d751"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "2fcc4c5560ae34eeaf93e5ff0c33edaa62a42e5e5d9aafc4b6f3e103b9cf5052"
 ---
 
 # Tools
 
-The Vercel MCP server provides [MCP tools](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) that let AI assistants search documentation, manage projects, view deployments, and more.
+The Vercel MCP server provides [MCP tools](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) that let AI assistants search documentation, manage projects, query Web Analytics, view deployments, and more.
 
 Each tool below includes a sample prompt: a message you can send to your AI assistant (such as Claude Code, Cursor, or ChatGPT) after [connecting it to Vercel MCP](/docs/agent-resources/vercel-mcp). The assistant selects and calls the appropriate tools for you.
 
@@ -33,7 +33,7 @@ Each tool below includes a sample prompt: a message you can send to your AI assi
 
 ## Documentation tools
 
-### search\_documentation
+### search\_vercel\_documentation
 
 Search Vercel documentation for specific topics and information.
 
@@ -101,19 +101,24 @@ Get detailed information for a specific [deployment](/docs/deployments) includin
 
 ### get\_deployment\_build\_logs
 
-Get the build logs of a deployment by deployment ID or URL. You can use this to investigate why a deployment failed.
+Get build logs for a deployment by deployment ID or URL. The tool returns the most recent lines by default, where build errors usually appear. Use `errorsOnly` to return only failing lines.
 
-| Parameter | Type   | Required | Default | Description                                                                                                                                                                                      |
-| --------- | ------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `idOrUrl` | string | Yes      | -       | The unique identifier or hostname of the deployment                                                                                                                                              |
-| `limit`   | number | No       | 100     | Maximum number of log lines to return                                                                                                                                                            |
-| `teamId`  | string | Yes      | -       | The team ID to get the deployment logs for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
+| Parameter    | Type    | Required | Default | Description                                                                                                                                                                                      |
+| ------------ | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `idOrUrl`    | string  | Yes      | -       | The unique identifier or hostname of the deployment                                                                                                                                              |
+| `direction`  | string  | No       | `tail`  | End of the build log to return. Use `tail` for the most recent lines or `head` for the earliest lines                                                                                             |
+| `errorsOnly` | boolean | No       | false   | Return only error, stderr, exit, and fatal events                                                                                                                                                 |
+| `limit`      | number  | No       | 100     | Maximum number of log lines to return                                                                                                                                                             |
+| `since`      | string  | No       | -       | Start of the window as an ISO date or relative lookback from now (e.g., `1h` or `30m`)                                                                                                           |
+| `until`      | string  | No       | -       | End of the window as an ISO date, relative lookback, or `now`. Omit this when the end should be the current time                                                                                   |
+| `buildId`    | string  | No       | -       | Build ID to filter by for deployments with multiple builds                                                                                                                                       |
+| `teamId`     | string  | Yes      | -       | The team ID to get the deployment logs for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
 
 **Sample prompt:** "Show me the build logs for the failed deployment"
 
 ### get\_runtime\_logs
 
-Get runtime logs for a project or deployment. Runtime logs include application output such as console.log messages, errors, and other execution details from [Vercel Functions](/docs/functions) during requests. You can filter logs by environment, log level, status code, source, time range, and full-text search. This makes it easier to debug runtime issues, monitor application behavior, and investigate production errors.
+Get runtime logs for a project or deployment. Runtime logs include application output such as console.log messages, errors, and other execution details from [Vercel Functions](/docs/functions) during requests. You can filter logs by environment, log level, status code, source, time range, and full-text search. Use `group_by` to return counts instead of individual lines. For production errors, start with `get_runtime_errors`.
 
 | Parameter      | Type   | Required | Default | Description                                                                                                                                                                                        |
 | -------------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -124,13 +129,77 @@ Get runtime logs for a project or deployment. Runtime logs include application o
 | `level`        | array  | No       | -       | Filter by log level(s). Can specify multiple levels: `error`, `warning`, `info`, `fatal`                                                                                                           |
 | `statusCode`   | string | No       | -       | Filter by HTTP status code (e.g., "500", "4xx")                                                                                                                                                    |
 | `source`       | array  | No       | -       | Filter by source type(s). Can specify multiple sources: `serverless`, `edge-function`, `edge-middleware`, `static`                                                                                 |
-| `since`        | string | No       | 24h ago | Start time - ISO format or relative time (e.g., "1h", "30m", "7d")                                                                                                                                 |
-| `until`        | string | No       | now     | End time - ISO format or relative time                                                                                                                                                             |
+| `since`        | string | No       | 24h ago | Start of the window as an ISO date or relative lookback from now (e.g., `1h`, `30m`, or `7d`)                                                                                                     |
+| `until`        | string | No       | now     | End of the window as an ISO date, relative lookback, or `now`. Omit this when the end should be the current time                                                                                   |
 | `limit`        | number | No       | 50      | Maximum number of log entries to return (max 1000)                                                                                                                                                 |
 | `query`        | string | No       | -       | Full-text search query to filter logs                                                                                                                                                              |
 | `requestId`    | string | No       | -       | Filter by specific request ID                                                                                                                                                                      |
+| `group_by`     | string | No       | -       | Return counts grouped by `statusCode`, `requestPath`, `route`, `level`, `source`, `deploymentId`, or `branch` instead of individual log lines                                                    |
 
 **Sample prompt:** "Show me the runtime error logs for my project from the last hour"
+
+### get\_runtime\_errors
+
+Get grouped runtime error clusters for a project. Each cluster includes the error name, occurrence count, affected routes, sample messages, and when the error was first and last seen. Use this tool to investigate production errors before querying individual entries with `get_runtime_logs`. Time ranges can span up to 7 days.
+
+| Parameter   | Type   | Required | Default | Description                                                                                                                                                                                        |
+| ----------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID to get runtime errors for                                                                                                                                                            |
+| `teamId`    | string | Yes      | -       | The team ID to get runtime errors for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool. |
+| `since`     | string | No       | 24h ago | Start of the window as an ISO date or relative lookback from now (e.g., `1h`, `24h`, or `7d`). The maximum lookback is 7 days                                                                        |
+| `until`     | string | No       | now     | End of the window as an ISO date, relative lookback, or `now`. Omit this when the end should be the current time                                                                                     |
+| `routes`    | string | No       | -       | Comma-separated route paths to filter by (e.g., `/api/checkout`)                                                                                                                                    |
+
+**Sample prompt:** "Why is my production app throwing errors?"
+
+### deploy\_to\_vercel
+
+Deploy files directly to a new Vercel project without a Git repository or the Vercel CLI. Provide the file tree and a deployment target. Vercel creates the project if needed, detects the framework, and starts the build.
+
+| Parameter         | Type   | Required | Default | Description                                                                                                                                                                                      |
+| ----------------- | ------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `target`          | string | Yes      | -       | Deployment target: `preview` for a shareable non-production URL or `production` to deploy to production                                                                                          |
+| `name`            | string | Yes      | -       | Project name. Vercel creates the project if it does not already exist                                                                                                                             |
+| `files`           | array  | Yes      | -       | File tree to deploy. Provide source files only; Vercel installs dependencies and builds the project                                                                                              |
+| `teamId`          | string | No       | -       | The team ID to deploy to. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool.          |
+| `projectSettings` | object | No       | -       | Build settings including `framework`, `buildCommand`, `installCommand`, `outputDirectory`, and `rootDirectory`. Omit this parameter to let Vercel detect the framework and settings automatically |
+
+Each object in the `files` array supports the following fields:
+
+| Field      | Type   | Required | Default | Description                                                        |
+| ---------- | ------ | -------- | ------- | ------------------------------------------------------------------ |
+| `file`     | string | Yes      | -       | Root-relative POSIX path (e.g., `app/page.tsx`)                    |
+| `data`     | string | Yes      | -       | File contents as plain text or base64                              |
+| `encoding` | string | No       | `utf-8` | Content encoding: `utf-8` for text files or `base64` for binaries |
+
+**Sample prompt:** "Deploy this generated app to a Vercel preview"
+
+## Web Analytics tools
+
+Use the Web Analytics tool to query visitors, page views, and custom events for a project. It reads from the same aggregated data as the [Web Analytics dashboard](/docs/analytics) and requires Web Analytics to be enabled for the project.
+
+### get\_web\_analytics
+
+Query [Web Analytics](/docs/analytics/web-analytics-api) in one of two modes:
+
+- `count` returns one total. For the `visits` dataset, it returns `visitors` and `pageviews`. For the `events` dataset, it returns `visitors` and `count`.
+- `aggregate` returns rows grouped by one or two dimensions. Use it for traffic trends, top routes, countries, referrers, devices, custom events, feature flags, or custom event data.
+
+Count queries can cover data since Web Analytics was enabled. Aggregate queries require `since`, `until`, and `by`, and can only query data within your plan's [reporting window](/docs/analytics/limits-and-pricing#what-is-the-reporting-window).
+
+| Parameter   | Type             | Required | Default  | Description                                                                                                                                                                                                                                                        |
+| ----------- | ---------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `projectId` | string           | Yes      | -        | Project ID or slug to query. Project IDs start with `prj_`. You can find it in `.vercel/project.json` or with `list_projects`.                                                                                                                                       |
+| `teamId`    | string           | No       | -        | Team ID or slug that owns the project. Omit it for a project in your personal account. Team IDs start with `team_`. You can find it in `.vercel/project.json` or with `list_teams`.                                                                                  |
+| `dataset`   | string           | No       | `visits` | Data to query: `visits` for automatically tracked page views, or `events` for custom events sent with `track()`.                                                                                                                                                    |
+| `mode`      | string           | No       | `count`  | Query mode: `count` for one total, or `aggregate` for grouped results.                                                                                                                                                                                              |
+| `since`     | string or number | No       | -        | Start of the date range as a date string, ISO 8601 timestamp, or Unix timestamp in milliseconds. Use it together with `until`. Required in `aggregate` mode.                                                                                                        |
+| `until`     | string or number | No       | -        | End of the date range as a date string, ISO 8601 timestamp, or Unix timestamp in milliseconds. Use it together with `since`. Required in `aggregate` mode.                                                                                                          |
+| `by`        | array of strings | No       | -        | One or two dimensions for `aggregate` mode. Time dimensions include `hour`, `day`, `week`, `month`, and `year`. Other dimensions include `route`, `requestPath`, `country`, `referrerHostname`, `deviceType`, `eventName`, `flags/<name>`, and `eventData/<property>`. |
+| `filter`    | string           | No       | -        | [OData filter](/docs/analytics/web-analytics-api#dimensions-filters-and-groups), such as `requestPath eq '/pricing' and country eq 'US'`, `eventName eq 'signup'`, or `eventData/plan eq 'pro'`.                                                                     |
+| `limit`     | number           | No       | 10       | Maximum number of distinct results in `aggregate` mode, from 1 to 100. The response groups remaining values into `Others`.                                                                                                                                          |
+
+**Sample prompt:** "Show me the visitors and page views for my nuxt.com project from July 16 through July 22"
 
 ## Agent Runs Observability Tools
 
@@ -371,6 +440,20 @@ Fetch content directly from a Vercel deployment URL (with [authentication](/docs
 
 **Sample prompt:** "Make sure the content from my-app.vercel.app/api/status looks right"
 
+## Design import tools
+
+### import-claude-design-from-url
+
+Import a self-contained HTML bundle from Claude Design and deploy it to Vercel. The bundle must use a public HTTPS `claudeusercontent.com` URL and include all images, fonts, and styles.
+
+| Parameter                  | Type   | Required | Default | Description                                                                                         |
+| -------------------------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------------- |
+| `url`                      | string | Yes      | -       | Public HTTPS URL to the Claude Design file. The URL is valid for approximately 1 hour               |
+| `title`                    | string | No       | -       | Suggested title for the imported design                                                            |
+| `claude_design_project_id` | string | No       | -       | Stable Claude Design project identifier. Reuse it to update the same imported Vercel project       |
+
+**Sample prompt:** "Import this Claude Design into Vercel: https://claudeusercontent.com/example"
+
 ## Toolbar Tools
 
 The Vercel Toolbar lets your team leave [comments](/docs/comments) on deployments. These tools let an agent read and act on those threads.
@@ -465,12 +548,6 @@ Instructs the LLM to use Vercel CLI commands with --help flag for information.
 | `action`  | string | Yes      | -       | What you want to accomplish with Vercel CLI |
 
 **Sample prompt:** "Help me deploy this project using Vercel CLI"
-
-### deploy\_to\_vercel
-
-Deploy the current project to Vercel.
-
-**Sample prompt:** "Deploy this project to Vercel"
 
 
 ---

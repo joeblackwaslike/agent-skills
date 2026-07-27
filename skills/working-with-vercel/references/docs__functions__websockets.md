@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/functions/limitations
   - /docs/functions/functions-api-reference/vercel-functions-package
+  - /docs/frameworks/full-stack/django
   - /docs/functions/usage-and-pricing
   - /docs/manage-cdn-usage
-  - /docs/fluid-compute
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "56399382058dd4f8d3eb0dacbcce0051891321466cb9efebace5ffd20fc2c898"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "8056e0ce00158356994de648cd9acd28ecf9f6e7810291d0bec9ce78a78fae8d"
 ---
 
 # WebSockets
@@ -85,47 +85,7 @@ const socket = io('https://your-domain.com', {
 });
 ```
 
-Python frameworks like FastAPI also work with WebSockets on Vercel Functions. Add a WebSocket library (`websockets`, `wsproto`, or just `uvicorn[standard]`) to your dependencies:
-
-```toml filename="pyproject.toml"
-[project]
-name = "my-python-websocket"
-version = "0.1.0"
-requires-python = ">=3.12"
-dependencies = [
-    "fastapi>=0.137",
-    "uvicorn[standard]>=0.49",
-]
-```
-
-```python filename="app.py"
-import fastapi
-
-app = fastapi.FastAPI()
-
-@app.websocket("/api/ws")
-async def websocket_endpoint(websocket: fastapi.WebSocket):
-    await websocket.accept()
-    try:
-        while True:
-            data = await websocket.receive_text()
-            await websocket.send_text(data)
-    except fastapi.WebSocketDisconnect:
-        pass
-```
-
-You can also use `python-socketio` for the same rooms, namespaces, and broadcast features as the JavaScript Socket.IO library. The two are protocol-compatible, so clients can connect to either server:
-
-```python filename="app.py"
-import socketio
-
-sio = socketio.AsyncServer(async_mode="asgi")
-app = socketio.ASGIApp(sio)
-
-@sio.on("message")
-async def handle_message(sid, data):
-    await sio.emit("message", data, to=sid)
-```
+Python applications can use [`python-socketio`](https://pypi.org/project/python-socketio/) with Asynchronous Server Gateway Interface (ASGI) or Web Server Gateway Interface (WSGI) applications. See the [`python-socketio` server documentation](https://python-socketio.readthedocs.io/en/stable/server.html) for setup options. Flask applications can use [`Flask-SocketIO`](https://pypi.org/project/Flask-SocketIO/) for a Flask-specific integration. See the [Flask-SocketIO documentation](https://flask-socketio.readthedocs.io/en/latest/) for configuration details. These libraries implement the Socket.IO protocol, so clients must use a compatible Socket.IO client.
 
 ## Handle disconnections and reconnects
 
@@ -165,9 +125,7 @@ Store durable state, presence, counters, rooms, and pub/sub coordination in an e
 
 ## Use with frameworks
 
-Frameworks with native WebSocket support can serve WebSocket connections on Vercel Functions without additional configuration. If your app uses Nitro, either directly or through a framework like Nuxt, you can use Nitro’s native WebSocket support on Vercel.
-
-View the [Nitro](https://vercel.com/templates/nitro/nitro-websockets-starter) and [Nuxt](https://vercel.com/templates/nuxt/nuxt-websockets-starter) examples.
+Frameworks with native WebSocket support can serve WebSocket connections on Vercel Functions without additional Vercel-specific configuration. Choose the example that matches your framework.
 
 ### Node.js server frameworks
 
@@ -239,7 +197,7 @@ export default serve(app, {
 
 ### Nitro
 
-Nitro has native WebSocket support powered by [crossws](https://crossws.h3.dev/guide). Enable it in your Nitro config:
+Nitro has native WebSocket support powered by [crossws](https://crossws.h3.dev/guide). If your app uses Nitro directly or through a framework like Nuxt, enable WebSockets in your Nitro config:
 
 ```ts filename="nitro.config.ts"
 import { defineConfig } from 'nitro';
@@ -263,6 +221,8 @@ export default defineWebSocketHandler({
 });
 ```
 
+View the [Nitro](https://vercel.com/templates/nitro/nitro-websockets-starter) and [Nuxt](https://vercel.com/templates/nuxt/nuxt-websockets-starter) examples.
+
 ### Next.js
 
 Next.js does not expose an API for handling WebSocket upgrades. As a workaround, you can use the `experimental_upgradeWebSocket()` API:
@@ -283,6 +243,78 @@ export async function GET() {
 ```
 
 [Learn more about how to use this API with Next.js.](/docs/functions/functions-api-reference/vercel-functions-package#experimental_upgradewebsocket)
+
+### Python frameworks
+
+Python frameworks that use the Asynchronous Server Gateway Interface (ASGI) or Web Server Gateway Interface (WSGI) can serve WebSocket connections on Vercel Functions. You don't need a Vercel-specific upgrade API.
+
+#### FastAPI with ASGI
+
+Add a WebSocket implementation (`websockets`, `wsproto`, or the dependencies included with `uvicorn[standard]`) to your project:
+
+```toml filename="pyproject.toml"
+[project]
+name = "my-python-websocket"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.137",
+    "uvicorn[standard]>=0.49",
+]
+```
+
+```python filename="app.py"
+import fastapi
+
+app = fastapi.FastAPI()
+
+@app.websocket("/api/ws")
+async def websocket_endpoint(websocket: fastapi.WebSocket):
+    await websocket.accept()
+    try:
+        while True:
+            data = await websocket.receive_text()
+            await websocket.send_text(data)
+    except fastapi.WebSocketDisconnect:
+        pass
+```
+
+#### Django Channels with ASGI
+
+Django applications can use Django Channels to add WebSocket consumers and
+routing to their ASGI entrypoint. Follow the [Django Channels setup
+guide](/docs/frameworks/full-stack/django#websockets).
+
+#### Flask-Sock with WSGI
+
+Flask applications can use `flask-sock` to accept WebSocket connections. Add `flask` and `flask-sock` to your project:
+
+```toml filename="pyproject.toml"
+[project]
+name = "my-python-websocket"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.1",
+    "flask-sock>=0.7",
+]
+```
+
+```python filename="app.py"
+from flask import Flask
+from flask_sock import Sock
+
+app = Flask(__name__)
+sock = Sock(app)
+
+@sock.route("/api/ws")
+def websocket_endpoint(websocket):
+    while True:
+        data = websocket.receive()
+        if data is None:
+            break
+        websocket.send(data)
+```
 
 ## Limits and pricing
 

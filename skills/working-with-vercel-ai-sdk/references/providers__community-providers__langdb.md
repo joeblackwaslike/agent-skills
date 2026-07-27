@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/langdb.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "ce837cc6090e8baec96e7d918d8f68e0623316c1bd12959668564568d7e270b8"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "b7fa390ff402fc992a0540fd6b00c205c4d32123cdac5c95fa03d9e3b9c579f2"
 ---
 
 # LangDB
@@ -181,6 +181,7 @@ For more information, visit the [LangDB documentation](https://docs.langdb.ai/).
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

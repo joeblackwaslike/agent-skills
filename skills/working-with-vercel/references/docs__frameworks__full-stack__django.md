@@ -17,8 +17,8 @@ related:
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "936e9bf6e5d2a78f5e0d5290eb77d8b7daab9da7692edf0b4d806f45e39e5bca"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "a49b274d7e27324a0728f5b6645c5501419a6edf66d878a218c2a1e0a0bce869"
 ---
 
 # Deploy a Django app on Vercel
@@ -247,11 +247,92 @@ example `backend/myproject/wsgi.py`). For more options, see [Configuring
 functions](/docs/functions/configuring-functions) and the [`functions`
 property](/docs/project-configuration/vercel-json#functions).
 
+## WebSockets
+
+Use Django Channels to add [WebSocket](/docs/functions/websockets) consumers and routing to your Django ASGI
+application. Vercel serves the WebSocket connection from the same Vercel
+Function as your Django application.
+
+Follow the steps below to get started with WebSockets and Django.
+
+- ### Install Django Channels
+  Add `Django` and `channels` to your `pyproject.toml`:
+  ```toml filename="pyproject.toml"
+  [project]
+  name = "my-django-app"
+  version = "0.1.0"
+  requires-python = ">=3.12"
+  dependencies = [
+      "channels>=4.2",
+      "Django>=5.1",
+  ]
+  ```
+  Install the dependencies from `pyproject.toml` with `uv`:
+  ```bash filename="terminal"
+  uv sync
+  ```
+
+- ### Create a WebSocket consumer
+  ```py filename="myproject/consumers.py"
+  from channels.generic.websocket import AsyncWebsocketConsumer
+
+  class EchoConsumer(AsyncWebsocketConsumer):
+      async def connect(self):
+          await self.accept()
+
+      async def receive(self, text_data=None, bytes_data=None):
+          if text_data is not None:
+              await self.send(text_data=text_data)
+          elif bytes_data is not None:
+              await self.send(bytes_data=bytes_data)
+  ```
+
+- ### Route WebSocket connections
+  Route WebSocket connections to the consumer from your ASGI entrypoint:
+  ```py filename="myproject/asgi.py"
+  import os
+
+  os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
+
+  from django.core.asgi import get_asgi_application
+
+  # Initialize Django before importing code that may use the app registry.
+  django_asgi_application = get_asgi_application()
+
+  from channels.routing import ProtocolTypeRouter, URLRouter
+  from django.urls import path
+
+  from myproject.consumers import EchoConsumer
+
+  application = ProtocolTypeRouter(
+      {
+          "http": django_asgi_application,
+          "websocket": URLRouter(
+              [
+                  path("api/ws", EchoConsumer.as_asgi()),
+              ]
+          ),
+      }
+  )
+  ```
+
+- ### Configure the ASGI application
+  Set `ASGI_APPLICATION` in your Django settings so Vercel loads the ASGI
+  entrypoint:
+  ```py filename="myproject/settings.py"
+  ASGI_APPLICATION = "myproject.asgi.application"
+  ```
+
+For group broadcasts across Vercel Function instances, configure an external
+channel layer. `InMemoryChannelLayer` only coordinates connections within one
+function instance. Learn more about [managing persistent state](/docs/functions/websockets#manage-persistent-state), [handling
+reconnects](/docs/functions/websockets#handle-disconnections-and-reconnects), and [WebSocket limits](/docs/functions/websockets#limits-and-pricing).
+
 ## Limitations
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to Django applications, including:
 
-- **Application size**: The Django application becomes a single bundle, which has a standard bundle size limit of 500MB. [Large Functions](/docs/functions/limitations#large-functions-beta) support Python bundles up to 5GB on Fluid compute when enabled (public beta). The bundling process removes `__pycache__` and `.pyc` files from the deployment's bundle to reduce size, but does not perform application bundling.
+- **Application size**: The Django application becomes a single bundle, which has a standard bundle size limit of 500MB. [Large Functions](/docs/functions/limitations#large-functions-beta) support Python bundles up to 5GB on Fluid compute when enabled (public beta).
 
 ## More resources
 

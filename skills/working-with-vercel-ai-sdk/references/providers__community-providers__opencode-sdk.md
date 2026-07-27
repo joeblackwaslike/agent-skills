@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/opencode-sdk.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "57c74c7a6179488d53832e94d9b4e78e85820cef9aad41a453f3ec791259139f"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "13c24d5ce1fbeffe6b374beec40e36bf1b5403ac36782aadd6133b075b10d275"
 ---
 
 # OpenCode Provider
@@ -212,6 +212,7 @@ For more details, see the [provider documentation](https://github.com/ben-vargas
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

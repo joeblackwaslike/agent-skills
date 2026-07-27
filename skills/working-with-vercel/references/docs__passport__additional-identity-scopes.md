@@ -1,0 +1,103 @@
+---
+title: Additional Scopes
+product: vercel
+url: /docs/passport/additional-identity-scopes
+canonical_url: "https://vercel.com/docs/passport/additional-identity-scopes"
+last_updated: 2018-10-20
+type: conceptual
+prerequisites:
+  - /docs/passport
+related:
+  - /docs/passport/read-identity
+  - /docs/passport/verify-identity
+summary: Learn about additional scopes on Vercel.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
+source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "744ca9db58cc75179030a889b578843fc2e632bc212c493c76288cb4a6fdd808"
+---
+
+# Configure additional identity scopes
+
+Passport requests identity information through the Connect application assigned to your project. An OAuth scope asks your identity provider for a category of information. A claim is the value the provider returns, such as a visitor's email address or group membership.
+
+Passport uses the standard OpenID Connect scopes, including `openid`, `profile`, and `email`. You can configure Connect to include additional claims, such as group membership, in the Passport token when your identity provider supports them.
+
+## Add a scope to the Connect application
+
+For example, configure the `groups` scope when your application needs to make authorization decisions based on group membership:
+
+1. In the [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fpassport\&title=Project+Passport+Settings), open the Connect application that Passport uses.
+2. Under **Grant Types**, enable **User Authorization**.
+3. Add `groups` to the **User Authorization** scopes.
+4. Under **Forwarded ID Token Claims**, add `groups`. This is the allowlist for additional identity claims that Connect can include in the Passport token.
+5. Save the application.
+
+The scope must also be enabled for the OAuth application in your identity provider. The exact setup varies by provider. Requesting a scope does not grant access by itself: your provider must authorize the scope and return the selected claim from its UserInfo endpoint before Connect can include it in the Passport token.
+
+> **💡 Note:** Scope suggestions come from your provider's OAuth metadata and can include
+> non-identity API permissions. Request only the scopes your application needs.
+> For example, Okta's `okta.*` management scopes are not required to include a
+> visitor's groups in a Passport token.
+
+## Configure groups in Okta
+
+Configure the group claim in the Okta authorization server that matches the issuer in your Connect application. Do not combine an issuer or endpoint from one authorization server with a group claim configured in another.
+
+### Organization authorization server
+
+An organization authorization server has an issuer without `/oauth2/{authorization_server_id}`, such as `https://your_okta_domain.okta.com`.
+
+1. In Okta, go to **Applications** > **Applications**, then select your OpenID Connect application.
+2. Open the **Sign On** tab.
+3. Under **OpenID Connect ID Token**, click **Edit**.
+4. In **Group Claims**, select **Filter**.
+5. Set the claim name to `groups`.
+6. Select **Matches regex** and enter `.*` to return all groups for the signed-in visitor.
+7. Save the change. If Okta shows **Refresh Application Data** in the application menu, select it.
+
+`Starts with .*` does not match every group. Okta treats that value as literal text. Use **Matches regex** with `.*` instead.
+
+### Custom authorization server
+
+A custom authorization server has an issuer such as `https://your_okta_domain.okta.com/oauth2/default`.
+
+1. In Okta, go to **Security** > **API** > **Authorization Servers**, then select the authorization server.
+2. Open **Claims** and add a `groups` claim.
+3. Include the claim in the **ID Token**.
+4. Select **Groups** as the value type.
+5. Select **Matches regex** and enter `.*`.
+6. Save the claim.
+
+Assigning people or groups to an Okta application controls who can sign in. It does not automatically add group membership to an OAuth token. Configure the claim as described above as well.
+
+## Confirm the claim is present
+
+Start a new Passport session after changing your provider configuration. For example, use a private browser window, then inspect the verified Passport identity in server-side code:
+
+```js filename="app/api/me/route.js"
+import { getIdentity } from '@vercel/passport';
+
+export async function GET() {
+  const identity = await getIdentity();
+
+  return Response.json({
+    groups: identity?.payload.groups,
+  });
+}
+```
+
+When the provider does not return the requested claim, Passport omits it. Treat the claim as optional input and deny access when your authorization policy requires a missing or invalid claim.
+
+## Use identity claims safely
+
+Treat identity claims as input to application-level authorization, not as a replacement for Passport's deployment protection. Passport decides whether the visitor may enter the protected deployment. Your application can then use verified identity claims to decide whether the visitor may access a particular route or action.
+
+Read identity only in server-side code and use the verified Passport token. See [Read Passport identity in your application](/docs/passport/read-identity) for the recommended helper and [Verify forwarded Passport tokens](/docs/passport/verify-identity) when another backend receives the token.
+
+Do not assume a claim is always present or has the same shape for every provider. Check that it exists, validate its type, and deny access when your authorization policy requires a claim that is absent or invalid.
+
+
+---
+
+[View full sitemap](/docs/sitemap)

@@ -13,8 +13,8 @@ related:
 summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "299c4fcf712ad3ef76d1f47d9a1edd9210ee9c22d9c1dd57e2b8b2a2abe57ed2"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "b5a8eaf4813c9d4f228fcb9861c5907f35e72810f91c742a1e3894dc8acd6eb1"
 ---
 
 # Text-to-Video Generation
@@ -25,7 +25,7 @@ Generate videos from text prompts. Describe what you want to see and the model c
 
 Google's Veo models generate high-quality videos with optional audio.
 
-[Browse the latest Veo video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
+[Browse the latest Veo video models](/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
 
 ### Veo parameters
 
@@ -70,7 +70,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 KlingAI offers text-to-video with standard and professional quality modes. Audio generation requires v2.6+ models. Duration is 5-10 seconds.
 
-[Browse the latest KlingAI video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
+[Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
 ### KlingAI parameters
 
@@ -227,7 +227,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 Wan (by Alibaba) offers text-to-video with native audio generation and prompt enhancement. Use `resolution` parameter (e.g., `'1280x720'`), not `aspectRatio`.
 
-[Browse the latest Wan video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
+[Browse the latest Wan video models](/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
 ### Wan parameters
 
@@ -272,7 +272,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 Grok Imagine Video (by xAI) generates videos from text prompts with support for multiple aspect ratios and resolutions. Duration ranges from 1-15 seconds.
 
-[Browse the latest Grok video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
+[Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
 
 ### Grok parameters
 
@@ -317,7 +317,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ByteDance's Seedance models generate high-quality videos from text prompts with optional synchronized audio and a draft mode for low-cost previews. All models output MP4 at 24fps.
 
-[Browse the latest Seedance video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
+[Browse the latest Seedance video models](/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
 
 ### Seedance parameters
 

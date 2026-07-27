@@ -13,14 +13,14 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "8662bc9dc107fa9cdd2599ffcfabe1533af2953cae09103a330140e58cd4c889"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "7d5fc99559980287b2b472e233759379023e6b67378b849435f8bb86573bf1da"
 ---
 
 # Image Generation with AI SDK
 
 AI Gateway supports image generation using the [AI SDK](https://ai-sdk.dev/docs/ai-sdk-core/image-generation) for the models listed under the **Image Gen** filter at the [AI Gateway Models
-page](https://vercel.com/ai-gateway/models?type=image), including multimodal LLMs and image-only models.
+page](/ai-gateway/models?type=image), including multimodal LLMs and image-only models.
 
 ## Multimodal LLMs
 
@@ -191,7 +191,7 @@ if (imageFiles.length > 0) {
 
 You can generate images through OpenAI in two ways:
 
-- **Through a multimodal LLM**: [GPT-5 variants](https://vercel.com/ai-gateway/models/gpt-5.5) and a few other OpenAI models accept a provider-defined `image_generation` tool alongside regular text prompts. The tool uses an OpenAI image model (for example, `openai/gpt-image-1` or `openai/gpt-image-2`) behind the scenes, and images are returned as tool results in `result.staticToolResults` (for `generateText`) or as `tool-result` events (for `streamText`).
+- **Through a multimodal LLM**: [GPT-5 variants](/ai-gateway/models/gpt-5.5) and a few other OpenAI models accept a provider-defined `image_generation` tool alongside regular text prompts. The tool uses an OpenAI image model (for example, `openai/gpt-image-1` or `openai/gpt-image-2`) behind the scenes, and images are returned as tool results in `result.staticToolResults` (for `generateText`) or as `tool-result` events (for `streamText`).
 - **Through the image-only model**: Call `openai/gpt-image-2` directly with `experimental_generateImage`. See [OpenAI GPT Image 2](#openai-gpt-image-2) under image-only models.
 
 Learn more about the [OpenAI Image Generation Tool](https://ai-sdk.dev/providers/ai-sdk-providers/openai#image-generation-tool) in the AI SDK documentation.

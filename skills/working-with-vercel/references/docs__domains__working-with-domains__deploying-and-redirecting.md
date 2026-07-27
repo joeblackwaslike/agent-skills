@@ -9,16 +9,16 @@ prerequisites:
   - /docs/domains/working-with-domains
   - /docs/domains
 related:
+  - /docs/deployments/environments
   - /docs/git
   - /docs/domains/working-with-domains
   - /docs/projects/overview
   - /docs/cdn
-  - /docs/redirects
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "72b9a59e419747f95548f9ac66c183d6d785a067c628d965ec118d00a3dfd2f9"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "957c183606e6fa3092f0c439b502e2d0e9aaac03b8886937c6a902aeda5eba23"
 ---
 
 # Deploying & Redirecting Domains
@@ -27,8 +27,9 @@ sha256: "72b9a59e419747f95548f9ac66c183d6d785a067c628d965ec118d00a3dfd2f9"
 
 Once the domain has been added to your project and configured, it is **automatically applied to your latest production deployment**.
 
-> **💡 Note:** The first deployment of a new project will be marked as production and
-> subsequently assigned with your custom domain automatically.
+> **💡 Note:** The [first deployment](/docs/deployments/environments#first-deployment) of a
+> new project is always a production deployment. Vercel then assigns your custom
+> domain to that deployment automatically.
 
 When you assign a custom domain to a project that's using [Git](/docs/git), each push (including merges) that you make to the [production branch](/docs/git#production-branch) (commonly `main`) will trigger a deployment to the domain.
 

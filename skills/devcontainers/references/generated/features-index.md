@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-07-20T06:45:13.409Z"
-sha256: "0ba4fda40519f9f8278ff845a2b3426c7da7dcbac3f027dbab5df09ddfcaef45"
+fetched_at: "2026-07-27T07:30:29.835Z"
+sha256: "aadebf5a1782ad3ca60e0c63e79b5c5c6ad1cd7db63e9eeb1d319782fa602805"
 ---
 
 # Available features index
@@ -198,6 +198,7 @@ Features
 | Azure Developer CLI Persistence (azd) | Stuart Leeks | `ghcr.io/stuartleeks/dev-container-features/azd-cli-persistence:0` | `0.0.1` |
 | Azure CLI Persistence | Stuart Leeks | `ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0` | `0.0.9` |
 | Dev Tunnels | Stuart Leeks | `ghcr.io/stuartleeks/dev-container-features/dev-tunnels:0` | `0.0.1` |
+| GitHub Copilot CLI (with persistence) | Stuart Leeks | `ghcr.io/stuartleeks/dev-container-features/github-copilot-cli:0` | `0.0.2` |
 | Railway CLI | Stuart Leeks | `ghcr.io/stuartleeks/dev-container-features/railway-cli:0` | `0.0.1` |
 | Shell History | Stuart Leeks | `ghcr.io/stuartleeks/dev-container-features/shell-history:0` | `0.0.6` |
 | golangci-lint | guiyomh | `ghcr.io/guiyomh/features/golangci-lint:0` | `0.1.2` |
@@ -245,6 +246,7 @@ Features
 | bat | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/bat:1` | `1.0.0` |
 | ccc | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/ccc:1` | `1.0.0` |
 | codex | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/codex:1` | `1.0.0` |
+| colibri | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/colibri:1` | `1.0.0` |
 | Copacetic CLI | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/copa:1` | `1.0.0` |
 | crane | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/crane:1` | `1.0.0` |
 | CycloneDX CLI | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/cyclonedx:1` | `1.0.1` |
@@ -269,6 +271,7 @@ Features
 | MarkItDown | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/markitdown:1` | `1.0.0` |
 | mise | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/mise:1` | `1.0.0` |
 | notation | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/notation:1` | `1.0.0` |
+| officecli | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/officecli:1` | `1.0.0` |
 | Open Code Review | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/open-code-review:1` | `1.0.0` |
 | OpenCode | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/opencode:1` | `1.1.1` |
 | ripgrep | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/ripgrep:1` | `1.0.0` |
@@ -276,6 +279,7 @@ Features
 | ruff | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/ruff:1` | `1.0.0` |
 | SkillSpector | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/skillspector:1` | `1.0.0` |
 | skopeo | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/skopeo:1` | `1.0.0` |
+| Strix | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/strix:1` | `1.0.0` |
 | tmux | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/tmux:2` | `2.0.0` |
 | uv/uvx | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/uv:1` | `1.0.0` |
 | Yazi | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/yazi:1` | `1.0.1` |
@@ -491,6 +495,7 @@ Features
 | alpine-node | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-node:0` | `0.0.16` |
 | alpine-nushell | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-nushell:0` | `0.0.14` |
 | alpine-ohmyzsh | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-ohmyzsh:0` | `0.0.24` |
+| alpine-opencode | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-opencode:0` | `0.0.1` |
 | alpine-openssh | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-openssh:0` | `0.0.2` |
 | alpine-opentofu | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-opentofu:0` | `0.0.3` |
 | alpine-patch | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-patch:0` | `0.0.2` |
@@ -611,10 +616,10 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.120` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.121` |
 | Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.36` |
 | Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.36` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.68` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.69` |
 | Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.35` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.27` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
@@ -1341,7 +1346,7 @@ Features
 | Automatic File Headers | baxyz | `ghcr.io/helpers4/devcontainer/auto-header:1` | `1.0.8` |
 | Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.0.4` |
 | GitHub Copilot Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/copilot-dev:1` | `1.0.3` |
-| Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.0.5` |
+| Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.0.6` |
 | Essential Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/essential-dev:1` | `1.0.9` |
 | git-absorb | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.0.6` |
 | GitHub Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/github-dev:1` | `1.0.5` |
@@ -1455,7 +1460,7 @@ Features
 | NPM Packages | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/npm-packages:1` | `1.0.0` |
 | NVIDIA CUDA | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/nvidia-cuda:1` | `1.0.0` |
 | opencode | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/opencode:1` | `1.0.0` |
-| Playwright Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/playwright-deps:1` | `1.0.0` |
+| Playwright Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/playwright-deps:2` | `2.0.0` |
 | Python | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/python:1` | `1.0.0` |
 | Rust | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/rust:1` | `1.0.0` |
 | SonarScanner CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/sonar-scanner-cli:1` | `1.0.0` |
@@ -1466,10 +1471,12 @@ Features
 | Zig | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/zig:1` | `1.0.0` |
 | Claude config mount | NicoVIII | `ghcr.io/nicoviii/devcontainer-features/claude-mount:0` | `0.1.0` |
 | Firefox-Variant-Installer | soup-bowl | `ghcr.io/soup-bowl/features/firefox-set:0` | `0.1.1` |
+| Atlassian CLI for Jira & Confluence | rosstaco | `ghcr.io/rosstaco/devcontainer-features/atlassian-jira-confluence-cli:1` | `1.0.0` |
 | Copilot CLI Persistence | rosstaco | `ghcr.io/rosstaco/devcontainer-features/copilot-persistence:1` | `1.1.0` |
 | GitLab CI Local | rosstaco | `ghcr.io/rosstaco/devcontainer-features/gitlab-ci-local:1` | `1.0.0` |
 | Microsoft Security DevOps CLI | rosstaco | `ghcr.io/rosstaco/devcontainer-features/microsoft-security-devops-cli:1` | `1.0.0` |
 | Oh My Posh | rosstaco | `ghcr.io/rosstaco/devcontainer-features/ohmyposh:1` | `1.0.0` |
+| Package Source Overrides | rosstaco | `ghcr.io/rosstaco/devcontainer-features/package-source-overrides:1` | `1.0.0` |
 | Prompty Dumpty | rosstaco | `ghcr.io/rosstaco/devcontainer-features/prompty-dumpty:1` | `1.0.0` |
 | Conan Package Manager (1.x) | nkdui | `ghcr.io/nkdui/devcontainer-features/conan:1` | `1.0.0` |
 | Trunk (Rust WASM bundler) | mrhornsby | `ghcr.io/mrhornsby/trunk-devcontainer-feature/trunk:1` | `1.0.0` |

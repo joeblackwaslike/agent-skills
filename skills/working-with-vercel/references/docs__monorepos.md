@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "8cfc51c6a9e4a5dda0e11a2aac7f37c31cea860c5d4d3f7c1f5f658c2d2c8e9b"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "00c0eefea3c0f926fa9340d65c70d021fd1d108de121e99e01abf73c207e7310"
 ---
 
 # Using Monorepos
@@ -91,6 +91,8 @@ This setting does **not** occupy [concurrent build slots](/docs/deployments/conc
 - Dependencies between packages in the monorepo must be explicitly stated in each package's `package.json` file. This is necessary to determine the dependency graph between packages.
   - For example, an end-to-end tests package (`package-e2e`) tests must depend on the package it tests (`package-core`) in the `package.json` of `package-e2e`.
 
+If your project does not meet these requirements, you can [use the Ignored Build Step](#ignoring-the-build-step).
+
 #### Disable the skipping unaffected projects feature
 
 To disable this behavior, [visit the project's Root Directory settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23root-directory\&title=Disable+unaffected+project+skipping).
@@ -103,13 +105,11 @@ To disable this behavior, [visit the project's Root Directory settings](https://
 
 ### Ignoring the build step
 
-If you want to cancel the Build Step for projects if their files didn't change, you can do so with the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step) project setting. Canceled builds initiated using the ignore build step do count towards your deployment and concurrent build limits and so [skipping unaffected projects](#skipping-unaffected-projects) may be a better option for monorepos with many projects.
+If your project does not fit the [requirements for built-in skipping](#requirements), you can use the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step) project setting. Canceled builds initiated using the Ignored Build Step count towards your deployment and concurrent build limits and so [skipping unaffected projects](#skipping-unaffected-projects) may be a better option for monorepos with many projects.
 
-If you have created a script to ignore the build step, you can skip the [the
-script](/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel) when
-redeploying or promoting your app to production. This can be done through the
-dashboard when you click on the **Redeploy** button, and unchecking the **Use
-project's Ignore Build Step** checkbox.
+For example, Turborepos might [use `turbo query` in the Ignored Build Step](/docs/monorepos/turborepo#custom-ignored-build-step) to opt into more precise deployment selection in monorepos with multiple languages, or other complexities.
+
+If you have created a script to ignore the build step, you can skip the [the script](/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel) when redeploying or promoting your app to production. This can be done through the dashboard when you click on the **Redeploy** button, and unchecking the **Use project's Ignore Build Step** checkbox.
 
 ## Filtered installs
 

@@ -9,14 +9,15 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/cli/deploy
+  - /docs/deployments/environments
   - /docs/cli/promote
   - /docs/build-output-api/v3
   - /docs/cli/build
 summary: Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploying-from-cli.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "88e3dfeab9e2bf0578df44f17dbd4af3fdb4917fe4541824c887eb5f10225cdb"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "d9dda5eb9b3ba22f792463c77bbca47e7bcf1fcaa541cf291db57cbec69121f2"
 ---
 
 # Deploying Projects from Vercel CLI
@@ -48,6 +49,11 @@ vercel > deployment-url.txt
 
 *Writes the Deployment URL output from the \`deploy\`
 command to a text file.*
+
+> **💡 Note:** The [first deployment](/docs/deployments/environments#first-deployment) of a
+> new project is always a production deployment, even when you run `vercel`
+> without `--prod`. Later deployments without `--prod` create preview
+> deployments.
 
 ### Relevant commands
 

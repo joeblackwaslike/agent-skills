@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "2582e0e17777e9ed57906bd80ead8b8119f92e4aa84c58024f6ff252bd4d5e06"
+fetched_at: "2026-07-27T07:35:46.931Z"
+sha256: "17f37580a0efd9360dae36e3c0df60030c3ebb721b2f50b4e86a567ac5f46aa2"
 ---
 
 ## Creating secrets for a repository
@@ -297,7 +297,7 @@ To use secrets that are larger than 48 KB, you can use a workaround to store sec
 
 ## Storing Base64 binary blobs as secrets
 
-You can use Base64 encoding to store small binary blobs as secrets. You can then reference the secret in your workflow and decode it for use on the runner. For the size limits, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets#limits-for-secrets).
+You can use Base64 encoding to store small binary blobs as secrets. You can then reference the secret in your workflow and decode it for use on the runner. For the size limits, see [AUTOTITLE](/actions/reference/security/secrets#limits-for-secrets).
 
 > [!NOTE]
 > * Note that Base64 only converts binary to text, and is not a substitute for actual encryption.

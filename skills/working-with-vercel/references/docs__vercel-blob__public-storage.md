@@ -16,8 +16,8 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "77988e8b5edbe255beaeab1ded6a6535229ae5286632c555747780f71515b897"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "0a502594888611aebf8eb28b27e8b2a2d5b6601db2373e5dad8a6990cbf39297"
 ---
 
 # Public Storage
@@ -158,6 +158,15 @@ if (result.statusCode === 304) {
   // Blob hasn't changed, use the version you already have
 }
 ```
+
+## Protecting public blobs with the firewall&#x20;
+
+Anyone with the URL can request a public blob, and each download counts toward your [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) usage. You can control this traffic with [Vercel WAF](/docs/vercel-firewall/vercel-waf) rules, such as [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) or [IP blocking](/docs/vercel-firewall/vercel-waf/ip-blocking), to stop hotlinking, scraping, and abusive download patterns. To enable it:
+
+1. Open [your Blob store](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fstores%2Fblob%2F%5Bstore%5D%2Fsettings\&title=Go+to+your+Blob+store) in the dashboard and select the **Settings** tab.
+2. In the **Firewall** section, select **Protect your store**, then **Enable firewall**.
+
+This connects your store to `vercel-blob-default-project`, a Vercel-managed, team-wide project that holds the firewall rules for all your protected Blob stores. See [Firewall and WAF integration](/docs/vercel-blob/security#firewall-and-waf-integration) for details and limitations.
 
 ## SEO and search engine indexing
 

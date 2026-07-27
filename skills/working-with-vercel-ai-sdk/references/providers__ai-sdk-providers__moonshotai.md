@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "80dac0d246c510aae3f85467ffee25462ef5e5783962ae66f22263c4e99c5ea3"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "6d40f5001302236cb0a384e8bdafaf28395aad8874f7a4b3b0b79446a44dd073"
 ---
 
 # Moonshot AI Provider
@@ -63,7 +63,7 @@ import { moonshotai } from '@ai-sdk/moonshotai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: moonshotai('kimi-k2.5'),
+  model: moonshotai('kimi-k3'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -71,9 +71,9 @@ const { text } = await generateText({
 You can also use the `.chatModel()` or `.languageModel()` factory methods:
 
 ```ts
-const model = moonshotai.chatModel('kimi-k2.5');
+const model = moonshotai.chatModel('kimi-k3');
 // or
-const model = moonshotai.languageModel('kimi-k2.5');
+const model = moonshotai.languageModel('kimi-k3');
 ```
 
 Moonshot AI language models can be used in the `streamText` function
@@ -88,6 +88,30 @@ For other Moonshot models, object generation falls back to JSON mode instead of 
 For best reliability, it is strongly recommended to include your schema requirements in your prompt in addition to passing the schema through `Output`.
 
 ### Reasoning Models
+
+Kimi K3 always reasons. It currently supports only the `max` reasoning effort,
+which you can configure through provider options:
+
+```ts
+import {
+  moonshotai,
+  type MoonshotAILanguageModelOptions,
+} from '@ai-sdk/moonshotai';
+import { generateText } from 'ai';
+
+const { text, reasoningText } = await generateText({
+  model: moonshotai('kimi-k3'),
+  providerOptions: {
+    moonshotai: {
+      reasoningEffort: 'max',
+    } satisfies MoonshotAILanguageModelOptions,
+  },
+  prompt: 'How many "r"s are in the word "strawberry"?',
+});
+
+console.log(reasoningText);
+console.log(text);
+```
 
 Moonshot AI offers thinking models like `kimi-k2-thinking` that generate intermediate reasoning tokens before their final response. The reasoning output is streamed through the standard AI SDK reasoning parts.
 
@@ -119,6 +143,10 @@ See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details on 
 
 The following optional provider options are available for Moonshot AI language models:
 
+- **reasoningEffort** _'max'_
+
+  Reasoning effort for Kimi K3. Currently, only `'max'` is supported.
+
 - **thinking** _object_
 
   Configuration for thinking/reasoning models like Kimi K2 Thinking.
@@ -149,6 +177,7 @@ The following optional provider options are available for Moonshot AI language m
 | `kimi-k2-thinking`       | <Cross />   | <Check />         | <Check />  | <Check />      |
 | `kimi-k2-thinking-turbo` | <Cross />   | <Check />         | <Check />  | <Check />      |
 | `kimi-k2-turbo`          | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k3`                | <Check />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   Please see the [Moonshot AI docs](https://platform.moonshot.ai/docs/intro) for

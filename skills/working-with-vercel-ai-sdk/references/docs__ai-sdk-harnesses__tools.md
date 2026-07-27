@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/tools.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "6af46a679e63e9cb09a8f605a92a778df71f1d58ee0d3ef56b84612e2a67920e"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "698b87db4efd701ce5c3c7bfff79912fbfb8bbb5aae634340d98609f4fed4282"
 ---
 
 # Harness Tools
@@ -91,6 +91,46 @@ const agent = new HarnessAgent({
 
 When the harness calls `weather`, `HarnessAgent` executes the tool in your host
 process, then submits the result back to the harness runtime.
+
+## Client-Side Tools
+
+Omit `execute` when a browser, user interaction, or another external process
+provides the tool result:
+
+```ts
+const weather = tool({
+  description: 'Get the current temperature for a city.',
+  inputSchema: z.object({ city: z.string() }),
+});
+```
+
+When the harness calls a tool without `execute`, the returned result slice ends
+after the tool-call step while the underlying turn waits for a result.
+`session.hasUnfinishedTurn()` remains `true`, and `session.suspendTurn()`
+includes the pending tool call in its serializable continuation state.
+
+In UI flows, pass the model messages produced after `addToolOutput` to the next
+`stream()` or `generate()` call. `HarnessAgent` extracts the trailing tool
+result and continues the paused turn automatically.
+
+For direct agent calls, provide the raw result to `continueStream()` or
+`continueGenerate()`:
+
+```ts
+const continued = await agent.continueStream({
+  session,
+  toolResultContinuations: [
+    {
+      toolCallId,
+      output: { city: 'Paris', celsius: 12 },
+    },
+  ],
+});
+```
+
+Set `isError: true` when the external tool failed. To continue in another
+process, call `suspendTurn()`, recreate the session with `continueFrom`, and
+then pass the result to `continueStream()` or `continueGenerate()`.
 
 ## Tool Filtering
 

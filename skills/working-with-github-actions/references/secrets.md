@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/secrets.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "ed648588045e10507f69944e555d1f7d405bfe613d8cf3ed56ec7dd0a6a32b96"
+fetched_at: "2026-07-27T07:35:46.931Z"
+sha256: "957b8073cf19073e29ad262fe7001daa61074230c80687677cff15b2e131620f"
 ---
 
 ## About secrets
@@ -42,7 +42,7 @@ Instead of using a {% data variables.product.pat_generic %}, consider using a {%
 
 {% data variables.product.prodname_actions %} also redacts information that is recognized as sensitive, but is not stored as a secret. For a list of automatically redacted secrets, see [AUTOTITLE](/actions/reference/security/secrets#automatically-redacted-secrets).
 
-Because there are multiple ways a secret value can be transformed, this redaction is not guaranteed. Additionally, the runner can only redact secrets used within the current job. As a result, there are certain security proactive steps you should follow to help ensure secrets are redacted, and to limit other risks associated with secrets. For a reference list of security best practices with secrets, see [AUTOTITLE](/actions/reference/security/secrets#security-best-practices).
+Because there are multiple ways a secret value can be transformed, this redaction is not guaranteed. Additionally, the runner can only redact secrets used within the current job. As a result, there are certain security proactive steps you should follow to help ensure secrets are redacted, and to limit other risks associated with secrets. For a reference list of security best practices with secrets, see [AUTOTITLE](/actions/reference/security/secure-use#use-secrets-for-sensitive-information).
 
 ## Further reading
 

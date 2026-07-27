@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/subagents.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "f0aba02b9f9e12f96e5e93865a1010576f6d1e3fd33167e26b57e15fa10a0e94"
+fetched_at: "2026-07-27T07:33:35.768Z"
+sha256: "bdb16d67cd9b2df83410ff8dffb109f0341925f92b1093d6efe0452ff25257ad"
 ---
 
 # Subagents
@@ -149,13 +149,13 @@ Choose `inherit` when the subagent needs the same reasoning power as the parent.
 
 Append square brackets to a model ID to set per-model options like speed, reasoning effort, and context window. Write options as `id=value` pairs, and separate multiple options with commas.
 
-| Example                                     | Behavior                                                                                 |
-| :------------------------------------------ | :--------------------------------------------------------------------------------------- |
-| `composer-2.5[]`                            | Pins the base model. Empty brackets select the standard variant instead of the fast one. |
-| `composer-2.5[fast=false]`                  | Selects the standard (non-fast) variant explicitly.                                      |
-| `claude-opus-4-8[effort=high]`              | Sets reasoning effort to `high`.                                                         |
-| `claude-opus-4-8[context=300k]`             | Sets the context window to 300k tokens.                                                  |
-| `claude-opus-4-8[effort=high,context=300k]` | Combines options.                                                                        |
+| Example                                   | Behavior                                                                                 |
+| :---------------------------------------- | :--------------------------------------------------------------------------------------- |
+| `composer-2.5[]`                          | Pins the base model. Empty brackets select the standard variant instead of the fast one. |
+| `composer-2.5[fast=false]`                | Selects the standard (non-fast) variant explicitly.                                      |
+| `claude-opus-5[effort=high]`              | Sets reasoning effort to `high`.                                                         |
+| `claude-opus-5[context=300k]`             | Sets the context window to 300k tokens.                                                  |
+| `claude-opus-5[effort=high,context=300k]` | Combines options.                                                                        |
 
 Available options depend on the model, and use the same `id=value` pairs as the SDK's [model parameters](https://cursor.com/docs/sdk/typescript.md#model-parameters).
 
@@ -163,7 +163,7 @@ Available options depend on the model, and use the same `id=value` pairs as the 
 ---
 name: planner
 description: Plans complex changes before implementation.
-model: claude-opus-4-8[effort=high]
+model: claude-opus-5[effort=high]
 ---
 
 Break the task into a clear, ordered implementation plan.

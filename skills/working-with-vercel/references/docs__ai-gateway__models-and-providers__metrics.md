@@ -15,8 +15,8 @@ related:
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "968c310b85644804ce72ef345f0b07324fcbb32f996098cc0067238fda2668ff"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "dca5a4dc6d38d37dc29fd73e6828df63c3ab06e7f8aad8545153de40a0978613"
 ---
 
 # Metrics
@@ -39,7 +39,7 @@ Latency is time to first token (TTFT), measured in milliseconds. It's the durati
 
 You can find metrics in the following places:
 
-- The [AI Gateway model catalog](https://vercel.com/ai-gateway/models): each model row shows the best metrics across all providers (highest throughput, lowest latency).
+- The [AI Gateway model catalog](/ai-gateway/models): each model row shows the best metrics across all providers (highest throughput, lowest latency).
 - The [**AI Gateway** > **Models**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fmodels\&title=Go+to+AI+Gateway+Models) tab in your project: same view as the catalog, scoped to your team.
 
 To see metrics broken down by provider, click any model to open its detail page. For each provider, the detail page shows the live values from the last hour and a chart of how each metric has trended over time.

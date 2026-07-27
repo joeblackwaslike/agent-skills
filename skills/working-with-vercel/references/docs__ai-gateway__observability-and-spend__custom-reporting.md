@@ -17,8 +17,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "f4423dd2a226c3a7b9631275e5f2d1cf93e78df5042207b3555ed7c8a1f9c92a"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "c9c04b8646098a37dcc192146650b7ac527cf142ffd2bbd4e7c1e52750ef431e"
 ---
 
 # Custom Reporting
@@ -453,7 +453,7 @@ Filters are applied before aggregation. Combine them with any `group_by` value.
 | Parameter             | Type    | Description                                                                                                                      | Example                          |
 | --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | `user_id`             | string  | Filter by a specific user ID                                                                                                     | `user_123`                       |
-| `model`               | string  | Filter by a specific [model](https://vercel.com/ai-gateway/models) in `creator/model-name` format                                | `anthropic/claude-sonnet-4.6`    |
+| `model`               | string  | Filter by a specific [model](/ai-gateway/models) in `creator/model-name` format                                | `anthropic/claude-sonnet-4.6`    |
 | `provider`            | string  | Filter by [provider](/docs/ai-gateway/models-and-providers/provider-options#available-providers)                                 | `openai`                         |
 | `credential_type`     | string  | Filter by credential type                                                                                                        | `byok` or `system`               |
 | `zero_data_retention` | boolean | Filter to Zero Data Retention (ZDR)-requested vs non-ZDR requests                                                                | `true` or `false`                |

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e16266540010318ba65407a89f9c17eaab96e59a2b1762aa588928d685884830"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "040ef22344decd28006af49815d20494c5a0d5dccf84b652a844087d5890d131"
 ---
 
 # `pipeUIMessageStreamToResponse`
@@ -18,7 +18,7 @@ The `pipeUIMessageStreamToResponse` function pipes streaming data to a Node.js S
 ## Example
 
 ```tsx
-pipeUIMessageStreamToResponse({
+await pipeUIMessageStreamToResponse({
   response: serverResponse,
   status: 200,
   statusText: 'OK',
@@ -76,6 +76,11 @@ pipeUIMessageStreamToResponse({
     },
   ]}
 />
+
+### Returns
+
+A `Promise<void>` that resolves when the stream has been written to the response
+and rejects when reading or writing the stream fails.
 
 
 ## Navigation

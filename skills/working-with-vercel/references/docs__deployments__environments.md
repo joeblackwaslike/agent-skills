@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6360c050297718c01de0686a9ec625bdf1ee5e32955937387fdd971d8a8a9650"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "ffed4d7d1bbe197b284b92f452b946cd5dea2b3754c796945e09f9ae21638984"
 ---
 
 # Environments
@@ -74,7 +74,11 @@ This will populate the `.env.local` file in your application directory.
 - Create a pull request (PR) on [GitHub, GitLab, or Bitbucket](/docs/git)
 - Deploy using the CLI without the `--prod` flag, for example just `vercel`
 
-Each deployment gets an automatically generated URL, and you'll typically see links appear in your Git provider’s PR comments or in the Vercel Dashboard.
+> **💡 Note:** The [first deployment](#first-deployment) of a new project is always a
+> production deployment. The preview rules above apply only after that first
+> production deployment exists.
+
+Each deployment gets an automatically generated URL, and you'll typically see links appear in your Git provider's PR comments or in the Vercel Dashboard.
 
 There are two types of preview URLs:
 
@@ -94,6 +98,21 @@ vercel --prod
 ```
 
 When a production deployment succeeds, Vercel updates your production domains to point to the new deployment, ensuring your users see the latest changes immediately. For advanced workflows, you can disable the auto-promotion of deployments and [manually control promotion](/docs/deployments/promoting-a-deployment).
+
+### First deployment
+
+The first deployment of a new project is always a **production** deployment. This happens even when you:
+
+- Import a Git repository in the dashboard
+- Run `vercel` or `vercel deploy` from the CLI without `--prod`
+- Deploy from a branch that is not your [production branch](/docs/git#production-branch)
+
+Vercel does this so every new project has a production deployment and can receive [production domains](/docs/domains/working-with-domains/deploying-and-redirecting) right away.
+
+After that first production deployment, later deployments follow the usual rules:
+
+- Commits to the production branch, or `vercel --prod`, create production deployments
+- Other branches, pull requests, and `vercel` without `--prod` create [preview deployments](#preview-environment-pre-production)
 
 ## Custom Environments
 

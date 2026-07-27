@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "6fe47a1d76e75bc5ac6a38a5be03fa20c47bee5bca89e62b4d337d1e028ae5b5"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "7d7c4957ce5a92f0eca9d9c2a974fad02772032f5878fe08df6dbf1d7dabda7f"
 ---
 
 # Cloudflare AI Gateway
@@ -256,6 +256,7 @@ The provider throws the following custom errors:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

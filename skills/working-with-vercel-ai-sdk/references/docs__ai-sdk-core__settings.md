@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/settings.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b70ed913988b9a8e9d095513adcba392a2ca17227a7278c3aaff30cce8279be0"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "9927caea25c8e99b46d735e5362504a69580add0988945adce251cf42c0632c6"
 ---
 
 # Settings
@@ -143,7 +143,8 @@ You can specify the timeout either as a number (milliseconds) or as an object wi
 
 - `totalMs`: The total timeout for the entire call including all steps.
 - `stepMs`: The timeout for each individual step (LLM call). This is useful for multi-step generations where you want to limit the time spent on each step independently.
-- `chunkMs`: The timeout between stream chunks (streaming only). The call will abort if no new chunk is received within this duration. This is useful for detecting stalled streams.
+- `firstChunkMs`: The timeout until the first content-bearing output of each step (streaming only). Text deltas, reasoning deltas, tool-input deltas, generated files, and tool calls satisfy the timeout. Response metadata, stream starts, empty deltas, raw chunks, and transport activity do not satisfy or reset it.
+- `chunkMs`: The timeout between content-bearing output chunks after output has started (streaming only). Non-content chunks do not reset it. This is useful for detecting streams that stall after generation begins.
 - `toolMs`: The default timeout for all tool executions. If a tool takes longer, it aborts and returns a tool-error so the model can respond or retry.
 - `tools`: Per-tool timeout overrides using `{toolName}Ms` keys (e.g. `weatherMs`, `slowApiMs`). Takes precedence over `toolMs`. Tool names are type-checked for autocomplete.
 
@@ -196,7 +197,19 @@ const result = await generateText({
 const result = streamText({
   model: __MODEL__,
   prompt: 'Invent a new holiday and describe its traditions.',
-  timeout: { chunkMs: 5000 }, // abort if no chunk received for 5 seconds
+  timeout: { chunkMs: 5000 }, // abort if content stalls for 5 seconds
+});
+```
+
+#### Example: First-content timeout for streaming (streamText only)
+
+```ts
+const result = streamText({
+  model: __MODEL__,
+  prompt: 'Invent a new holiday and describe its traditions.',
+  timeout: {
+    firstChunkMs: 10000, // 10 seconds for first content in each step
+  },
 });
 ```
 

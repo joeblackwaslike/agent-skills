@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting/tool-invocation-missing-result.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "ec37fa5f84ccc7b84df133e0269f9c78ffd6c8864b85821c05add2da2efdbcaa"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "e7a714ca0b8db28295c8202adf734bfde4dee73319e6ec478ff426d37e79ef2b"
 ---
 
 # Tool Invocation Missing Result Error
@@ -26,7 +26,7 @@ You have two options for handling tool results:
 const tools = {
   weather: tool({
     description: 'Get the weather in a location',
-    parameters: z.object({
+    inputSchema: z.object({
       location: z
         .string()
         .describe('The city and state, e.g. "San Francisco, CA"'),

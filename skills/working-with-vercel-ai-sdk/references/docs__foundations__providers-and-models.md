@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "737db51b98873a648187e5bcd04668bc87056ac48f6f23688f2e02cdd47b0c79"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "2f4a4aaab7e9a2ddc4d6516ae8b5087de78a1c7282298879281c54d9ef4a2b12"
 ---
 
 # Providers and Models
@@ -96,6 +96,7 @@ The open-source community has created the following providers:
 - [Zhipu (Z.AI) Provider](/providers/community-providers/zhipu) (`zhipu-ai-provider`)
 - [OLLM Provider](/providers/community-providers/ollm) (`@ofoundation/ollm`)
 - [ZeroEntropy Provider](/providers/community-providers/zeroentropy) (`zeroentropy-ai-provider`)
+- [Neon AI Gateway Provider](/providers/community-providers/neon-ai-gateway) (`@neon/ai-sdk-provider`)
 
 ## Self-Hosted Models
 

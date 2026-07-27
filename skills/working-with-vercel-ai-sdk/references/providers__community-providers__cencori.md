@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cencori.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a3cb98908f853ca93a08c50af3eca05f9dff367ab38075d4116bec894d4af9bb"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "f48ca5ea86b720f01fa655acba00657a7cc46c399a52bfbaab0c65de1467801e"
 ---
 
 # Cencori
@@ -121,7 +121,7 @@ const { text, toolCalls } = await generateText({
   tools: {
     getWeather: tool({
       description: 'Get the weather for a location',
-      parameters: z.object({
+      inputSchema: z.object({
         location: z.string().describe('The city and state'),
       }),
       execute: async ({ location }) => {
@@ -288,6 +288,7 @@ const model = cencori('gpt-4o', {
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

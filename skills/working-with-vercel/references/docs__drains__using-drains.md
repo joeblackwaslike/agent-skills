@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, S3 buckets, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "6b6d9319a3954030d4d9a5d581a74d39c23f6b71aeb7c72ec8d514c7834eb9bc"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "cdae6a26a9a89eadfbf382a255ddcd4a3a4c8243fc1a1f7bbd0d3d9e22d5f74c"
 ---
 
 # Using Drains
@@ -28,7 +28,7 @@ You can add drains to your project by following the configuration steps below. W
 
 ## Configuring Drains
 
-Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) plans can configure drains to forward observability data. Audit Log Drains are available only on [Enterprise](/docs/plans/enterprise) plans. You can send data to custom HTTP endpoints, send Audit Log data to Amazon S3, or use [Vercel Marketplace](/marketplace) integrations for logs and traces.
+Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) plans can configure drains to forward observability data. Audit Log Drains are available only on [Enterprise](/docs/plans/enterprise) plans. You can send data to custom HTTP endpoints, send Audit Log data to Amazon S3, Splunk, Datadog, or Panther, or use [Vercel Marketplace](/marketplace) integrations for logs and traces.
 
 - ### Add a drain
   From the Vercel dashboard, go to **Team Settings** > [**Drains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fdrains\&title=Go+to+Drains+settings) and click **Add Drain**.
@@ -65,7 +65,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   Rules run from top to bottom. Requests that match a rule use that rule’s sampling rate, and any other requests are dropped. If you do not add rules, the drain forwards **100%** of data to the destination.
 
 - ### Configure destination
-  Choose how you want to receive your drain data by selecting the [**Custom Endpoint**](#custom-endpoint), [**S3 Bucket**](#s3-bucket), [**Splunk**](#splunk), or [**Native Integrations**](#native-integrations) section in the sidebar.
+  Choose how you want to receive your drain data by selecting the [**Custom Endpoint**](#custom-endpoint), [**S3 Bucket**](#s3-bucket), [**Splunk**](#splunk), [**Datadog**](#datadog), [**Panther**](#panther), or [**Native Integrations**](#native-integrations) section in the sidebar.
   #### Custom endpoint
   Configure a custom HTTP endpoint to receive drain data for any data type.
 
@@ -103,6 +103,14 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   Configure a Splunk destination to forward Audit Log data to your Splunk HTTP Event Collector (HEC). Splunk destinations are available only for Audit Log Drains.
 
   Enter your HEC host and HEC token. Vercel wraps each event in the Splunk HEC event envelope. See [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk) for HEC setup.
+  #### Datadog
+  Configure a Datadog destination to forward Audit Log data to the [Datadog Logs API](https://docs.datadoghq.com/api/latest/logs/). Datadog destinations are available only for Audit Log Drains.
+
+  Select your [Datadog site](https://docs.datadoghq.com/getting_started/site/) and enter a Datadog API key. See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#datadog) for the delivery format.
+  #### Panther
+  Configure a Panther destination to forward Audit Log data to [Panther's built-in Vercel source](https://docs.panther.com/data-onboarding/supported-logs/vercel). Panther destinations are available only for Audit Log Drains.
+
+  Enter the **HTTP Source URL** and Bearer token that Panther generates for the Vercel source. See [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther) for source setup and destination fields.
   #### Native integrations
   Native integrations are available for log and traces data. You have 2 options:
   1. Installed Products

@@ -1,8 +1,8 @@
 ---
 title: "Bundling Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/bundling-extension"
-fetched_at: "2026-07-20T06:45:35.555Z"
-sha256: "96429c56967b0e37cd586f25a0877cb5aae834bbf2a938b58ddb225431081736"
+fetched_at: "2026-07-27T07:31:06.590Z"
+sha256: "53e49aa298f7c06f4361110b01bd65b7634364a59b1362883b894145bf15e1b5"
 ---
 
 # Bundling Extensions
@@ -126,7 +126,7 @@ The `scripts` section in `package.json` now looks like that
 
 `npm-run-all` is a node module that runs scripts in parallel whose name match a given prefix. For us, it runs the `watch:esbuild` and `watch:tsc` scripts. You need to add `npm-run-all` to the `devDependencies` section in `package.json`.
 
-The `compile` and `watch` scripts are for development and they produce the bundle file with source maps. The `package` script is used by the `vscode:prepublish` script which is used by `vsce`, the VS Code packaging and publishing tool, and run before publishing an extension. Passing the `--production` flag to the esbuild script will cause it to compress the code and create a small bundle, but also makes debugging hard, so other flags are used during development. To run above scripts, open a terminal and type `npm run watch` or select **Tasks: Run Task** from the Command Palette (⇧⌘P (Windows, Linux Shift+cmd+P)).
+The `compile` and `watch` scripts are for development and they produce the bundle file with source maps. The `package` script is used by the `vscode:prepublish` script which is used by `vsce`, the VS Code packaging and publishing tool, and run before publishing an extension. Passing the `--production` flag to the esbuild script will cause it to compress the code and create a small bundle, but also makes debugging hard, so other flags are used during development. To run above scripts, open a terminal and type `npm run watch` or select **Tasks: Run Task** from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)).
 
 If you configure `.vscode/tasks.json` the following way, you will get a separate terminal for each watch task.
 
@@ -300,7 +300,7 @@ Merge these entries into the `scripts` section in `package.json`:
 },
 ```
 
-The `compile` and `watch` scripts are for development and they produce the bundle file. The `vscode:prepublish` is used by `vsce`, the VS Code packaging and publishing tool, and run before publishing an extension. The difference is in the [mode](https://webpack.js.org/concepts/mode/) and that controls the level of optimization. Using `production` yields the smallest bundle but also takes longer, so else `development` is used. To run above scripts, open a terminal and type `npm run compile` or select **Tasks: Run Task** from the Command Palette (⇧⌘P (Windows, Linux Shift+cmd+P)).
+The `compile` and `watch` scripts are for development and they produce the bundle file. The `vscode:prepublish` is used by `vsce`, the VS Code packaging and publishing tool, and run before publishing an extension. The difference is in the [mode](https://webpack.js.org/concepts/mode/) and that controls the level of optimization. Using `production` yields the smallest bundle but also takes longer, so else `development` is used. To run above scripts, open a terminal and type `npm run compile` or select **Tasks: Run Task** from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)).
 
 ## Run the extension
 

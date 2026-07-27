@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-wsl.md"
-fetched_at: "2026-07-20T06:46:20.159Z"
-sha256: "1de311e2c470a9ad1b1f152f7ea822cb4a8fc8e0687110aff24b830e830a5248"
+fetched_at: "2026-07-27T07:31:29.456Z"
+sha256: "71129cad01b0efe4c2bd3fa3e60617895d13189b1c063b830cf9543044dcfad3"
 ---
 
 > ## Documentation Index
@@ -50,4 +50,4 @@ A few features aren't available in WSL sessions yet: the integrated terminal, co
 
 ## Managed devices
 
-On devices managed by an organization, WSL sessions may be unavailable. If session start fails with a message that the device is managed, that's controlled by your administrator. Administrators: see [how settings reach devices](/en/admin-setup#decide-how-settings-reach-devices) in the deployment guide.
+On devices managed by an organization, WSL sessions may be unavailable. If session start fails with a message that the device is managed, that's controlled by your administrator. Administrators: see [how settings reach devices](/docs/en/admin-setup#decide-how-settings-reach-devices) in the deployment guide.

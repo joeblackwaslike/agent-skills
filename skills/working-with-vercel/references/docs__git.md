@@ -16,8 +16,8 @@ related:
 summary: Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLab, and Bitbucket projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "61419b0bcdca9046059118cb1bd561fa77beb4b047f7ae3142d7ad1bba34288a"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "b7fbbd1a4b04801fef530b3d18debcd6a771e419e509ba572257bc139f4ce338"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -51,7 +51,7 @@ You can choose to use a different branch as the [production branch](#production-
 
 ### Self-Hosted examples
 
-- [GitHub Enterprise Server](/kb/guide/how-can-i-use-github-actions-with-vercel)
+- [GitHub Enterprise Server](/kb/guide/github-actions-vercel)
 - [Self-Managed GitLab](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel)
 - [Bitbucket Data Center (Self-Hosted)](/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel)
 

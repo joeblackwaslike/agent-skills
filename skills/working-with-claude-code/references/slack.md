@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/slack.md"
-fetched_at: "2026-07-20T06:46:20.159Z"
-sha256: "8c8449a9d4c2e517ce49a1eac3cead877f3a2cbed7f821128152e960fd09ab64"
+fetched_at: "2026-07-27T07:31:29.456Z"
+sha256: "9207433e566af55ee6120b12b888ad0caeb7e0117b838838a0772846a6818eff"
 ---
 
 > ## Documentation Index
@@ -34,7 +34,7 @@ Before using Claude Code in Slack, ensure you have the following:
 | Requirement            | Details                                                                                           |
 | :--------------------- | :------------------------------------------------------------------------------------------------ |
 | Claude Plan            | Pro, Max, Team, or Enterprise with Claude Code access (premium seats or Chat + Claude Code seats) |
-| Claude Code on the web | Access to [Claude Code on the web](/en/claude-code-on-the-web) must be enabled                    |
+| Claude Code on the web | Access to [Claude Code on the web](/docs/en/claude-code-on-the-web) must be enabled                    |
 | GitHub Account         | Connected to Claude Code on the web with at least one repository authenticated                    |
 | Slack Authentication   | Your Slack account linked to your Claude account via the Claude app                               |
 
@@ -169,7 +169,7 @@ This channel-based model allows teams to restrict Claude Code usage to specific 
 **On the web**: The complete Claude Code session with full conversation history, all code changes, file operations, and the ability to continue the session or create pull requests.
 
 For Enterprise and Team accounts, sessions created from Claude in Slack are
-automatically visible to the organization. See [Claude Code on the Web sharing](/en/claude-code-on-the-web#share-sessions)
+automatically visible to the organization. See [Claude Code on the Web sharing](/docs/en/claude-code-on-the-web#share-sessions)
 for more details.
 
 ## Best practices
@@ -231,7 +231,7 @@ This error means your Claude account has no cloud environment yet, not that an a
 ## Related resources
 
 <CardGroup>
-  <Card title="Claude Code on the web" icon="globe" href="/en/claude-code-on-the-web">
+  <Card title="Claude Code on the web" icon="globe" href="/docs/en/claude-code-on-the-web">
     Learn more about Claude Code on the web
   </Card>
 

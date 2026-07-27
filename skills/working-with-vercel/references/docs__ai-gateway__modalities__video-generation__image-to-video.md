@@ -15,8 +15,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "babde133236f93c91ef00041233798957a86e78689e3e1062aa03a7caa627316"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "bb285d0622cb915262d89501ea26ad5b9d309a09e41f2680a9344663a92dc4c2"
 ---
 
 # Image-to-Video Generation
@@ -45,7 +45,7 @@ Each provider below also documents its own `providerOptions` keys (like `imageTa
 
 Google's Veo models support image-to-video generation, animating a starting image into a video.
 
-[Browse the latest Veo video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
+[Browse the latest Veo video models](/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
 
 ### Veo parameters
 
@@ -116,7 +116,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 KlingAI's image-to-video models animate images with standard or professional quality modes.
 
-[Browse the latest KlingAI video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
+[Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
 ### KlingAI parameters
 
@@ -415,7 +415,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 Wan offers image-to-video with standard and flash variants. Both support audio generation. Wan requires image URLs (not buffers). Use [Vercel Blob](/docs/vercel-blob) to host local images.
 
-[Browse the latest Wan video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
+[Browse the latest Wan video models](/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
 > **💡 Note:** Wan does not support first-last-frame interpolation. A `last_frame` entry in
 > `frameImages` is ignored with a warning.
@@ -463,7 +463,7 @@ If you omit `frameImages`, you can still pass the first frame through `prompt.im
 
 Grok Imagine Video (by xAI) can animate images into videos. The output defaults to the input image's aspect ratio. If you specify `aspectRatio`, it will override this and stretch the image to the desired ratio.
 
-[Browse the latest Grok video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
+[Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
 
 > **💡 Note:** Grok Imagine Video does not support first-last-frame interpolation. A
 > `last_frame` entry in `frameImages` is ignored with a warning. To continue
@@ -514,7 +514,7 @@ If you omit `frameImages`, you can still pass the first frame through `prompt.im
 
 ByteDance's Seedance models animate images into videos with support for first-and-last-frame control, multi-reference images, and optional audio generation. All models output MP4 at 24fps. Seedance requires image URLs (not buffers). Use [Vercel Blob](/docs/vercel-blob) to host local images.
 
-[Browse the latest Seedance video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
+[Browse the latest Seedance video models](/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
 
 ### Seedance parameters
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "8425f726e950f538520bc5e6cd60d35212874be596446cb88c7f0372d4a418c2"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "359e89145bda5492950fad54aa9746be9b3a4b4f9e801376a55e4dc51818728a"
 ---
 
 # `ToolLoopAgent`
@@ -247,8 +247,9 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
             },
             {
               name: 'timeout',
-              type: 'number | { totalMs?: number; stepMs?: number; chunkMs?: number } | undefined',
-              description: 'Timeout configuration for the generation.',
+              type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number } | undefined',
+              description:
+                'Timeout configuration for the generation. firstChunkMs and chunkMs are only enforced by stream().',
             },
             {
               name: 'headers',
@@ -361,8 +362,9 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
             },
             {
               name: 'timeout',
-              type: 'number | { totalMs?: number; stepMs?: number; chunkMs?: number } | undefined',
-              description: 'Timeout configuration for the generation.',
+              type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number } | undefined',
+              description:
+                'Timeout configuration for the generation. firstChunkMs and chunkMs are only enforced by stream().',
             },
             {
               name: 'headers',
@@ -713,10 +715,10 @@ const result = await agent.generate({
     },
     {
       name: 'timeout',
-      type: 'number | { totalMs?: number; stepMs?: number; chunkMs?: number }',
+      type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }',
       isOptional: true,
       description:
-        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, and/or chunkMs properties. The call will be aborted if it takes longer than the specified timeout. Can be used alongside abortSignal.',
+        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs and chunkMs have no effect on generate(); they are streaming-only and are enforced by stream(). Can be used alongside abortSignal.',
     },
     {
       name: 'experimental_sandbox',
@@ -829,10 +831,10 @@ for await (const chunk of stream.textStream) {
     },
     {
       name: 'timeout',
-      type: 'number | { totalMs?: number; stepMs?: number; chunkMs?: number }',
+      type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }',
       isOptional: true,
       description:
-        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, and/or chunkMs properties. The call will be aborted if it takes longer than the specified timeout. Can be used alongside abortSignal.',
+        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs limits the wait for the first content-bearing output in each model-call step. chunkMs limits gaps between later content-bearing output chunks. Can be used alongside abortSignal.',
     },
     {
       name: 'experimental_sandbox',

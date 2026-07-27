@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters/langchain.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b76038dfe4b953b211f6d6ff62fb7a08a4effc2aaabb9862dec6e25eeda18c62"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "6ab4a061d060deea986adc16b984ea36d7027c17c842b14ec624f141c7fc75bd"
 ---
 
 # LangChain
@@ -463,7 +463,7 @@ const langchainMessages = convertModelMessages(modelMessages);
 
 **Returns:** `BaseMessage[]`
 
-### `toUIMessageStream(stream)`
+### `toUIMessageStream(stream, options?)`
 
 Converts a LangChain/LangGraph stream to an AI SDK `UIMessageStream`. Automatically detects the stream type and handles direct model streams, LangGraph streams, and `streamEvents()` output.
 
@@ -496,8 +496,47 @@ return createUIMessageStreamResponse({
 **Parameters:**
 
 - `stream`: `AsyncIterable<AIMessageChunk> | ReadableStream` - LangChain model stream, LangGraph stream, or `streamEvents()` output
+- `options`: `ToUIMessageStreamOptions<TState>` (optional)
+  - `sendStart`: Whether to emit the outer `start` chunk. Defaults to `true`.
+  - `sendFinish`: Whether to emit the outer `finish` chunk. Defaults to `true`.
+  - `onStart`, `onToken`, `onText`, `onFinal`, `onFinish`, `onError`, and `onAbort`: Optional stream lifecycle callbacks.
 
 **Returns:** `ReadableStream<UIMessageChunk>`
+
+#### Composing into a caller-owned stream
+
+By default, `toUIMessageStream` emits outer `start` and `finish` chunks. When
+the caller owns the message lifecycle, suppress those chunks to avoid duplicate
+boundaries. All converted text, reasoning, tool, data, and step chunks remain
+unchanged.
+
+```ts
+import { toUIMessageStream } from '@ai-sdk/langchain';
+import { createUIMessageStream } from 'ai';
+
+const stream = createUIMessageStream({
+  async execute({ writer }) {
+    writer.write({ type: 'start' });
+
+    const reader = toUIMessageStream(langchainStream, {
+      sendStart: false,
+      sendFinish: false,
+    }).getReader();
+
+    while (true) {
+      const { done, value: chunk } = await reader.read();
+      if (done) break;
+      writer.write(chunk);
+    }
+
+    writer.write({ type: 'finish' });
+  },
+});
+```
+
+Set either option independently when the caller owns only one lifecycle
+boundary. If a boundary is suppressed, the caller is responsible for supplying
+it when the final stream protocol requires it.
 
 ### `LangSmithDeploymentTransport`
 

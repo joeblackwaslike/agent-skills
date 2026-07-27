@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/reference/supply-chain-security/dependabot-options-reference.md"
-fetched_at: "2026-07-20T06:52:02.847Z"
-sha256: "fdc1cc98617567ebbdd8e4db06b6776f143577d814e307168f46a4da960447aa"
+fetched_at: "2026-07-27T07:36:12.022Z"
+sha256: "ed0654a9276c2e942d7689c7dcf3ccd898ceda7191a54448954af760970aa7c1"
 ---
 
 This article provides reference information for the configuration options available in the `dependabot.yml` file. Use these options to customize how {% data variables.product.prodname_dependabot %} monitors package ecosystems, schedules updates, and creates pull requests. For an overview of the `dependabot.yml` file and how it works, see [AUTOTITLE](/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file).
@@ -528,7 +528,9 @@ Change the limit on the maximum number of pull requests for version updates open
 {% data variables.product.prodname_dependabot %} default behavior:
 
 * If five pull requests with version updates are open, no further pull requests are raised until some of those open requests are merged or closed.
-* Security updates have a separate, internal limit of ten open pull requests which cannot be changed.
+
+> [!NOTE]
+> _Security update_ pull requests are not subject to this limit and do not count toward it. There is no limit on the number of open pull requests for security updates.
 
 When `open-pull-requests-limit` is defined:
 

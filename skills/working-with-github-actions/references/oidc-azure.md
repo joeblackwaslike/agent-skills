@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-azure.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "987b647eeda242e23fa793f1a076bf7b756128babad9a279b030d74a5c6480d7"
+fetched_at: "2026-07-27T07:35:46.931Z"
+sha256: "49f1ce9ad751b24e0d9377a4317883ed7eb148f7d1a5e73efc158e86e4b9bf3c"
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -46,7 +46,7 @@ To configure the OIDC identity provider in Azure, you will need to perform the f
 
 Additional guidance for configuring the identity provider:
 
-* For security hardening, make sure you've reviewed [AUTOTITLE](/actions/concepts/security/openid-connect#configuring-the-oidc-trust-with-the-cloud). For an example, see [AUTOTITLE](/actions/concepts/security/openid-connect#configuring-the-subject-in-your-cloud-provider).
+* For security hardening, make sure you've reviewed {% ifversion ghec %}[AUTOTITLE](/actions/concepts/security/openid-connect#establishing-oidc-trust-with-your-cloud-provider){% else %}[AUTOTITLE](/actions/reference/security/oidc#oidc-claims-used-to-define-trust-conditions-on-cloud-roles){% endif %}. For an example, see [AUTOTITLE](/actions/reference/security/oidc#configuring-the-subject-in-your-cloud-provider).
 * For the `audience` setting, `api://AzureADTokenExchange` is the recommended value, but you can also specify other values here.
 
 ## Updating your {% data variables.product.prodname_actions %} workflow

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/human-in-the-loop.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "85e5c3b1b370dd78bd956e33acdbf50a0e72f7d7d95a94ffa4fa98412da9093f"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "bef731114797214fdea93a6e10532d088d925f240b9b18190d417062039aceca"
 ---
 
 # Human-in-the-Loop with Next.js
@@ -348,7 +348,7 @@ const result = streamText({
 
 ## Full Example
 
-To see this code in action, check out the [`next-openai` example](https://github.com/vercel/ai/tree/main/examples/next-openai) in the AI SDK repository. Navigate to the `/test-tool-approval` page and associated route handler.
+To see tool approval in action, check out the [`/chat/tool-approval` page](https://github.com/vercel/ai/blob/main/examples/ai-e2e-next/app/chat/tool-approval/page.tsx) and its [route handler](https://github.com/vercel/ai/blob/main/examples/ai-e2e-next/app/api/chat/tool-approval/route.ts) in the `ai-e2e-next` example.
 
 For more details on tool execution approval, see the [Tool Execution Approval](/docs/ai-sdk-core/tools-and-tool-calling#tool-execution-approval) and [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage#tool-execution-approval) documentation.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "4b05e1e584718ba3dd4a6df4bbf700a0cb7ad8a7edae9ac5db6b66529381760f"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "a0029ee66dbe5a6fc67034f0b659d14dbd8167aaebf86b21d36511f9b444f595"
 ---
 
 # Tool Calling
@@ -1044,7 +1044,7 @@ The following tool input lifecycle hooks are available:
 - **`onInputDelta`**: Called for each chunk of text as the input is streamed
 - **`onInputAvailable`**: Called when the complete input is available and validated
 
-`onInputStart` and `onInputDelta` are only called in streaming contexts (when using `streamText`). They are not called when using `generateText`.
+`onInputStart` is always called before `onInputAvailable`, including when using `generateText`. `onInputDelta` is only called in streaming contexts (when using `streamText`).
 
 ### Example
 

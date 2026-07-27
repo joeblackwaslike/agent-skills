@@ -16,16 +16,16 @@ related:
 summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, uptime and metrics, plus..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a89827874871a1e3a74a3a6f4d7aefdfd29870f3ec25b6d72fd84127e27de9a0"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "2a374bcaaebddb82a73b7b86181a63072ed89b491672fa79a11123411a81fbc4"
 ---
 
 # Models & Providers
 
-The AI Gateway's unified API provides flexibility, allowing you to switch between [different AI models](https://vercel.com/ai-gateway/models) and providers without rewriting parts of your application. This is useful for testing different models or when you want to change the underlying AI provider for cost or performance reasons. You can also configure [provider routing and model fallbacks](/docs/ai-gateway/models-and-providers/provider-options) to ensure high availability and reliability.
+The AI Gateway's unified API provides flexibility, allowing you to switch between [different AI models](/ai-gateway/models) and providers without rewriting parts of your application. This is useful for testing different models or when you want to change the underlying AI provider for cost or performance reasons. You can also configure [provider routing and model fallbacks](/docs/ai-gateway/models-and-providers/provider-options) to ensure high availability and reliability.
 
 > **💡 Note:** To view the list of supported models and providers, check out the [AI Gateway
-> models page](https://vercel.com/ai-gateway/models).
+> models page](/ai-gateway/models).
 
 ### In this section
 
@@ -52,7 +52,7 @@ You can view the list of supported models and providers in three ways:
 
 **Through the AI Gateway site:**
 
-Visit the [AI Gateway models page](https://vercel.com/ai-gateway/models) to browse all available models, filter by provider, and view pricing details.
+Visit the [AI Gateway models page](/ai-gateway/models) to browse all available models, filter by provider, and view pricing details.
 
 **Through the REST API:**
 

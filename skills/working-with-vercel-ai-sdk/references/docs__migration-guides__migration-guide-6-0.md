@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "5de653040181619342407efd9a2296bbab6de4ff0acc18991315f294d86dd42a"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "d5fa8f7e27702058150f18a457ddf283dda2b03b5b7318bfd1f0567805703d8f"
 ---
 
 # Migrate AI SDK 5.x to 6.0
@@ -302,6 +302,42 @@ const someTool = tool({
   codebase.
 </Note>
 
+### Remove `name` from Function Tool Definitions
+
+Function tool names come from their keys in the `tools` object. In AI SDK 5, a
+`name` property could pass type checking because it was part of the
+provider-defined member of the `Tool` type, but it did not set the name of a
+function tool. The AI SDK 6 types no longer accept the property in a function
+tool definition.
+
+Remove `name` from `tool()` and use the intended name as the key in the `tools`
+object:
+
+```tsx filename="AI SDK 5"
+import { tool } from 'ai';
+import { z } from 'zod';
+
+const tools = {
+  getWeather: tool({
+    name: 'getWeather',
+    inputSchema: z.object({}),
+    outputSchema: z.any(),
+  }),
+};
+```
+
+```tsx filename="AI SDK 6"
+import { tool } from 'ai';
+import { z } from 'zod';
+
+const tools = {
+  getWeather: tool({
+    inputSchema: z.object({}),
+    outputSchema: z.any(),
+  }),
+};
+```
+
 ### `cachedInputTokens` and `reasoningTokens` in `LanguageModelUsage` Deprecation
 
 `cachedInputTokens` and `reasoningTokens` in `LanguageModelUsage` have been deprecated.
@@ -489,6 +525,34 @@ import type { Warning } from 'ai';
 The `unknown` finish reason has been removed. It is now returned as `other`.
 
 ## AI SDK UI
+
+### Tool UI Part Approval States
+
+AI SDK 6 adds `approval-requested`, `approval-responded`, and `output-denied`
+to the tool UI part `state` union. Update exhaustive `switch` statements and
+other state handling to cover the three approval states.
+
+```tsx filename="AI SDK 6"
+switch (part.state) {
+  case 'input-streaming':
+    return 'Loading input';
+  case 'input-available':
+    return 'Input ready';
+  case 'approval-requested':
+    return 'Approval requested';
+  case 'approval-responded':
+    return 'Approval response received';
+  case 'output-available':
+    return 'Output ready';
+  case 'output-error':
+    return part.errorText;
+  case 'output-denied':
+    return 'Tool call denied';
+}
+```
+
+See [Tool execution approval](/docs/ai-sdk-ui/chatbot-tool-usage#tool-execution-approval)
+for handling approval requests and responses in a chat UI.
 
 ### Tool UI Part Helper Functions Rename
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/letta.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "60f89af4db1f5476654d58c949456af2e3fed25c6af5c32bc4363db0759c3c3a"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "4c972aba9513f842c65c51ba458b56aa5ab99103ef04f06824a0589f6c5f8994"
 ---
 
 # Letta Provider
@@ -245,6 +245,7 @@ For more information on the Letta API, please refer to the [Letta API documentat
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

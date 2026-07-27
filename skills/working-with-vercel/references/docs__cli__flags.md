@@ -14,13 +14,13 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "96ff67af9cc33ad71742caa53aa4dc33501fef7e93330751404d564583227fa8"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "06d8fdf44fa3fd1a4aba6672dfdbce2a5e8345e13629ad438d2258bd55d999f3"
 ---
 
 # vercel flags
 
-The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project directly from the command line. You can create, list, inspect, view version history, open, update, set, split traffic, roll out, enable, disable, archive, and delete feature flags, as well as manage conditional rules, reusable segments, and SDK keys.
+The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project from the command line. Use `vercel flags` to create and update feature flags, view version history and evaluation metrics, manage rules and rollouts, or configure reusable segments and SDK keys.
 
 ## Usage
 
@@ -57,6 +57,13 @@ vercel flags versions diff [flag] --revision [number]
 
 *Using the \`vercel flags versions diff\` command to show what changed in a
 revision.*
+
+```bash filename="terminal"
+vercel flags evaluations [flag]
+```
+
+*Using the \`vercel flags evaluations\` command to display evaluation metrics
+for a feature flag.*
 
 ```bash filename="terminal"
 vercel flags open [flag]
@@ -307,6 +314,164 @@ The diff JSON includes `flag`, `revision`, `previousRevision`, `version`, `previ
 - `action: "changed"` includes both `before` and `after`
 
 If revision `0` has no saved message, version history shows `Flag created`. When a diff has no semantic changes, the command prints `No changes detected.` If the requested revision is unavailable, the error reports how many revisions are available.
+
+### Viewing flag evaluations
+
+Use `vercel flags evaluations <flag>` to see how many times a flag evaluated to each variant during a time range. Pass a flag slug or ID. By default, `vercel flags evaluations` uses the linked project.
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --since 1h --granularity 15m
+```
+
+*Viewing evaluations for each \`new-checkout\` variant in 15-minute buckets.*
+
+#### Arguments
+
+| Argument | Type | Required | Default | Description |
+| - | - | - | - | - |
+| `<flag>` | string | Yes | — | Feature flag slug or ID. |
+
+#### Options
+
+| Option | Type | Required | Default | Description |
+| - | - | - | - | - |
+| `--project <NAME_OR_ID>` | string | No | Linked project | Project name or ID. |
+| `-s, --since <TIME>` | string | No | `1h` | Start time as a relative duration or ISO 8601 timestamp. |
+| `-u, --until <TIME>` | string | No | Current time | End time as a relative duration or ISO 8601 timestamp. |
+| `-g, --granularity <SIZE>` | string | No | Automatic | Time bucket size. Supports `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`. |
+| `--json` | boolean | No | `false` | Outputs exact bucket data as JSON instead of a human-readable summary. |
+
+When you run the command outside the linked project directory, use the global `--cwd` option to select it:
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --cwd /path/to/project
+```
+
+*Viewing evaluations for the project linked at \`/path/to/project\`.*
+
+#### Human-readable output
+
+By default, `vercel flags evaluations` shows the aligned UTC time range, bucket interval, and project. It also shows per-variant totals, statistics, and sparklines. The CLI displays current variants with their configured values and labels. It labels evaluations without a variant as `Default in Code` and displays deleted or unknown variant IDs unchanged.
+
+For example, the command above can return:
+
+```text filename="stdout"
+> Period: 2026-07-10 10:00 to 2026-07-10 11:00 (UTC) [1h]
+> Interval: 15m
+> Project: my-storefront (acme)
+
+    Variants  total  avg      min          max
+  false: Off    180   45  30 at 10:00  60 at 10:45
+    true: On    100   25  10 at 10:00  40 at 10:30
+
+    Variants
+  false: Off  ▁▆▃█
+    true: On  ▁▃█▆
+```
+
+If the selected period has no evaluation data, the command prints `No data found for this period.` and exits successfully.
+
+#### JSON output
+
+Pass `--json` to output exact bucket data without text formatting. Each `buckets` entry includes the timestamp, evaluation count, and either a variant ID or `null`. A `null` variant represents `Default in Code`. The `variants` object maps current variant IDs to their configured values.
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --since 1h --granularity 15m --json
+```
+
+```json filename="stdout"
+{
+  "flag": "new-checkout",
+  "variants": {
+    "off": false,
+    "on": true
+  },
+  "startTime": "2026-07-10T10:00:00.000Z",
+  "endTime": "2026-07-10T11:00:00.000Z",
+  "granularity": {
+    "minutes": 15
+  },
+  "truncated": false,
+  "buckets": [
+    {
+      "timestamp": "2026-07-10T10:00:00.000Z",
+      "variant": "off",
+      "evaluations": 30
+    },
+    {
+      "timestamp": "2026-07-10T10:00:00.000Z",
+      "variant": "on",
+      "evaluations": 10
+    },
+    {
+      "timestamp": "2026-07-10T10:15:00.000Z",
+      "variant": "off",
+      "evaluations": 50
+    },
+    {
+      "timestamp": "2026-07-10T10:15:00.000Z",
+      "variant": "on",
+      "evaluations": 20
+    },
+    {
+      "timestamp": "2026-07-10T10:30:00.000Z",
+      "variant": "off",
+      "evaluations": 40
+    },
+    {
+      "timestamp": "2026-07-10T10:30:00.000Z",
+      "variant": "on",
+      "evaluations": 40
+    },
+    {
+      "timestamp": "2026-07-10T10:45:00.000Z",
+      "variant": "off",
+      "evaluations": 60
+    },
+    {
+      "timestamp": "2026-07-10T10:45:00.000Z",
+      "variant": "on",
+      "evaluations": 30
+    }
+  ]
+}
+```
+
+*Returning exact bucket data for \`new-checkout\` as JSON.*
+
+`vercel flags evaluations` rounds the start time down and the end time up to bucket boundaries. The JSON `startTime` and `endTime` fields contain the aligned range. The `buckets` array includes only returned buckets and doesn't add buckets with no data.
+
+When the selected period has no evaluation data, the `buckets` array is empty.
+
+#### Limits
+
+`vercel flags evaluations` returns up to the 100 most evaluated variants. Human-readable output warns when additional variants are omitted. In JSON output, `truncated` is `true` when the limit omits less frequently evaluated variants.
+
+#### Errors
+
+`vercel flags evaluations` exits with a non-zero status when validation fails or it can't retrieve the project, flag, or evaluation data. Common validation and project error codes include:
+
+| Code | Cause |
+| - | - |
+| `MISSING_FLAG` | The required `<flag>` argument is missing. |
+| `INVALID_GRANULARITY` | `--granularity` isn't one of the six supported values. |
+| `INVALID_TIME` | A time value is invalid, or the start time isn't before the end time. |
+| `NOT_LINKED` | The current directory isn't linked and `--project` wasn't provided. |
+| `PROJECT_NOT_FOUND` | The project passed to `--project` wasn't found in the current scope. |
+| `PROJECT_RESOLUTION_FAILED` | The CLI couldn't resolve the requested project. |
+
+Flag lookup errors use the code returned by the Vercel API. Evaluation data errors can use `FORBIDDEN`, `RATE_LIMITED`, `TIMEOUT`, `INTERNAL_ERROR`, or `BAD_REQUEST`.
+
+In human-readable mode, the CLI prints error messages to the terminal. With `--json`, validation and request errors use the following shape after command-line argument parsing succeeds:
+
+```json filename="stdout"
+{
+  "error": {
+    "code": "INVALID_GRANULARITY",
+    "message": "Invalid granularity \"10m\". Use one of: 1m, 5m, 15m, 1h, 4h, 1d."
+  }
+}
+```
 
 ### Updating variants
 
@@ -729,9 +894,52 @@ vercel flags ls --state archived
 *Using the \`vercel flags ls\` command with the
 \`--state\` option to list archived flags.*
 
+### Since
+
+The `--since` option, shorthand `-s`, sets the start of the time range for `vercel flags evaluations`. Use a relative duration like `1h`, `30m`, `2d`, or `1w`, or an ISO 8601 timestamp. If omitted, the range starts one hour before the command runs.
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --since 24h
+```
+
+*Viewing evaluations from the last 24 hours.*
+
+### Until
+
+The `--until` option, shorthand `-u`, sets the end of the time range for `vercel flags evaluations`. It accepts the same relative durations and ISO 8601 timestamps as `--since`. If omitted, the range ends at the current time. The start time must be earlier than the end time.
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --since 24h --until 1h
+```
+
+*Viewing evaluations from 24 hours ago through one hour ago.*
+
+### Granularity
+
+The `--granularity` option, shorthand `-g`, sets the time bucket size for `vercel flags evaluations`. Supported values are `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`.
+
+If you omit `--granularity`, the CLI selects a bucket size based on the time range. The minimum bucket size prevents overly detailed queries over long periods:
+
+| Time range | Automatic bucket | Minimum bucket |
+| - | - | - |
+| Up to 1 hour | `1m` | `1m` |
+| More than 1 hour and up to 2 hours | `5m` | `5m` |
+| More than 2 hours and up to 12 hours | `15m` | `5m` |
+| More than 12 hours and up to 3 days | `1h` | `1h` |
+| More than 3 days and up to 30 days | `4h` | `4h` |
+| More than 30 days | `1d` | `1d` |
+
+When you request a bucket smaller than the minimum, the CLI uses the minimum instead. Human-readable output includes a notice, while JSON output reports the adjusted value in `granularity`.
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --since 7d --granularity 4h
+```
+
+*Viewing seven days of evaluations in four-hour buckets.*
+
 ### JSON
 
-The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags versions`, `vercel flags versions diff`, `vercel flags rules ls`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, and `vercel flags sdk-keys ls`.
+The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags versions`, `vercel flags versions diff`, `vercel flags evaluations`, `vercel flags rules ls`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, and `vercel flags sdk-keys ls`.
 
 ```bash filename="terminal"
 vercel flags segments inspect beta-users --json

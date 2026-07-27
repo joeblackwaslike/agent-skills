@@ -16,8 +16,8 @@ related:
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "70931d5fe5445b34f788d34fcd46c7390e133f47bee4816b2e37a2d8a9efcd90"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "4eef01bd33f234af349d298469c63d6fb987dbf2069790efb26c0eb12d3ca3ac"
 ---
 
 # Deploying GitHub Projects with Vercel
@@ -448,7 +448,7 @@ You can use GitHub Actions to build and deploy your Vercel Application. This app
 2. Use `vercel build` to build your project inside GitHub Actions, without exposing your source code to Vercel. For production builds, pass `--prod`: `vercel build --prod`.
 3. Then use `vercel deploy --prebuilt` to skip the build step on Vercel and upload the previously generated `.vercel/output` folder from your GitHub Action to Vercel. For production deploys, pass `--prod`: `vercel deploy --prebuilt --prod`.
 
-You'll need separate GitHub Actions for preview (non-`main` pushes) and production (`main` pushes) deployments. The preview workflow uses `vercel build` and `vercel deploy --prebuilt`; the production workflow uses `vercel build --prod` and `vercel deploy --prebuilt --prod`. [Learn more about how to configure GitHub Actions and Vercel](/kb/guide/how-can-i-use-github-actions-with-vercel) for custom CI/CD workflows.
+You'll need separate GitHub Actions for preview (non-`main` pushes) and production (`main` pushes) deployments. The preview workflow uses `vercel build` and `vercel deploy --prebuilt`; the production workflow uses `vercel build --prod` and `vercel deploy --prebuilt --prod`. [Learn more about how to configure GitHub Actions and Vercel](/kb/guide/github-actions-vercel) for custom CI/CD workflows.
 
 ### Repository dispatch events
 

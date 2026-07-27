@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "87a94478b73e3a794f84cb70c1f254bfb7b823f491130a9e62d2d2b0424514ad"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "08910547dd31baf5121564b71fad0e97c0760c458df470d2cafb69cec3cfa6bf"
 ---
 
 # Deep Agents Harness
@@ -92,6 +92,8 @@ Settings:
   Gateway, use the `creator/model` slug (e.g. `anthropic/claude-sonnet-4-6`,
   `google/gemini-2.5-flash`, `openai/gpt-4.1-mini`).
 - `port`: bridge port override.
+- `recursionLimit`: maximum LangGraph super-steps per turn. When omitted, the
+  Deep Agents default applies.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
 
 ## Authentication

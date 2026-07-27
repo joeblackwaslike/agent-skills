@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "ba66ca94d77f0b0e2462d6bb597bdd9bff73bfda4f6ccdb7de98e8dec65cc1a6"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "250b42e58066fdc2d650957553fb13c5c357c012758d498f6287ed717187472f"
 ---
 
 # Google Vertex Provider
@@ -26,6 +26,14 @@ The Google Vertex, Google Vertex Anthropic, Google Vertex xAI, and Google Vertex
 ## Google Vertex Provider Usage
 
 The Google Vertex provider instance is used to create model instances that call the Vertex AI API. The models available with this provider include [Google's Gemini models](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models). If you're looking to use [Anthropic's Claude models](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude), see the [Google Vertex Anthropic Provider](#google-vertex-anthropic-provider-usage) section below.
+
+<Note>
+  Vertex Gemini models share the Google provider's forward-compatible model
+  classification. Unrecognized `gemini-*` IDs and `-latest` aliases use the
+  newest supported Gemini request behavior, while known legacy IDs keep their
+  generation-specific tool, reasoning, function-response, and thought-signature
+  handling. The selected Vertex model must still support each requested feature.
+</Note>
 
 ### Provider Instance
 
@@ -899,13 +907,15 @@ The following Zod features are known to not work with Google Vertex:
 
 ### Model Capabilities
 
-| Model                  | Image Input | Object Generation | Tool Usage | Tool Streaming |
-| ---------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `gemini-3.5-flash`     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-3-pro-preview` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-2.5-pro`       | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-2.5-flash`     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-2.0-flash-001` | <Check />   | <Check />         | <Check />  | <Check />      |
+| Model                   | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ----------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `gemini-3.6-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-3.5-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-3.5-flash-lite` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-3-pro-preview`  | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.5-pro`        | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.5-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-2.0-flash-001`  | <Check />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   The table above lists popular models. Please see the [Google Vertex AI

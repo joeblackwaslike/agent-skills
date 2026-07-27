@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/devtools.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "5504432173a2d292cc352831c0e4d28ca47b2c4b658cc7c2b985beb6733e6330"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "7383d865d2e2ddc2c496f0ca0727892d0ec46906fa9bd86f26c321e39bcf9db7"
 ---
 
 # DevTools
@@ -80,6 +80,12 @@ npx @ai-sdk/devtools@latest
 
 Open [http://localhost:4983](http://localhost:4983) to view your AI SDK interactions.
 
+### Choose a viewer theme
+
+The viewer uses the dark theme by default. Use the theme button in the viewer
+header to switch between dark and light themes. Your selection is stored in
+your browser and restored the next time you open the viewer at the same origin.
+
 ### Monorepo usage
 
 If you are using a monorepo setup (e.g. Turborepo, Nx), start DevTools from the same workspace where your AI SDK code runs.
@@ -102,7 +108,22 @@ DevTools captures the following information from your AI SDK calls:
 - **Input parameters and prompts**: View the complete input sent to your LLM
 - **Output content and tool calls**: Inspect generated text and tool invocations
 - **Token usage and timing**: Monitor resource consumption and performance
-- **Raw provider data**: Access complete request and response payloads
+- **Raw provider data**: Access provider request and response payloads when body retention is enabled
+
+Telemetry is enabled automatically, but AI SDK 7 excludes raw request and response bodies from step results by default. To make them available to DevTools for `generateText`, enable body retention on the call:
+
+```ts highlight="4-7"
+const result = await generateText({
+  model: openai('gpt-4o'),
+  prompt: 'Hello!',
+  include: {
+    requestBody: true,
+    responseBody: true,
+  },
+});
+```
+
+`ToolLoopAgent` accepts the same `include` setting in its constructor. For `streamText` and `ToolLoopAgent.stream()`, only the request body can be retained; use `include: { requestBody: true }`.
 
 ### Runs and steps
 
@@ -130,7 +151,7 @@ DevTools stores all AI interactions locally in plain text files, including:
 - User prompts and messages
 - LLM responses
 - Tool call arguments and results
-- API request and response data
+- API request and response data when body retention is enabled
 
 **Only use DevTools in local development environments.** Do not enable DevTools in production or when handling sensitive data.
 

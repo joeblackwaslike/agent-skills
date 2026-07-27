@@ -9,13 +9,14 @@ prerequisites:
   - /docs/sandbox/concepts
   - /docs/sandbox
 related:
+  - /docs/glossary
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/runtimes
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "108d744ce232870394e858d8a4f9f9168460688d9d79d219dfa148f24cbc1d58"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "4649c10307fa7420effd80a08334ae7d0f376ce16b211377087a3b5f8af52e5e"
 ---
 
 # Sandbox firewall
@@ -60,7 +61,7 @@ Domain-based rules identify traffic by the hostname negotiated during the TLS ha
 
 ### HTTP and HTTPS
 
-HTTPS traffic is matched using the SNI (server name indication) extension sent at the start of the TLS handshake. Plain-text HTTP cannot be filtered by domain, and must be allowed by [IP range](#user-defined) instead.
+HTTPS traffic is matched using the [SNI (Server Name Indication)](/docs/glossary#sni-server-name-indication) extension sent at the start of the TLS handshake. Plain-text HTTP cannot be filtered by domain, and must be allowed by [IP range](#user-defined) instead.
 
 ### Postgres
 
@@ -80,7 +81,7 @@ The following limitations apply when allowing Postgres traffic:
 Commands running in the sandbox often require authentication with external services, for instance code repositories or AI services. Providing API keys to those commands would risk abuse or exfiltration.
 On the other hand, allowing access to a domain can allow data exfiltration if not restricting the permissions or sessions attached to it.
 
-Credentials brokering allows the injection of credentials on egressing traffic, while ensuring those secrets never enter the sandbox scope, preventing exfiltration. Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions will be transformed.
+Credentials brokering allows the injection of credentials on egressing traffic, while ensuring those secrets never enter the sandbox scope, preventing exfiltration. Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions are transformed. Brokering relies on the client sending an [SNI (Server Name Indication)](/docs/glossary#sni-server-name-indication). When a policy combines a catch-all (`*`) rule with per-domain transforms, connections without a detectable domain pass through unmodified. Examples of these connections are TLS without SNI or non-TLS protocols such as SSH. Use a restrictive allowlist without a catch-all if you need domain-less traffic to be denied.
 
 ## Requests proxying
 
@@ -89,6 +90,8 @@ Credentials brokering allows the injection of credentials on egressing traffic, 
 Requests proxying allows forwarding traffic toward specific domains to a proxy you control, for logging, debugging, or transformation purposes. This is useful when you want to allow access to a domain while ensuring control over the requests and responses.
 
 The `forwardURL` field must be a URL pointing to an HTTP/1.1-capable server and must not include a query string or fragment. Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions will be forwarded.
+
+Like brokering, forwarding is SNI-dependent. Under a catch-all (`*`) policy, domain-less traffic passes through unforwarded. Use a restrictive allowlist without a catch-all to deny it.
 
 The `forwardURL` receives the original request as-is, with the addition of the following headers:
 

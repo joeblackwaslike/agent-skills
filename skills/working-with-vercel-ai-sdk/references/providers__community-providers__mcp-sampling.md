@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mcp-sampling.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e856f249e2e9d7b5696c6734d3d3e08395c0d87aad755dfa33eb9fffdb43f4c7"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "731e8583210db07cadd0a78bd084e987ddc1e00ed5e69603fe446bd0cf9103e3"
 ---
 
 # MCP Sampling AI Provider
@@ -366,7 +366,7 @@ server.setRequestHandler(CallToolRequestSchema, async request => {
       tools: {
         getWeather: {
           description: 'Get the weather for a location',
-          parameters: z.object({
+          inputSchema: z.object({
             city: z.string().describe('The city name'),
           }),
           execute: async ({ city }) => {
@@ -535,6 +535,7 @@ The MCP client (e.g., VS Code, Claude Desktop) decides which actual model to use
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

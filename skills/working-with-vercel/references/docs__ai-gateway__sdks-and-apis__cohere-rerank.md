@@ -15,15 +15,15 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3de1e13cabf774c28c60ddc1ad782408d05a47317253d547e5c8ebbd5e56c46a"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "9ad4a43a6f51df4da59fdd81b62e5a894cca42574a3dfaed4a766c0ae6ce16f6"
 ---
 
 # Cohere Rerank API
 
 AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [Cohere SDK](https://docs.cohere.com/reference/about) or plain HTTP requests to rerank documents through a unified gateway with only a URL change.
 
-Reranking reorders a list of documents by their relevance to a query. It is commonly used to improve results in retrieval-augmented generation (RAG) pipelines after an initial retrieval step. To see which models support reranking, use the **Reranking** filter on the [models page](https://vercel.com/ai-gateway/models?capabilities=reranking).
+Reranking reorders a list of documents by their relevance to a query. It is commonly used to improve results in retrieval-augmented generation (RAG) pipelines after an initial retrieval step. To see which models support reranking, use the **Reranking** filter on the [models page](/ai-gateway/models?capabilities=reranking).
 
 The Rerank API implements the same specification as the [Cohere Rerank API](https://docs.cohere.com/reference/rerank).
 

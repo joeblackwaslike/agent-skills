@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/dynamic-tool.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "5043b9cd1f811c1012dde716711bcaffefd2917d6636f8ab68bfee8e29dddc2c"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "0762e2bdf14630a61462199c225ea8b2fbf72f0d2b29919100be7427af381cd7"
 ---
 
 # `dynamicTool()`
@@ -131,7 +131,7 @@ export const customTool = dynamicTool({
               isOptional: true,
               type: '(options: ToolExecutionOptions<Context>) => void | PromiseLike<void>',
               description:
-                'Optional function that is called when the argument streaming starts. Only called when the tool is used in a streaming context.'
+                'Optional function that is called when the model starts generating the tool input. In non-streaming contexts, it is called immediately before onInputAvailable.'
             },
             {
               name: 'onInputDelta',

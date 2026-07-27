@@ -17,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "225f65780302cebadf7abb4835a6e20c4c3583b2f09f4f6166f298430e168a9c"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "1bcd99e60a68654e9a2c7f4ae28d29a739dd0ce2798e250d2357f84e903ed194"
 ---
 
 # Video Generation
@@ -27,11 +27,11 @@ sha256: "225f65780302cebadf7abb4835a6e20c4c3583b2f09f4f6166f298430e168a9c"
 
 AI Gateway supports video generation, letting you create videos from text prompts, images, or video input. You can control resolution, duration, aspect ratio, and audio through a unified API across multiple providers.
 
-To see all supported video models, use the **Video** filter at the [AI Gateway Models page](https://vercel.com/ai-gateway/models?capabilities=video-generation).
+To see all supported video models, use the **Video** filter at the [AI Gateway Models page](/ai-gateway/models?capabilities=video-generation).
 
 ## Capabilities
 
-Some video models are tagged by capability in their model name. You can also see capability tags on the [AI Gateway Models page](https://vercel.com/ai-gateway/models?capabilities=video-generation) or via the `/v1/models` endpoint, which is useful for models that support multiple capabilities:
+Some video models are tagged by capability in their model name. You can also see capability tags on the [AI Gateway Models page](/ai-gateway/models?capabilities=video-generation) or via the `/v1/models` endpoint, which is useful for models that support multiple capabilities:
 
 | Tag              | Capability                                                                              | Description                                                         |
 | ---------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |

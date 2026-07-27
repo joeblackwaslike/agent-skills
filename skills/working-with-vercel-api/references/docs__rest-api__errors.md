@@ -3,7 +3,7 @@ title: errors
 product: vercel
 url: /docs/rest-api/errors
 canonical_url: "https://vercel.com/docs/rest-api/errors"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Learn about errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/errors.md"
-fetched_at: "2026-07-20T06:54:24.493Z"
-sha256: "9b5ce0ff8be15a5d0c3a50604d7ab4e3baee1fd2f14ff762767bfc6870ec75cb"
+fetched_at: "2026-07-27T07:38:06.408Z"
+sha256: "6da3bd351e44dd81ed42cf5f757720183d06a33948dc80e352200f38e02b72d2"
 ---
 
 # Errors

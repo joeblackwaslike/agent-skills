@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "e3df83a355a2b731e199f34fba046adb9b558641a22aea2cce54d8028c30a3b9"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "30846f8c49f316011b2acd85222cb63df0f3cf8a270d33d0fae844454b77b59c"
 ---
 
 # `tool()`
@@ -172,7 +172,7 @@ export const weatherTool = tool({
               isOptional: true,
               type: '(options: ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>',
               description:
-                'Optional function that is called when the argument streaming starts. Only called when the tool is used in a streaming context.',
+                'Optional function that is called when the model starts generating the tool input. In non-streaming contexts, it is called immediately before onInputAvailable.',
             },
             {
               name: 'onInputDelta',

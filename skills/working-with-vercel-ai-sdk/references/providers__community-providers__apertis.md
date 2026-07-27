@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/apertis.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "e522fcf520f338c1b1ae9b620648a6141339f1668cc1848ce25b0f16e7441554"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "a45bf08b38b89f7bbfe913532554e7951a0f2dd5308226bc10b44d2c289e443a"
 ---
 
 # Apertis Provider
@@ -175,6 +175,7 @@ const { embedding } = await embed({
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

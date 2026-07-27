@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d9d660676fc3982e493b96dd2f9f42bfc63bf3f2dacd731fff860b71902f230f"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "282e0c89a389f57dda310707141302ff964d8d64e15064578df2ff7906b8504c"
 ---
 
 # Frontends on Vercel
@@ -90,6 +90,8 @@ The following frontend frameworks are supported with zero-configuration.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/sanity-v2) | [View Demo](https://sanity-studio-template.vercel.app)
 - **Scully**: Scully is a static site generator for Angular.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/scully) | [View Demo](https://scully-template.vercel.app)
+- **Services**: Multiple services deployed as serverless functions within your project.
+  - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/services)
 - **SolidStart (v0)**: Simple and performant reactivity for building user interfaces.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/solidstart) | [View Demo](https://solid-start-template.vercel.app)
 - **SolidStart (v1)**: Simple and performant reactivity for building user interfaces.

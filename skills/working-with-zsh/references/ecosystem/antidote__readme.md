@@ -1,13 +1,13 @@
 ---
 source: "https://raw.githubusercontent.com/mattmc3/antidote/main/README.md"
-fetched_at: "2026-06-16T01:06:56.418Z"
-sha256: "b1b436574ee881cfb1420ffee3a85bc6fe6ff12a7ea707ceca8bd24a3ebbc5ed"
+fetched_at: "2026-07-27T07:42:25.509Z"
+sha256: "f147a792573877791b857826a7ca1c2f8645b59bd6ae9deedb1223de4be06142"
 ---
 
 # antidote
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg)](/LICENSE)
-![version](https://img.shields.io/badge/version-v2.1.0-df5e88)
+![version](https://img.shields.io/badge/version-v2.2.0-df5e88)
 
 <a title="GetAntidote"
    href="https://antidote.sh"
@@ -18,16 +18,16 @@ sha256: "b1b436574ee881cfb1420ffee3a85bc6fe6ff12a7ea707ceca8bd24a3ebbc5ed"
      src="https://avatars.githubusercontent.com/u/101279220?s=80&v=4">
 </a>
 
-> [Get the cure][antidote]</blockquote>
+> [Get the cure][antidote]
 
-[Antidote][antidote] is a feature-complete Zsh implementation of the legacy
+Meet [antidote][antidote], a feature-complete Zsh implementation of the legacy
 [Antibody][antibody] plugin manager, which in turn was derived from [Antigen][antigen].
-Antidote not only aims to provide continuity for those legacy plugin managers, but also
+It not only aims to provide continuity for those legacy plugin managers, but also
 to delight new users with high-performance, easy-to-use Zsh plugin management.
 
 ## Usage
 
-Basic usage should look really familiar to you if you have used Antibody or Antigen.
+Basic usage should look really familiar to you if you have used antibody or antigen.
 Bundles (aka: Zsh plugins) are stored in a file typically called `.zsh_plugins.txt`.
 
 ```zsh

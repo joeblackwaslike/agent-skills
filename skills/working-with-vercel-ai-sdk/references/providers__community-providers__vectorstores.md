@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/vectorstores.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "59ce55aa062f79945f40d72f99e4ebaeaf9af09ce3ff6dfb4bbb3294ef0abd44"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "b4b2bc4ee269cd352c1b95c0dd059d0777d747bfdd0aa5797f88921a3fb1e5be"
 ---
 
 # vectorstores Provider
@@ -150,6 +150,7 @@ Store and retrieve user-specific information across conversations by combining a
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

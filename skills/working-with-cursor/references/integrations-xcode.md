@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/integrations/xcode.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "c35b2f74950108a8172f3609567143760f007b4d0948ab09fc2d9c8ad3af93a1"
+fetched_at: "2026-07-27T07:33:35.768Z"
+sha256: "04775562c95a29b505552f09515150ddf019f11e4bfe93ed46ca81e5ce97a25b"
 ---
 
 # Xcode
@@ -36,7 +36,7 @@ Pick whichever method suits your workflow.
 
 ### Open MCP settings
 
-Go to **Cursor Settings > Features > MCP**.
+Go to **Customize** > **MCPs**.
 
 ### Add the server
 

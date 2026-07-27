@@ -14,15 +14,15 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0dd844102dfb719b9a90c10dc0bf2cefbdcde1e9fa03ea10a7d4ced0f3443a49"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "818c9cb0b9a883740493c6a7beee2143371dcc5ae75ba501972193d7828ccb78"
 ---
 
 # Speech to Text
 
-Transcribe recorded audio into text with transcription models such as `openai/whisper-1` and `openai/gpt-4o-transcribe`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have.
+Transcribe recorded audio into text with transcription models such as `openai/whisper-1` and `openai/gpt-4o-transcribe`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription).
 
-Use this for audio you already have. For live, two-way voice, see [Realtime](/docs/ai-gateway/modalities/realtime); to turn text into spoken audio, see [Text to Speech](/docs/ai-gateway/modalities/text-to-speech).
+For live audio, use [streaming transcription](#streaming-transcription) to get transcript updates as audio arrives. For live, two-way voice, see [Realtime](/docs/ai-gateway/modalities/realtime); to turn text into spoken audio, see [Text to Speech](/docs/ai-gateway/modalities/text-to-speech).
 
 > **💡 Note:** Speech to text is in beta and access is rolling out gradually. Transcription
 > models may not appear in the model catalog yet for your team.
@@ -53,9 +53,75 @@ The result includes:
 - `durationInSeconds`: The duration of the input audio.
 - `warnings`: Any warnings from the provider, such as unsupported options.
 
-> **💡 Note:** Transcription support in the AI Gateway provider is available on the canary
-> releases of the AI SDK. Install them with `pnpm add ai@canary
->   @ai-sdk/gateway@canary`.
+> **💡 Note:** Transcription support requires recent releases of the AI SDK: `ai` 7.0.31 and
+> `@ai-sdk/gateway` 4.0.23 or later. Install them with `pnpm add ai
+>   @ai-sdk/gateway`.
+
+## Streaming transcription
+
+For live audio, use `experimental_streamTranscribe` to receive transcript updates before the audio stream is complete. AI Gateway connects to the model over a WebSocket and streams results back as the provider produces them.
+
+Pass raw audio as a `ReadableStream` and set `inputAudioFormat` to match the chunks you send:
+
+```typescript filename="stream-transcribe.ts"
+import { experimental_streamTranscribe as streamTranscribe } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+
+const result = streamTranscribe({
+  model: gateway.transcriptionModel('openai/gpt-realtime-whisper'),
+  audio: audioStream, // ReadableStream<Uint8Array | string>
+  inputAudioFormat: { type: 'audio/pcm', rate: 24000 },
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'transcript-delta') {
+    process.stdout.write(part.delta);
+  }
+
+  if (part.type === 'transcript-final') {
+    console.log('final:', part.text);
+  }
+}
+
+console.log(await result.text);
+```
+
+Streaming transcription is available for models such as `openai/gpt-realtime-whisper` and `xai/grok-stt`. To find models that support it, filter the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription\&features=websockets) by WebSockets. See the AI SDK [streaming transcription docs](https://ai-sdk.dev/docs/ai-sdk-core/transcription#streaming-transcription) for the full API, including stream part types and provider options.
+
+### Stream from the browser
+
+Add a server route that mints a short-lived client secret with `gateway.experimental_transcription.getToken`, so your API key never reaches the client. The token is single use, expires after 60 seconds by default (300 seconds maximum), and only opens streaming transcription connections for the model it was minted for:
+
+```typescript filename="app/api/transcription/token/route.ts"
+import { gateway } from '@ai-sdk/gateway';
+
+export async function POST() {
+  const { token, url } = await gateway.experimental_transcription.getToken({
+    model: 'openai/gpt-realtime-whisper',
+  });
+
+  return Response.json({ token, url });
+}
+```
+
+In the browser, create a gateway provider with the token as the API key and stream as usual:
+
+```typescript filename="transcribe-client.ts"
+import { experimental_streamTranscribe as streamTranscribe } from 'ai';
+import { createGateway } from '@ai-sdk/gateway';
+
+const { token } = await fetch('/api/transcription/token', {
+  method: 'POST',
+}).then((res) => res.json());
+
+const gateway = createGateway({ apiKey: token });
+
+const result = streamTranscribe({
+  model: gateway.transcriptionModel('openai/gpt-realtime-whisper'),
+  audio: microphoneStream, // ReadableStream<Uint8Array | string>
+  inputAudioFormat: { type: 'audio/pcm', rate: 24000 },
+});
+```
 
 ## Transcribe with the REST API
 
@@ -135,9 +201,9 @@ const result = await transcribe({
 
 ## Limitations
 
-- Audio is sent base64-encoded in a JSON body. Multipart file uploads are not supported.
-- Responses are not streamed. The full transcript returns in a single JSON response.
-- Speech to text supports OpenAI transcription models only.
+- Audio for the REST API is sent base64-encoded in a JSON body. Multipart file uploads are not supported.
+- The REST API returns the full transcript in a single JSON response. To stream results, use `experimental_streamTranscribe` with the AI SDK.
+- Recorded audio and streaming support different model sets. Browse [transcription models](/ai-gateway/models?modality=audio:transcription) and add the [WebSockets filter](/ai-gateway/models?modality=audio:transcription\&features=websockets) to see which models support streaming.
 
 
 ---

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "5a988e50e4df5840f0e946e5f28ac24888f27212f6b1da1ff5cc9ad83141584a"
+fetched_at: "2026-07-27T07:30:54.769Z"
+sha256: "2fddf825c87500099374791d2416dcc21fa388cc511414b2596ef0988ff71ab7"
 ---
 
 ## Using a {% data variables.product.prodname_github_app %} instead of an {% data variables.product.prodname_oauth_app %}
@@ -68,7 +68,7 @@ _{% data variables.product.prodname_actions %}_ provide automation that can perf
 
 _{% data variables.product.prodname_github_apps %}_ run persistently on a server or compute infrastructure that you provide or run on a user device. They can react to {% data variables.product.company_short %} webhook events as well as events from outside the {% data variables.product.prodname_dotcom %} ecosystem. They are a good option for operations that span multiple repositories or organizations, or for providing hosted services to other organizations and enterprises. A {% data variables.product.prodname_github_app %} is the best choice when building a tool with functions that occur primarily outside of {% data variables.product.prodname_dotcom %} or require more execution time or permissions than what a {% data variables.product.prodname_actions %} workflow is allotted.
 
-For more information about comparing {% data variables.product.prodname_actions %} to {% data variables.product.prodname_github_apps %}, see [AUTOTITLE](/actions/get-started/actions-vs-apps#comparing-github-actions-to-github-apps).
+For more information about comparing {% data variables.product.prodname_actions %} to {% data variables.product.prodname_github_apps %}, see [AUTOTITLE](/actions/get-started/actions-vs-apps).
 
 You can use a {% data variables.product.prodname_github_app %} to authenticate in a {% data variables.product.prodname_actions %}
 workflow if the built in `GITHUB_TOKEN` does not have sufficient permissions. For more information, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/making-authenticated-api-requests-with-a-github-app-in-a-github-actions-workflow).

@@ -3,7 +3,7 @@ title: list-resources
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-resources
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about list-resources on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3a79c36d7bdf32849836280095b285f0459964189e1c1eda804e197ba25e4113"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "bb92ab06dcf9e3cdff3b277a835d9724c6ddf54791b85e6993014e908c90c2fd"
 ---
 
 # List Resources (Deprecated)
@@ -118,8 +118,10 @@ Return a list of Resources for a given Installation
     "protocolSettings": {
       "experimentation": {
         "edgeConfigSyncingEnabled": "boolean" // Set to true when the user enabled the syncing.,
-        "edgeConfigId": "string" // An Edge Config selected by the user for partners to push data into.,
-        "edgeConfigTokenId": "string" // The ID of the token used to access the Edge Config.
+        "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into.,
+        "globalConfigId": "string" // Alias for `edgeConfigId`.,
+        "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
+        "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
       }
     },
     "billingPlan": {

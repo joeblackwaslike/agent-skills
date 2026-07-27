@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/070_security.md"
-fetched_at: "2026-06-16T12:24:33.275Z"
-sha256: "c07078367e65ee55a8aa1ffc5b009c43c29c14012d177ee45511c95efd699317"
+fetched_at: "2026-07-27T07:36:41.325Z"
+sha256: "7574f18b82506a05652e8a6bdd87eafa9eb77e5d3f27fe0473fcf9232c464e96"
 ---
 
 # Security Considerations
@@ -19,8 +19,18 @@ The current security model for Serena assumes:
 - package manager configuration (e.g. npm) for downloading additional dependencies (i.e. language servers when using Serena with the LSP backend) is trusted.
 
 Serena contains tools for executing shell commands and modifying files.
-As such tools are, however, an essential part of coding agent workflows, they typically need to be made available. 
+As such tools are, however, an essential part of coding agent workflows, they typically need to be made available – and need to be made available in a flexible, general form.
 Therefore, the only way to *fully* protect against unintended consequences is to use a [sandboxed environment](sandboxing) for running Serena.
+
+:::{admonition} Security Advisories
+:class: note
+Security advisories are welcome for issues that violate the security model described on this page.
+However, reports which amount to noting that Serena's tools can execute commands or modify files
+describe intended functionality rather than vulnerabilities, and we will reject advisories that fail to recognise this
+or otherwise ignore the above assumptions.  
+Sandboxing is the *only* way to fully protect against unintended consequences when using coding agents;
+constraints on the tools themselves cannot achieve this and are therefore not an approach we pursue.
+:::
 
 ## General Recommendations for Risk Reduction
 
@@ -29,7 +39,7 @@ To reduce the risk of unintended consequences, we recommend that you:
 - restrict the set of allowed tools via the [configuration](050_configuration),
 - do not expose [Serena's network services](network-security) to untrusted networks.
 
-If you do not fully the trust the client/the LLM, we additionally recommend to monitor tool executions carefully 
+If you do not fully trust the client/the LLM, we additionally recommend to monitor tool executions carefully 
 (provided that your MCP client supports this).
 
 (sandboxing)=
@@ -115,7 +125,10 @@ Some parts of Serena rely on `uv` / `uvx`.
 
 One important detail is that `uvx` ignores the lockfile when installing directly from a Git repository. Because of that, we pin Serena's Python dependencies exactly in `pyproject.toml` so that installations from Git still resolve to exact dependency versions rather than floating ranges.
 
-For the `ty` Python language server, Serena also uses an exact pinned version when invoking it through `uvx`.
+For the Pyright, BasedPyright, and `ty` Python language servers, Serena uses exact pinned versions when
+invoking them through `uvx` / `uv tool run`. Pyright and BasedPyright default to `1.1.403` and `1.39.9`,
+respectively; `ls_specific_settings.python.pyright_version` and
+`ls_specific_settings.python_basedpyright.basedpyright_version` can override those pins.
 
 ```{dropdown} What Serena Downloads by Default for Language Servers
 :open:
@@ -168,11 +181,14 @@ All of the above are installed with exact pinned package versions by default, in
 
 - **F#**: installs pinned `fsautocomplete` via `dotnet tool install`.
 - **Ruby (`ruby-lsp`)**: if not already available through Bundler or as a global executable, Serena installs a pinned `ruby-lsp` gem.
-- **Python (`ty`)**: launched through `uvx` / `uv x` using an exact pinned `ty` version.
+- **Python (`python`)**: Pyright is launched through `uvx` / `uv tool run` using an exact pinned version.
+  Supplying `ls_path` bypasses this managed invocation.
+- **Python (`python_basedpyright`)**: BasedPyright is launched through `uvx` / `uv tool run` using an exact
+  pinned version. Supplying `ls_path` bypasses this managed invocation.
+- **Python (`python_ty`)**: launched through `uvx` / `uv tool run` using an exact pinned `ty` version.
 - **HLSL on macOS**: if no prebuilt binary is used, Serena builds `shader_language_server` from a pinned version using Cargo.
 
 ### No Automatic Download by Serena
 
-- **Python (`pyright`)**: Serena uses the locally available Python environment and starts `pyright.langserver` from there.
 - **Go (`gopls`)**, **Rust (`rust-analyzer`)**, and several other system-tool based integrations expect the language server to be available locally and do not download it automatically.
 ```

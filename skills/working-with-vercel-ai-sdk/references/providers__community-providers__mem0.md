@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mem0.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b7fac540e15a5d3a9501f5828f0c54bf5d65409a406fe1e80baee96334d8ddaa"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "3a55587e4a67d490a9ae4705921c87701119404f5ce0aba0bb8d5e5be54d5075"
 ---
 
 # Mem0 Provider
@@ -185,7 +185,7 @@ const result = await generateText({
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
-      parameters: z.object({
+      inputSchema: z.object({
         location: z.string().describe('The location to get the weather for'),
       }),
       execute: async ({ location }) => ({
@@ -302,6 +302,7 @@ The Mem0 provider supports the following LLM providers:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

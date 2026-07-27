@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/a2a.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "cb2d9d516573dd86ffd0b9dfb4f915c865ddf12939eb5872cab71660636aec89"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "b878eb6cb30733c6cf2f86bfddc9ff36b91c99ad6722dae8d827cef27387f0c9"
 ---
 
 # A2A
@@ -144,6 +144,7 @@ console.log(await streamResult.content);
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

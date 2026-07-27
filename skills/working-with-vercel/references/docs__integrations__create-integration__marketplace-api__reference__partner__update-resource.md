@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d70e5818e85555d84d0e46b3f6c05aa2d84169e540fc1e4854716fb1c21be3d7"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "b2e192ea884439aa5f232a7d285a0b28cb104f516ea88b9344fb66313076e096"
 ---
 
 # Update Resource
@@ -134,7 +134,8 @@ User Auth OIDC token claims schema:
   "status": "string" // Deprecated,
   "protocolSettings": {
     "experimentation": {
-      "edgeConfigId": "string" // An Edge Config selected by the user for partners to push data into.
+      "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into. Deprecated alias of `globalConfigId`.,
+      "globalConfigId": "string" // A Global Config selected by the user for partners to push data into.
     }
   }
 }
@@ -155,8 +156,10 @@ Return the updated resource
   "protocolSettings": {
     "experimentation": {
       "edgeConfigSyncingEnabled": "boolean" // Set to true when the user enabled the syncing.,
-      "edgeConfigId": "string" // An Edge Config selected by the user for partners to push data into.,
-      "edgeConfigTokenId": "string" // The ID of the token used to access the Edge Config.
+      "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into.,
+      "globalConfigId": "string" // Alias for `edgeConfigId`.,
+      "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
+      "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
     }
   },
   "billingPlan": {

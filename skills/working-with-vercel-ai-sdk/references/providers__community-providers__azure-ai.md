@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/azure-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "419d63ac3fc0b5ba7da5bef380eb0ea8a3e8d8497b31442e398f5c07110486da"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "193aae79065f4eae8575e009909c752552a788ad827f50ffbc1f22251ea1af9e"
 ---
 
 # Azure Custom Provider for AI SDK
@@ -123,6 +123,7 @@ const { text } = await generateText({
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

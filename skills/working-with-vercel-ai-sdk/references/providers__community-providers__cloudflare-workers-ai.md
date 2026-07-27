@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-workers-ai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "8a2bd52f0e76bbf69e132daf8388609b4893ac5b55990a7a1a3f44b61b499a5f"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "dcd0a22d6cdb916e3fcc5fa66cb3f755412f6022d973ef3e281462d0c2c6d5d2"
 ---
 
 # Cloudflare Workers AI
@@ -200,6 +200,7 @@ export default {
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

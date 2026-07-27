@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/using-pagination-in-the-rest-api.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "b5ab0a2a0e66c0547d81fe14ad4e366a9a5e3f59a261516bad74f0b4621d1c9e"
+fetched_at: "2026-07-27T07:36:12.022Z"
+sha256: "bfe52036badc82846db2336d363cff84b142ec881855f1a2f3ef7cda00777059"
 ---
 
 ## About pagination
@@ -49,11 +49,11 @@ curl --include --request GET \
 --header "Accept: application/vnd.github+json"
 ```
 
-The URLs in the `link` header use query parameters to indicate which page of results to return. The query parameters in the `link` URLs may differ between endpoints, however each paginated endpoint will use the `page`, `before`/`after`, or `since` query parameters. (Some endpoints use the `since` parameter for something other than pagination.) In all cases, you can use the URLs in the `link` header to fetch additional pages of results. For more information about query parameters see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api#using-query-parameters).
+The URLs in the `link` header use query parameters to indicate which page of results to return. The query parameters in the `link` URLs may differ between endpoints, however each paginated endpoint will use the `page`, `before`/`after`, or `since` query parameters. (Some endpoints use the `since` parameter for something other than pagination.) In all cases, you can use the URLs in the `link` header to fetch additional pages of results. For more information about query parameters see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api#query-parameters).
 
 ## Changing the number of items per page
 
-If an endpoint supports the `per_page` query parameter, then you can control how many results are returned on a page. For more information about query parameters see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api#using-query-parameters).
+If an endpoint supports the `per_page` query parameter, then you can control how many results are returned on a page. For more information about query parameters see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api#query-parameters).
 
 For example, this request uses the `per_page` query parameter to return two items per page:
 

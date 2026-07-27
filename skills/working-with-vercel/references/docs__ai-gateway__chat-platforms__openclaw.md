@@ -13,8 +13,8 @@ related:
 summary: Use OpenClaw (formerly Clawdbot) with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/openclaw.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "af05a36741823a07812c53ba8ccee9079ba7990bcde2ab03f0f9baffbdbd3bfb"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "6e3117a19f44338e8646dd6624795f914d63504eaf6d82b862c9444fc63c2a3a"
 ---
 
 # OpenClaw (Clawdbot)
@@ -60,7 +60,7 @@ sha256: "af05a36741823a07812c53ba8ccee9079ba7990bcde2ab03f0f9baffbdbd3bfb"
   3. **Enter API key**: Paste your AI Gateway API key
   4. **Select Model**: Choose from available models
   5. **Additional Configuration**: Complete remaining setup options (communication channels, daemon installation, etc.)
-  > **💡 Note:** Models follow the `creator/model-name` format. Check the [models catalog](https://vercel.com/ai-gateway/models) for available options.
+  > **💡 Note:** Models follow the `creator/model-name` format. Check the [models catalog](/ai-gateway/models) for available options.
 
 - ### Verify installation
   Check that OpenClaw (Clawdbot) is configured correctly:

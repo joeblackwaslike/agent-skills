@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/ollm.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "71ec9291f59fd812ba835c919f5e6111154e6200036fdd2a4703cd5f12d86bee"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "597f845afa24a646466b1dd78c817995fb97dfc9bb99a5cab0d8d373c5fd4665"
 ---
 
 # OLLM
@@ -196,6 +196,7 @@ For more information about these features and advanced configuration options, vi
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

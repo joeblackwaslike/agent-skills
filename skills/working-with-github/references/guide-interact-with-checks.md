@@ -1,14 +1,14 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/guides/using-the-rest-api-to-interact-with-checks.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "c4fb3076b001d7d7b8e0f17c0adca454897790449acdd342257ac1272c2efc73"
+fetched_at: "2026-07-27T07:36:12.022Z"
+sha256: "8a2be370f4cceaefd28ba897a546bea919c911cd9c9760b856e296192659a7a6"
 ---
 
 ## Overview
 
 Rather than binary pass/fail build statuses, {% data variables.product.prodname_github_apps %} can report rich statuses, annotate lines of code with detailed information, and re-run tests. REST API to manage checks is available exclusively to your GitHub Apps.
 
-For an example of how to use the REST API with a {% data variables.product.prodname_github_app %}, see [AUTOTITLE](/apps/creating-github-apps/writing-code-for-a-github-app/building-ci-checks-with-a-github-app).
+For an example of how to use the REST API with a {% data variables.product.prodname_github_app %}, see [AUTOTITLE](/apps/creating-github-apps/writing-code-for-a-github-app/building-ci-checks-with-a-github-app#step-26-automatically-fix-rubocop-errors).
 
 You can use statuses with [protected branches](/rest/repos#branches) to prevent people from merging pull requests prematurely. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
 
@@ -86,7 +86,7 @@ To create a button that can request additional actions from your app, use the [`
 
 When a user clicks the button, {% data variables.product.prodname_dotcom %} sends the [`check_run.requested_action` webhook](/webhooks/webhook-events-and-payloads#check_run) to your app. When your app receives a `check_run.requested_action` webhook event, it can look for the `requested_action.identifier` key in the webhook payload to determine which button was clicked and perform the requested task.
 
-For a detailed example of how to set up requested actions with the REST API, see [AUTOTITLE](/apps/creating-github-apps/writing-code-for-a-github-app/building-ci-checks-with-a-github-app#part-2-creating-the-octo-rubocop-ci-test).
+For a detailed example of how to set up requested actions with the REST API, see [AUTOTITLE](/apps/creating-github-apps/writing-code-for-a-github-app/building-ci-checks-with-a-github-app).
 
 ## Retention of checks data
 

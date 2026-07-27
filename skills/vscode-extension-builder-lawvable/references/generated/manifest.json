@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T06:45:47.031Z",
+  "generated_at": "2026-07-27T07:31:08.126Z",
   "source": "Official Visual Studio Code developer documentation",
   "docs": [
     {
@@ -52,9 +52,9 @@
       "title": "Bundling Extensions",
       "url": "https://code.visualstudio.com/api/working-with-extensions/bundling-extension",
       "file": "bundling-extensions.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "96429c56967b0e37cd586f25a0877cb5aae834bbf2a938b58ddb225431081736",
-      "bytes": 17877
+      "fetched_at": "2026-07-27T07:31:06.590Z",
+      "sha256": "53e49aa298f7c06f4361110b01bd65b7634364a59b1362883b894145bf15e1b5",
+      "bytes": 17879
     },
     {
       "slug": "publishing-extensions",
@@ -88,9 +88,9 @@
       "title": "Web Extensions",
       "url": "https://code.visualstudio.com/api/extension-guides/web-extensions",
       "file": "web-extensions.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "dae402df3a98f9dd27c76fdd91a8166f8da34f396d1154bcb0cca2a07720895b",
-      "bytes": 38980
+      "fetched_at": "2026-07-27T07:31:06.590Z",
+      "sha256": "e469acd1cd49b9af72e95991d6e49abf3dd1facdf51f7120abe72c8b100883fd",
+      "bytes": 38981
     },
     {
       "slug": "language-model-api",
@@ -115,9 +115,9 @@
       "title": "Contribution Points",
       "url": "https://code.visualstudio.com/api/references/contribution-points",
       "file": "contribution-points.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "b057ea0c4e284b6e2e8b22c0829005b1fdaf06d36af94b805126be921c03983c",
-      "bytes": 75584
+      "fetched_at": "2026-07-27T07:31:06.590Z",
+      "sha256": "c849e52e1eb5ec2e5f5a69655323ac9f789d6876c043e2ba41eff32e4a815f4f",
+      "bytes": 75586
     },
     {
       "slug": "vscode-api",

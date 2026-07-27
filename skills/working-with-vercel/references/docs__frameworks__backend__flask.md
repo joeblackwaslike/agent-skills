@@ -17,8 +17,8 @@ related:
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "494a655d4175f2bc15136ccc11adda95e44f90738c3b344a89ab0eadec894dec"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "c07d509346ea555c0077a8c22dc3e0fa6b19f4603ab825f0f08fe2546e558972"
 ---
 
 # Deploy a Flask app on Vercel
@@ -168,7 +168,7 @@ property](/docs/project-configuration/vercel-json#functions).
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to Flask applications, including:
 
-- **Application size**: The Flask application becomes a single bundle, which has a standard bundle size limit of 500MB. [Large Functions](/docs/functions/limitations#large-functions-beta) support Python bundles up to 5GB on Fluid compute when enabled (public beta). Our bundling process removes `__pycache__` and `.pyc` files from the deployment's bundle to reduce size, but does not perform application bundling.
+- **Application size**: The Flask application becomes a single bundle, which has a standard bundle size limit of 500MB. [Large Functions](/docs/functions/limitations#large-functions-beta) support Python bundles up to 5GB on Fluid compute when enabled (public beta).
 
 ## More resources
 

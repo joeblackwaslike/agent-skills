@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/friendliai.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b82210821097796c149cb7a611a6722f986ddca700c2882f52b687ba82af2a3b"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "3f9e5bf96d25047162876065e96da6406ac56db307ada3a933294d521e57ea07"
 ---
 
 # FriendliAI Provider
@@ -288,6 +288,7 @@ const friendli = createOpenAI({
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

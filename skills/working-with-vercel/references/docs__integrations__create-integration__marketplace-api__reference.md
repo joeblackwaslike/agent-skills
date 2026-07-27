@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "aee8364e844b46cce51423b0f7258fc086dd57a12bd1b18a4e5f82d4c7df3bc4"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "52d3da351af9a404ede38b3e514b1237906e8b22d4ddd2a92c8c5c683a93e3f8"
 ---
 
 # Vercel Marketplace REST API
@@ -718,6 +718,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -739,6 +740,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -761,6 +763,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -788,6 +791,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -809,6 +813,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -831,6 +836,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -869,6 +875,7 @@ One of the provided values in the request query is invalid.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
 - **409**: Success
+- **410**: Success
 - **422**: Success
 - **429**: Success
 
@@ -908,6 +915,7 @@ One of the provided values in the request query is invalid.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
 - **409**: Success
+- **410**: Success
 - **422**: Success
 
 ---
@@ -930,6 +938,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -961,6 +970,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -997,6 +1007,7 @@ One of the provided values in the request query is invalid.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
 - **409**: Success
+- **410**: Success
 
 ---
 
@@ -1017,6 +1028,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -1039,6 +1051,8 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
+- **429**: Success
 
 ---
 
@@ -1066,6 +1080,7 @@ One of the provided values in the request query is invalid.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
 - **409**: Success
+- **410**: Success
 
 ---
 
@@ -1094,6 +1109,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -1124,6 +1140,7 @@ One of the provided values in the request query is invalid.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
 - **409**: Success
+- **410**: Success
 - **422**: Success
 
 ---
@@ -1173,6 +1190,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -1209,6 +1227,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -1231,6 +1250,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -1254,6 +1274,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 
@@ -1284,6 +1305,7 @@ One of the provided values in the request query is invalid.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
 - **409**: Success
+- **410**: Success
 - **412**: Success
 
 ---
@@ -1308,6 +1330,7 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
 
 ---
 

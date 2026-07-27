@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f05cfbae42edf1496a427e2e6810da2482e31205e2a4f317a8efea89fcd4ad18"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "e67d232329a16cc83d3a5b165f13bdf3888fafac0f4a5c79e6bb38f3073d004c"
 ---
 
 # Chatbot Message Persistence
@@ -115,7 +115,7 @@ import { dataPartsSchema, metadataSchema } from '@util/schemas';
 const tools = {
   weather: tool({
     description: 'Get weather information',
-    parameters: z.object({
+    inputSchema: z.object({
       location: z.string(),
       units: z.enum(['celsius', 'fahrenheit']),
     }),

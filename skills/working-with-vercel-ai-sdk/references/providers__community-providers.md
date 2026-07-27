@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "5e2f5eb7c3bbf23fd2b585e51143f3bd7fdc7fb740b71bc919dd3663c6ced887"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "e908c76a85a8cbf42fe3043b1b55002b8777a954d2b4600c68920337c1ec66e2"
 ---
 
 # Community Providers
@@ -147,6 +147,7 @@ Here are the community providers that implement the Language Model Specification
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

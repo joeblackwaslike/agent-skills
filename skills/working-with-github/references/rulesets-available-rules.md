@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "b14fd68ba02556a31f86f2a337a9f7c6eb24bcaf9bd62d982a43293eaa098274"
+fetched_at: "2026-07-27T07:36:12.022Z"
+sha256: "cd01afc041c4f6e4bf28f8762b5dee6007c10e46b794faacdc0daa28fd52a46e"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -202,7 +202,7 @@ If your repositories are configured with {% data variables.product.prodname_code
 * Analysis fails for any reason, for example: you have exhausted your budget for actions minutes.
 * {% data variables.product.prodname_code_quality_short %} found a result of a severity of the level defined in the ruleset, or a higher severity.
 
-For more information, see [AUTOTITLE](/code-security/concepts/about-code-quality) and [AUTOTITLE](/code-security/how-tos/maintain-quality-code/set-pr-thresholds).
+For more information, see [AUTOTITLE](/code-security/concepts/code-quality/code-quality) and [AUTOTITLE](/code-security/how-tos/maintain-quality-code/set-pr-thresholds).
 
 ## Restrict code coverage
 

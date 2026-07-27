@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/firemoon.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "5122725b4a8c0e3e1ebaeb195887b4f138052c4290821966dce4e7668a0c90f9"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "891bad25ef01f7be1304d364ff54e79f60d444a51acb46b473070333b64ba499"
 ---
 
 # Firemoon Provider
@@ -245,6 +245,7 @@ try {
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

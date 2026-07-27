@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/workflow-artifacts.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "96c291de62f135cc2ef32d9db72dfd0aeb97c599c4f610f4d51446aaefc294d4"
+fetched_at: "2026-07-27T07:35:46.931Z"
+sha256: "86dbfa10fcac6b2647df33ca2858cdf63efa63beb4c8241a3519fe4662350a2f"
 ---
 
 ## About workflow artifacts
@@ -19,7 +19,7 @@ Common artifacts include:
 
 {% data reusables.actions.comparing-artifacts-caching %}
 
-For more information on dependency caching, see [AUTOTITLE](/actions/reference/workflows-and-actions/dependency-caching#comparing-artifacts-and-dependency-caching).
+For more information on dependency caching, see [AUTOTITLE](/actions/reference/workflows-and-actions/dependency-caching).
 
 {% ifversion artifact-attestations %}
 

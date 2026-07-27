@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "ad653f49dd524ef7de379a5b4aadc5686f3471532cab06206c8cc3a654d6986d"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "b644d81d14f9dd5586cb56efc7ced2ec0eef5678cc786ac06dcc06ea617560ad"
 ---
 
 # OpenAI Compatible Providers
@@ -215,7 +215,10 @@ const model = provider.imageModel('model-id');
 ### Basic Image Generation
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import {
+  createOpenAICompatible,
+  type OpenAICompatibleImageModelOptions,
+} from '@ai-sdk/openai-compatible';
 import { generateImage } from 'ai';
 
 const provider = createOpenAICompatible({
@@ -228,8 +231,49 @@ const { images } = await generateImage({
   model: provider.imageModel('model-id'),
   prompt: 'A futuristic cityscape at sunset',
   size: '1024x1024',
+  providerOptions: {
+    providerName: {
+      quality: 'high',
+      output_format: 'jpeg',
+      output_compression: 80,
+      background: 'opaque',
+    } satisfies OpenAICompatibleImageModelOptions,
+  },
 });
 ```
+
+### Image Model Options
+
+The following common provider options are available for image models:
+
+- **size** _string_
+
+  Dimensions of the generated image. Use the top-level `size` option for
+  standard dimensions, or this provider option for provider-specific values
+  such as `auto`.
+
+- **quality** _string_
+
+  Quality of the generated image. Supported values depend on the provider and
+  model.
+
+- **output_format** _string_
+
+  File format of the generated image.
+
+- **output_compression** _number_
+
+  Compression level from `0` to `100` for formats such as JPEG and WebP.
+
+- **background** _string_
+
+  Background behavior for the generated image. Supported values depend on the
+  provider and model.
+
+Providers and models may support `auto` for `size`, `quality`, or `background`.
+
+`OpenAICompatibleImageModelOptions` also accepts additional provider-specific
+options. These options are passed through to the provider API unchanged.
 
 ### Image Editing
 
@@ -700,6 +744,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

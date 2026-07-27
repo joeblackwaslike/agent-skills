@@ -3,7 +3,7 @@ title: get-member
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-member
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-member on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-member.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c20be2796193d3791f906ea3f373991eb012d3d818cb35e77c54cb4339d161ec"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "561f694634948bd994727b51e9f0c8088b79763a6d0c29ba862caf9258a92b87"
 ---
 
 # Get Member Information
@@ -66,6 +66,10 @@ The request is not authorized.
 You do not have permission to access this resource.
 
 ### 404
+
+Success
+
+### 410
 
 Success
 

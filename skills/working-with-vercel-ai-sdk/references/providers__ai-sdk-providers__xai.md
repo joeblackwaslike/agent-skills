@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "c4eb97188545f0c9b8be2de4cd772df821cc9c88133ed3ec6c041e3009981dee"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "6dde37ec59ee590012b38c50805fc9cbd180b889906b073f948dba6754d92729"
 ---
 
 # xAI Grok Provider
@@ -934,6 +934,7 @@ const { video } = await generateVideo({
   duration: 5,
   providerOptions: {
     xai: {
+      user: 'user-123',
       pollTimeoutMs: 600000, // 10 minutes
     } satisfies XaiVideoModelOptions,
   },
@@ -1203,6 +1204,14 @@ You can validate the provider options using the `XaiVideoModelOptions` type.
   Video resolution. When using the SDK's standard `resolution` parameter,
   `1280x720` maps to `720p` and `854x480` maps to `480p`.
   Use this provider option to pass the native format directly.
+
+- **user** _string_
+
+  Optional identifier for the end user responsible for the request. xAI uses
+  this value for abuse monitoring. It is sent unchanged for video generation
+  (including reference-to-video) and video editing requests, and is omitted
+  when not configured. It is not sent for video extension requests. Use an
+  opaque stable identifier and avoid sending unnecessary personal information.
 
 - **mode** _'edit-video' | 'extend-video' | 'reference-to-video'_
 

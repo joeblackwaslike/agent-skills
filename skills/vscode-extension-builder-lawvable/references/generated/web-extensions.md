@@ -1,8 +1,8 @@
 ---
 title: "Web Extensions"
 source: "https://code.visualstudio.com/api/extension-guides/web-extensions"
-fetched_at: "2026-07-20T06:45:35.555Z"
-sha256: "dae402df3a98f9dd27c76fdd91a8166f8da34f396d1154bcb0cca2a07720895b"
+fetched_at: "2026-07-27T07:31:06.590Z"
+sha256: "e469acd1cd49b9af72e95991d6e49abf3dd1facdf51f7120abe72c8b100883fd"
 ---
 
 # Web Extensions
@@ -383,7 +383,7 @@ npx: installed 78 in 2.196s
    └────────────────────────────────────────────────────┘
 ```
 
-Finally, open [vscode.dev](https://vscode.dev), run **Developer: Install Extension From Location...** from the Command Palette (⇧⌘P (Windows, Linux Shift+cmd+P)), paste the URL from above, `https://localhost:5000` in the example, and select **Install**.
+Finally, open [vscode.dev](https://vscode.dev), run **Developer: Install Extension From Location...** from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)), paste the URL from above, `https://localhost:5000` in the example, and select **Install**.
 
 **Check the logs**
 

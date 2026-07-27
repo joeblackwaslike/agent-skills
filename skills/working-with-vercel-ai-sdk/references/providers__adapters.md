@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f6434e6bb94374eb528b086767e1f56287a2f29a8a65b7eef40b0f93004111cf"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "1081401cd346ed403983fcf591fc50ab5e8f5725f21e8ba2a9e09807d5a52926"
 ---
 
 # Adapters
@@ -149,6 +149,7 @@ The following adapters are currently available:
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

@@ -3,7 +3,7 @@ title: Vercel SDK
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about vercel sdk on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-07-20T06:54:24.493Z"
-sha256: "5b8c8db2a6f1fd3793bb74c2bd9268f60a39a37dbb9c504c10e06d1f936adb46"
+fetched_at: "2026-07-27T07:38:06.408Z"
+sha256: "a0e9adbd108ecff58c20bf0b5370df799a81d79072117fcee972c1bce4079a73"
 ---
 
 # Vercel SDK Reference
@@ -40,6 +40,15 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **PATCH** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/sdk/access-groups/update-an-access-group-project.md) | Update an access group project |
 | **DELETE** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/sdk/access-groups/delete-an-access-group-project.md) | Delete an access group project |
 
+## api-ai-gateway
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/api-ai-gateway/list-rules.md) | List rules |
+| **POST** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/api-ai-gateway/create-rule.md) | Create rule |
+| **PATCH** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/api-ai-gateway/update-rule.md) | Update rule |
+| **DELETE** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/api-ai-gateway/delete-rule.md) | Delete rule |
+
 ## artifacts
 
 | Method | Endpoint | Description |
@@ -50,6 +59,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **PUT** | [`/v8/artifacts/{hash}`](/docs/rest-api/sdk/artifacts/upload-a-cache-artifact.md) | Upload a cache artifact |
 | **HEAD** | [`/v8/artifacts/{hash}`](/docs/rest-api/sdk/artifacts/check-if-a-cache-artifact-exists.md) | Check if a cache artifact exists |
 | **POST** | [`/v8/artifacts`](/docs/rest-api/sdk/artifacts/query-information-about-an-artifact.md) | Query information about an artifact |
+| **DELETE** | [`/v8/artifacts`](/docs/rest-api/sdk/artifacts/delete-all-cache-artifacts.md) | Delete all cache artifacts |
 
 ## billing
 
@@ -105,6 +115,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/sdk/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/token/{connector}/import`](/docs/rest-api/sdk/connect/import-connect-tokens.md) | Import Connect tokens |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/sdk/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
+| **POST** | [`/v1/connect/install/{connector}`](/docs/rest-api/sdk/connect/create-a-connect-installation-request.md) | Create a Connect installation request |
 
 ## deployments
 
@@ -129,6 +140,22 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v2/domains/{domain}/records`](/docs/rest-api/sdk/dns/create-a-dns-record.md) | Create a DNS record |
 | **PATCH** | [`/v1/domains/records/{recordId}`](/docs/rest-api/sdk/dns/update-an-existing-dns-record.md) | Update an existing DNS record |
 | **DELETE** | [`/v2/domains/{domain}/records/{recordId}`](/docs/rest-api/sdk/dns/delete-a-dns-record.md) | Delete a DNS record |
+
+## Other
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **PUT** | [`/domains/{domain}/records`](/docs/rest-api/sdk/untagged/replacedomainsbydomainrecords.md) | PUT /domains/{domain}/records |
+| **GET** | [`/domains/records/{recordId}`](/docs/rest-api/sdk/untagged/getdomainsrecordsbyrecordid.md) | GET /domains/records/{recordId} |
+| **POST** | [`/api-keys`](/docs/rest-api/sdk/untagged/createapikeys.md) | POST /api-keys |
+| **POST** | [`/v2/observability/query`](/docs/rest-api/sdk/untagged/createobservabilityquery.md) | POST /v2/observability/query |
+| **GET** | [`/v2/observability/schema`](/docs/rest-api/sdk/untagged/getobservabilityschema.md) | GET /v2/observability/schema |
+| **GET** | [`/v2/observability/schema/{metricId}`](/docs/rest-api/sdk/untagged/getobservabilityschemabymetricid.md) | GET /v2/observability/schema/{metricId} |
+| **POST** | [`/speed-insights/toggle`](/docs/rest-api/sdk/untagged/createspeedinsightstoggle.md) | POST /speed-insights/toggle |
+| **GET** | [`/storage/stores/{id}`](/docs/rest-api/sdk/untagged/getstoragestoresbyid.md) | GET /storage/stores/{id} |
+| **POST** | [`/storage/stores/blob`](/docs/rest-api/sdk/untagged/createstoragestoresblob.md) | POST /storage/stores/blob |
+| **DELETE** | [`/storage/stores/blob/{id}`](/docs/rest-api/sdk/untagged/deletestoragestoresblobbyid.md) | DELETE /storage/stores/blob/{id} |
+| **POST** | [`/web/insights/toggle`](/docs/rest-api/sdk/untagged/createwebinsightstoggle.md) | POST /web/insights/toggle |
 
 ## domains-registrar
 
@@ -360,7 +387,10 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | Method | Endpoint | Description |
 |---|---|---|
 | **GET** | [`/v10/projects`](/docs/rest-api/sdk/projects/retrieve-a-list-of-projects.md) | Retrieve a list of projects |
+| **GET** | [`/v1/projects/traces`](/docs/rest-api/sdk/projects/get-a-project-trace-by-request-id.md) | Get a project trace by request ID |
 | **POST** | [`/v11/projects`](/docs/rest-api/sdk/projects/create-a-new-project.md) | Create a new project |
+| **POST** | [`/v1/projects/{idOrName}/token`](/docs/rest-api/sdk/projects/generate-a-project-oidc-token.md) | Generate a project OIDC token |
+| **POST** | [`/v1/projects/traces/session`](/docs/rest-api/sdk/projects/create-a-trace-session-token-for-a-deployment.md) | Create a trace session token for a deployment |
 | **GET** | [`/v9/projects/{idOrName}`](/docs/rest-api/sdk/projects/find-a-project-by-id-or-name.md) | Find a project by id or name |
 | **PATCH** | [`/v9/projects/{idOrName}`](/docs/rest-api/sdk/projects/update-an-existing-project.md) | Update an existing project |
 | **DELETE** | [`/v9/projects/{idOrName}`](/docs/rest-api/sdk/projects/delete-a-project.md) | Delete a Project |
@@ -431,6 +461,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/fs/mkdir`](/docs/rest-api/sdk/sandboxes/create-a-directory.md) | Create a directory |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/fs/write`](/docs/rest-api/sdk/sandboxes/write-files.md) | Write files |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/snapshot`](/docs/rest-api/sdk/sandboxes/create-a-snapshot.md) | Create a snapshot |
+| **POST** | [`/v2/sandboxes/{name}/fork`](/docs/rest-api/sdk/sandboxes/fork-a-named-sandbox.md) | Fork a named sandbox |
 
 ## security
 
@@ -445,6 +476,20 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/create-system-bypass-rule.md) | Create System Bypass Rule |
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/sdk/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
+
+## api-security
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/security/firewall/config`](/docs/rest-api/sdk/api-security/returns-activated-waf-config.md) | Returns activated WAF config |
+| **DELETE** | [`/v1/security/firewall/config/{configVersion}`](/docs/rest-api/sdk/api-security/returns-activated-waf-config-1.md) | Returns activated WAF config |
+| **POST** | [`/v1/security/firewall/config/{configVersion}/activate`](/docs/rest-api/sdk/api-security/returns-activated-waf-config-2.md) | Returns activated WAF config |
+
+## firewall
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/sdk/firewall/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
 
 ## teams
 
@@ -478,7 +523,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/vcr/repository/{idOrName}/images`](/docs/rest-api/sdk/vcr/list-repository-images.md) | List repository images |
 | **GET** | [`/v1/vcr/repository/{idOrName}/tags`](/docs/rest-api/sdk/vcr/list-repository-tags.md) | List repository tags |
 | **GET** | [`/v1/vcr/repository/{idOrName}/tags/{tag}`](/docs/rest-api/sdk/vcr/get-a-repository-tag.md) | Get a repository tag |
-| **GET** | [`/v1/vcr/repository/{idOrName}/images/{imageId}`](/docs/rest-api/sdk/vcr/get-a-repository-image.md) | Get a repository image |
+| **GET** | [`/v1/vcr/repository/{idOrName}/images/{imageIdOrDigest}`](/docs/rest-api/sdk/vcr/get-a-repository-image.md) | Get a repository image |
 | **DELETE** | [`/v1/vcr/repository/{idOrName}/images/{imageId}`](/docs/rest-api/sdk/vcr/delete-a-repository-image.md) | Delete a repository image |
 
 ## web-analytics
@@ -516,6 +561,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 |---|---|---|
 | **GET** | [`/v8/certs/{id}`](/docs/rest-api/sdk/certs/get-cert-by-id.md) | Get cert by id |
 | **DELETE** | [`/v8/certs/{id}`](/docs/rest-api/sdk/certs/remove-cert.md) | Remove cert |
+| **GET** | [`/v8/certs`](/docs/rest-api/sdk/certs/get-certs.md) | Get certs |
 | **POST** | [`/v8/certs`](/docs/rest-api/sdk/certs/issue-a-new-cert.md) | Issue a new cert |
 | **PUT** | [`/v8/certs`](/docs/rest-api/sdk/certs/upload-a-cert.md) | Upload a cert |
 

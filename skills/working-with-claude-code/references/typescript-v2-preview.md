@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview.md"
-fetched_at: "2026-06-15T05:52:57.871Z"
-sha256: "f6a71545c9c84bcfe62470b91591118b76ef4bd315438503e7a18603209c7ad8"
+fetched_at: "2026-07-27T07:31:29.456Z"
+sha256: "9299fb45b5fc6be56a7efbc6167f73dbea4d9c73db575ddf624297566b17b328"
 ---
 
 > ## Documentation Index
@@ -15,7 +15,7 @@ sha256: "f6a71545c9c84bcfe62470b91591118b76ef4bd315438503e7a18603209c7ad8"
 <Warning>
   The V2 session API is no longer supported. TypeScript Agent SDK 0.3.142 removes `unstable_v2_createSession`, `unstable_v2_resumeSession`, `unstable_v2_prompt`, and the `SDKSession` and `SDKSessionOptions` types.
 
-  To migrate, use the [`query()` API](/en/agent-sdk/typescript) and the [session options](/en/agent-sdk/sessions) it accepts. Pass an `AsyncIterable<SDKUserMessage>` for multi-turn conversations, or `options.resume` to continue a saved session. This page is kept for reference if you maintain code on Agent SDK 0.2.x or earlier.
+  To migrate, use the [`query()` API](/docs/en/agent-sdk/typescript) and the [session options](/docs/en/agent-sdk/sessions) it accepts. Pass an `AsyncIterable<SDKUserMessage>` for multi-turn conversations, or `options.resume` to continue a saved session. This page is kept for reference if you maintain code on Agent SDK 0.2.x or earlier.
 </Warning>
 
 V2 was an experimental session API that removed the need for async generators and yield coordination. Instead of managing generator state across turns, each turn was a separate `send()`/`stream()` cycle. The API surface reduced to three concepts:
@@ -388,13 +388,13 @@ interface SDKSession {
 
 ## Feature availability
 
-The V2 session API does not support every V1 feature. The following require the [V1 SDK](/en/agent-sdk/typescript):
+The V2 session API does not support every V1 feature. The following require the [V1 SDK](/docs/en/agent-sdk/typescript):
 
 * Session forking (`forkSession` option)
 * Some advanced streaming input patterns
 
 ## See also
 
-* [TypeScript SDK reference (V1)](/en/agent-sdk/typescript) - Full V1 SDK documentation
-* [SDK overview](/en/agent-sdk/overview) - General SDK concepts
+* [TypeScript SDK reference (V1)](/docs/en/agent-sdk/typescript) - Full V1 SDK documentation
+* [SDK overview](/docs/en/agent-sdk/overview) - General SDK concepts
 * [V2 examples on GitHub](https://github.com/anthropics/claude-agent-sdk-demos/tree/main/hello-world-v2) - Working code examples

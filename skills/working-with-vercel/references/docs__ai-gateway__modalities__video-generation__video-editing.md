@@ -13,8 +13,8 @@ related:
 summary: Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "051e22c0b9e2c13e6e988e56f01c9ce081a6cbb186382d86730f6655d1c29816"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "68895bf25e90ce62fe901d92576ddc93498322f38b4ccc8942b952d18b97e04e"
 ---
 
 # Video Editing
@@ -25,7 +25,7 @@ Edit existing videos using text prompts. Describe the changes you want and the m
 
 Grok Imagine Video (by xAI) can edit existing videos using text prompts. Provide a source video URL and describe the desired edits.
 
-[Browse the latest Grok video models](https://vercel.com/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
+[Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
 
 > **💡 Note:** Video editing output matches the input video's aspect ratio and resolution,
 > capped at 720p. A 1080p input will be downsized to 720p. The `duration`,

@@ -12,11 +12,12 @@ related:
   - /docs/functions
   - /docs/vercel-firewall
   - /docs/vercel-firewall/vercel-waf
+  - /docs/vercel-firewall/vercel-waf/custom-rules
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "0c44511c9d156db268fb12b2cc282475a8592b9ec324823bc76c72b518ffcc71"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "626b5e3c8a2c5a6ed700c94103e787c5520b89b2774ee913a5aea2bd3d0ad7a6"
 ---
 
 # Security
@@ -47,11 +48,24 @@ Headers that enhance security by preventing unauthorized downloads, blocking ext
 
 All files stored on Vercel Blob are secured using AES-256 encryption. This encryption process is applied at rest and is transparent, ensuring that files are encrypted before being saved to the disk and decrypted upon retrieval.
 
-### Firewall and WAF integration
+### Firewall and WAF integration&#x20;
 
 Vercel Blob is protected by Vercel's [platform-wide firewall](/docs/vercel-firewall#platform-wide-firewall) which provides DDoS mitigation and blocks abnormal or suspicious levels of incoming requests.
 
-Vercel Blob does not currently support [Vercel WAF](/docs/vercel-firewall/vercel-waf). If you need WAF rules on your blob URLs, consider using a [Vercel function](/docs/functions) to proxy the blob URL. This approach may introduce some latency to your requests but will enable the use of WAF rules on the blob URLs.
+You can also protect a store with your own [Vercel WAF](/docs/vercel-firewall/vercel-waf) rules, such as [custom rules](/docs/vercel-firewall/vercel-waf/custom-rules), [IP blocking](/docs/vercel-firewall/vercel-waf/ip-blocking), and [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting). To enable it:
+
+1. Open [your Blob store](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fstores%2Fblob%2F%5Bstore%5D%2Fsettings\&title=Go+to+your+Blob+store) in the dashboard and select the **Settings** tab.
+2. In the **Firewall** section, select **Protect your store**, then **Enable firewall**.
+
+This connects your store to `vercel-blob-default-project`, a Vercel-managed project that holds the firewall rules for your team's Blob stores. The project is team-wide, so other stores that enable firewall protection reuse it and share its rules. After enabling, Vercel redirects you to the project's firewall page where you create your rules. To update them later, return to the store's **Settings** tab and select **Configure firewall**.
+
+> **⚠️ Warning:** The **Challenge** action serves a JavaScript challenge that only a web
+> browser can solve, so requests from the [Blob
+> SDK](/docs/vercel-blob/using-blob-sdk) and other server-side code fail with a
+> 429 response. Only use **Challenge** in rules that never match your
+> application's SDK traffic.
+
+The [OWASP core ruleset](/docs/vercel-firewall/vercel-waf/managed-rulesets#configure-owasp-core-ruleset) is not supported for Blob stores.
 
 
 ---

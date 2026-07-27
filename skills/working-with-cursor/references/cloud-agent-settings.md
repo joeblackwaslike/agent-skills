@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/settings.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "73b45864414757193469b99568ec59e77059dbbbf6c884d727d7659e2954638b"
+fetched_at: "2026-07-27T07:33:35.768Z"
+sha256: "88298f4f5e590c770cdbca9eff92bb70516c443146d6bdcbed1264e9b6ed0653"
 ---
 
 # Cloud Agents settings
@@ -59,6 +59,8 @@ Changes save instantly and affect new agents immediately.
 ### Team follow-ups
 
 Team members can send follow-up messages to cloud agents created by other users on the same team. This is useful when a teammate starts an agent and you need to course-correct, add context, or continue the work while they're unavailable.
+
+Follow-ups build on agent visibility. A teammate must be able to view the agent before they can send follow-ups: they must belong to the same Cursor team, and they need their own access to the agent's repository. See [Share agents with your team](https://cursor.com/docs/cloud-agent.md#share-agents-with-your-team).
 
 Team admins control this behavior from the [Cloud Agents security settings](https://cursor.com/dashboard/cloud-agents) with three options:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/reuse-automations/reuse-workflows.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "1d4d3b4bf4907b51e3a96eebc5005a3e68e3f3abb4769c94067891a42f171528"
+fetched_at: "2026-07-27T07:35:46.931Z"
+sha256: "465df9197f5cd56fc38f5c7567f677b93340976d6b8369b602e31404c01742b2"
 ---
 
 ## Creating a reusable workflow
@@ -231,7 +231,7 @@ The following reusable workflow has a single job containing two steps. In each o
 
 The `value` must be set to the value of a job-level output within the called workflow. Step-level outputs must first be mapped to job-level outputs as shown below.
 
-For more information, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/pass-job-outputs#overview) and [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-syntax#onworkflow_calloutputs).
+For more information, see [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/pass-job-outputs) and [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-syntax#onworkflow_calloutputs).
 
 {% raw %}
 

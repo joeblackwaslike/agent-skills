@@ -15,8 +15,8 @@ related:
 summary: Generate images from text prompts using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1c46cbef52a0373e5fc9da7c9bab5f3e7960994822d7ef41e95e2771eee33e7c"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "52f5800bc145b8f671f36f97b7dc54311f4a5188743204361b3cb36070859037"
 ---
 
 # Image Generation Quickstart
@@ -92,7 +92,7 @@ This quickstart walks you through generating your first image with AI Gateway.
   The generated image will be saved in your project directory.
 
 - ### Next steps
-  - See [supported image generation models](https://vercel.com/ai-gateway/models?type=image)
+  - See [supported image generation models](/ai-gateway/models?type=image)
   - Learn about [multimodal LLMs](/docs/ai-gateway/modalities/image-generation/ai-sdk#multimodal-llms) that can generate images alongside text
   - Explore [image editing capabilities](/docs/ai-gateway/modalities/image-generation/openai#editing-images) with OpenAI models
 

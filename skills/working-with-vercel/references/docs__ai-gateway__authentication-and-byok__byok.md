@@ -12,11 +12,12 @@ related:
   - /docs/ai-gateway/pricing
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/security-and-compliance/regional-inference
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "05b866d3b805085e869b1a586635478627d6af96712f6b2a00f7351238174012"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "c0244ca6e3a325d900534aad6914d1ac00f316eb939726f40573549ce35b2ec3"
 ---
 
 # Bring Your Own Key (BYOK)
@@ -165,6 +166,12 @@ If you have your own ZDR agreement with a provider, mark an individual BYOK key 
 
 > **💡 Note:** For the full behavior and configuration steps, see [ZDR and
 > BYOK](/docs/ai-gateway/security-and-compliance/zdr#byok).
+
+## Regional inference
+
+Using your own credentials doesn't opt you out of regional routing. AI Gateway applies `inferenceRegion` to BYOK requests the same way it does to system credentials, calling the provider's in-region endpoint with your key. A region set on the request overrides a region saved on the credential, such as a Vertex `location`.
+
+For the full behavior, including failure cases and how to confirm where a request ran, see [BYOK and data residency](/docs/ai-gateway/security-and-compliance/regional-inference#byok-and-data-residency).
 
 ## Testing your credentials
 

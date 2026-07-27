@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "325ea9d252e3d0ab67426d642ba99c68ad40e1549ac2f6386cc1a88775d0bc98"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "6ff0a954234f1a0b07364cf460f0ba921b6a5f51cf0de7858cd7b6cfecd677e2"
 ---
 
 # AI SDK Harnesses
@@ -190,6 +190,7 @@ tools, UI, and terminal usage.
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

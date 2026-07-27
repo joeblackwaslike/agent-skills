@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/react-native-apple.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "919c73759ba0fbd93356070b27d1aa290f98da233f1e292c7aeca6352828ec67"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "daaf5783446062b6d5d1991893ce78b78f7eb4d83824158a5209115dc9c4bf6d"
 ---
 
 # React Native Apple Provider
@@ -123,7 +123,7 @@ import { z } from 'zod';
 
 const getWeather = tool({
   description: 'Get current weather information',
-  parameters: z.object({
+  inputSchema: z.object({
     city: z.string().describe('The city name'),
   }),
   execute: async ({ city }) => {
@@ -301,6 +301,7 @@ Different Apple AI features have varying iOS version requirements:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 
 

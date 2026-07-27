@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/has-tool-call.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "0a144ed4caf467c0fe73dfffeb717420aa8030463e630d49c23d35e6d125d171"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "5b6ee773d0542a7f7d43f0369fb8528d307b8092d047d3ce81725d0560c3277e"
 ---
 
 # `hasToolCall()`
@@ -122,7 +122,7 @@ const result = await generateText({
     calculate: calculateTool,
     finalAnswer: {
       description: 'Provide the final answer to the user',
-      parameters: z.object({
+      inputSchema: z.object({
         answer: z.string(),
       }),
       execute: async ({ answer }) => answer,

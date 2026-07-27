@@ -3,7 +3,7 @@ title: provision-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "e1feefff0da03d053c94f25aed23efe6e9bd937c22b1e894664e29c87f213382"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "7739d3bc2800521d7829e154e2867664740dd84b21148db3ee63727262d99693"
 ---
 
 # Provision Resource
@@ -134,7 +134,8 @@ User Auth OIDC token claims schema:
   "externalId": "string" // An partner-provided identifier used to indicate the source of the resource provisioning. In the Deploy Button flow, the `externalId` will equal the `external-id` query parameter.,
   "protocolSettings": {
     "experimentation": {
-      "edgeConfigId": "string" // An Edge Config selected by the user for partners to push data into.
+      "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into. Deprecated alias of `globalConfigId`.,
+      "globalConfigId": "string" // A Global Config selected by the user for partners to push data into.
     }
   }
 }
@@ -155,8 +156,10 @@ Return the newly provisioned resource
   "protocolSettings": {
     "experimentation": {
       "edgeConfigSyncingEnabled": "boolean" // Set to true when the user enabled the syncing.,
-      "edgeConfigId": "string" // An Edge Config selected by the user for partners to push data into.,
-      "edgeConfigTokenId": "string" // The ID of the token used to access the Edge Config.
+      "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into.,
+      "globalConfigId": "string" // Alias for `edgeConfigId`.,
+      "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
+      "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
     }
   },
   "billingPlan": {

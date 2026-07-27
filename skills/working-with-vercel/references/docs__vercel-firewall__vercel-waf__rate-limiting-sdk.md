@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3d3b454fae9ab34421141360bd0e52f7b187f26ae89edd66aebb04bda43cc192"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "577eb19c83eef3ac451310474f1ae9087ed1f443ffde34ccd7dcc2dc067ec910"
 ---
 
 # Rate Limiting SDK
@@ -45,7 +45,7 @@ You can configure a custom rule with rate limit in your code by using the [`@ver
      - Select **Publish** to apply the changes to your production deployment
 
 - ### Configure rate limiting in code
-  You can now use the Rate limit ID `update-object` set up above with `@vercel/firewall` to rate limit any request based on your own conditions. By default, the rate limit key will be based on the IP address from the request if no custom `rateLimitKey` is specified.
+  You can now use the Rate limit ID `update-object` set up above with `@vercel/firewall` to rate limit any request based on your own conditions. Every request is counted against a rate limit key, and each unique key gets its own bucket. By default, the key is the client IP. Override it by passing a `rateLimitKey` (see [Custom rate limit keys](#custom-rate-limit-keys)).
   ```ts filename="rate-limit.ts"
   import { checkRateLimit } from '@vercel/firewall';
 
@@ -75,7 +75,7 @@ You can configure a custom rule with rate limit in your code by using the [`@ver
 
 ## Custom rate limit keys
 
-Rate limit rules can be used with custom keys defined in code specified in the `rateLimitKey` field to create unique buckets. This can be used when you want to rate limit on something other than the IP address, such as an authenticated user ID or organization ID.
+Pass a `rateLimitKey` to bucket requests on something other than the client IP, such as an authenticated user ID or organization ID. The key you pass replaces the default client-IP bucket entirely: every request with the same key shares a bucket, even when the requests come from different IPs. To keep IP as part of the bucket, compose the key yourself (see below).
 
 For example, this code will have a rate limit per authenticated user:
 
@@ -122,6 +122,12 @@ Pick a delimiter that does not appear in your id values, or use a structured enc
 ### Combine with Firewall conditions
 
 The following example shows how to use **Firewall rule conditions** in the dashboard together with a `rateLimitKey` you choose in code. The dashboard **If** conditions narrow which requests hit the rule (for example, a specific request header). Your function then calls `checkRateLimit` with a custom key.
+
+> **⚠️ Warning:** Adding a dashboard condition to a rule does not restore per-IP bucketing.
+> The bucket is defined by the `rateLimitKey` your function passes. If every
+> matching request resolves to the same key (for example, a constant string),
+> the rule becomes effectively global. Include the caller's IP or another
+> per-caller value in the key when you want per-IP or per-user separation.
 
 #### Update the custom rule filters
 

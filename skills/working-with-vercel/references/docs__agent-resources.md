@@ -16,8 +16,8 @@ related:
 summary: Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4af93acf5af8ffe9a22c8bbd2418287abec22e2f4e3e1b1c0a6b2e7b0c604c0b"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "ec5887555deee2c574f025a77ca65092a4c94c7162e2e70fec348e9c2699ab5e"
 ---
 
 # Agent Resources
@@ -57,6 +57,7 @@ The [Vercel MCP server](/docs/agent-resources/vercel-mcp) connects AI assistants
 - Search Vercel documentation
 - List and manage your projects
 - View deployment details and logs
+- Query visitors, page views, and custom events
 - Check domain availability
 
 ## Coding agents

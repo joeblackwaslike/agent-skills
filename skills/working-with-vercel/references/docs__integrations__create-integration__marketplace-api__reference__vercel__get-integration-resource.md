@@ -3,7 +3,7 @@ title: get-integration-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-integration-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-integration-resource.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4593f03512fb2c76f3438feb7851867b40e6bdc0e4887bbc391c1071f55cf77d"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "b3a92d42284784038d4433a45cb10cc5e13d566bb49c5d6b24bfc6af63503674"
 ---
 
 # Get Integration Resource
@@ -53,9 +53,8 @@ Success
   "productId": "string" // required // The ID of the product the resource is derived from,
   "protocolSettings": {
     "experimentation": {
-      "edgeConfigSyncingEnabled": "boolean",
       "edgeConfigId": "string",
-      "edgeConfigTokenId": "string"
+      "globalConfigId": "string"
     }
   },
   "notification": {
@@ -82,6 +81,10 @@ The request is not authorized.
 You do not have permission to access this resource.
 
 ### 404
+
+Success
+
+### 410
 
 Success
 

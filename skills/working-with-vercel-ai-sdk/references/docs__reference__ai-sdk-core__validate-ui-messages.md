@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "3a14e52246660d19d0f1aa2fc1076c6b6e348c4789d3e20b19e86aaf944a721b"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "35327e6d440b9dde485fd808acd10606aa8176d8611cb5b343509137da43adae"
 ---
 
 # `validateUIMessages`
@@ -56,7 +56,7 @@ const dataSchemas = {
 const tools = {
   weather: tool({
     description: 'Get weather info',
-    parameters: z.object({
+    inputSchema: z.object({
       location: z.string(),
     }),
     execute: async ({ location }) => `Weather in ${location}: sunny`,

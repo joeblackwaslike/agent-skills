@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b6b6ebf6149fc15ddf5b273d1e685eb7769597965e3f997ea87b3068fe1d8dd9"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "6247fc487a43f515a0a1e72dbdbb3dbf91ba23a3345c9acd2a66e81291a03fba"
 ---
 
 # Migrating from RSC to UI
@@ -239,7 +239,7 @@ export async function POST(request) {
     tools: {
       displayWeather: {
         description: 'Display the weather for a location',
-        parameters: z.object({
+        inputSchema: z.object({
           latitude: z.number(),
           longitude: z.number(),
         }),

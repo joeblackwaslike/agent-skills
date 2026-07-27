@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a926352f323776c1b86129d7cf4402259e6112497fe7083975976f0cabe98f9c"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "63ab8f7df4429dd0f4f12be85ce999007639e5c316c48f32f0f9a079a352d997"
 ---
 
 # `streamText()`
@@ -478,10 +478,10 @@ To see `streamText` in action, check out [these examples](#examples).
     },
     {
       name: 'timeout',
-      type: 'number | { totalMs?: number; stepMs?: number; chunkMs?: number; toolMs?: number; tools?: { [toolName]Ms?: number } }',
+      type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number; toolMs?: number; tools?: { [toolName]Ms?: number } }',
       isOptional: true,
       description:
-        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, chunkMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each individual step (LLM call). chunkMs sets the timeout between stream chunks - the call will abort if no new chunk is received within this duration. toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern {toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.',
+        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, chunkMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each individual step (LLM call). firstChunkMs sets the timeout until the first content-bearing output in each step; metadata, stream starts, empty deltas, raw chunks, and transport activity do not satisfy it. chunkMs sets the timeout between content-bearing output chunks after output has started; non-content chunks do not reset it. toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern {toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.',
     },
     {
       name: 'headers',
@@ -4021,7 +4021,7 @@ To see `streamText` in action, check out [these examples](#examples).
     },
     {
       name: 'pipeUIMessageStreamToResponse',
-      type: '(response: ServerResponse, options?: ResponseInit & UIMessageStreamOptions) => void',
+      type: '(response: ServerResponse, options?: ResponseInit & UIMessageStreamOptions) => Promise<void>',
       description:
         'Writes UI message stream output to a Node.js response-like object.',
       properties: [
@@ -4052,7 +4052,7 @@ To see `streamText` in action, check out [these examples](#examples).
     },
     {
       name: 'pipeTextStreamToResponse',
-      type: '(response: ServerResponse, init?: ResponseInit) => void',
+      type: '(response: ServerResponse, init?: ResponseInit) => Promise<void>',
       description:
         'Writes text delta output to a Node.js response-like object. It sets a `Content-Type` header to `text/plain; charset=utf-8` and writes each text delta as a separate chunk.',
       properties: [

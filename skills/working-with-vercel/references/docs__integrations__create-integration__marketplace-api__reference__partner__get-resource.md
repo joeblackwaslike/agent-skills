@@ -3,7 +3,7 @@ title: get-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3a26001e8b8e61ad4f5d6682f88cf0a02a67137f469e8cc062a3d1689a587709"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "eaf9864a565e7fa56db1f8f14ed11c49fd92065fb8d5b8e7982c96f4dc4c5829"
 ---
 
 # Get Resource
@@ -111,8 +111,10 @@ Return the resource
   "protocolSettings": {
     "experimentation": {
       "edgeConfigSyncingEnabled": "boolean" // Set to true when the user enabled the syncing.,
-      "edgeConfigId": "string" // An Edge Config selected by the user for partners to push data into.,
-      "edgeConfigTokenId": "string" // The ID of the token used to access the Edge Config.
+      "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into.,
+      "globalConfigId": "string" // Alias for `edgeConfigId`.,
+      "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
+      "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
     }
   },
   "billingPlan": {

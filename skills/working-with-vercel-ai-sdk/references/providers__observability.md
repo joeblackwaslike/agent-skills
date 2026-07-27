@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "3efdbffbaaaaa03b142232dffe04481e79d1bed8652b2102db71e224db727d4a"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "6af3acc44a59f7947db19f6ce49d887b7a5c0b10eb3154f03659b8c97d402d15"
 ---
 
 # Observability Integrations
@@ -172,6 +172,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

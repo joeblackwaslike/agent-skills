@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "55efd27854394c782732b3ae572cd39c485531ca64d0164f58bfb31c366a802b"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "e6b4df1b8e94cb5f02dfc1063e173cfc678f1e35bc5a82206df514d5cda1d00f"
 ---
 
 # Using the Python Runtime with Vercel Functions
@@ -136,6 +136,11 @@ This lets you send parts of a response as they become ready.
 
 By default, Python Vercel Functions include all files from your project that
 are reachable at build time. There is no automatic tree-shaking for Python.
+
+During deployment builds, Vercel automatically compiles Python source files
+into bytecode and includes the resulting `.pyc` files in the function bundle
+when space allows. This reduces initialization time and requires no
+configuration.
 
 Make sure your `pyproject.toml` or `requirements.txt` only lists packages
 necessary at runtime. Explicitly exclude files you don't need to keep bundles

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/error-handling.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "bc1dd22d7c8ddd996034d026cc0ebd2c442f66aa0db1ea5a0172848db41f9fa5"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "891af98b5777fb10061ab889f2cf36fc0d0c62b191c9eb0f1f268fc9f38ab514"
 ---
 
 # Error Handling and warnings
@@ -112,11 +112,13 @@ export default function Chat() {
 }
 ```
 
-#### Alternative: replace last message
+#### Alternative: replace the failed message
 
-Alternatively you can write a custom submit handler that replaces the last message when an error is present.
+Alternatively, you can write a custom submit handler that replaces the failed
+user message with new input. If the assistant response started streaming before
+the error, remove both the partial assistant response and its user message.
 
-```tsx file="app/page.tsx" highlight="13-15,17-18,35"
+```tsx file="app/page.tsx" highlight="13-19,21-22,39"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -130,7 +132,11 @@ export default function Chat() {
     event.preventDefault();
 
     if (error != null) {
-      setMessages(messages.slice(0, -1)); // remove last message
+      setMessages(messages =>
+        messages.at(-1)?.role === 'assistant'
+          ? messages.slice(0, -2)
+          : messages.slice(0, -1),
+      );
     }
 
     sendMessage({ text: input });

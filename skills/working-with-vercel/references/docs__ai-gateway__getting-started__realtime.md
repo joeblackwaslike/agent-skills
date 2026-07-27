@@ -13,8 +13,8 @@ related:
 summary: Build a low-latency, speech-to-speech voice agent with AI Gateway and the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c0f30baba5617304ca572c9b7043d909337da04f2df329270aafce6435a19f3b"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "01a10d81336ec3b1887b94cea98fbe8566eed0f3533368e134dad01c6cf2d191"
 ---
 
 # Realtime Quickstart
@@ -266,7 +266,7 @@ For a live, two-way voice agent, use the AI SDK in a browser app. Your server mi
 ## Next steps
 
 - Read the [Realtime reference](/docs/ai-gateway/modalities/realtime) for session config, session limits, and limitations
-- See [supported realtime models](https://vercel.com/ai-gateway/models)
+- See [supported realtime models](/ai-gateway/models)
 
 
 ---

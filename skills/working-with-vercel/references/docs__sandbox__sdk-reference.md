@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "0cf9447d160eed045e3abb0b4ac4c9e892728a7dea6ecd1b9e758ba8ed436048"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "51c44c9b218128173f329f2152f278adde3a967e5e1ad1ded58c7339f99a354d"
 ---
 
 # JS SDK Reference
@@ -129,12 +129,24 @@ console.log(sandbox.status);
 
 #### `timeout`
 
-`timeout` shows how many milliseconds remain before the session stops automatically. Compare the remaining time against upcoming commands and call `sandbox.extendTimeout()` if the window is too short.
+`timeout` is the session timeout the sandbox was created with, in milliseconds. It stays constant for the sandbox's lifetime and never decreases while the session runs. Calling `sandbox.extendTimeout()` extends the live deadline but leaves `timeout` unchanged. To read how much time the session has left, use `expiresAt`.
 
 **Returns:** `number`.
 
 ```ts
 console.log(sandbox.timeout);
+```
+
+#### `expiresAt`
+
+`expiresAt` returns the time when the current session will stop automatically. It works with [`sandbox.extendTimeout()`](#sandbox.extendtimeout) and moves forward when you extend the timeout. For milliseconds remaining, subtract the current time.
+
+**Returns:** `Date | undefined`.
+
+```ts
+const msRemaining = sandbox.expiresAt
+  ? sandbox.expiresAt.getTime() - Date.now()
+  : undefined;
 ```
 
 #### `tags`
@@ -590,7 +602,7 @@ console.log(session.sessionId, session.status);
 ```ts
 const result = await sandbox.stop();
 console.log(result.snapshot?.id);
-console.log(result.activeCpuUsageMs);
+console.log(result.activeCpuDurationMs);
 console.log(result.networkTransfer); // { ingress, egress }
 ```
 
@@ -598,7 +610,7 @@ console.log(result.networkTransfer); // { ingress, egress }
 | ------------- | ------------- | -------- | -------------------------- |
 | `opts.signal` | `AbortSignal` | No       | Cancel the stop operation. |
 
-**Returns:** `Promise<{ snapshot?: { id: string; status: "created" | "deleted" | "failed"; sizeBytes: number; createdAt: number; expiresAt?: number; parentId?: string }; activeCpuUsageMs: number; networkTransfer: { ingress: number; egress: number } }>`.
+**Returns:** `Promise<{ snapshot?: { id: string; status: "created" | "deleted" | "failed"; sizeBytes: number; createdAt: number; expiresAt?: number; parentId?: string }; activeCpuDurationMs: number; networkTransfer: { ingress: number; egress: number } }>`.
 
 #### `sandbox.update()`
 

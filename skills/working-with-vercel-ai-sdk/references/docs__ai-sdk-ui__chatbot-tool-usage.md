@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1c502ab54b13973c30ae312f7aa2c37afa1e26469c013bfebb9afdf8ec085f94"
+fetched_at: "2026-07-27T07:36:45.119Z"
+sha256: "7c953bf196b7b013127457b9aa06ad61c5a11f36c79a0cacc845bdec5a33b748"
 ---
 
 # Chatbot Tool Usage
@@ -129,6 +129,11 @@ There are three things worth mentioning:
    It asks the user for confirmation and displays the result once the user confirms or denies the execution.
    The result is added to the chat using `addToolOutput` with the `tool` parameter for type safety.
 
+Typed tool parts also include the `approval-requested`, `approval-responded`,
+and `output-denied` states. Include these states when handling `part.state`
+exhaustively, even when a tool does not require approval. See
+[Tool execution approval](#tool-execution-approval) for a complete approval UI.
+
 ```tsx filename='app/page.tsx' highlight="6,11,16,19-23,25-26,28-33,51,66-70,77-81"
 'use client';
 
@@ -218,6 +223,10 @@ export default function Chat() {
                         </div>
                       </div>
                     );
+                  case 'approval-requested':
+                    return <div key={callId}>Approval requested.</div>;
+                  case 'approval-responded':
+                    return <div key={callId}>Approval response received.</div>;
                   case 'output-available':
                     return (
                       <div key={callId}>
@@ -226,6 +235,8 @@ export default function Chat() {
                     );
                   case 'output-error':
                     return <div key={callId}>Error: {part.errorText}</div>;
+                  case 'output-denied':
+                    return <div key={callId}>Tool call denied.</div>;
                 }
                 break;
               }
@@ -240,6 +251,10 @@ export default function Chat() {
                     );
                   case 'input-available':
                     return <div key={callId}>Getting location...</div>;
+                  case 'approval-requested':
+                    return <div key={callId}>Approval requested.</div>;
+                  case 'approval-responded':
+                    return <div key={callId}>Approval response received.</div>;
                   case 'output-available':
                     return <div key={callId}>Location: {part.output}</div>;
                   case 'output-error':
@@ -248,6 +263,8 @@ export default function Chat() {
                         Error getting location: {part.errorText}
                       </div>
                     );
+                  case 'output-denied':
+                    return <div key={callId}>Location request denied.</div>;
                 }
                 break;
               }
@@ -267,6 +284,10 @@ export default function Chat() {
                         Getting weather information for {part.input.city}...
                       </div>
                     );
+                  case 'approval-requested':
+                    return <div key={callId}>Approval requested.</div>;
+                  case 'approval-responded':
+                    return <div key={callId}>Approval response received.</div>;
                   case 'output-available':
                     return (
                       <div key={callId}>
@@ -280,6 +301,8 @@ export default function Chat() {
                         {part.errorText}
                       </div>
                     );
+                  case 'output-denied':
+                    return <div key={callId}>Weather request denied.</div>;
                 }
                 break;
               }
@@ -632,10 +655,16 @@ export default function Chat() {
                     return <pre>{JSON.stringify(part.input, null, 2)}</pre>;
                   case 'input-available':
                     return <pre>{JSON.stringify(part.input, null, 2)}</pre>;
+                  case 'approval-requested':
+                    return <div>Approval requested.</div>;
+                  case 'approval-responded':
+                    return <div>Approval response received.</div>;
                   case 'output-available':
                     return <pre>{JSON.stringify(part.output, null, 2)}</pre>;
                   case 'output-error':
                     return <div>Error: {part.errorText}</div>;
+                  case 'output-denied':
+                    return <div>Tool call denied.</div>;
                 }
             }
           })}

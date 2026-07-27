@@ -16,8 +16,8 @@ related:
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a495573ccb87ed250043285de51765708d62e58b5d856bd51a3bba5a5e6fdcd9"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "f8a9cb7824a86c1d1c651da4fdab631e2427065ee5cbebb941028ebccdf07985"
 ---
 
 # Deploying Turborepo to Vercel
@@ -101,7 +101,7 @@ Follow the steps below to deploy your Turborepo to Vercel:
 
 ## Using global `turbo`
 
-Turborepo is also available globally when you deploy on Vercel, which means that you do **not** have to add `turbo` as a dependency in your application.
+Turborepo is also available globally when you deploy on Vercel.
 
 Thanks to [automatic workspace scoping](https://turborepo.com/blog/turbo-1-8-0#automatic-workspace-scoping) and [globally installed turbo](https://turborepo.com/blog/turbo-1-7-0#global-turbo), your [build command](/docs/deployments/configure-a-build#build-command) can be as straightforward as:
 
@@ -109,7 +109,7 @@ Thanks to [automatic workspace scoping](https://turborepo.com/blog/turbo-1-8-0#a
 turbo build
 ```
 
-The appropriate [filter](https://turborepo.com/docs/core-concepts/monorepos/filtering) will be automatically inferred based on the configured [root directory](/docs/deployments/configure-a-build#root-directory).
+The appropriate [filter](https://turborepo.com/docs/core-concepts/monorepos/filtering) will be automatically inferred based on the configured [Root Directory](/docs/deployments/configure-a-build#root-directory).
 
 > **💡 Note:** To override this behavior and use a specific version of Turborepo, install the
 > desired version of `turbo` in your project. [Learn
@@ -118,6 +118,16 @@ The appropriate [filter](https://turborepo.com/docs/core-concepts/monorepos/filt
 ## Ignoring unchanged builds
 
 You likely don't need to build a preview for every application in your monorepo on every commit. To ensure that only applications that have changed are built, ensure your project is configured to automatically [skip unaffected projects](/docs/monorepos#skipping-unaffected-projects).
+
+### Custom Ignored Build Step
+
+If your monorepo does not fit the [requirements for automatic skipping](/docs/monorepos#requirements), you can design your own skipping behavior.
+
+For Turborepos, we recommend using `turbo query affected` to see if the project or its dependencies have had changes. In the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step) for your project, use:
+
+```
+turbo query affected --base=$VERCEL_GIT_PREVIOUS_SHA --packages <your-project-name> --exit-code
+```
 
 ## Setup Remote Caching for Turborepo on Vercel
 

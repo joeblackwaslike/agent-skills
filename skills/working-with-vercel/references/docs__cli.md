@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "e2b56c35dafd23389a7f47c4f9aa333fb2952c78069c44c37edaa4ec7e6195d0"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "dcf7d9e2c6b192ae28f892fbb9e40f10791959c41439b85ba6d0c8ca6a394d9c"
 ---
 
 # Vercel CLI Overview
@@ -237,7 +237,6 @@ Purchase Vercel products like credits, addons, subscriptions, and domains direct
 
 ```bash
 vercel buy credits v0 100
-vercel buy addon siem 1
 vercel buy pro
 vercel buy domain example.com
 ```
@@ -433,6 +432,7 @@ Manage feature flags for your Vercel Project.
 
 ```bash
 vercel flags list
+vercel flags evaluations [flag]
 vercel flags create [slug]
 vercel flags versions [flag] --limit 10
 vercel flags versions diff [flag] --revision [number]

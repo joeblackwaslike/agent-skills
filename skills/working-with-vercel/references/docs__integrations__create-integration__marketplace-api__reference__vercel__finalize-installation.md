@@ -3,7 +3,7 @@ title: finalize-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/finalize-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/finalize-installation"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about finalize-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/finalize-installation.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "8509426954c12ddee8814e410085bc010a0259d05365bdb8a29541887927152e"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "f74602bf03089565e94f12d13d1452638fc20bfc98657e5dc81bac759fee004e"
 ---
 
 # Finalize Installation
@@ -54,6 +54,10 @@ The request is not authorized.
 You do not have permission to access this resource.
 
 ### 404
+
+Success
+
+### 410
 
 Success
 

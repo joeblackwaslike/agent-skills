@@ -13,8 +13,8 @@ related:
 summary: List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "03876c1a47804d4682aff588f65682d93b4244084f44948ba5393986818c9b4c"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "e6a9672823d7c787cdfddfba8af9b6ba20178c627d6ab94b000cdd9ff05a7568"
 ---
 
 # vercel alerts
@@ -70,6 +70,7 @@ The `--type` option filters by alert type. You can repeat the flag or pass comma
 
 ```bash filename="terminal"
 vercel alerts --type usage_anomaly
+vercel alerts --type custom_alert
 vercel alerts --type usage_anomaly,error_anomaly
 vercel alerts --type usage_anomaly --type error_anomaly
 ```
@@ -214,6 +215,7 @@ vercel alerts rules ls
 | --- | --- |
 | `-p, --project` | Project name or ID, for example `my-app` or `prj_abc123`. Overrides the linked project. Requires team context. |
 | `-a, --all` | Team-wide rules only. Omits the project filter and ignores the linked project. |
+| `--type` | Filter by alert rule type. Repeatable and comma-separated, for example `--type custom_alert` or `--type usage_anomaly,error_anomaly`. |
 | `--format` | Output format. Supports `json`. |
 
 ##### Examples
@@ -224,6 +226,9 @@ vercel alerts rules ls
 
 # List team-wide rules
 vercel alerts rules ls --all
+
+# List custom alert rules
+vercel alerts rules ls --type custom_alert
 
 # JSON output
 vercel alerts rules ls --format json

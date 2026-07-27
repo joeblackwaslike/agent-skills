@@ -13,14 +13,14 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b56a99a9f7b47b4f99d03ee4807ffb705256f2594233bb6bfef8aaeb1ace9f68"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "fce66239f995596bacb0d4c900c4f46fc38001abe5624a9a0411ee65ce406c0c"
 ---
 
 # Image Generation with Chat Completions API
 
 AI Gateway supports image generation using the Chat Completions API for the models listed under the **Image Gen** filter at the [AI Gateway Models
-page](https://vercel.com/ai-gateway/models?type=image), including multimodal LLMs and image-only models.
+page](/ai-gateway/models?type=image), including multimodal LLMs and image-only models.
 
 ## Multimodal LLMs
 

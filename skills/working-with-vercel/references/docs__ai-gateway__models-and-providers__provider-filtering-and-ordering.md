@@ -15,8 +15,8 @@ related:
 summary: Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "f34a590d87a0dbd5a407f0c866c6663cbd957d97669aed4385a8660be5628b4d"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "fa79f27040f1ac151427aab9aac6b73bb82e6a1ea4a6a91eff74bc853f47fed1"
 ---
 
 # Provider Filtering, Ordering & Sorting
@@ -37,7 +37,7 @@ You can also copy the provider slug using the copy button next to a provider's n
 
 **Through the AI Gateway site:**
 
-Visit a model's page on the [AI Gateway models page](https://vercel.com/ai-gateway/models) (e.g., [Claude Sonnet 4.6](https://vercel.com/ai-gateway/models/claude-sonnet-4.6)).
+Visit a model's page on the [AI Gateway models page](/ai-gateway/models) (e.g., [Claude Sonnet 4.6](/ai-gateway/models/claude-sonnet-4.6)).
 
 The bottom section of the page lists the available providers for that model. The copy button next to a provider's name will copy their slug for pasting.
 

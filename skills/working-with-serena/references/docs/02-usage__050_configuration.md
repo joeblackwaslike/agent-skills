@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/050_configuration.md"
-fetched_at: "2026-07-20T06:52:31.491Z"
-sha256: "491666aca57764b3de220a1a65354f11b67a1371f4ef72db3119a40f6f4d75f7"
+fetched_at: "2026-07-27T07:36:41.325Z"
+sha256: "643b7035d96995884ca048a3506e530d5bd8e68ecdeb471d85a374cf3c5b2b3e"
 ---
 
 # Configuration
@@ -39,6 +39,7 @@ Some of the configurable settings include:
   * logging settings
   * the set of trusted project paths
   * advanced settings specific to individual language servers (see [below](ls-specific-settings))
+  * priorities of language servers, which affect auto-detection 
 
 The global configuration settings apply to all projects.
 Some of the settings it contains can, however, be *extended* or *overridden* in project-specific settings, contexts and modes.
@@ -79,6 +80,7 @@ Serena comes with pre-defined contexts:
   The full set of Serena's tools is provided, as the application is assumed to have no prior coding-specific capabilities.
 * `claude-code`: Optimized for use with Claude Code, it disables tools that would duplicate Claude Code's built-in capabilities.
 * `codex`: Optimized for use with OpenAI Codex.
+* `grok`: Optimized for use with xAI's Grok Build CLI.
 * `ide`: Generic context for IDE assistants/coding agents, e.g. VSCode, Cursor, or Cline, focusing on augmenting existing capabilities.
   Basic file operations and shell execution are assumed to be handled by the assistant's own capabilities.
 * `agent`: Designed for scenarios where Serena acts as a more autonomous agent, for example, when used with Agno.
@@ -87,7 +89,7 @@ Choose the context that best matches the type of integration you are using.
 
 Find the concrete definitions of the above contexts [here](https://github.com/oraios/serena/tree/main/src/serena/resources/config/contexts).
 
-Note that the contexts `ide` and `claude-code` are **single-project contexts** (defining `single_project: true`).
+Note that the contexts `ide`, `claude-code`, and `grok` are **single-project contexts** (defining `single_project: true`).
 For such contexts, if a project is provided at startup, the set of tools is limited to those required by the project's
 concrete configuration, and other tools are excluded completely, allowing the set of tools to be minimal.
 Tools explicitly disabled by the project will not be available at all. Since changing the active project
@@ -251,7 +253,7 @@ ls_specific_settings:
 These settings are supported by all language servers whose dependency provider derives from
 `LanguageServerDependencyProviderBaseCommand`, and `ls_path` is additionally exposed by some implementations explicitly.
 Common examples include: `ansible`, `bash`, `bsl`, `clojure`, `cpp`, `cpp_ccls`, `hlsl`, `html`, `kotlin`, `lean4`, `luau`, `markdown`, `php`,
-`php_phpactor`, `python`, `rust`, `scss`, `solidity`, `systemverilog`, `toml`, `typescript`, and `yaml`.
+`nix`, `php_phpactor`, `python`, `rust`, `scss`, `solidity`, `systemverilog`, `toml`, `typescript`, and `yaml`.
 
 If `ls_path` is set, Serena's managed download or install is bypassed for that language server.
 In that case, any server-specific version or registry settings do not apply.
@@ -848,6 +850,44 @@ Supported settings:
 | `matlab_path` | auto-detected | Path to the MATLAB installation. This overrides `MATLAB_PATH` and auto-detection, but not Serena's managed extension download. |
 | `matlab_extension_version` | `1.3.9` | Override the MathWorks VS Code extension version Serena downloads. |
 
+#### Nix
+
+Serena uses [nixd](https://github.com/nix-community/nixd) for Nix support.
+
+Supported settings:
+
+| Setting | Default | Description |
+|---|---|---|
+| `ls_path` | PATH/common-path discovery followed by managed installation | Absolute path to a nixd executable or launcher. When set, Serena bypasses its nixd discovery, installation, and version check. |
+| `config_path` | `null` | Absolute path to a UTF-8 JSON file containing the value of the `nixd` settings section. A leading `~` is expanded. |
+
+Example:
+
+```yaml
+ls_specific_settings:
+  nix:
+    ls_path: /absolute/path/to/nixd-project
+    config_path: /absolute/path/to/nixd-settings.json
+```
+
+The JSON document contains the settings object directly, without an outer `nixd` key:
+
+```json
+{
+  "formatting": {
+    "command": ["alejandra"]
+  },
+  "nixpkgs": {
+    "expr": "import <nixpkgs> { }"
+  },
+  "options": {}
+}
+```
+
+Serena loads this file once when creating the language server, uses it as nixd's `initializationOptions`, and serves the same effective
+settings through LSP `workspace/configuration` requests. Existing `initializationOptions` configured under `ls_specific_settings.nix`
+remain top-level overrides and are reflected in both paths. Restart Serena after changing the JSON file.
+
 
 #### Pascal (`pasls`)
 
@@ -937,6 +977,19 @@ Supported settings:
 | `ignore_vendor` | `true` | Ignore directories named `vendor` while indexing the project. |
 | `maxFileSize` | unset | Forwarded as `intelephense.files.maxSize` in `initializationOptions`. |
 | `maxMemory` | unset | Forwarded as `intelephense.maxMemory` in `initializationOptions`. |
+| `file_filter` | unset | Additional file extensions (with leading dot) to treat as PHP sources, e.g. `[".module", ".install"]`; added to the defaults `.php` / `.phtml` (#1710). |
+
+Example configuration making Drupal source files visible to the symbol tools:
+
+```yaml
+ls_specific_settings:
+  php:
+    file_filter: [".module", ".install", ".inc", ".theme", ".profile", ".engine"]
+```
+
+Notes:
+- Extensions added via `file_filter` are synced into Serena's PHP source-file matcher and pushed to Intelephense as `intelephense.files.associations` globs at startup, so `find_symbol` and the language server treat the same files as PHP sources.
+- The matcher is reset on every language server activation, so one project's `file_filter` does not leak into another.
 
 #### PHP (`Phpactor`)
 
@@ -962,16 +1015,43 @@ Supported settings:
 
 #### Python
 
-Serena uses Pyright for the `python` language key.
+Serena supports several Python language servers through separate language keys.
+
+##### Pyright (`python`)
+
+Pyright is the default Python language server.
 
 Supported settings:
 
 | Setting | Default | Description |
 |---|---|---|
-| `ls_path` | current Python executable | Override the Python interpreter Serena uses to run `-m pyright.langserver`. |
+| `pyright_version` | `1.1.403` | Override the exact Pyright package version Serena launches through `uvx` / `uv tool run`. |
+| `ls_path` | managed executable | Override `pyright-langserver` and bypass the managed `uvx` / `uv tool run` invocation. The default `--stdio` argument is still applied. |
 
-Note:
-- There is currently no separate `python_ty` language key in Serena's current SolidLSP implementation.
+##### BasedPyright (`python_basedpyright`)
+
+To use [BasedPyright](https://github.com/DetachHead/basedpyright), select its separate experimental
+language key:
+
+```yaml
+languages: [python_basedpyright]
+ls_specific_settings:
+  python_basedpyright:
+    basedpyright_version: "1.39.9"
+```
+
+Supported settings:
+
+| Setting | Default | Description |
+|---|---|---|
+| `basedpyright_version` | `1.39.9` | Override the exact BasedPyright package version Serena launches through `uvx` / `uv tool run`. |
+| `ls_path` | managed executable | Override `basedpyright-langserver` and bypass the managed `uvx` / `uv tool run` invocation. The default `--stdio` argument is still applied. |
+
+The generic [language-server launch settings](override-ls-path), including `ls_base_cmd`, `ls_args`,
+and `ls_extra_args`, apply to both servers. `ls_args` replaces the default arguments, while
+`ls_extra_args` appends to them.
+
+Other alternative Python language keys are `python_ty`, `python_pyrefly`, and `python_jedi`.
 
 #### Ruby
 
@@ -1082,8 +1162,9 @@ Supported settings:
 | `typescript_version` | `5.9.3` | Override the bundled `typescript` npm package version Serena installs when `ls_path` is not set. |
 | `typescript_language_server_version` | `5.1.3` | Override the bundled `typescript-language-server` npm package version Serena installs when `ls_path` is not set. |
 | `npm_registry` | `null` | Override the npm registry Serena uses for the managed install. |
-| `indexing_timeout` | `30.0` | Timeout in seconds for waiting on tsserver's `$/progress` project-indexing signal (both at startup and before the first cross-file reference query). If indexing does not complete within this window, Serena logs a warning and proceeds anyway. Increase it for very large projects. |
+| `indexing_timeout` | `30.0` | Timeout in seconds for waiting on tsserver's `$/progress` project-indexing signal to *drain* once it has started (both at startup and before the first cross-file reference query). If indexing does not complete within this window, Serena logs a warning and proceeds anyway. Increase it for very large projects. |
 | `server_ready_timeout` | `10.0` | Timeout in seconds for waiting on the server-ready signal after initialization. If the signal does not arrive within this window, Serena logs a message and proceeds anyway. |
+| `indexing_start_grace` | `5.0` | Timeout in seconds to wait for tsserver to *start* reporting `$/progress` before the first cross-file reference query. tsserver must resolve the project graph before it can emit the first progress token, and that can take longer than the default on a very large project; if it takes longer than this window, Serena assumes no indexing was needed and may return incomplete cross-file references. Raising `indexing_timeout` alone does not help here, since this grace elapses first. Increase this for very large projects if `find_referencing_symbols`/`request_references` returns incomplete results shortly after project load. |
 
 #### Svelte
 

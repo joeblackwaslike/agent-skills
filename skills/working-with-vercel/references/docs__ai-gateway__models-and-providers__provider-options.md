@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b24d052955b6b58e5e07d4f75ea00d953a50f6ed66a6aade497c550208f31e61"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "9a52704d7c8a1fb7228ba51485467a6212751e3ec6d4584c00b68c4849c23cab"
 ---
 
 # Provider Options
@@ -195,7 +195,7 @@ providerOptions: {
 You can view the available models for a provider
 in the [**Model List**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fmodels\&title=Go+to+Model+List) section under
 the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in your Vercel dashboard sidebar
-or in the public [models page](https://vercel.com/ai-gateway/models).
+or in the public [models page](/ai-gateway/models).
 
 > **💡 Note:** Provider availability may vary by model. Some models may only be available
 > through specific providers or may have different capabilities depending on the

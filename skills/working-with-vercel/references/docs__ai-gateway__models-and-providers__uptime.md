@@ -15,8 +15,8 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c6299967cda9d7e226434fd2dd72e90d3f9bf62a874d64f5ba5b4fb0111a23a5"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "980fb6627de378a9c1b1e81473f631436b8b646b6e70bc61ff8ddaf075dffd18"
 ---
 
 # Uptime and Status
@@ -43,10 +43,10 @@ If a provider has no recent activity, AI Gateway can't measure its uptime, so th
 
 You can open the uptime view from:
 
-- The [AI Gateway model catalog](https://vercel.com/ai-gateway/models). Select a model, then choose **Uptime**.
+- The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Uptime**.
 - The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Models**, select a model, then choose **Uptime**.
 
-You can also link directly at `vercel.com/ai-gateway/models/<model-id>/uptime`, replacing `<model-id>` with the model you want to inspect. For example, see [uptime for Claude Opus 4.7](https://vercel.com/ai-gateway/models/claude-opus-4.7/uptime).
+You can also link directly at `vercel.com/ai-gateway/models/<model-id>/uptime`, replacing `<model-id>` with the model you want to inspect. For example, see [uptime for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7/uptime).
 
 ### Accessing uptime via the API
 
@@ -113,10 +113,10 @@ If a provider has no activity in a bucket, the bar reads "No activity" instead o
 
 You can open the status view from:
 
-- The [AI Gateway model catalog](https://vercel.com/ai-gateway/models). Select a model, then choose **Status**.
+- The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Status**.
 - The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Models**, select a model, then choose **Status**.
 
-You can also link directly at `vercel.com/ai-gateway/models/<model-id>/status`, replacing `<model-id>` with the model you want to inspect. For example, see [status for Claude Opus 4.7](https://vercel.com/ai-gateway/models/claude-opus-4.7/status).
+You can also link directly at `vercel.com/ai-gateway/models/<model-id>/status`, replacing `<model-id>` with the model you want to inspect. For example, see [status for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7/status).
 
 ## Sharing a snapshot
 

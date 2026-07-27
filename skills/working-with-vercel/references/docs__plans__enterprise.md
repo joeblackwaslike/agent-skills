@@ -16,8 +16,8 @@ related:
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ac6f349b576257fd3f7c8af44f6ce20362a6a6103405721267c407e0a8a79128"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "e5b54491a5b4349cf0299ff999de38624ad3ea776f8f7afa046a2c8e99be18a7"
 ---
 
 # Vercel Enterprise Plan
@@ -51,7 +51,7 @@ Data and infrastructure security is paramount in the Enterprise plan with advanc
   and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)
 - [Secure Compute](/docs/networking/secure-compute) (Paid add-on for Enterprise)
 - [Directory Sync](/docs/security/directory-sync)
-- [SIEM Integration](/docs/observability/audit-log#custom-siem-log-streaming) (Paid add-on for Enterprise)
+- [Audit Log Drains](/docs/drains/reference/audit-logs)
 - [Vercel Firewall](/docs/vercel-firewall), including [dedicated DDoS support](/docs/vercel-firewall/ddos-mitigation#dedicated-ddos-support-for-enterprise-teams), [WAF account-level IP Blocking](/docs/security/vercel-waf/ip-blocking#account-level-ip-blocking) and [WAF Managed Rulesets](/docs/security/vercel-waf/managed-rulesets)
 
 ## Conformance and Code Owners

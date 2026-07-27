@@ -3,7 +3,7 @@ title: headinstallationsbyintegrationconfigurationidresourcesbyresourceidexperim
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/headinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/headinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig"
-last_updated: 2026-07-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about headinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/headinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationedgeconfig.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ef8002ebcd19426b80218392131adfd8a4f4407f72a4583aa0e388082c61fb3b"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "c6dd98deff2bfd24bce3d949a1df70aeae4cf8f03018c509fc617f10f5d917ed"
 ---
 
 # Get the data of a user-provided Edge Config
@@ -70,6 +70,10 @@ The request is not authorized.
 You do not have permission to access this resource.
 
 ### 404
+
+Success
+
+### 410
 
 Success
 

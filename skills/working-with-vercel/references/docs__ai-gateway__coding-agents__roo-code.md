@@ -13,8 +13,8 @@ related:
 summary: Use Roo Code with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0af3818ea47a8f2eea5cd160f40cdacc6f2b46ee8b203a211da8fc4a24e27755"
+fetched_at: "2026-07-27T07:38:10.222Z"
+sha256: "280999926de413acd514a808dd613c4a19b3dd60aaa874a7fc67acc7eb928af9"
 ---
 
 # Roo Code
@@ -37,7 +37,7 @@ sha256: "0af3818ea47a8f2eea5cd160f40cdacc6f2b46ee8b203a211da8fc4a24e27755"
   1. Select **Vercel AI Gateway** as your API Provider
   2. Paste your AI Gateway API Key
   3. Choose a model from the available models
-  > **💡 Note:** Roo Code automatically updates to include the models available on AI Gateway. Browse the full catalog on the [models page](https://vercel.com/ai-gateway/models).
+  > **💡 Note:** Roo Code automatically updates to include the models available on AI Gateway. Browse the full catalog on the [models page](/ai-gateway/models).
 
 - ### Start coding
   Your requests will now be routed through AI Gateway. You can verify this by checking your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard.
