@@ -110,6 +110,34 @@ If you're writing a minimal user-global file, keep only:
 
 ---
 
+## Multi-Tool & Symlinks
+
+If you use more than one assistant (Claude Code, Codex, Gemini CLI), don't maintain three
+separate global files. Keep **one canonical `AGENTS.md`** (e.g. in a dotfiles/harness repo) and
+**symlink** it into each tool's config dir:
+
+```bash
+ln -sf ~/dotfiles/AGENTS.md ~/.claude/AGENTS.md
+ln -sf ~/dotfiles/AGENTS.md ~/.codex/AGENTS.md
+ln -sf ~/dotfiles/AGENTS.md ~/.gemini/GEMINI.md
+```
+
+- `~/.claude/CLAUDE.md` = `@AGENTS.md` + `@claude-extras.md` — the second file holds
+  **Claude-only** tool wiring (skill/hook invocation) that Codex/Gemini would only see as dead
+  text.
+- Editing the canonical `AGENTS.md` updates every tool at once — nothing to sync.
+- Anything that can't be symlinked (commands, prompt dirs, MCP config, per-tool transforms) goes
+  in a small idempotent **projection script** (`compile.sh` / Makefile) that regenerates each
+  tool's config and backs up what it overwrites.
+
+**Progressive disclosure:** the global file is read on every session in every tool — keep it
+lean. Push heavy or contextual detail (framework/library lists, verification gates, domain
+playbooks) into **skills** registered across your tools (`~/.claude/skills`, `~/.codex/skills`,
+`~/.gemini/skills`), and have `AGENTS.md` point to the skill rather than inline the detail. See
+`references/multi-tool-compat.md` for the full pattern.
+
+---
+
 ## Common Pitfalls
 
 - **Too many rules:** Every line costs context. If you add 10 rules, 3 will conflict.

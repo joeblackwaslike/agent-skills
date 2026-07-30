@@ -12,7 +12,7 @@ description: >
   a new project or onboarding into an existing one and no instruction file exists, proactively
   suggest creating one.
 metadata:
-  last_updated: "2026-06-05"
+  last_updated: "2026-07-30"
 ---
 
 # Agent Instructions Builder
@@ -147,5 +147,10 @@ for the full decision matrix. Quick summary:
 - **Claude Code only** → write everything in `CLAUDE.md`, use `@import` freely
 - **Codex only** → write everything in `AGENTS.md` (plain Markdown, no imports)
 - **Claude Code + Codex** → write in `AGENTS.md`; `CLAUDE.md` = single line `@AGENTS.md`
-- **+ Gemini / OpenCode** → same as above; add `GEMINI.md` as a plain-Markdown copy of
-  `AGENTS.md` (Gemini doesn't support imports)
+- **+ Gemini / OpenCode** → same as above; make `GEMINI.md` a **symlink** to `AGENTS.md`
+  (`ln -sf AGENTS.md GEMINI.md` — Gemini has no imports, and a symlink means zero sync drift).
+  OpenCode reads `AGENTS.md` directly.
+- **Claude-only tool wiring** (which skill/hook to invoke) → keep it in a separate
+  `claude-extras.md`, and set `CLAUDE.md` = `@AGENTS.md` + `@claude-extras.md` so the shared
+  `AGENTS.md` stays universal. Prefer symlinks from a canonical source over copies; see
+  `references/multi-tool-compat.md`.
