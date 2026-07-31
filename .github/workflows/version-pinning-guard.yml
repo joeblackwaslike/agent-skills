@@ -1,0 +1,54 @@
+# This plugin is distributed by commit SHA, not by a pinned semver string.
+#
+# Claude Code caches an installed plugin under
+# ~/.claude/plugins/cache/<marketplace>/<plugin>/<version>/ and only re-fetches when the
+# version *changes*. Setting `version` in plugin.json pins that value, so shipping a skill
+# edit without also bumping the string is a silent no-op: the cache keeps serving the old
+# copy, `claude plugin update` reports "already current", and nothing errors anywhere.
+#
+# That is exactly what happened here — `1.18.0` from 2026-06-27 to 2026-07-31 while skills/
+# gained ~11KB, so every plugin-loading agent read five-week-old skills for that window.
+#
+# The fix is to not have a string to forget. With `version` omitted from BOTH plugin.json and
+# the marketplace entry, Claude Code falls back to the git commit SHA and every commit is a
+# new version. This is the documented recommendation for internal plugins under active
+# development (plugins-reference: "Commit-SHA version").
+#
+# This job therefore guards the ABSENCE of the field. Re-adding `version` silently
+# reintroduces the five-week failure, so it must be a deliberate, reviewed act.
+name: version-pinning-guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reject a pinned version in plugin.json
+        run: |
+          set -euo pipefail
+          MANIFEST=.claude-plugin/plugin.json
+
+          if ! jq -e . "$MANIFEST" >/dev/null 2>&1; then
+            echo "::error::$MANIFEST is not valid JSON."
+            exit 1
+          fi
+
+          if jq -e 'has("version")' "$MANIFEST" >/dev/null; then
+            pinned=$(jq -r '.version' "$MANIFEST")
+            echo "::error::$MANIFEST pins version \"$pinned\". This plugin ships by commit SHA."
+            echo ""
+            echo "A pinned version means consumers only re-fetch when the string changes, so any"
+            echo "skills/ edit that ships without a bump reaches nobody and reports no error."
+            echo "Remove the field so every commit is a new version:"
+            echo ""
+            echo "  jq 'del(.version)' $MANIFEST > /tmp/p.json && mv /tmp/p.json $MANIFEST"
+            exit 1
+          fi
+
+          echo "OK: no pinned version — distribution is by commit SHA."
