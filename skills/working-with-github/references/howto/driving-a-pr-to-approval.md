@@ -242,6 +242,11 @@ Replying is half the loop. The **reaction** is the graded signal an internal rev
 
 Do not skip 😕 as a middle option. Sampled across one PR's review corpus (cc-recall#55: 51 👍 / 41 😕 / 7 👎), 😕 was the **dominant negative signal** — collapsing it into 👎 or omitting it discards most of the usable feedback. Reactions post via the REST reactions endpoint on the comment id; payloads are in [`code-review-via-api.md`](./code-review-via-api.md).
 
+**Pace a bulk pass — GitHub's secondary rate limit will stop you.** Replying to a large thread backlog in a tight loop trips abuse detection, which returns `422 Validation Failed` with `{"resource":"PullRequestReview","code":"abuse"}` — not a `429`, and not obviously a rate limit unless you read the error body. Measured on a 43-thread pass: the first 40 replies succeeded, then every subsequent call failed until backoff. Two consequences worth designing for:
+
+- **Retry with backoff rather than aborting** — the failure is transient and per-burst, so a bounded retry loop recovers the tail without re-posting the ones that landed.
+- **Never treat a bulk-post failure as "the reply was rejected"** — the content was fine. Blindly re-running the whole loop would double-post the successful 40. Track which comment ids succeeded and retry only the remainder.
+
 ## 9. Resolve conversations
 
 After a thread is genuinely handled (fix pushed, or rebuttal posted and accepted), **resolve it** so it stops counting against the merge gate and the next reviewer pass sees a clean slate. There is **no REST equivalent** — resolution is the GraphQL `resolveReviewThread` mutation keyed on the thread `id` (not the comment id) from step 6:
