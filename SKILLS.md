@@ -22,6 +22,7 @@ For repo conventions and the curated entry points, see [AGENTS.md](AGENTS.md) �
 | `working-with-pieces` | Working with Pieces OS, Desktop, CLI, IDE/browser/Obsidian plugins, MCP server, long-term memory, TypeScript or Python SDKs |
 | `multi-provider-plugins` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
 | `web-research` | Any web search, URL fetching, or multi-source research task |
+| `recovering-session-context` | Reconstructing prior sessions from transcripts — resuming after an interruption or compaction, or auditing recent days for unanswered questions, dropped threads, and partial work |
 | `working-with-github-actions` | Building, configuring, debugging, or optimizing GitHub Actions CI/CD workflows — syntax, triggers, runners, caching, matrix, OIDC deployments, release-please, CodeQL, dependabot |
 | `working-with-git` | Any git command/flag, rewriting history, bisect, conflicts, reflog recovery, git servers — AsciiDoc reference pinned to a Homebrew-resolved Git version + the Pro Git book + how-to playbooks |
 | `working-with-github` | GitHub the platform — gh CLI (pinned), REST + GraphQL APIs, rate limits/efficiency, tokens, PRs, code review, issues, releases & assets, branch protection/rulesets, GitHub flow, multi-branch release, Dependabot/CodeQL config |
