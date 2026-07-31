@@ -290,6 +290,14 @@ Re-poll from step 5. Continue the convergence loop until **all** exit conditions
 - **Read both signals, and verify review age against the head SHA.** Query `reviews { commit { oid } }` and compare each to the current `headRefOid` — do not trust `reviewDecision` alone. Condition 1 above means *approved against the current head*, not approved at some point.
 - A bot that reports via check runs but never submits a follow-up review event will hold `reviewDecision` at its oldest negative verdict indefinitely. That is a **state-machine gap, not a stuck reviewer** — the findings are genuinely resolved, so no dismissal is warranted; see [When a reviewer can't be satisfied](#when-a-reviewer-cant-be-satisfied-dismiss--merge) for the case that *does* need one.
 - Counting threads is subject to the same staleness trap in reverse: `reviewThreads(first:100)` without following `pageInfo.endCursor` will report a clean slate that is only the first page. **A count exactly equal to the page size is a truncation signal, not a measurement.**
+- **`reviews` needs the same pagination, and it overflows sooner than you expect.** `reviews(first:100)` is the natural way to check freshness against `headRefOid` — and it silently returns the *oldest* 100. Every threaded reply you post creates a review entry, so on a PR where you answer a few dozen inline comments the connection blows past 100 from your own replies alone, and the newest bot review falls off the end. The failure is silent and reads as "no fresh review yet", so the loop waits for a verdict that already arrived. Either paginate `reviews` the same way as `reviewThreads`, or read freshness over REST with `--paginate`:
+
+  ```bash
+  gh api repos/{owner}/{repo}/pulls/{pr}/reviews --paginate \
+    --jq '.[] | "\(.submitted_at) \(.user.login) \(.state) \(.commit_id[0:8])"' | tail -5
+  ```
+
+  Observed on ai-review-bot#34: 89 threaded replies pushed the review count past 100, and a `CHANGES_REQUESTED` submitted against the current head was invisible to a `first:100` poll for twelve minutes.
 
 Then merge per repo policy:
 
@@ -311,6 +319,16 @@ The loop runs unattended, so bound it:
 ### When a reviewer can't be satisfied (dismiss + merge)
 
 Addressing every comment assumes the reviewer *converges*. Some don't. An AI reviewer that re-reviews a **truncated or incremental diff** and keeps **no memory of its own prior pass** can become mechanically unable to approve a correct PR: every pass re-derives already-addressed findings from scratch, and if a single agent re-raises one, the merged event stays `REQUEST_CHANGES` — forever. Replying and pushing fixes doesn't help, because the next pass has forgotten them.
+
+**A second, distinct non-convergence mode: the fix itself is reviewable.** The stuck-reviewer case below is about a reviewer *recycling* old findings. The opposite also happens — every finding is genuinely new, and the loop still never terminates, because each fix you push is new diff for the next pass to review. Observed on ai-review-bot#34: five rounds producing 28 → 21 → 15 → 25 → 19 findings, with only 1 of 40 in rounds 3–4 restating an earlier one. Measure it before diagnosing: normalize titles to content-word sets and compare rounds pairwise; a low overlap means new findings, so **dismissal is not warranted** — the reviewer is working, the loop just has no fixed point.
+
+Tells that a round has crossed into diminishing returns:
+
+- Findings that state the code is *correct* (`"the inline comment accurately describes the new logic"`, `"the export location change is fine"`). A finding with no defect in it is noise wearing a severity badge.
+- A round contradicting the previous one on the same line — round N says a counter over-counts, you fix it, round N+1 says it now under-counts.
+- Severity inflation on doc/comment wording: several 🟡 on the phrasing of a JSDoc.
+
+**The exit is a scope boundary, not a dismissal.** Fix what is substantive, answer and resolve the rest, and stop taking new cosmetic findings on code introduced *by review fixes* — file them as follow-ups instead. Say so explicitly on the PR so the decision is on the record. Without a boundary the loop is unbounded by construction, and the max-iteration guard is what should trip.
 
 **Recognize the signature** (all from data, not a hunch):
 
