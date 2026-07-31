@@ -20,8 +20,9 @@ There are two kinds of targets below: **action skills** (do a specific operation
 | Prune merged/deleted branches | `commit-commands:clean_gone` |
 | Branch strategy, PR creation, merge flow | `git-pr-workflows:git-workflow` |
 | Failing CI / GitHub Actions checks | `gh-fix-ci` |
-| Addressing comments on an open PR | `gh-address-comments` |
-| Processing and responding to received review feedback | `superpowers:receiving-code-review` |
+| **Driving a PR to approval + merge — review loop, required reviewers, merge gate** | `agent-skills:working-with-github` → `references/howto/driving-a-pr-to-approval.md` |
+| Addressing comments on an open PR — reply, react, resolve threads | `agent-skills:working-with-github` (mechanics) + `gh-address-comments` |
+| Processing and responding to received review feedback | `superpowers:receiving-code-review` (**evaluate** the claim) **and** `agent-skills:working-with-github` (**act** on it: reply, react, resolve, reviewer authority) |
 | **Any git command/flag, rewriting history, bisect, conflicts, reflog recovery, git servers** | `agent-skills:working-with-git` |
 | **gh CLI, REST/GraphQL API, rate limits, tokens, PRs, code review, issues, releases & assets, branch protection, Dependabot/CodeQL config** | `agent-skills:working-with-github` |
 | **Building a GitHub App / OAuth app / webhook consumer / Octokit bot** | `agent-skills:developing-for-github` |
@@ -56,6 +57,8 @@ A reviewer has left comments on an open PR that need to be addressed or resolved
 ### Responding to Review Feedback
 
 You have received a code review and need to process the feedback, decide what to apply, and respond thoughtfully. Invoke `superpowers:receiving-code-review`.
+
+**That skill covers evaluation, not GitHub mechanics — you need both.** `receiving-code-review` tells you how to judge whether a finding is real; it says nothing about which reviewers gate the merge, how to reply on a thread versus top-level, how to resolve a thread, or how to leave the reaction feedback an internal review bot learns from. For all of that, also invoke `agent-skills:working-with-github` and follow `references/howto/driving-a-pr-to-approval.md` (steps 6–11). Routing to evaluation alone is how an agent triages correctly and then merges past a required reviewer it never enumerated.
 
 ## Reference Skills (look-ups, not actions)
 
