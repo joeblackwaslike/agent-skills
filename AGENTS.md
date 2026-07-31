@@ -15,6 +15,28 @@ Doc-wrapping skills keep `references/` current via `skills/<name>/scripts/update
 
 Fetched docs carry `source`/`fetched_at`/`sha256` frontmatter (the sha drives change-detection, so unchanged content doesn't churn timestamps); each `SKILL.md` carries `metadata.last_updated`. Both flow through `scripts/lib/doc-frontmatter.cjs`. See `authoring-agent-skills` for the full doc-fetching + freshness cookbook (`withFrontmatter`/`setSkillLastUpdated`, `node scripts/backfill-last-updated.cjs`).
 
+## Releasing — bump the version or the change reaches nobody
+
+**Every change under `skills/` requires a version bump in `.claude-plugin/plugin.json`.**
+Consumers install a version-pinned copy into `~/.claude/plugins/cache/<marketplace>/<plugin>/<version>/`
+and only re-fetch when the version *string* changes. Editing a skill without bumping is a
+silent no-op for every installed agent: the cache keeps serving the old copy, `claude plugin
+update` reports "already current", and nothing anywhere raises an error.
+
+This is not theoretical — the version read `1.18.0` from 2026-06-27 to 2026-07-31 while
+`skills/` gained ~11KB. Every plugin-loading agent read five-week-old skills for that entire
+window, which is how a `working-with-github` runbook that already documented the required
+review bots still failed to reach the agents doing PR review.
+
+- CI enforces this: `.github/workflows/version-bump-guard.yml` fails any push or PR that
+  touches `skills/` without moving the version.
+- Do **not** also set `version` in the marketplace manifest — `plugin.json` wins silently, and
+  a stale manifest entry blocks updates.
+- After releasing, `claude plugin update agent-skills@agent-marketplace` (the bare plugin name
+  is not a valid identifier), then restart the session to apply.
+- Verify the refresh landed by grepping the new cache dir, not the source repo — they are
+  different files and the whole failure mode is that they disagree.
+
 ## Agent Instruction Files (CLAUDE.md / AGENTS.md)
 
 **CLAUDE.md is the source of truth.** Key cross-tool differences to remember when creating or editing instruction files:
