@@ -32,6 +32,8 @@ Reference for using **GitHub the platform** — the `gh` CLI, the REST and Graph
 | Open / review / merge a PR (human/UI) | `references/pr-*.md`, `references/review-*.md` |
 | **Review a PR programmatically** (post reviews, inline comments, suggestions, check annotations, statuses) | `references/howto/code-review-via-api.md`; API ref: `references/api-pr-reviews.md`, `api-pr-review-comments.md`, `api-checks-runs.md`, `api-commit-statuses.md` |
 | **Agent runbook: drive a PR branch → PR → review loop → all-approved** | `references/howto/driving-a-pr-to-approval.md` |
+| **Rate a first-party AI reviewer's findings** (👍/👎/😕, why 😕 needs a reply) | `references/howto/giving-feedback-on-ai-reviews.md` |
+| **Read that feedback and act on it** (trends, thresholds, fix surfaces) | `references/howto/tuning-the-ai-reviewer.md` |
 | Resolve review threads / read `reviewDecision` (GraphQL-only) | `references/howto/code-review-via-api.md`, `references/graphql-forming-calls.md` |
 | Cut a release + upload assets/changelog | `references/howto/releases-and-assets.md`, `references/releases-*.md` |
 | Drive a PR → review → merge → release | `references/howto/pr-to-release.md` |

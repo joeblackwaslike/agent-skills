@@ -240,6 +240,8 @@ Replying is half the loop. The **reaction** is the graded signal an internal rev
 - **Rate every actionable comment, not a subset.** Partial rating silently biases the corpus toward whatever the agent happened to find notable, which is the opposite of what the signal is for.
 - **Say *why* in the reply** — valuable because X, or a false positive because `file:line` shows Y. A reaction without a reason is a vote with no argument attached.
 
+Full guidance on what each reaction means, the reply openers that classify without a model call, and where the signal ends up: [`giving-feedback-on-ai-reviews.md`](./giving-feedback-on-ai-reviews.md). The maintainer-side counterpart — reading the trends and acting on them — is [`tuning-the-ai-reviewer.md`](./tuning-the-ai-reviewer.md).
+
 Do not skip 😕 as a middle option. Sampled across one PR's review corpus (cc-recall#55: 51 👍 / 41 😕 / 7 👎), 😕 was the **dominant negative signal** — collapsing it into 👎 or omitting it discards most of the usable feedback. Reactions post via the REST reactions endpoint on the comment id; payloads are in [`code-review-via-api.md`](./code-review-via-api.md).
 
 **Pace a bulk pass — GitHub's secondary rate limit will stop you.** Replying to a large thread backlog in a tight loop trips abuse detection, which returns `422 Validation Failed` with `{"resource":"PullRequestReview","code":"abuse"}` — not a `429`, and not obviously a rate limit unless you read the error body. Measured on a 43-thread pass: the first 40 replies succeeded, then every subsequent call failed until backoff. Two consequences worth designing for:
