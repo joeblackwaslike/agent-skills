@@ -108,17 +108,32 @@ function writeRef(filepath, body, source) {
 
 // ---------- CLI generation (version-exact via uvx) ----------
 
+// The uvx `--from` spec the pin resolves to.
+//
+// Serena's runtime is launched from a git ref, not PyPI, because the config schema the
+// installed projects use (`language_servers`) exists only on main — no released version has
+// it. Generating docs from `serena-agent==<version>` would describe a different program than
+// the one actually running, which is the drift that silently broke 24 project configs.
+// `serena_ref` keeps pin, runtime, and generated docs on one coordinate system.
+function fromSpec(pin) {
+  return pin.serena_ref
+    ? `git+https://github.com/oraios/serena@${pin.serena_ref}`
+    : `serena-agent==${pin.serena_agent}`;
+}
+
 // Resolve how to invoke a serena entrypoint at the pinned version.
-//   1. `uvx --from serena-agent==<pin> <entry>`  (version-exact, CI-capable)
+//   1. `uvx --from <spec> <entry>`  (exact, CI-capable)
 //   2. local `<entry>` ONLY if its --version matches the pin
 // Returns a runner fn `(args) => stdout` or null if neither is available.
-function resolveRunner(entry, pin) {
+function resolveRunner(entry, pinObj) {
+  const spec = fromSpec(pinObj);
+  const pin = pinObj.serena_agent;
   // Try uvx first (deterministic).
   try {
-    const probe = execFileSync('uvx', ['--from', `serena-agent==${pin}`, entry, '--help'],
+    const probe = execFileSync('uvx', ['--from', spec, entry, '--help'],
       { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: 300000 });
     if (probe) {
-      return (args) => execFileSync('uvx', ['--from', `serena-agent==${pin}`, entry, ...args],
+      return (args) => execFileSync('uvx', ['--from', spec, entry, ...args],
         { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: 300000 });
     }
   } catch { /* fall through */ }
@@ -163,7 +178,7 @@ function generateEntry(entry, run, pin, fileBase) {
 function generateCliRef(pin) {
   let generated = false;
   for (const [entry, base] of [['serena', '_index'], ['serena-hooks', 'serena-hooks']]) {
-    const run = resolveRunner(entry, pin.serena_agent);
+    const run = resolveRunner(entry, pin);
     if (!run) {
       console.log(`⏭  ${entry} unavailable at pin ${pin.serena_agent} (no uvx, no matching binary); skipping`);
       continue;

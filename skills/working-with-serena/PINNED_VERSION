@@ -1,1 +1,3 @@
-serena_agent=1.5.3
+serena_agent=1.6.1
+serena_ref=dd12fa032f473a53595763b8d731817e19c15475
+serena_channel=git
