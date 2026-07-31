@@ -47,6 +47,18 @@ Steps 5–11 are the **convergence loop**. Everything before it runs once.
 
 ---
 
+## 0. Pin the repo (do this first on a fork)
+
+`gh` resolves to the **upstream** on a fork, so an unpinned loop reads the upstream's PRs and posts to the upstream's threads. Resolve the fork's own origin once and bind it to every `gh` call for the session:
+
+```bash
+GH_REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
+# if that returned the upstream, override from origin:
+GH_REPO=$(git remote get-url origin | sed -E 's|.*github\.com[:/]||; s|\.git$||')
+```
+
+Pass `--repo "$GH_REPO"` (or `repos/$GH_REPO` for `gh api`) on every command thereafter. The failure is quiet on read and loud on write — you get someone else's review threads, or a comment posted to a repository you do not own.
+
 ## 1. Branch
 
 Create a feature branch off the correct base. Branch from `main` for normal feature/fix work; branch from a `release/x.y` branch only when patching an already-released line (see `multi-branch-release.md`). Don't start work on a detached or already-shared branch.
@@ -118,8 +130,10 @@ Distinguish **required** from **optional** checks: only required checks block me
 Pull the consolidated state in one call:
 
 ```bash
-gh pr view "$PR" --json statusCheckRollup,reviewDecision,reviews,latestReviews,mergeStateStatus
+gh pr view "$PR" --json headRefOid,statusCheckRollup,reviewDecision,reviews,latestReviews,mergeStateStatus
 ```
+
+**Build the whole working map in one pass** rather than fetching per-question — PR state and head SHA, requested reviewers, check-runs *and* legacy commit statuses, top-level comments, every review with its state and commit, and every inline comment (`id`, `databaseId`, `path`, `line`, `body`, `in_reply_to_id`, `user.login`). Each of those answers a different question later in the loop, and gathering them separately invites acting on a half-fetched picture — a triage pass that never saw the newest review reaches confident, wrong conclusions.
 
 When a check fails, fetch the failing job's logs and fix CI — don't guess:
 
@@ -169,6 +183,18 @@ The exact query/variables and pagination handling are in [`code-review-via-api.m
 
 For each **unresolved** thread, classify the comment, then decide: **apply**, **push back**, or **defer**.
 
+Classify by severity first, because it sets the order of work and the reply obligation:
+
+| Class | Handling |
+|---|---|
+| **CRITICAL** (runtime break, data corruption) and **SECURITY** | Fix immediately, top of queue, ahead of anything already in progress |
+| **HIGH** (correctness, silent data loss) | Fix in the same pass |
+| **SUGGESTION** | Implement if reasonable; otherwise decline with a rationale on the thread |
+| **NITPICK** (Nit/FYI) | Fix silently and acknowledge — don't argue a nit |
+| **INFORMATIONAL** / bot summary tables | No reply. Replying to a summary table adds noise to a thread nobody reads |
+
+Severity is the reviewer's claim, not a verdict — a comment labelled CRITICAL still gets verified against the code before anything is applied.
+
 **Validate before applying — this is non-negotiable.** Invoke `superpowers:receiving-code-review` and run its Read → Verify → Evaluate → Respond loop. Do not perform agreement and do not blindly apply suggestions, including AI suggestions and one-click ` ```suggestion ` blocks:
 
 - **Verify the claim technically** against the actual code — AI reviewers hallucinate. Confirm the flagged line/behavior really exists and the suggested change is correct in context before touching anything.
@@ -191,6 +217,14 @@ POST /repos/{owner}/{repo}/pulls/{pr}/comments/{comment_id}/replies
 where `{comment_id}` is the **root** comment's `databaseId` from step 6. Where the fix is unambiguous, post a ` ```suggestion ` block so the reviewer (or a human) can accept it in one click; multi-line suggestions span the comment's `start_line`…`line` range. For batched feedback prefer a single pending review (`POST …/pulls/{pr}/reviews`) over one API call per comment, to fire one notification instead of many. Exact payloads and the suggestion-block format are in [`code-review-via-api.md`](./code-review-via-api.md).
 
 For **AI reviewers specifically**, leaving a concrete reply on each actionable comment is what lets the next pass converge: the reviewer re-reads the thread, sees the change or the rebuttal, and either approves or narrows its remaining concerns instead of re-raising the same point.
+
+Shape of a reply, by outcome:
+
+- **Fixed** — state what changed and cite the commit SHA (8 chars). The SHA is what lets the next pass verify rather than re-derive.
+- **Declined** — state why, without defensiveness, and offer the alternative you'd accept.
+- **Needs input** — ask exactly one specific question. A reply that asks three things gets one answered.
+
+Do not thank the reviewer, and do not restate their comment back to them. Both are pure padding in a thread whose next reader is a machine diffing your reply against its own finding — and for a human reviewer they bury the one sentence that matters.
 
 ### Rate every bot comment with a reaction
 
@@ -224,6 +258,12 @@ gh api graphql -f query='
 Only resolve what's actually addressed. The real bot is conservative about this: it auto-resolves a thread only when the underlying finding no longer applies — e.g. the flagged `path:line` no longer exists in the current diff (it intersects each thread's line against the set of valid lines per file and resolves the ones that fell out of range), wrapping the mutation in a try/catch and logging failures rather than aborting the run. Mirror that posture: resolve fixed/stale threads; leave genuinely open disagreements unresolved.
 
 ## 10. Push fixes and re-request review
+
+**Re-sync before every fix pass.** `git pull origin <head>` first — a reviewer's own suggestion may already be committed, and a fix written against a stale tree lands as a conflict or silently reverts someone else's change.
+
+Keep each fix minimal and scoped to its comment. No opportunistic refactors: an unrelated change in a review-fix commit forces the reviewer to re-review surface they had already cleared, which is how a converging loop stops converging. **If a single fix would touch more than ~5 files, stop and summarize the plan before writing it** — that size usually means the comment implied a design change, and it deserves a decision rather than a reflex.
+
+Run the repo's gate over the changed files after each logical group (`pre-commit run --files <changed>`, or the project's lint/test equivalent) and repair before committing — verify by **exit code**, never by grepping output for the word "error". Name the commits for what they are: `fix(review): <desc>`, `fix(security): <desc>`.
 
 Commit the fixes from step 7 (small logical commits, step 2), push (step 3 — `--force-with-lease` if you amended/rebased), then nudge reviewers to re-run:
 
@@ -264,6 +304,7 @@ gh pr merge "$PR" --squash --auto --delete-branch
 The loop runs unattended, so bound it:
 
 - **Cadence + backoff.** Poll review state on a fixed interval (e.g. 30–60s) with exponential backoff up to a cap (e.g. 5 min) while nothing changes; reset to the base interval when new activity (a new review, a new push) appears. CI is cheaper to watch directly with `gh pr checks --watch` than to poll by hand.
+- **Working defaults**, once the required-reviewer delay above has elapsed: reviews every 60s for ~10 min, CI every 90s, a full thread re-fetch every 3 min. On new comments, drop back into triage/fix/reply/push and reset the timer. Filter every poll by `submitted_at` (or the review's commit oid) so a review you already handled doesn't re-trigger a pass.
 - **Max-iteration guard.** Cap total iterations (or wall-clock, e.g. 20 passes / 60 min). On hitting the cap, stop and hand off to the supervising engineer with the current `reviewDecision`, failing checks, and the list of still-unresolved threads — never spin forever.
 - **Idempotency keyed on the head SHA.** Record which `(thread id, head SHA)` pairs you've already processed. On each pass, skip any thread you already handled at the **current** `headRefOid` and only act on threads that are new or whose head SHA changed. This is the core safeguard against reprocessing the same feedback twice when a poll fires before a reviewer re-runs. The real bot applies the same principle to reaction polling — it stores the last-seen verdict per reactor and diffs against it so re-observing an unchanged reaction emits no new event; the analog here is the last-processed head SHA per thread. Persist this map so a restarted run doesn't replay old feedback. Note: if appending fixes to a thread partially fails, it's safer to *not* mark it processed and risk a rare duplicate reply on the next pass than to mark it done and silently drop the unhandled part.
 

@@ -1,8 +1,8 @@
 {
-  "observed_at": "2026-07-31T04:19:32.279Z",
+  "observed_at": "2026-07-31T05:25:22.725Z",
   "provider": "claude-code",
   "event_name": "UserPromptSubmit",
-  "session_id": "b7381d88-2f77-474b-81bb-5bb8361388e2",
+  "session_id": "e7af9afe-233b-4da5-bcfc-57578d452ff1",
   "turn_id": null,
-  "prompt_summary": "You are a background memory extractor running after a Claude Code session. Read the session transcript at: /Users/joe/.claude/projects/-Users-joe/f59f25c8-1d06-413d-aa24-9de07e40566f.jsonl (it is a JS…"
+  "prompt_summary": "You are a background memory extractor running after a Claude Code session. Read the session transcript at: /Users/joe/.claude/projects/-Users-joe/2e3e1fa3-b090-4de0-9bcf-55f718f33be7.jsonl (it is a JS…"
 }
