@@ -14,6 +14,16 @@ Tooling baseline: `git`, `gh` 2.94, and Octokit (or `gh api graphql`) for the Gr
 
 ---
 
+## Autonomy posture
+
+This runbook is meant to run **to completion without check-ins**. The default is: once the step-11 exit conditions hold — approved, required checks green, threads resolved — **merge it yourself and move on to the next PR**. Don't pause to ask a human to perform the merge. Own the whole loop end to end: triage feedback, validate, fix real issues, reply, resolve, re-poll, merge.
+
+Stop and hand off to the supervising engineer only for: a genuinely hard-to-reverse action (data loss, a destructive/irreversible op, an outward-facing publish), a real product/design decision that isn't yours to make, or the max-iteration guard tripping (step 11). Everything else has a defined path in this runbook — including a reviewer that *can't* be satisfied (see [When a reviewer can't be satisfied](#when-a-reviewer-cant-be-satisfied-dismiss--merge)). Take the path; don't escalate a routine step.
+
+Sequence stacked or multi-PR work lowest-number-first, and don't open the next PR until the current one is merged.
+
+---
+
 ## The loop at a glance
 
 ```
@@ -78,10 +88,11 @@ git push --force-with-lease origin feat/csv-export
 ## 4. Open the PR
 
 ```bash
-gh pr create --fill --base main --reviewer alice,my-org/reviewers
+gh pr create --fill --base main --assignee @me --reviewer alice,my-org/reviewers
 ```
 
 - `--fill` autofills title/body from commits; `--fill-verbose` includes commit bodies. `--title`/`--body` override `--fill` when both are given.
+- `--assignee @me` sets the owner. **Assignee and reviewer are different roles and both must be set**: the assignee answers "whose work is this", the reviewer answers "who must look at it". Setting `--reviewer` alone leaves the PR ownerless, and every "assigned to me" surface — `gh pr status`, the GitHub dashboard, Launchpad-style views — keys on assignee. A PR that is nobody's appears in nobody's queue, which is exactly wrong for work an agent opened on a user's behalf and handed back. `@me` resolves to the authenticated account, so it is correct whether a human or an agent acting as that account opens the PR. For a PR that is already open: `gh pr edit <n> --add-assignee @me`.
 - `--base` sets the target branch explicitly — do this whenever the default branch isn't the intended base (release branches, stacked PRs).
 - `--draft` opens in draft. Open as a draft when CI is expensive or the work isn't ready for human eyes; many review bots check `isDraft` and skip until `ready_for_review`. Mark ready with `gh pr ready` (step 10).
 - **Link issues** in the body: `Fixes #123` / `Closes #123` auto-closes the issue on merge.
@@ -144,6 +155,16 @@ The exact query/variables and pagination handling are in [`code-review-via-api.m
 
 **Detect bot vs human reviewers.** Author logins ending in `[bot]` (e.g. `copilot[bot]`, `coderabbitai[bot]`), or a known prefix/marker your bot stamps on its comments, identify automated reviewers. The distinction drives steps 7–8: AI reviewers converge only if **every** actionable comment is addressed and answered; human reviewers tolerate judgment and discussion. Filter threads to the reviewers you intend to converge on (the real bot matches a configured comment prefix or a leading marker to claim its own threads).
 
+**Required/internal vs advisory/external bots.** Sharpen the bot bucket further. A **required** reviewer (its approval gates `reviewDecision`, or it's an internal bot your org treats as mandatory) must be converged on or, if stuck, dismissed (step 11). An **advisory/external** bot (e.g. `coderabbitai`, `sourcery-ai`, `gemini-code-assist`, `chatgpt-codex-connector`) is *not* required: dedupe its findings against the required reviewers', apply the genuinely useful ones, decline the rest with a one-line rationale, and do **not** block merge on its approval or its `CHANGES_REQUESTED`. Match the exact `[bot]` suffix — don't let an advisory bot's red review hold a PR that's otherwise green.
+
+**The internal bots, by name: `anthropicreviewbot` and `codexreviewbot`.** Both are first-party and **both are required** — each one's `CHANGES_REQUESTED` blocks approval on its own, so converging on one and ignoring the other will not merge. Their findings carry senior-human weight and have no decline path: if you believe one is a false positive, reply with the evidence and get acknowledgement rather than resolving past it.
+
+- **They run the same pipeline on different models, deliberately**, so each can catch what the other is biased about. **Treat disagreement between them as signal, not noise** — reason to the right answer from the code rather than deferring to whichever spoke last. Observed on cc-recall#55: the Anthropic model flagged one block three times, once with advice that *caused* a regression, while the codex model produced the version that resolved it.
+- **Both wait ~7.5 minutes before their first review** after a PR opens or any push — they let the external bots finish, then dedupe against them. Polling for them before that elapses is wasted work. They re-review on every push; if one posts mid-loop, interrupt and address it before continuing.
+- **`chatgpt-codex-connector` is a different actor from `codexreviewbot`** — the former is advisory and external, the latter internal and required. The names invite conflation and the consequence is asymmetric: mistaking the required bot for the advisory one merges a PR that was never approved.
+
+> Counting only the reviewers you *expected* is how a required bot gets missed. Enumerate the actual review authors on the PR and check each against the required list by name.
+
 ## 7. Triage and validate feedback
 
 For each **unresolved** thread, classify the comment, then decide: **apply**, **push back**, or **defer**.
@@ -154,6 +175,8 @@ For each **unresolved** thread, classify the comment, then decide: **apply**, **
 - **Apply** when the finding is real and the fix is correct.
 - **Push back** when the reviewer is wrong, the suggestion breaks something, or it contradicts an established invariant — and say why on the thread.
 - **Defer** out-of-scope or speculative items to a follow-up issue rather than scope-creeping the PR.
+
+**When a bot's structured output contradicts its prose, trust the prose.** Some AI reviewers emit a synthesized summary *body* plus a findings *table* plus a mechanical *event* (`APPROVE`/`REQUEST_CHANGES`). These can disagree: the body says "the prior concerns are resolved" while the table still lists them as 🔴 and the event stays `REQUEST_CHANGES`. The body is the most reliable signal — the table and event are often re-derived from a truncated or incremental diff and lag the holistic state. Read the body first; if it confirms resolution while the event blocks, you're likely looking at a stuck reviewer (step 11), not a real defect.
 
 Triage out the noise: deduplicate comments that flag the same line/issue (keep the most specific), and treat pure nitpicks (Nit/FYI) as optional. Concentrate effort on correctness, security, and contract-breaking findings first.
 
@@ -168,6 +191,22 @@ POST /repos/{owner}/{repo}/pulls/{pr}/comments/{comment_id}/replies
 where `{comment_id}` is the **root** comment's `databaseId` from step 6. Where the fix is unambiguous, post a ` ```suggestion ` block so the reviewer (or a human) can accept it in one click; multi-line suggestions span the comment's `start_line`…`line` range. For batched feedback prefer a single pending review (`POST …/pulls/{pr}/reviews`) over one API call per comment, to fire one notification instead of many. Exact payloads and the suggestion-block format are in [`code-review-via-api.md`](./code-review-via-api.md).
 
 For **AI reviewers specifically**, leaving a concrete reply on each actionable comment is what lets the next pass converge: the reviewer re-reads the thread, sees the change or the rebuttal, and either approves or narrows its remaining concerns instead of re-raising the same point.
+
+### Rate every bot comment with a reaction
+
+Replying is half the loop. The **reaction** is the graded signal an internal review bot learns from, and it is a separate obligation from the reply — a thread that is answered but unrated teaches nothing.
+
+| Reaction | Meaning |
+|---|---|
+| 👍 | The finding helped — it was real and worth raising. |
+| 👎 | The finding was **factually wrong** — the claim does not hold against the code. |
+| 😕 | The finding did not land — technically accurate but not useful here (out of scope, already handled, misread intent, noise). |
+
+- **😕 is not a synonym for 👎, and it must always carry a reply** explaining why it missed. The reply is what makes it interpretable; a bare 😕 is indistinguishable from disagreement about facts. This constraint is enforced upstream in the bot's own `src/feedback/types.ts`.
+- **Rate every actionable comment, not a subset.** Partial rating silently biases the corpus toward whatever the agent happened to find notable, which is the opposite of what the signal is for.
+- **Say *why* in the reply** — valuable because X, or a false positive because `file:line` shows Y. A reaction without a reason is a vote with no argument attached.
+
+Do not skip 😕 as a middle option. Sampled across one PR's review corpus (cc-recall#55: 51 👍 / 41 😕 / 7 👎), 😕 was the **dominant negative signal** — collapsing it into 👎 or omitting it discards most of the usable feedback. Reactions post via the REST reactions endpoint on the comment id; payloads are in [`code-review-via-api.md`](./code-review-via-api.md).
 
 ## 9. Resolve conversations
 
@@ -206,6 +245,12 @@ Re-poll from step 5. Continue the convergence loop until **all** exit conditions
 3. no unresolved review threads remain (`reviewThreads` all `isResolved: true`), **and**
 4. `mergeStateStatus` is mergeable (not `BLOCKED`/`DIRTY`/`BEHIND` — rebase on base if `BEHIND`).
 
+**Check-run conclusion and review event are separate signals, and they can disagree.** A check run is keyed to a head SHA; a review event is not superseded automatically and persists until that reviewer submits a new one. So a bot can evaluate three newer commits, find nothing actionable, and report `neutral` on the check — while `reviewDecision` still reads `CHANGES_REQUESTED` from a review event three pushes back. The merge gate reads `reviewDecision`, so the PR stays blocked by a verdict that no newer pass ever superseded.
+
+- **Read both signals, and verify review age against the head SHA.** Query `reviews { commit { oid } }` and compare each to the current `headRefOid` — do not trust `reviewDecision` alone. Condition 1 above means *approved against the current head*, not approved at some point.
+- A bot that reports via check runs but never submits a follow-up review event will hold `reviewDecision` at its oldest negative verdict indefinitely. That is a **state-machine gap, not a stuck reviewer** — the findings are genuinely resolved, so no dismissal is warranted; see [When a reviewer can't be satisfied](#when-a-reviewer-cant-be-satisfied-dismiss--merge) for the case that *does* need one.
+- Counting threads is subject to the same staleness trap in reverse: `reviewThreads(first:100)` without following `pageInfo.endCursor` will report a clean slate that is only the first page. **A count exactly equal to the page size is a truncation signal, not a measurement.**
+
 Then merge per repo policy:
 
 ```bash
@@ -222,6 +267,41 @@ The loop runs unattended, so bound it:
 - **Max-iteration guard.** Cap total iterations (or wall-clock, e.g. 20 passes / 60 min). On hitting the cap, stop and hand off to the supervising engineer with the current `reviewDecision`, failing checks, and the list of still-unresolved threads — never spin forever.
 - **Idempotency keyed on the head SHA.** Record which `(thread id, head SHA)` pairs you've already processed. On each pass, skip any thread you already handled at the **current** `headRefOid` and only act on threads that are new or whose head SHA changed. This is the core safeguard against reprocessing the same feedback twice when a poll fires before a reviewer re-runs. The real bot applies the same principle to reaction polling — it stores the last-seen verdict per reactor and diffs against it so re-observing an unchanged reaction emits no new event; the analog here is the last-processed head SHA per thread. Persist this map so a restarted run doesn't replay old feedback. Note: if appending fixes to a thread partially fails, it's safer to *not* mark it processed and risk a rare duplicate reply on the next pass than to mark it done and silently drop the unhandled part.
 
+### When a reviewer can't be satisfied (dismiss + merge)
+
+Addressing every comment assumes the reviewer *converges*. Some don't. An AI reviewer that re-reviews a **truncated or incremental diff** and keeps **no memory of its own prior pass** can become mechanically unable to approve a correct PR: every pass re-derives already-addressed findings from scratch, and if a single agent re-raises one, the merged event stays `REQUEST_CHANGES` — forever. Replying and pushing fixes doesn't help, because the next pass has forgotten them.
+
+**Recognize the signature** (all from data, not a hunch):
+
+- The prose **body** says resolved / only-nits while the **event** stays `REQUEST_CHANGES` and the **table** recycles prior findings (the body-vs-event split from step 7).
+- The *same* findings reappear across passes despite confirmed fixes and replies.
+- Findings reference code "not present" / "not visible" that **is** present in the full diff (a truncated-diff tell), or restate the full PR rather than the delta.
+
+**Before dismissing, prove it's genuinely stuck and the PR is genuinely correct:** re-read the body; verify the live findings are false-positives or already-addressed, citing the code/replies; confirm required checks are green and your own validation (and any required *human* review) is done. If the reviewer raised a real new bug, **fix it** — don't dismiss.
+
+**Protected vs unprotected base decides the mechanic:**
+
+- On an **unprotected** base (or when the stuck reviewer isn't a *required* one), its `CHANGES_REQUESTED` does **not** gate merge — `mergeStateStatus` stays `CLEAN`/`UNSTABLE`, not `BLOCKED`. Just merge; the red review is advisory.
+- On a **protected** base where that reviewer **is** required, dismiss the blocking review first so `reviewDecision` clears.
+
+**Dismiss mechanic** (REST; no GraphQL needed). Dismissals are per-review, keyed on the review `id`:
+
+```bash
+gh api -X PUT repos/{owner}/{repo}/pulls/{pr}/reviews/{review_id}/dismissals \
+  -f message="Stuck-loop: body confirms the core is resolved; table/event re-derive
+  already-fixed findings from a truncated diff. CI green, validated. Dismissing to merge." \
+  -f event=DISMISS
+```
+
+A reviewer's blocking reviews **stack** — list them and dismiss **every** `CHANGES_REQUESTED` from that reviewer, not just the latest:
+
+```bash
+gh api "repos/{owner}/{repo}/pulls/{pr}/reviews?per_page=100" \
+  --jq '.[] | select(.user.login=="that-bot[bot]" and .state=="CHANGES_REQUESTED") | .id'
+```
+
+Then merge (step 11). **This is an authorized exception, not the norm** — only for a confirmed stuck/false-positive loop, with the reasoning recorded in the dismissal `message` so the audit trail explains why a `CHANGES_REQUESTED` was overridden. Tie it into the **max-iteration guard**: when the cap trips and the *only* thing blocking is a stuck non-required reviewer (everything else green, threads resolved), dismiss + merge instead of handing off — that's the path, not an escalation.
+
 ### What this adds over `pr-loop`
 
-`pr-loop` does steps 5–8 and 11's approval poll. This runbook hardens it with: GraphQL **thread resolution** (step 9) so AI reviewers converge instead of re-flagging; **`reviewDecision` + required-check + unresolved-thread** gating (step 11) instead of a hand-counted approval tally; **validate-before-apply** (step 7) via `superpowers:receiving-code-review`; **head-SHA idempotency** so feedback is processed once per commit; and an explicit **max-iteration guard** with a clean handoff instead of an unbounded loop.
+`pr-loop` does steps 5–8 and 11's approval poll. This runbook hardens it with: an explicit **autonomy posture** (merge-yourself-on-green default, with a bounded set of escalation triggers); GraphQL **thread resolution** (step 9) so AI reviewers converge instead of re-flagging; **`reviewDecision` + required-check + unresolved-thread** gating (step 11) instead of a hand-counted approval tally; **validate-before-apply** (step 7) via `superpowers:receiving-code-review`; the **required/internal vs advisory/external** bot split (step 6) so an advisory bot can't hold a green PR; a **dismiss-the-stuck-reviewer** exit (step 11) for AI reviewers that are mechanically unable to approve a correct PR; **head-SHA idempotency** so feedback is processed once per commit; and an explicit **max-iteration guard** that resolves to dismiss+merge or a clean handoff instead of an unbounded loop.

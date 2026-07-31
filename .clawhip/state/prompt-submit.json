@@ -1,8 +1,8 @@
 {
-  "observed_at": "2026-06-16T14:18:36.490Z",
+  "observed_at": "2026-07-31T04:19:32.279Z",
   "provider": "claude-code",
   "event_name": "UserPromptSubmit",
-  "session_id": "03be01d3-4240-4600-8819-a172ecb5e232",
+  "session_id": "b7381d88-2f77-474b-81bb-5bb8361388e2",
   "turn_id": null,
-  "prompt_summary": "yes this is all great. Do the commit, push, and run the plugin update"
+  "prompt_summary": "You are a background memory extractor running after a Claude Code session. Read the session transcript at: /Users/joe/.claude/projects/-Users-joe/f59f25c8-1d06-413d-aa24-9de07e40566f.jsonl (it is a JS…"
 }
