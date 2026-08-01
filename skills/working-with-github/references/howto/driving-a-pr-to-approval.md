@@ -306,7 +306,23 @@ Re-poll from step 5. Continue the convergence loop until **all** exit conditions
 1. `reviewDecision == "APPROVED"` (or, where `reviewDecision` is `null` because no review is *required*, every requested required reviewer has an `APPROVED` entry in `latestReviews`), **and**
 2. `statusCheckRollup` — every required check in `bucket: pass` (or `skipping`), none `fail`/`pending`, **and**
 3. no unresolved review threads remain (`reviewThreads` all `isResolved: true`), **and**
-4. `mergeStateStatus` is mergeable (not `BLOCKED`/`DIRTY`/`BEHIND` — rebase on base if `BEHIND`).
+4. `mergeStateStatus` is mergeable (not `BLOCKED`/`DIRTY`/`BEHIND` — rebase on base if `BEHIND`), **and**
+5. every finding you answered carries a reaction (see [Rate every bot comment](#rate-every-bot-comment-with-a-reaction)).
+
+**Condition 5 is the one that fails silently.** The other four are enforced by GitHub — you cannot merge past a missing approval or a red check. Nothing enforces rating, so "I answered every thread" reads as done while the corpus records none of it. On ai-review-bot#47 the two came apart for four rounds: twelve findings argued with in replies, not one of them rated, and no signal anywhere that the loop was only half-run. Check it mechanically rather than from memory:
+
+```bash
+ai-review unrated --repo "$OWNER/$REPO" --pr "$PR"   # exits non-zero, lists permalinks
+```
+
+Without that CLI, the same query over the API — our bot's findings that a human answered but nobody reacted to:
+
+```bash
+gh api --paginate "repos/$OWNER/$REPO/pulls/$PR/comments" --jq '
+  (map(select(.in_reply_to_id != null)) | map(.in_reply_to_id) | unique) as $answered
+  | map(select((.user.login | test("reviewbot")) and (.id as $i | $answered | index($i)) and .reactions.total_count == 0))
+  | .[] | "unrated: \(.id) \(.path):\(.line)"'
+```
 
 **Check-run conclusion and review event are separate signals, and they can disagree.** A check run is keyed to a head SHA; a review event is not superseded automatically and persists until that reviewer submits a new one. So a bot can evaluate three newer commits, find nothing actionable, and report `neutral` on the check — while `reviewDecision` still reads `CHANGES_REQUESTED` from a review event three pushes back. The merge gate reads `reviewDecision`, so the PR stays blocked by a verdict that no newer pass ever superseded.
 
