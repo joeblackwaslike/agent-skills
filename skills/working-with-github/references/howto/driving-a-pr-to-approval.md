@@ -167,6 +167,22 @@ gh api graphql -f query='
 
 The exact query/variables and pagination handling are in [`code-review-via-api.md`](./code-review-via-api.md). The bot's real implementation paginates the same `reviewThreads(first:100, after:$cursor)` connection in a `do … while (hasNextPage)` loop and keeps only unresolved threads (`reviewThreads.filter(t => !t.isResolved)`).
 
+**Resolving ends your obligation, not the reviewer's — re-read threads you already closed.** The `!isResolved` filter above is what every later pass sees, so a thread you answered and resolved leaves the loop permanently. Bots reply *after* resolution: CodeRabbit in particular responds to a rebuttal with a more detailed counter-argument, and that reply is invisible to a filter keyed on resolution state.
+
+On each pass, re-fetch **all** threads and check for any whose last comment is not yours:
+
+```bash
+gh api graphql --paginate -f query='...reviewThreads(first:100, after:$endCursor){
+  nodes{ id isResolved comments(first:20){ nodes{ author{login} body } } } }' \
+| jq -s -r '[.[].data.repository.pullRequest.reviewThreads.nodes[]][]
+    | select(.comments.nodes[-1].author.login != "YOUR_LOGIN")
+    | "\(.id) resolved=\(.isResolved) last=\(.comments.nodes[-1].author.login)"'
+```
+
+A thread matching that — resolved or not — is unfinished. Three did on ai-review-bot#46, each a `bot → me → bot` sequence; one was a correct rebuttal of a wrong reply of mine, and the PR merged with the defect it described. Cheap to check, and the only thing that catches a reviewer who was right the second time.
+
+Treat a counter-reply as a finding with a presumption *against* you: you already committed to a position, and re-reading your own argument is not evidence. Re-derive from the code.
+
 **Detect bot vs human reviewers.** Author logins ending in `[bot]` (e.g. `copilot[bot]`, `coderabbitai[bot]`), or a known prefix/marker your bot stamps on its comments, identify automated reviewers. The distinction drives steps 7–8: AI reviewers converge only if **every** actionable comment is addressed and answered; human reviewers tolerate judgment and discussion. Filter threads to the reviewers you intend to converge on (the real bot matches a configured comment prefix or a leading marker to claim its own threads).
 
 **Required/internal vs advisory/external bots.** Sharpen the bot bucket further. A **required** reviewer (its approval gates `reviewDecision`, or it's an internal bot your org treats as mandatory) must be converged on or, if stuck, dismissed (step 11). An **advisory/external** bot (e.g. `coderabbitai`, `sourcery-ai`, `gemini-code-assist`, `chatgpt-codex-connector`) is *not* required: dedupe its findings against the required reviewers', apply the genuinely useful ones, decline the rest with a one-line rationale, and do **not** block merge on its approval or its `CHANGES_REQUESTED`. Match the exact `[bot]` suffix — don't let an advisory bot's red review hold a PR that's otherwise green.
