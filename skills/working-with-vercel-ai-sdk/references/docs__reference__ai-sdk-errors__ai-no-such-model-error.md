@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-model-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "2f5799e64923c67c17c2a04b0767741d5642cfa97cef404410a7bc6e68e58e1e"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "5db341c2ece536e59238f07cd281a33c73da81ab5f707e9eb75226bd3ba739e5"
 ---
 
 # AI_NoSuchModelError
@@ -54,6 +54,7 @@ if (NoSuchModelError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

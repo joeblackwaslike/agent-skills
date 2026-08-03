@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-07-27
+Last updated: 2026-08-03
 
 ## GitHub Official
 
@@ -11,57 +11,34 @@ Last updated: 2026-07-27
 | `actions/checkout` | `v7.0.1` | `uses: actions/checkout@v7.0.1` |
 | `actions/setup-node` | `v7.0.0` | `uses: actions/setup-node@v7.0.0` |
 | `actions/setup-python` | `v7.0.0` | `uses: actions/setup-python@v7.0.0` |
-| `actions/setup-java` | `v5.6.0` | `uses: actions/setup-java@v5.6.0` |
+| `actions/setup-java` | `v5.7.0` | `uses: actions/setup-java@v5.7.0` |
 | `actions/setup-go` | `v7.0.0` | `uses: actions/setup-go@v7.0.0` |
 | `actions/cache` | `v6.1.0` | `uses: actions/cache@v6.1.0` |
-| `actions/upload-artifact` | `v7.0.1` | `uses: actions/upload-artifact@v7.0.1` |
-| `actions/download-artifact` | `v8.0.1` | `uses: actions/download-artifact@v8.0.1` |
-| `actions/github-script` | `v9.0.0` | `uses: actions/github-script@v9.0.0` |
-| `actions/labeler` | `v7.0.0` | `uses: actions/labeler@v7.0.0` |
-| `actions/stale` | `v10.4.0` | `uses: actions/stale@v10.4.0` |
-| `actions/dependency-review-action` | `v5.0.0` | `uses: actions/dependency-review-action@v5.0.0` |
 
 ## Package Managers
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `pnpm/action-setup` | `v6.0.9` | `uses: pnpm/action-setup@v6.0.9` |
 
 ## Docker
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `docker/login-action` | `v4.5.1` | `uses: docker/login-action@v4.5.1` |
-| `docker/build-push-action` | `v7.3.0` | `uses: docker/build-push-action@v7.3.0` |
-| `docker/metadata-action` | `v6.2.0` | `uses: docker/metadata-action@v6.2.0` |
-| `docker/setup-buildx-action` | `v4.2.0` | `uses: docker/setup-buildx-action@v4.2.0` |
-| `docker/setup-qemu-action` | `v4.2.0` | `uses: docker/setup-qemu-action@v4.2.0` |
 
 ## Cloud Deployments
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `aws-actions/configure-aws-credentials` | `v6.2.3` | `uses: aws-actions/configure-aws-credentials@v6.2.3` |
-| `aws-actions/amazon-ecr-login` | `v2.1.6` | `uses: aws-actions/amazon-ecr-login@v2.1.6` |
-| `google-github-actions/auth` | `v3` | `uses: google-github-actions/auth@v3` |
-| `google-github-actions/setup-gcloud` | `v3.0.1` | `uses: google-github-actions/setup-gcloud@v3.0.1` |
-| `azure/login` | `v3.0.0` | `uses: azure/login@v3.0.0` |
 
 ## Release & Publishing
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `googleapis/release-please-action` | `v5.0.0` | `uses: googleapis/release-please-action@v5.0.0` |
-| `softprops/action-gh-release` | `v3.0.2` | `uses: softprops/action-gh-release@v3.0.2` |
-| `peaceiris/actions-gh-pages` | `v4.1.0` | `uses: peaceiris/actions-gh-pages@v4.1.0` |
 
 ## Code Quality
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `codecov/codecov-action` | `v7.0.0` | `uses: codecov/codecov-action@v7.0.0` |
-| `github/codeql-action/init` | `codeql-bundle-v2.26.1` | `uses: github/codeql-action/init@codeql-bundle-v2.26.1` |
-| `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 
 ## Pinning to SHA (recommended for production)
 

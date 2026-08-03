@@ -13,8 +13,8 @@ related:
 summary: Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "3f86e4bc28ed79ac940f866cf7f1511f5a093decc200ee35c689b99b3af97c59"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "04bf2964c4a9f5488d0b4904ddc63a7bfbf3c7eb63386b548091f3c02f5060f3"
 ---
 
 # Multi-tenant Preview URLs
@@ -66,12 +66,16 @@ The prefix can be anything, such as a tenant ID, workspace name, feature flag, o
 
 Below is a reference implementation of extracting a tenant prefix from the hostname and routing to the `/[domain]/page.tsx` path.
 
-```ts filename="middleware.ts"
+> **💡 Note:** Next.js renamed the `middleware` file convention to `proxy` in Next.js 16.
+> This example uses `proxy.ts`. On Next.js 15 and earlier, use `middleware.ts`
+> with an exported `middleware` function instead.
+
+```ts filename="proxy.ts"
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { getSubdomain } from 'tldts';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || request.nextUrl.hostname;
   const subdomain = getSubdomain(hostname) || '';
   const [tenantPart] = subdomain.includes('---') ? subdomain.split('---') : [];

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/transcription.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "47c6266d4a5409ae7ccfd7e5a20c26f90bfc5a1feab4bcca77375c5c8750ccce"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "ecbbe9c09f2f2f50f74884cf14a4e5f69d879df7cfb4381b244825e941a25b8c"
 ---
 
 # Transcription
@@ -92,7 +92,8 @@ The `audio` stream must contain raw audio chunks. `Uint8Array` chunks are raw by
 <Note>
   String model IDs resolve through the global provider (AI Gateway by
   default). AI Gateway supports streaming transcription for supported models
-  (e.g. `openai/gpt-realtime-whisper`, `xai/grok-stt`), so string IDs work:
+  (e.g. `openai/gpt-realtime-whisper`, `elevenlabs/eleven-scribe-2-realtime`,
+  `xai/grok-stt`), so string IDs work:
   `experimental_streamTranscribe({ model: 'openai/gpt-realtime-whisper', ...
   })`. You can also pass a provider model instance (e.g.
   `openai.transcription('gpt-realtime-whisper')`) to stream directly against
@@ -101,9 +102,11 @@ The `audio` stream must contain raw audio chunks. `Uint8Array` chunks are raw by
 
 OpenAI streaming transcription uses `openai.transcription('gpt-realtime-whisper')`.
 Cartesia uses `cartesia.transcription('ink-2')` for streaming-only Ink 2
-transcription. xAI uses the same `xai.transcription()` model for request/response
-and streaming transcription; `experimental_streamTranscribe` selects the
-provider's WebSocket STT transport.
+transcription. ElevenLabs uses
+`elevenLabs.transcription('scribe_v2_realtime')` for Scribe v2 Realtime. xAI
+uses the same `xai.transcription()` model for request/response and streaming
+transcription; `experimental_streamTranscribe` selects the provider's
+WebSocket STT transport.
 
 ```ts
 import { xai } from '@ai-sdk/xai';
@@ -291,37 +294,40 @@ try {
 
 ## Transcription Models
 
-| Provider                                                                        | Model                    |
-| ------------------------------------------------------------------------------- | ------------------------ |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)               | `whisper-1`              |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)               | `gpt-4o-transcribe`      |
-| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)               | `gpt-4o-mini-transcribe` |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)       | `scribe_v1`              |
-| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)       | `scribe_v1_experimental` |
-| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                   | `whisper-large-v3-turbo` |
-| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                   | `whisper-large-v3`       |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)          | `whisper-1`              |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)          | `gpt-4o-transcribe`      |
-| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)          | `gpt-4o-mini-transcribe` |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                | `machine`                |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                | `low_cost`               |
-| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                | `fusion`                 |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `base` (+ variants)      |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `enhanced` (+ variants)  |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `nova` (+ variants)      |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `nova-2` (+ variants)    |
-| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)           | `nova-3` (+ variants)    |
-| [Gladia](/providers/ai-sdk-providers/gladia#transcription-models)               | `default`                |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)       | `universal-3-5-pro`      |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)       | `universal-3-pro`        |
-| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                     | `whisper`                |
-| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                     | `wizper`                 |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models) | `chirp_2`                |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models) | `chirp_3`                |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models) | `telephony`              |
-| [xAI](/providers/ai-sdk-providers/xai#transcription-models)                     | `default`                |
-| [Cartesia](/providers/ai-sdk-providers/cartesia#transcription-models)           | `ink-whisper`            |
-| [Cartesia](/providers/ai-sdk-providers/cartesia#streaming-transcription-models) | `ink-2`                  |
+| Provider                                                                            | Model                    |
+| ----------------------------------------------------------------------------------- | ------------------------ |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `whisper-1`              |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `gpt-4o-transcribe`      |
+| [OpenAI](/providers/ai-sdk-providers/openai#transcription-models)                   | `gpt-4o-mini-transcribe` |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v1`              |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v1_experimental` |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models)           | `scribe_v2`              |
+| [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#streaming-transcription-models) | `scribe_v2_realtime`     |
+| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                       | `whisper-large-v3-turbo` |
+| [Groq](/providers/ai-sdk-providers/groq#transcription-models)                       | `whisper-large-v3`       |
+| [Mistral](/providers/ai-sdk-providers/mistral#transcription-models)                 | `voxtral-mini-latest`    |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `whisper-1`              |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `gpt-4o-transcribe`      |
+| [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models)              | `gpt-4o-mini-transcribe` |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `machine`                |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `low_cost`               |
+| [Rev.ai](/providers/ai-sdk-providers/revai#transcription-models)                    | `fusion`                 |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `base` (+ variants)      |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `enhanced` (+ variants)  |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova` (+ variants)      |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-2` (+ variants)    |
+| [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-3` (+ variants)    |
+| [Gladia](/providers/ai-sdk-providers/gladia#transcription-models)                   | `default`                |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-5-pro`      |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-pro`        |
+| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `whisper`                |
+| [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `wizper`                 |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `chirp_2`                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `chirp_3`                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `telephony`              |
+| [xAI](/providers/ai-sdk-providers/xai#transcription-models)                         | `default`                |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#transcription-models)               | `ink-whisper`            |
+| [Cartesia](/providers/ai-sdk-providers/cartesia#streaming-transcription-models)     | `ink-2`                  |
 
 Above are a small subset of the transcription models supported by the AI SDK providers. For more, see the respective provider documentation.
 
@@ -335,6 +341,7 @@ Above are a small subset of the transcription models supported by the AI SDK pro
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -343,6 +350,7 @@ Above are a small subset of the transcription models supported by the AI SDK pro
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

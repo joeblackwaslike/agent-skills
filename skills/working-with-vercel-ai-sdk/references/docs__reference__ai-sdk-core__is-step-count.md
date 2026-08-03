@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/is-step-count.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "83973816ed6199970a882435811c9b3cca3e7e90afb28f3873de3ec4fd07fe7f"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "9997dcbd10b47b707911908b139361794a29087dc912f05d92f56d336e4f29b4"
 ---
 
 # `isStepCount()`
@@ -94,6 +94,7 @@ const result = await generateText({
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

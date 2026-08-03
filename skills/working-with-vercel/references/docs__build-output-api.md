@@ -12,11 +12,12 @@ related:
   - /docs/build-output-api/v3/configuration
   - /docs/build-output-api/v3/primitives
   - /docs/build-output-api/v3/features
+  - /docs/build-output-api/v3/services
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "fb608b9eeb15e4db4a1956cb3b900e869fb3a79439fee215467f110cd577a8e8"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "de2ef91c566c01449a2f577b0430108999e12f694d8bc1632b28874fd703dffb"
 ---
 
 # Build Output API
@@ -58,6 +59,7 @@ ideally the same as the platform [Build Image](/docs/deployments/build-image).
 - [Configuration](/docs/build-output-api/v3/configuration)
 - [Vercel Primitives](/docs/build-output-api/v3/primitives)
 - [Features](/docs/build-output-api/v3/features)
+- [Services](/docs/build-output-api/v3/services)
 
 
 ---

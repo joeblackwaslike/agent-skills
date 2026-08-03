@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "75d0365402811e4071e46f2922690c6a074c60d5e2f881133873ef9a90096a48"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "ad427f472b33b040260460c9a24a9b3e48365589b5b57e827676c6311e4b61c7"
 ---
 
 # Black Forest Labs Provider
@@ -280,6 +280,7 @@ const blackForestLabs = createBlackForestLabs({
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

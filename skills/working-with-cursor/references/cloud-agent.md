@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent.md"
-fetched_at: "2026-07-27T07:33:35.768Z"
-sha256: "03852d66f7b415f8af47dd4bc02cdcb69c5d17f9766f767a28a77fc473c4d4ac"
+fetched_at: "2026-08-03T07:28:37.789Z"
+sha256: "b1d68f98898e7b653418497f9095e7f3d326177374c4a315324a1884c42921d4"
 ---
 
 # Cloud Agents
@@ -34,7 +34,7 @@ You can kick off cloud agents from wherever you work:
 
 On **Android**, use [cursor.com/agents](https://cursor.com/agents) in Chrome
 and tap **Install App** for a Progressive Web App (PWA). See [Cursor for
-iOS](https://cursor.com/docs/cloud-agent/mobile.md) for the native iPhone app and more mobile
+iOS](https://cursor.com/docs/cloud-agent/mobile.md) for the native iPhone and iPad app and more mobile
 options.
 
 ### Use Cursor in Slack
@@ -76,7 +76,7 @@ Cloud agents can use [MCP (Model Context Protocol)](https://cursor.com/docs/mcp.
 
 Both HTTP and stdio transports are supported. OAuth is supported for MCP servers that need it. See [Cloud Agent capabilities](https://cursor.com/docs/cloud-agent/capabilities.md) for setup details.
 
-Cloud Agents also include a built-in [Cursor Cloud MCP](https://cursor.com/docs/cloud-agent/capabilities.md#cursor-cloud-mcp) for run diagnostics, including transcripts, environment details, and setup logs.
+Cloud Agents also include a built-in [Cursor Cloud MCP](https://cursor.com/docs/cloud-agent/capabilities.md#cursor-cloud-mcp) for run diagnostics, including transcripts, run events, environment details, and setup logs.
 
 ## Hooks support
 

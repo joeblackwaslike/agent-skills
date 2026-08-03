@@ -15,8 +15,8 @@ related:
 summary: Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "cffb49d917fd215e199c79c0113c38a94e38e6eae8d76bfc26c005f36367bff0"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "738d650862efeb50f35b84ca74f61cb1f52e032eb728cf4a3d17d787bcefbf11"
 ---
 
 # Serving Static Files
@@ -34,9 +34,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { domain: string } },
+  { params }: { params: Promise<{ domain: string }> },
 ) {
-  const { domain } = params;
+  const { domain } = await params;
   const tenant = await getTenant(domain);
 
   if (!tenant) {

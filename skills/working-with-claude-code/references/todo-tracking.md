@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/todo-tracking.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "cfb9228c67c0c23b9b3ee2c605b58f0c896fd1056a10c8c5f4a099155c88c99e"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "fd7020fe4924f640a60971bc663620456a6f40b0d852a3b1df32a1d2f213217e"
 ---
 
 > ## Documentation Index
@@ -20,16 +20,16 @@ Todo tracking provides a structured way to manage tasks and display progress to 
 
 ### Todo Lifecycle
 
-Todos follow a predictable lifecycle:
+Claude moves each todo through a predictable lifecycle:
 
-1. **Created** as `pending` when tasks are identified
-2. **Activated** to `in_progress` when work begins
-3. **Completed** when the task finishes successfully
-4. **Removed** when all tasks in a group are completed
+1. **Created**: Claude adds the todo as `pending` when it identifies a task
+2. **Activated**: Claude sets the todo to `in_progress` when it starts the work
+3. **Completed**: Claude marks it completed when the task finishes successfully
+4. **Removed**: Claude deletes a todo it no longer needs by setting `status: "deleted"` in a `TaskUpdate` call
 
 ### When Todos Are Used
 
-The SDK creates todos for most multi-step work, such as:
+Claude creates todos for most multi-step work, such as:
 
 * **Complex multi-step tasks** requiring 3 or more distinct actions
 * **User-provided task lists** when multiple items are mentioned

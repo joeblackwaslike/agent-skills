@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "b644d81d14f9dd5586cb56efc7ced2ec0eef5678cc786ac06dcc06ea617560ad"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "955871fb8d31756bf06de5c50c71c9389e4bed12e595e0ca53f3942a6eceb9e5"
 ---
 
 # OpenAI Compatible Providers
@@ -646,6 +646,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [DeepSeek](/providers/ai-sdk-providers/deepseek)
   - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
   - [Alibaba](/providers/ai-sdk-providers/alibaba)
+  - [MiniMax](/providers/ai-sdk-providers/minimax)
   - [Cerebras](/providers/ai-sdk-providers/cerebras)
   - [Replicate](/providers/ai-sdk-providers/replicate)
   - [Prodia](/providers/ai-sdk-providers/prodia)

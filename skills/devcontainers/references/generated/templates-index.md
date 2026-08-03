@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-07-27T07:30:29.835Z"
-sha256: "b9443153f1d826d21650925d26fb636e7d8fb5f12471682e5bfe36b2ef236ebb"
+fetched_at: "2026-08-03T07:24:53.308Z"
+sha256: "a3df69a4898acb9a24bb12717ee469e96e7b4c938d8cf0c979b3deef035585cc"
 ---
 
 # Available templates index
@@ -194,11 +194,12 @@ Templates
 | Rust & Typescript | Pablo Ulloa | `ghcr.io/prulloac/devcontainer-templates/rust_typescript:1.1.0` | `1.1.0` |
 | Zig & Typescript | Pablo Ulloa | `ghcr.io/prulloac/devcontainer-templates/zig_typescript:1.1.0` | `1.1.0` |
 | Qiskit | Mohd Shukri Hasan | `ghcr.io/hsm207/devcontainer-templates/qiskit:0.0.1` | `0.0.1` |
-| Azure Functions (.NET) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-dotnet:2.0.5` | `2.0.5` |
-| Azure Functions (Java) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-java:2.0.5` | `2.0.5` |
-| Azure Functions (Node.js) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-node:2.0.5` | `2.0.5` |
-| Azure Functions (PowerShell) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-powershell:2.0.5` | `2.0.5` |
-| Azure Functions (Python) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-python:2.0.5` | `2.0.5` |
+| Azure Functions (.NET) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-dotnet:2.0.6` | `2.0.6` |
+| Azure Functions (Go) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-go:1.0.1` | `1.0.1` |
+| Azure Functions (Java) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-java:2.0.6` | `2.0.6` |
+| Azure Functions (Node.js) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-node:2.0.6` | `2.0.6` |
+| Azure Functions (PowerShell) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-powershell:2.0.6` | `2.0.6` |
+| Azure Functions (Python) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-python:2.0.6` | `2.0.6` |
 | Deno | RSM HCD Engineering | `ghcr.io/rsm-hcd/devcontainer-templates/deno:0.4.0` | `0.4.0` |
 | Deno & PostgreSQL | RSM HCD Engineering | `ghcr.io/rsm-hcd/devcontainer-templates/deno-postgres:0.4.0` | `0.4.0` |
 | .NET (C#), Node.js (TypeScript) & MS SQL | RSM HCD Engineering | `ghcr.io/rsm-hcd/devcontainer-templates/dotnet-node-mssql:0.1.0` | `0.1.0` |
@@ -263,19 +264,19 @@ Templates
 | AI Compiler Environment | alan-chen-dongsheng | `ghcr.io/alan-chen-dongsheng/devcontainer-templates/ai_compiler_env:1.0.1` | `1.0.1` |
 | OpenCode Ralph Template | iyaki | `ghcr.io/iyaki/devcontainer-templates/opencode-ralph:1.0.0` | `1.0.0` |
 | Typo3 | thucke | `ghcr.io/thucke/devcontainer-templates/typo3:0.8.2` | `0.8.2` |
-| Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.1.0` | `0.1.0` |
+| Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.2.1` | `0.2.1` |
 | Magento Open Source | Doug Hatcher | `ghcr.io/doughatcher/devcontainer-templates/magento:0.3.0` | `0.3.0` |
 | Ansible Development Tools (AI-enhanced ansible-dev-tools) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.4.13` | `1.4.13` |
-| Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.0.4` | `1.0.4` |
-| Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.2.5` | `1.2.5` |
-| Deno | nozaq | `ghcr.io/bare-devcontainer/templates/deno:1.0.0` | `1.0.0` |
-| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.2.5` | `1.2.5` |
-| mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.3.1` | `1.3.1` |
-| Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.0.4` | `1.0.4` |
-| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rustup:1.4.0` | `1.4.0` |
-| Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.2.4` | `1.2.4` |
-| Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.4` | `1.0.4` |
-| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.5` | `1.2.5` |
+| Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.0.6` | `1.0.6` |
+| Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.2.7` | `1.2.7` |
+| Deno | nozaq | `ghcr.io/bare-devcontainer/templates/deno:1.0.2` | `1.0.2` |
+| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.2.7` | `1.2.7` |
+| mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.3.3` | `1.3.3` |
+| Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.1.2` | `1.1.2` |
+| Rust | nozaq | `ghcr.io/bare-devcontainer/templates/rustup:1.4.2` | `1.4.2` |
+| Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.2.6` | `1.2.6` |
+| Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.7` | `1.0.7` |
+| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.7` | `1.2.7` |
 
 
             

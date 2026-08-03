@@ -14,8 +14,8 @@ related:
 summary: Use OpenCode with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/opencode.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "984dbb384f59d09d0f752f0093529050074912795c5cbfdcaeb272e3e715622c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b6a85237b3e66c0342bece5e209004eb2cdb1c620efa486c767219fb46bde09e"
 ---
 
 # OpenCode
@@ -55,7 +55,7 @@ sha256: "984dbb384f59d09d0f752f0093529050074912795c5cbfdcaeb272e3e715622c"
     "provider": {
       "vercel": {
         "models": {
-          "anthropic/claude-sonnet-4.6": {
+          "anthropic/claude-sonnet-5": {
             "options": {
               "order": ["anthropic", "vertex"]
             }

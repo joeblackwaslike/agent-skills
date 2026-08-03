@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "f03c0c655d413253c0c87f6bc8d6743905a4498c29adedb0f64e5631d60f52bb"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8838de7c71f15c1a9c9cfd885df749dee1c1bba9b40ae08b29397d4c2f4ce028"
 ---
 
 # Anthropic Provider
@@ -448,6 +448,11 @@ console.log(reasoningText); // reasoning text
 console.log(reasoning); // reasoning details including redacted reasoning
 console.log(text); // text response
 ```
+
+Anthropic's `max_tokens` limit includes both thinking and final text. To reserve
+room for both, the provider adds `budgetTokens` to `maxOutputTokens` when
+setting `max_tokens`. For known models, the combined value is capped at the
+model's maximum output token limit.
 
 See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details
 on how to integrate reasoning into your chatbot.
@@ -1744,6 +1749,7 @@ and the `mediaType` should be set to `'application/pdf'`.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

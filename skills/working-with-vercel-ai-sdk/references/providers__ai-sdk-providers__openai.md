@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "a70433143799c7e066deb88167f48291d833b11229c07f1579750dc1f22728ac"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "e5568b37ea6b079ad78b6f519d2146f16ad24a1444881bf06729d9b58c8d7473"
 ---
 
 # OpenAI Provider
@@ -540,6 +540,7 @@ const result = await generateText({
       },
       filters: {
         allowedDomains: ['sfchronicle.com', 'sfgate.com'],
+        blockedDomains: ['example.com'],
       },
     }),
   },
@@ -566,7 +567,10 @@ The web search tool supports the following configuration options:
 - **searchContextSize** _'low' | 'medium' | 'high'_ - Controls the amount of context used for the search. Higher values provide more comprehensive results but may have higher latency and cost.
 - **userLocation** - Optional location information to provide geographically relevant results. Includes `type` (always `'approximate'`), `country`, `city`, `region`, and `timezone`.
 - **filters** - Optional filter configuration to restrict search results.
-  - **allowedDomains** _string[]_ - Array of allowed domains for the search. Subdomains of the provided domains are automatically included.
+  - **allowedDomains** _string[]_ - Up to 100 allowed domains for the search.
+  - **blockedDomains** _string[]_ - Up to 100 blocked domains for the search.
+
+Omit the HTTP or HTTPS prefix from domain filters. Subdomains of configured domains are automatically included or excluded.
 
 For detailed information on configuration options see the [OpenAI Web Search Tool documentation](https://platform.openai.com/docs/guides/tools-web-search?api-mode=responses).
 
@@ -2904,6 +2908,50 @@ The following provider options are available:
 | `gpt-4o-transcribe`      | <Check />     | <Cross /> | <Cross /> | <Cross /> | <Cross /> |
 | `gpt-realtime-whisper`   | <Cross />     | <Check /> | <Cross /> | <Cross /> | <Cross /> |
 
+## Translation Models
+
+<Note type="warning">Speech translation is an experimental feature.</Note>
+
+You can create models that translate live speech over the OpenAI Realtime
+translations WebSocket using the `.translation()` factory method. Translation
+models are streaming-only and are used with
+[`experimental_streamTranslate`](/docs/reference/ai-sdk-core/stream-translate).
+
+The first argument is the model id e.g. `gpt-realtime-translate`.
+
+```ts
+const model = openai.translation('gpt-realtime-translate');
+```
+
+```ts
+import { experimental_streamTranslate as streamTranslate } from 'ai';
+import { openai } from '@ai-sdk/openai';
+
+const result = streamTranslate({
+  model: openai.translation('gpt-realtime-translate'),
+  audio: audioStream, // ReadableStream<Uint8Array | string>
+  inputAudioFormat: { type: 'audio/pcm', rate: 24000 },
+  targetLanguage: 'es',
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'output-text-delta') {
+    process.stdout.write(part.delta);
+  }
+}
+```
+
+The OpenAI Realtime translation API auto-detects the source language
+(`sourceLanguage` is not supported), accepts 24kHz 16-bit PCM input, and always
+outputs 24kHz 16-bit PCM audio (`outputAudioFormat` is not supported).
+Unsupported source and output settings surface as call warnings.
+
+### Model Capabilities
+
+| Model                    | Translated Audio | Translated Text | Source Transcript |
+| ------------------------ | ---------------- | --------------- | ----------------- |
+| `gpt-realtime-translate` | <Check />        | <Check />       | <Check />         |
+
 ## Speech Models
 
 You can create models that call the [OpenAI speech API](https://platform.openai.com/docs/api-reference/audio/speech)
@@ -3000,6 +3048,7 @@ const result = await generateSpeech({
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

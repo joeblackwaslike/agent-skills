@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-tui.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "d84b62375f884426f73d46ee2dfbd3c4f8e8746a255d01532ebaada00d5ae903"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "acdb3caeb80d92e3ae7cbf308df99295a48aa67b87a18d8f5b174394ad24750e"
 ---
 
 # AI SDK TUI
@@ -31,6 +31,7 @@ from free-form terminal input.
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
   - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+  - [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
@@ -133,6 +134,7 @@ from free-form terminal input.
   - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
   - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
   - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+  - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
   - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
   - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
   - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

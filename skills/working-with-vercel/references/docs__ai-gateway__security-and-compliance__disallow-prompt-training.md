@@ -14,8 +14,8 @@ related:
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "de6562a8e3896928f28c38b9217dbeab93016ff020f5d509139b779ca5cda325"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "4857816f124341be554cdc1151d154c85a158066e233272f447ab02f4df2f39b"
 ---
 
 # Disallow Prompt Training
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -247,7 +247,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'user',
@@ -275,7 +275,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model="anthropic/claude-sonnet-4.6",
+    model="anthropic/claude-sonnet-5",
     messages=[
         {
             "role": "user",

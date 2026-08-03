@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/upload-file.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "e0f872430e0467754d76aa7c1939ebb0df2823bb5c78b8d4b53e020a62611129"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "c8b8469b3310e297e54a9fbff01b4af1b34d1a780d4d9f1d24847f499fce4536"
 ---
 
 # `uploadFile()`
@@ -102,6 +102,7 @@ const { providerReference } = await uploadFile({
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

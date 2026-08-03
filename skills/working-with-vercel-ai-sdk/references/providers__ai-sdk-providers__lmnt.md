@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/lmnt.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "42e0b1a4d0efff35760322a10cd71efc94ca11b279cd56b2d1d914fd36eb37fb"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d59fff3257e49dc4b8510c2020b54478b4876a602bc0331f66bcf252845a54d0"
 ---
 
 # LMNT Provider
@@ -175,6 +175,7 @@ The LMNT provider accepts the following options via `providerOptions.lmnt`:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

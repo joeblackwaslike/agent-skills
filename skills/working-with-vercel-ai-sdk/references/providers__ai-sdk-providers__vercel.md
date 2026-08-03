@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/vercel.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "756c7014941e214cc9369633a1ba6b42cf8f07587a4245051ceaaf0d2624d603"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "a508c377fc5bcd91a500611b7f9510a734d132dbcadb931ed71d6147688ad7d3"
 ---
 
 # Vercel Provider
@@ -150,6 +150,7 @@ All v0 models have the following capabilities:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

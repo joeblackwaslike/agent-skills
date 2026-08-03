@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "cd751ca5101578fc3f535859cb6fb508b590a884318d786bb9e795522f07d3ab"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d499d1037c90d59bf85013015a3ec1a0e13a88c743680850b6cfe6897d9f04f2"
 ---
 
 # Cerebras Provider
@@ -187,6 +187,7 @@ The following optional provider options are available for Cerebras language mode
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

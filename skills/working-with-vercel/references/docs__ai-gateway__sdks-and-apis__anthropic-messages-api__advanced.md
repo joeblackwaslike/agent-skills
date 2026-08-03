@@ -3,139 +3,55 @@ title: Advanced Features
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis
 related:
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning
   - /docs/ai-gateway/models-and-providers/provider-timeouts
   - /docs/ai-gateway/models-and-providers/automatic-caching
-summary: Advanced Anthropic API features including extended thinking, web search, and automatic caching.
+summary: Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "5e4914f2bdac960d0d93003e9595d19a6aef9dd5bdcc2d5a0676399e1c4fee97"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "21087f0110f8a1ed044bade9342e1fc17b0d9f1edaf8cf7621d7605f8dea386b"
 ---
 
 # Advanced Features
 
-## Extended thinking
-
-Configure extended thinking for models that support chain-of-thought reasoning. The `thinking` parameter allows you to control how reasoning tokens are generated and returned.
-
-Example request
-
-#### TypeScript
-
-```typescript filename="thinking.ts"
-import Anthropic from '@anthropic-ai/sdk';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const anthropic = new Anthropic({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh',
-});
-
-const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.8',
-  max_tokens: 2048,
-  thinking: {
-    type: 'enabled',
-    budget_tokens: 5000,
-  },
-  messages: [
-    {
-      role: 'user',
-      content: 'Explain quantum entanglement in simple terms.',
-    },
-  ],
-});
-
-for (const block of message.content) {
-  if (block.type === 'thinking') {
-    console.log('🧠 Thinking:', block.thinking);
-  } else if (block.type === 'text') {
-    console.log('💬 Response:', block.text);
-  }
-}
-```
-
-#### Python
-
-```python filename="thinking.py"
-import os
-import anthropic
-
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
-client = anthropic.Anthropic(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh'
-)
-
-message = client.messages.create(
-    model='anthropic/claude-opus-4.8',
-    max_tokens=2048,
-    thinking={
-        'type': 'enabled',
-        'budget_tokens': 5000,
-    },
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Explain quantum entanglement in simple terms.'
-        }
-    ],
-)
-
-for block in message.content:
-    if block.type == 'thinking':
-        print('🧠 Thinking:', block.thinking)
-    elif block.type == 'text':
-        print('💬 Response:', block.text)
-```
-
-### Thinking parameters
-
-- **`type`**: Set to `'enabled'` to enable extended thinking
-- **`budget_tokens`**: Maximum number of tokens to allocate for thinking
-
-### Response with thinking
-
-When thinking is enabled, the response includes thinking blocks:
-
-```json
-{
-  "id": "msg_123",
-  "type": "message",
-  "role": "assistant",
-  "content": [
-    {
-      "type": "thinking",
-      "thinking": "Let me think about how to explain quantum entanglement...",
-      "signature": "anthropic-signature-xyz"
-    },
-    {
-      "type": "text",
-      "text": "Quantum entanglement is like having two magic coins..."
-    }
-  ],
-  "model": "anthropic/claude-opus-4.8",
-  "stop_reason": "end_turn",
-  "usage": {
-    "input_tokens": 15,
-    "output_tokens": 150
-  }
-}
-```
+Give Claude access to the web, bound how long a provider may take, and cache prompt prefixes between calls. For controlling how much Claude thinks before answering, see [Extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning).
 
 ## Web search
 
 Use the built-in web search tool to give the model access to current information from the web.
 
 Example request
+
+#### cURL
+
+```bash filename="web-search.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 2048,
+    "tools": [
+      {
+        "type": "web_search_20250305",
+        "name": "web_search"
+      }
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "What are the latest developments in quantum computing?"
+      }
+    ]
+  }'
+```
 
 #### TypeScript
 
@@ -150,7 +66,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   max_tokens: 2048,
   tools: [
     {
@@ -189,7 +105,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     max_tokens=2048,
     tools=[
         {

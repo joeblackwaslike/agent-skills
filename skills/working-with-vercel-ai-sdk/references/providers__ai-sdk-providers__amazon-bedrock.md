@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "97dba8b9c4785099e6a81e0d4218911076b9445ee5c07c54ccc3fb299b691b7d"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "523249b895decca2043e1ff72a8d5039bd8c24fdb4e636de971b28b06c5f316b"
 ---
 
 # Amazon Bedrock Provider
@@ -508,6 +508,11 @@ const amazonResult = await generateText({
 console.log(amazonResult.reasoningText); // reasoning text
 console.log(amazonResult.text); // text response
 ```
+
+For Anthropic models, Bedrock's `maxTokens` limit includes both thinking and
+final text. The provider therefore adds `budgetTokens` to `maxOutputTokens`
+when setting `maxTokens`. When `maxOutputTokens` is omitted, the provider adds
+`budgetTokens` to the default of `4096`.
 
 See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details
 on how to integrate reasoning into your chatbot.
@@ -1594,6 +1599,11 @@ console.log(reasoning); // reasoning details including redacted reasoning
 console.log(text); // text response
 ```
 
+Anthropic's `max_tokens` limit includes both thinking and final text. To reserve
+room for both, the provider adds `budgetTokens` to `maxOutputTokens` when
+setting `max_tokens`. For known models, the combined value is capped at the
+model's maximum output token limit.
+
 See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details
 on how to integrate reasoning into your chatbot.
 
@@ -1823,6 +1833,7 @@ Static IAM user keys do not require `sessionToken`.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

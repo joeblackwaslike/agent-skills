@@ -1,12 +1,17 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-output-generated-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "99adbbd4ecd43499cc0f0cddc3f97f9a6d44eb3dde77d926920adb117d091ed1"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "e7ff83a70b00bfc2d6355e7d03b67ae7e5934fab79ccb14dfa938325b07fba64"
 ---
 
 # AI_NoOutputGeneratedError
 
 This error is thrown when no LLM output was generated, e.g. because of errors.
+
+For `generateText`, accessing `result.output` throws this error when the result
+does not contain an output. This can happen when the final step does not finish
+with a `stop` reason, for example when it finishes with `tool-calls`. The
+`output` property is a getter, so destructuring it also triggers this access.
 
 ## Properties
 
@@ -53,6 +58,7 @@ if (NoOutputGeneratedError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/filter-active-tools.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "192c8733f8c4c86784e78d9ded1b952e51df3d82327a54e1f85e2750048b6bbe"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d246fcfc060cc2867b104e54fc12a2ba4423c168cf6d36be308be711064663bf"
 ---
 
 # `filterActiveTools()`
@@ -93,6 +93,7 @@ type ActiveTools<TOOLS extends ToolSet> =
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

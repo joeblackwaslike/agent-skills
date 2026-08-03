@@ -17,8 +17,8 @@ related:
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "128d32ede9cafc81ba058df15062b4a369ce8f62294947eae84823b998148e43"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f9efe8fbd38dc80ef16f82aeed80385a2e14cf8081d53a2cd74912a6765c5804"
 ---
 
 # Authentication
@@ -96,9 +96,11 @@ That depends entirely on the connector type:
 | Snowflake      | Snowflake Partner Connect JWT exchange                                                |
 | Salesforce     | Managed OAuth flow brokered by Vercel                                                 |
 | API Key        | Static credential supplied at create time; Vercel Connect attaches it                 |
-| Custom OAuth   | OAuth 2.0 / OIDC authorization-code flow with PKCE against the configured service URL |
+| Custom OAuth   | OAuth 2.0 / OIDC against the configured service URL; authorization-code flow with PKCE and/or client-credentials flow |
 
 For OAuth-based connectors, Vercel Connect drives the full authorization-code flow including refresh, and stores the refresh token on Vercel's infrastructure. Your code never sees the refresh token directly; you only ever receive short-lived access tokens through `getToken`.
+
+Custom OAuth connectors also support the **client-credentials** grant, where Vercel Connect authenticates as your service (rather than on behalf of a user) and exchanges the client ID and secret directly for an access token. After creating the connector, open it in the dashboard, click **Edit**, and select which grant types to enable. Use the authorization-code flow for `user` subjects and the client-credentials flow for `app` subjects.
 
 ## Troubleshooting auth failures
 
@@ -107,7 +109,7 @@ The Connect API surfaces auth failures as typed errors on the SDK side. The most
 | Error class                                  | Cause                                                                                                 | Fix                                                                                                                            |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `ClientNotLinkedToProjectError`              | The connector exists, but there's no [project link](/docs/connect/concepts/project-links) for the calling project. | Attach the connector in the dashboard or run `vercel connect attach`.                                                          |
-| `ClientNotEnabledForEnvironmentError`        | The link exists, but the requesting environment isn't on its `environments` list.                     | Add the environment to the link (`vercel connect attach --environments`) or use a separate connector for that environment.     |
+| `ClientNotEnabledForEnvironmentError`        | The link exists, but the requesting environment isn't on its `environments` list.                     | Add the environment to the link (`vercel connect attach <connector> --environment <environment>`) or use a separate connector for that environment. |
 | `ConnectorInstallationRequiredError`         | No [installation](/docs/connect/concepts/installations) has consented for the requested tenant yet.   | Walk the user through the install flow, or pass an `installationId` that already exists.                                       |
 | `UserAuthorizationRequiredError`             | A `user` subject was requested but that user hasn't authorized the connector.                         | Trigger the user-consent flow for that user, then retry.                                                                       |
 | `ConnectorNotFoundError`                     | No Connect client is registered for the connector UID under this team.                                | Create the connector (`vercel connect`) before requesting a token.                                                             |
@@ -116,7 +118,7 @@ See the [SDK Reference](/docs/connect/ts-sdk-reference#errors) for the full erro
 
 ## Recommendations
 
-- **One connector per environment** for sensitive integrations. Production has its own connector and its own grant; preview and development each have their own. A token compromised in one environment cannot be replayed against another.
+- **Use separate connectors when environments need provider-level isolation.** A project link controls which deployments can request tokens from a connector; it does not assign a provider [installation](/docs/connect/concepts/installations) to each environment. For example, if Production and a `qa` Custom Environment are enabled on the same Slack connector, code in either environment can request a token for the connector's default Slack workspace installation or for an explicit `installationId`. To prevent either environment from reaching the other's provider installations, create and install a connector for each environment, then link each environment only to its own connector.
 - **Scope every token request.** Pass `scopes`, `resources`, or `authorizationDetails` to narrow what a token can do; don't request a tenant-wide token when you need to read one channel.
 - **Prefer OIDC over access tokens.** OIDC tokens are short-lived, project-bound, and rotated automatically. Reserve `vercelToken` for environments where OIDC isn't an option.
 - **Refresh `vercel env pull` regularly during local development.** The OIDC token expires after about 12 hours. If `getToken` starts failing with auth errors after a long break, pull a fresh token before debugging further.

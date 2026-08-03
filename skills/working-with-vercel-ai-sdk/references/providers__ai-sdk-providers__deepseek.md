@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f234c21efc3eb432473a245cfd609090d2651ca9a1b3bf1078bd6d8481e9d858"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "746c37549558e1fa95fe6719366948f55a00807daf86e1ea38ce84d8f058254b"
 ---
 
 # DeepSeek Provider
@@ -217,6 +217,7 @@ The metrics include:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

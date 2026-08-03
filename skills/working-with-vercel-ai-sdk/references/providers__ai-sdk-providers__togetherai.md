@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f1e74b74b900792a4d9d7125d4aa21aa1b0c58286210a9357ca68219f05f012c"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "48e8c79714bbffbca0afb86dd7c54b038b8542cc17e387d3e2a534a501eb59f3"
 ---
 
 # Together.ai Provider
@@ -407,6 +407,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

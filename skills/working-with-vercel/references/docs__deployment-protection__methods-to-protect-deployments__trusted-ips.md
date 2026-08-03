@@ -17,8 +17,8 @@ related:
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "96c395b47ad1b593728be4a1b66b4969edb623040a10c3a50e579a5f01f8328e"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "0de5cd79d17469a29cdbc151ab500294a7831a43394c6e871aa453ae08f1b052"
 ---
 
 # Restrict deployment access by IP address
@@ -49,7 +49,7 @@ The tables below outline key considerations and security implications when using
 | Consideration                    | Description                                                                                                                                                                              |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Preview Environment Requirements | Can only be enabled in preview when [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) is also enabled.                  |
-| External Proxy Configuration     | Requires [rulesets](/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) configuration to avoid blocking proxy IPs. [Contact our sales team for more information](/contact/sales) |
+| External Proxy Configuration     | Requires [shared rules](/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) configuration to avoid blocking proxy IPs. [Contact our sales team for more information](/contact/sales) |
 
 ### Security implications
 

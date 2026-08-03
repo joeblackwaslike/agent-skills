@@ -16,13 +16,13 @@ related:
 summary: Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "be3f0ecada110071dd9d2cfac48aa0365a07b793efd0ddbba9fbccf37be41685"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f2a78c32cd5ff4239cc443ff97a3b6a4629201d19eb188af849f62e89a858a59"
 ---
 
 # Multi-Tenant Platforms
 
-A multi-tenant platform serves every customer from one codebase and one Vercel deployment. Middleware resolves the tenant from the incoming domain or subdomain, and each tenant sees its own content and branding. Start with the concepts, then follow the quickstart.
+A multi-tenant platform serves every customer from one codebase and one Vercel deployment. Next.js Proxy resolves the tenant from the incoming domain or subdomain, and each tenant sees its own content and branding. Start with the concepts, then follow the quickstart.
 
 **Concepts**: How tenants, domains, routing, and data isolation work. [Learn more →](/docs/platforms/multi-tenant-platforms/concepts)
 
@@ -32,7 +32,7 @@ A multi-tenant platform serves every customer from one codebase and one Vercel d
 
 **Custom subpaths**: Serve tenants from paths like /tenant1 instead of subdomains. [Learn more →](/docs/platforms/multi-tenant-platforms/custom-subpaths)
 
-**Middleware and routing**: Resolve tenants in middleware and pass context to your app. [Learn more →](/docs/platforms/multi-tenant-platforms/middleware-and-routing)
+**Proxy and routing**: Resolve tenants in Proxy and pass context to your app. [Learn more →](/docs/platforms/multi-tenant-platforms/middleware-and-routing)
 
 **Serving static files**: Serve tenant-specific static assets from a multi-tenant app. [Learn more →](/docs/platforms/multi-tenant-platforms/serving-static-files)
 

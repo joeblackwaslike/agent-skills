@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f78d04645ecf251a3c77654fed91e0a3a964d59bee1f53ae45f238bd290e7326"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "43bef5efd8afc0f79dd8553ea85cee563d01358cb25c7e207579f3290af5599d"
 ---
 
 # Using the Integrations REST API
@@ -213,6 +213,7 @@ Vercel supports the following deep links:
 | --------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Installation overview | `https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}`         | The installation's page in the user's team, where they manage settings, usage, and invoices.                                                      |
 | Installation projects | `https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}/projects` | The projects connected to the installation.                                                                                                       |
+| Installation settings | `https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}/settings` | The installation's settings page.                                                                                                                 |
 | Resource              | `https://vercel.com/d/dashboard/integrations/{URLSlug}/{installationId}/resources/{resourceId}` | A specific resource that belongs to the installation. `resourceId` accepts either Vercel's resource ID or the external ID you assigned to it. |
 
 #### Example

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/session-storage.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "f9841faface9ddcfd8f04125454fed5beefff06cabcc16cb5259576c2111f132"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "bcc58d0fc90e6345eb79a8a3908428ea26be00c91714d902399d1d3fafe9a49e"
 ---
 
 > ## Documentation Index
@@ -238,17 +238,25 @@ for await (const message of query({
 
 Both SDKs ship a conformance suite that asserts the behavioral contract `append`, `load`, and the optional methods must satisfy. Tests for optional methods skip automatically when those methods are not implemented.
 
-In TypeScript, copy [`shared/conformance.ts`](https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/examples/session-stores/shared/conformance.ts) from the example directory into your test suite. In Python, the suite ships in the package:
+In TypeScript, copy [`shared/conformance.ts`](https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/examples/session-stores/shared/conformance.ts) from the example directory into your test suite. In Python, the suite ships in the package. To run it with pytest, which isn't an SDK dependency, install pytest first:
+
+```bash theme={null}
+pip install pytest
+```
+
+Then pass your adapter to the suite in a test file as a zero-argument factory, which `run_session_store_conformance` calls once per contract to build a fresh store:
 
 ```python Python theme={null}
 import pytest
 from claude_agent_sdk.testing import run_session_store_conformance
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_my_store_conformance():
-    await run_session_store_conformance(MyRedisStore)  # Your adapter class
+    await run_session_store_conformance(MyRedisStore)
 ```
+
+Passing the `MyRedisStore` class itself, as this example does, works when the constructor takes no arguments. For an adapter that takes a pre-configured client, pass a lambda that constructs the store instead. Because the contracts reuse the same session keys, each store the factory returns must start with empty storage, so have the lambda provision isolated backing storage per call, such as a fresh in-memory fake, a unique key prefix, or a new test database.
 
 ## Behavior notes
 

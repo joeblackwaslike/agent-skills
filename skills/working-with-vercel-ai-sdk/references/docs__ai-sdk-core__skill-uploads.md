@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/skill-uploads.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "302ca897f32c970a226b4e3b267586d6da0b9ba2509a2cca628c98e69d09a164"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "7eea0f5a31928df09f880fdfd8a7e38232dba18d959239ab65afdec299faa69d"
 ---
 
 # Skill Uploads
@@ -207,6 +207,7 @@ The following providers support `skills()` and skill uploads:
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -215,6 +216,7 @@ The following providers support `skills()` and skill uploads:
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

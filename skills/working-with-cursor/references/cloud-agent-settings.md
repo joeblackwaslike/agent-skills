@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/settings.md"
-fetched_at: "2026-07-27T07:33:35.768Z"
-sha256: "88298f4f5e590c770cdbca9eff92bb70516c443146d6bdcbed1264e9b6ed0653"
+fetched_at: "2026-08-03T07:28:37.789Z"
+sha256: "c2274bee8b640f56da6662d6a2028a45e7852f3979d0079b5a9420f9915bef7b"
 ---
 
 # Cloud Agents settings
@@ -16,7 +16,7 @@ Open an environment to review:
 
 - The repositories it applies to
 - Whether it uses a snapshot or `.cursor/environment.json`
-- The update script that runs before an agent starts
+- The install script that runs before an agent starts
 - Runtime secrets and build secrets
 - Network access settings
 - Version history and setup runs

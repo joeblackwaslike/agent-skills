@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "6af3acc44a59f7947db19f6ce49d887b7a5c0b10eb3154f03659b8c97d402d15"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d79056ef544d6bed4aa55d53000c3369becf9aa5089d221a7e6a8f12e86ff0bd"
 ---
 
 # Observability Integrations
@@ -74,6 +74,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [DeepSeek](/providers/ai-sdk-providers/deepseek)
   - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
   - [Alibaba](/providers/ai-sdk-providers/alibaba)
+  - [MiniMax](/providers/ai-sdk-providers/minimax)
   - [Cerebras](/providers/ai-sdk-providers/cerebras)
   - [Replicate](/providers/ai-sdk-providers/replicate)
   - [Prodia](/providers/ai-sdk-providers/prodia)

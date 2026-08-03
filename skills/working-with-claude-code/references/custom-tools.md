@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/custom-tools.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "0ce3287c56927e8c76b6cff678fcc65e9f4c6f686c609a5c64d629806152023c"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "7d4a06c54a06652f62d07fe2848dfe75151e53662e32f388833a1ce44aae4017"
 ---
 
 > ## Documentation Index
@@ -365,8 +365,6 @@ The example below catches two kinds of failures inside the handler and composes 
   from typing import Any
   from claude_agent_sdk import tool
 
-  from claude_agent_sdk import tool
-
 
   @tool(
       "fetch_data",
@@ -458,7 +456,7 @@ The example below catches two kinds of failures inside the handler and composes 
 
 ## Return images and resources
 
-The `content` array in a tool result accepts `text`, `image`, `audio`, `resource`, and `resource_link` blocks. You can mix them in the same response. In TypeScript, audio blocks are saved to disk and Claude receives a text block with the saved file path; in Python, the SDK drops audio blocks from the tool result and logs a warning. Resource link blocks are converted to a text block containing the link's name, URI, and description.
+The `content` array in a tool result accepts `text`, `image`, `audio`, `resource`, and `resource_link` blocks. You can mix them in the same response. In TypeScript, the SDK saves audio blocks to disk and Claude receives a text block with the saved file path; in Python, the SDK drops audio blocks from the tool result and logs a warning. The SDK converts resource link blocks to a text block containing the link's name, URI, and description.
 
 ### Images
 
@@ -474,8 +472,6 @@ An image block carries the image bytes inline, encoded as base64. There is no UR
   ```python Python theme={null}
   import base64
   import httpx
-  from claude_agent_sdk import tool
-
   from claude_agent_sdk import tool
 
 

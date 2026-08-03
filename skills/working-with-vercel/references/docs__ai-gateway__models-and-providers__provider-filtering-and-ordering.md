@@ -15,8 +15,8 @@ related:
 summary: Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "fa79f27040f1ac151427aab9aac6b73bb82e6a1ea4a6a91eff74bc853f47fed1"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a2eb54025f95ad56d126245cb7fa80b1388cf179803593f4c5526ef0bc32f0aa"
 ---
 
 # Provider Filtering, Ordering & Sorting
@@ -37,7 +37,7 @@ You can also copy the provider slug using the copy button next to a provider's n
 
 **Through the AI Gateway site:**
 
-Visit a model's page on the [AI Gateway models page](/ai-gateway/models) (e.g., [Claude Sonnet 4.6](/ai-gateway/models/claude-sonnet-4.6)).
+Visit a model's page on the [AI Gateway models page](/ai-gateway/models) (e.g., [Claude Sonnet 5](/ai-gateway/models/claude-sonnet-5)).
 
 The bottom section of the page lists the available providers for that model. The copy button next to a provider's name will copy their slug for pasting.
 
@@ -58,7 +58,7 @@ The bottom section of the page lists the available providers for that model. The
     const { prompt } = await request.json();
 
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.6',
+      model: 'anthropic/claude-sonnet-5',
       prompt,
       providerOptions: {
         gateway: {
@@ -84,7 +84,7 @@ The bottom section of the page lists the available providers for that model. The
     const { prompt } = await request.json();
 
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.6',
+      model: 'anthropic/claude-sonnet-5',
       prompt,
       providerOptions: {
         gateway: {
@@ -107,24 +107,24 @@ The bottom section of the page lists the available providers for that model. The
   "anthropic": {},
   "gateway": {
     "routing": {
-      "originalModelId": "anthropic/claude-sonnet-4.6",
+      "originalModelId": "anthropic/claude-sonnet-5",
       "resolvedProvider": "anthropic",
-      "resolvedProviderApiModelId": "claude-sonnet-4.6",
+      "resolvedProviderApiModelId": "claude-sonnet-5",
       "fallbacksAvailable": ["bedrock", "vertex"],
       "planningReasoning": "System credentials planned for: anthropic. Total execution order: anthropic(system)",
-      "canonicalSlug": "anthropic/claude-sonnet-4.6",
+      "canonicalSlug": "anthropic/claude-sonnet-5",
       "finalProvider": "anthropic",
       "modelAttemptCount": 1,
       "modelAttempts": [
         {
-          "modelId": "anthropic:claude-sonnet-4.6",
-          "canonicalSlug": "anthropic/claude-sonnet-4.6",
+          "modelId": "anthropic:claude-sonnet-5",
+          "canonicalSlug": "anthropic/claude-sonnet-5",
           "success": true,
           "providerAttemptCount": 1,
           "providerAttempts": [
             {
               "provider": "anthropic",
-              "providerApiModelId": "claude-sonnet-4.6",
+              "providerApiModelId": "claude-sonnet-5",
               "credentialType": "system",
               "success": true,
               "startTime": 458753.407267,
@@ -189,7 +189,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     prompt,
     providerOptions: {
       gateway: {
@@ -219,7 +219,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     prompt,
     providerOptions: {
       gateway: {
@@ -254,7 +254,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     prompt,
     providerOptions: {
       gateway: {
@@ -276,7 +276,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     prompt,
     providerOptions: {
       gateway: {
@@ -300,7 +300,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     prompt,
     providerOptions: {
       gateway: {

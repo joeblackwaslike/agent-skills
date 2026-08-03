@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4fbb38b237c205387834ca9d4f62a4d884ec857ff1f410a6ce8ff6b69672418f"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "d008294ebb2eb072f6de9f5a748007b8558879598edb71d1787a5613b24568ec"
 ---
 
 # Requirements for listing an Integration
@@ -439,9 +439,9 @@ When integration users view your snippet in the Vercel dashboard, `{{YOUR_SECRET
 
 If you're using TypeScript or JavaScript snippets, you can use `{{process.env.YOUR_SECRET}}`. In this case, the snippet view in the Vercel dashboard shows `process.env.YOUR_SECRET` instead of a `*` accompanied by the **Show Secrets** button.
 
-### Edge Config Support
+### Global Config Support
 
-When enabled, integration users can choose an [Edge Config](/docs/edge-config) to access experimentation feature flag data.
+When enabled, integration users can choose a [Global Config](/docs/global-config) to access experimentation feature flag data.
 
 ### Log Drain Settings
 

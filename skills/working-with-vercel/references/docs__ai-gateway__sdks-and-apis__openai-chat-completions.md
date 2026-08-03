@@ -3,22 +3,22 @@ title: OpenAI Chat Completions API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calls
+  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming
+  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/images
+  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 summary: Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "247094897fe88c23031db0ef31becb526c63f6b004f898971a140cd3af57c44a"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "dfffd9083c9b2cc084cf2c75d15483c1ef13c026d7d692a0712226a43b763e53"
 ---
 
 # OpenAI Chat Completions API
@@ -50,12 +50,14 @@ The AI Gateway supports the following Chat Completions API endpoints:
 
 - [`GET /models`](#list-models) - List available models
 - [`GET /models/{model}`](#retrieve-model) - Retrieve a specific model
-- [`POST /chat/completions`](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) - Create chat completions with support for streaming, attachments, [tool calls](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calls), and [structured outputs](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs)
+- [`POST /chat/completions`](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) - Create chat completions, with support for [streaming](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming), [file attachments](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images), [tool calling](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling), and [structured outputs](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs)
 - [`POST /embeddings`](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings) - Generate vector embeddings
 
 For advanced features, see:
 
-- [Advanced configuration](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) - Reasoning, provider options, model fallbacks, BYOK, and prompt caching
+- [Reasoning](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) - Control how much a model thinks before answering
+- [File attachments](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) - Send images and PDF documents to a model
+- [Advanced configuration](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) - Provider options, model fallbacks, BYOK, and prompt caching
 - [Image generation](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) - Generate images using multimodal models
 - [Direct REST API usage](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) - Use the API without client libraries
 
@@ -66,6 +68,23 @@ libraries like the [OpenAI client libraries](https://platform.openai.com/docs/li
 client to the AI Gateway's base URL and use your AI Gateway [API key](/docs/ai-gateway/authentication#api-key) or [OIDC token](/docs/ai-gateway/authentication#oidc-token) for authentication.
 
 ### OpenAI client libraries
+
+#### cURL
+
+```bash filename="client.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello, world!"
+      }
+    ]
+  }'
+```
 
 #### TypeScript
 
@@ -78,7 +97,7 @@ const openai = new OpenAI({
 });
 
 const response = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   messages: [{ role: 'user', content: 'Hello, world!' }],
 });
 ```
@@ -95,7 +114,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     messages=[
         {'role': 'user', 'content': 'Hello, world!'}
     ]
@@ -117,7 +136,7 @@ const gateway = createOpenAICompatible({
 });
 
 const response = await generateText({
-  model: gateway('anthropic/claude-opus-4.8'),
+  model: gateway('anthropic/claude-opus-5'),
   prompt: 'Hello, world!',
 });
 ```
@@ -133,6 +152,13 @@ GET /models
 ```
 
 Example request
+
+#### cURL
+
+```bash filename="list-models.sh"
+curl -X GET "https://ai-gateway.vercel.sh/v1/models" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
+```
 
 #### TypeScript
 
@@ -172,13 +198,13 @@ The response follows the OpenAI API format:
   "object": "list",
   "data": [
     {
-      "id": "anthropic/claude-opus-4.8",
+      "id": "anthropic/claude-opus-5",
       "object": "model",
       "created": 1677610602,
       "owned_by": "anthropic"
     },
     {
-      "id": "openai/gpt-5.5",
+      "id": "openai/gpt-5.6-sol",
       "object": "model",
       "created": 1677610602,
       "owned_by": "openai"
@@ -199,9 +225,16 @@ GET /models/{model}
 
 Parameters
 
-- `model` (required): The model ID to retrieve (e.g., `anthropic/claude-opus-4.8`)
+- `model` (required): The model ID to retrieve (e.g., `anthropic/claude-opus-5`)
 
 Example request
+
+#### cURL
+
+```bash filename="retrieve-model.sh"
+curl -X GET "https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-5" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
+```
 
 #### TypeScript
 
@@ -213,7 +246,7 @@ const openai = new OpenAI({
   baseURL: 'https://ai-gateway.vercel.sh/v1',
 });
 
-const model = await openai.models.retrieve('anthropic/claude-opus-4.8');
+const model = await openai.models.retrieve('anthropic/claude-opus-5');
 console.log(model);
 ```
 
@@ -228,7 +261,7 @@ client = OpenAI(
     base_url='https://ai-gateway.vercel.sh/v1'
 )
 
-model = client.models.retrieve('anthropic/claude-opus-4.8')
+model = client.models.retrieve('anthropic/claude-opus-5')
 print(model)
 ```
 
@@ -236,7 +269,7 @@ Response format
 
 ```json
 {
-  "id": "anthropic/claude-opus-4.8",
+  "id": "anthropic/claude-opus-5",
   "object": "model",
   "created": 1677610602,
   "owned_by": "anthropic"

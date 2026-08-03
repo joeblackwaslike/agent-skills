@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "efb299b47d98d62e6a8aab5d3bd5f7a4ec2085fa336a92c984271500240e2f6a"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "52a95d07cb0e5f00f3641474367664a3a438f6eea5a92d5ebbb50917bf7b5588"
 ---
 
 # `createMCPClient()`
@@ -162,6 +162,13 @@ It currently does not support accepting notifications from an MCP server, and cu
                   ],
                 },
               ],
+            },
+            {
+              name: 'initializationOptions',
+              type: 'RequestOptions',
+              isOptional: true,
+              description:
+                'Optional signal and timeout settings that bound transport startup and the initialize request. A timeout or abort closes the transport and rejects createMCPClient.',
             },
             {
               name: 'clientName',
@@ -649,6 +656,7 @@ For unknown errors, the client exposes an `onUncaughtError` callback that can be
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

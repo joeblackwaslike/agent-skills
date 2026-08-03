@@ -15,8 +15,8 @@ related:
 summary: Generate images from text prompts using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "52f5800bc145b8f671f36f97b7dc54311f4a5188743204361b3cb36070859037"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "1b21b4f2e11354191504bba38341d43cb4492e22fefff1a83827096808e2be49"
 ---
 
 # Image Generation Quickstart
@@ -147,10 +147,10 @@ if (imageFiles.length > 0) {
 
 ### Flux 2 Flex (`bfl/flux-2-flex`)
 
-Fast, high-quality image generation from Black Forest Labs. Image-only models use `experimental_generateImage` and return images in `result.images` with base64 encoding:
+Fast, high-quality image generation from Black Forest Labs. Image-only models use `generateImage` and return images in `result.images` with base64 encoding:
 
 ```typescript filename="flux-example.ts"
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 import fs from 'node:fs';
 import 'dotenv/config';
 
@@ -171,7 +171,7 @@ fs.writeFileSync('output.png', buffer);
 Professional-grade image generation. Same pattern as Flux:
 
 ```typescript filename="recraft-example.ts"
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 import fs from 'node:fs';
 import 'dotenv/config';
 
@@ -189,7 +189,7 @@ fs.writeFileSync('output.png', buffer);
 Google's Imagen model for high-fidelity image generation:
 
 ```typescript filename="imagen-example.ts"
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 import fs from 'node:fs';
 import 'dotenv/config';
 
@@ -210,7 +210,7 @@ How you save images depends on the model type:
 | Model type                                | Function                     | Image location  | Format          |
 | ----------------------------------------- | ---------------------------- | --------------- | --------------- |
 | Nano Banana models                        | `generateText`               | `result.files`  | `uint8Array`    |
-| Image-only models (Flux, Recraft, Imagen) | `experimental_generateImage` | `result.images` | `base64` string |
+| Image-only models (Flux, Recraft, Imagen) | `generateImage` | `result.images` | `base64` string |
 
 For more details, see the [Image Generation Capabilities docs](/docs/ai-gateway/modalities/image-generation).
 

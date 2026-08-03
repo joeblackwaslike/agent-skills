@@ -3,7 +3,7 @@ title: Structured Outputs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs"
-last_updated: 2026-03-07
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f9b86994f6b6cc68844b1f8275b179b27dd79d3eefe5dfd94eb19169243e2715"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "ed59b4727b7e83e1852ba7212368e530503839dfdecd4528178d3fbfa1c83f35"
 ---
 
 # Structured Outputs
@@ -33,6 +33,40 @@ For full details on structured outputs, see the [Anthropic structured outputs do
 The GA API uses the `output_config.format` field to specify a JSON Schema. No beta header is required.
 
 Example request
+
+#### cURL
+
+```bash filename="structured-output.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "max_tokens": 1024,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Generate a profile for a software engineer in Austin, TX."
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string" },
+            "age": { "type": "number" },
+            "email": { "type": "string" },
+            "skills": { "type": "array", "items": { "type": "string" } }
+          },
+          "required": ["name", "age", "email", "skills"]
+        }
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -62,7 +96,7 @@ const personSchema = {
 };
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   max_tokens: 1024,
   messages: [
     {
@@ -116,7 +150,7 @@ person_schema = {
 }
 
 message = client.messages.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     max_tokens=1024,
     messages=[
         {
@@ -154,6 +188,49 @@ output_config: {
 The beta API uses the `output_format` field along with the `structured-outputs-2025-11-13` beta header.
 
 Example request
+
+#### cURL
+
+```bash filename="structured-output-beta.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-beta: structured-outputs-2025-11-13" \
+  -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "max_tokens": 1024,
+    "messages": [
+      { "role": "user", "content": "Give me a weather forecast for San Francisco, CA." }
+    ],
+    "output_format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "location": { "type": "string" },
+          "temperature": { "type": "number" },
+          "conditions": { "type": "string" },
+          "forecast": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "day": { "type": "string" },
+                "high": { "type": "number" },
+                "low": { "type": "number" },
+                "conditions": { "type": "string" }
+              },
+              "required": ["day", "high", "low", "conditions"]
+            }
+          }
+        },
+        "required": ["location", "temperature", "conditions", "forecast"]
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -193,7 +270,7 @@ const forecastSchema = {
 };
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   max_tokens: 1024,
   messages: [
     {
@@ -256,7 +333,7 @@ forecast_schema = {
 }
 
 message = client.messages.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     max_tokens=1024,
     messages=[
         {
@@ -285,6 +362,50 @@ print(forecast['location'], forecast['temperature'])
 Structured outputs work with streaming. The model produces valid JSON incrementally, and each `text_delta` event contains a fragment of the JSON. Accumulate the fragments and parse the complete JSON when the stream ends.
 
 Example request
+
+#### cURL
+
+```bash filename="structured-output-stream.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "anthropic-beta: structured-outputs-2025-11-13" \
+  -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "max_tokens": 1024,
+    "stream": true,
+    "messages": [
+      { "role": "user", "content": "Give me a weather forecast for San Francisco, CA." }
+    ],
+    "output_format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "location": { "type": "string" },
+          "temperature": { "type": "number" },
+          "conditions": { "type": "string" },
+          "forecast": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "day": { "type": "string" },
+                "high": { "type": "number" },
+                "low": { "type": "number" },
+                "conditions": { "type": "string" }
+              },
+              "required": ["day", "high", "low", "conditions"]
+            }
+          }
+        },
+        "required": ["location", "temperature", "conditions", "forecast"]
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -324,7 +445,7 @@ const recipeSchema = {
 };
 
 const stream = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   max_tokens: 2048,
   stream: true,
   messages: [
@@ -398,7 +519,7 @@ recipe_schema = {
 full_json = ''
 
 with client.messages.stream(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     max_tokens=2048,
     messages=[
         {
@@ -438,7 +559,7 @@ When structured outputs are enabled, the model returns valid JSON in a `text` co
       "text": "{\"name\":\"Alex Chen\",\"age\":29,\"email\":\"alex@example.com\",\"skills\":[\"TypeScript\",\"React\",\"Node.js\"]}"
     }
   ],
-  "model": "anthropic/claude-sonnet-4.6",
+  "model": "anthropic/claude-sonnet-5",
   "stop_reason": "end_turn",
   "usage": {
     "input_tokens": 25,

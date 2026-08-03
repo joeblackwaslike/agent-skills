@@ -3,7 +3,7 @@ title: Embeddings with the OpenAI-Compatible API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings"
-last_updated: 2026-06-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -13,8 +13,8 @@ related:
 summary: Generate vector embeddings with the OpenAI-compatible /embeddings endpoint through Vercel AI Gateway, including the dimensions parameter and response...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a8087324718a3380fd5e51b91e6f13eb6770a7f3a828fa8d27c0d369717a3bbb"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "1efee11189d9f86fe3a08f702a42ae4e34026cd55384e936972448c8668ab3b9"
 ---
 
 # Embeddings with the OpenAI-Compatible API
@@ -30,6 +30,18 @@ POST /embeddings
 ```
 
 Example request
+
+#### cURL
+
+```bash filename="embeddings.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/embeddings" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/text-embedding-3-small",
+    "input": "Sunny day at the beach"
+  }'
+```
 
 #### TypeScript
 
@@ -102,9 +114,29 @@ Dimensions parameter
 
 You can set the root-level `dimensions` field (from the [OpenAI Embeddings API spec](https://platform.openai.com/docs/api-reference/embeddings/create)) and the gateway will auto-map it to each provider's expected field; `providerOptions.[provider]` still passes through as-is and isn't required for `dimensions` to work.
 
+#### cURL
+
+```bash filename="embeddings-dimensions.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/embeddings" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/text-embedding-3-small",
+    "input": "Sunny day at the beach",
+    "dimensions": 768
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="embeddings-dimensions.ts"
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
 const response = await openai.embeddings.create({
   model: 'openai/text-embedding-3-small',
   input: 'Sunny day at the beach',
@@ -115,6 +147,14 @@ const response = await openai.embeddings.create({
 #### Python
 
 ```python filename="embeddings-dimensions.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.getenv('AI_GATEWAY_API_KEY'),
+    base_url='https://ai-gateway.vercel.sh/v1'
+)
+
 response = client.embeddings.create(
     model='openai/text-embedding-3-small',
     input='Sunny day at the beach',

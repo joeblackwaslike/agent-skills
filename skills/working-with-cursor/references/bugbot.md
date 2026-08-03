@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/bugbot.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "a5acc69831c30da4a4acac933677b2347d07645eb045535a7337a9cb9fcb17fa"
+fetched_at: "2026-08-03T07:28:37.789Z"
+sha256: "39b5b5f72cd2d093fc6570f990a1eefa3fbb69810b72baa71a6d2815a0da54a4"
 ---
 
 # Bugbot
@@ -327,7 +327,7 @@ By default, Bugbot reviews the full pull request diff on every push. Turn on **I
 
 ## Effort Levels
 
-Effort levels control how much time Bugbot spends reasoning during a review. Higher effort levels can find more bugs, but each review may take longer and take more up usage.
+Effort levels control how much time Bugbot spends reasoning during a review. Higher effort levels can find more bugs, but each review may take longer and take up more usage.
 
 Choose from these effort levels:
 
@@ -337,15 +337,27 @@ Choose from these effort levels:
 
 Effort levels are available only for usage-based Bugbot plans.
 
-## Team rules
+## Rules
+
+Guide reviews with team rules, repository rules, and project `.cursor/BUGBOT.md` files.
+
+### Team rules
 
 Team admins can create rules from the [Bugbot dashboard](https://cursor.com/dashboard/bugbot) that apply to all repositories in the team. These rules are available to every enabled repository, making it easy to enforce organization-wide standards.
 
-When Team Rules, repository rules, and project rule files all apply, Bugbot merges them. Order of application: Team Rules → repository rules (learned and manual) → project BUGBOT.md (including nested files) → User Rules.
+When Team Rules, repository rules, and project rule files all apply, Bugbot merges them into one review-rules block. Order of inclusion: Team Rules → project .cursor/BUGBOT.md (including nested files) → learned rules → manual rules.
 
-## Repository rules
+### Rule limits
 
-### Project rules
+Each rule is truncated at 30,000 characters when included in a review. The combined rules Bugbot includes for a review are capped at 100,000 characters. If you exceed that combined cap, some rules may be omitted. Required team rules are prioritized over non-required rules.
+
+### See which rules a review used
+
+Comment `bugbot run debug=true` or `cursor review debug=true` on a pull request. Bugbot posts a table of every rule included in that run and flags any that were truncated or omitted.
+
+### Repository rules
+
+#### Project rules
 
 Create `.cursor/BUGBOT.md` files to provide project-specific context for reviews. Bugbot always includes the root `.cursor/BUGBOT.md` file and any additional files found while traversing upward from changed files.
 
@@ -360,7 +372,9 @@ project/
     .cursor/BUGBOT.md        # Included when reviewing frontend files
 ```
 
-### Learned rules
+Cursor [project rules](https://cursor.com/docs/rules.md) (`*.mdc` files in `.cursor/rules/`) do not apply to Bugbot runs.
+
+#### Learned rules
 
 In the [Bugbot dashboard](https://cursor.com/dashboard/bugbot/repository-rules), enable learning for your organizations and repositories.
 
@@ -376,7 +390,7 @@ Cursor will automatically enable or disable rules as it learns more about your t
 | **Rule content** | The instructions Bugbot should follow (i.e. style gates, paths, or review expectations).                       |
 | **Scoped paths** | Optional glob patterns such as `src/components/**`. Leave empty to apply the rule across the whole repository. |
 
-### Manual rules
+#### Manual rules
 
 In the [Bugbot dashboard](https://cursor.com/dashboard/bugbot/repository-rules), you can create manual rules for individual repositories.
 
@@ -386,7 +400,7 @@ In the [Bugbot dashboard](https://cursor.com/dashboard/bugbot/repository-rules),
 | **Rule content** | The instructions Bugbot should follow (i.e. style gates, paths, or review expectations).                       |
 | **Scoped paths** | Optional glob patterns such as `src/components/**`. Leave empty to apply the rule across the whole repository. |
 
-### Rule analytics
+#### Rule analytics
 
 **Analytics** on a Bugbot rule show how it performs on real PRs:
 
@@ -397,7 +411,7 @@ In the [Bugbot dashboard](https://cursor.com/dashboard/bugbot/repository-rules),
 | **Accepted issues** | Number of findings your team accepted.                     |
 | **Acceptance rate** | Percentage of findings that were accepted.                 |
 
-### Examples
+#### Examples
 
 ### Security: Flag any use of eval() or exec()
 
@@ -702,7 +716,7 @@ Subscribe through your team dashboard to enable billing.
 
 If Bugbot isn't working:
 
-1. **Enable verbose mode** by commenting `cursor review verbose=true` or `bugbot run verbose=true` for detailed logs and request ID
+1. **Enable verbose mode** by commenting `cursor review verbose=true` or `bugbot run verbose=true` for detailed logs, which Bugbot rules loaded, and a request ID
 2. **Check permissions** to verify Bugbot has repository access
 3. **Verify installation** to confirm your repository provider integration is installed and enabled
 
@@ -713,6 +727,10 @@ Include the request ID from verbose mode when reporting issues.
 ### Does Bugbot read PR comments?
 
 Yes. Bugbot reads both top-level and inline pull request comments from connected providers and includes them as context during reviews. This helps avoid duplicate suggestions and allows Bugbot to build on prior feedback from reviewers.
+
+### How do I see which rules Bugbot used?
+
+Comment `bugbot run debug=true` or `cursor review debug=true` on the pull request. Bugbot posts a table of every rule included in that run and flags any that were truncated or omitted. See [Rule limits](https://cursor.com/docs/bugbot.md#rule-limits) if a rule is missing or cut off.
 
 ### Is Bugbot privacy-mode compliant?
 

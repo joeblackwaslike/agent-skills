@@ -15,8 +15,8 @@ related:
 summary: Enable automatic prompt caching across providers with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "08312ae9dddf8d2ea6c768a309ad2a43b7a8d59a211ec20516650017f2664eec"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "74ed3db5fc44705c9970956c2e1826ce2c4911a38377b67195cee77a14a5c972"
 ---
 
 # Automatic Caching
@@ -45,7 +45,7 @@ Anthropic cache entries expire after five minutes by default. If your agentic wo
 
 ```typescript
 body: JSON.stringify({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   caching: 'auto',
   cache_ttl: '1h',
   input: 'Review this codebase and suggest improvements.',
@@ -91,7 +91,7 @@ If your client knows how much of the prompt is stable, it can say so with the `c
 
 ```typescript
 body: JSON.stringify({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   caching: 'auto',
   cache_anchor_items: 12,
   input: [
@@ -125,7 +125,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     system: 'You are a helpful assistant with access to a large knowledge base...',
     prompt,
     providerOptions: {
@@ -155,7 +155,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error - providerOptions is a gateway extension
 const response = await openai.chat.completions.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'system',
@@ -190,7 +190,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     messages=[
         {
             'role': 'system',
@@ -223,7 +223,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     Authorization: `Bearer ${apiKey}`,
   },
   body: JSON.stringify({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     caching: 'auto',
     instructions: 'You are a helpful assistant with access to a large knowledge base...',
     input: [{ type: 'message', role: 'user', content: 'What is the capital of France?' }],
@@ -246,7 +246,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   max_tokens: 2048,
   system: 'You are a helpful assistant with access to a large knowledge base...',
   messages: [
@@ -280,7 +280,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     max_tokens=2048,
     system='You are a helpful assistant with access to a large knowledge base...',
     messages=[

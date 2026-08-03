@@ -3,54 +3,68 @@ title: Anthropic Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/anthropic
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
   - /docs/ai-gateway/models-and-providers
 related:
-  []
+  - /docs/ai-gateway/models-and-providers/reasoning
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "7ccbbb3d2579411b67ba8928d02839f2aa495ca6fb3e25e01c5b181eaa68a951"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "0e52c4edf7694b76a58a348d1bc0d258d3d54ea656fa8c33890e934d758db77d"
 ---
 
 # Anthropic Reasoning
 
-Anthropic Claude models support thinking, which lets the model reason through complex problems before producing a final answer. Claude 4.6 introduced adaptive thinking, where Claude dynamically decides when and how much to think based on an effort level. Claude Opus 4.7 and later require adaptive thinking — the legacy fixed-budget API is no longer accepted.
+Anthropic Claude models support thinking, which lets the model reason through complex problems before producing a final answer. Claude 4.6 introduced adaptive thinking, where Claude dynamically decides when and how much to think based on an effort level. On Claude Opus 4.7 and later and the Claude 5 models (Claude Opus 5, Claude Sonnet 5, Claude Fable 5), adaptive thinking is the only way to turn thinking on. The legacy fixed-budget API is no longer accepted on those models.
 
 ## Two thinking modes
 
-- **Adaptive thinking** — Set `thinking: { type: 'adaptive' }`. Claude dynamically decides when and how much to think based on the `effort` parameter. Available on Claude 4.6 and later. Required on Claude Opus 4.7 and later.
-- **Extended thinking with a token budget** — Set `thinking: { type: 'enabled', budgetTokens: N }` for a fixed token budget. Available on Claude 4.6 and earlier. Deprecated on Claude 4.6. **Removed on Claude Opus 4.7 and later**: requests with `type: 'enabled'` return a 400 error. Migrate to adaptive thinking.
+- **Adaptive thinking**: Set `thinking: { type: 'adaptive' }`. Claude dynamically decides when and how much to think based on the `effort` parameter. Available on Claude 4.6 and later. The only way to turn thinking on for Claude Opus 4.7 and later and the Claude 5 models.
+- **Extended thinking with a token budget**: Set `thinking: { type: 'enabled', budgetTokens: N }` for a fixed token budget. Available on Claude 4.6 and earlier. Deprecated on Claude 4.6. **Removed on Claude Opus 4.7 and later and the Claude 5 models**: requests with `type: 'enabled'` return a 400 error. Migrate to adaptive thinking.
 
-By default, no thinking happens. Send the `thinking` field explicitly to enable either mode.
+### What happens when you leave `thinking` unset
+
+The default flips at Claude 5, not at Claude Opus 4.7:
+
+| Models                                                        | Thinking when `thinking` is unset |
+| ------------------------------------------------------------- | --------------------------------- |
+| Claude Opus 5, Claude Sonnet 5, Claude Fable 5                | Runs adaptive thinking            |
+| Claude Opus 4.8, Claude Opus 4.7, Claude 4.6 and earlier      | No thinking                       |
+
+If you're migrating off `budgetTokens`, set `thinking: { type: 'adaptive' }` explicitly on Claude Opus 4.7 and 4.8. Dropping the parameter turns thinking off on those models rather than falling back to adaptive.
+
+To turn thinking off, set `thinking: { type: 'disabled' }`. Two exceptions: Claude Fable 5 can't turn thinking off at all, and Claude Opus 5 accepts `disabled` only at an `effort` of `high` or lower. Pairing it with `xhigh` or `max` returns a 400.
 
 ## Supported models
 
+To see the current list of Anthropic reasoning models, use the **Reasoning** filter on the [AI Gateway models page](https://vercel.com/ai-gateway/models?capabilities=reasoning\&providers=anthropic). Which thinking mode a model accepts follows its series:
+
 | Model series                                          | Adaptive thinking | Extended thinking (token budget) |
 | ----------------------------------------------------- | ----------------- | -------------------------------- |
-| Claude Opus 4.7 and later                             | ✓                 | — (returns 400)                  |
+| Claude 5 (`opus-5`, `fable-5`, `sonnet-5`)            | ✓ (default)       | — (returns 400)                  |
+| Claude Opus 4.7, Claude Opus 4.8                      | ✓                 | — (returns 400)                  |
 | Claude 4.6 (`opus-4.6`, `sonnet-4.6`)                 | ✓                 | ✓ (deprecated)                   |
 | Claude 4.5 (`opus-4.5`, `sonnet-4.5`), Claude Haiku 4.5 | —                 | ✓                                |
 | Claude 4 / 4.1 (`opus-4`, `opus-4.1`, `sonnet-4`)     | —                 | ✓                                |
 
 ### Effort levels (adaptive thinking)
 
-When you enable adaptive thinking, set the `effort` parameter to control depth. Each model defines its own effort vocabulary and default:
+When you enable adaptive thinking, set the `effort` parameter to control depth. The supported levels and default follow the model series:
 
-| Model                         | Effort levels                             | Default |
-| ----------------------------- | ----------------------------------------- | ------- |
-| `anthropic/claude-opus-4.8`   | `low`, `medium`, `high`, `xhigh`, `max`   | `high`  |
-| `anthropic/claude-opus-4.6`   | `low`, `medium`, `high`, `max`            | `high`  |
-| `anthropic/claude-sonnet-4.6` | `low`, `medium`, `high`                   | `high`  |
+| Model series                        | Effort levels                           | Default |
+| ----------------------------------- | --------------------------------------- | ------- |
+| Claude 5, Claude Opus 4.8, Claude Opus 4.7 | `low`, `medium`, `high`, `xhigh`, `max` | `high`  |
+| Claude Opus 4.6                     | `low`, `medium`, `high`, `max`          | `high`  |
+| Claude Sonnet 4.6                   | `low`, `medium`, `high`                 | `high`  |
 
 | Level    | Description                                                                   |
 | -------- | ----------------------------------------------------------------------------- |
-| `max`    | Absolute maximum capability. Claude Opus models only.                         |
-| `xhigh`  | Above `high` but below `max`. Claude Opus 4.7 and later only.                 |
+| `max`    | Absolute maximum capability. Not supported on Claude Sonnet 4.6.              |
+| `xhigh`  | Above `high` but below `max`. Not supported on Claude 4.6 models.             |
 | `high`   | High capability (default). Complex reasoning, difficult coding, agentic tasks |
 | `medium` | Balanced speed, cost, and performance.                                        |
 | `low`    | Most efficient. Best for simpler tasks and latency-sensitive workloads.       |
@@ -63,6 +77,25 @@ For more details, see the [Anthropic extended thinking docs](https://platform.cl
 
 ## Getting started
 
+### Top-level reasoning option
+
+On Claude 4.6 and later, the AI SDK 7 top-level [`reasoning` option](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) enables adaptive thinking at the corresponding effort level, so you don't need provider-specific configuration for the common case:
+
+```typescript filename="top-level-reasoning.ts"
+import { generateText } from 'ai';
+
+const result = await generateText({
+  model: 'anthropic/claude-sonnet-5',
+  prompt: 'Explain quantum entanglement in simple terms.',
+  reasoning: 'high', // Adaptive thinking with effort: 'high'
+});
+
+console.log('Thinking:', result.reasoningText);
+console.log('Response:', result.text);
+```
+
+Use `providerOptions.anthropic` when you need Anthropic-specific features like a fixed token budget on older models, the `display` parameter, or interleaved thinking beta headers. If you set `thinking` in `providerOptions`, it takes precedence over the top-level `reasoning` value.
+
 ### Adaptive thinking (Claude 4.6 and later)
 
 Configure adaptive thinking through `providerOptions`. Claude dynamically decides when and how much to think:
@@ -71,7 +104,7 @@ Configure adaptive thinking through `providerOptions`. Claude dynamically decide
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Explain quantum entanglement in simple terms.',
   providerOptions: {
     anthropic: {
@@ -86,13 +119,39 @@ console.log('Response:', result.text);
 
 ### Streaming with adaptive thinking
 
-On Claude Opus 4.7, set `display: 'summarized'` to receive reasoning text — it's omitted by default. See [Thinking display](#thinking-display-claude-opus-47-and-later).
+On Claude Opus 4.7 and later, set `display: 'summarized'` to receive reasoning text, which is omitted by default. See [Thinking display](#thinking-display-claude-opus-47-and-later).
+
+#### AI SDK 7
 
 ```typescript filename="stream-adaptive.ts"
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
+  prompt: 'Explain quantum entanglement in simple terms.',
+  providerOptions: {
+    anthropic: {
+      thinking: { type: 'adaptive', display: 'summarized' },
+    },
+  },
+});
+
+for await (const part of result.stream) {
+  if (part.type === 'reasoning-delta') {
+    process.stdout.write(part.text);
+  } else if (part.type === 'text-delta') {
+    process.stdout.write(part.text);
+  }
+}
+```
+
+#### AI SDK 6
+
+```typescript filename="stream-adaptive.ts"
+import { streamText } from 'ai';
+
+const result = streamText({
+  model: 'anthropic/claude-opus-5',
   prompt: 'Explain quantum entanglement in simple terms.',
   providerOptions: {
     anthropic: {
@@ -134,6 +193,99 @@ console.log('Thinking:', result.reasoningText);
 console.log('Response:', result.text);
 ```
 
+### Other API formats
+
+You can configure thinking without the AI SDK through the gateway's `/v1/messages` endpoint using the Anthropic SDK in any language. The [OpenAI-compatible formats](/docs/ai-gateway/models-and-providers/reasoning#reasoning-across-api-formats) also work with Claude models: their `reasoning` parameter is mapped to Claude's thinking configuration.
+
+#### TypeScript
+
+```typescript filename="thinking-messages.ts"
+import Anthropic from '@anthropic-ai/sdk';
+
+const anthropic = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+
+const message = await anthropic.messages.create({
+  model: 'anthropic/claude-sonnet-4.5',
+  max_tokens: 8192,
+  thinking: {
+    type: 'enabled',
+    budget_tokens: 5000,
+  },
+  messages: [
+    {
+      role: 'user',
+      content: 'Explain quantum entanglement in simple terms.',
+    },
+  ],
+});
+
+for (const block of message.content) {
+  if (block.type === 'thinking') {
+    console.log('Thinking:', block.thinking);
+  } else if (block.type === 'text') {
+    console.log('Response:', block.text);
+  }
+}
+```
+
+#### Python
+
+```python filename="thinking_messages.py"
+import os
+import anthropic
+
+client = anthropic.Anthropic(
+    api_key=os.getenv('AI_GATEWAY_API_KEY'),
+    base_url='https://ai-gateway.vercel.sh'
+)
+
+message = client.messages.create(
+    model='anthropic/claude-sonnet-4.5',
+    max_tokens=8192,
+    thinking={
+        'type': 'enabled',
+        'budget_tokens': 5000,
+    },
+    messages=[
+        {
+            'role': 'user',
+            'content': 'Explain quantum entanglement in simple terms.'
+        }
+    ],
+)
+
+for block in message.content:
+    if block.type == 'thinking':
+        print('Thinking:', block.thinking)
+    elif block.type == 'text':
+        print('Response:', block.text)
+```
+
+#### cURL
+
+```bash filename="thinking-messages.sh"
+curl https://ai-gateway.vercel.sh/v1/messages \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4.5",
+    "max_tokens": 8192,
+    "thinking": {
+      "type": "enabled",
+      "budget_tokens": 5000
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain quantum entanglement in simple terms."
+      }
+    ]
+  }'
+```
+
 ## Parameters
 
 ### Adaptive thinking (Claude 4.6 and later)
@@ -159,7 +311,7 @@ Starting with Claude Opus 4.7, thinking content is **omitted from the response b
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Explain quantum entanglement in simple terms.',
   providerOptions: {
     anthropic: {
@@ -172,9 +324,9 @@ console.log('Thinking:', result.reasoningText); // populated
 console.log('Response:', result.text);
 ```
 
-Without `display: 'summarized'`, `result.reasoningText` is empty on Opus 4.7. You're still billed for thinking tokens whether or not they're returned.
+Without `display: 'summarized'`, `result.reasoningText` is empty on Claude Opus 4.7 and later. You're still billed for thinking tokens whether or not they're returned.
 
-This applies to Claude Opus 4.7 only. Claude Opus 4.6 and Claude Sonnet 4.6 continue to return reasoning text by default.
+This applies to Claude Opus 4.7 and later and the Claude 5 models (Claude Sonnet 5, Claude Fable 5). Claude Opus 4.6 and Claude Sonnet 4.6 continue to return reasoning text by default.
 
 ## Interleaved thinking
 
@@ -187,7 +339,7 @@ Interleaved thinking lets Claude think between tool calls, producing better reas
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   prompt: 'Search for the weather and summarize it.',
   providerOptions: {
     anthropic: {
@@ -209,7 +361,7 @@ For more details, see the [Anthropic extended thinking docs](https://platform.cl
 
 ## Summarized vs. full thinking
 
-Claude 4 models return **summarized** thinking output, not full thinking tokens. You're charged for the full thinking tokens, but the response contains a condensed summary. Claude Sonnet 3.7 returns full thinking output.
+Claude 4 and later models return **summarized** thinking output, not full thinking tokens. You're charged for the full thinking tokens, but the response contains a condensed summary.
 
 
 ---

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/advisor.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "ff20de2bfe61f9fff5df0c6b8b4bd66fb7622733bdfe7b236a021cf188117f62"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "eac16abc57c5c6ca186e620c83ce2e67465489f8f605082db68476e9befdaf2b"
 ---
 
 > ## Documentation Index
@@ -91,7 +91,7 @@ The advisor must be at least as capable as the main model. Fable 5 satisfies the
 
 Fable 5 requires Claude Code v2.1.170 or later and Fable 5 access, whether it acts as the main model or the advisor.
 
-Set the advisor as `opus` or `sonnet`, or as `fable` once the rollout returns it as an option. These aliases resolve to the latest version of each model. You can also pass a full model ID such as `claude-opus-5`.
+Set the advisor as `opus` or `sonnet`, or as `fable` once the rollout returns it as an option. These aliases resolve to Claude Code's built-in default version for each model family, which advances with new Claude Code releases. You can also pass a full model ID such as `claude-opus-5`.
 
 Subagents inherit the configured advisor and apply the same pairing check against their own model.
 

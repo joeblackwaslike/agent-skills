@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/plans
 related:
-  - /docs/edge-config/using-edge-config
+  - /docs/global-config/using-global-config
   - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
   - /docs/speed-insights/limits-and-pricing
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "9cd0c952abb9b83ff40fe419e168e4c4742b210b36568389bf52cb0b9e3d84e9"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "5a1787effa801c805081695e38216a7648a31abff798ff6be2be323bde3e00ba"
 ---
 
 # Vercel Hobby Plan
@@ -26,8 +26,8 @@ The Hobby plan is **free** and aimed at developers with personal projects, and s
 
 | Resource                                                                                            | Hobby Included Usage |
 | --------------------------------------------------------------------------------------------------- | -------------------- |
-| [Edge Config Reads](/docs/edge-config/using-edge-config#reading-data-from-edge-configs)             | First 100,000        |
-| [Edge Config Writes](/docs/edge-config/using-edge-config#writing-data-to-edge-configs)              | First 100            |
+| [Global Config Reads](/docs/global-config/using-global-config#reading-data-from-global-configs)           | First 100,000        |
+| [Global Config Writes](/docs/global-config/using-global-config#writing-data-to-global-configs)             | First 100            |
 | [Active CPU](/docs/functions/usage-and-pricing)                                                     | 4 CPU-hrs            |
 | [Provisioned Memory](/docs/functions/usage-and-pricing)                                             | 360 GB-hrs           |
 | [Function Invocations](/docs/functions/usage-and-pricing)                                           | First 1,000,000      |

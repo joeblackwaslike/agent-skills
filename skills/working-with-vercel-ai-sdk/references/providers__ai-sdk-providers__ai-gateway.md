@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "f9ee5d1b57d5b3544a091598fa518fed9b52534dc52217316901eb8eeff03ea5"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "2a8da838bcb032a8de0ec4fa986f32d5af69ba73bf1f1e05f993e5ab17d01017"
 ---
 
 # AI Gateway Provider
@@ -1274,6 +1274,7 @@ Model capabilities depend on the specific provider and model you're using. For d
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

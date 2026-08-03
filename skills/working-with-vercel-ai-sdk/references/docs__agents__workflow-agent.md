@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "ee38378bcf02def2cf6c01d1bc4c622fbf2888a7e4d9b1e80e1491f7917e29db"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "bcc36a24bee1a929f2ffd7f01aef871bd3a9d8817a558ff2c815244bfc92a357"
 ---
 
 # WorkflowAgent
@@ -448,8 +448,9 @@ This differs from `ToolLoopAgent`, which runs in memory and can carry richer Jav
 ### experimental_sandbox
 
 Pass a sandbox session when tools need an execution environment. The sandbox is
-available to tool `execute` functions as `experimental_sandbox` and to
-`prepareStep`, where you can override it for the current step:
+available to tool descriptions and `execute` functions as
+`experimental_sandbox`, and to `prepareStep`, where you can override it for the
+current step:
 
 ```ts
 const agent = new WorkflowAgent({

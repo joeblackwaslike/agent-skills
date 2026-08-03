@@ -13,8 +13,8 @@ related:
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "7dfd6ffa2cde93785e5027c1a4cb7556cdf22846ab7ee274e5844a220a85eedb"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a1245aa574984f8bdbc8126e55871076a46a843fa56cba94652e1093b073b3c7"
 ---
 
 # App Attribution
@@ -47,7 +47,7 @@ const result = streamText({
     'http-referer': 'https://myapp.vercel.app',
     'x-title': 'MyApp',
   },
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Hello, world!',
 });
 
@@ -68,7 +68,7 @@ const openai = new OpenAI({
 
 const response = await openai.chat.completions.create(
   {
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     messages: [
       {
         role: 'user',
@@ -99,7 +99,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     messages=[
         {
             'role': 'user',
@@ -133,7 +133,7 @@ const gateway = createGateway({
 });
 
 const result = streamText({
-  model: gateway('anthropic/claude-opus-4.8'),
+  model: gateway('anthropic/claude-opus-5'),
   prompt: 'Hello, world!',
 });
 
@@ -162,7 +162,7 @@ globalThis.AI_SDK_DEFAULT_PROVIDER = gateway;
 
 // Now you can use plain string model IDs and they'll use your custom provider
 const result = streamText({
-  model: 'anthropic/claude-opus-4.8', // Uses the gateway provider with headers
+  model: 'anthropic/claude-opus-5', // Uses the gateway provider with headers
   prompt: 'Hello, world!',
 });
 

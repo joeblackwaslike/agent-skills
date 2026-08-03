@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5a960c3747510fc57e15a5103243364f168c0e709a6cb22e873cf067bdc6e3a5"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "e4a184aa4293cb93325ca7b323b4df85416d732feff7a6241959151740e2f505"
 ---
 
 # Server Uploads with Vercel Blob
@@ -41,7 +41,7 @@ Vercel Blob works with any frontend framework. First, install the package:
   2. Select **Create Database**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
   4. Use the name "Images" and select **Create a new Blob store**
-  5. Select the environments where you would like the read-write token to be included. You can also update the prefix of the Environment Variable in Advanced Options
+  5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options
   Once created, you are taken to the Vercel Blob store page.
 
 - ### Prepare your local project
@@ -56,6 +56,11 @@ Vercel Blob works with any frontend framework. First, install the package:
   ```bash
   vercel env pull
   ```
+  > **💡 Note:** If the Blob variables don't show up in your `.env.local` file, your store
+  > connection likely doesn't include the **Development** environment, which is
+  > the one `vercel env pull` reads from. You can add it from the store's
+  > **Projects** tab: open the context menu (⋯) next to your project, select
+  > **Update Project Connection**, and include **Development**.
 
 Server uploads are perfectly fine as long as you do not need to upload files larger than [4.5 MB on Vercel](/docs/functions/runtimes#request-body-size). If you need to upload larger files, consider using [client uploads](/docs/storage/vercel-blob/client-upload).
 

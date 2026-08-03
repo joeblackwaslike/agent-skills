@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "003a0bbf628e0b7078e9cfc5c222f7f8dcba941c7108d4131fcab9e67f0a9ed7"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "ac108b316cfeb49d900ad4517a710067188af67e686afc0ffff8d98144b7861f"
 ---
 
 # Claude Platform on AWS Provider
@@ -173,6 +173,7 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

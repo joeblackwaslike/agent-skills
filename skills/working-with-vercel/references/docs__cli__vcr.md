@@ -11,11 +11,11 @@ related:
   - /docs/container-registry
   - /docs/container-registry/cli-reference
   - /docs/container-registry/limits-and-pricing
-summary: Learn about vercel vcr on Vercel.
+summary: "Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and manage images from your..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/vcr.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "7f72bdd7067d40a8568f1658214d9a8aad744f825c6029f3838c6ac308355767"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "fc889b111c5f2f64bd675f52d98eebe45566e2e44339bd545d02ea6ecf5436d7"
 ---
 
 # vercel vcr

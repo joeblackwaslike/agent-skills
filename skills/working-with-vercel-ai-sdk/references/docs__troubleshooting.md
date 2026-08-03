@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/troubleshooting.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "8c6b3521052f86150cb7f2181e26685dd0427abc9bcb0fdb3e04b581fa12174a"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "0b4dd5614385ecc321aff503cc3f9f1683ef4288e8af4775b5f158d73e46c588"
 ---
 
 # Troubleshooting
@@ -52,6 +52,7 @@ This section is designed to help you quickly identify and resolve common issues 
   - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
   - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
   - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+  - [Code Mode](/docs/ai-sdk-core/code-mode)
   - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
   - [Settings](/docs/ai-sdk-core/settings)
   - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -60,6 +61,7 @@ This section is designed to help you quickly identify and resolve common issues 
   - [Image Generation](/docs/ai-sdk-core/image-generation)
   - [Realtime](/docs/ai-sdk-core/realtime)
   - [Transcription](/docs/ai-sdk-core/transcription)
+  - [Translation](/docs/ai-sdk-core/translation)
   - [Speech](/docs/ai-sdk-core/speech)
   - [Video Generation](/docs/ai-sdk-core/video-generation)
   - [File Uploads](/docs/ai-sdk-core/file-uploads)
@@ -128,6 +130,7 @@ This section is designed to help you quickly identify and resolve common issues 
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
     - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+    - [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
@@ -230,6 +233,7 @@ This section is designed to help you quickly identify and resolve common issues 
     - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
     - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
     - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+    - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
     - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
     - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

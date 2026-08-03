@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/authentication.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "43d151845b84e4aeca9f374a64d081aac2f5b1ea190bc10b4d318832ea2878f7"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "caba7cf60119cada4dff8dc9b5f82df5ab4a825ad7a59d7b6038c2934032155d"
 ---
 
 > ## Documentation Index
@@ -16,7 +16,7 @@ Claude Code supports multiple authentication methods depending on your setup. In
 
 ## Log in to Claude Code
 
-After [installing Claude Code](/docs/en/setup#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in.
+After [installing Claude Code](/docs/en/setup#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in. If you've set the `ANTHROPIC_API_KEY` environment variable, Claude Code skips the login prompt and asks you to approve the key instead.
 
 If the browser doesn't open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser.
 
@@ -146,7 +146,7 @@ Claude Code securely manages your authentication credentials:
   * If you've set the `CLAUDE_CONFIG_DIR` environment variable on Linux or Windows, the `.credentials.json` file lives under that directory instead.
   * Claude Code manages `.credentials.json` through `/login` and `/logout`. To route requests through a custom API endpoint, set the [`ANTHROPIC_BASE_URL`](/docs/en/env-vars) environment variable instead.
 * **Supported authentication types**: Claude.ai credentials, Claude API credentials, Microsoft Foundry Auth, Bedrock Auth, Vertex Auth, and [Claude apps gateway](/docs/en/claude-apps-gateway) session tokens.
-* **Custom credential scripts**: the [`apiKeyHelper`](/docs/en/settings#available-settings) setting can be configured to run a shell script that returns an API key.
+* **Custom credential scripts**: configure the [`apiKeyHelper`](/docs/en/settings#available-settings) setting to run a shell script that returns an API key.
 * **Refresh intervals**: by default, `apiKeyHelper` is called after 5 minutes or on HTTP 401 response. Set `CLAUDE_CODE_API_KEY_HELPER_TTL_MS` environment variable for custom refresh intervals.
 * **Slow helper notice**: if `apiKeyHelper` takes longer than 10 seconds to return a key, Claude Code displays a warning notice in the prompt bar showing the elapsed time. If you see this notice regularly, check whether your credential script can be optimized.
 * **Helper failures**: {/* min-version: 2.1.208 */}when the script exits with an error, times out, or prints nothing, requests fail with [`Your apiKeyHelper script is failing`](/docs/en/errors#your-apikeyhelper-script-is-failing) within three attempts. Before v2.1.208, helper failures surfaced as a generic 401 after about ten silent retries.

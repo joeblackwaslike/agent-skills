@@ -9,15 +9,15 @@ prerequisites:
   - /docs/limits
 related:
   - /docs/image-optimization/limits-and-pricing
-  - /docs/edge-config/edge-config-limits
+  - /docs/global-config/global-config-limits
   - /docs/builds/managing-builds
   - /docs/pricing/regional-pricing
   - /docs/deployments
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4ba6e9e2bbfda7a2f588011937e080885edcb82bd68219834bfc6caaede19b1f"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "89ce86a398a38a198f56c51630376d5c0f43c3e73b341e579570bbb07da2e74e"
 ---
 
 # Fair Use Guidelines
@@ -44,7 +44,7 @@ As a guideline for our community, we expect most users to fall within the below 
 | [Image transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | Up to 5K transformations/month                      | Usage-based                                         |
 | [Image cache reads](/docs/image-optimization/limits-and-pricing#image-cache-reads)         | Up to 300K reads/month                              | Usage-based                                         |
 | [Image cache writes](/docs/image-optimization/limits-and-pricing#image-cache-writes)       | Up to 100K writes/month                             | Usage-based                                         |
-| Storage                                                                                    | [Edge Config](/docs/edge-config/edge-config-limits) | [Edge Config](/docs/edge-config/edge-config-limits) |
+| Storage                                                                                    | [Global Config](/docs/global-config/global-config-limits) | [Global Config](/docs/global-config/global-config-limits) |
 
 For Teams on the Pro plan, you can pay for [additional usage](/docs/limits/fair-use-guidelines#additional-resources) as you go.
 

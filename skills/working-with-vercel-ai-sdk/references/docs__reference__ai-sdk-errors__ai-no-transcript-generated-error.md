@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d60b1e2824984dbf8375f55f0aa0b04ad3bc292c43fa5f41ccea20738684cbfd"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "28c368de2cf237acab3caa0fe156c97449f6ebe560a3a7ebb8f703014a8143ed"
 ---
 
 # AI_NoTranscriptGeneratedError
@@ -52,6 +52,7 @@ if (NoTranscriptGeneratedError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

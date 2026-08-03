@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T07:31:08.126Z",
+  "generated_at": "2026-08-03T07:25:30.041Z",
   "source": "Official Visual Studio Code developer documentation",
   "docs": [
     {
@@ -7,8 +7,8 @@
       "title": "Extension Anatomy",
       "url": "https://code.visualstudio.com/api/get-started/extension-anatomy",
       "file": "extension-anatomy.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "db13d08d70418d18a8a56d3c1e25c3dc9d06e5760eff97d4b677813cc144a5c6",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "b57d2c75b3733678f278a025f01b245aa82acfd2e780f124d1bad1ddd05b3f4c",
       "bytes": 8074
     },
     {
@@ -16,8 +16,8 @@
       "title": "Activation Events",
       "url": "https://code.visualstudio.com/api/references/activation-events",
       "file": "activation-events.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "fd658e69501debf4d1ec78e1d8a52f07ae747a121195d1b7c6c92dd8a295555e",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "542955b913747202c048a871182d34832b0eddee14beeaaf17f8b66c8b6cd07d",
       "bytes": 15123
     },
     {
@@ -25,8 +25,8 @@
       "title": "Extension Capabilities",
       "url": "https://code.visualstudio.com/api/extension-capabilities/overview",
       "file": "extension-capabilities.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "5d8337c59bf1d1aa798149bb192614f981ac1a5c1180944360f635cfa9c5e3dd",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "52bec23deb52079db8f62b4b5a297de2385a89be790582c70235fb494935f416",
       "bytes": 8332
     },
     {
@@ -34,8 +34,8 @@
       "title": "Extension Host",
       "url": "https://code.visualstudio.com/api/advanced-topics/extension-host",
       "file": "extension-host.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "fe3b45821eb6a1ba8ef53dd512bc02e56494d0dc42cc95e24520e2a7f35e276b",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "b577b61efc947aeec9ceb087ccabf6988378b098d0dad421ff6845a066201424",
       "bytes": 5868
     },
     {
@@ -43,8 +43,8 @@
       "title": "Testing Extensions",
       "url": "https://code.visualstudio.com/api/working-with-extensions/testing-extension",
       "file": "testing-extensions.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "97bedcfa9f23591ca7b1d773efc0057048037a126e66d7ec08531ee0ca31b4a9",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "540b25db91cfd81ea4cfce018a14a185b7c976ec06b859a419106317927ebf47",
       "bytes": 17032
     },
     {
@@ -52,8 +52,8 @@
       "title": "Bundling Extensions",
       "url": "https://code.visualstudio.com/api/working-with-extensions/bundling-extension",
       "file": "bundling-extensions.md",
-      "fetched_at": "2026-07-27T07:31:06.590Z",
-      "sha256": "53e49aa298f7c06f4361110b01bd65b7634364a59b1362883b894145bf15e1b5",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "16ea0fb5391452fc5881c0ea461b80de502c3ae95975758e27ed4997cfae8cbd",
       "bytes": 17879
     },
     {
@@ -61,17 +61,17 @@
       "title": "Publishing Extensions",
       "url": "https://code.visualstudio.com/api/working-with-extensions/publishing-extension",
       "file": "publishing-extensions.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "51332be1d94b085d0dac789da33a16a371e3fa9fe36bc055b57ecc8466cfa040",
-      "bytes": 34594
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "4382edfc6802d05716938b44edd4499074ff4be6b868bd97232d60ce7de207a0",
+      "bytes": 34916
     },
     {
       "slug": "webviews",
       "title": "Webviews",
       "url": "https://code.visualstudio.com/api/extension-guides/webview",
       "file": "webviews.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "51e84d7b0e7b2be07cb4f24705d0c87d332e5e28edb744282c0f7f714528b9de",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "9a1e20fd86abd3f89872da4146487791740ee2d5796562ba779fbab2c706e24e",
       "bytes": 46347
     },
     {
@@ -79,8 +79,8 @@
       "title": "Webview UX Guidelines",
       "url": "https://code.visualstudio.com/api/ux-guidelines/webviews",
       "file": "webview-ux.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "69e819f7f0ee1b1ece8c4b540dc1232c2d6e82581be24d78e8fdc7888f95e968",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "7a375f6937efe0f901617fe449d0cc6d1fbeb492f4b34f8c23c124f7cc64cfe5",
       "bytes": 2721
     },
     {
@@ -88,8 +88,8 @@
       "title": "Web Extensions",
       "url": "https://code.visualstudio.com/api/extension-guides/web-extensions",
       "file": "web-extensions.md",
-      "fetched_at": "2026-07-27T07:31:06.590Z",
-      "sha256": "e469acd1cd49b9af72e95991d6e49abf3dd1facdf51f7120abe72c8b100883fd",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "3a343e27ac7ec6b1c49e5aade85c9f82e524e800047dc88239d6ea5a5ffbf600",
       "bytes": 38981
     },
     {
@@ -97,8 +97,8 @@
       "title": "Language Model API",
       "url": "https://code.visualstudio.com/api/extension-guides/language-model",
       "file": "language-model-api.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "ee278f84dd2556d5487b1a1dcd3e96ca0cd15b04889b1836ef562d71f5950fb4",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "c010d63e80cceef0e39677c70bc3d06c51accdc1e46c233a7f441591df6e7c64",
       "bytes": 16000
     },
     {
@@ -106,8 +106,8 @@
       "title": "Language Model Tool API",
       "url": "https://code.visualstudio.com/api/extension-guides/tools",
       "file": "language-model-tool-api.md",
-      "fetched_at": "2026-07-20T06:45:35.555Z",
-      "sha256": "516f52fd7571325fa3e9df165faf139900b0d047cb2cbd3ca0d31992092bf971",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "1f3ac4971a6554ed1cfb3af4337796d716931ecad614242c71bb5b5d7b32a842",
       "bytes": 16203
     },
     {
@@ -115,8 +115,8 @@
       "title": "Contribution Points",
       "url": "https://code.visualstudio.com/api/references/contribution-points",
       "file": "contribution-points.md",
-      "fetched_at": "2026-07-27T07:31:06.590Z",
-      "sha256": "c849e52e1eb5ec2e5f5a69655323ac9f789d6876c043e2ba41eff32e4a815f4f",
+      "fetched_at": "2026-08-03T07:25:15.318Z",
+      "sha256": "735cdce1ce0be298e0030d560b89c2dd6635b8789c638b57b26b34335fc0f6f6",
       "bytes": 75586
     },
     {

@@ -13,11 +13,11 @@ related:
   - /docs/integrations
   - /docs/drains/reference/logs
   - /docs/drains/reference/traces
-summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, S3 buckets, and integrations.
+summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "cdae6a26a9a89eadfbf382a255ddcd4a3a4c8243fc1a1f7bbd0d3d9e22d5f74c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "48f91be860656eec87b5e83827fcf4f890b05d9fd605d0ac1231b1fcbc45fd58"
 ---
 
 # Using Drains

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reranking.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "8df9594a48b37e452a99dadef99f9f399433f3fa02b70389829db6b7f17c9571"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "f050e55e39e8021c474a0d61cc6410d147d254a20af789bd9611bda20a87504f"
 ---
 
 # Reranking
@@ -228,6 +228,7 @@ Several providers offer reranking models:
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -236,6 +237,7 @@ Several providers offer reranking models:
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

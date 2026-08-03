@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/custom-provider.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "a86b1e28973bcca34c4f0d3dce7992e39a42c7041bb66a2856b4f1ae3f79cf91"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "fe7143a856f3febb6ceb9d12a12f962db251963ebd4bb4a92f875cba408fffed"
 ---
 
 # `customProvider()`
@@ -213,6 +213,7 @@ The `customProvider` function returns a `Provider` instance. It has the followin
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

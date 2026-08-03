@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "558efa74c27a497912ba666d7b51d52bfa839d01a08343c8cc98b35b6531cc89"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "c16d8b3162279c31b6f2100b2bcb413e7e9aeb81017276adabd61b631a08a7c3"
 ---
 
 # Open Responses Provider
@@ -273,6 +273,7 @@ provider.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

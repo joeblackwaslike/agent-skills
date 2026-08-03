@@ -16,8 +16,8 @@ related:
 summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, uptime and metrics, plus..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "2a374bcaaebddb82a73b7b86181a63072ed89b491672fa79a11123411a81fbc4"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "99a88aeb2694639e9f919f5c7abea73703dbf9d35fd3e5dbafd97ab5a02e2397"
 ---
 
 # Models & Providers
@@ -39,7 +39,7 @@ Configure how AI Gateway selects providers and routes requests, and apply capabi
 
 Models are AI algorithms that process your input data to generate responses, such as [Grok 4.3](/ai-gateway/models/grok-4.3), [GPT-5.5](/ai-gateway/models/gpt-5.5), or [Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7). Providers are the companies or services that host these models, such as xAI, OpenAI, or Anthropic.
 
-In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `xai/grok-4.3` model from xAI or the `openai/gpt-5.5` model from OpenAI, following the format `creator/model-name`.
+In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `xai/grok-4.5` model from xAI or the `openai/gpt-5.6-sol` model from OpenAI, following the format `creator/model-name`.
 
 Different providers may have different specifications for the same model such as different pricing and performance. You can choose the one that best fits your needs.
 
@@ -83,7 +83,7 @@ import { NextRequest } from 'next/server';
 
 export async function GET() {
   const result = await generateText({
-    model: 'xai/grok-4.3',
+    model: 'xai/grok-4.5',
     prompt: 'Tell me the history of the San Francisco Mission-style burrito.',
   });
   return Response.json(result);
@@ -109,7 +109,7 @@ import { NextRequest } from 'next/server';
 
 export async function GET() {
   const result = await generateText({
-    model: gateway('anthropic/claude-opus-4.8'),
+    model: gateway('anthropic/claude-opus-5'),
     prompt: 'Tell me the history of the San Francisco Mission-style burrito.',
   });
   return Response.json(result);
@@ -129,7 +129,7 @@ const gateway = createGateway({
 
 export async function GET() {
   const result = await generateText({
-    model: gateway('anthropic/claude-opus-4.8'),
+    model: gateway('anthropic/claude-opus-5'),
     prompt: 'Why is the sky blue?',
   });
   return Response.json(result);
@@ -169,7 +169,7 @@ export async function GET(request: NextRequest) {
   }
 
   const result = await generateText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
   });
 
@@ -225,7 +225,7 @@ availableModels.models.forEach((model) => {
 });
 
 const { text } = await generateText({
-  model: availableModels.models[0].id, // e.g., 'openai/gpt-5.5'
+  model: availableModels.models[0].id, // e.g., 'openai/gpt-5.6-sol'
   prompt: 'Hello world',
 });
 ```

@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "45571cb77f42cbe2391369ef09f37eaaf0dfc79e871387d39e627626dc934166"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "6933904423a31db872e0185d5c7aa09622365e6bfe17f3e842965da717c003ff"
 ---
 
 # Transferring a project
@@ -83,7 +83,7 @@ Once you transfer a project from a Hobby team to a Pro or Enterprise team, you m
 ## What is not transferred?
 
 - [Integrations](/docs/integrations): Those associated with your project must be added again after the transfer is complete. To move the integration installation itself to another team, including its resources and prepayment balances, see [Transferring an Integration](/docs/integrations/install-an-integration/transferring-an-integration).
-- [Edge Configs](/docs/edge-config) have [a separate transfer mechanism](/docs/storage#transferring-your-store)
+- [Global Configs](/docs/global-config) have [a separate transfer mechanism](/docs/storage#transferring-your-store)
 - Usage is reset on transfer
 - The Active Branches section under **Project** will be empty
 - Environment variables defined in the [`env`](/docs/project-configuration/vercel-json#env) and [`build.env`](/docs/configuration#project/build-env) configurations of `vercel.json` must be [migrated to Environment Variables](/kb/guide/how-do-i-migrate-away-from-vercel-json-env-and-build-env) in the Project Settings or configured again on the target team after the transfer is complete

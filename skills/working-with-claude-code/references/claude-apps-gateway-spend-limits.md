@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-apps-gateway-spend-limits.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "870ddf46c8650164e152da46b608d1deaa0c9e976051a80d1f491010f902ee4b"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "57ce4047b4c8de858a097f7c2d1b7dda0ea4ac91cc303e2f50553ed707579911"
 ---
 
 > ## Documentation Index
@@ -63,7 +63,13 @@ After each response, a usage meter reads token counts off the response as it str
 
 Spend limits estimate spend from token counts at USD list price; they're a circuit breaker, not an invoice. For authoritative billing, reconcile against your provider's own usage reporting, such as the Anthropic Usage & Cost Admin API, invocation logs on Amazon Bedrock, or Cloud Monitoring on Google Cloud.
 
-Pricing uses the same table the Claude Code CLI uses for its own cost display, with the same model-ID canonicalization across Anthropic, Amazon Bedrock (`us.anthropic.…-v1:0`), Google Cloud's Agent Platform (`claude-…@date`), and Microsoft Foundry ID forms. A model ID the table can't place, such as a Microsoft Foundry deployment name or an inference-profile ARN, is priced at the unknown-model default tier of \$5/\$25 per million input/output tokens rather than zero, so an unrecognized ID can't bypass a cap by going unmetered. The gateway warns at boot and once per ID at runtime when a model prices through the fallback.
+Pricing uses the same table the Claude Code CLI uses for its own cost display, with the same model-ID canonicalization across Anthropic, Amazon Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry ID forms, such as Bedrock's `us.anthropic.…-v1:0` and Agent Platform's `claude-…@date`. The meter resolves each request's rate tier in order:
+
+1. Exact rates for the upstream model ID, the model string the gateway sends to the provider. When the table recognizes it, such as `us.anthropic.claude-…`, the meter prices the request by the model that served it.
+2. {/* min-version: 2.1.218 */}Rates for the configured [`models[].id`](/docs/en/claude-apps-gateway-config#models) you mapped to the upstream ID. This step covers upstream strings that carry no model name, such as an Amazon Bedrock application-inference-profile ARN or a Microsoft Foundry deployment name, and requires Claude Code v2.1.218 or later on the gateway server.
+3. The unknown-model default tier of \$5/\$25 per million input/output tokens. The meter prices an ID that neither the table nor your `models` config can place, including a `models[].id` that is itself a custom alias, at this tier rather than zero, so an unrecognized ID can't bypass a cap by going unmetered.
+
+The gateway warns at boot and once per ID at runtime when it prices a model at the unknown-model tier. Before v2.1.218, the meter skipped step 2: it priced any upstream ID the table couldn't place at the unknown-model tier and warned about it even when the configured ID's rates were known.
 
 Client aborts are billed too. The upstream reports output tokens only in the stream's terminal frame, so an aborted stream doesn't carry them. The meter keeps a conservative floor estimate from the streamed content size, about four characters per token, and bills it when and only when the terminal usage frame is missing. A complete stream always bills the upstream-reported count. Without this, a capped developer could stream output and abort each request immediately before the end, spending without ever being counted.
 

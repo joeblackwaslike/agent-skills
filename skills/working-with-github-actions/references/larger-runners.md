@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/larger-runners.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "5ea677974f2c2f564ef020cfbdc3250a82bfa2257d3b3a1432d34d2abe64639e"
+fetched_at: "2026-08-03T07:31:11.280Z"
+sha256: "a5df21fe766b488ac3a51e17a5c65dbc557f2d95d925d8e1a3c02fa922e560f6"
 ---
 
 {% ifversion ghes %}
@@ -81,5 +81,15 @@ When enabled, instances of the {% data variables.actions.hosted_runner %} will r
 
 > [!NOTE]
 > If runners are unused for more than 90 days, their IP address ranges are automatically removed and cannot be recovered.
+
+## Communication requirements for {% data variables.actions.hosted_runner %}s
+
+A {% data variables.actions.hosted_runner %} must establish connections to {% data variables.product.github %}-owned endpoints to perform essential communication operations. In addition, your runner may require access to additional networks that you specify or utilize within an action.
+
+To ensure proper communications for {% data variables.actions.hosted_runner %}s between networks within your configuration, ensure that the following communications are allowed.
+
+{% data reusables.actions.domain-name-cname-recursive-firewall-rules %}
+
+{% data reusables.actions.runner-essential-communications %}
 
 {% endif %}

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "79e2c1103b32fd07f6ee8eb012c4f45c1535645ad8d720e855e58bc74abfd5b5"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "ca6c7de224e5c9ee3ee45da0e4da5724458f46c902dce1d8a685e89c319d6173"
 ---
 
 # Hugging Face Provider
@@ -265,6 +265,7 @@ You can also pass image URLs:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

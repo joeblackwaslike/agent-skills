@@ -3,7 +3,7 @@ title: Managing Vercel Blob storage from the CLI
 product: vercel
 url: /docs/vercel-blob/manage-blob-storage
 canonical_url: "https://vercel.com/docs/vercel-blob/manage-blob-storage"
-last_updated: 2026-05-28
+last_updated: 2026-07-14
 type: how-to
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Create blob stores, upload files, list contents, and manage storage using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/manage-blob-storage.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "32da63f952cde1721a4234f92f473da82d6fa531f47e4e31fc0beeb9f0d80d0f"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "e59b08ba84cc6c8fb6c2ca97bc3ca6c461c20ce8f89519ac703ab58f5a5312a0"
 ---
 
 # Managing Vercel Blob storage from the CLI

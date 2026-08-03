@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "051e27e70b664739a8239e369e6a48cee7edf963a8ec403761fe0f9478ccfe9e"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8d3df6e7a4fd06f2d1bd4a5562cd477d4efb0d3befa492e12127aff8daac265e"
 ---
 
 # Google Provider
@@ -1134,6 +1134,57 @@ Gemini Live Translation accepts audio input and produces translated audio
 output. Text input, tools, and custom instructions are not supported by this
 model.
 
+## Translation Models
+
+<Note type="warning">Speech translation is an experimental feature.</Note>
+
+For server-side streaming translation, you can create models that call the
+[Gemini Live API](https://ai.google.dev/gemini-api/docs/live) using the
+`.translation()` factory method. Translation models are streaming-only and are
+used with
+[`experimental_streamTranslate`](/docs/reference/ai-sdk-core/stream-translate).
+
+The first argument is the model id e.g. `gemini-3.5-live-translate-preview`.
+
+```ts
+const model = google.translation('gemini-3.5-live-translate-preview');
+```
+
+```ts
+import { experimental_streamTranslate as streamTranslate } from 'ai';
+import { google } from '@ai-sdk/google';
+
+const result = streamTranslate({
+  model: google.translation('gemini-3.5-live-translate-preview'),
+  audio: audioStream, // ReadableStream<Uint8Array | string>
+  inputAudioFormat: { type: 'audio/pcm', rate: 16000 },
+  targetLanguage: 'es',
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'output-text-delta') {
+    process.stdout.write(part.delta);
+  }
+}
+```
+
+The Gemini Live API auto-detects the source language (`sourceLanguage` is not
+supported) and always outputs 24kHz 16-bit PCM audio (`outputAudioFormat` is
+not supported). Unsupported settings surface as call warnings.
+
+The following provider options are available:
+
+- **echoTargetLanguage** _boolean_
+  Whether input audio already in the target language should be echoed instead
+  of producing silence.
+  Optional.
+
+### Model Capabilities
+
+| Model                               | Translated Audio | Translated Text | Source Transcript |
+| ----------------------------------- | ---------------- | --------------- | ----------------- |
+| `gemini-3.5-live-translate-preview` | <Check />        | <Check />       | <Check />         |
+
 ## Interactions API
 
 The [Gemini Interactions API](https://ai.google.dev/gemini-api/docs/interactions)
@@ -2117,6 +2168,7 @@ const result = await generateSpeech({
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

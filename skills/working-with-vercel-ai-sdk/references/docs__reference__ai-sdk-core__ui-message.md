@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "1a1ff7a7bf17230feaeb10dfa065b6ff0d14f74fcef3a689bf8be679f156e0a1"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "ade83e3fdf9afb767085a171239f15c1b5b3e472cdc4c5c471253f5e46a51d31"
 ---
 
 # `UIMessage`
@@ -274,6 +274,7 @@ type StepStartUIPart = {
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

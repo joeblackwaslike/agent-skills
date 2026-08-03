@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reasoning.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "6dff93467c641595d2050c1e6ac83cb51999e0698bac4490086218416125e2bc"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "6f604a43088bb2e5073c0b9625c3bfd987740abdd3436a34f90382d390a30eba"
 ---
 
 # Reasoning
@@ -200,6 +200,7 @@ Note that `providerOptions` can still be used alongside `reasoning` for provider
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -208,6 +209,7 @@ Note that `providerOptions` can still be used alongside `reasoning` for provider
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

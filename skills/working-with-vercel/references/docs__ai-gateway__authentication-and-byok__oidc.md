@@ -13,8 +13,8 @@ related:
 summary: Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "67de2cb88dcc46194b0e68cb77b93ed8b24114283d213e70acf4226143d2d6ed"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "c4f3b9cc2af81d993aa93ae349b44c09f260829c78d36ec4bc9790088ebe0d22"
 ---
 
 # OIDC
@@ -46,7 +46,7 @@ The [Vercel OIDC token](/docs/oidc) is a way to authenticate your requests to th
 
   export async function GET() {
     const result = await generateText({
-      model: 'xai/grok-4.3',
+      model: 'xai/grok-4.5',
       prompt: 'Why is the sky blue?',
     });
     return Response.json(result);

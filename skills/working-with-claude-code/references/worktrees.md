@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/worktrees.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "4e50a52477834746b29ba307586fde7769f719fd4ebef18b91df6f8357277dae"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "e62fe98699431eb5a05dee7a76877c3db63a0a68ab9d03e131dc903d65ce041c"
 ---
 
 > ## Documentation Index
@@ -189,10 +189,10 @@ Create a worktree on a new branch:
 git worktree add ../project-feature-a -b feature-a
 ```
 
-Create a worktree from an existing branch:
+Create a worktree from an existing branch, replacing `fix-issue-456` with a branch that already exists in your repository:
 
 ```bash theme={null}
-git worktree add ../project-bugfix bugfix-123
+git worktree add ../project-bugfix fix-issue-456
 ```
 
 Start Claude in the worktree:

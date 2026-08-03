@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers tips and tricks"
 source: "https://code.visualstudio.com/docs/devcontainers/tips-and-tricks"
-fetched_at: "2026-07-20T06:45:13.409Z"
-sha256: "ffe4ad1e22a30ed75dc1d977980e1d78cf10731d2275ad01f4b699f2ce46db12"
+fetched_at: "2026-08-03T07:24:53.308Z"
+sha256: "a705b4c944ffd5c687c0ad7d365ed5d35ce7bdde5b6492daad73a778786fbe02"
 ---
 
 # VS Code Dev Containers tips and tricks
@@ -437,4 +437,4 @@ We have a variety of other remote resources:
 
                 
                 
-                7/15/2026
+                7/29/2026

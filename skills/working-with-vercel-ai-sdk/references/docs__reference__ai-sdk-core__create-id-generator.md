@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-id-generator.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "623ce7b0d7097d57f9ec88db786e4c8aeed4643551c64f584373f34c9111f778"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "85cf9cc00ff521226d922148d183c38f65908e177e8d27de4d2fb5e18adbe400"
 ---
 
 # `createIdGenerator()`
@@ -99,6 +99,7 @@ const id1 = generateUserId(); // e.g., "user_1a2b3c4d"
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

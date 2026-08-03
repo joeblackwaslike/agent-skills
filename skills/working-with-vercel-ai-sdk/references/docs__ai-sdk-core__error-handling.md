@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "bffbb5faf71fa1c48dcabc2cdb723a5b2cfac2beaf2a43269b559682a287fad1"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "188c7972031d103052c3e205b2b8187c4cf75e9af4371afe2b071c8dc75ef040"
 ---
 
 # Error Handling
@@ -159,6 +159,7 @@ for await (const chunk of stream) {
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -167,6 +168,7 @@ for await (const chunk of stream) {
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

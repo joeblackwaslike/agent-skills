@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "263624bf5388bfb1ea2739f9cd25c43588c38f245664d59602a65fa251a72252"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "f2804912393e63d3ade706b33a9d20b54c9e5503a6a761507267eb9981d18dda"
 ---
 
 # ElevenLabs Provider
@@ -37,7 +37,7 @@ You can use the following optional settings to customize the ElevenLabs provider
 
 - **apiKey** _string_
 
-  API key that is being sent using the `Authorization` header.
+  API key that is being sent using the `xi-api-key` header.
   It defaults to the `ELEVENLABS_API_KEY` environment variable.
 
 - **headers** _Record&lt;string,string&gt;_
@@ -50,6 +50,12 @@ You can use the following optional settings to customize the ElevenLabs provider
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
+
+- **webSocket** _WebSocketConstructor_
+
+  Custom WebSocket implementation for realtime transcription. A
+  header-capable implementation is required in runtimes whose native WebSocket
+  constructor cannot send the `xi-api-key` authentication header.
 
 ## Speech Models
 
@@ -169,10 +175,10 @@ const result = await generateSpeech({
 You can create models that call the [ElevenLabs transcription API](https://elevenlabs.io/speech-to-text)
 using the `.transcription()` factory method.
 
-The first argument is the model id e.g. `scribe_v1`.
+The first argument is the model id e.g. `scribe_v2`.
 
 ```ts
-const model = elevenLabs.transcription('scribe_v1');
+const model = elevenLabs.transcription('scribe_v2');
 ```
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format can sometimes improve transcription performance if known beforehand.
@@ -185,7 +191,7 @@ import {
 } from '@ai-sdk/elevenlabs';
 
 const result = await transcribe({
-  model: elevenLabs.transcription('scribe_v1'),
+  model: elevenLabs.transcription('scribe_v2'),
   audio: new Uint8Array([1, 2, 3, 4]),
   providerOptions: {
     elevenlabs: {
@@ -240,6 +246,77 @@ The following provider options are available:
 | ------------------------ | ------------- | --------- | --------- | --------- |
 | `scribe_v1`              | <Check />     | <Check /> | <Check /> | <Check /> |
 | `scribe_v1_experimental` | <Check />     | <Check /> | <Check /> | <Check /> |
+| `scribe_v2`              | <Check />     | <Check /> | <Check /> | <Check /> |
+
+## Streaming Transcription Models
+
+<Note type="warning">Streaming transcription is an experimental feature.</Note>
+
+Scribe v2 Realtime supports live transcription through
+`experimental_streamTranscribe`. It accepts raw PCM audio at 8, 16, 22.05, 24,
+44.1, or 48 kHz, or 8 kHz mu-law audio.
+
+```ts
+import {
+  createElevenLabs,
+  type ElevenLabsProviderSettings,
+} from '@ai-sdk/elevenlabs';
+import { experimental_streamTranscribe as streamTranscribe } from 'ai';
+import { WebSocket } from 'ws';
+
+const elevenLabs = createElevenLabs({
+  webSocket: WebSocket as unknown as ElevenLabsProviderSettings['webSocket'],
+});
+
+const result = streamTranscribe({
+  model: elevenLabs.transcription('scribe_v2_realtime'),
+  audio,
+  inputAudioFormat: { type: 'audio/pcm', rate: 16000 },
+  providerOptions: {
+    elevenlabs: {
+      languageCode: 'en',
+      streaming: {
+        includeLanguageDetection: true,
+        includeTimestamps: true,
+      },
+    },
+  },
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'transcript-partial') {
+    console.log('partial:', part.text);
+  }
+
+  if (part.type === 'transcript-final') {
+    console.log('final:', part.text);
+  }
+}
+```
+
+The ElevenLabs realtime endpoint authenticates with a WebSocket header. Use a
+header-capable WebSocket implementation, such as `ws`, in runtimes whose native
+WebSocket constructor cannot send headers.
+
+The `streaming` provider options mirror ElevenLabs' realtime transcription
+settings: `commitStrategy`, `enableLogging`, `filterBackgroundAudio`,
+`includeLanguageDetection`, `includeTimestamps`, `keyterms`,
+`minSilenceDurationMs`, `minSpeechDurationMs`, `noVerbatim`, `previousText`,
+`secondaryLanguages`, `vadSilenceThresholdSecs`, and `vadThreshold`.
+
+ElevenLabs delivers detected language on its timestamp-bearing committed event.
+When `includeLanguageDetection` is enabled, the provider requests that event
+internally, but only returns timestamp segments when `includeTimestamps` is also
+enabled. `filterBackgroundAudio` cannot be combined with either option.
+
+See [Transcription](/docs/ai-sdk-core/transcription) for more information about
+streaming transcription.
+
+### Model Capabilities
+
+| Model                | Streaming Transcription | Timestamps          | Language Detection  |
+| -------------------- | ----------------------- | ------------------- | ------------------- |
+| `scribe_v2_realtime` | <Check size={18} />     | <Check size={18} /> | <Check size={18} /> |
 
 
 ## Navigation
@@ -276,6 +353,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

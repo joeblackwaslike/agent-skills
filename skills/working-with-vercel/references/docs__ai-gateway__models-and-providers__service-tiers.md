@@ -13,8 +13,8 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers through AI Gateway, available via...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "425aeea6df6eae42e38d6dfc86ec1742a6b960e4b5db9b938c594faf5d72db3b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b900710f9830eb3fc3d582e28bb3a70b3c0294f674c28f488944e425549e6bd5"
 ---
 
 # Service Tiers
@@ -56,7 +56,7 @@ The example below applies to any provider that serves the model and supports the
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'google/gemini-3.1-flash-lite-preview',
+  model: 'google/gemini-3.5-flash-lite',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -83,7 +83,7 @@ const client = new OpenAI({
 // You can also pass `providerOptions: { gateway: { serviceTier: 'priority' } }`
 // in the body instead of the top-level `service_tier` if you prefer.
 const response = await client.chat.completions.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   messages: [
     {
       role: 'user',
@@ -114,7 +114,7 @@ const client = new OpenAI({
 // You can also pass `providerOptions: { gateway: { serviceTier: 'priority' } }`
 // in the body instead of the top-level `service_tier` if you prefer.
 const response = await client.responses.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   input: 'Explain quantum computing in two sentences.',
   service_tier: 'priority',
 });
@@ -137,7 +137,7 @@ const client = new Anthropic({
 });
 
 const message = await client.messages.create({
-  model: 'google/gemini-3.1-flash-lite-preview',
+  model: 'google/gemini-3.5-flash-lite',
   max_tokens: 1024,
   messages: [
     {
@@ -173,7 +173,7 @@ You can also set the tier directly on the provider namespace. The supported keys
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     openai: {
@@ -193,7 +193,7 @@ console.log('Usage:', usage);
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'google/gemini-3.1-flash-lite-preview',
+  model: 'google/gemini-3.5-flash-lite',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -216,7 +216,7 @@ console.log('Usage:', usage);
 import { generateText } from 'ai';
 
 const { text, usage, providerMetadata } = await generateText({
-  model: 'google/gemini-3.1-flash-lite-preview',
+  model: 'google/gemini-3.5-flash-lite',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -239,7 +239,7 @@ The tier the provider actually served appears on the response as `providerMetada
 
 ```typescript
 const { providerMetadata } = await generateText({
-  model: 'google/gemini-3.1-flash-lite-preview',
+  model: 'google/gemini-3.5-flash-lite',
   prompt: 'Hello',
   providerOptions: {
     gateway: {
@@ -265,7 +265,7 @@ Service tiers work the same way with streaming. Read `providerMetadata.gateway.s
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -296,7 +296,7 @@ const client = new OpenAI({
 });
 
 const stream = await client.chat.completions.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   messages: [
     {
       role: 'user',
@@ -330,7 +330,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='openai/gpt-5.5',
+    model='openai/gpt-5.6-sol',
     messages=[
         {
             'role': 'user',
@@ -365,7 +365,7 @@ const client = new OpenAI({
 });
 
 const stream = await client.responses.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   input: 'Explain quantum computing in two sentences.',
   stream: true,
   service_tier: 'priority',
@@ -395,7 +395,7 @@ client = OpenAI(
 )
 
 stream = client.responses.create(
-    model='openai/gpt-5.5',
+    model='openai/gpt-5.6-sol',
     input='Explain quantum computing in two sentences.',
     stream=True,
     service_tier='priority'
@@ -425,7 +425,7 @@ const client = new Anthropic({
 });
 
 const stream = await client.messages.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   max_tokens: 1024,
   messages: [
     {
@@ -468,7 +468,7 @@ client = anthropic.Anthropic(
 )
 
 with client.messages.stream(
-    model='openai/gpt-5.5',
+    model='openai/gpt-5.6-sol',
     max_tokens=1024,
     messages=[
         {

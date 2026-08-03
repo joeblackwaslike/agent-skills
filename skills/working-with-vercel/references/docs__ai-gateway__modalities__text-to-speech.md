@@ -14,13 +14,13 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a564079f7f7587e743702bed274c6daf0dfd1b09760749599914d2571244164f"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "eb69aa74edf103758284d458cf7878fa534ef0fc698754f58bcd17bf4e851078"
 ---
 
 # Text to Speech
 
-Generate spoken audio from text with speech models such as `openai/tts-1` and `openai/gpt-4o-mini-tts`. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
+Generate spoken audio from text with speech models such as `openai/tts-1` and `openai/tts-1-hd`. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
 
 Use this to turn text into spoken audio. For live, two-way voice, see [Realtime](/docs/ai-gateway/modalities/realtime); to transcribe recorded audio, see [Speech to Text](/docs/ai-gateway/modalities/speech-to-text).
 

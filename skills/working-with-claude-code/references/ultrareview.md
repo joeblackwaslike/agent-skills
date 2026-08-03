@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/ultrareview.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "6b044641fe692ee0be2f05beb277c877eca88e32b0eec99146401bc28b01fb6d"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "4b4101ff9d8e51c0ef3cd69f6427747eff3cec5582a395718f6c4ac01d405ef1"
 ---
 
 > ## Documentation Index
@@ -113,7 +113,7 @@ Claude Code asks you to confirm usage-credits billing once per conversation: whe
 
 A review typically takes 5 to 10 minutes. The review runs as a background task, so you can keep working in your session, start other commands, or close the terminal entirely.
 
-Use `/tasks` to see running and completed reviews, open the detail view for a review, or stop a review that is in progress. Stopping a review archives the cloud session, and partial findings are not returned. When the review finishes, the verified findings appear as a notification in your session. Each finding includes the file location and an explanation of the issue so you can ask Claude to fix it directly.
+Use `/tasks` to see running and completed reviews, open the detail view for a review, or stop a review that is in progress. If you stop a review, Claude Code archives the cloud session and doesn't return partial findings. When the review finishes, the verified findings appear as a notification in your session. Each finding includes the file location and an explanation of the issue so you can ask Claude to fix it directly.
 
 ## Run ultrareview non-interactively
 

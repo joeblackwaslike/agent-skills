@@ -16,8 +16,8 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "939020fa02acd0d43f81fc6a5c32d7d092f092a962bea08ae8a0951b1f21b4e0"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "e7d94b29f2bd38de26be98639a4d62b655fd9f415b548018550e25a4c6bd7352"
 ---
 
 # Routing Rules
@@ -49,17 +49,17 @@ vercel ai-gateway rules list --scope your-team
 Create a rewrite rule with a source model (`--source`) and a destination model (`--destination`):
 
 ```bash filename="terminal"
-vercel ai-gateway rules add --type rewrite --source anthropic/claude-opus-4.8 --destination anthropic/claude-haiku-4.5
+vercel ai-gateway rules add --type rewrite --source anthropic/claude-opus-5 --destination anthropic/claude-haiku-4.5
 ```
 
-Once the rule is active, AI Gateway serves any request for `anthropic/claude-opus-4.8` with `anthropic/claude-haiku-4.5`. Your application keeps requesting the source model and AI Gateway substitutes the destination.
+Once the rule is active, AI Gateway serves any request for `anthropic/claude-opus-5` with `anthropic/claude-haiku-4.5`. Your application keeps requesting the source model and AI Gateway substitutes the destination.
 
 ## Deny a model
 
 Create a deny rule with the model to block:
 
 ```bash filename="terminal"
-vercel ai-gateway rules add --type deny --source openai/gpt-5.5
+vercel ai-gateway rules add --type deny --source openai/gpt-5.6-sol
 ```
 
 A request for a denied model returns a `403`:
@@ -77,7 +77,7 @@ A request for a denied model returns a `403`:
 Update a rule by its ID. You can change the destination, reason, or description, or toggle the rule on and off:
 
 ```bash filename="terminal"
-vercel ai-gateway rules edit rule_123 --destination anthropic/claude-sonnet-4.6
+vercel ai-gateway rules edit rule_123 --destination anthropic/claude-sonnet-5
 ```
 
 ```bash filename="terminal"

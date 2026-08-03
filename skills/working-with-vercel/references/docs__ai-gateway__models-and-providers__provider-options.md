@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "9a52704d7c8a1fb7228ba51485467a6212751e3ec6d4584c00b68c4849c23cab"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b9d9ef7851e9e3c87106be41f9b3828ca9b4e873d882519e88a7337068680d9d"
 ---
 
 # Provider Options
@@ -99,7 +99,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     providerOptions: {
       anthropic: {
@@ -133,7 +133,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     providerOptions: {
       gateway: {
@@ -179,7 +179,7 @@ export async function POST(request: Request) {
 }
 ```
 
-**Note:** For `openai/gpt-5.5` models, you must set both `reasoningEffort` and `reasoningSummary` in `providerOptions` to receive reasoning output.
+**Note:** For `openai/gpt-5.6-sol` models, you must set both `reasoningEffort` and `reasoningSummary` in `providerOptions` to receive reasoning output.
 
 ```typescript
 providerOptions: {

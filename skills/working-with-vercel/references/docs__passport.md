@@ -13,11 +13,11 @@ related:
   - /docs/passport/read-identity
   - /docs/passport/token-claims
   - /docs/passport/verify-identity
-summary: Learn how to protect deployments with Passport by using your identity provider.
+summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "0021759fed1830bef6ebe6e1c052f5f118fe88983d7f3c07e8724ee293eb7f9a"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "31607fad8a95c31a9d1c9f7292635d481f18a357c0d297fa993010385ce070d7"
 ---
 
 # Restrict access to deployments with Passport

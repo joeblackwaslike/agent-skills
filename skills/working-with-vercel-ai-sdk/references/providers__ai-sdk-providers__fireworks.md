@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b5469003e516c5a47a570ee1d150eb970ce29ed4fc73997f60ad9e2cd47f4477"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "be514c5666d6eb545becf75afcecf3ac2fcc625e82a6809e984529de53fa37f3"
 ---
 
 # Fireworks Provider
@@ -528,6 +528,7 @@ support for these models:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with WordPress to let your plugins access multiple AI models
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/wordpress.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "798653bfd3d2cff30da700243f460c64d160b3e2682984b012d1411f22d9873c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "fe42609feb6c2af5ad6cacc0157df235782e6ab6b23543a2c4b86f79dd0f4f8b"
 ---
 
 # WordPress
@@ -70,7 +70,7 @@ in the list is used, which is useful as a fallback chain:
 ```php
 $text = wp_ai_client_prompt( 'Explain quantum computing in one paragraph.' )
     ->using_provider( 'ai_gateway' )
-    ->using_model_preference( 'claude-sonnet-4.6', 'gemini-3.1-pro-preview' )
+    ->using_model_preference( 'anthropic/claude-sonnet-5', 'google/gemini-3.1-pro-preview' )
     ->generate_text();
 ```
 
@@ -79,7 +79,7 @@ $text = wp_ai_client_prompt( 'Explain quantum computing in one paragraph.' )
 ```php
 $text = wp_ai_client_prompt( 'How many R are in "strawberry"?' )
     ->using_provider( 'ai_gateway' )
-    ->using_model_preference( 'claude-sonnet-4.6' )
+    ->using_model_preference( 'anthropic/claude-sonnet-5' )
     ->using_system_instruction( 'You are a careful, precise assistant. Think step by step.' )
     ->using_temperature( 0.2 )
     ->using_max_tokens( 200 )
@@ -113,7 +113,7 @@ Pass a URL, local path, base64 string, or data URI to `with_file()`:
 ```php
 $text = wp_ai_client_prompt( 'Describe what you see in this image.' )
     ->using_provider( 'ai_gateway' )
-    ->using_model_preference( 'gemini-3.1-pro-preview' )
+    ->using_model_preference( 'google/gemini-3.1-pro-preview' )
     ->with_file( 'https://example.com/photo.jpg' )
     ->generate_text();
 ```
@@ -148,7 +148,7 @@ $data = json_decode( $text, true );
 ```php
 $file = wp_ai_client_prompt( 'A watercolor painting of a Cavalier King Charles Spaniel in a sunlit garden.' )
     ->using_provider( 'ai_gateway' )
-    ->using_model_preference( 'gemini-3.1-flash-image-preview' )
+    ->using_model_preference( 'google/gemini-3.1-flash-image-preview' )
     ->as_output_media_aspect_ratio( '16:9' )
     ->generate_image();
 
@@ -164,7 +164,7 @@ $input_data_uri = 'data:image/png;base64,' . base64_encode( file_get_contents( _
 
 $file = wp_ai_client_prompt( 'Repaint this scene at sunset, keeping the dog and pose unchanged.' )
     ->using_provider( 'ai_gateway' )
-    ->using_model_preference( 'gemini-3.1-flash-image-preview' )
+    ->using_model_preference( 'google/gemini-3.1-flash-image-preview' )
     ->with_file( $input_data_uri )
     ->as_output_media_aspect_ratio( '16:9' )
     ->generate_image();

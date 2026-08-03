@@ -12,11 +12,11 @@ related:
   - /docs/ai-gateway/models-and-providers/routing-rules
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway/authentication-and-byok/authentication
-summary: "Manage AI Gateway resources from the Vercel CLI: API keys and routing rules."
+summary: "Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "af0f2cc0718c581145dac4a8d56ab69a3675827ca057c7e399446738b3847b9d"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "82d89211a675df829325be597b51d012f35ebb30555f4ffbdbb46402f82a5c4d"
 ---
 
 # vercel ai-gateway
@@ -160,7 +160,7 @@ vercel ai-gateway models endpoints <model-id>
 ```
 
 ```bash filename="terminal"
-vercel ai-gateway models endpoints anthropic/claude-opus-4.8
+vercel ai-gateway models endpoints anthropic/claude-opus-5
 ```
 
 *Compare the providers that serve a model, with pricing, latency, and uptime.*

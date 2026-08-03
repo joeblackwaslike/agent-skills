@@ -3,19 +3,21 @@ title: Chat Completions
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis
 related:
+  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming
+  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/images
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs
 summary: Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "e15a6ef37ba012c3b3d8abc99cf3ecd8c2f3cc3e8b29508525f8bd70275da23b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "6c70bcb295f75b6da5aa7f6d35d86655d1e97fdc90a7eaa70311c321c29979b3"
 ---
 
 # Chat Completions
@@ -34,6 +36,24 @@ Create a non-streaming chat completion.
 
 Example request
 
+#### cURL
+
+```bash filename="chat-completion.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a one-sentence bedtime story about a unicorn."
+      }
+    ],
+    "stream": false
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="chat-completion.ts"
@@ -47,7 +67,7 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   messages: [
     {
       role: 'user',
@@ -75,7 +95,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     messages=[
         {
             'role': 'user',
@@ -96,7 +116,7 @@ Response format
   "id": "chatcmpl-123",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "anthropic/claude-opus-4.8",
+  "model": "anthropic/claude-opus-5",
   "choices": [
     {
       "index": 0,
@@ -117,286 +137,11 @@ Response format
 
 ### Streaming chat completion
 
-Create a streaming chat completion that streams tokens as they are generated.
+Set `stream: true` to receive tokens as they are generated. See [Streaming](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming) for the full example and the server-sent event format.
 
-Example request
+### File attachments
 
-#### TypeScript
-
-```typescript filename="streaming-chat.ts"
-import OpenAI from 'openai';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const openai = new OpenAI({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const stream = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
-  messages: [
-    {
-      role: 'user',
-      content: 'Write a one-sentence bedtime story about a unicorn.',
-    },
-  ],
-  stream: true,
-});
-
-for await (const chunk of stream) {
-  const content = chunk.choices[0]?.delta?.content;
-  if (content) {
-    process.stdout.write(content);
-  }
-}
-```
-
-#### Python
-
-```python filename="streaming-chat.py"
-import os
-from openai import OpenAI
-
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
-client = OpenAI(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh/v1'
-)
-
-stream = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Write a one-sentence bedtime story about a unicorn.'
-        }
-    ],
-    stream=True,
-)
-
-for chunk in stream:
-    content = chunk.choices[0].delta.content
-    if content:
-        print(content, end='', flush=True)
-```
-
-#### Streaming response format
-
-Streaming responses are sent as [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events), a web standard for real-time data streaming over HTTP. Each event contains a JSON object with the partial response data.
-
-The response format follows the OpenAI streaming specification:
-
-```http
-data: {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1677652288,"model":"anthropic/claude-opus-4.8","choices":[{"index":0,"delta":{"content":"Once"},"finish_reason":null}]}
-
-data: {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1677652288,"model":"anthropic/claude-opus-4.8","choices":[{"index":0,"delta":{"content":" upon"},"finish_reason":null}]}
-
-data: [DONE]
-```
-
-**Key characteristics:**
-
-- Each line starts with `data:` followed by JSON
-- Content is delivered incrementally in the `delta.content` field
-- The stream ends with `data: [DONE]`
-- Empty lines separate events
-
-**SSE Parsing Libraries:**
-
-If you're building custom SSE parsing (instead of using the OpenAI SDK), these libraries can help:
-
-- **JavaScript/TypeScript**: [`eventsource-parser`](https://www.npmjs.com/package/eventsource-parser) - Robust SSE parsing with support for partial events
-- **Python**: [`httpx-sse`](https://pypi.org/project/httpx-sse/) - SSE support for HTTPX, or [`sseclient-py`](https://pypi.org/project/sseclient-py/) for requests
-
-For more details about the SSE specification, see the [W3C specification](https://html.spec.whatwg.org/multipage/server-sent-events.html).
-
-### Image attachments
-
-Send images as part of your chat completion request.
-
-Example request
-
-#### TypeScript
-
-```typescript filename="image-analysis.ts"
-import fs from 'node:fs';
-import OpenAI from 'openai';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const openai = new OpenAI({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-// Read the image file as base64
-const imageBuffer = fs.readFileSync('./path/to/image.png');
-const imageBase64 = imageBuffer.toString('base64');
-
-const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
-  messages: [
-    {
-      role: 'user',
-      content: [
-        { type: 'text', text: 'Describe this image in detail.' },
-        {
-          type: 'image_url',
-          image_url: {
-            url: `data:image/png;base64,${imageBase64}`,
-            detail: 'auto',
-          },
-        },
-      ],
-    },
-  ],
-  stream: false,
-});
-
-console.log('Assistant:', completion.choices[0].message.content);
-console.log('Tokens used:', completion.usage);
-```
-
-#### Python
-
-```python filename="image-analysis.py"
-import os
-import base64
-from openai import OpenAI
-
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
-client = OpenAI(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh/v1'
-)
-
-# Read the image file as base64
-with open('./path/to/image.png', 'rb') as image_file:
-    image_base64 = base64.b64encode(image_file.read()).decode('utf-8')
-
-completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
-    messages=[
-        {
-            'role': 'user',
-            'content': [
-                {'type': 'text', 'text': 'Describe this image in detail.'},
-                {
-                    'type': 'image_url',
-                    'image_url': {
-                        'url': f'data:image/png;base64,{image_base64}',
-                        'detail': 'auto'
-                    }
-                }
-            ]
-        }
-    ],
-    stream=False,
-)
-
-print('Assistant:', completion.choices[0].message.content)
-print('Tokens used:', completion.usage)
-```
-
-### PDF attachments
-
-Send PDF documents as part of your chat completion request.
-
-Example request
-
-#### TypeScript
-
-```typescript filename="pdf-analysis.ts"
-import fs from 'node:fs';
-import OpenAI from 'openai';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const openai = new OpenAI({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-// Read the PDF file as base64
-const pdfBuffer = fs.readFileSync('./path/to/document.pdf');
-const pdfBase64 = pdfBuffer.toString('base64');
-
-const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
-  messages: [
-    {
-      role: 'user',
-      content: [
-        {
-          type: 'text',
-          text: 'What is the main topic of this document? Please summarize the key points.',
-        },
-        {
-          type: 'file',
-          file: {
-            data: pdfBase64,
-            media_type: 'application/pdf',
-            filename: 'document.pdf',
-          },
-        },
-      ],
-    },
-  ],
-  stream: false,
-});
-
-console.log('Assistant:', completion.choices[0].message.content);
-console.log('Tokens used:', completion.usage);
-```
-
-#### Python
-
-```python filename="pdf-analysis.py"
-import os
-import base64
-from openai import OpenAI
-
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
-client = OpenAI(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh/v1'
-)
-
-# Read the PDF file as base64
-with open('./path/to/document.pdf', 'rb') as pdf_file:
-    pdf_base64 = base64.b64encode(pdf_file.read()).decode('utf-8')
-
-completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
-    messages=[
-        {
-            'role': 'user',
-            'content': [
-                {
-                    'type': 'text',
-                    'text': 'What is the main topic of this document? Please summarize the key points.'
-                },
-                {
-                    'type': 'file',
-                    'file': {
-                        'data': pdf_base64,
-                        'media_type': 'application/pdf',
-                        'filename': 'document.pdf'
-                    }
-                }
-            ]
-        }
-    ],
-    stream=False,
-)
-
-print('Assistant:', completion.choices[0].message.content)
-print('Tokens used:', completion.usage)
-```
+Send images and PDF documents by using an array of content parts in place of a plain string. See [File attachments](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) for the full examples and supported types.
 
 ### Parameters
 
@@ -404,7 +149,7 @@ The chat completions endpoint supports the following parameters:
 
 #### Required parameters
 
-- `model` (string): The model to use for the completion (e.g., `anthropic/claude-opus-4.8`)
+- `model` (string): The model to use for the completion (e.g., `anthropic/claude-opus-5`)
 - `messages` (array): Array of message objects with `role` and `content` fields
 
 #### Optional parameters

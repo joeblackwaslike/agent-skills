@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "43672f8514b4a3b36605e0721b852b93fe22184f9701c69dfd4e5c977290abb5"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "0110392d80ebe210b65111ffd703c02b89d1823731a5ca35a6b6b1922e004b35"
 ---
 
 # DeepInfra Provider
@@ -357,6 +357,7 @@ const { embedding } = await embed({
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

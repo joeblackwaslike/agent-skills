@@ -15,8 +15,8 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "1fbb3141d91e4f626302b544033dfddcb8c727a12999b1240306d9bae433af70"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "8817bd1b2c4849ac22b12b2d540ab6c6f158161bf5cd377326a928300975ddd5"
 ---
 
 # Zero Data Retention
@@ -122,7 +122,7 @@ export async function POST(request: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
@@ -284,7 +284,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'user',
@@ -312,7 +312,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model="anthropic/claude-sonnet-4.6",
+    model="anthropic/claude-sonnet-5",
     messages=[
         {
             "role": "user",
@@ -418,7 +418,7 @@ Consider the following setup:
 - You have a BYOK key for Anthropic, marked as ZDR, because you have a direct ZDR agreement with Anthropic.
 - You have a BYOK key for Google Vertex, not marked as ZDR.
 - You have a BYOK key for OpenAI, not marked as ZDR.
-- You send a request to `anthropic/claude-sonnet-4.6` with `zeroDataRetention: true`.
+- You send a request to `anthropic/claude-sonnet-5` with `zeroDataRetention: true`.
 
 AI Gateway builds the ZDR routing set in two parts.
 
@@ -426,11 +426,11 @@ AI Gateway builds the ZDR routing set in two parts.
 
 - Your BYOK keys: Anthropic, Google Vertex, OpenAI
 - Filter to ZDR-marked keys: Anthropic
-- Filter to keys for providers serving `anthropic/claude-sonnet-4.6`: Anthropic
+- Filter to keys for providers serving `anthropic/claude-sonnet-5`: Anthropic
 
 **System credentials routing set:**
 
-- System providers serving `anthropic/claude-sonnet-4.6`: Anthropic, Google Vertex, Amazon Bedrock
+- System providers serving `anthropic/claude-sonnet-5`: Anthropic, Google Vertex, Amazon Bedrock
 - Filter to providers Vercel has ZDR agreements with: Anthropic, Google Vertex, Amazon Bedrock
 
 **Final routing order:**
@@ -438,7 +438,7 @@ AI Gateway builds the ZDR routing set in two parts.
 1. Anthropic BYOK (ZDR-marked) is tried first.
 2. If that fails, AI Gateway falls back to system credentials for Anthropic, Google Vertex, or Amazon Bedrock.
 
-Your Google Vertex BYOK is filtered out because you didn't mark it as ZDR, but Google Vertex is still reachable through system credentials. Your OpenAI BYOK is filtered out because OpenAI doesn't serve `anthropic/claude-sonnet-4.6`.
+Your Google Vertex BYOK is filtered out because you didn't mark it as ZDR, but Google Vertex is still reachable through system credentials. Your OpenAI BYOK is filtered out because OpenAI doesn't serve `anthropic/claude-sonnet-5`.
 
 ## Using both account and request-level ZDR
 

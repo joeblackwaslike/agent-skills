@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "6dde37ec59ee590012b38c50805fc9cbd180b889906b073f948dba6754d92729"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "878c840491f773e571d72dec9eb83d6af93655b0a4ee16d2c53a2e23fbfc579d"
 ---
 
 # xAI Grok Provider
@@ -93,10 +93,10 @@ and support structured data generation with [`Output`](/docs/reference/ai-sdk-co
 
 ### Reasoning Effort
 
-For reasoning-capable models you can control how much effort the model spends
-thinking before responding via `providerOptions.xai.reasoningEffort`. This
-works for both the Responses API (default) and the Chat Completions API
-(`xai.chat()`).
+For models with configurable reasoning, you can control how much effort the
+model spends thinking before responding via
+`providerOptions.xai.reasoningEffort`. This works for both the Responses API
+(default) and the Chat Completions API (`xai.chat()`).
 
 ```ts
 import { xai } from '@ai-sdk/xai';
@@ -111,13 +111,12 @@ const { text } = await generateText({
 });
 ```
 
-Supported values:
+The AI SDK option accepts these values, but each xAI model supports a subset:
 
 - `'none'` — Disables reasoning entirely; no thinking tokens are used. Best
-  for simple use cases that need a near-instant response. Supported by
-  `grok-4.3` and newer reasoning models.
-- `'low'` (default) — Uses some reasoning tokens, but still fast. Good for
-  general agentic use and tool calling.
+  for simple use cases that need a near-instant response.
+- `'low'` — Uses some reasoning tokens, but still fast. Good for general
+  agentic use and tool calling.
 - `'medium'` — More thinking for less-latency-sensitive applications such as
   complex data analysis and long-context reasoning.
 - `'high'` — More reasoning tokens for deeper thinking. Suited for very
@@ -125,9 +124,15 @@ Supported values:
   tasks.
 
 <Note>
-  Not every Grok model accepts every value. See xAI's [reasoning
-  docs](https://docs.x.ai/docs/guides/reasoning) for the values supported by
-  your selected model. `'none'` requires `grok-4.3` or newer.
+  Support and defaults are model-specific. `grok-4.3` supports `'none'`,
+  `'low'`, `'medium'`, and `'high'`. `grok-4.5` supports `'low'`, `'medium'`,
+  and `'high'`, defaults to `'high'`, and cannot disable reasoning. The
+  `grok-4.20-reasoning` and `grok-4.20-non-reasoning` variants do not accept
+  this option. For `grok-4.20-multi-agent`, `'low'`, `'medium'`, and `'high'`
+  control the number of agents instead of reasoning depth. See xAI's [reasoning
+  docs](https://docs.x.ai/developers/model-capabilities/text/reasoning) and
+  [Grok 4.3 model page](https://docs.x.ai/developers/models/grok-4.3) for
+  current details.
 </Note>
 
 ## Realtime Models
@@ -500,7 +505,7 @@ import { xai, type XaiLanguageModelResponsesOptions } from '@ai-sdk/xai';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: xai.responses('grok-4.20-non-reasoning'),
+  model: xai.responses('grok-4.5'),
   providerOptions: {
     xai: {
       reasoningEffort: 'high',
@@ -514,7 +519,7 @@ The following provider options are available:
 
 - **reasoningEffort** _'none' | 'low' | 'medium' | 'high'_
 
-  Control the reasoning effort for the model. See [Reasoning Effort](#reasoning-effort) for details on each value. `'none'` disables reasoning entirely (requires `grok-4.3` or newer).
+  Control the reasoning effort for supported models. See [Reasoning Effort](#reasoning-effort) for model-specific values and defaults.
 
 - **logprobs** _boolean_
 
@@ -1308,6 +1313,7 @@ and `resolution` just like text-to-video.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/building-agents.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f1389b644130666f48a7495f94fd7e7fe3b355cd4b17bd368d667b2599979f25"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "da1435f7ea4adeaf83e7508f0128b552085c2f60bcfdbeeb7cee1b4b349a7eb4"
 ---
 
 # Building Agents
@@ -129,6 +129,10 @@ const result = await agent.generate({
   },
 });
 ```
+
+Model call settings returned from `prepareStep`, such as `temperature`, apply
+only to the current step. Later steps use the agent's top-level setting unless
+they return another override.
 
 For the full model, including sensitive context filtering and where each context
 value is available, see [Runtime and Tool

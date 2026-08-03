@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-generation.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "cb452ce6bf163b9323b5db9fcc08a040a0aacc42d18f9d220e51e9711550b57d"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a71196b99941fa1782fb45e73bfd973f59118e07dd4571e6b29c084375cdabe4"
 ---
 
 # Text Generation
@@ -35,14 +35,14 @@ Use `generateText` from the AI SDK to get a complete response. Set the model wit
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'What is the capital of France?',
 });
 
 console.log(text);
 ```
 
-Switching models is a one-line change, for example to `anthropic/claude-sonnet-4.6` or `google/gemini-3.1-pro-preview`.
+Switching models is a one-line change, for example to `anthropic/claude-sonnet-5` or `google/gemini-3.1-pro-preview`.
 
 ## Stream text
 
@@ -52,7 +52,7 @@ Use `streamText` to render output as it arrives, which keeps chat and agent inte
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'Write a short poem about the ocean.',
 });
 
@@ -70,7 +70,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'What is the weather in San Francisco?',
   tools: {
     getWeather: tool({
@@ -91,7 +91,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),

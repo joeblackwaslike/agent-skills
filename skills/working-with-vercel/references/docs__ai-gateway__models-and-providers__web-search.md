@@ -13,8 +13,8 @@ related:
 summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "8251bc367c2a4620a5c3c09e91ec1d012ae9d530831b6d5f34d5b3aa64fd5d58"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "6f2eec5a9873bf7e95cf631b0fc51cbb548a1ce0dd0ed1a2bb85ce75013990de"
 ---
 
 # Web Search
@@ -45,7 +45,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5', // Works with any model, not just Perplexity
+    model: 'openai/gpt-5.6-sol', // Works with any model, not just Perplexity
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch(),
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.5', // Works with any model, not just Perplexity
+    model: 'openai/gpt-5.6-sol', // Works with any model, not just Perplexity
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch(),
@@ -107,7 +107,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch({
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch({
@@ -173,7 +173,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5', // Works with any model
+    model: 'openai/gpt-5.6-sol', // Works with any model
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch(),
@@ -203,7 +203,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.5', // Works with any model
+    model: 'openai/gpt-5.6-sol', // Works with any model
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch(),
@@ -244,7 +244,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch({
@@ -273,7 +273,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     tools: {
       exa_search: gateway.tools.exaSearch({
@@ -316,7 +316,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.8', // Works with any model
+    model: 'anthropic/claude-opus-5', // Works with any model
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch(),
@@ -346,7 +346,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.8', // Works with any model
+    model: 'anthropic/claude-opus-5', // Works with any model
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch(),
@@ -383,7 +383,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch({
@@ -413,7 +413,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch({
@@ -458,7 +458,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305(),
@@ -479,7 +479,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305(),
@@ -509,7 +509,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305({
@@ -541,7 +541,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     tools: {
       web_search: anthropic.tools.webSearch_20250305({
@@ -579,7 +579,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     tools: {
       web_search: openai.tools.webSearch({}),
@@ -600,7 +600,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const { text } = await generateText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     tools: {
       web_search: openai.tools.webSearch({}),

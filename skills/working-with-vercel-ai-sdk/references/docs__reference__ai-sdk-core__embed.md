@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "bef836027eeee7f197ae275bc21bb3c7a62343875e382db05c3dda4938855b56"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "2febc271d4a6f246a76ac8b739929ed4697693d0e6688f8471080f21c639d44a"
 ---
 
 # `embed()`
@@ -314,6 +314,7 @@ const { embedding } = await embed({
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

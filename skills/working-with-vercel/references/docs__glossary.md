@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "ab680501d986c1b7d0153f7bae4eba11ea8cd4c69fbc015fe4148cd479b80bde"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "c36d93840746d7f26112436830c309590619236111ddab8c3888b9900b2e1043"
 ---
 
 # Glossary
@@ -206,10 +206,6 @@ A feature that allows you to send observability data (logs, traces, speed insigh
 
 Servers closest to users in a distributed network. Vercel's CDN serves content and runs code from edge locations globally.
 
-### Edge Config
-
-A global data store that enables ultra-fast data reads in the region closest to the user (within 15ms at P99, often less than 1ms) for configuration data like feature flags.
-
 ### Edge Runtime
 
 A minimal JavaScript runtime that exposes Web Standard APIs, used for Vercel Functions and Routing Middleware.
@@ -269,6 +265,10 @@ See [Vercel Functions](#vercel-functions).
 ### Git Integration
 
 Automatic connection between your Git repository (GitHub, GitLab, Bitbucket, Azure DevOps) and Vercel for continuous deployment.
+
+### Global Config
+
+A global data store that enables ultra-fast data reads in the region closest to the user (within 15ms at P99, often less than 1ms) for configuration data like feature flags.
 
 ## H
 
@@ -420,7 +420,7 @@ A deployment created from non-production branches that allows you to test change
 
 ### Pricing
 
-Vercel's billing model and per-resource rates for products such as [Vercel Functions](#vercel-functions), [Image Optimization](#image-optimization), [Edge Config](#edge-config), [Web Analytics](#web-analytics), and [Speed Insights](#speed-insights). See [Pricing on Vercel](/docs/pricing).
+Vercel's billing model and per-resource rates for products such as [Vercel Functions](#vercel-functions), [Image Optimization](#image-optimization), [Global Config](#global-config), [Web Analytics](#web-analytics), and [Speed Insights](#speed-insights). See [Pricing on Vercel](/docs/pricing).
 
 ### Private Registry
 
@@ -554,7 +554,7 @@ A Pro feature that notifies you, triggers a webhook, or pauses production deploy
 
 ### Storage
 
-Vercel's suite of storage products including [Vercel Blob](#vercel-blob) for large files, [Edge Config](#edge-config) for low-latency configuration data, and the [Vercel Marketplace](#vercel-marketplace) for databases such as [Postgres](#postgres) and [Redis](#redis).
+Vercel's suite of storage products including [Vercel Blob](#vercel-blob) for large files, [Global Config](#global-config) for low-latency configuration data, and the [Vercel Marketplace](#vercel-marketplace) for databases such as [Postgres](#postgres) and [Redis](#redis).
 
 ### Streaming
 

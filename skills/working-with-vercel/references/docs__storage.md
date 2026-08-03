@@ -9,15 +9,15 @@ prerequisites:
   []
 related:
   - /docs/vercel-blob
-  - /docs/edge-config
+  - /docs/global-config
   - /docs/marketplace-storage
   - /docs/storage/vercel-blob
   - /docs/storage/vercel-blob/usage-and-pricing
 summary: "Store large files and global configuration with Vercel's storage products."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0e1fa1b543eb07a9a156e26a3678fa23c06e568bc02a64976c395c6f8e49245c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "9e341c9f34a28347e2c3e8b99a7af6c2bd8b67dc6b43a2c2ec0bfdad8ffcac4c"
 ---
 
 # Vercel Storage overview
@@ -25,7 +25,7 @@ sha256: "0e1fa1b543eb07a9a156e26a3678fa23c06e568bc02a64976c395c6f8e49245c"
 Vercel offers a suite of managed, serverless storage products that integrate with your frontend framework.
 
 - [**Vercel Blob**](/docs/vercel-blob): Large file storage
-- [**Vercel Edge Config**](/docs/edge-config): Global, low-latency data store
+- [**Vercel Global Config**](/docs/global-config): Global, low-latency data store
 - [**Vercel Marketplace**](/docs/marketplace-storage): Find Postgres, KV, NoSQL, and other databases from providers like Neon, Upstash, and AWS
 
 ## Choosing a storage product
@@ -35,7 +35,7 @@ The right storage solution depends on your needs for latency, durability, and co
 | Product                           | Reads      | Writes       | Use Case                                    | Limits                                                    | Plans                  |
 | --------------------------------- | ---------- | ------------ | ------------------------------------------- | --------------------------------------------------------- | ---------------------- |
 | [Blob](/docs/storage/vercel-blob) | Fast       | Milliseconds | Large, content-addressable files ("blobs")  | [Learn more](/docs/storage/vercel-blob/usage-and-pricing) | Hobby, Pro             |
-| [Edge Config](/docs/edge-config)  | Ultra-fast | Seconds      | Runtime configuration (e.g., feature flags) | [Learn more](/docs/edge-config/edge-config-limits)        | Hobby, Pro, Enterprise |
+| [Global Config](/docs/global-config)  | Ultra-fast | Seconds      | Runtime configuration (e.g., feature flags) | [Learn more](/docs/global-config/global-config-limits)        | Hobby, Pro, Enterprise |
 
 See [best practices](#best-practices) for optimizing your storage usage.
 
@@ -55,23 +55,23 @@ You should use Vercel Blob if you need to:
 - [Overview](/docs/storage/vercel-blob)
 - [Quickstart](/docs/storage/vercel-blob/server-upload)
 
-## Edge Config
+## Global Config
 
-> **🔒 Permissions Required**: Edge Config
+> **🔒 Permissions Required**: Global Config
 
-An Edge Config is a global data store that enables you to read data in the region closest to the user without querying an external database or hitting upstream servers. Most lookups return in less than 1ms, and 99% of reads will return under 10ms.
+A Global Config is a global data store that enables you to read data in the region closest to the user without querying an external database or hitting upstream servers. Most lookups return in less than 1ms, and 99% of reads will return under 10ms.
 
-You should use Edge Config if you need to:
+You should use Global Config if you need to:
 
-- **Fetch data at ultra-low latency**: For example, you should store feature flags in an Edge Config store.
-- **Store data that is read often but changes rarely**: For example, you should store critical redirect URLs in an Edge Config store.
-- **Read data in every region**: Edge Config data is actively replicated to all regions in the Vercel CDN.
+- **Fetch data at ultra-low latency**: For example, you should store feature flags in a Global Config store.
+- **Store data that is read often but changes rarely**: For example, you should store critical redirect URLs in a Global Config store.
+- **Read data in every region**: Global Config data is actively replicated to all regions in the Vercel CDN.
 
-### Explore Edge Config
+### Explore Global Config
 
-- [Overview](/docs/edge-config)
-- [Quickstart](/docs/edge-config/get-started)
-- [Limits & Pricing](/docs/edge-config/edge-config-limits)
+- [Overview](/docs/global-config)
+- [Quickstart](/docs/global-config/get-started)
+- [Limits & Pricing](/docs/global-config/global-config-limits)
 
 ## Marketplace Storage
 
@@ -121,7 +121,7 @@ You can also configure cache-control headers manually with [Vercel Functions](/d
 
 ## Transferring your store
 
-You can bring your Blob or Edge Config stores along with your account as you upgrade from Hobby to Pro, or downgrade from Pro to Hobby. To do so:
+You can bring your Blob or Global Config stores along with your account as you upgrade from Hobby to Pro, or downgrade from Pro to Hobby. To do so:
 
 1. Navigate to the [dashboard](/dashboard) and open [**Storage**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fstores\&title=Go+to+Storage) in the sidebar
 2. Select the store that you would like to transfer
@@ -138,13 +138,13 @@ You can transfer [Marketplace](/docs/marketplace-storage) resources between team
 
 **Vercel Blob**: Store images, videos, and other large files. [Learn more →](/docs/storage/vercel-blob)
 
-**Edge Config**: Global, low-latency data store for runtime configuration. [Learn more →](/docs/edge-config)
+**Global Config**: Global, low-latency data store for runtime configuration. [Learn more →](/docs/global-config)
 
 **Marketplace Storage**: Postgres, KV, NoSQL, and other databases from Neon, Upstash, and more. [Learn more →](/docs/marketplace-storage)
 
 **Blob quickstart**: Upload your first file to Vercel Blob from a server. [Learn more →](/docs/storage/vercel-blob/server-upload)
 
-**Edge Config quickstart**: Read your first value from Edge Config. [Learn more →](/docs/edge-config/get-started)
+**Global Config quickstart**: Read your first value from Global Config. [Learn more →](/docs/global-config/get-started)
 
 **Provision from the CLI**: Use \`vercel install\` to provision Marketplace resources. [Learn more →](/docs/cli/install)
 

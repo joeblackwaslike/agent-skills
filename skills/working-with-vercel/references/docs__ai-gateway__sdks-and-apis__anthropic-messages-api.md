@@ -3,7 +3,7 @@ title: Anthropic Messages API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/ai-gateway/coding-agents/claude-code
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages
-  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calls
-  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
-  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning
 summary: Use the Anthropic Messages API with AI Gateway for seamless integration with Anthropic SDK tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "7c4b0e18d327083389b921705c66c52881f3fbb3926c65d02ce6c90dd5ffa21d"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "ef70f71cdaa49f36522411b2709ce037ace96ceba6282c39a2c41403fb470d12"
 ---
 
 # Anthropic Messages API
@@ -50,12 +50,13 @@ You only need to use one of these forms of authentication. If an API key is spec
 
 The AI Gateway supports the following Anthropic Messages API endpoints:
 
-- [`POST /v1/messages`](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) - Create messages with support for streaming, [tool calls](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calls), [extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced), [structured outputs](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs), and [file attachments](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/file-attachments)
+- [`POST /v1/messages`](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) - Create messages, with support for [streaming](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming), [tool calling](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling), [extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning), [structured outputs](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs), and [images](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images)
 - `POST /v1/messages/count_tokens` - [Count tokens](https://docs.anthropic.com/en/docs/build-with-claude/token-counting) in a message before sending it to Claude, for managing context windows and costs
 
 For advanced features, see:
 
-- [Advanced features](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) - Extended thinking and web search
+- [Extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) - Configure how much Claude thinks before answering
+- [Advanced features](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) - Web search, provider timeouts, and automatic caching
 - [Structured outputs](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) - JSON Schema-constrained responses
 
 ## Configuring Claude Code
@@ -122,6 +123,24 @@ You can use the AI Gateway's Anthropic Messages API with the official [Anthropic
 > features, refer to the [Anthropic Messages
 > API](https://docs.anthropic.com/en/api/messages) documentation.
 
+#### cURL
+
+```bash filename="client.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 1024,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello, world!"
+      }
+    ]
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="client.ts"
@@ -133,7 +152,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   max_tokens: 1024,
   messages: [{ role: 'user', content: 'Hello, world!' }],
 });
@@ -151,7 +170,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     max_tokens=1024,
     messages=[
         {'role': 'user', 'content': 'Hello, world!'}
@@ -165,7 +184,7 @@ The messages endpoint supports the following parameters:
 
 ### Required parameters
 
-- `model` (string): The model to use (e.g., `anthropic/claude-opus-4.8`)
+- `model` (string): The model to use (e.g., `anthropic/claude-opus-5`)
 - `max_tokens` (integer): Maximum number of tokens to generate
 - `messages` (array): Array of message objects with `role` and `content` fields
 
@@ -189,9 +208,35 @@ The gateway passes through the `cache_control` parameter to Anthropic's [prompt 
 
 Example request
 
+#### cURL
+
+```bash filename="prompt-caching.sh"
+CONTRACT=$(sed 's/"/\\"/g' contract.txt | tr '\n' ' ')
+
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 1024,
+    "system": [
+      { "type": "text", "text": "You are a helpful assistant that analyzes documents." },
+      {
+        "type": "text",
+        "text": "'"$CONTRACT"'",
+        "cache_control": { "type": "ephemeral" }
+      }
+    ],
+    "messages": [
+      { "role": "user", "content": "Summarize the key points from this document." }
+    ]
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="caching.ts"
+import fs from 'node:fs';
 import Anthropic from '@anthropic-ai/sdk';
 
 const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
@@ -201,8 +246,12 @@ const anthropic = new Anthropic({
   baseURL: 'https://ai-gateway.vercel.sh',
 });
 
+// Caching only pays off above a provider minimum, currently 1024 tokens for
+// most Claude models. A short string is silently not cached.
+const longDocumentContent = fs.readFileSync('./contract.txt', 'utf8');
+
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   max_tokens: 1024,
   system: [
     {
@@ -211,7 +260,7 @@ const message = await anthropic.messages.create({
     },
     {
       type: 'text',
-      text: longDocumentContent, // Large content to cache
+      text: longDocumentContent,
       cache_control: { type: 'ephemeral' },
     },
   ],
@@ -245,8 +294,13 @@ client = anthropic.Anthropic(
     base_url='https://ai-gateway.vercel.sh'
 )
 
+# Caching only pays off above a provider minimum, currently 1024 tokens for
+# most Claude models. A short string is silently not cached.
+with open('contract.txt') as f:
+    long_document_content = f.read()
+
 message = client.messages.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     max_tokens=1024,
     system=[
         {

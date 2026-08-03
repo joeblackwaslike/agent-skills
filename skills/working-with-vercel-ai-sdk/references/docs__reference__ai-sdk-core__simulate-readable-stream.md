@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/simulate-readable-stream.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "86fc22f074c03742eb6841a59eb6ba56eb5562702108ab86cb0004ac492aa3dc"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "1eb4142076aba5f90fb02d1e0cc934438ea919d44f542ae77cc3ad3ac3c3cfdc"
 ---
 
 # `simulateReadableStream()`
@@ -104,6 +104,7 @@ const stream = simulateReadableStream({
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

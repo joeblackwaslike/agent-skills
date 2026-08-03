@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "250b42e58066fdc2d650957553fb13c5c357c012758d498f6287ed717187472f"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8a405274e5ef399679f0284e715e0f2449e44a9016e3d5e852d3b38eb54a21ec"
 ---
 
 # Google Vertex Provider
@@ -2395,6 +2395,7 @@ The following models are available through the MaaS provider. You can also pass 
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

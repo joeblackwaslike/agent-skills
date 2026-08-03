@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/using-pagination-in-the-rest-api.md"
-fetched_at: "2026-07-27T07:36:12.022Z"
-sha256: "bfe52036badc82846db2336d363cff84b142ec881855f1a2f3ef7cda00777059"
+fetched_at: "2026-08-03T07:31:37.157Z"
+sha256: "05bee24c8d962fe1e95b57751022cabefff8dbd7001220fb330a28e495f376fe"
 ---
 
 ## About pagination
@@ -54,6 +54,8 @@ The URLs in the `link` header use query parameters to indicate which page of res
 ## Changing the number of items per page
 
 If an endpoint supports the `per_page` query parameter, then you can control how many results are returned on a page. For more information about query parameters see [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api#query-parameters).
+
+For most endpoints, the maximum value of `per_page` is `100`. If you specify a value greater than the maximum, {% data variables.product.company_short %} does not return an error. Instead, the value is automatically reduced to the maximum, and the response includes no more than the maximum number of results per page. Because the request still succeeds, you may receive fewer results than you expect without any indication that the `per_page` value was reduced. To confirm the default and maximum `per_page` values for an endpoint, see the reference documentation for that endpoint.
 
 For example, this request uses the `per_page` query parameter to return two items per page:
 

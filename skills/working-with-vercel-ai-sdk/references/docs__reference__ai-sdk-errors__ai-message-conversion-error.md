@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-message-conversion-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f51472916ddd94450137ee8e4307c1e71e636bfdd0b4da0cbee9c3b69fac340a"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d0a7528de0df13efd7b4f57e752a78485405ab5b4478923d9228f762c4df2409"
 ---
 
 # AI_MessageConversionError
@@ -53,6 +53,7 @@ if (MessageConversionError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

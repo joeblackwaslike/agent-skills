@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "a37159bea0a1214e9432d5f56c97acfbc853beb290ff4cd26aa5d4e3a632d27f"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "11ebb8dc7c99da3a3bec2b0d4fd1c3ac58886d4f31d4aceb8129ac1014386f55"
 ---
 
 # Cohere Provider
@@ -382,6 +382,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

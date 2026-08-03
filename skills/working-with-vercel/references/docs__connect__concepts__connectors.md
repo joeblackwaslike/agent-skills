@@ -17,8 +17,8 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "69b6fb04a76812d5199962faf064cb2026eb2b9e42a6aee5f0721dbd197723a4"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a2e8e271750a9ede59ef8cf722898d0f597c3b8c003343225df095117cac5c1d"
 ---
 
 # Connectors
@@ -46,7 +46,7 @@ When you call `getToken('slack/acme-slack', ...)`, the string `slack/acme-slack`
 | Snowflake    | Snowflake Partner Connect JWT                                                           | no                         | no       |
 | Salesforce   | Managed OAuth flow                                                                      | no                         | no       |
 | API Key      | Static credential supplied at create time                                               | no                         | no       |
-| Custom OAuth | OAuth 2.0 / OIDC authorization-code flow with PKCE against any URL-identified service   | no                         | no       |
+| Custom OAuth | OAuth 2.0 / OIDC against any URL-identified service; authorization-code flow with PKCE and/or client-credentials flow | no                         | no       |
 
 The capability matrix above is the current beta set and may change. Connector types may be added or removed without notice. New types are added behind feature flags; check the dashboard for what's available to your team.
 

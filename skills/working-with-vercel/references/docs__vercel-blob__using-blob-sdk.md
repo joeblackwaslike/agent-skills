@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "52984ad982a58cd885bf164cacee18c00a0385a84d4c2c927609627bc3ba49eb"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "305c0b23c98597408b7301dcb907eaf84bab423a28c5ba6392c70a223fa1f38e"
 ---
 
 # @vercel/blob
@@ -39,7 +39,7 @@ Vercel Blob works with any frontend framework. begin by installing the package:
   2. Select **Create Database**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
   4. Choose a name for your store and select **Create a new Blob store**
-  5. Select the environments where you would like the read-write token to be included. You can also update the prefix of the Environment Variable in Advanced Options
+  5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options
   Once created, you are taken to the Vercel Blob store page.
 
 - ### Prepare your local project
@@ -60,7 +60,9 @@ Vercel Blob works with any frontend framework. begin by installing the package:
   To connect a project:
   1. Go to your Blob store's **Projects** tab
   2. Select **Connect to Project**
-  3. Choose the project and environments to connect
+  3. Choose the project and the environments to connect. **Production** and **Preview** are preselected; include **Development** if you want to work with the store locally through `vercel env pull`
+  You can change the connected environments at any time. From the store's **Projects** tab, open the context menu (⋯) next to your project, select **Update Project Connection**, and choose the environments. After saving, run `vercel env pull` again to refresh your local environment variables.
+
   See [Authentication](/docs/vercel-blob/using-blob-sdk#authentication) for the full credential resolution order.
 
 ## Authentication

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "174988ebcc9a583b081ab48ef0b5f626c080e434e5e25068d9c356c175bbee20"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "7b51d2c13234c6d95b8b291f26616a6e9979b60bacf2dbc98dcbd93dc3e57e4b"
 ---
 
 # Rev.ai Provider
@@ -242,6 +242,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b783ae30e0cf2981c6291d3416de58085cf5198a3738d5cce6089e5d7b1d0376"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8081cb28e65d3465135b5f09482e3f9bfd326f678eaef7ec3864286f973d500e"
 ---
 
 # Speech
@@ -187,6 +187,7 @@ Above are a small subset of the speech models supported by the AI SDK providers.
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -195,6 +196,7 @@ Above are a small subset of the speech models supported by the AI SDK providers.
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

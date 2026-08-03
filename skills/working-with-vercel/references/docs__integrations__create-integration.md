@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "626ba2898f07cf694e8acb92174c2cceab9529ee208e11af174c0f84de8ee7db"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "76a2137d58e695393f74fa346fee220acea9ee14573e4faefed9cd78ec351219"
 ---
 
 # Create an Integration
@@ -97,7 +97,7 @@ The **Create Product** form must be completed in full for at least one product b
 | [Guides](/docs/integrations/create-integration/submit-integration#product-guides)                                                   | Getting started guides for specific frameworks.                            |     |
 | [Resource Links](/docs/integrations/create-integration/submit-integration#product-resource-links)                                   | Resource links such as documentation.                                      |  |
 | [Snippets](/docs/integrations/create-integration/submit-integration#product-snippets)                                               | Add up to 6 code snippets to help users get started with your product.     |  |
-| [Edge Config Support](/docs/integrations/create-integration/submit-integration#edge-config-support)                                 | Enable/Disable Experimentation Edge Config Sync                            |  |
+| [Global Config Support](/docs/integrations/create-integration/submit-integration#global-config-support)                                 | Enable/Disable Experimentation Global Config Sync                            |  |
 | [Log Drain Settings](/docs/integrations/create-integration/submit-integration#log-drain-settings)                                   | Configure a Log Drain                                                      |  |
 | [Checks API](/docs/integrations/create-integration/submit-integration#checks-api)                                                   | Enable/Disable Checks API                                                  |  |
 

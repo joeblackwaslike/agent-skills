@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/settings.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "9927caea25c8e99b46d735e5362504a69580add0988945adce251cf42c0632c6"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "1cbaf0c1bc82cc59c3a4a90649c02cdb4b2d0fa9119149a11df69b9e49a199f3"
 ---
 
 # Settings
@@ -280,6 +280,7 @@ const result = await generateText({
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -288,6 +289,7 @@ const result = await generateText({
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

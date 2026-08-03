@@ -17,8 +17,8 @@ related:
 summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "18c057a1981edbb988973df89d74e09de9b8de0ebb0da1e809a02f784f17480b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b496ba6843e25a5370e350e5c4b47f44e7cd072c1c7ef1cbd5b2d8ae8d395ae1"
 ---
 
 # Multi-tenant Reference
@@ -243,7 +243,7 @@ run();
 - Set canonical URLs pointing to primary domain
 - Redirect subdomain to custom domain (or vice versa)
 - Use consistent domain in sitemaps
-- Configure 301 redirects in middleware
+- Configure 301 redirects in Next.js Proxy
 
 ```tsx filename="app/layout.tsx"
 // app/layout.tsx

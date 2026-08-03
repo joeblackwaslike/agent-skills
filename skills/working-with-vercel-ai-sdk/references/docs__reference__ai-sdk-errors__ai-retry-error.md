@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-retry-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "978f7dc475a8e4cc7e13d2afbdc90d92ef34280ac2dfd152d0421d1b416950d8"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8916cc11d6c590be0adf14ed6d5325946dbf2f62455462558fdd850b11b52fb8"
 ---
 
 # AI_RetryError
@@ -55,6 +55,7 @@ if (RetryError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "e472296ba8e655d3bf3353397f6921a117c6b92eed007222e69e82df5b5296c0"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "912e1eb39fff1498f9d177ee68f88f88ceffed5fa19fb067fd5dbedd9a0a750e"
 ---
 
 # `createAgentUIStream`
@@ -181,6 +181,7 @@ for await (const chunk of stream) {
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

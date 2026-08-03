@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/prompt-engineering.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "79701fc7b1435ad2a0437322c09ae9e0f8f4efc617f1c54947eaef2377d7b397"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "b129cebf73c66810021b886f7548d041fdea43cae4ea1a7c61cf68b6ce550634"
 ---
 
 # Prompt Engineering
@@ -171,6 +171,7 @@ console.log(result.finalStep.request.body);
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -179,6 +180,7 @@ console.log(result.finalStep.request.body);
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

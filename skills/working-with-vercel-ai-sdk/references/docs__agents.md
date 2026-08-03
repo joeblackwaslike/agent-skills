@@ -1,164 +1,356 @@
 ---
 source: "https://ai-sdk.dev/docs/agents.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "728c199951cb5039e951f0ece61f4dbf917920a8001f042bc16fc1282ff3c3bd"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "380c55bdd296d5e057d87ebc0f4db84e51e2235c70078ff0e712e6be8d4e79e4"
 ---
 
-# Getting Started with Coding Agents
+# Agents
 
-This page explains how to get the most out of the AI SDK when working inside a coding agent (such as Claude Code, Codex, OpenCode, Cursor, or any other AI-assisted development environment).
+The following section shows you how to build agents with the AI SDK - systems where large language models (LLMs) use tools in a loop to accomplish tasks.
 
-## Install the AI SDK Skill
-
-The fastest way to give your coding agent deep knowledge of the AI SDK is to install the official AI SDK skill. Skills are lightweight markdown files that load specialized instructions into your agent's context on demand — so your agent knows exactly how to use the SDK without you needing to explain it.
-
-Install the AI SDK skill using `npx skills add`:
-
-```bash
-npx skills add vercel/ai
-```
-
-This installs the skill into your agent's specific skills directory (e.g., `.claude/skills`, `.codex/skills`). If you select more than one agent, the CLI creates symlinks so each agent can discover the skill. Use `-a` to specify agents directly — for example, `-a amp` installs into the universal `.agents/skills` directory. Use `-y` for non-interactive installation.
-
-Once installed, any agent that supports the [Agent Skills](https://agentskills.io) format will automatically discover and load the skill when working on AI SDK tasks.
-
-<Note>
-  Agent Skills use **progressive disclosure**: your agent loads only the skill's
-  name and description at startup. The full instructions are only pulled into
-  context when the task calls for it, keeping your agent fast and focused.
-</Note>
-
-## Docs and Source Code in `node_modules`
-
-Once you've installed the `ai` package, you already have the full AI SDK documentation and source code available locally inside `node_modules`. Your coding agent can read these directly — no internet access required.
-
-Install the `ai` package if you haven't already:
-
-<InstallPackages packages="ai" />
-
-After installation, your agent can reference the bundled source code and documentation at paths like:
-
-```
-node_modules/ai/src/              # Full source code organized by module
-node_modules/ai/docs/             # Official documentation with examples
-```
-
-This means your agent can look up accurate API signatures, implementations, and usage examples directly from the installed package — ensuring it always uses the version of the SDK that's actually installed in your project.
-
-## Install DevTools
-
-AI SDK DevTools gives you full visibility into your AI SDK calls during development. It captures LLM requests, responses, tool calls, token usage, and multi-step interactions, and displays them in a local web UI.
-
-<Note type="warning">
-  AI SDK DevTools is experimental and intended for local development only. Do
-  not use in production environments.
-</Note>
-
-Install the DevTools package:
-
-<InstallPackages packages="@ai-sdk/devtools" />
-
-### Register the integration
-
-Register `DevToolsTelemetry` globally so it captures all AI SDK calls:
-
-```ts
-import { registerTelemetry } from 'ai';
-import { DevToolsTelemetry } from '@ai-sdk/devtools';
-
-registerTelemetry(DevToolsTelemetry());
-```
-
-Once an integration is registered, [telemetry](/docs/ai-sdk-core/telemetry) is enabled automatically for all your AI SDK calls:
-
-```ts
-import { generateText } from 'ai';
-
-const result = await generateText({
-  model: openai('gpt-4o'),
-  prompt: 'What cities are in the United States?',
-});
-```
-
-### Launch the viewer
-
-Start the DevTools viewer in a separate terminal:
-
-```bash
-npx @ai-sdk/devtools@latest
-```
-
-Open [http://localhost:4983](http://localhost:4983) to inspect your AI SDK interactions in real time.
-
-## Inspecting Tool Calls and Outputs
-
-DevTools captures and displays the following for every call:
-
-- **Input parameters and prompts** — the complete input sent to your LLM
-- **Output content and tool calls** — generated text and tool invocations
-- **Token usage and timing** — resource consumption and latency per step
-- **Raw provider data** — complete request and response payloads
-
-For multi-step agent interactions, DevTools groups everything into **runs** (a complete interaction) and **steps** (each individual LLM call within it), making it easy to trace exactly what your agent did and why.
-
-You can also log tool results directly in code during development:
-
-```ts
-import { streamText, tool, isStepCount } from 'ai';
-import { z } from 'zod';
-
-const result = streamText({
-  model,
-  prompt: "What's the weather in New York in celsius?",
-  tools: {
-    weather: tool({
-      description: 'Get the weather in a location (fahrenheit)',
-      inputSchema: z.object({
-        location: z.string().describe('The location to get the weather for'),
-      }),
-      execute: async ({ location }) => ({
-        location,
-        temperature: Math.round(Math.random() * (90 - 32) + 32),
-      }),
-    }),
-  },
-  stopWhen: isStepCount(5),
-  onStepEnd: async ({ toolResults }) => {
-    if (toolResults.length) {
-      console.log(JSON.stringify(toolResults, null, 2));
-    }
-  },
-});
-```
-
-The `onStepEnd` callback fires after each LLM step and prints any tool results to your terminal — useful for quick debugging without opening the DevTools UI.
-
-<Note>
-  DevTools stores all AI interactions in a local `.devtools/generations.json`
-  file. It automatically adds `.devtools` to your `.gitignore` to prevent
-  committing sensitive interaction data.
-</Note>
-
-## Where to Next?
-
-- Learn about [Agent Skills](https://agentskills.io/specification) to understand the full skill format.
-- Read the [DevTools reference](/docs/ai-sdk-core/devtools) for a complete list of captured data and configuration options.
-- Explore [Tools and Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling) to build agents that can take real-world actions.
-- Check out the [Add Skills to Your Agent](/cookbook/guides/agent-skills) cookbook guide for a step-by-step integration walkthrough.
+<IndexCards
+  cards={[
+    {
+      title: 'Overview',
+      description:
+        'Learn what agents are, how they manage state, and why to use the ToolLoopAgent.',
+      href: '/docs/agents/overview',
+    },
+    {
+      title: 'Building Agents',
+      description:
+        'Create ToolLoopAgent instances with tools, runtime context, and loop control.',
+      href: '/docs/agents/building-agents',
+    },
+    {
+      title: 'Workflow Patterns',
+      description:
+        'Structured patterns using core functions for complex workflows.',
+      href: '/docs/agents/workflows',
+    },
+    {
+      title: 'Loop Control',
+      description: 'Advanced execution control with stopWhen and prepareStep.',
+      href: '/docs/agents/loop-control',
+    },
+    {
+      title: 'Configuring Call Options',
+      description:
+        'Pass type-safe runtime inputs to dynamically configure agent behavior.',
+      href: '/docs/agents/configuring-call-options',
+    },
+    {
+      title: 'Tool Approvals',
+      description:
+        'Review, approve, or deny sensitive tool calls before they execute.',
+      href: '/docs/agents/tool-approvals',
+    },
+    {
+      title: 'Policy-Based Tool Approvals',
+      description:
+        'Author tool authorization rules as code with @ai-sdk/policy-opa and Open Policy Agent.',
+      href: '/docs/agents/policy-tool-approvals',
+    },
+    {
+      title: 'Subagents',
+      description:
+        'Delegate context-heavy tasks to specialized subagents while keeping the main agent focused.',
+      href: '/docs/agents/subagents',
+    },
+    {
+      title: 'WorkflowAgent',
+      description:
+        'Build durable, resumable agents with @ai-sdk/workflow for the Workflow SDK.',
+      href: '/docs/agents/workflow-agent',
+    },
+    {
+      title: 'Terminal UI',
+      description:
+        'Run ToolLoopAgent instances in an interactive terminal interface.',
+      href: '/docs/agents/terminal-ui',
+    },
+  ]}
+/>
 
 
 ## Navigation
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+- [AI SDK by Vercel](/docs/introduction)
+- [Foundations](/docs/foundations)
+  - [Overview](/docs/foundations/overview)
+  - [Providers and Models](/docs/foundations/providers-and-models)
+  - [Prompts](/docs/foundations/prompts)
+  - [Tools](/docs/foundations/tools)
+  - [Streaming](/docs/foundations/streaming)
+  - [Provider Options](/docs/foundations/provider-options)
+- [Getting Started](/docs/getting-started)
+  - [Choosing a Provider](/docs/getting-started/choosing-a-provider)
+  - [Navigating the Library](/docs/getting-started/navigating-the-library)
+  - [Next.js App Router](/docs/getting-started/nextjs-app-router)
+  - [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
+  - [Svelte](/docs/getting-started/svelte)
+  - [Vue.js (Nuxt)](/docs/getting-started/nuxt)
+  - [Node.js](/docs/getting-started/nodejs)
+  - [Expo](/docs/getting-started/expo)
+  - [TanStack Start](/docs/getting-started/tanstack-start)
+  - [Coding Agents](/docs/getting-started/coding-agents)
+- [Agents](/docs/agents)
+  - [Overview](/docs/agents/overview)
+  - [Building Agents](/docs/agents/building-agents)
+  - [Workflow Patterns](/docs/agents/workflows)
+  - [Loop Control](/docs/agents/loop-control)
+  - [Configuring Call Options](/docs/agents/configuring-call-options)
+  - [Memory](/docs/agents/memory)
+  - [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
+  - [Subagents](/docs/agents/subagents)
+  - [Tool Approvals](/docs/agents/tool-approvals)
+  - [WorkflowAgent](/docs/agents/workflow-agent)
+  - [Terminal UI](/docs/agents/terminal-ui)
+- [AI SDK Core](/docs/ai-sdk-core)
+  - [Overview](/docs/ai-sdk-core/overview)
+  - [Generating Text](/docs/ai-sdk-core/generating-text)
+  - [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
+  - [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
+  - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
+  - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
+  - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+  - [Code Mode](/docs/ai-sdk-core/code-mode)
+  - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
+  - [Settings](/docs/ai-sdk-core/settings)
+  - [Reasoning](/docs/ai-sdk-core/reasoning)
+  - [Embeddings](/docs/ai-sdk-core/embeddings)
+  - [Reranking](/docs/ai-sdk-core/reranking)
+  - [Image Generation](/docs/ai-sdk-core/image-generation)
+  - [Realtime](/docs/ai-sdk-core/realtime)
+  - [Transcription](/docs/ai-sdk-core/transcription)
+  - [Translation](/docs/ai-sdk-core/translation)
+  - [Speech](/docs/ai-sdk-core/speech)
+  - [Video Generation](/docs/ai-sdk-core/video-generation)
+  - [File Uploads](/docs/ai-sdk-core/file-uploads)
+  - [Language Model Middleware](/docs/ai-sdk-core/middleware)
+  - [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
+  - [Provider & Model Management](/docs/ai-sdk-core/provider-management)
+  - [Error Handling](/docs/ai-sdk-core/error-handling)
+  - [Testing](/docs/ai-sdk-core/testing)
+  - [Telemetry](/docs/ai-sdk-core/telemetry)
+  - [DevTools](/docs/ai-sdk-core/devtools)
+  - [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+- [AI SDK Harnesses](/docs/ai-sdk-harnesses)
+  - [Overview](/docs/ai-sdk-harnesses/overview)
+  - [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
+  - [Tools](/docs/ai-sdk-harnesses/tools)
+  - [Skills](/docs/ai-sdk-harnesses/skills)
+  - [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
+  - [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
+  - [UI](/docs/ai-sdk-harnesses/ui)
+  - [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+- [AI SDK UI](/docs/ai-sdk-ui)
+  - [Overview](/docs/ai-sdk-ui/overview)
+  - [Chatbot](/docs/ai-sdk-ui/chatbot)
+  - [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
+  - [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
+  - [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
+  - [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
+  - [Completion](/docs/ai-sdk-ui/completion)
+  - [Object Generation](/docs/ai-sdk-ui/object-generation)
+  - [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
+  - [Error Handling](/docs/ai-sdk-ui/error-handling)
+  - [Transport](/docs/ai-sdk-ui/transport)
+  - [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
+  - [Message Metadata](/docs/ai-sdk-ui/message-metadata)
+  - [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+- [AI SDK RSC](/docs/ai-sdk-rsc)
+  - [Overview](/docs/ai-sdk-rsc/overview)
+  - [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
+  - [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
+  - [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
+  - [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
+  - [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
+  - [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
+  - [Error Handling](/docs/ai-sdk-rsc/error-handling)
+  - [Handling Authentication](/docs/ai-sdk-rsc/authentication)
+  - [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+- [Advanced](/docs/advanced)
+  - [Prompt Engineering](/docs/advanced/prompt-engineering)
+  - [Stopping Streams](/docs/advanced/stopping-streams)
+  - [Backpressure](/docs/advanced/backpressure)
+  - [Caching](/docs/advanced/caching)
+  - [Multiple Streamables](/docs/advanced/multiple-streamables)
+  - [Rate Limiting](/docs/advanced/rate-limiting)
+  - [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
+  - [Language Models as Routers](/docs/advanced/model-as-router)
+  - [Multistep Interfaces](/docs/advanced/multistep-interfaces)
+  - [Sequential Generations](/docs/advanced/sequential-generations)
+  - [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
+  - [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+- [Reference](/docs/reference)
+  - [AI SDK Core](/docs/reference/ai-sdk-core)
+    - [generateText](/docs/reference/ai-sdk-core/generate-text)
+    - [streamText](/docs/reference/ai-sdk-core/stream-text)
+    - [embed](/docs/reference/ai-sdk-core/embed)
+    - [embedMany](/docs/reference/ai-sdk-core/embed-many)
+    - [rerank](/docs/reference/ai-sdk-core/rerank)
+    - [generateImage](/docs/reference/ai-sdk-core/generate-image)
+    - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+    - [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
+    - [transcribe](/docs/reference/ai-sdk-core/transcribe)
+    - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
+    - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
+    - [uploadFile](/docs/reference/ai-sdk-core/upload-file)
+    - [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
+    - [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
+    - [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
+    - [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
+    - [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
+    - [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
+    - [tool](/docs/reference/ai-sdk-core/tool)
+    - [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
+    - [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
+    - [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
+    - [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
+    - [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
+    - [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
+    - [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
+    - [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
+    - [Output](/docs/reference/ai-sdk-core/output)
+    - [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
+    - [ModelMessage](/docs/reference/ai-sdk-core/model-message)
+    - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
+    - [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
+    - [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
+    - [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
+    - [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
+    - [customProvider](/docs/reference/ai-sdk-core/custom-provider)
+    - [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
+    - [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
+    - [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
+    - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
+    - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
+    - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
+    - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
+    - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
+    - [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
+    - [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
+    - [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
+    - [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
+    - [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
+    - [generateId](/docs/reference/ai-sdk-core/generate-id)
+    - [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
+    - [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+  - [AI SDK UI](/docs/reference/ai-sdk-ui)
+    - [useChat](/docs/reference/ai-sdk-ui/use-chat)
+    - [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
+    - [useObject](/docs/reference/ai-sdk-ui/use-object)
+    - [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
+    - [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
+    - [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
+    - [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
+    - [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
+    - [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
+    - [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
+    - [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
+    - [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
+    - [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
+    - [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+  - [AI SDK RSC](/docs/reference/ai-sdk-rsc)
+    - [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
+    - [createAI](/docs/reference/ai-sdk-rsc/create-ai)
+    - [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
+    - [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
+    - [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
+    - [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
+    - [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
+    - [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
+    - [useActions](/docs/reference/ai-sdk-rsc/use-actions)
+    - [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
+    - [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
+    - [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+  - [AI SDK Workflow](/docs/reference/ai-sdk-workflow)
+    - [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
+    - [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
+  - [AI SDK Errors](/docs/reference/ai-sdk-errors)
+    - [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
+    - [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
+    - [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
+    - [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
+    - [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
+    - [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)
+    - [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
+    - [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
+    - [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
+    - [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
+    - [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
+    - [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
+    - [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)
+    - [AI_LoadSettingError](/docs/reference/ai-sdk-errors/ai-load-setting-error)
+    - [AI_MessageConversionError](/docs/reference/ai-sdk-errors/ai-message-conversion-error)
+    - [AI_NoContentGeneratedError](/docs/reference/ai-sdk-errors/ai-no-content-generated-error)
+    - [AI_NoImageGeneratedError](/docs/reference/ai-sdk-errors/ai-no-image-generated-error)
+    - [AI_NoObjectGeneratedError](/docs/reference/ai-sdk-errors/ai-no-object-generated-error)
+    - [AI_NoOutputGeneratedError](/docs/reference/ai-sdk-errors/ai-no-output-generated-error)
+    - [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
+    - [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
+    - [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
+    - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
+    - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
+    - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+    - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
+    - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
+    - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
+    - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
+    - [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
+    - [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
+    - [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
+    - [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
+    - [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)
+  - [AI SDK TUI](/docs/reference/ai-sdk-tui)
+    - [runAgentTUI](/docs/reference/ai-sdk-tui/run-agent-tui)
+- [Migration Guides](/docs/migration-guides)
+  - [Versioning](/docs/migration-guides/versioning)
+  - [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
+  - [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
+  - [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
+  - [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
+  - [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
+  - [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
+  - [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
+  - [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
+  - [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
+  - [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
+  - [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+- [Troubleshooting](/docs/troubleshooting)
+  - [Azure OpenAI Slow to Stream](/docs/troubleshooting/azure-stream-slow)
+  - [Server Actions in Client Components](/docs/troubleshooting/server-actions-in-client-components)
+  - [useChat/useCompletion stream output contains 0:... instead of text](/docs/troubleshooting/strange-stream-output)
+  - [Streamable UI Errors](/docs/troubleshooting/streamable-ui-errors)
+  - [Tool Invocation Missing Result Error](/docs/troubleshooting/tool-invocation-missing-result)
+  - [Streaming Not Working When Deployed](/docs/troubleshooting/streaming-not-working-when-deployed)
+  - [Streaming Not Working When Proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
+  - [Getting Timeouts When Deploying on Vercel](/docs/troubleshooting/timeout-on-vercel)
+  - [Unclosed Streams](/docs/troubleshooting/unclosed-streams)
+  - [useChat Failed to Parse Stream](/docs/troubleshooting/use-chat-failed-to-parse-stream)
+  - [Server Action Plain Objects Error](/docs/troubleshooting/client-stream-error)
+  - [useChat No Response](/docs/troubleshooting/use-chat-tools-no-response)
+  - [Custom headers, body, and credentials not working with useChat](/docs/troubleshooting/use-chat-custom-request-options)
+  - [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
+  - [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
+  - [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
+  - [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
+  - [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
+  - [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
+  - [streamText fails silently](/docs/troubleshooting/stream-text-not-working)
+  - [Streaming Status Shows But No Text Appears](/docs/troubleshooting/streaming-status-delay)
+  - [Stale body values with useChat](/docs/troubleshooting/use-chat-stale-body-data)
+  - [Type Error with onToolCall](/docs/troubleshooting/ontoolcall-type-narrowing)
+  - [Unsupported model version error](/docs/troubleshooting/unsupported-model-version)
+  - [Object generation failed with OpenAI](/docs/troubleshooting/no-object-generated-content-filter)
+  - [Missing Tool Results Error](/docs/troubleshooting/missing-tool-results-error)
+  - [Model is not assignable to type "LanguageModelV1"](/docs/troubleshooting/model-is-not-assignable-to-type)
+  - [TypeScript error "Cannot find namespace 'JSX'"](/docs/troubleshooting/typescript-cannot-find-namespace-jsx)
+  - [React error "Maximum update depth exceeded"](/docs/troubleshooting/react-maximum-update-depth-exceeded)
+  - [Jest: cannot find module '@ai-sdk/rsc'](/docs/troubleshooting/jest-cannot-find-module-ai-rsc)
+  - [High memory usage when processing many images](/docs/troubleshooting/high-memory-usage-with-images)
 
 
 [Full Sitemap](/sitemap.md)

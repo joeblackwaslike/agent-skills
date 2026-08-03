@@ -3,18 +3,18 @@ title: Messages
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis
 related:
-  []
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming
 summary: Create messages using the Anthropic Messages API format with support for streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b47c17f551b0837d6c0c90403b775977de5450cfc7acb9ed624d1cef5be742e5"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "da7f2e46fb754eadd0542b166f8a3c03720607c1e4212d317bf35040dbc493e4"
 ---
 
 # Messages
@@ -33,6 +33,25 @@ Create a non-streaming message.
 
 Example request
 
+#### cURL
+
+```bash filename="generate.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "max_tokens": 150,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a one-sentence bedtime story about a unicorn."
+      }
+    ],
+    "temperature": 0.7
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="generate.ts"
@@ -46,7 +65,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   max_tokens: 150,
   messages: [
     {
@@ -75,7 +94,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     max_tokens=150,
     messages=[
         {
@@ -103,7 +122,7 @@ Response format
       "text": "Once upon a time, a gentle unicorn with a shimmering silver mane danced through moonlit clouds, sprinkling stardust dreams upon sleeping children below."
     }
   ],
-  "model": "anthropic/claude-opus-4.8",
+  "model": "anthropic/claude-opus-5",
   "stop_reason": "end_turn",
   "usage": {
     "input_tokens": 15,
@@ -114,82 +133,7 @@ Response format
 
 ### Streaming messages
 
-Create a streaming message that delivers tokens as they are generated.
-
-Example request
-
-#### TypeScript
-
-```typescript filename="stream.ts"
-import Anthropic from '@anthropic-ai/sdk';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const anthropic = new Anthropic({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh',
-});
-
-const stream = await anthropic.messages.create({
-  model: 'anthropic/claude-opus-4.8',
-  max_tokens: 150,
-  messages: [
-    {
-      role: 'user',
-      content: 'Write a one-sentence bedtime story about a unicorn.',
-    },
-  ],
-  temperature: 0.7,
-  stream: true,
-});
-
-for await (const event of stream) {
-  if (event.type === 'content_block_delta') {
-    if (event.delta.type === 'text_delta') {
-      process.stdout.write(event.delta.text);
-    }
-  }
-}
-```
-
-#### Python
-
-```python filename="stream.py"
-import os
-import anthropic
-
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
-client = anthropic.Anthropic(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh'
-)
-
-with client.messages.stream(
-    model='anthropic/claude-opus-4.8',
-    max_tokens=150,
-    messages=[
-        {
-            'role': 'user',
-            'content': 'Write a one-sentence bedtime story about a unicorn.'
-        }
-    ],
-    temperature=0.7,
-) as stream:
-    for text in stream.text_stream:
-        print(text, end='', flush=True)
-```
-
-#### Streaming event types
-
-Streaming responses use [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events). The key event types are:
-
-- `message_start` - Initial message metadata
-- `content_block_start` - Start of a content block (text, tool use, etc.)
-- `content_block_delta` - Incremental content updates
-- `content_block_stop` - End of a content block
-- `message_delta` - Final message metadata (stop reason, usage)
-- `message_stop` - End of the message
+Set `stream: true` to receive tokens as they are generated. See [Streaming](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) for the full example and the list of server-sent event types.
 
 
 ---

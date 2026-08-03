@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-apps.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "4de76ba69514ac874a12ea99da52fb43bf934219cca231463240c5cb3af23f52"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "08b44b81384cc61f93db64f5de88372365528658097e51f06bac549ba92e0267"
 ---
 
 # MCP Apps
@@ -193,6 +193,7 @@ Returns a `Promise<MCPAppResource>`.
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

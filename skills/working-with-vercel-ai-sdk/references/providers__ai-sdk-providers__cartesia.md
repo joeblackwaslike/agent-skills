@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b45d7b6c385b26ad3f0b1390f6a4abdf37599c0d335d00febc519edec0bc1454"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "7b52b5fc420db5f5c084440042c104eb7e36bf645ca32165c9bca1386a09831b"
 ---
 
 # Cartesia Provider
@@ -354,6 +354,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

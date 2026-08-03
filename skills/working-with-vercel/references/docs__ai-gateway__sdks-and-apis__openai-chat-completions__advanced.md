@@ -3,435 +3,59 @@ title: Advanced Configuration
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis
 related:
+  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/provider-timeouts
   - /docs/ai-gateway/authentication-and-byok/byok
-  - /docs/ai-gateway/models-and-providers/automatic-caching
-summary: Configure reasoning, provider options, model fallbacks, BYOK credentials, and prompt caching.
+summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "fe7c12d976ee4a76ad44201671138b9cc70a60ec836d488e1f3dd042334c2800"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "2a8d7d6496dbd501688d24236fb74b8637c333a81af2a68aa71fa3879c147242"
 ---
 
 # Advanced Configuration
 
-## Reasoning configuration
-
-Configure reasoning behavior for models that support extended thinking or chain-of-thought reasoning. The `reasoning` parameter allows you to control how reasoning tokens are generated and returned.
-
-Example request
-
-#### TypeScript
-
-```typescript filename="reasoning-openai-sdk.ts"
-import OpenAI from 'openai';
-
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
-
-const openai = new OpenAI({
-  apiKey,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-// @ts-expect-error - reasoning parameter not yet in OpenAI types
-const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
-  messages: [
-    {
-      role: 'user',
-      content: 'What is the meaning of life? Think before answering.',
-    },
-  ],
-  stream: false,
-  reasoning: {
-    max_tokens: 2000, // Limit reasoning tokens
-    enabled: true, // Enable reasoning
-  },
-});
-
-console.log('Reasoning:', completion.choices[0].message.reasoning);
-console.log('Answer:', completion.choices[0].message.content);
-console.log(
-  'Reasoning tokens:',
-  completion.usage.completion_tokens_details?.reasoning_tokens,
-);
-```
-
-#### Python
-
-```python filename="reasoning.py"
-import os
-from openai import OpenAI
-
-api_key = os.getenv('AI_GATEWAY_API_KEY') or os.getenv('VERCEL_OIDC_TOKEN')
-
-client = OpenAI(
-    api_key=api_key,
-    base_url='https://ai-gateway.vercel.sh/v1'
-)
-
-completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
-    messages=[
-        {
-            'role': 'user',
-            'content': 'What is the meaning of life? Think before answering.'
-        }
-    ],
-    stream=False,
-    extra_body={
-        'reasoning': {
-            'max_tokens': 2000,
-            'enabled': True
-        }
-    }
-)
-
-print('Reasoning:', completion.choices[0].message.reasoning)
-print('Answer:', completion.choices[0].message.content)
-print('Reasoning tokens:', completion.usage.completion_tokens_details.reasoning_tokens)
-```
-
-#### Reasoning parameters
-
-The `reasoning` object supports the following parameters:
-
-- **`enabled`** (boolean, optional): Enable reasoning output. When `true`, the model will provide its reasoning process.
-
-- **`max_tokens`** (number, optional): Maximum number of tokens to allocate for reasoning. This helps control costs and response times. Cannot be used with `effort`.
-
-- **`effort`** (string, optional): Control reasoning effort level. Accepts:
-
-  - `'none'` - Disables reasoning
-  - `'minimal'` - ~10% of max\_tokens
-  - `'low'` - ~20% of max\_tokens
-  - `'medium'` - ~50% of max\_tokens
-  - `'high'` - ~80% of max\_tokens
-  - `'xhigh'` - ~95% of max\_tokens
-
-  Cannot be used with `max_tokens`.
-
-- **`exclude`** (boolean, optional): When `true`, excludes reasoning content from the response but still generates it internally. Useful for reducing response payload size.
-
-> **💡 Note:** **Mutually exclusive parameters:** You cannot specify both `effort` and
-> `max_tokens` in the same request. Choose one based on your use case.
-
-#### Response format with reasoning
-
-When reasoning is enabled, the response includes reasoning content:
-
-```json
-{
-  "id": "chatcmpl-123",
-  "object": "chat.completion",
-  "created": 1677652288,
-  "model": "anthropic/claude-opus-4.8",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": "The meaning of life is a deeply personal question...",
-        "reasoning": "Let me think about this carefully. The question asks about..."
-      },
-      "finish_reason": "stop"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 15,
-    "completion_tokens": 150,
-    "total_tokens": 165,
-    "completion_tokens_details": {
-      "reasoning_tokens": 50
-    }
-  }
-}
-```
-
-#### Streaming with reasoning
-
-Reasoning content is streamed incrementally in the `delta.reasoning` field:
-
-#### TypeScript
-
-```typescript filename="reasoning-streaming.ts"
-import OpenAI from 'openai';
-
-const openai = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-// @ts-expect-error - reasoning parameter not yet in OpenAI types
-const stream = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
-  messages: [
-    {
-      role: 'user',
-      content: 'What is the meaning of life? Think before answering.',
-    },
-  ],
-  stream: true,
-  reasoning: {
-    enabled: true,
-  },
-});
-
-for await (const chunk of stream) {
-  const delta = chunk.choices[0]?.delta;
-
-  // Handle reasoning content
-  if (delta?.reasoning) {
-    process.stdout.write(`[Reasoning] ${delta.reasoning}`);
-  }
-
-  // Handle regular content
-  if (delta?.content) {
-    process.stdout.write(delta.content);
-  }
-}
-```
-
-#### Python
-
-```python filename="reasoning-streaming.py"
-import os
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1'
-)
-
-stream = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
-    messages=[
-        {
-            'role': 'user',
-            'content': 'What is the meaning of life? Think before answering.'
-        }
-    ],
-    stream=True,
-    extra_body={
-        'reasoning': {
-            'enabled': True
-        }
-    }
-)
-
-for chunk in stream:
-    if chunk.choices and chunk.choices[0].delta:
-        delta = chunk.choices[0].delta
-
-        # Handle reasoning content
-        if hasattr(delta, 'reasoning') and delta.reasoning:
-            print(f"[Reasoning] {delta.reasoning}", end='', flush=True)
-
-        # Handle regular content
-        if hasattr(delta, 'content') and delta.content:
-            print(delta.content, end='', flush=True)
-```
-
-#### Preserving reasoning details across providers
-
-The AI Gateway preserves reasoning details from models across interactions,
-normalizing the different formats used by OpenAI, Anthropic, and other providers into a consistent structure.
-This allows you to switch between models without rewriting your conversation management logic.
-
-This is particularly useful during tool calling workflows where the model needs to
-resume its thought process after receiving tool results.
-
-**Controlling reasoning details**
-
-When `reasoning.enabled` is `true` (or when `reasoning.exclude` is not set),
-responses include a `reasoning_details` array alongside the standard `reasoning` text field.
-This structured field captures cryptographic signatures, encrypted content, and other verification
-data that providers include with their reasoning output.
-
-Each detail object contains:
-
-- **`type`**: one or more of the below, depending on the provider and model
-  - `'reasoning.text'`: Contains the actual reasoning content as plain text in the `text` field. May include a `signature` field (Anthropic models) for cryptographic verification.
-  - `'reasoning.encrypted'`: Contains encrypted or redacted reasoning content in the `data` field. Used by OpenAI models when reasoning is protected, or by Anthropic models when thinking is redacted. Preserves the encrypted payload for verification purposes.
-  - `'reasoning.summary'`: Contains a condensed version of the reasoning process in the `summary` field. Used by OpenAI models to provide a readable summary alongside encrypted reasoning.
-- **`id`** (optional): Unique identifier for the reasoning block, used for tracking and correlation
-- **`format`**: Provider format identifier - `'openai-responses-v1'`, `'anthropic-claude-v1'`, or `'unknown'`
-- **`index`** (optional): Position in the reasoning sequence (for responses with multiple reasoning blocks)
-
-**Example response with reasoning details**
-
-For Anthropic models:
-
-```json
-{
-  "id": "chatcmpl-123",
-  "object": "chat.completion",
-  "created": 1677652288,
-  "model": "anthropic/claude-opus-4.8",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": "The meaning of life is a deeply personal question...",
-        "reasoning": "Let me think about this carefully. The question asks about...",
-        "reasoning_details": [
-          {
-            "type": "reasoning.text",
-            "text": "Let me think about this carefully. The question asks about...",
-            "signature": "anthropic-signature-xyz",
-            "format": "anthropic-claude-v1",
-            "index": 0
-          }
-        ]
-      },
-      "finish_reason": "stop"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 15,
-    "completion_tokens": 150,
-    "total_tokens": 165,
-    "completion_tokens_details": {
-      "reasoning_tokens": 50
-    }
-  }
-}
-```
-
-For OpenAI models (returns both summary and encrypted):
-
-```json
-{
-  "id": "chatcmpl-456",
-  "object": "chat.completion",
-  "created": 1677652288,
-  "model": "openai/gpt-5.5",
-  "choices": [
-    {
-      "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": "The answer is 42.",
-        "reasoning": "Let me calculate this step by step...",
-        "reasoning_details": [
-          {
-            "type": "reasoning.summary",
-            "summary": "Let me calculate this step by step...",
-            "format": "openai-responses-v1",
-            "index": 0
-          },
-          {
-            "type": "reasoning.encrypted",
-            "data": "encrypted_reasoning_content_xyz",
-            "format": "openai-responses-v1",
-            "index": 1
-          }
-        ]
-      },
-      "finish_reason": "stop"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 15,
-    "completion_tokens": 150,
-    "total_tokens": 165,
-    "completion_tokens_details": {
-      "reasoning_tokens": 50
-    }
-  }
-}
-```
-
-**Streaming reasoning details**
-
-When streaming, reasoning details are delivered incrementally in `delta.reasoning_details`:
-
-For Anthropic models:
-
-```json
-{
-  "id": "chatcmpl-123",
-  "object": "chat.completion.chunk",
-  "created": 1677652288,
-  "model": "anthropic/claude-opus-4.8",
-  "choices": [
-    {
-      "index": 0,
-      "delta": {
-        "reasoning": "Let me think.",
-        "reasoning_details": [
-          {
-            "type": "reasoning.text",
-            "text": "Let me think.",
-            "signature": "anthropic-signature-xyz",
-            "format": "anthropic-claude-v1",
-            "index": 0
-          }
-        ]
-      },
-      "finish_reason": null
-    }
-  ]
-}
-```
-
-For OpenAI models (summary chunks during reasoning, then encrypted at end):
-
-```json
-{
-  "id": "chatcmpl-456",
-  "object": "chat.completion.chunk",
-  "created": 1677652288,
-  "model": "openai/gpt-5.5",
-  "choices": [
-    {
-      "index": 0,
-      "delta": {
-        "reasoning": "Step 1:",
-        "reasoning_details": [
-          {
-            "type": "reasoning.summary",
-            "summary": "Step 1:",
-            "format": "openai-responses-v1",
-            "index": 0
-          }
-        ]
-      },
-      "finish_reason": null
-    }
-  ]
-}
-```
-
-#### Provider-specific behavior
-
-The AI Gateway automatically maps reasoning parameters to each provider's native format:
-
-- **OpenAI**: Maps `effort` to `reasoningEffort` and controls summary detail
-- **Anthropic**: Maps `max_tokens` to thinking budget tokens
-- **Google**: Maps to `thinkingConfig` with budget and visibility settings
-- **Groq**: Maps `exclude` to control reasoning format (hidden/parsed)
-- **xAI**: Maps `effort` to reasoning effort levels
-- **Other providers**: Generic mapping applied for compatibility
-
-> **💡 Note:** **Automatic extraction:** For models that don't natively support reasoning
-> output, the gateway automatically extracts reasoning
-> from `<think>` tags in the response.
+Control which providers serve your request, what happens when one fails, and how much of your prompt is cached between calls. For controlling how much a model thinks before answering, see [Reasoning](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning).
 
 ## Provider options
 
 The AI Gateway can route your requests across multiple AI providers for better reliability and performance. You can control which providers are used and in what order through the `providerOptions` parameter.
 
 Example request
+
+#### cURL
+
+```bash filename="provider-options.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Tell me the history of the San Francisco Mission-style burrito in two paragraphs."
+      }
+    ],
+    "stream": false,
+    "providerOptions": {
+      "gateway": {
+        "order": [
+          "vertex",
+          "anthropic"
+        ]
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -447,7 +71,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   messages: [
     {
       role: 'user',
@@ -482,7 +106,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     messages=[
         {
             'role': 'user',
@@ -509,13 +133,35 @@ print('Tokens used:', completion.usage)
 > will fall back to Anthropic. Other providers are still available but will only
 > be used after the specified providers.
 
-#### Model fallbacks
+## Model fallbacks
 
 You can specify fallback models that will be tried in order if the primary model fails. There are two ways to do this:
 
-##### Option 1: Direct `models` field
+### Option 1: Direct `models` field
 
 The simplest way is to use the `models` field directly at the top level of your request:
+
+#### cURL
+
+```bash filename="model-fallbacks.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-5.6-sol",
+    "models": [
+      "anthropic/claude-opus-5",
+      "google/gemini-3.6-flash"
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a haiku about TypeScript."
+      }
+    ],
+    "stream": false
+  }'
+```
 
 #### TypeScript
 
@@ -530,9 +176,9 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.5', // Primary model
+  model: 'openai/gpt-5.6-sol', // Primary model
   // @ts-ignore - models is a gateway extension
-  models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+  models: ['anthropic/claude-opus-5', 'google/gemini-3.6-flash'], // Fallback models
   messages: [
     {
       role: 'user',
@@ -562,7 +208,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='openai/gpt-5.5',  # Primary model
+    model='openai/gpt-5.6-sol',  # Primary model
     messages=[
         {
             'role': 'user',
@@ -572,7 +218,7 @@ completion = client.chat.completions.create(
     stream=False,
     # models is a gateway extension for fallback models
     extra_body={
-        'models': ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview']  # Fallback models
+        'models': ['anthropic/claude-opus-5', 'google/gemini-3.6-flash']  # Fallback models
     }
 )
 
@@ -582,9 +228,35 @@ print('Assistant:', completion.choices[0].message.content)
 print('Model used:', completion.model)
 ```
 
-##### Option 2: Via provider options
+### Option 2: Via provider options
 
 Alternatively, you can specify model fallbacks through the `providerOptions.gateway.models` field:
+
+#### cURL
+
+```bash filename="model-fallbacks-provider-options.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-5.6-sol",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a haiku about TypeScript."
+      }
+    ],
+    "stream": false,
+    "providerOptions": {
+      "gateway": {
+        "models": [
+          "anthropic/claude-opus-5",
+          "google/gemini-3.6-flash"
+        ]
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -600,7 +272,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error
 const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.5', // Primary model
+  model: 'openai/gpt-5.6-sol', // Primary model
   messages: [
     {
       role: 'user',
@@ -611,7 +283,7 @@ const completion = await openai.chat.completions.create({
   // Model fallbacks via provider options
   providerOptions: {
     gateway: {
-      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+      models: ['anthropic/claude-opus-5', 'google/gemini-3.6-flash'], // Fallback models
     },
   },
 });
@@ -634,7 +306,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='openai/gpt-5.5',  # Primary model
+    model='openai/gpt-5.6-sol',  # Primary model
     messages=[
         {
             'role': 'user',
@@ -646,7 +318,7 @@ completion = client.chat.completions.create(
     extra_body={
         'providerOptions': {
             'gateway': {
-                'models': ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview']  # Fallback models
+                'models': ['anthropic/claude-opus-5', 'google/gemini-3.6-flash']  # Fallback models
             }
         }
     }
@@ -662,14 +334,40 @@ print('Model used:', completion.model)
 
 Both configurations will:
 
-1. Try the primary model (`openai/gpt-5.5`) first
-2. If it fails, try `anthropic/claude-opus-4.8`
-3. If that also fails, try `google/gemini-3.1-pro-preview`
+1. Try the primary model (`openai/gpt-5.6-sol`) first
+2. If it fails, try `anthropic/claude-opus-5`
+3. If that also fails, try `google/gemini-3.6-flash`
 4. Return the result from the first model that succeeds
 
-#### Streaming with provider options
+## Streaming with provider options
 
 Provider options work with streaming requests as well:
+
+#### cURL
+
+```bash filename="streaming-provider-options.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Tell me the history of the San Francisco Mission-style burrito in two paragraphs."
+      }
+    ],
+    "stream": true,
+    "providerOptions": {
+      "gateway": {
+        "order": [
+          "vertex",
+          "anthropic"
+        ]
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -685,7 +383,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error
 const stream = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   messages: [
     {
       role: 'user',
@@ -723,7 +421,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     messages=[
         {
             'role': 'user',
@@ -748,7 +446,7 @@ for chunk in stream:
 
 For more details about available providers and advanced provider configuration, see the [Provider Options documentation](/docs/ai-gateway/models-and-providers/provider-options).
 
-#### Provider sorting
+## Provider sorting
 
 Use the `sort` option to rank providers by cost, latency, or throughput. The gateway sorts the available providers by the chosen metric and tries them in that order.
 
@@ -759,6 +457,29 @@ Use the `sort` option to rank providers by cost, latency, or throughput. The gat
 | `'tps'`  | Sort by tokens per second throughput (median)    | Highest first        |
 
 You can pass `sort` through `providerOptions.gateway`:
+
+#### cURL
+
+```bash filename="sort-provider-options.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is 2 + 2? Answer in one sentence."
+      }
+    ],
+    "stream": false,
+    "providerOptions": {
+      "gateway": {
+        "sort": "tps"
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -774,7 +495,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error - providerOptions is a gateway extension
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'user',
@@ -806,7 +527,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     messages=[
         {
             'role': 'user',
@@ -828,6 +549,27 @@ print('Assistant:', completion.choices[0].message.content)
 
 Or use the `provider` shorthand directly in the request body:
 
+#### cURL
+
+```bash filename="sort-provider-shorthand.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is 2 + 2? Answer in one sentence."
+      }
+    ],
+    "stream": false,
+    "provider": {
+      "sort": "tps"
+    }
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="sort-provider-shorthand.ts"
@@ -842,7 +584,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error - provider is a gateway extension
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'user',
@@ -872,7 +614,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     messages=[
         {
             'role': 'user',
@@ -892,7 +634,7 @@ print('Assistant:', completion.choices[0].message.content)
 
 > **💡 Note:** The `provider` shorthand is equivalent to setting the same fields in `providerOptions.gateway`. If both are provided for the same option, they must resolve to the same value or the request will fail. For the full details on sorting behavior, metrics, and health interactions, see [Provider Filtering, Ordering & Sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#provider-sorting).
 
-#### Provider timeouts
+## Provider timeouts
 
 You can set per-provider timeouts for BYOK credentials to trigger fast failover when a provider is slow to respond. Pass `providerTimeouts` in `providerOptions.gateway`:
 
@@ -908,11 +650,32 @@ You can set per-provider timeouts for BYOK credentials to trigger fast failover 
 
 For full details, limits, and response metadata, see [Provider Timeouts](/docs/ai-gateway/models-and-providers/provider-timeouts).
 
-#### Request-scoped BYOK (Bring Your Own Key)
+## Request-scoped BYOK (Bring Your Own Key)
 
 You can pass your own provider credentials on a per-request basis using the `byok` option in `providerOptions.gateway`. This allows you to use your existing provider accounts and access private resources without configuring credentials in the gateway settings.
 
 Example request
+
+#### cURL
+
+```bash filename="byok.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      { "role": "user", "content": "Hello, world!" }
+    ],
+    "providerOptions": {
+      "gateway": {
+        "byok": {
+          "anthropic": [{ "apiKey": "'"$ANTHROPIC_API_KEY"'" }]
+        }
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -928,7 +691,7 @@ const openai = new OpenAI({
 
 // @ts-expect-error - byok is a gateway extension
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   messages: [
     {
       role: 'user',
@@ -961,7 +724,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     messages=[
         {
             'role': 'user',
@@ -1029,6 +792,26 @@ Use `caching: 'auto'` in `providerOptions` to let AI Gateway automatically add c
 
 For fine-grained control, you can manually mark content with `cache_control`:
 
+#### cURL
+
+```bash filename="manual-caching.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Analyze this document and summarize the key points.",
+        "cache_control": {
+          "type": "ephemeral"
+        }
+      }
+    ]
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="prompt-caching.ts"
@@ -1042,7 +825,7 @@ const openai = new OpenAI({
 });
 
 const response = await openai.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   messages: [
     {
       role: 'user',
@@ -1071,7 +854,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     messages=[
         {
             'role': 'user',

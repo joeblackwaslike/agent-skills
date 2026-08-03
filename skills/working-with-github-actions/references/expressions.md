@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/expressions.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "ee2afa4eeac426a1f365b1d19fdfd4f2cadf8007bae497dc9a94f5279b7b8fd9"
+fetched_at: "2026-08-03T07:31:11.280Z"
+sha256: "b488eaede6f7d9e5f458edcf2d27ea59e2876f71516858d7001617bb819fe53d"
 ---
 
 ## Literals
@@ -263,6 +263,8 @@ Creates a hash for all `.rb` files in the `lib` directory at root level, includi
 
 `hashFiles('/lib/**/*.rb', '!/lib/foo/*.rb')`
 
+{% ifversion fpt or ghec %}
+
 ### case
 
 `case( pred1, val1, pred2, val2, ..., default )`
@@ -300,6 +302,8 @@ env:
 {% endraw %}
 
 Sets `MY_ENV_VAR` based on the branch: `production` for `main`, `staging` for `staging`, `development` for branches starting with `feature/`, or `unknown` for all other branches.
+
+{% endif %}
 
 ## Status check functions
 

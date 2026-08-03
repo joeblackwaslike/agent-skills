@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "84b5b21db374acebb50884634ff47acb7ba9de837e25f686bd4aa5345daac5cf"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "d30a76b86d57bfbd97e7568a92170711d448e629f87dd0c0daf063a5ee9a24cf"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -108,7 +108,7 @@ The plugin includes 28 skills covering the Vercel ecosystem:
 | `vercel-firewall`       | Vercel Firewall guidance for bot protection, WAF rules, attack challenge mode, and security configuration |
 | `vercel-functions`      | Vercel Functions, including Serverless, Edge, Fluid Compute, streaming, and Cron Jobs                  |
 | `vercel-sandbox`        | Ephemeral Firecracker microVMs for running untrusted or AI-generated code safely                        |
-| `vercel-storage`        | Blob, Edge Config, Neon Postgres, Upstash Redis, one-command Marketplace provisioning with `vercel install`, and migration from sunset packages |
+| `vercel-storage`        | Blob, Global Config, Neon Postgres, Upstash Redis, one-command Marketplace provisioning with `vercel install`, and migration from sunset packages |
 | `verification`          | End-to-end verification across browser, API, data, and response flows                                  |
 | `workflow`              | Workflow SDK, including durable execution, DurableAgent, steps, Worlds, and pause or resume flows   |
 

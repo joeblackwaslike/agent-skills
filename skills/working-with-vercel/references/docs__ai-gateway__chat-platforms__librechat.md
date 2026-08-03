@@ -13,8 +13,8 @@ related:
 summary: Use LibreChat with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/librechat.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "75056d536260015dd0036f47986f718ffcff98fcef54acab795b31a92d99b047"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "1c484c81b3c573d7b73df091f178e81c9dbbb2b25ebf7c34f61d11a13ed8f063"
 ---
 
 # LibreChat
@@ -68,11 +68,11 @@ sha256: "75056d536260015dd0036f47986f718ffcff98fcef54acab795b31a92d99b047"
         titleConvo: true
         models:
           default:
-            - "openai/gpt-5.5"
-            - "anthropic/claude-opus-4.8"
+            - "openai/gpt-5.6-sol"
+            - "anthropic/claude-opus-5"
             - "google/gemini-3.1-pro-preview"
           fetch: true
-        titleModel: "openai/gpt-5.5"
+        titleModel: "openai/gpt-5.6-sol"
   ```
   > **💡 Note:** Setting `fetch: true` automatically fetches all available models from AI Gateway. Browse the full catalog on the [models page](/ai-gateway/models).
 

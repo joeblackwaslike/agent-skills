@@ -14,8 +14,8 @@ related:
 summary: Configure model-level failover to try backup models when the primary model is unavailable
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "86c656d1abff7aaf30e5a5c141ced0395a0379b88f4c1e890d2a6f204a08a758"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a6fbe38c600d52658c8db4642b36712df5468eab83f70825707ce34898f7b102"
 ---
 
 # Model Fallbacks
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     prompt,
     providerOptions: {
       gateway: {
-        models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+        models: ['anthropic/claude-opus-5', 'google/gemini-3.1-pro-preview'], // Fallback models
       },
     },
   });
@@ -64,7 +64,7 @@ const completion = await openai.chat.completions.create({
   // @ts-expect-error - providerOptions is a gateway extension
   providerOptions: {
     gateway: {
-      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+      models: ['anthropic/claude-opus-5', 'google/gemini-3.1-pro-preview'], // Fallback models
     },
   },
 });
@@ -89,7 +89,7 @@ const message = await anthropic.messages.create({
   // @ts-expect-error - providerOptions is a gateway extension
   providerOptions: {
     gateway: {
-      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+      models: ['anthropic/claude-opus-5', 'google/gemini-3.1-pro-preview'], // Fallback models
     },
   },
 });
@@ -113,7 +113,7 @@ const response = await client.responses.create({
   // @ts-expect-error - providerOptions is a gateway extension
   providerOptions: {
     gateway: {
-      models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+      models: ['anthropic/claude-opus-5', 'google/gemini-3.1-pro-preview'], // Fallback models
     },
   },
 });
@@ -141,7 +141,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     ],
     providerOptions: {
       gateway: {
-        models: ['anthropic/claude-opus-4.8', 'google/gemini-3.1-pro-preview'], // Fallback models
+        models: ['anthropic/claude-opus-5', 'google/gemini-3.1-pro-preview'], // Fallback models
       },
     },
   }),
@@ -151,7 +151,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
 In each example:
 
 - The gateway first attempts the primary model (`anthropic/claude-fable-5`)
-- If that fails, it tries `anthropic/claude-opus-4.8`
+- If that fails, it tries `anthropic/claude-opus-5`
 - If that also fails, it tries `google/gemini-3.1-pro-preview`
 - The response comes from the first model that succeeds
 
@@ -174,11 +174,11 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     providerOptions: {
       gateway: {
-        models: ['openai/gpt-5.4-nano', 'anthropic/claude-opus-4.8'],
+        models: ['openai/gpt-5.4-nano', 'anthropic/claude-opus-5'],
         order: ['azure', 'openai'], // Provider preference for each model
       },
     },
@@ -190,9 +190,9 @@ export async function POST(request: Request) {
 
 This configuration:
 
-1. Tries `openai/gpt-5.5` via Azure, then OpenAI
+1. Tries `openai/gpt-5.6-sol` via Azure, then OpenAI
 2. If both fail, tries `openai/gpt-5.4-nano` via Azure first, then OpenAI
-3. If those fail, it tries `anthropic/claude-opus-4.8` via available providers
+3. If those fail, it tries `anthropic/claude-opus-5` via available providers
 
 The `models` and `order` fields both live under `providerOptions.gateway`, so you can combine them the same way in the Chat Completions, Messages, OpenAI Responses, and OpenResponses APIs. For all available routing fields, see [Provider Options](/docs/ai-gateway/models-and-providers/provider-options).
 
@@ -241,7 +241,7 @@ When model fallbacks occur, the `modelAttempts` array in the provider metadata s
   },
   {
     "modelId": "anthropic:claude-opus-4-8",
-    "canonicalSlug": "anthropic/claude-opus-4.8",
+    "canonicalSlug": "anthropic/claude-opus-5",
     "success": true,
     "providerAttemptCount": 1,
     "providerAttempts": [

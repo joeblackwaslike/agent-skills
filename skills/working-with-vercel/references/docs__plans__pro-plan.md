@@ -3,7 +3,7 @@ title: Vercel Pro Plan
 product: vercel
 url: /docs/plans/pro-plan
 canonical_url: "https://vercel.com/docs/plans/pro-plan"
-last_updated: 2026-07-01
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/plans
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f5bcdc27f537a3ccc693121c6c2e980c0812989bacc6ee84e695d3c8e160f4c0"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "9561af7212a7af441ef0183690bc13d48e7081665f88314227333051f0e34f82"
 ---
 
 # Vercel Pro Plan

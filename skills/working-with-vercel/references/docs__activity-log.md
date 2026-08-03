@@ -14,8 +14,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "1acf79cbbf6b4ec71b88550709598580d2153275736152e101d83574d5669952"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "77300d18849966734a500f36e240b7d380ab0be521e8f926dc5e66e32f157c4f"
 ---
 
 # Using the Activity Log
@@ -76,6 +76,7 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-api-key-created | Active | A user created an AI Gateway API key. |
 | ai-gateway-api-key-deleted | Active | A user deleted an AI Gateway API key. |
 | ai-gateway-api-key-quota-updated | Active | A user set or changed the budget on an AI Gateway API key. |
+| ai-gateway-budget-default-updated | Active | A user set, changed, or removed one scope's AI Gateway budget default. |
 | ai-gateway-byok-credential-created | Active | A user created an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-deleted | Active | A user deleted an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-updated | Active | A user updated an AI Gateway BYOK credential. |
@@ -93,6 +94,7 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-rule-created | Active | A user created an AI Gateway routing rule. |
 | ai-gateway-rule-deleted | Active | A user removed an AI Gateway routing rule. |
 | ai-gateway-rule-updated | Active | A user updated an AI Gateway routing rule. |
+| ai-gateway-scope-budget-updated | Active | A user set, changed, or removed a team- or project-scope AI Gateway budget. |
 | ai-gateway-virtual-model-config-archived | Active | A user archived an AI Gateway virtual model. |
 | ai-gateway-virtual-model-config-created | Active | A user created an AI Gateway virtual model. |
 | ai-gateway-virtual-model-config-restored | Active | A user restored an AI Gateway virtual model. |
@@ -133,6 +135,7 @@ The table below shows a list of events logged on the Activity page.
 | cert-system-create | Active | A system SSL certificate was created. |
 | code-owners-config-updated | Active | A repository's Code Owners settings were updated. |
 | compliance-document-downloaded | Active | A compliance document was downloaded. |
+| compliance-documents-bulk-downloaded | Active | A bulk set of compliance documents was downloaded. |
 | concurrent-builds-update | Active | The concurrent builds limit was updated. |
 | connect-attach-project | Active | A Connector was attached to a project |
 | connect-bitbucket | Active | A BitBucket account was connected to a personal. |
@@ -273,6 +276,8 @@ The table below shows a list of events logged on the Activity page.
 | integration-scope-changed | Active | The scopes for an integration were changed. |
 | kms-issuer-created | Active | A KMS signing issuer was created. |
 | kms-issuer-deleted | Active | A KMS signing issuer was deleted. |
+| kms-issuer-key-activated | Active | A pending signing key for a KMS issuer was activated. |
+| kms-issuer-key-created | Active | A new signing key was created for a KMS issuer. |
 | kms-issuer-key-rotated | Active | The signing key for a KMS issuer was rotated. |
 | kms-issuer-policy-created | Active | A policy was added to a KMS issuer. |
 | kms-issuer-policy-deleted | Active | A policy was removed from a KMS issuer. |
@@ -283,6 +288,7 @@ The table below shows a list of events logged on the Activity page.
 | log-drain-disabled | Replaced | A log drain was disabled. (Replaced by drain-updated) |
 | log-drain-enabled | Replaced | A log drain was enabled. (Replaced by drain-updated) |
 | manual-deployment-promotion-created | Active | A deployment was manually promoted to production. |
+| marketplace-flex-commit-opt-in | Active | The team opted in to paying Marketplace invoices from its Flexible Commitment. |
 | marketplace-integration-allowlist-updated | Active | The team's marketplace integration allowlist configuration was changed. |
 | microfrontend-group-added | Active | A new microfrontend group was created |
 | microfrontend-group-deleted | Active | A microfrontend group was deleted |
@@ -305,6 +311,9 @@ The table below shows a list of events logged on the Activity page.
 | observability-enabled | Active | Observability Plus was enabled for the team. |
 | observability-plus-project-disabled | Active | Observability Plus was disabled for a project. |
 | observability-plus-project-enabled | Active | Observability Plus was enabled for a project. |
+| oidc-policy-created | Active | An OIDC federation policy was created for a Vercel App. |
+| oidc-policy-deleted | Active | An OIDC federation policy was deleted for a Vercel App. |
+| oidc-policy-updated | Active | An OIDC federation policy was updated for a Vercel App. |
 | page-integrity-config-updated | Active | Page Integrity configuration was updated. |
 | page-integrity-header-approved | Active | A header was approved in Page Integrity. |
 | page-integrity-header-rejected | Active | A header was rejected in Page Integrity. |
@@ -343,6 +352,7 @@ The table below shows a list of events logged on the Activity page.
 | project-build-command-updated | Active | The build command for a project was updated. |
 | project-build-logs-and-source-protection-updated | Active | Build logs and source protection was updated for a project. |
 | project-build-machine-updated | Active | The build machine for a project was updated. |
+| project-card-widget-preference-updated | Active | A project card widget preference was updated. |
 | project-client-cert-delete | Active | A client certificate was deleted from a project. |
 | project-client-cert-upload | Active | A client certificate was uploaded to a project. |
 | project-connect-configurations | Active | Project Secure Compute configurations were updated. |
@@ -425,6 +435,7 @@ The table below shows a list of events logged on the Activity page.
 | project-root-directory-updated | Active | The root directory was updated for a project. |
 | project-routes-version-promoted | Active | A project routes version was promoted. |
 | project-routes-version-restored | Active | A project routes version was restored. |
+| project-sandbox-config-updated | Active | The default sandbox region and failover regions were updated for a project. |
 | project-sandbox-url-protection-updated | Active | Sandbox URL protection was updated for a project. |
 | project-skew-protection-allowed-domains-updated | Active | Skew Protection allowed domains were updated for a project. |
 | project-skew-protection-max-age-updated | Active | Skew Protection max age was updated for a project. |
@@ -495,7 +506,9 @@ The table below shows a list of events logged on the Activity page.
 | subscription-product-added | Active | A self-serve product was added to a subscription. |
 | subscription-product-removed | Active | A self-serve product was removed from a subscription. |
 | team | Active | A team was created. |
+| team-agent-billing-migration-decision-changed | Active | The Vercel Agent billing migration decision was updated for a team. |
 | team-avatar-update | Active | The avatar of a specific team was updated. |
+| team-collaboration-settings-updated | Active | Team collaboration settings were updated. |
 | team-default-build-machine-updated | Active | The default build machine for a team was updated. |
 | team-default-passport-updated | Active | The default Passport configuration was updated for a team. |
 | team-delete | Active | A specific team was deleted. |
@@ -538,11 +551,14 @@ The table below shows a list of events logged on the Activity page.
 | tracing-configured | Active | Tracing was configured for a project. |
 | tracing-disabled | Active | Tracing was disabled for a project. |
 | unlink-login-connection | Active | A login connection was unlinked. |
+| update-account-flow-triggered | Active | The account update flow was started for a team with enterprise managed users. |
 | user-delete | Active | A user account was deleted. |
 | user-emu-account-archived | Active | A user archived their personal account during enterprise-managed user setup. |
 | user-emu-account-deleted | Active | A user deleted their personal account during enterprise-managed user setup. |
 | user-emu-account-recovered | Active | A user recovered their archived account using a recovery code. |
+| user-mfa-challenge-failed | Active | A two-factor challenge attempt failed. |
 | user-mfa-challenge-verified | Active | A two-factor challenge was verified |
+| user-mfa-change-failed | Active | An attempt to change two-factor configuration failed. |
 | user-mfa-configuration-updated | Active | Two-factor configuration was updated |
 | user-mfa-recovery-codes-regenerated | Active | Two-factor recovery codes were regenerated |
 | user-mfa-removed | Active | MFA was removed from a user account. |

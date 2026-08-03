@@ -3,7 +3,7 @@ title: Structured Outputs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs"
-last_updated: 2026-05-11
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -13,8 +13,8 @@ related:
 summary: Generate structured JSON responses that conform to a specific schema using the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "857f96cfe4bf54d82b9d24452cccd3936ab61ed54bcf714dc6997b3325cf2bb7"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "ab39b4d0ae2a72821ccb81494f7e96bed216cf254a6e48091c8c85ca0f4b44e2"
 ---
 
 # Structured Outputs
@@ -26,6 +26,71 @@ Generate structured JSON responses that conform to a specific schema, ensuring p
 Use the OpenAI standard `json_schema` response format for the most robust structured output experience. This follows the official [OpenAI Structured Outputs specification](https://platform.openai.com/docs/guides/structured-outputs).
 
 Example request
+
+#### cURL
+
+```bash filename="structured-output.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-5.6-sol",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Create a product listing for a wireless gaming headset."
+      }
+    ],
+    "stream": false,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "product_listing",
+        "description": "A product listing with details and pricing",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Product name"
+            },
+            "brand": {
+              "type": "string",
+              "description": "Brand name"
+            },
+            "price": {
+              "type": "number",
+              "description": "Price in USD"
+            },
+            "category": {
+              "type": "string",
+              "description": "Product category"
+            },
+            "description": {
+              "type": "string",
+              "description": "Product description"
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Key product features"
+            }
+          },
+          "required": [
+            "name",
+            "brand",
+            "price",
+            "category",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }'
+```
 
 #### TypeScript
 
@@ -40,7 +105,7 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   messages: [
     {
       role: 'user',
@@ -111,7 +176,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='openai/gpt-5.5',
+    model='openai/gpt-5.6-sol',
     messages=[
         {
             'role': 'user',
@@ -176,7 +241,7 @@ The response contains structured JSON that conforms to your specified schema:
   "id": "chatcmpl-123",
   "object": "chat.completion",
   "created": 1677652288,
-  "model": "openai/gpt-5.5",
+  "model": "openai/gpt-5.6-sol",
   "choices": [
     {
       "index": 0,
@@ -208,6 +273,68 @@ The response contains structured JSON that conforms to your specified schema:
 > **💡 Note:** **Legacy format:** The following format is supported for backward
 > compatibility. For new implementations, use the `json_schema` format above.
 
+#### cURL
+
+```bash filename="structured-output-legacy.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-5.6-sol",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Create a product listing for a wireless gaming headset."
+      }
+    ],
+    "stream": false,
+    "response_format": {
+      "type": "json",
+      "name": "product_listing",
+      "description": "A product listing with details and pricing",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Product name"
+          },
+          "brand": {
+            "type": "string",
+            "description": "Brand name"
+          },
+          "price": {
+            "type": "number",
+            "description": "Price in USD"
+          },
+          "category": {
+            "type": "string",
+            "description": "Product category"
+          },
+          "description": {
+            "type": "string",
+            "description": "Product description"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Key product features"
+          }
+        },
+        "required": [
+          "name",
+          "brand",
+          "price",
+          "category",
+          "description"
+        ]
+      }
+    }
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="structured-output-legacy.ts"
@@ -221,7 +348,7 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   messages: [
     {
       role: 'user',
@@ -271,7 +398,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='openai/gpt-5.5',
+    model='openai/gpt-5.6-sol',
     messages=[
         {
             'role': 'user',
@@ -313,6 +440,71 @@ print('Structured Data:', json.dumps(structured_data, indent=2))
 
 Both `json_schema` and legacy `json` formats work with streaming responses:
 
+#### cURL
+
+```bash filename="structured-streaming.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-5.6-sol",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Create a product listing for a wireless gaming headset."
+      }
+    ],
+    "stream": true,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "product_listing",
+        "description": "A product listing with details and pricing",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Product name"
+            },
+            "brand": {
+              "type": "string",
+              "description": "Brand name"
+            },
+            "price": {
+              "type": "number",
+              "description": "Price in USD"
+            },
+            "category": {
+              "type": "string",
+              "description": "Product category"
+            },
+            "description": {
+              "type": "string",
+              "description": "Product description"
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Key product features"
+            }
+          },
+          "required": [
+            "name",
+            "brand",
+            "price",
+            "category",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }'
+```
+
 #### TypeScript
 
 ```typescript filename="structured-streaming.ts"
@@ -324,7 +516,7 @@ const openai = new OpenAI({
 });
 
 const stream = await openai.chat.completions.create({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   messages: [
     {
       role: 'user',
@@ -385,7 +577,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model='openai/gpt-5.5',
+    model='openai/gpt-5.6-sol',
     messages=[
         {
             'role': 'user',

@@ -1,21 +1,21 @@
 ---
-title: Enterprise Managed Users
+title: Enterprise Managed Users (EMU)
 product: vercel
 url: /docs/security/enterprise-managed-users
 canonical_url: "https://vercel.com/docs/security/enterprise-managed-users"
 last_updated: 2018-10-20
-type: conceptual
+type: how-to
 prerequisites:
   - /docs/security
 related:
   - /docs/saml
   - /docs/directory-sync
   - /docs/security/enterprise-managed-users-account-update
-summary: Learn about enterprise managed users on Vercel.
+summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in identity of every member. Members sign in through your SAML SSO provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "432c2bb94aa3200ceba63d077d1d7b31e05afbb232490b077d298eac64bff3b6"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "54d1741652cdd63dfe892ce54a5951f64e30bb161b05c3dd581423149058ce93"
 ---
 
 # Enterprise Managed Users (EMU)
@@ -79,7 +79,7 @@ If your members belong to multiple teams, we recommend enabling EMU for all of t
 
 Enabling Enterprise Managed Users consists of two parts:
 
-1. **Verifying domains and selecting teams**: you complete this in the sheet that opens next. From then on, every new user on your verified domains is provisioned as a managed account.
+1. **Verifying domains and selecting teams**: you complete this in the sheet that opens next. From then on, new users on your verified domains are provisioned as managed accounts when your identity provider assigns them to Vercel (through Directory Sync) or when they first sign in with SAML SSO. Verifying a domain doesn't create accounts for everyone with a matching email address: your identity provider controls who is provisioned.
 2. **Transitioning existing members (Beta)**: members who already have personal accounts are brought under management separately through the [Hobby team transition](/docs/security/enterprise-managed-users-account-update). See [What happens to existing Hobby teams](#what-happens-to-existing-hobby-teams).
 
 Turn on the **Enterprise Managed Users** toggle. This does not enable EMU yet: it opens the **Manage Domains** sheet, where you complete the setup.
@@ -102,7 +102,7 @@ If no domains appear, verify a domain in the sheet to make it available for mana
 
 3. Select **Confirm**. EMU is now active for the selected teams. From this point, all new members signing in via SAML SSO will be provisioned a managed account.
 
-![Image](`/docs-assets/static/docs/enterprise-managed-users/emu-security-row-on-light.png?v=2`)
+![Image](`/docs-assets/static/docs/enterprise-managed-users/emu-settings-light.png`)
 
 After EMU is enabled, use the **Manage** button on the Enterprise Managed Users row to change your domains and teams.
 

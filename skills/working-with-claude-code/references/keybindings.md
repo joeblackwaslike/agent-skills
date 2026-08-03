@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/keybindings.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "f601200bb8f7f85713714734668e166b80572887abaa39cc9705aa9fb67f275b"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "b1c3106bb51ced696bb95a9fc35db1b3338c709ea33bcae40f724ba8f506ce18"
 ---
 
 > ## Documentation Index
@@ -165,7 +165,7 @@ Actions available in the `Transcript` context:
 | `transcript:toggleShowAll` | Ctrl+E            | Toggle show all content |
 | `transcript:exit`          | q, Ctrl+C, Escape | Exit transcript view    |
 
-`transcript:toggleShowAll` applies in the default renderer only; in [fullscreen rendering](/docs/en/fullscreen), the transcript viewer doesn't offer a show-all toggle.
+`transcript:toggleShowAll` applies in the classic renderer only; in [fullscreen rendering](/docs/en/fullscreen), the transcript viewer doesn't offer a show-all toggle.
 
 ### History search actions
 
@@ -179,7 +179,7 @@ Actions available in the `HistorySearch` context:
 | `historySearch:execute`    | Enter       | Execute selected command                  |
 | `historySearch:cycleScope` | Ctrl+S      | Cycle scope: session, project, everywhere |
 
-The `historySearch:next`, `historySearch:accept`, `historySearch:cancel`, and `historySearch:execute` defaults apply to the inline history search in the default renderer, which always searches prompts from all projects. `historySearch:cycleScope` takes effect only in [fullscreen rendering](/docs/en/fullscreen), where `Ctrl+R` opens a search dialog instead and `Ctrl+S` cycles its scope. The dialog's other keys are fixed and can't be rebound: `Enter` or `Tab` places the highlighted match in the prompt input and `Esc` cancels.
+The `historySearch:next`, `historySearch:accept`, `historySearch:cancel`, and `historySearch:execute` defaults apply to the inline history search in the classic renderer, which always searches prompts from all projects. `historySearch:cycleScope` takes effect only in [fullscreen rendering](/docs/en/fullscreen), where `Ctrl+R` opens a search dialog instead and `Ctrl+S` cycles its scope. The dialog's other keys are fixed and can't be rebound: `Enter` or `Tab` places the highlighted match in the prompt input and `Esc` cancels.
 
 ### Task actions
 

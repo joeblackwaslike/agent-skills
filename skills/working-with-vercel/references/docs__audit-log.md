@@ -16,8 +16,8 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "450544fdd03d4ecb07c5d5fd269488fe0675a72fd0d5aa057418c148a982ff0e"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "c6f601a96f48f61347a825593239f6587d4bd63c1c27d4ad266f7014dc7ce7a2"
 ---
 
 # Audit Logs
@@ -186,13 +186,13 @@ A unique name that identifies your website. To learn more, see the [domains](/do
 
 ### `edge_config`
 
-A key-value data store associated with your Vercel account that enables you to read data in the region closest to the user without querying an external database. To learn more, see the [Edge Config docs](/docs/edge-config).
+A key-value data store associated with your Vercel account that enables you to read data in the region closest to the user without querying an external database. To learn more, see the [Global Config docs](/docs/global-config).
 
-| **Action Name**           | **Description**                                     |
-| ------------------------- | --------------------------------------------------- |
-| **`edge_config.created`** | Indicates that a new edge configuration was created |
-| **`edge_config.deleted`** | Indicates that a new edge configuration was deleted |
-| **`edge_config.updated`** | Indicates that a new edge configuration was updated |
+| **Action Name**           | **Description**                                       |
+| ------------------------- | ----------------------------------------------------- |
+| **`edge_config.created`** | Indicates that a new Global Config store was created  |
+| **`edge_config.deleted`** | Indicates that a Global Config store was deleted      |
+| **`edge_config.updated`** | Indicates that a Global Config store was updated      |
 
 ### `integration`
 

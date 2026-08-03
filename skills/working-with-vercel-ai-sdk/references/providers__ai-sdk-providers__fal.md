@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "34ef2b8dbcde7a92d35fd1216e6292a85989758d0958e925c760944d112960db"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "965b39cdcf2b1ae98aadc6eb8752ec81e30d2277abb0edb4a59d96a07bd446ad"
 ---
 
 # Fal Provider
@@ -343,6 +343,7 @@ Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_aud
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

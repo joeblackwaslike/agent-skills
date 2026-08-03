@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "73aa223094b0e932fa2f2425fe89052693050cd239034397acc037217603030a"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "23aaedea8f6e5090143c52cf3740e486c1d18246821074fdd1090bd60768285e"
 ---
 
 # AI_UnsupportedFunctionalityError
@@ -53,6 +53,7 @@ if (UnsupportedFunctionalityError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-07-06T05:37:45.074Z"
-sha256: "df4b2430be7fb8885a46d892b1291ecb94727eefa49cad4e4bf28f2e1f6e4384"
+fetched_at: "2026-08-03T07:31:37.157Z"
+sha256: "d5b1ac1e29b834c3ee00e470264b6e394cce5ad7d42f98ea65bdfd69f6019da6"
 ---
 
 # REST API endpoints for issues
@@ -1169,9 +1169,16 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
     The ID of the issue field to set
   - **`value`** (string or number or array) (required)
     The value to set for the field. For multi-select fields, provide an array of option names.
+  - **`rationale`** (string)
+    Optional reasoning for setting this field value.
+  - **`suggest`** (boolean)
+    If true, the change is stored as a pending suggestion for human review rather than applied directly.
+  - **`confidence`** (string)
+    The confidence level for this field value choice.
+    Can be one of: `low`, `medium`, `high`
 
-- **`type`** (string or null)
-  The name of the issue type to associate with this issue or use null to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
+- **`type`** (null or string or object)
+  The issue type to associate with this issue. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
 
 ### HTTP response status codes
 
@@ -1523,6 +1530,48 @@ curl -L \
         * `name`: required, string
         * `color`: required, string
   * **object**
+    * `suggestions`: object:
+      * `type`: array of objects:
+        * `value`: string
+        * `rationale`: string
+        * `suggest`: boolean
+        * `confidence`: string, enum: `low`, `medium`, `high`
+        * `ignored`: boolean
+        * `ignored_reason`: string, enum: `already_applied`, `issue_already_closed`
+      * `issue_field_values`: array of objects:
+        * `field_id`: integer
+        * `value`: one of:
+          * **string**
+          * **number**
+          * **array**
+        * `rationale`: string
+        * `suggest`: boolean
+        * `confidence`: string, enum: `low`, `medium`, `high`
+        * `ignored`: boolean
+        * `ignored_reason`: string, enum: `already_applied`, `issue_already_closed`
+      * `labels`: array of objects:
+        * `name`: string
+        * `rationale`: string
+        * `suggest`: boolean
+        * `confidence`: string, enum: `low`, `medium`, `high`
+        * `ignored`: boolean
+        * `ignored_reason`: string, enum: `already_applied`, `issue_already_closed`
+      * `assignees`: array of objects:
+        * `login`: string
+        * `rationale`: string
+        * `suggest`: boolean
+        * `confidence`: string, enum: `low`, `medium`, `high`
+        * `ignored`: boolean
+        * `ignored_reason`: string, enum: `already_applied`, `issue_already_closed`
+      * `state`: array of objects:
+        * `value`: string
+        * `state_reason`: string
+        * `duplicate_issue_id`: integer
+        * `rationale`: string
+        * `suggest`: boolean
+        * `confidence`: string, enum: `low`, `medium`, `high`
+        * `ignored`: boolean
+        * `ignored_reason`: string, enum: `already_applied`, `issue_already_closed`
 
 ## Lock an issue
 
@@ -1638,6 +1687,221 @@ curl -L \
 ```
 
 **Response schema (Status: 204):**
+
+## List issue suggestions
+
+```
+GET /repos/{owner}/{repo}/issues/{issue_number}/suggestions
+```
+
+Lists the suggestions on an issue. A suggestion is an agent-proposed change to an issue's type, labels, fields, assignees, or closed state that a maintainer can approve or dismiss.
+By default only pending suggestions are returned. Use state=all to return suggestions in every state, or state=<state> to filter to a single state. Use action=<action> to return only suggestions for a specific change.
+This endpoint is only available while the issue suggestions feature is enabled for the repository, and only supports issues, not pull requests.
+Requires triage access to the repository.
+
+### Parameters
+
+#### Headers
+
+- **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+- **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+- **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+- **`issue_number`** (integer) (required)
+  The number that identifies the issue.
+
+- **`state`** (string)
+  Filter suggestions by their state.
+  Default: `pending`
+  Can be one of: `pending`, `applied`, `approved`, `dismissed`, `replaced`, `invalidated`, `all`
+
+- **`action`** (string)
+  Filter suggestions by the change they propose.
+  Can be one of: `set_type`, `add_label`, `add_field`, `add_assignee`, `close_issue`
+
+- **`per_page`** (integer)
+  The number of results per page (max 100). For more information, see "Using pagination in the REST API."
+  Default: `30`
+
+- **`page`** (integer)
+  The page number of the results to fetch. For more information, see "Using pagination in the REST API."
+  Default: `1`
+
+### HTTP response status codes
+
+- **200** - OK
+
+- **404** - Resource not found
+
+- **422** - Validation failed, or the endpoint has been spammed.
+
+### Code examples
+
+#### Example
+
+**Request:**
+
+```curl
+curl -L \
+  -X GET \
+  https://api.github.com/repos/OWNER/REPO/issues/ISSUE_NUMBER/suggestions
+```
+
+**Response schema (Status: 200):**
+
+Array of `Issue Suggestion`:
+  * `id`: required, integer
+  * `issue_id`: required, integer
+  * `action`: required, string, enum: `set_type`, `add_label`, `add_field`, `add_assignee`, `close_issue`
+  * `state`: required, string, enum: `pending`, `applied`, `approved`, `dismissed`, `replaced`, `invalidated`
+  * `target_id`: required, integer or null
+  * `target_value`: required, one of:
+    * **string**
+    * **number**
+    * **boolean**
+    * **array**
+  * `rationale`: required, string or null
+  * `confidence`: required, string or null, enum: `LOW`, `MEDIUM`, `HIGH`, `null`
+  * `actor_id`: required, integer or null
+  * `issue_event_id`: required, integer or null
+  * `resolved_by`: required, integer or null
+  * `created_at`: required, string, format: date-time
+  * `updated_at`: required, string, format: date-time
+
+## Approve an issue suggestion
+
+```
+POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/approve
+```
+
+Approves a pending suggestion on an issue. Applies the proposed change (creating the corresponding timeline event), transitions the suggestion to approved, and dismisses any competing pending suggestions for the same change.
+Requires triage access to the repository. Approving a suggestion also requires permission to perform the change it applies (for example, setting the issue type, adding a label or assignee, or closing the issue); this only affects fine-grained access tokens and GitHub Apps whose permissions are narrower than the triage role. This endpoint only supports issues, not pull requests.
+
+### Parameters
+
+#### Headers
+
+- **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+- **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+- **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+- **`issue_number`** (integer) (required)
+  The number that identifies the issue.
+
+- **`suggestion_id`** (integer) (required)
+  The unique identifier of the suggestion.
+
+### HTTP response status codes
+
+- **200** - OK
+
+- **403** - Forbidden
+
+- **404** - Resource not found
+
+- **422** - Validation failed, or the endpoint has been spammed.
+
+### Code examples
+
+#### Example
+
+**Request:**
+
+```curl
+curl -L \
+  -X POST \
+  https://api.github.com/repos/OWNER/REPO/issues/ISSUE_NUMBER/suggestions/SUGGESTION_ID/approve
+```
+
+**Response schema (Status: 200):**
+
+* `id`: required, integer
+* `issue_id`: required, integer
+* `action`: required, string, enum: `set_type`, `add_label`, `add_field`, `add_assignee`, `close_issue`
+* `state`: required, string, enum: `pending`, `applied`, `approved`, `dismissed`, `replaced`, `invalidated`
+* `target_id`: required, integer or null
+* `target_value`: required, one of:
+  * **string**
+  * **number**
+  * **boolean**
+  * **array**
+* `rationale`: required, string or null
+* `confidence`: required, string or null, enum: `LOW`, `MEDIUM`, `HIGH`, `null`
+* `actor_id`: required, integer or null
+* `issue_event_id`: required, integer or null
+* `resolved_by`: required, integer or null
+* `created_at`: required, string, format: date-time
+* `updated_at`: required, string, format: date-time
+
+## Dismiss an issue suggestion
+
+```
+POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/dismiss
+```
+
+Dismisses a pending suggestion on an issue. Transitions the suggestion to dismissed without applying any change or creating a timeline event.
+Requires triage access to the repository. This endpoint only supports issues, not pull requests.
+
+### Parameters
+
+#### Headers
+
+- **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+- **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+- **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+- **`issue_number`** (integer) (required)
+  The number that identifies the issue.
+
+- **`suggestion_id`** (integer) (required)
+  The unique identifier of the suggestion.
+
+### HTTP response status codes
+
+- **200** - OK
+
+- **403** - Forbidden
+
+- **404** - Resource not found
+
+- **422** - Validation failed, or the endpoint has been spammed.
+
+### Code examples
+
+#### Example
+
+**Request:**
+
+```curl
+curl -L \
+  -X POST \
+  https://api.github.com/repos/OWNER/REPO/issues/ISSUE_NUMBER/suggestions/SUGGESTION_ID/dismiss
+```
+
+**Response schema (Status: 200):**
+
+Same response schema as [Approve an issue suggestion](#approve-an-issue-suggestion).
 
 ## List user account issues assigned to the authenticated user
 

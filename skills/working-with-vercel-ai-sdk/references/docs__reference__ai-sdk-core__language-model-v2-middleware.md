@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/language-model-v2-middleware.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "3cff434cd7b20cd332482915e431146261f28287721f6ec027cd993ad389c260"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "a12355b1d41c7ff2cd827ee0eb3b6a48ea9c913a13c691c0e82b8c9be6da1dfc"
 ---
 
 # `LanguageModelV4Middleware`
@@ -84,6 +84,7 @@ See [Language Model Middleware](/docs/ai-sdk-core/middleware) for more informati
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

@@ -3,115 +3,59 @@ title: OpenAI Responses API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/responses
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses"
-last_updated: 2026-07-08
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
-  - /docs/ai-gateway/sdks-and-apis/responses/websockets
-  - /docs/ai-gateway/models-and-providers/automatic-caching
+  - /docs/ai-gateway/sdks-and-apis/responses/text-generation
+  - /docs/ai-gateway/sdks-and-apis/responses/streaming
+  - /docs/ai-gateway/sdks-and-apis/responses/tool-calling
+  - /docs/ai-gateway/sdks-and-apis/responses/structured-outputs
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "3bc2a922be06c120b223284743f50caad386329db07ebb4f411e4f488579d422"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a46875536a6be3c0c1f06785294d6f91bfc6c51c1f703be2d4c9005141d063f9"
 ---
 
 # OpenAI Responses API
 
 The [OpenAI Responses API](https://developers.openai.com/api/reference/responses/overview) is a modern alternative to the [Chat Completions API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions). Point your OpenAI SDK to AI Gateway's base URL and use `provider/model` identifiers to route requests to OpenAI, Anthropic, Google, and more.
 
+## Base URL
+
+```
+https://ai-gateway.vercel.sh/v1
+```
+
+## Authentication
+
+The Responses API supports the same authentication methods as the main AI Gateway:
+
+- **API key**: Use your AI Gateway API key with the `Authorization: Bearer <token>` header
+- **OIDC token**: Use your Vercel OIDC token with the `Authorization: Bearer <token>` header
+
+You only need to use one of these forms of authentication. If an API key is specified it will take precedence over any OIDC token, even if the API key is invalid.
+
 ## Getting started
 
-Set your SDK's base URL to AI Gateway and use your API key for authentication:
+Set your SDK's base URL to AI Gateway and use your API key for authentication. See [Text generation](/docs/ai-gateway/sdks-and-apis/responses/text-generation) for a complete first request.
 
-#### \['TypeScript'
+## Supported features
 
-```typescript filename="basic.ts"
-import OpenAI from 'openai';
-
-const client = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const response = await client.responses.create({
-  model: 'anthropic/claude-sonnet-4.6',
-  input: 'What is the capital of France?',
-});
-
-console.log(response.output_text);
-```
-
-#### 'Python']
-
-```python filename="basic.py"
-import os
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1',
-)
-
-response = client.responses.create(
-    model='anthropic/claude-sonnet-4.6',
-    input='What is the capital of France?',
-)
-
-print(response.output_text)
-```
+- [Text generation](/docs/ai-gateway/sdks-and-apis/responses/text-generation) - Generate text responses from prompts
+- [Streaming](/docs/ai-gateway/sdks-and-apis/responses/streaming) - Stream tokens as they're generated
+- [Tool calling](/docs/ai-gateway/sdks-and-apis/responses/tool-calling) - Define tools the model can call
+- [Structured outputs](/docs/ai-gateway/sdks-and-apis/responses/structured-outputs) - Constrain the response to a JSON schema
+- [Reasoning](/docs/ai-gateway/sdks-and-apis/responses/reasoning) - Control how much a model thinks before answering
+- [Images](/docs/ai-gateway/sdks-and-apis/responses/images) - Send images for analysis
 
 ## Streaming
 
-Set `stream: true` to receive tokens as they're generated. The SDK returns an async iterator of server-sent events:
-
-#### \['TypeScript'
-
-```typescript filename="stream.ts"
-import OpenAI from 'openai';
-
-const client = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const stream = await client.responses.create({
-  model: 'openai/gpt-5.5',
-  input: 'Write a haiku about programming.',
-  stream: true,
-});
-
-for await (const event of stream) {
-  if (event.type === 'response.output_text.delta') {
-    process.stdout.write(event.delta);
-  }
-}
-```
-
-#### 'Python']
-
-```python filename="stream.py"
-import os
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1',
-)
-
-stream = client.responses.create(
-    model='openai/gpt-5.5',
-    input='Write a haiku about programming.',
-    stream=True,
-)
-
-for event in stream:
-    if event.type == 'response.output_text.delta':
-        print(event.delta, end='', flush=True)
-```
+Set `stream: true` to receive tokens as they're generated. See [Streaming](/docs/ai-gateway/sdks-and-apis/responses/streaming).
 
 ### WebSocket mode
 
@@ -119,299 +63,15 @@ For agent loops that make many requests in a row, you can hold one connection op
 
 ## Tool calling
 
-Define tools with JSON Schema parameters. The model can call them, and you can feed the results back in a follow-up request:
-
-#### \['TypeScript'
-
-```typescript filename="tools.ts"
-import OpenAI from 'openai';
-
-const client = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const response = await client.responses.create({
-  model: 'openai/gpt-5.5',
-  input: 'What is the weather in San Francisco?',
-  tools: [
-    {
-      type: 'function',
-      name: 'get_weather',
-      description: 'Get the current weather for a location',
-      strict: true,
-      parameters: {
-        type: 'object',
-        properties: {
-          location: { type: 'string' },
-        },
-        required: ['location'],
-        additionalProperties: false,
-      },
-    },
-  ],
-});
-
-// The model returns function_call items in the output
-for (const item of response.output) {
-  if (item.type === 'function_call') {
-    console.log(`Call: ${item.name}(${item.arguments})`);
-  }
-}
-```
-
-#### 'Python']
-
-```python filename="tools.py"
-import os
-import json
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1',
-)
-
-response = client.responses.create(
-    model='openai/gpt-5.5',
-    input='What is the weather in San Francisco?',
-    tools=[
-        {
-            'type': 'function',
-            'name': 'get_weather',
-            'description': 'Get the current weather for a location',
-            'strict': True,
-            'parameters': {
-                'type': 'object',
-                'properties': {
-                    'location': {'type': 'string'},
-                },
-                'required': ['location'],
-                'additionalProperties': False,
-            },
-        },
-    ],
-)
-
-for item in response.output:
-    if item.type == 'function_call':
-        print(f'Call: {item.name}({item.arguments})')
-```
-
-To continue the conversation with tool results, include the function call and its output in the next request's `input` array:
-
-#### \['TypeScript'
-
-```typescript filename="tool-followup.ts"
-const functionCall = response.output.find(
-  (item) => item.type === 'function_call',
-);
-
-const followup = await client.responses.create({
-  model: 'openai/gpt-5.5',
-  input: [
-    { role: 'user', content: 'What is the weather in San Francisco?' },
-    {
-      type: 'function_call',
-      id: functionCall.id,
-      call_id: functionCall.call_id,
-      name: functionCall.name,
-      arguments: functionCall.arguments,
-    },
-    {
-      type: 'function_call_output',
-      call_id: functionCall.call_id,
-      output: JSON.stringify({ temperature: 68, condition: 'Sunny' }),
-    },
-  ],
-  tools: [
-    /* same tools as above */
-  ],
-});
-
-console.log(followup.output_text);
-```
-
-#### 'Python']
-
-```python filename="tool-followup.py"
-import json
-
-function_call = next(
-    item for item in response.output if item.type == 'function_call'
-)
-
-followup = client.responses.create(
-    model='openai/gpt-5.5',
-    input=[
-        {'role': 'user', 'content': 'What is the weather in San Francisco?'},
-        {
-            'type': 'function_call',
-            'id': function_call.id,
-            'call_id': function_call.call_id,
-            'name': function_call.name,
-            'arguments': function_call.arguments,
-        },
-        {
-            'type': 'function_call_output',
-            'call_id': function_call.call_id,
-            'output': json.dumps({'temperature': 68, 'condition': 'Sunny'}),
-        },
-    ],
-    tools=[
-        # same tools as above
-    ],
-)
-
-print(followup.output_text)
-```
+Define tools in `tools` and the model returns `function_call` items you execute. See [Tool calling](/docs/ai-gateway/sdks-and-apis/responses/tool-calling).
 
 ## Structured output
 
-Use `text.format` to constrain the model's output to a JSON schema:
-
-#### \['TypeScript'
-
-```typescript filename="structured.ts"
-import OpenAI from 'openai';
-
-const client = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const response = await client.responses.create({
-  model: 'openai/gpt-5.5',
-  input: 'List 3 colors with their hex codes.',
-  text: {
-    format: {
-      type: 'json_schema',
-      name: 'colors',
-      strict: true,
-      schema: {
-        type: 'object',
-        properties: {
-          colors: {
-            type: 'array',
-            items: {
-              type: 'object',
-              properties: {
-                name: { type: 'string' },
-                hex: { type: 'string' },
-              },
-              required: ['name', 'hex'],
-              additionalProperties: false,
-            },
-          },
-        },
-        required: ['colors'],
-        additionalProperties: false,
-      },
-    },
-  },
-});
-
-const data = JSON.parse(response.output_text);
-console.log(data.colors);
-```
-
-#### 'Python']
-
-```python filename="structured.py"
-import os
-import json
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1',
-)
-
-response = client.responses.create(
-    model='openai/gpt-5.5',
-    input='List 3 colors with their hex codes.',
-    text={
-        'format': {
-            'type': 'json_schema',
-            'name': 'colors',
-            'strict': True,
-            'schema': {
-                'type': 'object',
-                'properties': {
-                    'colors': {
-                        'type': 'array',
-                        'items': {
-                            'type': 'object',
-                            'properties': {
-                                'name': {'type': 'string'},
-                                'hex': {'type': 'string'},
-                            },
-                            'required': ['name', 'hex'],
-                            'additionalProperties': False,
-                        },
-                    },
-                },
-                'required': ['colors'],
-                'additionalProperties': False,
-            },
-        },
-    },
-)
-
-data = json.loads(response.output_text)
-print(data['colors'])
-```
+Constrain the response to a JSON schema with `text.format`. See [Structured outputs](/docs/ai-gateway/sdks-and-apis/responses/structured-outputs).
 
 ## Reasoning
 
-For models that support reasoning, set the `reasoning` parameter to control how much effort the model spends thinking:
-
-#### \['TypeScript'
-
-```typescript filename="reasoning.ts"
-import OpenAI from 'openai';
-
-const client = new OpenAI({
-  apiKey: process.env.AI_GATEWAY_API_KEY,
-  baseURL: 'https://ai-gateway.vercel.sh/v1',
-});
-
-const response = await client.responses.create({
-  model: 'anthropic/claude-sonnet-4.6',
-  input: 'Explain the Monty Hall problem step by step.',
-  reasoning: {
-    effort: 'high',
-  },
-  max_output_tokens: 2048,
-});
-
-console.log(response.output_text);
-```
-
-#### 'Python']
-
-```python filename="reasoning.py"
-import os
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=os.getenv('AI_GATEWAY_API_KEY'),
-    base_url='https://ai-gateway.vercel.sh/v1',
-)
-
-response = client.responses.create(
-    model='anthropic/claude-sonnet-4.6',
-    input='Explain the Monty Hall problem step by step.',
-    reasoning={
-        'effort': 'high',
-    },
-    max_output_tokens=2048,
-)
-
-print(response.output_text)
-```
-
-The `effort` parameter accepts `none`, `minimal`, `low`, `medium`, `high`, or `xhigh`. AI Gateway maps this to provider-specific reasoning settings.
+Set `reasoning.effort` to control how much the model thinks before answering. See [Reasoning](/docs/ai-gateway/sdks-and-apis/responses/reasoning).
 
 ## Parameters
 
@@ -419,7 +79,7 @@ The `effort` parameter accepts `none`, `minimal`, `low`, `medium`, `high`, or `x
 
 | Parameter | Type            | Description                                                                                 |
 | --------- | --------------- | ------------------------------------------------------------------------------------------- |
-| `model`   | string          | Model ID in `provider/model` format (e.g., `openai/gpt-5.5`, `anthropic/claude-sonnet-4.6`) |
+| `model`   | string          | Model ID in `provider/model` format (e.g., `openai/gpt-5.6-sol`, `anthropic/claude-sonnet-5`) |
 | `input`   | string or array | A text string or array of input items (messages, function calls, function call outputs)     |
 
 ### Optional

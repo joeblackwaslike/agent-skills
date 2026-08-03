@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/030_clients.md"
-fetched_at: "2026-07-27T07:36:41.325Z"
-sha256: "24a7fa1ac528263475f569252436ab96d23ba299db1d8f1a4e1a4952bc5868a7"
+fetched_at: "2026-08-03T07:32:05.320Z"
+sha256: "62b271277e5ba7783695646da04cab1cc9618e63d066b35e31b731a280f8481e"
 ---
 
 # Connecting Your MCP Client
@@ -361,7 +361,7 @@ Then create `~/.codex/hooks.json` with the following content:
                 ]
             }
         ],
-        "Stop": [
+        "SessionEnd": [
             {
                 "hooks": [
                     {
@@ -374,6 +374,12 @@ Then create `~/.codex/hooks.json` with the following content:
     }
 }
 ```
+
+The `SessionEnd` cleanup hook requires Codex 0.145.0 or newer. Older Codex versions only support
+`Stop` for cleanup, which currently has a [known compatibility issue](https://github.com/oraios/serena/issues/1533).
+If you still configure it, replace `SessionEnd` with `Stop` in the example above. Configure cleanup
+under exactly one of these events, never both: `Stop` runs after every turn, while `SessionEnd` runs
+when Codex tears down the root thread.
 
 The hooks will:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "5bd25b48a9c18c829eaf823f67b2d00305b3de66e01151bf02fbb3c8863f8649"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "0c736bd5dd83356707c08bb129595b613d4b216074b284df12cff8a5127b8557"
 ---
 
 # Telemetry
@@ -839,6 +839,7 @@ Tool call spans (`ai.toolCall`) contain the following attributes:
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -847,6 +848,7 @@ Tool call spans (`ai.toolCall`) contain the following attributes:
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

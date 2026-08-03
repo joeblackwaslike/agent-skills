@@ -3,7 +3,7 @@ title: OpenResponses API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -12,13 +12,13 @@ related:
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/sdks-and-apis/openresponses/text-generation
   - /docs/ai-gateway/sdks-and-apis/openresponses/streaming
-  - /docs/ai-gateway/sdks-and-apis/openresponses/image-input
   - /docs/ai-gateway/sdks-and-apis/openresponses/tool-calling
+  - /docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs
 summary: Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "24dc022bb5c77925c93170bf72331e7c7bcd417ac987fc7df256647ab1822d13"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "d04dbf49b29c136fd5c926905f628c09c0c11965779fbe6b1fb76c71ff8c2abe"
 ---
 
 # OpenResponses API
@@ -48,15 +48,35 @@ The OpenResponses API supports the following features:
 
 - [Text generation](/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) - Generate text responses from prompts
 - [Streaming](/docs/ai-gateway/sdks-and-apis/openresponses/streaming) - Stream tokens as they're generated
-- [Image input](/docs/ai-gateway/sdks-and-apis/openresponses/image-input) - Send images for analysis
 - [Tool calling](/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling) - Define tools the model can call
-- [Provider options](/docs/ai-gateway/sdks-and-apis/openresponses/provider-options) - Configure model fallbacks and provider-specific settings
+- [Structured outputs](/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) - Constrain the response to a JSON schema
+- [Reasoning](/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) - Control how much a model thinks before answering
+- [Images](/docs/ai-gateway/sdks-and-apis/openresponses/images) - Send images for analysis
+- [Advanced](/docs/ai-gateway/sdks-and-apis/openresponses/advanced) - Configure model fallbacks and provider-specific settings
 
 ## Getting started
 
 Here's a simple example to generate a text response:
 
-#### \['TypeScript'
+#### \['cURL'
+
+```bash filename="quickstart.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-opus-5",
+    "input": [
+      {
+        "type": "message",
+        "role": "user",
+        "content": "What is the capital of France?"
+      }
+    ]
+  }'
+```
+
+#### 'TypeScript'
 
 ```typescript filename="quickstart.ts"
 const apiKey = process.env.AI_GATEWAY_API_KEY;
@@ -68,7 +88,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     Authorization: `Bearer ${apiKey}`,
   },
   body: JSON.stringify({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     input: [
       {
         type: 'message',
@@ -80,7 +100,8 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
 });
 
 const result = await response.json();
-console.log(result.output[0].content[0].text);
+const message = result.output.find((item) => item.type === 'message');
+console.log(message.content[0].text);
 ```
 
 #### 'Python']
@@ -95,7 +116,7 @@ client = OpenAI(
 )
 
 response = client.responses.create(
-    model='anthropic/claude-opus-4.8',
+    model='anthropic/claude-opus-5',
     input=[
         {
             'type': 'message',
@@ -105,14 +126,15 @@ response = client.responses.create(
     ],
 )
 
-print(response.output[0].content[0].text)
+message = next(item for item in response.output if item.type == 'message')
+print(message.content[0].text)
 ```
 
 ## Parameters
 
 ### Required parameters
 
-- `model` (string): The model ID in `provider/model` format (e.g., `openai/gpt-5.5`, `anthropic/claude-opus-4.8`)
+- `model` (string): The model ID in `provider/model` format (e.g., `openai/gpt-5.6-sol`, `anthropic/claude-opus-5`)
 - `input` (array): Array of message objects containing `type`, `role`, and `content` fields
 
 ### Optional parameters
@@ -138,7 +160,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
   },
   body: JSON.stringify({
-    model: 'anthropic/claude-opus-4.8', // provider/model format
+    model: 'anthropic/claude-opus-5', // provider/model format
     input: [
       {
         type: 'message',
@@ -153,7 +175,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     },
     providerOptions: {
       gateway: {
-        models: ['anthropic/claude-opus-4.8', 'openai/gpt-5.5'], // fallbacks
+        models: ['anthropic/claude-opus-5', 'openai/gpt-5.6-sol'], // fallbacks
       },
     },
   }),

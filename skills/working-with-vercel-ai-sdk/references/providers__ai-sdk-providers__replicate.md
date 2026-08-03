@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "d929348f750971b972cf940e67819720d64813ed7953a6d09b30252c5577fd37"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "0ee9cec0339cc3648a995d5e4cd5ea1b030145098287e9e269a0ecbd1d9dbc72"
 ---
 
 # Replicate Provider
@@ -302,6 +302,7 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

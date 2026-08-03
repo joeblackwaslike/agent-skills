@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/secure-url-fetching.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "4f0851e5aa0ea19b7304eee40316ec4188a79d41de6cf56ee458b11c744787ab"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "81a139958c3b35a7faffdb888d510e266a0f3c27dd66c4f1bb6ef9ee4f879745"
 ---
 
 # Secure URL Fetching
@@ -28,6 +28,10 @@ When the SDK fetches a URL taken from a provider response, it:
   are rejected too.
 - **Re-validates every redirect hop** — a URL that passes but then redirects to
   an internal address is blocked; the redirect is never followed blindly.
+- **Validates DNS at connection time on Node.js** — every resolved address is
+  checked, and the socket is pinned to the validated DNS result so DNS
+  rebinding cannot introduce a different address between validation and
+  connection.
 - **Strips risky request headers** — proxy-forwarding, cloud-metadata, and
   cookie headers are removed before the request.
 - **Drops credentials across origins** — caller headers (`Authorization`,
@@ -44,28 +48,17 @@ custom `baseURL` pointing at a self-hosted or `localhost` deployment) are
 exempt from these checks — they target exactly the host you told the SDK to
 talk to. Any redirect off that origin is still validated.
 
-## Limitation: DNS resolution and DNS rebinding
+## DNS validation across runtimes
 
-The built-in guard inspects the URL **as a string**. It deliberately does
-**not resolve DNS**, so two attacks remain out of scope at this layer:
+On Node.js, the default validated download fetch uses `node:dns` and an
+`undici` connector hook to validate every resolved address at connection time.
+The connector uses those exact results, closing both hostname-to-private-IP and
+DNS-rebinding bypasses.
 
-1. **Hostname that resolves to a private IP** — a literal host that looks public
-   but whose DNS record points at an internal address.
-2. **DNS rebinding** — a host that resolves to a public IP when validated and a
-   private IP a moment later when the socket actually connects (a
-   time-of-check/time-of-use window).
-
-### Why this isn't built in
-
-Closing these requires resolving DNS and pinning the resolved IP **at connect
-time** — Node-only capabilities (`node:dns`, a custom `undici` dispatcher). The
-SDK's provider utilities are **cross-runtime**: they run on the edge, in the
-browser, and on Bun/Deno, with no Node-only dependencies, so those APIs aren't
-available there. The threat is also specifically a **server-side** one — on the
-edge and in the browser, outbound `fetch` cannot reach a host's internal network
-or metadata endpoint in the first place. So connect-time IP pinning is only
-meaningful, and only available, on a Node server — which is exactly where you
-can add it yourself.
+If you inject or globally replace `fetch`, it is responsible for equivalent DNS
+validation and connection pinning. Other runtimes do not expose Node's
+DNS/socket hooks, so server deployments on those runtimes should restrict
+network egress to private, loopback, link-local, and cloud-metadata ranges.
 
 ## Hardening your deployment
 
@@ -78,9 +71,10 @@ Deny your server's network egress to `169.254.0.0/16`, RFC-1918 ranges, and
 loopback. This is the most robust control and is independent of application
 code.
 
-### 2. Inject a hardened `fetch`
+### 2. Harden an injected `fetch`
 
-Every provider accepts a custom `fetch`. On Node, back it with an `undici`
+The Node.js default is already pinned. If you inject or globally replace
+`fetch`, back it with an `undici`
 `Agent` whose `connect.lookup` validates the resolved IP and lets the socket
 connect only to a safe address — closing both the hostname-to-private and the
 DNS-rebinding windows:
@@ -114,8 +108,8 @@ import { createFal } from '@ai-sdk/fal';
 const fal = createFal({ fetch: safeFetch });
 ```
 
-The SDK's built-in validation and your connect-time pinning are complementary —
-keep both.
+The SDK's URL validation and your custom fetch's connect-time pinning are
+complementary — keep both.
 
 
 ## Navigation

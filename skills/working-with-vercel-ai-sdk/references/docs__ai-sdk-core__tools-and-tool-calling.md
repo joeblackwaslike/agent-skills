@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "a0029ee66dbe5a6fc67034f0b659d14dbd8167aaebf86b21d36511f9b444f595"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "7ea8c05d9bf5b995b871e582117d775d691ce66eef1b09f4e27207a1eb12762f"
 ---
 
 # Tool Calling
@@ -1519,6 +1519,7 @@ You can see tools in action using various frameworks in the following examples:
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -1527,6 +1528,7 @@ You can see tools in action using various frameworks in the following examples:
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

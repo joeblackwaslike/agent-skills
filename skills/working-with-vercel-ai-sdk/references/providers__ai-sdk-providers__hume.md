@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "cc00044753ed93db4aaa251499482d767e4dea552e6ba6e0fffa89814e7a4c7f"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "0c09997aef838935cd6e84d18a13bf94db1d5d593059a6b8cc2d3d9199993d25"
 ---
 
 # Hume Provider
@@ -181,6 +181,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

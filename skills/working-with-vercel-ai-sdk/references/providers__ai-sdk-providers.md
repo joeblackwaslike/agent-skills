@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "002f2921b4f98d2eb7e45c61b7fdcbc1598d07ea3ad56e60edbc3438853d5e3a"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "bf19ec30c00ba341755c77c95b82d474a2d0464066c34dd0d71d34b72d353bb0"
 ---
 
 # AI SDK Providers
@@ -148,6 +148,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [DeepSeek](/providers/ai-sdk-providers/deepseek)
   - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
   - [Alibaba](/providers/ai-sdk-providers/alibaba)
+  - [MiniMax](/providers/ai-sdk-providers/minimax)
   - [Cerebras](/providers/ai-sdk-providers/cerebras)
   - [Replicate](/providers/ai-sdk-providers/replicate)
   - [Prodia](/providers/ai-sdk-providers/prodia)

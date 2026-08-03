@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "bf77c4fe8fa8276da76e7b1e4877e152c39684aedf7a4d4b2a5462aaed38286e"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "30c6f7d3e321418bb9db83ccb8438f2265bd31d7a9659c241bc72da25ce3fb28"
 ---
 
 # `generateSpeech()`
@@ -226,6 +226,7 @@ const { audio } = await generateSpeech({
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

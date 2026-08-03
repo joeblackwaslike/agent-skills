@@ -13,11 +13,11 @@ related:
   - /docs/vercel-blob
   - /docs/ai-gateway/modalities/video-generation/video-editing
   - /docs/ai-gateway/modalities/video-generation/video-extension
-summary: Generate videos featuring characters from reference images or videos using Wan through AI Gateway.
+summary: Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok Imagine Video through AI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "495db4511af840076337e1387660c0ee4535c10bdf100895e9298895697827f3"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "71284abb18e611fe16291dfbd0c3bf3ac26d8dcd3faa9fb92564d25b1438c892"
 ---
 
 # Reference-to-Video Generation

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-object-generated-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "888eab36ede653f21db6a30efc7b30f0ac98375472b966dc00e305f9a1f6eb47"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "ff19b0b29d956533cf910571e3e0cba0472acc72fb57322057d651b9530f1e40"
 ---
 
 # AI_NoObjectGeneratedError
@@ -71,6 +71,7 @@ try {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

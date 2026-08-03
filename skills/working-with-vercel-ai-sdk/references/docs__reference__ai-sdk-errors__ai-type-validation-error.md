@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-type-validation-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a482436f48767a8c7437201989c266a60e78aba06e5df4e39eb163f930bbb5cd"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "f0ce5f8d597bf28aa3ad813956266fc8760ce430ecee75ca418806e3e8acdce1"
 ---
 
 # AI_TypeValidationError
@@ -53,6 +53,7 @@ if (TypeValidationError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

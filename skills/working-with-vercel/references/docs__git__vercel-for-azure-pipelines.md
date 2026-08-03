@@ -13,11 +13,11 @@ related:
   - /docs/git
   - /docs/cli/project
   - /docs/rest-api
-summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
+summary: Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "2998fa3d7527b66112f72a62482548b8b0e7a7e8dd55ea993aca8133ef71068a"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f1e58ab98b27b3d1f892f508553f2ea2e03318b92ed3edb02660bdc3015ff5dd"
 ---
 
 # Deploying from Azure DevOps with Vercel

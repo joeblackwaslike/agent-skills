@@ -3,7 +3,7 @@ title: Cohere Rerank API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/cohere-rerank
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank"
-last_updated: 2026-07-07
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -15,8 +15,8 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "9ad4a43a6f51df4da59fdd81b62e5a894cca42574a3dfaed4a766c0ae6ce16f6"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b9a47cde5da1f2b43aa6b3a624cc27a84a55f43a03a96a2ff45c29153de58099"
 ---
 
 # Cohere Rerank API

@@ -1,13 +1,14 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "98dcb92395f0b98f0e8c79981b531cea3d7e4dca68acede2bf5858750d50a70a"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "032320a82f40c4ffbeb1a9076e9f3d26282e3a5137d9e6ddc333653417d4d657"
 ---
 
 # Mistral AI Provider
 
 The [Mistral AI](https://mistral.ai/) provider contains language model,
-embedding model, and speech model support for Mistral APIs.
+embedding model, speech model, and transcription model support for Mistral
+APIs.
 
 ## Setup
 
@@ -314,6 +315,98 @@ const result = await generateText({
   also pass any available provider model ID as a string if needed.
 </Note>
 
+## Transcription Models
+
+You can create models that call the
+[Mistral audio transcription API](https://docs.mistral.ai/api/endpoint/audio/transcriptions)
+using the `.transcription()` factory method:
+
+```ts
+const model = mistral.transcription('voxtral-mini-latest');
+```
+
+Use Mistral transcription models with [`transcribe`](/docs/reference/ai-sdk-core/transcribe):
+
+```ts
+import { mistral } from '@ai-sdk/mistral';
+import { transcribe } from 'ai';
+import { readFile } from 'node:fs/promises';
+
+const result = await transcribe({
+  model: mistral.transcription('voxtral-mini-latest'),
+  audio: await readFile('audio.mp3'),
+});
+```
+
+Mistral transcription models support additional provider options. Pass them
+through `providerOptions.mistral` and use
+`MistralTranscriptionModelOptions` for type checking:
+
+```ts highlight="9-13"
+import {
+  mistral,
+  type MistralTranscriptionModelOptions,
+} from '@ai-sdk/mistral';
+import { transcribe } from 'ai';
+import { readFile } from 'node:fs/promises';
+
+const result = await transcribe({
+  model: mistral.transcription('voxtral-mini-latest'),
+  audio: await readFile('audio.mp3'),
+  providerOptions: {
+    mistral: {
+      timestampGranularities: ['segment'],
+      diarize: true,
+      contextBias: ['Vercel', 'AI_SDK'],
+    } satisfies MistralTranscriptionModelOptions,
+  },
+});
+```
+
+The following optional provider options are available:
+
+- **language** _string_
+
+  The language of the audio, such as `en`. Providing it can improve accuracy.
+
+- **temperature** _number_
+
+  The sampling temperature for the transcription.
+
+- **timestampGranularities** _Array&lt;'segment' | 'word'&gt;_
+
+  Timestamp granularities to include in the response. Mistral does not support
+  combining this option with `language`; the SDK throws an
+  `InvalidArgumentError` when both are provided.
+
+- **diarize** _boolean_
+
+  Whether to identify speakers in the transcription.
+
+- **contextBias** _string[]_
+
+  Up to 100 words or phrases that guide spelling for names, technical terms,
+  or domain-specific vocabulary. Items cannot contain commas or whitespace;
+  use underscores for multi-word phrases.
+
+The normalized result includes transcript text, language, timed segments, and
+duration when returned by Mistral. Mistral token and prompt-audio usage is
+available under `result.providerMetadata.mistral.usage`. Segment scores and
+speaker IDs from diarization are available under
+`result.providerMetadata.mistral.segments`.
+
+<Note>
+  Audio is uploaded to Mistral for processing. This integration supports batch
+  transcription only; Mistral realtime transcription is not exposed by this
+  model.
+</Note>
+
+### Model Capabilities
+
+| Model                 | Timestamps | Diarization | Context Bias |
+| --------------------- | ---------- | ----------- | ------------ |
+| `voxtral-mini-latest` | <Check />  | <Check />   | <Check />    |
+
 ## Speech Models
 
 You can create models that call the
@@ -482,6 +575,7 @@ models:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

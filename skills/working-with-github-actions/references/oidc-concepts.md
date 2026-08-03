@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/openid-connect.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "284208b17b6a9d0b015122aa3919e1c17dcaeb8b58237f30d4f9119e31cecafe"
+fetched_at: "2026-08-03T07:31:11.280Z"
+sha256: "5416c47bc28301654db076df3c7ed87203ff81a7228f5f33e106afabededf23a"
 ---
 
 ## Overview of OpenID Connect (OIDC)
@@ -77,6 +77,9 @@ The following example OIDC token uses a subject (`sub`) that references a job en
   "iat": 1632493567
 }
 ```
+
+> [!NOTE]
+> The `sub` claim in this example uses the previous format. Repositories created after July 15, 2026 use an immutable default subject format that includes owner and repository IDs (not available on {% data variables.product.prodname_ghe_server %}). For more information, see [AUTOTITLE](/actions/reference/security/oidc#immutable-subject-claims).
 
 {% ifversion ghec %}
 

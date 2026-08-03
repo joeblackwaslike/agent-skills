@@ -11,13 +11,13 @@ related:
   - /docs/project-configuration
   - /docs/build-output-api/v3/configuration
   - /docs/project-configuration/vercel-json
-  - /docs/build-output-api/v3/
-  - /docs/build-output-api/v3/primitives
+  - /docs/build-output-api/v3/services
+  - /docs/services/routing
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "0d542e859837e0dc15fce675221982ea5d2f9295306cf6c56b7887687c494ec2"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "8507237c8b81c9f86a9a291b2dd87851ca5c3e909b30069f24889b1a3a70f581"
 ---
 
 # Features
@@ -83,6 +83,10 @@ const config = {
 };
 writeFileSync('.vercel/output/config.json', JSON.stringify(config));
 ```
+
+## Routing to a service
+
+In a deployment with multiple services, a top-level route can delegate to a service instead of pointing to a filesystem path. Once a request is delegated, routing continues inside that service's own route table. See the [Services](/docs/build-output-api/v3/services) build output reference and [Services routing](/docs/services/routing) for the full model.
 
 ## Routing Middleware
 

@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "caae8554506ce85e6bbfb17b88d45651f0f9cb4e061c578f14f283dd8ec22697"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "97a28ec99c32a03b1fc006d901cfb41454f180638ad2a84122a82fdabd771a00"
 ---
 
 # Building Integrations with Vercel REST API
@@ -113,7 +113,7 @@ When creating integrations the following scopes can be updated within the Integr
 | integration-configuration | Interact with the installation of your integration                                                                                                       |
 | deployment                | Interact with deployments                                                                                                                                |
 | deployment-check          | Verify deployments with Checks                                                                                                                           |
-| edge-config               | Create and manage Edge Configs and their tokens                                                                                                          |
+| edge-config               | Create and manage Global Configs and their tokens                                                                                                          |
 | project                   | Access project details and settings                                                                                                                      |
 | project-env-vars          | Create and manage integration-owned project environment variables                                                                                        |
 | global-project-env-vars   | Create and manage all account project environment variables                                                                                              |

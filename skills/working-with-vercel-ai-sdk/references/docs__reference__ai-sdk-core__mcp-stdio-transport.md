@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "03c215505ad778d8ce0a6d9d9484278652307f5ad0854c803f3a0979d9702e23"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "c56d4ad6d800777604916d0009d0de113e616a279b5e0765a58add99c1e58a34"
 ---
 
 # `Experimental_StdioMCPTransport`
@@ -78,6 +78,7 @@ This feature is experimental and may change or be removed in the future.
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

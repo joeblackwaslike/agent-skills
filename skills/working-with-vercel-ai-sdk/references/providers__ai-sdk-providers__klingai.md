@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "30ec037881c5a7207213c23e4dd168c7e5daaca20dcc673dc92cec97d1f8c34d"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "9523c53d14f00a999135577da5c6c86dc61e0e92883175470227f6c5fe649930"
 ---
 
 # Kling AI Provider
@@ -28,20 +28,26 @@ If you need a customized setup, you can import `createKlingAI` from `@ai-sdk/kli
 import { createKlingAI } from '@ai-sdk/klingai';
 
 const klingai = createKlingAI({
-  accessKey: 'your-access-key',
-  secretKey: 'your-secret-key',
+  apiKey: 'your-api-key',
 });
 ```
 
 You can use the following optional settings to customize the Kling AI provider instance:
 
+- **apiKey** _string_
+
+  Kling AI API key. Defaults to the `KLINGAI_API_KEY` environment variable.
+  Create one in the [Kling AI developer console](https://kling.ai/dev/api-key).
+
 - **accessKey** _string_
 
   Kling AI access key. Defaults to the `KLINGAI_ACCESS_KEY` environment variable.
+  Legacy authentication — prefer `apiKey`.
 
 - **secretKey** _string_
 
   Kling AI secret key. Defaults to the `KLINGAI_SECRET_KEY` environment variable.
+  Legacy authentication — prefer `apiKey`.
 
 - **baseURL** _string_
 
@@ -57,6 +63,25 @@ You can use the following optional settings to customize the Kling AI provider i
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
+
+## Authentication
+
+Kling AI supports two authentication schemes:
+
+- **API key** (recommended). A single key that is sent as a bearer token. Create
+  one in the [Kling AI developer console](https://kling.ai/dev/api-key) and set
+  it as `KLINGAI_API_KEY`, or pass it via the `apiKey` setting.
+- **Access key / secret key** (legacy). A key pair that the provider uses to
+  sign a short-lived JWT for each request. Set `KLINGAI_ACCESS_KEY` and
+  `KLINGAI_SECRET_KEY`, or pass the `accessKey` and `secretKey` settings.
+
+Credentials are resolved in this order, with explicit settings taking
+precedence over environment variables:
+
+1. The `apiKey` setting
+2. The `accessKey` and `secretKey` settings
+3. The `KLINGAI_API_KEY` environment variable
+4. The `KLINGAI_ACCESS_KEY` and `KLINGAI_SECRET_KEY` environment variables
 
 ## Video Models
 
@@ -387,6 +412,7 @@ The following provider options are available via `providerOptions.klingai`. Opti
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

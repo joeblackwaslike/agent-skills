@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c3de6ebe5d01c33aa171f483982a1ca6bed316488cdc523161d1cb8ba7b1a51b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "570b578b655b268d1c3a1166d7bb0a383b0d6f3a7d98fc0ff49f471f493d7e3a"
 ---
 
 # Client Uploads with Vercel Blob
@@ -59,7 +59,7 @@ Vercel Blob works with any frontend framework. First, install the package:
   2. Select **Create Database**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
   4. Use the name "Images" and select **Create a new Blob store**
-  5. Select the environments where you would like the read-write token to be included. You can also update the prefix of the Environment Variable in Advanced Options
+  5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options
   Once created, you are taken to the Vercel Blob store page.
 
 - ### Prepare your local project
@@ -74,6 +74,11 @@ Vercel Blob works with any frontend framework. First, install the package:
   ```bash
   vercel env pull
   ```
+  > **💡 Note:** If the Blob variables don't show up in your `.env.local` file, your store
+  > connection likely doesn't include the **Development** environment, which is
+  > the one `vercel env pull` reads from. You can add it from the store's
+  > **Projects** tab: open the context menu (⋯) next to your project, select
+  > **Update Project Connection**, and include **Development**.
 
 When you need to upload files larger than 4.5 MB, you can use client uploads. The file goes directly from the browser to Vercel Blob, secured by a token exchange between your server and Vercel Blob.
 

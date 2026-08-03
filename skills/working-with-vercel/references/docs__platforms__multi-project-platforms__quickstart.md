@@ -17,8 +17,8 @@ related:
 summary: Programmatically host code for user-generated or AI-generated applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ae40289446f23b4cad43ff304bae3f026b613dbf88f65aae2422ad9c66d339d9"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "96a21825aaf9ec45639cd73ded1d8c685989f0b6b064fa9ee63df16097c81e28"
 ---
 
 # Multi-Project Platforms Quickstart
@@ -124,7 +124,7 @@ await deployFiles(files, {
 - To ensure all these deployments can only be accessed as subpaths `domain.com/customer_a` you would first configure the same Proxy setup as in 4. (with or without authentication, depending on your product requirements.)
 - This proxy would be [assigned the domain you want to share in it's Vercel project](/docs/domains/working-with-domains/add-a-domain)
 - You can then create a [routing middleware](/docs/routing-middleware) in the Proxy, to be able to rewrite the paths to the domains they are hosted in Vercel.
-  - It can dynamically pull the data from your backend or you can make it faster by caching it in [Edge Config](/docs/edge-config)
+  - It can dynamically pull the data from your backend or you can make it faster by caching it in [Global Config](/docs/global-config)
 
 
 ---

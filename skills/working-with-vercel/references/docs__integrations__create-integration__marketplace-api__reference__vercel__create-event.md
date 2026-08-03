@@ -3,7 +3,7 @@ title: create-event
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/create-event
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/create-event"
-last_updated: 2026-07-27
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about create-event on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/create-event.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "e6ccdd7c3886743ffa409af929296b8f55f6c9e65ebad1a5bfed0bdf45b05762"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "3e6d595811b2c8e3913b8c7228017306a947012a9202a2f9cfe89d55b0118229"
 ---
 
 # Create Event

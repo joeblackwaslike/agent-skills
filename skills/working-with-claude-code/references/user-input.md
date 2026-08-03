@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/user-input.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "91cbe97f95e3d88100bf4f038c27926e8f917384bac46c0951b179a4abb350f5"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "1b8c7034a30966bc25994f2cf77ea2ab5d88c293b85186c9ebbd5354aefee82f"
 ---
 
 > ## Documentation Index
@@ -28,6 +28,9 @@ Pass a `canUseTool` callback in your query options. The callback fires whenever 
 
 <CodeGroup>
   ```python Python theme={null}
+  from claude_agent_sdk import ClaudeAgentOptions
+
+
   async def handle_tool_request(tool_name, input_data, context):
       # Prompt user and return allow or deny
       ...
@@ -248,6 +251,8 @@ Beyond allowing or denying, you can modify the tool's input or provide context t
 * **Reject**: block the tool and tell Claude why
 * **Suggest alternative**: block but guide Claude toward what the user wants instead
 * **Redirect entirely**: use [streaming input](/docs/en/agent-sdk/streaming-vs-single-mode) to send Claude a completely new instruction
+
+The `ask_user` and `askUser` helpers in the following snippets stand in for your application's own prompt UI.
 
 <Tabs>
   <Tab title="Approve">

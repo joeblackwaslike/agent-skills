@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "89605d8cffcba621ca06a12817e57f21061694e5151692c28f0085946e6de04f"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "5ff82798f61b28850974ed21cca8447565293eba68e255bcc8eaae9386abb403"
 ---
 
 # LlamaIndex
@@ -63,7 +63,7 @@ with LlamaIndex to access various AI models and providers.
       api_key=os.getenv("AI_GATEWAY_API_KEY"),
       max_tokens=200000,
       context_window=64000,
-      model="anthropic/claude-opus-4.8",
+      model="anthropic/claude-opus-5",
   )
 
   message = ChatMessage(role="user", content="Tell me a story in 250 words")

@@ -13,8 +13,8 @@ related:
 summary: Use Grok Build with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4cf3b2cddf45c4606cc0131da6b677cbdb2e2085efd2282b82af7d1731dfb383"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "caf67a8b25fb3cf9929b68af750a8c9c8a33b798f955e2b3014c83f411503011"
 ---
 
 # Grok Build
@@ -61,10 +61,10 @@ Set two environment variables and every request routes through AI Gateway, with 
   Press `Ctrl+M` to open the model picker. It lists every model AI Gateway exposes at `/v1/models`. To set a default model, add it to `~/.grok/config.toml`:
   ```toml filename="~/.grok/config.toml"
   [models]
-  default = "xai/grok-4.3"
+  default = "xai/grok-4.5"
   # Or try other models:
-  # default = "anthropic/claude-sonnet-4.6"
-  # default = "openai/gpt-5.5"
+  # default = "anthropic/claude-sonnet-5"
+  # default = "openai/gpt-5.6-sol"
   # default = "google/gemini-3.1-pro-preview"
   ```
   To confirm requests are flowing through the gateway, check your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard.
@@ -77,7 +77,7 @@ Grok Build's web search tool requires a separate model configured to use the Ope
   Add the entry below to `~/.grok/config.toml`:
   ```toml filename="~/.grok/config.toml"
   [model.vercel-search]
-  model = "xai/grok-4.3"
+  model = "xai/grok-4.5"
   base_url = "https://ai-gateway.vercel.sh/v1"
   api_backend = "responses"
   ```

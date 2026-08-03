@@ -17,8 +17,8 @@ related:
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "076c659fd6163168b11a0161a67d0014b56f1a178e76f417a352e1ff8ab18ee5"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "da35e193a45004110adb85d1d2ea3946b3c5c3750a96a93b529d59ed0ae198b8"
 ---
 
 # Data Cache for Next.js
@@ -54,12 +54,13 @@ Data cache is not a good fit for:
 Data cache stores data in a regional cache close to where your function executes. It has the following characteristics:
 
 - **Regional**: Every region in which your function runs has an independent cache, so data used in server-side rendering or route handlers is cached close to where the function executes
-- **Isolated**: Data cache is isolated per Vercel project and [deployment environment](/docs/deployments/environments) (`production` or `preview`)
+- **Isolated by environment**: Each [deployment environment](/docs/deployments/environments) (`production` or `preview`) uses its own cache, so they never share cached data
+- **Scoped by plan**: On Hobby and Pro, all projects in your team share a single cache. On Enterprise, each project uses its own cache. See [storage scope by plan](#storage-scope-by-plan)
 - **Persistent across deployments**: Cached data persists across deployments unless you explicitly invalidate it
 - **Time-based revalidation**: All cached data can define a revalidation interval, after which the data is marked as stale, triggering a re-fetch from origin
 - **On-demand revalidation**: Any data can be triggered for revalidation on-demand, regardless of the revalidation interval. The revalidation propagates to all regions within 300ms
 - **Tag-based revalidation**: Next.js allows associating tags with data, which can be used to revalidate all data with the same tag at once with [`revalidateTag`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag)
-- **Ephemeral**: Each project has a storage limit. When your project reaches this limit, Vercel evicts (removes) the entries that haven't been accessed recently to free up space for new entries
+- **Ephemeral**: Each cache has a storage limit. When a cache reaches this limit, Vercel evicts (removes) the entries that haven't been accessed recently to free up space for new entries
 
 ## Using data cache
 
@@ -205,6 +206,10 @@ When the system triggers a revalidation, Vercel marks the corresponding path or 
 
 CDN cache and Data cache are different cache layers. CDN cache stores full HTTP responses, while Data cache stores Next.js data fetch results.
 
+> **⚠️ Warning:** On Hobby and Pro, your projects share a single cache, so purging deletes the
+> cached data for every project in your team in that environment. See [storage
+> scope by plan](#storage-scope-by-plan).
+
 To purge Data cache from the dashboard:
 
 1. Under your project, open **CDN** in the sidebar.
@@ -231,9 +236,23 @@ You can also track data cache usage per request in [**Logs**](https://vercel.com
 | Tags per item       | 128 tags                            |
 | Maximum tag length  | 256 bytes                           |
 
+### Storage scope by plan
+
+Your plan determines whether your projects share a single data cache or whether each project gets its own:
+
+| Plan       | Data cache storage                             |
+| ---------- | ---------------------------------------------- |
+| Hobby      | All projects in your team share a single cache |
+| Pro        | All projects in your team share a single cache |
+| Enterprise | Each project uses its own cache                |
+
+Every plan splits the cache by deployment environment, so `production` and `preview` never share cached data. Data cache and [Runtime Cache](/docs/runtime-cache) also use separate storage, so they don't compete for the same space.
+
+When your projects share a cache, they share its storage limit and its eviction policy. A project that writes a lot of data can evict entries that belong to your other projects.
+
 ### Storage and eviction
 
-Each project has a fixed storage limit for cached data. When your project reaches this limit, Vercel uses a least recently used (LRU) eviction policy: it removes the entries that haven't been accessed recently first. You can monitor your cache size and eviction activity in the [**Runtime Cache section of Observability**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fruntime-cache\&title=Go+to+Observability+Runtime+Cache) section in the sidebar under your project.
+Every data cache has a fixed storage limit. When a cache reaches this limit, Vercel uses a least recently used (LRU) eviction policy: it removes the entries that haven't been accessed recently first. You can monitor your cache size and eviction activity in the [**Runtime Cache section of Observability**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fruntime-cache\&title=Go+to+Observability+Runtime+Cache) section in the sidebar under your project.
 
 ### How data cache works with other caches
 

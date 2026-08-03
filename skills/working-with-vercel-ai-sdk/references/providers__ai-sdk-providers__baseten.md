@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "bee74ce9dda271d08675edf5ee3b490f27da8f17d7b1abf2581862598ee97085"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8848fe40c4a770db545c8f4a93c369a727cf2e910fb41b524c944e55073205f4"
 ---
 
 # Baseten Provider
@@ -273,6 +273,7 @@ try {
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

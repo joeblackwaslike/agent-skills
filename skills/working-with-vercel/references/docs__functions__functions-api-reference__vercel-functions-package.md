@@ -12,13 +12,13 @@ related:
   - /docs/functions/runtimes/edge
   - /docs/environment-variables/system-environment-variables
   - /docs/cdn-cache/purge
+  - /docs/runtime-cache
   - /docs/incremental-static-regeneration
-  - /docs/pricing/regional-pricing
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "8e198bab51b8a441a944934038c07f3db9cfff2059d0ef352c9383c1f8132f3f"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "e6098a0b87e5094b25ee9f47f76e6072d873c9d56e0d05abacc538ba3fd2c3c1"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -390,7 +390,7 @@ export default async function action() {
 
 #### Limits and usage
 
-The Runtime Cache is isolated per Vercel project and deployment environment (`preview` and `production`). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expireTag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
+The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expireTag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
 
 The Runtime Cache API does not have first class integration with [Incremental Static Regeneration](/docs/incremental-static-regeneration). This means that:
 

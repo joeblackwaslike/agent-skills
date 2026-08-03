@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "6d40f5001302236cb0a384e8bdafaf28395aad8874f7a4b3b0b79446a44dd073"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "a6ab4178e1d530e1afa6ba20685b17351fd3929aad2804979ea061396ca127a2"
 ---
 
 # Moonshot AI Provider
@@ -220,6 +220,7 @@ The following optional provider options are available for Moonshot AI language m
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

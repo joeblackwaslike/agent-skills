@@ -15,8 +15,8 @@ related:
 summary: Manage your Vercel infrastructure through conversation with Vercel Agent
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d771c11d2be2c6477a7a73ba2b8e8ea92caebec4d657a0a1e07096bd52e02a6b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "4e44155237ba0ee0b52b15f3f199ea82f1b31ba1c787fc8dd65af1e748db6d73"
 ---
 
 # Chat
@@ -34,7 +34,7 @@ The Vercel Agent can only access the data you can access on the currently select
 - Create, update, and delete environment variables
 - Trigger deployments, rollbacks, and redeployments
 - Configure observability alerts and dashboards
-- Create, update, and delete storage resources (Blob, Redis, Edge Config)
+- Create, update, and delete storage resources (Blob, Redis, Global Config)
 
 ### Repository access
 

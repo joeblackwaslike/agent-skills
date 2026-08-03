@@ -3,7 +3,7 @@ title: Vercel Workflows
 product: workflows
 url: /docs/workflows
 canonical_url: "https://vercel.com/docs/workflows"
-last_updated: 2026-06-17
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents with the Workflow SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "a851f97bb4aa30506ca73b1798d35394cdd610ed677079ae8ddc33d5aaa2be8a"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "982382c022ed2996e8ebe68fb1efc514a3c10f8869d6718ef4ddf4ac622038b2"
 ---
 
 # Vercel Workflows

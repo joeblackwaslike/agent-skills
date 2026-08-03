@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-response-data-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a51cc49e6e2ebec511070ddfb693e556a68d8a6ad248e75e92638d3762d0c03b"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "16e6030f6126bbd5b9fffbdce56cd897002f55fe729696ee48752052e1afd7d2"
 ---
 
 # AI_InvalidResponseDataError
@@ -53,6 +53,7 @@ if (InvalidResponseDataError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

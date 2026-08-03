@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T07:30:29.835Z",
+  "generated_at": "2026-08-03T07:24:53.308Z",
   "source": "Official Dev Containers specification (containers.dev) and VS Code documentation",
   "docs": [
     {
@@ -70,26 +70,26 @@
       "title": "Available features index",
       "url": "https://containers.dev/features",
       "file": "features-index.md",
-      "fetched_at": "2026-07-27T07:30:29.835Z",
-      "sha256": "aadebf5a1782ad3ca60e0c63e79b5c5c6ad1cd7db63e9eeb1d319782fa602805",
-      "bytes": 151742
+      "fetched_at": "2026-08-03T07:24:53.308Z",
+      "sha256": "db9d5033950f3dc7a3e7e8449721dfd25ce3fe773d0bc98cb8b755280684a1a0",
+      "bytes": 152374
     },
     {
       "slug": "templates-index",
       "title": "Available templates index",
       "url": "https://containers.dev/templates",
       "file": "templates-index.md",
-      "fetched_at": "2026-07-27T07:30:29.835Z",
-      "sha256": "b9443153f1d826d21650925d26fb636e7d8fb5f12471682e5bfe36b2ef236ebb",
-      "bytes": 21768
+      "fetched_at": "2026-08-03T07:24:53.308Z",
+      "sha256": "a3df69a4898acb9a24bb12717ee469e96e7b4c938d8cf0c979b3deef035585cc",
+      "bytes": 21883
     },
     {
       "slug": "vscode-containers",
       "title": "VS Code Dev Containers guide",
       "url": "https://code.visualstudio.com/docs/devcontainers/containers",
       "file": "vscode-containers.md",
-      "fetched_at": "2026-07-27T07:30:29.835Z",
-      "sha256": "8a2dba3f78dc262b5562df317a508b94476864304c3bdb956b1de94404e71b45",
+      "fetched_at": "2026-08-03T07:24:53.308Z",
+      "sha256": "deebf2607dd53201e20fda4e71b67c3f052b0db5df079de5958ed71e1f8af5a1",
       "bytes": 51353
     },
     {
@@ -97,8 +97,8 @@
       "title": "VS Code create dev container",
       "url": "https://code.visualstudio.com/docs/devcontainers/create-dev-container",
       "file": "vscode-create.md",
-      "fetched_at": "2026-07-20T06:45:13.409Z",
-      "sha256": "d1cb6d70337631b509fc8bb7d756ccc365b8b505aafa233c1e5e2265c63f48d3",
+      "fetched_at": "2026-08-03T07:24:53.308Z",
+      "sha256": "14cf04e79c8619acbe5fa6c639504de2a4ebfd985495d637de18f0a6e100bff9",
       "bytes": 47812
     },
     {
@@ -106,8 +106,8 @@
       "title": "VS Code devcontainer CLI",
       "url": "https://code.visualstudio.com/docs/devcontainers/devcontainer-cli",
       "file": "vscode-cli.md",
-      "fetched_at": "2026-07-20T06:45:13.409Z",
-      "sha256": "1498825b2bbbcdf76ada011de3a2ad950103e7083190c4aaacbc1a3cea06d405",
+      "fetched_at": "2026-08-03T07:24:53.308Z",
+      "sha256": "0f2f00cd41017a76536a4733e7586732752c7fed7d6100e926580abeb1733476",
       "bytes": 26491
     },
     {
@@ -115,8 +115,8 @@
       "title": "VS Code Dev Containers tips and tricks",
       "url": "https://code.visualstudio.com/docs/devcontainers/tips-and-tricks",
       "file": "vscode-tips.md",
-      "fetched_at": "2026-07-20T06:45:13.409Z",
-      "sha256": "ffe4ad1e22a30ed75dc1d977980e1d78cf10731d2275ad01f4b699f2ce46db12",
+      "fetched_at": "2026-08-03T07:24:53.308Z",
+      "sha256": "a705b4c944ffd5c687c0ad7d365ed5d35ce7bdde5b6492daad73a778786fbe02",
       "bytes": 23598
     }
   ]

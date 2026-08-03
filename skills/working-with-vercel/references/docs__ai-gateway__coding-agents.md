@@ -16,8 +16,8 @@ related:
 summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "25fe48837f9322de62d8d65aafad1a450c38d2d6bf0fba31f402fd772a0a466a"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "69a2e4a50a7c08e41748ac61df916423a967346e590bc5d3e0e3230756a213e6"
 ---
 
 # Coding Agents
@@ -68,7 +68,7 @@ wire_api = "responses"
 
 [profiles.vercel]
 model_provider = "vercel"
-model = "openai/gpt-5.5"
+model = "openai/gpt-5.6-sol"
 ```
 
 Then start Codex with the Vercel profile:
@@ -166,6 +166,19 @@ The in-CLI model picker is then populated from the gateway's full catalog.
 
 See the [Grok Build documentation](/docs/ai-gateway/coding-agents/grok-build) for full setup.
 
+### Hermes
+
+[Hermes](https://github.com/NousResearch/hermes-agent) is Nous Research's terminal-based coding agent. Set your key and name the provider:
+
+```bash
+export AI_GATEWAY_API_KEY="your-ai-gateway-api-key"
+hermes --provider ai-gateway -m openai/gpt-5.6-sol
+```
+
+Run `hermes model` instead to pick from the gateway's live catalog with pricing.
+
+See the [Hermes documentation](/docs/ai-gateway/coding-agents/hermes) for fallback providers and configuration.
+
 ### Superset
 
 [Superset](https://superset.sh) is a terminal-first AI coding agent that works with CLI agents like Claude Code, Codex, and Cursor Agents. Configure it with environment variables:
@@ -183,7 +196,7 @@ See the [Superset documentation](/docs/ai-gateway/coding-agents/superset) for Ch
 ## Getting started
 
 1. **Get an API key**: Create one in the [AI Gateway page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway)
-2. **Choose your agent**: Pick from Claude Code, OpenAI Codex, OpenCode, Blackbox AI, Cline, Roo Code, Conductor, Crush, Grok Build, or Superset
+2. **Choose your agent**: Pick from Claude Code, OpenAI Codex, OpenCode, Blackbox AI, Cline, Roo Code, Conductor, Crush, Grok Build, Hermes, or Superset
 3. **Configure the connection**: Point the agent to `https://ai-gateway.vercel.sh`
 4. **Start coding**: Use the agent as normal - all requests route through the gateway
 
@@ -206,6 +219,7 @@ Once your coding agents are connected, view usage in the [Observability section 
 - [Configure Conductor](/docs/ai-gateway/coding-agents/conductor) for parallel agents
 - [Configure Crush](/docs/ai-gateway/coding-agents/crush) for LSP-enhanced coding
 - [Configure Grok Build](/docs/ai-gateway/coding-agents/grok-build) for xAI's terminal coding agent
+- [Configure Hermes](/docs/ai-gateway/coding-agents/hermes) for Nous Research's terminal coding agent
 - [Configure Superset](/docs/ai-gateway/coding-agents/superset) for terminal-first AI coding
 
 

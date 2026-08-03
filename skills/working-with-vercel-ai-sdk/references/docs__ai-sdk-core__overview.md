@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/overview.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "32a3ab29e36cde823d3124b769015ecacef22b6621d8a65285c5a2d1670e5cb3"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "c7e78ffa11647acffe577615e092264e7859a1f852d192ad34573f55edeacaec"
 ---
 
 # AI SDK Core
@@ -41,6 +41,7 @@ Please check out the [AI SDK Core API Reference](/docs/reference/ai-sdk-core) fo
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -49,6 +50,7 @@ Please check out the [AI SDK Core API Reference](/docs/reference/ai-sdk-core) fo
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

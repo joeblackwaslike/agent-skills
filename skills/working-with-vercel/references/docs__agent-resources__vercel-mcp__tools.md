@@ -14,11 +14,11 @@ related:
   - /docs/projects
   - /docs/deployments
   - /docs/functions
-summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, runtime logs, and Agent Runs.
+summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and errors, Agent Runs, design...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "2fcc4c5560ae34eeaf93e5ff0c33edaa62a42e5e5d9aafc4b6f3e103b9cf5052"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "dddbb905ddb2ba42bdbf6bd3901dcc5be51ceae6311d67b53d63a79fad67bf09"
 ---
 
 # Tools

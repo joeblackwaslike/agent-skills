@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "dcf7d9e2c6b192ae28f892fbb9e40f10791959c41439b85ba6d0c8ca6a394d9c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "54c470704757ab4c0f42c81f73815423444bb7c0f13aefe67da1b77dc39b9dd1"
 ---
 
 # Vercel CLI Overview
@@ -383,20 +383,6 @@ vercel domains check [domain] [...domain]
 
 [Learn more about the domains command](/docs/cli/domains)
 
-### edge-config
-
-Manage [Edge Config](/docs/edge-config) stores: list, create, inspect, update, remove, and manage items, read tokens, and backups.
-
-```bash
-vercel edge-config list
-vercel edge-config add flags
-vercel edge-config items flags --key betaUiEnabled
-vercel edge-config tokens flags --add "Production read"
-vercel edge-config backups flags
-```
-
-[Learn more about the edge-config command](/docs/cli/edge-config)
-
 ### env
 
 Manage environment variables in your Vercel Projects.
@@ -455,6 +441,20 @@ vercel git disconnect [provider]
 ```
 
 [Learn more about the git command](/docs/cli/git)
+
+### global-config
+
+Manage [Global Config](/docs/global-config) stores: list, create, inspect, update, remove, and manage items, read tokens, and backups. `vercel edge-config` continues to work as an alias.
+
+```bash
+vercel global-config list
+vercel global-config add flags
+vercel global-config items flags --key betaUiEnabled
+vercel global-config tokens flags --add "Production read"
+vercel global-config backups flags
+```
+
+[Learn more about the global-config command](/docs/cli/global-config)
 
 ### guidance
 

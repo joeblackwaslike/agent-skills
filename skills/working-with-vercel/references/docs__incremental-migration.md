@@ -11,13 +11,13 @@ related:
   - /docs/domains/add-a-domain
   - /docs/rewrites
   - /docs/frameworks
-  - /docs/edge-config
+  - /docs/global-config
   - /docs/routing-middleware
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "fbcdfb752739c1308b08f7ba5eed9e4b8632a7e6ee1707e4c1262ea9a08bb497"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "fcf77e69133e26636368c5a40e24b4553c2389103be571b69f18bee58102368a"
 ---
 
 # Incremental Migration to Vercel
@@ -136,9 +136,9 @@ export default nextConfig;
 
 Use `vercel.json` for frameworks that do not have rewrite support. See the [how do rewrites work](/docs/rewrites) documentation to learn how to rewrite to an external destination, from a specific path.
 
-#### Edge Config
+#### Global Config
 
-Use [Edge Config](/docs/edge-config) with [Routing Middleware](/docs/routing-middleware) to rewrite requests on the global network with the following benefits:
+Use [Global Config](/docs/global-config) with [Routing Middleware](/docs/routing-middleware) to rewrite requests on the global network with the following benefits:
 
 - No need to re-deploy your application when rewrite changes are required
 - Immediately switch back to the legacy server if the new feature implementation is broken
@@ -157,7 +157,7 @@ export const config = {
 
 export default async function middleware(request: NextRequest) {
   const url = request.nextUrl;
-  const rewrites = await get('rewrites'); // Get rewrites stored in Edge Config
+  const rewrites = await get('rewrites'); // Get rewrites stored in Global Config
 
   for (const rewrite of rewrites) {
     if (rewrite.source === url.pathname) {
@@ -170,7 +170,7 @@ export default async function middleware(request: NextRequest) {
 }
 ```
 
-In the above example, you use Edge Config to store one key-value pair for each rewrite. In this case, you should consider [Edge Config Limits](/docs/edge-config/edge-config-limits) (For example, 5000 routes would require around 512KB of storage). You can also rewrite based on [URLPatterns](https://developer.mozilla.org/docs/Web/API/URLPattern) where you would store each URLPattern as a key-value pair in Edge Config and not require one pair for each route.
+In the above example, you use Global Config to store one key-value pair for each rewrite. In this case, you should consider [Global Config Limits](/docs/global-config/global-config-limits) (For example, 5000 routes would require around 512KB of storage). You can also rewrite based on [URLPatterns](https://developer.mozilla.org/docs/Web/API/URLPattern) where you would store each URLPattern as a key-value pair in Global Config and not require one pair for each route.
 
 ### 3. Deploy to production
 
@@ -239,7 +239,7 @@ Vercel has a limit of 1024 routes per deployment for rewrites. If you have more 
 
 ### Handling emergencies
 
-If you're facing unexpected outcomes or cannot find an immediate solution for an unexpected behavior with a new feature, you can set up a variable in [Edge Config](/docs/edge-config) that you can turn on and off at any time without having to make any code changes on your deployment. The value of this variable will determine whether you rewrite to the new version or the legacy server.
+If you're facing unexpected outcomes or cannot find an immediate solution for an unexpected behavior with a new feature, you can set up a variable in [Global Config](/docs/global-config) that you can turn on and off at any time without having to make any code changes on your deployment. The value of this variable will determine whether you rewrite to the new version or the legacy server.
 
 For example, with Next.js, you can use the follow [middleware](/docs/edge-middleware) code example:
 
@@ -253,7 +253,7 @@ export const config = {
 
 export async function middleware(request: NextRequest) {
   try {
-    // Check whether the new version should be shown - isNewVersionActive is a boolean value stored in Edge Config that you can update from your Project dashboard without any code changes
+    // Check whether the new version should be shown - isNewVersionActive is a boolean value stored in Global Config that you can update from your Project dashboard without any code changes
     const isNewVersionActive = await get<boolean>('isNewVersionActive');
 
     // If `isNewVersionActive` is false, rewrite to the legacy server URL
@@ -267,7 +267,7 @@ export async function middleware(request: NextRequest) {
 }
 ```
 
-[Create an Edge Config](/docs/edge-config/edge-config-dashboard#creating-an-edge-config) and set it to `{ "isNewVersionActive": true }`. By default, the new feature is active since `isNewVersionActive` is `true`. If you experience any issues, you can fallback to the legacy server by setting `isNewVersionActive` to `false` in the Edge Config from your Vercel dashboard.
+[Create a Global Config](/docs/global-config/global-config-dashboard#creating-a-global-config) and set it to `{ "isNewVersionActive": true }`. By default, the new feature is active since `isNewVersionActive` is `true`. If you experience any issues, you can fallback to the legacy server by setting `isNewVersionActive` to `false` in the Global Config from your Vercel dashboard.
 
 ## Session management
 
@@ -284,7 +284,7 @@ Learn more about [connecting Redis databases through the Marketplace](/docs/redi
 
 ## User group strategies
 
-Minimize risk and perform A/B testing by combining your migration by feature with a user group strategy. You can use [Edge Config](/docs/edge-config) to store user group information and [Routing Middleware](/docs/routing-middleware) to direct traffic appropriately.
+Minimize risk and perform A/B testing by combining your migration by feature with a user group strategy. You can use [Global Config](/docs/global-config) to store user group information and [Routing Middleware](/docs/routing-middleware) to direct traffic appropriately.
 
 - You can also consult our [guide on A/B Testing on Vercel](/kb/guide/ab-testing-on-vercel) for implementing this strategy
 

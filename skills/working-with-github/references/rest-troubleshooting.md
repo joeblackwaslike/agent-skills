@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/troubleshooting-the-rest-api.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "9a51c39fa89e852d08f65ec8681ae02e93110b0276900e373eba18e60b30065a"
+fetched_at: "2026-08-03T07:31:37.157Z"
+sha256: "dd57de0f3be3e5292f5139b84c38e26da2944808dedd25344251b267f7257a03"
 ---
 
 ## Rate limit errors
@@ -62,6 +62,8 @@ For more information about authentication, see [AUTOTITLE](/rest/authentication/
 You should also check for typos in your URL. For example, adding a trailing slash to the endpoint will result in a `404 Not Found`. You can refer to the reference documentation for the endpoint to confirm that you have the correct URL.
 
 Additionally, any path parameters must be URL encoded. For example, any slashes in the parameter value must be replaced with `%2F`. If you don't properly encode any slashes in the parameter name, the endpoint URL will be misinterpreted.
+
+You should also confirm that you are using an HTTP method that the endpoint supports. If you send a request with an HTTP method that the endpoint does not support, you will receive a `404 Not Found` response instead of `405 Method Not Allowed`. For example, sending a `DELETE` request to an endpoint that only supports `GET` will result in a `404 Not Found` response. You can refer to the reference documentation for the endpoint to confirm the supported HTTP method.
 
 ## Missing results
 

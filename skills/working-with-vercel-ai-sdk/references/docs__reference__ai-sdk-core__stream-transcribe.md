@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-transcribe.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "bf773d1da75e589ef24a8617632210a062a2ea41767af862683140d75c294bc2"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "49be4a288a32ec5f098068a6ae0f0c4101e6aa3f1a7ccd837bbc55cb024c73a4"
 ---
 
 # `experimental_streamTranscribe()`
@@ -171,6 +171,7 @@ side of this envelope.
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

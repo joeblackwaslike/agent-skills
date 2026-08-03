@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "2870c21f7ed23cb85cf8de342b9ec3fa3f2c43701a0d44c3ad41a1077271c8f7"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "c44c3c0fd613f8b104e9c461b67f58ce4542d2f740340fc46a51311da7901344"
 ---
 
 > ## Documentation Index
@@ -16,8 +16,8 @@ sha256: "2870c21f7ed23cb85cf8de342b9ec3fa3f2c43701a0d44c3ad41a1077271c8f7"
 
 The Claude Agent SDK supports two distinct input modes for interacting with agents:
 
-* **Streaming Input Mode** (Default & Recommended) - A persistent, interactive session
-* **Single Message Input** - One-shot queries that use session state and resuming
+* **Streaming Input Mode**: a persistent, interactive session
+* **Single Message Input**: one-shot queries that use session state and resuming
 
 This guide explains the differences, benefits, and use cases for each mode to help you choose the right approach for your application.
 

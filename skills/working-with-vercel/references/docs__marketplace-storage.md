@@ -16,8 +16,8 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3ee4c1161f93057e89b4199d9f0902140c213bf5559b6bfd6bce2e523affbc28"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a1d67ddb00d0f9a44b0376ac0ff3977d4bdfe1c177ddd8a85d60d5c82d1cce67"
 ---
 
 # Storage on Vercel Marketplace
@@ -149,7 +149,7 @@ Consider these factors when selecting a storage provider:
 - **Use connection pooling:** In serverless environments, use [connection pooling](/kb/guide/connection-pooling-with-functions) (e.g., built-in pooling or PgBouncer) to manage database connections efficiently.
 - **Implement caching strategies:**
   - [Data Cache](/docs/runtime-cache/data-cache) to cache fetch responses and reduce load
-  - [Edge Config](/docs/edge-config) for low-latency reads of config data
+  - [Global Config](/docs/global-config) for low-latency reads of config data
   - Redis for frequently accessed, periodically changing data
   - CDN caching with [cache headers](/docs/cdn-cache) for static content
 - **Secure your connections:**

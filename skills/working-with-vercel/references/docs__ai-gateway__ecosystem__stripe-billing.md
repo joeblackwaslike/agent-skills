@@ -13,8 +13,8 @@ related:
 summary: Add usage-based billing to your AI application with Stripe and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "2a72810b558a31888a2f6a04f3f9cc9c87ddc58f8da8c62077e6acb2120c6fcd"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "5fe0481c64162481bdac0989a8dfc527e06001fca6cf5cd7550b87de6a5044ca"
 ---
 
 # Stripe Billing
@@ -75,7 +75,7 @@ const gateway = createGateway({
 });
 
 const result = streamText({
-  model: gateway('anthropic/claude-sonnet-4.6'),
+  model: gateway('anthropic/claude-sonnet-5'),
   prompt: 'Explain quantum computing in simple terms.',
 });
 
@@ -96,7 +96,7 @@ const gateway = createGateway({
 });
 
 const result = streamText({
-  model: gateway('openai/gpt-5.5'),
+  model: gateway('openai/gpt-5.6-sol'),
   prompt: 'Summarize how usage-based billing works.',
   headers: {
     'stripe-customer-id': customerId,
@@ -120,7 +120,7 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [{ role: 'user', content: 'Hello!' }],
 });
 
@@ -142,7 +142,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   max_tokens: 1024,
   messages: [{ role: 'user', content: 'Hello!' }],
 });
@@ -166,7 +166,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="anthropic/claude-sonnet-4.6",
+    model="anthropic/claude-sonnet-5",
     messages=[{"role": "user", "content": "Hello!"}],
 )
 
@@ -189,7 +189,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model="anthropic/claude-sonnet-4.6",
+    model="anthropic/claude-sonnet-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello!"}],
 )
@@ -221,12 +221,12 @@ Each successful request emits two meter events to Stripe's `/v2/billing/meter_ev
     "stripe_customer_id": "cus_abc123",
     "value": "1500",
     "token_type": "input",
-    "model": "anthropic/claude-sonnet-4.6"
+    "model": "anthropic/claude-sonnet-5"
   }
 }
 ```
 
-The `model` field uses the AI Gateway canonical model slug (e.g., `openai/gpt-5.5`, `anthropic/claude-sonnet-4.6`).
+The `model` field uses the AI Gateway canonical model slug (e.g., `openai/gpt-5.6-sol`, `anthropic/claude-sonnet-5`).
 
 ## Reliability
 

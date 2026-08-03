@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "e908c76a85a8cbf42fe3043b1b55002b8777a954d2b4600c68920337c1ec66e2"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d5432b20913957eeddaa236f734aaf01ca34523862e96fc70516b71d407d3d0c"
 ---
 
 # Community Providers
@@ -49,6 +49,7 @@ Here are the community providers that implement the Language Model Specification
   - [DeepSeek](/providers/ai-sdk-providers/deepseek)
   - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
   - [Alibaba](/providers/ai-sdk-providers/alibaba)
+  - [MiniMax](/providers/ai-sdk-providers/minimax)
   - [Cerebras](/providers/ai-sdk-providers/cerebras)
   - [Replicate](/providers/ai-sdk-providers/replicate)
   - [Prodia](/providers/ai-sdk-providers/prodia)

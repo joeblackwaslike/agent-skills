@@ -13,8 +13,8 @@ related:
 summary: List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "e6a9672823d7c787cdfddfba8af9b6ba20178c627d6ab94b000cdd9ff05a7568"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "bbc24166337cb113fdfee2d510cff2bf6b9f821cc387c38bec7c95ae0e0360a2"
 ---
 
 # vercel alerts
@@ -125,7 +125,7 @@ vercel alerts --format json
 
 When you use `--format json`, the command returns a `groups` array with the alert group payload from the API.
 
-## Examples
+## List alert examples
 
 List alerts for the linked project:
 
@@ -181,7 +181,7 @@ vercel alerts inspect <groupId>
 | `-p, --project` | Project name or ID to filter by, for example `my-app` or `prj_abc123`. Overrides the auto-detected linked project. |
 | `-a, --all` | Use team-wide scope. Ignores linked project auto-scoping. |
 
-#### Examples
+#### Inspect alert examples
 
 Inspect a group in the linked project:
 
@@ -198,6 +198,18 @@ vercel alerts inspect grp_abc123 --format json
 ### `rules`
 
 Create, list, update, or delete alert notification rules from the terminal. It mirrors the rules surface in the dashboard's **Alerts** settings.
+
+Use `vercel alerts rules --help` to see the rules command tree.
+
+Rule IDs are returned by `rules add` and shown by `rules ls`. Use those IDs with `rules inspect`, `rules update`, and `rules rm`.
+
+| Command | Aliases | Description |
+| --- | --- | --- |
+| `rules ls` | `list` | List alert rules for the current scope. |
+| `rules add` | `create` | Create an alert rule from a JSON body file. |
+| `rules inspect` | `get` | Show one alert rule by ID. |
+| `rules rm` | `remove`, `delete` | Delete an alert rule. |
+| `rules update` | `patch` | Patch an alert rule from a JSON body file. |
 
 #### `rules ls`
 
@@ -218,7 +230,7 @@ vercel alerts rules ls
 | `--type` | Filter by alert rule type. Repeatable and comma-separated, for example `--type custom_alert` or `--type usage_anomaly,error_anomaly`. |
 | `--format` | Output format. Supports `json`. |
 
-##### Examples
+##### List rule examples
 
 ```bash filename="terminal"
 # List rules for the linked project
@@ -227,8 +239,14 @@ vercel alerts rules ls
 # List team-wide rules
 vercel alerts rules ls --all
 
+# List rules for a specific project
+vercel alerts rules ls --project my-app
+
 # List custom alert rules
 vercel alerts rules ls --type custom_alert
+
+# List usage and error anomaly rules
+vercel alerts rules ls --type usage_anomaly,error_anomaly
 
 # JSON output
 vercel alerts rules ls --format json
@@ -252,6 +270,90 @@ vercel alerts rules add --body ./rule.json
 | `-p, --project` | Project name or ID, for example `my-app` or `prj_abc123`. |
 | `-a, --all` | Team-wide. |
 | `--format` | Output format. Supports `json`. |
+
+##### Create rule body examples
+
+Create a JSON file for the rule body, then pass it with `--body`.
+
+In the examples below, replace `team_123` and `prj_123` with your team and project values.
+
+Rule-level filters use OData expressions, as shown in the `projectId` and `filter` fields below.
+
+```json filename="usage-rule.json"
+{
+  "name": "Production usage anomalies",
+  "alertTypes": [{ "type": "usage_anomaly" }],
+  "projectId": "projectId in ('prj_123')",
+  "sensitivityLevel": 3,
+  "autosubscribeOwnersInKnock": true
+}
+```
+
+```bash filename="terminal"
+vercel alerts rules add --body ./usage-rule.json
+```
+
+Create a built-in 4xx error anomaly rule by filtering the `error_anomaly` alert type:
+
+```json filename="4xx-error-rule.json"
+{
+  "name": "Production 4xx error anomalies",
+  "alertTypes": [
+    {
+      "type": "error_anomaly",
+      "filter": "statusGroup eq '4xx'"
+    }
+  ],
+  "projectId": "projectId in ('prj_123')",
+  "sensitivityLevel": 3
+}
+```
+
+```bash filename="terminal"
+vercel alerts rules add --body ./4xx-error-rule.json
+```
+
+Custom alert rules use the raw project ID in `projectId`. The `queryJsonString` value is an escaped JSON string that describes the Observability query.
+
+```json filename="custom-threshold-rule.json"
+{
+  "name": "Checkout error rate",
+  "projectId": "prj_123",
+  "alertTypes": [{ "type": "custom_alert" }],
+  "customAlert": {
+    "queryJsonString": "{\"scope\":{\"type\":\"project\",\"ownerId\":\"team_123\",\"projectIds\":[\"prj_123\"]},\"event\":\"incomingRequest\",\"rollups\":{\"errors\":{\"measure\":\"count\",\"aggregation\":\"sum\",\"filter\":\"httpStatus ge 500\"},\"requests\":{\"measure\":\"count\",\"aggregation\":\"sum\"}},\"granularity\":{\"hours\":1}}",
+    "triggerType": "threshold",
+    "triggerOperator": "gt",
+    "triggerThreshold": 0.05,
+    "formula": { "operator": "divide", "left": "errors", "right": "requests" },
+    "minThreshold": 20
+  }
+}
+```
+
+```bash filename="terminal"
+vercel alerts rules add --body ./custom-threshold-rule.json
+```
+
+Create a custom anomaly rule for route-level edge request volume:
+
+```json filename="custom-anomaly-rule.json"
+{
+  "name": "Edge request volume anomaly",
+  "projectId": "prj_123",
+  "alertTypes": [{ "type": "custom_alert" }],
+  "customAlert": {
+    "queryJsonString": "{\"scope\":{\"type\":\"project\",\"ownerId\":\"team_123\",\"projectIds\":[\"prj_123\"]},\"event\":\"incomingRequest\",\"rollups\":{\"requests\":{\"measure\":\"count\",\"aggregation\":\"sum\"}},\"groupBy\":[\"route\"],\"granularity\":{\"minutes\":5}}",
+    "triggerType": "anomaly",
+    "triggerOperator": "gt",
+    "triggerThreshold": 3
+  }
+}
+```
+
+```bash filename="terminal"
+vercel alerts rules add --body ./custom-anomaly-rule.json
+```
 
 #### `rules inspect`
 
@@ -277,7 +379,7 @@ vercel alerts rules inspect <ruleId>
 | `-a, --all` | Team-wide. |
 | `--format` | Output format. Supports `json`. |
 
-##### Examples
+##### Inspect rule examples
 
 ```bash filename="terminal"
 vercel alerts rules inspect ar_abc123
@@ -309,7 +411,7 @@ vercel alerts rules rm <ruleId>
 | `--format` | Output format. Supports `json`. |
 | `-y, --yes` | Skip the confirmation prompt. |
 
-##### Examples
+##### Delete rule examples
 
 ```bash filename="terminal"
 # Delete with confirmation
@@ -317,6 +419,9 @@ vercel alerts rules rm ar_abc123
 
 # Delete without prompt
 vercel alerts rules rm ar_abc123 --yes
+
+# Delete by using the delete alias
+vercel alerts rules delete ar_abc123 --yes
 ```
 
 #### `rules update`
@@ -343,6 +448,29 @@ vercel alerts rules update <ruleId> --body ./patch.json
 | `-p, --project` | Project name or ID, for example `my-app` or `prj_abc123`. |
 | `-a, --all` | Team-wide. |
 | `--format` | Output format. Supports `json`. |
+
+##### Rename rule examples
+
+Save the fields you want to change in a JSON file:
+
+```json filename="rename-rule.json"
+{
+  "name": "Production usage anomalies - critical",
+  "sensitivityLevel": 4,
+  "autosubscribeOwnersInKnock": false
+}
+```
+
+```bash filename="terminal"
+# Patch a rule
+vercel alerts rules update ar_abc123 --body ./rename-rule.json
+
+# Patch by using the patch alias
+vercel alerts rules patch ar_abc123 --body ./rename-rule.json
+
+# Patch and return JSON
+vercel alerts rules update ar_abc123 --body ./rename-rule.json --format json
+```
 
 ## Related resources
 

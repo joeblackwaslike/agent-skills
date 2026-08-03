@@ -1,21 +1,21 @@
 ---
-title: CLI Reference
+title: Container Registry CLI Reference
 product: vercel
 url: /docs/container-registry/cli-reference
 canonical_url: "https://vercel.com/docs/container-registry/cli-reference"
 last_updated: 2018-10-20
-type: conceptual
+type: reference
 prerequisites:
   - /docs/container-registry
 related:
   - /docs/container-registry
   - /docs/cli
   - /docs/cli/link
-summary: Learn about cli reference on Vercel.
+summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "45e18120d037a02f66321eba6d33f96bb6f831fe0fd6bc7224a05fccca014080"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "131b62dbd0afbce866e5eece65438aeb057a0e3c19d3b58d2118f9af19ff4bb0"
 ---
 
 # Container Registry CLI Reference

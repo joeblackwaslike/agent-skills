@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "b241333f1a56d61581c121e10f27d07532e0bac2c4a1957c084abccba46c2e31"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d6a14b435b25e4898b7458540238e74fd202440ca79f5e107f6466a1f335d568"
 ---
 
 # AI SDK Workflow
@@ -36,6 +36,7 @@ sha256: "b241333f1a56d61581c121e10f27d07532e0bac2c4a1957c084abccba46c2e31"
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
   - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+  - [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
@@ -138,6 +139,7 @@ sha256: "b241333f1a56d61581c121e10f27d07532e0bac2c4a1957c084abccba46c2e31"
   - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
   - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
   - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+  - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
   - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
   - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
   - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

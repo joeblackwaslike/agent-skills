@@ -3,7 +3,7 @@ title: submit-billing-data
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/submit-billing-data
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-billing-data"
-last_updated: 2026-07-27
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about submit-billing-data on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-billing-data.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "e61dc54b733f5ba39cd64ab7752c8b292de677bb9d7e91e44f30c748e20feb81"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b43d5f7bd274082cb5bac683416a61d8cfa5518362fb94f5aad85a147be1e81f"
 ---
 
 # Submit Billing Data

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/devtools.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "7383d865d2e2ddc2c496f0ca0727892d0ec46906fa9bd86f26c321e39bcf9db7"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "29943035561b5e97e6358592fb1b3eae79ab419caef247577bb323755eec83ca"
 ---
 
 # DevTools
@@ -106,9 +106,55 @@ the workspace.
 DevTools captures the following information from your AI SDK calls:
 
 - **Input parameters and prompts**: View the complete input sent to your LLM
-- **Output content and tool calls**: Inspect generated text and tool invocations
+- **Output content and tool calls**: Inspect generated text, tool invocations, and tool results
+- **Media previews**: View images, audio, and video included in prompts, tool inputs, and tool outputs
 - **Token usage and timing**: Monitor resource consumption and performance
 - **Raw provider data**: Access provider request and response payloads when body retention is enabled
+
+### Media previews
+
+DevTools recognizes current `file` content parts as well as the deprecated
+`image-*`, `file-*`, and `media` tool-result aliases. Inline image, audio, and
+video data is previewed directly, while the captured JSON shape and metadata
+remain available for inspection. The viewer displays at most 8 previews per
+value, traverses at most 12 nested levels, and embeds inline previews up to 5
+MiB. Longer JSON strings are truncated in the viewer to avoid duplicating large
+base64 payloads. Binary values in recognized media-bearing fields are persisted
+as base64 so they remain previewable; unrelated binary values retain their
+normal JSON representation.
+
+For example, a tool can return media through `toModelOutput`:
+
+```ts
+import { tool } from 'ai';
+import { z } from 'zod';
+
+const captureScreenshot = tool({
+  inputSchema: z.object({}),
+  execute: async () => ({
+    base64: await captureScreenshotAsBase64(),
+  }),
+  toModelOutput: ({ output }) => ({
+    type: 'content',
+    value: [
+      {
+        type: 'file',
+        filename: 'screenshot.png',
+        mediaType: 'image/png',
+        data: { type: 'data', data: output.base64 },
+      },
+    ],
+  }),
+});
+```
+
+Remote `http` and `https` media is not loaded automatically. Select **Load
+preview** in the viewer to fetch it with anonymous CORS and no referrer.
+Cross-origin browser credentials are omitted, but same-origin browser
+credentials may still be included by the browser. URLs containing embedded
+usernames or passwords are rejected. Unsupported media, provider references,
+malformed values, unsafe URL schemes, and inline values over the preview limit
+retain their JSON and metadata fallback without an embedded preview.
 
 Telemetry is enabled automatically, but AI SDK 7 excludes raw request and response bodies from step results by default. To make them available to DevTools for `generateText`, enable body retention on the call:
 
@@ -165,6 +211,7 @@ DevTools stores all AI interactions locally in plain text files, including:
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -173,6 +220,7 @@ DevTools stores all AI interactions locally in plain text files, including:
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

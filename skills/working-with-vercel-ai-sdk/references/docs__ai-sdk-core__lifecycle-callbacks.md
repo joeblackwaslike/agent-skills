@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "d989061659c0e9d523dee0b6a6ba7db1d6a45985e96fcbfb9212dbfd3701e425"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "202beb83e4e1c2572cb807247bcc2c3dd3aa318016039bac17e2f32e02f1c1bc"
 ---
 
 # Lifecycle Callbacks
@@ -654,7 +654,7 @@ Called after the provider response has been normalized and parsed, before local 
     {
       name: 'modelId',
       type: 'string',
-      description: 'Model identifier for this model call.',
+      description: 'Provider-returned model identifier for this model call.',
     },
     {
       name: 'finishReason',
@@ -1146,6 +1146,7 @@ For `embed`, `value` is a single string. For `embedMany`, `value` is an array of
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -1154,6 +1155,7 @@ For `embed`, `value` is a single string. For `embedMany`, `value` is an array of
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

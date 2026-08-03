@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "3310609a8b07408fe3767dcd199d90f04ef6aadb4ae6601a076f9e50e50d9df0"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "ec6625ea6efe703785fe980b9ccb3af41f6fd29f1128278b21e06b215399d5d4"
 ---
 
 # Gladia Provider
@@ -309,6 +309,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/pulls"
-fetched_at: "2026-07-20T06:52:02.847Z"
-sha256: "8fc9039055bd82b4a8041fc5d767b81207251f48b18a0f5ec08642318fc91b84"
+fetched_at: "2026-08-03T07:31:37.157Z"
+sha256: "0263331967226e12594230015891abc7d76a272eddc0297c832a0d02f23463d7"
 ---
 
 # REST API endpoints for pull requests
@@ -1225,6 +1225,269 @@ curl -L \
 * `sha`: required, string
 * `merged`: required, boolean
 * `message`: required, string
+
+## Merge a pull request asynchronously
+
+```
+PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge-async
+```
+
+Merges a pull request into the base branch in the background. Merging in this way allows certain types of errors to be retried, and avoids the risk of timeouts for particularly complex merges.
+This is the required method for merging stacked PRs, but also supports unstacked PRs. When using this endpoint to merge a stacked pull request, all pull requests in the stack up to and including the requested PR will be merged into the base branch.
+The response includes a UUID that can be used to fetch the result of the merge. If another asynchronous merge request has already been made for this pull request, the UUID of that request will be returned instead with a 409 response status to indicate that the merge options may be different from those that were requested. If there isn't an existing asynchronous merge request, a 202 response status is used.
+If the pull request is already merged, the merge commit OID will be returned immediately with a 200 status.
+If the pull request cannot be merged (e.g. because it is closed, or still a draft) this result will be returned immediately with a 400 response status. Branch protection rules and repository rules are not run at this stage, only basic pull request state checks are performed.
+
+### Parameters
+
+#### Headers
+
+* **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+* **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+* **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+* **`pull_number`** (integer) (required)
+  The number that identifies the pull request.
+
+#### Body parameters
+
+* **`commit_title`** (string)
+  Title for the automatic commit message.
+
+* **`commit_message`** (string)
+  Extra detail to append to automatic commit message.
+
+* **`sha`** (string)
+  SHA that pull request head must match to allow merge. If not provided, the current head of the PR at the time of the request will be used; if the PR is pushed in between the merge being requested and being executed, the merge will be cancelled.
+
+* **`merge_method`** (string)
+  The merge method to use.
+  Can be one of: `merge`, `squash`, `rebase`
+
+* **`merge_action`** (string)
+  The action that will be taken to merge the pull request. direct\_merge merges the pull request directly without using a merge queue; merge\_queue adds the pull request to a merge queue; default selects the most appropriate option.
+  Can be one of: `default`, `direct_merge`, `merge_queue`
+
+### HTTP response status codes
+
+* **200** - if the pull request was already merged, or is already in a merge queue
+
+* **202** - if the merge request was accepted and will run in the background
+
+* **400** - if the pull request is not ready to be merged, e.g. because it is closed
+
+* **403** - Forbidden
+
+* **404** - Resource not found
+
+* **409** - if there is an existing merge request already enqueued for this pull request
+
+* **422** - Validation failed, or the endpoint has been spammed.
+
+### Code examples
+
+#### Example 1: Status Code 200
+
+**Request:**
+
+```curl
+curl -L \
+  -X PUT \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/merge-async \
+  -d '{
+  "commit_title": "Fix race condition",
+  "commit_message": "Avoids a race by trying to read the file and handling the exception if it does not exist.",
+  "sha": "6358cd125586d9def8c3e5943f23506202da81cc",
+  "merge_method": "squash",
+  "merge_action": "default"
+}'
+```
+
+**Response schema (Status: 200):**
+
+* `status`: required, string, enum: `pending`, `merged`, `enqueued`, `failed`
+* `details`: required, one of:
+  * **object**
+    * `message`: required, string
+    * `uuid`: required, string
+    * `merge_method`: required, string, enum: `default`, `merge`, `squash`, `rebase`
+    * `merge_action`: required, string, enum: `default`, `merge_queue`, `direct_merge`
+    * `expected_head_sha`: required, string
+  * **object**
+    * `message`: required, string
+  * **object**
+    * `message`: required, string
+    * `sha`: required, string
+
+#### Example 2: Status Code 200
+
+**Request:**
+
+```curl
+curl -L \
+  -X PUT \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/merge-async \
+  -d '{
+  "commit_title": "Fix race condition",
+  "commit_message": "Avoids a race by trying to read the file and handling the exception if it does not exist.",
+  "sha": "6358cd125586d9def8c3e5943f23506202da81cc",
+  "merge_method": "squash",
+  "merge_action": "default"
+}'
+```
+
+**Response schema (Status: 200):**
+
+* `status`: required, string, enum: `pending`, `merged`, `enqueued`, `failed`
+* `details`: required, one of:
+  * **object**
+    * `message`: required, string
+    * `uuid`: required, string
+    * `merge_method`: required, string, enum: `default`, `merge`, `squash`, `rebase`
+    * `merge_action`: required, string, enum: `default`, `merge_queue`, `direct_merge`
+    * `expected_head_sha`: required, string
+  * **object**
+    * `message`: required, string
+  * **object**
+    * `message`: required, string
+    * `sha`: required, string
+
+#### Example 3: Status Code 202
+
+**Request:**
+
+```curl
+curl -L \
+  -X PUT \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/merge-async \
+  -d '{
+  "commit_title": "Fix race condition",
+  "commit_message": "Avoids a race by trying to read the file and handling the exception if it does not exist.",
+  "sha": "6358cd125586d9def8c3e5943f23506202da81cc",
+  "merge_method": "squash",
+  "merge_action": "default"
+}'
+```
+
+**Response schema (Status: 202):**
+
+* `status`: required, string, enum: `pending`, `merged`, `enqueued`, `failed`
+* `details`: required, one of:
+  * **object**
+    * `message`: required, string
+    * `uuid`: required, string
+    * `merge_method`: required, string, enum: `default`, `merge`, `squash`, `rebase`
+    * `merge_action`: required, string, enum: `default`, `merge_queue`, `direct_merge`
+    * `expected_head_sha`: required, string
+  * **object**
+    * `message`: required, string
+  * **object**
+    * `message`: required, string
+    * `sha`: required, string
+
+## Get the result of an asynchronous merge
+
+```
+GET /repos/{owner}/{repo}/pulls/{pull_number}/merge-async/{uuid}
+```
+
+Fetches the current result of an asynchronous merge request, identified by the UUID that was returned when the merge was requested.
+While the merge is still queued, the response includes the UUID, merge method, and expected head SHA of the request. Once the merge has completed, the response reports whether it was merged, including the merge commit OID on success or a message describing why it could not be merged on failure.
+The result of an asynchronous merge request is retained for 24 hours after its most recent update. After this window the request expires and this endpoint returns a 404 response for its UUID.
+
+### Parameters
+
+#### Headers
+
+* **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+* **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+* **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+* **`pull_number`** (integer) (required)
+  The number that identifies the pull request.
+
+* **`uuid`** (string) (required)
+  The UUID of the asynchronous merge request, as returned when the merge was requested.
+
+### HTTP response status codes
+
+* **200** - the current result of the asynchronous merge request
+
+* **403** - Forbidden
+
+* **404** - Resource not found
+
+### Code examples
+
+#### Example 1: Status Code 200
+
+**Request:**
+
+```curl
+curl -L \
+  -X GET \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/merge-async/UUID
+```
+
+**Response schema (Status: 200):**
+
+Same response schema as [Merge a pull request asynchronously](#merge-a-pull-request-asynchronously).
+
+#### Example 2: Status Code 200
+
+**Request:**
+
+```curl
+curl -L \
+  -X GET \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/merge-async/UUID
+```
+
+**Response schema (Status: 200):**
+
+Same response schema as [Merge a pull request asynchronously](#merge-a-pull-request-asynchronously).
+
+#### Example 3: Status Code 200
+
+**Request:**
+
+```curl
+curl -L \
+  -X GET \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/merge-async/UUID
+```
+
+**Response schema (Status: 200):**
+
+Same response schema as [Merge a pull request asynchronously](#merge-a-pull-request-asynchronously).
+
+#### Example 4: Status Code 200
+
+**Request:**
+
+```curl
+curl -L \
+  -X GET \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/merge-async/UUID
+```
+
+**Response schema (Status: 200):**
+
+Same response schema as [Merge a pull request asynchronously](#merge-a-pull-request-asynchronously).
 
 ## Update a pull request branch
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "6ff0a954234f1a0b07364cf460f0ba921b6a5f51cf0de7858cd7b6cfecd677e2"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "9dd5293f99e5734431d621b125a2894d0e204925514aeb2f65c812ceb420a41f"
 ---
 
 # AI SDK Harnesses
@@ -92,6 +92,7 @@ tools, UI, and terminal usage.
   - [DeepSeek](/providers/ai-sdk-providers/deepseek)
   - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
   - [Alibaba](/providers/ai-sdk-providers/alibaba)
+  - [MiniMax](/providers/ai-sdk-providers/minimax)
   - [Cerebras](/providers/ai-sdk-providers/cerebras)
   - [Replicate](/providers/ai-sdk-providers/replicate)
   - [Prodia](/providers/ai-sdk-providers/prodia)

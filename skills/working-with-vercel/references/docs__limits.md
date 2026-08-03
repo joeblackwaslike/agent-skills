@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "d5a084f68a04a06d9908509c446fadf5ade621f20b677c0e18784adf93e40ecc"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "57cf5d4fb7b120d438f6416dca6a4d09c98e1bddc67e3c4c5b9d3d47738ae356"
 ---
 
 # Limits
@@ -67,8 +67,8 @@ Pro includes a credit that you can use across billable resources and a pay-as-yo
 | [Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | Starting at $0.0106 per GB-hr | N/A |
 | [Build CPU Minutes](/docs/builds/managing-builds) | Starting at $0.0035 per CPU Minute | N/A |
 | [Edge Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour |
-| [Edge Config Reads](/docs/edge-config/using-edge-config) | $0.003 per 1K reads | N/A |
-| [Edge Config Writes](/docs/edge-config/using-edge-config) | $10 per 1K writes | N/A |
+| [Global Config Reads](/docs/global-config/using-global-config) | $3.00 per 1,000,000 reads | N/A |
+| [Global Config Writes](/docs/global-config/using-global-config) | $10 per 1K writes | N/A |
 | [Web Analytics Events](/docs/analytics/limits-and-pricing#what-is-an-event-in-vercel-web-analytics) | $0.03 | N/A |
 | [Image Optimization Transformations](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.05 per 1K transformations | N/A |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.40 per 1M reads | N/A |
@@ -525,17 +525,16 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Check runs retrieval per minute. | 500 | 60 | `owner` |
 | State retrieval per minute. | 500 | 60 | `user` |
 | Deployment integrations skip action. | 200 | 60 | `user` |
-| Edge Config writes per day (Paid). | 480 | 86400 | `owner` |
-| Edge Config writes per month (Free). | 250 | 2592000 | `owner` |
-| Edge Config token changes per day. | 500 | 86400 | `owner` |
-| Edge Config deletions per 5 minutes. | 60 | 300 | `owner` |
-| Edge Configs reads per minute. | 500 | 60 | `owner` |
-| Edge Config reads per minute. | 500 | 60 | `owner` |
-| Edge Config Items reads per minute. | 20 | 60 | `owner` |
-| Edge Config schema reads per minute. | 500 | 60 | `owner` |
-| Edge Config schema updates per minute. | 60 | 60 | `owner` |
-| Edge Config backup queries per minute. | 100 | 60 | `owner` |
-| Edge Config backup retrievals per minute. | 60 | 60 | `owner` |
+| Global Config writes per hour (Paid). | 100 | 3600 | `owner` |
+| Global Config writes per month (Free). | 250 | 2592000 | `owner` |
+| Global Config token changes per day. | 500 | 86400 | `owner` |
+| Global Config deletions per 5 minutes. | 60 | 300 | `owner` |
+| Global Configs reads per minute. | 500 | 60 | `owner` |
+| Global Config reads per minute. | 500 | 60 | `owner` |
+| Global Config schema reads per minute. | 500 | 60 | `owner` |
+| Global Config schema updates per minute. | 60 | 60 | `owner` |
+| Global Config backup queries per minute. | 100 | 60 | `owner` |
+| Global Config backup retrievals per minute. | 60 | 60 | `owner` |
 | Endpoint Verification retrieval per minute. | 100 | 60 | `user` |
 | Secure Compute networks created per hour. | 5 | 3600 | `owner` |
 | Secure Compute networks deleted per hour. | 25 | 3600 | `owner` |
@@ -618,6 +617,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Sandbox control plane requests per minute for Hobby plan. | 1000 | 60 | `owner` |
 | Sandbox control plane requests per minute for Pro plan. | 10000 | 60 | `owner` |
 | Sandbox control plane requests per minute for Enterprise plan. | 100000 | 60 | `owner` |
+| Sandbox, snapshot and drive deletions per second. | 20 | 1 | `owner` |
 | Manual AI code review requests per minute. | 30 | 60 | `owner` |
 | VCR management API requests per minute for Hobby plan. | 100 | 60 | `owner` |
 | VCR management API requests per minute for Pro plan. | 500 | 60 | `owner` |
@@ -626,6 +626,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | VCR registry (Docker) requests per minute for Pro plan. | 5000 | 60 | `owner` |
 | VCR registry (Docker) requests per minute for Enterprise plan. | 10000 | 60 | `owner` |
 | Compliance document downloads per minute. | 30 | 60 | `user` |
+| Compliance bulk (zip) document downloads per minute. | 10 | 60 | `user` |
 | Compliance document list requests per minute. | 120 | 60 | `user` |
 | Compliance item detail requests per minute. | 120 | 60 | `user` |
 

@@ -14,8 +14,8 @@ related:
 summary: Use OpenAI Codex CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "655b454f2cd91351ce0ad277cbb63feba84889e7cc7dc0f2e10393b22b4d934d"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "4847e58a503bfde5c188ccb06c8f13b2a0fd6ba977e69aecff8970c4034e35cd"
 ---
 
 # OpenAI Codex
@@ -48,7 +48,7 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   Open `~/.codex/config.toml` and add the following:
   ```toml filename="~/.codex/config.toml"
   model_provider = "vercel"
-  model = "openai/gpt-5.5"
+  model = "openai/gpt-5.6-sol"
 
   [model_providers.vercel]
   name = "Vercel AI Gateway"
@@ -59,7 +59,7 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   - Sets up a model provider named `vercel` that points to the AI Gateway
   - References your `AI_GATEWAY_API_KEY` environment variable
   - Sets the `vercel` provider as the default for all sessions
-  - Specifies `openai/gpt-5.5` as the default model
+  - Specifies `openai/gpt-5.6-sol` as the default model
 
 - ### Run Codex
   Start Codex:
@@ -80,17 +80,17 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   env_key = "AI_GATEWAY_API_KEY"
   supports_websockets = true
   ```
-  > **💡 Note:** WebSocket streaming is available for OpenAI models such as `openai/gpt-5.5`.
+  > **💡 Note:** WebSocket streaming is available for OpenAI models such as `openai/gpt-5.6-sol`.
   > Other models return a `Model <name> is not available over WebSocket` error,
   > so remove `supports_websockets = true` when switching to a non-OpenAI model.
 
 - ### (Optional) Use a different model
   To use a different model, update the `model` field in your config:
   ```toml filename="~/.codex/config.toml"
-  model = "anthropic/claude-sonnet-4.6"
+  model = "anthropic/claude-sonnet-5"
   # Or try other models:
-  # model = "google/gemini-3.1-flash-lite-preview"
-  # model = "openai/gpt-5.5"
+  # model = "google/gemini-3.5-flash-lite"
+  # model = "openai/gpt-5.6-sol"
   ```
   > **💡 Note:** When using non-OpenAI models through the gateway, you may see warnings about
   > model metadata not being found. These warnings are safe to ignore since the
@@ -102,7 +102,7 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   model = "openai/gpt-5.4-nano"
   ```
   ```toml filename="~/.codex/claude.config.toml"
-  model = "anthropic/claude-sonnet-4.6"
+  model = "anthropic/claude-sonnet-5"
   ```
   Codex loads `~/.codex/config.toml` first, then overlays the profile file, so `model_provider = "vercel"` is inherited from your base config.
 

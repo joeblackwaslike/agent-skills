@@ -17,8 +17,8 @@ related:
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "5734cb554b08510b07d650e8278971eabb0622e45a345235662386f4ecbeb812"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "8ed6dab860eef7433cecc6602e3667e002221441d50996efe1f8cd9f921e3d0c"
 ---
 
 # Native Integration Flows
@@ -134,21 +134,21 @@ Resources imported with `ownership: "linked"` behave differently from resources 
 
 This flow applies to the products in the **Experimentation** category, enabling providers to display [feature flags](/docs/feature-flags) in the Vercel dashboard.
 
-### Experimentation Edge Config Syncing
+### Experimentation Global Config Syncing
 
-This flow applies to integration products in the **Experimentation** category. It enables providers to push the necessary configuration data for resolving flags and experiments into an [Edge Config](/docs/edge-config) on the team's account, ensuring near-instant resolution.
+This flow applies to integration products in the **Experimentation** category. It enables providers to push the necessary configuration data for resolving flags and experiments into a [Global Config](/docs/global-config) on the team's account, ensuring near-instant resolution.
 
-Edge Config Syncing is an optional feature that providers can enable for their integration. Users can opt in by enabling it for their installation in the Vercel Dashboard.
+Global Config Syncing is an optional feature that providers can enable for their integration. Users can opt in by enabling it for their installation in the Vercel Dashboard.
 
 Users can enable this setting either during the integration's installation or later through the installation's settings page. Providers must handle this setting in their [Provision Resource](/docs/integrations/marketplace-api#provision-resource) and [Update Resource](/docs/integrations/create-integration/marketplace-api#update-resource) endpoints.
 
-The presence of `protocolSettings.experimentation.edgeConfigId` in the payload indicates that the user has enabled the setting and expects their Edge Config to be used.
+The presence of `protocolSettings.experimentation.edgeConfigId` in the payload indicates that the user has enabled the setting and expects their Global Config to be used.
 
-Afterward, providers can use the [Edge Config Syncing](/docs/integrations/create-integration/marketplace-api#push-data-into-a-user-provided-edge-config) endpoint to push their data into the user's Edge Config.
+Afterward, providers can use the [Global Config Syncing](/docs/integrations/create-integration/marketplace-api#push-data-into-a-user-provided-edge-config) endpoint to push their data into the user's Global Config.
 
-Once the data is available, users can connect the resource to a Vercel project. Doing so will add an `EXPERIMENTATION_CONFIG` environment variable containing the Edge Config connection string along with the provider's secrets.
+Once the data is available, users can connect the resource to a Vercel project. Doing so will add an `EXPERIMENTATION_CONFIG` environment variable containing the Global Config connection string along with the provider's secrets.
 
-Users can then use the appropriate [adapter provided by the Flags SDK](https://flags-sdk.dev/providers), which will utilize the Edge Config.
+Users can then use the appropriate [adapter provided by the Flags SDK](https://flags-sdk.dev/providers), which will utilize the Global Config.
 
 ## Resources with Claim Deployments
 

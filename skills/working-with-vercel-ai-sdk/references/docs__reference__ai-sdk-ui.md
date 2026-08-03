@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "6119e8d81b063b2d75d53e61fe1a9f40a33794f4769a6c67ca8f07e5f0b094e0"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "a664d4bba6506a9ca2cc8fa75fce35deaa15009d44ccfce56e9686c6324dce0b"
 ---
 
 # AI SDK UI
@@ -109,6 +109,7 @@ Here is a comparison of the supported functions across these frameworks:
   - [rerank](/docs/reference/ai-sdk-core/rerank)
   - [generateImage](/docs/reference/ai-sdk-core/generate-image)
   - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+  - [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
   - [transcribe](/docs/reference/ai-sdk-core/transcribe)
   - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
   - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
@@ -211,6 +212,7 @@ Here is a comparison of the supported functions across these frameworks:
   - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
   - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
   - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+  - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
   - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
   - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
   - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

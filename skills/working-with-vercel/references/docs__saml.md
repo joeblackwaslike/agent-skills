@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "cb237289f504e8805b85266b1259dd971e642d83263172152d6d74b1e14c4831"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "82b8cc61b172c81403a6beb92ebd800e50469413227df8d2197ef506583c2667"
 ---
 
 # SAML Single Sign-On
@@ -29,14 +29,14 @@ Once enabled, all team members will be able to log in or access [Preview](/docs/
 
 For Enterprise customers, you can also automatically manage team member roles and provisioning by setting up [Directory Sync](/docs/directory-sync).
 
-![Image](`/docs-assets/static/docs/concepts/teams/saml-options.png`)
+![Image](`/docs-assets/static/docs/concepts/teams/saml-settings.png`)
 
 ## Configuring SAML SSO
 
 1. To configure SAML SSO for your team, you must be an [owner](/docs/rbac/access-roles/team-level-roles) of the team
 2. From your [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), ensure your team is selected in the team switcher
 3. Open **Settings** in the sidebar and select [**Security & Privacy**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fsecurity\&title=Go+to+Security+settings)
-4. Navigate to the **SAML Single Sign-On** section. Click **Configure** and follow the walkthrough to configure SAML SSO for your team with your identity provider of choice
+4. Navigate to the **Authentication and User Provisioning** section. In the **SAML** row, select **Configure** and follow the walkthrough to configure SAML SSO for your team with your identity provider of choice
 5. As a further step, you may want to [enforce SAML SSO](#enforcing-saml) for your team
 
 > **💡 Note:** Pro teams will first need to purchase the SAML SSO add-on from their [Billing settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23paid-add-ons) before it can be configured.
@@ -46,7 +46,7 @@ For Enterprise customers, you can also automatically manage team member roles an
 For additional security, SAML SSO can be enforced for a team so that all [team members](/docs/rbac/managing-team-members) **cannot access any team information** unless their current session was authenticated with SAML SSO.
 
 1. To enforce SAML SSO for your team, you must be an [owner](/docs/rbac/access-roles/team-level-roles) and currently be authenticated with SAML SSO. This ensures that your configuration is working properly before tightening access to your team information
-2. From your [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), open **Settings** in the sidebar and select [**Security & Privacy**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fsecurity\&title=Go+to+Security+settings). Then go to the **SAML Single Sign-On** section
+2. From your [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), open **Settings** in the sidebar and select [**Security & Privacy**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fsecurity\&title=Go+to+Security+settings). Then go to the **Authentication and User Provisioning** section
 3. Toggle the **Require Team Members to login with SAML** switch to **Enabled**
 
 ![Image](`/docs-assets/static/docs/concepts/teams/saml-enforced.png`)

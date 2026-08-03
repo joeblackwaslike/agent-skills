@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "2deba6892b50c9cb80673e56dfa908d8fb5ad1970412536f377024c5f6fd995f"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "e75f9cfcf6d144a1ddd373ead92e16b695706e58f5d122fab2e97571fb9c2812"
 ---
 
 # AI SDK Core
@@ -28,6 +28,12 @@ sha256: "2deba6892b50c9cb80673e56dfa908d8fb5ad1970412536f377024c5f6fd995f"
       title: 'Tool Calling',
       description: 'Learn how to do tool calling with AI SDK Core.',
       href: '/docs/ai-sdk-core/tools-and-tool-calling',
+    },
+    {
+      title: 'Code Mode',
+      description:
+        'Learn how models can orchestrate tools with sandboxed JavaScript and TypeScript.',
+      href: '/docs/ai-sdk-core/code-mode',
     },
     {
       title: 'Realtime',
@@ -82,6 +88,11 @@ sha256: "2deba6892b50c9cb80673e56dfa908d8fb5ad1970412536f377024c5f6fd995f"
       title: 'Transcription',
       description: 'Learn how to transcribe audio with AI SDK Core.',
       href: '/docs/ai-sdk-core/transcription',
+    },
+    {
+      title: 'Translation',
+      description: 'Learn how to translate speech with AI SDK Core.',
+      href: '/docs/ai-sdk-core/translation',
     },
     {
       title: 'Speech',
@@ -163,6 +174,7 @@ sha256: "2deba6892b50c9cb80673e56dfa908d8fb5ad1970412536f377024c5f6fd995f"
   - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
   - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
   - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+  - [Code Mode](/docs/ai-sdk-core/code-mode)
   - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
   - [Settings](/docs/ai-sdk-core/settings)
   - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -171,6 +183,7 @@ sha256: "2deba6892b50c9cb80673e56dfa908d8fb5ad1970412536f377024c5f6fd995f"
   - [Image Generation](/docs/ai-sdk-core/image-generation)
   - [Realtime](/docs/ai-sdk-core/realtime)
   - [Transcription](/docs/ai-sdk-core/transcription)
+  - [Translation](/docs/ai-sdk-core/translation)
   - [Speech](/docs/ai-sdk-core/speech)
   - [Video Generation](/docs/ai-sdk-core/video-generation)
   - [File Uploads](/docs/ai-sdk-core/file-uploads)
@@ -239,6 +252,7 @@ sha256: "2deba6892b50c9cb80673e56dfa908d8fb5ad1970412536f377024c5f6fd995f"
     - [rerank](/docs/reference/ai-sdk-core/rerank)
     - [generateImage](/docs/reference/ai-sdk-core/generate-image)
     - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+    - [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
     - [transcribe](/docs/reference/ai-sdk-core/transcribe)
     - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
     - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
@@ -341,6 +355,7 @@ sha256: "2deba6892b50c9cb80673e56dfa908d8fb5ad1970412536f377024c5f6fd995f"
     - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
     - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
     - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+    - [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
     - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
     - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
     - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

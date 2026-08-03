@@ -17,8 +17,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "c9c04b8646098a37dcc192146650b7ac527cf142ffd2bbd4e7c1e52750ef431e"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "0b6292a1175fdf225eadda511f4235abba46648caf93f730db599872df61ad48"
 ---
 
 # Custom Reporting
@@ -57,7 +57,7 @@ The AI SDK supports user and tag submission through the gateway provider. See th
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Tell me about San Francisco.',
   providerOptions: {
     gateway: {
@@ -79,7 +79,7 @@ You have two options when using the [Chat Completions API](/docs/ai-gateway/sdks
 
 ```typescript
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [
     {
       role: 'user',
@@ -99,7 +99,7 @@ const completion = await openai.chat.completions.create({
 
 ```python
 completion = client.chat.completions.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     messages=[
         {
             'role': 'user',
@@ -125,7 +125,7 @@ Pass `user` and/or `tags` through `providerOptions` on the [Responses API](/docs
 
 ```typescript
 const response = await openai.responses.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   input: [
     {
       type: 'message',
@@ -146,7 +146,7 @@ const response = await openai.responses.create({
 
 ```python
 response = client.responses.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     input=[
         {
             'type': 'message',
@@ -173,7 +173,7 @@ Pass `user` and/or `tags` through [provider options](/docs/ai-gateway/sdks-and-a
 
 ```typescript
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   max_tokens: 1024,
   messages: [
     {
@@ -194,7 +194,7 @@ const message = await anthropic.messages.create({
 
 ```python
 message = client.messages.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     max_tokens=1024,
     messages=[
         {
@@ -243,7 +243,7 @@ const openai = new OpenAI({
 });
 
 const completion = await openai.chat.completions.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   messages: [{ role: 'user', content: 'Tell me about San Francisco.' }],
 });
 ```
@@ -264,7 +264,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     messages=[{'role': 'user', 'content': 'Tell me about San Francisco.'}],
 )
 ```
@@ -286,7 +286,7 @@ const openai = new OpenAI({
 });
 
 const response = await openai.responses.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   input: 'Tell me about San Francisco.',
 });
 ```
@@ -307,7 +307,7 @@ client = OpenAI(
 )
 
 response = client.responses.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     input='Tell me about San Francisco.',
 )
 ```
@@ -329,7 +329,7 @@ const anthropic = new Anthropic({
 });
 
 const message = await anthropic.messages.create({
-  model: 'anthropic/claude-sonnet-4.6',
+  model: 'anthropic/claude-sonnet-5',
   max_tokens: 1024,
   messages: [{ role: 'user', content: 'Tell me about San Francisco.' }],
 });
@@ -351,7 +351,7 @@ client = Anthropic(
 )
 
 message = client.messages.create(
-    model='anthropic/claude-sonnet-4.6',
+    model='anthropic/claude-sonnet-5',
     max_tokens=1024,
     messages=[{'role': 'user', 'content': 'Tell me about San Francisco.'}],
 )
@@ -371,7 +371,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
     'ai-reporting-user': 'user-12345',
   },
   body: JSON.stringify({
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     input: [
       {
         type: 'message',
@@ -398,7 +398,7 @@ response = requests.post(
         'ai-reporting-user': 'user-12345',
     },
     json={
-        'model': 'anthropic/claude-sonnet-4.6',
+        'model': 'anthropic/claude-sonnet-5',
         'input': [
             {
                 'type': 'message',
@@ -453,7 +453,7 @@ Filters are applied before aggregation. Combine them with any `group_by` value.
 | Parameter             | Type    | Description                                                                                                                      | Example                          |
 | --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | `user_id`             | string  | Filter by a specific user ID                                                                                                     | `user_123`                       |
-| `model`               | string  | Filter by a specific [model](/ai-gateway/models) in `creator/model-name` format                                | `anthropic/claude-sonnet-4.6`    |
+| `model`               | string  | Filter by a specific [model](/ai-gateway/models) in `creator/model-name` format                                | `anthropic/claude-sonnet-5`      |
 | `provider`            | string  | Filter by [provider](/docs/ai-gateway/models-and-providers/provider-options#available-providers)                                 | `openai`                         |
 | `credential_type`     | string  | Filter by credential type                                                                                                        | `byok` or `system`               |
 | `zero_data_retention` | boolean | Filter to Zero Data Retention (ZDR)-requested vs non-ZDR requests                                                                | `true` or `false`                |
@@ -476,7 +476,7 @@ The API returns a JSON object with a `results` array. Each row contains the one 
   "results": [
     {
       "day": "2026-01-01",
-      "model": "anthropic/claude-sonnet-4.6",
+      "model": "anthropic/claude-sonnet-5",
       "provider": "anthropic",
       "user": "user_123",
       "tag": "production",
@@ -559,7 +559,7 @@ import { gateway, streamText } from 'ai';
 
 // 1. Make requests with tags
 const result = streamText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Summarize this quarter's results',
   providerOptions: {
     gateway: {
@@ -597,7 +597,7 @@ When streaming, the generation ID is injected on the first content chunk, so you
 import { gateway, generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Explain quantum entanglement briefly',
 });
 
@@ -617,7 +617,7 @@ console.log(`Completion tokens: ${generation.completionTokens}`);
 import { gateway, streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Explain quantum entanglement briefly',
 });
 
@@ -680,7 +680,7 @@ curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026
 You can combine filters to narrow results:
 
 ```bash
-curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026-01-31&date_part=day&user_id=user_123&model=anthropic/claude-sonnet-4.6&tags=production,api" \
+curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026-01-31&date_part=day&user_id=user_123&model=anthropic/claude-sonnet-5&tags=production,api" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 

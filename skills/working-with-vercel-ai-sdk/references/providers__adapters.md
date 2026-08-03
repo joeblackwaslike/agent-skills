@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "1081401cd346ed403983fcf591fc50ab5e8f5725f21e8ba2a9e09807d5a52926"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "f28c28abf1d3b43cc7d1572dc0751e916bf89c48a3577505e1fa4b6f33d72f01"
 ---
 
 # Adapters
@@ -51,6 +51,7 @@ The following adapters are currently available:
   - [DeepSeek](/providers/ai-sdk-providers/deepseek)
   - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
   - [Alibaba](/providers/ai-sdk-providers/alibaba)
+  - [MiniMax](/providers/ai-sdk-providers/minimax)
   - [Cerebras](/providers/ai-sdk-providers/cerebras)
   - [Replicate](/providers/ai-sdk-providers/replicate)
   - [Prodia](/providers/ai-sdk-providers/prodia)

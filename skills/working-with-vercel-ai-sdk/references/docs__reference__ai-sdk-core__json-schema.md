@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/json-schema.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "81cf112398d0ef8e088bd75cfb5842555c0476633c86965a75cd8c6d4e9da6fd"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d11e84f7d38449c58f2c5293dc86b48555b36b516c952f345d0dd44982c53d0c"
 ---
 
 # `jsonSchema()`
@@ -104,6 +104,7 @@ A JSON schema object that is compatible with the AI SDK.
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

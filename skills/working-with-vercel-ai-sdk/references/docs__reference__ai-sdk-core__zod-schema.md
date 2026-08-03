@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/zod-schema.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "198fed34e89ae6ea131aafce6625cfd239e03a2ff870d13195ab2d815ab2ed9b"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "6fc88e1f72f9b106998707cb7c1fbcfcd3c628f6f91e4e4d42383981b0396cc8"
 ---
 
 # `zodSchema()`
@@ -119,6 +119,7 @@ A Schema object that is compatible with the AI SDK, containing both the JSON sch
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

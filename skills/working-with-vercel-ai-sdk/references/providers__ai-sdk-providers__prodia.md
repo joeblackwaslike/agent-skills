@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "aa9d8aaa2f0fcd3c10eb4391060caad670a984e02d50bf532772b49be2e2b678"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "73458708fb51dfb7890176a193aea95d0485ccc72d70b491ff398af4efe1ca3f"
 ---
 
 # Prodia Provider
@@ -218,6 +218,7 @@ console.log('Elapsed:', metadata?.elapsed);
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

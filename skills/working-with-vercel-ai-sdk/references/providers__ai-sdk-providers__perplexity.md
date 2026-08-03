@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "bae40185ba1d90e1f0586d55056128ae4677747bf56e1dea2ce8710ce6a905ae"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "b2751cdb18772641fa0c272bb22ecb4e92c91d53719f7b20bf9b94a0c61c461d"
 ---
 
 # Perplexity Provider
@@ -192,6 +192,79 @@ respond to questions about it.
   completion docs](https://docs.perplexity.ai/api-reference/chat-completions).
 </Note>
 
+## Embedding Models
+
+You can create models that call the [Perplexity embeddings API](https://docs.perplexity.ai/docs/embeddings/quickstart)
+using the `.embedding()` factory method.
+
+```ts
+import { perplexity } from '@ai-sdk/perplexity';
+import { embed } from 'ai';
+
+const { embedding } = await embed({
+  model: perplexity.embedding('pplx-embed-v1-4b'),
+  value: 'sunny day at the beach',
+});
+```
+
+<Note>
+  Perplexity returns **quantized** embeddings (not floating point). Values are
+  decoded to numbers — signed `int8` values (default) or packed bits per byte.
+  Compare `base64_int8` embeddings with cosine similarity and `base64_binary`
+  embeddings with Hamming distance.
+</Note>
+
+When the API returns a cost breakdown, it is exposed via
+`providerMetadata.perplexity.cost` (`inputCost`, `totalCost`, `currency`):
+
+```ts
+const { embedding, providerMetadata } = await embed({
+  model: perplexity.embedding('pplx-embed-v1-4b'),
+  value: 'sunny day at the beach',
+});
+
+console.log(providerMetadata?.perplexity?.cost);
+// { inputCost: 0.0001, totalCost: 0.0001, currency: 'USD' }
+```
+
+### Provider Options
+
+You can pass provider-specific options via the `providerOptions.perplexity` field:
+
+```ts
+const { embedding } = await embed({
+  model: perplexity.embedding('pplx-embed-v1-4b'),
+  value: 'sunny day at the beach',
+  providerOptions: {
+    perplexity: {
+      // Matryoshka truncation of the output vector (128 up to the model size).
+      dimensions: 512,
+      // Quantized encoding format. Defaults to 'base64_int8'.
+      encodingFormat: 'base64_int8',
+    },
+  },
+});
+```
+
+The following optional provider options are available for embedding models:
+
+- **dimensions** _number_
+
+  The number of dimensions the resulting output embeddings should have.
+  Ranges from 128 up to the model's full size (1024 for `0.6b` models, 2560 for
+  `4b` models).
+
+- **encodingFormat** _'base64_int8' | 'base64_binary'_
+
+  The quantized encoding format returned by the API. Defaults to `base64_int8`.
+
+### Embedding Model Capabilities
+
+| Model                | Dimensions | Max Values Per Call |
+| -------------------- | ---------- | ------------------- |
+| `pplx-embed-v1-0.6b` | 1024       | 512                 |
+| `pplx-embed-v1-4b`   | 2560       | 512                 |
+
 ## Model Capabilities
 
 | Model                 | Image Input | Object Generation | Tool Usage | Tool Streaming |
@@ -242,6 +315,7 @@ respond to questions about it.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

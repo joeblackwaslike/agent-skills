@@ -3,23 +3,23 @@ title: Conductor
 product: vercel
 url: /docs/ai-gateway/coding-agents/conductor
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/conductor"
-last_updated: 2026-04-29
+last_updated: 2026-07-27
 type: integration
 prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/sdks-and-apis/anthropic-compat
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
 summary: Use Conductor with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/conductor.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "32750694b3bcc132fe1c2420e26fd482eaf49775e717ba874d5587cf7201037e"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "8fdf47e8c2fade9cd235a9ce466a760db04348d09844bcee25a61abf3c7c60e8"
 ---
 
 # Conductor
 
-AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-and-apis/anthropic-compat) so you can use [Conductor](https://conductor.build) through a unified gateway.
+AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) so you can use [Conductor](https://conductor.build) through a unified gateway.
 
 [Conductor](https://conductor.build) is a Mac app that lets you run multiple Claude Code agents in parallel, each with an isolated copy of your codebase. You can see what each agent is working on, then review and merge their changes in one place.
 

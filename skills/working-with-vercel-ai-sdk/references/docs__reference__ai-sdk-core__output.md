@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/output.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "c5029ec7c6c2c7e1a9bb3b71c134af706950dd6f7ae6568d21d5ad72759ed66e"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "7772e4d8022dbf1bf9426353eec03c63647c60119b3dc7fbefff29635f1f65ce"
 ---
 
 # `Output`
@@ -352,6 +352,7 @@ try {
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

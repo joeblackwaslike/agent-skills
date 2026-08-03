@@ -11,13 +11,13 @@ related:
   - /docs/pricing/how-does-vercel-calculate-usage-of-resources
   - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
-  - /docs/edge-config/edge-config-limits
+  - /docs/global-config/global-config-limits
   - /docs/analytics/limits-and-pricing
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2a6248bd39703c42dd25e0cea4491be6ac3eb993ab020f36f3fb220fa5df4905"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f51c27d7eeb79a7bba653f7374277ab23d667d4cf8c963edf8b403399f815c87"
 ---
 
 # Pricing on Vercel
@@ -61,12 +61,12 @@ Some resources include an amount of usage your projects can use within your bill
 | Image cache writes | 100K/month | $4.00 - $6.40 per 1M |
 
 
-#### [Edge Config](/docs/edge-config/edge-config-limits)
+#### [Global Config](/docs/global-config/global-config-limits)
 
 | Resource | Pro Price |
 | --- | --- |
-| Edge Config Reads | $3.00 |
-| Edge Config Writes | $5.00 |
+| Global Config Reads (formerly known as Edge Config Reads) | $3.00 |
+| Global Config Writes (formerly known as Edge Config Writes) | $5.00 |
 
 
 #### [Web Analytics](/docs/analytics/limits-and-pricing)

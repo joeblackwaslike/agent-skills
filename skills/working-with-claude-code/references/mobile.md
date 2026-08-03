@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/mobile.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "356cb30546e3cd38167e4a69670c131c2ac9fc301a80751607b24f68189eafb5"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "faa0d27eb171663f1c243fa29a9fbee211d5b00d363b1b97a55c3378bd0b2c98"
 ---
 
 > ## Documentation Index
@@ -58,7 +58,7 @@ Cloud sessions and Remote Control run from the **Code** tab and are covered belo
 
 Claude Code on the web runs tasks on Anthropic-managed cloud infrastructure, so a session continues after you put your phone away. From the Code tab, select a repository and branch, describe the task, and submit it. Sessions persist across devices: a task you start on your laptop is ready to review from your phone, and one you start from your phone is waiting when you're back at your desk.
 
-Open a session in the app to check progress, answer Claude's questions, or steer it in a new direction. You can also tell Claude to [watch a pull request](/docs/en/claude-code-on-the-web#auto-fix-pull-requests) and fix CI failures or review comments as they arrive. To connect GitHub and create your first environment, follow the [web quickstart](/docs/en/web-quickstart), and see [Claude Code on the web](/docs/en/claude-code-on-the-web) for everything cloud sessions can do.
+Open a session in the app to check progress, answer Claude's questions, or steer it in a new direction. You can also tell Claude to [watch a pull request](/docs/en/claude-code-on-the-web#auto-fix-pull-requests) and fix CI failures or review comments as they arrive. To connect GitHub and set up your environment, follow the [web quickstart](/docs/en/web-quickstart), and see [Claude Code on the web](/docs/en/claude-code-on-the-web) for everything cloud sessions can do.
 
 ### Continue a local session with Remote Control
 
@@ -83,7 +83,8 @@ The mobile client covers most of what a session needs, with a few limitations:
 ## Related resources
 
 * [Platforms and integrations](/docs/en/platforms): compare every surface Claude Code runs on
-* [Claude Code on the web](/docs/en/claude-code-on-the-web): how cloud sessions run, network access, and moving work to and from your terminal
+* [Claude Code on the web](/docs/en/claude-code-on-the-web): how cloud sessions run and how to move work to and from your terminal
+* [Configure cloud environments](/docs/en/cloud-environments): network access levels, environment variables, and setup scripts for cloud sessions
 * [Remote Control](/docs/en/remote-control): continue a local session from any device
 * [Sessions from Dispatch](/docs/en/desktop#sessions-from-dispatch): how Dispatch tasks become Code sessions in the Desktop app
 * [Channels](/docs/en/channels): ask Claude something from your phone via Telegram, Discord, or iMessage while the work runs on your machine

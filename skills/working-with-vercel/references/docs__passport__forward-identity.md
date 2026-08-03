@@ -1,19 +1,19 @@
 ---
-title: Forward Identity
+title: Forward Passport identity to another backend
 product: vercel
 url: /docs/passport/forward-identity
 canonical_url: "https://vercel.com/docs/passport/forward-identity"
 last_updated: 2018-10-20
-type: conceptual
+type: how-to
 prerequisites:
   - /docs/passport
 related:
   - /docs/passport/verify-identity
-summary: Learn about forward identity on Vercel.
+summary: Forward a Passport visitor identity to another backend that you operate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/forward-identity.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "4a3a4aa1f0616af83e1185ae0089f7070de3274aa7c91b78e2cfe74b1705741b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "1fe49f28a64ff1a8237b127202b2634a54d9c81f406dda279b426a18e6f118df"
 ---
 
 # Forward Passport identity to another backend

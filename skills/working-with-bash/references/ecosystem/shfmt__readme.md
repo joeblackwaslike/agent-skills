@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "30959f79359077be166b337359c42c7d5c3e7f1b955ba283467723170114ba3e"
+fetched_at: "2026-08-03T07:25:30.079Z"
+sha256: "0366cffeb56a9432d048722a1c1523eb98f3d99ccdcb98782e6120619fe0daec"
 ---
 
 # sh
@@ -133,12 +133,9 @@ The following editor integrations wrap `shfmt`:
 - [intellij-shellscript] - Intellij Jetbrains `shell script` plugin
 - [micro] - Editor with a built-in plugin
 - [neoformat] - (Neo)Vim plugin
-- [shell-format] - VS Code plugin
 - [vscode-shfmt] - VS Code plugin
 - [shfmt.el] - Emacs package
-- [Sublime-Pretty-Shell] - Sublime Text 3 plugin
 - [Trunk] - Universal linter, available as a CLI, VS Code plugin, and GitHub action
-- [vim-shfmt] - Vim plugin
 
 Other noteworthy integrations include:
 
@@ -182,13 +179,10 @@ Other noteworthy integrations include:
 [scoop]: https://github.com/ScoopInstaller/Main/blob/HEAD/bucket/shfmt.json
 [sh-checker]: https://github.com/luizm/action-sh-checker
 [sh-syntax]: https://github.com/un-ts/sh-syntax
-[shell-format]: https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
 [shfmt.el]: https://github.com/purcell/emacs-shfmt/
 [snapcraft]: https://snapcraft.io/shfmt
-[sublime-pretty-shell]: https://github.com/aerobounce/Sublime-Pretty-Shell
 [tesh]: https://github.com/feloy/tesh
 [trunk]: https://trunk.io/check
-[vim-shfmt]: https://github.com/z0mbix/vim-shfmt
 [void]: https://github.com/void-linux/void-packages/blob/HEAD/srcpkgs/shfmt/template
 [vscode-shfmt]: https://marketplace.visualstudio.com/items?itemName=mkhl.shfmt
 [webi]: https://webinstall.dev/shfmt/

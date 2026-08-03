@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/get-started/using-github/github-flow.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "6bd8b640f24c1b4a38709f04590a98af2879d4a8f343e14ae5eb43b5fc1564a3"
+fetched_at: "2026-08-03T07:31:37.157Z"
+sha256: "a95b2ad5df44bd70e5568579c740178838fe0e31ca83e5a8bd5c7369b8892cf1"
 ---
 
 ## Introduction
@@ -10,7 +10,7 @@ sha256: "6bd8b640f24c1b4a38709f04590a98af2879d4a8f343e14ae5eb43b5fc1564a3"
 
 ## Prerequisites
 
-To follow {% data variables.product.prodname_dotcom %} flow, you will need a {% data variables.product.prodname_dotcom %} account and a repository. {% ifversion fpt or ghec %}For information on how to create an account, see [AUTOTITLE](/get-started/start-your-journey/creating-an-account-on-github).{% elsif ghes %}For more information, contact your site administrator.{% endif %} For information on how to create a repository, see [AUTOTITLE](/repositories/creating-and-managing-repositories/quickstart-for-repositories).{% ifversion fpt or ghec %} For information on how to find an existing repository to contribute to, see [AUTOTITLE](/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github).{% endif %}
+To follow {% data variables.product.prodname_dotcom %} flow, you will need a {% data variables.product.prodname_dotcom %} account and a repository. {% ifversion fpt or ghec %}For information on how to create an account, see [AUTOTITLE](/account-and-profile/how-tos/account-management/creating-an-account-on-github).{% elsif ghes %}For more information, contact your site administrator.{% endif %} For information on how to create a repository, see [AUTOTITLE](/repositories/creating-and-managing-repositories/quickstart-for-repositories).{% ifversion fpt or ghec %} For information on how to find an existing repository to contribute to, see [AUTOTITLE](/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github).{% endif %}
 
 ## Following {% data variables.product.prodname_dotcom %} flow
 

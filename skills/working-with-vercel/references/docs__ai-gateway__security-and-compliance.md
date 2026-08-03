@@ -14,8 +14,8 @@ related:
 summary: "AI Gateway data privacy and governance controls: zero data retention, prompt training policies, and provider allowlists."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "270a0264d46b31da3b74e1fc741aa0a8413bd4366400aeb8ea9ced2807963c3e"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b64bbd9345caa25ba717dc8ddf329aff6e499f4d0ff2781d281d2f087793f601"
 ---
 
 # Security and Compliance
@@ -42,7 +42,7 @@ AI Gateway uses zero data retention by default. It permanently deletes your prom
 
 ```typescript
 const result = await streamText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Analyze this sensitive data...',
   providerOptions: {
     gateway: { zeroDataRetention: true },

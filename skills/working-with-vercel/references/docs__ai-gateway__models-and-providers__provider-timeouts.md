@@ -13,8 +13,8 @@ related:
 summary: Configure per-provider timeouts for fast failover when a provider is slow to respond.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "7a6fab792f9085f00db8706782ea84979a23b7aa7e7d02b2bad8fa8ff400aa95"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "c679fdbc008fb857a24a4a983ca33c1cb595f9079b9df80bebdf97ee6ecc6850"
 ---
 
 # Provider Timeouts
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'openai/gpt-5.5',
+    model: 'openai/gpt-5.6-sol',
     prompt,
     providerOptions: {
       gateway: {
@@ -76,7 +76,7 @@ export async function POST(request: Request) {
   const { prompt } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-opus-4.8',
+    model: 'anthropic/claude-opus-5',
     prompt,
     providerOptions: {
       gateway: {
@@ -109,8 +109,8 @@ When a provider times out, the attempt metadata includes `providerTimeout` and `
 ```json
 "modelAttempts": [
   {
-    "modelId": "anthropic:claude-sonnet-4.6",
-    "canonicalSlug": "anthropic/claude-sonnet-4.6",
+    "modelId": "anthropic:claude-sonnet-5",
+    "canonicalSlug": "anthropic/claude-sonnet-5",
     "success": true,
     "providerAttemptCount": 2,
     "providerAttempts": [

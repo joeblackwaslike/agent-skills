@@ -3,7 +3,7 @@ title: Streaming
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses/streaming
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming"
-last_updated: 2026-03-24
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openresponses
@@ -13,15 +13,34 @@ related:
 summary: Stream responses token by token using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d4dcf9dc09093d70ec6ad24b0e8de58fb0a7e6fd95b2afb951f7c051c84758e0"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "2b6f11b22919d96ae22e396d3abc0966a5d57f6e7d89b9d663ac5e2c421b6ced"
 ---
 
 # Streaming
 
 The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports streaming to receive tokens as they're generated instead of waiting for the complete response. Set `stream: true` in your request, then read the response body as a stream of server-sent events. Each event contains a response chunk that you can display incrementally.
 
-#### \['TypeScript'
+#### \['cURL'
+
+```bash filename="stream.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "google/gemini-3.1-pro-preview",
+    "input": [
+      {
+        "type": "message",
+        "role": "user",
+        "content": "Write a haiku about debugging code."
+      }
+    ],
+    "stream": true
+  }'
+```
+
+#### 'TypeScript'
 
 ```typescript filename="stream.ts"
 const apiKey = process.env.AI_GATEWAY_API_KEY;
@@ -47,23 +66,27 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
 
 const reader = response.body.getReader();
 const decoder = new TextDecoder();
+let buffer = '';
 
 while (true) {
   const { done, value } = await reader.read();
   if (done) break;
 
-  const chunk = decoder.decode(value);
-  const lines = chunk.split('\n');
+  buffer += decoder.decode(value, { stream: true });
+
+  // Keep the trailing fragment in the buffer: a read can end mid-line, and
+  // parsing a half-received event throws.
+  const lines = buffer.split('\n');
+  buffer = lines.pop() ?? '';
 
   for (const line of lines) {
-    if (line.startsWith('data:')) {
-      const data = line.substring(6).trim();
-      if (data) {
-        const event = JSON.parse(data);
-        if (event.type === 'response.output_text.delta') {
-          process.stdout.write(event.delta);
-        }
-      }
+    if (!line.startsWith('data:')) continue;
+    const data = line.slice(5).trim();
+    if (!data || data === '[DONE]') continue;
+
+    const event = JSON.parse(data);
+    if (event.type === 'response.output_text.delta') {
+      process.stdout.write(event.delta);
     }
   }
 }

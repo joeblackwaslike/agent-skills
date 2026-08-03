@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/observability/observability-plus
+  - /docs/ai-gateway/observability-and-spend/logs
 summary: Learn how to monitor and debug your AI Gateway requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4aa35f27b08d0fcd84b50227bfc412e24454f17f673c5fe6cc7b5bf6acd4c762"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "34030d7c170d7ae4c2f909672d93f34a48051d05ec9b12fe1f518137fea88346"
 ---
 
 # Observability
@@ -71,9 +72,7 @@ View usage grouped by API key. Use this view to track usage by a specific person
 
 ### Logs
 
-View a detailed log of all requests made to the AI Gateway, including all token types and the cost for each request. You can sort or export the logs for the selected time frame.
-
-![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/overview-observability/requests-log-light.png)
+The overview summarizes traffic. To work with individual requests, open the [Logs](/docs/ai-gateway/observability-and-spend/logs) page, where you can search by request ID, filter by model, provider, or status code, follow requests live, and open one request to see how it was routed. You can also export the filtered list as CSV or JSON.
 
 ## Team scope
 

@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "ffed4d7d1bbe197b284b92f452b946cd5dea2b3754c796945e09f9ae21638984"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "5a45d3e84513b1b3109db73b3d55ff28e9e115b7b7f7da12991deafb9767f51b"
 ---
 
 # Environments
@@ -188,6 +188,27 @@ vercel pull --environment=staging
 # Add environment variables to "staging":
 vercel env add MY_KEY staging
 ```
+
+### Using custom environments with Vercel Connect
+
+You can scope [Vercel Connect](/docs/connect) token access and trigger forwarding to a Custom Environment. This lets a staging or QA deployment use a connector without enabling it in any built-in Connect environment: Production, Preview, or Development.
+
+In the Vercel Dashboard, open a connector's **Projects** section and select the Custom Environment when adding or editing a project link. From the CLI, pass the environment's slug:
+
+```bash
+vercel connect attach slack/acme-slack --environment staging
+```
+
+You can also select the Custom Environment as a trigger destination in the dashboard or with the CLI:
+
+```bash
+vercel connect attach slack/acme-slack --environment staging --triggers \
+  --trigger-environment staging --trigger-path /api/slack-events
+```
+
+The trigger target is added to the connector's project link automatically. For a project with no existing trigger destinations, passing `--environment staging`, as shown above, keeps token access limited to `staging`. Existing trigger destinations remain registered, and the CLI preserves any Custom Environments they require on the project link. Before sending events to a Custom Environment, deploy to it and [assign a domain](/docs/domains/working-with-domains/add-a-domain-to-environment) to the environment. The domain must be verified and serve the environment's latest deployment directly rather than redirect elsewhere.
+
+See [Project links](/docs/connect/concepts/project-links) for token-access configuration and [Triggers](/docs/connect/concepts/triggers) for destination setup and lifecycle behavior.
 
 ### Pricing and limits
 

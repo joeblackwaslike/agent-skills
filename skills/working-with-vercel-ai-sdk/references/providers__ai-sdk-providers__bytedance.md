@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "59400e3271cb3479ff7e32d2769242e06bbb4aa8fce2729b3ce1ad0962e6ee50"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "4ac4dff85cfeb85e1f8371ec996ddab623dd7c7790befa0e613149fe50183a9b"
 ---
 
 # ByteDance Provider
@@ -505,6 +505,7 @@ All models output MP4 video at 24 fps.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

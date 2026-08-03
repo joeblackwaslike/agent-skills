@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-data-content-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "6ca0ccc857014a5638802c142977ae720bf9d4c531817bf5011844650633dd80"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "19485a197a992ecc2814958c5aef4a77c9117aed555feff8510cb45f2eddee95"
 ---
 
 # AI_InvalidDataContentError
@@ -54,6 +54,7 @@ if (InvalidDataContentError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

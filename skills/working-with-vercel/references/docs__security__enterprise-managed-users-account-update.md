@@ -1,21 +1,21 @@
 ---
-title: Hobby team transition
+title: Transition your Hobby team after EMU enrollment
 product: vercel
 url: /docs/security/enterprise-managed-users-account-update
 canonical_url: "https://vercel.com/docs/security/enterprise-managed-users-account-update"
 last_updated: 2018-10-20
-type: conceptual
+type: how-to
 prerequisites:
   - /docs/security
 related:
   - /docs/security/enterprise-managed-users
   - /docs/saml
   - /docs/directory-sync
-summary: Learn about hobby team transition on Vercel.
+summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f894f908a9eb4182e7851cecb165a8b4c5249d49c505743bda1fc18ec144e8cd"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "c3ffc09fe2be7b0f592c26100ba4187f9fffa8458c8b1020d33caa5acfc84a61"
 ---
 
 # Transition your Hobby team after EMU enrollment

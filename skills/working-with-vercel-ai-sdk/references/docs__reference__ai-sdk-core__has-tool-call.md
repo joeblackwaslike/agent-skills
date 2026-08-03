@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/has-tool-call.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "5b6ee773d0542a7f7d43f0369fb8528d307b8092d047d3ce81725d0560c3277e"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8bf050fecf41d87228124a98d3f25b51258db63cf06c105e9f26e782a6d0bcd5"
 ---
 
 # `hasToolCall()`
@@ -148,6 +148,7 @@ const result = await generateText({
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

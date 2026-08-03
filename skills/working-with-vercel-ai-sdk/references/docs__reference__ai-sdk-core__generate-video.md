@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "31dd2b05815fce3dec03f9322dd2d6831c0530347585b84ae183ba1455bf9623"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "8d37c63ca3a564b7130e3d5564eefea72330dcc63353bb5374ee4903b9dbc7fb"
 ---
 
 # `experimental_generateVideo()`
@@ -295,6 +295,7 @@ console.log(videos);
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

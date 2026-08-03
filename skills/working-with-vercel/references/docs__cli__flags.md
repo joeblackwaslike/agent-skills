@@ -3,7 +3,7 @@ title: vercel flags
 product: vercel
 url: /docs/cli/flags
 canonical_url: "https://vercel.com/docs/cli/flags"
-last_updated: 2026-06-25
+last_updated: 2026-07-14
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "06d8fdf44fa3fd1a4aba6672dfdbce2a5e8345e13629ad438d2258bd55d999f3"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "8842b1d0ada955a731f76fd36a5f1bf6d6a5c46457bccb804d3a3b6fdfbce704"
 ---
 
 # vercel flags

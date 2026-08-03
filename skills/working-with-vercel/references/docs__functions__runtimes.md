@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "91f1262fdda2ea83e8397e538674aefedae217c8d678f63b9cd50f4c5393e37a"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "0a9688d9c0c5b4ab54e1d25343a21eeba0ab5e32be4d4711e4d5559c2989f2c7"
 ---
 
 # Runtimes
@@ -147,9 +147,9 @@ Node.js and Edge runtime streaming functions support the [`waitUntil` method](/d
 
 From your function, you can communicate with a choice of [data stores](/docs/storage). To ensure low-latency responses, it's crucial to have compute close to your databases. Always deploy your databases in regions closest to your functions to avoid long network roundtrips. For more information, see our [best practices](/docs/storage#locate-your-data-close-to-your-functions) documentation.
 
-### Edge Config
+### Global Config
 
-An [Edge Config](/docs/edge-config) is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and IP blocking. It enables you to read data at the edge without querying an external database or hitting upstream servers.
+A [Global Config](/docs/global-config) is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and IP blocking. It enables you to read data at the edge without querying an external database or hitting upstream servers.
 
 ### Tracing
 

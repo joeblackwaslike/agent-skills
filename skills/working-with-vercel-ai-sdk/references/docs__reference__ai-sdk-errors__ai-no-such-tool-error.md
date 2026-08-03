@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-tool-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "31b0a79f449272920073e8dbb3ee0d41a64a4dea6d08ac51c7c14e29f8325160"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "08a66c2e480985c312acb49c2bdbdf3422dfe75d7a2cdac19506a92349c5e13c"
 ---
 
 # AI_NoSuchToolError
@@ -54,6 +54,7 @@ if (NoSuchToolError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

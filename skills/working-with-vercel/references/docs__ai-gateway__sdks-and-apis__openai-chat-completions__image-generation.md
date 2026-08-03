@@ -3,7 +3,7 @@ title: Image Generation
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation"
-last_updated: 2026-06-20
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -14,8 +14,8 @@ related:
 summary: Generate images using AI models that support multimodal output through the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "fa94c97a94c348bd97c965d69baebbb3798693e479fdcc8540dbc4953d6dfa39"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "9ec6b599067cc152b7021e4d5ae6094966aeeee3ff81e6e3e9642033726e6c8e"
 ---
 
 # Image Generation
@@ -35,6 +35,28 @@ To enable image generation, include the `modalities` parameter in your request:
 - `modalities` (array): Array of strings specifying the desired output modalities. Use `['text', 'image']` for both text and image generation, or `['image']` for image-only generation.
 
 Example requests
+
+#### cURL
+
+```bash filename="image-generation.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "google/gemini-3.1-flash-image-preview",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Generate a beautiful sunset over mountains and describe the scene."
+      }
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "stream": false
+  }'
+```
 
 #### TypeScript
 
@@ -200,6 +222,28 @@ For streaming requests, images are delivered in delta chunks:
 ### Handling streaming image responses
 
 When processing streaming responses, check for both text content and images in each delta:
+
+#### cURL
+
+```bash filename="image-generation-stream.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "google/gemini-3.1-flash-image-preview",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Generate a sunset image"
+      }
+    ],
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "stream": true
+  }'
+```
 
 #### TypeScript
 

@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8d5413e408f7c2c0a8ba7c467b368c69bcfaae500af31acc1d3a6a8db804e2cb"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "cb437424dbf8ae7363f6aadb0249c9daaac4329e28795f4486d23ef996ef293a"
 ---
 
 # LiteLLM
@@ -66,7 +66,7 @@ with LiteLLM to access various AI models and providers.
   ]
 
   response = litellm.completion(
-      model="vercel_ai_gateway/openai/gpt-5.5",
+      model="vercel_ai_gateway/openai/gpt-5.6-sol",
       messages=messages
   )
 

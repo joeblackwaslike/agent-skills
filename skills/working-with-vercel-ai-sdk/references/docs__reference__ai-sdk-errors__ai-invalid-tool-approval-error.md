@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "a18449810989b694ce7df90f1e956ee872ee2c9408539cd9487750f426dd1ba8"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "5556a966bc4d4edb7ff3131c5180f94fec1f365d4991f7eeeccf0af29ac43a11"
 ---
 
 # AI_InvalidToolApprovalError
@@ -52,6 +52,7 @@ if (InvalidToolApprovalError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

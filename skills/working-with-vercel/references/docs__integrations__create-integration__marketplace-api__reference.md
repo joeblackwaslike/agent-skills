@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-07-27
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "52d3da351af9a404ede38b3e514b1237906e8b22d4ddd2a92c8c5c683a93e3f8"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "e7fddde76998e7ac8af282fce9f0f49fe339d79fe4255ff5412f2358dd38feb7"
 ---
 
 # Vercel Marketplace REST API
@@ -1254,11 +1254,11 @@ One of the provided values in the request query is invalid.
 
 ---
 
-#### Get the data of a user-provided Edge Config
+#### Get the data of a user-provided Global Config
 
-`GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`
+`GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`
 
-**Description:** When the user enabled Edge Config syncing, then this endpoint can be used by the partner to fetch the contents of the Edge Config.
+**Description:** When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
 
 **Parameters:**
 
@@ -1267,7 +1267,7 @@ One of the provided values in the request query is invalid.
 
 **Responses:**
 
-- **200**: The Edge Config data
+- **200**: The Global Config data
   - Content-Type: `application/json`
 - **304**: Success
 - **400**: One of the provided values in the request query is invalid.
@@ -1278,11 +1278,11 @@ One of the provided values in the request query is invalid.
 
 ---
 
-#### Push data into a user-provided Edge Config
+#### Push data into a user-provided Global Config
 
-`PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`
+`PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`
 
-**Description:** When the user enabled Edge Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Edge Config.
+**Description:** When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
 
 **Parameters:**
 
@@ -1297,7 +1297,7 @@ Content-Type: `application/json`
 
 **Responses:**
 
-- **200**: The Edge Config was updated
+- **200**: The Global Config was updated
   - Content-Type: `application/json`
 - **400**: One of the provided values in the request body is invalid.
 One of the provided values in the request query is invalid.
@@ -1310,11 +1310,11 @@ One of the provided values in the request query is invalid.
 
 ---
 
-#### Get the data of a user-provided Edge Config
+#### Get the data of a user-provided Global Config
 
-`HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`
+`HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`
 
-**Description:** When the user enabled Edge Config syncing, then this endpoint can be used by the partner to fetch the contents of the Edge Config.
+**Description:** When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
 
 **Parameters:**
 
@@ -1323,7 +1323,7 @@ One of the provided values in the request query is invalid.
 
 **Responses:**
 
-- **200**: The Edge Config data
+- **200**: The Global Config data
   - Content-Type: `application/json`
 - **304**: Success
 - **400**: One of the provided values in the request query is invalid.

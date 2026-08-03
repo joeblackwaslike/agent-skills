@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "41d17392eb602951e9fabf2619b4f85b73105f64b923bc4b31ee989a4da885d2"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "cf511c14b4d0d98184b8e75ee7bc226182d699641024bf50390024f47493dcf7"
 ---
 
 # `pipeAgentUIStreamToResponse`
@@ -177,6 +177,7 @@ app.post('/chat', async (req, res) => {
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

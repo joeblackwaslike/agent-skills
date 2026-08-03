@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "63ab8f7df4429dd0f4f12be85ce999007639e5c316c48f32f0f9a079a352d997"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "786e42c2d6e4e9ed9aaa365f6d153e3c0ec6b840837f0fd16d8f8f400b2afe79"
 ---
 
 # `streamText()`
@@ -624,6 +624,13 @@ To see `streamText` in action, check out [these examples](#examples).
         "Approval configuration for this call. Pass a `GenericToolApprovalFunction` to handle all tool calls in one callback with `toolCall`, `tools`, `toolsContext`, `messages`, and `runtimeContext`, or pass a per-tool object where each key can be a status (`'not-applicable'`, `'approved'`, `'denied'`, or `'user-approval'`), an object form such as `{ type: 'denied', reason: 'blocked by policy' }`, or a `SingleToolApprovalFunction` that receives the tool input and options `toolCallId`, `messages`, `toolContext`, and `runtimeContext` (same shape as tool execution options without `abortSignal`, with `context` renamed to `toolContext`). The `RUNTIME_CONTEXT` type parameter matches the call's `runtimeContext`. A `GenericToolApprovalFunction` or `SingleToolApprovalFunction` may return `undefined` for the same effect as `'not-applicable'`. `'not-applicable'` is the default execution path and runs the tool without approval metadata. Use `'approved'`, `'denied'`, or their object forms when you want explicit automatic approval request/response parts in the output. Automatic approvals and denials can include a `reason`, which is forwarded to the emitted approval response. This setting takes precedence over a tool's `needsApproval` default.",
     },
     {
+      name: 'experimental_toolCallers',
+      type: 'Experimental_ToolCallers<TOOLS>',
+      isOptional: true,
+      description:
+        "Configures which caller tools may invoke each tool. The callback receives typed references for caller-capable tools in the `tools` set and returns an object keyed by callee tool name. Include `'direct'` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each generation step. Provider caller references are translated to provider-native allowed-caller options. Tools without an entry keep their existing direct tool-calling behavior.",
+    },
+    {
       name: 'experimental_refineToolInput',
       type: 'ToolInputRefinement<TOOLS>',
       isOptional: true,
@@ -642,7 +649,7 @@ To see `streamText` in action, check out [these examples](#examples).
       type: '(options: PrepareStepOptions) => PrepareStepResult<TOOLS> | Promise<PrepareStepResult<TOOLS>>',
       isOptional: true,
       description:
-        'Optional function that you can use to provide different settings for a step. You can modify the model, tool choices, active tools, instructions, input messages, and experimental sandbox for each step.',
+        'Optional function that you can use to provide different settings for a step. You can modify the model, model call settings, tool choices, active tools, instructions, input messages, and experimental sandbox for each step.',
       properties: [
         {
           type: 'PrepareStepFunction<TOOLS>',
@@ -726,6 +733,69 @@ To see `streamText` in action, check out [these examples](#examples).
               isOptional: true,
               description:
                 'Optionally override which LanguageModel instance is used for this step.',
+            },
+            {
+              name: 'maxOutputTokens',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Maximum number of tokens to generate for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'temperature',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Temperature for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'topP',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Nucleus sampling value for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'topK',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Top-K sampling value for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'presencePenalty',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Presence penalty for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'frequencyPenalty',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Frequency penalty for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'stopSequences',
+              type: 'string[]',
+              isOptional: true,
+              description:
+                'Stop sequences for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'seed',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Random sampling seed for this step. Uses the top-level value when omitted or undefined.',
+            },
+            {
+              name: 'reasoning',
+              type: 'LanguageModelV4CallOptions["reasoning"]',
+              isOptional: true,
+              description:
+                'Reasoning effort for this step. Uses the top-level value when omitted or undefined.',
             },
             {
               name: 'toolChoice',
@@ -2328,7 +2398,8 @@ To see `streamText` in action, check out [these examples](#examples).
             {
               name: 'modelId',
               type: 'string',
-              description: 'The specific model identifier for this model call.',
+              description:
+                'The provider-returned model identifier for this model call.',
             },
             {
               name: 'finishReason',
@@ -3211,7 +3282,7 @@ To see `streamText` in action, check out [these examples](#examples).
       name: 'textStream',
       type: 'AsyncIterableStream<string>',
       description:
-        'A text stream that returns only the generated text deltas. You can use it as either an AsyncIterable or a ReadableStream. When an error occurs, the stream will throw the error.',
+        'A text stream that returns only the generated text deltas. You can use it as either an AsyncIterable or a ReadableStream. Error parts are not surfaced in this stream. Use the `onError` callback or `stream` to observe them.',
     },
     {
       name: 'finalStep',
@@ -4194,6 +4265,7 @@ Limits a generation step to the listed tool names. `undefined` means no tool res
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

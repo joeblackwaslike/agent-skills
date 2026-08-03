@@ -11,13 +11,13 @@ related:
   - /docs/flags/flags-explorer/getting-started
   - /docs/flags/observability
   - /docs/flags/flags-sdk-reference
-  - /docs/storage/edge-config
-  - /docs/edge-config/edge-config-integrations/launchdarkly-edge-config
+  - /docs/global-config
+  - /docs/global-config/global-config-integrations/launchdarkly-global-config
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "10e527156c65c900548fe9f5f7a7b2d37b15abc557620bbd35950c8c64d16eeb"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "5222b62ecb9d74f706adb75afd28eabbc2502af41a887fe69990ed3826a75ed6"
 ---
 
 # Marketplace
@@ -32,7 +32,7 @@ You can find popular feature flag and experimentation platforms in the Vercel Ma
 
 ### Native Integrations
 
-Native integrations are purchased through the Marketplace, let you sign in with your Vercel account, show flags directly in the Vercel dashboard, and sync flag values to Edge Config for faster reads.
+Native integrations are purchased through the Marketplace, let you sign in with your Vercel account, show flags directly in the Vercel dashboard, and sync flag values to Global Config for faster reads.
 
 - [Statsig](/marketplace/statsig)
 - [PostHog](/marketplace/posthog)
@@ -42,7 +42,7 @@ Native integrations are purchased through the Marketplace, let you sign in with 
 
 ### External Integrations
 
-External integrations allow syncing feature flags of third-party providers to Edge Config faster reads but are billed through the provider. Feature Flags from external integrations do not appear in the Vercel dashboard.
+External integrations allow syncing feature flags of third-party providers to Global Config faster reads but are billed through the provider. Feature Flags from external integrations do not appear in the Vercel dashboard.
 
 - [LaunchDarkly](/marketplace/launchdarkly)
 
@@ -56,14 +56,14 @@ Once you connect a native integration, all your flags appear in the **Flags** se
 - **Source of truth**: You can view marketplace flags in the Vercel Dashboard, but you manage their configuration in your provider's dashboard to keep it as the source of truth.
 - **Direct editing**: Click any flag to jump directly to your provider's dashboard. You'll be signed in automatically with your Vercel account.
 
-## Edge Config sync
+## Global Config sync
 
-Native integrations and external integrations can sync flag values to [Edge Config](/docs/storage/edge-config) for microsecond reads at the edge. This eliminates the network hop to your provider's API during flag evaluation.
+Native integrations and external integrations can sync flag values to [Global Config](/docs/global-config) for microsecond reads at the edge. This eliminates the network hop to your provider's API during flag evaluation.
 
 See these integration guides for setup instructions:
 
-- [Using Edge Config with LaunchDarkly](/docs/edge-config/edge-config-integrations/launchdarkly-edge-config)
-- [Using Edge Config with Statsig](/docs/edge-config/edge-config-integrations/statsig-edge-config)
+- [Using Global Config with LaunchDarkly](/docs/global-config/global-config-integrations/launchdarkly-global-config)
+- [Using Global Config with Statsig](/docs/global-config/global-config-integrations/statsig-global-config)
 
 ## Platform integration
 

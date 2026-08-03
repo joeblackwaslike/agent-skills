@@ -12,12 +12,12 @@ related:
   - /docs/functions/runtimes/edge
   - /docs/frameworks
   - /docs/regions
-  - /docs/edge-config
+  - /docs/global-config
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "692dc80fb0dc9295298a5730befeae919398805a83d9cd5e72664fc49d824af8"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "a51d3e03f2cfc3137208ea7a8a75d014854d82545ff449cbfe2d595078a0a4a5"
 ---
 
 # Routing Middleware
@@ -78,7 +78,7 @@ Routing Middleware has full support for the [`console`](https://developer.mozill
 
 ## Using a database with Routing Middleware
 
-If your Routing Middleware depends on a database far away from one of [our supported regions](/docs/regions), the overall latency of API requests could be slower than expected, due to network latency while connecting to the database from an edge region. To avoid this issue, use a global database. Vercel has multiple global storage products, including [Edge Config](/docs/edge-config) and [Vercel Blob](/docs/storage/vercel-blob). You can also explore the storage category of the [Vercel Marketplace](/marketplace?category=storage) to learn which option is best for you.
+If your Routing Middleware depends on a database far away from one of [our supported regions](/docs/regions), the overall latency of API requests could be slower than expected, due to network latency while connecting to the database from an edge region. To avoid this issue, use a global database. Vercel has multiple global storage products, including [Global Config](/docs/global-config) and [Vercel Blob](/docs/storage/vercel-blob). You can also explore the storage category of the [Vercel Marketplace](/marketplace?category=storage) to learn which option is best for you.
 
 ## Limits on requests
 

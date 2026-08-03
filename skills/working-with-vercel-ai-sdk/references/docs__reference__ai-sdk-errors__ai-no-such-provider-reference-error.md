@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "0c4b844f67a94c60d4630933e7618987842dda429042051644b4c094978a2d27"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "b850885603be36bdb8e7f02dfdf0423e555d98eb23ab13cc8afe865e9b27a313"
 ---
 
 # AI_NoSuchProviderReferenceError
@@ -55,6 +55,7 @@ if (NoSuchProviderReferenceError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

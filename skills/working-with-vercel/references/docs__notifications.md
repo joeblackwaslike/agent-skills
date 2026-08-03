@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "bf60492c9a92b65558de6761f99d3abcd8f93d00d78ae6905ff9d2ee53c7448b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "03df57fd449f333b7d8905d980032401e861c40a433f5cd73d4cd1060e614aa4"
 ---
 
 # Notifications
@@ -120,8 +120,8 @@ It is *not* possible to disable all notifications for alerts that are critical t
 |                      | Invoice payment failed                                           | Users who can manage billing settings will be notified when they have an [outstanding invoice](/docs/plans/enterprise/billing#why-am-i-overdue).                                                                                                                                                       |                                                                  |
 |                      | Project role changed                                             | You will be sent this when your [role](/docs/rbac/access-roles) has changed                                                                                                                                                                                                                            |                                                                  |
 |                      | User deleted                                                     | You will be sent this when you have chosen to delete their account. This notification is sent by email only.                                                                                                                                                                                           |                                                                  |
-| **Edge Config**      | Size Limit Alerts                                                | Members will be notified when Edge Config size exceeds its limits for the current plan                                                                                                                                                                                                                 |                                                                  |
-|                      | Schema Validation Errors                                         | Members will be notified (at most once per hour) if API updates are rejected by [schema protection](/docs/edge-config/edge-config-dashboard#schema-validation)                                                                                                                                         |                                                                  |
+| **Global Config**      | Size Limit Alerts                                                | Members will be notified when Global Config size exceeds its limits for the current plan                                                                                                                                                                                                                 |                                                                  |
+|                      | Schema Validation Errors                                         | Members will be notified (at most once per hour) if API updates are rejected by [schema protection](/docs/global-config/global-config-dashboard#schema-validation)                                                                                                                                         |                                                                  |
 
 
 ---

@@ -9,15 +9,15 @@ prerequisites:
   - /docs/monorepos
 related:
   - /docs/monorepos/turborepo
-  - /docs/rest-api
+  - /docs/monorepos/remote-caching/external-ci-cd
   - /docs/deployments/configure-a-build
   - /docs/accounts/team-members-and-roles
   - /docs/monorepos/nx
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f6455f075bc6eb172999f81b5790e47f8faa028495c1c0a484d7071eae8b6736"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "1681789362fd139867c7d0e09dfb0c03ea935d50dd756a4d9a74303a0ae05e0e"
 ---
 
 # Remote Caching
@@ -178,12 +178,7 @@ When you run `turbo` commands during a Vercel Build, Remote Caching will be auto
 
 ## Use Remote Caching from external CI/CD
 
-To use Vercel Remote Caching with Turborepo from an external CI/CD system, you can set the following environment variables in your CI/CD system:
-
-- `TURBO_TOKEN`: A [Vercel Access Token](/docs/rest-api#authentication)
-- `TURBO_TEAM`: The slug of the Vercel team to share the artifacts with
-
-When these environment variables are set, Turborepo will use Vercel Remote Caching to store task artifacts.
+You can access the Vercel Remote Cache from external CI/CD using OpenID Connect (OIDC) or a Personal Access Token. See [Use Remote Caching from external CI/CD](/docs/monorepos/remote-caching/external-ci-cd) for step-by-step setup.
 
 ## Clear the Remote Cache
 

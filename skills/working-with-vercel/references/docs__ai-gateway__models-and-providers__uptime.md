@@ -15,8 +15,8 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "980fb6627de378a9c1b1e81473f631436b8b646b6e70bc61ff8ddaf075dffd18"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "607bba5a56fc9d314bfcbbd6a6244457e3b4a26f4e588675400d9fbd6d6c804b"
 ---
 
 # Uptime and Status
@@ -59,18 +59,18 @@ You can query uptime programmatically through the [model endpoints API](/docs/ai
 | `uptime_last_1d`  | Last 1 day      |
 
 ```bash
-curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-4.8/endpoints \
+curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-5/endpoints \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
 ```
 
-Replace `anthropic/claude-opus-4.8` with the model ID you want to inspect, and set `AI_GATEWAY_API_KEY` to a valid [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys).
+Replace `anthropic/claude-opus-5` with the model ID you want to inspect, and set `AI_GATEWAY_API_KEY` to a valid [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys).
 
 The response returns one entry per provider serving the model, each with the three uptime windows:
 
 ```json
 {
   "data": {
-    "id": "anthropic/claude-opus-4.8",
+    "id": "anthropic/claude-opus-5",
     "endpoints": [
       {
         "provider_name": "anthropic",

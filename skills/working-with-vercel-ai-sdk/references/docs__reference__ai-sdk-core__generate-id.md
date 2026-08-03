@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-id.md"
-fetched_at: "2026-07-06T05:38:28.608Z"
-sha256: "26a8d8e0f77355beb059122f21b851871900736763f57ea4be9bf8e4e901c044"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "6a0684ec3aaabbe4a538153bfb29df8d56416c44dad32fde2ea9cd4ee589ef56"
 ---
 
 # `generateId()`
@@ -40,6 +40,7 @@ A string representing the generated ID.
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

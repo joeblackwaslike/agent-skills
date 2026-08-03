@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-load-api-key-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cd63b98e48143184007aa1e7221e2b15a4aa12a2c37e6c8553b47a9f6cbdaa6d"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "201d45820734ad37d784c4f50fb0f206d08b832e8289e52e05766f3a272e88b9"
 ---
 
 # AI_LoadAPIKeyError
@@ -52,6 +52,7 @@ if (LoadAPIKeyError.isInstance(error)) {
 - [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
 - [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
 - [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
+- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
 - [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
 - [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
 - [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)

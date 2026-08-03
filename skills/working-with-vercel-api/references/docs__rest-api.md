@@ -3,7 +3,7 @@ title: Rest API
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-07-27
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about rest api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-07-27T07:38:06.408Z"
-sha256: "01fc70502c25b0b43948b7ee40a27a20b04ad0c879e738d8a3ed0448fc92457a"
+fetched_at: "2026-08-03T07:34:41.098Z"
+sha256: "3953d313eace739685f69d89c1ddf5c10c8eb9292b9aa52dfa953651a77c98fd"
 ---
 
 # Vercel REST API Reference
@@ -40,14 +40,14 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/access-groups/update-an-access-group-project.md) | Update an access group project |
 | **DELETE** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/access-groups/delete-an-access-group-project.md) | Delete an access group project |
 
-## api-ai-gateway
+## ai-gateway
 
 | Method | Endpoint | Description |
 |---|---|---|
-| **GET** | [`/v1/ai-gateway/rules`](/docs/rest-api/api-ai-gateway/list-rules.md) | List rules |
-| **POST** | [`/v1/ai-gateway/rules`](/docs/rest-api/api-ai-gateway/create-rule.md) | Create rule |
-| **PATCH** | [`/v1/ai-gateway/rules`](/docs/rest-api/api-ai-gateway/update-rule.md) | Update rule |
-| **DELETE** | [`/v1/ai-gateway/rules`](/docs/rest-api/api-ai-gateway/delete-rule.md) | Delete rule |
+| **GET** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/list-rules.md) | List rules |
+| **POST** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/create-rule.md) | Create rule |
+| **PATCH** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/update-rule.md) | Update rule |
+| **DELETE** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/delete-rule.md) | Delete rule |
 
 ## artifacts
 
@@ -213,28 +213,28 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/edge-cache/invalidate-by-src-images`](/docs/rest-api/edge-cache/invalidate-by-source-image.md) | Invalidate by source image |
 | **POST** | [`/v1/edge-cache/dangerously-delete-by-src-images`](/docs/rest-api/edge-cache/dangerously-delete-by-source-image.md) | Dangerously delete by source image |
 
-## edge-config
+## global-config
 
 | Method | Endpoint | Description |
 |---|---|---|
-| **GET** | [`/v1/edge-config`](/docs/rest-api/edge-config/get-edge-configs.md) | Get Edge Configs |
-| **POST** | [`/v1/edge-config`](/docs/rest-api/edge-config/create-an-edge-config.md) | Create an Edge Config |
-| **GET** | [`/v1/edge-config/{edgeConfigId}`](/docs/rest-api/edge-config/get-an-edge-config.md) | Get an Edge Config |
-| **PUT** | [`/v1/edge-config/{edgeConfigId}`](/docs/rest-api/edge-config/update-an-edge-config.md) | Update an Edge Config |
-| **DELETE** | [`/v1/edge-config/{edgeConfigId}`](/docs/rest-api/edge-config/delete-an-edge-config.md) | Delete an Edge Config |
-| **GET** | [`/v1/edge-config/{edgeConfigId}/items`](/docs/rest-api/edge-config/get-edge-config-items.md) | Get Edge Config items |
-| **PATCH** | [`/v1/edge-config/{edgeConfigId}/items`](/docs/rest-api/edge-config/update-edge-config-items-in-batch.md) | Update Edge Config items in batch |
-| **GET** | [`/v1/edge-config/{edgeConfigId}/schema`](/docs/rest-api/edge-config/get-edge-config-schema.md) | Get Edge Config schema |
-| **POST** | [`/v1/edge-config/{edgeConfigId}/schema`](/docs/rest-api/edge-config/update-edge-config-schema.md) | Update Edge Config schema |
-| **DELETE** | [`/v1/edge-config/{edgeConfigId}/schema`](/docs/rest-api/edge-config/delete-an-edge-config-s-schema.md) | Delete an Edge Config's schema |
-| **GET** | [`/v1/edge-config/{edgeConfigId}/item/{edgeConfigItemKey}`](/docs/rest-api/edge-config/get-an-edge-config-item.md) | Get an Edge Config item |
-| **GET** | [`/v1/edge-config/{edgeConfigId}/tokens`](/docs/rest-api/edge-config/get-all-tokens-of-an-edge-config.md) | Get all tokens of an Edge Config |
-| **DELETE** | [`/v1/edge-config/{edgeConfigId}/tokens`](/docs/rest-api/edge-config/delete-one-or-more-edge-config-tokens.md) | Delete one or more Edge Config tokens |
-| **GET** | [`/v1/edge-config/{edgeConfigId}/token/{token}`](/docs/rest-api/edge-config/get-edge-config-token-meta-data.md) | Get Edge Config token meta data |
-| **POST** | [`/v1/edge-config/{edgeConfigId}/token`](/docs/rest-api/edge-config/create-an-edge-config-token.md) | Create an Edge Config token |
-| **GET** | [`/v1/edge-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}`](/docs/rest-api/edge-config/get-edge-config-backup.md) | Get Edge Config backup |
-| **POST** | [`/v1/edge-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore`](/docs/rest-api/edge-config/restore-edge-config-backup.md) | Restore Edge Config backup |
-| **GET** | [`/v1/edge-config/{edgeConfigId}/backups`](/docs/rest-api/edge-config/get-edge-config-backups.md) | Get Edge Config backups |
+| **GET** | [`/v1/global-config`](/docs/rest-api/global-config/get-global-configs.md) | Get Global Configs |
+| **POST** | [`/v1/global-config`](/docs/rest-api/global-config/create-a-global-config.md) | Create a Global Config |
+| **GET** | [`/v1/global-config/{edgeConfigId}`](/docs/rest-api/global-config/get-a-global-config.md) | Get a Global Config |
+| **PUT** | [`/v1/global-config/{edgeConfigId}`](/docs/rest-api/global-config/update-a-global-config.md) | Update a Global Config |
+| **DELETE** | [`/v1/global-config/{edgeConfigId}`](/docs/rest-api/global-config/delete-a-global-config.md) | Delete a Global Config |
+| **GET** | [`/v1/global-config/{edgeConfigId}/items`](/docs/rest-api/global-config/get-global-config-items.md) | Get Global Config items |
+| **PATCH** | [`/v1/global-config/{edgeConfigId}/items`](/docs/rest-api/global-config/update-global-config-items-in-batch.md) | Update Global Config items in batch |
+| **GET** | [`/v1/global-config/{edgeConfigId}/schema`](/docs/rest-api/global-config/get-global-config-schema.md) | Get Global Config schema |
+| **POST** | [`/v1/global-config/{edgeConfigId}/schema`](/docs/rest-api/global-config/update-global-config-schema.md) | Update Global Config schema |
+| **DELETE** | [`/v1/global-config/{edgeConfigId}/schema`](/docs/rest-api/global-config/delete-a-global-config-s-schema.md) | Delete a Global Config's schema |
+| **GET** | [`/v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey}`](/docs/rest-api/global-config/get-a-global-config-item.md) | Get a Global Config item |
+| **GET** | [`/v1/global-config/{edgeConfigId}/tokens`](/docs/rest-api/global-config/get-all-tokens-of-a-global-config.md) | Get all tokens of a Global Config |
+| **DELETE** | [`/v1/global-config/{edgeConfigId}/tokens`](/docs/rest-api/global-config/delete-one-or-more-global-config-tokens.md) | Delete one or more Global Config tokens |
+| **GET** | [`/v1/global-config/{edgeConfigId}/token/{token}`](/docs/rest-api/global-config/get-global-config-token-meta-data.md) | Get Global Config token meta data |
+| **POST** | [`/v1/global-config/{edgeConfigId}/token`](/docs/rest-api/global-config/create-a-global-config-token.md) | Create a Global Config token |
+| **GET** | [`/v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}`](/docs/rest-api/global-config/get-global-config-backup.md) | Get Global Config backup |
+| **POST** | [`/v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore`](/docs/rest-api/global-config/restore-global-config-backup.md) | Restore Global Config backup |
+| **GET** | [`/v1/global-config/{edgeConfigId}/backups`](/docs/rest-api/global-config/get-global-config-backups.md) | Get Global Config backups |
 
 ## environment
 
@@ -324,9 +324,9 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items`](/docs/rest-api/marketplace/create-one-or-multiple-experimentation-items.md) | Create one or multiple experimentation items |
 | **PATCH** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}`](/docs/rest-api/marketplace/patch-an-existing-experimentation-item.md) | Patch an existing experimentation item |
 | **DELETE** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}`](/docs/rest-api/marketplace/delete-an-existing-experimentation-item.md) | Delete an existing experimentation item |
-| **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`](/docs/rest-api/marketplace/get-the-data-of-a-user-provided-edge-config.md) | Get the data of a user-provided Edge Config |
-| **PUT** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`](/docs/rest-api/marketplace/push-data-into-a-user-provided-edge-config.md) | Push data into a user-provided Edge Config |
-| **HEAD** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`](/docs/rest-api/marketplace/get-the-data-of-a-user-provided-edge-config-1.md) | Get the data of a user-provided Edge Config |
+| **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config.md) | Get the data of a user-provided Global Config |
+| **PUT** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/rest-api/marketplace/push-data-into-a-user-provided-global-config.md) | Push data into a user-provided Global Config |
+| **HEAD** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config-1.md) | Get the data of a user-provided Global Config |
 
 ## authentication
 
@@ -354,12 +354,12 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/microfrontends/projects/{projectIdOrName}/production-mfe-config`](/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project.md) | Get microfrontends config for a project |
 | **POST** | [`/v1/microfrontends/group`](/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications.md) | Create a microfrontends group with applications |
 
-## api-observability
+## observability
 
 | Method | Endpoint | Description |
 |---|---|---|
-| **GET** | [`/v1/observability/manage/configuration/projects`](/docs/rest-api/api-observability/lists-disabled-observability-plus-projects.md) | Lists disabled Observability Plus projects |
-| **PUT** | [`/v1/observability/manage/configuration/projects/{projectIdOrName}`](/docs/rest-api/api-observability/updates-a-disabled-observability-plus-project-setting.md) | Updates a disabled Observability Plus project setting |
+| **GET** | [`/v1/observability/manage/configuration/projects`](/docs/rest-api/observability/lists-disabled-observability-plus-projects.md) | Lists disabled Observability Plus projects |
+| **PUT** | [`/v1/observability/manage/configuration/projects/{projectIdOrName}`](/docs/rest-api/observability/updates-a-disabled-observability-plus-project-setting.md) | Updates a disabled Observability Plus project setting |
 
 ## projectMembers
 
@@ -468,28 +468,18 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | Method | Endpoint | Description |
 |---|---|---|
 | **POST** | [`/v1/security/attack-mode`](/docs/rest-api/security/update-attack-challenge-mode.md) | Update Attack Challenge mode |
+| **GET** | [`/v1/security/firewall/config`](/docs/rest-api/security/returns-activated-waf-config.md) | Returns activated WAF config |
 | **PUT** | [`/v1/security/firewall/config`](/docs/rest-api/security/put-firewall-configuration.md) | Put Firewall Configuration |
 | **PATCH** | [`/v1/security/firewall/config`](/docs/rest-api/security/update-firewall-configuration.md) | Update Firewall Configuration |
 | **GET** | [`/v1/security/firewall/config/{configVersion}`](/docs/rest-api/security/read-firewall-configuration.md) | Read Firewall Configuration |
+| **DELETE** | [`/v1/security/firewall/config/{configVersion}`](/docs/rest-api/security/returns-activated-waf-config-1.md) | Returns activated WAF config |
+| **POST** | [`/v1/security/firewall/config/{configVersion}/activate`](/docs/rest-api/security/returns-activated-waf-config-2.md) | Returns activated WAF config |
 | **GET** | [`/v1/security/firewall/attack-status`](/docs/rest-api/security/read-active-attack-data.md) | Read active attack data |
 | **GET** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/read-system-bypass.md) | Read System Bypass |
 | **POST** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/create-system-bypass-rule.md) | Create System Bypass Rule |
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
-
-## api-security
-
-| Method | Endpoint | Description |
-|---|---|---|
-| **GET** | [`/v1/security/firewall/config`](/docs/rest-api/api-security/returns-activated-waf-config.md) | Returns activated WAF config |
-| **DELETE** | [`/v1/security/firewall/config/{configVersion}`](/docs/rest-api/api-security/returns-activated-waf-config-1.md) | Returns activated WAF config |
-| **POST** | [`/v1/security/firewall/config/{configVersion}/activate`](/docs/rest-api/api-security/returns-activated-waf-config-2.md) | Returns activated WAF config |
-
-## firewall
-
-| Method | Endpoint | Description |
-|---|---|---|
-| **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/firewall/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
+| **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/security/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
 
 ## teams
 

@@ -11,24 +11,26 @@ related:
   - /docs/ai-gateway/observability-and-spend/observability
   - /docs/ai-gateway/observability-and-spend/custom-reporting
   - /docs/ai-gateway/observability-and-spend/usage
-  - /docs/ai-gateway/observability-and-spend/api-key-budgets
+  - /docs/ai-gateway/observability-and-spend/budgets
+  - /docs/ai-gateway/observability-and-spend/trace-drains
 summary: "Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and per-key spending budgets."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2d9aff91821e87f487e502d4ca7613f6cdf8871850707fe4b65fa26e588c038d"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "367e71cbab17633fec33169709cc4d4d294336f3ae3fe03db670e40b26697727"
 ---
 
 # Observability and Spend
 
-AI Gateway logs every request and gives you the tools to understand and control what you spend. You can monitor latency and token usage in the dashboard, query spend by model, user, or tag, track credit balances, and cap how much each API key can spend with budgets.
+AI Gateway logs every request and gives you the tools to understand and control what you spend. You can monitor latency and token usage in the dashboard, query spend by model, user, or tag, track credit balances, and cap how much your team, a project, or an API key can spend with budgets.
 
 ## What you can do
 
 - **Monitor every request**: Track latency, token counts, and spend in the dashboard with [Observability](/docs/ai-gateway/observability-and-spend/observability)
 - **Query usage data**: Break down costs by model, user, tag, or provider with the [Custom Reporting API](/docs/ai-gateway/observability-and-spend/custom-reporting)
 - **Check credits and lookups**: Track credit balances and look up generation details with the [Usage & Billing API](/docs/ai-gateway/observability-and-spend/usage)
-- **Cap per-key spend**: Set a spending limit on any API key with [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets)
+- **Cap spend**: Set a spending limit for your team, a project, or an API key with [Budgets](/docs/ai-gateway/observability-and-spend/budgets)
+- **Export traces**: Forward an OpenTelemetry trace of every request to your own observability tool with [Trace Drains](/docs/ai-gateway/observability-and-spend/trace-drains)
 
 ## Features overview
 
@@ -37,7 +39,8 @@ AI Gateway logs every request and gives you the tools to understand and control 
 | [Observability](/docs/ai-gateway/observability-and-spend/observability)       | Monitor and debug AI requests           | Request traces, token counts, latency metrics, spend tracking           |
 | [Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting) | Query usage data with flexible grouping | Group by model, user, tag, provider, or credential type; filter by date |
 | [Usage & Billing](/docs/ai-gateway/observability-and-spend/usage)             | Track credits and generations           | Credit balance API, generation lookup, cost tracking                    |
-| [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets)   | Cap spending per API key                | Per-key limits, daily/weekly/monthly refresh, spend tracking            |
+| [Budgets](/docs/ai-gateway/observability-and-spend/budgets)                   | Cap spending by team, project, or key   | Scoped limits, daily/weekly/monthly refresh, spend alerts, defaults     |
+| [Trace Drains](/docs/ai-gateway/observability-and-spend/trace-drains)         | Export request traces via OTLP          | OpenTelemetry traces, provider-attempt spans, per-trace-event billing   |
 
 ## Observability
 
@@ -61,16 +64,16 @@ curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026
 
 Attach `user` and `tags` to your requests to enable per-user and per-tag reporting. See the [Custom Reporting docs](/docs/ai-gateway/observability-and-spend/custom-reporting) for the full API reference.
 
-## API key budgets
+## Budgets
 
-Give any API key a budget to cap how much it can spend. AI Gateway checks the budget before each request and stops further requests once the limit is reached, with optional daily, weekly, or monthly refresh periods. See the [API Key Budgets docs](/docs/ai-gateway/observability-and-spend/api-key-budgets) to set one up.
+Give your team, a single project, or an individual API key a budget to cap how much it can spend. AI Gateway checks the budget before each request and stops further requests once the limit is reached, with optional daily, weekly, or monthly refresh periods. See the [Budgets docs](/docs/ai-gateway/observability-and-spend/budgets) to set one up.
 
 ## Next steps
 
 - [View your observability dashboard](/docs/ai-gateway/observability-and-spend/observability) to monitor usage
 - [Query usage data](/docs/ai-gateway/observability-and-spend/custom-reporting) with the Custom Reporting API
 - [Track credits and generations](/docs/ai-gateway/observability-and-spend/usage) with the Usage & Billing API
-- [Set an API key budget](/docs/ai-gateway/observability-and-spend/api-key-budgets) to cap spending
+- [Set a budget](/docs/ai-gateway/observability-and-spend/budgets) to cap spending
 
 
 ---

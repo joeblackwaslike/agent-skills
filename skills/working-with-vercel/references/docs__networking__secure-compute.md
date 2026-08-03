@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b286a3e9271268cfd07b810d997a1becabb434f7952fecd9eb6f0787fe353b9d"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "d4f2d704084139217c2d935c7896277ffcd728915390ace6a14d816ca2b0c1ae"
 ---
 
 # Secure Compute
@@ -209,13 +209,13 @@ Monitor your usage in the **Team Settings** **Usage** section in the sidebar und
 
 When connected to a Secure Compute network, builds experience up to a 5s delay as they provision a secure build container. When this happens, your build is marked as **Provisioning Container** in the dashboard.
 
-### Vercel Functions limitations
+### Beta enhancements
 
-Projects using Secure Compute do not support the extended max duration beta or large functions beta. See [Vercel Functions limits](/docs/functions/limitations) for current limits and compatibility.
+Most of the features of [Vercel Functions](/docs/functions/limitations) are fully supported on Secure Compute except for the following beta enhancements that are not yet available:
 
-### Container Images
-
-[Container Images for Vercel Functions](/docs/functions/container-images) are not yet supported for projects using Secure Compute.
+- [**Extended max duration beta**](/docs/functions/configuring-functions/duration#extended-max-duration-beta): The standard maximum of 800 seconds applies on Pro and Enterprise plans.
+- [**Large Functions beta**](/docs/functions/limitations#large-functions-beta): The standard bundle size limit of 250 MB applies, with a 500 MB limit for Python.
+- [**Container Images beta**](/docs/functions/container-images): Standard function deployments are unaffected.
 
 ### Max projects per network
 

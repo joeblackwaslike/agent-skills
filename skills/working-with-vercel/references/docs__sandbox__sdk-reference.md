@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "51c44c9b218128173f329f2152f278adde3a967e5e1ad1ded58c7339f99a354d"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "6bc522517ccab1bda05c530c7d87d4e4b1e7bf51d41781e98f829c2e780364fb"
 ---
 
 # JS SDK Reference
@@ -409,9 +409,9 @@ const sandbox = await Sandbox.getOrCreate({
 
 #### `Sandbox.fork()`
 
-`Sandbox.fork()` creates a new sandbox seeded from the current snapshot of an existing one. The new sandbox inherits the source's config; any field you pass in overrides the copied value. If the source has no current snapshot, the fork falls back to a fresh create with the source's `runtime` plus the copied config.
+`Sandbox.fork()` creates a new sandbox seeded from the current snapshot of an existing one. The new sandbox inherits the source's config, including its environment variables. Any field you pass in overrides the copied value. If the source has no current snapshot, the fork falls back to a fresh create with the source's `runtime` plus the copied config.
 
-`env` is **not** copied (encrypted server-side); pass it explicitly to set environment variables on the fork. `runtime` is not accepted as an override — when the source has a snapshot the runtime is inherited from it; otherwise it is copied from the source sandbox.
+Pass `env` to override the copied environment variables. `runtime` is not accepted as an override — when the source has a snapshot the runtime is inherited from it; otherwise it is copied from the source sandbox.
 
 **Returns:** `Promise<Sandbox>`.
 

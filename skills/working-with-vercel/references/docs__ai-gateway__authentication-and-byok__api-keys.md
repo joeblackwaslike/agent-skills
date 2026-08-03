@@ -9,7 +9,7 @@ prerequisites:
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/observability-and-spend/api-key-budgets
+  - /docs/ai-gateway/observability-and-spend/budgets
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/cli
@@ -17,8 +17,8 @@ related:
 summary: Create, view, and delete AI Gateway API keys from the dashboard, CLI, or API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c5c62482534e05ada603cabef2fbd5c092bc17f6149761eb5fbb6efcacb03bad"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "aadb463484f3694b2cc39b95e4b24986e6d33e82deada6f2588f80be4ae5e2fd"
 ---
 
 # API Keys
@@ -29,7 +29,7 @@ API keys authenticate your requests to the AI Gateway. This page covers how to:
 - **View** your keys and their usage
 - **Delete or revoke** a key
 
-You can optionally give any key a **budget** to cap how much it can spend; see [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets). For how to use a key in your code, see [Authentication](/docs/ai-gateway/authentication-and-byok#api-keys).
+You can optionally give any key a **budget** to cap how much it can spend; see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#api-key-budgets). For how to use a key in your code, see [Authentication](/docs/ai-gateway/authentication-and-byok#api-keys).
 
 > **💡 Note:** When a team member leaves your team, Vercel deactivates any API keys they
 > created. If you need authentication that isn't tied to a specific person, use
@@ -76,7 +76,7 @@ curl -X POST "https://api.vercel.com/v1/api-keys?teamId=$VERCEL_TEAM_ID" \
 
 The response includes `apiKeyString` (the secret; save it now) and the key's `id`.
 
-To cap how much a key can spend, add a budget when you create it. See [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets).
+To cap how much a key can spend, add a budget when you create it. See [Budgets](/docs/ai-gateway/observability-and-spend/budgets#set-an-api-key-budget-at-creation).
 
 ## View a key
 
@@ -84,7 +84,7 @@ List your keys from the dashboard, the Vercel CLI, or the Vercel API.
 
 #### Dashboard
 
-The [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys) lists every key with its last-used time. A budgeted key also shows its spend against the limit; see [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets#check-a-budget-and-spend).
+The [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys) lists every key with its last-used time. A budgeted key also shows its spend against the limit; see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#check-an-api-key-budget-and-spend).
 
 #### CLI
 
@@ -103,7 +103,7 @@ curl "https://api.vercel.com/v1/api-keys?teamId=$VERCEL_TEAM_ID&purpose=ai-gatew
 
 ## Edit a key
 
-A key's only editable property is its budget. To add, change, or remove a budget, see [API Key Budgets](/docs/ai-gateway/observability-and-spend/api-key-budgets). To change anything else, such as the name, [delete the key](#delete-a-key) and create a new one.
+A key's only editable property is its budget. To add, change, or remove a budget, see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#add-or-change-an-api-key-budget). To change anything else, such as the name, [delete the key](#delete-a-key) and create a new one.
 
 ## Delete a key
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f068ed2128e37285f9ea8df4feeee5450645f02dab9cf597a92adf63806477ea"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "751c403cff74b2a377e672536004b46a8dcb1c9b5035fbbc6e50a91dabf9babc"
 ---
 
 # Provider & Model Management
@@ -480,6 +480,7 @@ This simplifies provider usage and makes it easier to switch between providers w
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -488,6 +489,7 @@ This simplifies provider usage and makes it easier to switch between providers w
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)

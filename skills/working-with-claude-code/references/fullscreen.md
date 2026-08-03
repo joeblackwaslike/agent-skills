@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/fullscreen.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "7026e72db712a59d7cf0d55138ff3b141eb5b6a8023b9de53d9680ab6fdf772f"
+fetched_at: "2026-08-03T07:26:05.770Z"
+sha256: "73e78b7c2deece7406e93255ab564a19dfa2b423a2b64070a86d7791f4c782d0"
 ---
 
 > ## Documentation Index
@@ -13,7 +13,7 @@ sha256: "7026e72db712a59d7cf0d55138ff3b141eb5b6a8023b9de53d9680ab6fdf772f"
 > Enable a smoother, flicker-free rendering mode with mouse support and stable memory usage in long conversations.
 
 <Note>
-  Fullscreen rendering is an opt-in [research preview](#research-preview). Run `/tui fullscreen` to switch in your current conversation. Behavior may change based on feedback.
+  Fullscreen rendering is a [research preview](#research-preview). If you first used Claude Code on or after May 6, 2026, Claude Code renders fullscreen by default; run `/tui default` to switch back. If you started earlier, you keep the classic renderer; run `/tui fullscreen` to switch in your current conversation. Behavior may change based on feedback.
 </Note>
 
 Fullscreen rendering is an alternative rendering path for the Claude Code CLI that eliminates flicker, keeps memory usage flat in long conversations, and adds mouse support. It draws the interface on the terminal's alternate screen buffer, like `vim` or `htop`, and only renders messages that are currently visible. This reduces the amount of data sent to your terminal on each update.
@@ -186,7 +186,7 @@ Claude Code writes the selection to your system clipboard, and the path it uses 
 * **Linux**: `wl-copy` on Wayland, or `xclip` or `xsel` on X11, whichever is installed. Claude Code writes both the clipboard and the PRIMARY selection, so middle-click paste works.
 * **Windows and WSL**: PowerShell `Set-Clipboard`
 
-Inside tmux it also writes to the tmux paste buffer. Over SSH it falls back to OSC 52 escape sequences. Claude Code prints a toast after each copy telling you which path it used.
+Inside tmux it also writes to the tmux paste buffer. Over SSH it falls back to OSC 52 escape sequences. {/* min-version: 2.1.219 */}Inside GNU screen, Claude Code copies long selections to the clipboard too. Before v2.1.219, if you copied a selection longer than roughly 570 characters, GNU screen printed base64 text into the window instead. Claude Code prints a toast after each copy telling you which path it used.
 
 Some terminals block OSC 52 by default. iTerm2 blocks it until you turn on Settings → General → Selection → Applications in terminal may access clipboard; running [`/terminal-setup`](/docs/en/terminal-config) in iTerm2 enables this for you.
 

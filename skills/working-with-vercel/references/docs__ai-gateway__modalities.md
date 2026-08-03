@@ -16,8 +16,8 @@ related:
 summary: "The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, realtime voice, embeddings,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0d0ab9ebce1463457318dff6ba71f44aae7d2416c03a4af7d1fd83c6f7a8aa0b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "725e1b79d935932247937f21b771d872c384a7de24621245c58400598e8816e1"
 ---
 
 # Modalities
@@ -56,7 +56,7 @@ Generate and stream text from hundreds of models through a single API. Text is t
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6-sol',
   prompt: 'What is the capital of France?',
 });
 ```
@@ -69,7 +69,7 @@ Generate images using AI models through a single API. Requests route to the best
 
 ```typescript
 import { gateway } from '@ai-sdk/gateway';
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 
 const { image } = await generateImage({
   model: gateway.imageModel('openai/gpt-image-2'),

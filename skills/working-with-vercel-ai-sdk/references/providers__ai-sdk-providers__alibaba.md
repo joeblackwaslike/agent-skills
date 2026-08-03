@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "f7ae1d740e79fbbe194c26ff4a83f4f278706e074dc4e6c08e03d48ca56d2c76"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "e7d961e37bebbabe8f6efe47e3819bd595bc7deb7913d34b532531eeb63042ba"
 ---
 
 # Alibaba Provider
@@ -613,6 +613,7 @@ a string if needed.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

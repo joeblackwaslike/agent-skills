@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-07-27T07:36:41.325Z"
-sha256: "4ebfe3f94931cf4f2177bb6f64c2974df7bc213be48f8c90ae6e028b095a6b84"
+fetched_at: "2026-08-03T07:32:05.320Z"
+sha256: "6764894c85eb6605189d037b24d76c89bb1a942a4f8d29f791e6bffc19aff2c6"
 ---
 
 # Language Support
@@ -74,7 +74,8 @@ Some languages require additional installations or setup steps, as noted.
 * **Elm**  
   (requires Elm compiler)
 * **Erlang**  
-  (requires installation of beam and [erlang_ls](https://github.com/erlang-ls/erlang_ls); experimental, might be slow or hang)
+  (requires installation of beam and [erlang_ls](https://github.com/erlang-ls/erlang_ls); experimental, might be slow or hang;
+  note that functions are addressed as `name#arity`, e.g. `create_user#4`, because `/` is reserved as the name path separator)
 * **F#**  
   (requires [.NET v8.0+](https://dotnet.microsoft.com/en-us/download/dotnet); uses FsAutoComplete/Ionide, which is auto-installed; for Homebrew .NET on macOS, set DOTNET_ROOT in your environment)
 * **Fortran**   

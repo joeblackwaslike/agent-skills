@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "42c494e7f1b1bb63179f794cc7a50c1603080960505c3fd05b2bbf2d154e6d33"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "dc5f91b2a63b84d5774c6ee25d0609e2ba22c3461f218abad84e020bb62edf38"
 ---
 
 # `WorkflowAgent`
@@ -135,7 +135,7 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
       type: 'Experimental_SandboxSession',
       isOptional: true,
       description:
-        'Default sandbox session passed to tool execution as `experimental_sandbox` and exposed to `prepareStep`. Per-stream values override this default.',
+        'Default sandbox session passed to tool descriptions and execution as `experimental_sandbox`, and exposed to `prepareStep`. Per-stream values override this default.',
     },
     {
       name: 'prepareStep',
@@ -473,10 +473,16 @@ const result = await agent.stream({
         'A writable stream that receives raw model stream parts in real-time. Convert to UI message chunks at the response boundary using `createModelCallToUIChunkTransform()`.',
     },
     {
+      name: 'instructions',
+      type: 'Instructions',
+      isOptional: true,
+      description: 'Override the agent instructions for this call.',
+    },
+    {
       name: 'system',
       type: 'string',
       isOptional: true,
-      description: 'Override the system prompt for this call.',
+      description: 'Deprecated. Use `instructions` instead.',
     },
     {
       name: 'stopWhen',
@@ -551,7 +557,7 @@ const result = await agent.stream({
       type: 'Experimental_SandboxSession',
       isOptional: true,
       description:
-        'Sandbox session passed to tool execution as `experimental_sandbox` and exposed to `prepareStep`. Overrides the constructor default.',
+        'Sandbox session passed to tool descriptions and execution as `experimental_sandbox`, and exposed to `prepareStep`. Overrides the constructor default.',
     },
     {
       name: 'telemetry',
@@ -577,7 +583,8 @@ const result = await agent.stream({
       name: 'prepareStep',
       type: 'PrepareStepCallback',
       isOptional: true,
-      description: 'Per-call prepareStep override.',
+      description:
+        'Per-call prepareStep override. Receives the initial instructions and messages alongside the current step state.',
     },
     {
       name: 'experimental_onStart',

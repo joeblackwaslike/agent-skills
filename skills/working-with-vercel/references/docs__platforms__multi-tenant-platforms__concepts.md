@@ -13,8 +13,8 @@ related:
 summary: Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "52d898d4b44fd04aa91e4d9cd5601ed424e547e9cd8c2b7bdeec21ed3d7c24c3"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "3a48ebfb2407b1ccc3401137cdbea1ef4be294df422032f1d5eee241e463f629"
 ---
 
 # Multi-Tenant Platform Concepts
@@ -37,14 +37,14 @@ You can identify tenants using three approaches:
 
 **Subdomain-based**: Extract the tenant from the subdomain (`tenant1.yourapp.com`)
 
-```ts filename="middleware.ts"
+```ts filename="proxy.ts"
 const hostname = request.headers.get('host');
 const subdomain = hostname.split('.')[0]; // "tenant1"
 ```
 
 **Custom domain-based**: Map custom domains to tenants (`tenant1.com` → Tenant 1)
 
-```ts filename="middleware.ts"
+```ts filename="proxy.ts"
 // Map custom domain to tenant in database
 const tenant = await db.tenant.findFirst({
   where: { customDomain: hostname },
@@ -53,7 +53,7 @@ const tenant = await db.tenant.findFirst({
 
 **Path-based**: Extract tenant from URL path (`/tenant1/dashboard`)
 
-```ts filename="middleware.ts"
+```ts filename="proxy.ts"
 const pathname = request.nextUrl.pathname;
 const tenantSlug = pathname.split('/')[1]; // "tenant1"
 ```
@@ -70,9 +70,9 @@ const posts = await db.post.findMany({
 });
 ```
 
-**Application-level**: Middleware ensures requests can only access their tenant's data
+**Application-level**: Next.js Proxy ensures requests can only access their tenant's data
 
-**Edge Config**: Store tenant configuration for fast lookups at the edge
+**Global Config**: Store tenant configuration for fast lookups at the edge
 
 ## Domains
 
@@ -117,22 +117,24 @@ For domains already in use on Vercel, ownership verification is required:
 
 ## Routing
 
-### How middleware resolves tenants
+### How Proxy resolves tenants
 
-Next.js middleware runs on every request before your pages render:
+Next.js Proxy runs on every request before your pages render:
 
-```ts filename="middleware.ts"
-export async function middleware(request: NextRequest) {
+```ts filename="proxy.ts"
+export async function proxy(request: NextRequest) {
   const hostname = request.headers.get('host');
 
   // Get tenant from subdomain or custom domain
   const tenant = await resolveTenant(hostname);
 
-  // Add tenant to request headers
-  const response = NextResponse.next();
-  response.headers.set('x-tenant-id', tenant.id);
+  // Forward tenant context to your app on the request headers
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-tenant-id', tenant.id);
 
-  return response;
+  return NextResponse.next({
+    request: { headers: requestHeaders },
+  });
 }
 ```
 
@@ -140,15 +142,15 @@ export async function middleware(request: NextRequest) {
 
 1. User visits `tenant1.yourapp.com`
 2. Request hits Vercel's edge network
-3. Middleware extracts subdomain (`tenant1`)
-4. Middleware looks up tenant in database or Edge Config
-5. Middleware adds tenant context to request headers
+3. Proxy extracts subdomain (`tenant1`)
+4. Proxy looks up tenant in database or Global Config
+5. Proxy adds tenant context to the request headers
 6. Page component reads tenant from headers
 7. Page renders with tenant-specific data
 
 ### Performance considerations
 
-**Edge Config**: Store tenant configuration at the edge for sub-10ms lookups
+**Global Config**: Store tenant configuration at the edge for sub-10ms lookups
 
 ```ts filename="edge-config.ts"
 import { get } from '@vercel/edge-config';
@@ -156,7 +158,7 @@ import { get } from '@vercel/edge-config';
 const tenant = await get(`tenant_${hostname}`);
 ```
 
-**Caching**: Cache tenant lookups in middleware to reduce database queries
+**Caching**: Cache tenant lookups in the proxy to reduce database queries
 
 **Connection pooling**: Use connection pooling for database queries to handle multiple tenants efficiently
 
@@ -176,18 +178,26 @@ Multi-tenant architecture means:
 
 Pass tenant information through your application:
 
-**In middleware**: Set headers
+**In Proxy**: Forward context on the request headers
 
-```ts filename="middleware.ts"
-response.headers.set('x-tenant-id', tenant.id);
+```ts filename="proxy.ts"
+const requestHeaders = new Headers(request.headers);
+requestHeaders.set('x-tenant-id', tenant.id);
+
+return NextResponse.next({
+  request: { headers: requestHeaders },
+});
 ```
+
+Use `NextResponse.next({ request: { headers } })` to send the value to your app. Setting `response.headers` instead sends the header to the browser, where server components can't read it. Delete or overwrite inbound `x-tenant-*` headers on every path through the proxy so clients can't supply tenant context themselves.
 
 **In server components**: Read headers
 
 ```ts filename="server-component.ts"
 import { headers } from 'next/headers';
 
-const tenantId = headers().get('x-tenant-id');
+const headersList = await headers();
+const tenantId = headersList.get('x-tenant-id');
 ```
 
 **In API routes**: Access request headers

@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "7d5fc99559980287b2b472e233759379023e6b67378b849435f8bb86573bf1da"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "c66438b249ddd9bd8854baadcabfeacb37e4ca9bd77cda117b85065b1a7f45c3"
 ---
 
 # Image Generation with AI SDK
@@ -192,7 +192,7 @@ if (imageFiles.length > 0) {
 You can generate images through OpenAI in two ways:
 
 - **Through a multimodal LLM**: [GPT-5 variants](/ai-gateway/models/gpt-5.5) and a few other OpenAI models accept a provider-defined `image_generation` tool alongside regular text prompts. The tool uses an OpenAI image model (for example, `openai/gpt-image-1` or `openai/gpt-image-2`) behind the scenes, and images are returned as tool results in `result.staticToolResults` (for `generateText`) or as `tool-result` events (for `streamText`).
-- **Through the image-only model**: Call `openai/gpt-image-2` directly with `experimental_generateImage`. See [OpenAI GPT Image 2](#openai-gpt-image-2) under image-only models.
+- **Through the image-only model**: Call `openai/gpt-image-2` directly with `generateImage`. See [OpenAI GPT Image 2](#openai-gpt-image-2) under image-only models.
 
 Learn more about the [OpenAI Image Generation Tool](https://ai-sdk.dev/providers/ai-sdk-providers/openai#image-generation-tool) in the AI SDK documentation.
 
@@ -339,14 +339,14 @@ for await (const part of result.fullStream) {
 
 ## Image-only models
 
-These models are specialized for image generation and use the `experimental_generateImage` function.
+These models are specialized for image generation and use the `generateImage` function.
 
 ### OpenAI GPT Image 2
 
-OpenAI's `openai/gpt-image-2` is an image-only model you can call directly with `experimental_generateImage`. This is the same model the OpenAI [image generation tool](#openai-models-with-image-generation-tool) invokes behind the scenes, but calling it directly skips the multimodal LLM and returns images without an intermediate tool call.
+OpenAI's `openai/gpt-image-2` is an image-only model you can call directly with `generateImage`. This is the same model the OpenAI [image generation tool](#openai-models-with-image-generation-tool) invokes behind the scenes, but calling it directly skips the multimodal LLM and returns images without an intermediate tool call.
 
 ```typescript filename="generate-gpt-image-2.ts"
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 
 const result = await generateImage({
   model: 'openai/gpt-image-2',
@@ -364,7 +364,7 @@ Google's Imagen models provide high-quality image generation with fine-grained c
 - `google/imagen-4.0-generate-001`
 
 ```typescript filename="generate-imagen.ts"
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 import 'dotenv/config';
 
 async function main() {
@@ -393,7 +393,7 @@ Black Forest Labs' Flux models offer advanced image generation with support for 
 - `bfl/flux-pro-1.1`
 
 ```typescript filename="generate-bfl.ts"
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 import 'dotenv/config';
 
 async function main() {
@@ -411,21 +411,18 @@ main().catch(console.error);
 
 ### xAI Grok Imagine
 
-xAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios and image editing. Multiple models are available, including but not limited to:
-
-- `xai/grok-imagine-image`
-- `xai/grok-imagine-image-pro`
+xAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios and image editing. Browse the current lineup in the [model list](/ai-gateway/models).
 
 > **💡 Note:** xAI image models do not support the `size` parameter. Use `aspectRatio`
 > instead.
 
 ```typescript filename="generate-xai.ts"
-import { experimental_generateImage as generateImage } from 'ai';
+import { generateImage } from 'ai';
 import 'dotenv/config';
 
 async function main() {
   const result = await generateImage({
-    model: 'xai/grok-imagine-image-pro',
+    model: 'xai/grok-imagine-image',
     prompt: `A serene Japanese garden with a koi pond, stone lanterns, and cherry blossoms in full bloom`,
     aspectRatio: '16:9',
   });

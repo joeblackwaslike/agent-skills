@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b873afee07f2c10e319546cbdc818d15371530101304efdfd242e8059ec1f36b"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "c07ddd0522a425c18b3e2bceff1e8d59b2b173cccdf25785c3d2dc73c0eb05ab"
 ---
 
 # Deepgram Provider
@@ -303,6 +303,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

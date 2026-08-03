@@ -4,17 +4,17 @@ product: vercel
 url: /docs/ai-gateway/models-and-providers/fast-mode
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode"
 last_updated: 2018-10-20
-type: conceptual
+type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/coding-agents/claude-code
-summary: Learn about fast mode on Vercel.
+summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "75ed280c4064306f236b29438dbcc1d1d1d778ce5bc250d9600b192bc3485a92"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "75cf784aa8c3b3b7b541934b554dc460009c49738228042512eb935cba756d93"
 ---
 
 # Fast Mode
@@ -31,7 +31,7 @@ Fast mode is available for a growing set of models. Find the supported fast mode
 
 There are two ways to request fast mode, and they produce the same result:
 
-- `gateway.speed: 'fast'` — a unified option that upgrades the primary model to its fast serving path when one is routable. For example, `anthropic/claude-opus-4.8` with `speed: 'fast'` behaves like calling `anthropic/claude-opus-4.8-fast`, and `moonshotai/kimi-k2.7-code` with `speed: 'fast'` routes to that model's fast slug.
+- `gateway.speed: 'fast'` — a unified option that upgrades the primary model to its fast serving path when one is routable. For example, `anthropic/claude-opus-5` with `speed: 'fast'` behaves like calling `anthropic/claude-opus-5-fast`, and `moonshotai/kimi-k2.7-code` with `speed: 'fast'` routes to that model's fast slug.
 - An explicit fast slug — address the fast variant directly using its fast slug. This is the same as setting `speed: 'fast'` on the base model.
 
 Use the `speed` option when you want one configuration that stays on the base model ID and falls back to standard speed if fast mode is not available. Use an explicit fast slug when you want to name the fast variant directly, such as in a `gateway.models` fallback list.
@@ -44,7 +44,7 @@ Use the `speed` option when you want one configuration that stays on the base mo
 import { generateText } from 'ai';
 
 const { text, providerMetadata } = await generateText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -71,7 +71,7 @@ const client = new OpenAI({
 
 // @ts-expect-error - providerOptions is a gateway extension
 const response = await client.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   messages: [
     {
       role: 'user',
@@ -105,7 +105,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="anthropic/claude-opus-4.8",
+    model="anthropic/claude-opus-5",
     messages=[
         {
             "role": "user",
@@ -140,7 +140,7 @@ const client = new OpenAI({
 
 // @ts-expect-error - providerOptions is a gateway extension
 const response = await client.responses.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   input: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -169,7 +169,7 @@ const client = new Anthropic({
 });
 
 const message = await client.messages.create({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   max_tokens: 1024,
   messages: [
     {
@@ -204,7 +204,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model="anthropic/claude-opus-4.8",
+    model="anthropic/claude-opus-5",
     max_tokens=1024,
     messages=[
         {
@@ -235,9 +235,9 @@ Use any fast slug from the [supported models list](/ai-gateway/models?features=f
 ```typescript filename="app/api/chat/route.ts"
 import { generateText } from 'ai';
 
-// Equivalent to setting `speed: 'fast'` on `anthropic/claude-opus-4.8`.
+// Equivalent to setting `speed: 'fast'` on `anthropic/claude-opus-5`.
 const { text, providerMetadata } = await generateText({
-  model: 'anthropic/claude-opus-4.8-fast',
+  model: 'anthropic/claude-opus-5-fast',
   prompt: 'Explain quantum computing in two sentences.',
 });
 
@@ -258,7 +258,7 @@ const client = new OpenAI({
 });
 
 const response = await client.chat.completions.create({
-  model: 'anthropic/claude-opus-4.8-fast',
+  model: 'anthropic/claude-opus-5-fast',
   messages: [
     {
       role: 'user',
@@ -287,7 +287,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="anthropic/claude-opus-4.8-fast",
+    model="anthropic/claude-opus-5-fast",
     messages=[
         {
             "role": "user",
@@ -316,7 +316,7 @@ const client = new OpenAI({
 });
 
 const response = await client.responses.create({
-  model: 'anthropic/claude-opus-4.8-fast',
+  model: 'anthropic/claude-opus-5-fast',
   input: 'Explain quantum computing in two sentences.',
 });
 
@@ -340,7 +340,7 @@ const client = new Anthropic({
 });
 
 const message = await client.messages.create({
-  model: 'anthropic/claude-opus-4.8-fast',
+  model: 'anthropic/claude-opus-5-fast',
   max_tokens: 1024,
   messages: [
     {
@@ -369,7 +369,7 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model="anthropic/claude-opus-4.8-fast",
+    model="anthropic/claude-opus-5-fast",
     max_tokens=1024,
     messages=[
         {
@@ -396,7 +396,7 @@ Set `gateway.allowFallbackFromFast: false` to opt out and get fast-or-fail behav
 import { generateText } from 'ai';
 
 const { text, providerMetadata } = await generateText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -417,7 +417,7 @@ The tier the provider actually served appears on the response as `providerMetada
 
 ```typescript
 const { providerMetadata } = await generateText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Hello',
   providerOptions: {
     gateway: {
@@ -438,7 +438,7 @@ Fast mode works the same way with streaming. Read `providerMetadata.gateway.rout
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Explain quantum computing in two sentences.',
   providerOptions: {
     gateway: {
@@ -464,7 +464,7 @@ For models native to Claude Code (Anthropic Opus), you can toggle fast mode inte
 
 ### Other coding agents
 
-For non-Anthropic models, or if you prefer not to configure Claude Code's fast mode settings, select the fast variant in your agent's model configuration. Use a fast slug from the [supported models list](/ai-gateway/models?features=fast), such as `anthropic/claude-opus-4.8-fast`, `zai/glm-5.2-fast`, or `moonshotai/kimi-k2.7-code-highspeed`.
+For non-Anthropic models, or if you prefer not to configure Claude Code's fast mode settings, select the fast variant in your agent's model configuration. Use a fast slug from the [supported models list](/ai-gateway/models?features=fast), such as `anthropic/claude-opus-5-fast`, `zai/glm-5.2-fast`, or `moonshotai/kimi-k2.7-code-highspeed`.
 
 ## Pricing
 

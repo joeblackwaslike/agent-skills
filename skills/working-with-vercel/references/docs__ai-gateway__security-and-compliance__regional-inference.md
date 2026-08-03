@@ -3,7 +3,7 @@ title: Regional Inference
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/regional-inference
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference"
-last_updated: 2026-07-24
+last_updated: 2018-10-20
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -16,8 +16,8 @@ related:
 summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "8440accdda2b864a0f40abf4b08922e3432c151dcef676d27ee56746ccfb4345"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "87d286e21df605172e1040d360e41740befe8f693782af24a9c261e15ba98903"
 ---
 
 # Regional Inference

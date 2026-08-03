@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "35327e6d440b9dde485fd808acd10606aa8176d8611cb5b343509137da43adae"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "d959f722d66d47b12f74b1f294b8dc420bb47be5f20f3136df73f2baac5a42e2"
 ---
 
 # `validateUIMessages`
@@ -111,6 +111,7 @@ const validatedMessages = await validateUIMessages({
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

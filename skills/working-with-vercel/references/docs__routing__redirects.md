@@ -12,12 +12,12 @@ related:
   - /docs/redirects/configuration-redirects
   - /docs/redirects/bulk-redirects
   - /docs/routing-middleware
-  - /docs/storage/edge-config
+  - /docs/global-config
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d40abf7bcc95f2c3c56da8035b84d4d58788aea9b719438a5f0f32c084a7629b"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "9de10b820998c1d43f5273ccdae9a5d6fbcdcb5be0d590b8f947b61ab18f9bef"
 ---
 
 # Redirects
@@ -44,7 +44,7 @@ Review the table below to understand which redirect method best fits your use ca
 | [Configuration redirects](/docs/redirects/configuration-redirects) | Support needed for wildcards, pattern matching, and geolocation-based rules.                                                                   | Framework config or `vercel.json` |
 | [Bulk redirects](/docs/redirects/bulk-redirects)                   | For large-scale migrations or maintaining extensive redirect lists. It supports many thousands of simple redirects and is performant at scale. | CSV, JSON, or JSONL files         |
 | [Vercel Functions](#vercel-functions)                              | For complex custom redirect logic.                                                                                                             | Route files (code)                |
-| [Middleware](#middleware)                                          | Dynamic redirects that need to update without redeploying.                                                                                     | Middleware file and Edge Config   |
+| [Middleware](#middleware)                                          | Dynamic redirects that need to update without redeploying.                                                                                     | Middleware file and Global Config   |
 | [Domain redirects](#domain-redirects)                              | Domain-level redirects such as www to apex domain.                                                                                             | Dashboard (Domains section)       |
 | [Firewall redirects](#firewall-redirects)                          | Emergency redirects that must execute before other redirects.                                                                                  | Firewall rules (dashboard)        |
 
@@ -144,9 +144,9 @@ export default function handler(request, response) {
 
 ### Middleware
 
-For dynamic, critical redirects that need to run on every request, you can use [Middleware](/docs/routing-middleware) and [Edge Config](/docs/storage/edge-config).
+For dynamic, critical redirects that need to run on every request, you can use [Middleware](/docs/routing-middleware) and [Global Config](/docs/global-config).
 
-Redirects can be stored in an Edge Config and instantly read from Middleware. This enables you to update redirect values without having to redeploy your website.
+Redirects can be stored in a Global Config and instantly read from Middleware. This enables you to update redirect values without having to redeploy your website.
 
 [Deploy a template](https://vercel.com/templates/next.js/maintenance-page) to get started.
 

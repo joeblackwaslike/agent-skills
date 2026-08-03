@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3ba0c80b44f9300aed53c2ee12a3d27b78a6c1f9658c6b046deca23ed2f48a6e"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "5a4689074999c5f45a0874ea2c39b30ab5c6756231f2d929bb244e296f85dacd"
 ---
 
 # vercel connect
@@ -169,13 +169,23 @@ Attaches a Vercel project to a connector for one or more environments, so the pr
 vercel connect attach <connector>
 ```
 
-*Attach the currently linked project to a connector for all environments.*
+*Attach the currently linked project to a connector for all built-in environments: Production (\`production\`), Preview (\`preview\`), and Development (\`development\`).*
 
 ```bash filename="terminal"
 vercel connect attach scl_abc123 -e production -e preview
 ```
 
 *Attach and restrict to specific environments.*
+
+Passing `--environment` replaces the built-in environment defaults. The example command below enables only the `qa` Custom Environment for a project with no existing trigger destinations to other Custom Environments:
+
+```bash filename="terminal"
+vercel connect attach scl_abc123 --environment qa
+```
+
+*Attach the connector to the \`qa\` Custom Environment.*
+
+If the project already has trigger destinations that target other Custom Environments, the CLI preserves those environments on the project link.
 
 Use `--triggers` to also register the project as a trigger destination. When registered, the connector forwards verified incoming webhooks to the project. A connector can have up to three trigger destinations.
 
@@ -184,6 +194,21 @@ vercel connect attach scl_abc123 --triggers
 ```
 
 *Attach and register the project as a trigger destination.*
+
+If you do not pass `--trigger-branch` or `--trigger-environment`, the destination targets Production.
+
+If you omit `--trigger-path`, Vercel derives the receiver path from the connector and project framework. Pass `--trigger-path` to select the receiver path explicitly.
+
+Use `--trigger-environment` to forward incoming webhooks to a Custom Environment:
+
+```bash filename="terminal"
+vercel connect attach scl_abc123 --environment qa --triggers \
+  --trigger-environment qa --trigger-path /api/slack-events
+```
+
+*Allow token requests from \`qa\` and forward webhooks to it.*
+
+The CLI combines the environments passed to `--environment` with the trigger target. For a project with no existing trigger destinations, the example above produces a project link that contains only `qa`. Existing trigger destinations remain registered, and the CLI preserves any Custom Environments they require on the project link. If you omit `--environment`, the CLI links `production`, `preview`, and `development`, adds `qa` because it is the trigger target, and preserves Custom Environments required by existing destinations.
 
 > **💡 Note:** Detaching a project (via `vercel connect detach`) removes the token-access
 > link but does not remove the project from the connector's trigger
@@ -194,10 +219,11 @@ vercel connect attach scl_abc123 --triggers
 | Option | Shorthand | Description |
 | --- | --- | --- |
 | `--project <NAME_OR_ID>` | `-p` | Project name or ID. Defaults to the currently linked project. |
-| `--environment <ENV>` | `-e` | Environments to enable: `production`, `preview`, `development`. Repeatable and comma-separated. Defaults to all environments. |
+| `--environment <ENV>` | `-e` | Environments to enable by built-in name or Custom Environment slug. Repeatable and comma-separated. Defaults to `production`, `preview`, and `development`. |
 | `--triggers` | | Register this project as a trigger destination for incoming webhooks. |
-| `--trigger-branch <BRANCH>` | | Git branch for the trigger destination. Defaults to production. Only valid with `--triggers`. |
-| `--trigger-path <PATH>` | | Path on the project that receives forwarded webhooks. Defaults to `/{service}`. Only valid with `--triggers`. |
+| `--trigger-branch <BRANCH>` | | Git branch for the trigger destination. Mutually exclusive with `--trigger-environment` and only valid with `--triggers`. |
+| `--trigger-environment <ENV>` | | Custom Environment slug for the trigger destination. Mutually exclusive with `--trigger-branch` and only valid with `--triggers`. |
+| `--trigger-path <PATH>` | | Path on the project that receives forwarded webhooks. Only valid with `--triggers`. |
 | `--yes` | `-y` | Skip the confirmation prompt. |
 | `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
 
@@ -206,9 +232,11 @@ vercel connect attach scl_abc123 --triggers
 ```bash filename="terminal"
 vercel connect attach scl_abc123
 vercel connect attach scl_abc123 -e production -e preview
+vercel connect attach scl_abc123 -e qa
 vercel connect attach slack/my-bot --project my-app
 vercel connect attach scl_abc123 --triggers
 vercel connect attach scl_abc123 --triggers --trigger-branch staging --trigger-path /slack
+vercel connect attach scl_abc123 -e qa --triggers --trigger-environment qa --trigger-path /slack
 vercel connect attach scl_abc123 --yes --format=json
 ```
 

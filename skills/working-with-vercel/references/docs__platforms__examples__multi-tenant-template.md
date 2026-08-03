@@ -13,8 +13,8 @@ related:
 summary: Build SaaS applications that serve multiple domains from a single Next.js codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/multi-tenant-template.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "624ad5abda425f8caad3fb50cd1ea7370de9a2136b23ec81ecc8c03e10672cdd"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "0695b7c7faa4ae324b32a9f229a874020df617f983c9f7471dd1b54d39ebcd34"
 ---
 
 # Multi-Tenant Template
@@ -37,10 +37,10 @@ Common use cases include:
 
 ## How It Works
 
-The multi-tenant template uses Next.js middleware to intercept incoming requests and route them based on the hostname:
+The multi-tenant template uses Next.js Proxy to intercept incoming requests and route them based on the hostname:
 
 1. **Request arrives** - A user visits `customer1.example.com` or `customer1.com`
-2. **Middleware intercepts** - Extracts the hostname from the request headers
+2. **Proxy intercepts** - Extracts the hostname from the request headers
 3. **Dynamic routing** - Rewrites the URL internally to include tenant context
 4. **Tenant-specific content** - Renders customized content for that domain
 5. **Response served** - User sees their branded experience
@@ -60,7 +60,7 @@ pnpm install
 The template includes:
 
 - **Next.js App Router** for modern React architecture
-- **Middleware** for domain-based routing
+- **Proxy** for domain-based routing
 - **Tailwind CSS** for styling
 - **TypeScript** for type safety
 
@@ -86,26 +86,32 @@ Visit different domains to see tenant-specific content:
 - <http://tenant1.localhost:3002> - Tenant 1's site
 - <http://tenant2.localhost:3002> - Tenant 2's site
 
-### Step 3: Configure Middleware
+### Step 3: Configure the Proxy
 
-The middleware is the heart of the multi-tenant system. It intercepts all requests and routes them appropriately:
+The proxy is the heart of the multi-tenant system. It intercepts all requests and routes them appropriately. The snippet below is a simplified version. See [`proxy.ts` in the template](https://github.com/vercel/platforms/blob/main/proxy.ts) for the full implementation:
 
-```typescript filename="middleware.ts"
+> **💡 Note:** Next.js renamed the `middleware` file convention to `proxy` in Next.js 16.
+> The template uses `proxy.ts`. On Next.js 15 and earlier, use `middleware.ts`
+> with an exported `middleware` function instead.
+
+```typescript filename="proxy.ts"
 import { type NextRequest, NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
-  // Add tenant context to the request and rewrite to /[domain]
+  const { pathname } = request.nextUrl;
 
   // if it starts with /domains, pass through
-  if (request.nextUrl.pathname.startsWith('/domains')) {
+  if (pathname.startsWith('/domains')) {
     return NextResponse.next();
   }
 
-  const target = `${request.nextUrl.href}domains/${hostname}`;
-  const response = NextResponse.rewrite(target);
-  response.headers.set('x-tenant-domain', hostname);
-  return response;
+  // Rewrite the root to /domains/[domain]; the page reads the tenant from the route param
+  if (pathname === '/') {
+    return NextResponse.rewrite(new URL(`/domains/${hostname}`, request.url));
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
@@ -150,7 +156,7 @@ export default async function TenantPage({
 
 The system identifies tenants through their domain:
 
-```typescript filename="middleware.ts"
+```typescript filename="proxy.ts"
 function extractSubdomain(request: NextRequest): string | null {
   const url = request.url;
   const host = request.headers.get('host') || '';
@@ -223,7 +229,7 @@ Manage multiple client websites from a single codebase with individual customiza
 
 ***
 
-The multi-tenant template provides a solid foundation for building platforms that serve multiple customers from a single codebase. By leveraging Next.js middleware and dynamic routing, you can create scalable SaaS applications that offer custom domains, personalized experiences, and efficient resource utilization.
+The multi-tenant template provides a solid foundation for building platforms that serve multiple customers from a single codebase. With Next.js Proxy and dynamic routing, you can create scalable SaaS applications that offer custom domains, personalized experiences, and efficient resource utilization.
 
 Whether you're building a white-label solution, a marketplace platform, or a content management system, this architecture pattern enables you to grow from one to thousands of tenants without infrastructure complexity.
 

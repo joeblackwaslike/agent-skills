@@ -1,8 +1,8 @@
 ---
 title: "Publishing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
-fetched_at: "2026-07-20T06:45:35.555Z"
-sha256: "51332be1d94b085d0dac789da33a16a371e3fa9fe36bc055b57ecc8466cfa040"
+fetched_at: "2026-08-03T07:25:15.318Z"
+sha256: "4382edfc6802d05716938b44edd4499074ff4be6b868bd97232d60ce7de207a0"
 ---
 
 # Publishing Extensions
@@ -482,6 +482,8 @@ You can use the `engines.vscode` property to ensure the extension only gets inst
 
 For example, imagine that the latest Stable version of VS Code is `1.8.0`. During the development of version `1.9.0`, a new API was introduced and made available in the Insider release through the version `1.9.0-insider`. If you want to publish an extension version that benefits from this API, you should indicate a version dependency of `^1.9.0`. In this way, your new extension version will only be available on VS Code `>=1.9.0` (in other words, users with the current Insiders release). Users with the VS Code Stable will only get the update when the Stable release reaches version `1.9.0`.
 
+To target an Insiders build by date, append a date tag in `YYYYMMDD` format to the version. VS Code 1.57 and later enforce the date tag. Earlier versions evaluate only the numeric portion of the version. For example, `^1.56.0-20210428` targets VS Code 1.56 or later builds created on or after 0:00 UTC on April 28, 2021.
+
 ## Advanced usage
 
 ### Marketplace integration
@@ -776,4 +778,4 @@ You can either use npm or yarn v1 to manage your extension's dependencies.
 You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](https://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.
 
  
- 7/15/2026
+ 7/29/2026

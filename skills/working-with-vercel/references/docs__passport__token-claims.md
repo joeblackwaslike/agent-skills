@@ -1,19 +1,19 @@
 ---
-title: Token Claims
+title: Passport token claims
 product: vercel
 url: /docs/passport/token-claims
 canonical_url: "https://vercel.com/docs/passport/token-claims"
 last_updated: 2018-10-20
-type: conceptual
+type: reference
 prerequisites:
   - /docs/passport
 related:
   - /docs/passport/verify-identity
-summary: Learn about token claims on Vercel.
+summary: Review the standard, deployment, and visitor identity claims in a Passport token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/token-claims.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "70b331e3bace171af754514b3f009ab5450c3afdcdf4f33cea0a0adb3cab442c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "832fc3b896e387e9a7729b586eeac5b2fb68dc2ddfbbcecc337238f28afc0682"
 ---
 
 # Passport token claims

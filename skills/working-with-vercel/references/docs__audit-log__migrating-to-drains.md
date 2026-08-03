@@ -1,10 +1,10 @@
 ---
-title: Migrating from SIEM
+title: Migrating from Custom SIEM Log Streaming to Audit Log Drains
 product: vercel
 url: /docs/audit-log/migrating-to-drains
 canonical_url: "https://vercel.com/docs/audit-log/migrating-to-drains"
 last_updated: 2018-10-20
-type: conceptual
+type: how-to
 prerequisites:
   - /docs/audit-log
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/drains/using-drains
   - /docs/drains/audit-logs-to-s3
   - /docs/drains/audit-logs-to-splunk
-summary: Learn about migrating from siem on Vercel.
+summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "5ee16fb5926916ecb331c9f42a4e3f351fcfda205bc9975a5f3b577eded04264"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "3bbe944d3c8f5ddb91f8fc40e2120f20504ead6743fe1f8f19f18de43904ce41"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains

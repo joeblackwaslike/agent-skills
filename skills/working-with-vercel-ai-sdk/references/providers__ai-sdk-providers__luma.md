@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "fb4152aba545ec6e13fcf37a5cb74da154d49beb93caf5955032a22f954ca838"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "5802eafc77b80d4148bcacd70cf12491815eb37365eec90be38a34d8ae92f220"
 ---
 
 # Luma Provider
@@ -287,6 +287,7 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

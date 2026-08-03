@@ -3,7 +3,7 @@ title: Segments
 product: vercel
 url: /docs/flags/vercel-flags/dashboard/segments
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments"
-last_updated: 2026-06-25
+last_updated: 2026-07-14
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/dashboard
@@ -16,8 +16,8 @@ related:
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ca579728ec5dc5bd5201f9347d51b43c3f8145a5be773d384f678645ee4a28df"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "86832bc4f06862359857f4e5c80450202c3f8956098990fd50d1e69738202086"
 ---
 
 # Segments

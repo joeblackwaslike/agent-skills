@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "649d1420d081259f99e45bc697685a2e6a49a81aa189c0d9ea1da7740354f7b8"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "21ee75fc43b68ce76e4bf9bd03fd00de60280d1d418b0061085375d3e9da4d24"
 ---
 
 # Directory Sync
@@ -40,7 +40,7 @@ To configure directory sync for your team:
 
 1. Ensure your team is selected in the team switcher
 2. From your team's dashboard, open **Settings** in the sidebar, and then **Security & Privacy**
-3. Under SAML Single Sign-On, select the **Configure** button. This opens a dialog to guide you through configuring Directory Sync for your Team with your Directory Provider.
+3. In the **Authentication and User Provisioning** section, locate the **Directory Sync** row and select **Configure**. This opens a dialog to guide you through configuring Directory Sync for your Team with your Directory Provider.
 4. Once you have completed the configuration walkthrough, configure how Directory Groups should map to Vercel Team roles:
 
 ![Image](`/docs-assets/static/docs/concepts/teams/dsync-roles.png`)

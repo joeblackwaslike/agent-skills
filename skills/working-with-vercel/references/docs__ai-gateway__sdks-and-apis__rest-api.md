@@ -3,7 +3,7 @@ title: REST API Reference
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/rest-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9c8c31b69f96998d6bf814145f31fcb10e1e04ca71de12a657aeaa8072957e28"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "7345312d71965a68a5b1c084e496dc5c0da61a2154149599e545f52d6c39fb47"
 ---
 
 # REST API Reference
@@ -117,7 +117,7 @@ models.forEach((model) => {
 | ---------------------------------------- | -------- | --------------------------------------------------------------------- |
 | `object`                                 | string   | Always `"list"`                                                       |
 | `data`                                   | array    | Array of available models                                             |
-| `data[].id`                              | string   | Model identifier (for example, `openai/gpt-5.5`)                      |
+| `data[].id`                              | string   | Model identifier (for example, `openai/gpt-5.6-sol`)                      |
 | `data[].object`                          | string   | Always `"model"`                                                      |
 | `data[].created`                         | integer  | Unix timestamp when the model was added                               |
 | `data[].released`                        | integer  | Unix timestamp when the model was released                            |
@@ -260,6 +260,13 @@ For the AI SDK equivalent, see [Credit Usage](https://ai-sdk.dev/providers/ai-sd
 
 #### Example request
 
+#### cURL
+
+```bash filename="credits.sh"
+curl -X GET "https://ai-gateway.vercel.sh/v1/credits" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
+```
+
 #### TypeScript
 
 ```typescript filename="credits.ts"
@@ -317,7 +324,9 @@ print(credits)
 GET /v1/generation?id={generation_id}
 ```
 
-Returns detailed information about a specific generation, including cost, latency, and token usage. Generation information becomes available shortly after the generation completes. Much of this data is also returned in `providerMetadata` on the chat completion response.
+Returns detailed information about a specific generation, including cost, latency, and token usage. Much of this data is also returned in `providerMetadata` on the chat completion response.
+
+Usage events are ingested asynchronously, so a lookup issued immediately after the generation completes returns `Usage event not found` rather than the record. Allow a few seconds, and treat that response as "not yet" rather than "never" when polling.
 
 For the AI SDK equivalent, see [Generation Lookup](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#generation-lookup).
 
@@ -326,6 +335,13 @@ For the AI SDK equivalent, see [Generation Lookup](https://ai-sdk.dev/providers/
 - `id` (required): The generation ID to look up. Format: `gen_<ulid>`.
 
 #### Example request
+
+#### cURL
+
+```bash filename="generation.sh"
+curl -X GET "https://ai-gateway.vercel.sh/v1/generation?id=gen_01ARZ3NDEKTSV4RRFFQ69G5FAV" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
+```
 
 #### TypeScript
 
@@ -377,7 +393,7 @@ print(generation)
     "upstream_inference_cost": 0,
     "usage": 0.00123,
     "created_at": "2026-05-22T00:00:00.000Z",
-    "model": "anthropic/claude-opus-4.8",
+    "model": "anthropic/claude-opus-5",
     "is_byok": false,
     "provider_name": "anthropic",
     "streamed": true,
@@ -425,7 +441,7 @@ print(generation)
 > you can capture them before the stream completes. They are also surfaced via
 > `providerMetadata.gateway.generationId` in the AI SDK.
 
-## Custom Reporting
+## Custom reporting
 
 Use the Custom Reporting API to break down spend and usage by model, user, tag, provider, or credential type. For concepts, how to attach tags and user IDs to requests, querying with the AI SDK, and the full response field reference, see the [Custom Reporting page](/docs/ai-gateway/observability-and-spend/custom-reporting).
 

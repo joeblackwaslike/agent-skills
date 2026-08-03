@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "26f1e9a8c37a8dd1fe88a64fde020a1ff5e755219aab71d78fae9711c0fa6205"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "91c2c43b15fcccb9aed2fca6caaa9c4d39e5fb635307369928ecc98d8d4a9407"
 ---
 
 # Loop Control
@@ -180,6 +180,46 @@ const result = await agent.generate({
   prompt: '...',
 });
 ```
+
+### Model Call Settings
+
+Override provider-agnostic model call settings for an individual step. This can
+be useful when tool-calling steps need more deterministic sampling than the
+final response:
+
+```ts
+import { ToolLoopAgent } from 'ai';
+__PROVIDER_IMPORT__;
+
+const agent = new ToolLoopAgent({
+  model: __MODEL__,
+  temperature: 0.7,
+  tools: {
+    // your tools
+  },
+  prepareStep: async ({ stepNumber }) => {
+    if (stepNumber === 0) {
+      return {
+        temperature: 0,
+        maxOutputTokens: 300,
+      };
+    }
+
+    return {};
+  },
+});
+
+const result = await agent.generate({
+  prompt: '...',
+});
+```
+
+`prepareStep` can override `maxOutputTokens`, `temperature`, `topP`, `topK`,
+`presencePenalty`, `frequencyPenalty`, `stopSequences`, `seed`, and
+`reasoning`. These overrides apply only to the current step. When a setting is
+omitted or `undefined`, the top-level value is used for that step. Defined
+falsy values such as `temperature: 0`, `seed: 0`, and an empty
+`stopSequences` array are preserved.
 
 ### Context Management
 

@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/cli
   - /docs/connect/concepts/authentication
+  - /docs/deployments/environments
   - /docs/cli/connect
   - /docs/connect/concepts/tokens
-  - /docs/connect/concepts
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a776767f416f84b2086cd6551e6f96973ed2c9162311588301272fbea181c4bf"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "4ee90eaf5a351ce728790d3e93d1ce4de30c060a008eb308b743d20a45dcf26d"
 ---
 
 # Quickstart
@@ -53,9 +53,9 @@ This guide shows you how to create your first connector in Vercel Connect and re
   #### Dashboard
   Open [**Connect**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fconnect\&title=Open+Vercel+Connect+Project) in the Vercel dashboard. You'll be prompted to pick a team and project; any connector you create from this page is automatically linked to that project, so you can skip a separate attach step.
 
-  Click **Create connector**, choose **Custom OAuth** as the connector type, enter `mcp.linear.app` as the service URL, and configure:
-  - **Name**: a stable identifier, for example `linear`
-  - **Environments**: at least one, such as **Production**. Add **Preview** or **Development** if your workflow runs there too.
+  Select **Create Connector**, choose **OAuth**, and keep **Managed** selected. Under **Server URL**, enter `mcp.linear.app`, select **Continue**, and set **Connector Name** to `linear`.
+
+  Creating the connector from this project page automatically links Production, Preview, and Development. To enable a [Custom Environment](/docs/deployments/environments#custom-environments), create the connector first, then open its **Projects** section, edit the project link, and select the Custom Environment.
   #### CLI
   Create the connector. Vercel opens your browser to complete the Linear OAuth flow:
   ```bash filename="Terminal"
@@ -65,9 +65,9 @@ This guide shows you how to create your first connector in Vercel Connect and re
   ```bash filename="Terminal"
   vercel connect attach oauth/linear
   ```
-  By default, `attach` links every environment. Use `-e production -e preview` to restrict to specific environments. See the [`vercel connect`](/docs/cli/connect) reference for the full surface.
+  By default, `attach` links Production, Preview, and Development. It does not automatically include Custom Environments. Use `-e production -e preview` to restrict the link, or pass a Custom Environment slug such as `-e qa`. See the [`vercel connect`](/docs/cli/connect) reference for the full surface.
 
-  For sensitive integrations, create a separate connector per environment so each environment has its own authorization grant and scopes. A token compromised in one environment cannot then be replayed against another.
+  For provider-level isolation, create a separate connector for each environment, install each connector separately, and request only the provider scopes that environment needs. Environment selection on a project link controls which deployments can request tokens; it does not create separate provider grants.
 
 - ### Install the SDK
   Install `@vercel/connect` along with the dev dependencies you need to run a TypeScript script locally.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "1951dc2850bfec161aa08bb6ce372a657949220e8fbba1c5b5f2de8cfa0439ed"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "5718425be66db78bceb67ce5bbc8d2754377d3f5c106767cb00abdaf1e6efb06"
 ---
 
 # AssemblyAI Provider
@@ -428,6 +428,7 @@ AssemblyAI's documentation for per-language availability.
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

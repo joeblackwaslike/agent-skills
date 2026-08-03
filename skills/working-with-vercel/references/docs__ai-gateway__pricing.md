@@ -8,6 +8,7 @@ type: reference
 prerequisites:
   - /docs/ai-gateway
 related:
+  - /docs/plans/enterprise
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/observability-and-spend/custom-reporting
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
@@ -15,13 +16,13 @@ related:
 summary: Learn about pricing for AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9f5a26a16013d91cbc75ae263fbe509b70e80839a297d18bb4aaf71ae47850aa"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "35639d565f3e370d24e2f1bf409907f0723e53bbb8a8b76fbe56bab8e8363141"
 ---
 
 # Pricing
 
-AI Gateway uses a pay-as-you-go model with no markups. Purchase [AI Gateway Credits](#top-up-your-ai-gateway-credits) and Vercel automatically deducts charges from your balance.
+**AI Gateway charges no markup and no platform fee on tokens.** You pay the provider's list price on a pay-as-you-go basis. Purchase [AI Gateway Credits](#top-up-your-ai-gateway-credits) and Vercel automatically deducts charges from your balance.
 
 ## Free and paid tiers
 
@@ -38,6 +39,8 @@ Your free credits start when you make your first AI Gateway request. To run larg
 Whether you use a free or paid account, you'll pay the AI Gateway rates listed in the Models section of the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) tab for each request. AI Gateway bases its rates on the provider's list price.
 
 The charge for each request depends on the AI provider and model you select, and the number of input and output tokens processed. **You're responsible for any payment processing fees that may apply.**
+
+[Enterprise](/docs/plans/enterprise) teams can pay for AI Gateway by invoice instead, which has no payment processing fees. [Contact sales](/contact/sales) to set up invoiced billing.
 
 ### Finding model pricing
 
@@ -87,6 +90,14 @@ The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allow
 | ------------------------------- | ------------------------ | ------------------ |
 | Per-request zero data retention | No additional cost       | Pro and Enterprise |
 | Team-wide zero data retention   | $0.10 per 1,000 requests | Pro and Enterprise |
+
+## Trace Drains
+
+[Trace Drains](/docs/ai-gateway/observability-and-spend/trace-drains) forward an OpenTelemetry trace of every AI Gateway request to your own observability tool. They're available on Pro and Enterprise plans and bill on two meters, the number of trace events delivered to your drains and the volume of trace data transferred.
+
+Vercel bills these two meters through Drains usage on your plan, not against your AI Gateway Credits balance. Track them on the [Usage dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fusage\&title=Usage) under **Drains → AI Gateway Traces**.
+
+Pro plans include no allowance for either meter, so charges begin with the first delivered trace and first byte of trace egress. A higher [sampling rate](/docs/drains/reference/traces#sampling-rate) increases both. To stop future charges, [pause or delete the trace drain](/docs/drains/using-drains#managing-your-active-drains).
 
 ## View your AI Gateway Credits balance
 

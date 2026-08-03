@@ -15,8 +15,8 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9774784ea89af5ba1b89052485022bceae88e30fb74f95fd39053a5bb04ece17"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "fe3b78ac249b7be5e322173c5a66a1773cdcbfe10ae74049f3cd2804abbff149"
 ---
 
 # Drains Security
@@ -274,6 +274,10 @@ Drains can include public IP addresses in the data, which may be considered pers
 3. Under **IP Address Visibility**, toggle the switch off so the text reads **IP addresses are hidden in your Drains**
 
 This setting is applied team-wide across all projects and drains.
+
+## User Agent
+
+Vercel sends a `user-agent` header with each drain request with the value as `'VercelDrain/1.0 (+https://vercel.com/docs/drains)'`.
 
 ## More resources
 

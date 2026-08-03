@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "dbdacb12da6322dab6dbf077553951b9775f4cc81156ccee361cb8c752e8c5d1"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f56fd8c35cd3f1eaddce21011221ed9353e380d753cfb9dc2dc4f47fe2ceffd6"
 ---
 
 # Deployment Protection on Vercel
@@ -36,7 +36,7 @@ Deployment Protection requires authentication for all requests, including those 
 You can choose from several methods to protect your deployments:
 
 - [**Vercel Authentication**](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication): Restricts access to only Vercel users with suitable access rights. **Available on all plans**
-- [**Passport**](/docs/passport): Restricts access to visitors who authenticate through your identity provider. **Beta. Available on the Enterprise plan**
+- [**Passport**](/docs/passport): Restricts access to visitors who authenticate through your identity provider. **Available on the Enterprise plan**
 - [**Password Protection**](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection): Restricts access to users with the correct password. **Available on the Enterprise plan, or as a paid add-on for Pro plans**
 - [**Trusted IPs**](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips): Restricts access to users with the correct IP address. **Available on the Enterprise plan**
 

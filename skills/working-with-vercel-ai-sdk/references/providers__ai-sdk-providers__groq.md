@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "48b51dbdb84bf4a9b3b1cb6be6b93b6f963a77d010dcd4b3fd4f28d13e7c7b87"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "34597a1f64389867fb64bd644344d821f0b0d7ea6631796e680bbaee9f1319a1"
 ---
 
 # Groq Provider
@@ -506,6 +506,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

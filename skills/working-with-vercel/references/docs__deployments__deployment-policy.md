@@ -3,7 +3,7 @@ title: Deployment Policies
 product: vercel
 url: /docs/deployments/deployment-policy
 canonical_url: "https://vercel.com/docs/deployments/deployment-policy"
-last_updated: 2026-06-24
+last_updated: 2026-07-14
 type: how-to
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "cf9c6145eb6a8daf504a90af2497e781aaca37b20d12bf1a4ac94db95fbd955f"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b809ad37150320de8bec207f26b92f3c03548ea05673ad73ef64e935c933872f"
 ---
 
 # Deployment Policies

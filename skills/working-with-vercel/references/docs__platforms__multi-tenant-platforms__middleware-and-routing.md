@@ -1,5 +1,5 @@
 ---
-title: Middleware and Routing
+title: Proxy and Routing
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/middleware-and-routing
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing"
@@ -9,36 +9,64 @@ prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
-  []
-summary: Resolve tenants and route requests by subdomain, custom domain, or path using Next.js middleware on Vercel.
+  - /docs/functions/runtimes/edge
+summary: Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "71ba3eb1682d74d30b1ddc2474a333b1c3acd2a0469a8fb40bf4bf23961bbc78"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "e7477c8bcb2dee5bc2b1c5578d6b2fd2fb4a2965113efa356d5ff73047b9f77e"
 ---
 
-# Middleware and Routing
+# Proxy and Routing
 
-## Resolve tenants with middleware
+## Resolve tenants with Proxy
+
+Tenant headers must come from the proxy, never from the client. Any caller can attach an `x-tenant-id` header to a request, and if the proxy forwards that value untouched, your app trusts it and serves data for whichever tenant the caller picked. The examples below delete or overwrite inbound `x-tenant-*` headers before forwarding each request, including on paths that skip tenant resolution, so a client-supplied `x-tenant-id` never reaches your app.
+
+> **💡 Note:** Next.js renamed the `middleware` file convention to `proxy` in Next.js 16. Run
+> `npx @next/codemod@canary middleware-to-proxy` to migrate. The examples below
+> use `proxy.ts`, which runs on the Node.js runtime and throws if you set a
+> `runtime` config option.
+
+For Next.js 15 and earlier, use `middleware.ts` with an exported `middleware` function. That file defaults to the [Edge runtime](/docs/functions/runtimes/edge), so set `runtime: 'nodejs'` in the `config` object it exports (stable since Next.js 15.5). Node.js is the recommended runtime, it's required if your tenant lookup uses a database client or other Node.js APIs, and it's what Proxy runs on after you upgrade:
+
+```ts
+// middleware.ts
+import { NextRequest, NextResponse } from 'next/server';
+
+export const config = {
+  runtime: 'nodejs',
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+};
+
+export async function middleware(request: NextRequest) {
+  // Same tenant resolution as the proxy examples below
+  return NextResponse.next();
+}
+```
 
 ### Subdomain-based tenant resolution
 
 Extract tenant identity from subdomains like `tenant1.yourapp.com`:
 
 ```ts
-// middleware.ts
+// proxy.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function middleware(request: NextRequest) {
-  const url = request.nextUrl;
+export async function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
+
+  // Strip inbound tenant headers; only the proxy sets them
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.delete('x-tenant-id');
+  requestHeaders.delete('x-tenant-subdomain');
 
   // Extract subdomain (tenant identifier)
   const subdomain = hostname.split('.')[0];
 
   // Skip processing for main app domains
   if (subdomain === 'www' || subdomain === 'app' || subdomain === 'admin') {
-    return NextResponse.next();
+    return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   // Validate tenant exists (you might cache this for performance)
@@ -49,12 +77,11 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/not-found', request.url));
   }
 
-  // Add tenant context to the request
-  const response = NextResponse.next();
-  response.headers.set('x-tenant-id', tenant.id);
-  response.headers.set('x-tenant-subdomain', subdomain);
+  // Forward tenant context to your app on the request headers
+  requestHeaders.set('x-tenant-id', tenant.id);
+  requestHeaders.set('x-tenant-subdomain', subdomain);
 
-  return response;
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
@@ -66,6 +93,7 @@ This example:
 
 - Extracts `tenant1` from `tenant1.yourapp.com`
 - Validates the tenant exists in your database
+- Strips inbound tenant headers so clients can't forge tenant context
 - Adds tenant context to request headers for your app to use
 - Redirects invalid tenants to a 404 page
 
@@ -74,33 +102,36 @@ This example:
 Handle custom domains like `tenant.com` mapping to tenants:
 
 ```ts
-// middleware.ts
+// proxy.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { get } from '@vercel/edge-config';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
 
+  // Strip inbound tenant headers; only the proxy sets them
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.delete('x-tenant-id');
+  requestHeaders.delete('x-tenant-type');
+
   // Check if this is a custom domain
-  const customDomainTenant = await get(`domain_${hostname}`);
+  const customDomainTenant = await get<{ id: string }>(`domain_${hostname}`);
 
   if (customDomainTenant) {
-    // Custom domain found, set tenant context
-    const response = NextResponse.next();
-    response.headers.set('x-tenant-id', customDomainTenant.id);
-    response.headers.set('x-tenant-type', 'custom-domain');
-    return response;
+    // Custom domain found, forward tenant context on the request headers
+    requestHeaders.set('x-tenant-id', customDomainTenant.id);
+    requestHeaders.set('x-tenant-type', 'custom-domain');
+    return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   // Fall back to subdomain resolution
   const subdomain = hostname.split('.')[0];
-  const subdomainTenant = await get(`subdomain_${subdomain}`);
+  const subdomainTenant = await get<{ id: string }>(`subdomain_${subdomain}`);
 
   if (subdomainTenant) {
-    const response = NextResponse.next();
-    response.headers.set('x-tenant-id', subdomainTenant.id);
-    response.headers.set('x-tenant-type', 'subdomain');
-    return response;
+    requestHeaders.set('x-tenant-id', subdomainTenant.id);
+    requestHeaders.set('x-tenant-type', 'subdomain');
+    return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   // No tenant found
@@ -112,7 +143,7 @@ This example:
 
 - First checks if the hostname is a registered custom domain
 - Falls back to subdomain parsing if not a custom domain
-- Uses Edge Config for fast tenant lookups
+- Uses Global Config for fast tenant lookups
 - Sets tenant type so your app knows how the tenant was resolved
 
 ### Path-based tenant resolution
@@ -120,18 +151,23 @@ This example:
 Extract tenant from URL paths like `/tenant1/dashboard`:
 
 ```ts
-// middleware.ts
+// proxy.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Strip inbound tenant headers; only the proxy sets them
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.delete('x-tenant-id');
+  requestHeaders.delete('x-tenant-slug');
 
   // Extract tenant from first path segment: /tenant_name_1/dashboard
   const pathSegments = pathname.split('/');
   const tenantSlug = pathSegments[1];
 
   if (!tenantSlug || tenantSlug.startsWith('_')) {
-    return NextResponse.next();
+    return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   // Validate tenant exists
@@ -145,11 +181,12 @@ export async function middleware(request: NextRequest) {
   const newPath = `/${pathSegments.slice(2).join('/')}`;
   const rewriteUrl = new URL(newPath, request.url);
 
-  const response = NextResponse.rewrite(rewriteUrl);
-  response.headers.set('x-tenant-id', tenant.id);
-  response.headers.set('x-tenant-slug', tenantSlug);
+  requestHeaders.set('x-tenant-id', tenant.id);
+  requestHeaders.set('x-tenant-slug', tenantSlug);
 
-  return response;
+  return NextResponse.rewrite(rewriteUrl, {
+    request: { headers: requestHeaders },
+  });
 }
 ```
 
@@ -167,10 +204,10 @@ This example:
 Route different URLs to tenant-specific pages:
 
 ```ts
-// middleware.ts
+// proxy.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const hostname = request.headers.get('host') || '';
   const tenantId = await resolveTenantId(hostname);
@@ -179,25 +216,31 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/not-found', request.url));
   }
 
+  // Overwrite any inbound tenant header with the resolved tenant
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-tenant-id', tenantId);
+
   // Route to tenant-specific pages
   if (pathname === '/') {
     // Rewrite homepage to tenant-specific version
     const url = request.nextUrl.clone();
     url.pathname = `/tenant/${tenantId}`;
-    return NextResponse.rewrite(url);
+    return NextResponse.rewrite(url, {
+      request: { headers: requestHeaders },
+    });
   }
 
   if (pathname.startsWith('/blog')) {
     // Route blog requests to tenant-specific blog
     const url = request.nextUrl.clone();
     url.pathname = `/tenant/${tenantId}/blog${pathname.replace('/blog', '')}`;
-    return NextResponse.rewrite(url);
+    return NextResponse.rewrite(url, {
+      request: { headers: requestHeaders },
+    });
   }
 
-  // Add tenant context to all other requests
-  const response = NextResponse.next();
-  response.headers.set('x-tenant-id', tenantId);
-  return response;
+  // Forward tenant context to all other requests
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 ```
 

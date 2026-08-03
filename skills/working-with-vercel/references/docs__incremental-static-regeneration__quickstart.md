@@ -3,7 +3,7 @@ title: Getting started with ISR
 product: vercel
 url: /docs/incremental-static-regeneration/quickstart
 canonical_url: "https://vercel.com/docs/incremental-static-regeneration/quickstart"
-last_updated: 2026-03-20
+last_updated: 2026-07-14
 type: tutorial
 prerequisites:
   - /docs/incremental-static-regeneration
@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "2363324b291fdcb5154549c7005dd6f04743de5c2c293c30cb127f9edd8665b8"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "760c23d1805425c14c11edf7a936cc2096aed8fc943c76f73470aaf6f0998b69"
 ---
 
 # Getting started with ISR

@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "fce66239f995596bacb0d4c900c4f46fc38001abe5624a9a0411ee65ce406c0c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "71fb2a7c64d5b7634400bc1b0c5967e45f79d54340201e8947cc420a8a3c0d85"
 ---
 
 # Image Generation with Chat Completions API
@@ -433,10 +433,7 @@ if __name__ == "__main__":
 
 ### xAI Grok Imagine
 
-xAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios. Multiple models are available, including but not limited to:
-
-- `xai/grok-imagine-image`
-- `xai/grok-imagine-image-pro`
+xAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios. Browse the current lineup in the [model list](/ai-gateway/models).
 
 #### TypeScript
 
@@ -451,7 +448,7 @@ async function main() {
   });
 
   const result = await openai.images.generate({
-    model: 'xai/grok-imagine-image-pro',
+    model: 'xai/grok-imagine-image',
     prompt: `A serene Japanese garden with a koi pond, stone lanterns, and cherry blossoms in full bloom`,
   });
 
@@ -494,7 +491,7 @@ def main():
     )
 
     result = client.images.generate(
-        model="xai/grok-imagine-image-pro",
+        model="xai/grok-imagine-image",
         prompt=(
             "A serene Japanese garden with a koi pond, "
             "stone lanterns, and cherry blossoms in full bloom"

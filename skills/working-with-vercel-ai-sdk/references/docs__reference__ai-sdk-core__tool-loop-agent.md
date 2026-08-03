@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "359e89145bda5492950fad54aa9746be9b3a4b4f9e801376a55e4dc51818728a"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "f1af64ba03f7f65255ce84d37f0281643d6365570aeaf7e66baff10074fc71c9"
 ---
 
 # `ToolLoopAgent`
@@ -113,6 +113,13 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
         "Approval configuration for the agent. Pass a `GenericToolApprovalFunction` to handle all tool calls in one callback with `toolCall`, `tools`, `toolsContext`, `messages`, and `runtimeContext`, or pass a per-tool object where each key can be a status (`'not-applicable'`, `'approved'`, `'denied'`, or `'user-approval'`), an object form such as `{ type: 'denied', reason: 'blocked by policy' }`, or a `SingleToolApprovalFunction` that receives the tool input and options `toolCallId`, `messages`, `toolContext`, and `runtimeContext` (same shape as tool execution options without `abortSignal`, with `context` renamed to `toolContext`). The `RUNTIME_CONTEXT` type parameter matches the agent's `runtimeContext`. A `GenericToolApprovalFunction` or `SingleToolApprovalFunction` may return `undefined` for the same effect as `'not-applicable'`. `'not-applicable'` is the default execution path and runs the tool without approval metadata. Use `'approved'`, `'denied'`, or their object forms when you want explicit automatic approval request/response parts in the output. Automatic approvals and denials can include a `reason`, which is forwarded to the emitted approval response. This setting takes precedence over a tool's `needsApproval` default.",
     },
     {
+      name: 'experimental_toolCallers',
+      type: 'Experimental_ToolCallers<TOOLS>',
+      isOptional: true,
+      description:
+        "Configures which caller tools may invoke each tool. The callback receives typed references for caller-capable tools in the agent's `tools` set and returns an object keyed by callee tool name. Include `'direct'` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each agent step. Provider caller references are translated to provider-native allowed-caller options.",
+    },
+    {
       name: 'output',
       type: 'Output',
       isOptional: true,
@@ -124,7 +131,7 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
       type: 'PrepareStepFunction',
       isOptional: true,
       description:
-        'Optional function to mutate step settings or inject state for each agent step.',
+        'Optional function to mutate step settings or inject state for each agent step, including per-step model call settings such as temperature, maxOutputTokens, sampling controls, penalties, stop sequences, seed, and reasoning. Model call setting overrides apply only to the current step.',
     },
     {
       name: 'include',
@@ -1105,6 +1112,7 @@ console.log(approvedResult.text);
 - [rerank](/docs/reference/ai-sdk-core/rerank)
 - [generateImage](/docs/reference/ai-sdk-core/generate-image)
 - [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
+- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
 - [transcribe](/docs/reference/ai-sdk-core/transcribe)
 - [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
 - [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)

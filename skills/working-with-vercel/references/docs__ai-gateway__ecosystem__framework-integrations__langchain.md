@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c0cc98614d8249a98c374bff79fb67ec8813737c90af6c30fc8fcd540e923d3a"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f68c4cf6ab576abd42cb28c54511c4364244b21e60ac05dff75f532dd167a719"
 ---
 
 # LangChain
@@ -84,7 +84,7 @@ with LangChain to access various AI models and providers.
 
     const chat = new ChatOpenAI({
       apiKey: apiKey,
-      modelName: 'openai/gpt-5.5',
+      modelName: 'openai/gpt-5.6-sol',
       temperature: 0.7,
       configuration: {
         baseURL: 'https://ai-gateway.vercel.sh/v1',

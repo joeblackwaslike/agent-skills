@@ -12,12 +12,12 @@ related:
   - /docs/pricing/serverless-functions
   - /docs/builds/managing-builds
   - /docs/monorepos/remote-caching
-  - /docs/pricing/edge-config
+  - /docs/global-config/global-config-limits
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3c31042309c27a1374a4819b627f35f81cd03434941376ce11f4e5aa1c655794"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "dabf1f034b0516b35e63f11f6894bbaee333bd6ed5bc691b0474f3d92f9f401d"
 ---
 
 # Manage and optimize usage
@@ -70,9 +70,9 @@ The table below shows the metrics for the [**Remote Cache Artifacts**](/docs/mon
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
-## Edge Config
+## Global Config
 
-The table below shows the metrics for the [**Edge Config**](/docs/pricing/edge-config) section of the **Usage** dashboard.
+The table below shows the metrics for the [**Global Config**](/docs/global-config/global-config-limits) section of the **Usage** dashboard.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 

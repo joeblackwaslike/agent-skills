@@ -16,8 +16,8 @@ related:
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "8dfc5ecf609f8b8095135b2391411e56d96a73a72ee717c44d8ad97a77e92b6c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "8114db8d93dbd0bfb667abce24679af4c6896cd1a3385416e410a9227477bf90"
 ---
 
 # Runtime Cache
@@ -54,9 +54,10 @@ Runtime cache is not a good fit for:
 Runtime cache stores data in a non-durable cache close to where your function executes. Each [region](/docs/regions) where your function runs has its own cache, allowing reads and writes to happen in the same region for low latency. It has the following characteristics:
 
 - **Regional**: Each region has its own cache
-- **Isolated**: Runtime cache is isolated per Vercel project and deployment environment (`preview` and `production`)
+- **Isolated by environment**: Each deployment environment (`preview` and `production`) uses its own cache, so they never share cached data
+- **Scoped by plan**: On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](#storage-scope-by-plan)
 - **Persistent across deployments**: Cached data persists across deployments and can be invalidated through time-based expiration or by calling `expireTag`
-- **Ephemeral**: Each project has a storage limit. When your project reaches this limit, Vercel evicts (removes) the entries that haven't been accessed recently to free up space for new entries
+- **Ephemeral**: Each cache has a storage limit. When a cache reaches this limit, Vercel evicts (removes) the entries that haven't been accessed recently to free up space for new entries
 - **Automatic**: When runtime cache is enabled, Vercel handles caching for you
 - **Framework-agnostic**: Works with all frameworks
 
@@ -686,9 +687,23 @@ You can also see a tabular list of runtime cache tags used in your project with 
 
 Runtime cache operates independently from [Incremental Static Regeneration](/docs/incremental-static-regeneration). If you use both caching layers, manage them separately using their respective invalidation methods or use the same cache tag for both to manage them together.
 
+### Storage scope by plan
+
+Your plan determines whether your projects share a single runtime cache or whether each project gets its own:
+
+| Plan       | Runtime cache storage                          |
+| ---------- | ---------------------------------------------- |
+| Hobby      | All projects in your team share a single cache |
+| Pro        | Each project uses its own cache                |
+| Enterprise | Each project uses its own cache                |
+
+Every plan splits the cache by deployment environment, so `production` and `preview` never share cached data. Runtime cache and [Data cache](/docs/runtime-cache/data-cache) also use separate storage, so they don't compete for the same space.
+
+On Hobby, where your projects share a cache, they share its storage limit and its eviction policy. A project that writes a lot of data can evict entries that belong to your other projects.
+
 ### Storage and eviction
 
-Each project has a fixed storage limit. When your project reaches this limit, Vercel uses a least recently used (LRU) eviction policy: it removes the entries that haven't been accessed recently first. You can monitor your cache size and eviction activity in the [**Runtime Cache**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fruntime-cache\&title=Go+to+Runtime+cache+Observability) section of the **Observability** tab.
+Every runtime cache has a fixed storage limit. When a cache reaches this limit, Vercel uses a least recently used (LRU) eviction policy: it removes the entries that haven't been accessed recently first. You can monitor your cache size and eviction activity in the [**Runtime Cache**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fruntime-cache\&title=Go+to+Runtime+cache+Observability) section of the **Observability** tab.
 
 Usage of runtime cache is charged. Learn more about [pricing](/docs/pricing/regional-pricing).
 

@@ -3,7 +3,7 @@ title: Marketplace Vercel API
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel"
-last_updated: 2026-07-27
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about marketplace vercel api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "e71404016b9731ad303891e690292c7def7070c784ac9c69832a2036022c3ada"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b5cc844b0c1f2876f88006f86069600e1e644d2d71877fbfd88d5ec422947cc0"
 ---
 
 # Vercel API Reference
@@ -53,9 +53,9 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items`](/docs/integrations/create-integration/marketplace-api/reference/vercel/post-v1-installations-resources-experimentation-items) | Create one or multiple experimentation items |
 | **PATCH** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}`](/docs/integrations/create-integration/marketplace-api/reference/vercel/patch-v1-installations-resources-experimentation-items) | Patch an existing experimentation item |
 | **DELETE** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}`](/docs/integrations/create-integration/marketplace-api/reference/vercel/delete-v1-installations-resources-experimentation-items) | Delete an existing experimentation item |
-| **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-v1-installations-resources-experimentation-edge-config) | Get the data of a user-provided Edge Config |
-| **PUT** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`](/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-edge-config) | Push data into a user-provided Edge Config |
-| **HEAD** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/edge-config`](/docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-edge-config) | Get the data of a user-provided Edge Config |
+| **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-v1-installations-resources-experimentation-global-config) | Get the data of a user-provided Global Config |
+| **PUT** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config) | Push data into a user-provided Global Config |
+| **HEAD** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-global-config) | Get the data of a user-provided Global Config |
 
 ### Authentication
 

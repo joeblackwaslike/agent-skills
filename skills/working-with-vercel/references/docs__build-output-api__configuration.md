@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "2252a5422dcad46e04954ddaef85ae61c907a3d869e5dcd265126f4d62dc41c8"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f0c4df7f9fca8a0d14e736b5138d7ba45836ecb1d6f58f620cae21d4969e9c20"
 ---
 
 # Build Output Configuration
@@ -34,6 +34,7 @@ type Config = {
   cache?: string[];
   framework?: Framework;
   crons?: CronsConfig;
+  services?: Service[];
 };
 ```
 
@@ -44,6 +45,7 @@ Config Types:
 - [WildcardConfig](#wildcard)
 - [OverrideConfig](#overrides)
 - [CronsConfig](#crons)
+- [Service](#services)
 
 The `config.json` file contains configuration information and metadata for a Deployment.
 The individual properties are described in greater detail in the sub-sections below.
@@ -496,6 +498,63 @@ type CronsConfig = Cron[];
     "schedule": "0 0 * * *"
   }]
 ```
+
+### services
+
+The optional `services` property is an array of the service build targets in the deployment. When it is present, Vercel reads each service's build output from `.vercel/output/services/<name>`. For the directory structure and routing behavior, see the [Services](/docs/build-output-api/v3/services) reference.
+
+```ts
+type Service = {
+  name: string;
+  root: string;
+  framework?: string;
+  runtime?: string;
+  entrypoint?: string;
+  bindings?: ServiceBinding[];
+};
+
+type ServiceBinding = {
+  type: 'service';
+  service: string;
+  format: 'url';
+  env: string;
+};
+```
+
+| Key            | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                       |
+| -------------- | ----------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **name**       | [String](/docs/rest-api/reference#types)       | Yes      | The service name. Vercel reads the service's build output from `.vercel/output/services/<name>`.                                  |
+| **root**       | [String](/docs/rest-api/reference#types)       | Yes      | Path to the service root, relative to the project root.                                                                           |
+| **framework**  | [String](/docs/rest-api/reference#types)       | No       | The framework detected or configured for the service.                                                                            |
+| **runtime**    | [String](/docs/rest-api/reference#types)       | No       | The runtime detected or configured for the service.                                                                              |
+| **entrypoint** | [String](/docs/rest-api/reference#types)       | No       | The service entrypoint, relative to the service root.                                                                            |
+| **bindings**   | ServiceBinding\[]                                                        | No       | Caller-side bindings that let this service call another service. See [Service bindings](/docs/services/bindings). |
+
+#### `services` example
+
+```json
+  "services": [
+    {
+      "name": "web",
+      "root": "web/",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "api",
+          "format": "url",
+          "env": "API_URL"
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "root": "api/",
+      "entrypoint": "main:app"
+    }
+  ]
+```
+
+For an example of declaring services and the resulting build output, see the [Services](/docs/build-output-api/v3/services) reference.
 
 ## Full `config.json` example
 

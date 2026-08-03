@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f758c2f5339e1b8f1da001218b6e13bc42e3ffcd54ffa2ff9fc8e055f9fc3aa7"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "c4076508e8845afadc7e8ec18c08c4d55b57b49e70b7d35f5e906345da606f8c"
 ---
 
 # Voyage AI Provider
@@ -254,6 +254,7 @@ The following provider options are available:
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

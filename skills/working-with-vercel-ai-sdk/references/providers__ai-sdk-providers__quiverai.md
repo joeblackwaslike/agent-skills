@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "85b1e65826b7efbf0f9f58c15fd34c10ce10d473bddb04d1ef3f42e75a5d4be7"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "b821c93d1e206d051ad5530c333c8466df50a0bae33ad34f8aaafba353a2fdd1"
 ---
 
 # QuiverAI Provider
@@ -225,6 +225,7 @@ fs.writeFileSync('logo.svg', image.uint8Array);
 - [DeepSeek](/providers/ai-sdk-providers/deepseek)
 - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
 - [Alibaba](/providers/ai-sdk-providers/alibaba)
+- [MiniMax](/providers/ai-sdk-providers/minimax)
 - [Cerebras](/providers/ai-sdk-providers/cerebras)
 - [Replicate](/providers/ai-sdk-providers/replicate)
 - [Prodia](/providers/ai-sdk-providers/prodia)

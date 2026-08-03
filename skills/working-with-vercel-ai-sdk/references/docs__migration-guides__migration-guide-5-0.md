@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "86d55bc11889020805eaa7eb9a60644083e74ab489e96fc4680582d7643d8b10"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "2baa3eb355ca931b0eab19a47fd0e8f1cd7b62537d35155cc2647ea122630c4e"
 ---
 
 # Migrate AI SDK 4.x to 5.0
@@ -92,7 +92,7 @@ the following command from the root of your project:
 npx @ai-sdk/codemod upgrade
 ```
 
-To run only the v5 codemods (v4 ��� v5 migration):
+To run only the v5 codemods (v4 → v5 migration):
 
 ```sh
 npx @ai-sdk/codemod v5
@@ -2073,11 +2073,48 @@ import { useAssistant } from '@ai-sdk/react';
 ```
 
 ```tsx filename="AI SDK 5.0"
-// useAssistant has been removed
-// Use useChat with appropriate configuration instead
+import { useChat } from '@ai-sdk/react';
+import { DefaultChatTransport } from 'ai';
+
+function Chat() {
+  const { messages, sendMessage } = useChat({
+    transport: new DefaultChatTransport({
+      api: '/api/chat',
+    }),
+  });
+
+  // ...
+}
 ```
 
-For an implementation of the assistant functionality with AI SDK v5, see this [example repository](https://github.com/vercel-labs/ai-sdk-openai-assistants-api).
+The `useAssistant` hook was specific to the OpenAI Assistants API. OpenAI has
+deprecated that API in favor of the Responses API. Configure `useChat` for your
+route as shown above, then return a UI message stream from the route:
+
+```tsx filename="app/api/chat/route.ts"
+import { openai } from '@ai-sdk/openai';
+import { convertToModelMessages, streamText, type UIMessage } from 'ai';
+
+export async function POST(req: Request) {
+  const { messages }: { messages: UIMessage[] } = await req.json();
+
+  const result = streamText({
+    model: openai.responses('gpt-4o-mini'),
+    prompt: convertToModelMessages(messages),
+  });
+
+  return result.toUIMessageStreamResponse();
+}
+```
+
+For persistent conversation state and built-in tools, see the
+[OpenAI Responses API guide](/cookbook/guides/openai-responses).
+
+If you need to connect `useChat` to another backend, see the
+[transport documentation](/docs/ai-sdk-ui/transport) and
+[stream protocol](/docs/ai-sdk-ui/stream-protocol). For migrating existing
+OpenAI Assistants data and API calls, see OpenAI's
+[Assistants migration guide](https://platform.openai.com/docs/assistants/migration).
 
 #### Attachments → File Parts
 

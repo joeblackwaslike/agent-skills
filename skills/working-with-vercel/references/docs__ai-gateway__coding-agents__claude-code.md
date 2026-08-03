@@ -3,24 +3,24 @@ title: Claude Code and Claude Agent SDK
 product: vercel
 url: /docs/ai-gateway/coding-agents/claude-code
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code"
-last_updated: 2026-05-13
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/sdks-and-apis/anthropic-compat
+  - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/models-and-providers/fast-mode
 summary: Use Claude Code and the Claude Agent SDK with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "97a2756a59666526a44130ec255704925f267ab89a3c47c7c883f807a91621f4"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "bc0dca1544b16daf381ec9197e35e819de4814bf81a729dc5cc5cf1f5f49af14"
 ---
 
 # Claude Code and Claude Agent SDK
 
-AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-and-apis/anthropic-compat) so you can use [Claude Code](https://www.claude.com/product/claude-code) and the [Claude Agent SDK](https://docs.anthropic.com/en/docs/agent-sdk/overview) through a unified gateway.
+AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) so you can use [Claude Code](https://www.claude.com/product/claude-code) and the [Claude Agent SDK](https://docs.anthropic.com/en/docs/agent-sdk/overview) through a unified gateway.
 
 > **💡 Note:** If you're routing through Bedrock or Vertex AI providers, set
 > `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` in your environment. Claude Code
@@ -149,7 +149,7 @@ import { query } from '@anthropic-ai/claude-agent-sdk';
 for await (const message of query({
   prompt: 'Find and fix the bug in auth.py',
   options: {
-    model: 'anthropic/claude-sonnet-4.6',
+    model: 'anthropic/claude-sonnet-5',
     allowedTools: ['Read', 'Edit', 'Bash'],
     env: {
       ...process.env,

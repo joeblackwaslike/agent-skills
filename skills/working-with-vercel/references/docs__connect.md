@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Connect to create connectors, authorize provider access, request provider tokens at runtime, and run agent workflows without long-lived...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "6699c145fa7cc1643ba110a00ae95168f034980579325635c973d79b3a989ac7"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "0cdddc9dec093d97990fd402b390a51568a5104eb424614dfe0fe54f6cd7ce3b"
 ---
 
 # Vercel Connect
@@ -52,7 +52,7 @@ For the local-development setup that pulls an OIDC token into `.env.local`, foll
 Each connector type has its own provider-side flow:
 
 - **Slack** and **GitHub**: Managed app installs, scoped to one workspace or organization per installation.
-- **Custom OAuth**: Managed OAuth against the service's URL, on behalf of the installing user.
+- **Custom OAuth**: Managed OAuth against the service's URL, on behalf of the installing user (authorization-code flow) or as your service (client-credentials flow).
 - **API key**: A credential the connector owner supplies once at create time.
 
 For the full picture, including how token requests are authorized against project links, RBAC for dashboard and CLI calls, the per-connector provider flows, and the error classes thrown on auth failures, see [Concepts: Authentication](/docs/connect/concepts/authentication).
@@ -89,7 +89,7 @@ Vercel registers the OAuth client with the Third Party Platform and you authoriz
 
 You register an OAuth client (or generate an API key) with the Third Party Platform yourself and supply the credentials at create time. Vercel stores them and exchanges tokens on your behalf at runtime. You are responsible for managing those credentials on the provider side.
 
-- **Custom OAuth**: OAuth 2.0 / OIDC authorization-code flow with PKCE against any service URL you provide. Bring your own client ID and client secret.
+- **Custom OAuth**: OAuth 2.0 / OIDC against any service URL you provide. Bring your own client ID and client secret. Supports both the authorization-code flow with PKCE (to act on behalf of a user) and the client-credentials flow (to act as your service). After creating the connector, open it in the dashboard, click **Edit**, and select the grant types you want to enable.
 - **API key**: Static credential storage for providers that issue long-lived API keys. You supply the key at create time.
 
 For providers that support it, [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup) is a one-off helper action that performs some or all of the OAuth-client registration steps on your behalf when bootstrapping a Customer Managed Connector.

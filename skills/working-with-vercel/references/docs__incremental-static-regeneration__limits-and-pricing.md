@@ -3,7 +3,7 @@ title: ISR Usage and Pricing
 product: vercel
 url: /docs/incremental-static-regeneration/limits-and-pricing
 canonical_url: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing"
-last_updated: 2026-02-23
+last_updated: 2026-07-14
 type: reference
 prerequisites:
   - /docs/incremental-static-regeneration
@@ -16,8 +16,8 @@ related:
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "84dab6cfbaff1dc99b2dca5695a13955ae224c396c0626ec766b36cece5e529c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "f6efc605846def17422d1cf32875bccc3cec25dc4477b6eeb235834e8ece414a"
 ---
 
 # ISR Usage and Pricing

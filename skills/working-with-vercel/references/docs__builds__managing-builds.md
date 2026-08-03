@@ -16,8 +16,8 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "fbabc72bcede840353359d9d2dab2aca360d403bca73f4b060f2cb2931a1321c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "4002a6f0f559453826bae591dc5884dd456346a395ed9f58a4964320925b7c8d"
 ---
 
 # Managing Builds
@@ -51,7 +51,7 @@ For Pro and Enterprise customers, we offer three higher-tier build machines with
 
 You can set the build machine type in the **Build and Deployment** section of your settings [for your team](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23build-machines\&title=Set+team+level+build+machines) or [for individual projects](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23build-machine\&title=Configure+your+build+machine).
 
-When your team uses Elastic, Enhanced, or Turbo machines, usage contributes to your build usage charges. Elastic build machines are billed by CPU minute, starting at $0.0035 per CPU minute.
+When your team uses Elastic, Enhanced, or Turbo machines, usage contributes to your build usage charges. Elastic build machines are billed by CPU minute, starting at $0.0035 per CPU minute. A CPU minute is one minute of build time multiplied by the number of vCPU cores used. For example, if a build takes 3 minutes and Elastic assigns the Standard machine (4 vCPUs), you're billed for 3 minutes × 4 cores = 12 CPU minutes.
 
 Enterprise customers who have Enhanced build machines enabled via contract will always use them by default. You can view if you have this enabled in [the Build Machines section of the Build and Deployment tab in your Team Settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23build-machines\&title=Configure+your+build+machines). To update your build machine preferences, you need to contact your account manager.
 

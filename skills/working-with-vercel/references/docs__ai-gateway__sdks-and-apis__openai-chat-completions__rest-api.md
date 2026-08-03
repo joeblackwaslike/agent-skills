@@ -3,7 +3,7 @@ title: Direct REST API Usage
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api"
-last_updated: 2026-06-29
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -13,8 +13,8 @@ related:
 summary: Use the AI Gateway API directly without client libraries using curl and fetch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "1acbf7e5ee904668c7bb86dcfd09f16e1cbdcd7c69998f24f3e0b205ecae4f9c"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "4fe452474f07cd0fd4519dbcb9168d26fbef3aa35f4208fce77bc3f950c37eaa"
 ---
 
 # Direct REST API Usage
@@ -55,7 +55,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-opus-4.8",
+    "model": "anthropic/claude-opus-5",
     "messages": [
       {
         "role": "user",
@@ -78,7 +78,7 @@ const response = await fetch(
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-opus-4.8',
+      model: 'anthropic/claude-opus-5',
       messages: [
         {
           role: 'user',
@@ -103,7 +103,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-opus-4.8",
+    "model": "anthropic/claude-opus-5",
     "messages": [
       {
         "role": "user",
@@ -127,7 +127,7 @@ const response = await fetch(
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-opus-4.8',
+      model: 'anthropic/claude-opus-5',
       messages: [
         {
           role: 'user',
@@ -173,13 +173,13 @@ while (true) {
 
 ```bash filename="image-analysis.sh"
 # First, convert your image to base64
-IMAGE_BASE64=$(base64 -i ./path/to/image.png)
+IMAGE_BASE64=$(base64 -i ./image.png)
 
 curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-opus-4.8",
+    "model": "anthropic/claude-opus-5",
     "messages": [
       {
         "role": "user",
@@ -208,7 +208,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
 import fs from 'node:fs';
 
 // Read the image file as base64
-const imageBuffer = fs.readFileSync('./path/to/image.png');
+const imageBuffer = fs.readFileSync('./image.png');
 const imageBase64 = imageBuffer.toString('base64');
 
 const response = await fetch(
@@ -220,7 +220,7 @@ const response = await fetch(
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-opus-4.8',
+      model: 'anthropic/claude-opus-5',
       messages: [
         {
           role: 'user',
@@ -254,7 +254,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-opus-4.8",
+    "model": "anthropic/claude-opus-5",
     "messages": [
       {
         "role": "user",
@@ -302,7 +302,7 @@ const response = await fetch(
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-opus-4.8',
+      model: 'anthropic/claude-opus-5',
       messages: [
         {
           role: 'user',
@@ -352,7 +352,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-opus-4.8",
+    "model": "anthropic/claude-opus-5",
     "messages": [
       {
         "role": "user",
@@ -380,7 +380,7 @@ const response = await fetch(
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-opus-4.8',
+      model: 'anthropic/claude-opus-5',
       messages: [
         {
           role: 'user',
@@ -413,7 +413,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-sonnet-4.6",
+    "model": "anthropic/claude-sonnet-5",
     "messages": [
       {
         "role": "user",
@@ -439,7 +439,7 @@ const response = await fetch(
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-sonnet-4.6',
+      model: 'anthropic/claude-sonnet-5',
       messages: [
         {
           role: 'user',

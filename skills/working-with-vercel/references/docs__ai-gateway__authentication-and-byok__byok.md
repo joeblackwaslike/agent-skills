@@ -10,14 +10,15 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/pricing
+  - /docs/ai-gateway/observability-and-spend/budgets
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/security-and-compliance/zdr
   - /docs/ai-gateway/security-and-compliance/regional-inference
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "c0244ca6e3a325d900534aad6914d1ac00f316eb939726f40573549ce35b2ec3"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "1ad423b3b31c35618f9fdd72768d6ee21c647a86ed16cbedaf3a64da7c5047f7"
 ---
 
 # Bring Your Own Key (BYOK)
@@ -35,6 +36,8 @@ Provider credentials are scoped to be available throughout your Vercel team, so 
 > and that fallback usage is billed against your credits balance. To use
 > BYOK, your team needs purchased [AI Gateway
 > credits](/docs/ai-gateway/pricing).
+
+Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/observability-and-spend/budgets). It's metered separately and doesn't count toward a team, project, or API key limit, so a budget can't be used to cap BYOK spend.
 
 ## Getting started
 
@@ -64,7 +67,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-opus-4.8',
+  model: 'anthropic/claude-opus-5',
   prompt: 'Hello, world!',
   providerOptions: {
     gateway: {

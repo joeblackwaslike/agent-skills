@@ -15,8 +15,8 @@ related:
 summary: Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern matching, and geolocation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/configuration-redirects.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9f99cddab7fab6c978f84b77994aed0a6ba4576f655b4791b8fcf15be7b1dff9"
+fetched_at: "2026-08-03T07:34:45.774Z"
+sha256: "b1feceaeebb67bce10dd32e806df5aa252af37076777f5c1279b7ba284309392"
 ---
 
 # Configuration Redirects
@@ -122,7 +122,7 @@ The [/.well-known](# "The /.well-known directory") path is reserved and cannot b
 Enterprise teams can configure custom SSL. [Contact sales](/contact/sales) to
 learn more.
 
-If you are exceeding the limits below, we recommend using Middleware and Edge Config to [dynamically read redirect values](/docs/redirects#edge-middleware).
+If you are exceeding the limits below, we recommend using Middleware and Global Config to [dynamically read redirect values](/docs/redirects#edge-middleware).
 
 | Limit                                        | Maximum |
 | -------------------------------------------- | ------- |

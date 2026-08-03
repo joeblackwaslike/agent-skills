@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/realtime.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c366e3af8ff1bf5e0f33b4d980d48673506a8c7e0df83bfd64d89940ed223b5c"
+fetched_at: "2026-08-03T07:32:11.263Z"
+sha256: "506cf3bb2fb3336ec11c58287db925f1481175d216cf88c1c6046b53f5cab4fd"
 ---
 
 # Realtime
@@ -286,6 +286,7 @@ for Gateway-specific token and provider option details.
 - [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
 - [MCP Apps](/docs/ai-sdk-core/mcp-apps)
 - [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
+- [Code Mode](/docs/ai-sdk-core/code-mode)
 - [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
 - [Settings](/docs/ai-sdk-core/settings)
 - [Reasoning](/docs/ai-sdk-core/reasoning)
@@ -294,6 +295,7 @@ for Gateway-specific token and provider option details.
 - [Image Generation](/docs/ai-sdk-core/image-generation)
 - [Realtime](/docs/ai-sdk-core/realtime)
 - [Transcription](/docs/ai-sdk-core/transcription)
+- [Translation](/docs/ai-sdk-core/translation)
 - [Speech](/docs/ai-sdk-core/speech)
 - [Video Generation](/docs/ai-sdk-core/video-generation)
 - [File Uploads](/docs/ai-sdk-core/file-uploads)
