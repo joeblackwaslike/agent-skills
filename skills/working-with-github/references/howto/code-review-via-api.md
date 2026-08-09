@@ -166,7 +166,7 @@ query ($owner: String!, $repo: String!, $pr: Int!, $cursor: String) {
           isResolved
           path
           line
-          comments(first: 1) { nodes { body } }
+          comments(first: 1) { nodes { body databaseId } }  # databaseId ← REST comment_id (id here is a node ID, not that)
         }
         pageInfo { hasNextPage endCursor }
       }
@@ -187,7 +187,7 @@ mutation ($threadId: ID!) {
 type ThreadPage = {
   repository: { pullRequest: { reviewThreads: {
     nodes: { id: string; isResolved: boolean; path: string; line: number | null;
-             comments: { nodes: { body: string }[] } }[];
+             comments: { nodes: { body: string; databaseId: number }[] } }[];
     pageInfo: { hasNextPage: boolean; endCursor: string | null };
   }; }; };
 };
