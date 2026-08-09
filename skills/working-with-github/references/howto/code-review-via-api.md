@@ -218,6 +218,20 @@ for (const t of threads) {
 
 `gh` can run the mutation too — `gh api graphql -f query='mutation { resolveReviewThread(input: {threadId: "PRRT_xxx"}) { thread { id } } }'`. Use `unresolveReviewThread` with the same `{ threadId }` input to reopen. Identify *your own* threads (vs. a human's or another bot's) by matching a known marker in the first comment's body before resolving — never auto-resolve threads you didn't author.
 
+**React to a review comment** (REST). Reactions are per-comment, keyed on the comment's `databaseId`/`id` (not the thread node ID used above) — `POST /repos/{o}/{r}/pulls/comments/{comment_id}/reactions` with a `content` value:
+
+```bash
+gh api -X POST repos/OWNER/REPO/pulls/comments/998877/reactions -f content="+1"
+```
+
+```ts
+await octokit.rest.reactions.createForPullRequestReviewComment({
+  owner, repo, comment_id: 998877, content: "+1",
+});
+```
+
+`content` is one of `+1`, `-1`, `laugh`, `confused`, `heart`, `hooray`, `rocket`, `eyes` — there is no dedicated 👍/👎/😕 enum, those map onto `+1`/`-1`/`confused`. The same endpoint and shape work for a *top-level* issue/PR comment via `POST /repos/{o}/{r}/issues/comments/{comment_id}/reactions` (issue comments and PR review comments are reaction-compatible but are different resources with different comment ids — use the issue-comments endpoint for a carrier/summary comment, the pulls-comments one above for an inline review comment).
+
 ## 4. Request / re-request reviewers
 
 `POST /repos/{o}/{r}/pulls/{n}/requested_reviewers` with `reviewers` (usernames) and/or `team_reviewers` (team slugs). Re-requesting an existing reviewer after a push resets their review state to "requested" — handy for nudging a re-review.
@@ -334,6 +348,31 @@ const r = await octokit.graphql(REVIEW_STATE_QUERY, { owner, repo, pr: 123 });
 ```
 
 The REST `GET /repos/{o}/{r}/pulls/{n}/reviews` lists every review event (including superseded ones) — useful for idempotency ("did I already review this SHA?") by stamping a marker like `Reviewed commit: \`<sha>\`` in your review `body` and checking for it before re-reviewing. For counting unresolved threads or deciding what to re-poll, prefer the GraphQL `reviewThreads` (`isResolved` / `isOutdated`) — REST has no thread-resolution state. The full polling loop (read state → act → wait → re-poll until `reviewDecision === APPROVED` and CI is green) is the workflow guide's job, below.
+
+**Dismiss a review** (REST; no GraphQL equivalent). Dismissals are per-review, keyed on the review `id` (not a thread or comment id) — `PUT /repos/{o}/{r}/pulls/{n}/reviews/{review_id}/dismissals` with a `message` and `event: "DISMISS"`:
+
+```bash
+gh api -X PUT repos/OWNER/REPO/pulls/123/reviews/456789/dismissals \
+  -f message="Findings verified as false positives against the current diff; CI green." \
+  -f event=DISMISS
+```
+
+```ts
+await octokit.rest.pulls.dismissReview({
+  owner, repo, pull_number: 123, review_id: 456789,
+  message: "Findings verified as false positives against the current diff; CI green.",
+  event: "DISMISS",
+});
+```
+
+A reviewer's blocking reviews **stack** — dismissing the latest `CHANGES_REQUESTED` does not clear an earlier one from the same reviewer that is still counted toward `reviewDecision`. List every review from that author and dismiss each `CHANGES_REQUESTED` one:
+
+```bash
+gh api "repos/OWNER/REPO/pulls/123/reviews?per_page=100" \
+  --jq '.[] | select(.user.login=="some-bot[bot]" and .state=="CHANGES_REQUESTED") | .id'
+```
+
+This is a state-changing, hard-to-reverse-looking action but is not actually destructive — a dismissed review stays visible in the PR's timeline with its state changed to `DISMISSED`, not deleted. Use it deliberately, with a `message` that records *why* (the audit trail this leaves is the point), not as a routine way to clear disagreement.
 
 ## See also
 
