@@ -218,7 +218,9 @@ for (const t of threads) {
 
 `gh` can run the mutation too — `gh api graphql -f query='mutation { resolveReviewThread(input: {threadId: "PRRT_xxx"}) { thread { id } } }'`. Use `unresolveReviewThread` with the same `{ threadId }` input to reopen. Identify *your own* threads (vs. a human's or another bot's) by matching a known marker in the first comment's body before resolving — never auto-resolve threads you didn't author.
 
-**React to a review comment** (REST). Reactions are per-comment, keyed on the comment's REST integer `id` (not the GraphQL node ID used for thread resolution above — don't send that ID here) — `POST /repos/{o}/{r}/pulls/comments/{comment_id}/reactions` with a `content` value:
+### React to a review comment
+
+(REST.) Reactions are per-comment, keyed on the comment's REST integer `id` (not the GraphQL node ID used for thread resolution above — don't send that ID here) — `POST /repos/{o}/{r}/pulls/comments/{comment_id}/reactions` with a `content` value:
 
 ```bash
 gh api -X POST repos/OWNER/REPO/pulls/comments/998877/reactions -f content="+1"
@@ -349,7 +351,9 @@ const r = await octokit.graphql(REVIEW_STATE_QUERY, { owner, repo, pr: 123 });
 
 The REST `GET /repos/{o}/{r}/pulls/{n}/reviews` lists every review event (including superseded ones) — useful for idempotency ("did I already review this SHA?") by stamping a marker like `Reviewed commit: \`<sha>\`` in your review `body` and checking for it before re-reviewing. For counting unresolved threads or deciding what to re-poll, prefer the GraphQL `reviewThreads` (`isResolved` / `isOutdated`) — REST has no thread-resolution state. The full polling loop (read state → act → wait → re-poll until `reviewDecision === APPROVED` and CI is green) is the workflow guide's job, below.
 
-**Dismiss a review.** Dismissals are per-review, keyed on the review `id` (REST integer, not a thread or comment id) — REST: `PUT /repos/{o}/{r}/pulls/{n}/reviews/{review_id}/dismissals` with a `message` and `event: "DISMISS"`. GraphQL also has this (`dismissPullRequestReview`, taking `pullRequestReviewId` + `message`) — REST is shown here since everything else in this doc's dismiss/review-listing flow is REST, but reach for the mutation if you're already in a GraphQL client. One real difference: GraphQL's `message` is **required**; REST's is optional.
+### Dismiss a review
+
+Dismissals are per-review, keyed on the review `id` (REST integer, not a thread or comment id) — REST: `PUT /repos/{o}/{r}/pulls/{n}/reviews/{review_id}/dismissals` with a `message` and `event: "DISMISS"`. GraphQL also has this (`dismissPullRequestReview`, taking `pullRequestReviewId` + `message`) — REST is shown here since everything else in this doc's dismiss/review-listing flow is REST, but reach for the mutation if you're already in a GraphQL client. One real difference: GraphQL's `message` is **required**; REST's is optional.
 
 ```bash
 gh api -X PUT repos/OWNER/REPO/pulls/123/reviews/456789/dismissals \
