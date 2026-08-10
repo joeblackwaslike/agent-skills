@@ -3,7 +3,7 @@ title: Audit Log Drains Reference
 product: vercel
 url: /docs/drains/reference/audit-logs
 canonical_url: "https://vercel.com/docs/drains/reference/audit-logs"
-last_updated: 2026-07-03
+last_updated: 2026-07-22
 type: reference
 prerequisites:
   - /docs/drains
@@ -12,12 +12,12 @@ related:
   - /docs/drains/using-drains
   - /docs/drains/audit-logs-to-s3
   - /docs/drains/audit-logs-to-splunk
-  - /docs/drains/audit-logs-to-panther
+  - /docs/drains/audit-logs-to-datadog
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "2a02a942140741dac6bbd9db08e290c613b3786b221e5718495dba33c581152a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "174ba60802f510fea3ee0f350e0226894d89f438612a9f714761b41d4a294e47"
 ---
 
 # Audit Log Drains Reference
@@ -69,6 +69,8 @@ Vercel supports the following formats for Audit Log Drains. You can configure th
 Audit Log Drains can also write events directly to Amazon S3. See [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3) for AWS IAM setup, file structure, and destination fields.
 
 To send Audit Logs to Splunk over the HTTP Event Collector, see [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk).
+
+To send Audit Logs to Datadog, see [Drain Audit Logs to Datadog](/docs/drains/audit-logs-to-datadog) for site selection and destination fields.
 
 To send Audit Logs to Panther, see [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther) for source and destination setup.
 
@@ -142,6 +144,8 @@ See [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk) for HEC setu
 
 When the destination is Datadog, Vercel sends events as JSON to the [Datadog Logs API](https://docs.datadoghq.com/api/latest/logs/) for your selected [Datadog site](https://docs.datadoghq.com/getting_started/site/). Each event contains the audit log fields at the top level, tagged with `ddsource` set to `vercel` and `service` set to `audit-logs` so you can filter and route Vercel audit log events in Datadog.
 
+See [Drain Audit Logs to Datadog](/docs/drains/audit-logs-to-datadog) for API key setup and destination fields.
+
 ### Panther
 
 When the destination is Panther, Vercel sends the [standard Audit Log Drain JSON format](#json) to [Panther's built-in Vercel source](https://docs.panther.com/data-onboarding/supported-logs/vercel). Panther destinations use the Audit Log fields from the schema above.
@@ -164,6 +168,7 @@ For more information on Audit Log Drains and how to use them, check out the foll
 - [Configure Drains](/docs/drains/using-drains)
 - [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3)
 - [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk)
+- [Drain Audit Logs to Datadog](/docs/drains/audit-logs-to-datadog)
 - [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther)
 - [Audit Logs](/docs/audit-log)
 - [Migrating from Custom SIEM Log Streaming](/docs/audit-log/migrating-to-drains)

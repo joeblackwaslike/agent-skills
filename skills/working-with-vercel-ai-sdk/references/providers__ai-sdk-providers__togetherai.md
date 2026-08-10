@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "48e8c79714bbffbca0afb86dd7c54b038b8542cc17e387d3e2a534a501eb59f3"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "8aa9754cfa385e887c04e0d4e185e3e4d4e2823ea814e28160428ca9239fa160"
 ---
 
 # Together.ai Provider
@@ -399,6 +399,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

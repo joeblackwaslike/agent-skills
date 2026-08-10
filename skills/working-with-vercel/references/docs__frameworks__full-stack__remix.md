@@ -3,7 +3,7 @@ title: Remix on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/remix
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/remix"
-last_updated: 2026-03-10
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Remix."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "91fae910e7a7dbb203051db5d3685bc0a319431f02981bbc8550492a0334a4bd"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d4808043a9f3dbbb64203ecd6da08c685c71bf2d415690e8820af95422e2114c"
 ---
 
 # Remix on Vercel

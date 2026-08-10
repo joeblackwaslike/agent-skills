@@ -3,7 +3,7 @@ title: Upgrade an Integration
 product: vercel
 url: /docs/integrations/create-integration/upgrade-integration
 canonical_url: "https://vercel.com/docs/integrations/create-integration/upgrade-integration"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/integrations/create-integration
@@ -16,8 +16,8 @@ related:
 summary: Lean more about when you may need to upgrade your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/upgrade-integration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f181f284339c18225892675c6c0d3c647791fa1e4e8fc6af99d1d7503c83af50"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ee06060b284a4526f80a7ca8f5b2d6ccb1be4b00f1e37fcc655432f966a17a57"
 ---
 
 # Upgrade an Integration

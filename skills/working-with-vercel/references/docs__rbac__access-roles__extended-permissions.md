@@ -3,7 +3,7 @@ title: Extended permissions
 product: vercel
 url: /docs/rbac/access-roles/extended-permissions
 canonical_url: "https://vercel.com/docs/rbac/access-roles/extended-permissions"
-last_updated: 2025-10-10
+last_updated: 2026-08-04
 type: reference
 prerequisites:
   - /docs/rbac/access-roles
@@ -13,8 +13,8 @@ related:
 summary: "Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise access control."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/extended-permissions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "728c0a1ab6540d5561e8a40a2bac70e157b896ee97cf5f53413a02c32b599102"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5efe2687bf93dfb8d2653e0c060d6ad304beaab2b3d64bc2a1d7528f9ea24880"
 ---
 
 # Extended permissions

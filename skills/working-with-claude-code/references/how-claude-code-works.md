@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/how-claude-code-works.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "650ccf0b01e2b487a59bb8261dbcf29adbfd26f8d9415b6df8b7a2569f94c246"
+fetched_at: "2026-08-10T05:26:58.686Z"
+sha256: "b661f1a67c55e9c6f1332d0f5272c028ba15b2adfefd0bb4b70342a4aa5b082b"
 ---
 
 > ## Documentation Index
@@ -90,11 +90,11 @@ The agentic loop, tools, and capabilities described above are the same everywher
 
 Claude Code runs in three environments, each with different tradeoffs for where your code executes.
 
-| Environment        | Where code runs                         | Use case                                                   |
-| ------------------ | --------------------------------------- | ---------------------------------------------------------- |
-| **Local**          | Your machine                            | Default. Full access to your files, tools, and environment |
-| **Cloud**          | Anthropic-managed VMs                   | Offload tasks, work on repos you don't have locally        |
-| **Remote Control** | Your machine, controlled from a browser | Use the web UI while execution and your files stay local   |
+| Environment        | Where code runs                                                                                               | Use case                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Local**          | Your machine                                                                                                  | Default. Full access to your files, tools, and environment |
+| **Cloud**          | Anthropic-managed VMs, or [self-hosted environments](/docs/en/self-hosted-environments) your organization operates | Offload tasks, work on repos you don't have locally        |
+| **Remote Control** | Your machine, controlled from a browser                                                                       | Use the web UI while execution and your files stay local   |
 
 ### Interfaces
 

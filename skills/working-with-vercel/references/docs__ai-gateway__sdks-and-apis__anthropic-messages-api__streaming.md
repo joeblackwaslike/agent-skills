@@ -3,7 +3,7 @@ title: Streaming
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -16,8 +16,8 @@ related:
 summary: Stream Anthropic Messages API responses token by token as they are generated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "eaf0d394189b0237c1a6dbdd61cb81dd327b11cd026562036fdb3fe69f0e5d63"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5eaa05a1072a58f09cbebeb7921ac6834464992d32ccfeb18e8b08cb2348b2f7"
 ---
 
 # Streaming

@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e977875a5c4f39eb71a9af2b74b38faa5ce2fa36d4bdf367e967dfb455b90068"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b192b0111d39cc77415a44db07a1a9eeab2f33c677baee8f9869a8f5853d2304"
 ---
 
 # Managing projects
@@ -128,6 +128,17 @@ To automatically pause your projects when you reach your spend amount:
 
 To learn more, see the [Spend Management documentation](/docs/spend-management#pausing-projects).
 
+### Pause a project from the dashboard
+
+> **💡 Note:** To pause or resume a project from the dashboard, you need an [Owner](/docs/rbac/access-roles#owner-role) or [Member](/docs/rbac/access-roles#member-role) role, or the [Project Administrator](/docs/rbac/access-roles#project-administrators) role on that project. For more information, see [Access Roles](/docs/rbac/access-roles).
+
+To pause a single project manually:
+
+1. On the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), ensure you have selected the correct team from the team switcher and select the project you want to pause.
+2. Open **Settings** in the sidebar.
+3. On the **General** page, find the **Pause Project** section above **Delete Project** and select the **Pause Project** button.
+4. In the dialog that appears, review the effects of pausing, type the project name to confirm, then select **Pause Project**.
+
 ### Pause a project using the REST API
 
 To pause a project manually or with a webhook you can use the [REST API](/docs/rest-api/reference/endpoints/projects/pause-a-project):
@@ -159,9 +170,9 @@ Resuming a project can either be done through the [REST API](/docs/rest-api/refe
 
 1. Go to your team's [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and select your project. When you select it, you should notice it has a **paused** icon in the team switcher.
 2. Open **Settings** in the sidebar.
-3. You'll be presented with a banner notifying you that your project is paused and your production deployment is unavailable.
-4. Select the **Resume Service** button.
-5. In the dialog that appears, confirm that you want to resume service of your project's production deployment by selecting the **Resume** button.
+3. On the **General** page, find the **Pause Project** section above **Delete Project** and select the **Resume Project** button.
+
+You can also select **Resume Project** in the banner at the top of the same page, or in the banner on the project overview page. Resuming takes effect immediately and does not ask for confirmation.
 
 Your production deployment will resume service within a few minutes. You do not need to redeploy it.
 

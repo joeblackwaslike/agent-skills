@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "552918e77be2883a1e3e67171152f2bce78f2724ef922f14bd7777793cad741b"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "88f303e939a5e460fb37de7c54d166bfd02f07ab07acd46c9f46d370678d703b"
 ---
 
 # `generateText()`
@@ -1438,6 +1438,12 @@ To see `generateText` in action, check out [these examples](#examples).
               type: 'string',
               description:
                 'The provider-returned response ID for this model call.',
+            },
+            {
+              name: 'providerMetadata',
+              type: 'ProviderMetadata | undefined',
+              description:
+                'Provider-specific metadata for this model call, when returned by the provider.',
             },
             {
               name: 'performance',
@@ -3292,6 +3298,7 @@ Limits a generation step to the listed tool names. `undefined` means no tool res
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

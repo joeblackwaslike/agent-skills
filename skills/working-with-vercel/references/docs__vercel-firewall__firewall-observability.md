@@ -3,7 +3,7 @@ title: Firewall Observability
 product: vercel
 url: /docs/vercel-firewall/firewall-observability
 canonical_url: "https://vercel.com/docs/vercel-firewall/firewall-observability"
-last_updated: 2026-05-15
+last_updated: 2026-07-17
 type: how-to
 prerequisites:
   - /docs/vercel-firewall
@@ -16,8 +16,8 @@ related:
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7d198d3d7368e12df8a45bdd17713ef51f2a1007cd684dd79a45722bf1abac70"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ba563b34ca6a264347b5b8bd52a076016f66361651439852075c9b3111cdd51a"
 ---
 
 # Firewall Observability

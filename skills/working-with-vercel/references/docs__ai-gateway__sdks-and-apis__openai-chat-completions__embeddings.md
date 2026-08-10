@@ -3,7 +3,7 @@ title: Embeddings with the OpenAI-Compatible API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -13,8 +13,8 @@ related:
 summary: Generate vector embeddings with the OpenAI-compatible /embeddings endpoint through Vercel AI Gateway, including the dimensions parameter and response...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "1efee11189d9f86fe3a08f702a42ae4e34026cd55384e936972448c8668ab3b9"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b2f62df77776b0b60d491cbb8650a5e7841d14647a3339fb1ac5cb58bcdd1452"
 ---
 
 # Embeddings with the OpenAI-Compatible API

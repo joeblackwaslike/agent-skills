@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "b821c93d1e206d051ad5530c333c8466df50a0bae33ad34f8aaafba353a2fdd1"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "47b476b6f4cd7284458560e94af6fb7fd32f60ccb0542493464c6a86ab161a38"
 ---
 
 # QuiverAI Provider
@@ -217,6 +217,7 @@ fs.writeFileSync('logo.svg', image.uint8Array);
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

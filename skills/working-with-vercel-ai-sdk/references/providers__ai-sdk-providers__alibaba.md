@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "e7d961e37bebbabe8f6efe47e3819bd595bc7deb7913d34b532531eeb63042ba"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "90b304d0a1b255193d6b9d9d9875e69c9a038409e7d8ed2ce2017e11140c4708"
 ---
 
 # Alibaba Provider
@@ -605,6 +605,7 @@ a string if needed.
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

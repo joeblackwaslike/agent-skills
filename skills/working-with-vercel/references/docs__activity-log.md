@@ -14,8 +14,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "77300d18849966734a500f36e240b7d380ab0be521e8f926dc5e66e32f157c4f"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f0fd91dca0289213f7537f0c96c732eb14da49f0dec6f6d543ccee74d0789033"
 ---
 
 # Using the Activity Log
@@ -95,6 +95,11 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-rule-deleted | Active | A user removed an AI Gateway routing rule. |
 | ai-gateway-rule-updated | Active | A user updated an AI Gateway routing rule. |
 | ai-gateway-scope-budget-updated | Active | A user set, changed, or removed a team- or project-scope AI Gateway budget. |
+| ai-gateway-transcripts-default-disabled | Active | AI Gateway Transcripts capture-by-default was disabled for a team. |
+| ai-gateway-transcripts-default-enabled | Active | AI Gateway Transcripts capture-by-default was enabled for a team. |
+| ai-gateway-transcripts-disabled | Active | AI Gateway Transcripts was disabled for a team. |
+| ai-gateway-transcripts-enabled | Active | AI Gateway Transcripts was enabled for a team. |
+| ai-gateway-transcripts-retention-updated | Active | The AI Gateway Transcripts retention policy was changed for a team. |
 | ai-gateway-virtual-model-config-archived | Active | A user archived an AI Gateway virtual model. |
 | ai-gateway-virtual-model-config-created | Active | A user created an AI Gateway virtual model. |
 | ai-gateway-virtual-model-config-restored | Active | A user restored an AI Gateway virtual model. |
@@ -135,6 +140,7 @@ The table below shows a list of events logged on the Activity page.
 | cert-system-create | Active | A system SSL certificate was created. |
 | code-owners-config-updated | Active | A repository's Code Owners settings were updated. |
 | compliance-document-downloaded | Active | A compliance document was downloaded. |
+| compliance-document-previewed | Active | A compliance document was previewed. |
 | compliance-documents-bulk-downloaded | Active | A bulk set of compliance documents was downloaded. |
 | concurrent-builds-update | Active | The concurrent builds limit was updated. |
 | connect-attach-project | Active | A Connector was attached to a project |
@@ -278,6 +284,7 @@ The table below shows a list of events logged on the Activity page.
 | kms-issuer-deleted | Active | A KMS signing issuer was deleted. |
 | kms-issuer-key-activated | Active | A pending signing key for a KMS issuer was activated. |
 | kms-issuer-key-created | Active | A new signing key was created for a KMS issuer. |
+| kms-issuer-key-revoked | Active | A signing key for a KMS issuer was revoked. |
 | kms-issuer-key-rotated | Active | The signing key for a KMS issuer was rotated. |
 | kms-issuer-policy-created | Active | A policy was added to a KMS issuer. |
 | kms-issuer-policy-deleted | Active | A policy was removed from a KMS issuer. |
@@ -287,6 +294,8 @@ The table below shows a list of events logged on the Activity page.
 | log-drain-deleted | Replaced | A log drain was deleted. (Replaced by drain-deleted) |
 | log-drain-disabled | Replaced | A log drain was disabled. (Replaced by drain-updated) |
 | log-drain-enabled | Replaced | A log drain was enabled. (Replaced by drain-updated) |
+| login-connection-linked | Active | An OAuth/SSO login connection was linked to the account. |
+| login-connection-unlinked | Active | An OAuth/SSO login connection was disconnected from the account. |
 | manual-deployment-promotion-created | Active | A deployment was manually promoted to production. |
 | marketplace-flex-commit-opt-in | Active | The team opted in to paying Marketplace invoices from its Flexible Commitment. |
 | marketplace-integration-allowlist-updated | Active | The team's marketplace integration allowlist configuration was changed. |
@@ -453,6 +462,8 @@ The table below shows a list of events logged on the Activity page.
 | protected-git-scope-added | Active | A Protected Git Scope was added for the team. |
 | protected-git-scope-removed | Active | A Protected Git Scope was removed from the team. |
 | runtime-cache-purge-all | Active | All runtime cache was purged. |
+| saml-connection-created | Active | A team's SAML Single Sign-On was connected to an identity provider. |
+| saml-connection-deleted | Active | A team's SAML Single Sign-On was disconnected from an identity provider. |
 | sandbox-alias-assigned | Active | An alias was assigned to a sandbox. |
 | sandbox-alias-delete | Active | An alias was removed from a sandbox. |
 | scale | Active | A deployment was scaled. |
@@ -481,6 +492,7 @@ The table below shows a list of events logged on the Activity page.
 | spend-created | Active | A spend management budget was added. |
 | spend-deleted | Active | A spend management budget was deleted. |
 | spend-updated | Active | A spend management budget was updated. |
+| sso-login | Active | A user logged in to a team via SAML Single Sign-On. |
 | storage-accept-tos | Active | Acceptance of storage terms of service |
 | storage-access-token-set | Active | A storage access token was set. |
 | storage-accessed-data-browser | Active | Made a query to the store from the Data tab |
@@ -551,19 +563,23 @@ The table below shows a list of events logged on the Activity page.
 | tracing-configured | Active | Tracing was configured for a project. |
 | tracing-disabled | Active | Tracing was disabled for a project. |
 | unlink-login-connection | Active | A login connection was unlinked. |
+| update-account-flow-dismissed | Active | The completed account update flow status was dismissed for a team with enterprise managed users. |
 | update-account-flow-triggered | Active | The account update flow was started for a team with enterprise managed users. |
 | user-delete | Active | A user account was deleted. |
+| user-delete-requested | Active | A user requested deletion of their account. |
 | user-emu-account-archived | Active | A user archived their personal account during enterprise-managed user setup. |
 | user-emu-account-deleted | Active | A user deleted their personal account during enterprise-managed user setup. |
 | user-emu-account-recovered | Active | A user recovered their archived account using a recovery code. |
 | user-mfa-challenge-failed | Active | A two-factor challenge attempt failed. |
-| user-mfa-challenge-verified | Active | A two-factor challenge was verified |
 | user-mfa-change-failed | Active | An attempt to change two-factor configuration failed. |
 | user-mfa-configuration-updated | Active | Two-factor configuration was updated |
+| user-mfa-recovery-code-used | Active | A two-factor recovery (backup) code was used to sign in. |
 | user-mfa-recovery-codes-regenerated | Active | Two-factor recovery codes were regenerated |
 | user-mfa-removed | Active | MFA was removed from a user account. |
 | user-mfa-setup-skipped | Active | Two-factor authentication setup was skipped |
 | user-mfa-totp-verified | Active | A Two-factor authenticator app was added |
+| user-phone-removed | Active | A phone number was removed from a user account by a Vercel administrator. |
+| user-phone-updated | Active | A phone number was added to a user account. |
 | user-primary-email-updated | Active | The primary email was changed |
 | user-token-created | Active | A Personal Access Token was created. |
 | user-token-deleted | Active | A Token was deleted. |
@@ -576,6 +592,7 @@ The table below shows a list of events logged on the Activity page.
 | vcr-repository-permission-added | Active | A team was granted access to a container registry repository. |
 | vcr-repository-permission-removed | Active | A team's access to a container registry repository was revoked. |
 | vcr-repository-permissions-cleared | Active | Every team's access to a container registry repository was revoked. |
+| vcr-repository-visibility-changed | Active | A container registry repository was made public or private. |
 | vercel-agent-elevated-permissions-approved | Active | A Vercel Agent elevated access request was approved. |
 | vercel-agent-elevated-permissions-requested | Active | A Vercel Agent plan requested elevated access. |
 | vercel-agent-session-created | Active | A Vercel Agent session was created. |

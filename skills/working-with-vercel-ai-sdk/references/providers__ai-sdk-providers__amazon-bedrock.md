@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "523249b895decca2043e1ff72a8d5039bd8c24fdb4e636de971b28b06c5f316b"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "93f9cbb9d19d154462beaf9341fdc61b64f21d5b7cd534b5822cb6000d880261"
 ---
 
 # Amazon Bedrock Provider
@@ -1825,6 +1825,7 @@ Static IAM user keys do not require `sessionToken`.
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

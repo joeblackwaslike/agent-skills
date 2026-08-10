@@ -3,7 +3,7 @@ title: NO_EXTERNAL_CSS_AT_IMPORTS
 product: vercel
 url: /docs/conformance/rules/NO_EXTERNAL_CSS_AT_IMPORTS
 canonical_url: "https://vercel.com/docs/conformance/rules/NO_EXTERNAL_CSS_AT_IMPORTS"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Disallows @import at-rules that import from URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_external_css_at_imports.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "1c9ace9e1905717bcc81c38c2d387057291172461d6f99ee92fafb9add803f81"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b405c5f8decfbc93dd7fc1555e08bfb58960d4db968173691f649752e6eb872f"
 ---
 
 # NO_EXTERNAL_CSS_AT_IMPORTS

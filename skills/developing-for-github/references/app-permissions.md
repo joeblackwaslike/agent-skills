@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "bf260f478d483e345745297bd4a99040d502f1ba310c2fdc4ef2770dcc9f0441"
+fetched_at: "2026-08-10T05:26:02.324Z"
+sha256: "af0fb0ab1261dc95d773da09106b531b4e7be8f367a97044f1fbefa4ba71d08a"
 ---
 
 ## About {% data variables.product.prodname_github_app %} permissions
@@ -10,19 +10,21 @@ sha256: "bf260f478d483e345745297bd4a99040d502f1ba310c2fdc4ef2770dcc9f0441"
 
 Although {% data variables.product.prodname_github_apps %} don't have any permissions by default, they do have implicit permissions to read public resources when acting on behalf of a user. When a user authorizes the app to act on their behalf, the {% data variables.product.prodname_github_app %} can use the resulting user access token to make requests to the REST API and the GraphQL API to read public resources. To learn more about acting on behalf of a user, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).
 
-App permissions are classified as repository, organization,{% ifversion enterprise-installed-apps %} enterprise,{% endif %} or account permissions.
+App permissions are classified as repository, organization,{% ifversion fpt or enterprise-installed-apps %} enterprise,{% endif %} or account permissions.
 
 * Repository permissions allow your app to access resources related to repositories that are owned by the account where the app is installed.
 * Organization permissions allow your app to access resources related to the organization where the app is installed, if it is installed on an organization account.
-{%- ifversion enterprise-installed-apps %}
+{%- ifversion fpt or enterprise-installed-apps %}
 * Enterprise permissions allow the app to manage an enterprise, if it is installed on an enterprise account.{%- endif %}
 * Account permissions allow your app to access resources related to a user if the user has also authorized your app. For more information about user authorization of apps, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).
 
-{% ifversion enterprise-installed-apps %}
+{% ifversion fpt or enterprise-installed-apps %}
 
-Enterprise permissions are only available if you are creating the app in an enterprise account or an organization that is enterprise-owned. An app with enterprise permissions must be `public` or `internal` to be installed on an enterprise account. The only enterprise it can be installed on is the enterprise that owns the app or the organization that owns the app, but there are no additional restrictions on which organizations or personal accounts it can be installed on.{% endif %}
+Any user, organization, or enterprise can create an app using any of the permission types. An app with enterprise permissions must be `public` or `internal` to be installed on an enterprise account. A `public` app can be installed by any enterprise, while an `internal` app can only be installed by the enterprise that owns the app or the enterprise of the organization that owns the app. There are no additional restrictions on which organizations or personal accounts an app can be installed on.
 
-When a user installs an app on their user account or organization, they see and grant the repository and organization permissions that the app requested.{% ifversion enterprise-installed-apps %} When they install it on their enterprise, they see and grant only the enterprise permissions that the app requested. {% endif %} They will also see a list of account permissions that the app can request for individual users. When a user authorizes an app to act on their behalf, they will see and grant the account permissions that the app requested.
+There is one exception to installing an app across enterprises. If an app requests the "Enterprise organization installations" or "Enterprise organization installation repositories" permissions, the only enterprise that can install it is the one that owns the app. You cannot install the app on another enterprise, and you cannot add either permission to an app that is already installed on an enterprise other than the one that owns it.{% endif %}
+
+When a user installs an app on their user account or organization, they see and grant the repository and organization permissions that the app requested.{% ifversion fpt or enterprise-installed-apps %} When they install it on their enterprise, they see and grant only the enterprise permissions that the app requested. {% endif %} They will also see a list of account permissions that the app can request for individual users. When a user authorizes an app to act on their behalf, they will see and grant the account permissions that the app requested.
 
 The success of an API request with a user access token depends on the user's permissions as well as the app's permissions. For example, if the app was granted permission to write the contents of a repository, but the user can only read the contents, then the user access token can only read the contents. The success of an API request with an installation access token only depends on the app's permissions.
 

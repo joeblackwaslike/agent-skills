@@ -3,7 +3,7 @@ title: Routing Rules
 product: vercel
 url: /docs/ai-gateway/models-and-providers/routing-rules
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules"
-last_updated: 2026-06-29
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -16,8 +16,8 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "e7d94b29f2bd38de26be98639a4d62b655fd9f415b548018550e25a4c6bd7352"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a0f10d08b1dead89ca83472f112b11615a8425ebbb0b58f4c26c2d799a003a25"
 ---
 
 # Routing Rules

@@ -3,7 +3,7 @@ title: Streaming
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -16,8 +16,8 @@ related:
 summary: Stream OpenAI Chat Completions responses token by token as they are generated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "ccd9f01560c1f34e9c75e74973faaaf085f352a6168f5d1eecd3375cab9866dc"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "0c5980c5d2e12a7d53896735c5c318d92675ff30d671389888a20b65b1eb7ec0"
 ---
 
 # Streaming

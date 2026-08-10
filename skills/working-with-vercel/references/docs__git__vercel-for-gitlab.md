@@ -13,11 +13,11 @@ related:
   - /docs/git
   - /docs/projects/overview
   - /docs/projects/custom-domains
-summary: Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
+summary: ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-gitlab.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "5fece467204e8c41a286fc4f8d19e9e21d6eb323d3fe825ec80099e690dd3fe7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "8cd77d2e4818982995e88898d67abf515ec62684eab6c433b206199db9427f2b"
 ---
 
 # Deploying GitLab Projects with Vercel

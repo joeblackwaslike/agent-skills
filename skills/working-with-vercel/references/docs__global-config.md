@@ -3,7 +3,7 @@ title: Vercel Global Config
 product: vercel
 url: /docs/global-config
 canonical_url: "https://vercel.com/docs/global-config"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "3eadbd11f3bdb0be00fd0166694794c558f5c5b18fff59d9cacd200f87f60502"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "c22dc8bc7fe49da75e5783a47b56505d6f396b24db7736ef7c50ba605c14dcc0"
 ---
 
 # Vercel Global Config

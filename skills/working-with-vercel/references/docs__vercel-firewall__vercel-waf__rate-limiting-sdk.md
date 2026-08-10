@@ -3,7 +3,7 @@ title: Rate Limiting SDK
 product: vercel
 url: /docs/vercel-firewall/vercel-waf/rate-limiting-sdk
 canonical_url: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk"
-last_updated: 2026-06-16
+last_updated: 2026-07-23
 type: how-to
 prerequisites:
   - /docs/vercel-firewall/vercel-waf
@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "577eb19c83eef3ac451310474f1ae9087ed1f443ffde34ccd7dcc2dc067ec910"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "c25c9a84d9c5eac9ef164d3f97cb1e8a5f1532495f187088c62110280dd63ffb"
 ---
 
 # Rate Limiting SDK

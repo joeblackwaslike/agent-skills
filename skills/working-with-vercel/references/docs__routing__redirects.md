@@ -3,7 +3,7 @@ title: Redirects
 product: vercel
 url: /docs/routing/redirects
 canonical_url: "https://vercel.com/docs/routing/redirects"
-last_updated: 2026-03-05
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   - /docs/routing
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "9de10b820998c1d43f5273ccdae9a5d6fbcdcb5be0d590b8f947b61ab18f9bef"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "c24ee83307df6e596f32bc5d31ae9dcfb625b779b1b2425764c050bd854d5f8f"
 ---
 
 # Redirects

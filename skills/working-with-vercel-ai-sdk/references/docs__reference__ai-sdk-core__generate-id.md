@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-id.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "6a0684ec3aaabbe4a538153bfb29df8d56416c44dad32fde2ea9cd4ee589ef56"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "25e69f3890dbf6f154dfa051ff87d877b4ab36cfbe9e5b29a2623bdb72350211"
 ---
 
 # `generateId()`
@@ -75,6 +75,7 @@ A string representing the generated ID.
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

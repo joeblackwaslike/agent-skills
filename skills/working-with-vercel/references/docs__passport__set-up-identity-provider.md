@@ -3,7 +3,7 @@ title: Set up Passport with an identity provider
 product: vercel
 url: /docs/passport/set-up-identity-provider
 canonical_url: "https://vercel.com/docs/passport/set-up-identity-provider"
-last_updated: 2018-10-20
+last_updated: 2026-07-20
 type: tutorial
 prerequisites:
   - /docs/passport
@@ -12,8 +12,8 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "45f1cc712dd4b1b5c50655841751da6bf7aa82bb30cb8ebc26bfefd4233680b7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "3d2701dcef75d87358bf0a331d137eb3e3dbd3e6c716356d54009a2d21e0ec5a"
 ---
 
 # Set up Passport with an identity provider

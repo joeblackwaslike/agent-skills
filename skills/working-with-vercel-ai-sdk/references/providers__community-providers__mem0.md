@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mem0.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "3a55587e4a67d490a9ae4705921c87701119404f5ce0aba0bb8d5e5be54d5075"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "00ce643cec0e3bbde2bf50f2b206cacc3776eee21a46c33f6217cac10832522c"
 ---
 
 # Mem0 Provider
@@ -302,6 +302,7 @@ The Mem0 provider supports the following LLM providers:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

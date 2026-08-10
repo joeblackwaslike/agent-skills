@@ -3,7 +3,7 @@ title: Deploy a Django app on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/django
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/django"
-last_updated: 2026-07-06
+last_updated: 2026-07-24
 type: how-to
 prerequisites:
   - /docs/frameworks/full-stack
@@ -17,8 +17,8 @@ related:
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "a49b274d7e27324a0728f5b6645c5501419a6edf66d878a218c2a1e0a0bce869"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "71f75c168c48ad239b1b111071c32eaa926b986120815e68f7ddb0dbd16d7d06"
 ---
 
 # Deploy a Django app on Vercel

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/simulate-streaming-middleware.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "f192a4ddabceb3a1b7ac1a3ee06e6a3c1a96917d684c470ee34882fdc0bc8be8"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "30f48697d3e1f783d9fc7c564773339d711412877e5e2ec6fc0bb43527519d39"
 ---
 
 # `simulateStreamingMiddleware()`
@@ -116,6 +116,7 @@ The middleware:
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

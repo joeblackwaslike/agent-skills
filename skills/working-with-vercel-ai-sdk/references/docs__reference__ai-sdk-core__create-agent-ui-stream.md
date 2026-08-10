@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "912e1eb39fff1498f9d177ee68f88f88ceffed5fa19fb067fd5dbedd9a0a750e"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "82f8ac1967c503a4b2a52652f608be000c93b157ae4080dd0abee4e477a0188f"
 ---
 
 # `createAgentUIStream`
@@ -216,6 +216,7 @@ for await (const chunk of stream) {
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

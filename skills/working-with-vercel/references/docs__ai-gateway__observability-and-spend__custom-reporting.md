@@ -3,7 +3,7 @@ title: Custom Reporting
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/custom-reporting
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting"
-last_updated: 2026-06-29
+last_updated: 2026-07-30
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -17,8 +17,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "0b6292a1175fdf225eadda511f4235abba46648caf93f730db599872df61ad48"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "27febc2a2dfdeea702351cd3e272e4ee52124ad83a18b3bd3d085cb27f45ffda"
 ---
 
 # Custom Reporting
@@ -452,6 +452,7 @@ Filters are applied before aggregation. Combine them with any `group_by` value.
 
 | Parameter             | Type    | Description                                                                                                                      | Example                          |
 | --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| `api_key_id`          | string  | Filter by a stable API key ID. Use `self` for the AI Gateway API key that authenticated the report request.                    | `abc123` or `self`               |
 | `user_id`             | string  | Filter by a specific user ID                                                                                                     | `user_123`                       |
 | `model`               | string  | Filter by a specific [model](/ai-gateway/models) in `creator/model-name` format                                | `anthropic/claude-sonnet-5`      |
 | `provider`            | string  | Filter by [provider](/docs/ai-gateway/models-and-providers/provider-options#available-providers)                                 | `openai`                         |
@@ -459,6 +460,8 @@ Filters are applied before aggregation. Combine them with any `group_by` value.
 | `zero_data_retention` | boolean | Filter to Zero Data Retention (ZDR)-requested vs non-ZDR requests                                                                | `true` or `false`                |
 | `tags`                | string  | Filter by one or more comma-separated tags. By default, requests match when they contain any listed tag.                         | `production` or `production,api` |
 | `tags_match`          | string  | Match mode for `tags`. Use `any` to match requests with any listed tag, or `all` to require every listed tag. Defaults to `any`. | `any` or `all`                   |
+
+API key names are not unique, so use the stable key ID when filtering. [List the team's API keys](/docs/ai-gateway/authentication-and-byok/api-keys#view-a-key) to find each key's `id`. If you omit `api_key_id`, the report includes spend across the team. `self` requires AI Gateway API key authentication. The API returns a `400` response if you use `self` with an OIDC token, personal access token, or app token.
 
 ### Example request
 
@@ -673,6 +676,15 @@ curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026
 ```bash
 curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026-01-31&group_by=credential_type" \
   -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+### Filter by the current API key
+
+When you authenticate the report with an AI Gateway API key, use `self` to return only spend attributed to that key:
+
+```bash
+curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026-01-31&api_key_id=self" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
 ```
 
 ### Filter by user, model, or tags

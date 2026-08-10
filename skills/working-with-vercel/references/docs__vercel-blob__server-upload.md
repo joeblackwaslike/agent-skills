@@ -3,7 +3,7 @@ title: Server Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/server-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/server-upload"
-last_updated: 2026-07-10
+last_updated: 2026-07-30
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "e4a184aa4293cb93325ca7b323b4df85416d732feff7a6241959151740e2f505"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "e1b5024ca6aa3343d69501cd326e0e172193d611552529324a08c2ed7b5f4080"
 ---
 
 # Server Uploads with Vercel Blob

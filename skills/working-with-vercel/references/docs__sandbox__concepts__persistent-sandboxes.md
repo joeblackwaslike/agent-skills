@@ -3,7 +3,7 @@ title: Persistence
 product: vercel
 url: /docs/sandbox/concepts/persistent-sandboxes
 canonical_url: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes"
-last_updated: 2026-06-30
+last_updated: 2026-08-04
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4c70aecc64dfa188013072eb8bf1c5630fd27734bbf78570af86ac95cf466a52"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "da1d825b3ca7966a7a84b2af921499a5dbe7dd9192a9893bf92c0671f742b35e"
 ---
 
 # Persistence
@@ -127,7 +127,6 @@ await sandbox.stop(); // Filesystem is snapshotted automatically
 ```ts filename="index.ts"
 const sandbox = await Sandbox.getOrCreate({
   name: 'my-sandbox',
-  runtime: 'node24',
   onCreate: async (sbx) => {
     // Runs only the first time the sandbox is created
     await sbx.runCommand('git', ['clone', repoUrl, '.']);
@@ -184,7 +183,7 @@ await sandbox.update({
 
 ## Delete a sandbox
 
-Deleting a sandbox removes it and all of its snapshots and sessions permanently.
+Deleting a sandbox permanently removes the sandbox and all of its sessions. Its [snapshots](/docs/sandbox/concepts/snapshots) survive the deletion, because several sandboxes can start from the same snapshot. They stay available until they expire or you delete them, and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime.
 
 ```ts filename="index.ts"
 await sandbox.delete();
@@ -271,7 +270,7 @@ sandbox config tags my-sandbox --tag env=production
 
 ### Delete a sandbox
 
-`sandbox remove` permanently deletes the sandbox along with all of its snapshots and sessions. The operation is irreversible:
+`sandbox remove` permanently deletes the sandbox along with all of its sessions. The operation is irreversible. The sandbox's snapshots survive it, so delete them separately with [`sandbox snapshots delete`](/docs/sandbox/cli-reference#sandbox-snapshots-delete):
 
 ```bash filename="Terminal"
 sandbox remove my-sandbox
@@ -305,7 +304,7 @@ Other changes to be aware of:
 
 ## Managing persistent sandboxes in the dashboard
 
-Persistent sandboxes appear in your project's [Sandboxes](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsandboxes\&title=Show+Sandbox+page) page. Each sandbox shows its name, status, resources, and runtime.
+Persistent sandboxes appear in your project's [Sandboxes](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsandboxes\&title=Show+Sandbox+page) page. Each sandbox shows its name, status, resources, and image.
 
 Select a sandbox to view its detail page, which includes:
 

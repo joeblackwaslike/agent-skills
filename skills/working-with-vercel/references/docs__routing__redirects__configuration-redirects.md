@@ -3,7 +3,7 @@ title: Configuration Redirects
 product: vercel
 url: /docs/routing/redirects/configuration-redirects
 canonical_url: "https://vercel.com/docs/routing/redirects/configuration-redirects"
-last_updated: 2026-03-05
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/routing/redirects
@@ -15,8 +15,8 @@ related:
 summary: Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern matching, and geolocation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/configuration-redirects.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "b1feceaeebb67bce10dd32e806df5aa252af37076777f5c1279b7ba284309392"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "4e2230bd59db928f5202831bcc6f24eeaadf09ef9d2e4ce2c1b5d553d69180e7"
 ---
 
 # Configuration Redirects

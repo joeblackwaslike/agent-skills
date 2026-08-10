@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "380c55bdd296d5e057d87ebc0f4db84e51e2235c70078ff0e712e6be8d4e79e4"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "46765ce466ff20973ff7cb7e2cdfed03f3913c07b2015f80ce9cb30103cffe27"
 ---
 
 # Agents
@@ -227,6 +227,7 @@ The following section shows you how to build agents with the AI SDK - systems wh
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

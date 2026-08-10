@@ -3,7 +3,7 @@ title: Observability
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/observability
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability"
-last_updated: 2026-06-20
+last_updated: 2026-07-30
 type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -14,8 +14,8 @@ related:
 summary: Learn how to monitor and debug your AI Gateway requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "34030d7c170d7ae4c2f909672d93f34a48051d05ec9b12fe1f518137fea88346"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "dfedcd5358d4b16c9c79d134535dbc9d462930f6e06c731b0b249b16bad5f0b5"
 ---
 
 # Observability

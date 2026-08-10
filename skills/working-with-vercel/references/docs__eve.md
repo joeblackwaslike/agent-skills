@@ -3,7 +3,7 @@ title: eve
 product: vercel
 url: /docs/eve
 canonical_url: "https://vercel.com/docs/eve"
-last_updated: 2026-06-19
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   []
@@ -13,24 +13,26 @@ related:
   - /docs/sandbox
   - /docs/ai-gateway
   - /docs/connect
-summary: eve is a filesystem-first framework for building durable backend AI agents that run on Vercel.
+summary: Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "ac7485555aad6304541674fff798f702bd28c7d5b72fba0511e42c22429c1763"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "e22cf344f636502944bbf0d85b040422be039efab8409dbfa4b212befc3e2c2c"
 ---
 
 # eve
-
-[eve](https://eve.dev/) is a filesystem-first framework for durable backend AI agents. You define each agent with files
-under an `agent/` directory. eve discovers those files and compiles them into an app that runs on
-[Vercel Functions](/docs/functions).
 
 > **💡 Note:** eve is currently in beta and subject to the
 > .
 > The framework, APIs, documentation, and behavior may change before general availability.
 
-eve uses these Vercel services:
+[eve](https://eve.dev/) is an open-source, filesystem-first framework for durable backend AI agents. You define each
+agent with files under an `agent/` directory, and eve discovers those files and compiles them into a
+runnable app. eve runs locally, on Vercel, or on a long-running Node.js host, and can use AI Gateway
+or call AI SDK model providers directly.
+
+These docs cover deploying and running eve on Vercel. In this environment, the compiled app runs on
+[Vercel Functions](/docs/functions) and integrates with these services:
 
 - [Vercel Workflows](/docs/workflows) persist session state and resume interrupted work.
 - [Vercel Sandbox](/docs/sandbox) isolates code execution.
@@ -55,6 +57,9 @@ standard script from the scaffold:
 ```bash
 pnpm dev
 ```
+
+See the [eve Getting Started guide](https://eve.dev/docs/getting-started) for the complete setup,
+local development, and first-session walkthrough.
 
 ## Define an agent
 
@@ -127,6 +132,8 @@ curl http://127.0.0.1:3000/eve/v1/session/<sessionId>/stream
   token usage in the Vercel dashboard.
 
 ## Resources
+
+**eve documentation**: Explore the complete framework documentation, including guides, channels, tools, skills, and API references. [Learn more →](https://eve.dev/docs)
 
 **Concepts**: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together. [Learn more →](/docs/eve/concepts)
 

@@ -3,7 +3,7 @@ title: Drains Security
 product: vercel
 url: /docs/drains/security
 canonical_url: "https://vercel.com/docs/drains/security"
-last_updated: 2026-02-27
+last_updated: 2026-07-29
 type: how-to
 prerequisites:
   - /docs/drains
@@ -15,8 +15,8 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "fe3b78ac249b7be5e322173c5a66a1773cdcbfe10ae74049f3cd2804abbff149"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5b27daa3b89a8c9a615bbede13312f03b82d0c5bc3a79b599a5e48f99d64cd7d"
 ---
 
 # Drains Security

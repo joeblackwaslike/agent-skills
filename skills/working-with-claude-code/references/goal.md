@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/goal.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "c7b6a5a7206d5282be2127db044443c4855d3e50e46656ff2b6106aaa34d363c"
+fetched_at: "2026-08-10T05:26:58.686Z"
+sha256: "c27f13450f1869c41752e4cf19fbc2238e1ff1c3f4868a77fb2bb68dcb159993"
 ---
 
 > ## Documentation Index
@@ -60,10 +60,6 @@ Setting a goal starts a turn immediately, with the condition itself as the direc
 A goal doesn't change permissions. In the default permission mode, Claude still asks before tool calls that your settings don't already allow, such as the test command above. To let goal turns run unattended, pair `/goal` with [auto mode](/docs/en/auto-mode-config).
 
 After each turn, the evaluator returns a short reason explaining why the condition is or isn't met. The most recent reason appears in the status view and in the transcript so you can see what Claude is working toward next.
-
-<Note>
-  A goal keeps running until the condition is met or you run `/goal clear`. Run `/goal` with no argument to see turns and tokens spent so far.
-</Note>
 
 ### Write an effective condition
 

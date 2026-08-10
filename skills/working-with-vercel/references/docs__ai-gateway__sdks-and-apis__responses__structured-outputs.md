@@ -3,7 +3,7 @@ title: Structured Outputs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/responses/structured-outputs
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/responses
@@ -13,8 +13,8 @@ related:
 summary: Constrain a response to a JSON schema with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "acf7a2fc41831a04ae14acf1f98a9ebf2678da3f2afa6dc12074942228c49284"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d2ecf0c6606e7b4852ff62f4dbff546af99d26eb1aebf67d373ae3e33fd58a90"
 ---
 
 # Structured Outputs

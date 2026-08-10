@@ -3,7 +3,7 @@ title: Grok Build
 product: vercel
 url: /docs/ai-gateway/coding-agents/grok-build
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build"
-last_updated: 2026-05-30
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Use Grok Build with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "caf67a8b25fb3cf9929b68af750a8c9c8a33b798f955e2b3014c83f411503011"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "31c9172a3a3c5b2226c89d1c01eb5cbac89f5fbd5c558538290d6386c38d920c"
 ---
 
 # Grok Build

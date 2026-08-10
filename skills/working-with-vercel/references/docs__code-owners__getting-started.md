@@ -3,7 +3,7 @@ title: Getting Started with Code Owners
 product: vercel
 url: /docs/code-owners/getting-started
 canonical_url: "https://vercel.com/docs/code-owners/getting-started"
-last_updated: 2026-03-20
+last_updated: 2026-07-15
 type: tutorial
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up Code Owners for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/getting-started.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ddd7fc3e2f7057f777be07c67b4fba01940bfa4a8a14bc75c29cd3f55a09fbf2"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ac87ccc300d69541f856f39bc92dd05909b812f5afea0075f4d4fdeb0f13cdfc"
 ---
 
 # Getting Started with Code Owners

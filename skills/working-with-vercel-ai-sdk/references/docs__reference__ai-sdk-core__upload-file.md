@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/upload-file.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "c8b8469b3310e297e54a9fbff01b4af1b34d1a780d4d9f1d24847f499fce4536"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "9f7f1e14bc04d3b463911991593bb0e202b855754a14a87b9fa2bd7a543a2e26"
 ---
 
 # `uploadFile()`
@@ -137,6 +137,7 @@ const { providerReference } = await uploadFile({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

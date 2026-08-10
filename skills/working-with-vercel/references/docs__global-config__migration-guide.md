@@ -1,10 +1,10 @@
 ---
-title: Migration Guide
+title: Migrating from Edge Config to Global Config
 product: vercel
 url: /docs/global-config/migration-guide
 canonical_url: "https://vercel.com/docs/global-config/migration-guide"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-07-29
+type: how-to
 prerequisites:
   - /docs/global-config
 related:
@@ -13,11 +13,11 @@ related:
   - /docs/global-config/get-started
   - /docs/global-config/using-global-config
   - /docs/global-config/global-config-sdk
-summary: Learn about migration guide on Vercel.
+summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "bf1b23dd561b03454e78209aafa2afdd5e6181dea8b0dcd5743f7b0d1205b87e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7d284c9b60f151071bba7bc5b0fd8bba530d074058ba8e34b5f1fad02008bb0c"
 ---
 
 # Migrating from Edge Config to Global Config

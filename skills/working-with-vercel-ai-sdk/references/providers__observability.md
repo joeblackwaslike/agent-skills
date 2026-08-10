@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d79056ef544d6bed4aa55d53000c3369becf9aa5089d221a7e6a8f12e86ff0bd"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "73e120efac73d29341eae81fb5905cda6fb002c140ccf859b8708e4032d73098"
 ---
 
 # Observability Integrations
@@ -66,6 +66,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Baseten](/providers/ai-sdk-providers/baseten)
   - [Hugging Face](/providers/ai-sdk-providers/huggingface)
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+  - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
@@ -173,6 +174,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)

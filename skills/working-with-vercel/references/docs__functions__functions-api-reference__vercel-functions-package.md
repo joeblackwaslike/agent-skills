@@ -3,7 +3,7 @@ title: @vercel/functions API Reference (Node.js)
 product: vercel
 url: /docs/functions/functions-api-reference/vercel-functions-package
 canonical_url: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package"
-last_updated: 2026-06-22
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   - /docs/functions/functions-api-reference
@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/functions/runtimes/edge
   - /docs/environment-variables/system-environment-variables
+  - /docs/functions/configuring-functions/duration
   - /docs/cdn-cache/purge
   - /docs/runtime-cache
-  - /docs/incremental-static-regeneration
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "e6098a0b87e5094b25ee9f47f76e6072d873c9d56e0d05abacc538ba3fd2c3c1"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "14b5ff80166f85b01accfbdb57cfb1c2e81b99892cd1f99f9e00364d921eca03"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -150,6 +150,48 @@ export default {
   fetch(request) {
     const { VERCEL_REGION } = getEnv();
     return new Response(`Hello from ${VERCEL_REGION}`);
+  },
+};
+```
+
+### `getDeadline`
+
+**Description**: Returns the shared invocation deadline for the current function invocation as a [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object. The deadline is the time when Vercel will terminate the invocation if it has not completed, based on the function's configured [`maxDuration`](/docs/functions/configuring-functions/duration). This includes request processing and asynchronous `waitUntil` tasks.
+
+Returns `undefined` when the deadline is not available, for example when running outside of the Vercel Functions runtime.
+
+| Returns   | Type                                                                                                  | Description                                                                 |
+| :-------- | :---------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| `deadline` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | `undefined` | The invocation deadline, or `undefined` if it is unavailable or invalid. |
+
+```ts {1,9} filename="api/example.ts"
+import { getDeadline } from '@vercel/functions';
+
+async function getRecords(page: number) {
+  const res = await fetch(`https://api.example.com/records?page=${page}`);
+  return await res.json();
+}
+
+function hasEnoughTimeLeft() {
+  const deadline = getDeadline();
+  if (!deadline) return true;
+  return deadline.getTime() - Date.now() > 2_000;
+}
+
+export default {
+  async fetch(request) {
+    let page = Number(new URL(request.url).searchParams.get('page') ?? '1');
+    const synced = [];
+
+    while (hasEnoughTimeLeft()) {
+      const { records, hasMore } = await getRecords(page);
+
+      synced.push(...records);
+      if (!hasMore) return Response.json({ synced });
+      page += 1;
+    }
+
+    return Response.json({ synced, resumePage: page });
   },
 };
 ```

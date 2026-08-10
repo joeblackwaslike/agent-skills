@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "c07ddd0522a425c18b3e2bceff1e8d59b2b173cccdf25785c3d2dc73c0eb05ab"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "b867486dee706008e27ddbd0ae82c653d772b334a0369ce52d282bf0abb81d1f"
 ---
 
 # Deepgram Provider
@@ -295,6 +295,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

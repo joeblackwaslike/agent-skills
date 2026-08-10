@@ -3,7 +3,7 @@ title: Connectors
 product: vercel
 url: /docs/connect/concepts/connectors
 canonical_url: "https://vercel.com/docs/connect/concepts/connectors"
-last_updated: 2026-06-09
+last_updated: 2026-07-31
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -17,8 +17,8 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a2e8e271750a9ede59ef8cf722898d0f597c3b8c003343225df095117cac5c1d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "92c842b130b7fce9a4b319d2949a9321f0b0a064c1cac43f4e2612187b707075"
 ---
 
 # Connectors

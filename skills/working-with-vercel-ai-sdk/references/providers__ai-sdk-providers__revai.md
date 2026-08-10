@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "7b51d2c13234c6d95b8b291f26616a6e9979b60bacf2dbc98dcbd93dc3e57e4b"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "5ff87e0cf8a1ae74be8af93b43229a8a2e81389e5353f16d26bf04a85d02bb14"
 ---
 
 # Rev.ai Provider
@@ -234,6 +234,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

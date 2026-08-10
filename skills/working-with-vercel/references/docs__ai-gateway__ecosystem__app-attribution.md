@@ -3,7 +3,7 @@ title: App Attribution
 product: vercel
 url: /docs/ai-gateway/ecosystem/app-attribution
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution"
-last_updated: 2026-06-29
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem
@@ -13,8 +13,8 @@ related:
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a1245aa574984f8bdbc8126e55871076a46a843fa56cba94652e1093b073b3c7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "29107dda8f41036beb0db6b710962a847709d833d19fcbf3ba016cb9b40a69b1"
 ---
 
 # App Attribution

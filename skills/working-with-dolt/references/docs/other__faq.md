@@ -2,8 +2,8 @@
 title: FAQ
 description: Common questions — how Dolt differs from MySQL, performance trade-offs, storage cost, and when not to use it.
 source: "https://www.dolthub.com/docs/other/faq.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "c7c3853a2e832bef091bc5c62410e313f2363317ec3b2e163712cd280c567c14"
+fetched_at: "2026-08-10T05:28:59.521Z"
+sha256: "c71139dbd019773179aac683d987741064cb078666e4e18a88669da0f1fbaf5c"
 ---
 
 ## Why is it called Dolt? Are you calling me dumb?
@@ -23,12 +23,8 @@ not taken in the standard command line lexicon. So,
 
 ## Dolt is MySQL-compatible. I use Postgres?
 
-We released a Postgres version of Dolt called [DoltgreSQL](https://github.com/dolthub/doltgresql).
-
-However, Dolt is a production-grade version controlled database today.
-[Dolt is 1.0](https://www.dolthub.com/blog/2023-05-05-dolt-1-dot-0/).
-If you are ok with using a MySQL-client, we recommend using Dolt for
-all use cases. Doltgres is experimental.
+We released a Postgres version of Dolt called
+[DoltgreSQL](https://github.com/dolthub/doltgresql). If you like Postgres better, use it!
 
 ## What does `@@autocommit` do?
 

@@ -3,7 +3,7 @@ title: Multi-Tenant Template
 product: vercel
 url: /docs/platforms/examples/multi-tenant-template
 canonical_url: "https://vercel.com/docs/platforms/examples/multi-tenant-template"
-last_updated: 2026-06-26
+last_updated: 2026-07-28
 type: tutorial
 prerequisites:
   - /docs/platforms/examples
@@ -13,8 +13,8 @@ related:
 summary: Build SaaS applications that serve multiple domains from a single Next.js codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/multi-tenant-template.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "0695b7c7faa4ae324b32a9f229a874020df617f983c9f7471dd1b54d39ebcd34"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7c8556dd8087dfa1a4ce8b545a596b13ce6f5bafd26969b30af2fa8b0bc8e03b"
 ---
 
 # Multi-Tenant Template

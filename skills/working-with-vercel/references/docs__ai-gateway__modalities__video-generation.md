@@ -3,7 +3,7 @@ title: Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation"
-last_updated: 2026-06-30
+last_updated: 2026-07-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -17,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "1bcd99e60a68654e9a2c7f4ae28d29a739dd0ce2798e250d2357f84e903ed194"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "89e7ba16dbd9420ad625f356607a8d975caab2c0ebc02700bc60baca4a94b285"
 ---
 
 # Video Generation
@@ -57,6 +57,7 @@ These parameters work across all video models, though support varies by provider
 | `generateAudio`   | `boolean`                                | Whether to generate audio alongside the video. Support varies by model                                                                             |
 | `frameImages`     | `Array<{ image, frameType }>`            | Role-tagged start and end frames for [image-to-video](/docs/ai-gateway/modalities/video-generation/image-to-video). Support varies by provider     |
 | `inputReferences` | `Array<image \| video>`                  | Reference images or videos for [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video). Support varies by provider   |
+| `poll`            | `{ intervalMs?, timeoutMs? }`            | Run the generation as an [asynchronous job](#asynchronous-generation) instead of one long-lived request                                            |
 
 ## Frame and reference images
 
@@ -121,9 +122,49 @@ const result = await generateVideo({
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 ```
 
+## Asynchronous generation
+
+By default, `experimental_generateVideo` holds one HTTP request open until the video is ready. Pass a `poll` option to run the generation as an AI Gateway job instead: the SDK sends a start request, the gateway tracks the generation in the background, and the SDK checks its status until it finishes. Each network request stays short, so the flow suits serverless functions and anywhere else with request timeouts.
+
+> **💡 Note:** Asynchronous video generation requires AI SDK 7. Install or upgrade with
+> `pnpm add ai@latest`.
+
+```typescript filename="async-video.ts"
+const result = await generateVideo({
+  model: 'google/veo-3.1-generate-001',
+  prompt: 'A serene mountain landscape at sunset',
+  duration: 8,
+  poll: {
+    intervalMs: 5000,
+    timeoutMs: 600000,
+  },
+});
+```
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `poll.intervalMs` | `number` | How often the SDK checks job status. Defaults to `5000` |
+| `poll.timeoutMs` | `number` | How long to wait before giving up. Defaults to `600000` (10 minutes) |
+| `poll.delay` | `(delayInMs, { abortSignal }) => PromiseLike<void>` | Replaces the timer the SDK waits on between status checks. Pass a durable workflow's sleep function so a long run doesn't hold a live timer. Defaults to a built-in timer |
+
+Passing `poll` is what opts you in. Without it, gateway models keep using the single-request flow. Everything else works the same, so the parameters and modes documented on these pages apply to both flows.
+
+> **💡 Note:** Top-level `poll` is not the same as the `providerOptions.<provider>.pollIntervalMs`
+> and `pollTimeoutMs` options documented on the mode pages. Those control how a
+> provider polls its own upstream task inside a single request. Top-level `poll`
+> controls whether AI Gateway runs the generation as a background job at all.
+
+Starting a generation costs money, so the SDK sends a stable `idempotency-key` header on the start request and AI Gateway deduplicates on it, which keeps its internal retries from billing a second generation. Pass your own key through `headers` to make your own retry loop deduplicate too.
+
+The flow is polling-first. AI Gateway does not currently deliver completion webhooks to the SDK, so the `webhook` option of `experimental_generateVideo` has no effect with AI Gateway models.
+
+For a walkthrough, see [asynchronous video generation](/docs/ai-gateway/getting-started/video#asynchronous-video-generation) in the quickstart.
+
 ## Extending timeouts for Node.js
 
 Video generation can take several minutes. In Node.js, the default `fetch` implementation (via Undici) enforces a 5-minute timeout. This can cause requests to fail before the video finishes generating.
+
+This section applies to the single-request flow. [Asynchronous generation](#asynchronous-generation) avoids the problem instead, since no single request stays open for the whole generation.
 
 To extend these timeouts, create a custom gateway instance with a longer Undici `Agent` timeout:
 

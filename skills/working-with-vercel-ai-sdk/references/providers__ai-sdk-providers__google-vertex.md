@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "8a405274e5ef399679f0284e715e0f2449e44a9016e3d5e852d3b38eb54a21ec"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "55e28b3a9e9f6ad1d37aa5bb145f6fc918404d4a59dc539663ce9a160ce29cb5"
 ---
 
 # Google Vertex Provider
@@ -2387,6 +2387,7 @@ The following models are available through the MaaS provider. You can also pass 
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

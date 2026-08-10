@@ -3,7 +3,7 @@ title: Streaming
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses/streaming
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openresponses
@@ -13,8 +13,8 @@ related:
 summary: Stream responses token by token using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "2b6f11b22919d96ae22e396d3abc0966a5d57f6e7d89b9d663ac5e2c421b6ced"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "851c87d1378188663d36a8be9c4b2797a5c11f046e0af84549ba2566ca881718"
 ---
 
 # Streaming

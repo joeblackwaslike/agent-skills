@@ -3,7 +3,7 @@ title: Quickstart
 product: vercel
 url: /docs/sandbox/quickstart
 canonical_url: "https://vercel.com/docs/sandbox/quickstart"
-last_updated: 2026-05-25
+last_updated: 2026-07-15
 type: tutorial
 prerequisites:
   - /docs/sandbox
@@ -16,8 +16,8 @@ related:
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8db6e40bede8347d7d056205fa45ed3807b2dcb28741a56a5402de74a253a116"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7e47bbef2f078125677e6e2864855b78b45a17d12727287bdf07baeedd0a9ebb"
 ---
 
 # Quickstart

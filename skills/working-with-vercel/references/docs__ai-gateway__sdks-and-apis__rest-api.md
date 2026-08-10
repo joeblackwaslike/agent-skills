@@ -3,7 +3,7 @@ title: REST API Reference
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/rest-api
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "7345312d71965a68a5b1c084e496dc5c0da61a2154149599e545f52d6c39fb47"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5b69c441b3e5d3eecfdd496b70c6c147067b70f7a2aafcceda56c9208974afd3"
 ---
 
 # REST API Reference
@@ -470,6 +470,7 @@ Dates are inclusive (both `start_date` and `end_date` are included) and in UTC.
 | --------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `group_by`            | string  | How to aggregate results. One of `day` (default), `user`, `model`, `tag`, `provider`, `credential_type`, `zero_data_retention`, `api_key_name`.                                                                          |
 | `date_part`           | string  | Time granularity when `group_by=day`. One of `day` (default) or `hour`.                                                                                                                                                  |
+| `api_key_id`          | string  | Filter by a stable API key ID. Use `self` for the AI Gateway API key that authenticated the report request. `self` requires AI Gateway API key authentication. The API returns a `400` response for `self` with OIDC tokens, personal access tokens, or app tokens. Omit this parameter to report across the team. |
 | `user_id`             | string  | Filter by a specific user ID.                                                                                                                                                                                            |
 | `model`               | string  | Filter by a specific model in `creator/model-name` format.                                                                                                                                                               |
 | `provider`            | string  | Filter by provider.                                                                                                                                                                                                      |
@@ -477,6 +478,8 @@ Dates are inclusive (both `start_date` and `end_date` are included) and in UTC.
 | `zero_data_retention` | boolean | Filter to ZDR-requested vs non-ZDR requests.                                                                                                                                                                             |
 | `tags`                | string  | Filter by one or more comma-separated tags. By default, requests match when they contain any listed tag.                                                                                                                 |
 | `tags_match`          | string  | Match mode for `tags`. Use `any` to match requests with any listed tag, or `all` to require every listed tag. Defaults to `any`.                                                                                         |
+
+API key names are not unique, so use `api_key_id` when filtering by API key.
 
 #### Example request
 

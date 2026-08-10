@@ -3,7 +3,7 @@ title: Serving Static Files
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/serving-static-files
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files"
-last_updated: 2026-06-26
+last_updated: 2026-07-28
 type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
@@ -15,8 +15,8 @@ related:
 summary: Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "738d650862efeb50f35b84ca74f61cb1f52e032eb728cf4a3d17d787bcefbf11"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "1bc8caa6b554f01da4b71e4d0d1c4a5040b5e1e532b6ef1d270d10895e19b1d0"
 ---
 
 # Serving Static Files

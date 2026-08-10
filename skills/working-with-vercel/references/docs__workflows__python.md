@@ -3,7 +3,7 @@ title: Workflows with Python
 product: workflows
 url: /docs/workflows/python
 canonical_url: "https://vercel.com/docs/workflows/python"
-last_updated: 2026-04-16
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/workflows
@@ -12,8 +12,8 @@ related:
 summary: Build durable workflows and AI agents in Python with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/python.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "1b69a49f4712efe2c6acdd9f533403c54354fb6c8ec1ccbe48525be3affe057d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a7254eb92ff8eab11cc35c1056191ef9c91108cdfb0da214e7ec447d1e9ed8db"
 ---
 
 # Workflows with Python

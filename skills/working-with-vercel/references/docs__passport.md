@@ -3,7 +3,7 @@ title: Restrict access to deployments with Passport
 product: vercel
 url: /docs/passport
 canonical_url: "https://vercel.com/docs/passport"
-last_updated: 2026-06-18
+last_updated: 2026-07-30
 type: how-to
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "31607fad8a95c31a9d1c9f7292635d481f18a357c0d297fa993010385ce070d7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "edad8b9c273458b7e30923f0353e073518945ffa848b9161dcf139708f21d7f3"
 ---
 
 # Restrict access to deployments with Passport

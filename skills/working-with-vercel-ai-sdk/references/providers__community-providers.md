@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d5432b20913957eeddaa236f734aaf01ca34523862e96fc70516b71d407d3d0c"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "3d4d911aa0141e3b6c81a2ab203e237543f36608154a23eba63b12a98cf636d4"
 ---
 
 # Community Providers
@@ -41,6 +41,7 @@ Here are the community providers that implement the Language Model Specification
   - [Baseten](/providers/ai-sdk-providers/baseten)
   - [Hugging Face](/providers/ai-sdk-providers/huggingface)
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+  - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
@@ -148,6 +149,7 @@ Here are the community providers that implement the Language Model Specification
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)

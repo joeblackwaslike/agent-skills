@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/workflow-syntax.md"
-fetched_at: "2026-08-03T07:31:11.280Z"
-sha256: "35b5499eb964ef1988d285b96919e15ca5da309901d7aed537919a2b205087fc"
+fetched_at: "2026-08-10T05:30:56.796Z"
+sha256: "23dd20fbdb9934bb23c9860090234c758807daee3e1f15d46a2d8dc8c48b78be"
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -12,6 +12,12 @@ Workflow files use YAML syntax, and must have either a `.yml` or `.yaml` file ex
 
 You must store workflow files in the `.github/workflows` directory of your repository.
 
+{% ifversion copilot %}
+
+> [!TIP]
+> Unlike traditional {% data variables.product.prodname_actions %} workflows that require you to script every decision as YAML job steps, {% data variables.copilot.github_agentic_workflows %} use YAML frontmatter for triggers and configuration, but let you describe what you want in natural-language Markdown—so you don't need to anticipate and encode every scenario in advance. For more information, see [AUTOTITLE](/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows).
+
+{% endif %}
 ## `name`
 
 {% data reusables.actions.workflows.workflow-syntax-name %}
@@ -261,7 +267,7 @@ The value of this parameter is a string specifying the data type of the input. T
 
 {% data reusables.actions.forked-write-permission %}
 
-## How permissions are calculated for a workflow job
+### How permissions are calculated for a workflow job
 
 The permissions for the `GITHUB_TOKEN` are initially set to the default setting for the enterprise, organization, or repository. If the default is set to the restricted permissions at any of these levels then this will apply to the relevant repositories. For example, if you choose the restricted default at the organization level then all repositories in that organization will use the restricted permissions as the default. The permissions are then adjusted based on any configuration within the workflow file, first at the workflow level and then at the job level. Finally, if the workflow was triggered by a pull request event other than `pull_request_target` from a forked repository, and the **Send write tokens to workflows from pull requests** setting is not selected, the permissions are adjusted to change any write permissions to read only.
 

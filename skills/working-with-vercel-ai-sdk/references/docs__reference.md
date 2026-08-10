@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "694d54fb4f649494773939c3aadea5ed526a93c7716d132a6ea3b6bfdb157a71"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "0c0da59878d3b11937820f211134ba34062e95dc66bbcffb7b6ac93f3fde11b5"
 ---
 
 # API Reference
@@ -193,6 +193,7 @@ sha256: "694d54fb4f649494773939c3aadea5ed526a93c7716d132a6ea3b6bfdb157a71"
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

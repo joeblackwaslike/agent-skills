@@ -3,7 +3,7 @@ title: Working with nameservers
 product: vercel
 url: /docs/domains/working-with-nameservers
 canonical_url: "https://vercel.com/docs/domains/working-with-nameservers"
-last_updated: 2026-06-08
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/domains
@@ -14,8 +14,8 @@ related:
 summary: Learn about nameservers and the benefits Vercel nameservers provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-nameservers.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "aa47629ad4ac5fbc25cfe85e739e6f32a0f50cafba89af39ff1145a87e16e45e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b8830e59e74a51553baa326eb1d73c59cc4519e20e72dea26c0ff51059c3b03f"
 ---
 
 # Working with nameservers

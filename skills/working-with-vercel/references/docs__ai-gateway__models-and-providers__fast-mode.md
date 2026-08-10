@@ -3,7 +3,7 @@ title: Fast Mode
 product: vercel
 url: /docs/ai-gateway/models-and-providers/fast-mode
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode"
-last_updated: 2018-10-20
+last_updated: 2026-07-28
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -13,8 +13,8 @@ related:
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "75cf784aa8c3b3b7b541934b554dc460009c49738228042512eb935cba756d93"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "3bd1d3b9070e38e80266ae8a969bf1e810572f620ff473914c09b6fc475dfd48"
 ---
 
 # Fast Mode

@@ -3,7 +3,7 @@ title: DDoS Mitigation
 product: vercel
 url: /docs/vercel-firewall/ddos-mitigation
 canonical_url: "https://vercel.com/docs/vercel-firewall/ddos-mitigation"
-last_updated: 2026-06-26
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/vercel-firewall
@@ -16,8 +16,8 @@ related:
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "da8e5af893621be1ec7486c96ee829ced1d2624b6bca5cb225f549f0d982bea0"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "35c1651ad08b30cb5269bf483e3952a46ed31e91b71593e837c7d456aa87b01b"
 ---
 
 # DDoS Mitigation

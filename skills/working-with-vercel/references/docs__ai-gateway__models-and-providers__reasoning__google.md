@@ -3,7 +3,7 @@ title: Google and Vertex Reasoning
 product: vercel
 url: /docs/ai-gateway/models-and-providers/reasoning/google
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google"
-last_updated: 2026-07-20
+last_updated: 2026-07-28
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers/reasoning
@@ -14,8 +14,8 @@ related:
 summary: Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "8daf69b3d68f894fa20cb421c2aa96fe2104b718790dc2b70c541597c1e6e63f"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "28e7398a774a3a83eecb1fd89e209966a8a9d049eed506508b2db71c42a0131d"
 ---
 
 # Google and Vertex Reasoning

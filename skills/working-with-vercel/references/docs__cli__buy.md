@@ -3,7 +3,7 @@ title: vercel buy
 product: vercel
 url: /docs/cli/buy
 canonical_url: "https://vercel.com/docs/cli/buy"
-last_updated: 2026-07-06
+last_updated: 2026-07-24
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,8 +13,8 @@ related:
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "034193e5b214c3e0348b6ee3df6a4c04439cbabdc2edacbba4f47371c0e54384"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "0356c0f5a8d97f9c9b733b956d91792c15a1556bdfcd9e972fea172edbb14a1d"
 ---
 
 # vercel buy

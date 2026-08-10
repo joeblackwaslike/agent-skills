@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/json-schema.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d11e84f7d38449c58f2c5293dc86b48555b36b516c952f345d0dd44982c53d0c"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "d37b90faaa14a361807cc38c243c48b09f21a9261dcf26c665747308be27eb68"
 ---
 
 # `jsonSchema()`
@@ -139,6 +139,7 @@ A JSON schema object that is compatible with the AI SDK.
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

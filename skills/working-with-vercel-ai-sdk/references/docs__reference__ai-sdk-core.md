@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "b563b9799993efa0f7dcd283cf8228cd031512f16b2c606820db3dfdf3f6a2d9"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "0b574b836ba017e0916f051e49b3ff0e1c1cfae766a9913f63b7082a0f710ad5"
 ---
 
 # AI SDK Core
@@ -202,6 +202,11 @@ It also contains the following helper functions:
       href: '/docs/reference/ai-sdk-core/default-settings-middleware',
     },
     {
+      title: 'defaultInstructionsMiddleware()',
+      description: 'Applies default instructions to a language model.',
+      href: '/docs/reference/ai-sdk-core/default-instructions-middleware',
+    },
+    {
       title: 'smoothStream()',
       description: 'Smooths text and reasoning streaming output.',
       href: '/docs/reference/ai-sdk-core/smooth-stream',
@@ -265,6 +270,7 @@ It also contains the following helper functions:
   - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
   - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
   - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+  - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
   - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
   - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
   - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

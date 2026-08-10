@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "f28c28abf1d3b43cc7d1572dc0751e916bf89c48a3577505e1fa4b6f33d72f01"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "8a06dbac5877fdd75c7ba27ec1fa63b09f96beb50ec69240fcad6b4b994e85a6"
 ---
 
 # Adapters
@@ -43,6 +43,7 @@ The following adapters are currently available:
   - [Baseten](/providers/ai-sdk-providers/baseten)
   - [Hugging Face](/providers/ai-sdk-providers/huggingface)
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+  - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
@@ -150,6 +151,7 @@ The following adapters are currently available:
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)

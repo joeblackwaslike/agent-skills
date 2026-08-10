@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/zeroentropy.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "81f4a99db01b33007b3b7f20d0ac27af6a9db5af868d477b0c7d7923b6dab7be"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "f00819a30e7774888710f6d26c3d7be9847189e59572b76791dc6bb812f45643"
 ---
 
 # ZeroEntropy Provider
@@ -228,6 +228,7 @@ The following provider option is available:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

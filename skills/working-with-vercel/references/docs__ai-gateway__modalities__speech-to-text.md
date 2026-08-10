@@ -3,7 +3,7 @@ title: Speech to Text
 product: vercel
 url: /docs/ai-gateway/modalities/speech-to-text
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text"
-last_updated: 2026-06-20
+last_updated: 2026-07-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -14,8 +14,8 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "818c9cb0b9a883740493c6a7beee2143371dcc5ae75ba501972193d7828ccb78"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "9effedd0e7bc593d205a45fde06c90d529ca9a859d38f1c2cdb610b0c18d8e1a"
 ---
 
 # Speech to Text

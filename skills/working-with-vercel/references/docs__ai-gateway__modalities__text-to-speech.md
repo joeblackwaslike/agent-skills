@@ -3,7 +3,7 @@ title: Text to Speech
 product: vercel
 url: /docs/ai-gateway/modalities/text-to-speech
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech"
-last_updated: 2026-06-20
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -14,8 +14,8 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "eb69aa74edf103758284d458cf7878fa534ef0fc698754f58bcd17bf4e851078"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "32d867b63d77c79cfd934e708806b1a851dd42d7282213615bd200799954f4cf"
 ---
 
 # Text to Speech
@@ -46,8 +46,8 @@ const result = await generateSpeech({
 await writeFile('greeting.mp3', result.audio.uint8Array);
 ```
 
-> **💡 Note:** Speech support in the AI Gateway provider is available on the canary releases
-> of the AI SDK. Install them with `pnpm add ai@canary @ai-sdk/gateway@canary`.
+> **💡 Note:** Speech support ships in the stable AI SDK releases. Install it with `pnpm add
+>   ai @ai-sdk/gateway`.
 
 ### Request options
 

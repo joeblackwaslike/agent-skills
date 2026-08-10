@@ -3,7 +3,7 @@ title: Client Uploads with Vercel Blob
 product: vercel
 url: /docs/vercel-blob/client-upload
 canonical_url: "https://vercel.com/docs/vercel-blob/client-upload"
-last_updated: 2026-07-10
+last_updated: 2026-07-30
 type: tutorial
 prerequisites:
   - /docs/vercel-blob
@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "570b578b655b268d1c3a1166d7bb0a383b0d6f3a7d98fc0ff49f471f493d7e3a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "e9600c231bc4da2d55b607da3fa73fa618a0a706555e9fad74f63c574c3ecfe8"
 ---
 
 # Client Uploads with Vercel Blob

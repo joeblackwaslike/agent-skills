@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/model-message.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "5ec3c43cfc134d1b33eb4cd92edfaaf5ba667bc069ededfbe6f42eae3eab0fce"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "e3f0a82d3272abea84408de510439fe9e163afd72ced9967964614a752c8aec1"
 ---
 
 # `ModelMessage`
@@ -546,6 +546,7 @@ IANA media type.
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

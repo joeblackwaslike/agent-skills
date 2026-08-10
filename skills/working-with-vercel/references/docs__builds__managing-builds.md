@@ -3,7 +3,7 @@ title: Managing Builds
 product: vercel
 url: /docs/builds/managing-builds
 canonical_url: "https://vercel.com/docs/builds/managing-builds"
-last_updated: 2026-06-24
+last_updated: 2026-07-31
 type: how-to
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "4002a6f0f559453826bae591dc5884dd456346a395ed9f58a4964320925b7c8d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "590a7307e458cfae911805605fa4e3e3a74f675c774ef4d8b19ea90edf88910b"
 ---
 
 # Managing Builds

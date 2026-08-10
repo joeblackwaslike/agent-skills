@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/filter-active-tools.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d246fcfc060cc2867b104e54fc12a2ba4423c168cf6d36be308be711064663bf"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "f1b19b3fa4af387f99caffbd473292b720c549b9aba46ebccd46c4f216d503e7"
 ---
 
 # `filterActiveTools()`
@@ -128,6 +128,7 @@ type ActiveTools<TOOLS extends ToolSet> =
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

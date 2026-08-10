@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "52a95d07cb0e5f00f3641474367664a3a438f6eea5a92d5ebbb50917bf7b5588"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "0c8568a646d1898758e492ac614c2834509a8d0e4eec77fc9155a202439b5164"
 ---
 
 # `createMCPClient()`
@@ -691,6 +691,7 @@ For unknown errors, the client exposes an `onUncaughtError` callback that can be
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

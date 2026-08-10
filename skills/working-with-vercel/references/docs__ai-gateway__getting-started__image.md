@@ -3,7 +3,7 @@ title: Image Generation Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/image
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/image"
-last_updated: 2026-06-20
+last_updated: 2026-07-27
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -15,8 +15,8 @@ related:
 summary: Generate images from text prompts using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "1b21b4f2e11354191504bba38341d43cb4492e22fefff1a83827096808e2be49"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "c04ace5b6b5946621b871fee8069b23b98385d6d02f1f2de98d742f83e17eca2"
 ---
 
 # Image Generation Quickstart

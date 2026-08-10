@@ -3,7 +3,7 @@ title: vercel promote
 product: vercel
 url: /docs/cli/promote
 canonical_url: "https://vercel.com/docs/cli/promote"
-last_updated: 2026-03-17
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "78d730b8486fe2d694402976e450e280d192e36f00fec1125ec7061294e6d7d7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "1febc2e46ae45b1102b4b11b7688ac9e69ef2b26b8090244fabae4bdae4ded8c"
 ---
 
 # vercel promote

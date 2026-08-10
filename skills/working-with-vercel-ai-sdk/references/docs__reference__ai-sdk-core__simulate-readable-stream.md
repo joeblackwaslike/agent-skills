@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/simulate-readable-stream.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "1eb4142076aba5f90fb02d1e0cc934438ea919d44f542ae77cc3ad3ac3c3cfdc"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "801e2016986750b7e5c054217f9fc777c7438acbb68876c146986580b8004432"
 ---
 
 # `simulateReadableStream()`
@@ -139,6 +139,7 @@ const stream = simulateReadableStream({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

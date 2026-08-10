@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/hindsight.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "09d81f80c99353b5996fb3448d432fcb2d32420624c6081635b6daf1d3931ef9"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "873a12a8ccd84f32a18003da92ed99ebc567e0aa6dc2ab2e2e8afb43800f9e9d"
 ---
 
 # Hindsight
@@ -267,6 +267,7 @@ For full API documentation and configuration options, see the [Hindsight documen
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

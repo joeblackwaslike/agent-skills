@@ -3,7 +3,7 @@ title: Managing Global Configs with the Dashboard
 product: vercel
 url: /docs/global-config/global-config-dashboard
 canonical_url: "https://vercel.com/docs/global-config/global-config-dashboard"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: how-to
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "eed9867e2076ac778b3e2591170e4d7d74599a9172162dbf56b6d3d7a819a07d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "84e007fcf952fbbc1f739f2b8e6269053dd89a5433ffe85c981577d98e08e3cb"
 ---
 
 # Managing Global Configs with the Dashboard

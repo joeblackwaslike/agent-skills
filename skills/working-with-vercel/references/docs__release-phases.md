@@ -3,7 +3,7 @@ title: Release Phases for Vercel
 product: vercel
 url: /docs/release-phases
 canonical_url: "https://vercel.com/docs/release-phases"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Learn about the different phases of the Vercel Product release cycle and the requirements that a Product must meet before being assigned to a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/release-phases.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b90279529c82b9db1d3fecc213d0df31874532aa8ea906b556b15197c061fb65"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "945bc459d04eb580128117530e8effbface370cafdb81156d3048383ce0b2351"
 ---
 
 # Release Phases for Vercel

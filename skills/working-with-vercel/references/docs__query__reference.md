@@ -3,7 +3,7 @@ title: Query Reference
 product: vercel
 url: /docs/query/reference
 canonical_url: "https://vercel.com/docs/query/reference"
-last_updated: 2026-07-06
+last_updated: 2026-08-03
 type: reference
 prerequisites:
   - /docs/query
@@ -16,8 +16,8 @@ related:
 summary: This reference covers the dimensions and operators used to create a query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "2f3e8de2a0b1296f7e7779146a77d62b94078001cca0bd255901809159587627"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "fa464da634f1637910d3c26805b43536b1a8387f99c1aac495209432913b2974"
 ---
 
 # Query Reference
@@ -120,6 +120,7 @@ There are several fields available for use within the [Filter](#filter) and [gro
 | `WAF Action`        | Group by the WAF action taken by the [Vercel Firewall](/docs/security/vercel-waf) (`deny`, `challenge`, `rate_limit`, `bypass` or `log`)                                                                                                                                         |
 | `WAF Rule ID`       | Group by the firewall rule ID                                                                                                                                                                                                                                                    |
 | `Skew Protection`   | When `active`, the request would have been subject to [version skew](/docs/skew-protection) but was protected, otherwise `inactive`.                                                                                                                                             |
+| `PPR State`         | Group by the [Partial Prerendering state](/docs/partial-prerendering/ppr-state) for a request (`Static`, `Partial`, or `Dynamic`)                                                                                                                                                |
 | `Sandbox Name`      | Group by the sandbox name                                                                                                                                                                                                                                                        |
 | `Sandbox Session ID` | Group by the sandbox session ID                                                                                                                                                                                                                                                  |
 

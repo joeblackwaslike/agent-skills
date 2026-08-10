@@ -3,7 +3,7 @@ title: Pydantic AI
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai"
-last_updated: 2026-06-29
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "2e9ac12c1ace5d940f97a1c84fc4d91dd74d2d394b85896d699deee9c9915aea"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ae375c665c7ab143eed8c780cb3f8b0575a99ddd155dcbce496fd181a00255f5"
 ---
 
 # Pydantic AI

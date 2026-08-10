@@ -3,7 +3,7 @@ title: Vercel CLI Overview
 product: vercel
 url: /docs/cli
 canonical_url: "https://vercel.com/docs/cli"
-last_updated: 2026-07-08
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "54c470704757ab4c0f42c81f73815423444bb7c0f13aefe67da1b77dc39b9dd1"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d78342dfe1893f55de83b119841793ffee54c292b81c28ee607f307645ef8310"
 ---
 
 # Vercel CLI Overview

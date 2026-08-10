@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2cce2f3319b78d847734ca43e7b64bba79954c3c89e726b190f6ec84a9d6a572"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "4be1285134a88629d7a4f708ffb52231bbc997bfc25e3bd28636af3a5efb8263"
 ---
 
 # Account Management
@@ -152,7 +152,7 @@ Collaborating with other members on projects is available on the [Pro](/docs/pla
 
 Upgrade from the [Hobby](/docs/plans/hobby) plan to [Pro](/docs/plans/hobby#upgrading-to-pro) to add team members.
 
-After [creating a new trial](/docs/plans/pro-plan/trials), you'll have 14 days of Pro premium features and collaboration for free.
+After [creating a new trial](/docs/plans/pro-plan/trials), you'll have 14 days of Pro premium features and collaboration for free, except for features limited to paid Pro such as the free first-year custom domain offer (see [trial limitations](/docs/plans/pro-plan/trials#trial-limitations)).
 
 ### Team membership
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d499d1037c90d59bf85013015a3ec1a0e13a88c743680850b6cfe6897d9f04f2"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "82cbc64898e1b60b7176a9123e615e6b8ae651bcea677513a3c04a3604926389"
 ---
 
 # Cerebras Provider
@@ -179,6 +179,7 @@ The following optional provider options are available for Cerebras language mode
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

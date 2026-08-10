@@ -3,7 +3,7 @@ title: Structured Outputs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -13,8 +13,8 @@ related:
 summary: Generate structured JSON responses that conform to a specific schema using the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "ab39b4d0ae2a72821ccb81494f7e96bed216cf254a6e48091c8c85ca0f4b44e2"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ec704ccf993e9180eaf70e557b834827536189d4eda1edec045e771e55a2c5f7"
 ---
 
 # Structured Outputs

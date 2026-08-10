@@ -16,17 +16,16 @@ related:
 summary: Generate speech from text and transcribe audio back to text with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e156d9d919f760b7a9f39676584a8d2fdf3b558c276e04887377468c0ffae80a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "4d51cb367c2e1163756411e39c38c0bacf9fd1a05aa1d00092a8521f847a715a"
 ---
 
 # Speech to Text and Text to Speech Quickstart
 
 Text to speech and speech to text are two halves of the same workflow: one turns text into spoken audio, the other turns audio back into text. They feed into each other, so this quickstart runs both as a round-trip. You generate speech from a sentence, then transcribe that audio and check the text comes back.
 
-> **💡 Note:** Speech and transcription support in the AI Gateway provider is available on
-> the canary releases of the AI SDK. Install them with `pnpm add ai@canary
->   @ai-sdk/gateway@canary`.
+> **💡 Note:** Speech and transcription support ships in the stable AI SDK releases. Install
+> them with `pnpm add ai @ai-sdk/gateway`.
 
 - ### Set up your project
   Create a new directory and initialize a Node.js project:
@@ -37,22 +36,22 @@ Text to speech and speech to text are two halves of the same workflow: one turns
   ```
 
 - ### Install dependencies
-  Install the canary AI SDK, the AI Gateway provider, and development dependencies:
+  Install the AI SDK, the AI Gateway provider, and development dependencies:
   #### npm
   ```bash filename="Terminal"
-  npm install ai@canary @ai-sdk/gateway@canary dotenv @types/node tsx typescript
+  npm install ai @ai-sdk/gateway dotenv @types/node tsx typescript
   ```
   #### yarn
   ```bash filename="Terminal"
-  yarn add ai@canary @ai-sdk/gateway@canary dotenv @types/node tsx typescript
+  yarn add ai @ai-sdk/gateway dotenv @types/node tsx typescript
   ```
   #### pnpm
   ```bash filename="Terminal"
-  pnpm add ai@canary @ai-sdk/gateway@canary dotenv @types/node tsx typescript
+  pnpm add ai @ai-sdk/gateway dotenv @types/node tsx typescript
   ```
   #### bun
   ```bash filename="Terminal"
-  bun add ai@canary @ai-sdk/gateway@canary dotenv @types/node tsx typescript
+  bun add ai @ai-sdk/gateway dotenv @types/node tsx typescript
   ```
 
 - ### Set up your API key

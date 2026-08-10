@@ -3,7 +3,7 @@ title: Image Generation
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation"
-last_updated: 2026-06-20
+last_updated: 2026-07-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -15,8 +15,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "78b7dbfbc5a7d959a55daef109a4d99cb907e8c1c76dd5c112cbf151138ac35e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a436703afa1737b93b247e0fc580effb8c5ad9c8fa3356fea4da38d1b2f0a6c3"
 ---
 
 # Image Generation

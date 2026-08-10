@@ -3,7 +3,7 @@ title: Vercel and Contentful Integration
 product: vercel
 url: /docs/integrations/cms/contentful
 canonical_url: "https://vercel.com/docs/integrations/cms/contentful"
-last_updated: 2026-02-18
+last_updated: 2026-07-15
 type: tutorial
 prerequisites:
   - /docs/integrations/cms
@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Contentful to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/contentful.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "05f87e24323b7ef413e5e0db7dd134bd9785613a3923adcca093bfe3e3b392cd"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "083846e3ee07864ec801ff5e0f22303f6a2522f3e6e3c5b6e852374c3fca07cc"
 ---
 
 # Vercel and Contentful Integration

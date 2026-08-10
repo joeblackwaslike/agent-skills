@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "5718425be66db78bceb67ce5bbc8d2754377d3f5c106767cb00abdaf1e6efb06"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "f5aaf3ed221e3f86ee41a09dab9ea31be25ae274670ee19b51f6c62b39d1d35e"
 ---
 
 # AssemblyAI Provider
@@ -420,6 +420,7 @@ AssemblyAI's documentation for per-language availability.
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

@@ -3,7 +3,7 @@ title: Transferring a project
 product: vercel
 url: /docs/projects/transferring-projects
 canonical_url: "https://vercel.com/docs/projects/transferring-projects"
-last_updated: 2026-07-01
+last_updated: 2026-07-29
 type: how-to
 prerequisites:
   - /docs/projects
@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "6933904423a31db872e0185d5c7aa09622365e6bfe17f3e842965da717c003ff"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "2f8fe2578331fe44b2a2833ea4ce7140be5e9ac135d1db75bba2f006b1e55a7d"
 ---
 
 # Transferring a project

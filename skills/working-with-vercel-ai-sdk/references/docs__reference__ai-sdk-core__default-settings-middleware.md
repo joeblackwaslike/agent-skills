@@ -1,12 +1,15 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/default-settings-middleware.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "bac7daeb342014c0e4124c09344d49c9dc2daae4686beca98416e6752ceab4c6"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "dea3966731512f7d8eb5efc405b2e2d3e46d5bec47827057ca4511f3b036811f"
 ---
 
 # `defaultSettingsMiddleware()`
 
 `defaultSettingsMiddleware` is a middleware function that applies default settings to language model calls. This is useful when you want to establish consistent default parameters across multiple model invocations.
+
+To apply default system instructions, use
+[`defaultInstructionsMiddleware`](/docs/reference/ai-sdk-core/default-instructions-middleware).
 
 ```ts
 import { defaultSettingsMiddleware } from 'ai';
@@ -125,6 +128,7 @@ The middleware:
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

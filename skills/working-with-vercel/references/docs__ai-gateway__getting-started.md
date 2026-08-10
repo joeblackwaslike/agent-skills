@@ -3,7 +3,7 @@ title: Getting Started
 product: vercel
 url: /docs/ai-gateway/getting-started
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started"
-last_updated: 2026-06-26
+last_updated: 2026-07-28
 type: tutorial
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice agents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "11a39c0824eee2e5913c926e5e398760997a3d2ab6c2f198ad99f40de88b07cd"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7eb659586bfe7c7d9ee6c2975d95ecd13e567cc7a70585fb7911628a767c6352"
 ---
 
 # Getting Started
@@ -28,7 +28,7 @@ Choose a quickstart to set up a project and make your first request:
 
 **Image Generation**: Create images from text prompts or edit existing images with Flux 2 Flex, Recraft V3, Imagen, and more. [Learn more →](/docs/ai-gateway/getting-started/image)
 
-**Video Generation**: Create videos from text prompts, images, or video input with Veo 3.1, KlingAI, Wan, Grok Imagine Video, and more. [Learn more →](/docs/ai-gateway/getting-started/video)
+**Video Generation**: Create videos from text prompts, images, or video input with Veo 3.1, KlingAI, Wan, Grok Imagine Video, and more. Run them over a single request or as background jobs. [Learn more →](/docs/ai-gateway/getting-started/video)
 
 **Realtime**: Build low-latency, speech-to-speech voice agents that listen and respond over WebSockets. [Learn more →](/docs/ai-gateway/getting-started/realtime)
 

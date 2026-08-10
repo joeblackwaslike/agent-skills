@@ -3,7 +3,7 @@ title: Billing FAQ for Pro Plan
 product: vercel
 url: /docs/plans/pro-plan/billing
 canonical_url: "https://vercel.com/docs/plans/pro-plan/billing"
-last_updated: 2026-06-03
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/plans/pro-plan
@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "2731a968f524c83043d4517a236747288152ce97acf86cc42ec2e83682c97e2c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "0ab92bec2b550b479812f061c7adb076726f016b153fd7431213cb1cb3c84f5c"
 ---
 
 # Billing FAQ for Pro Plan

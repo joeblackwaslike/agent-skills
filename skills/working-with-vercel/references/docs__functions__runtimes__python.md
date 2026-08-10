@@ -3,7 +3,7 @@ title: Using the Python Runtime with Vercel Functions
 product: vercel
 url: /docs/functions/runtimes/python
 canonical_url: "https://vercel.com/docs/functions/runtimes/python"
-last_updated: 2026-07-06
+last_updated: 2026-07-22
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "e6b4df1b8e94cb5f02dfc1063e173cfc678f1e35bc5a82206df514d5cda1d00f"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "6bf4e1094aa0b3e703561897d4737c1dd468455b40e9e8a196289ed715c1b5e8"
 ---
 
 # Using the Python Runtime with Vercel Functions

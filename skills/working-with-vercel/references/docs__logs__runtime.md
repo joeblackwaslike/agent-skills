@@ -3,7 +3,7 @@ title: Runtime Logs
 product: vercel
 url: /docs/logs/runtime
 canonical_url: "https://vercel.com/docs/logs/runtime"
-last_updated: 2026-07-08
+last_updated: 2026-08-03
 type: reference
 prerequisites:
   - /docs/logs
@@ -16,8 +16,8 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d940c21adc0830966d6c50cc035b6b5bccfba39e43a44138244eb3dc1957c84e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "192740779dec1fe8e27b4ba239717f0b5e419a7dc106ccd16eba0387c76e7f91"
 ---
 
 # Runtime Logs
@@ -202,6 +202,7 @@ You can view details for each request to analyze and improve your debugging expe
 | **Cache Reason**       | Why the response missed, bypassed, or served stale for static requests. See [Cache Status and Reasons](/docs/caching/cache-status). |
 | **Cache Age**          | For ISR responses, how long ago the served cache entry was generated                                                        |
 | **Cache TTL**          | For ISR responses, how long the cache entry stays fresh before it revalidates                                               |
+| **PPR State**          | The [PPR state](/docs/partial-prerendering/ppr-state) for Partial Prerendering routes (`Static`, `Partial`, `Dynamic`)      |
 | **Middleware**         | Metadata about middleware execution such as location and duration                                                           |
 | **Function**           | Metadata about function execution including function name, location, runtime, duration, memory usage, and start type        |
 | **Deployment**         | Metadata about the deployment that produced the logs including id, environment, and branch                                  |

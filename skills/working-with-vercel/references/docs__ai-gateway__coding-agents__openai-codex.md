@@ -3,7 +3,7 @@ title: OpenAI Codex
 product: vercel
 url: /docs/ai-gateway/coding-agents/openai-codex
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex"
-last_updated: 2026-07-07
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Use OpenAI Codex CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "4847e58a503bfde5c188ccb06c8f13b2a0fd6ba977e69aecff8970c4034e35cd"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "8043cea73c1be9e9ca6821483a747b392000f41cf37dd1aff1c53fec381508f2"
 ---
 
 # OpenAI Codex

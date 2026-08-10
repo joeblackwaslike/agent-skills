@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "cf511c14b4d0d98184b8e75ee7bc226182d699641024bf50390024f47493dcf7"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "c47289b6121a3082d0cb2c0cb46d5d50e5a20f281844e8b0e9b47ed0e63f4282"
 ---
 
 # `pipeAgentUIStreamToResponse`
@@ -212,6 +212,7 @@ app.post('/chat', async (req, res) => {
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

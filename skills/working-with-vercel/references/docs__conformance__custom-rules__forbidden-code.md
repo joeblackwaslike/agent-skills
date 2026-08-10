@@ -3,7 +3,7 @@ title: forbidden-code
 product: vercel
 url: /docs/conformance/custom-rules/forbidden-code
 canonical_url: "https://vercel.com/docs/conformance/custom-rules/forbidden-code"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow code and code patterns through string and regular expression matches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-code.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "26312b03dfacc59f7b25a90c39877f6b7ba0ec6cf6a8d0e419ddb03ca1f90dfb"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "de4e42c62c48ed2c1302fcbff7805593cdb2cd6d239057285062867da1e4f750"
 ---
 
 # forbidden-code

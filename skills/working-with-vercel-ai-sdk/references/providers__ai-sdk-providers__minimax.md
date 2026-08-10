@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "17746c06e46c1724e91c9a64c43fd84b3324b303d3e475b36ab0ff606ea71165"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "d24260df253a229fad0498eb5efa259a4cd617ec757f13df5d6567a399efb780"
 ---
 
 # MiniMax Provider
@@ -166,6 +166,12 @@ creates a task and polls until it completes, then returns the resulting MP4 URL.
 fractional value is rounded and an out-of-range value is clamped, each with a
 warning. The only supported output resolution is `2K`.
 
+For **text-to-video**, `aspectRatio` defaults to `16:9` when omitted. The MiniMax
+API requires a concrete ratio for text-only requests and does not accept
+`adaptive`. For **reference-to-video**, the API default is `adaptive` when
+`aspectRatio` is omitted. For **image-to-video** with frame images, the aspect
+ratio follows the input image.
+
 <Note>
   Result URLs are time-limited. Download and persist the video to your own
   storage promptly after generation.
@@ -308,6 +314,7 @@ MiniMax video results include `providerMetadata.minimax`:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

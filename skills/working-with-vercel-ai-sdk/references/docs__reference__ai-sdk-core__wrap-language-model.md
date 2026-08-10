@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/wrap-language-model.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "3749770ea03516fa3296b2b79a21cd547637568324284bd2f5df82de6fb04e63"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "876b6d94eae69e8239808efc724d47658d5ed6733034a82bce8968393e573c18"
 ---
 
 # `wrapLanguageModel()`
@@ -104,6 +104,7 @@ A new `LanguageModelV4` instance with middleware applied.
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

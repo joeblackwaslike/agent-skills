@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "8d3df6e7a4fd06f2d1bd4a5562cd477d4efb0d3befa492e12127aff8daac265e"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "578147eadec3f762fbee1c2c801cdcd8d6cc45861f839359702bababebda73c2"
 ---
 
 # Google Provider
@@ -2160,6 +2160,7 @@ const result = await generateSpeech({
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

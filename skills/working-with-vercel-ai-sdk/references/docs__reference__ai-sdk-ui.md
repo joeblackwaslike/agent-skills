@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "a664d4bba6506a9ca2cc8fa75fce35deaa15009d44ccfce56e9686c6324dce0b"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "e2cef17e953c539b52ea396e3ca50989c2de03767c13d3a4422cc57098e483bb"
 ---
 
 # AI SDK UI
@@ -144,6 +144,7 @@ Here is a comparison of the supported functions across these frameworks:
   - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
   - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
   - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+  - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
   - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
   - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
   - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

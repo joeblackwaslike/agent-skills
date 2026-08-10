@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d959f722d66d47b12f74b1f294b8dc420bb47be5f20f3136df73f2baac5a42e2"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "3518ec69669294196829edc828e813605b77c59a11fc82454140dbcd9009f87c"
 ---
 
 # `validateUIMessages`
@@ -146,6 +146,7 @@ const validatedMessages = await validateUIMessages({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

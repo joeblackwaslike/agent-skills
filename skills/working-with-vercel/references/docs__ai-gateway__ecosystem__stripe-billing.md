@@ -3,7 +3,7 @@ title: Stripe Billing
 product: vercel
 url: /docs/ai-gateway/ecosystem/stripe-billing
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing"
-last_updated: 2026-06-11
+last_updated: 2026-07-28
 type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem
@@ -13,8 +13,8 @@ related:
 summary: Add usage-based billing to your AI application with Stripe and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "5fe0481c64162481bdac0989a8dfc527e06001fca6cf5cd7550b87de6a5044ca"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "1210ab31bde83393849677ec751b8d2f505365ebf04ae485648ffce243087132"
 ---
 
 # Stripe Billing

@@ -3,7 +3,7 @@ title: Realtime
 product: vercel
 url: /docs/ai-gateway/modalities/realtime
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/realtime"
-last_updated: 2026-06-20
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -15,8 +15,8 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "8f27a42dd5c775a1efee18fce875ce5052310ac02a6af8578fe19250dd1665eb"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "dd2cf5fd1562bef78d333a3c6a1834700b2dba19e47f1f574506db3299ad3ad7"
 ---
 
 # Realtime
@@ -27,9 +27,8 @@ For a step-by-step setup, see the [Realtime quickstart](/docs/ai-gateway/getting
 
 Realtime is for live conversation. To transcribe recorded audio, see [Speech to Text](/docs/ai-gateway/modalities/speech-to-text); to generate spoken audio from text, see [Text to Speech](/docs/ai-gateway/modalities/text-to-speech).
 
-> **💡 Note:** Realtime support in the AI Gateway provider is available on the canary
-> releases of the AI SDK. Install them with `pnpm add ai@canary
->   @ai-sdk/gateway@canary @ai-sdk/react@canary`.
+> **💡 Note:** Realtime support ships in the stable AI SDK releases. Install it with `pnpm
+>   add ai @ai-sdk/gateway @ai-sdk/react`.
 
 These examples use `openai/gpt-realtime-2` and `xai/grok-voice-think-fast-1.0`. Swap the model ID to switch between them. `xai/grok-voice-think-fast-1.0` supports speech-to-speech only, so it does not handle transcription or translation.
 

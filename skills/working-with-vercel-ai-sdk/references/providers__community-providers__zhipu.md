@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/zhipu.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "5c574fc47fa72099303e1b22d7c689d9de3e37fe756b6be533c462e7f8fdbe3f"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "0c4ce0e3d70d04c47e3fa734a1d9d733f5de043df9827f6789b3e39917c13607"
 ---
 
 # Zhipu AI (Z.AI) Provider
@@ -122,6 +122,7 @@ console.log(result);
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

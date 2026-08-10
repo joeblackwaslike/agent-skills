@@ -3,7 +3,7 @@ title: Remote Caching
 product: vercel
 url: /docs/monorepos/remote-caching
 canonical_url: "https://vercel.com/docs/monorepos/remote-caching"
-last_updated: 2026-07-08
+last_updated: 2026-07-30
 type: tutorial
 prerequisites:
   - /docs/monorepos
@@ -16,8 +16,8 @@ related:
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "1681789362fd139867c7d0e09dfb0c03ea935d50dd756a4d9a74303a0ae05e0e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "fb97513e479b87abdb59f2ec14aa6f0266124d569d96b2cdf7983359e5c91777"
 ---
 
 # Remote Caching

@@ -3,7 +3,7 @@ title: Billing FAQ for Enterprise Plan
 product: vercel
 url: /docs/plans/enterprise/billing
 canonical_url: "https://vercel.com/docs/plans/enterprise/billing"
-last_updated: 2026-03-19
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/plans/enterprise
@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bc57d8736d912ca6b66daf91689d6acd4730d901f1830591ec4fa927f2ee1cc6"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "c67b11605f9aac338c61949a30f224a77513089d0c068ad8fed14c5db5cb102f"
 ---
 
 # Billing FAQ for Enterprise Plan

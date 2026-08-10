@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/spark.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "5711432700ad481df68a884ae8564a3355fc43fe9c73430ba62bcda9012b776f"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "98161ae08334f54073877bee789c5bee3fdf8bc756bbefd2d00f53b36c65e97f"
 ---
 
 # Spark Provider
@@ -104,6 +104,7 @@ Please check out the **[Spark provider documentation](https://github.com/klren03
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

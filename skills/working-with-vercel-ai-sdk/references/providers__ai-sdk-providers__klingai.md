@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "9523c53d14f00a999135577da5c6c86dc61e0e92883175470227f6c5fe649930"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "06cc4b57d7d17647af2f3e03637ecfddadd72e5ecaf0eebe2b99b532753faf8a"
 ---
 
 # Kling AI Provider
@@ -404,6 +404,7 @@ The following provider options are available via `providerOptions.klingai`. Opti
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

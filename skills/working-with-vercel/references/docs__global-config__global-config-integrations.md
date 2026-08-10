@@ -3,7 +3,7 @@ title: Using Global Config with an integration
 product: vercel
 url: /docs/global-config/global-config-integrations
 canonical_url: "https://vercel.com/docs/global-config/global-config-integrations"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "2a4d00b2e9cfe27a3123974a4ef2a75f43213e8ea2ec1ec16c5d669fc2e75f90"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "854801ffc50ba96727655962ce9d5403993e8b654f34fcf41d24469c89d4f708"
 ---
 
 # Using Global Config with an integration

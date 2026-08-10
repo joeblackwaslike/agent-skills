@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream-response.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "59244e9cfd610958b72db7121f9157f3ac4fd4fa76e7e0c8e3d0441adc3f19c1"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "8616a52a20db0d4a2395907637f96c4c57dcdbba428b4a2a746d283b1ee52248"
 ---
 
 # `createAgentUIStreamResponse`
@@ -235,6 +235,7 @@ export async function POST(request: Request) {
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

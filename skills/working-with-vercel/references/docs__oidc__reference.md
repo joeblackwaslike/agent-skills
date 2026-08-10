@@ -3,7 +3,7 @@ title: OIDC Federation Reference
 product: vercel
 url: /docs/oidc/reference
 canonical_url: "https://vercel.com/docs/oidc/reference"
-last_updated: 2026-06-23
+last_updated: 2026-08-04
 type: reference
 prerequisites:
   - /docs/oidc
@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ae3ed303cf76830e9c44d263f336e345f761af154be200071856b0829f66052a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a25a994da56e1cf0cc288e017afa96112c18c95cce07213a2dedfadf77ef94bb"
 ---
 
 # OIDC Federation Reference
@@ -169,7 +169,7 @@ You can validate OpenID Connect tokens by using the issuer's OpenID Connect Disc
 provides a URI to Vercel's public JSON Web Keys (JWKs). You can use the corresponding JWK identified by `kid` to verify tokens
 that are signed with the same `kid` in the token's header.
 
-### Example token
+### Example function token
 
 ```json
 // Header:
@@ -185,7 +185,7 @@ that are signed with the same `kid` in the token's header.
   "sub": "owner:acme:project:acme_website:environment:production",
   "iat": 1718885593,
   "nfb": 1718885593,
-  "exp": 1718889193,
+  "exp": 1718892793,
   "owner": "acme",
   "owner_id": "team_7Gw5ZMzpQA8h90F832KGp7nwbuh3",
   "project": "acme_website",
@@ -205,7 +205,7 @@ This is a list of standard tokens that you can expect from an OpenID Connect JWT
 | `sub` | Subject    | The subject is set to `owner:[TEAM_SLUG]:project:[PROJECT_NAME]:environment:[ENVIRONMENT]`                                                                                                 |
 | `iat` | Issued at  | The time the token was created                                                                                                                                                             |
 | `nbf` | Not before | The token is not valid before this time                                                                                                                                                    |
-| `exp` | Expires at | The time the token has or will expire. `preview` and `production` tokens expire one hour after creation, `development` tokens expire in 12 hours.                                          |
+| `exp` | Expires at | Build tokens expire after one hour. Function tokens for `preview` and `production` expire after two hours. `development` tokens expire after 12 hours.                                     |
 
 ### Additional claims
 

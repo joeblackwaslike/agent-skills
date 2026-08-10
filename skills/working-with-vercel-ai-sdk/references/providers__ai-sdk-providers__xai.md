@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "878c840491f773e571d72dec9eb83d6af93655b0a4ee16d2c53a2e23fbfc579d"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "fc30c6ea775c827e6c93df923d0e20978309f7281a5f05649e93f66b3bafb426"
 ---
 
 # xAI Grok Provider
@@ -1305,6 +1305,7 @@ and `resolution` just like text-to-video.
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

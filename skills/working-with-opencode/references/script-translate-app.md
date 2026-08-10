@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/script/translate-app.md"
-fetched_at: "2026-07-13T06:58:43.608Z"
-sha256: "8d89a5751792665d03398edbc00142fb26368bb475bfa6664437d0fbae42cb0c"
+fetched_at: "2026-08-10T05:31:39.739Z"
+sha256: "76990d23ce8ef43c695b44937168dc7f9e7ae667c3ddd5e9c3fc2b2bb087b17f"
 ---
 
 Translate the product app locale `$1` from the English source dictionaries. English is the read-only source of truth. Its copy is intentional and must never be modified, rewritten, or "improved."
@@ -21,7 +21,10 @@ Requirements:
 - Preserve existing translations unless they have a listed placeholder mismatch.
 - Preserve meaning, intent, tone, capitalization, punctuation, whitespace, and formatting.
 - Preserve technical terms and artifacts exactly: OpenCode, API names, identifiers, code, commands, flags, paths, URLs, versions, error messages, config keys, and placeholder tokens.
+- For developer-facing terminology, use the words already recognized by the target language's developer community instead of literal dictionary translations. Check at least two maintained localized developer corpora among Firefox, KDE, and VS Code when they are available; use Microsoft or official language authorities as supporting evidence.
+- Translate complete phrases in their product context. Check recurring concepts such as session, prompt, agent, model, provider, fork, shell, terminal, workspace, worktree, context, permission, tool, and server for consistent, grammatical usage. Keep an established English borrowing when the developer corpora do.
+- If maintained target-language corpora are sparse or disagree, choose conservative wording and identify the uncertain terms in the final response instead of inventing terminology.
 - Apply the locale glossary included in the request.
 - `ui.sessionTurn.diffs.changed.one` and `ui.sessionTurn.diffs.changed.other` are complete count phrases. Preserve `{{count}}` and translate the whole phrase naturally rather than composing translated fragments.
-- Use only read, glob, grep, and edit tools. Do not run commands or delegate work.
+- Use only read, glob, grep, webfetch, websearch, and edit tools. Do not run commands or delegate work.
 - Finish only when every requested key is synchronized and no other file has changed.

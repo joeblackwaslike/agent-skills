@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-08-03T07:24:53.308Z"
-sha256: "db9d5033950f3dc7a3e7e8449721dfd25ce3fe773d0bc98cb8b755280684a1a0"
+fetched_at: "2026-08-10T05:26:00.817Z"
+sha256: "3b1a921fe84b1bed4a11fdd2ebaeb9ff04d8573c0d4fd322b994e925e5485745"
 ---
 
 # Available features index
@@ -132,7 +132,7 @@ Features
 | Ruby (via ruby-build) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/ruby:2` | `2.0.0` |
 | Rust | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/rust:1` | `1.5.1` |
 | SSH server | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/sshd:1` | `1.1.0` |
-| Terraform, tflint, and TFGrunt | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/terraform:1` | `1.4.5` |
+| Terraform, tflint, and TFGrunt | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/terraform:1` | `1.5.0` |
 | Data Version Control | Iterative, Inc | `ghcr.io/iterative/features/dvc:1` | `1.0.4` |
 | nvtop - GPUs Process monitoring | Iterative, Inc | `ghcr.io/iterative/features/nvtop:1` | `1.0.0` |
 | apt packages | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/apt-packages:1` | `1.0.2` |
@@ -257,6 +257,7 @@ Features
 | fx | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/fx:1` | `1.0.0` |
 | fzf | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/fzf:1` | `1.0.0` |
 | gic | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/gic:1` | `1.0.0` |
+| Git AI | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/gitai:1` | `1.0.0` |
 | Gitleaks | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/gitleaks:1` | `1.0.0` |
 | Glow | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/glow:1` | `1.0.0` |
 | herdr | jsburckhardt | `ghcr.io/jsburckhardt/devcontainer-features/herdr:1` | `1.0.0` |
@@ -616,10 +617,10 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.123` |
-| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.36` |
-| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.36` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.70` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.125` |
+| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.38` |
+| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.38` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.71` |
 | Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.35` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.27` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
@@ -989,6 +990,7 @@ Features
 | Ory Hydra (via Github Releases) | devcontainers-extra | `ghcr.io/devcontainers-extra/features/ory-hydra:1` | `1.0.6` |
 | Ory Kratos (via Github Releases) | devcontainers-extra | `ghcr.io/devcontainers-extra/features/ory-kratos:1` | `1.0.6` |
 | Ory Oathkeeper (via Github Releases) | devcontainers-extra | `ghcr.io/devcontainers-extra/features/ory-oathkeeper:1` | `1.0.6` |
+| OutageDeck CLI (via GitHub Releases) | devcontainers-extra | `ghcr.io/devcontainers-extra/features/outagedeck:1` | `1.0.0` |
 | Packer (via asdf) | devcontainers-extra | `ghcr.io/devcontainers-extra/features/packer-asdf:2` | `2.0.16` |
 | Pandoc (via Github Releases) | devcontainers-extra | `ghcr.io/devcontainers-extra/features/pandoc:1` | `1.0.15` |
 | pass (password-store) (via apt-get) | devcontainers-extra | `ghcr.io/devcontainers-extra/features/pass-apt-get:1` | `1.0.5` |
@@ -1307,6 +1309,7 @@ Features
 | Zip Utility | John Ajera | `ghcr.io/jajera/features/zip:1` | `1.0.0` |
 | Air | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/air:1` | `1.0.0` |
 | Buf CLI (via Github Releases) | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/buf:1` | `1.0.1` |
+| Butane | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/butane:1` | `1.0.0` |
 | Cobra CLI | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/cobra-cli:1` | `1.0.0` |
 | diff-so-fancy | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/diff-so-fancy:1` | `1.0.0` |
 | Dingo | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/dingo:1` | `1.0.0` |
@@ -1434,7 +1437,9 @@ Features
 | Grok Build | sliekens | `ghcr.io/sliekens/devcontainer-features/grok-build:1` | `1.0.2` |
 | Mistral Vibe | sliekens | `ghcr.io/sliekens/devcontainer-features/mistral-vibe:1` | `1.2.1` |
 | Mono | sliekens | `ghcr.io/sliekens/devcontainer-features/mono:1` | `1.0.0` |
+| Oh My Pi | sliekens | `ghcr.io/sliekens/devcontainer-features/omp:1` | `1.0.0` |
 | OpenCode | sliekens | `ghcr.io/sliekens/devcontainer-features/opencode:1` | `1.0.3` |
+| Pi | sliekens | `ghcr.io/sliekens/devcontainer-features/pi:1` | `1.0.0` |
 | Rename Container User | sliekens | `ghcr.io/sliekens/devcontainer-features/rename-user:1` | `1.0.1` |
 | Gitea CLI | sliekens | `ghcr.io/sliekens/devcontainer-features/tea:1` | `1.1.3` |
 | Worktrunk | sliekens | `ghcr.io/sliekens/devcontainer-features/worktrunk:1` | `1.1.1` |
@@ -1474,7 +1479,8 @@ Features
 | Vault CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/vault-cli:1` | `1.0.0` |
 | Zig | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/zig:1` | `1.0.0` |
 | Claude config mount | NicoVIII | `ghcr.io/nicoviii/devcontainer-features/claude-mount:0` | `0.1.0` |
-| Linux X11 Forwarding | althack | `ghcr.io/althack/devcontainers/linux-x11-forwarding:0` | `0.2.1` |
+| Linux X11 Forwarding | althack | `ghcr.io/althack/devcontainers/linux-x11-forwarding:0` | `0.3.0` |
+| ROS 2 | althack | `ghcr.io/althack/devcontainers/ros2:0` | `0.3.0` |
 | Firefox-Variant-Installer | soup-bowl | `ghcr.io/soup-bowl/features/firefox-set:0` | `0.1.1` |
 | Atlassian CLI for Jira & Confluence | rosstaco | `ghcr.io/rosstaco/devcontainer-features/atlassian-jira-confluence-cli:1` | `1.0.0` |
 | Copilot CLI Persistence | rosstaco | `ghcr.io/rosstaco/devcontainer-features/copilot-persistence:1` | `1.1.0` |
@@ -1493,10 +1499,11 @@ Features
 | Pi Coding Agent | RodriBus | `ghcr.io/rodribus/devcontainer-features/pi-coding-agent:0` | `0.1.0` |
 | Antigravity CLI | aqua | `ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1` | `1.0.2` |
 | Claude Code | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/claudecode:1` | `1.1.1` |
+| Codex CLI | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/codexcli:1` | `1.0.0` |
 | Playwright CLI | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/playwright-cli:1` | `1.0.0` |
 | Qoder CLI | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/qodercli:1` | `1.0.0` |
 | Google Cloud CLI | aqua | `ghcr.io/aqua/devcontainer-gcloud/gcloud:1` | `1.0.2` |
-| betterleaks | kuju63 | `ghcr.io/kuju63/devcontainer-features/betterleaks:1` | `1.2.0` |
+| betterleaks | kuju63 | `ghcr.io/kuju63/devcontainer-features/betterleaks:1` | `1.3.0` |
 | act | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/act:1` | `1.0.1` |
 | AWS AgentCore CLI | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/agentcore:1` | `1.0.1` |
 | AWS SAM CLI | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/aws-sam-cli:1` | `1.0.1` |

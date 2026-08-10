@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "bf19ec30c00ba341755c77c95b82d474a2d0464066c34dd0d71d34b72d353bb0"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "98f7c190a61c4d7e67e1367811fd55f0c0c2851df22afbdf3efb261509f3e158"
 ---
 
 # AI SDK Providers
@@ -140,6 +140,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Baseten](/providers/ai-sdk-providers/baseten)
   - [Hugging Face](/providers/ai-sdk-providers/huggingface)
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+  - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
@@ -247,6 +248,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)

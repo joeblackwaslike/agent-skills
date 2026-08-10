@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/has-tool-call.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "8bf050fecf41d87228124a98d3f25b51258db63cf06c105e9f26e782a6d0bcd5"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "bb8857a488b892191e16e84b3f3e6099f20a40529a914ef9291ad6d95bc09636"
 ---
 
 # `hasToolCall()`
@@ -183,6 +183,7 @@ const result = await generateText({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

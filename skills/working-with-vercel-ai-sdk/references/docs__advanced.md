@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d874e5fdc2da9560e3dba577b793ed55b2c34d9110a5447bee0f860b566a9af3"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "3ac40f790d5228fc69303709639d253199d483b2c9eb2f05d93cbd690fc36216"
 ---
 
 # Advanced
@@ -165,6 +165,7 @@ After these concepts, you should have a better understanding of the paradigms be
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

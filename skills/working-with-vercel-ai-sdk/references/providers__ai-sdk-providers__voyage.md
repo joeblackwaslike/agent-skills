@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "c4076508e8845afadc7e8ec18c08c4d55b57b49e70b7d35f5e906345da606f8c"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "0dc701f6d71b7c6feeaaba8978d09379bcfaa09b8a93de404ca41d94ff9f6a89"
 ---
 
 # Voyage AI Provider
@@ -246,6 +246,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

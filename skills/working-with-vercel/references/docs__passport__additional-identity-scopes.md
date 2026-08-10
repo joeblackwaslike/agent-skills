@@ -3,7 +3,7 @@ title: Configure additional identity scopes
 product: vercel
 url: /docs/passport/additional-identity-scopes
 canonical_url: "https://vercel.com/docs/passport/additional-identity-scopes"
-last_updated: 2018-10-20
+last_updated: 2026-07-20
 type: how-to
 prerequisites:
   - /docs/passport
@@ -13,8 +13,8 @@ related:
 summary: Request group membership and other provider-specific identity claims when using Passport.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "b948b00aa3f0671a877db9d989a3cc8e83230b5f4d415fa50744271d1c6348d3"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a2356e1b9f6e0322bc938ca1fb56cc81417b4f95b817fd0a5b59c7a450546bb3"
 ---
 
 # Configure additional identity scopes

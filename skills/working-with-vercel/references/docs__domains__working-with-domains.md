@@ -9,15 +9,15 @@ prerequisites:
   - /docs/domains
 related:
   - /docs/getting-started-with-vercel/buy-domain
+  - /docs/plans/pro-plan/trials
+  - /docs/plans/pro-plan
   - /docs/domains/add-a-domain
   - /docs/domains/supported-domains
-  - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
-  - /docs/domains/deploying-and-redirecting
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a4b117054c832ba8cc3138ac5bae5c59ac6de8763cebfc6683d40044cf3eb950"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ffdea232cad899a101be055b454383c2cf396e1b0f2b48d28c172a9c92ac7d89"
 ---
 
 # Working with domains
@@ -33,6 +33,14 @@ More often than not, you will want to assign a domain to a project that reflects
 ### Buying a domain through Vercel
 
 When you buy a domain through Vercel, we configure and set the nameservers, which means you do not need to set any DNS records or make any configurations. It just works. In addition, if you choose to make configurations, such as setting up email, it's all maintained from the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). Finally, all renewals, including domain and SSL certificate renewals are automatically handled by Vercel.
+
+> **💡 Note:** New monthly Pro subscriptions include one free first-year domain on an
+> eligible TLD (`.online`, `.site`, `.space`, `.store`, `.tech`, or
+> `.website`), claimed within 30 days of upgrading. The offer covers one
+> domain per Pro upgrade and excludes
+> teams on a [Pro trial](/docs/plans/pro-plan/trials). After the first year,
+> the domain renews at the standard rate. See
+> [eligibility details](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades).
 
 > **💡 Note:** For the ICANN registrant information:
 

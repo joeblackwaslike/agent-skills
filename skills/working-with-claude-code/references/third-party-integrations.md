@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/third-party-integrations.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "8994dc0e9ea790781be5a2061cc5e25f5fd39caed4d8274455bd8f5e0efa4f95"
+fetched_at: "2026-08-10T05:26:58.686Z"
+sha256: "4ca2b35a6abdc8a80677f2daf2e11c96696c340731374a9be5b0f69da38947b9"
 ---
 
 > ## Documentation Index
@@ -95,6 +95,8 @@ For most organizations, Claude for Teams or Claude for Enterprise provides the b
 **Claude for Enterprise** adds SSO and domain capture, role-based permissions, compliance API access, and managed policy settings for deploying organization-wide Claude Code configurations. Best for larger organizations with security and compliance requirements.
 
 Learn more about [Team plans](https://support.claude.com/en/articles/9266767-what-is-the-team-plan) and [Enterprise plans](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan).
+
+The deployment options compared below cover where model inference runs. To run [Claude Code on the web](/docs/en/claude-code-on-the-web) sessions on compute your organization operates, see [self-hosted environments](/docs/en/self-hosted-environments).
 
 If your organization has specific infrastructure requirements, compare the options below:
 

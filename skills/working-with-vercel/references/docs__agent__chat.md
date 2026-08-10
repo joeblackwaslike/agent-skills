@@ -3,7 +3,7 @@ title: Chat
 product: vercel
 url: /docs/agent/chat
 canonical_url: "https://vercel.com/docs/agent/chat"
-last_updated: 2026-06-30
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   - /docs/agent
@@ -15,8 +15,8 @@ related:
 summary: Manage your Vercel infrastructure through conversation with Vercel Agent
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "4e44155237ba0ee0b52b15f3f199ea82f1b31ba1c787fc8dd65af1e748db6d73"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "33fc17dc67de51ab9eed3b970e5a4628c6c12d37b7f3fdff8127a044250493c7"
 ---
 
 # Chat

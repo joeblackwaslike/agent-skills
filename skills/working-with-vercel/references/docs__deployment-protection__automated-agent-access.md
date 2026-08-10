@@ -3,7 +3,7 @@ title: Automated & Agent Access
 product: vercel
 url: /docs/deployment-protection/automated-agent-access
 canonical_url: "https://vercel.com/docs/deployment-protection/automated-agent-access"
-last_updated: 2026-04-28
+last_updated: 2026-07-15
 type: how-to
 prerequisites:
   - /docs/deployment-protection
@@ -16,8 +16,8 @@ related:
 summary: Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Protection enabled.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/automated-agent-access.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c9cae635235d5d6f9b2bafab43962bb9897098c85b497e11ae69681f5f0e70d0"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "62a0d0c5d6fd4fb2d46e58ebfe3640299fa9106c404998d3bc1515c87eb7a2e0"
 ---
 
 # Automated & Agent Access

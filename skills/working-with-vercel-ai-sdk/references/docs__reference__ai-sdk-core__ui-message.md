@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "ade83e3fdf9afb767085a171239f15c1b5b3e472cdc4c5c471253f5e46a51d31"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "90c8ec5cbb504b63c80af3f4470e103b46e01d8dbedca8ee0fffa236b60ffed7"
 ---
 
 # `UIMessage`
@@ -309,6 +309,7 @@ type StepStartUIPart = {
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

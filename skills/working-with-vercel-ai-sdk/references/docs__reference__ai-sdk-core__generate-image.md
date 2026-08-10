@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-image.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "f8a579694089a9a11ac26d0e7cff78c75261f40dfe3cc7ff1cc5908eefb44a85"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "44712fc2b2cf65ba9bb1d9a859fdb3c01f20ef44e7918b9b643f07ed0fde6d84"
 ---
 
 # `generateImage()`
@@ -297,6 +297,7 @@ console.log(images);
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

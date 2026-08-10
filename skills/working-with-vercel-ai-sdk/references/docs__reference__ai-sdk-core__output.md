@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/output.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "7772e4d8022dbf1bf9426353eec03c63647c60119b3dc7fbefff29635f1f65ce"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "cb52f9334edf5434aa00192357ba2c3491771ee2d38d9e4efe478736aadef6c9"
 ---
 
 # `Output`
@@ -387,6 +387,7 @@ try {
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

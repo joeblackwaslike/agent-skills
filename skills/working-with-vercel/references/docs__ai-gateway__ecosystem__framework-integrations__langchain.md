@@ -3,7 +3,7 @@ title: LangChain
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/langchain
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain"
-last_updated: 2026-05-11
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f68c4cf6ab576abd42cb28c54511c4364244b21e60ac05dff75f532dd167a719"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "8a9b993f43a90112f0a982c8e3b92b3c9b4a45311839df1ac718aecd2a2a9157"
 ---
 
 # LangChain

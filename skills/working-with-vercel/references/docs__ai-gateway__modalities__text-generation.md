@@ -3,7 +3,7 @@ title: Text Generation
 product: vercel
 url: /docs/ai-gateway/modalities/text-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/text-generation"
-last_updated: 2026-06-20
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities
@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-generation.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a71196b99941fa1782fb45e73bfd973f59118e07dd4571e6b29c084375cdabe4"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "43939b861243dc93dfc70ddd001535d8680ee73cfdff99c322e2bc9686d38e8d"
 ---
 
 # Text Generation

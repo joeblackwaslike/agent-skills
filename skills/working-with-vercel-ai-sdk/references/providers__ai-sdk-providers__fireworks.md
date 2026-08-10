@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "be514c5666d6eb545becf75afcecf3ac2fcc625e82a6809e984529de53fa37f3"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "19ae03e86814ab924c4c7e10ad142c7ba04c380de4363109c7af29dba263ae21"
 ---
 
 # Fireworks Provider
@@ -520,6 +520,7 @@ support for these models:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

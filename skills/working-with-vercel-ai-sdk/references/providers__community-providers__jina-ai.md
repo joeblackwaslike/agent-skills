@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/jina-ai.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "e20a147703ae28c149eae2b427996f19fd4a9125b996057b96829f6efcde3567"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "f33b4d596a29a219588aa0d50e0855f98a4f0d8f08c8ea5d2b90279eab854164"
 ---
 
 # Jina AI Provider
@@ -241,6 +241,7 @@ Pass Jina embedding options via `providerOptions.jina`. The following options ar
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

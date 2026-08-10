@@ -3,7 +3,7 @@ title: vercel curl
 product: vercel
 url: /docs/cli/curl
 canonical_url: "https://vercel.com/docs/cli/curl"
-last_updated: 2026-05-28
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "8f22ed03c71c74683371bfa2f9aa66518720e9d31c5d3de550ee28395a77c747"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b878f46b0e18fdccc3aae5da37481343eb9ef865e9bbd2ab3afb49fe06c76bd1"
 ---
 
 # vercel curl

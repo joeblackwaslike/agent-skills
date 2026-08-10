@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/070_security.md"
-fetched_at: "2026-08-03T07:32:05.320Z"
-sha256: "644889ca49ce6f8a69f35839e299f82b92f9d92f2b45f53d37d42ff9e4ef9900"
+fetched_at: "2026-08-10T05:31:54.245Z"
+sha256: "29c9d076ebd075d657244d8d7eb611f924fcedf602d95ec1e862511fcfe78b63"
 ---
 
 # Security Considerations
@@ -117,7 +117,9 @@ By default, these services accept connections from localhost only, which is a se
 
 These services can be reconfigured to listen on other addresses, but doing so may have security implications.
 If you need to allow connections from other machines, we recommend that you set up a secure networking environment 
-(e.g. using a VPN or SSH tunnels) and ensure that only trusted machines can connect to these services.
+and ensure that only trusted machines can connect to these services.
+It is the responsibility of the user to restrict access appropriately, e.g. by placing the service behind a reverse
+proxy (adding authentication) or firewall.
 
 ## Supply Chain Security
 

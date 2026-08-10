@@ -3,7 +3,7 @@ title: Troubleshooting domains
 product: vercel
 url: /docs/domains/troubleshooting
 canonical_url: "https://vercel.com/docs/domains/troubleshooting"
-last_updated: 2026-03-17
+last_updated: 2026-07-20
 type: reference
 prerequisites:
   - /docs/domains
@@ -16,8 +16,8 @@ related:
 summary: Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "af903e4e388fd6063e5428596cadbef4f3c3f017bc10682ab7120706d476ff6a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d70ac687511dda9df2e68e2fc5d3e353253f450f14981abbbd020465d5923079"
 ---
 
 # Troubleshooting domains
@@ -75,7 +75,7 @@ When working with DNS records, you may make minor errors in the syntax. These er
 
 When you add a new DNS record to a domain, the **Name** field should use the prefix or location of the record. For `www.example.com`, the name argument would be `www`.
 
-If you have already added a record with this, [remove the record](/docs/domains/managing-dns-records#removing-dns-records) from the **DNS Records** section of the **Domains** tab, and add the record again **without** the domain as the **Name** argument.
+If you have already added a record with this, [remove the record](/docs/domains/managing-dns-records#removing-dns-records) from the **DNS Records** section of the **Domains** tab, and add the record again **without** the domain as the **Name** argument.
 
 #### Absolute CNAME records
 
@@ -105,6 +105,8 @@ When you add your custom domain to a project and use Vercel's nameservers, you w
 ### Purchasing a domain through Vercel
 
 All domain purchases and renewals through Vercel are final once processed. For more information, see [Can I get a refund for a domain purchased or renewed with Vercel?](/kb/guide/can-i-get-a-refund-for-a-domain-purchased-or-renewed-with-vercel)
+
+For a [free first-year domain](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades) claimed as part of an eligible new Pro upgrade, the domain renews at the standard rate after year one.
 
 ### Pending domain purchases
 

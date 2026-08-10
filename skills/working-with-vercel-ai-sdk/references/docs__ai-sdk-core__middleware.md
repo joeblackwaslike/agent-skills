@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "32c6a14bfcd1a2df15c8f6505120005aadc843e96bcbe7fe4883f70d3a6d6cf0"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "328e60ed7c67804949b6153ab649a099a8df0a13ada002a8b882e1ee0bc92ace"
 ---
 
 # Language Model Middleware
@@ -58,6 +58,7 @@ The AI SDK comes with several built-in middlewares that you can use to configure
 - `extractReasoningMiddleware`: Extracts reasoning information from the generated text and exposes it as a `reasoning` property on the result.
 - `extractJsonMiddleware`: Extracts JSON from text content by stripping markdown code fences. Useful when using `Output.object()` with models that wrap JSON responses in code blocks.
 - `simulateStreamingMiddleware`: Simulates streaming behavior with responses from non-streaming language models.
+- `defaultInstructionsMiddleware`: Applies default instructions when a call does not provide its own instructions.
 - `defaultSettingsMiddleware`: Applies default settings to a language model.
 - `addToolInputExamplesMiddleware`: Adds tool input examples to tool descriptions for providers that don't natively support the `inputExamples` property.
 
@@ -159,6 +160,33 @@ const model = wrapLanguageModel({
   }),
 });
 ```
+
+### Default Instructions
+
+The `defaultInstructionsMiddleware` function applies instructions to calls that
+do not already contain a system message. Instructions provided directly on a
+call take precedence over the defaults.
+
+```ts
+import { wrapLanguageModel, defaultInstructionsMiddleware } from 'ai';
+
+const model = wrapLanguageModel({
+  model: yourModel,
+  middleware: defaultInstructionsMiddleware({
+    instructions: 'You are a concise technical assistant.',
+  }),
+});
+```
+
+The `instructions` option also accepts a `SystemModelMessage` or an array of
+`SystemModelMessage` objects when you need provider options on an instruction.
+
+<Note>
+  The middleware treats any system message in the normalized prompt as
+  call-level instructions and does not add the defaults. Only enable
+  `allowSystemInMessages` for trusted message histories, because a system
+  message in that history can override these defaults.
+</Note>
 
 ### Add Tool Input Examples
 

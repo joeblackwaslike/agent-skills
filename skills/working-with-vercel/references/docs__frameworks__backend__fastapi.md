@@ -3,7 +3,7 @@ title: Deploy a FastAPI app on Vercel
 product: vercel
 url: /docs/frameworks/backend/fastapi
 canonical_url: "https://vercel.com/docs/frameworks/backend/fastapi"
-last_updated: 2026-07-06
+last_updated: 2026-07-22
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "5469c909cbae4e91513fce5f1822a7e5aa7c9ada560c11739d224c5323da15ac"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "9d561e47f3be0dbfe6131e471202c00d0b224bae77c474b6d298903437b3dc38"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -136,7 +136,44 @@ async def favicon():
     return RedirectResponse("/vercel.svg", status_code=307)
 ```
 
-> **💡 Note:** `app.mount("/public", ...)` is not needed and should not be used.
+### Built-in FastAPI static file support
+
+When using [`app.frontend()`](https://fastapi.tiangolo.com/tutorial/frontend/) or
+`app.mount()` with [`StaticFiles`](https://fastapi.tiangolo.com/tutorial/static-files/),
+files are promoted to the CDN at build time:
+
+#### \['app.frontend'
+
+```py filename="app.py"
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/api/hello")
+def hello():
+    return {"message": "Hello"}
+
+app.frontend("/", directory="dist")
+```
+
+#### 'app.mount']
+
+```py filename="app.py"
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+app = FastAPI()
+
+app.mount("/assets", StaticFiles(directory="assets"), name="assets")
+```
+
+To disable CDN promotion and keep all requests in the function, set the following
+in `pyproject.toml`:
+
+```toml filename="pyproject.toml"
+[tool.vercel.fastapi.static]
+cdn = false
+```
 
 ## Startup and shutdown
 

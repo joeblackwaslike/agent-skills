@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "032320a82f40c4ffbeb1a9076e9f3d26282e3a5137d9e6ddc333653417d4d657"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "443aa6662dde297eb52c4c74030cbe25b34b93c1f776392f60f7bfa6e6866a4f"
 ---
 
 # Mistral AI Provider
@@ -567,6 +567,7 @@ models:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

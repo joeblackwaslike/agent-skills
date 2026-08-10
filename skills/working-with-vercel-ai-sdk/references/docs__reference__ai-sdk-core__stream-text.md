@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "786e42c2d6e4e9ed9aaa365f6d153e3c0ec6b840837f0fd16d8f8f400b2afe79"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "794aee23a223108c58ba9631fa6a094b9b6ac9b9537235e15bd9e64680cae5e8"
 ---
 
 # `streamText()`
@@ -628,7 +628,7 @@ To see `streamText` in action, check out [these examples](#examples).
       type: 'Experimental_ToolCallers<TOOLS>',
       isOptional: true,
       description:
-        "Configures which caller tools may invoke each tool. The callback receives typed references for caller-capable tools in the `tools` set and returns an object keyed by callee tool name. Include `'direct'` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each generation step. Provider caller references are translated to provider-native allowed-caller options. Tools without an entry keep their existing direct tool-calling behavior.",
+        'Configures which caller tools may invoke each tool. Pass an object keyed by callee tool name whose values list caller-capable tool names. Include `DIRECT_TOOL_CALL` from `@ai-sdk/code-mode` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each generation step. Provider caller names are translated to provider-native allowed-caller options. Tools without an entry keep their existing direct tool-calling behavior.',
     },
     {
       name: 'experimental_refineToolInput',
@@ -2422,6 +2422,12 @@ To see `streamText` in action, check out [these examples](#examples).
               type: 'string',
               description:
                 'The provider-returned response ID for this model call.',
+            },
+            {
+              name: 'providerMetadata',
+              type: 'ProviderMetadata | undefined',
+              description:
+                'Provider-specific metadata for this model call, when returned by the provider.',
             },
             {
               name: 'performance',
@@ -4300,6 +4306,7 @@ Limits a generation step to the listed tool names. `undefined` means no tool res
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

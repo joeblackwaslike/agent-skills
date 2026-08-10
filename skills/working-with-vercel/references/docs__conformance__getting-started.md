@@ -3,7 +3,7 @@ title: Getting Started with Conformance
 product: vercel
 url: /docs/conformance/getting-started
 canonical_url: "https://vercel.com/docs/conformance/getting-started"
-last_updated: 2026-03-20
+last_updated: 2026-07-15
 type: tutorial
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up Conformance for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/getting-started.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "a25314c858c3ccd0aa1d5ee1b704000f924a57a0dca6b553f1db928c5b124096"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "528d45313535d530e2de0790cd4c1eae8c386a360a4cfc0102832021b5ef9e4f"
 ---
 
 # Getting Started with Conformance

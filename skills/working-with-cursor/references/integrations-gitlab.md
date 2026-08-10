@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/integrations/gitlab.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "d8e9c2a9cbc05fbfb3d2c8781722c658852b92634332ee11b2923db95ab8eeb6"
+fetched_at: "2026-08-10T05:28:37.963Z"
+sha256: "4f850145a7e6e0bfeffdcb0c9cb9d49081fa339dfe22ce65f539bbf72efbca24"
 ---
 
 # GitLab
@@ -76,7 +76,7 @@ Self-hosted instances support multiple connection methods beyond IP whitelisting
 
 ### AWS PrivateLink or Cloudflare Tunnel
 
-Available for Enterprise customers. Allow Cursor to access your instance over a private network connection. See [Private Connectivity](https://cursor.com/docs/enterprise/private-connectivity.md) or [contact your Cursor representative](https://cursor.com/contact-sales?source=docs-bugbot-private-network) for setup.
+Available for Enterprise customers. Allow Cursor to access your instance over a private network connection. See [Private Connectivity](https://cursor.com/docs/cloud-agent/private-connectivity.md) or [contact your Cursor representative](https://cursor.com/contact-sales?source=docs-bugbot-private-network) for setup.
 
 **Best for:** Instances behind a firewall on a private network, including AWS-hosted instances and environments that can run `cloudflared`
 

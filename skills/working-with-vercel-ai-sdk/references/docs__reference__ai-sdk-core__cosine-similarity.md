@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/cosine-similarity.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "a0191af1ccedf793c3edc48ffbae3bfe0ba5b5cc47fc88616a5f8bc6b36c3ed1"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "aab6d0391879782831d449acadd3e2931b8a01772fc9ae8654b1c9468d41fa9d"
 ---
 
 # `cosineSimilarity()`
@@ -97,6 +97,7 @@ A number between -1 and 1 representing the cosine similarity between the two vec
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

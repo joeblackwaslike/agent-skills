@@ -3,7 +3,7 @@ title: Configuring regions for Vercel Functions
 product: vercel
 url: /docs/functions/configuring-functions/region
 canonical_url: "https://vercel.com/docs/functions/configuring-functions/region"
-last_updated: 2026-07-01
+last_updated: 2026-07-15
 type: how-to
 prerequisites:
   - /docs/functions/configuring-functions
@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "838a80eb1d25ffc216bf0a1be03b63d0f9e9db81c020d7bcc358c6d678fe47dc"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "8515cf7cbd30e5adef9ec069a103a072ffdaebcc0c146ece153d290eba0a360e"
 ---
 
 # Configuring regions for Vercel Functions

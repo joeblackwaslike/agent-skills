@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-08-03T07:32:05.320Z"
-sha256: "6764894c85eb6605189d037b24d76c89bb1a942a4f8d29f791e6bffc19aff2c6"
+fetched_at: "2026-08-10T05:31:54.245Z"
+sha256: "ea93f95d780bf7e12c3f11105e2a0fa276c2879d1287815b3c10f5460e67a023"
 ---
 
 # Language Support
@@ -84,6 +84,8 @@ Some languages require additional installations or setup steps, as noted.
   (requires the Godot editor to be running with its built-in LSP enabled — default on port 6008;
   Serena connects over TCP and does not launch Godot itself;
   see the [GDScript Setup Guide](../03-special-guides/godot_gdscript_setup_guide_for_serena) for details)
+* **Gleam**  
+  (requires the [Gleam compiler](https://gleam.run) on PATH; the language server is bundled with the compiler and started via `gleam lsp`)
 * **Go**  
   (requires installation of `gopls`)
 * **Groovy**  
@@ -121,6 +123,11 @@ Some languages require additional installations or setup steps, as noted.
 * **mSL** (mIRC Scripting Language)  
   (auto-installed; no external dependencies required — uses a custom pygls-based LSP server shipped with Serena;
   supports document symbols, workspace symbols, references, and go-to-definition for aliases, events, menus, dialogs, and CTCP handlers in `.mrc` files)
+* **Nextflow**  
+  (uses the official [Nextflow language server](https://github.com/nextflow-io/language-server), which is automatically
+  downloaded; requires a Java 17+ runtime, discovered via `ls_specific_settings.nextflow.java_home`, `JAVA_HOME` or `java` on PATH;
+  covers `.nf` scripts — Nextflow `.config` files are not treated as source files, since the language server reports no symbols for them;
+  processes, workflows and functions are reported under their declared name, e.g. `GREET` for `process GREET`)
 * **Nix**  
   (requires nixd installation)
 * **OCaml**
@@ -153,7 +160,7 @@ Some languages require additional installations or setup steps, as noted.
 * **Rust**  
   (requires [rustup](https://rustup.rs/) - uses rust-analyzer from your toolchain)
 * **Scala**  
-  (requires some [manual setup](../03-special-guides/scala_setup_guide_for_serena); uses Metals LSP)
+  (uses Metals LSP, which imports the build on first use — see the [setup guide](../03-special-guides/scala_setup_guide_for_serena))
 * **SCSS / Sass / CSS**
   (experimental; requires Node.js + npm; uses [some-sass-language-server](https://github.com/wkillerud/some-sass) to handle
   `.scss`, `.sass`, and `.css`)
@@ -170,8 +177,16 @@ Some languages require additional installations or setup steps, as noted.
 * **TOML**  
   (experimental; uses Taplo 0.10.0, taken from PATH if present, otherwise downloaded automatically)
 * **TypeScript**
-* **Vue**    
+* **Deno**  
+  (experimental; requires the `deno` CLI on PATH — it bundles the language server used here;
+  serves Deno TypeScript/JavaScript and understands `npm:` / `jsr:` / `https:` imports and the `Deno.*`
+  globals, which the plain TypeScript language server does not; overlaps `typescript` on file extensions,
+  so it is not auto-detected and must be set as the language explicitly — do not also enable `typescript`
+  for the same files)
+* **Vue**
   (3.x with TypeScript; requires Node.js v18+ and npm; supports .vue Single File Components with monorepo detection)
+* **Wolfram Language**
+  (requires Wolfram Mathematica 13.0+ or Wolfram Engine 12.1+; uses the official [WolframResearch LSPServer](https://github.com/WolframResearch/LSPServer) paclet; supports .wl and .wls files; references are within-file only)
 * **YAML**
 * **JSON**  
   (experimental; must be explicitly added to the languages list; requires Node.js and npm)

@@ -3,7 +3,7 @@ title: vercel dns
 product: vercel
 url: /docs/cli/dns
 canonical_url: "https://vercel.com/docs/cli/dns"
-last_updated: 2026-03-17
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "caf5a7060185fbe6c5e89a63575589104d6f365eefe22b66d99113a9ab0e9331"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "6d6297d43654f328a22b5462d467e2e759cf0c4eebb5cca1428deca2b63ea404"
 ---
 
 # vercel dns

@@ -3,7 +3,7 @@ title: WordPress
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/wordpress
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/wordpress"
-last_updated: 2026-05-30
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with WordPress to let your plugins access multiple AI models
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/wordpress.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "fe42609feb6c2af5ad6cacc0157df235782e6ab6b23543a2c4b86f79dd0f4f8b"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "864c109298c8a92dd4000fac2f1ea84c9e1273742715cb2383962bebd8914590"
 ---
 
 # WordPress

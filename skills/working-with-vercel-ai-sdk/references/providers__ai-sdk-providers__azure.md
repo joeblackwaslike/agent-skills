@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "1269a0e8c0e405a467843ef4f3a25814bd93134141cf7b5d5c0ff05522b6071c"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "71fbe4600de952f9a35538653c5d60e490dfe69699dffedf7f668b114b5a1254"
 ---
 
 # Azure OpenAI Provider
@@ -1187,6 +1187,7 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

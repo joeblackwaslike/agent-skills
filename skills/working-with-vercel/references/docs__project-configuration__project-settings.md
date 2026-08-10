@@ -3,7 +3,7 @@ title: Project settings
 product: vercel
 url: /docs/project-configuration/project-settings
 canonical_url: "https://vercel.com/docs/project-configuration/project-settings"
-last_updated: 2026-05-08
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/project-configuration
@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "01b99c87abcf4f270729fdf7f14bffd74ae786194b129d54459e4bd3e36d7d1f"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d8e2b0c3a706aeb075f11800d3421cd0d8ba0078e7249f156a3639130bbb153e"
 ---
 
 # Project settings

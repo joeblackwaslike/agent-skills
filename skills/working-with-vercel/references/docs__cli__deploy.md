@@ -3,7 +3,7 @@ title: vercel deploy
 product: vercel
 url: /docs/cli/deploy
 canonical_url: "https://vercel.com/docs/cli/deploy"
-last_updated: 2026-03-17
+last_updated: 2026-07-23
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "2fde8c794d002c3a5769230b22c5377a8315d273b385b6a7ffa88a823cf9bf1c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "9da136d232c4ef3acd1ef05ed4b006e67aefddcf5e04f4aa550fa0a14571b589"
 ---
 
 # vercel deploy

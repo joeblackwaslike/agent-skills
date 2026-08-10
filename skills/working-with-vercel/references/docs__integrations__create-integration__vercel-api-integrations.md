@@ -3,7 +3,7 @@ title: Building Integrations with Vercel REST API
 product: vercel
 url: /docs/integrations/create-integration/vercel-api-integrations
 canonical_url: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations"
-last_updated: 2026-03-17
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "97a28ec99c32a03b1fc006d901cfb41454f180638ad2a84122a82fdabd771a00"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "dcba870df506ee2cfe947e1db56b9369d46ea4c30001121d200a284e29ddd139"
 ---
 
 # Building Integrations with Vercel REST API

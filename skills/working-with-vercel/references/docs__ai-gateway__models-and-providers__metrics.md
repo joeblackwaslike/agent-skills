@@ -3,7 +3,7 @@ title: Metrics
 product: vercel
 url: /docs/ai-gateway/models-and-providers/metrics
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics"
-last_updated: 2026-06-29
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -15,8 +15,8 @@ related:
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "c5bf04ce0e20bbb864b072376882e8b673af32245002dd35c4befa2f8a41458e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "79a613b7ababc9bc5a13a571b5f7beaca04d868f4aafe051e57d220dee9d14a3"
 ---
 
 # Metrics

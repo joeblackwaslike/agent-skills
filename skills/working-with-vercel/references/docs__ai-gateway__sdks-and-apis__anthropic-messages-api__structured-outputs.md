@@ -3,7 +3,7 @@ title: Structured Outputs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "ed59b4727b7e83e1852ba7212368e530503839dfdecd4528178d3fbfa1c83f35"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7c1b6a287ad35f9ef8043bfa8c4d9b6b3b0b739acd1b191d14f47156e95bc253"
 ---
 
 # Structured Outputs

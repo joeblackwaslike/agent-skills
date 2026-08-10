@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "955871fb8d31756bf06de5c50c71c9389e4bed12e595e0ca53f3942a6eceb9e5"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "a398c8c8432496ee6157822e7cdc8a7ec6db53e7b33aff7a78a0c0406298f289"
 ---
 
 # OpenAI Compatible Providers
@@ -638,6 +638,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Baseten](/providers/ai-sdk-providers/baseten)
   - [Hugging Face](/providers/ai-sdk-providers/huggingface)
   - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+  - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
   - [Mistral AI](/providers/ai-sdk-providers/mistral)
   - [Together.ai](/providers/ai-sdk-providers/togetherai)
   - [Cohere](/providers/ai-sdk-providers/cohere)
@@ -745,6 +746,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Hindsight](/providers/community-providers/hindsight)
   - [Nia](/providers/community-providers/nia)
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
+  - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)

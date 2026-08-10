@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "11ebb8dc7c99da3a3bec2b0d4fd1c3ac58886d4f31d4aceb8129ac1014386f55"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "f6a5d06d7a1496718c7dc4ae0f6fa1ca16fa4989b350e9d391ac83cc0e7fbd92"
 ---
 
 # Cohere Provider
@@ -374,6 +374,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

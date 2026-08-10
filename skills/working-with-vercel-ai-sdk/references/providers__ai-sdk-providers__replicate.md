@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "0ee9cec0339cc3648a995d5e4cd5ea1b030145098287e9e269a0ecbd1d9dbc72"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "703480e892f443a8369495c007e6488f37500f8a1f70af2dba6ad3bdfbab1bef"
 ---
 
 # Replicate Provider
@@ -294,6 +294,7 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

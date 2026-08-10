@@ -3,7 +3,7 @@ title: System environment variables
 product: vercel
 url: /docs/environment-variables/system-environment-variables
 canonical_url: "https://vercel.com/docs/environment-variables/system-environment-variables"
-last_updated: 2026-04-27
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/environment-variables
@@ -12,8 +12,8 @@ related:
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d1b86ea5f2d54eee36b032574003beff1c33659648d58c724310b543d313af9c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "12b6c2d5f502ab26f1eb74043d1f6835afeb996cd8022b4d25d68a3e0613b714"
 ---
 
 # System environment variables

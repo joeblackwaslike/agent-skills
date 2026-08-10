@@ -3,7 +3,7 @@ title: vercel.functions API Reference (Python)
 product: vercel
 url: /docs/functions/functions-api-reference/vercel-sdk-python
 canonical_url: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python"
-last_updated: 2025-10-23
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   - /docs/functions/functions-api-reference
@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "44614ef8a2f03eeb1c3a8e8deb0fa4e43094a9228a4648724926e6fe81627a40"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "01dea7b5a241944d72e7435ed93d173a7a38c82e2e8cfe090cbc8a662f21cd93"
 ---
 
 # vercel.functions API Reference (Python)

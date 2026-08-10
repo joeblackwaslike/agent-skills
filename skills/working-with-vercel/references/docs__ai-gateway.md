@@ -3,7 +3,7 @@ title: AI Gateway
 product: vercel
 url: /docs/ai-gateway
 canonical_url: "https://vercel.com/docs/ai-gateway"
-last_updated: 2026-06-29
+last_updated: 2026-07-28
 type: integration
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with text, image, and video generation, embeddings, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c1f618972e05012daa17941346cae5d4f97784529045ffb011cff8b3c864624c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "e9164f1fb62b93dca2ad925696d280873e470d4bce941a565d8a983c6fc6823a"
 ---
 
 # AI Gateway

@@ -3,7 +3,7 @@ title: vercel ai-gateway
 product: vercel
 url: /docs/cli/ai-gateway
 canonical_url: "https://vercel.com/docs/cli/ai-gateway"
-last_updated: 2026-06-26
+last_updated: 2026-07-28
 type: reference
 prerequisites:
   - /docs/cli
@@ -15,8 +15,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "82d89211a675df829325be597b51d012f35ebb30555f4ffbdbb46402f82a5c4d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "76502ca1d566c15c62205c6623b75367783c06ab9476f7d93bd0efed2fefe143"
 ---
 
 # vercel ai-gateway

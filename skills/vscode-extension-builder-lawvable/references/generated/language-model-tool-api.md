@@ -1,8 +1,8 @@
 ---
 title: "Language Model Tool API"
 source: "https://code.visualstudio.com/api/extension-guides/tools"
-fetched_at: "2026-08-03T07:25:15.318Z"
-sha256: "1f3ac4971a6554ed1cfb3af4337796d716931ecad614242c71bb5b5d7b32a842"
+fetched_at: "2026-08-10T05:26:16.168Z"
+sha256: "3d4f0d384cd9ba84df8080dc9683052177a87733ced681a18f733dc32b1cd526"
 ---
 
 # Language Model Tool API
@@ -22,7 +22,7 @@ You can also extend the chat experience with specialized tools by contributing a
  
 
  Tip
- For information about using tools as an end user, see [Use tools in chat](https://code.visualstudio.com/docs/chat/chat-tools).
+ For information about using tools as an end user, see [Use tools with agents](https://code.visualstudio.com/docs/agents/run/tools).
 
 ## What is tool calling in an LLM?
 
@@ -346,4 +346,4 @@ Get more best practices for creating tools in the [OpenAI documentation](https:/
 - [Use MCP tools in agent mode](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
 
  
- 7/29/2026
+ 8/5/2026

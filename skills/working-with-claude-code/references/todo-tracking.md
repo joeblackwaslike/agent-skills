@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/todo-tracking.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "fd7020fe4924f640a60971bc663620456a6f40b0d852a3b1df32a1d2f213217e"
+fetched_at: "2026-08-10T05:26:58.686Z"
+sha256: "7d13a55e844e312b2711f909b32d3644cf7293d6d4b4c8d3c32c3c03d159bc42"
 ---
 
 > ## Documentation Index
@@ -247,7 +247,7 @@ See [Handle the result](/docs/en/agent-sdk/agent-loop#handle-the-result) for the
 
 ## Migrate to Task tools
 
-The Task tools split the single `TodoWrite` call into `TaskCreate` for each new item and `TaskUpdate` for each status change, with `TaskList` and `TaskGet` available for the model to read back the current list. Your monitoring code still inspects `tool_use` blocks in the assistant stream, but maintains a map keyed by task ID instead of replacing the whole list on every call. {/* min-version: 2.1.142 */}The Task tools are the default as of TypeScript Agent SDK 0.3.142 and Claude Code v2.1.142, so no `options.env` change is needed.
+The Task tools split the single `TodoWrite` call into `TaskCreate` for each new item and `TaskUpdate` for each status change, with `TaskList` and `TaskGet` available for the model to read back the current list. Your monitoring code still inspects `tool_use` blocks in the assistant stream, but maintains a map keyed by task ID instead of replacing the whole list on every call. The Task tools are the default as of TypeScript Agent SDK 0.3.142 and Claude Code v2.1.142, so no `options.env` change is needed.
 
 | With `TodoWrite`                              | With Task tools                                                                                                                                                                                                                                                                                     |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

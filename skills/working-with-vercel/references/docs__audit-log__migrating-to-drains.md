@@ -3,7 +3,7 @@ title: Migrating from Custom SIEM Log Streaming to Audit Log Drains
 product: vercel
 url: /docs/audit-log/migrating-to-drains
 canonical_url: "https://vercel.com/docs/audit-log/migrating-to-drains"
-last_updated: 2018-10-20
+last_updated: 2026-07-22
 type: how-to
 prerequisites:
   - /docs/audit-log
@@ -16,8 +16,8 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "3bbe944d3c8f5ddb91f8fc40e2120f20504ead6743fe1f8f19f18de43904ce41"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5f1d014d81392ccb77ac6222ffb400c3d4e6a2d8d6703123a551435bf166f346"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
@@ -34,7 +34,7 @@ You can run Audit Log Drains and Custom SIEM Log Streaming at the same time. Kee
 | -------------- | ------------------------------------- | ------------------------------------------------------------ |
 | Setup location | Team Settings > Security & Privacy > Audit Log | [Team Settings > Drains](/docs/drains/using-drains)          |
 | Event coverage | Audit log events only                 | Activity Log events plus audit metadata                      |
-| Destinations   | AWS S3, Splunk, Datadog, HTTP          | Custom HTTPS endpoint, [Amazon S3](/docs/drains/audit-logs-to-s3), [Splunk](/docs/drains/audit-logs-to-splunk), Datadog, or [Panther](/docs/drains/audit-logs-to-panther) |
+| Destinations   | AWS S3, Splunk, Datadog, HTTP          | Custom HTTPS endpoint, [Amazon S3](/docs/drains/audit-logs-to-s3), [Splunk](/docs/drains/audit-logs-to-splunk), [Datadog](/docs/drains/audit-logs-to-datadog), or [Panther](/docs/drains/audit-logs-to-panther) |
 | Schema         | Events with `actor`, `context`, and `targets` objects | `vercel.audit_log.v1` with `actor` and `payload` objects    |
 
 Audit Log Drains are available to all [Enterprise](/docs/plans/enterprise) teams and billed on the volume of data exported. See [Drains usage and pricing](/docs/drains#usage-and-pricing) for details.
@@ -49,7 +49,7 @@ Audit Log Drains are available to all [Enterprise](/docs/plans/enterprise) teams
   - **Custom endpoint**: Send events to any HTTPS endpoint with a `200 OK` response. Add custom headers for authentication and a signature secret to [verify deliveries](/docs/drains/security#secure-drains).
   - **S3 bucket**: Write events straight to Amazon S3. See [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3) for the AWS IAM setup.
   - **Splunk**: Send events to your Splunk HTTP Event Collector (HEC). See [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk) for the HEC setup.
-  - **Datadog**: Send events to Datadog Logs. Select your [Datadog site](https://docs.datadoghq.com/getting_started/site/) and enter a Datadog API key.
+  - **Datadog**: Send events to Datadog Logs. See [Drain Audit Logs to Datadog](/docs/drains/audit-logs-to-datadog) for site selection and API key setup.
   - **Panther**: Send events to Panther's built-in Vercel source. See [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther) for source and destination setup.
   For custom endpoints and S3, select **JSON** or **NDJSON** to match the format your SIEM expects. Splunk, Datadog, and Panther use fixed formats:
   - Splunk uses the [HEC event envelope](/docs/drains/reference/audit-logs#splunk-hec).
@@ -108,6 +108,7 @@ A migrated event looks like this:
 - [Configure Drains](/docs/drains/using-drains)
 - [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3)
 - [Drain Audit Logs to Splunk](/docs/drains/audit-logs-to-splunk)
+- [Drain Audit Logs to Datadog](/docs/drains/audit-logs-to-datadog)
 - [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther)
 - [Audit Logs](/docs/audit-log)
 

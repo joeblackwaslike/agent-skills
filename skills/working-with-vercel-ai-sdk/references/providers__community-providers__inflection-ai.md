@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/inflection-ai.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "bc5de292a6b32e85aa7d53367be1229b0a462d1013d2014dfb2157101d9c3a8d"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "76ad4e2fe8bc8cd6a9664989c16febd52e456d1201deb7e606accf42541e897c"
 ---
 
 # Unofficial Community Provider for AI SDK - Inflection AI
@@ -120,6 +120,7 @@ You can find the source code for this provider [here on GitHub](https://github.c
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/soniox.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "5c8bc60e561c3e792877ef950dfb7da18b622dbb628bf6971d943cdcb6ef13d3"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "450ffe6772905f2ddf2d559dcd11d8579a90ff2f189f7e9f787c22cf3e9f11bc"
 ---
 
 # Soniox Provider
@@ -199,6 +199,7 @@ For more details, see the [Soniox context documentation](https://soniox.com/docs
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

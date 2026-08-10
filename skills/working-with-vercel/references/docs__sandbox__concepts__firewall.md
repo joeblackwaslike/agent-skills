@@ -3,7 +3,7 @@ title: Sandbox firewall
 product: vercel
 url: /docs/sandbox/concepts/firewall
 canonical_url: "https://vercel.com/docs/sandbox/concepts/firewall"
-last_updated: 2026-06-30
+last_updated: 2026-08-04
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -11,12 +11,12 @@ prerequisites:
 related:
   - /docs/glossary
   - /docs/sandbox/concepts/persistent-sandboxes
-  - /docs/sandbox/concepts/runtimes
+  - /docs/sandbox/concepts
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "4649c10307fa7420effd80a08334ae7d0f376ce16b211377087a3b5f8af52e5e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "074257b332d08ddaa0ace7863737025033a561bf5258d3d319348e47af47a6a5"
 ---
 
 # Sandbox firewall
@@ -76,16 +76,12 @@ The following limitations apply when allowing Postgres traffic:
 
 ## Credentials brokering
 
-> **🔒 Permissions Required**: Credentials brokering
-
 Commands running in the sandbox often require authentication with external services, for instance code repositories or AI services. Providing API keys to those commands would risk abuse or exfiltration.
 On the other hand, allowing access to a domain can allow data exfiltration if not restricting the permissions or sessions attached to it.
 
 Credentials brokering allows the injection of credentials on egressing traffic, while ensuring those secrets never enter the sandbox scope, preventing exfiltration. Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions are transformed. Brokering relies on the client sending an [SNI (Server Name Indication)](/docs/glossary#sni-server-name-indication). When a policy combines a catch-all (`*`) rule with per-domain transforms, connections without a detectable domain pass through unmodified. Examples of these connections are TLS without SNI or non-TLS protocols such as SSH. Use a restrictive allowlist without a catch-all if you need domain-less traffic to be denied.
 
 ## Requests proxying
-
-> **🔒 Permissions Required**: Requests proxying
 
 Requests proxying allows forwarding traffic toward specific domains to a proxy you control, for logging, debugging, or transformation purposes. This is useful when you want to allow access to a domain while ensuring control over the requests and responses.
 
@@ -112,8 +108,6 @@ We recommend using the `defineSandboxProxy` helper from `@vercel/sandbox/proxy` 
 
 ## Matchers
 
-> **🔒 Permissions Required**: Matchers
-
 Matchers allow transformation or forwarding rules to be applied to requests that satisfy every specified dimension. When multiple injection rules target the same domain, they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
 
 Matchers choose which requests get transformed or forwarded for a given allowed domain. When you set `match`, every dimension you include must match the request for the rule to apply. When multiple rules target the same domain, they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
@@ -135,7 +129,7 @@ Matcher supports exact, prefix, or regex matching:
 
 In order to apply transformation and forwarding rules within requests, the firewall needs to terminate TLS connections. Only connections targeting domains with defined transformation rules are terminated in the proxy.
 
-A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/concepts/runtimes#proxy-ca-certificates).
+A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/concepts#proxy-ca-certificates).
 
 ## Sandbox creation
 

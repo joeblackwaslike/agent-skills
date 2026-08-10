@@ -3,7 +3,7 @@ title: Logs
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/logs
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs"
-last_updated: 2018-10-20
+last_updated: 2026-07-30
 type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -15,8 +15,8 @@ related:
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a17edd40a90f6ff6550f78d7ea1108340fc9c868b3e0dcdf0a43587efd453de5"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5c6a69e8a5dd7dbfa04efa5874060e1abfc0a01a30ea409085251c84b859b4a7"
 ---
 
 # Logs

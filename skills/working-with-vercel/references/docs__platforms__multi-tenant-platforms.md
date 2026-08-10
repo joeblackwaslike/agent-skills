@@ -3,7 +3,7 @@ title: Multi-Tenant Platforms
 product: vercel
 url: /docs/platforms/multi-tenant-platforms
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms"
-last_updated: 2026-06-26
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/platforms
@@ -16,8 +16,8 @@ related:
 summary: Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f2a78c32cd5ff4239cc443ff97a3b6a4629201d19eb188af849f62e89a858a59"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b8489efe9b30791222263115866b107ebea4d72b9a94ac59050a0b15a027599d"
 ---
 
 # Multi-Tenant Platforms

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/portkey.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "37b560745b5925c5c91150f760f94ef741ce978c7f8e37559a8d9d78f98b32c7"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "a277592ffb6c0d50d897538f7bfdca4bacafd1b82df0e67c297dbade0ab3d3bf"
 ---
 
 # Portkey Provider
@@ -185,6 +185,7 @@ For detailed information on these features and advanced configuration options, p
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

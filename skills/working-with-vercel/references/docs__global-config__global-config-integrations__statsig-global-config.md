@@ -3,7 +3,7 @@ title: Using Global Config with Statsig
 product: vercel
 url: /docs/global-config/global-config-integrations/statsig-global-config
 canonical_url: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: tutorial
 prerequisites:
   - /docs/global-config/global-config-integrations
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Statsig integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "af8bf10a71ad8a20d5a54a84f2fd7e2108079713ef894402468c33bc3b9f861c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "10e5624a2b71c84968c2c04232a7c3f07b9923f2232e64bbadcb18fd75644c7c"
 ---
 
 # Using Global Config with Statsig

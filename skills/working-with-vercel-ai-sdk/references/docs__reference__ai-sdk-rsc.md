@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "c0e9f17fdd83862a6c48666f7c251024bd326fc705951c3a9d034a08f3d138da"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "fe235e2cb41f34e2a76abc57533e4c8bc05c455c2bf39f1475274124d4237f2c"
 ---
 
 # AI SDK RSC
@@ -112,6 +112,7 @@ sha256: "c0e9f17fdd83862a6c48666f7c251024bd326fc705951c3a9d034a08f3d138da"
   - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
   - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
   - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+  - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
   - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
   - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
   - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

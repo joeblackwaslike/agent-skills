@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/loop-finished.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "60f3df4f22882fb260142e261414ba2b160c221f53a46c3f49cb8b9c17cf6d30"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "4ac6428fe59ccd6ec84b480d3b535307f69019d6a4fb1c75f5754e43ae7ded1c"
 ---
 
 # `isLoopFinished()`
@@ -128,6 +128,7 @@ In practice, this does not make much sense in this context, since you could just
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

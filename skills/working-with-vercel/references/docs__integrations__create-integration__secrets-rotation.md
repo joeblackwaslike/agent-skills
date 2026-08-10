@@ -3,7 +3,7 @@ title: Implementing secrets rotation
 product: vercel
 url: /docs/integrations/create-integration/secrets-rotation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/secrets-rotation"
-last_updated: 2026-02-27
+last_updated: 2026-07-15
 type: how-to
 prerequisites:
   - /docs/integrations/create-integration
@@ -14,8 +14,8 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "37800d64a04cf85fc5bcb00901a221422368ff02ffcc989a71401dd3f6bc7e65"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "02704fd7c091ccb01e8ab4e7af78e6a5ffd4d383b4aecfc4343462a6407fd17f"
 ---
 
 # Implementing secrets rotation

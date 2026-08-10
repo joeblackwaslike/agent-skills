@@ -3,26 +3,28 @@ title: Container Registry CLI Reference
 product: vercel
 url: /docs/container-registry/cli-reference
 canonical_url: "https://vercel.com/docs/container-registry/cli-reference"
-last_updated: 2018-10-20
+last_updated: 2026-08-03
 type: reference
 prerequisites:
   - /docs/container-registry
 related:
   - /docs/container-registry
+  - /docs/container-registry/public-and-shared-repositories
   - /docs/cli
+  - /docs/container-registry/getting-started
   - /docs/cli/link
 summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "131b62dbd0afbce866e5eece65438aeb057a0e3c19d3b58d2118f9af19ff4bb0"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "eaaea12f3afaedbd0015244dae1249ffa54509e283cf5541169ce58a2d2967da"
 ---
 
 # Container Registry CLI Reference
 
-The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs/container-registry) (VCR) repositories, tags, and images from your terminal. Use it to list, inspect, create, and delete repositories, browse a repository's tags, and manage the images stored in each repository.
+The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs/container-registry) (VCR) repositories, tags, and images from your terminal. Use it to list, inspect, create, and delete repositories, browse a repository's tags, manage the images stored in each repository, and control which teams a repository is [shared](/docs/container-registry/public-and-shared-repositories#share-a-repository) with.
 
-`vercel vcr` is part of the [Vercel CLI](/docs/cli). To push and pull images, use Docker-compatible tooling as described in the [Container Registry documentation](/docs/container-registry#push-an-image).
+`vercel vcr` is part of the [Vercel CLI](/docs/cli). To push and pull images, use Docker-compatible tooling as described in [Getting Started](/docs/container-registry/getting-started#push-an-image).
 
 Each command operates on a single Vercel project. By default, the CLI uses the [linked project](/docs/cli/link). Pass `--project` to target a different project.
 
@@ -84,6 +86,8 @@ vercel vcr <subcommand> [OPTIONS]
 - [`login`](#vercel-vcr-login): Authenticate a container tool with the Vercel Container Registry.
 - [`tag`](#vercel-vcr-tag): List or inspect a repository's tags. (alias: `tags`)
 - [`image`](#vercel-vcr-image): List, inspect, or delete images in a repository. (alias: `images`)
+- [`permissions`](#vercel-vcr-permissions): Manage which teams can pull images from a repository. (alias: `permission`)
+- [`config`](#vercel-vcr-config): Configure a repository, such as its visibility.
 
 For more help, try running `vercel vcr <subcommand> --help`.
 
@@ -506,6 +510,219 @@ vercel vcr image rm my-app image_Ml0PUBaNT8SRrYXDOOEiFedAsAEs --yes
 | -------------- | ---------------------------------------------- |
 | `<repository>` | The name or ID of the repository the image belongs to. |
 | `<image-id>`   | The ID of the image to delete.                 |
+
+## `vercel vcr permissions`
+
+Manage which teams can pull images from a container registry repository. See [Share a repository](/docs/container-registry/public-and-shared-repositories#share-a-repository) for how sharing works.
+
+```bash filename="terminal"
+vercel vcr permissions <repository> <subcommand> [OPTIONS]
+```
+
+Unlike `vercel vcr tag` and `vercel vcr image`, the repository comes before the subcommand.
+
+### `vercel vcr permissions` subcommands
+
+- [`ls`](#vercel-vcr-permissions-ls): List teams with access to a repository. (alias: `list`)
+- [`add`](#vercel-vcr-permissions-add): Give one or more teams access to pull images from a repository.
+- [`rm`](#vercel-vcr-permissions-rm): Remove one or more teams' access to a repository. (alias: `remove`)
+- [`clear`](#vercel-vcr-permissions-clear): Remove access to a repository for every team.
+
+## `vercel vcr permissions ls`
+
+List the teams a repository is shared with, and when each team was added.
+
+```bash filename="terminal"
+vercel vcr permissions <repository> ls [OPTIONS]
+```
+
+### `vercel vcr permissions ls` example
+
+```bash filename="terminal"
+# List teams with access to a repository
+vercel vcr permissions my-repository ls
+
+# List teams with access as JSON
+vercel vcr permissions my-repository ls --format json
+```
+
+### `vercel vcr permissions ls` options
+
+| Option                   | Short | Description                                            |
+| ------------------------ | ----- | ------------------------------------------------------ |
+| `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).   |
+| `--limit <number>`       | -     | Number of results to return per page (max: 100).       |
+| `--cursor <token>`       | `-c`  | Cursor from a previous page to continue listing from.  |
+| `--format <format>`      | `-F`  | Output format. Accepts `json`.                         |
+
+### `vercel vcr permissions ls` flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### `vercel vcr permissions ls` arguments
+
+| Argument       | Description                                          |
+| -------------- | ---------------------------------------------------- |
+| `<repository>` | The name or ID of the repository to list access for. |
+
+## `vercel vcr permissions add`
+
+Give one or more teams access to pull images from a repository.
+
+```bash filename="terminal"
+vercel vcr permissions <repository> add <team> [OPTIONS]
+```
+
+Teams that start with `team_` are treated as team IDs. Anything else is treated as a team slug.
+
+### `vercel vcr permissions add` example
+
+```bash filename="terminal"
+# Share a repository with a team by ID
+vercel vcr permissions my-repository add team_1a2b3c4d
+
+# Share a repository with a team by slug
+vercel vcr permissions my-repository add my-team
+
+# Share a repository with multiple teams
+vercel vcr permissions my-repository add team_1a2b3c4d,other-team
+```
+
+### `vercel vcr permissions add` options
+
+| Option                   | Short | Description                                          |
+| ------------------------ | ----- | ---------------------------------------------------- |
+| `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
+| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
+
+### `vercel vcr permissions add` flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### `vercel vcr permissions add` arguments
+
+| Argument       | Description                                                                      |
+| -------------- | -------------------------------------------------------------------------------- |
+| `<repository>` | The name or ID of the repository to share.                                       |
+| `<team>`       | One or more team IDs or slugs to grant access to, comma or space separated.      |
+
+## `vercel vcr permissions rm`
+
+Remove one or more teams' access to a repository.
+
+```bash filename="terminal"
+vercel vcr permissions <repository> rm <team> [OPTIONS]
+```
+
+### `vercel vcr permissions rm` example
+
+```bash filename="terminal"
+# Remove a team's access by ID
+vercel vcr permissions my-repository rm team_1a2b3c4d
+
+# Remove multiple teams' access
+vercel vcr permissions my-repository rm team_1a2b3c4d,other-team
+```
+
+### `vercel vcr permissions rm` options
+
+| Option                   | Short | Description                                          |
+| ------------------------ | ----- | ---------------------------------------------------- |
+| `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
+| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
+
+### `vercel vcr permissions rm` flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### `vercel vcr permissions rm` arguments
+
+| Argument       | Description                                                                    |
+| -------------- | ------------------------------------------------------------------------------ |
+| `<repository>` | The name or ID of the repository to remove access from.                        |
+| `<team>`       | One or more team IDs or slugs to revoke access from, comma or space separated. |
+
+## `vercel vcr permissions clear`
+
+Remove access to a repository for every team.
+
+```bash filename="terminal"
+vercel vcr permissions <repository> clear [OPTIONS]
+```
+
+### `vercel vcr permissions clear` example
+
+```bash filename="terminal"
+# Clear all repository permissions, with a confirmation prompt
+vercel vcr permissions my-repository clear
+
+# Clear all repository permissions without the confirmation prompt
+vercel vcr permissions my-repository clear --yes
+```
+
+### `vercel vcr permissions clear` options
+
+| Option                   | Short | Description                                          |
+| ------------------------ | ----- | ---------------------------------------------------- |
+| `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
+| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
+
+### `vercel vcr permissions clear` flags
+
+| Flag     | Short | Description                   |
+| -------- | ----- | ----------------------------- |
+| `--yes`  | `-y`  | Skip the confirmation prompt. |
+| `--help` | `-h`  | Display help information.     |
+
+### `vercel vcr permissions clear` arguments
+
+| Argument       | Description                                        |
+| -------------- | -------------------------------------------------- |
+| `<repository>` | The name or ID of the repository to clear access for. |
+
+## `vercel vcr config`
+
+Configure a container registry repository, such as the repository's visibility. See [Public Repositories](/docs/container-registry/public-and-shared-repositories#public-repositories) for how visibility works.
+
+```bash filename="terminal"
+vercel vcr config <repository> [OPTIONS]
+```
+
+### `vercel vcr config` example
+
+```bash filename="terminal"
+# Make a repository public
+vercel vcr config my-repository --public true
+
+# Make a repository private without revoking access for shared teams
+vercel vcr config my-repository --public false
+```
+
+### `vercel vcr config` options
+
+| Option                   | Short | Description                                                   |
+| ------------------------ | ----- | ------------------------------------------------------------- |
+| `--public <boolean>`     |       | Pass `true` for public or `false` for private.                 |
+| `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).          |
+| `--format <format>`      | `-F`  | Output format. Accepts `json`.                                |
+
+### `vercel vcr config` flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### `vercel vcr config` arguments
+
+| Argument       | Description                                 |
+| -------------- | ------------------------------------------- |
+| `<repository>` | The name or ID of the repository to configure. |
 
 
 ---

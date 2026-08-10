@@ -9,12 +9,13 @@ prerequisites:
   - /docs/sandbox/concepts
   - /docs/sandbox
 related:
+  - /docs/sandbox/concepts/images
   - /docs/sandbox/concepts/firewall
 summary: Detailed specifications for the Vercel Sandbox environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/runtimes.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "3528a38485c75ef3e68182801e56adfed2cc5a7859bcd85085cfbfffbd2b7b45"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ad3f579d7f4954d5579f3f97874493834dc746dcd13887bd08470c06347a531f"
 ---
 
 # Runtimes
@@ -22,6 +23,8 @@ sha256: "3528a38485c75ef3e68182801e56adfed2cc5a7859bcd85085cfbfffbd2b7b45"
 Vercel Sandbox provides a secure, isolated environment for running your code. This page details the runtime environments, available packages, and system configuration.
 
 ## Runtimes
+
+> **💡 Note:** Since August 7th, runtimes are deprecated and we recommend using [Images](/docs/sandbox/concepts/images) for new sandboxes. Images provide more flexibility by allowing any OCI image to be used as the base of sandboxes.
 
 Sandbox includes `node26`, `node24`, `node22`, and `python3.13` images. In all of these images:
 

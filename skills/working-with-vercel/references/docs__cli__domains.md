@@ -3,7 +3,7 @@ title: vercel domains
 product: vercel
 url: /docs/cli/domains
 canonical_url: "https://vercel.com/docs/cli/domains"
-last_updated: 2026-06-24
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,8 +12,8 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "917d070ca0b45fb64dc8ef271200060664f289a683f41a1b3bb0f88ce1835044"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "9022174f5d6fc36f85c137b644cf9687679961b53f7767da276c3b51d0a49bf5"
 ---
 
 # vercel domains

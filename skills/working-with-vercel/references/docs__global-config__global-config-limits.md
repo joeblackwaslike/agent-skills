@@ -3,7 +3,7 @@ title: Global Config Limits and pricing
 product: vercel
 url: /docs/global-config/global-config-limits
 canonical_url: "https://vercel.com/docs/global-config/global-config-limits"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "3369ece05f7fdab79a8b263fc38c1d084a64d8c27cdb21f0c385e47d79a4fa2b"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7ad4f3b47872e7303cce0938ed6bfd61122ba437a56acc2fe52f2eaaa033979c"
 ---
 
 # Global Config Limits and pricing

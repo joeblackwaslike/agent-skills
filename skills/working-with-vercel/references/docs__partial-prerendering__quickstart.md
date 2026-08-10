@@ -3,7 +3,7 @@ title: Getting started with Partial Prerendering
 product: vercel
 url: /docs/partial-prerendering/quickstart
 canonical_url: "https://vercel.com/docs/partial-prerendering/quickstart"
-last_updated: 2018-10-20
+last_updated: 2026-07-28
 type: tutorial
 prerequisites:
   - /docs/partial-prerendering
@@ -12,8 +12,8 @@ related:
 summary: "Set up Partial Prerendering (PPR) in a Next.js App Router project: enable Cache Components, cache a static shell, and stream dynamic content per..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering/quickstart.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "05094a9c8e1c8eaa24f44bdaf7c9950b5563e1157f6367635fd5391d9545fbfa"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "81d4fe38774942899876118776a85d39dcbe9fc19a0df7792218565fc40022de"
 ---
 
 # Getting started with Partial Prerendering

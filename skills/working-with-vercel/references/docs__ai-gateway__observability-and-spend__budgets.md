@@ -3,7 +3,7 @@ title: Budgets
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/budgets
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets"
-last_updated: 2018-10-20
+last_updated: 2026-07-31
 type: how-to
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
@@ -17,8 +17,8 @@ related:
 summary: Cap AI Gateway spend for your team, a single project, or an individual API key with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f317c9feb172fd8efabc8f62a536983fbcadcfae9c34d184fa84a7ed5882b16e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5079d742f04502922637ab720ff6e5f0d3ee2f2cea87b13381fe774fc04b4379"
 ---
 
 # Budgets

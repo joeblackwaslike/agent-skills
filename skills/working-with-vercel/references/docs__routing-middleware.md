@@ -3,7 +3,7 @@ title: Routing Middleware
 product: vercel
 url: /docs/routing-middleware
 canonical_url: "https://vercel.com/docs/routing-middleware"
-last_updated: 2026-07-01
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a51d3e03f2cfc3137208ea7a8a75d014854d82545ff449cbfe2d595078a0a4a5"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d9056cb64d00e02f3315eebf63156299a7885053070eb330fde18e3adbad9778"
 ---
 
 # Routing Middleware
@@ -95,47 +95,9 @@ The following limits apply to requests processed by Routing Middleware:
 
 Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js), [Bun](/docs/functions/runtimes/bun), and [Edge](/docs/functions/runtimes/edge) runtimes. The default runtime for Routing Middleware is Edge. You can change the runtime to Node.js by exporting a [`config`](/docs/routing-middleware/api#config-object) object with a `runtime` property in your  file.
 
+> For \['nextjs', 'nextjs-app']:
+
 To use the Bun runtime, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file and your runtime config to `nodejs`.
-
-```ts filename="middleware.ts" framework=nextjs-app
-export const config = {
-  runtime: 'nodejs', // or 'edge' (default)
-};
-export default function middleware(request: Request) {
-  // Your middleware logic here
-  return new Response('Hello from your Middleware!');
-}
-```
-
-```js filename="middleware.js" framework=nextjs-app
-export const config = {
-  runtime: 'nodejs' // or 'edge' (default)
-}
-export default function middleware(request: Request) {
-  // Your middleware logic here
-  return new Response('Hello from your Middleware!');
-}
-```
-
-```ts filename="middleware.ts" framework=nextjs
-export const config = {
-  runtime: 'nodejs', // or 'edge' (default)
-};
-export default function middleware(request: Request) {
-  // Your middleware logic here
-  return new Response('Hello from your Middleware!');
-}
-```
-
-```js filename="middleware.js" framework=nextjs
-export const config = {
-  runtime: 'nodejs', // or 'edge' (default)
-};
-export default function middleware(request) {
-  // Your middleware logic here
-  return new Response('Hello from your Middleware!');
-}
-```
 
 ```ts filename="middleware.ts" framework=other
 export const config = {

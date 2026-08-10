@@ -3,7 +3,7 @@ title: Trusted Sources
 product: vercel
 url: /docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources"
-last_updated: 2026-05-13
+last_updated: 2026-07-15
 type: how-to
 prerequisites:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection
@@ -17,8 +17,8 @@ related:
 summary: Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3038b16ed29719060b20eb0c17401642eb2cb2979aab822d7ca1ea95b5675b3c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "210c8807ea0b41c52ca10c512a3738900eb2e3bdf3c8b9e88d29db882021f1cc"
 ---
 
 # Trusted Sources

@@ -3,7 +3,7 @@ title: Verify forwarded Passport tokens
 product: vercel
 url: /docs/passport/verify-identity
 canonical_url: "https://vercel.com/docs/passport/verify-identity"
-last_updated: 2018-10-20
+last_updated: 2026-07-20
 type: how-to
 prerequisites:
   - /docs/passport
@@ -13,8 +13,8 @@ related:
 summary: Verify a Passport token forwarded to your backend as a signed JWT.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/verify-identity.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "1a17b128b8a473468ceb5db6812f737c9284b11aa40373a90382f00195973aea"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a4731338839b5137f66c63caab16e1e26df16b08a9b38df61280199ba1ea08a4"
 ---
 
 # Verify forwarded Passport tokens

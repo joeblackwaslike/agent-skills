@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "34597a1f64389867fb64bd644344d821f0b0d7ea6631796e680bbaee9f1319a1"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "455fdca814728f8d439b120e34ba8afb7eaeb78dc2e53aba7d6011569d0d4386"
 ---
 
 # Groq Provider
@@ -498,6 +498,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

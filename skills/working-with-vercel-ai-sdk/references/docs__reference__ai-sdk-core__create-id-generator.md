@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-id-generator.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "85cf9cc00ff521226d922148d183c38f65908e177e8d27de4d2fb5e18adbe400"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "091d133f7c29880860b36b949073f7b33c2279678bf0376f60f837f95a206cbb"
 ---
 
 # `createIdGenerator()`
@@ -134,6 +134,7 @@ const id1 = generateUserId(); // e.g., "user_1a2b3c4d"
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

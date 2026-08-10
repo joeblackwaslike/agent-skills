@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/nia.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "403bf1c4f618179e6996653c1953e1a139fdd1b133d42411dcd74cc74fd69b5f"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "33de8e249567d850aeea63012d7db86693dab89b9b650f7a9c089caee4744ba2"
 ---
 
 # Nia
@@ -205,6 +205,7 @@ for await (const event of session.events) {
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

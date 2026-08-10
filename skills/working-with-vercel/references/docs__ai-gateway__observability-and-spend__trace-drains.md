@@ -3,8 +3,8 @@ title: Trace Drains
 product: vercel
 url: /docs/ai-gateway/observability-and-spend/trace-drains
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-07-30
+type: reference
 prerequisites:
   - /docs/ai-gateway/observability-and-spend
   - /docs/ai-gateway
@@ -14,11 +14,11 @@ related:
   - /docs/ai-gateway/authentication-and-byok
   - /docs/drains/reference/traces
   - /docs/ai-gateway/models-and-providers/provider-options
-summary: Learn about trace drains on Vercel.
+summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a75dc9e230026b04298dd25290b14a2d411058321eefe2423120b057a199fff5"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7e6456b91ddd3f510bd6202cb1f1060b421693a0b6d73abd364dcc57dd42148d"
 ---
 
 # Trace Drains

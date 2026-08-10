@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/settings.md"
-fetched_at: "2026-08-03T07:28:37.789Z"
-sha256: "c2274bee8b640f56da6662d6a2028a45e7852f3979d0079b5a9420f9915bef7b"
+fetched_at: "2026-08-10T05:28:37.963Z"
+sha256: "ff1eb7f7ca99d39d68fc552bd2e656b5fc0b12207f3cfbba22620e26b8a14e4d"
 ---
 
 # Cloud Agents settings
@@ -16,12 +16,14 @@ Open an environment to review:
 
 - The repositories it applies to
 - Whether it uses a snapshot or `.cursor/environment.json`
-- The install script that runs before an agent starts
+- The install script that runs during [Builds](https://cursor.com/docs/cloud-agent/builds.md)
 - Runtime secrets and build secrets
 - Network access settings
-- Version history and setup runs
+- Version history, Builds, and setup runs
 
 Use **Update with Agent** when you want Cursor to inspect the current environment and propose a new setup. Use **New Setup Run** when you want Cursor to start setting up the environment fresh. Use **Restore** from version history to make a prior environment version active again.
+
+The **Builds** tab shows the prepared environment versions available to Cloud Agents. You can inspect logs, trigger a Build, choose or pin the active Build, and start an agent from a specific Build. See [Cloud Agent Builds](https://cursor.com/docs/cloud-agent/builds.md) for details.
 
 ## Default settings
 

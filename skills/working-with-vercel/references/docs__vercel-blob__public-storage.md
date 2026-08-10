@@ -3,7 +3,7 @@ title: Public Storage
 product: vercel
 url: /docs/vercel-blob/public-storage
 canonical_url: "https://vercel.com/docs/vercel-blob/public-storage"
-last_updated: 2026-05-19
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "0a502594888611aebf8eb28b27e8b2a2d5b6601db2373e5dad8a6990cbf39297"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ae2f3bbdc14d4c737b488722151e00e33914c6154eed559365c0e7c96e8233d6"
 ---
 
 # Public Storage
@@ -159,7 +159,7 @@ if (result.statusCode === 304) {
 }
 ```
 
-## Protecting public blobs with the firewall&#x20;
+## Protecting public blobs with the firewall
 
 Anyone with the URL can request a public blob, and each download counts toward your [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) usage. You can control this traffic with [Vercel WAF](/docs/vercel-firewall/vercel-waf) rules, such as [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) or [IP blocking](/docs/vercel-firewall/vercel-waf/ip-blocking), to stop hotlinking, scraping, and abusive download patterns. To enable it:
 

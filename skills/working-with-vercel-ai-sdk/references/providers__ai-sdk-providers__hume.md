@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "0c09997aef838935cd6e84d18a13bf94db1d5d593059a6b8cc2d3d9199993d25"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "fd5aea70555fae2c514bc453c2bc54ac6f859cc20d3aa26c40de3b84e18f9b39"
 ---
 
 # Hume Provider
@@ -173,6 +173,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/smooth-stream.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "753a3e674ef49fc1e8f1a33733aa763ebe10386b29290a5f702fd5b55baf8033"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "900f7e91419365f6c84094c3b385a89fad1a492a1cf55060d3157c7f740f96e4"
 ---
 
 # `smoothStream()`
@@ -190,6 +190,7 @@ Returns a `TransformStream` that:
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

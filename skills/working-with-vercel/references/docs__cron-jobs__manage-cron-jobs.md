@@ -3,7 +3,7 @@ title: Managing Cron Jobs
 product: vercel
 url: /docs/cron-jobs/manage-cron-jobs
 canonical_url: "https://vercel.com/docs/cron-jobs/manage-cron-jobs"
-last_updated: 2026-06-02
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cron-jobs
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "9d0c998dc62c7ba87d668e23b1f77609d29b68da5176cf61bc8e8abd0055f96d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "9915c25b5220bb1d540bb746b0285a5971feaff901fab186a1914184b6b87611"
 ---
 
 # Managing Cron Jobs

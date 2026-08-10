@@ -3,7 +3,7 @@ title: vercel sandbox
 product: vercel
 url: /docs/cli/sandbox
 canonical_url: "https://vercel.com/docs/cli/sandbox"
-last_updated: 2026-06-06
+last_updated: 2026-08-04
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: "Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from your terminal."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/sandbox.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "26b71f77bbc88e28b36e27f21ee37a67788b5d1eaec45af130c3b427d3263cf1"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f1a5150225c45a4a14dcaa912fc264fd11627a01d14d509ac9f3a17ea1fe2161"
 ---
 
 # vercel sandbox
@@ -50,7 +50,7 @@ vercel sandbox create --connect
 
 ## Full reference
 
-For the full list of subcommands, flags, and examples, see the [Sandbox CLI Reference](/docs/sandbox/cli-reference). The Sandbox CLI is modeled on the Docker CLI, so commands like `vercel sandbox exec`, `vercel sandbox copy` (alias `cp`), and `vercel sandbox connect` (alias `ssh`) follow familiar shapes. Use `vercel sandbox stop` to stop the current session of a persistent sandbox (the filesystem is snapshotted and can be resumed). To permanently delete a sandbox along with its snapshots and sessions, use `vercel sandbox remove` instead.
+For the full list of subcommands, flags, and examples, see the [Sandbox CLI Reference](/docs/sandbox/cli-reference). The Sandbox CLI is modeled on the Docker CLI, so commands like `vercel sandbox exec`, `vercel sandbox copy` (alias `cp`), and `vercel sandbox connect` (alias `ssh`) follow familiar shapes. Use `vercel sandbox stop` to stop the current session of a persistent sandbox (the filesystem is snapshotted and can be resumed). To permanently delete a sandbox along with its sessions, use `vercel sandbox remove` instead. The sandbox's snapshots are kept until they expire or you delete them.
 
 ## Related
 

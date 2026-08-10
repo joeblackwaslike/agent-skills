@@ -3,7 +3,7 @@ title: Flags SDK Reference
 product: vercel
 url: /docs/flags/flags-sdk-reference
 canonical_url: "https://vercel.com/docs/flags/flags-sdk-reference"
-last_updated: 2026-06-11
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/flags
@@ -14,8 +14,8 @@ related:
 summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "8184eb6d25d20ea525ffe70ef7662f36252d8e3d101ae06eb3ca038cafacabe0"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b4af57fb11dbf19c9f69456056dd1229ba7ffc4b6ecb9fa95bc7af9c9bcd6077"
 ---
 
 # Flags SDK Reference

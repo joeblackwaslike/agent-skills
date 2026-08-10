@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/flowise.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "376d658728d3375be35770398671c496ce69d88513131cc2411aebb8ad74184d"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "5ca7b76b0ec8a87a2e190e772d77e2791462a34a71661226bf599fb2cc29f5e7"
 ---
 
 # Flowise Provider
@@ -143,6 +143,7 @@ For more information and advanced usage, see the [Flowise provider documentation
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

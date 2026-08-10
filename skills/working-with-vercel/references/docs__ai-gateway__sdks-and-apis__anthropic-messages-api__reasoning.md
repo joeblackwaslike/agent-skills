@@ -3,7 +3,7 @@ title: Extended Thinking
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -17,8 +17,8 @@ related:
 summary: Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "88ce437dc9ce75244e82d8c2cedb3ede85d18a8afe9624df415fb303c4251b94"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f8310ea3a8b70519b47675f6dd566cdebdb49865f0e7529eed0652b9be771d8a"
 ---
 
 # Extended Thinking

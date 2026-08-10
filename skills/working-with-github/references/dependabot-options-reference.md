@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/reference/supply-chain-security/dependabot-options-reference.md"
-fetched_at: "2026-08-03T07:31:37.157Z"
-sha256: "ef8b3b8b5604e312c6a271ff26a571a2e64ba8172aff689b5546aeac7cee270c"
+fetched_at: "2026-08-10T05:31:22.342Z"
+sha256: "59cce31124ebc1ff8c2b73f39483f8a26d55d1553c1078f2e807a33cd94057cd"
 ---
 
 This article provides reference information for the configuration options available in the `dependabot.yml` file. Use these options to customize how {% data variables.product.prodname_dependabot %} monitors package ecosystems, schedules updates, and creates pull requests. For an overview of the `dependabot.yml` file and how it works, see [AUTOTITLE](/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file).
@@ -548,7 +548,7 @@ Package manager | YAML value      | Supported versions |
 | {% ifversion dependabot-bazel-support %} |
 | Bazel         | `bazel`          | v7, v8, v9               |
 | {% endif %} |
-| Bun | `bun`         | >=v1.2.5              |
+| Bun | `bun`         | >=v1.1.39              |
 | Bundler | `bundler` | v2 |
 | Cargo       | `cargo`          | v1               |
 | Composer       | `composer`       | v2         |
@@ -578,14 +578,14 @@ Package manager | YAML value      | Supported versions |
 | {% ifversion dependabot-nix-support %} |
 | Nix flakes | `nix`            | Not applicable   |
 | {% endif %} |
-| npm            | `npm`            |  v7, v8, v9, v10   |
+| npm            | `npm`            |  v7, v8, v9, v10, v11   |
 | NuGet          | `nuget`          | <=6.12.0 |
 | {% ifversion dependabot-opentofu-support %} |
 | OpenTofu     | `opentofu`       | Not applicable     |
 | {% endif %} |
-| pip         | `pip`            | 24.2             |
+| pip         | `pip`            | 26.1.1             |
 | pip-compile | `pip`            | 7.5.3            |
-| pipenv      | `pip`            | <= 2024.4.1      |
+| pipenv      | `pip`            | 2024.4.1      |
 | pnpm   | `npm`            | v7, v8, v9, v10   |
 | poetry      | `pip`    | v2    |
 | {% ifversion dependabot-pre-commit-support %} |
@@ -599,7 +599,7 @@ Package manager | YAML value      | Supported versions |
 | sbt          | `sbt`            | Not applicable   |
 | {% endif %} |
 | Swift   | `swift`      | v5  |
-| Terraform    | `terraform`      | >= 0.13, <= 1.10.x  |
+| Terraform    | `terraform`      | >= 0.13, <= 1.15.x  |
 | uv           | `uv`             | v0 |
 | {% ifversion dependabot-vcpkg-support %} |
 | vcpkg       | `vcpkg`          | Not applicable   |
@@ -967,7 +967,7 @@ Supported values: `true` or `false`
 
 ## `versioning-strategy` {% octicon "versions" aria-label="Version updates" height="24" %} {% octicon "shield-check" aria-label="Security updates" height="24" %}
 
-Supported by: `bundler`, `cargo`, `composer`, `mix`, `npm`, `pip`, `pub`, and `uv`
+Supported by: `bundler`, `cargo`, `composer`, `helm`, `mix`, `npm`, `pip`, `pub`, and `uv`
 
 Define how {% data variables.product.prodname_dependabot %} should edit manifest files. For examples, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/controlling-dependencies-updated#defining-a-versioning-strategy).
 

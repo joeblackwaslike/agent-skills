@@ -3,7 +3,7 @@ title: @vercel/blob
 product: vercel
 url: /docs/vercel-blob/using-blob-sdk
 canonical_url: "https://vercel.com/docs/vercel-blob/using-blob-sdk"
-last_updated: 2026-07-08
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "305c0b23c98597408b7301dcb907eaf84bab423a28c5ba6392c70a223fa1f38e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "08b249e2edda935f601020f3cc5fdd22719e71c6d79696274f83f521c14ab8ca"
 ---
 
 # @vercel/blob

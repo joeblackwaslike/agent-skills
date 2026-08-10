@@ -3,7 +3,7 @@ title: Tool Calls
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Anthropic Messages API to allow models to call tools and functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "27bbe6d9182d28329b89dce0a18ae0a895a10599b2b9fa8fada32ab3963ba511"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "0a8102011e2ca40ec742f3f48a94f70d15c8d0c5e06b93c7e48bbf4673e7a346"
 ---
 
 # Tool Calls

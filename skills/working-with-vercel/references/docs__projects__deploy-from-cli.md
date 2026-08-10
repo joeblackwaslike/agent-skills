@@ -3,7 +3,7 @@ title: Deploying a project from the CLI
 product: vercel
 url: /docs/projects/deploy-from-cli
 canonical_url: "https://vercel.com/docs/projects/deploy-from-cli"
-last_updated: 2026-05-28
+last_updated: 2026-07-23
 type: how-to
 prerequisites:
   - /docs/projects
@@ -16,8 +16,8 @@ related:
 summary: Set up and deploy a Vercel project using the CLI, from linking to production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/deploy-from-cli.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "937facfa852e2c694c6a5237759b2380a5475ba648f8e822aa1220a6b92cfb79"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "6d4483f31fe59e20843999e0133de02b0bc5c089bad65ffd1d9ec8384b73bb04"
 ---
 
 # Deploying a project from the CLI

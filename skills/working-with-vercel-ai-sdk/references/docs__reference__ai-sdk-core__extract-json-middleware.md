@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/extract-json-middleware.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "baa4f43d0e83d2b92c6bf3747c7dbead7eb1815e6f2bbb266868f948fe9f60d5"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "b9eb144e7c11d03b99db40cce9a6d2583ea7fbb78c30615f1b2117d7e8251ec4"
 ---
 
 # `extractJsonMiddleware()`
@@ -192,6 +192,7 @@ This approach ensures efficient streaming while correctly handling code fences t
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

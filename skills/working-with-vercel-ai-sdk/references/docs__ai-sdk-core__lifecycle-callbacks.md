@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "202beb83e4e1c2572cb807247bcc2c3dd3aa318016039bac17e2f32e02f1c1bc"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "670383a3db60c4de2c3802c1e5e9c784eb01d0af7efcb62ff081432c1347c128"
 ---
 
 # Lifecycle Callbacks
@@ -98,7 +98,13 @@ const result = streamText({
   model: __MODEL__,
   prompt: 'Explain partial prerendering in two paragraphs.',
 
-  onLanguageModelCallEnd({ callId, modelId, usage, performance }) {
+  onLanguageModelCallEnd({
+    callId,
+    modelId,
+    usage,
+    performance,
+    providerMetadata,
+  }) {
     metrics.histogram('ai.model.response_time_ms', performance.responseTimeMs, {
       callId,
       modelId,
@@ -108,6 +114,11 @@ const result = streamText({
       output: performance.outputTokensPerSecond,
       total: performance.effectiveTotalTokensPerSecond,
       tokens: usage.totalTokens,
+    });
+
+    logger.info('ai.model.provider_metadata', {
+      callId,
+      providerMetadata,
     });
   },
 });
@@ -675,6 +686,12 @@ Called after the provider response has been normalized and parsed, before local 
       name: 'responseId',
       type: 'string',
       description: 'Provider-returned response ID for this model call.',
+    },
+    {
+      name: 'providerMetadata',
+      type: 'ProviderMetadata | undefined',
+      description:
+        'Provider-specific metadata for this model call, when returned by the provider.',
     },
     {
       name: 'performance',

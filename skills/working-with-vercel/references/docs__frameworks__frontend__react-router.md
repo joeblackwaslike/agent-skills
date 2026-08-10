@@ -3,7 +3,7 @@ title: React Router on Vercel
 product: vercel
 url: /docs/frameworks/frontend/react-router
 canonical_url: "https://vercel.com/docs/frameworks/frontend/react-router"
-last_updated: 2026-02-26
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with React Router as a framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "32af2bd09575c27d85cc3046e63fd54dcdf5435cb943095e155784120347350e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "698105a8e227641d4364d16979dae7c7e25db3d852db5b5ebd037ddf8fd0a203"
 ---
 
 # React Router on Vercel

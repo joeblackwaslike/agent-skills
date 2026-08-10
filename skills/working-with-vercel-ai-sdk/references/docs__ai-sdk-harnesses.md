@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "fa18ecf9d1a2ebe971ddd50037c6d03b8e7f90fa28c1cd7f47855dda44ea3c75"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "cc809b966227d8a19ef9a7672ea3f1a67b97096b253dcabf5e79551054f2f976"
 ---
 
 # AI SDK Harnesses
@@ -215,6 +215,7 @@ running established agent harnesses such as Claude Code, Codex, and Pi.
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

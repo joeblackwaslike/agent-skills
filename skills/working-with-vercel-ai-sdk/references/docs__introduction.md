@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/introduction.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "0d60f7799601b0fc028b69d2e5619a79b8e12b9c1b590c73dccf6bc05808b72e"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "32a4b9f61618770c2c8820726a24076b126391876f1f814d1c2fa220be66d1d4"
 ---
 
 # AI SDK
@@ -238,6 +238,7 @@ Based on the above documentation, answer the following:
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

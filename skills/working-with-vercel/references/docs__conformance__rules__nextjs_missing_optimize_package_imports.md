@@ -3,7 +3,7 @@ title: NEXTJS_MISSING_OPTIMIZE_PACKAGE_IMPORTS
 product: vercel
 url: /docs/conformance/rules/NEXTJS_MISSING_OPTIMIZE_PACKAGE_IMPORTS
 canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_MISSING_OPTIMIZE_PACKAGE_IMPORTS"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: optimizePackageImports improves compilation speed for packages that use barrel files or export many modules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_optimize_package_imports.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b36511adb496c71c14be01bc6fc7b8d680d0a314e7d230b914f98eaf5139fd82"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d7d6e1c111912c259c1662568a7cfd62a90dd43c4b2fff2f42a83fac8d9e7612"
 ---
 
 # NEXTJS_MISSING_OPTIMIZE_PACKAGE_IMPORTS

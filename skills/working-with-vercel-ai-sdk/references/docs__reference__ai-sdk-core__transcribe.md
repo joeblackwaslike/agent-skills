@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d8bb699b4f029dc339245cabd91724f15238c0829dd1d16c22e0b71735f674b6"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "995393bc1df83e055f715fdfef1ea2ea1de01ac0b63bcb2854237004a9a40cd3"
 ---
 
 # `transcribe()`
@@ -192,6 +192,7 @@ console.log(transcript);
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

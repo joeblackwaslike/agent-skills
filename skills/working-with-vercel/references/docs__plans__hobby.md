@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "5a1787effa801c805081695e38216a7648a31abff798ff6be2be323bde3e00ba"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "50476353a79470f49f3c3fda8d236cc1322697f820f7044c9c313eaa18899c8e"
 ---
 
 # Vercel Hobby Plan
@@ -86,6 +86,8 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 ## Upgrading to Pro
 
 You can take advantage of Vercel's Pro trial to explore [Pro features](/docs/plans/pro-plan) for free during the trial period, with some [limitations](/docs/plans/pro-plan/trials#trial-limitations).
+
+The [free first-year domain offer](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades) for new Pro upgrades is not available during the Pro trial. It applies only after an eligible new paid Pro upgrade and must be claimed within 30 days.
 
 To upgrade from a Hobby plan:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/extract-reasoning-middleware.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "f7db94e348898c7dc593c253661d69b8e8ce61e7f60d3c27def16c2922bdc2c0"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "b79cd1fd7bf16d46cb53289b25890c0c9864cd65f78382ca0dab380d11889270"
 ---
 
 # `extractReasoningMiddleware()`
@@ -113,6 +113,7 @@ The middleware works with the `LanguageModelV4StreamPart` type for streaming res
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

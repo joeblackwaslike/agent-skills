@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/events-that-trigger-workflows.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "3d3cd26a7972de7fed4846b2aad6a69b83ec979d891b431848e3a758a62ecb0a"
+fetched_at: "2026-08-10T05:30:56.796Z"
+sha256: "5a46bd2f89362a7ce938f37a0e728fbc2c02ee9254f027ce30ec3e74456364cb"
 ---
 
 ## About events that trigger workflows
@@ -12,6 +12,12 @@ Some events have multiple activity types. For these events, you can specify whic
 
 > [!NOTE]
 > Not all webhook events trigger workflows.
+
+{% ifversion copilot %}
+
+Like {% data variables.product.prodname_actions %} workflows, {% data variables.copilot.agentic_workflows_short %} can be triggered by repository events and schedules. For an example, see [AUTOTITLE](/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows).
+
+{% endif %}
 
 ## `branch_protection_rule`
 
@@ -362,7 +368,7 @@ on:
 > * {% data reusables.developer-site.multiple_activity_types %} Although only the `checks_requested` activity type is supported, specifying the activity type will keep your workflow specific if more activity types are added in the future. For information about each activity type, see [AUTOTITLE](/webhooks/webhook-events-and-payloads#merge_group). {% data reusables.developer-site.limit_workflow_to_activity_types %}
 > * {% data reusables.actions.merge-group-event-with-required-checks %}
 
-Runs your workflow when a pull request is added to a merge queue, which adds the pull request to a merge group. For more information see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue).
+Runs your workflow when a pull request is added to a merge queue, which adds the pull request to a merge group. For more information see [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue).
 
 For example, you can run a workflow when the `checks_requested` activity has occurred.
 
@@ -447,7 +453,7 @@ on:
 
 Runs your workflow when activity on a pull request in the workflow's repository occurs. For example, if no activity types are specified, the workflow runs when a pull request is opened or reopened or when the head branch of the pull request is updated. For activity related to pull request reviews, pull request review comments, or pull request comments, use the [`pull_request_review`](#pull_request_review), [`pull_request_review_comment`](#pull_request_review_comment), or [`issue_comment`](#issue_comment) events instead. For information about the pull request APIs, see [AUTOTITLE](/graphql/reference/pulls#object-pullrequest) in the GraphQL API documentation or [AUTOTITLE](/rest/pulls).
 
-Note that `GITHUB_SHA` for this event is the last merge commit of the pull request merge branch. If you want to get the commit ID for the last commit to the head branch of the pull request, use `github.event.pull_request.head.sha` instead. For more information about merge branches, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#pull-request-refs-and-merge-branches).
+Note that `GITHUB_SHA` for this event is the last merge commit of the pull request merge branch. If you want to get the commit ID for the last commit to the head branch of the pull request, use `github.event.pull_request.head.sha` instead. For more information about merge branches, see [AUTOTITLE](/pull-requests/reference/pull-requests#pull-request-refs-and-merge-branches).
 
 ### How the merge branch affects your workflow
 

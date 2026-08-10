@@ -3,7 +3,7 @@ title: Observability and Spend
 product: vercel
 url: /docs/ai-gateway/observability-and-spend
 canonical_url: "https://vercel.com/docs/ai-gateway/observability-and-spend"
-last_updated: 2026-06-20
+last_updated: 2026-07-31
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -13,11 +13,11 @@ related:
   - /docs/ai-gateway/observability-and-spend/usage
   - /docs/ai-gateway/observability-and-spend/budgets
   - /docs/ai-gateway/observability-and-spend/trace-drains
-summary: "Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and per-key spending budgets."
+summary: "Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budgets."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "367e71cbab17633fec33169709cc4d4d294336f3ae3fe03db670e40b26697727"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "23ec279fe30baa139d550d78a2de7257841f06f7606950eabd0e1565b2a0b80a"
 ---
 
 # Observability and Spend

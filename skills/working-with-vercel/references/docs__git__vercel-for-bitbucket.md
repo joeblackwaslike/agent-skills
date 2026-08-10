@@ -13,11 +13,11 @@ related:
   - /docs/git
   - /docs/projects/overview
   - /docs/projects/custom-domains
-summary: Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
+summary: ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-bitbucket.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "e0d1a690c1451e5fb1bc97d975847edf053019d828df5cd30263e7211012e30b"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "87570ed7a21d097634c65a2dd4e836db7876add5040c003c09e62e5f9e536fcb"
 ---
 
 # Deploying Bitbucket Projects with Vercel

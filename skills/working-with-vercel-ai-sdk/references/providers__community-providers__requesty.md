@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/requesty.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "9f19613d2dc195a25358296a1e863bdfec3ea882af95dcf0499ab1fd455e0651"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "5ac7f1897fbe8edc8ff39c4d0ac5eb67130a8c2bc25eea5b95c318a66d830576"
 ---
 
 # Requesty
@@ -319,6 +319,7 @@ Requesty offers several enterprise-grade features:
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

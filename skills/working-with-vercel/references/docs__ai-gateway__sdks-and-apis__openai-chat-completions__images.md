@@ -3,7 +3,7 @@ title: File Attachments
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/images
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -14,8 +14,8 @@ related:
 summary: Send images and PDF documents to a model using the OpenAI Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f325f13257a4db3cd8bc1b935b6be9ce23debf1f0f766c684894191509a43efc"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "c145217666d34f660c2ba138d6e0a34db537b7650e8c77aea7d7ebf041bd63df"
 ---
 
 # File Attachments

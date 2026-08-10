@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/upload-skill.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "59807b263bbf05f8caa0234f1fcb5f878633efd2cda0f75315e1b800a447638e"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "cd533eb9b67fa3bd69787bb886527e6416182946f3b3899e7b5d9c0ee49bdd08"
 ---
 
 # `uploadSkill()`
@@ -159,6 +159,7 @@ const { providerReference } = await uploadSkill({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

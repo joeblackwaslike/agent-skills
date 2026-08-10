@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/core/src/plugin/skill/customize-opencode.md"
-fetched_at: "2026-06-22T05:59:46.710Z"
-sha256: "6d22eed007626b08113c19a8837e2327e0af0bd3e75bfda9c3bfa07cf122e3eb"
+fetched_at: "2026-08-10T05:31:39.739Z"
+sha256: "f83e8f42cd3f1422656a9725357b6dca24ee8af4582905d03da97ffb999db11e"
 ---
 
 <!--
@@ -118,7 +118,7 @@ Every field is optional.
       "type": "local",
       "command": ["npx", "-y", "@playwright/mcp"],
       "enabled": true,
-      "env": {}
+      "environment": {}
     },
     "remote-thing": {
       "type": "remote",
@@ -377,7 +377,7 @@ Special object-shaped (not callbacks): `tool: { my_tool: { ... } }`,
       "type": "local",
       "command": ["npx", "-y", "@playwright/mcp"],
       "enabled": true,
-      "env": { "BROWSER": "chromium" }
+      "environment": { "BROWSER": "chromium" }
     },
     "github": {
       "type": "remote",
@@ -390,7 +390,8 @@ Special object-shaped (not callbacks): `tool: { my_tool: { ... } }`,
 }
 ```
 
-`command` is an array of strings. `type` is required. Use `enabled: false` to
+`command` is an array of strings. `environment` sets environment variables for
+a local MCP server. `type` is required. Use `enabled: false` to
 disable a server inherited from a parent config. String values such as header
 tokens support `{env:VAR}` interpolation (and `{file:path}`); the shell-style
 `${VAR}` is not substituted.

@@ -3,7 +3,7 @@ title: Realtime Quickstart
 product: vercel
 url: /docs/ai-gateway/getting-started/realtime
 canonical_url: "https://vercel.com/docs/ai-gateway/getting-started/realtime"
-last_updated: 2026-06-20
+last_updated: 2026-07-24
 type: tutorial
 prerequisites:
   - /docs/ai-gateway/getting-started
@@ -13,16 +13,16 @@ related:
 summary: Build a low-latency, speech-to-speech voice agent with AI Gateway and the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "01a10d81336ec3b1887b94cea98fbe8566eed0f3533368e134dad01c6cf2d191"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d0a3ecbcc9fa1d42df593ed65b16ac17ed28c1b6b56e52852265722ed7826cf6"
 ---
 
 # Realtime Quickstart
 
 This quickstart gets you to a working realtime session two ways with the AI SDK: a Node.js script you can run right away, or a browser voice agent for live, two-way conversations.
 
-> **💡 Note:** Realtime support in the AI Gateway provider is available on the canary
-> releases of the AI SDK. Install them with `pnpm add @ai-sdk/gateway@canary`.
+> **💡 Note:** Realtime support ships in the stable AI Gateway provider releases. Install it
+> with `pnpm add @ai-sdk/gateway`.
 
 The script below uses `xai/grok-voice-think-fast-1.0` and the browser agent uses `openai/gpt-realtime-2`. Both are realtime speech-to-speech models, so swap the model ID to switch between them. `xai/grok-voice-think-fast-1.0` supports speech-to-speech only, so it does not handle transcription or translation.
 
@@ -39,22 +39,22 @@ The fastest way to try realtime is a Node.js script, no framework and no browser
   ```
 
 - ### Install dependencies
-  Install the canary AI Gateway provider, a WebSocket client, and development dependencies:
+  Install the AI Gateway provider, a WebSocket client, and development dependencies:
   #### npm
   ```bash filename="Terminal"
-  npm install @ai-sdk/gateway@canary ws dotenv tsx typescript @types/ws @types/node
+  npm install @ai-sdk/gateway ws dotenv tsx typescript @types/ws @types/node
   ```
   #### yarn
   ```bash filename="Terminal"
-  yarn add @ai-sdk/gateway@canary ws dotenv tsx typescript @types/ws @types/node
+  yarn add @ai-sdk/gateway ws dotenv tsx typescript @types/ws @types/node
   ```
   #### pnpm
   ```bash filename="Terminal"
-  pnpm add @ai-sdk/gateway@canary ws dotenv tsx typescript @types/ws @types/node
+  pnpm add @ai-sdk/gateway ws dotenv tsx typescript @types/ws @types/node
   ```
   #### bun
   ```bash filename="Terminal"
-  bun add @ai-sdk/gateway@canary ws dotenv tsx typescript @types/ws @types/node
+  bun add @ai-sdk/gateway ws dotenv tsx typescript @types/ws @types/node
   ```
 
 - ### Set up your API key
@@ -165,8 +165,8 @@ The fastest way to try realtime is a Node.js script, no framework and no browser
 
 For a live, two-way voice agent, use the AI SDK in a browser app. Your server mints a short-lived token, and the `useRealtime` hook handles the microphone, playback, and WebSocket connection.
 
-> **💡 Note:** The browser voice agent also needs the canary React bindings. Install them
-> with `pnpm add ai@canary @ai-sdk/gateway@canary @ai-sdk/react@canary`.
+> **💡 Note:** The browser voice agent also needs the React bindings. Install them with
+> `pnpm add ai @ai-sdk/gateway @ai-sdk/react`.
 
 - ### Set up a Next.js app
   Realtime needs both a server (to mint a token) and a browser (to capture and play audio). Create a new app:
@@ -174,9 +174,9 @@ For a live, two-way voice agent, use the AI SDK in a browser app. Your server mi
   pnpm create next-app@latest ai-realtime-agent
   cd ai-realtime-agent
   ```
-  Then install the canary AI SDK, the AI Gateway provider, and the React bindings:
+  Then install the AI SDK, the AI Gateway provider, and the React bindings:
   ```bash filename="Terminal"
-  pnpm add ai@canary @ai-sdk/gateway@canary @ai-sdk/react@canary
+  pnpm add ai @ai-sdk/gateway @ai-sdk/react
   ```
 
 - ### Set up your API key

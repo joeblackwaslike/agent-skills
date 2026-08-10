@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-quickstart.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "4b152dd1f8a5b6a843e6d56b9776a1572713a01ea7ee7ac3f5b4bbeb5d7ae843"
+fetched_at: "2026-08-10T05:26:58.686Z"
+sha256: "39463a291f923071349557f3d462c6815072676b325f12415c5391fd39440606"
 ---
 
 > ## Documentation Index
@@ -72,7 +72,7 @@ With the Code tab open, choose a project and give Claude something to do.
 
     You can also select:
 
-    * **Cloud**: Run sessions on Anthropic's cloud infrastructure that continue even if you close the app. Cloud sessions use the same infrastructure as [Claude Code on the web](/docs/en/claude-code-on-the-web).
+    * **Cloud**: Run sessions in the cloud that continue even if you close the app. Cloud sessions use the same infrastructure as [Claude Code on the web](/docs/en/claude-code-on-the-web).
     * **SSH**: Connect to a remote machine over SSH, such as your own servers, cloud VMs, or dev containers. Desktop installs Claude Code on the remote machine automatically the first time you connect.
     * **WSL** (Windows): Run the session inside a [WSL 2 distribution](/docs/en/desktop-wsl); Claude Code, tools, and git execute on the Linux side with native paths.
   </Step>

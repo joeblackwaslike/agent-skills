@@ -1,13 +1,18 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/reusing-workflow-configurations.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "0ce671c0c8e0ccad888d3cd98bd2680ab9ebc7b7facfb1e93745e4a098de293b"
+fetched_at: "2026-08-10T05:30:56.796Z"
+sha256: "19650b4e46ce5ea083b6e91eee087fb814d6d85595419aede05945228109735e"
 ---
 
 ## Reusable workflows
 
-Reference information for reusable workflows.
+This article provides reference information for reusable workflows and workflow templates, including access rules, limitations, supported keywords, and runner behavior.
 
+{% ifversion copilot %}
+
+You can centralize deterministic, repeatable logic in reusable workflows, and use {% data variables.copilot.agentic_workflows_short %} for tasks that require contextual judgment about your repository's content such as analysis, summaries, and recommendations. For more information, see [AUTOTITLE](/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows).
+
+{% endif %}
 ### Access to reusable workflows
 
 A reusable workflow can be used by another workflow if any of the following is true:

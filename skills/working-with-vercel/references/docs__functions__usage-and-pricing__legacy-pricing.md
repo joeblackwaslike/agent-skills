@@ -3,7 +3,7 @@ title: Legacy Usage & Pricing for Functions
 product: vercel
 url: /docs/functions/usage-and-pricing/legacy-pricing
 canonical_url: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing"
-last_updated: 2026-06-25
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/functions/usage-and-pricing
@@ -17,8 +17,8 @@ related:
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "a51927ee4c4919e305fbada0c8cc8ad026a4591b6ef80f139d8dcb13050c9571"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f02b21ee25a40c58a633fac3e05ccd5ffbdc1367efb5ad9f9b9686ae4918a09d"
 ---
 
 # Legacy Usage & Pricing for Functions

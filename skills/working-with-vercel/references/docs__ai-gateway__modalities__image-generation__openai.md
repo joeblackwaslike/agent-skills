@@ -3,7 +3,7 @@ title: Image Generation with Chat Completions API
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation/openai
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai"
-last_updated: 2026-06-20
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/image-generation
@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "71fb2a7c64d5b7634400bc1b0c5967e45f79d54340201e8947cc420a8a3c0d85"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "113d5796ced9664c7f0e9ab09cc28496d6525ce7db7b17bacba9b4ddd0a597e8"
 ---
 
 # Image Generation with Chat Completions API

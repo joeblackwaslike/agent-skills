@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "e5568b37ea6b079ad78b6f519d2146f16ad24a1444881bf06729d9b58c8d7473"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "eb5418d8d1620aed0074843ef6410461be4d5a80cda03f811832f12809d701cc"
 ---
 
 # OpenAI Provider
@@ -1859,6 +1859,44 @@ The metadata includes the following fields:
 - **itemId** _string_ — The ID of the compaction item in the Responses API
 - **encryptedContent** _string_ (optional) — The encrypted compaction state. This is automatically sent back to the API when the message is included in subsequent requests.
 
+### Text Batches
+
+<Note type="warning">
+  Text batch APIs are experimental and may change in future releases.
+</Note>
+
+The OpenAI provider supports the [Batch API](https://developers.openai.com/api/docs/guides/batch) for text generation.
+
+```ts
+import { openai } from '@ai-sdk/openai';
+import {
+  experimental_startTextBatch as startTextBatch,
+  experimental_getBatchResults as getBatchResults,
+  experimental_getBatchStatus as getBatchStatus,
+} from 'ai';
+
+const model = openai('gpt-4.1-nano');
+
+const batch = await startTextBatch({
+  model,
+  requests: [
+    { id: 'france', prompt: 'What is the capital of France?' },
+    { id: 'germany', prompt: 'What is the capital of Germany?' },
+  ],
+});
+
+// Persist `batch` and check its status later, or poll for status updates.
+const { status } = await getBatchStatus({ model, batch });
+
+if (status !== 'pending') {
+  for await (const result of getBatchResults({ model, batch })) {
+    console.log(result);
+  }
+}
+```
+
+Starting a batch returns a serializable reference that can be persisted and used to retrieve the batch results later, or poll for status updates.
+
 ### Chat Models
 
 You can create models that call the [OpenAI chat API](https://platform.openai.com/docs/api-reference/chat) using the `.chat()` factory method.
@@ -3040,6 +3078,7 @@ const result = await generateSpeech({
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

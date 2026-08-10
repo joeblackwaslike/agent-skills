@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "c16d8b3162279c31b6f2100b2bcb413e7e9aeb81017276adabd61b631a08a7c3"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "8d7c139f0e394f27fc70dd3287a8413b736fef68cea924ac0d437772aa38bcc3"
 ---
 
 # Open Responses Provider
@@ -265,6 +265,7 @@ provider.
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

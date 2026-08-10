@@ -3,7 +3,7 @@ title: Incremental Migration to Vercel
 product: vercel
 url: /docs/incremental-migration
 canonical_url: "https://vercel.com/docs/incremental-migration"
-last_updated: 2026-06-16
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "fcf77e69133e26636368c5a40e24b4553c2389103be571b69f18bee58102368a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "82c2edce4fc0e418889d3001d3d3d2f93028bdc963d27d67e8dac9121834335c"
 ---
 
 # Incremental Migration to Vercel

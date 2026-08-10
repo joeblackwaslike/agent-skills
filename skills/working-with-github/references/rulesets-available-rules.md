@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-07-27T07:36:12.022Z"
-sha256: "cd01afc041c4f6e4bf28f8762b5dee6007c10e46b794faacdc0daa28fd52a46e"
+fetched_at: "2026-08-10T05:31:22.342Z"
+sha256: "38b96c86d61bd261bf2cd11247d32f7c53f6cabb96ec0c38c67cc701a6dff2bb"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -177,6 +177,8 @@ For status check troubleshooting information, see [AUTOTITLE](/pull-requests/col
 You can prevent users from force pushing to the targeted branches or tags. This rule is enabled by default.
 
 If someone force pushes to a branch or tag, commits that other collaborators have based their work on may be removed from the history of the branch or tag. This may lead to merge conflicts or corrupted pull requests. Force pushing can also be used to delete branches or point a branch to commits that were not approved in a pull request.
+
+> [!NOTE] If force pushes are blocked, organization owners or repository administrators will be unable to change or rename the default branch unless they are authorized to bypass the ruleset.
 
 Enabling force pushes will not override any other rules. For example, if a branch requires a linear commit history, you cannot force push merge commits to that branch.
 

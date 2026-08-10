@@ -3,7 +3,7 @@ title: Messages
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
@@ -13,8 +13,8 @@ related:
 summary: Create messages using the Anthropic Messages API format with support for streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "da7f2e46fb754eadd0542b166f8a3c03720607c1e4212d317bf35040dbc493e4"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "00c3a8602c9b665521f2a2b56d832e3d3bcea1300caecfcc07cdea255f527832"
 ---
 
 # Messages

@@ -3,7 +3,7 @@ title: Authentication
 product: vercel
 url: /docs/connect/concepts/authentication
 canonical_url: "https://vercel.com/docs/connect/concepts/authentication"
-last_updated: 2026-06-09
+last_updated: 2026-07-31
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -17,8 +17,8 @@ related:
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f9efe8fbd38dc80ef16f82aeed80385a2e14cf8081d53a2cd74912a6765c5804"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "3e4a5da35eb1eb54527c1f20495812f30636227543a2ee558243e325ce778346"
 ---
 
 # Authentication

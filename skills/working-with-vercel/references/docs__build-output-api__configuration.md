@@ -3,7 +3,7 @@ title: Build Output Configuration
 product: vercel
 url: /docs/build-output-api/configuration
 canonical_url: "https://vercel.com/docs/build-output-api/configuration"
-last_updated: 2026-06-09
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/build-output-api
@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f0c4df7f9fca8a0d14e736b5138d7ba45836ecb1d6f58f620cae21d4969e9c20"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ebd4b5a60abc7ff6e346d6e4e5f23ea7c8b615730fe21d1dd640e45b75c8e610"
 ---
 
 # Build Output Configuration

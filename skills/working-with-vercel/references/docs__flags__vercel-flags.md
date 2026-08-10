@@ -3,7 +3,7 @@ title: Vercel Flags
 product: vercel
 url: /docs/flags/vercel-flags
 canonical_url: "https://vercel.com/docs/flags/vercel-flags"
-last_updated: 2026-06-08
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/flags
@@ -16,8 +16,8 @@ related:
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b7245531b640141249f907d3a7d785eb78cf52a22114215bc688e8404a087a21"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "114e6d113fe765469d01ce715ca0fa7b7e11c1fd6030fbee7a28cfd20e3b56d5"
 ---
 
 # Vercel Flags

@@ -3,7 +3,7 @@ title: Edge Runtime
 product: vercel
 url: /docs/functions/runtimes/edge
 canonical_url: "https://vercel.com/docs/functions/runtimes/edge"
-last_updated: 2026-06-10
+last_updated: 2026-08-03
 type: reference
 prerequisites:
   - /docs/functions/runtimes
@@ -17,8 +17,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "433504a5064bdcda51363500c3bb4a5109444da5db197f2a2d0df7c8ef96574d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "52fb107c89c3e16d17c4f8cc568c1f00e3cde710f2cd5cacd34a41c3223a8a7e"
 ---
 
 # Edge Runtime
@@ -27,54 +27,10 @@ sha256: "433504a5064bdcda51363500c3bb4a5109444da5db197f2a2d0df7c8ef96574d"
 > reliability. Both runtimes run on [Fluid compute](/docs/fluid-compute) with
 > [Active CPU pricing](/docs/functions/usage-and-pricing).
 
+> **💡 Note:** Starting in Next.js 16.3, setting `runtime = 'edge'` is no longer supported.
+> Routes and pages run on Node.js.
+
 To convert your Vercel Function to use the Edge runtime, add the following code to your function:
-
-```ts {1} filename="app/api/my-function/route.ts" framework=nextjs-app
-export const runtime = 'edge'; // 'nodejs' is the default
-
-export function GET(request: Request) {
-  return new Response(`I am an Vercel Function!`, {
-    status: 200,
-  });
-}
-```
-
-```js {1} filename="app/api/my-function/route.js" framework=nextjs-app
-export const runtime = 'edge'; // 'nodejs' is the default
-
-export function GET(request) {
-  return new Response(`I am an Vercel Function!`, {
-    status: 200,
-  });
-}
-```
-
-```ts {4-6} filename="pages/api/handler.ts" framework=nextjs
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export const config = {
-  runtime: 'edge', // 'nodejs' is the default
-};
-
-export default function handler(request: NextRequest) {
-  return NextResponse.json({
-    name: `I am an Vercel Function!`,
-  });
-}
-```
-
-```js {1-3} filename="pages/api/handler.js" framework=nextjs
-export const config = {
-  runtime: 'edge', // 'nodejs' is the default
-};
-
-export default function handler(request) {
-  return NextResponse.json({
-    name: `I am an Vercel Function!`,
-  });
-}
-```
 
 ```ts {3-5} filename="api/runtime-example.ts" framework=other
 import type { VercelRequest, VercelResponse } from '@vercel/node';
@@ -116,73 +72,6 @@ By default, Vercel Functions using the Edge runtime execute in the region closes
 If your function depends on a data source, you may want it to be close to that source for fast responses.
 
 To configure which region (or multiple regions) you want your function to execute in, pass the [ID of your preferred region(s)](/docs/regions#region-list) in the following way:
-
-```ts {5-7} filename="pages/api/regional-example.ts" framework=nextjs
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export const config = {
-  runtime: 'edge', // this must be set to `edge`
-  // execute this function on iad1 or hnd1, based on the connecting client location
-  regions: ['iad1', 'hnd1'],
-};
-
-export default function handler(request: NextRequest) {
-  return NextResponse.json({
-    name: `I am an Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
-  });
-}
-```
-
-```js {2-4} filename="pages/api/regional-example.js" framework=nextjs
-export const config = {
-  runtime: 'edge', // this must be set to `edge`
-  // execute this function on iad1 or hnd1, based on the connecting client location
-  regions: ['iad1', 'hnd1'],
-};
-
-export default function handler(request) {
-  return NextResponse.json({
-    name: `I am an Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
-  });
-}
-```
-
-> For \['nextjs-app']:
-
-The `preferredRegion` option can be used to specify a single region using a string value, or multiple regions using a string array. See the  for more information.
-
-```ts {1-3} filename="app/api/regional-example/route.ts" framework=nextjs-app
-export const runtime = 'edge'; // 'nodejs' is the default
-// execute this function on iad1 or hnd1, based on the connecting client location
-export const preferredRegion = ['iad1', 'hnd1'];
-export const dynamic = 'force-dynamic'; // no caching
-
-export function GET(request: Request) {
-  return new Response(
-    `I am an Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
-    {
-      status: 200,
-    },
-  );
-}
-```
-
-```js {1-3} filename="app/api/regional-example/route.js" framework=nextjs-app
-export const runtime = 'edge'; // 'nodejs' is the default
-// execute this function on iad1 or hnd1, based on the connecting client location
-export const preferredRegion = ['iad1', 'hnd1'];
-export const dynamic = 'force-dynamic'; // no caching
-
-export function GET(request) {
-  return new Response(
-    `I am an Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
-    {
-      status: 200,
-    },
-  );
-}
-```
 
 ```ts {2-4} filename="api/regional-example.ts" framework=other
 export const config = {

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "5a6c04199a4dc5674288f7766920ddba3e03029f2bf060ecc0cbaff12d064f33"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "096f1a78ed75bc90e5d7e3fb3a2a077b81a4edcdc8b2304685dc22aca1e3a530"
 ---
 
 # Foundations
@@ -204,6 +204,7 @@ sha256: "5a6c04199a4dc5674288f7766920ddba3e03029f2bf060ecc0cbaff12d064f33"
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

@@ -3,7 +3,7 @@ title: vercel blob
 product: vercel
 url: /docs/cli/blob
 canonical_url: "https://vercel.com/docs/cli/blob"
-last_updated: 2026-07-14
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -15,8 +15,8 @@ related:
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "558439cafc3e1882945ace9ca9f15651ad94fd87fdc117a00400a0bc6e89e564"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "eab41d6839c296f7786695ca4370fa582c54950e34bbefdf1d3aea27f7b53689"
 ---
 
 # vercel blob

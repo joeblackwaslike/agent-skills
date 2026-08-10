@@ -3,7 +3,7 @@ title: vercel dev
 product: vercel
 url: /docs/cli/dev
 canonical_url: "https://vercel.com/docs/cli/dev"
-last_updated: 2026-03-17
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the vercel dev CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dev.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "72b41098834a765b6ca691eb8a268ef928d13078b68cb0720cc6d9b53b10568c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "110b4f49f294f4c1278d589af5a30c303de7baf446dd23f89e64d1db660d629a"
 ---
 
 # vercel dev

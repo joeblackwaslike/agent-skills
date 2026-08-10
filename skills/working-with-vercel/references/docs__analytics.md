@@ -3,7 +3,7 @@ title: Vercel Web Analytics
 product: vercel
 url: /docs/analytics
 canonical_url: "https://vercel.com/docs/analytics"
-last_updated: 2026-06-16
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top referrers, and demographics."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "96db54d2bfa5e560c4ab237224855d9dc08cbca3758c8955cc7ad3f323f3ffd5"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "43643b089bab55b6d8bb36595e2c3673a97df05b5ca0b68db9b7866d476a1e5b"
 ---
 
 # Vercel Web Analytics

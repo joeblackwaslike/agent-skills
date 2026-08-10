@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "8081cb28e65d3465135b5f09482e3f9bfd326f678eaef7ec3864286f973d500e"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "e2d5c6087fb2524a2282fa1ce6bd3fd57103b3677fd43d73d54f82970c057528"
 ---
 
 # Speech
@@ -174,6 +174,9 @@ try {
 | [Cartesia](/providers/ai-sdk-providers/cartesia#speech-models)           | `sonic-3`                           |
 | [Cartesia](/providers/ai-sdk-providers/cartesia#speech-models)           | `sonic-2`                           |
 | [Cartesia](/providers/ai-sdk-providers/cartesia#speech-models)           | `sonic-turbo`                       |
+| [Fish Audio](/providers/ai-sdk-providers/fish-audio#speech-models)       | `s1`                                |
+| [Fish Audio](/providers/ai-sdk-providers/fish-audio#speech-models)       | `s2-pro`                            |
+| [Fish Audio](/providers/ai-sdk-providers/fish-audio#speech-models)       | `s2.1-pro`                          |
 
 Above are a small subset of the speech models supported by the AI SDK providers. For more, see the respective provider documentation.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/default-generated-file.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "4d30d4cedb2548c208b2ab48e632d4498594db68ae1dd3afd01b0518acb233f9"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "99210db0c411930ad4100726ac96e3620aa7adcf7dc3f3c624ab95b4e036969d"
 ---
 
 # `DefaultGeneratedFile`
@@ -113,6 +113,7 @@ console.log(file.uint8Array); // Original Uint8Array
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

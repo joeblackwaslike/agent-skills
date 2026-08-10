@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "b2751cdb18772641fa0c272bb22ecb4e92c91d53719f7b20bf9b94a0c61c461d"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "936e84c281647c9bcfb48a10aa1c818c34ab8c6cdbfda3ec4d0c7321e79a4511"
 ---
 
 # Perplexity Provider
@@ -307,6 +307,7 @@ The following optional provider options are available for embedding models:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/crosshatch.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "2110f57679de669d19f1e82c0ae04396ce7d343fb77034a9b367719d7c272f33"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "a0e76c2a45f72096a8c46e5b7e0ffcf8798adae5b7450e33e39f695293198e25"
 ---
 
 # Crosshatch Provider
@@ -179,6 +179,7 @@ const { elementStream } = streamText({
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

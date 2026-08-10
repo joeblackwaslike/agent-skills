@@ -3,7 +3,7 @@ title: Deploying & Redirecting Domains
 product: vercel
 url: /docs/domains/working-with-domains/deploying-and-redirecting
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting"
-last_updated: 2026-02-26
+last_updated: 2026-07-23
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -17,8 +17,8 @@ related:
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "957c183606e6fa3092f0c439b502e2d0e9aaac03b8886937c6a902aeda5eba23"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f1b19294546175e8f934fcf93c9881052231926852d065eaa62d34d88fa2231f"
 ---
 
 # Deploying & Redirecting Domains

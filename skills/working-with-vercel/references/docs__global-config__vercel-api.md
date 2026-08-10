@@ -3,7 +3,7 @@ title: Managing Global Configs with Vercel REST API
 product: vercel
 url: /docs/global-config/vercel-api
 canonical_url: "https://vercel.com/docs/global-config/vercel-api"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "e6e2438e5d587034a7f4ad92ba6fe61222be7039c80af5e6c5297df33b035e77"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "901303f3317eaa93e51c5af47b5a8938bc4ce0b404f551ea2430f9a5c2e79b6a"
 ---
 
 # Managing Global Configs with Vercel REST API

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/user-input.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "1b8c7034a30966bc25994f2cf77ea2ab5d88c293b85186c9ebbd5354aefee82f"
+fetched_at: "2026-08-10T05:26:58.686Z"
+sha256: "1c80363bbcd881deeb8aec24262aa281015bf02e1f3ca9ec02d878f55ce1b777"
 ---
 
 > ## Documentation Index
@@ -219,7 +219,7 @@ Your callback returns one of two response types:
 | **Allow** | `PermissionResultAllow(updated_input=...)` | `{ behavior: "allow", updatedInput }` |
 | **Deny**  | `PermissionResultDeny(message=...)`        | `{ behavior: "deny", message }`       |
 
-When allowing, the tool runs with the input Claude requested unless you return a modified input, `updatedInput` in TypeScript or `updated_input` in Python. {/* min-version: 2.1.207 */}Before v2.1.207, Claude Code rejected an allow result that omitted `updatedInput` and denied the tool call with a validation error.
+When allowing, the tool runs with the input Claude requested unless you return a modified input, `updatedInput` in TypeScript or `updated_input` in Python. Before v2.1.207, Claude Code rejected an allow result that omitted `updatedInput` and denied the tool call with a validation error.
 
 When denying, provide a message explaining why. Claude sees this message and may adjust its approach.
 

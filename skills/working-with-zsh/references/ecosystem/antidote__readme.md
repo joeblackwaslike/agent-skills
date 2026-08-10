@@ -1,13 +1,13 @@
 ---
 source: "https://raw.githubusercontent.com/mattmc3/antidote/main/README.md"
-fetched_at: "2026-08-03T07:40:19.098Z"
-sha256: "4e5db5dd6238656d3215d9447455ec78291421d3d5c2e942b183148b3e854df3"
+fetched_at: "2026-08-10T05:38:36.623Z"
+sha256: "883d916a441bbdb49ab4c8f14ed38108897af08888ce61e87e0d308bfc2ca379"
 ---
 
 # antidote
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg)](/LICENSE)
-![version](https://img.shields.io/badge/version-v2.2.1-df5e88)
+![version](https://img.shields.io/badge/version-v2.3.0-df5e88)
 
 <a title="GetAntidote"
    href="https://antidote.sh"

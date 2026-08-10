@@ -3,7 +3,7 @@ title: Multi-tenant Preview URLs
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/preview-url-prefixes
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes"
-last_updated: 2026-06-26
+last_updated: 2026-07-28
 type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
@@ -13,8 +13,8 @@ related:
 summary: Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "04bf2964c4a9f5488d0b4904ddc63a7bfbf3c7eb63386b548091f3c02f5060f3"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5db1da2219b47e30144b3ffdce7192f7be03ed803263269260dba269a964a1e5"
 ---
 
 # Multi-tenant Preview URLs

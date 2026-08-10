@@ -3,7 +3,7 @@ title: Directory Sync
 product: vercel
 url: /docs/directory-sync
 canonical_url: "https://vercel.com/docs/directory-sync"
-last_updated: 2026-06-16
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "21ee75fc43b68ce76e4bf9bd03fd00de60280d1d418b0061085375d3e9da4d24"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "19d77fd6f9a8d60593d5321359e9360846dfb308b5735788704153b5f74c4103"
 ---
 
 # Directory Sync

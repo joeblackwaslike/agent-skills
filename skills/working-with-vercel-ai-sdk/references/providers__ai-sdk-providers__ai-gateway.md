@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "2a8da838bcb032a8de0ec4fa986f32d5af69ba73bf1f1e05f993e5ab17d01017"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "d8b2d57d3fb09c2efd31edb41a732946c0432d0796441afe6896e1ed7ab9ac33"
 ---
 
 # AI Gateway Provider
@@ -443,6 +443,29 @@ if (generationId) {
   console.log(`Cost: $${generation.totalCost.toFixed(6)}`);
   console.log(`Finish reason: ${generation.finishReason}`);
 }
+```
+
+You can also capture the generation ID for every completed model call with
+`onLanguageModelCallEnd`. The callback runs before client-side tools execute,
+so the metadata remains available even if the operation is later aborted while
+a tool is running:
+
+```ts
+import { gateway, generateText } from 'ai';
+
+await generateText({
+  model: gateway('anthropic/claude-sonnet-4'),
+  prompt: 'Explain quantum entanglement briefly',
+  onLanguageModelCallEnd({ providerMetadata }) {
+    const generationId = providerMetadata?.gateway?.generationId as
+      | string
+      | undefined;
+
+    if (generationId) {
+      console.log(`Completed Gateway generation: ${generationId}`);
+    }
+  },
+});
 ```
 
 The `getGenerationInfo()` method accepts:
@@ -1042,11 +1065,15 @@ The following gateway provider options are available:
 
   The unique identifier for the entity against which quota is tracked. Used for quota management and enforcement purposes.
 
-- **has** _Array&lt;'implicit-caching'&gt;_
+- **has** _Array&lt;'implicit-caching' | 'vision'&gt;_
 
-  Restricts routing to provider models that have all of the specified capabilities. Currently supports `'implicit-caching'`, which limits routing to models that perform automatic (implicit) prompt caching. Applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. If no provider model for the requested model satisfies the capabilities, the request fails. Unsupported values are rejected.
+  Restricts routing to provider models that have all of the specified capabilities. Applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. If no provider model for the requested model satisfies the capabilities, the request fails. Unsupported values are rejected.
 
-  Example: `has: ['implicit-caching']` will only route to models that support implicit caching.
+  Supported capabilities:
+  - `'implicit-caching'` — models that perform automatic (implicit) prompt caching.
+  - `'vision'` — models that accept image input.
+
+  Example: `has: ['implicit-caching']` will only route to models that support implicit caching. Example: `has: ['vision']` will only route to models that accept image input.
 
 - **providerTimeouts** _object_
 
@@ -1184,7 +1211,7 @@ const { text } = await generateText({
 
 #### Filtering by Model Capability
 
-Set `has` to restrict routing to provider models that have the specified capabilities. This applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. Currently `'implicit-caching'` is supported, which limits routing to models that perform automatic prompt caching. If no provider model for the requested model satisfies the capabilities, the request fails.
+Set `has` to restrict routing to provider models that have the specified capabilities. This applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. `'implicit-caching'` limits routing to models that perform automatic prompt caching, and `'vision'` limits routing to models that accept image input. If no provider model for the requested model satisfies the capabilities, the request fails.
 
 ```ts
 import type { GatewayProviderOptions } from '@ai-sdk/gateway';
@@ -1196,6 +1223,37 @@ const { text } = await generateText({
   providerOptions: {
     gateway: {
       has: ['implicit-caching'],
+    } satisfies GatewayProviderOptions,
+  },
+});
+```
+
+Use `'vision'` when the request sends image input, so the gateway only routes to
+provider models that can accept it:
+
+```ts
+import type { GatewayProviderOptions } from '@ai-sdk/gateway';
+import { generateText } from 'ai';
+import fs from 'node:fs';
+
+const { text } = await generateText({
+  model: 'anthropic/claude-sonnet-4.6',
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'Describe the image in detail.' },
+        {
+          type: 'file',
+          mediaType: 'image/png',
+          data: fs.readFileSync('./data/comic-cat.png'),
+        },
+      ],
+    },
+  ],
+  providerOptions: {
+    gateway: {
+      has: ['vision'],
     } satisfies GatewayProviderOptions,
   },
 });
@@ -1266,6 +1324,7 @@ Model capabilities depend on the specific provider and model you're using. For d
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

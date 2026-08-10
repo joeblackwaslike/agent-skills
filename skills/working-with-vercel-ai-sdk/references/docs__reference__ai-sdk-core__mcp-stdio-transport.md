@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "c56d4ad6d800777604916d0009d0de113e616a279b5e0765a58add99c1e58a34"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "dd0078e69b3d54773de51cadb1fc3caca2ae7977146cf67607f7aad2c420f2c2"
 ---
 
 # `Experimental_StdioMCPTransport`
@@ -113,6 +113,7 @@ This feature is experimental and may change or be removed in the future.
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

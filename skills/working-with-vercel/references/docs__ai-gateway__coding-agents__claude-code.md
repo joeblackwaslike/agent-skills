@@ -3,7 +3,7 @@ title: Claude Code and Claude Agent SDK
 product: vercel
 url: /docs/ai-gateway/coding-agents/claude-code
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -14,8 +14,8 @@ related:
 summary: Use Claude Code and the Claude Agent SDK with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "bc0dca1544b16daf381ec9197e35e819de4814bf81a729dc5cc5cf1f5f49af14"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "0bdfdaf1b3a9c281c685631e136f33b0e4f535383cb7aa65f7dc7cadfa37f304"
 ---
 
 # Claude Code and Claude Agent SDK

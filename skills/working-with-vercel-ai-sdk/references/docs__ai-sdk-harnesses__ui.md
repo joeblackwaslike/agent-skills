@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/ui.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "4c8a878a53abf5828315aa4195d062f39e93bda330ffd0dd75e5114d7bcb76b1"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "a7483f6618cd1d68abb53aa815f940d46f77dc8660f3c20b539b43ddfb049e75"
 ---
 
 # Harnesses with AI SDK UI
@@ -25,7 +25,7 @@ import { useState } from 'react';
 
 export default function Page() {
   const [input, setInput] = useState('');
-  const { messages, sendMessage, status } = useChat({
+  const { error, messages, sendMessage, status } = useChat({
     id: 'example-chat',
     transport: new DefaultChatTransport({
       api: '/api/chat',
@@ -50,6 +50,8 @@ export default function Page() {
           })}
         </div>
       ))}
+
+      {error && <div>{error.message}</div>}
 
       <form
         onSubmit={event => {
@@ -151,8 +153,10 @@ result stream back to a UI message stream:
 ```ts filename='app/api/chat/route.ts'
 import { agent } from './agent';
 import { detachAndPersist, resumeOrCreateSession } from './session-store';
+import { getHarnessErrorMessage } from '@ai-sdk/harness/agent';
 import {
   convertToModelMessages,
+  createUIMessageStream,
   createUIMessageStreamResponse,
   toUIMessageStream,
   type UIMessage,
@@ -170,19 +174,33 @@ export async function POST(request: Request) {
 
   const chatId = body.id;
   const messages = await convertToModelMessages(body.messages);
-  const session = await resumeOrCreateSession({ agent, chatId });
-  const result = await agent.stream({ session, messages });
 
   return createUIMessageStreamResponse({
-    stream: toUIMessageStream({
-      stream: result.stream,
-      onEnd: async () => {
-        await detachAndPersist({ chatId, session });
+    stream: createUIMessageStream({
+      execute: async ({ writer }) => {
+        const session = await resumeOrCreateSession({ agent, chatId });
+        const result = await agent.stream({ session, messages });
+
+        writer.merge(
+          toUIMessageStream({
+            stream: result.stream,
+            onError: getHarnessErrorMessage,
+            onEnd: async () => {
+              await detachAndPersist({ chatId, session });
+            },
+          }),
+        );
       },
+      onError: getHarnessErrorMessage,
     }),
   });
 }
 ```
+
+Creating the UI message stream before acquiring the session ensures sandbox,
+bootstrap, and harness startup failures are sent as UI error parts instead of
+becoming generic HTTP errors. `getHarnessErrorMessage` preserves reviewed,
+client-safe harness messages and masks unknown server errors.
 
 Do not use `createAgentUIStreamResponse` directly with `HarnessAgent` unless you
 wrap the agent to inject the required session. `HarnessAgent.stream()` requires

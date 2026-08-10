@@ -3,7 +3,7 @@ title: Webhooks API Reference
 product: vercel
 url: /docs/webhooks/webhooks-api
 canonical_url: "https://vercel.com/docs/webhooks/webhooks-api"
-last_updated: 2026-03-18
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/webhooks
@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4c10dfd08fc9c106f84569a3002e5f821257a28104c323e6495bf093fad8fd57"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f03904dbbf7e4e8d7c2e57e9bfc9e049c86224a7275bbabe782b8c95343c406b"
 ---
 
 # Webhooks API Reference

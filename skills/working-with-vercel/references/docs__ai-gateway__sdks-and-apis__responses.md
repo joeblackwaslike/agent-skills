@@ -3,7 +3,7 @@ title: OpenAI Responses API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/responses
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: reference
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a46875536a6be3c0c1f06785294d6f91bfc6c51c1f703be2d4c9005141d063f9"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "4823d7013d264629d028f4a43235407ea01be1f87c8eea87f753bf0bc102c02e"
 ---
 
 # OpenAI Responses API

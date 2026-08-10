@@ -3,7 +3,7 @@ title: Marketplace
 product: vercel
 url: /docs/flags/marketplace
 canonical_url: "https://vercel.com/docs/flags/marketplace"
-last_updated: 2026-03-12
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   - /docs/flags
@@ -16,8 +16,8 @@ related:
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "5222b62ecb9d74f706adb75afd28eabbc2502af41a887fe69990ed3826a75ed6"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "27469fd5ee855df4d25e74ae26c2c370abeab1a0c9c3614d892bdee707e1276f"
 ---
 
 # Marketplace
@@ -37,6 +37,7 @@ Native integrations are purchased through the Marketplace, let you sign in with 
 - [Statsig](/marketplace/statsig)
 - [PostHog](/marketplace/posthog)
 - [GrowthBook](/marketplace/growthbook)
+- [LaunchDarkly](/marketplace/launchdarkly)
 
 [Browse all experimentation integrations](/marketplace?category=experimentation)
 

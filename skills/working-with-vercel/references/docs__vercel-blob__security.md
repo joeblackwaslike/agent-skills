@@ -3,7 +3,7 @@ title: Security
 product: vercel
 url: /docs/vercel-blob/security
 canonical_url: "https://vercel.com/docs/vercel-blob/security"
-last_updated: 2026-06-24
+last_updated: 2026-08-03
 type: conceptual
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "626b5e3c8a2c5a6ed700c94103e787c5520b89b2774ee913a5aea2bd3d0ad7a6"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ec97b26e4cbe577dfa3d8e2e05a850a514d4058979c21c8ccb51776053ca260c"
 ---
 
 # Security
@@ -48,7 +48,7 @@ Headers that enhance security by preventing unauthorized downloads, blocking ext
 
 All files stored on Vercel Blob are secured using AES-256 encryption. This encryption process is applied at rest and is transparent, ensuring that files are encrypted before being saved to the disk and decrypted upon retrieval.
 
-### Firewall and WAF integration&#x20;
+### Firewall and WAF integration
 
 Vercel Blob is protected by Vercel's [platform-wide firewall](/docs/vercel-firewall#platform-wide-firewall) which provides DDoS mitigation and blocks abnormal or suspicious levels of incoming requests.
 

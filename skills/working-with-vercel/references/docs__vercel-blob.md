@@ -3,7 +3,7 @@ title: Vercel Blob
 product: vercel
 url: /docs/vercel-blob
 canonical_url: "https://vercel.com/docs/vercel-blob"
-last_updated: 2026-07-13
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files of any size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "4c09963d20345125df2c2ff2f742151ad246cf35a58ed0f3dd315d46a0e2a705"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "25f71d6140b8f37a07f443969bc087a4c62c4b294208db53fd9ace9126ca1e90"
 ---
 
 # Vercel Blob

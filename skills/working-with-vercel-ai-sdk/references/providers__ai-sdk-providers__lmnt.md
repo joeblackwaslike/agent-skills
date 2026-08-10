@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/lmnt.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d59fff3257e49dc4b8510c2020b54478b4876a602bc0331f66bcf252845a54d0"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "aa72874e6ce98aec1fbd0fc77981810fdb981af46d28f27624cb4c293d5dec14"
 ---
 
 # LMNT Provider
@@ -167,6 +167,7 @@ The LMNT provider accepts the following options via `providerOptions.lmnt`:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

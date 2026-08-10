@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed-many.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "49a5e9fd20ffb4317511bfa3b382f1da0f9b02cecb5f6d3e3c3634a80615dcc2"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "1a6e08cb5017d212f00bdaef7136e6a33c3b78b34298fec9df661f1ea9d8bffb"
 ---
 
 # `embedMany()`
@@ -347,6 +347,7 @@ const { embeddings } = await embedMany({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

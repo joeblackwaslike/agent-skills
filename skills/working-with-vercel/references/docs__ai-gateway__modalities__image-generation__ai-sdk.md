@@ -3,7 +3,7 @@ title: Image Generation with AI SDK
 product: vercel
 url: /docs/ai-gateway/modalities/image-generation/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk"
-last_updated: 2026-06-20
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/image-generation
@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "c66438b249ddd9bd8854baadcabfeacb37e4ca9bd77cda117b85065b1a7f45c3"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b28fa5dd9dd22d9168cd8498543d172cc9238b5ae0bc7f12fd2b2676cae40128"
 ---
 
 # Image Generation with AI SDK

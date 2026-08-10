@@ -3,7 +3,7 @@ title: Reasoning
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -16,8 +16,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "c1e22ec2f6140b2cf11844eded6ad7d40adc797ff4419b5a494fc35bbed7e8d7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "178fe94207257561835a25bfbae9f89c91df6e4427e8bfea46afbbf8acf94c13"
 ---
 
 # Reasoning

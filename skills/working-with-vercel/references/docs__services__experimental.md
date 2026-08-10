@@ -3,7 +3,7 @@ title: Experimental Services
 product: vercel
 url: /docs/services/experimental
 canonical_url: "https://vercel.com/docs/services/experimental"
-last_updated: 2026-06-30
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/services
@@ -13,8 +13,8 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ce43c105d1de20cd566a2524b364b43ca84766cd286a870f56d18cb9f4c7771a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a565cc0d39ef8f73f79128dae76c86c15c8117283a2f1cdc9077c0c86ed240c8"
 ---
 
 # Experimental Services

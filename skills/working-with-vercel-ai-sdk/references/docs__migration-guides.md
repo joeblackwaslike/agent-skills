@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/migration-guides.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "909882fd6de768e3d1ca7e311ef9dfde198588fd95e6939a92ae82675bed2652"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "999a0d62dea0f8ba887a070556937848f08cc6bcbb95a5acf1a9899207b584ee"
 ---
 
 # Migration Guides
@@ -177,6 +177,7 @@ sha256: "909882fd6de768e3d1ca7e311ef9dfde198588fd95e6939a92ae82675bed2652"
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

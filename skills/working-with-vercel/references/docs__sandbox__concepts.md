@@ -8,16 +8,16 @@ type: conceptual
 prerequisites:
   - /docs/sandbox
 related:
-  - /docs/container-registry
   - /docs/sandbox/concepts/images
+  - /docs/container-registry
   - /docs/sandbox/cli-reference
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/python-sdk-reference
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "99d3e842146afde7152e11813eacfb965d453455d1bedbb4b44fccb30c4e4868"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "27b9123c3ce6e36c7567206b3e159834943a83be23a84326a9737f8a99f28e6c"
 ---
 
 # Understanding Sandboxes
@@ -28,8 +28,8 @@ Vercel Sandboxes provide on-demand, isolated compute environments for running un
 
 A sandbox is an isolated Linux environment that you create programmatically with the SDK or CLI. Think of it as a secure virtual machine that:
 
-- Boots from a built-in runtime image, a custom [VCR image](/docs/container-registry), or a saved snapshot
-- Uses Amazon Linux 2023 for built-in runtime images
+- Boots from a [Vercel Managed Image](/docs/sandbox/concepts/images#vercel-managed-images), a custom [VCR image](/docs/sandbox/concepts/images#custom-images), or a saved snapshot
+- Uses Ubuntu, Arch Linux, or any other Linux distribution you need
 - Has network access for installing packages and making API calls
 - Automatically stops after a configurable timeout
 - Provides full root access to install any package or binary
@@ -51,11 +51,11 @@ Unlike Docker containers, each sandbox runs in its own [Firecracker](https://fir
 | **Startup time** | Sub-second                                                | Milliseconds (Firecracker optimized for fast boot)             |
 | **Use case**     | Packaging and deploying applications                      | Running arbitrary, untrusted code safely                       |
 
-If you already use Docker images to define your environment, store the image in [Vercel Container Registry (VCR)](/docs/container-registry) and create the sandbox with a custom image. See [Images](/docs/sandbox/concepts/images). You can also install packages with [`dnf` and your language's package manager](/kb/guide/how-to-install-system-packages-in-vercel-sandbox), or take a snapshot after setup when a Docker image is not needed.
+If you already use Docker images to define your environment, store the image in [Vercel Container Registry (VCR)](/docs/container-registry) and create the sandbox with a custom image. See [Images](/docs/sandbox/concepts/images#custom-images). You can also install packages with [your system's package manager](/kb/guide/how-to-install-system-packages-in-vercel-sandbox), or take a snapshot after setup when a Docker image is not needed.
 
 ## How sandboxes work
 
-When you call `Sandbox.create()`, Vercel provisions a Firecracker microVM on its infrastructure. This microVM boots a built-in Amazon Linux 2023 runtime image, a custom image from VCR, or a saved snapshot.
+When you call `Sandbox.create()`, Vercel provisions a Firecracker microVM on its infrastructure. This microVM boots an Ubuntu 26.04 image, a custom image from VCR, or a saved snapshot.
 
 The sandbox runs on Vercel's global infrastructure, so you don't need to manage servers, scale capacity, or worry about availability. Sandboxes automatically provision in `iad1` region.
 
@@ -122,7 +122,23 @@ Vercel Sandboxes are designed for running untrusted code safely.
 
 ### Isolation architecture
 
-Sandboxes use [Firecracker](https://firecracker-microvm.github.io/) microVMs to provide strict isolation. Each sandbox runs in its own lightweight virtual machine with a dedicated kernel, ensuring that code in one sandbox cannot access or interfere with others or the underlying host system.
+Each sandbox runs in its own [Firecracker](https://firecracker-microvm.github.io/) microVM with a dedicated kernel, so you can run processes that require system-level privileges without affecting other sandboxes or the host. These workloads run with `sudo` and are isolated to your sandbox by the microVM boundary.
+
+Supported workloads include:
+
+- **Container runtimes**: Run Docker and other container engines inside the sandbox to build images or run containerized workloads.
+- **VPN clients**: Connect to a VPN provider to reach private networks during a session.
+- **FUSE filesystems**: Mount Filesystem in Userspace (FUSE) drivers to attach object storage, network filesystems, or other custom mounts.
+
+These processes require elevated privileges, so run them with `sudo`. For example, to run a command with elevated privileges through the CLI:
+
+```bash filename="terminal"
+sandbox exec --sudo <name> -- <command>
+```
+
+Outbound network access from these workloads still follows the [sandbox firewall](/docs/sandbox/concepts/firewall) network policy. Restrict reachable destinations with a network policy when you run untrusted code.
+
+If you run containers inside the sandbox, the proxy CA certificate is not available inside the container by default. Install it in the container's trust store so HTTPS traffic that the firewall terminates passes TLS verification. See [Proxy CA certificates](#proxy-ca-certificates).
 
 ### Resource limits
 
@@ -141,6 +157,47 @@ These limits prevent resource exhaustion and ensure fair usage across all sandbo
 Sandboxes can make outbound HTTP requests by default, so you can install packages from public registries like npm or PyPI. Exposed ports are accessible via a public URL, so be mindful of what services you run.
 
 Internet access from the sandbox can be restricted through network policies defined by the users, as part of the [sandbox firewall](/docs/sandbox/concepts/firewall).
+
+#### Proxy CA certificates
+
+Vercel Sandbox mounts a unique, per-sandbox certificate authority (CA) certificate for the sandbox proxy in these locations:
+
+- `/etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem`
+- `/usr/local/share/ca-certificates/vercel-proxy-ca.pem`
+
+Vercel Sandbox adds the proxy CA certificate to the system trust bundle automatically. Applications that use the system trust store do not need extra configuration.
+
+The following environment variables are also set so common tools and runtimes use the system CA bundle at `/etc/ssl/certs/ca-certificates.crt`:
+
+```text
+AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt
+CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt
+GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=/etc/ssl/certs/ca-certificates.crt
+NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
+NODE_USE_SYSTEM_CA=1
+NPM_CONFIG_CAFILE=/etc/ssl/certs/ca-certificates.crt
+PIP_CERT=/etc/ssl/certs/ca-certificates.crt
+REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+```
+
+If your application does not use the system trust store and these environment variables, configure it to trust one of the mounted `vercel-proxy-ca.pem` files. This is required for HTTPS traffic that the [sandbox firewall](/docs/sandbox/concepts/firewall) terminates for transformation rules.
+
+**Containers do not inherit the proxy CA.** The proxy CA certificate and the CA environment variables are installed on the sandbox host. A container that you run inside the sandbox has its own isolated filesystem and trust store, so it does not inherit either of them. Without the certificate, HTTPS requests from inside the container fail TLS verification when the [sandbox firewall](/docs/sandbox/concepts/firewall) terminates them for transformation rules.
+
+To make a container trust the proxy, mount the certificate into the container and add it to the container's own trust store. For example, with Docker:
+
+```bash filename="terminal"
+# Mount the host certificate into the container and trust it at build or run time.
+docker run --rm \
+  -v /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem:/usr/local/share/ca-certificates/vercel-proxy-ca.crt:ro \
+  my-image \
+  sh -c "update-ca-certificates && my-command"
+```
+
+The exact path and command depend on the container's base image. Place the certificate where that image's trust store expects it, then run the image's trust-update command (for example, `update-ca-certificates` on Debian or Ubuntu, or `update-ca-trust` on Amazon Linux, Fedora, or RHEL). For applications that read a CA bundle from an environment variable instead of the system trust store, set the relevant variable (such as `NODE_EXTRA_CA_CERTS`) to the mounted certificate path inside the container.
 
 ### Data privacy
 

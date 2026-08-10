@@ -3,7 +3,7 @@ title: Service bindings
 product: vercel
 url: /docs/services/bindings
 canonical_url: "https://vercel.com/docs/services/bindings"
-last_updated: 2026-07-02
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/services
@@ -14,8 +14,8 @@ related:
 summary: Call one service from another using caller-declared service bindings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/bindings.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "20ec2845895abda490e47e553d216b386b4e97cf78a4bca0f4bf9caaf2393178"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "395f75c8790385e1314d7f091c059caf625688ae4bb9cff7cb422e2c7601a7fc"
 ---
 
 # Service bindings

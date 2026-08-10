@@ -3,7 +3,7 @@ title: Deploying GitHub Projects with Vercel
 product: vercel
 url: /docs/git/vercel-for-github
 canonical_url: "https://vercel.com/docs/git/vercel-for-github"
-last_updated: 2026-05-28
+last_updated: 2026-07-24
 type: conceptual
 prerequisites:
   - /docs/git
@@ -16,8 +16,8 @@ related:
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "4eef01bd33f234af349d298469c63d6fb987dbf2069790efb26c0eb12d3ca3ac"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f18f147c5c506897b55acf781ee90487dfcdfe26bb549c43e24636f9bf9d701f"
 ---
 
 # Deploying GitHub Projects with Vercel

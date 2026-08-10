@@ -3,8 +3,8 @@ title: AI SDK for Python
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/ai-sdk-python
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-07-30
+type: integration
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway
@@ -13,11 +13,11 @@ related:
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/sdks-and-apis/ai-sdk
-summary: Learn about ai sdk for python on Vercel.
+summary: Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "55428f1dbf203027a7fbcf988cdcd187c35cda1c1cdfbd00ac7453254dacb593"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "089e025a3120108a77b6322c28926c7deee6562c46e1ac46a8af9f478d5c0f8e"
 ---
 
 # AI SDK for Python

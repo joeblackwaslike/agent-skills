@@ -3,7 +3,7 @@ title: OIDC
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok/oidc
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc"
-last_updated: 2026-05-30
+last_updated: 2026-07-28
 type: how-to
 prerequisites:
   - /docs/ai-gateway/authentication-and-byok
@@ -13,8 +13,8 @@ related:
 summary: Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "c4f3b9cc2af81d993aa93ae349b44c09f260829c78d36ec4bc9790088ebe0d22"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "07d24dab60b4f2a5786db99c78a8e37da27d92b03a6cd79e5083c3385293ca1f"
 ---
 
 # OIDC

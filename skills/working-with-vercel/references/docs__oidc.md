@@ -3,7 +3,7 @@ title: OpenID Connect (OIDC) Federation
 product: vercel
 url: /docs/oidc
 canonical_url: "https://vercel.com/docs/oidc"
-last_updated: 2026-06-16
+last_updated: 2026-08-04
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "767835352363dc5d02c513d7fd7420f88b8b80c450404fe7bc5d995548d42f31"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "bce85f1066b382eb6b9dbaaad4f987653e52399e53e68ee580fd2360301f587d"
 ---
 
 # OpenID Connect (OIDC) Federation
@@ -70,10 +70,10 @@ environment variable. You can then exchange the token for short-lived access tok
 
 ### In Vercel Functions
 
-When your application invokes a function, the OIDC token is set to the `x-vercel-oidc-token` header
-on the function's `Request` object.
+When your application invokes a Vercel Function, the OIDC token is set to the `x-vercel-oidc-token` header
+on the Function's `Request` object.
 
-Vercel does not generate a fresh OIDC token for each execution but caches the token for a maximum of 45 minutes. While the token has a Time to Live (TTL) of 60 minutes, Vercel provides the difference to ensure the token doesn't expire within the lifecycle of a function's maximum execution duration.
+Vercel does not generate a fresh OIDC token for each execution. It reuses a token for up to 90 minutes. Function tokens have a Time to Live (TTL) of two hours. The remaining 30 minutes ensures the token stays valid throughout a Function's maximum execution duration.
 
 ### In Local Development
 

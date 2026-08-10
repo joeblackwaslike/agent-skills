@@ -3,7 +3,7 @@ title: Conductor
 product: vercel
 url: /docs/ai-gateway/coding-agents/conductor
 canonical_url: "https://vercel.com/docs/ai-gateway/coding-agents/conductor"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: integration
 prerequisites:
   - /docs/ai-gateway/coding-agents
@@ -13,8 +13,8 @@ related:
 summary: Use Conductor with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/conductor.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "8fdf47e8c2fade9cd235a9ce466a760db04348d09844bcee25a61abf3c7c60e8"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "afd583ffa3951c9b09469c18c00d8a801b48902d850266b0713c417163fc475a"
 ---
 
 # Conductor

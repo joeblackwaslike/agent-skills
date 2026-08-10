@@ -16,8 +16,8 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "812a4152bfc6704d5fabf6df07d9461b20bb4d66bebf5413f5787845c807b3e4"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ea53d16f3f85f25032f5d7a26f3c65b9cfc55f4e7c92a1b83b1249e2b790460a"
 ---
 
 # Partial Prerendering (PPR)
@@ -182,6 +182,17 @@ After a revalidation, the next request will serve the last generated content and
 ### On failure
 
 If revalidation fails, Vercel keeps serving the existing shell from the global ISR cache and regional CDN caches, and retries shortly after. For the full failure behavior, see [how ISR works](/docs/incremental-static-regeneration#on-failure).
+
+## Observability
+
+You can observe how your PPR routes behave from the [**Observability**](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fobservability\&title=Try+Observability) tab in the Vercel dashboard.
+
+The PPR observability page displays
+
+- **Shell hit rate**: See the hit rates for the static shell portion of the page. A high shell hit rate means most visitors get an instant first paint.
+- **Dynamic invocations**: The number of requests that required executing a function to fill in the dynamic portions of the page.
+
+> **💡 Note:** PPR uses Incremental Static Regeneration (ISR) for the static shell portion of the page and Vercel Functions for the dynamic portion, so additional observability details are available from the ISR and Functions observability pages.
 
 ## Usage and pricing
 

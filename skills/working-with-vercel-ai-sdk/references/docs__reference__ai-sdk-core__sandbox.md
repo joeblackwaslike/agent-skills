@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/sandbox.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "5e533869b420419c6513e84b5784b3bbad1f15149c9a122726775fd9ca5376a1"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "43566762e1d7c835a2609ecd41a4ea7b67f62d67bfd72754d7e921e73f79f658"
 ---
 
 # `Experimental_SandboxSession`
@@ -182,6 +182,7 @@ const shell = tool({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

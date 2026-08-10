@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/README.md"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "5e37ac89b9ac6c8c9ca1979e626e55e8c4781c9322dfd1e9ea8fe75c7b2a82fa"
+fetched_at: "2026-08-10T05:26:29.461Z"
+sha256: "c913ffb313a593714e46e40122fa440e44131bd470e5d6e54dd965ad2edca8a4"
 ---
 
 <p align="center">
@@ -446,6 +446,10 @@ Please check out these previous works that helped inspire the creation of starsh
 ## ❤️ Sponsors
 
 Support this project by [becoming a sponsor](https://github.com/sponsors/starship). Your name or logo will show up here with a link to your website.
+
+**Supporter Tier**
+
+- [Alex Holmes](https://github.com/alexhholmes)
 
 ## 🔒 Code Signing Policy
 

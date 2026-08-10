@@ -3,7 +3,7 @@ title: @vercel/global-config
 product: vercel
 url: /docs/global-config/global-config-sdk
 canonical_url: "https://vercel.com/docs/global-config/global-config-sdk"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so you can start reading Global...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-sdk.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "35169ebf9466139a07c5890454d0c165b12a91132d5efec47bc6e5acfca6dfc3"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "24e3575ad6affa8948197d5cc7b24ac70ff0e6afff6a6d5b609723886b046fa2"
 ---
 
 # @vercel/global-config

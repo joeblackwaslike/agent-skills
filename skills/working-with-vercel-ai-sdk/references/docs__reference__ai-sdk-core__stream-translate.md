@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-translate.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "7df844ebb505c1bcfb7cb87141cb9b2129b5ed243ed585662425ac4d74a3e5af"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "075f82fbebd9848e3aeafa565bd95efe7f7439f20e1767b76eecdffbe0c3430f"
 ---
 
 # `experimental_streamTranslate()`
@@ -221,6 +221,7 @@ console.log(await result.translationText);
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

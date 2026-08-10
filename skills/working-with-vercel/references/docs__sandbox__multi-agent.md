@@ -3,7 +3,7 @@ title: Run isolated AI agents in one sandbox
 product: vercel
 url: /docs/sandbox/multi-agent
 canonical_url: "https://vercel.com/docs/sandbox/multi-agent"
-last_updated: 2018-10-20
+last_updated: 2026-07-15
 type: how-to
 prerequisites:
   - /docs/sandbox
@@ -14,8 +14,8 @@ related:
 summary: Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUser methods, then share files...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/multi-agent.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "287d58957b4af31db6cd4f52f1d3e944d412feffac4347b9391223416b083e4c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7983ccd93fc6525d589b725974ef85b8bc6319dccaad6b8803170ca0542d8c54"
 ---
 
 # Run isolated AI agents in one sandbox

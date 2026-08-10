@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "f1af64ba03f7f65255ce84d37f0281643d6365570aeaf7e66baff10074fc71c9"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "4a1d13390c86e53928a37629c4f7c9fd8295a919089199cf151945e417b22c68"
 ---
 
 # `ToolLoopAgent`
@@ -117,7 +117,7 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
       type: 'Experimental_ToolCallers<TOOLS>',
       isOptional: true,
       description:
-        "Configures which caller tools may invoke each tool. The callback receives typed references for caller-capable tools in the agent's `tools` set and returns an object keyed by callee tool name. Include `'direct'` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each agent step. Provider caller references are translated to provider-native allowed-caller options.",
+        'Configures which caller tools may invoke each tool. Pass an object keyed by callee tool name whose values list caller-capable tool names. Include `DIRECT_TOOL_CALL` from `@ai-sdk/code-mode` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each agent step. Provider caller names are translated to provider-native allowed-caller options.',
     },
     {
       name: 'output',
@@ -1147,6 +1147,7 @@ console.log(approvedResult.text);
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

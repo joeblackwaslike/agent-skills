@@ -3,7 +3,7 @@ title: Getting Started with Routing Middleware
 product: vercel
 url: /docs/routing-middleware/getting-started
 canonical_url: "https://vercel.com/docs/routing-middleware/getting-started"
-last_updated: 2026-07-01
+last_updated: 2026-07-15
 type: tutorial
 prerequisites:
   - /docs/routing-middleware
@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c6a1c8645826257f42ae9d9992a966a8301c217bef9d0b822e6ae4a559a8b6ef"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "e46a69e5c22de279bf8787fe1a346d0fa5e21a2434e2a083b63777a5008bfa9a"
 ---
 
 # Getting Started with Routing Middleware

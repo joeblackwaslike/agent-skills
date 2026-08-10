@@ -3,7 +3,7 @@ title: Flag Evaluation Metrics
 product: vercel
 url: /docs/flags/vercel-flags/evaluation-metrics
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics"
-last_updated: 2018-10-20
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/flags/vercel-flags
@@ -16,8 +16,8 @@ related:
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "1066d7ad0a601b9e7e02e36cbddac783f2c922da8bd70fbc435a5cd0f9ebd140"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "cec6723af6204465767b770d0f40edd8895d2ae4234032845eb3ac42d057f501"
 ---
 
 # Flag Evaluation Metrics

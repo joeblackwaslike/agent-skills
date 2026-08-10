@@ -3,7 +3,7 @@ title: forbidden-dependencies
 product: vercel
 url: /docs/conformance/custom-rules/forbidden-dependencies
 canonical_url: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from depending on one or more predefined module
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "45f3ea84b1e3f1edf3483a6cec49c8cd1666af3edba952ad9ea71a6d00f386b1"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "387bd81edff6bb885d56be9dd0fa6f5be6887ee38bfb8ef4b91101b80003ebc1"
 ---
 
 # forbidden-dependencies

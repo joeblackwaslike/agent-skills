@@ -3,7 +3,7 @@ title: Using Global Config with DevCycle
 product: vercel
 url: /docs/global-config/global-config-integrations/devcycle-global-config
 canonical_url: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: tutorial
 prerequisites:
   - /docs/global-config/global-config-integrations
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's DevCycle integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "ca5cae929909042e490bdac009e6be6fe8846c831090c86e3dc85abbbff531d6"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "cf30b8db6aacebccf2746197289896be3c2601cd48aebcee43ddc4d47a62a95d"
 ---
 
 # Using Global Config with DevCycle

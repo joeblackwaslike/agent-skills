@@ -3,7 +3,7 @@ title: vercel global-config
 product: vercel
 url: /docs/cli/global-config
 canonical_url: "https://vercel.com/docs/cli/global-config"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,11 +13,11 @@ related:
   - /docs/rest-api/reference/endpoints/edge-config/update-edge-config-items-in-batch
   - /docs/global-config/global-config-dashboard
   - /docs/rest-api/reference/endpoints/edge-config
-summary: Learn about vercel global-config on Vercel.
+summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "7dc92ee0019f80385e5cc6e55dc0ca1b34504325f48427008d0b54f1f546fd81"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "8d0200e902965ce393d8e6f5fd82e644fd1175e7d24e59a6a86a54ffa91302c4"
 ---
 
 # vercel global-config

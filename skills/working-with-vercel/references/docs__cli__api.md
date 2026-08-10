@@ -3,7 +3,7 @@ title: vercel api
 product: vercel
 url: /docs/cli/api
 canonical_url: "https://vercel.com/docs/cli/api"
-last_updated: 2026-03-11
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d90c32982ba2cfb0368e46ce617352760e7f438f663ac29201f4b3cd44cf47ac"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "461352b46dccd9c4a7fe5e146cb63acfd2c00db0ef5fe39a98adf28a19974ce1"
 ---
 
 # vercel api

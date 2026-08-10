@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/transcription.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "ecbbe9c09f2f2f50f74884cf14a4e5f69d879df7cfb4381b244825e941a25b8c"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "a43ac2eca07ba32cc66a8f943ed1da7e603e5140c56bc7548951753fb0ca72d7"
 ---
 
 # Transcription
@@ -328,6 +328,7 @@ try {
 | [xAI](/providers/ai-sdk-providers/xai#transcription-models)                         | `default`                |
 | [Cartesia](/providers/ai-sdk-providers/cartesia#transcription-models)               | `ink-whisper`            |
 | [Cartesia](/providers/ai-sdk-providers/cartesia#streaming-transcription-models)     | `ink-2`                  |
+| [Fish Audio](/providers/ai-sdk-providers/fish-audio#transcription-models)           | `transcribe-1`           |
 
 Above are a small subset of the transcription models supported by the AI SDK providers. For more, see the respective provider documentation.
 

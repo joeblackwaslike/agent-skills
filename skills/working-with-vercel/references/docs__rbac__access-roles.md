@@ -3,7 +3,7 @@ title: Access Roles
 product: vercel
 url: /docs/rbac/access-roles
 canonical_url: "https://vercel.com/docs/rbac/access-roles"
-last_updated: 2026-04-13
+last_updated: 2026-08-04
 type: reference
 prerequisites:
   - /docs/rbac
@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f2e7c85bb2597d4b4af07dc2d1580d923ed1cdb0c6293c0dfdc344d8ea7c3d8c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "4fafc403b6adba02322ae9cb90bedec32b296b588eae96b5fa4e1a44047edef9"
 ---
 
 # Access Roles

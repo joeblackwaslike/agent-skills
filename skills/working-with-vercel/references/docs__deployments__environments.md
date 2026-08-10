@@ -3,7 +3,7 @@ title: Environments
 product: vercel
 url: /docs/deployments/environments
 canonical_url: "https://vercel.com/docs/deployments/environments"
-last_updated: 2026-05-28
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/deployments
@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "5a45d3e84513b1b3109db73b3d55ff28e9e115b7b7f7da12991deafb9767f51b"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "3623a9cc308dc89f01bbebcaffa340e574568ba7eb2f90e07d7017421dc4165f"
 ---
 
 # Environments

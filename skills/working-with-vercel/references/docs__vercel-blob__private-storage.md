@@ -3,7 +3,7 @@ title: Private Storage
 product: vercel
 url: /docs/vercel-blob/private-storage
 canonical_url: "https://vercel.com/docs/vercel-blob/private-storage"
-last_updated: 2026-07-08
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   - /docs/vercel-blob
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d1c423d31dbe00ada2c183f0ea565e1bc71c9141d2d8c88bf3a0c5fc40dab9c1"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "356ac7258fb6495d004857aa088dd2becab133a54bf387c092591fad0fd05e8a"
 ---
 
 # Private Storage

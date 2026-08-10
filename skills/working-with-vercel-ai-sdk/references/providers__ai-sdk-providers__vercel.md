@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/vercel.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "a508c377fc5bcd91a500611b7f9510a734d132dbcadb931ed71d6147688ad7d3"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "fddf553305da184ae1533aa7d3e994772c490094a0cc1a2bdcd26aeb08400e31"
 ---
 
 # Vercel Provider
@@ -142,6 +142,7 @@ All v0 models have the following capabilities:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

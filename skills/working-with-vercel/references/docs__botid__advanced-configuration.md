@@ -3,7 +3,7 @@ title: Advanced BotID Configuration
 product: vercel
 url: /docs/botid/advanced-configuration
 canonical_url: "https://vercel.com/docs/botid/advanced-configuration"
-last_updated: 2026-02-26
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/botid
@@ -12,8 +12,8 @@ related:
 summary: Fine-grained control over BotID detection levels and backend domain configuration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "dfc1b9b32f1b6f69c525c51a49c9ad620034713431271df56feda3eb19c0f63d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "da1efa2ac58cc6b6ab1f7e3c1e9b05f7f41f5f29117a829406ff5dbd8892a73e"
 ---
 
 # Advanced BotID Configuration

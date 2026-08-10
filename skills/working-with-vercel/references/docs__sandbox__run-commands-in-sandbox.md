@@ -3,7 +3,7 @@ title: Running commands in a Vercel Sandbox
 product: vercel
 url: /docs/sandbox/run-commands-in-sandbox
 canonical_url: "https://vercel.com/docs/sandbox/run-commands-in-sandbox"
-last_updated: 2026-05-25
+last_updated: 2026-08-04
 type: how-to
 prerequisites:
   - /docs/sandbox
@@ -13,8 +13,8 @@ related:
 summary: Create isolated sandbox environments to run builds, tests, and commands safely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/run-commands-in-sandbox.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c28aebba0964d009d3328f9d95fe3246d11aa9946e1dd799a099a00bec9832b5"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "6ac6da17d65ab367f83aaaef3d372422a1a44b8cefbc68fd9a2adef5581606f8"
 ---
 
 # Running commands in a Vercel Sandbox
@@ -191,7 +191,7 @@ sandbox stop <name>
 # Stop multiple sandboxes
 sandbox stop <name-1> <name-2>
 
-# Permanently delete a sandbox and all its snapshots
+# Permanently delete a sandbox and all its sessions
 sandbox remove <name>
 ```
 

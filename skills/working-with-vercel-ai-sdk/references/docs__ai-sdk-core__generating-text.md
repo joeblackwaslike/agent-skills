@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "025f31ac49e66d302abde279b0d8a38021136847cef87f008a46b6cfd4cbfaa0"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "2e10c07fcfe2622fa78f53c66bdfaba88d4155ce6f4c1d3eac1894f79e300bf6"
 ---
 
 # Generating and Streaming Text
@@ -188,7 +188,7 @@ The available lifecycle callbacks are:
 - **`onStart`**: Called once when the `generateText` operation begins, before any LLM calls. Receives model info, messages, settings, and `runtimeContext`.
 - **`onStepStart`**: Called before each step (LLM call). Receives the step number, model, messages being sent, tools, and prior steps.
 - **`onLanguageModelCallStart`**: Called immediately before the provider model call begins. Useful when you want to observe the model invocation separately from later tool execution.
-- **`onLanguageModelCallEnd`**: Called after the model response has been normalized and parsed, but before any client-side tool execution begins. Receives the model-call content parts, usage, and finish reason.
+- **`onLanguageModelCallEnd`**: Called after the model response has been normalized and parsed, but before any client-side tool execution begins. Receives the model-call content parts, usage, finish reason, and provider metadata.
 - **`onToolExecutionStart`**: Called right before a tool's `execute` function runs. Receives the tool call object, messages, and `toolContext`.
 - **`onToolExecutionEnd`**: Called right after a tool's `execute` function completes or errors. Receives the tool call object, `toolExecutionMs`, and a `toolOutput` discriminated union (`type: 'tool-result'` with `output`, or `type: 'tool-error'` with `error`).
 - **`onStepEnd`**: Called after each step finishes. Includes `stepNumber` (zero-based index of the completed step).
@@ -418,7 +418,7 @@ The available lifecycle callbacks are:
 - **`onStart`**: Called once when the `streamText` operation begins, before any LLM calls. Receives model info, messages, settings, and `runtimeContext`.
 - **`onStepStart`**: Called before each step (LLM call). Receives the step number, model, messages being sent, tools, and prior steps.
 - **`onLanguageModelCallStart`**: Called immediately before the provider model call begins. Useful when you want to observe the model invocation separately from later tool execution.
-- **`onLanguageModelCallEnd`**: Called after the model response has been normalized and parsed, but before any client-side tool execution begins. Receives the model-call content parts, usage, and finish reason.
+- **`onLanguageModelCallEnd`**: Called after the model response has been normalized and parsed, but before any client-side tool execution begins. Receives the model-call content parts, usage, finish reason, and provider metadata.
 - **`onToolExecutionStart`**: Called right before a tool's `execute` function runs. Receives the tool call object, messages, and `toolContext`.
 - **`onToolExecutionEnd`**: Called right after a tool's `execute` function completes or errors. Receives the tool call object, `toolExecutionMs`, and a `toolOutput` discriminated union (`type: 'tool-result'` with `output`, or `type: 'tool-error'` with `error`).
 - **`onStepEnd`**: Called after each step finishes. Receives the finish reason, usage, and other step details.

@@ -3,7 +3,7 @@ title: NO_CORS_HEADERS
 product: vercel
 url: /docs/conformance/rules/NO_CORS_HEADERS
 canonical_url: "https://vercel.com/docs/conformance/rules/NO_CORS_HEADERS"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Warns when CORS header (or header-like) configuration is detected, requiring that configuration to be allowlisted.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_cors_headers.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ec1a3ca034b0ce95ceca5509b2693efc5785b5987bca7427dc54052eb320243e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ac9bc3e68a445cb65aad636f2a5ec6a63aa6edf4dd8b9cd0c473b314f8005cc0"
 ---
 
 # NO_CORS_HEADERS

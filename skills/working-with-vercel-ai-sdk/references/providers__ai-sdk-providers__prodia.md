@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "73458708fb51dfb7890176a193aea95d0485ccc72d70b491ff398af4efe1ca3f"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "d3ed53068e9daec7c3754e36f57c99faa9253ce87c3db1383d0700f884c627f1"
 ---
 
 # Prodia Provider
@@ -210,6 +210,7 @@ console.log('Elapsed:', metadata?.elapsed);
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/runpod.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "45035ac3fb1e21ea6875e1307e64cac8d7cc57a1e3344d2161e816aff0db17fa"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "c3dc126f59725fda14fbf8c2b12af177246a7e7835bfa4a5004dc9d236b183f8"
 ---
 
 # Runpod
@@ -387,6 +387,7 @@ Runpod image models support flexible provider options through the `providerOptio
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

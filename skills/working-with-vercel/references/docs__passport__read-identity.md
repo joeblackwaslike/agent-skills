@@ -3,7 +3,7 @@ title: Read Passport identity in your application
 product: vercel
 url: /docs/passport/read-identity
 canonical_url: "https://vercel.com/docs/passport/read-identity"
-last_updated: 2018-10-20
+last_updated: 2026-07-20
 type: how-to
 prerequisites:
   - /docs/passport
@@ -14,8 +14,8 @@ related:
 summary: Read verified Passport identity in server-side code and apply application-level authorization.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/read-identity.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "b98184d6e940e91a222b467a5dc26dd14ac066a70de4038d49ef7b509ff79f86"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a9790322d229532782e777a6ff582b1028e9932c18023547956aa5453f173d45"
 ---
 
 # Read Passport identity in your application

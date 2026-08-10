@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/language-model-v2-middleware.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "a12355b1d41c7ff2cd827ee0eb3b6a48ea9c913a13c691c0e82b8c9be6da1dfc"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "427286066633faf95ea637d419e6373c548a731c1d6368b8c133eb87fad95523"
 ---
 
 # `LanguageModelV4Middleware`
@@ -119,6 +119,7 @@ See [Language Model Middleware](/docs/ai-sdk-core/middleware) for more informati
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

@@ -3,7 +3,7 @@ title: Storage on Vercel Marketplace
 product: vercel
 url: /docs/marketplace-storage
 canonical_url: "https://vercel.com/docs/marketplace-storage"
-last_updated: 2026-05-06
+last_updated: 2026-07-29
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "a1d67ddb00d0f9a44b0376ac0ff3977d4bdfe1c177ddd8a85d60d5c82d1cce67"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "397fd91b6682912f1feb115b81abb3dfa036906fa8fe239d2dd2d2700e3bb90f"
 ---
 
 # Storage on Vercel Marketplace

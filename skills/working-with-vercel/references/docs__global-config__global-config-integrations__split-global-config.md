@@ -3,7 +3,7 @@ title: Using Global Config with Split
 product: vercel
 url: /docs/global-config/global-config-integrations/split-global-config
 canonical_url: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: tutorial
 prerequisites:
   - /docs/global-config/global-config-integrations
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "7db182937128f7542d5f20875168381ab0a633d2d2dcb204258f97144a779c98"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "17302d960ed36b2a87a142adbe3d8ba63cdcc577fb4f01abe61f7a9386b71b07"
 ---
 
 # Using Global Config with Split

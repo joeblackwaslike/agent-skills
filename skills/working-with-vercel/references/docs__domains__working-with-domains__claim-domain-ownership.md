@@ -3,7 +3,7 @@ title: Claiming Domain Ownership
 product: vercel
 url: /docs/domains/working-with-domains/claim-domain-ownership
 canonical_url: "https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership"
-last_updated: 2026-02-26
+last_updated: 2026-07-20
 type: how-to
 prerequisites:
   - /docs/domains/working-with-domains
@@ -13,8 +13,8 @@ related:
 summary: Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "5c410283901aadb2e1a5b9b9c9b4b93e0b68bc4e0dad14fa7af4e9b412616bca"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d8ca415522bb1577e38fc5d271aaf2a14279e89467baba3677971a144d4f438a"
 ---
 
 # Claiming Domain Ownership

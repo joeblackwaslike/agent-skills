@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/pricing
   - /docs/builds/managing-builds
+  - /docs/plans/pro-plan/trials
+  - /docs/domains/free-domain-with-pro
   - /docs/manage-cdn-usage
-  - /docs/spend-management
-  - /docs/rbac/managing-team-members
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "9561af7212a7af441ef0183690bc13d48e7081665f88314227333051f0e34f82"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "84c4bb4f77f88a487dc12cdf7188fcdd55e0dbf72816c914c4001edc9ee44727"
 ---
 
 # Vercel Pro Plan
@@ -30,8 +30,21 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - **[Free viewer seats](#viewer-team-seat)**: Unlimited read-only access to the Vercel dashboard so that project collaborators can view deployments, check analytics, and comment on previews
 - **[Elastic build machines](/docs/builds/managing-builds#elastic-build-machines)**: New teams use Elastic build machines by default. Elastic automatically selects a machine for each project based on its build workload
 - **[Paid add-ons](#paid-add-ons)**: Additional enterprise-grade features are available as add-ons
+- **[Free first-year domain for new Pro upgrades](#free-first-year-domain-for-new-pro-upgrades)**: One eligible Radix TLD (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`) when claimed within 30 days. Renews at the standard rate after year one
 
 For a full breakdown of the features included in the Pro plan, see the [pricing page](https://vercel.com/pricing).
+
+## Free first-year domain for new Pro upgrades
+
+New monthly Pro subscriptions include one free first-year domain on an eligible TLD (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`). Claim the domain within 30 days of upgrading. After the first year, the domain renews at the standard rate.
+
+The offer is limited to one domain per Pro upgrade and excludes:
+
+- Existing Pro teams
+- Teams on a [Pro trial](/docs/plans/pro-plan/trials)
+- Additional domains beyond the one included with the upgrade
+
+See the [docs page](/docs/domains/free-domain-with-pro#how-do-i-claim-my-free-domain) for more information on how to claim your free domain.
 
 ## Monthly credit
 

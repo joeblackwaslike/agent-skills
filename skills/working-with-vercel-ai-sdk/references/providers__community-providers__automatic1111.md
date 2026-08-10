@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/automatic1111.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "ab596eee9504617b81fa3c42c5c53c8c6453679bef6dcf0b0348dbc2f1c9b971"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "7fec8c964be5c5231fb4cdbe724ebc9ade31f9f62159915dc42543b703afcf69"
 ---
 
 # Automatic1111
@@ -188,6 +188,7 @@ The provider automatically detects available models from your AUTOMATIC1111 inst
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

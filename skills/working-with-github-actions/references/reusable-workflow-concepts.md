@@ -1,12 +1,18 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/workflows-and-actions/reusing-workflow-configurations.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "91ccb247b6e158520bff0e811c1c33ba97bfb36389e8ab2a7617c32f4da23a55"
+fetched_at: "2026-08-10T05:30:56.796Z"
+sha256: "665d90c50d86a73bea1c42f0e829ca1436180a7fc6e0feb6e9906366561b6a8a"
 ---
 
 ## Reusable workflows
 
 Rather than copying and pasting from one workflow to another, you can make workflows reusable. You and anyone with access to the reusable workflow can then call the reusable workflow from another workflow.
+
+{% ifversion copilot %}
+
+Reusable workflows also complement {% data variables.copilot.agentic_workflows_short %}: an agentic workflow can call approved, deterministic reusable workflows rather than duplicating logic. For more information, see [AUTOTITLE](/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows).
+
+{% endif %}
 
 Reusing workflows avoids duplication. This makes workflows easier to maintain and allows you to create new workflows more quickly by building on the work of others, just as you do with actions. Workflow reuse also promotes best practice by helping you to use workflows that are well designed, have already been tested, and have been proven to be effective. Your organization can build up a library of reusable workflows that can be centrally maintained.
 
@@ -64,6 +70,12 @@ If you use a commit SHA when referencing the reusable workflow, you can ensure t
 {% data reusables.actions.workflow-templates-repo-link %}
 
 For more information, see [AUTOTITLE](/actions/how-tos/reuse-automations/create-workflow-templates).
+
+{% ifversion copilot %}
+
+Organizations can also share and govern approved {% data variables.copilot.agentic_workflows_short %} templates alongside shared actions and reusable workflows. To create templates with {% data variables.copilot.github_agentic_workflows %}, see [AUTOTITLE](/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows).
+
+{% endif %}
 
 {% ifversion fpt or ghec %}
 

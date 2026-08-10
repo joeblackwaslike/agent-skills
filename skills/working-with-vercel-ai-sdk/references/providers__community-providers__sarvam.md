@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sarvam.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "640aa1d238bad8fe1dfcc3f3df90f861b3c644320f65503f9b36be8b683cddcf"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "7c81c71bb64e97fd6d4de6a4b21ec6834751850b71bf74fc2be8680869574774"
 ---
 
 # Sarvam Provider
@@ -183,6 +183,7 @@ providerOptions: {
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

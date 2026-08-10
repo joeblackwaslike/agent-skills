@@ -3,7 +3,7 @@ title: Integration Approval Checklist
 product: vercel
 url: /docs/integrations/create-integration/approval-checklist
 canonical_url: "https://vercel.com/docs/integrations/create-integration/approval-checklist"
-last_updated: 2026-06-10
+last_updated: 2026-07-16
 type: reference
 prerequisites:
   - /docs/integrations/create-integration
@@ -17,8 +17,8 @@ related:
 summary: Review this checklist before submitting your native or connectable account integration for approval on the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/approval-checklist.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "a6c50a1bfef4a2af8658c466d6b9529474c0a4bde1697ab0cb9baf3a61aeb263"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "33fecff282bea9e6f5c016588e11ebd9115ace75098162c113b49b371dee45ee"
 ---
 
 # Integration Approval Checklist

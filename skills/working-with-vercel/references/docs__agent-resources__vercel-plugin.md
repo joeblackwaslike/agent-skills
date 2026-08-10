@@ -3,7 +3,7 @@ title: Vercel Plugin for AI Coding Agents
 product: vercel
 url: /docs/agent-resources/vercel-plugin
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-plugin"
-last_updated: 2026-07-07
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/agent-resources
@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "d30a76b86d57bfbd97e7568a92170711d448e629f87dd0c0daf063a5ee9a24cf"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "084b26bc0f06bf4262a1f9d913bf5c78de7e6cefebccb82c8ce4521787a694eb"
 ---
 
 # Vercel Plugin for AI Coding Agents

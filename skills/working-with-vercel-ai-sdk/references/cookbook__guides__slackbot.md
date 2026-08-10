@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/slackbot.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1e49fef5b56d97d621cd8c89290223c2c32982377f3686bdc0aad0a98f0fb3ad"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "c16a31bc2f17f7e0268e8a2c774c2958101264d20773d003a57544de69ce42cb"
 ---
 
 # Building an AI Agent in Slack with the AI SDK
@@ -500,6 +500,8 @@ You've built a Slack chatbot powered by the AI SDK! Here are some ways you could
   In a production environment, it is recommended to implement a robust queueing
   system to ensure messages are properly handled.
 </Note>
+
+For a framework-managed alternative with durable threaded sessions, typing indicators, approval buttons, and multichannel support, see [eve's Slack channel](https://eve.dev/docs/channels/slack).
 
 
 ## Navigation

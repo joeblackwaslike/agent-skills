@@ -3,7 +3,7 @@ title: Triggers
 product: vercel
 url: /docs/connect/concepts/triggers
 canonical_url: "https://vercel.com/docs/connect/concepts/triggers"
-last_updated: 2026-06-09
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -17,8 +17,8 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "4d25878a9d035796382f946d58e12e00c52e8ce62828ebd01377cdf9af342cd7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "593638ad1adfdcb5f5e4e0a549c5c80e791d4c58da34d32646008bc049c4e716"
 ---
 
 # Triggers

@@ -3,7 +3,7 @@ title: Enterprise Managed Users (EMU)
 product: vercel
 url: /docs/security/enterprise-managed-users
 canonical_url: "https://vercel.com/docs/security/enterprise-managed-users"
-last_updated: 2018-10-20
+last_updated: 2026-07-30
 type: how-to
 prerequisites:
   - /docs/security
@@ -14,8 +14,8 @@ related:
 summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in identity of every member. Members sign in through your SAML SSO provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "54d1741652cdd63dfe892ce54a5951f64e30bb161b05c3dd581423149058ce93"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ba30b76cc9e94934d21237aa394c5164efdac8823f946d301946df7858cbd980"
 ---
 
 # Enterprise Managed Users (EMU)

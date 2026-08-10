@@ -3,7 +3,7 @@ title: Using Global Config with LaunchDarkly
 product: vercel
 url: /docs/global-config/global-config-integrations/launchdarkly-global-config
 canonical_url: "https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: tutorial
 prerequisites:
   - /docs/global-config/global-config-integrations
@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's LaunchDarkly integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "00977473c062730baa117ba896220aa677fe2d3102ecf91eaf6bc5f9d3883231"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "28083d637da5457717842cd9bda9bb4ad80c046a1a2e591d079e4fe1735a025d"
 ---
 
 # Using Global Config with LaunchDarkly

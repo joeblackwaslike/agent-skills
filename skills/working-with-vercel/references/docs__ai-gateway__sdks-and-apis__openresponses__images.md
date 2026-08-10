@@ -3,7 +3,7 @@ title: File Attachments
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses/images
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openresponses
@@ -15,8 +15,8 @@ related:
 summary: Send images and PDF documents for analysis using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "717bd940e27c3e4ffd8302377f134ccc0bdfb21fb8a39a4bf0ab7ba765c338d9"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7abb699a8edf0bf03ad041632f8415f9eeca3edb78667f59dde8b169a41ff6f1"
 ---
 
 # File Attachments

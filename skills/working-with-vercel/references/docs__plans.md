@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0e6c07a3c7291535af4cd380df240824050f1bbacddfa7e02de99e0872761fdc"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "709acb41b02f493b10e7d841ab74be7cb4b3135290b2b1fbb8ea26861f7faf37"
 ---
 
 # Account Plans on Vercel
@@ -41,6 +41,8 @@ The Pro plan is designed for professional developers, freelancers, and businesse
 Pro introduces a flexible credit-based system that provides transparent, usage-based billing. You get enhanced team collaboration with viewer roles, advanced analytics, and the option to add enterprise features through add-ons.
 
 Key features include team roles and permissions, credit-based resource management, enhanced monitoring, and email support with optional priority support upgrades.
+
+New monthly Pro subscriptions also include a [free first-year domain on an eligible TLD](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades) when claimed within 30 days of upgrading. The offer is not available to existing Pro teams or during the Pro trial.
 
 See the [Pro plan](/docs/plans/pro-plan) page for more details.
 

@@ -3,7 +3,7 @@ title: Provider Timeouts
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-timeouts
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts"
-last_updated: 2026-06-29
+last_updated: 2026-07-28
 type: integration
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -13,8 +13,8 @@ related:
 summary: Configure per-provider timeouts for fast failover when a provider is slow to respond.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "c679fdbc008fb857a24a4a983ca33c1cb595f9079b9df80bebdf97ee6ecc6850"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "892b952e5e64bbaa45424a9fd9b5e4caef55bcabacc96ecb6dff54450e8881fa"
 ---
 
 # Provider Timeouts

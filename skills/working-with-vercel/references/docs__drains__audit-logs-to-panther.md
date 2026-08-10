@@ -3,7 +3,7 @@ title: Drain Audit Logs to Panther
 product: vercel
 url: /docs/drains/audit-logs-to-panther
 canonical_url: "https://vercel.com/docs/drains/audit-logs-to-panther"
-last_updated: 2018-10-20
+last_updated: 2026-08-06
 type: how-to
 prerequisites:
   - /docs/drains
@@ -13,8 +13,8 @@ related:
 summary: "Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-panther.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "67a713c40327f79d3b3ef48ec2d474a5a18e5901cd9a74de3cc9484198c11599"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b5769ae7399986fd0f10deb00d60f54ac89675cb6b54e490d4359fe6b2c06d52"
 ---
 
 # Drain Audit Logs to Panther

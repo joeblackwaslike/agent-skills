@@ -3,7 +3,7 @@ title: Tools
 product: vercel
 url: /docs/agent-resources/vercel-mcp/tools
 canonical_url: "https://vercel.com/docs/agent-resources/vercel-mcp/tools"
-last_updated: 2026-07-02
+last_updated: 2026-07-23
 type: conceptual
 prerequisites:
   - /docs/agent-resources/vercel-mcp
@@ -17,8 +17,8 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and errors, Agent Runs, design...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "dddbb905ddb2ba42bdbf6bd3901dcc5be51ceae6311d67b53d63a79fad67bf09"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "9cb56fb497eaca0bae4a9b17ded64ed4f97e40a6b0998eebe3b3ccf044e3c8cd"
 ---
 
 # Tools
@@ -203,7 +203,7 @@ Count queries can cover data since Web Analytics was enabled. Aggregate queries 
 
 ## Agent Runs Observability Tools
 
-[Agent Runs](https://eve.dev/docs/guides/deployment) are the observability layer for agents built with the eve framework on Vercel. Use these tools to find projects with eve agent activity, list recent runs, inspect one run, and retrieve trace data for debugging agent behavior.
+[Agent Runs](https://eve.dev/docs/guides/deployment/vercel#inspect-agent-runs) are the observability layer for agents built with the eve framework on Vercel. Use these tools to find projects with eve agent activity, list recent runs, inspect one run, and retrieve trace data for debugging agent behavior.
 
 ### list\_agent\_run\_projects
 

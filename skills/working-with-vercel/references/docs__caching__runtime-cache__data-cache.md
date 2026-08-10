@@ -3,7 +3,7 @@ title: Data Cache for Next.js
 product: vercel
 url: /docs/caching/runtime-cache/data-cache
 canonical_url: "https://vercel.com/docs/caching/runtime-cache/data-cache"
-last_updated: 2026-05-13
+last_updated: 2026-07-27
 type: conceptual
 prerequisites:
   - /docs/caching/runtime-cache
@@ -17,8 +17,8 @@ related:
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "da35e193a45004110adb85d1d2ea3946b3c5c3750a96a93b529d59ed0ae198b8"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "8c7be77de26c7714993d32045fe1e22a2090c9ddc8003fc2c76769ed3147c04d"
 ---
 
 # Data Cache for Next.js

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "8d37c63ca3a564b7130e3d5564eefea72330dcc63353bb5374ee4903b9dbc7fb"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "3b32bb73fe71491d93e3d22ff292126be12a917298b748c72861f4040cdd2396"
 ---
 
 # `experimental_generateVideo()`
@@ -169,6 +169,48 @@ console.log(videos);
       description:
         'Custom download function for fetching videos from URLs. Use `createDownload()` from `ai` to create a download function with custom size limits, e.g. `createDownload({ maxBytes: 50 * 1024 * 1024 })`. Default: built-in download with 2 GiB limit.',
     },
+    {
+      name: 'poll',
+      type: 'object',
+      isOptional: true,
+      description:
+        'Polling configuration for the asynchronous start/status flow.',
+      properties: [
+        {
+          type: 'object',
+          parameters: [
+            {
+              name: 'intervalMs',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Interval between status checks in milliseconds. Default: 5000.',
+            },
+            {
+              name: 'timeoutMs',
+              type: 'number',
+              isOptional: true,
+              description:
+                'Maximum time to wait for completion in milliseconds, including while waiting for a webhook notification. Default: 600000 (10 minutes).',
+            },
+            {
+              name: 'delay',
+              type: '(delayInMs: number, options?: { abortSignal?: AbortSignal }) => PromiseLike<void>',
+              isOptional: true,
+              description:
+                'Custom delay implementation for polling intervals and webhook timeouts. Useful for durable workflow sleep functions. Default: built-in timer-based delay.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'webhook',
+      type: '() => PromiseLike<{ url: string; received: PromiseLike<VideoModelV4OperationWebhook> }>',
+      isOptional: true,
+      description:
+        'Webhook factory for providers that support webhook notifications. When provided and the model supports webhooks, the SDK uses the webhook instead of polling. The factory should return a URL for the provider to notify and a `received` promise that resolves when the notification arrives. The `poll` option can also be provided to configure the webhook timeout and polling fallback.',
+    },
   ]}
 />
 
@@ -330,6 +372,7 @@ console.log(videos);
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

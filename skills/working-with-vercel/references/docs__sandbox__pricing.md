@@ -3,7 +3,7 @@ title: Vercel Sandbox pricing and limits
 product: vercel
 url: /docs/sandbox/pricing
 canonical_url: "https://vercel.com/docs/sandbox/pricing"
-last_updated: 2026-06-16
+last_updated: 2026-08-04
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -16,13 +16,13 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "bec6820661ae50473a92a4f379d876012d03f6a1cc648ad43adc5b570cf14ee6"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "4978c88d5cdba9cf7f7fab57996d0bbc045dac2336d5f5392ff3d62c948a4fc4"
 ---
 
-# Vercel Sandbox pricing and limits
+# Vercel Sandbox pricing and quotas
 
-Vercel Sandbox usage is metered across several dimensions. This page explains how billing works for each plan, what limits apply, and how to estimate costs.
+Vercel Sandbox usage is metered across several dimensions. This page explains how billing works for each plan, what quotas apply, and how to estimate costs.
 
 ## Pricing
 
@@ -33,9 +33,9 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 | Sandbox Creations | 5,000/month | $0.60/1M | $0.60/1M |
 | Sandbox Data Transfer | 20 GB/month | $0.15/GB | $0.15/GB |
 | Snapshot Storage | 15 GB (lifetime) | $0.08/GB-month | $0.08/GB-month |
-| Concurrent Sandboxes | 10 | 2,000 | 2,000 |
+| Concurrent Sandboxes | 10 | 10,000 | 10,000 |
 | Max Runtime Duration | 45 minutes | 24 hours | 24 hours |
-| vCPU Allocation Rate | 40/10 min | 200/min | 400/min |
+| vCPU Allocation Rate | 20-40/min | 5,000/min | 5,000/min |
 
 
 On each billing cycle, Hobby plans receive a monthly allotment of Sandbox usage at no cost. Pro and Enterprise plans are charged based on usage.
@@ -46,11 +46,11 @@ Once you exceed your included limit on Hobby, sandbox creation is [paused](#hobb
 
 ### Hobby
 
-Sandbox is free for Hobby users within the usage limits detailed above.
+Sandbox is free for Hobby users within the usage quotas detailed above.
 
-Vercel sends you [notifications](/docs/notifications#on-demand-usage-notifications) as you approach your usage limits. You **will not be charged** for any additional usage. Once you exceed the limits, sandbox creation is paused until 30 days have passed since you first used the feature.
+Vercel sends you [notifications](/docs/notifications#on-demand-usage-notifications) as you approach your usage quotas. You **will not be charged** for any additional usage. Once you exceed the quotas, sandbox creation is paused until 30 days have passed since you first used the feature.
 
-To continue using Sandbox after exceeding your limits, [upgrade to Pro](/docs/plans/hobby#upgrading-to-pro).
+To continue using Sandbox after exceeding your quotas, [upgrade to Pro](/docs/plans/hobby#upgrading-to-pro).
 
 ### Pro
 
@@ -60,7 +60,7 @@ To control costs, configure [Spend Management](/docs/spend-management) to receiv
 
 ### Enterprise
 
-Enterprise plans have custom pricing and limits. [Contact sales](/contact/sales) to discuss your usage requirements.
+Enterprise plans have custom pricing and quotas. [Contact sales](/contact/sales) to discuss your usage requirements.
 
 ## Understanding the metrics
 
@@ -94,6 +94,8 @@ For example, downloading an npm package is free. If you run a web server on an e
 
 The storage used by [snapshots](/docs/sandbox/concepts/snapshots), measured in GB per month.
 
+Use a smaller [managed image](/docs/sandbox/concepts/images#vercel-managed-images) like `vercel/sandbox/ubuntu` or your own [custom image](/docs/sandbox/concepts/images#custom-images) to reduce individual snapshot sizes. Set an appropriate [snapshot retention period](/docs/sandbox/concepts/snapshots#snapshot-retention) to avoid storing snapshots longer than needed.
+
 ## Example calculations
 
 The following examples show estimated costs for common scenarios on Pro/Enterprise plans.
@@ -109,7 +111,7 @@ The following examples show estimated costs for common scenarios on Pro/Enterpri
 
 Sandbox creation costs are minimal at $0.60 per million creations ($0.0000006 per creation).
 
-## Limits
+## Quotas and limits
 
 ### Resource limits
 
@@ -131,29 +133,41 @@ The default timeout is 5 minutes. You can configure this using the `timeout` opt
 | Pro        | 24 hours         |
 | Enterprise | 24 hours         |
 
-### Concurrency limits
+### Concurrency quota
 
 The number of concurrently running sandboxes is limited by plan.
 
-[Contact sales](/contact/sales) if you need higher concurrency limits on Enterprise.
+[Contact sales](/contact/sales) if you need higher concurrency quotas on Enterprise.
 
 | Plan       | Concurrent sandboxes |
 | ---------- | -------------------- |
 | Hobby      | 10                   |
-| Pro        | 2,000                |
-| Enterprise | 2,000+               |
+| Pro        | 10,000               |
+| Enterprise | 10,000               |
 
-### Rate limits
+### API quotas
 
-The number of vCPUs you can allocate to new sandboxes is rate-limited by plan. For example, with the Pro plan limit of 200 vCPUs per minute, you can create 25 sandboxes with 8 vCPUs each, or 100 sandboxes with 2 vCPUs each, every minute. All other control plane operations such as running commands or reading files are also subject to rate limits.
+The rate at which you can allocate vCPUs to new sandboxes increases with sustained usage instead of being a fixed cap. The initial value is your plan's starting rate, and sustained usage increases the allowed rate toward the maximum at the quota shown below. After 10 minutes without creating sandboxes, the rate goes back to the starting rate. See [dynamic quotas](/docs/limits#dynamic-quotas) for more details.
 
-[Contact sales](/contact/sales) if you need higher rate limits on Enterprise.
+For example, with a Pro team that was idle, the initial rate is 150 vCPUs per minute, which covers 18 sandboxes with 8 vCPUs each. The team can keep creating sandboxes and the allowed rate increases to a maximum of 500 vCPUs per minute until it reaches 5,000.
 
-| Plan       | vCPU allocation limit   | Control plane limit         |
-| ---------- | ----------------------- | --------------------------- |
-| Hobby      | 40 vCPUs per 10 minutes | 1,000 requests per minute   |
-| Pro        | 200 vCPUs per minute    | 10,000 requests per minute  |
-| Enterprise | 400 vCPUs per minute    | 100,000 requests per minute |
+[Contact sales](/contact/sales) if you need higher allocation quotas on Enterprise.
+
+| Plan       | Starting vCPU rate   | Ramp                 | Maximum vCPU rate      |
+| ---------- | -------------------- | -------------------- | ---------------------- |
+| Hobby      | 20 vCPUs per minute  | 20 vCPUs per minute  | 40 vCPUs per minute    |
+| Pro        | 150 vCPUs per minute | 500 vCPUs per minute | 5,000 vCPUs per minute |
+| Enterprise | 150 vCPUs per minute | 500 vCPUs per minute | 5,000 vCPUs per minute |
+
+Control plane operations such as running commands or reading files use a fixed per-minute quota instead of a dynamic quota.
+
+Deleting a sandbox, snapshot, or drive is limited to 20 requests per second per team on all plans. Deletions count against your control plane quota as well.
+
+| Plan       | Control plane quota         | Deletion quota         |
+| ---------- | --------------------------- | ---------------------- |
+| Hobby      | 1,000 requests per minute   | 20 requests per second |
+| Pro        | 10,000 requests per minute  | 20 requests per second |
+| Enterprise | 100,000 requests per minute | 20 requests per second |
 
 ### Snapshot expiration
 

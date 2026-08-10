@@ -3,7 +3,7 @@ title: Services
 product: vercel
 url: /docs/build-output-api/services
 canonical_url: "https://vercel.com/docs/build-output-api/services"
-last_updated: 2018-10-20
+last_updated: 2026-07-27
 type: reference
 prerequisites:
   - /docs/build-output-api
@@ -15,8 +15,8 @@ related:
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "1386c8c8f8113f6992981a1ac761ff6c74da907b79208198320f4dd47c6dec2b"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f8cdac418c80aa3ac87e16279137facc9b9c2878e611269c827e474fe51213ce"
 ---
 
 # Services

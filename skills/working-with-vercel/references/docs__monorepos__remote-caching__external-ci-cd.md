@@ -1,20 +1,20 @@
 ---
-title: External CI/CD
+title: Use Remote Caching from External CI/CD
 product: vercel
 url: /docs/monorepos/remote-caching/external-ci-cd
 canonical_url: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd"
-last_updated: 2018-10-20
-type: conceptual
+last_updated: 2026-07-30
+type: how-to
 prerequisites:
   - /docs/monorepos/remote-caching
   - /docs/monorepos
 related:
   - /docs/monorepos/remote-caching
-summary: Learn about external ci/cd on Vercel.
+summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "501f6758fad63fb701236a8ddad5468f81ebedad249349f47c0107980c572176"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "930b067ea6afa4367c866c48cd8cd0db0e870630c50ea7cfcb37dab33bb2e68f"
 ---
 
 # Use Remote Caching from External CI/CD

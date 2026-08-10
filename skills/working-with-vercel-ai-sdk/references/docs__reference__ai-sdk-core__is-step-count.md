@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/is-step-count.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "9997dcbd10b47b707911908b139361794a29087dc912f05d92f56d336e4f29b4"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "cf190beaac8085f351b3c9cecdc8cba2db330e9a1dbc5f9240a65865d4fd36b3"
 ---
 
 # `isStepCount()`
@@ -129,6 +129,7 @@ const result = await generateText({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

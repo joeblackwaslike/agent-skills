@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/oraios/serena/main/README.md"
-fetched_at: "2026-07-27T07:36:41.325Z"
-sha256: "5a1a3d681acd5bbd5faee822b5d0d0e5db4103e2082596a2479aa0d7ace806fa"
+fetched_at: "2026-08-10T05:31:54.245Z"
+sha256: "e617441ff791c8c9cdb250b66ed9510284f6df0af260c529b77a94e3ac4eb461"
 ---
 
 <p align="center" style="text-align:center;">
@@ -116,7 +116,7 @@ Serena incorporates a powerful abstraction layer for the integration of language
 The underlying language servers are typically open-source projects or at least freely available for use.
 
 When using Serena's language server backend, we provide **support for over 40 programming languages**, including
-Ada / SPARK, AL, Angular, Ansible, Bash, BSL, C#, C/C++, Clojure, Crystal, CUE, Dart, Elixir, Elm, Erlang, Fortran, F#, GDScript, GLSL, Go, Groovy, Haskell, Haxe, HLSL, HTML, Java, JavaScript, JSON, Julia, Kotlin, LaTeX, Lean 4, Lua, Luau, Markdown, MATLAB, mSL, Nix, OCaml, Pascal, Perl, PHP, PowerShell, Python, QML, R, Rego, Ruby, Rust, Scala, SCSS / Sass / CSS, Solidity, Svelte, Swift, SystemVerilog, Terraform, TOML, TypeScript, Vue, WGSL, YAML, and Zig.
+Ada / SPARK, AL, Angular, Ansible, Bash, BSL, C#, C/C++, Clojure, Crystal, CUE, Dart, Deno, Elixir, Elm, Erlang, Fortran, F#, GDScript, Gleam, GLSL, Go, Groovy, Haskell, Haxe, HLSL, HTML, Java, JavaScript, JSON, Julia, Kotlin, LaTeX, Lean 4, Lua, Luau, Markdown, MATLAB, mSL, Nextflow, Nix, OCaml, Pascal, Perl, PHP, PowerShell, Python, QML, R, Rego, Ruby, Rust, Scala, SCSS / Sass / CSS, Solidity, Svelte, Swift, SystemVerilog, Terraform, TOML, TypeScript, Vue, WGSL, Wolfram Language, YAML, and Zig.
 
 ### The Serena JetBrains Plugin
 

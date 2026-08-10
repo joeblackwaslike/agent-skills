@@ -3,7 +3,7 @@ title: Rest API
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-08-03
+last_updated: 2026-08-10
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about rest api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-08-03T07:34:41.098Z"
-sha256: "3953d313eace739685f69d89c1ddf5c10c8eb9292b9aa52dfa953651a77c98fd"
+fetched_at: "2026-08-10T05:33:48.133Z"
+sha256: "073bafcce25a9e1d499c14f4f97ba7db0dbf633549458a3735a1734ec65f4d20"
 ---
 
 # Vercel REST API Reference
@@ -152,9 +152,6 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v2/observability/schema`](/docs/rest-api/untagged/getobservabilityschema.md) | GET /v2/observability/schema |
 | **GET** | [`/v2/observability/schema/{metricId}`](/docs/rest-api/untagged/getobservabilityschemabymetricid.md) | GET /v2/observability/schema/{metricId} |
 | **POST** | [`/speed-insights/toggle`](/docs/rest-api/untagged/createspeedinsightstoggle.md) | POST /speed-insights/toggle |
-| **GET** | [`/storage/stores/{id}`](/docs/rest-api/untagged/getstoragestoresbyid.md) | GET /storage/stores/{id} |
-| **POST** | [`/storage/stores/blob`](/docs/rest-api/untagged/createstoragestoresblob.md) | POST /storage/stores/blob |
-| **DELETE** | [`/storage/stores/blob/{id}`](/docs/rest-api/untagged/deletestoragestoresblobbyid.md) | DELETE /storage/stores/blob/{id} |
 | **POST** | [`/web/insights/toggle`](/docs/rest-api/untagged/createwebinsightstoggle.md) | POST /web/insights/toggle |
 
 ## domains-registrar
@@ -462,6 +459,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/fs/write`](/docs/rest-api/sandboxes/write-files.md) | Write files |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/snapshot`](/docs/rest-api/sandboxes/create-a-snapshot.md) | Create a snapshot |
 | **POST** | [`/v2/sandboxes/{name}/fork`](/docs/rest-api/sandboxes/fork-a-named-sandbox.md) | Fork a named sandbox |
+| **POST** | [`/v3/sandboxes`](/docs/rest-api/sandboxes/create-a-named-sandbox-1.md) | Create a named sandbox |
 
 ## security
 
@@ -480,6 +478,14 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
 | **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/security/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
+
+## storage
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/storage/stores/{id}`](/docs/rest-api/storage/get-a-store.md) | Get a store |
+| **POST** | [`/storage/stores/blob`](/docs/rest-api/storage/create-a-blob-store.md) | Create a Blob store |
+| **DELETE** | [`/storage/stores/blob/{id}`](/docs/rest-api/storage/delete-a-blob-store.md) | Delete a Blob store |
 
 ## teams
 
@@ -511,10 +517,28 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/vcr/repository/{idOrName}`](/docs/rest-api/vcr/get-a-repository.md) | Get a repository |
 | **DELETE** | [`/v1/vcr/repository/{idOrName}`](/docs/rest-api/vcr/delete-a-repository.md) | Delete a repository |
 | **GET** | [`/v1/vcr/repository/{idOrName}/images`](/docs/rest-api/vcr/list-repository-images.md) | List repository images |
+| **GET** | [`/v1/vcr/repository/{idOrName}/permissions`](/docs/rest-api/vcr/list-repository-permissions.md) | List repository permissions |
+| **POST** | [`/v1/vcr/repository/{idOrName}/permissions`](/docs/rest-api/vcr/add-a-repository-permission.md) | Add a repository permission |
+| **DELETE** | [`/v1/vcr/repository/{idOrName}/permissions`](/docs/rest-api/vcr/remove-a-repository-permission.md) | Remove a repository permission |
+| **DELETE** | [`/v1/vcr/repository/{idOrName}/permissions/all`](/docs/rest-api/vcr/clear-all-repository-permissions.md) | Clear all repository permissions |
 | **GET** | [`/v1/vcr/repository/{idOrName}/tags`](/docs/rest-api/vcr/list-repository-tags.md) | List repository tags |
 | **GET** | [`/v1/vcr/repository/{idOrName}/tags/{tag}`](/docs/rest-api/vcr/get-a-repository-tag.md) | Get a repository tag |
 | **GET** | [`/v1/vcr/repository/{idOrName}/images/{imageIdOrDigest}`](/docs/rest-api/vcr/get-a-repository-image.md) | Get a repository image |
 | **DELETE** | [`/v1/vcr/repository/{idOrName}/images/{imageId}`](/docs/rest-api/vcr/delete-a-repository-image.md) | Delete a repository image |
+| **GET** | [`/v2/`](/docs/rest-api/vcr/check-registry-api-version-support.md) | Check registry API version support |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}`](/docs/rest-api/vcr/download-a-blob.md) | Download a blob |
+| **DELETE** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}`](/docs/rest-api/vcr/delete-a-blob.md) | Delete a blob |
+| **HEAD** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}`](/docs/rest-api/vcr/check-if-a-blob-exists.md) | Check if a blob exists |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/vcr/get-blob-upload-status.md) | Get blob upload status |
+| **PUT** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/vcr/complete-a-blob-upload.md) | Complete a blob upload |
+| **PATCH** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/vcr/upload-a-blob-chunk.md) | Upload a blob chunk |
+| **DELETE** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/vcr/cancel-a-blob-upload.md) | Cancel a blob upload |
+| **POST** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/`](/docs/rest-api/vcr/start-a-blob-upload.md) | Start a blob upload |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/vcr/pull-an-image-manifest.md) | Pull an image manifest |
+| **PUT** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/vcr/push-an-image-manifest.md) | Push an image manifest |
+| **DELETE** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/vcr/delete-an-image-manifest.md) | Delete an image manifest |
+| **HEAD** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/vcr/check-if-a-manifest-exists.md) | Check if a manifest exists |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list`](/docs/rest-api/vcr/list-image-tags.md) | List image tags |
 
 ## web-analytics
 

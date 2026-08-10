@@ -3,7 +3,7 @@ title: Authentication & BYOK
 product: vercel
 url: /docs/ai-gateway/authentication-and-byok
 canonical_url: "https://vercel.com/docs/ai-gateway/authentication-and-byok"
-last_updated: 2026-06-20
+last_updated: 2026-07-31
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with the AI Gateway and configure your own provider keys.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "b67641ff801503b51299d204b5650782910d988fd37a361fab94981350b12f83"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "17cdfda1d9f53f884dfd1c3110489b29640c14bd0df23ddb89d98d59d4f42511"
 ---
 
 # Authentication & BYOK

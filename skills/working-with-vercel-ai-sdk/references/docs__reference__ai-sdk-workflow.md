@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "d6a14b435b25e4898b7458540238e74fd202440ca79f5e107f6466a1f335d568"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "6f7164d36997d275b50481548a01fdbe2610b70b1988e1186a3d60f474059ef8"
 ---
 
 # AI SDK Workflow
@@ -71,6 +71,7 @@ sha256: "d6a14b435b25e4898b7458540238e74fd202440ca79f5e107f6466a1f335d568"
   - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
   - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
   - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+  - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
   - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
   - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
   - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

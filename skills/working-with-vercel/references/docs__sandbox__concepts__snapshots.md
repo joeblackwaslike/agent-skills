@@ -3,7 +3,7 @@ title: Snapshots
 product: vercel
 url: /docs/sandbox/concepts/snapshots
 canonical_url: "https://vercel.com/docs/sandbox/concepts/snapshots"
-last_updated: 2026-06-30
+last_updated: 2026-08-04
 type: conceptual
 prerequisites:
   - /docs/sandbox/concepts
@@ -12,13 +12,13 @@ related:
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/cli-reference
-  - /docs/sandbox/concepts
   - /docs/sandbox/pricing
+  - /docs/sandbox/concepts
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "82fe54b3b23ec03a88104b599ff6fa8c77d9ccc693dcef7011ffb76bc62c2fba"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "37287180d57ca63d08e14832352722ebdadd0f825ea337d845f856638cd6c4da"
 ---
 
 # Snapshots
@@ -45,6 +45,10 @@ The cycle looks like this:
 3. When you create or resume a sandbox from a snapshot, it starts a new session from the saved state.
 
 You can also snapshot a running sandbox at any time by calling `snapshot()`, which captures its current filesystem before stopping the session.
+
+Snapshots outlive the sandbox they came from. Deleting a sandbox removes the sandbox and its sessions, but its snapshots stay available until they expire or you [delete them](#delete-a-snapshot), and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime.
+
+A snapshot isn't tied to one sandbox. You can create or [fork](/docs/sandbox/sdk-reference#sandbox.fork) any number of sandboxes from the same snapshot, so deleting a single sandbox can't remove a snapshot that other sandboxes still start from.
 
 For the full sandbox-side view of this cycle, see [Understanding Sandboxes](/docs/sandbox/concepts#sandbox-lifecycle) and [Persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes).
 

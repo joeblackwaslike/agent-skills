@@ -3,7 +3,7 @@ title: Methods to Protect Deployments
 product: vercel
 url: /docs/deployment-protection/methods-to-protect-deployments
 canonical_url: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments"
-last_updated: 2026-07-01
+last_updated: 2026-07-30
 type: conceptual
 prerequisites:
   - /docs/deployment-protection
@@ -16,8 +16,8 @@ related:
 summary: "Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Trusted IPs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "4ea72f5dc560653d09b724ec46b59e8177c17d80cb20fd8364d8098788e3bc92"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ea336aaad2b76c4c00901442fe32ff683853151cd4d8eb33e77b16801a7d6dd9"
 ---
 
 # Methods to Protect Deployments

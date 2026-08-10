@@ -3,7 +3,7 @@ title: Skew Protection
 product: vercel
 url: /docs/skew-protection
 canonical_url: "https://vercel.com/docs/skew-protection"
-last_updated: 2026-06-26
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "1f9ece88a0ee2cc1dfcf197a5e7c9d93a7830411975b123956cf408fc7b5a433"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "cfa19afc99fcb612ab4d45a1a67b6924a5c453e17f5c35ac5adb946f1f28ae2c"
 ---
 
 # Skew Protection

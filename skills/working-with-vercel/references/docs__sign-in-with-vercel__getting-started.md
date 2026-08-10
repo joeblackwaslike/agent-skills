@@ -3,7 +3,7 @@ title: Getting started with Sign in with Vercel
 product: vercel
 url: /docs/sign-in-with-vercel/getting-started
 canonical_url: "https://vercel.com/docs/sign-in-with-vercel/getting-started"
-last_updated: 2026-03-20
+last_updated: 2026-07-15
 type: how-to
 prerequisites:
   - /docs/sign-in-with-vercel
@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "bb1bbf2c4c7345764db3311fe93a02d41e215dc618d338559e4a14ddc776282c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "9178c8da522fdcb4a02ea999641bf8a37abd338340f7e3f5a30072b28e67d9c0"
 ---
 
 # Getting started with Sign in with Vercel

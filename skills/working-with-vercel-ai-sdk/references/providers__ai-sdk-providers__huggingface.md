@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "ca6c7de224e5c9ee3ee45da0e4da5724458f46c902dce1d8a685e89c319d6173"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "15b142a27db3b22a6e516623ba59a9e01323be690f2cc2c6ef11f86aba8830aa"
 ---
 
 # Hugging Face Provider
@@ -257,6 +257,7 @@ You can also pass image URLs:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

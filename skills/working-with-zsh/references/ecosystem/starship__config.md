@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/docs/config/README.md"
-fetched_at: "2026-07-13T07:11:22.546Z"
-sha256: "951ea53ce7502df1d58a59a3f8fc97933a1d89fb789caaed380ce21be704bbba"
+fetched_at: "2026-08-10T05:38:36.623Z"
+sha256: "530da73ea6caa97dbd8802bd8f56833532b5a9183dd85bc7b3601bb1080184c7"
 ---
 
 # Configuration
@@ -3718,7 +3718,7 @@ package, and shows its current version. The module currently supports `npm`, `ni
 - [**Python**](https://www.python.org) - The `python` package version is extracted from a [PEP 621](https://peps.python.org/pep-0621/) compliant `pyproject.toml` or a `setup.cfg` present in the current directory
 - [**Composer**](https://getcomposer.org/) – The `composer` package version is extracted from the `composer.json` present
   in the current directory
-- [**Gradle**](https://gradle.org/) – The `gradle` package version is extracted from the `build.gradle` present in the current directory
+- [**Gradle**](https://gradle.org/) – The `gradle` package version is extracted from the `build.gradle` or `build.gradle.kts` present in the current directory
 - [**Julia**](https://docs.julialang.org/en/v1/stdlib/Pkg/) - The package version is extracted from the `Project.toml` present in the current directory
 - [**Mix**](https://hexdocs.pm/mix/) - The `mix` package version is extracted from the `mix.exs` present in the current directory
 - [**Helm**](https://helm.sh/docs/helm/helm_package/) - The `helm` chart version is extracted from the `Chart.yaml` present in the current directory
@@ -4684,13 +4684,14 @@ The module will only be shown if credentials are cached.
 
 ### Options
 
-| Option          | Default                  | Description                                             |
-| --------------- | ------------------------ | ------------------------------------------------------- |
-| `format`        | `'[as $symbol]($style)'` | The format of the module                                |
-| `symbol`        | `'🧙 '`                  | The symbol displayed when credentials are cached        |
-| `style`         | `'bold blue'`            | The style for the module.                               |
-| `allow_windows` | `false`                  | Since windows has no default sudo, default is disabled. |
-| `disabled`      | `true`                   | Disables the `sudo` module.                             |
+| Option             | Default                  | Description                                                                 |
+| ------------------ | ------------------------ | --------------------------------------------------------------------------- |
+| `format`           | `'[as $symbol]($style)'` | The format of the module                                                    |
+| `symbol`           | `'🧙 '`                  | The symbol displayed when credentials are cached                            |
+| `style`            | `'bold blue'`            | The style for the module.                                                   |
+| `allow_windows`    | `false`                  | Since windows has no default sudo, default is disabled.                     |
+| `disabled`         | `true`                   | Disables the `sudo` module.                                                 |
+| `use_legacy_check` | `false`                  | Uses the legacy sudo check for compatibility with older versions of `sudo`. |
 
 ### Variables
 

@@ -3,7 +3,7 @@ title: OpenAI Chat Completions API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -17,8 +17,8 @@ related:
 summary: Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "dfffd9083c9b2cc084cf2c75d15483c1ef13c026d7d692a0712226a43b763e53"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "dab56706c2ad04e177d789e3742f3a18b74defebcd3a94b74c23f8d40bd6ac6c"
 ---
 
 # OpenAI Chat Completions API

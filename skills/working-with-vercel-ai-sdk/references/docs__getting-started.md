@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/getting-started.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "231f8ed98ff52ba5399316da8f64761dc570fc2cca83dbab019cd32603bb4fab"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "4a4cd2c84634da84c9719f65546ea978b85e7a3f8acec301be1ba1ef7dc31e8b"
 ---
 
 # Getting Started
@@ -199,6 +199,7 @@ You can also use [AI SDK Core](/docs/ai-sdk-core/overview) and [AI SDK UI](/docs
     - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
     - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
     - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+    - [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
     - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
     - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
     - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

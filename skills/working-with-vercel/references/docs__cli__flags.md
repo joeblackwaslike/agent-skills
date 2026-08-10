@@ -3,7 +3,7 @@ title: vercel flags
 product: vercel
 url: /docs/cli/flags
 canonical_url: "https://vercel.com/docs/cli/flags"
-last_updated: 2026-07-14
+last_updated: 2026-08-04
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "8842b1d0ada955a731f76fd36a5f1bf6d6a5c46457bccb804d3a3b6fdfbce704"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7298cd2dd713971b3ef7d5aff853e5d839d7e5528c4bdd354a2bb837e13f324b"
 ---
 
 # vercel flags
@@ -125,6 +125,12 @@ vercel flags archive [flag]
 ```
 
 *Using the \`vercel flags\` command to archive a feature flag.*
+
+```bash filename="terminal"
+vercel flags unarchive [flag]
+```
+
+*Using the \`vercel flags\` command to unarchive a feature flag.*
 
 ```bash filename="terminal"
 vercel flags rm [flag]
@@ -687,13 +693,21 @@ vercel flags disable my-feature -e production --variant false \
 
 ### Archiving and removing flags
 
-A flag must be archived before it can be deleted. Archived flags stop evaluating and can be restored from the [dashboard](/docs/flags/vercel-flags/dashboard).
+A flag must be archived before it can be deleted. Archived flags stop evaluating. Use `vercel flags unarchive` or the [dashboard](/docs/flags/vercel-flags/dashboard) to restore an archived flag with its previous configuration.
 
 ```bash filename="terminal"
 vercel flags archive my-feature --yes
 ```
 
 *Archiving a flag without a confirmation prompt.*
+
+```bash filename="terminal"
+vercel flags unarchive my-feature --yes
+```
+
+*Unarchiving a flag without a confirmation prompt.*
+
+`vercel flags unarchive` prints a warning and exits successfully without making changes when the flag is already active.
 
 ```bash filename="terminal"
 vercel flags rm my-feature --yes
@@ -1191,7 +1205,7 @@ vercel flags sdk-keys add --type server --environment production
 
 ### Yes
 
-The `--yes` option, shorthand `-y`, skips the confirmation prompt when archiving or deleting a flag, deleting a segment, or deleting an SDK key.
+The `--yes` option, shorthand `-y`, skips the confirmation prompt when archiving, unarchiving, or deleting a flag, deleting a segment, or deleting an SDK key.
 
 ```bash filename="terminal"
 vercel flags archive my-feature --yes

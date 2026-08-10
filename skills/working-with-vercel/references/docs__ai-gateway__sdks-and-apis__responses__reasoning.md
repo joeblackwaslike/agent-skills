@@ -3,7 +3,7 @@ title: Reasoning
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/responses/reasoning
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/responses
@@ -13,8 +13,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "ef940bbc0532299356708c851e295642d401cd514db09a637cb4dc9bba6abb04"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "26596cc3452610427cdcd2f3e8ff2bea1c4ebf5c8554475c67e0a3844bb3ecfb"
 ---
 
 # Reasoning

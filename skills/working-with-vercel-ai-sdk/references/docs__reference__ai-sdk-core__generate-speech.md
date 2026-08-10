@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "30c6f7d3e321418bb9db83ccb8438f2265bd31d7a9659c241bc72da25ce3fb28"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "b208285f411b775ce0168860aa0171f32b1813bd9601b3b21bc58fcda052d7b9"
 ---
 
 # `generateSpeech()`
@@ -261,6 +261,7 @@ const { audio } = await generateSpeech({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

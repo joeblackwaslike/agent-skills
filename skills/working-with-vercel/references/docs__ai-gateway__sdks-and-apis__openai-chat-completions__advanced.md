@@ -3,7 +3,7 @@ title: Advanced Configuration
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
@@ -17,8 +17,8 @@ related:
 summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "2a8d7d6496dbd501688d24236fb74b8637c333a81af2a68aa71fa3879c147242"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "65c58446b564895fdb0e0ab74267464c9bbc7a773b6e90201ccb90e48fd90c21"
 ---
 
 # Advanced Configuration

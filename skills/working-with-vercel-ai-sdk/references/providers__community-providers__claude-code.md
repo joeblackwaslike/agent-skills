@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/claude-code.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "29869e8f1e0df92deda464972365dba90cc8c477cbe92a9ce0fd6946478e2007"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "70fb6d44f6e3f48e6cec4a1e646d0281d945ea436bd2dc7aa726cf681c77d888"
 ---
 
 # Claude Code Provider
@@ -191,6 +191,7 @@ For more details, see the [provider documentation](https://github.com/ben-vargas
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

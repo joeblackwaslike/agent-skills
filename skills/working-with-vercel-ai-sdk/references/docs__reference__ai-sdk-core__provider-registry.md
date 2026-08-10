@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "1ada890c589b13fe53dbe7533344401ab48dfe5d660528d8f7dd8e74a54b1b37"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "c7678cb9a3a1ac479962e74110958457190ffc941b7206a51dd911a8a8711289"
 ---
 
 # `createProviderRegistry()`
@@ -345,6 +345,7 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

@@ -3,7 +3,7 @@ title: Vercel SDK
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-08-03
+last_updated: 2026-08-10
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about vercel sdk on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-08-03T07:34:41.098Z"
-sha256: "2da1cd3762c90906e9726403d88c3955dc9c9c83fb959192bcc26a5f94648365"
+fetched_at: "2026-08-10T05:33:48.133Z"
+sha256: "a9cc9177008a5a9de2570fecc07ac2386754e576fde59a96f7e2131007a9da52"
 ---
 
 # Vercel SDK Reference
@@ -155,6 +155,20 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/storage/stores/{id}`](/docs/rest-api/sdk/untagged/getstoragestoresbyid.md) | GET /storage/stores/{id} |
 | **POST** | [`/storage/stores/blob`](/docs/rest-api/sdk/untagged/createstoragestoresblob.md) | POST /storage/stores/blob |
 | **DELETE** | [`/storage/stores/blob/{id}`](/docs/rest-api/sdk/untagged/deletestoragestoresblobbyid.md) | DELETE /storage/stores/blob/{id} |
+| **GET** | [`/v2/`](/docs/rest-api/sdk/untagged/getroot.md) | GET /v2/ |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}`](/docs/rest-api/sdk/untagged/getbyteamslugbyprojectslugbyrepositorynameblobsbydigest.md) | GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} |
+| **DELETE** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}`](/docs/rest-api/sdk/untagged/deletebyteamslugbyprojectslugbyrepositorynameblobsbydigest.md) | DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} |
+| **HEAD** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}`](/docs/rest-api/sdk/untagged/headbyteamslugbyprojectslugbyrepositorynameblobsbydigest.md) | HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/sdk/untagged/getbyteamslugbyprojectslugbyrepositorynameblobsuploadsbyuuid.md) | GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} |
+| **PUT** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/sdk/untagged/replacebyteamslugbyprojectslugbyrepositorynameblobsuploadsbyuuid.md) | PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} |
+| **PATCH** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/sdk/untagged/updatebyteamslugbyprojectslugbyrepositorynameblobsuploadsbyuuid.md) | PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} |
+| **DELETE** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}`](/docs/rest-api/sdk/untagged/deletebyteamslugbyprojectslugbyrepositorynameblobsuploadsbyuuid.md) | DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} |
+| **POST** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/`](/docs/rest-api/sdk/untagged/createbyteamslugbyprojectslugbyrepositorynameblobsuploads.md) | POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/sdk/untagged/getbyteamslugbyprojectslugbyrepositorynamemanifestsbyreference.md) | GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} |
+| **PUT** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/sdk/untagged/replacebyteamslugbyprojectslugbyrepositorynamemanifestsbyreference.md) | PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} |
+| **DELETE** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/sdk/untagged/deletebyteamslugbyprojectslugbyrepositorynamemanifestsbyreference.md) | DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} |
+| **HEAD** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/sdk/untagged/headbyteamslugbyprojectslugbyrepositorynamemanifestsbyreference.md) | HEAD /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} |
+| **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list`](/docs/rest-api/sdk/untagged/getbyteamslugbyprojectslugbyrepositorynametagslist.md) | GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list |
 | **POST** | [`/web/insights/toggle`](/docs/rest-api/sdk/untagged/createwebinsightstoggle.md) | POST /web/insights/toggle |
 
 ## domains-registrar
@@ -511,6 +525,10 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/vcr/repository/{idOrName}`](/docs/rest-api/sdk/vcr/get-a-repository.md) | Get a repository |
 | **DELETE** | [`/v1/vcr/repository/{idOrName}`](/docs/rest-api/sdk/vcr/delete-a-repository.md) | Delete a repository |
 | **GET** | [`/v1/vcr/repository/{idOrName}/images`](/docs/rest-api/sdk/vcr/list-repository-images.md) | List repository images |
+| **GET** | [`/v1/vcr/repository/{idOrName}/permissions`](/docs/rest-api/sdk/vcr/list-repository-permissions.md) | List repository permissions |
+| **POST** | [`/v1/vcr/repository/{idOrName}/permissions`](/docs/rest-api/sdk/vcr/add-a-repository-permission.md) | Add a repository permission |
+| **DELETE** | [`/v1/vcr/repository/{idOrName}/permissions`](/docs/rest-api/sdk/vcr/remove-a-repository-permission.md) | Remove a repository permission |
+| **DELETE** | [`/v1/vcr/repository/{idOrName}/permissions/all`](/docs/rest-api/sdk/vcr/clear-all-repository-permissions.md) | Clear all repository permissions |
 | **GET** | [`/v1/vcr/repository/{idOrName}/tags`](/docs/rest-api/sdk/vcr/list-repository-tags.md) | List repository tags |
 | **GET** | [`/v1/vcr/repository/{idOrName}/tags/{tag}`](/docs/rest-api/sdk/vcr/get-a-repository-tag.md) | Get a repository tag |
 | **GET** | [`/v1/vcr/repository/{idOrName}/images/{imageIdOrDigest}`](/docs/rest-api/sdk/vcr/get-a-repository-image.md) | Get a repository image |

@@ -3,7 +3,7 @@ title: Configuring a Build
 product: vercel
 url: /docs/builds/configure-a-build
 canonical_url: "https://vercel.com/docs/builds/configure-a-build"
-last_updated: 2026-07-01
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/builds
@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "4191df22c6090962f1298344a563da915fcc7924432a9fc1065ecdad94477324"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "cf39eae74ea7c142e0538979761b1fdd261ea266c760a807d14b87d75669edbf"
 ---
 
 # Configuring a Build

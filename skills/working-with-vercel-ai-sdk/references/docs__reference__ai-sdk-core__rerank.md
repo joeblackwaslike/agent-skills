@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "f94bbc8c2880ec3c69d849e52528920740e1f8f613100ea9b46b2afc0a707fc6"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "ae129fe655c8054dc5d3ece41802c5ca9bc5a56ea0b926e101866b81e76d434d"
 ---
 
 # `rerank()`
@@ -362,6 +362,7 @@ const { ranking } = await rerank({
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

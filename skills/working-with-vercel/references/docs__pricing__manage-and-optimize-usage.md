@@ -3,7 +3,7 @@ title: Manage and optimize usage
 product: vercel
 url: /docs/pricing/manage-and-optimize-usage
 canonical_url: "https://vercel.com/docs/pricing/manage-and-optimize-usage"
-last_updated: 2026-06-17
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/pricing
@@ -16,8 +16,8 @@ related:
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "dabf1f034b0516b35e63f11f6894bbaee333bd6ed5bc691b0474f3d92f9f401d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b71c95c34118facf832cb1ab03d75ab76ea114fffb3a48afe545a3d19314e2a4"
 ---
 
 # Manage and optimize usage

@@ -3,7 +3,7 @@ title: Quickstart
 product: vercel
 url: /docs/connect/quickstart
 canonical_url: "https://vercel.com/docs/connect/quickstart"
-last_updated: 2026-06-09
+last_updated: 2026-07-28
 type: tutorial
 prerequisites:
   - /docs/connect
@@ -16,8 +16,8 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "4ee90eaf5a351ce728790d3e93d1ce4de30c060a008eb308b743d20a45dcf26d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "253e12dc616c9f736411e17b2cdbd93f4f906455ffa179daa9c9eec8d3150f3d"
 ---
 
 # Quickstart

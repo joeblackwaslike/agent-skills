@@ -3,7 +3,7 @@ title: Using Drains
 product: vercel
 url: /docs/drains/using-drains
 canonical_url: "https://vercel.com/docs/drains/using-drains"
-last_updated: 2026-07-09
+last_updated: 2026-07-22
 type: how-to
 prerequisites:
   - /docs/drains
@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "48f91be860656eec87b5e83827fcf4f890b05d9fd605d0ac1231b1fcbc45fd58"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "75b8133b098603b91c004f83c6f36b712a9dd958cf0e4023e41aa28c1eb9a7c2"
 ---
 
 # Using Drains
@@ -106,7 +106,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   #### Datadog
   Configure a Datadog destination to forward Audit Log data to the [Datadog Logs API](https://docs.datadoghq.com/api/latest/logs/). Datadog destinations are available only for Audit Log Drains.
 
-  Select your [Datadog site](https://docs.datadoghq.com/getting_started/site/) and enter a Datadog API key. See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#datadog) for the delivery format.
+  Select your [Datadog site](https://docs.datadoghq.com/getting_started/site/) and enter a Datadog API key. See [Drain Audit Logs to Datadog](/docs/drains/audit-logs-to-datadog) for API key setup and destination fields.
   #### Panther
   Configure a Panther destination to forward Audit Log data to [Panther's built-in Vercel source](https://docs.panther.com/data-onboarding/supported-logs/vercel). Panther destinations are available only for Audit Log Drains.
 

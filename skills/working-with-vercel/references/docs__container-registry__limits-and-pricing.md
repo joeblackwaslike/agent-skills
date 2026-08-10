@@ -3,7 +3,7 @@ title: Container Registry limits and pricing
 product: vercel
 url: /docs/container-registry/limits-and-pricing
 canonical_url: "https://vercel.com/docs/container-registry/limits-and-pricing"
-last_updated: 2026-06-30
+last_updated: 2026-08-03
 type: reference
 prerequisites:
   - /docs/container-registry
@@ -12,8 +12,8 @@ related:
 summary: Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "0e1d7afafe8c0c1689579439518a52f5133b31fb6dc448d3f86ab5dbdfb7dc70"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "259384d92df451f1aa4ea216ce25ca143d1a98bdd5cfd4f9f40c3d9d14999465"
 ---
 
 # Container Registry limits and pricing
@@ -39,11 +39,12 @@ The total image size is calculated from the compressed layers and config blob re
 
 ### Plan limits
 
-| Resource                 | Hobby | Pro    | Enterprise |
-| ------------------------ | ----- | ------ | ---------- |
-| Repositories per project | 10    | 1,000  | 5,000      |
-| Images per repository    | 50    | 10,000 | 50,000     |
-| Tags per repository      | 1,000 | 10,000 | 50,000     |
+| Resource                          | Hobby | Pro    | Enterprise |
+| --------------------------------- | ----- | ------ | ---------- |
+| Repositories per project          | 10    | 1,000  | 5,000      |
+| Images per repository             | 50    | 10,000 | 50,000     |
+| Tags per repository               | 1,000 | 10,000 | 50,000     |
+| Teams a repository is shared with | 100   | 100    | 100        |
 
 ### Compatibility limits
 

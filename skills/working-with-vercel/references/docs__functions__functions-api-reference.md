@@ -3,7 +3,7 @@ title: Functions API Reference
 product: vercel
 url: /docs/functions/functions-api-reference
 canonical_url: "https://vercel.com/docs/functions/functions-api-reference"
-last_updated: 2026-07-01
+last_updated: 2026-08-03
 type: reference
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "63e0715d266fe6ad62126cc8d993aab24d7000ff3f621b67bbffac9393ee3ed7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "f758566c2130189ac97bb5c282888225926fb0c96496db0ad9de1e4fade61ac0"
 ---
 
 # Functions API Reference
@@ -227,11 +227,11 @@ async function abortPendingTask() {
 
 The table below shows a highlight of the valid config options. For detailed information on all the config options, see the [Configuring Functions](/docs/functions/configuring-functions) docs.
 
-| Property                                                        | Type     | Description                                                                                                                                                                               |
-| --------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`runtime`](/docs/functions/configuring-functions/runtime)      | `string` | This optional property defines the runtime to use, and if not set the runtime will default to `nodejs`.                                                                                   |
-| [`regions`](/docs/functions/configuring-functions/region)       | `string` | This optional property and can be used to specify the [region](/docs/regions#region-list) in which your function should execute. This can only be set when the `runtime` is set to `edge` |
-| [`maxDuration`](/docs/functions/configuring-functions/duration) | `int`    | This optional property can be used to specify the maximum duration in seconds that your function can run for. This can't be set when the `runtime` is set to `edge`                       |
+| Property                                                        | Type     | Description                                                                                                                                                                                                                          |
+| --------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`runtime`](/docs/functions/configuring-functions/runtime)      | `string` | This optional property defines the runtime to use, and if not set the runtime will default to `nodejs`. Starting in Next.js 16.3, setting `runtime` to `edge` is no longer supported.                                                |
+| [`regions`](/docs/functions/configuring-functions/region)       | `string` | This optional property can be used to specify the [region](/docs/regions#region-list) in which your function should execute.                                                                                                         |
+| [`maxDuration`](/docs/functions/configuring-functions/duration) | `int`    | This optional property can be used to specify the maximum duration in seconds that your function can run for.                                                                                                                        |
 
 > For \["nextjs-app"]:
 
@@ -250,11 +250,11 @@ export const maxDuration = 15;
 
 The table below shows a highlight of the valid config options. For detailed information on all the config options, see the [Configuring Functions](/docs/functions/configuring-functions) docs.
 
-| Property                                                          | Type     | Description                                                                                                                                                                                |
-| ----------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`runtime`](/docs/functions/configuring-functions/runtime)        | `string` | This optional property defines the runtime to use, and if not set the runtime will default to `nodejs`.                                                                                    |
-| [`preferredRegion`](/docs/functions/configuring-functions/region) | `string` | This optional property and can be used to specify the [regions](/docs/regions#region-list) in which your function should execute. This can only be set when the `runtime` is set to `edge` |
-| [`maxDuration`](/docs/functions/configuring-functions/duration)   | `int`    | This optional property can be used to specify the maximum duration in seconds that your function can run for. This can't be set when the `runtime` is set to `edge`                        |
+| Property                                                          | Type     | Description                                                                                                                                                                                                                            |
+| ----------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`runtime`](/docs/functions/configuring-functions/runtime)        | `string` | This optional property defines the runtime to use, and if not set the runtime will default to `nodejs`. Starting in Next.js 16.3, setting `runtime` to `edge` is no longer supported.                                                  |
+| [`preferredRegion`](/docs/functions/configuring-functions/region) | `string` | This optional property can be used to specify the [regions](/docs/regions#region-list) in which your function should execute.                                                                                                          |
+| [`maxDuration`](/docs/functions/configuring-functions/duration)   | `int`    | This optional property can be used to specify the maximum duration in seconds that your function can run for.                                                                                                                          |
 
 ## `SIGTERM` signal
 
@@ -284,6 +284,7 @@ The `@vercel/functions` package provides a set of helper methods and utilities f
 
 - [**`waitUntil()`**](/docs/functions/functions-api-reference/vercel-functions-package#waituntil): This method allows you to extend the lifetime of a request handler for the duration of a given Promise . It's useful for tasks that can be performed after the response is sent, such as logging or updating a cache.
 - [**`getEnv`**](/docs/functions/functions-api-reference/vercel-functions-package#getenv): This function retrieves System Environment Variables exposed by Vercel.
+- [**`getDeadline()`**](/docs/functions/functions-api-reference/vercel-functions-package#getdeadline): Returns the shared invocation deadline for the current function invocation as a `Date` object.
 - [**`geolocation()`**](/docs/functions/functions-api-reference/vercel-functions-package#geolocation): Returns location information for the incoming request, including details like city, country, and coordinates.
 - [**`ipAddress()`**](/docs/functions/functions-api-reference/vercel-functions-package#ipaddress): Extracts the IP address of the request from the headers.
 - [**`invalidateByTag()`**](/docs/functions/functions-api-reference/vercel-functions-package#invalidatebytag): Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.

@@ -3,7 +3,7 @@ title: Archive
 product: vercel
 url: /docs/flags/vercel-flags/dashboard/archive
 canonical_url: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive"
-last_updated: 2026-02-26
+last_updated: 2026-07-15
 type: how-to
 prerequisites:
   - /docs/flags/vercel-flags/dashboard
@@ -14,8 +14,8 @@ related:
 summary: Archive unused feature flags and restore them when needed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5d33fe6e20a866a4083153b06fc5dbc139461f4c99ec73ccb038fb888b567944"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d4482d033dd6e12636f27d2a56098194dd60ff88e38ca336b075c8c7bfda10f4"
 ---
 
 # Archive

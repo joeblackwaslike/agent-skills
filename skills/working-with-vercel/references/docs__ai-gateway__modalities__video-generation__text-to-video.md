@@ -3,7 +3,7 @@ title: Text-to-Video Generation
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/text-to-video
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video"
-last_updated: 2026-06-30
+last_updated: 2026-07-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
@@ -13,8 +13,8 @@ related:
 summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "b5a8eaf4813c9d4f228fcb9861c5907f35e72810f91c742a1e3894dc8acd6eb1"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d291640f9cd2b3be82040261382973b40c8b7eb0a0b898f5ae932350b34e7e87"
 ---
 
 # Text-to-Video Generation

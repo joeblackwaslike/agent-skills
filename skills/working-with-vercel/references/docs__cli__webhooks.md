@@ -3,7 +3,7 @@ title: vercel webhooks
 product: vercel
 url: /docs/cli/webhooks
 canonical_url: "https://vercel.com/docs/cli/webhooks"
-last_updated: 2026-02-10
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4159ae36b63a209a8d1e8be9207b7e65d8a1a35618291d0c64c118c1867e8e86"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7642074564a7a4f874564b44d4e20b2aa8db6d0c37f4a1a0107c19cb2ef488f9"
 ---
 
 # vercel webhooks

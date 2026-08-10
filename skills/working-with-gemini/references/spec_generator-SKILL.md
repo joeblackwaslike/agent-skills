@@ -2,15 +2,19 @@
 name: spec_generator
 description: Generates a structured Workable Spec JSON to guide a Developer Worker.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/SKILL.md"
-fetched_at: "2026-07-13T06:56:30.977Z"
-sha256: "0f4a2ad80120b48bfecdbba5453644c6173aeafe993515ca976406e1228287bd"
+fetched_at: "2026-08-10T05:29:31.983Z"
+sha256: "cebff453fc13043ac5383b8818f456251abf15609e282f225dbf291f0dd99ac6"
 ---
 
 # Spec Generator Instructions
 Extract key technical details from the issue and organize them according to the following strict JSON schema.
 
 ### Critical Rules:
-1. **Codebase Verification:** Rely on file paths and locations found during your codebase exploration. Ensure all files mentioned in `files_to_modify` and `test_file` actually exist in the repository. Do not make up file paths.
+1. **Codebase Verification:** Rely on file paths and locations found during your codebase exploration. Ensure all files mentioned in `files_to_modify` actually exist in the repository. Do not make up file paths.
+2. **Target File Selection:** List all source code files in `files_to_modify` where code changes belong.
+   - Fix config or state issues early at their setup/hook entrypoint rather than refactoring low-level utilities.
+   - Strictly do NOT list test files or files that were only inspected without requiring code changes.
+3. **Strict JSON Escaping:** Ensure the generated output is standard, valid JSON. In JSON string values (such as summary fields or verification steps), do NOT escape single quotes with backslashes. Write them directly as `'` (not `\\'`).
 
 > [!IMPORTANT]
 > The output MUST strictly adhere to this schema. Deviations (like putting objects inside arrays instead of strings) will break the downstream automated code generation pipeline.
@@ -48,7 +52,7 @@ The final `workable_spec` object must conform strictly to this JSON Schema speci
       "properties": {
         "files_to_modify": {
           "type": "array",
-          "description": "List of paths to files requiring changes relative to the repository root (e.g. ['src/cli.ts']).",
+          "description": "List of source code files requiring changes relative to the repository root (e.g. ['src/cli.ts']). Strictly do NOT include test files (*.test.ts, *.spec.ts) here; test files must go into testing_strategy.test_file.",
           "items": {
             "type": "string"
           }
@@ -83,7 +87,8 @@ The final `workable_spec` object must conform strictly to this JSON Schema speci
         },
         "framework": {
           "type": "string",
-          "description": "Testing framework used (e.g., 'Vitest', 'Pytest', etc.)."
+          "description": "Testing framework used.",
+          "enum": ["Vitest", "N/A"]
         }
       }
     }

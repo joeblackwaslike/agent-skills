@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-apps.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "08b44b81384cc61f93db64f5de88372365528658097e51f06bac549ba92e0267"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "97b8a9fef03d0b427434629014570d9b577ac848521f31006dcfb39955d52798"
 ---
 
 # MCP Apps
@@ -228,6 +228,7 @@ Returns a `Promise<MCPAppResource>`.
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

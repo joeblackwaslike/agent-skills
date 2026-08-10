@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/llamagate.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "45577137c4eed72474033c02d1a90c4f8397724dce3ae8c0e6aa70c261c25658"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "36c6632336257f8309558ed2d8862b00a7587c0039a8b93b7fa96d632b0c0a45"
 ---
 
 # LlamaGate
@@ -245,6 +245,7 @@ console.log(text);
 - [Hindsight](/providers/community-providers/hindsight)
 - [Nia](/providers/community-providers/nia)
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
+- [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [Flowise](/providers/community-providers/flowise)
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "5802eafc77b80d4148bcacd70cf12491815eb37365eec90be38a34d8ae92f220"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "3c32f71b375465e1c543c1ae72f17411fd744e0facc84715606ef44c312c5b26"
 ---
 
 # Luma Provider
@@ -279,6 +279,7 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

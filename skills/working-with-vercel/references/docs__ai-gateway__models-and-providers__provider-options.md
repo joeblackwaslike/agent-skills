@@ -3,7 +3,7 @@ title: Provider Options
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-options
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options"
-last_updated: 2026-07-08
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "b9d9ef7851e9e3c87106be41f9b3828ca9b4e873d882519e88a7337068680d9d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "d80b6c814be62ab2737bd61e8c415e2422c8964cfbbf1c1c6faecccaef78d200"
 ---
 
 # Provider Options

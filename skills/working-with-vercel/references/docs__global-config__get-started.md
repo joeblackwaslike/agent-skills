@@ -3,7 +3,7 @@ title: Getting started with Global Config
 product: vercel
 url: /docs/global-config/get-started
 canonical_url: "https://vercel.com/docs/global-config/get-started"
-last_updated: 2018-10-20
+last_updated: 2026-07-29
 type: tutorial
 prerequisites:
   - /docs/global-config
@@ -16,8 +16,8 @@ related:
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "2fa6e5b7279d4b2a15e30a8fc49ae8eadddc751ed0aa90a90808cb84e3897c29"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "22d64df8c0095f91a6ce2725d79249c3c89d2d35a00390ee92638746c304fa1f"
 ---
 
 # Getting started with Global Config

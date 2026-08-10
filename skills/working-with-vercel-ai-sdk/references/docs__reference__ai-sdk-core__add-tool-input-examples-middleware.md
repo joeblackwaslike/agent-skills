@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/add-tool-input-examples-middleware.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "e5ced4ca9ae40e3a33d75a7742537c25113478d6dab2361db8eb2690eee233a8"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "362a1832b4f496d3636d0d0c2de520a6ed6e648d489a37ef51edb6ce75986192"
 ---
 
 # `addToolInputExamplesMiddleware`
@@ -199,6 +199,7 @@ Input Examples:
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

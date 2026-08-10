@@ -3,7 +3,7 @@ title: vercel firewall
 product: vercel
 url: /docs/cli/firewall
 canonical_url: "https://vercel.com/docs/cli/firewall"
-last_updated: 2026-06-04
+last_updated: 2026-07-15
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,8 +16,8 @@ related:
 summary: "Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations using the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "566ad87b8cdb961713f7407a671b722d2744277433481e16279abddaa8fd0e60"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "bf2a662d7620f662f1f8dd7a06f21fd1dee278d6237f6dcd39221f944172c9cb"
 ---
 
 # vercel firewall

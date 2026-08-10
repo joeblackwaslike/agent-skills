@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/zod-schema.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "6fc88e1f72f9b106998707cb7c1fbcfcd3c628f6f91e4e4d42383981b0396cc8"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "805b4414994b4a84d1db7858429f2bb4bd8c67ad898e4bb67ddc6428b1127084"
 ---
 
 # `zodSchema()`
@@ -154,6 +154,7 @@ A Schema object that is compatible with the AI SDK, containing both the JSON sch
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

@@ -3,7 +3,7 @@ title: "Working with Vercel's private registry"
 product: vercel
 url: /docs/private-registry
 canonical_url: "https://vercel.com/docs/private-registry"
-last_updated: 2026-03-17
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: "Learn how to set up Vercel's private registry for use locally, in Vercel, and in your CI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/private-registry.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "bd58680fe1fb677d9db607087d21dcfa19f6522c2afd545f10a8c71e2d67c504"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "c93b52b290ed24ce0da4b6ca8bd8ad91761e1622fce273e8ebdf611fdc50d2fd"
 ---
 
 # Working with Vercel

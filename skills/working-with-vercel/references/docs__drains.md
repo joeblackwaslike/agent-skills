@@ -3,7 +3,7 @@ title: Working with Drains
 product: vercel
 url: /docs/drains
 canonical_url: "https://vercel.com/docs/drains"
-last_updated: 2026-06-29
+last_updated: 2026-07-22
 type: reference
 prerequisites:
   []
@@ -11,13 +11,13 @@ related:
   - /docs/drains/using-drains
   - /docs/drains/audit-logs-to-s3
   - /docs/drains/audit-logs-to-splunk
+  - /docs/drains/audit-logs-to-datadog
   - /docs/drains/audit-logs-to-panther
-  - /docs/drains/reference/logs
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "e1b5044f301c58cae82da8161ead6d2403668ebe65f623bb37bc87dfad33900c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "919670b00b380b0f425f98301254e756b211d177ab6820b8acba9c24964bef16"
 ---
 
 # Working with Drains
@@ -36,7 +36,7 @@ Drains let you forward observability data from your applications to external ser
 You can add Drains in the following ways:
 
 - Custom endpoints: [Configure](/docs/drains/using-drains#configuring-drains) any data type to send to a [custom HTTP endpoint](/docs/drains/using-drains#custom-endpoint)
-- Audit Log destinations: Configure Audit Log Drains to send data to [Amazon S3](/docs/drains/audit-logs-to-s3), [Splunk](/docs/drains/audit-logs-to-splunk), Datadog, or [Panther](/docs/drains/audit-logs-to-panther)
+- Audit Log destinations: Configure Audit Log Drains to send data to [Amazon S3](/docs/drains/audit-logs-to-s3), [Splunk](/docs/drains/audit-logs-to-splunk), [Datadog](/docs/drains/audit-logs-to-datadog), or [Panther](/docs/drains/audit-logs-to-panther)
 - Native integrations: [Configure](/docs/drains/using-drains#configuring-drains) logs and trace data types to send to popular services like Dash0 and Braintrust using [native integrations](/docs/drains/using-drains#native-integrations)
 
 Learn how to [manage your active drains](/docs/drains/using-drains#managing-your-active-drains).
@@ -109,6 +109,10 @@ Drains usage is billed based on the pricing table below. Pricing is the same reg
 | --- | --- |
 | Drains Volume | $0.50 |
 
+
+### How usage is measured
+
+Billed gigabytes are measured as the uncompressed JSON serialization of each drained record, regardless of the format or encoding used to deliver it. Delivery to a destination can use protobuf, compression, or both, so the bytes a destination reports receiving (for example, an ingestion or "bytes received" metric in the destination service) can be lower than the billed bytes. The two figures measure different things and are not directly comparable. This difference is expected.
 
 See [Optimizing Drains](/docs/manage-and-optimize-observability#optimizing-drains-usage) for information on how to manage costs associated with Drains.
 

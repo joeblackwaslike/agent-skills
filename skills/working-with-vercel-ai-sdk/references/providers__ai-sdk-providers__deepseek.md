@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "746c37549558e1fa95fe6719366948f55a00807daf86e1ea38ce84d8f058254b"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "c70a5b1f70e975e85e903b285b385d6874f98e3b8338b4ec42592704ee60d929"
 ---
 
 # DeepSeek Provider
@@ -209,6 +209,7 @@ The metrics include:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

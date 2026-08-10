@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "7b52b5fc420db5f5c084440042c104eb7e36bf645ca32165c9bca1386a09831b"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "8ccb1b577498b727142714cf2a2c1786515ad96cbfe9eef62ea05e6564274f6e"
 ---
 
 # Cartesia Provider
@@ -247,6 +247,26 @@ Ink 2 supports English audio and uses Cartesia's native turn detection by
 default. To finalize only when the input audio stream ends, pass
 `providerOptions.cartesia.streaming.turnDetection: false`.
 
+By default, the provider maps `audio/pcm`, `audio/pcmu`, and `audio/pcma` to
+16-bit PCM, G.711 μ-law, and G.711 A-law respectively. To stream another raw
+PCM representation, set `providerOptions.cartesia.streaming.encoding` to
+`pcm_s32le`, `pcm_f16le`, or `pcm_f32le`. For example:
+
+```ts
+const result = streamTranscribe({
+  model: cartesia.transcription('ink-2'),
+  audio,
+  inputAudioFormat: { type: 'audio/pcm', rate: 48000 },
+  providerOptions: {
+    cartesia: {
+      streaming: {
+        encoding: 'pcm_f32le',
+      },
+    },
+  },
+});
+```
+
 See [Transcription](/docs/ai-sdk-core/transcription) for more information about
 streaming transcription.
 
@@ -346,6 +366,7 @@ The following provider options are available:
 - [Baseten](/providers/ai-sdk-providers/baseten)
 - [Hugging Face](/providers/ai-sdk-providers/huggingface)
 - [QuiverAI](/providers/ai-sdk-providers/quiverai)
+- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
 - [Mistral AI](/providers/ai-sdk-providers/mistral)
 - [Together.ai](/providers/ai-sdk-providers/togetherai)
 - [Cohere](/providers/ai-sdk-providers/cohere)

@@ -3,7 +3,7 @@ title: Modalities
 product: vercel
 url: /docs/ai-gateway/modalities
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities"
-last_updated: 2026-06-20
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: "The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, realtime voice, embeddings,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "725e1b79d935932247937f21b771d872c384a7de24621245c58400598e8816e1"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7dc6df56cf21bfff3f561065cac095f498fc0ea3571fd19c20604ad3ace5cd80"
 ---
 
 # Modalities

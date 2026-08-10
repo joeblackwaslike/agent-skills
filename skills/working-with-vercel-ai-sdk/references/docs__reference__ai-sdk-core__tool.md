@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "e647c93745df7ead871f39646c111314dbc2631bf7e4ac78663f71774493b99d"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "2f05906969763b757ab7b3bd861ab50b0d356be7c637b11967e9987e744a68a9"
 ---
 
 # `tool()`
@@ -293,6 +293,7 @@ The tool that was passed in.
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "9c41517603b3508ad3896177afec758f9a6af7a16f324224f159e1af88060b7d"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "e5cd056860e5bb1deb4374de2a088e8b46db9c1eee5038f81ef05241da954f58"
 ---
 
 # Video Generation
@@ -290,33 +290,62 @@ const { video } = await generateVideo({
   longer timeouts (60 seconds or more) depending on the model and video length.
 </Note>
 
-### Polling Timeout
+### Polling
 
-Video generation is an asynchronous process that can take several minutes to complete. Most providers use a polling mechanism where the SDK periodically checks if the video is ready. The default polling timeout is typically 5 minutes, which may not be sufficient for longer videos or certain models.
+Video generation is an asynchronous process that can take several minutes to complete. The SDK automatically polls the provider to check if the video is ready. You can configure the polling behavior:
 
-You can configure the polling timeout using provider-specific options. Each provider exports a type for its options that you can use with `satisfies` for type safety:
-
-```tsx highlight={"8-12"}
+```tsx highlight={"8-11"}
 import { experimental_generateVideo as generateVideo } from 'ai';
-import { fal, type FalVideoModelOptions } from '@ai-sdk/fal';
+import { fal } from '@ai-sdk/fal';
 
 const { video } = await generateVideo({
   model: fal.video('luma-dream-machine/ray-2'),
   prompt: 'A cinematic timelapse of a city from dawn to dusk',
   duration: 10,
-  providerOptions: {
-    fal: {
-      pollTimeoutMs: 600000, // 10 minutes
-    } satisfies FalVideoModelOptions,
+  poll: {
+    intervalMs: 5000, // Check every 5 seconds (default)
+    timeoutMs: 600000, // Timeout after 10 minutes (default)
   },
 });
 ```
 
-<Note>
-  For production use, we recommend setting `pollTimeoutMs` to at least 10
-  minutes (600000ms) to account for varying generation times across different
-  models and video lengths.
-</Note>
+For durable workflows that provide their own sleep primitive, pass it as
+`poll.delay`. The custom delay is used for both polling intervals and webhook
+timeouts.
+
+### Webhooks
+
+For models with native webhook support, pass a `webhook` factory that returns a
+public URL and a promise that resolves when your application receives the
+webhook request:
+
+```tsx highlight={"8-15"}
+import { fal } from '@ai-sdk/fal';
+import { experimental_generateVideo as generateVideo } from 'ai';
+import { createWebhook } from './create-webhook';
+
+const { video } = await generateVideo({
+  model: fal.video('luma-dream-machine/ray-2'),
+  prompt: 'A cinematic timelapse of a city from dawn to dusk',
+  poll: {
+    timeoutMs: 600000, // Wait up to 10 minutes for the webhook
+  },
+  webhook: async () => {
+    const { url, received } = await createWebhook();
+    return { url, received };
+  },
+});
+```
+
+`createWebhook` is an application-specific helper that registers a webhook
+listener before returning. Its `received` promise must resolve with the request
+`headers` and `body`. The SDK sends `url` to the provider, waits for `received`,
+and then retrieves the completed video.
+
+You can provide `poll` together with `webhook`. For models with native webhook
+support, `poll.timeoutMs` limits how long the SDK waits for the notification.
+If the model does not support webhooks, the SDK falls back to polling with the
+provided interval and timeout.
 
 ### Custom Headers
 

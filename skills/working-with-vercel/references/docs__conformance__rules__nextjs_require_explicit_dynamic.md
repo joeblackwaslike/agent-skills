@@ -3,7 +3,7 @@ title: NEXTJS_REQUIRE_EXPLICIT_DYNAMIC
 product: vercel
 url: /docs/conformance/rules/NEXTJS_REQUIRE_EXPLICIT_DYNAMIC
 canonical_url: "https://vercel.com/docs/conformance/rules/NEXTJS_REQUIRE_EXPLICIT_DYNAMIC"
-last_updated: 2025-09-24
+last_updated: 2026-07-15
 type: conceptual
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Requires explicitly setting the `dynamic` route segment option for Next.js pages and routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_require_explicit_dynamic.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "6dfd6d382585ca6fe42e723e299d22e79269aff341d70dd57fed81741127c78d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "e43ef064e3184654d0d6c404aada00ce0a1c9b1dc30183ec897d06c2a71647d9"
 ---
 
 # NEXTJS_REQUIRE_EXPLICIT_DYNAMIC

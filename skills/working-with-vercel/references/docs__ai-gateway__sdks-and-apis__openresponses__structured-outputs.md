@@ -3,7 +3,7 @@ title: Structured Outputs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openresponses
@@ -16,8 +16,8 @@ related:
 summary: Constrain OpenResponses API output to a JSON schema so every response parses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "227e1586f99d86930e9922f236e67fa656294e742957c61ccdc716e8a51765c3"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "61d541a81838fcba759aad748bd54271b5e8f29dc2028f0a4afbb411f4e69991"
 ---
 
 # Structured Outputs

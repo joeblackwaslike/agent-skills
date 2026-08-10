@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9dfc025ec02f7a86e1b42b64793e44d92145c245915f0659bfdb89e38b08c402"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "e1b5e5395ba533b9228d0ea54a6dd5696b7b29732c185b5da934210b2d4c989f"
 ---
 
 # Understanding Vercel
@@ -62,6 +62,9 @@ The following Pro features are **not available** on the trial:
 
 - [Log drains](/docs/log-drains)
 - [Account webhooks](/docs/webhooks#account-webhooks)
+- [Free first-year domain for new Pro upgrades](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades)
+
+The free first-year domain offer becomes available only for eligible new paid Pro subscriptions and must be claimed within 30 days of upgrading.
 
 Once your usage of [Active CPU](/docs/functions/usage-and-pricing), [Provisioned Memory](/docs/functions/usage-and-pricing), or [Function Invocations](/docs/functions/usage-and-pricing) exceeds or reaches 100% of the Pro trial usage, your trial will be paused.
 

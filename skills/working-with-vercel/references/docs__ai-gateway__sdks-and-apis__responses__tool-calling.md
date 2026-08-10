@@ -3,7 +3,7 @@ title: Tool Calling
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/responses/tool-calling
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/responses
@@ -13,8 +13,8 @@ related:
 summary: Define tools the model can call with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "c7c9f90e4d2353c79d1ffdf9c574dfed99b80864efeeff0f4e90493620272d5a"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "5a354b0efb07db05b630d5d81f9adc7e5c62b3f4d7448b8922e2d53beb6298e5"
 ---
 
 # Tool Calling

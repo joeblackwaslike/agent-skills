@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/unixorn/awesome-zsh-plugins/main/README.md"
-fetched_at: "2026-07-27T07:42:25.509Z"
-sha256: "cb7baeac2530573f00ce5f763e45635f7b83853faf1dbd15319c8619a403f60c"
+fetched_at: "2026-08-10T05:38:36.623Z"
+sha256: "263b2c886a0ca0fa8969e3ea8c1dbad3c19e076253140c65fc7464a22beb448a"
 ---
 
 # awesome-zsh-plugins
@@ -60,7 +60,6 @@ A collection of ZSH frameworks, plugins, tutorials & themes inspired by the vari
   - [zap](#zap)
   - [zapack](#zapack)
   - [zcomet](#zcomet)
-  - [zdx](#zdx)
   - [zeesh](#zeesh)
   - [zef](#zef)
   - [zert](#zert)
@@ -90,6 +89,7 @@ A collection of ZSH frameworks, plugins, tutorials & themes inspired by the vari
   - [ztupide](#ztupide)
   - [zulu](#zulu)
   - [zush 🦥 - Mid-Performance ZSH Configuration](#zush----mid-performance-zsh-configuration)
+  - [Performance](#performance)
 - [Setups](#setups)
   - [oh-my-zsh](#oh-my-zsh-1)
   - [Raw ZSH](#raw-zsh)
@@ -147,11 +147,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ## Frameworks
 
 These frameworks make customizing your ZSH setup easier.
-
-You can find performance timing comparisons of various frameworks in the following locations.
-
-- [rossmacarthur/zsh-plugin-manager-benchmark](https://github.com/rossmacarthur/zsh-plugin-manager-benchmark) - Contains performance benchmarks for the most popular ZSH frameworks, including both install time and load time.
-- [pm-perf-test](https://github.com/z-shell/pm-perf-test) - Tooling for running performance tests on multiple ZSH frameworks.
 
 ### [alf](https://github.com/psyrendust/alf)
 ![GitHub last commit](https://img.shields.io/github/last-commit/psyrendust/alf) ![GitHub Repo stars](https://img.shields.io/github/stars/psyrendust/alf)
@@ -446,12 +441,6 @@ Features Provided by XC-Manager:
 
 **zcomet** is a minimalistic ZSH plugin manager that gets you to the prompt surprisingly quickly without caching (see the benchmarks). In addition to loading and updating plugins stored in `git` repositories, it supports lazy-loading plugins (further reducing startup time) as well as downloading and sourcing code snippets.
 
-### [zdx](https://github.com/landerox/zdx-suite)
-![GitHub last commit](https://img.shields.io/github/last-commit/landerox/zdx-suite)
- ![GitHub Repo stars](https://img.shields.io/github/stars/landerox/zdx-suite)
-
-ZDX (ZSH Developer Experience Suite) is a streamlined, terminal-first productivity suite and custom plugin loader for ZSH. Stop memorizing complex flags and arguments. ZDX provides lightning-fast, fuzzy-search-driven access to your daily shell workflows. Powered by [fzf](https://github.com/junegunn/fzf), these modular, interactive suites and custom plugins transform your terminal into a high-performance developer dashboard.
-
 ### [zeesh](https://github.com/zeekay/zeesh)
 ![GitHub last commit](https://img.shields.io/github/last-commit/zeekay/zeesh)
  ![GitHub Repo stars](https://img.shields.io/github/stars/zeekay/zeesh)
@@ -723,6 +712,13 @@ Features:
 - Auto-compilation - All ZSH files compiled with `zcompile` for faster loading
 - Smart Caching - Environment changes cached for instant startup
 
+### Performance
+
+You can find performance timing comparisons for various frameworks in the following locations.
+
+- [rossmacarthur/zsh-plugin-manager-benchmark](https://github.com/rossmacarthur/zsh-plugin-manager-benchmark) - Contains performance benchmarks for the most popular ZSH frameworks, including both install time and load time.
+- [pm-perf-test](https://github.com/z-shell/pm-perf-test) - Tooling for running performance tests on multiple ZSH frameworks.
+
 ## Setups
 
 This section is for full setup dropins - they aren't frameworks, but they're not simple plugins/themes either.
@@ -863,6 +859,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [activate-py-environment](https://github.com/se-jaeger/zsh-activate-py-environment) - Automagically detects and activates your python environments (`poetry`, `virtualenv` and `conda`) while traversing directories.
 - [adguard-helper](https://github.com/MohamedElashri/adguard-helper) - Simplies interaction with the [AdGuard VPN CLI](https://github.com/AdguardTeam/AdGuardVPNCLI). It provides user-friendly commands that reduce the need to remember complex flags and commands by offering a more intuitive interface.
 - [adonisjs](https://github.com/baliestri/adonisjs.plugin.zsh) - Plugin for skipping the `node` part of the `ace` command.
+- [agent-history](https://github.com/aaronbronow/agent-history) - ZSH shortcut to resume recent AI coding sessions in the terminal.
 - [ai-cmd](https://github.com/kylesnowschwartz/zsh-ai-cmd) - Natural language to shell commands with ghost text preview. Requires `curl`, [`jq`](https://stedolan.github.io/jq/) and an Anthropic API key.
 - [ai-cmd](https://github.com/shanemcd/ai-cmd) - Generate shell commands from natural language using LLMs via [Claude Code](https://docs.anthropic.com/en/docs/claude-code) or [Ollama](https://ollama.ai/).
 - [ai-commands](https://github.com/muePatrick/zsh-ai-commands) - Asks GPT (gpt-4-turbo-preview) for CLI commands that achieve the described target action.
@@ -1120,6 +1117,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [env-secrets](https://github.com/singular0/zsh-env-secrets) - Automatically retrieves secrets from secure storage backends and exports them as environment variables during shell initialization. This eliminates the need to store sensitive information in plain text configuration files. Works with `pass` and the macOS keychain.
 - [envrc](https://github.com/fabiogibson/envrc-zsh-plugin) - Automatically loads and unloads environment variables if a `.envrc` file is found in a directory.
 - [escape-backtick](https://github.com/bezhermoso/zsh-escape-backtick) - Quickly insert escaped backticks when double-tapping "`".
+- [ev](https://github.com/emhat098/ev) - ev is a ZSG / [Oh My Zsh](https://ohmyz.sh/) plugin for progressive command autocomplete: a selectable suggestion list under your prompt that deepens as you type - commands → subcommands → flags. Use it as a [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) alternative when you want a navigable list (not only ghost text), including `git`, `gh`, `docker`, and other CLI subcommands.
 - [evalcache](https://github.com/mroth/evalcache) - Caches the output of a binary initialization command like `eval "$(hub alias -s)"`, to help lower shell startup time by loading from cache instead of re-running every new shell session.
 - [evil-registers](https://github.com/zsh-vi-more/evil-registers) - Extends ZLE `vi` commands to remotely access named registers of the `vim` and `nvim` editors, and system selection and clipboard.
 - [exa (DarrinTisdale)](https://github.com/DarrinTisdale/zsh-aliases-exa) - Enables a number of aliases extending [exa](https://github.com/ogham/exa), the modern replacement for `ls`.
@@ -1917,7 +1915,6 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [zaw](https://github.com/zsh-users/zaw) - ZSH anything.el-like widget.
 - [zbrowse](https://github.com/zdharma-continuum/zbrowse) - When doing shell work, it is often the case that `echo $variable` is invoked multiple times, to check the result of a loop, etc. With ZBrowse, you just need to press `Ctrl-B`, which invokes the ZBrowse – Zshell variable browser.
 - [zce](https://github.com/hchbaw/zce.zsh) - Vim's EasyMotion / Emacs's ace-jump-mode for ZSH.
-- [zcolors](https://github.com/marlonrichert/zcolors) - Uses your `$LS_COLORS` to generate a coherent theme for Git and your Zsh prompt, completions and [ZSH syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
 - [zconvey](https://github.com/zdharma-continuum/zconvey) - Adds ability to send commands to other ZSH sessions, you can use this to `cd $PWD` on all active ZSH sessions, for example.
 - [zed](https://github.com/eendroroy/zed-zsh) - A simple wrapper for [z](https://github.com/rupa/z) to install it via a ZSH plugin.
 - [zellij (jaeheonji)](https://github.com/jaeheonji/zsh-zellij-plugin) - Provides an environment that uses [zellij](https://github.com/zellij-org/zellij). Requires [tmux](https://github.com/tmux/tmux). Deprecated by author, now [supported natively](https://zellij.dev/documentation/integration.html#autostart-on-shell-creation).
@@ -2231,6 +2228,7 @@ These plugins add tab completions without adding extra functions or aliases.
 - [acenoster](https://github.com/himdek/Acenoster-ZSH-Theme) - A multi-purpose theme with very detailed `git` and `mercurial` support. Also includes decorators for AWS profile name, virtual environment name if any, number of background tasks, current directory and previous command's exit code if non-zero.
 - [achab](https://github.com/niotna/antoinechab-theme) - Includes decorators for the current folder path, the current user and the current `git` branch. Decorator colors are easily customizable.
 - [adamdodev](https://github.com/adamdodev/adamdodev-zsh-theme) - Includes decorators for `git` status, the name of your AWS profile, the name of your Azure Service Principal, kubernetes context, terraform workspace, last command exit status and current working directory.
+- [adhde](https://github.com/Senderman/adhde-zsh-theme) - Includes decorators for user@host, current directory, `git` status, last command status and datetime.
 - [adlee](https://github.com/adlee-was-taken/oh-my-zsh-osx/blob/master/adlee.zsh-theme) - macOS theme, requires a Powerline-compatible font.
 - [adoz](daviosoo/adoz-zsh-theme) - A minimalistic theme with a focus on purple and blue color tones. Adoz provides a clean, modern prompt that displays essential information while maintaining a sleek aesthetic. Highly customizable by setting environment variables. Includes decorators for user@hostname, current directory, timestamp and `git` status.
 - [af-magic-dynamic](https://github.com/rslavin/af-magic-dynamic) - Modified version of [af-magic](https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme) with dynamic path shortening.
@@ -2414,6 +2412,7 @@ These plugins add tab completions without adding extra functions or aliases.
 - [cmder-wsl](https://github.com/szyminson/cmder-wsl-zsh) - Configuration file for `cmder`that is configured to work in quake mode with ZSH and a modified [Agnoster](https://gist.github.com/agnoster/3712874) theme.
 - [cmder](https://github.com/potasiyam/cmder-zsh-theme) - A ZSH theme that matches the theme of Cmder, a popular terminal emulator for windows. Includes `node` and `git` status decorations.
 - [cn](https://github.com/shinqcn/cn-zsh/) - Includes `username`, `directory` and `git` status decorations.
+- [cobalt-spark](https://github.com/azhuchkov/cobalt-spark) - A compact, low-noise theme designed to stay out of the way during everyday terminal work. Includes abbreviated paths and concise indicators for Git state, virtualenvs, nested shells and background jobs.
 - [cobalt2](https://github.com/wesbos/Cobalt2-iterm) - Wes Bos' Cobalt 2 theme for ZSH and iTerm 2.
 - [cobalt2git](https://github.com/alexeimun/cobalt2git) - Cobalt 2 theme with `git` extensions.
 - [codemachine](https://github.com/CodeMonkeyMike/ZshTheme-CodeMachine) - Displays decorators for `git` info, whether you're logged in via `ssh`, and the return code of last command.
@@ -2744,6 +2743,7 @@ These plugins add tab completions without adding extra functions or aliases.
 - [linuxero](https://github.com/andreshincapier/linuxero) - Minimalist. Includes decorations for root status, current directory, `git` status, current ruby rvm environment and current python virtualenv.
 - [liquidprompt](https://github.com/nojhan/liquidprompt) - A full-featured & carefully designed adaptive prompt with useful information when you need it. It shows you what you need when you need it. You will notice what changes when it changes, saving time and frustration.
 - [lish](https://github.com/bashelled/lish) - A casual theme. No roughness, just smooth. Includes `git`, user@host, last command exit status, current directory, current time and root status decorators.
+- [litmus](https://github.com/dceoy/litmus-zsh-theme) - Connection-aware colors: prompt turns cyan on local sessions and magenta over SSH, so you always know where you are, includes decorators for datetime, `git` status, root status indicator, exit status of last command and user@host.
 - [liver](https://github.com/RenoirTan/liver.zsh-theme) - Colorful, includes `git` status, user, host, current and relative path to the current repository root decorations.
 - [llama](https://github.com/PsychoLlama/llama.zsh-theme) - Minimalist theme used by discerning llamas.
 - [logico](https://github.com/logico/logico-zsh-theme) - Has `git` decorations. Shows remote status and indicator for vi-mode.
@@ -3357,7 +3357,7 @@ Most of these plugins can be installed by adding `zpm load "githubuser/reponame"
 
 ## Writing New Plugins and Themes
 
-I've documented some recommendations for writing new plugin and themes [here](https://github.com/unixorn/awesome-zsh-plugins/blob/master/Writing_Plugins_and_Themes.md).
+I've documented some recommendations for writing new plugin and themes [here](https://github.com/unixorn/awesome-zsh-plugins/blob/main/Writing_Plugins_and_Themes.md).
 
 There is also a more detailed [Zsh Plugin Standard](https://zdharma-continuum.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html).
 
@@ -3381,13 +3381,12 @@ There is also a more detailed [Zsh Plugin Standard](https://zdharma-continuum.gi
 - [shtab](https://github.com/iterative/shtab) - Automatically generate shell tab completion scripts for Python CLI apps, supports `zsh`, `bash` and `tcsh`.
 - [smucd](https://github.com/pro555161rblxs/smucd) - Fuzzy typo-tolerant cd replacement with interactive selection UI.
 - [zargparse](https://github.com/ctil/zargparse) - Pass it a script that uses `argparse` and it will write a ZSH completion to your current directory.
+- [zcolors](https://github.com/marlonrichert/zcolors) - Uses your `$LS_COLORS` to generate a coherent theme for `git` and your ZSH prompt, completions and [ZSH syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
 - [zsh-ai-completions](https://github.com/iloveitaly/zsh-ai-completions) - AI-generated ZSH completions
 - [zsh-bench](https://github.com/romkatv/zsh-bench) - A benchmark for interactive ZSH. It measures user-visible latency of interactive `zsh`: input lag, command lag, etc.
 - [zshdb](https://github.com/rocky/zshdb) - A ZSH debugger.
 - [zshelldoc](https://github.com/zdharma-continuum/zshelldoc) - Doxygen for shell scripts. Parses ZSH and Bash scripts, outputs Asciidoc document with function lists, call trees, lists of exported variables, and more.
 - [zunit](https://github.com/zunit-zsh/zunit) - A powerful unit testing framework for ZSH.
-
-
 
 ### Other Useful Lists
 

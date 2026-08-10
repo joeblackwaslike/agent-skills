@@ -3,7 +3,7 @@ title: Text Generation
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/openresponses/text-generation
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation"
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openresponses
@@ -13,8 +13,8 @@ related:
 summary: Generate text responses using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "1d8a4d89c185ad52412221954c241cbf1b0e855784030237d7ce252e13dfce81"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "94b85acbd81e872832668d67070c216e9d0b2bb7cbf4b4dedf067df138afb9ba"
 ---
 
 # Text Generation

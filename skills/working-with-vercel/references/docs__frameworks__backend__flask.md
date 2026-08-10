@@ -3,7 +3,7 @@ title: Deploy a Flask app on Vercel
 product: vercel
 url: /docs/frameworks/backend/flask
 canonical_url: "https://vercel.com/docs/frameworks/backend/flask"
-last_updated: 2026-07-06
+last_updated: 2026-07-22
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -17,8 +17,8 @@ related:
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "c07d509346ea555c0077a8c22dc3e0fa6b19f4603ab825f0f08fe2546e558972"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "28bbd28766790704f5d4681cfe86b455749c1bb58d0c68ea57fe7d8b2d5a266b"
 ---
 
 # Deploy a Flask app on Vercel

@@ -3,7 +3,7 @@ title: Bot Management
 product: vercel
 url: /docs/bot-management
 canonical_url: "https://vercel.com/docs/bot-management"
-last_updated: 2026-07-09
+last_updated: 2026-07-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d1a4e5d21635a50297526ac6b28e005194b26d85aac2aba0cd60287bc055daf0"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "7b3068315f83899d0b58474ab5e4a73770e074a8ca5f8a277c431acb6c5d78ab"
 ---
 
 # Bot Management

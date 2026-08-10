@@ -3,7 +3,7 @@ title: Zero Data Retention
 product: vercel
 url: /docs/ai-gateway/security-and-compliance/zdr
 canonical_url: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr"
-last_updated: 2026-06-20
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/security-and-compliance
@@ -15,8 +15,8 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "8817bd1b2c4849ac22b12b2d540ab6c6f158161bf5cd377326a928300975ddd5"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "49d509645782c1f49cb23d71c259581866189b92579fb8f7564ef903e30c378d"
 ---
 
 # Zero Data Retention

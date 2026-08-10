@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/valibot-schema.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "1da7303c3cd7c588e0638a4755adb97bbd490815652e4f015ef871007fa06c39"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "4308230fe04d094d65f1eb63715bf59cacec3d809fe3b94a937351f9fcf80d4f"
 ---
 
 # `valibotSchema()`
@@ -103,6 +103,7 @@ A Schema object that is compatible with the AI SDK, containing both the JSON sch
 - [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
 - [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
 - [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
+- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
 - [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
 - [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
 - [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)

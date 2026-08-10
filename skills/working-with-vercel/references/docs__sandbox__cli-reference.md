@@ -3,7 +3,7 @@ title: Sandbox CLI Reference
 product: vercel
 url: /docs/sandbox/cli-reference
 canonical_url: "https://vercel.com/docs/sandbox/cli-reference"
-last_updated: 2026-06-15
+last_updated: 2026-08-04
 type: reference
 prerequisites:
   - /docs/sandbox
@@ -11,13 +11,13 @@ related:
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/python-sdk-reference
   - /docs/project-configuration/general-settings
+  - /docs/sandbox/concepts/images
   - /docs/sandbox/concepts/tags
-  - /docs/sandbox/concepts/drives
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "e7db53ea075384a0d2946ec5b87c1dcff77565034a8be1a38602f0104196b86d"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "43a83b8177968dbb559a8642d86651c897c0bdafa46da700a2e472b0ea98fdef"
 ---
 
 # Sandbox CLI Reference
@@ -85,7 +85,7 @@ sandbox <subcommand>
 - [`connect`](#sandbox-connect): Start an interactive shell in an existing sandbox. \[aliases: `ssh`, `shell`]
 - [`copy`](#sandbox-copy): Copy files between your local filesystem and a remote sandbox. \[alias: `cp`]
 - [`stop`](#sandbox-stop): Stop the current session of one or more sandboxes.
-- [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their snapshots.
+- [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions.
 - [`config`](#sandbox-config): View and update sandbox configuration (resources, timeout, persistence, snapshot retention, network policy, tags).
 - [`sessions`](#sandbox-sessions): Inspect VM sessions for a sandbox.
 - [`snapshot`](#sandbox-snapshot): Take a snapshot of the filesystem of a sandbox.
@@ -168,7 +168,7 @@ sandbox create --name my-sandbox
 sandbox create --vcpus 1 --connect
 
 # Create a Python sandbox with custom timeout
-sandbox create --runtime python3.13 --timeout 1h
+sandbox create --image vercel/sandbox/python --timeout 1h
 
 # Create sandbox with port forwarding
 sandbox create --publish-port 8080 --project my-project
@@ -206,7 +206,7 @@ sandbox create --mount cache:/data:read-only
 | `--project <project>`               | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`                    | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--name <name>`                     | -        | Sandbox name (unique per project). Generated if omitted. Names cannot be changed after creation.                                                                 |
-| `--runtime <runtime>`               | -        | Choose between Node.js ('node26', 'node24', or 'node22') or Python ('python3.13'). We'll use Node.js 24 by default.                                              |
+| `--image <image>`                   | -        | A Vercel Container Registry (VCR) [image](/docs/sandbox/concepts/images) name and optional tag or sha to start the sandbox from (e.g. my-repo, my-repo:v1).      |
 | `--timeout <duration>`              | -        | How long the sandbox can run before we automatically stop it. Examples: '5m', '1h'. We'll stop it after 5 minutes by default.                                    |
 | `--publish-port <port>`             | `-p`     | Make a port from your sandbox accessible via a public URL. Repeatable.                                                                                           |
 | `--snapshot <snapshot_id>`          | `-s`     | Create the sandbox from a previously saved snapshot. To fork from another sandbox by name, use [`sandbox fork`](#sandbox-fork) instead.                          |
@@ -241,7 +241,7 @@ A persistent sandbox snapshots its filesystem every time a session stops, so its
 
 ## `sandbox fork`
 
-Fork an existing sandbox into a new one. The fork is seeded from the source sandbox's current snapshot and inherits its config. Any option you pass overrides the copied value. If the source has no current snapshot, the fork falls back to creating a fresh sandbox with the source's runtime plus the copied config.
+Fork an existing sandbox into a new one. The fork is seeded from the source sandbox's current snapshot and inherits its config. Any option you pass overrides the copied value. If the source has no current snapshot, the fork falls back to creating a fresh sandbox with the source's image plus the copied config.
 
 `env` is **not** copied (encrypted server-side); pass `--env` to set environment variables on the fork. Tags passed via `--tag` fully replace the source's tags (no per-key merge).
 
@@ -567,7 +567,9 @@ sandbox stop --project my-project my-sandbox
 
 ## `sandbox remove`
 
-Permanently delete one or more sandboxes, along with all of their snapshots and sessions. Once removed, a sandbox cannot be recovered. Use this instead of `sandbox stop` when you no longer need the sandbox at all.
+Permanently delete one or more sandboxes, along with all of their sessions. Once removed, a sandbox cannot be recovered. Use this instead of `sandbox stop` when you no longer need the sandbox at all.
+
+Removing a sandbox keeps its snapshots, because several sandboxes can start from the same snapshot. Delete those separately with [`sandbox snapshots delete`](#sandbox-snapshots-delete).
 
 ```bash filename="terminal"
 sandbox remove <name> [...name]
@@ -627,18 +629,18 @@ sandbox run --mount cache:/data:read-only -- ls /data
 
 `sandbox run` accepts every option from [`sandbox create`](#sandbox-create) plus every option from [`sandbox exec`](#sandbox-exec). The most common are repeated below.
 
-| Option                        | Alias    | Description                                                                                                                                                      |
-| ----------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--project <project>`         | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
-| `--scope <team>`              | `--team` | The team you want to use with this command.                                                                                                                      |
-| `--name <name>`               | -        | Resume an existing sandbox with this name, or create it if it doesn't exist.                                                                                     |
-| `--runtime <runtime>`         | -        | Choose between Node.js ('node26', 'node24', or 'node22') or Python ('python3.13'). We'll use Node.js 24 by default.                                              |
-| `--timeout <duration>`        | -        | How long the sandbox can run before we automatically stop it. Examples: '5m', '1h'. We'll stop it after 5 minutes by default.                                    |
-| `--publish-port <port>`       | `-p`     | Make a port from your sandbox accessible via a public URL.                                                                                                       |
-| `--workdir <directory>`       | `-w`     | Set the directory where you want the command to run.                                                                                                             |
-| `--env <key=value>`           | `-e`     | Set environment variables for your command.                                                                                                                      |
-| `--tag <key=value>`           | `-t`     | Key-value tag. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                              |
-| `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `read-only`. See [Drives](/docs/sandbox/concepts/drives) to access the beta. |
+| Option                        | Alias    | Description                                                                                                                                                        |
+| ----------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--project <project>`         | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                               |
+| `--scope <team>`              | `--team` | The team you want to use with this command.                                                                                                                        |
+| `--name <name>`               | -        | Resume an existing sandbox with this name, or create it if it doesn't exist.                                                                                       |
+| `--image <image>`             | -        | A Vercel Container Registry (VCR) [image](/docs/vercel/sandbox/concepts/images) name and optional tag or sha to start the sandbox from (e.g. my-repo, my-repo:v1). |
+| `--timeout <duration>`        | -        | How long the sandbox can run before we automatically stop it. Examples: '5m', '1h'. We'll stop it after 5 minutes by default.                                      |
+| `--publish-port <port>`       | `-p`     | Make a port from your sandbox accessible via a public URL.                                                                                                         |
+| `--workdir <directory>`       | `-w`     | Set the directory where you want the command to run.                                                                                                               |
+| `--env <key=value>`           | `-e`     | Set environment variables for your command.                                                                                                                        |
+| `--tag <key=value>`           | `-t`     | Key-value tag. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                                |
+| `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `read-only`. See [Drives](/docs/sandbox/concepts/drives) to access the beta.   |
 
 ### Sandbox run flags
 

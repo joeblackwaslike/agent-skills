@@ -3,7 +3,7 @@ title: Runtimes
 product: vercel
 url: /docs/functions/runtimes
 canonical_url: "https://vercel.com/docs/functions/runtimes"
-last_updated: 2026-07-01
+last_updated: 2026-07-29
 type: reference
 prerequisites:
   - /docs/functions
@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "0a9688d9c0c5b4ab54e1d25343a21eeba0ab5e32be4d4711e4d5559c2989f2c7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "4d23b20d45fdfb9de481f8cb3572a263fea1cf4022ea3c014bceb9a32c00d18a"
 ---
 
 # Runtimes

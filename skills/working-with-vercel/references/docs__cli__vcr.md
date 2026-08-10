@@ -3,24 +3,26 @@ title: vercel vcr
 product: vercel
 url: /docs/cli/vcr
 canonical_url: "https://vercel.com/docs/cli/vcr"
-last_updated: 2018-10-20
+last_updated: 2026-08-03
 type: reference
 prerequisites:
   - /docs/cli
 related:
   - /docs/container-registry
   - /docs/container-registry/cli-reference
+  - /docs/container-registry/public-and-shared-repositories
+  - /docs/container-registry/getting-started
   - /docs/container-registry/limits-and-pricing
 summary: "Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and manage images from your..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/vcr.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "fc889b111c5f2f64bd675f52d98eebe45566e2e44339bd545d02ea6ecf5436d7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "ad0252f8476b25a7fb19121137892e70e88258a0fffc9b1d675fae723aff8682"
 ---
 
 # vercel vcr
 
-The `vercel vcr` command is the entry point for managing [Vercel Container Registry](/docs/container-registry) (VCR) from the Vercel CLI. It groups subcommands for listing, inspecting, creating, and deleting repositories, and for managing their tags and images. The full command surface is documented in the [Container Registry CLI Reference](/docs/container-registry/cli-reference). This page summarizes the entry point and links to the full reference.
+The `vercel vcr` command is the entry point for managing [Vercel Container Registry](/docs/container-registry) (VCR) from the Vercel CLI. It groups subcommands for listing, inspecting, creating, and deleting repositories, for managing their tags and images, and for sharing repositories with other teams. The full command surface is documented in the [Container Registry CLI Reference](/docs/container-registry/cli-reference). This page summarizes the entry point and links to the full reference.
 
 ## Usage
 
@@ -51,7 +53,7 @@ OIDC token.*
 
 ## Full reference
 
-For the full list of subcommands, options, and examples, see the [Container Registry CLI Reference](/docs/container-registry/cli-reference). Use `vercel vcr login` to authenticate Docker, Podman, or Buildah with VCR, `vercel vcr tag` to browse a repository's tags, and `vercel vcr image` to list, inspect, or delete images. To push and pull images, use Docker-compatible tooling as described in the [Container Registry documentation](/docs/container-registry#push-an-image).
+For the full list of subcommands, options, and examples, see the [Container Registry CLI Reference](/docs/container-registry/cli-reference). Use `vercel vcr login` to authenticate Docker, Podman, or Buildah with VCR, `vercel vcr tag` to browse a repository's tags, `vercel vcr image` to list, inspect, or delete images, and `vercel vcr permissions` to manage which teams a repository is [shared](/docs/container-registry/public-and-shared-repositories#share-a-repository) with. To push and pull images, use Docker-compatible tooling as described in [Getting Started](/docs/container-registry/getting-started#push-an-image).
 
 ## Related
 

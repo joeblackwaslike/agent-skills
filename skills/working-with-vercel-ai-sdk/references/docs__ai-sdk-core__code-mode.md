@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "026235b61ab702817d9c9bcf224e94f2a655b0d0cc30ca79b8d8b60af57a0086"
+fetched_at: "2026-08-10T05:31:58.738Z"
+sha256: "d8665d5a63dc4217c2a92c64b37a2683c763e0acc283f5c25a8ea0d0a37f9c26"
 ---
 
 # Code Mode
@@ -35,7 +35,10 @@ Define your tools in one tool set and use `experimental_toolCallers` to select
 which tools code mode can call:
 
 ```ts
-import { experimental_codeModeTool as codeModeTool } from '@ai-sdk/code-mode';
+import {
+  DIRECT_TOOL_CALL,
+  experimental_codeModeTool as codeModeTool,
+} from '@ai-sdk/code-mode';
 import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 
@@ -82,25 +85,25 @@ const tools = {
 const result = await generateText({
   model: __MODEL__,
   tools,
-  experimental_toolCallers: ({ code_mode }) => ({
-    getInventory: [code_mode],
-    getDemand: [code_mode],
-  }),
+  experimental_toolCallers: {
+    getInventory: ['code_mode'],
+    getDemand: ['code_mode'],
+  },
   stopWhen: isStepCount(10),
   prompt: 'Compare inventory and demand for product sku_123.',
 });
 ```
 
-The keys returned by `experimental_toolCallers` are the tools being governed.
+The keys in `experimental_toolCallers` are the tools being governed.
 The values identify their allowed callers. In this example, `getInventory` and
 `getDemand` are available through `code_mode`, but they are not exposed to the
-model as directly callable tools. Include `'direct'` when a tool should also be
-callable directly:
+model as directly callable tools. Include `DIRECT_TOOL_CALL` when a tool should
+also be callable directly:
 
 ```ts
-experimental_toolCallers: ({ code_mode }) => ({
-  getInventory: ['direct', code_mode],
-});
+experimental_toolCallers: {
+  getInventory: ['code_mode', DIRECT_TOOL_CALL],
+};
 ```
 
 Tools without an `experimental_toolCallers` entry keep their existing direct

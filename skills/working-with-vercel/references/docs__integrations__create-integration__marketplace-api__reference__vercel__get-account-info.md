@@ -3,7 +3,7 @@ title: get-account-info
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info"
-last_updated: 2026-08-03
+last_updated: 2026-08-10
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-account-info on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f14c22700538ae667fb4d2997367fe32ff3979aadd4f2df8a843865d286170b7"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "a21702bb3c96d16760c0b4550d3f6006a1d0fcb043bc7e59401dbe061d5c4bc5"
 ---
 
 # Get Account Information

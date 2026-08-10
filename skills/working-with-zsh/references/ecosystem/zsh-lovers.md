@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/grml/zsh-lovers/master/zsh-lovers.1.txt"
-fetched_at: "2026-06-16T01:06:56.418Z"
-sha256: "44507daa14fcc1a56906f43bc51b9e52583f14e7aa3e528670b05d92a9bb6b83"
+fetched_at: "2026-08-10T05:38:36.623Z"
+sha256: "8ae95a74b46ec15f603c3582fead030ea785270c8759890bbd272a2f53698421"
 ---
 
 ZSH-LOVERS(1)
@@ -1472,7 +1472,7 @@ Zsh Webpage by Christian Schneider::
 The zsh-lovers webpage::
     *http://grml.org/zsh/[]*
 IRC channel::
-    *#zsh at irc.freenode.org*
+    *#zsh at irc.libera.chat*
 The Z shell reference-card (included in the zsh-lovers debian-package)::
     *http://www.bash2zsh.com/zsh_refcard/refcard.pdf[]*
 
@@ -1538,4 +1538,4 @@ COPYRIGHT
 Copyright  \(C) Michael Prokop, Christian Schneider and Matthias
 Kopfermann.
 
-// vim:tw=80 ai
+// vim:tw=80 ai ft=rst

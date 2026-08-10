@@ -3,7 +3,7 @@ title: Video Extension
 product: vercel
 url: /docs/ai-gateway/modalities/video-generation/video-extension
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension"
-last_updated: 2026-06-30
+last_updated: 2026-07-24
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/modalities/video-generation
@@ -13,8 +13,8 @@ related:
 summary: Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "377ca2a95dfaea725d0f7349bbecd6f0fc6f1dedbf55a46585a0c6fec4dd4e3c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "45d51e41b09607822b14ceefad4d011d1f9df195ed1f7da07074f47b2cb7068d"
 ---
 
 # Video Extension

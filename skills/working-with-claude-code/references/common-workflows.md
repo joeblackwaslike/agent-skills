@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/common-workflows.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "df01507484f3f783d287ea79f063bf6070b19288dc2443c0df349c8cc2e38240"
+fetched_at: "2026-08-10T05:26:58.686Z"
+sha256: "79d95075b4fd73eef4402e29d1d1ecac7fa58729633e1968c8c01a4f0f773113"
 ---
 
 > ## Documentation Index
@@ -150,6 +150,8 @@ Suppose you've encountered an error message and need to find and fix its source.
 ### Refactor code
 
 Suppose you need to update old code to use modern patterns and practices.
+
+For porting an entire codebase to a new language, see [how Anthropic runs large-scale code migrations with Claude Code](https://claude.com/blog/ai-code-migration) on the blog.
 
 <Steps>
   <Step title="Identify legacy code for refactoring">
@@ -409,12 +411,12 @@ Suppose you want Claude to handle a task automatically on a recurring basis, lik
 
 Pick a scheduling option based on where you want the task to run:
 
-| Option                                                 | Where it runs                     | Best for                                                                                                                                                                                                 |
-| :----------------------------------------------------- | :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Routines](/docs/en/routines)                               | Anthropic-managed infrastructure  | Tasks that should run even when your computer is off. Can also trigger on API calls or GitHub events in addition to a schedule. Configure at [claude.ai/code/routines](https://claude.ai/code/routines). |
-| [Desktop scheduled tasks](/docs/en/desktop-scheduled-tasks) | Your machine, via the desktop app | Tasks that need direct access to local files, tools, or uncommitted changes.                                                                                                                             |
-| [GitHub Actions](/docs/en/github-actions)                   | Your CI pipeline                  | Tasks tied to repo events like opened PRs, or cron schedules that should live alongside your workflow config.                                                                                            |
-| [`/loop`](/docs/en/scheduled-tasks)                         | The current CLI session           | Quick polling while a session is open. Tasks stop when you start a new conversation; `--resume` and `--continue` restore unexpired ones.                                                                 |
+| Option                                                 | Where it runs                       | Best for                                                                                                                                                                                                 |
+| :----------------------------------------------------- | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Routines](/docs/en/routines)                               | Cloud, Anthropic-managed by default | Tasks that should run even when your computer is off. Can also trigger on API calls or GitHub events in addition to a schedule. Configure at [claude.ai/code/routines](https://claude.ai/code/routines). |
+| [Desktop scheduled tasks](/docs/en/desktop-scheduled-tasks) | Your machine, via the desktop app   | Tasks that need direct access to local files, tools, or uncommitted changes.                                                                                                                             |
+| [GitHub Actions](/docs/en/github-actions)                   | Your CI pipeline                    | Tasks tied to repo events like opened PRs, or cron schedules that should live alongside your workflow config.                                                                                            |
+| [`/loop`](/docs/en/scheduled-tasks)                         | The current CLI session             | Quick polling while a session is open. Tasks stop when you start a new conversation; `--resume` and `--continue` restore unexpired ones.                                                                 |
 
 <Tip>
   When writing prompts for scheduled tasks, be explicit about what success looks like and what to do with results. The task runs autonomously, so it can't ask clarifying questions. For example: "Review open PRs labeled `needs-review`, leave inline comments on any issues, and post a summary in the `#eng-reviews` Slack channel."

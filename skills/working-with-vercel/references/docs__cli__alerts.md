@@ -3,7 +3,7 @@ title: vercel alerts
 product: vercel
 url: /docs/cli/alerts
 canonical_url: "https://vercel.com/docs/cli/alerts"
-last_updated: 2026-06-06
+last_updated: 2026-07-28
 type: reference
 prerequisites:
   - /docs/cli
@@ -13,8 +13,8 @@ related:
 summary: List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "bbc24166337cb113fdfee2d510cff2bf6b9f821cc387c38bec7c95ae0e0360a2"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "6542b44c9126d9c164b3ef26da85ff86bcb54cb93d1dccfdca346cf3f84ba8fa"
 ---
 
 # vercel alerts
@@ -197,7 +197,7 @@ vercel alerts inspect grp_abc123 --format json
 
 ### `rules`
 
-Create, list, update, or delete alert notification rules from the terminal. It mirrors the rules surface in the dashboard's **Alerts** settings.
+Use [rule schemas](#rules-schema), then create, list, update, or delete alert notification rules from the terminal. The command mirrors the rules surface in the dashboard's **Alerts** settings.
 
 Use `vercel alerts rules --help` to see the rules command tree.
 
@@ -206,6 +206,7 @@ Rule IDs are returned by `rules add` and shown by `rules ls`. Use those IDs with
 | Command | Aliases | Description |
 | --- | --- | --- |
 | `rules ls` | `list` | List alert rules for the current scope. |
+| `rules schema` | None | Show supported rule types, fields, and body examples. |
 | `rules add` | `create` | Create an alert rule from a JSON body file. |
 | `rules inspect` | `get` | Show one alert rule by ID. |
 | `rules rm` | `remove`, `delete` | Delete an alert rule. |
@@ -252,6 +253,46 @@ vercel alerts rules ls --type usage_anomaly,error_anomaly
 vercel alerts rules ls --format json
 ```
 
+#### `rules schema`
+
+Show supported alert rule types. Pass `--type` to see one type's fields, allowed filter values, and body examples.
+
+```bash filename="terminal"
+vercel alerts rules schema
+```
+
+##### Options
+
+| Option | Description |
+| --- | --- |
+| `--type` | Rule type to describe. Supports `usage_anomaly`, `error_anomaly`, and `custom_alert`. |
+| `--format` | Output format. Supports `json`. |
+
+##### Alert rule schema examples
+
+```bash filename="terminal"
+# Show the fields and examples for a built-in usage anomaly rule
+vercel alerts rules schema --type usage_anomaly
+
+# Show the fields and examples for a built-in error anomaly rule
+vercel alerts rules schema --type error_anomaly
+
+# Show the fields and examples for a custom alert rule
+vercel alerts rules schema --type custom_alert
+
+# Return a schema as JSON
+vercel alerts rules schema --type custom_alert --format json
+```
+
+For custom alerts, run `vercel metrics schema <metric-or-prefix>` to discover metrics, aggregations, and dimensions. Public metric IDs use the `vercel.` namespace. The alert query uses the corresponding event and measure names in `queryJsonString`:
+
+| Public metric | Query event | Query measure |
+| --- | --- | --- |
+| `vercel.request.count` | `incomingRequest` | `count` |
+| `vercel.function_invocation.count` | `serverlessFunctionInvocation` | `count` |
+| `vercel.external_api_request.count` | `outgoingRequest` | `count` |
+| `vercel.sandbox.cpu_total_time_ms` | `sandboxUsage` | `cpuTotalTimeMs` |
+
 #### `rules add`
 
 Create an alert rule from a JSON body file. Do not include `id` or `teamId` in the body; the API assigns them.
@@ -267,7 +308,7 @@ vercel alerts rules add --body ./rule.json
 | Option | Description |
 | --- | --- |
 | `--body` | Path to a JSON file containing the new rule. |
-| `-p, --project` | Project name or ID, for example `my-app` or `prj_abc123`. |
+| `-p, --project` | Project name or ID. Supplies the project target when the body omits `projectId`. |
 | `-a, --all` | Team-wide. |
 | `--format` | Output format. Supports `json`. |
 
@@ -275,16 +316,17 @@ vercel alerts rules add --body ./rule.json
 
 Create a JSON file for the rule body, then pass it with `--body`.
 
-In the examples below, replace `team_123` and `prj_123` with your team and project values.
+In the examples below, replace `prj_123` with your project ID.
 
 Rule-level filters use OData expressions, as shown in the `projectId` and `filter` fields below.
+
+For built-in rules, pass `--project` or set `projectId` in the body to target a project. The CLI does not infer built-in rule targeting from the linked project.
 
 ```json filename="usage-rule.json"
 {
   "name": "Production usage anomalies",
   "alertTypes": [{ "type": "usage_anomaly" }],
   "projectId": "projectId in ('prj_123')",
-  "sensitivityLevel": 3,
   "autosubscribeOwnersInKnock": true
 }
 ```
@@ -304,8 +346,7 @@ Create a built-in 4xx error anomaly rule by filtering the `error_anomaly` alert 
       "filter": "statusGroup eq '4xx'"
     }
   ],
-  "projectId": "projectId in ('prj_123')",
-  "sensitivityLevel": 3
+  "projectId": "projectId in ('prj_123')"
 }
 ```
 
@@ -313,15 +354,16 @@ Create a built-in 4xx error anomaly rule by filtering the `error_anomaly` alert 
 vercel alerts rules add --body ./4xx-error-rule.json
 ```
 
-Custom alert rules use the raw project ID in `projectId`. The `queryJsonString` value is an escaped JSON string that describes the Observability query.
+Custom alert rules target one project. Set the raw project ID in `projectId`, pass `--project`, or run the command from a linked project.
+
+The `queryJsonString` value is an escaped JSON string that describes the Observability query. Choose a descriptive name for each `rollups` key. For a ratio, `formula.left` and `formula.right` must reference those exact keys.
 
 ```json filename="custom-threshold-rule.json"
 {
   "name": "Checkout error rate",
-  "projectId": "prj_123",
   "alertTypes": [{ "type": "custom_alert" }],
   "customAlert": {
-    "queryJsonString": "{\"scope\":{\"type\":\"project\",\"ownerId\":\"team_123\",\"projectIds\":[\"prj_123\"]},\"event\":\"incomingRequest\",\"rollups\":{\"errors\":{\"measure\":\"count\",\"aggregation\":\"sum\",\"filter\":\"httpStatus ge 500\"},\"requests\":{\"measure\":\"count\",\"aggregation\":\"sum\"}},\"granularity\":{\"hours\":1}}",
+    "queryJsonString": "{\"event\":\"incomingRequest\",\"rollups\":{\"errors\":{\"measure\":\"count\",\"aggregation\":\"sum\",\"filter\":\"httpStatus ge 500\"},\"requests\":{\"measure\":\"count\",\"aggregation\":\"sum\"}},\"granularity\":{\"hours\":1}}",
     "triggerType": "threshold",
     "triggerOperator": "gt",
     "triggerThreshold": 0.05,
@@ -340,10 +382,9 @@ Create a custom anomaly rule for route-level edge request volume:
 ```json filename="custom-anomaly-rule.json"
 {
   "name": "Edge request volume anomaly",
-  "projectId": "prj_123",
   "alertTypes": [{ "type": "custom_alert" }],
   "customAlert": {
-    "queryJsonString": "{\"scope\":{\"type\":\"project\",\"ownerId\":\"team_123\",\"projectIds\":[\"prj_123\"]},\"event\":\"incomingRequest\",\"rollups\":{\"requests\":{\"measure\":\"count\",\"aggregation\":\"sum\"}},\"groupBy\":[\"route\"],\"granularity\":{\"minutes\":5}}",
+    "queryJsonString": "{\"event\":\"incomingRequest\",\"rollups\":{\"requests\":{\"measure\":\"count\",\"aggregation\":\"sum\"}},\"groupBy\":[\"route\"],\"granularity\":{\"minutes\":5}}",
     "triggerType": "anomaly",
     "triggerOperator": "gt",
     "triggerThreshold": 3
@@ -426,7 +467,7 @@ vercel alerts rules delete ar_abc123 --yes
 
 #### `rules update`
 
-Patch an alert rule from a JSON body file. The body is a partial document; only the fields you want to change need to be present.
+Patch an alert rule from a JSON body file. Omitted fields remain unchanged. Set a supported optional field to `null` to clear it.
 
 Aliases: `patch`.
 
@@ -444,7 +485,7 @@ vercel alerts rules update <ruleId> --body ./patch.json
 
 | Option | Description |
 | --- | --- |
-| `--body` | Path to a JSON file with fields to update. |
+| `--body` | Path to a partial JSON file with fields to update. |
 | `-p, --project` | Project name or ID, for example `my-app` or `prj_abc123`. |
 | `-a, --all` | Team-wide. |
 | `--format` | Output format. Supports `json`. |
@@ -456,7 +497,6 @@ Save the fields you want to change in a JSON file:
 ```json filename="rename-rule.json"
 {
   "name": "Production usage anomalies - critical",
-  "sensitivityLevel": 4,
   "autosubscribeOwnersInKnock": false
 }
 ```

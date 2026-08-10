@@ -3,7 +3,7 @@ title: Project links
 product: vercel
 url: /docs/connect/concepts/project-links
 canonical_url: "https://vercel.com/docs/connect/concepts/project-links"
-last_updated: 2026-06-09
+last_updated: 2026-07-28
 type: conceptual
 prerequisites:
   - /docs/connect/concepts
@@ -17,8 +17,8 @@ related:
 summary: A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a runtime token request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/project-links.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "eb917e76fee7ccaafdbb0de3656237088f1e9a0a5ff82cf18e3be6908b80fe0c"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "b54b1966d0a3784401556974dbe387656cac91f36199e309c627ac91d8215239"
 ---
 
 # Project links

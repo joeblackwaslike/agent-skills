@@ -3,7 +3,7 @@ title: Proxy and Routing
 product: vercel
 url: /docs/platforms/multi-tenant-platforms/middleware-and-routing
 canonical_url: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing"
-last_updated: 2026-06-26
+last_updated: 2026-07-29
 type: how-to
 prerequisites:
   - /docs/platforms/multi-tenant-platforms
@@ -13,8 +13,8 @@ related:
 summary: Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "e7477c8bcb2dee5bc2b1c5578d6b2fd2fb4a2965113efa356d5ff73047b9f77e"
+fetched_at: "2026-08-10T05:33:51.465Z"
+sha256: "61388ceeead3bb6fe973523584d14f0192ec94d2da53847357e528b13c011779"
 ---
 
 # Proxy and Routing
