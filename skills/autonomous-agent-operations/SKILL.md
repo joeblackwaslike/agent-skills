@@ -156,13 +156,17 @@ letting flags accumulate unacted-on.
 
 - **Phase 1 (this skill):** ticket → `/autonomous:review` → promote to project log or
   global rule.
-- **Phase 2 (follow-up, not built here):** a `lessons:doctor`-style audit of decision
-  logs — stale entries, near-duplicates, entries never actually applied to a matching
-  later call. Natural home: fold into `/autonomous:review`'s closing phase, mirroring how
-  `lessons:review`'s Phase 5 auto-runs `/lessons:doctor`.
+- **Phase 2 (`ai-review-bot-mwl`, follow-up, not built here):** a `lessons:doctor`-style
+  audit of decision logs — stale entries, near-duplicates, entries never actually
+  applied to a matching later call. Natural home: fold into `/autonomous:review`'s
+  closing phase, mirroring how `lessons:review`'s Phase 5 auto-runs `/lessons:doctor`.
 - **Phase 3 (`ai-review-bot-l91`):** mining across projects into something that actively
   drives decisions (an "executive decision-maker," likely on Clawhip as the control-plane
-  layer). Phases 1–2 are prerequisites, not parallel work.
+  layer). This is a design choice, not a hard technical dependency — Phase 3 mining
+  could technically run on whatever data exists regardless of Phase 1/2 compliance — but
+  building it on unaudited, inconsistently-logged data would produce worse decisions
+  than building it after Phases 1–2 give it a clean corpus to work from. Sequence it
+  last for that reason, not because it's blocked.
 
 **Architecture: beads for staging, markdown for the curated record — not a novel
 design.** This is the same two-tier shape `lessons-learned` already runs: a queryable DB
