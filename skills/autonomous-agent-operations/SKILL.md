@@ -105,3 +105,55 @@ Rationale: <why>"
 
 The same three fields (question, decision, rationale) a decision-log entry needs, so
 promotion later is a copy, not a rewrite.
+
+## Ownership, hierarchy, and future direction
+
+This skill is the authoritative source for the decision-log system's mechanics —
+`AGENTS.md`'s Decision Log section is a short policy pointer here, not a restatement
+(same pattern as `AGENTS.md`'s "PR & Merge Autonomy" section pointing at
+`driving-a-pr-to-approval.md`).
+
+**Hierarchy, three tiers:**
+
+1. **Project decision log** (`feedback_decision-log.md`) — the working tier, high-volume,
+   specific.
+2. **Cross-project candidates** — an entry flagged, at write time, as likely applying
+   beyond this project.
+3. **Global standing rules** (`AGENTS.md` itself) — rare, hand-authored, reserved for
+   patterns confirmed across enough tier-2 candidates to be worth a permanent rule.
+
+`/autonomous:review`'s decision options include **Promote to global** for a
+tier-2-flagged entry, drafting the `AGENTS.md` addition as a proposed edit rather than
+letting flags accumulate unacted-on.
+
+**Maintenance and mining — staged:**
+
+- **Phase 1 (this skill):** ticket → `/autonomous:review` → promote to project log or
+  global rule.
+- **Phase 2 (follow-up, not built here):** a `lessons:doctor`-style audit of decision
+  logs — stale entries, near-duplicates, entries never actually applied to a matching
+  later call. Natural home: fold into `/autonomous:review`'s closing phase, mirroring how
+  `lessons:review`'s Phase 5 auto-runs `/lessons:doctor`.
+- **Phase 3 (`ai-review-bot-l91`):** mining across projects into something that actively
+  drives decisions (an "executive decision-maker," likely on Clawhip as the control-plane
+  layer). Phases 1–2 are prerequisites, not parallel work.
+
+**Architecture: beads for staging, markdown for the curated record — not a novel
+design.** This is the same two-tier shape `lessons-learned` already runs: a queryable DB
+of candidates promoted into a curated, auto-loaded manifest. Considered and rejected:
+everything-in-beads (loses automatic context-loading, the whole point of the memory
+system), everything-in-markdown (loses the structured queryable staging `bd list
+--labels autonomous-judgment` needs).
+
+**The real gap is compliance, not architecture** — no technical enforcement exists on
+the `AskUserQuestion` → decision-log write today (confirmed: no hook in
+`~/.claude/settings.json` scoped to it). Low-cost fix, not a new hook: register the
+decision-log obligation as a `directive`-type entry in the already-installed
+`lessons-learned` plugin's manifest, so it gets the same periodic reinjection (30/52/70%
+context-usage thresholds) every other standing directive there already gets.
+
+## Worked examples
+
+See `references/examples/index.md` for dated, real (not fabricated) scenarios at
+different autonomy levels — read at least the most recent one before a run under this
+contract, and append a new one after every run (see "End of run" above).
