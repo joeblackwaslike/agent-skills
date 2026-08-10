@@ -1,11 +1,11 @@
 # agent-skills
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-41-blue)](#skills)
+[![Skills](https://img.shields.io/badge/skills-42-blue)](#skills)
 [![Claude Code](https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Gemini-ea580c)](https://claude.ai/code)
 [![Discord](https://img.shields.io/discord/1486035859747897414?logo=discord&label=Discord&color=5865F2)](https://discord.gg/Fjc9zYHZyV)
 
-> Forty-one skills your agent reads before it guesses.
+> Forty-two skills your agent reads before it guesses.
 
 A plugin bundling custom skills for Claude Code, Codex CLI, Gemini CLI, and Antigravity CLI — easy installation in any agent environment.
 
@@ -20,7 +20,7 @@ claude plugin install agent-skills
 
 ## Skills
 
-41 skills, grouped by what you're doing. Invoke by name — `skill("working-with-github")` in Codex syntax, or via the Skill tool in Claude Code.
+42 skills, grouped by what you're doing. Invoke by name — `skill("working-with-github")` in Codex syntax, or via the Skill tool in Claude Code.
 
 ### Agentic development
 
@@ -32,6 +32,7 @@ claude plugin install agent-skills
 | `multi-provider-plugins` | Make a Claude Code plugin work across Codex, OpenCode, Cursor, and Gemini CLI |
 | `interactive-system-docs` | Build a self-contained interactive HTML explainer for a complex system — D3 graphs, data flows, state machines |
 | `recovering-session-context` | Reconstruct prior sessions from transcripts and surface everything raised but never resolved |
+| `autonomous-agent-operations` | Operate solo on a handed-off task — ask every clarifying question up front, decide and ticket genuine mid-run forks instead of blocking or guessing, summarize and record a worked example at the end |
 
 ### Coding agents & CLIs
 

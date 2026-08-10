@@ -73,6 +73,19 @@ appended to the example log (see `references/examples/`). The example-log entry 
 not optional or occasional; it is part of what "done" means for a run under this
 contract.
 
+**Where the example actually lands depends on how the skill is loaded.** From a
+`git clone` of `agent-skills` (or a worktree of it), `references/examples/` is a
+real path in this source repo — write the file and open a PR like any other change
+here. From an **installed plugin** (`claude plugin install agent-skills`),
+`references/examples/` resolves under `~/.claude/plugins/cache/...` — a disposable,
+reinstallable copy, not this repository. Writing there doesn't durably record
+anything and is lost on the next plugin update. In that case, either (a) clone this
+repo separately and add the file there, opening a PR, or (b) if that's not
+practical mid-run, record the same scenario shape (Scenario / What stayed solo /
+What forked / Why) in the current project's own durable notes and file a follow-up
+ticket to port it into `agent-skills` later — don't let "the plugin path isn't
+writable back to source" become a reason to skip recording the example.
+
 **"This run" is a real scope, not a loose one.** A bare `bd list --label
 autonomous-judgment` pulls every open ticket ever filed, including ones from earlier
 or concurrent runs — not this run's tickets specifically. `/autonomous:start`
@@ -109,6 +122,17 @@ and the proposed fix.
 `/autonomous:review` first.** The decision log is for judgment calls Joe has actually
 reviewed (whether live via `AskUserQuestion`, or later via ticket review); a solo
 decision the user never saw is provisional until reviewed, not yet a logged precedent.
+
+**`/autonomous:review` itself ships in `agent-harness`, a separate repo, not this
+plugin.** A user who has only installed `agent-skills` can still file tickets under
+this contract, but has no bundled command to run the review/promotion loop. Without
+it, run the same phases by hand: `bd list --label autonomous-judgment --status open`,
+work through each ticket one at a time (display question/decision/rationale, form an
+assessment, decide confirm/change/skip/promote-to-global), then append to
+`feedback_decision-log.md` and `bd close` the ticket exactly as `/autonomous:review`
+would — see "Ticket mechanics" below for the exact append/close shape. The command is
+a convenience wrapper around that loop, not a hard dependency for filing or reviewing
+tickets.
 
 **Ticket filing.** On a solo mid-run fork, tag with both the standing label and this
 run's ID (see "This run is a real scope" above). Build the description in a variable
