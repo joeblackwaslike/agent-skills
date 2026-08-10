@@ -48,9 +48,16 @@ off ... only for: a genuinely hard-to-reverse action ... a real product/design d
 ...") — reused here rather than redefined, since it's the same judgment. **That includes
 its hard-stop carve-outs**, not just its "decide and continue" cases: a genuinely
 destructive, hard-to-reverse action (e.g. force-pushing over a colleague's shared
-branch) is a stop-and-escalate, not a decide-and-ticket — filing a ticket is for *bounded,
-reversible* judgment calls with no clear precedent (a config default, which of two valid
-approaches, a naming choice), not a substitute for the hard stop.
+branch, a production data change, a permanent deletion) is a stop-and-escalate, not a
+decide-and-ticket — filing a ticket is for *bounded, reversible* judgment calls with
+no clear precedent (a config default, which of two valid approaches, a naming
+choice), not a substitute for the hard stop. **A ticket does not un-delete data or
+restore overwritten commits — filing one after the fact is not a fallback for
+skipping the stop, it's what happens after a *bounded* decision, a category the
+destructive action was never in.** Where a reversible alternative exists (a new
+branch instead of overwriting the shared one, a soft-delete instead of a hard one),
+take it and note the deviation; where none exists, stop and wait, don't proceed on
+the theory that a ticket will make it reviewable after the fact.
 
 **Filing the ticket is not optional, and it is not the same as mentioning the decision in
 a final report.** A decision noted only in the end-of-run summary is invisible to
@@ -60,10 +67,20 @@ decision is made, not deferred to the wrap-up.
 
 ### End of run
 
-One closing summary — what shipped, and every judgment ticket filed this run, pulled
-directly from `bd` rather than hand-tracked — **and** one new dated file appended to the
-example log (see `references/examples/`). The example-log entry is not optional or
-occasional; it is part of what "done" means for a run under this contract.
+One closing summary — what shipped, and every judgment ticket filed **this run**,
+pulled directly from `bd` rather than hand-tracked — **and** one new dated file
+appended to the example log (see `references/examples/`). The example-log entry is
+not optional or occasional; it is part of what "done" means for a run under this
+contract.
+
+**"This run" is a real scope, not a loose one.** A bare `bd list --label
+autonomous-judgment` pulls every open ticket ever filed, including ones from earlier
+or concurrent runs — not this run's tickets specifically. `/autonomous:start`
+generates a run ID at the start and tags every ticket filed during the run with it
+as a second label, so the closing pull is `bd list --label
+autonomous-judgment,run-<id>` (AND semantics — `bd list` uses `--label`, singular,
+for that; `bd create` uses `--labels`, plural — they are not interchangeable, check
+`bd <subcommand> --help` if unsure rather than guessing the flag name).
 
 ## Ticket mechanics and closing the loop
 
@@ -93,18 +110,27 @@ and the proposed fix.
 reviewed (whether live via `AskUserQuestion`, or later via ticket review); a solo
 decision the user never saw is provisional until reviewed, not yet a logged precedent.
 
-**Ticket filing.** On a solo mid-run fork:
+**Ticket filing.** On a solo mid-run fork, tag with both the standing label and this
+run's ID (see "This run is a real scope" above). Build the description in a variable
+rather than interpolating raw question/decision/rationale text directly into the
+command line — that text can contain quotes, `` ` ``, `$()`, or newlines from the
+task or repo content, which the shell would otherwise reinterpret instead of passing
+through literally:
 
 ```bash
-bd create --labels autonomous-judgment \
-  --title "<short description of the fork>" \
-  --description "Question: <what was ambiguous>
+description="Question: <what was ambiguous>
 Decision: <what was chosen>
 Rationale: <why>"
+bd create --labels "autonomous-judgment,run-${RUN_ID}" \
+  --title "<short description of the fork>" \
+  --description "$description"
 ```
 
 The same three fields (question, decision, rationale) a decision-log entry needs, so
-promotion later is a copy, not a rewrite.
+promotion later is a copy, not a rewrite. When `/autonomous:review` later promotes
+this ticket, the decision-log entry it writes cites the ticket ID (e.g. "(from ticket
+`ai-review-bot-xyz`)") — that citation is what lets a retried promotion detect an
+existing entry and skip re-appending instead of duplicating it.
 
 ## Ownership, hierarchy, and future direction
 
