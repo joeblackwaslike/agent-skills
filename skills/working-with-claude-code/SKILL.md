@@ -41,6 +41,8 @@ Use this skill when:
 | Chrome extension | `chrome.md` |
 | Sandboxing/security | `sandboxing.md` |
 | Slack integration | `slack.md` |
+| **CLI stream-json control protocol** (live model/effort/mode switching, context-usage breakdown — undocumented, verified empirically) | `howto/stream-json-control-protocol.md` |
+| **Agent SDK `billing_error`** (two distinct causes, how to tell them apart) | `howto/agent-sdk-billing-errors.md` |
 
 ## Documentation Organization
 
@@ -169,11 +171,21 @@ Read `hooks.md` for overview, then `hooks-guide.md` for implementation details.
 
 Read `skills.md` for the complete skill authoring guide.
 
+## Manual notes (`references/howto/`)
+
+`references/` (flat files) is entirely auto-fetched from code.claude.com by
+`scripts/update_docs.js` and gets overwritten on every run — never hand-edit those files.
+`references/howto/` is the exception: hand-written, never touched by the update script, for
+empirically-verified or undocumented behavior that has no home in the official docs (mirrors the
+same pattern used in the `working-with-github` skill). Add a new `howto/*.md` file there instead
+of patching an auto-fetched file, and link it from the Quick Reference table above.
+
 ## What This Skill Does NOT Do
 
-- This skill provides **documentation access**, not procedural guidance
+- The auto-fetched `references/*.md` files are **documentation access**, not procedural guidance
 - For workflows on **how to build** plugins/skills, use the `extending-claude-code` skill (when available)
-- This skill is a **reference library**, not a tutorial
+- Most of this skill is a **reference library**, not a tutorial — `references/howto/` is the
+  deliberate, curated exception
 
 ## Red Flags
 

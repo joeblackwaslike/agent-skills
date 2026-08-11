@@ -32,6 +32,7 @@ The biggest, most distinctive convention here is the **doc-wrapping `working-wit
 | --- | --- |
 | Pick an archetype, name the skill, lay out the directory, write SKILL.md frontmatter | [`references/naming-and-structure.md`](references/naming-and-structure.md) |
 | Write the auto-update fetch script (llms.txt / sitemap / curated-list patterns) | [`references/doc-fetching-cookbook.md`](references/doc-fetching-cookbook.md) |
+| Wrap a **locally-installed** tool (not just a hosted API/library) — live inspection, event schemas, retention limits | [`references/local-tool-inspection.md`](references/local-tool-inspection.md) |
 | Wire freshness signals (`doc-frontmatter.cjs` API, change-detection, backfill) | [`references/freshness-metadata.md`](references/freshness-metadata.md) |
 | Register the skill so it's discoverable and shippable | [`references/registration-checklist.md`](references/registration-checklist.md) |
 

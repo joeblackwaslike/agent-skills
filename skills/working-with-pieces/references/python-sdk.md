@@ -111,3 +111,14 @@ results = search_api.full_text_search(query="authentication")
 - **Quickstart**: https://docs.pieces.app/build/sdks/python/quickstart
 - **API Reference**: https://docs.pieces.app/build/reference/python
 - **OpenAPI spec**: https://github.com/pieces-app/pieces-os-client-openapi-spec
+
+## Vendored copy inside the `pieces-cli` install
+
+`pieces-cli` (installed via `pipx`) vendors this SDK rather than depending on the PyPI package:
+
+```
+~/.local/pipx/venvs/pieces-cli/lib/python3.14/site-packages/pieces/_vendor/pieces_os_client/
+```
+
+Useful when reading the CLI's own source to see exactly which SDK version/behavior it ships
+with, independent of whatever version is pinned in a project's own `requirements`/`pyproject`.

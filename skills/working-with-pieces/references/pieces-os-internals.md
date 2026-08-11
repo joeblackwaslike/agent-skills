@@ -15,6 +15,9 @@ Inspected from a live macOS installation: Pieces OS 12.4.1, Pieces Desktop 6.0.1
 | Pieces Desktop | ~6.5 MB binary | Universal | Flutter + 38 plugin frameworks |
 | Pieces Babysitter | Python script | Python 3.14 | Custom watchdog |
 
+Babysitter runs health checks against Pieces OS every 10s and escalates through a restart
+sequence on repeated failures — not a one-shot restart-on-crash script.
+
 Pieces Desktop maintains 60+ simultaneous TCP connections to the Pieces OS MCP port.
 
 Pieces OS frameworks include: FlutterMacOS.framework, Sparkle.framework (auto-updater), Sentry.framework (error tracking), and 37 Flutter plugin frameworks (notifications, file picker, connectivity, etc.).
