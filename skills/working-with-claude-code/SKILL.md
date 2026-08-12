@@ -2,7 +2,7 @@
 name: working-with-claude-code
 description: Use when working with Claude Code CLI, plugins, hooks, MCP servers, skills, configuration, or any Claude Code feature - provides comprehensive official documentation for all aspects of Claude Code
 metadata:
-  last_updated: "2026-06-01"
+  last_updated: "2026-08-12"
 ---
 
 # Working with Claude Code

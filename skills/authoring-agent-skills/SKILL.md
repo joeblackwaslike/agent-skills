@@ -2,7 +2,7 @@
 name: authoring-agent-skills
 description: Use when creating, adding, or maintaining a skill in this agent-skills repo — especially a "working-with-X" skill that wraps external/official docs by fetching them (llms.txt, sitemap, or a curated URL list), storing them in references/, and keeping them current with an auto-update script plus freshness metadata. Covers the naming taxonomy (working-with-X / developing-X / topic skills), SKILL.md frontmatter, the doc-fetching cookbook, the doc-frontmatter.cjs freshness helpers, the Makefile/CI auto-discovery, and the registration checklist. Invoke on "create a skill", "add a working-with-X skill", "wrap these docs in a skill", "write an auto-update script", "add freshness metadata", or "add a skill to this repo".
 metadata:
-  last_updated: "2026-06-11"
+  last_updated: "2026-08-12"
 ---
 
 # Authoring Agent Skills

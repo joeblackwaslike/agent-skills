@@ -10,7 +10,7 @@ description: Use when working with the Pieces for Developers ecosystem: Pieces O
   invoke when the user mentions "Pieces", "Pieces Copilot", "pieces-os", or wants
   AI tools to remember past workflow context across sessions.
 metadata:
-  last_updated: "2026-06-05"
+  last_updated: "2026-08-12"
 ---
 
 # Working with Pieces for Developers
