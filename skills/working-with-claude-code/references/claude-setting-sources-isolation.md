@@ -63,11 +63,32 @@ auth path. `--setting-sources ""` achieves the same isolation while preserving e
 behavior for hooks is undocumented -- it may deep-merge rather than replace, leaving hooks
 active. `--setting-sources ""` is definitive: no settings files are loaded at all.
 
+## Related Postmortems
+
+Four of five production postmortems involve background processes spawning `claude -p` sessions
+without isolation. This pattern is the single highest-leverage fix across the incident history:
+
+| PM | System | Impact | How `--setting-sources ""` prevents it |
+|----|--------|--------|----------------------------------------|
+| PM-001 | cc-recall | `runClaudeHeadless` burned ~69% of weekly Max quota (2,825 sessions in 43h). Each bare `claude -p` inherited the interactive Opus model + 39.5k-token settings/plugin prefix per cold call. | Strips the 39.5k-token prefix (zero hooks, plugins, MCP from config). Combined with `--model` pin, eliminates both cost multipliers. |
+| PM-003 | cc-recall | PM-001's fix never deployed (stale plugin cache); the unfixed `runClaudeHeadless` continued spawning unisolated sessions for 6 more weeks, compounding PM-001's impact. | Same as PM-001 — the fix that was stale-cached would have been unnecessary if `--setting-sources ""` had been the original design. |
+| PM-004 | claude-mem | Worker daemon spawned observer-sessions using real Claude API quota continuously for 25+ hours. No disable mechanism held — `enabledPlugins` only governs new session loading, not already-running sessions with baked-in hook wiring. | Observer-sessions spawned with `--setting-sources ""` would not load plugins or fire hooks on their own sessions, breaking the respawn chain that defeated the disable flag. |
+| PM-005 | pieces-dev | Bare `claude -p` in Stop hook created 36,468 ghost sessions (2x cascade via cc-recall), ~547,000 hook invocations, polluted cc-recall (62% ghost entries), claude-mem (298 ghost sdk_sessions), and transcripts (~54k ghost files) over 59 days. | Directly motivated this pattern. Adopted in the fix. |
+
+**PM-001 correction:** PM-001's resolution section states `--setting-sources=` (empty) "breaks
+auth — verified." That testing conflated `--setting-sources` with the `CLAUDE_CONFIG_DIR`
+approach, which *does* break Keychain auth (credentials keyed by config-dir path hash). PM-005's
+testing confirmed `--setting-sources ""` preserves Keychain auth — the config dir stays at
+`~/.claude/`, so the hash lookup succeeds. The 39.5k-token prefix PM-001 flagged as "not fixed"
+is now fixable.
+
+**PM-002** (Serena unpinned upgrade) is unrelated — dependency-drift, not subprocess isolation.
+
 ## Adoption Guidance
 
 Any hook or background script that spawns `claude -p` should use this pattern. Known
 adopters:
 
-- **pieces-dev** `pieces-memory-stop.sh` -- adopted in PM-005 fix
-- **cc-recall** `runClaudeHeadless` -- should adopt (currently uses dedicated CWD + self-recognition workarounds)
-- **claude-mem** -- should adopt if spawning headless claude
+- **pieces-dev** `pieces-memory-stop.sh` — adopted in PM-005 fix
+- **cc-recall** `runClaudeHeadless` — should adopt (currently uses dedicated CWD + self-recognition workarounds); would fix PM-001's 39.5k-token prefix and PM-003's deployment-gap class of issue
+- **claude-mem** — should adopt if spawning headless claude; would break PM-004's respawn chain
