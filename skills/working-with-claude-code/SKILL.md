@@ -97,7 +97,8 @@ references/
 ├── slack.md                 # Slack integration
 ├── third-party-integrations.md  # Other integrations
 ├── legal-and-compliance.md  # Legal information
-└── troubleshooting.md       # Troubleshooting guide
+├── troubleshooting.md       # Troubleshooting guide
+└── claude-setting-sources-isolation.md  # Side-effect-free claude -p from hooks (PM-005)
 ```
 
 ## Workflow
