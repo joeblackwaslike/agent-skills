@@ -17,13 +17,32 @@ related:
 summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "65c58446b564895fdb0e0ab74267464c9bbc7a773b6e90201ccb90e48fd90c21"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "53de3751d7bf86bc39e1e8ff432dab62e53c8792f86d77b4db3c20f3993939a6"
 ---
 
 # Advanced Configuration
 
 Control which providers serve your request, what happens when one fails, and how much of your prompt is cached between calls. For controlling how much a model thinks before answering, see [Reasoning](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related)
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related) — Learn how to configure your own provider keys with the AI Gateway.
+- [Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related) — Configure model-level failover to try backup models when the primary model is unavailable
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
+- [Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning?from=related) — Enable reasoning and extended thinking across providers with the AI SDK and AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md)
+<!-- /docsgraph:related -->
 
 ## Provider options
 

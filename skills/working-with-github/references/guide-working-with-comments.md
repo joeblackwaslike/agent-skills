@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/guides/working-with-comments.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "e9ea7b53bc7253d61a98aafec6227c5f795426fcbb7d0085561dba508b44c6d1"
+fetched_at: "2026-08-17T04:47:04.101Z"
+sha256: "0eb8d725c0e0c3c0075924cb9c6d8e413040bc8ed8bfa4ef7fea343a359dd3d8"
 ---
 
 For any Pull Request, {% data variables.product.github %} provides three kinds of comment views:
@@ -105,3 +105,9 @@ end
 
 Note that this API call will retrieve single line comments, as well as comments made
 on the entire commit.
+
+{% ifversion ghes > 3.21 %}
+
+Creating commit comments can be enabled or disabled for a repository. Organization owners can configure the default setting for repositories in their organization. For more information, see [AUTOTITLE](/organizations/managing-organization-settings/managing-commit-comments-for-your-organization).
+
+{% endif %}

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-tag.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "4812a8b5e34c6e895668050a2bfa56aa86572b5b29e07c9a6d7a4c254cbbd1ac"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "71a0a4e6c77545d48c76a50df303a62f20d933d79939fd42e4af178f3ff241fd"
 ---
 
 > ## Documentation Index
@@ -12,6 +12,6 @@ sha256: "4812a8b5e34c6e895668050a2bfa56aa86572b5b29e07c9a6d7a4c254cbbd1ac"
 
 > Bring Claude into your team's Slack channels with Claude Tag and find its setup and usage documentation on claude.com.
 
-Claude Tag is a Slack integration that runs `@Claude` in your team's channels as your organization's shared identity with admin-configured access. Anyone in a channel can tag `@Claude` into a thread and assign it a task. Read the [Claude Tag documentation](https://claude.com/docs/claude-tag/overview) on claude.com to set it up and start using it.
+[Claude Tag](https://claude.com/product/tag) is a Slack integration that runs `@Claude` in your team's channels as your organization's shared identity with admin-configured access. Anyone in a channel can tag `@Claude` into a thread and assign it a task. Read the [Claude Tag documentation](https://claude.com/docs/claude-tag/overview) on claude.com to set it up and start using it.
 
 Claude Tag is available on Team and Enterprise plans, and is distinct from the earlier [Claude Code in Slack](/docs/en/slack), which runs each session under an individual user's account. On Pro and Max plans, where Claude Tag isn't available, Claude Code in Slack remains the setup path.

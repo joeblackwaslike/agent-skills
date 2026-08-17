@@ -16,13 +16,30 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9b82952e55b9c71371802f7f13e4b22796759e4a891d5eea317f8f4b10fa4959"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a78f3947616492702795f17689b43c20dbf7f2cb4e3dd4d566af5cfd13645263"
 ---
 
 # Queues concepts
 
 Vercel Queues is a durable event streaming system for asynchronous workloads. You publish messages to topics, and consumer groups process those messages independently with at-least-once delivery, retries, and visibility timeouts.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations?from=related) — Build a custom framework integration using the Workflow SDK compiler and runtime.
+- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
+- [Observability](https://vercel.com/docs/queues/observability?from=related) — Monitor queue throughput, message age, and consumer performance to optimize your queue-based workflows.
+- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+
+Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md)
+<!-- /docsgraph:related -->
 
 Queues is useful when you need to decouple request handling from background processing, absorb traffic spikes, and keep work reliable across function failures or deployment changes.
 
@@ -72,7 +89,7 @@ A topic is a durable, append-only log of messages. Producers publish messages to
 
 A consumer group is an independent subscriber to a topic. Each group tracks its own position in the log and processes messages at its own pace. Because groups are fully isolated, a slow or failing consumer in one group has no effect on any other.
 
-> **💡 Note:** In poll mode, you can add a new consumer group at any time. New groups start reading from the beginning of the topic, giving you access to all non-expired messages. This makes it straightforward to backfill data or add new processing pipelines without republishing. Push mode consumers are configured at deploy time via `vercel.json` and cannot be added dynamically.
+> **💡 Note:** In poll mode, you can add a new consumer group at any time. New groups start reading from the beginning of the topic, giving you access to all non-expired messages. This makes it straightforward to backfill data or add new processing pipelines without republishing. Push mode consumers are configured at deploy time and cannot be added dynamically. JavaScript and TypeScript projects define triggers in `vercel.json`. Python projects declare subscriber entrypoints in `pyproject.toml`.
 
 ### Scaling
 
@@ -157,7 +174,7 @@ For consumers running outside of Vercel, or advanced on-Vercel setups that need 
 
 ### Consumer function security
 
-Queue consumer functions on Vercel are not accessible from the outside world. You configure a consumer by adding a `queue/v2beta` trigger to your `vercel.json`:
+Queue consumer functions on Vercel are not accessible from the outside world. JavaScript and TypeScript projects configure a consumer by adding a `queue/v2beta` trigger to `vercel.json`:
 
 ```json filename="vercel.json"
 {
@@ -175,6 +192,10 @@ Queue consumer functions on Vercel are not accessible from the outside world. Yo
   }
 }
 ```
+
+Python projects declare decorated subscriber entrypoints under `[[tool.vercel.subscribers]]` in `pyproject.toml`. Vercel reads the `@subscribe` configuration and generates the private queue-triggered function at build time. See the [Python SDK reference](/docs/queues/python-sdk#subscriber-deployment-configuration) for the configuration format.
+
+The `vercel.json` queue trigger supports these options for JavaScript and TypeScript projects:
 
 | Option                | Type     | Default      | Description                                                 |
 | --------------------- | -------- | ------------ | ----------------------------------------------------------- |
@@ -256,7 +277,7 @@ export const POST = handleCallback(
 );
 ```
 
-See the [SDK reference](/docs/queues/sdk#custom-retry-behavior) for the full retry API.
+See the [JS SDK reference](/docs/queues/sdk#custom-retry-behavior) for the full retry API.
 
 ## Ordering
 

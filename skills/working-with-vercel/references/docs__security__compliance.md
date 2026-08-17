@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/security
 related:
-  - /docs/security/ddos-mitigation
+  - /docs/vercel-firewall/ddos-mitigation
   - /docs/security/shared-responsibility
   - /docs/security/pci-dss
   - /docs/networking/secure-compute
@@ -16,13 +16,33 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ac96beadefc444091bc13dec8774f35e39f081539dbcd5dd88f65c22dbfd1858"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "cce31eb1460853a451b723c226b102e78d0fd7853fd38f9218f6c74a6c5b150e"
 ---
 
 # Security & Compliance Measures
 
-This page covers the protection and compliance measures Vercel takes to ensure the security of your data, including [DDoS mitigation](/docs/security/ddos-mitigation), [SOC2 Type 2 compliance](#soc-2-type-2), [Data encryption](#data-encryption), and more.
+This page covers the protection and compliance measures Vercel takes to ensure the security of your data, including [DDoS mitigation](/docs/vercel-firewall/ddos-mitigation), [SOC2 Type 2 compliance](#soc-2-type-2), [Data encryption](#data-encryption), and more.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
+- [HIPAA Compliance on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Does Vercel support PCI compliance?](https://vercel.com/kb/guide/is-vercel-pci-compliant?from=related) — Learn about Vercel and PCI compliance.
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
+- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
+- [Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
+
+Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md)
+<!-- /docsgraph:related -->
 
 To understand how security responsibilities are divided between you (the customer) and Vercel, see the [shared responsibility model](/docs/security/shared-responsibility). It explains who is responsible for each aspect of keeping your cloud services secure and running smoothly.
 

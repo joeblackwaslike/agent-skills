@@ -12,13 +12,30 @@ related:
 summary: Learn how to manage project-level routing rules using the vercel routes CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/routes.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6f48ca9d621b4492008a8d697f4be35df9df4c49f64f0b39616cc245fb94b8ba"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1502060e89123602eac00e790d7d99adec340ec58914145f77fc37b7d6787697"
 ---
 
 # vercel routes
 
 The `vercel routes` command lets you manage routing rules for a project. These routing rules are managed at the project level and apply to all deployments and environments. They take effect immediately after being created and published, without requiring code changes or a new deployment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
+- [Project Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule?from=related)
+- [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version?from=related)
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule?from=related)
+- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+
+Full cross-link map for this page: [/docs/cli/routes.graph.md](/docs/cli/routes.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Routes can also be defined in source control using `vercel.json` or
 > `vercel.ts`.

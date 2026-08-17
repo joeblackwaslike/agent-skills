@@ -9,20 +9,37 @@ prerequisites:
   - /docs/git
 related:
   - /docs/deployments/environments
-  - /docs/domains/add-a-domain
+  - /docs/domains/working-with-domains/add-a-domain
   - /docs/git
-  - /docs/projects/overview
-  - /docs/projects/custom-domains
+  - /docs/projects
+  - /docs/environment-variables/system-environment-variables
 summary: ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-bitbucket.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "87570ed7a21d097634c65a2dd4e836db7876add5040c003c09e62e5f9e536fcb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a29e5a69d44e718537c399af6949dbd73a8a3b93de56414661e4fdd3b81bf619"
 ---
 
 # Deploying Bitbucket Projects with Vercel
 
-Vercel for Bitbucket automatically deploys your Bitbucket projects with [Vercel](/), providing [Preview Deployment URLs](/docs/deployments/environments#preview-environment-pre-production#preview-urls), and automatic [Custom Domain](/docs/domains/add-a-domain) updates.
+Vercel for Bitbucket automatically deploys your Bitbucket projects with [Vercel](/), providing [Preview Deployment URLs](/docs/deployments/environments#preview-environment-pre-production#preview-urls), and automatic [Custom Domain](/docs/domains/working-with-domains/add-a-domain) updates.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [How can I use GitLab Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [GitHub](https://vercel.com/docs/git/vercel-for-github?from=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+
+Full cross-link map for this page: [/docs/git/vercel-for-bitbucket.graph.md](/docs/git/vercel-for-bitbucket.graph.md)
+<!-- /docsgraph:related -->
 
 ## Supported Bitbucket Products
 
@@ -37,7 +54,7 @@ The [Deploying a Git repository](/docs/git#deploying-a-git-repository) guide out
 
 ## Changing the Bitbucket Repository of a Project
 
-If you'd like to connect your Vercel Project to a different Bitbucket repository or disconnect it, you can do so from the [Git section](/docs/projects/overview#git) in the Project Settings.
+If you'd like to connect your Vercel Project to a different Bitbucket repository or disconnect it, you can do so from the [Git section](/docs/projects#git) in the Project Settings.
 
 ### A Deployment for Each Push
 
@@ -50,9 +67,9 @@ With each new push, if Vercel is already building a previous commit on the same 
 
 ### Updating the Production Domain
 
-If [Custom Domains](/docs/projects/custom-domains) are set from a project domains dashboard, pushes and merges to the [Production Branch](/docs/git#production-branch) (commonly "main") will be made live to those domains with the latest deployment made with a push.
+If [Custom Domains](/docs/domains/working-with-domains/add-a-domain) are set from a project domains dashboard, pushes and merges to the [Production Branch](/docs/git#production-branch) (commonly "main") will be made live to those domains with the latest deployment made with a push.
 
-If you decide to revert a commit that has already been deployed to production, the previous [Production Deployment](/docs/deployments/environments#production-environment) from a commit will automatically be made available at the [Custom Domain](/docs/projects/custom-domains) instantly; providing you with instant rollbacks.
+If you decide to revert a commit that has already been deployed to production, the previous [Production Deployment](/docs/deployments/environments#production-environment) from a commit will automatically be made available at the [Custom Domain](/docs/domains/working-with-domains/add-a-domain) instantly; providing you with instant rollbacks.
 
 ### Preview URLs for Each Pull Request
 

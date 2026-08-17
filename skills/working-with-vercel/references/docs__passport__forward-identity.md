@@ -12,13 +12,30 @@ related:
 summary: Forward a Passport visitor identity to another backend that you operate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/forward-identity.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f8b7794dd9ab1250f10b286aea981e3eb636a69fd9d290524e66c97a668f4fb8"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ab0130f63f2421b81d8550866b128f51056c52cda00494b74ecfb549f86633e5"
 ---
 
 # Forward Passport identity to another backend
 
 A Passport-protected Vercel app can call another backend with the Passport token. Forward the token in the `Authorization` header, then verify it at the receiving service before trusting any claims.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [Read Identity](https://vercel.com/docs/passport/read-identity?from=related) — Read verified Passport identity in server-side code and apply application-level authorization.
+- [Set Up Passport](https://vercel.com/docs/passport/set-up-identity-provider?from=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [Additional Scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related) — Request group membership and other provider-specific identity claims when using Passport.
+- [Token Claims](https://vercel.com/docs/passport/token-claims?from=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
+- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related) — Learn how to Sign in with Vercel
+
+Full cross-link map for this page: [/docs/passport/forward-identity.graph.md](/docs/passport/forward-identity.graph.md)
+<!-- /docsgraph:related -->
 
 ```js filename="app/api/report/route.js"
 import { getIdentity } from '@vercel/passport';

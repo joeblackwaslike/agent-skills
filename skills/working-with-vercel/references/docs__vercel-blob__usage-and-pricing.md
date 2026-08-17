@@ -9,20 +9,38 @@ prerequisites:
   - /docs/vercel-blob
 related:
   - /docs/vercel-blob/using-blob-sdk
-  - /docs/pricing/networking
+  - /docs/manage-cdn-usage
   - /docs/cdn
   - /docs/vercel-blob/client-upload
-  - /docs/manage-cdn-usage
+  - /docs/vercel-blob/server-upload
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "78ce44e92273b9f862315fbd18586354a283b13713a99e95aff9e84cc040b18b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e834808e2c7f6660f2ff55e0688fc39b4ef10302345d342caa948d0322644829"
 ---
 
 # Vercel Blob Pricing
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+
+Full cross-link map for this page: [/docs/vercel-blob/usage-and-pricing.graph.md](/docs/vercel-blob/usage-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 
@@ -32,8 +50,8 @@ Vercel Blob usage is measured based on the following:
 - **Simple Operations**: Counts when a blob is accessed by its URL and it's a cache MISS or when using the [`head()`](/docs/vercel-blob/using-blob-sdk#head) method
 - **Advanced Operations**: Counts when using [`put()`](/docs/vercel-blob/using-blob-sdk#put), [`copy()`](/docs/vercel-blob/using-blob-sdk#copy), or [`list()`](/docs/vercel-blob/using-blob-sdk#list) methods
 - **Blob Data Transfer**: Charged when blobs are downloaded or viewed
-- **[Edge Requests](/docs/pricing/networking#edge-requests)**: Each blob access by its URL counts as one Edge Request, regardless if it's a MISS or HIT
-- **[Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer)**: Applied only for cache MISS scenarios
+- **[Edge Requests](/docs/manage-cdn-usage#edge-requests)**: Each blob access by its URL counts as one Edge Request, regardless if it's a MISS or HIT
+- **[Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer)**: Applied only for cache MISS scenarios
 
 See the [usage details](#usage-details) and [pricing example](#pricing-example) sections for more information on how usage is calculated.
 
@@ -49,8 +67,8 @@ See the [usage details](#usage-details) and [pricing example](#pricing-example) 
 | [Blob Data Transfer](/docs/vercel-blob/usage-and-pricing#pricing) | Regional |
 
 
-> **💡 Note:** [Edge Requests](/docs/pricing/networking#edge-requests) and [Fast Origin
-> Transfer](/docs/pricing/networking#fast-origin-transfer) for blobs are billed
+> **💡 Note:** [Edge Requests](/docs/manage-cdn-usage#edge-requests) and [Fast Origin
+> Transfer](/docs/manage-cdn-usage#fast-origin-transfer) for blobs are billed
 > at standard [CDN rates](/docs/cdn#pricing-and-usage). The included resource usage for
 > the Hobby plan is shared across all Vercel services in your project.
 
@@ -72,12 +90,12 @@ Private and public Blob stores are priced the same for storage, operations, and 
 **Private blob delivery** (e.g. a 10 KB document served through a [Function](/docs/functions)):
 
 - Your Function fetches the blob from the store, then streams it to the browser
-- You pay [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) on cache miss for the Function-to-store fetch, plus [Fast Data Transfer](/docs/cdn) + [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) for the Function-to-browser response
+- You pay [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) on cache miss for the Function-to-store fetch, plus [Fast Data Transfer](/docs/cdn) + [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) for the Function-to-browser response
 
 **Public blob delivery** (e.g. a 150 KB image on a page):
 
 - The browser fetches the blob directly from the store
-- You pay [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) on cache miss
+- You pay [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) on cache miss
 - Blob Data Transfer (BDT) is 3x more cost-efficient than Fast Data Transfer (FDT) on average
 
 For full details on how delivery works, see [delivering private blobs](/docs/vercel-blob/private-storage#delivering-private-blobs) and [delivering public blobs](/docs/vercel-blob/public-storage#delivering-public-blobs).

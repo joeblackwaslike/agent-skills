@@ -9,20 +9,35 @@ prerequisites:
   - /docs/checks
 related:
   - /docs/webhooks/webhooks-api
-  - /docs/observability/checks-overview
+  - /docs/checks
   - /docs/speed-insights
   - /docs/speed-insights/metrics
-  - /docs/rest-api/reference
+  - /docs/rest-api
 summary: Learn how to create your own Checks with Vercel Integrations. You can build your own Integration in order to register any arbitrary Check for your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks/creating-checks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "24ac040460fc979caed0f15a2664db47a0acade34a709103e9758be1297e5cd4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "74a9b2e8c1367bd11a2c3e9b4d734e3a151e91a5712b73f1ded399c8d5223b2b"
 ---
 
 # Anatomy of the Checks API
 
 Checks API extends the build and deploy process once your deployment is ready. Each check behaves like a webhook that triggers specific events, such as `deployment.created`, `deployment.ready`, and `deployment.succeeded`. The test are verified before domains are assigned.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
+- [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run?from=related)
+- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check?from=related)
+- [Create a check run](https://vercel.com/docs/rest-api/checks-v2/create-a-check-run?from=related)
+- [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check?from=related)
+
+Full cross-link map for this page: [/docs/checks/creating-checks.graph.md](/docs/checks/creating-checks.graph.md)
+<!-- /docsgraph:related -->
 
 To learn more, see the [Supported Webhooks Events docs](/docs/webhooks/webhooks-api#supported-event-types).
 
@@ -38,7 +53,7 @@ If a check is "rerequestable", your integration users get an option to [rereques
 
 Depending on the type, checks can block the domain assignment stage of deployments.
 
-- **Blocking Checks**: Prevents a successful deployment and returns a `conclusion` with a `state` value of `canceled` or `failed`. For example, a [Core Check](/docs/observability/checks-overview#types-of-flows-enabled-by-checks-api) returning a `404` error results in a `failed` `conclusion` for a deployment
+- **Blocking Checks**: Prevents a successful deployment and returns a `conclusion` with a `state` value of `canceled` or `failed`. For example, a [Core Check](/docs/checks#types-of-flows-enabled-by-checks-api) returning a `404` error results in a `failed` `conclusion` for a deployment
 - **Non-blocking Checks**: Return test results with a successful deployment regardless of the `conclusion`
 
 A blocking check with a `failed` state is configured by the developer (and not the integration).
@@ -88,21 +103,21 @@ The check gets a `stale` status if there is no status update for more than one h
 
 The `output` property can store any data like [Web Vitals](/docs/speed-insights) and [Virtual Experience Score](/docs/speed-insights/metrics#predictive-performance-metrics-with-virtual-experience-score). It is defined under a `metrics` field:
 
-| Key                      | [Type](/docs/rest-api/reference#types) | Description                                                                                                                                             |
+| Key                      | [Type](/docs/rest-api#types) | Description                                                                                                                                             |
 | ------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `TBT`                    | [Map](/docs/rest-api/reference#types)          | The [Total Blocking Time](/docs/speed-insights/metrics#total-blocking-time-tbt), measured by the check                                                  |
-| `LCP`                    | [Map](/docs/rest-api/reference#types)          | The [Largest Contentful Paint](/docs/speed-insights/metrics#largest-contentful-paint-lcp), measured by the check                                        |
-| `FCP`                    | [Map](/docs/rest-api/reference#types)          | The [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), measured by the check                                            |
-| `CLS`                    | [Map](/docs/rest-api/reference#types)          | The [Cumulative Layout Shift](/docs/speed-insights/metrics#cumulative-layout-shift-cls), measured by the check                                          |
-| `virtualExperienceScore` | [Map](/docs/rest-api/reference#types)          | The overall [Virtual Experience Score](/docs/speed-insights/metrics#predictive-performance-metrics-with-virtual-experience-score) measured by the check |
+| `TBT`                    | [Map](/docs/rest-api#types)          | The [Total Blocking Time](/docs/speed-insights/metrics#total-blocking-time-tbt), measured by the check                                                  |
+| `LCP`                    | [Map](/docs/rest-api#types)          | The [Largest Contentful Paint](/docs/speed-insights/metrics#largest-contentful-paint-lcp), measured by the check                                        |
+| `FCP`                    | [Map](/docs/rest-api#types)          | The [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), measured by the check                                            |
+| `CLS`                    | [Map](/docs/rest-api#types)          | The [Cumulative Layout Shift](/docs/speed-insights/metrics#cumulative-layout-shift-cls), measured by the check                                          |
+| `virtualExperienceScore` | [Map](/docs/rest-api#types)          | The overall [Virtual Experience Score](/docs/speed-insights/metrics#predictive-performance-metrics-with-virtual-experience-score) measured by the check |
 
 Each of these keys has the following properties:
 
-| Key             | [Type](/docs/rest-api/reference#types)  | Description                                                                                                                            |
+| Key             | [Type](/docs/rest-api#types)  | Description                                                                                                                            |
 | --------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `value`         | [Float](/docs/rest-api/reference#types) | The value measured for a particular metric, in milliseconds. For `virtualExperienceScore` this value is the percentage between 0 and 1 |
-| `previousValue` | [Float](/docs/rest-api/reference#types) | A previous value for comparison purposes                                                                                               |
-| `source`        | [Enum](/docs/rest-api/reference#types)  | `web-vitals`                                                                                                                           |
+| `value`         | [Float](/docs/rest-api#types) | The value measured for a particular metric, in milliseconds. For `virtualExperienceScore` this value is the percentage between 0 and 1 |
+| `previousValue` | [Float](/docs/rest-api#types) | A previous value for comparison purposes                                                                                               |
+| `source`        | [Enum](/docs/rest-api#types)  | `web-vitals`                                                                                                                           |
 
 ### Metrics
 
@@ -154,11 +169,11 @@ You can "Skip" to stop and ignore check results without affecting the alias assi
 
 ### Availability of URLs
 
-For "Running Checks", only the [Automatic Deployment URL](/docs/deployments/generated-urls) is available. [Automatic Branch URL](/docs/deployments/generated-urls#generated-from-git) and [Custom Domains](/docs/domains/add-a-domain) will apply once the checks finish.
+For "Running Checks", only the [Automatic Deployment URL](/docs/deployments/generated-urls) is available. [Automatic Branch URL](/docs/deployments/generated-urls#generated-from-git) and [Custom Domains](/docs/domains/working-with-domains/add-a-domain) will apply once the checks finish.
 
 ### Order of execution
 
-Checks may take different times to run. Each integrator determines the running order of the checks. While [Vercel REST API](/docs/rest-api/vercel-api-integrations) determines the order of check results.
+Checks may take different times to run. Each integrator determines the running order of the checks. While [Vercel REST API](/docs/integrations/create-integration/vercel-api-integrations) determines the order of check results.
 
 ### Status and conclusion
 

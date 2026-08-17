@@ -15,13 +15,28 @@ related:
 summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "04de754c9ae19ece6ec5bca03320e9975dbc740e7513ab5f54bf24e9b5666c76"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5c76186ac4a20532d725b59489207699f4c070759d799fa5d0a99fff3d8c022b"
 ---
 
 # Managing Usage & Costs
 
 > **🔒 Permissions Required**: Speed Insights
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Privacy](https://vercel.com/docs/speed-insights/privacy-policy?from=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+
+Full cross-link map for this page: [/docs/speed-insights/managing-usage.graph.md](/docs/speed-insights/managing-usage.graph.md)
+<!-- /docsgraph:related -->
 
 Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-insights) package to measure and reduce your Speed Insights usage.
 

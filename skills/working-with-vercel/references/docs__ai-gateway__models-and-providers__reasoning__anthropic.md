@@ -13,13 +13,33 @@ related:
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "de896dab33258a88064849bea8d277993e033cfca925a44e6b379cd0105ca80b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fd653c887310454af6cfc86ca4a2a905f05a38defde506c003764b384a3b106a"
 ---
 
 # Anthropic Reasoning
 
 Anthropic Claude models support thinking, which lets the model reason through complex problems before producing a final answer. Claude 4.6 introduced adaptive thinking, where Claude dynamically decides when and how much to think based on an effort level. On Claude Opus 4.7 and later and the Claude 5 models (Claude Opus 5, Claude Sonnet 5, Claude Fable 5), adaptive thinking is the only way to turn thinking on. The legacy fixed-budget API is no longer accepted on those models.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related)
+- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4?from=related)
+- [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
+- [Amazon Bedrock](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [Anthropic Messages API](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api?from=related) — Use the Anthropic Messages API with AI Gateway for seamless integration with Anthropic SDK tools.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md](/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md)
+<!-- /docsgraph:related -->
 
 ## Two thinking modes
 

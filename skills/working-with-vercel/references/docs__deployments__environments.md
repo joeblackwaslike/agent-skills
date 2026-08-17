@@ -16,13 +16,33 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "3623a9cc308dc89f01bbebcaffa340e574568ba7eb2f90e07d7017421dc4165f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ee199cde7ef81946b41c516f8cb21f575806aab241ff0a200fd5e20b8d538a05"
 ---
 
 # Environments
 
 Vercel provides three default environments—**Local**, **Preview**, and **Production**:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
+- [Environment Variables](https://vercel.com/docs/environment-variables?from=related) — Learn more about environment variables on Vercel.
+- [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Create a custom environment for the current project.](https://vercel.com/docs/rest-api/environment/create-a-custom-environment-for-the-current-project?from=related)
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment?from=related)
+
+Full cross-link map for this page: [/docs/deployments/environments.graph.md](/docs/deployments/environments.graph.md)
+<!-- /docsgraph:related -->
 
 1. **Local Development**: developing and testing code changes on your local machine
 2. **Preview**: deploying for further testing, QA, or collaboration without impacting your live site
@@ -71,7 +91,7 @@ This will populate the `.env.local` file in your application directory.
 **Preview** environments allow you to deploy and test changes in a live setting, without affecting your production site. By default, Vercel creates a preview deployment when you:
 
 - Push a commit to a branch that is **not** your production branch (commonly `main`)
-- Create a pull request (PR) on [GitHub, GitLab, or Bitbucket](/docs/git)
+- Create a pull request (PR) on [GitHub, GitLab](/docs/git), or Bitbucket
 - Deploy using the CLI without the `--prod` flag, for example just `vercel`
 
 > **💡 Note:** The [first deployment](#first-deployment) of a new project is always a
@@ -135,7 +155,7 @@ Team owners and project admins can create, update, or remove custom environments
 
 #### 'cURL'
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```bash filename="cURL"
 curl --request POST \
@@ -150,7 +170,7 @@ curl --request POST \
 
 #### 'SDK']
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```ts filename="createCustomEnvironment"
 import { Vercel } from '@vercel/sdk';

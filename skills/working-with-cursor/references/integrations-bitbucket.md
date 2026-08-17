@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/integrations/bitbucket.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "0a83a45c1d924505c15556bcea87db79e6a80f41ab6cffcc894d0696382bc7de"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "ba92765d52e4263f46f68240873317fb237fd921cfb91a664c250f7eb1c74952"
 ---
 
 # Bitbucket
@@ -122,7 +122,7 @@ For instances without public inbound access, see [Advanced networking](https://c
 5. If API traffic uses a different hostname, enter it as the **External Host**
 6. Enter the **Service Account Token**
 7. Click **Register**
-8. Return to the [Bugbot dashboard](https://cursor.com/dashboard/bugbot) to enable Bugbot on repositories from the instance
+8. Open [Bugbot in Automations](https://cursor.com/automations/from-cursor/bugbot) to enable it on repositories from the instance
 
 Cursor uses the service account identity for Bugbot review comments, inline findings, webhooks, and build statuses.
 
@@ -136,7 +136,7 @@ Bitbucket Data Center supports private connection methods for instances that can
 
 ### AWS PrivateLink or Cloudflare Tunnel
 
-Available for Enterprise customers. Allow Cursor to access your instance over a private network connection. See [Private Connectivity](https://cursor.com/docs/enterprise/private-connectivity.md) or [contact your Cursor representative](https://cursor.com/contact-sales?source=docs-bugbot-private-network) for setup.
+Available for Enterprise customers. Allow Cursor to access your instance over a private network connection. See [Private Connectivity](https://cursor.com/docs/cloud-agent/private-connectivity.md) or [contact your Cursor representative](https://cursor.com/contact-sales?source=docs-bugbot-private-network) for setup.
 
 **Best for:** Instances behind a firewall, including AWS-hosted instances and environments that can run `cloudflared`
 

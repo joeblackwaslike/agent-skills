@@ -16,13 +16,33 @@ related:
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9178c8da522fdcb4a02ea999641bf8a37abd338340f7e3f5a30072b28e67d9c0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "be10f2cbd35c9bddf1aaec3645d4a9e2bb9b9e047584a911aa418cd7ff4a39e6"
 ---
 
 # Getting started with Sign in with Vercel
 
 This guide uses Next.js App Router. You'll create a Sign in with Vercel button that redirects to the authorization endpoint, add a callback route to exchange the authorization code for tokens, and set authentication cookies.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel?from=related) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
+- [Authentication](https://nextjs.org/docs/app/guides/authentication?from=related) — Learn how to implement authentication in your Next.js application.
+- [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [Backend for Frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related) — Learn how to use Next.js as a backend framework
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
+- [Client Uploads](https://vercel.com/docs/vercel-blob/client-upload?from=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+
+Full cross-link map for this page: [/docs/sign-in-with-vercel/getting-started.graph.md](/docs/sign-in-with-vercel/getting-started.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:**&#x20;
 

@@ -13,13 +13,34 @@ related:
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8227e8eeb6145e066445f95d818e98d440f3f0e83bf563e09943030062ffef96"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "96b86ce4ff9b0c74a005d328ee77a52c0dc45aae69223483e3a3e966bf2861a6"
 ---
 
 # Speed Insights Metrics
 
 ## Real Experience Score (RES)
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Optimizing Core Web Vitals in 2024](https://vercel.com/kb/guide/optimizing-core-web-vitals-in-2024?from=related) — Learn how to optimize Core Web Vitals for your site, including INP, CLS, LCP, and more.
+- [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters?from=related) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
+- [First Input Delay \(FID\) vs. Interaction to Next Paint \(INP\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint?from=related) — Learn about the differences between FID and INP and how to optimize your website's INP score.
+- [Analytics](https://nextjs.org/docs/app/guides/analytics?from=related) — Measure and track page performance using Next.js Speed Insights
+- [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Checks Reference](https://vercel.com/docs/checks/creating-checks?from=related) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration in order to register an
+- [Astro](https://vercel.com/docs/frameworks/frontend/astro?from=related) — Learn how to use Vercel's features with Astro
+- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
+
+Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md)
+<!-- /docsgraph:related -->
 
 ### Real user monitoring
 

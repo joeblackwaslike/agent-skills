@@ -11,18 +11,37 @@ related:
   - /docs/microfrontends/managing-microfrontends/security
   - /docs/microfrontends/managing-microfrontends/vercel-toolbar
   - /docs/deployments/environments
-  - /docs/errors/MICROFRONTENDS_MISSING_FALLBACK_ERROR
+  - /docs/errors/microfrontends_missing_fallback_error
   - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
 summary: Learn about managing microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "67013407572a6649b2a237d65b86ba8314d7011d61c735606456b133e0b4c600"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d4d79b9867b36fa132019d8a9185967a98e4d8a955199add87cec7ed6f6db73a"
 ---
 
 # Managing microfrontends
 
 With a project's **Microfrontends** settings of the Vercel dashboard, you can:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
+- [Testing & Troubleshooting](https://vercel.com/docs/microfrontends/troubleshooting?from=related) — Learn about testing & troubleshooting on Vercel.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related) — Learn the answer to common questions about deploying monorepos on Vercel.
+
+Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md)
+<!-- /docsgraph:related -->
 
 - [Add](#adding-microfrontends) and [remove](#removing-microfrontends) microfrontends
 - [Delete](#deleting-a-microfrontends-group) a microfrontends group
@@ -147,7 +166,7 @@ If the current environment is `Production`, requests will always be routed to th
 > example, if using the `Custom Environment` option, each project in the
 > microfrontends group will need to have a Custom Environment with the specified
 > name. If environments are not configured correctly, you may see a
-> [MICROFRONTENDS\_MISSING\_FALLBACK\_ERROR](/docs/errors/MICROFRONTENDS_MISSING_FALLBACK_ERROR)
+> [MICROFRONTENDS\_MISSING\_FALLBACK\_ERROR](/docs/errors/microfrontends_missing_fallback_error)
 > on the request.
 
 To configure this setting, visit the **Settings** tab for the microfrontends group and configure the **Fallback Environment** setting.

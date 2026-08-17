@@ -15,13 +15,29 @@ related:
 summary: Configure AI chat platforms to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f2ebb0298d5c68e06f3f217c314831a5e9b8192db1b5e1800a9cb31aefc1dd68"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e8550987453f5b88c0b5a9f14af9de42defc05a434bf761fc0b26779880a8b3a"
 ---
 
 # Chat Platforms
 
 AI chat platforms provide conversational interfaces for interacting with AI models. Route these platforms through AI Gateway to access hundreds of models, track spend across all conversations, and monitor usage from a single dashboard.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
+- [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
+- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
+- [OpenAI Chat Completions API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related) — Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
+
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms.graph.md](/docs/ai-gateway/chat-platforms.graph.md)
+<!-- /docsgraph:related -->
 
 ## Why route chat platforms here?
 

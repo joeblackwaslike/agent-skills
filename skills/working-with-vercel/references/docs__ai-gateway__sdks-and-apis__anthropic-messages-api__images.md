@@ -13,13 +13,29 @@ related:
 summary: Send images and PDF documents as part of your Anthropic API message requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "36ec740612c9a9ed31c93ed230ae043dd23d006686bd20b4b1a19e36b6f1f159"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3aedda774f7b266f93388e3105d77ea1e68d6e0c862272886bfc51830ef0831e"
 ---
 
 # File Attachments
 
 Send images and PDF documents as part of your message request.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related) — Send images and PDF documents for analysis using the OpenResponses API.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [File Uploads](https://chat-sdk.dev/docs/files?from=related) — Send and receive files across chat platforms.
+- [Messages](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages?from=related) — Create messages using the Anthropic Messages API format with support for streaming.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md)
+<!-- /docsgraph:related -->
 
 Example request
 

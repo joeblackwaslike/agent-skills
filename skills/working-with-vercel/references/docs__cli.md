@@ -16,13 +16,34 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d78342dfe1893f55de83b119841793ffee54c292b81c28ee607f307645ef8310"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ee45c9c292ce5f94e8c7846e045e4d336a05117d5f0e8eea709dcc4eaaf8a881"
 ---
 
 # Vercel CLI Overview
 
 Vercel gives you multiple ways to interact with and configure your Vercel Projects. With the command-line interface (CLI) you can interact with the Vercel platform using a terminal, or through an automated system, enabling you to [retrieve logs](/docs/cli/logs), manage [certificates](/docs/cli/certs), replicate your deployment environment [locally](/docs/cli/dev), manage Domain Name System (DNS) [records](/docs/cli/dns), and more.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
+
+Full cross-link map for this page: [/docs/cli.graph.md](/docs/cli.graph.md)
+<!-- /docsgraph:related -->
 
 If you'd like to interface with the platform programmatically, check out the [REST API documentation](/docs/rest-api).
 
@@ -274,7 +295,7 @@ vercel certs rm [certificate-id]
 Manage connectors: create, list, attach to projects, request runtime tokens, and remove them. This is a beta command.
 
 ```bash
-vercel connect create <type>
+vercel connect create <service>
 vercel connect list
 vercel connect token <id>
 vercel connect attach <id>
@@ -283,6 +304,8 @@ vercel connect update <id>
 vercel connect remove <id>
 vercel connect open <id>
 ```
+
+Run `vercel connect create <service> --help` to see how you can connect to a specific service.
 
 [Learn more about the connect command](/docs/cli/connect)
 
@@ -827,7 +850,7 @@ vercel teams invite [email]
 
 ### telemetry
 
-Enable or disable telemetry collection.
+Enable or disable telemetry collection. Learn [what data Vercel CLI collects](/docs/cli/about-telemetry) and how to opt out.
 
 ```bash
 vercel telemetry status

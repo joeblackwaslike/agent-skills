@@ -10,19 +10,34 @@ prerequisites:
 related:
   - /docs/environment-variables
   - /docs/cli/deploying-from-cli
-  - /docs/build-output-api/v3
-  - /docs/domains/add-a-domain
-  - /docs/deployments/configure-a-build
+  - /docs/build-output-api
+  - /docs/domains/working-with-domains/add-a-domain
+  - /docs/builds/configure-a-build
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "0f53f5cffafcb0c9b4ea4cc17d4a64fe51ab72e5e73525282e802967ea01bf9b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "73ff895196395682983ade469485e86852983fb644f8825624124ee6b11be6e3"
 ---
 
 # Build Features for Customizing Deployments
 
 Vercel provides the following features to customize your deployments:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+
+Full cross-link map for this page: [/docs/builds/build-features.graph.md](/docs/builds/build-features.graph.md)
+<!-- /docsgraph:related -->
 
 - [Private npm packages](#private-npm-packages)
 - [Ignored files and folders](#ignored-files-and-folders)
@@ -72,7 +87,7 @@ CVS
 *A complete list of files and folders ignored by Vercel during the Deployment
 process.*
 
-The `.vercel/output` directory is **not** ignored when [`vercel deploy --prebuilt`](/docs/cli/deploying-from-cli#deploying-from-local-build-prebuilt) is used to deploy a prebuilt Vercel Project, according to the [Build Output API](/docs/build-output-api/v3) specification.
+The `.vercel/output` directory is **not** ignored when [`vercel deploy --prebuilt`](/docs/cli/deploying-from-cli#deploying-from-local-build-prebuilt) is used to deploy a prebuilt Vercel Project, according to the [Build Output API](/docs/build-output-api) specification.
 
 > **💡 Note:** You do not need to add any of the above files and folders to your
 > `.vercelignore` file because it is done automatically
@@ -95,11 +110,11 @@ By default, these routes are protected so that they can only be accessed by you 
 
 ### Source View
 
-By appending `/_src` to a Deployment URL or [Custom Domain](/docs/domains/add-a-domain) in your web browser, you will be redirected to the Deployment inspector and be able to browse the sources and [build](/docs/deployments/configure-a-build) outputs.
+By appending `/_src` to a Deployment URL or [Custom Domain](/docs/domains/working-with-domains/add-a-domain) in your web browser, you will be redirected to the Deployment inspector and be able to browse the sources and [build](/docs/builds/configure-a-build) outputs.
 
 ### Logs View
 
-By appending `/_logs` to a Deployment URL or [Custom Domain](/docs/domains/add-a-domain) in your web browser, you can see a real-time stream of logs from your deployment build processes by clicking on the **Build Logs** accordion.
+By appending `/_logs` to a Deployment URL or [Custom Domain](/docs/domains/working-with-domains/add-a-domain) in your web browser, you can see a real-time stream of logs from your deployment build processes by clicking on the **Build Logs** accordion.
 
 ### Security considerations
 

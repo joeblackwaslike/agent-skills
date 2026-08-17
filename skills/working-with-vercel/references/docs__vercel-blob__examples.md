@@ -9,17 +9,34 @@ prerequisites:
   - /docs/vercel-blob
 related:
   - /docs/cron-jobs
-  - /docs/storage/vercel-blob/using-blob-sdk
+  - /docs/vercel-blob/using-blob-sdk
 summary: Examples on how to use Vercel Blob in your applications
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/examples.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "40421dfb3e16e193a42337d6c296f981007682480740e9444c739626479e3d1c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "38cf2ebc5c86fe8ad3c676c5885df016f7a29c2b440f1d6fde9e630d1a3e4fbd"
 ---
 
 # Vercel Blob examples
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related) — Example how to use AWS S3 library on Vercel
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload?from=related)
+
+Full cross-link map for this page: [/docs/vercel-blob/examples.graph.md](/docs/vercel-blob/examples.graph.md)
+<!-- /docsgraph:related -->
 
 ## Range requests
 
@@ -176,8 +193,8 @@ deleteAllBlobs().catch((error) => {
 
 While there's no native backup system for Vercel Blob, here are two ways to backup your blobs:
 
-1. **Continuous backup**: When using [Client Uploads](/docs/storage/vercel-blob/using-blob-sdk#client-uploads) you can leverage the `onUploadCompleted` callback from the `handleUpload` server-side function to save every Blob upload to another storage.
-2. **Periodic backup**: Using [Cron Jobs](/docs/cron-jobs) and the [Vercel Blob SDK](/docs/storage/vercel-blob/using-blob-sdk) you can periodically list all blobs and save them.
+1. **Continuous backup**: When using [Client Uploads](/docs/vercel-blob/using-blob-sdk#client-uploads) you can leverage the `onUploadCompleted` callback from the `handleUpload` server-side function to save every Blob upload to another storage.
+2. **Periodic backup**: Using [Cron Jobs](/docs/cron-jobs) and the [Vercel Blob SDK](/docs/vercel-blob/using-blob-sdk) you can periodically list all blobs and save them.
 
 Here's an example implementation of a periodic backup as a Cron Job. This example uses `get()` so it works with both private and public Blob stores:
 

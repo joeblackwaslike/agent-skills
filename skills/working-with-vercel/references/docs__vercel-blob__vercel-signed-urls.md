@@ -13,13 +13,30 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f0bae805ef3d95f0d2805dedaf815ab46a487329f0c4ff26efaa89923c898f60"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "95bf6e32eebb5c5b5f277fe4429226663355348ffbb7f56af800ac70e9d08185"
 ---
 
 # Vercel Signed URLs
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related) — Example how to use AWS S3 library on Vercel
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Client Uploads](https://vercel.com/docs/vercel-blob/client-upload?from=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related) — Learn how to use private Vercel Blob storage to serve files with authentication
+
+Full cross-link map for this page: [/docs/vercel-blob/vercel-signed-urls.graph.md](/docs/vercel-blob/vercel-signed-urls.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel Signed URLs grant time-limited access to a Blob URL without exposing a read-write token. Issue a short-lived signed token on your server, then sign individual blob URLs from the browser or any client. The CDN verifies the signature and rejects requests that fall outside the token's scope.
 

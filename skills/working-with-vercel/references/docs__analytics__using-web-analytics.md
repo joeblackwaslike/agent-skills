@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "90a3b130daeb8b21c8d968e5b1003ee03a7105328757294644641d56f2015f91"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "037033eed18f44fb322254647c27a659c6085caaec23288c328ce9dd390960ec"
 ---
 
 # Using Web Analytics
@@ -26,6 +26,21 @@ sha256: "90a3b130daeb8b21c8d968e5b1003ee03a7105328757294644641d56f2015f91"
 > business data. You can also [access Web Analytics metrics with Vercel
 > CLI](/docs/analytics/accessing-metrics-with-vercel-cli) to query production
 > metrics, filter events, and compare projects from your terminal.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Privacy](https://vercel.com/docs/analytics/privacy-policy?from=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+
+Full cross-link map for this page: [/docs/analytics/using-web-analytics.graph.md](/docs/analytics/using-web-analytics.graph.md)
+<!-- /docsgraph:related -->
 
 ## Accessing Web Analytics
 

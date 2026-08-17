@@ -14,13 +14,33 @@ related:
 summary: Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "28e7398a774a3a83eecb1fd89e209966a8a9d049eed506508b2db71c42a0131d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3b841751c6270aea2587f88cdf49cd19ff40ea6b1140be579efcdbda0f8b0e01"
 ---
 
 # Google and Vertex Reasoning
 
 Gemini 2.5 and later models use an internal "thinking process" that improves their reasoning and multi-step planning abilities, making them effective for complex tasks like coding, advanced mathematics, and data analysis.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
+- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related)
+- [Gemini CLI](https://ai-sdk.dev/providers/community-providers/gemini-cli?from=related)
+- [Get started with Gemini 3](https://ai-sdk.dev/cookbook/guides/gemini?from=related)
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
+- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+- [OpenAI](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Responses API.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/google.graph.md](/docs/ai-gateway/models-and-providers/reasoning/google.graph.md)
+<!-- /docsgraph:related -->
 
 These models are available through both Google AI and Google Vertex AI providers. The thinking configuration is the same. The only difference is using `providerOptions.vertex` instead of `providerOptions.google`. To route through Vertex, configure [Vertex AI credentials](/docs/ai-gateway/authentication-and-byok/byok) and set the provider order to prefer `vertex`.
 

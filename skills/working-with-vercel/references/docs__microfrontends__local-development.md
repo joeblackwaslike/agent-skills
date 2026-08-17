@@ -15,13 +15,31 @@ related:
 summary: Learn about local development on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d49d55de7d32521e70891933a69e12b4b6f5d9e367a6296b3a011925f5759ad0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "202cd84762c599346c013dfdd61a095bce4e71a049265cb64cc314988d686839"
 ---
 
 # Microfrontends local development
 
 To provide a seamless local development experience, `@vercel/microfrontends` provides a microfrontends aware local development proxy to run alongside your development servers. This proxy allows you to only run a single microfrontend locally while making sure that all microfrontend requests still work.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
+- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related) — Learn the answer to common questions about deploying monorepos on Vercel.
+- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
+
+Full cross-link map for this page: [/docs/microfrontends/local-development.graph.md](/docs/microfrontends/local-development.graph.md)
+<!-- /docsgraph:related -->
 
 ## The need for a microfrontends proxy
 

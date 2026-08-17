@@ -9,20 +9,39 @@ prerequisites:
   []
 related:
   - /docs/deployments/environments
+  - /docs/deployments/deployment-policy
   - /docs/git
   - /docs/git/vercel-for-github
   - /docs/git/vercel-for-gitlab
-  - /docs/git/vercel-for-bitbucket
 summary: Learn how to create and manage deployments on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4118b03b55e9818998dd8c359051446dcd1cd142c5b7aa1ebaa4ad5a521a3ce6"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "33efeecca64db446c0aa07bc23782074cb2518b790b72e6ad809fb7c7d0a8679"
 ---
 
 # Deploying to Vercel
 
 A **deployment** on Vercel is the result of a successful build of your project. Each time you deploy, Vercel generates a unique URL so you and your team can preview changes in a live [environment](/docs/deployments/environments).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+
+Full cross-link map for this page: [/docs/deployments.graph.md](/docs/deployments.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel supports multiple ways to create a deployment:
 
@@ -31,6 +50,8 @@ Vercel supports multiple ways to create a deployment:
 - [Vercel CLI](#vercel-cli)
 - [Deploy Hooks](#deploy-hooks)
 - [Vercel REST API](#vercel-rest-api)
+
+On Pro and Enterprise teams, you can set a [deployment policy](/docs/deployments/deployment-policy) to control which Git sources and deployment mechanisms can deploy to each environment.
 
 ## Deployment Methods
 
@@ -109,7 +130,7 @@ The [Vercel REST API](/docs/rest-api) lets you create deployments by making an H
 2. Upload those files to Vercel
 3. Send a request to create a new deployment with those file references
 
-This method is especially useful for custom workflows, multi-tenant applications, or integrating with third-party services not officially supported by Vercel. For more details, see the [API reference](/docs/rest-api/reference/endpoints/deployments/create-a-new-deployment) and [How do I generate an SHA for uploading a file](/kb/guide/how-do-i-generate-an-sha-for-uploading-a-file-to-the-vercel-api).
+This method is especially useful for custom workflows, multi-tenant applications, or integrating with third-party services not officially supported by Vercel. For more details, see the [API reference](/docs/rest-api/deployments/create-a-new-deployment) and [How do I generate an SHA for uploading a file](/kb/guide/how-do-i-generate-an-sha-for-uploading-a-file-to-the-vercel-api).
 
 ## Accessing Deployments
 

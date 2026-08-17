@@ -13,13 +13,30 @@ related:
 summary: Create messages using the Anthropic Messages API format with support for streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "00c3a8602c9b665521f2a2b56d832e3d3bcea1300caecfcc07cdea255f527832"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a5f584e0f220d3d0d70e9ed349a484d57de9c2aead85a753369fb732a194d594"
 ---
 
 # Messages
 
 Create messages using the Anthropic Messages API format.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Messages](https://eve.dev/docs/guides/client/messages?from=related) — Send text, full turn payloads, client context, attachments, and HITL responses with eve/client.
+- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related) — Learn how to use the AI SDK to stream LLM responses.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related) — Stream tokens as they are generated with the OpenAI Responses API.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related) — Stream responses token by token using the OpenResponses API.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related) — Send images and PDF documents as part of your Anthropic API message requests.
+- [Chat Completions](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions?from=related) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.graph.md)
+<!-- /docsgraph:related -->
 
 Endpoint
 

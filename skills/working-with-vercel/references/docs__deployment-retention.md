@@ -11,17 +11,33 @@ related:
   - /docs/cli/list
   - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
   - /docs/deployments/environments
-  - /docs/errors/DEPLOYMENT_DELETED
+  - /docs/errors/deployment_deleted
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "c0b42ff84bbbc7e1d38a488ae4c4e4674830091dd5507ae4219f347ce3c03e44"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "657482b2a535e055d8575661547873f1dcd6ba5e53c54f73a523c4255c92dbf3"
 ---
 
 # Deployment Retention
 
 > **🔒 Permissions Required**: Deployment Retention
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related) — Information on deleting an individual deployment.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deployment Policies](https://vercel.com/docs/deployments/deployment-policy?from=related) — Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Instant Rollback](https://vercel.com/docs/instant-rollback?from=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+
+Full cross-link map for this page: [/docs/deployment-retention.graph.md](/docs/deployment-retention.graph.md)
+<!-- /docsgraph:related -->
 
 Deployment retention refers to the configured policies that determine how long different types of deployments are kept before they are automatically deleted.
 
@@ -89,7 +105,7 @@ To restore a deleted deployment, open **Settings** in the sidebar of your projec
 ## More resources
 
 - [View Deployment Retention Policies](/docs/cli/list#unique-options)
-- [Troubleshoot Deployment Retention Errors](/docs/errors/DEPLOYMENT_DELETED)
+- [Troubleshoot Deployment Retention Errors](/docs/errors/deployment_deleted)
 
 
 ---

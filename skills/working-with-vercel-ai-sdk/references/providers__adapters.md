@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "8a06dbac5877fdd75c7ba27ec1fa63b09f96beb50ec69240fcad6b4b994e85a6"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "7882bd7e49d1b01d852e838584edf64505bc43ed0b1990567930fa70556f150b"
 ---
 
 # Adapters
@@ -21,7 +21,6 @@ The following adapters are currently available:
 - [AI SDK Providers](/providers/ai-sdk-providers)
   - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
   - [xAI Grok](/providers/ai-sdk-providers/xai)
-  - [Vercel](/providers/ai-sdk-providers/vercel)
   - [OpenAI](/providers/ai-sdk-providers/openai)
   - [Azure OpenAI](/providers/ai-sdk-providers/azure)
   - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -31,6 +30,7 @@ The following adapters are currently available:
   - [Groq](/providers/ai-sdk-providers/groq)
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+  - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -68,6 +68,9 @@ The following adapters are currently available:
   - [Pi](/providers/ai-sdk-harnesses/pi)
   - [OpenCode](/providers/ai-sdk-harnesses/opencode)
   - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+  - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+  - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+  - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -153,6 +156,7 @@ The following adapters are currently available:
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+  - [QVAC](/providers/community-providers/qvac)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

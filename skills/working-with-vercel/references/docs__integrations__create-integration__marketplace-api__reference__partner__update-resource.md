@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d041905e11a1de77ccc7741dbc1b43095a9c0fb26a9c03dccb94be3d29f9da97"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e356e3b9863713b40dc7955afe53998290d741a6fd38256e4c81598ac5000304"
 ---
 
 # Update Resource
@@ -136,6 +136,12 @@ User Auth OIDC token claims schema:
     "experimentation": {
       "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into. Deprecated alias of `globalConfigId`.,
       "globalConfigId": "string" // A Global Config selected by the user for partners to push data into.
+    },
+    "authentication": {
+      "appUrls": [
+        "url": "string" // required // An exact https app URL. No wildcards.,
+        "target": "string" // required
+      ]
     }
   }
 }
@@ -160,6 +166,12 @@ Return the updated resource
       "globalConfigId": "string" // Alias for `edgeConfigId`.,
       "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
       "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
+    },
+    "authentication": {
+      "appUrls": [
+        "url": "string" // required // An exact https app URL. No wildcards.,
+        "target": "string" // required
+      ]
     }
   },
   "billingPlan": {

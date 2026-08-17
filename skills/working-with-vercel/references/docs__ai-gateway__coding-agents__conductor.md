@@ -10,16 +10,32 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
+  - /docs/cli/ai-gateway
 summary: Use Conductor with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/conductor.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "afd583ffa3951c9b09469c18c00d8a801b48902d850266b0713c417163fc475a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4b0b4d4436e43f0c1c6864730e3728eeed234eb9b6ff9b0643b456f07b239c0c"
 ---
 
 # Conductor
 
 AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) so you can use [Conductor](https://conductor.build) through a unified gateway.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+- [Claude Code](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
+- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related) — Use Cline with the AI Gateway.
+- [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related) — Use Superset with the AI Gateway.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/conductor.graph.md](/docs/ai-gateway/coding-agents/conductor.graph.md)
+<!-- /docsgraph:related -->
 
 [Conductor](https://conductor.build) is a Mac app that lets you run multiple Claude Code agents in parallel, each with an isolated copy of your codebase. You can see what each agent is working on, then review and merge their changes in one place.
 
@@ -38,10 +54,11 @@ Conductor also supports running Claude Code on OpenRouter, AWS Bedrock, Google V
 - ### Configure environment variables
   In Conductor, go to **Settings** -> **Env** to set environment variables. Add the following under **Claude Code**:
   ```bash
-  ANTHROPIC_BASE_URL="https://ai-gateway.vercel.sh"
+  ANTHROPIC_BASE_URL="https://ai-gateway.vercel.sh/coding-agent"
   ANTHROPIC_AUTH_TOKEN="your-vercel-ai-gateway-api-key"
   ANTHROPIC_API_KEY=""
   ```
+  `/coding-agent` is the [coding agent surface](/docs/cli/ai-gateway#the-coding-agent-surface), the default for agents without a dedicated endpoint. It carries no `/v1` because Claude Code appends `/v1/messages` itself.
   > **💡 Note:** Setting `ANTHROPIC_API_KEY` to an empty string is required. This prevents
   > Claude Code from attempting to authenticate with Anthropic directly.
   Check out the [Claude Code docs](https://docs.anthropic.com/en/docs/claude-code) for a full list of environment variables.

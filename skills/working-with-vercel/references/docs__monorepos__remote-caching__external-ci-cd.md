@@ -13,13 +13,31 @@ related:
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "930b067ea6afa4367c866c48cd8cd0db0e870630c50ea7cfcb37dab33bb2e68f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "426447e8df2c1313edfa19217d1e320262ae1347e31a5a4ade17a0a2c7168f4b"
 ---
 
 # Use Remote Caching from External CI/CD
 
 You can use [Vercel Remote Cache](/docs/monorepos/remote-caching) with Turborepo from an external CI/CD provider, so your pipelines share the same cache as your team. There are two ways to authenticate:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions?from=related) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
+- [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci?from=related) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
+- [GitLab CI](https://turborepo.dev/docs/guides/ci-vendors/gitlab-ci?from=related) — Configure GitLab CI pipelines to run Turborepo tasks with Remote Caching.
+- [Travis CI](https://turborepo.dev/docs/guides/ci-vendors/travis-ci?from=related) — Configure Travis CI to run Turborepo tasks with Remote Caching.
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+
+Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md)
+<!-- /docsgraph:related -->
 
 - **OpenID Connect (OIDC)**: configure a policy that allows exchanging the CI/CD provider's OIDC tokens for short-lived Turborepo access tokens that grant access to Remote Cache (recommended).
 - **Personal Access Token (PAT)**: configure a long-lived, team-scoped PAT as a secret in your CI/CD provider (use when OIDC is not an option).

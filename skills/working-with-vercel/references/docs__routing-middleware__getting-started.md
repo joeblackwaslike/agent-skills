@@ -16,13 +16,32 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "e46a69e5c22de279bf8787fe1a346d0fa5e21a2434e2a083b63777a5008bfa9a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1b75115882dff3cdf7f069c868bcd9bc6da059c3958b8061e437c20d371135a4"
 ---
 
 # Getting Started with Routing Middleware
 
 Routing Middleware lets you to run code before your pages load, giving you control over incoming requests. It runs close to your users for fast response times and are perfect for redirects, authentication, and request modification.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related) — Learn how to modify request headers in your Middleware.
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
+- [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related) — Learn how to add a response header in your Middleware.
+- [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Project Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+
+Full cross-link map for this page: [/docs/routing-middleware/getting-started.graph.md](/docs/routing-middleware/getting-started.graph.md)
+<!-- /docsgraph:related -->
 
 Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js), [Bun](/docs/functions/runtimes/bun), and [Edge](/docs/functions/runtimes/edge) runtimes. Edge is the default runtime for Routing Middleware. To use Node.js, configure the `runtime` in your middleware config. To use Bun, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file.
 
@@ -144,7 +163,7 @@ The following steps will guide you through creating your first Routing Middlewar
 
 | Detail                                            | Value                                                                                                                       |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **File location**                                 | `middleware.ts` in project root (or `proxy.ts` for Next.js 16+)                                                             |
+| **File location**                                 | Any path set with [`proxy.entrypoint`](/docs/project-configuration/vercel-json#proxy), or `middleware.ts` in project root (`proxy.ts` for Next.js 16+) |
 | **Export**                                        | `export default function middleware(request: Request)` (or `export function proxy` for Next.js 16+)                         |
 | **[Config export](/docs/routing-middleware/api)** | `export const config = { matcher: [...] }`                                                                                  |
 | **Default runtime**                               | [`edge`](/docs/functions/runtimes/edge) (set `runtime: 'nodejs'` in config for [Node.js](/docs/functions/runtimes/node-js)) |

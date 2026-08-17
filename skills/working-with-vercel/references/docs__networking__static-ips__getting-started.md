@@ -15,13 +15,30 @@ related:
 summary: Learn how to set up Static IPs for your Vercel projects to connect to IP-restricted backend services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips/getting-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bc54445544e18effb7d6630b6ddd4804c79992bacb37c4643fd7194677caf49f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1706130bb25f6d18bc33a0a36219e613f89df424ab11daa81b61a3c63b507a9e"
 ---
 
 # Getting Started with Static IPs
 
 > **🔒 Permissions Required**: Static IPs
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — You can allowlist IP addresses with Vercel Secure Compute and Static IPs
+- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related) — You can securely connect a deployment to external services by using a stable set of IP addresses.
+- [Secure Compute](https://vercel.com/docs/networking/secure-compute?from=related) — Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
+- [Trusted IPs](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
+- [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy?from=related) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
+- [Configures Static IPs for a project](https://vercel.com/docs/rest-api/networking/configures-static-ip-s-for-a-project?from=related)
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+
+Full cross-link map for this page: [/docs/networking/static-ips/getting-started.graph.md](/docs/networking/static-ips/getting-started.graph.md)
+<!-- /docsgraph:related -->
 
 This guide walks you through setting up Static IPs so you can access backend services that require IP allowlisting.
 

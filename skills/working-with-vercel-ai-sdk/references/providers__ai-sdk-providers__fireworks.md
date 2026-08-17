@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "19ae03e86814ab924c4c7e10ad142c7ba04c380de4363109c7af29dba263ae21"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "87ea74d6f710d9528c1f69e75056ab1d1e70ed6a7ac150a8b6df34d4c28e8c5a"
 ---
 
 # Fireworks Provider
@@ -498,7 +498,6 @@ support for these models:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -508,6 +507,7 @@ support for these models:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

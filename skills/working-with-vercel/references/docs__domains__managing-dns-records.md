@@ -12,13 +12,33 @@ related:
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7301753fb12ffd89cddb0d7384ebdb5d7c5a47f4c8acc6a5530ddd1e9352d8be"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ee15289a332fda38227e43c25957253c13502a4f36bfe0af961c5a793b2c13fd"
 ---
 
 # Managing DNS Records
 
 Once you've added a domain and it's using Vercel's nameservers, you can view its DNS records from your team's [**Domains** page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). From there, you can view, [add](#adding-dns-records), [verify](#verifying-dns-records), [remove the records](#removing-dns-records), or add [presets](#dns-presets).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [Why am I no longer receiving email after adding my domain to Vercel?](https://vercel.com/kb/guide/why-has-email-stopped-working?from=related) — Fix email that stopped working after adding your domain to Vercel, with a concrete MX record table and the DNS preset cl
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [How can I do a "Zero Downtime" DNS migration to Vercel?](https://vercel.com/kb/guide/zero-downtime-migration-for-dns?from=related) — Information about how to migrate your DNS records to Vercel without downtime.
+- [How to Export Your Domain's DNS Records from Vercel](https://vercel.com/kb/guide/export-domain-dns-records-via-api?from=related) — Learn how to utilize our API to export your domain's DNS records from Vercel.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
+- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Troubleshooting Domains](https://vercel.com/docs/domains/troubleshooting?from=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Working with Nameservers](https://vercel.com/docs/domains/working-with-nameservers?from=related) — Learn about nameservers and the benefits Vercel nameservers provide.
+- [Pre-Generate SSL Certificates](https://vercel.com/docs/domains/pre-generating-ssl-certs?from=related) — test
+
+Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md](/docs/domains/managing-dns-records.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** To make sure DNS records are applied, and to allow you to manage them, your
 > domain needs to use [Vercel's nameservers](/docs/domains/managing-nameservers)
@@ -91,7 +111,7 @@ If your provider is not listed, please refer to their documentation to find out 
 
 ## Migrating DNS records from an external registrar
 
-Once you have added a [domain to your Vercel project](https://vercel.com/docs/concepts/projects/custom-domains) and also verified the certificate is working as expected, you can choose three options of records to finally complete the migration: A, CNAME, or Nameservers. In case you decide to use an A or a CNAME record, then you can change those records in your DNS provider to make Vercel serve your deployment from the selected domain, as instructed on your dashboard.
+Once you have added a [domain to your Vercel project](https://vercel.com/docs/domains/working-with-domains/add-a-domain) and also verified the certificate is working as expected, you can choose three options of records to finally complete the migration: A, CNAME, or Nameservers. In case you decide to use an A or a CNAME record, then you can change those records in your DNS provider to make Vercel serve your deployment from the selected domain, as instructed on your dashboard.
 
 If you decide to change the Nameservers of your domain, you can follow the below instructions which will help you migrate your DNS configuration from any provider and avoid downtime.
 
@@ -129,7 +149,7 @@ $ dig A api.example.com +short @ns1.vercel-dns.com
 
 *Checking the DNS configuration of the A record under "api" served by Vercel.*
 
-Then, check the DNS records from the existing provider to make sure they match. If you were moving your DNS from [Cloudflare](https://vercel.com/docs/integrations/cloudflare), for example, the correct command would be:
+Then, check the DNS records from the existing provider to make sure they match. If you were moving your DNS from [Cloudflare](https://vercel.com/kb/guide/cloudflare-with-vercel), for example, the correct command would be:
 
 ```bash filename="terminal"
 $ dig A api.example.com +short @example.ns.cloudflare.com
@@ -145,7 +165,7 @@ Before proceeding, we recommend checking every record you moved. For more insigh
 
 In your registrar's dashboard (where you bought the domain), change the Nameservers to your new provider.
 Nameserver changes can take up to 48 hours to propagate. If you bought the domain from Vercel, you can
-[manage nameservers](https://vercel.com/docs/concepts/projects/domains/managing-nameservers) from the [domains page](https://vercel.com/dashboard/domains).
+[manage nameservers](https://vercel.com/docs/domains/managing-nameservers) from the [domains page](https://vercel.com/dashboard/domains).
 
 
 ---

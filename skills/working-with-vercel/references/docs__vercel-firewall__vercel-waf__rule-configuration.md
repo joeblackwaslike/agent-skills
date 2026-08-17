@@ -13,13 +13,28 @@ related:
 summary: List of configurable options with the Vercel WAF
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e7e1d4652de3bb428f8644adc56faacce6652a7589f3b910dcb21a73a6be1554"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "34aafd85a569d88111fcce47b1546f0384efb29c4d06da7d6382634100c58fbf"
 ---
 
 # Rule Configuration Reference
 
 For each custom rule that you create, you can configure one or more conditions with [**parameters**](#parameters) from the incoming traffic that you compare with specific values using [**operators**](#operators). For each new condition, you can choose how you combine it with the previous condition using the **AND** (Both conditions need to be met) or the **OR** operator (One of the conditions need to be met).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Custom Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules?from=related) — Learn how to add and manage custom rules to configure the Vercel Web Application Firewall \(WAF\).
+- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets?from=related) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \(WAF\)
+- [Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules?from=related)
+- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related)
+
+Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md](/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md)
+<!-- /docsgraph:related -->
 
 You also specify an [**action**](#actions) executed when all the conditions are met.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-ios-simulator.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "e6032bada9af262bf8512e255cbf03859ed2309a8ba3f41d7787f0f8a67455b6"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "0d5c48a0ba3ad4772457abc46c471493da913f1bb6cba9b5dc3da08f596e3afc"
 ---
 
 > ## Documentation Index
@@ -13,7 +13,7 @@ sha256: "e6032bada9af262bf8512e255cbf03859ed2309a8ba3f41d7787f0f8a67455b6"
 > Claude Code Desktop opens your app in the iOS Simulator pane when Claude builds, runs, or checks it, with a separate simulator for each session.
 
 <Note>
-  The iOS Simulator pane is in public beta in Claude Code Desktop on macOS. It's available on Pro, Max, and Team plans, and not available on the Enterprise plan.
+  The iOS Simulator pane is in public beta in Claude Code Desktop on macOS. It's available on Pro, Max, Team, and Enterprise plans, except in Enterprise organizations that have a HIPAA configuration or [Zero Data Retention (ZDR)](/docs/en/zero-data-retention) enabled.
 </Note>
 
 The iOS Simulator pane shows your app running in Apple's iOS Simulator next to your conversation in Claude Code Desktop. When Claude builds, installs, launches, or checks your app in a simulator, the pane opens automatically and streams the device screen live. Use it to watch Claude run and test your app, or to tap through the app yourself while Claude keeps working.
@@ -127,6 +127,7 @@ Claude may not have recognized that you wanted to run or test the app, or the si
 * State the goal explicitly, for example "run the app in the iOS Simulator and tap through the signup flow".
 * Confirm Xcode and the iOS simulators are installed and that your Xcode version meets the [requirements](#requirements).
 * If your organization manages Claude Code, the [simulator tools may be disabled by policy](#turn-off-simulator-access).
+* If you're in an Enterprise organization that has a HIPAA configuration or ZDR enabled, the simulator pane isn't available to you.
 * The simulator pane requires Claude Desktop v1.24012.0 or later. Open **Claude → Check for Updates**, then restart the app.
 
 ### The simulator pane says no simulators were found

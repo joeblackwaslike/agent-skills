@@ -17,13 +17,31 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "593638ad1adfdcb5f5e4e0a549c5c80e791d4c58da34d32646008bc049c4e716"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "11aab2127ed4aced07dde35313839c3df906fa0041f070ba01ef164b6b8a8736"
 ---
 
 # Triggers
 
 A **trigger** is an incoming webhook from a third-party service that Vercel Connect verifies and forwards to your projects. Where [tokens](/docs/connect/concepts/tokens) are the outbound half of Vercel Connect (your code calling the provider), triggers are the inbound half (the provider calling your code).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [Observability](https://vercel.com/docs/connect/observability?from=related) — Learn about observability on Vercel.
+- [Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Webhooks](https://vercel.com/docs/webhooks?from=related) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [Configure Alerts](https://vercel.com/docs/alerts/configure-alerts?from=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
+
+Full cross-link map for this page: [/docs/connect/concepts/triggers.graph.md](/docs/connect/concepts/triggers.graph.md)
+<!-- /docsgraph:related -->
 
 Trigger forwarding is Slack-only in beta.
 

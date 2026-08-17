@@ -12,13 +12,32 @@ related:
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b957f2d80674fbe323cfe14ee1cf8ecfe30dc7d7f107f72679678bc038a5d3c0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "41c6889aef95d1f6e1608609c7236a52d4122651bf543420296225312ed674ee"
 ---
 
 # Domain Connect
 
 [Domain Connect](https://www.domainconnect.org/) is an open protocol that lets third-party services automatically configure DNS records on behalf of a domain owner. Vercel supports Domain Connect as a DNS Provider, so your service can set up DNS records on Vercel-managed domains without asking users to copy and paste values manually.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [Troubleshooting Domains](https://vercel.com/docs/domains/troubleshooting?from=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
+- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+
+Full cross-link map for this page: [/docs/domains/domain-connect.graph.md](/docs/domains/domain-connect.graph.md)
+<!-- /docsgraph:related -->
 
 This guide covers how to integrate your service with Vercel's Domain Connect implementation using the synchronous flow.
 

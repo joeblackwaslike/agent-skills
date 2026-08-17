@@ -9,20 +9,37 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/functions/limitations
+  - /docs/functions/runtimes/bun
   - /docs/functions/functions-api-reference/vercel-functions-package
   - /docs/frameworks/full-stack/django
   - /docs/functions/usage-and-pricing
-  - /docs/manage-cdn-usage
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "12f61ac015439ced231cf1f62ebb671f14aa23054246c1ce52f283d3297d4f7f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4ea427fc35cf9c298973d043d1fe442e806ce3eb3f5464cb83b992c1c2b41d85"
 ---
 
 # WebSockets
 
 > **🔒 Permissions Required**: WebSockets
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Do Vercel Serverless Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related) — Information on Vercel's support for WebSocket connections with Vercel Functions.
+- [Build Figma-style multiplayer cursors with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-board-nextjs-fastapi?from=related) — Learn how to build Figma-style multiplayer cursors with Next.js and FastAPI, kept consistent across multiple Vercel Func
+- [Build a real-time chat app with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-chat-websockets?from=related) — Build and deploy a single-room messaging app in Next.js with real-time chat, typing indicators, and live online user cou
+- [Build Notion-style real-time presence with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-presence-hono-react?from=related) — Build the avatar faces that appear when a teammate opens a page and vanish when they leave. Powered by a Hono WebSocket
+- [Using Express.js with Vercel](https://vercel.com/kb/guide/using-express-with-vercel?from=related) — Learn how to use Express.js in a Serverless environment.
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Nitro](https://vercel.com/docs/frameworks/backend/nitro?from=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+
+Full cross-link map for this page: [/docs/functions/websockets.graph.md](/docs/functions/websockets.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel Functions can serve WebSocket connections, keeping a bidirectional connection open between a client and your server-side code. Use WebSockets for realtime features such as interactive AI streaming, chat, and collaborative apps.
 
@@ -126,6 +143,37 @@ Store durable state, presence, counters, rooms, and pub/sub coordination in an e
 ## Use with frameworks
 
 Frameworks with native WebSocket support can serve WebSocket connections on Vercel Functions without additional Vercel-specific configuration. Choose the example that matches your framework.
+
+### Bun
+
+Vercel Functions using the [Bun runtime](/docs/functions/runtimes/bun) support the native `Bun.serve()` WebSocket API. Call `server.upgrade()` from the `fetch` handler, then define the connection handlers in the `websocket` option:
+
+```ts filename="server.ts"
+Bun.serve({
+  fetch(request, server) {
+    if (server.upgrade(request)) {
+      return;
+    }
+
+    return new Response('Expected a WebSocket connection', { status: 400 });
+  },
+  websocket: {
+    message(socket, message) {
+      socket.send(message);
+    },
+  },
+});
+```
+
+Alternatively, deploy the server from [`api/server.ts`](/docs/functions/runtimes/bun#deploy-a-bun-server-from-api). Vercel serves it at `/api/server`, and route overrides in `vercel.json` must use the full path.
+
+`server.publish()` and socket subscriptions share messages within one Vercel Function instance. Use an external data store to coordinate messages across instances.
+
+The Bun WebSocket API on Vercel currently has these differences from a standalone Bun server:
+
+- Headers passed to `server.upgrade()` are not applied to the upgrade response
+- The `drain` handler is not invoked
+- `socket.send()` does not return Bun's `-1` backpressure status
 
 ### Node.js server frameworks
 

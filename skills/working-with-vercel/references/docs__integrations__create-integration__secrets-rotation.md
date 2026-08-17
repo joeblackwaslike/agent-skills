@@ -14,13 +14,33 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "02704fd7c091ccb01e8ab4e7af78e6a5ffd4d383b4aecfc4343462a6407fd17f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "76fda00547395542efcf5c957175dfa10973d0c6c555a60c2b6883d659c7a3a8"
 ---
 
 # Implementing secrets rotation
 
 When your integration provisions resources with credentials (like API keys, database passwords, or access tokens), you must implement secrets rotation to allow Vercel users to rotate these credentials securely without reprovisioning the resource.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to rotate the secrets of your Supabase integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related) — Rotate Supabase API keys, JWT secrets, and database passwords.
+- [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related) — Rotate Hypertune API keys with zero-downtime.
+- [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration?from=related) — Rotate Clerk API keys
+- [How to rotate the secrets of your Upstash integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-upstash-integration?from=related) — Rotate Upstash API keys, JWT secrets, and database passwords.
+- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related) — This will guide you how to update the password for a Redis databse.
+- [Rotating Environment Variables](https://vercel.com/docs/environment-variables/rotating-secrets?from=related) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
+- [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related)
+- [Native Integration Flows](https://vercel.com/docs/integrations/create-integration/marketplace-flows?from=related) — Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integra
+- [Building Integrations with Vercel REST API](https://vercel.com/docs/integrations/create-integration/vercel-api-integrations?from=related) — Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
+- [Using Integrations API](https://vercel.com/docs/integrations/create-integration/marketplace-api?from=related) — Learn how to authenticate and use the Integrations REST API to build your integration server.
+
+Full cross-link map for this page: [/docs/integrations/create-integration/secrets-rotation.graph.md](/docs/integrations/create-integration/secrets-rotation.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This functionality must be turned on by Vercel for your integration. Contact your partner support team in Slack to have it enabled on your test integration(s) to begin development and then on your production integration once you're ready to go live.
 

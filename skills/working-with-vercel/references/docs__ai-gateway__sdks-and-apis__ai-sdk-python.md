@@ -16,14 +16,34 @@ related:
 summary: Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "089e025a3120108a77b6322c28926c7deee6562c46e1ac46a8af9f478d5c0f8e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e5eaabc2714b9c395dcafbcc34419bda04b62266a5d83b8aa032d376c409f4c9"
 ---
 
 # AI SDK for Python
 
 The [AI SDK for Python](https://ai-python.dev) is a toolkit for building LLM-powered applications and agents in Python.
 It uses AI Gateway to route requests by default.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build AI Agents with Vercel and the AI SDK](https://vercel.com/kb/guide/how-to-build-ai-agents-with-vercel-and-the-ai-sdk?from=related) — Learn how to build, deploy, and scale AI agents on Vercel using the AI SDK. This guide covers calling LLMs, defining too
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related) — Set up the Workflow Python SDK in your Python application.
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related) — Add an \`executeCode\` tool to your AI SDK agent with the \`ai-sdk-tool-code-execution\` package to run Python 3.13 insi
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [Pydantic AI](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
+- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [Integrations for Models](https://vercel.com/docs/agent-resources/integrations-for-models?from=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk-python.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk-python.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** The AI SDK for Python is in public beta.
 

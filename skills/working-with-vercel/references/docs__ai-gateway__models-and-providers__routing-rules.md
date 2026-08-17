@@ -16,13 +16,28 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "a0f10d08b1dead89ca83472f112b11615a8425ebbb0b58f4c26c2d799a003a25"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ba32ffbb676c50b1664001cd45d78d8f2c2e63b178d7498e2a30bc8ea6f97bb9"
 ---
 
 # Routing Rules
 
 Routing rules let you control how AI Gateway handles your team's requests at the model level. You define team-wide rules that either rewrite a request from one model to another, or deny a model so requests for it are blocked. Rules apply to every request made with your team's AI Gateway credentials, so you can change routing behavior without editing application code.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules?from=related)
+- [Project Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [Create rule](https://vercel.com/docs/rest-api/ai-gateway/create-rule?from=related)
+- [Update rule](https://vercel.com/docs/rest-api/ai-gateway/update-rule?from=related)
+- [Delete rule](https://vercel.com/docs/rest-api/ai-gateway/delete-rule?from=related)
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/routing-rules.graph.md](/docs/ai-gateway/models-and-providers/routing-rules.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** AI Gateway routing rules are in beta and may change before general
 > availability. Avoid relying on them in production.

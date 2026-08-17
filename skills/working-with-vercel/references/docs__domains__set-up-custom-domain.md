@@ -10,19 +10,37 @@ prerequisites:
 related:
   - /docs/domains/working-with-domains/add-a-domain
   - /docs/cli/project-linking
-  - /docs/domains/deploying-and-redirecting
+  - /docs/domains/working-with-domains/deploying-and-redirecting
   - /docs/cli/domains
   - /docs/cli/dns
 summary: Add and configure a custom domain for your Vercel project using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "40367045e4a1ea5f9786d7a123db023d4102aa0e3021c8f32a1a71d90f493c33"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6e2c38fbff079c3fd087396c6f6ed19cc4e50efb266159fde11e7b5b9db64e01"
 ---
 
 # Setting up a custom domain
 
 Use this guide to add a custom domain to your Vercel project from the CLI, configure DNS records, and verify that everything is working. To do the same from the dashboard instead (**Settings** → **Domains** on your project), see [Adding & Configuring a Custom Domain](/docs/domains/working-with-domains/add-a-domain).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [Working with Domains](https://vercel.com/docs/domains/working-with-domains?from=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Configuring Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Adding a Domain to an Environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
+
+Full cross-link map for this page: [/docs/domains/set-up-custom-domain.graph.md](/docs/domains/set-up-custom-domain.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This guide requires a [linked Vercel project](/docs/cli/project-linking). Run
 > `vercel link` in your project directory if you haven't already.
@@ -88,7 +106,7 @@ For a `www` subdomain, add that separately:
 vercel domains add www.example.com
 ```
 
-If you add both `example.com` and `www.example.com`, configure a redirect from one to the other in your [Vercel project settings](/docs/domains/deploying-and-redirecting#redirecting-domains) to avoid duplicate content.
+If you add both `example.com` and `www.example.com`, configure a redirect from one to the other in your [Vercel project settings](/docs/domains/working-with-domains/deploying-and-redirecting#redirecting-domains) to avoid duplicate content.
 
 ## 3. Check what DNS records are needed
 

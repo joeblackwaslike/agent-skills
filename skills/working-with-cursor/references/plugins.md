@@ -1,27 +1,43 @@
 ---
 source: "https://cursor.com/docs/plugins.md"
-fetched_at: "2026-07-13T06:55:43.454Z"
-sha256: "a04ce36f0724c0b0579e993ed8cd9344c815decfd5146c0eb60a355eb151afb0"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "79070b023ca686f11df42a8ab1c0859b2e1148a18d94f3628169b79602e4efd0"
 ---
 
 # Plugins
 
-Plugins package rules, skills, agents, commands, MCP servers, and hooks into distributable bundles. Install and manage them from the [Customize](https://cursor.com/docs/customize-cursor.md) page or browse official plugins in the [Cursor Marketplace](/marketplace). For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory). You can also [build your own](https://cursor.com/docs/plugins.md#creating-plugins) to share with other developers.
+Plugins package rules, skills, agents, commands, MCP servers, and hooks into distributable bundles.
+
+Cursor supports the [Agent Plugins](https://agent-plugins.org) open standard alongside its own plugin format. Install and manage them from the [Customize](https://cursor.com/docs/customize-cursor.md) page or browse official plugins in the [Cursor Marketplace](/marketplace). For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory). You can also [build your own](https://cursor.com/docs/plugins.md#creating-plugins) to share with other developers.
 
 ## What plugins contain
 
 A plugin can bundle any combination of these components:
 
-| Component       | Description                                                |
-| :-------------- | :--------------------------------------------------------- |
-| **Rules**       | Persistent AI guidance and coding standards (`.mdc` files) |
-| **Skills**      | Specialized agent capabilities for complex tasks           |
-| **Agents**      | Custom agent configurations and prompts                    |
-| **Commands**    | Agent-executable command files                             |
-| **MCP Servers** | Model Context Protocol integrations                        |
-| **Hooks**       | Automation scripts triggered by events                     |
+| Component       | Available in   | Description                                                |
+| :-------------- | :------------- | :--------------------------------------------------------- |
+| **Rules**       | Cursor Plugins | Persistent AI guidance and coding standards (`.mdc` files) |
+| **Skills**      | Both formats   | Specialized agent capabilities for complex tasks           |
+| **Agents**      | Cursor Plugins | Custom agent configurations and prompts                    |
+| **Commands**    | Cursor Plugins | Agent-executable command files                             |
+| **MCP Servers** | Both formats   | Model Context Protocol integrations                        |
+| **Hooks**       | Cursor Plugins | Automation scripts triggered by events                     |
 
-## Plugin canvases
+## The Agent Plugins standard
+
+Plugins bundle reusable components an agent can use. [Agent Plugins](https://agent-plugins.org)
+is the open standard for packaging portable skills and MCP servers, much like
+[Agent Skills](https://cursor.com/docs/skills.md) defines a standard for individual skills. Cursor
+supports Agent Plugins alongside Cursor Plugins.
+
+- **Agent Plugins**: spec-conformant plugins with a `plugin.json` manifest at the plugin root, packaging skills and MCP servers
+- **Cursor Plugins**: plugins with a `.cursor-plugin/plugin.json` manifest, which add rules, agents, commands, hooks, and [variables](https://cursor.com/docs/reference/plugins.md#variables)
+
+A plugin that follows the Agent Plugins specification loads in Cursor without changes. Cursor Plugins continue to develop in parallel with the standard, so Cursor-specific components and marketplace features keep working as they do today.
+
+Learn more at [agent-plugins.org](https://agent-plugins.org) or read the [specification on GitHub](https://github.com/agentplugins/agent-plugins-spec).
+
+## Cursor Plugin canvases
 
 Plugins now ship with prebuilt **canvases**: shared setup templates your team can open and reuse.
 
@@ -32,11 +48,15 @@ Open a canvas from an installed plugin in Customize to get a guided starting poi
 
 ## The marketplace
 
-The [Cursor Marketplace](/marketplace) is where you discover and install official plugins. Plugins are distributed as Git repositories and submitted through the Cursor team. Every plugin is [manually reviewed](https://cursor.com/help/security-and-privacy/marketplace-security.md) before it's listed. Browse official plugins at [cursor.com/marketplace](https://cursor.com/marketplace) or search by keyword in **Customize**. For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory).
+The [Cursor Marketplace](/marketplace) is where you discover and install official Cursor Plugins. Plugins are distributed as Git repositories and submitted through the Cursor team.
+
+Every plugin is [manually reviewed](https://cursor.com/help/security-and-privacy/marketplace-security.md) before it's listed. Browse official plugins at [cursor.com/marketplace](https://cursor.com/marketplace) or search by keyword in **Customize**. For community plugins and MCP servers, browse [cursor.directory](https://cursor.directory).
 
 ## Team marketplaces
 
 Team marketplaces are available on Teams and Enterprise plans.
+They can distribute Agent Plugins and Cursor Plugins through the same
+marketplace.
 
 - Teams plan: up to 1 team marketplace
 - Enterprise plan: unlimited team marketplaces
@@ -108,7 +128,9 @@ When importing from GitHub, plugins are indexed when you first import the reposi
 - **Automatically**: Turn on **Enable Auto Refresh** to update plugins automatically whenever changes are pushed to the branch the marketplace tracks. This requires the [Cursor GitHub App](https://cursor.com/docs/integrations/github.md) installed on the repository. Cursor re-indexes a marketplace at most once every 10 minutes, batching rapid pushes to the latest commit.
 - **Manually**: Click "Refresh" to manually update.
 
-Auto Refresh updates plugins that are already part of the marketplace. Adding a brand-new plugin from the repository isn't automatic — re-import the repository URL to pick up newly added plugins.
+For marketplaces created with "Import from Repo", Auto Refresh re-reads the full manifest on each push, so new plugins added to the repository are picked up automatically.
+
+For marketplaces where plugins were added individually, Auto Refresh only updates existing plugins. Re-import the repository URL to pick up newly added plugins.
 
 ## Where developers find team marketplaces
 
@@ -123,7 +145,19 @@ Developers can find team marketplaces in Customize.
 
 ## Installing plugins
 
-Install plugins from the marketplace. Plugins can be scoped to a project or installed at the user level.
+Install Agent Plugins and Cursor Plugins from a marketplace. Cursor detects the
+format from the plugin manifest, so the installation flow is the same for both:
+
+1. Open **Customize** in the sidebar.
+2. Find the plugin you want to use.
+3. Select **Install** and choose a project or user scope.
+
+An Agent Plugin has a `plugin.json` manifest at its root. A Cursor Plugin has a
+`.cursor-plugin/plugin.json` manifest. Team marketplaces can distribute either
+format using the same access and installation modes described above.
+
+You can also load either format directly from `~/.cursor/plugins/local` while
+developing a plugin. See [Test plugins locally](https://cursor.com/docs/plugins.md#test-plugins-locally).
 
 ### MCP Apps deeplinks
 
@@ -137,7 +171,9 @@ See [MCP install links](https://cursor.com/docs/mcp/install-links.md) for detail
 
 ## Managing installed plugins
 
-Open **Customize** in the sidebar to manage plugins, MCP servers, rules, and skills from one page. Filter by user, workspace, or team scope to see what is installed.
+Open **Customize** in the sidebar to manage installed Agent Plugins, Cursor
+Plugins, MCP servers, rules, and skills from one page. Filter by user, workspace,
+or team scope to see what is installed.
 
 ### MCP servers
 
@@ -163,7 +199,35 @@ Register plugin paths from a `workspaceOpen` hook script
 
 ## Creating plugins
 
-A plugin is a directory with a `.cursor-plugin/plugin.json` manifest and your components (rules, skills, agents, commands, hooks, or MCP servers). Start from the [plugin template repository](https://github.com/cursor/plugin-template) or create one from scratch:
+A plugin is a directory with a manifest and its components. Choose Agent Plugins
+when you want to package portable skills and MCP servers. Choose Cursor Plugins
+when you also need Cursor-specific components such as rules, agents, commands,
+hooks, or variables.
+
+### Agent Plugin
+
+```text
+my-plugin/
+├── plugin.json
+├── skills/
+│   └── code-reviewer/
+│       └── SKILL.md
+└── mcp.json
+```
+
+Agent Plugins require a root `plugin.json` with the standard's schema identifier:
+
+```json
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "my-plugin",
+  "description": "Portable code review tools",
+  "version": "1.0.0",
+  "author": { "name": "Your Name" }
+}
+```
+
+### Cursor Plugin
 
 ```text
 my-plugin/
@@ -177,7 +241,8 @@ my-plugin/
 └── mcp.json
 ```
 
-The manifest only requires a `name` field. Components are discovered automatically from their default directories, or you can specify custom paths in the manifest.
+Cursor Plugin manifests only require a `name`. Components are discovered from
+their default directories, or you can specify custom paths in the manifest.
 
 ```json
 {
@@ -188,13 +253,18 @@ The manifest only requires a `name` field. Components are discovered automatical
 }
 ```
 
+Start from the [Cursor Plugin template repository](https://github.com/cursor/plugin-template),
+or read the [Agent Plugins authoring guide](https://agent-plugins.org/plugin-authors)
+to create an Agent Plugin.
+
 ### Test plugins locally
 
-Before you publish, load your plugin from `~/.cursor/plugins/local`:
+Before you publish, load either plugin format from `~/.cursor/plugins/local`:
 
 1. Create a folder for your plugin:
    `~/.cursor/plugins/local/my-plugin`
-2. Copy your plugin files into that folder. Make sure `.cursor-plugin/plugin.json` is at the plugin root.
+2. Copy your plugin files into that folder. Include either a root `plugin.json`
+   for an Agent Plugin or `.cursor-plugin/plugin.json` for a Cursor Plugin.
 3. Restart Cursor, or run **Developer: Reload Window**.
 4. Verify your plugin components load in Cursor, such as rules, skills, or MCP servers.
 
@@ -204,7 +274,9 @@ For faster iteration, symlink your plugin repository:
 ln -s /path/to/my-plugin ~/.cursor/plugins/local/my-plugin
 ```
 
-When your plugin is ready, submit it for review at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish). For multi-plugin repositories, add a marketplace manifest at `.cursor-plugin/marketplace.json`.
+When your plugin is ready, submit it for review at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
+Cursor Plugins can use `.cursor-plugin/marketplace.json` for multi-plugin
+repositories.
 
 See the [Plugins reference](https://cursor.com/docs/reference/plugins.md) for the full manifest schema, component formats, and submission checklist.
 
@@ -220,7 +292,15 @@ Yes. Every plugin is manually reviewed before it's listed. All plugins must be o
 
 ### How do I create a plugin?
 
-Create a directory with a `.cursor-plugin/plugin.json` manifest file, add your rules, skills, agents, commands, or other components, and submit it to the Cursor team. See the [Plugins reference](https://cursor.com/docs/reference/plugins.md) for the full guide.
+For a portable Agent Plugin, add a root `plugin.json` manifest and package
+skills or MCP servers. For a Cursor Plugin, add a
+`.cursor-plugin/plugin.json` manifest and any Cursor components you need.
+See the [Plugins reference](https://cursor.com/docs/reference/plugins.md) for examples of both
+formats.
+
+### How do Cursor Plugins relate to the Agent Plugins standard?
+
+[Agent Plugins](https://agent-plugins.org) is an open, vendor-neutral specification for packaging skills and MCP servers into portable plugins. Cursor supports the standard, so spec-conformant plugins load in Cursor without changes. Cursor Plugins are developed in parallel and add Cursor-specific components like rules, agents, commands, hooks, and variables.
 
 
 ---

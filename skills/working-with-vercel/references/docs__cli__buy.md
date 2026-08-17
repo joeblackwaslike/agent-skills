@@ -13,13 +13,28 @@ related:
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "0356c0f5a8d97f9c9b733b956d91792c15a1556bdfcd9e972fea172edbb14a1d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "80cca48c3b7d3ff114fd43f7e3fb80f01c8017c6342fab3782931993c87198b1"
 ---
 
 # vercel buy
 
 The `vercel buy` command allows you to purchase Vercel products for your team directly from the CLI. You can buy credits, addons, subscriptions, and domains.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits?from=related)
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel usage](https://vercel.com/docs/cli/usage?from=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+
+Full cross-link map for this page: [/docs/cli/buy.graph.md](/docs/cli/buy.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** All subcommands except `domain` require a team scope. Use `--scope` to
 > specify a team if you haven't already.

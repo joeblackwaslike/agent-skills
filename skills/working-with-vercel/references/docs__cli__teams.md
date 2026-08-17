@@ -8,18 +8,33 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/accounts/create-a-team
+  - /docs/accounts
   - /docs/rbac/managing-team-members
 summary: Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "2caadec4ece4f0647b5a1253f9d26ca33d18c48f59b7159f92b66bd33e3428eb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8d8e1045c30933b3e0e747c770b315f7d64334330d8b95a69e20f4afd71899b9"
 ---
 
 # vercel teams
 
-The `vercel teams` command manages [Teams](/docs/accounts/create-a-team): list teams you belong to, create a new team, switch between teams, invite [Team Members](/docs/rbac/managing-team-members), inspect SAML/SSO configuration, list members, and check team join-request status.
+The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list teams you belong to, create a new team, switch between teams, invite [Team Members](/docs/rbac/managing-team-members), inspect SAML/SSO configuration, list members, and check team join-request status.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related)
+- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related)
+- [vercel switch](https://vercel.com/docs/cli/switch?from=related) — Learn how to switch between different team scopes using the vercel switch CLI command.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [Join a team](https://vercel.com/docs/rest-api/teams/join-a-team?from=related)
+
+Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
+<!-- /docsgraph:related -->
 
 `vercel team` is an alias for the same command, and `vercel switch` is a top-level alias for `vercel teams switch`.
 

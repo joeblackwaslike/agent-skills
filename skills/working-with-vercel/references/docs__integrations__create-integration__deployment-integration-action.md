@@ -11,19 +11,35 @@ prerequisites:
 related:
   - /docs/integrations/create-integration/native-integration
   - /docs/checks
-  - /docs/integrations/marketplace-product
+  - /docs/integrations/create-integration/marketplace-product
   - /docs/rest-api
-  - /docs/rest-api/reference/endpoints/deployments/update-deployment-integration-action
+  - /docs/rest-api/deployments/update-deployment-integration-action
 summary: These actions allow integration providers to set up automated tasks with Vercel deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bcf398a9b2ad72b29596fe7ecbbcfa74416eb08e67af029aa832d15f901ede97"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "43ad511d150bafda107307b0931759928bc35a010757309009467e38fa40dbbe"
 ---
 
 # Deployment integration actions
 
 With deployment integration actions, integration providers can enable [integration resource](/docs/integrations/create-integration/native-integration#resources) tasks to be performed such as branching a database, setting environment variables, and running readiness checks. It then allows integration users to configure and trigger these actions automatically during a deployment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Actions](https://vercel.com/docs/platforms/platform-elements/actions?from=related) — Server actions you can install to run common platform tasks against the Vercel API.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api?from=related) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+
+Full cross-link map for this page: [/docs/integrations/create-integration/deployment-integration-action.graph.md](/docs/integrations/create-integration/deployment-integration-action.graph.md)
+<!-- /docsgraph:related -->
 
 For example, you can use deployment integration actions with the checks API to [create integrations](/docs/checks#build-your-checks-integration) that provide testing functionality to deployments.
 
@@ -62,7 +78,7 @@ As an integration provider, to allow your integration users to add deployment ac
   3. Edit an existing product or create a new one.
   4. Go to **Deployment Actions** in the left-side menu.
   5. Create an action by assigning it a slug and a name.
-  Next, handle webhook events and perform API actions in your [integration server](/docs/integrations/marketplace-product#deploy-the-integration-server). Review the [example marketplace integration server](https://github.com/vercel/example-marketplace-integration) code repository.
+  Next, handle webhook events and perform API actions in your [integration server](/docs/integrations/create-integration/marketplace-product#deploy-the-integration-server). Review the [example marketplace integration server](https://github.com/vercel/example-marketplace-integration) code repository.
 
 - ### Handle the deployment start
   Handle the `deployment.integration.action.start` webhook. This webhook triggers when a deployment starts an action.
@@ -79,7 +95,7 @@ As an integration provider, to allow your integration users to add deployment ac
   This payload provides IDs for the installation, action, resource, and deployment.
 
 - ### Use the Get Deployment API
-  You can retrieve additional deployment details using the [Get a deployment by ID or URL](https://vercel.com/docs/rest-api/endpoints#tag/deployments/get-a-deployment-by-id-or-url) endpoint:
+  You can retrieve additional deployment details using the [Get a deployment by ID or URL](https://vercel.com/docs/rest-api#tag/deployments/get-a-deployment-by-id-or-url) endpoint:
   ```bash
   curl https://api.vercel.com/v13/deployments/dpl_568301234 \
     -H "Authorization: {access_token}"
@@ -89,7 +105,7 @@ As an integration provider, to allow your integration users to add deployment ac
   Review the [full code](https://github.com/vercel/example-marketplace-integration/blob/6d2372b8afdab36a0c7f42e1c5a4f0deb2c496c1/app/dashboard/webhook-events/actions.tsx) for handling the deployment start in the example marketplace integration server.
 
 - ### Complete a deployment action
-  Once an action is processed, update its status using the [Update Deployment Integration Action](/docs/rest-api/reference/endpoints/deployments/update-deployment-integration-action) REST API endpoint.
+  Once an action is processed, update its status using the [Update Deployment Integration Action](/docs/rest-api/deployments/update-deployment-integration-action) REST API endpoint.
 
   Example request to this endpoint:
   ```bash

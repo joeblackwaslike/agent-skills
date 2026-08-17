@@ -14,13 +14,31 @@ related:
 summary: Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "429c2b28d9e93dbf77db76c045d3f53b392139bc6fda80e8464666741d63c9e5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3fd00d6c08e4e6fb920ec57af907840ddc03c32d3a8a4d253489a3b26bb49886"
 ---
 
 # OpenAI Reasoning
 
 OpenAI reasoning models can think through problems before responding. You can control the depth of reasoning and receive summaries of the model's thought process. Each model supports different effort levels and defaults.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Cerebras](https://ai-sdk.dev/providers/ai-sdk-providers/cerebras?from=related)
+- [Amazon Bedrock](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/openai.graph.md](/docs/ai-gateway/models-and-providers/reasoning/openai.graph.md)
+<!-- /docsgraph:related -->
 
 ## Supported models
 

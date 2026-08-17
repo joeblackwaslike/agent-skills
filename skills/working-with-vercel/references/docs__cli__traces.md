@@ -12,13 +12,28 @@ related:
 summary: Inspect a request trace in the terminal or open it in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "4610cb42a33e18084600e0d7d787a693f6f8e3e894058568db24b73adb9cd3d3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fb8cd9117a4f7103bd15d6fb4d8e1abe9e9a747a9f7b9eff5cd78962cea5882f"
 ---
 
 # vercel traces
 
 The `vercel traces` command helps you inspect request traces for a linked project or a specific project.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Get a project trace by request ID](https://vercel.com/docs/rest-api/projects/get-a-project-trace-by-request-id?from=related)
+- [Session Tracing](https://vercel.com/docs/tracing/session-tracing?from=related) — Learn how to trace your sessions to understand performance and infrastructure details.
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [Tracing](https://vercel.com/docs/tracing?from=related) — Learn how to trace your application to understand performance and infrastructure details.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+
+Full cross-link map for this page: [/docs/cli/traces.graph.md](/docs/cli/traces.graph.md)
+<!-- /docsgraph:related -->
 
 Use `vercel traces get <request-id>` to inspect a request trace.
 

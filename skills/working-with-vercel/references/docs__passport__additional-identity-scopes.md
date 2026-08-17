@@ -13,13 +13,30 @@ related:
 summary: Request group membership and other provider-specific identity claims when using Passport.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "a2356e1b9f6e0322bc938ca1fb56cc81417b4f95b817fd0a5b59c7a450546bb3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a4ebc3975807a7345dd11d599b21937db09ee8f7e3b8f181ba99ea69c22d4589"
 ---
 
 # Configure additional identity scopes
 
 Passport requests identity information through the Connect application assigned to your project. An OAuth scope asks your identity provider for a category of information. A claim is the value the provider returns, such as a visitor's email address or group membership.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [Token Claims](https://vercel.com/docs/passport/token-claims?from=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
+- [Set Up Passport](https://vercel.com/docs/passport/set-up-identity-provider?from=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [Forward Identity](https://vercel.com/docs/passport/forward-identity?from=related) — Forward a Passport visitor identity to another backend that you operate.
+- [Scopes & Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+
+Full cross-link map for this page: [/docs/passport/additional-identity-scopes.graph.md](/docs/passport/additional-identity-scopes.graph.md)
+<!-- /docsgraph:related -->
 
 Passport uses the standard OpenID Connect scopes, including `openid`, `profile`, and `email`. You can configure Connect to include additional claims, such as group membership, in the Passport token when your identity provider supports them.
 

@@ -14,13 +14,31 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7298cd2dd713971b3ef7d5aff853e5d839d7e5528c4bdd354a2bb837e13f324b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dbe80e3b60a291651f01cce1ef4507f07832ec48986f6115d80a446955873637"
 ---
 
 # vercel flags
 
 The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for a project from the command line. Use `vercel flags` to create and update feature flags, view version history and evaluation metrics, manage rules and rollouts, or configure reusable segments and SDK keys.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Roll Out a Feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
+- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Run an A/B Test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+
+Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 

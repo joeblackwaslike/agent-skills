@@ -11,18 +11,33 @@ prerequisites:
 related:
   - /docs/notifications
   - /docs/integrations/install-an-integration/secure-your-resource
-  - /docs/rest-api/vercel-api-integrations
+  - /docs/integrations/create-integration/vercel-api-integrations
   - /docs/integrations/create-integration/billing
 summary: Learn how to manage project access and added products for your integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2cee06655e00639f908b96974785db921eac0a19917c7a324af136823a4fef6f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "34bb7e5abc8921a8822a68330f33dfcee4e04a6d5840b667427e75a7c9792a47"
 ---
 
 # Permissions and Access
 
 ## View an integration's permissions
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Scopes & Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Create an Integration](https://vercel.com/docs/integrations/create-integration?from=related) — Learn how to create and manage your own integration for internal or public use with Vercel.
+
+Full cross-link map for this page: [/docs/integrations/install-an-integration/manage-integrations-reference.graph.md](/docs/integrations/install-an-integration/manage-integrations-reference.graph.md)
+<!-- /docsgraph:related -->
 
 To view an integration's permissions:
 
@@ -82,7 +97,7 @@ When an integration is `disabled`:
 - If the integration has set up log drains, then logs will cease to flow
 - The integration will no longer receive the majority of webhooks, other than those essential to its operation (`project.created`, `project.removed` and `integration-configuration.removed`)
 
-If you are an integrator, see the [disabled integration configurations](/docs/rest-api/vercel-api-integrations#disabled-integration-configurations) documentation to make sure your integration can handle `disabled` state.
+If you are an integrator, see the [disabled integration configurations](/docs/integrations/create-integration/vercel-api-integrations#disabled-integration-configurations) documentation to make sure your integration can handle `disabled` state.
 
 ## Invoice access
 

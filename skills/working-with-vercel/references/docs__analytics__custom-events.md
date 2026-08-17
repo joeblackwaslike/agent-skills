@@ -16,13 +16,30 @@ related:
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "10df704a5be9583026aa5c2496b3e094cedc491c35e581550a68d7a780a51179"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "670578d56de541a5c72370dcda93cbc4e57e5fa70fc18ffb8dcc29ba90d02b1d"
 ---
 
 # Tracking custom events
 
 > **🔒 Permissions Required**: Custom Events
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Redacting Sensitive Data](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related) — Learn how to redact sensitive data from your Web Analytics events.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related)
+- [Privacy](https://vercel.com/docs/analytics/privacy-policy?from=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+
+Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel Web Analytics allows you to track custom events in your application using the `track()` function.
 This is useful for tracking user interactions, such as button clicks, form submissions, or purchases.

@@ -14,13 +14,28 @@ related:
 summary: Archive unused feature flags and restore them when needed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d4482d033dd6e12636f27d2a56098194dd60ff88e38ca336b075c8c7bfda10f4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "96b0edbb0b0350057a26638ad96ffe6855a11999056561275cda78c0f28bb189"
 ---
 
 # Archive
 
 The Archive is where you find feature flags that are no longer active. Archiving removes a flag from evaluation while preserving its configuration for later.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Clean Up After Rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
+- [Delete a flag](https://vercel.com/docs/rest-api/feature-flags/delete-a-flag?from=related)
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Drafts](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Run an A/B Test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/archive.graph.md](/docs/flags/vercel-flags/dashboard/archive.graph.md)
+<!-- /docsgraph:related -->
 
 Archive a flag after it is no longer used in code. For example when a feature has fully rolled out, an experiment has concluded, or you want to clean up your flags list without losing the configuration. If a feature might return, archiving lets you restore its configuration and history intact rather than rebuilding from scratch.
 

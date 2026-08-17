@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ae375c665c7ab143eed8c780cb3f8b0575a99ddd155dcbce496fd181a00255f5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4c2bb89f10eb7a424541a5b426ff810d0ac6d2d0a265ce91487c8252c43585c9"
 ---
 
 # Pydantic AI
@@ -23,6 +23,22 @@ sha256: "ae375c665c7ab143eed8c780cb3f8b0575a99ddd155dcbce496fd181a00255f5"
 designed to make it easy to build production grade applications with AI.
 This guide demonstrates how to integrate [Vercel AI Gateway](/docs/ai-gateway)
 with Pydantic AI to access various AI models and providers.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [Integrations for Models](https://vercel.com/docs/agent-resources/integrations-for-models?from=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+
+Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md)
+<!-- /docsgraph:related -->
 
 ## Getting started
 

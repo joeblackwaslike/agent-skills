@@ -9,17 +9,33 @@ prerequisites:
   - /docs/domains/working-with-domains
   - /docs/domains
 related:
-  - /docs/rest-api/reference/welcome
+  - /docs/rest-api
 summary: Learn how to remove a domain from a Project and from your account completely with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "62a8d644d73adff1ecb0cbef452c6142a7bda0607cd3967b13ad8727061021fe"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "026694c239347e06e40bad637fea78e211a1fe87f06d27beedf706bf7a9c70ce"
 ---
 
 # Removing a Domain from a Project
 
 When you add a domain to any project, it will be connected to your account until you choose to delete it. This guide demonstrates how to remove a domain from a Project and from your account completely.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I remove a domain from my Vercel account?](https://vercel.com/kb/guide/how-do-i-remove-a-domain-from-my-vercel-account?from=related) — Learn how to completely remove a domain from your Vercel account?
+- [Remove a domain from a project](https://vercel.com/docs/rest-api/projects/remove-a-domain-from-a-project?from=related)
+- [Remove a domain by name](https://vercel.com/docs/rest-api/domains/remove-a-domain-by-name?from=related)
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related)
+- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project?from=related)
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related) — Learn how to deploy your domains and set up domain redirects with this guide.
+
+Full cross-link map for this page: [/docs/domains/working-with-domains/remove-a-domain.graph.md](/docs/domains/working-with-domains/remove-a-domain.graph.md)
+<!-- /docsgraph:related -->
 
 - ### Navigate to the Domains tab
   To remove a domain that is assigned to a project, open [**Domains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fdomains\&title=Go+to+Domains+Settings) in the sidebar from the **Project Overview** and click the **More Options** button for the domain you want to remove.
@@ -36,7 +52,7 @@ When you add a domain to any project, it will be connected to your account until
 
 ## Using cURL
 
-To remove a domain from a project using cURL, you can use the following command. To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To remove a domain from a project using cURL, you can use the following command. To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```bash filename="cURL"
 curl --request DELETE \

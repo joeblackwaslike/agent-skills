@@ -16,13 +16,35 @@ related:
 summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "fd0a81c8f12896a28221fafa622d88a197e5f178bbe30826c4ac37c98307de8a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "545e96313fbf40b5efcc0be5607472c0f82c3d4b3f9614c242d2de2466381077"
 ---
 
 # Image Optimization with Vercel
 
 > **🔒 Permissions Required**: Image Optimization
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related) — Backwards compatible Image Optimization with the Legacy Image component.
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [Images](https://nextjs.org/docs/pages/getting-started/images?from=related) — Optimize your images with the built-in `next/image` component.
+- [OG Image Generation](https://vercel.com/docs/og-image-generation?from=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
+- [Nuxt](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related) — Learn how to use Vercel's features with Nuxt.
+- [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+
+Full cross-link map for this page: [/docs/image-optimization.graph.md](/docs/image-optimization.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel supports dynamically transforming unoptimized images to reduce the file size while maintaining high quality. These optimized images are cached on the [Vercel CDN](/docs/cdn), meaning they're available close to users whenever they're requested.
 
@@ -50,7 +72,7 @@ The flow of image optimization on Vercel involves several steps, starting from t
    - If you use a standard HTML `img` element, the browser will be instructed to bypass optimization and serve the image directly from its source.
    - If you use a framework's `Image` component (like [`next/image`](https://nextjs.org/docs/app/api-reference/components/image)) it will use Vercel's image optimization pipeline, allowing your images to be automatically optimized and cached.
 
-2. When Next.js receives an image request, it checks the [`unoptimized`](https://nextjs.org/docs/app/api-reference/components/image#unoptimized) prop on the `Image` component or the configuration in the [`next.config.ts`](https://nextjs.org/docs/app/api-reference/next-config-js) file to determine if optimization is disabled.
+2. When Next.js receives an image request, it checks the [`unoptimized`](https://nextjs.org/docs/app/api-reference/components/image#unoptimized) prop on the `Image` component or the configuration in the [`next.config.ts`](https://nextjs.org/docs/app/api-reference/config/next-config-js) file to determine if optimization is disabled.
    - If you set the `unoptimized` prop on the `Image` component to `true`, Next.js bypasses optimization and serves the image directly from its source.
    - If you don't set the `unoptimized` prop or set it to `false`, Next.js checks the `next.config.ts` file to see if optimization is disabled. This configuration applies to all images and overrides the individual component prop.
    - If neither the `unoptimized` prop is set nor optimization is disabled in the `next.config.ts` file, Next.js continues with the optimization process.
@@ -133,9 +155,9 @@ The cache key for local images is based on the query string parameters, the `Acc
 - **Local image cache invalidation**:
   - Redeploying your app doesn't invalidate the image cache.
   - To invalidate, replace the image of the same name with different content, then [redeploy](/docs/deployments/managing-deployments#redeploy-a-project).
-  - You can also [manually purge](/docs/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programatically purge](/docs/cdn-cache/purge#programmatically-purging-vercel-cache) to invalidate all cached transformations of a source image without redeploying.
+  - You can also [manually purge](/docs/caching/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programatically purge](/docs/caching/cdn-cache/purge#programmatically-purging-vercel-cache) to invalidate all cached transformations of a source image without redeploying.
 - **Local image cache expiration**:
-  - [Cached](/docs/cdn-cache#static-files-caching) **for up to 31 days** on the Vercel CDN.
+  - [Cached](/docs/caching/cdn-cache#static-files-caching) **for up to 31 days** on the Vercel CDN.
 
 ### Remote images
 
@@ -182,10 +204,10 @@ The cache key for remote images is based on the query string parameters, the `Ac
   - `Accept` HTTP header (normalized).
 - **Remote image cache invalidation**:
   - Redeploying your app doesn't invalidate the image cache
-  - You can [manually purge](/docs/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programatically purge](/docs/cdn-cache/purge#programmatically-purging-vercel-cache) to invalidate all cached transformations of a source image without redeploying.
+  - You can [manually purge](/docs/caching/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programatically purge](/docs/caching/cdn-cache/purge#programmatically-purging-vercel-cache) to invalidate all cached transformations of a source image without redeploying.
   - Alternatively, you can configure the cache to expire more frequently by adjusting the TTL.
 - **Remote image cache expiration**:
-  - TTL is determined by the [`Cache-Control`](/docs/headers#cache-control-header) `max-age` header from the upstream image or [`minimumCacheTTL`](https://nextjs.org/docs/api-reference/next/image#minimum-cache-ttl) config (default: `3600` seconds), whichever is larger.
+  - TTL is determined by the [`Cache-Control`](/docs/headers#cache-control-header) `max-age` header from the upstream image or [`minimumCacheTTL`](https://nextjs.org/docs/app/api-reference/components/image#minimum-cache-ttl) config (default: `3600` seconds), whichever is larger.
 
 Once an image is cached, it remains so even if you update the source image. For remote images, users accessing a URL with a previously cached image will see the old version until the cache expires or the image is invalidated. Each time an image is requested, it counts towards your [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [Edge Request](/docs/manage-cdn-usage#edge-requests) usage for your billing cycle.
 
@@ -218,6 +240,19 @@ To switch to the transformation images-based pricing plan:
 
 [View your estimate](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fsettings%2Fbilling%23image-optimization-new-price\&title=Go+to+Billing+Settings)
 
+## Image optimization from the CLI
+
+The use case above is request-driven: images are transformed when a browser requests them through your deployment's public API. You can also optimize an image once at write time and store the result in [Vercel Blob](/docs/vercel-blob), without a deployed app or allowlist configuration:
+
+- From the terminal, run [`vercel blob put-image`](/docs/cli/blob#put-image). The command prints the URL of the stored image to stdout, so scripts and agents can read the result back.
+- In code, call [`putImage()`](/docs/vercel-blob/using-blob-sdk#putimage) from the `@vercel/blob` SDK.
+
+```bash filename="terminal"
+vercel blob put-image ./hero.jpg --pathname images/hero.webp --width 1200 --format webp --access public
+```
+
+Only the optimized output is stored, and the stored image is served like any other blob. Each write is billed as one [image transformation](/docs/image-optimization/limits-and-pricing#image-transformations) plus a regular blob upload at standard [Vercel Blob pricing](/docs/vercel-blob/usage-and-pricing). Serving the stored image doesn't use Image Optimization and doesn't incur transformation charges.
+
 ## Related
 
 For more information on what to do next, we recommend the following articles:
@@ -225,7 +260,7 @@ For more information on what to do next, we recommend the following articles:
 - [Image Optimization quickstart](/docs/image-optimization/quickstart)
 - [Managing costs](/docs/image-optimization/managing-image-optimization-costs)
 - [Pricing](/docs/image-optimization/limits-and-pricing)
-- If you are building a custom web framework, you can also use the [Build Output API](/docs/build-output-api/v3/configuration#images) to implement Image Optimization. To learn how to do this, see the [Build your own web framework](/blog/build-your-own-web-framework#automatic-image-optimization) blog post.
+- If you are building a custom web framework, you can also use the [Build Output API](/docs/build-output-api/configuration#images) to implement Image Optimization. To learn how to do this, see the [Build your own web framework](/blog/build-your-own-web-framework#automatic-image-optimization) blog post.
 
 
 ---

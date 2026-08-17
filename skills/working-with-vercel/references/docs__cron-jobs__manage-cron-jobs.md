@@ -12,17 +12,37 @@ related:
   - /docs/cron-jobs/usage-and-pricing
   - /docs/functions
   - /docs/functions/runtimes
-  - /docs/runtime-logs
+  - /docs/logs/runtime
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9915c25b5220bb1d540bb746b0285a5971feaff901fab186a1914184b6b87611"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "493cd8ee91311c4f2fda589e8946236c876673400c9c9f3641120466a0e36f60"
 ---
 
 # Managing Cron Jobs
 
 > **🔒 Permissions Required**: Cron Jobs
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json?from=related) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
+- [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
+- [How to Setup Cron Jobs on Vercel](https://vercel.com/kb/guide/how-to-setup-cron-jobs-on-vercel?from=related) — Learn how to setup and use cron jobs on Vercel
+- [Schedules](https://eve.dev/docs/schedules?from=related) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [Getting Started](https://vercel.com/docs/cron-jobs/quickstart?from=related) — Learn how to schedule cron jobs to run at specific times or intervals.
+- [vercel crons](https://vercel.com/docs/cli/crons?from=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
+- [Limits](https://vercel.com/docs/limits?from=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
+- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+
+Full cross-link map for this page: [/docs/cron-jobs/manage-cron-jobs.graph.md](/docs/cron-jobs/manage-cron-jobs.graph.md)
+<!-- /docsgraph:related -->
 
 ## Viewing cron jobs
 
@@ -274,11 +294,11 @@ In most cases, these limits are sufficient. However, if you need more processing
 
 ## Cron job error handling
 
-Vercel will not retry an invocation if a cron job fails. You can check for error [logs](/docs/runtime-logs) through the **View Log** button in the **Cron Jobs** section in the sidebar.
+Vercel will not retry an invocation if a cron job fails. You can check for error [logs](/docs/logs/runtime) through the **View Log** button in the **Cron Jobs** section in the sidebar.
 
 ## Cron jobs with dynamic routes
 
-Cron jobs can be created for [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes):
+Cron jobs can be created for [dynamic routes](https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes):
 
 ```json filename="vercel.json"
 {
@@ -298,7 +318,7 @@ Cron jobs can be created for [dynamic routes](https://nextjs.org/docs/routing/dy
 
 ## Handling nonexistent paths
 
-If you create a cron job for a path that doesn't exist, it generates a [404 error](/docs/errors/platform-error-codes#404:-not_found). However, **Vercel still executes your cron job**. You can analyze your logs to check if there are any issues.
+If you create a cron job for a path that doesn't exist, it generates a [404 error](/docs/errors#404:-not_found). However, **Vercel still executes your cron job**. You can analyze your logs to check if there are any issues.
 
 ## Cron jobs and deployments
 
@@ -353,9 +373,9 @@ The view logs button on the cron job overview can be used to verify the response
 Cron jobs are logged as function invocations from the **Logs** section in your project dashboard sidebar(/dashboard). You can view the logs for a cron job from the list on the [Cron jobs settings page](/docs/cron-jobs/manage-cron-jobs#viewing-cron-jobs) of the project:
 
 1. From the list of cron jobs, select **View Logs**.
-2. This will take you to the [runtime logs](/docs/runtime-logs#request-path) view with a `requestPath` filter to your cron job such as `requestPath:/api/my-cron-job`.
+2. This will take you to the [runtime logs](/docs/logs/runtime#request-path) view with a `requestPath` filter to your cron job such as `requestPath:/api/my-cron-job`.
 
-See [how to view runtime logs](/docs/runtime-logs#view-runtime-logs) for more information.
+See [how to view runtime logs](/docs/logs/runtime#view-runtime-logs) for more information.
 
 Note that when cron jobs respond with a redirect or a cached response, they will not be shown in the logs.
 

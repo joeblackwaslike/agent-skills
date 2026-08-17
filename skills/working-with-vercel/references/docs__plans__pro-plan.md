@@ -16,13 +16,30 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "84c4bb4f77f88a487dc12cdf7188fcdd55e0dbf72816c914c4001edc9ee44727"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e8d93ff83af941a1e642d8e896d687d21e7f7e355fef7d68f23bb757dd45d6cf"
 ---
 
 # Vercel Pro Plan
 
 The Vercel Pro plan is designed for professional developers, freelancers, and businesses who need enhanced features and team collaboration.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+
+Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/pro-plan.graph.md)
+<!-- /docsgraph:related -->
 
 ## Pro plan features
 
@@ -30,19 +47,19 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - **[Free viewer seats](#viewer-team-seat)**: Unlimited read-only access to the Vercel dashboard so that project collaborators can view deployments, check analytics, and comment on previews
 - **[Elastic build machines](/docs/builds/managing-builds#elastic-build-machines)**: New teams use Elastic build machines by default. Elastic automatically selects a machine for each project based on its build workload
 - **[Paid add-ons](#paid-add-ons)**: Additional enterprise-grade features are available as add-ons
-- **[Free first-year domain for new Pro upgrades](#free-first-year-domain-for-new-pro-upgrades)**: One eligible Radix TLD (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`) when claimed within 30 days. Renews at the standard rate after year one
+- **[Free first-year domain with Pro](#free-first-year-domain-with-pro)**: One eligible TLD domain (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`) per paid Pro team. Renews at the standard rate after year one
 
 For a full breakdown of the features included in the Pro plan, see the [pricing page](https://vercel.com/pricing).
 
-## Free first-year domain for new Pro upgrades
+## Free first-year domain with Pro
 
-New monthly Pro subscriptions include one free first-year domain on an eligible TLD (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`). Claim the domain within 30 days of upgrading. After the first year, the domain renews at the standard rate.
+All paid Pro teams include one free first-year domain on an eligible TLD (`.online`, `.site`, `.space`, `.store`, `.tech`, or `.website`). New Pro subscriptions can claim the domain at checkout during the upgrade. Existing Pro teams claim from domain search in the dashboard at [vercel.com/domains](https://vercel.com/domains). After the first year, the domain renews at the standard rate.
 
-The offer is limited to one domain per Pro upgrade and excludes:
+The offer is limited to one domain per team and excludes:
 
-- Existing Pro teams
 - Teams on a [Pro trial](/docs/plans/pro-plan/trials)
-- Additional domains beyond the one included with the upgrade
+- Teams that have already claimed their free domain
+- Additional domains beyond the one included per team
 
 See the [docs page](/docs/domains/free-domain-with-pro#how-do-i-claim-my-free-domain) for more information on how to claim your free domain.
 

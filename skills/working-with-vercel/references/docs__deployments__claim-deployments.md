@@ -10,19 +10,36 @@ prerequisites:
 related:
   - /docs/projects/transferring-projects
   - /docs/integrations/create-integration/marketplace-flows
-  - /docs/rest-api/reference/endpoints/projects/create-project-transfer-request
-  - /docs/rest-api/reference/endpoints/projects/accept-project-transfer-request
-  - /docs/rest-api/reference/endpoints/deployments/upload-deployment-files
+  - /docs/rest-api/projects/create-project-transfer-request
+  - /docs/rest-api/projects/accept-project-transfer-request
+  - /docs/rest-api/deployments/upload-deployment-files
 summary: Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b2358229e19655a26fa825cd3598548695d58f2c6d66138f6c3d86a6fb689824"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5d960160b7642d6939f23aa2d02a5e6a8664b4428ef9acd120025974cb3618d2"
 ---
 
 # Claim Deployments
 
 The Claim Deployments feature enables users to take control of deployments by transferring them to their Vercel accounts. Users can generate and share a claim URL, which allows others to assume ownership of these deployments. This feature is particularly helpful for AI-generated deployments and facilitates the transfer of projects between different accounts with different owners.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [AI Agents on Vercel](https://vercel.com/kb/guide/ai-agents?from=related) — This guide provides an overview of how to build and deploy AI agents on Vercel.
+- [Domain Linked to Another Account](https://vercel.com/kb/guide/domain-linked-to-another-account?from=related) — This guide explains how to claim a domain already linked to another Vercel account and add it to your team using the dom
+- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment?from=related) — A component for users to claim ownership of Vercel deployments created on their behalf.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Claiming Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership?from=related) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
+- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related)
+- [Claim Domain Ownership](https://vercel.com/docs/rest-api/domains/claim-domain-ownership?from=related)
+
+Full cross-link map for this page: [/docs/deployments/claim-deployments.graph.md](/docs/deployments/claim-deployments.graph.md)
+<!-- /docsgraph:related -->
 
 However, when transferring a project between two teams owned by the same user, it is recommended to use the [Project Transfer flow](/docs/projects/transferring-projects#starting-a-transfer) instead of the Claim Deployments flow.
 
@@ -44,21 +61,21 @@ For more details on the transfer process, see [Resources with Claim Deployments 
 
 - **Claim Deployments URL:** `https://vercel.com/claim-deployment?[...]`
 
-- **Initiate a project transfer request:** [POST /projects/:idOrName/transfer-request](/docs/rest-api/reference/endpoints/projects/create-project-transfer-request)
+- **Initiate a project transfer request:** [POST /projects/:idOrName/transfer-request](/docs/rest-api/projects/create-project-transfer-request)
 
-- **Complete a project transfer:** [PUT /projects/transfer-request/:code](/docs/rest-api/reference/endpoints/projects/accept-project-transfer-request)
+- **Complete a project transfer:** [PUT /projects/transfer-request/:code](/docs/rest-api/projects/accept-project-transfer-request)
   - *This endpoint is not needed if you are using the Claim Deployments URL*
 
 ## Example use case: automated AI-generated deployment
 
-1. **File upload:** The AI agent uploads the deployment files using the Vercel API: [POST /files](/docs/rest-api/reference/endpoints/deployments/upload-deployment-files).
+1. **File upload:** The AI agent uploads the deployment files using the Vercel API: [POST /files](/docs/rest-api/deployments/upload-deployment-files).
 
 2. **Deployment creation:**
    - Create a new deployment using the [Vercel CLI](/docs/cli/deploying-from-cli)
-   - Or create a deployment with the Vercel API: [POST /files](/docs/rest-api/reference/endpoints/deployments/upload-deployment-files) followed by [POST /deployments](/docs/rest-api/reference/endpoints/deployments/create-a-new-deployment).
+   - Or create a deployment with the Vercel API: [POST /files](/docs/rest-api/deployments/upload-deployment-files) followed by [POST /deployments](/docs/rest-api/deployments/create-a-new-deployment).
 
 3. **Project transfer request:**
-   - The agent initiates a transfer request with: [POST /projects/:idOrName/transfer-request](/docs/rest-api/reference/endpoints/projects/create-project-transfer-request).
+   - The agent initiates a transfer request with: [POST /projects/:idOrName/transfer-request](/docs/rest-api/projects/create-project-transfer-request).
    - This returns a `code` (valid for 24 hours) that allows the agent to transfer the project to another team, typically the end user who initiated the request.
 
 4. **Generate claim URL:**
@@ -69,7 +86,7 @@ For more details on the transfer process, see [Resources with Claim Deployments 
    - The user accesses the claim page using the URL and selects a team within their Vercel account to transfer the deployment.
 
 6. **Project transfer completion:**
-   - After the user clicks **Transfer**, the Vercel API ([PUT /projects/transfer-request/:code](/docs/rest-api/reference/endpoints/projects/accept-project-transfer-request)) completes the project transfer, assigning it to the user’s selected team. This step is not necessary if you are using the Claim Deployments Flow.
+   - After the user clicks **Transfer**, the Vercel API ([PUT /projects/transfer-request/:code](/docs/rest-api/projects/accept-project-transfer-request)) completes the project transfer, assigning it to the user’s selected team. This step is not necessary if you are using the Claim Deployments Flow.
 
 Get started with [this template](https://github.com/vercel/claim-deployments-demo) of claiming deployments ([demo](https://claim-deployments-demo.vercel.app)).
 

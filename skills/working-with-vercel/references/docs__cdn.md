@@ -8,7 +8,7 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/deployments/preview-deployments
+  - /docs/deployments/environments
   - /docs/regions
   - /docs/caching
   - /docs/routing
@@ -16,17 +16,38 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "33e89ed59418be1ff506ff52aa77a47974301957f862e4279f27507b708fa203"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a1cb90bda7dbea5a0d7f0d283de6e37f4ecb9fe555d5c6acdc4a4ea9594909ea"
 ---
 
 # Vercel CDN overview
 
 Vercel's CDN is a globally distributed network that caches content near your visitors, routes requests, and runs compute close to your data. Every deployment includes it automatically.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Videos](https://nextjs.org/docs/app/guides/videos?from=related) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [Build with a Flask starter template](https://vercel.com/kb/guide/build-with-a-flask-starter-template?from=related) — Deploy a Flask app to Vercel from a starter template. Compare the Flask Hello World starter, AI SDK, alt text generator,
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+
+Full cross-link map for this page: [/docs/cdn.graph.md](/docs/cdn.graph.md)
+<!-- /docsgraph:related -->
+
 Unlike traditional CDNs that only cache static assets, Vercel's CDN is framework-aware. It reads your routing, caching, and rendering configuration at build time, with the following benefits:
 
-- **Git-driven and previewable**: Every CDN change is scoped to a branch and deployed to a unique [preview URL](/docs/deployments/preview-deployments), so you can test routing, caching, and security rules before they reach production.
+- **Git-driven and previewable**: Every CDN change is scoped to a branch and deployed to a unique [preview URL](/docs/deployments/environments#preview-environment-pre-production), so you can test routing, caching, and security rules before they reach production.
 - **Global network**: [126+ PoPs across 51 countries and 20+ Vercel regions](/docs/regions), with built-in request acceleration and high-availability architecture.
 - **Framework-aware, zero config**: CDN configuration and [caching policies](/docs/caching) are an output of the build and deployment process if you are using a supported framework, eliminating the need to define manual cache-control headers.
 - **Standard CDN directives**: When needed, you can override [routing and caching rules](/docs/routing). You can also proxy and cache responses from external backends with [external rewrites](/docs/routing/rewrites#external-rewrites), and [invalidate content by tag](/docs/caching/cdn-cache/purge) across all frameworks and backends.
@@ -123,7 +144,7 @@ You can configure branded error pages for 5xx server errors so visitors see a co
 CDN pricing covers three billable resources: Edge Requests, Fast Data Transfer, and Fast Origin Transfer. Edge Requests and Fast Data Transfer include explicit Pro allowances; Vercel bills Fast Origin Transfer on demand on Pro. Pricing can vary by the region where requests originate.
 
 - [CDN pricing and usage](/docs/manage-cdn-usage)
-- [Networking usage details](/docs/pricing/networking)
+- [Networking usage details](/docs/manage-cdn-usage)
 
 
 ---

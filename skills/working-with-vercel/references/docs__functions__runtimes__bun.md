@@ -10,20 +10,40 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/project-configuration/vercel-json
+  - /docs/functions/websockets
   - /docs/incremental-static-regeneration
   - /docs/routing-middleware
   - /docs/functions/runtimes/node-js
-  - /docs/fluid-compute
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "2078ff0c7f1cce9588b42aede793c10a4e1c82d7ec5c73f023d1c809853e7c26"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "16f7064563dd08922cd20cce4692dba7b6fabc45cc529fc0261ac3de082c8059"
 ---
 
 # Using the Bun Runtime with Vercel Functions
 
 > **🔒 Permissions Required**: The Bun runtime
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
+- [How to ship a Hono app on Vercel](https://vercel.com/kb/guide/ship-a-hono-app-on-vercel?from=related) — Deploy a Hono app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and conf
+- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Full-stack](https://vercel.com/docs/frameworks/full-stack?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Elysia](https://vercel.com/docs/frameworks/backend/elysia?from=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
+
+Full cross-link map for this page: [/docs/functions/runtimes/bun.graph.md](/docs/functions/runtimes/bun.graph.md)
+<!-- /docsgraph:related -->
 
 Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to Node.js.
 
@@ -44,6 +64,59 @@ Once you configure the runtime version, Vercel manages the Bun minor and patch v
 
 > **💡 Note:** Vercel manages the Bun minor and patch versions automatically. `1.x` is the
 > only valid value currently.
+
+## Deploy with the Bun framework preset
+
+Use the Bun framework preset when you want one `Bun.serve()` server to route requests for your application. After you configure `bunVersion` in `vercel.json`, add a `bun.lock` file and a `server` entrypoint in the project root or the `src/` directory:
+
+- `server.{js,cjs,mjs,ts,cts,mts}`
+- `src/server.{js,cjs,mjs,ts,cts,mts}`
+
+With Bun 1.2 or later, run `bun install` to create `bun.lock`. For older versions, run `bun install --save-text-lockfile`. The preset doesn't detect the legacy `bun.lockb` format.
+
+A minimal project contains `package.json`, `bun.lock`, `server.ts`, and the `vercel.json` configuration shown above. You don't need an `/api` directory or routing configuration.
+
+Call `Bun.serve()` once during module startup. Vercel uses that call to detect the server, then routes incoming requests through a Vercel Function. You can use the `fetch`, `routes`, `error`, and `websocket` options:
+
+```ts filename="server.ts"
+Bun.serve({
+  routes: {
+    '/health': () => Response.json({ status: 'ok' }),
+  },
+  fetch() {
+    return new Response('Hello from Bun on Vercel');
+  },
+});
+```
+
+The `port` and `hostname` options only apply when you run the server locally. They don't configure the public endpoint on Vercel. Unix sockets and HTML imports in `routes` are not supported.
+
+To serve WebSocket connections with `Bun.serve()`, see the [Bun example in the WebSockets documentation](/docs/functions/websockets#bun).
+
+## Deploy a Bun server from `/api`
+
+Create `api/server.ts` to deploy a native Bun server as one Vercel Function. Vercel serves the function at `/api/server`, so you can add it to a project that also contains a frontend.
+
+> **💡 Note:** To use custom routing with an `/api` server, configure route overrides in
+> `vercel.json`. Each override must use the full request path, including the
+> `/api/server` prefix.
+
+Call `Bun.serve()` once during module startup:
+
+```ts filename="api/server.ts"
+Bun.serve({
+  fetch(request) {
+    const url = new URL(request.url);
+
+    return Response.json({
+      message: 'Hello from Bun on Vercel',
+      pathname: url.pathname,
+    });
+  },
+});
+```
+
+This deployment model only requires the `bunVersion` configuration shown above. It doesn't use the Bun framework preset or require `bun.lock`. Unlike the preset, it only sends requests for `/api/server` to this server.
 
 ## Framework-specific considerations
 
@@ -86,21 +159,6 @@ See the table below for a detailed comparison:
 ## Supported APIs
 
 Vercel Functions using the Bun runtime support [most Node.js APIs](https://bun.sh/docs/runtime/nodejs-apis), including standard Web APIs such as the [Request and Response Objects](/docs/functions/runtimes/node-js#node.js-request-and-response-objects).
-
-## Using TypeScript with Bun
-
-Bun has built-in TypeScript support with zero configuration required. The runtime supports files ending with `.ts` inside of the `/api` directory as TypeScript files to compile and serve when deploying.
-
-```typescript filename="api/hello.ts"
-export default {
-  async fetch(request: Request) {
-    const url = new URL(request.url);
-    const name = url.searchParams.get('name') || 'World';
-
-    return Response.json({ message: `Hello ${name}!` });
-  },
-};
-```
 
 ## Performance considerations
 

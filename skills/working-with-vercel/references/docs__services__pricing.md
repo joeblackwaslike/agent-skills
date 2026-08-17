@@ -16,13 +16,29 @@ related:
 summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "99da700f1abebd25afe87a4b10ac8821bb9f14aa401abf2d97f1792444bb7277"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "90173aa2aa6d221169d38d8f33b34f52292490f40536079c7667c11de823e49a"
 ---
 
 # Services Pricing and Limits
 
 Vercel bills Services across the compute each service runs on, the requests services make to each other, and the data services return.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Portland, USA \(pdx1\)](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related) — Vercel pricing for the Portland, USA \(pdx1\) region.
+- [Dublin, Ireland \(dub1\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \(dub1\) region.
+- [Cleveland, USA \(cle1\)](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related) — Vercel pricing for the Cleveland, USA \(cle1\) region.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [San Francisco, USA \(sfo1\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \(sfo1\) region.
+
+Full cross-link map for this page: [/docs/services/pricing.graph.md](/docs/services/pricing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Compute
 

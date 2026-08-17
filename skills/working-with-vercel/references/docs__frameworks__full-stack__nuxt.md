@@ -17,13 +17,30 @@ related:
 summary: "Learn how to use Vercel's features with Nuxt."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nuxt.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "e2175482e200cd84925add51b0103929bd4153eadc090c8f1851608b09190d90"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b96fc01d488c7f8ff7873d8cb814e02741334d8501a63d7737b8aedd15fa9591"
 ---
 
 # Nuxt on Vercel
 
 Nuxt is an open-source framework that streamlines the process of creating modern Vue apps. It offers server-side rendering, SEO features, automatic code splitting, prerendering, and more out of the box. It also has [an extensive catalog of community-built modules](https://nuxt.com/modules), which allow you to integrate popular tools with your projects.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [SvelteKit](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related) — Learn how to use Vercel's features with SvelteKit
+- [Vite + Nitro](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+
+Full cross-link map for this page: [/docs/frameworks/full-stack/nuxt.graph.md](/docs/frameworks/full-stack/nuxt.graph.md)
+<!-- /docsgraph:related -->
 
 You can deploy Nuxt static and server-side rendered sites on Vercel with no configuration required.
 
@@ -646,6 +663,8 @@ Learn more about deploying Nuxt projects on Vercel with the following resources:
 
 - [Deploy our Nuxt Alpine template](/templates/nuxt/alpine)
 - [See an example of Nuxt Image](/docs/image-optimization/quickstart)
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](/kb/guide/vercel-blob-nuxt-imgur-clone)
+- [Build an integrations hub with Nuxt and Vercel Connect](/kb/guide/nuxt-and-vercel-connect)
 
 
 ---

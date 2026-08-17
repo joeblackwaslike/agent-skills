@@ -8,20 +8,36 @@ type: how-to
 prerequisites:
   - /docs/comments
 related:
-  - /docs/accounts/create-a-team
+  - /docs/accounts
   - /docs/vercel-toolbar/managing-toolbar
   - /docs/vercel-toolbar/in-production-and-localhost
   - /docs/deployments/sharing-deployments
 summary: Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session or interface levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/how-comments-work.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "389d2c8c42fafbf3a6a6c5b24fb2708c556393e1a6fd7dc70a556d6888b2c700"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6431d9535b1f349beaf339d8c96569a272068ca20fccef2bd6a5e93aa828a19b"
 ---
 
 # Enabling and Disabling Comments
 
-Comments are enabled by default for all preview deployments on all new projects. **By default, only members of [your Vercel team](/docs/accounts/create-a-team) can contribute comments**.
+Comments are enabled by default for all preview deployments on all new projects. **By default, only members of [your Vercel team](/docs/accounts#creating-a-team) can contribute comments**.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I prevent the Vercel for GitHub integration comments?](https://vercel.com/kb/guide/how-to-prevent-vercel-github-comments?from=related) — Information on how to prevent the Vercel for GitHub integration from adding comments.
+- [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Using Comments](https://vercel.com/docs/comments/using-comments?from=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [Toolbar](https://vercel.com/docs/vercel-toolbar?from=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
+- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Integrations](https://vercel.com/docs/comments/integrations?from=related) — Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack
+
+Full cross-link map for this page: [/docs/comments/how-comments-work.graph.md](/docs/comments/how-comments-work.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** The comments toolbar will only render on sites with **HTML** set as the
 > `Content-Type`. Additionally, on Next.js sites, the comments toolbar will only

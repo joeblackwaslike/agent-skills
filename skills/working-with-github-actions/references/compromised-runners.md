@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/concepts/security/compromised-runners.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "21fde5069ecac2e36c204adc255872a1691382e73478473a104ee3a0ee7d6b32"
+fetched_at: "2026-08-17T04:46:35.458Z"
+sha256: "7507d08c69eb097731288927db423729c91e56a03c476695afb5125fc3c2b711"
 ---
 
 ## Potential impact of a compromised runner
@@ -51,7 +51,7 @@ The attacker server can use the {% data variables.product.github %} API to [modi
 
 {% data variables.product.prodname_actions %} is intentionally scoped for a single repository at a time. The `GITHUB_TOKEN` grants the same level of access as a write-access user, because any write-access user can access this token by creating or modifying a workflow file, elevating the permissions of the `GITHUB_TOKEN` if necessary. Users have specific permissions for each repository, so allowing the `GITHUB_TOKEN` for one repository to grant access to another would impact the {% data variables.product.prodname_dotcom %} permission model if not implemented carefully. Similarly, caution must be taken when adding {% data variables.product.prodname_dotcom %} authentication tokens to a workflow, because this can also affect the {% data variables.product.prodname_dotcom %} permission model by inadvertently granting broad access to collaborators.
 
-If your organization is owned by an enterprise account, then you can share and reuse {% data variables.product.prodname_actions %} by storing them in internal repositories. For more information, see [AUTOTITLE](/actions/how-tos/reuse-automations/share-with-your-enterprise).
+If your organization is owned by an enterprise account, then you can share and reuse {% data variables.product.prodname_actions %} by storing them in internal repositories. For more information, see [AUTOTITLE]({% ifversion fpt %}/enterprise-cloud@latest{% endif %}/actions/how-tos/reuse-automations/share-with-your-enterprise).
 
 You can perform other privileged, cross-repository interactions by referencing a {% data variables.product.prodname_dotcom %} authentication token or SSH key as a secret within the workflow. Because many authentication token types do not allow for granular access to specific resources, there is significant risk in using the wrong token type, as it can grant much broader access than intended.
 

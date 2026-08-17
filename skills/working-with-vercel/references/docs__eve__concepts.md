@@ -16,8 +16,8 @@ related:
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "63900cc3d6cd1fe47319944822f293ab0380fb603a1f8610ccbf62d29311f0ef"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ac1ef614e4ecb5f8ece1335483ec48f1f2cb75ff349984d45a55a00f0759fbcb"
 ---
 
 # Concepts
@@ -25,6 +25,23 @@ sha256: "63900cc3d6cd1fe47319944822f293ab0380fb603a1f8610ccbf62d29311f0ef"
 eve turns a filesystem project into a durable backend AI agent. You author the agent under an
 `agent/` directory, and eve discovers those files, validates them, compiles a manifest, and serves
 the runtime as a deployable app.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related) — Create an eve project, configure a model, understand its filesystem layout, and run your first agent.
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [Security Model](https://eve.dev/docs/concepts/security-model?from=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related) — Choose a deployment strategy and prepare an eve agent for production.
+- [eve](https://eve.dev/docs/channels/eve?from=related) — The default HTTP API for an agent, covering session routes, auth, and customization.
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+
+Full cross-link map for this page: [/docs/eve/concepts.graph.md](/docs/eve/concepts.graph.md)
+<!-- /docsgraph:related -->
 
 ## Agent project
 

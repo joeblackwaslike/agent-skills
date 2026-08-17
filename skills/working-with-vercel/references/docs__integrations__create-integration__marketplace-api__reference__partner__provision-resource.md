@@ -3,7 +3,7 @@ title: provision-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5c5721fca45f8b4d04ae6cc383a6f22d739abe0af036a8211cc47c2324601347"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ec63d63430d1fb906ad4aeef0b6723c25123723237d19cc5fd717c7336b24ea5"
 ---
 
 # Provision Resource
@@ -136,6 +136,12 @@ User Auth OIDC token claims schema:
     "experimentation": {
       "edgeConfigId": "string" // A Global Config selected by the user for partners to push data into. Deprecated alias of `globalConfigId`.,
       "globalConfigId": "string" // A Global Config selected by the user for partners to push data into.
+    },
+    "authentication": {
+      "appUrls": [
+        "url": "string" // required // An exact https app URL. No wildcards.,
+        "target": "string" // required
+      ]
     }
   }
 }
@@ -160,6 +166,12 @@ Return the newly provisioned resource
       "globalConfigId": "string" // Alias for `edgeConfigId`.,
       "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
       "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
+    },
+    "authentication": {
+      "appUrls": [
+        "url": "string" // required // An exact https app URL. No wildcards.,
+        "target": "string" // required
+      ]
     }
   },
   "billingPlan": {

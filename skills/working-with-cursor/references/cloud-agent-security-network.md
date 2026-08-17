@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/security-network.md"
-fetched_at: "2026-07-27T07:33:35.768Z"
-sha256: "9fb636e0d9a2a3b6e1bfa44cfca65c85dc6a1ae99707a105228a26e4e6957aad"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "c4910dedbc95f8155b3d3784bff665579febe86e6992d41575deeead3b607e18"
 ---
 
 # Secrets & Network
@@ -43,6 +43,10 @@ In order to securely use a Build Secret within your Dockerfile, reference them f
 RUN --mount=type=secret,id=MY_TOKEN,env=MY_TOKEN,required=true \
     ./scripts/install-private-deps.sh
 ```
+
+## OIDC identity tokens
+
+For cloud roles and internal APIs, prefer short-lived [OIDC tokens](https://cursor.com/docs/cloud-agent/identity.md) over long-lived keys in Secrets. A Cloud Agent can mint a Cursor-signed JWT from a local socket and present it to AWS, GCP, Azure, Vault, or any OIDC verifier.
 
 ## Signed commits
 
@@ -104,7 +108,7 @@ Cloudflare Tunnel is a good fit when the agent can reach the private service thr
 
 For TCP targets such as private databases, use a tunnel client that exposes a local TCP listener in the agent environment. The agent then connects to `localhost`, while the tunnel forwards traffic to the private origin.
 
-For private GitHub Enterprise Server, GitLab Enterprise, source control APIs, and related webhook traffic, Enterprise teams can use [private connectivity](https://cursor.com/docs/enterprise/private-connectivity.md) with AWS PrivateLink or Cloudflare Tunnel.
+For private GitHub Enterprise Server, GitLab Enterprise, source control APIs, package registries such as Artifactory or Nexus, and related webhook traffic, Enterprise teams can use [private connectivity](https://cursor.com/docs/cloud-agent/private-connectivity.md) with AWS PrivateLink or Cloudflare Tunnel.
 
 ### Access modes
 
@@ -252,7 +256,7 @@ If your team uses Cloud Agents alongside [Cursor Review](https://cursor.com/docs
 These IP addresses are stable. If the list ever changes, teams using IP allow
 lists will get advance notice before any address is added or removed.
 
-Enterprise customers with private GitHub Enterprise Server or GitLab Enterprise deployments can use [private connectivity options](https://cursor.com/docs/enterprise/private-connectivity.md), so Cloud Agents and Bugbot can access private source control systems.
+Enterprise customers with private GitHub Enterprise Server or GitLab Enterprise deployments can use [private connectivity options](https://cursor.com/docs/cloud-agent/private-connectivity.md), so Cloud Agents and Bugbot can access private source control systems.
 
 
 ---

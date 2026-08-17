@@ -11,19 +11,39 @@ prerequisites:
 related:
   - /docs/rbac/access-roles
   - /docs/rbac/access-groups
-  - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links
-  - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
+  - /docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links
+  - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
   - /docs/comments
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "cd7030b7138faf34cffe5baa50f47c30ba8861ca51430916d2ecf847379733ab"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "98a4227de75c372503f50829e7452145eea8484c8e1f7a77a0dd49c9a3f56e9a"
 ---
 
 # Restrict access to deployments with Vercel Authentication
 
 > **🔒 Permissions Required**: Vercel Authentication
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Bypass Deployment Protection](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+
+Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments, and available on all plans. When enabled, it allows only users with deployment access to view and comment on your site.
 
@@ -37,8 +57,8 @@ After login, Vercel redirects the user and sets a cookie in the browser if they 
 - Logged in [project members](/docs/rbac/access-roles#project-level-roles) with at least the [project Viewer](/docs/rbac/access-roles#project-viewer) role
 - Logged in members of an [access group](/docs/rbac/access-groups) that has access to the project the deployment belongs to
 - Logged in Vercel users who have been [granted access](#access-requests)
-- Anyone who has been given a [Shareable Link](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) to the deployment
-- Tools using the [protection bypass for automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) header
+- Anyone who has been given a [Shareable Link](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) to the deployment
+- Tools using the [protection bypass for automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) header
 
 ## Access requests
 
@@ -77,8 +97,8 @@ Disabling Vercel Authentication renders all existing deployments unprotected. Wh
 | Consideration                 | Description                                                                                                                                                                                                                                                                            |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Environment configuration** | Can be enabled for different environments. See [Choose which URLs to protect](/docs/deployment-protection#choose-which-urls-to-protect)                                                                                           |
-| **Compatibility**             | Works alongside [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection) and [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                      |
-| **Bypass methods**            | Can be bypassed using [Shareable Links](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
+| **Compatibility**             | Works alongside [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                      |
+| **Bypass methods**            | Can be bypassed using [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
 | **Disabling**                 | All existing deployments become unprotected when Vercel Authentication is disabled                                                                                                                                                                                                     |
 | **Re-enabling**               | Users who have logged in previously will still have access without re-authenticating                                                                                                                                                                                                   |
 | **Token scope**               | Tokens are valid for a single URL and are not reusable across different URLs                                                                                                                                                                                                           |
@@ -107,7 +127,7 @@ You can manage Vercel Authentication through the dashboard, API, or Terraform:
 
 ### How to manage Vercel Authentication with the API
 
-You can manage Vercel Authentication using the Vercel API endpoint to [update an existing project](/docs/rest-api/reference/endpoints/projects/update-an-existing-project) with the following body.
+You can manage Vercel Authentication using the Vercel API endpoint to [update an existing project](/docs/rest-api/projects/update-an-existing-project) with the following body.
 
 - `prod_deployment_urls_and_all_previews`: Standard Protection
 - `all`: All Deployments

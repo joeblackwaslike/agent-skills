@@ -14,13 +14,28 @@ related:
 summary: Generate images using AI models that support multimodal output through the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "347e1bf632bce49e95995c19f7ac90865188df9c03ee09061c058b17e3936b34"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d52c71e8e0a24e0d3b9b6290aaa24d8bc3caa52fc62c9301b2caec9bc8bd9181"
 ---
 
 # Image Generation
 
 Generate images using AI models that support multimodal output through the Chat Completions API. This feature allows you to create images alongside text responses using models like Google's Gemini 3.1 Flash Image.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
+- [Using AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
+- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
+- [Modalities](https://vercel.com/docs/ai-gateway/modalities?from=related) — The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, r
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md)
+<!-- /docsgraph:related -->
 
 Endpoint
 

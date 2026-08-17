@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/core/src/plugin/skill/customize-opencode.md"
-fetched_at: "2026-08-10T05:31:39.739Z"
-sha256: "f83e8f42cd3f1422656a9725357b6dca24ee8af4582905d03da97ffb999db11e"
+fetched_at: "2026-08-17T04:47:25.635Z"
+sha256: "eda4eae3679562180d26a31817cb5b2c8c801599b85f80b2796beae5620bad66"
 ---
 
 <!--
@@ -46,7 +46,7 @@ already-loaded config until then.
 | Scope                         | Path                                                                                                                      |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Project config                | `./opencode.json`, `./opencode.jsonc`, or `.opencode/opencode.json` (opencode walks up from the cwd to the worktree root) |
-| Global config                 | `~/.config/opencode/opencode.json` (NOT `~/.opencode/`)                                                                   |
+| Global config                 | `~/.config/opencode/opencode.json` or `~/.config/opencode/opencode.jsonc` (NOT `~/.opencode/`)                            |
 | Project agents                | `.opencode/agent/<name>.md` or `.opencode/agents/<name>.md`                                                               |
 | Global agents                 | `~/.config/opencode/agent(s)/<name>.md`                                                                                   |
 | Project commands              | `.opencode/command/<name>.md` or `.opencode/commands/<name>.md`                                                           |

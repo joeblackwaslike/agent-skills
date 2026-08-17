@@ -16,13 +16,33 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c588edf2edd4387cf61920fbf18915b28245ea5f57611faad54a74836fd4ed58"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e6e06fc7965791ebab66b4a22a4ba8a2bda84195eafb37c07d680d451f71487c"
 ---
 
 # Secure Compute
 
 > **🔒 Permissions Required**: Secure Compute
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
+- [Create a Secure Compute network](https://vercel.com/docs/rest-api/networking/create-a-secure-compute-network?from=related)
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
+- [Global Network & Regions](https://vercel.com/docs/regions?from=related) — View the list of regions supported by Vercel's CDN and learn about our global infrastructure.
+- [Elysia](https://vercel.com/docs/frameworks/backend/elysia?from=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
+
+Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md)
+<!-- /docsgraph:related -->
 
 Secure Compute creates private connections between your [Vercel Functions](/docs/functions) and your backend infrastructure like databases, APIs, or any private services you're running.
 

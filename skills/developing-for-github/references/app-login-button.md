@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/writing-code-for-a-github-app/building-a-login-with-github-button-with-a-github-app.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "6d2fcadf8f68e6a630b2b843b386877d57cc43c91f70ec29f9bc384e67f694a2"
+fetched_at: "2026-08-17T04:40:36.479Z"
+sha256: "ab5e0d3d2b956848b44fe536ce069d57f2c50ba95841e267305ee690372b3830"
 ---
 
 ## Introduction
@@ -119,7 +119,7 @@ These steps lead you through writing code to generate a user access token. To sk
    end
    ```
 
-1. Add the following code to `app.rb` to handle requests to your app's callback URL and get the `code` parameter from the request. Replace `CALLBACK_URL` with the callback URL for your app, minus the domain. For example, if your callback URL is `http://localhost:4567/github/callback`, replace `CALLBACK_URL` with `/github/callback`.
+1. Add the following code to `app.rb` to handle requests to your app's callback URL and get the `code` parameter from the request. Replace `CALLBACK_URL` with the callback URL for your app, minus the domain. For example, if your callback URL is `http://localhost/github/callback`, replace `CALLBACK_URL` with `/github/callback`.
 
    ```ruby copy
    get "CALLBACK_URL" do
@@ -288,7 +288,7 @@ These steps lead you through writing code to generate a user access token. To sk
 
 This is the full code example that was outlined in the previous section.
 
-Replace `CALLBACK_URL` with the callback URL for your app, minus the domain. For example, if your callback URL is `http://localhost:4567/github/callback`, replace `CALLBACK_URL` with `/github/callback`.
+Replace `CALLBACK_URL` with the callback URL for your app, minus the domain. For example, if your callback URL is `http://localhost/github/callback`, replace `CALLBACK_URL` with `/github/callback`.
 
 ```ruby copy
 require "sinatra"
@@ -403,7 +403,7 @@ This tutorial used a single callback URL, but your app can have up to 10 callbac
 
 When you link to `{% data variables.product.oauth_host_code %}/login/oauth/authorize`, you can pass additional query parameters. For more information, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app#using-the-web-application-flow-to-generate-a-user-access-token).
 
-Unlike a traditional OAuth token, the user access token does not use scopes so you cannot specify scopes via the `scope` parameter. Instead, it uses fine-grained permissions. A user access token only has permissions that both the user and the app have.
+Unlike {% data variables.product.prodname_oauth_apps %}, {% data variables.product.prodname_github_apps %} do not use scopes, so you don't specify scopes at runtime via the `scope` parameter. Instead, they use fine-grained permissions set during app creation. A user access token only has access to a resource if both the user and the app have that access.
 
 ### Adjust the code to meet your app's needs
 

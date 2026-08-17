@@ -12,13 +12,28 @@ related:
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6eaf2ea9db63fb6f58bd0f7733ba5e2dc36b5ab6a0f8b0ca23f775f17702ea3f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "de9e589649b1a20e8c71ff8f947c726492a83e77a73a0ab4113be658cb5fa0ad"
 ---
 
 # vercel inspect
 
 The `vercel inspect` command is used to retrieve information about a deployment referenced either by its deployment URL or ID.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+
+Full cross-link map for this page: [/docs/cli/inspect.graph.md](/docs/cli/inspect.graph.md)
+<!-- /docsgraph:related -->
 
 You can use this command to view either a deployment's information or its [build logs](/docs/cli/inspect#logs).
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "e22cf344f636502944bbf0d85b040422be039efab8409dbfa4b212befc3e2c2c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "589f995f9787f2249b702a3841b8d3cb2626c583c270f85aab006210d9f7cb08"
 ---
 
 # eve
@@ -25,6 +25,27 @@ sha256: "e22cf344f636502944bbf0d85b040422be039efab8409dbfa4b212befc3e2c2c"
 > **💡 Note:** eve is currently in beta and subject to the
 > .
 > The framework, APIs, documentation, and behavior may change before general availability.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related) — Choose a deployment strategy and prepare an eve agent for production.
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Next.js](https://eve.dev/docs/guides/frontend/nextjs?from=related) — Run an eve agent and a Next.js app as one project with withEve.
+- [eve](https://eve.dev/docs/channels/eve?from=related) — The default HTTP API for an agent, covering session routes, auth, and customization.
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
+- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related) — Run an eve agent as a Node service with your own workflow storage, sandbox backend, and routing.
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Skills](https://vercel.com/docs/agent-resources/skills?from=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
+
+Full cross-link map for this page: [/docs/eve.graph.md](/docs/eve.graph.md)
+<!-- /docsgraph:related -->
 
 [eve](https://eve.dev/) is an open-source, filesystem-first framework for durable backend AI agents. You define each
 agent with files under an `agent/` directory, and eve discovers those files and compiles them into a

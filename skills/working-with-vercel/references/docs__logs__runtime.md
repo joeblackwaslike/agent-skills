@@ -16,13 +16,32 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "192740779dec1fe8e27b4ba239717f0b5e419a7dc106ccd16eba0387c76e7f91"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "be7789396298625aa04c25d62d548cc2635ee8d743020150c74719973e49e952"
 ---
 
 # Runtime Logs
 
 > **🔒 Permissions Required**: Runtime Logs
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [Logs](https://vercel.com/docs/functions/logs?from=related) — Use runtime logs to debug and monitor your Vercel Functions.
+- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Limits](https://vercel.com/docs/limits?from=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
+
+Full cross-link map for this page: [/docs/logs/runtime.graph.md](/docs/logs/runtime.graph.md)
+<!-- /docsgraph:related -->
 
 The **Logs** section in the sidebar allows you to view, search, inspect, and [share](#log-sharing) your runtime logs without any third-party integration. You can also filter and group your [runtime logs](#what-are-runtime-logs) based on the relevant fields.
 
@@ -111,8 +130,8 @@ Using the resource filter, you can search for requests containing logs generated
 | **[Vercel Functions](/docs/functions)**            | Logs generated from your Vercel Functions invocations. Log details include additional runtime Request Id details and other basic info |
 | **[Routing Middleware](/docs/routing-middleware)** | Logs generated as a result of your Routing Middleware invocations                                                                     |
 | **Vercel CDN Cache**                               | Logs generated from proxy serving cache                                                                                               |
-| **Rewrite**                                        | Logs generated from [rewrite rules](/docs/rewrites)                                                                                   |
-| **Redirect**                                       | Logs generated from [redirect rules](/docs/redirects)                                                                                 |
+| **Rewrite**                                        | Logs generated from [rewrite rules](/docs/routing/rewrites)                                                                                   |
+| **Redirect**                                       | Logs generated from [redirect rules](/docs/routing/redirects)                                                                                 |
 
 ### Request Type
 

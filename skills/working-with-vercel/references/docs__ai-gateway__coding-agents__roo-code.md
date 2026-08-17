@@ -13,13 +13,28 @@ related:
 summary: Use Roo Code with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "bb7dd8d04d969e7944c6f55c5f0a5c26848abf5e02680589ce89d339f45f0693"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4ead5568487b3c41d9a89245c32337b7c1372bc7e48498f817cfe50e2f38d5f5"
 ---
 
 # Roo Code
 
 [Roo Code](https://roocode.com) is a VS Code extension that brings AI coding assistance directly into your editor. You can configure it to use AI Gateway for unified model access and spend monitoring.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+- [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related) — Learn about kilo code on Vercel.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
+- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related) — Use Cline with the AI Gateway.
+- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/roo-code.graph.md](/docs/ai-gateway/coding-agents/roo-code.graph.md)
+<!-- /docsgraph:related -->
 
 ## Configuring Roo Code
 

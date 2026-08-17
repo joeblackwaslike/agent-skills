@@ -12,13 +12,28 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9022174f5d6fc36f85c137b644cf9687679961b53f7767da276c3b51d0a49bf5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "2764a1d9c0b313cef05ad441deafb12767b616bdccdb937112f025854b04ac64"
 ---
 
 # vercel domains
 
 The `vercel domains` command manages domains under the current scope. With it, you can list, inspect, verify, add, remove, purchase, move, transfer in, search, price, and check the availability of domains.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Working with Domains](https://vercel.com/docs/domains/working-with-domains?from=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Domains](https://vercel.com/docs/domains?from=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+- [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Viewing & Searching Domains](https://vercel.com/docs/domains/working-with-domains/view-and-search-domains?from=related) — Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
+
+Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** You can manage domains with further options and greater control under a Vercel
 > Project's Domains section in the sidebar from the Vercel Dashboard.

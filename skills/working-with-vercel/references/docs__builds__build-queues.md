@@ -10,17 +10,33 @@ prerequisites:
 related:
   - /docs/builds/managing-builds
   - /docs/pricing
-  - /docs/deployments/managing-builds
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "158d87f4185504353db0beade78a356d92ccd817347fba57babd1b653edfb68e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c4932ded7b9e72e032aea48add04590d53559c98451ed68344c6d40bf1e3f72a"
 ---
 
 # Build Queues
 
 Build queueing is when a build must wait for resources to become available before starting. This creates more time between when the code is committed and the deployment being ready.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Queues](https://vercel.com/docs/queues?from=related) — Durable event streaming for serverless. Publish messages to topics and process them reliably with managed consumer group
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+
+Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md)
+<!-- /docsgraph:related -->
 
 - [With On-Demand Concurrent Builds](#with-on-demand-concurrent-builds), builds will never queue.
 - [Without On-Demand Concurrent Builds](#without-on-demand-concurrent-builds), builds can queue under the conditions specified below.
@@ -47,7 +63,7 @@ When multiple deployments are started concurrently from code changes, Vercel's b
 
 ## Concurrency queue
 
-This queue manages how many builds can run in parallel based on the number of [concurrent build slots](/docs/builds/managing-builds#concurrent-builds) available to the team. If all concurrent build slots are in use, new builds are queued until a slot becomes available unless you have **On-Demand Concurrent Builds** [enabled at the project level](/docs/deployments/managing-builds#project-level-on-demand-concurrent-builds).
+This queue manages how many builds can run in parallel based on the number of [concurrent build slots](/docs/builds/managing-builds#concurrent-builds) available to the team. If all concurrent build slots are in use, new builds are queued until a slot becomes available unless you have **On-Demand Concurrent Builds** [enabled at the project level](/docs/builds/managing-builds#project-level-on-demand-concurrent-builds).
 
 ### How concurrent build slots work
 
@@ -70,7 +86,7 @@ Builds are handled sequentially. If new commits are pushed while a build is in p
 This means that commits in between the current build and most recent commit will not produce builds.
 
 > **💡 Note:** Enterprise users can use [Urgent On-Demand
-> Concurrency](/docs/deployments/managing-builds#urgent-on-demand-concurrent-builds)
+> Concurrency](/docs/builds/managing-builds#urgent-on-demand-concurrent-builds)
 > to skip the Git branch queue for specific builds.
 
 

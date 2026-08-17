@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "9a82aa6bff2af5742cd449d3f5e902ed1dc0d7d8a78c0609a61b0edfbfdda09d"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "dff0b63be229d20084a0015a298498d7af251bb78f450eee84290473aeb2c901"
 ---
 
 # DeepInfra Provider
@@ -327,7 +327,6 @@ const { embedding } = await embed({
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -337,6 +336,7 @@ const { embedding } = await embed({
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

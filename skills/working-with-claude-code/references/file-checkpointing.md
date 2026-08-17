@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/file-checkpointing.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "80b6e5ab4ebb9b95cb0e2e85be21a61c6bb00bb572ea9c92b0d24e9194e9bba1"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "1419f50f8a20774f3aa22774ee20bc4d08b25c7a09602b301d51af59f17c7395"
 ---
 
 > ## Documentation Index
@@ -27,14 +27,6 @@ With checkpointing, you can:
 ## How checkpointing works
 
 When you enable file checkpointing, the SDK creates backups of files before modifying them through the Write, Edit, or NotebookEdit tools. User messages in the response stream include a checkpoint UUID that you can use as a restore point.
-
-Checkpoint works with these built-in tools that the agent uses to modify files:
-
-| Tool         | Description                                                        |
-| ------------ | ------------------------------------------------------------------ |
-| Write        | Creates a new file or overwrites an existing file with new content |
-| Edit         | Makes targeted edits to specific parts of an existing file         |
-| NotebookEdit | Modifies cells in Jupyter notebooks (`.ipynb` files)               |
 
 <Note>
   File rewinding restores files on disk to a previous state. It does not rewind the conversation itself. The conversation history and context remain intact after calling `rewindFiles()` (TypeScript) or `rewind_files()` (Python).
@@ -692,13 +684,6 @@ Before you begin, make sure you have the [Claude Agent SDK installed](/docs/en/a
       main();
       ```
     </CodeGroup>
-
-    This example demonstrates the complete checkpointing workflow:
-
-    1. **Enable checkpointing**: configure the SDK with `enable_file_checkpointing=True` and `permission_mode="acceptEdits"` to auto-approve file edits
-    2. **Capture checkpoint data**: as the agent runs, store the first user message UUID (your restore point) and the session ID
-    3. **Prompt for rewind**: after the agent finishes, check your utility file to see the doc comments, then decide if you want to undo the changes
-    4. **Resume and rewind**: if yes, resume the session with an empty prompt and call `rewind_files()` to restore the original file
   </Step>
 
   <Step title="Run the example">

@@ -13,13 +13,33 @@ related:
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "daa6237dee9e9f17d1f5133e0b2ade67e1c2d2376adee13dc25fb49ff2595b19"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dbae7b529a28d890571bb20d4d98866049e3910bab23dd8269f2cd86c8db2baf"
 ---
 
 # Get Started with BotID
 
 This guide shows you how to add BotID protection to your Vercel project. BotID blocks automated bots while allowing real users through, protecting your APIs, forms, and sensitive endpoints from abuse.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\(\) so inference runs only for verified callers
+- [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile?from=related) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
+- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [Backend for Frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related) — Learn how to use Next.js as a backend framework
+- [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
+- [Client Uploads](https://vercel.com/docs/vercel-blob/client-upload?from=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [Redacting Sensitive Data](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related) — Learn how to redact sensitive data from your Web Analytics events.
+- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+
+Full cross-link map for this page: [/docs/botid/get-started.graph.md](/docs/botid/get-started.graph.md)
+<!-- /docsgraph:related -->
 
 The setup involves three main components:
 

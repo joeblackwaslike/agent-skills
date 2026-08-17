@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "73e120efac73d29341eae81fb5905cda6fb002c140ccf859b8708e4032d73098"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "e5258bfa40dc5a60093df4a46e5074dcd92d0ff7b43fc15a83718ad6656ec8f5"
 ---
 
 # Observability Integrations
@@ -44,7 +44,6 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
 - [AI SDK Providers](/providers/ai-sdk-providers)
   - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
   - [xAI Grok](/providers/ai-sdk-providers/xai)
-  - [Vercel](/providers/ai-sdk-providers/vercel)
   - [OpenAI](/providers/ai-sdk-providers/openai)
   - [Azure OpenAI](/providers/ai-sdk-providers/azure)
   - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -54,6 +53,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Groq](/providers/ai-sdk-providers/groq)
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+  - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -91,6 +91,9 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Pi](/providers/ai-sdk-harnesses/pi)
   - [OpenCode](/providers/ai-sdk-harnesses/opencode)
   - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+  - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+  - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+  - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -176,6 +179,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+  - [QVAC](/providers/community-providers/qvac)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

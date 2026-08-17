@@ -13,13 +13,28 @@ related:
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fb52909afef4c9d546003eff4a2ab5c018a885a88c6dd182cf88fabc5af2b2e5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e161bfb61d3f0886a61bb84b8ffa0307f50ad911df5ab37e80d4eab4e2c2c79e"
 ---
 
 # Vercel & OpenAI Integration
 
 Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable developers to build fast, scalable, and secure [AI applications](https://vercel.com/ai).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [xAI](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related) — Learn how to add the xAI native integration with Vercel.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [Together AI](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related) — Learn how to add Together AI connectable account integration with Vercel.
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [Deep Infra](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related) — Learn how to add the Deep Infra native integration with Vercel.
+
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/openai.graph.md](/docs/agent-resources/integrations-for-models/openai.graph.md)
+<!-- /docsgraph:related -->
 
 You can integrate with [any OpenAI model](https://platform.openai.com/docs/models/overview) using the [AI SDK](https://sdk.vercel.ai), including the following OpenAI models:
 

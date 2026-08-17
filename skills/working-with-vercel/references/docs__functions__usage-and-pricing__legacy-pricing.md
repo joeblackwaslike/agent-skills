@@ -10,15 +10,15 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/fluid-compute
-  - /docs/limits/usage
+  - /docs/pricing/manage-and-optimize-usage
   - /docs/functions/configuring-functions/memory
   - /docs/functions/usage-and-pricing
   - /docs/plans/hobby
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f02b21ee25a40c58a633fac3e05ccd5ffbdc1367efb5ad9f9b9686ae4918a09d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9053a8c9b2a579319a95460ab1d80d3d2d981b4c5268b236cb2fb2a2d54316fd"
 ---
 
 # Legacy Usage & Pricing for Functions
@@ -29,7 +29,22 @@ sha256: "f02b21ee25a40c58a633fac3e05ccd5ffbdc1367efb5ad9f9b9686ae4918a09d"
 > for active CPU time and provisioned memory time for more cost-effective and
 > transparent pricing.
 
-Functions using the Node.js runtime are measured in [GB-hours](/docs/limits/usage#execution), which is the [memory allocated](/docs/functions/configuring-functions/memory) for each Function in GB, multiplied by the time in hours they were running. For example, a function [configured](/docs/functions/configuring-functions/memory) to use 3GB of memory that executes for 1 second, would be billed at 3 GB-s, requiring 1,200 executions to reach a full GB-Hr.
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Limits](https://vercel.com/docs/functions/limitations?from=related) — Learn about the limits and restrictions of using Vercel Functions.
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Limits](https://vercel.com/docs/limits?from=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
+- [Legacy Metrics](https://vercel.com/docs/pricing/legacy?from=related) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
+- [Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related) — Learn about the pricing for Vercel Blob.
+
+Full cross-link map for this page: [/docs/functions/usage-and-pricing/legacy-pricing.graph.md](/docs/functions/usage-and-pricing/legacy-pricing.graph.md)
+<!-- /docsgraph:related -->
+
+Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/manage-and-optimize-usage#execution), which is the [memory allocated](/docs/functions/configuring-functions/memory) for each Function in GB, multiplied by the time in hours they were running. For example, a function [configured](/docs/functions/configuring-functions/memory) to use 3GB of memory that executes for 1 second, would be billed at 3 GB-s, requiring 1,200 executions to reach a full GB-Hr.
 
 A function can use up to 50 ms of CPU time per execution unit. If a function uses more than 50 ms, it will be divided into multiple 50 ms units for billing purposes.
 
@@ -65,10 +80,10 @@ To unpause your account, you have two main options:
 - **Contact Support**: You can reach out to our [support team](/help) to discuss the reason for the pause and potential resolutions
 - **Transfer to a Pro team**:
   If your Hobby team is paused, you won't have the option to initiate a [Pro trial](/docs/plans/pro-plan/trials). Instead, you can set up a Pro team:
-  1. [Create a Pro team account](/docs/accounts/create-a-team)
+  1. [Create a Pro team account](/docs/accounts#creating-a-team)
   2. Add a valid credit card to this account. Open **Settings** in the sidebar, then select [**Billing**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Go+to+Billing) and **Payment Method**
 
-Once set up, a transfer modal will appear, prompting you to [transfer your previous Hobby projects](/docs/projects/overview#transferring-a-project) to this new team. After transferring, you can continue with your projects as usual.
+Once set up, a transfer modal will appear, prompting you to [transfer your previous Hobby projects](/docs/projects#transferring-a-project) to this new team. After transferring, you can continue with your projects as usual.
 
 ### Pro
 
@@ -82,7 +97,7 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 Enterprise agreements provide custom usage and pricing for Vercel Functions, including:
 
-- Custom [execution units](/docs/functions/runtimes/edge/edge-functions#pricing)
+- Custom [execution units](/docs/fluid-compute#pricing)
 - Increased [maximum duration](/docs/functions/configuring-functions/duration) up to 800 seconds
 - Multi-region deployments
 - [Vercel Function failover](/docs/functions/configuring-functions/region#automatic-failover)
@@ -114,7 +129,7 @@ Executing a Vercel Function will increase Edge Request usage as well. Caching yo
 ### Optimizing function invocations
 
 - Use the **Projects** option to identify which projects have the most invocations and where you can optimize.
-- Cache your responses using [caching in the CDN](/docs/cdn-cache#using-vercel-functions) and [Cache-Control headers](/docs/headers#cache-control-header) to reduce the number of invocations and speed up responses for users.
+- Cache your responses using [caching in the CDN](/docs/caching/cdn-cache#using-vercel-functions) and [Cache-Control headers](/docs/headers#cache-control-header) to reduce the number of invocations and speed up responses for users.
 - See [How can I reduce my Serverless Execution usage on Vercel?](/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel) for more general information on how to reduce your Vercel functions usage.
 
 ## Managing function duration
@@ -146,7 +161,7 @@ To see your current usage, open **Usage** in the sidebar on your team's [Dashboa
 
 - Use the **Projects** option to identify which projects have the most execution time and where you can optimize.
 - You can adjust the [maximum duration](/docs/functions/configuring-functions/duration) for your functions to prevent excessive run times.
-- To reduce the GB-hours (Execution) of your functions, ensure you are [caching in the CDN](/docs/cdn-cache#using-vercel-functions) with Cache-Control headers. If using [Incremental Static Regeneration](/docs/incremental-static-regeneration), note that Vercel counts Function invocations on page revalidation towards both GB-hours and [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer).
+- To reduce the GB-hours (Execution) of your functions, ensure you are [caching in the CDN](/docs/caching/cdn-cache#using-vercel-functions) with Cache-Control headers. If using [Incremental Static Regeneration](/docs/incremental-static-regeneration), note that Vercel counts Function invocations on page revalidation towards both GB-hours and [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer).
 - For troubleshooting issues causing functions to run longer than expected or timeout, see [What can I do about Vercel Functions timing out?](/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out)
 
 ## Throttles

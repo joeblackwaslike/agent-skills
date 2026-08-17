@@ -13,13 +13,29 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a7fbda389fd7ca4d537cd1c19f865d5081ad03a62151cb89ece025819b72d342"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7e2af2d1966700c0ab41fc4e533b1b50d06f1f583bf5bced112b18bbe83d7c31"
 ---
 
 # Connect to Microsoft Azure
 
 > **🔒 Permissions Required**: Secure backend access with OIDC federation
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace?from=related) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
+- [AWS](https://vercel.com/docs/oidc/aws?from=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
+- [Google Cloud Platform](https://vercel.com/docs/oidc/gcp?from=related) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
+- [Connect your API](https://vercel.com/docs/oidc/api?from=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\)
+- [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
+- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+
+Full cross-link map for this page: [/docs/oidc/azure.graph.md](/docs/oidc/azure.graph.md)
+<!-- /docsgraph:related -->
 
 To understand how Azure supports OIDC through Workload Identity Federation, consult the [Azure documentation](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation).
 
@@ -39,8 +55,8 @@ To understand how Azure supports OIDC through Workload Identity Federation, cons
     - **Global**: `https://oidc.vercel.com`
   - In the **Subject identifier** field use: `owner:[TEAM_SLUG]:project[PROJECT_NAME]:environment:[preview | production | development]`
     - Replace `[TEAM_SLUG]` with your team identifier from the Vercel's team URL
-    - Replace `[PROJECT_NAME]` with your [project's name](https://vercel.com/docs/projects/overview#project-name) in your
-      [project's settings](https://vercel.com/docs/projects/overview#project-settings)
+    - Replace `[PROJECT_NAME]` with your [project's name](https://vercel.com/docs/projects#project-name) in your
+      [project's settings](https://vercel.com/docs/projects#project-settings)
   - In the **Name** field, use a name for your own reference such as: `[Project name] - [Environment]`
   - In the **Audience** field, you have two options:
     - **Default**: Enter `https://vercel.com/[TEAM_SLUG]`, replacing `[TEAM_SLUG]` with your team identifier from the Vercel team URL

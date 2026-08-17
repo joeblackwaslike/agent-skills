@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with Mastra to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e5c93f7336544d9179a0a68f0348313d49c2236b1afa84e9046a4e5047d16cd7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6209c64e62a70a0f8808d1d829a24190486bf8c133184b240401f8ccad5b2d13"
 ---
 
 # Mastra
@@ -23,6 +23,21 @@ sha256: "e5c93f7336544d9179a0a68f0348313d49c2236b1afa84e9046a4e5047d16cd7"
 [Mastra](https://mastra.ai) is a framework for building and deploying AI-powered features
 using a modern JavaScript stack powered by the [Vercel AI SDK](/docs/ai-sdk).
 Integrating with AI Gateway provides unified model management and routing capabilities.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [Pydantic AI](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
+- [LangChain](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
+- [Integrations for Models](https://vercel.com/docs/agent-resources/integrations-for-models?from=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [LlamaIndex](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex?from=related) — Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface
+
+Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/mastra.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/mastra.graph.md)
+<!-- /docsgraph:related -->
 
 ## Getting started
 

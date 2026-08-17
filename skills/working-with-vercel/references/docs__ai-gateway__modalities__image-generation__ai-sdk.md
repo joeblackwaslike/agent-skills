@@ -13,14 +13,33 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b28fa5dd9dd22d9168cd8498543d172cc9238b5ae0bc7f12fd2b2676cae40128"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "941d3ed17c5d50979db4981c2f402fbc88075c5a36e07adb38445ad71335dad9"
 ---
 
 # Image Generation with AI SDK
 
 AI Gateway supports image generation using the [AI SDK](https://ai-sdk.dev/docs/ai-sdk-core/image-generation) for the models listed under the **Image Gen** filter at the [AI Gateway Models
 page](/ai-gateway/models?type=image), including multimodal LLMs and image-only models.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Using Chat Completions API](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
+- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
+- [DeepInfra](https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra?from=related)
+- [Google Gemini Image Generation](https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation?from=related)
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related)
+- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+
+Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md](/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md)
+<!-- /docsgraph:related -->
 
 ## Multimodal LLMs
 
@@ -409,11 +428,11 @@ async function main() {
 main().catch(console.error);
 ```
 
-### xAI Grok Imagine
+### SpaceXAI Grok Imagine
 
-xAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios and image editing. Browse the current lineup in the [model list](/ai-gateway/models).
+SpaceXAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios and image editing. Browse the current lineup in the [model list](/ai-gateway/models).
 
-> **💡 Note:** xAI image models do not support the `size` parameter. Use `aspectRatio`
+> **💡 Note:** SpaceXAI image models do not support the `size` parameter. Use `aspectRatio`
 > instead.
 
 ```typescript filename="generate-xai.ts"

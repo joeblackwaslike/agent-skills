@@ -9,25 +9,44 @@ prerequisites:
   - /docs/frameworks/frontend
   - /docs/frameworks
 related:
-  - /docs/frameworks/sveltekit
+  - /docs/frameworks/full-stack/sveltekit
   - /docs/frameworks/full-stack/nuxt
-  - /docs/frameworks/create-react-app
+  - /docs/frameworks/frontend/create-react-app
   - /docs/frameworks/full-stack/vite-with-nitro
   - /docs/environment-variables/system-environment-variables
 summary: "Learn how to use Vercel's features with Vite."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/vite.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "8975eb8857d690644f326f1207a54ca203ad7213c9191ac1e59aadf6293a71d0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e988308cca51bc64c74ab99f496933e2e0feb304e1d2a48481f08156a45d5e70"
 ---
 
 # Vite on Vercel
 
 Vite is an opinionated build tool that aims to provide a faster and leaner development experience for modern web projects. Vite provides a dev server with rich feature enhancements such as pre-bundling NPM dependencies and hot module replacement, and a build command that bundles your code and outputs optimized static assets for production.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related) — The Nitro Vite plugin \(nitro/vite\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
+- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Vite](https://turborepo.dev/docs/guides/frameworks/vite?from=related) — Add and configure Vite applications in your Turborepo monorepo.
+- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
+
+Full cross-link map for this page: [/docs/frameworks/frontend/vite.graph.md](/docs/frameworks/frontend/vite.graph.md)
+<!-- /docsgraph:related -->
+
 These features make Vite more desirable than out-of-the-box CLIs when building larger projects with frameworks for many developers.
 
-Vite powers popular frameworks like [SvelteKit](/docs/frameworks/sveltekit) and [Nuxt](/docs/frameworks/full-stack/nuxt), and is often used in projects built with [Vue](/kb/guide/deploying-vuejs-to-vercel), [Svelte](/docs/frameworks/sveltekit), [React](/docs/frameworks/create-react-app), [Preact](/kb/guide/deploying-preact-with-vercel), [Nitro](/docs/frameworks/full-stack/vite-with-nitro), [and more](https://github.com/vitejs/vite/tree/main/packages/create-vite).
+Vite powers popular frameworks like [SvelteKit](/docs/frameworks/full-stack/sveltekit) and [Nuxt](/docs/frameworks/full-stack/nuxt), and is often used in projects built with [Vue](/kb/guide/deploying-vuejs-to-vercel), [Svelte](/docs/frameworks/full-stack/sveltekit), [React](/docs/frameworks/frontend/create-react-app), [Preact](/kb/guide/deploying-preact-with-vercel), [Nitro](/docs/frameworks/full-stack/vite-with-nitro), [and more](https://github.com/vitejs/vite/tree/main/packages/create-vite).
 
 ## Getting started
 
@@ -75,7 +94,7 @@ If you want to read environment variables from a `.env` file, additional configu
 
 Vercel Functions scale up and down their resource consumption based on traffic demands. This scaling prevents them from failing during peak hours, but keeps them from running up high costs during periods of low activity.
 
-If you're using a framework built on Vite, check that framework's official documentation or [our dedicated framework docs](/docs/frameworks). Some frameworks built on Vite, such as [SvelteKit](/docs/frameworks/sveltekit), support Functions natively. **We recommend using that framework's method for implementing Functions**.
+If you're using a framework built on Vite, check that framework's official documentation or [our dedicated framework docs](/docs/frameworks). Some frameworks built on Vite, such as [SvelteKit](/docs/frameworks/full-stack/sveltekit), support Functions natively. **We recommend using that framework's method for implementing Functions**.
 
 If you're not using a framework or plugin that supports Vercel Functions, you can add Nitro to your Vite project to add a comprehensive backend to your project. Learn more about building [full-stack Vite projects with Nitro](/docs/frameworks/full-stack/vite-with-nitro#adding-api-routes).
 
@@ -97,7 +116,7 @@ We recommend [using Nitro](/docs/frameworks/full-stack/vite-with-nitro#server-si
 
 - Scales to zero when not in use
 - Scales automatically with traffic increases
-- Has zero-configuration support for [`Cache-Control`](/docs/cdn-cache) headers, including `stale-while-revalidate`
+- Has zero-configuration support for [`Cache-Control`](/docs/caching/cdn-cache) headers, including `stale-while-revalidate`
 
 [Learn more about SSR with Nitro](/docs/frameworks/full-stack/vite-with-nitro)
 

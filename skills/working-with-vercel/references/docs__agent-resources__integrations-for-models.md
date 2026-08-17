@@ -8,21 +8,37 @@ type: conceptual
 prerequisites:
   - /docs/agent-resources
 related:
+  - /docs/agent-resources/integrations-for-models/pinecone
   - /docs/agent-resources/integrations-for-models/adding-a-provider
   - /docs/agent-resources/integrations-for-models/adding-a-model
   - /docs/agent-resources/integrations-for-models/xai
   - /docs/agent-resources/integrations-for-models/groq
-  - /docs/agent-resources/integrations-for-models/fal
 summary: Integrate powerful AI services and models seamlessly into your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "88d51a63f27c1ca924bcf8bd7933b1a5a8fe496e6e7ee5686e4682b1e6fa1146"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "cf313c8cce4dc0dca5d074e539d092d94f7f74704581f1da2a72577215adcadf"
 ---
 
 # Build with AI on Vercel
 
 AI services and models help enhance and automate the building and deployment of applications for various use cases:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Pydantic AI](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [AI Gateway](https://vercel.com/docs/ai-gateway?from=related) — AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with text, image, and video
+
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models.graph.md](/docs/agent-resources/integrations-for-models.graph.md)
+<!-- /docsgraph:related -->
 
 - Chatbots and virtual assistants improve customer interactions.
 - AI-powered content generation automates and optimizes digital content.
@@ -36,7 +52,7 @@ AI services and models help enhance and automate the building and deployment of 
 With Vercel AI integrations, you can build and deploy these AI-powered applications efficiently. Through the Vercel Marketplace, you can research which AI service fits your needs with example use cases. Then, you can install and manage two types of AI integrations:
 
 - **Native integrations**: Built-in solutions that work seamlessly with Vercel and include resources with built-in billing and account provisioning.
-- **Connectable accounts**: Third-party services you can link to your projects.
+- **Connectable accounts**: Third-party services you can link to your projects, such as the [Pinecone vector database](/docs/agent-resources/integrations-for-models/pinecone) for search and recommendation features.
 
 ## Using AI integrations
 

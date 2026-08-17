@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cencori.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "20d68b766c7012335aac4585e526b089780acb0051dc721e4c35e3d499c366b8"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "8ecedcb463ebf10400c69f0fbe1084f5a94d3b85bc1635a63ed01602c799fb2e"
 ---
 
 # Cencori
@@ -290,6 +290,7 @@ const model = cencori('gpt-4o', {
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

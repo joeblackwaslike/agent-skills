@@ -10,19 +10,34 @@ prerequisites:
 related:
   - /docs/speed-insights
   - /docs/deployments
-  - /docs/integrations/checks-overview/creating-checks
+  - /docs/checks/creating-checks
   - /docs/integrations
-  - /docs/integrations/create-integration/marketplace-product
+  - /docs/checks/checks-api
 summary: Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Checks in your Vercel workflow...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "e03284c14f4e2a20aa7e9339ea4cde3c6c07dbeddd941e76063c3baa55e873a0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3bc239ab4d9c0e9b9c22bcc1a1f15fadeb221ed9f5533c2178026b0ba1ed58ad"
 ---
 
 # Working with Checks
 
 Checks are tests and assertions created and run after every successful deployment. **Checks API** defines your application's quality metrics, runs end-to-end tests, investigates APIs' reliability, and checks your deployment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
+- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check?from=related)
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check?from=related)
+- [Create a check run](https://vercel.com/docs/rest-api/checks-v2/create-a-check-run?from=related)
+
+Full cross-link map for this page: [/docs/checks.graph.md](/docs/checks.graph.md)
+<!-- /docsgraph:related -->
 
 Most testing and CI/CD flows occur in synthetic environments. This leads to false results, overlooked performance degradation, and missed broken connections.
 
@@ -47,11 +62,11 @@ The diagram shows the complete lifecycle of how a check works:
 4. Vercel waits until all the created checks receive an update
 5. Once all checks receive a `conclusion`, aliases will apply, and the deployment will go live
 
-Learn more about this process in the [Anatomy of Checks API](/docs/integrations/checks-overview/creating-checks)
+Learn more about this process in the [Anatomy of Checks API](/docs/checks/creating-checks)
 
 ## Checks integrations
 
-You can create a [native](/docs/integrations#native-integrations) or [connectable account](/docs/integrations#connectable-accounts) integration that works with the checks API to facilitate testing of deployments for Vercel users.
+You can create a [native](/docs/integrations#native-integrations) or [connectable account](/docs/integrations#connectable-accounts) integration that works with the checks API to facilitate testing of deployments for Vercel users. The [Checks API reference](/docs/checks/checks-api) lists the endpoints your integration calls to create and update checks.
 
 ### Install integrations
 

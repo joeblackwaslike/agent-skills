@@ -8,18 +8,35 @@ type: how-to
 prerequisites:
   - /docs/deployments
 related:
-  - /docs/deployments/deployment-protection
+  - /docs/deployment-protection
   - /docs/og-image-generation
 summary: Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/og-preview.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f301ca1aecaac585de6f979762baeba3be179aef8bd3e1e2a711cbc80a16fecb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e1e8a91d95b6d3e03fbfa5f217355967ccb220a071954d0e4d0fb22e3bc9cab5"
 ---
 
 # Inspecting your Open Graph metadata
 
-You can use the **Open Graph** section in the sidebar on every deployment on Vercel to validate and view your [Open Graph (OG)](https://ogp.me/ "Open Graph (OG)") data across a range of social media sites before you share it out. Routes using [Deployment Protection](/docs/deployments/deployment-protection) can also be inspected.
+You can use the **Open Graph** section in the sidebar on every deployment on Vercel to validate and view your [Open Graph (OG)](https://ogp.me/ "Open Graph (OG)") data across a range of social media sites before you share it out. Routes using [Deployment Protection](/docs/deployment-protection) can also be inspected.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Displaying headlines in social previews with Vercel OG](https://vercel.com/kb/guide/displaying-article-headlines-in-social-previews?from=related) — Twitter/X is planning to remove headlines from social previews. To get around this limitation, Vercel OG offers a way to
+- [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related) — Learn how to add metadata to your pages and create dynamic OG images.
+- [Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related)
+- [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+
+Full cross-link map for this page: [/docs/deployments/og-preview.graph.md](/docs/deployments/og-preview.graph.md)
+<!-- /docsgraph:related -->
 
 To view your data:
 

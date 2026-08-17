@@ -11,18 +11,34 @@ related:
   - /docs/plans/pro-plan
   - /docs/plans/enterprise
   - /docs/vercel-firewall
-  - /docs/security/ddos-mitigation
+  - /docs/vercel-firewall/ddos-mitigation
   - /docs/headers/request-headers
 summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "be9fc3a30743cf2a0c9e2a7d6385ffb80d352e083c83196d7b6c9e8530593301"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3909d642ff720b5f19a5baf64d78be4d4db119df18571b8a8171fca4ec68f0dd"
 ---
 
 # Setting Up Webhooks
 
 A webhook is a trigger-based HTTP endpoint configured to receive HTTP POST requests through events. When an event happens, a webhook is sent to another third-party app, which can then take appropriate action.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment?from=related) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
+- [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook?from=related)
+- [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
+- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related)
+- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related)
+- [Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
+
+Full cross-link map for this page: [/docs/webhooks.graph.md](/docs/webhooks.graph.md)
+<!-- /docsgraph:related -->
 
 Webhooks configured with Vercel can trigger a deployment when a specific event occurs. Vercel integrations receive platform events through webhooks.
 
@@ -69,7 +85,7 @@ Vercel allows you to add a [generic](# "What is a generic webhook?") endpoint fo
   - **Flag Segment Deleted**: Listens whenever a flag segment is deleted
   #### Firewall events
   Configurable webhooks listen to the following firewall-based events:
-  - **Attack Detected**: Listens for when the [Vercel Firewall](/docs/vercel-firewall) detects and mitigates a [DDoS attack](/docs/security/ddos-mitigation)
+  - **Attack Detected**: Listens for when the [Vercel Firewall](/docs/vercel-firewall) detects and mitigates a [DDoS attack](/docs/vercel-firewall/ddos-mitigation)
   The events you select should depend on your use case and the workflow you want to implement.
 
 - ### Choose your target projects

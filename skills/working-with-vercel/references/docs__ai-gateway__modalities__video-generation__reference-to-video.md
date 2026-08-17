@@ -16,13 +16,32 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok Imagine Video through AI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "6f7970a6dae3f32163f05d56744e26812038ff0fabf8dfbb404a044b79bead37"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "13ad30aa876c4ad99107ff4674176bc3532425906b9085ccb6fe7dba9324669a"
 ---
 
 # Reference-to-Video Generation
 
 Generate a completely new video scene featuring characters from reference media.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related)
+- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs?from=related)
+- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
+- [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md)
+<!-- /docsgraph:related -->
 
 This is different from [image-to-video](/docs/ai-gateway/modalities/video-generation/image-to-video), which animates an existing image. With reference-to-video, the reference images only show the model what your characters look like. They don't become the video content. Instead, your prompt describes a completely new scene, and the model generates that scene from scratch with your characters in it.
 

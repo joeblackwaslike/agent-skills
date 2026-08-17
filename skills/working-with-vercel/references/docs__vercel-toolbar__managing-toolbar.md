@@ -11,18 +11,33 @@ related:
   - /docs/vercel-toolbar/browser-extension
   - /docs/deployments/environments
   - /docs/environment-variables
-  - /docs/domains/add-a-domain
-  - /docs/headers/cache-control-headers
+  - /docs/domains/working-with-domains/add-a-domain
+  - /docs/caching/cache-control-headers
 summary: Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/managing-toolbar.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5dee3bab2e63f21dd89ba2d94043d5cfd872006840427c53d7313802698d03da"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f6ed6c68bb575db051d3f9f98a7e17a955ab84b7577bd64921d79e39eac82de7"
 ---
 
 # Managing the visibility of the Vercel Toolbar
 
 > **🔒 Permissions Required**: Vercel Toolbar
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
+- [Add to Environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related) — Learn how to use the Vercel Toolbar in production and local environments.
+- [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [Add to Localhost](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related) — Learn how to use the Vercel Toolbar in your local environment.
+
+Full cross-link map for this page: [/docs/vercel-toolbar/managing-toolbar.graph.md](/docs/vercel-toolbar/managing-toolbar.graph.md)
+<!-- /docsgraph:related -->
 
 ## Viewing the toolbar
 
@@ -100,13 +115,13 @@ VERCEL_PREVIEW_FEEDBACK_ENABLED=0
 
 ## Using the toolbar with a custom alias domain
 
-To use the toolbar with preview deployments that have [custom alias domains](/docs/domains/add-a-domain), you must opt into the toolbar explicitly in your project settings on [the dashboard](/dashboard).
+To use the toolbar with preview deployments that have [custom alias domains](/docs/domains/working-with-domains/add-a-domain), you must opt into the toolbar explicitly in your project settings on [the dashboard](/dashboard).
 
 ## Using a Content Security Policy
 
 If you have a [Content Security Policy (CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) configured, you **may** need to adjust the CSP to enable access to the Vercel Toolbar or Comments.
 
-You can make the following adjustments to the `Content-Security-Policy` [response header](/docs/headers/cache-control-headers#custom-response-headers):
+You can make the following adjustments to the `Content-Security-Policy` [response header](/docs/caching/cache-control-headers#custom-response-headers):
 
 - Add the following to `script-src` (Most commonly used):
   ```bash

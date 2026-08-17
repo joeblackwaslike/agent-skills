@@ -14,13 +14,33 @@ related:
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "df546d310c124c9e3f25d1b2642b71fd04a7573d6749e2fcecc5774b915c1df3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7f8a472fe12b1702cb9eb5c45b8ff6fc3b75e50d8cfb96118ae8a3d27210bc74"
 ---
 
 # Observability Plus
 
 > **🔒 Permissions Required**: Observability Plus
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Pro Plan Trial](https://vercel.com/docs/plans/pro-plan/trials?from=related) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
+- [Limits and Pricing](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+
+Full cross-link map for this page: [/docs/observability/observability-plus.graph.md](/docs/observability/observability-plus.graph.md)
+<!-- /docsgraph:related -->
 
 Every Vercel team has access to [Observability](/docs/observability). **Observability Plus** is available on Paid Pro and Enterprise teams and unlocks more granular data exploration, helping you pinpoint when and why issues occurred.
 

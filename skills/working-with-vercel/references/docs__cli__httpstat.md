@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/security/deployment-protection
+  - /docs/deployment-protection
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
   - /docs/cli
   - /docs/cli/global-options
@@ -16,15 +16,30 @@ related:
 summary: Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/httpstat.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "05a2adbbff3a545daf883cdc6f10bbd620e4e23a3648772f393a640e2069ad5f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f14742bbde0be8b259620acd09349f43da1e8e4913c821334bcf926651c112ad"
 ---
 
 # vercel httpstat
 
 > **💡 Note:** The `vercel httpstat` command is currently in beta. Features and behavior may change.
 
-The `vercel httpstat` command works like `httpstat`, but automatically handles deployment protection bypass tokens for you. It provides visualization of HTTP timing statistics, showing how long each phase of an HTTP request takes. When your project has [Deployment Protection](/docs/security/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+
+Full cross-link map for this page: [/docs/cli/httpstat.graph.md](/docs/cli/httpstat.graph.md)
+<!-- /docsgraph:related -->
+
+The `vercel httpstat` command works like `httpstat`, but automatically handles deployment protection bypass tokens for you. It provides visualization of HTTP timing statistics, showing how long each phase of an HTTP request takes. When your project has [Deployment Protection](/docs/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
 
 The command runs the `httpstat` tool with the same arguments you provide, but adds an [`x-vercel-protection-bypass`](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation#using-protection-bypass-for-automation) header with a valid token. This makes it simple to measure response times, analyze performance bottlenecks, or debug latency issues on protected deployments.
 
@@ -199,7 +214,7 @@ When using `--deployment`, verify that:
 
 ## Related
 
-- [Deployment Protection](/docs/security/deployment-protection)
+- [Deployment Protection](/docs/deployment-protection)
 - [vercel curl](/docs/cli/curl)
 - [vercel deploy](/docs/cli/deploy)
 - [vercel inspect](/docs/cli/inspect)

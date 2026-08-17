@@ -9,7 +9,7 @@ prerequisites:
   - /docs/functions/configuring-functions
   - /docs/functions
 related:
-  - /docs/cdn-cache
+  - /docs/caching/cdn-cache
   - /docs/regions
   - /docs/pricing/regional-pricing/iad1
   - /docs/project-configuration/vercel-json
@@ -17,13 +17,33 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "8515cf7cbd30e5adef9ec069a103a072ffdaebcc0c146ece153d290eba0a360e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "639947b313d66fff0ea2e6b6b57387cf61ca43c8b30dd6ea832a2b44b28dd29e"
 ---
 
 # Configuring regions for Vercel Functions
 
-The Vercel platform caches all static content in [the CDN](/docs/cdn-cache) by default. This means your users will always get static files like HTML, CSS, and JavaScript served from the region that is closest to them. See the [regions](/docs/regions) page for a full list of our regions.
+The Vercel platform caches all static content in [the CDN](/docs/caching/cdn-cache) by default. This means your users will always get static files like HTML, CSS, and JavaScript served from the region that is closest to them. See the [regions](/docs/regions) page for a full list of our regions.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors?from=related) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
+- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+
+Full cross-link map for this page: [/docs/functions/configuring-functions/region.graph.md](/docs/functions/configuring-functions/region.graph.md)
+<!-- /docsgraph:related -->
 
 In a globally distributed application, the physical distance between your function and its data source can impact latency and response times. Therefore, Vercel allows you to specify the region in which your functions execute, ideally close to your data source (such as your [database](/marketplace/category/database)).
 
@@ -106,7 +126,7 @@ The number of regions your functions can run in depends on your plan:
 | Pro        | 5 regions        |
 | Enterprise | All regions      |
 
-Deploying to more regions than your plan allows causes the deployment to fail before the [build step](/docs/deployments/configure-a-build).
+Deploying to more regions than your plan allows causes the deployment to fail before the [build step](/docs/builds/configure-a-build).
 
 Vercel deploys [Routing Middleware](/docs/routing-middleware) to all regions by default, regardless of your region settings. On the Hobby plan, Routing Middleware runs in fewer regions.
 

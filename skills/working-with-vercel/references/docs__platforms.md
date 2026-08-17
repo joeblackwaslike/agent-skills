@@ -10,19 +10,32 @@ prerequisites:
 related:
   - /docs/platforms/multi-tenant-platforms/concepts
   - /docs/platforms/multi-project-platforms/concepts
-  - /docs/sdk
+  - /docs/rest-api/sdk
   - /docs/platforms/examples/multi-tenant-template
   - /docs/platforms/platform-elements/blocks/claim-deployment
 summary: Build platforms that serve multiple customers from a single codebase, with custom domains, wildcard subdomains, and automatic SSL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5bc898dd5617b15d2d2ef395256930c5415178b3114256077fb1f9cc759486f2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "2ec5c7be9241647f00b4b0db8ed64fa9b4bb0d3f1f4488aaad4a37e56c481822"
 ---
 
 # Vercel for Platforms
 
 ## Choosing an architecture
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+
+Full cross-link map for this page: [/docs/platforms.graph.md](/docs/platforms.graph.md)
+<!-- /docsgraph:related -->
 
 Most platforms on Vercel follow one of two patterns. Pick the one that matches how isolated each customer needs to be:
 
@@ -31,7 +44,7 @@ Most platforms on Vercel follow one of two patterns. Pick the one that matches h
 | [Multi-tenant](/docs/platforms/multi-tenant-platforms/concepts)   | One codebase, one deployment serves every tenant | Lower      | Content and branding differ, but functionality is the same (documentation sites, website builders, SaaS dashboards) |
 | [Multi-project](/docs/platforms/multi-project-platforms/concepts) | One project and deployment per tenant            | Higher     | Each tenant needs custom code or isolated infrastructure (AI coding platforms, user-generated apps)                 |
 
-For a multi-tenant build, clone the [Platforms Starter Kit](/templates/next.js/platforms-starter-kit). For a multi-project build, create and deploy tenant projects with the [Vercel SDK](/docs/sdk).
+For a multi-tenant build, clone the [Platforms Starter Kit](/templates/next.js/platforms-starter-kit). For a multi-project build, create and deploy tenant projects with the [Vercel SDK](/docs/rest-api/sdk).
 
 ## What you can build
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/variables.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "7d887e5c2bf1e1ae838e063b961abf616d890e849830d3ed2749ef194d87873d"
+fetched_at: "2026-08-17T04:46:35.458Z"
+sha256: "b5558adb0b514c2fb84702e946d469a4a2833d4e1fd1ecfef38baa2eeba90f9a"
 ---
 
 This article lists the supported variables you can use in {% data variables.product.prodname_actions %} workflows, including environment variables, configuration variables, and default variables provided by {% data variables.product.github %}. Use this reference to look up variable names, naming conventions, limits, and supported contexts when configuring your workflows.
@@ -28,6 +28,10 @@ We strongly recommend that actions use variables to access the filesystem rather
 | `GITHUB_ACTOR` | The name of the person or app that initiated the workflow. For example, `octocat`. |
 | `GITHUB_ACTOR_ID` | {% data reusables.actions.actor_id-description %} |
 | `GITHUB_API_URL` | Returns the API URL. For example: `{% data variables.product.rest_url %}`. |
+| {% ifversion actions-artifacts-file %} |
+| `GITHUB_ARTIFACTS` | The path on the runner to the file that declares workflow artifacts for the current step. Write one declaration per line to identify files or OCI digest references as workflow artifacts. For more information, see [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-commands#declaring-workflow-artifacts). |
+| `GITHUB_ARTIFACTS_LIST` | The path on the runner to a read-only file that contains aggregated workflow artifact metadata for the current job as a JSON object. For more information, see [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-commands#reading-workflow-artifacts). |
+| {% endif %} |
 | `GITHUB_BASE_REF` | The name of the base ref or target branch of the pull request in a workflow run. This is only set when the event that triggers a workflow run is either `pull_request` or `pull_request_target`. For example, `main`. |
 | `GITHUB_ENV` | The path on the runner to the file that sets variables from workflow commands. The path to this file is unique to the current step and changes for each step in a job. For example, `/home/runner/work/_temp/_runner_file_commands/set_env_87406d6e-4979-4d42-98e1-3dab1f48b13a`. For more information, see [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-commands#setting-an-environment-variable). |
 | `GITHUB_EVENT_NAME` | The name of the event that triggered the workflow. For example, `workflow_dispatch`. |

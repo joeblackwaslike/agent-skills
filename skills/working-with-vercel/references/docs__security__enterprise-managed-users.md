@@ -14,13 +14,30 @@ related:
 summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in identity of every member. Members sign in through your SAML SSO provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ba30b76cc9e94934d21237aa394c5164efdac8823f946d301946df7858cbd980"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f5dd1dc55b3468463bcefdb69545ec067aaf20d289520e679b3c4b214dea4d45"
 ---
 
 # Enterprise Managed Users (EMU)
 
 Enterprise Managed Users (EMU) lets your team own and control each member's Vercel account. Members sign in through your SAML SSO provider with a **managed account** created for and restricted to your team, rather than a personal Vercel account.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
+
+Full cross-link map for this page: [/docs/security/enterprise-managed-users.graph.md](/docs/security/enterprise-managed-users.graph.md)
+<!-- /docsgraph:related -->
 
 This guide explains the prerequisites for enabling EMU, how to enable it for your team, what changes for your members, and how existing Hobby teams on your verified domains are handled.
 

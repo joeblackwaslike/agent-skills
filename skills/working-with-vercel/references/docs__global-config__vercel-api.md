@@ -12,17 +12,33 @@ related:
   - /docs/global-config/global-config-sdk
   - /docs/cdn
   - /docs/rest-api
-  - /docs/rest-api/vercel-api-integrations
+  - /docs/integrations/create-integration/vercel-api-integrations
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "901303f3317eaa93e51c5af47b5a8938bc4ce0b404f551ea2430f9a5c2e79b6a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fd942dd4561b34a1b7e93c2af4c7fde3f8efb9bb6538b8c13305f24a707f7483"
 ---
 
 # Managing Global Configs with Vercel REST API
 
 We recommend you use the Vercel REST API only for creating and updating a [Global Config](/docs/global-config). For reading data (which you should do more often), we highly recommend using the [SDK](/docs/global-config/global-config-sdk).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related)
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related)
+
+Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md)
+<!-- /docsgraph:related -->
 
 Updates to your Global Config can take up to a few seconds to propagate globally, and therefore might not be available from the Global Config API endpoint immediately. However, fetching your Global Config data from the Vercel REST API will always return the latest version of your Config. The request will not have Vercel's optimizations, and the response will not be served through Vercel's [CDN](/docs/cdn).
 
@@ -95,7 +111,7 @@ Upon success, you should receive a JSON response similar to the following:
 
 The above example will create a Global Config scoped to your Hobby team. To scope your Global Config to a Vercel Team:
 
-- [Generate a Vercel REST API access token](/docs/rest-api/vercel-api-integrations#create-an-access-token) that is scoped to the appropriate Vercel Team
+- [Generate a Vercel REST API access token](/docs/integrations/create-integration/vercel-api-integrations#create-an-access-token) that is scoped to the appropriate Vercel Team
 - Add the `?teamId` query parameter to your `POST` request. Set its value to [the Team's ID](/docs/accounts#find-your-team-id), which you can find under the **Settings** section in the sidebar in the Team's **Dashboard** on Vercel.
 
 > **💡 Note:** The `"ownerId"` key's value will be your

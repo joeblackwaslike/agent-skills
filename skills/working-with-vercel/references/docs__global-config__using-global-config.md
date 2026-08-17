@@ -16,13 +16,28 @@ related:
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f2de8f557da7b6b007ca7bb920cfd837f7c12f07908e152ab3d5134a0203d02e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dbe7a363ae6f70a5b6e9b916b11d2840bc116cfd3f21c10cbdbbba252f33f122"
 ---
 
 # Using Global Config
 
 [Global Config](/docs/global-config) is a global data store that offers ultra-low latency read speeds from anywhere in the world thanks to [Vercel's CDN](/docs/cdn).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Getting Started](https://vercel.com/docs/global-config/get-started?from=related) — Learn how to create a Global Config store and read from it in your project.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related)
+- [LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+
+Full cross-link map for this page: [/docs/global-config/using-global-config.graph.md](/docs/global-config/using-global-config.graph.md)
+<!-- /docsgraph:related -->
 
 We recommend using [the Global Config client SDK](/docs/global-config/global-config-sdk) to read data from your Global Configs. To write data to your Global Configs, use [Vercel REST API](/docs/rest-api) as outlined in [our docs on managing Global Configs with the API](/docs/global-config/vercel-api).
 

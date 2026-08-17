@@ -12,13 +12,29 @@ related:
 summary: Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/managing-comments.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "28d1c00c01599e64be511830517981b4d0c36cb008fd3e703c93e728b6cef6d7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ce2dd67598567135d2695d25d6ae0ca7f2332a1d59efcb6cf18c7bb596bc7ff3"
 ---
 
 # Managing Comments on Preview Deployments
 
 ## Resolve comments
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Comments](https://vercel.com/docs/comments/using-comments?from=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [How do I prevent the Vercel for GitHub integration comments?](https://vercel.com/kb/guide/how-to-prevent-vercel-github-comments?from=related) — Information on how to prevent the Vercel for GitHub integration from adding comments.
+- [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Toolbar](https://vercel.com/docs/vercel-toolbar?from=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+
+Full cross-link map for this page: [/docs/comments/managing-comments.graph.md](/docs/comments/managing-comments.graph.md)
+<!-- /docsgraph:related -->
 
 You can resolve comments by selecting the **☐ Resolve** checkbox that appears under each thread or comment. You can access this checkbox by selecting a comment wherever it appears on the page, or by selecting the thread associated with the comment in the **Inbox**.
 

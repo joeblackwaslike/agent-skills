@@ -9,34 +9,49 @@ prerequisites:
   - /docs/integrations/create-integration
   - /docs/integrations
 related:
-  - /docs/rest-api/reference/endpoints/projects/create-one-or-more-environment-variables
+  - /docs/rest-api/projects/create-one-or-more-environment-variables
   - /docs/drains/reference/logs
-  - /docs/rest-api/vercel-api-integrations
-  - /docs/rest-api/reference/welcome
   - /docs/rest-api
+  - /docs/integrations/create-integration/submit-integration
+  - /docs/project-configuration
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "dcba870df506ee2cfe947e1db56b9369d46ea4c30001121d200a284e29ddd139"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1a968862c81d3053b312cd5466843d56e2ae114f6ad227ed0759c4358f2d0b24"
 ---
 
 # Building Integrations with Vercel REST API
 
 ## Using the Vercel REST API
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related) — Lean more about when you may need to upgrade your Integration.
+- [Get configurations for the authenticated user or team](https://vercel.com/docs/rest-api/integrations/get-configurations-for-the-authenticated-user-or-team?from=related)
+- [Retrieve an integration configuration](https://vercel.com/docs/rest-api/integrations/retrieve-an-integration-configuration?from=related)
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+
+Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md)
+<!-- /docsgraph:related -->
+
 See the following API reference documentation for how to use Vercel REST API to create integrations:
 
-- [Creating a Project Environment Variable](/docs/rest-api/reference/endpoints/projects/create-one-or-more-environment-variables)
+- [Creating a Project Environment Variable](/docs/rest-api/projects/create-one-or-more-environment-variables)
 - [Forwarding Logs using Log Drains](/docs/drains/reference/logs)
-- [Create an Access Token](/docs/rest-api/vercel-api-integrations#create-an-access-token)
-- [Interacting with Teams](/docs/rest-api/vercel-api-integrations#interacting-with-teams)
-- [Interacting with Configurations](/docs/rest-api/vercel-api-integrations#interacting-with-configurations)
-- [Interacting with Vercel Projects](/docs/rest-api/vercel-api-integrations#interacting-with-vercel-projects)
+- [Create an Access Token](/docs/integrations/create-integration/vercel-api-integrations#create-an-access-token)
+- [Interacting with Teams](/docs/integrations/create-integration/vercel-api-integrations#interacting-with-teams)
+- [Interacting with Configurations](/docs/integrations/create-integration/vercel-api-integrations#interacting-with-configurations)
+- [Interacting with Vercel Projects](/docs/integrations/create-integration/vercel-api-integrations#interacting-with-vercel-projects)
 
 ### Create an Access Token
 
-To use Vercel REST API, you need to authenticate with an [access token](/docs/rest-api/reference/welcome#authentication) that contains the necessary [scope](#scopes). You can then provide the API token through the [`Authorization` header](/docs/rest-api#authentication).
+To use Vercel REST API, you need to authenticate with an [access token](/docs/rest-api#authentication) that contains the necessary [scope](#scopes). You can then provide the API token through the [`Authorization` header](/docs/rest-api#authentication).
 
 #### Exchange `code` for Access Token
 
@@ -50,12 +65,12 @@ One of these parameters is the `code` parameter. This short-lived parameter is v
 
 Pass the following values to the request body in the form of `application/x-www-form-urlencoded`.
 
-| Key               | [Type](/docs/rest-api/reference#types) | Required | Description                                                 |
+| Key               | [Type](/docs/rest-api#types) | Required | Description                                                 |
 | ----------------- | ----------------------------------------------------------------------- | -------- | ----------------------------------------------------------- |
-| **client\_id**     | [ID](/docs/rest-api/reference#types)           | Yes      | ID of your application.                                     |
-| **client\_secret** | [String](/docs/rest-api/reference#types)       | Yes      | Secret of your application.                                 |
-| **code**          | [String](/docs/rest-api/reference#types)       | Yes      | The code you received.                                      |
-| **redirect\_uri**  | [String](/docs/rest-api/reference#types)       | Yes      | The Redirect URL you configured on the Integration Console. |
+| **client\_id**     | [ID](/docs/rest-api#types)           | Yes      | ID of your application.                                     |
+| **client\_secret** | [String](/docs/rest-api#types)       | Yes      | Secret of your application.                                 |
+| **code**          | [String](/docs/rest-api#types)       | Yes      | The code you received.                                      |
+| **redirect\_uri**  | [String](/docs/rest-api#types)       | Yes      | The Redirect URL you configured on the Integration Console. |
 
 #### Example Request
 
@@ -94,9 +109,9 @@ Using the Vercel REST API, you can modify Projects that the Integration has acce
 
 ### Modifying Environment Variables on a Project
 
-When building a Vercel Integration, you may want to expose an API token or a configuration URL for deployments within a [Project](/docs/projects/overview).
+When building a Vercel Integration, you may want to expose an API token or a configuration URL for deployments within a [Project](/docs/projects).
 
-You can do so by [Creating a Project Environment Variable](/docs/rest-api/reference/endpoints/projects/create-one-or-more-environment-variables) using the API.
+You can do so by [Creating a Project Environment Variable](/docs/rest-api/projects/create-one-or-more-environment-variables) using the API.
 
 > **💡 Note:** Environment Variables created by an Integration will.
 
@@ -156,7 +171,7 @@ For more information on using CORS with Vercel, see [How can I enable CORS on Ve
 ### 403 Forbidden responses
 
 Ensure you are not missing the `teamId` [query parameter](/docs/integrations/create-integration/submit-integration#redirect-url). `teamId` is required if the integration installation is for a Team.
-Ensure the Scope of Your [Access Token](/docs/rest-api/vercel-api-integrations#using-the-vercel-api/scopes/teams) is properly set.
+Ensure the Scope of Your [Access Token](/docs/integrations/create-integration/vercel-api-integrations#using-the-vercel-api/scopes/teams) is properly set.
 
 ## Frequently Asked Questions
 

@@ -12,13 +12,29 @@ related:
 summary: Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/managing-image-optimization-costs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "62c8ed75be1a1adbe61936fbe36eac265f11c33bcc3346b15a5b4b84832dc941"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "63c3aab0326370153bd92244649e67c20176d1262f303f7790ef3d43ee84896e"
 ---
 
 # Managing Usage & Costs
 
 ## Measuring usage
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Pricing & Usage](https://vercel.com/docs/manage-cdn-usage?from=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Getting Started](https://vercel.com/docs/image-optimization/quickstart?from=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+
+Full cross-link map for this page: [/docs/image-optimization/managing-image-optimization-costs.graph.md](/docs/image-optimization/managing-image-optimization-costs.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This document describes usage for the default pricing option.
 > Enterprise teams created before February 18th, 2025 have the choice to

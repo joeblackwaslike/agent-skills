@@ -12,17 +12,37 @@ related:
   - /docs/deployments/managing-deployments
   - /docs/microfrontends
   - /docs/deployment-retention
-  - /docs/observability/monitoring
+  - /docs/query/monitoring
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "cfa19afc99fcb612ab4d45a1a67b6924a5c453e17f5c35ac5adb946f1f28ae2c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "0b28e062cfa91d8da621a93de89d7b811bc28898cca75eb805559b0c74634260"
 ---
 
 # Skew Protection
 
 > **🔒 Permissions Required**: Skew Protection
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker support, background workers, and when to
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Deployment Protection](https://vercel.com/docs/deployment-protection?from=related) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+
+Full cross-link map for this page: [/docs/skew-protection.graph.md](/docs/skew-protection.graph.md)
+<!-- /docsgraph:related -->
 
 [Version skew](https://www.industrialempathy.com/posts/version-skew/) occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior. For example, imagine your newest deployment modifies the data structure by adding a required field to a user's profile. Older clients wouldn't expect this new field, leading to errors when they submit it.
 
@@ -132,7 +152,7 @@ Once you deploy a fix, you can set a Skew Protection threshold with the followin
 
 ## Monitor Skew Protection
 
-You can observe how many requests are protected from version skew by visiting the [Monitoring](/docs/observability/monitoring) page in the Vercel dashboard.
+You can observe how many requests are protected from version skew by visiting the [Monitoring](/docs/query/monitoring) page in the Vercel dashboard.
 
 For example, on the `requests` event, filter where `skew_protection = 'active'`.
 
@@ -199,7 +219,7 @@ and then appending the value of `VERCEL_DEPLOYMENT_ID` to each request using **o
 
 If you are using Next.js 14.1.4 or newer and building on Vercel, there is no additional configuration needed to [enable Skew Protection](#enable-skew-protection).
 
-Older versions of Next.js require additional [`next.config.js`](https://nextjs.org/docs/app/api-reference/next-config-js) configuration.
+Older versions of Next.js require additional [`next.config.js`](https://nextjs.org/docs/app/api-reference/config/next-config-js) configuration.
 
 ### Skew Protection with SvelteKit
 
@@ -288,7 +308,7 @@ export const config = {
 
 ### Clearing the pin
 
-When the user's session completes, clear the `__vdpl` cookie so subsequent visits load the latest deployment. You can do this from a [Server Action](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations):
+When the user's session completes, clear the `__vdpl` cookie so subsequent visits load the latest deployment. You can do this from a [Server Action](https://nextjs.org/docs/app/getting-started/mutating-data):
 
 ```ts filename="app/actions.ts"
 'use server';

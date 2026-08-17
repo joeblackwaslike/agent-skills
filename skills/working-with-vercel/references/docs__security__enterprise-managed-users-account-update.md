@@ -14,13 +14,30 @@ related:
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "54dfcbf4bce3a530656163809574f224b1d86b3573d9572820bef073d6fd705d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dc9e936c3a0c0a3bc8942f71acbff52b64be918c222afe034437d312eaaf7eff"
 ---
 
 # Transition your Hobby team after EMU enrollment
 
 Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EMU) on a Vercel Enterprise team brings existing members' accounts under team management. If your work email is attached to a Vercel account with personal content on it, you will see an account update screen the next time you sign in through your team's SSO. This page explains why the screen appears, what each option does, and how to complete the flow, whether you are going through it yourself or an admin previewing what your members will see.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I delete my Vercel account?](https://vercel.com/kb/guide/how-do-i-delete-my-vercel-account?from=related) — This guide covers how to delete your personal or team account on Vercel.
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related) — Learn how to transfer a project between Vercel teams.
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+
+Full cross-link map for this page: [/docs/security/enterprise-managed-users-account-update.graph.md](/docs/security/enterprise-managed-users-account-update.graph.md)
+<!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: Hobby team transition
 

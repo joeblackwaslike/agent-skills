@@ -12,17 +12,37 @@ related:
   - /docs/functions/configuring-functions/region
   - /docs/functions/limitations
   - /docs/domains
-  - /docs/domains/custom-SSL-certificate
+  - /docs/domains/custom-ssl-certificate
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c45e5f995a43829a66f016f6650ed0ce6af61016ee90c99e50475e9b9d1319fb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "09038572a76e51b2d5b48137d0af29754d9577fe986076a46bbe2043b3cf599e"
 ---
 
 # Vercel Enterprise Plan
 
 Vercel offers an Enterprise plan for organizations and enterprises that need high [performance](#performance-and-reliability), advanced [security](#security-and-compliance), and dedicated [support](#administration-and-support).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Self-hosted & Reverse Proxies with Vercel](https://vercel.com/kb/guide/how-to-setup-verified-proxy?from=related) — Learn about using self-hosted or reverse proxies with Vercel deployments.
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.
+- [Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
+- [Production Checklist](https://vercel.com/docs/production-checklist?from=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+
+Full cross-link map for this page: [/docs/plans/enterprise.graph.md](/docs/plans/enterprise.graph.md)
+<!-- /docsgraph:related -->
 
 ## Performance and reliability
 
@@ -33,7 +53,7 @@ The Enterprise plan uses isolated build infrastructure on high-grade hardware wi
 - Greater multi-region limits for [Vercel Functions](/docs/functions/configuring-functions/region#project-configuration)
 - Greater memory and duration limits for [Vercel Functions](/docs/functions/limitations)
 - Unlimited [domains](/docs/domains) per project
-- [Custom SSL Certificates](/docs/domains/custom-SSL-certificate)
+- [Custom SSL Certificates](/docs/domains/custom-ssl-certificate)
 - Automatic concurrency scaling up to 100,000 for [Vercel Functions](/docs/functions/concurrency-scaling#automatic-concurrency-scaling)
 - [Isolated
   build infrastructure](/docs/security#do-enterprise-accounts-run-on-a-different-infrastructure),
@@ -50,9 +70,9 @@ Data and infrastructure security is paramount in the Enterprise plan with advanc
   [Private Production Deployments](/docs/deployment-protection#only-production-deployments),
   and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)
 - [Secure Compute](/docs/networking/secure-compute) (Paid add-on for Enterprise)
-- [Directory Sync](/docs/security/directory-sync)
+- [Directory Sync](/docs/directory-sync)
 - [Audit Log Drains](/docs/drains/reference/audit-logs)
-- [Vercel Firewall](/docs/vercel-firewall), including [dedicated DDoS support](/docs/vercel-firewall/ddos-mitigation#dedicated-ddos-support-for-enterprise-teams), [WAF account-level IP Blocking](/docs/security/vercel-waf/ip-blocking#account-level-ip-blocking) and [WAF Managed Rulesets](/docs/security/vercel-waf/managed-rulesets)
+- [Vercel Firewall](/docs/vercel-firewall), including [dedicated DDoS support](/docs/vercel-firewall/ddos-mitigation#dedicated-ddos-support-for-enterprise-teams), [WAF account-level IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking#account-level-ip-blocking) and [WAF Managed Rulesets](/docs/vercel-firewall/vercel-waf/managed-rulesets)
 
 ## Conformance and Code Owners
 
@@ -68,11 +88,11 @@ Data and infrastructure security is paramount in the Enterprise plan with advanc
 Gain actionable insights with enhanced observability & logging.
 
 - Enhanced [Observability and Logging](/docs/observability)
-- [Audit Logs](/docs/observability/audit-log)
+- [Audit Logs](/docs/audit-log)
 - Increased retention with [Speed Insights](/docs/speed-insights/limits-and-pricing)
 - [Custom Events](/docs/analytics/custom-events) tracking and more filters, such as UTM Parameters
 - 3 days of [Runtime Logs](/docs/logs/runtime)
-- Increased retention with [Vercel Monitoring](/docs/observability/monitoring)
+- Increased retention with [Vercel Monitoring](/docs/query/monitoring)
 - [Tracing](/docs/tracing) support
 - Configurable [drains](/docs/drains/using-drains)
 - Integrations, like [Datadog](/marketplace/datadog), [New Relic](/marketplace/newrelic), and [Middleware](/marketplace/middleware)

@@ -13,13 +13,29 @@ related:
 summary: Add usage-based billing to your AI application with Stripe and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "1210ab31bde83393849677ec751b8d2f505365ebf04ae485648ffce243087132"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7f3dbd2fe62b656dd28395a596c0f0bef3ac03683f5a93b8fa91e3c122a9f2a4"
 ---
 
 # Stripe Billing
 
 You can bill your customers for AI usage by connecting AI Gateway to [Stripe's metered billing](https://docs.stripe.com/billing/subscriptions/usage-based/implementation-guide). When you include Stripe headers in your requests, AI Gateway automatically emits meter events for every successful response.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
+- [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related) — Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers throu
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+
+Full cross-link map for this page: [/docs/ai-gateway/ecosystem/stripe-billing.graph.md](/docs/ai-gateway/ecosystem/stripe-billing.graph.md)
+<!-- /docsgraph:related -->
 
 ## How it works
 

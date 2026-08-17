@@ -16,13 +16,31 @@ related:
 summary: Learn about testing & troubleshooting on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a5a20ef12fd4eaddb1bbf8934e77dbc101033943496cf2a48a5655bb079c3476"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "99b84dfa4d01667cf08f9e6465bac427d2dbb1ce0aa6073b58dfaf4eeb05d24c"
 ---
 
 # Testing & troubleshooting microfrontends
 
 ## Testing
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Why is my deployed project giving a 404?](https://vercel.com/kb/guide/why-is-my-deployed-project-giving-404?from=related) — Vercel 404 errors often hit healthy builds when routing metadata does not match the request path. Learn the causes and h
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
+- [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
+- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+- [Getting Started](https://vercel.com/docs/routing-middleware/getting-started?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Incremental Migration](https://vercel.com/docs/incremental-migration?from=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+
+Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md)
+<!-- /docsgraph:related -->
 
 The `@vercel/microfrontends` package includes test utilities to help avoid common misconfigurations.
 

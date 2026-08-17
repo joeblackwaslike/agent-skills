@@ -9,26 +9,45 @@ prerequisites:
   - /docs/vercel-firewall
 related:
   - /docs/deployment-protection
-  - /docs/security/vercel-waf
-  - /docs/security/vercel-waf/custom-rules
+  - /docs/vercel-firewall/vercel-waf
+  - /docs/vercel-firewall/vercel-waf/custom-rules
   - /docs/vercel-firewall
   - /docs/manage-cdn-usage
 summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "025739ced0cca445b86fa533f4fc562945b6bda7ba1d34cbe45d6f38009a4d75"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "92b8305700b4df39f5dc8e9e129b8ad475453da9f0ca37581e13d6af343cfeab"
 ---
 
 # Firewall concepts
 
 ## How Vercel secures requests
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\(\) so inference runs only for verified callers
+- [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile?from=related) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [DDoS Mitigation](https://vercel.com/docs/vercel-firewall/ddos-mitigation?from=related) — Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
+- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
+
+Full cross-link map for this page: [/docs/vercel-firewall/firewall-concepts.graph.md](/docs/vercel-firewall/firewall-concepts.graph.md)
+<!-- /docsgraph:related -->
+
 To safeguard your application against malicious activity, Vercel's platform-wide firewall is the first line of defense, inspecting requests as they arrive at Vercel's CDN. Once a request passes this layer, [deployment protection](/docs/deployment-protection) checks whether it can continue based on access rules set at the level of your project.
 
-If allowed to go through, the request is subject to the rules that you configured with the [Web Application Firewall (WAF)](/docs/security/vercel-waf) at the level of your project. If the request is not blocked by the WAF rules, your deployment can process and serve it.
+If allowed to go through, the request is subject to the rules that you configured with the [Web Application Firewall (WAF)](/docs/vercel-firewall/vercel-waf) at the level of your project. If the request is not blocked by the WAF rules, your deployment can process and serve it.
 
-If you [enabled a persistent action](/docs/security/vercel-waf/custom-rules#persistent-actions) for a WAF rule and it blocks the request, the source IP address is stored in the platform firewall so that future requests from this source continue to be blocked for the specified time period. These future blocks happen at the level of the platform-wide firewall.
+If you [enabled a persistent action](/docs/vercel-firewall/vercel-waf/custom-rules#persistent-actions) for a WAF rule and it blocks the request, the source IP address is stored in the platform firewall so that future requests from this source continue to be blocked for the specified time period. These future blocks happen at the level of the platform-wide firewall.
 
 ![Image](`/docs-assets/static/docs/security/vercel-firewall-protection-concept-light.png`)
 
@@ -165,7 +184,7 @@ JA3 is a tool that uses TLS fingerprinting to track and identify potential secur
 
 #### Monitor JA4 signatures
 
-In the **Allowed Requests** view of the [Vercel WAF monitoring page](/docs/security/vercel-waf#traffic-monitoring), you can group the web traffic by **JA4 Digest** to review the fingerprints of the live traffic or the past 24 hours.
+In the **Allowed Requests** view of the [Vercel WAF monitoring page](/docs/vercel-firewall/vercel-waf#traffic-monitoring), you can group the web traffic by **JA4 Digest** to review the fingerprints of the live traffic or the past 24 hours.
 
 ### Request headers
 

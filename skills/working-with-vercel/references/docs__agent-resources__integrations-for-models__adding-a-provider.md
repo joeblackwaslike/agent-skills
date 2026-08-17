@@ -17,13 +17,28 @@ related:
 summary: Learn how to add a new AI provider to your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ced2a10a7d75cae7b1fa766573b380f7b68023528c7889dbb08d7a58351378be"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7461c7b88570cf5f1e83f15cd6115eca54722c0ca739739040e401ee9dd605c5"
 ---
 
 # Adding a Provider
 
 When you Open **AI** in the sidebar, you'll see a list of installed AI integrations. If you don't have installed integrations, you can browse and connect to the AI models and services that best fit your project's needs.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [AI Gateway](https://vercel.com/docs/ai-gateway?from=related) — AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with text, image, and video
+
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md](/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md)
+<!-- /docsgraph:related -->
 
 ## Adding a native integration provider
 

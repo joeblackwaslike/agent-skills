@@ -8,20 +8,39 @@ type: reference
 prerequisites:
   - /docs/caching
 related:
-  - /docs/cdn-cache
+  - /docs/caching/cdn-cache
   - /docs/manage-cdn-usage
   - /docs/project-configuration/vercel-json
   - /docs/functions
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9a2ba55cbb5b6824759a5db97a2a44e148a7441f03c791d7040d8e93cbe4e63b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "74892f308a8884d284e81de178758adb59399f2e2dff2403249f3500c9de057c"
 ---
 
 # Cache-Control headers
 
 You can control how Vercel's CDN caches your Function responses by setting a [Cache-Control headers](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control "Cache Control") header.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related) — Learn how to set headers to cache your function's responses.
+- [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
+- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Response Headers](https://vercel.com/docs/headers/response-headers?from=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
+- [System Headers](https://vercel.com/docs/headers?from=related) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
+
+Full cross-link map for this page: [/docs/caching/cache-control-headers.graph.md](/docs/caching/cache-control-headers.graph.md)
+<!-- /docsgraph:related -->
 
 ## Default `cache-control` value
 
@@ -33,7 +52,7 @@ The right `Cache-Control` value depends on what you're caching and how fresh it 
 
 | Content type                                    | Recommended header            | When to use                                                                                                                                                 |
 | ----------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Server-rendered, same for all visitors          | `max-age=0, s-maxage=86400`   | Pages where every visitor sees the same content. Don't use `s-maxage` for per-user responses unless you set a [`Vary`](/docs/cdn-cache#vary-header) header. |
+| Server-rendered, same for all visitors          | `max-age=0, s-maxage=86400`   | Pages where every visitor sees the same content. Don't use `s-maxage` for per-user responses unless you set a [`Vary`](/docs/caching/cdn-cache#vary-header) header. |
 | Semi-static (product pages, blogs, marketing)   | `max-age=120, s-maxage=86400` | Content that tolerates short staleness. A 60-120s browser TTL reduces [edge requests](/docs/manage-cdn-usage#edge-requests) for return visitors.            |
 | Personalized or per-user                        | `private, max-age=0`          | Responses that vary by cookie, session, or auth. `private` prevents CDN caching.                                                                            |
 | Immutable static assets (hashed JS, CSS, fonts) | `max-age=31536000, immutable` | Content-hashed assets. Frameworks like Next.js set this automatically.                                                                                      |
@@ -281,7 +300,7 @@ export default function handler(response: VercelResponse) {
 
 Using configuration, you can assign custom headers to each response.
 
-Custom headers can be configured with the `headers` property in [`next.config.js`](https://nextjs.org/docs/api-reference/next.config.js/headers) for Next.js projects, or it can be configured in [`vercel.json`](/docs/project-configuration/vercel-json#headers) for all other projects.
+Custom headers can be configured with the `headers` property in [`next.config.js`](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers) for Next.js projects, or it can be configured in [`vercel.json`](/docs/project-configuration/vercel-json#headers) for all other projects.
 
 Alternatively, a [Vercel Function](/docs/functions) can assign headers to the [Response](https://nodejs.org/api/http.html#http_response_setheader_name_value) object.
 

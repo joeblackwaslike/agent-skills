@@ -15,13 +15,30 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "49d509645782c1f49cb23d71c259581866189b92579fb8f7564ef903e30c378d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "de15729a973bbbc2c6a0bc1af942c414866ff4a647eeefd636ece437aee0e120"
 ---
 
 # Zero Data Retention
 
 Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gateway. There are two ways to enforce ZDR:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Regional Inference](https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference?from=related) — Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compl
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+
+Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/zdr.graph.md](/docs/ai-gateway/security-and-compliance/zdr.graph.md)
+<!-- /docsgraph:related -->
 
 - **Team-wide**: Enable ZDR globally from the [AI Gateway Dashboard Settings tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway). Once enabled, all requests are routed to ZDR-compliant providers.
 - **Per-request**: Set `zeroDataRetention: true` in `providerOptions` for individual requests. This gives you fine-grained control over which requests require ZDR.

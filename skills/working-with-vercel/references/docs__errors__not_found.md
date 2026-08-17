@@ -14,8 +14,8 @@ related:
 summary: The requested resource was not found. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/not_found.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c04b9cae3c42dc07e3e630709ec687dad5c4ba7e412e7dc1a71ff7042fa6d5ca"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7f87fc87194e8cadfc72389ad3b0e3e2c7621448a4026604bd5830fd89593d04"
 ---
 
 # NOT_FOUND
@@ -34,7 +34,6 @@ To troubleshoot this error, follow these steps:
 2. **Check deployment existence:** Verify that the [deployment exists](/docs/deployments/managing-deployments) and has not been deleted
 3. **Review deployment logs:** If the deployment exists, review the [deployment logs](/docs/deployments/logs) to identify any issues that might have caused the deployment to be unavailable
 4. **Verify permissions:** Ensure you have the necessary [permissions](/docs/accounts/team-members-and-roles) to access the deployment
-5. **Contact support:** If you've checked the above and are still unable to resolve the issue, [contact support](/help#issues) for further assistance
 
 
 ---

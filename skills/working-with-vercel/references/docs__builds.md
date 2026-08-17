@@ -10,19 +10,36 @@ prerequisites:
 related:
   - /docs/cli
   - /docs/frameworks
-  - /docs/deployments/configure-a-build
+  - /docs/builds/configure-a-build
   - /docs/monorepos
   - /docs/project-configuration/project-settings
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "c74435896b7d54dcc740b5e43adeda4adb1c8782c9c3d6e74e285206c15370d7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c514c8f5611c07945bbb60081251340bf515b62724e42f6fab15bc90a6ccca84"
 ---
 
 # Builds
 
 Vercel automatically performs a **build** every time you deploy your code, whether you're pushing to a Git repository, importing a project via the dashboard, or using the [Vercel CLI](/docs/cli). This process compiles, bundles, and optimizes your application so it's ready to serve to your users.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+
+Full cross-link map for this page: [/docs/builds.graph.md](/docs/builds.graph.md)
+<!-- /docsgraph:related -->
 
 ## Build infrastructure
 
@@ -57,7 +74,7 @@ Depending on your framework, Vercel automatically sets the **Build Command**, **
 
 3. **Install Command**: Control how dependencies are installed (e.g., `pnpm install`, `yarn install`) or skip installing dev dependencies if needed.
 
-To learn more, see [Configuring a Build](/docs/deployments/configure-a-build).
+To learn more, see [Configuring a Build](/docs/builds/configure-a-build).
 
 ## Skipping the build step
 
@@ -88,7 +105,7 @@ When multiple builds are requested, Vercel manages concurrency and queues for yo
 
 2. **Branch-Based Queue**: If new commits land on the same branch, Vercel skips older queued builds and prioritizes only the most recent commit. This ensures that the latest changes are always deployed first.
 
-3. **On-Demand Concurrency**: If you need more concurrent build slots or want certain production builds to jump the queue, consider enabling [On-Demand Concurrent Builds](/docs/deployments/managing-builds#on-demand-concurrent-builds).
+3. **On-Demand Concurrency**: If you need more concurrent build slots or want certain production builds to jump the queue, consider enabling [On-Demand Concurrent Builds](/docs/builds/managing-builds#on-demand-concurrent-builds).
 
 ## Environment variables
 

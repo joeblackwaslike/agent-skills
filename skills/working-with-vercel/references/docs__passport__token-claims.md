@@ -12,13 +12,30 @@ related:
 summary: Review the standard, deployment, and visitor identity claims in a Passport token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/token-claims.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "8fbce72e361b9f1a5aa3d2da84e696a1ffa3d8fc2cda956edda5f3923ef93a81"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4409ee90075dd6ac042fec221c18ca4c84207c3b3134650e127e9a37a7f3844a"
 ---
 
 # Passport token claims
 
 Passport issues a signed JSON Web Token (JWT) after a visitor authenticates. The token combines standard OpenID Connect claims, Vercel deployment context, and identity claims returned through the Connect application.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [Read Identity](https://vercel.com/docs/passport/read-identity?from=related) — Read verified Passport identity in server-side code and apply application-level authorization.
+- [Additional Scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related) — Request group membership and other provider-specific identity claims when using Passport.
+- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related) — Learn how to Sign in with Vercel
+- [Set Up Passport](https://vercel.com/docs/passport/set-up-identity-provider?from=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+
+Full cross-link map for this page: [/docs/passport/token-claims.graph.md](/docs/passport/token-claims.graph.md)
+<!-- /docsgraph:related -->
 
 Claims marked optional only appear when the identity provider or Connect application supplies them. Applications must validate the token before trusting any claim.
 

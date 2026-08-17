@@ -13,18 +13,35 @@ related:
 summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "a3176969b41c9a3d999da5ad80b6b61735e0e7b2274d2f1f9cca36dcc63fba9a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "07a8cf46e6265cd79d49a5811d5436d592ea8900114a8fde1a00c6d3094663a8"
 ---
 
 # Web Search
 
 AI Gateway provides built-in web search capabilities that allow AI models to access current information from the web. This is useful when you need up-to-date information that may not be in the model's training data.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent?from=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related)
+- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related)
+- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related)
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md)
+<!-- /docsgraph:related -->
+
 AI Gateway supports two types of web search:
 
 - **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
-- **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), [Google](#google-web-search), or [xAI](#xai-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
+- **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), [Google](#google-web-search), or [SpaceXAI](#spacexai-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
 
 ## Using Perplexity Search
 
@@ -438,7 +455,7 @@ For more details on search parameters and API options, see the [Parallel AI Sear
 
 ## Provider-specific search
 
-Use native web search tools from Anthropic, OpenAI, Google, or xAI. These tools are optimized for their respective providers and may offer additional features.
+Use native web search tools from Anthropic, OpenAI, Google, or SpaceXAI. These tools are optimized for their respective providers and may offer additional features.
 
 > **💡 Note:** Pricing for provider-specific web search tools depends on the model you use.
 > See the Web Search price column on the [model detail
@@ -756,9 +773,9 @@ export async function POST(request: Request) {
 }
 ```
 
-### xAI web search
+### SpaceXAI web search
 
-For xAI Grok models, you can use the native web search tool provided by the `@ai-sdk/xai` package. Import `xai` from `@ai-sdk/xai` and pass `xai.tools.webSearch({})` to the `tools` parameter. The tool returns source information including titles and URLs, which you can access through the `source` event type in the stream.
+For SpaceXAI Grok models, you can use the native web search tool provided by the `@ai-sdk/xai` package. Import `xai` from `@ai-sdk/xai` and pass `xai.tools.webSearch({})` to the `tools` parameter. The tool returns source information including titles and URLs, which you can access through the `source` event type in the stream.
 
 #### streamText
 
@@ -802,7 +819,7 @@ export async function POST(request: Request) {
 }
 ```
 
-#### xAI parameters
+#### SpaceXAI parameters
 
 The following parameters are supported:
 

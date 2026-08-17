@@ -13,13 +13,32 @@ related:
 summary: Define tools the model can call with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5a354b0efb07db05b630d5d81f9adc7e5c62b3f4d7448b8922e2d53beb6298e5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "57832b4d0035f2e6b4da82f138f13f31c9a41c1c9d4634e6ed9754ad0b1275e1"
 ---
 
 # Tool Calling
 
 Define tools with JSON Schema parameters. The model can call them, and you can feed the results back in a follow-up request:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling?from=related) — Define tools the model can call using the OpenResponses API.
+- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling?from=related) — Use function calling with the Anthropic Messages API to allow models to call tools and functions.
+- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling?from=related) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
+- [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related)
+- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related)
+- [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool?from=related) — Learn what tools are, how tool calling works, and how you can use them to build agents.
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [Structured Outputs](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs?from=related) — Constrain OpenResponses API output to a JSON schema so every response parses.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/responses/tool-calling.graph.md)
+<!-- /docsgraph:related -->
 
 #### \['cURL'
 

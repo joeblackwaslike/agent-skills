@@ -13,8 +13,8 @@ related:
 summary: "Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/crons.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c08bb31c5daa8d46f1e6774b4f9c417a9a7e4a63464500af1c699cd652ebe393"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9830f6e3495d7fbc950fa5380b755b03b57d9ea8513c804c29bc1a7f0c9a0532"
 ---
 
 # vercel crons
@@ -22,6 +22,23 @@ sha256: "c08bb31c5daa8d46f1e6774b4f9c417a9a7e4a63464500af1c699cd652ebe393"
 > **💡 Note:** `vercel crons` is currently in beta. Subcommands and flags may change before
 > general availability. In `vercel --help` the command appears tagged with
 > `[beta]`.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Setup Cron Jobs on Vercel](https://vercel.com/kb/guide/how-to-setup-cron-jobs-on-vercel?from=related) — Learn how to setup and use cron jobs on Vercel
+- [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
+- [Getting Started](https://vercel.com/docs/cron-jobs/quickstart?from=related) — Learn how to schedule cron jobs to run at specific times or intervals.
+- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related) — Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and m
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
+- [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
+
+Full cross-link map for this page: [/docs/cli/crons.graph.md](/docs/cli/crons.graph.md)
+<!-- /docsgraph:related -->
 
 The `vercel crons` command (alias `vercel cron`) manages [Cron Jobs](/docs/cron-jobs) for your project. Use it to add cron entries to `vercel.json`, list configured crons, and trigger a cron job to run immediately for testing.
 

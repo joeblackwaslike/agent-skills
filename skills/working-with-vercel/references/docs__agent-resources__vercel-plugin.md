@@ -12,13 +12,33 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "084b26bc0f06bf4262a1f9d913bf5c78de7e6cefebccb82c8ce4521787a694eb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8afd59b25f3fba38024b53a6ef447b4d360047b68cd703bb15d933a1457944c7"
 ---
 
 # Vercel Plugin for AI Coding Agents
 
 The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-specific context, skills, agents, and slash commands. The default installation keeps automation lightweight and activates session-start context only in empty directories and detected Vercel or Next.js projects.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
+- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Build a web research agent with Workflow SDK](https://vercel.com/kb/guide/durable-web-research-agent-with-workflow-sdk?from=related) — Build a web research agent that searches the web and returns a cited report. Powered by AI SDK and Workflow SDK, it jour
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [AI Coding Agents](https://nextjs.org/docs/app/guides/ai-agents?from=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Vercel Agent](https://vercel.com/docs/agent?from=related) — Use Vercel Agent to chat with your dashboard, investigate production issues, review code, and approve actions
+- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
+- [Markdown & Agent Discovery](https://vercel.com/docs/agent-resources/markdown-access?from=related) — Access Vercel documentation as markdown using .md endpoints or the copy button.
+
+Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md)
+<!-- /docsgraph:related -->
 
 ## Getting started
 

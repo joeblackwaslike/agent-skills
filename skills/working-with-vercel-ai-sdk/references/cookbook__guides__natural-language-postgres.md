@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/natural-language-postgres.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1921d8c50ee4ca9d5870599c8bde1751e8c9a20c87952d5eb8d68195b59ccf52"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "50dbee3f34dc26b8bba4e8721fde650d1e2ab61f1be0690ae9adef4fa71b7a67"
 ---
 
 # Natural Language Postgres Guide
@@ -24,7 +24,7 @@ This project uses the following stack:
 - [AI SDK](/docs)
 - [OpenAI](https://openai.com)
 - [Zod](https://zod.dev)
-- [Postgres](https://www.postgresql.org/) with [ Vercel Postgres ](https://vercel.com/postgres)
+- [Postgres](https://www.postgresql.org/) with [Neon through the Vercel Marketplace](https://vercel.com/marketplace/neon)
 - [shadcn-ui](https://ui.shadcn.com) and [TailwindCSS](https://tailwindcss.com) for styling
 - [Recharts](https://recharts.org) for data visualization
 

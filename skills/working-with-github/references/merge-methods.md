@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github.md"
-fetched_at: "2026-07-27T07:36:12.022Z"
-sha256: "1f47551833391d507052c3a786753d3176551faf31b0f00e6bd386edb9efc16a"
+fetched_at: "2026-08-17T04:47:04.101Z"
+sha256: "9430ae218866c8b2293e98ba3e9ffe759c867820f13609cb117f7c9d8c7dbf36"
 ---
 
 {% data reusables.pull_requests.configure_pull_request_merges_intro %} You can enforce one type of merge method, such as commit squashing or rebasing, by only enabling the desired method for your repository.
@@ -23,7 +23,7 @@ The default merge method creates a merge commit. You can prevent anyone from pus
 
 Before enabling squashing commits, consider these disadvantages:
 * You lose information about when specific changes were originally made and who authored the squashed commits.
-* If you continue working on the head branch of a pull request after squashing and merging, and then create a new pull request between the same branches, commits that you previously squashed and merged will be listed in the new pull request. You may also have conflicts that you have to repeatedly resolve in each successive pull request. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squashing-and-merging-a-long-running-branch).
+* If you continue working on the head branch of a pull request after squashing and merging, and then create a new pull request between the same branches, commits that you previously squashed and merged will be listed in the new pull request. You may also have conflicts that you have to repeatedly resolve in each successive pull request. For more information, see [AUTOTITLE](/pull-requests/reference/pull-request-merges#squashing-and-merging-a-long-running-branch).
 * Some Git commands that use the "SHA" or "hash" ID may be harder to use since the SHA ID for the original commits is lost. For example, using [`git rerere`](https://git-scm.com/docs/git-rerere) may not be as effective.
 
 For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests).
@@ -33,7 +33,7 @@ For more information, see [AUTOTITLE](/repositories/configuring-branches-and-mer
 {% data reusables.pull_requests.rebase_and_merge_summary %}
 
 Before enabling commit rebasing, consider these disadvantages:
-* Repository contributors may have to rebase on the command line, resolve any conflicts, and force push their changes to the pull request's topic branch (or remote head branch) before they can use the **rebase and merge** option on {% data variables.product.prodname_dotcom %}. Force pushing must be done carefully so contributors don't overwrite work that others have based their work on. To learn more about when the **Rebase and merge** option is disabled on {% data variables.product.prodname_dotcom %} and the workflow to re-enable it, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#rebase-and-merge-your-commits).
+* Repository contributors may have to rebase on the command line, resolve any conflicts, and force push their changes to the pull request's topic branch (or remote head branch) before they can use the **rebase and merge** option on {% data variables.product.prodname_dotcom %}. Force pushing must be done carefully so contributors don't overwrite work that others have based their work on. To learn more about when the **Rebase and merge** option is disabled on {% data variables.product.prodname_dotcom %} and the workflow to re-enable it, see [AUTOTITLE](/pull-requests/reference/pull-request-merges#rebase-and-merge-your-commits).
 * {% indented_data_reference reusables.pull_requests.rebase_and_merge_verification spaces=2 %}
 
   {% indented_data_reference reusables.pull_requests.rebase_and_merge_verification_2 spaces=2 %}

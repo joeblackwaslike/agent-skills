@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "eb5418d8d1620aed0074843ef6410461be4d5a80cda03f811832f12809d701cc"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "fecbee35fbd6daf8c3072dc59e0aaa075ac3ceb3781db7646f61909c5d7a809b"
 ---
 
 # OpenAI Provider
@@ -218,10 +218,12 @@ The following provider options are available:
   `.nullable()`.
 </Note>
 
-- **serviceTier** _'auto' | 'flex' | 'priority' | 'default'_
+- **serviceTier** _'auto' | 'flex' | 'priority' | 'fast' | 'default'_
   Service tier for the request. Set to 'flex' for 50% cheaper processing
   at the cost of increased latency (available for o3, o4-mini, and gpt-5 models).
   Set to 'priority' for faster processing with Enterprise access (available for gpt-4, gpt-5, gpt-5-mini, o3, o4-mini; gpt-5-nano is not supported).
+  'fast' is OpenAI's newer name for the 'priority' tier; the two are interchangeable, and responses from
+  gpt-5.6 and earlier report `serviceTier: 'priority'` for either.
 
   Defaults to 'auto'.
 
@@ -1992,11 +1994,13 @@ The following optional provider options are available for OpenAI chat models:
 
   Parameters for prediction mode.
 
-- **serviceTier** _'auto' | 'flex' | 'priority' | 'default'_
+- **serviceTier** _'auto' | 'flex' | 'priority' | 'fast' | 'default'_
 
   Service tier for the request. Set to 'flex' for 50% cheaper processing
   at the cost of increased latency (available for o3, o4-mini, and gpt-5 models).
   Set to 'priority' for faster processing with Enterprise access (available for gpt-4, gpt-5, gpt-5-mini, o3, o4-mini; gpt-5-nano is not supported).
+  'fast' is OpenAI's newer name for the 'priority' tier; the two are interchangeable, and responses from
+  gpt-5.6 and earlier report `serviceTier: 'priority'` for either.
 
   Defaults to 'auto'.
 
@@ -3056,7 +3060,6 @@ const result = await generateSpeech({
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -3066,6 +3069,7 @@ const result = await generateSpeech({
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

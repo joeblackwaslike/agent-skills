@@ -14,13 +14,28 @@ related:
 summary: Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "e1fa652f294d59e732916a1b5d19b789ee81f25a2af12ae99fa47e4009005ddb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5ff5173582a5a2380d252701c1af7f3e9f7a56c361de1e329f74ee5541aeac65"
 ---
 
 # Provider Allowlist
 
 The provider allowlist lets team owners restrict which AI providers can serve requests through AI Gateway. A request only returns a `403` when no allowed provider can serve it. The feature is opt-in and available on Pro and Enterprise plans.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
+- [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training?from=related) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
+- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md)
+<!-- /docsgraph:related -->
 
 A common reason to enable this is compliance: your team has reviewed a specific set of providers, and you want to guarantee that AI Gateway never routes to one you haven't approved.
 

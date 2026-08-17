@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "c7468085e335340bd4957b6f9d2eb4d27468197493a06c8e116218f217b9d9fe"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "8923228897c85d5734a5e7332150324018b80b2fc19a0b94a5bbb8b132cffced"
 ---
 
 # Fish Audio Provider
@@ -351,7 +351,6 @@ console.log(result.providerMetadata?.fishAudio?.language); // 'English'
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -361,6 +360,7 @@ console.log(result.providerMetadata?.fishAudio?.language); // 'English'
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

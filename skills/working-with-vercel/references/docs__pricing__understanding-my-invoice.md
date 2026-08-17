@@ -15,13 +15,29 @@ related:
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "06d69f17ee2f63abfd333fc9a45d2814306711bdf8092bdffd4b8d50b487474a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d851f8e7cbefc934d2a3f0e4fd15726d28592246ff9fe7a92817d1738c53b04b"
 ---
 
 # Billing & Invoices
 
 You can view your current invoice from the **Settings** section in your dashboard sidebar(/dashboard) in two ways:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Where can I get copies of my Vercel Invoices?](https://vercel.com/kb/guide/where-can-i-get-copies-of-my-vercel-invoices?from=related) — Learn about how you can get access to your Vercel invoices.
+- [Billing FAQ](https://vercel.com/docs/plans/enterprise/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Billing and Refunds](https://vercel.com/docs/integrations/create-integration/billing?from=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [Spend Management](https://vercel.com/docs/spend-management?from=related) — Learn how to get notified about your account spend and configure a webhook.
+
+Full cross-link map for this page: [/docs/pricing/understanding-my-invoice.graph.md](/docs/pricing/understanding-my-invoice.graph.md)
+<!-- /docsgraph:related -->
 
 - By navigating to the **Billing** section in the sidebar of the dashboard
 - Or selecting the latest entry in the list of invoices on the **Invoices** tab.

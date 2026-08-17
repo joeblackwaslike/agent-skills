@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/react-native-apple.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "28f35c277b58dfb7d0207199123ccdc9283e4f8e828c7caafb7198b3c235e17a"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "4830bcbbbe902188ebb62d7bef074614bd327f5c01736a78a222828fe310c35c"
 ---
 
 # React Native Apple Provider
@@ -303,6 +303,7 @@ Different Apple AI features have varying iOS version requirements:
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

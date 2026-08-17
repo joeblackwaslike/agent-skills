@@ -14,8 +14,8 @@ related:
 summary: The deployment was not found. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_not_found.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c6ee26493f647edc442de88d694e6a034e85d678d3986ebe3f7029a0e81e5b66"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1e9625c44e3b0535515bd29cc51be33074ad4b53f391774b0dbc96e5385f6425"
 ---
 
 # DEPLOYMENT_NOT_FOUND
@@ -35,7 +35,6 @@ To troubleshoot this error, follow these steps:
 3. **Review deployment logs:** If the deployment exists, review the [deployment logs](/docs/deployments/logs) to identify any issues that might have caused the deployment to be unavailable
 4. **Verify permissions:** Ensure you have the necessary [permissions](/docs/accounts/team-members-and-roles) to access the deployment
 5. **Consult community resources:** Visit our [community post on debugging 404 errors](https://community.vercel.com/t/debugging-404-errors/437) for additional tips and solutions shared by other developers.
-6. **Contact support:** If you've checked the above and are still unable to resolve the issue, [contact support](/help#issues) for further assistance
 
 
 ---

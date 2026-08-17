@@ -8,18 +8,33 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/security/deployment-retention
+  - /docs/deployment-retention
   - /docs/deployments/environments
 summary: Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/list.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a61bf01a9da658fd87574f4ae33ba86a57993b7977c5735298bf454d1c4d9f5c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d6cccc11001cca3cf7e0272bd8671663017d9f825514a42bf4f40d59f2dee09c"
 ---
 
 # vercel list
 
 The `vercel list` command, which can be shortened to `vercel ls`, provides a list of recent deployments for the currently-linked Vercel Project.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+
+Full cross-link map for this page: [/docs/cli/list.graph.md](/docs/cli/list.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 
@@ -89,7 +104,7 @@ vercel ls -m githubCommitSha=de8b89f13b2bc164cf07e735921bf5513e17951d
 
 ### Policy
 
-The `--policy` option, shorthand `-p`, can be used to display expiration based on [Vercel project deployment retention policy](/docs/security/deployment-retention).
+The `--policy` option, shorthand `-p`, can be used to display expiration based on [Vercel project deployment retention policy](/docs/deployment-retention).
 
 ```bash filename="terminal"
 vercel list --policy canceled=6m -p errored=6m -p preview=6m -p production=6m

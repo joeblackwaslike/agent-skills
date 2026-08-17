@@ -10,18 +10,34 @@ prerequisites:
 related:
   - /docs/routing/redirects/bulk-redirects
   - /docs/routing
-  - /docs/rest-api/project-routes
+  - /docs/rest-api/project-routes/get-project-routing-rules
   - /docs/routing-middleware
 summary: Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/project-routing-rules.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d6950cf7a69ae785f7a0b64bdbc1c1f186bdaac993d11283174088857843401b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b91b665f2e26ad6893caa2313f36431437f1c9d2199869184f381abd2873ab05"
 ---
 
 # Project-Level Routing Rules
 
 Project-level routing rules let you add redirects, rewrites, response headers, and other routing logic from the dashboard, API, or CLI, without deploying new code. Changes take effect immediately after publishing.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
+- [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules?from=related)
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule?from=related)
+- [vercel routes](https://vercel.com/docs/cli/routes?from=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule?from=related)
+
+Full cross-link map for this page: [/docs/routing/project-routing-rules.graph.md](/docs/routing/project-routing-rules.graph.md)
+<!-- /docsgraph:related -->
 
 These rules are separate from deployment-level routes defined in `vercel.json` or your framework configuration. They run at the CDN level on every request, after [bulk redirects](/docs/routing/redirects/bulk-redirects) and before your deployment's own routes. See the [routing order](/docs/routing#routing-order) for the full sequence.
 
@@ -113,7 +129,7 @@ Rules execute in the order they appear in the list. You can drag and drop rules 
 
 ## Manage rules with the API
 
-You can also create, read, update, and delete routing rules through the [Vercel REST API](/docs/rest-api/project-routes). Use the API to automate rule management in CI/CD pipelines or manage rules through infrastructure-as-code tools like Terraform.
+You can also create, read, update, and delete routing rules through the [Vercel REST API](/docs/rest-api/project-routes/get-project-routing-rules). Use the API to automate rule management in CI/CD pipelines or manage rules through infrastructure-as-code tools like Terraform.
 
 ## Differences from deployment-level routes
 

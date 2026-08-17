@@ -11,18 +11,36 @@ related:
   - /docs/incremental-static-regeneration
   - /docs/functions/configuring-functions/region
   - /docs/pricing/regional-pricing
-  - /docs/pricing/incremental-static-regeneration
   - /docs/pricing/manage-and-optimize-usage
+  - /docs/incremental-static-regeneration/quickstart
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "f6efc605846def17422d1cf32875bccc3cec25dc4477b6eeb235834e8ece414a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1af5345abc91985e5d93c21c3cbfa0f452d80b8554bc9de2a5ad963a1a90222b"
 ---
 
 # ISR Usage and Pricing
 
 This page covers ISR costs, usage metrics, and optimization strategies. To decide when ISR is the right cache for your use case, see [Caching on Vercel](/docs/incremental-static-regeneration#caching-on-vercel).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes?from=related) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
+- [ISR](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Calculating Usage of Resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
+- [Pricing & Usage](https://vercel.com/docs/manage-cdn-usage?from=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+
+Full cross-link map for this page: [/docs/incremental-static-regeneration/limits-and-pricing.graph.md](/docs/incremental-static-regeneration/limits-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Pricing
 
@@ -32,7 +50,7 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 
 ## Usage
 
-The table below shows the metrics for the [**ISR**](/docs/pricing/incremental-static-regeneration) section of the [**Usage** dashboard](/docs/pricing/manage-and-optimize-usage#viewing-usage).
+The table below shows the metrics for the [**ISR**](/docs/incremental-static-regeneration/limits-and-pricing) section of the [**Usage** dashboard](/docs/pricing/manage-and-optimize-usage#viewing-usage).
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column. The cost for each metric is based on the request location. See the [pricing section](/docs/incremental-static-regeneration/limits-and-pricing#pricing) and choose the region from the dropdown for specific information.
 

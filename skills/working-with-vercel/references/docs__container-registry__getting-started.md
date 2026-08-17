@@ -9,79 +9,72 @@ prerequisites:
   - /docs/container-registry
 related:
   - /docs/cli
-  - /docs/cli/link
+  - /docs/container-registry
   - /docs/sandbox/concepts/images
   - /docs/functions/container-images
   - /docs/container-registry/cli-reference
 summary: Learn about getting started on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/getting-started.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "19cb99b1671c40fa61ae383aa23f5eeebfdc16a678103b9eacc60f6c1843cc0a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8edccab08f898044131f44dbfd293b26ffee2fd814154b52ac290c3797f686ad"
 ---
 
 # Getting Started
 
-Create a Vercel Container Registry (VCR) repository, authenticate your container tool, then push and pull your first image.
+Push your first image to Vercel Container Registry (VCR) with the Vercel CLI, then pull it back with your container tool.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \(GHCR\) to Vercel Container Registry \(VCR\), including authent
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related) — Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and m
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Public and Shared Repositories](https://vercel.com/docs/container-registry/public-and-shared-repositories?from=related) — Learn about public and shared repositories on Vercel.
+- [Build Image](https://vercel.com/docs/builds/build-image?from=related) — Learn about the container image used for Vercel builds.
+
+Full cross-link map for this page: [/docs/container-registry/getting-started.graph.md](/docs/container-registry/getting-started.graph.md)
+<!-- /docsgraph:related -->
 
 ## Prerequisites
 
 - A [Vercel account](/signup)
 - The [Vercel CLI](/docs/cli)
-- A `Dockerfile`
+- Docker, Podman, or Buildah installed and on your `PATH`
+- A `Dockerfile` or `Containerfile`
 
-- ### Create a repository
-  Create a VCR repository from your project dashboard:
-  1. Open [**Images**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fimages\&title=Go+to+Images) in your project dashboard.
-  2. Click **Create Repository**.
-  3. Enter a repository name, such as `my-repository`.
-  You can also push to a new repository path with Docker-compatible tooling. VCR creates the repository automatically when your authenticated account has access to the project.
-
-- ### Authenticate to VCR
-  The recommended way to authenticate is with OpenID Connect (OIDC) through the [Vercel CLI](/docs/cli). In a [linked project](/docs/cli/link), `vercel vcr login` authenticates a container tool with VCR. It supports Docker, Podman, and Buildah:
+- ### Link your project and authenticate
+  Every VCR repository belongs to a Vercel project. Link your project directory, then authenticate your container tool:
   ```bash filename="terminal"
   vercel link
   vercel vcr login docker
   ```
-  Vercel mints a short-lived, project-scoped OIDC token and passes it to the container tool with the username `oidc`. The credentials are valid for 12 hours. Re-run the command to refresh them. Use `--project` to authenticate a different project.
+  Vercel mints a short-lived, project-scoped OpenID Connect (OIDC) token and passes it to the container tool with the username `oidc`. The credentials are valid for 12 hours. Re-run the command to refresh them. Use `--project` to authenticate a different project.
 
-  Alternatively, create a Vercel token from the [Account Tokens page](/account/tokens), then set `VERCEL_TOKEN` to that value:
-  ```bash filename="terminal"
-  printf '%s' "$VERCEL_TOKEN" | docker login vcr.vercel.com \
-    --username "$VERCEL_TEAM_ID" \
-    --password-stdin
-  ```
-  For token authentication, the Docker username is the team ID that owns the project. Docker prints `Login Succeeded` when authentication succeeds:
-  ```txt
-  Login Succeeded
-  ```
+  To authenticate with a long-lived Vercel token instead, see [Authenticate with a Vercel token](/docs/container-registry#authenticate-with-a-vercel-token).
 
 - ### Push an image
-  The recommended way to push an image is through the [Vercel CLI](/docs/cli). After authenticating, use `vercel vcr build` to build and push to VCR:
+  Build the current directory and push it in one step:
   ```bash filename="terminal"
-  vercel vcr build docker . my-repository:latest --push
+  vercel vcr build docker . --push
   ```
-  Alternatively, build and push the image with Docker Buildx:
-  > **💡 Note:** Vercel recommends zstd compression for images pushed to VCR.
-  ```bash filename="terminal"
-  docker buildx build \
-    --platform linux/amd64,linux/arm64 \
-    --output "type=image,name=vcr.vercel.com/team-slug/project-slug/my-repository:latest,push=true,oci-mediatypes=true,compression=zstd,compression-level=3,force-compression=true" \
-    --push .
-  ```
-  If Docker Buildx is unavailable, build and push the image with Docker. This command does not set zstd compression:
-  ```bash filename="terminal"
-  docker build \
-    -t vcr.vercel.com/team-slug/project-slug/my-repository:latest \
-    .
+  You don't need to create a repository first. VCR creates one named after your project on the first push. To use a different repository name or tag, pass `name[:tag]`, for example `vercel vcr build docker . my-repository:1.2.3 --push`.
 
-  docker push vcr.vercel.com/team-slug/project-slug/my-repository:latest
-  ```
+  To build and push with your container tool instead of the Vercel CLI, see [Use your container tool directly](/docs/container-registry#use-your-container-tool-directly).
 
 - ### Pull an image
-  Pull the VCR image with the same full repository path:
+  Print the full image reference for a tag, then pull that reference with your container tool. `tag inspect` reports the values to use in place of `team-slug` and `project-name`. With the default push, the repository is named after your project, so `project-name` appears twice in the reference. If you passed a `name[:tag]` when pushing, use that repository name in the `tag inspect` command and as the last segment of the reference instead:
   ```bash filename="terminal"
-  docker pull vcr.vercel.com/team-slug/project-slug/my-repository:latest
+  vercel vcr tag inspect project-name latest
+  docker pull vcr.vercel.com/team-slug/project-name/project-name:latest
   ```
 
 ## Next steps

@@ -16,13 +16,29 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "fe2d3a899866cd9d008a4883e65046b7659bfc90ba3fe86d15f46f886a74ffcc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "bd6a40c1ac71d75917c2e9365409d7dfc852aaef9f3cf8c401e5762913d7047e"
 ---
 
 # Create an Integration
 
 Learn the process of creating and managing integrations on Vercel, helping you extend the capabilities of Vercel projects by connecting them with your third-party services. The overall process of creating an integration is as follows:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Webhooks](https://vercel.com/docs/webhooks?from=related) — Learn how to set up webhooks and use them with Vercel Integrations.
+
+Full cross-link map for this page: [/docs/integrations/create-integration.graph.md](/docs/integrations/create-integration.graph.md)
+<!-- /docsgraph:related -->
 
 1. Submit a [create integration form](#creating-an-integration) request to Vercel
 2. If you are creating a native integration, submit the [create product form](#native-integration-product-creation) as well
@@ -105,7 +121,7 @@ The **Create Product** form must be completed in full for at least one product b
 
 ### Native integrations
 
-To create a  for your [native integration](/docs/integrations#native-integrations), follow the steps in [Create a product for a native integration](/docs/integrations/marketplace-product).
+To create a  for your [native integration](/docs/integrations#native-integrations), follow the steps in [Create a product for a native integration](/docs/integrations/create-integration/marketplace-product).
 
 ### Connectable account integrations
 
@@ -159,11 +175,11 @@ For the installation flow, you should consider adding the following specs:
 
 ## Integrations console
 
-You can view all the integrations that you created for a team on the [**Integrations Console**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations%2Fconsole\&title=Go+to+Integrations+Console). There you can manage the settings for each integration which include the fields you completed in the [Create Integration form](#create-integration-form-details) and product fields you completed in the [Create Product form](#create-product-form-details) for native integrations.
+You can view all the integrations that you created for a team on the [**Integrations Console**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations%2Fconsole\&title=Go+to+Integrations+Console). There you can manage the settings for each integration which include the fields you completed in the [Create Integration form](#create-integration-form-details) and product fields you completed in the [Create Product form](#create-product-form-details) for native integrations. If your integration uses outdated platform features such as legacy webhooks, [upgrade your integration](/docs/integrations/create-integration/upgrade-integration) to use the current ones.
 
 ### Integration credentials
 
-When you create an integration, you are assigned a client (integration) ID and secret which you will use to authenticate your webhooks as described in [webhook security](/docs/webhooks/webhooks-api#securing-webhooks). This is found at the bottom of the settings page for your integration. You can rotate the secret for your integration by going to the **Credentials** section of the integration settings page and clicking the **Rotate Secret** button.
+When you create an integration, you are assigned a client (integration) ID and secret which you will use to authenticate your webhooks as described in [webhook security](/docs/webhooks/webhooks-api#securing-webhooks). This is found at the bottom of the settings page for your integration. You can rotate the secret for your integration by going to the **Credentials** section of the integration settings page and clicking the **Rotate Secret** button. To call the Vercel REST API from your integration, including exchanging the redirect `code` for an access token, see [Building Integrations with Vercel REST API](/docs/integrations/create-integration/vercel-api-integrations).
 
 ## Integration support
 

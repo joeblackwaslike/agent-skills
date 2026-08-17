@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "caf1c98b9fa69750993f64e78ce5ab07866139a86adc372ec828c1c678c9bf85"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "23603db98faa22f19ae01a9f6a77296c1c32013bbf929a9861f56e907e183b4f"
 ---
 
 # Providers and Models
@@ -117,11 +117,11 @@ Here are the capabilities of popular models:
 
 | Provider                                           | Model                                       | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | -------------------------------------------------- | ------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4.6`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4.5`                                  | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4`                                    | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3`                                    | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3-mini`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [Vercel](/providers/ai-sdk-providers/vercel)       | `v0-1.0-md`                                 | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6`                                   | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6-luna`                              | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-5.6-sol`                               | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -164,9 +164,9 @@ Here are the capabilities of popular models:
 | [Mistral](/providers/ai-sdk-providers/mistral)     | `pixtral-12b-2409`                          | <Check />   | <Check />         | <Check />  | <Check />      |
 | [DeepSeek](/providers/ai-sdk-providers/deepseek)   | `deepseek-chat`                             | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [DeepSeek](/providers/ai-sdk-providers/deepseek)   | `deepseek-reasoner`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [Cerebras](/providers/ai-sdk-providers/cerebras)   | `llama3.1-8b`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [Cerebras](/providers/ai-sdk-providers/cerebras)   | `llama3.1-70b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [Cerebras](/providers/ai-sdk-providers/cerebras)   | `llama3.3-70b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [Cerebras](/providers/ai-sdk-providers/cerebras)   | `gpt-oss-120b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [Cerebras](/providers/ai-sdk-providers/cerebras)   | `zai-glm-4.7`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [Cerebras](/providers/ai-sdk-providers/cerebras)   | `gemma-4-31b`                               | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Groq](/providers/ai-sdk-providers/groq)           | `meta-llama/llama-4-scout-17b-16e-instruct` | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Groq](/providers/ai-sdk-providers/groq)           | `llama-3.3-70b-versatile`                   | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Groq](/providers/ai-sdk-providers/groq)           | `llama-3.1-8b-instant`                      | <Cross />   | <Check />         | <Check />  | <Check />      |

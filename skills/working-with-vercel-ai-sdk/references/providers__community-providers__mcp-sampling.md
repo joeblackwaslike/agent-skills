@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mcp-sampling.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "c49eda406a6474760916027274dbd6909c15d88456bec02709450f6ef792423c"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "5022ec9577aa72b1ff1b5a98e2a5c527917654a267b88464cb0011f801b3e57b"
 ---
 
 # MCP Sampling AI Provider
@@ -537,6 +537,7 @@ The MCP client (e.g., VS Code, Claude Desktop) decides which actual model to use
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "443aa6662dde297eb52c4c74030cbe25b34b93c1f776392f60f7bfa6e6866a4f"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "da8253c28318ac115ebae0638edfb31f3d00dbae1893079cffa1dfbf1fb4c343"
 ---
 
 # Mistral AI Provider
@@ -545,7 +545,6 @@ models:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -555,6 +554,7 @@ models:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

@@ -14,13 +14,34 @@ related:
 summary: Configure model-level failover to try backup models when the primary model is unavailable
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "65774ffffaa3a871212c535b2132e55ccac38168d20e989c7d719e074e19dcb5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ce84a0cf3a222200edd940b074a97771e2823f3da7b23476e25072c3372a637b"
 ---
 
 # Model Fallbacks
 
 You can configure model failover to specify backups that are tried in order if the primary model fails or is unavailable.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related)
+- [Cloudflare AI Gateway](https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway?from=related)
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+- [Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts?from=related) — Configure per-provider timeouts for fast failover when a provider is slow to respond.
+- [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md)
+<!-- /docsgraph:related -->
 
 ## Using the `models` option
 

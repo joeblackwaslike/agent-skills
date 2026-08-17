@@ -13,13 +13,29 @@ related:
 summary: Learn about public and shared repositories on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/public-and-shared-repositories.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "25fd87ee0a544808b7e9d2ab3290d90d0c52ae2f5b8cc023f0c22f69249fb7cd"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "41ac54b705007099fa5c56f32aa56b54df9abc0e62e8a27231310c94237e48b8"
 ---
 
 # Public and Shared Repositories
 
 Vercel Container Registry (VCR) repositories are private by default. Share a repository with specific Vercel teams, or make it public so any Vercel team can pull its images.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related) — Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and m
+- [List repositories](https://vercel.com/docs/rest-api/vcr/list-repositories?from=related)
+- [Create a repository](https://vercel.com/docs/rest-api/vcr/create-a-repository?from=related)
+- [Getting Started](https://vercel.com/docs/container-registry/getting-started?from=related) — Learn about getting started on Vercel.
+- [Get a repository](https://vercel.com/docs/rest-api/vcr/get-a-repository?from=related)
+
+Full cross-link map for this page: [/docs/container-registry/public-and-shared-repositories.graph.md](/docs/container-registry/public-and-shared-repositories.graph.md)
+<!-- /docsgraph:related -->
 
 ## Share a repository
 
@@ -53,7 +69,7 @@ Teams with access can pull images and use them in [Vercel Sandbox](/docs/sandbox
 A team with access pulls a shared image with its full repository path after authenticating as their own team:
 
 ```bash filename="terminal"
-docker pull vcr.vercel.com/team-slug/project-slug/my-repository:latest
+docker pull vcr.vercel.com/team-slug/project-name/my-repository:latest
 ```
 
 ## Public repositories

@@ -17,8 +17,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "52fb107c89c3e16d17c4f8cc568c1f00e3cde710f2cd5cacd34a41c3223a8a7e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "70987f16348407eba155d2e9bd0fd3afed29c5444d54c286ae8c771d7424343f"
 ---
 
 # Edge Runtime
@@ -26,6 +26,25 @@ sha256: "52fb107c89c3e16d17c4f8cc568c1f00e3cde710f2cd5cacd34a41c3223a8a7e"
 > **💡 Note:** We recommend migrating from edge to Node.js for improved performance and
 > reliability. Both runtimes run on [Fluid compute](/docs/fluid-compute) with
 > [Active CPU pricing](/docs/functions/usage-and-pricing).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I make my library compatible with the Vercel Edge Runtime?](https://vercel.com/kb/guide/library-sdk-compatible-with-vercel-edge-runtime-and-functions?from=related) — Learn how to make your library or SDK compatible with the Edge Runtime for existing Edge Runtime code and Routing Middle
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Edge Runtime](https://nextjs.org/docs/pages/api-reference/edge?from=related) — API Reference for the Edge Runtime.
+- [Edge Runtime](https://nextjs.org/docs/app/api-reference/edge?from=related) — API Reference for the Edge Runtime.
+- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related) — Learn about available APIs when working with Vercel Functions.
+- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+
+Full cross-link map for this page: [/docs/functions/runtimes/edge.graph.md](/docs/functions/runtimes/edge.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Starting in Next.js 16.3, setting `runtime = 'edge'` is no longer supported.
 > Routes and pages run on Node.js.

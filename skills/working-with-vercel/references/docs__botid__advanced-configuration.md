@@ -12,13 +12,32 @@ related:
 summary: Fine-grained control over BotID detection levels and backend domain configuration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "da1efa2ac58cc6b6ab1f7e3c1e9b05f7f41f5f29117a829406ff5dbd8892a73e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e39b76858175f31dfec2d04cd179c699f578ba93aaa4a8b26afccfd7998c3dbc"
 ---
 
 # Advanced BotID Configuration
 
 ## Route-by-Route configuration
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\(\) so inference runs only for verified callers
+- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile?from=related) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
+- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode?from=related) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Connect your API](https://vercel.com/docs/oidc/api?from=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\)
+
+Full cross-link map for this page: [/docs/botid/advanced-configuration.graph.md](/docs/botid/advanced-configuration.graph.md)
+<!-- /docsgraph:related -->
 
 When you need fine-grained control over BotID's detection levels, you can specify `advancedOptions` to choose between basic and deep analysis modes on a per-route basis. **This configuration takes precedence over the project-level BotID settings in your Vercel dashboard.**
 

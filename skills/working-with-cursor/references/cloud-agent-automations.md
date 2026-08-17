@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/automations.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "2ee2a5328c9525f13475fae060a491b4fa613fbdf5a39f3e92ac08a2e1fc6fb8"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "c1ada3c165f956986e543d4c69aee6e2f0f0fdfb98f7fba68b4434b73efa21cf"
 ---
 
 # Automations
@@ -23,6 +23,12 @@ For any path:
 3. Choose optional tools the agent is able to use, such as Send to Slack, Comment on Pull Request, or tools from MCP.
 4. Choose whether the automation needs a repository, multiple repositories, or no repository at all.
 5. Save and activate the automation.
+
+The Automations page also includes three Cursor-managed agents:
+
+- [Bugbot](https://cursor.com/docs/bugbot.md) reviews pull requests for bugs and code quality issues.
+- [Security Agents](https://cursor.com/docs/security-agents.md) review pull requests and scan codebases for vulnerabilities.
+- [PR Routing & Approval](https://cursor.com/docs/approval-agents.md) routes pull requests to reviewers and can approve low-risk changes.
 
 ## Billing
 

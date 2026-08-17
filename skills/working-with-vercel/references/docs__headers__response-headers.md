@@ -10,25 +10,44 @@ prerequisites:
 related:
   - /docs/caching/cdn-cache
   - /docs/headers
-  - /docs/headers/cache-control-headers
+  - /docs/caching/cache-control-headers
   - /docs/deployments/environments
   - /docs/deployments
 summary: Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/response-headers.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "9822e877c05c3108cd6aeac16f509365ede5af3005b43c3717ec1ccbb1816ce9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8daae5821715934f0f2595d245eb2d40205f9d894f087691875745557cd8b1c8"
 ---
 
 # Response headers
 
 The following headers are included in Vercel deployment responses and indicate certain factors of the environment. These headers can be viewed from the Browser's Dev Tools or using an HTTP client such as `curl -I <DEPLOYMENT_URL>`.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related) — Learn how to set headers to cache your function's responses.
+- [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
+- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+
+Full cross-link map for this page: [/docs/headers/response-headers.graph.md](/docs/headers/response-headers.graph.md)
+<!-- /docsgraph:related -->
+
 ## `cache-control`
 
 Used to specify directives for caching mechanisms in both the [CDN cache](/docs/caching/cdn-cache) and the browser cache. See the [Cache-Control headers](/docs/headers#cache-control-header) section for more detail.
 
-If you use this header to instruct the CDN to cache data, such as with the [`s-maxage`](/docs/headers/cache-control-headers#s-maxage) directive, Vercel returns the following `cache-control` header to the client:
+If you use this header to instruct the CDN to cache data, such as with the [`s-maxage`](/docs/caching/cache-control-headers#s-maxage) directive, Vercel returns the following `cache-control` header to the client:
 
 -`cache-control: public, max-age=0, must-revalidate`
 
@@ -68,7 +87,7 @@ You can prevent this header from being added to your Preview Deployment by:
 
 ## `x-vercel-cache`
 
-The `x-vercel-cache` header indicates the cache status of static assets and responses from Vercel's CDN. For dynamic routes and fetch requests that use the [runtime cache](/docs/caching/runtime-cache), this header often shows `MISS` even if the data is served from the runtime cache. Use [custom headers](/docs/headers/cache-control-headers#custom-response-headers) or [runtime logs](/docs/runtime-logs) to check whether a fetch response was served from the runtime cache.
+The `x-vercel-cache` header indicates the cache status of static assets and responses from Vercel's CDN. For dynamic routes and fetch requests that use the [runtime cache](/docs/caching/runtime-cache), this header often shows `MISS` even if the data is served from the runtime cache. Use [custom headers](/docs/caching/cache-control-headers#custom-response-headers) or [runtime logs](/docs/logs/runtime) to check whether a fetch response was served from the runtime cache.
 
 The header returns one of the following values. For what each one means in depth, including the reasons behind a miss, bypass, or stale response, see [Cache Status and Reasons](/docs/caching/cache-status):
 

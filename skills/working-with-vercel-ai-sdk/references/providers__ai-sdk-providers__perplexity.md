@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "936e84c281647c9bcfb48a10aa1c818c34ab8c6cdbfda3ec4d0c7321e79a4511"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "2e32b500f5b9f527503ca961600aec2255027427845c1b84f7da0454c00d2a71"
 ---
 
 # Perplexity Provider
@@ -285,7 +285,6 @@ The following optional provider options are available for embedding models:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -295,6 +294,7 @@ The following optional provider options are available for embedding models:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

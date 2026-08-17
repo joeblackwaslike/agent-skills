@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-platform-on-aws.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "9080b0cb4304b265b486e02757ae0bff36957022b8fe63e5fe83eff6528022ef"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "72010eb6a564f8b4b965ba31cb08f501005e1898fad9aece08015b286017b77c"
 ---
 
 > ## Documentation Index
@@ -238,7 +238,7 @@ If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](/docs/e
 }
 ```
 
-Claude Code also runs this command at startup when it can't validate your existing AWS credentials, and shows the command's output in an `Authentication` panel until the login completes. Before v2.1.212, the panel was titled `Cloud authentication`.
+Claude Code also runs this command at startup when it can't validate your existing AWS credentials, and shows the command's output in an `Authentication` panel until the login completes.
 
 With `awsAuthRefresh` configured, `/login` shows a **Claude Platform on AWS · refresh credentials** option under **Using 3rd-party platforms**. Selecting it runs the configured command and re-reads your AWS credentials without restarting Claude Code.
 
@@ -255,7 +255,7 @@ The key is sent as `x-api-key` and takes precedence over SigV4, so any AWS crede
 Treat workspace API keys like any other production credential. The [user settings file](/docs/en/settings) `env` block is a convenient way to scope the key to your machine without exporting it globally.
 
 <Note>
-  The `/login` and `/logout` commands don't sign you into a Claude.ai subscription for Claude Platform on AWS. Authentication runs through your AWS credentials or workspace API key. The exception is the **refresh credentials** option `/login` shows when `awsAuthRefresh` is configured, which re-reads your AWS credentials as described above.
+  The `/login` and `/logout` commands don't sign you into a Claude.ai subscription for Claude Platform on AWS. Authentication runs through your AWS credentials or workspace API key.
 </Note>
 
 ### 2. Configure Claude Code

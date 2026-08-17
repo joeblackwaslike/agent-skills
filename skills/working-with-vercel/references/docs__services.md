@@ -16,13 +16,35 @@ related:
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "019568f644ca40cb7ec5ccd5b8cf231992754a2dad6c6c84fa50c922e66352da"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4b214db9fb647169aa9cd1c04d7dd64b4989cb2aebc963e7c02c6081c2f72bb5"
 ---
 
 # Services
 
 > **🔒 Permissions Required**: Services
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Nuxt](https://eve.dev/docs/guides/frontend/nuxt?from=related) — Run an eve agent and a Nuxt app as one project with the eve/nuxt module.
+- [SvelteKit](https://eve.dev/docs/guides/frontend/sveltekit?from=related) — Run an eve agent and a SvelteKit app as one project with the eveSvelteKit Vite plugin.
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+
+Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md)
+<!-- /docsgraph:related -->
 
 Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain,
 replacing the need to split monorepos into separate Vercel projects.
@@ -159,6 +181,7 @@ In both cases, generated binding environment variables are injected automaticall
 - [Pricing and Limits](/docs/services/pricing): How billing works for services and which limits apply.
 - [Queues with services](/docs/queues/concepts#queues-with-services): How a service consumes queue messages.
 - [Experimental Services](/docs/services/experimental): The earlier `experimentalServices` configuration model.
+- [Services guides](/kb/vercel-services): Guides and examples for deploying with Vercel Services.
 
 
 ---

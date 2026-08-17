@@ -9,20 +9,37 @@ prerequisites:
   - /docs/global-config
 related:
   - /docs/cli
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/global-config/using-global-config
   - /docs/global-config/global-config-limits
   - /docs/routing-middleware
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "22d64df8c0095f91a6ce2725d79249c3c89d2d35a00390ee92638746c304fa1f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "039a015f63c6c040539f9db4d8e06a005bc108754b4e814f44e7138f7caefd4f"
 ---
 
 # Getting started with Global Config
 
 Global Config is a distributed key-value store that allows you to store and retrieve data on Vercel's global network, close to your users. It is designed for high performance and low latency, making it ideal for use cases such as feature flags, A/B testing, and dynamic configuration.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Redirecting](https://nextjs.org/docs/app/guides/redirecting?from=related) — Learn the different ways to handle redirects in Next.js.
+- [Redirecting](https://nextjs.org/docs/pages/guides/redirecting?from=related) — Learn the different ways to handle redirects in Next.js.
+- [LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related) — Learn how to use Global Config with Vercel's Statsig integration.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
+
+Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md)
+<!-- /docsgraph:related -->
 
 This guide will help you create a Global Config called `hello_world_store` at the project-level, through the Vercel [dashboard](/dashboard). A token and environment variable `GLOBAL_CONFIG`, that stores the connection string, will be automatically created for you. You'll update the store with a key-value data pair and read the value of `"greeting"` from a local Next.js project.
 
@@ -78,7 +95,7 @@ This guide will help you create a Global Config called `hello_world_store` at th
 </CodeBlock>
 
 - ### Create a Global Config store
-  Navigate to the [Project](/docs/projects/overview) you'd like to add a Global Config store to. Click on [**Storage**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fstores\&title=Go+to+Storage), then click the **Create Database** button. Select **Global Config** and click **Continue**.
+  Navigate to the [Project](/docs/projects) you'd like to add a Global Config store to. Click on [**Storage**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fstores\&title=Go+to+Storage), then click the **Create Database** button. Select **Global Config** and click **Continue**.
 
   Create a new store by typing `hello_world_store` under **Global Config** in the dialog that opens, and click **Create**.
   > **💡 Note:** The name can only contain alphanumeric letters, "\_" and "-". It cannot exceed

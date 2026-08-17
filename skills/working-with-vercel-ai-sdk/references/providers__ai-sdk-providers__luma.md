@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "3c32f71b375465e1c543c1ae72f17411fd744e0facc84715606ef44c312c5b26"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "bd1017dec387e2c3ee893b898eb0fd8f6d9906951c9c80a42341942f8edf7eb7"
 ---
 
 # Luma Provider
@@ -257,7 +257,6 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -267,6 +266,7 @@ Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

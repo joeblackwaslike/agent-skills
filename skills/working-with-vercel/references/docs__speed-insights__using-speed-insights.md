@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Speed Insights to analyze your application's performance data."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/using-speed-insights.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b76bd439c966f57f24996cfc0257d1615b8a7acf0023b219d4a94d2fa9716b57"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "025c6d162860f3e7c39d3ffa4c2ed8ee0a8e689dab39ef07a8f7ae99e2866f9e"
 ---
 
 # Using Speed Insights
@@ -25,6 +25,21 @@ sha256: "b76bd439c966f57f24996cfc0257d1615b8a7acf0023b219d4a94d2fa9716b57"
 > **💡 Note:** You can also [access Speed Insights metrics with Vercel CLI](/docs/speed-insights/accessing-metrics-with-vercel-cli)
 > to query production metrics, filter Core Web Vitals, and compare projects from
 > your terminal.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [@vercel/speed-insights](https://vercel.com/docs/speed-insights/package?from=related) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
+- [Privacy](https://vercel.com/docs/speed-insights/privacy-policy?from=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+
+Full cross-link map for this page: [/docs/speed-insights/using-speed-insights.graph.md](/docs/speed-insights/using-speed-insights.graph.md)
+<!-- /docsgraph:related -->
 
 ## Accessing Speed Insights
 

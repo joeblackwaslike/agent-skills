@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/supermemory.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "7891ce8e4d95cbf401071981dfcea4d3fa9696b35f3e26e5dcb58aafdf708dcc"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "c4ee5f75d4fec976a9d25f63846a12b7deb718421e3fa0d8e4dd6a81ff874844"
 ---
 
 # Supermemory
@@ -196,6 +196,7 @@ For more information about these features and advanced configuration options, vi
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

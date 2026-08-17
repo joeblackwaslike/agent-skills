@@ -8,21 +8,36 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/deployments/build-image
-  - /docs/build-output-api/v3/configuration
-  - /docs/build-output-api/v3/primitives
-  - /docs/build-output-api/v3/features
-  - /docs/build-output-api/v3/services
+  - /docs/builds/build-image
+  - /docs/build-output-api/configuration
+  - /docs/build-output-api/primitives
+  - /docs/build-output-api/features
+  - /docs/build-output-api/services
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "cd8381006f5e827068dd331fe9f42ee20f0777d39300d208645e0012b8b89fd2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6324f23201b7a07ec949ac404c3a5389f08caf961b0195b2da8fa45967021170"
 ---
 
 # Build Output API
 
 The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build?from=related) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+
+Full cross-link map for this page: [/docs/build-output-api.graph.md](/docs/build-output-api.graph.md)
+<!-- /docsgraph:related -->
 
 Framework authors can take advantage of [framework-defined infrastructure](/blog/framework-defined-infrastructure) by implementing this directory structure as the output of their build command. This allows the framework to define and use all of the Vercel platform features.
 
@@ -52,14 +67,14 @@ what runs in production on Vercel.
 
 For projects that depend
 on native binaries, you should build on a host machine running Linux with a `x64` CPU architecture,
-ideally the same as the platform [Build Image](/docs/deployments/build-image).
+ideally the same as the platform [Build Image](/docs/builds/build-image).
 
 ## More resources
 
-- [Configuration](/docs/build-output-api/v3/configuration)
-- [Vercel Primitives](/docs/build-output-api/v3/primitives)
-- [Features](/docs/build-output-api/v3/features)
-- [Services](/docs/build-output-api/v3/services)
+- [Configuration](/docs/build-output-api/configuration)
+- [Vercel Primitives](/docs/build-output-api/primitives)
+- [Features](/docs/build-output-api/features)
+- [Services](/docs/build-output-api/services)
 
 
 ---

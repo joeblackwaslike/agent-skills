@@ -12,13 +12,28 @@ related:
 summary: Learn about common issues and how to troubleshoot Vercel Speed Insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/troubleshooting.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d55a244da462bf24da4f96531603abd43d4401cfa30eaade9a9e6d3fac7bc8d7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "021760c8b5bf83c349c6d4fa87ad47371af9e18cd98b66a51d44efcc022c48f7"
 ---
 
 # Troubleshooting Vercel Speed Insights
 
 > **🔒 Permissions Required**: Speed Insights
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Privacy](https://vercel.com/docs/speed-insights/privacy-policy?from=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
+- [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [@vercel/speed-insights](https://vercel.com/docs/speed-insights/package?from=related) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+
+Full cross-link map for this page: [/docs/speed-insights/troubleshooting.graph.md](/docs/speed-insights/troubleshooting.graph.md)
+<!-- /docsgraph:related -->
 
 ## No data visible in Speed Insights dashboard
 

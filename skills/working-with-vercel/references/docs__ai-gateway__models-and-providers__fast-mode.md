@@ -13,13 +13,30 @@ related:
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "3bd1d3b9070e38e80266ae8a969bf1e810572f620ff473914c09b6fc475dfd48"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "04c44dffb6ecd00054c921e8687739d829bcc1f618bfb9eb87c05ece0878412d"
 ---
 
 # Fast Mode
 
 Some models expose a faster serving path that trades a higher per-token cost for lower latency. You can request this fast tier through AI Gateway with the unified `gateway.speed` option or by using a fast slug.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related) — Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers throu
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related) — Configure model-level failover to try backup models when the primary model is unavailable
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/fast-mode.graph.md](/docs/ai-gateway/models-and-providers/fast-mode.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Requesting `speed: 'fast'` on a model that has no fast tier has no effect — the request runs at standard speed. See the supported models below for the current list.
 

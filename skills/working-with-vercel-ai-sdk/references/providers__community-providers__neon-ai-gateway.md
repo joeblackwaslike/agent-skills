@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/neon-ai-gateway.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "f5aade9d2ddcea30a4630b4697d0ebd53fb246c9a22a26a2321f76035fd22cfd"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "f72350258f6f1e5372c5cc18e9c9e6555281363c61d6ff8987c8956d7c752670"
 ---
 
 # Neon AI Gateway
@@ -210,6 +210,7 @@ Model requests follow the same branch isolation as the database. The [AI Gateway
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

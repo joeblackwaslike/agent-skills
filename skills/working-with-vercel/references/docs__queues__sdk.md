@@ -8,18 +8,35 @@ type: reference
 prerequisites:
   - /docs/queues
 related:
-  - /docs/queues/poll-mode
+  - /docs/queues/python-sdk
   - /docs/queues
+  - /docs/queues/api
+  - /docs/queues/poll-mode
 summary: Publish and consume messages with the @vercel/queue SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "8692d57b6df6a0936554cf5dc0b964fe3710dbed142aa74f83d698b25898a067"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4c9a6e0a06b51afec99f1c11cde00f07b003eed3f501ca332ebd4edfbda6db73"
 ---
 
-# SDK Reference
+# Vercel Queues: JS SDK Reference
 
-The `@vercel/queue` Node.js SDK lets you publish and consume messages in push-based workflows on Vercel. For poll-based consumption, see [`PollingQueueClient`](/docs/queues/poll-mode#pollingqueueclient).
+The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume Vercel Queues messages. For Python, see the [Python SDK Reference](/docs/queues/python-sdk).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
+- [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related) — Learn about available APIs when working with Vercel Functions.
+- [Workflows](https://vercel.com/docs/workflows?from=related) — Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents w
+
+Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md)
+<!-- /docsgraph:related -->
 
 ## Installation
 
@@ -48,17 +65,17 @@ The `@vercel/queue` Node.js SDK lets you publish and consume messages in push-ba
 
 ## Top-level exports
 
-Import `send` and `handleCallback` directly from `@vercel/queue`. A lazily-created default client auto-detects the region from `VERCEL_REGION`, falling back to `iad1`.
+Import the top-level helpers directly from `@vercel/queue`. A lazily-created default client resolves credentials from the Vercel environment.
 
-```typescript
+```ts filename="app/api/queues/process-order/route.ts" framework=nextjs-app
 import { send, handleCallback } from '@vercel/queue';
 ```
 
 ### Custom client
 
-If you need to target a specific region, use a non-default transport, or manage multiple clients, create a `QueueClient` explicitly:
+Create a `QueueClient` when you need to target a specific region, set default options, or manage multiple clients.
 
-```typescript filename="lib/queue.ts"
+```ts filename="lib/queue.ts" framework=nextjs-app
 import { QueueClient } from '@vercel/queue';
 
 const queue = new QueueClient({ region: 'sfo1' });
@@ -66,9 +83,9 @@ const queue = new QueueClient({ region: 'sfo1' });
 export const { send, handleCallback } = queue;
 ```
 
-Then import from your module instead of `@vercel/queue`:
+Then import from your module instead of `@vercel/queue`.
 
-```typescript filename="app/api/orders/route.ts"
+```ts filename="app/api/orders/route.ts" framework=nextjs-app
 import { send } from '@/lib/queue';
 
 export async function POST(request: Request) {
@@ -78,7 +95,7 @@ export async function POST(request: Request) {
 }
 ```
 
-```typescript filename="app/api/queues/process-order/route.ts"
+```ts filename="app/api/queues/process-order/route.ts" framework=nextjs-app
 import { handleCallback } from '@/lib/queue';
 
 export const POST = handleCallback(async (message, metadata) => {
@@ -90,7 +107,7 @@ export const POST = handleCallback(async (message, metadata) => {
 
 Use `send` to publish a message to a topic. The message can be any JSON-serializable value.
 
-```typescript filename="app/api/orders/route.ts"
+```ts filename="app/api/orders/route.ts" framework=nextjs-app
 import { send } from '@vercel/queue';
 
 export async function POST(request: Request) {
@@ -105,7 +122,7 @@ export async function POST(request: Request) {
 
 ### Send options
 
-```typescript
+```ts filename="app/api/orders/route.ts" framework=nextjs-app
 await send('orders', payload, {
   region: 'sfo1',
   retentionSeconds: 3600,
@@ -123,13 +140,13 @@ await send('orders', payload, {
 | `idempotencyKey`   | `string`                 | -             | Deduplication key for the message                                           |
 | `headers`          | `Record<string, string>` | -             | Custom headers to include with this message                                 |
 
-## Consuming messages (push mode)
+## Consuming messages in push mode
 
-Use `handleCallback` to create a push mode consumer. Messages are automatically acknowledged when your handler completes, and retried if it throws.
+Use `handleCallback` to create a push mode consumer. Messages are automatically acknowledged when your handler completes, and retried if the handler throws.
 
-For Express, Connect, or Next.js Pages Router apps, use `handleNodeCallback` instead, which accepts `(req, res)` arguments. Unlike the top-level exports, `handleNodeCallback` is only available on a `QueueClient` instance:
+For Express, Connect, or Next.js Pages Router apps, use `handleNodeCallback` instead, which accepts `(req, res)` arguments. Unlike the top-level exports, `handleNodeCallback` is only available on a `QueueClient` instance.
 
-```typescript filename="pages/api/queues/process-order.ts"
+```ts filename="pages/api/queues/process-order.ts"
 import { QueueClient } from '@vercel/queue';
 
 const queue = new QueueClient();
@@ -139,7 +156,7 @@ export default queue.handleNodeCallback(async (message, metadata) => {
 });
 ```
 
-First, configure the consumer in `vercel.json`:
+First, configure the consumer in `vercel.json`.
 
 ```json filename="vercel.json"
 {
@@ -153,9 +170,9 @@ First, configure the consumer in `vercel.json`:
 }
 ```
 
-Then create the handler:
+Then create the handler.
 
-```typescript filename="app/api/queues/process-order/route.ts"
+```ts filename="app/api/queues/process-order/route.ts" framework=nextjs-app
 import { handleCallback } from '@vercel/queue';
 
 export const POST = handleCallback(async (message, metadata) => {
@@ -177,16 +194,16 @@ The `metadata` object includes:
 
 ### Handler options
 
-Pass an options object as the second argument to `handleCallback` to configure visibility timeout and retry behavior:
+Pass an options object as the second argument to `handleCallback` to configure visibility timeout and retry behavior.
 
 | Option                     | Type       | Default   | Description                                                             |
 | -------------------------- | ---------- | --------- | ----------------------------------------------------------------------- |
 | `visibilityTimeoutSeconds` | `number`   | 5 minutes | How long the message stays in-flight before redelivery                  |
 | `retry`                    | `function` | -         | Custom retry logic. See [custom retry behavior](#custom-retry-behavior) |
 
-The SDK automatically re-extends the visibility timeout while your handler is running, so you don't need to configure it for most workloads. If you need to override it for advanced use cases, pass `visibilityTimeoutSeconds`:
+The SDK automatically re-extends the visibility timeout while your handler is running, so you don't need to configure it for most workloads. If you need to override it for advanced use cases, pass `visibilityTimeoutSeconds`.
 
-```typescript filename="app/api/queues/process-order/route.ts"
+```ts filename="app/api/queues/process-order/route.ts"
 import { handleCallback } from '@vercel/queue';
 
 export const POST = handleCallback(
@@ -203,9 +220,9 @@ export const POST = handleCallback(
 
 ### Custom retry behavior
 
-Control retry timing and handle poison messages with the `retry` option:
+Control retry timing and handle poison messages with the `retry` option.
 
-```typescript filename="app/api/queues/process-order/route.ts"
+```ts filename="app/api/queues/process-order/route.ts"
 import { handleCallback } from '@vercel/queue';
 
 export const POST = handleCallback(
@@ -236,9 +253,7 @@ The `retry` callback can return:
 
 ### Nitro
 
-[Nitro v3](https://nitro.build) and frameworks built on it integrate with Vercel Queues through the Vercel preset. You declare your topic triggers in `nitro.config.ts`, and Nitro generates the consumer function and its trigger configuration during the build, so you don't edit `vercel.json` yourself.
-
-Declare the topics you want to subscribe to under `vercel.queues.triggers`:
+[Nitro v3](https://nitro.build) and frameworks built on it integrate with Vercel Queues through the Vercel preset. Declare topic triggers in `nitro.config.ts`, and Nitro generates the consumer function and trigger configuration during the build.
 
 ```ts filename="nitro.config.ts"
 export default defineConfig({
@@ -265,7 +280,7 @@ Each trigger accepts the following options:
 | `retryAfterSeconds`   | `number` | No       | Delay before a failed message is retried                  |
 | `initialDelaySeconds` | `number` | No       | Delay before a newly published message is first delivered |
 
-Process incoming messages with the `vercel:queue` runtime hook in a [Nitro plugin](https://nitro.build/guide/plugins). The hook receives the decoded `message`, its `metadata`, and a `send` function for publishing follow-up messages:
+Process incoming messages with the `vercel:queue` runtime hook in a [Nitro plugin](https://nitro.build/guide/plugins). The hook receives the decoded `message`, its `metadata`, and a `send` function for publishing follow-up messages.
 
 ```ts filename="server/plugins/queues.ts"
 export default definePlugin((nitro) => {
@@ -275,7 +290,7 @@ export default definePlugin((nitro) => {
 });
 ```
 
-Send messages with `send` from `@vercel/queue` in any server route, the same as in other frameworks:
+Send messages with `send` from `@vercel/queue` in any server route.
 
 ```ts filename="server/routes/api/orders.post.ts"
 import { send } from '@vercel/queue';
@@ -287,13 +302,13 @@ export default defineHandler(async (event) => {
 });
 ```
 
-Queues also run in `nitro dev`. Run `vercel link` and `vercel env pull` first so the SDK can authenticate, then `send` delivers messages straight to your `vercel:queue` hook for local testing. If the hook throws, the message is retried locally, honoring `retryAfterSeconds` from the matching trigger.
+Queues also run in `nitro dev`. Run `vercel link` and `vercel env pull` first so the SDK can authenticate, then `send` delivers messages straight to your `vercel:queue` hook for local testing.
 
 ## Error handling
 
-The SDK provides typed error classes for each failure mode:
+The SDK provides typed error classes for each failure mode.
 
-```typescript
+```ts
 import {
   UnauthorizedError,
   BadRequestError,
@@ -315,9 +330,9 @@ try {
 
 ## Transports
 
-`QueueClient` supports multiple serialization formats through transports:
+The SDK serializes common JSON, text, and byte payloads from the payload type. Use transports when you need to override serialization, validate payloads, or receive large payloads as streams.
 
-```typescript
+```ts filename="lib/queue.ts" framework=nextjs-app
 import { QueueClient, BufferTransport, StreamTransport } from '@vercel/queue';
 
 const binaryQueue = new QueueClient({
@@ -334,6 +349,12 @@ const streamQueue = new QueueClient({
 | `JsonTransport`   | Default. Serializes messages as JSON                   |
 | `BufferTransport` | Sends and receives raw binary data                     |
 | `StreamTransport` | Sends and receives `ReadableStream` for large payloads |
+
+## Related
+
+- [Python SDK Reference](/docs/queues/python-sdk)
+- [API reference](/docs/queues/api)
+- [Poll mode](/docs/queues/poll-mode)
 
 
 ---

@@ -17,13 +17,30 @@ related:
 summary: Enable reasoning and extended thinking across providers with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "76dc03951b22e55cf46b27f48d4296e330e5abfc7bcae98b7b4d44d1ceee869b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ff8521380e9d1f8863112a38609f10b6ef63f55439cad30acba55553dfd4e74f"
 ---
 
 # Reasoning
 
 Reasoning models can "think" before responding, producing higher-quality answers for complex tasks like coding, math, and multi-step analysis. AI Gateway supports reasoning across multiple providers, including OpenAI, Anthropic, Google, Vertex AI, and Amazon Bedrock. To see every model that supports reasoning, use the **Reasoning** filter on the [AI Gateway models page](https://vercel.com/ai-gateway/models?capabilities=reasoning).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning.graph.md](/docs/ai-gateway/models-and-providers/reasoning.graph.md)
+<!-- /docsgraph:related -->
 
 There are two ways to configure reasoning with the [AI SDK](https://ai-sdk.dev):
 

@@ -16,13 +16,29 @@ related:
 summary: "Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing tools, connect to your CMS,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d0dae8c3d2867d3f463b644bbe21d8bf9b34a7b72713b7b1587d4a3b7434c6e5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8355356d7c93e98c4beb3caf0b22b9db775d3607fd46e4e768d5856b3888ca70"
 ---
 
 # Install an Integration
 
 ## Installing an integration
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Create an Integration](https://vercel.com/docs/integrations/create-integration?from=related) — Learn how to create and manage your own integration for internal or public use with Vercel.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+- [vercel install](https://vercel.com/docs/cli/install?from=related) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
+- [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product?from=related) — Learn how to create a product for your Vercel native integration
+
+Full cross-link map for this page: [/docs/integrations/install-an-integration.graph.md](/docs/integrations/install-an-integration.graph.md)
+<!-- /docsgraph:related -->
 
 Using Vercel doesn't stop at the products and features that we provide. Through integrations, you can use third-party platforms or services to extend the capabilities of Vercel by:
 

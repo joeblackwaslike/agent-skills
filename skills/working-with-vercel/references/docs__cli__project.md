@@ -14,13 +14,29 @@ related:
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename, remove, and configure access,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5e8b0b6340c2a031a266a82fc087fa78025a3fb96b76ab1e068137c036efb9a4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7732fd0e5072a78f7126157a4dba9438247ad38333b50ba21b9c53669d6f89b7"
 ---
 
 # vercel project
 
 The `vercel project` command manages your Vercel Projects from the terminal: list, add, inspect, update, rename, and remove projects, plus configure framework and build settings, deployment checks, deployment protection, access groups, member access, Web Analytics, Speed Insights, and project-scoped OIDC tokens.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel teams](https://vercel.com/docs/cli/teams?from=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+
+Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md)
+<!-- /docsgraph:related -->
 
 `vercel projects` is an alias for the same command.
 

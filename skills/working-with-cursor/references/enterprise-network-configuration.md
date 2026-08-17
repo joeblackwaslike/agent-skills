@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/network-configuration.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "ecb533133b8debde090854640e05fd2c3f42148bdf2b505ada4ab2106f954578"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "1bc163bb7c4c60af684a1f1edccb61647b2f71092bb16acacd2c6b6be7d9f48f"
 ---
 
 # Network Configuration
@@ -114,7 +114,7 @@ We generally recommend allowlisting with the domain patterns above. However, if 
 
 ## Private connectivity
 
-Cursor supports [private connectivity](https://cursor.com/docs/enterprise/private-connectivity.md) for Enterprise teams that need Cloud Agents, Bugbot, or Cursor backend services to access private source control systems. Supported options include AWS PrivateLink and Cloudflare Tunnel.
+Cursor supports [private connectivity](https://cursor.com/docs/cloud-agent/private-connectivity.md) for Enterprise teams that need Cloud Agents, Bugbot, or Cursor backend services to access private source control systems and package registries. Supported options include AWS PrivateLink and Cloudflare Tunnel.
 
 Cursor does not currently offer VPC peering or customer-facing Google Private Service Connect.
 

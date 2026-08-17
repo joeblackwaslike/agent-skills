@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/security/deployment-protection
+  - /docs/deployment-protection
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
   - /docs/cli
   - /docs/cli/traces
@@ -16,15 +16,30 @@ related:
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b878f46b0e18fdccc3aae5da37481343eb9ef865e9bbd2ab3afb49fe06c76bd1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fef55fbe893de193e22f83593f54c2e382441127890169856e1de7b0b80c8ff3"
 ---
 
 # vercel curl
 
 > **💡 Note:** The `vercel curl` command is currently in beta. Features and behavior may change.
 
-The `vercel curl` command works like `curl`, but automatically handles deployment protection bypass tokens for you. When your project has [Deployment Protection](/docs/security/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+
+Full cross-link map for this page: [/docs/cli/curl.graph.md](/docs/cli/curl.graph.md)
+<!-- /docsgraph:related -->
+
+The `vercel curl` command works like `curl`, but automatically handles deployment protection bypass tokens for you. When your project has [Deployment Protection](/docs/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
 
 The command runs the system `curl` command with the same arguments you provide, but adds an [`x-vercel-protection-bypass`](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation#using-protection-bypass-for-automation) header with a valid token. This makes it simple to test API endpoints, check responses, or debug issues on protected deployments.
 
@@ -228,7 +243,7 @@ When using `--deployment`, verify that:
 
 ## Related
 
-- [Deployment Protection](/docs/security/deployment-protection)
+- [Deployment Protection](/docs/deployment-protection)
 - [vercel deploy](/docs/cli/deploy)
 - [vercel inspect](/docs/cli/inspect)
 

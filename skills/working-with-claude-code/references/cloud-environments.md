@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/cloud-environments.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "e969490d7194f00e27a8ede7cde3b3ae4dba93b38e1c51c373f85a5467bce5a0"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "26c8c6c15fdf278468b35654dc22c802489175f0112e05834f5090014b56d8d0"
 ---
 
 > ## Documentation Index
@@ -34,7 +34,7 @@ Onboarding sets up the **Default** environment for you, whether you connect thro
 With only **Default** available, every session runs in it. When you have more than one environment, sessions choose one per surface:
 
 * On the web, the Desktop app, and the mobile app, sessions use the environment shown in the [selector](#configure-your-environment). An admin-set [organization default](#organization-shared-environments) fills the selection when you haven't picked one.
-* From the CLI, sessions use your [`/remote-env` pick](#select-an-environment-from-the-cli), or fall back to your first available cloud environment. Passing `--environment <environment-id>` on a [scripted dispatch](/docs/en/self-hosted-environments-testing#run-the-test-loop) overrides both for that invocation; the flag requires Claude Code v2.1.224 or later.
+* From the CLI, sessions use your [`/remote-env` pick](#select-an-environment-from-the-cli), or fall back to your first available cloud environment. For a [self-hosted environment](/docs/en/self-hosted-environments), passing `--environment <environment-id>` with its `ccpool_` ID [when you dispatch a session](/docs/en/self-hosted-environments-testing#run-the-test-loop) overrides both for that invocation. The flag rejects Anthropic-hosted `env_` IDs, so use `/remote-env` to target those. The flag requires Claude Code v2.1.224 or later.
 
 Configure an environment when the default isn't enough: when Claude needs to reach domains outside the [default allowlist](#default-allowed-domains), needs environment variables set for its sessions, or needs dependencies installed before it starts working.
 
@@ -73,6 +73,8 @@ DATABASE_URL=postgres://localhost:5432/myapp
 ```
 
 Each session copies the environment's values once, at startup, into ordinary environment variables that any command Claude runs can read. Because running sessions don't re-read the configuration, editing or adding variables affects sessions you start afterward; sessions already running keep the values they started with.
+
+Claude Code on the web also sets some variables itself when it starts a session. For [`CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`](/docs/en/claude-code-on-the-web#manage-context), the value Claude Code on the web sets overrides one you add here, so adding that key here has no effect.
 
 Anyone who uses the environment can read the values, and cloud environments have no dedicated secrets store, so don't add API keys or other credentials. If a session needs a credential anyway, see [What carries over from your setup](#what-carries-over-from-your-setup).
 

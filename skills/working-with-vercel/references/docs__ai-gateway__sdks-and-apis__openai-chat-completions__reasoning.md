@@ -16,13 +16,31 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "178fe94207257561835a25bfbae9f89c91df6e4427e8bfea46afbbf8acf94c13"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4a355ec655d2c2b377a378c1e3ebf91338dc9ba3d86a0d34d4848887f5740733"
 ---
 
 # Reasoning
 
 Reasoning models work through a problem before answering. Configure that with the `reasoning` object on a [chat completion](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) request, which controls how many reasoning tokens the model generates and whether they come back in the response.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [OpenAI](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Responses API.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md)
+<!-- /docsgraph:related -->
 
 Anthropic calls the same capability extended thinking: see [Extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) for the Anthropic-shaped equivalent, or [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) for the cross-provider reference.
 
@@ -516,7 +534,7 @@ The AI Gateway automatically maps reasoning parameters to each provider's native
 - **Anthropic**: Maps `max_tokens` to thinking budget tokens
 - **Google**: Maps to `thinkingConfig` with budget and visibility settings
 - **Groq**: Maps `exclude` to control reasoning format (hidden/parsed)
-- **xAI**: Maps `effort` to reasoning effort levels
+- **SpaceXAI**: Maps `effort` to reasoning effort levels
 - **Other providers**: Generic mapping applied for compatibility
 
 > **💡 Note:** **Automatic extraction:** For models that don't natively support reasoning

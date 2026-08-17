@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/reference/supply-chain-security/dependabot-options-reference.md"
-fetched_at: "2026-08-10T05:31:22.342Z"
-sha256: "59cce31124ebc1ff8c2b73f39483f8a26d55d1553c1078f2e807a33cd94057cd"
+fetched_at: "2026-08-17T04:47:04.101Z"
+sha256: "6402913562954cd6ac578128befbed4d812ceb4ee1a249e9239197a9591a045d"
 ---
 
 This article provides reference information for the configuration options available in the `dependabot.yml` file. Use these options to customize how {% data variables.product.prodname_dependabot %} monitors package ecosystems, schedules updates, and creates pull requests. For an overview of the `dependabot.yml` file and how it works, see [AUTOTITLE](/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file).
@@ -598,7 +598,7 @@ Package manager | YAML value      | Supported versions |
 | {% ifversion dependabot-sbt-support %} |
 | sbt          | `sbt`            | Not applicable   |
 | {% endif %} |
-| Swift   | `swift`      | v5  |
+| Swift   | `swift`      | v5, v6  |
 | Terraform    | `terraform`      | >= 0.13, <= 1.15.x  |
 | uv           | `uv`             | v0 |
 | {% ifversion dependabot-vcpkg-support %} |

@@ -12,13 +12,28 @@ related:
 summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "23b49748ab389b9251b54bfdf07b602620f39d552354f234455965a512d5fd2f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "bf47c77712e329b4ce22f4a1a9dbfe5b4cd27ce5c9f3f44f34490eca5d59bb44"
 ---
 
 # Scopes and Permissions
 
 Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/tokens#id-token) and whether to issue a [Refresh Token](/docs/sign-in-with-vercel/tokens#refresh-token). Permissions control what APIs and team resource an [Access Token](/docs/sign-in-with-vercel/tokens#access-token) can interact with.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Restricting Git Connections to a single Vercel team](https://vercel.com/docs/protected-git-scopes?from=related) — Information to stop developers from deploying their repositories to a personal Vercel account by using Protected Git Sco
+
+Full cross-link map for this page: [/docs/sign-in-with-vercel/scopes-and-permissions.graph.md](/docs/sign-in-with-vercel/scopes-and-permissions.graph.md)
+<!-- /docsgraph:related -->
 
 ## Scopes
 

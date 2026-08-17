@@ -14,13 +14,28 @@ related:
 summary: Restrict AI Gateway routing to models that have specific capabilities using the has option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "3c1e469203ad1f6674a7e2f72061a48a00c33382255090ba2e910fbd56e83a7d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1b7a2ccb0ff57dd74366a2e2f4021dbaf2bb94db87306cb4a95457ed516bd7b0"
 ---
 
 # Model Filtering
 
 [Provider filtering, ordering, and sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) controls *which providers* serve a request. Model filtering instead constrains routing by a capability of the *model itself* using `has` in `providerOptions.gateway`.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
+- [Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related) — Configure model-level failover to try backup models when the primary model is unavailable
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-filtering.graph.md](/docs/ai-gateway/models-and-providers/model-filtering.graph.md)
+<!-- /docsgraph:related -->
 
 ## Require model capabilities with `has`
 

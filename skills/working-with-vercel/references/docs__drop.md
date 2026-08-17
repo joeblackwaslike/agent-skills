@@ -16,13 +16,33 @@ related:
 summary: Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "9dee87d1738f74a0aac0d888a07841f91bbedd59c36a39a5cefe84e24057d321"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a18592427a3f7f0b1d9d379f2303c785b372b8e8c21e1169d1eb1ce345ee2a88"
 ---
 
 # Deploying with Vercel Drop
 
 Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your browser, with no Git, Vercel CLI, or local setup. Vercel Drop works for static sites as well as framework projects, which Vercel detects and builds for you. That makes it well suited to prototypes and one-off sites.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel Drop vs Netlify Drop](https://vercel.com/kb/guide/vercel-drop-vs-netlify-drop?from=related) — Compare Vercel Drop and Netlify Drop for drag-and-drop deployment: framework builds, static sites, updates, size limits,
+- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
+- [Deploy a Google Stitch design with Vercel Drop](https://vercel.com/kb/guide/google-stitch-vercel-drop?from=related) — Download the HTML from your Google Stitch screens and deploy them to production with Vercel Drop, with no Git or CLI req
+- [Vercel Drop vs Cloudflare Direct Upload](https://vercel.com/kb/guide/vercel-drop-vs-cloudflare-direct-upload?from=related) — Compare Vercel Drop and Cloudflare Direct Upload: framework builds, browser vs CLI workflows, file limits, Git integrati
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+
+Full cross-link map for this page: [/docs/drop.graph.md](/docs/drop.graph.md)
+<!-- /docsgraph:related -->
 
 ## When to use Vercel Drop
 

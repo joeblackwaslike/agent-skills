@@ -16,13 +16,32 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "438e6d493bfbe540b446208e1950c8dd15516a487acc49ce72425b57f484e806"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5e16f89ed5ec2bd2123849d14a059daaafde2fbcb6658b8cc3971442bea5da8f"
 ---
 
 # Supported Frameworks on Vercel
 
 ## Frameworks infrastructure support matrix
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel?from=related) — Migrate from Cloud Run to Vercel by copying your Dockerfile to Dockerfile.vercel, aligning the PORT contract, moving sec
+- [How to migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel?from=related) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
+- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Full-stack](https://vercel.com/docs/frameworks/full-stack?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [Nitro](https://vercel.com/docs/frameworks/backend/nitro?from=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+
+Full cross-link map for this page: [/docs/frameworks/more-frameworks.graph.md](/docs/frameworks/more-frameworks.graph.md)
+<!-- /docsgraph:related -->
 
 The following table shows which features are supported by each framework on Vercel. The framework list is not exhaustive, but a representation of the most popular frameworks deployed on Vercel.
 
@@ -39,7 +58,7 @@ We're committed to having support for all Vercel features across frameworks, and
 | [Streaming SSR](/docs/functions/streaming-functions) | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | N/A | N/A |
 | [Incremental Static Regeneration](/docs/incremental-static-regeneration) | ✓ | ✓ | ✓ | ✗ | ✓ | ✗ | N/A | N/A |
 | [Image Optimization](/docs/image-optimization) | ✓ | ✓ | ✓ | N/A | ✓ | ✗ | N/A | N/A |
-| [Runtime Cache](/docs/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| [Runtime Cache](/docs/caching/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [Native OG Image Generation](/docs/og-image-generation) | ✓ | N/A | ✓ | N/A | N/A | N/A | N/A | N/A |
 | [Multi-runtime support (different routes)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✗ | ✓ | N/A | N/A |
 | [Multi-runtime support (entire app)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | N/A | N/A |
@@ -50,7 +69,7 @@ We're committed to having support for all Vercel features across frameworks, and
 
 ## All frameworks
 
-The frameworks listed below can be deployed to Vercel with minimal configuration. See [our docs on framework presets](/docs/deployments/configure-a-build#framework-preset) to learn more about configuration.
+The frameworks listed below can be deployed to Vercel with minimal configuration. See [our docs on framework presets](/docs/builds/configure-a-build#framework-preset) to learn more about configuration.
 
 - **Angular**: Angular is a TypeScript-based cross-platform framework from Google.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/angular) | [View Demo](https://angular-template.vercel.app)
@@ -184,10 +203,10 @@ The frameworks listed below can be deployed to Vercel with minimal configuration
 
 Learn more about deploying your preferred framework on Vercel with the following resources:
 
-- [Next.js on Vercel](/docs/frameworks/nextjs)
-- [SvelteKit on Vercel](/docs/frameworks/sveltekit)
-- [Astro on Vercel](/docs/frameworks/astro)
-- [Nuxt on Vercel](/docs/frameworks/nuxt)
+- [Next.js on Vercel](/docs/frameworks/full-stack/nextjs)
+- [SvelteKit on Vercel](/docs/frameworks/full-stack/sveltekit)
+- [Astro on Vercel](/docs/frameworks/frontend/astro)
+- [Nuxt on Vercel](/docs/frameworks/full-stack/nuxt)
 
 
 ---

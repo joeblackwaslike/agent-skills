@@ -11,17 +11,34 @@ prerequisites:
 related:
   - /docs/project-configuration/vercel-json
   - /docs/cli/redirects
-  - /docs/rest-api/reference/endpoints/bulk-redirects
+  - /docs/rest-api/bulk-redirects/gets-project-level-redirects
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e787ff91d3af74aa08518d5527ecf1b41490f0b5364c076aa750e020e3003304"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c6d0247b1b665891e1b0e233b0ed638b228ff778e4482e22417ad7b417984ad0"
 ---
 
 # Getting Started
 
 Bulk redirects can be specified either as part of a Vercel deployment or updated immediately through the UI, API, or CLI by settings redirects at the Project level without the need for a new deployment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Manage Redirects at Scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
+- [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect?from=related)
+- [Delete project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/delete-project-level-redirects?from=related)
+- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Stages new redirects for a project.](https://vercel.com/docs/rest-api/bulk-redirects/stages-new-redirects-for-a-project?from=related)
+
+Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects/getting-started.graph.md](/docs/routing/redirects/bulk-redirects/getting-started.graph.md)
+<!-- /docsgraph:related -->
 
 - [Deployment-time redirects](#deployment-time-redirects)
 - [Project-level redirects](#project-redirects)
@@ -150,7 +167,7 @@ vercel redirects promote 596558a5-24cd-4b94-b91a-d1f4171b7c3f
 
 ### Using the API
 
-You can also manage redirects programmatically through the [Vercel REST API](/docs/rest-api/reference/endpoints/bulk-redirects). This is useful for automating redirect management from webhook events, such as managing redirects in a CMS and instantly updating Vercel with changes.
+You can also manage redirects programmatically through the [Vercel REST API](/docs/rest-api/bulk-redirects/gets-project-level-redirects). This is useful for automating redirect management from webhook events, such as managing redirects in a CMS and instantly updating Vercel with changes.
 
 ```bash filename="terminal"
 curl -X PUT "https://api.vercel.com/v1/bulk-redirects" \

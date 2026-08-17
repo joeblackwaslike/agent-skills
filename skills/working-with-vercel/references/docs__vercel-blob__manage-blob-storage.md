@@ -14,13 +14,31 @@ related:
 summary: Create blob stores, upload files, list contents, and manage storage using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/manage-blob-storage.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "618592da1924ff649b5d921335ebbfbca82868d1e41443e30b9948f17d7ace22"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "cf6bb576d9f71b3c4197d3d75dafb417616d6f82511cf20bc755b97ae4c74b57"
 ---
 
 # Managing Vercel Blob storage from the CLI
 
 Use this guide to manage Vercel Blob storage from the CLI. You'll create a store, upload and organize files, and handle cleanup.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related)
+- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
+- [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store?from=related)
+- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related) — Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and m
+- [Container Registry](https://vercel.com/docs/container-registry?from=related) — Store and manage Docker container images on Vercel. Push images built from a Dockerfile, then run them on Vercel Functio
+
+Full cross-link map for this page: [/docs/vercel-blob/manage-blob-storage.graph.md](/docs/vercel-blob/manage-blob-storage.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This guide assumes a [linked Vercel project](/docs/cli/project-linking). Run
 > `vercel link` in your project directory if you haven't already. The CLI also

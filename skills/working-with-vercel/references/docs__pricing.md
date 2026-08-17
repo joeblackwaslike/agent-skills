@@ -16,13 +16,28 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "bdceafaca47deda42626ee17c97ae42637896dff3172a2cd557952076aed049a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "13561e680ed87ed921414ff85203454e0b68530b5d2d67394c1fdb35fb52ae0a"
 ---
 
 # Pricing on Vercel
 
 Vercel's pricing model includes billable metrics and pricing models across Managed Infrastructure and Developer Experience Platform resources.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+
+Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md)
+<!-- /docsgraph:related -->
 
 For a full breakdown of Vercel's pricing by plan, see the [pricing page](/pricing).
 
@@ -96,11 +111,11 @@ Some resources include an amount of usage your projects can use within your bill
 | Drains Volume | $0.50 |
 
 
-#### [Monitoring](/docs/monitoring/limits-and-pricing)
+#### [Monitoring](/docs/query/monitoring/limits-and-pricing)
 
-Monitoring is now part of [Observability Plus](/docs/observability/observability-plus). If you have an active Monitoring subscription, you'll automatically move to per-event pricing. See [Monitoring pricing](/docs/monitoring/limits-and-pricing) for details.
+Monitoring is now part of [Observability Plus](/docs/observability/observability-plus). If you have an active Monitoring subscription, you'll automatically move to per-event pricing. See [Monitoring pricing](/docs/query/monitoring/limits-and-pricing) for details.
 
-#### [Observability](/docs/observability/limits-and-pricing)
+#### [Observability](/docs/observability/observability-plus)
 
 | Resource | Usage-based pricing |
 | --- | --- |
@@ -126,7 +141,7 @@ Monitoring is now part of [Observability Plus](/docs/observability/observability
 | Additional Microfrontends Projects | - | $250/project/month | Custom |
 
 
-#### [Bulk redirects](/docs/redirects/bulk-redirects#limits-and-pricing)
+#### [Bulk redirects](/docs/routing/redirects/bulk-redirects#limits-and-pricing)
 
 | Plan | Included in plan | Price for additional capacity |
 | --- | --- | --- |
@@ -183,8 +198,10 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 - [How are resources used on Vercel?](/docs/pricing/how-does-vercel-calculate-usage-of-resources)
 - [Manage and optimize usage](/docs/pricing/manage-and-optimize-usage)
 - [Understanding my invoice](/docs/pricing/understanding-my-invoice)
+- [Sales tax and VAT on your invoice](/docs/pricing/taxes)
 - [Improved infrastructure pricing](/blog/improved-infrastructure-pricing)
 - [Regional pricing](/docs/pricing/regional-pricing)
+- [Legacy usage metrics](/docs/pricing/legacy)
 
 
 ---

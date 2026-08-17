@@ -1,12 +1,14 @@
 ---
 source: "https://cursor.com/docs/security-agents.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "74ff771c5141c279df852582fb1b6b810582ca4b1e4c94e9841a23c5f2054f5b"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "8096b030c076c08ecab2088c31eccfa22d3c533cccf2c24e6b277980641c1b49"
 ---
 
 # Security Agents
 
 Security Agents scan your code for security bugs, risky patterns, and vulnerabilities.
+
+Configure Security Agents in [Automations](https://cursor.com/automations/from-cursor/security).
 
 ## How it works
 
@@ -19,7 +21,7 @@ Both agent types run on the Automations platform and require Cloud Agents.
 
 ## Setup
 
-To configure Security Agents, open the [Security Agents Dashboard](https://cursor.com/dashboard/security-agents) and create your first agent.
+Open [Security Agents in Automations](https://cursor.com/automations/from-cursor/security) to configure an agent.
 
 ### Triggers
 
@@ -86,11 +88,11 @@ To determine whether an issue was fixed, Cursor uses LLMs to review incremental 
 
 ## Viewing Runs
 
-Every agent run is tracked in the dashboard. Use the run history to see when an agent ran, which tools it used, its final status, and how long it took.
+Every agent run is tracked in Automations. Use the run history to see when an agent ran, which tools it used, its final status, and how long it took.
 
 Open a run to inspect the underlying Cloud Agent for more detail about what the agent did.
 
-![Security Agents recent runs dashboard](/docs-static/images/security-review/recent-runs.png)
+![Security Agents run history in Automations](/docs-static/images/security-review/recent-runs.png)
 
 
 ---

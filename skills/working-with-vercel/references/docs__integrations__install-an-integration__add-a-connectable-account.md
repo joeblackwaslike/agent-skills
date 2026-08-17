@@ -13,13 +13,28 @@ related:
 summary: Learn how to connect Vercel to your third-party account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/add-a-connectable-account.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "0115a46f8fd69590501705d47dc73f114c3fd9407e15e583607d6ec38e034a88"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b4b237fa59d35baead0862a4a8a85cfb5a4dec7847d6c48701cb9611271a4b1d"
 ---
 
 # Add a Connectable Account
 
 ## Add a connectable account
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Concepts](https://vercel.com/docs/connect/concepts?from=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+
+Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md)
+<!-- /docsgraph:related -->
 
 1. From the [Vercel dashboard](/dashboard), open [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) in the sidebar and then the **Browse Marketplace** button. You can also go directly to the [Integrations Marketplace](https://vercel.com/integrations).
 2. Under the **Connectable Accounts** section, select an integration that you would like to install. The integration page provides information about the integration, the permissions required, and how to use it with Vercel.

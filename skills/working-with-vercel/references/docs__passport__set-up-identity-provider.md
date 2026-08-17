@@ -12,13 +12,30 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "3d2701dcef75d87358bf0a331d137eb3e3dbd3e6c716356d54009a2d21e0ec5a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d0368ba219f05fda5ec17a5231b911bd5b087c60c23c966e206c0695e5f67b7f"
 ---
 
 # Set up Passport with an identity provider
 
 > **🔒 Permissions Required**: Passport
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [Read Identity](https://vercel.com/docs/passport/read-identity?from=related) — Read verified Passport identity in server-side code and apply application-level authorization.
+- [Additional Scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related) — Request group membership and other provider-specific identity claims when using Passport.
+- [Verify Tokens](https://vercel.com/docs/passport/verify-identity?from=related) — Verify a Passport token forwarded to your backend as a signed JWT.
+- [Token Claims](https://vercel.com/docs/passport/token-claims?from=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
+- [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+
+Full cross-link map for this page: [/docs/passport/set-up-identity-provider.graph.md](/docs/passport/set-up-identity-provider.graph.md)
+<!-- /docsgraph:related -->
 
 This guide covers the common Passport setup flow for OpenID Connect providers, including Okta and Microsoft Entra ID.
 

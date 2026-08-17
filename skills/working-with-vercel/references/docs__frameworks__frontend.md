@@ -8,21 +8,37 @@ type: conceptual
 prerequisites:
   - /docs/frameworks
 related:
+  - /docs/frameworks/frontend/react-router
+  - /docs/frameworks/frontend/create-react-app
   - /docs/cdn
   - /docs/routing-middleware
   - /docs/functions
-  - /docs/functions/streaming-functions
-  - /docs/incremental-static-regeneration
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-07-27T07:38:10.222Z"
-sha256: "282e0c89a389f57dda310707141302ff964d8d64e15064578df2ff7906b8504c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5e4412132a8e9f76c950ec822f7c0042a48c35a9628bbda28586e56aca048bb1"
 ---
 
 # Frontends on Vercel
 
 The following frontend frameworks are supported with zero-configuration.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Full-stack](https://vercel.com/docs/frameworks/full-stack?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Nuxt](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related) — Learn how to use Vercel's features with Nuxt.
+
+Full cross-link map for this page: [/docs/frameworks/frontend.graph.md](/docs/frameworks/frontend.graph.md)
+<!-- /docsgraph:related -->
 
 - **Angular**: Angular is a TypeScript-based cross-platform framework from Google.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/angular) | [View Demo](https://angular-template.vercel.app)
@@ -114,6 +130,8 @@ The following frontend frameworks are supported with zero-configuration.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/zola) | [View Demo](https://zola-template.vercel.app)
 
 
+Framework guides such as [React Router](/docs/frameworks/frontend/react-router) and [Create React App](/docs/frameworks/frontend/create-react-app) show you how to use Vercel features with each framework.
+
 ## Frameworks infrastructure support matrix
 
 The following table shows which features are supported by each framework on Vercel. The framework list is not exhaustive, but a representation of the most popular frameworks deployed on Vercel.
@@ -131,7 +149,7 @@ We're committed to having support for all Vercel features across frameworks, and
 | [Streaming SSR](/docs/functions/streaming-functions) | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | N/A | N/A |
 | [Incremental Static Regeneration](/docs/incremental-static-regeneration) | ✓ | ✓ | ✓ | ✗ | ✓ | ✗ | N/A | N/A |
 | [Image Optimization](/docs/image-optimization) | ✓ | ✓ | ✓ | N/A | ✓ | ✗ | N/A | N/A |
-| [Runtime Cache](/docs/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| [Runtime Cache](/docs/caching/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [Native OG Image Generation](/docs/og-image-generation) | ✓ | N/A | ✓ | N/A | N/A | N/A | N/A | N/A |
 | [Multi-runtime support (different routes)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✗ | ✓ | N/A | N/A |
 | [Multi-runtime support (entire app)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | N/A | N/A |

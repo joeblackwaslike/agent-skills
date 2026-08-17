@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "70fbfdceaad1f646b057e472f1cfce75a2d4ff448e899031072b3a487be68a09"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "7cee55f50f91f4af40826e0ba6939bd0796cd844d80a6634fea1debeea77a224"
 ---
 
 # AI SDK Harnesses
@@ -18,9 +18,19 @@ and response primitives.
       href: '/providers/ai-sdk-harnesses/claude-code',
     },
     {
+      title: 'Cline',
+      description: 'Use the Cline SDK through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/cline',
+    },
+    {
       title: 'Codex',
       description: 'Use Codex through the AI SDK harness abstraction.',
       href: '/providers/ai-sdk-harnesses/codex',
+    },
+    {
+      title: 'Grok Build',
+      description: 'Use Grok Build through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/grok-build',
     },
     {
       title: 'OpenCode',
@@ -31,6 +41,12 @@ and response primitives.
       title: 'Pi',
       description: 'Use Pi through the AI SDK harness abstraction.',
       href: '/providers/ai-sdk-harnesses/pi',
+    },
+    {
+      title: 'Agent Client Protocol',
+      description:
+        'Use any ACP compatible harness through the AI SDK harness abstraction.',
+      href: '/providers/ai-sdk-harnesses/acp',
     },
   ]}
 />
@@ -62,7 +78,6 @@ tools, UI, and terminal usage.
 - [AI SDK Providers](/providers/ai-sdk-providers)
   - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
   - [xAI Grok](/providers/ai-sdk-providers/xai)
-  - [Vercel](/providers/ai-sdk-providers/vercel)
   - [OpenAI](/providers/ai-sdk-providers/openai)
   - [Azure OpenAI](/providers/ai-sdk-providers/azure)
   - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -72,6 +87,7 @@ tools, UI, and terminal usage.
   - [Groq](/providers/ai-sdk-providers/groq)
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+  - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -109,6 +125,9 @@ tools, UI, and terminal usage.
   - [Pi](/providers/ai-sdk-harnesses/pi)
   - [OpenCode](/providers/ai-sdk-harnesses/opencode)
   - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+  - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+  - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+  - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -194,6 +213,7 @@ tools, UI, and terminal usage.
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+  - [QVAC](/providers/community-providers/qvac)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

@@ -14,13 +14,29 @@ related:
 summary: Learn about configuration on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9996e9456a583cc2e487c53bd2067eb0f54b9439fc9a467c03ce988f08da36cc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1702c4519b887435b9922b8de3148776e55df1c0060dd50862ddb80af8b81fcc"
 ---
 
 # Microfrontends Configuration
 
 The `microfrontends.json` file is used to configure your microfrontends. If this file is not deployed with your [default application](/docs/microfrontends/quickstart#key-concepts), the deployment will not be a microfrontend.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
+- [Local Development](https://vercel.com/docs/microfrontends/local-development?from=related) — Learn about local development on Vercel.
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
+- [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
+- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+
+Full cross-link map for this page: [/docs/microfrontends/configuration.graph.md](/docs/microfrontends/configuration.graph.md)
+<!-- /docsgraph:related -->
 
 ## Schema
 

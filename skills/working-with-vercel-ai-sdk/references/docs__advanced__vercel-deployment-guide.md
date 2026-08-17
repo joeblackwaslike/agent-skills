@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "8f6847515cded1f3bf416fefc7896c88a56d9f4613d0a80f6eb0a47a889fd8dc"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "c8d1afd92c902cc54c64c768be3f3c77bf2bdef97365eacd4d4289f648c9c52e"
 ---
 
 # Vercel Deployment Guide
@@ -95,6 +95,47 @@ export const maxDuration = 30;
 ```
 
 You can increase the max duration to 60 seconds on the Hobby Tier. For other tiers, [see the documentation](https://vercel.com/docs/functions/runtimes#max-duration) for limits.
+
+### Request Cancellation
+
+AI SDK UI helpers such as `useChat` and `useCompletion` abort the client request when you call `stop()`. To propagate that cancellation to a Vercel Function and its model request, you must:
+
+1. Use the Node.js runtime, which is the default for Next.js route handlers.
+2. Enable [`supportsCancellation`](https://vercel.com/docs/functions/functions-api-reference#cancel-requests) for the route in `vercel.json`.
+3. Forward the route's `req.signal` to `streamText` or `generateText` as `abortSignal`.
+
+For example, enable cancellation for your chat route:
+
+```json filename="vercel.json"
+{
+  "functions": {
+    "app/api/chat/route.ts": {
+      "supportsCancellation": true
+    }
+  }
+}
+```
+
+Then forward the request signal to the AI SDK:
+
+```ts filename="app/api/chat/route.ts" highlight="10"
+import { convertToModelMessages, streamText, type UIMessage } from 'ai';
+__PROVIDER_IMPORT__;
+
+export async function POST(req: Request) {
+  const { messages }: { messages: UIMessage[] } = await req.json();
+
+  const result = streamText({
+    model: __MODEL__,
+    messages: convertToModelMessages(messages),
+    abortSignal: req.signal,
+  });
+
+  return result.toUIMessageStreamResponse();
+}
+```
+
+Without `supportsCancellation`, calling `stop()` closes the client-side stream but does not cancel the Vercel Function or model request. See [Stopping Streams](/docs/advanced/stopping-streams) for the complete client and server setup.
 
 ## Security Considerations
 

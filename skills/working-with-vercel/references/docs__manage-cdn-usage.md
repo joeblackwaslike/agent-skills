@@ -12,17 +12,36 @@ related:
   - /docs/pricing/regional-pricing
   - /docs/image-optimization
   - /docs/cdn
-  - /docs/cdn-cache
+  - /docs/caching/cdn-cache
 summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "bdcf5b713e09c342f3312f13298c6b9c6e0ece1f7257805f896c9e31474756db"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "014f4b027245d011d10363a6fdbfe86533f571e5caef00050b8b6d056c96af8c"
 ---
 
 # CDN pricing and usage
 
 CDN pricing covers three resources:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel?from=related) — Learn how to perform pentesting on Vercel.
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Calculating Usage of Resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
+- [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+
+Full cross-link map for this page: [/docs/manage-cdn-usage.graph.md](/docs/manage-cdn-usage.graph.md)
+<!-- /docsgraph:related -->
 
 - **Fast Data Transfer**: Data sent between the CDN and the visitor's device.
 - **Fast Origin Transfer**: Data sent between the CDN and Vercel Functions.
@@ -51,7 +70,7 @@ As with all charts on the **Usage** section in the sidebar, you can select the c
 To optimize Fast Data Transfer, you must optimize the assets that are being transferred. You can do this by:
 
 - **Using Vercel's Image Optimization**: [Image Optimization](/docs/image-optimization) on Vercel uses advanced compression and modern file formats to reduce image and video file sizes. This decreases page load times and reduces Fast Data Transfer costs by serving optimized media tailored to the requesting device
-- **Analyzing your bundles**: See your preferred frameworks documentation for guidance on how to analyze and reduce the size of your bundles. For Next.js, see the [Bundle Analyzer](https://nextjs.org/docs/app/building-your-application/optimizing/bundle-analyzer) guide
+- **Analyzing your bundles**: See your preferred frameworks documentation for guidance on how to analyze and reduce the size of your bundles. For Next.js, see the [Bundle Analyzer](https://nextjs.org/docs/app/guides/package-bundling) guide
 
 To further analyze the data transfer of your projects, you can use [**Observability**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability\&title=Go+to+Observability) in the sidebar.
 
@@ -83,13 +102,13 @@ Usage is incurred on both the input and output data transfer when using compute 
 
 If using Vercel Functions, you can optimize Fast Origin Transfer by reducing the size of the response. Ensure your Function is only responding with relevant data (no extraneous API fields).
 
-You can also add [caching headers](/docs/cdn-cache) to the function response. By caching the response, future requests serve from the CDN cache, rather than invoking the function again. This reduces Fast Origin Transfer usage and improves performance.
+You can also add [caching headers](/docs/caching/cdn-cache) to the function response. By caching the response, future requests serve from the CDN cache, rather than invoking the function again. This reduces Fast Origin Transfer usage and improves performance.
 
-Ensure your Function supports `If-Modified-Since` or `Etag` to prevent duplicate data transmission ([on by default for Next.js applications](https://nextjs.org/docs/app/api-reference/next-config-js/generateEtags)).
+Ensure your Function supports `If-Modified-Since` or `Etag` to prevent duplicate data transmission ([on by default for Next.js applications](https://nextjs.org/docs/app/api-reference/config/next-config-js/generateEtags)).
 
 #### Middleware
 
-If using Middleware, it is possible to accrue Fast Origin Transfer twice for a single Function request. To prevent this, you want to only run Middleware when necessary. For example, Next.js allows you to set a [matcher](https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher) to restrict what requests run Middleware.
+If using Middleware, it is possible to accrue Fast Origin Transfer twice for a single Function request. To prevent this, you want to only run Middleware when necessary. For example, Next.js allows you to set a [matcher](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#matcher) to restrict what requests run Middleware.
 
 #### Investigating usage
 
@@ -120,7 +139,7 @@ As with all charts on the **Usage** section in the sidebar, you can select the c
 
 ### Optimizing CDN Requests
 
-Frameworks such as [Next.js](/docs/frameworks/nextjs), [SvelteKit](/docs/frameworks/sveltekit), [Nuxt](/docs/frameworks/nuxt), and others help build applications that automatically reduce unnecessary requests.
+Frameworks such as [Next.js](/docs/frameworks/full-stack/nextjs), [SvelteKit](/docs/frameworks/full-stack/sveltekit), [Nuxt](/docs/frameworks/full-stack/nuxt), and others help build applications that automatically reduce unnecessary requests.
 
 The most significant opportunities for optimizing CDN Requests include:
 

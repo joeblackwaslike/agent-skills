@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/model-and-integration-management.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "60fb0a527a8a6ac2cb6ec88a173edb7bbb3271de446fe7330a193695bbee530a"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "fb44ba8204f085af931e514520bfa6e53fb9dd6fe016e395001d066573dc4160"
 ---
 
 # Model and Integration Management
@@ -12,7 +12,24 @@ Your team can access multiple AI models and integrate Cursor with various servic
 
 Enterprise teams can control which AI models team members can use, [contact sales](https://cursor.com/contact-sales?source=docs-model-controls) to get access. This helps manage costs, ensure appropriate usage, and comply with organizational policies.
 
-Model access controls are configured through the [team dashboard](https://cursor.com/docs/account/teams/dashboard.md). Navigate to Settings and look for "Model Access Control" (Enterprise only).
+Configure model access in two places:
+
+1. **Team Settings → Models** in the [team dashboard](https://cursor.com/docs/account/teams/dashboard.md) (Enterprise only). From Team Settings, open the **Model Providers** section to manage providers, models, defaults, and personal API key (BYOK) controls. This is the team baseline.
+2. **Organization → Groups → \[group] → Models**, when you use [Organization Groups](https://cursor.com/docs/enterprise/organization-groups.md#model-access). Use this to widen access for specific cohorts.
+
+You can also manage the team baseline programmatically with the [Admin API model access](https://cursor.com/docs/account/teams/admin-api.md#model-access) routes, or across linked teams with the [Organization API](https://cursor.com/docs/account/organizations/organization-admin-api.md#model-access).
+
+### How team and group model access combine
+
+Cursor reconciles team and Organization Group model settings with a **most-permissive (union)** model. Neither layer fully overrides the other:
+
+- A model is allowed if the **team** or **any of the user's Organization Groups** allows it.
+- A group setting cannot make a model more restrictive than what another allowing source already grants. Groups are for widening access, not tightening it below an allow from the team or another group.
+- Put your strictest defaults on the **team**. Use Organization Groups only to grant additional models to selected cohorts.
+
+Personal API key (BYOK) controls remain on **Team Settings → Models** only. Organization Group Models settings do not configure BYOK.
+
+See [Organization Groups](https://cursor.com/docs/enterprise/organization-groups.md#how-group-and-team-settings-combine) and [How limits and permissions combine](https://cursor.com/docs/enterprise/organizations.md#how-limits-and-permissions-combine) for the full merge rules across settings.
 
 ### How enterprise model rollout works
 
@@ -22,11 +39,15 @@ Instead, Enterprise teams can opt in to new models for their organization.
 
 See [Models](https://cursor.com/docs/models-and-pricing.md) for the current list of available models.
 
+### Auto-review and model access
+
+[Auto-review](https://cursor.com/docs/agent/security/run-modes.md#run-mode) uses a background classifier that runs on [Claude 4.5 Haiku](https://cursor.com/docs/models/claude-4-5-haiku.md) or [GPT-5.4 Mini](https://cursor.com/docs/models/gpt-5-4-mini.md). Blocking all of them disables Auto-review in the IDE, even when team Run Modes includes it. See [Auto-review classifier requirements](https://cursor.com/docs/agent/security/run-modes.md#auto-review-model-requirements).
+
 ## Restrict personal API keys (BYOK controls)
 
 Enterprise teams can prevent team members from using their own API keys with third-party providers (OpenAI, Anthropic, Azure, AWS Bedrock) in Cursor. All usage goes through Cursor's included models and usage pool.
 
-Configure this in the [team dashboard](https://cursor.com/docs/account/teams/dashboard.md) under Settings (Enterprise only).
+Configure this in the [team dashboard](https://cursor.com/docs/account/teams/dashboard.md) under **Team Settings → Models** (Enterprise only).
 
 ## MCP server trust management
 

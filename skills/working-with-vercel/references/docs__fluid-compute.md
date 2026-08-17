@@ -16,13 +16,34 @@ related:
 summary: Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to run your functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "bc82432fb91334d33f2fe76b1d78d42f2058f76b45a6b4eed630efcea60d9b72"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f46e8ddadba20f6ffeb6a5468fadba5c3a59e82d2665cec262e11711e2f763c6"
 ---
 
 # Fluid compute
 
 Fluid compute offers a blend of serverless flexibility and server-like capabilities. Unlike traditional [serverless architectures](/docs/fundamentals/what-is-compute#serverless), which can face issues such as cold starts and [limited functionalities](/docs/fundamentals/what-is-compute#serverless-disadvantages), fluid compute provides a hybrid solution. It overcomes the limitations of both serverless and server-based approaches, delivering the advantages of both worlds, including:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel?from=related)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [Managing Builds](https://vercel.com/docs/builds/managing-builds?from=related) — Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Elysia](https://vercel.com/docs/frameworks/backend/elysia?from=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
+- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+
+Full cross-link map for this page: [/docs/fluid-compute.graph.md](/docs/fluid-compute.graph.md)
+<!-- /docsgraph:related -->
 
 - [**Zero configuration out of the box**](/docs/fluid-compute#default-settings-by-plan): Fluid compute comes with preset defaults that automatically optimize your functions for both performance and cost efficiency.
 - [**Optimized concurrency**](/docs/fluid-compute#optimized-concurrency): Optimize resource usage by handling multiple invocations within a single function instance. Can be used with the **Node.js** and **Python** runtimes.

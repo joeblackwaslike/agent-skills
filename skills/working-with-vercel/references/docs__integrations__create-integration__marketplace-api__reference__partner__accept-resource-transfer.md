@@ -3,7 +3,7 @@ title: accept-resource-transfer
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/accept-resource-transfer
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/accept-resource-transfer"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about accept-resource-transfer on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/accept-resource-transfer.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "0ae8e9a5643f365a4d4e6d33610bd6f7b9747132b2c128441e95ad2739edb64b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7cbeff59851169363655fbba4bfe2947d41ce8a1e27496a0bc272ccb74db2f4b"
 ---
 
 # Accept Resources Transfer Request

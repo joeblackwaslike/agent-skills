@@ -17,13 +17,30 @@ related:
 summary: Cap AI Gateway spend for your team, a single project, or an individual API key with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5079d742f04502922637ab720ff6e5f0d3ee2f2cea87b13381fe774fc04b4379"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a6d7fb9e782e3f9804fb190c76a8f0bb5e2ecbb4dc9f313ffffc78c283bba6ee"
 ---
 
 # Budgets
 
 A budget caps how much your team, a single project, or an individual API key can spend on AI Gateway. AI Gateway checks the budget before each request and rejects further requests once the limit is exceeded, until the budget resets or you raise it. Budgets are optional: a team, project, or key without one has unlimited spend.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability?from=related) — Learn how to monitor and debug your AI Gateway requests.
+- [Spend Management](https://vercel.com/docs/spend-management?from=related) — Learn how to get notified about your account spend and configure a webhook.
+- [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+
+Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/budgets.graph.md](/docs/ai-gateway/observability-and-spend/budgets.graph.md)
+<!-- /docsgraph:related -->
 
 This page covers all three scopes. To create, view, or delete the API keys themselves, see [API Keys](/docs/ai-gateway/authentication-and-byok/api-keys).
 
@@ -130,7 +147,7 @@ Managing a budget is more restricted, and depends on the scope:
 | API key                        | Owner or Member                     |
 | Defaults (project and API key) | Owner                               |
 
-These rules apply the same way whether you use the dashboard or the CLI. See [Roles & Permissions](/docs/ai-gateway/roles-and-permissions) for the full AI Gateway access matrix.
+These rules apply the same way whether you use the dashboard or the CLI.
 
 ## Team and project budgets
 

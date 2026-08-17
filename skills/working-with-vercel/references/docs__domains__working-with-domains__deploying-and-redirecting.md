@@ -12,18 +12,38 @@ related:
   - /docs/deployments/environments
   - /docs/git
   - /docs/domains/working-with-domains
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/cdn
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f1b19294546175e8f934fcf93c9881052231926852d065eaa62d34d88fa2231f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "170a2b5a4c6ec60159ad1befcebb379a142804bb35272ead79c6bb25e5b906cb"
 ---
 
 # Deploying & Redirecting Domains
 
 ## Deploying your Domain
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
+- [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
+- [Transferring Domains to Vercel](https://vercel.com/kb/guide/transferring-domains-to-vercel?from=related) — How to transfer your domain to Vercel.
+- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
+- [Adding a Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Manage Redirects at Scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
+- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+
+Full cross-link map for this page: [/docs/domains/working-with-domains/deploying-and-redirecting.graph.md](/docs/domains/working-with-domains/deploying-and-redirecting.graph.md)
+<!-- /docsgraph:related -->
 
 Once the domain has been added to your project and configured, it is **automatically applied to your latest production deployment**.
 
@@ -54,7 +74,7 @@ To add a redirect, open **Domains** in the sidebar within **Project Settings**, 
 
 ## Redirecting `www` domains
 
-Adding an [apex domain](/docs/domains/working-with-domains#apex-domain) to a [Project](/docs/projects/overview) on Vercel will automatically suggest adding its `www` counterpart. Using both of these domains ensures that visitors can always access your site, regardless of whether or not they use `www` when entering the URL.
+Adding an [apex domain](/docs/domains/working-with-domains#apex-domain) to a [Project](/docs/projects) on Vercel will automatically suggest adding its `www` counterpart. Using both of these domains ensures that visitors can always access your site, regardless of whether or not they use `www` when entering the URL.
 
 We recommend using the `www` subdomain as your primary domain, with a redirect from the non-`www` domain to it. This allows the [Vercel CDN](/docs/cdn) more control over incoming traffic for improved reliability, speed, and security. The redirect is also cached on visitor's browsers for faster subsequent visits.
 
@@ -72,7 +92,7 @@ While we recommend using `www` as described above, Vercel maximizes the reliabil
 
 ## Programmatic redirects
 
-You can also add redirects programmatically using frameworks and Vercel Functions. [Learn more](/docs/redirects).
+You can also add redirects programmatically using frameworks and Vercel Functions. [Learn more](/docs/routing/redirects).
 
 
 ---

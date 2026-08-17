@@ -16,13 +16,33 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "253e12dc616c9f736411e17b2cdbd93f4f906455ffa179daa9c9eec8d3150f3d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b0dedfebf50f306090c8008481cb70743ec800eed8dbc012cecc0097418ff357"
 ---
 
 # Quickstart
 
 > **🔒 Permissions Required**: Vercel Connect
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [Build a GitHub agent with Vercel Connect](https://vercel.com/kb/guide/github-agent-vercel-connect?from=related) — Build a GitHub agent that helps your team work through issues and PRs. Chat SDK handles the interactivity and AI SDK run
+- [Build a Linear agent with Vercel Connect](https://vercel.com/kb/guide/linear-agent-vercel-connect?from=related) — Build a native Linear Agent that helps your team manage issues. Mention it on any issue and it responds in real time, po
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Project links](https://vercel.com/docs/connect/concepts/project-links?from=related) — A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
+
+Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md)
+<!-- /docsgraph:related -->
 
 This guide shows you how to create your first connector in Vercel Connect and request a runtime provider token from your code.
 
@@ -61,6 +81,8 @@ This guide shows you how to create your first connector in Vercel Connect and re
   ```bash filename="Terminal"
   vercel connect create mcp.linear.app --name linear
   ```
+  For a known service such as `notion` or `okta`, the CLI prompts you for the connection method and any credentials it needs, so you can finish setup without leaving the terminal. Run `vercel connect create <service> --help` to see what a service supports.
+
   Attach the connector to the currently linked project so it can request tokens:
   ```bash filename="Terminal"
   vercel connect attach oauth/linear

@@ -17,13 +17,28 @@ related:
 summary: Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "dab56706c2ad04e177d789e3742f3a18b74defebcd3a94b74c23f8d40bd6ac6c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "adcd3b6ddb7f672144375fab32e46e59371f863aaa8317833a5b8c77461b447d"
 ---
 
 # OpenAI Chat Completions API
 
 AI Gateway provides OpenAI Chat Completions API endpoints, letting you use multiple AI providers through a familiar interface. You can use existing OpenAI client libraries, switch to AI Gateway with a URL change, and keep your current tools and workflows without code rewrites.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [OpenResponses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions.graph.md)
+<!-- /docsgraph:related -->
 
 The Chat Completions API implements the same specification as the [OpenAI Chat Completions API](https://platform.openai.com/docs/api-reference/chat).
 
@@ -65,7 +80,7 @@ For advanced features, see:
 
 You can use the AI Gateway's Chat Completions API with existing tools and
 libraries like the [OpenAI client libraries](https://platform.openai.com/docs/libraries) and [AI SDK](https://ai-sdk.dev/). Point your existing
-client to the AI Gateway's base URL and use your AI Gateway [API key](/docs/ai-gateway/authentication#api-key) or [OIDC token](/docs/ai-gateway/authentication#oidc-token) for authentication.
+client to the AI Gateway's base URL and use your AI Gateway [API key](/docs/ai-gateway/authentication-and-byok#api-key) or [OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-token) for authentication.
 
 ### OpenAI client libraries
 

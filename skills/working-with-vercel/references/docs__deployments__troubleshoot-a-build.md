@@ -10,19 +10,38 @@ prerequisites:
 related:
   - /docs/deployments/logs
   - /docs/project-configuration
-  - /docs/accounts/team-members-and-roles
+  - /docs/rbac
   - /docs/builds/managing-builds
   - /docs/environment-variables
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "6d4d55b6f0cf4fd00c25268241a2bfb444d514d50b3c832d40b3b54dcd331c05"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "43d75b6e95ed920792a79eb1e4cf3736fd94745207fc47eb65ee782249f72957"
 ---
 
 # Troubleshooting Build Errors
 
 You can troubleshoot build errors that occur during the Build step of your deployment to Vercel. This guide will help you understand how to investigate build failures and long build times.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [Troubleshooting Builds Failing with SIGKILL or Out of Memory Errors](https://vercel.com/kb/guide/troubleshooting-sigkill-out-of-memory-errors?from=related) — Learn how to troubleshoot builds failing with SIGKILL or Out of Memory errors on a Vercel Deployment.
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Turborepo](https://vercel.com/docs/monorepos/turborepo?from=related) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
+- [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
+- [Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
+
+Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md)
+<!-- /docsgraph:related -->
 
 ## Troubleshooting views
 
@@ -69,7 +88,7 @@ Builds can fail without providing any build logs when Vercel detects a missing p
 
 - An invalid [`vercel.json` configuration](/docs/project-configuration) was committed
 - When using [Ignored Build Steps](/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel)
-- Commits were made from a contributor that is not a [team member](/docs/accounts/team-members-and-roles)
+- Commits were made from a contributor that is not a [team member](/docs/rbac)
 
 In this case, you cannot access the **Building** accordion described above, and instead, Vercel will present an overlay that contains the error message.
 
@@ -131,20 +150,20 @@ The first Build in a Project will take longer as the Build cache is initially em
 
 ### What is cached
 
-Vercel caches files based on the [Framework Preset](/docs/deployments/configure-a-build#framework-preset) selected in your [Project settings](/docs/projects/overview#project-settings). The following files are cached in addition to `node_modules/**`:
+Vercel caches files based on the [Framework Preset](/docs/builds/configure-a-build#framework-preset) selected in your [Project settings](/docs/projects#project-settings). The following files are cached in addition to `node_modules/**`:
 
-Note that the framework detection is dependent on the preset selection made in the [Build settings](/docs/deployments/configure-a-build#build-and-development-settings). You should make sure that the correct framework is set for your project for optimum build caching.
+Note that the framework detection is dependent on the preset selection made in the [Build settings](/docs/builds/configure-a-build#build-and-development-settings). You should make sure that the correct framework is set for your project for optimum build caching.
 
 ### Caching process
 
-At the beginning of each build, the previous Build's cache is restored prior to the [Install Command](/docs/deployments/configure-a-build#install-command) or [Build command](/docs/deployments/configure-a-build#build-command) executing. Each deployment is associated with a unique Build cache key that is derived from the combination of the following data:
+At the beginning of each build, the previous Build's cache is restored prior to the [Install Command](/docs/builds/configure-a-build#install-command) or [Build command](/docs/builds/configure-a-build#build-command) executing. Each deployment is associated with a unique Build cache key that is derived from the combination of the following data:
 
-- [Personal Account](/docs/teams-and-accounts#creating-a-personal-account) or [Team](/docs/teams-and-accounts)
-- [Project](/docs/projects/overview)
-- [Framework Preset](/docs/deployments/configure-a-build#framework-preset)
-- [Root Directory](/docs/deployments/configure-a-build#root-directory)
+- [Personal Account](/docs/accounts#creating-a-personal-account) or [Team](/docs/accounts)
+- [Project](/docs/projects)
+- [Framework Preset](/docs/builds/configure-a-build#framework-preset)
+- [Root Directory](/docs/builds/configure-a-build#root-directory)
 - [Node.js Version](/docs/functions/runtimes/node-js#node.js-version)
-- [Package Manager](/docs/deployments/configure-a-build#install-command)
+- [Package Manager](/docs/builds/configure-a-build#install-command)
 - [Git branch](/docs/git)
 
 Let's say that under your account `MyTeam`, you have a project `MySite` that is connected to your Git repository `MyCode` on the `main` branch for the production environment. When you make a commit to the `main` branch for the first time, you trigger a build that creates a production deployment with a new unique cache key. For any new commits to the `main` branch of `MyCode`, the existing Build cache is used as long as `MySite` is under `MyTeam`.
@@ -157,7 +176,7 @@ At the end of each Build step, successful builds will update the cache and faile
 
 ### Excluding development dependencies
 
-Since development dependencies (for example, packages such as `webpack` or `Babel`) are not needed in production, you may want to prevent them from being installed when deploying to Vercel to reduce the Build time. To skip development dependencies, customize the [Install Command](/docs/deployments/configure-a-build#install-command) to be `npm install --only=production` or `yarn install --production`.
+Since development dependencies (for example, packages such as `webpack` or `Babel`) are not needed in production, you may want to prevent them from being installed when deploying to Vercel to reduce the Build time. To skip development dependencies, customize the [Install Command](/docs/builds/configure-a-build#install-command) to be `npm install --only=production` or `yarn install --production`.
 
 ## Managing Build cache
 
@@ -167,7 +186,7 @@ Sometimes, you may not want to use the Build cache for a specific deployment. Yo
 - Use [`vercel --force`](/docs/cli/deploy#force) with [Vercel CLI](/docs/cli) to build and deploy the project **without** the Build cache
 - Use an Environment Variable `VERCEL_FORCE_NO_BUILD_CACHE` with a value of `1` on your project to skip the Build cache
 - Use an Environment Variable `TURBO_FORCE` with a value of `true` on your project to skip Turborepo [Remote Cache](/docs/monorepos/remote-caching)
-- Use the `forceNew` optional query parameter with a value of `1` when [creating a new deployment with the Vercel API](/docs/rest-api/reference/endpoints/deployments/create-a-new-deployment) to skip the Build cache
+- Use the `forceNew` optional query parameter with a value of `1` when [creating a new deployment with the Vercel API](/docs/rest-api/deployments/create-a-new-deployment) to skip the Build cache
 
 > **💡 Note:** When redeploying **without** the existing Build Cache, the Remote Cache from
 > [Turborepo](https://turborepo.com/docs/core-concepts/remote-caching) and

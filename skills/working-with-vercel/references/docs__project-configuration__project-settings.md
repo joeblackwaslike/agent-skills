@@ -11,18 +11,33 @@ related:
   - /docs/project-configuration
   - /docs/project-configuration/general-settings
   - /docs/functions/runtimes/node-js/node-js-versions
-  - /docs/deployments/concurrent-builds
-  - /docs/deployments/managing-builds
+  - /docs/builds/managing-builds
+  - /docs/deployments
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d8e2b0c3a706aeb075f11800d3421cd0d8ba0078e7249f156a3639130bbb153e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d59e98d7c708c3fa181d4b14e01f845c8aec4aa9fa6d021f4488d5f4205d966d"
 ---
 
 # Project settings
 
 From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), there are two areas where you can configure settings:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related) — Learn how to manage your projects through the Vercel Dashboard.
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
+
+Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md)
+<!-- /docsgraph:related -->
 
 - **Team Settings**: Any settings configured here, are applied at the team-level, although you can select which projects the settings should be set for.
 - **Project Settings**: These are specific settings for the selected project. You can make changes about all areas relating to your project, including domains, functions, drains, integrations, Git, caching, environment variables, deployment protection, and security.
@@ -53,12 +68,12 @@ In your build and deployment settings, adjust configurations such as framework s
 In this section, you can adjust build-related configurations, such as framework settings, code directory, Node.js version, and more.
 
 - [Node.js version](/docs/functions/runtimes/node-js/node-js-versions#setting-the-node.js-version-in-project-settings)
-- [Prioritize production builds](/docs/deployments/concurrent-builds#prioritize-production-builds)
-- [On-demand concurrent builds](/docs/deployments/managing-builds#on-demand-concurrent-builds)
+- [Prioritize production builds](/docs/builds/managing-builds#prioritize-production-builds)
+- [On-demand concurrent builds](/docs/builds/managing-builds#on-demand-concurrent-builds)
 
 ### Ignored Build Step
 
-By default, Vercel creates a new [deployment](/docs/deployments) and build (unless the Build Step is [skipped](/docs/deployments/configure-a-build#skip-build-step)) for every commit pushed to your connected Git repository.
+By default, Vercel creates a new [deployment](/docs/deployments) and build (unless the Build Step is [skipped](/docs/builds/configure-a-build#skip-build-step)) for every commit pushed to your connected Git repository.
 
 Each commit in Git is assigned a unique hash value commonly referred to as SHA. If the SHA of the commit was already deployed in the past, no new Deployment is created. In that case, the last Deployment matching that SHA is returned instead.
 
@@ -66,7 +81,7 @@ To ignore the build step:
 
 1. Choose a project from the [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard)
 2. Open **Settings** in the sidebar and then select the **Build and Deployment** menu item
-3. In the **Ignored Build Step** section, select the behavior you would like. This behavior provides a command that outputs a code, which tells Vercel whether to issue a new build or not. The command is executed within the [Root Directory](/docs/deployments/configure-a-build#root-directory) and can access all [System Environment Variables](/docs/environment-variables/system-environment-variables):
+3. In the **Ignored Build Step** section, select the behavior you would like. This behavior provides a command that outputs a code, which tells Vercel whether to issue a new build or not. The command is executed within the [Root Directory](/docs/builds/configure-a-build#root-directory) and can access all [System Environment Variables](/docs/environment-variables/system-environment-variables):
    - **Automatic**: Each commit will issue a new build
    - **Only build production**: When the `VERCEL_ENV` is production, a new build will be issued
    - **Only build preview**: When the `VERCEL_ENV` is preview, a new build will be issued
@@ -82,7 +97,7 @@ To ignore the build step:
 
 > **💡 Note:** Canceled builds are counted as full deployments as they execute a build
 > command in the build step. This means that any canceled builds initiated using
-> the ignore build step will still count towards your [deployment quotas](/docs/limits#deployments-per-day-hobby) and [concurrent build slots](/docs/deployments/concurrent-builds).You may be able to optimize your deployment queue by [skipping builds](/docs/monorepos#skipping-unaffected-projects) for projects within a monorepo that are unaffected by a change.
+> the ignore build step will still count towards your [deployment quotas](/docs/limits#deployments-per-day-hobby) and [concurrent build slots](/docs/builds/managing-builds).You may be able to optimize your deployment queue by [skipping builds](/docs/monorepos#skipping-unaffected-projects) for projects within a monorepo that are unaffected by a change.
 
 To learn about more advanced usage see the ["How do I use the Ignored Build Step field on Vercel?"](/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel) guide.
 
@@ -97,7 +112,7 @@ If you have set an ignore build step command or [script](/kb/guide/how-do-i-use-
 
 ## Custom domains
 
-You can [add **custom domains**](/docs/domains/add-a-domain) for each project.
+You can [add **custom domains**](/docs/domains/working-with-domains/add-a-domain) for each project.
 
 To learn more, [see the Domains documentation](/docs/domains)
 
@@ -121,9 +136,9 @@ To learn more, see [Integrations](/docs/integrations).
 
 ## Deployment Protection
 
-Protect your project deployments with [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) and [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection), and more.
+Protect your project deployments with [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) and [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), and more.
 
-To learn more, see [Deployment Protection](/docs/security/deployment-protection).
+To learn more, see [Deployment Protection](/docs/deployment-protection).
 
 ## Functions
 
@@ -157,7 +172,7 @@ To learn more, see the [Drains documentation](/docs/drains/using-drains).
 
 ## Security settings
 
-From your project's security settings you can enable or disable [Attack Mode](/docs/attack-mode), [Logs and Source Protection](/docs/projects/overview#logs-and-source-protection), [Vercel Support Code Visibility](/docs/project-configuration/security-settings#vercel-support-code-visibility) [Git Fork Protection](/docs/projects/overview#git-fork-protection), and set a [retention policy for your deployments](/docs/security/deployment-retention).
+From your project's security settings you can enable or disable [Attack Mode](/docs/vercel-firewall/attack-mode), [Logs and Source Protection](/docs/projects#logs-and-source-protection), [Vercel Support Code Visibility](/docs/project-configuration/security-settings#vercel-support-code-visibility) [Git Fork Protection](/docs/projects#git-fork-protection), and set a [retention policy for your deployments](/docs/deployment-retention).
 
 To learn more, see [Security Settings](/docs/project-configuration/security-settings).
 

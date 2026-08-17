@@ -3,7 +3,7 @@ title: list-billing-plans-for-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-installation"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about list-billing-plans-for-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-installation.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "664b2b4d62eed28c67c707348dff20186c3298356809fe720f29f939d64f9eae"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dd369f651ea1b348de03cefaa1de2dce0aafcc78f6dc82d74d42c4690937ca97"
 ---
 
 # List Billing Plans For Installation

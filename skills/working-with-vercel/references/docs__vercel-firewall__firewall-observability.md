@@ -10,19 +10,35 @@ prerequisites:
 related:
   - /docs/vercel-firewall
   - /docs/vercel-firewall/firewall-concepts
-  - /docs/security/ddos-mitigation
+  - /docs/vercel-firewall/ddos-mitigation
   - /docs/webhooks
   - /docs/comments/integrations
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ba563b34ca6a264347b5b8bd52a076016f66361651439852075c9b3111cdd51a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "0e8ce6c5f0b4d60b9e2c898b9d0c6f2c8ca4832bccf6fe42339bcc5e1da18442"
 ---
 
 # Firewall Observability
 
 The project **Firewall** page of your Vercel dashboard provides a consolidated view of traffic and event analysis across Vercel's [platform-wide firewall](/docs/vercel-firewall#platform-wide-firewall) (including DDoS mitigations), Web Application Firewall, and Bot Management.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \(WAF\)
+- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode?from=related) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
+- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets?from=related) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \(WAF\)
+- [Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related) — Learn how to use Vercel WAF to protect your site in specific situations.
+
+Full cross-link map for this page: [/docs/vercel-firewall/firewall-observability.graph.md](/docs/vercel-firewall/firewall-observability.graph.md)
+<!-- /docsgraph:related -->
 
 ## Overview
 
@@ -72,7 +88,7 @@ To help protect your site effectively, you can configure alerts to be notified o
 
 ### DDoS attack alerts
 
-When Vercel's [DDoS Mitigation](/docs/security/ddos-mitigation) detects malicious traffic on your site that exceeds 100,000 requests over a 10-minute period, an alert is generated.
+When Vercel's [DDoS Mitigation](/docs/vercel-firewall/ddos-mitigation) detects malicious traffic on your site that exceeds 100,000 requests over a 10-minute period, an alert is generated.
 
 To receive notifications from these alerts, you can use one of the following methods:
 

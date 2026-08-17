@@ -11,12 +11,12 @@ related:
   - /docs/analytics/quickstart
   - /docs/analytics/limits-and-pricing
   - /docs/analytics/custom-events
-  - /docs/feature-flags
+  - /docs/flags
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "0a976656f272addd154103713380a854bc00c2cfacd4c996c7e68562ffe99cd4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "10ecb2a3f8f9dcc80fedb0c7ef90c29057169145b728fb3831aabc9d509e85d2"
 ---
 
 # Filtering Analytics
@@ -24,6 +24,21 @@ sha256: "0a976656f272addd154103713380a854bc00c2cfacd4c996c7e68562ffe99cd4"
 Web Analytics provides you with a way to filter your data in order to gain a deeper understanding of your website
 traffic. This guide will show you how to use the filtering feature and provide examples of how
 to use it to answer specific questions.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
+- [Privacy](https://vercel.com/docs/analytics/privacy-policy?from=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+
+Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md)
+<!-- /docsgraph:related -->
 
 ## Using filters
 
@@ -41,7 +56,7 @@ To filter the Web Analytics view:
 - Browsers
 - Devices
 - Operating System
-- If configured: [Custom Events](/docs/analytics/custom-events) and [Feature Flags](/docs/feature-flags)
+- If configured: [Custom Events](/docs/analytics/custom-events) and [Feature Flags](/docs/flags)
 
 3. All panels on the Web Analytics page will then update to show data filtered to your selection.
 

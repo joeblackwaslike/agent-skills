@@ -8,7 +8,7 @@ type: conceptual
 prerequisites:
   - /docs/git
 related:
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/deployments
   - /docs/git
   - /docs/cli/project
@@ -16,17 +16,36 @@ related:
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "2998fa3d7527b66112f72a62482548b8b0e7a7e8dd55ea993aca8133ef71068a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f8f4caf37ecea8e6a0db9b6ac1900745e6267e9ac9ad62d1f6000c67c3cac60a"
 ---
 
 # Deploying from Azure DevOps with Vercel
 
 The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?itemName=Vercel.vercel-deployment-extension) allows you to automatically deploy to Vercel from [Azure DevOps](https://azure.microsoft.com/en-us/products/devops). You can add the extension to your Azure DevOps Projects through the Visual Studio marketplace.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel?from=related) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
+- [How can I use GitLab Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [System Environment Variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+
+Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md)
+<!-- /docsgraph:related -->
+
 This flow is commonly used to deploy to Vercel projects from a codebase hosted in [Azure Repos](https://learn.microsoft.com/en-us/azure/devops/repos/get-started/what-is-repos?view=azure-devops), but it can be used with any Git repository that can integrate with [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops).
 
-Once the [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?itemName=Vercel.vercel-deployment-extension) is set up, your Azure DevOps project is connected to your [Vercel Project](/docs/projects/overview). You can then use Azure Pipelines inside your Azure DevOps project to trigger a [Vercel Deployment](/docs/deployments).
+Once the [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?itemName=Vercel.vercel-deployment-extension) is set up, your Azure DevOps project is connected to your [Vercel Project](/docs/projects). You can then use Azure Pipelines inside your Azure DevOps project to trigger a [Vercel Deployment](/docs/deployments).
 
 This page will help you use the extension in your own use case. You can:
 
@@ -61,7 +80,7 @@ To create an empty Vercel project:
 vercel project add <project-name>
 ```
 
-2. Or through the [dashboard](/docs/projects/overview#creating-a-project) and then disconnect the [Git integration](/docs/projects/overview#git) that you would have set up
+2. Or through the [dashboard](/docs/projects#creating-a-project) and then disconnect the [Git integration](/docs/projects#git) that you would have set up
 
 ### Extension and Pipeline set up
 

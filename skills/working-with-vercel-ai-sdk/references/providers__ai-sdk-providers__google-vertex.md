@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "55e28b3a9e9f6ad1d37aa5bb145f6fc918404d4a59dc539663ce9a160ce29cb5"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "ec44b92683619a8b2b8a2c963d9e81b6b44182c2235ceda6e82b480bb0dae840"
 ---
 
 # Google Vertex Provider
@@ -139,8 +139,7 @@ You can use the following optional settings to customize the provider instance:
 <a id="google-vertex-edge-runtime"></a>
 #### Edge Runtime
 
-Edge runtimes (like Vercel Edge Functions and Cloudflare Workers) are lightweight JavaScript environments that run closer to users at the network edge.
-They only provide a subset of the standard Node.js APIs.
+Edge runtimes (like Cloudflare Workers) are lightweight JavaScript environments that run closer to users at the network edge. They only provide a subset of the standard Node.js APIs.
 For example, direct file system access is not available, and many Node.js-specific libraries
 (including the standard Google Auth library) are not compatible.
 
@@ -909,6 +908,7 @@ The following Zod features are known to not work with Google Vertex:
 
 | Model                   | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ----------------------- | ----------- | ----------------- | ---------- | -------------- |
+| `gemini-3.7-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
 | `gemini-3.6-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
 | `gemini-3.5-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
 | `gemini-3.5-flash-lite` | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -1628,8 +1628,7 @@ You can use the following optional settings to customize the Google Vertex Anthr
 <a id="google-vertex-anthropic-edge-runtime"></a>
 #### Edge Runtime
 
-Edge runtimes (like Vercel Edge Functions and Cloudflare Workers) are lightweight JavaScript environments that run closer to users at the network edge.
-They only provide a subset of the standard Node.js APIs.
+Edge runtimes (like Cloudflare Workers) are lightweight JavaScript environments that run closer to users at the network edge. They only provide a subset of the standard Node.js APIs.
 For example, direct file system access is not available, and many Node.js-specific libraries
 (including the standard Google Auth library) are not compatible.
 
@@ -2365,7 +2364,6 @@ The following models are available through the MaaS provider. You can also pass 
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -2375,6 +2373,7 @@ The following models are available through the MaaS provider. You can also pass 
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

@@ -16,13 +16,35 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "e7d5fb63065a0d31d8ff864e4edfdf742a8404a99dc41abbed2b6cab985b67e8"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7853d3312d9a9d77ff9d0daf812cfd893396c85807fdc30b0a45e9967ef83afd"
 ---
 
 # Glossary
 
 A full glossary of terms used in Vercel's products and documentation.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Introduction](https://turborepo.dev/docs?from=related) — Learn what Turborepo is, how it solves monorepo scaling problems, and how to navigate the documentation.
+- [Structuring a repository](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository?from=related) — Set up a multi-package workspace with the directory structure, package.json files, and lockfile that Turborepo expects.
+- [Add to an existing repository](https://turborepo.dev/docs/getting-started/add-to-existing-repository?from=related) — Incrementally adopt Turborepo in an existing single-package or multi-package repository.
+- [Single-package workspaces](https://turborepo.dev/docs/guides/single-package-workspaces?from=related) — Use Turborepo's caching and task parallelization in a standalone application without a monorepo.
+- [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations?from=related) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
+- [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+
+Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
+<!-- /docsgraph:related -->
 
 ## A
 
@@ -238,7 +260,7 @@ Data transfer between the Vercel CDN and user devices, optimized for performance
 
 ### Feature Flags
 
-Configuration switches that allow you to enable or disable features without deploying new code. Vercel offers the [Flags SDK](/docs/feature-flags) for implementing flags in Next.js and SvelteKit, and Flags Explorer for managing flags through the Vercel Toolbar.
+Configuration switches that allow you to enable or disable features without deploying new code. Vercel offers the [Flags SDK](/docs/flags) for implementing flags in Next.js and SvelteKit, and Flags Explorer for managing flags through the Vercel Toolbar.
 
 ### Firewall
 

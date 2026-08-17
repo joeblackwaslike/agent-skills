@@ -16,13 +16,34 @@ related:
 summary: Use Vercel Agent to chat with your dashboard, investigate production issues, review code, and approve actions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c18f9dfe0dce05df5be3387f5e5a3e0471a4ab0552e81611fbef8878443b60dc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d7be0a5bf605c43909a06b7145c209f5ab2bb89c54de70730e6b79826c0d3bcb"
 ---
 
 # Vercel Agent
 
 > **🔒 Permissions Required**: Vercel Agent
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools?from=related) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
+
+Full cross-link map for this page: [/docs/agent.graph.md](/docs/agent.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel Agent lives in your dashboard and can investigate what's happening in production, answer questions about your projects, and take action on your behalf.
 

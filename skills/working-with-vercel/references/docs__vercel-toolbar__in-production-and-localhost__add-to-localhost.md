@@ -11,18 +11,34 @@ prerequisites:
 related:
   - /docs/cli/link
   - /docs/cli
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/accounts
 summary: Learn how to use the Vercel Toolbar in your local environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b6b2d00bfd4e576799539e2b81d72c60b336f2875ce33b8268116543e267df4b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8d74db35d67e68c12f9ce247b49a7bac818e63563759b06012a6b42d96408d61"
 ---
 
 # Add the Vercel Toolbar to your local environment
 
 To enable the toolbar in your local environment, add it to your project using the [`@vercel/toolbar`](https://www.npmjs.com/package/@vercel/toolbar) package, or with an injection script.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
+- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+
+Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.graph.md](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.graph.md)
+<!-- /docsgraph:related -->
 
 - ### Install the `@vercel/toolbar` package and link your project
   Install the package using the following command:
@@ -145,7 +161,7 @@ To enable the toolbar in your local environment, add it to your project using th
   ></script>
   ```
   > For \['other']:
-  To find your project ID, see [project ID](/docs/projects/overview#project-id). To find your user or team ID, see [Find your Team ID](/docs/accounts#find-your-team-id).
+  To find your project ID, see [project ID](/docs/projects#project-id). To find your user or team ID, see [Find your Team ID](/docs/accounts#find-your-team-id).
   > For \['nextjs-app']:
   Then add the following code to your `layout.tsx` or `layout.jsx` file:
   ```tsx filename="app/layout.tsx" framework=nextjs-app

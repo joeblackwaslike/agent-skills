@@ -16,13 +16,33 @@ related:
 summary: Use Vercel Connect to create connectors, authorize provider access, request provider tokens at runtime, and run agent workflows without long-lived...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b97001123404b9e4aa6bcddd082f9c14ad9967c1cfe0be06cb20e99468d42be4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "156ad21f50ad7d22b7dc357e49b11a04c1ac914fbcbf361ed30d45bbb0bfb4ae"
 ---
 
 # Vercel Connect
 
 > **🔒 Permissions Required**: Vercel Connect
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Connections](https://eve.dev/docs/connections?from=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
+- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Environments](https://vercel.com/docs/deployments/environments?from=related) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
+- [eve](https://vercel.com/docs/eve?from=related) — Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+
+Full cross-link map for this page: [/docs/connect.graph.md](/docs/connect.graph.md)
+<!-- /docsgraph:related -->
 
 [Vercel Connect](/connect) lets your agents and services act on third-party APIs on behalf of your users and teams. Instead of storing provider credentials in long-lived environment variables, you register a connector for the provider and request short-lived tokens at runtime, scoped per project and per environment.
 
@@ -67,6 +87,12 @@ For the full picture, including how token requests are authorized against projec
 - **[Trigger forwarding](/docs/connect/concepts/triggers)**: Verified webhooks fan out to the project destinations you register on the connector.
 - **[Connector branding](/docs/connect/concepts/connectors#branding)**: Per-connector icon, background color, and accent color.
 
+## Observability
+
+Every connector includes an **Observability** tab that logs token requests, authorizations, trigger deliveries, and revocations. Filter events by type, environment, project, or subject, and use stable correlation IDs (`tokenId`, `authorizationId`, `triggerRequestId`) to trace each token across events and match them to your own systems.
+
+To retain events beyond your plan's retention window, forward them to any custom webhook endpoint by adding a [Drain](/docs/drains) (available on Pro and Enterprise plans). See [Observability](/docs/connect/observability) for the full reference.
+
 ## Reference
 
 - **[SDK Reference](/docs/connect/ts-sdk-reference)**: API reference for `@vercel/connect`, including `getToken`, `getTokenResponse`, the `ConnectTokenParams` and `ConnectTokenResponse` shapes, and the error classes.
@@ -94,6 +120,8 @@ You register an OAuth client (or generate an API key) with the Third Party Platf
 
 For providers that support it, [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup) is a one-off helper action that performs some or all of the OAuth-client registration steps on your behalf when bootstrapping a Customer Managed Connector.
 
+You can create either kind of connector from the dashboard or with [`vercel connect create`](/docs/cli/connect#vercel-connect-create). For a known service, the CLI prompts you for the [connection method](/docs/connect/concepts/connectors#connection-methods) and any credentials the provider needs, and opens your browser only when the provider requires you to sign in or install an app.
+
 The capability matrix for each connector type, including which support [installations](/docs/connect/concepts/installations) and [triggers](/docs/connect/concepts/triggers), is on the [Connectors](/docs/connect/concepts/connectors#connector-types) reference page.
 
 ## Pricing
@@ -113,6 +141,8 @@ Use Vercel Connect when you need delegated runtime credentials, when the same pr
 **SDK Reference**: API reference for @vercel/connect: getToken, getTokenResponse, errors, and caching. [Learn more →](/docs/connect/ts-sdk-reference)
 
 **CLI Reference**: Manage connectors, projects, and tokens with the vercel connect command. [Learn more →](/docs/cli/connect)
+
+**Observability**: Monitor token requests, authorizations, triggers, and revocations for each connector. [Learn more →](/docs/connect/observability)
 
 **Pricing and Limits**: Plan pricing, how to stop being billed, and platform limits during beta. [Learn more →](/docs/connect/pricing)
 

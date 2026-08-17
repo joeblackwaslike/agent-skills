@@ -17,13 +17,33 @@ related:
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "412937ea3d65ae1719eef9a9db780def2a6cb87782b8a17e6ff80e31b5cfbbf3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fc9d0fc98630479844eff870854511800e6e3e8f56be0a68447f46fc9fc17ed2"
 ---
 
 # AI SDK
 
 The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered TypeScript applications with AI Gateway. Pass a model string like `'anthropic/claude-sonnet-5'` directly to AI SDK functions and requests route through AI Gateway automatically.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related)
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [Get started with OpenAI o1](https://ai-sdk.dev/cookbook/guides/o1?from=related)
+- [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai?from=related) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications. Learn how they differ in agen
+- [Get started with OpenAI o3-mini](https://ai-sdk.dev/cookbook/guides/o3?from=related)
+- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related)
+- [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7?from=related)
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md)
+<!-- /docsgraph:related -->
 
 ## Installation
 

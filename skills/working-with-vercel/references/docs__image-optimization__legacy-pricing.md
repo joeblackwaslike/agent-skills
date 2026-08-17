@@ -12,17 +12,33 @@ related:
   - /docs/manage-cdn-usage
   - /docs/cdn
   - /docs/limits/fair-use-guidelines
-  - /docs/errors/platform-error-codes
+  - /docs/errors
 summary: This page outlines information on the pricing and limits for the source images-based legacy option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/legacy-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "412a3b387e211bb7aa5ca2aee0ef4736b33061e22f35db9be502ac840cfac6d5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "de87d5fcbbbd58476ade2ef8db31320ebf71556bd3d7d7580cebd8b24c790017"
 ---
 
 # Legacy Pricing for Image Optimization
 
 ## Pricing
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Getting Started](https://vercel.com/docs/image-optimization/quickstart?from=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+- [Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related) — Learn about the pricing for Vercel Blob.
+
+Full cross-link map for this page: [/docs/image-optimization/legacy-pricing.graph.md](/docs/image-optimization/legacy-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This legacy pricing option is only available to Enterprise teams
 > created before February 18th, 2025, who are given the choice to
@@ -72,7 +88,7 @@ Vercel will send you emails as you are nearing your [usage](#pricing) limits, bu
 
 Once you exceed the limits:
 
-- New [source images](#source-images) will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors/platform-error-codes#402:-deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
+- New [source images](#source-images) will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors#402:-deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
 - Previously optimized images have already been cached and will continue to work as expected, without error
 
 You will **not** be charged for exceeding the usage limits, but this usually means your application is ready to upgrade to a [Pro plan](/docs/plans/pro-plan).
@@ -91,7 +107,7 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 For all the images that are optimized by Vercel, the following limits apply:
 
-- The maximum size for an optimized image is **10 MB**, as set out in the [Cacheable Responses limits](/docs/cdn-cache#how-to-cache-responses)
+- The maximum size for an optimized image is **10 MB**, as set out in the [Cacheable Responses limits](/docs/caching/cdn-cache#how-to-cache-responses)
 - Each [source image](#source-images) has a maximum width and height of 8192 pixels
 - A [source image](#source-images) must be one of the following formats to be optimized: `image/jpeg`, `image/png`, `image/webp`, `image/avif`. Other formats will be served as-is
 

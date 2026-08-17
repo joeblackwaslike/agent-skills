@@ -8,33 +8,49 @@ type: reference
 prerequisites:
   - /docs/webhooks
 related:
-  - /docs/rest-api/reference/welcome
-  - /docs/integrations/checks-overview
+  - /docs/rest-api
+  - /docs/checks
   - /docs/deployment-retention
   - /docs/deployments/promoting-a-deployment
   - /docs/cli/promote
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f03904dbbf7e4e8d7c2e57e9bfc9e049c86224a7275bbabe782b8c95343c406b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "531961aa11a4d02884f4b3b73cf650ccd145eb07ca2f31c1710d5e6acbc8b16f"
 ---
 
 # Webhooks API Reference
 
 Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. An example use-cases for webhooks might be cleaning up resources after someone removes your Integration.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related)
+- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action?from=related) — These actions allow integration providers to set up automated tasks with Vercel deployments.
+- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events?from=related)
+- [Instant Rollback](https://vercel.com/docs/instant-rollback?from=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
+
+Full cross-link map for this page: [/docs/webhooks/webhooks-api.graph.md](/docs/webhooks/webhooks-api.graph.md)
+<!-- /docsgraph:related -->
+
 ## Payload
 
 The webhook payload is a JSON object with the following keys.
 
-| Key           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                           |
+| Key           | [Type](/docs/rest-api#types) | Description                                                                                           |
 | ------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **type**      | [String](/docs/rest-api/reference/welcome#types)       | The [event type](#supported-event-types).                                                             |
-| **id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the webhook delivery.                                                                       |
-| **createdAt** | [Date](/docs/rest-api/reference/welcome#types)         | The date and time the webhook event was generated.                                                    |
-| **region**    | [String](/docs/rest-api/reference/welcome#types)       | The region the event occurred in (possibly null).                                                     |
-| **payload**   | [Object](/docs/rest-api/reference/welcome#types)       | The payload of the webhook. See [Supported Event Types](#supported-event-types) for more information. |
+| **type**      | [String](/docs/rest-api#types)       | The [event type](#supported-event-types).                                                             |
+| **id**        | [ID](/docs/rest-api#types)           | The ID of the webhook delivery.                                                                       |
+| **createdAt** | [Date](/docs/rest-api#types)         | The date and time the webhook event was generated.                                                    |
+| **region**    | [String](/docs/rest-api#types)       | The region the event occurred in (possibly null).                                                     |
+| **payload**   | [Object](/docs/rest-api#types)       | The payload of the webhook. See [Supported Event Types](#supported-event-types) for more information. |
 
 ## Supported Event Types
 
@@ -42,31 +58,31 @@ The webhook payload is a JSON object with the following keys.
 
 Occurs whenever a deployment is canceled.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment.check-rerequested
 
-Occurs when a user has requested for a [check](/docs/integrations/checks-overview) to be rerun after it failed.
+Occurs when a user has requested for a [check](/docs/checks) to be rerun after it failed.
 
-| Key                       | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                       | [Type](/docs/rest-api#types) | Description                                 |
 | ------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                 |
-| **payload.deployment.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                   |
-| **payload.check.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the check.                        |
+| **payload.team.id**       | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**       | [ID](/docs/rest-api#types)           | The ID of the event's user.                 |
+| **payload.deployment.id** | [ID](/docs/rest-api#types)           | The ID of the deployment.                   |
+| **payload.check.id**      | [ID](/docs/rest-api#types)           | The ID of the check.                        |
 
 ### deployment.cleanup
 
@@ -77,70 +93,70 @@ Occurs whenever a deployment is permanently deleted after the [recovery period](
 > enter a 30-day recovery period during which they can be restored. The `deployment.cleanup` webhook only fires after this
 > recovery period ends and the deployment is permanently deleted.
 
-| Key                                        | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                                        | [Type](/docs/rest-api#types) | Description                                                                                |
 | ------------------------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.team.id**                        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                |
-| **payload.user.id**                        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                |
-| **payload.deployment.id**                  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**                | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**                 | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**                | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.deployment.alias**               | [List](/docs/rest-api/reference/welcome#types)         | An array of aliases that will get assigned when the deployment is ready.                   |
-| **payload.deployment.target**              | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.deployment.customEnvironmentId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the custom environment, if the custom environment is used.                       |
-| **payload.deployment.regions**             | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
-| **payload.project.id**                     | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                     |
+| **payload.team.id**                        | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                |
+| **payload.user.id**                        | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                |
+| **payload.deployment.id**                  | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**                | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**                 | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**                | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.deployment.alias**               | [List](/docs/rest-api#types)         | An array of aliases that will get assigned when the deployment is ready.                   |
+| **payload.deployment.target**              | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.deployment.customEnvironmentId** | [ID](/docs/rest-api#types)           | The ID of the custom environment, if the custom environment is used.                       |
+| **payload.deployment.regions**             | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.project.id**                     | [ID](/docs/rest-api#types)           | The ID of the project.                                                                     |
 
 ### deployment.created
 
 Occurs whenever a deployment is created.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                |
-| **payload.alias**            | [List](/docs/rest-api/reference/welcome#types)         | An array of aliases that will get assigned when the deployment is ready.                   |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                |
+| **payload.alias**            | [List](/docs/rest-api#types)         | An array of aliases that will get assigned when the deployment is ready.                   |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment.error
 
 Occurs whenever a deployment has failed.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment.integration.action.cancel
 
 Occurs when an integration deployment action or the deployment itself is canceled.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                          |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                          |
 | ---------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| **payload.configuration.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                              |
-| **payload.installationId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`). |
-| **payload.resourceId**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration resource for which the action is canceled. |
-| **payload.action**           | [String](/docs/rest-api/reference/welcome#types)       | The action slug, declared by the integration                         |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                            |
+| **payload.configuration.id** | [ID](/docs/rest-api#types)           | The ID of the integration installation.                              |
+| **payload.installationId**   | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`). |
+| **payload.resourceId**       | [ID](/docs/rest-api#types)           | The ID of the integration resource for which the action is canceled. |
+| **payload.action**           | [String](/docs/rest-api#types)       | The action slug, declared by the integration                         |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                            |
 
 ### deployment.integration.action.cleanup
 
@@ -151,25 +167,25 @@ Occurs when a deployment that executed an integration deployment action is perma
 > can be restored. This webhook only fires after this recovery period ends and
 > the deployment is permanently deleted.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                            |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                            |
 | ---------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| **payload.configuration.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                |
-| **payload.installationId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).   |
-| **payload.resourceId**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration resource for which the action is cleaned up. |
-| **payload.action**           | [String](/docs/rest-api/reference/welcome#types)       | The action slug, declared by the integration                           |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                              |
+| **payload.configuration.id** | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                |
+| **payload.installationId**   | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).   |
+| **payload.resourceId**       | [ID](/docs/rest-api#types)           | The ID of the integration resource for which the action is cleaned up. |
+| **payload.action**           | [String](/docs/rest-api#types)       | The action slug, declared by the integration                           |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                              |
 
 ### deployment.integration.action.start
 
 Occurs when a deployment starts an integration deployment action.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                          |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                          |
 | ---------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| **payload.configuration.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                              |
-| **payload.installationId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`). |
-| **payload.resourceId**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration resource for which the action is started.  |
-| **payload.action**           | [String](/docs/rest-api/reference/welcome#types)       | The action slug, declared by the integration                         |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                            |
+| **payload.configuration.id** | [ID](/docs/rest-api#types)           | The ID of the integration installation.                              |
+| **payload.installationId**   | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`). |
+| **payload.resourceId**       | [ID](/docs/rest-api#types)           | The ID of the integration resource for which the action is started.  |
+| **payload.action**           | [String](/docs/rest-api#types)       | The action slug, declared by the integration                         |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                            |
 
 ### deployment.promoted
 
@@ -180,19 +196,19 @@ Occurs whenever a deployment is promoted.
 > to start serving production traffic. This can happen automatically after a
 > successful build, or after running the [promote](/docs/cli/promote) command.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment. |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.            |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.      |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                                |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment. |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.            |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.      |
 
 ### deployment.rollback
 
@@ -201,469 +217,469 @@ Occurs when Vercel accepts an instant rollback request.
 > **💡 Note:** This event confirms Vercel accepted your request. You might receive it before
 > traffic finishes switching to the target deployment.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                          | [Type](/docs/rest-api#types) | Description                                 |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                 |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                      |
-| **payload.fromDeploymentId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment being replaced.    |
-| **payload.toDeploymentId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment being restored.    |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                 |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                      |
+| **payload.fromDeploymentId** | [ID](/docs/rest-api#types)           | The ID of the deployment being replaced.    |
+| **payload.toDeploymentId**   | [ID](/docs/rest-api#types)           | The ID of the deployment being restored.    |
 
 ### deployment.ready
 
 Occurs whenever a deployment is ready.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment.succeeded
 
-Occurs whenever a deployment is successfully built and your integration has registered at least one [check](/docs/integrations/checks-overview).
+Occurs whenever a deployment is successfully built and your integration has registered at least one [check](/docs/checks).
 
 > **💡 Note:** This event gets fired after all blocking Checks have passed. See [
 > `deployment-prepared`
 > ](/docs/integrations#webhooks/events/deployment-prepared) if you registered
 > Checks.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### domain.created
 
 Occurs whenever a domain has been created.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                     |
+| Key                          | [Type](/docs/rest-api#types) | Description                                     |
 | ---------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------- |
-| **payload.team.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).     |
-| **payload.user.id**          | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                     |
-| **payload.domain.name**      | [String](/docs/rest-api/reference/welcome#types)       | The Domain name created.                        |
-| **payload.domain.delegated** | [Boolean](/docs/rest-api/reference/welcome#types)      | Whether or not the domain was delegated/shared. |
+| **payload.team.id**          | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).     |
+| **payload.user.id**          | [ID](/docs/rest-api#types)           | The ID of the event's user.                     |
+| **payload.domain.name**      | [String](/docs/rest-api#types)       | The Domain name created.                        |
+| **payload.domain.delegated** | [Boolean](/docs/rest-api#types)      | Whether or not the domain was delegated/shared. |
 
 ### domain.auto-renew-changed
 
 Occurs whenever a domain's auto-renewal setting is changed.
 
-| Key                     | [Type](/docs/rest-api/reference/welcome#types)    | Description                                 |
+| Key                     | [Type](/docs/rest-api#types)    | Description                                 |
 | ----------------------- | ------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**     | [ID](/docs/rest-api/reference/welcome#types)      | The ID of the event's team (possibly null). |
-| **payload.user.id**     | [ID](/docs/rest-api/reference/welcome#types)      | The ID of the event's user.                 |
-| **payload.domain.name** | [String](/docs/rest-api/reference/welcome#types)  | The name of the domain.                     |
-| **payload.previous**    | [Boolean](/docs/rest-api/reference/welcome#types) | The previous auto-renewal setting.          |
-| **payload.next**        | [Boolean](/docs/rest-api/reference/welcome#types) | The new auto-renewal setting.               |
+| **payload.team.id**     | [ID](/docs/rest-api#types)      | The ID of the event's team (possibly null). |
+| **payload.user.id**     | [ID](/docs/rest-api#types)      | The ID of the event's user.                 |
+| **payload.domain.name** | [String](/docs/rest-api#types)  | The name of the domain.                     |
+| **payload.previous**    | [Boolean](/docs/rest-api#types) | The previous auto-renewal setting.          |
+| **payload.next**        | [Boolean](/docs/rest-api#types) | The new auto-renewal setting.               |
 
 ### domain.certificate-add
 
 Occurs whenever a new SSL certificate is added for a domain.
 
-| Key                 | [Type](/docs/rest-api/reference/welcome#types)   | Description                                            |
+| Key                 | [Type](/docs/rest-api#types)   | Description                                            |
 | ------------------- | ------------------------------------------------ | ------------------------------------------------------ |
-| **payload.team.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).            |
-| **payload.user.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                            |
-| **payload.cert**    | [Object](/docs/rest-api/reference/welcome#types) | The certificate object containing certificate details. |
+| **payload.team.id** | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).            |
+| **payload.user.id** | [ID](/docs/rest-api#types)     | The ID of the event's user.                            |
+| **payload.cert**    | [Object](/docs/rest-api#types) | The certificate object containing certificate details. |
 
 ### domain.certificate-add-failed
 
 Occurs whenever adding a new SSL certificate for a domain fails.
 
-| Key                  | [Type](/docs/rest-api/reference/welcome#types) | Description                                                      |
+| Key                  | [Type](/docs/rest-api#types) | Description                                                      |
 | -------------------- | ---------------------------------------------- | ---------------------------------------------------------------- |
-| **payload.team.id**  | [ID](/docs/rest-api/reference/welcome#types)   | The ID of the event's team (possibly null).                      |
-| **payload.user.id**  | [ID](/docs/rest-api/reference/welcome#types)   | The ID of the event's user.                                      |
-| **payload.dnsNames** | [List](/docs/rest-api/reference/welcome#types) | An array of DNS names for which the certificate addition failed. |
+| **payload.team.id**  | [ID](/docs/rest-api#types)   | The ID of the event's team (possibly null).                      |
+| **payload.user.id**  | [ID](/docs/rest-api#types)   | The ID of the event's user.                                      |
+| **payload.dnsNames** | [List](/docs/rest-api#types) | An array of DNS names for which the certificate addition failed. |
 
 ### domain.certificate-deleted
 
 Occurs whenever an SSL certificate is deleted for a domain.
 
-| Key                 | [Type](/docs/rest-api/reference/welcome#types)   | Description                                            |
+| Key                 | [Type](/docs/rest-api#types)   | Description                                            |
 | ------------------- | ------------------------------------------------ | ------------------------------------------------------ |
-| **payload.team.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).            |
-| **payload.user.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                            |
-| **payload.cert**    | [Object](/docs/rest-api/reference/welcome#types) | The certificate object containing certificate details. |
+| **payload.team.id** | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).            |
+| **payload.user.id** | [ID](/docs/rest-api#types)     | The ID of the event's user.                            |
+| **payload.cert**    | [Object](/docs/rest-api#types) | The certificate object containing certificate details. |
 
 ### domain.certificate-renew
 
 Occurs whenever an SSL certificate is renewed for a domain.
 
-| Key                 | [Type](/docs/rest-api/reference/welcome#types)   | Description                                            |
+| Key                 | [Type](/docs/rest-api#types)   | Description                                            |
 | ------------------- | ------------------------------------------------ | ------------------------------------------------------ |
-| **payload.team.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).            |
-| **payload.user.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                            |
-| **payload.cert**    | [Object](/docs/rest-api/reference/welcome#types) | The certificate object containing certificate details. |
+| **payload.team.id** | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).            |
+| **payload.user.id** | [ID](/docs/rest-api#types)     | The ID of the event's user.                            |
+| **payload.cert**    | [Object](/docs/rest-api#types) | The certificate object containing certificate details. |
 
 ### domain.certificate-renew-failed
 
 Occurs whenever renewing an SSL certificate for a domain fails.
 
-| Key                  | [Type](/docs/rest-api/reference/welcome#types) | Description                                                     |
+| Key                  | [Type](/docs/rest-api#types) | Description                                                     |
 | -------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
-| **payload.team.id**  | [ID](/docs/rest-api/reference/welcome#types)   | The ID of the event's team (possibly null).                     |
-| **payload.user.id**  | [ID](/docs/rest-api/reference/welcome#types)   | The ID of the event's user.                                     |
-| **payload.dnsNames** | [List](/docs/rest-api/reference/welcome#types) | An array of DNS names for which the certificate renewal failed. |
+| **payload.team.id**  | [ID](/docs/rest-api#types)   | The ID of the event's team (possibly null).                     |
+| **payload.user.id**  | [ID](/docs/rest-api#types)   | The ID of the event's user.                                     |
+| **payload.dnsNames** | [List](/docs/rest-api#types) | An array of DNS names for which the certificate renewal failed. |
 
 ### domain.dns-records-changed
 
 Occurs whenever DNS records for a domain are modified.
 
-| Key                 | [Type](/docs/rest-api/reference/welcome#types)   | Description                                  |
+| Key                 | [Type](/docs/rest-api#types)   | Description                                  |
 | ------------------- | ------------------------------------------------ | -------------------------------------------- |
-| **payload.team.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).  |
-| **payload.user.id** | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                  |
-| **payload.zone**    | [String](/docs/rest-api/reference/welcome#types) | The DNS zone that was modified.              |
-| **payload.changes** | [List](/docs/rest-api/reference/welcome#types)   | An array of changes made to the DNS records. |
+| **payload.team.id** | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).  |
+| **payload.user.id** | [ID](/docs/rest-api#types)     | The ID of the event's user.                  |
+| **payload.zone**    | [String](/docs/rest-api#types) | The DNS zone that was modified.              |
+| **payload.changes** | [List](/docs/rest-api#types)   | An array of changes made to the DNS records. |
 
 ### domain.renewal
 
 Occurs whenever a domain is renewed.
 
-| Key                        | [Type](/docs/rest-api/reference/welcome#types)   | Description                                 |
+| Key                        | [Type](/docs/rest-api#types)   | Description                                 |
 | -------------------------- | ------------------------------------------------ | ------------------------------------------- |
-| **payload.team.id**        | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null). |
-| **payload.user.id**        | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                 |
-| **payload.domain.name**    | [String](/docs/rest-api/reference/welcome#types) | The name of the domain that was renewed.    |
-| **payload.price**          | [String](/docs/rest-api/reference/welcome#types) | The renewal price as a decimal number.      |
-| **payload.expirationDate** | [Date](/docs/rest-api/reference/welcome#types)   | The new expiration date of the domain.      |
-| **payload.renewedAt**      | [Date](/docs/rest-api/reference/welcome#types)   | The timestamp when the domain was renewed.  |
+| **payload.team.id**        | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null). |
+| **payload.user.id**        | [ID](/docs/rest-api#types)     | The ID of the event's user.                 |
+| **payload.domain.name**    | [String](/docs/rest-api#types) | The name of the domain that was renewed.    |
+| **payload.price**          | [String](/docs/rest-api#types) | The renewal price as a decimal number.      |
+| **payload.expirationDate** | [Date](/docs/rest-api#types)   | The new expiration date of the domain.      |
+| **payload.renewedAt**      | [Date](/docs/rest-api#types)   | The timestamp when the domain was renewed.  |
 
 ### domain.renewal-failed
 
 Occurs whenever a domain renewal fails.
 
-| Key                     | [Type](/docs/rest-api/reference/welcome#types)   | Description                                      |
+| Key                     | [Type](/docs/rest-api#types)   | Description                                      |
 | ----------------------- | ------------------------------------------------ | ------------------------------------------------ |
-| **payload.team.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).      |
-| **payload.user.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                      |
-| **payload.domain.name** | [String](/docs/rest-api/reference/welcome#types) | The name of the domain for which renewal failed. |
-| **payload.errorReason** | [String](/docs/rest-api/reference/welcome#types) | The reason why the renewal failed.               |
-| **payload.failedAt**    | [Date](/docs/rest-api/reference/welcome#types)   | The timestamp when the renewal failed.           |
+| **payload.team.id**     | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).      |
+| **payload.user.id**     | [ID](/docs/rest-api#types)     | The ID of the event's user.                      |
+| **payload.domain.name** | [String](/docs/rest-api#types) | The name of the domain for which renewal failed. |
+| **payload.errorReason** | [String](/docs/rest-api#types) | The reason why the renewal failed.               |
+| **payload.failedAt**    | [Date](/docs/rest-api#types)   | The timestamp when the renewal failed.           |
 
 ### domain.transfer-in-completed
 
 Occurs whenever a domain transfer into Vercel is completed.
 
-| Key                     | [Type](/docs/rest-api/reference/welcome#types)   | Description                                  |
+| Key                     | [Type](/docs/rest-api#types)   | Description                                  |
 | ----------------------- | ------------------------------------------------ | -------------------------------------------- |
-| **payload.team.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).  |
-| **payload.user.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                  |
-| **payload.domain.name** | [String](/docs/rest-api/reference/welcome#types) | The name of the domain that was transferred. |
+| **payload.team.id**     | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).  |
+| **payload.user.id**     | [ID](/docs/rest-api#types)     | The ID of the event's user.                  |
+| **payload.domain.name** | [String](/docs/rest-api#types) | The name of the domain that was transferred. |
 
 ### domain.transfer-in-failed
 
 Occurs whenever a domain transfer into Vercel fails.
 
-| Key                     | [Type](/docs/rest-api/reference/welcome#types)   | Description                                           |
+| Key                     | [Type](/docs/rest-api#types)   | Description                                           |
 | ----------------------- | ------------------------------------------------ | ----------------------------------------------------- |
-| **payload.team.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).           |
-| **payload.user.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                           |
-| **payload.domain.name** | [String](/docs/rest-api/reference/welcome#types) | The name of the domain for which the transfer failed. |
+| **payload.team.id**     | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).           |
+| **payload.user.id**     | [ID](/docs/rest-api#types)     | The ID of the event's user.                           |
+| **payload.domain.name** | [String](/docs/rest-api#types) | The name of the domain for which the transfer failed. |
 
 ### domain.transfer-in-started
 
 Occurs whenever a domain transfer into Vercel is initiated.
 
-| Key                     | [Type](/docs/rest-api/reference/welcome#types)   | Description                                                |
+| Key                     | [Type](/docs/rest-api#types)   | Description                                                |
 | ----------------------- | ------------------------------------------------ | ---------------------------------------------------------- |
-| **payload.team.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).                |
-| **payload.user.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                                |
-| **payload.domain.name** | [String](/docs/rest-api/reference/welcome#types) | The name of the domain for which the transfer was started. |
+| **payload.team.id**     | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).                |
+| **payload.user.id**     | [ID](/docs/rest-api#types)     | The ID of the event's user.                                |
+| **payload.domain.name** | [String](/docs/rest-api#types) | The name of the domain for which the transfer was started. |
 
 ### project.domain.created
 
 Occurs whenever a domain is added to a project.
 
-| Key                                      | [Type](/docs/rest-api/reference/welcome#types)   | Description                                                                                                                  |
+| Key                                      | [Type](/docs/rest-api#types)   | Description                                                                                                                  |
 | ---------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| **payload.team.id**                      | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).                                                                                  |
-| **payload.user.id**                      | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                                                                                                  |
-| **payload.project.id**                   | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the project.                                                                                                       |
-| **payload.domain.name**                  | [String](/docs/rest-api/reference/welcome#types) | The name of the domain that was added to the project.                                                                        |
-| **payload.domain.classification.target** | [String](/docs/rest-api/reference/welcome#types) | Where traffic for this domain is routed. One of `production` or `preview`.                                                   |
-| **payload.domain.classification.origin** | [String](/docs/rest-api/reference/welcome#types) | The origin type of the domain. One of `default-stable` (Vercel-provided), `default-redirect` (Vercel redirect), or `custom`. |
+| **payload.team.id**                      | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).                                                                                  |
+| **payload.user.id**                      | [ID](/docs/rest-api#types)     | The ID of the event's user.                                                                                                  |
+| **payload.project.id**                   | [ID](/docs/rest-api#types)     | The ID of the project.                                                                                                       |
+| **payload.domain.name**                  | [String](/docs/rest-api#types) | The name of the domain that was added to the project.                                                                        |
+| **payload.domain.classification.target** | [String](/docs/rest-api#types) | Where traffic for this domain is routed. One of `production` or `preview`.                                                   |
+| **payload.domain.classification.origin** | [String](/docs/rest-api#types) | The origin type of the domain. One of `default-stable` (Vercel-provided), `default-redirect` (Vercel redirect), or `custom`. |
 
 ### project.domain.deleted
 
 Occurs whenever a domain is removed from a project.
 
-| Key                                      | [Type](/docs/rest-api/reference/welcome#types)   | Description                                                                                                                  |
+| Key                                      | [Type](/docs/rest-api#types)   | Description                                                                                                                  |
 | ---------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| **payload.team.id**                      | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).                                                                                  |
-| **payload.user.id**                      | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                                                                                                  |
-| **payload.project.id**                   | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the project.                                                                                                       |
-| **payload.domain.name**                  | [String](/docs/rest-api/reference/welcome#types) | The name of the domain that was removed from the project.                                                                    |
-| **payload.domain.classification.target** | [String](/docs/rest-api/reference/welcome#types) | Where traffic for this domain is routed. One of `production` or `preview`.                                                   |
-| **payload.domain.classification.origin** | [String](/docs/rest-api/reference/welcome#types) | The origin type of the domain. One of `default-stable` (Vercel-provided), `default-redirect` (Vercel redirect), or `custom`. |
+| **payload.team.id**                      | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).                                                                                  |
+| **payload.user.id**                      | [ID](/docs/rest-api#types)     | The ID of the event's user.                                                                                                  |
+| **payload.project.id**                   | [ID](/docs/rest-api#types)     | The ID of the project.                                                                                                       |
+| **payload.domain.name**                  | [String](/docs/rest-api#types) | The name of the domain that was removed from the project.                                                                    |
+| **payload.domain.classification.target** | [String](/docs/rest-api#types) | Where traffic for this domain is routed. One of `production` or `preview`.                                                   |
+| **payload.domain.classification.origin** | [String](/docs/rest-api#types) | The origin type of the domain. One of `default-stable` (Vercel-provided), `default-redirect` (Vercel redirect), or `custom`. |
 
 ### project.domain.moved
 
 Occurs whenever a domain is moved from one project to another.
 
-| Key                        | [Type](/docs/rest-api/reference/welcome#types)    | Description                                      |
+| Key                        | [Type](/docs/rest-api#types)    | Description                                      |
 | -------------------------- | ------------------------------------------------- | ------------------------------------------------ |
-| **payload.team.id**        | [ID](/docs/rest-api/reference/welcome#types)      | The ID of the event's team (possibly null).      |
-| **payload.user.id**        | [ID](/docs/rest-api/reference/welcome#types)      | The ID of the event's user.                      |
-| **payload.domain.name**    | [String](/docs/rest-api/reference/welcome#types)  | The name of the domain that was moved.           |
-| **payload.from.projectId** | [ID](/docs/rest-api/reference/welcome#types)      | The ID of the project the domain was moved from. |
-| **payload.to.projectId**   | [ID](/docs/rest-api/reference/welcome#types)      | The ID of the project the domain was moved to.   |
-| **payload.isRedirect**     | [Boolean](/docs/rest-api/reference/welcome#types) | Whether the move created a redirect.             |
+| **payload.team.id**        | [ID](/docs/rest-api#types)      | The ID of the event's team (possibly null).      |
+| **payload.user.id**        | [ID](/docs/rest-api#types)      | The ID of the event's user.                      |
+| **payload.domain.name**    | [String](/docs/rest-api#types)  | The name of the domain that was moved.           |
+| **payload.from.projectId** | [ID](/docs/rest-api#types)      | The ID of the project the domain was moved from. |
+| **payload.to.projectId**   | [ID](/docs/rest-api#types)      | The ID of the project the domain was moved to.   |
+| **payload.isRedirect**     | [Boolean](/docs/rest-api#types) | Whether the move created a redirect.             |
 
 ### project.domain.unverified
 
 Occurs whenever a project domain becomes unverified.
 
-| Key                     | [Type](/docs/rest-api/reference/welcome#types)   | Description                                    |
+| Key                     | [Type](/docs/rest-api#types)   | Description                                    |
 | ----------------------- | ------------------------------------------------ | ---------------------------------------------- |
-| **payload.team.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).    |
-| **payload.user.id**     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                    |
-| **payload.project.id**  | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the project.                         |
-| **payload.domain.name** | [String](/docs/rest-api/reference/welcome#types) | The name of the domain that became unverified. |
+| **payload.team.id**     | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).    |
+| **payload.user.id**     | [ID](/docs/rest-api#types)     | The ID of the event's user.                    |
+| **payload.project.id**  | [ID](/docs/rest-api#types)     | The ID of the project.                         |
+| **payload.domain.name** | [String](/docs/rest-api#types) | The name of the domain that became unverified. |
 
 ### project.domain.updated
 
 Occurs whenever a project domain is updated.
 
-| Key                                     | [Type](/docs/rest-api/reference/welcome#types)   | Description                                        |
+| Key                                     | [Type](/docs/rest-api#types)   | Description                                        |
 | --------------------------------------- | ------------------------------------------------ | -------------------------------------------------- |
-| **payload.team.id**                     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).        |
-| **payload.user.id**                     | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                        |
-| **payload.project.id**                  | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the project.                             |
-| **payload.previous.domain**             | [String](/docs/rest-api/reference/welcome#types) | The previous domain name.                          |
-| **payload.previous.redirect**           | [String](/docs/rest-api/reference/welcome#types) | The previous redirect URL (possibly null).         |
-| **payload.previous.redirectStatusCode** | [Number](/docs/rest-api/reference/welcome#types) | The previous redirect status code (possibly null). |
-| **payload.previous.gitBranch**          | [String](/docs/rest-api/reference/welcome#types) | The previous git branch (possibly null).           |
-| **payload.next.domain**                 | [String](/docs/rest-api/reference/welcome#types) | The new domain name.                               |
-| **payload.next.redirect**               | [String](/docs/rest-api/reference/welcome#types) | The new redirect URL (possibly null).              |
-| **payload.next.redirectStatusCode**     | [Number](/docs/rest-api/reference/welcome#types) | The new redirect status code (possibly null).      |
-| **payload.next.gitBranch**              | [String](/docs/rest-api/reference/welcome#types) | The new git branch (possibly null).                |
+| **payload.team.id**                     | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).        |
+| **payload.user.id**                     | [ID](/docs/rest-api#types)     | The ID of the event's user.                        |
+| **payload.project.id**                  | [ID](/docs/rest-api#types)     | The ID of the project.                             |
+| **payload.previous.domain**             | [String](/docs/rest-api#types) | The previous domain name.                          |
+| **payload.previous.redirect**           | [String](/docs/rest-api#types) | The previous redirect URL (possibly null).         |
+| **payload.previous.redirectStatusCode** | [Number](/docs/rest-api#types) | The previous redirect status code (possibly null). |
+| **payload.previous.gitBranch**          | [String](/docs/rest-api#types) | The previous git branch (possibly null).           |
+| **payload.next.domain**                 | [String](/docs/rest-api#types) | The new domain name.                               |
+| **payload.next.redirect**               | [String](/docs/rest-api#types) | The new redirect URL (possibly null).              |
+| **payload.next.redirectStatusCode**     | [Number](/docs/rest-api#types) | The new redirect status code (possibly null).      |
+| **payload.next.gitBranch**              | [String](/docs/rest-api#types) | The new git branch (possibly null).                |
 
 ### project.domain.verified
 
 Occurs whenever a project domain is verified.
 
-| Key                                      | [Type](/docs/rest-api/reference/welcome#types)   | Description                                                                                                                  |
+| Key                                      | [Type](/docs/rest-api#types)   | Description                                                                                                                  |
 | ---------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| **payload.team.id**                      | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's team (possibly null).                                                                                  |
-| **payload.user.id**                      | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the event's user.                                                                                                  |
-| **payload.project.id**                   | [ID](/docs/rest-api/reference/welcome#types)     | The ID of the project.                                                                                                       |
-| **payload.domain.name**                  | [String](/docs/rest-api/reference/welcome#types) | The name of the domain that was verified.                                                                                    |
-| **payload.domain.classification.target** | [String](/docs/rest-api/reference/welcome#types) | Where traffic for this domain is routed. One of `production` or `preview`.                                                   |
-| **payload.domain.classification.origin** | [String](/docs/rest-api/reference/welcome#types) | The origin type of the domain. One of `default-stable` (Vercel-provided), `default-redirect` (Vercel redirect), or `custom`. |
+| **payload.team.id**                      | [ID](/docs/rest-api#types)     | The ID of the event's team (possibly null).                                                                                  |
+| **payload.user.id**                      | [ID](/docs/rest-api#types)     | The ID of the event's user.                                                                                                  |
+| **payload.project.id**                   | [ID](/docs/rest-api#types)     | The ID of the project.                                                                                                       |
+| **payload.domain.name**                  | [String](/docs/rest-api#types) | The name of the domain that was verified.                                                                                    |
+| **payload.domain.classification.target** | [String](/docs/rest-api#types) | Where traffic for this domain is routed. One of `production` or `preview`.                                                   |
+| **payload.domain.classification.origin** | [String](/docs/rest-api#types) | The origin type of the domain. One of `default-stable` (Vercel-provided), `default-redirect` (Vercel redirect), or `custom`. |
 
 ### integration-configuration.permission-upgraded
 
 Occurs whenever the user changes the project permission for an integration.
 
-| Key                                        | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                 |
+| Key                                        | [Type](/docs/rest-api#types) | Description                                                                                 |
 | ------------------------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **payload.team.id**                        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                 |
-| **payload.user.id**                        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                 |
-| **payload.configuration.id**               | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the configuration.                                                                |
-| **payload.configuration.projectSelection** | [String](/docs/rest-api/reference/welcome#types)       | A String representing the permission for projects. Possible values are `all` or `selected`. |
-| **payload.configuration.projects**         | [List](/docs/rest-api/reference/welcome#types)         | An array of project IDs.                                                                    |
-| **payload.projects.added**                 | [List](/docs/rest-api/reference/welcome#types)         | An array of added project IDs.                                                              |
-| **payload.projects.removed**               | [List](/docs/rest-api/reference/welcome#types)         | An array of removed project IDs.                                                            |
+| **payload.team.id**                        | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                 |
+| **payload.user.id**                        | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                 |
+| **payload.configuration.id**               | [ID](/docs/rest-api#types)           | The ID of the configuration.                                                                |
+| **payload.configuration.projectSelection** | [String](/docs/rest-api#types)       | A String representing the permission for projects. Possible values are `all` or `selected`. |
+| **payload.configuration.projects**         | [List](/docs/rest-api#types)         | An array of project IDs.                                                                    |
+| **payload.projects.added**                 | [List](/docs/rest-api#types)         | An array of added project IDs.                                                              |
+| **payload.projects.removed**               | [List](/docs/rest-api#types)         | An array of removed project IDs.                                                            |
 
 ### integration-configuration.removed
 
 Occurs whenever an integration has been removed.
 
-| Key                                        | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                 |
+| Key                                        | [Type](/docs/rest-api#types) | Description                                                                                 |
 | ------------------------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **payload.team.id**                        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                 |
-| **payload.user.id**                        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                 |
-| **payload.configuration.id**               | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the configuration.                                                                |
-| **payload.configuration.projectSelection** | [String](/docs/rest-api/reference/welcome#types)       | A String representing the permission for projects. Possible values are `all` or `selected`. |
-| **payload.configuration.projects**         | [List](/docs/rest-api/reference/welcome#types)         | An array of project IDs.                                                                    |
+| **payload.team.id**                        | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                 |
+| **payload.user.id**                        | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                 |
+| **payload.configuration.id**               | [ID](/docs/rest-api#types)           | The ID of the configuration.                                                                |
+| **payload.configuration.projectSelection** | [String](/docs/rest-api#types)       | A String representing the permission for projects. Possible values are `all` or `selected`. |
+| **payload.configuration.projects**         | [List](/docs/rest-api#types)         | An array of project IDs.                                                                    |
 
 ### integration-configuration.scope-change-confirmed
 
 Occurs whenever the user confirms pending scope changes.
 
-| Key                              | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                              | [Type](/docs/rest-api#types) | Description                                 |
 | -------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**              | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**              | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                 |
-| **payload.configuration.id**     | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the configuration.                |
-| **payload.configuration.scopes** | [List](/docs/rest-api/reference/welcome#types)         | List of all scopes (after confirmation).    |
+| **payload.team.id**              | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**              | [ID](/docs/rest-api#types)           | The ID of the event's user.                 |
+| **payload.configuration.id**     | [ID](/docs/rest-api#types)           | The ID of the configuration.                |
+| **payload.configuration.scopes** | [List](/docs/rest-api#types)         | List of all scopes (after confirmation).    |
 
 ### integration-configuration.transferred
 
 Occurs whenever the integration installation has been transferred to another team.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                  |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                                  |
 | ----------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| **payload.configuration.id**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                      |
-| **payload.installationId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).         |
-| **payload.previousTeamId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the previous installation owner team.                              |
-| **payload.previousAccountId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the previous installation account (for marketplace installations). |
-| **payload.newTeamId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the new installation owner team.                                   |
-| **payload.newAccountId**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the new installation account (for marketplace installations).      |
+| **payload.configuration.id**  | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                      |
+| **payload.installationId**    | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).         |
+| **payload.previousTeamId**    | [ID](/docs/rest-api#types)           | The ID of the previous installation owner team.                              |
+| **payload.previousAccountId** | [ID](/docs/rest-api#types)           | The ID of the previous installation account (for marketplace installations). |
+| **payload.newTeamId**         | [ID](/docs/rest-api#types)           | The ID of the new installation owner team.                                   |
+| **payload.newAccountId**      | [ID](/docs/rest-api#types)           | The ID of the new installation account (for marketplace installations).      |
 
 ### integration-resource.project-connected
 
 Occurs whenever the user connects the integration resource to a project.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                   |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                   |
 | ---------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| **payload.configuration.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                                       |
-| **payload.installationId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).                          |
-| **payload.resourceId**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the resource.                                                                       |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                        |
-| **payload.project.name**     | [String](/docs/rest-api/reference/welcome#types)       | The name of the project.                                                                      |
-| **payload.projectId**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project (same as project.id).                                                   |
-| **payload.productionDomain** | [String](/docs/rest-api/reference/welcome#types)       | The production domain for the connected project (e.g., "my-app.vercel.app" or "example.com"). |
-| **payload.targets**          | [List](/docs/rest-api/reference/welcome#types)         | The list of the deployment targets.                                                           |
+| **payload.configuration.id** | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                                       |
+| **payload.installationId**   | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).                          |
+| **payload.resourceId**       | [ID](/docs/rest-api#types)           | The ID of the resource.                                                                       |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                        |
+| **payload.project.name**     | [String](/docs/rest-api#types)       | The name of the project.                                                                      |
+| **payload.projectId**        | [ID](/docs/rest-api#types)           | The ID of the project (same as project.id).                                                   |
+| **payload.productionDomain** | [String](/docs/rest-api#types)       | The production domain for the connected project (e.g., "my-app.vercel.app" or "example.com"). |
+| **payload.targets**          | [List](/docs/rest-api#types)         | The list of the deployment targets.                                                           |
 
 ### integration-resource.project-disconnected
 
 Occurs whenever the user disconnects the integration resource to a project.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                   |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                   |
 | ---------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| **payload.configuration.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                                       |
-| **payload.installationId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).                          |
-| **payload.resourceId**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the resource.                                                                       |
-| **payload.project.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                        |
-| **payload.projectId**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project (same as project.id).                                                   |
-| **payload.productionDomain** | [String](/docs/rest-api/reference/welcome#types)       | The production domain for the connected project (e.g., "my-app.vercel.app" or "example.com"). |
-| **payload.targets**          | [List](/docs/rest-api/reference/welcome#types)         | The list of the deployment targets.                                                           |
+| **payload.configuration.id** | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                                       |
+| **payload.installationId**   | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).                          |
+| **payload.resourceId**       | [ID](/docs/rest-api#types)           | The ID of the resource.                                                                       |
+| **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                                                                        |
+| **payload.projectId**        | [ID](/docs/rest-api#types)           | The ID of the project (same as project.id).                                                   |
+| **payload.productionDomain** | [String](/docs/rest-api#types)       | The production domain for the connected project (e.g., "my-app.vercel.app" or "example.com"). |
+| **payload.targets**          | [List](/docs/rest-api#types)         | The list of the deployment targets.                                                           |
 
 ### marketplace.invoice.created
 
 Occurs when an invoice was created and sent to the customer.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                 |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                                 |
 | ----------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **payload.configuration.id**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                     |
-| **payload.installationId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).        |
-| **payload.invoiceId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice.                                          |
-| **payload.externalInvoiceId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
-| **payload.period.start**      | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period start date.                                            |
-| **payload.period.end**        | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period end date.                                              |
-| **payload.invoiceDate**       | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's date.                                                         |
-| **payload.invoiceTotal**      | [String](/docs/rest-api/reference/welcome#types)       | The invoice's total as a decimal number.                                    |
+| **payload.configuration.id**  | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                     |
+| **payload.installationId**    | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).        |
+| **payload.invoiceId**         | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice.                                          |
+| **payload.externalInvoiceId** | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
+| **payload.period.start**      | [IsoDate](/docs/rest-api#types)      | The invoice's period start date.                                            |
+| **payload.period.end**        | [IsoDate](/docs/rest-api#types)      | The invoice's period end date.                                              |
+| **payload.invoiceDate**       | [IsoDate](/docs/rest-api#types)      | The invoice's date.                                                         |
+| **payload.invoiceTotal**      | [String](/docs/rest-api#types)       | The invoice's total as a decimal number.                                    |
 
 ### marketplace.invoice.notpaid
 
 Occurs when an invoice payment has failed.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                 |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                                 |
 | ----------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **payload.configuration.id**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                     |
-| **payload.installationId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).        |
-| **payload.invoiceId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice.                                          |
-| **payload.externalInvoiceId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
-| **payload.period.start**      | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period start date.                                            |
-| **payload.period.end**        | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period end date.                                              |
-| **payload.invoiceDate**       | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's date.                                                         |
-| **payload.invoiceTotal**      | [String](/docs/rest-api/reference/welcome#types)       | The invoice's total as a decimal number.                                    |
+| **payload.configuration.id**  | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                     |
+| **payload.installationId**    | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).        |
+| **payload.invoiceId**         | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice.                                          |
+| **payload.externalInvoiceId** | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
+| **payload.period.start**      | [IsoDate](/docs/rest-api#types)      | The invoice's period start date.                                            |
+| **payload.period.end**        | [IsoDate](/docs/rest-api#types)      | The invoice's period end date.                                              |
+| **payload.invoiceDate**       | [IsoDate](/docs/rest-api#types)      | The invoice's date.                                                         |
+| **payload.invoiceTotal**      | [String](/docs/rest-api#types)       | The invoice's total as a decimal number.                                    |
 
 ### marketplace.invoice.paid
 
 Occurs when an invoice was paid.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                 |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                                 |
 | ----------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **payload.configuration.id**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                     |
-| **payload.installationId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).        |
-| **payload.invoiceId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice.                                          |
-| **payload.externalInvoiceId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
-| **payload.period.start**      | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period start date.                                            |
-| **payload.period.end**        | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period end date.                                              |
-| **payload.invoiceDate**       | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's date.                                                         |
-| **payload.invoiceTotal**      | [String](/docs/rest-api/reference/welcome#types)       | The invoice's total as a decimal number.                                    |
+| **payload.configuration.id**  | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                     |
+| **payload.installationId**    | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).        |
+| **payload.invoiceId**         | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice.                                          |
+| **payload.externalInvoiceId** | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
+| **payload.period.start**      | [IsoDate](/docs/rest-api#types)      | The invoice's period start date.                                            |
+| **payload.period.end**        | [IsoDate](/docs/rest-api#types)      | The invoice's period end date.                                              |
+| **payload.invoiceDate**       | [IsoDate](/docs/rest-api#types)      | The invoice's date.                                                         |
+| **payload.invoiceTotal**      | [String](/docs/rest-api#types)       | The invoice's total as a decimal number.                                    |
 
 ### marketplace.invoice.overdue
 
 Occurs when an invoice was not paid after a grace period.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                 |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                                 |
 | ----------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **payload.configuration.id**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                     |
-| **payload.installationId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).        |
-| **payload.invoiceId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice.                                          |
-| **payload.externalInvoiceId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
-| **payload.period.start**      | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period start date.                                            |
-| **payload.period.end**        | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period end date.                                              |
-| **payload.invoiceDate**       | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's date.                                                         |
-| **payload.invoiceTotal**      | [String](/docs/rest-api/reference/welcome#types)       | The invoice's total as a decimal number.                                    |
+| **payload.configuration.id**  | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                     |
+| **payload.installationId**    | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).        |
+| **payload.invoiceId**         | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice.                                          |
+| **payload.externalInvoiceId** | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
+| **payload.period.start**      | [IsoDate](/docs/rest-api#types)      | The invoice's period start date.                                            |
+| **payload.period.end**        | [IsoDate](/docs/rest-api#types)      | The invoice's period end date.                                              |
+| **payload.invoiceDate**       | [IsoDate](/docs/rest-api#types)      | The invoice's date.                                                         |
+| **payload.invoiceTotal**      | [String](/docs/rest-api#types)       | The invoice's total as a decimal number.                                    |
 
 ### marketplace.invoice.refunded
 
 Occurs when an invoice is refunded.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                 |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                                 |
 | ----------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **payload.configuration.id**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                     |
-| **payload.installationId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).        |
-| **payload.invoiceId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice.                                          |
-| **payload.externalInvoiceId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
-| **payload.period.start**      | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period start date.                                            |
-| **payload.period.end**        | [IsoDate](/docs/rest-api/reference/welcome#types)      | The invoice's period end date.                                              |
-| **payload.amount**            | [String](/docs/rest-api/reference/welcome#types)       | The amount being refunded as a decimal number.                              |
-| **payload.reason**            | [String](/docs/rest-api/reference/welcome#types)       | The reason for why the refund has been issued.                              |
+| **payload.configuration.id**  | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                     |
+| **payload.installationId**    | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).        |
+| **payload.invoiceId**         | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice.                                          |
+| **payload.externalInvoiceId** | [ID](/docs/rest-api#types)           | The ID of the Marketplace invoice, provided by integrator. Possibly `null`. |
+| **payload.period.start**      | [IsoDate](/docs/rest-api#types)      | The invoice's period start date.                                            |
+| **payload.period.end**        | [IsoDate](/docs/rest-api#types)      | The invoice's period end date.                                              |
+| **payload.amount**            | [String](/docs/rest-api#types)       | The amount being refunded as a decimal number.                              |
+| **payload.reason**            | [String](/docs/rest-api#types)       | The reason for why the refund has been issued.                              |
 
 ### marketplace.member.changed
 
 Occurs whenever a member is added, removed, or their role changed for an installation.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                 |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                 |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **payload.configuration.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation.                                                     |
-| **payload.installationId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the integration installation (same as `configuration.id`).                        |
-| **payload.memberId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the member.                                                                       |
-| **payload.role**             | [String](/docs/rest-api/reference/welcome#types)       | The member's role: "ADMIN", "USER" or "NONE". "NONE" indicates the member has been removed. |
-| **payload.globalUserId**     | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the user. Requires separate permission.                                           |
-| **payload.userEmail**        | [String](/docs/rest-api/reference/welcome#types)       | The email of the user. Requires separate permission.                                        |
+| **payload.configuration.id** | [ID](/docs/rest-api#types)           | The ID of the integration installation.                                                     |
+| **payload.installationId**   | [ID](/docs/rest-api#types)           | The ID of the integration installation (same as `configuration.id`).                        |
+| **payload.memberId**         | [ID](/docs/rest-api#types)           | The ID of the member.                                                                       |
+| **payload.role**             | [String](/docs/rest-api#types)       | The member's role: "ADMIN", "USER" or "NONE". "NONE" indicates the member has been removed. |
+| **payload.globalUserId**     | [ID](/docs/rest-api#types)           | The ID of the user. Requires separate permission.                                           |
+| **payload.userEmail**        | [String](/docs/rest-api#types)       | The email of the user. Requires separate permission.                                        |
 
 ### alerts.triggered
 
 Occurs whenever an alert is triggered.
 
-| Key                                  | [Type](/docs/rest-api/reference/welcome#types)   | Description                                                    |
+| Key                                  | [Type](/docs/rest-api#types)   | Description                                                    |
 | ------------------------------------ | ------------------------------------------------ | -------------------------------------------------------------- |
-| **payload.teamId**                   | [String](/docs/rest-api/reference/welcome#types) | The ID of the team.                                            |
-| **payload.projectId**                | [String](/docs/rest-api/reference/welcome#types) | The ID of the project.                                         |
-| **payload.startedAt**                | [Number](/docs/rest-api/reference/welcome#types) | Timestamp when the anomaly started (milliseconds since epoch). |
-| **payload.links.observability**      | [String](/docs/rest-api/reference/welcome#types) | URL to the observability dashboard for this alert.             |
-| **payload.projectSlug**              | [String](/docs/rest-api/reference/welcome#types) | The project slug.                                              |
-| **payload.teamSlug**                 | [String](/docs/rest-api/reference/welcome#types) | The team slug.                                                 |
-| **payload.groupId**                  | [String](/docs/rest-api/reference/welcome#types) | Optional group identifier for related alerts.                  |
-| **payload.alerts\[].startedAt**       | [String](/docs/rest-api/reference/welcome#types) | ISO 8601 timestamp when this specific alert started.           |
-| **payload.alerts\[].title**           | [String](/docs/rest-api/reference/welcome#types) | Human-readable title for the alert.                            |
-| **payload.alerts\[].unit**            | [String](/docs/rest-api/reference/welcome#types) | Unit of measurement (e.g., `requests`).                        |
-| **payload.alerts\[].formattedValues** | [Object](/docs/rest-api/reference/welcome#types) | Formatted values for display purposes.                         |
-| **payload.alerts\[].count**           | [Number](/docs/rest-api/reference/welcome#types) | Total count of events during the anomaly period.               |
-| **payload.alerts\[].average**         | [Number](/docs/rest-api/reference/welcome#types) | Average value during the anomaly period.                       |
-| **payload.alerts\[].stddev**          | [Number](/docs/rest-api/reference/welcome#types) | Standard deviation of the metric.                              |
-| **payload.alerts\[].zscore**          | [Number](/docs/rest-api/reference/welcome#types) | Z-score indicating how many standard deviations from the mean. |
-| **payload.alerts\[].zscoreThreshold** | [Number](/docs/rest-api/reference/welcome#types) | Z-score threshold that triggered the alert.                    |
-| **payload.alerts\[].alertId**         | [String](/docs/rest-api/reference/welcome#types) | Unique identifier for this alert.                              |
-| **payload.alerts\[].type**            | [String](/docs/rest-api/reference/welcome#types) | Alert type                                                     |
-| **payload.alerts\[].metric**          | [String](/docs/rest-api/reference/welcome#types) | Metric identifier, for example, `edge_requests`.               |
+| **payload.teamId**                   | [String](/docs/rest-api#types) | The ID of the team.                                            |
+| **payload.projectId**                | [String](/docs/rest-api#types) | The ID of the project.                                         |
+| **payload.startedAt**                | [Number](/docs/rest-api#types) | Timestamp when the anomaly started (milliseconds since epoch). |
+| **payload.links.observability**      | [String](/docs/rest-api#types) | URL to the observability dashboard for this alert.             |
+| **payload.projectSlug**              | [String](/docs/rest-api#types) | The project slug.                                              |
+| **payload.teamSlug**                 | [String](/docs/rest-api#types) | The team slug.                                                 |
+| **payload.groupId**                  | [String](/docs/rest-api#types) | Optional group identifier for related alerts.                  |
+| **payload.alerts\[].startedAt**       | [String](/docs/rest-api#types) | ISO 8601 timestamp when this specific alert started.           |
+| **payload.alerts\[].title**           | [String](/docs/rest-api#types) | Human-readable title for the alert.                            |
+| **payload.alerts\[].unit**            | [String](/docs/rest-api#types) | Unit of measurement (e.g., `requests`).                        |
+| **payload.alerts\[].formattedValues** | [Object](/docs/rest-api#types) | Formatted values for display purposes.                         |
+| **payload.alerts\[].count**           | [Number](/docs/rest-api#types) | Total count of events during the anomaly period.               |
+| **payload.alerts\[].average**         | [Number](/docs/rest-api#types) | Average value during the anomaly period.                       |
+| **payload.alerts\[].stddev**          | [Number](/docs/rest-api#types) | Standard deviation of the metric.                              |
+| **payload.alerts\[].zscore**          | [Number](/docs/rest-api#types) | Z-score indicating how many standard deviations from the mean. |
+| **payload.alerts\[].zscoreThreshold** | [Number](/docs/rest-api#types) | Z-score threshold that triggered the alert.                    |
+| **payload.alerts\[].alertId**         | [String](/docs/rest-api#types) | Unique identifier for this alert.                              |
+| **payload.alerts\[].type**            | [String](/docs/rest-api#types) | Alert type                                                     |
+| **payload.alerts\[].metric**          | [String](/docs/rest-api#types) | Metric identifier, for example, `edge_requests`.               |
 
 See the [Alerts documentation](/docs/alerts) for more details and examples.
 
@@ -674,12 +690,12 @@ Occurs whenever a project has been created.
 > **💡 Note:** This event is sent only when the Integration has access to all projects in a
 > Vercel scope.
 
-| Key                      | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                      | [Type](/docs/rest-api#types) | Description                                 |
 | ------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                 |
-| **payload.project.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                      |
-| **payload.project.name** | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.                        |
+| **payload.team.id**      | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**      | [ID](/docs/rest-api#types)           | The ID of the event's user.                 |
+| **payload.project.id**   | [ID](/docs/rest-api#types)           | The ID of the project.                      |
+| **payload.project.name** | [String](/docs/rest-api#types)       | Name of the project.                        |
 
 ### project.env-variable.created
 
@@ -687,12 +703,12 @@ Occurs whenever a project environment variable has been created.
 
 The webhook payload does not include environment variable values.
 
-| Key                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                   | [Type](/docs/rest-api#types) | Description                                 |
 | --------------------- | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null). |
-| **payload.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                      |
-| **payload.envVarId**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the environment variable.         |
+| **payload.team.id**   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**   | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null). |
+| **payload.projectId** | [ID](/docs/rest-api#types)           | The ID of the project.                      |
+| **payload.envVarId**  | [ID](/docs/rest-api#types)           | The ID of the environment variable.         |
 
 ### project.env-variable.updated
 
@@ -700,12 +716,12 @@ Occurs whenever a project environment variable has been updated.
 
 The webhook payload does not include environment variable values.
 
-| Key                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                   | [Type](/docs/rest-api#types) | Description                                 |
 | --------------------- | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null). |
-| **payload.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                      |
-| **payload.envVarId**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the environment variable.         |
+| **payload.team.id**   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**   | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null). |
+| **payload.projectId** | [ID](/docs/rest-api#types)           | The ID of the project.                      |
+| **payload.envVarId**  | [ID](/docs/rest-api#types)           | The ID of the environment variable.         |
 
 ### project.env-variable.deleted
 
@@ -713,12 +729,12 @@ Occurs whenever a project environment variable has been deleted.
 
 The webhook payload does not include environment variable values.
 
-| Key                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                         |
+| Key                   | [Type](/docs/rest-api#types) | Description                                         |
 | --------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **payload.team.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).         |
-| **payload.user.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null).         |
-| **payload.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                              |
-| **payload.envVarId**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the environment variable (possibly null). |
+| **payload.team.id**   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).         |
+| **payload.user.id**   | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null).         |
+| **payload.projectId** | [ID](/docs/rest-api#types)           | The ID of the project.                              |
+| **payload.envVarId**  | [ID](/docs/rest-api#types)           | The ID of the environment variable (possibly null). |
 
 ### project.removed
 
@@ -727,12 +743,12 @@ Occurs whenever a project has been removed.
 > **💡 Note:** This event is sent only when the integration has access to all projects in a
 > Vercel scope.
 
-| Key                      | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                      | [Type](/docs/rest-api#types) | Description                                 |
 | ------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                 |
-| **payload.project.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                      |
-| **payload.project.name** | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.                        |
+| **payload.team.id**      | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**      | [ID](/docs/rest-api#types)           | The ID of the event's user.                 |
+| **payload.project.id**   | [ID](/docs/rest-api#types)           | The ID of the project.                      |
+| **payload.project.name** | [String](/docs/rest-api#types)       | Name of the project.                        |
 
 ### project.renamed
 
@@ -741,239 +757,239 @@ Occurs whenever a project has been renamed.
 > **💡 Note:** This event is sent only when the integration has access to all projects in a
 > Vercel scope.
 
-| Key                      | [Type](/docs/rest-api/reference/welcome#types) | Description                                 |
+| Key                      | [Type](/docs/rest-api#types) | Description                                 |
 | ------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------- |
-| **payload.team.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null). |
-| **payload.user.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null). |
-| **payload.project.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                      |
-| **payload.project.name** | [String](/docs/rest-api/reference/welcome#types)       | The new name of the project.                |
-| **payload.previousName** | [String](/docs/rest-api/reference/welcome#types)       | The previous name of the project.           |
+| **payload.team.id**      | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null). |
+| **payload.user.id**      | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null). |
+| **payload.project.id**   | [ID](/docs/rest-api#types)           | The ID of the project.                      |
+| **payload.project.name** | [String](/docs/rest-api#types)       | The new name of the project.                |
+| **payload.previousName** | [String](/docs/rest-api#types)       | The previous name of the project.           |
 
 ### project.rolling-release.approved
 
 Occurs whenever a rolling release stage is approved and progresses to the next stage.
 
-| Key                                                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                    |
+| Key                                                   | [Type](/docs/rest-api#types) | Description                                                                                    |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **payload.team.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                    |
-| **payload.user.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                                    |
-| **payload.project.id**                                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                         |
-| **payload.project.name**                              | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.                                                                           |
-| **payload.rollingRelease**                            | [Object](/docs/rest-api/reference/welcome#types)       | The current rolling release configuration.                                                     |
-| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                                         |
-| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the team or user that owns the rolling release.                                      |
-| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api/reference/welcome#types)         | Array of deployment IDs involved in the rolling release.                                       |
-| **payload.rollingRelease.state**                      | [String](/docs/rest-api/reference/welcome#types)       | The current state of the rolling release. Possible values are `ACTIVE`, `COMPLETE`, `ABORTED`. |
-| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api/reference/welcome#types)       | The index of the currently active stage.                                                       |
-| **payload.rollingRelease.default**                    | [Object](/docs/rest-api/reference/welcome#types)       | The default deployment configuration.                                                          |
-| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the base deployment.                                                                 |
-| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the target deployment.                                                               |
-| **payload.rollingRelease.default.targetPercentage**   | [Number](/docs/rest-api/reference/welcome#types)       | The target percentage of traffic to route to the target deployment.                            |
-| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the target deployment started.                                              |
-| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the target deployment was last updated.                                     |
-| **payload.rollingRelease.config**                     | [Object](/docs/rest-api/reference/welcome#types)       | The rolling release configuration.                                                             |
-| **payload.rollingRelease.config.target**              | [String](/docs/rest-api/reference/welcome#types)       | The target environment for the rolling release.                                                |
-| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api/reference/welcome#types)         | Array of stage configurations.                                                                 |
-| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api/reference/welcome#types)       | The source that triggered the rolling release update.                                          |
-| **payload.prevRollingRelease**                        | [Object](/docs/rest-api/reference/welcome#types)       | The previous rolling release configuration before the approval.                                |
+| **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                    |
+| **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                    |
+| **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                                                         |
+| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                                                           |
+| **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The current rolling release configuration.                                                     |
+| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                                                         |
+| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.                                      |
+| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api#types)         | Array of deployment IDs involved in the rolling release.                                       |
+| **payload.rollingRelease.state**                      | [String](/docs/rest-api#types)       | The current state of the rolling release. Possible values are `ACTIVE`, `COMPLETE`, `ABORTED`. |
+| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api#types)       | The index of the currently active stage.                                                       |
+| **payload.rollingRelease.default**                    | [Object](/docs/rest-api#types)       | The default deployment configuration.                                                          |
+| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api#types)           | The ID of the base deployment.                                                                 |
+| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api#types)           | The ID of the target deployment.                                                               |
+| **payload.rollingRelease.default.targetPercentage**   | [Number](/docs/rest-api#types)       | The target percentage of traffic to route to the target deployment.                            |
+| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api#types)       | The timestamp when the target deployment started.                                              |
+| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api#types)       | The timestamp when the target deployment was last updated.                                     |
+| **payload.rollingRelease.config**                     | [Object](/docs/rest-api#types)       | The rolling release configuration.                                                             |
+| **payload.rollingRelease.config.target**              | [String](/docs/rest-api#types)       | The target environment for the rolling release.                                                |
+| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api#types)         | Array of stage configurations.                                                                 |
+| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api#types)       | The source that triggered the rolling release update.                                          |
+| **payload.prevRollingRelease**                        | [Object](/docs/rest-api#types)       | The previous rolling release configuration before the approval.                                |
 
 ### project.rolling-release.completed
 
 Occurs whenever a rolling release is completed successfully.
 
-| Key                                                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                                   |
+| Key                                                   | [Type](/docs/rest-api#types) | Description                                                   |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| **payload.team.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                   |
-| **payload.user.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                   |
-| **payload.project.id**                                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                        |
-| **payload.project.name**                              | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.                                          |
-| **payload.rollingRelease**                            | [Object](/docs/rest-api/reference/welcome#types)       | The completed rolling release configuration.                  |
-| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                        |
-| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the team or user that owns the rolling release.     |
-| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api/reference/welcome#types)         | Array of deployment IDs involved in the rolling release.      |
-| **payload.rollingRelease.state**                      | [String](/docs/rest-api/reference/welcome#types)       | The state of the rolling release (will be `COMPLETE`).        |
-| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api/reference/welcome#types)       | The index of the final stage.                                 |
-| **payload.rollingRelease.default**                    | [Object](/docs/rest-api/reference/welcome#types)       | The final deployment configuration.                           |
-| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the base deployment.                                |
-| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the target deployment.                              |
-| **payload.rollingRelease.default.targetPercentage**   | [Number](/docs/rest-api/reference/welcome#types)       | The final target percentage (will be 100).                    |
-| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the target deployment started.             |
-| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the target deployment was last updated.    |
-| **payload.rollingRelease.config**                     | [Object](/docs/rest-api/reference/welcome#types)       | The rolling release configuration.                            |
-| **payload.rollingRelease.config.target**              | [String](/docs/rest-api/reference/welcome#types)       | The target environment for the rolling release.               |
-| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api/reference/welcome#types)         | Array of stage configurations.                                |
-| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api/reference/welcome#types)       | The source that completed the rolling release.                |
-| **payload.prevRollingRelease**                        | [Object](/docs/rest-api/reference/welcome#types)       | The previous rolling release configuration before completion. |
+| **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                   |
+| **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                   |
+| **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                        |
+| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                          |
+| **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The completed rolling release configuration.                  |
+| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                        |
+| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.     |
+| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api#types)         | Array of deployment IDs involved in the rolling release.      |
+| **payload.rollingRelease.state**                      | [String](/docs/rest-api#types)       | The state of the rolling release (will be `COMPLETE`).        |
+| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api#types)       | The index of the final stage.                                 |
+| **payload.rollingRelease.default**                    | [Object](/docs/rest-api#types)       | The final deployment configuration.                           |
+| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api#types)           | The ID of the base deployment.                                |
+| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api#types)           | The ID of the target deployment.                              |
+| **payload.rollingRelease.default.targetPercentage**   | [Number](/docs/rest-api#types)       | The final target percentage (will be 100).                    |
+| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api#types)       | The timestamp when the target deployment started.             |
+| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api#types)       | The timestamp when the target deployment was last updated.    |
+| **payload.rollingRelease.config**                     | [Object](/docs/rest-api#types)       | The rolling release configuration.                            |
+| **payload.rollingRelease.config.target**              | [String](/docs/rest-api#types)       | The target environment for the rolling release.               |
+| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api#types)         | Array of stage configurations.                                |
+| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api#types)       | The source that completed the rolling release.                |
+| **payload.prevRollingRelease**                        | [Object](/docs/rest-api#types)       | The previous rolling release configuration before completion. |
 
 ### project.rolling-release.aborted
 
 Occurs whenever a rolling release is aborted.
 
-| Key                                                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                                 |
+| Key                                                   | [Type](/docs/rest-api#types) | Description                                                 |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **payload.team.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                 |
-| **payload.user.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                 |
-| **payload.project.id**                                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                      |
-| **payload.project.name**                              | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.                                        |
-| **payload.rollingRelease**                            | [Object](/docs/rest-api/reference/welcome#types)       | The aborted rolling release configuration.                  |
-| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                      |
-| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the team or user that owns the rolling release.   |
-| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api/reference/welcome#types)         | Array of deployment IDs involved in the rolling release.    |
-| **payload.rollingRelease.state**                      | [String](/docs/rest-api/reference/welcome#types)       | The state of the rolling release (will be `ABORTED`).       |
-| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api/reference/welcome#types)       | The index of the stage when aborted.                        |
-| **payload.rollingRelease.default**                    | [Object](/docs/rest-api/reference/welcome#types)       | The deployment configuration at the time of abortion.       |
-| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the base deployment.                              |
-| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the target deployment.                            |
-| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the target deployment started.           |
-| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the rolling release was aborted.         |
-| **payload.rollingRelease.config**                     | [Object](/docs/rest-api/reference/welcome#types)       | The rolling release configuration.                          |
-| **payload.rollingRelease.config.target**              | [String](/docs/rest-api/reference/welcome#types)       | The target environment for the rolling release.             |
-| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api/reference/welcome#types)         | Array of stage configurations.                              |
-| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api/reference/welcome#types)       | The source that aborted the rolling release.                |
-| **payload.prevRollingRelease**                        | [Object](/docs/rest-api/reference/welcome#types)       | The previous rolling release configuration before abortion. |
+| **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                 |
+| **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                 |
+| **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                      |
+| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                        |
+| **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The aborted rolling release configuration.                  |
+| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                      |
+| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.   |
+| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api#types)         | Array of deployment IDs involved in the rolling release.    |
+| **payload.rollingRelease.state**                      | [String](/docs/rest-api#types)       | The state of the rolling release (will be `ABORTED`).       |
+| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api#types)       | The index of the stage when aborted.                        |
+| **payload.rollingRelease.default**                    | [Object](/docs/rest-api#types)       | The deployment configuration at the time of abortion.       |
+| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api#types)           | The ID of the base deployment.                              |
+| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api#types)           | The ID of the target deployment.                            |
+| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api#types)       | The timestamp when the target deployment started.           |
+| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api#types)       | The timestamp when the rolling release was aborted.         |
+| **payload.rollingRelease.config**                     | [Object](/docs/rest-api#types)       | The rolling release configuration.                          |
+| **payload.rollingRelease.config.target**              | [String](/docs/rest-api#types)       | The target environment for the rolling release.             |
+| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api#types)         | Array of stage configurations.                              |
+| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api#types)       | The source that aborted the rolling release.                |
+| **payload.prevRollingRelease**                        | [Object](/docs/rest-api#types)       | The previous rolling release configuration before abortion. |
 
 ### project.rolling-release.started
 
 Occurs whenever a rolling release is started.
 
-| Key                                                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                      |
+| Key                                                   | [Type](/docs/rest-api#types) | Description                                                                      |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| **payload.team.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                      |
-| **payload.user.id**                                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user.                                                      |
-| **payload.project.id**                                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                           |
-| **payload.project.name**                              | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.                                                             |
-| **payload.rollingRelease**                            | [Object](/docs/rest-api/reference/welcome#types)       | The started rolling release configuration.                                       |
-| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project.                                                           |
-| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the team or user that owns the rolling release.                        |
-| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api/reference/welcome#types)         | Array of deployment IDs involved in the rolling release.                         |
-| **payload.rollingRelease.state**                      | [String](/docs/rest-api/reference/welcome#types)       | The state of the rolling release (will be `ACTIVE`).                             |
-| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api/reference/welcome#types)       | The index of the initial stage (usually 0).                                      |
-| **payload.rollingRelease.default**                    | [Object](/docs/rest-api/reference/welcome#types)       | The initial deployment configuration.                                            |
-| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the base deployment.                                                   |
-| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the target deployment.                                                 |
-| **payload.rollingRelease.default.targetPercentage**   | [Number](/docs/rest-api/reference/welcome#types)       | The initial target percentage for the first stage.                               |
-| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the rolling release started.                                  |
-| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api/reference/welcome#types)       | The timestamp when the rolling release was last updated.                         |
-| **payload.rollingRelease.config**                     | [Object](/docs/rest-api/reference/welcome#types)       | The rolling release configuration.                                               |
-| **payload.rollingRelease.config.target**              | [String](/docs/rest-api/reference/welcome#types)       | The target environment for the rolling release.                                  |
-| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api/reference/welcome#types)         | Array of stage configurations.                                                   |
-| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api/reference/welcome#types)       | The source that started the rolling release.                                     |
-| **payload.prevRollingRelease**                        | [Object](/docs/rest-api/reference/welcome#types)       | The previous rolling release configuration (if any) before starting the new one. |
+| **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                      |
+| **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                      |
+| **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                                           |
+| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                                             |
+| **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The started rolling release configuration.                                       |
+| **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                                           |
+| **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.                        |
+| **payload.rollingRelease.deploymentIds**              | [List](/docs/rest-api#types)         | Array of deployment IDs involved in the rolling release.                         |
+| **payload.rollingRelease.state**                      | [String](/docs/rest-api#types)       | The state of the rolling release (will be `ACTIVE`).                             |
+| **payload.rollingRelease.activeStageIndex**           | [Number](/docs/rest-api#types)       | The index of the initial stage (usually 0).                                      |
+| **payload.rollingRelease.default**                    | [Object](/docs/rest-api#types)       | The initial deployment configuration.                                            |
+| **payload.rollingRelease.default.baseDeploymentId**   | [ID](/docs/rest-api#types)           | The ID of the base deployment.                                                   |
+| **payload.rollingRelease.default.targetDeploymentId** | [ID](/docs/rest-api#types)           | The ID of the target deployment.                                                 |
+| **payload.rollingRelease.default.targetPercentage**   | [Number](/docs/rest-api#types)       | The initial target percentage for the first stage.                               |
+| **payload.rollingRelease.default.targetStartAt**      | [Number](/docs/rest-api#types)       | The timestamp when the rolling release started.                                  |
+| **payload.rollingRelease.default.targetUpdatedAt**    | [Number](/docs/rest-api#types)       | The timestamp when the rolling release was last updated.                         |
+| **payload.rollingRelease.config**                     | [Object](/docs/rest-api#types)       | The rolling release configuration.                                               |
+| **payload.rollingRelease.config.target**              | [String](/docs/rest-api#types)       | The target environment for the rolling release.                                  |
+| **payload.rollingRelease.config.stages**              | [List](/docs/rest-api#types)         | Array of stage configurations.                                                   |
+| **payload.rollingRelease.writtenBy**                  | [String](/docs/rest-api#types)       | The source that started the rolling release.                                     |
+| **payload.prevRollingRelease**                        | [Object](/docs/rest-api#types)       | The previous rolling release configuration (if any) before starting the new one. |
 
 ### flag.created
 
 Occurs whenever a feature flag is created.
 
-| Key                        | [Type](/docs/rest-api/reference/welcome#types) | Description                                                    |
+| Key                        | [Type](/docs/rest-api#types) | Description                                                    |
 | -------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| **payload.team.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                    |
-| **payload.user.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null).                    |
-| **payload.flag.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the flag.                                            |
-| **payload.flag.slug**      | [String](/docs/rest-api/reference/welcome#types)       | The slug of the flag.                                          |
-| **payload.flag.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owns the flag.                      |
-| **payload.flag.createdAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the flag was created (milliseconds since epoch).      |
-| **payload.flag.updatedAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the flag was last updated (milliseconds since epoch). |
+| **payload.team.id**        | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                    |
+| **payload.user.id**        | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null).                    |
+| **payload.flag.id**        | [ID](/docs/rest-api#types)           | The ID of the flag.                                            |
+| **payload.flag.slug**      | [String](/docs/rest-api#types)       | The slug of the flag.                                          |
+| **payload.flag.projectId** | [ID](/docs/rest-api#types)           | The ID of the project that owns the flag.                      |
+| **payload.flag.createdAt** | [Number](/docs/rest-api#types)       | The time the flag was created (milliseconds since epoch).      |
+| **payload.flag.updatedAt** | [Number](/docs/rest-api#types)       | The time the flag was last updated (milliseconds since epoch). |
 
 ### flag.updated
 
 Occurs whenever a feature flag is updated.
 
-| Key                                | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                   |
+| Key                                | [Type](/docs/rest-api#types) | Description                                                                   |
 | ---------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **payload.team.id**                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                   |
-| **payload.user.id**                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null).                                   |
-| **payload.flag.id**                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the updated flag.                                                   |
-| **payload.flag.slug**              | [String](/docs/rest-api/reference/welcome#types)       | The slug of the updated flag.                                                 |
-| **payload.flag.projectId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owns the updated flag.                             |
-| **payload.flag.createdAt**         | [Number](/docs/rest-api/reference/welcome#types)       | The time the flag was created (milliseconds since epoch).                     |
-| **payload.flag.updatedAt**         | [Number](/docs/rest-api/reference/welcome#types)       | The time the flag was last updated (milliseconds since epoch).                |
-| **payload.previousFlag.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the flag before the update.                                         |
-| **payload.previousFlag.slug**      | [String](/docs/rest-api/reference/welcome#types)       | The slug of the flag before the update.                                       |
-| **payload.previousFlag.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owned the previous flag state.                     |
-| **payload.previousFlag.createdAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the previous flag state was created (milliseconds since epoch).      |
-| **payload.previousFlag.updatedAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the previous flag state was last updated (milliseconds since epoch). |
-| **payload.patch**                  | [Object](/docs/rest-api/reference/welcome#types)       | A partial object containing only the flag fields that changed.                |
+| **payload.team.id**                | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                   |
+| **payload.user.id**                | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null).                                   |
+| **payload.flag.id**                | [ID](/docs/rest-api#types)           | The ID of the updated flag.                                                   |
+| **payload.flag.slug**              | [String](/docs/rest-api#types)       | The slug of the updated flag.                                                 |
+| **payload.flag.projectId**         | [ID](/docs/rest-api#types)           | The ID of the project that owns the updated flag.                             |
+| **payload.flag.createdAt**         | [Number](/docs/rest-api#types)       | The time the flag was created (milliseconds since epoch).                     |
+| **payload.flag.updatedAt**         | [Number](/docs/rest-api#types)       | The time the flag was last updated (milliseconds since epoch).                |
+| **payload.previousFlag.id**        | [ID](/docs/rest-api#types)           | The ID of the flag before the update.                                         |
+| **payload.previousFlag.slug**      | [String](/docs/rest-api#types)       | The slug of the flag before the update.                                       |
+| **payload.previousFlag.projectId** | [ID](/docs/rest-api#types)           | The ID of the project that owned the previous flag state.                     |
+| **payload.previousFlag.createdAt** | [Number](/docs/rest-api#types)       | The time the previous flag state was created (milliseconds since epoch).      |
+| **payload.previousFlag.updatedAt** | [Number](/docs/rest-api#types)       | The time the previous flag state was last updated (milliseconds since epoch). |
+| **payload.patch**                  | [Object](/docs/rest-api#types)       | A partial object containing only the flag fields that changed.                |
 
 ### flag.deleted
 
 Occurs whenever a feature flag is deleted.
 
-| Key                        | [Type](/docs/rest-api/reference/welcome#types) | Description                                                    |
+| Key                        | [Type](/docs/rest-api#types) | Description                                                    |
 | -------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| **payload.team.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                    |
-| **payload.user.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null).                    |
-| **payload.flag.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deleted flag.                                    |
-| **payload.flag.slug**      | [String](/docs/rest-api/reference/welcome#types)       | The slug of the deleted flag.                                  |
-| **payload.flag.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owned the deleted flag.             |
-| **payload.flag.createdAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the flag was created (milliseconds since epoch).      |
-| **payload.flag.updatedAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the flag was last updated (milliseconds since epoch). |
-| **payload.deletedAt**      | [Number](/docs/rest-api/reference/welcome#types)       | The time the flag was deleted (milliseconds since epoch).      |
+| **payload.team.id**        | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                    |
+| **payload.user.id**        | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null).                    |
+| **payload.flag.id**        | [ID](/docs/rest-api#types)           | The ID of the deleted flag.                                    |
+| **payload.flag.slug**      | [String](/docs/rest-api#types)       | The slug of the deleted flag.                                  |
+| **payload.flag.projectId** | [ID](/docs/rest-api#types)           | The ID of the project that owned the deleted flag.             |
+| **payload.flag.createdAt** | [Number](/docs/rest-api#types)       | The time the flag was created (milliseconds since epoch).      |
+| **payload.flag.updatedAt** | [Number](/docs/rest-api#types)       | The time the flag was last updated (milliseconds since epoch). |
+| **payload.deletedAt**      | [Number](/docs/rest-api#types)       | The time the flag was deleted (milliseconds since epoch).      |
 
 ### flag.segment.created
 
 Occurs whenever a flag segment is created.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                       |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                       |
 | ----------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| **payload.team.id**           | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                       |
-| **payload.user.id**           | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null).                       |
-| **payload.segment.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the segment.                                            |
-| **payload.segment.slug**      | [String](/docs/rest-api/reference/welcome#types)       | The slug of the segment.                                          |
-| **payload.segment.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owns the segment.                      |
-| **payload.segment.createdAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the segment was created (milliseconds since epoch).      |
-| **payload.segment.updatedAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the segment was last updated (milliseconds since epoch). |
+| **payload.team.id**           | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                       |
+| **payload.user.id**           | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null).                       |
+| **payload.segment.id**        | [ID](/docs/rest-api#types)           | The ID of the segment.                                            |
+| **payload.segment.slug**      | [String](/docs/rest-api#types)       | The slug of the segment.                                          |
+| **payload.segment.projectId** | [ID](/docs/rest-api#types)           | The ID of the project that owns the segment.                      |
+| **payload.segment.createdAt** | [Number](/docs/rest-api#types)       | The time the segment was created (milliseconds since epoch).      |
+| **payload.segment.updatedAt** | [Number](/docs/rest-api#types)       | The time the segment was last updated (milliseconds since epoch). |
 
 ### flag.segment.updated
 
 Occurs whenever a flag segment is updated.
 
-| Key                                   | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                      |
+| Key                                   | [Type](/docs/rest-api#types) | Description                                                                      |
 | ------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| **payload.team.id**                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                      |
-| **payload.user.id**                   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null).                                      |
-| **payload.segment.id**                | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the updated segment.                                                   |
-| **payload.segment.slug**              | [String](/docs/rest-api/reference/welcome#types)       | The slug of the updated segment.                                                 |
-| **payload.segment.projectId**         | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owns the updated segment.                             |
-| **payload.segment.createdAt**         | [Number](/docs/rest-api/reference/welcome#types)       | The time the segment was created (milliseconds since epoch).                     |
-| **payload.segment.updatedAt**         | [Number](/docs/rest-api/reference/welcome#types)       | The time the segment was last updated (milliseconds since epoch).                |
-| **payload.previousSegment.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the segment before the update.                                         |
-| **payload.previousSegment.slug**      | [String](/docs/rest-api/reference/welcome#types)       | The slug of the segment before the update.                                       |
-| **payload.previousSegment.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owned the previous segment state.                     |
-| **payload.previousSegment.createdAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the previous segment state was created (milliseconds since epoch).      |
-| **payload.previousSegment.updatedAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the previous segment state was last updated (milliseconds since epoch). |
-| **payload.patch**                     | [Object](/docs/rest-api/reference/welcome#types)       | A partial object containing only the segment fields that changed.                |
+| **payload.team.id**                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                      |
+| **payload.user.id**                   | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null).                                      |
+| **payload.segment.id**                | [ID](/docs/rest-api#types)           | The ID of the updated segment.                                                   |
+| **payload.segment.slug**              | [String](/docs/rest-api#types)       | The slug of the updated segment.                                                 |
+| **payload.segment.projectId**         | [ID](/docs/rest-api#types)           | The ID of the project that owns the updated segment.                             |
+| **payload.segment.createdAt**         | [Number](/docs/rest-api#types)       | The time the segment was created (milliseconds since epoch).                     |
+| **payload.segment.updatedAt**         | [Number](/docs/rest-api#types)       | The time the segment was last updated (milliseconds since epoch).                |
+| **payload.previousSegment.id**        | [ID](/docs/rest-api#types)           | The ID of the segment before the update.                                         |
+| **payload.previousSegment.slug**      | [String](/docs/rest-api#types)       | The slug of the segment before the update.                                       |
+| **payload.previousSegment.projectId** | [ID](/docs/rest-api#types)           | The ID of the project that owned the previous segment state.                     |
+| **payload.previousSegment.createdAt** | [Number](/docs/rest-api#types)       | The time the previous segment state was created (milliseconds since epoch).      |
+| **payload.previousSegment.updatedAt** | [Number](/docs/rest-api#types)       | The time the previous segment state was last updated (milliseconds since epoch). |
+| **payload.patch**                     | [Object](/docs/rest-api#types)       | A partial object containing only the segment fields that changed.                |
 
 ### flag.segment.deleted
 
 Occurs whenever a flag segment is deleted.
 
-| Key                           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                       |
+| Key                           | [Type](/docs/rest-api#types) | Description                                                       |
 | ----------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| **payload.team.id**           | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                       |
-| **payload.user.id**           | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's user (possibly null).                       |
-| **payload.segment.id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deleted segment.                                    |
-| **payload.segment.slug**      | [String](/docs/rest-api/reference/welcome#types)       | The slug of the deleted segment.                                  |
-| **payload.segment.projectId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project that owned the deleted segment.             |
-| **payload.segment.createdAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the segment was created (milliseconds since epoch).      |
-| **payload.segment.updatedAt** | [Number](/docs/rest-api/reference/welcome#types)       | The time the segment was last updated (milliseconds since epoch). |
-| **payload.deletedAt**         | [Number](/docs/rest-api/reference/welcome#types)       | The time the segment was deleted (milliseconds since epoch).      |
+| **payload.team.id**           | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                       |
+| **payload.user.id**           | [ID](/docs/rest-api#types)           | The ID of the event's user (possibly null).                       |
+| **payload.segment.id**        | [ID](/docs/rest-api#types)           | The ID of the deleted segment.                                    |
+| **payload.segment.slug**      | [String](/docs/rest-api#types)       | The slug of the deleted segment.                                  |
+| **payload.segment.projectId** | [ID](/docs/rest-api#types)           | The ID of the project that owned the deleted segment.             |
+| **payload.segment.createdAt** | [Number](/docs/rest-api#types)       | The time the segment was created (milliseconds since epoch).      |
+| **payload.segment.updatedAt** | [Number](/docs/rest-api#types)       | The time the segment was last updated (milliseconds since epoch). |
+| **payload.deletedAt**         | [Number](/docs/rest-api#types)       | The time the segment was deleted (milliseconds since epoch).      |
 
 ## Legacy Payload
 
 The legacy webhook payload is a JSON object with the following keys.
 
-| Key           | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                     |
+| Key           | [Type](/docs/rest-api#types) | Description                                                                                     |
 | ------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **type**      | [String](/docs/rest-api/reference/welcome#types)       | The [legacy event type](#legacy-event-types).                                                   |
-| **id**        | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the webhook delivery.                                                                 |
-| **createdAt** | [Number](/docs/rest-api/reference/welcome#types)       | The date and time the webhook event was generated.                                              |
-| **region**    | [String](/docs/rest-api/reference/welcome#types)       | The region the event occurred in (possibly null).                                               |
-| **clientId**  | [ID](/docs/rest-api/reference/welcome#types)           | The ID of integration's client.                                                                 |
-| **ownerId**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event owner (user or team).                                                       |
-| **teamId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's team (possibly null).                                                     |
-| **userId**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the event's users.                                                                    |
-| **webhookId** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the webhook.                                                                          |
-| **payload**   | [Object](/docs/rest-api/reference/welcome#types)       | The payload of the webhook. See [Legacy Event Types](#legacy-event-types) for more information. |
+| **type**      | [String](/docs/rest-api#types)       | The [legacy event type](#legacy-event-types).                                                   |
+| **id**        | [ID](/docs/rest-api#types)           | The ID of the webhook delivery.                                                                 |
+| **createdAt** | [Number](/docs/rest-api#types)       | The date and time the webhook event was generated.                                              |
+| **region**    | [String](/docs/rest-api#types)       | The region the event occurred in (possibly null).                                               |
+| **clientId**  | [ID](/docs/rest-api#types)           | The ID of integration's client.                                                                 |
+| **ownerId**   | [ID](/docs/rest-api#types)           | The ID of the event owner (user or team).                                                       |
+| **teamId**    | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                     |
+| **userId**    | [ID](/docs/rest-api#types)           | The ID of the event's users.                                                                    |
+| **webhookId** | [ID](/docs/rest-api#types)           | The ID of the webhook.                                                                          |
+| **payload**   | [Object](/docs/rest-api#types)       | The payload of the webhook. See [Legacy Event Types](#legacy-event-types) for more information. |
 
 ## Legacy Event Types
 
@@ -985,19 +1001,19 @@ The following event types have been deprecated and webhooks that listen for them
 
 Occurs whenever a deployment is created.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.alias**            | [List](/docs/rest-api/reference/welcome#types)         | An array of aliases that will get assigned when the deployment is ready.                   |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.projectId**        | [String](/docs/rest-api/reference/welcome#types)       | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.alias**            | [List](/docs/rest-api#types)         | An array of aliases that will get assigned when the deployment is ready.                   |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.projectId**        | [String](/docs/rest-api#types)       | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment-ready
 
@@ -1010,37 +1026,37 @@ Occurs whenever a deployment is ready.
 > ](/docs/integrations#webhooks/events-types/deployment-prepared) if you
 > registered Checks.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.projectId**        | [String](/docs/rest-api/reference/welcome#types)       | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.projectId**        | [String](/docs/rest-api#types)       | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment-prepared
 
 > **💡 Note:** This event is replaced by [deployment.ready](#deployment.ready).
 
-Occurs whenever a deployment is successfully built and your integration has registered at least one [check](/docs/integrations/checks-overview).
+Occurs whenever a deployment is successfully built and your integration has registered at least one [check](/docs/checks).
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.projectId**        | [String](/docs/rest-api/reference/welcome#types)       | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.projectId**        | [String](/docs/rest-api#types)       | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment-canceled
 
@@ -1048,18 +1064,18 @@ Occurs whenever a deployment is successfully built and your integration has regi
 
 Occurs whenever a deployment is canceled.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.projectId**        | [String](/docs/rest-api/reference/welcome#types)       | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.projectId**        | [String](/docs/rest-api#types)       | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment-error
 
@@ -1067,53 +1083,53 @@ Occurs whenever a deployment is canceled.
 
 Occurs whenever a deployment has failed.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                |
+| Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **payload.deployment.id**    | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.                                                                  |
-| **payload.deployment.meta**  | [Map](/docs/rest-api/reference/welcome#types)          | A Map of deployment metadata.                                                              |
-| **payload.deployment.url**   | [String](/docs/rest-api/reference/welcome#types)       | The URL of the deployment.                                                                 |
-| **payload.deployment.name**  | [String](/docs/rest-api/reference/welcome#types)       | The project name used in the deployment URL.                                               |
-| **payload.links.deployment** | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
-| **payload.links.project**    | [String](/docs/rest-api/reference/welcome#types)       | The URL on the Vercel Dashboard to the project.                                            |
-| **payload.target**           | [String](/docs/rest-api/reference/welcome#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
-| **payload.projectId**        | [String](/docs/rest-api/reference/welcome#types)       | The ID of the project.                                                                     |
-| **payload.plan**             | [String](/docs/rest-api/reference/welcome#types)       | The plan type of the deployment.                                                           |
-| **payload.regions**          | [List](/docs/rest-api/reference/welcome#types)         | An array of the supported regions for the deployment.                                      |
+| **payload.deployment.id**    | [ID](/docs/rest-api#types)           | The ID of the deployment.                                                                  |
+| **payload.deployment.meta**  | [Map](/docs/rest-api#types)          | A Map of deployment metadata.                                                              |
+| **payload.deployment.url**   | [String](/docs/rest-api#types)       | The URL of the deployment.                                                                 |
+| **payload.deployment.name**  | [String](/docs/rest-api#types)       | The project name used in the deployment URL.                                               |
+| **payload.links.deployment** | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to inspect the deployment.                                 |
+| **payload.links.project**    | [String](/docs/rest-api#types)       | The URL on the Vercel Dashboard to the project.                                            |
+| **payload.target**           | [String](/docs/rest-api#types)       | A String that indicates the target. Possible values are `production`, `staging` or `null`. |
+| **payload.projectId**        | [String](/docs/rest-api#types)       | The ID of the project.                                                                     |
+| **payload.plan**             | [String](/docs/rest-api#types)       | The plan type of the deployment.                                                           |
+| **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment-check-rerequested
 
 > **💡 Note:** This event is replaced by [
 > deployment.check-rerequested](#deployment.check-rerequested).
 
-Occurs when a user has requested for a [check](/docs/integrations/checks-overview) to be rerun after it failed.
+Occurs when a user has requested for a [check](/docs/checks) to be rerun after it failed.
 
-| Key                       | [Type](/docs/rest-api/reference/welcome#types) | Description               |
+| Key                       | [Type](/docs/rest-api#types) | Description               |
 | ------------------------- | ------------------------------------------------------------------------------- | ------------------------- |
-| **payload.deployment.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment. |
-| **payload.check.id**      | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the check.      |
+| **payload.deployment.id** | [ID](/docs/rest-api#types)           | The ID of the deployment. |
+| **payload.check.id**      | [ID](/docs/rest-api#types)           | The ID of the check.      |
 
 ### deployment-checks-completed
 
 > **💡 Note:** This event has been removed. [deployment.succeeded](#deployment.succeeded) can
 > be used for the same purpose.
 
-Occurs when all checks for a deployment have completed. This does not indicate that they have all passed, only that they are no longer running. It is possible for webhook to occur multiple times for a single deployment if any checks are [re-requested](/docs/observability/checks-overview/creating-checks#rerunning-checks).
+Occurs when all checks for a deployment have completed. This does not indicate that they have all passed, only that they are no longer running. It is possible for webhook to occur multiple times for a single deployment if any checks are [re-requested](/docs/checks/creating-checks#rerunning-checks).
 
-| Key                       | [Type](/docs/rest-api/reference/welcome#types) | Description                   |
+| Key                       | [Type](/docs/rest-api#types) | Description                   |
 | ------------------------- | ------------------------------------------------------------------------------- | ----------------------------- |
-| **payload.deployment.id** | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the deployment.     |
-| **payload.checks**        | [List](/docs/rest-api/reference/welcome#types)         | Information about the Checks. |
+| **payload.deployment.id** | [ID](/docs/rest-api#types)           | The ID of the deployment.     |
+| **payload.checks**        | [List](/docs/rest-api#types)         | Information about the Checks. |
 
 Each item in `checks` has the following properties:
 
-| Key                       | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                     |
+| Key                       | [Type](/docs/rest-api#types) | Description                                                                                     |
 | ------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **payload.id**            | [ID](/docs/rest-api/reference/welcome#types)           | The unique identifier of the check. Always prepended with `check_`.                             |
-| **payload.name**          | [String](/docs/rest-api/reference/welcome#types)       | The name of the check.                                                                          |
-| **payload.status**        | [String](/docs/rest-api/reference/welcome#types)       | The status of the check. One of `registered`, `running` or `completed`                          |
-| **payload.conclusion**    | [String](/docs/rest-api/reference/welcome#types)       | The conclusion of the check. One of `cancelled`, `failed`, `neutral`, `succeeded` or `skipped`. |
-| **payload.blocking**      | [Boolean](/docs/rest-api/reference/welcome#types)      | Whether a deployment should be blocked or not.                                                  |
-| **payload.integrationId** | [String](/docs/rest-api/reference/welcome#types)       | The unique identifier of the integration.                                                       |
+| **payload.id**            | [ID](/docs/rest-api#types)           | The unique identifier of the check. Always prepended with `check_`.                             |
+| **payload.name**          | [String](/docs/rest-api#types)       | The name of the check.                                                                          |
+| **payload.status**        | [String](/docs/rest-api#types)       | The status of the check. One of `registered`, `running` or `completed`                          |
+| **payload.conclusion**    | [String](/docs/rest-api#types)       | The conclusion of the check. One of `cancelled`, `failed`, `neutral`, `succeeded` or `skipped`. |
+| **payload.blocking**      | [Boolean](/docs/rest-api#types)      | Whether a deployment should be blocked or not.                                                  |
+| **payload.integrationId** | [String](/docs/rest-api#types)       | The unique identifier of the integration.                                                       |
 
 ### project-created
 
@@ -1124,10 +1140,10 @@ Occurs whenever a project has been created.
 > **💡 Note:** This event is sent only when the Integration has access to all projects in a
 > Vercel scope.
 
-| Key                      | [Type](/docs/rest-api/reference/welcome#types) | Description            |
+| Key                      | [Type](/docs/rest-api#types) | Description            |
 | ------------------------ | ------------------------------------------------------------------------------- | ---------------------- |
-| **payload.project.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project. |
-| **payload.project.name** | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.   |
+| **payload.project.id**   | [ID](/docs/rest-api#types)           | The ID of the project. |
+| **payload.project.name** | [String](/docs/rest-api#types)       | Name of the project.   |
 
 ### project-removed
 
@@ -1138,10 +1154,10 @@ Occurs whenever a Project has been removed.
 > **💡 Note:** This event is sent only when the Integration has access to all Projects in a
 > Vercel scope.
 
-| Key                      | [Type](/docs/rest-api/reference/welcome#types) | Description            |
+| Key                      | [Type](/docs/rest-api#types) | Description            |
 | ------------------------ | ------------------------------------------------------------------------------- | ---------------------- |
-| **payload.project.id**   | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the project. |
-| **payload.project.name** | [String](/docs/rest-api/reference/welcome#types)       | Name of the project.   |
+| **payload.project.id**   | [ID](/docs/rest-api#types)           | The ID of the project. |
+| **payload.project.name** | [String](/docs/rest-api#types)       | Name of the project.   |
 
 ### integration-configuration-removed
 
@@ -1150,10 +1166,10 @@ Occurs whenever a Project has been removed.
 
 Occurs whenever an integration has been removed.
 
-| Key                                | [Type](/docs/rest-api/reference/welcome#types) | Description                  |
+| Key                                | [Type](/docs/rest-api#types) | Description                  |
 | ---------------------------------- | ------------------------------------------------------------------------------- | ---------------------------- |
-| **payload.configuration.id**       | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the configuration. |
-| **payload.configuration.projects** | [List](/docs/rest-api/reference/welcome#types)         | An array of project IDs.     |
+| **payload.configuration.id**       | [ID](/docs/rest-api#types)           | The ID of the configuration. |
+| **payload.configuration.projects** | [List](/docs/rest-api#types)         | An array of project IDs.     |
 
 ### integration-configuration-permission-updated
 
@@ -1163,13 +1179,13 @@ Occurs whenever an integration has been removed.
 
 Occurs whenever the user changes the project permission for an integration.
 
-| Key                                        | [Type](/docs/rest-api/reference/welcome#types) | Description                                                                                 |
+| Key                                        | [Type](/docs/rest-api#types) | Description                                                                                 |
 | ------------------------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **payload.configuration.id**               | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the configuration.                                                                |
-| **payload.configuration.projectSelection** | [String](/docs/rest-api/reference/welcome#types)       | A String representing the permission for projects. Possible values are `all` or `selected`. |
-| **payload.configuration.projects**         | [List](/docs/rest-api/reference/welcome#types)         | An array of project IDs.                                                                    |
-| **payload.projects.added**                 | [List](/docs/rest-api/reference/welcome#types)         | An array of added project IDs.                                                              |
-| **payload.projects.removed**               | [List](/docs/rest-api/reference/welcome#types)         | An array of removed project IDs.                                                            |
+| **payload.configuration.id**               | [ID](/docs/rest-api#types)           | The ID of the configuration.                                                                |
+| **payload.configuration.projectSelection** | [String](/docs/rest-api#types)       | A String representing the permission for projects. Possible values are `all` or `selected`. |
+| **payload.configuration.projects**         | [List](/docs/rest-api#types)         | An array of project IDs.                                                                    |
+| **payload.projects.added**                 | [List](/docs/rest-api#types)         | An array of added project IDs.                                                              |
+| **payload.projects.removed**               | [List](/docs/rest-api#types)         | An array of removed project IDs.                                                            |
 
 ### integration-configuration-scope-change-confirmed
 
@@ -1179,10 +1195,10 @@ Occurs whenever the user changes the project permission for an integration.
 
 Occurs whenever the user confirms pending scope changes.
 
-| Key                              | [Type](/docs/rest-api/reference/welcome#types) | Description                              |
+| Key                              | [Type](/docs/rest-api#types) | Description                              |
 | -------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------- |
-| **payload.configuration.id**     | [ID](/docs/rest-api/reference/welcome#types)           | The ID of the configuration.             |
-| **payload.configuration.scopes** | [List](/docs/rest-api/reference/welcome#types)         | List of all scopes (after confirmation). |
+| **payload.configuration.id**     | [ID](/docs/rest-api#types)           | The ID of the configuration.             |
+| **payload.configuration.scopes** | [List](/docs/rest-api#types)         | List of all scopes (after confirmation). |
 
 ### domain-created
 
@@ -1190,10 +1206,10 @@ Occurs whenever the user confirms pending scope changes.
 
 Occurs whenever a domain has been created.
 
-| Key                          | [Type](/docs/rest-api/reference/welcome#types) | Description                                     |
+| Key                          | [Type](/docs/rest-api#types) | Description                                     |
 | ---------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------- |
-| **payload.domain.name**      | [String](/docs/rest-api/reference/welcome#types)       | The Domain name created.                        |
-| **payload.domain.delegated** | [String](/docs/rest-api/reference/welcome#types)       | Whether or not the domain was delegated/shared. |
+| **payload.domain.name**      | [String](/docs/rest-api#types)       | The Domain name created.                        |
+| **payload.domain.delegated** | [String](/docs/rest-api#types)       | Whether or not the domain was delegated/shared. |
 
 ## Securing webhooks
 

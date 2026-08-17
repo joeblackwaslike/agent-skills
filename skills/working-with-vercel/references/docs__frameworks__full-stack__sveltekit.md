@@ -11,19 +11,37 @@ prerequisites:
 related:
   - /docs/deployments/environments
   - /docs/functions
-  - /docs/infrastructure/compute
+  - /docs/fundamentals/what-is-compute
   - /docs/functions/limitations
-  - /docs/functions/regions
+  - /docs/functions/configuring-functions/region
 summary: "Learn how to use Vercel's features with SvelteKit"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c27e5c7a290063ba4264fb565b453f7df2d374fd9ae28a1e7eb9abdffab0d6aa"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "238424492695f521bedd1478c11f0b71424b235b6f99b39c91a4000ed320e34d"
 ---
 
 # SvelteKit on Vercel
 
 SvelteKit is a frontend framework that enables you to build Svelte applications with modern techniques, such as Server-Side Rendering, automatic code splitting, and advanced routing.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [Vite](https://nextjs.org/docs/app/guides/migrating/from-vite?from=related) — Learn how to migrate your existing React application from Vite to Next.js.
+- [Vite](https://nextjs.org/docs/pages/guides/migrating/from-vite?from=related) — Learn how to migrate your existing React application from Vite to Next.js.
+- [Nuxt](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related) — Learn how to use Vercel's features with Nuxt.
+- [Getting Started](https://vercel.com/docs/image-optimization/quickstart?from=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Vite + Nitro](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [Astro](https://vercel.com/docs/frameworks/frontend/astro?from=related) — Learn how to use Vercel's features with Astro
+
+Full cross-link map for this page: [/docs/frameworks/full-stack/sveltekit.graph.md](/docs/frameworks/full-stack/sveltekit.graph.md)
+<!-- /docsgraph:related -->
 
 You can deploy your SvelteKit projects to Vercel with zero configuration, enabling you to use [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production), [Web Analytics](#web-analytics), [Vercel functions](/docs/functions), and more.
 
@@ -134,7 +152,7 @@ SvelteKit's docs have [a comprehensive list of all config options available to y
 
 #### `split`
 
-By default, your SvelteKit routes get bundled into one Function when you deploy your project to Vercel. This configuration typically reduces how often your users encounter [cold starts](/docs/infrastructure/compute#cold-and-hot-boots "Cold start").
+By default, your SvelteKit routes get bundled into one Function when you deploy your project to Vercel. This configuration typically reduces how often your users encounter [cold starts](/docs/fundamentals/what-is-compute#cold-and-hot-boots "Cold start").
 
 **In most cases, there is no need to modify this option**.
 
@@ -149,7 +167,7 @@ Splitting your Functions is not typically better than bundling them. You may wan
 
 Choosing a region allows you to reduce latency for requests to functions. If you choose a Function region geographically near dependencies, or nearest to your visitor, you can reduce your Functions' latency.
 
-By default, your Vercel Functions will be deployed in *Washington, D.C., USA*, or `iad1`. Adding a region ID to the `regions` array will deploy your Vercel functions there. [See our Vercel Function regions docs to learn how to override this settings](/docs/functions/regions#select-a-default-serverless-region).
+By default, your Vercel Functions will be deployed in *Washington, D.C., USA*, or `iad1`. Adding a region ID to the `regions` array will deploy your Vercel functions there. [See our Vercel Function regions docs to learn how to override this settings](/docs/functions/configuring-functions/region#select-a-default-serverless-region).
 
 ## Streaming
 
@@ -285,7 +303,7 @@ SvelteKit projects are server-side rendered by default. You can configure indivi
 
 - Scales to zero when not in use
 - Scales automatically with traffic increases
-- Has zero-configuration support for [`Cache-Control` headers](/docs/cdn-cache), including `stale-while-revalidate`
+- Has zero-configuration support for [`Cache-Control` headers](/docs/caching/cdn-cache), including `stale-while-revalidate`
 
 [Learn more about SSR](https://kit.svelte.dev/docs/page-options#ssr)
 
@@ -447,7 +465,7 @@ export default {
 };
 ```
 
-This allows you to specify [configuration options](https://vercel.com/docs/build-output-api/v3/configuration#images) for Vercel's native image optimization API.
+This allows you to specify [configuration options](https://vercel.com/docs/build-output-api/configuration#images) for Vercel's native image optimization API.
 
 To use image optimization with SvelteKit, you have to construct your own `srcset` URLs. You can create a library function that will optimize `srcset` URLs in production for you like this:
 
@@ -596,7 +614,7 @@ You can see data about your project's [Core Web Vitals](/docs/speed-insights/met
 
 ## Draft Mode
 
-[Draft Mode](/docs/draft-mode) enables you to view draft content from your [Headless CMS](/docs/solutions/cms) immediately, while still statically generating pages in production.
+[Draft Mode](/docs/draft-mode) enables you to view draft content from your [Headless CMS](/kb/guide/using-a-headless-cms-with-vercel) immediately, while still statically generating pages in production.
 
 To use a SvelteKit route in Draft Mode, you must:
 
@@ -642,7 +660,7 @@ To render the draft content, SvelteKit will check for `__prerender_bypass`. If i
 
 ### Draft Mode security
 
-Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. In order to enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/teams-and-accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
+Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. In order to enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
 
 ### Enabling Draft Mode in Preview Deployments
 
@@ -681,7 +699,7 @@ See [our Frameworks documentation page](/docs/frameworks) to learn about the ben
 
 Learn more about deploying SvelteKit projects on Vercel with the following resources:
 
-- [Learn about the Build Output API](/docs/build-output-api/v3)
+- [Learn about the Build Output API](/docs/build-output-api)
 - [SvelteKit's official docs](https://kit.svelte.dev/docs/adapter-vercel)
 
 

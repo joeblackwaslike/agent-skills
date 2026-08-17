@@ -9,28 +9,44 @@ prerequisites:
   []
 related:
   - /docs/git
-  - /docs/security/encryption
+  - /docs/cdn-security/encryption
   - /docs/deployments/environments
   - /docs/functions
   - /docs/routing-middleware
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "709acb41b02f493b10e7d841ab74be7cb4b3135290b2b1fbb8ea26861f7faf37"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "23298d7af0d2122086e34c0ee3098a33cf929f874eadce304531b0963e314e9a"
 ---
 
 # Account Plans on Vercel
 
 Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Pricing and Quotas](https://vercel.com/docs/sandbox/pricing?from=related) — Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply.
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Pricing](https://vercel.com/docs/analytics/limits-and-pricing?from=related) — Learn about pricing for Vercel Web Analytics.
+
+Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md)
+<!-- /docsgraph:related -->
+
 Each plan is designed to meet the needs of different types of users, from personal projects to large enterprises. The Hobby plan is free and includes base features, while Pro and Enterprise plans offer enhanced features, team collaboration, and flexible resource management.
 
 ## Hobby
 
-The Hobby plan is designed for personal projects and developers. It includes CLI and personal [Git integrations](/docs/git), built-in CI/CD, [automatic HTTPS/SSL](/docs/security/encryption), and [previews deployments](/docs/deployments/environments#preview-environment-pre-production) for every Git push.
+The Hobby plan is designed for personal projects and developers. It includes CLI and personal [Git integrations](/docs/git), built-in CI/CD, [automatic HTTPS/SSL](/docs/cdn-security/encryption), and [previews deployments](/docs/deployments/environments#preview-environment-pre-production) for every Git push.
 
-It also provides base resources for [Vercel Functions](/docs/functions), [Middleware](/docs/routing-middleware), and [Image Optimization](/docs/image-optimization), along with 100 GB of Fast Data Transfer and 1 hour of [runtime logs](/docs/runtime-logs).
+It also provides base resources for [Vercel Functions](/docs/functions), [Middleware](/docs/routing-middleware), and [Image Optimization](/docs/image-optimization), along with 100 GB of Fast Data Transfer and 1 hour of [runtime logs](/docs/logs/runtime).
 
 See the [Hobby plan](/docs/plans/hobby) page for more details.
 
@@ -42,7 +58,7 @@ Pro introduces a flexible credit-based system that provides transparent, usage-b
 
 Key features include team roles and permissions, credit-based resource management, enhanced monitoring, and email support with optional priority support upgrades.
 
-New monthly Pro subscriptions also include a [free first-year domain on an eligible TLD](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades) when claimed within 30 days of upgrading. The offer is not available to existing Pro teams or during the Pro trial.
+Paid Pro teams include a [free first-year domain on an eligible TLD](/docs/plans/pro-plan#free-first-year-domain-with-pro), one per team. The offer is not available during the Pro trial.
 
 See the [Pro plan](/docs/plans/pro-plan) page for more details.
 
@@ -69,7 +85,7 @@ All plans [receive notifications](/docs/notifications#on-demand-usage-notificati
 - Hobby plans will be paused when they exceed the included free tier usage
 - Pro plans users can configure [Spend Management](/docs/spend-management) to automatically pause deployments, trigger a webhook, or send SMS notifications when they reach 100% usage
 
-For Pro and Enterprise teams, when you reach 100% usage your deployments are **not** automatically stopped. Rather, Vercel enables you to incur on-demand usage as your site grows. It's important to be aware of the [usage page of your dashboard](/docs/limits/usage) to see if you are approaching your limit.
+For Pro and Enterprise teams, when you reach 100% usage your deployments are **not** automatically stopped. Rather, Vercel enables you to incur on-demand usage as your site grows. It's important to be aware of the [usage page of your dashboard](/docs/pricing/manage-and-optimize-usage) to see if you are approaching your limit.
 
 One of the benefits to always being on, is that you don't have to worry about downtime in the event of a huge traffic spike caused by announcements or other events. Keeping your site live during these times can be critical to your business.
 

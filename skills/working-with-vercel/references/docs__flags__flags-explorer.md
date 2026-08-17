@@ -12,17 +12,34 @@ related:
   - /docs/flags/flags-explorer/getting-started
   - /docs/vercel-toolbar/in-production-and-localhost
   - /docs/flags/flags-explorer/reference
-  - /docs/flags/flags-sdk-reference
+  - /docs/flags/flags-explorer/limits-and-pricing
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "0c1c606a6f0ecace46f20f07e6dcd7c90d2fc942c32e20b5a5bbf59a8bed7376"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "0d62813ebd09059b1784e117fe75c2e01ec4707cbeb57d7ec8c41ad18242ed08"
 ---
 
 # Flags Explorer
 
 > **🔒 Permissions Required**: Flags Explorer
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
+- [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+
+Full cross-link map for this page: [/docs/flags/flags-explorer.graph.md](/docs/flags/flags-explorer.graph.md)
+<!-- /docsgraph:related -->
 
 The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) that allows you to view and override your application's feature flags without leaving your browser tab. You can also share and recommend overrides to team members. Follow the [Quickstart](/docs/flags/flags-explorer/getting-started) to make the Flags Explorer aware of your application's feature flags.
 
@@ -73,6 +90,7 @@ You can send this link to team members. When they visit the link they will get a
 ## More resources
 
 - [Flags Explorer reference](/docs/flags/flags-explorer/reference)
+- [Flags Explorer pricing and limits](/docs/flags/flags-explorer/limits-and-pricing)
 - [Flags SDK Reference](/docs/flags/flags-sdk-reference)
 
 

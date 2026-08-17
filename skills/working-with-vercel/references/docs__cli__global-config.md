@@ -10,19 +10,34 @@ prerequisites:
 related:
   - /docs/global-config
   - /docs/global-config/migration-guide
-  - /docs/rest-api/reference/endpoints/edge-config/update-edge-config-items-in-batch
+  - /docs/rest-api/global-config/update-global-config-items-in-batch
   - /docs/global-config/global-config-dashboard
-  - /docs/rest-api/reference/endpoints/edge-config
+  - /docs/rest-api/global-config
 summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "8d0200e902965ce393d8e6f5fd82e644fd1175e7d24e59a6a86a54ffa91302c4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "82e7ed8ccb94ecd680cea3eda5a925b5e1454728d601f9e96b897fa59c1c8b9c"
 ---
 
 # vercel global-config
 
 The `vercel global-config` command manages [Global Config](/docs/global-config) stores from the CLI. It mirrors the dashboard API surface: create stores, inspect metadata, patch items in batch, list items, manage read tokens, and restore backups. For an overview of Global Config and how to read from it at runtime, see [Vercel Global Config](/docs/global-config).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related) — Learn how to use Global Configs in your projects.
+- [Global Configs & REST API](https://vercel.com/docs/global-config/vercel-api?from=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related)
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related)
+
+Full cross-link map for this page: [/docs/cli/global-config.graph.md](/docs/cli/global-config.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** `vercel edge-config` continues to work as an alias for `vercel global-config`
 > following the [rename from Edge Config to Global
@@ -105,7 +120,7 @@ vercel global-config get ecfg_abc123 --format json
 
 ### update
 
-Renames a Global Config store (`--slug`) and/or patches its items (`--patch`). For complex updates, use the [batch items API](/docs/rest-api/reference/endpoints/edge-config/update-edge-config-items-in-batch) shape.
+Renames a Global Config store (`--slug`) and/or patches its items (`--patch`). For complex updates, use the [batch items API](/docs/rest-api/global-config/update-global-config-items-in-batch) shape.
 
 ```bash filename="terminal"
 vercel global-config update flags --slug feature-flags
@@ -284,7 +299,7 @@ Use `vercel global-config get <id-or-slug>` to look up the Global Config ID, the
 ## Related
 
 - [Global Config overview](/docs/global-config)
-- [Global Config REST API reference](/docs/rest-api/reference/endpoints/edge-config)
+- [Global Config REST API reference](/docs/rest-api/global-config)
 
 
 ---

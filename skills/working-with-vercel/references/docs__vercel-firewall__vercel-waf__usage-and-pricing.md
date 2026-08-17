@@ -17,13 +17,28 @@ related:
 summary: Learn how the Vercel WAF can affect your usage and how specific features are priced.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "de28189bef1ad5ae90c90a256d7d4dd8e1058e566810e604b0a14f3ce2bc110f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b725619c0a5d05934ce33fc1d05c51c468a2ddd37900c8526da3358282d455cf"
 ---
 
 # Usage & Pricing for Vercel WAF
 
 Vercel Firewall features available on all plans are free to use. This includes [DDoS mitigation](/docs/vercel-firewall/ddos-mitigation), [IP blocking](/docs/vercel-firewall/vercel-waf/ip-blocking), and [custom rules](/docs/vercel-firewall/vercel-waf/custom-rules). Vercel prices plan-specific WAF features such as [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) and [managed rulesets](/docs/vercel-firewall/vercel-waf/managed-rulesets) as described in [priced features](#priced-features-usage).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Washington D.C., USA \(iad1\)](https://vercel.com/docs/pricing/regional-pricing/iad1?from=related) — Vercel pricing for the Washington D.C., USA \(iad1\) region.
+- [Portland, USA \(pdx1\)](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related) — Vercel pricing for the Portland, USA \(pdx1\) region.
+- [Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [Pricing and Limits](https://vercel.com/docs/services/pricing?from=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+
+Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/usage-and-pricing.graph.md](/docs/vercel-firewall/vercel-waf/usage-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Free features usage
 

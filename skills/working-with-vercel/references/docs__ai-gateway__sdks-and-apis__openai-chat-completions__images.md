@@ -14,13 +14,28 @@ related:
 summary: Send images and PDF documents to a model using the OpenAI Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c145217666d34f660c2ba138d6e0a34db537b7650e8c77aea7d7ebf041bd63df"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8aa61339b9c7cd4788dd9a28be65edf1b18661df045568cb3ed6203f4f962b68"
 ---
 
 # File Attachments
 
 Send images and PDFs alongside your text prompt by using an array of content parts in place of a plain string. Every part carries its own `type`, so one message can mix text, images, and documents.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related) — Send images and PDF documents for analysis using the OpenResponses API.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related) — Send images and PDF documents as part of your Anthropic API message requests.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images.graph.md)
+<!-- /docsgraph:related -->
 
 Model support varies. Check the [models list](/ai-gateway/models) for a model's input modalities before sending an attachment.
 

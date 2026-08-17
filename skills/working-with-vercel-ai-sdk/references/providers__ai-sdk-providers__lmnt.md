@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/lmnt.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "aa72874e6ce98aec1fbd0fc77981810fdb981af46d28f27624cb4c293d5dec14"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "34f468540923ee8dabeafda124950fe227f35c86eccdd6682e5548840e0d7cd2"
 ---
 
 # LMNT Provider
@@ -145,7 +145,6 @@ The LMNT provider accepts the following options via `providerOptions.lmnt`:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -155,6 +154,7 @@ The LMNT provider accepts the following options via `providerOptions.lmnt`:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

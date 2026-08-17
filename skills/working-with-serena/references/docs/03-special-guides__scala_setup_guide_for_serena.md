@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/03-special-guides/scala_setup_guide_for_serena.md"
-fetched_at: "2026-08-10T05:31:54.245Z"
-sha256: "3bd4d7a2afef9bd36f395e43200e273b5829c2b6d4c717d46ed107eae8011416"
+fetched_at: "2026-08-17T04:47:57.671Z"
+sha256: "cbe1c367bc91db771d471d2d43d6954d349211a290e1a42ab5a9913561f7032b"
 ---
 
 # Scala Setup Guide for Serena
@@ -91,6 +91,26 @@ ls_specific_settings:
   scala:
     project_roots: ["backend", "tooling/plugin"]  # relative to the repository root
     project_root_scan_depth: 3                    # only applies when project_roots is unset
+```
+
+---
+## Waiting for Metals to be ready
+
+Metals needs its build imported, its index built and the project compiled before it can answer a
+cross-file question completely — references in particular come from SemanticDB, which the build
+server writes only as it compiles. Serena waits for all of that, tracking the work-done progress
+Metals reports, before the first such query of a session; a query made earlier would return a
+fraction of the true result and look no different from a complete one.
+
+The first `find_referencing_symbols` of a session therefore takes as long as the project takes to
+compile. Subsequent queries do not wait. Where the default bound is wrong for a large build:
+
+```yaml
+ls_specific_settings:
+  scala:
+    indexing_timeout: 180        # seconds to wait before giving up and answering anyway
+    indexing_start_grace: 15     # seconds to wait for Metals to report anything at all
+    indexing_quiet_period: 3     # seconds of silence that count as "finished"
 ```
 
 ---

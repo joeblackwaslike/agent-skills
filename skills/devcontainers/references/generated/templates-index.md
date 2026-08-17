@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-08-10T05:26:00.817Z"
-sha256: "b8e0784afa02b9dace6d74ee370834f0c91205315983f4b043a0ad1e352af3fd"
+fetched_at: "2026-08-17T04:40:34.367Z"
+sha256: "143b6e41f0a1ae1f98761fb63f9154e4dea42f1e9c424099c71d47414a63b33f"
 ---
 
 # Available templates index
@@ -113,7 +113,7 @@ Templates
 | Debian | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/debian:4.0.0` | `4.0.0` |
 | Existing Docker Compose (Extend) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-existing-docker-compose:1.2.3` | `1.2.3` |
 | Existing Dockerfile | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-existing-dockerfile:1.3.2` | `1.3.2` |
-| Docker in Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-in-docker:1.3.2` | `1.3.2` |
+| Docker in Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-in-docker:1.3.3` | `1.3.3` |
 | Docker outside of Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-outside-of-docker:1.3.2` | `1.3.2` |
 | Docker outside of Docker Compose | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-outside-of-docker-compose:2.3.2` | `2.3.2` |
 | C# (.NET) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/dotnet:3.6.0` | `3.6.0` |
@@ -129,7 +129,7 @@ Templates
 | Node.js & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/javascript-node-postgres:6.0.0` | `6.0.0` |
 | Jekyll | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/jekyll:2.2.2` | `2.2.2` |
 | Kubernetes - Local Configuration | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/kubernetes-helm:1.4.2` | `1.4.2` |
-| Kubernetes - Minikube-in-Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/kubernetes-helm-minikube:2.2.2` | `2.2.2` |
+| Kubernetes - Minikube-in-Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/kubernetes-helm-minikube:2.2.3` | `2.2.3` |
 | Markdown | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/markdown:1.1.2` | `1.1.2` |
 | Miniconda (Python 3) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/miniconda:2.0.2` | `2.0.2` |
 | Miniconda & PostgreSQL (Python 3) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/miniconda-postgres:2.0.2` | `2.0.2` |
@@ -240,6 +240,7 @@ Templates
 | Axon Ivy | axonivy | `ghcr.io/axonivy/devcontainer-templates/axonivy:1.0.2` | `1.0.2` |
 | AWS Lambda (.NET) | Yuji Masaoka | `ghcr.io/ymasaoka/devcontainer-templates/aws-lambda-dotnet:0.0.1` | `0.0.1` |
 | Roblox | Ryan Luu | `ghcr.io/ryanlua/templates/roblox:0.2.1` | `0.2.1` |
+| FEniCS devcontainer | schnellerhase | `ghcr.io/schnellerhase/devcontainer-fenics/fenics:0.0.3` | `0.0.3` |
 | Dev Container Tools (base) | Pedro Rodrigues | `ghcr.io/pirpedro/devcontainers/dev-tools:1.0.0` | `1.0.0` |
 | My Favorite Color | mattmazzola | `ghcr.io/mattmazzola/devcontainers/color:1.0.0` | `1.0.0` |
 | Hello, World | mattmazzola | `ghcr.io/mattmazzola/devcontainers/hello:1.0.0` | `1.0.0` |

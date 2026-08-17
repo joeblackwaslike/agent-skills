@@ -12,13 +12,29 @@ related:
 summary: Learn how to manage project-level redirects using the vercel redirects CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redirects.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2388c3e3fe2be0509053188760e94f1cad8be36570eb1e5257611d313733b928"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e430df04f295b905d679ea58b62990fa339d0a439d1ccd62381f8ca2efae2cc3"
 ---
 
 # vercel redirects
 
 The `vercel redirects` command lets you manage redirects for a project. Redirects managed at the project level apply to all deployments and environments and take effect immediately after being created and promoted to production.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [Manage Redirects at Scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
+- [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started?from=related) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
+- [Bulk Redirects](https://vercel.com/docs/routing/redirects/bulk-redirects?from=related) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
+- [vercel routes](https://vercel.com/docs/cli/routes?from=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+
+Full cross-link map for this page: [/docs/cli/redirects.graph.md](/docs/cli/redirects.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Redirects can also be defined and managed in source control using
 > `vercel.json`. Project-level redirects are updated without a need for a new

@@ -9,20 +9,37 @@ prerequisites:
   - /docs/deployments
 related:
   - /docs/deployments
-  - /docs/deployments/configure-a-build
+  - /docs/builds/configure-a-build
   - /docs/environment-variables/sensitive-environment-variables
   - /docs/activity-log
   - /docs/rbac/managing-team-members
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d4790eca15d92572179173c8081ee8eb983715a6670bc8cc25ff309ccab40eb9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "df9d27f175483e11c31faa8466254202508e7117316c1c5269a8303378a25f34"
 ---
 
 # Accessing Build Logs
 
 When you deploy your website to Vercel, the platform generates build logs that show the deployment progress. The build logs contain information about:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I resolve a 'module not found' error?](https://vercel.com/kb/guide/how-do-i-resolve-a-module-not-found-error?from=related) — Information on resolving a 'module not found' error.
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Logs](https://vercel.com/docs/logs?from=related) — Use logs to find information on deployment builds, function executions, and more.
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related)
+- [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
+
+Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md)
+<!-- /docsgraph:related -->
 
 - The version of the build tools
 - Warnings or errors encountered during the build process
@@ -36,7 +53,7 @@ To access build logs, click the **Build Logs** button from the production deploy
 
 ## How build logs work?
 
-Build logs are generated at build time for all [Deployments](/docs/deployments). The logs are similar to your framework's [Build Command](/docs/deployments/configure-a-build#build-command) output, with a few minor additions from the Vercel build system. Once a build is complete, no new logs will be recorded.
+Build logs are generated at build time for all [Deployments](/docs/deployments). The logs are similar to your framework's [Build Command](/docs/builds/configure-a-build#build-command) output, with a few minor additions from the Vercel build system. Once a build is complete, no new logs will be recorded.
 
 In addition to the list of build actions, you can also find errors or warnings. These are highlighted with different colors, such as yellow for warnings and red for errors. This color coding makes it flexible to investigate why your build failed and which part of your website is affected. Build logs are stored indefinitely for each deployment.
 

@@ -10,23 +10,40 @@ prerequisites:
 related:
   - /docs/sign-in-with-vercel/authorization-server-api
   - /docs/rest-api
+  - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/sign-in-with-vercel/scopes-and-permissions
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "21392b8de0f2d730f205afc2f6f50bc22662aad8806b3d7ef4d651e0311c2be9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5695e5ad0cf651940fb0d8c017e8dd569529f9717c554df575208eefe944d00e"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
 
 ## Create an App
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Troubleshooting](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related) — Learn how to troubleshoot common errors with Sign in with Vercel
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+
+Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md)
+<!-- /docsgraph:related -->
+
 To manage any third-party apps, or create a new one yourself, you need to create an App. An App acts as an intermediary that requests and manages access to resources on behalf of the user. It communicates with the [Vercel Authorization Server](/docs/sign-in-with-vercel/authorization-server-api) to get tokens which act as credentials for accessing protected resources through the [Vercel REST API](/docs/rest-api).
 
 To create an App, follow these steps:
 
-1. Navigate to your teams [**Settings**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings\&title=Go+to+team+settings) section in the sidebar
+1. Navigate to your team's [**Settings**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings\&title=Go+to+team+settings) section in the sidebar
 2. Scroll down and select **Apps**, and click **Create**
 3. Choose a name for your app
 4. Choose a slug for your app (The slug is automatically generated from the name if you don't provide one)
@@ -71,6 +88,29 @@ To add a callback URL:
 For local development, add `http://localhost:3000/api/auth/callback`. For production, add `https://your-domain.com/api/auth/callback`. For Apps hosted on Vercel, instead of specifying a custom domain for the callback URL, you can instead select a Vercel project from a dropdown in the UI. This will let you configure an authorization URL matching any of your App's deployment domains.
 
 When a user authorizes your app, Vercel redirects them to this URL with a `code` query parameter. Your application exchanges this code for tokens using the [Token Endpoint](/docs/sign-in-with-vercel/authorization-server-api#token-endpoint).
+
+## Configure sign-in access
+
+By default, anyone with a Vercel account can complete Sign in with Vercel for your app. You can instead restrict sign-in to members of the team that owns the app.
+
+To configure sign-in access:
+
+1. Navigate to your team's [**Settings**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings\&title=Go+to+team+settings)
+2. Select **Apps**, then select your app
+3. On the **General** page, scroll to **Sign-In Access**
+4. Choose one of the following options:
+   - **Anyone with a Vercel account**: Any Vercel user can sign in to your app
+   - **Members of the team**: Only current members of the team that owns the app can sign in
+5. Click **Save**
+
+Vercel checks this setting when a user authorizes the app, completes the device authorization flow, or refreshes their tokens. A user who does not meet the requirement receives an OAuth `access_denied` error.
+
+> **💡 Note:** Changing sign-in access does not end sessions that your application has
+> already created. Your application controls its own sessions and should set an
+> appropriate session lifetime. If you restrict an app to team members, Vercel
+> denies future token refreshes after a user is no longer a member of the team.
+
+Sign-in access applies only to user authentication through Sign in with Vercel. It does not control who can install the Vercel App or who can access deployments protected by [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication).
 
 ## Configure the necessary permissions
 

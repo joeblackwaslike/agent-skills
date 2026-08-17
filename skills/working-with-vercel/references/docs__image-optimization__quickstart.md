@@ -14,13 +14,32 @@ related:
 summary: Learn how you can leverage Vercel Image Optimization in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/quickstart.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "318f247cf7f268da58b079c45334e56cd4772a34763ff31d7b596af8801580b9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b27fc2119926e4e427ee57bac8cd263796cf2382d6a2c8a4bb2935e114628e9d"
 ---
 
 # Getting started with Image Optimization
 
 This guide will help you get started with using Vercel Image Optimization in your project, showing you how to import images, add the required props, and deploy your app to Vercel. Vercel Image Optimization works out of the box with Next.js, Nuxt, SvelteKit, and Astro.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Images](https://nextjs.org/docs/pages/getting-started/images?from=related) — Optimize your images with the built-in `next/image` component.
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Nuxt](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related) — Learn how to use Vercel's features with Nuxt.
+- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [SvelteKit](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related) — Learn how to use Vercel's features with SvelteKit
+
+Full cross-link map for this page: [/docs/image-optimization/quickstart.graph.md](/docs/image-optimization/quickstart.graph.md)
+<!-- /docsgraph:related -->
 
 ## Prerequisites
 
@@ -144,7 +163,7 @@ This guide will help you get started with using Vercel Image Optimization in you
     }
   };
   ```
-  This allows you to specify [configuration options](https://vercel.com/docs/build-output-api/v3/configuration#images) for Vercel's native image optimization API.
+  This allows you to specify [configuration options](https://vercel.com/docs/build-output-api/configuration#images) for Vercel's native image optimization API.
 
   You have to construct your own `srcset` URLs to use image optimization with SvelteKit. You can create a library function that will optimize `srcset` URLs in production for you like this:
   ```js filename="src/lib/image.js" framework=all
@@ -314,9 +333,9 @@ This guide will help you get started with using Vercel Image Optimization in you
   - `alt`: A short description of the image
   - `width`: The width of the image
   - `height`: The height of the image
-  When using [local images](https://nextjs.org/docs/pages/building-your-application/optimizing/images#local-images "Local images") you **do not** need to provide the `width` and `height` props. These values will be automatically determined based on the imported image.
+  When using [local images](https://nextjs.org/docs/pages/api-reference/components/image#local-images "Local images") you **do not** need to provide the `width` and `height` props. These values will be automatically determined based on the imported image.
 
-  The below example uses a [remote image](https://nextjs.org/docs/pages/building-your-application/optimizing/images#remote-images "Remote Images") stored in a `/public/images/` folder, and has the `width` and `height` props applied:
+  The below example uses a [remote image](https://nextjs.org/docs/pages/api-reference/components/image#remote-images "Remote Images") stored in a `/public/images/` folder, and has the `width` and `height` props applied:
   ```js filename="pages/index.jsx" framework=all
   <Image
     src="https://unsplash.com/photos/MpL4w1vb798"
@@ -371,9 +390,9 @@ This guide will help you get started with using Vercel Image Optimization in you
   - `alt`: A short description of the image
   - `width`: The width of the image
   - `height`: The height of the image
-  When using [local images](https://nextjs.org/docs/app/building-your-application/optimizing/images#local-images "Local images") you **do not** need to provide the `width` and `height` props. These values will be automatically determined based on the imported image.
+  When using [local images](https://nextjs.org/docs/app/getting-started/images#local-images "Local images") you **do not** need to provide the `width` and `height` props. These values will be automatically determined based on the imported image.
 
-  The example below uses a [remote image](https://nextjs.org/docs/app/building-your-application/optimizing/images#remote-images "Remote Images") with the `width` and `height` props applied:
+  The example below uses a [remote image](https://nextjs.org/docs/app/getting-started/images#remote-images "Remote Images") with the `width` and `height` props applied:
   ```js filename="app/example/page.jsx" framework=all
   <Image
     src="https://images.unsplash.com/photo-1627843240167-b1f9d28f732e"

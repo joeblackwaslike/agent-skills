@@ -12,13 +12,35 @@ related:
 summary: TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "93403d934f1011378f389862ce9fb036631cc2180165a58bdc9bde8496125c4b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a95daf2b9edd2fb3d44054bdff9bb60e183a7bec255e61e86f0892a887868ba5"
 ---
 
 # AI SDK
 
 ## What the AI SDK provides
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction?from=related)
+- [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai?from=related) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications. Learn how they differ in agen
+- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related)
+- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related)
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [Get started with Llama 3.1](https://ai-sdk.dev/cookbook/guides/llama-3_1?from=related)
+- [Get started with OpenAI o1](https://ai-sdk.dev/cookbook/guides/o1?from=related)
+- [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [Integrations for Models](https://vercel.com/docs/agent-resources/integrations-for-models?from=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-sdk.graph.md](/docs/ai-sdk.graph.md)
+<!-- /docsgraph:related -->
 
 - **Unified provider API.** Switch between models by changing two lines of code
 - **Structured outputs.** Generate type-safe JSON with `generateObject` and `streamObject`

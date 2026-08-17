@@ -8,17 +8,37 @@ type: reference
 prerequisites:
   - /docs/og-image-generation
 related:
-  - /docs/recipes/using-custom-font
+  []
 summary: This reference provides information on how the @vercel/og package works on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7660cc232f1d9d502df77ccd6cf38c33628ea81e466cfb9092841ec01e781bd5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "cee47c591251cf3d7b960db11cb4d9b6a56011d4556843ed786d358737331616"
 ---
 
 # @vercel/og Reference
 
 The package exposes an `ImageResponse` constructor, with the following parameters:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response?from=related) — API Reference for the ImageResponse constructor.
+- [Using emoji in your OG image](https://vercel.com/kb/guide/using-emoji-in-image?from=related) — Learn how to use emojis to generate an OG image.
+- [Using an SVG image in your OG image](https://vercel.com/kb/guide/using-svg-image?from=related) — Learn how to use SVG embedded content to generate your OG images.
+- [Using Tailwind CSS with your OG Image](https://vercel.com/kb/guide/using-tailwind?from=related) — Learn how to use Tailwind CSS to style your OG images.
+- [Using an external image as OG image](https://vercel.com/kb/guide/using-an-external-dynamic-image?from=related) — Learn how to pass the username as a URL parameter to pull an external profile image for the image generation.
+- [Displaying headlines in social previews with Vercel OG](https://vercel.com/kb/guide/displaying-article-headlines-in-social-previews?from=related) — Twitter/X is planning to remove headlines from social previews. To get around this limitation, Vercel OG offers a way to
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related) — Learn how to add metadata to your pages and create dynamic OG images.
+- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Image Optimization](https://vercel.com/docs/image-optimization?from=related) — Transform and optimize images to improve page load performance.
+
+Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md)
+<!-- /docsgraph:related -->
 
 ```ts v0="build" filename="ImageResponse Interface" framework=all
 import { ImageResponse } from '@vercel/og'
@@ -86,7 +106,7 @@ By default, the following headers will be included by `@vercel/og`:
 
 Refer to [Satori's documentation](https://github.com/vercel/satori#documentation) for a list of supported HTML and CSS features.
 
-By default, `@vercel/og` only has the Noto Sans font included. If you need to use other fonts, you can pass them in the `fonts` option. View the [custom font example](/docs/recipes/using-custom-font) for more details.
+By default, `@vercel/og` only has the Noto Sans font included. If you need to use other fonts, you can pass them in the `fonts` option. View the [custom font example](/kb/guide/using-custom-font) for more details.
 
 ## Acknowledgements
 

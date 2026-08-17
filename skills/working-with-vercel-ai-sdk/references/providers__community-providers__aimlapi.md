@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/aimlapi.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "f0026d461b6a214a59a3268e106132ae999348eae822a30e7119ff79aee05934"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "6dca1b19c2cc94df32941f79263dbea73d592c3b655155e49e66aae0610758ae"
 ---
 
 # AI/ML API Provider
@@ -140,6 +140,7 @@ For more information and a full model list, visit the [AI/ML API dashboard](http
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

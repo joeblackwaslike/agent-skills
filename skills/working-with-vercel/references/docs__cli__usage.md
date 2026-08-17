@@ -12,13 +12,28 @@ related:
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6a903d9ff57fd8136033fc5fcfe3ac29e9138a84d12a518fb24c08dab0684b98"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "713d6510b0b6d6c57d0518c925c38ee3cced46d723e95cbfe11feb663f1c2e73"
 ---
 
 # vercel usage
 
 The `vercel usage` command displays billing usage for the current billing period or a custom date range. It shows usage and costs for each service, helping you understand your resource consumption.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel help](https://vercel.com/docs/cli/help?from=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [vercel buy](https://vercel.com/docs/cli/buy?from=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+
+Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md)
+<!-- /docsgraph:related -->
 
 This is only available for Owner, Member, Developer, Security, Billing, and Enterprise Viewer [roles](/docs/rbac/access-roles#team-level-roles) for the current active team.
 

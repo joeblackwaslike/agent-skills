@@ -9,18 +9,34 @@ prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
-  - /docs/projects/domains/working-with-nameservers
-  - /docs/sdk
+  - /docs/domains/working-with-nameservers
+  - /docs/rest-api/sdk
 summary: Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "04cdfd120d38cfeaa5d041418df9da9c0cde3050477e23a51bf2eeea25f9c8af"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5429749a90fdec4d3b0aa6fb8ef2aa19381fb5f98cd7b918c8c19000fef73b31"
 ---
 
 # Multi-Tenant Platform Quickstart
 
 Watch the walkthrough on [YouTube](https://www.youtube.com/watch?v=vVYlCnNjEWA).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Configuring Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.
+- [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
+
+Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/quickstart.graph.md](/docs/platforms/multi-tenant-platforms/quickstart.graph.md)
+<!-- /docsgraph:related -->
 
 ## Types of domains
 
@@ -46,7 +62,7 @@ You can implement either approach or both depending on your needs.
 
 ## Wildcard Domain Setup
 
-If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to your Vercel project. This requires using [Vercel's nameservers](/docs/projects/domains/working-with-nameservers) so that Vercel can manage the DNS challenges necessary for generating wildcard SSL certificates.
+If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to your Vercel project. This requires using [Vercel's nameservers](/docs/domains/working-with-nameservers) so that Vercel can manage the DNS challenges necessary for generating wildcard SSL certificates.
 
 1. Point your domain to Vercel's nameservers (`ns1.vercel-dns.com` and `ns2.vercel-dns.com`).
 2. In your Vercel project settings, add the apex domain (e.g., `acme.com`).
@@ -68,7 +84,7 @@ You can also give tenants the option to bring their own domain. In that case, yo
 
 ### Step 2: Add Domains Programmatically
 
-You can add a new domain through the [Vercel SDK](/docs/sdk). For example:
+You can add a new domain through the [Vercel SDK](/docs/rest-api/sdk). For example:
 
 ```ts filename="add-domain.ts"
 import { VercelCore as Vercel } from '@vercel/sdk/core.js';

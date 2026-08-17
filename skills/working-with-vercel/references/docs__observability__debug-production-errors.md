@@ -16,13 +16,31 @@ related:
 summary: Find, fix, and verify production 500 errors using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/debug-production-errors.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d46b41cdf5ee304df6ad9ccfab7cb30cd3e2466da4d363944127f21582ea7886"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7d14e1e7366a235d06230017d95b515d15defa46d537ae3b2f825c972364a454"
 ---
 
 # Debugging production 500 errors
 
 Use this guide to debug production 500 errors. You'll identify the problem, trace it to a root cause, and deploy a verified fix.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue?from=related) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Debug Slow Functions](https://vercel.com/docs/functions/debug-slow-functions?from=related) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
+- [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Rolling Release Deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+
+Full cross-link map for this page: [/docs/observability/debug-production-errors.graph.md](/docs/observability/debug-production-errors.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This guide requires a linked Vercel project. Run `vercel link` in your
 > project directory if you haven't already.

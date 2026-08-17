@@ -9,21 +9,38 @@ prerequisites:
   - /docs/build-output-api
 related:
   - /docs/cdn
-  - /docs/build-output-api/v3/configuration
+  - /docs/build-output-api/configuration
   - /docs/skew-protection
   - /docs/environment-variables/system-environment-variables
   - /docs/functions
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "341f0958ab2ffffe95d0633205a944a95f34192e5e91bf645ca0dc66aa4eb1a9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "88a1a930931565889dfd65d6e7e5fe71ee0fc95cf129bb7377a91540963d4dca"
 ---
 
 # Vercel Primitives
 
 The following directories, code files, and configuration files represent all Vercel platform primitives.
 These primitives are the "building blocks" that make up a Vercel Deployment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related) — Learn how to import files inside Serverless Functions on Vercel.
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+
+Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md)
+<!-- /docsgraph:related -->
 
 Files outside of these directories are ignored and will not be served to visitors.
 
@@ -39,7 +56,7 @@ Files placed within this directory will be made available at the root (`/`) of t
 
 There is no standalone configuration file that relates to static files.
 
-However, certain properties of static files (such as the `Content-Type` response header) can be modified by utilizing the [`overrides` property of the `config.json` file](/docs/build-output-api/v3/configuration#overrides).
+However, certain properties of static files (such as the `Content-Type` response header) can be modified by utilizing the [`overrides` property of the `config.json` file](/docs/build-output-api/configuration#overrides).
 
 ### Directory structure for static files
 
@@ -110,17 +127,17 @@ type ServerlessFunctionConfig = {
 };
 ```
 
-| Key                           | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                                               |
+| Key                           | [Type](/docs/rest-api#types) | Required | Description                                                                                                                                               |
 | ----------------------------- | ----------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **runtime**                   | [String](/docs/rest-api/reference#types)       | Yes      | Specifies which "runtime" will be used to execute the Vercel Function. See [Runtimes](/docs/functions/runtimes) for more information.                     |
-| **handler**                   | [String](/docs/rest-api/reference#types)       | Yes      | Indicates the initial file where code will be executed for the Vercel Function.                                                                           |
-| **memory**                    | [Integer](/docs/rest-api/reference#types)      | No       | Amount of memory (RAM in MB) that will be allocated to the Vercel Function. See [memory size limits](/docs/functions/limitations#memory-size-limits) for more information. |
-| **architecture**              | [String](/docs/rest-api/reference#types)       | No       | Specifies the instruction set "architecture" the Vercel Function supports. Either `x86_64` or `arm64`. The default value is `x86_64`.                     |
-| **maxDuration**               | [Integer](/docs/rest-api/reference#types)      | No       | Maximum duration (in seconds) that will be allowed for the Vercel Function. See [max duration](/docs/functions/limitations#max-duration) for more information. |
-| **environment**               | [Map](/docs/rest-api/reference#types)          | No       | Map of additional environment variables that will be available to the Vercel Function, in addition to the env vars specified in the Project Settings.     |
-| **regions**                   | [String\[\]](/docs/rest-api/reference#types)     | No       | List of Vercel Regions where the Vercel Function will be deployed to.                                                                                     |
-| **supportsWrapper**           | [Boolean](/docs/rest-api/reference#types)      | No       | True if a custom runtime has support for Lambda runtime wrappers.                                                                                         |
-| **supportsResponseStreaming** | [Boolean](/docs/rest-api/reference#types)      | No       | When true, the Vercel Function will stream the response to the client.                                                                                    |
+| **runtime**                   | [String](/docs/rest-api#types)       | Yes      | Specifies which "runtime" will be used to execute the Vercel Function. See [Runtimes](/docs/functions/runtimes) for more information.                     |
+| **handler**                   | [String](/docs/rest-api#types)       | Yes      | Indicates the initial file where code will be executed for the Vercel Function.                                                                           |
+| **memory**                    | [Integer](/docs/rest-api#types)      | No       | Amount of memory (RAM in MB) that will be allocated to the Vercel Function. See [memory size limits](/docs/functions/limitations#memory-size-limits) for more information. |
+| **architecture**              | [String](/docs/rest-api#types)       | No       | Specifies the instruction set "architecture" the Vercel Function supports. Either `x86_64` or `arm64`. The default value is `x86_64`.                     |
+| **maxDuration**               | [Integer](/docs/rest-api#types)      | No       | Maximum duration (in seconds) that will be allowed for the Vercel Function. See [max duration](/docs/functions/limitations#max-duration) for more information. |
+| **environment**               | [Map](/docs/rest-api#types)          | No       | Map of additional environment variables that will be available to the Vercel Function, in addition to the env vars specified in the Project Settings.     |
+| **regions**                   | [String\[\]](/docs/rest-api#types)     | No       | List of Vercel Regions where the Vercel Function will be deployed to.                                                                                     |
+| **supportsWrapper**           | [Boolean](/docs/rest-api#types)      | No       | True if a custom runtime has support for Lambda runtime wrappers.                                                                                         |
+| **supportsResponseStreaming** | [Boolean](/docs/rest-api#types)      | No       | When true, the Vercel Function will stream the response to the client.                                                                                    |
 
 #### Node.js config
 
@@ -134,12 +151,12 @@ type NodejsServerlessFunctionConfig = ServerlessFunctionConfig & {
 };
 ```
 
-| Key                           | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                                    |
+| Key                           | [Type](/docs/rest-api#types) | Required | Description                                                                                                                                    |
 | ----------------------------- | ----------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **launcherType**              | "Nodejs"                                                                | Yes      | Specifies which launcher to use. Currently only "Nodejs" is supported.                                                                         |
-| **shouldAddHelpers**          | [Boolean](/docs/rest-api/reference#types)      | No       | Enables request and response helpers methods.                                                                                                  |
-| **shouldAddSourcemapSupport** | [Boolean](/docs/rest-api/reference#types)      | No       | Enables source map support for stack traces at runtime.                                                                                        |
-| **awsLambdaHandler**          | [String](/docs/rest-api/reference#types)       | No       | [AWS Handler Value](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html) for when the serverless function uses AWS Lambda syntax. |
+| **shouldAddHelpers**          | [Boolean](/docs/rest-api#types)      | No       | Enables request and response helpers methods.                                                                                                  |
+| **shouldAddSourcemapSupport** | [Boolean](/docs/rest-api#types)      | No       | Enables source map support for stack traces at runtime.                                                                                        |
+| **awsLambdaHandler**          | [String](/docs/rest-api#types)       | No       | [AWS Handler Value](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html) for when the serverless function uses AWS Lambda syntax. |
 
 #### Node.js config example
 
@@ -162,7 +179,7 @@ The following example shows a directory structure where the Vercel Function will
 
 ## Functions with Edge Runtime
 
-A [Function with Edge Runtime](/docs/functions/edge-functions) is represented on the file system as
+A [Function with Edge Runtime](/docs/functions) is represented on the file system as
 a directory with a `.func` suffix on the name, contained within the `.vercel/output/functions` directory.
 
 The `.func` directory requires at least one JavaScript or TypeScript source file which will serve as the `entrypoint` of the function. Additional source files may also be included in the `.func` directory. All imported source files will be *bundled* at build time.
@@ -195,12 +212,12 @@ type EdgeFunctionConfig = {
 };
 ```
 
-| Key              | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                                                                        |
+| Key              | [Type](/docs/rest-api#types) | Required | Description                                                                                                                                                                        |
 | ---------------- | ----------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **runtime**      | ["edge"](/docs/rest-api/reference#types)       | Yes      | The `runtime: "edge"` property is required to indicate that this directory represents a Function with Edge Runtime.                                                               |
-| **entrypoint**   | [String](/docs/rest-api/reference#types)       | Yes      | Indicates the initial file where code will be executed for the Function with Edge Runtime.                                                                                         |
-| **envVarsInUse** | [String\[\]](/docs/rest-api/reference#types)     | No       | List of environment variable names that will be available for the Function with Edge Runtime to utilize.                                                                           |
-| **regions**      | [String\[\]](/docs/rest-api/reference#types)     | No       | List of regions or a specific region that the edge function will be available in, defaults to `all`. [View available regions](/docs/regions#region-list). |
+| **runtime**      | ["edge"](/docs/rest-api#types)       | Yes      | The `runtime: "edge"` property is required to indicate that this directory represents a Function with Edge Runtime.                                                               |
+| **entrypoint**   | [String](/docs/rest-api#types)       | Yes      | Indicates the initial file where code will be executed for the Function with Edge Runtime.                                                                                         |
+| **envVarsInUse** | [String\[\]](/docs/rest-api#types)     | No       | List of environment variable names that will be available for the Function with Edge Runtime to utilize.                                                                           |
+| **regions**      | [String\[\]](/docs/rest-api#types)     | No       | List of regions or a specific region that the edge function will be available in, defaults to `all`. [View available regions](/docs/regions#region-list). |
 
 #### Function with Edge Runtime config example
 
@@ -246,17 +263,17 @@ type PrerenderFunctionConfig = {
 };
 ```
 
-| Key                | [Type](/docs/rest-api/reference#types)                 | Required | Description                                                                                                                                                                                          |
+| Key                | [Type](/docs/rest-api#types)                 | Required | Description                                                                                                                                                                                          |
 | ------------------ | --------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **expiration**     | [Integer | false](/docs/rest-api/reference#types)         | Yes      | Expiration time (in seconds) before the cached asset will be re-generated by invoking the Vercel Function. Setting the value to `false` means it will never expire.                                  |
-| **group**          | [Integer](/docs/rest-api/reference#types)                      | No       | Option group number of the asset. Prerender assets with the same group number will all be re-validated at the same time.                                                                             |
+| **expiration**     | [Integer | false](/docs/rest-api#types)         | Yes      | Expiration time (in seconds) before the cached asset will be re-generated by invoking the Vercel Function. Setting the value to `false` means it will never expire.                                  |
+| **group**          | [Integer](/docs/rest-api#types)                      | No       | Option group number of the asset. Prerender assets with the same group number will all be re-validated at the same time.                                                                             |
 | **bypassToken**    | [String](/docs/draft-mode)                                     | No       | Random token assigned to the `__prerender_bypass` cookie when [Draft Mode](/docs/draft-mode) is enabled, in order to safely bypass the CDN cache                                                     |
-| **fallback**       | [String](/docs/rest-api/reference#types)                       | No       | Name of the optional fallback file relative to the configuration file.                                                                                                                               |
-| **allowQuery**     | [String\[\]](/docs/rest-api/reference#types)                     | No       | List of query string parameter names that will be cached independently. If an empty array, query values are not considered for caching. If undefined each unique query value is cached independently |
-| **passQuery**      | [Boolean](/docs/rest-api/reference#types)                      | No       | When true, the query string will be present on the `request` argument passed to the invoked function. The `allowQuery` filter still applies.                                                         |
-| **initialHeaders** | [Record\<string, string>](/docs/rest-api/reference#types) | No       | Initial headers to be included with the prerendered response that was generated at build time.                                                                                                       |
-| **initialStatus**  | [Integer](/docs/rest-api/reference#types)                      | No       | Initial HTTP status code to be included with the prerendered response that was generated at build time. (default 200)                                                                                |
-| **exposeErrBody**  | [Boolean](/docs/rest-api/reference#types)                      | No       | When true, expose the response body regardless of status code including error status codes. (default false)                                                                                          |
+| **fallback**       | [String](/docs/rest-api#types)                       | No       | Name of the optional fallback file relative to the configuration file.                                                                                                                               |
+| **allowQuery**     | [String\[\]](/docs/rest-api#types)                     | No       | List of query string parameter names that will be cached independently. If an empty array, query values are not considered for caching. If undefined each unique query value is cached independently |
+| **passQuery**      | [Boolean](/docs/rest-api#types)                      | No       | When true, the query string will be present on the `request` argument passed to the invoked function. The `allowQuery` filter still applies.                                                         |
+| **initialHeaders** | [Record\<string, string>](/docs/rest-api#types) | No       | Initial headers to be included with the prerendered response that was generated at build time.                                                                                                       |
+| **initialStatus**  | [Integer](/docs/rest-api#types)                      | No       | Initial HTTP status code to be included with the prerendered response that was generated at build time. (default 200)                                                                                |
+| **exposeErrBody**  | [Boolean](/docs/rest-api#types)                      | No       | When true, expose the response body regardless of status code including error status codes. (default false)                                                                                          |
 
 #### Fallback static file
 

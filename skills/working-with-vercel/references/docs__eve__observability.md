@@ -13,13 +13,32 @@ related:
 summary: View agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/observability.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "eca2703fbe38fed37bcf52f61007394868c076fc2b111bd8fad8c5167c6561c2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e3b5a24c9191e87e10b63175cdaa87c74c5a26d6a2460cdba2a70bf39bcaf826"
 ---
 
 # Observability
 
 eve gives you two ways to observe an agent:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Observability](https://eve.dev/docs/guides/instrumentation?from=related) — Trace an agent with OpenTelemetry in instrumentation.ts, read the workflow run tags eve emits, and debug discovery with
+- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related) — Create an eve project, configure a model, understand its filesystem layout, and run your first agent.
+- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
+- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related) — Choose a deployment strategy and prepare an eve agent for production.
+- [Security Model](https://eve.dev/docs/concepts/security-model?from=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [Tracing](https://vercel.com/docs/tracing?from=related) — Learn how to trace your application to understand performance and infrastructure details.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
+
+Full cross-link map for this page: [/docs/eve/observability.graph.md](/docs/eve/observability.graph.md)
+<!-- /docsgraph:related -->
 
 - **Agent Runs**: the primary view. Every eve project gets a built-in Agent Runs dashboard in
   Vercel. It works by default with no instrumentation or configuration.

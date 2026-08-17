@@ -16,13 +16,33 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b1c4466ed59f87743d2f932931952b4b7cc4ad443001f492d6edba45bc8c57ea"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "29d8fa53389cc8415c99203a5f0a0f20884a2ad193fc98fdcae3ec3f055a4404"
 ---
 
 # Spend Management
 
 > **🔒 Permissions Required**: Spend Management
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Pause your project](https://vercel.com/kb/guide/pause-your-project?from=related) — Use a webhook to pause your project based on spend management.
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related) — Learn how to manage your projects through the Vercel Dashboard.
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+
+Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md)
+<!-- /docsgraph:related -->
 
 Spend management is a way for you to notify or to automatically take action on your account when your team hits a [set spend amount](#what-does-spend-management-include). The actions you can take are:
 
@@ -100,17 +120,17 @@ Vercel provides an option to automatically pause the production deployment for a
 
 > **💡 Note:** Pausing is not instantaneous. Because Vercel [checks your spend](#how-vercel-checks-your-spend-amount) every few minutes, projects can keep serving traffic and accruing usage for several minutes after you cross the spend amount.
 
-When visitors access your production deployment while it is paused, they will see a [503 DEPLOYMENT\_PAUSED error](/docs/errors/DEPLOYMENT_PAUSED).
+When visitors access your production deployment while it is paused, they will see a [503 DEPLOYMENT\_PAUSED error](/docs/errors/deployment_paused).
 
 ### Unpausing projects
 
-Projects need to be resumed on an individual basis, either [through the dashboard](/docs/projects/overview#resuming-a-project) or the [Vercel REST API](/docs/rest-api/reference/endpoints/projects/unpause-a-project).
+Projects need to be resumed on an individual basis, either [through the dashboard](/docs/projects#resuming-a-project) or the [Vercel REST API](/docs/rest-api/projects/unpause-a-project).
 
 Projects won't automatically unpause if you increase the spend amount, you must resume each project manually.
 
 ## Configuring a webhook
 
-You can configure a webhook URL to trigger events such as serving a static version of your site, [pausing a project](/docs/projects/overview#pausing-a-project), or sending a Slack notification.
+You can configure a webhook URL to trigger events such as serving a static version of your site, [pausing a project](/docs/projects#pausing-a-project), or sending a Slack notification.
 
 Vercel will send a [HTTPS POST request](#webhook-payload) to the URL that you provide when the following events happen:
 
@@ -165,7 +185,7 @@ Sent when the billing cycle ends. You can use this event to resume paused projec
 
 ## Spend Management activity
 
-Vercel displays all spend management activity in the [**Activity** section in your team dashboard sidebar](/docs/observability/activity-log). This includes spend amount creation and updates, and project pausing and unpausing.
+Vercel displays all spend management activity in the [**Activity** section in your team dashboard sidebar](/docs/activity-log). This includes spend amount creation and updates, and project pausing and unpausing.
 
 ## More resources
 

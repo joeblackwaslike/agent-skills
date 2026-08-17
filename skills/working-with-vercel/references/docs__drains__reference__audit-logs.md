@@ -16,13 +16,28 @@ related:
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "174ba60802f510fea3ee0f350e0226894d89f438612a9f714761b41d4a294e47"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9b33b06845549cc3f5819a5d8e2f977c09110f56c8c4001033dbd53ff1db2b5e"
 ---
 
 # Audit Log Drains Reference
 
 > **🔒 Permissions Required**: Audit Log Drains
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Logs](https://vercel.com/docs/drains/reference/logs?from=related) — Learn about Log Drains - data formats, sources, environments, and security configuration.
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Speed Insights](https://vercel.com/docs/drains/reference/speed-insights?from=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+
+Full cross-link map for this page: [/docs/drains/reference/audit-logs.graph.md](/docs/drains/reference/audit-logs.graph.md)
+<!-- /docsgraph:related -->
 
 Audit Log Drains forward team activity events to external endpoints for storage, compliance review, and analysis. Vercel sends Audit Log events to custom HTTP endpoints over HTTPS when team activity creates audit log records.
 

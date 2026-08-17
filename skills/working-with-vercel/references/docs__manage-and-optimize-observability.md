@@ -16,13 +16,28 @@ related:
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "28cc3941f2fb1cb5195549b6ccd7739725008578730b33fed82b76068923d931"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6a72fb3073f25cae755d88066fb1eda7f3c03401de273a4428ce608862b77c7c"
 ---
 
 # Manage and optimize usage for Observability
 
 The Observability section covers usage for Observability, Monitoring, Web Analytics, and Speed insights.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Pricing](https://vercel.com/docs/analytics/limits-and-pricing?from=related) — Learn about pricing for Vercel Web Analytics.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+
+Full cross-link map for this page: [/docs/manage-and-optimize-observability.graph.md](/docs/manage-and-optimize-observability.graph.md)
+<!-- /docsgraph:related -->
 
 ## Plan usage
 
@@ -76,7 +91,7 @@ Events are single units of information that represent a measurement of a specifi
 > Plus to get access to additional product features with a longer retention
 > period with no base fee.
 
-Vercel creates an event each time a request is made to your website. These events include unique parameters such as execution time and bandwidth used. For a complete list, see the [visualize](/docs/observability/monitoring/monitoring-reference#visualize) and [group by](/docs/observability/monitoring/monitoring-reference#group-by) docs.
+Vercel creates an event each time a request is made to your website. These events include unique parameters such as execution time and bandwidth used. For a complete list, see the [visualize](/docs/query/monitoring/monitoring-reference#visualize) and [group by](/docs/query/monitoring/monitoring-reference#group-by) docs.
 
 Monitoring is deprecated and no longer exposed as a current top-level pricing resource. If you are still using Monitoring, migrate to Observability Plus for usage-based pricing and current observability features.
 

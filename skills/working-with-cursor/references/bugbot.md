@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/bugbot.md"
-fetched_at: "2026-08-10T05:28:37.963Z"
-sha256: "7fdf80a534aeaef58cd5a457c04d115191bd0b337270406bedaae9ecac927857"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "4e7061ce98c5d7d37105b25733e72439e6b9f3e58cf7de73bfc3e2d7f8a2b038"
 ---
 
 # Bugbot
@@ -29,12 +29,13 @@ Connect your repositories through the Cursor dashboard to start using Bugbot.
 - **GitHub** (including GitHub Enterprise Server): See the [GitHub integration page](https://cursor.com/docs/integrations/github.md)
 - **GitLab** (including GitLab Self-Hosted): See the [GitLab integration page](https://cursor.com/docs/integrations/gitlab.md)
 - **Bitbucket** (including Bitbucket Data Center): See the [Bitbucket integration page](https://cursor.com/docs/integrations/bitbucket.md)
+- **Azure DevOps** (Azure DevOps Services, limited availability): See the [Azure DevOps integration page](https://cursor.com/docs/integrations/azure-devops.md#set-up-bugbot)
 
 After connecting, open [Bugbot in Automations](https://cursor.com/automations/from-cursor/bugbot) to enable it on specific repositories.
 
 ## CI check statuses
 
-Bugbot publishes a status for each review run. On GitHub, this appears as a check named `Cursor Bugbot`. On Bitbucket, this appears as a build status with the key `cursor-bugbot`. The status uses these conclusions:
+Bugbot publishes a status for each review run. On GitHub, this appears as a check named `Cursor Bugbot`. On Bitbucket, this appears as a build status with the key `cursor-bugbot`. On Azure DevOps, this appears as a status with the context `cursor-bugbot/review`. The status uses these conclusions:
 
 - `success`: Bugbot found no issues, and there are no unresolved Bugbot comments from earlier runs.
 - `neutral`: Bugbot found issues, the run was cancelled by a newer commit, or Bugbot hit an internal error. This is the default conclusion when Bugbot reports findings.

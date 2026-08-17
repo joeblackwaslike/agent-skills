@@ -15,13 +15,28 @@ related:
 summary: Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-s3.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "4555b2a8a27fc33bfef31b6c951ee5e29303b8a48bb55695f89ef616bf2fbc2b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "20044c8a395b30c4d2f5069eb9ee0c6dddb2d621881b8bacd340ecb5cdeebaa5"
 ---
 
 # Drain Audit Logs to S3
 
 > **🔒 Permissions Required**: Audit Log Drains
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk?from=related) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \(HEC\).
+- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+
+Full cross-link map for this page: [/docs/drains/audit-logs-to-s3.graph.md](/docs/drains/audit-logs-to-s3.graph.md)
+<!-- /docsgraph:related -->
 
 Audit Log Drains can write team activity events directly to your Amazon S3 bucket. Use this setup when you want audit logs stored in your AWS account for security archives, compliance retention, or downstream analysis.
 

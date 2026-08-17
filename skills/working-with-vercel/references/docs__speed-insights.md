@@ -16,13 +16,33 @@ related:
 summary: "This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2261d0a2080dc8e79a4f6849ca30ce671aac18b81675e90db32cc54ed6f5b140"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b58efef6ff28c1ca8df342d889456a3be2192488eb6543b10d69a74372d4ae6a"
 ---
 
 # Speed Insights Overview
 
 > **🔒 Permissions Required**: Speed Insights
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [First Input Delay \(FID\) vs. Interaction to Next Paint \(INP\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint?from=related) — Learn about the differences between FID and INP and how to optimize your website's INP score.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Vercel Agent](https://vercel.com/docs/agent?from=related) — Use Vercel Agent to chat with your dashboard, investigate production issues, review code, and approve actions
+- [Checks](https://vercel.com/docs/checks?from=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
+
+Full cross-link map for this page: [/docs/speed-insights.graph.md](/docs/speed-insights.graph.md)
+<!-- /docsgraph:related -->
 
 - To set up Speed Insights for your project, see the [Quickstart](/docs/speed-insights/quickstart).
 - To understand who is visiting your site, use [Web Analytics](/docs/analytics).

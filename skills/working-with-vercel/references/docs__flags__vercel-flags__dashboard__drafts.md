@@ -16,13 +16,29 @@ related:
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "9cdd4a2a36ae39b45079e043c0aecdc6bba6ad5090c19ac0e6d0405d4733f04e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d53f8bdf86e345f837ab063eafddde7ebee82c1c94135c287c4b39934e691b69"
 ---
 
 # Draft Flags
 
 Drafts are flags that Vercel detects in your code but haven't been created in the dashboard yet. They let you define flags in code first, then configure them in the dashboard when you're ready.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [Roll Out a Feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
+- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/drafts.graph.md](/docs/flags/vercel-flags/dashboard/drafts.graph.md)
+<!-- /docsgraph:related -->
 
 ## How drafts work
 

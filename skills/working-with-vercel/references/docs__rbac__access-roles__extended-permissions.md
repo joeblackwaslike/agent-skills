@@ -13,13 +13,28 @@ related:
 summary: "Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise access control."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/extended-permissions.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5efe2687bf93dfb8d2653e0c060d6ad304beaab2b3d64bc2a1d7528f9ea24880"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8d8db403062f4b02cdfef7ad62aa3c8f98b226978a7fed74cd03bd346897e947"
 ---
 
 # Extended permissions
 
 Vercel's Role-Based Access Control (RBAC) system consists of three main components:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related) — Learn about the project level roles and their permissions.
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related) — Learn about the different team level roles and the permissions they provide.
+- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+
+Full cross-link map for this page: [/docs/rbac/access-roles/extended-permissions.graph.md](/docs/rbac/access-roles/extended-permissions.graph.md)
+<!-- /docsgraph:related -->
 
 - **Team roles**: Core roles that define a user's overall access level within a team
 - **Project roles**: Roles that apply to specific projects rather than the entire team
@@ -47,6 +62,7 @@ Extended permissions add granular capabilities that can be combined with roles:
 |      | Deploy to production from CLI, rollback and promote any deployment.         | [Developer](/docs/rbac/access-roles#developer-role), [Contributor](/docs/rbac/access-roles#contributor-role)                                                                                                                                                    | [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role)   |
 |                                  | Read-only usage team-wide including prices and invoices.                    | [Developer](/docs/rbac/access-roles#developer-role), [Security](/docs/rbac/access-roles#security-role), [Member](/docs/rbac/access-roles#member-role), [Viewer](/docs/rbac/access-roles#viewer-role)                                                            | [Owner](/docs/rbac/access-roles#owner-role), [Billing](/docs/rbac/access-roles#billing-role) |
 |                    | Install and use Vercel integrations, marketplace integrations, and storage. | [Developer](/docs/rbac/access-roles#developer-role), [Security](/docs/rbac/access-roles#security-role), [Billing](/docs/rbac/access-roles#billing-role), [Viewer](/docs/rbac/access-roles#viewer-role), [Contributor](/docs/rbac/access-roles#contributor-role) | [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role)   |
+|                        | Create and manage team-wide connectors, project connections, installations, and tokens. | [Developer](/docs/rbac/access-roles#developer-role), [Security](/docs/rbac/access-roles#security-role), [Billing](/docs/rbac/access-roles#billing-role), [Viewer](/docs/rbac/access-roles#viewer-role), [Contributor](/docs/rbac/access-roles#contributor-role) | [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role)   |
 |                    | Create and manage project environments.                                     | [Developer](/docs/rbac/access-roles#developer-role), [Member](/docs/rbac/access-roles#member-role)                                                                                                                                                              | [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role)   |
 |  | Create and manage environment variables.                                    | [Developer](/docs/rbac/access-roles#developer-role)                                                                                                                                                                                                             | [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role)   |
 
@@ -60,11 +76,11 @@ Team roles provide the foundation of access control. Each role has a specific sc
 | ----------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **[Owner](/docs/rbac/access-roles#owner-role)**             | Complete control over all team and project settings                    | All extended permissions (already includes all permissions by default)                                                                                                                                                                                                                                                    |
 | **[Member](/docs/rbac/access-roles#member-role)**           | Can manage projects but not team settings                              | - [Environment Manager](#environment-manager)  - [Usage Viewer](#usage-viewer)                                                                                                                                                                                                                                       |
-| **[Developer](/docs/rbac/access-roles#developer-role)**     | Can deploy and manage projects with limitations on production settings | - [Create Project](#create-project)  - [Full Production Deployment](#full-production-deployment)  - [Usage Viewer](#usage-viewer)  - [Integration Manager](#integration-manager)  - [Environment Manager](#environment-manager)  - [Environment Variable Manager](#environment-variable-manager) |
-| **[Billing](/docs/rbac/access-roles#billing-role)**         | Manages financial aspects only                                         | - [Integration Manager](#integration-manager)                                                                                                                                                                                                                                                                             |
-| **[Security](/docs/rbac/access-roles#security-role)**       | Manages security features team-wide                                    | - [Usage Viewer](#usage-viewer)  - [Integration Manager](#integration-manager)                                                                                                                                                                                                                                       |
-| **[Viewer](/docs/rbac/access-roles#viewer-role)**           | Read-only access to all projects                                       | - [Usage Viewer](#usage-viewer)  - [Integration Manager](#integration-manager)                                                                                                                                                                                                                                       |
-| **[Contributor](/docs/rbac/access-roles#contributor-role)** | Configurable role that can be assigned project-level roles             | - [Full Production Deployment](#full-production-deployment)  - [Integration Manager](#integration-manager)  See project-level table for compatible project roles and permissions                                                                                                                                |
+| **[Developer](/docs/rbac/access-roles#developer-role)**     | Can deploy and manage projects with limitations on production settings | - [Create Project](#create-project)  - [Full Production Deployment](#full-production-deployment)  - [Usage Viewer](#usage-viewer)  - [Integration Manager](#integration-manager)  - [Connector Manager](#connector-manager)  - [Environment Manager](#environment-manager)  - [Environment Variable Manager](#environment-variable-manager) |
+| **[Billing](/docs/rbac/access-roles#billing-role)**         | Manages financial aspects only                                         | - [Integration Manager](#integration-manager)  - [Connector Manager](#connector-manager)                                                                                                                                                                                                                             |
+| **[Security](/docs/rbac/access-roles#security-role)**       | Manages security features team-wide                                    | - [Usage Viewer](#usage-viewer)  - [Integration Manager](#integration-manager)  - [Connector Manager](#connector-manager)                                                                                                                                                                                        |
+| **[Viewer](/docs/rbac/access-roles#viewer-role)**           | Read-only access to all projects                                       | - [Usage Viewer](#usage-viewer)  - [Integration Manager](#integration-manager)  - [Connector Manager](#connector-manager)                                                                                                                                                                                        |
+| **[Contributor](/docs/rbac/access-roles#contributor-role)** | Configurable role that can be assigned project-level roles             | - [Full Production Deployment](#full-production-deployment)  - [Integration Manager](#integration-manager)  - [Connector Manager](#connector-manager)  See project-level table for compatible project roles and permissions                                                                                  |
 
 ## How combinations work
 

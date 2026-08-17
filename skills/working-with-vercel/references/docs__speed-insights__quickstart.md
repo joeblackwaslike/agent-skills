@@ -9,20 +9,38 @@ prerequisites:
   - /docs/speed-insights
 related:
   - /docs/speed-insights/package
-  - /docs/frameworks/astro
+  - /docs/frameworks/frontend/astro
   - /docs/cdn
   - /docs/git
   - /docs/speed-insights/using-speed-insights
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "6f605dc58063e2537933d5574d9ccb8835edadf0be4ec3b5568b3644cdc00ca3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "441ff48c35231da20b1d0178579e4de162915496e174ae60e4dacf35fc483d09"
 ---
 
 # Getting started with Speed Insights
 
 This guide will help you get started with using Vercel Speed Insights on your project, showing you how to enable it, add the package to your project, deploy your app to Vercel, and view your data in the dashboard.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
+- [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Getting Started](https://vercel.com/docs/image-optimization/quickstart?from=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+
+Full cross-link map for this page: [/docs/speed-insights/quickstart.graph.md](/docs/speed-insights/quickstart.graph.md)
+<!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: Speed Insights
 
@@ -236,7 +254,7 @@ To view instructions on using the Vercel Speed Insights in your project for your
   injectSpeedInsights();
   ```
   > For \['astro']:
-  Speed Insights is available for both [static](/docs/frameworks/astro#static-rendering) and [SSR](/docs/frameworks/astro#server-side-rendering) Astro apps.
+  Speed Insights is available for both [static](/docs/frameworks/frontend/astro#static-rendering) and [SSR](/docs/frameworks/frontend/astro#server-side-rendering) Astro apps.
 
   To enable this feature, declare the `<SpeedInsights />` component from `@vercel/speed-insights/astro` near the bottom of one of your layout components, such as `BaseHead.astro`:
   ```tsx filename="BaseHead.astro" framework=astro

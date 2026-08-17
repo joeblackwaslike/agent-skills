@@ -13,13 +13,35 @@ related:
 summary: Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "1f56b6327caa1f0582821892301d6e3f38c402d44ddbd73175304abcd7fb782d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b1ac82f0387d30abd0d35a4c819a5a3639bd4085adb965a7ea8d9081c8888886"
 ---
 
 # Tool Calls
 
 The Chat Completions API supports function calling, allowing models to call tools and functions. This follows the same specification as the [OpenAI Function Calling API](https://platform.openai.com/docs/guides/function-calling).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling?from=related) — Use function calling with the Anthropic Messages API to allow models to call tools and functions.
+- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling?from=related) — Define tools the model can call using the OpenResponses API.
+- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related)
+- [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool?from=related) — Learn what tools are, how tool calling works, and how you can use them to build agents.
+- [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling?from=related) — Define tools the model can call with the OpenAI Responses API.
+- [Call Tools](https://ai-sdk.dev/cookbook/next/call-tools?from=related)
+- [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related)
+- [Tools](https://eve.dev/docs/tools?from=related) — Define typed actions the agent can call, and gate sensitive ones on human approval.
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
+- [AI SDK Tools](https://chat-sdk.dev/docs/ai/ai-sdk-tools?from=related) — Give an AI agent the ability to operate inside your workspace. Post messages, send DMs, react, edit, delete; all with bu
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.graph.md)
+<!-- /docsgraph:related -->
 
 #### Basic tool calls
 

@@ -16,13 +16,33 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "397fd91b6682912f1feb115b81abb3dfa036906fa8fe239d2dd2d2700e3bb90f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7ce9493e54f616c2108aeae0087cd3329ff274cfbb72687b55eb4cbd542bbc94"
 ---
 
 # Storage on Vercel Marketplace
 
 > **🔒 Permissions Required**: Marketplace Storage Integrations
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+
+Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md)
+<!-- /docsgraph:related -->
 
 The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provides integrations with different storage providers to provision databases and data stores directly from your Vercel dashboard.
 
@@ -148,10 +168,10 @@ Consider these factors when selecting a storage provider:
 - **Locate data close to your Functions:** Deploy databases in [regions](/docs/functions/configuring-functions/region) near your Functions to minimize latency.
 - **Use connection pooling:** In serverless environments, use [connection pooling](/kb/guide/connection-pooling-with-functions) (e.g., built-in pooling or PgBouncer) to manage database connections efficiently.
 - **Implement caching strategies:**
-  - [Data Cache](/docs/runtime-cache/data-cache) to cache fetch responses and reduce load
+  - [Data Cache](/docs/caching/runtime-cache/data-cache) to cache fetch responses and reduce load
   - [Global Config](/docs/global-config) for low-latency reads of config data
   - Redis for frequently accessed, periodically changing data
-  - CDN caching with [cache headers](/docs/cdn-cache) for static content
+  - CDN caching with [cache headers](/docs/caching/cdn-cache) for static content
 - **Secure your connections:**
   - Store credentials only in [environment variables](/docs/environment-variables), never in code
   - Use SSL/TLS connections when available

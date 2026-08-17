@@ -13,13 +13,29 @@ related:
 summary: Reserved environment variables are reserved by Vercel Vercel Function runtimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/reserved-environment-variables.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e280fa29f042953251e5359237decb589a349b4102568c9adf55d7a205434ee4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "94aa44f0d41640c4d0f911be293aeedeae3a6830e9ef72e4a1a89d78f9bf59ae"
 ---
 
 # Reserved environment variables
 
 The following [environment variable](/docs/environment-variables) names are [reserved](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime) and therefore unavailable for use:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
+- [Sensitive Environment Variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related) — Environment variables that cannot be decrypted once created.
+- [Limits](https://vercel.com/docs/functions/limitations?from=related) — Learn about the limits and restrictions of using Vercel Functions.
+- [System Environment Variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Shared Environment Variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+
+Full cross-link map for this page: [/docs/environment-variables/reserved-environment-variables.graph.md](/docs/environment-variables/reserved-environment-variables.graph.md)
+<!-- /docsgraph:related -->
 
 - `AWS_SECRET_KEY`
 - `AWS_EXECUTION_ENV`

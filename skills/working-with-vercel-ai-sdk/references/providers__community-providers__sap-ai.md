@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sap-ai.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "73ea21a56f1a21866cbfc30bd119a3892a68b99bd48e61dbc321b8bb9eef36de"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "289901746db35f3ce0423fa0328101aef87282757ad861422e57c6cc53cf6c37"
 ---
 
 # SAP AI Core Provider
@@ -156,6 +156,7 @@ const model = sapai.embeddingModel('text-embedding-3-small');
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

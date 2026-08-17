@@ -16,13 +16,32 @@ related:
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fbdc749818fdf19d3ce6b39a30e90a5b4c94820000dd08198990a3ba39d9e487"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6ceb6bed042c3b967b00cfe390182e3daf7b54d01198cfa62c84c46bd33ad4b6"
 ---
 
 # Integrating Vercel and Kubernetes
 
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications. It has become a popular and powerful way for companies to manage their applications.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Does Vercel support Kubernetes?](https://vercel.com/kb/guide/vercel-kubernetes-support?from=related) — Vercel doesn't run Kubernetes clusters. Learn how Kubernetes workloads like Deployments, Ingress, ConfigMaps, and CronJo
+- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+
+Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md)
+<!-- /docsgraph:related -->
 
 You can integrate Vercel with your existing Kubernetes infrastructure to optimize the delivery of your frontend applications—reducing the number of services your teams need to manage, while still taking advantage of Kubernetes for your backend and other containerized workloads.
 
@@ -71,7 +90,7 @@ Every deploy is immutable, and these generated domains act as pointers. Revertin
 
 In a Kubernetes environment, you need to implement security measures such as Role-Based Access Control (RBAC), network policies, secrets management, and environment variables to protect the cluster and its resources. This often involves configuring access controls, integrating with existing identity providers (if necessary), and setting up user accounts and permissions. Regular maintenance of the Kubernetes environment is needed for security patches, version updates, and dependency management to defend against vulnerabilities.
 
-With Vercel, you can securely configure [environment variables](/docs/environment-variables) and manage [user access, roles, and permissions](/docs/accounts/team-members-and-roles) in the Vercel dashboard. Vercel handles all underlying infrastructure updates and security patches, ensuring your deployment environment is secure and up-to-date.
+With Vercel, you can securely configure [environment variables](/docs/environment-variables) and manage [user access, roles, and permissions](/docs/rbac) in the Vercel dashboard. Vercel handles all underlying infrastructure updates and security patches, ensuring your deployment environment is secure and up-to-date.
 
 ## Observability
 
@@ -110,10 +129,10 @@ By migrating just your frontend to Vercel, you drastically reduce the operationa
 To incrementally move your frontend applications to Vercel:
 
 - ### Create a Vercel account and team
-  Start by [creating a Vercel account](/signup) and [team](/docs/accounts/create-a-team), if needed.
+  Start by [creating a Vercel account](/signup) and [team](/docs/accounts#creating-a-team), if needed.
 
 - ### Create two versions of your frontend codebase
-  Keep your current frontend running in Kubernetes for now. Create a fork or a branch of your frontend codebase and connect it to a [new Vercel project](/docs/projects/overview#creating-a-project).
+  Keep your current frontend running in Kubernetes for now. Create a fork or a branch of your frontend codebase and connect it to a [new Vercel project](/docs/projects#creating-a-project).
 
   Once connected, Vercel will automatically build and deploy your application. It’s okay if the first deployment fails. [View the build logs](/docs/deployments/logs) and [troubleshoot the build](/docs/deployments/troubleshoot-a-build) failures. Changes might include:
   - Adjustments to build scripts
@@ -126,17 +145,17 @@ To incrementally move your frontend applications to Vercel:
   The goal is to use the Preview Deployment to test the integration with your Kubernetes-hosted backends, ensuring that API calls and data flow work as expected.
 
 - ### Set up users and integrations
-  Use [Vercel’s dashboard](/dashboard) to securely manage [user access, roles, and permissions](/docs/accounts/team-members-and-roles), so your team can collaborate on the project.
+  Use [Vercel’s dashboard](/dashboard) to securely manage [user access, roles, and permissions](/docs/rbac), so your team can collaborate on the project.
   - [Add team members and assign roles](/docs/rbac/managing-team-members#adding-team-members-and-assigning-roles) ([SAML SSO](/docs/saml) is available on [Enterprise plans](/docs/plans/enterprise))
   - [Add integrations](/integrations) to any existing services and tools your team uses
 
 - ### Begin a full or gradual rollout
   Once your preview deployment is passing all tests, and your team is happy with it, you can start to roll it out.
 
-  We recommend following our [incremental migration guide](/docs/incremental-migration/migration-guide) or our [Vercel Adoption](/resources/the-architects-guide-to-adopting-vercel) guide to help you serve traffic to a Vercel-hosted frontend for any new paths and seamlessly fallback to your existing server for any old paths.
+  We recommend following our [incremental migration guide](/docs/incremental-migration) or our [Vercel Adoption](/resources/the-architects-guide-to-adopting-vercel) guide to help you serve traffic to a Vercel-hosted frontend for any new paths and seamlessly fallback to your existing server for any old paths.
 
   Some other tools or strategies you may want to use:
-  - [Feature Flags on Vercel](/docs/feature-flags)
+  - [Feature Flags on Vercel](/docs/flags)
   - [A/B Testing on Vercel](/kb/guide/ab-testing-on-vercel)
   - [Implementing Blue-Green Deployments on Vercel](/kb/guide/blue_green_deployments_on_vercel)
   - [Transferring Domains to Vercel](/kb/guide/transferring-domains-to-vercel)

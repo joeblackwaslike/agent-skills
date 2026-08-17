@@ -15,13 +15,31 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a4ab7c622e4211a6b69e3751c98573998b5d6c04a1c41a990a515039b6be3ef5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "2e65422a40d5f3ff98e1c2a3ec1e1603480529c5266655a95f0a597fc60c4fcf"
 ---
 
 # Using OpenFeature with Vercel Flags
 
 [OpenFeature](https://openfeature.dev/) is a vendor-neutral, open standard for feature flags. Vercel Flags provides an OpenFeature provider so you can use the standard OpenFeature API while Vercel manages your flags.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Web Analytics](https://vercel.com/docs/flags/observability/web-analytics?from=related) — Learn how to tag your page views and custom events with feature flags
+- [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related) — View and override your application's feature flags from the Vercel Toolbar
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/openfeature.graph.md](/docs/flags/vercel-flags/sdks/openfeature.graph.md)
+<!-- /docsgraph:related -->
 
 The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers creating a flag in the dashboard, pulling local OpenID Connect (OIDC) credentials, and evaluating a flag with OpenFeature. This page goes deeper into initialization options, typed evaluation methods, context passing, and debugging.
 

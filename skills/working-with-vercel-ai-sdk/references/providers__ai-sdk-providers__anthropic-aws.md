@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "e5d5b2be011aa764d6044e35e81bc62a34de759628ecd3c13d00d03f8e64f5d4"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "3c4516e0eb024b9b813734cb8ed6361f4494222cfa6303e7aefe05236f311261"
 ---
 
 # Claude Platform on AWS Provider
@@ -143,7 +143,6 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -153,6 +152,7 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

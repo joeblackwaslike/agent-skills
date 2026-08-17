@@ -16,13 +16,32 @@ related:
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7c211447a95c0a1db9885ced929e6e70522cb9dea5d1457667927e46be55060d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "db1aab8b2da37a1bd9013dfb4c167b988c9e1da264748ed9ee0aecac75798182"
 ---
 
 # Fair Use Guidelines
 
 Vercel usage is subject to these fair use guidelines across plans and usage-based resources. Below is a rule-of-thumb for determining which projects fall within our definition of "fair use" and which do not.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can Vercel sponsor my open source project?](https://vercel.com/kb/guide/can-vercel-sponsor-my-open-source-project?from=related) — Information on how Vercel can sponsor your open source project and how to apply.
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel?from=related) — Learn how to perform pentesting on Vercel.
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [Legacy Pricing](https://vercel.com/docs/image-optimization/legacy-pricing?from=related) — This page outlines information on the pricing and limits for the source images-based legacy option.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+
+Full cross-link map for this page: [/docs/limits/fair-use-guidelines.graph.md](/docs/limits/fair-use-guidelines.graph.md)
+<!-- /docsgraph:related -->
 
 ### Examples of fair use
 

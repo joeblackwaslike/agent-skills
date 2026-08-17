@@ -15,13 +15,30 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "68851083c3b907f31de21039d89794ae586d174ed3a909e31be4be4e0d253a38"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7713ba2fa37fbcd7c84f43d93bd367502e06014545d6bcdf6845ef45e19c4622"
 ---
 
 # Reference
 
 > **🔒 Permissions Required**: Flags Explorer
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Use feature flags in Fumadocs with the Vercel Toolbar](https://vercel.com/kb/guide/use-feature-flags-in-fumadocs-with-the-vercel-toolbar?from=related) — Control documentation visibility with feature flags. Hide inline content, entire pages, and navigation items based on fl
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
+- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related)
+
+Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
+<!-- /docsgraph:related -->
 
 The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint), the [FLAGS\_SECRET environment variable](/docs/flags/flags-explorer/reference#flags_secret-environment-variable), the [override cookie](/docs/flags/flags-explorer/reference#override-cookie), [flag definitions](/docs/flags/flags-explorer/reference#definitions), and [flag values](/docs/flags/flags-explorer/reference#values).
 

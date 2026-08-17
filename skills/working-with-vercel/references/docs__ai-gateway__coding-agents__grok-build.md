@@ -10,16 +10,33 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/authentication-and-byok
+  - /docs/cli/ai-gateway
 summary: Use Grok Build with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "31c9172a3a3c5b2226c89d1c01eb5cbac89f5fbd5c558538290d6386c38d920c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9620454141dab231050c577b63b0abe041c59284114efebac022b230129e4557"
 ---
 
 # Grok Build
 
-[Grok Build](https://docs.x.ai/build/overview) is xAI's terminal-based coding agent. Point it at AI Gateway to:
+[Grok Build](https://docs.x.ai/build/overview) is SpaceXAI's terminal-based coding agent. Point it at AI Gateway to:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Grok Build](https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build?from=related)
+- [Groq](https://vercel.com/docs/agent-resources/integrations-for-models/groq?from=related) — Learn how to add the Groq native integration with Vercel.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
+- [Integrations for Models](https://vercel.com/docs/agent-resources/integrations-for-models?from=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/grok-build.graph.md](/docs/ai-gateway/coding-agents/grok-build.graph.md)
+<!-- /docsgraph:related -->
 
 - Use any model available through the gateway
 - Monitor traffic and spend in your AI Gateway Overview
@@ -31,7 +48,7 @@ Set two environment variables and every request routes through AI Gateway, with 
 ## Configuring Grok Build
 
 - ### Install Grok Build
-  Follow the [installation instructions in the xAI documentation](https://docs.x.ai/build/overview). Verify the install:
+  Follow the [installation instructions in the SpaceXAI documentation](https://docs.x.ai/build/overview). Verify the install:
   ```bash
   grok --version
   ```
@@ -39,10 +56,12 @@ Set two environment variables and every request routes through AI Gateway, with 
 - ### Point Grok Build at AI Gateway
   Set both variables in your shell configuration file, for example `~/.zshrc` or `~/.bashrc`:
   ```bash
-  export GROK_MODELS_BASE_URL="https://ai-gateway.vercel.sh/v1"
+  export GROK_MODELS_BASE_URL="https://ai-gateway.vercel.sh/coding-agent/v1"
   export GROK_CODE_XAI_API_KEY="your-ai-gateway-api-key"
   ```
   Replace `your-ai-gateway-api-key` with a key from the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys). See [API key authentication](/docs/ai-gateway/authentication-and-byok) for details.
+
+  `https://ai-gateway.vercel.sh/coding-agent/v1` is the [coding agent surface](/docs/cli/ai-gateway#the-coding-agent-surface), the default base URL for agents that have no dedicated endpoint. It passes through to the gateway's standard `/v1` handlers, so routing, billing, and errors are unchanged.
 
   Reload your shell:
   ```bash
@@ -78,7 +97,7 @@ Grok Build's web search tool requires a separate model configured to use the Ope
   ```toml filename="~/.grok/config.toml"
   [model.vercel-search]
   model = "xai/grok-4.5"
-  base_url = "https://ai-gateway.vercel.sh/v1"
+  base_url = "https://ai-gateway.vercel.sh/coding-agent/v1"
   api_backend = "responses"
   ```
 

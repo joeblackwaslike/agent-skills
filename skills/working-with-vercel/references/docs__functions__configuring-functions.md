@@ -16,13 +16,29 @@ related:
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b5b393f322af2c535a1f50a288c73b5db46342a0ed68672cfafb82cbcd297bf2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5cf9d32392c6ece7f71ae3904e0edd551b57630a7af9d48803a9cca92ff8a6bc"
 ---
 
 # Configuring Functions
 
 You can configure Vercel functions in many ways, including the runtime, region, maximum duration, and memory.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Getting Started](https://vercel.com/docs/functions/quickstart?from=related) — Build your first Vercel Function in a few steps.
+- [Python](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related) — Learn about available APIs when working with Vercel Functions in Python.
+- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Rust](https://vercel.com/docs/functions/runtimes/rust?from=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Ruby](https://vercel.com/docs/functions/runtimes/ruby?from=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
+
+Full cross-link map for this page: [/docs/functions/configuring-functions.graph.md](/docs/functions/configuring-functions.graph.md)
+<!-- /docsgraph:related -->
 
 With different configurations, particularly the runtime configuration, there are a number of trade-offs and limits that you should be aware of. For more information, see the [runtimes](/docs/functions/runtimes) comparison.
 

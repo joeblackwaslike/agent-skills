@@ -16,13 +16,29 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "50476353a79470f49f3c3fda8d236cc1322697f820f7044c9c313eaa18899c8e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d876ac8edc9f7dbcf249091b04a7faf05e222ffa2048077fcb3c6f579cab5b69"
 ---
 
 # Vercel Hobby Plan
 
 The Hobby plan is **free** and aimed at developers with personal projects, and small-scale applications. It offers a generous set of features for individual users on a **per month** basis:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related) — Learn about using Observability Plus and its limits.
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro?from=related) — Learn about free domain with pro on Vercel.
+
+Full cross-link map for this page: [/docs/plans/hobby.graph.md](/docs/plans/hobby.graph.md)
+<!-- /docsgraph:related -->
 
 | Resource                                                                                            | Hobby Included Usage |
 | --------------------------------------------------------------------------------------------------- | -------------------- |
@@ -79,15 +95,15 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 | [Activity Logs](/docs/activity-log) | Available | Available |
 | [Runtime Logs](/docs/logs/runtime) | 1 hour of logs | 1 day of logs |
 | [DDoS Mitigation](/docs/vercel-firewall/ddos-mitigation) | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). |
-| [Vercel WAF IP Blocking](/docs/security/vercel-waf/ip-blocking) | Up to 3 | Up to 100 |
-| [Vercel WAF Custom Rules](/docs/security/vercel-waf/custom-rules) | Up to 3 | Up to 40 |
+| [Vercel WAF IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) | Up to 3 | Up to 100 |
+| [Vercel WAF Custom Rules](/docs/vercel-firewall/vercel-waf/custom-rules) | Up to 3 | Up to 40 |
 | Deployment Protection | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) (Add-on), [Sharable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) |
 
 ## Upgrading to Pro
 
 You can take advantage of Vercel's Pro trial to explore [Pro features](/docs/plans/pro-plan) for free during the trial period, with some [limitations](/docs/plans/pro-plan/trials#trial-limitations).
 
-The [free first-year domain offer](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades) for new Pro upgrades is not available during the Pro trial. It applies only after an eligible new paid Pro upgrade and must be claimed within 30 days.
+The [free first-year domain offer](/docs/plans/pro-plan#free-first-year-domain-with-pro) is not available during the Pro trial. It applies to paid Pro teams: a team becomes eligible once it is on a paid Pro plan.
 
 To upgrade from a Hobby plan:
 

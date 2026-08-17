@@ -16,13 +16,29 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7ad4f3b47872e7303cce0938ed6bfd61122ba437a56acc2fe52f2eaaa033979c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5707ddeace9cde1df2d0657279147653a0f47120aae9f2a4bb5a4b04cadbf023"
 ---
 
 # Global Config Limits and pricing
 
 A [Global Config](/docs/global-config) is a global data store that [enables experimentation with feature flags, A/B testing, critical redirects, and IP blocking](/docs/global-config#use-cases). It enables you to read data in the region closest to the user without querying an external database or hitting upstream servers.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Migration Guide](https://vercel.com/docs/global-config/migration-guide?from=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
+- [Getting Started](https://vercel.com/docs/global-config/get-started?from=related) — Learn how to create a Global Config store and read from it in your project.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related) — Learn how to use Global Config with Vercel's Statsig integration.
+
+Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md)
+<!-- /docsgraph:related -->
 
 Keep the number of stores to a minimum. Fewer large stores improve your overall latency.
 

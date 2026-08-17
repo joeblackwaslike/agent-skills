@@ -16,13 +16,30 @@ related:
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "70c0be66d26ef6253e941d6c3036944217d3ee32ebe69250030bb1f6c7072e0f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a245a2afcb02913ad876c4d22715a719991271f9e6e02e8f73bda7edecd4a36f"
 ---
 
 # Vercel Integrations
 
 Integrations allow you to extend the capabilities of Vercel by connecting with third-party platforms or services to do things like:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Deep Infra](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related) — Learn how to add the Deep Infra native integration with Vercel.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
+- [Checks](https://vercel.com/docs/checks?from=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
+
+Full cross-link map for this page: [/docs/integrations.graph.md](/docs/integrations.graph.md)
+<!-- /docsgraph:related -->
 
 - Work with [storage](/docs/storage) products from third-party solutions
 - Connect with external [AI](/docs/agent-resources/integrations-for-models) services
@@ -82,8 +99,9 @@ When you add a connectable account integration through the Vercel dashboard, you
 - [Contentful](/docs/integrations/cms/contentful)
 - [Sanity](/docs/integrations/cms/sanity)
 - [Sitecore XM Cloud](/docs/integrations/cms/sitecore)
-- [Shopify](/docs/integrations/ecommerce/shopify)
+- [Shopify](/kb/guide/deploy-headless-shopify-storefront-with-vercel)
 - [Kubernetes](/docs/integrations/external-platforms/kubernetes)
+- [Lovable](/docs/integrations/lovable)
 
 
 ---

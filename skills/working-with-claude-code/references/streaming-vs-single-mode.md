@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "c44c3c0fd613f8b104e9c461b67f58ce4542d2f740340fc46a51311da7901344"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "2069707484bdaf2f6b5cdf3d665fce355474b92481d903970b9e9d66a708fbff"
 ---
 
 > ## Documentation Index
@@ -18,8 +18,6 @@ The Claude Agent SDK supports two distinct input modes for interacting with agen
 
 * **Streaming Input Mode**: a persistent, interactive session
 * **Single Message Input**: one-shot queries that use session state and resuming
-
-This guide explains the differences, benefits, and use cases for each mode to help you choose the right approach for your application.
 
 ## Streaming Input Mode (Recommended)
 
@@ -67,27 +65,13 @@ sequenceDiagram
 
 ### Benefits
 
-<CardGroup cols={2}>
-  <Card title="Image Uploads" icon="image">
-    Attach images directly to messages for visual analysis and understanding
-  </Card>
+In streaming input mode, you work in a persistent session with these capabilities:
 
-  <Card title="Queued Messages" icon="stack">
-    Send multiple messages that process sequentially, with ability to interrupt
-  </Card>
-
-  <Card title="Tool Integration" icon="wrench">
-    Full access to all tools and custom MCP servers during the session
-  </Card>
-
-  <Card title="Real-time Feedback" icon="lightning">
-    See responses as they're generated, not just final results
-  </Card>
-
-  <Card title="Context Persistence" icon="database">
-    Maintain conversation context across multiple turns naturally
-  </Card>
-</CardGroup>
+* **Image uploads**: attach images directly to messages for visual analysis and understanding
+* **Queued messages**: send multiple messages that process sequentially, with ability to interrupt
+* **Tool integration**: full access to all tools and custom MCP servers during the session
+* **Real-time feedback**: see responses as they're generated, not just final results
+* **Context persistence**: maintain conversation context across multiple turns naturally
 
 ### Implementation Example
 

@@ -12,13 +12,30 @@ related:
 summary: "Learn how to configure your own API to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/api.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "3c2cd333c40af087f260b64b1bc3d720380d2227a11c3ad42c588cf1143ff176"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "92277e9616e5357a1e25aefb7979df8394a7692c4cb9c25db34e1ac664c7aa5a"
 ---
 
 # Connect to your own API
 
 > **🔒 Permissions Required**: Secure backend access with OIDC federation
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related) — An Access Token is required in order to use the Vercel API. Tokens can be created and managed at the level of your accou
+- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Azure](https://vercel.com/docs/oidc/azure?from=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
+- [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
+- [AWS](https://vercel.com/docs/oidc/aws?from=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+
+Full cross-link map for this page: [/docs/oidc/api.graph.md](/docs/oidc/api.graph.md)
+<!-- /docsgraph:related -->
 
 ## Validate the tokens
 
@@ -62,7 +79,7 @@ const ISSUER_URL = `https://oidc.vercel.com/[TEAM_SLUG]`;
 
 const JWKS = jose.createRemoteJWKSet(new URL(ISSUER_URL, '/.well-known/jwks'));
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   const token = req.headers['authorization']?.split('Bearer ')[1];
 
   if (!token) {
@@ -72,7 +89,7 @@ const server = http.createServer((req, res) => {
   }
 
   try {
-    const { payload } = jose.jwtVerify(token, JWKS, {
+    const { payload } = await jose.jwtVerify(token, JWKS, {
       issuer: ISSUER_URL,
       audience: 'https://vercel.com/[TEAM_SLUG]',
       subject:
@@ -93,8 +110,8 @@ server.listen(3000);
 Make sure that you:
 
 - Replace `[TEAM_SLUG]` with your team identifier from the Vercel's team URL
-- Replace `[PROJECT_NAME]` with your [project's name](https://vercel.com/docs/projects/overview#project-name) in your [project's
-  settings](https://vercel.com/docs/projects/overview#project-settings)
+- Replace `[PROJECT_NAME]` with your [project's name](https://vercel.com/docs/projects#project-name) in your [project's
+  settings](https://vercel.com/docs/projects#project-settings)
 - Replace `[ENVIRONMENT]` with one of Vercel's [environments](https://vercel.com/docs/deployments/environments#deployment-environments),
   `development`, `preview` or `production`
 
@@ -167,7 +184,7 @@ export const GET = async () => {
 When validating the token on your API server, update the expected `audience` to match:
 
 ```ts filename="server.ts"
-const { payload } = jose.jwtVerify(token, JWKS, {
+const { payload } = await jose.jwtVerify(token, JWKS, {
   issuer: ISSUER_URL,
   audience: 'https://api.example.com',
 });

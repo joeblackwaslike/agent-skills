@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/models-and-pricing.md"
-fetched_at: "2026-08-03T07:28:37.789Z"
-sha256: "dc6047420cf40f5dbd8b1bba85ef385c74eec182c26a00a41007e9abb01be06e"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "97524ba2f2826d386a8340c562702c4d618d8602feeef343835a5e0d63213cf2"
 ---
 
 # Models & Pricing
@@ -12,24 +12,27 @@ Cursor supports frontier models from OpenAI, Anthropic, Google, SpaceXAI, and mo
 
 There are two separate usage pools, each resetting with your monthly billing cycle:
 
-- **Cursor Models**: Significantly more included usage for Cursor Grok 4.5 and Composer 2.5.
+- **Cursor Models**: Significantly more included usage for Cursor Grok 4.6, Grok 4.5, and Composer 2.5.
 - **Other Models**: The pool for third-party models, charged at the model's API price. Pro, Pro Plus, and Ultra include at least $20 of third-party model usage each month (more on higher tiers) with the option to pay for additional usage as needed. The Start plan does not include this pool.
 
 Both pools are visible in your editor settings and on your [usage dashboard](https://cursor.com/dashboard/usage).
 
 ## Cursor Models
 
-The Cursor Models pool includes Cursor Grok 4.5 and Composer 2.5.
+The Cursor Models pool includes Cursor Grok 4.6, Grok 4.5, and Composer 2.5.
 
 On Teams and Enterprise plans, [Cursor Router](https://cursor.com/docs/cursor-router.md) picks the model for each Auto request based on your optimization mode.
 
-### Grok 4.5 pricing
+| Model                                                       | Provider | Input | Cache write | Cache read | Output | Notes                                                                                             |
+| ----------------------------------------------------------- | -------- | ----- | ----------- | ---------- | ------ | ------------------------------------------------------------------------------------------------- |
+| Grok 4.6                                                    | Cursor   | $2    | -           | $0.5       | $6     | Jointly trained by Cursor and SpaceXAI; 50% launch discount for one week starting August 12, 2026 |
+| Grok 4.6 (Fast)                                             | Cursor   | $4    | -           | $1         | $12    | Jointly trained by Cursor and SpaceXAI; 50% launch discount for one week starting August 12, 2026 |
+| Grok 4.5                                                    | Cursor   | $2    | -           | $0.5       | $6     | Jointly trained by Cursor and SpaceXAI                                                            |
+| Grok 4.5 (Fast)                                             | Cursor   | $4    | -           | $1         | $12    | Jointly trained by Cursor and SpaceXAI                                                            |
+| [Composer 2.5](https://cursor.com/blog/composer-2-5)        | Cursor   | $0.5  | -           | $0.2       | $2.5   | -                                                                                                 |
+| [Composer 2.5 (Fast)](https://cursor.com/blog/composer-2-5) | Cursor   | $3    | -           | $0.5       | $15    | -                                                                                                 |
 
-Grok 4.5 is jointly trained by Cursor and SpaceXAI for long-running coding and knowledge work.
-
-### Composer pricing
-
-Composer 2.5 is Cursor's own model, trained to be highly capable for agentic coding.
+A 50% launch discount for Grok 4.6 applies for one week starting August 12, 2026.
 
 ## Other Models
 
@@ -53,14 +56,15 @@ All prices are per million tokens:
 | [Claude Opus 4.7 (fast mode)](https://www.anthropic.com/claude/opus)                          | Anthropic | $30   | $37.5       | $3         | $150   | Hidden by default; Requires Max Mode on legacy request-based plans; Limited research preview; Up to 1M tokens with extended context at the same per-token rates as shorter context                                                                                                                                                                                                                                                            |
 | [Claude Opus 4.8](https://www.anthropic.com/claude/opus)                                      | Anthropic | $5    | $6.25       | $0.5       | $25    | Hidden by default; Requires Max Mode on legacy request-based plans; Fast mode (\`claude-opus-4-8-fast\`) requires Max Mode on legacy request-based plans; Fast mode is 3x lower per-token pricing than Opus 4.7 fast mode; Up to 1M tokens with extended context at the same per-token rates (no long-context surcharge)                                                                                                                      |
 | [Claude Opus 5](https://www.anthropic.com/claude/opus)                                        | Anthropic | $5    | $6.25       | $0.5       | $25    | Requires Max Mode on legacy request-based plans; Fast mode (\`claude-opus-5-fast\`) requires Max Mode on legacy request-based plans; Up to 1M tokens with extended context at the same per-token rates (no long-context surcharge)                                                                                                                                                                                                            |
-| [Claude Sonnet 5](https://www.anthropic.com/claude/sonnet)                                    | Anthropic | $3    | $3.75       | $0.3       | $15    | Launch promotion: $2/M input and $10/M output through August 31, 2026; Requires Max Mode on legacy request-based plans; Up to 1M tokens with extended context at the same per-token rates (no long-context surcharge); Uses an updated tokenizer, so the same input can map to more tokens                                                                                                                                                    |
+| [Claude Sonnet 5](https://www.anthropic.com/claude/sonnet)                                    | Anthropic | $2    | $2.5        | $0.2       | $10    | Requires Max Mode on legacy request-based plans; Up to 1M tokens with extended context at the same per-token rates (no long-context surcharge); Uses an updated tokenizer, so the same input can map to more tokens                                                                                                                                                                                                                           |
 | [Gemini 2.5 Flash](https://developers.googleblog.com/en/start-building-with-gemini-25-flash/) | Google    | $0.3  | -           | $0.03      | $2.5   | Hidden by default                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [Gemini 3 Flash](https://ai.google.dev/gemini-api/docs)                                       | Google    | $0.5  | -           | $0.05      | $3     | Hidden by default                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [Gemini 3 Pro](https://ai.google.dev/gemini-api/docs)                                         | Google    | $2    | -           | $0.2       | $12    | Hidden by default                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [Gemini 3 Pro Image Preview](https://ai.google.dev/gemini-api/docs)                           | Google    | $2    | -           | $0.2       | $12    | Hidden by default; Native image generation model optimized for speed, flexibility, and contextual understanding; Text input and output priced the same as Gemini 3 Pro; Image output: $120/1M tokens (\~$0.134 per 1K/2K image, \~$0.24 per 4K image); Preview models may change before becoming stable and have more restrictive rate limits                                                                                                 |
 | [Gemini 3.1 Pro](https://ai.google.dev/gemini-api/docs)                                       | Google    | $2    | -           | $0.2       | $12    | -                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [Gemini 3.5 Flash](https://ai.google.dev/gemini-api/docs)                                     | Google    | $1.5  | -           | $0.15      | $9     | Hidden by default                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| [Gemini 3.6 Flash](https://ai.google.dev/gemini-api/docs)                                     | Google    | $1.5  | -           | $0.15      | $7.5   | -                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| [Gemini 3.6 Flash](https://ai.google.dev/gemini-api/docs)                                     | Google    | $1.5  | -           | $0.15      | $7.5   | Hidden by default                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| [Gemini 3.7 Flash](https://ai.google.dev/gemini-api/docs)                                     | Google    | $0.75 | -           | $0.075     | $3.5   | -                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [GLM 5.2](https://z.ai)                                                                       | Z.ai      | $1.4  | -           | $0.26      | $4.4   | Hidden by default                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [GPT-5](https://openai.com/index/gpt-5/)                                                      | OpenAI    | $1.25 | -           | $0.125     | $10    | Hidden by default; Agentic and reasoning capabilities; Available reasoning effort variant is gpt-5-high                                                                                                                                                                                                                                                                                                                                       |
 | [GPT-5 Fast](https://openai.com/index/gpt-5/)                                                 | OpenAI    | $2.5  | -           | $0.25      | $20    | Hidden by default; Faster speed but 2x price; Available reasoning effort variants are gpt-5-high-fast, gpt-5-low-fast                                                                                                                                                                                                                                                                                                                         |
@@ -101,7 +105,7 @@ Since different models have different API costs, your model selection affects ho
 
 Start is available to developers in India. It costs ₹649 per month, tax inclusive, billed monthly in INR with UPI, credit card, or debit card. Every other individual plan displays its price before tax.
 
-Start includes generous usage of the Cursor Models pool, so you can run Grok 4.5 and Composer 2.5 for daily building. On Start, both models run in non-fast mode, and Grok 4.5 uses a fixed medium effort level. You cannot change effort levels or enable Fast mode on Start. Upgrade to Pro or higher to choose effort levels and Fast mode.
+Start includes generous usage of the Cursor Models pool, so you can run Grok 4.6, Grok 4.5, and Composer 2.5 for daily building. On Start, all three models run in non-fast mode, and both Grok 4.6 and Grok 4.5 use a fixed medium effort level. You cannot change effort levels or enable Fast mode on Start. Upgrade to Pro or higher to choose effort levels and Fast mode.
 
 Start also includes [Cloud Agents](https://cursor.com/docs/cloud-agent.md), [Cursor for iOS](https://cursor.com/docs/cloud-agent/mobile.md), and plugins, MCP servers, hooks, and skills.
 
@@ -137,7 +141,7 @@ Learn more about [Teams pricing](https://cursor.com/docs/account/teams/pricing.m
 
 On Teams and Enterprise plans, third-party model requests include a Cursor Token Rate of $0.25 per million tokens. This rate applies on top of model API pricing for included usage, on-demand usage, and BYOK usage.
 
-The Cursor Token Rate applies when you select a third-party model directly, and when Auto Balance or Auto Intelligence routes to a third-party model. Auto Cost and all first-party Cursor models, including Grok 4.5 and Composer 2.5, are exempt from the Cursor Token Rate.
+The Cursor Token Rate applies when you select a third-party model directly, and when Auto Balance or Auto Intelligence routes to a third-party model. Auto Cost and all first-party Cursor models, including Grok 4.6, Grok 4.5, and Composer 2.5, are exempt from the Cursor Token Rate.
 
 ## Auto modes
 

@@ -16,13 +16,34 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "4d23b20d45fdfb9de481f8cb3572a263fea1cf4022ea3c014bceb9a32c00d18a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c02b070986031ec16a583a73e02863497fb9e5f302851d8a264c6d50f164e282"
 ---
 
 # Runtimes
 
 Vercel supports multiple runtimes for your functions. Each runtime has its own set of libraries, APIs, and functionality that provides different trade-offs and benefits.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related)
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker support, background workers, and when to
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+- [Build Image](https://vercel.com/docs/builds/build-image?from=related) — Learn about the container image used for Vercel builds.
+- [Managing Cron Jobs](https://vercel.com/docs/cron-jobs/manage-cron-jobs?from=related) — Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency
+- [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+
+Full cross-link map for this page: [/docs/functions/runtimes.graph.md](/docs/functions/runtimes.graph.md)
+<!-- /docsgraph:related -->
 
 Runtimes transform your source code into [Functions](/docs/functions), which are served by our [CDN](/docs/cdn).
 
@@ -34,7 +55,7 @@ Vercel Functions support the following official runtimes:
 | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Node.js](/docs/functions/runtimes/node-js) | The Node.js runtime takes an entrypoint of a Node.js function, builds its dependencies (if any) and bundles them into a Vercel Function.                    |
 | [Bun](/docs/functions/runtimes/bun)         | The Bun runtime takes an entrypoint of a Bun function, builds its dependencies (if any) and bundles them into a Vercel Function.                            |
-| [Python](/docs/functions/runtimes/python)   | The Python runtime takes in a Python program that defines a singular HTTP handler and outputs it as a Vercel Function.                                      |
+| [Python](/docs/functions/runtimes/python)   | The Python runtime runs ASGI and WSGI applications, such as FastAPI, Flask, and Django, as Vercel Functions.                                         |
 | [Rust](/docs/functions/runtimes/rust)       | The Rust runtime takes an entrypoint of a Rust function using the `vercel_runtime` crate and compiles it into a Vercel Function.                            |
 |                            | The Go runtime takes in a Go program that defines a singular HTTP handler and outputs it as a Vercel Function.                                              |
 | [Ruby](/docs/functions/runtimes/ruby)       | The Ruby runtime takes in a Ruby program that defines a singular HTTP handler and outputs it as a Vercel Function.                                          |
@@ -53,7 +74,7 @@ The following community runtimes are recommended by Vercel:
 | Deno    | `vercel-deno`  | https://github.com/vercel-community/deno |
 | PHP     | `vercel-php`   | https://github.com/vercel-community/php  |
 
-You can create a community runtime by using the [Runtime API](https://github.com/vercel/vercel/blob/main/DEVELOPING_A_RUNTIME.md). Alternatively, you can use the [Build Output API](/docs/build-output-api/v3).
+You can create a community runtime by using the [Runtime API](https://github.com/vercel/vercel/blob/main/DEVELOPING_A_RUNTIME.md). Alternatively, you can use the [Build Output API](/docs/build-output-api).
 
 ## Container Images
 
@@ -96,11 +117,11 @@ Vercel Functions are archived when they are not invoked:
 - **Within 2 weeks** for [Production Deployments](/docs/deployments)
 - **Within 48 hours** for [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production)
 
-Archived functions will be unarchived when they're invoked, which can make the initial [cold start](/docs/infrastructure/compute#cold-and-hot-boots "Cold start") time at least 1 second longer than usual.
+Archived functions will be unarchived when they're invoked, which can make the initial [cold start](/docs/fundamentals/what-is-compute#cold-and-hot-boots "Cold start") time at least 1 second longer than usual.
 
 ### Functions created per deployment
 
-When using [Next.js](/docs/frameworks/nextjs) or [SvelteKit](/docs/frameworks/sveltekit) on Vercel, dynamic code (APIs, server-rendered pages, or dynamic `fetch` requests) will be bundled into the fewest number of Vercel Functions possible, to help reduce cold starts. Because of this, it's unlikely that you'll hit the limit of 12 bundled Vercel Functions per deployment.
+When using [Next.js](/docs/frameworks/full-stack/nextjs) or [SvelteKit](/docs/frameworks/full-stack/sveltekit) on Vercel, dynamic code (APIs, server-rendered pages, or dynamic `fetch` requests) will be bundled into the fewest number of Vercel Functions possible, to help reduce cold starts. Because of this, it's unlikely that you'll hit the limit of 12 bundled Vercel Functions per deployment.
 
 When using other [frameworks](/docs/frameworks), or Vercel Functions [directly without a framework](/docs/functions), every API maps directly to one Vercel Function. For example, having five files inside `api/` would create five Vercel Functions. For Hobby, this approach is limited to 12 Vercel Functions per deployment.
 

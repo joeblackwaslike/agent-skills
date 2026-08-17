@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/caching.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "a8e169be0de46769e16859f0264558ab451df9bacbe41d97bb531129aa266031"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "a9d70125f9c42aa6a1c04d4f54814f9d67f4ddeaebdad915cdb98f16a2372efa"
 ---
 
 # Caching Responses
@@ -121,9 +121,7 @@ You can see a full example of caching with Redis in a Next.js application in our
 
 Alternatively, each AI SDK Core function has special lifecycle callbacks you can use. The one of interest is likely `onEnd`, which is called when the generation is complete. This is where you can cache the full response.
 
-Here's an example of how you can implement caching using Vercel KV and Next.js to cache the OpenAI response for 1 hour:
-
-This example uses [Upstash Redis](https://upstash.com/docs/redis/overall/getstarted) and Next.js to cache the response for 1 hour.
+Here's an example of how you can use [Upstash Redis](https://upstash.com/redis) and Next.js to cache the OpenAI response for 1 hour:
 
 ```tsx filename="app/api/chat/route.ts"
 import {

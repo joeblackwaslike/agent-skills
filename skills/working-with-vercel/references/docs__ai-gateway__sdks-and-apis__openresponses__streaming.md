@@ -13,13 +13,31 @@ related:
 summary: Stream responses token by token using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "851c87d1378188663d36a8be9c4b2797a5c11f046e0af84549ba2566ca881718"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d94aec25945e08e0a3d6971259fc33e4d251d1efb56da53f237fe9acc027952e"
 ---
 
 # Streaming
 
 The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports streaming to receive tokens as they're generated instead of waiting for the complete response. Set `stream: true` in your request, then read the response body as a stream of server-sent events. Each event contains a response chunk that you can display incrementally.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related) — Stream tokens as they are generated with the OpenAI Responses API.
+- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related) — Learn how to use the AI SDK to stream LLM responses.
+- [Streaming in web applications](https://vercel.com/kb/guide/what-is-streaming?from=related) — Learn how streaming works in web applications. Explore benefits, use cases, and implementation details with Vercel Funct
+- [Processing Data Chunks](https://vercel.com/kb/guide/processing-data-chunks?from=related) — Learn how to create an API endpoint that processes data chunks.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming?from=related) — Stream Anthropic Messages API responses token by token as they are generated.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related) — Stream OpenAI Chat Completions responses token by token as they are generated.
+- [Streaming](https://vercel.com/docs/functions/streaming-functions?from=related) — Learn how to stream responses from Vercel Functions.
+- [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md)
+<!-- /docsgraph:related -->
 
 #### \['cURL'
 

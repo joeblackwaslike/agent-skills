@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/account/teams/dashboard.md"
-fetched_at: "2026-07-27T07:33:35.768Z"
-sha256: "bcb42cd72ab0c9506e1607d638e97fc3795f50b2af705978f4cbcf2556ac81be"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "e98b9752908fc0374c2248079c77b4522d917e6f5531a454e5b70bee8606e930"
 ---
 
 # Dashboard
@@ -83,9 +83,11 @@ Access Cursor's REST API endpoints for programmatic integration. All API endpoin
 
 ### Model Access Control
 
-Control which AI models are available to team members. Set restrictions on
-specific models or model tiers to manage costs and ensure appropriate usage
-across your organization. Learn more in [Model and Integration Management](https://cursor.com/docs/enterprise/model-and-integration-management.md#model-access-control).
+Control which AI models are available to team members from **Team Settings →
+Models**. Organizations can also widen access per cohort from **Organization →
+Groups → Models**. Team and group model access combine as a union
+(most-permissive wins). Learn more in [Model and Integration
+Management](https://cursor.com/docs/enterprise/model-and-integration-management.md#model-access-control).
 
 ### Enhanced Spend Limits
 
@@ -151,11 +153,13 @@ Connect Cursor with your favorite tools and services. Configure integrations wit
 
 Monitor and manage cloud agents running in your workspace. View agent status, logs, and resource usage. See [Cloud Agent settings](https://cursor.com/docs/cloud-agent/settings.md) for configuration details.
 
-## Bugbot
+## Automations
 
-Access automated bug detection and fixing capabilities. Bugbot helps identify and resolve common issues in your codebase automatically.
+Use [Automations](https://cursor.com/automations) to create recurring cloud agents and configure Cursor-managed agents:
 
-![Bugbot code review](/docs-static/images/account/team/bugbot.png)
+- [Bugbot](https://cursor.com/docs/bugbot.md)
+- [Security Agents](https://cursor.com/docs/security-agents.md)
+- [PR Routing & Approval](https://cursor.com/docs/approval-agents.md)
 
 ## Active Directory Management
 

@@ -16,13 +16,32 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "590a7307e458cfae911805605fa4e3e3a74f675c774ef4d8b19ea90edf88910b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c125efba4ba1a4caff1362170f23d565ee6d2d7ed6b716a39725952dbfe63135"
 ---
 
 # Managing Builds
 
 When you build your application code, Vercel runs compute to install dependencies, run your build script, and sends the build output to our [Compute](/docs/fluid-compute) and [CDN](/docs/cdn).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Limits](https://vercel.com/docs/limits?from=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Git Integrations](https://vercel.com/docs/git?from=related) — Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLa
+- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build?from=related) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+
+Full cross-link map for this page: [/docs/builds/managing-builds.graph.md](/docs/builds/managing-builds.graph.md)
+<!-- /docsgraph:related -->
 
 By default, we enable [elastic builds](/docs/builds/managing-builds#elastic-build-machines) for paid teams. If you're on a Hobby plan and looking for faster builds, we recommend [upgrading to Pro](/docs/plans/hobby#upgrading-to-pro).
 
@@ -78,7 +97,7 @@ You can configure this on the project's [**Build and Deployment Settings**](http
 #### \['Dashboard'
 
 1. From your Vercel dashboard, select the project you wish to enable it for.
-2. Open **Settings** in the sidebar, and go to the **Build and Deployment** section of your [Project Settings](/docs/projects/overview#project-settings).
+2. Open **Settings** in the sidebar, and go to the **Build and Deployment** section of your [Project Settings](/docs/projects#project-settings).
 3. Under **On-Demand Concurrent Builds**, select one of the following:
    - **Run all builds immediately**: Skip the queue for all builds
    - **Run up to one build per branch**: Limit to one active build per branch
@@ -86,7 +105,7 @@ You can configure this on the project's [**Build and Deployment Settings**](http
 
 #### 'cURL'
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```bash filename="cURL"
 curl --request PATCH \
@@ -110,7 +129,7 @@ Set `configuration` to one of:
 
 #### 'SDK']
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```ts filename="updateProject"
 import { Vercel } from '@vercel/sdk';
@@ -205,7 +224,7 @@ If a build has to wait for queued preview deployments to finish, it can delay th
 To ensure that changes to the [production environment](/docs/deployments/environments#production-environment) are prioritized over [preview deployments](/docs/deployments/environments#preview-environment-pre-production) in the queue, you can enable **Prioritize Production Builds**:
 
 1. From your Vercel dashboard, select the project you wish to enable it for
-2. Open **Settings** in the sidebar, and go to the [**Build and Deployment** section](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment\&title=Prioritize+Production+Builds+Setting) of your [Project Settings](/docs/projects/overview#project-settings)
+2. Open **Settings** in the sidebar, and go to the [**Build and Deployment** section](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment\&title=Prioritize+Production+Builds+Setting) of your [Project Settings](/docs/projects#project-settings)
 3. Under **Prioritize Production Builds**, toggle the switch to **Enabled**
 
 

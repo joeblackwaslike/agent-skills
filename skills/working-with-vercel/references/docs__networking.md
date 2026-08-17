@@ -14,13 +14,30 @@ related:
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "eae86e3ddcecb5acf3afc7468e99c906071b272cb3097807bcd2ef838d30128d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "73e24004aca8b2ff4ede671b0ec7081170f8db6d5490351cc58c328573e008a5"
 ---
 
 # Networking
 
 Connect your projects to backend services that require IP allowlisting or dedicated private networking.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related) — You can securely connect a deployment to external services by using a stable set of IP addresses.
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — You can allowlist IP addresses with Vercel Secure Compute and Static IPs
+- [Pricing and Limits](https://vercel.com/docs/services/pricing?from=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Create a Secure Compute network](https://vercel.com/docs/rest-api/networking/create-a-secure-compute-network?from=related)
+- [Paris, France \(cdg1\)](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related) — Vercel pricing for the Paris, France \(cdg1\) region.
+- [Portland, USA \(pdx1\)](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related) — Vercel pricing for the Portland, USA \(pdx1\) region.
+
+Full cross-link map for this page: [/docs/networking.graph.md](/docs/networking.graph.md)
+<!-- /docsgraph:related -->
 
 ## Static IPs (shared pool)
 

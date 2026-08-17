@@ -16,8 +16,8 @@ related:
 summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "1118173714552d7058630c55126d1ca54e6962536ff3a4ab7f31feaca2815be4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3b3eef186b212c41109aac06162d8ece9f26681f1214b82b5662a71c904c9422"
 ---
 
 # Regional Inference
@@ -29,6 +29,23 @@ AI Gateway routes your data to the provider in a data center in that region, and
 to the extent the provider stores data, it's configured to store it there. If AI
 Gateway can't honor the chosen region, the request fails instead of silently
 running somewhere else.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related) — Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup.
+
+Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/regional-inference.graph.md](/docs/ai-gateway/security-and-compliance/regional-inference.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** `inferenceRegion` pins where the provider runs inference and stores your data.
 > It doesn't pin where your request reaches AI Gateway: your request can

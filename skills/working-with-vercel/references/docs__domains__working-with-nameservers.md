@@ -14,14 +14,33 @@ related:
 summary: Learn about nameservers and the benefits Vercel nameservers provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-nameservers.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b8830e59e74a51553baa326eb1d73c59cc4519e20e72dea26c0ff51059c3b03f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e76b6f479caac6e98e2ad06ed033f22733062d66a45521cebdb6a19847d5bff0"
 ---
 
 # Working with nameservers
 
 > **💡 Note:** Before moving your domain to use Vercel's nameservers, you should ensure that
 > you own the domain listed on the [Domains](/domains) page of your account."
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [How do I change my Nameservers on Vercel?](https://vercel.com/kb/guide/how-do-i-change-my-nameservers-on-vercel?from=related) — Learn about how to change Nameservers for domains registered with Vercel.
+- [Does using Vercel's Nameserver's lock you in?](https://vercel.com/kb/guide/does-using-vercel-s-nameserver-s-lock-you-in?from=related) — Learn about how using Vercel's Nameservers doesn't lock you to anything.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related) — Information on why a Vercel domain may not be verified and how to verify it.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain?from=related)
+- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Working with SSL](https://vercel.com/docs/domains/working-with-ssl?from=related) — Learn how Vercel uses SSL certification to keep your site secure.
+
+Full cross-link map for this page: [/docs/domains/working-with-nameservers.graph.md](/docs/domains/working-with-nameservers.graph.md)
+<!-- /docsgraph:related -->
 
 Nameservers are the actual servers on the network that are responsible for resolving domain names to the IP addresses where your site is hosted. Most domain registrars, including Vercel, [provide their own nameservers](/docs/domains/managing-nameservers). For Vercel these are:
 

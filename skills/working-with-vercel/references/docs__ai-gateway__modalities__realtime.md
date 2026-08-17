@@ -15,13 +15,31 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "dd2cf5fd1562bef78d333a3c6a1834700b2dba19e47f1f574506db3299ad3ad7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "98deaf961f60085a9f89bbb675b22bd1dc2fbfb72cd49aadcd92f4d05db197f7"
 ---
 
 # Realtime
 
 Build voice agents that listen and respond in real time. With the AI SDK, you stream microphone audio to a realtime model through AI Gateway and play back its spoken replies with low latency. The AI Gateway provider exposes `gateway.experimental_realtime`, which serves two roles: a server-side `getToken` helper that mints a connection, and a realtime model that acts as a codec, translating between normalized AI SDK events and the provider's wire format.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related)
+- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox?from=related) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md)
+<!-- /docsgraph:related -->
 
 For a step-by-step setup, see the [Realtime quickstart](/docs/ai-gateway/getting-started/realtime).
 

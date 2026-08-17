@@ -9,20 +9,40 @@ prerequisites:
   []
 related:
   - /docs/vercel-firewall/firewall-concepts
-  - /docs/vercel-waf/managed-rulesets
-  - /docs/vercel-waf/custom-rules
-  - /docs/security/ddos-mitigation
+  - /docs/vercel-firewall/vercel-waf/managed-rulesets
+  - /docs/vercel-firewall/vercel-waf/custom-rules
+  - /docs/vercel-firewall/ddos-mitigation
   - /docs/observability
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7b3068315f83899d0b58474ab5e4a73770e074a8ca5f8a277c431acb6c5d78ab"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "720ac9cd5cf7520513ddf2ae9ebc35f1ef67efcf59eb7058ea9ee2cf9092e550"
 ---
 
 # Bot Management
 
 Bots generate nearly half of all internet traffic. While many bots serve legitimate purposes like search engine crawling and content aggregation, others originate from malicious sources. Bot management encompasses both observing and controlling all bot traffic. A key component of this is bot protection, which focuses specifically on mitigating risks from automated threats that scrape content, attempt unauthorized logins, or overload servers.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel?from=related) — Information on using Cloudflare together with Vercel.
+- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
+- [BotID](https://vercel.com/docs/botid?from=related) — Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
+- [Firewall](https://vercel.com/docs/vercel-firewall?from=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
+- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \(WAF\)
+- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Protection Bypass for Automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation?from=related) — Learn how to bypass Vercel Deployment Protection for automated tooling \(e.g. E2E testing\).
+
+Full cross-link map for this page: [/docs/bot-management.graph.md](/docs/bot-management.graph.md)
+<!-- /docsgraph:related -->
 
 ## How bot management works
 
@@ -44,9 +64,9 @@ To effectively manage bot traffic and protect against harmful bots, you can use 
 
 With Vercel, you can use:
 
-- [Managed rulesets](/docs/vercel-waf/managed-rulesets#configure-bot-protection-managed-ruleset) to challenge specific bot traffic
-- Rate limiting and challenge actions with [WAF custom rules](/docs/vercel-waf/custom-rules) to prevent bot activity from reaching your application
-- [DDoS protection](/docs/security/ddos-mitigation) to defend your application against bot driven attacks
+- [Managed rulesets](/docs/vercel-firewall/vercel-waf/managed-rulesets#configure-bot-protection-managed-ruleset) to challenge specific bot traffic
+- Rate limiting and challenge actions with [WAF custom rules](/docs/vercel-firewall/vercel-waf/custom-rules) to prevent bot activity from reaching your application
+- [DDoS protection](/docs/vercel-firewall/ddos-mitigation) to defend your application against bot driven attacks
 - [Observability](/docs/observability) and [Firewall](/docs/vercel-firewall/firewall-observability) to monitor bot patterns, traffic sources, and the effectiveness of your bot management strategies
 
 ## Bot protection managed ruleset
@@ -62,7 +82,7 @@ With Vercel, you can use the bot protection managed ruleset to [challenge](/docs
 To learn more about how the ruleset works, review the [Challenge](/docs/vercel-firewall/firewall-concepts#challenge) section of [Firewall actions](/docs/vercel-firewall/firewall-concepts#firewall-actions). To understand the details of what get logged and how to monitor your traffic, review [Firewall Observability](/docs/vercel-firewall/firewall-observability).
 
 > **💡 Note:** For trusted automated traffic, you can create [custom WAF
-> rules](/docs/vercel-waf/custom-rules) with [bypass
+> rules](/docs/vercel-firewall/vercel-waf/custom-rules) with [bypass
 > actions](/docs/vercel-firewall/firewall-concepts#bypass) that will allow this
 > traffic to skip the bot protection ruleset.
 
@@ -70,7 +90,7 @@ To learn more about how the ruleset works, review the [Challenge](/docs/vercel-f
 
 The ruleset is **inactive by default**. In the dashboard this is labeled **Off**. Matching traffic is not evaluated and reaches your application.
 
-You can apply the ruleset to your project in [log](/docs/vercel-firewall/firewall-concepts#log) or [challenge](/docs/vercel-firewall/firewall-concepts#challenge) mode. Learn how to [configure the bot protection managed ruleset](/docs/vercel-waf/managed-rulesets#configure-bot-protection-managed-ruleset).
+You can apply the ruleset to your project in [log](/docs/vercel-firewall/firewall-concepts#log) or [challenge](/docs/vercel-firewall/firewall-concepts#challenge) mode. Learn how to [configure the bot protection managed ruleset](/docs/vercel-firewall/vercel-waf/managed-rulesets#configure-bot-protection-managed-ruleset).
 
 ### Bot protection ruleset with reverse proxies
 
@@ -97,7 +117,7 @@ When new AI bots emerge, Vercel automatically adds them to its managed list and 
 
 The ruleset is **inactive by default**. In the dashboard this is labeled **Allow**. Matching traffic is not evaluated and reaches your application.
 
-You can apply the ruleset to your project in [log](/docs/vercel-firewall/firewall-concepts#log) or [deny](/docs/vercel-firewall/firewall-concepts#deny) mode. Learn how to [configure the AI bots managed ruleset](/docs/vercel-waf/managed-rulesets#configure-ai-bots-managed-ruleset).
+You can apply the ruleset to your project in [log](/docs/vercel-firewall/firewall-concepts#log) or [deny](/docs/vercel-firewall/firewall-concepts#deny) mode. Learn how to [configure the AI bots managed ruleset](/docs/vercel-firewall/vercel-waf/managed-rulesets#configure-ai-bots-managed-ruleset).
 
 ## Verified bots
 

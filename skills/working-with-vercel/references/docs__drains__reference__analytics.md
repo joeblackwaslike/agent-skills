@@ -13,13 +13,28 @@ related:
 summary: Learn about Web Analytics Drains - data formats and custom events configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/analytics.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "96c3f2df14010100f62e13ba818c695e40cc53f6849cb42fc95832ea1a2a1360"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "776865cb74914812128f0d53d9c4ef334e56ed33a7cb1877d65ed8106dd09a82"
 ---
 
 # Web Analytics Drains Reference
 
 If a Web Analytics Drains has been configured, Vercel will send page views and custom events from your applications to external endpoints for storage and analysis over HTTPS when your application tracks events.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Speed Insights](https://vercel.com/docs/drains/reference/speed-insights?from=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+
+Full cross-link map for this page: [/docs/drains/reference/analytics.graph.md](/docs/drains/reference/analytics.graph.md)
+<!-- /docsgraph:related -->
 
 ## Web Analytics Schema
 

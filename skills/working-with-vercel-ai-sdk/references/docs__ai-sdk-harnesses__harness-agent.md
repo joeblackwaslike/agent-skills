@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "a5f9a11c0acefca0cd2b2f9b90ed20eb1909bda5140f0f5ac160d409013855c5"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "5acdc3025686504d037d89c39a8a3c84d5a19d99a921503cb0351b24d1efffaa"
 ---
 
 # HarnessAgent
@@ -365,7 +365,8 @@ console.log(preparation.identity);
 - `harness`: the adapter instance.
 - `sandbox`: a `HarnessV1SandboxProvider`.
 - `id`: optional stable agent identifier.
-- `instructions`: instructions applied once to a fresh session.
+- `instructions`: instructions appended to the runtime's system or developer
+  prompt when supported, or prepended to the first user prompt otherwise.
 - `stopWhen`: condition(s) for finishing a result slice after a completed
   harness tool step that can continue into another model step.
 - `tools`: AI SDK tools executed by the host when the harness calls them.

@@ -11,18 +11,39 @@ related:
   - /docs/project-configuration/vercel-json
   - /docs/caching/cache-control-headers
   - /docs/caching/cdn-cache/purge
-  - /docs/headers/cache-control-headers
-  - /docs/cdn-cache/purge
+  - /docs/drains/using-drains
+  - /docs/observability/insights
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "069cbb6dcd4c1aca6654870665886d9d5e5dfee83750d14de1ce207b55c7eb38"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "173645c7bc2de773f484d9145d7b59aea8c8bac3cd28c8ab24b7f031f3d152aa"
 ---
 
 # Rewrites on Vercel
 
 A rewrite routes a request to a different destination without changing the URL in the browser. Unlike redirects, the user won't see the URL change.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
+- [rewrites](https://nextjs.org/docs/pages/api-reference/config/next-config-js/rewrites?from=related) — Add rewrites to your Next.js app.
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
+- [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Incremental Migration](https://vercel.com/docs/incremental-migration?from=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Project Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+
+Full cross-link map for this page: [/docs/routing/rewrites.graph.md](/docs/routing/rewrites.graph.md)
+<!-- /docsgraph:related -->
 
 There are two main types:
 
@@ -247,10 +268,10 @@ This tells Vercel to respect caching headers (`cache-control`, `CDN-Cache-Contro
 
    This caches the response on the CDN for 60 seconds.
 
-For more information on caching headers, see the [Cache-Control headers documentation](/docs/headers/cache-control-headers).
+For more information on caching headers, see the [Cache-Control headers documentation](/docs/caching/cache-control-headers).
 
 > **💡 Note:** When caching rewrites to external origins, it's best practice to also include a `Vercel-Cache-Tag` response header with a
-> comma-separated list of tags so you can later [purge the CDN cache by tag](/docs/cdn-cache/purge) at your convenience.
+> comma-separated list of tags so you can later [purge the CDN cache by tag](/docs/caching/cdn-cache/purge) at your convenience.
 
 ### Draining rewrites to external origins
 
@@ -288,9 +309,9 @@ This routes matching public requests to the `my_backend` service. Services are i
 
 For **same-application rewrites**, always prefer your framework's native routing capabilities:
 
-- **Next.js**: [Next.js rewrites](https://nextjs.org/docs/api-reference/next.config.js/rewrites)
-- **Astro**: [Astro routing](/docs/frameworks/astro#rewrites)
-- **SvelteKit**: [SvelteKit routing](/docs/frameworks/sveltekit#rewrites)
+- **Next.js**: [Next.js rewrites](https://nextjs.org/docs/app/api-reference/config/next-config-js/rewrites)
+- **Astro**: [Astro routing](/docs/frameworks/frontend/astro#rewrites)
+- **SvelteKit**: [SvelteKit routing](/docs/frameworks/full-stack/sveltekit#rewrites)
 
 Use `vercel.json` rewrites for same-application routing only when your framework doesn't provide native routing features. Always consult your framework's documentation for the recommended approach.
 

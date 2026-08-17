@@ -10,20 +10,35 @@ prerequisites:
   - /docs/global-config
 related:
   - /docs/cli
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/global-config/get-started
   - /docs/global-config/using-global-config
   - /docs/environment-variables
 summary: "Learn how to use Global Config with Vercel's Statsig integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "10e5624a2b71c84968c2c04232a7c3f07b9923f2232e64bbadcb18fd75644c7c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5d55e13c95681b78348b518b681644a2f0b7d6c144d5acf751fe9986478d551d"
 ---
 
 # Using Global Config with Statsig
 
 This guide will help you get started with using Vercel's Statsig integration with Global Config. This integration allows you to use Global Config as a configuration source for your Statsig feature flags.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Global Configs & REST API](https://vercel.com/docs/global-config/vercel-api?from=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Migration Guide](https://vercel.com/docs/global-config/migration-guide?from=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
+
+Full cross-link map for this page: [/docs/global-config/global-config-integrations/statsig-global-config.graph.md](/docs/global-config/global-config-integrations/statsig-global-config.graph.md)
+<!-- /docsgraph:related -->
 
 Statsig is a statistics engine that enables you to automate A/B testing and make data-driven decisions at scale. The Statsig integration enables you to replace hard-coded values in your application with dynamic values on the server.
 
@@ -79,7 +94,7 @@ Before using this integration, you should have:
   </Code>
 </CodeBlock>
 
-1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects/overview#creating-a-project)
+1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
    <CodeBlock>

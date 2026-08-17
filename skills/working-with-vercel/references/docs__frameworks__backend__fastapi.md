@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9d561e47f3be0dbfe6131e471202c00d0b224bae77c474b6d298903437b3dc38"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c3ca2cda2c0d66d9b8cbe7c1127beea1bbda8804694592d1378f97b91b574f4a"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -26,6 +26,25 @@ sha256: "9d561e47f3be0dbfe6131e471202c00d0b224bae77c474b6d298903437b3dc38"
 Deploy a FastAPI app to Vercel with the Python runtime and Vercel Functions.
 Vercel looks for a `FastAPI` instance named `app` at supported entrypoints in
 your repository.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [Build Figma-style multiplayer cursors with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-board-nextjs-fastapi?from=related) — Learn how to build Figma-style multiplayer cursors with Next.js and FastAPI, kept consistent across multiple Vercel Func
+- [How to Build a Weather API with FastAPI and Vercel](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related) — Provide real-time weather data to apps and websites with a single FastAPI route.
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Flask](https://vercel.com/docs/frameworks/backend/flask?from=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
+- [Fastify](https://vercel.com/docs/frameworks/backend/fastify?from=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+
+Full cross-link map for this page: [/docs/frameworks/backend/fastapi.graph.md](/docs/frameworks/backend/fastapi.graph.md)
+<!-- /docsgraph:related -->
 
 ## Create or import your app
 
@@ -46,7 +65,7 @@ This clones the [FastAPI example repository](https://github.com/vercel/vercel/tr
 To run a FastAPI application on Vercel, define an `app` instance that initializes `FastAPI` at a supported entrypoint:
 
 - `app.py`, `index.py`, `server.py`, `main.py`, `wsgi.py`, or `asgi.py`
-- the same filenames inside `src/`, `app/`, or `api/`
+- the same filenames inside `src/` or `app/`
 
 For example:
 
@@ -237,6 +256,8 @@ All [Vercel Functions limitations](/docs/functions/limitations) apply to FastAPI
 For more about deploying FastAPI on Vercel, see:
 
 - [FastAPI official documentation](https://fastapi.tiangolo.com/)
+- [Build with a FastAPI starter template](/kb/guide/build-with-a-fastapi-starter-template)
+- [How to ship a FastAPI app on Vercel](/kb/guide/ship-a-fastapi-app-on-vercel)
 - [Vercel Functions documentation](/docs/functions)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 

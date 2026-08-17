@@ -13,13 +13,28 @@ related:
 summary: Use Chatbox with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/chatbox.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "4b251a6ac16c3b9d9aa1757760aba5ef86a2486089b72184568fd44f24911dbc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7999b3ca2c08981f0782f7440def3e8e8abebb72b292e4f33f8ed7d6366681be"
 ---
 
 # Chatbox
 
 [Chatbox](https://chatboxai.app) is a cross-platform desktop AI assistant. You can configure it to use AI Gateway for unified model access and spend monitoring.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
+- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [Open WebUI](https://vercel.com/docs/ai-gateway/chat-platforms/open-webui?from=related) — Use Open WebUI with the AI Gateway.
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/chatbox.graph.md](/docs/ai-gateway/chat-platforms/chatbox.graph.md)
+<!-- /docsgraph:related -->
 
 ## Configuring Chatbox
 

@@ -16,13 +16,34 @@ related:
 summary: "Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tiers, uptime and metrics, plus..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "703bc6000d513f7693d261a53859e6a48dd74b91ee5d7bbccea11dcdefa93d08"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9f0060e28178dfe82c7dadf388eb11b6acab5e65a84dcd4cd179f43879dad9ee"
 ---
 
 # Models & Providers
 
 The AI Gateway's unified API provides flexibility, allowing you to switch between [different AI models](/ai-gateway/models) and providers without rewriting parts of your application. This is useful for testing different models or when you want to change the underlying AI provider for cost or performance reasons. You can also configure [provider routing and model fallbacks](/docs/ai-gateway/models-and-providers/provider-options) to ensure high availability and reliability.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related)
+- [Cloudflare AI Gateway](https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway?from=related)
+- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models?from=related)
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation?from=related) — Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related) — Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.md](/docs/ai-gateway/models-and-providers.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** To view the list of supported models and providers, check out the [AI Gateway
 > models page](/ai-gateway/models).
@@ -37,11 +58,11 @@ Configure how AI Gateway selects providers and routes requests, and apply capabi
 
 ### What are models and providers?
 
-Models are AI algorithms that process your input data to generate responses, such as [Grok 4.3](/ai-gateway/models/grok-4.3), [GPT-5.5](/ai-gateway/models/gpt-5.5), or [Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7). Providers are the companies or services that host these models, such as xAI, OpenAI, or Anthropic.
+Models are AI algorithms that process your input data to generate responses, such as [Grok 4.3](/ai-gateway/models/grok-4.3), [GPT-5.5](/ai-gateway/models/gpt-5.5), or [Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7). Providers are the companies or services that host these models, such as SpaceXAI, OpenAI, or Anthropic.
 
-In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `xai/grok-4.5` model from xAI or the `openai/gpt-5.6-sol` model from OpenAI, following the format `creator/model-name`.
+In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `xai/grok-4.5` model from SpaceXAI or the `openai/gpt-5.6-sol` model from OpenAI, following the format `creator/model-name`.
 
-Different providers may have different specifications for the same model such as different pricing and performance. You can choose the one that best fits your needs.
+Different providers may have different specifications for the same model such as different pricing and performance. You can choose the one that best fits your needs, and compare options on the [AI Gateway leaderboards](/docs/ai-gateway/leaderboards) to see which models and providers developers use most.
 
 You can view the list of supported models and providers in three ways:
 

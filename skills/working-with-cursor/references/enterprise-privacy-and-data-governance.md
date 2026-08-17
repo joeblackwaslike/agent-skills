@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/privacy-and-data-governance.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "ddf44e5f9e7907717769712c4c9344ff855a3a93a27669d3d70e4f58cd0c6625"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "1c4696d06e389ca6a64b532f012163c826bbcde3b98d5db3cbc5b36948adcda7"
 ---
 
 # Privacy and Data Governance
@@ -166,7 +166,7 @@ Some functionality depends on external services or on infrastructure Cursor does
 - **Codebase indexing** — If your codebase is stored outside of the US, we cannot guarantee US-only indexing.
 - **Bring your own key (BYOK)** — US data residency is not supported for BYOK.
 - **Custom models** — A custom model reached via an OpenAI-compatible base URL override or a third-party gateway carries the region of that gateway or model, which may not be in the US.
-- **MCPs and external integrations** — `@Web`, `@Docs`, and user-configured MCPs or connectors are separate services, each with its own region.
+- **MCPs and external integrations** — `@Web` and user-configured MCPs or connectors are separate services, each with its own region.
 - **Bugbot / code review** — Runs against your repository's infrastructure, so its region depends on where your repositories are located.
 - **Shared links** — If a link is shared outside a US-only team, US-only residency can't be guaranteed for the recipient.
 - **Slack- or web-triggered Cloud Agents** — The region of the issuing command can't be guaranteed.

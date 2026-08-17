@@ -16,13 +16,30 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c9c65c806fc6490b52a1ef5cfb54c73ab6eab8b7b66f02d951409160a04a36fe"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b13103e0c7a91e8528d0d686eff0238699bc52d783696081a53c1da263d16859"
 ---
 
 # Audit Logs
 
 > **🔒 Permissions Required**: Audit Logs
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption?from=related) — Understand how workflow and step data is encrypted at rest.
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [CLI](https://vercel.com/docs/cli?from=related) — Learn how to use the Vercel command-line interface \(CLI\) to manage and configure your Vercel Projects from the command
+- [System Environment Variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+
+Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md)
+<!-- /docsgraph:related -->
 
 Audit logs help you track and analyze your [team members'](/docs/rbac/managing-team-members) activity. They can be accessed by team members with the [owner](/docs/rbac/access-roles#owner-role) role, and are available to customers on [enterprise](/docs/plans/enterprise) plans.
 
@@ -206,7 +223,7 @@ Helps you pair Vercel's functionality with a third-party service to streamline i
 
 ### `password_protection`
 
-[Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection) allows visitors to access preview deployments with a password to manage team-wide access.
+[Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) allows visitors to access preview deployments with a password to manage team-wide access.
 
 | **Action Name**                    | **Description**                                 |
 | ---------------------------------- | ----------------------------------------------- |
@@ -225,7 +242,7 @@ Customize the appearance of your preview deployment URLs by adding a valid suffi
 
 ### `project`
 
-Refers to actions performed on your Vercel [projects](/docs/projects/overview).
+Refers to actions performed on your Vercel [projects](/docs/projects).
 
 | **Action Name**                    | **Description**                                                       |
 | ---------------------------------- | --------------------------------------------------------------------- |
@@ -304,7 +321,7 @@ Refers to environment variables defined at the team level. To learn more, see th
 
 ### `team`
 
-Refers to actions performed by members of a Vercel [team](/docs/accounts/create-a-team).
+Refers to actions performed by members of a Vercel [team](/docs/accounts#creating-a-team).
 
 | **Action Name**           | **Description**                                                                  |
 | ------------------------- | -------------------------------------------------------------------------------- |
@@ -316,7 +333,7 @@ Refers to actions performed by members of a Vercel [team](/docs/accounts/create-
 
 ### `team.member`
 
-Refers to actions performed by any [team member](/docs/accounts/team-members-and-roles).
+Refers to actions performed by any [team member](/docs/rbac).
 
 | **Action Name**                            | **Description**                                                 |
 | ------------------------------------------ | --------------------------------------------------------------- |

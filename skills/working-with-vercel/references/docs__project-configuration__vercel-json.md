@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/project-configuration
 related:
-  - /docs/deployments/configure-a-build
+  - /docs/builds/configure-a-build
   - /docs/functions
   - /docs/routing-middleware
   - /docs/functions/runtimes/edge
@@ -16,13 +16,33 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "9aa1f799b4a3dbbcbcb7f5a20ae36f3d4b2d33164c08a4279c0dc322e7c89ce5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6b9e3005bc73c3f7f536e2096dfb198d35131b305970915b2487755e81105776"
 ---
 
 # Static Configuration with vercel.json
 
 The `vercel.json` file lets you configure, and override the default behavior of Vercel from within your project.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
+- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+- [Create a new project](https://vercel.com/docs/rest-api/projects/create-a-new-project?from=related)
+
+Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md)
+<!-- /docsgraph:related -->
 
 This file should be created in your project's root directory and allows you to set:
 
@@ -40,6 +60,7 @@ This file should be created in your project's root directory and allows you to s
 - [images](#images)
 - [installCommand](#installcommand)
 - [outputDirectory](#outputdirectory)
+- [proxy](#proxy)
 - [redirects](#redirects)
 - [bulkRedirectsPath](#bulkredirectspath)
 - [regions](#regions)
@@ -62,7 +83,7 @@ To add autocompletion, type checking, and schema validation to your `vercel.json
 
 **Type:** `string | null`
 
-The `buildCommand` property can be used to override the Build Command in the Project Settings dashboard, and the `build` script from the `package.json` file for a given deployment. For more information on the default behavior of the Build Command, visit the [Configure a Build - Build Command](/docs/deployments/configure-a-build#build-command) section.
+The `buildCommand` property can be used to override the Build Command in the Project Settings dashboard, and the `build` script from the `package.json` file for a given deployment. For more information on the default behavior of the Build Command, visit the [Configure a Build - Build Command](/docs/builds/configure-a-build#build-command) section.
 
 ```json filename="vercel.json"
 {
@@ -71,7 +92,7 @@ The `buildCommand` property can be used to override the Build Command in the Pro
 }
 ```
 
-This value overrides the [Build Command](/docs/deployments/configure-a-build#build-command) in Project Settings.
+This value overrides the [Build Command](/docs/builds/configure-a-build#build-command) in Project Settings.
 
 ## bunVersion
 
@@ -165,11 +186,11 @@ Used to configure [cron jobs](/docs/cron-jobs) for the production deployment of 
 
 ## devCommand
 
-This value overrides the [Development Command](/docs/deployments/configure-a-build#development-command) in Project Settings.
+This value overrides the [Development Command](/docs/builds/configure-a-build#development-command) in Project Settings.
 
 **Type:** `string | null`
 
-The `devCommand` property can be used to override the Development Command in the Project Settings dashboard. For more information on the default behavior of the Development Command, visit the [Configure a Build - Development Command](/docs/deployments/configure-a-build#development-command) section.
+The `devCommand` property can be used to override the Development Command in the Project Settings dashboard. For more information on the default behavior of the Development Command, visit the [Configure a Build - Development Command](/docs/builds/configure-a-build#development-command) section.
 
 ```json filename="vercel.json"
 {
@@ -197,13 +218,13 @@ The `fluid` property allows you to test Fluid compute on a per-deployment or per
 
 ## framework
 
-This value overrides the [Framework](/docs/deployments/configure-a-build#framework-preset) in Project Settings.
+This value overrides the [Framework](/docs/builds/configure-a-build#framework-preset) in Project Settings.
 
 **Type:** `string | null`
 
 Available framework slugs:
 
-The `framework` property can be used to override the Framework Preset in the Project Settings dashboard. The value must be a valid framework slug. For more information on the default behavior of the Framework Preset, visit the [Configure a Build - Framework Preset](/docs/deployments/configure-a-build#framework-preset) section.
+The `framework` property can be used to override the Framework Preset in the Project Settings dashboard. The value must be a valid framework slug. For more information on the default behavior of the Framework Preset, visit the [Configure a Build - Framework Preset](/docs/builds/configure-a-build#framework-preset) section.
 
 > **💡 Note:** To select "Other" as the Framework Preset, use `null`.
 
@@ -425,7 +446,7 @@ This example demonstrates using the expressive `value` object to append the head
 }
 ```
 
-Learn more about [headers](/docs/headers) on Vercel and see [limitations](/docs/cdn-cache#limits).
+Learn more about [headers](/docs/headers) on Vercel and see [limitations](/docs/caching/cdn-cache#limits).
 
 ## ignoreCommand
 
@@ -444,11 +465,11 @@ This `ignoreCommand` property will override the Command for Ignoring the Build S
 
 ## installCommand
 
-This value overrides the [Install Command](/docs/deployments/configure-a-build#install-command) in Project Settings.
+This value overrides the [Install Command](/docs/builds/configure-a-build#install-command) in Project Settings.
 
 **Type:** `string | null`
 
-The `installCommand` property can be used to override the Install Command in the Project Settings dashboard for a given deployment. This setting is useful for trying out a new package manager for the project. An empty string value will cause the Install Command to be skipped. For more information on the default behavior of the install command visit the [Configure a Build - Install Command](/docs/deployments/configure-a-build#install-command)
+The `installCommand` property can be used to override the Install Command in the Project Settings dashboard for a given deployment. This setting is useful for trying out a new package manager for the project. An empty string value will cause the Install Command to be skipped. For more information on the default behavior of the install command visit the [Configure a Build - Install Command](/docs/builds/configure-a-build#install-command)
 section.
 
 ```json filename="vercel.json"
@@ -506,18 +527,99 @@ The `images` property defines the behavior of [Vercel's native Image Optimizatio
 
 ## outputDirectory
 
-This value overrides the [Output Directory](/docs/deployments/configure-a-build#output-directory) in Project Settings.
+This value overrides the [Output Directory](/docs/builds/configure-a-build#output-directory) in Project Settings.
 
 **Type:** `string | null`
 
 The `outputDirectory` property can be used to override the Output Directory in the Project Settings dashboard for a given deployment.
 
-In the following example, the deployment will look for the `build` directory rather than the default `public` or `.` root directory. For more information on the default behavior of the Output Directory see the [Configure a Build - Output Directory](/docs/deployments/configure-a-build#output-directory) section. The following example is a `vercel.json` file that overrides the `outputDirectory` to `build`:
+In the following example, the deployment will look for the `build` directory rather than the default `public` or `.` root directory. For more information on the default behavior of the Output Directory see the [Configure a Build - Output Directory](/docs/builds/configure-a-build#output-directory) section. The following example is a `vercel.json` file that overrides the `outputDirectory` to `build`:
 
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": "build"
+}
+```
+
+## proxy
+
+**Type:** `Object`
+
+The `proxy` property can be used to explicitly configure the file Vercel builds as [Routing Middleware](/docs/routing-middleware). Without it, Vercel looks for a `middleware.ts` or `middleware.js` file at your project root.
+
+### Value definition
+
+- `entrypoint` (required): The path to your Routing Middleware file, relative to your project root. Must end in `.js` or `.ts`, must reference an existing file, and can live in a subdirectory such as `src/proxy.ts`.
+- `matcher` (optional): A path matcher starting with `/`, or an array of path matchers starting with `/`, that defines which requests run your Routing Middleware. See [matcher config](/docs/routing-middleware/api#match-paths-based-on-custom-matcher-config) for the supported syntax.
+
+### Description
+
+The following configuration builds `proxy.ts` as your Routing Middleware and runs it on requests under `/api`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "proxy": {
+    "entrypoint": "proxy.ts",
+    "matcher": "/api/:func*"
+  }
+}
+```
+
+Your entrypoint exports the handler as a default export:
+
+```ts filename="proxy.ts"
+export default function proxy(request: Request) {
+  return new Response('Hello from your Routing Middleware!');
+}
+```
+
+```js filename="proxy.js"
+export default function proxy(request) {
+  return new Response('Hello from your Routing Middleware!');
+}
+```
+
+### Runtime
+
+An entrypoint configured through `proxy` runs on the [Node.js runtime](/docs/functions/runtimes/node-js).
+
+A `middleware.ts` file that sets `runtime: 'nodejs'` in its exported `config` behaves the same as `"proxy": { "entrypoint": "middleware.ts" }`.
+
+### Setting the matcher
+
+You can set either `proxy.matcher` in `vercel.json`, or export a `config` object with a `matcher` property from your entrypoint.
+
+The matcher accepts a single path or an array of paths:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "proxy": {
+    "entrypoint": "src/proxy.ts",
+    "matcher": ["/about/:path*", "/dashboard/:path*"]
+  }
+}
+```
+
+Without a matcher, your Routing Middleware runs on every request.
+
+### Setting function options
+
+Set duration, memory, and other per-function options with the [`functions`](#functions) property, keyed on your entrypoint path:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "proxy": {
+    "entrypoint": "proxy.ts"
+  },
+  "functions": {
+    "proxy.ts": {
+      "maxDuration": 10
+    }
+  }
 }
 ```
 
@@ -682,11 +784,11 @@ This example uses the expressive `value` object to define a route that redirects
 }
 ```
 
-Learn more about [redirects on Vercel](/docs/redirects) and see [limitations](/docs/redirects#limits).
+Learn more about [redirects on Vercel](/docs/routing/redirects) and see [limitations](/docs/routing/redirects#limits).
 
 ## bulkRedirectsPath
 
-Learn more about [bulk redirects on Vercel](/docs/redirects/bulk-redirects) and see [limits and pricing](/docs/redirects/bulk-redirects#limits-and-pricing).
+Learn more about [bulk redirects on Vercel](/docs/routing/redirects/bulk-redirects) and see [limits and pricing](/docs/routing/redirects/bulk-redirects#limits-and-pricing).
 
 **Type:** `string` path to a file or folder.
 
@@ -752,7 +854,7 @@ In order to improve space efficiency, all boolean values can be the single chara
 
 ## regions
 
-This value overrides the [Vercel Function Region](/docs/functions/regions) in Project Settings.
+This value overrides the [Vercel Function Region](/docs/functions/configuring-functions/region) in Project Settings.
 
 **Type:** `Array` of region identifier `String`.
 
@@ -760,7 +862,7 @@ This value overrides the [Vercel Function Region](/docs/functions/regions) in Pr
 
 You can define the **regions** where your [Vercel functions](/docs/functions) are executed. Users on Pro and Enterprise can deploy to multiple regions. Hobby plans can select any single region. To learn more, see [Configuring Regions](/docs/functions/configuring-functions/region#project-configuration).
 
-Function responses [can be cached](/docs/cdn-cache) in the requested regions. Selecting a Vercel Function region does not impact static files, which are deployed to every region by default.
+Function responses [can be cached](/docs/caching/cdn-cache) in the requested regions. Selecting a Vercel Function region does not impact static files, which are deployed to every region by default.
 
 ```json filename="vercel.json"
 {
@@ -775,7 +877,7 @@ You can also set `regions` on individual functions using the [`functions`](/docs
 
 > **🔒 Permissions Required**: Setting failover regions for Vercel functions
 
-Set this property to specify the [region](/docs/functions/regions) to which a Vercel Function should fallback when the default region(s) are unavailable.
+Set this property to specify the [region](/docs/functions/configuring-functions/region) to which a Vercel Function should fallback when the default region(s) are unavailable.
 
 **Type:** `Array` of region identifier `String`.
 
@@ -942,7 +1044,7 @@ The `source` property should **NOT** be a file because precedence is given to th
 > **💡 Note:** Using `has` does not yet work locally while using
 > `vercel dev`, but does work when deployed.
 
-Learn more about [rewrites](/docs/rewrites) on Vercel.
+Learn more about [rewrites](/docs/routing/rewrites) on Vercel.
 
 ## routes
 
@@ -1573,7 +1675,7 @@ The `name` property has been deprecated in favor of [Project Linking](/docs/cli/
 
 The prefix for all new deployment instances. Vercel CLI usually generates this field automatically based on the name of the directory. But if you'd like to define it explicitly, this is the way to go.
 
-The defined name is also used to organize the deployment into [a project](/docs/projects/overview).
+The defined name is also used to organize the deployment into [a project](/docs/projects).
 
 ```json filename="vercel.json"
 {
@@ -1601,17 +1703,17 @@ Specifies the Vercel Platform version the deployment should use.
 
 ### alias
 
-The `alias` property should not be used anymore. To assign a custom Domain to your project, please [define it in the Project Settings](/docs/domains/add-a-domain) instead. Once your domains are, they will take precedence over the configuration property.
+The `alias` property should not be used anymore. To assign a custom Domain to your project, please [define it in the Project Settings](/docs/domains/working-with-domains/add-a-domain) instead. Once your domains are, they will take precedence over the configuration property.
 
 **Type**: `Array` or `String`.
 
-**Valid values**: [domain names](/docs/domains/add-a-domain) (optionally including subdomains) added to the account, or a string for a suffixed URL using `.vercel.app` or a Custom Deployment Suffix ([available on the Enterprise plan](/pricing)).
+**Valid values**: [domain names](/docs/domains/working-with-domains/add-a-domain) (optionally including subdomains) added to the account, or a string for a suffixed URL using `.vercel.app` or a Custom Deployment Suffix ([available on the Enterprise plan](/pricing)).
 
 **Limit**: A maximum of 64 aliases in the array.
 
 The alias or aliases are applied automatically using [Vercel for GitHub](/docs/git/vercel-for-github), [Vercel for GitLab](/docs/git/vercel-for-gitlab), or [Vercel for Bitbucket](/docs/git/vercel-for-bitbucket) when merging or pushing to the [Production Branch](/docs/git#production-branch).
 
-You can deploy to the defined aliases using [Vercel CLI](/docs/cli) by setting the [production deployment environment target](/docs/domains/deploying-and-redirecting).
+You can deploy to the defined aliases using [Vercel CLI](/docs/cli) by setting the [production deployment environment target](/docs/domains/working-with-domains/deploying-and-redirecting).
 
 ```json filename="vercel.json"
 {
@@ -1628,7 +1730,7 @@ The `scope` property has been deprecated in favor of [Project Linking](/docs/cli
 
 **Valid values**: For teams, either an ID or slug. For users, either a email address, username, or ID.
 
-This property determines the scope ([Hobby team](/docs/accounts/create-an-account#creating-a-hobby-account) or [team](/docs/accounts/create-a-team)) under which the project will be deployed by [Vercel CLI](/cli).
+This property determines the scope ([Hobby team](/docs/accounts#creating-a-hobby-account) or [team](/docs/accounts#creating-a-team)) under which the project will be deployed by [Vercel CLI](/cli).
 
 It also affects any other actions that the user takes within the directory that contains this configuration (e.g. listing [environment variables](/docs/environment-variables) using `vercel secrets ls`).
 
@@ -1639,7 +1741,7 @@ It also affects any other actions that the user takes within the directory that 
 }
 ```
 
-Deployments made through [Git](/docs/git) will **ignore** the `scope` property because the repository is already connected to [project](/docs/projects/overview).
+Deployments made through [Git](/docs/git) will **ignore** the `scope` property because the repository is already connected to [project](/docs/projects).
 
 ### env
 
@@ -1671,9 +1773,9 @@ We recommend against using this property. To add custom environment variables to
 
 **Valid values:** environment keys and values.
 
-[Environment variables](/docs/environment-variables) passed to the [Build](/docs/deployments/configure-a-build) processes.
+[Environment variables](/docs/environment-variables) passed to the [Build](/docs/builds/configure-a-build) processes.
 
-The following example will pass the `MY_KEY` environment variable to all [Builds](/docs/deployments/configure-a-build) and the `SECRET` resolved from the `my-secret-name` [secret](/docs/environment-variables/reserved-environment-variables) dynamically.
+The following example will pass the `MY_KEY` environment variable to all [Builds](/docs/builds/configure-a-build) and the `SECRET` resolved from the `my-secret-name` [secret](/docs/environment-variables/reserved-environment-variables) dynamically.
 
 ```json filename="vercel.json"
 {

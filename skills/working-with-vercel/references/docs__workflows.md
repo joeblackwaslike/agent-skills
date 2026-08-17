@@ -16,14 +16,36 @@ related:
 summary: Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents with the Workflow SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "982382c022ed2996e8ebe68fb1efc514a3c10f8869d6718ef4ddf4ac622038b2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "87aba29cc486d9cfe83700de358ca93fad4cd2980c2e81b906f4081d7685e90a"
 ---
 
 # Vercel Workflows
 
 Vercel Workflows is a fully managed platform for building durable applications
 and AI agents in JavaScript, TypeScript, and [Python](/docs/workflows/python).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related) — Set up the Workflow Python SDK in your Python application.
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Building human-in-the-loop agents for community moderation with durable workflows](https://vercel.com/kb/guide/building-human-in-the-loop-agents-for-community-moderation-with-durable-workflows?from=related) — Learn how to build AI agents that escalate decisions to humans in Slack, pause and resume runs reliably, and stream prog
+- [Workflow SDK vs Cloudflare Workflows](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-cloudflare-workflows?from=related) — Cloudflare Workflows is a durable engine on Workers and Durable Objects. It and the Workflow SDK both replay, but differ
+- [Observability](https://workflow-sdk.dev/docs/observability?from=related) — Inspect and debug workflow runs using the CLI and Web UI.
+- [Deploying](https://workflow-sdk.dev/docs/deploying?from=related) — Learn how to deploy workflows to different environments using World adapters.
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
+- [eve](https://vercel.com/docs/eve?from=related) — Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
+- [Concepts](https://vercel.com/docs/eve/concepts?from=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+
+Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md)
+<!-- /docsgraph:related -->
 
 It builds on the open-source [Workflow SDK](https://workflow-sdk.dev) for
 JavaScript and TypeScript, and on workflow support in the

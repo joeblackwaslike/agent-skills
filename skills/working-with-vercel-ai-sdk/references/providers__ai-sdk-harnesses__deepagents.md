@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "08910547dd31baf5121564b71fad0e97c0760c458df470d2cafb69cec3cfa6bf"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "2d05b6aa6b527ae7fb6b19c842c4d4cb60cfe5cfdbbfdb8d15609485c139f34f"
 ---
 
 # Deep Agents Harness
@@ -87,7 +87,8 @@ const harness = createDeepAgents({
 
 Settings:
 
-- `auth`: Anthropic or AI Gateway authentication settings.
+- `auth`: authentication mode: `auto`, `anthropic`, or `ai-gateway`.
+- `mcpServers`: MCP server definitions keyed by server name.
 - `model`: model id passed to the Deep Agents (LangChain) runtime. Through AI
   Gateway, use the `creator/model` slug (e.g. `anthropic/claude-sonnet-4-6`,
   `google/gemini-2.5-flash`, `openai/gpt-4.1-mini`).
@@ -95,15 +96,29 @@ Settings:
 - `recursionLimit`: maximum LangGraph super-steps per turn. When omitted, the
   Deep Agents default applies.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `mintBridgeToken`: synchronous function that receives the sandbox id and
+  returns the bridge authentication token. By default, the adapter generates a
+  random 32-byte token. Custom implementations must return a suitably secret
+  token.
 
 ## Authentication
 
 Deep Agents always drives the Anthropic client. Non-Anthropic models reach it
 through AI Gateway's Anthropic-compatible endpoint, which translates to any
-model (Gemini, OpenAI, etc.), tool calls included. Authentication is resolved
-from the host environment and forwarded to the sandbox bridge: explicit
-Anthropic auth first, then AI Gateway credentials, then ambient Anthropic
-credentials.
+model (Gemini, OpenAI, etc.), tool calls included.
+
+The `auth` setting selects how credentials are resolved from the host
+environment:
+
+- `auto` (default): use AI Gateway credentials when available, then fall back
+  to Anthropic credentials.
+- `anthropic`: use Anthropic credentials.
+- `ai-gateway`: use AI Gateway credentials.
+
+When the sandbox supports additive request transformations, the bridge receives
+placeholders and the adapter injects credentials into matching outbound
+requests. Sandboxes without that capability retain direct credential
+forwarding.
 
 Supported environment variables:
 
@@ -114,17 +129,12 @@ Supported environment variables:
 - `ANTHROPIC_AUTH_TOKEN`
 - `ANTHROPIC_BASE_URL`
 
-You can also pass explicit auth settings (`anthropic` or `gateway`). To run a
-non-Anthropic model, route it through AI Gateway:
+To run a non-Anthropic model, select `ai-gateway`:
 
 ```ts
 const harness = createDeepAgents({
   model: 'google/gemini-2.5-flash',
-  auth: {
-    gateway: {
-      apiKey: process.env.AI_GATEWAY_API_KEY,
-    },
-  },
+  auth: 'ai-gateway',
 });
 ```
 
@@ -186,6 +196,9 @@ The adapter exposes these Deep Agents built-ins through `agent.tools`:
 - [Pi](/providers/ai-sdk-harnesses/pi)
 - [OpenCode](/providers/ai-sdk-harnesses/opencode)
 - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+- [Cline](/providers/ai-sdk-harnesses/cline)
 
 
 [Full Sitemap](/sitemap.md)

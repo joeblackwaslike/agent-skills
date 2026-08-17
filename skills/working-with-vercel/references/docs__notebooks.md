@@ -12,13 +12,28 @@ related:
 summary: Learn more about Notebooks and how they allow you to organize and save your queries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notebooks.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4affddbc7f42c1dbfa6f6df36d87ace8039e767f24bdf0879adfef40b607b78e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d865816d99325175311d6e3a93552511995708eda73029b11c0df17fb3ecba24"
 ---
 
 # Notebooks
 
 > **🔒 Permissions Required**: Notebooks
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Getting Started](https://vercel.com/docs/query/monitoring/quickstart?from=related) — In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your
+- [Monitoring](https://vercel.com/docs/query/monitoring?from=related) — Query and visualize your Vercel usage, traffic, and more with Monitoring.
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+
+Full cross-link map for this page: [/docs/notebooks.graph.md](/docs/notebooks.graph.md)
+<!-- /docsgraph:related -->
 
 **Notebooks** allow you to collect and manage multiple queries related to your application's metrics and performance data.
 

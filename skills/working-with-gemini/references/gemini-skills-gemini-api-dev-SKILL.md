@@ -2,8 +2,8 @@
 name: gemini-api-dev
 description: Use this skill when building applications with Gemini API hosted models, including Gemini and Gemma 4, working with multimodal content (text, images, audio, video), implementing function calling, using structured outputs, or needing current model specifications. Covers SDK usage (google-genai for Python, @google/genai for JavaScript/TypeScript, com.google.genai:google-genai for Java, google.golang.org/genai for Go), model selection, and API capabilities.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-api-dev/SKILL.md"
-fetched_at: "2026-07-27T07:34:34.896Z"
-sha256: "2086e0d14bceecd035c54c2fa822dda27b442ae99dea734def1a2580699c8e59"
+fetched_at: "2026-08-17T04:44:34.010Z"
+sha256: "7ca5eddab0d20e80fb8b12869ee42db0b8da502381538eb880503e78cedfc651"
 ---
 
 # Gemini API Development Skill
@@ -15,7 +15,7 @@ sha256: "2086e0d14bceecd035c54c2fa822dda27b442ae99dea734def1a2580699c8e59"
 
 ### Current Models (Use These)
 
-- `gemini-3.6-flash`: 1M tokens, fast, balanced performance for agentic and multimodal tasks
+- `gemini-3.7-flash`: 1M tokens, fast, balanced performance for agentic and multimodal tasks
 - `gemini-3.5-flash-lite`: 1M tokens, fastest, lowest-cost 3.5 model for high-throughput execution
 - `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research
 - `gemini-3-pro-image-preview` (Nano Banana Pro): 65k / 32k tokens, image generation and editing
@@ -49,7 +49,7 @@ from google import genai
 
 client = genai.Client()
 response = client.models.generate_content(
-    model="gemini-3.6-flash",
+    model="gemini-3.7-flash",
     contents="Explain quantum computing"
 )
 print(response.text)
@@ -61,7 +61,7 @@ import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({});
 const response = await ai.models.generateContent({
-  model: "gemini-3.6-flash",
+  model: "gemini-3.7-flash",
   contents: "Explain quantum computing"
 });
 console.log(response.text);
@@ -85,7 +85,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	resp, err := client.Models.GenerateContent(ctx, "gemini-3.6-flash", genai.Text("Explain quantum computing"), nil)
+	resp, err := client.Models.GenerateContent(ctx, "gemini-3.7-flash", genai.Text("Explain quantum computing"), nil)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -105,7 +105,7 @@ public class GenerateTextFromTextInput {
     Client client = new Client();
     GenerateContentResponse response =
         client.models.generateContent(
-            "gemini-3.6-flash",
+            "gemini-3.7-flash",
             "Explain quantum computing",
             null);
 

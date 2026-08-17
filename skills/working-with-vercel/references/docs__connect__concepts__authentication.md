@@ -17,13 +17,29 @@ related:
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "3e4a5da35eb1eb54527c1f20495812f30636227543a2ee558243e325ce778346"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3ec43b0214a3730f2573ccb0bddc8f3e70a97e60ccfad6c7aa472238c953fe24"
 ---
 
 # Authentication
 
 Vercel Connect sits between your code and a provider. Each token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the provider. Understanding both is the fastest way to debug "why did this token request fail."
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+
+Full cross-link map for this page: [/docs/connect/concepts/authentication.graph.md](/docs/connect/concepts/authentication.graph.md)
+<!-- /docsgraph:related -->
 
 ## Caller to Vercel Connect
 

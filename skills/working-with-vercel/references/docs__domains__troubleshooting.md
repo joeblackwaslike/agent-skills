@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/domains
 related:
-  - /docs/domains/add-a-domain
+  - /docs/domains/working-with-domains/add-a-domain
   - /docs/domains/working-with-dns
   - /docs/domains/managing-dns-records
   - /docs/domains/working-with-domains
@@ -16,15 +16,35 @@ related:
 summary: Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d70ac687511dda9df2e68e2fc5d3e353253f450f14981abbbd020465d5923079"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "18242b5d6160440696e74f0cf36162c220cc081355f99e7531c4c9b2258c30a1"
 ---
 
 # Troubleshooting domains
 
 There are many common reasons why your domain configuration may not be working. Check the following:
 
-- Is your domain [added](/docs/domains/add-a-domain#add-and-configure-domain) to your Vercel project?
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues?from=related) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related) — Information on why a Vercel domain may not be verified and how to verify it.
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
+- [Configuring Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Working with Nameservers](https://vercel.com/docs/domains/working-with-nameservers?from=related) — Learn about nameservers and the benefits Vercel nameservers provide.
+- [Production Checklist](https://vercel.com/docs/production-checklist?from=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+
+Full cross-link map for this page: [/docs/domains/troubleshooting.graph.md](/docs/domains/troubleshooting.graph.md)
+<!-- /docsgraph:related -->
+
+- Is your domain [added](/docs/domains/working-with-domains/add-a-domain#add-and-configure-domain) to your Vercel project?
 - Is your custom domain pointed to the provided Vercel `CNAME`/`A` record correctly? You can check it by using `dig [example.com]` in your Terminal.
 - If you use the [nameservers method](/docs/domains/troubleshooting#configuring-nameservers-for-wildcard-domains) on your apex domain, please refer to your DNS provider's documentation for the exact instructions on how to change authoritative nameservers.
 - Is the issue only local to you? Try to clear your browser cache, and flush DNS caches on your machine/network if possible.
@@ -33,10 +53,10 @@ There are many common reasons why your domain configuration may not be working. 
 
 When you add a domain to Vercel that you have purchased from a third-party DNS provider, you may see an **Invalid Configuration** alert. There are many reasons why this could be the case:
 
-- You need to configure the [DNS](#common-dns-issues) records of your domain with your DNS provider so they can be used with your project. To resolve this, follow the steps to [configure your domain](/docs/domains/add-a-domain#configure-the-domain).
-- If your domain is in use by another Vercel account, you may be prompted to [verify access to the domain](/docs/domains/add-a-domain#verify-domain-access) by adding a TXT record. This will not move the domain into your account, but will allow you to use it in your project.
+- You need to configure the [DNS](#common-dns-issues) records of your domain with your DNS provider so they can be used with your project. To resolve this, follow the steps to [configure your domain](/docs/domains/working-with-domains/add-a-domain#configure-the-domain).
+- If your domain is in use by another Vercel account, you may be prompted to [verify access to the domain](/docs/domains/working-with-domains/add-a-domain#verify-domain-access) by adding a TXT record. This will not move the domain into your account, but will allow you to use it in your project.
 - There was an issue generating the SSL certificate for your domain. The most common reason for this is [missing CAA records](#missing-caa-records). For information on other issues that may cause this, see the [common SSL certificate issues](#common-ssl-certificate-issues) section.
-- You have configured [wildcard subdomains](/docs/domains/add-a-domain#using-wildcard-domain) on your project, but their nameservers aren’t with Vercel. When using a wildcard domain, you must use the [nameservers method](/docs/domains/troubleshooting#configuring-nameservers-for-wildcard-domains).
+- You have configured [wildcard subdomains](/docs/domains/working-with-domains/add-a-domain#using-wildcard-domain) on your project, but their nameservers aren’t with Vercel. When using a wildcard domain, you must use the [nameservers method](/docs/domains/troubleshooting#configuring-nameservers-for-wildcard-domains).
 
 ## Common DNS issues
 
@@ -46,7 +66,7 @@ Vercel is expecting either an `A` record or a `CNAME` record. In your Project Se
 - `dig a [apex domain e.g. example.com]` to get a domain’s `A` record
 - `dig cname [subdomain e.g. www.example.com]` to get a domain’s `CNAME` record
 
-If you prefer a non-command-line interface, you can use a free online tool, such as [Google Public DNS](https://dns.google/). If any of these results do not match what is expected, follow the steps to [configure your domain](/docs/domains/add-a-domain#configure-the-domain).
+If you prefer a non-command-line interface, you can use a free online tool, such as [Google Public DNS](https://dns.google/). If any of these results do not match what is expected, follow the steps to [configure your domain](/docs/domains/working-with-domains/add-a-domain#configure-the-domain).
 
 ### DNS record propagation times
 
@@ -65,7 +85,7 @@ For more information on [propagation times](/docs/domains/working-with-dns#dns-p
 
 ### IPv6 support
 
-While we allow the [creation](/docs/domains/managing-dns-records#adding-dns-records) of AAAA records when using Vercel's nameservers, **we do not support IPv6 yet**. This means if you are adding a [custom domain](/docs/domains/add-a-domain) from a [third-party](/docs/domains/working-with-domains#buying-a-domain-through-a-third-party), you won't be able to point an `AAAA` record to Vercel.
+While we allow the [creation](/docs/domains/managing-dns-records#adding-dns-records) of AAAA records when using Vercel's nameservers, **we do not support IPv6 yet**. This means if you are adding a [custom domain](/docs/domains/working-with-domains/add-a-domain) from a [third-party](/docs/domains/working-with-domains#buying-a-domain-through-a-third-party), you won't be able to point an `AAAA` record to Vercel.
 
 ### Syntax errors debugging
 
@@ -87,7 +107,7 @@ This means that when you add a new CNAME record to your DNS provider, you **must
 
 ### Configuring nameservers for wildcard domains
 
-When you add any custom domain to your Vercel project you must [configure](/docs/domains/add-a-domain#configure-the-domain) the DNS records with your DNS provider so it can be used with your project. When you add a wildcard domain (such as `*.example.com`), you **must** [use the **Nameservers** method](/docs/domains/add-a-domain#vercel-nameservers).
+When you add any custom domain to your Vercel project you must [configure](/docs/domains/working-with-domains/add-a-domain#configure-the-domain) the DNS records with your DNS provider so it can be used with your project. When you add a wildcard domain (such as `*.example.com`), you **must** [use the **Nameservers** method](/docs/domains/working-with-domains/add-a-domain#vercel-nameservers).
 
 This is because Vercel needs to be able to set DNS records in order to generate the wildcard certificates. The service that Vercel uses to [generate the certificates](/docs/domains/working-with-ssl) requires us to verify the domain ownership by using the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge). By changing the nameservers, Vercel will handle the DNS-01 challenge for you automatically, and you don't need to update your verification DNS record upon your certificate renewal each time.
 
@@ -106,7 +126,7 @@ When you add your custom domain to a project and use Vercel's nameservers, you w
 
 All domain purchases and renewals through Vercel are final once processed. For more information, see [Can I get a refund for a domain purchased or renewed with Vercel?](/kb/guide/can-i-get-a-refund-for-a-domain-purchased-or-renewed-with-vercel)
 
-For a [free first-year domain](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades) claimed as part of an eligible new Pro upgrade, the domain renews at the standard rate after year one.
+For a [free first-year domain](/docs/plans/pro-plan#free-first-year-domain-with-pro) claimed with a paid Pro plan, the domain renews at the standard rate after year one.
 
 ### Pending domain purchases
 

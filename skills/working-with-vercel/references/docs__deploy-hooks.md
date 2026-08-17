@@ -8,21 +8,39 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/deployments/configure-a-build
-  - /docs/projects/overview
+  - /docs/builds/configure-a-build
+  - /docs/projects
   - /docs/project-configuration/git-configuration
   - /docs/deployments/troubleshoot-a-build
   - /docs/limits
 summary: Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-hooks.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f307bd1e32efcfde71b459ce7c8216d2504d5d48c3ebdbcb37da8adc9ed311b3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4af7930d4d3a8e679001dddd16adb89b4d3fe5c2f0e8dec392b06e5e6b8f1dba"
 ---
 
 # Creating & Triggering Deploy Hooks
 
-Deploy Hooks allow you to create URLs that accept HTTP `POST` requests in order to trigger deployments and re-run the [Build Step](/docs/deployments/configure-a-build). These URLs are uniquely linked to your project, repository, and branch, so there is no need to use any authentication mechanism or provide any payload to the `POST` request.
+Deploy Hooks allow you to create URLs that accept HTTP `POST` requests in order to trigger deployments and re-run the [Build Step](/docs/builds/configure-a-build). These URLs are uniquely linked to your project, repository, and branch, so there is no need to use any authentication mechanism or provide any payload to the `POST` request.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms?from=related) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Webhooks](https://vercel.com/docs/webhooks?from=related) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [Git Settings](https://vercel.com/docs/project-configuration/git-settings?from=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+
+Full cross-link map for this page: [/docs/deploy-hooks.graph.md](/docs/deploy-hooks.graph.md)
+<!-- /docsgraph:related -->
 
 This feature allows you to integrate Vercel deployments with other systems. For example, you can set up:
 
@@ -32,7 +50,7 @@ This feature allows you to integrate Vercel deployments with other systems. For 
 
 ## Creating a Deploy Hook
 
-To create a Deploy Hook for your project, make sure your project is [connected to a Git repository](/docs/projects/overview#git).
+To create a Deploy Hook for your project, make sure your project is [connected to a Git repository](/docs/projects#git).
 
 Once your project is connected, navigate to its **Settings** page and then select the **Git** menu item.
 
@@ -96,7 +114,7 @@ If you believe your Deploy Hook URL has been compromised, you can revoke it and 
 Builds triggered by a Deploy Hook are automatically provided with
 an appropriate [Build Cache](/docs/deployments/troubleshoot-a-build#what-is-cached) by default, if it exists.
 
-Caching helps speed up the [Build Step](/docs/deployments/configure-a-build), so we encourage you to keep the default behavior.
+Caching helps speed up the [Build Step](/docs/builds/configure-a-build), so we encourage you to keep the default behavior.
 However, if you explicitly want to opt out of using a Build Cache, you can disable it by
 appending `?buildCache=false` to the Deploy Hook URL.
 

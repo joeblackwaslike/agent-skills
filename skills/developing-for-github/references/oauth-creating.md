@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "3ceba7d0276f0b6e7f1398221450c7ad853948f81503c25218ac2cc7ab4b5f24"
+fetched_at: "2026-08-17T04:40:36.479Z"
+sha256: "4ade7c8220d80ddd76da89a148178d0db35090df176cdc529bc80b7c0186205b"
 ---
 
 > [!NOTE]
@@ -39,10 +39,17 @@ sha256: "3ceba7d0276f0b6e7f1398221450c7ad853948f81503c25218ac2cc7ab4b5f24"
 1. Optionally, in "Application description", type a description of your app that users will see.
 1. In "Authorization callback URL", type the callback URL of your app.
 
-   > [!NOTE]
-   > {% data variables.product.prodname_oauth_apps %} cannot have multiple callback URLs, unlike {% data variables.product.prodname_github_apps %}.
+   {% ifversion fpt or ghec or ghes > 3.23 %}
 
-1. If your {% data variables.product.prodname_oauth_app %} will use the device flow to identify and authorize users, click **Enable Device Flow**. For more information about the device flow, see [AUTOTITLE](/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#device-flow).
+   You can enter up to 10 callback URLs. To add additional callback URLs, click **Add callback URL**.
+
+   {% else %}
+
+   > [!NOTE]
+   > {% data variables.product.prodname_oauth_apps %} cannot have multiple callback URLs, unlike {% data variables.product.prodname_github_apps %}.{% endif %}
+
+1. If your {% data variables.product.prodname_oauth_app %} will use the device flow to identify and authorize users, click **Enable Device Flow**. For more information about the device flow, see [AUTOTITLE](/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#device-flow).{% ifversion oauth-token-expiration %}
+1. **Expire user access tokens** is enabled by default. If your app's authentication code hasn't been updated to support short-lived tokens, uncheck the box until support is added. For more information about expiring tokens, see [AUTOTITLE](/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#expiring-access-tokens).{% endif %}
 1. Click **Register application**.
 
 ## Further reading

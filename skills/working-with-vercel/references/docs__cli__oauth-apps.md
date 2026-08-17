@@ -12,13 +12,28 @@ related:
 summary: "Register Vercel Apps (OAuth) and manage team installations from the CLI: register new apps, list and dismiss installation requests, install apps to a..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/oauth-apps.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "68144140f7b80f19ead979b712be055c8e3926cdf25227e0755032e8b47da852"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ae7f0683de44c6be9921f7099614412dca689efd2624525d177f3882663bc7f2"
 ---
 
 # vercel oauth-apps
 
 The `vercel oauth-apps` command registers Vercel Apps (OAuth) and manages team installations. Use it to register a new OAuth client, review pending installation requests for your team, install a Vercel App with the right permissions, and uninstall apps you no longer need.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel teams](https://vercel.com/docs/cli/teams?from=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel tokens](https://vercel.com/docs/cli/tokens?from=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+
+Full cross-link map for this page: [/docs/cli/oauth-apps.graph.md](/docs/cli/oauth-apps.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** These subcommands act on team-scoped resources. Make sure your current scope
 > is the correct team before running mutations, or pass `--scope <team>`.

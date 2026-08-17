@@ -10,20 +10,39 @@ prerequisites:
   - /docs/global-config
 related:
   - /docs/cli
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/global-config/get-started
   - /docs/global-config/global-config-sdk
   - /docs/global-config/global-config-dashboard
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "17302d960ed36b2a87a142adbe3d8ba63cdcc577fb4f01abe61f7a9386b71b07"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b765cbd593dcb1c0c2d9d950fe325945f569abe656bcab5a969c4c8bc1c75bea"
 ---
 
 # Using Global Config with Split
 
 This guide will help you get started with using Vercel's Split integration with Global Config. This integration allows you to use Global Config as a configuration source for your Split feature flags.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Backend for Frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related) — Learn how to use Next.js as a backend framework
+- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related) — API reference for the route.js special file.
+- [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox?from=related) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
+- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [@vercel/analytics](https://vercel.com/docs/analytics/package?from=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Client Uploads](https://vercel.com/docs/vercel-blob/client-upload?from=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+
+Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md)
+<!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: The Split Global Config integration
 
@@ -83,7 +102,7 @@ Before using this integration, you should have:
   </Code>
 </CodeBlock>
 
-1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects/overview#creating-a-project)
+1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
    <CodeBlock>

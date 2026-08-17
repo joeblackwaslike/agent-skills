@@ -11,22 +11,40 @@ related:
   - /docs/ai-gateway/security-and-compliance/zdr
   - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
+  - /docs/ai-gateway/security-and-compliance/model-allowlist
 summary: "AI Gateway data privacy and governance controls: zero data retention, prompt training policies, and provider allowlists."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "8f0cf48bc0ffa837f89566b5254c242a06f00e818c16b806bfd6410828228301"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9d9b8cdf4581efea8d527d90e1a13bdba299e9822fa156430b2efa202312ed8e"
 ---
 
 # Security and Compliance
 
 AI Gateway gives you controls over where your data goes and what providers can do with it. You can route only to providers with verified zero data retention agreements, prevent providers from training on your prompts, and restrict which providers serve traffic for your team. These controls work the same way regardless of which model you use.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
+- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
+
+Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance.graph.md](/docs/ai-gateway/security-and-compliance.graph.md)
+<!-- /docsgraph:related -->
+
 ## What you can do
 
 - **Enforce data privacy**: Route only to providers with verified ZDR agreements with [Zero Data Retention](/docs/ai-gateway/security-and-compliance/zdr)
 - **Block training on prompts**: Prevent providers from using your prompts for model training with [Disallow Prompt Training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training)
 - **Restrict providers**: Limit which AI providers can serve requests across your team with the [Provider Allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist)
+- **Restrict models**: Control which AI models your team can use with the [Model Allowlist](/docs/ai-gateway/security-and-compliance/model-allowlist)
 
 ## Features overview
 

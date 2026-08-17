@@ -10,18 +10,33 @@ prerequisites:
   - /docs/flags
 related:
   - /docs/flags/flags-explorer/reference
-  - /docs/runtime-logs
+  - /docs/logs/runtime
   - /docs/flags/flags-sdk-reference
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5ba76e9db9dd1f6fcf54971743da5c7c7a6a599785c565d628902d56248d9802"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ac7e04b2889a3ac02603fecffe74aff96b0f6b8e59fbb9e753eeca4077ebb0a0"
 ---
 
 # Integrate flags with Vercel Web Analytics
 
 > **🔒 Permissions Required**: Web Analytics integration
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
+- [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+
+Full cross-link map for this page: [/docs/flags/observability/web-analytics.graph.md](/docs/flags/observability/web-analytics.graph.md)
+<!-- /docsgraph:related -->
 
 ![Image](`/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-in-web-analytics-light.png`)
 
@@ -49,7 +64,7 @@ Vercel Web Analytics can look up the values of evaluated feature flags in the DO
 
 To track feature flags in server-side events:
 
-1. First, report the feature flag value using `reportValue` to make the flag show up in [Runtime Logs](/docs/runtime-logs):
+1. First, report the feature flag value using `reportValue` to make the flag show up in [Runtime Logs](/docs/logs/runtime):
 
    ```ts {1, 8} filename="app/api/test/route.ts"
    import { reportValue } from 'flags';

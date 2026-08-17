@@ -14,13 +14,31 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c64bd83632308605fa42a2b310f690e6d1a16ea77b7e6058c9bbea411d46e7b6"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c6a580701bd6b1d0543206919788d588f905013e6bbe77fba2933cfeae72bd7f"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
 
 ## Getting started
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout?from=related) — API reference for the layout.js file.
+- [Preventing Flash](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration?from=related) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
+- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related) — Learn how to enable Partial Prefetching and what changes for `<Link>`.
+- [generateMetadata](https://nextjs.org/docs/app/api-reference/functions/generate-metadata?from=related) — Learn how to add Metadata to your Next.js application for improved search engine optimization (SEO) and web shareability
+- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+
+Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md)
+<!-- /docsgraph:related -->
 
 To get started with analytics, follow our [Quickstart](/docs/analytics/quickstart) guide which will walk you through the process of setting up analytics for your project.
 

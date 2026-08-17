@@ -15,13 +15,28 @@ related:
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "79a613b7ababc9bc5a13a571b5f7beaca04d868f4aafe051e57d220dee9d14a3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f24563347cba9ea023223ba08ff323e0decd5135c501301fdab06ce401fb6798"
 ---
 
 # Metrics
 
 AI Gateway tracks **throughput** and **latency** for each model and provider, measured from live AI Gateway traffic. For provider availability, see [uptime](/docs/ai-gateway/models-and-providers/uptime).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability?from=related) — Learn how to monitor and debug your AI Gateway requests.
+- [Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards?from=related) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
+- [Legacy Metrics](https://vercel.com/docs/pricing/legacy?from=related) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/metrics.graph.md](/docs/ai-gateway/models-and-providers/metrics.graph.md)
+<!-- /docsgraph:related -->
 
 ## Throughput
 

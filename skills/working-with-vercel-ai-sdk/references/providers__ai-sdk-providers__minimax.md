@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "d24260df253a229fad0498eb5efa259a4cd617ec757f13df5d6567a399efb780"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "bd5922caf24e65688d315797546534f700cf242c0a4ba351016a35d08b602061"
 ---
 
 # MiniMax Provider
@@ -292,7 +292,6 @@ MiniMax video results include `providerMetadata.minimax`:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -302,6 +301,7 @@ MiniMax video results include `providerMetadata.minimax`:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

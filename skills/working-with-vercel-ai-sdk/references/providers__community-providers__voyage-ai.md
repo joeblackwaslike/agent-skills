@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/voyage-ai.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "585862ea8bcf1e2717f43f71b051af73d70bb98d440e7c8c027decc8a35c1e53"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "79e273fbbc420795681a9b4cad68136c327a54b9ef921d703cdd4f9f3124b2d7"
 ---
 
 # Voyage AI Provider
@@ -356,6 +356,7 @@ The following provider options are available:
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

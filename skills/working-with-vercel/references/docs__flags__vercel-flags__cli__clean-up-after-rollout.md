@@ -13,13 +13,28 @@ related:
 summary: Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "490435c645dd63724136f90468bb48c976541db9514dd24baa66b41a73e12454"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d5aa60cf64fc23bfdc985457cc34862cc88523b609948ca1a34153268af3b839"
 ---
 
 # Cleaning up after a full rollout
 
 Once a feature is stable and the flag has been enabled in all environments for a while, remove it from your codebase and dashboard.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Roll Out a Feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
+- [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Run an A/B Test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md](/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md)
+<!-- /docsgraph:related -->
 
 ## 1. Audit active flags
 

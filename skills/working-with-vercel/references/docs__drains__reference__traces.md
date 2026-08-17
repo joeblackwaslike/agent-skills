@@ -14,13 +14,29 @@ related:
 summary: Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/traces.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "52a3f5b88996c3673d3319595fda3fb778315c5433ccdfe3dae42c1c7ca75bf0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "adf6798fac62357ea92b7ceeaeeaf17589e69aa1ba610f426cfe670fae7e15f0"
 ---
 
 # Trace Drains Reference
 
 Trace Drains forward distributed tracing data from your deployments to external endpoints for storage and analysis. You can configure Trace Drains in two ways:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Speed Insights](https://vercel.com/docs/drains/reference/speed-insights?from=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+
+Full cross-link map for this page: [/docs/drains/reference/traces.graph.md](/docs/drains/reference/traces.graph.md)
+<!-- /docsgraph:related -->
 
 - **[Custom endpoint](/docs/drains/using-drains#custom-endpoint)**: Send traces to any OTLP/HTTP-compatible endpoint you configure
 - **[Native integration](/docs/drains/using-drains#native-integrations)**: Use integrations from the Vercel Marketplace like [Braintrust](https://vercel.com/marketplace/braintrust)

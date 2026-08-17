@@ -9,19 +9,41 @@ prerequisites:
   - /docs/routing-middleware
 related:
   - /docs/project-configuration/vercel-json
-  - /docs/functions/edge-functions/edge-functions-api
+  - /docs/functions/functions-api-reference
   - /docs/functions/functions-api-reference/vercel-functions-package
   - /docs/regions
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/api.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "3b88ceea527828cd4aeb924ba2aba6920ba9d33125d1e3d8faa2ffb7dfad3130"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "253aba05b061bb118f6e6d13eef82314b346f33f53cf880348c18d596d95c4c0"
 ---
 
 # Routing Middleware API
 
 ## Routing Middleware file location and name
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related) — Learn how to add a response header in your Middleware.
+- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters?from=related) — Learn how to filter query parameters in your Middleware.
+- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
+- [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related) — Learn how to modify request headers in your Middleware.
+- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related) — Learn how to render different content based on the user agent in your Middleware.
+- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related) — API reference for the route.js special file.
+- [Getting Started](https://vercel.com/docs/routing-middleware/getting-started?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Request Headers](https://vercel.com/docs/headers/request-headers?from=related) — Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a
+- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+
+Full cross-link map for this page: [/docs/routing-middleware/api.graph.md](/docs/routing-middleware/api.graph.md)
+<!-- /docsgraph:related -->
 
 The Routing Middleware file should be named  and placed at the root of your project, at the same level as your `package.json` file. This is where Vercel will look for the Routing Middleware when processing requests.
 
@@ -30,6 +52,8 @@ The Routing Middleware must be a default export, with the function being named a
 ```ts filename="middleware.ts"
 export default function middleware() {}
 ```
+
+To use a different name or directory, set [`proxy.entrypoint`](/docs/project-configuration/vercel-json#proxy) in `vercel.json`.
 
 > For \['nextjs', 'nextjs-app']:
 
@@ -44,6 +68,8 @@ While the `config` option is the preferred method, **as it does not get invoked 
 ### Match paths based on custom matcher config
 
 To decide which route the Routing Middleware should be run on, you can use a custom matcher config to filter on specific paths. The matcher property can be used to define either a single path, or using an array syntax for multiple paths.
+
+If you configure your entrypoint with [`proxy`](/docs/project-configuration/vercel-json#proxy), set the matcher here or in `proxy.matcher`.
 
 > For \['nextjs']:
 
@@ -141,12 +167,12 @@ To use the Bun runtime with Routing Middleware, set the [`bunVersion`](/docs/pro
 
 ## Routing Middleware signature
 
-The Routing Middleware signature is made up of two parameters: `request` and `context`. The `request` parameter is an instance of the [Request](/docs/functions/edge-functions/edge-functions-api#request) object, and the `context` parameter is an object containing the [`waitUntil`](/docs/functions/edge-functions/edge-functions-api#waituntil) method. **Both parameters are optional**.
+The Routing Middleware signature is made up of two parameters: `request` and `context`. The `request` parameter is an instance of the [Request](/docs/functions/functions-api-reference#request) object, and the `context` parameter is an object containing the [`waitUntil`](/docs/functions/functions-api-reference#waituntil) method. **Both parameters are optional**.
 
 | Parameter | Description                                                                                         | Next.js (/app) or (/pages)                                                                                                                        | Other Frameworks                                                                     |
 | --------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `request` | An instance of the [Request](/docs/functions/edge-functions/edge-functions-api#request) object      | [`Request`](https://developer.mozilla.org/docs/Web/API/Request) or [`NextRequest`](https://nextjs.org/docs/api-reference/next/server#nextrequest) | [`Request`](https://developer.mozilla.org/docs/Web/API/Request)                      |
-| `context` | An extension to the standard [`Request`](https://developer.mozilla.org/docs/Web/API/Request) object | [`NextFetchEvent`](https://nextjs.org/docs/api-reference/next/server#nextfetchevent)                                                              | [`RequestContext`](/docs/functions/edge-functions/edge-functions-api#requestcontext) |
+| `request` | An instance of the [Request](/docs/functions/functions-api-reference#request) object      | [`Request`](https://developer.mozilla.org/docs/Web/API/Request) or [`NextRequest`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextrequest) | [`Request`](https://developer.mozilla.org/docs/Web/API/Request)                      |
+| `context` | An extension to the standard [`Request`](https://developer.mozilla.org/docs/Web/API/Request) object | [`NextFetchEvent`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextfetchevent)                                                              | [`RequestContext`](/docs/functions/functions-api-reference#requestcontext) |
 
 Routing Middleware comes with built in helpers that are based on the native [`FetchEvent`](https://developer.mozilla.org/docs/Web/API/FetchEvent), [`Response`](https://developer.mozilla.org/docs/Web/API/Response), and [`Request`](https://developer.mozilla.org/docs/Web/API/Request) objects.
 
@@ -255,7 +281,7 @@ The `Request` object represents an HTTP request. It is a wrapper around the [Fet
 
 > For \["nextjs", "nextjs-app"]:
 
-To learn more about the [`NextRequest`](https://nextjs.org/docs/api-reference/next/server#nextrequest) object and its properties, visit the [Next.js documentation](https://nextjs.org/docs/api-reference/next/server#nextrequest).
+To learn more about the [`NextRequest`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextrequest) object and its properties, visit the [Next.js documentation](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextrequest).
 
 ### `waitUntil()`
 

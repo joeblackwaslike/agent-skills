@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/rate-limiting.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "22ffb5b275defc879263a668758135b2dc9c23474d646daf3a162a31a080e206"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "4843a3c69522d75a2ed7b5943d181d19920f17f1e7fd4d874d5ee3a4bfd8d4fc"
 ---
 
 # Rate Limiting
@@ -12,13 +12,11 @@ specified timeframe. This simple technique acts as a gatekeeper,
 preventing excessive usage that can degrade service performance and incur
 unnecessary costs.
 
-## Rate Limiting with Vercel KV and Upstash Ratelimit
+## Rate Limiting with Upstash Redis and Upstash Ratelimit
 
-In this example, you will protect an API endpoint using [Vercel KV](https://vercel.com/storage/kv)
-and [Upstash Ratelimit](https://github.com/upstash/ratelimit).
+In this example, you will protect an API endpoint using [Upstash Redis](https://upstash.com/redis) and [Upstash Ratelimit](https://github.com/upstash/ratelimit).
 
 ```tsx filename='app/api/generate/route.ts'
-import kv from '@vercel/kv';
 import {
   createUIMessageStreamResponse,
   streamText,
@@ -26,6 +24,7 @@ import {
 } from 'ai';
 __PROVIDER_IMPORT__;
 import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 import { NextRequest } from 'next/server';
 
 // Allow streaming responses up to 30 seconds
@@ -33,7 +32,7 @@ export const maxDuration = 30;
 
 // Create Rate limit
 const ratelimit = new Ratelimit({
-  redis: kv,
+  redis: Redis.fromEnv(),
   limiter: Ratelimit.fixedWindow(5, '30s'),
 });
 
@@ -62,7 +61,7 @@ export async function POST(req: NextRequest) {
 
 ## Simplify API Protection
 
-With Vercel KV and Upstash Ratelimit, it is possible to protect your APIs
+With Upstash Redis and Upstash Ratelimit, it is possible to protect your APIs
 from such attacks with ease. To learn more about how Ratelimit works and
 how it can be configured to your needs, see [Ratelimit Documentation](https://upstash.com/docs/oss/sdks/ts/ratelimit/overview).
 

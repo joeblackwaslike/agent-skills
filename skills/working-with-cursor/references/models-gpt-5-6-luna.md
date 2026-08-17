@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/models/gpt-5-6-luna.md"
-fetched_at: "2026-07-13T06:55:43.454Z"
-sha256: "a1b4e773054ca23270a1671b757d8d2b28d4da91c5ada5fd12b0470c411453a0"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "19415d1f0f43c2c92bee8ab87a26321375bb390856b351b1d503b51593ceacc5"
 ---
 
 GPT-5.6 Luna is the smallest and lowest-cost model in OpenAI's GPT-5.6 family. Use it for high-volume, latency-sensitive, or cost-sensitive agent work where Sol or Terra would be more than you need.
@@ -25,7 +25,7 @@ Learn more about [how tools work](https://cursor.com/docs/agent/overview.md#tool
 
 ## Pricing
 
-Cursor [plans](https://cursor.com/docs/models-and-pricing.md) include two usage pools. GPT-5.6 Luna draws from the **API** pool, which charges at the rates below. Individual plans include at least $20 of API usage each month (more on higher tiers). All prices are per million tokens.
+Cursor [plans](https://cursor.com/docs/models-and-pricing.md) include two usage pools. GPT-5.6 Luna draws from the third-party **Other Models** pool, which charges at the rates below. Individual plans include at least $20 of third-party Other Models usage each month (more on higher tiers). All prices are per million tokens.
 
 A **Fast mode** tier (`gpt-5.6-luna-fast`) is available for priority processing at 2x the standard rates.
 

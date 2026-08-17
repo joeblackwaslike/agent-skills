@@ -15,13 +15,29 @@ related:
 summary: Learn how to configure Git for your project through vercel.json or vercel.ts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-configuration.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "607bd4bc527d47be4adda22aacc57c826c57bc4d6191eb2b7df1aacb15721648"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "157b152fe9268cbc81599a2a10ec08b3a1bf401df8ff7b29f4e1331db52fcafa"
 ---
 
 # Git Configuration
 
 The following configuration options can be used through a `vercel.json` file via [Static Configuration](/docs/project-configuration/vercel-json) or a `vercel.ts` file via [Programmatic Configuration](/docs/project-configuration/vercel-ts).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Git Settings](https://vercel.com/docs/project-configuration/git-settings?from=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Git Integrations](https://vercel.com/docs/git?from=related) — Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLa
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [System Environment Variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+
+Full cross-link map for this page: [/docs/project-configuration/git-configuration.graph.md](/docs/project-configuration/git-configuration.graph.md)
+<!-- /docsgraph:related -->
 
 ## git.deploymentEnabled
 

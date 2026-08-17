@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a57fea6bab265d3d7596980d76148f790030c9dee7c262c4f1ddf91e7b0346d0"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "5a49536b550e6513cc5a30f671284eddc48a45ffa20c5915185b9d10d4615e98"
 ---
 
 # Claude Code Harness
@@ -81,6 +81,9 @@ Use `createClaudeCode()` to configure the runtime:
 const harness = createClaudeCode({
   model: 'claude-sonnet-4-6',
   maxTurns: 10,
+  env: {
+    DEPLOYMENT_ENV: 'staging',
+  },
   thinking: {
     type: 'adaptive',
     display: 'summarized',
@@ -90,20 +93,37 @@ const harness = createClaudeCode({
 
 Settings:
 
-- `auth`: direct Anthropic or AI Gateway authentication settings.
+- `auth`: authentication mode: `auto`, `direct`, or `ai-gateway`.
+- `mcpServers`: MCP server definitions keyed by server name.
 - `model`: Anthropic model id passed to the underlying Claude Code runtime.
 - `maxTurns`: maximum internal turns before yielding.
+- `env`: environment variables for the Claude Code process. Values are merged
+  over the sandbox bridge process environment and take precedence.
 - `thinking`: extended-thinking configuration. `type` can be `enabled`,
   `disabled`, or `adaptive`. For enabled or adaptive thinking, `display` can be
   `summarized` or `omitted`. Defaults to
   `{ type: 'adaptive', display: 'summarized' }`.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `mintBridgeToken`: synchronous function that receives the sandbox id and
+  returns the bridge authentication token. By default, the adapter generates a
+  random 32-byte token. Custom implementations must return a suitably secret
+  token.
 
 ## Authentication
 
-By default, authentication is resolved from the host environment and forwarded
-to the sandbox bridge. The adapter checks for AI Gateway and Anthropic credentials.
+The `auth` setting selects how credentials are resolved from the host
+environment:
+
+- `auto` (default): use AI Gateway credentials when available, then fall back
+  to direct Anthropic credentials.
+- `direct`: use Anthropic credentials.
+- `ai-gateway`: use AI Gateway credentials.
+
+When the sandbox supports additive request transformations, the bridge receives
+placeholders and the adapter injects credentials into matching outbound
+requests. Sandboxes without that capability retain direct credential
+forwarding.
 
 Supported environment variables:
 
@@ -114,16 +134,11 @@ Supported environment variables:
 - `ANTHROPIC_AUTH_TOKEN`
 - `ANTHROPIC_BASE_URL`
 
-You can also pass explicit auth settings:
+Select a specific authentication mode when you do not want automatic detection:
 
 ```ts
-const harness = createClaudeCode({
-  auth: {
-    gateway: {
-      apiKey: process.env.AI_GATEWAY_API_KEY,
-    },
-  },
-});
+const directHarness = createClaudeCode({ auth: 'direct' });
+const gatewayHarness = createClaudeCode({ auth: 'ai-gateway' });
 ```
 
 ## Sandbox
@@ -170,6 +185,9 @@ Claude Code supports built-in tool approval requests when `permissionMode` is
 - [Pi](/providers/ai-sdk-harnesses/pi)
 - [OpenCode](/providers/ai-sdk-harnesses/opencode)
 - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+- [Cline](/providers/ai-sdk-harnesses/cline)
 
 
 [Full Sitemap](/sitemap.md)

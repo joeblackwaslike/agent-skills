@@ -10,19 +10,36 @@ prerequisites:
 related:
   - /docs/pricing
   - /docs/incremental-static-regeneration
-  - /docs/runtime-cache
+  - /docs/caching/runtime-cache
   - /docs/marketplace-storage
   - /docs/routing-middleware
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3e65b190fd5854d2550018d3b92e69f36d1650a9d8250b327bd92f7975e4819c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d675787dfac002831f51c695bd8ab0f207db7d5957bb430939bf3e4a6d182070"
 ---
 
 # Calculating usage of resources
 
 It's important to understand how usage and accrual happen on Vercel, in order to make the best choices for your project. This guide helps you understand that by exploring a user journey through an ecommerce store.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs?from=related) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+
+Full cross-link map for this page: [/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md](/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md)
+<!-- /docsgraph:related -->
 
 You'll learn how resources are used at each stage of the journey, from entering the site, to browsing products, interacting with dynamic content, and engaging with A/B testing for personalized content.
 
@@ -37,7 +54,7 @@ A typical user journey through an ecommerce store touches on multiple resources 
 
 The ecommerce store employs a combination of caching strategies to optimize both static and dynamic content delivery. For static pages, it uses [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration).
 
-For dynamic content like product price discounts, the site uses [Vercel Runtime Cache](/docs/runtime-cache) to store and retrieve the latest product information. This ensures that all users see the most up-to-date pricing information, while minimizing the need to fetch data from the backend on each request.
+For dynamic content like product price discounts, the site uses [Vercel Runtime Cache](/docs/caching/runtime-cache) to store and retrieve the latest product information. This ensures that all users see the most up-to-date pricing information, while minimizing the need to fetch data from the backend on each request.
 
 For dynamic, user-specific content like shopping cart states, [Vercel Marketplace Redis integrations](/docs/marketplace-storage) are used. This allows the site to store and retrieve user-specific data in real-time, ensuring a seamless experience across sessions.
 
@@ -62,7 +79,7 @@ The browser requests the page from Vercel. Since it's static and cached on our g
 
 ![Image](https://vercel.com/front/docs/pricing/browse-products-light.png)
 
-During the user's visit to the site, they browse the **All Products** page, which is populated with a list of cached product images and price details. The request to view the page triggers an [Edge Request](/docs/manage-cdn-usage#edge-requests) to Vercel's CDN, which serves the static assets from the [cache](/docs/cdn-cache).
+During the user's visit to the site, they browse the **All Products** page, which is populated with a list of cached product images and price details. The request to view the page triggers an [Edge Request](/docs/manage-cdn-usage#edge-requests) to Vercel's CDN, which serves the static assets from the [cache](/docs/caching/cdn-cache).
 
 **Priced resources**
 
@@ -79,7 +96,7 @@ The user decides to view the details of a product. This product's price was rece
 
 Behind the scenes the site uses [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration) to update the products description and image. The new information for the product is then cached on Vercel's [CDN](/docs/cdn) for future requests, and the revalidation period is reset.
 
-For products with real-time discounts, these discounts are calculated using a [Vercel Function](/docs/functions) that fetches the latest product information from the backend. The results, which include any standard discounts applicable to all users, are cached using the [Vercel Runtime Cache](/docs/runtime-cache).
+For products with real-time discounts, these discounts are calculated using a [Vercel Function](/docs/functions) that fetches the latest product information from the backend. The results, which include any standard discounts applicable to all users, are cached using the [Vercel Runtime Cache](/docs/caching/runtime-cache).
 
 Upon viewing a product, if the discount data is already in the Data Cache and still fresh, it will be served from there. If the data is stale, it will be re-fetched and cached again for future requests. This ensures that all users see the most up-to-date pricing information.
 

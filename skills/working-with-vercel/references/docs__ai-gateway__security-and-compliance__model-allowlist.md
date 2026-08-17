@@ -14,13 +14,28 @@ related:
 summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "01d0599afa7745cc238fb103d126742d1852e00ef6447d48fb1c114901dc5a06"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9c684b7c2e64b15ad455f5e27c0358def5e3ca71f4faefe34ef7dbc03e8ac363"
 ---
 
 # Model Allowlist
 
 The model allowlist lets team owners restrict which models can be used through AI Gateway. A request returns a `403` when the requested model is not on the allowlist. The feature is opt-in and available on Pro and Enterprise plans.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Model Filtering](https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering?from=related) — Restrict AI Gateway routing to models that have specific capabilities using the has option.
+- [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md)
+<!-- /docsgraph:related -->
 
 A common reason to enable this is governance: your team has approved a specific set of models, and you want to guarantee that AI Gateway never serves one you haven't reviewed.
 

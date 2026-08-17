@@ -13,13 +13,28 @@ related:
 summary: Use Open WebUI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/open-webui.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "72554f29649553e45a6e2884843471fcddfba69a6fef8df4689cf14ccc5b54c8"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "78f9ac00accdaa72bcf13bedd16964f54d9f7c780502bdc69a370af6f61779bd"
 ---
 
 # Open WebUI
 
 [Open WebUI](https://github.com/open-webui/open-webui) is a self-hosted web interface for interacting with LLMs. You can configure it to use AI Gateway for unified model access, spend monitoring, and access to hundreds of models from multiple providers.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
+- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/open-webui.graph.md](/docs/ai-gateway/chat-platforms/open-webui.graph.md)
+<!-- /docsgraph:related -->
 
 ## Configuring Open WebUI
 

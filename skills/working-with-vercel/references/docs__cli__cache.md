@@ -8,21 +8,37 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/cdn-cache
-  - /docs/runtime-cache
-  - /docs/cdn-cache/purge
+  - /docs/caching/cdn-cache
+  - /docs/caching/runtime-cache
+  - /docs/caching/cdn-cache/purge
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7efee499f3902dd49936d24f9e47544aebaa85c85615f29d12a07e943c2ad385"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ecd5c51dcea5606824173a47e78e294f11772725d5dcbbe109b9bd5b39bcc20a"
 ---
 
 # vercel cache
 
-The `vercel cache` command is used to manage the cache for your project, such as [CDN cache](/docs/cdn-cache) and [Runtime cache](/docs/runtime-cache).
+The `vercel cache` command is used to manage the cache for your project, such as [CDN cache](/docs/caching/cdn-cache) and [Runtime cache](/docs/caching/runtime-cache).
 
-Learn more about [purging Vercel cache](/docs/cdn-cache/purge).
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
+
+Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md)
+<!-- /docsgraph:related -->
+
+Learn more about [purging Vercel cache](/docs/caching/cdn-cache/purge).
 
 ## Usage
 

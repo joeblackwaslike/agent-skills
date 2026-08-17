@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-completion.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "a9174c6764f2df5901ad52b76b5528172431c47fff28fe40c8c639d5de9f9c75"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "0f8e384874c7dc771b3c774eda30f99dda7e7cbd496e1bc8145a0f56f2a40e27"
 ---
 
 # `useCompletion()`
@@ -42,6 +42,19 @@ Allows you to create text completion based capabilities for your application. It
 </Tabs>
 
 ## API Signature
+
+### Type Parameters
+
+<PropertiesTable
+  content={[
+    {
+      name: 'BODY',
+      type: 'object',
+      description:
+        'The type of the additional request body passed through the hook options or the complete function. Defaults to object.',
+    },
+  ]}
+/>
 
 ### Parameters
 
@@ -89,7 +102,7 @@ Allows you to create text completion based capabilities for your application. It
     },
     {
       name: 'body',
-      type: 'object',
+      type: 'BODY',
       description:
         'An optional, additional body object to be passed to the API endpoint.',
     },
@@ -135,7 +148,7 @@ Allows you to create text completion based capabilities for your application. It
     },
     {
       name: 'complete',
-      type: '(prompt: string, options?: { headers?: Record<string, string> | Headers, body?: object }) => Promise<string | null | undefined>',
+      type: '(prompt: string, options?: { headers?: Record<string, string> | Headers, body?: BODY }) => Promise<string | null | undefined>',
       description:
         'Function to execute text completion based on the provided prompt. Returns the completion result when finished.',
     },

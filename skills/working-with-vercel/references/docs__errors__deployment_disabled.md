@@ -12,8 +12,8 @@ related:
 summary: The deployment is disabled. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_disabled.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "0dee64890b6b97641523d65cd8b2273c740e40f811cc95a56e491ba126808300"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d264b639fd4b458b61fdbed8f9625e3dc13cb52165be4c055a770b0656cac043"
 ---
 
 # DEPLOYMENT_DISABLED
@@ -32,7 +32,6 @@ To troubleshoot this error, follow these steps:
 2. **Check your account plan**: If you have recently downgraded to the [Hobby plan](/docs/plans/hobby), you may need to redeploy your projects to make them available once again
 3. **Review email notifications**: If you receive an email from Vercel about the pause, it may contain more details about the issue and next steps
 4. **Restore your site**: The fastest solution is to [upgrade to the Pro plan](/docs/plans/hobby#upgrading-to-pro). This plan offers more generous usage limits and pay-as-you-go options
-5. **Contact support:** If you've checked the above and are still unable to resolve the issue, [contact support](/help#issues) for further assistance
 
 
 ---

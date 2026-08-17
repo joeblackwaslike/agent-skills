@@ -11,18 +11,40 @@ related:
   - /docs/drains/reference/traces
   - /docs/tracing/session-tracing
   - /docs/tracing/instrumentation
-  - /docs/runtime-logs
+  - /docs/logs/runtime
   - /docs/drains
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "9732bc41bf90ee46e6d181f6b786fc8acda337d342509c6ba8ec88e3d44d456d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "03e907c666c442388839906ea62187fc8214868cf238da1e0fb6982d390cf02a"
 ---
 
 # Tracing
 
 In observability, tracing is the process of collecting and analyzing how a request or operation flows through your application and through Vercel's infrastructure. Traces are used to explain how your application works, debug errors, and identify performance bottlenecks.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry?from=related) — Learn how to instrument your Next.js app with OpenTelemetry.
+- [Observability](https://eve.dev/docs/guides/instrumentation?from=related) — Trace an agent with OpenTelemetry in instrumentation.ts, read the workflow run tags eve emits, and debug discovery with
+- [SigNoz](https://ai-sdk.dev/providers/observability/signoz?from=related)
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related) — Inspect a request trace in the terminal or open it in the Vercel Dashboard.
+- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Observability](https://vercel.com/docs/eve/observability?from=related) — View agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry.
+
+Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md)
+<!-- /docsgraph:related -->
 
 You can think of a trace as the story of a single request:
 
@@ -62,7 +84,7 @@ Once you have enabled session tracing, you can visualize traces in your dashboar
 
 1. Select your team from the team switcher and select your project.
 2. Select the [**Logs** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Flogs\&title=Go+to+Logs).
-3. Use the tracing icon  in the filter bar to filter to traces. You can filter traces using [all the same filters available](/docs/runtime-logs#log-filters) in the **Logs** section in the sidebar of the dashboard. To view traces for requests to your browser, press the user icon next to the Traces icon.
+3. Use the tracing icon  in the filter bar to filter to traces. You can filter traces using [all the same filters available](/docs/logs/runtime#log-filters) in the **Logs** section in the sidebar of the dashboard. To view traces for requests to your browser, press the user icon next to the Traces icon.
 4. Find the request you want to view traces for and click the **Trace** button at the bottom of the request details panel. This will open the traces for that request:
 
 ![Image](https://vercel.com/front/docs/observability/trace-timeline-view-light.png?lightbox)

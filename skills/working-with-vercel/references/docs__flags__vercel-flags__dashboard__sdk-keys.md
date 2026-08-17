@@ -14,13 +14,30 @@ related:
 summary: Manage SDK Keys for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c2928eef4b09930083ab12ef3f184808508ff83d4f19597862a5a10ad14bf761"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1b341466ce3bcd66c96f156000e2eed03c175d4776d1051182170edacf5b71f3"
 ---
 
 # SDK Keys
 
 Vercel Flags supports OpenID Connect (OIDC) for applications in the same Vercel project. Use SDK Keys for manual authentication, including applications outside Vercel and projects that evaluate flags owned by another project.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks?from=related) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
+- [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key?from=related)
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Get all SDK keys](https://vercel.com/docs/rest-api/feature-flags/get-all-sdk-keys?from=related)
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md](/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md)
+<!-- /docsgraph:related -->
 
 Each SDK Key belongs to one environment:
 

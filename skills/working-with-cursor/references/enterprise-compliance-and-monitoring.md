@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/enterprise/compliance-and-monitoring.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "a70bbc0a4fa40981d57436ce4b04c2d4895ea6e3f5d20b9a6f41305fa20f0b43"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "567f8abbc2ecdcc798672334b9ddf2bd5ece1208cb175652ba70c769ef46528c"
 ---
 
 # Compliance and Monitoring
@@ -112,6 +112,10 @@ Filter audit logs in the dashboard by:
 - Actor (specific user)
 
 Export filtered results to CSV for analysis or compliance reports.
+
+## Usage telemetry over OpenTelemetry
+
+Audit logs cover administrative and security events. If you want usage data instead, such as token, tool call, and cost metrics plus API request and cloud agent logs delivered over OTLP to your own collector, use [OpenTelemetry Export](https://cursor.com/docs/enterprise/opentelemetry-export.md). It's a separate pipeline from audit-log SIEM streaming and is available in beta on the Enterprise plan.
 
 ## Using hooks for compliance logging
 

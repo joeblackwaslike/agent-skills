@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "71fbe4600de952f9a35538653c5d60e490dfe69699dffedf7f668b114b5a1254"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "0630f1046abd16472a2cb2002dad4c2df5d3d3f659c16292b28c68741fe8fe25"
 ---
 
 # Azure OpenAI Provider
@@ -1165,7 +1165,6 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -1175,6 +1174,7 @@ Azure OpenAI supports TTS models through deployments. The capabilities depend on
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

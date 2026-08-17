@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "d3ed53068e9daec7c3754e36f57c99faa9253ce87c3db1383d0700f884c627f1"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "27cfd12f8c52b0a272766b0cf163c041c4968ef7bf8e05734ba66f139dc6a64d"
 ---
 
 # Prodia Provider
@@ -188,7 +188,6 @@ console.log('Elapsed:', metadata?.elapsed);
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -198,6 +197,7 @@ console.log('Elapsed:', metadata?.elapsed);
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

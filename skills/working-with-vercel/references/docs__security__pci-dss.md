@@ -12,13 +12,31 @@ related:
 summary: Learn how to integrate an iframe into your application to support PCI DSS compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "34a82d7318df9a09879eccec256e9bc376d46f4c989d04dee8b51a7fd3195187"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "64b674981355322429e4432382d9269349dd11c4b9152b96b48ad82c4583585b"
 ---
 
 # PCI DSS iframe Integration
 
 ## Benefits of using an `iframe`
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Does Vercel support PCI compliance?](https://vercel.com/kb/guide/is-vercel-pci-compliant?from=related) — Learn about Vercel and PCI compliance.
+- [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide?from=related) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
+- [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
+- [Commerce and Payments](https://vercel.com/docs/integrations/ecommerce?from=related) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
+- [Stripe](https://vercel.com/docs/integrations/ecommerce/stripe?from=related) — Connect your Stripe account to Vercel and accept payments in your applications.
+- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Security Headers](https://vercel.com/docs/cdn-security/security-headers?from=related) — Learn how the Content Security Policy \(CSP\) offers defense against web vulnerabilities, its key features, and best pra
+- [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+
+Full cross-link map for this page: [/docs/security/pci-dss.graph.md](/docs/security/pci-dss.graph.md)
+<!-- /docsgraph:related -->
 
 When you use an [\`iframe\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe "<span>What is an `iframe`?</span>") to process payments, you create a secure conduit between your end users and your payment provider.
 

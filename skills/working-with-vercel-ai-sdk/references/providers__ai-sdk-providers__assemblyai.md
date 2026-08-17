@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "f5aaf3ed221e3f86ee41a09dab9ea31be25ae274670ee19b51f6c62b39d1d35e"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "b1ad3aabcbdbcc4706e7c1df9b258961495d98bef1d59fd0e77739e17c22e28b"
 ---
 
 # AssemblyAI Provider
@@ -398,7 +398,6 @@ AssemblyAI's documentation for per-language availability.
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -408,6 +407,7 @@ AssemblyAI's documentation for per-language availability.
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

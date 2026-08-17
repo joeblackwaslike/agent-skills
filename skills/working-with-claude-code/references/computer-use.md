@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/computer-use.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "785da57229c9d3c7487118d0dc6786fdde1397028c76b4668b61510eaf3b05ef"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "566ebcc950c55310845f98f78f24f97981eccd60e20a831fa9b95668e18a06ae"
 ---
 
 > ## Documentation Index
@@ -38,7 +38,7 @@ Claude has several ways to interact with an app or service. Computer use is the 
 * If the task is browser work and you have [Claude in Chrome](/docs/en/chrome) set up, Claude uses that.
 * If none of those apply, Claude uses computer use.
 
-Screen control is reserved for things nothing else can reach: native apps, simulators, and tools without an API. In the Desktop app, running or testing an iOS app opens the dedicated [iOS Simulator pane](/docs/en/desktop-ios-simulator) rather than screen control; from the CLI, computer use is how Claude reaches the iOS Simulator.
+Screen control is reserved for things nothing else can reach: native apps, simulators such as the iOS Simulator, and tools without an API.
 
 ## Enable computer use
 
@@ -104,7 +104,7 @@ Understanding the flow helps you anticipate what Claude will do and how to inter
 
 ### One session at a time
 
-Computer use holds a machine-wide lock from the first computer use action until the session that took it exits. As of v2.1.195, finishing the task doesn't release the lock; only exiting the session does. If another Claude Code session is already using your computer, new attempts fail with a message telling you which session holds the lock. Exit that session first.
+Only one session at a time can use your computer. Claude Code takes a machine-wide lock when a session performs its first computer use action. Claude Code releases it when that session exits, not when the task finishes. If another session is already using your computer, Claude Code rejects new attempts and tells you which session holds the lock. Exit that session first.
 
 ### Apps are hidden while Claude works
 

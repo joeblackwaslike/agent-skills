@@ -13,13 +13,28 @@ related:
 summary: Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rollback.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "256b2550f30b208b738156d065e9a84e2263a4f0d53f8b20e6452c7e91e1ffe2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7bb3fac920c013ef7c0ea796dbf535ccfdb35ad23e70d4658dbbe37eabf54a7b"
 ---
 
 # vercel rollback
 
 The `vercel rollback` command is used to [roll back production deployments](/docs/instant-rollback) to previous deployments.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [Rolling Release Deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel remove](https://vercel.com/docs/cli/remove?from=related) — Learn how to remove a deployment using the vercel remove CLI command.
+
+Full cross-link map for this page: [/docs/cli/rollback.graph.md](/docs/cli/rollback.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 

@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/account/teams/sso.md"
-fetched_at: "2026-06-15T05:54:54.284Z"
-sha256: "336ded73cc0bd54d9aa9baa3849792820618579235f78eb366aa0fdf3a5d376e"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "0c25172812c693d01b5049e645c8fcfecc375b034bed1f51a947b2e6815a8a96"
 ---
 
 # SSO
@@ -20,7 +20,7 @@ SAML 2.0 SSO is available at no additional cost on Teams and Enterprise plans. U
 
 ### Sign in to your Cursor account
 
-Navigate to [cursor.com/dashboard/settings](https://www.cursor.com/dashboard/settings) with an admin account.
+Navigate to the [Single Sign-On (SSO) settings](https://cursor.com/dashboard/team-settings#single-sign-on-sso) with an admin account.
 
 ### Locate the SSO configuration
 
@@ -28,7 +28,7 @@ Find the "Single Sign-On (SSO)" section and expand it.
 
 ### Begin the setup process
 
-Click the "SSO Provider Connection settings" button to start SSO setup and follow the wizard.
+Click "Configure" next to "SSO-Provider Connection Settings" to start SSO setup and follow the wizard.
 
 ### Configure your identity provider
 
@@ -40,7 +40,17 @@ In your identity provider (e.g., Okta):
 
 ### Verify domain
 
-Verify the domain of your users in Cursor by clicking the "Domain verification settings" button.
+Click "Configure" next to "Domain Verification Settings" to verify your users' domain.
+
+## View your SSO configuration
+
+Admins can review an existing SSO connection and its domains at any time:
+
+1. Go to [Single Sign-On (SSO) settings](https://cursor.com/dashboard/team-settings#single-sign-on-sso) with an admin account.
+2. Click "Configure" next to "SSO-Provider Connection Settings" to view the provider connection details.
+3. Click "Configure" next to "Domain Verification Settings" to view or manage verified domains.
+
+These settings are available to team admins.
 
 ### Identity Provider Setup Guides
 
@@ -52,7 +62,8 @@ Setup instructions for Okta, Azure AD, Google Workspace, and more.
 
 ## Additional Settings
 
-- Manage SSO enforcement through admin dashboard
+Once domain verification and the SSO provider connection are active, users on that domain are required to sign in with SSO. There is no separate enforcement toggle.
+
 - New users auto-enroll when signing in through SSO
 - Handle user management through your identity provider
 
@@ -70,7 +81,7 @@ If issues occur:
 
 - Verify domain is verified in Cursor
 - Ensure SAML attributes are properly mapped
-- Check SSO is enabled in admin dashboard
+- Confirm the SSO connection is active and the domain is verified.
 - Match first and last names between identity provider and Cursor
 - Check provider-specific guides above
 - Visit the [SSO help center](https://cursor.com/help/security-and-privacy/sso.md) if issues persist

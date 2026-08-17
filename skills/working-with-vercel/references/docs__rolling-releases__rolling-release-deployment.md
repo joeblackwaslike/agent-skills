@@ -16,13 +16,29 @@ related:
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d246c7ecb694c87396d441490f2ae303c22a6799e539f759f6e71f7883dd903b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6b74643e96f604de0679f892b72040d24618a117525d0a1d7a20c55b359b1dde"
 ---
 
 # Performing a rolling release deployment
 
 Use this guide to gradually roll out a new production deployment using rolling releases. You'll configure traffic stages, monitor for errors between stages, and either complete the rolling release or abort if problems arise.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related) — Incrementally release updates to your backend to minimize impact of mistakes.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Promote Preview to Production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related) — Test a preview deployment and promote it to production using the CLI.
+- [Instant Rollback](https://vercel.com/docs/instant-rollback?from=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [vercel rollback](https://vercel.com/docs/cli/rollback?from=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
+
+Full cross-link map for this page: [/docs/rolling-releases/rolling-release-deployment.graph.md](/docs/rolling-releases/rolling-release-deployment.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This guide requires a [linked Vercel project](/docs/cli/project-linking). Run
 > `vercel link` in your project directory if you haven't already. Rolling

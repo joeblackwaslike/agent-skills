@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/imagegen/references/image-api.md"
-fetched_at: "2026-06-15T05:54:26.964Z"
-sha256: "ca5424dfcad5a4c87b4401d1cffb70bfcc18c7ca2c281d12045f822e59fa4093"
+fetched_at: "2026-08-17T04:43:16.313Z"
+sha256: "dc975d7af8a4888967251a0276014b4a71ea30455294944b762256373ce3e569"
 ---
 
 # Image API quick reference
@@ -74,7 +74,7 @@ Model-specific note for `input_fidelity`:
 
 ## Transparent backgrounds
 
-`gpt-image-2` does not currently support the Image API `background=transparent` parameter. The skill's default transparent-image path is built-in `image_gen` with a flat chroma-key background, followed by local alpha extraction with `python "${CODEX_HOME:-$HOME/.codex}/skills/.system/imagegen/scripts/remove_chroma_key.py"`.
+`gpt-image-2` does not currently support the Image API `background=transparent` parameter. In explicit CLI/API fallback mode, keep `gpt-image-2` when a flat chroma-key background plus local alpha extraction with `python "${CODEX_HOME:-$HOME/.codex}/skills/.system/imagegen/scripts/remove_chroma_key.py"` is acceptable.
 
 Use CLI `gpt-image-1.5` with `background=transparent` and a transparent-capable output format such as `png` or `webp` only after the user explicitly confirms that fallback, unless they already requested `gpt-image-1.5`, `scripts/image_gen.py`, or CLI fallback. If the user asks for true/native transparency, the subject is too complex for clean chroma-key removal, or local background removal fails validation, explain the tradeoff and ask before switching.
 

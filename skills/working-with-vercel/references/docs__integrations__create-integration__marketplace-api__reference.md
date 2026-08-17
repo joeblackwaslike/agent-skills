@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ada1c0352bcc030108775284ec9f98233eee4f958705cba058b09186486032e4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "05193a570587bd83945ba6d972d2486a473230617b5a1da0ab0604003309dc67"
 ---
 
 # Vercel Marketplace REST API
@@ -763,6 +763,37 @@ One of the provided values in the request query is invalid.
 - **401**: The request is not authorized.
 - **403**: You do not have permission to access this resource.
 - **404**: Success
+- **410**: Success
+
+---
+
+#### Rotate Installation Credential
+
+`POST /v1/installations/{integrationConfigurationId}/credentials/rotate`
+
+**Description:** Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.
+
+**Parameters:**
+
+- `integrationConfigurationId` (path) (required)
+
+**Request Body:**
+
+Content-Type: `application/json`
+
+- `client_secret` (required): string
+- `client_id`: string
+
+**Responses:**
+
+- **200**: Success
+  - Content-Type: `application/json`
+- **400**: One of the provided values in the request body is invalid.
+One of the provided values in the request query is invalid.
+- **401**: The request is not authorized.
+- **403**: You do not have permission to access this resource.
+- **404**: Success
+- **409**: Success
 - **410**: Success
 
 ---

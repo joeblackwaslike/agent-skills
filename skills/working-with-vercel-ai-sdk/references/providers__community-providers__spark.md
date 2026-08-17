@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/spark.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "98161ae08334f54073877bee789c5bee3fdf8bc756bbefd2d00f53b36c65e97f"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "588c552200441cffe72aff608b36f4e08392b482732a4f6919534c36e16646fc"
 ---
 
 # Spark Provider
@@ -106,6 +106,7 @@ Please check out the **[Spark provider documentation](https://github.com/klren03
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

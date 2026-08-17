@@ -9,7 +9,7 @@ prerequisites:
   - /docs/flags/vercel-flags
   - /docs/flags
 related:
-  - /docs/frameworks/nextjs
+  - /docs/frameworks/full-stack/nextjs
   - /docs/cli
   - /docs/flags/vercel-flags/dashboard/entities
   - /docs/flags/vercel-flags/sdks/core
@@ -17,17 +17,34 @@ related:
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "f61bd466f97d0a26cb891df837f49fe468a69221021e27482b435bbdf643ef26"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a7bfbb6a3388f89b7193f63aa3cb60a87b25b06a83a24124e256efca46ed0ddc"
 ---
 
 # Getting Started with Vercel Flags
 
 This guide walks you through creating a feature flag in the Vercel Dashboard and evaluating it in your application. By the end you'll have a working flag that you can toggle from the dashboard.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [OpenFeature](https://vercel.com/docs/flags/vercel-flags/sdks/openfeature?from=related) — Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
+- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/quickstart.graph.md](/docs/flags/vercel-flags/quickstart.graph.md)
+<!-- /docsgraph:related -->
+
 ## Prerequisites
 
-- A [Next.js](/docs/frameworks/nextjs) project connected to Vercel.
+- A [Next.js](/docs/frameworks/full-stack/nextjs) project connected to Vercel.
 - [Vercel CLI](/docs/cli) installed.
 
 - ### Create a flag in the dashboard

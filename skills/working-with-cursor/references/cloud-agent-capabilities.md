@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent/capabilities.md"
-fetched_at: "2026-08-10T05:28:37.963Z"
-sha256: "d4bd9da3807a9bf47be4a946c293b4fd3c934242df1b7a57716c3b1931e6cd52"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "125c25f08af1528689befdbea38a913c521ce66fc0e207aa53c417575dfb47d0"
 ---
 
 # Capabilities
@@ -139,7 +139,11 @@ Automatically fixing CI failures is currently only available on Teams; support f
 
 ## OIDC identity tokens
 
-Cursor-managed Cloud Agent VMs can mint short-lived OIDC JWTs from a local socket. Use them to assume cloud roles or call internal APIs without storing long-lived keys. See [OIDC tokens](https://cursor.com/docs/cloud-agent/identity.md).
+Cursor-managed Cloud Agent VMs can mint short-lived OIDC JWTs from a local socket. Agents use them to assume cloud roles or call internal APIs without storing long-lived keys. See [OIDC tokens](https://cursor.com/docs/cloud-agent/identity.md).
+
+## Agent metadata
+
+The same socket also serves [agent metadata](https://cursor.com/docs/cloud-agent/metadata.md). Agents, hooks, and scripts can read the agent id, owner, current turn, and workspace as plain text.
 
 
 ---

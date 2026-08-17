@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "d8b2d57d3fb09c2efd31edb41a732946c0432d0796441afe6896e1ed7ab9ac33"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "5bc33f90322b56c6966fcf8b3eb1f518264a458c7505771efcb5e56ee69872b6"
 ---
 
 # AI Gateway Provider
@@ -530,7 +530,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const { text } = await generateText({
-  model: 'xai/grok-4.5',
+  model: 'xai/grok-4.6',
   prompt: 'What is the weather like in San Francisco?',
   tools: {
     getWeather: tool({
@@ -1302,7 +1302,6 @@ Model capabilities depend on the specific provider and model you're using. For d
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -1312,6 +1311,7 @@ Model capabilities depend on the specific provider and model you're using. For d
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

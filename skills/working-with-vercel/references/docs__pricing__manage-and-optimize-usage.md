@@ -9,20 +9,36 @@ prerequisites:
   - /docs/pricing
 related:
   - /docs/notifications
-  - /docs/pricing/serverless-functions
+  - /docs/functions/usage-and-pricing
   - /docs/builds/managing-builds
   - /docs/monorepos/remote-caching
   - /docs/global-config/global-config-limits
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b71c95c34118facf832cb1ab03d75ab76ea114fffb3a48afe545a3d19314e2a4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "70ca44921ae61069b60047637095673ad6b4dd7ba4dd08a3095e257839f45b88"
 ---
 
 # Manage and optimize usage
 
 ## What pricing plan am I on?
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Pricing & Usage](https://vercel.com/docs/manage-cdn-usage?from=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+
+Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md)
+<!-- /docsgraph:related -->
 
 There are three plans on Vercel: Hobby, Pro, and Enterprise. To see which plan you are on, select your team from the team switcher. Next to your team name, you will see the plan you are on.
 
@@ -54,7 +70,7 @@ To view information on managing each resource, select the resource link in the *
 
 ## Functions
 
-The table below shows the metrics for the [**Functions**](/docs/pricing/serverless-functions) section of the **Usage** dashboard.
+The table below shows the metrics for the [**Functions**](/docs/functions/usage-and-pricing) section of the **Usage** dashboard.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
@@ -78,13 +94,13 @@ To view information on managing each resource, select the resource link in the *
 
 ## Data Cache
 
-The table below shows the metrics for the [**Data Cache**](/docs/runtime-cache) section of the **Usage** dashboard.
+The table below shows the metrics for the [**Data Cache**](/docs/caching/runtime-cache) section of the **Usage** dashboard.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
 ## Incremental Static Regeneration (ISR)
 
-The table below shows the metrics for the [**Incremental Static Regeneration**](/docs/pricing/incremental-static-regeneration) section of the **Usage** dashboard.
+The table below shows the metrics for the [**Incremental Static Regeneration**](/docs/incremental-static-regeneration/limits-and-pricing) section of the **Usage** dashboard.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 

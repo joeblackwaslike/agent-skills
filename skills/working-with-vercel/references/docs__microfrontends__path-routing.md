@@ -11,18 +11,37 @@ related:
   - /docs/instant-rollback
   - /docs/microfrontends/troubleshooting
   - /docs/projects/managing-projects
-  - /docs/rewrites
-  - /docs/feature-flags
+  - /docs/routing/rewrites
+  - /docs/flags
 summary: Learn about path routing on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/path-routing.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "7bdc5f99d457111e7396158965cd3e2939064cc773e823aef8d471dd1bfd1d4f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "819bbcec4956d360e27e2f35025844ae64f15c89adddba159c17c4836d2488d3"
 ---
 
 # Microfrontends path routing
 
 Vercel handles routing to microfrontends directly in Vercel's network infrastructure, simplifying the setup and improving latency. When Vercel receives a request to a domain that uses microfrontends, we read the `microfrontends.json` file in the live deployment to decide where to route it. This routing happens within the same request — it is not a rewrite that would result in a second outbound request to the child app's URL. There is no additional network hop, which keeps latency low.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
+- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
+- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+- [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+
+Full cross-link map for this page: [/docs/microfrontends/path-routing.graph.md](/docs/microfrontends/path-routing.graph.md)
+<!-- /docsgraph:related -->
 
 ![Image](`/docs-assets/static/docs/microfrontends/routing-diagram-light.png`)
 
@@ -120,7 +139,7 @@ Deployments created after this change will now use the provided path as the defa
 
 ## Routing to externally hosted applications
 
-If a microfrontend is not yet hosted on Vercel, you can [create a new Vercel project](/docs/projects/managing-projects#creating-a-project) to [rewrite requests](/docs/rewrites) to the external application. You will then use this Vercel project in your microfrontends configuration on Vercel.
+If a microfrontend is not yet hosted on Vercel, you can [create a new Vercel project](/docs/projects/managing-projects#creating-a-project) to [rewrite requests](/docs/routing/rewrites) to the external application. You will then use this Vercel project in your microfrontends configuration on Vercel.
 
 ## Routing changes safely with flags
 
@@ -185,7 +204,7 @@ This is compatible with the [Flags SDK](https://flags-sdk.dev) or it can be used
   > **💡 Note:** Make sure that any flagged paths are also configured in the [middleware
   > matcher](https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher)
   > so that middleware runs for these paths.
-  Any function that returns `Promise<boolean>` can be used as the implementation of the flag. This also works directly with [feature flags](/docs/feature-flags) on Vercel.
+  Any function that returns `Promise<boolean>` can be used as the implementation of the flag. This also works directly with [feature flags](/docs/flags) on Vercel.
 
   If the flag returns true, the microfrontends middleware will route the path to the microfrontend specified in `microfrontends.json`. If it returns false, the request will continue to be handled by the default application.
 

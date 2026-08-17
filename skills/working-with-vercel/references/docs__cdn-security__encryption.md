@@ -8,17 +8,32 @@ type: conceptual
 prerequisites:
   - /docs/cdn-security
 related:
-  - /docs/headers/cache-control-headers
+  - /docs/caching/cache-control-headers
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "382c78351be560fd0044c73178985d18f60436b872ca7960e773386e01ce5598"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e6cb5f01c55399ca774577f91e6cdee1e9af749a22bf312964d90a4b08a609af"
 ---
 
 # Encryption and TLS
 
 Every **deployment** on Vercel is served over an HTTPS connection. Vercel automatically generates [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) certificates for these unique URLs at no cost.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Working with SSL](https://vercel.com/docs/domains/working-with-ssl?from=related) — Learn how Vercel uses SSL certification to keep your site secure.
+- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+
+Full cross-link map for this page: [/docs/cdn-security/encryption.graph.md](/docs/cdn-security/encryption.graph.md)
+<!-- /docsgraph:related -->
 
 The CDN automatically forwards any HTTP requests to your **deployment** to HTTPS using the `308` status code:
 
@@ -73,6 +88,14 @@ Vercel offers the `X25519MLKEM768` key exchange mechanism during TLS handshakes 
 - Firefox 132 and above
 - Safari 26 and above
 
+## Encrypted Client Hello (ECH)
+
+Encrypted Client Hello (ECH) encrypts the Server Name Indication (SNI) during the TLS handshake. The SNI is the one part of an otherwise-encrypted HTTPS connection that still exposes which hostname a visitor is connecting to. With ECH, network observers see a connection to Vercel's shared public name, `vercel-ech.com`, rather than your domain.
+
+Vercel manages ECH at the platform level and enables it automatically where it's available.
+
+Browsers use ECH when they can read the ECH configuration from your domain's [HTTPS DNS record](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS_RR). ECH works in recent versions of Chrome, Edge, and Firefox. When a browser or its DNS resolver doesn't support ECH, the connection falls back to a standard TLS handshake with no loss of security.
+
 ## Support for HSTS
 
 The `.vercel.app` domain (and therefore all of its sub domains, which are the unique URLs set when creating a deployment) support [HSTS](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) automatically and are preloaded.
@@ -91,7 +114,7 @@ Strict-Transport-Security: max-age=63072000;
 
 *The default \`Strict-Transport-Security\` header for custom domains*
 
-You can modify the `Strict-Transport-Security` header by configuring [custom response headers](/docs/headers/cache-control-headers#custom-response-headers) in your project.
+You can modify the `Strict-Transport-Security` header by configuring [custom response headers](/docs/caching/cache-control-headers#custom-response-headers) in your project.
 
 You can set the `max-age` parameter to a different value. It controls how long the client remembers that your site is HTTPS-only. Since Vercel doesn't allow HTTP connections, there's no reason to shorten it.
 

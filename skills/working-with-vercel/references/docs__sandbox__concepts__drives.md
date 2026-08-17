@@ -16,13 +16,31 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "6ed89e049a72edc41fab5a92e173e80351d7d0c2eed110b154bf75af407460c3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c4109bbbd8cdc035134c46094813cde478118945f8ef5a5d74c7d3f8f1699e63"
 ---
 
 # Drives
 
 > **🔒 Permissions Required**: Drives
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [List drives](https://vercel.com/docs/rest-api/sandboxes/list-drives?from=related)
+- [Get or create a drive](https://vercel.com/docs/rest-api/sandboxes/get-or-create-a-drive?from=related)
+- [Delete a drive](https://vercel.com/docs/rest-api/sandboxes/delete-a-drive?from=related)
+- [Multi-Agent](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+
+Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md)
+<!-- /docsgraph:related -->
 
 Drives provide persistent storage that can be mounted into sandboxes. Your agent runs in a sandbox, generates code, downloads dependencies, builds up context. Drives let your agent persist that context across sessions. You can mount up to 4 drives into a sandbox, with up to 1 TiB of storage per drive.
 

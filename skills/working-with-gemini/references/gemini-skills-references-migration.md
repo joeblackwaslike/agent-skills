@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-interactions-api/references/migration.md"
-fetched_at: "2026-07-27T07:34:34.896Z"
-sha256: "521783be1eafcdefed9bf8b55ebac15da6e30a070f0511cc11f62a46c5d3808c"
+fetched_at: "2026-08-17T04:44:34.010Z"
+sha256: "9caedadf6be8f14e35e69a0570b5e8e2b4742e783ee52de8387a1c1b4a1216f8"
 ---
 
 # Migration Reference
@@ -24,7 +24,7 @@ Even imperative requests like "migrate my code", "upgrade to gemini 3", "migrate
 **Sizing the scope (large repos).** Before asking, get a per-directory count:
 
 ```sh
-rg -l "generate_content\|generateContent\|gemini-2\.0\|gemini-1\.5\|gemini-2\.5\|gemini-3\.5\|gemini-3\.6\|thinking_budget\|temperature" --type-not md | cut -d/ -f1 | sort | uniq -c | sort -rn
+rg -l "generate_content|generateContent|gemini-2\.0|gemini-1\.5|gemini-2\.5|gemini-3\.5|gemini-3\.6|gemini-3\.7|thinking_budget|temperature" --type-not md | cut -d/ -f1 | sort | uniq -c | sort -rn
 ```
 
 Present the breakdown in your question (e.g. *"Found 42 references across 3 directories: src/ (28), tests/ (10), scripts/ (4). Which to migrate?"*).
@@ -56,17 +56,17 @@ For full before/after code examples, fetch the [Migration Guide](https://ai.goog
 
 | Model | Status | Drop-in Replacement |
 |-------|--------|-------------------|
-| `gemini-2.0-flash` | Deprecated | `gemini-3.6-flash` |
+| `gemini-2.0-flash` | Deprecated | `gemini-3.7-flash` |
 | `gemini-2.0-flash-lite` | Deprecated | `gemini-3.5-flash-lite` |
-| `gemini-1.5-pro` | Deprecated | `gemini-3.6-flash` |
-| `gemini-1.5-flash` | Deprecated | `gemini-3.6-flash` |
+| `gemini-1.5-pro` | Deprecated | `gemini-3.7-flash` |
+| `gemini-1.5-flash` | Deprecated | `gemini-3.7-flash` |
 
 ### Active Legacy Models (migration recommended)
 
 | Current Model | Recommended Target | Why |
 |--------------|-------------------|-----|
-| `gemini-3.5-flash` or `gemini-3-flash-preview` | `gemini-3.6-flash` | Latest Flash: stronger agentic/multimodal performance, reduced token usage/loop spiraling |
-| `gemini-2.5-flash` | `gemini-3.6-flash` or `gemini-3.5-flash-lite` | Latest Flash with Interactions API support, or latest Flash-Lite for cheaper/simpler tasks. |
+| `gemini-3.6-flash`, `gemini-3.5-flash`, or `gemini-3-flash-preview` | `gemini-3.7-flash` | Latest Flash: stronger agentic/multimodal performance, reduced token usage/loop spiraling |
+| `gemini-2.5-flash` | `gemini-3.7-flash` or `gemini-3.5-flash-lite` | Latest Flash with Interactions API support, or latest Flash-Lite for cheaper/simpler tasks. |
 | `gemini-2.5-flash-lite` or `gemini-3.1-flash-lite` | `gemini-3.5-flash-lite` | Latest Flash-lite with Interactions API support |
 | `gemini-2.5-pro` | `gemini-3.1-pro-preview` | Latest Pro with 1M context, complex reasoning |
 
@@ -97,18 +97,19 @@ Every item is tagged: **`[BLOCKS]`** items cause errors or broken behavior if mi
 
 - [ ] Replaced `gemini-2.0-*` model strings with current equivalents
 - [ ] Replaced `gemini-1.5-*` model strings with current equivalents
-- [ ] Consider upgrading `gemini-3.5-flash` → `gemini-3.6-flash`
-- [ ] Consider upgrading `gemini-3-flash-preview` → `gemini-3.6-flash`
-- [ ] Consider upgrading `gemini-2.5-flash` → `gemini-3.6-flash`
+- [ ] Consider upgrading `gemini-3.6-flash` → `gemini-3.7-flash`
+- [ ] Consider upgrading `gemini-3.5-flash` → `gemini-3.7-flash`
+- [ ] Consider upgrading `gemini-3-flash-preview` → `gemini-3.7-flash`
+- [ ] Consider upgrading `gemini-2.5-flash` → `gemini-3.7-flash`
 - [ ] Consider upgrading `gemini-3.1-flash-lite` → `gemini-3.5-flash-lite`
 - [ ] Consider upgrading `gemini-2.5-flash-lite` → `gemini-3.5-flash-lite` or `gemini-3.1-flash-lite`
 - [ ] Consider upgrading `gemini-2.5-pro` → `gemini-3.1-pro-preview`
 
-### Migrate to Gemini 3.6 Flash or Gemini 3.5 Flash-Lite
+### Migrate to Gemini 3.7 Flash or Gemini 3.5 Flash-Lite
 
-Use this checklist if the user requests to migrate to Gemini 3.6 Flash or Gemini 3.5 Flash-Lite. For full documentation of the changes, fetch the [Latest Gemini models guide](https://ai.google.dev/gemini-api/docs/latest-model.md.txt) and look for the migration section.
+Use this checklist if the user requests to migrate to Gemini 3.7 Flash or Gemini 3.5 Flash-Lite. For full documentation of the changes, fetch the [Latest Gemini models guide](https://ai.google.dev/gemini-api/docs/latest-model.md.txt) and look for the migration section.
 
-- [ ] Updated model name to `gemini-3.6-flash` or `gemini-3.5-flash-lite` (depending on user request)
+- [ ] Updated model name to `gemini-3.7-flash` or `gemini-3.5-flash-lite` (depending on user request)
 - [ ] Removed `temperature`, `top_p`, `top_k` from config
 - [ ] Replaced `thinking_budget` with `thinking_level` (`minimal`, `low`, `medium`, `high`)
 

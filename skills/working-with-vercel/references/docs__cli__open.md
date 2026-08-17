@@ -15,13 +15,28 @@ related:
 summary: Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/open.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d5d434088dda5435f1a540288d95f02eeefd85826347ec03036ce2215994faa1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c4ecad97b659673f4ac837c5f4ee2859b5f5336259b70a1cddaae08cd829ff1c"
 ---
 
 # vercel open
 
 The `vercel open` command opens your current project in the Vercel Dashboard. It automatically opens your default browser to the project's dashboard page, making it easy to access project settings, deployments, and other configuration options.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel login](https://vercel.com/docs/cli/login?from=related) — Learn how to login into your Vercel account using the vercel login CLI command.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+
+Full cross-link map for this page: [/docs/cli/open.graph.md](/docs/cli/open.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This command is available in Vercel CLI v48.10.0 and later. If you're using an older version, see [Updating Vercel CLI](/docs/cli#updating-vercel-cli).
 

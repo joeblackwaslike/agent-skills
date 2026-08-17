@@ -15,13 +15,30 @@ related:
 summary: Installations let one connector serve many tenants. One Slack connector, for example, can serve many Slack workspaces, each with its own grant.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/installations.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "c91c8805b622a93b8657aecec12ee75f66c5aac27588c9b6afc58d2cbea5b9e7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ef28892908c09fd161190d920c91aaa3c0cd051a88256c86a7365b47e3343afd"
 ---
 
 # Installations
 
 A single connector represents your **integration** with a provider. An **installation** represents a single tenant within that integration: one Slack workspace, one GitHub organization, one Salesforce org. One connector can have many installations, each with its own authorization grant.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Create a Connect installation request](https://vercel.com/docs/rest-api/connect/create-a-connect-installation-request?from=related)
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+
+Full cross-link map for this page: [/docs/connect/concepts/installations.graph.md](/docs/connect/concepts/installations.graph.md)
+<!-- /docsgraph:related -->
 
 Not every connector type supports installations. Snowflake, Salesforce, API Key, and Custom OAuth connectors are single-tenant: they have one (implicit) installation. Slack and GitHub are multi-tenant and support an unbounded set of installations.
 

@@ -8,25 +8,43 @@ type: conceptual
 prerequisites:
   - /docs/microfrontends
 related:
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/deployments/environments
   - /docs/microfrontends/configuration
   - /docs/microfrontends/path-routing
-  - /docs/frameworks/sveltekit
+  - /docs/frameworks/full-stack/sveltekit
 summary: Learn about getting started on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "de2e04a8284c79d96549b59d0eeecf0400e23816ced89577163628e61d21a1bf"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3026ff02d1701cb25b0c986fc5eabfb5a0104e1082968062e75c15e5a30e8b4e"
 ---
 
 # Getting started with microfrontends
 
 This quickstart guide will help you set up microfrontends on Vercel. Microfrontends can be used with different frameworks, and separate frameworks can be combined in a single microfrontends group.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+
+Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md)
+<!-- /docsgraph:related -->
+
 ## Prerequisites
 
-- Have at least two [Vercel projects](/docs/projects/overview#creating-a-project) created on Vercel that will be part of the same microfrontends group.
+- Have at least two [Vercel projects](/docs/projects#creating-a-project) created on Vercel that will be part of the same microfrontends group.
 - If you're using a coding agent, install the microfrontends skill:
 
 ```bash filename="terminal"
@@ -147,7 +165,7 @@ Before diving into implementation, it's helpful to understand these core concept
   [`basePath`](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath)
   are not supported right now.
   > For \['sveltekit']:
-  To handle static assets for [SvelteKit](/docs/frameworks/sveltekit), add the `withMicrofrontends` wrapper around your SvelteKit configuration:
+  To handle static assets for [SvelteKit](/docs/frameworks/full-stack/sveltekit), add the `withMicrofrontends` wrapper around your SvelteKit configuration:
   > For \['sveltekit']:
   Then, add the microfrontends plugin to your Vite configuration:
   ```ts filename="vite.config.ts" framework=sveltekit
@@ -167,7 +185,7 @@ Before diving into implementation, it's helpful to understand these core concept
   > For \['sveltekit']:
   This requires version `1.0.1` of the `@vercel/microfrontends` package or higher.
   > For \['vite']:
-  To handle static assets for [Vite](/docs/frameworks/vite), add the following
+  To handle static assets for [Vite](/docs/frameworks/frontend/vite), add the following
   plugin to your Vite configuration:
   > For \['vite']:
   The Vite plugin by default will prefix static assets with a unique path prefix. Using a [base path](https://vite.dev/guide/build#public-base-path) is discouraged, but if you are using one, you can pass that to the `microfrontends` plugin:

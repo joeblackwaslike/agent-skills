@@ -13,17 +13,34 @@ related:
   - /docs/deployments/promoting-a-deployment
   - /docs/image-optimization
   - /docs/functions
-  - /docs/rewrites
+  - /docs/routing/rewrites
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "3e7f0c00f3c3b1a95820ec26c0ad0788549b5ce539c783296e640037d3edf060"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "da3079edf241f5962a729aa6465829ddbb3f5366129faf860c90a7d17380bb8f"
 ---
 
 # Purging Vercel CDN Cache
 
 > **🔒 Permissions Required**: Cache purging
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
+- [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+
+Full cross-link map for this page: [/docs/caching/cdn-cache/purge.graph.md](/docs/caching/cdn-cache/purge.graph.md)
+<!-- /docsgraph:related -->
 
 Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cached content on Vercel's CDN, including cache keys and manual purging options.
 
@@ -65,7 +82,7 @@ For example, you may have a product with id `123` that is displayed on multiple 
 
 There are several ways to add cache tags to a response:
 
-- **`Vercel-Cache-Tag` response header**: Set the `Vercel-Cache-Tag` header on responses from [Vercel Functions](/docs/functions) or [external rewrites](/docs/rewrites#external-rewrites). The value is a comma-separated list of tags.
+- **`Vercel-Cache-Tag` response header**: Set the `Vercel-Cache-Tag` header on responses from [Vercel Functions](/docs/functions) or [external rewrites](/docs/routing/rewrites#external-rewrites). The value is a comma-separated list of tags.
 - **`addCacheTag()` function**: Import [addCacheTag](/docs/functions/functions-api-reference/vercel-functions-package#addcachetag) from `@vercel/functions` and pass in your tag.
 - **`cacheTag()` function (Next.js only)**: Import [cacheTag](https://nextjs.org/docs/app/api-reference/functions/cacheTag) from `next/cache` and pass in your tag.
 
@@ -87,7 +104,7 @@ export default {
 };
 ```
 
-Vercel's CDN can also cache and purge responses originating outside of Vercel by using [external rewrites](/docs/rewrites#external-rewrites) with the same headers.
+Vercel's CDN can also cache and purge responses originating outside of Vercel by using [external rewrites](/docs/routing/rewrites#external-rewrites) with the same headers.
 
 Functions using [ISR](/docs/incremental-static-regeneration) don't have access to the raw Response headers. You can add cache tags by importing [addCacheTag](/docs/functions/functions-api-reference/vercel-functions-package#addcachetag) from `@vercel/functions` to add tags at runtime.
 
@@ -109,7 +126,7 @@ When you purge a tag with the REST API, you can optionally provide a target envi
 
 When you purge a tag using `@vercel/functions` at runtime, the function's current environment is used which is derived from the deployment url that invoked the function.
 
-When using [rewrites](/docs/rewrites) from a parent [project](/docs/projects) to a child project and both are on the same [team](/docs/accounts), cached responses on the parent project will also include the corresponding tags from the child project.
+When using [rewrites](/docs/routing/rewrites) from a parent [project](/docs/projects) to a child project and both are on the same [team](/docs/accounts), cached responses on the parent project will also include the corresponding tags from the child project.
 
 ## Programmatically purging CDN Cache
 
@@ -118,7 +135,7 @@ You can purge Vercel CDN cache in any of the following ways:
 - [next/cache](https://nextjs.org/docs/app/api-reference/functions/cacheTag): Use helper methods like `revalidatePath()`, `revalidateTag()`, or `updateTag()`
 - [@vercel/functions](/docs/functions/functions-api-reference/vercel-functions-package): Use helper methods like `invalidateByTag()`, `dangerouslyDeleteByTag()`, `invalidateBySrcImage()`, or `dangerouslyDeleteBySrcImage()`
 - [Vercel CLI](/docs/cli/cache): Use the `vercel cache invalidate` command or `vercel cache dangerously-delete` command with `--tag` or `--srcimg` options
-- [REST API](/docs/rest-api/reference/endpoints/edge-cache/invalidate-by-tag): Make direct API calls to the edge cache endpoint like `/invalidate-by-tag`, `/dangerously-delete-by-tag`, `/invalidate-by-source-image`, or `/dangerously-delete-by-source-image`
+- [REST API](/docs/rest-api/edge-cache/invalidate-by-tag): Make direct API calls to the edge cache endpoint like `/invalidate-by-tag`, `/dangerously-delete-by-tag`, `/invalidate-by-source-image`, or `/dangerously-delete-by-source-image`
 
 ## Manually purging Vercel CDN Cache
 

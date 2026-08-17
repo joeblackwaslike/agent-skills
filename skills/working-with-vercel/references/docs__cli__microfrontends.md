@@ -12,13 +12,28 @@ related:
 summary: Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects, and pull configuration for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/microfrontends.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "a46dbfa0650ac0ccbbe3ac295682df1bc89c367a19585b3af64223265e9e7f0b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "12f91ac943b59db29f5bffa91781501988468531bf19277f846e760a57a3a2bc"
 ---
 
 # vercel microfrontends
 
 The `vercel microfrontends` command (alias: `vercel mf`) provides utilities for managing Vercel Microfrontends from the CLI.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
+- [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
+- [Microfrontends](https://vercel.com/docs/microfrontends?from=related) — Learn about microfrontends on Vercel.
+- [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications?from=related)
+- [List projects in a microfrontends group](https://vercel.com/docs/rest-api/microfrontends/list-projects-in-a-microfrontends-group?from=related)
+
+Full cross-link map for this page: [/docs/cli/microfrontends.graph.md](/docs/cli/microfrontends.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** To learn more about the architecture and config format, see
 > .

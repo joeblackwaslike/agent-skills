@@ -10,22 +10,37 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/security-and-compliance/zdr
-  - /docs/ai-gateway/byok
+  - /docs/ai-gateway/authentication-and-byok/byok
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "e6bf6e1ceb946b3598ca92a68e4171d8a22af4fa850558710218cbabc1031a51"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7881b30efee48073fbd26a4f41a1a75cf018b1db97114c8c98f55f50047138d3"
 ---
 
 # Disallow Prompt Training
 
 No training on prompt data is available to all AI Gateway users at no extra charge. This feature ensures your prompts are not used by AI providers to train their models. Set `disallowPromptTraining: true` in `providerOptions` to ensure requests are only routed to providers that do not use your data for training.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
+- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
+- [Regional Inference](https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference?from=related) — Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compl
+
+Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md)
+<!-- /docsgraph:related -->
+
 Disallow prompt training is a subset of [Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr). All ZDR-compliant providers also disallow prompt training, but not all providers that disallow prompt training offer full zero data retention.
 
 > **💡 Note:** Disallow prompt training enforcement does not apply to [BYOK (Bring Your Own
-> Key)](/docs/ai-gateway/byok) requests. When you use BYOK, this filter is not
+> Key)](/docs/ai-gateway/authentication-and-byok/byok) requests. When you use BYOK, this filter is not
 > enforced since the request uses your own API key, your
 > configuration, and agreement with the provider. However, if AI Gateway falls
 > back to AI Gateway system credentials, the disallow prompt training
@@ -63,7 +78,7 @@ If no compliant providers are available for the requested model, the request fai
 
 This filter also applies to any fallback providers.
 
-This enforcement does not apply to [BYOK](/docs/ai-gateway/byok) requests since those use your own API key, configuration, and agreement with the provider. If AI Gateway falls back to AI Gateway system credentials, it honors the disallow prompt training filter on the failover request.
+This enforcement does not apply to [BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests since those use your own API key, configuration, and agreement with the provider. If AI Gateway falls back to AI Gateway system credentials, it honors the disallow prompt training filter on the failover request.
 
 ### Using AI SDK
 

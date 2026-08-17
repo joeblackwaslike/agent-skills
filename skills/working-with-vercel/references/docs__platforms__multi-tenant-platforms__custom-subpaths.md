@@ -13,13 +13,30 @@ related:
 summary: Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "2fbf11ec7d10cbafe576bb86b59d1a092a1364d2f7d9f36dac1f1e2b0540b1e5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "50999b6f30bccb68e2d5badcbebc5991f2f6cca5d9c275c14a4aacc604de54f3"
 ---
 
 # Configuring Custom Subpaths
 
 Custom subpaths let customers host your platform content on any path of their existing domain, like `company.com/docs` or `startup.com/help`, while you maintain a single Next.js application and they host the rest of their site separately.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
+- [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing?from=related) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
+- [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
+- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+
+Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/custom-subpaths.graph.md](/docs/platforms/multi-tenant-platforms/custom-subpaths.graph.md)
+<!-- /docsgraph:related -->
 
 ## Single app, multiple subpaths
 

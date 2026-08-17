@@ -16,13 +16,33 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "656e22bace11d0040d52b883e7e970ea9747a3f6a17575254403abde14095529"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f14fbf874258129359276dec73317f7caa166fa2bfd98f509ddd5c2aa63af44f"
 ---
 
 # Rolling Releases
 
 > **🔒 Permissions Required**: Rolling Releases
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
+- [Connection Pooling with Vercel Functions](https://vercel.com/kb/guide/connection-pooling-with-functions?from=related) — Learn best practices for connecting to relational databases with Vercel Functions and Fluid compute
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related) — Incrementally release updates to your backend to minimize impact of mistakes.
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project?from=related)
+- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
+- [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+
+Full cross-link map for this page: [/docs/rolling-releases.graph.md](/docs/rolling-releases.graph.md)
+<!-- /docsgraph:related -->
 
 Rolling Releases allow you to roll out new deployments to a small fraction of your users before promoting them to everyone.
 
@@ -197,16 +217,16 @@ The following are the supported REST API endpoints for rolling releases and roll
 
 | Method | Endpoint                                                                                                                                                                                        |
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GET    | [GET /v1/projects/{idOrName}/rolling-release/billing](/docs/rest-api/reference/endpoints/rolling-release#get-rolling-release-billing)                                                          |
-| GET    | [GET /v1/projects/{idOrName}/rolling-release/config](/docs/rest-api/reference/endpoints/rolling-release#get-rolling-release-config)                                                            |
-| DELETE | [DELETE /v1/projects/{idOrName}/rolling-release/config](/docs/rest-api/reference/endpoints/rolling-release#delete-rolling-release-config)                                                      |
-| PATCH  | [PATCH /v1/projects/{idOrName}/rolling-release/config](/docs/rest-api/reference/endpoints/rolling-release#update-rolling-release-config)                                                       |
-| GET    | [GET /v1/projects/{idOrName}/rolling-release](/docs/rest-api/reference/endpoints/rolling-release#get-active-rolling-release)                                                                   |
-| POST   | [POST /v1/projects/{idOrName}/rolling-release/approve-stage](/docs/rest-api/reference/endpoints/rolling-release#advance-rolling-release-to-next-stage)                                         |
+| GET    | [GET /v1/projects/{idOrName}/rolling-release/billing](/docs/rest-api/rolling-release/get-rolling-release-billing-status#get-rolling-release-billing)                                                          |
+| GET    | [GET /v1/projects/{idOrName}/rolling-release/config](/docs/rest-api/rolling-release/get-rolling-release-billing-status#get-rolling-release-config)                                                            |
+| DELETE | [DELETE /v1/projects/{idOrName}/rolling-release/config](/docs/rest-api/rolling-release/get-rolling-release-billing-status#delete-rolling-release-config)                                                      |
+| PATCH  | [PATCH /v1/projects/{idOrName}/rolling-release/config](/docs/rest-api/rolling-release/get-rolling-release-billing-status#update-rolling-release-config)                                                       |
+| GET    | [GET /v1/projects/{idOrName}/rolling-release](/docs/rest-api/rolling-release/get-rolling-release-billing-status#get-active-rolling-release)                                                                   |
+| POST   | [POST /v1/projects/{idOrName}/rolling-release/approve-stage](/docs/rest-api/rolling-release/get-rolling-release-billing-status#advance-rolling-release-to-next-stage)                                         |
 | POST   | `POST /v1/projects/{idOrName}/rolling-release/start`                                                                                                                                            |
-| POST   | [POST /v1/projects/{idOrName}/rolling-release/complete](/docs/rest-api/reference/endpoints/rolling-release#complete-rolling-release)                                                           |
-| POST   | [POST /v1/projects/{projectId}/rollback/{deploymentId}](/docs/rest-api/reference/endpoints/instant-rollback#rollback-a-project-to-a-previous-deployment)                                       |
-| PATCH  | [PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description](/docs/rest-api/reference/endpoints/instant-rollback#update-the-description-of-a-project-rollback-to-a-deployment) |
+| POST   | [POST /v1/projects/{idOrName}/rolling-release/complete](/docs/rest-api/rolling-release/get-rolling-release-billing-status#complete-rolling-release)                                                           |
+| POST   | [POST /v1/projects/{projectId}/rollback/{deploymentId}](/docs/rest-api/projects/point-production-traffic-to-a-previous-production-deployment-by-id#rollback-a-project-to-a-previous-deployment)                                       |
+| PATCH  | [PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description](/docs/rest-api/projects/point-production-traffic-to-a-previous-production-deployment-by-id#update-the-description-of-a-project-rollback-to-a-deployment) |
 
 ### Starting and completing via the API
 
@@ -250,7 +270,7 @@ If you disable Rolling Releases via the config endpoint (PATCH or DELETE) while 
 
 For detailed API specifications, request/response schemas, and code examples:
 
-- [API reference](/docs/rest-api/rolling-release)
+- [API reference](/docs/rest-api/rolling-release/get-rolling-release-billing-status)
 - [Examples using the SDK](/docs/rest-api/sdk/examples/rolling-releases)
 
 

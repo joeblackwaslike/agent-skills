@@ -14,13 +14,28 @@ related:
 summary: Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/privacy-policy.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1e14fe221974a805dc3be1f98b55b64df59d40f7f530b3cc6434652271d9c7c4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "117e4a77462a14f976025c7732dd99a9127cb59b6b006b49265be921f2a7c4f7"
 ---
 
 # Vercel Speed Insights Privacy & Compliance
 
 > **🔒 Permissions Required**: Speed Insights
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Privacy](https://vercel.com/docs/analytics/privacy-policy?from=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+- [Troubleshooting](https://vercel.com/docs/speed-insights/troubleshooting?from=related) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
+- [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related) — Learn how to use Speed Insights to analyze your application's performance data.
+
+Full cross-link map for this page: [/docs/speed-insights/privacy-policy.graph.md](/docs/speed-insights/privacy-policy.graph.md)
+<!-- /docsgraph:related -->
 
 To ensure that the Speed Insights feature can be used despite many different regulatory limitations around the world, we've designed it in such a way that it provides you with information without being tied to, or associated with, any individual visitor or IP address.
 

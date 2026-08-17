@@ -17,13 +17,28 @@ related:
 summary: Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/billing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3e17e3d78afaa3248056a34ff85f97fa6fd8eb8476d9f6930aa6c7570742583a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f46f95415f6e5e9cce6082d1cac736da4c6c2cddb90a18972a25de2c34679d10"
 ---
 
 # Manage Billing and Refunds for Integrations
 
 When a Vercel user installs your native integration, you manage billing through the [Vercel API billing endpoints](/docs/integrations/create-integration/marketplace-api/reference/vercel). Each integration operates its own independent billing lifecycle, allowing Vercel users to configure different payment methods for each integration.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
+- [Submit Invoice](https://vercel.com/docs/rest-api/marketplace/submit-invoice?from=related)
+- [Billing FAQ](https://vercel.com/docs/plans/enterprise/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+
+Full cross-link map for this page: [/docs/integrations/create-integration/billing.graph.md](/docs/integrations/create-integration/billing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Billing API endpoints
 

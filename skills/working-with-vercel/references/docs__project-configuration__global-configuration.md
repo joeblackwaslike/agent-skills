@@ -12,13 +12,28 @@ related:
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ac6e86558e9b01a1176bf646dd1d93985ef291dda6b0815ac98a64a40f5cef62"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "581bd93e718f1155765b715c6644ab1f4bb845f8415c3c98b860f867d4e7dee0"
 ---
 
 # Global Vercel CLI Configuration
 
 Using the following files and configuration options, you can configure [Vercel CLI](/cli) under your system user.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related) — Learn how to use Global Configs in your projects.
+- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
+
+Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md)
+<!-- /docsgraph:related -->
 
 The two global configuration files are: `config.json` and `auth.json`. These files are stored in the `com.vercel.cli` directory inside [`XDG_DATA_HOME`](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html), which defaults to:
 

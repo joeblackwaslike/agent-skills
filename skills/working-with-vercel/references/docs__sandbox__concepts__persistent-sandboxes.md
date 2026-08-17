@@ -17,13 +17,33 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "da1d825b3ca7966a7a84b2af921499a5dbe7dd9192a9893bf92c0671f742b35e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4934797af52784e97c7da96f105ab8eda9fa4538cf5746fe083414840e94a495"
 ---
 
 # Persistence
 
 Persistent sandboxes automatically save their filesystem state when stopped and restore it when resumed. You don't need to manually create or track [snapshots](/docs/sandbox/concepts/snapshots) between runs.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
+- [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related)
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+
+Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md)
+<!-- /docsgraph:related -->
 
 **Persistence is the default.** Every sandbox created with [`Sandbox.create()`](/docs/sandbox/sdk-reference#sandbox.create) or [`sandbox create`](/docs/sandbox/cli-reference#sandbox-create) is persistent unless you explicitly opt out.
 
@@ -87,6 +107,10 @@ const sandbox = await Sandbox.create({
 
 `keepLastSnapshots: { count: 1 }` is the recommended setting when you only care about the latest snapshot. It keeps snapshot storage flat.
 
+### Sandbox retention
+
+Vercel removes sandboxes that can't resume from a snapshot after 14 days of inactivity. This applies to non-persistent (ephemeral) sandboxes and to sandboxes whose source snapshot has been deleted or has expired. To keep a sandbox around, keep it persistent and make sure its snapshots don't expire before you use it again.
+
 ### Automatic resume
 
 If a persistent sandbox is stopped and you call `runCommand`, `writeFiles`, or other SDK methods on it, the SDK automatically starts a new session and retries the operation. You don't need to check the sandbox status or restart it manually.
@@ -124,6 +148,8 @@ await sandbox.stop(); // Filesystem is snapshotted automatically
 
 `Sandbox.getOrCreate` is the recommended pattern for long-lived sandboxes. It resumes the sandbox if it exists, or creates it if it doesn't.
 
+Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, use [`sandbox.update`](#update-sandbox-configuration).
+
 ```ts filename="index.ts"
 const sandbox = await Sandbox.getOrCreate({
   name: 'my-sandbox',
@@ -146,7 +172,8 @@ const sandbox = await Sandbox.getOrCreate({
 Behavior:
 
 - If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point — not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
-- If it does not exist, a fresh sandbox is created and `onCreate` fires (awaited before `getOrCreate` resolves).
+- If a sandbox with that `name` exists, its configuration is not updated. Creation parameters passed to `getOrCreate` are ignored; use [`sandbox.update`](#update-sandbox-configuration) to change the configuration of an existing sandbox.
+- If it does not exist, a fresh sandbox is created with the parameters you pass, and `onCreate` fires (awaited before `getOrCreate` resolves).
 - If the sandbox exists but its snapshot has expired, the stale sandbox is deleted, re-created with the same name, and `onCreate` fires.
 
 ## Resume where you left off

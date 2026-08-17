@@ -8,19 +8,34 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/git
   - /docs/cli/global-options
 summary: Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/link.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "63f6a73bf7ea1bb4e754800a93834ddf7887a380336b533803d97049c179463c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "19ca25fb887f2816f5d92b9ecd6dff02e45d97c0ce4f74964a79dbeeb5f064e4"
 ---
 
 # vercel link
 
-The `vercel link` command links your local directory to a [Vercel Project](/docs/projects/overview).
+The `vercel link` command links your local directory to a [Vercel Project](/docs/projects).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Project Linking](https://vercel.com/docs/cli/project-linking?from=related) — Learn how to link existing Vercel Projects with Vercel CLI.
+- [vercel open](https://vercel.com/docs/cli/open?from=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
+- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel git](https://vercel.com/docs/cli/git?from=related) — Learn how to manage your Git provider connections using the vercel git CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+
+Full cross-link map for this page: [/docs/cli/link.graph.md](/docs/cli/link.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 

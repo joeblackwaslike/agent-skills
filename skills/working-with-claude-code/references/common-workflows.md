@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/common-workflows.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "79d95075b4fd73eef4402e29d1d1ecac7fa58729633e1968c8c01a4f0f773113"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "9544fa5019de739654206948d597a6a90abd9f86a3dc504ba9871e1e295b3170"
 ---
 
 > ## Documentation Index
@@ -496,7 +496,7 @@ For changes you want to review before they touch disk, switch to plan mode. Clau
 claude --permission-mode plan
 ```
 
-You can also press `Shift+Tab` mid-session to cycle to plan mode. The cycle runs `default` → `acceptEdits` → `plan`. See [Plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) for the approval flow and editing the plan in your text editor.
+You can also press `Shift+Tab` mid-session until the status bar shows `⏸ plan mode on`. See [Plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) for the approval flow and editing the plan in your text editor.
 
 ## Delegate research to subagents
 

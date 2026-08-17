@@ -15,13 +15,32 @@ related:
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c25c9a84d9c5eac9ef164d3f97cb1e8a5f1532495f187088c62110280dd63ffb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "41473b1f9f0cbd861222981b2d856cb00a3d242e50242b7f8d323b4c0b8d47e2"
 ---
 
 # Rate Limiting SDK
 
 You can configure a custom rule with rate limit in your code by using the [`@vercel/firewall`](https://github.com/vercel/vercel/tree/main/packages/firewall/docs) package. This can be useful in the following cases:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add Rate Limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel?from=related) — Learn how to implement rate limiting with Vercel
+- [Build an AI Chat Agent with Weather API Tool Calling](https://vercel.com/kb/guide/build-ai-agent-weather-api?from=related) — Build an intelligent conversational agent that fetches real-time weather data using the AI SDK, tool calling, and a back
+- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [Limit Abuse with Rate Limiting](https://vercel.com/kb/guide/limit-abuse-with-rate-limiting?from=related) — Learn how to protect your authentication endpoints against abuse.
+- [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting?from=related) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
+- [Custom Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules?from=related) — Learn how to add and manage custom rules to configure the Vercel Web Application Firewall \(WAF\).
+- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related)
+- [Firewall API](https://vercel.com/docs/vercel-firewall/firewall-api?from=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [vercel firewall](https://vercel.com/docs/cli/firewall?from=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
+
+Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md)
+<!-- /docsgraph:related -->
 
 - You need to set a rate limit on requests in your backend
 - You want to use additional conditions with the rate limit that are not possible in the custom rule configuration of the dashboard

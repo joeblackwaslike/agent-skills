@@ -14,13 +14,29 @@ related:
 summary: A popover interface for deploying files to Vercel with real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "73f5d177eefdeef73cecbcfb7c12e0df3791b172664e32101c3ec75c4b8ba2ce"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "304880b9f86c750b3494ec22ad2fdbe6a9b4d74c3dac69ff92523bc0c76bf267"
 ---
 
 # Deploy Popover
 
 ## Overview
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Vercel Drop](https://vercel.com/docs/drop?from=related) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files?from=related)
+
+Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/deploy-popover.graph.md](/docs/platforms/platform-elements/blocks/deploy-popover.graph.md)
+<!-- /docsgraph:related -->
 
 The Deploy Popover component provides a user-friendly popover interface for deploying files to Vercel. It includes real-time deployment status tracking, error handling, and the ability to inspect or visit deployments once they're ready.
 

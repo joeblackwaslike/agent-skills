@@ -13,13 +13,31 @@ related:
 summary: Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "18125c45b7e5e9d1f668cf84ce99bb7fdc10f5158476213d150376f910871eab"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ada4b162717a840f593794b3afd201524944b46b4986ee5dff3ded4151c137be"
 ---
 
 # Amazon Bedrock Reasoning
 
 Amazon Bedrock exposes Anthropic Claude reasoning through model-creator-specific provider options. Configuration depends on the model:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Responses API.
+- [OpenAI](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
+- [Cerebras](https://ai-sdk.dev/providers/ai-sdk-providers/cerebras?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [Extended Thinking](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.graph.md](/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.graph.md)
+<!-- /docsgraph:related -->
 
 - **Adaptive reasoning**: Set `reasoningConfig: { type: 'adaptive', maxReasoningEffort }`. Available on Claude 4.6 and later. Required on Claude Opus 4.7 and later, where the legacy `type: 'enabled'` mode returns a 400 error.
 - **Manual reasoning**: Set `reasoningConfig: { type: 'enabled', budgetTokens: N }` for a fixed token budget. Available on Claude 4.6 and earlier (deprecated on 4.6, removed on Claude Opus 4.7 and later).

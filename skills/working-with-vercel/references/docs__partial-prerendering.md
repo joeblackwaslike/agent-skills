@@ -10,19 +10,38 @@ prerequisites:
 related:
   - /docs/incremental-static-regeneration
   - /docs/functions
+  - /docs/partial-prerendering/quickstart
   - /docs/caching/cdn-cache
   - /docs/regions
-  - /docs/incremental-static-regeneration/limits-and-pricing
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ea53d16f3f85f25032f5d7a26f3c65b9cfc55f4e7c92a1b83b1249e2b790460a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b3130ddf1f9b8b59af2e874efbe7575cde268912fe30a65e202ba0fdabbd06b7"
 ---
 
 # Partial Prerendering (PPR)
 
 > **🔒 Permissions Required**: Partial Prerendering
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [PPR Platform Guide](https://nextjs.org/docs/app/guides/ppr-platform-guide?from=related) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
+- [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel?from=related) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
+- [Implementing PPR in an Adapter](https://nextjs.org/docs/app/api-reference/adapters/implementing-ppr-in-an-adapter?from=related) — Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
+- [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Getting Started](https://vercel.com/docs/incremental-static-regeneration/quickstart?from=related) — Learn how to set up Incremental Static Regeneration \(ISR\) with time-based and on-demand revalidation.
+- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
+
+Full cross-link map for this page: [/docs/partial-prerendering.graph.md](/docs/partial-prerendering.graph.md)
+<!-- /docsgraph:related -->
 
 Partial Prerendering (PPR) is a rendering strategy that combines fast cached static content with the ability to render fresh dynamic content, all in one response. This strategy allows you to personalize pages while still having a performant site.
 
@@ -38,6 +57,7 @@ If your page is fully static, use ISR since there is no dynamic content.
 
 To get started:
 
+- Follow the [getting started guide](/docs/partial-prerendering/quickstart) to enable PPR in a Next.js App Router project
 - [Set up PPR](#using-ppr) with your framework
 - Learn [how PPR works](#how-ppr-works) from build time through revalidation
 - Understand [usage and pricing](#usage-and-pricing)
@@ -204,7 +224,7 @@ When you use PPR with a framework on Vercel, you incur usage for:
 
 ## More resources
 
-- [Partial Prerendering with Next.js](/docs/frameworks/nextjs#partial-prerendering)
+- [Partial Prerendering with Next.js](/docs/frameworks/full-stack/nextjs#partial-prerendering)
 - [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration)
 - [Vercel Functions](/docs/functions)
 - [Runtime Cache](/docs/caching/runtime-cache)

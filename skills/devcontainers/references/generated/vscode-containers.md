@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers guide"
 source: "https://code.visualstudio.com/docs/devcontainers/containers"
-fetched_at: "2026-08-10T05:26:00.817Z"
-sha256: "500f307a47adfa72f353c4d211753b81f9ca51699571e1112cae28efa9d68561"
+fetched_at: "2026-08-17T04:40:34.367Z"
+sha256: "fd0df88f99b63b74e53d95693b86d3f4e81d4ec029b37c4a251c2540232bc50e"
 ---
 
 # VS Code Dev Containers guide
@@ -425,6 +425,7 @@ Similar to how you can set extensions to always be installed in your dev contain
     
       
       dev.containers.defaultFeatures
+      
     
     
         
@@ -578,6 +579,7 @@ If there are extensions that you would like always installed in any container, y
     
       
       dev.containers.defaultExtensions
+      
     
     
         
@@ -897,4 +899,4 @@ Check issue #8278 for a potential workaround.
 
                 
                 
-                8/5/2026
+                8/12/2026

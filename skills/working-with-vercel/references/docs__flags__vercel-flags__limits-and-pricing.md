@@ -13,13 +13,28 @@ related:
 summary: Learn about limits and pricing for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "20e15211a451bff95355f7c1f9d7fd3a4aee8ff403d76cc727d80c12ff7bdeb5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "0f7ce30f4489aa6a5da55f2507cd581131442b568c646f02a25379909642ebca"
 ---
 
 # Limits and Pricing for Vercel Flags
 
 ## Pricing
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Pricing](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing?from=related) — Learn about pricing for Flags Explorer.
+- [Limits & Pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related)
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 ### Flag requests
 

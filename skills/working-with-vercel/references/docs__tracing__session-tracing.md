@@ -11,18 +11,35 @@ related:
   - /docs/vercel-toolbar/in-production-and-localhost
   - /docs/cli/curl
   - /docs/cli/traces
-  - /docs/runtime-logs
+  - /docs/logs/runtime
   - /docs/tracing
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a6a553043515fad8542696edf71cc5e5186f738a1c2db361b349bd17976a7fe4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "798be58ca2154bf23c1acd0434c4e4022183e832507b623787a3b796e23991ea"
 ---
 
 # Session tracing
 
 With session tracing, you can use the Vercel toolbar to trace **your** sessions and view the corresponding spans in the logs dashboard. This is useful for debugging and monitoring performance, and identifying bottlenecks.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Instrumentation](https://vercel.com/docs/tracing/instrumentation?from=related) — Learn how to instrument your application to understand performance and infrastructure details.
+- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment?from=related)
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+
+Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
+<!-- /docsgraph:related -->
 
 A session trace is initiated through the Vercel toolbar, either through a [Page Trace](/docs/tracing/session-tracing#run-a-page-trace) or a [Session Trace](/docs/tracing/session-tracing#run-a-session-trace). It is active for the person who initiated the trace on their browser indefinitely, until it is stopped or cookies are cleared.
 
@@ -76,7 +93,7 @@ See the [`vercel curl`](/docs/cli/curl) and [`vercel traces`](/docs/cli/traces) 
 2. Select **View Previous Session Traces**.
 3. The dashboard will open to the **Logs** section in the sidebar, filtered to the session ID, and the tracing filter applied - indicated by the Traces icon  in the filter bar.
 
-You can filter traces using [all the same filters available](/docs/runtime-logs#log-filters) in the **Logs** section in the sidebar of the dashboard. To view traces for requests to your browser, press the user icon next to the Traces icon.
+You can filter traces using [all the same filters available](/docs/logs/runtime#log-filters) in the **Logs** section in the sidebar of the dashboard. To view traces for requests to your browser, press the user icon next to the Traces icon.
 
 ![Image](https://vercel.com/front/docs/observability/previous-session-traces-light.png?lightbox)
 

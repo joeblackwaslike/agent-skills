@@ -17,13 +17,32 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "37287180d57ca63d08e14832352722ebdadd0f825ea337d845f856638cd6c4da"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "68bde111b83e3f6e429e00ea343307aac36c44a374778027a7c634836a3394a0"
 ---
 
 # Snapshots
 
 Snapshots capture the state of a running sandbox, including the filesystem and installed packages. Use snapshots to skip setup time on subsequent runs.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
+- [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
+- [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot?from=related)
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots?from=related)
+- [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot?from=related)
+
+Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md)
+<!-- /docsgraph:related -->
 
 For [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes) (the default), snapshots are created automatically whenever a session stops, and the next session resumes from the most recent snapshot. You can still call `snapshot()` manually to create a checkpoint between sessions, or to fork a child sandbox from a known state.
 

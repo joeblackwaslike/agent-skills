@@ -14,13 +14,28 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "19d77fd6f9a8d60593d5321359e9360846dfb308b5735788704153b5f74c4103"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8357d27883139663e70bc5ce6e6c4499f9bf7f9a9253d69e96d85f1612c243b5"
 ---
 
 # Directory Sync
 
 > **🔒 Permissions Required**: Directory Sync
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings?from=related)
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related) — Learn about the different team level roles and the permissions they provide.
+- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+
+Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md)
+<!-- /docsgraph:related -->
 
 Directory Sync helps teams manage their organization membership from a third-party identity provider like Google Directory or Okta. Directory Sync is only available for **Enterprise Teams** and can only be configured by [**Team Owners**](/docs/rbac/access-roles#owner-role).
 

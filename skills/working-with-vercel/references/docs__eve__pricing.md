@@ -16,8 +16,8 @@ related:
 summary: Understand how eve usage maps to Vercel resources and inherited platform limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "af2fc13c7b2082d87109d82f77a054369f8f820a82e5503521d95ee43523c1a9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "35523b94e0c473886efaaeb1f1162122e44fed4f3d8dfaed1d66151aa69484a5"
 ---
 
 # Pricing and Limits
@@ -25,6 +25,22 @@ sha256: "af2fc13c7b2082d87109d82f77a054369f8f820a82e5503521d95ee43523c1a9"
 eve usage is billed through the Vercel resources and third-party services your agent uses. An eve
 deployment can use Vercel Functions for compute, Vercel Workflows for durable sessions, Vercel
 Sandbox for isolated command execution, and AI Gateway or model providers for model calls.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Pricing](https://vercel.com/docs/agent/pricing?from=related) — Understand how Vercel Agent pricing works and how to manage your credits
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+
+Full cross-link map for this page: [/docs/eve/pricing.graph.md](/docs/eve/pricing.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Pricing depends on the features your agent uses, the Vercel plan for the project, and any model or
 > third-party provider usage. Review the linked product pricing pages for current rates.

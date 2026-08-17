@@ -1,12 +1,12 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters/llamaindex.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "03eba9c8dc4b46f941bad503bde4616bf1204063caa2e1ebebabcda2df15e514"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "c340cd46112e0f8e07799cd277189adf6d9cd2a847bca50adcae6c6e9e4bc3a9"
 ---
 
 # LlamaIndex
 
-[LlamaIndex](https://ts.llamaindex.ai/) is a framework for building LLM-powered applications. LlamaIndex helps you ingest, structure, and access private or domain-specific data. LlamaIndex.TS offers the core features of LlamaIndex for Python for popular runtimes like Node.js (official support), Vercel Edge Functions (experimental), and Deno (experimental).
+[LlamaIndex](https://ts.llamaindex.ai/) is a framework for building LLM-powered applications. LlamaIndex helps you ingest, structure, and access private or domain-specific data. LlamaIndex.TS supports modern JavaScript runtimes such as Node.js, Deno, and Bun.
 
 ## Example: Completion
 

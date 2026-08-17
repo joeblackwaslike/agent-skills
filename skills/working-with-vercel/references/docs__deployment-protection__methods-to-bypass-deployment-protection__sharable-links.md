@@ -15,13 +15,29 @@ related:
 summary: Learn how to share your deployments with external users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2b2e29480161f104a21b9da3c1dfb1c5bce0fe18561fe0bc70a44b762c4bd2b6"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "2a6dc532852ecb6c0d9234e3bafa9f87ebc676cc422e4c267a214da52d86baec"
 ---
 
 # Sharable Links
 
 > **🔒 Permissions Required**: Shareable Links
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Shared Environment Variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+
+Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md)
+<!-- /docsgraph:related -->
 
 Shareable links allow external users to securely access your deployments through a query string parameter.
 Shareable links include the ability to leave [Comments](/docs/comments) on deployments which have them enabled.

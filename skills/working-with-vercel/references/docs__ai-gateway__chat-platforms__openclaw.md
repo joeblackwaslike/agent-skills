@@ -13,13 +13,29 @@ related:
 summary: Use OpenClaw (formerly Clawdbot) with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/openclaw.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "49b55ca07832e97c17310c537017a7e63cf953c6afc437b65faaf2eb0536443b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b855355e4b33f0caea83a3e0a2aef840f85fc307abe13f18fd5a2e11f36a2d5b"
 ---
 
 # OpenClaw (Clawdbot)
 
 [OpenClaw (Clawdbot)](https://openclaw.ai) is a personal AI assistant that runs on your computer and connects to messaging platforms like WhatsApp, Telegram, Discord, and more. OpenClaw (Clawdbot) features a skills platform that teaches it new capabilities, browser control, persistent memory, and multi-agent support. You can configure it to use AI Gateway for unified model access and spend monitoring.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [Running OpenClaw in Vercel Sandbox](https://vercel.com/kb/guide/running-openclaw-in-vercel-sandbox?from=related) — This guide walks you through setting up OpenClaw inside a Vercel Sandbox and configuring the WhatsApp channel.
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
+- [Chatbox](https://vercel.com/docs/ai-gateway/chat-platforms/chatbox?from=related) — Use Chatbox with the AI Gateway.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
+- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related) — Use Cline with the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/openclaw.graph.md](/docs/ai-gateway/chat-platforms/openclaw.graph.md)
+<!-- /docsgraph:related -->
 
 ## Configuring OpenClaw (Clawdbot)
 

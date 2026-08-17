@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/secure-deployment.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "615ab777997e4b14ae8baa557fa12b86b5837094343c2084c37adb3657bdb25d"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "1e1a839fb1e90d936f52fd5666a59f512215ff743f8ceaf2395f6ab16e4f5ad3"
 ---
 
 > ## Documentation Index
@@ -12,11 +12,9 @@ sha256: "615ab777997e4b14ae8baa557fa12b86b5837094343c2084c37adb3657bdb25d"
 
 > A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls
 
-Claude Code and the Agent SDK are powerful tools that can execute code, access files, and interact with external services on your behalf. Like any tool with these capabilities, deploying them thoughtfully ensures you get the benefits while maintaining appropriate controls.
+Claude Code and the Agent SDK are powerful tools that can execute code, access files, and interact with external services on your behalf.
 
 Unlike traditional software that follows predetermined code paths, these tools generate their actions dynamically based on context and goals. This flexibility is what makes them useful, but it also means their behavior can be influenced by the content they process: files, webpages, or user input. This is sometimes called prompt injection. For example, if a repository's README contains unusual instructions, Claude Code might incorporate those into its actions in ways the operator didn't anticipate. This guide covers practical ways to reduce this risk.
-
-The good news is that securing an agent deployment doesn't require exotic infrastructure. The same principles that apply to running any semi-trusted code apply here: isolation, least privilege, and defense in depth. Claude Code includes several security features that help with common concerns, and this guide walks through these along with additional hardening options for those who need them.
 
 Not every deployment needs maximum security. A developer running Claude Code on their laptop has different requirements than a company processing customer data in a multi-tenant environment. This guide presents options ranging from Claude Code's built-in security features to hardened production architectures, so you can choose what fits your situation.
 
@@ -86,7 +84,7 @@ Different isolation technologies offer different tradeoffs between security stre
 
 For lightweight isolation without containers, [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) enforces filesystem and network restrictions at the OS level.
 
-The main advantage is simplicity: no Docker configuration, container images, or networking setup required. The proxy and filesystem restrictions are built in. You provide a settings file specifying allowed domains and paths.
+The main advantage is simplicity: no Docker configuration, container images, or networking setup required. The proxy and filesystem restrictions are built in.
 
 **How it works:**
 

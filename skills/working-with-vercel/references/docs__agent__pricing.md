@@ -12,13 +12,31 @@ related:
 summary: Understand how Vercel Agent pricing works and how to manage your credits
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a2acdbe73e7789aed27f32e02311ae6eafa538de06d787140370d555d1010f24"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ecfd4fcb6bde38e5efa343e8cb919c78014fe5b71919bbb6aabc8ce10471c34b"
 ---
 
 # Vercel Agent Pricing
 
 Vercel Agent uses a credit-based system and all agent features and tools will use the same credit pool.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
+- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [Investigation](https://vercel.com/docs/agent/investigation?from=related) — Let AI investigate your error alerts to help you debug faster
+- [Managing Reviews](https://vercel.com/docs/agent/pr-review/usage?from=related) — Customize which repositories get reviewed and track your review metrics and spending.
+- [Code Review](https://vercel.com/docs/agent/pr-review?from=related) — Get automatic AI-powered code reviews on your pull requests
+- [Installation](https://vercel.com/docs/agent/installation?from=related) — Let AI automatically install Web Analytics and Speed Insights in your app
+
+Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pricing.graph.md)
+<!-- /docsgraph:related -->
 
 All teams with Observability Plus have 10 alert investigations included every billing cycle at no extra cost.
 Each Code Review and additional investigation costs both:

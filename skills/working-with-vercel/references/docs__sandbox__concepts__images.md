@@ -15,13 +15,32 @@ related:
 summary: Start sandboxes from custom OCI images stored in Vercel Container Registry to ship your own system packages, tooling, and filesystem layout.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/images.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c8bc2c76539b7c5513f3a5abad5a81c7f2d7576981e4b74374f0dc5378706822"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c856ca40c8b0abf1f51506d971f35e7efce585224ba44189e22c4699dcdff104"
 ---
 
 # Images
 
 Custom images give you full control over the sandbox environment. Define the Linux distribution, system packages, language toolchains, and filesystem layout in a Dockerfile, and your sandboxes boot straight into that environment with nothing to install at runtime. Reuse an image you already build for CI or production, or build one specifically for your agents.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \(GHCR\) to Vercel Container Registry \(VCR\), including authent
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
+- [Run Commands in Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Multi-Agent](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+
+Full cross-link map for this page: [/docs/sandbox/concepts/images.graph.md](/docs/sandbox/concepts/images.graph.md)
+<!-- /docsgraph:related -->
 
 Sandbox pulls images from [Vercel Container Registry (VCR)](/docs/container-registry), a project-scoped registry for OCI images. Pin environments with tags and digests, [share a repository](/docs/container-registry/public-and-shared-repositories#share-a-repository) to reuse one image across projects and teams, or [mark a repository public](/docs/container-registry/public-and-shared-repositories#public-repositories) to let any other team use your image.
 
@@ -33,7 +52,7 @@ You can use a [Vercel Managed Image (VMI)](#vercel-managed-images), your own [cu
 
 ## Vercel Managed Images
 
-Vercel maintains and publishes a set of managed images containing common tools and languages. The images are published under the `vercel/sandbox` scope and their source code is [available on GitHub](https://github.com/vercel/sandbox/tree/main/images).
+Vercel maintains a set of managed images containing common tools and languages, published under the `vercel/sandbox` scope.
 
 | Image                                                                                             | Base                    | Contents                                                  |
 | ------------------------------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------- |
@@ -54,6 +73,12 @@ const sandbox = await Sandbox.create({
   // image: 'vercel/sandbox/ubuntu',            // Use the latest Ubuntu image
 });
 ```
+
+### Release cadence
+
+Every managed image gets a nightly release. Rolling tags (e.g. `universal:latest`) and the major-version tags (`node:26` or `python:3.14`) pick up operating system updates automatically, including security patches. New releases of Node.js, Python, preinstalled coding agents and other dependencies are picked up in nightly releases via an automated pipeline.
+
+Images are open source, with their source code [available on GitHub](https://github.com/vercel/sandbox/tree/main/images). To propose changes, open a pull request.
 
 ## Custom images
 

@@ -10,18 +10,34 @@ prerequisites:
 related:
   - /docs/pricing/regional-pricing
   - /docs/cli/dev
-  - /docs/functions/regions
   - /docs/functions/configuring-functions/region
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "16e9f3194d24f790413fd71d3af92b30c983ecaa556f6cd4db19d1e0ed96636c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "946a03c65931f69a6d56cb0567e38047520d7e8d658eb051a7c1df8259b21f75"
 ---
 
 # Global network and regions
 
 **Vercel's CDN** is a globally distributed platform that stores content and runs compute close to your users and data, reducing latency and improving performance. This page details the [supported regions](#region-list) and explains our global infrastructure.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
+
+Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md)
+<!-- /docsgraph:related -->
 
 ![Image](https://vercel.com/front/docs/edge-network/cdn-pops-light.png)
 
@@ -91,7 +107,7 @@ When you use [the `vercel dev` CLI command to mimic your deployment environment 
 
 ## Compute defaults
 
-- Vercel Functions default to running in the `iad1` (Washington, D.C., USA) region. Learn more about [changing function regions](/docs/functions/regions)
+- Vercel Functions default to running in the `iad1` (Washington, D.C., USA) region. Learn more about [changing function regions](/docs/functions/configuring-functions/region)
 
 Functions should be executed in the same region as your database, or as close to it as possible, [for the lowest latency](/docs/functions/configuring-functions/region).
 

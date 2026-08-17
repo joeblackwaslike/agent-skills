@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "ece3636fc69986229d64480865274afc6ef5ee006640fd3cc609ec1f7d664c48"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "25468c60a147b40a3f52079788d6521cebfcd7a981e051f640e7602bef7dd7dc"
 ---
 
 # Anthropic Provider
@@ -1776,7 +1776,6 @@ and the `mediaType` should be set to `'application/pdf'`.
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -1786,6 +1785,7 @@ and the `mediaType` should be set to `'application/pdf'`.
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

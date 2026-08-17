@@ -15,13 +15,28 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5b27daa3b89a8c9a615bbede13312f03b82d0c5bc3a79b599a5e48f99d64cd7d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d769a73558413a3a341dac2d2386cda2f011e45f1c0183ab5e487ef7ac441262"
 ---
 
 # Drains Security
 
 All Drains support transport-level encryption using HTTPS protocol.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Create a new Drain](https://vercel.com/docs/rest-api/drains/create-a-new-drain?from=related)
+- [Update an existing Drain](https://vercel.com/docs/rest-api/drains/update-an-existing-drain?from=related)
+- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id?from=related)
+- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+
+Full cross-link map for this page: [/docs/drains/security.graph.md](/docs/drains/security.graph.md)
+<!-- /docsgraph:related -->
 
 When your server starts receiving payloads, a third party could send data to your server if it knows the URL. Therefore, you should verify the request is coming from Vercel.
 

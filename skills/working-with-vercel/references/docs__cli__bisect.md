@@ -12,13 +12,28 @@ related:
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "c70ec3ad324e42b728b0950c686cc1f0d50dfe39483e65485536da615f6549fc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ce6fa4e1e6011cbda273fc69ea13971e490b06469dda5e9c3d2143705b614cab"
 ---
 
 # vercel bisect
 
 The `vercel bisect` command can be used to perform a [binary search](https://wikipedia.org/wiki/Binary_search_algorithm "What is a binary search?") upon a set of deployments in a Vercel Project for the purpose of determining when a bug was introduced.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+
+Full cross-link map for this page: [/docs/cli/bisect.graph.md](/docs/cli/bisect.graph.md)
+<!-- /docsgraph:related -->
 
 This is similar to [git bisect](https://git-scm.com/docs/git-bisect "What is a git bisect?") but faster because you don't need to wait to rebuild each commit, as long as there is a corresponding Deployment. The command works by specifing both a *bad* Deployment and a *good* Deployment. Then, `vercel bisect` will retrieve all the deployments in between, and step by them one by one. At each step, you will perform your check and specify whether or not the issue you are investigating is present in the Deployment for that step.
 

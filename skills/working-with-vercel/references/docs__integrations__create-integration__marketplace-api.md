@@ -13,17 +13,33 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel
   - /docs/integrations/create-integration/marketplace-flows
   - /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
-  - /docs/integrations/marketplace-flows
+  - /docs/integrations/create-integration/submit-integration
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "43bef5efd8afc0f79dd8553ea85cee563d01358cb25c7e207579f3290af5599d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9683efe602e4a6947f31d2c6fccdb608f223331574b3338131b362e248a917be"
 ---
 
 # Using the Integrations REST API
 
 Learn how to authenticate and use the Integrations REST API to build your native integration with Vercel.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [vercel integration](https://vercel.com/docs/cli/integration?from=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Building Integrations with Vercel REST API](https://vercel.com/docs/integrations/create-integration/vercel-api-integrations?from=related) — Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related)
+
+Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md)
+<!-- /docsgraph:related -->
 
 ## How it works
 
@@ -84,7 +100,7 @@ You can also use OAuth2 to obtain access tokens for user-specific operations.
 
 #### Vercel initiated SSO
 
-Vercel initiates SSO as part of the [**Open in Provider** flow](/docs/integrations/marketplace-flows#open-in-provider-button-flow).
+Vercel initiates SSO as part of the [**Open in Provider** flow](/docs/integrations/create-integration/marketplace-flows#open-in-provider-button-flow).
 
 1. Vercel sends the user to the provider [redirectLoginUrl](/docs/integrations/create-integration/submit-integration#redirect-login-url), with the OAuth authorization `code` and other parameters
 2. The provider calls the [SSO Token Exchange](/docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token), which validates the SSO request and returns OIDC and access tokens
@@ -165,7 +181,7 @@ https://vercel.com/sso/integrations/{URLSlug}/{installationId}?{query}
 ```
 
 - [`URLSlug`](/docs/integrations/create-integration/submit-integration#url-slug): The unique identifier for your integration in the Vercel Integrations Marketplace
-- [`installationId`](/docs/integrations/marketplace-api#installations): The ID of the specific installation for the user
+- [`installationId`](/docs/integrations/create-integration/marketplace-api#installations): The ID of the specific installation for the user
 - `query`: Optional query parameters to include additional information
 
 **Example:**

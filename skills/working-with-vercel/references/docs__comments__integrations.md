@@ -15,13 +15,29 @@ related:
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "156f55e8cb471c162ae8739b4ba17628a21f7cdd89964edb34d576c517d5d3af"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5c3a3225a4ca678dfa0883bad4f04861a4725e67d47477a30a07d0b0fc533ca8"
 ---
 
 # Integrations for Comments
 
 ## Git provider integration
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [Using Comments](https://vercel.com/docs/comments/using-comments?from=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+
+Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/comments/integrations.graph.md)
+<!-- /docsgraph:related -->
 
 Comments are available for projects using **any** Git provider. Github, BitBucket and GitLab [are supported automatically](/docs/git#supported-git-providers) with the same level of integration.
 

@@ -14,13 +14,28 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f0fd91dca0289213f7537f0c96c732eb14da49f0dec6f6d543ccee74d0789033"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "894f76249eed6d728835aea07a228a08cbef77b47b9eb76aa657e1b48a988ae8"
 ---
 
 # Using the Activity Log
 
 > **🔒 Permissions Required**: Activity Log
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [List User Events](https://vercel.com/docs/rest-api/user/list-user-events?from=related)
+- [List Event Types](https://vercel.com/docs/rest-api/user/list-event-types?from=related)
+- [Create a new project](https://vercel.com/docs/rest-api/projects/create-a-new-project?from=related)
+- [Vercel SDK](https://vercel.com/docs/rest-api/sdk?from=related) — Learn about vercel sdk on Vercel.
+- [Rest API](https://vercel.com/docs/rest-api?from=related) — Learn about rest api on Vercel.
+
+Full cross-link map for this page: [/docs/activity-log.graph.md](/docs/activity-log.graph.md)
+<!-- /docsgraph:related -->
 
 The [Activity Log](/dashboard/activity) provides a list of all events on a [team](/docs/accounts#teams), chronologically organized since its creation. These events include:
 
@@ -67,7 +82,7 @@ The table below shows a list of events logged on the Activity page.
 | agentic-provisioning-account-blocked | Active | Agentic provisioning of an account was blocked (fraud, enterprise-managed, or recently-deleted). |
 | agentic-provisioning-account-linked | Active | An account was linked to a Vercel team via agentic provisioning. |
 | agentic-provisioning-account-relinked | Active | An account was relinked to an existing Vercel team via agentic provisioning. |
-| agentic-provisioning-account-unlinked | Active | An agentic provisioning provider's account was unlinked from a Vercel team (team deletion or backoffice reset). |
+| agentic-provisioning-account-unlinked | Active | An agentic provisioning provider's account was unlinked from a Vercel team. |
 | agentic-provisioning-credentials-rotated | Active | Credentials were rotated for an agentically provisioned resource. |
 | agentic-provisioning-plan-changed | Active | A team billing plan was changed via agentic provisioning. |
 | agentic-provisioning-team-created | Active | A new Vercel team was created via agentic provisioning. |
@@ -170,6 +185,8 @@ The table below shows a list of events logged on the Activity page.
 | custom-alert-deleted | Active | A custom alert was deleted. |
 | custom-alert-updated | Active | A custom alert was updated. |
 | custom-environments-settings-updated | Active | The purchased custom environment capacity was updated for a project. |
+| custom-metric-metadata-deleted | Active | Custom metric metadata was removed. |
+| custom-metric-metadata-updated | Active | Custom metric metadata was updated. |
 | custom-suffix-clear | Active | A custom deployment suffix was cleared. |
 | custom-suffix-disable | Replaced | A custom suffix for a project was disabled. (Replaced by preview-deployment-suffix-disabled) |
 | custom-suffix-enable | Replaced | A custom suffix for a project was enabled. (Replaced by preview-deployment-suffix-enabled) |
@@ -183,7 +200,7 @@ The table below shows a list of events logged on the Activity page.
 | deployment-check-created | Active | A deployment check was created for a project. |
 | deployment-check-deleted | Active | A deployment check was deleted from a project. |
 | deployment-check-updated | Active | A deployment check was updated for a project. |
-| deployment-creation-blocked | Active | A deployment was blocked because the Git user is not part of the team. |
+| deployment-creation-blocked | Active | A deployment was blocked because the Git user could not be authorized for the team. |
 | deployment-delete | Active | A specific deployment was deleted. |
 | deployment-policy-blocked | Active | A deployment was blocked by the team or project deployment policy. |
 | disconnect-bitbucket-app | Active | A Bitbucket app was disconnected. |
@@ -235,6 +252,7 @@ The table below shows a list of events logged on the Activity page.
 | edge-config-updated | Active | An Edge Config was updated. |
 | email | Active | The email of the current user was updated. |
 | emu-member-removed-unverified-domain | Active | A team member was removed because their email domain is not a verified enterprise managed domain. |
+| enforce-disjunctive-production-secrets | Active | Separate production secret group enforcement was updated for a team. |
 | enforce-sensitive-environment-variables | Active | Sensitive environment variable enforcement was updated. |
 | env-variable-add | Active | An automatically encrypted environment variable was added to a project. |
 | env-variable-delete | Active | An existing environment variable was deleted from a project. |
@@ -268,6 +286,7 @@ The table below shows a list of events logged on the Activity page.
 | flags-settings | Active | Settings for the Flags tab were created, updated, or deleted. |
 | git_account_integration_link_added | Active | A GitHub account was linked to an additional Vercel account as an integration. |
 | instant-rollback-created | Active | An instant rollback was created. |
+| integration-configuration-credential-rotated | Active | An installed integration rotated the access token it uses to call the Vercel API. |
 | integration-configuration-owner-changed | Active | An integration configuration owner was changed. |
 | integration-configuration-scope-change-confirmed | Active | The permissions upgrade request from an installed integration was confirmed. |
 | integration-configuration-transfer-in-success | Active | An integration was transferred into the current team or account. |
@@ -466,6 +485,8 @@ The table below shows a list of events logged on the Activity page.
 | saml-connection-deleted | Active | A team's SAML Single Sign-On was disconnected from an identity provider. |
 | sandbox-alias-assigned | Active | An alias was assigned to a sandbox. |
 | sandbox-alias-delete | Active | An alias was removed from a sandbox. |
+| sandbox-drive-created | Active | A sandbox drive was created. |
+| sandbox-drive-deleted | Active | A sandbox drive was deleted. |
 | scale | Active | A deployment was scaled. |
 | scale-auto | Active | Auto-scaling was configured for a deployment. |
 | secondary-email-added | Active | An email was added to the account |
@@ -550,7 +571,7 @@ The table below shows a list of events logged on the Activity page.
 | team-member-join | Active | A team member joined the current team. |
 | team-member-leave | Active | A team member left the current team. |
 | team-member-request-access | Active | A user requested access to join a team. |
-| team-member-role-update | Active | The role of a specific team member was updated. |
+| team-member-role-update | Active | The roles or permissions of a team member were updated. |
 | team-mfa-enforcement-updated | Active | The 2FA enforcement of a team was updated. |
 | team-name-update | Active | The name of a team was updated. |
 | team-paid-invoice | Active | A team invoice was paid. |
@@ -573,12 +594,10 @@ The table below shows a list of events logged on the Activity page.
 | user-mfa-challenge-failed | Active | A two-factor challenge attempt failed. |
 | user-mfa-change-failed | Active | An attempt to change two-factor configuration failed. |
 | user-mfa-configuration-updated | Active | Two-factor configuration was updated |
-| user-mfa-recovery-code-used | Active | A two-factor recovery (backup) code was used to sign in. |
+| user-mfa-recovery-code-used | Active | A two-factor recovery (backup) code was used. |
 | user-mfa-recovery-codes-regenerated | Active | Two-factor recovery codes were regenerated |
-| user-mfa-removed | Active | MFA was removed from a user account. |
 | user-mfa-setup-skipped | Active | Two-factor authentication setup was skipped |
 | user-mfa-totp-verified | Active | A Two-factor authenticator app was added |
-| user-phone-removed | Active | A phone number was removed from a user account by a Vercel administrator. |
 | user-phone-updated | Active | A phone number was added to a user account. |
 | user-primary-email-updated | Active | The primary email was changed |
 | user-token-created | Active | A Personal Access Token was created. |

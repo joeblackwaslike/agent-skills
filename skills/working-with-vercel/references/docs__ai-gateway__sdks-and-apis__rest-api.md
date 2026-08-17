@@ -17,13 +17,30 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5b69c441b3e5d3eecfdd496b70c6c147067b70f7a2aafcceda56c9208974afd3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4665cb58feb649e72879b43fe6dbbb38a92bcb722211c52fd7c0506d5731fba7"
 ---
 
 # REST API Reference
 
 For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk) is the easiest way to interact with AI Gateway. You can also send requests through the [chat completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions), [responses](/docs/ai-gateway/sdks-and-apis/responses), [Anthropic Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api), or [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses) APIs.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs?from=related)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
+- [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
+- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
+- [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related) — Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers throu
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation?from=related) — Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md)
+<!-- /docsgraph:related -->
 
 AI Gateway exposes a REST API for looking up usage and generations, querying spend reports, and discovering models. This page is the canonical reference for those endpoints. The [AI SDK AI Gateway provider](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#dynamic-model-discovery) also exposes TypeScript APIs for the same data, which you can use as an alternative to calling the REST endpoints directly.
 
@@ -39,7 +56,7 @@ Most endpoints require authentication. The exceptions are noted on each endpoint
 
 ### API key (Bearer token)
 
-Pass an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/authentication#api-key) in the `Authorization` header. AI Gateway infers the team from the key.
+Pass an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-key) in the `Authorization` header. AI Gateway infers the team from the key.
 
 ```http filename="HTTP header"
 Authorization: Bearer <api_key>
@@ -47,7 +64,7 @@ Authorization: Bearer <api_key>
 
 ### Vercel OIDC token
 
-On Vercel deployments, you can pass the [Vercel OIDC token](/docs/ai-gateway/authentication-and-byok/authentication#oidc-token) in the `Authorization` header instead. The token is generated automatically per project.
+On Vercel deployments, you can pass the [Vercel OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-token) in the `Authorization` header instead. The token is generated automatically per project.
 
 ## Supported endpoints
 

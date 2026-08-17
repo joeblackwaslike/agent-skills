@@ -14,13 +14,32 @@ related:
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "b61e75783306de561d80b9c3303ab969a4deca89edb3ad5b661a6acd7374a95e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8f29e63eca42caa081e34f7fba961ffabc658e355ee913179310257508a060ab"
 ---
 
 # WAF IP Blocking
 
 You can create custom rules to block a specific IP address or multiple IP addresses by [CIDR](# "What is CIDR?"), effectively preventing unauthorized access or unwanted traffic. This security measure allows you to restrict access to your applications or websites based on the IP addresses of incoming requests.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deny traffic from a set of IP addresses](https://vercel.com/kb/guide/deny-traffic-from-a-set-of-ip-addresses?from=related) — Learn how to block specific IP addresses with the Vercel WAF API.
+- [Blocking traffic from a specific IP address.](https://vercel.com/kb/guide/traffic-spikes?from=related) — Learn how to block traffic from a specific IP address.
+- [Deny non-browser traffic or blocklisted ASNs](https://vercel.com/kb/guide/deny-non-browser-traffic-or-blocklisted-asns?from=related) — Learn how to block traffic from known threats with the Vercel WAF API.
+- [Block PHP requests](https://vercel.com/kb/guide/block-php-requests?from=related) — Learn how to block traffic looking for .php vulnerabilies.
+- [System Bypass Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules?from=related) — Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall \(WAF\).
+- [Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [Firewall API](https://vercel.com/docs/vercel-firewall/firewall-api?from=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+
+Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md](/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md)
+<!-- /docsgraph:related -->
 
 Common use cases for IP blocking on Vercel include:
 
@@ -48,7 +67,7 @@ To block an IP address, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5
    - You can copy this value from the URL of the site you want to block **without the `https` prefix**
    - It must match the exact domain you want to block, for example `my-site.com`, `www.my-site.com` or `docs.my-site.com`
    - You should add an entry for all subdomains that you wish block, such as `blog.my-site.com` and `docs.my-site.com`
-5. Select the **Create IP Block Rule** button
+5. Select the **Add IP Block Rule** button
 6. Apply the changes:
    - When you make any change, you will see a **Review Changes** button appear or update on the top right with the number of changes requested
    - Select **Review Changes** and review the changes to be applied
@@ -68,7 +87,7 @@ To block an IP address, you can create an IP Blocking rule in your dashboard:
    - You can copy this value from the URL of the site you want to block **without the `https` prefix**
    - It must match the exact domain you want to block, for example `my-site.com`, `www.my-site.com` or `docs.my-site.com`
    - You should add a separate entry for each subdomain that you wish to block, such as `blog.my-site.com` and `docs.my-site.com`
-4. Select the **Create IP Block Rule** button
+4. Select the **Add IP Block Rule** button
 
 ## More resources
 

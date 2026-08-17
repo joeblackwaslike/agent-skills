@@ -10,19 +10,40 @@ prerequisites:
 related:
   - /docs/monorepos/turborepo
   - /docs/monorepos/remote-caching/external-ci-cd
-  - /docs/deployments/configure-a-build
-  - /docs/accounts/team-members-and-roles
+  - /docs/builds/configure-a-build
+  - /docs/rbac
   - /docs/monorepos/nx
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "fb97513e479b87abdb59f2ec14aa6f0266124d569d96b2cdf7983359e5c91777"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dd1ba41ece3476eb718f175bd850719fb090153ffbe92f2b903f946c65a6d1eb"
 ---
 
 # Remote Caching
 
 > **🔒 Permissions Required**: Remote Cache
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci?from=related) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
+- [Buildkite](https://turborepo.dev/docs/guides/ci-vendors/buildkite?from=related) — Configure Buildkite pipelines to run Turborepo tasks with Remote Caching.
+- [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci?from=related) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
+- [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions?from=related) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
+- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
+
+Full cross-link map for this page: [/docs/monorepos/remote-caching.graph.md](/docs/monorepos/remote-caching.graph.md)
+<!-- /docsgraph:related -->
 
 Remote Caching saves you time by ensuring you never repeat the same task twice, by automatically sharing a cache across your entire Vercel team.
 
@@ -204,7 +225,7 @@ Vercel Remote Cache is free for all plans, subject to fair use guidelines.
 | **Total Size of Remote Cache Artifacts**                                  | The size of uploaded and downloaded artifacts using the Remote Cache API   | No     | [Learn More](#optimizing-total-size-of-remote-cache-artifacts) |
 | [**Time Saved**](#time-saved)                                             | The time saved by using artifacts cached on the Vercel Remote Cache API    | No     | N/A                                                            |
 
-Artifacts are blobs of data or files that are uploaded and downloaded using the [Vercel Remote Cache API](/docs/monorepos/remote-caching), including calls made using [Turborepo](/docs/monorepos/turborepo#setup-remote-caching-for-turborepo-on-vercel) and the [Remote Cache SDK](https://github.com/vercel/remote-cache). Once uploaded, artifacts can be downloaded during the [build](/docs/deployments/configure-a-build) by any [team members](/docs/accounts/team-members-and-roles).
+Artifacts are blobs of data or files that are uploaded and downloaded using the [Vercel Remote Cache API](/docs/monorepos/remote-caching), including calls made using [Turborepo](/docs/monorepos/turborepo#setup-remote-caching-for-turborepo-on-vercel) and the [Remote Cache SDK](https://github.com/vercel/remote-cache). Once uploaded, artifacts can be downloaded during the [build](/docs/builds/configure-a-build) by any [team members](/docs/rbac).
 
 Vercel automatically expires uploaded artifacts after 7 days to avoid unbounded cache growth. Team owners can also [clear the Remote Cache](#clear-the-remote-cache) manually at any time.
 
@@ -220,8 +241,6 @@ Artifacts get annotated with a task duration, which is the time required for the
 When your team enables [Vercel Remote Cache](/docs/monorepos/remote-caching#enable-and-disable-remote-caching-for-your-team), Vercel will automatically cache [Turborepo](/docs/monorepos/turborepo) outputs (such as files and logs) and create cache artifacts from your builds. This can help speed up your builds by reusing artifacts from previous builds. To learn more about what is cached, see the Turborepo docs on [caching](https://turborepo.com/docs/core-concepts/caching).
 
 For other monorepo implementations like [Nx](/docs/monorepos/nx), you need to manually configure your project using the [Remote Cache SDK](https://github.com/vercel/remote-cache) after you have enabled Vercel Remote Cache.
-
-You are not charged based on the number of artifacts, but rather the size in GB downloaded.
 
 #### Optimizing total size of Remote Cache artifacts
 

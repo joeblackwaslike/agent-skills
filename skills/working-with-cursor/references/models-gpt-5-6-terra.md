@@ -1,14 +1,14 @@
 ---
 source: "https://cursor.com/docs/models/gpt-5-6-terra.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "a26cf7e3835fad9443eae90cec101c2fa584d53e1761248e2c6d10d5618d1166"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "d7c9f08c0b4dd13dda55f11ea4e506ff239e2cf5ceca3bbbef82f300da6eef47"
 ---
 
 GPT-5.6 Terra is the mid-tier model in OpenAI's GPT-5.6 family. It sits between Sol and Luna on intelligence and price, making it a strong pick for everyday agentic coding when you want more capability than Luna without Sol's cost.
 
 ## Strengths
 
-- Solid multi-step coding and tool use at roughly half Sol's per-token price.
+- Solid multi-step coding and tool use at well under Sol's per-token price.
 - Faster and cheaper than Sol for routine agent workflows.
 - Same GPT-5.6 family behavior: reasoning, tool calling, and agent loops.
 
@@ -25,7 +25,7 @@ Learn more about [how tools work](https://cursor.com/docs/agent/overview.md#tool
 
 ## Pricing
 
-Cursor [plans](https://cursor.com/docs/models-and-pricing.md) include two usage pools. GPT-5.6 Terra draws from the **API** pool, which charges at the rates below. Individual plans include at least $20 of API usage each month (more on higher tiers). All prices are per million tokens.
+Cursor [plans](https://cursor.com/docs/models-and-pricing.md) include two usage pools. GPT-5.6 Terra draws from the third-party **Other Models** pool, which charges at the rates below. Individual plans include at least $20 of third-party Other Models usage each month (more on higher tiers). All prices are per million tokens.
 
 A **Fast mode** tier (`gpt-5.6-terra-fast`) is available for priority processing at 2x the standard rates.
 

@@ -15,13 +15,32 @@ related:
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "4a8b81f3316712cbcb6dbd89feed7e4e2b7b0ff965d8de9c5e90c66b06112296"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4c386d5996b9b9a81275576674cb7db45d1df0f6a23b779722a222d106325abe"
 ---
 
 # Promoting Deployments
 
 By default, when you merge to or make commits to your production branch (often `main`), Vercel will automatically promote the changes to Production. However, there are a number of ways to manually change which deployment is served to people who visit your production domain:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related) — Information on how to set up a staging environment on Vercel.
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Promote Preview to Production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related) — Test a preview deployment and promote it to production using the CLI.
+- [vercel promote](https://vercel.com/docs/cli/promote?from=related) — Learn how to promote an existing deployment using the vercel promote CLI command.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Rolling Release Deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+
+Full cross-link map for this page: [/docs/deployments/promoting-a-deployment.graph.md](/docs/deployments/promoting-a-deployment.graph.md)
+<!-- /docsgraph:related -->
 
 - **[Instant rollback](#instant-rollback)**: You can use this as a way to instantly revert to an earlier [deployment](/docs/instant-rollback#eligible-deployments) that **has** served production traffic. It works by assigning your domains to an existing deployment, rather than doing a complete rebuild
 - **[Promote preview to production](#promote-a-deployment-from-preview-to-production)**: You can use this as a way to promote a preview deployment to production through a complete rebuild

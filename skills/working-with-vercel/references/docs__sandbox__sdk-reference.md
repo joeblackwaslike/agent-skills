@@ -16,13 +16,34 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "fbac67c7a3cde09a21aa52561ef435c17b4fb42fba5aca2dfd26049706d09d72"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ce158bd3f98ed42b7139c8bd664c58a3e16e050eed08df41dd0dffcaf9dc1ec9"
 ---
 
 # JS SDK Reference
 
 Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on demand. Run untrusted code, test full Linux workflows, and manage files, ports, snapshots, drives, sessions, and network policy from Node.js applications.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
+- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Create a named sandbox](https://vercel.com/docs/rest-api/sandboxes/create-a-named-sandbox?from=related)
+- [Update a sandbox](https://vercel.com/docs/rest-api/sandboxes/update-a-sandbox?from=related)
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related)
+- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related)
+
+Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md)
+<!-- /docsgraph:related -->
 
 For Python, see the [Python SDK Reference](/docs/sandbox/python-sdk-reference).
 
@@ -386,6 +407,8 @@ const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 
 `Sandbox.getOrCreate()` is the recommended pattern for long-lived sandboxes: it resumes the sandbox if it exists or creates it if it doesn't. Use `onCreate` for one-time setup and `onResume` for setup that should run on every session start.
 
+Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, call [`sandbox.update()`](#sandbox.update).
+
 **Returns:** `Promise<Sandbox>`.
 
 | Parameter  | Type                          | Required | Details                                                                                                       |
@@ -394,12 +417,13 @@ const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 | `resume`   | `boolean`                     | No       | Whether to resume the sandbox immediately when an existing one is retrieved. Defaults to `false`. When `true`, the sandbox is resumed before `getOrCreate` resolves, and `onResume` is awaited before it resolves. |
 | `onCreate` | `(sandbox) => Promise<void>`  | No       | Runs once when the sandbox is freshly created. Awaited before `getOrCreate` resolves.                         |
 | `onResume` | `(sandbox) => Promise<void>`  | No       | Runs every time the session resumes (including after auto-resume). By default, `getOrCreate` retrieves the sandbox but does not resume it, so `onResume` is not awaited before it resolves; the session resumes on the first SDK call (such as `runCommand`), and `onResume` runs at that point. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves. |
-| ...        | *all `Sandbox.create` params* | No       | Any creation parameter is accepted and used when the sandbox is created.                                      |
+| ...        | *all `Sandbox.create` params* | No       | Any creation parameter is accepted and used only when the sandbox is created. Ignored when an existing sandbox is retrieved.  |
 
 Behavior:
 
 - If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point — not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
-- If no sandbox exists, a fresh sandbox is created and `onCreate` is awaited before `getOrCreate` resolves.
+- If a sandbox with that `name` exists, its configuration is not updated. Creation parameters passed to `getOrCreate` are ignored; use [`sandbox.update()`](#sandbox.update) to change the configuration of an existing sandbox.
+- If no sandbox exists, a fresh sandbox is created with the parameters you pass, and `onCreate` is awaited before `getOrCreate` resolves.
 - If the sandbox exists but its snapshot expired, the stale sandbox is deleted, re-created with the same name, and `onCreate` fires.
 
 ```ts
@@ -799,7 +823,7 @@ const newSandbox = await Sandbox.create({
 
 #### `sandbox.createUser()`
 
-`sandbox.createUser()` adds a Linux user with an isolated home directory at `/home/<username>`. The user gets `/bin/bash` as their login shell, and their home directory is private to other users but readable by the SDK. Use this to give each agent in a [multi-agent workflow](/docs/sandbox/multi-agent) its own workspace.
+`sandbox.createUser()` adds a Linux user with an isolated home directory at `/home/<username>`. The user gets `/bin/bash` as their login shell, and their home directory is private to other users but readable by the SDK. Use this to give each agent in a [multi-agent workflow](/docs/sandbox/concepts/multi-agent) its own workspace.
 
 ```ts
 const alice = await sandbox.createUser('alice');
@@ -877,7 +901,7 @@ await sandbox.removeUserFromGroup('alice', 'devs');
 
 ## SandboxUser class
 
-A `SandboxUser` runs commands and file operations as a specific Linux user. Commands execute as that user, and file methods resolve relative paths against the user's home directory. Get an instance from [`sandbox.createUser()`](#sandboxcreateuser) or [`sandbox.asUser()`](#sandboxasuser). See [Multi-agent sandboxes](/docs/sandbox/multi-agent) for a task-oriented guide.
+A `SandboxUser` runs commands and file operations as a specific Linux user. Commands execute as that user, and file methods resolve relative paths against the user's home directory. Get an instance from [`sandbox.createUser()`](#sandboxcreateuser) or [`sandbox.asUser()`](#sandboxasuser). See [Multi-agent sandboxes](/docs/sandbox/concepts/multi-agent) for a task-oriented guide.
 
 Multi-user support is available in the JS SDK (`@vercel/sandbox`) only, and the sandbox image must include `/bin/bash`.
 

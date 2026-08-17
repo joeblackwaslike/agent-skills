@@ -9,21 +9,36 @@ prerequisites:
   - /docs/integrations/create-integration
   - /docs/integrations
 related:
-  - /docs/integrations/marketplace-product
-  - /docs/integrations/marketplace-api
+  - /docs/integrations/create-integration/marketplace-product
+  - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations/create-integration/submit-integration
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource
-  - /docs/feature-flags
+  - /docs/flags
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "76e7fcb3c7c252c3af6545623b1481834bbdc32d9c7bad62c5fafc23d2a9a832"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5e38268af3d7277bfe0b75c979d933165d47b1d186ef143810d30846eb0f0e28"
 ---
 
 # Native Integration Flows
 
-As a Vercel integration provider, when you [create a native product integration](/docs/integrations/marketplace-product), you need to set up the [integration server](https://github.com/vercel/example-marketplace-integration) and use the [Vercel marketplace Rest API](/docs/integrations/marketplace-api) to manage the interaction between the integration user and your product.
+As a Vercel integration provider, when you [create a native product integration](/docs/integrations/create-integration/marketplace-product), you need to set up the [integration server](https://github.com/vercel/example-marketplace-integration) and use the [Vercel marketplace Rest API](/docs/integrations/create-integration/marketplace-api) to manage the interaction between the integration user and your product.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Transferring an Integration](https://vercel.com/docs/integrations/install-an-integration/transferring-an-integration?from=related) — Move your installation of a Native Integration from one Vercel team to another, including its resources and prepayment b
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Marketplace Partner API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related) — Learn about marketplace partner api on Vercel.
+
+Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-flows.graph.md](/docs/integrations/create-integration/marketplace-flows.graph.md)
+<!-- /docsgraph:related -->
 
 The following diagrams help you understand how information flows in both directions between the integration user, Vercel and your native integration product for each key interaction between the integration user and the Vercel dashboard.
 
@@ -49,7 +64,7 @@ Using the installation id for this product and integration user, the Vercel dash
 
 ### Submit store creation
 
-After confirming the plan selection, the integration user is presented with information fields that the integration provider specified in the [metadata schema](/docs/integrations/marketplace-product#metadata-schema) section of the integration settings. The user updates these fields and submits the form to initiate the creation of the store for this user on the provider platform.
+After confirming the plan selection, the integration user is presented with information fields that the integration provider specified in the [metadata schema](/docs/integrations/create-integration/marketplace-product#metadata-schema) section of the integration settings. The user updates these fields and submits the form to initiate the creation of the store for this user on the provider platform.
 
 ## Connections between Vercel and the provider
 
@@ -132,7 +147,7 @@ Resources imported with `ownership: "linked"` behave differently from resources 
 
 ### Experimentation flow
 
-This flow applies to the products in the **Experimentation** category, enabling providers to display [feature flags](/docs/feature-flags) in the Vercel dashboard.
+This flow applies to the products in the **Experimentation** category, enabling providers to display [feature flags](/docs/flags) in the Vercel dashboard.
 
 ### Experimentation Global Config Syncing
 
@@ -140,7 +155,7 @@ This flow applies to integration products in the **Experimentation** category. I
 
 Global Config Syncing is an optional feature that providers can enable for their integration. Users can opt in by enabling it for their installation in the Vercel Dashboard.
 
-Users can enable this setting either during the integration's installation or later through the installation's settings page. Providers must handle this setting in their [Provision Resource](/docs/integrations/marketplace-api#provision-resource) and [Update Resource](/docs/integrations/create-integration/marketplace-api#update-resource) endpoints.
+Users can enable this setting either during the integration's installation or later through the installation's settings page. Providers must handle this setting in their [Provision Resource](/docs/integrations/create-integration/marketplace-api#provision-resource) and [Update Resource](/docs/integrations/create-integration/marketplace-api#update-resource) endpoints.
 
 The presence of `protocolSettings.experimentation.edgeConfigId` in the payload indicates that the user has enabled the setting and expects their Global Config to be used.
 

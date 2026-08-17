@@ -13,17 +13,33 @@ related:
   - /docs/limits
   - /docs/functions/usage-and-pricing
   - /docs/image-optimization/limits-and-pricing
-  - /docs/limits/usage
+  - /docs/pricing/manage-and-optimize-usage
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "e1b5e5395ba533b9228d0ea54a6dd5696b7b29732c185b5da934210b2d4c989f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a343f34bb80b42785dc73e444c3fb1fbee3bd271f978fe209435e7039349aa4c"
 ---
 
 # Understanding Vercel
 
 Vercel offers three plan tiers: **Hobby**, **Pro**, and **Enterprise**.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro?from=related) — Learn about free domain with pro on Vercel.
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Pricing](https://vercel.com/docs/analytics/limits-and-pricing?from=related) — Learn about pricing for Vercel Web Analytics.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+
+Full cross-link map for this page: [/docs/plans/pro-plan/trials.graph.md](/docs/plans/pro-plan/trials.graph.md)
+<!-- /docsgraph:related -->
 
 The Pro trial offers an opportunity to explore [Pro features](/docs/plans/pro-plan) for free during the trial period. There are some [limitations](/docs/plans/pro-plan/trials#trial-limitations).
 
@@ -54,17 +70,17 @@ The trial plan includes a $20 credit and follows the same [general limits](/docs
 | [Image cache writes](/docs/image-optimization/limits-and-pricing#image-cache-writes)       | Max. 200K/month      |
 | Domains per Project                                                                        | 50                   |
 
-To monitor the current usage of your Team's projects, see the [Usage](/docs/limits/usage) guide.
+To monitor the current usage of your Team's projects, see the [Usage](/docs/pricing/manage-and-optimize-usage) guide.
 
 The following Pro features are **not available** on the trial:
 
 - [Observability Plus](/docs/observability/observability-plus) (available on Paid Pro only)
 
-- [Log drains](/docs/log-drains)
+- [Log drains](/docs/drains)
 - [Account webhooks](/docs/webhooks#account-webhooks)
-- [Free first-year domain for new Pro upgrades](/docs/plans/pro-plan#free-first-year-domain-for-new-pro-upgrades)
+- [Free first-year domain with Pro](/docs/plans/pro-plan#free-first-year-domain-with-pro)
 
-The free first-year domain offer becomes available only for eligible new paid Pro subscriptions and must be claimed within 30 days of upgrading.
+The free first-year domain offer is excluded from the Pro trial and becomes available once your team is on a paid Pro plan.
 
 Once your usage of [Active CPU](/docs/functions/usage-and-pricing), [Provisioned Memory](/docs/functions/usage-and-pricing), or [Function Invocations](/docs/functions/usage-and-pricing) exceeds or reaches 100% of the Pro trial usage, your trial will be paused.
 

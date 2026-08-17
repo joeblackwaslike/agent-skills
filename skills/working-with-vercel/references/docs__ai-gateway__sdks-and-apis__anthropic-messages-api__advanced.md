@@ -15,13 +15,28 @@ related:
 summary: Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c65581de6ef0be69a82ec9f0ba951a24a6af308718c1f5d097b7c91d682a75a7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1f10b290af4f496956afb5e54e8211b0933ac8529e5b6a059ea8a0ee4c1ff014"
 ---
 
 # Advanced Features
 
 Give Claude access to the web, bound how long a provider may take, and cache prompt prefixes between calls. For controlling how much Claude thinks before answering, see [Extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md)
+<!-- /docsgraph:related -->
 
 ## Web search
 

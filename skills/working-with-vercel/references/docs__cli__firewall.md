@@ -16,13 +16,29 @@ related:
 summary: "Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations using the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "bf2a662d7620f662f1f8dd7a06f21fd1dee278d6237f6dcd39221f944172c9cb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8177a4b0a79849736630b91fea500150bde5e985a1f86a0e0b84c858c267fb09"
 ---
 
 # vercel firewall
 
 The `vercel firewall` command is used to configure the [Vercel Firewall](/docs/vercel-firewall) from the command line, including custom rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations. You can match traffic with [condition parameters](#condition-types) and [actions](#actions), stage updates to rules and IP blocks as drafts, and publish them when you are ready.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \(WAF\)
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [vercel routes](https://vercel.com/docs/cli/routes?from=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related)
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
+
+Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md)
+<!-- /docsgraph:related -->
 
 For more information about Vercel Firewall, see the [Vercel Firewall documentation](/docs/vercel-firewall).
 

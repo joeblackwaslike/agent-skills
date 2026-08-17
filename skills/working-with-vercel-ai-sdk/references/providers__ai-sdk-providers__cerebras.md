@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "82cbc64898e1b60b7176a9123e615e6b8ae651bcea677513a3c04a3604926389"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "ceccba63ac30fbe5735b29426fa42aedfd980aab7a47923f3086d7d9c565a570"
 ---
 
 # Cerebras Provider
@@ -63,7 +63,7 @@ import { cerebras } from '@ai-sdk/cerebras';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: cerebras('llama3.1-8b'),
+  model: cerebras('gpt-oss-120b'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -71,22 +71,22 @@ const { text } = await generateText({
 Cerebras language models can be used in the `streamText` function
 (see [AI SDK Core](/docs/ai-sdk-core)).
 
-You can create Cerebras language models using a provider instance. The first argument is the model ID, e.g. `llama-3.3-70b`:
+You can create Cerebras language models using a provider instance. The first argument is the model ID, e.g. `gpt-oss-120b`:
 
 ```ts
-const model = cerebras('llama-3.3-70b');
+const model = cerebras('gpt-oss-120b');
 ```
 
 You can also use the `.languageModel()` and `.chat()` methods:
 
 ```ts
-const model = cerebras.languageModel('llama-3.3-70b');
-const model = cerebras.chat('llama-3.3-70b');
+const model = cerebras.languageModel('gpt-oss-120b');
+const model = cerebras.chat('gpt-oss-120b');
 ```
 
 ### Reasoning Models
 
-Cerebras offers several reasoning models including `gpt-oss-120b`, `qwen-3-32b`, and `zai-glm-4.7` that generate intermediate thinking tokens before their final response. The reasoning output is streamed through the standard AI SDK reasoning parts.
+Cerebras offers reasoning models including `gpt-oss-120b`, `zai-glm-4.7`, and `gemma-4-31b` that generate intermediate thinking tokens before their final response. The reasoning output is streamed through the standard AI SDK reasoning parts.
 
 For `gpt-oss-120b`, you can control the reasoning depth using the `reasoningEffort` provider option:
 
@@ -133,31 +133,17 @@ The following optional provider options are available for Cerebras language mode
 
 ## Model Capabilities
 
-| Model                            | Image Input | Object Generation | Tool Usage | Tool Streaming | Reasoning |
-| -------------------------------- | ----------- | ----------------- | ---------- | -------------- | --------- |
-| `llama3.1-8b`                    | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `llama-3.3-70b`                  | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `gpt-oss-120b`                   | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `qwen-3-32b`                     | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `qwen-3-235b-a22b-instruct-2507` | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `qwen-3-235b-a22b-thinking-2507` | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `zai-glm-4.6`                    | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `zai-glm-4.7`                    | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
-
-<Note>
-  The models `qwen-3-32b` and `llama-3.3-70b` are scheduled for deprecation on
-  February 16, 2026. Please see the [Cerebras
-  docs](https://inference-docs.cerebras.ai/introduction) for more details about
-  the available models and migration guidance. You can also pass any available
-  provider model ID as a string if needed.
-</Note>
+| Model          | Image Input | Object Generation | Tool Usage | Tool Streaming | Reasoning |
+| -------------- | ----------- | ----------------- | ---------- | -------------- | --------- |
+| `gpt-oss-120b` | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
+| `zai-glm-4.7`  | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
+| `gemma-4-31b`  | <Check />   | <Check />         | <Check />  | <Check />      | <Check /> |
 
 
 ## Navigation
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -167,6 +153,7 @@ The following optional provider options are available for Cerebras language mode
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

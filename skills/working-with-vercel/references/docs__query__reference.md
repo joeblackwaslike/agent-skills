@@ -8,40 +8,55 @@ type: reference
 prerequisites:
   - /docs/query
 related:
-  - /docs/pricing/networking
+  - /docs/manage-cdn-usage
   - /docs/functions/usage-and-pricing
-  - /docs/pricing/incremental-static-regeneration
+  - /docs/incremental-static-regeneration/limits-and-pricing
   - /docs/query/monitoring/monitoring-reference
-  - /docs/cdn-cache
+  - /docs/caching/cdn-cache
 summary: This reference covers the dimensions and operators used to create a query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "fa464da634f1637910d3c26805b43536b1a8387f99c1aac495209432913b2974"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d9384da1a8869dda7c3fb11225f003647e48ac9cbdc6b987d754199b24b3710c"
 ---
 
 # Query Reference
 
 ## Metric
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Custom Reporting](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related)
+- [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+
+Full cross-link map for this page: [/docs/query/reference.graph.md](/docs/query/reference.graph.md)
+<!-- /docsgraph:related -->
+
 The metric selects what query data is displayed. You can choose one field at a time, and the same metric can be applied to different event types. For instance, **Function Wall Time** can be selected for edge, serverless, or middleware functions, aggregating each field in various ways.
 
 | **Field Name**                    | **Description**                                                                                                           | **Aggregations**                                       |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| **Edge Requests**                 | The number of [Edge Requests](/docs/pricing/networking#edge-requests)                                                     | Count, Count per Second, Percentages                   |
+| **Edge Requests**                 | The number of [Edge Requests](/docs/manage-cdn-usage#edge-requests)                                                     | Count, Count per Second, Percentages                   |
 | **Duration**                      | The time spent serving a request, as measured by Vercel's CDN                                                             | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Incoming Fast Data Transfer**   | The incoming amount of [Fast Data Transfer](/docs/pricing/networking#fast-data-transfer) used by the request.             | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Outgoing Fast Data Transfer**   | The outgoing amount of [Fast Data Transfer](/docs/pricing/networking#fast-data-transfer) used by the response.            | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Total Fast Data Transfer**      | The total amount of [Fast Data Transfer](/docs/pricing/networking#fast-data-transfer) used by the response.               | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Incoming Fast Data Transfer**   | The incoming amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the request.             | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Outgoing Fast Data Transfer**   | The outgoing amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the response.            | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Total Fast Data Transfer**      | The total amount of [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) used by the response.               | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Function Invocations**          | The number of [function invocations](/docs/functions/usage-and-pricing#invocations)                                       | Count, Count per Second, Percentages                   |
 | **Function CPU Time**             | The amount of CPU time a Vercel Function has spent responding to requests, as measured in milliseconds.                   | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Incoming Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) used by the request.                  | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **Outgoing Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) used by the response.                 | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Incoming Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) used by the request.                  | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **Outgoing Fast Origin Transfer** | The amount of [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) used by the response.                 | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Provisioned Memory**            | The amount of memory provisioned to a Vercel Function.                                                                    | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Peak Memory**                   | The maximum amount of memory used by Vercel Function at any point in time.                                                | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Requests Blocked**              | All requests blocked by either the system or user.                                                                        | Count, Count per Second, Percentages                   |
-| **ISR Read Units**                | The amount of [Read Units](/docs/pricing/incremental-static-regeneration) used to access ISR data                         | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
-| **ISR Write Units**               | The amount of [Write Units](/docs/pricing/incremental-static-regeneration) used to store new ISR data                     | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **ISR Read Units**                | The amount of [Read Units](/docs/incremental-static-regeneration/limits-and-pricing) used to access ISR data                         | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
+| **ISR Write Units**               | The amount of [Write Units](/docs/incremental-static-regeneration/limits-and-pricing) used to store new ISR data                     | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **ISR Read/Write**                | The amount of ISR operations                                                                                              | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Time to First Byte**            | The time between the request for a resource and when the first byte of a response begins to arrive.                       | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
 | **Function Wall Time**            | The duration that a Vercel Function has run                                                                               | Sum, Sum per Second, Min/Max, Percentages, Percentiles |
@@ -105,7 +120,7 @@ There are several fields available for use within the [Filter](#filter) and [gro
 | `HTTP Status`       | Group by the request's HTTP response code                                                                                                                                                                                                                                        |
 | `route`             | The mapped path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the `route` is `/blog/[slug]`                                                                                                         |
 | `Request Path`      | The path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the `request_path` is `/blog/my-blog-post`                                                                                                   |
-| `Cache Result`      | The [cache](/docs/cdn-cache#x-vercel-cache) status for the request                                                                                                                                                                                                               |
+| `Cache Result`      | The [cache](/docs/caching/cdn-cache#x-vercel-cache) status for the request                                                                                                                                                                                                               |
 | `environment`       | Group by the environment (`production` or [`preview`](/docs/deployments/environments#preview-environment-pre-production))                                                                                                                                                        |
 | `Request Method`    | Group by the HTTP request method (`GET`, `POST`, `PUT`, etc.)                                                                                                                                                                                                                    |
 | `Referrer URL`      | Group by the HTTP referrer URL                                                                                                                                                                                                                                                   |
@@ -117,10 +132,9 @@ There are several fields available for use within the [Filter](#filter) and [gro
 | `CDN Region`        | Group by the [region](/docs/regions) the request was routed to                                                                                                                                                                                                                   |
 | `ISR Cache Region`  | Group by the ISR cache region                                                                                                                                                                                                                                                    |
 | `Cache Result`      | Group by cache result                                                                                                                                                                                                                                                            |
-| `WAF Action`        | Group by the WAF action taken by the [Vercel Firewall](/docs/security/vercel-waf) (`deny`, `challenge`, `rate_limit`, `bypass` or `log`)                                                                                                                                         |
+| `WAF Action`        | Group by the WAF action taken by the [Vercel Firewall](/docs/vercel-firewall/vercel-waf) (`deny`, `challenge`, `rate_limit`, `bypass` or `log`)                                                                                                                                         |
 | `WAF Rule ID`       | Group by the firewall rule ID                                                                                                                                                                                                                                                    |
 | `Skew Protection`   | When `active`, the request would have been subject to [version skew](/docs/skew-protection) but was protected, otherwise `inactive`.                                                                                                                                             |
-| `PPR State`         | Group by the [Partial Prerendering state](/docs/partial-prerendering/ppr-state) for a request (`Static`, `Partial`, or `Dynamic`)                                                                                                                                                |
 | `Sandbox Name`      | Group by the sandbox name                                                                                                                                                                                                                                                        |
 | `Sandbox Session ID` | Group by the sandbox session ID                                                                                                                                                                                                                                                  |
 

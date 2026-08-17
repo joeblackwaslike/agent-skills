@@ -17,13 +17,33 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d80b6c814be62ab2737bd61e8c415e2422c8964cfbbf1c1c6faecccaef78d200"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "71b6a8e8b4637747863aeb93f4a89ffb71c81efe5ffcc719a9c7eb8eb13ec606"
 ---
 
 # Provider Options
 
 AI Gateway can route your AI model requests across multiple AI providers. Each provider offers different models, pricing, and performance characteristics. By default, Vercel AI Gateway dynamically chooses the default providers to give you the best experience based on a combination of recent uptime and latency.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related)
+- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
+- [Hermes](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related) — Use the Hermes agent with the AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-options.graph.md](/docs/ai-gateway/models-and-providers/provider-options.graph.md)
+<!-- /docsgraph:related -->
 
 With the Gateway Provider Options however, you have control over the routing order and fallback behavior of the models.
 

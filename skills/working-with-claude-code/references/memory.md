@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/memory.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "a26a68f8fc3caeb2e52a01a8b781db56262c1e07eeabdb4f56c1a9b353f7a6a4"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "714ee359ae36615df0a70335ebc6bc78c42e01dcc32e616c736ded37c666d2b6"
 ---
 
 > ## Documentation Index
@@ -317,7 +317,7 @@ A managed CLAUDE.md and [managed settings](/docs/en/settings#settings-files) ser
 | Block specific tools, commands, or file paths  | Managed settings: `permissions.deny`                      |
 | Enforce sandbox isolation                      | Managed settings: `sandbox.enabled`                       |
 | Environment variables and API provider routing | Managed settings: `env`                                   |
-| Authentication method and organization lock    | Managed settings: `forceLoginMethod`, `forceLoginOrgUUID` |
+| Login method and organization restrictions     | Managed settings: `forceLoginMethod`, `forceLoginOrgUUID` |
 | Code style and quality guidelines              | Managed CLAUDE.md                                         |
 | Data handling and compliance reminders         | Managed CLAUDE.md                                         |
 | Behavioral instructions for Claude             | Managed CLAUDE.md                                         |
@@ -371,7 +371,7 @@ To store auto memory in a different location, set `autoMemoryDirectory` in your 
 }
 ```
 
-The value must be an absolute path or start with `~/`. When set in a project's `.claude/settings.json` or `.claude/settings.local.json`, the value is honored only after you accept the workspace trust dialog for that folder, the same gate that governs hooks.
+The value must be an absolute path or start with `~/`. When you set it in a project's `.claude/settings.json` or `.claude/settings.local.json`, Claude Code honors it under the same [workspace trust rule as hooks in settings files](/docs/en/permissions#what-runs-before-you-trust-a-folder).
 
 The directory contains a `MEMORY.md` entrypoint and optional topic files:
 
@@ -386,6 +386,8 @@ The directory contains a `MEMORY.md` entrypoint and optional topic files:
 `MEMORY.md` acts as an index of the memory directory. Claude reads and writes files in this directory throughout your session, using `MEMORY.md` to keep track of what's stored where.
 
 Auto memory is machine-local. All worktrees and subdirectories within the same git repository share one auto memory directory. Files are not shared across machines or cloud environments.
+
+Claude Code deletes old session transcripts after the [`cleanupPeriodDays`](/docs/en/settings#available-settings) retention period, but excludes the files in the memory directory from that [retention sweep](/docs/en/claude-directory#cleaned-up-automatically). `MEMORY.md` and topic files stay until you or Claude edits or deletes them.
 
 ### How it works
 

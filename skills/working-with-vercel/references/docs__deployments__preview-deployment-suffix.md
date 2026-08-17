@@ -9,25 +9,44 @@ prerequisites:
   - /docs/deployments
 related:
   - /docs/deployments/environments
-  - /docs/domains/add-a-domain
+  - /docs/domains/working-with-domains/add-a-domain
   - /docs/pricing
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/preview-deployment-suffix.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "928b5548e5a2ce7b23dc39e81730c104900ba24cef1f97ed67e75d1672d061f1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b85c035c55f2aabae944ee10d7adb10341d2e6bb5e30541265d7362b0dbb2915"
 ---
 
 # Preview Deployment Suffix
 
 > **🔒 Permissions Required**: Preview Deployment Suffix
 
-Preview Deployment Suffixes allow you to customize the URL of a [preview deployment](/docs/deployments/environments#preview-environment-pre-production) by replacing the default `vercel.app` suffix with a [custom domain](/docs/domains/add-a-domain) of your choice.
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
+- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
+- [Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Multi-tenant Preview URLs](https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes?from=related) — Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deployment Protection](https://vercel.com/docs/deployment-protection?from=related) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
+- [Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
+
+Full cross-link map for this page: [/docs/deployments/preview-deployment-suffix.graph.md](/docs/deployments/preview-deployment-suffix.graph.md)
+<!-- /docsgraph:related -->
+
+Preview Deployment Suffixes allow you to customize the URL of a [preview deployment](/docs/deployments/environments#preview-environment-pre-production) by replacing the default `vercel.app` suffix with a [custom domain](/docs/domains/working-with-domains/add-a-domain) of your choice.
 
 The entered custom domain must be:
 
 - Available and active within the team that enabled the Preview Deployment Suffix
-- Using Vercel's [Nameservers](/docs/domains/add-a-domain#vercel-nameservers)
+- Using Vercel's [Nameservers](/docs/domains/working-with-domains/add-a-domain#vercel-nameservers)
 
 ### Enabling the Preview Deployment Suffix
 

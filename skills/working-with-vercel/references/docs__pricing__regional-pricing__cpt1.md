@@ -17,13 +17,28 @@ related:
 summary: Vercel pricing for the Cape Town, South Africa (cpt1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cpt1.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "6a6a06c6bda4a0ecffbf97807c0be311dc29b834b44ee5deb1c1f40f1d8fc1fc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "12f4e4a79b4a82e7590c0b02d434257d49a63af880e3a5c71bac5b9069daeb73"
 ---
 
 # Cape Town, South Africa (cpt1) pricing
 
 The table below shows Managed Infrastructure products with pricing specific to the  region. This pricing is available only to [Pro plan](/docs/plans/pro-plan) users. Your team will be charged based on the usage of your projects for each resource in this region.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Seoul, South Korea \(icn1\)](https://vercel.com/docs/pricing/regional-pricing/icn1?from=related) — Vercel pricing for the Seoul, South Korea \(icn1\) region.
+- [Sydney, Australia \(syd1\)](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related) — Vercel pricing for the Sydney, Australia \(syd1\) region.
+- [Paris, France \(cdg1\)](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related) — Vercel pricing for the Paris, France \(cdg1\) region.
+- [Dublin, Ireland \(dub1\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \(dub1\) region.
+- [San Francisco, USA \(sfo1\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \(sfo1\) region.
+
+Full cross-link map for this page: [/docs/pricing/regional-pricing/cpt1.graph.md](/docs/pricing/regional-pricing/cpt1.graph.md)
+<!-- /docsgraph:related -->
 
 The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.
 
@@ -46,9 +61,9 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0735 per 1K |
 | [Image Optimization Cache Reads](/docs/image-optimization/limits-and-pricing#image-cache-reads) | $0.56 per 1M |
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $5.60 per 1M |
-| [Firewall Rate Limit Requests](/docs/security/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.70 per 1,000,000 Allowed Requests |
-| [Firewall OWASP Requests](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $1.12 per 1,000,000 Inspected Requests |
-| [Firewall OWASP Excess Bytes](/docs/security/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.28 per 1 GB of inspected request payload |
+| [Firewall Rate Limit Requests](/docs/vercel-firewall/vercel-waf/usage-and-pricing#rate-limiting-pricing) | $0.70 per 1,000,000 Allowed Requests |
+| [Firewall OWASP Requests](/docs/vercel-firewall/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $1.12 per 1,000,000 Inspected Requests |
+| [Firewall OWASP Excess Bytes](/docs/vercel-firewall/vercel-waf/usage-and-pricing#managed-ruleset-pricing) | $0.28 per 1 GB of inspected request payload |
 | [Blob Storage Size](/docs/vercel-blob/usage-and-pricing#pricing) | $0.027 per GB |
 | [Blob Simple Operations](/docs/vercel-blob/usage-and-pricing#pricing) | $0.40 per 1M |
 | [Blob Advanced Operations](/docs/vercel-blob/usage-and-pricing#pricing) | $6.00 per 1M |

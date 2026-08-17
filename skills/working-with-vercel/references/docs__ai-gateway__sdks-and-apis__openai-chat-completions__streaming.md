@@ -16,13 +16,33 @@ related:
 summary: Stream OpenAI Chat Completions responses token by token as they are generated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "0c5980c5d2e12a7d53896735c5c318d92675ff30d671389888a20b65b1eb7ec0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1a22be53acec24ab80a0c82355f2791300091024b26bc087daa4cca194136a8d"
 ---
 
 # Streaming
 
 Set `stream: true` on a [chat completion](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) request to receive tokens as the model produces them, instead of waiting for the complete response.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related) — Learn how to use the AI SDK to stream LLM responses.
+- [Streaming in web applications](https://vercel.com/kb/guide/what-is-streaming?from=related) — Learn how streaming works in web applications. Explore benefits, use cases, and implementation details with Vercel Funct
+- [Streaming](https://chat-sdk.dev/docs/streaming?from=related) — Stream real-time text responses from AI models and other async sources to chat platforms.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming?from=related) — Stream Anthropic Messages API responses token by token as they are generated.
+- [Stream Protocols](https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol?from=related)
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related) — Stream responses token by token using the OpenResponses API.
+- [Stream Text with Chat Prompt](https://ai-sdk.dev/cookbook/next/stream-text-with-chat-prompt?from=related)
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related) — Stream tokens as they are generated with the OpenAI Responses API.
+- [Streaming](https://vercel.com/docs/functions/streaming-functions?from=related) — Learn how to stream responses from Vercel Functions.
+- [Structured Outputs](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs?from=related) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming.graph.md)
+<!-- /docsgraph:related -->
 
 Create a streaming chat completion that streams tokens as they are generated.
 

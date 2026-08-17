@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/how-tos/find-and-fix-code-vulnerabilities/configure-code-scanning/configuring-advanced-setup-for-code-scanning.md"
-fetched_at: "2026-07-27T07:36:12.022Z"
-sha256: "637bb3c4bff9d9f2e3c08ad16385edf333adcb8d2c8c3365ddaeeef7164b1d32"
+fetched_at: "2026-08-17T04:47:04.101Z"
+sha256: "028d7ca4451a15b8127ef64283d1902a18433f8f8136f7593a360efb65bdd9b4"
 ---
 
 {% data reusables.code-scanning.enterprise-enable-code-scanning-actions %}
@@ -36,12 +36,10 @@ You can customize your {% data variables.product.prodname_codeql %} analysis by 
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.sidebar-settings %}
 {% data reusables.repositories.navigate-to-code-security-and-analysis %}
-1. Scroll down to "{% data variables.product.UI_code_security_scanning %}", in the "{% data variables.product.prodname_codeql %} analysis" row select **Set up** {% octicon "triangle-down" aria-hidden="true" aria-label="triangle-down" %}, then click **Advanced**.
+1. In the "{% data variables.product.prodname_codeql %} analysis" row, select **Set up** {% octicon "triangle-down" aria-hidden="true" aria-label="triangle-down" %}, then click **Advanced**.
 
    > [!NOTE]
    > If you are switching from default setup to advanced setup, in the "{% data variables.product.prodname_codeql %} analysis" row, select {% octicon "kebab-horizontal" aria-label="Menu" %}, then click **{% octicon "workflow" aria-hidden="true" aria-label="workflow" %} Switch to advanced**. In the pop-up window that appears, click **Disable {% data variables.product.prodname_codeql %}**.
-
-   ![Screenshot of the "{% data variables.product.UI_code_security_scanning %}" section of "{% data variables.product.UI_advanced_security %}" settings. The "Advanced setup" button is highlighted with an orange outline.](/assets/images/help/security/advanced-code-scanning-setup-ghas.png)
 
 1. To customize how {% data variables.product.prodname_code_scanning %} scans your code, edit the workflow.
 

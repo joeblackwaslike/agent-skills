@@ -16,13 +16,28 @@ related:
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b36a55f8c20650d6f0957851d188d9f4dca8fdfa754d280f400c95b422e38457"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a979421561c54fda277e8b424847672b8e3399f7ba3b72ddd49e80d845385608"
 ---
 
 # Limits and Pricing for Image Optimization
 
 ## Pricing
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Legacy Pricing](https://vercel.com/docs/image-optimization/legacy-pricing?from=related) — This page outlines information on the pricing and limits for the source images-based legacy option.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related) — Learn about the pricing for Vercel Blob.
+- [Getting Started](https://vercel.com/docs/image-optimization/quickstart?from=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+
+Full cross-link map for this page: [/docs/image-optimization/limits-and-pricing.graph.md](/docs/image-optimization/limits-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This is the default pricing option. For Enterprise teams created
 > before February 18th, 2025, you will be given the choice to
@@ -71,7 +86,7 @@ Vercel will send you emails as you are nearing your [usage](#pricing) limits, bu
 
 Once you exceed the limits:
 
-- New images will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors/platform-error-codes#402:-deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
+- New images will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors#402:-deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
 - Previously optimized images have already been cached and will continue to work as expected, without error
 
 You will **not** be charged for exceeding the usage limits, but this usually means your application is ready to upgrade to a [Pro plan](/docs/plans/pro-plan).
@@ -88,7 +103,7 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 For all the images that are [optimized by Vercel](/docs/image-optimization/managing-image-optimization-costs#measuring-usage), the following limits apply:
 
-- The maximum size for an transformed image is **10 MB**, as set out in the [Cacheable Responses limits](/docs/cdn-cache#how-to-cache-responses)
+- The maximum size for an transformed image is **10 MB**, as set out in the [Cacheable Responses limits](/docs/caching/cdn-cache#how-to-cache-responses)
 - Each source image has a maximum width and height of 8192 pixels
 - A source image must be one of the following formats to be optimized: `image/jpeg`, `image/png`, `image/webp`, `image/avif`. Other formats will be served as-is
 

@@ -16,13 +16,28 @@ related:
 summary: Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/web-analytics-api.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "bb4352b375a5c440c7440fb0a6d651d0aa1f591c7eb1b89b8c78cd33ffed9934"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "cd934ceeb49cddd2d3a15df1f82b45a534f3872d1cadc041f3c3772dee4e65a2"
 ---
 
 # Query Web Analytics with the API
 
 Use the Web Analytics API to query page views, visitors, and custom events from your Vercel projects. The API uses the same aggregated data model as the dashboard, so you can build reports, embed metrics, or combine Web Analytics with your own business data.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
+- [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Filtering](https://vercel.com/docs/analytics/filtering?from=related) — Learn how filters allow you to explore insights about your website's visitors.
+
+Full cross-link map for this page: [/docs/analytics/web-analytics-api.graph.md](/docs/analytics/web-analytics-api.graph.md)
+<!-- /docsgraph:related -->
 
 ## Prerequisites
 

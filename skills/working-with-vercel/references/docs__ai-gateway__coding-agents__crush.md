@@ -13,13 +13,28 @@ related:
 summary: Use Crush with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/crush.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "867922162f17010d18b10805b7218756f1c4ce6382f50a43a78fecf61219375d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1566f21a57bdb213d18e1246c472b3b89ec82490d1ec2acd2eb412ea7ed86ed4"
 ---
 
 # Crush
 
 [Crush](https://github.com/charmbracelet/crush) is a terminal-based AI coding assistant by Charmbracelet. It supports multiple LLM providers, LSP integration, MCP servers, and session-based context management. You can configure it to use AI Gateway for unified model access and spend monitoring.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
+- [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
+- [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related) — Use Cline with the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/crush.graph.md](/docs/ai-gateway/coding-agents/crush.graph.md)
+<!-- /docsgraph:related -->
 
 ## Configuring Crush
 

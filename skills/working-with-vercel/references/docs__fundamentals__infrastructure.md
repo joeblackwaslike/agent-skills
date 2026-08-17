@@ -9,20 +9,38 @@ prerequisites:
   - /docs/fundamentals
 related:
   - /docs/regions
-  - /docs/security/vercel-waf
-  - /docs/security/vercel-firewall
+  - /docs/vercel-firewall/vercel-waf
+  - /docs/vercel-firewall
   - /docs/vercel-firewall/ddos-mitigation
   - /docs/routing-middleware
 summary: Learn how Vercel routes, secures, and serves requests from your users to your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2b30f5c5ae0a0222c5038fd591804b1acb4084ae4f8c868e87ecac5d246aa22b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7223cd923a71a629dd6450aa48d42b989b145e1db405f39bee3f891d72e5f71f"
 ---
 
 # How requests flow through Vercel
 
 When you deploy to Vercel, your code runs on a global network of servers. This network puts your application close to your users, reduces latency, and handles scaling automatically. This is part of Vercel's [self-driving infrastructure](https://vercel.com/blog/self-driving-infrastructure): a system where you express intent, and the platform handles operations.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+
+Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md)
+<!-- /docsgraph:related -->
 
 The following sections walk through what happens from the moment a user presses **enter** on their keyboard to when your application appears on their screen. For a deeper technical dive, see [Life of a Vercel Request: What Happens When a User Presses Enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter).
 
@@ -62,9 +80,9 @@ This system runs across all deployments by default, delivering a P99 time-to-mit
 
 ### Web Application Firewall
 
-For additional protection, you can configure the [Web Application Firewall (WAF)](/docs/security/vercel-waf) with custom rules. The WAF lets you create granular rules for your specific application needs, while Vercel's system DDoS mitigation handles platform-wide threat detection automatically.
+For additional protection, you can configure the [Web Application Firewall (WAF)](/docs/vercel-firewall/vercel-waf) with custom rules. The WAF lets you create granular rules for your specific application needs, while Vercel's system DDoS mitigation handles platform-wide threat detection automatically.
 
-**Vercel Firewall**: Configure firewall rules to protect your applications. [Learn more →](/docs/security/vercel-firewall)
+**Vercel Firewall**: Configure firewall rules to protect your applications. [Learn more →](/docs/vercel-firewall)
 
 **DDoS Mitigation**: Learn how Vercel protects against distributed denial-of-service attacks. [Learn more →](/docs/vercel-firewall/ddos-mitigation)
 
@@ -84,9 +102,9 @@ For a detailed look at how routing decisions work, see [Life of a Request: Appli
 
 **Routing Middleware**: Run code before a request is completed for authentication, A/B testing, and more. [Learn more →](/docs/routing-middleware)
 
-**Redirects**: Redirect incoming requests to different URLs. [Learn more →](/docs/redirects)
+**Redirects**: Redirect incoming requests to different URLs. [Learn more →](/docs/routing/redirects)
 
-**Rewrites**: Map incoming requests to different destinations without changing the URL. [Learn more →](/docs/rewrites)
+**Rewrites**: Map incoming requests to different destinations without changing the URL. [Learn more →](/docs/routing/rewrites)
 
 ## How Vercel caches static and dynamic content
 
@@ -100,11 +118,11 @@ Most applications serve a mix of static and dynamic content. For static assets, 
 
 With [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration), you can serve cached content instantly while keeping it fresh. The cache serves the existing version to your user and triggers regeneration in the background for the next visitor.
 
-**Caching**: Understand how Vercel's edge cache accelerates your applications. [Learn more →](/docs/cdn-cache)
+**Caching**: Understand how Vercel's edge cache accelerates your applications. [Learn more →](/docs/caching/cdn-cache)
 
 **Incremental Static Regeneration**: Update static content without rebuilding your entire site. [Learn more →](/docs/incremental-static-regeneration)
 
-**Cache Headers**: Control caching behavior with HTTP headers. [Learn more →](/docs/headers/cache-control-headers)
+**Cache Headers**: Control caching behavior with HTTP headers. [Learn more →](/docs/caching/cache-control-headers)
 
 ## How Vercel executes server-side code
 
@@ -130,7 +148,7 @@ When you push code, Vercel's build infrastructure detects your framework, runs y
 
 For more on what happens during deployment, see [Behind the Scenes of Vercel's Infrastructure](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure).
 
-**Builds**: Learn how Vercel builds your application during deployment. [Learn more →](/docs/deployments/builds)
+**Builds**: Learn how Vercel builds your application during deployment. [Learn more →](/docs/builds)
 
 **Build Output API**: Understand the output format that powers Vercel deployments. [Learn more →](/docs/build-output-api)
 

@@ -14,13 +14,28 @@ related:
 summary: Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5120c223e28fdc732d58b6f784c04cd0cddd7a64dedd3e13b7a08db1c66da1a7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ade27fe6b89b49d9d228920bd418ad0a5766ef3e748b9086690ed03a1e37d12f"
 ---
 
 # File Attachments
 
 Vision-capable models accept images and PDFs alongside your prompt. Replace the plain string in `input` with an array of content parts: `input_text` for the prompt, `input_image` for an image, `input_file` for a document.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related) — Send images and PDF documents for analysis using the OpenResponses API.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related) — Send images and PDF documents as part of your Anthropic API message requests.
+- [OpenResponses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/images.graph.md](/docs/ai-gateway/sdks-and-apis/responses/images.graph.md)
+<!-- /docsgraph:related -->
 
 #### \['cURL'
 

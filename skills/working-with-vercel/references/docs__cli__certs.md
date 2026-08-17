@@ -12,13 +12,28 @@ related:
 summary: Learn how to manage certificates for your domains using the vercel certs CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/certs.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "064e618139b6cbb98d9c12ac41496e592e4e3e74ae744ce23e0fe6b55da80c39"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "af09f13ca2e4216a52d559a26ae3cec4e485c4faf2efaa7cf0bc46c26b0567e0"
 ---
 
 # vercel certs
 
 The `vercel certs` command is used to manage certificates for domains, providing functionality to list, issue, and remove them. Vercel manages certificates for domains automatically.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Get certs](https://vercel.com/docs/rest-api/certs/get-certs?from=related)
+- [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Working with SSL](https://vercel.com/docs/domains/working-with-ssl?from=related) — Learn how Vercel uses SSL certification to keep your site secure.
+- [Issue a new cert](https://vercel.com/docs/rest-api/certs/issue-a-new-cert?from=related)
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+
+Full cross-link map for this page: [/docs/cli/certs.graph.md](/docs/cli/certs.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 

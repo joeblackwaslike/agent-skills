@@ -14,13 +14,28 @@ related:
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7642074564a7a4f874564b44d4e20b2aa8db6d0c37f4a1a0107c19cb2ef488f9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "136465a919952f1d5d13e73dcd888768313a489f7918ee6c021d95e852c9bdfb"
 ---
 
 # vercel webhooks
 
 > **💡 Note:** The `vercel webhooks` command is currently in beta. Features and behavior may change.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
+- [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook?from=related)
+- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related)
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related)
+
+Full cross-link map for this page: [/docs/cli/webhooks.graph.md](/docs/cli/webhooks.graph.md)
+<!-- /docsgraph:related -->
 
 The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for your Vercel account, providing functionality to list, inspect, create, and remove webhooks. Webhooks allow you to receive HTTP POST requests when events occur in your Vercel account.
 

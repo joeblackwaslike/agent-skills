@@ -9,17 +9,39 @@ prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
+  - /docs/cli/ai-gateway
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Use Cline with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "1d7fec6171e45e056a9db397fe84f482c0627edfc1e497c53b778121aabec429"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7aad03b65bda1110062fe69b6d122f3033bba1ee284257596979cc38e49c6264"
 ---
 
 # Cline
 
 [Cline](https://cline.bot) is a VS Code extension that provides autonomous coding assistance. You can configure it to use AI Gateway for unified model access and spend monitoring.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+- [Claude Code](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
+- [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cline.graph.md](/docs/ai-gateway/coding-agents/cline.graph.md)
+<!-- /docsgraph:related -->
+
+> **💡 Note:** For Cline's CLI, the Vercel CLI can do this for you: [`vercel ai-gateway
+>   coding-agents setup --agent cline`](/docs/cli/ai-gateway#setup) provisions a
+> key and writes Cline's provider store at
+> `~/.cline/data/settings/providers.json`. The VS Code steps below stay the
+> same either way.
 
 ## Configuring Cline
 

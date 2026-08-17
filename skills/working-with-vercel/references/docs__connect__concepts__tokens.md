@@ -16,13 +16,30 @@ related:
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2411df04d9a766eb06d1ee6fe58fb73004a08f9bcf60e20bf15f3b3078c05cca"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d64e4e72196697ab6637cf2cb18c49e3d72353a1196de6aa7ee4914f5aee1386"
 ---
 
 # Tokens
 
 A token is a short-lived credential that Vercel Connect issues against a provider on your behalf. Every token is the result of a single `getToken` call (SDK) or `vercel connect token` invocation (CLI). Tokens are cached in-process and refreshed automatically as they approach expiry.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token?from=related)
+- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Import Connect tokens](https://vercel.com/docs/rest-api/connect/import-connect-tokens?from=related)
+- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related) — Learn how to Sign in with Vercel
+
+Full cross-link map for this page: [/docs/connect/concepts/tokens.graph.md](/docs/connect/concepts/tokens.graph.md)
+<!-- /docsgraph:related -->
 
 ## Anatomy of a token request
 

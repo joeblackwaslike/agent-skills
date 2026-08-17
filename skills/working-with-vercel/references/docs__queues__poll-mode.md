@@ -10,18 +10,36 @@ prerequisites:
 related:
   - /docs/queues/concepts
   - /docs/cron-jobs
+  - /docs/queues/python-sdk
   - /docs/fluid-compute
   - /docs/services
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a75dc0c8c541758ee247de9e510cbf976fd6b985a82116c95007692264ad47b2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3e921404e9748f80f40d62355613272c27155cb3a7f76d0f0341f7942b9826fd"
 ---
 
 # Poll Mode
 
 In poll mode, your application polls for messages from a queue on its own schedule instead of having Vercel invoke your function. This gives you full control over when and how messages are consumed.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
+- [JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related) — Publish and consume messages with the @vercel/queue SDK.
+- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
+- [Observability](https://vercel.com/docs/queues/observability?from=related) — Monitor queue throughput, message age, and consumer performance to optimize your queue-based workflows.
+- [API Reference](https://vercel.com/docs/queues/api?from=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
+- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+
+Full cross-link map for this page: [/docs/queues/poll-mode.graph.md](/docs/queues/poll-mode.graph.md)
+<!-- /docsgraph:related -->
 
 ## When to use poll mode
 
@@ -52,7 +70,7 @@ Consumer groups are a natural fit for multiplayer AI workflows. Consider a remot
 
 This works because new consumer groups always start at the beginning of the topic. A developer who joins mid-session doesn't miss anything. Their consumer group replays every action from the start, then catches up to the live stream. Developers who have been watching the whole time continue receiving new actions without interruption.
 
-```typescript filename="app/api/agent/actions/route.ts"
+```typescript filename="app/api/agent/actions/route.ts" framework=nextjs-app
 import { PollingQueueClient } from '@vercel/queue';
 
 const { receive } = new PollingQueueClient({
@@ -76,7 +94,7 @@ export async function GET(request: Request) {
 }
 ```
 
-```typescript filename="lib/agent/publish-action.ts"
+```typescript filename="lib/agent/publish-action.ts" framework=nextjs-app
 import { QueueClient } from '@vercel/queue';
 
 const { send } = new QueueClient();
@@ -93,11 +111,11 @@ The agent publishes actions as they happen, and each viewer's consumer group ind
 
 ## `PollingQueueClient`
 
-Use `PollingQueueClient` from the `@vercel/queue` SDK to poll for messages. It provides `send` and `receive` methods.
+Use `PollingQueueClient` from the `@vercel/queue` SDK to poll for messages. It provides `send` and `receive` methods. For Python polling, see the [Python SDK Reference](/docs/queues/python-sdk#consuming-messages-with-polling-loops).
 
 The `region` parameter is **required** because messages can only be received from the region they were sent to:
 
-```typescript filename="lib/poll-queue.ts"
+```typescript filename="lib/poll-queue.ts" framework=nextjs-app
 import { PollingQueueClient } from '@vercel/queue';
 
 const queue = new PollingQueueClient({ region: process.env.QUEUE_REGION! });
@@ -109,7 +127,7 @@ export const { send, receive } = queue;
 
 Call `receive` with a topic, consumer group, and handler callback. Messages are automatically acknowledged when your handler completes, and retried if it throws:
 
-```typescript filename="lib/poll-worker.ts"
+```typescript filename="lib/poll-worker.ts" framework=nextjs-app
 import { PollingQueueClient } from '@vercel/queue';
 
 const { receive } = new PollingQueueClient({ region: 'iad1' });
@@ -132,7 +150,7 @@ Vercel retries messages that aren't acknowledged according to the same [retry be
 
 ### Receive options
 
-```typescript
+```typescript filename="lib/poll-worker.ts" framework=nextjs-app
 await receive('orders', 'fulfillment', handler, {
   limit: 10,
   visibilityTimeoutSeconds: 300,

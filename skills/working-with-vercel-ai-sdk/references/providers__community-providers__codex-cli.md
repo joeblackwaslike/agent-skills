@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/codex-cli.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "4a571d718ad200428a9ee802d54ad6d1d9830f96fe9a2b10379a3b599b7f5202"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "32778d6a2ccfa2bce0407ccf58f72c77148b799e5bf44855e2966410fabe5afc"
 ---
 
 # Codex CLI Provider
@@ -216,6 +216,7 @@ For more details, see the [provider documentation](https://github.com/ben-vargas
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

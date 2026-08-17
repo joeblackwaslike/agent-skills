@@ -12,13 +12,33 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "890150dab7b42024283161a9183a8e4a6238b2f728746536d43a28c76a832d35"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d83a45f08dbbcecd0f84c3330d7327bc42b28f9bbb709fee689c37c5013c209c"
 ---
 
 # Fluid compute pricing
 
 Vercel prices Functions on fluid compute based on your plan and resource usage. Hobby includes monthly allowances for Active CPU, Provisioned Memory, and Invocations. Vercel bills Pro usage on demand, and your monthly Pro usage credit can offset those charges:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [How Fluid compute pricing compares to EC2, Fargate, and EKS](https://vercel.com/kb/guide/fluid-compute-vs-cloud-cost?from=related) — Compare Fluid compute with Active CPU pricing to Amazon EC2, AWS Fargate, and Amazon EKS on cost per active vCPU-hour, a
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
+- [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing?from=related) — Vercel pricing for Managed Infrastructure resources in different regions.
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Dublin, Ireland \(dub1\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \(dub1\) region.
+- [San Francisco, USA \(sfo1\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \(sfo1\) region.
+- [Hong Kong \(hkg1\)](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related) — Vercel pricing for the Hong Kong \(hkg1\) region.
+
+Full cross-link map for this page: [/docs/functions/usage-and-pricing.graph.md](/docs/functions/usage-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 | Resource | Hobby | Pro |
 | --- | --- | --- |

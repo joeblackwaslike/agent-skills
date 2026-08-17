@@ -8,21 +8,36 @@ type: reference
 prerequisites:
   - /docs/query
 related:
-  - /docs/observability/monitoring/monitoring-reference
-  - /docs/observability/monitoring/quickstart
+  - /docs/query/monitoring/monitoring-reference
+  - /docs/query/monitoring/quickstart
   - /docs/notebooks
   - /docs/plans/pro-plan
   - /docs/observability/observability-plus
 summary: Query and visualize your Vercel usage, traffic, and more with Monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "84c4b568ce8e1ffb4738f79428afe0fc828ed86574d372b9d1f4765eed10ca87"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "55577540198bc5ebea68a4251ea9887480b820ae9477914541206b507669a109"
 ---
 
 # Monitoring
 
-**Monitoring** allows you to visualize and quantify the performance and traffic of your projects on Vercel. You can use [example queries](/docs/observability/monitoring/monitoring-reference#example-queries) or create [custom queries](/docs/observability/monitoring/quickstart#create-a-new-query) to debug and optimize bandwidth, errors, performance, and bot traffic issues in a production or preview deployment.
+**Monitoring** allows you to visualize and quantify the performance and traffic of your projects on Vercel. You can use [example queries](/docs/query/monitoring/monitoring-reference#example-queries) or create [custom queries](/docs/query/monitoring/quickstart#create-a-new-query) to debug and optimize bandwidth, errors, performance, and bot traffic issues in a production or preview deployment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+
+Full cross-link map for this page: [/docs/query/monitoring.graph.md](/docs/query/monitoring.graph.md)
+<!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: Monitoring
 
@@ -34,7 +49,7 @@ Hover and move your mouse across the chart to view your data at a specific point
 
 ## Example queries
 
-To get started with the most common scenarios, use our **Example Queries**. You cannot edit or add new example queries. For a list of the available options, view our [example queries docs](/docs/observability/monitoring/monitoring-reference#example-queries).
+To get started with the most common scenarios, use our **Example Queries**. You cannot edit or add new example queries. For a list of the available options, view our [example queries docs](/docs/query/monitoring/monitoring-reference#example-queries).
 
 ## Save new queries
 
@@ -81,24 +96,24 @@ Certain events such as `public_ip` may be considered personal information under 
 > **💡 Note:** For business purposes, such as DDoS mitigation, Vercel will still collect IP
 > addresses.
 
-For a complete list of fields, see the [visualize clause](/docs/observability/monitoring/monitoring-reference#visualize) docs.
+For a complete list of fields, see the [visualize clause](/docs/query/monitoring/monitoring-reference#visualize) docs.
 
 ## Monitoring sunset
 
 From the end of billing cycle in Nov 2025, Vercel will sunset Monitoring for pro plans. Pro users will no longer see the Monitoring tab. Current enterprise users with monitoring access will keep the deprecated version of monitoring.
-If you want to continue using the full Monitoring capabilities or purchase a product similar to Monitoring, consider moving to [Query](/docs/observability/query).
+If you want to continue using the full Monitoring capabilities or purchase a product similar to Monitoring, consider moving to [Query](/docs/query).
 
 - Enable [Observability Plus](/docs/observability/observability-plus) to continue using query features.
-- Save queries in **Observability** [Notebooks](/docs/observability/query#save-query).
+- Save queries in **Observability** [Notebooks](/docs/query#save-query).
 
 ## More resources
 
 For more information on what to do next, we recommend the following articles:
 
-- [Quickstart](/docs/observability/monitoring/quickstart): Learn how to create and run a query to understand the top bandwidth images on
+- [Quickstart](/docs/query/monitoring/quickstart): Learn how to create and run a query to understand the top bandwidth images on
   your website
-- [Reference](/docs/observability/monitoring/monitoring-reference): Learn about the clauses, fields, and variables used to create a Monitoring
-- [Limits and Pricing](/docs/observability/monitoring/limits-and-pricing): Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Reference](/docs/query/monitoring/monitoring-reference): Learn about the clauses, fields, and variables used to create a Monitoring
+- [Limits and Pricing](/docs/query/monitoring/limits-and-pricing): Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 
 
 ---

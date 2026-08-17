@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "3b32bb73fe71491d93e3d22ff292126be12a917298b748c72861f4040cdd2396"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "8613369bb8d2a2c16a222d61d1338244850e033955f67a3d1a0036ec83d593cd"
 ---
 
 # `experimental_generateVideo()`
@@ -84,7 +84,7 @@ console.log(videos);
       type: 'string',
       isOptional: true,
       description:
-        'Aspect ratio of the videos to generate. Format: `{width}:{height}`.',
+        "Aspect ratio of the videos to generate. Format: `{width}:{height}`, or `'adaptive'` to inherit the ratio from the input media (e.g. a first-frame image or a source video). Support for `'adaptive'` is provider-specific.",
     },
     {
       name: 'resolution',

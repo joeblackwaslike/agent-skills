@@ -12,18 +12,40 @@ related:
   - /docs/functions/runtimes/edge
   - /docs/environment-variables/system-environment-variables
   - /docs/functions/configuring-functions/duration
-  - /docs/cdn-cache/purge
-  - /docs/runtime-cache
+  - /docs/caching/cdn-cache/purge
+  - /docs/caching/runtime-cache
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "14b5ff80166f85b01accfbdb57cfb1c2e81b99892cd1f99f9e00364d921eca03"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "84cd5926b7b7c54f164c972aae7c5b4e7f24b92d755dd5d3d80a9503c090d9ff"
 ---
 
 # @vercel/functions API Reference (Node.js)
 
 ## Install and use the package
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related) — How to create high-performance database connection pools without leaking connections
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Build a real-time chat app with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-chat-websockets?from=related) — Build and deploy a single-room messaging app in Next.js with real-time chat, typing indicators, and live online user cou
+- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
+- [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote?from=related) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
+- [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related) — Configure custom cache handlers for use cache directives in Next.js.
+- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Cache-Control Headers](https://vercel.com/docs/caching/cache-control-headers?from=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+
+Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md)
+<!-- /docsgraph:related -->
 
 1. Install the `@vercel/functions` package:
 
@@ -102,7 +124,7 @@ export async function GET(request: Request) {
 ```
 
 - `after()` does **not** block the response. The callback runs once rendering or the response is finished.
-- `after()` is not a [Dynamic API](https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-apis); calling it does not cause a route to become dynamic.
+- `after()` is not a [Dynamic API](https://nextjs.org/docs/app/getting-started/server-and-client-components#dynamic-apis); calling it does not cause a route to become dynamic.
 - If you need to configure or extend the timeout for tasks, you can use [`maxDuration`](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#maxduration) in Next.js.
 - For more usage examples (including in **Server Components**, **Server Actions**, or **Middleware**), see [after() in the Next.js docs](https://nextjs.org/docs/app/api-reference/functions/after).
 
@@ -292,7 +314,7 @@ export default {
 
 **Description**: Marks all cached content associated with a source image as stale, causing those cache entries to be revalidated in the background on the next request. This invalidates all cached transformations of the source image.
 
-Learn more about [purging Vercel CDN cache](/docs/cdn-cache/purge).
+Learn more about [purging Vercel CDN cache](/docs/caching/cdn-cache/purge).
 
 | Name       | Type     | Description                     |
 | :--------- | :------- | :------------------------------ |
@@ -313,7 +335,7 @@ export default {
 
 **Description**: Marks all cached content associated with a source image as deleted, causing those cache entries to be revalidated in the foreground on the next request. Use this method with caution because deleting the cache can cause many concurrent requests to the origin leading to [cache stampede problem](https://en.wikipedia.org/wiki/Cache_stampede). This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
 
-Learn more about [purging Vercel CDN cache](/docs/cdn-cache/purge).
+Learn more about [purging Vercel CDN cache](/docs/caching/cdn-cache/purge).
 
 | Name       | Type                                      | Description                                                                                                                                                                                                |
 | :--------- | :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -361,7 +383,7 @@ export default {
 
 > **💡 Note:** Alternatively, you can set the `Vercel-Cache-Tag` response header with a
 > comma-separated list of tags instead of using `addCacheTag()`. See [cache
-> tags](/docs/cdn-cache/purge#cache-tags) for more details.
+> tags](/docs/caching/cdn-cache/purge#cache-tags) for more details.
 
 #### Limits
 
@@ -432,7 +454,7 @@ export default async function action() {
 
 #### Limits and usage
 
-The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expireTag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
+The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/caching/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expireTag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
 
 The Runtime Cache API does not have first class integration with [Incremental Static Regeneration](/docs/incremental-static-regeneration). This means that:
 

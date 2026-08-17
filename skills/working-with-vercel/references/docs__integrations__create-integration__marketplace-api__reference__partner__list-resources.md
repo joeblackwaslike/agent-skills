@@ -3,7 +3,7 @@ title: list-resources
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-resources
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about list-resources on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "28373bb9ccfe25e2bdd4f73a2e68f002ce80cb5b8fb6dbd458e2b5e92a3508f0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7441d9973b1be5589877b0d681b63304aec8685f073ea171bcf337c0547f3b67"
 ---
 
 # List Resources (Deprecated)
@@ -122,6 +122,12 @@ Return a list of Resources for a given Installation
         "globalConfigId": "string" // Alias for `edgeConfigId`.,
         "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
         "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
+      },
+      "authentication": {
+        "appUrls": [
+          "url": "string" // required // An exact https app URL. No wildcards.,
+          "target": "string" // required
+        ]
       }
     },
     "billingPlan": {

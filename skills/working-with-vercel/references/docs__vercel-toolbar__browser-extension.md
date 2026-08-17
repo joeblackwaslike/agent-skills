@@ -12,13 +12,28 @@ related:
 summary: The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to comments, and set personal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/browser-extension.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5bd368254768b80e338049d70a7f148a2a0ac82eab21b07e1608acec11054cf0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c6b77f8ee00b5f8c0a79b6de8499305fc4d13ac63f583c2177b055d277b2006b"
 ---
 
 # Toolbar Browser Extensions
 
 > **🔒 Permissions Required**: The browser extensions
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Add to Environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related) — Learn how to use the Vercel Toolbar in production and local environments.
+- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
+- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Comments](https://vercel.com/docs/comments?from=related) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
+
+Full cross-link map for this page: [/docs/vercel-toolbar/browser-extension.graph.md](/docs/vercel-toolbar/browser-extension.graph.md)
+<!-- /docsgraph:related -->
 
 The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in addition to other Chromium-based browsers that support extensions and enhances the toolbar in the following ways:
 

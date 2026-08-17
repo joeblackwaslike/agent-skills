@@ -14,13 +14,31 @@ related:
 summary: Call one service from another using caller-declared service bindings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/bindings.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "395f75c8790385e1314d7f091c059caf625688ae4bb9cff7cb422e2c7601a7fc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "83feeb0dc9cbfddacd32ceded142508788c47cfffb3f79970d23698249203ccf"
 ---
 
 # Service bindings
 
 A service binding lets server-side code in one service call another service directly, without exposing the target service to public traffic.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
+- [Routing](https://vercel.com/docs/services/routing?from=related) — Learn how Vercel routes public requests to services and how each service handles its own routes.
+- [Services](https://vercel.com/docs/build-output-api/services?from=related) — Learn how a deployment with multiple services is structured in the Build Output API.
+- [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related) — Options available for service configuration.
+- [Go](https://vercel.com/docs/functions/runtimes/go?from=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+
+Full cross-link map for this page: [/docs/services/bindings.graph.md](/docs/services/bindings.graph.md)
+<!-- /docsgraph:related -->
 
 Bindings are how services find each other internally. The binding simultaneously grants access to the caller and generates the URL the caller's code uses, so there is no public route or hardcoded hostname involved.
 

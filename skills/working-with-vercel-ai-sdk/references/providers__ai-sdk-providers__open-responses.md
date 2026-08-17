@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "8d7c139f0e394f27fc70dd3287a8413b736fef68cea924ac0d437772aa38bcc3"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "b48d27d304e4f7743a819259dabbdc55e51f6567d6cc1988e7600a3797dee5ad"
 ---
 
 # Open Responses Provider
@@ -150,8 +150,9 @@ Use the top-level [`reasoning`](/docs/ai-sdk-core/reasoning) setting to control
 reasoning effort. The provider maps supported values to the Open Responses
 `reasoning.effort` field.
 
-The provider also supports `reasoningSummary` through `providerOptions`. The
-provider option key must match the `name` passed to `createOpenResponses`:
+The provider also supports `reasoningEffort` and `reasoningSummary` through
+`providerOptions`. The provider option key must match the `name` passed to
+`createOpenResponses`:
 
 ```ts
 import {
@@ -170,6 +171,7 @@ const { text, reasoningText } = await generateText({
   reasoning: 'high',
   providerOptions: {
     lmstudio: {
+      reasoningEffort: 'max',
       reasoningSummary: 'detailed',
     } satisfies OpenResponsesLanguageModelOptions,
   },
@@ -180,8 +182,16 @@ console.log(reasoningText);
 console.log(text);
 ```
 
-`reasoningSummary` accepts `'auto'`, `'concise'`, or `'detailed'`. Reasoning
-support and accepted values depend on the endpoint and model.
+`reasoningEffort` accepts any string and is passed through unchanged to the
+endpoint's `reasoning.effort` field. Use it for endpoint-native values that are
+not part of the top-level `reasoning` setting, such as `'max'`. When both are
+set, `providerOptions` `reasoningEffort` takes precedence over the top-level
+`reasoning` value.
+
+`reasoningSummary` accepts `'auto'`, `'concise'`, or `'detailed'` and can be
+combined with either reasoning effort setting. Reasoning support and accepted
+effort values depend on the endpoint and model; unsupported values may be
+rejected or ignored by the endpoint.
 
 ## File Inputs
 
@@ -243,7 +253,6 @@ provider.
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -253,6 +262,7 @@ provider.
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

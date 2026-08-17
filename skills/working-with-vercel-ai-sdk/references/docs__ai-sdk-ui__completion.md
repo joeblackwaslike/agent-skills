@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/completion.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "5ae5980259c78c553025ad651f1705c9901b59856d6fd86648e824fb7c3f3d95"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "ea7754b443a2ff575df6e79752d4581dd4e53e010c06e610ca7113dd97f15aaa"
 ---
 
 # Completion
@@ -186,6 +186,27 @@ const { messages, input, handleInputChange, handleSubmit } = useCompletion({
 ```
 
 In this example, the `useCompletion` hook sends a POST request to the `/api/completion` endpoint with the specified headers, additional body fields, and credentials for that fetch request. On your server side, you can handle the request with these additional information.
+
+You can provide a type for the additional body fields. The type applies to
+both the body configured on the hook and the body passed to `complete`:
+
+```tsx
+type CompletionBody = {
+  model: 'fast' | 'smart';
+};
+
+const { complete } = useCompletion<CompletionBody>({
+  body: {
+    model: 'fast',
+  },
+});
+
+await complete('What is a completion?', {
+  body: {
+    model: 'smart',
+  },
+});
+```
 
 
 ## Navigation

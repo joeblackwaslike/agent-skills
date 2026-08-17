@@ -13,17 +13,33 @@ related:
   - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info
-  - /docs/deployments/deploy-button/source
+  - /docs/deploy-button/source
 summary: Review this checklist before submitting your native or connectable account integration for approval on the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/approval-checklist.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "33fecff282bea9e6f5c016588e11ebd9115ace75098162c113b49b371dee45ee"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f4dbe9ad6fca39966b0f313e984e5d3c8eb392b3783e5004fa825c86abf02a58"
 ---
 
 # Integration Approval Checklist
 
 Before submitting your integration for review, work through the checklist that matches your integration type:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration?from=related) — Learn about all the requirements and guidelines needed when creating your Integration.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Marketplace Partner API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related) — Learn about marketplace partner api on Vercel.
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+
+Full cross-link map for this page: [/docs/integrations/create-integration/approval-checklist.graph.md](/docs/integrations/create-integration/approval-checklist.graph.md)
+<!-- /docsgraph:related -->
 
 - [Native integration](#native-integrations): Uses the Marketplace API and an integration server.
 - [Connectable account integration](#connectable-account-integrations): Uses a redirect URL and OAuth flow.
@@ -49,7 +65,7 @@ Use this checklist if you're building a [native integration](/docs/integrations/
 - Confirm feature parity with your direct offering, including any features tailored for the Marketplace.
 - Ensure your  are high quality (1920x1080px, 16:9 ratio) and readable in both light and dark mode. Verify the first image is suitable for the auto-generated Open Graph image.
 - If your integration supports both native and connectable account flows, ensure the connectable account flow works. Otherwise, remove the **Redirect URL** from the integration console.
-- Add a Marketplace [template](/docs/deployments/deploy-button/source#store-product-integration) as a deploy option in the product flow. This is required.
+- Add a Marketplace [template](/docs/deploy-button/source#store-product-integration) as a deploy option in the product flow. This is required.
 
 ### Installation and configuration
 

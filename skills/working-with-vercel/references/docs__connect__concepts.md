@@ -16,13 +16,29 @@ related:
 summary: "Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and authentication."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "79328ed0c1921e8073abf65977e15c12d1a52a6791c7568090474dc483d7c8a1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "316879e321e9e15bb36d7b28d45afad350846e49e1ab70b955714ffb5debb26f"
 ---
 
 # Vercel Connect Concepts
 
 Vercel Connect is built around six primitives. Read these in order if you want a top-down picture; jump to a single page if you're debugging a specific behavior.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Fundamental Concepts](https://vercel.com/docs/fundamentals?from=related) — Learn about the core concepts of Vercel
+- [Legal](https://vercel.com/docs/connect/legal?from=related) — Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, an
+
+Full cross-link map for this page: [/docs/connect/concepts.graph.md](/docs/connect/concepts.graph.md)
+<!-- /docsgraph:related -->
 
 - [Connectors](/docs/connect/concepts/connectors): The team-owned record that represents one third-party service (Slack, GitHub, Snowflake, Salesforce, an API-key service, or a Custom OAuth provider).
 - [Installations](/docs/connect/concepts/installations): How one connector serves many tenants. One Slack connector, for example, can serve many workspaces.

@@ -16,13 +16,29 @@ related:
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ec97b26e4cbe577dfa3d8e2e05a850a514d4058979c21c8ccb51776053ca260c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "0f9c4b7ec8d77f142dd41be7b15cc8f408d5fbd66a03d4897497b0f8bfc2e0f4"
 ---
 
 # Security
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
+
+Full cross-link map for this page: [/docs/vercel-blob/security.graph.md](/docs/vercel-blob/security.graph.md)
+<!-- /docsgraph:related -->
 
 ## Private storage
 

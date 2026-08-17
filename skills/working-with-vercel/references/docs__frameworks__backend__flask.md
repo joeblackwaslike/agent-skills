@@ -17,8 +17,8 @@ related:
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "28bbd28766790704f5d4681cfe86b455749c1bb58d0c68ea57fe7d8b2d5a266b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d9c495430ee7e8f88444dfdad3ecb4b5cc5f56c998435574208ba231659405a7"
 ---
 
 # Deploy a Flask app on Vercel
@@ -26,6 +26,25 @@ sha256: "28bbd28766790704f5d4681cfe86b455749c1bb58d0c68ea57fe7d8b2d5a266b"
 Deploy a Flask app to Vercel with the Python runtime and Vercel Functions.
 Vercel looks for a `Flask` instance named `app` at supported entrypoints in
 your repository.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [FastAPI](https://vercel.com/docs/frameworks/backend/fastapi?from=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
+- [Django](https://vercel.com/docs/frameworks/full-stack/django?from=related) — Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work togeth
+- [Fastify](https://vercel.com/docs/frameworks/backend/fastify?from=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+
+Full cross-link map for this page: [/docs/frameworks/backend/flask.graph.md](/docs/frameworks/backend/flask.graph.md)
+<!-- /docsgraph:related -->
 
 ## Create or import your app
 
@@ -46,7 +65,7 @@ This clones the [Flask example repository](https://github.com/vercel/vercel/tree
 To run a Flask application on Vercel, define an `app` instance that initializes `Flask` at a supported entrypoint:
 
 - `app.py`, `index.py`, `server.py`, `main.py`, `wsgi.py`, or `asgi.py`
-- the same filenames inside `src/`, `app/`, or `api/`
+- the same filenames inside `src/` or `app/`
 
 For example:
 
@@ -175,6 +194,8 @@ All [Vercel Functions limitations](/docs/functions/limitations) apply to Flask a
 For more about deploying Flask on Vercel, see:
 
 - [Flask official documentation](https://flask.palletsprojects.com/)
+- [Build with a Flask starter template](/kb/guide/build-with-a-flask-starter-template)
+- [How to ship a Flask app on Vercel](/kb/guide/ship-a-flask-app-on-vercel)
 - [Vercel Functions documentation](/docs/functions)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 

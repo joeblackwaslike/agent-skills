@@ -16,13 +16,28 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "75b8133b098603b91c004f83c6f36b712a9dd958cf0e4023e41aa28c1eb9a7c2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "86d1875bf5bbe6bd0cdedf922549300247a410e056ac169557eb030a6b2c0f53"
 ---
 
 # Using Drains
 
 > **🔒 Permissions Required**: Drains
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Creates a new Integration Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
+- [Create a new Drain](https://vercel.com/docs/rest-api/drains/create-a-new-drain?from=related)
+- [Creates a Configurable Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related)
+
+Full cross-link map for this page: [/docs/drains/using-drains.graph.md](/docs/drains/using-drains.graph.md)
+<!-- /docsgraph:related -->
 
 You can add drains to your project by following the configuration steps below. When you configure the destination, choose whether to send data to a [custom HTTP endpoint](#custom-endpoint), write Audit Log data to an [S3 bucket](#s3-bucket), or use a [native integration](#native-integrations) or [external integration](#external-integrations) to send your data to popular services.
 

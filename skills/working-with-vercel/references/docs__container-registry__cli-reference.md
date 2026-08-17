@@ -11,20 +11,36 @@ related:
   - /docs/container-registry
   - /docs/container-registry/public-and-shared-repositories
   - /docs/cli
-  - /docs/container-registry/getting-started
   - /docs/cli/link
 summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "eaaea12f3afaedbd0015244dae1249ffa54509e283cf5541169ce58a2d2967da"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7d0c6bdff542ec3744bc873df04d1aa73a375feea5ac6c44903ccb8845b2fa8b"
 ---
 
 # Container Registry CLI Reference
 
 The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs/container-registry) (VCR) repositories, tags, and images from your terminal. Use it to list, inspect, create, and delete repositories, browse a repository's tags, manage the images stored in each repository, and control which teams a repository is [shared](/docs/container-registry/public-and-shared-repositories#share-a-repository) with.
 
-`vercel vcr` is part of the [Vercel CLI](/docs/cli). To push and pull images, use Docker-compatible tooling as described in [Getting Started](/docs/container-registry/getting-started#push-an-image).
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \(GHCR\) to Vercel Container Registry \(VCR\), including authent
+- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [vercel vcr](https://vercel.com/docs/cli/vcr?from=related) — Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and m
+- [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [List repository images](https://vercel.com/docs/rest-api/vcr/list-repository-images?from=related)
+- [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image?from=related)
+
+Full cross-link map for this page: [/docs/container-registry/cli-reference.graph.md](/docs/container-registry/cli-reference.graph.md)
+<!-- /docsgraph:related -->
+
+`vercel vcr` is part of the [Vercel CLI](/docs/cli). Use [`vercel vcr build`](#vercel-vcr-build) and [`vercel vcr push`](#vercel-vcr-push) to build and push images, and see the [Container Registry documentation](/docs/container-registry#push-an-image) for the end-to-end workflow. Both commands run your local container tool rather than replacing it, so the tool you choose must be installed and on your `PATH`.
 
 Each command operates on a single Vercel project. By default, the CLI uses the [linked project](/docs/cli/link). Pass `--project` to target a different project.
 
@@ -84,6 +100,8 @@ vercel vcr <subcommand> [OPTIONS]
 - [`add`](#vercel-vcr-add): Create a container registry repository. (alias: `create`)
 - [`rm`](#vercel-vcr-rm): Delete a container registry repository. (aliases: `remove`, `delete`)
 - [`login`](#vercel-vcr-login): Authenticate a container tool with the Vercel Container Registry.
+- [`build`](#vercel-vcr-build): Build a container image tagged for the Vercel Container Registry.
+- [`push`](#vercel-vcr-push): Push a container image to the Vercel Container Registry.
 - [`tag`](#vercel-vcr-tag): List or inspect a repository's tags. (alias: `tags`)
 - [`image`](#vercel-vcr-image): List, inspect, or delete images in a repository. (alias: `images`)
 - [`permissions`](#vercel-vcr-permissions): Manage which teams can pull images from a repository. (alias: `permission`)
@@ -288,6 +306,99 @@ vercel vcr login docker --project my-app
 | Argument   | Description                                             |
 | ---------- | ------------------------------------------------------- |
 | `<engine>` | The container tool to authenticate: `docker`, `podman`, or `buildah`. |
+
+## `vercel vcr build`
+
+Build a container image tagged for the Vercel Container Registry by running your container tool (Docker, Podman, or Buildah).
+
+```bash filename="terminal"
+vercel vcr build [OPTIONS] <engine> [path] [name]
+```
+
+The build context defaults to the current directory, the repository to the project name, and the tag to `latest`, so `vercel vcr build docker` tags `vcr.vercel.com/<team-slug>/<project-name>/<project-name>:latest`. For the `[name]` argument, pass only a repository name, optionally with `:tag`. The CLI adds the registry, team, and project segments and rejects a name containing `/`.
+
+`--push` uploads the image after building.
+
+Anything after `--` is forwarded to the container tool unchanged.
+
+### `vercel vcr build` example
+
+```bash filename="terminal"
+# Build the current directory into the linked project
+vercel vcr build docker
+
+# Build and push in one step
+vercel vcr build docker --push
+
+# Build a specific context path with a repository and tag
+vercel vcr build docker ./app my-api:1.2.3
+
+# Pass extra flags through to the container tool
+vercel vcr build docker . -- --no-cache --build-arg KEY=value
+```
+
+### `vercel vcr build` options
+
+| Option                   | Short | Description                                                |
+| ------------------------ | ----- | ---------------------------------------------------------- |
+| `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).       |
+| `--platform <platform>`  |       | Target platform for the build (defaults to `linux/amd64`). |
+
+### `vercel vcr build` flags
+
+| Flag     | Short | Description                    |
+| -------- | ----- | ------------------------------ |
+| `--push` |       | Push the image after building. |
+| `--help` | `-h`  | Display help information.      |
+
+### `vercel vcr build` arguments
+
+| Argument   | Description                                                                          |
+| ---------- | ------------------------------------------------------------------------------------ |
+| `<engine>` | The container tool to build with: `docker`, `podman`, or `buildah`.                   |
+| `[path]`   | Build context path (defaults to the current directory).                              |
+| `[name]`   | Repository name, optionally with `:tag` (defaults to the project name and `latest`). |
+
+## `vercel vcr push`
+
+Push a container image to the Vercel Container Registry by running your container tool (Docker, Podman, or Buildah).
+
+```bash filename="terminal"
+vercel vcr push [OPTIONS] <engine> [name]
+```
+
+The image must already exist locally, built by [`vercel vcr build`](#vercel-vcr-build) or tagged for VCR yourself. `push` resolves the same defaults as `build`, so pass the same `name[:tag]` you built with. Podman and Buildah push with zstd compression. Docker can't compress on a plain push, so use `vercel vcr build docker --push` with Buildx for zstd.
+
+Anything after `--` is forwarded to the container tool unchanged.
+
+### `vercel vcr push` example
+
+```bash filename="terminal"
+# Push the linked project image
+vercel vcr push docker
+
+# Push a specific repository and tag
+vercel vcr push docker my-api:1.2.3
+```
+
+### `vercel vcr push` options
+
+| Option                   | Short | Description                                          |
+| ------------------------ | ----- | ---------------------------------------------------- |
+| `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
+
+### `vercel vcr push` flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### `vercel vcr push` arguments
+
+| Argument   | Description                                                                          |
+| ---------- | ------------------------------------------------------------------------------------ |
+| `<engine>` | The container tool to push with: `docker`, `podman`, or `buildah`.                    |
+| `[name]`   | Repository name, optionally with `:tag` (defaults to the project name and `latest`). |
 
 ## `vercel vcr tag`
 

@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/commits/comments"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "8139771a8377eb86f80f1a503ad915469c1cc38e7e2dd5dab655d85ad4ba3325"
+fetched_at: "2026-08-17T04:47:04.101Z"
+sha256: "5ef84500e6342976f9d386944f20403be0cc0bb6f4da3762b01eeaad1775b77c"
 ---
 
 # REST API endpoints for commit comments
@@ -395,6 +395,7 @@ POST /repos/{owner}/{repo}/commits/{commit_sha}/comments
 ```
 
 Create a comment for a commit using its :commit\_sha.
+Access to commit comments can be controlled by organization owners. For more information, see "Managing commit comments for your organization".
 This endpoint triggers notifications. Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "Rate limits for the API" and "Best practices for using the REST API."
 This endpoint supports the following custom media types. For more information, see "Media types."
 

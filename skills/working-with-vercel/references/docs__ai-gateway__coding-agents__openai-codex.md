@@ -9,23 +9,65 @@ prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
+  - /docs/cli/ai-gateway
+  - /docs/ai-gateway/sdks-and-apis/responses
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/sdks-and-apis/responses/websockets
 summary: Use OpenAI Codex CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "8043cea73c1be9e9ca6821483a747b392000f41cf37dd1aff1c53fec381508f2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "28f2927519ca54bdfa71efc23181805825e0b5ceca56c27fddc91aee5005b80a"
 ---
 
 # OpenAI Codex
 
 [OpenAI Codex](https://github.com/openai/codex) is OpenAI's agentic coding tool. You can configure it to use Vercel AI Gateway, enabling you to:
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli?from=related)
+- [Codex CLI (App Server)](https://ai-sdk.dev/providers/community-providers/codex-app-server?from=related)
+- [Codex](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex?from=related)
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+- [Claude Code](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
+- [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related) — Learn about kilo code on Vercel.
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related) — Use Superset with the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openai-codex.graph.md](/docs/ai-gateway/coding-agents/openai-codex.graph.md)
+<!-- /docsgraph:related -->
+
 - Route requests through multiple AI providers
 - Monitor traffic and spend in your AI Gateway Overview
 - View detailed traces in Vercel Observability under AI
 - Use any model available through the gateway
+
+> **💡 Note:** The Vercel CLI is the recommended way to set this up. [`vercel ai-gateway
+>   coding-agents setup --agent codex`](/docs/cli/ai-gateway#setup) provisions a
+> key, writes `~/.codex/config.toml` with the [Codex compatibility
+> endpoint](#codex-compatibility-endpoint), exports `AI_GATEWAY_API_KEY` from a
+> managed block in your shell startup file, and copies your existing Codex
+> Desktop sessions across. The manual steps below are for machines where you'd
+> rather configure it yourself.
+
+## Codex compatibility endpoint
+
+Point Codex at its own compatibility endpoint:
+
+```toml filename="~/.codex/config.toml"
+[model_providers.vercel]
+base_url = "https://ai-gateway.vercel.sh/codex/v1"
+```
+
+Use it everywhere on this page. It serves `/codex/v1/models` in the proprietary `ModelsResponse` shape Codex decodes at startup, so the CLI attaches its shell tool and sees the full gateway catalog. Every other path falls through to the standard handlers, so routing, billing, and errors are unchanged. To call the gateway from your own code rather than through Codex, see the [Responses API](/docs/ai-gateway/sdks-and-apis/responses) instead.
+
+`wire_api` must be `responses`. Codex removed Chat Completions support, and the gateway serves the Responses API at `/v1/responses`.
 
 ## Configure OpenAI Codex
 
@@ -52,13 +94,15 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
 
   [model_providers.vercel]
   name = "Vercel AI Gateway"
-  base_url = "https://ai-gateway.vercel.sh/v1"
+  base_url = "https://ai-gateway.vercel.sh/codex/v1"
   env_key = "AI_GATEWAY_API_KEY"
+  wire_api = "responses"
   ```
   The configuration above:
-  - Sets up a model provider named `vercel` that points to the AI Gateway
+  - Sets up a model provider named `vercel` that points to the [Codex compatibility endpoint](#codex-compatibility-endpoint)
   - References your `AI_GATEWAY_API_KEY` environment variable
   - Sets the `vercel` provider as the default for all sessions
+  - Uses the Responses API, which is the only wire protocol current Codex versions support
   - Specifies `openai/gpt-5.6-sol` as the default model
 
 - ### Run Codex
@@ -76,8 +120,9 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
 
   [model_providers.vercel]
   name = "Vercel AI Gateway"
-  base_url = "https://ai-gateway.vercel.sh/v1"
+  base_url = "https://ai-gateway.vercel.sh/codex/v1"
   env_key = "AI_GATEWAY_API_KEY"
+  wire_api = "responses"
   supports_websockets = true
   ```
   > **💡 Note:** WebSocket streaming is available for OpenAI models such as `openai/gpt-5.6-sol`.
@@ -114,6 +159,16 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   > **💡 Note:** Codex 0.134.0 and later no longer reads `[profiles.<name>]` tables or the
   > `profile` selector from `config.toml`. If you have legacy profile tables,
   > move each one into its own `~/.codex/<profile-name>.config.toml` file.
+
+## Keeping your Codex Desktop sessions
+
+Codex records each session against the provider that served it, so switching to the gateway hides the sessions you created before the switch. To bring them across, run:
+
+```bash filename="terminal"
+vercel ai-gateway coding-agents setup --agent codex
+```
+
+The command copies each rollout file under `sessions` and `archived_sessions` to a new deterministic session ID with `model_provider` set to `vercel`. Originals are never moved, edited, or deleted, and re-running never duplicates a session it already copied. Pass `--no-session-migration` to skip the step, and decompress any `.jsonl.zst` sessions first, since compressed rollouts can't be rewritten. See [session migration](/docs/cli/ai-gateway#desktop-session-migration) for details.
 
 
 ---

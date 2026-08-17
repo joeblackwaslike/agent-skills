@@ -13,13 +13,34 @@ related:
 summary: Build a low-latency, speech-to-speech voice agent with AI Gateway and the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d0a3ecbcc9fa1d42df593ed65b16ac17ed28c1b6b56e52852265722ed7826cf6"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "581e3766d1dfb797ea6466b00771fa8c62ba51a6e4443a5554691239424940a7"
 ---
 
 # Realtime Quickstart
 
 This quickstart gets you to a working realtime session two ways with the AI SDK: a Node.js script you can run right away, or a browser voice agent for live, two-way conversations.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related)
+- [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox?from=related) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
+- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related)
+- [Build an AI Chat Agent with Weather API Tool Calling](https://vercel.com/kb/guide/build-ai-agent-weather-api?from=related) — Build an intelligent conversational agent that fetches real-time weather data using the AI SDK, tool calling, and a back
+- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Node.js](https://ai-sdk.dev/docs/getting-started/nodejs?from=related)
+- [Multi-Modal Agent](https://ai-sdk.dev/cookbook/guides/multi-modal-chatbot?from=related)
+- [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech?from=related) — Generate spoken audio from text with speech models through Vercel AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/realtime.graph.md](/docs/ai-gateway/getting-started/realtime.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Realtime support ships in the stable AI Gateway provider releases. Install it
 > with `pnpm add @ai-sdk/gateway`.

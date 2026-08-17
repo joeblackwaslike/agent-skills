@@ -8,20 +8,37 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/build-output-api/v3
+  - /docs/build-output-api
   - /docs/deployments/environments
 summary: Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/build.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f42f0ab10f371a98c0c79758aab0d1c7a448f56544e5633a6de6dffe3eeb9a65"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "cb92db3794c55ba7e404fb3e7dd8fd0c05401254e3e8bb921dfe42b26a17dbc5"
 ---
 
 # vercel build
 
 The `vercel build` command can be used to build a Vercel Project locally or in your own CI environment.
 Build artifacts are placed into the `.vercel/output` directory according to the
-[Build Output API](/docs/build-output-api/v3).
+[Build Output API](/docs/build-output-api).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
+- [Can I deploy a locally built Next.js app to Vercel?](https://vercel.com/kb/guide/deploying-locally-built-nextjs?from=related) — Learn how to deploy a locally built Next.js application to Vercel.
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+
+Full cross-link map for this page: [/docs/cli/build.graph.md](/docs/cli/build.graph.md)
+<!-- /docsgraph:related -->
 
 When used in conjunction with the `vercel deploy --prebuilt` command, this allows a Vercel Deployment
 to be created *without* sharing the Vercel Project's source code with Vercel.

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "8ccb1b577498b727142714cf2a2c1786515ad96cbfe9eef62ea05e6564274f6e"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "23ce0b556412bc7b6c7aebe8502a5027f60ad544655456a85f2cd10af5f72274"
 ---
 
 # Cartesia Provider
@@ -344,7 +344,6 @@ The following provider options are available:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -354,6 +353,7 @@ The following provider options are available:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

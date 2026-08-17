@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/integrations/slack.md"
-fetched_at: "2026-07-20T06:48:56.322Z"
-sha256: "438c215193eba4a1a4b62971d11a7bdeb985532365740f2654ce6faa5bea4c11"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "a8dda2d49215942a3fb8a4039a3307a1212db52a126a7be882a2daaa7a8defa5"
 ---
 
 # Slack
@@ -38,13 +38,13 @@ For a named environment, include its name in your prompt. For example: `@Cursor 
 
 Run `@Cursor help` for an up-to-date command list.
 
-| Command                      | Description                                                                            |
-| :--------------------------- | :------------------------------------------------------------------------------------- |
-| `@Cursor [prompt]`           | Start a Cloud Agent. In threads with existing agents, adds followup instructions       |
-| `@Cursor settings`           | Configure defaults and channel's default repository                                    |
-| `@Cursor [options] [prompt]` | Set the target, model, branch, PR behavior, worker, or output channel for a run        |
-| `@Cursor agent [prompt]`     | Force create a new agent in a thread (e.g. `@Cursor start a new agent to fix billing`) |
-| `@Cursor list my agents`     | Show your running agents                                                               |
+| Command                      | Description                                                                                                                                                 |
+| :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@Cursor [prompt]`           | Start a Cloud Agent. In threads with existing agents, adds follow-up instructions. Who can follow up is controlled by Team follow-ups, not ownership alone. |
+| `@Cursor settings`           | Configure defaults and channel's default repository                                                                                                         |
+| `@Cursor [options] [prompt]` | Set the target, model, branch, PR behavior, worker, or output channel for a run                                                                             |
+| `@Cursor agent [prompt]`     | Force create a new agent in a thread (e.g. `@Cursor start a new agent to fix billing`)                                                                      |
+| `@Cursor list my agents`     | Show your running agents                                                                                                                                    |
 
 #### Options
 
@@ -104,7 +104,7 @@ understanding and implementing solutions based on the team's discussion.
 
 **When do I need `@Cursor agent`?**
 
-In threads with existing agents, `@Cursor [prompt]` adds followup instructions (only works if you own the agent). To launch a separate agent, use `@Cursor agent [prompt]`, or ask in natural language:
+In threads with existing agents, `@Cursor [prompt]` adds follow-up instructions. Who can follow up is controlled by [Team follow-ups](https://cursor.com/docs/cloud-agent/settings.md#team-follow-ups). If Team follow-ups is Disabled, only the owner can follow up. To launch a separate agent, use `@Cursor agent [prompt]`, or ask in natural language:
 
 ```bash
 @Cursor start a new agent to refactor billing

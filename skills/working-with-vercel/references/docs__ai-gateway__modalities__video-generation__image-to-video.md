@@ -15,13 +15,33 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b669cd15998e1eed673321ae97518a8629d9f1a3d7b7355b6b9cb73f7ba30a2a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "454035a53ac1218367547ca1e18b04da4a76bd683756a50e711e457e230ba227"
 ---
 
 # Image-to-Video Generation
 
 Animate a static image into a video. The image you provide becomes the video content itself - you're adding motion to that exact scene.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related)
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related)
+- [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
+- [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
+- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
+- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+
+Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md)
+<!-- /docsgraph:related -->
 
 This is different from [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video), where reference images show the model what characters look like, but the video is a completely new scene.
 
@@ -461,7 +481,7 @@ If you omit `frameImages`, you can still pass the first frame through `prompt.im
 
 ## Grok Imagine Video
 
-Grok Imagine Video (by xAI) can animate images into videos. The output defaults to the input image's aspect ratio. If you specify `aspectRatio`, it will override this and stretch the image to the desired ratio.
+Grok Imagine Video (by SpaceXAI) can animate images into videos. The output defaults to the input image's aspect ratio. If you specify `aspectRatio`, it will override this and stretch the image to the desired ratio.
 
 [Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=xai) on the AI Gateway Models page.
 

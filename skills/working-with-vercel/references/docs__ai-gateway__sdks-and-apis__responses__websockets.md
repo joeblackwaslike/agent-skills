@@ -14,13 +14,29 @@ related:
 summary: Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "63863bdad90cd82444e8739e33893993dc2f144c0302c6240be765b1b7721f2a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "3d4f69a745844ab27f4c2a4edef2d8a90a406a44c549a3c3046a94d02f455614"
 ---
 
 # Responses API over WebSocket
 
 AI Gateway supports WebSocket mode for the [Responses API](/docs/ai-gateway/sdks-and-apis/responses). Instead of opening a new HTTP request for every turn, you open one WebSocket connection and send each turn as a frame. The connection to the model provider stays open between turns, which removes a connection handshake from every turn and cuts per-turn latency in agent loops that make many tool calls.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related)
+- [OpenResponses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related) — Stream responses token by token using the OpenResponses API.
+- [Streaming](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related) — Stream tokens as they are generated with the OpenAI Responses API.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related) — Generate text responses using the OpenResponses API.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/websockets.graph.md](/docs/ai-gateway/sdks-and-apis/responses/websockets.graph.md)
+<!-- /docsgraph:related -->
 
 The wire protocol is OpenAI's Responses WebSocket protocol: you send `response.create` frames and receive the same `response.*` events the HTTP streaming API emits.
 

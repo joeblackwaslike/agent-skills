@@ -9,23 +9,42 @@ prerequisites:
   []
 related:
   - /docs/rbac/managing-team-members
-  - /docs/deployments/preview-deployments
+  - /docs/deployments/environments
   - /docs/directory-sync
   - /docs/rbac/access-roles/team-level-roles
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "817f8c7fc212f93f25ce0fa21eea6a54fcc0c2351b4cee766a80e44b312fbed3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "42fe0b5e3d6657e0b937ce60dd7c27c440abb45498beac114d3a725e7fb22586"
 ---
 
 # SAML Single Sign-On
 
 > **🔒 Permissions Required**: SAML
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [Application Authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Learn best practices for application authentication Vercel
+- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related) — Learn how to Sign in with Vercel
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [Two-factor Enforcement](https://vercel.com/docs/two-factor-enforcement?from=related) — Learn how to enforce two-factor authentication \(2FA\) for your Vercel team members to enhance security.
+
+Full cross-link map for this page: [/docs/saml.graph.md](/docs/saml.graph.md)
+<!-- /docsgraph:related -->
+
 To manage the [members](/docs/rbac/managing-team-members) of your team through a third-party identity provider like [Okta](https://www.okta.com/) or [Auth0](https://auth0.com/), you can set up the Security Assertion Markup Language (SAML) [feature](#configuring-saml-sso) from your team's settings.
 
-Once enabled, all team members will be able to log in or access [Preview](/docs/deployments/preview-deployments) and Production Deployments using your [selected identity provider](/docs/saml#saml-providers). Any new users signing up with SAML will automatically be added to your team.
+Once enabled, all team members will be able to log in or access [Preview](/docs/deployments/environments#preview-environment-pre-production) and Production Deployments using your [selected identity provider](/docs/saml#saml-providers). Any new users signing up with SAML will automatically be added to your team.
 
 For Enterprise customers, you can also automatically manage team member roles and provisioning by setting up [Directory Sync](/docs/directory-sync).
 

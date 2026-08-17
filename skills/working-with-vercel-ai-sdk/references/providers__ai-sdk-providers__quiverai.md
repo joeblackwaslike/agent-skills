@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "47b476b6f4cd7284458560e94af6fb7fd32f60ccb0542493464c6a86ab161a38"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "b5bfd317b59ecb5cf2cdaa5b20805205c30ec1ffaeeadc156e043f205b312e55"
 ---
 
 # QuiverAI Provider
@@ -195,7 +195,6 @@ fs.writeFileSync('logo.svg', image.uint8Array);
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -205,6 +204,7 @@ fs.writeFileSync('logo.svg', image.uint8Array);
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

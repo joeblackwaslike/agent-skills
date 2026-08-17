@@ -13,8 +13,8 @@ related:
 summary: Learn how to add Perplexity connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/perplexity.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "3b4ea5aa6eed3bc49bfeaa5d2a46e899b6c845e2f5c262c5ff4e9d9b1431fd97"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "162cf563ba211aadd2e5a55d1283075435742948c8f3cfde737fda6072c3d39f"
 ---
 
 # Vercel Perplexity Integration
@@ -28,6 +28,22 @@ deliver real-time, web-wide research and question-answering
 capabilities—complete with accurate citations, customizable sources, and
 advanced reasoning—enabling users to access up-to-date, trustworthy information
 directly within your product experience.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Perplexity](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity?from=related)
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [Deep Infra](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related) — Learn how to add the Deep Infra native integration with Vercel.
+- [ElevenLabs](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.
+- [xAI](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related) — Learn how to add the xAI native integration with Vercel.
+- [Together AI](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related) — Learn how to add Together AI connectable account integration with Vercel.
+
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/perplexity.graph.md](/docs/agent-resources/integrations-for-models/perplexity.graph.md)
+<!-- /docsgraph:related -->
 
 ## Use cases
 

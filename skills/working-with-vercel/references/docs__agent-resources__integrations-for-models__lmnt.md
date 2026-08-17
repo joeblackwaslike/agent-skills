@@ -13,8 +13,8 @@ related:
 summary: Learn how to add LMNT connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/lmnt.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "47b3481962aabe93ebff20127ff30dc64206099acc53226d2f3ccc8861e24f9a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "232f75a65f0ef31378bd3d8543a72902f1c79bf2b76248822e1dce00f37bd75d"
 ---
 
 # Vercel LMNT Integration
@@ -23,6 +23,21 @@ sha256: "47b3481962aabe93ebff20127ff30dc64206099acc53226d2f3ccc8861e24f9a"
 predictive analytics models, known for their precision and efficiency.
 Integrating LMNT with Vercel enables your applications to offer accurate
 insights and forecasts, particularly useful in finance and healthcare sectors.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [ElevenLabs](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.
+- [Deep Infra](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related) — Learn how to add the Deep Infra native integration with Vercel.
+- [xAI](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related) — Learn how to add the xAI native integration with Vercel.
+- [LiteLLM](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm?from=related) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface
+- [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/lmnt.graph.md](/docs/agent-resources/integrations-for-models/lmnt.graph.md)
+<!-- /docsgraph:related -->
 
 ## Use cases
 

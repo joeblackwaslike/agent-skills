@@ -17,13 +17,29 @@ related:
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bfd7d77fed1edba1ab344a00257d9da2a1fee2882dd22124adcaca61225dabdd"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "df5cc54ecb7a2f71420cc2ec9df8a9a9bcaa6a57afabb1cd254ddfc9536403e7"
 ---
 
 # Getting started with Flags Explorer
 
 > **🔒 Permissions Required**: Flags Explorer
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
+- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+
+Full cross-link map for this page: [/docs/flags/flags-explorer/getting-started.graph.md](/docs/flags/flags-explorer/getting-started.graph.md)
+<!-- /docsgraph:related -->
 
 This guide walks you through connecting your application to the Flags Explorer, so you can use it to view and override your application's feature flags. This works with any framework, any feature flag provider and even custom setups.
 
@@ -197,7 +213,7 @@ This guide walks you through connecting your application to the Flags Explorer, 
   ```
   This endpoint uses `verifyAccess` to prevent unauthorized requests, and the `getProviderData` function to automatically generate the feature flag definitions based on the feature flags you have defined in code. See the [Flags SDK API Reference](https://flags-sdk.dev/docs/api-reference/frameworks/next#getproviderdata) for more information.
   > For \['nextjs']:
-  If you are using the Pages Router, you will need to add the following to your `next.config.js`. This is because the Pages Router can't specify API routes outside of the `api` folder. This means you need a [rewrite](https://nextjs.org/docs/pages/api-reference/next-config-js/rewrites).
+  If you are using the Pages Router, you will need to add the following to your `next.config.js`. This is because the Pages Router can't specify API routes outside of the `api` folder. This means you need a [rewrite](https://nextjs.org/docs/pages/api-reference/config/next-config-js/rewrites).
   ```js filename="next.config.js"
   module.exports = {
     async rewrites() {

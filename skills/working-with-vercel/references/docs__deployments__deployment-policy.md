@@ -16,13 +16,28 @@ related:
 summary: Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "b809ad37150320de8bec207f26b92f3c03548ea05673ad73ef64e935c933872f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "43ef736db03ddb9aeb689e228658eb667009b0aa669ca2432cb08a23a2374e79"
 ---
 
 # Deployment Policies
 
 > **🔒 Permissions Required**: Deployment Policies
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deployment Retention](https://vercel.com/docs/deployment-retention?from=related) — Learn how Deployment Retention policies affect a deployment's lifecycle
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Git Integrations](https://vercel.com/docs/git?from=related) — Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLa
+- [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+
+Full cross-link map for this page: [/docs/deployments/deployment-policy.graph.md](/docs/deployments/deployment-policy.graph.md)
+<!-- /docsgraph:related -->
 
 Deployment Policies are a set of rules that control which Git sources and deployment mechanisms can create deployments for your team and projects. You can define default rules for a team, and override these as neccesary per project. For example, you can require that production only accepts deployments from a specific repository while preview stays open to any source.
 

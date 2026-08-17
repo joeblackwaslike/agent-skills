@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/custom-providers.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "20e922d5bf7be14ee63bdf8057e767539888e3c7b1d59226f3721b32c799a959"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "9b5121cfe8a1f54e86a194886aacf2302e77b9ac9dcc5773bc7217bdc9d83478"
 ---
 
 # Writing a Custom Provider
@@ -902,6 +902,7 @@ headers: combineHeaders(this.config.headers?.(), options.headers),
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

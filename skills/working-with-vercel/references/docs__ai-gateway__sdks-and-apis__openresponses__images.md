@@ -15,13 +15,28 @@ related:
 summary: Send images and PDF documents for analysis using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7abb699a8edf0bf03ad041632f8415f9eeca3edb78667f59dde8b169a41ff6f1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e6a439d25fba929b447234a37a4fcadb22aa41c4c28d08e7a75d3e2d11efd9f2"
 ---
 
 # File Attachments
 
 The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) accepts images and PDFs alongside text. Replace the plain string in a message's `content` with an array of parts: `input_text` for the prompt, `input_image` for an image, `input_file` for a document.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images?from=related) — Send images and PDF documents as part of your Anthropic API message requests.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/images.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/images.graph.md)
+<!-- /docsgraph:related -->
 
 #### \['cURL'
 

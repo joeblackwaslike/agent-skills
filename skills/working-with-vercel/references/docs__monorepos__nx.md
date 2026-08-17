@@ -8,21 +8,42 @@ type: tutorial
 prerequisites:
   - /docs/monorepos
 related:
-  - /docs/projects/overview
-  - /docs/getting-started-with-vercel/import
-  - /docs/deployments/configure-a-build
+  - /docs/projects
+  - /docs/getting-started-with-vercel
+  - /docs/builds/configure-a-build
   - /docs/project-configuration/project-settings
   - /docs/environment-variables
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "52c5dd7dc812dd2dd179d18d4dc80f8001a37444242311289c595ca284fbc391"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "16b3d6922fa76c172bcc446811a506bdf725fa8ea6c4d47ba77c1968cc88a1bf"
 ---
 
 # Deploying Nx to Vercel
 
 Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx?from=related) — How to solve the error \`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\` or \`No Output
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
+- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related) — Learn the answer to common questions about deploying monorepos on Vercel.
+- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching?from=related) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
+- [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [NestJS](https://vercel.com/docs/frameworks/backend/nestjs?from=related) — Deploy NestJS applications to Vercel with zero configuration.
+- [xmcp](https://vercel.com/docs/frameworks/backend/xmcp?from=related) — Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and
+
+Full cross-link map for this page: [/docs/monorepos/nx.graph.md](/docs/monorepos/nx.graph.md)
+<!-- /docsgraph:related -->
 
 Read the [Intro to Nx](https://nx.dev/docs/getting-started/intro) docs to learn about the benefits of using Nx to manage your monorepos.
 
@@ -37,9 +58,9 @@ Read the [Intro to Nx](https://nx.dev/docs/getting-started/intro) docs to learn 
   > **💡 Note:** All Nx starters and examples are preconfigured with these settings.
 
 - ### Import your project
-  [Create a new Project](/docs/projects/overview#creating-a-project) on the Vercel dashboard and [import](/docs/getting-started-with-vercel/import) your monorepo project.
+  [Create a new Project](/docs/projects#creating-a-project) on the Vercel dashboard and [import](/docs/getting-started-with-vercel) your monorepo project.
 
-  Vercel handles all aspects of configuring your monorepo, including setting [build commands](/docs/deployments/configure-a-build#build-command), the [Root Directory](/docs/deployments/configure-a-build#root-directory), the correct directory for npm workspaces, and the [ignored build step](/docs/project-configuration/project-settings#ignored-build-step).
+  Vercel handles all aspects of configuring your monorepo, including setting [build commands](/docs/builds/configure-a-build#build-command), the [Root Directory](/docs/builds/configure-a-build#root-directory), the correct directory for npm workspaces, and the [ignored build step](/docs/project-configuration/project-settings#ignored-build-step).
 
 - ### Next steps
   Your Nx monorepo is now configured and ready to be used with Vercel!

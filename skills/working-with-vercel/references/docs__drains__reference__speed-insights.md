@@ -13,13 +13,28 @@ related:
 summary: Learn about Speed Insights Drains - data formats and performance metrics configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/speed-insights.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8356ab885060fbb3e4129b9f081080bfd68f9f37707986c8cde939923352a486"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7ce31e019a863abcff7527afebc508869f656ac1ec8bd139481952e7449c7b87"
 ---
 
 # Speed Insights Drains Reference
 
 Speed Insights Drains send performance metrics and web vitals from your applications to external endpoints for storage and analysis. To enable Speed Insights Drains, [create a drain](/docs/drains/using-drains) and choose the Speed Insights data type.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Create a new Drain](https://vercel.com/docs/rest-api/drains/create-a-new-drain?from=related)
+- [@vercel/speed-insights](https://vercel.com/docs/speed-insights/package?from=related) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
+
+Full cross-link map for this page: [/docs/drains/reference/speed-insights.graph.md](/docs/drains/reference/speed-insights.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel sends Speed Insights data to endpoint URLs over HTTPS when your application collects performance metrics.
 

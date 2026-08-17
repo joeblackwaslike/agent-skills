@@ -16,13 +16,28 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "854801ffc50ba96727655962ce9d5403993e8b654f34fcf41d24469c89d4f708"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "16f4db6f78819ab145fffb80d03c776203a3a533995b779ce7d6789a9e1c754a"
 ---
 
 # Using Global Config with an integration
 
 > **🔒 Permissions Required**: Global Config integrations
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related) — Learn how to use Global Configs in your projects.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
+- [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config?from=related)
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related)
+- [Push data into a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/push-data-into-a-user-provided-global-config?from=related)
+
+Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel has partnered with A/B testing and feature flag services such as LaunchDarkly and Statsig to make it easier to integrate Global Config into your workflow. These integrations sync feature flag definitions into Global Config, allowing you to evaluate flags in the region closest to the user without making network calls to your preferred service provider.
 

@@ -14,13 +14,29 @@ related:
 summary: A component for users to claim ownership of Vercel deployments created on their behalf.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "806bddff211bdd0a0618b4472bd5453575cad4bc126a05e49445bf53ea395d0a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "43e69786ddb996fcbe31cef46278745d62550abcc10e67d4ac5758f34881a327"
 ---
 
 # Claim Deployment
 
 ## Overview
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [AI Agents on Vercel](https://vercel.com/kb/guide/ai-agents?from=related) — This guide provides an overview of how to build and deploy AI agents on Vercel.
+- [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments?from=related) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Platform Template](https://vercel.com/docs/platforms/examples/platform-template?from=related) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+
+Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/claim-deployment.graph.md](/docs/platforms/platform-elements/blocks/claim-deployment.graph.md)
+<!-- /docsgraph:related -->
 
 The Claim Deployment block provides a polished interface for platforms that deploy sites to Vercel on behalf of their users. When you create a deployment programmatically (e.g., through Mintlify, Hashnode, or similar platforms), users can claim ownership to manage updates and settings directly from their own Vercel account.
 

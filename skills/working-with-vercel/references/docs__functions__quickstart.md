@@ -16,13 +16,29 @@ related:
 summary: Build your first Vercel Function in a few steps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/quickstart.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7627c9ecb4c131ef46c2bcd3e1c679b2e1351e81dcfcfe365ece14983a7751cb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "904f525144d94919ff7294692f94ec9a24b89b41a2453bbc434cad69ebbe1530"
 ---
 
 # Getting started with Vercel Functions
 
 In this guide, you'll learn how to get started with Vercel Functions using your favorite [frontend framework](/docs/frameworks) (or no framework).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Rust](https://vercel.com/docs/functions/runtimes/rust?from=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
+- [Go](https://vercel.com/docs/functions/runtimes/go?from=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+
+Full cross-link map for this page: [/docs/functions/quickstart.graph.md](/docs/functions/quickstart.graph.md)
+<!-- /docsgraph:related -->
 
 ## Prerequisites
 

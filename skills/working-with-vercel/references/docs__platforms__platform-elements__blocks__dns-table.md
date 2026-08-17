@@ -15,13 +15,29 @@ related:
 summary: A DNS record display component with one-click copying for guiding users through domain configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a212cf46de6adce78c491ea2b8363a73c228c84c1a9e4cf5bfb718768290dbb9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e4c33555906e02178d724749dafebf8b054d2a6cbe6ff2c1d97a9211cb74f275"
 ---
 
 # DNS Table
 
 ## Overview
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record?from=related)
+- [Domains](https://vercel.com/docs/domains?from=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+
+Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/dns-table.graph.md](/docs/platforms/platform-elements/blocks/dns-table.graph.md)
+<!-- /docsgraph:related -->
 
 The DNS Table block provides a clean, user-friendly interface for displaying DNS records that users need to configure. It's designed for platforms that guide users through domain configuration, offering one-click copying of values and clear visual organization. This component is essential for domain management interfaces in platforms like Mintlify and Hashnode.
 

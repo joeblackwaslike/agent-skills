@@ -8,7 +8,7 @@ type: how-to
 prerequisites:
   - /docs/deployments
 related:
-  - /docs/accounts/create-a-team
+  - /docs/accounts
   - /docs/rbac/access-roles/project-level-roles
   - /docs/vercel-toolbar
   - /docs/deployments/generated-urls
@@ -16,15 +16,31 @@ related:
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "16e8301c030c3c95549125aff678673fcf2c7f895f75c384d49ee0e2445b5d0e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5e736fa542d5cc519f2425b83890c430f4e5e2302e396915389d53162b4eaf88"
 ---
 
 # Sharing a Preview Deployment
 
 ## Sharing with members of your team
 
-By default, members of your [Vercel team](/docs/accounts/create-a-team) that have [access to your project](/docs/rbac/access-roles/project-level-roles) will also have access to your deployment. This allows them to comment, see who else is viewing the preview, and use the toolbar. Users who don't have access to the project will not have access to your deployment.
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Bypass Deployment Protection](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Using Comments](https://vercel.com/docs/comments/using-comments?from=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+
+Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md)
+<!-- /docsgraph:related -->
+
+By default, members of your [Vercel team](/docs/accounts#creating-a-team) that have [access to your project](/docs/rbac/access-roles/project-level-roles) will also have access to your deployment. This allows them to comment, see who else is viewing the preview, and use the toolbar. Users who don't have access to the project will not have access to your deployment.
 
 To share a preview deployment with a member of your team you can do any of the following:
 
@@ -68,14 +84,14 @@ This is the **recommended method for sharing a deployment with external collabor
 1. Select **Share**  in the toolbar menu or select the **Share** button on the deployment page in the [Vercel dashboard](/dashboard)
 2. In the **Share** modal that appears, you can manage who can view and comment on deployments:
    - **Team members with access**: This is the default setting. Only team members who have access to this project and external users granted access can comment
-   - **Anyone (Without deployment protection)**: If you don't have [deployment protection](/docs/security/deployment-protection) enabled, you can change the setting to **Anyone**. This allows any visitor who logs in with a Vercel account to leave comments on the preview, regardless of their team status
-   - **Anyone with the link (With deployment protection)**: If you have deployment protection on, you can select **Anyone with the link**. This option creates a [sharable link that bypasses deployment protection](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links). Anyone with this link can log in to the toolbar and comment, even if they are not a part of your team or haven't been individually added as collaborators
+   - **Anyone (Without deployment protection)**: If you don't have [deployment protection](/docs/deployment-protection) enabled, you can change the setting to **Anyone**. This allows any visitor who logs in with a Vercel account to leave comments on the preview, regardless of their team status
+   - **Anyone with the link (With deployment protection)**: If you have deployment protection on, you can select **Anyone with the link**. This option creates a [sharable link that bypasses deployment protection](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links). Anyone with this link can log in to the toolbar and comment, even if they are not a part of your team or haven't been individually added as collaborators
 
 ![Image](`/docs-assets/static/docs/concepts/deployments/shareable-links-light.png`)
 
 3. After setting the chosen permission, use the **Copy Link** button to copy the link to your clipboard. This specific URL should be used, rather than the one from the address bar of your browser.
 
-To learn more, see [sharable links](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) in Deployment Protection.
+To learn more, see [sharable links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) in Deployment Protection.
 
 ### Request access
 
@@ -89,9 +105,9 @@ To respond to the request:
 
 ## Sharing with deployment protection enabled
 
-It is important to ensure the security of your preview deployments, which you can enable through [deployment protection](/docs/security/deployment-protection/methods-to-protect-deployments). We recommend that you scope access to the fewest number of people possible.
+It is important to ensure the security of your preview deployments, which you can enable through [deployment protection](/docs/deployment-protection/methods-to-protect-deployments). We recommend that you scope access to the fewest number of people possible.
 
-Deployment protection allows you to secure your preview deployments, with [Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) and/or [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection) to ensure that only authorized users can view your preview deployment.
+Deployment protection allows you to secure your preview deployments, with [Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) and/or [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) to ensure that only authorized users can view your preview deployment.
 
 - If you don't have deployment protection enabled, anyone with the link can view your deployment
 - If you have **Authentication** enabled, only team members can view your deployment, unless you have added the user individually or they have requested access, or you have enabled sharable links

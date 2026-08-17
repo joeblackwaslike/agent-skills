@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/aihubmix.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "a36661bc19325bb60cf430f3045ab993a7c800acc1a032c3c2cdbefa00bf1d47"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "7e0e24e88580df2f7808777aae425f689ba13692ae0d44c93f49c2c94e7230a8"
 ---
 
 # Aihubmix Provider
@@ -322,6 +322,7 @@ const { text } = await generateText({
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -17,13 +17,28 @@ related:
 summary: Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and errors, Agent Runs, design...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9cb56fb497eaca0bae4a9b17ded64ed4f97e40a6b0998eebe3b3ccf044e3c8cd"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b7930222d5394bb81a69fbd0528b86e6c5a5b7d5dd4590b553be77d0a37f243d"
 ---
 
 # Tools
 
 The Vercel MCP server provides [MCP tools](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) that let AI assistants search documentation, manage projects, query Web Analytics, view deployments, and more.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related)
+
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools.graph.md](/docs/agent-resources/vercel-mcp/tools.graph.md)
+<!-- /docsgraph:related -->
 
 Each tool below includes a sample prompt: a message you can send to your AI assistant (such as Claude Code, Cursor, or ChatGPT) after [connecting it to Vercel MCP](/docs/agent-resources/vercel-mcp). The assistant selects and calls the appropriate tools for you.
 
@@ -343,7 +358,7 @@ Upgrade a team to a Vercel Pro subscription. This starts recurring Pro billing i
 
 Purchase prepaid credits for [v0](https://v0.dev), [AI Gateway](/docs/ai-gateway), or [Vercel Agent](/docs/agent). The amount is quoted directly, since credits cost exactly what you buy.
 
-Some credit types have plan prerequisites: Vercel Agent credits require the team to be on [Vercel Pro](/docs/plans/pro) (upgrade first with `buy_pro`), and v0 credits require a paid v0 plan. AI Gateway credits have no prerequisite. If a required plan is missing, the purchase is rejected with guidance and nothing is charged.
+Some credit types have plan prerequisites: Vercel Agent credits require the team to be on [Vercel Pro](/docs/plans/pro-plan) (upgrade first with `buy_pro`), and v0 credits require a paid v0 plan. AI Gateway credits have no prerequisite. If a required plan is missing, the purchase is rejected with guidance and nothing is charged.
 
 | Parameter        | Type    | Required | Default | Description                                                                                                                                                                                    |
 | ---------------- | ------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

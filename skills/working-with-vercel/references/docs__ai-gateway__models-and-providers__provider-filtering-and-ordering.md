@@ -15,13 +15,29 @@ related:
 summary: Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "49312c71d4e7297f815831068a4297bd18bd2c81b68371e20028f9c0f30c69ae"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "faafed4ebe19491f5d2bc2ab3b608f5241fd39f5b0f5f945f0cbb7c82fe67318"
 ---
 
 # Provider Filtering, Ordering & Sorting
 
 By default, AI Gateway dynamically chooses providers based on recent uptime and latency. You can override this behavior to control which providers handle your requests and in what order using `order`, `only`, and `sort` in `providerOptions.gateway`. To instead filter by a capability of the model itself, see [Model Filtering](/docs/ai-gateway/models-and-providers/model-filtering).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist?from=related) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
+- [Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related) — Configure model-level failover to try backup models when the primary model is unavailable
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md)
+<!-- /docsgraph:related -->
 
 ## Provider ordering
 

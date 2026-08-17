@@ -11,19 +11,35 @@ prerequisites:
 related:
   - /docs/platforms/platform-elements/blocks/deploy-popover
   - /docs/platforms/platform-elements/actions/deploy-files
-  - /docs/rest-api/reference/endpoints/projects/create-a-new-project
-  - /docs/rest-api/reference/endpoints/deployments/create-a-new-deployment
-  - /docs/rest-api/reference/endpoints/deployments/list-deployments
+  - /docs/rest-api/projects/create-a-new-project
+  - /docs/rest-api/deployments/create-a-new-deployment
+  - /docs/rest-api/deployments/list-deployments
 summary: API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c49a2cab13d50f1852f3d132886e3b3e2325965d51505142ec4157d44742f252"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "25e45e1210e9cc1330c8a9ce805708d311ac24b116c537bc87c5299ca04651d7"
 ---
 
 # Multi-Project Platforms Reference
 
 ## Custom blocks
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
+- [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related) — Learn how to manage your projects through the Vercel Dashboard.
+
+Full cross-link map for this page: [/docs/platforms/multi-project-platforms/reference.graph.md](/docs/platforms/multi-project-platforms/reference.graph.md)
+<!-- /docsgraph:related -->
 
 Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/deploy-popover) and [Actions](/docs/platforms/platform-elements/actions/deploy-files) that speed up your usage of the Vercel API.
 
@@ -31,7 +47,7 @@ Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/deploy-p
 
 ### Create project
 
-Create a new Vercel project using the [create project API](/docs/rest-api/reference/endpoints/projects/create-a-new-project).
+Create a new Vercel project using the [create project API](/docs/rest-api/projects/create-a-new-project).
 
 **SDK**:
 
@@ -59,7 +75,7 @@ run();
 
 ### Deploy to project
 
-Create a deployment for a project using the [create deployment API](/docs/rest-api/reference/endpoints/deployments/create-a-new-deployment).
+Create a deployment for a project using the [create deployment API](/docs/rest-api/deployments/create-a-new-deployment).
 
 **SDK**:
 
@@ -123,7 +139,7 @@ run();
 
 ### List deployments
 
-Get deployments for a project using the [list deployments API](/docs/rest-api/reference/endpoints/deployments/list-deployments).
+Get deployments for a project using the [list deployments API](/docs/rest-api/deployments/list-deployments).
 
 **SDK**:
 
@@ -362,7 +378,7 @@ Instead, build your own interface for tenants to:
 
 - [Concepts](/docs/platforms/multi-project-platforms/concepts): Understand multi-project architecture
 - [Quickstart](/docs/platforms/multi-project-platforms/quickstart): Get started with multi-project platforms
-- [Vercel SDK](/docs/sdk): Complete SDK documentation
+- [Vercel SDK](/docs/rest-api/sdk): Complete SDK documentation
 
 
 ---

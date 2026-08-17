@@ -12,17 +12,33 @@ related:
   - /docs/deployments/environments
   - /docs/environment-variables/shared-environment-variables
   - /docs/activity-log
-  - /docs/rest-api/reference/welcome
+  - /docs/rest-api
 summary: Environment variables that cannot be decrypted once created.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "47cc0eeff91adabf0858338f846f941086897e39d2a442bd7f8b75fd22651d53"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "790f6df4558870208ce3a2c2c9883a774c94f30a62c62cbebe2753068f1679e4"
 ---
 
 # Sensitive environment variables
 
 Sensitive environment variables are [environment variables](/docs/environment-variables "Environment variables") whose values are non-readable once created. They help protect sensitive information stored in environment variables, such as API keys.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
+- [vercel env](https://vercel.com/docs/cli/env?from=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related)
+- [Create one or more environment variables](https://vercel.com/docs/rest-api/projects/create-one-or-more-environment-variables?from=related)
+
+Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md)
+<!-- /docsgraph:related -->
 
 To mark an existing environment variable as sensitive, remove and re-add it with the **Sensitive** option enabled. Once you mark it as sensitive, Vercel stores the variable in an unreadable format. This is only possible for environment variables in the [production](/docs/deployments/environments#production-environment) and [preview](/docs/deployments/environments#preview-environment-pre-production) environments.
 
@@ -52,7 +68,7 @@ Sensitive environment variables can be created at the project or team level:
 
 #### 'cURL'
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```bash filename="cURL"
 curl --request POST \
@@ -74,7 +90,7 @@ curl --request POST \
 
 #### 'SDK']
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```ts filename="createProjectEnv"
 import { Vercel } from '@vercel/sdk';

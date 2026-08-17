@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-08-10
+Last updated: 2026-08-17
 
 ## GitHub Official
 
@@ -60,8 +60,6 @@ Last updated: 2026-08-10
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
 | `codecov/codecov-action` | `v7.0.0` | `uses: codecov/codecov-action@v7.0.0` |
-| `github/codeql-action/init` | `codeql-bundle-v2.26.2` | `uses: github/codeql-action/init@codeql-bundle-v2.26.2` |
-| `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 
 ## Pinning to SHA (recommended for production)
 

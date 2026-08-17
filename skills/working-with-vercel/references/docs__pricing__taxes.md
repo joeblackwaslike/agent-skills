@@ -12,13 +12,28 @@ related:
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "a2ef79d0e1572e619575e71787f15c1111b2815f74e6d45604aa6b9ec4efb511"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5cacfd49824599f7c364dcf61c6ef4c6952195cdca6b82fda68391f55b659658"
 ---
 
 # Taxes
 
 ### Do you charge sales tax, value-added tax (VAT) or equivalent on your services?
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Billing and Refunds](https://vercel.com/docs/integrations/create-integration/billing?from=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [Billing FAQ](https://vercel.com/docs/plans/enterprise/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
+- [Pricing and Limits](https://vercel.com/docs/services/pricing?from=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+
+Full cross-link map for this page: [/docs/pricing/taxes.graph.md](/docs/pricing/taxes.graph.md)
+<!-- /docsgraph:related -->
 
 Yes. We are rolling out collection of VAT, GST, or equivalent for international customers starting on April 1, 2026 for all Vercel products and services where required by law. We already collect sales tax for US-based customers. The exact amount depends on your billing address and applicable tax regulations.
 

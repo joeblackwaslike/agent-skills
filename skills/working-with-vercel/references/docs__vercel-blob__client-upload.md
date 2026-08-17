@@ -10,17 +10,35 @@ prerequisites:
 related:
   - /docs/vercel-blob/using-blob-sdk
   - /docs/environment-variables/system-environment-variables
-  - /docs/storage/vercel-blob/using-blob-sdk
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "e9600c231bc4da2d55b607da3fa73fa618a0a706555e9fad74f63c574c3ecfe8"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a42fd019122de794c1a9192bae0a7bfbfd89a42ec55ea74a81adeaf0942d6f62"
 ---
 
 # Client Uploads with Vercel Blob
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Videos](https://nextjs.org/docs/app/guides/videos?from=related) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions?from=related) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related) — Learn how to use private Vercel Blob storage to serve files with authentication
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload?from=related)
+
+Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md)
+<!-- /docsgraph:related -->
 
 In this guide, you'll learn how to do the following:
 
@@ -682,7 +700,7 @@ VERCEL_BLOB_CALLBACK_URL=https://abc123.ngrok-free.app
 
 ## Next steps
 
-- Learn how to [use the methods](/docs/storage/vercel-blob/using-blob-sdk) available with the `@vercel/blob` package
+- Learn how to [use the methods](/docs/vercel-blob/using-blob-sdk) available with the `@vercel/blob` package
 
 
 ---

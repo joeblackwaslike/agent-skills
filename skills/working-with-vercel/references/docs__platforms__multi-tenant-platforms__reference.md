@@ -11,19 +11,36 @@ prerequisites:
 related:
   - /docs/platforms/platform-elements/blocks/custom-domain
   - /docs/platforms/platform-elements/actions/add-custom-domain
-  - /docs/rest-api/reference/endpoints/domains/add-an-existing-domain-to-the-vercel-platform
-  - /docs/rest-api/reference/endpoints/domains/get-information-for-a-single-domain
-  - /docs/rest-api/reference/endpoints/domains/get-a-domains-configuration
+  - /docs/rest-api/domains/add-an-existing-domain-to-the-vercel-platform
+  - /docs/rest-api/domains/get-information-for-a-single-domain
+  - /docs/rest-api/domains/get-a-domain-s-configuration
 summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "db77171a0136d54f9fdad5b3b701545f4fe9b4b0d4a311b7b30b8b47a5f99f87"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dbcc036896585aaff7141a1ca9df8501e61fbe4494cb7373f1f8ec564095a162"
 ---
 
 # Multi-tenant Reference
 
 ## Custom blocks
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
+- [Configuring Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.
+- [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+
+Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/reference.graph.md](/docs/platforms/multi-tenant-platforms/reference.graph.md)
+<!-- /docsgraph:related -->
 
 Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/custom-domain) and [Actions](/docs/platforms/platform-elements/actions/add-custom-domain) that speed up your usage of the Vercel API.
 
@@ -31,7 +48,7 @@ Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/custom-d
 
 ### Add domain
 
-Add a domain to your Vercel project programmatically using the [create or transfer domain API](/docs/rest-api/reference/endpoints/domains/add-an-existing-domain-to-the-vercel-platform).
+Add a domain to your Vercel project programmatically using the [create or transfer domain API](/docs/rest-api/domains/add-an-existing-domain-to-the-vercel-platform).
 
 **SDK**:
 
@@ -61,7 +78,7 @@ run();
 
 ### Get domain status
 
-Check domain configuration and verification status using the [check domain API](/docs/rest-api/reference/endpoints/domains/get-information-for-a-single-domain).
+Check domain configuration and verification status using the [check domain API](/docs/rest-api/domains/get-information-for-a-single-domain).
 
 **SDK**:
 
@@ -87,7 +104,7 @@ run();
 
 ### Verify domain
 
-Trigger domain ownership verification using the [domain configuration API](/docs/rest-api/reference/endpoints/domains/get-a-domains-configuration).
+Trigger domain ownership verification using the [domain configuration API](/docs/rest-api/domains/get-a-domain-s-configuration).
 
 **SDK**:
 
@@ -113,7 +130,7 @@ run();
 
 ### Remove domain
 
-Remove a domain from your project using the [remove domain API](/docs/rest-api/reference/endpoints/domains/remove-a-domain-by-name).
+Remove a domain from your project using the [remove domain API](/docs/rest-api/domains/remove-a-domain-by-name).
 
 **SDK**:
 
@@ -139,7 +156,7 @@ run();
 
 ### List domains
 
-Get all domains for a project using the [list domains API](/docs/rest-api/reference/endpoints/domains/list-all-the-domains).
+Get all domains for a project using the [list domains API](/docs/rest-api/domains/list-all-the-domains).
 
 **REST API**:
 

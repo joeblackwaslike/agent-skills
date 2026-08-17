@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/project-configuration
 related:
-  - /docs/attack-mode
+  - /docs/vercel-firewall/attack-mode
   - /docs/cli/deploy
   - /docs/project-configuration/vercel-json
   - /docs/rbac/managing-team-members
@@ -16,18 +16,34 @@ related:
 summary: Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibility, Git Fork Protection, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "0b8e186890efe423b97a7424511d86c0d5a568fa23bc1f8dce1acef6f1938d90"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "bb29d9472ec41aab418f6cc8762c8a844ced95be321c30ddca45ccfe04bf31f6"
 ---
 
 # Security settings
 
 To adjust your project's security settings:
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+
+Full cross-link map for this page: [/docs/project-configuration/security-settings.graph.md](/docs/project-configuration/security-settings.graph.md)
+<!-- /docsgraph:related -->
+
 1. Select your project from your [dashboard](/dashboard)
 2. Open **Settings** in the sidebar and select [**Security**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fsecurity\&title=Go+to+Security+settings)
 
-From here you can enable or disable [Attack Mode](/docs/attack-mode), [Logs and Source Protection](#build-logs-and-source-protection), [Vercel Support Code Visibility](#vercel-support-code-visibility) and [Git Fork Protection](#git-fork-protection).
+From here you can enable or disable [Attack Mode](/docs/vercel-firewall/attack-mode), [Logs and Source Protection](#build-logs-and-source-protection), [Vercel Support Code Visibility](#vercel-support-code-visibility) and [Git Fork Protection](#git-fork-protection).
 
 ## Build logs and source protection
 
@@ -77,7 +93,7 @@ To learn more, see [Secure Backend Access with OIDC Federation](/docs/oidc).
 
 ## Deployment Retention Policy
 
-Deployment Retention Policy allows you to set a limit on how long older deployments are kept for your project. To learn more, see [Deployment Retention Policy](/docs/security/deployment-retention).
+Deployment Retention Policy allows you to set a limit on how long older deployments are kept for your project. To learn more, see [Deployment Retention Policy](/docs/deployment-retention).
 
 This section also provides information on the recently deleted deployments
 

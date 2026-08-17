@@ -14,13 +14,32 @@ related:
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b24d7ee20c353e0ce508360b2a00985ae964b9d4d69cc39e9496b95856cc8823"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ad93836d160f45d9d46fe6b68e9dca042271ff3c40d2bd4f9b2a09237220133d"
 ---
 
 # Authorization Server API
 
 The Authorization Server API exposes a set of endpoints which are used by your application for obtaining, refreshing, revoking, and introspecting tokens, as well querying user info:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Backend for Frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related) — Learn how to use Next.js as a backend framework
+- [Getting Started](https://vercel.com/docs/sign-in-with-vercel/getting-started?from=related) — Learn how to get started with Sign in with Vercel
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
+- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+
+Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md)
+<!-- /docsgraph:related -->
 
 | Endpoint                     | URL                                                 |
 | ---------------------------- | --------------------------------------------------- |

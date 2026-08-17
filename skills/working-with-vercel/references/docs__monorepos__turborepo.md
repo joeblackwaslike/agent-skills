@@ -9,20 +9,41 @@ prerequisites:
   - /docs/monorepos
 related:
   - /docs/monorepos/remote-caching
-  - /docs/getting-started-with-vercel/import
-  - /docs/deployments/configure-a-build
+  - /docs/getting-started-with-vercel
+  - /docs/builds/configure-a-build
   - /docs/project-configuration/project-settings
   - /docs/frameworks/more-frameworks
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9a88085066007aa10c3f9b7e4e883de5d181565b58c2e56d23094eb4b5ed687d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "2888fee0d9bc7d8759d9ac382f26c346519f0507eb790b89f90f65f1438831d8"
 ---
 
 # Deploying Turborepo to Vercel
 
 Turborepo is a high-performance build system for JavaScript and TypeScript codebases with:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [CI Build Caching](https://nextjs.org/docs/app/guides/ci-build-caching?from=related) — Learn how to configure CI to cache Next.js builds
+- [CI Build Caching](https://nextjs.org/docs/pages/guides/ci-build-caching?from=related) — Learn how to configure CI to cache Next.js builds
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching?from=related) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
+- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci?from=related) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
+- [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables?from=related) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
+- [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd?from=related) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \(OIDC\) or a Person
+- [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Production Checklist](https://vercel.com/docs/production-checklist?from=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+
+Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
+<!-- /docsgraph:related -->
 
 - Fast incremental builds
 - Content-aware hashing, meaning only the files you changed will be rebuilt
@@ -82,11 +103,11 @@ Follow the steps below to deploy your Turborepo to Vercel:
 - ### Import your Turborepo to Vercel
   > **💡 Note:** If you haven't already connected your monorepo to Turborepo, you can follow
   > the [quickstart](https://turborepo.com/docs) on the Turborepo docs to do so.
-  [Create a new Project](/new) on the Vercel dashboard and [import](/docs/getting-started-with-vercel/import) your Turborepo project.
+  [Create a new Project](/new) on the Vercel dashboard and [import](/docs/getting-started-with-vercel) your Turborepo project.
 
   ![Image](`/docs-assets/static/docs/concepts/deployments/git/config-project-light.png`)
 
-  Vercel handles all aspects of configuring your monorepo, including setting [build commands](/docs/deployments/configure-a-build#build-command), the [Output Directory](/docs/deployments/configure-a-build#output-directory), the [Root Directory](/docs/deployments/configure-a-build#root-directory), the correct directory for workspaces, and the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step).
+  Vercel handles all aspects of configuring your monorepo, including setting [build commands](/docs/builds/configure-a-build#build-command), the [Output Directory](/docs/builds/configure-a-build#output-directory), the [Root Directory](/docs/builds/configure-a-build#root-directory), the correct directory for workspaces, and the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step).
 
   The table below reflects the values that Vercel will set if you'd like to set them manually in your Dashboard or in the `vercel.json` of your application's directory:
 
@@ -103,13 +124,13 @@ Follow the steps below to deploy your Turborepo to Vercel:
 
 Turborepo is also available globally when you deploy on Vercel.
 
-Thanks to [automatic workspace scoping](https://turborepo.com/blog/turbo-1-8-0#automatic-workspace-scoping) and [globally installed turbo](https://turborepo.com/blog/turbo-1-7-0#global-turbo), your [build command](/docs/deployments/configure-a-build#build-command) can be as straightforward as:
+Thanks to [automatic workspace scoping](https://turborepo.com/blog/turbo-1-8-0#automatic-workspace-scoping) and [globally installed turbo](https://turborepo.com/blog/turbo-1-7-0#global-turbo), your [build command](/docs/builds/configure-a-build#build-command) can be as straightforward as:
 
 ```bash
 turbo build
 ```
 
-The appropriate [filter](https://turborepo.com/docs/core-concepts/monorepos/filtering) will be automatically inferred based on the configured [Root Directory](/docs/deployments/configure-a-build#root-directory).
+The appropriate [filter](https://turborepo.com/docs/core-concepts/monorepos/filtering) will be automatically inferred based on the configured [Root Directory](/docs/builds/configure-a-build#root-directory).
 
 > **💡 Note:** To override this behavior and use a specific version of Turborepo, install the
 > desired version of `turbo` in your project. [Learn
@@ -196,13 +217,13 @@ You do not need to host your project on Vercel to use Vercel Remote Caching. For
   Now try making a change in a file and running `turbo run build` again.
   The build speed will have dramatically improved. This is because Turborepo will only rebuild the changed files.
 
-  To see information about the [Remote Cache usage](/docs/limits/usage#artifacts), go to the **Artifacts** section of the **Usage** section in the sidebar.
+  To see information about the [Remote Cache usage](/docs/pricing/manage-and-optimize-usage#artifacts), go to the **Artifacts** section of the **Usage** section in the sidebar.
 
 ## Troubleshooting
 
 ### Build outputs cannot be found on cache hit
 
-For Vercel to deploy your application, the outputs need to be present for your [Framework Preset](/docs/deployments/configure-a-build#framework-preset) after your application builds. If you're getting an error that the outputs from your build don't exist after a cache hit:
+For Vercel to deploy your application, the outputs need to be present for your [Framework Preset](/docs/builds/configure-a-build#framework-preset) after your application builds. If you're getting an error that the outputs from your build don't exist after a cache hit:
 
 - Confirm that your outputs match [the expected Output Directory for your Framework Preset](/docs/monorepos/turborepo#import-your-turborepo-to-vercel). Run `turbo build` locally and check for the directory where you expect to see the outputs from your build
 - Make sure the application outputs defined in the `outputs` key of your `turbo.json` for your build task are aligned with your Framework Preset. A few examples are below:

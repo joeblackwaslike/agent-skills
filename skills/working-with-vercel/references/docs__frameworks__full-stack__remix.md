@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with Remix."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "d4808043a9f3dbbb64203ecd6da08c685c71bf2d415690e8820af95422e2114c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8a13310072ac74b84c1a372b56f0ec09ca3641586f89e1d308315261e5bea5cd"
 ---
 
 # Remix on Vercel
@@ -56,6 +56,23 @@ import { installGlobals } from '@remix-run/node';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { vercelPreset } from '@vercel/remix/vite';
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Deploy a Remix Site with Vercel](https://vercel.com/kb/guide/deploying-remix-with-vercel?from=related) — Create your Remix app and deploy it with Vercel.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
+- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+
+Full cross-link map for this page: [/docs/frameworks/full-stack/remix.graph.md](/docs/frameworks/full-stack/remix.graph.md)
+<!-- /docsgraph:related -->
 
 installGlobals();
 

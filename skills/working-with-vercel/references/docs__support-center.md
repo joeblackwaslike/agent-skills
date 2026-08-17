@@ -12,13 +12,30 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "1251b1cafb81176134443a9b84e3feee337c11f561c13873b75d3260ffc66fa7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7fe6847a158e743a6c9f82c229cee4347cc94a675b9bf9d35722db1e3c36198b"
 ---
 
 # Support Center
 
 > **🔒 Permissions Required**: meta.title
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support?from=related) — Information on how to get help from Vercel Support through the available channels.
+- [How long does it take to get a response from Vercel Support?](https://vercel.com/kb/guide/vercel-support-queue-time?from=related) — Information on how long it might take Vercel Support to respond to your request.
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+
+Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md)
+<!-- /docsgraph:related -->
 
 The Vercel Support Center provides a secure and streamlined way for you to submit support cases. The Support Center allows you to create and view all cases, their statuses, and any messages from the Vercel Support team. All cases are securely stored to safeguard your data.
 

@@ -17,8 +17,8 @@ related:
 summary: Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/hermes.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "8b778c2e7f60a460370c5e7243dd42d683cf23e637ce1b335463f4ff396b62a1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5144d8a110ed60ff22ad721a08ac52f81b5d0570c7d14dd33a02d651060bc2d1"
 ---
 
 # Hermes
@@ -27,6 +27,23 @@ sha256: "8b778c2e7f60a460370c5e7243dd42d683cf23e637ce1b335463f4ff396b62a1"
 terminal coding agent. Its Vercel Sandbox terminal backend runs every command
 the agent executes inside an isolated [Vercel Sandbox](/docs/sandbox) microVM
 instead of on your machine.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
+- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue?from=related) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Herdr](https://vercel.com/docs/sandbox/ecosystem/herdr?from=related) — Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locall
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
+
+Full cross-link map for this page: [/docs/sandbox/ecosystem/hermes.graph.md](/docs/sandbox/ecosystem/hermes.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** The Sandbox terminal backend and the model provider are independent. Routing
 > model requests through [Vercel AI

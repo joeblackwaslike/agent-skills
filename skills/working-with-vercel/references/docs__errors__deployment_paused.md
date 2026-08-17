@@ -14,8 +14,8 @@ related:
 summary: The deployment was paused. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_paused.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "8eb13530624b2f2194f2645a53daa82cd4b60e376e7cd3333908e51909fb67e1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "226f78a3fa54dd6a38e24246ad529b51cdac1f831b23df90bf5ed32272dfc236"
 ---
 
 # DEPLOYMENT_PAUSED
@@ -36,7 +36,6 @@ To troubleshoot this error, follow these steps:
 4. **Review email notifications**: If your account or deployment has been paused, Vercel will email you to share more details about the pause and outline next steps. Review the email for additional information about the pause and any necessary actions to resolve the issue
 5. **Check for terms of service violations**: If the pause is due to a breach of the [terms of service](/legal/terms) or [fair use guidelines](/docs/limits/fair-use-guidelines), review the specific usage limits and policies in the Vercel dashboard to understand the reasons for the pause
 6. **Check for platform outages:** Sometimes, platform-wide outages or issues can cause deployments to be blocked. Check the [status page](https://www.vercel-status.com/) for any ongoing incidents
-7. **Contact support:** If you've verified the above and are still experiencing the issue, [contact support](/help#issues) for further assistance
 
 
 ---

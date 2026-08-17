@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/zero-data-retention.md"
-fetched_at: "2026-07-27T07:31:29.456Z"
-sha256: "987003e69d73fb0de7161e222a7d660d42d839b9aaba073dea2074e6d20f127b"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "218ed0e3c97a0f8f6f17679d701f1d1e77d844b65ebd54aef0e1f7eb929aaf95"
 ---
 
 > ## Documentation Index
@@ -37,7 +37,7 @@ ZDR covers Claude Code inference on Claude for Enterprise.
 
 ### Route Claude Code traffic to your ZDR organization
 
-ZDR applies to requests that authenticate into a ZDR-enabled organization. If a developer signs in to Claude Code with a personal account or with an API key from a different organization, those sessions are not covered. To restrict login to your ZDR organization, deploy the `forceLoginMethod` and `forceLoginOrgUUID` managed settings; see [Restrict login to your organization](/docs/en/authentication#restrict-login-to-your-organization).
+ZDR applies to requests that authenticate into a ZDR-enabled organization. If a developer signs in to Claude Code with a personal account or with an API key from a different organization, those sessions are not covered. To require that developers' claude.ai logins belong to your ZDR organization, deploy the `forceLoginMethod` and `forceLoginOrgUUID` managed settings; see [Restrict login to your organization](/docs/en/authentication#restrict-login-to-your-organization), which also explains how these keys treat Claude Console logins.
 
 ### What ZDR covers
 

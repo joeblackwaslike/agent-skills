@@ -10,20 +10,36 @@ prerequisites:
   - /docs/integrations
 related:
   - /docs/integrations/create-integration
-  - /docs/rest-api/vercel-api-integrations
+  - /docs/integrations/create-integration/integration-image-guidelines
+  - /docs/integrations/create-integration/vercel-api-integrations
   - /docs/security/shared-responsibility
   - /docs/integrations/install-an-integration/manage-integrations-reference
-  - /docs/webhooks/webhooks-api
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ae5d41ed7869ed4c03c59f1b5203d6d84368cd588a5e9c86c771496a5ad29b2e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6517cb1da733dfabee7f1cccde25c5a2bda48027e1b460e878d03722705d65b4"
 ---
 
 # Requirements for listing an Integration
 
 Defining the content specs helps you create the main cover page of your integration. On the marketplace listing, the cover page looks like this.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Marketplace Partner API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related) — Learn about marketplace partner api on Vercel.
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+
+Full cross-link map for this page: [/docs/integrations/create-integration/submit-integration.graph.md](/docs/integrations/create-integration/submit-integration.graph.md)
+<!-- /docsgraph:related -->
 
 ![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/int-overview-new-light.png)
 
@@ -158,7 +174,7 @@ Additional steps to install or configure your integrations. Include environment 
 
 - **Required**: Yes
 
-These are a collection of images displayed on the carousel at the top of your marketplace listing. We require at least 1 image, but you can add up to 5. The images and text must be of high quality.
+These are a collection of images displayed on the carousel at the top of your marketplace listing. We require at least 1 image, but you can add up to 5. The images and text must be of high quality. Follow the [integration image guidelines](/docs/integrations/create-integration/integration-image-guidelines) for layout, content, and design standards.
 
 These gallery images will appear in both light and dark mode. Avoid long text, as it may not be legible on smaller screens.
 
@@ -180,7 +196,7 @@ Your media should adhere to the following dimensions and aspect ratios:
 
 The Redirect URL is an HTTP endpoint that handles the installation process by exchanging a code for an API token, serving a user interface, and managing project connections:
 
-- **Token Exchange**: Exchanges a provided code for a [Vercel REST API access token](/docs/rest-api/vercel-api-integrations#exchange-code-for-access-token)
+- **Token Exchange**: Exchanges a provided code for a [Vercel REST API access token](/docs/integrations/create-integration/vercel-api-integrations#exchange-code-for-access-token)
 - **User Interface**: Displays a responsive UI in a popup window during the installation
 - **Project Provisioning**: Allows users to create new projects or connect existing ones in your system to their Vercel Projects
 - **Completion**: Redirects the user back to Vercel upon successful installation
@@ -259,7 +275,7 @@ See the [Webhooks](/docs/webhooks) documentation to learn more.
 
 - **Required**: No
 
-To allow the developer to configure an installed integration, you can specify a **Configuration URL**. This URL is used for the **Configure** button on each configuration page. Selecting this button will redirect the developer to your specified URL with a `configurationId` query parameter. See [Interacting with Configurations](/docs/rest-api/vercel-api-integrations#interacting-with-configurations) to learn more.
+To allow the developer to configure an installed integration, you can specify a **Configuration URL**. This URL is used for the **Configure** button on each configuration page. Selecting this button will redirect the developer to your specified URL with a `configurationId` query parameter. See [Interacting with Configurations](/docs/integrations/create-integration/vercel-api-integrations#interacting-with-configurations) to learn more.
 
 If you leave the **Configuration URL** field empty, the **Configure** button will default to a **Website** button that links to the website URL you specified on integration settings.
 
@@ -269,7 +285,7 @@ If you leave the **Configuration URL** field empty, the **Configure** button wil
 
 - **Required: If it's a&#x20;**
 
-The URL that points to the provider's integration server that implements the [Marketplace Provider API](/docs/integrations/marketplace-api). To interact with the provider's application, Vercel makes a request to the base URL appended with the path for the specific endpoint.
+The URL that points to the provider's integration server that implements the [Marketplace Provider API](/docs/integrations/create-integration/marketplace-api). To interact with the provider's application, Vercel makes a request to the base URL appended with the path for the specific endpoint.
 
 For example, if the base url is `https://foo.bar.com/vercel-integration-server`, Vercel makes a `POST` request to something like `https://foo.bar.com/vercel-integration-server/v1/installations`.
 
@@ -399,7 +415,7 @@ It's used as the product card footer description in the **Products** section of 
 
 ### Product Metadata Schema
 
-The [metadata schema](/docs/integrations/marketplace-product#metadata-schema) controls the product features such as available regions and CPU size, that you want to allow the Vercel customer to customize in the Vercel integration dashboard. It makes the connection with your [integration server](https://github.com/vercel/example-marketplace-integration) when the customer interacts with these inputs when creating or updating these properties.
+The [metadata schema](/docs/integrations/create-integration/marketplace-product#metadata-schema) controls the product features such as available regions and CPU size, that you want to allow the Vercel customer to customize in the Vercel integration dashboard. It makes the connection with your [integration server](https://github.com/vercel/example-marketplace-integration) when the customer interacts with these inputs when creating or updating these properties.
 
 ### Product Logo
 

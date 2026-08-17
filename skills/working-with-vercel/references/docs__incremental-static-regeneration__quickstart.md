@@ -8,19 +8,40 @@ type: tutorial
 prerequisites:
   - /docs/incremental-static-regeneration
 related:
-  - /docs/build-output-api/v3
+  - /docs/build-output-api
   - /docs/incremental-static-regeneration
   - /docs/incremental-static-regeneration/limits-and-pricing
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "760c23d1805425c14c11edf7a936cc2096aed8fc943c76f73470aaf6f0998b69"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "88b4d3d4829c8ecbd1e437e94b92d41793c2823168379c9170c878bf8d72f7c5"
 ---
 
 # Getting started with ISR
 
 This guide helps you set up Incremental Static Regeneration (ISR) with your Vercel project. With ISR, you can regenerate pages without rebuilding and redeploying your site. When a page with ISR enabled regenerates, Vercel fetches the most recent data and updates the cache. There are two ways to trigger regeneration:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval?from=related) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
+- [ISR](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
+- [ISR](https://nextjs.org/docs/pages/guides/incremental-static-regeneration?from=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
+- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation?from=related) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Partial Prerendering](https://vercel.com/docs/partial-prerendering?from=related) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Vite + Nitro](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+
+Full cross-link map for this page: [/docs/incremental-static-regeneration/quickstart.graph.md](/docs/incremental-static-regeneration/quickstart.graph.md)
+<!-- /docsgraph:related -->
 
 - **Time-based revalidation**: Regeneration that recurs automatically at a set interval
 - **On-demand revalidation**: Regeneration that you trigger explicitly through an API call
@@ -35,7 +56,7 @@ A common pattern is to pre-render popular pages at build time and let the rest g
 ## Prerequisites
 
 - A project deployed on Vercel
-- A supported framework: Next.js, SvelteKit, Nuxt, Astro, Gatsby, or a custom solution using the [Build Output API](/docs/build-output-api/v3)
+- A supported framework: Next.js, SvelteKit, Nuxt, Astro, Gatsby, or a custom solution using the [Build Output API](/docs/build-output-api)
 
 | Framework                  | ISR support                       | On-demand revalidation             |
 | -------------------------- | --------------------------------- | ---------------------------------- |

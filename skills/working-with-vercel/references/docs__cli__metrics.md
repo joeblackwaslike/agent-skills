@@ -12,13 +12,29 @@ related:
 summary: Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "459007dc6e8de4c05d7058d0b8bc168b78d74253abdfecd7c5d10f649f6eabcf"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "730342d647d82dc77c3901bf44a56d6facff827cf1ee99599f41dd252902eb24"
 ---
 
 # vercel metrics
 
 The `vercel metrics` command lets you query metrics from the command line. Querying observability metrics requires [Observability Plus](/docs/observability/observability-plus), with product-specific exceptions listed below.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [vercel usage](https://vercel.com/docs/cli/usage?from=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+
+Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md)
+<!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: Metrics other than Web Analytics and Speed Insights metrics
 

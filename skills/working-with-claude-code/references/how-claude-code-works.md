@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/how-claude-code-works.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "b661f1a67c55e9c6f1332d0f5272c028ba15b2adfefd0bb4b70342a4aa5b082b"
+fetched_at: "2026-08-17T04:41:37.014Z"
+sha256: "3c8310e2f61b2afafb4f87feeeff31837f3694fd25503be2482ce7e4de04f39c"
 ---
 
 > ## Documentation Index
@@ -68,8 +68,6 @@ Each tool use gives Claude new information that informs the next step. This is t
 **Extending the base capabilities:** The built-in tools are the foundation. You can extend what Claude knows with [skills](/docs/en/skills), connect to external services with [MCP](/docs/en/mcp), automate workflows with [hooks](/docs/en/hooks), and offload tasks to [subagents](/docs/en/sub-agents). These extensions form a layer on top of the core agentic loop. See [Extend Claude Code](/docs/en/features-overview) for guidance on choosing the right extension for your needs.
 
 ## What Claude can access
-
-This guide focuses on the terminal. Claude Code also runs in [VS Code](/docs/en/vs-code), [JetBrains IDEs](/docs/en/jetbrains), and other environments.
 
 When you run `claude` in a directory, Claude Code gains access to:
 

@@ -9,18 +9,36 @@ prerequisites:
   - /docs/routing/redirects
   - /docs/routing
 related:
-  - /docs/redirects/bulk-redirects/getting-started
+  - /docs/routing/redirects/bulk-redirects/getting-started
   - /docs/project-configuration/vercel-json
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fe615380629e12071d335c2a296d2b4d1227098ee2f4c1dd76f2ddff6cecd8ab"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1a9f48d72819e845789defcb45621304484d2f73bbc28aeba8c71de364cf5918"
 ---
 
 # Bulk Redirects
 
 > **🔒 Permissions Required**: Bulk Redirects
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Manage Redirects at Scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
+- [Delete project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/delete-project-level-redirects?from=related)
+- [Gets project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/gets-project-level-redirects?from=related)
+- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+
+Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects.graph.md](/docs/routing/redirects/bulk-redirects.graph.md)
+<!-- /docsgraph:related -->
 
 With bulk redirects, you can handle thousands of simple path-to-path or path-to-URL redirects efficiently. You can configure bulk redirects at deployment time through files in your repository, or at runtime through the dashboard, API, or CLI. They are framework agnostic and Vercel processes them before any other route specified in your deployment.
 
@@ -37,7 +55,7 @@ Runtime changes are saved to a staging version first and only take effect once y
 | Deployment time | `bulkRedirectsPath` in `vercel.json` | On deploy                         | Redirects managed in source control |
 | Runtime         | Dashboard, API, or CLI               | After publishing/promoting        | Updates that should not redeploy    |
 
-Visit [Getting Started](/docs/redirects/bulk-redirects/getting-started) to create bulk redirects [with deployments](/docs/redirects/bulk-redirects/getting-started#deployment-time-redirects) or in the [dashboard, API, or CLI](/docs/redirects/bulk-redirects/getting-started#project-redirects).
+Visit [Getting Started](/docs/routing/redirects/bulk-redirects/getting-started) to create bulk redirects [with deployments](/docs/routing/redirects/bulk-redirects/getting-started#deployment-time-redirects) or in the [dashboard, API, or CLI](/docs/routing/redirects/bulk-redirects/getting-started#project-redirects).
 
 ## Available fields
 

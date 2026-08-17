@@ -16,13 +16,33 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "25ccb5df739a5d6aec7e651f13c87856cffaf23a3ea01eba13826b3cddef57d1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f5f15623ddd06d855dfd816eb7bb3d55ceb67d434e81700819f6f26397bb31ce"
 ---
 
 # Limits
 
 ## Request a limit increase
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+
+Full cross-link map for this page: [/docs/limits.graph.md](/docs/limits.graph.md)
+<!-- /docsgraph:related -->
 
 You can raise many of the limits on this page. The process depends on your plan:
 
@@ -110,13 +130,13 @@ See the [Pro trial limitations](/docs/plans/pro-plan/trials#trial-limitations) s
 The limit of "Routes created per Deployment" encapsulates several options that can be configured on Vercel:
 
 - If you are using a `vercel.json` configuration file, each [rewrite](/docs/project-configuration/vercel-json#rewrites), [redirect](/docs/project-configuration/vercel-json#redirects), or [header](/docs/project-configuration/vercel-json#headers) is counted as a Route
-- If you are using the [Build Output API](/docs/build-output-api/v3), you might configure [routes](/docs/build-output-api/v3/configuration#routes) for your deployments
+- If you are using the [Build Output API](/docs/build-output-api), you might configure [routes](/docs/build-output-api/configuration#routes) for your deployments
 
-Note that most frameworks will create Routes automatically for you. For example, Next.js will create a set of Routes corresponding to your use of [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes), [redirects](https://nextjs.org/docs/app/building-your-application/routing/redirecting), [rewrites](https://nextjs.org/docs/api-reference/next.config.js/rewrites) and [custom headers](https://nextjs.org/docs/api-reference/next.config.js/headers).
+Note that most frameworks will create Routes automatically for you. For example, Next.js will create a set of Routes corresponding to your use of [dynamic routes](https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes), [redirects](https://nextjs.org/docs/app/guides/redirecting), [rewrites](https://nextjs.org/docs/app/api-reference/config/next-config-js/rewrites) and [custom headers](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers).
 
 ## Build time per deployment
 
-The maximum duration of the [Build Step](/docs/deployments/configure-a-build) is 45 minutes.
+The maximum duration of the [Build Step](/docs/builds/configure-a-build) is 45 minutes.
 When the limit is reached, the Build Step will be interrupted and the Deployment will fail.
 
 ### Build container resources
@@ -135,7 +155,7 @@ The maximum size of the Build's cache is 1 GB. It is retained for one month and 
 
 ## Monitoring
 
-Check out [the limits and pricing section](/docs/observability/monitoring/limits-and-pricing) for more details about the limits of the [Monitoring](/docs/observability/monitoring) feature on Vercel.
+Check out [the limits and pricing section](/docs/query/monitoring/limits-and-pricing) for more details about the limits of the [Monitoring](/docs/query/monitoring) feature on Vercel.
 
 ## Logs
 
@@ -147,7 +167,7 @@ There are two types of logs: **build logs** and **runtime logs**. Both have diff
 
 ## Environment variables
 
-The maximum number of [Environment Variables](/docs/environment-variables) per environment per [Project](/docs/projects/overview)
+The maximum number of [Environment Variables](/docs/environment-variables) per environment per [Project](/docs/projects)
 is `1000`. For example, you cannot have more than `1000` Production Environment Variables.
 
 The total size of your Environment Variables, names and values, is limited to **64KB** for projects using Node.js, Python, Ruby, Go, Java, and .NET runtimes. This limit is the total allowed for each deployment, and is also the maximum size of any single Environment Variable. For more information, see the [Environment Variables](/docs/environment-variables#environment-variable-size) documentation.
@@ -164,7 +184,7 @@ If you are using [System Environment Variables](/docs/environment-variables/syst
 
 ## Files
 
-The maximum number of files that can be uploaded when creating a CLI [Deployment](/docs/deployments) is `15,000` for source files. Deployments that contain more files than the limit will fail at the [build step](/docs/deployments/configure-a-build).
+The maximum number of files that can be uploaded when creating a CLI [Deployment](/docs/deployments) is `15,000` for source files. Deployments that contain more files than the limit will fail at the [build step](/docs/builds/configure-a-build).
 
 Although there is no upper limit for output files created during a build, you can expect longer build times as a result of having many thousands of output files (100,000 or more, for example). If the build time exceeds 45 minutes then the build will fail.
 

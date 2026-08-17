@@ -12,13 +12,28 @@ related:
 summary: See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the underlying data.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/leaderboards.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "06f0f9f60206facd7cb07c22c6e3d9e0131695004bb4d55680507075089e70cf"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1a79d143c93babb9c327a9ce8aca23807522e407256974a75f8b2fefd2dc7f70"
 ---
 
 # Leaderboards
 
 The [AI Gateway leaderboards](/ai-gateway/leaderboards) show which models, labs, apps, and providers developers use most on AI Gateway. Use them to see what's gaining traction, compare options before you build, and track how usage shifts over time.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [Uptime and Status](https://vercel.com/docs/ai-gateway/models-and-providers/uptime?from=related) — See how uptime and status track AI Gateway provider health and end-to-end request success.
+- [Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics?from=related) — Understand how AI Gateway measures throughput and latency per provider.
+- [Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability?from=related) — Learn how to monitor and debug your AI Gateway requests.
+
+Full cross-link map for this page: [/docs/ai-gateway/leaderboards.graph.md](/docs/ai-gateway/leaderboards.graph.md)
+<!-- /docsgraph:related -->
 
 ## What's ranked
 

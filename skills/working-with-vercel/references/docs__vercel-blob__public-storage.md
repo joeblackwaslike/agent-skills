@@ -11,18 +11,35 @@ related:
   - /docs/vercel-blob
   - /docs/cli/blob
   - /docs/vercel-blob/using-blob-sdk
-  - /docs/storage/vercel-blob/server-upload
-  - /docs/storage/vercel-blob/client-upload
+  - /docs/vercel-blob/server-upload
+  - /docs/vercel-blob/client-upload
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ae2f3bbdc14d4c737b488722151e00e33914c6154eed559365c0e7c96e8233d6"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "57a34b12f5fa470f32b1f24cfc3dc423fa87611e62fdcb42333c0fca0b95cc6a"
 ---
 
 # Public Storage
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related) — Learn how to use private Vercel Blob storage to serve files with authentication
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related)
+
+Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md)
+<!-- /docsgraph:related -->
 
 Public Blob stores make files accessible to anyone with the URL. Use public storage for images, videos, large media, and public assets where authentication isn't needed.
 
@@ -59,7 +76,7 @@ export async function POST(request: Request) {
 }
 ```
 
-See the [server uploads](/docs/storage/vercel-blob/server-upload) and [client uploads](/docs/storage/vercel-blob/client-upload) guides for detailed instructions on uploading files.
+See the [server uploads](/docs/vercel-blob/server-upload) and [client uploads](/docs/vercel-blob/client-upload) guides for detailed instructions on uploading files.
 
 ## Delivering public blobs
 
@@ -123,7 +140,7 @@ This behavior is controlled by the `content-disposition` header. Vercel Blob set
 
 When you request a public blob URL, the content is cached in two places:
 
-1. Vercel's [CDN cache](/docs/cdn-cache)
+1. Vercel's [CDN cache](/docs/caching/cdn-cache)
 2. Your browser's cache
 
 Both caches store blobs for up to 1 month by default to ensure optimal performance when serving content. While both systems aim to respect this duration, blobs may occasionally expire earlier.
@@ -132,7 +149,7 @@ Vercel will cache blobs up to [512 MB](/docs/vercel-blob/usage-and-pricing#size-
 
 ### Configuring cache duration
 
-You can customize the caching duration using the [`cacheControlMaxAge`](/docs/vercel-blob/using-blob-sdk#put) option in the [`put()`](/docs/storage/vercel-blob/using-blob-sdk#put) and [`handleUpload`](/docs/storage/vercel-blob/using-blob-sdk#handleupload) methods.
+You can customize the caching duration using the [`cacheControlMaxAge`](/docs/vercel-blob/using-blob-sdk#put) option in the [`put()`](/docs/vercel-blob/using-blob-sdk#put) and [`handleUpload`](/docs/vercel-blob/using-blob-sdk#handleupload) methods.
 
 The minimum configurable value is 60 seconds (1 minute). This represents the maximum time needed for our cache to update content behind a blob URL. For applications requiring faster updates, consider using a [Vercel function](/docs/functions) instead.
 
@@ -206,7 +223,7 @@ If your blob content has already been indexed by search engines:
 
 When a public blob is downloaded, you pay for:
 
-1. **Browser fetches the blob**: [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) on cache miss
+1. **Browser fetches the blob**: [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) on cache miss
 
 Blob Data Transfer is 3x more cost-efficient than [Fast Data Transfer](/docs/cdn) on average, making public storage ideal for large media files like images, videos, and documents.
 

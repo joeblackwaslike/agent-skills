@@ -17,13 +17,30 @@ related:
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "4b7860116587c9b83d9a4a78d3c2e2ed39f07e93faa65a064d4177ed45df2d21"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ac3d41ac51e22d17a10f1f286e33793a208b2f266e456ce71165b8ed0589cd4b"
 ---
 
 # Managing flags in the dashboard
 
 The **Flags** section in your Vercel dashboard sidebar is the central place to manage feature flags. You can configure targeting rules, weighted splits, progressive rollouts, and coordinate releases for Boolean, String, Number, and JSON flags directly within Vercel.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related) — View and override your application's feature flags from the Vercel Toolbar
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [Web Analytics](https://vercel.com/docs/flags/observability/web-analytics?from=related) — Learn how to tag your page views and custom events with feature flags
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard.graph.md](/docs/flags/vercel-flags/dashboard.graph.md)
+<!-- /docsgraph:related -->
 
 ![Image](`/docs-assets/static/docs/flags/flags-tab-light.png`)
 

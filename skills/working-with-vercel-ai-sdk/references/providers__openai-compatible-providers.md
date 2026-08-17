@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "a398c8c8432496ee6157822e7cdc8a7ec6db53e7b33aff7a78a0c0406298f289"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "78d7cc4b120aef10a8c2fe7a67fbc50469c52feb689c9bb8896c74c848fdf77a"
 ---
 
 # OpenAI Compatible Providers
@@ -616,7 +616,6 @@ This allows you to access provider-specific information while maintaining a cons
 - [AI SDK Providers](/providers/ai-sdk-providers)
   - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
   - [xAI Grok](/providers/ai-sdk-providers/xai)
-  - [Vercel](/providers/ai-sdk-providers/vercel)
   - [OpenAI](/providers/ai-sdk-providers/openai)
   - [Azure OpenAI](/providers/ai-sdk-providers/azure)
   - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -626,6 +625,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Groq](/providers/ai-sdk-providers/groq)
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+  - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -663,6 +663,9 @@ This allows you to access provider-specific information while maintaining a cons
   - [Pi](/providers/ai-sdk-harnesses/pi)
   - [OpenCode](/providers/ai-sdk-harnesses/opencode)
   - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+  - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+  - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+  - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -748,6 +751,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+  - [QVAC](/providers/community-providers/qvac)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

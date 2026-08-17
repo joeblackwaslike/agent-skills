@@ -13,13 +13,29 @@ related:
 summary: Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "37715456501db9293db7e207ce7178bc4633b3588a566bb2963c7065a78214cc"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "019269e4085e8d96e5218ae8abadb0b7886ae4eceba541a6f43d9baad846e947"
 ---
 
 # Multi-Tenant Platform Concepts
 
 ## Tenants
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
+- [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing?from=related) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
+- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+
+Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/concepts.graph.md](/docs/platforms/multi-tenant-platforms/concepts.graph.md)
+<!-- /docsgraph:related -->
 
 ### What is a tenant
 
@@ -153,7 +169,7 @@ export async function proxy(request: NextRequest) {
 **Global Config**: Store tenant configuration at the edge for sub-10ms lookups
 
 ```ts filename="edge-config.ts"
-import { get } from '@vercel/edge-config';
+import { get } from '@vercel/global-config';
 
 const tenant = await get(`tenant_${hostname}`);
 ```

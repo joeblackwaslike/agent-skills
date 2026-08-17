@@ -10,20 +10,35 @@ prerequisites:
   - /docs/plans
 related:
   - /docs/pricing
-  - /docs/accounts/team-members-and-roles/access-roles
-  - /docs/security/ddos-mitigation
-  - /docs/attack-mode
+  - /docs/rbac/access-roles
+  - /docs/vercel-firewall/ddos-mitigation
+  - /docs/vercel-firewall/attack-mode
   - /docs/notifications
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "0ab92bec2b550b479812f061c7adb076726f016b153fd7431213cb1cb3c84f5c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "622ea1ca659661dcd69c4ac503dc2a0e35f6cdce604bd2b5571922a1e2a90f88"
 ---
 
 # Billing FAQ for Pro Plan
 
 The Vercel Pro plan is designed for professional developers, freelancers, and businesses who need enhanced features and team collaboration. This page covers frequently asked questions around payments, invoices, and billing on the **Pro** plan.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Billing FAQ](https://vercel.com/docs/plans/enterprise/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Pro Plan Trial](https://vercel.com/docs/plans/pro-plan/trials?from=related) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Billing and Refunds](https://vercel.com/docs/integrations/create-integration/billing?from=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+
+Full cross-link map for this page: [/docs/plans/pro-plan/billing.graph.md](/docs/plans/pro-plan/billing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Payments
 
@@ -121,7 +136,7 @@ No. Vercel is a US-based entity and does not have a VAT ID. If applicable, custo
 
 ### Can invoices be sent to my email?
 
-Yes. By default, invoices are sent to the email address of the first [owner](/docs/accounts/team-members-and-roles/access-roles#owner-role) of the team. To set a custom destination email address for your invoices, follow these steps:
+Yes. By default, invoices are sent to the email address of the first [owner](/docs/rbac/access-roles#owner-role) of the team. To set a custom destination email address for your invoices, follow these steps:
 
 1. From your [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), open **Settings** in the sidebar
 2. Select [**Billing**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Go+to+Billing) from the sidebar
@@ -154,11 +169,11 @@ Please [open a support ticket](/help#issues) and provide the following informati
 
 ### Do I get billed for DDoS?
 
-[Vercel automatically mitigates against L3, L4, and L7 DDoS attacks](/docs/security/ddos-mitigation) at the platform level for all plans. Vercel does not charge customers for traffic that gets blocked by the Firewall.
+[Vercel automatically mitigates against L3, L4, and L7 DDoS attacks](/docs/vercel-firewall/ddos-mitigation) at the platform level for all plans. Vercel does not charge customers for traffic that gets blocked by the Firewall.
 
 Usage will be incurred for requests that are successfully served prior to us automatically mitigating the event. Usage will also be incurred for requests that are not recognized as a DDoS event, which may include bot and crawler traffic.
 
-For an additional layer of security, we recommend that you enable [Attack Mode](/docs/attack-mode) when you are under attack, which is available for free on all plans. While some malicious traffic is automatically challenged, enabling Attack Mode will challenge all traffic, including legitimate traffic to ensure that only real users can access your site.
+For an additional layer of security, we recommend that you enable [Attack Mode](/docs/vercel-firewall/attack-mode) when you are under attack, which is available for free on all plans. While some malicious traffic is automatically challenged, enabling Attack Mode will challenge all traffic, including legitimate traffic to ensure that only real users can access your site.
 
 You can monitor usage in the [Vercel Dashboard](/dashboard) under the **Usage** section in the sidebar, although you will [receive notifications](/docs/notifications#on-demand-usage-notifications) when nearing your usage limits.
 

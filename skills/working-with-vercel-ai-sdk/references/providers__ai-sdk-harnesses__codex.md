@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "9837ca157ea4b4bffd222d5f3efc767e2f41cadc20bff6de1aefedff41391116"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "73211fc46011eb609bf6e6005fd038e0c76ea9c991555847f2aca02c91069f06"
 ---
 
 # Codex Harness
@@ -81,22 +81,43 @@ const harness = createCodex({
   model: 'gpt-5.5',
   reasoningEffort: 'high',
   webSearch: true,
+  codexConfig: {
+    model_verbosity: 'low',
+  },
 });
 ```
 
 Settings:
 
-- `auth`: OpenAI, OpenAI-compatible, or AI Gateway authentication settings.
+- `auth`: authentication mode: `auto`, `direct`, or `ai-gateway`.
+- `codexConfig`: additional native Codex configuration. Values pass through as
+  provided, so use the snake_case keys from Codex's `config.toml` reference.
+  The adapter's managed values take precedence over conflicting entries.
+- `mcpServers`: MCP server definitions keyed by server name.
 - `model`: OpenAI model id. If omitted, the adapter uses its pinned default.
 - `reasoningEffort`: `low`, `medium`, or `high`.
 - `webSearch`: allow live web search.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `mintBridgeToken`: synchronous function that receives the sandbox id and
+  returns the bridge authentication token. By default, the adapter generates a
+  random 32-byte token. Custom implementations must return a suitably secret
+  token.
 
 ## Authentication
 
-By default, authentication is resolved from the host environment and forwarded
-to the sandbox bridge. The adapter checks for AI Gateway and OpenAI credentials.
+The `auth` setting selects how credentials are resolved from the host
+environment:
+
+- `auto` (default): use AI Gateway credentials when available, then fall back
+  to direct OpenAI credentials.
+- `direct`: use OpenAI credentials.
+- `ai-gateway`: use AI Gateway credentials.
+
+When the sandbox supports additive request transformations, the bridge receives
+placeholders and the adapter injects credentials into matching outbound
+requests. Sandboxes without that capability retain direct credential
+forwarding.
 
 Supported environment variables:
 
@@ -109,19 +130,14 @@ Supported environment variables:
 - `OPENAI_ORGANIZATION`
 - `OPENAI_PROJECT`
 
-You can also pass explicit auth settings:
+Select a specific authentication mode when you do not want automatic detection:
 
 ```ts
-const harness = createCodex({
-  auth: {
-    openai: {
-      apiKey: process.env.OPENAI_API_KEY,
-    },
-  },
-});
+const directHarness = createCodex({ auth: 'direct' });
+const gatewayHarness = createCodex({ auth: 'ai-gateway' });
 ```
 
-For OpenAI-compatible endpoints, use `auth.openaiCompatible`.
+For OpenAI-compatible endpoints, select `direct` and set `OPENAI_BASE_URL`.
 
 ## Sandbox
 
@@ -172,6 +188,9 @@ Codex built-ins such as `bash` or `webSearch` will throw.
 - [Pi](/providers/ai-sdk-harnesses/pi)
 - [OpenCode](/providers/ai-sdk-harnesses/opencode)
 - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+- [Cline](/providers/ai-sdk-harnesses/cline)
 
 
 [Full Sitemap](/sitemap.md)

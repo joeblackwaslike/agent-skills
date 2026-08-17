@@ -16,13 +16,29 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "7b8b8345063935f7ccd73eca3dfd2d8ad3cb778ae9703b8e4b063d6cd015fa23"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "2709699bf0b9da9dc1b463953f1221e60dd76f8a144647cfb2933e92f215b808"
 ---
 
 # Pricing for Web Analytics
 
 ## Pricing
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related) — Learn about using Observability Plus and its limits.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+
+Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel prices Web Analytics by the number of [collected events](#what-is-an-event-in-vercel-web-analytics) across all projects in your team.
 After you enable Vercel Web Analytics, your plan determines which features you can use.
@@ -78,7 +94,7 @@ In this scenario, you have two options to move forward:
 
 You can sign up for Pro and start a trial using the button below.
 
-If you're expecting large number of page views, make sure to deploy your project to a Vercel [Team](/docs/accounts/create-a-team) on the [Pro](/docs/plans/pro-plan) plan.
+If you're expecting large number of page views, make sure to deploy your project to a Vercel [Team](/docs/accounts#creating-a-team) on the [Pro](/docs/plans/pro-plan) plan.
 
 ### Pro
 

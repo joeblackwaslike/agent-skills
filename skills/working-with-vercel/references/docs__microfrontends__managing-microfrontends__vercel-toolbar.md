@@ -16,13 +16,28 @@ related:
 summary: Learn about using vercel toolbar on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "59d417f68423c51847a7998c6dc7cf526841500e6de4c900218c4b9173f8d063"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c1850178e168acdba4a61056cbcf5b1c764fe3f3c79b273927c06ace3bf46761"
 ---
 
 # Managing with the Vercel Toolbar
 
 Using the [Vercel Toolbar](/docs/vercel-toolbar), you can visualize and independently test your microfrontends so you can develop microfrontends in isolation. The Microfrontends panel of the toolbar shows all microfrontends that you have [configured in `microfrontends.json`](/docs/microfrontends/quickstart#define-microfrontends.json).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Add to Localhost](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related) — Learn how to use the Vercel Toolbar in your local environment.
+- [Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
+
+Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md](/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md)
+<!-- /docsgraph:related -->
 
 You can access it in all microfrontends that you have [enabled the toolbar for](/docs/vercel-toolbar/in-production-and-localhost).
 

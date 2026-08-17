@@ -12,13 +12,28 @@ related:
 summary: Learn how the consent page works when users authorize your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/consent-page.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "76c6ad0730d6f41a3792eb3d1b2fb4523a3e4ed541bbe2e79e4ea950725c370c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "a67087ee00cf3b8c980b3d590baa77af3b59654f5f56622fe9fb6c914f9bbdd1"
 ---
 
 # Consent Page
 
 When users sign in to your application for the first time, Vercel shows them a consent page that displays:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Troubleshooting](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related) — Learn how to troubleshoot common errors with Sign in with Vercel
+- [Scopes & Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Legal](https://vercel.com/docs/connect/legal?from=related) — Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, an
+- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
+
+Full cross-link map for this page: [/docs/sign-in-with-vercel/consent-page.graph.md](/docs/sign-in-with-vercel/consent-page.graph.md)
+<!-- /docsgraph:related -->
 
 - Your app's name and logo
 - The permissions your app requests

@@ -12,17 +12,38 @@ related:
   - /docs/incremental-static-regeneration
   - /docs/headers
   - /docs/caching/cdn-cache/purge
-  - /docs/runtime-cache
+  - /docs/caching/runtime-cache
 summary: "Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "68995085f9e62fa79748a36e440a856dc9988c483a1cfe71882ba65cbe1c627d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ca471d12ef7024db241cd6444efbcca295035cab02858db6333e58190d432d02"
 ---
 
 # Vercel CDN Cache
 
 Vercel's CDN caches your content (including pages, API responses, and static assets) in data centers around the world, closer to your users than your origin server. When someone requests cached content, Vercel serves it from the nearest [region](/docs/regions), cutting latency, reducing load on your origin, and making your site feel faster everywhere.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related) — Learn how to set headers to cache your function's responses.
+- [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
+- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
+- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+
+Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md)
+<!-- /docsgraph:related -->
 
 CDN caching is available for all deployments and domains on your account, regardless of the [pricing plan](https://vercel.com/pricing).
 
@@ -33,7 +54,7 @@ There are two ways to cache content:
 
 To learn about cache keys, manually purging the cache, and the differences between invalidate and delete methods, see [Purging Vercel CDN cache](/docs/caching/cdn-cache/purge)
 
-> **💡 Note:** See [Runtime cache](/docs/runtime-cache) for caching data within your
+> **💡 Note:** See [Runtime cache](/docs/caching/runtime-cache) for caching data within your
 > functions during execution and [Remote cache](/docs/monorepos/remote-caching)
 > for caching build artifacts.
 
@@ -48,7 +69,7 @@ CDN cache is best when you want to cache complete HTTP responses (entire pages, 
 
 **CDN Cache isn't the right fit when**:
 
-- You need user-specific content without the `Vary` header (consider [Runtime Cache](/docs/runtime-cache))
+- You need user-specific content without the `Vary` header (consider [Runtime Cache](/docs/caching/runtime-cache))
 - Responses include sensitive user data
 - Content changes on every request to the same url
 
@@ -187,7 +208,7 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-See [the Next docs](https://nextjs.org/docs/app/api-reference/next-config-js) to learn more about `next.config.js`.
+See [the Next docs](https://nextjs.org/docs/app/api-reference/config/next-config-js) to learn more about `next.config.js`.
 
 ### Static files caching
 
@@ -201,7 +222,7 @@ Static files are **automatically cached on Vercel's global network** for the lif
 - `max-age=N, public`
 - `max-age=N, immutable`
 
-Where `N` is the number of seconds the response should be cached. The response must also meet the [caching criteria](/docs/cdn-cache#how-to-cache-responses).
+Where `N` is the number of seconds the response should be cached. The response must also meet the [caching criteria](/docs/caching/cdn-cache#how-to-cache-responses).
 
 ## Cache control options
 
@@ -223,7 +244,7 @@ By default, the headers returned to the browser are as follows:
 
 `Vercel-CDN-Cache-Control` headers are not returned to the browser or forwarded to other CDNs.
 
-To learn how these headers work in detail, see [our dedicated headers docs](/docs/headers/cache-control-headers#cdn-cache-control-header).
+To learn how these headers work in detail, see [our dedicated headers docs](/docs/caching/cache-control-headers#cdn-cache-control-header).
 
 The following example demonstrates `Cache-Control` headers that instruct:
 

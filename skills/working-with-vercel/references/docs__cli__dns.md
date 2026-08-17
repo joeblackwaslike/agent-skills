@@ -12,13 +12,31 @@ related:
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "6d6297d43654f328a22b5462d467e2e759cf0c4eebb5cca1428deca2b63ea404"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b94ab36f51ad721b8ec827e649ec59b0ee954cba39e3b1bb0c06079266879a85"
 ---
 
 # vercel dns
 
 The `vercel dns` command is used to manage DNS record for domains, providing functionality to list, add, remove, and import records.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [How to Export Your Domain's DNS Records from Vercel](https://vercel.com/kb/guide/export-domain-dns-records-via-api?from=related) — Learn how to utilize our API to export your domain's DNS records from Vercel.
+- [Does using Vercel's Nameserver's lock you in?](https://vercel.com/kb/guide/does-using-vercel-s-nameserver-s-lock-you-in?from=related) — Learn about how using Vercel's Nameservers doesn't lock you to anything.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [List existing DNS records](https://vercel.com/docs/rest-api/dns/list-existing-dns-records?from=related)
+- [vercel certs](https://vercel.com/docs/cli/certs?from=related) — Learn how to manage certificates for your domains using the vercel certs CLI command.
+
+Full cross-link map for this page: [/docs/cli/dns.graph.md](/docs/cli/dns.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** When adding DNS records, please wait up to 24 hours for new records to
 > propagate.

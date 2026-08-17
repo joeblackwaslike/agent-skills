@@ -8,21 +8,43 @@ type: conceptual
 prerequisites:
   - /docs/caching
 related:
-  - /docs/cdn-cache
+  - /docs/caching/cdn-cache
   - /docs/monorepos/remote-caching
   - /docs/regions
   - /docs/functions/functions-api-reference/vercel-functions-package
-  - /docs/runtime-cache/data-cache
+  - /docs/caching/runtime-cache/data-cache
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c62dece368e11caf651486984a11977d65446986c8f3a382cf24e433061a0f5a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fea8c69208bdc0eabcf3f875596728ce99062016dd7f2bd0e151d2b5301db30c"
 ---
 
 # Runtime Cache
 
 > **🔒 Permissions Required**: Runtime Cache
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
+- [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote?from=related) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
+- [use cache](https://nextjs.org/docs/app/api-reference/directives/use-cache?from=related) — Learn how to use the "use cache" directive to cache data in your Next.js application.
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
+- [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife?from=related) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
+- [Purge CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
+- [Python](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related) — Learn about available APIs when working with Vercel Functions in Python.
+- [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [vercel cache](https://vercel.com/docs/cli/cache?from=related) — Learn how to manage cache for your project using the vercel cache CLI command.
+
+Full cross-link map for this page: [/docs/caching/runtime-cache.graph.md](/docs/caching/runtime-cache.graph.md)
+<!-- /docsgraph:related -->
 
 Runtime cache is a regional, ephemeral cache you can use for storing and retrieving data across Vercel Functions, Routing middleware, and build execution within a Vercel region. It lets you cache data close to where your code runs, reduce duplicate work, and control invalidation with TTLs and tags.
 
@@ -32,7 +54,7 @@ Runtime cache is a regional, ephemeral cache you can use for storing and retriev
 - [When to use it](#when-to-use-runtime-cache)
 - Get started with the [framework-specific examples](#using-runtime-cache)
 
-> **💡 Note:** For caching complete HTTP responses (entire pages, API responses) in Vercel regions, see [CDN cache](/docs/cdn-cache). For caching build artifacts, see [Remote cache](/docs/monorepos/remote-caching).
+> **💡 Note:** For caching complete HTTP responses (entire pages, API responses) in Vercel regions, see [CDN cache](/docs/caching/cdn-cache). For caching build artifacts, see [Remote cache](/docs/monorepos/remote-caching).
 
 ## When to use runtime cache
 
@@ -47,7 +69,7 @@ Runtime cache is not a good fit for:
 
 - User-specific data that differs for each request
 - Data that must be fresh on every request
-- Complete HTTP responses (use [CDN cache](/docs/cdn-cache) instead)
+- Complete HTTP responses (use [CDN cache](/docs/caching/cdn-cache) instead)
 
 ## How runtime cache works
 
@@ -107,15 +129,15 @@ With Next.js, you can use runtime cache or data cache in the following ways:
 | Next.js version      | Runtime cache                                                                                                                                         | Data cache                                                                           |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | Next.js 16 and above | [`use cache: remote`](#using-use-cache:-remote) or [fetch with `getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) | [fetch with `force-cache`](#using-fetch-with-force-cache)                            |
-| Next.js 15           | [fetch with `getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache)                                                    | [fetch](/docs/runtime-cache/data-cache) or [`unstable_cache`](#using-unstable_cache) |
-| Next.js 14 and below | [fetch with `getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache)                                                    | [fetch](/docs/runtime-cache/data-cache)                                              |
+| Next.js 15           | [fetch with `getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache)                                                    | [fetch](/docs/caching/runtime-cache/data-cache) or [`unstable_cache`](#using-unstable_cache) |
+| Next.js 14 and below | [fetch with `getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache)                                                    | [fetch](/docs/caching/runtime-cache/data-cache)                                              |
 
 ### Next.js 16 and above
 
 With Next.js 16, you have two options for runtime caching:
 
 - **`use cache: remote`**: A directive that caches entire functions or components with Runtime cache. Requires enabling `cacheComponents` in your config.
-- **`fetch` with `force-cache`**: Caches individual fetch requests without additional configuration with [Data cache](/docs/runtime-cache/data-cache).
+- **`fetch` with `force-cache`**: Caches individual fetch requests without additional configuration with [Data cache](/docs/caching/runtime-cache/data-cache).
 
 #### Using use cache: remote
 
@@ -205,7 +227,7 @@ export default async function Page() {
 
 ### Next.js 15
 
-In Next.js 15, use the `fetch()` API with `cache: 'force-cache'` or `unstable_cache` for runtime caching with [Data cache](/docs/runtime-cache/data-cache).
+In Next.js 15, use the `fetch()` API with `cache: 'force-cache'` or `unstable_cache` for runtime caching with [Data cache](/docs/caching/runtime-cache/data-cache).
 
 #### Using fetch with cache options
 
@@ -311,7 +333,7 @@ export default async function Page() {
 
 ### Next.js 14 and below
 
-If you're using Next.js 14 or below, see [Data Cache](/docs/runtime-cache/data-cache) for the legacy caching approach or use the framework-agnostic [`getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) function.
+If you're using Next.js 14 or below, see [Data Cache](/docs/caching/runtime-cache/data-cache) for the legacy caching approach or use the framework-agnostic [`getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) function.
 
 ### Revalidation
 
@@ -321,7 +343,7 @@ You can control how long data stays cached using the following revalidation opti
 
 This example revalidates the cache every hour:
 
-> **💡 Note:** The Next.js examples are for Next.js 15 and above. For Next.js 14 and below, see [Data Cache](/docs/runtime-cache/data-cache).
+> **💡 Note:** The Next.js examples are for Next.js 15 and above. For Next.js 14 and below, see [Data Cache](/docs/caching/runtime-cache/data-cache).
 
 ```ts filename="pages/api/products.ts" framework=nextjs
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -628,7 +650,7 @@ When you've set up runtime cache with a serverless function and manual CDN cachi
 2. If that region's runtime cache has the data, it returns the data immediately
 3. If not, your function fetches the data from origin and stores it in that region's runtime cache
 4. Your function generates a response using the data
-5. If you configured [CDN cache](/docs/cdn-cache) via `Cache-Control` headers, it will cache the complete response in [Vercel regions](/docs/regions)
+5. If you configured [CDN cache](/docs/caching/cdn-cache) via `Cache-Control` headers, it will cache the complete response in [Vercel regions](/docs/regions)
 
 This example uses runtime cache to fetch and cache product data, and CDN cache to cache the complete API response:
 
@@ -697,7 +719,7 @@ Your plan determines whether your projects share a single runtime cache or wheth
 | Pro        | Each project uses its own cache                |
 | Enterprise | Each project uses its own cache                |
 
-Every plan splits the cache by deployment environment, so `production` and `preview` never share cached data. Runtime cache and [Data cache](/docs/runtime-cache/data-cache) also use separate storage, so they don't compete for the same space.
+Every plan splits the cache by deployment environment, so `production` and `preview` never share cached data. Runtime cache and [Data cache](/docs/caching/runtime-cache/data-cache) also use separate storage, so they don't compete for the same space.
 
 On Hobby, where your projects share a cache, they share its storage limit and its eviction policy. A project that writes a lot of data can evict entries that belong to your other projects.
 

@@ -17,13 +17,33 @@ related:
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "da80dc84e0b3c06d45e26e164b83835bfa547d460e3b0424a934616553cac05e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "919a55558a3c38b98cfa37703df9c370fcdbb002e8292675403dfa579696dfc9"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
 
 Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions written in JavaScript or TypeScript.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Build Image](https://vercel.com/docs/builds/build-image?from=related) — Learn about the container image used for Vercel builds.
+- [Managing Builds](https://vercel.com/docs/builds/managing-builds?from=related) — Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
+
+Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md)
+<!-- /docsgraph:related -->
 
 [Node.js](/docs/functions/runtimes/node-js)-powered functions are suited to computationally intense or large functions and provide benefits like:
 
@@ -139,7 +159,7 @@ For dependencies listed in a `package.json` file at the root of a project, the f
 - If `vlt-lock.json` is present, `vlt install` is executed
 - Otherwise, `npm install` is executed
 
-If you need to select a specific version of a package manager, see [corepack](/docs/deployments/configure-a-build#corepack).
+If you need to select a specific version of a package manager, see [corepack](/docs/builds/configure-a-build#corepack).
 
 ## Using TypeScript with the Node.js runtime
 

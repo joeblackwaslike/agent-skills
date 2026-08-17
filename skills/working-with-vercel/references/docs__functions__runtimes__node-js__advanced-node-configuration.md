@@ -16,13 +16,29 @@ related:
 summary: Learn about advanced configurations for Vercel functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1fb91800b7474e781b4203b6f07e10e43755e4defbeb5782800d610aa423487d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c8cea6a4a267681fb753b539a46888db0c1381360e55068a3192d58afaced2d8"
 ---
 
 # Advanced Node.js Usage
 
 To use Node.js, create a file inside your project's `api` directory. No additional configuration is needed.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related) — Information on how to use private dependencies with a Vercel deployment.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
+- [Go](https://vercel.com/docs/functions/runtimes/go?from=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions?from=related) — Learn about the supported Node.js versions on Vercel.
+- [NestJS](https://vercel.com/docs/frameworks/backend/nestjs?from=related) — Deploy NestJS applications to Vercel with zero configuration.
+
+Full cross-link map for this page: [/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md](/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md)
+<!-- /docsgraph:related -->
 
 **The entry point for `src` must be a glob matching `.js`, `.mjs`, or `.ts` files** that export a default function.
 

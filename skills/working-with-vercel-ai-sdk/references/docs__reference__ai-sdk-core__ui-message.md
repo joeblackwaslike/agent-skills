@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "90c8ec5cbb504b63c80af3f4470e103b46e01d8dbedca8ee0fffa236b60ffed7"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "d3f1d5a0f21d883b17d024801fa201cd78221b8dc7c00667a3487397cedfb28e"
 ---
 
 # `UIMessage`
@@ -103,6 +103,10 @@ A reasoning part of a message.
 ```typescript
 type ReasoningUIPart = {
   type: 'reasoning';
+  /**
+   * The reasoning part ID.
+   */
+  id?: string;
   /**
    * The reasoning text.
    */

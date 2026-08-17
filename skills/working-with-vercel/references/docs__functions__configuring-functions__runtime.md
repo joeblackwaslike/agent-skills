@@ -12,16 +12,32 @@ related:
   - /docs/functions/runtimes
   - /docs/functions/runtimes/go
   - /docs/functions/runtimes/python
+  - /docs/functions/runtimes/python/api-directory
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "3571e102f10623125f4b2cd95efca68b801db26aab1e26746cfad518e2c080ea"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "0cc86e066603145bef7b415b5789842c20e25496897bd36e134584fa915d9e07"
 ---
 
 # Configuring the Runtime for Vercel Functions
 
 The runtime of your function determines the environment in which your function will execute. Vercel supports various runtimes including Node.js, Python, Ruby, and Go. You can also configure [other runtimes](/docs/functions/runtimes#community-runtimes) using the `vercel.json` file. Here's how to set up each:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Ruby](https://vercel.com/docs/functions/runtimes/ruby?from=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
+- [Go](https://vercel.com/docs/functions/runtimes/go?from=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Rust](https://vercel.com/docs/functions/runtimes/rust?from=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Getting Started](https://vercel.com/docs/functions/quickstart?from=related) — Build your first Vercel Function in a few steps.
+
+Full cross-link map for this page: [/docs/functions/configuring-functions/runtime.graph.md](/docs/functions/configuring-functions/runtime.graph.md)
+<!-- /docsgraph:related -->
 
 ## Node.js
 
@@ -123,9 +139,9 @@ def home():
     return {"message": "Hello from Python on Vercel"}
 ```
 
-Vercel also supports file-based Python functions under `/api`. For that model,
-define a `handler` class or an `app` variable in a `.py` file. For more details,
-see [Using the Python Runtime with Vercel Functions](/docs/functions/runtimes/python).
+For existing projects that use file-based Python functions under `/api`, see
+[Python functions in the `/api`
+directory](/docs/functions/runtimes/python/api-directory).
 
 ## Ruby
 

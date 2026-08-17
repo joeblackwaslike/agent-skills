@@ -11,18 +11,38 @@ related:
   - /docs/vercel-blob
   - /docs/global-config
   - /docs/marketplace-storage
-  - /docs/storage/vercel-blob
-  - /docs/storage/vercel-blob/usage-and-pricing
+  - /docs/vercel-blob/usage-and-pricing
+  - /docs/global-config/global-config-limits
 summary: "Store large files and global configuration with Vercel's storage products."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "58bf4c28335a08f78acb66344ee9aa5d7baf92530597ea5e8807d7ad558794d4"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "79e48cbbea11d4405df6d80afe7abd3a20caff1ff98a338203df1a8e78599b55"
 ---
 
 # Vercel Storage overview
 
 Vercel offers a suite of managed, serverless storage products that integrate with your frontend framework.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Manage Vercel Blob Storage](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
+- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related)
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+
+Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
+<!-- /docsgraph:related -->
 
 - [**Vercel Blob**](/docs/vercel-blob): Large file storage
 - [**Vercel Global Config**](/docs/global-config): Global, low-latency data store
@@ -34,7 +54,7 @@ The right storage solution depends on your needs for latency, durability, and co
 
 | Product                           | Reads      | Writes       | Use Case                                    | Limits                                                    | Plans                  |
 | --------------------------------- | ---------- | ------------ | ------------------------------------------- | --------------------------------------------------------- | ---------------------- |
-| [Blob](/docs/storage/vercel-blob) | Fast       | Milliseconds | Large, content-addressable files ("blobs")  | [Learn more](/docs/storage/vercel-blob/usage-and-pricing) | Hobby, Pro             |
+| [Blob](/docs/vercel-blob) | Fast       | Milliseconds | Large, content-addressable files ("blobs")  | [Learn more](/docs/vercel-blob/usage-and-pricing) | Hobby, Pro             |
 | [Global Config](/docs/global-config)  | Ultra-fast | Seconds      | Runtime configuration (e.g., feature flags) | [Learn more](/docs/global-config/global-config-limits)        | Hobby, Pro, Enterprise |
 
 See [best practices](#best-practices) for optimizing your storage usage.
@@ -52,8 +72,8 @@ You should use Vercel Blob if you need to:
 
 ### Explore Vercel Blob
 
-- [Overview](/docs/storage/vercel-blob)
-- [Quickstart](/docs/storage/vercel-blob/server-upload)
+- [Overview](/docs/vercel-blob)
+- [Quickstart](/docs/vercel-blob/server-upload)
 
 ## Global Config
 
@@ -113,11 +133,11 @@ Deploy your databases in [regions](/docs/regions) closest to your Functions. Thi
 
 ### Optimize for high cache hit rates
 
-Vercel's CDN caches content in every region globally. Cache data fetched from your data store on the CDN using [cache headers](/docs/cdn-cache) to get the fastest response times.
+Vercel's CDN caches content in every region globally. Cache data fetched from your data store on the CDN using [cache headers](/docs/caching/cdn-cache) to get the fastest response times.
 
-[Incremental Static Regeneration](/docs/concepts/incremental-static-regeneration/overview) sets up caching headers automatically and stores generated assets globally. This gives you high availability and prevents cache-control misconfiguration.
+[Incremental Static Regeneration](/docs/incremental-static-regeneration) sets up caching headers automatically and stores generated assets globally. This gives you high availability and prevents cache-control misconfiguration.
 
-You can also configure cache-control headers manually with [Vercel Functions](/docs/cdn-cache#using-vercel-functions) to cache responses in every CDN region. Note that Middleware runs before the CDN cache layer and cannot use cache-control headers.
+You can also configure cache-control headers manually with [Vercel Functions](/docs/caching/cdn-cache#using-vercel-functions) to cache responses in every CDN region. Note that Middleware runs before the CDN cache layer and cannot use cache-control headers.
 
 ## Transferring your store
 
@@ -136,13 +156,13 @@ You can transfer [Marketplace](/docs/marketplace-storage) resources between team
 
 ## Explore storage products
 
-**Vercel Blob**: Store images, videos, and other large files. [Learn more →](/docs/storage/vercel-blob)
+**Vercel Blob**: Store images, videos, and other large files. [Learn more →](/docs/vercel-blob)
 
 **Global Config**: Global, low-latency data store for runtime configuration. [Learn more →](/docs/global-config)
 
 **Marketplace Storage**: Postgres, KV, NoSQL, and other databases from Neon, Upstash, and more. [Learn more →](/docs/marketplace-storage)
 
-**Blob quickstart**: Upload your first file to Vercel Blob from a server. [Learn more →](/docs/storage/vercel-blob/server-upload)
+**Blob quickstart**: Upload your first file to Vercel Blob from a server. [Learn more →](/docs/vercel-blob/server-upload)
 
 **Global Config quickstart**: Read your first value from Global Config. [Learn more →](/docs/global-config/get-started)
 

@@ -8,20 +8,37 @@ type: reference
 prerequisites:
   []
 related:
-  - /docs/agents
   - /docs/git/vercel-for-github
   - /docs/deployments/promoting-a-deployment
   - /docs/rolling-releases
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "a11a5cbf293077a067c78cc3ec5ef2f38df1acb9f29282ca5dfb68aa724a4b5e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "67023c59c6df9220ede7bbf1586c961f4e8f7d42986046fd222640c4808c3298"
 ---
 
 # Deployment Checks
 
 Deployment Checks are conditions that must be met before promoting a production build to your production environment.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use GitHub Actions with Vercel?](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel?from=related) — GitHub Actions with Vercel works best when you skip duplicate builds. Learn the 4-command CLI pattern, --prebuilt flag,
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Checks](https://vercel.com/docs/checks?from=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
+- [Checks Reference](https://vercel.com/docs/checks/creating-checks?from=related) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration in order to register an
+- [Git Integrations](https://vercel.com/docs/git?from=related) — Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLa
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+
+Full cross-link map for this page: [/docs/deployment-checks.graph.md](/docs/deployment-checks.graph.md)
+<!-- /docsgraph:related -->
 
 When you add Deployment Checks to a project, Vercel will hold each production deployment until all required checks pass before assigning it to your custom production domains.
 
@@ -38,7 +55,7 @@ By default, Vercel automatically promotes your most recent, successful productio
 2. Vercel creates a production build.
 3. Once the build is ready, release the build to production.
 
-At scale, this can mean the set of code that is tested **before merging** is not the same as the code that would be released to end users. We want to maintain the safety of releases, while allowing developers and [agents](/docs/agents "AI Agents") to continue authoring and merging code at high velocity.
+At scale, this can mean the set of code that is tested **before merging** is not the same as the code that would be released to end users. We want to maintain the safety of releases, while allowing developers and [agents](/kb/guide/how-to-build-ai-agents-with-vercel-and-the-ai-sdk "AI Agents") to continue authoring and merging code at high velocity.
 
 With Deployment Checks, you introduce a new step that ensures the safety of the production deployment before it's released, with the following workflow:
 

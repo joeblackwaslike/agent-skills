@@ -16,13 +16,31 @@ related:
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "cec6723af6204465767b770d0f40edd8895d2ae4234032845eb3ac42d057f501"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "04283b54464c6975b31cf23f6bf4858ad93c8c7c7c309618eb6f4ffd8c60fa06"
 ---
 
 # Flag Evaluation Metrics
 
 Evaluation metrics show how often a feature flag is evaluated and which variants those evaluations resolve to. Use them to verify a rollout behaves as expected, confirm that traffic reaches a new variant, or check whether a flag is still in use before archiving it.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Observability](https://vercel.com/docs/flags/observability?from=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
+- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
+- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/evaluation-metrics.graph.md](/docs/flags/vercel-flags/evaluation-metrics.graph.md)
+<!-- /docsgraph:related -->
 
 ## Where to find evaluation metrics
 

@@ -17,13 +17,28 @@ related:
 summary: Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access the toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "fa5c1c36b3a286234ce9f2765e04a50222dd98e79a71b1b1f83556b4b6d622c2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9e20b79054d6fcd0b675dd2d6f685ca45d0cf58fe51ba6186b6c56f67327647e"
 ---
 
 # Add the Vercel Toolbar to your production environment
 
 As a [team owner](/docs/rbac/access-roles#owner-role) or [member](/docs/rbac/access-roles#member-role), you can enable the toolbar in your production environment for sites that your team(s) own, either [through the dashboard](/docs/vercel-toolbar/managing-toolbar#enable-or-disable-the-toolbar-project-wide) or by [adding the `@vercel/toolbar` package](/docs/vercel-toolbar/in-production-and-localhost/add-to-production#adding-the-toolbar-using-the-@vercel/toolbar-package) to your project.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
+- [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [Add to Localhost](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related) — Learn how to use the Vercel Toolbar in your local environment.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Comments](https://vercel.com/docs/comments?from=related) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
+
+Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md](/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md)
+<!-- /docsgraph:related -->
 
 ## Adding the toolbar using the browser extension
 

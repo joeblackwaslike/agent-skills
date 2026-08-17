@@ -16,13 +16,34 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files of any size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "25f71d6140b8f37a07f443969bc087a4c62c4b294208db53fd9ace9126ca1e90"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "565fc9bbc1086a8484c4cf5f5ff852070e8a3450dfae048336f8d2cb5828fec0"
 ---
 
 # Vercel Blob
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Videos](https://nextjs.org/docs/app/guides/videos?from=related) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Image-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
+- [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
+- [Image Optimization](https://vercel.com/docs/image-optimization?from=related) — Transform and optimize images to improve page load performance.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+
+Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md)
+<!-- /docsgraph:related -->
 
 ## Use cases
 
@@ -60,9 +81,40 @@ const blob = await put('avatar.jpg', imageFile, {
 });
 ```
 
-You can create and manage your Vercel Blob stores from your [account dashboard](/dashboard) or the [Vercel CLI](/docs/cli/blob). You can create blob stores in any of the 20 [regions](/docs/regions#region-list) to optimize performance and meet data residency requirements. You can scope your Vercel Blob stores to your Hobby team or [team](/docs/accounts/create-a-team), and connect them to as many projects as you want.
+You can create and manage your Vercel Blob stores from your [account dashboard](/dashboard) or the [Vercel CLI](/docs/cli/blob). You can create blob stores in any of the 20 [regions](/docs/regions#region-list) to optimize performance and meet data residency requirements. You can scope your Vercel Blob stores to your Hobby team or [team](/docs/accounts#creating-a-team), and [connect them to as many projects as you want](#connecting-a-store-to-your-projects).
 
-To get started, see the [server-side](/docs/storage/vercel-blob/server-upload), or [client-side](/docs/storage/vercel-blob/client-upload) quickstart guides. Or visit the full API reference for the [Vercel Blob SDK](/docs/storage/vercel-blob/using-blob-sdk).
+To get started, see the [server-side](/docs/vercel-blob/server-upload), or [client-side](/docs/vercel-blob/client-upload) quickstart guides. Or visit the full API reference for the [Vercel Blob SDK](/docs/vercel-blob/using-blob-sdk).
+
+## Connecting a store to your projects
+
+To read and write blobs from your code, connect the store to your project:
+
+1. Go to your Blob store's **Projects** tab
+2. Select **Connect to Project**
+3. Choose the project and the environments to connect
+
+One store can serve multiple projects, and one project can use multiple stores.
+
+### OIDC access by default
+
+Connected projects authenticate with OpenID Connect (OIDC) by default. When you connect a store, Vercel adds these environment variables to your project:
+
+| Environment variable      | What it is                                                                                                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `BLOB_STORE_ID`           | The id of your Blob store. The SDK pairs it with the OIDC token to authenticate requests. It's an identifier, not a secret. |
+| `VERCEL_OIDC_TOKEN`       | A short-lived OIDC token that Vercel populates and rotates automatically on every deployment.                            |
+| `BLOB_WEBHOOK_PUBLIC_KEY` | The public key the SDK uses to verify webhook callbacks signed by Vercel Blob. It's a public value, not a secret.        |
+
+The SDK reads these variables automatically. Code running in [Vercel Functions](/docs/functions) and builds works out of the box, and local development works after you run `vercel env pull`. Because OIDC tokens rotate automatically, no long-lived secret can leak from your codebase or environment. Learn more about [how OIDC token federation works](/docs/oidc#how-oidc-token-federation-works).
+
+### When to use a read-write token
+
+`BLOB_READ_WRITE_TOKEN` is a long-lived static token added to your project when you create a store. OIDC takes precedence when its environment variables are present. Use the read-write token only when:
+
+- Your code runs outside Vercel, such as in a CI job or on another host
+- You generate client tokens for [browser uploads](/docs/vercel-blob/client-upload) with `handleUpload`
+
+See [Authentication](/docs/vercel-blob/using-blob-sdk#authentication) for the full credential resolution order.
 
 ## Using Vercel Blob in your workflow
 
@@ -74,7 +126,7 @@ If you'd like to know whether or not Vercel Blob can be integrated into your wor
 - Read access:
   - With private Blob stores: all read access requires authentication
   - With public Blob stores: blob URLs are accessible to anyone with the link
-- To add to or remove from the content of a Blob store, a valid [token](/docs/storage/vercel-blob/using-blob-sdk#read-write-token) is required
+- Write access: all writes require authentication, through [OIDC](#oidc-access-by-default) by default on Vercel, or a [read-write token](/docs/vercel-blob/using-blob-sdk#read-write-tokens) elsewhere
 
 ### Transferring to another project
 
@@ -82,7 +134,7 @@ If you need to transfer your blob store from one project to another project in t
 
 ## Caching
 
-Vercel's [CDN cache](/docs/cdn-cache) caches all blobs (private and public) for up to 1 month by default. You can customize this duration with the `cacheControlMaxAge` option when uploading.
+Vercel's [CDN cache](/docs/caching/cdn-cache) caches all blobs (private and public) for up to 1 month by default. You can customize this duration with the `cacheControlMaxAge` option when uploading.
 
 The difference is in how the cache is reached:
 
@@ -329,7 +381,7 @@ Vercel Blob has folders support to organize your blobs:
 const blob = await put('folder/file.txt', 'Hello World!', { access: 'private' /* or 'public' */ });
 ```
 
-The path `folder/file.txt` creates a folder named `folder` and a blob named `file.txt`. To list all blobs within a folder, use the [`list`](/docs/storage/vercel-blob/using-blob-sdk#list-blobs) function:
+The path `folder/file.txt` creates a folder named `folder` and a blob named `file.txt`. To list all blobs within a folder, use the [`list`](/docs/vercel-blob/using-blob-sdk#list-blobs) function:
 
 ```js
 const listOfBlobs = await list({
@@ -369,13 +421,13 @@ For complex sorting, sort results client-side using `uploadedAt` or other proper
 
 - [Private Storage](/docs/vercel-blob/private-storage)
 - [Public Storage](/docs/vercel-blob/public-storage)
-- [Client Upload Quickstart](/docs/storage/vercel-blob/client-upload)
-- [Server Upload Quickstart](/docs/storage/vercel-blob/server-upload)
-- [Vercel Blob SDK](/docs/storage/vercel-blob/using-blob-sdk)
+- [Client Upload Quickstart](/docs/vercel-blob/client-upload)
+- [Server Upload Quickstart](/docs/vercel-blob/server-upload)
+- [Vercel Blob SDK](/docs/vercel-blob/using-blob-sdk)
 - [Vercel Blob CLI](/docs/cli/blob)
 - [Vercel Blob Pricing](/docs/vercel-blob/usage-and-pricing)
-- [Vercel Blob Security](/docs/storage/vercel-blob/security)
-- [Vercel Blob Examples](/docs/storage/vercel-blob/examples)
+- [Vercel Blob Security](/docs/vercel-blob/security)
+- [Vercel Blob Examples](/docs/vercel-blob/examples)
 - [Observability](/docs/observability)
 
 

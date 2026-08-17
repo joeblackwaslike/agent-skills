@@ -16,13 +16,33 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "31713884a0f83c080ef99355a0d436f6cccb459338332116a2b41e11ac8a3a8f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "649b9198109f6f060a1ab5092a400e1f635d706ba32e7fcaaa21ea73c736fa07"
 ---
 
 # Vercel Functions Limits
 
 The table below outlines the limits and restrictions of using Vercel Functions with Fluid compute:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I deploy Discord bots to Vercel?](https://vercel.com/kb/guide/can-i-deploy-discord-bots-to-vercel?from=related) — Learn about whether it's possible to deploy Discord Bots to Vercel.
+- [Do Vercel Serverless Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related) — Information on Vercel's support for WebSocket connections with Vercel Functions.
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
+- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+
+Full cross-link map for this page: [/docs/functions/limitations.graph.md](/docs/functions/limitations.graph.md)
+<!-- /docsgraph:related -->
 
 | Feature                                                                          | Limits                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +68,7 @@ Vercel places restrictions on the maximum size of the deployment bundle for func
 
 For Vercel Functions, the maximum uncompressed size is **250 MB** including layers which are automatically used depending on [runtimes](/docs/functions/runtimes). These limits are [enforced by AWS](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html). For [Python functions](/docs/functions/runtimes/python), the maximum uncompressed size is **500 MB**.
 
-You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration/vercel-json#functions) to specify items which may affect the function size. These configurations are not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/next-config-js/output).
+You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration/vercel-json#functions) to specify items which may affect the function size. These configurations are not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
 
 ## Large functions&#x20;
 
@@ -81,7 +101,7 @@ Large functions are supported on the following runtimes:
 
 This refers to the longest time a function invocation can run before Vercel terminates it. For request handlers, this includes time spent processing the request and sending the response, including streamed responses.
 
-While Vercel Functions have a default duration, this duration can be extended using the [maxDuration config](/docs/functions/configuring-functions/duration). If a Vercel Function doesn't complete within the duration, a 504 error code ([`FUNCTION_INVOCATION_TIMEOUT`](/docs/errors/FUNCTION_INVOCATION_TIMEOUT)) is returned.
+While Vercel Functions have a default duration, this duration can be extended using the [maxDuration config](/docs/functions/configuring-functions/duration). If a Vercel Function doesn't complete within the duration, a 504 error code ([`FUNCTION_INVOCATION_TIMEOUT`](/docs/errors/function_invocation_timeout)) is returned.
 
 With [fluid compute](/docs/fluid-compute) enabled, Vercel Functions have the following defaults and maximum limits:
 
@@ -131,7 +151,7 @@ check the size of a package and search for a smaller alternative.
 
 In Vercel, the request body size is the maximum amount of data that can be included in the body of a request to a function.
 
-The maximum payload size for the request body or the response body of a Vercel Function is **4.5 MB**. If a Vercel Function receives a payload in excess of the limit it will return an error [413: `FUNCTION_PAYLOAD_TOO_LARGE`](/docs/errors/FUNCTION_PAYLOAD_TOO_LARGE). See [How do I bypass the 4.5MB body size limit of Vercel Functions](/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions) for more information.
+The maximum payload size for the request body or the response body of a Vercel Function is **4.5 MB**. If a Vercel Function receives a payload in excess of the limit it will return an error [413: `FUNCTION_PAYLOAD_TOO_LARGE`](/docs/errors/function_payload_too_large). See [How do I bypass the 4.5MB body size limit of Vercel Functions](/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions) for more information.
 
 ## File descriptors
 
@@ -160,7 +180,7 @@ To manage file descriptors effectively, consider the following:
 | ---------------------- | -------------------------------------------------------- |
 | Geolocation data       | [Yes](/docs/headers/request-headers#x-vercel-ip-country) |
 | Access request headers | Yes                                                      |
-| Cache responses        | [Yes](/docs/cdn-cache#using-vercel-functions)            |
+| Cache responses        | [Yes](/docs/caching/cdn-cache#using-vercel-functions)            |
 
 ## Cost and usage
 
@@ -168,7 +188,7 @@ The Hobby plan offers functions for free, within [limits](/docs/limits). The Pro
 
 Active CPU time is based on the amount of CPU time your code actively consumes, measured in milliseconds. Waiting for I/O (e.g. calling AI models, database queries) does not count towards active CPU time. Provisioned memory time is based on the memory allocated to your function instances multiplied by the time they are running.
 
-It is important to make sure you've set a reasonable [maximum duration](/docs/functions/configuring-functions/duration) for your function. See "Managing usage and pricing for [Vercel Functions](/docs/pricing/serverless-functions)" for more information.
+It is important to make sure you've set a reasonable [maximum duration](/docs/functions/configuring-functions/duration) for your function. See "Managing usage and pricing for [Vercel Functions](/docs/functions/usage-and-pricing)" for more information.
 
 ## Environment variables
 

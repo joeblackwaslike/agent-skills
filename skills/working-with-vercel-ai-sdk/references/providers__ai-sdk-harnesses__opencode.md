@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "5fa669d8d1c25197feb50a9ee02c5f606eb9ab12cd9c3df8fc85921800aeb6e2"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "6e05c6517dcddc135ccfd1ae1f04d7251745b3de94872c7a77d7aafa22152dea"
 ---
 
 # OpenCode Harness
@@ -87,8 +87,8 @@ const harness = createOpenCode({
 
 Settings:
 
-- `auth`: Anthropic, OpenAI, OpenAI-compatible, or AI Gateway authentication
-  settings.
+- `auth`: authentication mode: `auto`, `anthropic`, `openai`, or `ai-gateway`.
+- `mcpServers`: MCP server definitions keyed by server name.
 - `model`: OpenCode model id. Provider-prefixed values such as
   `anthropic/claude-sonnet-4-6` are passed through to OpenCode.
 - `provider`: provider id to use with an unprefixed `model`.
@@ -96,12 +96,26 @@ Settings:
   such as `low`, `medium`, or `high`.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `mintBridgeToken`: synchronous function that receives the sandbox id and
+  returns the bridge authentication token. By default, the adapter generates a
+  random 32-byte token. Custom implementations must return a suitably secret
+  token.
 
 ## Authentication
 
-By default, authentication is resolved from the host environment and forwarded
-to the sandbox bridge. The adapter checks for AI Gateway, Anthropic, and OpenAI
-credentials.
+The `auth` setting selects how credentials are resolved from the host
+environment:
+
+- `auto` (default): use AI Gateway credentials when available, then use the
+  credentials for the selected model provider.
+- `anthropic`: use Anthropic credentials.
+- `openai`: use OpenAI credentials.
+- `ai-gateway`: use AI Gateway credentials.
+
+When the sandbox supports additive request transformations, the bridge receives
+placeholders and the adapter injects credentials into matching outbound
+requests. Sandboxes without that capability retain direct credential
+forwarding.
 
 Supported environment variables:
 
@@ -116,20 +130,15 @@ Supported environment variables:
 - `OPENAI_ORGANIZATION`
 - `OPENAI_PROJECT`
 
-You can also pass explicit auth settings:
+Select a specific authentication mode when you do not want automatic detection:
 
 ```ts
-const harness = createOpenCode({
-  auth: {
-    gateway: {
-      apiKey: process.env.AI_GATEWAY_API_KEY,
-    },
-  },
-});
+const anthropicHarness = createOpenCode({ auth: 'anthropic' });
+const openAIHarness = createOpenCode({ auth: 'openai' });
+const gatewayHarness = createOpenCode({ auth: 'ai-gateway' });
 ```
 
-For OpenAI-compatible endpoints, use `auth.openaiCompatible` and set `name` to
-the OpenCode provider id.
+For OpenAI-compatible endpoints, select `openai` and set `OPENAI_BASE_URL`.
 
 ## Sandbox
 
@@ -179,6 +188,9 @@ OpenCode supports built-in tool approval requests when `permissionMode` is
 - [Pi](/providers/ai-sdk-harnesses/pi)
 - [OpenCode](/providers/ai-sdk-harnesses/opencode)
 - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+- [Cline](/providers/ai-sdk-harnesses/cline)
 
 
 [Full Sitemap](/sitemap.md)

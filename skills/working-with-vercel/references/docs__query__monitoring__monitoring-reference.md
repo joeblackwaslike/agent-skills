@@ -11,19 +11,34 @@ prerequisites:
 related:
   - /docs/manage-cdn-usage
   - /docs/functions/usage-and-pricing
-  - /docs/cdn-cache
+  - /docs/caching/cdn-cache
   - /docs/errors
   - /docs/deployments/environments
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "4a1385d7e52ad29a1ad8afb9563f9cfb79eecd536f9390a1d01ed4fbb4447eb0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "24892e9a3ef00032f6414ee425781d782f8ee1c6f6c5f10eedce83fdac1a05f0"
 ---
 
 # Monitoring Reference
 
 ## Visualize
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Query Reference](https://vercel.com/docs/query/reference?from=related) — This reference covers the dimensions and operators used to create a query.
+- [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views?from=related)
+
+Full cross-link map for this page: [/docs/query/monitoring/monitoring-reference.graph.md](/docs/query/monitoring/monitoring-reference.graph.md)
+<!-- /docsgraph:related -->
 
 The `Visualize` clause selects what query data is displayed. You can select one of the following fields at a time, [aggregating](#aggregations) each field in one of several ways:
 
@@ -101,7 +116,7 @@ There are several fields available for use within the [where](#where) and [group
 | `status`          | Group by the request's HTTP response code                                                                                                                                                                                                                                        |
 | `source_path`     | The mapped path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the `source_path` is `/blog/[slug]`                                                                                                   |
 | `request_path`    | The path used by the request. For example, if you have a dynamic route like `/blog/[slug]` and a blog post is `/blog/my-blog-post`, the `request_path` is `/blog/my-blog-post`                                                                                                   |
-| `cache`           | The [cache](/docs/cdn-cache#x-vercel-cache) status for the request                                                                                                                                                                                                               |
+| `cache`           | The [cache](/docs/caching/cdn-cache#x-vercel-cache) status for the request                                                                                                                                                                                                               |
 | `error_details`   | Group by the [errors](/docs/errors) that were thrown on Vercel                                                                                                                                                                                                                   |
 | `deployment_id`   | Group by the request's deployment ID                                                                                                                                                                                                                                             |
 | `environment`     | Group by the environment (`production` or [`preview`](/docs/deployments/environments#preview-environment-pre-production))                                                                                                                                                        |
@@ -112,9 +127,9 @@ There are several fields available for use within the [where](#where) and [group
 | `asn`             | The [autonomous system number (ASN)](# "ASN") for the request. This is related to what network the request came from (either a home network or a cloud provider) |
 | `bot_name`        | Group by the request's bot crawler name. This field will contain the name of a known crawler (e.g. Google, Bing)                                                                                                                                                                 |
 | `region`          | Group by the [region](/docs/regions) the request was routed to                                                                                                                                                                                                                   |
-| `waf_action`      | Group by the WAF action taken by the [Vercel Firewall](/docs/security/vercel-waf) (`deny`, `challenge`, `rate_limit`, `bypass` or `log`)                                                                                                                                         |
-| `action`          | Group by the action taken by [Vercel DDoS Mitigations](/docs/security/ddos-mitigation) (`deny` or `challenge`)                                                                                                                                                                   |
-| `skew_protection` | When `active`, the request would have been subject to [version skew](/docs/deployments/skew-protection) but was protected. When `inactive`, the request did not require skew protection to be fulfilled.                                                                         |
+| `waf_action`      | Group by the WAF action taken by the [Vercel Firewall](/docs/vercel-firewall/vercel-waf) (`deny`, `challenge`, `rate_limit`, `bypass` or `log`)                                                                                                                                         |
+| `action`          | Group by the action taken by [Vercel DDoS Mitigations](/docs/vercel-firewall/ddos-mitigation) (`deny` or `challenge`)                                                                                                                                                                   |
+| `skew_protection` | When `active`, the request would have been subject to [version skew](/docs/skew-protection) but was protected. When `inactive`, the request did not require skew protection to be fulfilled.                                                                         |
 
 ### Path types
 

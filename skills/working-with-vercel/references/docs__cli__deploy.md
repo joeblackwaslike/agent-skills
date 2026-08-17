@@ -10,19 +10,36 @@ prerequisites:
 related:
   - /docs/cli/global-options
   - /docs/cli/build
-  - /docs/build-output-api/v3
+  - /docs/build-output-api
   - /docs/environment-variables/system-environment-variables
   - /docs/skew-protection
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9da136d232c4ef3acd1ef05ed4b006e67aefddcf5e04f4aa550fa0a14571b589"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "0f20ae0b2f3ae028b7fe59d660cdb3d73cec7cae29f5e74e67c7495f7d05c067"
 ---
 
 # vercel deploy
 
 The `vercel deploy` command deploys Vercel projects, executable from the project's root directory or by specifying a path. You can omit 'deploy' in `vercel deploy`, as `vercel` is the only command that operates without a subcommand. This document will use 'vercel' to refer to `vercel deploy`.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Why are my branch specific variables and domains not linked to my CLI deployments?](https://vercel.com/kb/guide/branch-variables-and-domains-not-linked-to-cli-deployments?from=related) — How to link CLI deployments to the correct branch for use with custom environments and branch specific domains and envir
+- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related) — Learn how to automatically alias a Vercel preview deployment.
+- [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel curl](https://vercel.com/docs/cli/curl?from=related) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
+
+Full cross-link map for this page: [/docs/cli/deploy.graph.md](/docs/cli/deploy.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 
@@ -117,7 +134,7 @@ These are options that only apply to the `vercel` command.
 
 ### Prebuilt
 
-The `--prebuilt` option can be used to upload and deploy the results of a previous `vc build` execution located in the .vercel/output directory. See [vercel build](/docs/cli/build) and [Build Output API](/docs/build-output-api/v3) for more details.
+The `--prebuilt` option can be used to upload and deploy the results of a previous `vc build` execution located in the .vercel/output directory. See [vercel build](/docs/cli/build) and [Build Output API](/docs/build-output-api) for more details.
 
 #### When not to use --prebuilt
 
@@ -145,7 +162,7 @@ This example uses the `vercel build` command to build your project locally. It t
 
 ### Build env
 
-The `--build-env` option, shorthand `-b`, can be used to provide environment variables to the [build step](/docs/deployments/configure-a-build).
+The `--build-env` option, shorthand `-b`, can be used to provide environment variables to the [build step](/docs/builds/configure-a-build).
 
 ```bash filename="terminal"
 vercel --build-env KEY1=value1 --build-env KEY2=value2

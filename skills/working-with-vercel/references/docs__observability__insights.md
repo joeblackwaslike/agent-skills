@@ -12,17 +12,33 @@ related:
   - /docs/manage-cdn-usage
   - /docs/image-optimization
   - /docs/incremental-static-regeneration
-  - /docs/storage/vercel-blob
+  - /docs/vercel-blob
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "1e3e3d655ec031b32d79c035ba42006ea1a55ffa577589b0cdb149afb0ce3fbd"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "82d6d111884cd23b6641a31992444142e819b46fa66322822544d97e9763cb56"
 ---
 
 # Observability Insights
 
 Vercel organizes Observability through sections that correspond to different features and traffic sources that you can view, monitor and filter.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+
+Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md)
+<!-- /docsgraph:related -->
 
 ## Vercel Functions
 
@@ -110,13 +126,13 @@ At the team level, you will access:
 
 You can also drill into activity by user agent, edge region, and client IP.
 
-Learn more about [Vercel Blob](/docs/storage/vercel-blob).
+Learn more about [Vercel Blob](/docs/vercel-blob).
 
 ## Build Diagnostics
 
 You can use the **Build Diagnostics** tab to view the performance of your builds. You can see the build time and resource usage for each of your builds. In addition, you can see the build time broken down by each step in the build and deploy process.
 
-To learn more, see [Builds](/docs/deployments/builds).
+To learn more, see [Builds](/docs/builds).
 
 ## AI Gateway
 
@@ -160,7 +176,7 @@ Additionally, Observability Plus users can view:
 - External rewrite connection latency
 - External rewrites by source/destination paths
 
-To learn more, see [External Rewrites](/docs/rewrites#external-rewrites).
+To learn more, see [External Rewrites](/docs/routing/rewrites#external-rewrites).
 
 ## Microfrontends
 

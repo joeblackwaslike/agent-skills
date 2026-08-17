@@ -17,13 +17,29 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "92c842b130b7fce9a4b319d2949a9321f0b0a064c1cac43f4e2612187b707075"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d0bc95e6cdc389a0743ca66e5aab7729467ce16cbfc9a2a4df21cc857ba8f71e"
 ---
 
 # Connectors
 
 A **connector** is the team-owned record that represents one third-party service inside Vercel Connect. Each connector has a type that determines how Vercel Connect authenticates to the provider and which capabilities (installations, triggers, revocation) are available.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+- [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
+
+Full cross-link map for this page: [/docs/connect/concepts/connectors.graph.md](/docs/connect/concepts/connectors.graph.md)
+<!-- /docsgraph:related -->
 
 ## Identifiers
 
@@ -58,14 +74,16 @@ Slack, GitHub, Snowflake, Linear, and Salesforce are [Vercel Managed Connectors]
 - **Bring your own client**: Add the client ID and client secret from the OAuth app you registered with the provider.
 - **Let Vercel register the client**: When a provider supports automatic client registration, [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup) creates the OAuth client for you, so you don't need to register an app or manage a client secret.
 
-## Presets: pre-filled setup for popular services
+## Connection methods
 
-A **preset** is a pre-filled starting point for a specific service. When you create a connector, search for the provider by name. If a preset exists, Vercel fills in the information it already knows and you only need to complete what is specific to your account.
-
-Presets work with the following:
+Vercel already knows how to connect to many services. When you create a connector, search for the service by name. For a **known service**, Vercel fills in what it knows and you only supply what is specific to your account:
 
 - **OAuth**: Vercel fills in the authorization and token endpoints and the provider's default scopes. You add your client ID and secret, or let [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup) register the client where the provider supports it.
 - **API key**: Vercel links you to where the provider issues keys. Generate the key there, then paste it into the connector when you create it.
+
+A known service publishes one or more **connection methods**: the distinct ways you can connect to it. When a service publishes several, they differ in who registers the application (Vercel, through [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup), or you) and in which product you connect to, such as a REST API or an MCP server.
+
+Known services work in the dashboard and from the CLI. Running [`vercel connect create <service>`](/docs/cli/connect#vercel-connect-create) prompts you for the product, the connection method, and the credentials that method needs, so you can create a connector without leaving the terminal. Run `vercel connect create <service> --help` to see what a service supports.
 
 ## Branding
 

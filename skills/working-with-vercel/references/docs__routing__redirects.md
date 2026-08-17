@@ -9,20 +9,41 @@ prerequisites:
   - /docs/routing
 related:
   - /docs/frameworks
-  - /docs/redirects/configuration-redirects
-  - /docs/redirects/bulk-redirects
+  - /docs/routing/redirects/configuration-redirects
+  - /docs/routing/redirects/bulk-redirects
   - /docs/routing-middleware
   - /docs/global-config
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c24ee83307df6e596f32bc5d31ae9dcfb625b779b1b2425764c050bd854d5f8f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e10d94f54743053a32787055a6a5eb1f51b184c50c74b7865b13cf23d762b24b"
 ---
 
 # Redirects
 
 Redirects are rules that instruct Vercel to send users to a different URL than the one they requested. For example, if you rename a public route in your application, adding a redirect ensures there are no broken links for your users.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Does Vercel support permanent redirects?](https://vercel.com/kb/guide/does-vercel-support-permanent-redirects?from=related) — Information on Vercel's support for permanent redirects.
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [Redirecting](https://nextjs.org/docs/pages/guides/redirecting?from=related) — Learn the different ways to handle redirects in Next.js.
+- [redirects](https://nextjs.org/docs/pages/api-reference/config/next-config-js/redirects?from=related) — Add redirects to your Next.js app.
+- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [Incremental Migration](https://vercel.com/docs/incremental-migration?from=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [Rewrites](https://vercel.com/docs/routing/rewrites?from=related) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+
+Full cross-link map for this page: [/docs/routing/redirects.graph.md](/docs/routing/redirects.graph.md)
+<!-- /docsgraph:related -->
 
 With redirects on Vercel, you can define HTTP redirects in your application's configuration, regardless of the [framework](/docs/frameworks) that you are using. Redirects are processed at the Edge across all regions.
 
@@ -41,8 +62,8 @@ Review the table below to understand which redirect method best fits your use ca
 
 | Redirect method                                                    | Use case                                                                                                                                       | Definition location               |
 | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| [Configuration redirects](/docs/redirects/configuration-redirects) | Support needed for wildcards, pattern matching, and geolocation-based rules.                                                                   | Framework config or `vercel.json` |
-| [Bulk redirects](/docs/redirects/bulk-redirects)                   | For large-scale migrations or maintaining extensive redirect lists. It supports many thousands of simple redirects and is performant at scale. | CSV, JSON, or JSONL files         |
+| [Configuration redirects](/docs/routing/redirects/configuration-redirects) | Support needed for wildcards, pattern matching, and geolocation-based rules.                                                                   | Framework config or `vercel.json` |
+| [Bulk redirects](/docs/routing/redirects/bulk-redirects)                   | For large-scale migrations or maintaining extensive redirect lists. It supports many thousands of simple redirects and is performant at scale. | CSV, JSON, or JSONL files         |
 | [Vercel Functions](#vercel-functions)                              | For complex custom redirect logic.                                                                                                             | Route files (code)                |
 | [Middleware](#middleware)                                          | Dynamic redirects that need to update without redeploying.                                                                                     | Middleware file and Global Config   |
 | [Domain redirects](#domain-redirects)                              | Domain-level redirects such as www to apex domain.                                                                                             | Dashboard (Domains section)       |
@@ -152,11 +173,11 @@ Redirects can be stored in a Global Config and instantly read from Middleware. T
 
 ### Domain Redirects
 
-You can redirect a `www` subdomain to an apex domain, or other domain redirects, through the [Domains](/docs/projects/domains/deploying-and-redirecting#redirecting-domains) section of the dashboard.
+You can redirect a `www` subdomain to an apex domain, or other domain redirects, through the [Domains](/docs/domains/working-with-domains/deploying-and-redirecting#redirecting-domains) section of the dashboard.
 
 ### Firewall Redirects
 
-In emergency situations, you can also define redirects using [Firewall rules](/docs/security/vercel-waf/examples#emergency-redirect) to redirect requests to a new page. Firewall redirects execute before CDN configuration redirects (e.g. `vercel.json` or `next.config.js`) are evaluated.
+In emergency situations, you can also define redirects using [Firewall rules](/docs/vercel-firewall/vercel-waf/examples#emergency-redirect) to redirect requests to a new page. Firewall redirects execute before CDN configuration redirects (e.g. `vercel.json` or `next.config.js`) are evaluated.
 
 ## Redirect status codes
 

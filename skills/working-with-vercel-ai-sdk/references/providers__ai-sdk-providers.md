@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "98f7c190a61c4d7e67e1367811fd55f0c0c2851df22afbdf3efb261509f3e158"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "b43f75c6239ea934f40d953ac1604448d8b9820022a1eb02a068e8b0927f0545"
 ---
 
 # AI SDK Providers
@@ -20,12 +20,12 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 
 | Provider                                                   | Model                                               | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ---------------------------------------------------------- | --------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
+| [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-4.6`                                          | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-4.5`                                          | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-4-fast-reasoning`                             | <Check />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-4`                                            | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3`                                            | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3-mini`                                       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [Vercel](/providers/ai-sdk-providers/vercel)               | `v0-1.0-md`                                         | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6`                                           | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6-luna`                                      | <Check />   | <Check />         | <Check />  | <Check />      |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6-sol`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
@@ -98,9 +98,9 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [DeepInfra](/providers/ai-sdk-providers/deepinfra)         | `deepseek-ai/DeepSeek-V3`                           | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
 | [DeepInfra](/providers/ai-sdk-providers/deepinfra)         | `deepseek-ai/DeepSeek-R1`                           | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
 | [DeepInfra](/providers/ai-sdk-providers/deepinfra)         | `Qwen/QwQ-32B`                                      | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| [Cerebras](/providers/ai-sdk-providers/cerebras)           | `llama3.3-70b`                                      | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Cerebras](/providers/ai-sdk-providers/cerebras)           | `gpt-oss-120b`                                      | <Cross />   | <Check />         | <Check />  | <Check />      |
-| [Cerebras](/providers/ai-sdk-providers/cerebras)           | `qwen-3-32b`                                        | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [Cerebras](/providers/ai-sdk-providers/cerebras)           | `zai-glm-4.7`                                       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| [Cerebras](/providers/ai-sdk-providers/cerebras)           | `gemma-4-31b`                                       | <Check />   | <Check />         | <Check />  | <Check />      |
 | [Hugging Face](/providers/ai-sdk-providers/huggingface)    | `meta-llama/Llama-3.1-8B-Instruct`                  | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Hugging Face](/providers/ai-sdk-providers/huggingface)    | `moonshotai/Kimi-K2-Instruct`                       | <Cross />   | <Check />         | <Check />  | <Check />      |
 | [Baseten](/providers/ai-sdk-providers/baseten)             | `Qwen/Qwen3-235B-A22B-Instruct-2507`                | <Cross />   | <Check />         | <Check />  | <Check />      |
@@ -118,7 +118,6 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 - [AI SDK Providers](/providers/ai-sdk-providers)
   - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
   - [xAI Grok](/providers/ai-sdk-providers/xai)
-  - [Vercel](/providers/ai-sdk-providers/vercel)
   - [OpenAI](/providers/ai-sdk-providers/openai)
   - [Azure OpenAI](/providers/ai-sdk-providers/azure)
   - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -128,6 +127,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Groq](/providers/ai-sdk-providers/groq)
   - [Fal](/providers/ai-sdk-providers/fal)
   - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+  - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
   - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
   - [Deepgram](/providers/ai-sdk-providers/deepgram)
   - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
@@ -165,6 +165,9 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Pi](/providers/ai-sdk-harnesses/pi)
   - [OpenCode](/providers/ai-sdk-harnesses/opencode)
   - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+  - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+  - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+  - [Cline](/providers/ai-sdk-harnesses/cline)
 - [Observability Integrations](/providers/observability)
   - [Arize AX](/providers/observability/arize-ax)
   - [Axiom](/providers/observability/axiom)
@@ -250,6 +253,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [ZeroEntropy](/providers/community-providers/zeroentropy)
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+  - [QVAC](/providers/community-providers/qvac)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

@@ -9,21 +9,36 @@ prerequisites:
   - /docs/plans/enterprise
   - /docs/plans
 related:
-  - /docs/accounts/create-a-team
-  - /docs/accounts/team-members-and-roles
-  - /docs/teams-and-accounts/create-or-join-a-team
+  - /docs/accounts
+  - /docs/rbac
   - /docs/rbac/access-roles
-  - /docs/security/ddos-mitigation
+  - /docs/vercel-firewall/ddos-mitigation
+  - /docs/vercel-firewall/attack-mode
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "c67b11605f9aac338c61949a30f224a77513089d0c068ad8fed14c5db5cb102f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9d16952ca6e24f2d0d297db88fbff807a7ac1c3ef3c17ca148b72a11f5a8422f"
 ---
 
 # Billing FAQ for Enterprise Plan
 
-The Vercel Enterprise plan is perfect for [teams](/docs/accounts/create-a-team) with increased performance, collaboration, and security needs. This page covers frequently asked questions around payments, invoices, and billing on the **Enterprise** plan.
+The Vercel Enterprise plan is perfect for [teams](/docs/accounts#creating-a-team) with increased performance, collaboration, and security needs. This page covers frequently asked questions around payments, invoices, and billing on the **Enterprise** plan.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Billing FAQ](https://vercel.com/docs/plans/pro-plan/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
+- [Billing and Refunds](https://vercel.com/docs/integrations/create-integration/billing?from=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+
+Full cross-link map for this page: [/docs/plans/enterprise/billing.graph.md](/docs/plans/enterprise/billing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Payments
 
@@ -86,13 +101,13 @@ No. Unless you provide specific justification to your Vercel account representat
 
 ### Is there a Billing role available?
 
-Yes. Learn more about [Roles and Permissions](/docs/accounts/team-members-and-roles).
+Yes. Learn more about [Roles and Permissions](/docs/rbac).
 
 ### How do I update my billing information?
 
 - ### Go to the  page
   - Navigate to the [Dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard)
-  - Select your team from the team switcher on the top left as explained [here](/docs/teams-and-accounts/create-or-join-a-team#creating-a-team)
+  - Select your team from the team switcher on the top left as explained [here](/docs/accounts#creating-a-team)
   - Open **Settings** in the sidebar
 
 - ### Go to the **Billing** section to update the appropriate fields
@@ -118,11 +133,11 @@ When you contact support the following information will be needed:
 
 ### Do I get billed for DDoS?
 
-[Vercel automatically mitigates against L3, L4, and L7 DDoS attacks](/docs/security/ddos-mitigation) at the platform level for all plans. Vercel does not charge customers for traffic that gets blocked by the Firewall.
+[Vercel automatically mitigates against L3, L4, and L7 DDoS attacks](/docs/vercel-firewall/ddos-mitigation) at the platform level for all plans. Vercel does not charge customers for traffic that gets blocked by the Firewall.
 
 Usage will be incurred for requests that are successfully served prior to us automatically mitigating the event. Usage will also be incurred for requests that are not recognized as a DDoS event, which may include bot and crawler traffic.
 
-For an additional layer of security, we recommend that you enable [Attack Mode](/docs/attack-mode) when you are under attack, which is available for free on all plans. While some malicious traffic is automatically challenged, enabling Attack Mode will challenge all traffic, including legitimate traffic to ensure that only real users can access your site.
+For an additional layer of security, we recommend that you enable [Attack Mode](/docs/vercel-firewall/attack-mode) when you are under attack, which is available for free on all plans. While some malicious traffic is automatically challenged, enabling Attack Mode will challenge all traffic, including legitimate traffic to ensure that only real users can access your site.
 
 You can monitor usage in the [Vercel Dashboard](/dashboard) under the **Usage** section in the sidebar, although you will [receive notifications](/docs/notifications#on-demand-usage-notifications) when nearing your usage limits.
 

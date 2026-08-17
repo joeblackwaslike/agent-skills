@@ -16,13 +16,31 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "d0f22be32511798b3106d57b30348e4ae813c6bd7498e0a9f83be5ff6dba1570"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5e6b8938d6af052376b0cb53a839d1ba577c95702451fc577a499b544c37f8e6"
 ---
 
 # Sign in with Vercel
 
 Sign in with Vercel lets people use their Vercel account to log in to your application. Your application doesn't need to handle passwords, create accounts, or manage user sessions. Instead it asks Vercel for proof of identity using the Vercel Identity Provider (IdP), so you can authenticate users without managing their credentials.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
+- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Application Authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Learn best practices for application authentication Vercel
+- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
+- [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Two-factor \(2FA\)](https://vercel.com/docs/two-factor-authentication?from=related) — Learn how to configure two-factor authentication for your Vercel account.
+
+Full cross-link map for this page: [/docs/sign-in-with-vercel.graph.md](/docs/sign-in-with-vercel.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel's IdP uses the [OAuth 2.0](https://auth0.com/intro-to-iam/what-is-oauth-2 "What is the OAuth 2.0 protocol?") authorization framework, a widely adopted industry standard for securing and delegating access to resources on behalf of users. Vercel's IdP also supports [OpenID Connect (OIDC)](https://openid.net/specs/openid-connect-core-1_0.html), an authentication layer built on top of OAuth 2.0.
 

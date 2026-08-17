@@ -10,20 +10,36 @@ prerequisites:
   - /docs/integrations
 related:
   - /docs/plans/pro-plan
-  - /docs/integrations/marketplace-api
+  - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations/create-integration
   - /docs/integrations/create-integration/marketplace-flows
   - /docs/integrations/create-integration/approval-checklist
 summary: Learn how to create a product for your Vercel native integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-product.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b8a23a11821c2d94432427850ea6db80808000a4a7d5dd240404ae54563ed9a5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "df24209a22b4891f2ff941b037cd0ec47be1e97a2fc6d988d54214cf83dd97ff"
 ---
 
 # Create a Native Integration
 
 With a , you allow a Vercel customer who has  your integration to use specific features of your integration **without** having them leave the Vercel dashboard and create a separate account on your platform. You can create multiple products for each integration and each integration connects to Vercel through specific categories.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+- [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+
+Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-product.graph.md](/docs/integrations/create-integration/marketplace-product.graph.md)
+<!-- /docsgraph:related -->
 
 ## Requirements
 
@@ -32,7 +48,7 @@ To create and list your products as a Vercel provider, you need to:
 - Use a Vercel Team on a [Pro plan](/docs/plans/pro-plan).
 - Provide a **Base URL** in the product specification for a native integration server that you will create based on:
   - The [sample integration server repository](https://github.com/vercel/example-marketplace-integration).
-  - The [native integrations API endpoints](/docs/integrations/marketplace-api).
+  - The [native integrations API endpoints](/docs/integrations/create-integration/marketplace-api).
 - Be an approved provider so that your product is available in the Vercel Marketplace. To do so, [submit your application](https://vercel.com/marketplace/program#become-a-provider) to the Vercel Marketplace program.
 
 ## Create your product
@@ -68,7 +84,7 @@ In this tutorial, you create a storage  for your native integration through the 
   4. Select **Apply Changes**
 
 - ### Update your integration server
-  Add or update the [Billing](/docs/integrations/marketplace-api#billing) endpoints in your integration server so that the appropriate plans are pulled from your backend when Vercel calls these endpoints. Review the [marketplace integration example](https://github.com/vercel/example-marketplace-integration/blob/main/app/v1/products/%5BproductId%5D/plans/route.ts) for a sample billing plan route.
+  Add or update the [Billing](/docs/integrations/create-integration/marketplace-api#billing) endpoints in your integration server so that the appropriate plans are pulled from your backend when Vercel calls these endpoints. Review the [marketplace integration example](https://github.com/vercel/example-marketplace-integration/blob/main/app/v1/products/%5BproductId%5D/plans/route.ts) for a sample billing plan route.
 
   Your integration server needs to handle the [billing plan selection flow](/docs/integrations/create-integration/marketplace-flows#select-billing-plan) and [resource provisioning flow](/docs/integrations/create-integration/marketplace-flows#submit-store-creation).
 
@@ -97,7 +113,7 @@ As an example, use the following configuration to only show the name of the prod
 }
 ```
 
-See the endpoints for [Provision](/docs/integrations/marketplace-api#provision-resource) or [Update](/docs/integrations/marketplace-api#update-resource)  for specific examples.
+See the endpoints for [Provision](/docs/integrations/create-integration/marketplace-api#provision-resource) or [Update](/docs/integrations/create-integration/marketplace-api#update-resource)  for specific examples.
 
 | Property `ui:control` | Property `type` | Notes                                                                                                                                                                                                              |
 | --------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

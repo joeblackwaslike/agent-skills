@@ -9,20 +9,37 @@ prerequisites:
   - /docs/functions/runtimes
   - /docs/functions
 related:
-  - /docs/deployments/configure-a-build
+  - /docs/builds/configure-a-build
   - /docs/project-configuration/vercel-json
   - /docs/services
   - /docs/environment-variables
 summary: Learn how to use the Go runtime to run Go APIs on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/go.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "451a3615d00836a792d3fb70fb65a7b40afd28d7539a84ab4fc66e4506ab6291"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "8a6a6a5dc75dbae095784224fefcca12193ccf4814a0efd6ec163d7c2a2e12f9"
 ---
 
 # Using the Go Runtime with Vercel Functions
 
 > **🔒 Permissions Required**: The Go runtime
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Rust](https://vercel.com/docs/functions/runtimes/rust?from=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
+- [Python](https://vercel.com/docs/functions/runtimes/python?from=related) — Learn how to use the Python runtime to run Python applications on Vercel.
+- [Ruby](https://vercel.com/docs/functions/runtimes/ruby?from=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
+- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+
+Full cross-link map for this page: [/docs/functions/runtimes/go.graph.md](/docs/functions/runtimes/go.graph.md)
+<!-- /docsgraph:related -->
 
 Use the Go runtime to deploy a Go HTTP server on Vercel. The Go Framework
 Preset works with standard `net/http` servers and frameworks such as `chi` or
@@ -30,7 +47,7 @@ Preset works with standard `net/http` servers and frameworks such as `chi` or
 
 ## Deploy a Go API
 
-The Go [Framework Preset](/docs/deployments/configure-a-build#framework-preset)
+The Go [Framework Preset](/docs/builds/configure-a-build#framework-preset)
 detects a root `go.mod` file and one of these entrypoints: `main.go`,
 `cmd/api/main.go`, or `cmd/server/main.go`. Your server must listen on the
 `PORT` environment variable.

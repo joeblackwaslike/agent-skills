@@ -17,13 +17,29 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "2eb529c053563af2a606392a0f15cd0de9ec0558fe1d48293a691ce295d4a192"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c039202f548c62c2ec7072a044c61eb717aced9eec52ba913ed13cbf150aeda9"
 ---
 
 # Text Generation Quickstart
 
 This quickstart walks you through making your first text generation request with AI Gateway.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related)
+- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
+- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
+- [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related) — Generate text responses using the OpenResponses API.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md)
+<!-- /docsgraph:related -->
 
 - ### Set up your project
   Create a new directory and initialize a Node.js project:

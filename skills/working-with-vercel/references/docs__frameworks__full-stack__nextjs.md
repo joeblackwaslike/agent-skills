@@ -12,18 +12,40 @@ related:
   - /docs/incremental-static-regeneration
   - /docs/cdn
   - /docs/functions
-  - /docs/cdn-cache
+  - /docs/caching/cdn-cache
   - /docs/functions/streaming-functions
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c505c45b267c6fdb3a234e331f6b4c3f71dcb599fab6bb8c48a18766eca8d464"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "864face30c5ad2cfcf917861633e61044fbb9ad014b95f2b1d9e57173f7895d5"
 ---
 
 # Next.js on Vercel
 
 [Next.js](https://nextjs.org/) is a fullstack React framework for the web, maintained by Vercel.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Deploying](https://nextjs.org/docs/app/getting-started/deploying?from=related) — Learn how to deploy your Next.js application.
+- [Deploying](https://nextjs.org/docs/pages/getting-started/deploying?from=related) — Learn how to deploy your Next.js application.
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Next.js on Vercel vs Cloudflare](https://vercel.com/kb/guide/next-js-on-vercel-vs-cloudflare?from=related) — Compare running Next.js on Vercel Functions with Fluid compute against Cloudflare Workers with the OpenNext Cloudflare a
+- [Next.js on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/next-js-on-vercel-vs-webflow-cloud?from=related) — Compare running Next.js on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Ne
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Glossary](https://nextjs.org/docs/app/glossary?from=related) — A glossary of common terms used in Next.js.
+- [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related) — Learn how to add metadata to your pages and create dynamic OG images.
+- [Nuxt](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related) — Learn how to use Vercel's features with Nuxt.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [Astro](https://vercel.com/docs/frameworks/frontend/astro?from=related) — Learn how to use Vercel's features with Astro
+
+Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md](/docs/frameworks/full-stack/nextjs.graph.md)
+<!-- /docsgraph:related -->
 
 While Next.js works when self-hosting, deploying to Vercel is zero-configuration and provides additional enhancements for **scalability, availability, and performance globally**.
 
@@ -120,16 +142,16 @@ On Vercel, you can server-render Next.js applications through [Vercel Functions]
 
 - Scales to zero when not in use
 - Scales automatically with traffic increases
-- Has zero-configuration support for [`Cache-Control` headers](/docs/cdn-cache), including `stale-while-revalidate`
+- Has zero-configuration support for [`Cache-Control` headers](/docs/caching/cdn-cache), including `stale-while-revalidate`
 - Framework-aware infrastructure enables automatic creation of Functions for SSR
 
-[Learn more about SSR](https://nextjs.org/docs/app/building-your-application/rendering#static-and-dynamic-rendering-on-the-server)
+[Learn more about SSR](https://nextjs.org/docs/app/getting-started/caching#static-and-dynamic-rendering-on-the-server)
 
 ## Streaming
 
 Vercel supports streaming in Next.js projects with any of the following:
 
-- [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/router-handlers)
+- [Route Handlers](https://nextjs.org/docs/app/api-reference/file-conventions/route)
 - [Vercel Functions](/docs/functions/streaming-functions)
 - React Server Components
 
@@ -155,7 +177,7 @@ export default function Loading() {
 }
 ```
 
-Learn more about loading in the [Next.js docs](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming).
+Learn more about loading in the [Next.js docs](https://nextjs.org/docs/app/api-reference/file-conventions/loading).
 
 The `Suspense` component, introduced in React 18, enables you to display a fallback until components nested within it have finished loading. Using `Suspense` is more granular than showing a loading state for an entire route, and is useful when only sections of your UI need a loading state.
 
@@ -421,7 +443,7 @@ export default ExampleComponent;
 
 ## Font Optimization
 
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) enables built-in automatic self-hosting for any font file. This means you can optimally load web fonts with zero [layout shift](/docs/speed-insights/metrics#cumulative-layout-shift-cls), thanks to the underlying CSS [`size-adjust`](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust) property.
+[`next/font`](https://nextjs.org/docs/app/getting-started/fonts) enables built-in automatic self-hosting for any font file. This means you can optimally load web fonts with zero [layout shift](/docs/speed-insights/metrics#cumulative-layout-shift-cls), thanks to the underlying CSS [`size-adjust`](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust) property.
 
 This also allows you to use all [Google Fonts](https://fonts.google.com/) with performance and privacy in mind. CSS and font files are downloaded at build time and self-hosted with the rest of your static files. No requests are sent to Google by the browser.
 
@@ -503,7 +525,7 @@ export default function RootLayout({
 - Allows for CSS and font files to be downloaded at build time and self-hosted with the rest of your static files
 - Ensures that no requests are sent to Google by the browser
 
-[Learn more about Font Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
+[Learn more about Font Optimization](https://nextjs.org/docs/app/getting-started/fonts)
 
 ## Open Graph Images
 
@@ -657,7 +679,7 @@ See [the Middleware API docs](/docs/routing-middleware/api) for more information
 
 ## Draft Mode
 
-[Draft Mode](/docs/draft-mode) enables you to view draft content from your [Headless CMS](/docs/solutions/cms) immediately, while still statically generating pages in production.
+[Draft Mode](/docs/draft-mode) enables you to view draft content from your [Headless CMS](/kb/guide/using-a-headless-cms-with-vercel) immediately, while still statically generating pages in production.
 
 See [our Draft Mode docs](/docs/draft-mode#getting-started) to learn how to use it with Next.js.
 
@@ -667,7 +689,7 @@ When self-hosting, every request using Draft Mode hits the Next.js server, poten
 
 ### Draft Mode security
 
-Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. In order to enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/teams-and-accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
+Deployments on Vercel automatically secure Draft Mode behind the same authentication used for Preview Comments. In order to enable or disable Draft Mode, the viewer must be logged in as a member of the [Team](/docs/accounts). Once enabled, Vercel's CDN will bypass the ISR cache automatically and invoke the underlying [Vercel Function](/docs/functions).
 
 ### Enabling Draft Mode in Preview Deployments
 
@@ -819,7 +841,7 @@ On Vercel, you can track your Next.js app's Core Web Vitals in your project's da
 
 > For \['nextjs-app']:
 
-If you're self-hosting your app, you can use the [`useWebVitals`](https://nextjs.org/docs/advanced-features/measuring-performance#build-your-own) hook to send metrics to any analytics provider. The following example demonstrates a custom `WebVitals` component that you can use in your app's root `layout` file:
+If you're self-hosting your app, you can use the [`useWebVitals`](https://nextjs.org/docs/app/guides/analytics#build-your-own) hook to send metrics to any analytics provider. The following example demonstrates a custom `WebVitals` component that you can use in your app's root `layout` file:
 
 ```jsx filename="app/_components/web-vitals.jsx" framework=all
 'use client';
@@ -879,7 +901,7 @@ export default function Layout({ children }) {
 
 > For \['nextjs']:
 
-If you're self-hosting your app, you can use the [`reportWebVitals`](https://nextjs.org/docs/advanced-features/measuring-performance#build-your-own) hook to send metrics to any analytics provider. Doing so requires [creating your own custom `app` component file](https://nextjs.org/docs/advanced-features/custom-app).
+If you're self-hosting your app, you can use the [`reportWebVitals`](https://nextjs.org/docs/app/guides/analytics#build-your-own) hook to send metrics to any analytics provider. Doing so requires [creating your own custom `app` component file](https://nextjs.org/docs/pages/building-your-application/routing/custom-app).
 
 Then you must export a `reportWebVitals` function from your custom `app` component, as demonstrated below:
 
@@ -989,7 +1011,7 @@ Learn more about deploying Next.js projects on Vercel with the following resourc
 - [Deploy a locally built Next.js app](/kb/guide/deploying-locally-built-nextjs)
 - [Deploying Next.js to Vercel](https://www.youtube.com/watch?v=AiiGjB2AxqA)
 - [Learn about combining static and dynamic rendering on the same page in Next.js 14](https://www.youtube.com/watch?v=wv7w_Zx-FMU)
-- [Learn about suspense boundaries and streaming when loading your UI](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)
+- [Learn about suspense boundaries and streaming when loading your UI](https://nextjs.org/docs/app/api-reference/file-conventions/loading)
 
 
 ---

@@ -17,13 +17,29 @@ related:
 summary: Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "2148e7bb32a91747f249e08439daf17a5860e884dcda850ac160365f7e7a0e69"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "c53e6144c60bff75ed77031a8ede256501cd2570b5db1ec3e5bec31e44f15527"
 ---
 
 # OpenResponses API
 
 AI Gateway supports the [OpenResponses API](https://openresponses.org) specification, an open standard for AI model interactions. OpenResponses provides a unified interface across providers with built-in support for streaming, tool calling, reasoning, and multi-modal inputs.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related)
+- [OpenAI Chat Completions API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related) — Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [WebSocket Mode](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets?from=related) — Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses.graph.md)
+<!-- /docsgraph:related -->
 
 ## Base URL
 

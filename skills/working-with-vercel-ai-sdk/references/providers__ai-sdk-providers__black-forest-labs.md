@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "bc9bae0d77a72f0668128350149ea11c8fe5c819ac505c45d65972b907813d28"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "36b9ddcc7850b848ac424bed5ed3fc9150848cb67bdf1d89820ecac21ffb9f84"
 ---
 
 # Black Forest Labs Provider
@@ -497,7 +497,6 @@ video object may contain the following properties:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -507,6 +506,7 @@ video object may contain the following properties:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

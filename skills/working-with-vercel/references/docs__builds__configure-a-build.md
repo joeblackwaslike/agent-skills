@@ -10,19 +10,39 @@ prerequisites:
 related:
   - /docs/deployments
   - /docs/functions/runtimes/node-js/node-js-versions
-  - /docs/deployments/concurrent-builds
-  - /docs/deployments/managing-builds
+  - /docs/builds/managing-builds
   - /docs/project-configuration/vercel-json
+  - /docs/deployments/troubleshoot-a-build
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "cf39eae74ea7c142e0538979761b1fdd261ea266c760a807d14b87d75669edbf"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "dc3a4a57d5ebb470b521fa117ccec65ce95e6018498d15f725a080245cccfd67"
 ---
 
 # Configuring a Build
 
 When you make a [deployment](/docs/deployments), Vercel **builds** your project. During this time, Vercel performs a "shallow clone" on your Git repository using the command `git clone --depth=10 (...)` and fetches ten levels of git commit history. This means that only the latest ten commits are pulled and not the entire repository history.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Does Vercel support Yarn 2?](https://vercel.com/kb/guide/does-vercel-support-yarn-2?from=related) — Information on Vercel's support for Yarn 2.
+- [Does Vercel support Yarn 3?](https://vercel.com/kb/guide/does-vercel-support-yarn-3?from=related) — Information on Vercel's support for Yarn 3.
+- [Does Vercel support Yarn 4?](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related) — Information on Vercel's support for Yarn 4.
+- [How to pin a specific Bun version for Vercel builds?](https://vercel.com/kb/guide/how-to-pin-a-specific-bun-version-for-vercel-builds?from=related) — Learn how to use a specific Bun version for Vercel builds.
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
+- [Build Output API](https://vercel.com/docs/build-output-api?from=related) — The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment
+- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+
+Full cross-link map for this page: [/docs/builds/configure-a-build.graph.md](/docs/builds/configure-a-build.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 
@@ -33,8 +53,8 @@ The **Build and Deployment** section of the Settings tab offers the following op
 - [Framework Settings](#framework-settings)
 - [Root Directory](#root-directory)
 - [Node.js Version](/docs/functions/runtimes/node-js/node-js-versions#setting-the-node.js-version-in-project-settings)
-- [Prioritizing Production Builds](/docs/deployments/concurrent-builds#prioritize-production-builds)
-- [On-Demand Concurrent Builds](/docs/deployments/managing-builds#on-demand-concurrent-builds)
+- [Prioritizing Production Builds](/docs/builds/managing-builds#prioritize-production-builds)
+- [On-Demand Concurrent Builds](/docs/builds/managing-builds#on-demand-concurrent-builds)
 
 ## Framework Settings
 

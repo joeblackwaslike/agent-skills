@@ -16,13 +16,33 @@ related:
 summary: Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLab, and Bitbucket projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "e628a9d79e00d63ea767c73fbc98ceca045ce8c4794c1a83aee8291d02fbc43c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b8bcb8ba4ebd1c7bd96a772bab719136f7035b3a75076c860df60f9cc3dab873"
 ---
 
 # Deploying Git Repositories with Vercel
 
-Vercel allows for **automatic deployments on every branch push** and merges onto the [production branch](#production-branch) of your [GitHub](/docs/git/vercel-for-github), [GitLab](/docs/git/vercel-for-gitlab), [Bitbucket](/docs/git/vercel-for-bitbucket) and [Azure DevOps Pipelines](/docs/git/vercel-for-azure-pipelines) projects.
+Vercel allows for **automatic deployments on every branch push** and merges onto the [production branch](#production-branch) of your [GitHub](/docs/git/vercel-for-github), [GitLab](/docs/git/vercel-for-gitlab), [Bitbucket](/docs/git/vercel-for-bitbucket), and [Azure DevOps Pipelines](/docs/git/vercel-for-azure-pipelines) projects.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
+- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
+- [Using Non-default Branches for Production Deployments](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch as Production on your Vercel project.
+- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Git Settings](https://vercel.com/docs/project-configuration/git-settings?from=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+
+Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md)
+<!-- /docsgraph:related -->
 
 Using Git with Vercel provides the following benefits:
 
@@ -47,11 +67,12 @@ You can choose to use a different branch as the [production branch](#production-
 - [Bitbucket Free](https://www.atlassian.com/software/bitbucket/pricing)
 - [Bitbucket Standard](https://www.atlassian.com/software/bitbucket/pricing)
 - [Bitbucket Premium](https://www.atlassian.com/software/bitbucket/pricing)
-- [Azure DevOps Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines)
+
+* [Azure DevOps Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines)
 
 ### Self-Hosted examples
 
-- [GitHub Enterprise Server](/kb/guide/github-actions-vercel)
+- [GitHub Enterprise Server](/kb/guide/how-can-i-use-github-actions-with-vercel)
 - [Self-Managed GitLab](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel)
 - [Bitbucket Data Center (Self-Hosted)](/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel)
 
@@ -64,13 +85,13 @@ Setting up your GitHub, GitLab, or Bitbucket repository on Vercel is only a matt
 > **💡 Note:** For Azure DevOps repositories, use the [Vercel Deployment
 > Extension](/docs/git/vercel-for-azure-pipelines)
 
-After clicking it, you'll be presented with a list of Git repositories that the Git account you've signed up with has write access to.
+After clicking it, you'll be presented with a list of repositories available from your connected Git providers.
 
 To select a different Git namespace or provider, you can use the dropdown list on the top left of the section.
 
 ![Image](`/docs-assets/static/docs/concepts/deployments/git/index/repo-list-light.png`)
 
-*A list of Git repositories your Git account has access to.*
+*A list of repositories available from your connected Git providers.*
 
 You can also [import a third-party Git repository](/new/git/third-party).
 
@@ -79,9 +100,9 @@ After you've selected the Git repository or template you want to use for your ne
 You can:
 
 - Customize the project's name
-- Select [a **Framework Preset**](/docs/deployments/configure-a-build#framework-preset)
+- Select [a **Framework Preset**](/docs/builds/configure-a-build#framework-preset)
 - Select the root directory of your project
-- Configure [Build Output Settings](/docs/deployments/configure-a-build#build-command)
+- Configure [Build Output Settings](/docs/builds/configure-a-build#build-command)
 - Set [Environment Variables](/docs/environment-variables)
 
 When your settings are correct, you can select the **Deploy** button to initiate a deployment.

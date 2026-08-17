@@ -16,13 +16,31 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b051cf5ecd16c3b74f19913befa41e8abedb34b30db1fc67fb4c048ee541b62e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4301703df1215724533adbf852976bb48ef3e466c13ab75978823fc0409a6dc9"
 ---
 
 # Debugging slow Vercel Functions
 
 Use this guide to diagnose and fix slow Vercel Functions. You'll identify which functions are slow, measure where the time is spent, and verify that your optimization works before shipping to production.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness?from=related) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How do I lower my Vercel Function execution time?](https://vercel.com/kb/guide/how-do-i-lower-my-serverless-function-execution-time?from=related) — Learn how to lower your Serverless Function execution time.
+- [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
+
+Full cross-link map for this page: [/docs/functions/debug-slow-functions.graph.md](/docs/functions/debug-slow-functions.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This guide requires a linked Vercel project. Run `vercel link` in your
 > project directory if you haven't already.

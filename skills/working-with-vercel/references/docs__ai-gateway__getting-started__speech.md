@@ -16,13 +16,29 @@ related:
 summary: Generate speech from text and transcribe audio back to text with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "4d51cb367c2e1163756411e39c38c0bacf9fd1a05aa1d00092a8521f847a715a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "709204e1d8372f7683c74fe7d4d44434782671eafb53867a4d2579d9713e0659"
 ---
 
 # Speech to Text and Text to Speech Quickstart
 
 Text to speech and speech to text are two halves of the same workflow: one turns text into spoken audio, the other turns audio back into text. They feed into each other, so this quickstart runs both as a round-trip. You generate speech from a sentence, then transcribe that audio and check the text comes back.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related)
+- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
+- [Realtime](https://vercel.com/docs/ai-gateway/modalities/realtime?from=related) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/speech.graph.md](/docs/ai-gateway/getting-started/speech.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Speech and transcription support ships in the stable AI SDK releases. Install
 > them with `pnpm add ai @ai-sdk/gateway`.

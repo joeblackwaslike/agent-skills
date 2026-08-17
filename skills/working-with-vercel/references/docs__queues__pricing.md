@@ -14,13 +14,28 @@ related:
 summary: "Understand how Vercel Queues billing works, what's included, and which service limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d3e774c994c39be56b75e4a1b4da2ce1acce0d8bf7964d8a919125092b27bb76"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "32d5502d04875287ba6b95ddeadf7aba6086f84623d9af7f39c9cb6f665d891d"
 ---
 
 # Pricing and Limits
 
 Vercel Queues is billed per API operation. Every API call counts as one operation, and there are five operation types:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Pricing and Limits](https://vercel.com/docs/services/pricing?from=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Limits and Pricing](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [API Reference](https://vercel.com/docs/queues/api?from=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
+
+Full cross-link map for this page: [/docs/queues/pricing.graph.md](/docs/queues/pricing.graph.md)
+<!-- /docsgraph:related -->
 
 | Operation             | Description                                           |
 | --------------------- | ----------------------------------------------------- |

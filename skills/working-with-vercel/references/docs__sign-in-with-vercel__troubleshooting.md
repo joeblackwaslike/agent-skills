@@ -10,16 +10,34 @@ prerequisites:
 related:
   - /docs/sign-in-with-vercel/authorization-server-api
   - /docs/sign-in-with-vercel/getting-started
+  - /docs/sign-in-with-vercel/manage-from-dashboard
 summary: Learn how to troubleshoot common errors with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/troubleshooting.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "999dfd9022c1de0b1fd2242db7f6b766dd1070d061a66e6f36ead08279b969ab"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fb63feccb8aef6dd95faef5f6c5e0534dcb1fb12b9c72caedef6c83911e9bc7c"
 ---
 
 # Troubleshooting Sign in with Vercel
 
 When users try to authorize your app, several errors can occur. Common troubleshooting steps include:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
+- [Consent Page](https://vercel.com/docs/sign-in-with-vercel/consent-page?from=related) — Learn how the consent page works when users authorize your app
+- [Two-factor \(2FA\)](https://vercel.com/docs/two-factor-authentication?from=related) — Learn how to configure two-factor authentication for your Vercel account.
+- [Troubleshooting](https://vercel.com/docs/speed-insights/troubleshooting?from=related) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
+- [Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
+- [Scopes & Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related) — Learn how to manage scopes and permissions for Sign in with Vercel
+
+Full cross-link map for this page: [/docs/sign-in-with-vercel/troubleshooting.graph.md](/docs/sign-in-with-vercel/troubleshooting.graph.md)
+<!-- /docsgraph:related -->
 
 - Checking that all required parameters are included in your requests
 - Verifying your app configuration in the dashboard
@@ -110,6 +128,12 @@ https://example.com/api/auth/callback?
 ```
 
 **Fix**: Use only `consent` or `login` for the `prompt` parameter. Leave it out if you don't need to control the authorization behavior.
+
+### Account does not have sign-in access
+
+When an app allows only members of its owning team to sign in, Vercel denies authorization for other accounts. Depending on the authorization flow, Vercel either shows an access denied page or redirects to your callback URL with an `access_denied` error and the original `state` value.
+
+**Fix**: Sign in with a Vercel account that belongs to the app's owning team, or change the app's [Sign-In Access setting](/docs/sign-in-with-vercel/manage-from-dashboard#configure-sign-in-access) to **Anyone with a Vercel account**. Your callback handler should also handle the standard OAuth `access_denied` error.
 
 
 ---

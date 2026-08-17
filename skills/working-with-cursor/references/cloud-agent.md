@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/cloud-agent.md"
-fetched_at: "2026-08-03T07:28:37.789Z"
-sha256: "b1d68f98898e7b653418497f9095e7f3d326177374c4a315324a1884c42921d4"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "8ff480c6e6e713ee1a23f7a2cdcf2e5f9bc36e76f758c5cb63d99f96b21308d4"
 ---
 
 # Cloud Agents
@@ -16,7 +16,7 @@ You can run as many agents as you want in parallel, and they do not require your
 
 Because they have access to their own virtual machine, cloud agents can build, test, and interact with the changed software. They can also use computers to control the desktop and browser. Cloud agents support [MCP servers](https://cursor.com/docs/mcp.md), giving them access to external tools and data sources like databases, APIs, and third-party services.
 
-Cloud agents can also run in multi-repo environments. Use one when a task spans separate frontend, backend, infrastructure, or shared-library repositories. The agent can inspect the full workspace, make coordinated changes, and open pull requests in the repos it changes.
+Cloud agents can also run in multi-repo environments. Use one when a task spans separate frontend, backend, infrastructure, or shared-library repositories. The agent can inspect the full workspace, make coordinated changes, and open pull requests in the repos it changes. Long-running is not available for multi-repo environments yet.
 
 ## How to access
 
@@ -56,9 +56,9 @@ Agents are only as capable as the environments they run in. An agent that can wr
 
 Not setting up a development environment for your cloud agents is like not giving your engineers a computer. This is why environment setup is the most important step to improve the effectiveness of cloud agents. It lets cloud agents work like engineers do: write code, test and verify work, and ship software.
 
-You can configure environments with agent-led setup, a saved snapshot, or a Dockerfile in `.cursor/environment.json`. See [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md) to get started. Each cloud agent then starts from an environment selected for the repo or multi-repo group.
+You can configure environments with agent-led setup, a saved snapshot, or a Dockerfile in `.cursor/environment.json`. See [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md) to get started. [Builds](https://cursor.com/docs/cloud-agent/builds.md) prepare each environment in the background so agents start with repositories and dependencies ready.
 
-The Cloud Agents dashboard shows which environment an agent used, along with environment details and version history. On the agent page, hover over the repository name at the top of the page to inspect the environment used for that run. See [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md) for configuration details.
+The Cloud Agents dashboard shows which environment and Build an agent used, along with environment details and version history. On the agent page, hover over the repository name at the top of the page to inspect the environment used for that run. See [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md) for configuration details.
 
 ### Runtime and environment controls
 
@@ -109,7 +109,10 @@ Viewing is read-only. To let teammates send follow-up messages and continue the 
 
 - Learn more about [Cloud agent capabilities](https://cursor.com/docs/cloud-agent/capabilities.md).
 - Learn more about [Cloud agent setup](https://cursor.com/docs/cloud-agent/setup.md).
+- Learn more about [Cloud Agent Builds](https://cursor.com/docs/cloud-agent/builds.md).
 - Learn more about [Cloud agent security](https://cursor.com/docs/cloud-agent/security-network.md).
+- Learn more about [OIDC tokens](https://cursor.com/docs/cloud-agent/identity.md).
+- Learn more about [Agent metadata](https://cursor.com/docs/cloud-agent/metadata.md).
 - Learn more about [Cloud agent settings](https://cursor.com/docs/cloud-agent/settings.md).
 
 ## Billing

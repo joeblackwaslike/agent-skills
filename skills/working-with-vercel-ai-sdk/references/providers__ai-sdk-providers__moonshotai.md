@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "f2ba9436b3ab9a3bb80798a990ba5aed2993c795adf31291d180473b7d45fd23"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "cf7335a86f508ce07d2289a14b4ec7ef4b5d6fcf1992979844e9ac1a7ec76e8a"
 ---
 
 # Moonshot AI Provider
@@ -139,6 +139,52 @@ console.log(text);
 
 See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details on how to integrate reasoning into your chatbot.
 
+### Video Input
+
+Kimi K3, Kimi K2.7 Code, Kimi K2.6, and Kimi K2.5 support video input. Pass the video as a `file` content part with a video media type:
+
+```ts
+import { moonshotai } from '@ai-sdk/moonshotai';
+import { generateText } from 'ai';
+import fs from 'node:fs';
+
+const { text } = await generateText({
+  model: moonshotai('kimi-k3'),
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'Summarize what happens in this video.' },
+        {
+          type: 'file',
+          data: fs.readFileSync('./video.mp4'),
+          mediaType: 'video/mp4',
+        },
+      ],
+    },
+  ],
+});
+
+console.log(text);
+```
+
+You can also pass a URL. Since Moonshot AI does not fetch external URLs, the AI SDK downloads the video and inlines it as base64 before sending:
+
+```ts
+{
+  type: 'file',
+  data: new URL('https://example.com/video.mp4'),
+  mediaType: 'video/mp4',
+}
+```
+
+<Note>
+  Moonshot AI recommends videos up to 1080p. For larger videos, or videos you
+  reuse across many requests, upload them with the [Moonshot Files
+  API](https://platform.moonshot.ai/docs/api/files) instead. Audio and PDF
+  inputs are not supported by Moonshot AI chat completions.
+</Note>
+
 ### Provider Options
 
 The following optional provider options are available for Moonshot AI language models:
@@ -163,21 +209,24 @@ The following optional provider options are available for Moonshot AI language m
   Controls how reasoning history is handled in multi-turn conversations:
   - `'disabled'`: Remove reasoning from history
   - `'interleaved'`: Include reasoning between tool calls within a single turn
-  - `'preserved'`: Keep all reasoning in history
+  - `'preserved'`: Keep all reasoning in history. Mapped to Moonshot's
+    `thinking.keep: 'all'` request field.
 
 ## Model Capabilities
 
-| Model                    | Image Input | Object Generation | Tool Usage | Tool Streaming |
-| ------------------------ | ----------- | ----------------- | ---------- | -------------- |
-| `moonshot-v1-8k`         | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-32k`        | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-128k`       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2`                | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2.5`              | <Check />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2-thinking`       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2-thinking-turbo` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2-turbo`          | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k3`                | <Check />   | <Check />         | <Check />  | <Check />      |
+| Model                    | Image Input | Video Input | Object Generation | Tool Usage | Tool Streaming |
+| ------------------------ | ----------- | ----------- | ----------------- | ---------- | -------------- |
+| `moonshot-v1-8k`         | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `moonshot-v1-32k`        | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `moonshot-v1-128k`       | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2`                | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2.5`              | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2-thinking`       | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2-thinking-turbo` | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2-turbo`          | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2.6`              | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k2.7-code`         | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `kimi-k3`                | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
 
 <Note>
   Please see the [Moonshot AI docs](https://platform.moonshot.ai/docs/intro) for
@@ -190,7 +239,6 @@ The following optional provider options are available for Moonshot AI language m
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -200,6 +248,7 @@ The following optional provider options are available for Moonshot AI language m
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

@@ -12,8 +12,8 @@ related:
 summary: Vercel CLI collects telemetry data about general usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/about-telemetry.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7c9d999b4f706a20f1384c4f580e90cfc2248f73f50f54e3c539600f4976c855"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "95f28eda062851d7ed9e8858493c17dc83bd53e540338757588141cba4e6bab0"
 ---
 
 # Telemetry
@@ -21,6 +21,23 @@ sha256: "7c9d999b4f706a20f1384c4f580e90cfc2248f73f50f54e3c539600f4976c855"
 > **💡 Note:** Participation in this program is optional, and you may
 > [opt-out](#how-do-i-opt-out-of-vercel-cli-telemetry) if you would prefer not
 > to share any telemetry information.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Telemetry](https://turborepo.dev/docs/telemetry?from=related) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
+- [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
+- [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+
+Full cross-link map for this page: [/docs/cli/about-telemetry.graph.md](/docs/cli/about-telemetry.graph.md)
+<!-- /docsgraph:related -->
 
 ## Why is telemetry collected?
 

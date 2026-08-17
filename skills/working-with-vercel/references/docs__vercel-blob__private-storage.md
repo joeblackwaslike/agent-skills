@@ -12,17 +12,33 @@ related:
   - /docs/cli
   - /docs/vercel-blob
   - /docs/cli/blob
-  - /docs/storage/vercel-blob/server-upload
+  - /docs/vercel-blob/server-upload
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "356ac7258fb6495d004857aa088dd2becab133a54bf387c092591fad0fd05e8a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "6f6a358a242864793be5e2c69dff1e4ff92315946b84c499f72474c816af90f5"
 ---
 
 # Private Storage
 
 > **🔒 Permissions Required**: Vercel Blob
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [Examples](https://vercel.com/docs/vercel-blob/examples?from=related) — Examples on how to use Vercel Blob in your applications
+
+Full cross-link map for this page: [/docs/vercel-blob/private-storage.graph.md](/docs/vercel-blob/private-storage.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Private storage requires a private Blob store and is available starting with:* `@vercel/blob` [TypeScript SDK](/docs/vercel-blob/using-blob-sdk) >= 2.3
 > * `vercel` [Python SDK](https://github.com/vercel/vercel-py) >= 0.5.0
@@ -63,7 +79,7 @@ export async function POST(request: Request) {
 }
 ```
 
-See the [server uploads](/docs/storage/vercel-blob/server-upload) and [client uploads](/docs/storage/vercel-blob/client-upload) guides for detailed instructions on uploading files.
+See the [server uploads](/docs/vercel-blob/server-upload) and [client uploads](/docs/vercel-blob/client-upload) guides for detailed instructions on uploading files.
 
 ## Delivering private blobs
 
@@ -263,7 +279,7 @@ curl https://my-store-id.private.blob.vercel-storage.com/my-file.png \
 
 Private blobs have two layers of caching:
 
-1. **CDN cache** (between your [Function](/docs/functions) and the blob store): When your Function fetches a private blob, the request goes through Vercel's [CDN cache](/docs/cdn-cache). If the blob is already cached, no [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) is charged. You control the CDN cache duration with the [`cacheControlMaxAge`](/docs/vercel-blob/using-blob-sdk#put) option when uploading (defaults to 1 month), the same way as [public blobs](/docs/vercel-blob/public-storage#caching).
+1. **CDN cache** (between your [Function](/docs/functions) and the blob store): When your Function fetches a private blob, the request goes through Vercel's [CDN cache](/docs/caching/cdn-cache). If the blob is already cached, no [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) is charged. You control the CDN cache duration with the [`cacheControlMaxAge`](/docs/vercel-blob/using-blob-sdk#put) option when uploading (defaults to 1 month), the same way as [public blobs](/docs/vercel-blob/public-storage#caching).
 2. **Browser cache** (between the browser and your Function): You control this through the `Cache-Control` header on your Function's response.
 
 If you don't set a `Cache-Control` header, Vercel sends `Cache-Control: public, max-age=0, must-revalidate` by default. The browser keeps the response on disk but always revalidates with your server before using it, so your auth logic runs on every request and the user always gets the correct content.
@@ -292,7 +308,7 @@ Reads are served through Vercel's [CDN cache](/docs/vercel-blob#caching) by defa
 const result = await get(pathname, { access: 'private', useCache: false });
 ```
 
-This serves the read directly from origin storage and guarantees the latest content. These reads are slower and incur [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) on each request. Keep the default for content that doesn't change after upload, such as blobs uploaded with unique pathnames or with [`addRandomSuffix: true`](/docs/vercel-blob#alternatives-to-overwriting).
+This serves the read directly from origin storage and guarantees the latest content. These reads are slower and incur [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) on each request. Keep the default for content that doesn't change after upload, such as blobs uploaded with unique pathnames or with [`addRandomSuffix: true`](/docs/vercel-blob#alternatives-to-overwriting).
 
 [Presigned `GET` URLs](/docs/vercel-blob/vercel-signed-urls#get---get-a-blob) accept the same `useCache` option in [`presignUrl()`](/docs/vercel-blob/vercel-signed-urls#presignurl).
 
@@ -563,9 +579,9 @@ How it works:
 > wrong users.Instead, always verify auth directly in your route handler, right next to the
 > [`get()`](/docs/vercel-blob/using-blob-sdk#get) call.
 
-See [Cache-Control headers](/docs/headers/cache-control-headers) for more details.
+See [Cache-Control headers](/docs/caching/cache-control-headers) for more details.
 
-Learn more about [Vercel's CDN cache](/docs/cdn-cache).
+Learn more about [Vercel's CDN cache](/docs/caching/cdn-cache).
 
 ## Custom domains
 
@@ -573,7 +589,7 @@ Since private blobs are delivered through your own [Functions](/docs/functions),
 
 1. Create a new Vercel project with a route handler that serves private blobs (as shown in [delivering private blobs](#delivering-private-blobs))
 2. [Connect your private Blob store](/docs/storage#connect-a-store-to-a-project) to this project
-3. [Assign a custom domain](/docs/projects/domains/managing-domains) to the project (e.g. `content.mywebsite.com`)
+3. [Assign a custom domain](/docs/domains/working-with-domains) to the project (e.g. `content.mywebsite.com`)
 
 Requests to `content.mywebsite.com/api/file?pathname=documents/report.pdf` will then go through your auth logic and stream the blob to the user.
 
@@ -585,8 +601,8 @@ Private blobs cannot be indexed by search engines since all read access requires
 
 When serving private blobs through [Functions](/docs/functions), you pay for:
 
-1. **Function fetches the blob from the store**: [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer) on cache miss
-2. **Function responds to the browser**: [Fast Data Transfer](/docs/cdn) + [Fast Origin Transfer](/docs/pricing/networking#fast-origin-transfer)
+1. **Function fetches the blob from the store**: [Blob Data Transfer](/docs/vercel-blob#blob-data-transfer) + [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) on cache miss
+2. **Function responds to the browser**: [Fast Data Transfer](/docs/cdn) + [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer)
 
 Recommendations:
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "fd5aea70555fae2c514bc453c2bc54ac6f859cc20d3aa26c40de3b84e18f9b39"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "666a61f57b32639be8694d05ca323d05f92b1419b32bd6fad580e79dc93e6293"
 ---
 
 # Hume Provider
@@ -151,7 +151,6 @@ The following provider options are available:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -161,6 +160,7 @@ The following provider options are available:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

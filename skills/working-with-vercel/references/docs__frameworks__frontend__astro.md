@@ -12,18 +12,37 @@ related:
   - /docs/functions/runtimes
   - /docs/analytics
   - /docs/analytics/quickstart
-  - /docs/build-output-api/v3/configuration
+  - /docs/build-output-api/configuration
   - /docs/deployments/vercel-ignore
 summary: "Learn how to use Vercel's features with Astro"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/astro.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "939d6b648cdf4456d76e8981eb7fe086d2e9096d2ed840caf4df82ab6afc1bc9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d51d42af583b04864da8dfc8347c6ff5cf672cd3448af53ad1665eb70fe3aef6"
 ---
 
 # Astro on Vercel
 
 Astro is an all-in-one web framework that enables you to build performant static websites. People choose Astro when they want to build content-rich experiences with as little JavaScript as possible.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel?from=related) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
+- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Nuxt](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related) — Learn how to use Vercel's features with Nuxt.
+- [SvelteKit](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related) — Learn how to use Vercel's features with SvelteKit
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
+
+Full cross-link map for this page: [/docs/frameworks/frontend/astro.graph.md](/docs/frameworks/frontend/astro.graph.md)
+<!-- /docsgraph:related -->
 
 You can deploy a static Astro app to Vercel with zero configuration.
 
@@ -181,7 +200,7 @@ The following configuration options enable Vercel's features for Astro deploymen
 | [`webAnalytics`](/docs/analytics)                                                                                              | `{enabled: boolean}` | Static, Serverless | Enables Vercel's [Web Analytics](/docs/analytics). See [the quickstart](/docs/analytics/quickstart) to set up analytics on your account.                                                                    |
 | [`imageService`](https://docs.astro.build/en/guides/integrations-guide/vercel/#imageservice)                                   | `boolean`            | Static, Serverless | For astro versions `3` and up. Enables an automatically [configured service](https://docs.astro.build/en/reference/image-service-reference/#what-is-an-image-service) to optimize your images.              |
 | [`devImageService`](https://docs.astro.build/en/guides/integrations-guide/vercel/#devimageservice)                             | `string`             | Static, Serverless | For astro versions `3` and up. Configure the [image service](https://docs.astro.build/en/reference/image-service-reference/#what-is-an-image-service) used to optimize your images in your dev environment. |
-| [`imagesConfig`](/docs/build-output-api/v3/configuration#images)                                                               | `VercelImageConfig`  | Static, Serverless | Defines the behavior of the Image Optimization API, allowing on-demand optimization at runtime. See [the Build Output API docs](/docs/build-output-api/v3/configuration#images) for required options.       |
+| [`imagesConfig`](/docs/build-output-api/configuration#images)                                                               | `VercelImageConfig`  | Static, Serverless | Defines the behavior of the Image Optimization API, allowing on-demand optimization at runtime. See [the Build Output API docs](/docs/build-output-api/configuration#images) for required options.       |
 | [`functionPerRoute`](https://docs.astro.build/en/guides/integrations-guide/vercel/#function-bundling-configuration)            | `boolean`            | Serverless         | API routes are bundled into one function by default. Set this to true to split each route into separate functions.                                                                                          |
 | [`edgeMiddleware`](https://docs.astro.build/en/guides/integrations-guide/vercel/#vercel-edge-middleware-with-astro-middleware) | `boolean`            | Serverless         | Set to `true` to automatically convert Astro middleware to Routing Middleware, eliminating the need for a  file.                                                |
 | [`includeFiles`](https://docs.astro.build/en/guides/integrations-guide/vercel/#includefiles)                                   | `string[]`           | Serverless         | Force files to be bundled with your Vercel functions.                                                                                                                                                       |
@@ -239,7 +258,7 @@ If your Astro project is statically rendered, you can opt individual routes. To 
 
 - Scales to zero when not in use
 - Scales automatically with traffic increases
-- Has zero-configuration support for [`Cache-Control` headers](/docs/cdn-cache), including `stale-while-revalidate`
+- Has zero-configuration support for [`Cache-Control` headers](/docs/caching/cdn-cache), including `stale-while-revalidate`
 
 [Learn more about Astro SSR](https://docs.astro.build/en/guides/server-side-rendering/)
 
@@ -673,7 +692,7 @@ const time = new Date().toLocaleTimeString();
 <h1>{time}</h1>
 ```
 
-[Learn more about CDN Cache-Control headers](/docs/headers/cache-control-headers#cdn-cache-control-header).
+[Learn more about CDN Cache-Control headers](/docs/caching/cache-control-headers#cdn-cache-control-header).
 
 **Caching on Vercel:**
 

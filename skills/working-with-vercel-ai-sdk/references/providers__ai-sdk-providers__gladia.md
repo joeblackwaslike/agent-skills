@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "4c7162eb8ca3b3ef5f80f4a253bd7578b002b7ed0791adf060fe5f094c07bf0a"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "d98efa596bd45361371b2916d3a38a6ed49b0653b5156e48c63b6660ffb6af8b"
 ---
 
 # Gladia Provider
@@ -279,7 +279,6 @@ The following provider options are available:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -289,6 +288,7 @@ The following provider options are available:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

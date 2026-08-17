@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "90b304d0a1b255193d6b9d9d9875e69c9a038409e7d8ed2ce2017e11140c4708"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "80fc1cc88df001d6f06891df4bf7ea4b08869ebab3de0bf444e8df4c4f6b4e53"
 ---
 
 # Alibaba Provider
@@ -583,7 +583,6 @@ a string if needed.
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -593,6 +592,7 @@ a string if needed.
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

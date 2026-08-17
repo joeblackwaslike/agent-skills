@@ -11,31 +11,65 @@ prerequisites:
 related:
   - /docs/frameworks/backend/fastapi
   - /docs/frameworks/backend/flask
-  - /docs/services
   - /docs/frameworks/full-stack/django
+  - /docs/services
   - /docs/functions/runtimes/python/python-version
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "6bf4e1094aa0b3e703561897d4737c1dd468455b40e9e8a196289ed715c1b5e8"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "701ea9ffa84ef639697f85726379c03081a31bfac1ab37b46bdad73e1a17eddf"
 ---
 
 # Using the Python Runtime with Vercel Functions
 
-> **🔒 Permissions Required**: The Python runtime
-
 Use the Python runtime to run ASGI (Asynchronous Server Gateway Interface) and
-WSGI (Web Server Gateway Interface) applications on Vercel. The Python Framework
-Presets work with [FastAPI](/docs/frameworks/backend/fastapi),
-[Flask](/docs/frameworks/backend/flask), Django, and other Python web
-frameworks.
+WSGI (Web Server Gateway Interface) applications on Vercel. Vercel detects
+supported Python frameworks and runs your application as Vercel Functions.
 
-## Run a Python application
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Deploy Python apps on Vercel using Docker ](https://vercel.com/kb/guide/vercel-docker-python-apps?from=related) — Deploy a Dockerized Python application that depends on native software, OCR engines, or small local models, plus a Next.
+- [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
+- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Build Image](https://vercel.com/docs/builds/build-image?from=related) — Learn about the container image used for Vercel builds.
+- [Fluid Compute](https://vercel.com/docs/fluid-compute?from=related) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
+
+Full cross-link map for this page: [/docs/functions/runtimes/python.graph.md](/docs/functions/runtimes/python.graph.md)
+<!-- /docsgraph:related -->
+
+## Deploy with a Python framework preset
 
 Vercel detects your framework automatically when it finds a matching dependency in
-`requirements.txt`, `pyproject.toml`, or `Pipfile`. Define a supported Python
-entrypoint so Vercel can load your application.
+`requirements.txt`, `pyproject.toml`, or `Pipfile`. The Python framework presets
+work with [FastAPI](/docs/frameworks/backend/fastapi),
+[Flask](/docs/frameworks/backend/flask),
+[Django](/docs/frameworks/full-stack/django), and other Python web frameworks.
+Define a supported Python entrypoint so Vercel can load your application.
+
+Vercel then runs your app as Vercel Functions and routes every request to it,
+so the app you run locally deploys as-is.
+
+For framework-specific setup guides, see:
+
+- [Deploy a FastAPI app on Vercel](/docs/frameworks/backend/fastapi)
+- [Deploy a Flask app on Vercel](/docs/frameworks/backend/flask)
+- [Deploy a Django app on Vercel](/docs/frameworks/full-stack/django)
+
+## Combine Python with another framework
+
+To run a Python backend and a frontend together in one project, you can use
+[Services](/docs/services). Each part builds independently and routes to a
+shared domain.
 
 ## Python entrypoints
 
@@ -44,14 +78,17 @@ Vercel Function handler. Vercel looks for a Python entrypoint in these
 locations:
 
 - `app.py`, `index.py`, `server.py`, `main.py`, `wsgi.py`, or `asgi.py`
-- the same filenames inside `src/`, `app/`, or `api/`
+- the same filenames inside `src/` or `app/`
 - the module path configured with `tool.vercel.entrypoint` in `pyproject.toml`
+
+For Django projects, Vercel also detects a `manage.py` file that sets
+`DJANGO_SETTINGS_MODULE`, including in an immediate subdirectory, and resolves
+the application from the `WSGI_APPLICATION` or `ASGI_APPLICATION` setting.
 
 The entrypoint file must define one of these top-level names:
 
 - `app` for most ASGI or WSGI frameworks, including FastAPI and Flask
 - `application` for Django and other WSGI applications
-- `handler` for Python serverless functions that use `BaseHTTPRequestHandler`
 
 To point Vercel to an app in a custom module, set `tool.vercel.entrypoint` to a
 Python `module:variable` value:
@@ -93,15 +130,6 @@ dependencies = [
     "fastapi>=0.117.1",
 ]
 ```
-
-To deploy a Python API alongside a frontend such as a Next.js app within the
-same project, use [Services](/docs/services).
-
-For framework-specific setup guides, see:
-
-- [Deploy a FastAPI app on Vercel](/docs/frameworks/backend/fastapi)
-- [Deploy a Flask app on Vercel](/docs/frameworks/backend/flask)
-- [Deploy a Django app on Vercel](/docs/frameworks/full-stack/django)
 
 ## Python version
 
@@ -162,14 +190,14 @@ project root.
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/**/*.py": {
+    "app.py": {
       "excludeFiles": "{tests/**,__tests__/**,**/*.test.py,**/test_*.py,fixtures/**,__fixtures__/**,testdata/**,sample-data/**,static/**,assets/**}"
     }
   }
 }
 ```
 
-*Exclude common development and static folders from all Python functions to
+*Exclude common development and static folders from a Python application to
 stay under the 500 MB bundle limit.*
 
 ## Reading relative files
@@ -178,24 +206,12 @@ Python uses the current working directory when you pass a relative path to
 [open()](https://docs.python.org/3/library/functions.html#open). The working
 directory is the base of your project, not the directory containing the file.
 
-## Python serverless functions
+## Existing projects using `/api`
 
-You can also place `.py` files inside an `/api` directory. Each file that
-defines a `handler` (inheriting from `BaseHTTPRequestHandler`) or an ASGI/WSGI
-`app` becomes a separate Vercel Function.
-
-```py filename="api/index.py"
-from http.server import BaseHTTPRequestHandler
-
-class handler(BaseHTTPRequestHandler):
-
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type','text/plain')
-        self.end_headers()
-        self.wfile.write('Hello, world!'.encode('utf-8'))
-        return
-```
+Vercel supports existing projects that define file-based Python functions in
+an `/api` directory. See [Python functions in the `/api`
+directory](/docs/functions/runtimes/python/api-directory) for routing, handlers,
+and configuration.
 
 
 ---

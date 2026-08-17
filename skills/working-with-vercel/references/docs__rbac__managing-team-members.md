@@ -12,13 +12,29 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/managing-team-members.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "a2c2d8f347e0c0d8577ce3dd116e0e4b49ba7a621254169bf0c9fe4eadce6be7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "fbe9a1aeb620f8f8e4f0c48d2f355fd941eb04d25106334450d9f84d178339d5"
 ---
 
 # Managing Team Members
 
 As the team owner, you have the ability to manage your team's composition and the roles of its members, controlling the actions they can perform. These role assignments, governed by Role-Based Access Control (RBAC) permissions, define the access level each member has across all projects within the team's scope. Details on the various roles and the permissions they entail can be found in the [Access Roles section](/docs/rbac/access-roles).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related) — Learn about the different team level roles and the permissions they provide.
+- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related) — Learn about the project level roles and their permissions.
+- [Directory Sync](https://vercel.com/docs/directory-sync?from=related) — Learn how to configure Directory Sync for your Vercel Team.
+- [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+
+Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md)
+<!-- /docsgraph:related -->
 
 ## Adding team members and assigning roles
 

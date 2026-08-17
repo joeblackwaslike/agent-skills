@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "455fdca814728f8d439b120e34ba8afb7eaeb78dc2e53aba7d6011569d0d4386"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "19f8e0d43720cbdd2db7f740e51d5a0dd29b2529f2aed4b78e4c517743a645c3"
 ---
 
 # Groq Provider
@@ -476,7 +476,6 @@ The following provider options are available:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -486,6 +485,7 @@ The following provider options are available:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

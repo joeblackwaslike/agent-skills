@@ -12,13 +12,28 @@ related:
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "4d05b95e18c25e9c8d12e58c121fb22c56d5db48af55b3d4c164878211d93fc1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "141b939c72584e557816e8d5e45243f1768da2f73b778aed9d9d2251558838ba"
 ---
 
 # vercel tokens
 
 The `vercel tokens` command manages your personal authentication tokens. Tokens authenticate Vercel CLI commands and Vercel REST API requests on your behalf. They are scoped to your user account, and optionally to a single project. Use this command to list existing tokens, create new ones for scripts and CI environments, and revoke tokens you no longer need.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens?from=related)
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
+
+Full cross-link map for this page: [/docs/cli/tokens.graph.md](/docs/cli/tokens.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Treat tokens as secrets. The CLI shows the plaintext value of a newly created
 > token only once. Store it in a secret manager or environment variable; never

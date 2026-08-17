@@ -3,7 +3,7 @@ title: get-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "0abcf7ed0f63a52fa0fd32bf961cd8dfba0b750abb0c66ef96db3f84623ed24e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "aed6fe72596ec8f94fbc23263f168ac219a3d0f553fe96ea6443a5357ebf5bce"
 ---
 
 # Get Resource
@@ -115,6 +115,12 @@ Return the resource
       "globalConfigId": "string" // Alias for `edgeConfigId`.,
       "globalConfigSyncingEnabled": "boolean" // Alias for `edgeConfigSyncingEnabled`.,
       "edgeConfigTokenId": "string" // The ID of the token used to access the Global Config.
+    },
+    "authentication": {
+      "appUrls": [
+        "url": "string" // required // An exact https app URL. No wildcards.,
+        "target": "string" // required
+      ]
     }
   },
   "billingPlan": {

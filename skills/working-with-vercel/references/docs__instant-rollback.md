@@ -16,13 +16,33 @@ related:
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3a21fd1a2a26584922a45ba01c8b30208f22147585767f22fbb425ce90fa7c08"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "74d7470a2ea24004e479dfadca8b58db173d03c01b7caf0b6cb45cfb279c734d"
 ---
 
 # Performing an Instant Rollback on a Deployment
 
 Vercel provides Instant Rollback as a way to quickly revert to a previous production deployment. This can be useful in situations that require a swift recovery from production incidents, like breaking changes or bugs. It's important to keep in mind that during a rollback:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related) — Fix out-of-memory \(OOM\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
+- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related) — Incrementally release updates to your backend to minimize impact of mistakes.
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel?from=related) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [vercel rollback](https://vercel.com/docs/cli/rollback?from=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
+- [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Rolling Release Deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deployment Retention](https://vercel.com/docs/deployment-retention?from=related) — Learn how Deployment Retention policies affect a deployment's lifecycle
+
+Full cross-link map for this page: [/docs/instant-rollback.graph.md](/docs/instant-rollback.graph.md)
+<!-- /docsgraph:related -->
 
 - Vercel treats the rolled-back deployment as a restored version of a previous deployment
 - The configuration used for the rolled-back deployment may become stale

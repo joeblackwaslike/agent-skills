@@ -13,13 +13,29 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Responses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "26596cc3452610427cdcd2f3e8ff2bea1c4ebf5c8554475c67e0a3844bb3ecfb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5d9622fdaa5856ec747b37ef678dcfd8b8528ad11f85c018757ffdfac4f7c970"
 ---
 
 # Reasoning
 
 For models that support reasoning, set the `reasoning` parameter to control how much effort the model spends thinking:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
+- [OpenAI](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
+- [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning?from=related) — Control how much a model thinks before answering with the OpenAI Chat Completions API.
+- [Amazon Bedrock](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning?from=related) — Enable reasoning and extended thinking across providers with the AI SDK and AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/responses/reasoning.graph.md)
+<!-- /docsgraph:related -->
 
 #### \['cURL'
 

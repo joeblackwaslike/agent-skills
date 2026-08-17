@@ -14,13 +14,31 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "9effedd0e7bc593d205a45fde06c90d529ca9a859d38f1c2cdb610b0c18d8e1a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f3765f6613c6497d4ffcdf2809429a0378f7de03d7ac9d3b2ca86b0c36477940"
 ---
 
 # Speech to Text
 
 Transcribe recorded audio into text with transcription models such as `openai/whisper-1` and `openai/gpt-4o-transcribe`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [ElevenLabs](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs?from=related)
+- [Cartesia](https://ai-sdk.dev/providers/ai-sdk-providers/cartesia?from=related)
+- [experimental_streamTranscribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-transcribe?from=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related)
+- [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+
+Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md)
+<!-- /docsgraph:related -->
 
 For live audio, use [streaming transcription](#streaming-transcription) to get transcript updates as audio arrives. For live, two-way voice, see [Realtime](/docs/ai-gateway/modalities/realtime); to turn text into spoken audio, see [Text to Speech](/docs/ai-gateway/modalities/text-to-speech).
 

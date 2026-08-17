@@ -17,13 +17,33 @@ related:
 summary: Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/hono.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4c2276666fc40a34e1d3e93e7ad78b5b1c4e882c30435b3ae3e54fbd7f8330c6"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "20441ba4686b2055cd60b0b74158f6c57dcba16d047267904ff619e515486230"
 ---
 
 # Hono on Vercel
 
 Hono is a fast and lightweight web application framework built on Web Standards. You can deploy a Hono app to Vercel with zero configuration.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk?from=related) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel?from=related) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Koa](https://vercel.com/docs/frameworks/backend/koa?from=related) — Deploy Koa applications to Vercel with zero configuration.
+- [Fastify](https://vercel.com/docs/frameworks/backend/fastify?from=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [Nitro](https://vercel.com/docs/frameworks/backend/nitro?from=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
+
+Full cross-link map for this page: [/docs/frameworks/backend/hono.graph.md](/docs/frameworks/backend/hono.graph.md)
+<!-- /docsgraph:related -->
 
 ## Get started with Hono on Vercel
 
@@ -126,6 +146,8 @@ app.get('/stream', (c) => {
 Learn more about deploying Hono projects on Vercel with the following resources:
 
 - [Hono templates on Vercel](https://vercel.com/templates/hono)
+- [Build with a Hono starter template](/kb/guide/build-with-a-hono-starter-template)
+- [How to ship a Hono app on Vercel](/kb/guide/ship-a-hono-app-on-vercel)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
 

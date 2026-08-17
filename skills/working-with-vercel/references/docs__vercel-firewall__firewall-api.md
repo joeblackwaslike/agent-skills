@@ -9,25 +9,40 @@ prerequisites:
   - /docs/vercel-firewall
 related:
   - /docs/rest-api
-  - /docs/rest-api/reference/endpoints/security/create-system-bypass-rule
-  - /docs/rest-api/reference/endpoints/security/update-firewall-configuration
+  - /docs/rest-api/security/create-system-bypass-rule
+  - /docs/rest-api/security/update-firewall-configuration
   - /docs/rest-api/sdk
-  - /docs/rest-api/reference/endpoints/security
+  - /docs/rest-api/security/update-attack-challenge-mode
 summary: Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "218ea5549666966f247cddf587f211424eac525a1a92b386ec54481163fc7c0e"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "743d75cb99a861e807ee63f165e9dabeb01e9992c722b989e4d70b5aa908b5d6"
 ---
 
 # Using the REST API with the Firewall
 
-The security section of the [Vercel REST API](/docs/rest-api) allows you to programmatically interact with some of the functionality of the Vercel Firewall such as [creating a system bypass rule](/docs/rest-api/reference/endpoints/security/create-system-bypass-rule) and [updating your Vercel WAF rule configuration](/docs/rest-api/reference/endpoints/security/update-firewall-configuration).
+The security section of the [Vercel REST API](/docs/rest-api) allows you to programmatically interact with some of the functionality of the Vercel Firewall such as [creating a system bypass rule](/docs/rest-api/security/create-system-bypass-rule) and [updating your Vercel WAF rule configuration](/docs/rest-api/security/update-firewall-configuration).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related)
+- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \(WAF\)
+- [Put Firewall Configuration](https://vercel.com/docs/rest-api/security/put-firewall-configuration?from=related)
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+
+Full cross-link map for this page: [/docs/vercel-firewall/firewall-api.graph.md](/docs/vercel-firewall/firewall-api.graph.md)
+<!-- /docsgraph:related -->
 
 You can use the REST API programmatically as follows:
 
 - Install the [Vercel SDK](/docs/rest-api/sdk) and use the [security methods](https://github.com/vercel/sdk/blob/HEAD/docs/sdks/security/README.md).
-- [Call the endpoints directly](/docs/rest-api) and use the [security endpoints](/docs/rest-api/reference/endpoints/security).
+- [Call the endpoints directly](/docs/rest-api) and use the [security endpoints](/docs/rest-api/security/update-attack-challenge-mode).
 
 To define firewall rules in code that apply across multiple projects, you can use the [Vercel Terraform provider](https://registry.terraform.io/providers/vercel/vercel/latest).
 

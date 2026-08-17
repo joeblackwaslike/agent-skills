@@ -16,13 +16,30 @@ related:
 summary: "Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low latency."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e98ffa73e83c022da25730ec53913589515cf7c39a7343cdd5ed8a4a92b83da2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "78e08964d05d65dabaf14d13af001e6e36c083e3cd4636fbb5f95b72e6e8a346"
 ---
 
 # How Vercel CDN works
 
 Every request to a Vercel deployment flows through a globally distributed CDN before it reaches your application code. The CDN handles routing, caching, security, and compression automatically, so your app is fast by default.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Fundamental Concepts](https://vercel.com/docs/fundamentals?from=related) — Learn about the core concepts of Vercel
+
+Full cross-link map for this page: [/docs/how-vercel-cdn-works.graph.md](/docs/how-vercel-cdn-works.graph.md)
+<!-- /docsgraph:related -->
 
 When a visitor requests a page, the CDN processes it through a series of layers. Each layer can resolve the request on its own or pass it to the next.
 

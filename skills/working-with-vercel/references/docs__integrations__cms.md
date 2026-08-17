@@ -8,21 +8,36 @@ type: how-to
 prerequisites:
   - /docs/integrations
 related:
-  - /docs/integrations/contentful
-  - /docs/integrations/sitecore
+  - /docs/integrations/cms/contentful
+  - /docs/integrations/cms/sitecore
   - /docs/edit-mode
   - /docs/cli/env
   - /docs/cli
 summary: Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1f4d673bb9f356f8561b80ab79b7ce5f0656783824fedb703479f22dde907b2d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "16c11a0b39e2cca59a69414eb8ba9bb745d950a5efedf3f8c32e261a07211b39"
 ---
 
 # Vercel CMS Integrations
 
-Vercel Content Management System (CMS) Integrations allow you to connect your projects with CMS platforms, including [Contentful](/docs/integrations/contentful), [Sanity](/marketplace/sanity), [Sitecore XM Cloud](/docs/integrations/sitecore) and [more](#featured-cms-integrations). These integrations provide a direct path to incorporating CMS into your applications, enabling you to build, deploy, and leverage CMS-powered features with minimal hassle.
+Vercel Content Management System (CMS) Integrations allow you to connect your projects with CMS platforms, including [Contentful](/docs/integrations/cms/contentful), [Sanity](/marketplace/sanity), [Sitecore XM Cloud](/docs/integrations/cms/sitecore) and [more](#featured-cms-integrations). These integrations provide a direct path to incorporating CMS into your applications, enabling you to build, deploy, and leverage CMS-powered features with minimal hassle.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related) — Learn best practices for using databases in a serverless environment with Vercel
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Commerce and Payments](https://vercel.com/docs/integrations/ecommerce?from=related) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+
+Full cross-link map for this page: [/docs/integrations/cms.graph.md](/docs/integrations/cms.graph.md)
+<!-- /docsgraph:related -->
 
 You can use the following methods to integrate your CMS with Vercel:
 

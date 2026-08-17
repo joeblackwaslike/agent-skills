@@ -16,13 +16,33 @@ related:
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "919670b00b380b0f425f98301254e756b211d177ab6820b8acba9c24964bef16"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f1b76cc441f06e03a6b1e676208987402e2320d623f5c6b622ceb26f722b47e8"
 ---
 
 # Working with Drains
 
 > **🔒 Permissions Required**: Drains
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Creates a new Integration Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
+- [Retrieves a Configurable Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related)
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
+
+Full cross-link map for this page: [/docs/drains.graph.md](/docs/drains.graph.md)
+<!-- /docsgraph:related -->
 
 Drains let you forward observability data from your applications to external services for debugging, performance optimization, analysis, and alerting, so that you can:
 
@@ -49,11 +69,12 @@ Drains support the following data types:
 - **Traces**: Distributed tracing data in OpenTelemetry format (supports custom endpoints and native integrations)
 - **Speed Insights**: Performance metrics and web vitals (custom endpoints only)
 - **Web Analytics**: Page views and custom events (custom endpoints only)
+- **Connect**: Runtime events in the form of token requests, authorizations, revocations, and trigger deliveries from [Vercel Connect](/docs/connect) connectors (custom endpoints only)
 - **Audit Logs**: Team activity events
 
 ### Data type references
 
-Each drain data type has specific formats, fields, and schemas. Review the reference documentation for [logs](/docs/drains/reference/logs), [traces](/docs/drains/reference/traces), [speed insights](/docs/drains/reference/speed-insights), [analytics](/docs/drains/reference/analytics), and [audit logs](/docs/drains/reference/audit-logs) to understand the data structure you'll receive from each data type.
+Each drain data type has specific formats, fields, and schemas. Review the reference documentation for [logs](/docs/drains/reference/logs), [traces](/docs/drains/reference/traces), [speed insights](/docs/drains/reference/speed-insights), [analytics](/docs/drains/reference/analytics), [connect events](/docs/connect/observability#events-reference), and [audit logs](/docs/drains/reference/audit-logs) to understand the data structure you'll receive from each data type.
 
 ## REST API `schemas` property
 
@@ -80,6 +101,7 @@ The following table lists the available schema names:
 | `analytics`      | `v2`    | Web Analytics page views and custom events       |
 | `speed_insights` | `v1`    | Performance metrics and web vitals               |
 | `audit_log`      | `v1`    | Team activity events                             |
+| `connect`        | `v1`    | Vercel Connect token and trigger events          |
 
 For example, to create a log drain, set `log` as the schema name with version `v1`:
 
@@ -93,7 +115,7 @@ For example, to create a log drain, set `log` as the schema name with version `v
 
 You also use the `schemas` property when [validating drain delivery configuration](/docs/rest-api/drains/validate-drain-delivery-configuration). Pass the same `schemas` and `delivery` values you plan to use when creating the drain to verify your endpoint before the drain is live.
 
-For details on the data each schema delivers, see the reference docs for [logs](/docs/drains/reference/logs), [traces](/docs/drains/reference/traces), [speed insights](/docs/drains/reference/speed-insights), [analytics](/docs/drains/reference/analytics), and [audit logs](/docs/drains/reference/audit-logs).
+For details on the data each schema delivers, see the reference docs for [logs](/docs/drains/reference/logs), [traces](/docs/drains/reference/traces), [speed insights](/docs/drains/reference/speed-insights), [analytics](/docs/drains/reference/analytics), [Connect events](/docs/connect/observability#events-reference), and [audit logs](/docs/drains/reference/audit-logs).
 
 ## Security
 
@@ -125,8 +147,9 @@ For more information on Drains, check out the following resources:
 - [Traces reference](/docs/drains/reference/traces)
 - [Speed Insights reference](/docs/drains/reference/speed-insights)
 - [Analytics reference](/docs/drains/reference/analytics)
+- [Connect Events reference](/docs/connect/observability#events-reference)
 - [Audit Log Drains reference](/docs/drains/reference/audit-logs)
-- [Drains REST API endpoints](/docs/rest-api/drains)
+- [Drains REST API endpoints](/docs/rest-api/drains/retrieve-a-list-of-all-drains)
 
 
 ---

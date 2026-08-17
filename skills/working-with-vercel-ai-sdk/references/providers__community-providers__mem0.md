@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/mem0.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "00ce643cec0e3bbde2bf50f2b206cacc3776eee21a46c33f6217cac10832522c"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "892222488e37aea96be53552d22f4f260ae89c0ad4dcec9d0d8798efb181e41e"
 ---
 
 # Mem0 Provider
@@ -304,6 +304,7 @@ The Mem0 provider supports the following LLM providers:
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

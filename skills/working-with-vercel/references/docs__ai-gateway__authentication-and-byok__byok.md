@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "05b1a4fbefe00c6cb26ea0face128e665a122b042931a0f5414c5a52ba6872da"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "92a2d808d8dd4a78ef00086fd88ff9ce1f64bc07150bfcd53f2937e83253caf7"
 ---
 
 # Bring Your Own Key (BYOK)
@@ -26,6 +26,25 @@ sha256: "05b1a4fbefe00c6cb26ea0face128e665a122b042931a0f5414c5a52ba6872da"
 Using your own credentials with an external AI provider allows AI Gateway to authenticate requests on your behalf with [no added markup](/docs/ai-gateway/pricing#bring-your-own-key-byok).
 This approach is useful for using credits provided by the AI provider or executing AI queries that access private cloud data.
 If a query using your credentials fails, AI Gateway will retry the query with its system credentials to improve service availability.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Zero Data Retention](https://vercel.com/docs/ai-gateway/security-and-compliance/zdr?from=related) — Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
+- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
+- [Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training?from=related) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/byok.graph.md](/docs/ai-gateway/authentication-and-byok/byok.graph.md)
+<!-- /docsgraph:related -->
 
 Integrating credentials like this with AI Gateway is sometimes referred to as **Bring-Your-Own-Key**, or **BYOK**. In the Vercel dashboard this feature is found in the **AI Gateway section in the sidebar** under the **Bring Your Own Key (BYOK)** section in the sidebar.
 

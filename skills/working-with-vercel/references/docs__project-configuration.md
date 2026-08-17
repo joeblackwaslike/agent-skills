@@ -16,13 +16,33 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, functions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "b90ae5c8ec84502293e25361057706d87352907e478f5471caa4bde0593059b3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "012fa30f2a51fc7855b630832cc0f1b148f98e3bed6a67bdbe8064b2e969192e"
 ---
 
 # Project Configuration
 
 Vercel automatically detects your framework and sets sensible defaults for builds, deployments, and routing. Project configuration lets you override these defaults to control builds, routing rules, function behavior, scheduled tasks, image optimization, and more.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I redirect from a subdomain to a subpath?](https://vercel.com/kb/guide/can-i-redirect-from-a-subdomain-to-a-subpath?from=related) — Learn how to redirect from your subdomain to a subpath on Vercel with a vercel.json file or with Next.js
+- [Can I route based on letter casing on Vercel?](https://vercel.com/kb/guide/can-i-route-based-on-letter-casing-on-vercel?from=related) — Information on whether or not it is possible to route based on letting casing with Vercel.
+- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
+- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related) — Options available for service configuration.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+
+Full cross-link map for this page: [/docs/project-configuration.graph.md](/docs/project-configuration.graph.md)
+<!-- /docsgraph:related -->
 
 In addition to configuring your project through [Project Settings](/docs/project-configuration/project-settings), you have the following options:
 

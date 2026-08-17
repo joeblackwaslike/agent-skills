@@ -16,13 +16,30 @@ related:
 summary: "Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "5861a9c4647751ed66f20731adbc25dc64288d176435449cdd6322552a61bdb0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1e90035bcafd33b4d12f14a4833f3e0669c350fbf3a27a82b4c278ea3a2e365d"
 ---
 
 # CDN security
 
 Vercel's CDN applies multiple layers of security to every incoming request before it reaches your application. Encryption, firewall protection, and DDoS mitigation all happen at the CDN level, so your deployments are protected by default.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
+- [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Firewall](https://vercel.com/docs/vercel-firewall?from=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
+- [Security](https://vercel.com/docs/vercel-blob/security?from=related) — Learn how your Vercel Blob store is secured
+
+Full cross-link map for this page: [/docs/cdn-security.graph.md](/docs/cdn-security.graph.md)
+<!-- /docsgraph:related -->
 
 ## Encryption and TLS
 
@@ -31,6 +48,8 @@ Vercel serves every deployment over HTTPS and automatically provisions SSL certi
 The CDN supports TLS 1.2 and TLS 1.3 with strong cipher suites that provide [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy). TLS session resumption reduces Time to First Byte (TTFB) for returning visitors, and [OCSP stapling](https://en.wikipedia.org/wiki/OCSP_stapling) speeds up certificate validation for first-time visitors.
 
 Vercel also supports post-quantum cryptography through the `X25519MLKEM768` key exchange mechanism. This protects your deployments against future quantum computing attacks in Chrome 131+, Firefox 132+, and Safari 26+.
+
+The CDN also supports [Encrypted Client Hello (ECH)](/docs/cdn-security/encryption#encrypted-client-hello-ech), which encrypts the hostname in the TLS handshake so network observers can't see which site a visitor connects to. Vercel manages ECH automatically, with nothing to configure.
 
 - [Encryption & TLS details](/docs/cdn-security/encryption)
 

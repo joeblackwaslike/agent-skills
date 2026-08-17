@@ -10,19 +10,34 @@ prerequisites:
 related:
   - /docs/global-config
   - /docs/accounts
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/global-config/using-global-config
   - /docs/global-config/global-config-limits
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "84e007fcf952fbbc1f739f2b8e6269053dd89a5433ffe85c981577d98e08e3cb"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5913d50e757c110ebd5f3dbf8c5cca27f67c875480ab3d4c602048d8d156696f"
 ---
 
 # Managing Global Configs with the Dashboard
 
-You can create, view and update your [Global Configs](/docs/global-config), and the data inside them, in your Vercel Dashboard at both the [account level](/docs/accounts) and the [project level](/docs/projects/overview).
+You can create, view and update your [Global Configs](/docs/global-config), and the data inside them, in your Vercel Dashboard at both the [account level](/docs/accounts) and the [project level](/docs/projects).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Getting Started](https://vercel.com/docs/global-config/get-started?from=related) — Learn how to create a Global Config store and read from it in your project.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Global Configs & REST API](https://vercel.com/docs/global-config/vercel-api?from=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+
+Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md)
+<!-- /docsgraph:related -->
 
 ## Creating a Global Config
 
@@ -51,7 +66,7 @@ Your Global Config is now ready to be used. You can also [create a Global Config
 
 ### At the project level
 
-1. Navigate to your [project](/docs/projects/overview) page and click on the **Global Config** section in the sidebar
+1. Navigate to your [project](/docs/projects) page and click on the **Global Config** section in the sidebar
 
 2. Click **Create Project Store** and type a name slug for your Global Config in the dialog that opens. The name shouldn't exceed 32 characters and can only contain alphanumeric letters, "\_", and "-".
 

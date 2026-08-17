@@ -15,13 +15,34 @@ related:
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "074257b332d08ddaa0ace7863737025033a561bf5258d3d319348e47af47a6a5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "bb05f972c63cd5fe2792e73b63364ab92ac7cb1826102212166cf1d8eaca006d"
 ---
 
 # Sandbox firewall
 
 Network firewall allows users to restrict egress traffic from their sandbox. It is a critical tool to prevent data exfiltration.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Security Model](https://eve.dev/docs/concepts/security-model?from=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
+- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [Running OpenClaw in Vercel Sandbox](https://vercel.com/kb/guide/running-openclaw-in-vercel-sandbox?from=related) — This guide walks you through setting up OpenClaw inside a Vercel Sandbox and configuring the WhatsApp channel.
+- [Update network policy](https://vercel.com/docs/rest-api/sandboxes/update-network-policy?from=related)
+- [Firewall](https://vercel.com/docs/vercel-firewall?from=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related)
+- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox?from=related)
+- [List sandboxes](https://vercel.com/docs/rest-api/sandboxes/list-sandboxes?from=related)
+
+Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md)
+<!-- /docsgraph:related -->
 
 ## When to use network firewall
 
@@ -54,6 +75,10 @@ Most specific policy, denying all traffic by default, while allowing users to ge
 - a list of domains to allow traffic to. Domain-based policies are easy to use and maintain fine-grain access control for services like S3 (per bucket) or behind virtual hosting (as Vercel). Wildcard support (`*`) allows easier management for complex websites. Each domain can have specific rules attached to it, such as [credentials brokering](/docs/sandbox/concepts/firewall#credentials-brokering) via the `transform` field or [requests proxying](/docs/sandbox/concepts/firewall#requests-proxying) via the `forwardURL` field. Only one of these feature can be defined per rule.
 - a list of address ranges to allow traffic to. Those ranges will not enforce per-domain rules, supporting non-encrypted traffic. This is recommended when using secure-compute to connect to your private network securely.
 - a list of address ranges to deny traffic to. Those range will take precedence to block traffic. This is useful when using secure-compute, allowing Internet access to be granted while blocking internal network.
+
+Address ranges and domains are enforced independently, so combining them does not compose the way it appears to. Because allowed ranges are not filtered by your domain rules, a domain allowlist alongside `subnets.allow` only controls the default resolver's DNS lookups. It does not restrict which IPs the sandbox can connect to within the allowed ranges. Code in the sandbox can reach any IP in an allowed range by connecting to a literal IP address or by using a custom DNS resolver, and that traffic bypasses SNI filtering, [credentials brokering](#credentials-brokering), and [requests proxying](#requests-proxying). A broad range such as `0.0.0.0/0` or `::/0` therefore grants access to the entire Internet regardless of the domain allowlist. Use a domain allowlist when you need per-domain enforcement, or use `subnets.allow` scoped to the exact hosts you trust when you need raw IP access, rather than relying on both together.
+
+`subnets.allow` also does not restrict DNS. The sandbox's default resolver keeps resolving arbitrary domain names no matter which ranges you allow, even under a policy that lists only private ranges with no public resolver. Only domain rules constrain what the default resolver will resolve, so a policy with allowed ranges but no `allow` domains leaves DNS open. Code in the sandbox can then resolve any hostname and use those lookups to send data out over DNS. Define an `allow` domain list to restrict DNS, or use `deny-all` to block it entirely.
 
 ## Supported protocols
 

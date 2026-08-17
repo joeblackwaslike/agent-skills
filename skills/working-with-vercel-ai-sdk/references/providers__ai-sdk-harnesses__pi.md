@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "4a42634c62882675a4a2e79a19f3c5dc89a3fb106432e5c5a16692f3d1dabb46"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "79ba281da2047f6729461b0d52018de87dfb0e0d0ce73879ce1dee2facf90e3b"
 ---
 
 # Pi Harness
@@ -82,29 +82,62 @@ const harness = createPi({
 
 Settings:
 
-- `auth`: AI Gateway or custom provider environment configuration.
+- `auth`: authentication mode: `auto`, `openai`, `anthropic`, `custom`, or
+  `ai-gateway`.
+- `extensionFactories`: trusted inline Pi extension factories that run in the
+  host Node.js process.
+- `mcpServers`: MCP server definitions keyed by server name.
 - `model`: Pi model id or model name.
 - `thinkingLevel`: Pi thinking budget level.
 
-## Authentication
+## Inline Extensions
 
-Pi can use AI Gateway credentials or custom provider environment variables.
-When no explicit auth is configured, it checks the host environment for
-`AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN`.
+Use `extensionFactories` to load trusted inline Pi extensions for each harness
+session:
 
 ```ts
 const harness = createPi({
-  auth: {
-    gateway: {
-      apiKey: process.env.AI_GATEWAY_API_KEY,
+  extensionFactories: [
+    pi => {
+      pi.on('agent_start', () => {
+        console.log('Pi agent started');
+      });
     },
-  },
+  ],
 });
 ```
 
-For multiple providers, pass `auth.customEnv` with standard environment pairs
-such as `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `ANTHROPIC_API_KEY`, or
-`ANTHROPIC_BASE_URL`.
+Routine resource refreshes between turns reuse the active extension runtime and
+do not reinitialize factories. If the underlying Pi session is rebuilt, the
+factories initialize again for the new Pi runtime.
+
+Extension factories execute in the host Node.js process with access to the host
+environment, so only pass factories you trust. This setting enables only the
+factories you explicitly provide. Filesystem extension discovery remains
+disabled, including user, project, and settings-based extensions. Themes and
+prompt templates also remain disabled.
+
+## Authentication
+
+The `auth` setting selects which credentials Pi reads from the host environment:
+
+- `auto` (default): use AI Gateway credentials when available, then fall back
+  to all provider credentials found in the environment.
+- `openai`: use `OPENAI_API_KEY` and the optional `OPENAI_BASE_URL`.
+- `anthropic`: use `ANTHROPIC_API_KEY` and the optional
+  `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_BASE_URL`.
+- `custom`: register all providers configured through environment variables.
+- `ai-gateway`: use `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN` and the
+  optional `AI_GATEWAY_BASE_URL`.
+
+```ts
+const harness = createPi({ auth: 'ai-gateway' });
+```
+
+With `custom`, standard providers use environment variables such as
+`OPENAI_API_KEY`, `OPENAI_BASE_URL`, `ANTHROPIC_API_KEY`, and
+`ANTHROPIC_BASE_URL`. Other providers use a `<PREFIX>_API_KEY` and matching
+`<PREFIX>_BASE_URL` pair.
 
 ## Sandbox
 
@@ -150,6 +183,9 @@ Pi supports built-in tool approval requests when `permissionMode` is
 - [Pi](/providers/ai-sdk-harnesses/pi)
 - [OpenCode](/providers/ai-sdk-harnesses/opencode)
 - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
+- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+- [Cline](/providers/ai-sdk-harnesses/cline)
 
 
 [Full Sitemap](/sitemap.md)

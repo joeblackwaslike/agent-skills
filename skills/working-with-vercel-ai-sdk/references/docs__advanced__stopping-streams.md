@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/advanced/stopping-streams.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "f800bdd13bcabd363136bd5bc44161c84bc104bd12ae14ed398d9c704b67e374"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "269ef93a9bbb319cd61a704cb4ac36becf6ce631bf233f1710bafc3cbe043637"
 ---
 
 # Stopping Streams
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
 ## AI SDK UI
 
 The hooks, e.g. `useChat` or `useCompletion`, provide a `stop` helper function that can be used to cancel a stream.
-This will cancel the stream from the client side to the server.
+This aborts the HTTP request from the client. To also stop the model request on the server, your server runtime must propagate the client disconnect to the request's `AbortSignal`, and your route must forward that signal to the AI SDK Core call as shown above.
 
 <Note type="warning">
   Stream abort functionality is not compatible with stream resumption. If you're
@@ -78,6 +78,27 @@ export default function Chat() {
   );
 }
 ```
+
+### Vercel
+
+On Vercel, [request cancellation](https://vercel.com/docs/functions/functions-api-reference#cancel-requests) is only supported in the Node.js runtime and must be enabled for each function that needs it. Add `supportsCancellation` to the function's configuration in `vercel.json`:
+
+```json filename="vercel.json"
+{
+  "functions": {
+    "app/api/chat/route.ts": {
+      "supportsCancellation": true
+    }
+  }
+}
+```
+
+With cancellation enabled, calling `stop()` aborts the client request, Vercel aborts `req.signal`, and forwarding `req.signal` as `abortSignal` cancels the model request.
+
+<Note type="warning">
+  Without `supportsCancellation`, `stop()` still stops the client-side stream
+  but the server-side generation may continue.
+</Note>
 
 ## Handling stream abort cleanup
 

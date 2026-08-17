@@ -13,13 +13,32 @@ related:
 summary: Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5db1da2219b47e30144b3ffdce7192f7be03ed803263269260dba269a964a1e5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "4a950e8ef46f3e63747743fed99b2f584b8e25c04fee269e78fd74dd72ca93ca"
 ---
 
 # Multi-tenant Preview URLs
 
 Multi-tenant preview URLs let you test tenant-specific experiences in preview deployments without configuring additional domains. Add any prefix before `---` in a preview URL, and Vercel routes the request to the same deployment while passing the full hostname to your code.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Can I use Preview Deployment Suffix without switching to Vercel Nameservers?](https://vercel.com/kb/guide/preview-deployment-suffix-without-vercel-nameservers?from=related) — Information on how to use Preview Deployment Suffix without Vercel Nameservers
+- [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing?from=related) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
+- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+
+Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/preview-url-prefixes.graph.md](/docs/platforms/multi-tenant-platforms/preview-url-prefixes.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** This feature requires a [custom preview
 > suffix](/docs/deployments/preview-deployment-suffix). It does not work with

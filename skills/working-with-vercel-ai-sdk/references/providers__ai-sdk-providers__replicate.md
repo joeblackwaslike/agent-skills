@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "703480e892f443a8369495c007e6488f37500f8a1f70af2dba6ad3bdfbab1bef"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "eb888c1bdc8ff5d0e120976f66fc02962278d4021f567b2d636e3565c277fa65"
 ---
 
 # Replicate Provider
@@ -272,7 +272,6 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -282,6 +281,7 @@ For more details, see the [Replicate models page](https://replicate.com/explore)
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

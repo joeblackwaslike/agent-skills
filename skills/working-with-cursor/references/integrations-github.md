@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/integrations/github.md"
-fetched_at: "2026-06-22T05:56:56.704Z"
-sha256: "7df97c6bf74d57a6c09b088d586c7f41e4d1349eec9a0cedd6a83190e4f5492c"
+fetched_at: "2026-08-17T04:43:49.201Z"
+sha256: "a85477de53c40647cdf29cbfe0ad7f6c9016fc07ae22a1b1eede67dd43faf37f"
 ---
 
 # GitHub
@@ -78,17 +78,19 @@ The proxy should allow authenticated GitHub API requests from Cursor without blo
 
 If your organization uses GitHub's IP allow list feature to restrict access to your repositories, Cursor can be configured to use a hosted egress proxy with a narrow set of IPs.
 
-Before configuring IP allowlists, contact [hi@cursor.com](mailto:hi@cursor.com) to enable this feature for your team. This is required for either configuration method below.
+The recommended GitHub Apps setting is configured in GitHub. You do not need Cursor to enable it. If you add the git egress proxy IPs yourself instead, contact [hi@cursor.com](mailto:hi@cursor.com) so we can enable git egress proxy for your team. Otherwise git traffic may not come from those addresses.
 
 ### Enable IP allow list configuration for installed GitHub Apps (recommended)
 
 The Cursor GitHub app has the IP list already pre-configured. You can enable the allowlist for installed apps to automatically inherit this list. This is the **recommended approach**, as it allows us to update the list and your organization receives updates automatically.
 
+This inherits the IP list registered on the Cursor GitHub App. It does not allow every client that happens to use those addresses.
+
 To enable this:
 
 1. Go to your organization's Security settings
 2. Navigate to IP allow list settings
-3. Check **"Allow access by GitHub Apps"**
+3. Check **"Enable IP allow list configuration for installed GitHub Apps"**
 
 For detailed instructions, see [GitHub's documentation](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization#allowing-access-by-github-apps).
 
@@ -98,7 +100,7 @@ If your organization uses IdP-defined allowlists in GitHub or otherwise cannot u
 
 ## Advanced networking
 
-Self-hosted instances support multiple connection methods beyond IP whitelisting. For setup details and supported private networking options, see [Private Connectivity](https://cursor.com/docs/enterprise/private-connectivity.md).
+Self-hosted instances support multiple connection methods beyond IP whitelisting. For setup details and supported private networking options, see [Private Connectivity](https://cursor.com/docs/cloud-agent/private-connectivity.md).
 
 ### AWS PrivateLink
 

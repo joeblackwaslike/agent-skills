@@ -11,17 +11,32 @@ prerequisites:
 related:
   - /docs/ai-gateway/observability-and-spend/observability
   - /docs/ai-gateway/observability-and-spend/custom-reporting
-  - /docs/ai-gateway/authentication-and-byok/oidc
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5c6a69e8a5dd7dbfa04efa5874060e1abfc0a01a30ea409085251c84b859b4a7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7e1cfad4147b8ab377dba6c05e8211e4225466a9da36b29c33a8e9c7a6a343ec"
 ---
 
 # Logs
 
-The Logs page lists every request your team sends through AI Gateway, newest first. Use it to find one request by ID, narrow to a model or a status code, watch traffic as it arrives, and open a single request to see how it was routed and what it cost.
+The Logs page lists every request and asynchronous job your team sends through AI Gateway, newest first. Use it to find one operation by ID, narrow the list by model or outcome, watch traffic as it arrives, and inspect routing, usage, and cost.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Runtime](https://vercel.com/docs/logs/runtime?from=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Logs](https://vercel.com/docs/logs?from=related) — Use logs to find information on deployment builds, function executions, and more.
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
+
+Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/logs.graph.md](/docs/ai-gateway/observability-and-spend/logs.graph.md)
+<!-- /docsgraph:related -->
 
 For aggregate charts and spend totals, see [Observability](/docs/ai-gateway/observability-and-spend/observability). For usage grouped by model, user, or tag, see [Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting).
 
@@ -29,25 +44,25 @@ For aggregate charts and spend totals, see [Observability](/docs/ai-gateway/obse
 
 Open the [**Logs** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Flogs\&title=AI+Gateway+Logs) in the AI Gateway sidebar. It's available at two scopes:
 
-- **Team**: every request across your team, at `/[team]/~/ai-gateway/logs`
-- **Project**: only that project's requests, at [`/[team]/[project]/ai-gateway/logs`](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fai-gateway%2Flogs\&title=Project+AI+Gateway+Logs)
+- **Team**: every request and asynchronous job across your team, at `/[team]/~/ai-gateway/logs`
+- **Project**: only that project's logs, at [`/[team]/[project]/ai-gateway/logs`](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fai-gateway%2Flogs\&title=Project+AI+Gateway+Logs)
 
 The two views behave identically. The project view is the team view with a project filter applied.
 
 ## Read the log table
 
-Each row is one request. The table scrolls horizontally.
+Each row is one request or asynchronous job. The table scrolls horizontally when the available width can't fit every column, including when request details are open.
 
-| Column       | What it shows                                                      |
-| ------------ | ------------------------------------------------------------------ |
-| **Time**     | When the request started. Hover for the full timestamp             |
-| **Status**   | HTTP status code, colored by class: 2xx green, 4xx amber, 5xx red  |
-| **Model**    | The model that served the request                                  |
-| **Provider** | The provider it was served by                                      |
-| **Usage**    | What the request consumed, in the unit that suits its modality     |
-| **Cost**     | Total cost of the request in dollars                               |
-| **Duration** | Total request duration in seconds                                  |
-| **Region**   | The region that served the request, for region-scoped routing only |
+| Column             | What it shows                                                                                  |
+| ------------------ | ---------------------------------------------------------------------------------------------- |
+| **Time**           | When the request started or job was submitted. Hover for the full timestamp                    |
+| **Status**         | HTTP status code for a request, or lifecycle state such as Completed or Cancelled for a job     |
+| **Model**          | The model that served the request, including its speed tier                                     |
+| **Provider**       | The provider that served the request                                                             |
+| **Usage**          | What the request consumed, in the unit that suits its modality                                  |
+| **Cost**           | Total cost in dollars                                                                           |
+| **Duration**       | Total request duration, or elapsed job time from submission to completion                       |
+| **Authentication** | The AI Gateway API key, project, app token, or personal access token that authenticated the call |
 
 **Usage** holds one slot per row and changes what it reports based on the model's modality:
 
@@ -69,67 +84,68 @@ The list is always ordered newest first and can't be re-sorted. To narrow it, us
 
 > **💡 Note:** Token splits, the cost breakdown, whether the request was billed to AI Gateway or BYOK, Zero Data Retention, and the full video measures all live in the request details panel rather than the table. Click any row to see them.
 
-![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/light-gateway-logs-table)
-
-## Filter requests
+## Filter logs
 
 The filter bar sits above the table.
 
-**Search** matches the model, the provider, or the request ID. Pasting a request ID from your logs or an error report takes you straight to that request.
+**Search** matches the model, provider, or request ID. Enter an exact job ID to find an asynchronous job.
 
 **Dropdowns** each accept multiple values:
 
-| Filter          | Options                                                          |
-| --------------- | ---------------------------------------------------------------- |
-| **Providers**   | Any provider your team has used                                  |
-| **Models**      | Any model your team has used                                     |
-| **Modalities**  | Any modality your team has used, such as Language or Embedding   |
-| **Credentials** | System, BYOK, or Virtual Models                                  |
-| **Statuses**    | `2xx`, `4xx`, `5xx`, or an exact code you type in, such as `429` |
+| Filter             | Options                                                                                                                       |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Status**         | `2xx`, `4xx`, `5xx`, or an exact code you enter, such as `429`                                                               |
+| **Model**          | Any model your team has used                                                                                                  |
+| **Provider**       | Any provider your team has used                                                                                               |
+| **Authentication** | API keys, projects that used OIDC tokens, app tokens, and personal access tokens                                              |
+| **Routing**        | AI Gateway system credentials, BYOK credentials, Virtual Models, or Private Inference                                         |
+| **Modality**       | Any modality your team has used, such as Language or Embedding                                                               |
+| **Request Mode**   | Synchronous requests or asynchronous jobs                                                                                     |
+| **Latency**        | Minimum request duration or time to first token                                                                               |
+| **Tokens**         | Minimum input or output token count                                                                                           |
+| **Cost**           | Minimum inference cost                                                                                                        |
 
 **Date range** offers presets from the last 5 minutes to the last 30 days. You can look back at most 36 days.
 
-Every filter is stored in the URL, so you can share a filtered view by copying the address. **Clear filters** resets the search and all five dropdowns.
+Every filter is stored in the URL, so you can share a filtered view by copying the address. **Reset** clears the search and filters.
 
-![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/light-gateway-logs-filters)
+> **💡 Note:** The Provider, Model, and Modality dropdowns list what your team used in the last 30 days, regardless of the selected date range. A provider you last called two months ago won't appear as an option.
 
-> **💡 Note:** The Providers, Models, and Modalities dropdowns list what your team used in the last 30 days, regardless of the date range you have selected. A provider you last called two months ago won't appear as an option.
+The chart above the table shows token volume under the same filters. When matching operations report no token usage, the chart shows request volume instead. If the range contains no requests, the chart shows an empty state. Drag across a populated chart to select that time range and zoom into a finer granularity.
 
-The chart above the table shows request counts over the selected range under the same filters. Drag across it to zoom into a narrower window.
+## Follow logs live
 
-## Follow requests live
-
-Turn on **Live** to tail requests as they arrive. New rows appear at the top, refreshing every 5 seconds.
+Turn on **Live** to tail logs as they arrive. New rows appear at the top, refreshing every 5 seconds.
 
 Live mode has three limits worth knowing:
 
 - It only works with a relative range. Turning it on while an absolute range is selected switches you to the last hour.
-- Scrolling back through history is disabled while live. Pause to load older requests.
+- Scrolling back through history is disabled while live. Pause to load older logs.
 - Requests take about 90 seconds to fully ingest, so the newest rows lag real time by roughly that much.
 
-With Live off, the list loads 50 more requests each time you scroll to the bottom.
+With Live off, the list loads 50 more rows each time you scroll to the bottom.
 
-## Inspect a single request
+## Inspect a log
 
-Click any row to open its details beside the list. The panel is resizable by dragging its left edge. Opening a request's URL directly, or refreshing the page, shows the same details full width instead.
+Click any row to open its details beside the list. The panel is resizable by dragging its left edge. The selected log ID is stored in the URL, so you can copy the address to share the same log and filtered list.
 
-The header carries the request's generation ID with a copy button, followed by a badge naming where the request came from. That's the API key if it used one, or the project if it was authenticated with an [OIDC token](/docs/ai-gateway/authentication-and-byok/oidc) and has no key. Either one links to its own page. A region badge follows for region-scoped routing, then how long ago the request ran.
+The header carries the generation or job ID with a copy button. **Request started** identifies the authentication input, inference region, and whether Zero Data Retention applied. OIDC-authenticated requests name their project because the token itself has no API key name. App tokens and personal access tokens appear as team-scoped authentication.
 
-**Stats** cover Total Cost, Input, Output, Reasoning, Cache Read, Cache Write, Duration, time to first token, and whether Zero Data Retention applied.
+**Routing** describes what happened after AI Gateway received the request. A single provider attempt appears in one Routing card. A request that needed multiple attempts shows one **Routed to \[provider]** card per attempt. Each card can include the provider, provider region, served model, credential source, time to first token, compact timing spans, status, and provider response.
 
-**Fallback Path** lists every provider attempt for the request in order, with failures first. Each attempt shows the model and provider, the status code, whether it used system or BYOK credentials, and how long it took. Failed attempts include the reason, such as a provider timeout or an exhausted routing budget. This is the fastest way to see why a request was slow or which provider actually served it after a failover.
+Timing spans use green for successful work, amber for a 4xx response, and red for a 5xx response or timeout. A recovered request also has a refresh icon in the table's Status cell.
+
+**Transcript** shows captured inputs and outputs when content capture is available. Structured JSON uses an expandable JSON view, while chat and tool calls use their modality-specific presentation. Zero Data Retention, privacy settings, size limits, or capture failures can make transcript content unavailable.
 
 **Usage** and **Cost** break the request down line by line, so you can see which tokens and which charges made up the total.
 
-![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/light-gateway-logs-request-details)
-
 ## Export logs
 
-**Export** downloads the current view as CSV or JSON. Both respect your active filters and time range, and both are capped at 1,000,000 rows.
+**Copy visible logs** copies every loaded row, including job-only rows, to your clipboard. **Export to CSV** and **Export to JSON** include loaded request rows under the active filters and time range. The menu discloses job-only rows that the file export omits because those jobs don't have a flat request record yet.
 
 ## Retention and limits
 
-Request details, including the fallback path, are kept for **30 days**. Older requests still appear in the list but open with a message saying their details are no longer available.
+Routing attempt details are kept for **30 days**. Older requests still appear in the list but open with a message saying their routing details are no longer available.
 
 The date range picker allows up to 36 days, which is longer than the 30-day detail retention. Requests in that 6-day gap are listed without details.
 

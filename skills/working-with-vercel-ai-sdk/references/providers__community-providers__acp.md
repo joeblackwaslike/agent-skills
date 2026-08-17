@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/acp.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "6ba88be2d1f2bbaf9a2e29dd3dab547c640943eff20ab756f36a20dd708e376e"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "72a8771b0225893e5a1faff8dd476fd541158d33a1682b1a32297c8c20e0e817"
 ---
 
 # ACP (Agent Client Protocol)
@@ -302,6 +302,7 @@ const provider = createACPProvider({
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

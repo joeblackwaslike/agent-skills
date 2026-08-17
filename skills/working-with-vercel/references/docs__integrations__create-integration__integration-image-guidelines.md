@@ -13,13 +13,28 @@ related:
 summary: Guidelines for creating images for integrations, including layout, content, visual assets, descriptions, and design standards.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/integration-image-guidelines.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1d88e0cc8afd806c940392ac3794f150f2a7032b6f3b83e21c0fac9187ceab25"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "2692c04b28dd405a8455a0c6f6336877bda99964dc6f69b4a4c9de58ff7b42dd"
 ---
 
 # Integration Image Guidelines
 
 These guidelines help ensure consistent, high-quality previews for integrations across the Vercel platform.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
+- [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product?from=related) — Learn how to create a product for your Vercel native integration
+- [CMS Integrations](https://vercel.com/docs/integrations/cms?from=related) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+
+Full cross-link map for this page: [/docs/integrations/create-integration/integration-image-guidelines.graph.md](/docs/integrations/create-integration/integration-image-guidelines.graph.md)
+<!-- /docsgraph:related -->
 
 See [Clerk's Integration](https://vercel.com/marketplace/clerk) for a strong example.
 

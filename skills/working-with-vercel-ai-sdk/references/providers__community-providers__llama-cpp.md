@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/llama-cpp.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "d2e1287b5c5f1c835f44ac6fd7a3ee9727a1d26d6f477fe6c9960e01e5f5a393"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "21e1a0f8ec856d37dc5ddfd3d0d35128f7f5bc5ee3245bb41925aea93719f4b2"
 ---
 
 # llama.cpp Provider
@@ -341,6 +341,7 @@ try {
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

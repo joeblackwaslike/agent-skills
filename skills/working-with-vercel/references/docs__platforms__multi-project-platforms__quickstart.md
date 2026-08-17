@@ -9,21 +9,38 @@ prerequisites:
   - /docs/platforms/multi-project-platforms
   - /docs/platforms
 related:
-  - /docs/rest-api/reference/endpoints/projects/create-a-new-project
+  - /docs/rest-api/projects/create-a-new-project
   - /docs/deployments/environments
-  - /docs/rest-api/reference/endpoints/deployments/create-a-new-deployment
+  - /docs/rest-api/deployments/create-a-new-deployment
   - /docs/platforms/platform-elements/actions/deploy-files
   - /docs/platforms/multi-tenant-platforms/configuring-domains
 summary: Programmatically host code for user-generated or AI-generated applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "1c175396aa961a9e653905eea18265610032dd39fe8642b0294e443802f4f48a"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "516fed6effe43318b80101ce9e77511748824768ef922ac96b751ac72ff0d055"
 ---
 
 # Multi-Project Platforms Quickstart
 
 Let's explore integrating user generated sites with Vercel, providing a system for creating preview environments for your customers. The integration involves project creation, deployment management, domain aliasing (with custom suffixes), and SSO protection to secure all deployments.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
+- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+
+Full cross-link map for this page: [/docs/platforms/multi-project-platforms/quickstart.graph.md](/docs/platforms/multi-project-platforms/quickstart.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel's API endpoints handle project creation, deployment configuration, domain assignment, and security settings, enabling a seamless experience for your users to access and share their generated sites.
 
@@ -38,7 +55,7 @@ The integration would involve the following integrations:
 ## Project Creation
 
 - We recommend one project per user chat, the user can subsequently deploy multiple versions of the artifact to the same project (while still allowing all versions to stay active). The project becomes the organizational primitive for a single chat however
-- [Create a project for each chat](/docs/rest-api/reference/endpoints/projects/create-a-new-project)
+- [Create a project for each chat](/docs/rest-api/projects/create-a-new-project)
   - Configure the name of the project to help yourself come back to it and keep your Vercel account organized.
 - Most common options to customize the behaviour of each tenant project:
   - `framework`: The framework the application is using (ie. Next.js, React ect.)
@@ -62,7 +79,7 @@ async function createProject() {
 ## Deployment
 
 - [Every project has one "Production" domain that points to the most recent version (while keeping previous versions) and infinite "Preview" deployments](/docs/deployments/environments), for most applications it makes most sense to always deploy the version as a new "Production" deployment under the same project
-- [Create a new Deployment with this endpoint](/docs/rest-api/reference/endpoints/deployments/create-a-new-deployment)
+- [Create a new Deployment with this endpoint](/docs/rest-api/deployments/create-a-new-deployment)
 - Most common options to customize the behaviour of each tenant project:
   - `files`: The set of AI Generated files you want to deploy
   - `target`: preview or production. Both are the same underlying infrastructure but this is a semantic identifier you can add
@@ -105,8 +122,8 @@ await deployFiles(files, {
 - If you want deployments to have a custom suffix: `*.CUSTOM_SUFFIX.com`, you can:
   - Setup a [wildcard domain for your domain](/docs/platforms/multi-tenant-platforms/configuring-domains#using-wildcard-domains)
   - Use either of these to auto-assign the `*.CUSTOM_SUFFIX.com` domain:
-    - [Assign a single domain that maps to the most recent production domain of the Project](/docs/rest-api/reference/endpoints/projects/add-a-domain-to-a-project)
-    - [Alias a specific URL to only that one deployment in a project](/docs/rest-api/reference/endpoints/aliases/assign-an-alias)
+    - [Assign a single domain that maps to the most recent production domain of the Project](/docs/rest-api/projects/add-a-domain-to-a-project)
+    - [Alias a specific URL to only that one deployment in a project](/docs/rest-api/aliases/assign-an-alias)
   - [Alternatively allow customers to bring in a domain they own elsewhere to assign to their sites](/docs/platforms/multi-tenant-platforms/configuring-domains)
 
 ## Protecting all deployments behind SSO or authentication, if you want central authentication (optional)
@@ -117,7 +134,7 @@ await deployFiles(files, {
    3. Includes a [Deployment Bypass](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) header, that will lock down direct access to the Vercel applications
 2. Alias all domains to the proxy site instead so all traffic goes to it first
 3. Ensure `ssoProtection` is configured to `all` when creating the project to lock down access
-   1. Configuring a bypass option on the deployment so the Proxy can still access it: [/docs/rest-api/reference/endpoints/projects/update-protection-bypass-for-automation](/docs/rest-api/reference/endpoints/projects/update-protection-bypass-for-automation)
+   1. Configuring a bypass option on the deployment so the Proxy can still access it: [/docs/rest-api/reference/endpoints/projects/update-protection-bypass-for-automation](/docs/rest-api/projects/update-protection-bypass-for-automation)
 
 ## Configuring the sites to be subpaths instead of custom domains (optional)
 

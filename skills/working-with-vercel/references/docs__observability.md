@@ -12,17 +12,38 @@ related:
   - /docs/observability/observability-plus
   - /docs/observability/insights
   - /docs/observability/debug-production-errors
-  - /docs/observability/monitoring
+  - /docs/query/monitoring
 summary: Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "d07a06f034d8f3f8cf8b6f50a47d161cd8d0c3aa1a1256316b43ae12f03a9c09"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b411a56672c518861ddde437f6b946659e74b4d9d198298dc2ad1d4ec3bdd3dd"
 ---
 
 # Observability
 
 > **🔒 Permissions Required**: Observability
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
+- [Step executed multiple times](https://workflow-sdk.dev/docs/errors/step-executed-multiple-times?from=related) — Diagnose duplicate step_started events caused by function timeouts, OOMs, or network issues.
+- [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+
+Full cross-link map for this page: [/docs/observability.graph.md](/docs/observability.graph.md)
+<!-- /docsgraph:related -->
 
 Observability provides a way for you to monitor and analyze the performance and traffic of your projects on Vercel through a variety of [events](#tracked-events) and [insights](#available-insights), aligned with your app's architecture.
 
@@ -114,7 +135,7 @@ For step-by-step debugging workflows using the Vercel CLI with Observability dat
 
 **Notebooks**: Save and organize Observability queries. [Learn more →](/docs/notebooks)
 
-**Monitoring**: Build dashboards and alerts on top of metrics. [Learn more →](/docs/observability/monitoring)
+**Monitoring**: Build dashboards and alerts on top of metrics. [Learn more →](/docs/query/monitoring)
 
 **Debug production errors**: Step-by-step CLI workflow for debugging 500 errors. [Learn more →](/docs/observability/debug-production-errors)
 

@@ -16,13 +16,30 @@ related:
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "b192b0111d39cc77415a44db07a1a9eeab2f33c677baee8f9869a8f5853d2304"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "51188538cd0e1f8a48342789b4bfca7c85b33ee943cef29957a2011e65b52552"
 ---
 
 # Managing projects
 
 You can manage your project on Vercel in your project's dashboard. To learn more, see [Project Settings](/docs/project-configuration/project-settings) and [Managing deployments](/docs/deployments/managing-deployments).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\(\) so inference runs only for verified callers
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project?from=related)
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+
+Full cross-link map for this page: [/docs/projects/managing-projects.graph.md](/docs/projects/managing-projects.graph.md)
+<!-- /docsgraph:related -->
 
 ## Creating a project
 
@@ -37,14 +54,14 @@ To create a [new](/new) project:
 
 ![Image](`/docs-assets/static/docs/concepts/projects/add-new-project-light.png`)
 
-3. You can either [import from an existing Git repository](/docs/git) or use one of our [templates](/templates). For more information, see our [Getting Started with Vercel](/docs/getting-started-with-vercel/projects-deployments).
+3. You can either [import from an existing Git repository](/docs/git) or use one of our [templates](/templates). For more information, see our [Getting Started with Vercel](/docs/getting-started-with-vercel).
 4. If you choose to import from a Git repository, you'll be prompted to select the repository you want to deploy.
-5. Configure your project settings, such as the name, [framework](/docs/frameworks), [environment variables](/docs/environment-variables), and [build and output settings](/docs/deployments/configure-a-build#configuring-a-build).
+5. Configure your project settings, such as the name, [framework](/docs/frameworks), [environment variables](/docs/environment-variables), and [build and output settings](/docs/builds/configure-a-build#configuring-a-build).
 6. If you're importing from a monorepo, select the **Edit** button to select the project from the repository you want to deploy. For more information, see [Monorepos](/docs/monorepos#add-a-monorepo-through-the-vercel-dashboard).
 
 #### 'cURL'
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```bash filename="cURL"
 curl --request POST \
@@ -74,7 +91,7 @@ curl --request POST \
 
 #### 'SDK']
 
-To create an Authorization Bearer token, see the [access token](/docs/rest-api/reference/welcome#creating-an-access-token) section of the API documentation.
+To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
 
 ```ts filename="createProject"
 import { Vercel } from '@vercel/sdk';
@@ -141,18 +158,18 @@ To pause a single project manually:
 
 ### Pause a project using the REST API
 
-To pause a project manually or with a webhook you can use the [REST API](/docs/rest-api/reference/endpoints/projects/pause-a-project):
+To pause a project manually or with a webhook you can use the [REST API](/docs/rest-api/projects/pause-a-project):
 
 1. Ensure you have [access token](/docs/rest-api#creating-an-access-token) scoped to your team to authenticate the API.
-2. Create a webhook that calls the pause project [endpoint](/docs/rest-api/reference/endpoints/projects/pause-a-project):
-   - You'll need to pass a path parameter of the [Project ID](/docs/projects/overview#project-id) and query string of [Team ID](/docs/accounts#find-your-team-id):
+2. Create a webhook that calls the pause project [endpoint](/docs/rest-api/projects/pause-a-project):
+   - You'll need to pass a path parameter of the [Project ID](/docs/projects#project-id) and query string of [Team ID](/docs/accounts#find-your-team-id):
      ```bash filename="request"
      https://api.vercel.com/v1/projects/<prj_ID>/pause?teamId=<team_ID>
      ```
    - Use your access token as the bearer token, to enable you to carry out actions through the API on behalf of your team.
    - Ensure that your `Content-Type` header is set to `application/json`.
 
-When you pause your project, any users accessing your production deployment will see a [503 DEPLOYMENT\_PAUSED error](/docs/errors/DEPLOYMENT_PAUSED).
+When you pause your project, any users accessing your production deployment will see a [503 DEPLOYMENT\_PAUSED error](/docs/errors/deployment_paused).
 
 ```bash filename="cURL"
 curl --request POST \
@@ -161,12 +178,12 @@ curl --request POST \
 ```
 
 > **💡 Note:** You can also manually make a POST request to the [pause project
-> endpoint](/docs/rest-api/reference/endpoints/projects/pause-a-project) without
+> endpoint](/docs/rest-api/projects/pause-a-project) without
 > using webhook.
 
 ### Resuming a project
 
-Resuming a project can either be done through the [REST API](/docs/rest-api/reference/endpoints/projects/unpause-a-project) or your project settings:
+Resuming a project can either be done through the [REST API](/docs/rest-api/projects/unpause-a-project) or your project settings:
 
 1. Go to your team's [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and select your project. When you select it, you should notice it has a **paused** icon in the team switcher.
 2. Open **Settings** in the sidebar.

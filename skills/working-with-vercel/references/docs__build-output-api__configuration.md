@@ -9,20 +9,39 @@ prerequisites:
   - /docs/build-output-api
 related:
   - /docs/project-configuration/vercel-json
-  - /docs/rest-api/reference
+  - /docs/rest-api
   - /docs/image-optimization
   - /docs/domains
-  - /docs/build-output-api/v3/primitives
+  - /docs/build-output-api/primitives
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ebd4b5a60abc7ff6e346d6e4e5f23ea7c8b615730fe21d1dd640e45b75c8e610"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9398231558785db4fdcd13a2437f63b80d0d867cd2bd89d6af13aad548d13e95"
 ---
 
 # Build Output Configuration
 
 Schema (as TypeScript):
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Image](https://nextjs.org/docs/pages/api-reference/components/image?from=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related) — Backwards compatible Image Optimization with the Legacy Image component.
+- [Image Component](https://nextjs.org/docs/app/api-reference/components/image?from=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [OG Image Generation](https://vercel.com/docs/og-image-generation?from=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
+- [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
+- [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+
+Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md)
+<!-- /docsgraph:related -->
 
 ```ts
 type Config = {
@@ -97,21 +116,21 @@ type Source = {
 };
 ```
 
-| Key                  | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                                  |
+| Key                  | [Type](/docs/rest-api#types) | Required | Description                                                                                                                                  |
 | -------------------- | ----------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **src**              | [String](/docs/rest-api/reference#types)       | Yes      | A PCRE-compatible regular expression that matches each incoming pathname (excluding querystring).                                            |
-| **dest**             | [String](/docs/rest-api/reference#types)       | No       | A destination pathname or full URL, including querystring, with the ability to embed capture groups as $1, $2, or named capture value $name. |
-| **headers**          | [Map](/docs/rest-api/reference#types)          | No       | A set of headers to apply for responses.                                                                                                     |
-| **methods**          | [String\[\]](/docs/rest-api/reference#types)     | No       | A set of HTTP method types. If no method is provided, requests with any HTTP method will be a candidate for the route.                       |
-| **continue**         | [Boolean](/docs/rest-api/reference#types)      | No       | A boolean to change matching behavior. If true, routing will continue even when the src is matched.                                          |
-| **caseSensitive**    | [Boolean](/docs/rest-api/reference#types)      | No       | Specifies whether or not the route `src` should match with case sensitivity.                                                                 |
-| **check**            | [Boolean](/docs/rest-api/reference#types)      | No       | If `true`, the route triggers `handle: 'filesystem'` and `handle: 'rewrite'`                                                                 |
-| **status**           | [Number](/docs/rest-api/reference#types)       | No       | A status code to respond with. Can be used in tandem with Location: header to implement redirects.                                           |
+| **src**              | [String](/docs/rest-api#types)       | Yes      | A PCRE-compatible regular expression that matches each incoming pathname (excluding querystring).                                            |
+| **dest**             | [String](/docs/rest-api#types)       | No       | A destination pathname or full URL, including querystring, with the ability to embed capture groups as $1, $2, or named capture value $name. |
+| **headers**          | [Map](/docs/rest-api#types)          | No       | A set of headers to apply for responses.                                                                                                     |
+| **methods**          | [String\[\]](/docs/rest-api#types)     | No       | A set of HTTP method types. If no method is provided, requests with any HTTP method will be a candidate for the route.                       |
+| **continue**         | [Boolean](/docs/rest-api#types)      | No       | A boolean to change matching behavior. If true, routing will continue even when the src is matched.                                          |
+| **caseSensitive**    | [Boolean](/docs/rest-api#types)      | No       | Specifies whether or not the route `src` should match with case sensitivity.                                                                 |
+| **check**            | [Boolean](/docs/rest-api#types)      | No       | If `true`, the route triggers `handle: 'filesystem'` and `handle: 'rewrite'`                                                                 |
+| **status**           | [Number](/docs/rest-api#types)       | No       | A status code to respond with. Can be used in tandem with Location: header to implement redirects.                                           |
 | **has**              | HasField                                                                | No       | Conditions of the HTTP request that must exist to apply the route.                                                                           |
 | **missing**          | HasField                                                                | No       | Conditions of the HTTP request that must NOT exist to match the route.                                                                       |
 | **locale**           | Locale                                                                  | No       | Conditions of the Locale of the requester that will redirect the browser to different routes.                                                |
-| **middlewareRawSrc** | [String\[\]](/docs/rest-api/reference#types)     | No       | A list containing the original routes used to generate the `middlewarePath`.                                                                 |
-| **middlewarePath**   | [String](/docs/rest-api/reference#types)       | No       | Path to an Edge Runtime function that should be invoked as middleware.                                                                       |
+| **middlewareRawSrc** | [String\[\]](/docs/rest-api#types)     | No       | A list containing the original routes used to generate the `middlewarePath`.                                                                 |
+| **middlewarePath**   | [String](/docs/rest-api#types)       | No       | Path to an Edge Runtime function that should be invoked as middleware.                                                                       |
 | **mitigate**         | Mitigate                                                                | No       | A mitigation action to apply to the route.                                                                                                   |
 | **transforms**       | Transform\[]                                                             | No       | A list of transforms to apply to the route.                                                                                                  |
 
@@ -133,19 +152,19 @@ type MatchableValue = {
 };
 ```
 
-| Key      | [Type](/docs/rest-api/reference#types)                                                                | Required | Description                                         |
+| Key      | [Type](/docs/rest-api#types)                                                                | Required | Description                                         |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------------------------------------------- |
-| **eq**   | [String](/docs/rest-api/reference#types) | [Number](/docs/rest-api/reference#types) | No       | Value must equal this exact value.                  |
-| **neq**  | [String](/docs/rest-api/reference#types)                                                                      | No       | Value must not equal this value.                    |
-| **inc**  | [String\[\]](/docs/rest-api/reference#types)                                                                    | No       | Value must be included in this array.               |
-| **ninc** | [String\[\]](/docs/rest-api/reference#types)                                                                    | No       | Value must not be included in this array.           |
-| **pre**  | [String](/docs/rest-api/reference#types)                                                                      | No       | Value must start with this prefix.                  |
-| **suf**  | [String](/docs/rest-api/reference#types)                                                                      | No       | Value must end with this suffix.                    |
-| **re**   | [String](/docs/rest-api/reference#types)                                                                      | No       | Value must match this regular expression.           |
-| **gt**   | [Number](/docs/rest-api/reference#types)                                                                      | No       | Value must be greater than this number.             |
-| **gte**  | [Number](/docs/rest-api/reference#types)                                                                      | No       | Value must be greater than or equal to this number. |
-| **lt**   | [Number](/docs/rest-api/reference#types)                                                                      | No       | Value must be less than this number.                |
-| **lte**  | [Number](/docs/rest-api/reference#types)                                                                      | No       | Value must be less than or equal to this number.    |
+| **eq**   | [String](/docs/rest-api#types) | [Number](/docs/rest-api#types) | No       | Value must equal this exact value.                  |
+| **neq**  | [String](/docs/rest-api#types)                                                                      | No       | Value must not equal this value.                    |
+| **inc**  | [String\[\]](/docs/rest-api#types)                                                                    | No       | Value must be included in this array.               |
+| **ninc** | [String\[\]](/docs/rest-api#types)                                                                    | No       | Value must not be included in this array.           |
+| **pre**  | [String](/docs/rest-api#types)                                                                      | No       | Value must start with this prefix.                  |
+| **suf**  | [String](/docs/rest-api#types)                                                                      | No       | Value must end with this suffix.                    |
+| **re**   | [String](/docs/rest-api#types)                                                                      | No       | Value must match this regular expression.           |
+| **gt**   | [Number](/docs/rest-api#types)                                                                      | No       | Value must be greater than this number.             |
+| **gte**  | [Number](/docs/rest-api#types)                                                                      | No       | Value must be greater than or equal to this number. |
+| **lt**   | [Number](/docs/rest-api#types)                                                                      | No       | Value must be less than this number.                |
+| **lte**  | [Number](/docs/rest-api#types)                                                                      | No       | Value must be less than or equal to this number.    |
 
 ##### Source route: `HasField`
 
@@ -160,11 +179,11 @@ type HasField = Array<
 >;
 ```
 
-| Key       | [Type](/docs/rest-api/reference#types)             | Required | Description                                                             |
+| Key       | [Type](/docs/rest-api#types)             | Required | Description                                                             |
 | --------- | ----------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------- |
 | **type**  | "host" | "header" | "cookie" | "query"                                           | Yes      | Determines the HasField type.                                           |
-| **key**   | [String](/docs/rest-api/reference#types)                   | No\*     | Required for header, cookie, and query types. The key to match against. |
-| **value** | [String](/docs/rest-api/reference#types) | MatchableValue | No       | The value to match against using string or MatchableValue conditions.   |
+| **key**   | [String](/docs/rest-api#types)                   | No\*     | Required for header, cookie, and query types. The key to match against. |
+| **value** | [String](/docs/rest-api#types) | MatchableValue | No       | The value to match against using string or MatchableValue conditions.   |
 
 ##### Source route: `Locale`
 
@@ -175,10 +194,10 @@ type Locale = {
 };
 ```
 
-| Key          | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                    |
+| Key          | [Type](/docs/rest-api#types) | Required | Description                                                                                                                    |
 | ------------ | ----------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **redirect** | [Map](/docs/rest-api/reference#types)          | Yes      | An object of keys that represent locales to check for (`en`, `fr`, etc.) that map to routes to redirect to (`/`, `/fr`, etc.). |
-| **cookie**   | [String](/docs/rest-api/reference#types)       | No       | Cookie name that can override the Accept-Language header for determining the current locale.                                   |
+| **redirect** | [Map](/docs/rest-api#types)          | Yes      | An object of keys that represent locales to check for (`en`, `fr`, etc.) that map to routes to redirect to (`/`, `/fr`, etc.). |
+| **cookie**   | [String](/docs/rest-api#types)       | No       | Cookie name that can override the Accept-Language header for determining the current locale.                                   |
 
 ##### Source route: `Mitigate`
 
@@ -188,7 +207,7 @@ type Mitigate = {
 };
 ```
 
-| Key        | [Type](/docs/rest-api/reference#types) | Required | Description                                   |
+| Key        | [Type](/docs/rest-api#types) | Required | Description                                   |
 | ---------- | ----------------------------------------------------------------------- | -------- | --------------------------------------------- |
 | **action** | "challenge" | "deny"                                                   | Yes      | The action to take when the route is matched. |
 
@@ -211,12 +230,12 @@ type Transform =
     };
 ```
 
-| Key        | [Type](/docs/rest-api/reference#types)                                                                  | Required | Description                                                                |
+| Key        | [Type](/docs/rest-api#types)                                                                  | Required | Description                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------- |
 | **type**   | "request.headers" | "response.headers" | "request.query" | "request.path"                                                            | Yes      | The type of transform to apply.                                            |
 | **op**     | "append" | "set" | "delete"                                                                                                            | Yes      | The operation to perform on the target. The `request.path` transform only supports `set`. |
 | **target** | `{ key: string \| Omit<MatchableValue, 're'> }`                                                                                          | No       | The target of the transform. Regular expression matching is not supported. Not used for `request.path` transforms. |
-| **args**   | [String](/docs/rest-api/reference#types) | [String\[\]](/docs/rest-api/reference#types) | No       | The arguments to pass to the transform. For `request.path`, this must be a single `String` that overrides the path the runtime observes (`req.url`). It must start with `/`, must not be scheme-relative, and must not contain a query string, whitespace, or control characters. |
+| **args**   | [String](/docs/rest-api#types) | [String\[\]](/docs/rest-api#types) | No       | The arguments to pass to the transform. For `request.path`, this must be a single `String` that overrides the path the runtime observes (`req.url`). It must start with `/`, must not be scheme-relative, and must not contain a query string, whitespace, or control characters. |
 
 #### Handler route
 
@@ -239,12 +258,12 @@ type Handler = {
 };
 ```
 
-| Key        | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                    |
+| Key        | [Type](/docs/rest-api#types) | Required | Description                                                                                                    |
 | ---------- | ----------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
 | **handle** | HandleValue                                                             | Yes      | The phase of routing when all subsequent routes should apply.                                                  |
-| **src**    | [String](/docs/rest-api/reference#types)       | No       | A PCRE-compatible regular expression that matches each incoming pathname (excluding querystring).              |
-| **dest**   | [String](/docs/rest-api/reference#types)       | No       | A destination pathname or full URL, including querystring, with the ability to embed capture groups as $1, $2. |
-| **status** | [String](/docs/rest-api/reference#types)       | No       | A status code to respond with. Can be used in tandem with `Location:` header to implement redirects.           |
+| **src**    | [String](/docs/rest-api#types)       | No       | A PCRE-compatible regular expression that matches each incoming pathname (excluding querystring).              |
+| **dest**   | [String](/docs/rest-api#types)       | No       | A destination pathname or full URL, including querystring, with the ability to embed capture groups as $1, $2. |
+| **status** | [String](/docs/rest-api#types)       | No       | A status code to respond with. Can be used in tandem with `Location:` header to implement redirects.           |
 
 #### Routing rule example
 
@@ -294,18 +313,18 @@ type ImagesConfig = {
 };
 ```
 
-| Key                        | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                              |
+| Key                        | [Type](/docs/rest-api#types) | Required | Description                                                                                                                              |
 | -------------------------- | ----------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **sizes**                  | [Number\[\]](/docs/rest-api/reference#types)     | Yes      | Allowed image widths.                                                                                                                    |
-| **domains**                | [String\[\]](/docs/rest-api/reference#types)     | Yes      | Allowed external domains that can use Image Optimization. Leave empty for only allowing the deployment domain to use Image Optimization. |
+| **sizes**                  | [Number\[\]](/docs/rest-api#types)     | Yes      | Allowed image widths.                                                                                                                    |
+| **domains**                | [String\[\]](/docs/rest-api#types)     | Yes      | Allowed external domains that can use Image Optimization. Leave empty for only allowing the deployment domain to use Image Optimization. |
 | **remotePatterns**         | RemotePattern\[]                                                         | No       | Allowed external patterns that can use Image Optimization. Similar to `domains` but provides more control with RegExp.                   |
 | **localPatterns**          | LocalPattern\[]                                                          | No       | Allowed local patterns that can use Image Optimization. Leave undefined to allow all or use empty array to deny all.                     |
-| **qualities**              | [Number\[\]](/docs/rest-api/reference#types)     | No       | Allowed image qualities. Leave undefined to allow all possibilities, 1 to 100.                                                           |
-| **minimumCacheTTL**        | [Number](/docs/rest-api/reference#types)       | No       | Cache duration (in seconds) for the optimized images.                                                                                    |
+| **qualities**              | [Number\[\]](/docs/rest-api#types)     | No       | Allowed image qualities. Leave undefined to allow all possibilities, 1 to 100.                                                           |
+| **minimumCacheTTL**        | [Number](/docs/rest-api#types)       | No       | Cache duration (in seconds) for the optimized images.                                                                                    |
 | **formats**                | ImageFormat\[]                                                           | No       | Supported output image formats                                                                                                           |
-| **dangerouslyAllowSVG**    | [Boolean](/docs/rest-api/reference#types)      | No       | Allow SVG input image URLs. This is disabled by default for security purposes.                                                           |
-| **contentSecurityPolicy**  | [String](/docs/rest-api/reference#types)       | No       | Change the [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) of the optimized images.                           |
-| **contentDispositionType** | [String](/docs/rest-api/reference#types)       | No       | Specifies the value of the `"Content-Disposition"` response header.                                                                      |
+| **dangerouslyAllowSVG**    | [Boolean](/docs/rest-api#types)      | No       | Allow SVG input image URLs. This is disabled by default for security purposes.                                                           |
+| **contentSecurityPolicy**  | [String](/docs/rest-api#types)       | No       | Change the [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) of the optimized images.                           |
+| **contentDispositionType** | [String](/docs/rest-api#types)       | No       | Specifies the value of the `"Content-Disposition"` response header.                                                                      |
 
 #### `images` example
 
@@ -338,11 +357,11 @@ When the `images` property is defined, the Image Optimization API will be availa
 
 The API accepts the following query string parameters:
 
-| Key     | [Type](/docs/rest-api/reference#types) | Required | Example          | Description                                                                                                                             |
+| Key     | [Type](/docs/rest-api#types) | Required | Example          | Description                                                                                                                             |
 | ------- | ----------------------------------------------------------------------- | -------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **url** | [String](/docs/rest-api/reference#types)       | Yes      | `/assets/me.png` | The URL of the source image that should be optimized. Absolute URLs must match a pattern defined in the `remotePatterns` configuration. |
-| **w**   | [Integer](/docs/rest-api/reference#types)      | Yes      | `200`            | The width (in pixels) that the source image should be resized to. Must match a value defined in the `sizes` configuration.              |
-| **q**   | [Integer](/docs/rest-api/reference#types)      | Yes      | `75`             | The quality that the source image should be reduced to. Must be between 1 (lowest quality) to 100 (highest quality).                    |
+| **url** | [String](/docs/rest-api#types)       | Yes      | `/assets/me.png` | The URL of the source image that should be optimized. Absolute URLs must match a pattern defined in the `remotePatterns` configuration. |
+| **w**   | [Integer](/docs/rest-api#types)      | Yes      | `200`            | The width (in pixels) that the source image should be resized to. Must match a value defined in the `sizes` configuration.              |
+| **q**   | [Integer](/docs/rest-api#types)      | Yes      | `75`             | The quality that the source image should be reduced to. Must be between 1 (lowest quality) to 100 (highest quality).                    |
 
 ### wildcard
 
@@ -366,10 +385,10 @@ type WildcardConfig = Array<WildCard>;
 
 Objects contained within the `wildcard` configuration support the following properties:
 
-| Key        | [Type](/docs/rest-api/reference#types) | Required | Description                                                                        |
+| Key        | [Type](/docs/rest-api#types) | Required | Description                                                                        |
 | ---------- | ----------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------- |
-| **domain** | [String](/docs/rest-api/reference#types)       | Yes      | The domain name to match for this wildcard configuration.                          |
-| **value**  | [String](/docs/rest-api/reference#types)       | Yes      | The value of the `$wildcard` match that will be available for `routes` to utilize. |
+| **domain** | [String](/docs/rest-api#types)       | Yes      | The domain name to match for this wildcard configuration.                          |
+| **value**  | [String](/docs/rest-api#types)       | Yes      | The value of the `$wildcard` match that will be available for `routes` to utilize. |
 
 #### `wildcard` example
 
@@ -398,7 +417,7 @@ domain name will be served the localized version of the blog post HTML file:
 
 ### overrides
 
-The `overrides` property allows for overriding the output of one or more [static files](/docs/build-output-api/v3/primitives#static-files) contained
+The `overrides` property allows for overriding the output of one or more [static files](/docs/build-output-api/primitives#static-files) contained
 within the `.vercel/output/static` directory.
 
 The main use-cases are to override the `Content-Type` header that will be served for a static file,
@@ -417,10 +436,10 @@ type OverrideConfig = Record<string, Override>;
 
 Objects contained within the `overrides` configuration support the following properties:
 
-| Key             | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                    |
+| Key             | [Type](/docs/rest-api#types) | Required | Description                                                                                    |
 | --------------- | ----------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------- |
-| **path**        | [String](/docs/rest-api/reference#types)       | No       | The URL path where the static file will be accessible from.                                    |
-| **contentType** | [String](/docs/rest-api/reference#types)       | No       | The value of the `Content-Type` HTTP response header that will be served with the static file. |
+| **path**        | [String](/docs/rest-api#types)       | No       | The URL path where the static file will be accessible from.                                    |
+| **contentType** | [String](/docs/rest-api#types)       | No       | The value of the `Content-Type` HTTP response header that will be served with the static file. |
 
 #### `overrides` example
 
@@ -501,7 +520,7 @@ type CronsConfig = Cron[];
 
 ### services
 
-The optional `services` property is an array of the service build targets in the deployment. When it is present, Vercel reads each service's build output from `.vercel/output/services/<name>`. For the directory structure and routing behavior, see the [Services](/docs/build-output-api/v3/services) reference.
+The optional `services` property is an array of the service build targets in the deployment. When it is present, Vercel reads each service's build output from `.vercel/output/services/<name>`. For the directory structure and routing behavior, see the [Services](/docs/build-output-api/services) reference.
 
 ```ts
 type Service = {
@@ -521,13 +540,13 @@ type ServiceBinding = {
 };
 ```
 
-| Key            | [Type](/docs/rest-api/reference#types) | Required | Description                                                                                                                       |
+| Key            | [Type](/docs/rest-api#types) | Required | Description                                                                                                                       |
 | -------------- | ----------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **name**       | [String](/docs/rest-api/reference#types)       | Yes      | The service name. Vercel reads the service's build output from `.vercel/output/services/<name>`.                                  |
-| **root**       | [String](/docs/rest-api/reference#types)       | Yes      | Path to the service root, relative to the project root.                                                                           |
-| **framework**  | [String](/docs/rest-api/reference#types)       | No       | The framework detected or configured for the service.                                                                            |
-| **runtime**    | [String](/docs/rest-api/reference#types)       | No       | The runtime detected or configured for the service.                                                                              |
-| **entrypoint** | [String](/docs/rest-api/reference#types)       | No       | The service entrypoint, relative to the service root.                                                                            |
+| **name**       | [String](/docs/rest-api#types)       | Yes      | The service name. Vercel reads the service's build output from `.vercel/output/services/<name>`.                                  |
+| **root**       | [String](/docs/rest-api#types)       | Yes      | Path to the service root, relative to the project root.                                                                           |
+| **framework**  | [String](/docs/rest-api#types)       | No       | The framework detected or configured for the service.                                                                            |
+| **runtime**    | [String](/docs/rest-api#types)       | No       | The runtime detected or configured for the service.                                                                              |
+| **entrypoint** | [String](/docs/rest-api#types)       | No       | The service entrypoint, relative to the service root.                                                                            |
 | **bindings**   | ServiceBinding\[]                                                        | No       | Caller-side bindings that let this service call another service. See [Service bindings](/docs/services/bindings). |
 
 #### `services` example
@@ -554,7 +573,7 @@ type ServiceBinding = {
   ]
 ```
 
-For an example of declaring services and the resulting build output, see the [Services](/docs/build-output-api/v3/services) reference.
+For an example of declaring services and the resulting build output, see the [Services](/docs/build-output-api/services) reference.
 
 ## Full `config.json` example
 

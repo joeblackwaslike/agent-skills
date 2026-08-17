@@ -8,20 +8,36 @@ type: reference
 prerequisites:
   - /docs/environment-variables
 related:
-  - /docs/deployments/configure-a-build
+  - /docs/builds/configure-a-build
   - /docs/environment-variables
 summary: "Framework environment variables are automatically populated by the Vercel, based on your project's framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/framework-environment-variables.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "e1074e8a3b75ff186c31d6b716f60ac0a85751776d8885e2b217228ac1aab1a1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "d3d97f014fef497973edb3c155909028aaa4c593d0db50c261968e5c481d1ca2"
 ---
 
 # Framework environment variables
 
 Frameworks typically use a prefix in order to expose environment variables to the browser.
 
-The following prefixed environment variables will be available during the **build step**, based on the project's selected [framework preset](/docs/deployments/configure-a-build#framework-preset).
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [System Environment Variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+
+Full cross-link map for this page: [/docs/environment-variables/framework-environment-variables.graph.md](/docs/environment-variables/framework-environment-variables.graph.md)
+<!-- /docsgraph:related -->
+
+The following prefixed environment variables will be available during the **build step**, based on the project's selected [framework preset](/docs/builds/configure-a-build#framework-preset).
 
 ## Using prefixed framework environment variables locally
 

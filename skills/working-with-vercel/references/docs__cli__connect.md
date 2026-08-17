@@ -9,18 +9,40 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/connect
+  - /docs/connect/concepts/connectors
   - /docs/connect/quickstart
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "60e7675d0df558015a735752e5f7d6d888d5ba9062b2b5e45f467a176704d898"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7f9374b971837e64fa4d1a19126baea0172dd96c5736f2da334d80c86aac8169"
 ---
 
 # vercel connect
 
 > **💡 Note:** The `vercel connect` command is currently in beta. Features and behavior may
 > change.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
+- [Ship social posts from Slack with eve and Typefully](https://vercel.com/kb/guide/eve-typefully-social-media-agent?from=related) — A Slack-based social media agent built on eve. It drafts posts and threads for X, LinkedIn, Threads, Bluesky, and Mastod
+- [Run a marketing team from Slack with eve](https://vercel.com/kb/guide/marketing-team-eve?from=related) — Team of five marketing agents built on eve. The lead routes work to specialists that write long-form into Notion, queue
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Global Options](https://vercel.com/docs/cli/global-options?from=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel tokens](https://vercel.com/docs/cli/tokens?from=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
+
+Full cross-link map for this page: [/docs/cli/connect.graph.md](/docs/cli/connect.graph.md)
+<!-- /docsgraph:related -->
 
 The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors. Use it to create connectors, attach them to projects, request runtime tokens, and remove them.
 
@@ -47,7 +69,7 @@ vercel connect create <service>
 
 *Create a new connector for the given service.*
 
-Pass a service name such as `slack` or `github`, or a service URL such as `mcp.linear.app`. Vercel attempts to set up the connection automatically, and opens your browser for any steps that require manual inputs.
+Pass a service name such as `slack`, `notion`, or `okta`, or the URL of an OAuth or MCP server such as `mcp.linear.app`.
 
 ```bash filename="terminal"
 vercel connect create slack --name acme-slack
@@ -55,12 +77,56 @@ vercel connect create slack --name acme-slack
 
 *Create a Slack connector named \`acme-slack\`.*
 
+For a known service, the CLI reads the [connection methods](/docs/connect/concepts/connectors#connection-methods) that Vercel publishes for it and prompts you for what the connector needs, so you can finish setup in the terminal. It opens your browser only when the provider requires you to sign in or install an app.
+
+Depending on the service, the CLI asks you for:
+
+- **Product**: which part of the service to connect to, such as its API or its MCP server. You only see this when a service exposes more than one.
+- **Connection method**: how to authenticate, such as `oauth` or `api-key`. Each method shows whether Vercel registers the application with the provider for you (`automatic registration`) or whether you supply your own credentials (`bring your own credentials`).
+- **Setup values**: values the method needs to reach your account, such as an Okta domain.
+- **Credentials**: a client ID, client secret, or API key, when the method needs them. The CLI masks secret values as you type them.
+
+When a service publishes a single connection method, the CLI asks you to confirm it instead of showing a list. Pass `--yes` to skip that confirmation.
+
+For a service that publishes no connection methods, such as an OAuth server URL that Vercel doesn't recognize, Vercel sets up what it can and opens your browser for the remaining steps.
+
+### Seeing what a service supports
+
+Run `--help` against a service to list its products, its connection methods, the credentials and setup values each method needs, and a runnable example for each:
+
+```bash filename="terminal"
+vercel connect create notion --help
+```
+
+*Describe how you can connect to Notion.*
+
+### Creating without prompts
+
+To create a connector from a script or in CI, pass your choices as flags. Use `--connection-method` to pick the method, `--target` to pick the product, `--param KEY=VALUE` for setup values, and `--data` for credentials:
+
+```bash filename="terminal"
+vercel connect create okta --connection-method custom-server \
+  --param domain=acme.okta.com --param auth_server_id=default \
+  --name okta --data @credentials.json
+```
+
+*Create an Okta connector with no prompts.*
+
+Pass `--data @<path>` to read credentials from a file, or `--data @-` to read them from stdin. Inline `--data` values leak into your shell history and into process listings, so use a file or stdin for anything secret.
+
 ### Options
 
 | Option | Shorthand | Description |
 | --- | --- | --- |
 | `--name <NAME>` | `-n` | Name for the connector. |
+| `--connection-method <METHOD>` | | How to connect to the service (for example, `oauth`, `api-key`, `mcp`). Omit it to choose interactively. |
+| `--target <TARGET>` | | Which of the service's products to connect to (for example, `api`, `mcp`). Only needed when a service exposes more than one. |
+| `--param <KEY=VALUE>` | | Value for a setup field on the connection method (for example, `domain=acme.okta.com`). Repeatable. |
+| `--data <JSON>` | | JSON object of credentials and configuration for the connector. Pass `@<path>` to read from a file or `@-` to read from stdin. |
+| `--connector-type <TYPE>` | | Connector type to create. Only valid with `--data`. By default, Vercel resolves the type from the service. |
 | `--triggers` | | Enable webhook trigger forwarding for this connector. |
+| `--trigger-event <EVENT>` | | Webhook event to receive. Repeatable. Requires `--triggers`, and replaces the provider's default events. |
+| `--yes` | `-y` | Skip the confirmation prompt shown when a service has a single connection method. |
 | `--icon <PATH>` | | Path to a PNG or JPEG image to use as the connector icon. |
 | `--background-color <HEX>` | | Background color for the connector icon (for example, `#1A2B3C`). |
 | `--accent-color <HEX>` | | Accent color for the connector icon (for example, `#FF0066`). |
@@ -70,8 +136,12 @@ vercel connect create slack --name acme-slack
 
 ```bash filename="terminal"
 vercel connect create slack
+vercel connect create notion --help
+vercel connect create notion --connection-method mcp --name notion-mcp
+vercel connect create notion --target api --connection-method oauth --name notion --data @credentials.json
+vercel connect create notion --connection-method api-key --name notion --data @key.json
+vercel connect create okta --connection-method custom-server --param domain=acme.okta.com --name okta --data @credentials.json
 vercel connect create slack --name my-bot --triggers
-vercel connect create github --name acme-github
 vercel connect create mcp.linear.app --name linear-connector
 vercel connect create slack --name my-bot --icon ./logo.png --background-color '#1A2B3C'
 vercel connect create slack --format=json

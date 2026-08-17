@@ -12,13 +12,28 @@ related:
 summary: Work with custom environments using the --target flag in Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/target.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1cf72f14a97e146f870e1d451c6fea19a0e886348746ff3d702b49d02534241b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "857fad427118d55f68483ef66bf46f19e6b2ce96ac7661669f834b3b5d5832a8"
 ---
 
 # vercel target
 
 The `vercel target` command (alias: `vercel targets`) manages your Vercel project's targets (custom environments). Targets are custom deployment environments beyond the standard production, preview, and development environments.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+
+Full cross-link map for this page: [/docs/cli/target.graph.md](/docs/cli/target.graph.md)
+<!-- /docsgraph:related -->
 
 ## Usage
 

@@ -13,13 +13,30 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers through AI Gateway, available via...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "2aea5df2ee349b05ed7fa39b46c2fc1eb6f5989aed4d6a3104b1718250742fc1"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "81e7023fb7af92483b781eb209b85147e46ec88657ed67e99e6b9d8fda40400a"
 ---
 
 # Service Tiers
 
 OpenAI, Google AI Studio, and Google Vertex AI offer different processing tiers that trade off latency, availability, and cost. You can request a service tier through AI Gateway and AI Gateway adjusts pricing based on the tier the provider actually served.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
+- [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
+- [Fast Mode](https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode?from=related) — Request the faster serving path for supported models through AI Gateway using the \`speed\` option or the fast model slu
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** Service tiers are supported for OpenAI, Google AI Studio, and Google Vertex AI models. Setting a service tier on a model that doesn't support it has no effect. Tier availability varies by model and provider, so check the provider's pricing page for which models offer which tiers.
 

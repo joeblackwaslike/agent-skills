@@ -16,13 +16,29 @@ related:
 summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7d284c9b60f151071bba7bc5b0fd8bba530d074058ba8e34b5f1fad02008bb0c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9def2e1bc7711d399d563b3d15c65fba38dbb442b4606d4ae91c2de6cbc90485"
 ---
 
 # Migrating from Edge Config to Global Config
 
 Edge Config is now **Global Config**. This rename better reflects that it is a globally replicated data store for the configuration that applications read at runtime, such as feature flags, redirects, and experimentation settings.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config?from=related)
+- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+
+Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md)
+<!-- /docsgraph:related -->
 
 The store itself is unchanged. This page lists everything that changed with the rename, and what to do if you use the REST API, connection strings, or a custom environment variable setup.
 

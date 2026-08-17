@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/ollama.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "89fff3238f02e8244cab867809f594ac7f0d18da9051281b073b523da9e84fe1"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "b0e39a52bd0c9f242445db955125010b55c48d9ef81a8f3e52c31734ac428656"
 ---
 
 # Ollama Provider
@@ -184,6 +184,7 @@ console.log(
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

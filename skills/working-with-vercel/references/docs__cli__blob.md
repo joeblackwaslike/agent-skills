@@ -8,22 +8,39 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/storage/vercel-blob
-  - /docs/storage/vercel-blob/public-storage
-  - /docs/storage/vercel-blob/private-storage
-  - /docs/storage/vercel-blob/using-blob-sdk
+  - /docs/vercel-blob
+  - /docs/vercel-blob/public-storage
+  - /docs/vercel-blob/private-storage
+  - /docs/vercel-blob/using-blob-sdk
+  - /docs/image-optimization/limits-and-pricing
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "eab41d6839c296f7786695ca4370fa582c54950e34bbefdf1d3aea27f7b53689"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "770b71dd1fe426b82697c46df26fc8edd9354ed5af316d293d8582da8f0ddf86"
 ---
 
 # vercel blob
 
-The `vercel blob` command is used to interact with [Vercel Blob](/docs/storage/vercel-blob) storage, providing functionality to upload, download, list, delete, and copy files in [public](/docs/storage/vercel-blob/public-storage) and [private](/docs/storage/vercel-blob/private-storage) stores, as well as manage Blob stores.
+The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-blob) storage, providing functionality to upload, download, list, delete, and copy files in [public](/docs/vercel-blob/public-storage) and [private](/docs/vercel-blob/private-storage) stores, store optimized images, and manage Blob stores.
 
-For more information about Vercel Blob, see the [Vercel Blob documentation](/docs/storage/vercel-blob) and [Vercel Blob SDK reference](/docs/storage/vercel-blob/using-blob-sdk).
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Manage Vercel Blob Storage](https://vercel.com/docs/vercel-blob/manage-blob-storage?from=related) — Create blob stores, upload files, list contents, and manage storage using the CLI.
+- [Examples](https://vercel.com/docs/vercel-blob/examples?from=related) — Examples on how to use Vercel Blob in your applications
+- [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related)
+
+Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md)
+<!-- /docsgraph:related -->
+
+For more information about Vercel Blob, see the [Vercel Blob documentation](/docs/vercel-blob) and [Vercel Blob SDK reference](/docs/vercel-blob/using-blob-sdk).
 
 ## Usage
 
@@ -31,6 +48,7 @@ The `vercel blob` command supports the following operations:
 
 - [`list`](#list-ls) - List all files in the Blob store
 - [`put`](#put) - Upload a file to the Blob store
+- [`put-image`](#put-image) - Optimize an image and store the result in the Blob store
 - [`del`](#del) - Delete a file from the Blob store
 - [`copy`](#copy-cp) - Copy a file in the Blob store
 - [`get`](#get) - Download a blob from the Blob store
@@ -59,6 +77,40 @@ vercel blob put [path-to-file] --access private
 
 *Using the \`vercel blob put\` command to upload a file to
 the Blob store.*
+
+### put-image
+
+```bash filename="terminal"
+vercel blob put-image [path-to-file-or-url] --pathname [pathname] --width [width] --access private
+```
+
+*Using the \`vercel blob put-image\` command to run an image
+through Image Optimization and store
+only the optimized output in the Blob store. The source can be a local file
+or a public \`http(s)\` URL, which Vercel fetches and
+optimizes server-side. The command prints the URL of the stored blob to
+stdout, so scripts and agents can read the result back. Use
+\`--json\` to print the full blob object instead.*
+
+The transformation is controlled with the [`--width`](#width) (required), [`--quality`](#quality), and [`--format`](#format) options:
+
+```bash filename="terminal"
+vercel blob put-image https://example.com/hero.png --pathname images/hero.webp --width 512 --quality 60 --format webp --access public
+```
+
+*Fetching a remote image, converting it to a 512 pixel wide WebP, and storing
+it in the Blob store.*
+
+The command requires OIDC credentials: pass `--oidc-token` and `--store-id`, or set the `VERCEL_OIDC_TOKEN` and `BLOB_STORE_ID` environment variables (available in `.env.local` after `vercel env pull`). Read-write tokens are not accepted.
+
+Each upload is billed as one [image transformation](/docs/image-optimization/limits-and-pricing#image-transformations) plus a regular blob upload at standard [Vercel Blob pricing](/docs/vercel-blob/usage-and-pricing).
+
+> **💡 Note:** If the transformed image would be larger than the source image, the source
+> image is stored unchanged and the command prints a warning. The
+> `--content-type` and `--multipart` options are
+> not available: the stored content type always comes from the optimizer
+> output, so use `--format` to control it, and optimized
+> uploads cannot be split into parts.
 
 ### del
 
@@ -210,7 +262,7 @@ vercel blob list --mode folded
 
 ### Add Random Suffix
 
-You can use the `--add-random-suffix` option to add a random suffix to the file name when using `put` or `copy`.
+You can use the `--add-random-suffix` option to add a random suffix to the file name when using `put`, `put-image`, or `copy`.
 
 ```bash filename="terminal"
 vercel blob put image.jpg --add-random-suffix
@@ -221,7 +273,7 @@ vercel blob put image.jpg --add-random-suffix
 
 ### Pathname
 
-You can use the `--pathname` option to specify the pathname to upload the file to. The default is the filename.
+You can use the `--pathname` option to specify the pathname to upload the file to. For `put`, the default is the filename. For `put-image`, this option is required: the command takes a separate input (a file or URL, possibly a blob already in your store) and output, so it needs an explicit pathname for the result.
 
 ```bash filename="terminal"
 vercel blob put image.jpg --pathname assets/images/hero.jpg
@@ -229,6 +281,50 @@ vercel blob put image.jpg --pathname assets/images/hero.jpg
 
 *Using the \`vercel blob put\` command with the
 \`--pathname\` option.*
+
+### Width
+
+You can use the `--width` option to set the width of the optimized image in pixels, between 1 and 8192. The aspect ratio of the source image is preserved. This option is required and only applies to the `put-image` command.
+
+```bash filename="terminal"
+vercel blob put-image photo.png --pathname images/photo.png --width 1200 --access public
+```
+
+*Using the \`vercel blob put-image\` command with the
+\`--width\` option.*
+
+### Quality
+
+You can use the `--quality` option to set the quality of the optimized image, between 1 (lowest quality) and 100 (highest quality). The default is `75`. This option only applies to the `put-image` command.
+
+```bash filename="terminal"
+vercel blob put-image photo.png --pathname images/photo.png --width 1200 --quality 60 --access public
+```
+
+*Using the \`vercel blob put-image\` command with the
+\`--quality\` option.*
+
+### Format
+
+You can use the `--format` option to convert the optimized image to `jpeg`, `png`, `webp`, or `avif`. The source image format is preserved when omitted. This option only applies to the `put-image` command.
+
+```bash filename="terminal"
+vercel blob put-image photo.png --pathname images/photo.webp --width 1200 --format webp --access public
+```
+
+*Using the \`vercel blob put-image\` command with the
+\`--format\` option.*
+
+### JSON
+
+You can use the `--json` option to print the stored blob as JSON, including its `url`, `downloadUrl`, `pathname`, and `contentType`, instead of only the URL. This option only applies to the `put-image` command.
+
+```bash filename="terminal"
+vercel blob put-image photo.png --pathname images/photo.png --width 1200 --access public --json
+```
+
+*Using the \`vercel blob put-image\` command with the
+\`--json\` option.*
 
 ### Content Type
 
@@ -243,7 +339,7 @@ vercel blob put data.txt --content-type application/json
 
 ### Cache Control Max Age
 
-You can use the `--cache-control-max-age` option to set the `max-age` of the cache-control header directive when using `put` or `copy`. The default is `2592000` (30 days).
+You can use the `--cache-control-max-age` option to set the `max-age` of the cache-control header directive when using `put`, `put-image`, or `copy`. The default is `2592000` (30 days).
 
 ```bash filename="terminal"
 vercel blob put image.jpg --cache-control-max-age 86400
@@ -254,7 +350,7 @@ vercel blob put image.jpg --cache-control-max-age 86400
 
 ### Allow Overwrite
 
-You can use the `--allow-overwrite` option to overwrite the file if it already exists when uploading. The default is `false`.
+You can use the `--allow-overwrite` option to overwrite the file if it already exists when uploading with `put` or `put-image`. The default is `false`.
 
 ```bash filename="terminal"
 vercel blob put image.jpg --allow-overwrite
@@ -286,7 +382,7 @@ vercel blob create-store my-store --region sfo1
 
 ### Access
 
-The `--access` option is required and specifies whether the store or blob should use [public](/docs/storage/vercel-blob/public-storage) or [private](/docs/storage/vercel-blob/private-storage) storage. This option applies to the `put`, `copy`, `get`, and `create-store` commands.
+The `--access` option is required and specifies whether the store or blob should use [public](/docs/vercel-blob/public-storage) or [private](/docs/vercel-blob/private-storage) storage. This option applies to the `put`, `put-image`, `copy`, `get`, and `create-store` commands.
 
 ```bash filename="terminal"
 vercel blob put image.jpg --access private

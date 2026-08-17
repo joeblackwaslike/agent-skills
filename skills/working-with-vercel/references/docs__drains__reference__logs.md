@@ -10,19 +10,36 @@ prerequisites:
 related:
   - /docs/drains/using-drains
   - /docs/functions
-  - /docs/deployments/configure-a-build
+  - /docs/builds/configure-a-build
   - /docs/project-configuration/vercel-json
-  - /docs/rewrites
+  - /docs/routing/rewrites
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "8c92497040d3310efead7a7ed1bd5732b3e956c026ef5f6018db6ffd0bb641d5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "f1f75f581c04153917b61a73bdd5098d51fec8025c67a43b47bba6276d031fe5"
 ---
 
 # Log Drains Reference
 
 Log Drains forward logs from your deployments to external endpoints for storage and analysis. You can configure Log Drains in two ways:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related) — Learn how to store logs on Vercel.
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+- [Speed Insights](https://vercel.com/docs/drains/reference/speed-insights?from=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+
+Full cross-link map for this page: [/docs/drains/reference/logs.graph.md](/docs/drains/reference/logs.graph.md)
+<!-- /docsgraph:related -->
 
 - **[Custom endpoint](/docs/drains/using-drains#custom-endpoint)**: Send logs to any HTTP endpoint you configure
 - **[Native integration](/docs/drains/using-drains#native-integrations)**: Use integrations from the Vercel Marketplace like [Dash0](https://vercel.com/marketplace/dash0)
@@ -115,8 +132,8 @@ When you configure a Log Drain, select which sources to collect in **Additional 
 | `static`   | Requests to static assets like HTML and CSS files                                                                                                              |
 | `lambda`   | Output from Vercel Functions like [API Routes](/docs/functions)                                                                                                |
 | `edge`     | Output from Vercel Functions using Edge runtime                                                                                                                |
-| `build`    | Output from the [Build Step](/docs/deployments/configure-a-build)                                                                                              |
-| `external` | External [rewrites](/docs/project-configuration/vercel-json#rewrites) to a different domain. Includes [cached external rewrites](/docs/rewrites#caching-external-rewrites) |
+| `build`    | Output from the [Build Step](/docs/builds/configure-a-build)                                                                                              |
+| `external` | External [rewrites](/docs/project-configuration/vercel-json#rewrites) to a different domain. Includes [cached external rewrites](/docs/routing/rewrites#caching-external-rewrites) |
 | `firewall` | Outputs log data from requests denied by [Vercel Firewall](/docs/vercel-firewall) rules                                                                        |
 | `redirect` | Requests that are redirected by [redirect rules](/docs/project-configuration/vercel-json#redirects)                                                                        |
 

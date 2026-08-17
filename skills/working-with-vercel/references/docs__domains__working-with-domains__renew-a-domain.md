@@ -13,13 +13,30 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "c1430a8e072cc3e50aeeb0bc9a3bb778c3c755407e5c5de66c4720aa705fb131"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e705ea81a01d82702a31ed1d45f303c58890de2a4344bd09d77e7e7726493a10"
 ---
 
 # Managing Domain Renewals and Redemptions
 
 Custom domains purchased through or registered with Vercel are [automatically renewed](#auto-renewal) by default with the option to [manually renew](#manual-renewal) them.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain?from=related) — Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each
+- [Can I disable auto renewals for a domain registered with Vercel?](https://vercel.com/kb/guide/how-can-i-disable-auto-renewals-for-a-domain-registered-with-vercel?from=related) — Learn about disabling auto-renewal of domains registered with Vercel.
+- [Update auto-renew for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-auto-renew-for-a-domain?from=related)
+- [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain?from=related)
+- [Using Domains API](https://vercel.com/docs/domains/registrar-api?from=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
+- [Adding a Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+
+Full cross-link map for this page: [/docs/domains/working-with-domains/renew-a-domain.graph.md](/docs/domains/working-with-domains/renew-a-domain.graph.md)
+<!-- /docsgraph:related -->
 
 You can see the expiration or [renewal date](#filter-on-renewal-status) of your Vercel-managed domains in the list of domains on the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page).
 

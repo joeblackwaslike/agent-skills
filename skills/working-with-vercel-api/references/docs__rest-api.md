@@ -3,7 +3,7 @@ title: Rest API
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-08-10
+last_updated: 2026-08-17
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about rest api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-08-10T05:33:48.133Z"
-sha256: "073bafcce25a9e1d499c14f4f97ba7db0dbf633549458a3735a1734ec65f4d20"
+fetched_at: "2026-08-17T04:50:12.895Z"
+sha256: "7bde05d1064f16374cc6112228832d77a706079660d2e929674b3815f84e2392"
 ---
 
 # Vercel REST API Reference
@@ -39,6 +39,16 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/access-groups/reads-an-access-group-project.md) | Reads an access group project |
 | **PATCH** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/access-groups/update-an-access-group-project.md) | Update an access group project |
 | **DELETE** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/access-groups/delete-an-access-group-project.md) | Delete an access group project |
+
+## api-ai-gateway
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/get-virtual-model-config.md) | Get virtual model config |
+| **POST** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/create-virtual-model-config.md) | Create virtual model config |
+| **PATCH** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/update-virtual-model-config.md) | Update virtual model config |
+| **DELETE** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
+| **GET** | [`/v1/ai-gateway/virtual-model-configs/list`](/docs/rest-api/api-ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
 
 ## ai-gateway
 
@@ -305,6 +315,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/installations/{integrationConfigurationId}`](/docs/rest-api/marketplace/update-installation.md) | Update Installation |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/account`](/docs/rest-api/marketplace/get-account-information.md) | Get Account Information |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/member/{memberId}`](/docs/rest-api/marketplace/get-member-information.md) | Get Member Information |
+| **POST** | [`/v1/installations/{integrationConfigurationId}/credentials/rotate`](/docs/rest-api/marketplace/rotate-installation-credential.md) | Rotate Installation Credential |
 | **POST** | [`/v1/installations/{integrationConfigurationId}/events`](/docs/rest-api/marketplace/create-event.md) | Create Event |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources`](/docs/rest-api/marketplace/get-integration-resources.md) | Get Integration Resources |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}`](/docs/rest-api/marketplace/get-integration-resource.md) | Get Integration Resource |
@@ -460,6 +471,9 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/snapshot`](/docs/rest-api/sandboxes/create-a-snapshot.md) | Create a snapshot |
 | **POST** | [`/v2/sandboxes/{name}/fork`](/docs/rest-api/sandboxes/fork-a-named-sandbox.md) | Fork a named sandbox |
 | **POST** | [`/v3/sandboxes`](/docs/rest-api/sandboxes/create-a-named-sandbox-1.md) | Create a named sandbox |
+| **POST** | [`/v3/sandboxes/sessions/{sessionId}/snapshot`](/docs/rest-api/sandboxes/create-a-snapshot-1.md) | Create a snapshot |
+| **POST** | [`/v3/sandboxes/{name}/fork`](/docs/rest-api/sandboxes/fork-a-named-sandbox-1.md) | Fork a named sandbox |
+| **POST** | [`/v4/sandboxes`](/docs/rest-api/sandboxes/create-a-named-sandbox-2.md) | Create a named sandbox |
 
 ## security
 

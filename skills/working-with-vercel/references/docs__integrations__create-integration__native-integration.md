@@ -10,20 +10,35 @@ prerequisites:
   - /docs/integrations
 related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info
-  - /docs/integrations/marketplace-api
+  - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations
   - /docs/integrations/create-integration
   - /docs/integrations/create-integration/marketplace-flows
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "6f394220648fe70833e3f52f7a8c6cb0cb4323ec408fc4783b05fc4ee8f62230"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9ac0755ac546a0e814559bbe2b41d44ac276bfd775f99580c05d6d52167fd03b"
 ---
 
 # Native integration concepts
 
 Native integrations allow a two-way connection between Vercel and third-party providers. This enables providers to embed their services into the Vercel ecosystem so that Vercel customers can subscribe to third-party products directly through the Vercel dashboard, providing several key benefits to the integration user:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Marketplace Partner API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related) — Learn about marketplace partner api on Vercel.
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+
+Full cross-link map for this page: [/docs/integrations/create-integration/native-integration.graph.md](/docs/integrations/create-integration/native-integration.graph.md)
+<!-- /docsgraph:related -->
 
 - They **do not** need to create an account on your site.
 - They can choose suitable billing plans for each product through the Vercel dashboard.
@@ -42,7 +57,7 @@ Because installations are tied to teams and not individual users, use the [Get A
 | Concept                                                              | Definition                                                               |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | Team installation                                                    | The primary connection between a user's team and a specific integration. |
-| [`installationId`](/docs/integrations/marketplace-api#installations) | The main partition key connecting the user's team to the integration.    |
+| [`installationId`](/docs/integrations/create-integration/marketplace-api#installations) | The main partition key connecting the user's team to the integration.    |
 
 ### Reinstallation behavior
 
@@ -139,7 +154,7 @@ Billing and usage tracking are crucial aspects of native integrations that are d
 | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Resource-level billing                                                                                                  | Billing and usage can be tracked separately for each resource.                                                                                                                                                                                               |
 | [Installation-level billing](/docs/integrations/create-integration/submit-integration#installation-level-billing-plans) | Billing and usage for all resources can also be combined under one installation.                                                                                                                                                                             |
-| Billing plan and payment                                                                                                | A plan can be of type prepaid or subscription. You ensure that the correct plans are pulled from your backend with your [integration server](/docs/integrations/marketplace-product/#update-your-integration-server) before you submit a product for review. |
+| Billing plan and payment                                                                                                | A plan can be of type prepaid or subscription. You ensure that the correct plans are pulled from your backend with your [integration server](/docs/integrations/create-integration/marketplace-product#update-your-integration-server) before you submit a product for review. |
 
 We recommend you implement resource-level billing, which is the default, to provide users with detailed cost breakdowns and enable more flexible pricing strategies.
 

@@ -8,21 +8,41 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication
+  - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/passport
-  - /docs/security/deployment-protection/methods-to-protect-deployments/password-protection
-  - /docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips
+  - /docs/deployment-protection/methods-to-protect-deployments/password-protection
   - /docs/deployment-protection/methods-to-protect-deployments/trusted-ips
+  - /docs/deployment-protection/protected-source-maps
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "1ee2c4177c532d7864267bbb0f9534bb0ad4c33932b9d9d509808fbcf8b99575"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ecf0da1b92b178cf7bfcd913cc064030585201cd569e440375e63fcbe7b7ef88"
 ---
 
 # Deployment Protection on Vercel
 
 Deployment Protection lets you control who can access your preview and production URLs. You configure it at the project level, choosing both a **protection method** (how you protect) and a **protection scope** (what you protect).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment?from=related) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
+- [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+- [Custom Events](https://vercel.com/docs/analytics/custom-events?from=related) — Learn how to send custom analytics events from your application.
+- [Inspect OG Metadata](https://vercel.com/docs/deployments/og-preview?from=related) — Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
+
+Full cross-link map for this page: [/docs/deployment-protection.graph.md](/docs/deployment-protection.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** On the Hobby plan, Vercel Authentication with Standard Protection is
 > available. This protects your preview deployments and deployment URLs, but your
@@ -35,10 +55,10 @@ Deployment Protection requires authentication for all requests, including those 
 
 You can choose from several methods to protect your deployments:
 
-- [**Vercel Authentication**](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication): Restricts access to only Vercel users with suitable access rights. **Available on all plans**
+- [**Vercel Authentication**](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication): Restricts access to only Vercel users with suitable access rights. **Available on all plans**
 - [**Passport**](/docs/passport): Restricts access to visitors who authenticate through your identity provider. **Available on the Enterprise plan**
-- [**Password Protection**](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection): Restricts access to users with the correct password. **Available on the Enterprise plan, or as a paid add-on for Pro plans**
-- [**Trusted IPs**](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips): Restricts access to users with the correct IP address. **Available on the Enterprise plan**
+- [**Password Protection**](/docs/deployment-protection/methods-to-protect-deployments/password-protection): Restricts access to users with the correct password. **Available on the Enterprise plan, or as a paid add-on for Pro plans**
+- [**Trusted IPs**](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips): Restricts access to users with the correct IP address. **Available on the Enterprise plan**
 
 ## Choose which URLs to protect
 
@@ -80,10 +100,10 @@ When setting a team default, choose the protection level (All Deployments, Stand
 
 You can combine Standard Protection with any of the following methods:
 
-- [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication)
+- [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication)
 - [Passport](/docs/passport)
-- [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection)
-- [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips)
+- [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)
+- [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)
 
 ### How to migrate to Standard Protection
 
@@ -129,10 +149,10 @@ With this configuration, all URLs are protected, including your production domai
 
 You can combine All Deployments protection with any of the following methods:
 
-- [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication)
+- [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication)
 - [Passport](/docs/passport)
-- [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection)
-- [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips)
+- [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)
+- [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)
 
 ## Only Production Deployments
 
@@ -158,9 +178,9 @@ For example, Vercel generates a preview URL such as `my-preview-5678.vercel.app`
 
 Advanced Deployment Protection features are available to Enterprise customers by default. Pro plan customers can access these features for an additional $150 per month:
 
-- [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection)
-- [Private Production Deployments](/docs/security/deployment-protection#all-deployments)
-- [Deployment Protection Exceptions](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions)
+- [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)
+- [Private Production Deployments](/docs/deployment-protection#all-deployments)
+- [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions)
 
 [Passport](/docs/passport) is available on the Enterprise plan only and is not included in the Advanced Deployment Protection add-on.
 

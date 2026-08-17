@@ -10,20 +10,40 @@ prerequisites:
   - /docs/deployment-protection
 related:
   - /docs/deployment-protection
-  - /docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication
-  - /docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips
-  - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links
-  - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
+  - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
+  - /docs/deployment-protection/methods-to-protect-deployments/trusted-ips
+  - /docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links
+  - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 summary: Require visitors to enter a password before they can view your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "1f58a0df2bf619ad50edbb76849a1022fa876b190e651d2fb503bd49f14035c5"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "221cc4d262fa1e574286078666377f2babeb4913a423e6dfd587433a53cac1d3"
 ---
 
 # Password Protection
 
 > **🔒 Permissions Required**: Password Protection
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker support, background workers, and when to
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Passport](https://vercel.com/docs/passport?from=related) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Custom Events](https://vercel.com/docs/analytics/custom-events?from=related) — Learn how to send custom analytics events from your application.
+
+Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md](/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md)
+<!-- /docsgraph:related -->
 
 Password Protection requires visitors to enter a pre-defined password before they can access your deployment. You can set the desired password from your project settings when enabling the feature, and update it any time.
 
@@ -36,8 +56,8 @@ The table below outlines key considerations and security implications when using
 | Consideration                 | Description                                                                                                                                                                                                                                                                            |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Environment Configuration** | Can be enabled for different environments. See [Understanding Deployment Protection by environment](/docs/deployment-protection#choose-which-urls-to-protect)                                                                                           |
-| **Compatibility**             | Compatible with [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication) and [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                  |
-| **Bypass Methods**            | Can be bypassed using [Shareable Links](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
+| **Compatibility**             | Compatible with [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                  |
+| **Bypass Methods**            | Can be bypassed using [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
 | **Password Persistence**      | Users only need to enter the password once per deployment, or when the password changes, due to cookie set by the feature being invalidated on password change                                                                                                                         |
 | **Password Changes**          | Users must re-enter a new password if you change the existing one                                                                                                                                                                                                                      |
 | **Disabling Protection**      | All existing deployments become unprotected if you disable the feature                                                                                                                                                                                                                 |
@@ -64,7 +84,7 @@ You can manage Password Protection through the dashboard, API, or Terraform.
 
 ### Configure Password Protection with the API
 
-You can manage Password Protection using the Vercel API endpoint to [update an existing project](/docs/rest-api/reference/endpoints/projects/update-an-existing-project) with the following body.
+You can manage Password Protection using the Vercel API endpoint to [update an existing project](/docs/rest-api/projects/update-an-existing-project) with the following body.
 
 | Parameter        | Type   | Description                                                                                                                                                                  |
 | ---------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

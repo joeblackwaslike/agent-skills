@@ -10,17 +10,32 @@ prerequisites:
 related:
   - /docs/rbac/access-roles/project-level-roles
   - /docs/rbac/access-roles
-  - /docs/security/directory-sync
+  - /docs/directory-sync
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "baa936bb38a17f320ae6422017ba5ccfb263547fda474a20c60e58a1e2e09d97"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "aa4f4f148e744b6d237f17693ce606791a02333d10e8a25d4efa2e21a2c461f6"
 ---
 
 # Access Groups
 
 > **🔒 Permissions Required**: Access Groups
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member?from=related)
+- [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project?from=related)
+- [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group?from=related)
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related) — Learn about the different team level roles and the permissions they provide.
+
+Full cross-link map for this page: [/docs/rbac/access-groups.graph.md](/docs/rbac/access-groups.graph.md)
+<!-- /docsgraph:related -->
 
 Access Groups provide a way to manage groups of Vercel users across projects on your team. They are a set of project role assignations, a combination of Vercel users and the projects they work on.
 
@@ -90,7 +105,7 @@ When configuring Access Groups, there are some key things to be aware of:
 
 ## Directory sync
 
-If you use [Directory sync](/docs/security/directory-sync), you are able to map a Directory Group with an Access Group. This will grant all users that belong to the Directory Group access to the projects that get assigned in the Access Group.
+If you use [Directory sync](/docs/directory-sync), you are able to map a Directory Group with an Access Group. This will grant all users that belong to the Directory Group access to the projects that get assigned in the Access Group.
 
 Some things to note:
 

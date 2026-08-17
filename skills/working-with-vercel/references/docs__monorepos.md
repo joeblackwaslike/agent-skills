@@ -8,21 +8,42 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/projects/overview
-  - /docs/deployments/configure-a-build
+  - /docs/monorepos/monorepo-faq
+  - /docs/projects
+  - /docs/builds/configure-a-build
   - /docs/git
   - /docs/limits
-  - /docs/cli
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7442dda0f8bdac865a8bb8231da4b0ea3b8e41ec0d291a4b11d98d311ecfa57f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "49673d8feaf94493cf3bafefd4d640d2eca6bd52797b8fecbe122a724ed8a61a"
 ---
 
 # Using Monorepos
 
-Monorepos allow you to manage multiple projects in a single directory. They are a great way to organize your projects and make them easier to work with.
+Monorepos allow you to manage multiple projects in a single directory. They are a great way to organize your projects and make them easier to work with. For answers to common questions about deploying monorepos, see the [Monorepos FAQ](/docs/monorepos/monorepo-faq).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related) — Learn how to import files inside Serverless Functions on Vercel.
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \(a single framework, one project with Services, or separate pr
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Project Linking](https://vercel.com/docs/cli/project-linking?from=related) — Learn how to link existing Vercel Projects with Vercel CLI.
+- [Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
+- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
+- [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+
+Full cross-link map for this page: [/docs/monorepos.graph.md](/docs/monorepos.graph.md)
+<!-- /docsgraph:related -->
 
 ## Deploy a template monorepo
 
@@ -31,9 +52,9 @@ Get started with monorepos on Vercel in a few minutes by using one of our monore
 ## Add a monorepo through the Vercel Dashboard
 
 1. Go to the [Vercel Dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and ensure your team is selected from the team switcher.
-2. Select the **Add New…** button, and then choose **Project** from the list. You'll create a new [project](/docs/projects/overview) for each directory in your monorepo that you wish to import.
+2. Select the **Add New…** button, and then choose **Project** from the list. You'll create a new [project](/docs/projects) for each directory in your monorepo that you wish to import.
 3. From the **Import Git Repository** section, select the **Import** button next to the repository you want to import.
-4. Before you deploy, you'll need to specify the directory within your monorepo that you want to deploy. Click the **Edit** button next to the [Root Directory setting](/docs/deployments/configure-a-build#root-directory) to select the directory, or project, you want to deploy. This will configure the root directory of each project to its relevant directory in the repository:
+4. Before you deploy, you'll need to specify the directory within your monorepo that you want to deploy. Click the **Edit** button next to the [Root Directory setting](/docs/builds/configure-a-build#root-directory) to select the directory, or project, you want to deploy. This will configure the root directory of each project to its relevant directory in the repository:
 
 ![Image](`/docs-assets/static/docs/concepts/projects/monorepo-import-light.png`)
 
@@ -79,7 +100,7 @@ Vercel considers a project in a monorepo changed if any of the following conditi
 
 Vercel automatically skips builds for projects in a monorepo that are unchanged by the commit.
 
-This setting does **not** occupy [concurrent build slots](/docs/deployments/concurrent-builds), unlike the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step) feature, reducing build queue times.
+This setting does **not** occupy [concurrent build slots](/docs/builds/managing-builds), unlike the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step) feature, reducing build queue times.
 
 #### Requirements
 
@@ -113,7 +134,7 @@ If you have created a script to ignore the build step, you can skip the [the scr
 
 ## Filtered installs
 
-You can speed up dependency installs by only installing the dependencies for the project being deployed and its workspace dependencies. Set a custom [Install Command](/docs/deployments/configure-a-build#install-command) in the project's `vercel.json` or [update your project's Build and Deployment settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23framework-settings\&title=Build+and+Deployment+settings):
+You can speed up dependency installs by only installing the dependencies for the project being deployed and its workspace dependencies. Set a custom [Install Command](/docs/builds/configure-a-build#install-command) in the project's `vercel.json` or [update your project's Build and Deployment settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23framework-settings\&title=Build+and+Deployment+settings):
 
 ## How to link projects together in a monorepo
 

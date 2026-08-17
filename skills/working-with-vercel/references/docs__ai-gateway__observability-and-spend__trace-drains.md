@@ -17,13 +17,28 @@ related:
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "7e6456b91ddd3f510bd6202cb1f1060b421693a0b6d73abd364dcc57dd42148d"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "9d59b4337aef1c360eefa91aa4b88796f36fcfd981b07dd5439b01eb3cdc5087"
 ---
 
 # Trace Drains
 
 AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/signals/traces/) trace for every request it handles. A trace drain forwards those traces to any OTLP/HTTP-compatible endpoint, such as your own collector or a native integration from the Marketplace, so you can inspect latency, token usage, and provider failover in the observability tool you already use.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Tracing](https://vercel.com/docs/tracing?from=related) — Learn how to trace your application to understand performance and infrastructure details.
+- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+
+Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md)
+<!-- /docsgraph:related -->
 
 > **🔒 Permissions Required**: Trace Drains
 

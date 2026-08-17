@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-08-10T05:26:00.817Z"
-sha256: "3b1a921fe84b1bed4a11fdd2ebaeb9ff04d8573c0d4fd322b994e925e5485745"
+fetched_at: "2026-08-17T04:40:34.367Z"
+sha256: "4dcb0243bdae8c4b52bcfe9c229771e86a7075a57a29f4ece083bbbd7551978f"
 ---
 
 # Available features index
@@ -620,8 +620,8 @@ Features
 | Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.125` |
 | Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.38` |
 | Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.38` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.71` |
-| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.35` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.72` |
+| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.36` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.27` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
 | dmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/dmnlint:1` | `1.0.1` |
@@ -1349,15 +1349,16 @@ Features
 | Automatic File Headers | baxyz | `ghcr.io/helpers4/devcontainer/auto-header:1` | `1.0.8` |
 | Claude Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/claude-dev:1` | `1.0.5` |
 | GitHub Copilot Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/copilot-dev:1` | `1.0.3` |
-| Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.0.7` |
+| Dotfiles Sync | baxyz | `ghcr.io/helpers4/devcontainer/dotfiles-sync:1` | `1.0.8` |
 | Essential Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/essential-dev:1` | `1.0.9` |
 | git-absorb | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.0.7` |
 | GitHub Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/github-dev:1` | `1.0.5` |
 | helpers4 Common Library | baxyz | `ghcr.io/helpers4/devcontainer/helpers4-common:1` | `1.0.1` |
 | Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.0.3` |
-| Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.0.7` |
-| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.0.3` |
-| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.0.0` |
+| Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.0.0` |
+| Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.0.9` |
+| Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.0.5` |
+| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.0.1` |
 | pnpm Store (shared) | baxyz | `ghcr.io/helpers4/devcontainer/pnpm-store:1` | `1.0.7` |
 | Shell History Per Project | baxyz | `ghcr.io/helpers4/devcontainer/shell-history-per-project:1` | `1.0.7` |
 | TypeScript Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/typescript-dev:1` | `1.0.7` |
@@ -1417,6 +1418,9 @@ Features
 | SSH Commit Signing | esimkowitz | `ghcr.io/esimkowitz/devcontainer-features/ssh-signing:1` | `1.0.1` |
 | Lefthook | iyaki | `ghcr.io/iyaki/devcontainer-features/lefthook:2` | `2.0.1` |
 | Oh My Pi | iyaki | `ghcr.io/iyaki/devcontainer-features/oh-my-pi:1` | `1.0.0` |
+| PHPantom LSP | iyaki | `ghcr.io/iyaki/devcontainer-features/phpantom:1` | `1.0.0` |
+| PHP Installer for Extensions (PIE) | iyaki | `ghcr.io/iyaki/devcontainer-features/pie:1` | `1.0.1` |
+| PHP Extensions via PIE | iyaki | `ghcr.io/iyaki/devcontainer-features/pie-extensions:1` | `1.0.0` |
 | SpecRalph - Spec-Driven Ralph-Wiggum Agentic AI Loops Runner | iyaki | `ghcr.io/iyaki/devcontainer-features/ralph:1` | `1.0.2` |
 | Zensical (via pipx) | Riccardo Bravin | `ghcr.io/riccardobravin/devcontainer-features/zensical:0` | `0.1.0` |
 | Databricks CLI | mike-fi | `ghcr.io/mike-fi/devcontainer-features/databricks-cli:1` | `1.1.1` |
@@ -1521,6 +1525,11 @@ Features
 | Crush | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/crush:1` | `1.0.0` |
 | OpenSpec | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/openspec:1` | `1.0.0` |
 | Yarn APT Public Key Update | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/yarn-apt-publickey:1` | `1.0.0` |
+| Claude Code CLI | NolanJX | `ghcr.io/nolanjx/devcontainer-features/claude-code:1` | `1.4.0` |
+| Codex CLI | NolanJX | `ghcr.io/nolanjx/devcontainer-features/codex:1` | `1.0.0` |
+| Cursor CLI | NolanJX | `ghcr.io/nolanjx/devcontainer-features/cursor:1` | `1.2.0` |
+| DeepSeek Harness | NolanJX | `ghcr.io/nolanjx/devcontainer-features/dsh:1` | `1.0.0` |
+| Matt Pocock's Skills | NolanJX | `ghcr.io/nolanjx/devcontainer-features/mattpocock-skills:1` | `1.0.0` |
 
 
             

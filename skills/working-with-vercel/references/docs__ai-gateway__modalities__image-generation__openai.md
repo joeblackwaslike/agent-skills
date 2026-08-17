@@ -13,14 +13,30 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "113d5796ced9664c7f0e9ab09cc28496d6525ce7db7b17bacba9b4ddd0a597e8"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "53e49ba894d65c72c361f06bf7f21e398043342ab50367525d98a355780c7b83"
 ---
 
 # Image Generation with Chat Completions API
 
 AI Gateway supports image generation using the Chat Completions API for the models listed under the **Image Gen** filter at the [AI Gateway Models
 page](/ai-gateway/models?type=image), including multimodal LLMs and image-only models.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Using AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
+- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
+- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md)
+<!-- /docsgraph:related -->
 
 ## Multimodal LLMs
 
@@ -431,9 +447,9 @@ if __name__ == "__main__":
     main()
 ```
 
-### xAI Grok Imagine
+### SpaceXAI Grok Imagine
 
-xAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios. Browse the current lineup in the [model list](/ai-gateway/models).
+SpaceXAI's Grok Imagine models generate high-quality images from text prompts with support for various aspect ratios. Browse the current lineup in the [model list](/ai-gateway/models).
 
 #### TypeScript
 

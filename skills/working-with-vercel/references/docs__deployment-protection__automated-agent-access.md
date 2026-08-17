@@ -16,13 +16,30 @@ related:
 summary: Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Protection enabled.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/automated-agent-access.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "62a0d0c5d6fd4fb2d46e58ebfe3640299fa9106c404998d3bc1515c87eb7a2e0"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "429e14b2fb43cf5043b8a999b8c1e84617e6f579f0c0cfaaa40ecb455a7458d5"
 ---
 
 # Automated & Agent Access
 
 AI agents, CI/CD pipelines, MCP servers, and end-to-end testing tools can't complete browser-based authentication challenges. If your project has [Deployment Protection](/docs/deployment-protection) enabled, these automated systems receive a login page or a `403` response instead of your deployment content.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
+- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Troubleshooting Cross-Origin Errors \(net::ERR_BLOCKED_BY_ORB\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related) — Learn to resolve \`net::ERR_BLOCKED_BY_ORB\` errors on protected Vercel deployments. This guide explains how cross-origi
+- [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Update Protection Bypass for Automation](https://vercel.com/docs/rest-api/projects/update-protection-bypass-for-automation?from=related)
+
+Full cross-link map for this page: [/docs/deployment-protection/automated-agent-access.graph.md](/docs/deployment-protection/automated-agent-access.graph.md)
+<!-- /docsgraph:related -->
 
 You have two options for granting programmatic access. Protection Bypass for Automation lets you pass a **bypass secret** with each request. Deployment Protection Exceptions make specific preview domains **publicly accessible** without any authentication.
 

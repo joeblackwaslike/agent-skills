@@ -16,13 +16,28 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "5f1d014d81392ccb77ac6222ffb400c3d4e6a2d8d6703123a551435bf166f346"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "82b856e2fa8d686f6d3af36b4cb1125594ba900ce27b26257fb5f34e29f48cd9"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
 
 > **🔒 Permissions Required**: Audit Log Drains
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Creates a new Integration Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
+- [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Retrieves a Configurable Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related)
+
+Full cross-link map for this page: [/docs/audit-log/migrating-to-drains.graph.md](/docs/audit-log/migrating-to-drains.graph.md)
+<!-- /docsgraph:related -->
 
 Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drains/reference/audit-logs). Audit Log Drains forward the events from your [Activity Log](/docs/activity-log) including audit metadata, which covers more team activity than the legacy integration. If you stream audit logs to a Security Information and Event Management (SIEM) system today, migrate your integration to keep receiving events.
 

@@ -13,13 +13,28 @@ related:
 summary: Use LibreChat with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/librechat.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "3e6a92d937c401920de23e77ac0a689feaacdc70952d93bca6ada2a3ccad934c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "ed929e83181987d009ddbed7c1fcdf422a6dce41fe57d484bbce446ba345bbc0"
 ---
 
 # LibreChat
 
 [LibreChat](https://librechat.ai) is an open-source AI chat platform that you can self-host. You can configure it to use AI Gateway for unified model access and spend monitoring.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Chatbox](https://vercel.com/docs/ai-gateway/chat-platforms/chatbox?from=related) — Use Chatbox with the AI Gateway.
+- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [Ecosystem](https://vercel.com/docs/ai-gateway/ecosystem?from=related) — Explore community framework integrations and ecosystem features for the AI Gateway.
+- [OpenAI Chat Completions API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related) — Use the OpenAI Chat Completions API with AI Gateway for seamless integration with existing tools and libraries.
+
+Full cross-link map for this page: [/docs/ai-gateway/chat-platforms/librechat.graph.md](/docs/ai-gateway/chat-platforms/librechat.graph.md)
+<!-- /docsgraph:related -->
 
 ## Configuring LibreChat
 

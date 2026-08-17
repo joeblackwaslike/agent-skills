@@ -9,15 +9,15 @@ prerequisites:
   - /docs/build-output-api
 related:
   - /docs/project-configuration
-  - /docs/build-output-api/v3/configuration
+  - /docs/build-output-api/configuration
   - /docs/project-configuration/vercel-json
-  - /docs/build-output-api/v3/services
+  - /docs/build-output-api/services
   - /docs/services/routing
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-08-03T07:34:45.774Z"
-sha256: "8507237c8b81c9f86a9a291b2dd87851ca5c3e909b30069f24889b1a3a70f581"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e21dbb719e8c923b26176f141a2d37136aa35779e877f26689c3391d4fba65bd"
 ---
 
 # Features
@@ -26,11 +26,26 @@ This section describes how to implement common Vercel platform features through 
 Build Output API through a combination of platform primitives, configuration and
 helper functions.
 
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+
+Full cross-link map for this page: [/docs/build-output-api/features.graph.md](/docs/build-output-api/features.graph.md)
+<!-- /docsgraph:related -->
+
 ## High-level routing
 
 The `vercel.json` file supports an [easier-to-use syntax for routing through properties
 like `rewrites`, `headers`, etc](/docs/project-configuration). However, the
-[`config.json` "routes" property](/docs/build-output-api/v3/configuration#routes) supports a
+[`config.json` "routes" property](/docs/build-output-api/configuration#routes) supports a
 lower-level syntax.
 
 The `getTransformedRoutes()` function from the [`@vercel/routing-utils` npm package](https://www.npmjs.com/package/@vercel/routing-utils)
@@ -62,7 +77,7 @@ The [`cleanUrls: true` routing feature](/docs/project-configuration/vercel-json#
 generated with the helper function above, it *also* requires that the static HTML files
 have their `.html` suffix removed.
 
-This can be achieved by utilizing the [`"overrides"` property in the `config.json` file](/docs/build-output-api/v3/configuration#overrides):
+This can be achieved by utilizing the [`"overrides"` property in the `config.json` file](/docs/build-output-api/configuration#overrides):
 
 ```typescript
 import { writeFileSync } from 'fs';
@@ -86,7 +101,7 @@ writeFileSync('.vercel/output/config.json', JSON.stringify(config));
 
 ## Routing to a service
 
-In a deployment with multiple services, a top-level route can delegate to a service instead of pointing to a filesystem path. Once a request is delegated, routing continues inside that service's own route table. See the [Services](/docs/build-output-api/v3/services) build output reference and [Services routing](/docs/services/routing) for the full model.
+In a deployment with multiple services, a top-level route can delegate to a service instead of pointing to a filesystem path. Once a request is delegated, routing continues inside that service's own route table. See the [Services](/docs/build-output-api/services) build output reference and [Services routing](/docs/services/routing) for the full model.
 
 ## Routing Middleware
 
@@ -98,7 +113,7 @@ at that path.
 
 A Routing Middleware is represented on the file system in the same format as an [Edge
 Function](/docs/build-output-api/v3/#vercel-primitives/edge-functions). To use the middleware,
-add additional rules in the [`routes` configuration](/docs/build-output-api/v3/configuration#routes)
+add additional rules in the [`routes` configuration](/docs/build-output-api/configuration#routes)
 mapping URLs (using the `src` property) to the middleware (using the `middlewarePath` property).
 
 ### Routing Middleware example
@@ -119,7 +134,7 @@ starts with `/api`, before continuing to the underlying resource:
 
 ## Draft Mode
 
-When using [Prerender Functions](/docs/build-output-api/v3/primitives#prerender-functions), you may want to implement "Draft Mode" which would allow you to bypass the caching aspect of prerender functions. For example, while writing draft blog posts before they are ready to be published.
+When using [Prerender Functions](/docs/build-output-api/primitives#prerender-functions), you may want to implement "Draft Mode" which would allow you to bypass the caching aspect of prerender functions. For example, while writing draft blog posts before they are ready to be published.
 
 To implement this, the `bypassToken` of the `<name>.prerender-config.json` file should be set to a randomized string that you generate at build-time. This string should not be exposed to users / the client-side, except under authenticated circumstances.
 
@@ -127,7 +142,7 @@ To enable "Draft Mode", a cookie with the name `__prerender_bypass` needs to be 
 
 ## On-Demand Incremental Static Regeneration (ISR)
 
-When using [Prerender Functions](/docs/build-output-api/v3/primitives#prerender-functions), you may want to implement "On-Demand Incremental Static Regeneration (ISR)" which would allow you to invalidate the cache at any time.
+When using [Prerender Functions](/docs/build-output-api/primitives#prerender-functions), you may want to implement "On-Demand Incremental Static Regeneration (ISR)" which would allow you to invalidate the cache at any time.
 
 To implement this, the `bypassToken` of the `<name>.prerender-config.json` file should be set to a randomized string that you generate at build-time. This string should not be exposed to users / the client-side, except under authenticated circumstances.
 

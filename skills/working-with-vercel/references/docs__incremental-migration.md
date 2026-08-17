@@ -8,21 +8,38 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/domains/add-a-domain
-  - /docs/rewrites
+  - /docs/domains/working-with-domains/add-a-domain
+  - /docs/routing/rewrites
   - /docs/frameworks
   - /docs/global-config
   - /docs/routing-middleware
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "82c2edce4fc0e418889d3001d3d3d2f93028bdc963d27d67e8dac9121834335c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e82e5a61304bb426a56736edb298cc5410781a3d86256bec0345562e0e77f68d"
 ---
 
 # Incremental Migration to Vercel
 
 When migrating to Vercel you should use an incremental migration strategy. This allows your current site and your new site to operate simultaneously, enabling you to move different sections of your site at a pace that suits you.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
+- [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes?from=related) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
+
+Full cross-link map for this page: [/docs/incremental-migration.graph.md](/docs/incremental-migration.graph.md)
+<!-- /docsgraph:related -->
 
 In this guide, we'll explore incremental migration benefits, strategies, and implementation approaches for a zero-downtime migration to Vercel.
 
@@ -93,7 +110,7 @@ Follow these steps to incrementally migrate your website to Vercel. Two possible
 
 ## Point your domain to Vercel
 
-In this approach, you make Vercel [the entry point for all your production traffic](/docs/domains/add-a-domain). When you begin, all traffic will be sent to the legacy server with [rewrites](/docs/rewrites) and/or fallbacks. As you migrate different aspects of your site to Vercel, you can remove the rewrites/fallbacks to the migrated paths so that they are now served by Vercel.
+In this approach, you make Vercel [the entry point for all your production traffic](/docs/domains/working-with-domains/add-a-domain). When you begin, all traffic will be sent to the legacy server with [rewrites](/docs/routing/rewrites) and/or fallbacks. As you migrate different aspects of your site to Vercel, you can remove the rewrites/fallbacks to the migrated paths so that they are now served by Vercel.
 
 ![Image](`/docs-assets/static/docs/incremental-migration/approach-1-light.png`)
 
@@ -109,7 +126,7 @@ Send all traffic to the legacy server using one of the following 3 methods:
 
 #### Framework-specific rewrites
 
-Use rewrites [built-in to the framework](/docs/rewrites#framework-considerations) such as configuring `next.config.ts` with [fallbacks and rewrites in Next.js](https://nextjs.org/docs/app/api-reference/next-config-js/rewrites)
+Use rewrites [built-in to the framework](/docs/routing/rewrites#framework-considerations) such as configuring `next.config.ts` with [fallbacks and rewrites in Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/rewrites)
 
 The code example below shows how to configure rewrites with fallback using `next.config.js` to send all traffic to the legacy server:
 
@@ -134,7 +151,7 @@ export default nextConfig;
 
 #### Vercel configuration rewrites
 
-Use `vercel.json` for frameworks that do not have rewrite support. See the [how do rewrites work](/docs/rewrites) documentation to learn how to rewrite to an external destination, from a specific path.
+Use `vercel.json` for frameworks that do not have rewrite support. See the [how do rewrites work](/docs/routing/rewrites) documentation to learn how to rewrite to an external destination, from a specific path.
 
 #### Global Config
 
@@ -148,7 +165,7 @@ Review this [maintenance page example](https://vercel.com/templates/next.js/main
 This is an example middleware code for executing the rewrites on the global network:
 
 ```ts filename="middleware.ts"
-import { get } from '@vercel/edge-config';
+import { get } from '@vercel/global-config';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const config = {
@@ -174,7 +191,7 @@ In the above example, you use Global Config to store one key-value pair for each
 
 ### 3. Deploy to production
 
-Connect your [production domain](/docs/getting-started-with-vercel/domains) to your Vercel Project. All your traffic will now be sent to the legacy server.
+Connect your [production domain](/docs/getting-started-with-vercel) to your Vercel Project. All your traffic will now be sent to the legacy server.
 
 ### 4. Deploy your first iteration
 
@@ -202,7 +219,7 @@ Once you have tested the first feature fully on Vercel, add a rewrite or reverse
 
 For example, if you are using [nginx](https://nginx.org/), you can use the [`proxy_pass`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass) directive to send the traffic to the Vercel deployment.
 
-Let's say you deployed the new feature at the folder `new-feature` of the new Next.js application and set its [`basePath`](https://nextjs.org/docs/app/api-reference/next-config-js/basePath) to `/new-feature`, as shown below:
+Let's say you deployed the new feature at the folder `new-feature` of the new Next.js application and set its [`basePath`](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath) to `/new-feature`, as shown below:
 
 ```ts filename="next.config.ts"
 import type { NextConfig } from 'next';
@@ -235,17 +252,17 @@ Repeat steps 1 and 2 until all the features have been migrated to Vercel. You ca
 
 ### Maximum number of routes
 
-Vercel has a limit of 1024 routes per deployment for rewrites. If you have more than 1024 routes, you may want to consider creating a custom solution using Middleware. For more information on how to do this in Next.js, see [Managing redirects at scale](https://nextjs.org/docs/app/building-your-application/routing/redirecting#managing-redirects-at-scale-advanced).
+Vercel has a limit of 1024 routes per deployment for rewrites. If you have more than 1024 routes, you may want to consider creating a custom solution using Middleware. For more information on how to do this in Next.js, see [Managing redirects at scale](https://nextjs.org/docs/app/guides/redirecting#managing-redirects-at-scale-advanced).
 
 ### Handling emergencies
 
 If you're facing unexpected outcomes or cannot find an immediate solution for an unexpected behavior with a new feature, you can set up a variable in [Global Config](/docs/global-config) that you can turn on and off at any time without having to make any code changes on your deployment. The value of this variable will determine whether you rewrite to the new version or the legacy server.
 
-For example, with Next.js, you can use the follow [middleware](/docs/edge-middleware) code example:
+For example, with Next.js, you can use the follow [middleware](/docs/routing-middleware) code example:
 
 ```ts filename="middleware.ts"
 import { NextRequest, NextResponse } from 'next/server';
-import { get } from '@vercel/edge-config';
+import { get } from '@vercel/global-config';
 
 export const config = {
   matcher: ['/'], // URL to match

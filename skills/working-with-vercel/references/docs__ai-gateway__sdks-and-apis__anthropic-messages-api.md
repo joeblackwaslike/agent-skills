@@ -17,13 +17,30 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway for seamless integration with Anthropic SDK tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "890c7eefb44e4ae39e5c7863180499e46dc46b6fd5974f57ef3eb153e1627819"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "66673ce0e08da51cc52fd3189358af0676f474c10377d7c7e46f86d5fc53fe71"
 ---
 
 # Anthropic Messages API
 
 AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthropic SDK and tools like [Claude Code](https://www.claude.com/product/claude-code) through a unified gateway with only a URL change.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to Run Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related) — Learn how to pair Vercel's Chat SDK with Claude Managed Agents to run a streaming research analyst in a browser chat, us
+- [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws?from=related)
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
+- [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related) — Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup.
+
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md)
+<!-- /docsgraph:related -->
 
 The Anthropic Messages API implements the same specification as the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages).
 
@@ -116,7 +133,7 @@ For advanced features, see:
 
 ## Integration with Anthropic SDK
 
-You can use the AI Gateway's Anthropic Messages API with the official [Anthropic SDK](https://docs.anthropic.com/en/api/client-sdks). Point your client to the AI Gateway's base URL and use your AI Gateway [API key](/docs/ai-gateway/authentication#api-key) or [OIDC token](/docs/ai-gateway/authentication#oidc-token) for authentication.
+You can use the AI Gateway's Anthropic Messages API with the official [Anthropic SDK](https://docs.anthropic.com/en/api/client-sdks). Point your client to the AI Gateway's base URL and use your AI Gateway [API key](/docs/ai-gateway/authentication-and-byok#api-key) or [OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-token) for authentication.
 
 > **💡 Note:** The examples and content in this section are not comprehensive. For complete
 > documentation on available parameters, response formats, and advanced

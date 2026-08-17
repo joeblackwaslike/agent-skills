@@ -13,13 +13,28 @@ related:
 summary: Learn about pricing for Flags Explorer.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/limits-and-pricing.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "e3034e32611af6dba82b43c553e2adaf5685ce9ef4678a8d2d08d1c999e11334"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "64053f4735e037370efab30e0c326d06bb3b77fa6c1d2e393284d8c334b5cde9"
 ---
 
 # Pricing for Flags Explorer
 
 > **🔒 Permissions Required**: Flags Explorer
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Limits and Pricing](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing?from=related) — Learn about limits and pricing for Vercel Flags.
+- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
+- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+
+Full cross-link map for this page: [/docs/flags/flags-explorer/limits-and-pricing.graph.md](/docs/flags/flags-explorer/limits-and-pricing.graph.md)
+<!-- /docsgraph:related -->
 
 ## Pricing
 

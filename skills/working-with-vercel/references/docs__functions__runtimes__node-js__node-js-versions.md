@@ -13,13 +13,29 @@ related:
 summary: Learn about the supported Node.js versions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/node-js-versions.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "bc07fbf26d67c97368e94d613d052303eedda3ac69ffac0d595cb3f4a7c23c01"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "23ae76cce6271eb16f18f5e765f7c22f5710f1b3fb99d229ead0887545d5313e"
 ---
 
 # Supported Node.js versions
 
 ## Default and available versions
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related) — Learn how to use the latest npm version for Vercel deployments.
+- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration?from=related) — Learn about advanced configurations for Vercel functions on Vercel.
+- [Package Managers](https://vercel.com/docs/package-managers?from=related) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
+- [Python version](https://vercel.com/docs/functions/runtimes/python/python-version?from=related) — Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
+- [General Settings](https://vercel.com/docs/project-configuration/general-settings?from=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
+- [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+
+Full cross-link map for this page: [/docs/functions/runtimes/node-js/node-js-versions.graph.md](/docs/functions/runtimes/node-js/node-js-versions.graph.md)
+<!-- /docsgraph:related -->
 
 By default, a new project uses the latest Node.js LTS version available on Vercel.
 

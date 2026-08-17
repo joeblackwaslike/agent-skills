@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "93f9cbb9d19d154462beaf9341fdc61b64f21d5b7cd534b5822cb6000d880261"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "21c9be31cf58d50bd4ade1b7360054c933431a44e61fe1c1fc61656651317fbe"
 ---
 
 # Amazon Bedrock Provider
@@ -1803,7 +1803,6 @@ Static IAM user keys do not require `sessionToken`.
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -1813,6 +1812,7 @@ Static IAM user keys do not require `sessionToken`.
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

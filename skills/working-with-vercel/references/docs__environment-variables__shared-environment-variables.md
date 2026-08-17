@@ -9,18 +9,34 @@ prerequisites:
   - /docs/environment-variables
 related:
   - /docs/environment-variables
-  - /docs/accounts/create-a-team
-  - /docs/projects/overview
+  - /docs/accounts
+  - /docs/projects
 summary: Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can link to multiple projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/shared-environment-variables.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "ba8877af58194dc87846df2152308b74b5d355cd49a4484ea31faa7bebabeea9"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "51d387d8648d5de82ab6843aca2c6f47fe1682d28d7744c634c8939a9a10b4d6"
 ---
 
 # Shared environment variables
 
 **Shared Environment Variables** are [environment variables](/docs/environment-variables "Environment variables") that you define at the team-level and can link to multiple projects. When a Shared Environment Variable is updated, the change is applied to all linked projects.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
+- [Create one or more shared environment variables](https://vercel.com/docs/rest-api/environment/create-one-or-more-shared-environment-variables?from=related)
+- [Lists all Shared Environment Variables for a team](https://vercel.com/docs/rest-api/environment/lists-all-shared-environment-variables-for-a-team?from=related)
+- [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Sensitive Environment Variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related) — Environment variables that cannot be decrypted once created.
+
+Full cross-link map for this page: [/docs/environment-variables/shared-environment-variables.graph.md](/docs/environment-variables/shared-environment-variables.graph.md)
+<!-- /docsgraph:related -->
 
 > **💡 Note:** When a project-level and a Shared Environment Variable share the same key and
 > environment, the project-level environment variable always overrides the
@@ -28,7 +44,7 @@ sha256: "ba8877af58194dc87846df2152308b74b5d355cd49a4484ea31faa7bebabeea9"
 
 ## Creating shared environment variables
 
-Shared Environment Variables are created on the [Team Settings page](/docs/accounts/create-a-team). To create a new Shared Environment Variable, follow these steps:
+Shared Environment Variables are created on the [Team Settings page](/docs/accounts#creating-a-team). To create a new Shared Environment Variable, follow these steps:
 
 1. Go to the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and select your team from the team switcher. Click on the **Settings** section in the sidebar and then select **Environment Variables** from the left navigation.
 2. Populate the form with your environment variable details or paste or import an `.env` file:
@@ -38,7 +54,7 @@ Shared Environment Variables are created on the [Team Settings page](/docs/accou
 - **Key**: Fill in the key of the environment variable.
 - **Value**: Fill in the value of the environment variable.
 - **Environment**: Select the [Environments](/docs/environment-variables#environments) where you want to include it. The environment(s) chosen for the Shared Environment Variable is used when linked to a project.
-- **Link to Projects**: Select one or more [projects](/docs/projects/overview) in succession to link the new Shared Environment Variable by using the searchable drop-down. You can keep this empty and [link to projects](#linking-to-projects) later.
+- **Link to Projects**: Select one or more [projects](/docs/projects) in succession to link the new Shared Environment Variable by using the searchable drop-down. You can keep this empty and [link to projects](#linking-to-projects) later.
 
 3. Click **Save** to save your new Shared Environment Variable.
 

@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/projects/custom-domains
+  - /docs/domains/working-with-domains/add-a-domain
   - /docs/git
   - /docs/rest-api
   - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
@@ -16,15 +16,32 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "8c9989c0a9374a64ece275db6754a52666bcc61d2ef076363be44898acda1ee7"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "79d7e35057eab9f428510f7ba968f9a8ab30b2736129c8048334ce0aac70b9b8"
 ---
 
 # vercel alias
 
-The `vercel alias` command allows you to apply [custom domains](/docs/projects/custom-domains) to your deployments.
+The `vercel alias` command allows you to apply [custom domains](/docs/domains/working-with-domains/add-a-domain) to your deployments.
 
-When a new deployment is created (with our [Git Integration](/docs/git), Vercel CLI, or the [REST API](/docs/rest-api)), the platform will automatically apply any [custom domains](/docs/projects/custom-domains) configured in the project settings.
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related) — Learn how to automatically alias a Vercel preview deployment.
+- [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
+- [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias?from=related)
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related) — Learn how to deploy your domains and set up domain redirects with this guide.
+- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias?from=related)
+- [List aliases](https://vercel.com/docs/rest-api/aliases/list-aliases?from=related)
+
+Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md)
+<!-- /docsgraph:related -->
+
+When a new deployment is created (with our [Git Integration](/docs/git), Vercel CLI, or the [REST API](/docs/rest-api)), the platform will automatically apply any [custom domains](/docs/domains/working-with-domains/add-a-domain) configured in the project settings.
 
 Any custom domain that doesn't have a [custom preview branch](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) configured (there can only be one Production Branch and it's [configured separately](/docs/git#production-branch) in the project settings) will be applied to production deployments created through any of the available sources.
 

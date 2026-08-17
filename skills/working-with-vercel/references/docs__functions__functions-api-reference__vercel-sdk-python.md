@@ -10,19 +10,34 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/environment-variables/system-environment-variables
-  - /docs/runtime-cache
+  - /docs/caching/runtime-cache
   - /docs/incremental-static-regeneration
   - /docs/pricing/regional-pricing
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "01dea7b5a241944d72e7435ed93d173a7a38c82e2e8cfe090cbc8a662f21cd93"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7415d9c87181c3e8f4062dadd70653aa551937faf54dc06ddb005f2bde9f7d9e"
 ---
 
 # vercel.functions API Reference (Python)
 
 ## Install and use the package
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
+- [Python](https://vercel.com/docs/functions/runtimes/python?from=related) — Learn how to use the Python runtime to run Python applications on Vercel.
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
+- [Configuring Functions](https://vercel.com/docs/functions/configuring-functions?from=related) — Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
+
+Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-sdk-python.graph.md](/docs/functions/functions-api-reference/vercel-sdk-python.graph.md)
+<!-- /docsgraph:related -->
 
 1. Install the `vercel` package:
 
@@ -179,7 +194,7 @@ def expire_blog(request: Request):
 
 #### Limits and usage
 
-The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expire_tag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
+The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/caching/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expire_tag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
 
 The Runtime Cache API does not have first class integration with [Incremental Static Regeneration](/docs/incremental-static-regeneration). This means that:
 

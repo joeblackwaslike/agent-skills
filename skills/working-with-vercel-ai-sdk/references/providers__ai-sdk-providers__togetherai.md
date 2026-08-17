@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "8aa9754cfa385e887c04e0d4e185e3e4d4e2823ea814e28160428ca9239fa160"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "24c456ebbcf2a55f6da394f765f640b71b2343781efcc9d631a1c60b4b66ce57"
 ---
 
 # Together.ai Provider
@@ -377,7 +377,6 @@ The following provider options are available:
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -387,6 +386,7 @@ The following provider options are available:
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

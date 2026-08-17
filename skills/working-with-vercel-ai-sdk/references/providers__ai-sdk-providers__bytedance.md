@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "6ab226dfa246f27e32f2e9de50f5c20ee284a22fc7e95a7f4c7437369e8b044a"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "c73f52abe7be9086087299138d3b7f8f1ff4b41e870fed5243c8e1d67890f9aa"
 ---
 
 # ByteDance Provider
@@ -254,6 +254,14 @@ const { video } = await generateVideo({
 });
 ```
 
+<Note>
+  When the output ratio is dictated by an input — first-frame or
+  first-and-last-frame image-to-video, video editing, and video extension — pass
+  `aspectRatio: 'adaptive'` or omit `aspectRatio` entirely. Newer Seedance
+  models reject an explicit ratio on those paths, because the output inherits
+  the ratio of the input media.
+</Note>
+
 ### Image-to-Video with Audio
 
 Seedance 1.5 Pro supports generating synchronized audio alongside the video:
@@ -433,20 +441,25 @@ type them with `ByteDanceVideoModelOptions`.
 
 #### Polling Options
 
-- **pollIntervalMs** _number_
+ByteDance video generation is task-based: the provider creates a task and the AI
+SDK polls it until it completes. Configure polling with the top-level `poll`
+option of [`generateVideo()`](/docs/reference/ai-sdk-core/generate-video):
 
-  Control how frequently the API is checked for completed videos while they are
-  being processed. Defaults to 3000ms.
-
-- **pollTimeoutMs** _number_
-
-  Maximum time to wait for video generation to complete before timing out.
-  Defaults to 300000ms (5 minutes).
+```ts
+const { video } = await generateVideo({
+  model: byteDance.video('seedance-1-0-pro-250528'),
+  prompt: 'A futuristic city with flying cars',
+  poll: {
+    intervalMs: 2000, // how often to check the task (default: 5000)
+    timeoutMs: 900000, // give up after 15 minutes (default: 600000)
+  },
+});
+```
 
 <Note>
-  Video generation is an asynchronous process that can take several minutes.
-  Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
-  reliable operation.
+  The `pollIntervalMs` and `pollTimeoutMs` provider options are deprecated and
+  ignored. Passing either emits a warning. Video generation can take several
+  minutes, so raise `poll.timeoutMs` above the 10 minute default for long jobs.
 </Note>
 
 ### Video Model Capabilities
@@ -475,7 +488,6 @@ All models output MP4 video at 24 fps.
 
 - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
 - [xAI Grok](/providers/ai-sdk-providers/xai)
-- [Vercel](/providers/ai-sdk-providers/vercel)
 - [OpenAI](/providers/ai-sdk-providers/openai)
 - [Azure OpenAI](/providers/ai-sdk-providers/azure)
 - [Anthropic](/providers/ai-sdk-providers/anthropic)
@@ -485,6 +497,7 @@ All models output MP4 video at 24 fps.
 - [Groq](/providers/ai-sdk-providers/groq)
 - [Fal](/providers/ai-sdk-providers/fal)
 - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
+- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
 - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
 - [Deepgram](/providers/ai-sdk-providers/deepgram)
 - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)

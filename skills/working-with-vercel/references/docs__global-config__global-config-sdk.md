@@ -16,13 +16,29 @@ related:
 summary: The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so you can start reading Global...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-sdk.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "24e3575ad6affa8948197d5cc7b24ac70ff0e6afff6a6d5b609723886b046fa2"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "5c2455a0746e1b1d7cce3fe0a86f48f7be5ca110d035e59d4b60af88ded512c8"
 ---
 
 # @vercel/global-config
 
 The [Global Config](/docs/global-config) client SDK is the most ergonomic way to read data from Global Configs. It provides several helper methods for reading values from one or multiple Global Configs, and is compatible with Node.js, [the Edge Runtime](/docs/functions/runtimes/edge), and the browser.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Limits & Pricing](https://vercel.com/docs/global-config/global-config-limits?from=related) — Learn about the Global Configs limits and pricing based on account plans.
+- [Getting Started](https://vercel.com/docs/global-config/get-started?from=related) — Learn how to create a Global Config store and read from it in your project.
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related) — Learn how to use Global Config with Vercel's Statsig integration.
+
+Full cross-link map for this page: [/docs/global-config/global-config-sdk.graph.md](/docs/global-config/global-config-sdk.graph.md)
+<!-- /docsgraph:related -->
 
 It does not have functionality for *creating* new Global Configs and *writing* to existing Global Configs, which can be done [using the Vercel REST API](/docs/global-config/vercel-api) or the [Dashboard](/docs/global-config/global-config-dashboard).
 

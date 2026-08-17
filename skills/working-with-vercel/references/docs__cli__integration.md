@@ -13,13 +13,30 @@ related:
 summary: Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover available products using the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-06-29T05:46:34.852Z"
-sha256: "2bc3e9c04a03099b093aa2dd2b39869637325eaa4a536e2243469f0a0df7c142"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "1cc72c6c405a4f932404341af90617b75f2e335cd2614fd041b16f830b2db3a3"
 ---
 
 # vercel integration
 
 The `vercel integration` command manages [marketplace integrations](/docs/integrations). Use it to provision resources, browse available integrations, view setup guides, check billing balances, and manage individual resources with the nested `resource` subcommand.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [vercel install](https://vercel.com/docs/cli/install?from=related) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration?from=related) — Learn about all the requirements and guidelines needed when creating your Integration.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Marketplace Partner API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related) — Learn about marketplace partner api on Vercel.
+
+Full cross-link map for this page: [/docs/cli/integration.graph.md](/docs/cli/integration.graph.md)
+<!-- /docsgraph:related -->
 
 It supports the following subcommands:
 

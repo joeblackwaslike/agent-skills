@@ -15,13 +15,31 @@ related:
 summary: Options available for service configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/config-reference.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "614e9adb588583a2f3fd36ae06e1aa8ddd5c4cf8a2580883a9707534d2ff31da"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "380a5a32d23b7c213849e73a4d31e52ea225f6166eaafc3f488e133226254bff"
 ---
 
 # Service configuration reference
 
 A service is configured like any standalone Vercel project, using the same build and runtime settings.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [Services](https://vercel.com/docs/build-output-api/services?from=related) — Learn how a deployment with multiple services is structured in the Build Output API.
+- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
+- [Experimental Services](https://vercel.com/docs/services/experimental?from=related) — The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
+- [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+
+Full cross-link map for this page: [/docs/services/config-reference.graph.md](/docs/services/config-reference.graph.md)
+<!-- /docsgraph:related -->
 
 The service configuration object supports the following properties. Settings are optional unless indicated otherwise.
 

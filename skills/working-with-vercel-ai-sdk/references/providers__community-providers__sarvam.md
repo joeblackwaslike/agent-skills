@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/sarvam.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "7c81c71bb64e97fd6d4de6a4b21ec6834751850b71bf74fc2be8680869574774"
+fetched_at: "2026-08-17T04:48:04.925Z"
+sha256: "15fe7729329c9eed0c301f4bb9e655890979d8c6e54a80ca3c5a01a659d57df8"
 ---
 
 # Sarvam Provider
@@ -185,6 +185,7 @@ providerOptions: {
 - [ZeroEntropy](/providers/community-providers/zeroentropy)
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
+- [QVAC](/providers/community-providers/qvac)
 - [Flowise](/providers/community-providers/flowise)
 
 

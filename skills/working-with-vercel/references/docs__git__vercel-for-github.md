@@ -11,18 +11,38 @@ related:
   - /docs/deployments/environments
   - /docs/domains/working-with-domains
   - /docs/git
-  - /docs/projects/overview
+  - /docs/projects
   - /docs/project-configuration/git-configuration
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "f18f147c5c506897b55acf781ee90487dfcdfe26bb549c43e24636f9bf9d701f"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "bc27dbcdc2443804599058d2fc62291e7fb6e0a69ed04b52cedaf1d86216f0c2"
 ---
 
 # Deploying GitHub Projects with Vercel
 
 Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), providing [Preview Deployment URLs](/docs/deployments/environments#preview-environment-pre-production#preview-urls), and automatic [Custom Domain](/docs/domains/working-with-domains) updates.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How do I disable Git Notifications from Deployments?](https://vercel.com/kb/guide/how-do-i-disable-git-notifications-from-deployments?from=related) — If your project is connected via a Git account to your deployment, you will receive email notifications whenever the dep
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
+- [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository?from=related) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
+- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Git Settings](https://vercel.com/docs/project-configuration/git-settings?from=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
+- [Integrations](https://vercel.com/docs/comments/integrations?from=related) — Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack
+
+Full cross-link map for this page: [/docs/git/vercel-for-github.graph.md](/docs/git/vercel-for-github.graph.md)
+<!-- /docsgraph:related -->
 
 ## Supported GitHub Products
 
@@ -39,7 +59,7 @@ The [Deploying a Git repository](/docs/git#deploying-a-git-repository) guide out
 
 ## Changing the GitHub Repository of a Project
 
-If you'd like to connect your Vercel Project to a different GitHub repository or disconnect it, you can do so from the [Git section](/docs/projects/overview#git) in the Project Settings.
+If you'd like to connect your Vercel Project to a different GitHub repository or disconnect it, you can do so from the [Git section](/docs/projects#git) in the Project Settings.
 
 ### A Deployment for Each Push
 
@@ -53,9 +73,9 @@ You can disable this feature for GitHub by configuring the [github.autoJobCancel
 
 ### Updating the Production Domain
 
-If [Custom Domains](/docs/projects/custom-domains) are set from a project domains dashboard, pushes and merges to the [Production Branch](/docs/git#production-branch) (commonly "main") will be made live to those domains with the latest deployment made with a push.
+If [Custom Domains](/docs/domains/working-with-domains/add-a-domain) are set from a project domains dashboard, pushes and merges to the [Production Branch](/docs/git#production-branch) (commonly "main") will be made live to those domains with the latest deployment made with a push.
 
-If you decide to revert a commit that has already been deployed to production, the previous [Production Deployment](/docs/deployments/environments#production-environment) from a commit will automatically be made available at the [Custom Domain](/docs/projects/custom-domains) instantly; providing you with instant rollbacks.
+If you decide to revert a commit that has already been deployed to production, the previous [Production Deployment](/docs/deployments/environments#production-environment) from a commit will automatically be made available at the [Custom Domain](/docs/domains/working-with-domains/add-a-domain) instantly; providing you with instant rollbacks.
 
 ### Preview URLs for the Latest Changes for Each Pull Request
 
@@ -67,7 +87,7 @@ If you receive a pull request from a fork of your repository, Vercel will requir
 
 This behavior protects you from leaking sensitive project information such as environment variables and the [OIDC Token](/docs/oidc).
 
-You can disable [Git Fork Protection](/docs/projects/overview#git-fork-protection) in the Security section of your Project Settings.
+You can disable [Git Fork Protection](/docs/projects#git-fork-protection) in the Security section of your Project Settings.
 
 Vercel for GitHub uses the deployment API to bring you an extended user interface both in GitHub, when showing deployments, and Slack, if you have notifications setup using the [Slack GitHub app](https://slack.github.com).
 
@@ -448,7 +468,7 @@ You can use GitHub Actions to build and deploy your Vercel Application. This app
 2. Use `vercel build` to build your project inside GitHub Actions, without exposing your source code to Vercel. For production builds, pass `--prod`: `vercel build --prod`.
 3. Then use `vercel deploy --prebuilt` to skip the build step on Vercel and upload the previously generated `.vercel/output` folder from your GitHub Action to Vercel. For production deploys, pass `--prod`: `vercel deploy --prebuilt --prod`.
 
-You'll need separate GitHub Actions for preview (non-`main` pushes) and production (`main` pushes) deployments. The preview workflow uses `vercel build` and `vercel deploy --prebuilt`; the production workflow uses `vercel build --prod` and `vercel deploy --prebuilt --prod`. [Learn more about how to configure GitHub Actions and Vercel](/kb/guide/github-actions-vercel) for custom CI/CD workflows.
+You'll need separate GitHub Actions for preview (non-`main` pushes) and production (`main` pushes) deployments. The preview workflow uses `vercel build` and `vercel deploy --prebuilt`; the production workflow uses `vercel build --prod` and `vercel deploy --prebuilt --prod`. [Learn more about how to configure GitHub Actions and Vercel](/kb/guide/how-can-i-use-github-actions-with-vercel) for custom CI/CD workflows.
 
 ### Repository dispatch events
 

@@ -15,13 +15,31 @@ related:
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "4a732ea5ea70809c0894a9b1d98a2721bc17fb66f308f5ae4e31e4d9c0fe9b1c"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b8922769537ebc673c4a50e2fd0f7dc3b02768129eb9bb5d7cc09007d1c4036e"
 ---
 
 # Entities
 
 Entities represent the things your application knows about: users, teams, devices, or requests. By defining entities in the dashboard, you enable precise targeting in your feature flags.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
+- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/entities.graph.md](/docs/flags/vercel-flags/dashboard/entities.graph.md)
+<!-- /docsgraph:related -->
 
 Each entity has attributes that can be used in targeting rules. For example, a User entity might have `email`, `plan`, and `country` attributes. A Team entity might have `id`, `name`, and `tier`.
 

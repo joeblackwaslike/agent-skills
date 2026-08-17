@@ -9,18 +9,43 @@ prerequisites:
   - /docs/ai-gateway/coding-agents
   - /docs/ai-gateway
 related:
+  - /docs/cli/ai-gateway
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Use OpenCode with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/opencode.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "318cc5af47bc9f3477a19727c31f89719cb68687b656512d653abe085c016dec"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "98949c771fb2c7a8d7208bd144c57c3b46b6b9d8feceff3f1ede53aa14b414cb"
 ---
 
 # OpenCode
 
-[OpenCode](https://opencode.ai) is a terminal-based AI coding assistant that runs in your development environment. Here's how to use OpenCode with Vercel AI Gateway to access models from OpenAI, Anthropic, Google, xAI, and more through a unified endpoint.
+[OpenCode](https://opencode.ai) is a terminal-based AI coding assistant that runs in your development environment. Here's how to use OpenCode with Vercel AI Gateway to access models from OpenAI, Anthropic, Google, SpaceXAI, and more through a unified endpoint.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related) — Learn about kilo code on Vercel.
+- [Roo Code](https://vercel.com/docs/ai-gateway/coding-agents/roo-code?from=related) — Use Roo Code with the AI Gateway.
+- [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
+- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [OpenAI Codex](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex?from=related) — Use OpenAI Codex CLI with the AI Gateway.
+
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/opencode.graph.md](/docs/ai-gateway/coding-agents/opencode.graph.md)
+<!-- /docsgraph:related -->
+
+> **💡 Note:** The Vercel CLI is the recommended way to set this up. [`vercel ai-gateway
+>   coding-agents setup --agent opencode`](/docs/cli/ai-gateway#setup) provisions
+> a key and adds the `vercel` provider to
+> `~/.config/opencode/opencode.json` for you, keeping the key in your macOS
+> Keychain instead of plaintext config. The steps below configure the same
+> thing from inside OpenCode.
 
 ## Configuring OpenCode
 

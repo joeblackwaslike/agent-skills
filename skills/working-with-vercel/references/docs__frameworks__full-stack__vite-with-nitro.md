@@ -9,7 +9,7 @@ prerequisites:
   - /docs/frameworks/full-stack
   - /docs/frameworks
 related:
-  - /docs/frameworks/nuxt
+  - /docs/frameworks/full-stack/nuxt
   - /docs/functions
   - /docs/fluid-compute
   - /docs/incremental-static-regeneration
@@ -17,13 +17,34 @@ related:
 summary: Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/vite-with-nitro.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "840b8a2bd599ad9d5a142e78ce1dfa3801d675d4d1ddf55e12da85a0fd1e2b0b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "e34606cc9ef74fe3eaaac4a8ec35cacb3024486fa6b97b0b6d9a5bce6c10d05a"
 ---
 
 # Vite + Nitro on Vercel
 
-[Nitro](https://nitro.build) is a universal server toolkit that adds server-side rendering (SSR), API routes, server middleware and other backend capabiltiies to any Vite application. It powers frameworks like [Nuxt](/docs/frameworks/nuxt) and deploys to Vercel with zero configuration.
+[Nitro](https://nitro.build) is a universal server toolkit that adds server-side rendering (SSR), API routes, server middleware and other backend capabiltiies to any Vite application. It powers frameworks like [Nuxt](/docs/frameworks/full-stack/nuxt) and deploys to Vercel with zero configuration.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related) — The Nitro Vite plugin \(nitro/vite\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Vite](https://nextjs.org/docs/app/guides/migrating/from-vite?from=related) — Learn how to migrate your existing React application from Vite to Next.js.
+- [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
+- [Vite](https://nextjs.org/docs/pages/guides/migrating/from-vite?from=related) — Learn how to migrate your existing React application from Vite to Next.js.
+- [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+- [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
+- [SvelteKit](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related) — Learn how to use Vercel's features with SvelteKit
+- [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
+
+Full cross-link map for this page: [/docs/frameworks/full-stack/vite-with-nitro.graph.md](/docs/frameworks/full-stack/vite-with-nitro.graph.md)
+<!-- /docsgraph:related -->
 
 By adding Nitro to your existing Vite project, you get:
 

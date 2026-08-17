@@ -17,13 +17,30 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "27febc2a2dfdeea702351cd3e272e4ee52124ad83a18b3bd3d085cb27f45ffda"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "548af76b2fe88d6fd42bf8c837e03b3efd29371895bede70a31557b5416d5e31"
 ---
 
 # Custom Reporting
 
 The Custom Reporting API gives you detailed visibility into your AI Gateway usage. You can break down costs and token consumption by model, user, tag, provider, or credential type to understand exactly where your AI spend is going.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api?from=related) — Reference for AI Gateway REST endpoints: models, usage, generations, and reporting.
+- [Query Reference](https://vercel.com/docs/query/reference?from=related) — This reference covers the dimensions and operators used to create a query.
+- [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference?from=related) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
+- [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events?from=related)
+
+Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md](/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md)
+<!-- /docsgraph:related -->
 
 Use it to:
 

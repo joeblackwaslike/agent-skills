@@ -15,13 +15,29 @@ related:
 summary: "The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions taking >200ms."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/interaction-timing-tool.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "08539581f455178db56fbd2ba92ca1fc8c8f1d1118357df148532320a74fb221"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "7c9c7cddec0fd8fd23a583e168e6362a64a8166a4a636c3d79801d5f14ece0cd"
 ---
 
 # Interaction Timing Tool
 
 > **🔒 Permissions Required**: Interaction Timing Tool
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Optimizing Core Web Vitals in 2024](https://vercel.com/kb/guide/optimizing-core-web-vitals-in-2024?from=related) — Learn how to optimize Core Web Vitals for your site, including INP, CLS, LCP, and more.
+- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Layout Shift Tool](https://vercel.com/docs/vercel-toolbar/layout-shift-tool?from=related) — The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
+- [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Speed Insights](https://vercel.com/docs/speed-insights?from=related) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
+- [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+
+Full cross-link map for this page: [/docs/vercel-toolbar/interaction-timing-tool.graph.md](/docs/vercel-toolbar/interaction-timing-tool.graph.md)
+<!-- /docsgraph:related -->
 
 As you navigate your site, the interaction timing tool allows you to inspect in detail each interaction's latency and get notified with toasts for interactions taking > 200ms. This can help you ensure your site's [Interaction to Next Paint (INP)](/blog/first-input-delay-vs-interaction-to-next-paint) (a Core Web Vitals) has a good score.
 

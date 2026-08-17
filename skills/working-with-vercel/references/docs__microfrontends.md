@@ -9,20 +9,40 @@ prerequisites:
   []
 related:
   - /docs/monorepos
-  - /docs/feature-flags
+  - /docs/flags
   - /docs/microfrontends/local-development
   - /docs/microfrontends/quickstart
   - /docs/vercel-toolbar/in-production-and-localhost
 summary: Learn about microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-06-22T06:01:12.033Z"
-sha256: "42645050b16b99d0214868c6bd323e4c00e3a85a88c0b3b843308eea88d2d261"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "498e71af3a3e2713098015ac01fd68d683c8d0d9de35dcb868022fced0a1ea4f"
 ---
 
 # Microfrontends
 
 Microfrontends allow you to split a single application into smaller, independently deployable units that render as one cohesive application for users. Different teams using different technologies can develop, test, and deploy each microfrontend while Vercel handles connecting the microfrontends and routing requests on the global network.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
+- [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related) — Learn the answer to common questions about deploying monorepos on Vercel.
+- [List projects in a microfrontends group](https://vercel.com/docs/rest-api/microfrontends/list-projects-in-a-microfrontends-group?from=related)
+- [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project?from=related)
+- [Reference](https://vercel.com/docs/flags/flags-explorer/reference?from=related) — In-depth reference for configuring the Flags Explorer
+
+Full cross-link map for this page: [/docs/microfrontends.graph.md](/docs/microfrontends.graph.md)
+<!-- /docsgraph:related -->
 
 ## When to use microfrontends?
 
@@ -35,7 +55,7 @@ They are valuable for:
 Microfrontends may add additional complexity to your development process. To improve developer velocity, consider alternatives like:
 
 - [Monorepos](/docs/monorepos) with [Turborepo](https://turborepo.com/)
-- [Feature flags](/docs/feature-flags)
+- [Feature flags](/docs/flags)
 - Faster compilation with [Turbopack](https://nextjs.org/docs/app/api-reference/turbopack)
 
 ## Repository layout

@@ -16,13 +16,29 @@ related:
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "edad8b9c273458b7e30923f0353e073518945ffa848b9161dcf139708f21d7f3"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "b709a15fbc9499deedee3f7df29f7bc00732ecfc2b2d286769d3f08a2a20afa2"
 ---
 
 # Restrict access to deployments with Passport
 
 > **🔒 Permissions Required**: Passport
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Password Protection](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection?from=related) — Require visitors to enter a password before they can view your deployments.
+- [Bypass Deployment Protection](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
+
+Full cross-link map for this page: [/docs/passport.graph.md](/docs/passport.graph.md)
+<!-- /docsgraph:related -->
 
 Passport lets you protect deployments with your own identity provider. Visitors authenticate with your identity provider before they can view a protected deployment.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/about-the-rest-api/about-the-rest-api.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "03d782d9434edf42c8ce7be1a87968ee54a0842d122c4d267c85dd3d7546cf59"
+fetched_at: "2026-08-17T04:47:04.101Z"
+sha256: "4bc63d7a910d208bb877466835b30e3108290c934a4bf0ae3fe0a55de05e5b11"
 ---
 
 You can use {% data variables.product.company_short %}'s API to build scripts and applications that automate processes, integrate with {% data variables.product.company_short %}, and extend {% data variables.product.company_short %}. For example, you could use the API to triage issues, build an analytics dashboard, or manage releases.
@@ -10,16 +10,16 @@ Each REST API endpoint is documented individually, and the endpoints are categor
 
 ## Getting started with the REST API
 
-**If you are new to REST APIs**, you may find it helpful to refer to the Quickstart or Getting Started guide for an introduction. For more information, see:
+**If you are new to REST APIs**, start with the Quickstart or Getting Started guide:
 
 * [AUTOTITLE](/rest/quickstart)
 * [AUTOTITLE](/rest/using-the-rest-api/getting-started-with-the-rest-api)
 
-**If you are familiar with REST APIs** but new to {% data variables.product.company_short %}'s REST API, you may find it helpful to refer to the authentication documentation. For more information, see:
+**If you are familiar with REST APIs** but new to {% data variables.product.company_short %}'s REST API, see the authentication documentation:
 
 * [AUTOTITLE](/rest/authentication/authenticating-to-the-rest-api)
 
-**If you are building scripts or applications** that use the REST API, you may find some of the following guides helpful. For examples of scripting with the REST API, see:
+**If you are building scripts or applications** that use the REST API, the following guides can help:
 
 * [AUTOTITLE](/rest/guides/scripting-with-the-rest-api-and-javascript)
 * [AUTOTITLE](/rest/guides/scripting-with-the-rest-api-and-ruby)

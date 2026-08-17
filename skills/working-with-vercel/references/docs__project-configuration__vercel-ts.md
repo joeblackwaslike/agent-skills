@@ -8,7 +8,7 @@ type: reference
 prerequisites:
   - /docs/project-configuration
 related:
-  - /docs/deployments/configure-a-build
+  - /docs/builds/configure-a-build
   - /docs/functions
   - /docs/routing-middleware
   - /docs/functions/runtimes/edge
@@ -16,13 +16,32 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-07-06T05:40:24.878Z"
-sha256: "2fde03e5946032d3357df7588652b1cef3f8e2ac00b36bdd288ad632c7678a8b"
+fetched_at: "2026-08-17T04:50:17.160Z"
+sha256: "cd0b0676bfba415b63c72a0e0a881fcd00b9fa54ccdb08079056d53b1175c71b"
 ---
 
 # Programmatic Configuration with vercel.ts
 
 The `vercel.ts` file lets you configure and override the default behavior of Vercel from within your project. Unlike `vercel.json`, which is static, `vercel.ts` executes at build time, which lets you dynamically generate configuration. For example, you can fetch content from APIs, use environment variables to conditionally set routes, or compute configuration values based on your project structure.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers?from=related) — Add custom HTTP headers to your Next.js app.
+- [headers](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers?from=related) — Add custom HTTP headers to your Next.js app.
+- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+- [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Cache-Control Headers](https://vercel.com/docs/caching/cache-control-headers?from=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+
+Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md)
+<!-- /docsgraph:related -->
 
 ## Getting Started
 
@@ -200,7 +219,7 @@ export const config: VercelConfig = {
 
 **Type:** `string | null`
 
-The `buildCommand` property can be used to override the Build Command in the Project Settings dashboard, and the `build` script from the `package.json` file for a given deployment. For more information on the default behavior of the Build Command, visit the [Configure a Build - Build Command](/docs/deployments/configure-a-build#build-command) section.
+The `buildCommand` property can be used to override the Build Command in the Project Settings dashboard, and the `build` script from the `package.json` file for a given deployment. For more information on the default behavior of the Build Command, visit the [Configure a Build - Build Command](/docs/builds/configure-a-build#build-command) section.
 
 ```typescript filename="vercel.ts"
 import type { VercelConfig } from '@vercel/config/v1';
@@ -210,7 +229,7 @@ export const config: VercelConfig = {
 };
 ```
 
-This value overrides the [Build Command](/docs/deployments/configure-a-build#build-command) in Project Settings.
+This value overrides the [Build Command](/docs/builds/configure-a-build#build-command) in Project Settings.
 
 ## bunVersion
 
@@ -307,11 +326,11 @@ export const config: VercelConfig = {
 
 ## devCommand
 
-This value overrides the [Development Command](/docs/deployments/configure-a-build#development-command) in Project Settings.
+This value overrides the [Development Command](/docs/builds/configure-a-build#development-command) in Project Settings.
 
 **Type:** `string | null`
 
-The `devCommand` property can be used to override the Development Command in the Project Settings dashboard. For more information on the default behavior of the Development Command, visit the [Configure a Build - Development Command](/docs/deployments/configure-a-build#development-command) section.
+The `devCommand` property can be used to override the Development Command in the Project Settings dashboard. For more information on the default behavior of the Development Command, visit the [Configure a Build - Development Command](/docs/builds/configure-a-build#development-command) section.
 
 ```typescript filename="vercel.ts"
 import type { VercelConfig } from '@vercel/config/v1';
@@ -341,13 +360,13 @@ export const config: VercelConfig = {
 
 ## framework
 
-This value overrides the [Framework](/docs/deployments/configure-a-build#framework-preset) in Project Settings.
+This value overrides the [Framework](/docs/builds/configure-a-build#framework-preset) in Project Settings.
 
 **Type:** `string | null`
 
 Available framework slugs:
 
-The `framework` property can be used to override the Framework Preset in the Project Settings dashboard. The value must be a valid framework slug. For more information on the default behavior of the Framework Preset, visit the [Configure a Build - Framework Preset](/docs/deployments/configure-a-build#framework-preset) section.
+The `framework` property can be used to override the Framework Preset in the Project Settings dashboard. The value must be a valid framework slug. For more information on the default behavior of the Framework Preset, visit the [Configure a Build - Framework Preset](/docs/builds/configure-a-build#framework-preset) section.
 
 > **💡 Note:** To select "Other" as the Framework Preset, use `null`.
 
@@ -536,7 +555,7 @@ export const config: VercelConfig = {
 };
 ```
 
-Learn more about [headers](/docs/headers) on Vercel and see [limitations](/docs/cdn-cache#limits).
+Learn more about [headers](/docs/headers) on Vercel and see [limitations](/docs/caching/cdn-cache#limits).
 
 ## ignoreCommand
 
@@ -556,11 +575,11 @@ export const config: VercelConfig = {
 
 ## installCommand
 
-This value overrides the [Install Command](/docs/deployments/configure-a-build#install-command) in Project Settings.
+This value overrides the [Install Command](/docs/builds/configure-a-build#install-command) in Project Settings.
 
 **Type:** `string | null`
 
-The `installCommand` property can be used to override the Install Command in the Project Settings dashboard for a given deployment. This setting is useful for trying out a new package manager for the project. An empty string value will cause the Install Command to be skipped. For more information on the default behavior of the install command visit the [Configure a Build - Install Command](/docs/deployments/configure-a-build#install-command)
+The `installCommand` property can be used to override the Install Command in the Project Settings dashboard for a given deployment. This setting is useful for trying out a new package manager for the project. An empty string value will cause the Install Command to be skipped. For more information on the default behavior of the install command visit the [Configure a Build - Install Command](/docs/builds/configure-a-build#install-command)
 section.
 
 ```typescript filename="vercel.ts"
@@ -622,13 +641,13 @@ export const config: VercelConfig = {
 
 ## outputDirectory
 
-This value overrides the [Output Directory](/docs/deployments/configure-a-build#output-directory) in Project Settings.
+This value overrides the [Output Directory](/docs/builds/configure-a-build#output-directory) in Project Settings.
 
 **Type:** `string | null`
 
 The `outputDirectory` property can be used to override the Output Directory in the Project Settings dashboard for a given deployment.
 
-In the following example, the deployment will look for the `build` directory rather than the default `public` or `.` root directory. For more information on the default behavior of the Output Directory see the [Configure a Build - Output Directory](/docs/deployments/configure-a-build#output-directory) section. The following example is a `vercel.ts` file that overrides the `outputDirectory` to `build`:
+In the following example, the deployment will look for the `build` directory rather than the default `public` or `.` root directory. For more information on the default behavior of the Output Directory see the [Configure a Build - Output Directory](/docs/builds/configure-a-build#output-directory) section. The following example is a `vercel.ts` file that overrides the `outputDirectory` to `build`:
 
 ```typescript filename="vercel.ts"
 import type { VercelConfig } from '@vercel/config/v1';
@@ -806,11 +825,11 @@ export const config: VercelConfig = {
 };
 ```
 
-Learn more about [redirects on Vercel](/docs/redirects) and see [limitations](/docs/redirects#limits).
+Learn more about [redirects on Vercel](/docs/routing/redirects) and see [limitations](/docs/routing/redirects#limits).
 
 ## bulkRedirectsPath
 
-Learn more about [bulk redirects on Vercel](/docs/redirects/bulk-redirects) and see [limits and pricing](/docs/redirects/bulk-redirects#limits-and-pricing).
+Learn more about [bulk redirects on Vercel](/docs/routing/redirects/bulk-redirects) and see [limits and pricing](/docs/routing/redirects/bulk-redirects#limits-and-pricing).
 
 **Type:** `string` path to a file or folder.
 
@@ -884,7 +903,7 @@ In order to improve space efficiency, all boolean values can be the single chara
 
 ## regions
 
-This value overrides the [Vercel Function Region](/docs/functions/regions) in Project Settings.
+This value overrides the [Vercel Function Region](/docs/functions/configuring-functions/region) in Project Settings.
 
 **Type:** `Array` of region identifier `String`.
 
@@ -892,7 +911,7 @@ This value overrides the [Vercel Function Region](/docs/functions/regions) in Pr
 
 You can define the **regions** where your [Vercel functions](/docs/functions) are executed. Users on Pro and Enterprise can deploy to multiple regions. Hobby plans can select any single region. To learn more, see [Configuring Regions](/docs/functions/configuring-functions/region#project-configuration).
 
-Function responses [can be cached](/docs/cdn-cache) in the requested regions. Selecting a Vercel Function region does not impact static files, which are deployed to every region by default.
+Function responses [can be cached](/docs/caching/cdn-cache) in the requested regions. Selecting a Vercel Function region does not impact static files, which are deployed to every region by default.
 
 ```typescript filename="vercel.ts"
 import type { VercelConfig } from '@vercel/config/v1';
@@ -908,7 +927,7 @@ You can also set `regions` on individual functions using the [`functions`](/docs
 
 > **🔒 Permissions Required**: Setting failover regions for Vercel functions
 
-Set this property to specify the [region](/docs/functions/regions) to which a Vercel Function should fallback when the default region(s) are unavailable.
+Set this property to specify the [region](/docs/functions/configuring-functions/region) to which a Vercel Function should fallback when the default region(s) are unavailable.
 
 **Type:** `Array` of region identifier `String`.
 
@@ -1067,7 +1086,7 @@ The `source` property should **NOT** be a file because precedence is given to th
 > **💡 Note:** Using `has` does not yet work locally while using
 > `vercel dev`, but does work when deployed.
 
-Learn more about [rewrites](/docs/rewrites) on Vercel.
+Learn more about [rewrites](/docs/routing/rewrites) on Vercel.
 
 ## trailingSlash
 
