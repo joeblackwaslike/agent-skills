@@ -84,6 +84,7 @@ claude plugin install agent-skills
 | `test-driven-development` | Test-first for TypeScript and Python — red-green-refactor, applied to features and bugfixes |
 | `domain-driven-design` | Aggregates, entities, value objects, domain events, repositories, CQRS |
 | `solid-principles` | Designing and refactoring classes, modules, and interfaces |
+| `senior-engineering-best-practices` | Career-built senior-engineer judgment — due diligence, root-cause discipline, blast-radius/dependency/observability judgment |
 
 ### Vercel
 
