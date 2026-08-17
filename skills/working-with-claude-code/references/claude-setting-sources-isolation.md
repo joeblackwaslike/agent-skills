@@ -63,6 +63,62 @@ auth path. `--setting-sources ""` achieves the same isolation while preserving e
 behavior for hooks is undocumented -- it may deep-merge rather than replace, leaving hooks
 active. `--setting-sources ""` is definitive: no settings files are loaded at all.
 
+## SDK Approach (Agent SDK `query()`)
+
+The CLI isolation pattern above applies to `claude -p` subprocesses in shell scripts. The
+Agent SDK (`@anthropic-ai/claude-agent-sdk`) has its own `query()` function that spawns
+subprocesses with `Options`, which behaves differently in several important ways. Verified
+against SDK v0.3.x.
+
+### `settingSources: []` vs `--setting-sources ""`
+
+The SDK's `settingSources: []` suppresses CLAUDE.md auto-discovery. The CLI's
+`--setting-sources ""` does NOT — CLAUDE.md walks up from CWD regardless. This behavioral
+difference is undocumented and would surprise anyone reasoning about one from the other's
+docs. The CLI requires `--system-prompt` to override CLAUDE.md; the SDK's `settingSources: []`
+handles it implicitly.
+
+### `settingSources: []` arg corruption pitfall
+
+The SDK internally emits `["--setting-sources", ""]` as CLI args. Arg filters that strip
+empty strings orphan `--setting-sources`, which then consumes the next CLI arg (e.g.
+`--permission-mode dontAsk` → `--setting-sources dontAsk`). Pair-aware filtering is required:
+when stripping an empty-string arg, also strip the preceding arg if it's a known pair flag.
+claude-mem hit this in v12.1.3/v12.1.4; the fix lives in `process-registry.ts` and must NOT
+be touched.
+
+### `systemPrompt` option
+
+Available since SDK v0.1.0. Sets the system prompt slot directly — replaces the older
+`customSystemPrompt` + `appendSystemPrompt` fields. In v0.1.0+ there is no default system
+prompt and no filesystem settings loaded by default — callers must explicitly opt in via
+`settingSources` and `systemPrompt`.
+
+### `canUseTool` audit callback
+
+No CLI equivalent. Returns a `PermissionResult` (`{ behavior: 'deny', message }`) and can
+write to an append-only audit log. Useful as a backstop behind `tools: []` for incident
+detection — any invocation reaching this callback indicates a `tools: []` bypass.
+
+### `tools: []` vs `allowedTools: []`
+
+Critical distinction, easily confused:
+- `tools: []` is a **restrictive allowlist** — disables ALL built-in tools at the SDK level.
+- `allowedTools: []` is an **auto-approve list** — controls which tools skip permission
+  prompts, NOT which tools are available. Setting it to `[]` means "nothing auto-approved,"
+  but all tools remain callable if the user approves.
+
+Only `tools: []` restricts the tool surface. `allowedTools`, `disallowedTools`, and
+`permissionMode` operate on a surface that `tools: []` has already emptied.
+
+### Known open issues
+
+- **#331**: `mcpServers: {}` + `settingSources: []` + `skills: []` may still leak
+  claude.ai connector inventory.
+- **#149**: No way to disable parent-directory CLAUDE.md traversal without
+  `settingSources: []`.
+- **#322**: `options.hooks` causes the agent to ignore custom `systemPrompt`.
+
 ## Related Postmortems
 
 Four of five production postmortems involve background processes spawning `claude -p` sessions
@@ -91,4 +147,4 @@ adopters:
 
 - **pieces-dev** `pieces-memory-stop.sh` — adopted in PM-005 fix
 - **cc-recall** `runClaudeHeadless` — should adopt (currently uses dedicated CWD + self-recognition workarounds); would fix PM-001's 39.5k-token prefix and PM-003's deployment-gap class of issue
-- **claude-mem** — should adopt if spawning headless claude; would break PM-004's respawn chain
+- **claude-mem** — adopted (v12.1.3+). Uses `settingSources: []` + `tools: []` + `canUseTool` + `systemPrompt` via `buildHardenedSdkOptions()`. Pair-aware arg filter in `process-registry.ts` prevents the `settingSources: []` arg corruption pitfall.
