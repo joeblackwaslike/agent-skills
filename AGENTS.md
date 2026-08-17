@@ -43,6 +43,10 @@ Consumer side: `claude plugin update agent-skills@agent-marketplace` (the bare p
 not a valid identifier), then restart the session. Orphaned cache versions are cleaned up
 automatically 14 days after an update.
 
+This applies even when the push to this repo was made from a session working somewhere else
+entirely — the `marketplace-publishing` skill's "After pushing" section is canonical for that
+mechanic and the cross-repo gotcha; this section is the *why*, not the general procedure.
+
 ## Agent Instruction Files (CLAUDE.md / AGENTS.md)
 
 **CLAUDE.md is the source of truth.** Key cross-tool differences to remember when creating or editing instruction files:
