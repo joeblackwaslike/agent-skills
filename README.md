@@ -14,8 +14,24 @@ Every `working-with-X` skill regenerates weekly from upstream documentation, so 
 ## Install
 
 ```bash
+# Claude Code
 claude plugin marketplace add joeblackwaslike/agent-marketplace
 claude plugin install agent-skills
+
+# Codex CLI
+codex plugin marketplace add joeblackwaslike/agent-marketplace
+codex plugin add agent-skills@agent-marketplace
+
+# Gemini CLI
+gemini extensions install https://github.com/joeblackwaslike/agent-skills --auto-update
+```
+
+OpenCode has no plugin/marketplace mechanism for skills — it reads them straight off disk.
+Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode.json`
+(global: `~/.config/opencode/opencode.json`, or a project's own `opencode.json`):
+
+```json
+{ "skills": { "paths": ["/path/to/agent-skills/skills"] } }
 ```
 
 ## Skills

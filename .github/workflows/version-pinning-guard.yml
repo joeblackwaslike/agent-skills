@@ -16,6 +16,12 @@
 #
 # This job therefore guards the ABSENCE of the field. Re-adding `version` silently
 # reintroduces the five-week failure, so it must be a deliberate, reviewed act.
+#
+# .codex-plugin/plugin.json is guarded for the same reason: it shipped a pinned
+# "1.18.0" that never moved while skills/ changed underneath it — the same bug, just
+# on Codex's manifest instead of Claude's. personal-agent-skills/.codex-plugin/plugin.json
+# ships with no `version` key and installs/runs fine, confirming Codex's loader doesn't
+# hard-require it, so the fix is identical: omit the field.
 name: version-pinning-guard
 
 on:
@@ -29,26 +35,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Reject a pinned version in plugin.json
+      - name: Reject a pinned version in plugin manifests
         run: |
           set -euo pipefail
-          MANIFEST=.claude-plugin/plugin.json
 
-          if ! jq -e . "$MANIFEST" >/dev/null 2>&1; then
-            echo "::error::$MANIFEST is not valid JSON."
-            exit 1
-          fi
+          check_manifest() {
+            local MANIFEST="$1"
 
-          if jq -e 'has("version")' "$MANIFEST" >/dev/null; then
-            pinned=$(jq -r '.version' "$MANIFEST")
-            echo "::error::$MANIFEST pins version \"$pinned\". This plugin ships by commit SHA."
-            echo ""
-            echo "A pinned version means consumers only re-fetch when the string changes, so any"
-            echo "skills/ edit that ships without a bump reaches nobody and reports no error."
-            echo "Remove the field so every commit is a new version:"
-            echo ""
-            echo "  jq 'del(.version)' $MANIFEST > /tmp/p.json && mv /tmp/p.json $MANIFEST"
-            exit 1
-          fi
+            if ! jq -e . "$MANIFEST" >/dev/null 2>&1; then
+              echo "::error::$MANIFEST is not valid JSON."
+              exit 1
+            fi
 
-          echo "OK: no pinned version — distribution is by commit SHA."
+            if jq -e 'has("version")' "$MANIFEST" >/dev/null; then
+              pinned=$(jq -r '.version' "$MANIFEST")
+              echo "::error::$MANIFEST pins version \"$pinned\". This plugin ships by commit SHA."
+              echo ""
+              echo "A pinned version means consumers only re-fetch when the string changes, so any"
+              echo "skills/ edit that ships without a bump reaches nobody and reports no error."
+              echo "Remove the field so every commit is a new version:"
+              echo ""
+              echo "  jq 'del(.version)' $MANIFEST > /tmp/p.json && mv /tmp/p.json $MANIFEST"
+              exit 1
+            fi
+
+            echo "OK: no pinned version in $MANIFEST — distribution is by commit SHA."
+          }
+
+          check_manifest .claude-plugin/plugin.json
+          check_manifest .codex-plugin/plugin.json
