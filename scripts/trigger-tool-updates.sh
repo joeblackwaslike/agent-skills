@@ -13,6 +13,9 @@ else
 fi
 
 echo "→ Codex CLI: refreshing marketplace + plugin cache"
+# `codex plugin add` is a no-op when already installed (no `codex plugin update` exists) —
+# remove-then-add is the only way to force a re-clone of the latest commit.
+codex plugin remove agent-skills@agent-marketplace --json >/dev/null 2>&1 || true
 if codex plugin marketplace upgrade agent-marketplace && codex plugin add agent-skills@agent-marketplace --json >/dev/null; then
   echo "  ok"
 else
