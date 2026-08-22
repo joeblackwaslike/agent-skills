@@ -110,6 +110,47 @@ gh pr create --fill --base main --assignee @me --reviewer alice,my-org/reviewers
 - **Link issues** in the body: `Fixes #123` / `Closes #123` auto-closes the issue on merge.
 - `--reviewer` requests reviews up front (people or `org/team` handles). For the GitHub-native AI reviewer, `gh pr edit --add-reviewer @copilot`.
 
+### PR bodies must be self-contained for bd-tracked work
+
+`bd` (beads) issue tracking is local/Dolt-backed — invisible to outside OSS
+contributors browsing merged PRs, and to any review bot (including `ai-review-bot`)
+that only ever sees the PR itself. If the *why* lives only in the bead, it doesn't
+exist for either of those readers. When the branch closes a `bd` issue, pull its
+content into the PR body instead of leaving a bare issue reference:
+
+```bash
+bd show <id> --long --json
+```
+
+Build the body from whatever the bead actually has — most issues are still just a
+title plus a working `notes` log, not fully-populated structured fields, so prefer
+the structured fields when present and fall back to distilling `notes` when they're
+empty:
+
+- `description` / `context` → a **Why** section. If both are empty, distill the
+  opening of `notes` — the ready→claim log usually states the goal there.
+- `design` → a **Design notes** section, only if non-empty. Most issues won't have
+  one; omit the section entirely rather than leaving it blank.
+- `acceptance` → a **Verification** section (this doubles as the review bot's
+  checklist). If empty, distill from the *end* of `notes` — what the closing entries
+  say was actually checked or tested.
+- `notes` in general is a **synthesis source, not a verbatim dump** — it's a working
+  log with dead ends and internal chatter. Summarize the parts relevant to an outside
+  reader; don't paste it wholesale into a public PR body.
+
+Reference the bd ID as **plain text** (e.g. `bd-123`), never a markdown link — beads
+issue IDs have no web address.
+
+`--fill` (commit-message autofill) stays the right default for small changes that
+don't close a bd issue. Draft the body to a file so nothing gets mangled by shell
+quoting, then pass it explicitly:
+
+```bash
+bd show <id> --long --json | jq -r '.description, .design, .acceptance, .notes' > /tmp/bd-context.txt
+# draft the PR body from that context into pr-body.md, then:
+gh pr create --title "…" --body-file pr-body.md --base main --assignee @me
+```
+
 Capture the PR number for the rest of the loop:
 
 ```bash

@@ -26,6 +26,34 @@ Treat notes as the durable working log. Before a long operation, after each mean
 
 A bead with good notes survives a context reset. A bead with just a title does not.
 
+## Feeding context forward into the PR
+
+Beads is local/Dolt-backed — invisible to outside OSS contributors reading a merged
+PR, and to any review bot that only sees the PR itself. When a branch closes a bead,
+pull the bead's context into the PR body instead of leaving a bare `bd-<id>`
+reference; the fallback-to-`notes` mechanics live in `working-with-github`'s
+[`driving-a-pr-to-approval.md`](../../working-with-github/references/howto/driving-a-pr-to-approval.md#pr-bodies-must-be-self-contained-for-bd-tracked-work)
+— this is the other end of the same loop, not a separate rule.
+
+This works better the more a bead has beyond its title. It's not a requirement, but
+for a bead that's likely to ship as a public PR, pass `--description` (the why) and,
+if already known, `--acceptance` (done-when) to `bd create` — the minimal
+`bd create "title" -t task` form above stays fine for throwaway/internal tickets:
+
+```sh
+bd create "Stream CSV export instead of buffering" -t feature \
+  --description "Large exports OOM on the buffered path; stream rows instead." \
+  --acceptance "10k-row export completes without loading the full result set into memory"
+```
+
+Pair the existing close-time backlink with the issue's own external-reference field so
+the PR is reachable from the bead too, not just the bead from the PR:
+
+```sh
+bd update <id> --external-ref "<PR-url>"
+bd close <id> --reason "shipped in <PR-url>"
+```
+
 ## Compaction recovery
 
 When an agent's context is compacted mid-task, it can forget the bd workflow and the specific work state. `bd prime` restores it:
