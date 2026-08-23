@@ -1,24 +1,26 @@
 ---
 name: agent-instructions
 description: >
-  Use whenever creating CLAUDE.md, AGENTS.md, GEMINI.md, or other AI coding assistant
-  instruction files at any scope level (user/global, project root, parent folder,
-  subdirectory). Covers scope diagnosis, content taxonomy, multi-tool compatibility for
-  Claude Code, Codex, Gemini CLI, and OpenCode, plus cookbook templates for Python,
-  TypeScript, monorepo, agent/MCP, and minimal projects. Invoke when the user asks to
-  "create a CLAUDE.md", "set up Claude for this project", "what should go in my AGENTS.md",
-  "write agent instructions", "help me set up my global Claude configuration", or any similar
-  request — even without explicit mention of CLAUDE.md or AGENTS.md. If the user is starting
-  a new project or onboarding into an existing one and no instruction file exists, proactively
-  suggest creating one.
+  Use whenever creating OR editing CLAUDE.md, AGENTS.md, GEMINI.md, a SKILL.md, or any
+  other file whose job is to instruct an AI coding agent, at any scope level (user/global,
+  project root, parent folder, subdirectory, or a skill/runbook in a plugin repo). Covers
+  scope diagnosis, content taxonomy, multi-tool compatibility for Claude Code, Codex, Gemini
+  CLI, and OpenCode, cookbook templates for Python, TypeScript, monorepo, agent/MCP, and
+  minimal projects, and the RED-GREEN editing discipline for revising instructions/skills/
+  runbooks that already exist. Invoke when the user asks to "create a CLAUDE.md", "set up
+  Claude for this project", "what should go in my AGENTS.md", "write agent instructions",
+  "help me set up my global Claude configuration", "edit this skill", "update this runbook",
+  "add a rule to AGENTS.md", or any similar request — even without explicit mention of
+  CLAUDE.md or AGENTS.md. If the user is starting a new project or onboarding into an
+  existing one and no instruction file exists, proactively suggest creating one.
 metadata:
-  last_updated: "2026-07-30"
+  last_updated: "2026-08-23"
 ---
 
 # Agent Instructions Builder
 
-A builder skill for creating `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, and related AI coding
-assistant instruction files at any scope level, for any tool.
+A builder skill for creating and editing `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `SKILL.md`,
+and related AI coding assistant instruction files at any scope level, for any tool.
 
 ## When to Use
 
@@ -31,6 +33,8 @@ Invoke this skill when the user:
 - Is starting a new project and wants instruction files from scratch
 - Needs multi-tool support (Claude Code + Codex + Gemini + OpenCode reading the same repo)
 - Is working in a monorepo and needs parent/child scoping
+- Is **editing** an existing `CLAUDE.md`/`AGENTS.md`, `SKILL.md`, or runbook — adding a
+  rule, correcting one, or moving content between files
 
 ## Quick Reference
 
@@ -41,6 +45,7 @@ Invoke this skill when the user:
 | Personal (gitignored) | `CLAUDE.local.md` | `references/scope-hierarchy.md` |
 | Subdirectory / path-scoped | `.claude/rules/*.md` | `references/scope-hierarchy.md`, `references/cookbook/monorepo.md` |
 | Multi-tool project | CLAUDE.md + AGENTS.md + GEMINI.md | `references/multi-tool-compat.md` |
+| **Editing** an existing instruction file, skill, or runbook | `references/editing-discipline.md` |
 
 ## Workflow
 
@@ -101,6 +106,18 @@ confuse a new contributor, remove it.
 If multiple tools are in use, read `references/multi-tool-compat.md` before generating.
 
 Write the file(s) to disk at the correct paths, then tell the user where each one lives.
+
+### Editing an Existing Instruction File, Skill, or Runbook
+
+Creating from scratch and revising something that already exists are different jobs.
+Before adding, correcting, or moving a rule in a `CLAUDE.md`/`AGENTS.md`, a `SKILL.md`,
+or a `references/*.md` runbook, read
+[`references/editing-discipline.md`](references/editing-discipline.md) — the RED-GREEN
+discipline for doc edits (a check that the guidance is actually missing before writing
+it, one incident citation per rule, and where a fix belongs: local file vs. the global
+instruction files loaded into every session). For creating a genuinely new skill from
+nothing, use `superpowers:writing-skills` instead — its pressure-scenario testing is
+the heavier tool for guidance that doesn't exist yet.
 
 ---
 

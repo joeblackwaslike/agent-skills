@@ -15,7 +15,7 @@ description: >
   to a more specific existing skill (TDD, SOLID, DDD, debugging, verification, code review,
   brainstorming, security) when one already covers the situation.
 metadata:
-  last_updated: "2026-08-17"
+  last_updated: "2026-08-23"
 ---
 
 # Senior Engineering Best Practices
@@ -64,6 +64,8 @@ Don't duplicate — these situations already have a home:
 | Class/interface/module design | `agent-skills:solid-principles` |
 | System/domain architecture | `agent-skills:domain-driven-design` |
 | Auth/crypto/input-validation/secrets/external APIs | `security-review` |
+| Editing an existing skill, runbook, or instruction file (`SKILL.md`, `AGENTS.md`, `CLAUDE.md`) | `agent-skills:agent-instructions` (`references/editing-discipline.md`) |
+| Creating a brand-new skill from nothing | `superpowers:writing-skills` |
 
 ## Red flags — stop and reconsider
 
@@ -90,6 +92,7 @@ Don't duplicate — these situations already have a home:
 
 A new runbook is added here only once there's a real incident to anchor it — grep or cite the
 transcript, PR, or postmortem where its absence caused a failure, write the runbook, link it from
-the table above. This mirrors the RED→edit→GREEN discipline in Joe's own global AGENTS.md
-("Editing Skills, Runbooks and Instructions"). No speculative runbooks — an unanchored "best
-practice" is exactly the kind of padding this skill exists to avoid producing.
+the table above. This mirrors the RED→edit→GREEN discipline in
+`agent-skills:agent-instructions`'s `references/editing-discipline.md` — read that before adding
+or revising a runbook here. No speculative runbooks — an unanchored "best practice" is exactly
+the kind of padding this skill exists to avoid producing.
