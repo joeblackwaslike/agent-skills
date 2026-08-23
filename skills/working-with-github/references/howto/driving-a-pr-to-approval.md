@@ -284,6 +284,17 @@ Shape of a reply, by outcome:
 
 Do not thank the reviewer, and do not restate their comment back to them. Both are pure padding in a thread whose next reader is a machine diffing your reply against its own finding — and for a human reviewer they bury the one sentence that matters.
 
+### Never address a bot via a new top-level PR comment
+
+**Bots cannot be @-mentioned.** `@codexreviewbot` or `@anthropicreviewbot` in a comment body does not notify anything — it is not a real GitHub mention with a subscriber behind it, and the bot's next pass does not treat it as a reply to its finding. Posting a fresh `gh pr comment` / issue comment to "answer" a bot is pure noise: it costs a write call and burns tokens, sits outside the `reviewThreads` graph so it can never be resolved, and is invisible to whatever the reviewer's next pass actually reads (the diff plus prior *review* comments, not the issue-comment timeline). Observed on agent-skills#5: a `gh pr comment` tagging `@codexreviewbot` to explain a cross-repo finding did nothing — no acknowledgment, no state change, just a comment sitting on the PR.
+
+The **only** channel a bot's next pass reads is the reply-to-comment endpoint from this step, tied to an actual `databaseId` from step 6. If there's no thread to reply to, there's no way to talk to the bot at all — see the next paragraph.
+
+**A finding with no inline comment (a pure review-body verdict, e.g. "Inline comments: none" with the substance only in the review body) has no thread and no `databaseId` — step 8's reply mechanism doesn't apply to it.** Don't invent a comment to attach a reply to. Instead:
+
+- If it's genuinely fixable in this PR, fix it and let the commit speak — a fresh push is what the reviewer's next pass actually reacts to.
+- If it isn't fixable here (e.g. it's a cross-repo constraint, like Joe's global `AGENTS.md` living outside the current repo entirely), there is no bot-facing action available. Either say nothing and let it ride as an advisory `CHANGES_REQUESTED` on an unprotected base (see step 11), or — if a *human* reviewer genuinely needs the reasoning on record — leave one plain PR comment addressed to the human reader, with no bot @-mention and no expectation it changes the bot's verdict.
+
 ### Rate every bot comment with a reaction
 
 Replying is half the loop. The **reaction** is the graded signal an internal review bot learns from, and it is a separate obligation from the reply — a thread that is answered but unrated teaches nothing.
