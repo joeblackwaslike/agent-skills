@@ -28,6 +28,7 @@ Offline reference for **Git the version-control system**, pinned to a known Git 
 | Undo / recover (reflog, reset/revert/restore, lost commits) | `references/howto/fixing-mistakes.md` |
 | Merge vs rebase, resolve conflicts, rerere | `references/howto/merging-and-conflicts.md` |
 | Host or connect to a Git server | `references/howto/git-servers.md` |
+| Worktree conventions for feature/parallel-agent work | `references/howto/worktree-conventions.md` |
 
 ## How to use this skill
 

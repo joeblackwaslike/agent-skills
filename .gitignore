@@ -2,6 +2,7 @@ docs/_backlog.md
 _reference/
 .DS_Store
 node_modules/
+.worktrees/
 
 # Beads / Dolt files (added by bd init)
 .dolt/
