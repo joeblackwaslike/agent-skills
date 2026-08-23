@@ -53,10 +53,13 @@ Both halves of the usual worktree benefit invert:
 - **A branch switch mutates the running agent.** `git checkout` in this tree swaps
   `AGENTS.md` and every command out from under a session that has already loaded them,
   mid-task. The isolation a worktree normally provides is precisely what breaks here.
-- **A worktree is not symlinked, so nothing in it is testable.** Changes made there are inert
-  until merged, which means the edit-verify loop that catches a broken symlink or a bad
-  render cannot run at all. Verification is the reason the worktree rule exists; here it
-  defeats it.
+- **A worktree's copy of a live-config file is a separate filesystem object, so nothing in it
+  is testable.** The external symlinks (`~/.claude/AGENTS.md` and siblings) resolve to an
+  absolute path in the *main* checkout, not to whichever worktree happens to exist — so even
+  in a repo whose own tracked files are symlinks, a new worktree's copy is a distinct object at
+  a different path and never becomes the live file. Changes made there are inert until merged,
+  which means the edit-verify loop that catches a broken symlink or a bad render cannot run at
+  all. Verification is the reason the worktree rule exists; here it defeats it.
 
 The MANDATORY half still holds without modification: never run concurrent agents against a
 live-config repo's tree. Serialize instead — the exception is about a single agent forgoing
