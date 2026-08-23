@@ -2,7 +2,7 @@
 name: git-github-workflows
 description: Git and GitHub workflow router. Selects the right skill for any git or GitHub operation — committing, PR creation, CI debugging, review comment handling, and more. Invoke at the start of any git/GitHub task.
 metadata:
-  last_updated: "2026-06-15"
+  last_updated: "2026-08-23"
 ---
 
 # Git & GitHub Workflows
@@ -24,6 +24,7 @@ There are two kinds of targets below: **action skills** (do a specific operation
 | Addressing comments on an open PR — reply, react, resolve threads | `agent-skills:working-with-github` (mechanics) + `gh-address-comments` |
 | Processing and responding to received review feedback | `superpowers:receiving-code-review` (**evaluate** the claim) **and** `agent-skills:working-with-github` (**act** on it: reply, react, resolve, reviewer authority) |
 | **Any git command/flag, rewriting history, bisect, conflicts, reflog recovery, git servers** | `agent-skills:working-with-git` |
+| **Setting up worktree isolation for feature work or parallel/subagent work** | `agent-skills:working-with-git` → `references/howto/worktree-conventions.md` |
 | **gh CLI, REST/GraphQL API, rate limits, tokens, PRs, code review, issues, releases & assets, branch protection, Dependabot/CodeQL config** | `agent-skills:working-with-github` |
 | **Building a GitHub App / OAuth app / webhook consumer / Octokit bot** | `agent-skills:developing-for-github` |
 | **Writing/debugging CI workflow YAML, Actions, OIDC deploys** | `agent-skills:working-with-github-actions` |

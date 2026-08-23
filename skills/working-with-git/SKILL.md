@@ -2,7 +2,7 @@
 name: working-with-git
 description: "Use when working with Git itself — any git command or flag, version control concepts, rewriting history (rebase/filter-repo/amend), bisect, recovering from mistakes (reflog, reset vs revert vs restore, dropped commits/stashes), merges and resolving conflicts, branching models, remotes, submodules, hooks, and setting up or connecting to Git servers (bare repos, SSH, git daemon, self-hosting). The command/concept reference is the AsciiDoc straight from git/git pinned to a Homebrew-resolved Git version, plus the full Pro Git book; opinionated how-to guides cover the operations people get wrong. Invoke for any 'git <command>' question or git troubleshooting. For GitHub-specific things (gh CLI, PRs, the API), use working-with-github."
 metadata:
-  last_updated: "2026-06-15"
+  last_updated: "2026-08-23"
 ---
 
 # Working with Git
@@ -28,6 +28,7 @@ Offline reference for **Git the version-control system**, pinned to a known Git 
 | Undo / recover (reflog, reset/revert/restore, lost commits) | `references/howto/fixing-mistakes.md` |
 | Merge vs rebase, resolve conflicts, rerere | `references/howto/merging-and-conflicts.md` |
 | Host or connect to a Git server | `references/howto/git-servers.md` |
+| Worktree conventions for feature/parallel-agent work | `references/howto/worktree-conventions.md` |
 
 ## How to use this skill
 
