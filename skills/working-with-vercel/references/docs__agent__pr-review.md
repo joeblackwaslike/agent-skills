@@ -16,8 +16,8 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b65b12e5794f7fba1b53feba2a07de060206326c51e34f55d566fcdd83136ae8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "73375a0fcbde324fb410e61c2cad32073f45d447fd7348c554ecf9ab166c8439"
 ---
 
 # Code Review
@@ -35,11 +35,11 @@ sha256: "b65b12e5794f7fba1b53feba2a07de060206326c51e34f55d566fcdd83136ae8"
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel Plugin](https://vercel.com/docs/agent-resources/vercel-plugin?from=related) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
 - [Installation](https://vercel.com/docs/agent/installation?from=related) — Let AI automatically install Web Analytics and Speed Insights in your app
-- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Vercel Plugin](https://vercel.com/docs/agent-resources/vercel-plugin?from=related) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
+- [Investigation](https://vercel.com/docs/agent/investigation?from=related) — Let AI investigate your error alerts to help you debug faster
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
 
 Full cross-link map for this page: [/docs/agent/pr-review.graph.md](/docs/agent/pr-review.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +51,7 @@ It generates patches and runs them in [secure sandboxes](/docs/sandbox) with you
 ## How to set up Code Review
 
 To enable code reviews for your [repositories](/docs/git#supported-git-providers), navigate to the
-[**Agent**](/d?to=%2F%5Bteam%5D%2F%7E%2Fvercel-agent\&title=Open+Vercel+Agent) of the dashboard.
+[**Agent**](/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) of the dashboard.
 
 1. Click **Enable** to turn on Vercel Agent.
 2. Under **Repositories**, choose which repositories to review:
@@ -91,7 +91,7 @@ Code Review then generates patches, runs them in [secure sandboxes](/docs/sandbo
 
 ## Using Vercel Agent in GitHub
 
-Beyond automatic reviews, you can interact with Vercel Agent on demand by mentioning `@vercel` in any pull request comment. The agent will read your comment and either generate a suggested fix (which you can review and apply) or reply to your question in the same thread.
+Beyond automatic reviews, you can interact with Vercel Agent on demand by mentioning `@vercel` in any pull request comment. Vercel Agent will read your comment and either generate a suggested fix (which you can review and apply) or reply to your question in the same thread.
 
 Comment `@vercel` followed by your request:
 
@@ -152,9 +152,9 @@ Check out [Managing Reviews](/docs/agent/pr-review/usage) for details on how to 
 
 ## Pricing
 
-Code Review uses a credit-based system. Each review costs a fixed $0.30 USD plus token costs billed at the Agent's underlying AI provider's rate, with no additional markup. The token cost varies based on how complex your changes are and how much code the AI needs to analyze.
+Code Review uses provider inference at the underlying token rate with no markup, plus the Vercel Token Rate of $0.25 per million tokens. The cost varies based on the complexity of the changes and the amount of code Vercel Agent analyzes.
 
-You can [purchase credits and enable auto-reload](/docs/agent/pricing#adding-credits) in the Agent section in the sidebar of your dashboard. For complete pricing details, credit management, and cost tracking information, see [Vercel Agent Pricing](/docs/agent/pricing).
+See [Vercel Agent pricing](/docs/agent/pricing) for complete rates and cost-tracking information.
 
 ## Privacy
 

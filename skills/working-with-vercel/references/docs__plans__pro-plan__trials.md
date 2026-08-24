@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a343f34bb80b42785dc73e444c3fb1fbee3bd271f978fe209435e7039349aa4c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6c3ce43413824d5a1d387895cf70f52df8dc421b8ed4d09bbef79b0c25f4d0fe"
 ---
 
 # Understanding Vercel
@@ -79,6 +79,7 @@ The following Pro features are **not available** on the trial:
 - [Log drains](/docs/drains)
 - [Account webhooks](/docs/webhooks#account-webhooks)
 - [Free first-year domain with Pro](/docs/plans/pro-plan#free-first-year-domain-with-pro)
+- [Sandbox failover regions](/docs/sandbox/concepts/regions#failover-regions)
 
 The free first-year domain offer is excluded from the Pro trial and becomes available once your team is on a paid Pro plan.
 

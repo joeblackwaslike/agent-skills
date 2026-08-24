@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files of any size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "565fc9bbc1086a8484c4cf5f5ff852070e8a3450dfae048336f8d2cb5828fec0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e63d356a38dac0ddc3a4c5f766bffd1d11bf62a5dc3c3e836b894ce840a44f25"
 ---
 
 # Vercel Blob
@@ -31,6 +31,7 @@ sha256: "565fc9bbc1086a8484c4cf5f5ff852070e8a3450dfae048336f8d2cb5828fec0"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Videos](https://nextjs.org/docs/app/guides/videos?from=related) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [Databases](https://v0.app/docs/databases?from=related) — Build full-stack applications with v0's database integrations.
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
@@ -39,8 +40,8 @@ sha256: "565fc9bbc1086a8484c4cf5f5ff852070e8a3450dfae048336f8d2cb5828fec0"
 - [Image-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
 - [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 - [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
+- [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize?from=related) — Learn about optimize deployment storage on Vercel.
 - [Image Optimization](https://vercel.com/docs/image-optimization?from=related) — Transform and optimize images to improve page load performance.
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md)
 <!-- /docsgraph:related -->

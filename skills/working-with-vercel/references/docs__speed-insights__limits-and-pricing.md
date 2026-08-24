@@ -16,8 +16,8 @@ related:
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fd7ae84f27f1540a3bb3778d72bed09cd1a4840526aae281bdf1b8cc6a3cb966"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "600c6dc74520ba1538c2af10964649384b40a0332677072de78dcc70f8f08b46"
 ---
 
 # Limits and Pricing for Speed Insights
@@ -30,7 +30,7 @@ sha256: "fd7ae84f27f1540a3bb3778d72bed09cd1a4840526aae281bdf1b8cc6a3cb966"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Pricing](https://vercel.com/docs/analytics/limits-and-pricing?from=related) — Learn about pricing for Vercel Web Analytics.

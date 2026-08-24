@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "803db7af0dc621e2737b554ad6b68e5e501ea4dce9001c447b46c31694f818f9"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "bc31f07574b09b653604fa2da7e071700e8fb4e8621b75c2b8c8274d25643446"
 ---
 
 # Cloudflare AI Gateway
@@ -259,6 +259,7 @@ The provider throws the following custom errors:
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

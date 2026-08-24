@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure your own provider keys with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "92a2d808d8dd4a78ef00086fd88ff9ce1f64bc07150bfcd53f2937e83253caf7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "97b94fd85254f39a3855eead442cee48c57f9f95ac935fbe246eb2c73eaceb87"
 ---
 
 # Bring Your Own Key (BYOK)
@@ -40,8 +40,8 @@ If a query using your credentials fails, AI Gateway will retry the query with it
 - [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
 - [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
 - [Zero Data Retention](https://vercel.com/docs/ai-gateway/security-and-compliance/zdr?from=related) — Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
-- [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API.
 - [Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training?from=related) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
+- [Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist?from=related) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/byok.graph.md](/docs/ai-gateway/authentication-and-byok/byok.graph.md)
 <!-- /docsgraph:related -->

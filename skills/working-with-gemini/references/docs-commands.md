@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/commands.md"
-fetched_at: "2026-06-22T05:57:43.917Z"
-sha256: "66e194b6e21d9bba5429849ec68784cb92e525468eeac604ac00d991f4caa19d"
+fetched_at: "2026-08-24T04:47:30.586Z"
+sha256: "87d98e9435134f2bfaaa584f9f03a59dd378641f2403c47a9540546f95e303f0"
 ---
 
 # CLI commands
@@ -107,11 +107,13 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/clear`
 
-- **Description:** Clear the terminal screen, including the visible session
-  history and scrollback within the CLI. The underlying session data (for
-  history recall) might be preserved depending on the exact implementation, but
-  the visual display is cleared.
-- **Keyboard shortcut:** Press **Ctrl+L** at any time to perform a clear action.
+- **Description:** Clear the agent conversation context (active conversation
+  history) and start a new session, in addition to clearing the visible terminal
+  screen, history, and scrollback within the CLI.
+- **Keyboard shortcut:** Press **Ctrl+L** at any time to perform a visual clear
+  action (note that **Ctrl+L** only clears the terminal display and redraws the
+  UI, preserving the active conversation context; use `/clear` to start a new
+  session).
 
 ### `/commands`
 

@@ -14,8 +14,8 @@ related:
 summary: Learn how to link existing Vercel Projects with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project-linking.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "73715cef009c1a310f1234a2c18dca4663123b37b180c32161747dc925ea4678"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ca0c707c015f36a149c7a11906304b43cf2594e7d5478a219889e4a770328456"
 ---
 
 # Linking Projects with Vercel CLI
@@ -30,7 +30,7 @@ want to [deploy](/docs/cli/deploy) your directory to. You can choose to either [
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
-- [Observability](https://workflow-sdk.dev/docs/observability?from=related) — Inspect and debug workflow runs using the CLI and Web UI.
+- [Observability](https://workflow-sdk.dev/docs/observability?from=related) — Inspect and debug workflow runs using the CLI and web UI.
 - [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel open](https://vercel.com/docs/cli/open?from=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.

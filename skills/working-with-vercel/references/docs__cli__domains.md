@@ -12,13 +12,13 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2764a1d9c0b313cef05ad441deafb12767b616bdccdb937112f025854b04ac64"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4093982dd9719a0eccf57d33eb94eeb81a7b4e7f4ca8b9d60ec83f92da87750a"
 ---
 
 # vercel domains
 
-The `vercel domains` command manages domains under the current scope. With it, you can list, inspect, verify, add, remove, purchase, move, transfer in, search, price, and check the availability of domains.
+The `vercel domains` command manages domains under the current scope. With it, you can list, inspect, verify, add, remove, purchase, renew, move, transfer in, search, price, check the availability of, and manage automatic renewal for domains.
 
 
 <!-- docsgraph:related -->
@@ -26,10 +26,10 @@ The `vercel domains` command manages domains under the current scope. With it, y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [Working with Domains](https://vercel.com/docs/domains/working-with-domains?from=related) — Learn how domains work and the options Vercel provides for managing them.
 - [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Domains](https://vercel.com/docs/domains?from=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
-- [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [Viewing & Searching Domains](https://vercel.com/docs/domains/working-with-domains/view-and-search-domains?from=related) — Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
 
 Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md)
@@ -118,6 +118,22 @@ vercel domains transfer-in [domain]
 
 *Using the \`vercel domains\` command to transfer in a
 domain to the current scope.*
+
+```bash filename="terminal"
+vercel domains renew [domain]
+```
+
+*Using the \`vercel domains\` command to renew a
+registered domain before it expires. The command shows the renewal
+price and term, then asks you to confirm the charge.*
+
+```bash filename="terminal"
+vercel domains auto-renew [domain] [on|off]
+```
+
+*Using the \`vercel domains\` command to turn automatic
+renewal on or off for a registered domain. Both the domain and the
+\`on|off\` state are required.*
 
 ## Unique Options
 
@@ -236,6 +252,24 @@ vercel domains verify my-domain.com --format=json
 ```
 
 *Using the \`vercel domains verify\` command with the
+\`--format=json\` option.*
+
+You can also use the `--format=json` option with `renew` to print the renewal result as structured JSON. The renewal still requires an interactive confirmation of the charge before the JSON result is printed.
+
+```bash filename="terminal"
+vercel domains renew my-domain.com --format=json
+```
+
+*Using the \`vercel domains renew\` command with the
+\`--format=json\` option.*
+
+You can also use the `--format=json` option with `auto-renew` to return a structured JSON result describing the domain's new automatic renewal state.
+
+```bash filename="terminal"
+vercel domains auto-renew my-domain.com on --format=json
+```
+
+*Using the \`vercel domains auto-renew\` command with the
 \`--format=json\` option.*
 
 ### Project

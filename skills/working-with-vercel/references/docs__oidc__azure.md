@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7e2af2d1966700c0ab41fc4e533b1b50d06f1f583bf5bced112b18bbe83d7c31"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6fd7c9a8e024f8eb96b539dc5421f837b83bb0566ea67f21d69c4289d47f6e69"
 ---
 
 # Connect to Microsoft Azure
@@ -28,11 +28,11 @@ sha256: "7e2af2d1966700c0ab41fc4e533b1b50d06f1f583bf5bced112b18bbe83d7c31"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace?from=related) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
-- [AWS](https://vercel.com/docs/oidc/aws?from=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
-- [Google Cloud Platform](https://vercel.com/docs/oidc/gcp?from=related) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
-- [Connect your API](https://vercel.com/docs/oidc/api?from=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\)
+- [AWS](https://vercel.com/docs/oidc/aws?from=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Google Cloud Platform](https://vercel.com/docs/oidc/gcp?from=related) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Connect your API](https://vercel.com/docs/oidc/api?from=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [OIDC](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related) — Authenticate AI Gateway requests with Vercel OIDC tokens, with no API key to manage.
-- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 
 Full cross-link map for this page: [/docs/oidc/azure.graph.md](/docs/oidc/azure.graph.md)
 <!-- /docsgraph:related -->

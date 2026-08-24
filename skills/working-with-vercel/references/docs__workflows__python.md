@@ -12,8 +12,8 @@ related:
 summary: Build durable workflows and AI agents in Python with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/python.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4d2bf3d08ad412551093b0ccf90df084cf168a3f17d10bea793ea3b6c5f4faad"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8edebbd4fed268ed1df0a998aba4cd27bec9110accac9e7a2d0bf50e3f95c285"
 ---
 
 # Workflows with Python
@@ -31,16 +31,15 @@ Workflow SDK.
 
 - [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related) — Set up the Workflow Python SDK in your Python application.
 - [Building stateful Slack bots with Vercel Workflow](https://vercel.com/kb/guide/stateful-slack-bots-with-vercel-workflow?from=related) — Learn how to build Slack bots that maintain state and handle long-running processes without managing queues, databases,
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Human-in-the-Loop with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/human-in-the-loop-with-chat-sdk-and-workflow-sdk?from=related) — Combine Chat SDK and Workflow SDK to suspend workflows on approval cards in a chat platform, then resume on click via cr
-- [Vite](https://workflow-sdk.dev/docs/getting-started/vite?from=related) — Set up Workflow SDK in a Vite app.
-- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related) — Understand the two function types that make up a workflow.
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Building Durable AI Agents](https://workflow-sdk.dev/docs/ai?from=related) — Convert a basic AI chat app into a durable, resumable agent using Workflow SDK.
-- [Next.js](https://workflow-sdk.dev/docs/getting-started/next?from=related) — Set up Workflow SDK in a Next.js app.
+- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related) — Understand the two function types that make up a workflow.
+- [Building a Slack agent with durable workflows](https://vercel.com/kb/guide/building-a-slack-agent-with-durable-workflows?from=related) — Build an AI-powered Slack bot that gathers team data, drafts a summary, and refines it through conversation.
+- [Versioning](https://workflow-sdk.dev/docs/foundations/versioning?from=related) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
 - [Concepts](https://vercel.com/docs/workflows/concepts?from=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
-- [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
-- [Python](https://vercel.com/docs/functions/runtimes/python?from=related) — Learn how to use the Python runtime to run Python applications on Vercel.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/workflows/python.graph.md](/docs/workflows/python.graph.md)
 <!-- /docsgraph:related -->
@@ -149,6 +148,28 @@ async def ai_refine_workflow(*, draft_id: str):
         "refined": refined,
     }
 ```
+
+The parameter accepts three forms:
+
+| Form | Description | Example |
+| --- | --- | --- |
+| `str` | Human-readable duration string | `"2 days"`, `"1w"`, `"1h 30m"` |
+| `int` or `float` | Milliseconds from now | `5000` (5 seconds) |
+| `datetime.datetime` | Absolute wake-up time (must be timezone-aware) | `datetime(2025, 1, 1, tzinfo=UTC)` |
+
+The string form accepts one or more `<value><unit>` pairs. Supported units:
+
+| Duration | Unit |
+| --- | --- |
+| Milliseconds | `ms` |
+| Seconds | `s`, `second`, `seconds` |
+| Minutes | `m`, `minute`, `minutes` |
+| Hours | `h`, `hour`, `hours` |
+| Days | `d`, `day`, `days` |
+| Weeks | `w`, `week`, `weeks` |
+
+> **💡 Note:** `sleep()` must be called from the workflow body, not from inside a step.
+> Calling it from a step raises a `RuntimeError`.
 
 ## Hooks
 

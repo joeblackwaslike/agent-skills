@@ -16,8 +16,8 @@ related:
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f1b76cc441f06e03a6b1e676208987402e2320d623f5c6b622ceb26f722b47e8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e8242d6884eba19da0c685e166b5ff76fbc86eb448930dc86f2299f5c8b55fb6"
 ---
 
 # Working with Drains
@@ -37,8 +37,8 @@ sha256: "f1b76cc441f06e03a6b1e676208987402e2320d623f5c6b622ceb26f722b47e8"
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Creates a new Integration Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
-- [Retrieves a Configurable Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related)
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
+- [Retrieves a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related)
 - [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
 
 Full cross-link map for this page: [/docs/drains.graph.md](/docs/drains.graph.md)

@@ -16,8 +16,8 @@ related:
 summary: Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f2bb6e8021d9b6da319ee064a55a244c3fd0077c0e478da00627b6a754658b6d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "85f7742b2bd7e47352e53911a1138230b1a6d8f6b52641d978a87819e70b99a9"
 ---
 
 # Coding Agents
@@ -37,6 +37,7 @@ AI coding agents are transforming how developers write, debug, and refactor code
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 - [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/docs/ai-gateway/coding-agents.graph.md)
 <!-- /docsgraph:related -->
@@ -136,11 +137,14 @@ wire_api = "responses"
 
 `/codex/v1` is Codex's own compatibility endpoint, and `wire_api = "responses"` is required, since Codex no longer speaks Chat Completions.
 
-Then start Codex:
+Then start Codex, optionally on a specific model:
 
 ```bash
 codex
+codex --model openai/gpt-5.5-pro
 ```
+
+Codex reads the gateway catalog from `/codex/v1/models` at startup, so `/model` inside a session lists every gateway model.
 
 For full configuration options, including the dedicated Codex compatibility endpoint and profiles, see [Configure OpenAI Codex](/docs/ai-gateway/coding-agents/openai-codex).
 

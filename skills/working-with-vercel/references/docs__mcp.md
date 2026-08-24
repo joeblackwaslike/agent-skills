@@ -13,8 +13,8 @@ related:
 summary: Learn more about MCP and how you can use it on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1a853f942f894b9f4f9bdf0091a30d6df8e3c347ae51f78d8dbe586c320bfa02"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "afb0f96bca3cb1c0d529eafbfd5d7016d0c9a9bff931436733a6b06cab1f691a"
 ---
 
 # Model Context Protocol
@@ -29,16 +29,16 @@ sha256: "1a853f942f894b9f4f9bdf0091a30d6df8e3c347ae51f78d8dbe586c320bfa02"
 
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related) — This is my wonderful
 - [Make your documentation readable by AI agents](https://vercel.com/kb/guide/make-your-documentation-readable-by-ai-agents?from=related) — Serve markdown to AI agents using content negotiation, .md endpoints, agent auto-detection, llms.txt,   sitemap.md, and
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [Build a ChatGPT Connector \(MCP server\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related) — Create an MCP server to bring your tools and data to ChatGPT
+- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
+- [MCP Integrations](https://v0.app/docs/MCP?from=related) — Connect and use MCP servers directly in v0
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
-- [MCP Connections](https://eve.dev/docs/connections/mcp?from=related) — Connect an eve agent to a remote MCP server, authorize it with Vercel Connect or static credentials, and control which t
 - [Next.js MCP Server](https://nextjs.org/docs/app/guides/mcp?from=related) — Learn how to use Next.js MCP support to allow coding agents access to your application state
-- [Model Context Protocol (MCP)](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools?from=related)
 - [ACP (Agent Client Protocol)](https://ai-sdk.dev/providers/community-providers/acp?from=related)
-- [MCP](https://eve.dev/docs/channels/mcp?from=related) — Publish an eve agent as a durable MCP invocation service with route authentication and OAuth discovery.
-- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related) — Set up Model Context Protocol \(MCP\) usage with a Vercel project using the vercel mcp CLI command.
+- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related) — Set up Model Context Protocol \\(MCP\\) usage with a Vercel project using the vercel mcp CLI command.
 - [xmcp](https://vercel.com/docs/frameworks/backend/xmcp?from=related) — Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and
+- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
 
 Full cross-link map for this page: [/docs/mcp.graph.md](/docs/mcp.graph.md)
 <!-- /docsgraph:related -->

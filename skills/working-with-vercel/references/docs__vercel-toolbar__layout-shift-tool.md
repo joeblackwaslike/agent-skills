@@ -16,8 +16,8 @@ related:
 summary: The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/layout-shift-tool.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ff90ada9c14e9dc0e0dd35972ee066a571ec1a859553157488e4d7de1ebfb1fe"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "af9bf0ecd841faf26c29dfc2f7f55af59fdc791267c7cfc79aac0b8fa14bfe7c"
 ---
 
 # Layout Shift Tool
@@ -30,8 +30,8 @@ sha256: "ff90ada9c14e9dc0e0dd35972ee066a571ec1a859553157488e4d7de1ebfb1fe"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Optimizing Core Web Vitals in 2024](https://vercel.com/kb/guide/optimizing-core-web-vitals-in-2024?from=related) — Learn how to optimize Core Web Vitals for your site, including INP, CLS, LCP, and more.
-- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals?from=related) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 - [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.

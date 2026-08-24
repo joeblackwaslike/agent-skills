@@ -13,13 +13,13 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers through AI Gateway, available via...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "81e7023fb7af92483b781eb209b85147e46ec88657ed67e99e6b9d8fda40400a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "18dde6da97010b293b7d1c78da7ab603a994ef0c41c25887d4673bf97667f3de"
 ---
 
 # Service Tiers
 
-OpenAI, Google AI Studio, and Google Vertex AI offer different processing tiers that trade off latency, availability, and cost. You can request a service tier through AI Gateway and AI Gateway adjusts pricing based on the tier the provider actually served.
+OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different processing tiers that trade off latency, availability, and cost. You can request a service tier through AI Gateway and AI Gateway adjusts pricing based on the tier the provider actually served.
 
 
 <!-- docsgraph:related -->
@@ -31,14 +31,14 @@ OpenAI, Google AI Studio, and Google Vertex AI offer different processing tiers 
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
 - [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
 - [Provider Options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway
-- [Fast Mode](https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode?from=related) — Request the faster serving path for supported models through AI Gateway using the \`speed\` option or the fast model slu
+- [Fast Mode](https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode?from=related) — Request the faster serving path for supported models through AI Gateway using the \\`speed\\` option or the fast model slu
 - [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** Service tiers are supported for OpenAI, Google AI Studio, and Google Vertex AI models. Setting a service tier on a model that doesn't support it has no effect. Tier availability varies by model and provider, so check the provider's pricing page for which models offer which tiers.
+> **💡 Note:** Service tiers are supported for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models. Setting a service tier on a model that doesn't support it has no effect. Tier availability varies by model and provider, so check the provider's pricing page for which models offer which tiers.
 
 ## Supported values
 
@@ -50,6 +50,8 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/servic
 
 If you don't specify a service tier, requests use the standard tier.
 
+SpaceXAI supports `priority` only. Setting `flex` on a SpaceXAI model has no effect, and the request runs on the default tier.
+
 ## Best-effort routing
 
 Service tier is a best-effort routing hint, not a hard guarantee. If the provider serving a request doesn't support service tiers, the tier is ignored and the request runs on the default tier. If a provider supports the tier but doesn't grant it (for example, when priority capacity is full), the request is downgraded to the default tier. In both cases the request still succeeds and is billed at the default rate.
@@ -60,7 +62,7 @@ The only request that fails over a service tier is one that passes an invalid va
 
 You can set the service tier in two ways:
 
-- `gateway.serviceTier` (AI SDK v6 and v7): a unified option that AI Gateway translates to the right per-provider field. Use this when you want one configuration that works across OpenAI, Google AI Studio, and Google Vertex AI.
+- `gateway.serviceTier` (AI SDK v6 and v7): a unified option that AI Gateway translates to the right per-provider field. Use this when you want one configuration that works across OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI.
 - Per-provider options: set the tier directly on the provider namespace. Use these for direct REST API calls, for AI SDK v5, or when you need provider-specific behavior.
 
 ### Using `gateway.serviceTier`
@@ -183,6 +185,7 @@ You can also set the tier directly on the provider namespace. The supported keys
 - OpenAI: `openai.serviceTier` (or `service_tier` for the raw Chat Completions and OpenAI Responses APIs)
 - Google AI Studio: `google.serviceTier`
 - Google Vertex AI: `vertex.sharedRequestType`
+- SpaceXAI: `xai.serviceTier`
 
 #### OpenAI
 
@@ -241,6 +244,29 @@ const { text, usage, providerMetadata } = await generateText({
     },
     vertex: {
       sharedRequestType: 'flex',
+    },
+  },
+});
+
+console.log(text);
+console.log('Applied tier:', providerMetadata?.gateway?.serviceTier);
+console.log('Usage:', usage);
+```
+
+#### SpaceXAI
+
+```typescript filename="app/api/chat/route.ts"
+import { generateText } from 'ai';
+
+const { text, usage, providerMetadata } = await generateText({
+  model: 'xai/grok-4.5',
+  prompt: 'Explain quantum computing in two sentences.',
+  providerOptions: {
+    gateway: {
+      only: ['xai'],
+    },
+    xai: {
+      serviceTier: 'priority',
     },
   },
 });
@@ -518,6 +544,7 @@ AI Gateway adjusts pricing based on the service tier the provider actually serve
 - [OpenAI pricing](https://openai.com/api/pricing/)
 - [Google AI Studio pricing](https://ai.google.dev/gemini-api/docs/pricing)
 - [Google Vertex AI pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing)
+- [SpaceXAI pricing](https://docs.x.ai/docs/pricing)
 
 
 ---

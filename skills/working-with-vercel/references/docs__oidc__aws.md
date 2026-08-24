@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "573c3657b0633045ef6b4732669fa6b21b58b03437603f15415ce9298a565260"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3cf12f8ea0a5aaba1471cce9fc691fa3ad718bbaaacdbd8b0807a3ac44405bea"
 ---
 
 # Connect to Amazon Web Services (AWS)
@@ -30,9 +30,9 @@ sha256: "573c3657b0633045ef6b4732669fa6b21b58b03437603f15415ce9298a565260"
 - [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace?from=related) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related) — Example how to use AWS S3 library on Vercel
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
-- [Azure](https://vercel.com/docs/oidc/azure?from=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
-- [Connect your API](https://vercel.com/docs/oidc/api?from=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\)
-- [Google Cloud Platform](https://vercel.com/docs/oidc/gcp?from=related) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
+- [Azure](https://vercel.com/docs/oidc/azure?from=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Connect your API](https://vercel.com/docs/oidc/api?from=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
+- [Google Cloud Platform](https://vercel.com/docs/oidc/gcp?from=related) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related) — Learn about available APIs when working with Vercel Functions.
 - [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 

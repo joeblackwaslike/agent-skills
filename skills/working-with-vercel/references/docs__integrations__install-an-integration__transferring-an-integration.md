@@ -16,8 +16,8 @@ related:
 summary: Move your installation of a Native Integration from one Vercel team to another, including its resources and prepayment balances.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/transferring-an-integration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "bfbd772df6866102bbd8ae40da627ec55c83d5e3a77e7cfe358dd6234c4b2bed"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4759b444b09722b456005b8329cafa1cccf98f658f54201ad8c9d665f3b00ecf"
 ---
 
 # Transferring an Integration
@@ -31,7 +31,6 @@ You can transfer your installation of a [Native Integration](/docs/integrations/
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I move a domain to a Vercel team?](https://vercel.com/kb/guide/how-can-i-move-a-domain-to-a-team?from=related) — Information on how to move domains between accounts on Vercel.
-- [Transferring Domains to Vercel](https://vercel.com/kb/guide/transferring-domains-to-vercel?from=related) — How to transfer your domain to Vercel.
 - [Native Integration Flows](https://vercel.com/docs/integrations/create-integration/marketplace-flows?from=related) — Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integra
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Transferring Domains](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t

@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "384b9b200aafea27ae5425de058337dca5f622048dd15f33401ed426beaf9496"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "be6ef7d0a75cbacb2201dfc3c418288423d1a47f0ed95e2ad8a4e4fa40528712"
 ---
 
 # Full-stack frameworks on Vercel
@@ -30,10 +30,10 @@ The following full-stack frameworks are supported with zero-configuration.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
-- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
 - [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
 - [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
 - [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no

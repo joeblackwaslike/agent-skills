@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/slackbot.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "c16a31bc2f17f7e0268e8a2c774c2958101264d20773d003a57544de69ce42cb"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "f6aa978a86acccb489d6242e70b6705bdff7f5bfe7c6f46cac7e69c2e132f019"
 ---
 
 # Building an AI Agent in Slack with the AI SDK
@@ -327,7 +327,7 @@ export const generateResponse = async (
 ) => {
   const { text } = await generateText({
     model: __MODEL__,
-    system: `You are a Slack bot assistant. Keep your responses concise and to the point.
+    instructions: `You are a Slack bot assistant. Keep your responses concise and to the point.
     - Do not tag users.
     - Current date is: ${new Date().toISOString().split('T')[0]}`,
     messages,
@@ -360,7 +360,7 @@ export const generateResponse = async (
 ) => {
   const { text } = await generateText({
     model: __MODEL__,
-    system: `You are a Slack bot assistant. Keep your responses concise and to the point.
+    instructions: `You are a Slack bot assistant. Keep your responses concise and to the point.
     - Do not tag users.
     - Current date is: ${new Date().toISOString().split('T')[0]}
     - Always include sources in your final response if you use web search.`,

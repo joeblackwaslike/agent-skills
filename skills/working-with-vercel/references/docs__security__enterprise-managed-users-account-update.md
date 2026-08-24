@@ -9,13 +9,14 @@ prerequisites:
   - /docs/security
 related:
   - /docs/security/enterprise-managed-users
+  - /docs/git
   - /docs/saml
   - /docs/directory-sync
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "dc9e936c3a0c0a3bc8942f71acbff52b64be918c222afe034437d312eaaf7eff"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ab9ffc1c6fc79267b2313db6d7e5bbb90d7d9a4d4136b528c031a314b0403dbd"
 ---
 
 # Transition your Hobby team after EMU enrollment
@@ -28,13 +29,15 @@ Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EM
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I delete my Vercel account?](https://vercel.com/kb/guide/how-do-i-delete-my-vercel-account?from=related) — This guide covers how to delete your personal or team account on Vercel.
+- [Teams](https://v0.app/docs/teams?from=related) — Collaborate with your team on projects with shared resources.
+- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [Account](https://v0.app/docs/account?from=related) — Manage your account and billing information.
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related) — Learn how to transfer a project between Vercel teams.
 - [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users-account-update.graph.md](/docs/security/enterprise-managed-users-account-update.graph.md)
 <!-- /docsgraph:related -->
@@ -107,13 +110,62 @@ If you kept your account, you end up with two separate identities:
 
 The two accounts do not share resources. If you deleted your account, you have a single managed work account going forward.
 
-The first time you sign in to your managed work account through SSO, a one-time dialog confirms what changed: your dedicated work account, the settings your team manages, and SSO-only sign-in.
+The first time you sign in to your managed work account through SSO, a one-time dialog confirms what changed, walking through your dedicated work account, the settings your team manages, and SSO-only sign-in.
+
+## After the transition
+
+Your managed account is a new Vercel account. Everything the team owns (projects, deployments, domains, and integrations) keeps working without any action. A few things, however, are bound to the account that created them and need a one-time check after your first SSO sign-in.
+
+### Reconnect your Git account
+
+Git connections (GitHub, GitLab, or Bitbucket) are not migrated to your managed account. The authorization belongs to your old account, and re-authorizing on the new account is intentional, for security. Vercel remembers the name of the Git account you had connected and shows it in the dialog on your first sign-in, so you know which one to connect again.
+
+If deploys fail with Git permission errors after you transition, or Vercel stops recognizing your commits, connect your Git provider from [Account Settings → Authentication](https://vercel.com/account/settings/authentication) under **Sign-in Methods**. This is a one-time fix.
+
+### Re-create your access tokens
+
+Access tokens are bound to the account that created them. After you transition, tokens created by your old account stop authorizing against your team. Vercel doesn't delete or migrate them. They lose authorization, so anything using one (the `vercel` CLI, API calls, or scripts) fails until it gets a new token.
+
+To restore access:
+
+1. Sign in to your managed account through SSO. This is a full login, and the Tokens page works the same as before.
+2. Go to [Account Settings → Tokens](https://vercel.com/account/settings/tokens) and create a new token scoped to your team.
+3. Update the token anywhere the old one was stored, and re-authenticate your local CLI with `vercel login`.
+4. If you kept your personal account, revoke the old tokens from it once everything works. If your old account was archived or deleted, you no longer have access to it and there is nothing to revoke. Its tokens have already stopped authorizing.
+
+### Move shared automation to a service account
+
+If automation such as CI/CD deploys, SIEM or log export, or scheduled scripts authenticates with a member's personal token, move it to a dedicated service account **before** running the transition. The service account must be a **managed** account. A service account created before EMU is a regular account and goes through the transition like any other member, so its tokens break the same way.
+
+To set one up:
+
+1. Provision a new non-human identity through your identity provider.
+2. Sign in once through SSO as that account. Creating the first token requires a signed-in session.
+3. Create team-scoped tokens from it and swap them into each integration.
+
+Tokens owned by a managed service account don't break when a member transitions or leaves. Deploys through the [Vercel Git integration](/docs/git), deploy hooks, and the Directory Sync (SCIM) bearer token are unaffected.
+
+### AI Gateway API keys
+
+AI Gateway keys follow the same rule as access tokens. Each key authenticates as the member who created it, even when it is stored on the team. A team-scoped key created by a member who transitions will stop authorizing, and keys created in a personal Hobby scope are lost if that Hobby team is archived or deleted.
+
+To restore access:
+
+- Re-create application and CI gateway keys from a managed service account.
+- For keys you use yourself, create a new team-scoped key from your managed account. Managed accounts have no personal Hobby scope, so every key you create there is scoped to the team.
+
+### Marketplace partner sign-ins
+
+Marketplace integrations installed on the team keep working. The installation and its resources stay on the team, and Vercel reassigns ownership to your managed account automatically. The per-user identity a partner receives when you use an **Open in...** flow, however, comes from your Vercel user ID, which changes when you transition. Most partners treat you as a new user on your next sign-in, so partner-side settings or roles tied to your old identity don't carry over.
+
+If a partner returns an error because your old identity is still linked under the same email, ask the partner to unlink the old identity. Reinstalling the integration is not required and won't help.
 
 ## Troubleshooting
 
 - **I don't have a personal email I want to use:** Use any email you control that is not on one of your team's verified domains. If none qualify, create one with a personal provider before completing the flow.
 - **I don't see the team I want as a transfer destination:** Transfer destinations are limited to enterprise teams where you have the Owner or Member role. Ask a team owner if you need your role changed or a project moved elsewhere.
 - **I'm not sure whether to delete:** Deletion is permanent. If you're unsure, add a personal email instead. You can delete the account later from account settings.
+- **A CI pipeline or script stopped working after I transitioned:** It authenticates with a token from your old account. Re-create the token from your managed account, or from a service account for shared automation, and update it where it is stored. See [Re-create your access tokens](#re-create-your-access-tokens).
 
 ## Related resources
 

@@ -12,8 +12,8 @@ related:
 summary: Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/install.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "41d3d5f580864bed571cd19ab2e704838fc5b5be0d8ad037b64af1c09c169d6c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7bdcf044e3b35c025ae809eadcff08c31ea952e3715dd0db23dfeea51d124dba"
 ---
 
 # vercel install
@@ -31,7 +31,7 @@ sha256: "41d3d5f580864bed571cd19ab2e704838fc5b5be0d8ad037b64af1c09c169d6c"
 - [vercel login](https://vercel.com/docs/cli/login?from=related) — Learn how to login into your Vercel account using the vercel login CLI command.
 - [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related)
 - [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
 
 Full cross-link map for this page: [/docs/cli/install.graph.md](/docs/cli/install.graph.md)
 <!-- /docsgraph:related -->

@@ -12,8 +12,8 @@ related:
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ee15289a332fda38227e43c25957253c13502a4f36bfe0af961c5a793b2c13fd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1f50f9e16362be737c706e5c3f0264c3dadbc5bfe4bb147009234973eb305572"
 ---
 
 # Managing DNS Records
@@ -27,15 +27,15 @@ Once you've added a domain and it's using Vercel's nameservers, you can view its
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
 - [Why am I no longer receiving email after adding my domain to Vercel?](https://vercel.com/kb/guide/why-has-email-stopped-working?from=related) — Fix email that stopped working after adding your domain to Vercel, with a concrete MX record table and the DNS preset cl
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [How can I do a "Zero Downtime" DNS migration to Vercel?](https://vercel.com/kb/guide/zero-downtime-migration-for-dns?from=related) — Information about how to migrate your DNS records to Vercel without downtime.
-- [How to Export Your Domain's DNS Records from Vercel](https://vercel.com/kb/guide/export-domain-dns-records-via-api?from=related) — Learn how to utilize our API to export your domain's DNS records from Vercel.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
 - [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Troubleshooting Domains](https://vercel.com/docs/domains/troubleshooting?from=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Working with Nameservers](https://vercel.com/docs/domains/working-with-nameservers?from=related) — Learn about nameservers and the benefits Vercel nameservers provide.
-- [Pre-Generate SSL Certificates](https://vercel.com/docs/domains/pre-generating-ssl-certs?from=related) — test
+- [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 
 Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md](/docs/domains/managing-dns-records.graph.md)
 <!-- /docsgraph:related -->

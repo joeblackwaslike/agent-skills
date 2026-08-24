@@ -13,8 +13,8 @@ related:
 summary: Learn how Vercel uses SSL certification to keep your site secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-ssl.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "87e03a8fee70e46e14abbd2e7b772bfb658dcb575537d7765fe3518fff98a44d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e9452e30ab02a6c7c0a2dda88c185a9fab224b20da8f8075e3a14ea8919faad5"
 ---
 
 # Working with SSL Certificates
@@ -27,7 +27,7 @@ An SSL certificate enables encrypted communication between user's browser and yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Why is my domain not automatically generating an SSL/TLS certificate?](https://vercel.com/kb/guide/domain-not-generating-ssl-certificate?from=related) — Information on why a domain may not be automatically generating an SSL/TLS certificate.
 - [How do I resolve "ERR_SSL_PROTOCOL_ERROR" with Vercel?](https://vercel.com/kb/guide/resolve-err-ssl-protocol-error-with-vercel?from=related) — Information about how to resolve the "ERR_SSL_PROTOCOL_ERROR" error with Vercel.

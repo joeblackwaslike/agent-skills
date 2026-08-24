@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a979421561c54fda277e8b424847672b8e3399f7ba3b72ddd49e80d845385608"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e0fc6028a47613c8b873aa53905f6ff2d24c5e2e905cad8f14c533bdb6759842"
 ---
 
 # Limits and Pricing for Image Optimization
@@ -31,8 +31,8 @@ sha256: "a979421561c54fda277e8b424847672b8e3399f7ba3b72ddd49e80d845385608"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Legacy Pricing](https://vercel.com/docs/image-optimization/legacy-pricing?from=related) — This page outlines information on the pricing and limits for the source images-based legacy option.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related) — Learn about the pricing for Vercel Blob.
 - [Getting Started](https://vercel.com/docs/image-optimization/quickstart?from=related) — Learn how you can leverage Vercel Image Optimization in your projects.
 

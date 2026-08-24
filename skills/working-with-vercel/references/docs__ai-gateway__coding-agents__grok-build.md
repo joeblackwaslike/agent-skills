@@ -14,8 +14,8 @@ related:
 summary: Use Grok Build with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9620454141dab231050c577b63b0abe041c59284114efebac022b230129e4557"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3e85b1b22f480b67dcaac888f608b8dd7281e98b533fa67eb76cd2f9c9543820"
 ---
 
 # Grok Build
@@ -32,8 +32,8 @@ sha256: "9620454141dab231050c577b63b0abe041c59284114efebac022b230129e4557"
 - [Groq](https://vercel.com/docs/agent-resources/integrations-for-models/groq?from=related) — Learn how to add the Groq native integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
-- [Integrations for Models](https://vercel.com/docs/agent-resources/integrations-for-models?from=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+- [Roo Code](https://vercel.com/docs/ai-gateway/coding-agents/roo-code?from=related) — Use Roo Code with the AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/grok-build.graph.md](/docs/ai-gateway/coding-agents/grok-build.graph.md)
 <!-- /docsgraph:related -->

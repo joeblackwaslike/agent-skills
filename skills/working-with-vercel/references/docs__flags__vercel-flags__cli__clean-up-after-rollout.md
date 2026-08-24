@@ -13,8 +13,8 @@ related:
 summary: Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d5aa60cf64fc23bfdc985457cc34862cc88523b609948ca1a34153268af3b839"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "21d71747aae6749943de1d0e1c3fd38f00c6e6deac2c6cfc5f5ceb7edcb74da7"
 ---
 
 # Cleaning up after a full rollout
@@ -27,6 +27,7 @@ Once a feature is stable and the flag has been enabled in all environments for a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [Roll Out a Feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library

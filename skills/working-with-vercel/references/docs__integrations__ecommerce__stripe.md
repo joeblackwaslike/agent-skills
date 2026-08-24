@@ -13,8 +13,8 @@ related:
 summary: Connect your Stripe account to Vercel and accept payments in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/ecommerce/stripe.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c255251f7b6c80066c428b4d5d041817ba713bebb24b4c7c315b6308dd39f143"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a27443b95523fdbf73496075c75302fe4381bc7a77d5c144a5e3777e7871d930"
 ---
 
 # Stripe Integration
@@ -33,8 +33,8 @@ Connect your [Stripe](https://docs.stripe.com/) account to Vercel to accept paym
 - [Create and Deploy a Crystallize E-commerce Site with Vercel](https://vercel.com/kb/guide/deploying-crystallize-with-vercel?from=related) — How to launch an e-commerce site using Next.js and Crystallize on Vercel in minutes.
 - [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
 - [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 

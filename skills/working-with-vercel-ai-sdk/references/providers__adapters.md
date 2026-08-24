@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/adapters.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "7882bd7e49d1b01d852e838584edf64505bc43ed0b1990567930fa70556f150b"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "1ddcb3cbc1ea9cc3fac421b903a497f85af8e834840e64c90df53be920c718e9"
 ---
 
 # Adapters
@@ -157,6 +157,7 @@ The following adapters are currently available:
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
+  - [Interfaze](/providers/community-providers/interfaze)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

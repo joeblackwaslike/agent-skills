@@ -16,8 +16,8 @@ related:
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "16b3d6922fa76c172bcc446811a506bdf725fa8ea6c4d47ba77c1968cc88a1bf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9d5072b48b1628d0bb951133796e612f4cfa63d5b2657d7005871ae6cbdd520f"
 ---
 
 # Deploying Nx to Vercel
@@ -30,7 +30,7 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx?from=related) — How to solve the error \`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\` or \`No Output
+- [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx?from=related) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
 - [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to

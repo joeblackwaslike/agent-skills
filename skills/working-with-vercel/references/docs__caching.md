@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e63c100b37532888913b815e2c6c965e0d52de648c6ca8dcc26155ee2426c6fb"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4a6c3b24743f72443f8511ab663d228b952a7c5e981f59a366462e8556cfbdf1"
 ---
 
 # Caching
@@ -39,6 +39,7 @@ Vercel caches content at multiple layers between the visitor and your backend. T
 - [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Python](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related) — Learn about available APIs when working with Vercel Functions in Python.
 - [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/caching.graph.md](/docs/caching.graph.md)
 <!-- /docsgraph:related -->

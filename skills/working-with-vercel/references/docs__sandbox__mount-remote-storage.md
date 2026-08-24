@@ -11,11 +11,12 @@ related:
   - /docs/sandbox/concepts/drives
   - /docs/sandbox/concepts/runtimes
   - /docs/sandbox/concepts/firewall
+  - /docs/sandbox/concepts/images
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8f532b8f0d8c256dfb1bf49d38e979e26dd0b7393e7f6812335baa0f981a89d5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5ad920841ac33acfe18cf45cc1486160dedee2d6fc8cf283879c660f5be70b65"
 ---
 
 # Mount remote storage
@@ -31,8 +32,8 @@ Mount an external object store such as Amazon S3 into a sandbox and work with re
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related) — Learn how to install additional system packages in Vercel Sandbox using dnf, the package manager for Amazon Linux 2023.
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
@@ -60,7 +61,7 @@ After the mount succeeds, `ls -la /mnt/s3` prints the objects in your bucket. An
 
 ## Mount other providers
 
-Mountpoint is specific to S3, but the same pattern works with any FUSE driver. Install the driver and its `fuse` dependency with `dnf`, create a mount directory, then run the driver's mount command with `sudo`. This covers other object stores, network filesystems, and custom mounts, so a sandbox can persist files to more than one storage provider in a single session.
+Mountpoint is specific to S3, but the same pattern works with any FUSE driver. Install the driver and its `fuse` dependency with your image's package manager (`apt-get` on the default Ubuntu-based [managed images](/docs/sandbox/concepts/images), or `dnf` on legacy Amazon Linux runtimes), create a mount directory, then run the driver's mount command with `sudo`. This covers other object stores, network filesystems, and custom mounts, so a sandbox can persist files to more than one storage provider in a single session.
 
 
 ---

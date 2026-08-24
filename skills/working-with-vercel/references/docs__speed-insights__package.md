@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-insights npm package.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/package.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "042a5c31ca9e1ed9c51964c6c44c9e990402ce4485c441b7e3a928694aefb46f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5b4dc94c59ea205359731e8f52c2b3f4992a4fdff008ec2a884fd0037e7a3938"
 ---
 
 # Speed Insights Configuration with @vercel/speed-insights
@@ -27,7 +27,6 @@ With the `@vercel/speed-insights` npm package, you're able to configure your app
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Troubleshooting](https://vercel.com/docs/speed-insights/troubleshooting?from=related) — Learn about common issues and how to troubleshoot Vercel Speed Insights.

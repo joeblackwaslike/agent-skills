@@ -2,8 +2,8 @@
 title: "Models"
 description: Request and response schemas for the DoltHub v2 API.
 source: "https://www.dolthub.com/docs/products/dolthub/api/v2/models.md"
-fetched_at: "2026-07-13T06:56:02.638Z"
-sha256: "009b25d6cc5376c409d1d7da26d565674d2cb7697a4ac9d3587bc04c72e33c56"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "cb02072ca60c0665dc41622c0fbf13bc17367ad803ff7ed209ed3e27bfee12bf"
 ---
 
 # Models
@@ -36,7 +36,7 @@ A structured error body returned for every non-2xx response, following RFC 9457 
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `type` | `string` | no | A URI identifying the problem type; when dereferenced it points at human-readable documentation for the error. |
+| `type` | `string` | yes | A URI identifying the problem type; when dereferenced it points at human-readable documentation for the error. |
 | `title` | `string` | yes | A short, human-readable summary of the problem type. |
 | `status` | `integer` | yes | The HTTP status code, repeated in the body for convenience. |
 | `detail` | `string` | no | A human-readable explanation specific to this occurrence of the problem. |

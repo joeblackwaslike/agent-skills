@@ -16,8 +16,8 @@ related:
 summary: Learn about observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/observability.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "061cc667e75db46471702268529269b49b6d5fe54bc4c6fc76b3797cf8e3444c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ed805c0aa4632307214d7decbe6bb20809213f5d12d6f1a0cac6a3047b5fbaf9"
 ---
 
 # Observability
@@ -32,8 +32,8 @@ Every connector has an **Observability** tab that shows runtime events for token
 
 - [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Triggers](https://vercel.com/docs/connect/concepts/triggers?from=related) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
+- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 - [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "574b995cc2a5d346b6d36eef1ff1682a9d81e823cd096735c04e49c69dab12a3"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "933eade03a07f51735b12ed82e7ddd0a59e95138845e122a0785a30c7ea0ef1c"
 ---
 
 # Grok Build Harness
@@ -104,6 +104,12 @@ Settings:
 
 The adapter pins the Grok Build CLI and ACP launch command. These implementation
 details cannot be overridden through `createGrokBuild()`.
+
+## Structured Output
+
+Grok Build supports schema-backed [`HarnessAgent` structured output](/docs/ai-sdk-harnesses/harness-agent#generate-structured-output).
+Its profile maps the JSON Schema to Grok Build's private ACP prompt metadata,
+which the runtime enforces through its provider structured-output mechanism.
 
 ## Authentication
 

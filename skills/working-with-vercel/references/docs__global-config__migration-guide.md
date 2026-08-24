@@ -16,8 +16,8 @@ related:
 summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9def2e1bc7711d399d563b3d15c65fba38dbb442b4606d4ae91c2de6cbc90485"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fe42568df14a1701ec1c4a72c6bdfddda350c8309a5c3ff08242a15aa0949cca"
 ---
 
 # Migrating from Edge Config to Global Config
@@ -36,6 +36,7 @@ Edge Config is now **Global Config**. This rename better reflects that it is a g
 - [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config?from=related)
 - [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md)
 <!-- /docsgraph:related -->

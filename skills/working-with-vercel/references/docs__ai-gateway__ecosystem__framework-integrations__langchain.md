@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "348c1ace0ebe71f05296245f71aed926ba21ebadd6b46d481ac1ff72582d72c7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4ea42213f8a3812c4775995a686e7e93fc7be65b4da32b0ec0c46a26bcd27edb"
 ---
 
 # LangChain
@@ -31,7 +31,7 @@ with LangChain to access various AI models and providers.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Building an AI chatbot with Next.js, Langchain, and OpenAI](https://vercel.com/kb/guide/nextjs-langchain-vercel-ai?from=related) — Dive into the world of LangChain.js and Next.js with our detailed guide. Learn how to set up a chatbot, structure output
-- [Deploying Chained OpenAI LLM Calls to Vercel with the Inngest SDK](https://vercel.com/kb/guide/chained-openai-llm-calls-vercel-inngest?from=related) — Discover how to deploy chained OpenAI LLMs \(GPT-4\) to Vercel using Inngest SDK for improved conversational AI, multi-t
+- [Deploying Chained OpenAI LLM Calls to Vercel with the Inngest SDK](https://vercel.com/kb/guide/chained-openai-llm-calls-vercel-inngest?from=related) — Discover how to deploy chained OpenAI LLMs \\(GPT-4\\) to Vercel using Inngest SDK for improved conversational AI, multi-t
 - [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain?from=related) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
 - [LangDB](https://ai-sdk.dev/providers/community-providers/langdb?from=related)
 - [LangFuse](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse?from=related) — Learn how to integrate Vercel AI Gateway with LangFuse to access multiple AI models through a unified interface

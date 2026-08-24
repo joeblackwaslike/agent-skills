@@ -16,8 +16,8 @@ related:
 summary: Learn how to secure your website with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "60dd772cae3ff8690510ffc42c12178a0644e27940cda0763d75f7df8a2cb097"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d3033a41afe66dfdd1690401992652b29439d7d2e61685477c94855ba7f82d7d"
 ---
 
 # Vercel WAF
@@ -31,10 +31,10 @@ sha256: "60dd772cae3ff8690510ffc42c12178a0644e27940cda0763d75f7df8a2cb097"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide?from=related) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
-- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [Firewall API](https://vercel.com/docs/vercel-firewall/firewall-api?from=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
 - [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.

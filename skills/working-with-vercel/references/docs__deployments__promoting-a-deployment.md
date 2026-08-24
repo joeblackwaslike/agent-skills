@@ -15,8 +15,8 @@ related:
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4c386d5996b9b9a81275576674cb7db45d1df0f6a23b779722a222d106325abe"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5c9b8ccce837e0adae2943488f4a861dc4adf3250722e54b0a58cebb693c2a9f"
 ---
 
 # Promoting Deployments
@@ -32,6 +32,7 @@ By default, when you merge to or make commits to your production branch (often `
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related) — Information on how to set up a staging environment on Vercel.
+- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Promote Preview to Production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related) — Test a preview deployment and promote it to production using the CLI.
 - [vercel promote](https://vercel.com/docs/cli/promote?from=related) — Learn how to promote an existing deployment using the vercel promote CLI command.

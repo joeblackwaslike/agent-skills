@@ -17,8 +17,8 @@ related:
 summary: Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nitro.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "48cb23707f5780e9d7ad549c91703a628bd4f8367fb64695c49d1e1c2afeff4f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e598ceb35be0034af66772cfd0bf2da2e90ecf66e054089902cc76f18731a361"
 ---
 
 # Nitro on Vercel
@@ -31,7 +31,7 @@ Nitro is a full-stack framework with TypeScript-first support. It includes files
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related) — The Nitro Vite plugin \(nitro/vite\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
+- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical

@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/authentication.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6013a2dd893245d73e13c8cc6dd3275ab6d4ee8d10a4f7aff6b04dae7233b2c7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e9e527d152e94cbdb25aab72b7153db348e2081a7e0bb986cc5b6c806417b7f7"
 ---
 
 # Sandbox Authentication
@@ -29,8 +29,8 @@ The Sandbox SDK supports two authentication methods: Vercel OIDC tokens (recomme
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related) — Add an \`executeCode\` tool to your AI SDK agent with the \`ai-sdk-tool-code-execution\` package to run Python 3.13 insi
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.

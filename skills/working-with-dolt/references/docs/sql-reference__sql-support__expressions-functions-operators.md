@@ -2,11 +2,9 @@
 title: "Expressions, Functions, and Operators"
 description: Supported scalar functions, operators, and expressions.
 source: "https://www.dolthub.com/docs/sql-reference/sql-support/expressions-functions-operators.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "72fc13682caf5f3277244175fe425109df3f79c7a31cbe26a0df522c8f2d70a2"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "436a53fa50f4d807ef5e074a1a53ea007169aeee927ae207f7426409012da1d4"
 ---
-
-## Expressions, Functions, Operators
 
 ## Statements
 

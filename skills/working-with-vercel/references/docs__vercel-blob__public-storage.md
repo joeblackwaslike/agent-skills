@@ -16,8 +16,8 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "57a34b12f5fa470f32b1f24cfc3dc423fa87611e62fdcb42333c0fca0b95cc6a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "87502d199b018a8951dec44691cfd4195629089eadf3476d2de502be044ee89e"
 ---
 
 # Public Storage
@@ -37,6 +37,7 @@ sha256: "57a34b12f5fa470f32b1f24cfc3dc423fa87611e62fdcb42333c0fca0b95cc6a"
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md)
 <!-- /docsgraph:related -->

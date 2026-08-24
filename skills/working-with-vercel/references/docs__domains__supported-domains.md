@@ -12,8 +12,8 @@ related:
 summary: Learn about supported domains on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/supported-domains.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "77d4bdb86ef4a98ec747180da3ba7e96a9f70422a5bc54cf5cbda0ea2e91b776"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c98000a9e531bf03a7389b06a51fbe1ec42f8d69697598e7862cb3184ee187b9"
 ---
 
 # Supported domains
@@ -296,6 +296,7 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 | `.kim` | Yes | Yes |
 | `.kitchen` | Yes | Yes |
 | `.kiwi` | Yes | Yes |
+| `.kred` | Yes | Yes |
 | `.la` | Yes | Yes |
 | `.land` | Yes | Yes |
 | `.lat` | Yes | Yes |

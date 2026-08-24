@@ -16,8 +16,8 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "82b856e2fa8d686f6d3af36b4cb1125594ba900ce27b26257fb5f34e29f48cd9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "26c986d15b5efa398b3779391209d3e65c8ff24d789ee0b763982b0b4b6b7a9c"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
@@ -32,9 +32,9 @@ sha256: "82b856e2fa8d686f6d3af36b4cb1125594ba900ce27b26257fb5f34e29f48cd9"
 
 - [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Creates a new Integration Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
 - [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Retrieves a Configurable Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related)
+- [Retrieves a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related)
 
 Full cross-link map for this page: [/docs/audit-log/migrating-to-drains.graph.md](/docs/audit-log/migrating-to-drains.graph.md)
 <!-- /docsgraph:related -->

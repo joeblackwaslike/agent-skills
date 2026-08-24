@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "5a49536b550e6513cc5a30f671284eddc48a45ffa20c5915185b9d10d4615e98"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "da0fbb5882cac33ae9829296306bd6fddc273c084240a5e3cb304e9f0bc402ef"
 ---
 
 # Claude Code Harness
@@ -109,6 +109,12 @@ Settings:
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
   token.
+
+## Structured Output
+
+Claude Code supports schema-backed [`HarnessAgent` structured output](/docs/ai-sdk-harnesses/harness-agent#generate-structured-output).
+The adapter passes the JSON Schema through the Agent SDK's native
+`outputFormat` option and returns its `structured_output` value as JSON text.
 
 ## Authentication
 

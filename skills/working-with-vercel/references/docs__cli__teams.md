@@ -13,8 +13,8 @@ related:
 summary: Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8d8e1045c30933b3e0e747c770b315f7d64334330d8b95a69e20f4afd71899b9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "822b51e33568f13bf3995b042d9771a9a445609c11b5a9b55e530377c68b1195"
 ---
 
 # vercel teams
@@ -30,8 +30,8 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related)
 - [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related)
 - [vercel switch](https://vercel.com/docs/cli/switch?from=related) — Learn how to switch between different team scopes using the vercel switch CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [Join a team](https://vercel.com/docs/rest-api/teams/join-a-team?from=related)
+- [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/natural-language-postgres.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "50dbee3f34dc26b8bba4e8721fde650d1e2ab61f1be0690ae9adef4fa71b7a67"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "e1e856221d74ef439d08e20468d9a0040803299a66a4e5bd6a2514f2c376b0df"
 ---
 
 # Natural Language Postgres Guide
@@ -273,7 +273,7 @@ export const generateQuery = async (input: string) => {
   try {
     const result = await generateText({
       model: 'openai/gpt-4o',
-      system: `You are a SQL (postgres) ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
+      instructions: `You are a SQL (postgres) ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
       prompt: `Generate the query necessary to retrieve the data the user wants: ${input}`,
       output: Output.object({
         schema: z.object({
@@ -390,7 +390,7 @@ export const explainQuery = async (input: string, sqlQuery: string) => {
   try {
     const result = await generateText({
       model: 'openai/gpt-4o',
-      system: `You are a SQL (postgres) expert. ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
+      instructions: `You are a SQL (postgres) expert. ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
       prompt: `Explain the SQL query you generated to retrieve the data the user wanted. Assume the user is not an expert in SQL. Break down the query into steps. Be concise.
 
       User Query:
@@ -437,7 +437,7 @@ export const explainQuery = async (input: string, sqlQuery: string) => {
   try {
     const result = await generateText({
       model: 'openai/gpt-4o',
-      system: `You are a SQL (postgres) expert. ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
+      instructions: `You are a SQL (postgres) expert. ...`, // SYSTEM PROMPT AS ABOVE - OMITTED FOR BREVITY
       prompt: `Explain the SQL query you generated to retrieve the data the user wanted. Assume the user is not an expert in SQL. Break down the query into steps. Be concise.
 
       User Query:
@@ -590,7 +590,7 @@ export const generateChartConfig = async (
   try {
     const { output: config } = await generateText({
       model: 'openai/gpt-4o',
-      system: 'You are a data visualization expert.',
+      instructions: 'You are a data visualization expert.',
       prompt: `Given the following data from a SQL query result, generate the chart config that best visualises the data and answers the users query.
       For multiple groups use multi-lines.
 

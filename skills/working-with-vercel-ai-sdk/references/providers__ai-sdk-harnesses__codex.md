@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "73211fc46011eb609bf6e6005fd038e0c76ea9c991555847f2aca02c91069f06"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "bbbf13efab4d418beccbb58d0250377933bca4d9146e1c8deb4bbe4dfb8bd352"
 ---
 
 # Codex Harness
@@ -103,6 +103,12 @@ Settings:
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
   token.
+
+## Structured Output
+
+Codex supports schema-backed [`HarnessAgent` structured output](/docs/ai-sdk-harnesses/harness-agent#generate-structured-output).
+The adapter passes the JSON Schema through the Codex SDK's native
+`outputSchema` turn option.
 
 ## Authentication
 

@@ -14,8 +14,8 @@ related:
 summary: Learn about cursor on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "716c14b24c69540d72f29930c3f2c3088c2c765d608e11a9ff722dbd5af4a6eb"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "93b2b62eaed42f4a43e23aaf1cd189eeddec5be720afbc100aa8d0ee3e08705c"
 ---
 
 # Cursor
@@ -30,9 +30,9 @@ sha256: "716c14b24c69540d72f29930c3f2c3088c2c765d608e11a9ff722dbd5af4a6eb"
 
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
 - [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
+- [Migrate to AI Gateway](https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway?from=related) — Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use tod
 - [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
 - [Hermes](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related) — Use the Hermes agent with the AI Gateway.
-- [Chat Platforms](https://vercel.com/docs/ai-gateway/chat-platforms?from=related) — Configure AI chat platforms to use the AI Gateway for unified model access and spend monitoring.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cursor.graph.md](/docs/ai-gateway/coding-agents/cursor.graph.md)
 <!-- /docsgraph:related -->

@@ -12,8 +12,8 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7fe6847a158e743a6c9f82c229cee4347cc94a675b9bf9d35722db1e3c36198b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "2a6ca230f878c9987d36a4a85bae674cb55f22753a9b5d34c29aa375820e64bc"
 ---
 
 # Support Center
@@ -32,7 +32,7 @@ sha256: "7fe6847a158e743a6c9f82c229cee4347cc94a675b9bf9d35722db1e3c36198b"
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/call-tools-in-parallel.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "097e72998dc713030a74f6ef689eb6e4486c3cc5b9e8ac12995bb5a1ed57cdf4"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "4e33a29b89bdba737049fd6f96e7fae280c513d88e586223a031a18604a239e7"
 ---
 
 # Call Tools in Parallel
@@ -106,7 +106,7 @@ export async function continueConversation(history: Message[]) {
 
   const { text, toolResults } = await generateText({
     model: 'openai/gpt-5.4',
-    system: 'You are a friendly weather assistant!',
+    instructions: 'You are a friendly weather assistant!',
     messages: history,
     tools: {
       getWeather: {

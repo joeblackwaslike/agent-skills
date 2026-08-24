@@ -16,8 +16,8 @@ related:
 summary: Stream Anthropic Messages API responses token by token as they are generated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4015ecba499b3114f240124482d895041a9c0d3be2e98fa7877fec2e3be53df4"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4d8bd00e373bafa2e0865fb8a307c62609ccf6daedeb4d337b48df191352ce10"
 ---
 
 # Streaming
@@ -38,6 +38,7 @@ Set `stream: true` on a [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-mess
 - [Streaming](https://chat-sdk.dev/docs/streaming?from=related) — Stream real-time text responses from AI models and other async sources to chat platforms.
 - [Processing Data Chunks](https://vercel.com/kb/guide/processing-data-chunks?from=related) — Learn how to create an API endpoint that processes data chunks.
 - [Stream Protocols](https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol?from=related)
+- [Create Chat (Streaming)](https://v0.app/docs/api/v2/reference/chats/create-chat-streaming?from=related) — Creates a new chat with a user message and returns a Server-Sent Events stream. Events include initial chat state, title
 - [Streaming](https://vercel.com/docs/functions/streaming-functions?from=related) — Learn how to stream responses from Vercel Functions.
 - [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 

@@ -16,8 +16,8 @@ related:
 summary: "With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top referrers, and demographics."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "256cc243d3584fd57bd8276a99c0c9f37fd5ce8932fa57ca7feb4762d80431c8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7f9c5d6ce9b376674501af6df74f3c74905675941d88e3daf8c55c034b0cb326"
 ---
 
 # Vercel Web Analytics
@@ -30,6 +30,7 @@ sha256: "256cc243d3584fd57bd8276a99c0c9f37fd5ce8932fa57ca7feb4762d80431c8"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deployments](https://v0.app/docs/deployments?from=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
@@ -39,7 +40,7 @@ sha256: "256cc243d3584fd57bd8276a99c0c9f37fd5ce8932fa57ca7feb4762d80431c8"
 - [Privacy](https://vercel.com/docs/speed-insights/privacy-policy?from=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 - [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Vercel Agent](https://vercel.com/docs/agent?from=related) — Use Vercel Agent to chat with your dashboard, investigate production issues, review code, and approve actions
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
 
 Full cross-link map for this page: [/docs/analytics.graph.md](/docs/analytics.graph.md)
 <!-- /docsgraph:related -->

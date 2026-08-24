@@ -16,8 +16,8 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "85fdfb01fa8cdf9934dbe377865bac8c5d027be145fd45e7201197d47e9486a7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6acc2255e9fd2fe32a60cc31e503d2dc6b70d6424afe59e19cb72f5ce6bfba5a"
 ---
 
 # Cron Jobs
@@ -36,7 +36,6 @@ sha256: "85fdfb01fa8cdf9934dbe377865bac8c5d027be145fd45e7201197d47e9486a7"
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [Schedules](https://eve.dev/docs/schedules?from=related) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
 - [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.

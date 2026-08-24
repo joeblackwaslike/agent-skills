@@ -2,8 +2,8 @@
 title: "User"
 description: The authenticated user resource in the DoltHub v2 API.
 source: "https://www.dolthub.com/docs/products/dolthub/api/v2/user.md"
-fetched_at: "2026-07-13T06:56:02.638Z"
-sha256: "41b51ca224ff13e6c79f10d62e4d7edeeef79947c0c0ef901266611b7db74892"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "1b15df7c3b8dc29b4c84a7ad00ada89e0cc5fdd643a0dc44818814057a5528a1"
 ---
 
 # User
@@ -27,10 +27,10 @@ curl -X GET 'https://www.dolthub.com/api/v2/user' \
 
 | Status | Description | Schema |
 |--------|-------------|--------|
-| `200` | The authenticated user's profile. | [`User`](models#model-user) |
-| `401` | Authentication credentials were missing or invalid. | [`Problem`](models#model-problem) |
-| `405` | The HTTP method is not supported for this resource. | [`Problem`](models#model-problem) |
-| `500` | An unexpected server error occurred. | [`Problem`](models#model-problem) |
+| `200` | The authenticated user's profile. | [`User`](/products/dolthub/api/v2/models#model-user) |
+| `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/dolthub/api/v2/models#model-problem) |
+| `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/dolthub/api/v2/models#model-problem) |
+| `500` | An unexpected server error occurred. | [`Problem`](/products/dolthub/api/v2/models#model-problem) |
 
 **Example response `200`**
 

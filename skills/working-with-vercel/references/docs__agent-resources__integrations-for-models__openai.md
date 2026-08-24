@@ -13,8 +13,8 @@ related:
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e161bfb61d3f0886a61bb84b8ffa0307f50ad911df5ab37e80d4eab4e2c2c79e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "173fa8bbfd69205cbf46c245c0d693c00e4f827f64809864009bcd482b3f886d"
 ---
 
 # Vercel & OpenAI Integration
@@ -27,6 +27,7 @@ Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI models](https://v0.app/docs/ai-models?from=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [xAI](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related) — Learn how to add the xAI native integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
 - [Together AI](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related) — Learn how to add Together AI connectable account integration with Vercel.

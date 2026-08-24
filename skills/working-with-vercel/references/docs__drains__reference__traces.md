@@ -14,8 +14,8 @@ related:
 summary: Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/traces.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "adf6798fac62357ea92b7ceeaeeaf17589e69aa1ba610f426cfe670fae7e15f0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7486acd7f3a9da47cbc5c8792075aea982b4f6b6bc206bb9b2ad840f44227285"
 ---
 
 # Trace Drains Reference
@@ -74,7 +74,7 @@ Vercel sends traces in binary protobuf format over OTLP/HTTP. This format is mor
 
 Sampling rules control how much trace data each drain forwards so you can manage observability depth and spend. Add sampling rules to define how much data reaches your destination:
 
-1. If no rules exist, click **Add sampling rule**.
+1. If no rules exist, click **Add Sampling Rule**.
 2. Choose the environment you want to sample from.
 3. Set the sampling percentage.
 4. (Optional) Specify a request path prefix. Leave it blank to apply the rule to every path.
@@ -85,6 +85,8 @@ Example workflows:
 - Static coverage: always collect **5%** from `/docs` so you can spot regressions on a static documentation site.
 
 Rules run from top to bottom. Requests that match a rule use that rule’s sampling rate, and any other requests are dropped. If you do not add rules, the drain forwards **100%** of data to the destination.
+
+For how sampling decisions are made, including per-trace hashing and rule precedence, see [Sampling](/docs/tracing#sampling).
 
 ## Attribute truncation
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/httpstat.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f14742bbde0be8b259620acd09349f43da1e8e4913c821334bcf926651c112ad"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "db9f2b4113964a6c4cb23da2c11326341d0e64916a15e284b0f7b0cb8cfac35c"
 ---
 
 # vercel httpstat
@@ -32,9 +32,9 @@ sha256: "f14742bbde0be8b259620acd09349f43da1e8e4913c821334bcf926651c112ad"
 
 - [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/cli/httpstat.graph.md](/docs/cli/httpstat.graph.md)
 <!-- /docsgraph:related -->
@@ -101,7 +101,7 @@ vercel httpstat /api/data -- -n 10
 
 When you run `vercel httpstat`:
 
-1. The CLI finds your linked project (or you can specify one with [`--scope`](/docs/cli/global-options#scope))
+1. The CLI finds your linked project (or you can specify one with [`--project`](/docs/cli/global-options#project))
 2. It gets the latest production deployment URL (or uses the deployment you specified)
 3. It retrieves or generates a deployment protection bypass token
 4. It runs the `httpstat` tool with the bypass token in the `x-vercel-protection-bypass` header

@@ -17,8 +17,8 @@ related:
 summary: Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and how to run locally and in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/elysia.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1b93fe8263d04c0704bf5b8f9bdf2c545b29341caca0917dadee27bafc327c95"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9bc4823c8a762f3073f9dca3d2db3caaad24bbe59dc98462e4ffd6389f9159c2"
 ---
 
 # Elysia on Vercel
@@ -151,7 +151,7 @@ To use the Bun runtime on Vercel, configure the runtime in `vercel.json`:
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "bunVersion": "1.x"
+  "bunVersion": "1.4.x"
 }
 ```
 

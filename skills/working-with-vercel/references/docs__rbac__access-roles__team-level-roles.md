@@ -15,8 +15,8 @@ related:
 summary: Learn about the different team level roles and the permissions they provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/team-level-roles.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "502fbcd14493c15760cccc0368a1f476606dd59a3a378b628e5f61df2cd130fc"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ca33b6c64db2e630aedc729d377d758272b61afb819188bc781afeb2cccf4f19"
 ---
 
 # Team Level Roles
@@ -31,7 +31,8 @@ sha256: "502fbcd14493c15760cccc0368a1f476606dd59a3a378b628e5f61df2cd130fc"
 
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related) — Learn about the project level roles and their permissions.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Extended Permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions?from=related) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related) — Learn how to configure Directory Sync for your Vercel Team.

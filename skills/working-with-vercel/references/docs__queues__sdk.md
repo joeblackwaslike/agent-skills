@@ -15,8 +15,8 @@ related:
 summary: Publish and consume messages with the @vercel/queue SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4c9a6e0a06b51afec99f1c11cde00f07b003eed3f501ca332ebd4edfbda6db73"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8523c58db2f25308f6fce34cddba54008b804730f3c5656ba94dea052de7ba50"
 ---
 
 # Vercel Queues: JS SDK Reference
@@ -32,8 +32,8 @@ The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume 
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
 - [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Dramatiq](https://vercel.com/docs/frameworks/backend/dramatiq?from=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 - [API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related) — Learn about available APIs when working with Vercel Functions.
-- [Workflows](https://vercel.com/docs/workflows?from=related) — Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents w
 
 Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md)
 <!-- /docsgraph:related -->

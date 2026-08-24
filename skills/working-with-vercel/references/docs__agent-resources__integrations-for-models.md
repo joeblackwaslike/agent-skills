@@ -16,8 +16,8 @@ related:
 summary: Integrate powerful AI services and models seamlessly into your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cf313c8cce4dc0dca5d074e539d092d94f7f74704581f1da2a72577215adcadf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b92c44311de75f6c81993da14f706b2994ad6bbdc16560eaa94b8f56939c7868"
 ---
 
 # Build with AI on Vercel
@@ -30,12 +30,13 @@ AI services and models help enhance and automate the building and deployment of 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI models](https://v0.app/docs/ai-models?from=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 - [Pydantic AI](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
 - [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
-- [AI Gateway](https://vercel.com/docs/ai-gateway?from=related) — AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with text, image, and video
+- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models.graph.md](/docs/agent-resources/integrations-for-models.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter what tool you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f1c61f892b6db0dcc3260f7fa4fa9a687f0de4bcc00777d23cebb23026798666"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "79da04a5aee77b6aca2322a552bf79a2585f6617109c892c9e9f652ae417f1e9"
 ---
 
 # Frameworks on Vercel
@@ -37,9 +37,9 @@ Vercel has first-class support for [a wide range of the most popular frameworks]
 - [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Configuring a Build](https://vercel.com/docs/builds/configure-a-build?from=related) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [vercel init](https://vercel.com/docs/cli/init?from=related) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 - [Fluid Compute](https://vercel.com/docs/fluid-compute?from=related) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 
 Full cross-link map for this page: [/docs/frameworks.graph.md](/docs/frameworks.graph.md)
 <!-- /docsgraph:related -->

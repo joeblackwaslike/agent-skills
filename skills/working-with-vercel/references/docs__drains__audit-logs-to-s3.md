@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-s3.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "20044c8a395b30c4d2f5069eb9ee0c6dddb2d621881b8bacd340ecb5cdeebaa5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6604db7c62c7ff7e3cce7924a8508fb40460bf6609f400d5a0f16b2532ab77e5"
 ---
 
 # Drain Audit Logs to S3
@@ -31,7 +31,7 @@ sha256: "20044c8a395b30c4d2f5069eb9ee0c6dddb2d621881b8bacd340ecb5cdeebaa5"
 
 - [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk?from=related) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \(HEC\).
+- [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk?from=related) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
 - [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 

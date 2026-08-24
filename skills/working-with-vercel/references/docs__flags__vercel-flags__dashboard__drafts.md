@@ -16,8 +16,8 @@ related:
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d53f8bdf86e345f837ab063eafddde7ebee82c1c94135c287c4b39934e691b69"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7493c44d63cf669d6a3799ec9b97150e0abfaaf590e27f31946682d23b13f5e7"
 ---
 
 # Draft Flags
@@ -30,12 +30,14 @@ Drafts are flags that Vercel detects in your code but haven't been created in th
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
-- [Roll Out a Feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/drafts.graph.md](/docs/flags/vercel-flags/dashboard/drafts.graph.md)
 <!-- /docsgraph:related -->

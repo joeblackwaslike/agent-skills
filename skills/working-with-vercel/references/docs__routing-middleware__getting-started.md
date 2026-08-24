@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1b75115882dff3cdf7f069c868bcd9bc6da059c3958b8061e437c20d371135a4"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ab53c9170b3c28984f401e30c2aa979fe3f157554ba8c2330975b5f662e63a33"
 ---
 
 # Getting Started with Routing Middleware
@@ -37,8 +37,8 @@ Routing Middleware lets you to run code before your pages load, giving you contr
 - [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Project Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
 
 Full cross-link map for this page: [/docs/routing-middleware/getting-started.graph.md](/docs/routing-middleware/getting-started.graph.md)
 <!-- /docsgraph:related -->

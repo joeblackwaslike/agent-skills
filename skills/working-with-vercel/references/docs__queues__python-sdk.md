@@ -14,8 +14,8 @@ related:
 summary: Publish and consume messages with the Vercel Queues Python SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/python-sdk.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1e540f9804e908d8147d6fa34457eb8cdc22fa4bcc43a3c267dd9c02011eadcf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "de23d790e8abf7cae928fb48fff2a00a804941eee43cf7e95414b15f1a06217c"
 ---
 
 # Vercel Queues: Python SDK Reference
@@ -29,13 +29,14 @@ The `vercel-queue` package lets Python apps publish and consume Vercel Queues me
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
+- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
-- [Slack](https://eve.dev/docs/channels/slack?from=related) — Reach your agent from Slack app mentions and DMs with Vercel Connect-managed credentials, threaded replies, and interact
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Observability](https://vercel.com/docs/queues/observability?from=related) — Monitor queue throughput, message age, and consumer performance to optimize your queue-based workflows.
 - [Workflows](https://vercel.com/docs/workflows?from=related) — Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents w
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/queues/python-sdk.graph.md](/docs/queues/python-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -102,7 +103,6 @@ from vercel.queue import (
     QueueClient,
     Topic,
     accept_and_handle,
-    asgi_app,
     poll,
     poll_and_handle,
     send,
@@ -114,7 +114,6 @@ from vercel.queue import (
 | ------------------- | ----------------------------------------------------------------- |
 | `send`              | Publish one message with the default async client                 |
 | `subscribe`         | Register a function as a typed queue subscriber                   |
-| `asgi_app`          | Create an ASGI app that dispatches push callbacks to subscribers  |
 | `accept_and_handle` | Dispatch a push callback body and headers to subscribers          |
 | `poll_and_handle`   | Run an async polling loop for one registered subscriber           |
 | `poll`              | Poll one batch and yield `Delivery[T]` objects                    |
@@ -392,20 +391,6 @@ Subscribers receive a `Message[T]`. Use `message.payload` for the deserialized p
 | `visibility_deadline`  | `datetime \| None` | Current processing deadline                      |
 
 ### Manual push handling
-
-Use `asgi_app()` to create a standalone ASGI callback app that dispatches deliveries to registered subscribers.
-
-```python filename="worker.py"
-from vercel.queue import asgi_app, subscribe
-
-
-@subscribe(topic="orders")
-async def fulfill_order(order: dict[str, object]) -> None:
-    await process_order(order)
-
-
-app = asgi_app()
-```
 
 Use `accept_and_handle` when you need to route a callback through an existing ASGI framework. It accepts the callback body as bytes, a byte iterable, or a framework response object, plus the callback request headers. Pass `lease_duration` to change the processing timeout used while handlers run.
 

@@ -13,8 +13,8 @@ related:
 summary: Configure alert rules and notification destinations for Vercel Observability alerts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "361081d050ded7aeff41fb4eef2eee03450d7b989a0558492ee771abb9092b50"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a626cb3bb57587ed6aad1a5cad62291242dd384ede1336715a6c09783e8effb8"
 ---
 
 # Configure alerts
@@ -28,7 +28,7 @@ sha256: "361081d050ded7aeff41fb4eef2eee03450d7b989a0558492ee771abb9092b50"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
-- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related) — Fix out-of-memory \(OOM\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
+- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related) — List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 - [Notifications](https://vercel.com/docs/notifications?from=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.

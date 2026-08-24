@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-chat-transport.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "9addb7ef64a7e3f2afeea3b5a03692283ff5336a019fb9a8ba583ed00e4c8ed8"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "e4fcf4be23439d73d0e30e9b3788a4231091512fcb02ac7c30d71ce6832f5bb0"
 ---
 
 # `WorkflowChatTransport`
@@ -21,7 +21,6 @@ export default function Chat() {
     transport: new WorkflowChatTransport({
       api: '/api/chat',
       maxConsecutiveErrors: 5,
-      initialStartIndex: -50,
     }),
   });
 
@@ -68,7 +67,7 @@ export default function Chat() {
       type: 'number',
       isOptional: true,
       description:
-        'Default chunk index to start from when reconnecting. Negative values read from the end of the stream (e.g., -50 fetches the last 50 chunks), useful for resuming after a page refresh without replaying the full conversation. Can be overridden per-call via reconnectToStream options. Default: 0.',
+        'Default chunk index to start from when reconnecting. Negative values read from the end of a durable UIMessageChunk stream (e.g., -50 fetches the last 50 chunks), useful for resuming after a page refresh without replaying the full conversation. Raw ModelCallStreamPart streams do not support negative UI chunk indexes. Can be overridden per-call via reconnectToStream options. Default: 0.',
     },
     {
       name: 'onChatSendMessage',
@@ -184,7 +183,7 @@ const stream = await transport.reconnectToStream({
       type: 'number',
       isOptional: true,
       description:
-        "Override the start index for this reconnection. Negative values read from the end of the stream. When omitted, falls back to the constructor's initialStartIndex.",
+        "Override the start index for this reconnection. Negative values read from the end when the server's durable stream and tail-index header use the same UIMessageChunk index space. When omitted, falls back to the constructor's initialStartIndex.",
     },
   ]}
 />
@@ -209,6 +208,10 @@ The transport follows this flow:
 When `initialStartIndex` is negative (e.g., `-50`), the transport sends it as-is in the first reconnection request. The server should resolve this to an absolute position and return the `x-workflow-stream-tail-index` response header so the transport can compute the correct position for subsequent retries.
 
 If the header is missing or invalid, the transport falls back to replaying from the beginning (`startIndex=0`).
+
+Negative indexes require a durable server stream whose stored objects are
+already `UIMessageChunk` objects. The raw `WorkflowAgent` conversion shown
+below supports non-negative indexes only.
 
 ## Server Requirements
 
@@ -263,7 +266,7 @@ export default function Chat() {
 }
 ```
 
-### With Callbacks and Page Refresh Recovery
+### With Callbacks
 
 ```tsx
 'use client';
@@ -278,7 +281,6 @@ export default function Chat() {
       new WorkflowChatTransport({
         api: '/api/chat',
         maxConsecutiveErrors: 5,
-        initialStartIndex: -50, // Resume from last 50 chunks on page refresh
         onChatSendMessage: response => {
           const runId = response.headers.get('x-workflow-run-id');
           console.log('Workflow run started:', runId);
@@ -319,6 +321,7 @@ export async function POST(request: Request) {
 
 ```ts filename="app/api/chat/[runId]/stream/route.ts"
 import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createUIMessageStreamResponse } from 'ai';
 import type { NextRequest } from 'next/server';
 import { getRun } from 'workflow/api';
 
@@ -330,22 +333,33 @@ export async function GET(
   const startIndex = Number(
     new URL(request.url).searchParams.get('startIndex') ?? '0',
   );
+  if (!Number.isSafeInteger(startIndex) || startIndex < 0) {
+    return Response.json(
+      { error: 'startIndex must be a non-negative safe integer' },
+      { status: 400 },
+    );
+  }
 
   const run = await getRun(runId);
   const readable = run
-    .getReadable({ startIndex })
-    .pipeThrough(createModelCallToUIChunkTransform());
+    .getReadable({ startIndex: 0 })
+    .pipeThrough(
+      createModelCallToUIChunkTransform({ uiStartIndex: startIndex }),
+    );
 
-  return new Response(readable, {
+  return createUIMessageStreamResponse({
+    stream: readable,
     headers: {
-      'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache',
-      Connection: 'keep-alive',
       'x-workflow-run-id': runId,
     },
   });
 }
 ```
+
+This `WorkflowAgent` endpoint replays raw `ModelCallStreamPart` objects from
+index `0`, then applies the transport's non-negative cursor after converting
+them to `UIMessageChunk` objects. Negative start indexes require a durable
+stream whose stored objects are already `UIMessageChunk` objects.
 
 
 ## Navigation

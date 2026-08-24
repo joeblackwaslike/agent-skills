@@ -17,8 +17,8 @@ related:
 summary: "In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "358d6b0ec03ee02da27c7bd33d98dbc606b15581b18370bddd6df1b01442a0e6"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c29567abc62aaf1817709ebf5039bdb7ee5975a6d5508a81e1a043db46ea5bf1"
 ---
 
 # Monitoring Quickstart
@@ -35,7 +35,7 @@ sha256: "358d6b0ec03ee02da27c7bd33d98dbc606b15581b18370bddd6df1b01442a0e6"
 - [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [Notebooks](https://vercel.com/docs/notebooks?from=related) — Learn more about Notebooks and how they allow you to organize and save your queries.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/query/monitoring/quickstart.graph.md](/docs/query/monitoring/quickstart.graph.md)
 <!-- /docsgraph:related -->

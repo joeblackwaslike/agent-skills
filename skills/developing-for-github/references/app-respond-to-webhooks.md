@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/writing-code-for-a-github-app/building-a-github-app-that-responds-to-webhook-events.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "3b3a6a1373198485bd44d2133b6b894c1f8d09d8937fe7e40ba742a33de83465"
+fetched_at: "2026-08-24T04:42:58.585Z"
+sha256: "9583ab90527bce43ea8b7c6e8375768db24e50b8bb0175a708457084688cc8fe"
 ---
 
 ## Introduction
@@ -311,7 +311,7 @@ For testing, you will use your computer or codespace as a server. Your app will 
 
 Now that your server is running and receiving forwarded webhooks events, test your app by opening a pull request on the repository that you selected when you installed your app.
 
-1. Open a pull request on the repository that you selected when you installed your app. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+1. Open a pull request on the repository that you selected when you installed your app. For more information, see [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request).
 
    Make sure to use the repository that you selected when you installed your app, not the repository where your app's code is stored. For more information, see [Install your app](#install-your-app).
 

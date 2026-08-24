@@ -12,13 +12,13 @@ related:
   - /docs/functions/runtimes/edge
   - /docs/environment-variables/system-environment-variables
   - /docs/functions/configuring-functions/duration
+  - /docs/observability/custom-metrics
   - /docs/caching/cdn-cache/purge
-  - /docs/caching/runtime-cache
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "84cd5926b7b7c54f164c972aae7c5b4e7f24b92d755dd5d3d80a9503c090d9ff"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e1d1f447ab31ce136ae7d37d2a5620ebf47f1e361b68b2ef610bd31d3eeb5606"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -35,13 +35,13 @@ sha256: "84cd5926b7b7c54f164c972aae7c5b4e7f24b92d755dd5d3d80a9503c090d9ff"
 - [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related) — How to create high-performance database connection pools without leaking connections
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Build a real-time chat app with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-chat-websockets?from=related) — Build and deploy a single-room messaging app in Next.js with real-time chat, typing indicators, and live online user cou
-- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote?from=related) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
+- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
+- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related) — Stream real-time data to clients without waiting for workflow completion.
 - [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related) — Configure custom cache handlers for use cache directives in Next.js.
-- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 - [Cache-Control Headers](https://vercel.com/docs/caching/cache-control-headers?from=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md)
@@ -217,6 +217,33 @@ export default {
   },
 };
 ```
+
+### `metric`
+
+**Description**: Records a numeric [custom metric](/docs/observability/custom-metrics) data point from a Vercel Function. You can add string attributes to filter and group the metric in Observability.
+
+| Name         | Type                     | Description                                                        |
+| :----------- | :----------------------- | :----------------------------------------------------------------- |
+| `name`       | `string`                 | The custom metric name, such as `query.duration_ms`.                |
+| `value`      | `number`                 | The numeric value to record.                                       |
+| `attributes` | `Record<string, string>` | Optional attributes for filtering and grouping the custom metric.  |
+
+```ts filename="api/query.ts"
+import { metric } from '@vercel/functions';
+
+metric('query.duration_ms', 100, { plan: 'pro' });
+```
+
+#### Name and attribute requirements
+
+Metric names, attribute names, and attribute values must be non-empty and shorter than 64 bytes. They can contain ASCII letters (`A-Z`, `a-z`), digits (`0-9`), hyphens (`-`), underscores (`_`), periods (`.`), and slashes (`/`). Unsupported characters are automatically replaced with an underscore (`_`). For example, `data+summary` is stored as `data_summary`.
+
+#### Emission limits
+
+- Each call to `metric()` can include up to 50 user-supplied attributes.
+- You can call `metric()` up to 100 times per Vercel Function invocation.
+
+Each call to `metric()` records one data point and counts as one Observability event. Vercel also adds [deployment, request, execution path, and region metadata](/docs/observability/custom-metrics#automatically-collected-metadata) to every data point. See [custom metric pricing](/docs/observability/custom-metrics#pricing) for details.
 
 ### `geolocation`
 

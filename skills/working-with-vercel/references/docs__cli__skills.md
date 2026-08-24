@@ -12,8 +12,8 @@ related:
 summary: Discover agent skills relevant to your project using the vercel skills CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/skills.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4ee2ec066b994c6ab4af162e6eb5db2650bda73a9dd8ad57b12388768e08e315"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "dc08fe1a710f0cb1fa62530f018060df59cca58604d7cd209b3a25b207c52bbb"
 ---
 
 # vercel skills
@@ -30,7 +30,7 @@ The `vercel skills` command surfaces agent skills relevant to your project. When
 - [How to add skills to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-skills?from=related) — Add skills to an eve agent by creating a file under agent/skills/ or installing a published skill with the npx skills ad
 - [Skills](https://eve.dev/docs/skills?from=related) — Author load-on-demand procedures the model pulls into context with load_skill.
 - [Skills](https://vercel.com/docs/agent-resources/skills?from=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
-- [Choosing between TanStack Intent and \`skills\`](https://vercel.com/kb/guide/tanstack-intent-vs-skills?from=related) — TanStack Intent vs skills: compare how each tool sources, versions, and discovers agent skills for AI coding agents, and
+- [Choosing between TanStack Intent and \\`skills\\`](https://vercel.com/kb/guide/tanstack-intent-vs-skills?from=related) — TanStack Intent vs skills: compare how each tool sources, versions, and discovers agent skills for AI coding agents, and
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel agent](https://vercel.com/docs/cli/agent?from=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.

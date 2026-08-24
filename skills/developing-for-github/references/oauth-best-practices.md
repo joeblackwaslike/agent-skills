@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/oauth-apps/building-oauth-apps/best-practices-for-creating-an-oauth-app.md"
-fetched_at: "2026-08-17T04:40:36.479Z"
-sha256: "93c5e0342c160f9e0893d7c5eb194e10695fe977d3dd4674497ec9735b7dc943"
+fetched_at: "2026-08-24T04:42:58.585Z"
+sha256: "21554d6aa464b40805576ea4b815eaea076467e152f86fcaa5663623eaefddb7"
 ---
 
 ## Use a {% data variables.product.prodname_github_app %} instead
@@ -74,7 +74,7 @@ If your app is a native client, client-side app, or runs on a user device (as op
 
 To enforce regular token rotation and reduce the impact of a compromised token, you should configure your {% data variables.product.prodname_oauth_app %} to use access tokens that expire. When your app uses access tokens that expire, you will receive a refresh token when you generate a access token. The access token expires after eight hours, and the refresh token expires after six months. You can use the refresh token to generate a new access token and a new refresh token. For more information, see [AUTOTITLE](/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#expiring-access-tokens).
 
-To test and gradually roll out support for expiring tokens, you can opt in to receive expiring tokens for a sign-in by requesting the `offline_access` scope in addition to your other scopes. If your app supports both {% data variables.product.prodname_ghe_server %} and {% data variables.product.prodname_dotcom_the_website %}, be prepared for the `offline_access` scope to have no effect, because the {% data variables.product.prodname_ghe_server %} instance may not yet support expiring tokens. Check for the presence of the `expires_in` field in the token response to understand if your app has recieved an expiring token.
+To test and gradually roll out support for expiring tokens, you can opt in to receive expiring tokens for a sign-in by requesting the `offline_access` scope in addition to your other scopes. If your app supports both {% data variables.product.prodname_ghe_server %} and {% data variables.product.prodname_dotcom_the_website %}, be prepared for the `offline_access` scope to have no effect, because the {% data variables.product.prodname_ghe_server %} instance may not yet support expiring tokens. Check for the presence of the `expires_in` field in the token response to understand if your app has received an expiring token.
 
 {% endif %}
 

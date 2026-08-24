@@ -16,8 +16,8 @@ related:
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4ea427fc35cf9c298973d043d1fe442e806ce3eb3f5464cb83b992c1c2b41d85"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "13073ae38a1febe951bd67ca4ba10598db0de65c31acd4e70c45caf4e1f1c35a"
 ---
 
 # WebSockets
@@ -31,12 +31,13 @@ sha256: "4ea427fc35cf9c298973d043d1fe442e806ce3eb3f5464cb83b992c1c2b41d85"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Do Vercel Serverless Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related) — Information on Vercel's support for WebSocket connections with Vercel Functions.
+- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Build Figma-style multiplayer cursors with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-board-nextjs-fastapi?from=related) — Learn how to build Figma-style multiplayer cursors with Next.js and FastAPI, kept consistent across multiple Vercel Func
 - [Build a real-time chat app with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-chat-websockets?from=related) — Build and deploy a single-room messaging app in Next.js with real-time chat, typing indicators, and live online user cou
 - [Build Notion-style real-time presence with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-presence-hono-react?from=related) — Build the avatar faces that appear when a teammate opens a page and vanish when they leave. Powered by a Hono WebSocket
-- [Using Express.js with Vercel](https://vercel.com/kb/guide/using-express-with-vercel?from=related) — Learn how to use Express.js in a Serverless environment.
 - [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Nitro](https://vercel.com/docs/frameworks/backend/nitro?from=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/functions/websockets.graph.md](/docs/functions/websockets.graph.md)
 <!-- /docsgraph:related -->

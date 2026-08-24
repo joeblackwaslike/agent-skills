@@ -15,8 +15,8 @@ related:
 summary: Learn how to assign a domain to a different Git branch with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "89f8a5bd6eef916756c0f4e65f95e14dbe934727affa731ac5a581ba8d0e7707"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5d4a77ac7e08ecb4934c78bb94a609170c6dabde993d6850c170200205411275"
 ---
 
 # Assigning a domain to a Git branch
@@ -31,7 +31,7 @@ Every commit pushed to the [Production Branch](/docs/git#production-branch) of y
 
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related) — Information on how to set up a staging environment on Vercel.
-- [Using Non-default Branches for Production Deployments](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch as Production on your Vercel project.
+- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
 - [Why are my branch specific variables and domains not linked to my CLI deployments?](https://vercel.com/kb/guide/branch-variables-and-domains-not-linked-to-cli-deployments?from=related) — How to link CLI deployments to the correct branch for use with custom environments and branch specific domains and envir
 - [Adding a Domain to an Environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.

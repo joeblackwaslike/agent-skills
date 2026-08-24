@@ -13,8 +13,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "988e9b4c9d82a8178514d321235a2fe4196c9e13eb13970d821fff7dfcd183bc"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "71da4bf3d2b67031ab88df8a4377c36b238c54583ae7c263b8825f623a7bcef2"
 ---
 
 # Flags
@@ -28,6 +28,7 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags?from=related)
 - [Web Analytics](https://vercel.com/docs/analytics?from=related) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
 - [Filtering](https://vercel.com/docs/analytics/filtering?from=related) — Learn how filters allow you to explore insights about your website's visitors.

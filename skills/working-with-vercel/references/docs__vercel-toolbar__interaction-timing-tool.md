@@ -15,8 +15,8 @@ related:
 summary: "The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions taking >200ms."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/interaction-timing-tool.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7c9c7cddec0fd8fd23a583e168e6362a64a8166a4a636c3d79801d5f14ece0cd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "20fdfaead3730bbc3df2cb5704816267a37b7adbc098ba0461f19a8ff86f0787"
 ---
 
 # Interaction Timing Tool
@@ -29,7 +29,7 @@ sha256: "7c9c7cddec0fd8fd23a583e168e6362a64a8166a4a636c3d79801d5f14ece0cd"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Optimizing Core Web Vitals in 2024](https://vercel.com/kb/guide/optimizing-core-web-vitals-in-2024?from=related) — Learn how to optimize Core Web Vitals for your site, including INP, CLS, LCP, and more.
+- [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness?from=related) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 - [Layout Shift Tool](https://vercel.com/docs/vercel-toolbar/layout-shift-tool?from=related) — The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 - [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.

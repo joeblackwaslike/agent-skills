@@ -13,8 +13,8 @@ related:
 summary: Learn about the supported Node.js versions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/node-js-versions.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "23ae76cce6271eb16f18f5e765f7c22f5710f1b3fb99d229ead0887545d5313e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "665faad8a6fd85d8770bb1819c3b502d1a61307f00ef642bbef91a477b91c53c"
 ---
 
 # Supported Node.js versions
@@ -30,8 +30,8 @@ sha256: "23ae76cce6271eb16f18f5e765f7c22f5710f1b3fb99d229ead0887545d5313e"
 - [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related) — Learn how to use the latest npm version for Vercel deployments.
 - [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration?from=related) — Learn about advanced configurations for Vercel functions on Vercel.
 - [Package Managers](https://vercel.com/docs/package-managers?from=related) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
-- [Python version](https://vercel.com/docs/functions/runtimes/python/python-version?from=related) — Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
 - [General Settings](https://vercel.com/docs/project-configuration/general-settings?from=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
+- [Python version](https://vercel.com/docs/functions/runtimes/python/python-version?from=related) — Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
 - [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js/node-js-versions.graph.md](/docs/functions/runtimes/node-js/node-js-versions.graph.md)

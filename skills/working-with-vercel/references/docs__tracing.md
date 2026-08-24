@@ -8,16 +8,16 @@ type: how-to
 prerequisites:
   []
 related:
-  - /docs/drains/reference/traces
+  - /docs/tracing/always-on-tracing
   - /docs/tracing/session-tracing
+  - /docs/drains/reference/traces
   - /docs/tracing/instrumentation
   - /docs/logs/runtime
-  - /docs/drains
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "03e907c666c442388839906ea62187fc8214868cf238da1e0fb6982d390cf02a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a93596c30a9b97b29645974672489576583b9db246cb59f0914e5084a1f78083"
 ---
 
 # Tracing
@@ -39,9 +39,9 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [Observability](https://eve.dev/docs/guides/instrumentation?from=related) — Trace an agent with OpenTelemetry in instrumentation.ts, read the workflow run tags eve emits, and debug discovery with
 - [SigNoz](https://ai-sdk.dev/providers/observability/signoz?from=related)
 - [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related) — Inspect a request trace in the terminal or open it in the Vercel Dashboard.
 - [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
 - [Observability](https://vercel.com/docs/eve/observability?from=related) — View agent runs in the Vercel dashboard with no setup, and optionally export AI SDK spans through OpenTelemetry.
+- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -54,16 +54,40 @@ Each step in this process is a **span**. A span is a single unit of work in a tr
 
 ## Automatic instrumentation
 
-Vercel automatically instruments your application without needing any additional code changes. When you have set up [Trace Drains](/docs/drains/reference/traces) or enabled [Session Tracing](/docs/tracing/session-tracing) for your Vercel Functions, you'll be able to visualize traces for:
+Vercel automatically instruments your application without needing any additional code changes. When you enable [always-on tracing](/docs/tracing/always-on-tracing) or start a [session trace](/docs/tracing/session-tracing), you'll be able to visualize traces in the dashboard for:
 
 - **Vercel infrastructure**: You'll be able to view spans showing the lifecycle of each invocation of your Vercel Functions and how it moves through Vercel's infrastructure, including routing, middleware, caching, and other infrastructure details.
 - **Outbound HTTP calls**: The HTTP requests made from your function will be displayed as fetch spans, displaying information on the length of time, location, and other attributes.
 
+To send this trace data to an external observability tool, use [Trace Drains](/docs/drains/reference/traces).
+
 For additional tracing, such as framework spans, you can install the [@vercel/otel](/docs/tracing/instrumentation) package to use the OpenTelemetry SDK. In addition, you can [add custom spans](/docs/tracing/instrumentation#adding-custom-spans) to your traces to capture spans and gain more visibility into your application.
+
+## Always-on tracing
+
+Always-on tracing continuously collects traces from your production and preview traffic, so you can investigate real requests without reproducing them first. You choose how much to collect with sampling rules you set per project.
+
+Unlike [session tracing](/docs/tracing/session-tracing), it captures traces across real user traffic, not just your own browser session. Collection is sampled at the rate you set. It lets you:
+
+- Debug issues after they happen, using traces that were already collected.
+- Catch rare or intermittent errors across real user traffic.
+- Monitor performance for all sampled requests, not just your own session.
+
+> **💡 Note:** Always-on tracing is in Beta and available on all plans.
+
+To turn it on and configure sampling rules, see [Always-on tracing](/docs/tracing/always-on-tracing).
+
+## Sampling
+
+Vercel collects a sample of your traffic based on the sampling rules you configure, evaluates these rules in the order they appear in the table and applies the first one that matches a request, ignoring the rest. Since new rules are added to the bottom, add more specific rules first. Requests that do not match any rule are not sampled.
+
+Sampling applies to a whole trace at once, not to individual spans. For each trace, Vercel makes one keep-or-drop decision and applies it to every span, so you never see a partial trace: a sampled request keeps all of its spans, and a dropped one keeps none.
+
+Always-on tracing and Trace Drains use separate rule sets that behave differently when empty. With no rules, always-on tracing collects nothing, while a [Trace Drain](/docs/drains/reference/traces) forwards all traces. Adding rules to either then limits collection to the requests those rules match. To configure rules, see [Always-on tracing](/docs/tracing/always-on-tracing#enable-always-on-tracing).
 
 ## Session tracing
 
-To visualize traces in your dashboard, you need to enable session tracing using the Vercel toolbar. Session tracing captures infrastructure, framework, and fetch spans for requests made during **your** individual session, making them available in the logs dashboard for debugging and performance monitoring.
+Session tracing captures spans for requests made during **your** individual browser session, using the Vercel toolbar. Use it for targeted, interactive debugging when you want to trace a specific flow you're clicking through, without collecting traces for all of your traffic.
 
 You can initiate a session trace in two ways:
 
@@ -80,7 +104,7 @@ See the [Instrumentation](/docs/tracing/instrumentation) guide to set up OpenTel
 
 ## Viewing traces in the dashboard
 
-Once you have enabled session tracing, you can visualize traces in your dashboard:
+Once traces are being collected, through always-on tracing or a session trace, you can visualize them in your dashboard:
 
 1. Select your team from the team switcher and select your project.
 2. Select the [**Logs** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Flogs\&title=Go+to+Logs).
@@ -93,7 +117,7 @@ Once you have enabled session tracing, you can visualize traces in your dashboar
 
 When you view a trace in the dashboard, you see a visualization of how a request flows through your application and Vercel's infrastructure. Each horizontal bar in the visualization is a **span**, which represents a single unit of work with a start time, end time, and duration.
 
-When session tracing is enabled, your traces display the following types of spans:
+Your traces display the following types of spans:
 
 | Span type                | Visual appearance                    | Description                                                                                                                                                                    |
 | ------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -136,10 +160,11 @@ attribute.
 
 - Each traced request is limited to **10 MB of compressed trace data**.
 - Spans that still exceed **1 MB of compressed data** after [attribute truncation](#attribute-truncation) are dropped.
-- Custom spans from functions using the [Edge runtime](/docs/functions/runtimes/edge) don't appear in Session Tracing or Trace Drains.
+- Custom spans from functions using the [Edge runtime](/docs/functions/runtimes/edge) don't appear in traces, regardless of how they're collected.
 
 ## More resources
 
+- [Always-on Tracing](/docs/tracing/always-on-tracing)
 - [Using Vercel Drains](/docs/drains)
 - [Trace Drains](/docs/drains/reference/traces)
 - [Learn about the Vercel toolbar](/docs/vercel-toolbar)

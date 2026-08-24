@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8e5b66f6e77f3c658e4f9b1ef7700585d51ed8571ac621644bd55216a14bceb0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3e8654a9639e78e4d74d022ea4c34284b577ff771bcffb089bc423cf7b49ead6"
 ---
 
 # SDK Reference
@@ -38,8 +38,8 @@ sha256: "8e5b66f6e77f3c658e4f9b1ef7700585d51ed8571ac621644bd55216a14bceb0"
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Observability](https://vercel.com/docs/connect/observability?from=related) — Learn about observability on Vercel.
-- [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related) — Learn about available APIs when working with Vercel Functions.
+- [SDK Reference](https://vercel.com/docs/kms/ts-sdk-reference?from=related) — API reference for @vercel/kms, including signToken, signMessage, region resolution, and signing the KMS API directly wit
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -130,6 +130,29 @@ console.log(response.tenantId);
 console.log(new Date(response.expiresAt).toISOString());
 ```
 
+## `getConnectorMetadata`
+
+Returns the connector's stable public metadata and provider-specific configuration. Use it when your app needs connector setup values in addition to a runtime token, such as a Snowflake account identifier.
+
+```ts filename="signature"
+function getConnectorMetadata(
+  connector: string,
+  options?: ConnectOptions,
+): Promise<ConnectorMetadata>;
+```
+
+```ts filename="app/lib/snowflake.ts"
+import { getConnectorMetadata } from '@vercel/connect';
+
+const connector = await getConnectorMetadata('snowflake/analytics');
+const accountIdentifier = connector.vendor.accountIdentifier as string;
+
+console.log(connector.name);
+console.log(accountIdentifier);
+```
+
+The calling project and environment must be linked to the connector, just as they must be for `getToken`.
+
 ## Types
 
 ### `ConnectTokenParams`
@@ -139,7 +162,7 @@ console.log(new Date(response.expiresAt).toISOString());
 | `subject`              | `ConnectTokenSubject` (see below)                                    | yes      | Who the token represents. See [Tokens](/docs/connect/concepts/tokens#subject-types).                                                                                              |
 | `installationId`       | `string`                                                             | no       | Which tenant the token is for. Pass `'*'` for a cross-installation token where the connector supports it. See [Installations](/docs/connect/concepts/installations).               |
 | `audience`             | `string[]`                                                           | no       | Provider audience claim. Used when the provider requires a specific audience in the issued token.                                                                                |
-| `scopes`               | `string[]`                                                           | no       | Provider scope strings (`chat:write`, `repo:read`, etc.).                                                                                                                        |
+| `scopes`               | `string[]`                                                           | no       | Provider scope strings (`chat:write`, `repo:read`, etc.). Pass `['*']` to request the connector's default scopes for the selected subject type.                                  |
 | `resources`            | `string[]`                                                           | no       | Resource indicators that narrow the token to a specific provider resource (channel, repo, record set). **SDK-only.**                                                              |
 | `authorizationDetails` | `Array<{ type: string } & Record<string, unknown>>`                  | no       | Rich authorization requests, when the provider supports them. **SDK-only.**                                                                                                       |
 | `validityBufferMs`     | `number`                                                             | no       | Refresh the token if it expires within this many milliseconds. Defaults to `30000` (30 seconds).                                                                                  |
@@ -172,27 +195,75 @@ type ConnectTokenSubject =
 | Field             | Type                                                  | Description                                                                                          |
 | ----------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `token`           | `string`                                              | The access token to send to the provider.                                                            |
+| `tokenId`         | `string \| undefined`                                 | Per-issuance identifier (`stk_…`) for correlating the token with Connect observability and usage data. |
 | `expiresAt`       | `number`                                              | Token expiration as a Unix timestamp in milliseconds.                                                |
 | `connector.id`    | `string`                                              | Opaque internal identifier for the connector.                                                        |
 | `connector.uid`   | `string`                                              | Human-readable connector identifier (the same string you passed as the first arg).                   |
-| `connector.type`  | `string`                                              | The connector type (`slack`, `github`, `oauth`, `snowflake`, `salesforce`, `api-key`, `custom`).     |
+| `connector.type`  | `string`                                              | The connector type (`slack`, `github`, `linear`, `microsoft-entra`, `oauth`, `snowflake`, `salesforce`, `api-key`, `custom`).     |
 | `name`            | `string \| undefined`                                 | Human-readable connector or installation name, when known.                                           |
 | `installationId`  | `string \| undefined`                                 | The installation this token was issued against, when applicable.                                     |
-| `tenantId`        | `string \| undefined`                                 | Provider's own tenant identifier (Slack team ID, GitHub org ID).                                     |
+| `tenantId`        | `string \| undefined`                                 | Provider's own tenant identifier (Slack team ID, GitHub org ID, Microsoft tenant GUID).                                     |
 | `externalSubject` | `string \| undefined`                                 | The subject identifier at the provider (for example, the Slack user ID for a user-subject token).    |
 | `metadata`        | `Record<string, unknown> \| undefined`                | Driver-specific metadata stored during OAuth (varies by provider).                                   |
+| `claims`          | `Record<string, unknown> \| undefined`                | Allow-listed claims propagated from the upstream provider token.                                     |
+
+### `ConnectorMetadata`
+
+| Field       | Type                               | Description                                                                    |
+| ----------- | ---------------------------------- | ------------------------------------------------------------------------------ |
+| `id`        | `string`                           | Opaque internal connector identifier.                                          |
+| `uid`       | `string`                           | Human-readable connector identifier.                                           |
+| `name`      | `string`                           | Connector display name.                                                        |
+| `type`      | `string`                           | Connector type, such as `snowflake` or `oauth`.                                |
+| `service`   | `string`                           | Service the connector integrates with.                                         |
+| `clientUrl` | `string \| undefined`              | Fully qualified service URL, when Vercel Connect can derive it.                 |
+| `createdAt` | `number`                           | Creation time as a Unix timestamp in milliseconds.                             |
+| `updatedAt` | `number`                           | Last update time as a Unix timestamp in milliseconds.                          |
+| `vendor`    | `Record<string, unknown>`          | Provider-specific public configuration stored on the connector.                |
 
 ### `ConnectOptions`
 
-| Field         | Type     | Description                                                                                                  |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------------------ |
-| `vercelToken` | `string` | Override the OIDC token the SDK reads from the environment. Useful for tests and for non-Vercel runtimes.    |
+| Field          | Type      | Description                                                                                               |
+| -------------- | --------- | --------------------------------------------------------------------------------------------------------- |
+| `vercelToken`  | `string`  | Override the OIDC token the SDK reads from the environment. Useful for tests and non-Vercel runtimes.     |
+| `forceRefresh` | `boolean` | For `getToken` and `getTokenResponse`, bypass the in-process cache and revalidate the grant with Vercel Connect. |
+
+## `revokeToken`
+
+Revokes the provider grant for a connector subject and clears the SDK's in-process token cache. Provider support for revocation varies; see [Revocation](/docs/connect/concepts/tokens#revocation).
+
+```ts filename="app/lib/disconnect.ts"
+import { revokeToken } from '@vercel/connect';
+
+await revokeToken('oauth/linear', {
+  subject: { type: 'user', id: 'user_123' },
+});
+```
+
+## `deleteTokenCacheEntry`
+
+Removes one cached token without revoking its provider grant. Pass the same connector and complete request parameters that you used for `getToken` or `getTokenResponse`. The next request for that cache entry fetches a fresh token.
+
+```ts filename="app/lib/retry-token.ts"
+import { deleteTokenCacheEntry, getToken } from '@vercel/connect';
+
+const params = {
+  subject: { type: 'app' as const },
+  scopes: ['chat:write'],
+};
+
+let token = await getToken('slack/acme-slack', params);
+
+// If Slack rejects this token with a 401:
+deleteTokenCacheEntry('slack/acme-slack', params);
+token = await getToken('slack/acme-slack', params);
+```
 
 ## Caching
 
 The SDK maintains an in-process LRU cache with a maximum of 100 entries, keyed by the connector and the full request params. Cached tokens are reused on subsequent calls until they fall inside the `validityBufferMs` window, at which point the next call fetches a fresh one.
 
-There's no public API for bypassing the cache on a single call. To force a refresh, change one of the params. For example, set `validityBufferMs` to a value larger than the token's remaining lifetime.
+Pass `{ forceRefresh: true }` in `ConnectOptions` to bypass the cache for a request. Use `deleteTokenCacheEntry` when you only need to discard one rejected token while preserving normal caching for future calls.
 
 ## Errors
 

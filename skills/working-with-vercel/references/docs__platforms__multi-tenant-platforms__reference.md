@@ -17,8 +17,8 @@ related:
 summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "dbcc036896585aaff7141a1ca9df8501e61fbe4494cb7373f1f8ec564095a162"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "04e319c4e77c1b3498512f9472668180e8dbf33f0cd47a7814cbed18de56532c"
 ---
 
 # Multi-tenant Reference
@@ -318,7 +318,7 @@ All Vercel applications include:
 - **Firewall**: DDoS protection and rate limiting
 - **WAF**: Web Application Firewall
 - **SSL certificates**: Automatic HTTPS for all domains
-- **Edge network**: Global CDN with low latency
+- **CDN**: Global content delivery network with low latency
 
 ### How can I monitor domain operations?
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/minimax.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "1ee8e574489293c11f106564f96d688a2a9b9434ac49ad6f1dde02fd8154c0b7"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "6942642f111a78d5f643a2d3d284ec696b56eba04553bdd37b8f9a08901d459a"
 ---
 
 # MiniMax Provider
@@ -193,6 +193,7 @@ for await (const chunk of result.textStream) {
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

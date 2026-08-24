@@ -16,8 +16,8 @@ related:
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f1f75f581c04153917b61a73bdd5098d51fec8025c67a43b47bba6276d031fe5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "14d6c68c939ea9d85149b411dbe99b8e6d22cd60f622f7ed654de0672369931d"
 ---
 
 # Log Drains Reference
@@ -30,13 +30,14 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related) — Learn how to store logs on Vercel.
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Audit Logs](https://vercel.com/docs/drains/reference/audit-logs?from=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Web Analytics](https://vercel.com/docs/drains/reference/analytics?from=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3?from=related) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 - [Speed Insights](https://vercel.com/docs/drains/reference/speed-insights?from=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
 
 Full cross-link map for this page: [/docs/drains/reference/logs.graph.md](/docs/drains/reference/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -150,7 +151,7 @@ Use the same panel to choose which environments send logs to your drain:
 
 Sampling rules let you control how much log data each drain receives. Use them to send the right volume of data for observability and cost targets. To add sampling rules:
 
-1. If no rules exist, click **Add sampling rule**.
+1. If no rules exist, click **Add Sampling Rule**.
 2. Choose the environment you want to sample from.
 3. Set the sampling percentage.
 4. (Optional) Specify a request path prefix. Leave it blank to apply the rule to every path.

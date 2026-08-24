@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN shields your origin during traffic surges for uncached routes."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/request-collapsing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8a099f2363046702a04021c5406563990ba78140f2342bbbec8b15f2067bdbbb"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "76875f89dac2232530891868720b5a5b5f15d727cf9e7560f73fd798eb905e7d"
 ---
 
 # Request Collapsing
@@ -30,7 +30,7 @@ Vercel uses **request collapsing** to protect uncached routes during high traffi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 - [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low

@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/sandbox/concepts/images
   - /docs/container-registry
+  - /docs/sandbox/concepts/regions
   - /docs/sandbox/cli-reference
   - /docs/sandbox/sdk-reference
-  - /docs/sandbox/python-sdk-reference
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ec168816e26ee6d30fb43b052855b2558ee3d63cdcc02450c215a6f10400fbf8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "51ba5f5e9c4b1415098833b77e9085ef6b9854a517c8d3d8996c2f3411901af2"
 ---
 
 # Understanding Sandboxes
@@ -30,12 +30,13 @@ Vercel Sandboxes provide on-demand, isolated compute environments for running un
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Sandbox](https://v0.app/docs/sandbox?from=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
 - [Run Commands in Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/concepts.graph.md](/docs/sandbox/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -73,7 +74,7 @@ If you already use Docker images to define your environment, store the image in 
 
 When you call `Sandbox.create()`, Vercel provisions a Firecracker microVM on its infrastructure. This microVM boots an Ubuntu 26.04 image, a custom image from VCR, or a saved snapshot.
 
-The sandbox runs on Vercel's global infrastructure, so you don't need to manage servers, scale capacity, or worry about availability. Sandboxes automatically provision in `iad1` region.
+The sandbox runs on Vercel's infrastructure, so you don't need to manage servers, scale capacity, or worry about availability. Sandboxes provision in the `iad1` region by default. You can choose a different region per sandbox or set a project default. See [Regions](/docs/sandbox/concepts/regions).
 
 Here's what happens during the lifecycle:
 
@@ -102,7 +103,7 @@ Once created, you can run commands inside the sandbox. Commands can run in block
 
 ### Stopping a sandbox
 
-Sandboxes automatically stop after a timeout. The default timeout is 5 minutes.
+Sandboxes automatically stop after a timeout. The default timeout is 5 minutes, and the [maximum](/docs/sandbox/pricing#runtime-limits) applies to each [session](/docs/sandbox/concepts/persistent-sandboxes#sandboxes-and-sessions), not to the sandbox itself. A sandbox spans as many sessions as you resume it for: an agent workspace resumed once a day for a week is one sandbox and seven sessions.
 
 Alternatively, you can stop them manually. `stop()` resolves once the VM is fully stopped, and returns the final session state. For persistent sandboxes, the resolved value also includes metadata for the snapshot captured during shutdown.
 
@@ -224,6 +225,7 @@ Sandboxes run on Vercel's secure infrastructure, which maintains SOC 2 Type II c
 - [Persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes): Sandboxes that auto-save state and resume where you left off.
 - [Tags](/docs/sandbox/concepts/tags): Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 - [Drives (Beta)](/docs/sandbox/concepts/drives): Attach persistent filesystem storage to sandboxes and reuse data across sandbox runs.
+- [Regions](/docs/sandbox/concepts/regions): Choose where your sandboxes run and configure failover regions.
 - [Quickstart](/docs/sandbox/quickstart): Run your first sandbox.
 - [Working with Sandbox](/docs/sandbox/working-with-sandbox): Task-oriented guides for common operations.
 - [Authentication](/docs/sandbox/concepts/authentication): Configure SDK authentication.

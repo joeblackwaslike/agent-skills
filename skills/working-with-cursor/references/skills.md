@@ -1,7 +1,7 @@
 ---
 source: "https://cursor.com/docs/skills.md"
-fetched_at: "2026-07-06T05:34:52.640Z"
-sha256: "32d6836220da99f9f851a39031a188a887b6ea038a2730a288e8a3b820ca4064"
+fetched_at: "2026-08-24T04:46:34.901Z"
+sha256: "17cebe1e48a1cea983d4080bf3592e57548f3444b938f498d91cce981626b46b"
 ---
 
 # Agent Skills
@@ -32,7 +32,7 @@ Skills load resources on demand, keeping context usage efficient.
 
 When Cursor starts, it automatically discovers skills from skill directories and makes them available to Agent. The agent is presented with available skills and decides when they are relevant based on context.
 
-Skills can also be manually invoked by typing `/` in Agent chat and searching for the skill name.
+Skills can also be manually invoked by typing `/` in Agent chat and searching for the skill name. A skill invoked this way attaches to one message. To keep a skill on for the whole session, use it as a Custom Mode with Option+Enter (Mac) or Alt+Enter (Windows). See [Custom Modes](https://cursor.com/docs/agent/prompting.md#custom-modes).
 
 ## Built-in Cursor skills
 
@@ -171,6 +171,8 @@ Detailed instructions for the agent.
 | `description`              | Yes      | Describes what the skill does and when to use it. Used by the agent to determine relevance.                                                                                        |
 | `paths`                    | No       | Glob patterns that scope the skill to matching files. Accepts a comma-separated string or a list. When set, the skill is only surfaced when the agent works with files that match. |
 | `disable-model-invocation` | No       | When `true`, the skill is only included when explicitly invoked via `/skill-name`. The agent will not automatically apply it based on context.                                     |
+| `icon`                     | No       | Icon shown on the badge when the skill is used as a [Custom Mode](https://cursor.com/docs/agent/prompting.md#custom-modes). Defaults to a lightning icon.                          |
+| `color`                    | No       | Badge color when the skill is used as a Custom Mode. One of `default`, `green`, `cyan`, `blue`, `purple`, `magenta`, `orange`, `yellow`, `red`, or `brand`.                        |
 | `metadata`                 | No       | Arbitrary key-value mapping for additional metadata.                                                                                                                               |
 
 ## Scoping a skill to specific files
@@ -208,6 +210,21 @@ The legacy `globs` field is still accepted as a fallback for older skills, but n
 ## Disabling automatic invocation
 
 By default, skills are automatically applied when the agent determines they are relevant. Set `disable-model-invocation: true` to make a skill behave like a traditional slash command, where it is only included in context when you explicitly type `/skill-name` in chat.
+
+## Using a skill as a Custom Mode
+
+Any skill with a valid frontmatter block can back a [Custom Mode](https://cursor.com/docs/agent/prompting.md#custom-modes), which keeps the skill in context for the whole session. An active mode shows a badge in the chat input. Style it with the optional `icon` and `color` frontmatter fields:
+
+```markdown
+---
+name: tdd
+description: Test-driven development playbook for this repo.
+icon: beaker
+color: green
+---
+```
+
+Icons come from Cursor's icon set, with names like `code`, `terminal`, `bug`, `git-branch`, `book-open`, `beaker`, `shield`, and `rocket`. Unrecognized icons or colors fall back to the default badge, a lightning icon.
 
 ## Including scripts in skills
 

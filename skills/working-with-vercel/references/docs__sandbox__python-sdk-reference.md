@@ -13,8 +13,8 @@ related:
 summary: Reference for the Vercel Sandbox Python SDK, including sync and async APIs for managing sandboxes, commands, snapshots, and network policy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/python-sdk-reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "46df6283c682419659cbb63fa9ba14661f49d3307237e86360e78e18e65b5da7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c378ab8cf1f1ad7de04a2a07091958e1e7daa941e31bc26ddeab7348b03224d7"
 ---
 
 # Python SDK Reference
@@ -28,8 +28,7 @@ Use the Vercel Sandbox Python SDK to create ephemeral Linux microVMs, run comman
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [Run Commands in Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem

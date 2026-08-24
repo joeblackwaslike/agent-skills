@@ -2,8 +2,8 @@
 title: "Hosted Dolt: Notable Features"
 description: What Hosted Dolt gives you over self-hosting — managed backups, monitoring, and the built-in SQL workbench.
 source: "https://www.dolthub.com/docs/products/hosted/notable-features.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "00e5cf865f4958c77421f292d0bc83bbccc6085ad78a4d14a5a32ec1979584ee"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "101ac4d4e53d30cc229c62f94471aef6e77fc763b60e82e3d6a8c130e0755dd0"
 ---
 
 ## Version Control
@@ -21,21 +21,21 @@ example:
 
 ## Operations
 
-## Logs
+### Logs
 
 While your database is running we collect logging so you can monitor your database. View
 and download logs from any time period from the deployment console.
 
 ![](../../.gitbook/assets/hosted-logs.png)
 
-## Monitoring
+### Monitoring
 
 We also collect metrics on your running database and display graphs so you can see
 performance and usage in real time.
 
 ![](../../.gitbook/assets/hosted-monitoring.png)
 
-## Custom Configuration
+### Custom Configuration
 
 Dolt has a myriad of [configuration options](/sql-reference/server/configuration).
 Most of these can be changed on the running server by setting the appropriate [system
@@ -44,14 +44,14 @@ provides a simple UI for viewing and changing your deployment's custom configura
 
 ![](../../.gitbook/assets/hosted-custom-config.png)
 
-## Replication
+### Replication
 
 Scale your deployment read capacity or create hot failover instances by enabling read replication for your deployment. Configure how many replicas you want. You'll get
 logs and metrics for each server.
 
 ![](../../.gitbook/assets/hosted-replica-graphs.png)
 
-## Backups
+### Backups
 
 Full copies of all your databases are backed up nightly. These backups are kept for 14
 days.
@@ -69,14 +69,14 @@ requires you to create a support ticket.
 
 Learn more about backups [here](https://www.dolthub.com/blog/2022-08-31-hosted-backups/).
 
-## Private Networking
+### Private Networking
 
 Want to use Hosted Dolt, but don't want your database to be reachable through the public internet.
 We support both AWS and GCP private networking.
 
 [Private networking setup instructions](/products/hosted/private-networking)
 
-## Dolt Upgrades
+### Dolt Upgrades
 
 We're releasing [new versions of Dolt](https://github.com/dolthub/dolt/releases) at least
 once per week. Set your service window and your deployed Dolt version will automatically
@@ -87,7 +87,7 @@ get upgraded weekly to the latest available version with minimal downtime.
 Or if you want to upgrade Dolt immediately, you can use the "Update Dolt version now"
 button in the Actions dropdown.
 
-## Enterprise Support
+### Enterprise Support
 
 Hosted Dolt comes with enterprise support. [Our team](https://www.dolthub.com/team) of
 veteran cloud service engineers will keep your database operating smoothly.
@@ -100,7 +100,7 @@ will get back to you within the hour.
 Learn more about our support ticket system
 [here](https://www.dolthub.com/blog/2022-07-13-hosted-dolt-incident-manager/).
 
-## Access Management
+### Access Management
 
 Easily manage access to your deployment using the same permissions model as
 [DoltHub](/concepts/dolthub/permissions) and
@@ -124,7 +124,7 @@ a Branch Permissions UI. See
 
 ## Quick Start
 
-## Trial Instance
+### Trial Instance
 
 To lower the cost barrier, Hosted Dolt offers [trial
 instance](https://www.dolthub.com/blog/2022-10-24-hosted-trial-instances/) for $50 a
@@ -132,7 +132,7 @@ month. For $50 you get a t2.medium running in EC2 with 50GB of storage. There is
 limit for these instances. This isn't a 30-day trial. It's an instance perfect for
 trialing Dolt.
 
-## Connect Using Any MySQL Client
+### Connect Using Any MySQL Client
 
 Dolt is a drop in replacement for MySQL. You can connect to your instance from anywhere
 using your favorite MySQL client using the connectivity information in the Connectivity
@@ -142,7 +142,7 @@ tab of your deployment console.
 
 ## SQL Workbench
 
-## User Friendly Built-In Web GUI
+### User Friendly Built-In Web GUI
 
 Each deployment comes with a built-in SQL workbench, inspired by
 [DoltHub's](https://www.dolthub.com) database page. Browse your data in read-only mode or
@@ -154,31 +154,31 @@ favorite DoltHub features, including [pull requests](#pull-requests), [diffs](#d
 
 Learn more about the SQL workbench [here](/products/hosted/sql-workbench).
 
-## Pull Requests
+### Pull Requests
 
 Create pull requests for human review of changes to your database.
 
 ![](../../.gitbook/assets/hosted-workbench-pr.png)
 
-## Diffs
+### Diffs
 
 Analyze your data and schema changes in a diff and debug issues in specific commits.
 
 ![](../../.gitbook/assets/hosted-workbench-pr-diff.png)
 
-## Commit Log
+### Commit Log
 
 View an audit log of all changes made to your data.
 
 ![](../../.gitbook/assets/hosted-workbench-commit-log.png)
 
-## ER Diagrams
+### ER Diagrams
 
 Visualize the entities in your database as well as the relationship between tables.
 
 ![](../../.gitbook/assets/hosted-workbench-er-diagram.png)
 
-## CSV Upload and Download
+### CSV Upload and Download
 
 Update database tables using an uploaded CSV or the built-in spreadsheet editor.
 
@@ -192,7 +192,7 @@ Learn more in [our blog](https://www.dolthub.com/blog/2023-06-30-hosted-workbenc
 
 ## Dolt Ecosystem
 
-## Clone a Hosted Instance
+### Clone a Hosted Instance
 
 In some cases you might want to clone your database from Hosted Dolt so that you can
 access Dolt's [command line interface](/cli-reference/cli). Hosted provides an option
@@ -203,7 +203,7 @@ Hosted.
 
 Learn more in our [cloning guide](/products/hosted/cloning).
 
-## Use DoltHub as a Remote
+### Use DoltHub as a Remote
 
 To interact with DoltHub from your Hosted instance, you can use DoltHub as a
 [remote](/concepts/dolt/git/remotes). We have [SQL

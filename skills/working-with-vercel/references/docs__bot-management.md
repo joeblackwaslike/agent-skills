@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "720ac9cd5cf7520513ddf2ae9ebc35f1ef67efcf59eb7058ea9ee2cf9092e550"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6a46e7d42addc262ed44c390eb9b00b4f076063722ae0bb8e324e98135419aa8"
 ---
 
 # Bot Management
@@ -37,9 +37,9 @@ Bots generate nearly half of all internet traffic. While many bots serve legitim
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [BotID](https://vercel.com/docs/botid?from=related) — Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 - [Firewall](https://vercel.com/docs/vercel-firewall?from=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
-- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \(WAF\)
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Protection Bypass for Automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation?from=related) — Learn how to bypass Vercel Deployment Protection for automated tooling \(e.g. E2E testing\).
+- [Protection Bypass for Automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation?from=related) — Learn how to bypass Vercel Deployment Protection for automated tooling \\(e.g. E2E testing\\).
+- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/bot-management.graph.md](/docs/bot-management.graph.md)
 <!-- /docsgraph:related -->

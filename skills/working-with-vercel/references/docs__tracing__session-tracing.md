@@ -8,21 +8,21 @@ type: how-to
 prerequisites:
   - /docs/tracing
 related:
+  - /docs/tracing/always-on-tracing
   - /docs/vercel-toolbar/in-production-and-localhost
   - /docs/cli/curl
   - /docs/cli/traces
   - /docs/logs/runtime
-  - /docs/tracing
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "798be58ca2154bf23c1acd0434c4e4022183e832507b623787a3b796e23991ea"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "61ae1bceed9781a06f89cfa52f89e57e0c814cef9ebe4c1d519dc8ac59c6b43d"
 ---
 
 # Session tracing
 
-With session tracing, you can use the Vercel toolbar to trace **your** sessions and view the corresponding spans in the logs dashboard. This is useful for debugging and monitoring performance, and identifying bottlenecks.
+With session tracing, you can use the Vercel toolbar to trace **your** own browser session and view the corresponding spans in the logs dashboard. Use it for targeted, interactive debugging when you want to trace a specific flow you're clicking through.
 
 
 <!-- docsgraph:related -->
@@ -31,15 +31,16 @@ With session tracing, you can use the Vercel toolbar to trace **your** sessions 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
 - [Traces](https://vercel.com/docs/drains/reference/traces?from=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Instrumentation](https://vercel.com/docs/tracing/instrumentation?from=related) — Learn how to instrument your application to understand performance and infrastructure details.
 - [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment?from=related)
 - [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 
 Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
 <!-- /docsgraph:related -->
+
+Session tracing complements [always-on tracing](/docs/tracing/always-on-tracing), which continuously collects sampled traces from your production and preview traffic. Use session tracing when you want to trace only your own requests, without turning on collection for everyone.
 
 A session trace is initiated through the Vercel toolbar, either through a [Page Trace](/docs/tracing/session-tracing#run-a-page-trace) or a [Session Trace](/docs/tracing/session-tracing#run-a-session-trace). It is active for the person who initiated the trace on their browser indefinitely, until it is stopped or cookies are cleared.
 
@@ -99,13 +100,13 @@ You can filter traces using [all the same filters available](/docs/logs/runtime#
 
 ## Usage and pricing
 
-Tracing is available on all plans with a limit up to **1 million spans per month, per team**.
+Session Tracing is available on all plans with a limit of **1 million spans per month, per team**. This limit is separate from Always-on Tracing usage.
 
-| Plan       | Monthly span limit per team |
-| ---------- | --------------------------- |
-| Hobby      | 1 million                   |
-| Pro        | 1 million                   |
-| Enterprise | 1 million                   |
+| Plan       | Monthly Session Tracing span limit per team |
+| ---------- | ------------------------------------------- |
+| Hobby      | 1 million                                   |
+| Pro        | 1 million                                   |
+| Enterprise | 1 million                                   |
 
 ## Attribute truncation
 

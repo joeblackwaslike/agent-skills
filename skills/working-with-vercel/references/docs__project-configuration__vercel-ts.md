@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cd0b0676bfba415b63c72a0e0a881fcd00b9fa54ccdb08079056d53b1175c71b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f7d04c0394be3bd8720caa2ff8e31eddf0110221a9721161230dbc075c5eff5b"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -36,8 +36,8 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 - [headers](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers?from=related) — Add custom HTTP headers to your Next.js app.
 - [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Cache-Control Headers](https://vercel.com/docs/caching/cache-control-headers?from=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md)
@@ -237,7 +237,7 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 **Type:** `string`
 
-**Value:** `"1.x"`
+**Value:** `"1.4.x" | "1.x"`
 
 The `bunVersion` property configures your project to use the Bun runtime instead of Node.js. When set, all [Vercel Functions](/docs/functions) and [Routing Middleware](/docs/routing-middleware) not using the [Edge runtime](/docs/functions/runtimes/edge) will run using the specified Bun version.
 
@@ -245,12 +245,12 @@ The `bunVersion` property configures your project to use the Bun runtime instead
 import type { VercelConfig } from '@vercel/config/v1';
 
 export const config: VercelConfig = {
-  bunVersion: '1.x',
+  bunVersion: '1.4.x',
 };
 ```
 
-> **💡 Note:** Vercel manages the Bun minor and patch versions automatically. `1.x` is the
-> only valid value currently.
+> **💡 Note:** Vercel manages the Bun minor versions automatically. `1.4.x` and `1.x` are the
+> only valid values currently.
 
 When using Next.js with [ISR](/docs/incremental-static-regeneration) (Incremental Static Regeneration), you must also update your `build` and `dev` commands in `package.json`:
 

@@ -12,8 +12,8 @@ related:
 summary: Learn how to remove a deployment using the vercel remove CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/remove.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "07aba0524e3ef95dc2da6c1b481bea59115ab61cf05a1463dfc76797c4562005"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c0189d9b36b899bf630588f824d4a3ab90eeaeda481a6bfe47cd49c3c01bc153"
 ---
 
 # vercel remove
@@ -27,6 +27,7 @@ The `vercel remove` command, which can be shortened to `vercel rm`, is used to r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related) — Information on deleting an individual deployment.
+- [Delete Deployment](https://v0.app/docs/api/v1/reference/deployments/delete?from=related) — Delete a deployment by ID. This will delete the deployment from Vercel.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related) — Learn how to redeploy your project using the vercel redeploy CLI command.

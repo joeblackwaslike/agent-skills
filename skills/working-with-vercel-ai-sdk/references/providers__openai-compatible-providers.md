@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "78d7cc4b120aef10a8c2fe7a67fbc50469c52feb689c9bb8896c74c848fdf77a"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "9705421a0d3b98c916bba70a641c91e466912eab2308660220ef98bb8a88ad08"
 ---
 
 # OpenAI Compatible Providers
@@ -752,6 +752,7 @@ This allows you to access provider-specific information while maintaining a cons
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
+  - [Interfaze](/providers/community-providers/interfaze)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

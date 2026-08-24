@@ -13,8 +13,8 @@ related:
 summary: Learn how to create and manage environment variables for Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/managing-environment-variables.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a5b1b4e6d12369ae0e8bba4316a3b9ce5d04ef0c382194aa3f52a99ff2f15a9e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0cf40db8cb00dff8aba88cd41a998fe2001e619e287388197651b889c6f507a1"
 ---
 
 # Managing environment variables
@@ -28,7 +28,7 @@ Environment variables are key-value pairs configured outside your source code so
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [How do I migrate away from \`vercel.json\` env and build.env?](https://vercel.com/kb/guide/how-do-i-migrate-away-from-vercel-json-env-and-build-env?from=related) — Information on how to migrate your \`vercel.json\` environment variables to the Environment Variables UI.
+- [How do I migrate away from \\`vercel.json\\` env and build.env?](https://vercel.com/kb/guide/how-do-i-migrate-away-from-vercel-json-env-and-build-env?from=related) — Information on how to migrate your \\`vercel.json\\` environment variables to the Environment Variables UI.
 - [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related) — Information on how to set up a staging environment on Vercel.
 - [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Shared Environment Variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can

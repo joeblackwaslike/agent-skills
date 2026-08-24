@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/chrome.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "888919f1518b622f77aa4ae4a4ce33f0d85bc8da4cacdd6e482ffc82199f2b9d"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "273c968b59edfa09693a244cc05df619bb3a58bf6036c91862cd5dc4e41e0efb"
 ---
 
 > ## Documentation Index
@@ -15,6 +15,11 @@ sha256: "888919f1518b622f77aa4ae4a4ce33f0d85bc8da4cacdd6e482ffc82199f2b9d"
 Claude Code integrates with the [Claude in Chrome browser extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) to give you browser automation capabilities from the CLI or the [VS Code extension](/docs/en/vs-code#automate-browser-tasks-with-chrome). Build your code, then test and debug in the browser without switching contexts.
 
 Claude opens new tabs for browser tasks and shares your browser's login state, so it can access any site you're already signed into. Browser actions run in a visible Chrome window in real time. When Claude encounters a login page or CAPTCHA, it pauses and asks you to handle it manually.
+
+The extension collects the tabs Claude opens into a Chrome tab group tied to your session. In local sessions, whether Claude Code closes that group when the session ends depends on how it ends:
+
+* When you type `/clear`, Claude Code closes the group, open pages included, unless work that survives the clear is still running
+* When you switch sessions with a command like `/resume`, exit Claude Code, or run a `/clear` while work that survives it is still running, Claude Code closes the group only if it holds nothing but empty new tabs, so pages you may still be reading stay open
 
 <Note>
   Chrome integration works with Google Chrome and Microsoft Edge. Claude Code also detects the extension and sets up the connection in other Chromium-based browsers, including Brave, Arc, Vivaldi, and Opera. Chrome integration isn't supported in Windows Subsystem for Linux (WSL).
@@ -170,7 +175,7 @@ and attach logs/session.log to it
 
 Three restrictions apply to uploads:
 
-* **Permissions**: Claude can upload a file only when the session is allowed to read it, so [permission rules](/docs/en/settings#permission-settings) that deny `Read` access to a file also block uploading it.
+* **Permissions**: Claude can upload a file only when the session is allowed to read it, so [permission rules](/docs/en/settings-reference#permission-settings) that deny `Read` access to a file also block uploading it.
 * **Size**: a single upload can include up to 10 MB of files in total.
 * **Hard links**: Claude refuses files that have multiple hard links, which is common inside package-manager stores like `node_modules`. Copy the file and upload the copy.
 

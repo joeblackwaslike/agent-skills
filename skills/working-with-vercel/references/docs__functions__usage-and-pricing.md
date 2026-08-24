@@ -12,8 +12,8 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d83a45f08dbbcecd0f84c3330d7327bc42b28f9bbb709fee689c37c5013c209c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "56b810ffe33648f1f025d4fab5fb9e8c24ae9b3e8c23c8743c795d39b2ffcb39"
 ---
 
 # Fluid compute pricing
@@ -33,9 +33,9 @@ Vercel prices Functions on fluid compute based on your plan and resource usage. 
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing?from=related) — Vercel pricing for Managed Infrastructure resources in different regions.
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Dublin, Ireland \(dub1\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \(dub1\) region.
-- [San Francisco, USA \(sfo1\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \(sfo1\) region.
-- [Hong Kong \(hkg1\)](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related) — Vercel pricing for the Hong Kong \(hkg1\) region.
+- [Dublin, Ireland \\(dub1\\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Portland, USA \\(pdx1\\)](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [San Francisco, USA \\(sfo1\\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
 Full cross-link map for this page: [/docs/functions/usage-and-pricing.graph.md](/docs/functions/usage-and-pricing.graph.md)
 <!-- /docsgraph:related -->

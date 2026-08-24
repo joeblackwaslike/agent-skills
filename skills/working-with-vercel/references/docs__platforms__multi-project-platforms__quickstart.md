@@ -17,8 +17,8 @@ related:
 summary: Programmatically host code for user-generated or AI-generated applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "516fed6effe43318b80101ce9e77511748824768ef922ac96b751ac72ff0d055"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "845acfbb8b5ca92790642853f45836e915c403fef3059d50a200bce5b4e21e49"
 ---
 
 # Multi-Project Platforms Quickstart
@@ -37,7 +37,7 @@ Let's explore integrating user generated sites with Vercel, providing a system f
 - [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
-- [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/quickstart.graph.md](/docs/platforms/multi-project-platforms/quickstart.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn about using vercel toolbar on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c1850178e168acdba4a61056cbcf5b1c764fe3f3c79b273927c06ace3bf46761"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6bdb5e692053fc9bb8a88c1382c31dad6a598995e75e444a148cc55cba434fd3"
 ---
 
 # Managing with the Vercel Toolbar
@@ -32,7 +32,7 @@ Using the [Vercel Toolbar](/docs/vercel-toolbar), you can visualize and independ
 
 - [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
 - [Add to Localhost](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related) — Learn how to use the Vercel Toolbar in your local environment.
 - [Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
 

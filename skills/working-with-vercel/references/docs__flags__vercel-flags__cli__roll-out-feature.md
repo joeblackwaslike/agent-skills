@@ -13,8 +13,8 @@ related:
 summary: Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "3e6de32199fc914b5cc459cbc6a16fd0e577e194247085dd868326f01633a913"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a1ec260f7694fa7b99c54905817a85acb291423637b4bd1e9395673e8f68bd68"
 ---
 
 # Rolling out a new feature
@@ -28,6 +28,7 @@ This workflow creates a Boolean feature flag, adds the entity context needed for
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [vercel flags](https://vercel.com/docs/cli/flags?from=related) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.

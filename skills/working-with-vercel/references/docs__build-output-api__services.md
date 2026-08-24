@@ -15,8 +15,8 @@ related:
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cb01197e67b2f0dc6d193a4625eb4c058c36a7f3cbae24e5ce66d958ac0c67b2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "59ab42d6aa107e5bdf763cc58ec63ca2db9685d70bd2768ed1771faaba76e262"
 ---
 
 # Services
@@ -32,7 +32,7 @@ A deployment can contain multiple services. In the Build Output API, each servic
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \(a single framework, one project with Services, or separate pr
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related) — Options available for service configuration.
 - [Experimental Services](https://vercel.com/docs/services/experimental?from=related) — The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.

@@ -13,13 +13,13 @@ related:
 summary: Enable AI models to search the web for current information using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "07a8cf46e6265cd79d49a5811d5436d592ea8900114a8fde1a00c6d3094663a8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6ae00908dbd99fd3664429ec587535338a51559caed1bff43d5faaa974b94e82"
 ---
 
 # Web Search
 
-AI Gateway provides built-in web search capabilities that allow AI models to access current information from the web. This is useful when you need up-to-date information that may not be in the model's training data.
+AI Gateway provides built-in search tools that let AI models access current web information and source-grounded data. Use them when you need information that may not be in the model's training data.
 
 
 <!-- docsgraph:related -->
@@ -28,19 +28,21 @@ AI Gateway provides built-in web search capabilities that allow AI models to acc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent?from=related)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related)
 - [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related)
+- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related)
+- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related)
 - [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related)
+- [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md)
 <!-- /docsgraph:related -->
 
 AI Gateway supports two types of web search:
 
-- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
+- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), [Tako Search](#using-tako-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
 - **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), [Google](#google-web-search), or [SpaceXAI](#spacexai-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
 
 ## Using Perplexity Search
@@ -313,6 +315,118 @@ export async function POST(request: Request) {
 This initial AI Gateway integration supports Exa's standard Search modes and content extraction controls. Deep synthesis modes and generated summaries are not exposed yet because they have separate pricing.
 
 For more details on search parameters and API options, see the [Exa Search API documentation](https://exa.ai/docs/reference/search-api-guide-for-coding-agents).
+
+## Using Tako Search
+
+The `takoSearch` tool searches the web and Tako's curated knowledge graph in
+one call. It returns token-efficient web excerpts and data cards with structured
+data, source attribution, and embed-ready visualizations. Use it when your agent
+needs structured data, citations, or visualizations in addition to web search.
+
+To use Tako Search, import `gateway` from `ai` and pass
+`gateway.tools.takoSearch()` to `tools`:
+
+```typescript filename="tako-search.ts" {9-18}
+import { gateway, generateText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'openai/gpt-5.6-sol',
+    prompt,
+    tools: {
+      tako_search: gateway.tools.takoSearch({
+        effort: 'fast',
+        sources: {
+          data: { count: 2 },
+          web: { count: 2 },
+        },
+      }),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+> **💡 Note:** Tako Search costs $7 per 1,000 instant or fast requests and $24 per 1,000 deep
+> requests. Setting `includeContents` on a source can add a variable inline-data
+> charge. Omit `includeContents` when your agent does not need the underlying card
+> data or webpage text. See [Tako pricing](https://tako.com/pricing/) for current
+> pricing details.
+
+Common configuration options include:
+
+- `effort`: Use `'instant'`, `'fast'`, or `'deep'` to balance latency, retrieval depth, and cost.
+- `sources`: Omit it to search both curated `data` and live `web` sources. Set one or both sources to limit the search. Configure result counts, domains, dates, and categories per source.
+- `sources.web.highlights`: AI Gateway returns query-relevant passages by default. Set `highlights` to `false` to return opening text instead.
+- `includeContents`: Set this on `data` or `web` to inline card data or webpage text for your model.
+- `countryCode`, `locale`, and `timezone`: Localize search and rendered results when your application knows the end user's location.
+
+AI Gateway applies options you set in `takoSearch()` as developer defaults, overriding model-generated values.
+
+For the complete input and output schema, see the [AI SDK AI Gateway reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#tako-search). For search behavior, data cards, and Tako-specific options, see the [Tako Search documentation](https://docs.tako.com/documentation/integrating-tako/search/for-coding-agent).
+
+## Using AI Gateway search tools with Chat Completions
+
+Use AI Gateway server tools from the OpenAI-compatible Chat Completions API. AI
+Gateway executes the search, adds the results to the model context, and returns
+the final answer in the same response.
+
+Choose the search provider by adding one server tool to `tools`:
+
+| Tool type | Search provider | Required config field |
+| --- | --- | --- |
+| `vercel:exa_search` | Exa | `query` |
+| `vercel:parallel_search` | Parallel | `objective` |
+| `vercel:perplexity_search` | Perplexity | `query` |
+| `vercel:tako_search` | Tako | `query` |
+
+Put static tool settings in `config`. Use snake case for config keys. AI Gateway
+uses these values as developer defaults and overrides model-generated values.
+
+For example, this request requires an Exa search before the model answers:
+
+```bash
+curl https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-5.6-sol",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Summarize Vercel AI Gateway in one sentence."
+      }
+    ],
+    "tools": [
+      {
+        "type": "vercel:exa_search",
+        "config": {
+          "query": "Vercel AI Gateway",
+          "type": "instant",
+          "num_results": 1
+        }
+      }
+    ],
+    "tool_choice": "required",
+    "max_tokens": 128
+  }'
+```
+
+Use `tool_choice: "auto"` to let the model decide whether to search. Use
+`"required"` when the request must make an initial search. Do not use a named
+function `tool_choice` for server tools.
+
+AI Gateway executes server tools internally. The final Chat Completions response
+has `finish_reason: "stop"` and does not include client-facing `tool_calls` or raw
+search results. Inspect `choices[0].message.provider_metadata.gateway.gatewayToolCalls`
+for successful search-call counts and the gateway metadata for aggregate cost.
+
+Use distinct names for your own function tools. Do not define a client function
+named `exa_search`, `parallel_search`, `perplexity_search`, or `tako_search` in a
+request that includes the corresponding AI Gateway server tool.
 
 ## Using Parallel Search
 

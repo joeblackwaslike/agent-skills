@@ -2,8 +2,8 @@
 title: Manual Data Curation
 description: Hand-editing a dataset safely — branch, make changes, diff to see exactly what moved, merge when it's right.
 source: "https://www.dolthub.com/docs/introduction/use-cases/manual-data-curation.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "11d04dbe3e1176616e3d8118f4328da8417f6221de480de4d857cd06fb50ae60"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "2137357d230483cda6e366cd5fc6d729275d6a33134075655d40f7870bcb17da"
 ---
 
 ## Problem
@@ -23,7 +23,7 @@ Dolt is a MySQL compatible database so exporting the manually created data to pr
 
 ## Dolt replaces...
 
-## Spreadsheets
+### Spreadsheets
 
 Dolt replaces Excel or Google Sheets for manual data curation. Versioning features allow for more efficient asynchronous collaboration and human review of data changes. The DoltHub interface is still easy enough for non-technical users to contribute and review data changes.
 

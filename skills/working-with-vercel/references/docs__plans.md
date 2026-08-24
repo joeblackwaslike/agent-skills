@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "23298d7af0d2122086e34c0ee3098a33cf929f874eadce304531b0963e314e9a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "67e4aa00c79e08bad6f806b305726bd3694484cb851dd981480c80b25dd7f463"
 ---
 
 # Account Plans on Vercel
@@ -33,9 +33,9 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Pricing and Quotas](https://vercel.com/docs/sandbox/pricing?from=related) — Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply.
 - [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
 - [Pricing](https://vercel.com/docs/analytics/limits-and-pricing?from=related) — Learn about pricing for Vercel Web Analytics.
+- [Usage & Pricing](https://vercel.com/docs/cron-jobs/usage-and-pricing?from=related) — Learn about cron jobs usage and pricing details.
 
 Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md)
 <!-- /docsgraph:related -->

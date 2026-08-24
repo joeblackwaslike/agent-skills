@@ -16,8 +16,8 @@ related:
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "441ff48c35231da20b1d0178579e4de162915496e174ae60e4dacf35fc483d09"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e5b92ad254c9462acd7fcf9c64c61d6635f20645879ba1ae92c4c0d700d1a031"
 ---
 
 # Getting started with Speed Insights
@@ -31,7 +31,7 @@ This guide will help you get started with using Vercel Speed Insights on your pr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
-- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [Getting Started](https://vercel.com/docs/analytics/quickstart?from=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App

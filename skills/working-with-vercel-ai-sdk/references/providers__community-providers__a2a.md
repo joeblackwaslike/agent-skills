@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/a2a.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "d122b081cba8785c9a409aeebf5c7596acd87c60747ded598d9ab2f698ffc46e"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "21eb0cfc9ad495f48b5da620f12d793a339dbc9da0e1cece1f2689a578709a8a"
 ---
 
 # A2A
@@ -147,6 +147,7 @@ console.log(await streamResult.content);
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/fast-mode.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "51b8d11c6741b6d8046d0cf123a54584e84b8ed80b2e79beafd04baa54f2aded"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "54f0b65983afd4ce109f3110ff778779981485d15273f1ab697b83c052f16c5e"
 ---
 
 > ## Documentation Index
@@ -143,7 +143,7 @@ Before offering fast mode, Claude Code checks your organization's fast mode avai
 
 When the check fails, `/fast` reports "Fast mode unavailable due to network connectivity issues", and requests run at standard speed, even when your organization has fast mode enabled. A check that succeeded in the past keeps working from its cached result, so a blocked check mostly affects new installations.
 
-The same connectivity message appears on an open network when the check reaches `api.anthropic.com` but presents a credential Anthropic rejects. A session whose resolved key is a gateway-issued credential, held in [`ANTHROPIC_API_KEY`](/docs/en/llm-gateway-connect#set-the-base-url-and-credential) or produced by an [`apiKeyHelper`](/docs/en/settings#available-settings), sends the check with that key, and the rejected request is reported as a connectivity failure.
+The same connectivity message appears on an open network when the check reaches `api.anthropic.com` but presents a credential Anthropic rejects. A session whose resolved key is a gateway-issued credential, held in [`ANTHROPIC_API_KEY`](/docs/en/llm-gateway-connect#set-the-base-url-and-credential) or produced by an [`apiKeyHelper`](/docs/en/settings-reference#apikeyhelper), sends the check with that key, and the rejected request is reported as a connectivity failure.
 
 To restore fast mode, allowlist direct egress to `api.anthropic.com` where a network block is the cause, or set whichever variable matches how the check fails:
 
@@ -163,7 +163,7 @@ Setting `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` also suppresses the availabil
 
 ### Require per-session opt-in
 
-By default, fast mode a user turns on in an interactive session persists across sessions. To change this, set `fastModePerSessionOptIn` to `true` in any [settings file](/docs/en/settings#settings-files), which causes each session to start with fast mode off and requires users to explicitly enable it with `/fast`. Owners on [Team](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_teams#team-&-enterprise) or [Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_enterprise) plans can deploy it organization-wide through [server-managed settings](/docs/en/server-managed-settings).
+By default, fast mode a user turns on in an interactive session persists across sessions. To change this, set `fastModePerSessionOptIn` to `true` in any [settings file](/docs/en/settings#where-settings-live), which causes each session to start with fast mode off and requires users to explicitly enable it with `/fast`. Owners on [Team](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_teams#team-&-enterprise) or [Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_enterprise) plans can deploy it organization-wide through [server-managed settings](/docs/en/server-managed-settings).
 
 ```json theme={null}
 {

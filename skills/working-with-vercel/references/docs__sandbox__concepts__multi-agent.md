@@ -15,8 +15,8 @@ related:
 summary: Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUser methods, then share files...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/multi-agent.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4d829b50b8bbf4aebe6f139b054c365521e35a533cf0a38fcc4fbfd79852373b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f794c7d99af9f4c19332184ce93f95427edb9ba8fdfa6afd1d337e82a4d01204"
 ---
 
 # Run isolated AI agents in one sandbox
@@ -29,13 +29,14 @@ Run several AI agents in one sandbox, each as its own Linux user with a private 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Sandbox](https://v0.app/docs/sandbox?from=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/multi-agent.graph.md](/docs/sandbox/concepts/multi-agent.graph.md)
 <!-- /docsgraph:related -->
@@ -122,7 +123,7 @@ To run a single command as root, for example, to install a system package, pass 
 
 ```ts filename="index.ts"
 await alice.runCommand({
-  cmd: 'dnf',
+  cmd: 'apt-get',
   args: ['install', '-y', 'git'],
   sudo: true,
 });

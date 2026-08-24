@@ -2,8 +2,8 @@
 title: Garbage Collection
 description: Reclaiming disk space from unreferenced data with dolt gc.
 source: "https://www.dolthub.com/docs/sql-reference/server/garbage-collection.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "85a96619cf4b8e036a676e7b3219c5a4f0653fbed6eee5259a7bc634da46c8f6"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "9c3810370373b92ba6f39bfffdda5d05656e0d5b05a413bafb4549fc13513d19"
 ---
 
 ## How garbage is created
@@ -40,11 +40,11 @@ $ dolt sql --disable-auto-gc
 
 Garbage collection can be run offline using [`dolt gc`](/cli-reference/cli#dolt-gc) or online using [`call dolt_gc()`](/sql-reference/version-control/dolt-sql-procedures#dolt_gc).
 
-## Offline
+### Offline
 
 If you have access to the server where your Dolt database is located and a Dolt sql-server is not running, navigate to the directory your database is stored in and run `dolt gc`. This will cycle through all the needed chunks in your database and delete those that are unnecessary. This process is CPU and memory intensive.
 
-## Online, with Automatic GC disabled
+### Online, with Automatic GC disabled
 
 If you have disabled Automatic GC, you can run garbage collection on your running SQL server using [`call dolt_gc`](/sql-reference/version-control/dolt-sql-procedures#dolt_gc) through any connected client. To prevent concurrent
 writes potentially referencing garbage collected chunks, running

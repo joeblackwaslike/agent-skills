@@ -14,8 +14,8 @@ related:
 summary: Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can link to multiple projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/shared-environment-variables.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "51d387d8648d5de82ab6843aca2c6f47fe1682d28d7744c634c8939a9a10b4d6"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "698c61db911e0d6aca038946854830c68ba664e29c75406e99b281f4ca3cc409"
 ---
 
 # Shared environment variables
@@ -28,6 +28,7 @@ sha256: "51d387d8648d5de82ab6843aca2c6f47fe1682d28d7744c634c8939a9a10b4d6"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Design Systems 2.0](https://v0.app/docs/design-systems-2?from=related) — Teach v0 to build with your team's components, tokens, and design system conventions.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
 - [Create one or more shared environment variables](https://vercel.com/docs/rest-api/environment/create-one-or-more-shared-environment-variables?from=related)

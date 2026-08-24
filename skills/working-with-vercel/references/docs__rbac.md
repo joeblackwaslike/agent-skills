@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7d3f4614ed90bfba372fc58c8ab20e5bc6d5c9cd60b6d86b06c15196223410e6"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "52bd067b47079723f089207be2ed559424177b50d0d7a94299c2f902769a17d8"
 ---
 
 # Role-based access control (RBAC)
@@ -28,6 +28,7 @@ sha256: "7d3f4614ed90bfba372fc58c8ab20e5bc6d5c9cd60b6d86b06c15196223410e6"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related) — Learn how to configure Directory Sync for your Vercel Team.
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member?from=related)

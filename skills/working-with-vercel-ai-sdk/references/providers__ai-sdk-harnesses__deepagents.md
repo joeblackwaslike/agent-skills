@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "2d05b6aa6b527ae7fb6b19c842c4d4cb60cfe5cfdbbfdb8d15609485c139f34f"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "3a332afae705a5a0ab35e322ab19d74a35ba1a50b94d4c81c0ffebbfe21a9f84"
 ---
 
 # Deep Agents Harness
@@ -100,6 +100,12 @@ Settings:
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
   token.
+
+## Structured Output
+
+Deep Agents supports schema-backed [`HarnessAgent` structured output](/docs/ai-sdk-harnesses/harness-agent#generate-structured-output).
+The adapter applies a per-turn LangChain tool strategy and returns the graph's
+validated `structuredResponse` as JSON text.
 
 ## Authentication
 

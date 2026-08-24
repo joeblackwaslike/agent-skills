@@ -16,8 +16,8 @@ related:
 summary: Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/lovable.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "345a94533e3168edbc549237728b97096fee8ed1f00280c74e351b81ae4d588e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fe5ecaa323635b3324ab931f98338674159dcd783572e582e011514256a8c3a9"
 ---
 
 # Deploy a Lovable app on Vercel
@@ -37,6 +37,7 @@ sha256: "345a94533e3168edbc549237728b97096fee8ed1f00280c74e351b81ae4d588e"
 - [How to Deploy an Ember App with Vercel](https://vercel.com/kb/guide/deploying-ember-with-vercel?from=related) — Create an Ember app and deploy it live with Vercel.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/integrations/lovable.graph.md](/docs/integrations/lovable.graph.md)
 <!-- /docsgraph:related -->

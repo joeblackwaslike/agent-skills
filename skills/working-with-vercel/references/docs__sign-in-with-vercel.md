@@ -16,8 +16,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5e6b8938d6af052376b0cb53a839d1ba577c95702451fc577a499b544c37f8e6"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4aacde08e12140b77b17122b12696fb95cd99332cc973c7e73516770f3a5ae28"
 ---
 
 # Sign in with Vercel
@@ -32,12 +32,11 @@ Sign in with Vercel lets people use their Vercel account to log in to your appli
 
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
-- [Application Authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Learn best practices for application authentication Vercel
-- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Two-factor \(2FA\)](https://vercel.com/docs/two-factor-authentication?from=related) — Learn how to configure two-factor authentication for your Vercel account.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel.graph.md](/docs/sign-in-with-vercel.graph.md)
 <!-- /docsgraph:related -->

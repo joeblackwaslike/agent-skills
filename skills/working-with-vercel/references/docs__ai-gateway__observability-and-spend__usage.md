@@ -14,11 +14,11 @@ related:
 summary: Monitor your AI Gateway credit balance, usage, and generation details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ca81b40dcfd635f566988b01f3e4a301c25fc14ec1fba70383bea059037565ef"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c245f6f54f46339eb594cac2dec7240e5e6fbde4409684c148907b595f26b25c"
 ---
 
-# Usage & Billing
+# AI Gateway Usage & Billing
 
 AI Gateway tracks credit balance, total spend, and a record of every generation it serves. You can review this data in the dashboard or query it programmatically through the REST API.
 
@@ -30,9 +30,9 @@ AI Gateway tracks credit balance, total spend, and a record of every generation 
 
 - [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
 - [Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability?from=related) — Learn how to monitor and debug your AI Gateway requests.
+- [Discounts](https://vercel.com/docs/ai-gateway/pricing/discounts?from=related) — Learn about discounts on Vercel.
 - [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
-- [vercel usage](https://vercel.com/docs/cli/usage?from=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/usage.graph.md](/docs/ai-gateway/observability-and-spend/usage.graph.md)
 <!-- /docsgraph:related -->

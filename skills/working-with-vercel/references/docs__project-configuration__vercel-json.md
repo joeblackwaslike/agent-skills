@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6b9e3005bc73c3f7f536e2096dfb198d35131b305970915b2487755e81105776"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "bad62fa540a7e3c910960357ffecf034611884ec69548b30e633c61d58cea0d2"
 ---
 
 # Static Configuration with vercel.json
@@ -31,10 +31,10 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [How to Run Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related) — Pair the Chat SDK with Claude Managed Agents to run a streaming research analyst in a browser chat, using Anthropic's Ch
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
-- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
@@ -100,19 +100,19 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 **Type:** `string`
 
-**Value:** `"1.x"`
+**Value:** `"1.4.x" | "1.x"`
 
 The `bunVersion` property configures your project to use the Bun runtime instead of Node.js. When set, all [Vercel Functions](/docs/functions) and [Routing Middleware](/docs/routing-middleware) not using the [Edge runtime](/docs/functions/runtimes/edge) will run using the specified Bun version.
 
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "bunVersion": "1.x"
+  "bunVersion": "1.4.x"
 }
 ```
 
-> **💡 Note:** Vercel manages the Bun minor and patch versions automatically. `1.x` is the
-> only valid value currently.
+> **💡 Note:** Vercel manages the Bun minor versions automatically. `1.4.x` and `1.x` are the
+> only valid values currently.
 
 When using Next.js with [ISR](/docs/incremental-static-regeneration) (Incremental Static Regeneration), you must also update your `build` and `dev` commands in `package.json`:
 

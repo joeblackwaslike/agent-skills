@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "68bde111b83e3f6e429e00ea343307aac36c44a374778027a7c634836a3394a0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d52903b3427b37c22b48b55593b993e88a2dde8e52bb077c16cbc0de0d0807cc"
 ---
 
 # Snapshots
@@ -34,12 +34,12 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot?from=related)
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots?from=related)
 - [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot?from=related)
+- [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots?from=related)
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md)
 <!-- /docsgraph:related -->
@@ -102,6 +102,14 @@ Call `snapshot()` on a running sandbox:
 
 Pass the snapshot ID when creating a new sandbox:
 
+## Snapshots and regions
+
+A snapshot is stored in the [region](/docs/sandbox/concepts/regions) of the sandbox it was created from. You can only create or resume a sandbox from a snapshot in a region where that snapshot is available. Creating a sandbox from a snapshot in another region fails with a `snapshot_region_mismatch` error.
+
+Snapshots can't be moved between regions. To run an environment in another region, create a new sandbox in that region, run your setup again, and snapshot it there.
+
+Read the regions where a snapshot is available with the `snapshot.regions` accessor in the SDK, or from the `REGIONS` column of `sandbox snapshots list` in the CLI. [Snapshot storage](/docs/sandbox/pricing#snapshot-storage) is billed at the same rate in every region.
+
 ## List snapshots
 
 View all snapshots for your project:
@@ -138,6 +146,7 @@ await sandbox.update({
 ## Snapshot limits
 
 - Snapshots expire **30 days after their last use** by default. See [Snapshot states](#snapshot-states) for how expiration moves a snapshot to `deleted`.
+- Snapshots can only be used in a region where they are available. See [Snapshots and regions](#snapshots-and-regions).
 - See [Pricing and Limits](/docs/sandbox/pricing#snapshot-storage) for storage costs and limits.
 
 

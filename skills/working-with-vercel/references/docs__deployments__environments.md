@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ee199cde7ef81946b41c516f8cb21f575806aab241ff0a200fd5e20b8d538a05"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8611b9ff36d940d70fc8bf2d926b4d6b743f5828592a2aa33733096547a91c7b"
 ---
 
 # Environments
@@ -32,9 +32,9 @@ Vercel provides three default environments—**Local**, **Preview**, and **Produ
 
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Environment Variables](https://vercel.com/docs/environment-variables?from=related) — Learn more about environment variables on Vercel.
 - [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Create a custom environment for the current project.](https://vercel.com/docs/rest-api/environment/create-a-custom-environment-for-the-current-project?from=related)

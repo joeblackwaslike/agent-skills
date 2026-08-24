@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "531961aa11a4d02884f4b3b73cf650ccd145eb07ca2f31c1710d5e6acbc8b16f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1fd52ad36a9f92534291612e9539b5f972fcc43f21de2681d062ccf2365e2ba6"
 ---
 
 # Webhooks API Reference
@@ -33,8 +33,8 @@ Vercel Integrations allow you to subscribe to certain trigger-based events throu
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related)
 - [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action?from=related) — These actions allow integration providers to set up automated tasks with Vercel deployments.
-- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events?from=related)
 - [Instant Rollback](https://vercel.com/docs/instant-rollback?from=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events?from=related)
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/webhooks/webhooks-api.graph.md](/docs/webhooks/webhooks-api.graph.md)

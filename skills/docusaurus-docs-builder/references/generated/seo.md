@@ -1,42 +1,42 @@
 ---
 title: "SEO"
 source: "https://docusaurus.io/docs/seo"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "cf4eb30cfe198a4e605ab2ab944e613af702c9596d346501c0ed0a14bde85239"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "5979c37306279921ab1fec12365cc4b9b3283893c5c79513d9f1a051c634a59a"
 ---
 
 # SEO
 
 Source: https://docusaurus.io/docs/seo
 
-- GuidesSEOVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)SEOVersion: 3.10.2On this page
 # Search engine optimization (SEO)
 
 Docusaurus supports search engine optimization in a variety of ways.
 
-## Global metadata​
+## Global metadata[​](https://docusaurus.io/docs/seo#global-metadata)
 
-Provide global meta attributes for the entire site through the site configuration. The metadata will all be rendered in the HTML `<head>` using the key-value pairs as the prop name and value. The `metadata` attribute is a convenient shortcut to declare `<meta>` tags, but it is also possible to inject arbitrary tags in `<head>` with the `headTags` attribute.
+Provide global meta attributes for the entire site through the [site configuration](https://docusaurus.io/docs/configuration#site-metadata). The metadata will all be rendered in the HTML `<head>` using the key-value pairs as the prop name and value. The `metadata` attribute is a convenient shortcut to declare `<meta>` tags, but it is also possible to inject arbitrary tags in `<head>` with the `headTags` attribute.
 
 docusaurus.config.js
 ```
 export default {  themeConfig: {    // Declare some <meta> tags    metadata: [      {name: 'keywords', content: 'cooking, blog'},      {name: 'twitter:card', content: 'summary_large_image'},    ],  },  headTags: [    // Declare a <link> preconnect tag    {      tagName: 'link',      attributes: {        rel: 'preconnect',        href: 'https://example.com',      },    },    // Declare some json-ld structured data    {      tagName: 'script',      attributes: {        type: 'application/ld+json',      },      innerHTML: JSON.stringify({        '@context': 'https://schema.org/',        '@type': 'Organization',        name: 'Meta Open Source',        url: 'https://opensource.fb.com/',        logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',      }),    },  ],};
 ```
 
-Docusaurus adds some metadata out-of-the-box. For example, if you have configured i18n, you will get a `hreflang` alternate link.
+Docusaurus adds some metadata out-of-the-box. For example, if you have configured [i18n](https://docusaurus.io/docs/i18n/introduction), you will get a [hreflang](https://developers.google.com/search/docs/advanced/crawling/localized-versions) alternate link.
 
-To read more about types of meta tags, visit the MDN docs.
+To read more about types of meta tags, visit [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta).
 
-## Single page metadata​
+## Single page metadata[​](https://docusaurus.io/docs/seo#single-page-metadata)
 
-Similar to global metadata, Docusaurus also allows for the addition of meta-information to individual pages. Follow this guide for configuring the `<head>` tag. In short:
+Similar to [global metadata](https://docusaurus.io/docs/seo#global-metadata), Docusaurus also allows for the addition of meta-information to individual pages. Follow [this guide](https://docusaurus.io/docs/markdown-features/head-metadata) for configuring the `<head>` tag. In short:
 
 my-markdown-page.mdx
 ```
 # A cooking guide<head>  <meta name="keywords" content="cooking, blog" />  <meta name="twitter:card" content="summary_large_image" />  <link rel="preconnect" href="https://example.com" />  <script type="application/ld+json">    {JSON.stringify({      '@context': 'https://schema.org/',      '@type': 'Organization',      name: 'Meta Open Source',      url: 'https://opensource.fb.com/',      logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',    })}  </script></head>Some content...
 ```
 
-Docusaurus automatically adds `description`, `title`, canonical URL links, and other useful metadata to each Markdown page. They are configurable through front matter:
+Docusaurus automatically adds `description`, `title`, canonical URL links, and other useful metadata to each Markdown page. They are configurable through [front matter](https://docusaurus.io/docs/markdown-features#front-matter):
 
 
 ```
@@ -45,15 +45,15 @@ Docusaurus automatically adds `description`, `title`, canonical URL links, and o
 
 When creating your React page, adding these fields in `Layout` would also improve SEO.
 
-tipPrefer to use front matter for fields like `description` and `keywords`: Docusaurus will automatically apply this to both `description` and `og:description`, while you would have to manually declare two metadata tags when using the `<head>` tag.
-infoThe official plugins all support the following front matter: `title`, `description`, `keywords` and `image`. Refer to their respective API documentation for additional front matter support:
-Docs front matter
+tipPrefer to use [front matter](https://docusaurus.io/docs/markdown-features#front-matter) for fields like `description` and `keywords`: Docusaurus will automatically apply this to both `description` and `og:description`, while you would have to manually declare two metadata tags when using the `<head>` tag.
+infoThe official plugins all support the following [front matter](https://docusaurus.io/docs/markdown-features#front-matter): `title`, `description`, `keywords` and `image`. Refer to their respective API documentation for additional [front matter](https://docusaurus.io/docs/markdown-features#front-matter) support:
+[Docs front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)
 
-- Blog front matter
+- [Blog front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#markdown-front-matter)
 
-- Pages front matter
+- [Pages front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages#markdown-front-matter)
 
-For JSX pages, you can use the Docusaurus `<Head>` component.
+For JSX pages, you can use the Docusaurus [<Head>](https://docusaurus.io/docs/docusaurus-core#head) component.
 
 my-react-page.jsx
 ```
@@ -62,11 +62,11 @@ import React from 'react';import Layout from '@theme/Layout';import Head from '@
 
 tipFor convenience, the default theme `<Layout>` component accept `title` and `description` as props.
 
-## Static HTML generation​
+## Static HTML generation[​](https://docusaurus.io/docs/seo#static-html-generation)
 
 Docusaurus is a static site generator—HTML files are statically generated for every URL route, which helps search engines discover your content more easily.
 
-## Image meta description​
+## Image meta description[​](https://docusaurus.io/docs/seo#image-meta-description)
 
 The alt tag for an image tells the search engine what the image is about, and is used when the image can't be visually seen, e.g. when using a screen reader, or when the image is broken. Alt tags are commonly supported in Markdown.
 
@@ -79,39 +79,39 @@ You may also add a title for your image—this doesn't impact SEO much but is di
 
 http://localhost:3000
 
-## Rich search information​
+## Rich search information[​](https://docusaurus.io/docs/seo#rich-search-information)
 
-Docusaurus blogs support rich search results out-of-the-box to get maximum search engine experience. The information is created depending on your meta information in blog/global configuration. In order to get the benefits of the rich search information, fill in the information about the post's publish date, authors, and image, etc. Read more about the meta-information here.
+Docusaurus blogs support [rich search results](https://search.google.com/test/rich-results) out-of-the-box to get maximum search engine experience. The information is created depending on your meta information in blog/global configuration. In order to get the benefits of the rich search information, fill in the information about the post's publish date, authors, and image, etc. Read more about the meta-information [here](https://docusaurus.io/docs/blog).
 
-## Robots file​
+## Robots file[​](https://docusaurus.io/docs/seo#robots-file)
 
-A `robots.txt` file regulates search engines' behavior about which should be displayed and which shouldn't. You can provide it as static asset. The following would allow access to all sub-pages from all requests:
+A `robots.txt` file regulates search engines' behavior about which should be displayed and which shouldn't. You can provide it as [static asset](https://docusaurus.io/docs/static-assets). The following would allow access to all sub-pages from all requests:
 
 static/robots.txt
 ```
 User-agent: *Disallow:
 ```
 
-Read more about the robots file in the Google documentation.
+Read more about the robots file in [the Google documentation](https://developers.google.com/search/docs/advanced/robots/intro).
 
-warning**Important**: the `robots.txt` file does **not** prevent HTML pages from being indexed.To prevent your whole Docusaurus site from being indexed, use the `noIndex` site config. Some hosting providers may also let you configure a `X-Robots-Tag: noindex` HTTP header (GitHub Pages does not support this).To prevent a single page from being indexed, use `<meta name="robots" content="noindex">` as page metadata. Read more about the robots meta tag.
+warning**Important**: the `robots.txt` file does **not** prevent HTML pages from being indexed.To prevent your whole Docusaurus site from being indexed, use the [noIndex](https://docusaurus.io/docs/api/docusaurus-config#noIndex) site config. Some [hosting providers](https://docusaurus.io/docs/deployment) may also let you configure a `X-Robots-Tag: noindex` HTTP header (GitHub Pages does not support this).To prevent a single page from being indexed, use `<meta name="robots" content="noindex">` as [page metadata](https://docusaurus.io/docs/seo#single-page-metadata). Read more about the [robots meta tag](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag).
 
-## Sitemap file​
+## Sitemap file[​](https://docusaurus.io/docs/seo#sitemap-file)
 
-Docusaurus provides the `@docusaurus/plugin-sitemap` plugin, which is shipped with `preset-classic` by default. It autogenerates a `sitemap.xml` file which will be available at `https://example.com/[baseUrl]/sitemap.xml` after the production build. This sitemap metadata helps search engine crawlers crawl your site more accurately.
+Docusaurus provides the [@docusaurus/plugin-sitemap](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap) plugin, which is shipped with `preset-classic` by default. It autogenerates a `sitemap.xml` file which will be available at `https://example.com/[baseUrl]/sitemap.xml` after the production build. This sitemap metadata helps search engine crawlers crawl your site more accurately.
 
-tipThe sitemap plugin automatically filters pages containing a `noindex` robots meta directive.For example, `/examples/noIndex` is not included in the Docusaurus sitemap.xml file because it contains the following page metadata:
+tipThe sitemap plugin automatically filters pages containing a `noindex` [robots meta directive](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag).For example, [/examples/noIndex](https://docusaurus.io/examples/noIndex) is not included in the [Docusaurus sitemap.xml file](https://docusaurus.io/sitemap.xml) because it contains the following [page metadata](https://docusaurus.io/docs/seo#single-page-metadata):
 ```
 <head>  <meta name="robots" content="noindex, nofollow" /></head>
 ```
 
 
-## Human readable links​
+## Human readable links[​](https://docusaurus.io/docs/seo#human-readable-links)
 
-Docusaurus uses your file names as links, but you can always change that using slugs, see this tutorial for more details.
+Docusaurus uses your file names as links, but you can always change that using slugs, see this [tutorial](https://docusaurus.io/docs/create-doc#document-id) for more details.
 
-## Structured content​
+## Structured content[​](https://docusaurus.io/docs/seo#structured-content)
 
 Search engines rely on the HTML markup such as `<h2>`, `<table>`, etc., to understand the structure of your webpage. When Docusaurus renders your pages, semantic markup, e.g. `<aside>`, `<nav>`, `<main>`, are used to divide the different sections of the page, helping the search engine to locate parts like sidebar, navbar, and the main page content.
 
-Most CommonMark syntaxes have their corresponding HTML tags. By using Markdown consistently in your project, you will make it easier for search engines to understand your page content.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+Most [CommonMark](https://spec.commonmark.org/0.30/#atx-headings) syntaxes have their corresponding HTML tags. By using Markdown consistently in your project, you will make it easier for search engines to understand your page content.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/seo.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

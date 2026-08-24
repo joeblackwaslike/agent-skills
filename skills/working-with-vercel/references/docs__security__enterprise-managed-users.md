@@ -11,11 +11,12 @@ related:
   - /docs/saml
   - /docs/directory-sync
   - /docs/security/enterprise-managed-users-account-update
+  - /docs/projects/transferring-projects
 summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in identity of every member. Members sign in through your SAML SSO provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f5dd1dc55b3468463bcefdb69545ec067aaf20d289520e679b3c4b214dea4d45"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ad4b68919ae397c8337944155d8b95b1ddc274dca3557fd36d3df11fe006b1aa"
 ---
 
 # Enterprise Managed Users (EMU)
@@ -28,13 +29,14 @@ Enterprise Managed Users (EMU) lets your team own and control each member's Verc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [Teams](https://v0.app/docs/teams?from=related) — Collaborate with your team on projects with shared resources.
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
-- [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users.graph.md](/docs/security/enterprise-managed-users.graph.md)
 <!-- /docsgraph:related -->
@@ -167,20 +169,101 @@ When someone creates a Vercel account through standard sign-up, Vercel automatic
 
 Resolving these Hobby teams is a one-time cleanup, not an ongoing task. After you enable EMU, new members are provisioned through SSO with a managed account and no Hobby team, and new personal sign-ups with an email on your verified domains are blocked.
 
-When the transition runs, each Hobby team on a verified domain is handled based on what is on it. Hobby teams with no personal content or activity are archived automatically; their owners land directly in their new managed account on their next SSO sign-in. Hobby teams with personal content go through a guided flow where the owner decides what happens to the projects.
+When the transition runs, each Hobby team on a verified domain is handled based on what is on it. Hobby teams with no personal content or activity are archived automatically, and their owners land directly in their new managed account on their next SSO sign-in. Hobby teams with personal content go through a guided flow where the owner decides what happens to the projects.
 
 > **💡 Note:** **Archived means locked, not deleted.** An archived account can no longer be
 > signed in to or used, but its data is preserved. If a member later needs
 > something from an archived account, they can [contact Vercel
 > Support](https://vercel.com/help) to request recovery.
 
-In both cases, the first time a converted member signs in through SSO, a one-time dialog confirms that their account is now managed: a dedicated work account, team-managed settings, and SSO-only sign-in. Members provisioned directly as new managed accounts, who had no existing Vercel account, do not see this dialog.
+In both cases, the first time a converted member signs in through SSO, a one-time dialog confirms that their account is now managed, with a dedicated work account, team-managed settings, and SSO-only sign-in. Members provisioned directly as new managed accounts, who had no existing Vercel account, do not see this dialog.
 
 For a full walkthrough of that flow, see [Transition your Hobby team after EMU enrollment](/docs/security/enterprise-managed-users-account-update).
 
+## Acquisitions and email domain changes
+
+Organizations change shape. You acquire a company, get acquired, or rebrand onto a new email domain. This section explains how to move members to new email addresses, or bring an acquired company's team into your organization, without losing team history or project permissions.
+
+### How it works
+
+Which mechanism applies depends on whether EMU is enabled:
+
+- **Before EMU is enabled**, each member controls their own account email. Changing it is a self-serve action in Account Settings, and because the account itself never changes, all of its history is retained automatically.
+- **After EMU is enabled**, your identity provider is the source of truth. Members and team owners can no longer set emails on your claimed domains from Vercel. Instead, changing a managed member's email or name in your identity provider syncs to their Vercel account automatically. The sync only applies to managed accounts, only for email addresses on your claimed domains, and only when the target address is not already in use by another Vercel account.
+- **During the Hobby team transition**, each member's roles and project access are carried to their new managed account by matching the email address your identity provider asserts at their first SSO sign-in. This is why the order of the steps below matters. Change emails in your identity provider only after members have signed in. Git connections are not migrated. For security, Vercel only records which Git account a member had connected and prompts them to authorize it again on the new account.
+
+### Change email domains before enabling EMU
+
+If EMU is not enabled yet, members update their own email:
+
+1. Add the new email address in Account Settings and verify it.
+2. Set the new address as the primary email.
+3. Optionally, remove the old address.
+
+> **💡 Note:** If a member already created a separate Vercel account with the new email
+> address, they must delete that account first. Email addresses are unique
+> across Vercel, and accounts cannot be merged.
+
+> **💡 Note:** If Directory Sync is enabled, update the member's email in your identity
+> provider as well so both sides stay in sync before you enable EMU. The order
+> doesn't matter. Vercel links directory users by their identity provider ID,
+> not their email address. Changing the email on either side never disconnects
+> the member, and changes from your identity provider keep syncing even while
+> the two emails differ.
+
+Once EMU is enabled, this self-serve path closes, and emails on your claimed domains can only be changed through your identity provider.
+
+### Migrate your organization to a new domain with EMU
+
+To move your members to a new email domain (for example, after an acquisition), complete these steps in order:
+
+#### Step 1: Resolve duplicate accounts
+
+If a member already has a second Vercel account under their target email address, they must delete it to free the address. If the target address is taken when the email sync runs, the sync skips that member's email without an error.
+
+#### Step 2: Add everyone to the Enterprise team
+
+Existing unmanaged accounts cannot join a team after EMU is enabled. Any member who should be part of the organization, including employees of an acquired company, must be a team member before you turn on EMU.
+
+If someone is missed, they still have options after EMU is enabled:
+
+- **If their work email is not attached to an existing Vercel account**, assign them to the team in your identity provider. Vercel provisions a managed account for them automatically at their first SSO sign-in.
+- **If their work email belongs to an existing unmanaged account**, that account must go through the Hobby team transition to become managed. The transition is a one-time action and cannot be run again, so contact your Vercel account team to resolve the account.
+- **If they only need to hand over content**, they can submit a [project transfer request](/docs/projects/transferring-projects) to move projects into the team. Their unmanaged account itself stays outside the organization, so they should move it to a personal email address.
+
+#### Step 3: Move content out of Pro and Hobby teams
+
+EMU is available on Enterprise teams only. If an acquired company's projects live in a Pro team, [transfer them](/docs/projects/transferring-projects) into your Enterprise team first. Project transfers require the Owner or Member role in the destination team.
+
+#### Step 4: Verify and claim both domains
+
+Claim the current domain and the new one in the EMU enable flow. Members' existing emails only count as work emails if their domain is claimed, and the email sync only moves members onto addresses whose domain is claimed.
+
+#### Step 5: Run the Hobby team transition
+
+Run the transition while your identity provider still asserts members' current emails. If you change emails in your identity provider before a member's first SSO sign-in, that member still gets access, but you must grant their roles and project access again manually.
+
+> **⚠️ Warning:** Avoid running a manual directory sync between triggering the transition and
+> your members' first SSO sign-ins. Manual syncs can interfere with the
+> transition's permission carryover.
+
+#### Step 6: Update emails in your identity provider
+
+Once a member has signed in and their account is managed, change their email in your identity provider. The change syncs to their Vercel account automatically, with no action needed from the member.
+
+### Add a second team or an acquired company's team
+
+Enabling EMU does not prevent you from adding more teams later. Managed users can join any team in your organization that is also EMU-enabled. To add a team:
+
+1. Ensure the team is on an Enterprise plan with SAML enforced and Directory Sync connected.
+2. Select it in the EMU enable flow. You must be an Owner of every team you select, and every selected team must meet the prerequisites.
+3. Assign members through your identity provider. Members join with the role from your directory group mapping, with no invitations needed.
+
+If the acquired company keeps its own email domain, verify and claim that domain as an additional EMU domain instead of migrating emails. Members on that domain are then provisioned and managed like any other member. Multi-domain organizations, including dedicated subdomains for contractors, are fully supported.
+
 ## Current limitations
 
-- Personal access tokens belonging to transitioning users are invalidated. Anything that depends on them, such as CI pipelines, scripts, and integrations, must be re-created from the new managed account.
+- Personal access tokens belonging to transitioning users are invalidated. Anything that depends on them, such as CI pipelines, scripts, and integrations, must be re-created from the new managed account. See [After the transition](/docs/security/enterprise-managed-users-account-update#after-the-transition) for the steps and how to move automation to a service account first.
 - Every team member must have an email on a verified domain. There is no way to add a member on an external domain; provision company emails for contractors if needed.
 - Managed users cannot join teams that belong to other organizations.
 

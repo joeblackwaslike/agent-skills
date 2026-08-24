@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for professional teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e8d93ff83af941a1e642d8e896d687d21e7f7e355fef7d68f23bb757dd45d6cf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c9cad8fab44a92c89d0ab5eb09c234e3d1c781ca25492faf144827cf1bfb2169"
 ---
 
 # Vercel Pro Plan
@@ -33,6 +33,7 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Teams](https://v0.app/docs/teams?from=related) — Collaborate with your team on projects with shared resources.
 - [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
@@ -131,7 +132,9 @@ The following features are available as add-ons:
 
 - **[SAML Single Sign-On](/docs/saml)**: $300/month
 - **[HIPAA BAA](/docs/security/compliance#hipaa)**: Healthcare compliance agreements for $350/month
-- **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $150/month
+
+* **[Advanced Deployment Protection](/docs/deployment-protection#advanced-deployment-protection)**: $150/month
+
 - **[Flags Explorer](/docs/flags/flags-explorer)**: $250/month
 - **[Observability Plus](/docs/observability/observability-plus)**: $1.20 per 1 million events
 - **[Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix)**: $100/month

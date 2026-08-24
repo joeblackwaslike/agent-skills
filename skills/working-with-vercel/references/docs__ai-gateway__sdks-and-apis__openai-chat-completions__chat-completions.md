@@ -16,8 +16,8 @@ related:
 summary: Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "999e31b7a71579dafccb8d87de439961897645658c1b664a50e8bec91816dd6a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a15421396916c5f76491260405330515163fc600c2654bf974f90a539d582196"
 ---
 
 # Chat Completions
@@ -31,9 +31,9 @@ Create chat completions using various AI models available through the AI Gateway
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [useCompletion](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-completion?from=related)
-- [Completion](https://ai-sdk.dev/docs/ai-sdk-ui/completion?from=related)
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Create Chat](https://v0.app/docs/api/v2/reference/chats/create-chat?from=related) — Creates a new chat from a prompt. The request blocks until the model response is complete and returns the chat.
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [REST API](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related) — Use the AI Gateway API directly without client libraries using curl and fetch.
 - [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 - [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling?from=related) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.

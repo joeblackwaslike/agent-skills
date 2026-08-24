@@ -11,13 +11,13 @@ related:
   - /docs/pricing/understanding-my-invoice
   - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
-  - /docs/pricing/regional-pricing/cpt1
-  - /docs/pricing/regional-pricing/cle1
+  - /docs/sandbox
+  - /docs/sandbox/pricing
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8f5d2ff08e7de40e949e873621c2bf40cea5e415cbde59d8f62225b666f978aa"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9f97de2b7d0471234df47dce5f642feb8efce6a83363b1af234d5d7eda417c53"
 ---
 
 # Regional Pricing
@@ -30,11 +30,11 @@ When using Managed Infrastructure resources on Vercel, some, but not all, are pr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
 - [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 - [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
 - [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
@@ -49,7 +49,10 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 > **💡 Note:** Active CPU and Provisioned Memory are billed at different rates depending on
 > the region your [fluid compute](/docs/fluid-compute) is deployed. The rates
 > for each region can be found in the [fluid
-> pricing](/docs/functions/usage-and-pricing) documentation.
+> pricing](/docs/functions/usage-and-pricing) documentation. [Vercel
+> Sandbox](/docs/sandbox) compute is also billed by region. See [Sandbox
+> pricing](/docs/sandbox/pricing#regional-pricing) for the rates in the
+> regions where Sandbox is available.
 
 | Resource | Included (Billing Cycle) | On-demand (Billing Cycle) |
 | --- | --- | --- |

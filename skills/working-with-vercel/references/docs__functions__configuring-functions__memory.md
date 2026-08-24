@@ -15,8 +15,8 @@ related:
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "220746b08d13048ff93c3bdf252828e9f47326a730172490512bc68574efa6e2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "76bcf049223e657e4d2613b2cafbba1286d47c14bd714c7bae68f61fc8bb9ffa"
 ---
 
 # Configuring Memory and CPU for Vercel Functions
@@ -29,7 +29,7 @@ The memory configuration of a function determines how much memory and CPU a func
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related) — Fix out-of-memory \(OOM\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
+- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
 - [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu

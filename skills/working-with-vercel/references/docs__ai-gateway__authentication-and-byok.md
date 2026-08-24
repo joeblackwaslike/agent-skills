@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with the AI Gateway and configure your own provider keys.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "697fece4df7d5f8c578ca93597697e6e8751a8c54e2292b8fc8e17027f6b610a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a60555c4a45252ca0f20a893ed0d0871523d1660356187263bbd593847c3a120"
 ---
 
 # Authentication & BYOK
@@ -36,8 +36,8 @@ Every request to AI Gateway requires Vercel authentication. Use an AI Gateway AP
 - [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
 - [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
 - [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related) — Learn how to Sign in with Vercel
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok.graph.md](/docs/ai-gateway/authentication-and-byok.graph.md)
 <!-- /docsgraph:related -->

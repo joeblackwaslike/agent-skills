@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4665cb58feb649e72879b43fe6dbbb38a92bcb722211c52fd7c0506d5731fba7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "cc3dfd4e8fd0a4c9a4afe212b0d45aac4a1bd410c11cc9a80073e6f67e692dcf"
 ---
 
 # REST API Reference
@@ -32,12 +32,13 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs?from=related)
+- [List Usage Events](https://v0.app/docs/api/v2/reference/usage/list-usage-events?from=related) — Lists individual credit usage events. Each event includes the credits charged and, when available, associated token coun
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
 - [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
 - [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
 - [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related) — Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers throu
-- [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
-- [Video Generation](https://vercel.com/docs/ai-gateway/modalities/video-generation?from=related) — Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
+- [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views?from=related)
+- [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md)
 <!-- /docsgraph:related -->

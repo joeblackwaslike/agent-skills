@@ -1,20 +1,20 @@
 ---
 title: "Markdown Code Blocks"
 source: "https://docusaurus.io/docs/markdown-features/code-blocks"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "87491628e6fe716975c60b941f7c6d47801eb98379bb9aab657c040fbfa6de1c"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "d3e996249d54a5ee1da74ccbc722845ace169e040d48129a348f1fc73ebad9b7"
 ---
 
 # Markdown Code Blocks
 
 Source: https://docusaurus.io/docs/markdown-features/code-blocks
 
-GuidesMarkdown FeaturesCode blocksVersion: 3.10.2On this page
+[](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)[Markdown Features](https://docusaurus.io/docs/markdown-features)Code blocksVersion: 3.10.2On this page
 # Code blocks
 
 Code blocks within documentation are super-powered 💪.
 
-## Code title​
+## Code title[​](https://docusaurus.io/docs/markdown-features/code-blocks#code-title)
 
 You can add a title to the code block by adding a `title` key after the language (leave a space between them).
 
@@ -29,16 +29,16 @@ function HelloCodeTitle(props) {  return <h1>Hello, {props.name}</h1>;}
 ```
 
 
-## Syntax highlighting​
+## Syntax highlighting[​](https://docusaurus.io/docs/markdown-features/code-blocks#syntax-highlighting)
 
-Code blocks are text blocks wrapped around by strings of 3 backticks. You may check out this reference for the specifications of MDX.
+Code blocks are text blocks wrapped around by strings of 3 backticks. You may check out [this reference](https://mdxjs.com/docs/) for the specifications of MDX.
 
 
 ```
 ```jsconsole.log('Every repo must come with a mascot.');```
 ```
 
-Use the matching language meta string for your code block, and Docusaurus will pick up syntax highlighting automatically, powered by Prism React Renderer.
+Use the matching language meta string for your code block, and Docusaurus will pick up syntax highlighting automatically, powered by [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer).
 
 http://localhost:3000
 ```
@@ -46,9 +46,9 @@ console.log('Every repo must come with a mascot.');
 ```
 
 
-### Theming​
+### Theming[​](https://docusaurus.io/docs/markdown-features/code-blocks#theming)
 
-By default, the Prism syntax highlighting theme we use is Palenight. You can change this to another theme by passing `theme` field in `prism` as `themeConfig` in your docusaurus.config.js.
+By default, the Prism [syntax highlighting theme](https://github.com/FormidableLabs/prism-react-renderer#theming) we use is [Palenight](https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/prism-react-renderer/src/themes/palenight.ts). You can change this to another theme by passing `theme` field in `prism` as `themeConfig` in your docusaurus.config.js.
 
 For example, if you prefer to use the `dracula` highlighting theme:
 
@@ -57,14 +57,14 @@ docusaurus.config.js
 import {themes as prismThemes} from 'prism-react-renderer';export default {  themeConfig: {    prism: {      theme: prismThemes.dracula,    },  },};
 ```
 
-Because a Prism theme is just a JS object, you can also write your own theme if you are not satisfied with the default. Docusaurus enhances the `github` and `vsDark` themes to provide richer highlight, and you can check our implementations for the light and dark code block themes.
+Because a Prism theme is just a JS object, you can also write your own theme if you are not satisfied with the default. Docusaurus enhances the `github` and `vsDark` themes to provide richer highlight, and you can check our implementations for the [light](https://github.com/facebook/docusaurus/blob/main/website/src/utils/prismLight.ts) and [dark](https://github.com/facebook/docusaurus/blob/main/website/src/utils/prismDark.ts) code block themes.
 
-### Supported Languages​
+### Supported Languages[​](https://docusaurus.io/docs/markdown-features/code-blocks#supported-languages)
 
-By default, Docusaurus comes with a subset of commonly used languages.
+By default, Docusaurus comes with a subset of [commonly used languages](https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/generate-prism-languages/index.ts#L10-L25).
 
 warningSome popular languages like Java, C#, or PHP are not enabled by default.
-To add syntax highlighting for any of the other Prism-supported languages, define it in an array of additional languages.
+To add syntax highlighting for any of the other [Prism-supported languages](https://prismjs.com/#supported-languages), define it in an array of additional languages.
 
 noteEach additional language has to be a valid Prism component name. For example, Prism would map the _language_ `cs` to `csharp`, but only `prism-csharp.js` exists as a _component_, so you need to use `additionalLanguages: ['csharp']`. You can look into `node_modules/prismjs/components` to find all components (languages) available.
 For example, if you want to add highlighting for the PowerShell language:
@@ -102,13 +102,13 @@ src/theme/prism-include-languages.js
 const prismIncludeLanguages = (Prism) => {  // ...  additionalLanguages.forEach((lang) => {    require(`prismjs/components/prism-${lang}`);  });  require('/path/to/your/prism-language-definition');  // ...};
 ```
 
-You can refer to Prism's official language definitions when you are writing your own language definitions.
+You can refer to [Prism's official language definitions](https://github.com/PrismJS/prism/tree/master/components) when you are writing your own language definitions.
 
 When adding a custom language definition, you do not need to add the language to the `additionalLanguages` config array, since Docusaurus only looks up the `additionalLanguages` strings in languages that Prism provides. Adding the language import in `prism-include-languages.js` is sufficient.
 
-## Line highlighting​
+## Line highlighting[​](https://docusaurus.io/docs/markdown-features/code-blocks#line-highlighting)
 
-### Highlighting with comments​
+### Highlighting with comments[​](https://docusaurus.io/docs/markdown-features/code-blocks#highlighting-with-comments)
 
 You can use comments with `highlight-next-line`, `highlight-start`, and `highlight-end` to select which lines are highlighted.
 
@@ -136,9 +136,9 @@ You can set your own background color for highlighted code line in your `src/css
 
 If you also need to style the highlighted code line in some other way, you can target on `theme-code-block-highlighted-line` CSS class.
 
-### Highlighting with metadata string​
+### Highlighting with metadata string[​](https://docusaurus.io/docs/markdown-features/code-blocks#highlighting-with-metadata-string)
 
-You can also specify highlighted line ranges within the language meta string (leave a space after the language). To highlight multiple lines, separate the line numbers by commas or use the range syntax to select a chunk of lines. This feature uses the `parse-number-range` library and you can find more syntax on their project details.
+You can also specify highlighted line ranges within the language meta string (leave a space after the language). To highlight multiple lines, separate the line numbers by commas or use the range syntax to select a chunk of lines. This feature uses the `parse-number-range` library and you can find [more syntax](https://www.npmjs.com/package/parse-numeric-range) on their project details.
 
 
 ```
@@ -156,7 +156,7 @@ prefer commentsPrefer highlighting with comments where you can. By inlining high
 ```
 Below, we will introduce how the magic comment system can be extended to define custom directives and their functionalities. The magic comments would only be parsed if a highlight metastring is not present.
 
-### Custom magic comments​
+### Custom magic comments[​](https://docusaurus.io/docs/markdown-features/code-blocks#custom-magic-comments)
 
 `// highlight-next-line` and `// highlight-start` etc. are called "magic comments", because they will be parsed and removed, and their purposes are to add metadata to the next line, or the section that the pair of start- and end-comments enclose.
 
@@ -186,7 +186,7 @@ You can disable the default line highlighting comments with `magicComments: []`.
 
 Every magic comment entry will contain three keys: `className` (required), `line`, which applies to the directly next line, or `block` (containing `start` and `end`), which applies to the entire block enclosed by the two comments.
 
-Using CSS to target the class can already do a lot, but you can unlock the full potential of this feature through swizzling.
+Using CSS to target the class can already do a lot, but you can unlock the full potential of this feature through [swizzling](https://docusaurus.io/docs/swizzling).
 
 npmYarnpnpmBun
 ```
@@ -207,7 +207,7 @@ bun run swizzle @docusaurus/theme-classic CodeBlock/Line
 
 The `Line` component will receive the list of class names, based on which you can conditionally render different markup.
 
-## Line numbering​
+## Line numbering[​](https://docusaurus.io/docs/markdown-features/code-blocks#line-numbering)
 
 You can enable line numbering for your code block by using `showLineNumbers` key within the language meta string (don't forget to add space directly before the key).
 
@@ -234,9 +234,9 @@ export default function MyComponent(props) {  return <div>Foo</div>;}
 ```
 
 
-## Interactive code editor​
+## Interactive code editor[​](https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor)
 
-(Powered by React Live)
+(Powered by [React Live](https://github.com/FormidableLabs/react-live))
 
 You can create an interactive coding editor with the `@docusaurus/theme-live-codeblock` plugin. First, add the plugin to your package.
 
@@ -338,9 +338,9 @@ def hello_world():  print("Hello, world!")
 class HelloWorld {  public static void main(String args[]) {    System.out.println("Hello, World");  }}
 ```
 
-If you have multiple of these multi-language code tabs, and you want to sync the selection across the tab instances, refer to the Syncing tab choices section.
+If you have multiple of these multi-language code tabs, and you want to sync the selection across the tab instances, refer to the [Syncing tab choices section](https://docusaurus.io/docs/markdown-features/tabs#syncing-tab-choices).
 
-### Docusaurus npm2yarn remark plugin​
+### Docusaurus npm2yarn remark plugin[​](https://docusaurus.io/docs/markdown-features/code-blocks#npm2yarn-remark-plugin)
 
 Displaying CLI commands in both npm and Yarn is a very common need, for example:
 
@@ -361,7 +361,7 @@ pnpm add @docusaurus/remark-plugin-npm2yarn
 bun add @docusaurus/remark-plugin-npm2yarn
 ```
 
-Docusaurus provides such a utility out of the box, freeing you from using the `Tabs` component every time. To enable this feature, first install the `@docusaurus/remark-plugin-npm2yarn` package as above, and then in `docusaurus.config.js`, for the plugins where you need this feature (doc, blog, pages, etc.), register it in the `remarkPlugins` option. (See Docs configuration for more details on configuration format)
+Docusaurus provides such a utility out of the box, freeing you from using the `Tabs` component every time. To enable this feature, first install the `@docusaurus/remark-plugin-npm2yarn` package as above, and then in `docusaurus.config.js`, for the plugins where you need this feature (doc, blog, pages, etc.), register it in the `remarkPlugins` option. (See [Docs configuration](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#ex-config) for more details on configuration format)
 
 docusaurus.config.js
 ```
@@ -376,11 +376,11 @@ And then use it by adding the `npm2yarn` key to the code block:
 ```
 
 
-#### Configuration​
+#### Configuration[​](https://docusaurus.io/docs/markdown-features/code-blocks#npm2yarn-remark-plugin-configuration)
 
 OptionTypeDefaultDescription`sync``boolean``false`Whether to sync the selected converter across all code blocks.`converters``array``'yarn'`, `'pnpm'`The list of converters to use. The order of the converters is important, as the first converter will be used as the default choice.
 
-## Usage in JSX​
+## Usage in JSX[​](https://docusaurus.io/docs/markdown-features/code-blocks#usage-in-jsx)
 
 Outside of Markdown, you can use the `@theme/CodeBlock` component to get the same output.
 
@@ -396,6 +396,6 @@ function HelloCodeTitle(props) {return <h1>Hello, {props.name}</h1>;}
 
 The props accepted are `language`, `title` and `showLineNumbers`, in the same way as you write Markdown code blocks.
 
-Although discouraged, you can also pass in a `metastring` prop like `metastring='{1-2} title="/src/components/HelloCodeTitle.js" showLineNumbers'`, which is how Markdown code blocks are handled under the hood. However, we recommend you use comments for highlighting lines.
+Although discouraged, you can also pass in a `metastring` prop like `metastring='{1-2} title="/src/components/HelloCodeTitle.js" showLineNumbers'`, which is how Markdown code blocks are handled under the hood. However, we recommend you [use comments for highlighting lines](https://docusaurus.io/docs/markdown-features/code-blocks#highlighting-with-comments).
 
-As previously stated, syntax highlighting is only applied when the children is a simple string.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+As [previously stated](https://docusaurus.io/docs/markdown-features/code-blocks#using-jsx-markup), syntax highlighting is only applied when the children is a simple string.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-code-blocks.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

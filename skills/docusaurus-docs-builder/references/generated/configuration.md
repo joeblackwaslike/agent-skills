@@ -1,23 +1,23 @@
 ---
 title: "Configuration"
 source: "https://docusaurus.io/docs/configuration"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "92dba27219ab282c16ff81c8964c9ff486eda3ad69c833fe57a45e7409e44df0"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "f634ba79162c388144882d98df771bb12f81ee0a2dbbe44a5b19c88fd1b80161"
 ---
 
 # Configuration
 
 Source: https://docusaurus.io/docs/configuration
 
-- Getting StartedConfigurationVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Getting Started](https://docusaurus.io/docs/category/getting-started)ConfigurationVersion: 3.10.2On this page
 # Configuration
 
-infoCheck the **`docusaurus.config.js` API reference** for an exhaustive list of options.
+infoCheck the [docusaurus.config.js API reference](https://docusaurus.io/docs/api/docusaurus-config) for an exhaustive list of options.
 Docusaurus has a unique take on configurations. We encourage you to congregate information about your site into one place. We guard the fields of this file and facilitate making this data object accessible across your site.
 
 Keeping a well-maintained `docusaurus.config.js` helps you, your collaborators, and your open source contributors to be able to focus on documentation while still being able to customize the site.
 
-## Syntax to declare `docusaurus.config.js`​
+## Syntax to declare `docusaurus.config.js`[​](https://docusaurus.io/docs/configuration#syntax-to-declare-docusaurus-config)
 
 The `docusaurus.config.js` file is run in Node.js and should export either:
 
@@ -27,11 +27,11 @@ a **config object**
 
 infoThe `docusaurus.config.js` file supports:
 
-- **ES Modules**
+- [ES Modules](https://flaviocopes.com/es-modules/)
 
-- **CommonJS**
+- [CommonJS](https://flaviocopes.com/commonjs/)
 
-- **TypeScript**
+- [TypeScript](https://docusaurus.io/docs/typescript-support#typing-config)
 Constraints:
 
 - **Required:** use `export default /* your config*/` (or `module.exports`) to export your Docusaurus config
@@ -76,7 +76,7 @@ export default async function createConfigAsync() {  // Use a dynamic import ins
 ```
 
 
-## What goes into a `docusaurus.config.js`?​
+## What goes into a `docusaurus.config.js`?[​](https://docusaurus.io/docs/configuration#what-goes-into-a-docusaurusconfigjs)
 
 You should not have to write your `docusaurus.config.js` from scratch even if you are developing your site. All templates come with a `docusaurus.config.js` that includes defaults for the common options.
 
@@ -84,30 +84,30 @@ However, it can be helpful if you have a high-level understanding of how the con
 
 The high-level overview of Docusaurus configuration can be categorized into:
 
-Site metadataDeployment configurationsTheme, plugin, and preset configurationsCustom configurations
+[Site metadata](https://docusaurus.io/docs/configuration#site-metadata)[Deployment configurations](https://docusaurus.io/docs/configuration#deployment-configurations)[Theme, plugin, and preset configurations](https://docusaurus.io/docs/configuration#theme-plugin-and-preset-configurations)[Custom configurations](https://docusaurus.io/docs/configuration#custom-configurations)
 
-### Site metadata​
+### Site metadata[​](https://docusaurus.io/docs/configuration#site-metadata)
 
 Site metadata contains the essential global metadata such as `title`, `url`, `baseUrl`, and `favicon`.
 
 They are used in several places such as your site's title and headings, browser tab icon, social sharing (Facebook, X) information or even to generate the correct path to serve your static files.
 
-### Deployment configurations​
+### Deployment configurations[​](https://docusaurus.io/docs/configuration#deployment-configurations)
 
 Deployment configurations such as `projectName`, `organizationName`, and optionally `deploymentBranch` are used when you deploy your site with the `deploy` command.
 
-It is recommended to check the deployment docs for more information.
+It is recommended to check the [deployment docs](https://docusaurus.io/docs/deployment) for more information.
 
-### Theme, plugin, and preset configurations​
+### Theme, plugin, and preset configurations[​](https://docusaurus.io/docs/configuration#theme-plugin-and-preset-configurations)
 
-List the themes, plugins, and presets for your site in the `themes`, `plugins`, and `presets` fields, respectively. These are typically npm packages:
+List the [themes](https://docusaurus.io/docs/using-plugins#using-themes), [plugins](https://docusaurus.io/docs/using-plugins), and [presets](https://docusaurus.io/docs/using-plugins#using-presets) for your site in the `themes`, `plugins`, and `presets` fields, respectively. These are typically npm packages:
 
 docusaurus.config.js
 ```
 export default {  // ...  plugins: [    '@docusaurus/plugin-content-blog',    '@docusaurus/plugin-content-pages',  ],  themes: ['@docusaurus/theme-classic'],};
 ```
 
-tipDocusaurus supports **module shorthands**, allowing you to simplify the above configuration as:docusaurus.config.js
+tipDocusaurus supports [module shorthands](https://docusaurus.io/docs/using-plugins#module-shorthands), allowing you to simplify the above configuration as:docusaurus.config.js
 ```
 export default {  // ...  plugins: ['content-blog', 'content-pages'],  themes: ['classic'],};
 ```
@@ -134,9 +134,9 @@ export default {  // ...  presets: [    [      '@docusaurus/preset-classic',    
 ```
 
 tipThe `presets: [['classic', {...}]]` shorthand works as well.
-For further help configuring themes, plugins, and presets, see Using Plugins.
+For further help configuring themes, plugins, and presets, see [Using Plugins](https://docusaurus.io/docs/using-plugins).
 
-### Custom configurations​
+### Custom configurations[​](https://docusaurus.io/docs/configuration#custom-configurations)
 
 Docusaurus guards `docusaurus.config.js` from unknown fields. To add custom fields, define them in `customFields`.
 
@@ -148,7 +148,7 @@ export default {  // ...  customFields: {    image: '',    keywords: [],  },  //
 ```
 
 
-## Accessing configuration from components​
+## Accessing configuration from components[​](https://docusaurus.io/docs/configuration#accessing-configuration-from-components)
 
 Your configuration object will be made available to all the components of your site. And you may access them via React context as `siteConfig`.
 
@@ -161,7 +161,7 @@ import React from 'react';import useDocusaurusContext from '@docusaurus/useDocus
 
 tipIf you just want to use those fields on the client side, you could create your own JS files and import them as ES6 modules, there is no need to put them in `docusaurus.config.js`.
 
-## Customizing Babel Configuration​
+## Customizing Babel Configuration[​](https://docusaurus.io/docs/configuration#customizing-babel-configuration)
 
 Docusaurus transpiles your site's source code using Babel by default. If you want to customize the Babel configuration, you can do so by creating a `babel.config.js` file in your project root.
 
@@ -191,4 +191,4 @@ babel.config.js
 export default {  presets: ['@docusaurus/babel/preset'],};
 ```
 
-Most of the time, the default preset configuration will work just fine. If you want to customize your Babel configuration (e.g. to add support for Flow), you can directly edit this file. For your changes to take effect, you need to restart the Docusaurus dev server.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+Most of the time, the default preset configuration will work just fine. If you want to customize your Babel configuration (e.g. to add support for Flow), you can directly edit this file. For your changes to take effect, you need to restart the Docusaurus dev server.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/configuration.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f5f15623ddd06d855dfd816eb7bb3d55ceb67d434e81700819f6f26397bb31ce"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "77cfd7e1484c5aac0e8990280c6f03750e5fd91fd5b98b88c9821810a4837a3e"
 ---
 
 # Limits
@@ -30,11 +30,12 @@ sha256: "f5f15623ddd06d855dfd816eb7bb3d55ceb67d434e81700819f6f26397bb31ce"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related) — How v0 and Vercel work in tandem.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.

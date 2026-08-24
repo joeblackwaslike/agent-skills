@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "64dbf692cda8e0f0afbd223c165c8a891cfc12dfc4296decd165bba45cc8d9c0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ccbf527aadfdd9d194f5ca07db8a34bc170b72adf9c0f50943db150d4514d5e3"
 ---
 
 # Workflow Concepts
@@ -29,6 +29,7 @@ You write async/await code as usual, and the framework handles queues, retry log
 
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows?from=related) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related) — Understand the two function types that make up a workflow.
 - [Building stateful Slack bots with Vercel Workflow](https://vercel.com/kb/guide/stateful-slack-bots-with-vercel-workflow?from=related) — Learn how to build Slack bots that maintain state and handle long-running processes without managing queues, databases,
 - [Hooks & Webhooks](https://workflow-sdk.dev/docs/foundations/hooks?from=related) — Pause workflows and resume them with external data or HTTP requests.
@@ -36,8 +37,8 @@ You write async/await code as usual, and the framework handles queues, retry log
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning?from=related) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
 - [workflow](https://workflow-sdk.dev/docs/api-reference/workflow?from=related) — Explore the core workflow package for steps, streaming, hooks, and error handling.
 - [Idempotency](https://workflow-sdk.dev/docs/foundations/idempotency?from=related) — Use step IDs for retry-safe external calls, and route duplicate workflow-start requests through deterministic hook token
-- [Human-in-the-Loop with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/human-in-the-loop-with-chat-sdk-and-workflow-sdk?from=related) — Combine Chat SDK and Workflow SDK to suspend workflows on approval cards in a chat platform, then resume on click via cr
 - [Python](https://vercel.com/docs/workflows/python?from=related) — Build durable workflows and AI agents in Python with the Vercel SDK.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text-with-chat-prompt.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "edef6ef1ecf82c3ee21fb1dadcdcbeb3240849d345acab9967b2f0ec5d308293"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "c921852c5f7c85d3a2a32d54826d9b1dad491f0487cd4151cb48deb6287216fd"
 ---
 
 # Stream Text with Chat Prompt
@@ -91,7 +91,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: 'openai/gpt-4o',
-    system: 'You are a helpful assistant.',
+    instructions: 'You are a helpful assistant.',
     messages: await convertToModelMessages(messages),
   });
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f244570e006abb634ec001933e6acf59c542dfbce810e9f72dbafd86c9edfa2c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fdcb685275eb09b28af33c18c9d712438f503febb3f57f9f61befcb840b342ca"
 ---
 
 # DDoS Mitigation
@@ -35,7 +35,7 @@ sha256: "f244570e006abb634ec001933e6acf59c542dfbce810e9f72dbafd86c9edfa2c"
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \(WAF\)
+- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [vercel firewall](https://vercel.com/docs/cli/firewall?from=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 

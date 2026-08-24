@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/transport.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "38bef1e4990fab8ac06fd16891107362970335193954c328ec2d485793bd4b9a"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "c7c459e787da58e267005c5453d6039d96c5fd97e044716f60f40a55d08f7896"
 ---
 
 # Transport
@@ -172,7 +172,6 @@ export default function Chat() {
       new WorkflowChatTransport({
         api: '/api/chat',
         maxConsecutiveErrors: 5,
-        initialStartIndex: -50, // On page refresh, fetch last 50 chunks
         onChatEnd: ({ chatId, chunkIndex }) => {
           console.log(`Chat complete: ${chunkIndex} chunks`);
         },
@@ -189,9 +188,14 @@ export default function Chat() {
 Key features:
 
 - **Automatic reconnection**: Detects interrupted streams (no `finish` event) and reconnects via GET to `{api}/{runId}/stream`
-- **Page refresh recovery**: `initialStartIndex` with negative values (e.g., `-50`) fetches only the tail of the stream instead of replaying everything
+- **Page refresh recovery**: `initialStartIndex` controls where the initial reconnection begins
 - **Configurable retries**: `maxConsecutiveErrors` controls how many consecutive reconnection failures to tolerate
 - **Lifecycle callbacks**: `onChatSendMessage` and `onChatEnd` for tracking chat state
+
+Negative `initialStartIndex` values can fetch only the tail when the durable
+server stream already stores `UIMessageChunk` objects. For raw `WorkflowAgent`
+streams, use a non-negative cursor and follow the server-side conversion in the
+WorkflowAgent guide.
 
 For the full API reference, see [`WorkflowChatTransport`](/docs/reference/ai-sdk-workflow/workflow-chat-transport). For server-side endpoint setup, see the [WorkflowAgent guide](/docs/agents/workflow-agent#resumable-streaming-with-workflowchattransport).
 

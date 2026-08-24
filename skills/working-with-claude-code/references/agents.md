@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agents.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "58878ce8fbc14ea90897716ac7f81977145a6c49b60f610b2aefd29585eacb69"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "2d470eb82b5bc217bbd423db193677c49690ad0b4c4f73a0a9e97530caef6ca0"
 ---
 
 > ## Documentation Index
@@ -32,7 +32,7 @@ Three more tools support this work without being a way to run agents themselves:
 A few other features run Claude without you driving each step, but they solve a different problem than splitting work across agents:
 
 * A [background bash command](/docs/en/interactive-mode#background-bash-commands) runs one shell command without blocking the conversation. It doesn't spawn an agent.
-* A [forked subagent](/docs/en/sub-agents#fork-the-current-conversation), started with `/subtask`, is a subagent that inherits your full conversation context instead of starting fresh. It's a way to spawn a subagent, not a separate surface. To copy the whole session into a new [background session](/docs/en/agent-view#from-inside-a-session) that runs alongside it, use `/fork`. With [agent view turned off](/docs/en/agent-view#turn-off-agent-view), the forked-subagent command is `/fork` instead and `/subtask` isn't available.
+* A [forked subagent](/docs/en/sub-agents#fork-the-current-conversation) is a subagent that inherits your full conversation context instead of starting fresh. It's a way to spawn a subagent, not a separate surface. Start one with `/subtask`. Claude also spawns one itself where [fork mode](/docs/en/sub-agents#turn-fork-mode-on-or-off) is on. To copy the whole session into a new [background session](/docs/en/agent-view#from-inside-a-session) that runs alongside it, use `/fork`. With [agent view turned off](/docs/en/agent-view#turn-off-agent-view), the forked-subagent command is `/fork` instead and `/subtask` isn't available.
 * A [routine](/docs/en/routines) runs a session on a schedule in the cloud, not in parallel on your machine.
 
 <Note>

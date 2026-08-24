@@ -13,8 +13,8 @@ related:
 summary: Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/platform-template.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e8f6dde757115e3bb7463383c448013da7ca5579d40cca20d999a7f78e173674"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f6e6aef395fac2511a9afd0df1680fab20a1d85e2cc20b8c599cc9cbd5cb9ee1"
 ---
 
 # Platform Template
@@ -28,16 +28,15 @@ The Platform Template serves as a comprehensive reference for constructing an AI
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [OSS Coding Agent](https://vercel.com/docs/platforms/examples/oss-coding-agent?from=related) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
 - [Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
-- [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
 
 Full cross-link map for this page: [/docs/platforms/examples/platform-template.graph.md](/docs/platforms/examples/platform-template.graph.md)
 <!-- /docsgraph:related -->

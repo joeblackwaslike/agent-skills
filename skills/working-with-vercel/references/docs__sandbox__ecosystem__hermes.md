@@ -12,13 +12,13 @@ related:
   - /docs/sandbox
   - /docs/ai-gateway/coding-agents/hermes
   - /docs/sandbox/pricing
-  - /docs/sandbox/concepts/authentication
-  - /docs/sandbox/concepts
+  - /docs/sandbox/concepts/runtimes
+  - /docs/sandbox/concepts/images
 summary: Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/hermes.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5144d8a110ed60ff22ad721a08ac52f81b5d0570c7d14dd33a02d651060bc2d1"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "489f691f632eda50a358a10e44901d2441673bb47eed78f2c02f3557fc91ac21"
 ---
 
 # Hermes
@@ -35,12 +35,13 @@ instead of on your machine.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue?from=related) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Herdr](https://vercel.com/docs/sandbox/ecosystem/herdr?from=related) — Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locall
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/hermes.graph.md](/docs/sandbox/ecosystem/hermes.graph.md)
 <!-- /docsgraph:related -->
@@ -84,6 +85,11 @@ persisted task filesystems.
   hermes config set terminal.container_memory 4096
   ```
   The runtime is one of `node24` (the default), `node22`, or `python3.13`.
+  These are Vercel Sandbox's legacy
+  [runtimes](/docs/sandbox/concepts/runtimes): the `terminal.vercel_runtime`
+  setting configures a legacy runtime, while new SDK v3 sandboxes default
+  to the Ubuntu-based `vercel/sandbox/universal:latest`
+  [managed image](/docs/sandbox/concepts/images).
   > **💡 Note:** Vercel Sandbox allocates 2,048 MB of memory per vCPU, so
   > `terminal.container_memory` must be 2,048 times `terminal.container_cpu`.
   > Hermes's generic container default of 5,120 MB is not a valid value for

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "9ff75d890a07472a57104d9589aa6e29ad9a1a423f18c99cc05d7d2d314401ac"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "47f062b4865a65322bb7403a5c428896f57ba0b9402a9dcb613d05961b167009"
 ---
 
 # Video Generation
@@ -467,22 +467,23 @@ try {
 
 ## Video Models
 
-| Provider                                                                | Model                       | Features                                                                      |
-| ----------------------------------------------------------------------- | --------------------------- | ----------------------------------------------------------------------------- |
-| [FAL](/providers/ai-sdk-providers/fal#video-models)                     | `luma-dream-machine/ray-2`  | Text-to-video, image-to-video                                                 |
-| [FAL](/providers/ai-sdk-providers/fal#video-models)                     | `minimax-video`             | Text-to-video                                                                 |
-| [Google](/providers/ai-sdk-providers/google#video-models)               | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call                                        |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.1-generate-001`      | Text-to-video, audio generation                                               |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.1-fast-generate-001` | Text-to-video, audio generation                                               |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.0-generate-001`      | Text-to-video, audio generation                                               |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-3.0-fast-generate-001` | Text-to-video, audio generation                                               |
-| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models) | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call                                        |
-| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-t2v`            | Text-to-video                                                                 |
-| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-i2v`            | Image-to-video                                                                |
-| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)            | `kling-v2.6-motion-control` | Motion control                                                                |
-| [Replicate](/providers/ai-sdk-providers/replicate#video-models)         | `minimax/video-01`          | Text-to-video                                                                 |
-| [xAI](/providers/ai-sdk-providers/xai#video-models)                     | `grok-imagine-video`        | Text-to-video, image-to-video, editing, extension, R2V                        |
-| [xAI](/providers/ai-sdk-providers/xai#video-models)                     | `grok-imagine-video-1.5`    | Text-to-video, image-to-video, editing, extension, R2V (with reference audio) |
+| Provider                                                                        | Model                       | Features                                                                       |
+| ------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------ |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#video-models) | `flux-3-video`              | Text-to-video, image-to-video, keyframes, video continuation, audio generation |
+| [FAL](/providers/ai-sdk-providers/fal#video-models)                             | `luma-dream-machine/ray-2`  | Text-to-video, image-to-video                                                  |
+| [FAL](/providers/ai-sdk-providers/fal#video-models)                             | `minimax-video`             | Text-to-video                                                                  |
+| [Google](/providers/ai-sdk-providers/google#video-models)                       | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call                                         |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models)         | `veo-3.1-generate-001`      | Text-to-video, audio generation                                                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models)         | `veo-3.1-fast-generate-001` | Text-to-video, audio generation                                                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models)         | `veo-3.0-generate-001`      | Text-to-video, audio generation                                                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models)         | `veo-3.0-fast-generate-001` | Text-to-video, audio generation                                                |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#video-models)         | `veo-2.0-generate-001`      | Text-to-video, up to 4 videos per call                                         |
+| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)                    | `kling-v2.6-t2v`            | Text-to-video                                                                  |
+| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)                    | `kling-v2.6-i2v`            | Image-to-video                                                                 |
+| [Kling AI](/providers/ai-sdk-providers/klingai#video-models)                    | `kling-v2.6-motion-control` | Motion control                                                                 |
+| [Replicate](/providers/ai-sdk-providers/replicate#video-models)                 | `minimax/video-01`          | Text-to-video                                                                  |
+| [xAI](/providers/ai-sdk-providers/xai#video-models)                             | `grok-imagine-video`        | Text-to-video, image-to-video, editing, extension, R2V                         |
+| [xAI](/providers/ai-sdk-providers/xai#video-models)                             | `grok-imagine-video-1.5`    | Text-to-video, image-to-video, editing, extension, R2V (with reference audio)  |
 
 Above are a small subset of the video models supported by the AI SDK providers. For more, see the respective provider documentation.
 

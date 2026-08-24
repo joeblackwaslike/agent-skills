@@ -17,8 +17,8 @@ related:
 summary: Create, view, and delete AI Gateway API keys from the dashboard, CLI, or API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a6cd67b1202decad17f831e1dd680d1fd280fe90c1821ece079d4de05ca6851b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "90ce3787f05805c294760fe752c251b6ee9e66667f9b43ce9cd8af8a132e18bb"
 ---
 
 # API Keys
@@ -35,9 +35,9 @@ API keys authenticate your requests to the AI Gateway. This page covers how to:
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok?from=related) — Learn how to configure your own provider keys with the AI Gateway.
 - [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key?from=related)
 - [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key?from=related)
 - [Delete an SDK key](https://vercel.com/docs/rest-api/feature-flags/delete-an-sdk-key?from=related)
-- [Get all SDK keys](https://vercel.com/docs/rest-api/feature-flags/get-all-sdk-keys?from=related)
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/api-keys.graph.md](/docs/ai-gateway/authentication-and-byok/api-keys.graph.md)
 <!-- /docsgraph:related -->

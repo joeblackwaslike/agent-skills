@@ -13,8 +13,8 @@ related:
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7323b73c1dd2c2858e7cc42327dc01c7e5c537ec282f89a9914f99dd37a27c34"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "bebd1db24aa016d6fb0511dce39232f055b7be61cec3a3efb569a78af692d4c9"
 ---
 
 # Vercel CLI Global Options
@@ -28,10 +28,10 @@ Global options are commonly available to use with multiple Vercel CLI commands.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel env](https://vercel.com/docs/cli/env?from=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Project Configuration](https://vercel.com/docs/project-configuration?from=related) — Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, f
 
 Full cross-link map for this page: [/docs/cli/global-options.graph.md](/docs/cli/global-options.graph.md)
 <!-- /docsgraph:related -->

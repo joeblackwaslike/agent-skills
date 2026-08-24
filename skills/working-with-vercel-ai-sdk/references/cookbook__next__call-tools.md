@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/call-tools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7e0ad9457985589263d813034d9e047bdc0f946a095247129b4e3c57f6aab23d"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "a53970c749d8041ca98a56e0cc86a78cb5fcaebdd53e35223ff8c0dbb4d57f6f"
 ---
 
 # Call Tools
@@ -138,7 +138,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: 'openai/gpt-4o',
-    system: 'You are a helpful assistant.',
+    instructions: 'You are a helpful assistant.',
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools,

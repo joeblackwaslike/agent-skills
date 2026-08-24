@@ -3,7 +3,7 @@ title: provision-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ec63d63430d1fb906ad4aeef0b6723c25123723237d19cc5fd717c7336b24ea5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "2c5456c30125bedae9c0a08f39c2d088328fef6cdb5c37346423691851eb9dba"
 ---
 
 # Provision Resource

@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
 related:
-  []
+  - /docs/ai-gateway/modalities/video-generation
 summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8cae95b22a35649df48d7855510a22918aeb84f524f15040b57e555bea5ce8cc"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f1ee5f4b0904b7b8c1ce7219abb5ffff3a7218693ed1653e423c164113a36fa9"
 ---
 
 # Text-to-Video Generation
@@ -32,15 +32,17 @@ Generate videos from text prompts. Describe what you want to see and the model c
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related)
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related)
-- [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
 - [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs?from=related)
+- [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
 - [Image-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
 - [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
+- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
 - [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md)
 <!-- /docsgraph:related -->
+
+Every model here also runs as a background job instead of one long-lived request. See [asynchronous generation](#asynchronous-generation) below.
 
 ## Google Veo
 
@@ -336,7 +338,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## ByteDance Seedance
 
-ByteDance's Seedance models generate high-quality videos from text prompts with optional synchronized audio and a draft mode for low-cost previews. All models output MP4 at 24fps.
+ByteDance's Seedance models generate high-quality videos from text prompts with optional synchronized audio and a draft mode for low-cost previews. All models output MP4 at 24fps. Seedance 2.5 generates up to 30 seconds, where the v1.x models top out at 12.
 
 [Browse the latest Seedance video models](/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
 
@@ -347,9 +349,9 @@ ByteDance's Seedance models generate high-quality videos from text prompts with 
 | `prompt`                                   | `string`                | Yes      | Text description of the video to generate                                          |
 | `aspectRatio`                              | `string`                | No       | Aspect ratio (`'16:9'`, `'4:3'`, `'1:1'`, `'3:4'`, `'9:16'`, `'21:9'`)             |
 | `resolution`                               | `string`                | No       | Resolution (`'854x480'`, `'1280x720'`, `'1920x1080'`)                              |
-| `duration`                                 | `number`                | No       | Video length in seconds. v1.5: 4-12s. v1.0: 2-12s                                  |
+| `duration`                                 | `number`                | No       | Video length in seconds. 2.5: 4-30s. v1.5: 4-12s. v1.0: 2-12s                      |
 | `providerOptions.bytedance.watermark`      | `boolean`               | No       | Add a watermark to the video                                                       |
-| `generateAudio`                            | `boolean`               | No       | Generate audio. Seedance v1.5 Pro and Seedance 2.0 series only                                |
+| `generateAudio`                            | `boolean`               | No       | Generate audio. Seedance v1.5 Pro and the Seedance 2.x series only                 |
 | `providerOptions.bytedance.cameraFixed`    | `boolean`               | No       | Fix the camera position during generation                                          |
 | `providerOptions.bytedance.draft`          | `boolean`               | No       | Generate a 480p preview for fast iteration. Seedance v1.5 Pro only                 |
 | `providerOptions.bytedance.serviceTier`    | `'default'` | `'flex'` | No       | `'default'` for online inference. `'flex'` for offline at 50% cost, higher latency |
@@ -363,7 +365,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'bytedance/seedance-v1.5-pro',
+  model: 'bytedance/seedance-2.5',
   prompt: 'A chicken flying into the sunset in the style of 90s anime',
   resolution: '1280x720',
   duration: 5,
@@ -379,14 +381,14 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ### Seedance text-to-video with audio
 
-Generate video with synchronized audio. Requires Seedance v1.5 Pro or a Seedance 2.0 series model.
+Generate video with synchronized audio. Requires Seedance v1.5 Pro or a Seedance 2.x model.
 
 ```typescript filename="seedance-text-to-video-audio.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'bytedance/seedance-v1.5-pro',
+  model: 'bytedance/seedance-2.5',
   prompt:
     'A thunderstorm rolling over a vast wheat field, lightning illuminating the clouds, rain beginning to fall',
   resolution: '1280x720',
@@ -404,6 +406,26 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation.
+
+## Asynchronous generation
+
+Pass a `webhook` factory and the SDK registers your URL with the job instead of polling for it. The factory returns that URL and a `received` promise it waits on, then it fetches the videos itself.
+
+```typescript filename="async-text-to-video.ts"
+const result = await generateVideo({
+  model: gateway.videoModel('klingai/kling-v3.0-t2v'),
+  prompt: 'A chicken flying into the sunset in the style of 90s anime',
+  aspectRatio: '16:9',
+  duration: 5,
+  webhook: async () => ({
+    url: callbackUrl,
+    received: waitForDelivery(token),
+  }),
+  poll: { timeoutMs: 10 * 60 * 1000 },
+});
+```
+
+`token`, `callbackUrl`, and `waitForDelivery` come from [webhook-driven completion](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion), which also covers the receiver, signature verification, and the payload shape.
 
 ***
 

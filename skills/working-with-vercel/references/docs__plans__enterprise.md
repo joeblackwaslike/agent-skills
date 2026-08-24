@@ -16,8 +16,8 @@ related:
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "09038572a76e51b2d5b48137d0af29754d9577fe986076a46bbe2043b3cf599e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "73690b78d31ef623f55c0987b8dbe841e8775fb557e1ddd11fe9c49a20d14c5f"
 ---
 
 # Vercel Enterprise Plan
@@ -35,6 +35,7 @@ Vercel offers an Enterprise plan for organizations and enterprises that need hig
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related) — Understand the limits and features available for Vercel for Platforms.

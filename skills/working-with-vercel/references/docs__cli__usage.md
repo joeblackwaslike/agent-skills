@@ -12,8 +12,8 @@ related:
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "713d6510b0b6d6c57d0518c925c38ee3cced46d723e95cbfe11feb663f1c2e73"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b159a1c185a0bea8dd9374288951fcdbe47adf94829648dd6d55b6ae151db872"
 ---
 
 # vercel usage
@@ -26,8 +26,9 @@ The `vercel usage` command displays billing usage for the current billing period
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Get Usage Summary](https://v0.app/docs/api/v2/reference/usage/get-usage-summary?from=related) — Returns credit usage for the active billing scope. Team owners and billing members receive team-wide usage by default; o
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel help](https://vercel.com/docs/cli/help?from=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.

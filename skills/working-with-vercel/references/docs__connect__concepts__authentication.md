@@ -17,8 +17,8 @@ related:
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "3ec43b0214a3730f2573ccb0bddc8f3e70a97e60ccfad6c7aa472238c953fe24"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4497bbe0e21e606ded9a759ecca1d6efce7f7b3256a69c4f7765cacfe579c9a1"
 ---
 
 # Authentication
@@ -33,10 +33,12 @@ Vercel Connect sits between your code and a provider. Each token request has two
 
 - [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Quickstart](https://vercel.com/docs/connect/quickstart?from=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/connect/concepts/authentication.graph.md](/docs/connect/concepts/authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -103,16 +105,23 @@ The Connect API treats both token types the same for project-link enforcement, R
 
 Once Vercel Connect has authorized the caller, how does it prove identity to the provider?
 
-That depends entirely on the connector type:
+That depends on the connector type or connection method:
 
-| Connector type | Flow                                                                                  |
-| -------------- | ------------------------------------------------------------------------------------- |
-| Slack          | Standard Slack app install per workspace; tokens issued by Slack                      |
-| GitHub         | GitHub app install per organization or user; tokens issued by GitHub                  |
-| Snowflake      | Snowflake Partner Connect JWT exchange                                                |
-| Salesforce     | Managed OAuth flow brokered by Vercel                                                 |
-| API Key        | Static credential supplied at create time; Vercel Connect attaches it                 |
-| Custom OAuth   | OAuth 2.0 / OIDC against the configured service URL; authorization-code flow with PKCE and/or client-credentials flow |
+| Connector type or method | Flow |
+| --- | --- |
+| Slack | Standard Slack app install per workspace; tokens issued by Slack |
+| Discord | Discord bot token or OAuth 2.0 user authorization; tokens issued by Discord |
+| GitHub | GitHub app install per organization or user; tokens issued by GitHub |
+| Linear | Linear app install per workspace; tokens issued by Linear |
+| Microsoft | Microsoft Entra app registered in your tenant; Entra issues delegated or app-only tokens |
+| Photon | Photon project credentials supplied at create time; Vercel Connect attaches them |
+| Snowflake | Snowflake Partner Connect OAuth or Workload Identity Federation |
+| Salesforce | Managed OAuth flow brokered by Vercel |
+| MCP | OAuth / OIDC discovered from the MCP server's metadata |
+| API key | Static credential supplied at create time; Vercel Connect attaches it |
+| Custom OAuth | OAuth / OIDC against the configured service URL; authorization-code flow with PKCE and/or client-credentials flow |
+
+[Browse all connectors](/connect/browse) to see the authentication options and setup instructions available for each service.
 
 For OAuth-based connectors, Vercel Connect drives the full authorization-code flow including refresh, and stores the refresh token on Vercel's infrastructure. Your code never sees the refresh token directly; you only ever receive short-lived access tokens through `getToken`.
 

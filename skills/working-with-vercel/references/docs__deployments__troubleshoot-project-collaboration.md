@@ -15,8 +15,8 @@ related:
 summary: Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-project-collaboration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ff7aed8a4c271c6ecfb1aa95274872be4e826d4fbb646f35d5d3ead6f1ad3e7a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ef636dcbae19f896dc0575fac7e1b4a7faffaf5b5b628c6ee40687bb82c749ce"
 ---
 
 # Troubleshoot project collaboration
@@ -36,7 +36,7 @@ This guide will help you troubleshoot deployment failures related to project col
 - [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [GitHub](https://vercel.com/docs/git/vercel-for-github?from=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 - [Git Settings](https://vercel.com/docs/project-configuration/git-settings?from=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-project-collaboration.graph.md](/docs/deployments/troubleshoot-project-collaboration.graph.md)

@@ -16,8 +16,8 @@ related:
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "3e921404e9748f80f40d62355613272c27155cb3a7f76d0f0341f7942b9826fd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "47d602b19e02f94f3813f47b0e1959415e40561d8f2e8a3853a30bc93a7ef3e4"
 ---
 
 # Poll Mode
@@ -30,13 +30,14 @@ In poll mode, your application polls for messages from a queue on its own schedu
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
+- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
 - [JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related) — Publish and consume messages with the @vercel/queue SDK.
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
 - [Observability](https://vercel.com/docs/queues/observability?from=related) — Monitor queue throughput, message age, and consumer performance to optimize your queue-based workflows.
 - [API Reference](https://vercel.com/docs/queues/api?from=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 
 Full cross-link map for this page: [/docs/queues/poll-mode.graph.md](/docs/queues/poll-mode.graph.md)
 <!-- /docsgraph:related -->

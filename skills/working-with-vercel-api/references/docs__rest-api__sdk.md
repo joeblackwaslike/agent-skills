@@ -3,7 +3,7 @@ title: Vercel SDK
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about vercel sdk on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-08-17T04:50:12.895Z"
-sha256: "740be679ae8322ad14ae6fd833e40d8ad624cb50272b9659a7b71c2075c77b25"
+fetched_at: "2026-08-24T04:53:14.265Z"
+sha256: "dbf0f92bc55372cff1ba8b7805ca6b8c7c48a2626b18ef71fe6248c8ea9e0682"
 ---
 
 # Vercel SDK Reference
@@ -39,6 +39,16 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/sdk/access-groups/reads-an-access-group-project.md) | Reads an access group project |
 | **PATCH** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/sdk/access-groups/update-an-access-group-project.md) | Update an access group project |
 | **DELETE** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/sdk/access-groups/delete-an-access-group-project.md) | Delete an access group project |
+
+## api-ai-gateway
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/get-virtual-model-config.md) | Get virtual model config |
+| **POST** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/create-virtual-model-config.md) | Create virtual model config |
+| **PATCH** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/update-virtual-model-config.md) | Update virtual model config |
+| **DELETE** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
+| **GET** | [`/v1/ai-gateway/virtual-model-configs/list`](/docs/rest-api/sdk/api-ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
 
 ## ai-gateway
 
@@ -305,6 +315,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **PATCH** | [`/v1/installations/{integrationConfigurationId}`](/docs/rest-api/sdk/marketplace/update-installation.md) | Update Installation |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/account`](/docs/rest-api/sdk/marketplace/get-account-information.md) | Get Account Information |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/member/{memberId}`](/docs/rest-api/sdk/marketplace/get-member-information.md) | Get Member Information |
+| **POST** | [`/v1/installations/{integrationConfigurationId}/credentials/rotate`](/docs/rest-api/sdk/marketplace/rotate-installation-credential.md) | Rotate Installation Credential |
 | **POST** | [`/v1/installations/{integrationConfigurationId}/events`](/docs/rest-api/sdk/marketplace/create-event.md) | Create Event |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources`](/docs/rest-api/sdk/marketplace/get-integration-resources.md) | Get Integration Resources |
 | **GET** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}`](/docs/rest-api/sdk/marketplace/get-integration-resource.md) | Get Integration Resource |
@@ -334,6 +345,24 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v3/user/tokens`](/docs/rest-api/sdk/authentication/create-an-auth-token.md) | Create an Auth Token |
 | **GET** | [`/v5/user/tokens/{tokenId}`](/docs/rest-api/sdk/authentication/get-auth-token-metadata.md) | Get Auth Token Metadata |
 | **DELETE** | [`/v3/user/tokens/{tokenId}`](/docs/rest-api/sdk/authentication/delete-an-authentication-token.md) | Delete an authentication token |
+
+## kms
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/kms/issuers`](/docs/rest-api/sdk/kms/list-issuers.md) | List issuers |
+| **POST** | [`/v1/kms/issuers`](/docs/rest-api/sdk/kms/create-an-issuer.md) | Create an issuer |
+| **POST** | [`/v1/kms/issuers/{issuerId}/sign/message`](/docs/rest-api/sdk/kms/sign-a-message.md) | Sign a message |
+| **POST** | [`/v1/kms/issuers/{issuerId}/sign/token`](/docs/rest-api/sdk/kms/sign-a-token.md) | Sign a token |
+| **POST** | [`/v1/kms/issuers/{issuerId}/keys`](/docs/rest-api/sdk/kms/create-a-signing-key.md) | Create a signing key |
+| **POST** | [`/v1/kms/issuers/{issuerId}/keys/{keyId}/activate`](/docs/rest-api/sdk/kms/activate-a-signing-key.md) | Activate a signing key |
+| **POST** | [`/v1/kms/issuers/{issuerId}/keys/{keyId}/revoke`](/docs/rest-api/sdk/kms/revoke-a-signing-key.md) | Revoke a signing key |
+| **GET** | [`/v1/kms/issuers/{issuerId}`](/docs/rest-api/sdk/kms/get-an-issuer.md) | Get an issuer |
+| **PATCH** | [`/v1/kms/issuers/{issuerId}`](/docs/rest-api/sdk/kms/update-an-issuer.md) | Update an issuer |
+| **DELETE** | [`/v1/kms/issuers/{issuerId}`](/docs/rest-api/sdk/kms/delete-an-issuer.md) | Delete an issuer |
+| **POST** | [`/v1/kms/issuers/{issuerId}/policies`](/docs/rest-api/sdk/kms/create-an-issuer-policy.md) | Create an issuer policy |
+| **PATCH** | [`/v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}`](/docs/rest-api/sdk/kms/update-an-issuer-policy.md) | Update an issuer policy |
+| **DELETE** | [`/v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}`](/docs/rest-api/sdk/kms/delete-an-issuer-policy.md) | Delete an issuer policy |
 
 ## logs
 
@@ -460,6 +489,9 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/snapshot`](/docs/rest-api/sdk/sandboxes/create-a-snapshot.md) | Create a snapshot |
 | **POST** | [`/v2/sandboxes/{name}/fork`](/docs/rest-api/sdk/sandboxes/fork-a-named-sandbox.md) | Fork a named sandbox |
 | **POST** | [`/v3/sandboxes`](/docs/rest-api/sdk/sandboxes/create-a-named-sandbox-1.md) | Create a named sandbox |
+| **POST** | [`/v3/sandboxes/sessions/{sessionId}/snapshot`](/docs/rest-api/sdk/sandboxes/create-a-snapshot-1.md) | Create a snapshot |
+| **POST** | [`/v3/sandboxes/{name}/fork`](/docs/rest-api/sdk/sandboxes/fork-a-named-sandbox-1.md) | Fork a named sandbox |
+| **POST** | [`/v4/sandboxes`](/docs/rest-api/sdk/sandboxes/create-a-named-sandbox-2.md) | Create a named sandbox |
 
 ## security
 

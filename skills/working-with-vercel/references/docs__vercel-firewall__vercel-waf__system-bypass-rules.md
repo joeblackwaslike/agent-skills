@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "01fe9a9cea62cff4ef0b81763c1d12133f130708f2673eab0c65f835c61e5589"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "721ea8210d695bca24a2ee1dcd676abe2b9bcd7ae6b73e1df2c0f68210b03b54"
 ---
 
 # WAF System Bypass Rules
@@ -35,7 +35,7 @@ sha256: "01fe9a9cea62cff4ef0b81763c1d12133f130708f2673eab0c65f835c61e5589"
 - [Deny traffic from a set of IP addresses](https://vercel.com/kb/guide/deny-traffic-from-a-set-of-ip-addresses?from=related) — Learn how to block specific IP addresses with the Vercel WAF API.
 - [Deny non-browser traffic or blocklisted ASNs](https://vercel.com/kb/guide/deny-non-browser-traffic-or-blocklisted-asns?from=related) — Learn how to block traffic from known threats with the Vercel WAF API.
 - [IP Blocking](https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking?from=related) — Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
-- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets?from=related) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \(WAF\)
+- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets?from=related) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
 - [Create System Bypass Rule](https://vercel.com/docs/rest-api/security/create-system-bypass-rule?from=related)
 - [Remove System Bypass Rule](https://vercel.com/docs/rest-api/security/remove-system-bypass-rule?from=related)
 - [vercel firewall](https://vercel.com/docs/cli/firewall?from=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys

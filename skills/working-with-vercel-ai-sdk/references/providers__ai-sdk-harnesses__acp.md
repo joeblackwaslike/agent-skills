@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "3ed8c3e077b80d8a9673bdb04b1f447960904acffacc9e32d600cbef6d4c9d48"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "959cd9f7465fb484649bc4df89e6e976d883df1efa8de1bd16ea91a52059378d"
 ---
 
 # Agent Client Protocol Harness
@@ -94,6 +94,10 @@ try {
   for a path below the ACP session request's `_meta` field, or
   `launch-env-json` for a path within a JSON launch environment variable. When
   omitted, instructions are prepended to the first user prompt.
+- `outputSchemaMapping`: optional implementation-specific mapping from a
+  structured output JSON Schema to a path below the ACP `session/prompt`
+  request's `_meta` field. ACP does not standardize structured output, so omit
+  this unless the selected implementation documents that private extension.
 - `permissionModeMapping`: mappings from all three Harness permission modes to
   advertised ACP session modes or configuration options. Set an entry to
   `null` when the ACP implementation does not support that mode. When omitted,
@@ -112,6 +116,32 @@ try {
 
 Runtime-specific package names, environment variables, modes, and session
 metadata belong in the inline profile, not in the generic adapter.
+
+## Structured Output
+
+ACP version 1 does not define a structured output capability. Profiles for
+implementations with a private prompt metadata extension can opt in explicitly:
+
+```ts
+const harness = createACP({
+  harnessId: 'example-acp',
+  source: {
+    type: 'npm-simple',
+    packageName: '@example/acp-agent',
+  },
+  executable: 'example-acp',
+  outputSchemaMapping: {
+    type: 'session-prompt-meta',
+    path: ['outputSchema'],
+  },
+});
+```
+
+For a `HarnessAgent` configured with `output`, this writes the generated JSON
+Schema to `session/prompt.params._meta.outputSchema`. A profile without this
+mapping throws `HarnessCapabilityUnsupportedError` instead of assuming that an
+arbitrary ACP implementation understands the schema; Codex ACP is unsupported,
+while the Grok Build harness includes its verified mapping.
 
 ### Package source
 

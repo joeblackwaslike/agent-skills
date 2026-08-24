@@ -17,8 +17,8 @@ related:
 summary: Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/express.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "3b22175ff40983d074b6de54513d13f5bf55018406b24c400c2642030bd5fc37"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8d96b46b29a0e4efe5d68d66f71924ab197367c1d4cedce87fe384da34da36e7"
 ---
 
 # Express on Vercel
@@ -40,6 +40,7 @@ Express is a fast, unopinionated, minimalist web framework for Node.js. You can 
 - [FastAPI](https://vercel.com/docs/frameworks/backend/fastapi?from=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 - [NestJS](https://vercel.com/docs/frameworks/backend/nestjs?from=related) — Deploy NestJS applications to Vercel with zero configuration.
 - [Elysia](https://vercel.com/docs/frameworks/backend/elysia?from=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/backend/express.graph.md](/docs/frameworks/backend/express.graph.md)
 <!-- /docsgraph:related -->

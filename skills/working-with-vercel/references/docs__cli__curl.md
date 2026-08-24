@@ -16,8 +16,8 @@ related:
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fef55fbe893de193e22f83593f54c2e382441127890169856e1de7b0b80c8ff3"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8e0d6b1fc067db25b11f38bc743dab22cc31cb601a48b0607252d796cf3562b5"
 ---
 
 # vercel curl
@@ -113,7 +113,7 @@ After the request completes, the command prints a `vercel traces get` command yo
 
 When you run `vercel curl`:
 
-1. The CLI finds your linked project (or you can specify one with [`--scope`](/docs/cli/global-options#scope))
+1. The CLI finds your linked project (or you can specify one with [`--project`](/docs/cli/global-options#project))
 2. It gets the latest production deployment URL (or uses the deployment you specified)
 3. It retrieves or generates a deployment protection bypass token
 4. It runs the system `curl` command with the bypass token in the `x-vercel-protection-bypass` header

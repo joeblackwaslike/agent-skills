@@ -16,8 +16,8 @@ related:
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-07-13T07:00:47.058Z"
-sha256: "b631b1cf34331181cbb277abbc7e7d2d0c1a6003ce6366bedb4b1ee31d8fe34f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5dda619a9c9ffb64a3a9e8a2d7ac71a7828c58582fba67027e615ed3d667f62c"
 ---
 
 # Error List
@@ -423,9 +423,9 @@ To prevent this error, consider the following options:
 - Remove `"type": "module"` from the project's `package.json`
 - Install yarn into the project instead of using corepack with `yarn set version [desired-version] --yarn-path`
 
-## Invalid Edge Config connection string
+## Invalid Global Config connection string
 
-This error occurs when attempting to create a deployment where at least one of its environment variables contains an outdated Edge Config connection string. A connection string can be outdated if either the Edge Config itself was deleted or if the token used in the connection string is invalid or has been deleted.
+This error occurs when attempting to create a deployment where at least one of its environment variables contains an outdated Global Config connection string. A connection string can be outdated if either the Global Config store itself was deleted or if the token used in the connection string is invalid or has been deleted.
 
 To resolve this error, delete or update the environment variable that contains the connection string. In most cases, the environment variable is named `EDGE_CONFIG`.
 

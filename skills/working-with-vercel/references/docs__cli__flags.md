@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "dbe80e3b60a291651f01cce1ef4507f07832ec48986f6115d80a446955873637"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b1e738f9062a50a2cad3fa7e8f29e95ddd5aefc704f5e442137adf198c22e22e"
 ---
 
 # vercel flags
@@ -34,8 +34,8 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Roll Out a Feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Run an A/B Test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md)
 <!-- /docsgraph:related -->

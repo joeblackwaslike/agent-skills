@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/anthropic-vertex-ai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "5ef455db7555f4d37a495d5e75930340947e602fe5758c4ae6070a3404420b93"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "fa7098d9d3b053ae207922c26f209d966c202639ea0955cef790810d07e37a29"
 ---
 
 # AnthropicVertex Provider
@@ -182,6 +182,7 @@ For more information on setting up authentication, refer to the [Google Cloud Au
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1f251fa1b01a19bf9ccc084c5960045755e004dc396305d711ea77ef33a1bdad"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "593494e44bd281f1117c25cbec98c5a02da5d26a7da85e93039f56e0734df987"
 ---
 
 # Functions API Reference
@@ -34,9 +34,11 @@ sha256: "1f251fa1b01a19bf9ccc084c5960045755e004dc396305d711ea77ef33a1bdad"
 - [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
+- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related) — Stream real-time data to clients without waiting for workflow completion.
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
-- [Node.js](https://vercel.com/docs/functions/runtimes/node-js?from=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
-- [AWS](https://vercel.com/docs/oidc/aws?from=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \(OIDC\) Identity Provider \(IdP\).
+- [AWS](https://vercel.com/docs/oidc/aws?from=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a

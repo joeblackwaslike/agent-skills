@@ -16,8 +16,8 @@ related:
 summary: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/tags.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9161af979455ec7f2d8ad781c41a5e9649dea84bca01c3300f03023a0f9db8a3"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "625dbefad37fdad862c2bd5a54962f6a1b521dba9c7d849b0d03b902897c6b4a"
 ---
 
 # Tags
@@ -30,7 +30,6 @@ Tags let you categorize sandboxes by environment, team, or any other criteria. E
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
 - [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [Run Commands in Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y

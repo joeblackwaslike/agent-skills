@@ -16,8 +16,8 @@ related:
 summary: "The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, realtime voice, embeddings,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c27cce3ed04f41294a4366d7a1cd173294edee3b2a189dad35d416fb935bc31b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f0056cca05812b3768f2ec84bdfd935bfb0f3c4b4224f3036824d417953aab12"
 ---
 
 # Modalities
@@ -30,6 +30,8 @@ Modalities are the kinds of input and output models work with. Through AI Gatewa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [SDKs & APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related) — Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.

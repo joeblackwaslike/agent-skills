@@ -2,8 +2,8 @@
 title: Configuration Management
 description: Versioning application and config data so changes are reviewable and instantly revertible when a bad config ships.
 source: "https://www.dolthub.com/docs/introduction/use-cases/configuration-management.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "1f759408385f1bd2c086aba4684226bec6c040330befdef7733b2fd18d0a144b"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "7663d8cd2c638abb2af2c4f6341495203494d749a79ae4add3945f78b7864ef4"
 ---
 
 ## Problem
@@ -27,7 +27,7 @@ This use case is particularly popular in video games where much of the game func
 
 ## Dolt replaces...
 
-## Files in Git
+### Files in Git
 
 Most large configuration files are stored and versioned in Git. If the files get too large they are store in cloud storage and linked to Git using [git-lfs](https://git-lfs.com/). If the files are stored in git-lfs, you lose the ability to diff the contents of the files. Dolt improves the experience by adding query capabilities and large fine-grained diffs to the data stored in configuration files. The diff and merge experience will be greatly improved in Dolt for this type of data.
 

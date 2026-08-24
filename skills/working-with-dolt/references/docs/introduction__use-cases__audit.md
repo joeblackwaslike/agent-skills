@@ -2,8 +2,8 @@
 title: Audit
 description: A tamper-evident history of every row and schema change for compliance — who changed what and when, queryable from SQL via dolt_history and dolt_diff.
 source: "https://www.dolthub.com/docs/introduction/use-cases/audit.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "c145e7473403fe9c4a4ce283408e5369415e40665d6043cdf90f75b002526851"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "242fdb37f35b4a2f6f4eabeda603a82a62b1285e786c2d3c217fcdad836a6afb"
 ---
 
 ## Problem
@@ -26,11 +26,11 @@ If you're not ready to switch your primary database to Dolt to get its audit cap
 
 ## Dolt replaces...
 
-## Soft Deletes
+### Soft Deletes
 
 A technique to add audit capability to an existing database is to add [soft deletes](https://www.dolthub.com/blog/2022-11-03-soft-deletes/). Soft delete is the use various techniques to mark data as inactive instead of deleting it. This is strictly worse than a version controlled database for audit purposes. With soft deletes, an operator can still modify data or the application can make mistakes. In Dolt, every write is part of the audit log. It is far more difficult for an operator to change Dolt history.
 
-## Change Data Capture
+### Change Data Capture
 
 [Change Data Capture](https://www.dolthub.com/blog/2023-03-01-change-data-capture/) is another way to add audit capability to an existing database. Some change data capture techniques are similar to [soft delete](https://www.dolthub.com/blog/2022-11-03-soft-deletes/) strategies. Modern change data capture tools consume replication logs to audit database changes. Dolt can consume the same logs in the [versioned MySQL replica use case](/introduction/use-cases/versioned-replica) producing a simpler and thus, more audit-friendly, change data capture solution. 
 

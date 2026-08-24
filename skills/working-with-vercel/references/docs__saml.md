@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "42fe0b5e3d6657e0b937ce60dd7c27c440abb45498beac114d3a725e7fb22586"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "76da100b60cb51cf4c2b7742e60ff772ba268fba8e7d59edf8de7531778e8178"
 ---
 
 # SAML Single Sign-On
@@ -32,12 +32,11 @@ sha256: "42fe0b5e3d6657e0b937ce60dd7c27c440abb45498beac114d3a725e7fb22586"
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
-- [Application Authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Learn best practices for application authentication Vercel
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related) — Learn how to Sign in with Vercel
 - [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
-- [Two-factor Enforcement](https://vercel.com/docs/two-factor-enforcement?from=related) — Learn how to enforce two-factor authentication \(2FA\) for your Vercel team members to enhance security.
+- [Two-factor Enforcement](https://vercel.com/docs/two-factor-enforcement?from=related) — Learn how to enforce two-factor authentication \\(2FA\\) for your Vercel team members to enhance security.
 
 Full cross-link map for this page: [/docs/saml.graph.md](/docs/saml.graph.md)
 <!-- /docsgraph:related -->
@@ -60,6 +59,12 @@ For Enterprise customers, you can also automatically manage team member roles an
 
 > **💡 Note:** Pro teams will first need to purchase the SAML SSO add-on from their [Billing settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23paid-add-ons) before it can be configured.
 
+## Custom Attributes
+
+### Session lifetime
+
+Use the optional `session_lifetime` attribute in your identity provider's SAML configuration to customize how long SAML SSO sessions last. Its value is an integer number of seconds between 86,400 (1 day) and 2,592,000 (30 days), inclusive, applied when the team member logs in. When `session_lifetime` is not used, sessions last 24 hours by default, after which team members must re-authenticate with the third-party SAML provider.
+
 ## Enforcing SAML
 
 For additional security, SAML SSO can be enforced for a team so that all [team members](/docs/rbac/managing-team-members) **cannot access any team information** unless their current session was authenticated with SAML SSO.
@@ -81,8 +86,6 @@ Once you have configured SAML, your [team members](/docs/rbac/managing-team-memb
 1. Select the **Continue with SAML SSO** button on the authentication page, then enter your team's URL.
    Your team slug is the identifier in the URLs for your team. For example, the identifier for vercel.com/acme is `acme`.
 2. Select **Continue with SAML SSO** again to be redirected to the third-party authentication provider to finish authenticating. Once completed, you will be logged into Vercel.
-
-SAML SSO sessions last for 24 hours before users must re-authenticate with the third-party SAML provider.
 
 ### Customizing the login page
 

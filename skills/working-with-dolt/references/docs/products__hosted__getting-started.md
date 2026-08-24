@@ -2,8 +2,8 @@
 title: "Hosted Dolt: Getting Started"
 description: Spinning up your first Hosted Dolt deployment.
 source: "https://www.dolthub.com/docs/products/hosted/getting-started.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "5d0bd52ce06e7828ccbeeae7db808403f51b88ccf4bf6f3e20621d9752bec1d0"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "f1c874b3637880bb7b95309e388e3b6abfdbd4849b60abf9f9a700e0592351db"
 ---
 
 ## Create an account
@@ -58,7 +58,7 @@ There are three ways to read or write from Hosted Dolt. You can:
 
 In this blog, we will show off (1) and (2) but we're going to start with the Workbench because it is the easiest to use.
 
-## Start the Workbench
+### Start the Workbench
 
 Click on the Workbench tab of your deployment.
 
@@ -70,7 +70,7 @@ The workbench has writes off by default. We will turn those on and create a data
 
 This should feel like a standard SQL workbench like Tableplus or Datagrip but it's web-based and has some extra Dolt-specific features like a Commit Log and Pull Requests.
 
-## Create Some Tables
+### Create Some Tables
 
 Now let's create some tables using SQL. We're going to enter the following SQL queries into the query box. You have to run them one at a time.
 
@@ -102,7 +102,7 @@ I finish up by subsequently running the last two create table queries.
 
 ![](../../.gitbook/assets/hosted-getting-started/multi-table-diff.png)
 
-## Create a Dolt Commit
+### Create a Dolt Commit
 
 Now time to use my first Dolt feature! I'm going to create a [Dolt Commit](/concepts/dolt/git/commits). Make a Dolt commit when you want to preserve the state of the Dolt database permanently for future reference.
 
@@ -148,7 +148,7 @@ Taylor can now access the deployment page to get connectivity information. Her m
 
 Dolt is a MySQL-compatible database. You can connect any client that can connect to MySQL to it. We're going to use the MySQl client that comes with MySQL in this section to connect to Dolt.
 
-## Install
+### Install
 
 Head over to the [MySQL Getting Started documentation](https://dev.mysql.com/doc/mysql-getting-started/en/) and install MySQL on your machine. I used [Homebrew](https://brew.sh/) to install MySQL on my Mac.
 
@@ -159,7 +159,7 @@ MySQL comes with a MySQL server called `mysqld` and a MySQL client called `mysql
 mysql  Ver 8.0.29 for macos12.2 on x86_64 (Homebrew)
 ```
 
-## Connect
+### Connect
 
 Now, to connect the mysql client to Dolt, you need the host, port, username, and password from the Connectivity tab.
 
@@ -189,7 +189,7 @@ mysql>
 
 This MySQL client is connected to your Hosted Dolt instance. Any changes you make here will be visible to users of the workbench or any other client connected to the Hosted Dolt database.
 
-## Create a branch
+### Create a branch
 
 So let's be safe and make our changes on a [branch](/concepts/dolt/git/branch). A branch in Dolt is a lightweight way of isolating your changes from the "main" copy of the database. Since our goal is to make a Pull Request in the SQL Workbench, making a branch is necessary as pull requests are done between two branches, in this case "main" and our new branch.
 
@@ -219,7 +219,7 @@ mysql> select active_branch();
 
 Great, Taylor is now on a new branch and can safely make her changes.
 
-## Insert some rows
+### Insert some rows
 
 This is easy if you know SQL. In the MySQL client on the `inserts` branch, Taylor ran the following SQL to add a few of the early employees here at DoltHub and assign them to teams.
 
@@ -276,7 +276,7 @@ mysql> call dolt_commit('-m', 'inserted early employees');
 
 Let's head back over to the workbench to make a Pull Request.
 
-## Make and Review a Pull Request
+### Make and Review a Pull Request
 
 The Hosted Dolt workbench supports pull requests and human review of your Hosted Dolt database. Pull requests on Hosted are always opened and merged from the workbench — there are no forks (forks are a [DoltHub](/concepts/dolthub/prs) / [DoltLab](/products/doltlab) feature) and no CLI/SQL surface for opening a PR. The branch you're proposing for review can come from anywhere (the workbench, a MySQL client, a [local clone](/products/hosted/cloning), automation), but the PR itself is created in the web UI.
 
@@ -302,7 +302,7 @@ Finally, she clicks "Create pull request". She now sends me this Pull Request li
 
 ![](../../.gitbook/assets/hosted-getting-started/workbench-pr.png)
 
-## Review and Merge
+### Review and Merge
 
 On the Pull Request Page, I have access to a human readable diff of the changes under review.
 

@@ -13,8 +13,8 @@ related:
 summary: This guide will help you get started with using Comments with your Vercel Preview Deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/using-comments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "41f4dbdeaa29ed9b5b2f522e042b2a7eb5a0dd31002efd144a42ed6543768ca4"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "85c2f58ab114721eab98f9ae895bf99b1a57ef6216aaae8ab1a13adb9024e4e2"
 ---
 
 # Using Comments with Preview Deployments
@@ -29,9 +29,9 @@ sha256: "41f4dbdeaa29ed9b5b2f522e042b2a7eb5a0dd31002efd144a42ed6543768ca4"
 
 - [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [vercel comments](https://vercel.com/docs/cli/comments?from=related) — Learn about vercel comments on Vercel.
 - [Toolbar](https://vercel.com/docs/vercel-toolbar?from=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
-- [Add to Environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related) — Learn how to use the Vercel Toolbar in production and local environments.
 
 Full cross-link map for this page: [/docs/comments/using-comments.graph.md](/docs/comments/using-comments.graph.md)
 <!-- /docsgraph:related -->

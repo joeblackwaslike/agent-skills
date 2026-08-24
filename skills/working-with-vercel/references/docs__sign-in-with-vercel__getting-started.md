@@ -9,15 +9,15 @@ prerequisites:
   - /docs/sign-in-with-vercel
 related:
   - /docs/sign-in-with-vercel/manage-from-dashboard
+  - /docs/sign-in-with-vercel/authorization-server-api
   - /docs/environment-variables
   - /docs/cli
   - /docs/cli/env
-  - /docs/sign-in-with-vercel/consent-page
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "be10f2cbd35c9bddf1aaec3645d4a9e2bb9b9e047584a911aa418cd7ff4a39e6"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5e63333b4bf86a3c7531daba64dc0deaf4d2a5fcd2a1616a4c305a3b1a360ee9"
 ---
 
 # Getting started with Sign in with Vercel
@@ -31,15 +31,15 @@ This guide uses Next.js App Router. You'll create a Sign in with Vercel button t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel?from=related) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
-- [Authentication](https://nextjs.org/docs/app/guides/authentication?from=related) — Learn how to implement authentication in your Next.js application.
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
+- [Authentication](https://nextjs.org/docs/app/guides/authentication?from=related) — Learn how to implement authentication in your Next.js application.
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [Backend for Frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related) — Learn how to use Next.js as a backend framework
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+- [Client Uploads](https://vercel.com/docs/vercel-blob/client-upload?from=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
-- [Client Uploads](https://vercel.com/docs/vercel-blob/client-upload?from=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/getting-started.graph.md](/docs/sign-in-with-vercel/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -57,6 +57,12 @@ Full cross-link map for this page: [/docs/sign-in-with-vercel/getting-started.gr
     - `http://localhost:3000/api/auth/callback` for running the application locally
     - `https://<your-apps-domain>/api/auth/callback` for running the application in production
 - The necessary permissions [configured from the dashboard](/docs/sign-in-with-vercel/manage-from-dashboard#configure-the-necessary-permissions)
+
+> **💡 Note:** Confidential clients can instead authenticate with a [JWT client
+> assertion](/docs/sign-in-with-vercel/authorization-server-api#authenticate-with-a-jwt-assertion).
+> Configure the method and JWKS URL in the
+> [dashboard](/docs/sign-in-with-vercel/manage-from-dashboard#choose-your-client-authentication-method).
+> This tutorial uses a client secret.
 
 - ### Add environment variables
   Add the following variables to your `.env.local` at your project's root:

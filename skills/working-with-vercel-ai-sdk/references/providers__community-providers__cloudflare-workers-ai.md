@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-workers-ai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "ee0359d7388d8d51a1b56c0c3fae6360e9285c7d6ef15f027a4a03db27612d38"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "b81a65675e73f13d7f5c9fe4f1832220b4ca9d2dae76769cab57ad665ac57d6f"
 ---
 
 # Cloudflare Workers AI
@@ -203,6 +203,7 @@ export default {
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

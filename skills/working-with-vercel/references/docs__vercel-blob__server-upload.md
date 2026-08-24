@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "98f3df51ddddf0cd7d099e5c933a2dba3adfabad349bcecdb25f33e75dca73de"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fe8219529687c3944fff15bd99ea7c18d4b68502857e892f6f8c7398c4834db3"
 ---
 
 # Server Uploads with Vercel Blob
@@ -38,6 +38,7 @@ sha256: "98f3df51ddddf0cd7d099e5c933a2dba3adfabad349bcecdb25f33e75dca73de"
 - [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload?from=related)
 - [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related)
 - [Upload a blob chunk](https://vercel.com/docs/rest-api/vcr/upload-a-blob-chunk?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md)
 <!-- /docsgraph:related -->

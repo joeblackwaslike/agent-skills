@@ -13,8 +13,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/tokens.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "97cbb70e6a6d42461e693189134df74664a5288adf03ca0d1c15d4229a65d2a7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "639c75783a4c02db5ac4d7886e1eea49a124f6423998f3311f0903d10ed6700e"
 ---
 
 # Tokens
@@ -29,11 +29,10 @@ There are three tokens your application will work with when using Sign in with V
 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related) — An Access Token is required in order to use the Vercel API. Tokens can be created and managed at the level of your accou
-- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [OIDC Reference](https://vercel.com/docs/oidc/reference?from=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens?from=related)
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/tokens.graph.md](/docs/sign-in-with-vercel/tokens.graph.md)

@@ -16,8 +16,8 @@ related:
 summary: Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c6c23e195816724dfb71311e3c5fe8939f73a250dd67d06bea009c204a3f480d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5e54109f5d38ebb14ef334785a3bfeb9fece2af6ad5f5a54386173ea20bf8f8b"
 ---
 
 # Agent Resources
@@ -36,7 +36,10 @@ Vercel provides resources to help you build AI-powered applications and work mor
 - [AI Coding Agents](https://nextjs.org/docs/app/guides/ai-agents?from=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
+- [Extending with Agents](https://docs.vercel.shop/docs/getting-started/extending-with-agents?from=related) — Use coding agents like Claude Code, Cursor, and Codex to personalize and extend your storefront.
+- [Agentic features](https://v0.app/docs/agentic-features?from=related) — v0's intelligent agent capabilities for web search, browser use, terminal commands, error fixing, and external tool inte
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources.graph.md](/docs/agent-resources.graph.md)
 <!-- /docsgraph:related -->

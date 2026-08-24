@@ -17,8 +17,8 @@ related:
 summary: Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/vite-with-nitro.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e34606cc9ef74fe3eaaac4a8ec35cacb3024486fa6b97b0b6d9a5bce6c10d05a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5c963fff622d0038b41f6ad72bbcd4707cc9919f1070d87eb3a94d9791401553"
 ---
 
 # Vite + Nitro on Vercel
@@ -31,7 +31,7 @@ sha256: "e34606cc9ef74fe3eaaac4a8ec35cacb3024486fa6b97b0b6d9a5bce6c10d05a"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related) — The Nitro Vite plugin \(nitro/vite\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
+- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
@@ -42,6 +42,7 @@ sha256: "e34606cc9ef74fe3eaaac4a8ec35cacb3024486fa6b97b0b6d9a5bce6c10d05a"
 - [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
 - [SvelteKit](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related) — Learn how to use Vercel's features with SvelteKit
 - [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/vite-with-nitro.graph.md](/docs/frameworks/full-stack/vite-with-nitro.graph.md)
 <!-- /docsgraph:related -->

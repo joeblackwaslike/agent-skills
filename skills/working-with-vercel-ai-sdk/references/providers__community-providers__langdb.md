@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/langdb.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "5fceaf2b60808ed7add24e25b5769ae47f3a45f2168d75950c745abfeebf0b95"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "0cc53fce340d1543c63a6ac1bbaf48be0efc405ceff49fab96658459f0fe5ec3"
 ---
 
 # LangDB
@@ -184,6 +184,7 @@ For more information, visit the [LangDB documentation](https://docs.langdb.ai/).
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

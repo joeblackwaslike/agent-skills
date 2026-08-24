@@ -15,8 +15,8 @@ related:
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "bb05f972c63cd5fe2792e73b63364ab92ac7cb1826102212166cf1d8eaca006d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "11ffdd613415739d45ea002c1c509d3213dde8e0fde261ea88949394cfc42110"
 ---
 
 # Sandbox firewall
@@ -33,13 +33,12 @@ Network firewall allows users to restrict egress traffic from their sandbox. It 
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
-- [Running OpenClaw in Vercel Sandbox](https://vercel.com/kb/guide/running-openclaw-in-vercel-sandbox?from=related) — This guide walks you through setting up OpenClaw inside a Vercel Sandbox and configuring the WhatsApp channel.
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [Runtimes](https://vercel.com/docs/sandbox/concepts/runtimes?from=related) — Detailed specifications for the Vercel Sandbox environment.
 - [Update network policy](https://vercel.com/docs/rest-api/sandboxes/update-network-policy?from=related)
 - [Firewall](https://vercel.com/docs/vercel-firewall?from=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related)
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox?from=related)
-- [List sandboxes](https://vercel.com/docs/rest-api/sandboxes/list-sandboxes?from=related)
 
 Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -70,15 +69,36 @@ This is useful to reduce the chance of data exfiltration when running untrusted 
 
 ### User-defined
 
-Most specific policy, denying all traffic by default, while allowing users to get fine-grain control on their sandbox setup. Users can define:
+User-defined policies deny traffic by default and let you allow specific destinations. You can define:
 
-- a list of domains to allow traffic to. Domain-based policies are easy to use and maintain fine-grain access control for services like S3 (per bucket) or behind virtual hosting (as Vercel). Wildcard support (`*`) allows easier management for complex websites. Each domain can have specific rules attached to it, such as [credentials brokering](/docs/sandbox/concepts/firewall#credentials-brokering) via the `transform` field or [requests proxying](/docs/sandbox/concepts/firewall#requests-proxying) via the `forwardURL` field. Only one of these feature can be defined per rule.
-- a list of address ranges to allow traffic to. Those ranges will not enforce per-domain rules, supporting non-encrypted traffic. This is recommended when using secure-compute to connect to your private network securely.
-- a list of address ranges to deny traffic to. Those range will take precedence to block traffic. This is useful when using secure-compute, allowing Internet access to be granted while blocking internal network.
+- **Allowed domains**: Allow traffic by domain (for example, `api.example.com` or `*.example.com`), including services that use virtual hosting, such as Amazon S3. A domain can also use [credentials brokering](#credentials-brokering) through `transform` or [requests proxying](#requests-proxying) through `forwardURL`. A rule can define either `transform` or `forwardURL`. A domain allowlist constrains which hostname a connection negotiates, not which virtual host the request ultimately reaches; see [HTTP and HTTPS](#http-and-https).
+- **Allowed address ranges**: Allow traffic by CIDR range (for example, `10.0.0.0/8`). Use address ranges for non-encrypted traffic or private network access through Secure Compute. Address range rules do not enforce per-domain rules.
+- **Denied address ranges**: Block traffic to specific CIDR ranges (for example, `172.16.0.0/12`). Denied ranges take precedence over allowed domains and address ranges, but only remove access that an allow rule already granted.
 
-Address ranges and domains are enforced independently, so combining them does not compose the way it appears to. Because allowed ranges are not filtered by your domain rules, a domain allowlist alongside `subnets.allow` only controls the default resolver's DNS lookups. It does not restrict which IPs the sandbox can connect to within the allowed ranges. Code in the sandbox can reach any IP in an allowed range by connecting to a literal IP address or by using a custom DNS resolver, and that traffic bypasses SNI filtering, [credentials brokering](#credentials-brokering), and [requests proxying](#requests-proxying). A broad range such as `0.0.0.0/0` or `::/0` therefore grants access to the entire Internet regardless of the domain allowlist. Use a domain allowlist when you need per-domain enforcement, or use `subnets.allow` scoped to the exact hosts you trust when you need raw IP access, rather than relying on both together.
+A domain wildcard must replace an entire DNS label. You can place wildcard labels anywhere in a domain pattern. Partial-label wildcards such as `api*.example.com` are not supported.
 
-`subnets.allow` also does not restrict DNS. The sandbox's default resolver keeps resolving arbitrary domain names no matter which ranges you allow, even under a policy that lists only private ranges with no public resolver. Only domain rules constrain what the default resolver will resolve, so a policy with allowed ranges but no `allow` domains leaves DNS open. Code in the sandbox can then resolve any hostname and use those lookups to send data out over DNS. Define an `allow` domain list to restrict DNS, or use `deny-all` to block it entirely.
+Domain patterns match as follows:
+
+| Pattern | Matches | Does not match |
+| --- | --- | --- |
+| `example.com` | `example.com` | `www.example.com` |
+| `*.example.com` | `www.example.com`, `www.api.example.com` | `example.com` |
+| `www.*.com` | `www.example.com` | `example.com`, `www.api.example.com` |
+| `*` | Any domain | None |
+
+The following behaviors determine the effective scope of a user-defined policy.
+
+A leading wildcard such as `*.example.com` matches subdomains at any depth, but it does not match the apex domain. Add `example.com` separately if the sandbox needs access to both the apex domain and its subdomains.
+
+A user-defined policy with no allowed domains or CIDR ranges behaves as `deny-all` and blocks all outbound traffic, including DNS.
+
+Empty policies such as `{}`, `{ allow: {} }`, and `{ subnets: {} }` also behave as `deny-all`. Policies that contain only `subnets.deny` behave the same way, rather than creating an allow-all policy with exceptions. Use the explicit `deny-all` mode when you intend to block all traffic.
+
+When a policy has allow rules, domain and address range rules apply independently. Domain rules do not narrow the IP addresses allowed by `subnets.allow`. Code can reach any IP in an allowed range by using a literal IP address or a custom DNS resolver. This traffic bypasses SNI filtering, [credentials brokering](#credentials-brokering), and [requests proxying](#requests-proxying).
+
+A broad range such as `0.0.0.0/0` or `::/0` grants access to the entire Internet regardless of domain rules. Use domain rules for per-domain enforcement. Use `subnets.allow` with exact ranges when you need raw IP access.
+
+`subnets.allow` also leaves the sandbox's default DNS resolver unrestricted. A policy with allowed address ranges and no allowed domains can resolve any hostname, even when its ranges include only private networks. Code can use those lookups to send data over DNS. Use domain rules to restrict DNS resolution, or use `deny-all` to block DNS entirely.
 
 ## Supported protocols
 
@@ -87,6 +107,14 @@ Domain-based rules identify traffic by the hostname negotiated during the TLS ha
 ### HTTP and HTTPS
 
 HTTPS traffic is matched using the [SNI (Server Name Indication)](/docs/glossary#sni-server-name-indication) extension sent at the start of the TLS handshake. Plain-text HTTP cannot be filtered by domain, and must be allowed by [IP range](#user-defined) instead.
+
+Domain matching reads the hostname from the SNI extension, which travels unencrypted at the start of the handshake. For an ordinary allowed domain the firewall matches this hostname and forwards the connection without terminating TLS, so it never decrypts the request and never inspects the HTTP `Host` header inside the encrypted connection. TLS is terminated only for domains with `transform` or `forwardURL` rules; see [TLS termination](#tls-termination).
+
+Because matching happens on the SNI alone, a client inside the sandbox can send an allowlisted hostname as the SNI while sending a different hostname in the HTTP `Host` header, a technique known as domain fronting. When the destination server or CDN accepts requests whose `Host` header differs from the SNI, the request can reach a different virtual host behind the same infrastructure than the one you allowed. Many providers reject mismatched requests, but the firewall does not prevent the mismatch by default. Traffic still only flows to endpoints that serve the allowlisted SNI; a domain allowlist constrains which hostname a connection negotiates, not which application behind that endpoint ultimately serves the request.
+
+When this matters for your threat model, prefer allowlisting narrow, single-purpose hostnames whose infrastructure does not host other origins. To enforce policy on the request itself, use [credentials brokering](#credentials-brokering) through `transform` or [requests proxying](#requests-proxying) through `forwardURL`, optionally with restrictive [matchers](#matchers). For these rules the firewall terminates TLS, so it can inspect and rewrite the request. You can also route traffic through your own proxy that enforces `Host`-level rules.
+
+A `transform` rule can force the HTTP `Host` header to the allowed domain. Because the firewall terminates TLS for domains with transformation rules, the header is rewritten before the request leaves the sandbox, so every request that reaches the destination carries the hostname you allowed regardless of the `Host` header the client sent:
 
 ### Postgres
 

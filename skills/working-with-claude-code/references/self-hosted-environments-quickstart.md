@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/self-hosted-environments-quickstart.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "4d2d8a4846a8e3283cb9f3f0f5d649df034e348eb83b668414035ce109da2fbc"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "6f123b3df996fb8c400340be2b93d11a45d44240e4a420387c58694684e9122a"
 ---
 
 > ## Documentation Index
@@ -26,7 +26,7 @@ By the end you'll have an environment on the [**Cloud environments** admin page]
 
 The claude.ai side needs:
 
-* **Allow self-hosted environments** turned on by an [Owner or admin](/docs/en/cloud-environments#organization-shared-environments) on the [**Cloud environments** admin page](https://claude.ai/admin-settings/cloud-environments); the **New** button doesn't appear until it is. If you don't hold the role, someone who does can create the environment and hand you its secret; the runner and terminal steps on this page need no claude.ai role, and where a step checks status in the admin UI, the runner's own log lines give you the same signal.
+* **Allow self-hosted environments** turned on by an [Owner](/docs/en/cloud-environments#organization-shared-environments) on the [**Cloud environments** admin page](https://claude.ai/admin-settings/cloud-environments); the **New** button doesn't appear until it is. If you don't hold the role, someone who does can create the environment and hand you its secret; the runner and terminal steps on this page need no claude.ai role, and where a step checks status in the admin UI, the runner's own log lines give you the same signal.
 * A [GitHub connection](/docs/en/claude-code-on-the-web#github-authentication-options) for your organization, so developers can pick repositories when they start sessions.
 
 ### Host and network
@@ -53,7 +53,7 @@ A ready host prints the runner's usage text, listing flags such as `--environmen
 
 ## Set up an environment and runner
 
-Claude Code includes a guided setup: an interactive Claude Code session that walks you through creating the environment in the admin UI, starts a local runner with the secret file you save, confirms that the runner registers, and writes a cheat sheet to `./runner-setup/CHEAT-SHEET.md`. Run it on a machine where you've signed in with `claude auth login` using an account that holds an Owner or admin role; it isn't available with API keys or third-party model providers. On hosts where an interactive session isn't possible, use the manual steps below instead. Confirm the [version check](#software-on-the-runner-host) passed first: on versions older than 2.1.224, this command starts an ordinary Claude session with the words as the prompt instead of the guided setup. To start the guided setup, run the setup subcommand and follow the prompts:
+Claude Code includes a guided setup: an interactive Claude Code session that walks you through creating the environment in the admin UI, starts a local runner with the secret file you save, confirms that the runner registers, and writes a cheat sheet to `./runner-setup/CHEAT-SHEET.md`. Run it on a machine where you've signed in with `claude auth login` using an account that holds an Owner role; it isn't available with API keys or third-party model providers. On hosts where an interactive session isn't possible, use the manual steps below instead. Confirm the [version check](#software-on-the-runner-host) passed first: on versions older than 2.1.224, this command starts an ordinary Claude session with the words as the prompt instead of the guided setup. To start the guided setup, run the setup subcommand and follow the prompts:
 
 ```bash theme={null}
 claude self-hosted-runner setup

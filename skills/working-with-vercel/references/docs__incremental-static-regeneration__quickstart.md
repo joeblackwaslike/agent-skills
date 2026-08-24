@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "88b4d3d4829c8ecbd1e437e94b92d41793c2823168379c9170c878bf8d72f7c5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b4f1f5ab7105d90cec5cf9758dc2dd8f8f0f5c9a42620b94b308247519dd5b5f"
 ---
 
 # Getting started with ISR
@@ -28,7 +28,7 @@ This guide helps you set up Incremental Static Regeneration (ISR) with your Verc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval?from=related) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
 - [ISR](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.

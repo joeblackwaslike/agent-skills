@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "96fa74d6dca9909b9ef844348399a21381d9021d4bd9c455bffac0b0fe773716"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "44648eb4d740e86c2bee89d6a3929bf22f917eb9c76d63a13c2b0bac13ae351e"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -30,6 +30,7 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Analytics](https://docs.vercel.shop/docs/skills/enable-analytics?from=related) — Add Vercel Analytics, Vercel Speed Insights, and Google Tag Manager to the storefront.
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App

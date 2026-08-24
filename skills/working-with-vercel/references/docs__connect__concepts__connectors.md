@@ -17,8 +17,8 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d0bc95e6cdc389a0743ca66e5aab7729467ce16cbfc9a2a4df21cc857ba8f71e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "95f5f6402d45fccefddb0d26cf1ed2d4421a766a2874c78f553c8761d8b4c593"
 ---
 
 # Connectors
@@ -33,10 +33,12 @@ A **connector** is the team-owned record that represents one third-party service
 
 - [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/connect/concepts/connectors.graph.md](/docs/connect/concepts/connectors.graph.md)
 <!-- /docsgraph:related -->
@@ -47,28 +49,18 @@ Each connector has four identifiers:
 
 - **`uid`**: a stable, human-readable string that you choose at create time and use everywhere else (in `getToken`, in CLI commands, in the dashboard URL). Example: `slack/acme-slack` or `oauth/linear`.
 - **`id`**: an opaque internal identifier that Vercel Connect uses in API responses. You rarely use it directly.
-- **`type`**: the connector type. Determines the auth flow and the available capabilities (`slack`, `github`, `oauth`, `snowflake`, `salesforce`, `api-key`, `custom`).
-- **`service`**: the specific provider the connector targets. For built-in types this matches the type (`slack`, `github`). For typed-but-generic connectors like Custom OAuth, this is the service URL or name. Example: `type: 'oauth'`, `service: 'mcp.linear.app'`.
+- **`service`**: the third-party service the connector reaches, independent of `type`. For most services this is a name, such as `slack` or `microsoft`. Custom OAuth connectors identify the service by its URL instead, such as `mcp.linear.app`.
+- **`type`**: how Vercel Connect authenticates to that service. Determines the auth flow and the available capabilities. Examples: `slack`, `github`, `microsoft-entra`, `oauth`, `api-key`.
 
 When you call `getToken('slack/acme-slack', ...)`, the string `slack/acme-slack` is the connector's `uid`.
 
-## Connector types
+## Available connectors
 
-| Type         | Auth model                                                                              | Multi-tenant installations | Triggers |
-| ------------ | --------------------------------------------------------------------------------------- | -------------------------- | -------- |
-| Slack        | Slack app install (per workspace)                                                       | yes                        | yes      |
-| GitHub       | GitHub app install (per org or user)                                                    | yes                        | yes      |
-| Linear       | Linear app install (per workspace)                                                      | yes                        | yes      |
-| Snowflake    | Snowflake Partner Connect JWT                                                           | no                         | no       |
-| Salesforce   | Managed OAuth flow                                                                      | no                         | no       |
-| API Key      | Static credential supplied at create time                                               | no                         | no       |
-| Custom OAuth | OAuth 2.0 / OIDC against any URL-identified service; authorization-code flow with PKCE and/or client-credentials flow | no                         | no       |
-
-The capability matrix above is the current beta set and may change. Connector types may be added or removed without notice. New types are added behind feature flags; check the dashboard for what's available to your team.
+[Browse the connector catalog](/connect/browse) for current services and connection methods. Each connector page includes authentication options, trigger support, and setup instructions.
 
 ## Setting up a custom OAuth connector
 
-Slack, GitHub, Snowflake, Linear, and Salesforce are [Vercel Managed Connectors](/docs/connect#managed-connectors): Vercel registers the OAuth app, and you authorize it to access your account or workspace. For any other provider, you can create a **Custom OAuth** connector, and Vercel does as much of the setup as the provider supports:
+For [Vercel Managed Connectors](/docs/connect#connector-ownership-models), Vercel registers the OAuth app. For other providers, create a **Custom OAuth** connector. Vercel can help with the following setup tasks:
 
 - **Discover endpoints from a URL**: Enter a server URL, such as `mcp.linear.app`, and Vercel reads the provider's published OAuth metadata to fill in the authorization and token endpoints.
 - **Bring your own client**: Add the client ID and client secret from the OAuth app you registered with the provider.

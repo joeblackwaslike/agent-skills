@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "53e49ba894d65c72c361f06bf7f21e398043342ab50367525d98a355780c7b83"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "2b2fb66989eb77f8523ef67318ea56e3eb341fcb995cb9cb5c55b2041aaba32d"
 ---
 
 # Image Generation with Chat Completions API
@@ -30,9 +30,14 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 
 - [Using AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
+- [DeepInfra](https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra?from=related)
+- [Image Generation](https://ai-sdk.dev/docs/ai-sdk-core/image-generation?from=related)
+- [generateImage](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-image?from=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related)
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
-- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
+- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
+- [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md)
@@ -537,6 +542,123 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## Editing images
+
+Image-only models can also edit an existing image. Send one or more source images and a prompt describing the change to the OpenAI-compatible `/v1/images/edits` endpoint, using `openai.images.edit` from the OpenAI SDK.
+
+Support varies by model. Models that accept image inputs include `openai/gpt-image-2`, `bfl/flux-kontext-pro`, `bfl/flux-pro-1.0-fill`, `google/imagen-4.0-generate-001`, and `xai/grok-imagine-image`. Edited images are returned as base64 strings in `data`, the same as image generation.
+
+### Edit a single image
+
+```typescript filename="edit-image.ts"
+import { createReadStream } from 'node:fs';
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+});
+
+const result = await openai.images.edit({
+  model: 'openai/gpt-image-2',
+  image: createReadStream('source.png'),
+  prompt: 'Add a watercolor effect to this image',
+});
+
+console.log(`Edited ${result.data.length} image(s)`);
+```
+
+```python filename="edit-image.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.getenv('AI_GATEWAY_API_KEY'),
+    base_url='https://ai-gateway.vercel.sh/v1',
+)
+
+result = client.images.edit(
+    model='openai/gpt-image-2',
+    image=open('source.png', 'rb'),
+    prompt='Add a watercolor effect to this image',
+)
+
+print(f'Edited {len(result.data)} image(s)')
+```
+
+### Combine multiple images
+
+Pass up to 16 source images to compose them into a single result:
+
+```typescript filename="combine-images.ts"
+const result = await openai.images.edit({
+  model: 'openai/gpt-image-2',
+  image: [
+    createReadStream('body-lotion.png'),
+    createReadStream('bath-bomb.png'),
+    createReadStream('soap.png'),
+  ],
+  prompt: 'Create a lovely gift basket with these three items in it',
+});
+```
+
+```python filename="combine-images.py"
+result = client.images.edit(
+    model='openai/gpt-image-2',
+    image=[
+        open('body-lotion.png', 'rb'),
+        open('bath-bomb.png', 'rb'),
+        open('soap.png', 'rb'),
+    ],
+    prompt='Create a lovely gift basket with these three items in it',
+)
+```
+
+### Replace part of an image with a mask
+
+Pass a `mask` to restrict the edit to a specific region. The mask must be the same size as the source image, and its transparent areas mark the region to replace:
+
+```typescript filename="edit-image-mask.ts"
+const result = await openai.images.edit({
+  model: 'openai/gpt-image-2',
+  image: createReadStream('living-room.png'),
+  mask: createReadStream('mask.png'),
+  prompt: 'Place a potted fern in the empty corner',
+});
+```
+
+```python filename="edit-image-mask.py"
+result = client.images.edit(
+    model='openai/gpt-image-2',
+    image=open('living-room.png', 'rb'),
+    mask=open('mask.png', 'rb'),
+    prompt='Place a potted fern in the empty corner',
+)
+```
+
+> **💡 Note:** Not every model supports masks. Models without mask support return a warning
+> in the response and apply the prompt to the whole image.
+
+### Reference images by URL
+
+To reference images you already host instead of uploading bytes, send a JSON body. Each entry in `images` takes an `image_url` that is either an `https` URL or a base64 `data:` URL:
+
+```bash filename="edit-image-url.sh"
+curl -X POST "https://ai-gateway.vercel.sh/v1/images/edits" \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-image-2",
+    "prompt": "Add a watercolor effect to this image",
+    "images": [{ "image_url": "https://example.com/source.png" }]
+  }'
+```
+
+> **💡 Note:** Referencing images by `file_id` is not supported, because AI Gateway does not
+> implement the OpenAI Files API. Upload the image bytes or pass an `image_url`
+> instead. Streaming partial edit results is also unsupported: requests return
+> the completed image as a single JSON response.
 
 ## Python
 

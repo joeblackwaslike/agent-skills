@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "97dfb0b6f573271d1f32dffe006f44bc9fdc90fe2bab7f87230a84962e5f3609"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "72001aadd74bfc3c961812274810309d5efb06ceae4de59146a02850932b93c2"
 ---
 
 # Vercel Firewall
@@ -30,11 +30,11 @@ The Vercel Firewall is a robust, multi-layered security system designed to prote
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Build a ChatGPT Connector \(MCP server\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related) — Create an MCP server to bring your tools and data to ChatGPT
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers

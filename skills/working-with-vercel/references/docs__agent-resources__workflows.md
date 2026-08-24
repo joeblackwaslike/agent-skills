@@ -16,8 +16,8 @@ related:
 summary: End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sessions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/workflows.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "79f6152ae3c9f1ffbe196655c145845bd9da532220cf2054b98875a35c4c9bcf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9c6fb89e1059f62b1d2e68aee5e68ee1df7d2184df379dda10913193f19ba818"
 ---
 
 # CLI Workflows
@@ -32,13 +32,13 @@ These workflows show how to compose multiple Vercel CLI commands into complete w
 
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [Observability](https://workflow-sdk.dev/docs/observability?from=related) — Inspect and debug workflow runs using the CLI and Web UI.
+- [Observability](https://workflow-sdk.dev/docs/observability?from=related) — Inspect and debug workflow runs using the CLI and web UI.
 - [Building stateful Slack bots with Vercel Workflow](https://vercel.com/kb/guide/stateful-slack-bots-with-vercel-workflow?from=related) — Learn how to build Slack bots that maintain state and handle long-running processes without managing queues, databases,
 - [Building Durable AI Agents](https://workflow-sdk.dev/docs/ai?from=related) — Convert a basic AI chat app into a durable, resumable agent using Workflow SDK.
 - [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related) — Set up the Workflow Python SDK in your Python application.
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Testing](https://workflow-sdk.dev/docs/testing?from=related) — Unit test individual steps and integration test entire workflows using Vitest.
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Python](https://vercel.com/docs/workflows/python?from=related) — Build durable workflows and AI agents in Python with the Vercel SDK.
 - [Concepts](https://vercel.com/docs/workflows/concepts?from=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.

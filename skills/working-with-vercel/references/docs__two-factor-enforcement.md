@@ -13,8 +13,8 @@ related:
 summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "df91617a9f1b1004385ff9d9d1f3ebb92dc84f5494d586e07253a7449b89bb14"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5895f6600ed3766648d16484f0ef0a117dea4e05660229e7fe1c6e9d4943b09e"
 ---
 
 # Two-factor enforcement
@@ -31,7 +31,7 @@ To enhance the security of your Vercel team, you can enforce two-factor authenti
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related) — Learn how to configure Directory Sync for your Vercel Team.
 - [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md)
 <!-- /docsgraph:related -->

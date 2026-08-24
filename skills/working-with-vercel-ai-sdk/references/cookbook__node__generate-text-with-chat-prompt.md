@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "8027e99fb6ee54796ef5a2ed7eda8750d9dee4dcce709b0eb4f250663ddd5d0d"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "0f6daa16ed224fb368abe81a2f82eab09a4f879e1ce6d137daedd888d066a3dc"
 ---
 
 # Generate Text with Chat Prompt
@@ -16,7 +16,7 @@ import { generateText } from 'ai';
 const result = await generateText({
   model: 'openai/gpt-4o',
   maxOutputTokens: 1024,
-  system: 'You are a helpful chatbot.',
+  instructions: 'You are a helpful chatbot.',
   messages: [
     {
       role: 'user',

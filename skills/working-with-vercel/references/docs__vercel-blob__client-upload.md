@@ -13,8 +13,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "a42fd019122de794c1a9192bae0a7bfbfd89a42ec55ea74a81adeaf0942d6f62"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "737dd2c9b2c24060783e6e032b7d0b10790ad8caa2cd6cfa8fe8148378a1f73d"
 ---
 
 # Client Uploads with Vercel Blob
@@ -36,6 +36,7 @@ sha256: "a42fd019122de794c1a9192bae0a7bfbfd89a42ec55ea74a81adeaf0942d6f62"
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ecf0da1b92b178cf7bfcd913cc064030585201cd569e440375e63fcbe7b7ef88"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "692ed04326db6cd7b005e31b4cf8b2525ee2cb111fafd06a568514a312195ee4"
 ---
 
 # Deployment Protection on Vercel
@@ -31,23 +31,23 @@ Deployment Protection lets you control who can access your preview and productio
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment?from=related) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
-- [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
-- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
 - [Custom Events](https://vercel.com/docs/analytics/custom-events?from=related) — Learn how to send custom analytics events from your application.
-- [Inspect OG Metadata](https://vercel.com/docs/deployments/og-preview?from=related) — Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
+- [vercel curl](https://vercel.com/docs/cli/curl?from=related) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 
 Full cross-link map for this page: [/docs/deployment-protection.graph.md](/docs/deployment-protection.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** On the Hobby plan, Vercel Authentication with Standard Protection is
-> available. This protects your preview deployments and deployment URLs, but your
-> production domain remains publicly accessible. To protect production domains,
-> you need a Pro or Enterprise plan.
+> available. This protects your preview deployments and deployment URLs, but
+> your production domain remains publicly accessible. To protect production
+> domains, you need a Pro or Enterprise plan.
 
 Deployment Protection requires authentication for all requests, including those to Routing Middleware.
 
@@ -57,7 +57,9 @@ You can choose from several methods to protect your deployments:
 
 - [**Vercel Authentication**](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication): Restricts access to only Vercel users with suitable access rights. **Available on all plans**
 - [**Passport**](/docs/passport): Restricts access to visitors who authenticate through your identity provider. **Available on the Enterprise plan**
-- [**Password Protection**](/docs/deployment-protection/methods-to-protect-deployments/password-protection): Restricts access to users with the correct password. **Available on the Enterprise plan, or as a paid add-on for Pro plans**
+
+* [**Password Protection**](/docs/deployment-protection/methods-to-protect-deployments/password-protection): Restricts access to users with the correct password. **Available on the Enterprise plan, or as a paid add-on for Pro plans**
+
 - [**Trusted IPs**](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips): Restricts access to users with the correct IP address. **Available on the Enterprise plan**
 
 ## Choose which URLs to protect
@@ -65,7 +67,9 @@ You can choose from several methods to protect your deployments:
 The protection scope determines which URLs you protect:
 
 - [**Standard Protection**](#standard-protection): Protects all deployments **except** production domains. **Available on all plans**
-- [**All Deployments**](#all-deployments): Protects **all** URLs, including production domains. **Available on Pro and Enterprise plans**
+
+* [**All Deployments**](#all-deployments): Protects **all** URLs, including production domains. **Available on Pro and Enterprise plans**
+
 - [**(Legacy) Standard Protection**](#legacy-standard-protection): Protects all preview URLs and deployment URLs. All up-to-date production URLs remain unprotected.
 - [**(Legacy) Pre-Production Deployments**](#legacy-pre-production-deployments): Protects only preview URLs. Does not protect past production deployments.
 
@@ -207,7 +211,8 @@ You must have used the feature for **a minimum of 30 days** before you can disab
 
 - [Methods to protect deployments](/docs/deployment-protection/methods-to-protect-deployments): Learn about each protection method in detail
 - [Methods to bypass deployment protection](/docs/deployment-protection/methods-to-bypass-deployment-protection): Configure exceptions and shareable links
-- [Vercel plans](/docs/plans): Compare plan features and pricing
+
+* [Vercel plans](/docs/plans): Compare plan features and pricing
 
 
 ---

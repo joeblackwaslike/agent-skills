@@ -16,8 +16,8 @@ related:
 summary: Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Protection enabled.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/automated-agent-access.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "429e14b2fb43cf5043b8a999b8c1e84617e6f579f0c0cfaaa40ecb455a7458d5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d13f747e8c2584f25306454e3295ccb296ab695479cafb4a082325643855b9ae"
 ---
 
 # Automated & Agent Access
@@ -34,9 +34,10 @@ AI agents, CI/CD pipelines, MCP servers, and end-to-end testing tools can't comp
 - [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Troubleshooting Cross-Origin Errors \(net::ERR_BLOCKED_BY_ORB\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related) — Learn to resolve \`net::ERR_BLOCKED_BY_ORB\` errors on protected Vercel deployments. This guide explains how cross-origi
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Update Protection Bypass for Automation](https://vercel.com/docs/rest-api/projects/update-protection-bypass-for-automation?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/deployment-protection/automated-agent-access.graph.md](/docs/deployment-protection/automated-agent-access.graph.md)
 <!-- /docsgraph:related -->

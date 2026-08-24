@@ -17,8 +17,8 @@ related:
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "005a65a03acee9585bc7901def5e2b2c1400e95a8bade4a87698391cd1a61acf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fe757ca3d4302ff12ff974082bdb1272a18823fdf5135d76a45b406292ead41f"
 ---
 
 # Data Cache for Next.js
@@ -32,15 +32,15 @@ sha256: "005a65a03acee9585bc7901def5e2b2c1400e95a8bade4a87698391cd1a61acf"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
-- [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
+- [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
 - [ISR](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
-- [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
+- [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [Purge CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
+- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching?from=related) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 - [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
-- [Marketplace](https://vercel.com/docs/marketplace-storage?from=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/caching/runtime-cache/data-cache.graph.md](/docs/caching/runtime-cache/data-cache.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +51,10 @@ Data cache is a specialized, granular cache introduced with Next.js 13 for stori
 - [When to use it](#when-to-use-data-cache)
 - Get started with the [examples](#using-data-cache)
 
-> **💡 Note:** For Next.js 15 and above, see [Runtime Cache](/docs/caching/runtime-cache) for the recommended caching approach. Data cache is for Next.js 14 and below.
+> **💡 Note:** Next.js 15 uses Data cache through `fetch` or `unstable_cache`. In Next.js 16,
+> these APIs continue to use Data cache as a separate layer. When adopting
+> Cache Components, use `use cache: remote` to store cached data in [Runtime
+> Cache](/docs/caching/runtime-cache).
 
 ## When to use data cache
 
@@ -67,7 +70,7 @@ Data cache is not a good fit for:
 - User-specific data that differs for each request
 - Data that must be fresh on every request
 - Complete HTTP responses (use [CDN Cache](/docs/caching/cdn-cache) instead)
-- Next.js 15 and above (use [Runtime Cache](/docs/caching/runtime-cache) instead)
+- New caching code in Next.js 16 projects that use Cache Components (use `use cache: remote` with [Runtime Cache](/docs/caching/runtime-cache) instead)
 
 ## How Data cache works
 

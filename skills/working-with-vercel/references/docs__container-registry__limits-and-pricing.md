@@ -12,8 +12,8 @@ related:
 summary: Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "aca36feb8f4a763ba4de2605395b9604a611730894392791aeeda49613a5c224"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9bd52598d6d061332a4268712c32e7f8a7cb44277ac8f65ec51ed0b3264d1028"
 ---
 
 # Container Registry limits and pricing
@@ -27,7 +27,7 @@ sha256: "aca36feb8f4a763ba4de2605395b9604a611730894392791aeeda49613a5c224"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \(GHCR\) to Vercel Container Registry \(VCR\), including authent
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Container Images](https://vercel.com/docs/functions/container-images?from=related) — Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related) — Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and m

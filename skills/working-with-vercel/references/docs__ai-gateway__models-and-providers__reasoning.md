@@ -17,8 +17,8 @@ related:
 summary: Enable reasoning and extended thinking across providers with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ff8521380e9d1f8863112a38609f10b6ef63f55439cad30acba55553dfd4e74f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5229e851702395e82803b9bfc8ae6a37df06b5772a36e0eb550d14b64791a520"
 ---
 
 # Reasoning
@@ -34,10 +34,13 @@ Reasoning models can "think" before responding, producing higher-quality answers
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related)
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related)
+- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related)
+- [Cerebras](https://ai-sdk.dev/providers/ai-sdk-providers/cerebras?from=related)
 - [Reasoning](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related) — Control how much a reasoning model thinks before answering with the OpenResponses API.
-- [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching.
+- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
+- [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning.graph.md](/docs/ai-gateway/models-and-providers/reasoning.graph.md)
 <!-- /docsgraph:related -->
@@ -156,9 +159,9 @@ See the provider pages for each provider's full configuration reference:
 | Provider                                                                          | Models                                                       | Configuration                                                                                          |
 | --------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | [OpenAI](/docs/ai-gateway/models-and-providers/reasoning/openai)                  | GPT-5 series, o-series                                       | `reasoningEffort` + `reasoningSummary`                                                                 |
-| [Anthropic](/docs/ai-gateway/models-and-providers/reasoning/anthropic)            | Claude 4 series and later                                    | `thinking`: adaptive (Claude 4.6 and later) or token budget (Claude 4.5 and earlier)                   |
+| [Anthropic](/docs/ai-gateway/models-and-providers/reasoning/anthropic)            | Claude 4 series and later                                    | `thinking`: adaptive on Claude 4.6 and later; token budget on Claude 4.5 and earlier, with deprecated support on Claude 4.6 |
 | [Google / Vertex](/docs/ai-gateway/models-and-providers/reasoning/google)         | Gemini 2.5 and later series, Gemma 4 (Google AI + Vertex)    | `thinkingLevel` (Gemini 3 and later), `thinkingBudget` (Gemini 2.5), or `chat_template_kwargs` (Gemma) |
-| [Amazon Bedrock](/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock)  | Anthropic Claude models via Bedrock                          | `reasoningConfig`: adaptive (Claude 4.6 and later) or token budget (Claude 4.5 and earlier)            |
+| [Amazon Bedrock](/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock)  | Anthropic Claude models via Bedrock                          | `reasoningConfig`: adaptive on Claude 4.6 and later; token budget on Claude 4.5 and earlier, with deprecated support on Claude 4.6 |
 
 ### Precedence
 
@@ -474,14 +477,15 @@ Whichever format you use, AI Gateway normalizes your reasoning configuration int
 
 Effort levels are applied to each provider like this:
 
-| Target model                     | Native configuration       | How the effort level is applied                                                                        |
-| -------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------ |
-| OpenAI reasoning models          | `reasoningEffort`          | Passed through directly. Levels the model doesn't support are coerced to the nearest supported level.  |
-| Anthropic Claude 4.6 and later   | Adaptive thinking `effort` | Passed through directly as the adaptive thinking effort level.                                          |
-| Anthropic Claude 4.5 and earlier | `budgetTokens`             | Converted to a thinking budget sized as a share of the maximum output tokens.                           |
-| Google Gemini 3 and later        | `thinkingLevel`            | Mapped to the closest supported thinking level.                                                         |
-| Google Gemini 2.5                | `thinkingBudget`           | Converted to a thinking budget sized as a share of the maximum output tokens.                           |
-| Amazon Bedrock (Claude models)   | `reasoningConfig`          | Same as Anthropic: adaptive effort on Claude 4.6 and later, thinking budget on earlier models.          |
+| Target model                     | Native configuration                  | How the effort level is applied                                                                                                                            |
+| -------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OpenAI reasoning models          | `reasoningEffort`                     | Passed through directly. Levels the model doesn't support are coerced to the nearest supported level.                                                      |
+| Anthropic Claude 4.7 and later   | Adaptive thinking `effort`            | Passed through directly as the adaptive thinking effort level.                                                                                              |
+| Anthropic Claude 4.6             | Adaptive thinking `effort`            | Passed through directly. Claude 4.6 also accepts token-budget configurations, but they're deprecated.                                                       |
+| Anthropic Claude 4.5 and earlier | `budgetTokens`                        | Converted to a thinking budget sized as a share of the maximum output tokens.                                                                               |
+| Google Gemini 3 and later        | `thinkingLevel`                       | Mapped to the closest supported thinking level.                                                                                                             |
+| Google Gemini 2.5                | `thinkingBudget`                      | Converted to a thinking budget sized as a share of the maximum output tokens.                                                                               |
+| Amazon Bedrock (Claude models)   | `reasoningConfig`                     | Uses adaptive effort on Claude 4.6 and later. Claude 4.6 also accepts deprecated token budgets, while earlier models use token budgets only.                 |
 
 For budget-based configurations, each effort level corresponds to a share of the model's maximum output tokens:
 
@@ -494,7 +498,7 @@ For budget-based configurations, each effort level corresponds to a share of the
 | `high`       | ~80%                           |
 | `xhigh`      | ~95%                           |
 
-Token budgets flow the other way too. When the target model uses budget-based thinking (like Gemini 2.5 or Claude 4.5 and earlier), the budget is passed through directly. When the target model uses effort-based reasoning (like OpenAI models or Claude 4.6 and later), AI Gateway converts the budget to an equivalent effort level.
+Token budgets flow the other way too. AI Gateway passes the budget through directly when the target model accepts budget-based thinking, including Gemini 2.5, Claude 4.5 and earlier, and Claude 4.6 (where token budgets are deprecated). For OpenAI reasoning models, AI Gateway converts the budget to an equivalent effort level. Claude 4.7 and later don't accept token-budget configurations.
 
 For the full reasoning parameter reference for each API format, see:
 

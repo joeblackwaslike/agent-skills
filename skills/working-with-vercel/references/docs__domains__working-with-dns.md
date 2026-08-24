@@ -13,8 +13,8 @@ related:
 summary: Learn how DNS works in order to properly configure your domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-dns.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d9729ed64d3d7d86d8ed99d74f72c1cc2e086baf2aed8671f71a17f82610630c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "851ff38be6eb65a706944e2aed440a8a076c283f47533df0f87cdf1d2563d21e"
 ---
 
 # Working with DNS
@@ -27,7 +27,7 @@ DNS is the system used to connect domain names to IP addresses. When you make a 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Why am I no longer receiving email after adding my domain to Vercel?](https://vercel.com/kb/guide/why-has-email-stopped-working?from=related) — Fix email that stopped working after adding your domain to Vercel, with a concrete MX record table and the DNS preset cl
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o

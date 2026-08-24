@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/rsc/call-tools.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "12fda7ef18032a590e0c1c6defd9bf228e839ae70468ffcbff0261c0b896f1a1"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "7eeed44b3f89f306d6fb3f6e2830035485f095bad382fded6082642be6b4e1f0"
 ---
 
 # Call Tools
@@ -100,7 +100,7 @@ export async function continueConversation(history: Message[]) {
 
   const { text, toolResults } = await generateText({
     model: 'openai/gpt-5.4',
-    system: 'You are a friendly assistant!',
+    instructions: 'You are a friendly assistant!',
     messages: history,
     tools: {
       celsiusToFahrenheit: {

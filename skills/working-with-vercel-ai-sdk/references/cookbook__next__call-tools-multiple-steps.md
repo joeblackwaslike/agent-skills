@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/call-tools-multiple-steps.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "887be21376bf8a100254bfd9881e82061357fc1969e40c5efc6054c494e0a524"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "c76a865209bd7daaf10e2a549b878859e16e779924b9f7adb26b881b3c6e5b50"
 ---
 
 # Call Tools in Multiple Steps
@@ -131,7 +131,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: 'openai/gpt-4o',
-    system: 'You are a helpful assistant.',
+    instructions: 'You are a helpful assistant.',
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools,

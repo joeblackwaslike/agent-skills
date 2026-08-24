@@ -1,28 +1,28 @@
 ---
 title: "Docs Multi-instance"
 source: "https://docusaurus.io/docs/docs-multi-instance"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "26eddb5496b074b09f88660c1f5a3089979817ca7daecb9b46e482a1778581fb"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "0910dfd52e321a28c7dc3907fa0dd214d244e3206714b52e83a20f9c91db3a36"
 ---
 
 # Docs Multi-instance
 
 Source: https://docusaurus.io/docs/docs-multi-instance
 
-- GuidesDocsDocs Multi-instanceVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)[Docs](https://docusaurus.io/docs/docs-introduction)Docs Multi-instanceVersion: 3.10.2On this page
 # Docs Multi-instance
 
-The `@docusaurus/plugin-content-docs` plugin can support multi-instance.
+The `@docusaurus/plugin-content-docs` plugin can support [multi-instance](https://docusaurus.io/docs/using-plugins#multi-instance-plugins-and-plugin-ids).
 
-noteThis feature is only useful for versioned documentation. It is recommended to be familiar with docs versioning before reading this page. If you just want multiple sidebars, you can do so within one plugin.
+noteThis feature is only useful for [versioned documentation](https://docusaurus.io/docs/versioning). It is recommended to be familiar with docs versioning before reading this page. If you just want [multiple sidebars](https://docusaurus.io/docs/sidebar/multiple-sidebars), you can do so within one plugin.
 
-## Use-cases​
+## Use-cases[​](https://docusaurus.io/docs/docs-multi-instance#use-cases)
 
 Sometimes you want a Docusaurus site to host 2 distinct sets of documentation (or more).
 
 These documentations may even have different versioning/release lifecycles.
 
-### Mobile SDKs documentation​
+### Mobile SDKs documentation[​](https://docusaurus.io/docs/docs-multi-instance#mobile-sdks-documentation)
 
 If you build a cross-platform mobile SDK, you may have 2 documentations:
 
@@ -34,17 +34,17 @@ In this case, you can use a distinct docs plugin instance per mobile SDK documen
 
 warningIf each documentation instance is very large, you should rather create 2 distinct Docusaurus sites.If someone edits the iOS documentation, is it really useful to rebuild everything, including the whole Android documentation that did not change?
 
-### Versioned and unversioned doc​
+### Versioned and unversioned doc[​](https://docusaurus.io/docs/docs-multi-instance#versioned-and-unversioned-doc)
 
 Sometimes, you want some documents to be versioned, while other documents are more "global", and it feels useless to version them.
 
 We use this pattern on the Docusaurus website itself:
 
-- The /docs/* section is versioned
+- The [/docs/*](https://docusaurus.io/docs) section is versioned
 
-- The /community/* section is unversioned
+- The [/community/*](https://docusaurus.io/community/support) section is unversioned
 
-## Setup​
+## Setup[​](https://docusaurus.io/docs/docs-multi-instance#setup)
 
 Suppose you have 2 documentations:
 
@@ -73,7 +73,7 @@ Don't forget to assign a unique `id` attribute to plugin instances.
 
 noteWe consider that the `product` instance is the most important one, and make it the "default" instance by not assigning any ID.
 
-## Versioned paths​
+## Versioned paths[​](https://docusaurus.io/docs/docs-multi-instance#versioned-paths)
 
 Each plugin instance will store versioned docs in a distinct folder.
 
@@ -95,7 +95,7 @@ The other plugin instances (with an `id` attribute) will use these paths:
 
 tipYou can omit the `id` attribute (defaults to `default`) for one of the docs plugin instances.The instance paths will be simpler, and retro-compatible with a single-instance setup.
 
-## Tagging new versions​
+## Tagging new versions[​](https://docusaurus.io/docs/docs-multi-instance#tagging-new-versions)
 
 Each plugin instance will have its own CLI command to tag a new version. They will be displayed if you run:
 
@@ -155,9 +155,9 @@ bun run docusaurus docs:version:community 1.0.0
 ```
 
 
-## Docs navbar items​
+## Docs navbar items[​](https://docusaurus.io/docs/docs-multi-instance#docs-navbar-items)
 
-Each docs-related theme navbar items take an optional `docsPluginId` attribute.
+Each docs-related [theme navbar items](https://docusaurus.io/docs/api/themes/configuration#navbar) take an optional `docsPluginId` attribute.
 
 For example, if you want to have one version dropdown for each mobile SDK (iOS and Android), you could do:
 
@@ -165,4 +165,4 @@ docusaurus.config.js
 ```
 export default {  themeConfig: {    navbar: {      items: [        {          type: 'docsVersionDropdown',          docsPluginId: 'ios',        },        {          type: 'docsVersionDropdown',          docsPluginId: 'android',        },      ],    },  },};
 ```
-Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/docs/docs-multi-instance.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

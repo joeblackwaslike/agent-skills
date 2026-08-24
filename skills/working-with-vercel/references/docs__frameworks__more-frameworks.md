@@ -16,8 +16,8 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5e16f89ed5ec2bd2123849d14a059daaafde2fbcb6658b8cc3971442bea5da8f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fab909d66068a68b9b8d928ac90b491fdf955031c040734c3a173728f2de6d95"
 ---
 
 # Supported Frameworks on Vercel
@@ -37,8 +37,8 @@ sha256: "5e16f89ed5ec2bd2123849d14a059daaafde2fbcb6658b8cc3971442bea5da8f"
 - [Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related) — Learn how to deploy a TanStack Start app to Vercel using the Nitro Vite plugin. Covers framework setup, Git and CLI depl
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
-- [Nitro](https://vercel.com/docs/frameworks/backend/nitro?from=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 
 Full cross-link map for this page: [/docs/frameworks/more-frameworks.graph.md](/docs/frameworks/more-frameworks.graph.md)
 <!-- /docsgraph:related -->

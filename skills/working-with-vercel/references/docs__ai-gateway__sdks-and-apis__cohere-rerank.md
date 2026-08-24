@@ -3,7 +3,7 @@ title: Cohere Rerank API
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/cohere-rerank
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank"
-last_updated: 2026-07-28
+last_updated: 2026-07-07
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
@@ -15,8 +15,8 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6d469e297e21f95f555d1d85e31a22b71c00ac96266d66ab2f5fc8d4fa864185"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7de8e3f1eadad9143aaa6e07d9f9aca26defaf6344bc5791a30c354899b73745"
 ---
 
 # Cohere Rerank API
@@ -36,6 +36,8 @@ AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [
 - [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related)
 - [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
 - [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
+- [Get virtual model config](https://vercel.com/docs/rest-api/api-ai-gateway/get-virtual-model-config?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md](/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md)
 <!-- /docsgraph:related -->

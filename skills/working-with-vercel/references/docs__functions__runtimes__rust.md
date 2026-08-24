@@ -13,8 +13,8 @@ related:
 summary: Build fast, memory-safe serverless functions with Rust on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/rust.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ee9b0c21b892eed3e0c9c0f2f54c5c2b16f2a45a0a0efc4e2318b93896f75107"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8801b69d2747f7bcd024c29ec0344076ec808d7238fb012e0018fc80bfbd7539"
 ---
 
 # Using the Rust Runtime with Vercel functions
@@ -34,6 +34,7 @@ sha256: "ee9b0c21b892eed3e0c9c0f2f54c5c2b16f2a45a0a0efc4e2318b93896f75107"
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Go](https://vercel.com/docs/functions/runtimes/go?from=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
 - [Fastify](https://vercel.com/docs/frameworks/backend/fastify?from=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/functions/runtimes/rust.graph.md](/docs/functions/runtimes/rust.graph.md)
 <!-- /docsgraph:related -->

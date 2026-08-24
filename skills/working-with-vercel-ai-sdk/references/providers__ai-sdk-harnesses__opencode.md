@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "6e05c6517dcddc135ccfd1ae1f04d7251745b3de94872c7a77d7aafa22152dea"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "ee6cb2ee0f30cabc1e1c9d7a09861c2b4d362fe01df427272c58783ae9fd8516"
 ---
 
 # OpenCode Harness
@@ -100,6 +100,12 @@ Settings:
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
   token.
+
+## Structured Output
+
+OpenCode supports schema-backed [`HarnessAgent` structured output](/docs/ai-sdk-harnesses/harness-agent#generate-structured-output).
+The adapter uses OpenCode's `json_schema` prompt format and returns the
+validated `structured` result as JSON text.
 
 ## Authentication
 

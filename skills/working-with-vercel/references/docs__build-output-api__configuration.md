@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9398231558785db4fdcd13a2437f63b80d0d867cd2bd89d6af13aad548d13e95"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e6b9a02a4672c2ab809640eb69bc4999949079886c9b9af8a5ef0699814b1ffe"
 ---
 
 # Build Output Configuration
@@ -34,8 +34,8 @@ Schema (as TypeScript):
 - [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related) — Backwards compatible Image Optimization with the Legacy Image component.
 - [Image Component](https://nextjs.org/docs/app/api-reference/components/image?from=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [OG Image Generation](https://vercel.com/docs/og-image-generation?from=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 - [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [Routing](https://vercel.com/docs/routing?from=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl

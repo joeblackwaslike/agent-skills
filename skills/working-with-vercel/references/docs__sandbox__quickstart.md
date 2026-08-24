@@ -16,8 +16,8 @@ related:
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6fcf9003c7e31bcf729d7ce9c2ce6ff58bc9348407e7253bb9288f89afbe5c0f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c57939442e9f891b7ff38d4eea3772faa617fd36646c26ffd63e9d636c48e611"
 ---
 
 # Quickstart
@@ -33,7 +33,6 @@ This guide shows you how to run your first code in a Vercel Sandbox.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox?from=related) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
-- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Run Commands in Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat

@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e2578794442f89700cbf9f88616a2ae9307af4ea1a16f22c31305a102adc791f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6e26fb5958362ee7ec242bc5f03bc1a0e7243f50b829d2ad82805af089e0132c"
 ---
 
 # Access Roles
@@ -30,14 +30,18 @@ Vercel distinguishes between different roles to help manage team members' access
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Account](https://v0.app/docs/account?from=related) — Manage your account and billing information.
+- [Design Systems 2.0](https://v0.app/docs/design-systems-2?from=related) — Teach v0 to build with your team's components, tokens, and design system conventions.
+- [Teams](https://v0.app/docs/teams?from=related) — Collaborate with your team on projects with shared resources.
+- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related) — How v0 and Vercel work in tandem.
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How do I view and update my domain's ICANN registrant information on Vercel? ](https://vercel.com/kb/guide/update-icann-domain-information-for-vercel-domain?from=related) — Learn how to view and update the registrant information for a domain registered with Vercel.
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related) — Learn how to configure access groups for team members on a Vercel account.
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related) — Learn how to configure Directory Sync for your Vercel Team.
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md)
 <!-- /docsgraph:related -->

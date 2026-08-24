@@ -16,8 +16,8 @@ related:
 summary: Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5d960160b7642d6939f23aa2d02a5e6a8664b4428ef9acd120025974cb3618d2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3540d2bef8a7d699ddc262dcabe23ace87161409d3131687ba107c3fd2657648"
 ---
 
 # Claim Deployments
@@ -68,11 +68,11 @@ For more details on the transfer process, see [Resources with Claim Deployments 
 
 ## Example use case: automated AI-generated deployment
 
-1. **File upload:** The AI agent uploads the deployment files using the Vercel API: [POST /files](/docs/rest-api/deployments/upload-deployment-files).
+1. **File upload:** The AI agent uploads the deployment files using the Vercel API: [POST /v2/files](/docs/rest-api/deployments/upload-deployment-files).
 
 2. **Deployment creation:**
    - Create a new deployment using the [Vercel CLI](/docs/cli/deploying-from-cli)
-   - Or create a deployment with the Vercel API: [POST /files](/docs/rest-api/deployments/upload-deployment-files) followed by [POST /deployments](/docs/rest-api/deployments/create-a-new-deployment).
+   - Or create a deployment with the Vercel API: [POST /v2/files](/docs/rest-api/deployments/upload-deployment-files) followed by [POST /deployments](/docs/rest-api/deployments/create-a-new-deployment).
 
 3. **Project transfer request:**
    - The agent initiates a transfer request with: [POST /projects/:idOrName/transfer-request](/docs/rest-api/projects/create-project-transfer-request).

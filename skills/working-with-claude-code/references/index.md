@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/whats-new/index.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "598220ee884ac6bd854b235f57e7b9bbd6bf0e41f478523d52d824306c7bb039"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "30c6a1c955d7f66fa30e1fad08d49ff79ae92643906de413a303fd594d741667"
 ---
 
 > ## Documentation Index
@@ -13,6 +13,22 @@ sha256: "598220ee884ac6bd854b235f57e7b9bbd6bf0e41f478523d52d824306c7bb039"
 > A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.
 
 The weekly dev digest highlights the features most likely to change how you work. Each entry includes runnable code, a short demo, and a link to the full docs. For every bug fix and minor improvement, see the [changelog](/docs/en/changelog).
+
+<Update label="Week 34" description="August 17–21, 2026" tags={["v2.1.234–v2.1.239"]}>
+  **`/design`**: a research preview that brings Claude Design's artboard workflow into the CLI and Claude Code Desktop, built on artifacts, so Claude drafts editable artboards for your UI and implements the one you pick.
+
+  Also this week: the built-in **Concise output style** makes Claude lead with the result and skip preamble; any machine running `claude remote-control` shows up as a **device card** on your phone so you can start a session on it from the Code tab; and **`ANTHROPIC_DEFAULT_MODEL`** sets the model new sessions start on.
+
+  [Read the Week 34 digest →](/docs/en/whats-new/2026-w34)
+</Update>
+
+<Update label="Week 33" description="August 10–14, 2026" tags={["v2.1.225–v2.1.233"]}>
+  **Auto-continue after a usage limit on Desktop**: when you hit your session limit in Claude Code Desktop, check **Auto-continue when limits reset** on the limit card and the app retries the interrupted turn once the limit resets.
+
+  Also this week: **fork mode** is on by default in interactive sessions, so Claude can hand a side task to a subagent that inherits the full conversation; **GitLab** merge request URLs work with `--worktree` and the `claude agents` view, and marketplaces clone bare `gitlab.com` URLs; and typing **`@`** in the prompt mentions another Claude session by name.
+
+  [Read the Week 33 digest →](/docs/en/whats-new/2026-w33)
+</Update>
 
 <Update label="Week 32" description="August 3–7, 2026" tags={["v2.1.220–v2.1.224"]}>
   **Cross-session messaging**: on macOS and Linux, your Claude Code sessions can now message each other, so Claude passes a finding or a decision from one session to another instead of you re-explaining it.

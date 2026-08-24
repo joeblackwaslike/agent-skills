@@ -17,8 +17,8 @@ related:
 summary: Deploy Fastify applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastify.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "41e07b58fa3aa91342dac2cc1ec30ab75e0e2a404eea52c7e3d8e3b082d3220a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1754edf053930b8fbfbe44c1838c64fc974f82bac88b1f507c926dc23026da48"
 ---
 
 # Fastify on Vercel
@@ -39,6 +39,7 @@ Fastify is a web framework highly focused on providing the best developer experi
 - [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [NestJS](https://vercel.com/docs/frameworks/backend/nestjs?from=related) — Deploy NestJS applications to Vercel with zero configuration.
 - [Nitro](https://vercel.com/docs/frameworks/backend/nitro?from=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/backend/fastify.graph.md](/docs/frameworks/backend/fastify.graph.md)
 <!-- /docsgraph:related -->

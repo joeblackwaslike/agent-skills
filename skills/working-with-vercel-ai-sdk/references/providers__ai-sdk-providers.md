@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "b43f75c6239ea934f40d953ac1604448d8b9820022a1eb02a068e8b0927f0545"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "ecd43530146d2a8ceb3929c9f7eb071dfad76f684c266dee40ae117c09b78e33"
 ---
 
 # AI SDK Providers
@@ -254,6 +254,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
+  - [Interfaze](/providers/community-providers/interfaze)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

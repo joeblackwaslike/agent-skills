@@ -9,14 +9,15 @@ prerequisites:
   - /docs/flags/vercel-flags/dashboard
   - /docs/flags/vercel-flags
 related:
+  - /docs/environment-variables/system-environment-variables
   - /docs/flags/vercel-flags/dashboard/segments
   - /docs/flags/vercel-flags/dashboard/feature-flag
   - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b8922769537ebc673c4a50e2fd0f7dc3b02768129eb9bb5d7cc09007d1c4036e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8dfbd8ba22299c2d5febb822ded8af2cd050c4ab9e1e53b818522acd81d44c69"
 ---
 
 # Entities
@@ -31,12 +32,12 @@ Entities represent the things your application knows about: users, teams, device
 
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [Evaluation Context](https://flags-sdk.dev/docs/frameworks/sveltekit/evaluation-context?from=related) — Segment by any criteria, using an evaluation context
+- [Evaluation Context](https://flags-sdk.dev/docs/frameworks/next/evaluation-context?from=related) — Segment by any criteria, using an evaluation context.
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
-- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/entities.graph.md](/docs/flags/vercel-flags/dashboard/entities.graph.md)
 <!-- /docsgraph:related -->
@@ -156,6 +157,27 @@ const result = await client.evaluate<boolean>(
   false, // default value
   entities, // evaluation context
 );
+```
+
+## Common use cases
+
+Add extra attributes in `identify` when targeting rules need them. Create matching entities and attributes in the dashboard first.
+
+### Enable features for a specific branch
+
+Vercel sets [`VERCEL_GIT_COMMIT_REF`](/docs/environment-variables/system-environment-variables) to the Git branch that triggered the deployment. Pass it as `system.gitCommitRef` to target preview branches.
+
+> **💡 Note:** This environment variable is not available locally, so the attribute only
+> matches on Vercel deployments and not during local development.
+
+```ts filename="flags.ts"
+const identify = dedupe(async () => {
+  return {
+    system: {
+      gitCommitRef: process.env.VERCEL_GIT_COMMIT_REF,
+    },
+  };
+});
 ```
 
 ## How to add labels

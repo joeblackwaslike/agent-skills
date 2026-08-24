@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6f6a358a242864793be5e2c69dff1e4ff92315946b84c499f72474c816af90f5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0befd1e8f05287f6270888796d59d645015159987078b4bf39a604a4c5aa27e7"
 ---
 
 # Private Storage
@@ -36,6 +36,7 @@ sha256: "6f6a358a242864793be5e2c69dff1e4ff92315946b84c499f72474c816af90f5"
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [Examples](https://vercel.com/docs/vercel-blob/examples?from=related) — Examples on how to use Vercel Blob in your applications
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob/private-storage.graph.md](/docs/vercel-blob/private-storage.graph.md)
 <!-- /docsgraph:related -->

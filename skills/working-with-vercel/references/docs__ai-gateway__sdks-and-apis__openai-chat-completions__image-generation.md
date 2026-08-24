@@ -14,8 +14,8 @@ related:
 summary: Generate images using AI models that support multimodal output through the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d52c71e8e0a24e0d3b9b6290aaa24d8bc3caa52fc62c9301b2caec9bc8bd9181"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "351c31f36e527df37e2b84fa216b0167410408ecd4507bb8f3e34b377ab2fc98"
 ---
 
 # Image Generation
@@ -336,6 +336,8 @@ for chunk in stream:
 OpenAI's `openai/gpt-image-2` and other image-only models (for example, Imagen, Flux, Grok Imagine) do not accept the Chat Completions `modalities` parameter. They use the OpenAI-compatible Images endpoint (`/v1/images/generations`) instead of `/v1/chat/completions`, called via `openai.images.generate`.
 
 See the [image-only models examples](/docs/ai-gateway/modalities/image-generation/openai#image-only-models) for `openai/gpt-image-2`, Imagen, Flux, and Grok Imagine.
+
+To edit an existing image with these models, use the `/v1/images/edits` endpoint (`openai.images.edit`). See [editing images](/docs/ai-gateway/modalities/image-generation/openai#editing-images).
 
 > **💡 Note:** **Image generation support:** Multimodal image output through Chat Completions
 > `modalities` is supported by Google's Gemini 2.5 Flash Image. Generated images

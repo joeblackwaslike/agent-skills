@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway/modalities
 related:
   - /docs/vercel-blob
+  - /docs/ai-gateway/modalities/video-generation
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2a1bad3b54574f075e6a23b2b472e95f0fbc20d8d8f17cd2b86281e67276f255"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ea5c0bbd0cbf56a6df23945fa84a66bb422e3dd1b592f1355a63854732811d50"
 ---
 
 # Motion Control Video Generation
@@ -32,12 +33,14 @@ Transfer motion from a reference video to a character in an image. The model ana
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
 - [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
 - [Image-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 - [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
 - [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/motion-control.graph.md](/docs/ai-gateway/modalities/video-generation/motion-control.graph.md)
 <!-- /docsgraph:related -->
+
+Every model here also runs as a background job instead of one long-lived request. See [asynchronous generation](#asynchronous-generation) below.
 
 ## KlingAI
 
@@ -162,6 +165,37 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation.
+
+## Asynchronous generation
+
+Pass a `webhook` factory and the SDK registers your URL with the job instead of polling for it. The factory returns that URL and a `received` promise it waits on, then it fetches the videos itself.
+
+```typescript filename="async-motion-control.ts"
+const result = await generateVideo({
+  model: gateway.videoModel('klingai/kling-v3.0-motion-control'),
+  prompt: {
+    // Hosted URL rather than `fs.readFileSync`: the start request is capped at
+    // 300 KiB, which inline image bytes pass immediately.
+    image: 'https://example.com/character.png',
+  },
+  providerOptions: {
+    klingai: {
+      videoUrl: 'https://example.com/dance-reference.mp4',
+      characterOrientation: 'video',
+      mode: 'std',
+    },
+  },
+  webhook: async () => ({
+    url: callbackUrl,
+    received: waitForDelivery(token),
+  }),
+  poll: { timeoutMs: 10 * 60 * 1000 },
+});
+```
+
+The start request AI Gateway persists is capped at 300 KiB, so pass your character image as a hosted URL on this flow rather than inline data.
+
+`token`, `callbackUrl`, and `waitForDelivery` come from [webhook-driven completion](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion), which also covers the receiver, signature verification, and the payload shape.
 
 ***
 

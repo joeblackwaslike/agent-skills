@@ -15,8 +15,8 @@ related:
 summary: Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting other users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d269e3b3ed5a33f385b770a026adddb97e4f71a7636a71a315e3387a8489e778"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5d33287231d7d4b473206ffd4b764845508905120dec699ea93416cf3684078c"
 ---
 
 # Setting up Flags Explorer
@@ -29,12 +29,15 @@ The [Flags Explorer](/docs/flags/flags-explorer) adds a panel to the [Vercel Too
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
-- [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [Drafts](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Marketplace](https://vercel.com/docs/flags/marketplace?from=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/set-up-flags-explorer.graph.md](/docs/flags/vercel-flags/cli/set-up-flags-explorer.graph.md)
 <!-- /docsgraph:related -->

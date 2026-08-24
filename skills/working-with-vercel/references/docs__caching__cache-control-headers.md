@@ -15,8 +15,8 @@ related:
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "74892f308a8884d284e81de178758adb59399f2e2dff2403249f3500c9de057c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a466ca283b3479c7a5c1de5a128d3ee45f6151104eaf348716a73f653c437af2"
 ---
 
 # Cache-Control headers
@@ -31,13 +31,13 @@ You can control how Vercel's CDN caches your Function responses by setting a [Ca
 
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related) — Learn how to set headers to cache your function's responses.
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
-- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers?from=related) — Add custom HTTP headers to your Next.js app.
 - [Response Headers](https://vercel.com/docs/headers/response-headers?from=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [System Headers](https://vercel.com/docs/headers?from=related) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
+- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
 - [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
 
 Full cross-link map for this page: [/docs/caching/cache-control-headers.graph.md](/docs/caching/cache-control-headers.graph.md)
 <!-- /docsgraph:related -->

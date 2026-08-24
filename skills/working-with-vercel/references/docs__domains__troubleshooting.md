@@ -16,8 +16,8 @@ related:
 summary: Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "18242b5d6160440696e74f0cf36162c220cc081355f99e7531c4c9b2258c30a1"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7b6de47292db597a0e4a2559d450dd5db09372734acf001d1ab198423b35e5ef"
 ---
 
 # Troubleshooting domains
@@ -30,7 +30,7 @@ There are many common reasons why your domain configuration may not be working. 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues?from=related) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related) — Information on why a Vercel domain may not be verified and how to verify it.

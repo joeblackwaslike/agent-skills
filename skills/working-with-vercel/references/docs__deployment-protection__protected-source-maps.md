@@ -16,8 +16,8 @@ related:
 summary: Protected Source Maps gates requests for browser source maps behind Vercel Authentication, so only authorized users can view your production source...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/protected-source-maps.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b332a2a6af955293d005b5b55b551a47bea81491b85ab59e49075cea2310559e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5ec6908dc62fb84ac524e2872d0f353b113c269714b23ab2ee6cd81bcf96828f"
 ---
 
 # Restrict access to production source maps
@@ -32,7 +32,7 @@ sha256: "b332a2a6af955293d005b5b55b551a47bea81491b85ab59e49075cea2310559e"
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
-- [Troubleshooting Cross-Origin Errors \(net::ERR_BLOCKED_BY_ORB\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related) — Learn to resolve \`net::ERR_BLOCKED_BY_ORB\` errors on protected Vercel deployments. This guide explains how cross-origi
+- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit

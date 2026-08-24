@@ -16,8 +16,8 @@ related:
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ac1ef614e4ecb5f8ece1335483ec48f1f2cb75ff349984d45a55a00f0759fbcb"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e7f52692ecba8b3653e371c90d0ea79bcfbab8f4ee2586e12f67c8639c09d460"
 ---
 
 # Concepts
@@ -39,6 +39,7 @@ the runtime as a deployable app.
 - [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related) — Choose a deployment strategy and prepare an eve agent for production.
 - [eve](https://eve.dev/docs/channels/eve?from=related) — The default HTTP API for an agent, covering session routes, auth, and customization.
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/eve/concepts.graph.md](/docs/eve/concepts.graph.md)
 <!-- /docsgraph:related -->

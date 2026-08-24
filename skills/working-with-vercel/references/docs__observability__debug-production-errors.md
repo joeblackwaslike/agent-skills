@@ -16,8 +16,8 @@ related:
 summary: Find, fix, and verify production 500 errors using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/debug-production-errors.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7d14e1e7366a235d06230017d95b515d15defa46d537ae3b2f825c972364a454"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8648757dcce39c8d78d0acf5b11fb755b9298c31326be9fa41b0b9e124103295"
 ---
 
 # Debugging production 500 errors
@@ -34,6 +34,7 @@ Use this guide to debug production 500 errors. You'll identify the problem, trac
 - [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue?from=related) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
 - [Rollback Production](https://vercel.com/docs/deployments/rollback-production-deployment?from=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [Deployments](https://v0.app/docs/deployments?from=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
 - [Debug Slow Functions](https://vercel.com/docs/functions/debug-slow-functions?from=related) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.

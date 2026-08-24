@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "bcc36a24bee1a929f2ffd7f01aef871bd3a9d8817a558ff2c815244bfc92a357"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "1eff525f42f01c5b90320d9ec99c1e353752a644a69f61b5a2b918b1296a2ff9"
 ---
 
 # WorkflowAgent
@@ -37,10 +37,10 @@ For simpler use cases that don't need durability, use [`ToolLoopAgent`](/docs/ag
 ## Installation
 
 ```bash
-npm install @ai-sdk/workflow workflow
+npm install @ai-sdk/workflow workflow@beta
 ```
 
-`@ai-sdk/workflow` requires the `ai` package and `zod` as peer dependencies. The `workflow` package provides the Workflow DevKit runtime (`getWritable`, `'use workflow'`, `'use step'`).
+`@ai-sdk/workflow` requires Workflow 5, which is currently available under the `beta` tag, as well as the `ai` package and `zod` peer dependencies. The `workflow` package provides the Workflow DevKit runtime (`getWritable`, `'use workflow'`, `'use step'`).
 
 ## Creating a WorkflowAgent
 
@@ -186,6 +186,11 @@ return createUIMessageStreamResponse({
 });
 ```
 
+The transform also forwards `reset-step` events emitted by `WorkflowAgent` on
+retries.
+Clients remove partial parts from the failed model-call step before processing
+the retried output.
+
 ## Resumable Streaming with WorkflowChatTransport
 
 Workflow functions can time out or be interrupted by network failures. `WorkflowChatTransport` is a [`ChatTransport`](/docs/ai-sdk-ui/transport) implementation that handles these interruptions automatically — it detects when a stream ends without a `finish` event and reconnects to resume from where it left off.
@@ -203,7 +208,6 @@ export default function Chat() {
       new WorkflowChatTransport({
         api: '/api/chat',
         maxConsecutiveErrors: 5,
-        initialStartIndex: -50, // On page refresh, fetch last 50 chunks
       }),
     [],
   );
@@ -237,6 +241,7 @@ export async function POST(request: Request) {
 
 ```ts filename="app/api/chat/[runId]/stream/route.ts"
 import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createUIMessageStreamResponse } from 'ai';
 import type { NextRequest } from 'next/server';
 import { getRun } from 'workflow/api';
 
@@ -248,22 +253,35 @@ export async function GET(
   const startIndex = Number(
     new URL(request.url).searchParams.get('startIndex') ?? '0',
   );
+  if (!Number.isSafeInteger(startIndex) || startIndex < 0) {
+    return Response.json(
+      { error: 'startIndex must be a non-negative safe integer' },
+      { status: 400 },
+    );
+  }
 
   const run = await getRun(runId);
   const readable = run
-    .getReadable({ startIndex })
-    .pipeThrough(createModelCallToUIChunkTransform());
+    .getReadable({ startIndex: 0 })
+    .pipeThrough(
+      createModelCallToUIChunkTransform({ uiStartIndex: startIndex }),
+    );
 
-  return new Response(readable, {
+  return createUIMessageStreamResponse({
+    stream: readable,
     headers: {
-      'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache',
-      Connection: 'keep-alive',
       'x-workflow-run-id': runId,
     },
   });
 }
 ```
+
+`WorkflowChatTransport` counts `UIMessageChunk` objects, while the durable
+`WorkflowAgent` stream stores raw `ModelCallStreamPart` objects. Replay the raw
+stream from index `0` and apply the non-negative UI cursor in
+`createModelCallToUIChunkTransform()` as shown above. Negative start indexes
+require a durable stream that already stores `UIMessageChunk` objects and
+cannot be used with this raw-to-UI conversion.
 
 For the full API reference, see [`WorkflowChatTransport`](/docs/reference/ai-sdk-workflow/workflow-chat-transport).
 
@@ -590,7 +608,7 @@ export type MyAgentUIMessage = InferWorkflowAgentUIMessage<typeof myAgent>;
 Install the new package alongside `workflow`:
 
 ```bash
-npm install @ai-sdk/workflow
+npm install @ai-sdk/workflow workflow@beta
 ```
 
 ### Write `ModelCallStreamPart`, not `UIMessageChunk`

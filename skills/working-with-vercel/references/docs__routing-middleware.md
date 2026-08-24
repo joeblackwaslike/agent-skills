@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6bbc34e1cb8eb8c3fa82993e84115a21df636a09fbd2f1d9668f115726b7188a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "693cd5043fc823ce5194e16a5fe9c4feb7bf4c5373525d391ff294259b14445b"
 ---
 
 # Routing Middleware
@@ -39,7 +39,7 @@ sha256: "6bbc34e1cb8eb8c3fa82993e84115a21df636a09fbd2f1d9668f115726b7188a"
 - [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
 - [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
 
 Full cross-link map for this page: [/docs/routing-middleware.graph.md](/docs/routing-middleware.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Use the AI Gateway with various SDKs and API specifications including OpenAI, Anthropic, and OpenResponses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "eb024f88e2131827a468668213329ab2222b63859155d7f93bb687b0a71cdd0d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6d976291cf9e22c02c7021e9f83fb25f51eb4357944a7662cbe9c9614b93171d"
 ---
 
 # SDKs & APIs
@@ -36,6 +36,7 @@ AI Gateway provides drop-in compatible APIs that let you switch by changing a ba
 - [Coding Agents](https://vercel.com/docs/ai-gateway/coding-agents?from=related) — Configure popular AI coding agents to use the AI Gateway for unified model access and spend monitoring.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
 - [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis.graph.md](/docs/ai-gateway/sdks-and-apis.graph.md)
 <!-- /docsgraph:related -->

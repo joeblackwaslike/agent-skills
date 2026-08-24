@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "b441c8c7c492eef844ea1d1a0ccfa9a3b9d58ec7ea0089732d2001e26a9341d1"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "0e616147b06f019f53ad44b1398f50e1a98cc43f3e0d2fe4dd7b1ef7fe4b2222"
 ---
 
 # Community Providers
@@ -155,6 +155,7 @@ Here are the community providers that implement the Language Model Specification
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
+  - [Interfaze](/providers/community-providers/interfaze)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

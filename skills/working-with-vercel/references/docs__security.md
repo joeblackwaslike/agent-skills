@@ -16,8 +16,8 @@ related:
 summary: Vercel provides built-in and customizable features to ensure that your site is secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ea157046351e364b9039547eacad7c796d22b2a6cb67324aec9a5a7064c02a8d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ecbdabe0880bb97b18fc8751b5bdb5bce6977aa78d8c6f73eb4500c2700c8975"
 ---
 
 # Vercel security overview
@@ -30,10 +30,10 @@ Cloud-deployed web applications face constant security threats, with attackers l
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [HIPAA Compliance on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Is Vercel certified under DPF?](https://vercel.com/kb/guide/is-vercel-certified-under-dpf?from=related) — The EU-U.S. Data Privacy Framework \(DPF\) enables secure data transfers from the EU, UK, and Switzerland to the U.S. Ve
+- [Is Vercel certified under DPF?](https://vercel.com/kb/guide/is-vercel-certified-under-dpf?from=related) — The EU-U.S. Data Privacy Framework \\(DPF\\) enables secure data transfers from the EU, UK, and Switzerland to the U.S. Ve
 - [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
+- [Security](https://v0.app/docs/security?from=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
 - [Firewall](https://vercel.com/docs/vercel-firewall?from=related) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.

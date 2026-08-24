@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-08-03T07:25:30.079Z"
-sha256: "0366cffeb56a9432d048722a1c1523eb98f3d99ccdcb98782e6120619fe0daec"
+fetched_at: "2026-08-24T04:43:26.402Z"
+sha256: "4e99f73487fd2220088bcd82debfd8472c169298ba470263b1479d25b7018c0f"
 ---
 
 # sh
@@ -9,7 +9,7 @@ sha256: "0366cffeb56a9432d048722a1c1523eb98f3d99ccdcb98782e6120619fe0daec"
 [![Go Reference](https://pkg.go.dev/badge/mvdan.cc/sh/v3.svg)](https://pkg.go.dev/mvdan.cc/sh/v3)
 
 A shell parser, formatter, and interpreter.
-Supports [POSIX Shell], [Bash], [Zsh], and [mksh]. Requires Go 1.25 or later.
+Supports [POSIX Shell], [Bash], [Zsh], and [mksh]. Requires Go 1.26 or later.
 
 ### Quick start
 
@@ -37,18 +37,22 @@ viewed directly as Markdown or rendered with [scdoc].
 Packages are available on [Alpine], [Arch], [Debian], [Docker], [Fedora], [FreeBSD],
 [Homebrew], [MacPorts], [NixOS], [OpenSUSE], [Scoop], [Snapcraft], [Void] and [webi].
 
-### gosh
+### Sponsoring
 
-	go install mvdan.cc/sh/v3/cmd/gosh@latest
+If this project saves you or your company time, consider
+[sponsoring me on GitHub](https://github.com/sponsors/mvdan).
+Monthly tiers include benefits like your logo on a README,
+prioritized issues, or direct support in your company's chat app.
+One-time tiers offer a call about one of my projects
+or a Go consulting or mentorship session.
 
-Proof of concept shell that uses the `interp` package.
+### Contributing
 
-### Fuzzing
+Bug reports and feature requests should be filed as detailed issues,
+ideally with an example which reproduces the bug or shows what feature you're after.
 
-We use Go's native fuzzing support. For instance:
-
-	cd syntax
-	go test -run=- -fuzz=ParsePrint
+Unless you're an active user or contributor to the project, drive-by AI patches
+are not helpful. File detailed issues instead.
 
 ### Caveats
 

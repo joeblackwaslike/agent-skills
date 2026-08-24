@@ -16,8 +16,8 @@ related:
 summary: Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fcfb0638e2da090c7db77975b9e957b170ab84a0325811a550b9e79d8d054eab"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "63cc2e1b98a8d4f51409e87f2fb4548bc47adf9c5921baacf3b35acadff615b1"
 ---
 
 # Domains Overview
@@ -30,6 +30,7 @@ A **domain** is a user-friendly way of referring to the address access a website
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Custom domain](https://v0.app/docs/custom-domains?from=related) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Why am I no longer receiving email after adding my domain to Vercel?](https://vercel.com/kb/guide/why-has-email-stopped-working?from=related) — Fix email that stopped working after adding your domain to Vercel, with a concrete MX record table and the DNS preset cl

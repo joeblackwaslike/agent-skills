@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Attack Mode to help control who has access to your site when it's under attack."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/attack-mode.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cafd08403a53c0aec0080ea88f3db3f5af26fd703d62cf5c2049a288ab701821"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "eb16bd84ca3ad05ad64511396ffb5eee04624e7af9ca38c3a297c824e1cd0470"
 ---
 
 # Attack Mode
@@ -34,7 +34,7 @@ sha256: "cafd08403a53c0aec0080ea88f3db3f5af26fd703d62cf5c2049a288ab701821"
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [How to block bots from OpenAI GPTBot](https://vercel.com/kb/guide/how-to-block-bots-openai-gptbot?from=related) — Learn how to use the Vercel WAF to block, rate limit, or challenge traffic from OpenAI GPTBot.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \(WAF\)
+- [Web Application Firewall](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [vercel firewall](https://vercel.com/docs/cli/firewall?from=related) — Learn how to manage your project's custom firewall rules, IP blocks, system bypass rules, attack challenge mode, and sys
 - [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.

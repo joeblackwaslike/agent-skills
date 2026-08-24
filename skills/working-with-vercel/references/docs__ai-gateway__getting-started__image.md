@@ -15,8 +15,8 @@ related:
 summary: Generate images from text prompts using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6affec19fced8efcda322cee91c75359cb3bb6be5d93f68d71487c6dcc929abe"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5574a0e86546e72b715b600d3215c47576bcbfc3606c1b8535785e7ee8436236"
 ---
 
 # Image Generation Quickstart
@@ -32,11 +32,12 @@ This quickstart walks you through generating your first image with AI Gateway.
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Google Gemini Image Generation](https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation?from=related)
 - [Image Generation](https://ai-sdk.dev/docs/ai-sdk-core/image-generation?from=related)
-- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
+- [Generate Text with Image Prompt](https://ai-sdk.dev/cookbook/node/generate-text-with-image-prompt?from=related)
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 - [Images](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [Image-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/image.graph.md](/docs/ai-gateway/getting-started/image.graph.md)
 <!-- /docsgraph:related -->

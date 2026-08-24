@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Sitecore XM Cloud to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sitecore.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "96c3fafb6469d896696323c69b4ff98a062521ae6f1ed73a2c999353bb3da493"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "cd0f548ea87af477f6cce8c339f760bc7a218d26dcd88ee1f13356b3f0a0c29f"
 ---
 
 # Vercel and Sitecore XM Cloud Integration
@@ -35,6 +35,7 @@ sha256: "96c3fafb6469d896696323c69b4ff98a062521ae6f1ed73a2c999353bb3da493"
 - [Contentful](https://vercel.com/docs/integrations/cms/contentful?from=related) — Integrate Vercel with Contentful to deploy your content.
 - [Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/integrations/cms/sitecore.graph.md](/docs/integrations/cms/sitecore.graph.md)
 <!-- /docsgraph:related -->

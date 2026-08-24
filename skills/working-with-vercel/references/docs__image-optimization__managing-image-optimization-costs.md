@@ -12,8 +12,8 @@ related:
 summary: Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/managing-image-optimization-costs.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "63c3aab0326370153bd92244649e67c20176d1262f303f7790ef3d43ee84896e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6bf840a0a9aa499e4fbe496390749b4b6b4a1525dfc499e5d5e56e4875b98dbc"
 ---
 
 # Managing Usage & Costs
@@ -27,7 +27,7 @@ sha256: "63c3aab0326370153bd92244649e67c20176d1262f303f7790ef3d43ee84896e"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Pricing & Usage](https://vercel.com/docs/manage-cdn-usage?from=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf

@@ -15,13 +15,13 @@ related:
 summary: Installations let one connector serve many tenants. One Slack connector, for example, can serve many Slack workspaces, each with its own grant.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/installations.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ef28892908c09fd161190d920c91aaa3c0cd051a88256c86a7365b47e3343afd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "dd82fc7b30cd1caf60f6c294327ab1cc3a30cdecd2216fcd56e1a88b1223d375"
 ---
 
 # Installations
 
-A single connector represents your **integration** with a provider. An **installation** represents a single tenant within that integration: one Slack workspace, one GitHub organization, one Salesforce org. One connector can have many installations, each with its own authorization grant.
+A single connector represents your **integration** with a provider. An **installation** represents a single tenant within that integration, where a tenant is an account on the provider's side: one Slack workspace, one GitHub organization, one Microsoft Entra directory, one Salesforce org. One connector can have many installations, each with its own authorization grant.
 
 
 <!-- docsgraph:related -->
@@ -34,17 +34,19 @@ A single connector represents your **integration** with a provider. An **install
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Quickstart](https://vercel.com/docs/connect/quickstart?from=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 - [Create a Connect installation request](https://vercel.com/docs/rest-api/connect/create-a-connect-installation-request?from=related)
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/connect/concepts/installations.graph.md](/docs/connect/concepts/installations.graph.md)
 <!-- /docsgraph:related -->
 
-Not every connector type supports installations. Snowflake, Salesforce, API Key, and Custom OAuth connectors are single-tenant: they have one (implicit) installation. Slack and GitHub are multi-tenant and support an unbounded set of installations.
+Not every connector type supports installations. Snowflake, Salesforce, API Key, and Custom OAuth connectors reach exactly one account, so there's nothing to install and no `installationId` to pass. Slack, GitHub, and Linear can each serve any number of tenants: one Slack connector can hold an installation for every workspace your app is added to. For Microsoft, an installation is a tenant that granted the connector's Entra app admin consent.
+
+Updating a connector's permissions doesn't change tokens already granted. New delegated scopes reach a user only after they authorize again. New application permissions need a fresh installation.
 
 ## The install flow
 
-A user installs a connector by running an install flow specific to the provider. For Slack, that's the standard Slack workspace install. For GitHub, it's a GitHub app installation. The flow ends with the user redirected back to your application, and Vercel Connect records the installation against the connector.
+A user installs a connector by running an install flow specific to the provider. For Slack, that's the standard Slack workspace install. For GitHub, it's a GitHub app installation. For Microsoft, it's tenant-wide admin consent from a tenant administrator. The flow ends with the user redirected back to your application, and Vercel Connect records the installation against the connector.
 
 Each installation has a stable `installationId` that you pass to `getToken` to scope a token request to that tenant:
 

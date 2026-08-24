@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e9fac8ea0332501f717ba1f472e1026a53d04eb53b6185b5f55126a1dfab5e1c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "eee7d06c8fd2b219d8bfa771b397579bad51840f4c59440d36651f4a7e4b56bc"
 ---
 
 # Sandbox CLI Reference
@@ -32,15 +32,14 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related)
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related)
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Create a named sandbox](https://vercel.com/docs/rest-api/sandboxes/create-a-named-sandbox?from=related)
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -200,6 +199,9 @@ sandbox create --silent
 # Create sandbox from a snapshot
 sandbox create --snapshot snap_abc123
 
+# Create a sandbox in a specific region, with failover regions
+sandbox create --region sfo1 --failover-regions iad1,cle1
+
 # Create a non-persistent (ephemeral) sandbox
 sandbox create --name ci-job --non-persistent
 
@@ -234,6 +236,8 @@ sandbox create --mount cache:/data:read-only
 | `--env <key=value>`                 | `-e`     | Default environment variables for sandbox commands. Repeatable.                                                                                                  |
 | `--tag <key=value>`                 | `-t`     | Key-value tag. Up to five. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                  |
 | `--mount <drive:path[:mode]>`       | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `read-only`. See [Drives](/docs/sandbox/concepts/drives) to access the beta. |
+| `--region <region>`                 | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in. Defaults to the [project's default sandbox region](/docs/sandbox/concepts/regions#set-a-default-region-for-your-project), or `iad1`.                                  |
+| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported with `--mount`. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `--snapshot-expiration <duration>`  | -        | Default snapshot TTL. Defaults to `30d`. Use `none` or `0` for no expiration.                                                                                    |
 | `--keep-last-snapshots <count>`     | -        | Retention policy: keep only the N (1–10) most recent snapshots of this sandbox.                                                                                  |
 | `--keep-last-snapshots-for <dur>`   | -        | Expiration applied to kept snapshots. Use `none` or `0` for no expiration.                                                                                       |
@@ -266,6 +270,8 @@ Fork an existing sandbox into a new one. The fork is seeded from the source sand
 
 `env` is **not** copied (encrypted server-side); pass `--env` to set environment variables on the fork. Tags passed via `--tag` fully replace the source's tags (no per-key merge).
 
+The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `--region`. The fork also inherits the source's failover regions. Pass `--failover-regions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
+
 ```bash filename="terminal"
 sandbox fork [OPTIONS] <source>
 ```
@@ -293,6 +299,8 @@ sandbox fork my-source --name my-forked-sandbox --vcpus 4 --env FOO=1
 | `--publish-port <port>`             | `-p`     | Publish a port. Repeatable. Replaces the inherited port list if provided.                                                                                        |
 | `--env <key=value>`                 | `-e`     | Environment variables for the fork. Not copied from the source. Repeatable.                                                                                      |
 | `--tag <key=value>`                 | `-t`     | Tag the fork. Repeatable. When provided, fully replaces the tags copied from the source.                                                                         |
+| `--region <region>`                 | -        | Override the [region](/docs/sandbox/concepts/regions) copied from the source. If the source has a snapshot, it must be available in this region.                 |
+| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the fork can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported for sandboxes with mounted drives. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `--snapshot-expiration <duration>`  | -        | Override the default snapshot TTL (e.g. `7d`, `30d`). Use `none` or `0` for no expiration.                                                                       |
 | `--keep-last-snapshots <count>`     | -        | Override the retention policy (1–10).                                                                                                                            |
 | `--keep-last-snapshots-for <dur>`   | -        | Expiration applied to kept snapshots. Use `none` or `0` for no expiration.                                                                                       |
@@ -333,6 +341,7 @@ sandbox config <subcommand> <name> [VALUE | OPTIONS]
 | `sandbox config vcpus <name> <count>`                        | Update vCPU allocation. Each vCPU includes 2048 MB RAM.                                                      |
 | `sandbox config timeout <name> <duration>`                   | Update the session timeout (e.g. `5m`, `1h`).                                                                |
 | `sandbox config persistent <name> <true\|false>`             | Enable or disable filesystem persistence between sessions.                                                   |
+| `sandbox config failover-regions <name> <region,...\|none>`  | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Pass `none` to remove them. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `sandbox config snapshot-expiration <name> <duration\|none>` | Update the default snapshot TTL.                                                                             |
 | `sandbox config keep-last-snapshots <name> <count>`          | Keep only the N (1–10) most recent snapshots of this sandbox.                                                |
 | `sandbox config keep-last-snapshots-for <name> <dur\|none>`  | Expiration applied to kept snapshots.                                                                        |
@@ -354,6 +363,10 @@ sandbox config timeout my-sandbox 30m
 
 # Toggle persistence
 sandbox config persistent my-sandbox false
+
+# Update the failover regions
+sandbox config failover-regions my-sandbox iad1,cle1
+sandbox config failover-regions my-sandbox none
 
 # Update snapshot retention
 sandbox config snapshot-expiration my-sandbox 14d
@@ -661,6 +674,8 @@ sandbox run --mount cache:/data:read-only -- ls /data
 | `--workdir <directory>`       | `-w`     | Set the directory where you want the command to run.                                                                                                               |
 | `--env <key=value>`           | `-e`     | Set environment variables for your command.                                                                                                                        |
 | `--tag <key=value>`           | `-t`     | Key-value tag. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                                |
+| `--region <region>`           | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in (when creating a new sandbox).                                                                   |
+| `--failover-regions <region,...>` | -    | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Not supported with `--mount`. |
 | `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `read-only`. See [Drives](/docs/sandbox/concepts/drives) to access the beta.   |
 
 ### Sandbox run flags
@@ -1052,6 +1067,9 @@ sandbox drives get-or-create cache
 
 # Create or retrieve a drive with a maximum size of 10 GiB
 sandbox drives get-or-create cache --max-size 10737418240
+
+# Create or retrieve a drive stored in the sfo1 region
+sandbox drives get-or-create cache --region sfo1
 ```
 
 ### Sandbox drives get-or-create options
@@ -1059,6 +1077,7 @@ sandbox drives get-or-create cache --max-size 10737418240
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--max-size <bytes>`  | -        | Maximum drive size in bytes, defaults to 100 GiB.                                                                                    |
+| `--region <region>`   | -        | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created, defaults to `iad1`. A drive's region can't change after creation.        |
 | `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |

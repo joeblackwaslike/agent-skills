@@ -3,7 +3,7 @@ title: patch-v1-installations-resources-experimentation-items
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/patch-v1-installations-resources-experimentation-items
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/patch-v1-installations-resources-experimentation-items"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about patch-v1-installations-resources-experimentation-items on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/patch-v1-installations-resources-experimentation-items.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2753dbd69e3dc9a9e5963060571d324a7111c5663619dc404333b092ea2ce580"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "417cfb32a34896d41eecc288fa4f50ea1331575f2b885144a38ac087639eeb62"
 ---
 
 # Patch an existing experimentation item

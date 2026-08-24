@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/reference/supply-chain-security/dependabot-options-reference.md"
-fetched_at: "2026-08-17T04:47:04.101Z"
-sha256: "6402913562954cd6ac578128befbed4d812ceb4ee1a249e9239197a9591a045d"
+fetched_at: "2026-08-24T04:49:51.110Z"
+sha256: "0602c90a9442b975bc6af578cb66a83c488505d9eaa10d07d76ea1d5c9e13d79"
 ---
 
 This article provides reference information for the configuration options available in the `dependabot.yml` file. Use these options to customize how {% data variables.product.prodname_dependabot %} monitors package ecosystems, schedules updates, and creates pull requests. For an overview of the `dependabot.yml` file and how it works, see [AUTOTITLE](/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file).
@@ -600,7 +600,7 @@ Package manager | YAML value      | Supported versions |
 | {% endif %} |
 | Swift   | `swift`      | v5, v6  |
 | Terraform    | `terraform`      | >= 0.13, <= 1.15.x  |
-| uv           | `uv`             | v0 |
+| uv           | `uv`             | v0.11 |
 | {% ifversion dependabot-vcpkg-support %} |
 | vcpkg       | `vcpkg`          | Not applicable   |
 | {% endif %} |
@@ -876,7 +876,7 @@ Define a specific branch to check for version updates and to target pull request
 
 {% data variables.product.prodname_dependabot %} default behavior:
 
-* {% data variables.product.prodname_dependabot %} uses the default branch for the repository, see [About the default branch](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#about-the-default-branch).
+* {% data variables.product.prodname_dependabot %} uses the default branch for the repository, see [About the default branch](/pull-requests/reference/branches#about-the-default-branch).
 
 When `target-branch` is defined:
 

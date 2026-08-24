@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c6a580701bd6b1d0543206919788d588f905013e6bbe77fba2933cfeae72bd7f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9ade549d4b2747c9bbec83a9074ed23146cec103bf50c8d2f4971cc0e9f9e09d"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -30,12 +30,13 @@ sha256: "c6a580701bd6b1d0543206919788d588f905013e6bbe77fba2933cfeae72bd7f"
 
 - [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout?from=related) — API reference for the layout.js file.
 - [Preventing Flash](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration?from=related) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
-- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related) — Learn how to enable Partial Prefetching and what changes for `<Link>`.
-- [generateMetadata](https://nextjs.org/docs/app/api-reference/functions/generate-metadata?from=related) — Learn how to add Metadata to your Next.js application for improved search engine optimization (SEO) and web shareability
+- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
 - [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Third Party Libraries](https://nextjs.org/docs/app/guides/third-party-libraries?from=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
 - [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
 - [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
 - [Manage & Optimize](https://vercel.com/docs/manage-and-optimize-observability?from=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md)
 <!-- /docsgraph:related -->

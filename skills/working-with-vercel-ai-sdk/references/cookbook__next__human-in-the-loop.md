@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/human-in-the-loop.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "bef731114797214fdea93a6e10532d088d925f240b9b18190d417062039aceca"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "b4431644485d3ef96cbdcf895694fddb30d7a06322d1f11893946ea9b05d2f1c"
 ---
 
 # Human-in-the-Loop with Next.js
@@ -337,7 +337,7 @@ When a user denies a tool execution, the model receives the denial and can respo
 const result = streamText({
   model: openai('gpt-4o'),
   messages,
-  system:
+  instructions:
     'When a tool execution is not approved by the user, do not retry it. ' +
     'Inform the user that the action was not performed.',
   tools: {

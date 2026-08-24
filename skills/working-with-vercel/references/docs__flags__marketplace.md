@@ -16,8 +16,8 @@ related:
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "30b6a6c5ca9683658b7a1a649f1489a776fead85b93f632da51c08cd3bbadd32"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "aef8f4f0103ce96690b7f61bca62f92fd14db6406fbdc45c2b3cc7747e0bf9b6"
 ---
 
 # Marketplace
@@ -30,12 +30,14 @@ When you connect a feature flag provider through the [Vercel Marketplace](https:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Providers](https://flags-sdk.dev/docs/providers?from=related) — Combine your feature flag provider with the Flags SDK using an adapter.
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
-- [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks?from=related) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
+- [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related) — View and override your application's feature flags from the Vercel Toolbar
 
 Full cross-link map for this page: [/docs/flags/marketplace.graph.md](/docs/flags/marketplace.graph.md)
 <!-- /docsgraph:related -->

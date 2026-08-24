@@ -10,14 +10,15 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/snapshots
+  - /docs/sandbox/concepts/regions
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/cli-reference
   - /docs/sandbox/sdk-reference
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c4109bbbd8cdc035134c46094813cde478118945f8ef5a5d74c7d3f8f1699e63"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c713e5189673d9de5b27ba6bc1749c1b74b0eb66efaf87a545f3cf238679eb1f"
 ---
 
 # Drives
@@ -33,11 +34,10 @@ sha256: "c4109bbbd8cdc035134c46094813cde478118945f8ef5a5d74c7d3f8f1699e63"
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
 - [List drives](https://vercel.com/docs/rest-api/sandboxes/list-drives?from=related)
 - [Get or create a drive](https://vercel.com/docs/rest-api/sandboxes/get-or-create-a-drive?from=related)
 - [Delete a drive](https://vercel.com/docs/rest-api/sandboxes/delete-a-drive?from=related)
-- [Multi-Agent](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md)
 <!-- /docsgraph:related -->
@@ -96,9 +96,11 @@ Once you are added to the [private beta](https://vercel.com/changelog/drives-for
 
 Create a drive before mounting it into a sandbox. Drive names are unique within a Vercel project.
 
+A drive's region can't change after creation. Requesting an existing drive with a different region or maximum size than it was created with fails with a `conflict` error.
+
 ### Mounting a drive in a sandbox
 
-Mount a drive by passing the drive name and mount path when creating a sandbox. Mount paths must be absolute and cannot overlap with each other.
+Mount a drive by passing the drive name and mount path when creating a sandbox. The sandbox must run in the same [region](/docs/sandbox/concepts/regions#regions-and-drives) as the drive. Mount paths must be absolute and cannot overlap with each other.
 
 Drives can be mounted in `read-write` or `read-only` mode. By default, drives are mounted in `read-write` mode.
 
@@ -116,6 +118,7 @@ Deleting a drive permanently removes all data stored in the drive. A drive canno
 
 - A sandbox can mount up to 4 drives per run
 - A drive has a maximum storage size of 100 GiB by default, and can be configured up to 1 TiB
+- A drive is stored in a single [region](/docs/sandbox/concepts/regions). A sandbox that mounts a drive must run in the same region, and can't have [failover regions](/docs/sandbox/concepts/regions#failover-regions)
 - Drives are single reader, single writer. Support for multiple readers is coming soon
 - We recommend using drives for caching and other non-critical use cases during the private beta period.
 

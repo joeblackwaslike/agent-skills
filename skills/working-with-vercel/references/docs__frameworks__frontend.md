@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5e4412132a8e9f76c950ec822f7c0042a48c35a9628bbda28586e56aca048bb1"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8945bf06e82e6b25e7be0fd7877a210301e93e6dea9c1534e41f8bd19094131d"
 ---
 
 # Frontends on Vercel
@@ -33,9 +33,9 @@ The following frontend frameworks are supported with zero-configuration.
 - [Full-stack](https://vercel.com/docs/frameworks/full-stack?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Nuxt](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related) — Learn how to use Vercel's features with Nuxt.
 
 Full cross-link map for this page: [/docs/frameworks/frontend.graph.md](/docs/frameworks/frontend.graph.md)
 <!-- /docsgraph:related -->

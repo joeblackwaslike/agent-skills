@@ -16,8 +16,8 @@ related:
 summary: Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "43ef736db03ddb9aeb689e228658eb667009b0aa669ca2432cb08a23a2374e79"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "017be7293b5f815a6ab743609fba4b296c56d0c634812eed62544c0056d6e47e"
 ---
 
 # Deployment Policies
@@ -30,6 +30,7 @@ sha256: "43ef736db03ddb9aeb689e228658eb667009b0aa669ca2432cb08a23a2374e79"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deployments](https://v0.app/docs/deployments?from=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
 - [Deployment Retention](https://vercel.com/docs/deployment-retention?from=related) — Learn how Deployment Retention policies affect a deployment's lifecycle
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Git Integrations](https://vercel.com/docs/git?from=related) — Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLa

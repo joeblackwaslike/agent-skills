@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8afd59b25f3fba38024b53a6ef447b4d360047b68cd703bb15d933a1457944c7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "aa7d778ba886844af5a3d8b01a72202e537cdb8f880ed6d5c3f782040948a93f"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -31,10 +31,11 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Build a web research agent with Workflow SDK](https://vercel.com/kb/guide/durable-web-research-agent-with-workflow-sdk?from=related) — Build a web research agent that searches the web and returns a cited report. Powered by AI SDK and Workflow SDK, it jour
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [AI Coding Agents](https://nextjs.org/docs/app/guides/ai-agents?from=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
+- [Extending with Agents](https://docs.vercel.shop/docs/getting-started/extending-with-agents?from=related) — Use coding agents like Claude Code, Cursor, and Codex to personalize and extend your storefront.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Vercel Agent](https://vercel.com/docs/agent?from=related) — Use Vercel Agent to chat with your dashboard, investigate production issues, review code, and approve actions
-- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
+- [Installation](https://vercel.com/docs/agent/installation?from=related) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Vercel Agent](https://vercel.com/docs/agent?from=related) — Use Vercel Agent to investigate production issues, review code, and take approved actions.
+- [Skills](https://vercel.com/docs/agent-resources/skills?from=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 - [Markdown & Agent Discovery](https://vercel.com/docs/agent-resources/markdown-access?from=related) — Access Vercel documentation as markdown using .md endpoints or the copy button.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md)

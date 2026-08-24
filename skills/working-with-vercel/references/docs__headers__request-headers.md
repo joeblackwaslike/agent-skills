@@ -16,8 +16,8 @@ related:
 summary: Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/request-headers.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ee8ba154a6398f675ea7b5dc78bf54f34b9be43a5a7b6459db9190f9492e5e90"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9d32f1d6ba9f0e2f0a02b34718387466c8a0e5bec585a197b86cbd17ed023e3a"
 ---
 
 # Request headers
@@ -30,6 +30,7 @@ The following headers are sent to each Vercel deployment and can be used to proc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related) — API reference for the route.js special file.
 - [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a

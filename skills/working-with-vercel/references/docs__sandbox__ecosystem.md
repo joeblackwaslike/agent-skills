@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b361a3296016e7d63473ce09dfcc9f54b62c6e9b63a5bba398f02e83034abd22"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "39a77c781825f7b32a41e3cc506640e769c731d0426f7e41a6865dd3587c16a3"
 ---
 
 # Ecosystem
@@ -34,10 +34,10 @@ instead of on your host.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue?from=related) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
 - [Multi-Agent](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [eve](https://vercel.com/docs/eve?from=related) — Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.

@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f8f4caf37ecea8e6a0db9b6ac1900745e6267e9ac9ad62d1f6000c67c3cac60a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "53973352d922afa64abc80912bf701b7d58d2fe95ac35ab5c789935efad010fc"
 ---
 
 # Deploying from Azure DevOps with Vercel
@@ -33,12 +33,11 @@ The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?ite
 - [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel?from=related) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
 - [How can I use GitLab Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.
-- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [GitHub](https://vercel.com/docs/git/vercel-for-github?from=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 - [System Environment Variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md)
 <!-- /docsgraph:related -->

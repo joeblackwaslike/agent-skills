@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-adapters.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "bf4b6b3d1831d64fe3b85007a10eef1d93e1cec8a2332620fe79bcf478850024"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "4e00bfba975148e6b62af2460e21d2f129b7095a57762dd9eb719e71b8c479ae"
 ---
 
 # Harness Adapters
@@ -31,15 +31,19 @@ The AI SDK includes the following harness adapters:
 
 ## Adapter Capabilities
 
-| Adapter                                                | Runtime location | Custom tools | Custom skills | Built-in tool approval | Built-in tool filtering      |
-| ------------------------------------------------------ | ---------------- | ------------ | ------------- | ---------------------- | ---------------------------- |
-| [Claude Code](/providers/ai-sdk-harnesses/claude-code) | Sandbox bridge   | <Check />    | <Check />     | <Check />              | <Check />                    |
-| [Cline](/providers/ai-sdk-harnesses/cline)             | Host process     | <Check />    | <Check />     | <Check />              | <Check />                    |
-| [Codex](/providers/ai-sdk-harnesses/codex)             | Sandbox bridge   | <Check />    | <Check />     | <Cross />              | <Cross />                    |
-| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)  | Sandbox bridge   | <Check />    | <Check />     | <Check />              | <Check /> via auto-rejection |
-| [Grok Build](/providers/ai-sdk-harnesses/grok-build)   | Sandbox via ACP  | <Check />    | <Check />     | <Check />              | <Cross />                    |
-| [OpenCode](/providers/ai-sdk-harnesses/opencode)       | Sandbox bridge   | <Check />    | <Check />     | <Check />              | <Check /> via auto-rejection |
-| [Pi](/providers/ai-sdk-harnesses/pi)                   | Host process     | <Check />    | <Check />     | <Check />              | <Check />                    |
+| Adapter                                                | Runtime location | Custom tools | Custom skills | Structured output | Built-in tool approval | Built-in tool filtering      |
+| ------------------------------------------------------ | ---------------- | ------------ | ------------- | ----------------- | ---------------------- | ---------------------------- |
+| [Claude Code](/providers/ai-sdk-harnesses/claude-code) | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
+| [Cline](/providers/ai-sdk-harnesses/cline)             | Host process     | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
+| [Codex](/providers/ai-sdk-harnesses/codex)             | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Cross />              | <Cross />                    |
+| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)  | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
+| [Grok Build](/providers/ai-sdk-harnesses/grok-build)   | Sandbox via ACP  | <Check />    | <Check />     | <Check />         | <Check />              | <Cross />                    |
+| [OpenCode](/providers/ai-sdk-harnesses/opencode)       | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
+| [Pi](/providers/ai-sdk-harnesses/pi)                   | Host process     | <Check />    | <Check />     | <Cross />         | <Check />              | <Check />                    |
+
+Generic ACP profiles do not support structured output unless they configure an
+implementation-specific prompt metadata mapping; Grok Build includes the
+required mapping, while Codex ACP does not expose one.
 
 
 ## Navigation

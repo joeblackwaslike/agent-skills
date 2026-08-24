@@ -17,8 +17,8 @@ related:
 summary: Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/hono.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "20441ba4686b2055cd60b0b74158f6c57dcba16d047267904ff619e515486230"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "06e85473d322c4896569e136da02dce730137f068c5e7de102b3513f9fe655ba"
 ---
 
 # Hono on Vercel
@@ -31,11 +31,11 @@ Hono is a fast and lightweight web application framework built on Web Standards.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to Run Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related) — Pair the Chat SDK with Claude Managed Agents to run a streaming research analyst in a browser chat, using Anthropic's Ch
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk?from=related) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel?from=related) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Koa](https://vercel.com/docs/frameworks/backend/koa?from=related) — Deploy Koa applications to Vercel with zero configuration.
 - [Fastify](https://vercel.com/docs/frameworks/backend/fastify?from=related) — Deploy Fastify applications to Vercel with zero configuration.

@@ -13,8 +13,8 @@ related:
 summary: Define tools the model can call using the OpenResponses API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d8ac81817ae7abc73cfdbf92542fdc14a222e92b06510238df54cd5881c16114"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "2ba54735eceffda41f86061a0f62c2033089e0bddae67fd9262af731442f8cb1"
 ---
 
 # Tool Calling
@@ -34,8 +34,8 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports t
 - [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related)
 - [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related)
 - [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related)
-- [Tools](https://eve.dev/docs/tools?from=related) — Define typed actions the agent can call, and gate sensitive ones on human approval.
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
+- [Tools](https://eve.dev/docs/tools?from=related) — Define typed actions the agent can call, and gate sensitive ones on human approval.
 - [OpenAI Responses API](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 - [Text Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related) — Generate text responses using the OpenResponses API.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugin-hints.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "b50970a2a58907aa4fa6f26f7b06879dcb79719ef66864e9ee5dc550db24e5b6"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "cba6d1e4cb50ace8a02ed15cddc3f37f8098eadc01cae61a0f732b526b5b1232"
 ---
 
 > ## Documentation Index
@@ -116,6 +116,7 @@ Prompt frequency is bounded, and some sessions never prompt:
 
 * **Once per plugin**: after the prompt is shown, Claude Code records the plugin and never prompts for it again, regardless of the user's answer.
 * **Once per session**: across all CLIs on the machine, at most one hint prompt appears per Claude Code session.
+* **Main interactive session only**: Claude Code shows the prompt only in the terminal session the user is typing into. Claude Code never prompts for a command that a [subagent](/docs/en/sub-agents) runs, and never prompts when the user runs Claude Code in [non-interactive mode](/docs/en/headless) with the `-p` flag or through the [Agent SDK](/docs/en/agent-sdk/overview). Claude Code still strips the hint line from the command output in all of these cases.
 * **Telemetry opt-outs**: sessions where analytics are disabled never show hint prompts. This includes sessions with `DISABLE_TELEMETRY` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` set, and sessions on third-party providers such as Amazon Bedrock or Google Cloud's Agent Platform where the [automatic telemetry opt-out](/docs/en/data-usage#default-behaviors-by-api-provider) applies.
 
 Selecting **Yes** installs the plugin to user scope. Selecting **No, and don't show plugin installation hints again** disables all future hint prompts for the user.

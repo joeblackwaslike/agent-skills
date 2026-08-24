@@ -12,8 +12,8 @@ related:
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2594597062b85e5231088aa66ffda685c69e2699fba3e242aed4a7ee0c320cdc"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "bdf0d61806faee966e723f28a24d5999e510e2778080f9c54cd2e5ffffad7cfb"
 ---
 
 # Use Vercel
@@ -26,18 +26,18 @@ sha256: "2594597062b85e5231088aa66ffda685c69e2699fba3e242aed4a7ee0c320cdc"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [Build a ChatGPT Connector \(MCP server\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related) — Create an MCP server to bring your tools and data to ChatGPT
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [MCP Integrations](https://v0.app/docs/MCP?from=related) — Connect and use MCP servers directly in v0
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [AI Agents on Vercel](https://vercel.com/kb/guide/ai-agents?from=related) — This guide provides an overview of how to build and deploy AI agents on Vercel.
+- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [MCP Connections](https://eve.dev/docs/connections/mcp?from=related) — Connect an eve agent to a remote MCP server, authorize it with Vercel Connect or static credentials, and control which t
-- [MCP](https://eve.dev/docs/channels/mcp?from=related) — Publish an eve agent as a durable MCP invocation service with route authentication and OAuth discovery.
-- [Deploy MCP servers](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related) — Learn how to deploy Model Context Protocol \(MCP\) servers on Vercel with OAuth authentication and efficient scaling.
+- [Deploy MCP servers](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
 - [MCP](https://vercel.com/docs/mcp?from=related) — Learn more about MCP and how you can use it on Vercel.
-- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related) — Set up Model Context Protocol \(MCP\) usage with a Vercel project using the vercel mcp CLI command.
+- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related) — Set up Model Context Protocol \\(MCP\\) usage with a Vercel project using the vercel mcp CLI command.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [xmcp](https://vercel.com/docs/frameworks/backend/xmcp?from=related) — Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp.graph.md](/docs/agent-resources/vercel-mcp.graph.md)
 <!-- /docsgraph:related -->

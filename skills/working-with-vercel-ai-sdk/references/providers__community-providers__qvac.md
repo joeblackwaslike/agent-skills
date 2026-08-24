@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/qvac.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "17fd1401ba554edcb1bc29d88061ef2a3bc63b7568346c2fa95854e31239b7c5"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "de99fd16c6deb26ecf20e67c3fadbb076d4a6828438c31407a39abfe0485e32f"
 ---
 
 # QVAC Provider
@@ -147,6 +147,7 @@ console.log(text);
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

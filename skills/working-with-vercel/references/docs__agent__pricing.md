@@ -8,17 +8,21 @@ type: reference
 prerequisites:
   - /docs/agent
 related:
-  []
-summary: Understand how Vercel Agent pricing works and how to manage your credits
+  - /docs/agent/chat
+  - /docs/agent/chat/slack
+  - /docs/agent/pr-review
+  - /docs/agent/investigation
+  - /docs/agent/installation
+summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ecfd4fcb6bde38e5efa343e8cb919c78014fe5b71919bbb6aabc8ce10471c34b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e4e9a881eddad26f4b7148a76fedc98917dd65dc64b5f7ac0a72658c5b3ad505"
 ---
 
 # Vercel Agent Pricing
 
-Vercel Agent uses a credit-based system and all agent features and tools will use the same credit pool.
+Vercel Agent charges the underlying provider inference rate with no markup, plus a Vercel Token Rate of $0.25 per million tokens.
 
 
 <!-- docsgraph:related -->
@@ -28,71 +32,80 @@ Vercel Agent uses a credit-based system and all agent features and tools will us
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
+- [Pricing](https://v0.app/docs/pricing?from=related) — Understand the v0 plans, pricing, and usage limits.
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related) — Learn about pricing for AI Gateway.
-- [Investigation](https://vercel.com/docs/agent/investigation?from=related) — Let AI investigate your error alerts to help you debug faster
-- [Managing Reviews](https://vercel.com/docs/agent/pr-review/usage?from=related) — Customize which repositories get reviewed and track your review metrics and spending.
-- [Code Review](https://vercel.com/docs/agent/pr-review?from=related) — Get automatic AI-powered code reviews on your pull requests
-- [Installation](https://vercel.com/docs/agent/installation?from=related) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Pricing and Limits](https://vercel.com/docs/connect/pricing?from=related) — How Vercel Connect is billed across plans, how to stop being billed, and the platform limits that apply during beta.
+- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pricing.graph.md)
 <!-- /docsgraph:related -->
 
-All teams with Observability Plus have 10 alert investigations included every billing cycle at no extra cost.
-Each Code Review and additional investigation costs both:
+## Pricing summary
 
-| Cost component | Price                | Details                                                                        |
-| -------------- | -------------------- | ------------------------------------------------------------------------------ |
-| Fixed cost     | $0.30 USD            | Charged for each Code Review or additional investigation                       |
-| Token costs    | Pass-through pricing | Billed at the Agent's underlying AI provider's rate, with no additional markup |
+| Feature | Included usage | Pricing |
+| --- | --- | --- |
+| [Chat](/docs/agent/chat) | A limited number of simple requests during the beta | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
+| [Slack](/docs/agent/chat/slack) | A limited number of simple requests during the beta | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
+| [Code Review](/docs/agent/pr-review) | None | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
+| [Vercel Agent Investigation](/docs/agent/investigation) | 10 investigations per billing cycle with Observability Plus | Additional investigations use provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
+| [Installation](/docs/agent/installation) | No charge for installation | Standard usage charges for installed products still apply |
 
-**Your total cost per action is the fixed cost plus the token costs.**
+## Vercel Token Rate
 
-The token cost varies based on the complexity and amount of data the AI needs to analyze. You can track your spending in real time in the [Agent section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fvercel-agent\&title=Open+Vercel+Agent) of your dashboard.
+The Vercel Token Rate is $0.25 per million tokens for paid Vercel Agent work. It is charged in addition to provider inference costs and applies to input, output, and cached tokens.
 
-## Track costs and spending
+The Vercel Token Rate covers:
 
-Each Code Review or additional investigation costs $0.30 USD plus token costs. You can monitor your spending in real time to manage your budget.
+- Joining your project context, including logs, deployments, configuration, and runtime data
+- Custom model routing and execution across your projects
+- Processing and infrastructure costs
 
-To view costs:
+The amount you pay depends on the work required. A quick question costs less than an investigation that reads logs and configuration, runs commands in a sandbox, or writes across projects.
 
-1. Go to the [Agent tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fvercel-agent\&title=Open+Vercel+Agent).
-2. Check your current credit balance at the top of the page. Click the **Credits** button to view more details and add credits.
-3. View the **Cost** column in the reviews table to see the cost of each individual Code Review or investigation.
+## Chat
 
-The Agent tab shows you the cost of all reviews and investigations over a given period, as well as the cost of each individual action. If certain repositories or alerts consistently cost more, you can use this data to decide whether to adjust your settings.
+Simple requests, such as finding a setting, explaining a DNS warning, or answering a documentation question, are included up to a limited number of messages during the beta.
 
-## Adding credits
+A Chat response incurs charges when:
 
-You can add credits to your account at any time through manual purchases or by enabling auto-reload to keep your balance topped up automatically.
+- The response requires Vercel Agent to investigate, plan, or write code
+- You continue using Chat after the included messages are used
 
-### Manual credit purchases
+Selecting **Cancel** on a proposed plan does not run or charge for the work described in that plan.
 
-To manually add credits:
+## Code Review
 
-1. Go to the [Agent section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fvercel-agent\&title=Open+Vercel+Agent) in your dashboard.
-2. Click the **Credits** button at the top of the page.
-3. In the dialog that appears, enter the amount you want to add to your balance.
-4. Click **Continue to Payment** to enter your card details and complete the purchase.
+Code Review uses provider inference at the underlying token rate with no markup, plus the Vercel Token Rate of $0.25 per million tokens. The cost varies based on the complexity of the changes and the amount of code Vercel Agent analyzes.
 
-Your new credit balance will be available immediately and will be used for all Agent features.
+## Vercel Agent Investigation
 
-### Auto-reload
+Observability Plus includes 10 investigations per billing cycle. Additional investigations use provider inference at the underlying token rate with no markup, plus the Vercel Token Rate of $0.25 per million tokens. The cost varies based on how much log and metric data Vercel Agent analyzes.
 
-Auto-reload automatically adds credits when your balance falls below a threshold you set. This helps prevent the Vercel Agent tools from stopping due to insufficient credits.
+## Installation
 
-To enable auto-reload:
+There is no charge for using Vercel Agent Installation. Standard usage charges for installed products, such as Web Analytics or Speed Insights, still apply.
 
-1. Go to the [Agent section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fvercel-agent\&title=Open+Vercel+Agent) in your dashboard.
-2. Click the **Credits** button at the top of the page and select **Enable** next to the auto-reload option.
-3. On the next screen, toggle the switch to **Enabled**.
-4. Then, configure your auto-reload preferences:
-   - **When Balance Falls Below**: Set the threshold that triggers an automatic recharge (for example, $10 USD)
-   - **Recharge To Target Balance**: Set the amount your balance will be recharged to (for example, $50 USD)
-   - **Monthly Spending Limit** (optional): Set a maximum amount VercelAgent can spend per month to control costs
-5. Click **Save** to enable auto-reload.
+## Track costs and usage
 
-When your balance drops below the threshold, Vercel will automatically charge your payment method and add the specified amount to your credit balance. If you've set a monthly spending limit, auto-reload will stop once you reach that limit for the current month.
+To view Vercel Agent usage and costs:
+
+1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
+2. Open **Usage**.
+3. Select a time range and review the usage and cost information for Chat, Code Review, and investigations.
+
+If certain repositories, alerts, or Chat tasks consistently cost more, adjust your settings or usage patterns to control spending.
+
+## Manage usage
+
+An Owner or Billing member can manage Vercel Agent billing from the team's [Billing settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Open+Billing+Settings).
+
+To stop new Vercel Agent usage:
+
+- Disable [Dashboard chat](/docs/agent/chat/dashboard#enable-or-disable-dashboard-chat) to prevent new dashboard conversations.
+- Disable [Code Review](/docs/agent/pr-review/usage#disable-vercel-agent) to stop automatic pull request reviews.
+- Disable [Vercel Agent Investigation](/docs/agent/investigation#disable-vercel-agent-investigation) to stop automatic alert investigations.
 
 
 ---

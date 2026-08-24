@@ -14,8 +14,8 @@ related:
 summary: "Understand how Vercel Queues billing works, what's included, and which service limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "32d5502d04875287ba6b95ddeadf7aba6086f84623d9af7f39c9cb6f665d891d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "216989185bbb5ea7341c747280b7a5791b08fb4d6fcec39ab92d57f31f06b50d"
 ---
 
 # Pricing and Limits
@@ -31,8 +31,8 @@ Vercel Queues is billed per API operation. Every API call counts as one operatio
 - [Pricing and Limits](https://vercel.com/docs/services/pricing?from=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Limits and Pricing](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Pricing and Limits](https://vercel.com/docs/connect/pricing?from=related) — How Vercel Connect is billed across plans, how to stop being billed, and the platform limits that apply during beta.
 - [API Reference](https://vercel.com/docs/queues/api?from=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
 Full cross-link map for this page: [/docs/queues/pricing.graph.md](/docs/queues/pricing.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn about microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "498e71af3a3e2713098015ac01fd68d683c8d0d9de35dcb868022fced0a1ea4f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0c10170637b2062b2ea9e2458b222c24651ec9f6d048e0a724804a8e37d44e5a"
 ---
 
 # Microfrontends
@@ -85,7 +85,7 @@ To make the most of your microfrontend experience, [install the Vercel Toolbar](
 
 Once you have configured the basic structure of your microfrontends,
 
-- Learn the different ways in which you can [route paths](/docs/microfrontends/path-routing) to different microfrontends as well as available options
+- Learn the different ways in which you can [route paths](/docs/microfrontends/routing) to different microfrontends as well as available options
 - Learn how to [manage your microfrontends](/docs/microfrontends/managing-microfrontends) to add and remove microfrontends, share settings, route observability and manage the security of each microfrontend.
 - Learn how to [optimize navigations](/docs/microfrontends/managing-microfrontends#optimizing-navigations-between-microfrontends) between different microfrontends
 - Use the [Vercel Toolbar](/docs/microfrontends/managing-microfrontends/vercel-toolbar) to manage different aspects of microfrontends such as [overriding microfrontend routing](/docs/microfrontends/managing-microfrontends/vercel-toolbar#routing-overrides).

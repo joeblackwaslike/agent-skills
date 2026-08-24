@@ -13,8 +13,8 @@ related:
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "0a0d134f558630573ec1203223936c208f254d50a76770ad06a6fab01914985c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8617a50eed09be9cc4948d8770db055ed6ca85f5cd33497e3ffb3cc511afe73c"
 ---
 
 # Reranking
@@ -36,7 +36,7 @@ Rerank documents by relevance to a search query. Reranking is useful for improvi
 - [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related)
 - [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related)
 - [Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
-- [Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \(RAG\) through
+- [Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
 - [Filtering, Ordering & Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related) — Control which providers handle your requests, in what order, and how they are ranked using order, only, and sort options
 - [Advanced](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching.
 

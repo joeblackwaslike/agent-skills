@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "383897da56177071594cb5373b9fc88a91cc247fb37e8ab8197ae748c8dcd4ea"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "edf9b56c55a4e88607e9e715fb93e4e01fd85c2db562a0242fe0bbb930bf9b20"
 ---
 
 # LlamaIndex
@@ -32,7 +32,7 @@ with LlamaIndex to access various AI models and providers.
 
 - [LlamaGate](https://ai-sdk.dev/providers/community-providers/llamagate?from=related)
 - [LlamaIndex](https://ai-sdk.dev/providers/adapters/llamaindex?from=related)
-- [What is a Large Language Model \(LLM\)?](https://vercel.com/kb/guide/what-is-a-large-language-model?from=related) — Learn what Large Language Models \(LLMs\) are, how they work, and how you can use them to generate UI, debug code, and i
+- [What is a Large Language Model \\(LLM\\)?](https://vercel.com/kb/guide/what-is-a-large-language-model?from=related) — Learn what Large Language Models \\(LLMs\\) are, how they work, and how you can use them to generate UI, debug code, and i
 - [LiteLLM](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm?from=related) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface
 - [LangChain](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface
 - [LangFuse](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse?from=related) — Learn how to integrate Vercel AI Gateway with LangFuse to access multiple AI models through a unified interface

@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy and run durable backend AI agents built with the open-source eve framework on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "589f995f9787f2249b702a3841b8d3cb2626c583c270f85aab006210d9f7cb08"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0dc296380f68a84569819c1e0c7126f38a91d42cf89b0ac1017237d171594767"
 ---
 
 # eve
@@ -43,6 +43,7 @@ sha256: "589f995f9787f2249b702a3841b8d3cb2626c583c270f85aab006210d9f7cb08"
 - [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related) — Run an eve agent as a Node service with your own workflow storage, sandbox backend, and routing.
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 - [Skills](https://vercel.com/docs/agent-resources/skills?from=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/eve.graph.md](/docs/eve.graph.md)
 <!-- /docsgraph:related -->

@@ -1,15 +1,15 @@
 ---
 title: "Markdown Links"
 source: "https://docusaurus.io/docs/markdown-features/links"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "3692492e23ae60fd7fa8ae759395bc64587df32824372dbf2d9fb7573a7bbe45"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "c80c10bed559f4dabcf112368a662a10693f0c2679ff2d6db562e3a000de25d1"
 ---
 
 # Markdown Links
 
 Source: https://docusaurus.io/docs/markdown-features/links
 
-- GuidesMarkdown FeaturesMarkdown linksVersion: 3.10.2
+- [](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)[Markdown Features](https://docusaurus.io/docs/markdown-features)Markdown linksVersion: 3.10.2
 # Markdown links
 
 There are two ways of adding a link to another page: through a **URL path** and a **file path**.
@@ -30,7 +30,7 @@ docs/folder/doc1.md
 I am referencing a [document](doc2.mdx).Reference to another [document in a subfolder](subfolder/doc3.mdx).[Relative document](../otherFolder/doc4.mdx) referencing works as well.
 ```
 
-Relative file paths are resolved against the current file's directory. Absolute file paths, on the other hand, are resolved relative to the **content root**, usually `docs/`, `blog/`, or localized ones like `i18n/zh-Hans/plugin-content-docs/current`.
+Relative file paths are resolved against the current file's directory. Absolute file paths, on the other hand, are resolved relative to the **content root**, usually `docs/`, `blog/`, or [localized ones](https://docusaurus.io/docs/i18n/tutorial) like `i18n/zh-Hans/plugin-content-docs/current`.
 
 Here are some examples of file path links and how they get resolved, assuming the current file is `website/docs/category/source.mdx`:
 
@@ -56,8 +56,8 @@ Using relative _file_ paths (with `.md` extensions) instead of relative _URL_ li
 
 - Moving files around the folders can be tracked by your editor, and some editors may automatically update file links
 
-- A versioned doc will link to another doc of the exact same version
+- A [versioned doc](https://docusaurus.io/docs/versioning) will link to another doc of the exact same version
 
-- Relative URL links are very likely to break if you update the `trailingSlash` config
+- Relative URL links are very likely to break if you update the [trailingSlash config](https://docusaurus.io/docs/api/docusaurus-config#trailingSlash)
 
-warningMarkdown file references only work when the source and target files are processed by the same plugin instance. This is a technical limitation of our Markdown processing architecture and will be fixed in the future. If you are linking files between plugins (e.g. linking to a doc page from a blog post), you have to use URL links.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+warningMarkdown file references only work when the source and target files are processed by the same plugin instance. This is a technical limitation of our Markdown processing architecture and will be fixed in the future. If you are linking files between plugins (e.g. linking to a doc page from a blog post), you have to use URL links.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-links.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

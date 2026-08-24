@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "e5258bfa40dc5a60093df4a46e5074dcd92d0ff7b43fc15a83718ad6656ec8f5"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "c8b6ee9ff1818b2f61cd089e7348869197e25e7a1609d924b8518a8737e8fa79"
 ---
 
 # Observability Integrations
@@ -180,6 +180,7 @@ There are also providers that provide monitoring and tracing for the AI SDK thro
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
+  - [Interfaze](/providers/community-providers/interfaze)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

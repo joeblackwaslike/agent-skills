@@ -12,8 +12,8 @@ related:
 summary: How to properly handle form submissions with BotID protection
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/form-submissions.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ad2901318805f509813369c1e88c64434a0bc505a97cb2815d497a9337d9aadd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ed0c9fad2284e75beb4d0b80ddede189af4a32e17bfd92da6211bd4a34f4f297"
 ---
 
 # Form Submissions
@@ -31,10 +31,11 @@ BotID does **not** support traditional HTML forms that use the `action` and `met
 - [Deploying React Forms Using Formspree with Vercel](https://vercel.com/kb/guide/deploying-react-forms-using-formspree-with-vercel?from=related) — Create and deploy a React form with the help of Formspree and Vercel.
 - [Using SvelteKit Form Actions](https://vercel.com/kb/guide/using-sveltekit-form-actions?from=related) — This guide explains how to use form actions in SvelteKit to handle form submissions, process form data, and enhance form
 - [Forms](https://nextjs.org/docs/pages/guides/forms?from=related) — Learn how to handle form submissions and data mutations with Next.js.
-- [Form](https://nextjs.org/docs/pages/api-reference/components/form?from=related) — Learn how to use the `<Form>` component to handle form submissions and search params updates with client-side navigation
+- [Form](https://nextjs.org/docs/pages/api-reference/components/form?from=related) — Learn how to use the `\<Form\>` component to handle form submissions and search params updates with client-side navigation
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Form Component](https://nextjs.org/docs/app/api-reference/components/form?from=related) — Learn how to use the `<Form>` component to handle form submissions and search params updates with client-side navigation
+- [Form Component](https://nextjs.org/docs/app/api-reference/components/form?from=related) — Learn how to use the `\<Form\>` component to handle form submissions and search params updates with client-side navigation
 - [Formspree](https://vercel.com/docs/integrations/cms/formspree?from=related) — Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on you
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/botid/form-submissions.graph.md](/docs/botid/form-submissions.graph.md)
 <!-- /docsgraph:related -->

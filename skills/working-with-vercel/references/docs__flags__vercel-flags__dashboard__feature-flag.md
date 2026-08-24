@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure individual feature flags in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "10d6a01b7f58a9b7020092444b26d3a67e6a89d0ca0e4bce48a56aa276a36546"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "359553a47932ae4f84fd848381f474ecd1be86c2d8ea47bef6dd081fd470690a"
 ---
 
 # Feature Flag Configuration
@@ -35,11 +35,12 @@ When you select a flag from the Flags overview, you can configure how it behaves
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
 - [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
-- [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related) — View and override your application's feature flags from the Vercel Toolbar
 - [Drafts](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/feature-flag.graph.md](/docs/flags/vercel-flags/dashboard/feature-flag.graph.md)
 <!-- /docsgraph:related -->

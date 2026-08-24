@@ -16,8 +16,8 @@ related:
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "18db1ca63ebdebc96095fd24c60696b266ac7b819dad4e640fd4cdb8b76a13c9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5167b4d862799dae06eaedc518b10759333981cfd59f647ae8571e4a85360a5e"
 ---
 
 # Monorepos FAQ
@@ -37,7 +37,7 @@ sha256: "18db1ca63ebdebc96095fd24c60696b266ac7b819dad4e640fd4cdb8b76a13c9"
 - [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
 - [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
 - [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Projects](https://vercel.com/docs/projects?from=related) — A project is the application that you have deployed to Vercel.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/monorepos/monorepo-faq.graph.md](/docs/monorepos/monorepo-faq.graph.md)
 <!-- /docsgraph:related -->

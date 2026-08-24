@@ -15,8 +15,8 @@ related:
 summary: "Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and manage images from your..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/vcr.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f0893db81c5f51e17f5a74cecd127d9d99f0604acc441a1225aaf398e3844275"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "28f3d07564c25d52d08eca91dd5d1a6036ba217a23ac6d60d69eee18329a4074"
 ---
 
 # vercel vcr
@@ -30,7 +30,7 @@ The `vercel vcr` command is the entry point for managing [Vercel Container Regis
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \(GHCR\) to Vercel Container Registry \(VCR\), including authent
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Getting Started](https://vercel.com/docs/container-registry/getting-started?from=related) — Learn about getting started on Vercel.
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.

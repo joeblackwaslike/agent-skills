@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage deployments on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "33efeecca64db446c0aa07bc23782074cb2518b790b72e6ad809fb7c7d0a8679"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ac1d21fe799041151cb25635a13fba6cb4701ad85a73c90bc32f909c9316d2b9"
 ---
 
 # Deploying to Vercel
@@ -33,7 +33,8 @@ A **deployment** on Vercel is the result of a successful build of your project. 
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [Deployments](https://v0.app/docs/deployments?from=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
 - [Deploying from CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.

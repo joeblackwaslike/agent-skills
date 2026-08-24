@@ -14,13 +14,13 @@ related:
 summary: Detailed specifications for the Vercel Sandbox environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/runtimes.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5309af2863257042d719e1f4199e2c532b408cf9586693d25e8b4aa524053193"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5a3069db62dc6f5bea92d3d6ee114e57982611bcbd8c5ba542f418e9faca8337"
 ---
 
 # Runtimes
 
-Vercel Sandbox provides a secure, isolated environment for running your code. This page details the runtime environments, available packages, and system configuration.
+Vercel Sandbox provides a secure, isolated environment for running your code. This page details the legacy runtime environments, available packages, and system configuration. New sandboxes default to [Vercel Managed Images](/docs/sandbox/concepts/images) instead of runtimes.
 
 
 <!-- docsgraph:related -->
@@ -29,23 +29,22 @@ Vercel Sandbox provides a secure, isolated environment for running your code. Th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [Run Commands in Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Multi-Agent](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 
 Full cross-link map for this page: [/docs/sandbox/concepts/runtimes.graph.md](/docs/sandbox/concepts/runtimes.graph.md)
 <!-- /docsgraph:related -->
 
 ## Runtimes
 
-> **💡 Note:** Since August 7th, runtimes are deprecated and we recommend using [Images](/docs/sandbox/concepts/images) for new sandboxes. Images provide more flexibility by allowing any OCI image to be used as the base of sandboxes.
+> **💡 Note:** Since August 7th, runtimes are deprecated and we recommend using [Images](/docs/sandbox/concepts/images) for new sandboxes. Starting with version 3 of the Sandbox SDK, new sandboxes default to the Ubuntu-based `vercel/sandbox/universal:latest` Vercel Managed Image, and the `runtime` property is deprecated but keeps working for existing code. Images provide more flexibility by allowing any OCI image to be used as the base of sandboxes.
 
-Sandbox includes `node26`, `node24`, `node22`, and `python3.13` images. In all of these images:
+The legacy runtimes include `node26`, `node24`, `node22`, and `python3.13` images. In all of these images:
 
 - User code is executed as the `vercel-sandbox` user.
 - The default working directory is `/vercel/sandbox`.
@@ -58,11 +57,11 @@ Sandbox includes `node26`, `node24`, `node22`, and `python3.13` images. In all o
 | `node22`     | `/vercel/runtimes/node22` | `npm`, `pnpm`    |
 | `python3.13` | `/vercel/runtimes/python` | `pip`, `uv`      |
 
-`node24` is the default runtime if the `runtime` property is not specified.
+`node24` is the default runtime if the `runtime` property is not specified on version 2 of the Sandbox SDK. Starting with version 3, sandboxes that specify neither `runtime` nor `image` use the `vercel/sandbox/universal:latest` managed image instead.
 
 ### Available packages
 
-The base system is Amazon Linux 2023 with the following additional packages:
+The base system for legacy runtimes is Amazon Linux 2023 with the following additional packages:
 
 - `bind-utils`
 - `bzip2`
@@ -83,7 +82,7 @@ The base system is Amazon Linux 2023 with the following additional packages:
 - `whois`
 - `zstd`
 
-You can install additional packages using `dnf`. See [How to install system packages in Vercel Sandbox](/kb/guide/how-to-install-system-packages-in-vercel-sandbox) for examples.
+In legacy runtimes, you can install additional packages using `dnf`. Managed images use their own package managers instead, such as `apt-get` on the Ubuntu-based images. See [How to install system packages in Vercel Sandbox](/kb/guide/how-to-install-system-packages-in-vercel-sandbox) for examples.
 
 You can find the [list of available packages](https://docs.aws.amazon.com/linux/al2023/release-notes/all-packages-AL2023.7.html) on the Amazon Linux documentation.
 

@@ -16,8 +16,8 @@ related:
 summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "90173aa2aa6d221169d38d8f33b34f52292490f40536079c7667c11de823e49a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3f5f53598ebc4756918362d63425cdceb2b207e8c54d9355adbc5f3b7c48d86e"
 ---
 
 # Services Pricing and Limits
@@ -31,11 +31,11 @@ Vercel bills Services across the compute each service runs on, the requests serv
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
-- [Portland, USA \(pdx1\)](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related) — Vercel pricing for the Portland, USA \(pdx1\) region.
-- [Dublin, Ireland \(dub1\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \(dub1\) region.
-- [Cleveland, USA \(cle1\)](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related) — Vercel pricing for the Cleveland, USA \(cle1\) region.
+- [Portland, USA \\(pdx1\\)](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [Dublin, Ireland \\(dub1\\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Cleveland, USA \\(cle1\\)](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [San Francisco, USA \(sfo1\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \(sfo1\) region.
+- [San Francisco, USA \\(sfo1\\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
 Full cross-link map for this page: [/docs/services/pricing.graph.md](/docs/services/pricing.graph.md)
 <!-- /docsgraph:related -->

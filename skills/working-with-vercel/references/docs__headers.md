@@ -16,8 +16,8 @@ related:
 summary: This reference covers the list of request, response, cache-control, and custom response headers included with deployments with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ceed50d9b316e0e06c089b6aa261a208f951d7b4ce6146027b3d9e0e2ee6d0c2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3802be030b0c21d8a4d3e5e4009a26d68184837f44c212480f1a11c6d1d73b35"
 ---
 
 # System Headers
@@ -39,7 +39,7 @@ Headers are small pieces of information that are sent between the client (usuall
 - [Fundamental Concepts](https://vercel.com/docs/fundamentals?from=related) — Learn about the core concepts of Vercel
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
-- [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/headers.graph.md](/docs/headers.graph.md)
 <!-- /docsgraph:related -->

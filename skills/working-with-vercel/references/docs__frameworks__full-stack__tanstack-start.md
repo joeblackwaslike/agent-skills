@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use Vercel's features with TanStack Start."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4e7b3506a8af9cbd6bee047711f6fa565ded11ebbede881bb75dfc082e808258"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "59486a76b6c3ced481817aa633443c1f2a94c5e3d4b89d3dd7fda4d5cb1e23db"
 ---
 
 # TanStack Start on Vercel
@@ -33,11 +33,12 @@ TanStack Start is a fullstack framework powered by TanStack Router for React and
 - [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys?from=related) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [Choosing between TanStack Intent and \`skills\`](https://vercel.com/kb/guide/tanstack-intent-vs-skills?from=related) — TanStack Intent vs skills: compare how each tool sources, versions, and discovers agent skills for AI coding agents, and
+- [Choosing between TanStack Intent and \\`skills\\`](https://vercel.com/kb/guide/tanstack-intent-vs-skills?from=related) — TanStack Intent vs skills: compare how each tool sources, versions, and discovers agent skills for AI coding agents, and
 - [Nitro](https://vercel.com/docs/frameworks/backend/nitro?from=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [NestJS](https://vercel.com/docs/frameworks/backend/nestjs?from=related) — Deploy NestJS applications to Vercel with zero configuration.
 - [Vite](https://vercel.com/docs/frameworks/frontend/vite?from=related) — Learn how to use Vercel's features with Vite.
 - [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/tanstack-start.graph.md](/docs/frameworks/full-stack/tanstack-start.graph.md)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ related:
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ac7e04b2889a3ac02603fecffe74aff96b0f6b8e59fbb9e753eeca4077ebb0a0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "dea31bff67480251672ec58c4f7410eaeb6728dc8ce7b05f86b68f3c180e79a5"
 ---
 
 # Integrate flags with Vercel Web Analytics
@@ -29,6 +29,8 @@ sha256: "ac7e04b2889a3ac02603fecffe74aff96b0f6b8e59fbb9e753eeca4077ebb0a0"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library

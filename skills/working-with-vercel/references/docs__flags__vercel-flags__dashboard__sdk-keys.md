@@ -14,8 +14,8 @@ related:
 summary: Manage SDK Keys for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1b341466ce3bcd66c96f156000e2eed03c175d4776d1051182170edacf5b71f3"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "91e73479f2916f2417c6e13583fa7cb3c0576a3d72efcae5b9c06084ee27854e"
 ---
 
 # SDK Keys
@@ -30,11 +30,13 @@ Vercel Flags supports OpenID Connect (OIDC) for applications in the same Vercel 
 
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
 - [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks?from=related) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 - [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key?from=related)
 - [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Get all SDK keys](https://vercel.com/docs/rest-api/feature-flags/get-all-sdk-keys?from=related)
+- [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md](/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md)
 <!-- /docsgraph:related -->

@@ -12,8 +12,8 @@ related:
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "581bd93e718f1155765b715c6644ab1f4bb845f8415c3c98b860f867d4e7dee0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ca5875886e5540a06826c2291c0509f8d3d386483e6ab366ad108aa1c35b296e"
 ---
 
 # Global Vercel CLI Configuration
@@ -30,7 +30,7 @@ Using the following files and configuration options, you can configure [Vercel C
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related) — Learn how to use Global Configs in your projects.
 - [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
+- [Global Config](https://vercel.com/docs/global-config?from=related) — A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects,
 
 Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7853d3312d9a9d77ff9d0daf812cfd893396c85807fdc30b0a45e9967ef83afd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1fb234e64eb4844012df0d4f9a173ad36577ed7edc65c13f257ec9fe6c6657c9"
 ---
 
 # Glossary
@@ -38,10 +38,10 @@ A full glossary of terms used in Vercel's products and documentation.
 - [Vercel vs Webflow Cloud](https://vercel.com/kb/guide/vercel-vs-webflow-cloud?from=related) — Compare Vercel and Webflow Cloud for deploying Next.js and Astro apps, including runtime, framework support, storage, pr
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
 - [Insights](https://vercel.com/docs/observability/insights?from=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
 <!-- /docsgraph:related -->
@@ -590,7 +590,7 @@ See [Vercel Toolbar](#vercel-toolbar).
 
 ### Tracing
 
-The collection and analysis of how a request flows through your application and Vercel's infrastructure, captured as spans. Use trace [drains](#drains), Session Tracing in the [Vercel Toolbar](#vercel-toolbar), or `@vercel/otel` for OpenTelemetry. See [Tracing](/docs/tracing).
+The collection and analysis of how a request flows through your application and Vercel's infrastructure, captured as spans. Continuously collect sampled traces from production and preview traffic with [always-on tracing](/docs/tracing/always-on-tracing), trace your own session with Session Tracing in the [Vercel Toolbar](#vercel-toolbar), export them with trace [drains](#drains), or add spans with `@vercel/otel` for OpenTelemetry. See [Tracing](/docs/tracing).
 
 ### Trusted IPs
 

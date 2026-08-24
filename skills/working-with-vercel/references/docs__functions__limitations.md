@@ -16,8 +16,8 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "649b9198109f6f060a1ab5092a400e1f635d706ba32e7fcaaa21ea73c736fa07"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c286519efb77b526cce2157a1c041c8700f44663f4ac0e7ecd45e46827ef394d"
 ---
 
 # Vercel Functions Limits
@@ -31,10 +31,10 @@ The table below outlines the limits and restrictions of using Vercel Functions w
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Can I deploy Discord bots to Vercel?](https://vercel.com/kb/guide/can-i-deploy-discord-bots-to-vercel?from=related) — Learn about whether it's possible to deploy Discord Bots to Vercel.
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Do Vercel Serverless Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related) — Information on Vercel's support for WebSocket connections with Vercel Functions.
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [How can I reduce my Vercel Functions usage on Vercel?](https://vercel.com/kb/guide/how-can-i-reduce-my-serverless-execution-usage-on-vercel?from=related) — Reduce Vercel Functions usage and cost under Fluid compute pricing with caching, rendering strategies, and function conf
 - [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.

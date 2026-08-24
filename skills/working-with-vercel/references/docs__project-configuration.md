@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.ts, or the dashboard to control builds, routing, functions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "012fa30f2a51fc7855b630832cc0f1b148f98e3bed6a67bdbe8064b2e969192e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0d69f020def871a8f63d72ad020fd21846d86d883443ce676e34d0a513b0bff2"
 ---
 
 # Project Configuration
@@ -39,7 +39,7 @@ Vercel automatically detects your framework and sets sensible defaults for build
 - [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related) — Options available for service configuration.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [Configuration](https://vercel.com/docs/microfrontends/configuration?from=related) — Learn about configuration on Vercel.
 
 Full cross-link map for this page: [/docs/project-configuration.graph.md](/docs/project-configuration.graph.md)
 <!-- /docsgraph:related -->

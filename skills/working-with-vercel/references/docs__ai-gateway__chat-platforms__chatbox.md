@@ -13,8 +13,8 @@ related:
 summary: Use Chatbox with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/chat-platforms/chatbox.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7999b3ca2c08981f0782f7440def3e8e8abebb72b292e4f33f8ed7d6366681be"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e6210c7b520291936726ee69d205afd0fe6c2e73d435730c69a269f9d0ef6038"
 ---
 
 # Chatbox
@@ -29,7 +29,7 @@ sha256: "7999b3ca2c08981f0782f7440def3e8e8abebb72b292e4f33f8ed7d6366681be"
 
 - [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
-- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [Open WebUI](https://vercel.com/docs/ai-gateway/chat-platforms/open-webui?from=related) — Use Open WebUI with the AI Gateway.
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
 

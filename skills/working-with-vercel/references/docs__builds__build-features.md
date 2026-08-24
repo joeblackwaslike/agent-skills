@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "73ff895196395682983ade469485e86852983fb644f8825624124ee6b11be6e3"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0bbc15e3dbe42e250e06a2d4747a1ea54f22f74eb76b98afa37e8b2688f2c3aa"
 ---
 
 # Build Features for Customizing Deployments
@@ -31,8 +31,8 @@ Vercel provides the following features to customize your deployments:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 

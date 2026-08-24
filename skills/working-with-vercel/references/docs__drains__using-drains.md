@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "86d1875bf5bbe6bd0cdedf922549300247a410e056ac169557eb030a6b2c0f53"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "97557620662c5396bc1264b0e318d95ac6dad91a5264c291d7dd91e7bdba82f7"
 ---
 
 # Using Drains
@@ -32,9 +32,9 @@ sha256: "86d1875bf5bbe6bd0cdedf922549300247a410e056ac169557eb030a6b2c0f53"
 
 - [Migrating from SIEM](https://vercel.com/docs/audit-log/migrating-to-drains?from=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Creates a new Integration Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related)
 - [Create a new Drain](https://vercel.com/docs/rest-api/drains/create-a-new-drain?from=related)
-- [Creates a Configurable Log Drain \(deprecated\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related)
+- [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related)
 
 Full cross-link map for this page: [/docs/drains/using-drains.graph.md](/docs/drains/using-drains.graph.md)
 <!-- /docsgraph:related -->
@@ -70,7 +70,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
 
 - ### Configure the sampling rules (optional)
   For **Log** and **Trace** drains, add sampling rules to define how much data reaches your destination:
-  1. If no rules exist, click **Add sampling rule**.
+  1. If no rules exist, click **Add Sampling Rule**.
   2. Choose the environment you want to sample from.
   3. Set the sampling percentage.
   4. (Optional) Specify a request path prefix. Leave it blank to apply the rule to every path.

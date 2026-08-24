@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "32ed54694140297ee42392327b2f632f815b3cf9c7e7f992d3fd9755f3ede81c"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "9253b484925e2d69dcd45610f142eefcd4a7abfe3b6be0b5027d27b4b2e8999d"
 ---
 
 # xAI Grok Provider
@@ -746,6 +746,45 @@ const result = await generateSpeech({
 - **textNormalization** _boolean_
 
   Whether to normalize written-form input text before synthesizing speech.
+
+- **withTimestamps** _boolean_
+
+  Return character-level timing metadata alongside the audio. The timing data
+  and total duration are exposed via `providerMetadata.xai` (see below).
+
+- **replace** _Record&lt;string, string&gt;_
+
+  Map of phrases to spoken substitutions applied before synthesis. Values may
+  be respellings (`{ 'Acme Mobile': 'Acme Mobull' }`) or IPA phonetics
+  (`{ nginx: '/ˈɛndʒɪn ˈɛks/' }`).
+
+### Provider Metadata
+
+xAI speech results include provider-specific metadata under
+`providerMetadata.xai`:
+
+- **traceId** _string_ — the xAI trace ID for the request, useful for
+  debugging with xAI support.
+- **duration** _number_ — total audio duration in seconds (only with
+  `withTimestamps`).
+- **contentType** _string_ — MIME type of the decoded audio, e.g.
+  `'audio/mpeg'` (only with `withTimestamps`).
+- **audioTimestamps** `{ graphChars: string[]; graphTimes: [number, number][] }` —
+  per-character alignment data (only with `withTimestamps`). `graphChars[i]`
+  is the character spoken during the `[start, end]` interval
+  `graphTimes[i]`, in seconds.
+
+```ts
+const result = await generateSpeech({
+  model: xai.speech(),
+  text: 'Hello world.',
+  providerOptions: {
+    xai: { withTimestamps: true } satisfies XaiSpeechModelOptions,
+  },
+});
+
+const { traceId, duration, audioTimestamps } = result.providerMetadata.xai;
+```
 
 ### Model Capabilities
 

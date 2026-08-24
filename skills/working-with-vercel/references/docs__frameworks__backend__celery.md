@@ -17,8 +17,8 @@ related:
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "94de5b1a22258b5949d43d259d640606be193440cf438224f9758b5a435fcdf0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a7e77c3018c63251ba5fcc34e3a751148d461e3c7f8e6f6f646fd78936022240"
 ---
 
 # Run background tasks with Celery on Vercel
@@ -34,11 +34,11 @@ sha256: "94de5b1a22258b5949d43d259d640606be193440cf438224f9758b5a435fcdf0"
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Dramatiq](https://vercel.com/docs/frameworks/backend/dramatiq?from=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 - [Flask](https://vercel.com/docs/frameworks/backend/flask?from=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 - [Django](https://vercel.com/docs/frameworks/full-stack/django?from=related) — Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work togeth
-- [FastAPI](https://vercel.com/docs/frameworks/backend/fastapi?from=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
-- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related) — Set up Vercel Queues with the SDK.
 - [Concepts](https://vercel.com/docs/queues/concepts?from=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
+- [Workflows](https://vercel.com/docs/workflows?from=related) — Vercel Workflows is a fully managed platform for building durable, reliable, and observable applications and AI agents w
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md)
 <!-- /docsgraph:related -->

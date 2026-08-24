@@ -13,8 +13,8 @@ related:
 summary: Use Crush with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/crush.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1566f21a57bdb213d18e1246c472b3b89ec82490d1ec2acd2eb412ea7ed86ed4"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "76cdedbd50e126e5dbd66872b7629537659cb2a449696c6b813a160d57513e14"
 ---
 
 # Crush
@@ -27,7 +27,7 @@ sha256: "1566f21a57bdb213d18e1246c472b3b89ec82490d1ec2acd2eb412ea7ed86ed4"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.
 - [LibreChat](https://vercel.com/docs/ai-gateway/chat-platforms/librechat?from=related) — Use LibreChat with the AI Gateway.

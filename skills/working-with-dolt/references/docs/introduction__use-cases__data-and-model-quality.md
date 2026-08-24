@@ -2,8 +2,8 @@
 title: Data and Model Quality Control
 description: Gating data and ML training-set changes behind review and tests so bad data never reaches production or a model.
 source: "https://www.dolthub.com/docs/introduction/use-cases/data-and-model-quality.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "40b3cc8294a28b92ffaa219d2e56364fa1cab1aafa0552f7d5f2e3f30d244f44"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "c9b0645a528800248e4edc8c53ffbcfb8ad2dbaf18e9a3f3ccbd8af844483427"
 ---
 
 ## Problem
@@ -34,11 +34,11 @@ Lastly, [commits](/concepts/dolt/git/commits), [logs](/concepts/dolt/git/log), a
 
 ## Dolt replaces...
 
-## Unstructured files in cloud storage
+### Unstructured files in cloud storage
 
 It is common practice to store copies of training data or database backups in cloud storage for model reproducibility. A full copy of the data is stored for every training run. This can become quite expensive and limit the amount of models you can reproduce. Dolt stores only the differences between stored versions decreasing the cost of data storage. Additionally, Dolt can produce diffs between versions of training data producing novel model insights.
 
-## MySQL, Postgres, or other databases
+### MySQL, Postgres, or other databases
 
 Dolt can replace any database used to store and query data. Many of our customers switch from other OLTP databases like MySQL or Postgres to improve data and model quality through versioning. Customers have also switched to Dolt from document databases like MongoDB. Dolt's additional unique features like branches, diffs, and merges allow for human review of data changes and multiple parallel data projects.
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/rcaloras/bash-preexec/master/README.md"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "2c649fb74685c597f0f1c903b4616878fb1c09d12c585071295048b81b3fadbb"
+fetched_at: "2026-08-24T04:43:26.402Z"
+sha256: "2f851ca482eda4c3bc4a8adcc463efd13c1bc8987ee50150099006f87dd6350c"
 ---
 
 [![Build Status](https://github.com/rcaloras/bash-preexec/actions/workflows/bats.yaml/badge.svg)](https://github.com/rcaloras/bash-preexec/actions/)
@@ -14,7 +14,7 @@ Bash-Preexec
 
 <a href="https://bashhub.com" target="_blank"><img src="https://bashhub.com/static/web/images/bashhub-logo.png" alt="Bashhub Logo" width="200"></a>
 
-This project is currently being used in production by [Bashhub](https://github.com/rcaloras/bashhub-client), [iTerm2](https://github.com/gnachman/iTerm2), and [Ghostty](https://ghostty.org/). Hype!
+This project is currently being used in production by [Bashhub](https://github.com/rcaloras/bashhub-client), [iTerm2](https://github.com/gnachman/iTerm2), [Ghostty](https://ghostty.org/), [WezTerm](https://github.com/wezterm/wezterm), and [Atuin](https://github.com/atuinsh/atuin). Hype!
 
 ## Quick Start
 ```bash

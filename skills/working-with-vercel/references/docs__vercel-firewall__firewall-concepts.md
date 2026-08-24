@@ -16,8 +16,8 @@ related:
 summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "92b8305700b4df39f5dc8e9e129b8ad475453da9f0ca37581e13d6af343cfeab"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ff6b71971cb843f8e0de482b48c29b4e845e110d113758ed594e23cd4101977e"
 ---
 
 # Firewall concepts
@@ -30,8 +30,9 @@ sha256: "92b8305700b4df39f5dc8e9e129b8ad475453da9f0ca37581e13d6af343cfeab"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\(\) so inference runs only for verified callers
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile?from=related) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.

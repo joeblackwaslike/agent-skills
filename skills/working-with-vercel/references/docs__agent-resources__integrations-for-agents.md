@@ -15,8 +15,8 @@ related:
 summary: Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-agents.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e0b23e2920dccdd3b86cccf11df3e1ca934f7cf315a6d824a057afd7b00fd6aa"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "38cce259c5072c3d40ce142e838dce611fc922bd2ed8a0c5b7979f06a9f99b77"
 ---
 
 # Build with AI agents on Vercel
@@ -35,7 +35,7 @@ Integrating AI agents in your application often means working with separate dash
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related) — Learn how to add a new AI provider to your Vercel projects.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [xAI](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related) — Learn how to add the xAI native integration with Vercel.
-- [Installation](https://vercel.com/docs/agent/installation?from=related) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Vercel Agent](https://vercel.com/docs/agent?from=related) — Use Vercel Agent to investigate production issues, review code, and take approved actions.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-agents.graph.md](/docs/agent-resources/integrations-for-agents.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Vercel's features with React Router as a framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7797e8146881a6f954213e7d35d42646b7c09bc0a79ed625a4a919e4fd942440"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c988718236c648b31680128f5dbe6441f99c7ba98fda1cafbb33b51017e56a70"
 ---
 
 # React Router on Vercel
@@ -48,7 +48,7 @@ React Router is a multi-strategy router for React. When used [as a framework](ht
     bun i @vercel/react-router
     ```
   </Code>
-</CodeBlock>## Vercel React Router PresetWhen using the [React Router](https://reactrouter.com/start/framework/installation) as a framework, you should configure the Vercel Preset to enable the full feature set that Vercel offers.To configure the Preset, add the following lines to your `react-router.config` file:```ts {1-1,8-8} filename="/react-router.config.ts"
+</CodeBlock>## Vercel React Router PresetWhen using the [React Router](https://reactrouter.com/start/framework/installation) as a framework, you should configure the Vercel Preset to enable the full feature set that Vercel offers.To configure the Preset, add the following lines to your `react-router.config.ts` file:```ts {1-1,8-8} filename="/react-router.config.ts"
 import { vercelPreset } from '@vercel/react-router/vite';
 import type { Config } from '@react-router/dev/config';
 
@@ -59,6 +59,7 @@ import type { Config } from '@react-router/dev/config';
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
+- [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
 - [Remix](https://vercel.com/docs/frameworks/full-stack/remix?from=related) — Learn how to use Vercel's features with Remix.
 - [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
 - [All Frameworks](https://vercel.com/docs/frameworks/more-frameworks?from=related) — Learn about the frameworks that can be deployed to Vercel.

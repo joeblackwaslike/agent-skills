@@ -16,8 +16,8 @@ related:
 summary: ISR serves cached static pages while regenerating content in the background. Vercel\
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "57b75c9a3d71f7f39110b38cfac02801535d310ae88c26b1faa95b9977046902"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6e7131b58d609128a0e788ac948a64da35162519bb8f29527689c5c28744e75d"
 ---
 
 # Incremental Static Regeneration (ISR)
@@ -30,7 +30,7 @@ sha256: "57b75c9a3d71f7f39110b38cfac02801535d310ae88c26b1faa95b9977046902"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel

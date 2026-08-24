@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7415d9c87181c3e8f4062dadd70653aa551937faf54dc06ddb005f2bde9f7d9e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b459b121be2ce6bc956f98825e9c0093817ce06e7888b97e990f19c7f7a9735b"
 ---
 
 # vercel.functions API Reference (Python)
@@ -30,11 +30,11 @@ sha256: "7415d9c87181c3e8f4062dadd70653aa551937faf54dc06ddb005f2bde9f7d9e"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
 - [Runtimes](https://vercel.com/docs/functions/runtimes?from=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Python](https://vercel.com/docs/functions/runtimes/python?from=related) — Learn how to use the Python runtime to run Python applications on Vercel.
-- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
 - [Configuring Functions](https://vercel.com/docs/functions/configuring-functions?from=related) — Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
+- [Caching](https://vercel.com/docs/caching?from=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-sdk-python.graph.md](/docs/functions/functions-api-reference/vercel-sdk-python.graph.md)
 <!-- /docsgraph:related -->

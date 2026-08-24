@@ -16,8 +16,8 @@ related:
 summary: Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/web-analytics-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cd934ceeb49cddd2d3a15df1f82b45a534f3872d1cadc041f3c3772dee4e65a2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1e6d64c37478f76c95de497aeabb9046b463e52802e36efd628fdb6f0abb1b11"
 ---
 
 # Query Web Analytics with the API
@@ -34,7 +34,7 @@ Use the Web Analytics API to query page views, visitors, and custom events from 
 - [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related) — Available tools in Vercel MCP for searching docs, managing teams, projects, deployments, Web Analytics, runtime logs and
 - [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Filtering](https://vercel.com/docs/analytics/filtering?from=related) — Learn how filters allow you to explore insights about your website's visitors.
+- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/analytics/web-analytics-api.graph.md](/docs/analytics/web-analytics-api.graph.md)
 <!-- /docsgraph:related -->

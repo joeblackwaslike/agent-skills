@@ -2,8 +2,8 @@
 title: Versioned MySQL Replica
 description: Running Dolt as a read replica of MySQL to get history and point-in-time snapshots without changing your primary.
 source: "https://www.dolthub.com/docs/introduction/use-cases/versioned-replica.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "3a395c2b4466b97b15b594ad23be6cf6443ecb96b4947deafe7b3f72acd036a7"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "79f114d06a9d5f20decdcc83c198f019b10a761a37e513e48b3e42bdffb7ce8b"
 ---
 
 ## Problem
@@ -28,11 +28,11 @@ Additionally, a Dolt replica can be easily cloned (ie. copied) to a developer's 
 
 ## Dolt replaces...
 
-## Backups and Transaction Logs
+### Backups and Transaction Logs
 
 Dolt as a versioned replica becomes your first line of defense against a bad operator query, script, or deployment. Dolt is online and contains the full history of your database. In a disaster you can use diffs to find a bad query and roll it back. Then you can produce a database patch and apply it to production. You do not need to reinstall from a backup and play the transaction log back to the point of the failure, an extremely time consuming process.
 
-## Change Data Capture
+### Change Data Capture
 
 [Change Data Capture](https://www.dolthub.com/blog/2023-03-01-change-data-capture/) is a way to add a history of data changes to an existing database. Modern change data capture tools consume replication logs to produce database changes in a consumable stream. Dolt can consume the same logs producing a simpler change data capture solution. 
 

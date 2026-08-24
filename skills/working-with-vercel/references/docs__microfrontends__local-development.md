@@ -15,8 +15,8 @@ related:
 summary: Learn about local development on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "202cd84762c599346c013dfdd61a095bce4e71a049265cb64cc314988d686839"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1301a78af36797e203a5d0795d410eae943388f5a6decb9f1d48ec701ce3355b"
 ---
 
 # Microfrontends local development
@@ -33,7 +33,7 @@ To provide a seamless local development experience, `@vercel/microfrontends` pro
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
-- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
 - [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related) — Learn the answer to common questions about deploying monorepos on Vercel.
 - [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.

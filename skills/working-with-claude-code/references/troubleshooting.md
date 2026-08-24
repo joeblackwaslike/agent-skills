@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/troubleshooting.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "dc08e05854d40ff02ddf7f7406d2566c3281a9c34296de911ffa30df1bf35916"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "f1426c4b36894db28ef285f7dc2c7654d7d33c1f89e77f93caeb5f13a41b681b"
 ---
 
 > ## Documentation Index
@@ -20,6 +20,7 @@ This page covers performance, stability, and search problems once Claude Code is
 | Update or install download fails with `The connection dropped while downloading the update` or `aborted`                                             | [Error reference](/docs/en/errors#the-connection-dropped-while-downloading-the-update)        |
 | Login loops, OAuth errors, `403 Forbidden`, "organization disabled", Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry credentials | [Troubleshoot installation and login](/docs/en/troubleshoot-install#login-and-authentication) |
 | Settings not applying, hooks not firing, MCP servers not loading                                                                                     | [Debug your configuration](/docs/en/debug-your-config)                                        |
+| Session started in auto mode, or Claude edits files and runs commands without asking                                                                 | [Which mode a session starts in](/docs/en/permission-modes#which-mode-a-session-starts-in)    |
 | `API Error: 5xx`, `529 Overloaded`, `429`, request validation errors                                                                                 | [Error reference](/docs/en/errors)                                                            |
 | `model not found` or `you may not have access to it`                                                                                                 | [Error reference](/docs/en/errors#theres-an-issue-with-the-selected-model)                    |
 | VS Code extension not connecting or detecting Claude                                                                                                 | [VS Code integration](/docs/en/vs-code#fix-common-issues)                                     |
@@ -42,7 +43,7 @@ Claude Code is designed to work with most development environments, but may cons
 3. Consider adding large build directories to your `.gitignore` file
 4. Restart with [`claude --safe-mode`](/docs/en/cli-reference#cli-flags) to check whether a plugin, MCP server, or hook is the source. It disables all customizations for the session; if usage drops, see [Debug your configuration](/docs/en/debug-your-config#test-against-a-clean-configuration) to find which one
 
-If memory usage stays high after these steps, run `/heapdump` to write two files to `~/Desktop`: a JavaScript heap snapshot named `<session-id>.heapsnapshot` and a memory breakdown named `<session-id>-diagnostics.json`. The command doesn't appear in the command menu; type it in full. On Linux without a Desktop folder, the files are written to your home directory.
+If memory usage stays high after these steps, run `/heapdump` to write two files to `~/Desktop`: a JavaScript heap snapshot named `<session-id>.heapsnapshot` and a memory breakdown named `<session-id>-diagnostics.json`. Claude Code [hides the command from the command menu](/docs/en/commands#how-the-command-menu-matches-what-you-type); type it in full. On Linux without a Desktop folder, the files are written to your home directory.
 
 <Warning>
   The `.heapsnapshot` file contains every string in the process, including your full conversation and credentials. Don't attach it to a public issue or share it.
@@ -123,7 +124,7 @@ If the Search tool, `@file` mentions, custom agents, or custom skills aren't fin
   </Tab>
 </Tabs>
 
-Then set `USE_BUILTIN_RIPGREP` to `0`, either in your shell [environment](/docs/en/env-vars) or in the `env` block of your [`settings.json`](/docs/en/settings#available-settings):
+Then set `USE_BUILTIN_RIPGREP` to `0`, either in your shell [environment](/docs/en/env-vars) or in the `env` block of your [`settings.json`](/docs/en/settings-reference#all-settings):
 
 ```json theme={null}
 {

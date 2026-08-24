@@ -17,8 +17,8 @@ related:
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "da3079edf241f5962a729aa6465829ddbb3f5366129faf860c90a7d17380bb8f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6c0e514efdb60e980904e0398cb7b4902b0b8b1f8dfc1412a2b4c6d49bfdbddb"
 ---
 
 # Purging Vercel CDN Cache
@@ -31,7 +31,7 @@ sha256: "da3079edf241f5962a729aa6465829ddbb3f5366129faf860c90a7d17380bb8f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router

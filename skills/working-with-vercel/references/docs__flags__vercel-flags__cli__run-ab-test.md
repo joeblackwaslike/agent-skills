@@ -14,8 +14,8 @@ related:
 summary: Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "abd36651c9863d6e1769681a1d1e08ee2225089212bbec85b8cc1c1e959b55dd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "86c398d9c486ed2f14a61fdb55c67802c3b2d61c0b3cedeb8ad82c69b40f54e0"
 ---
 
 # Running an A/B test
@@ -32,11 +32,12 @@ This workflow sets up a multi-variant layout experiment, tracks results through 
 - [How to Integrate Optimizely Feature Experimentation with Next.js and Vercel](https://vercel.com/kb/guide/how-to-integrate-optimizely-feature-experimentation-next-vercel?from=related) — This guide covers setting up feature flags, implementing A/B tests, and optimizing performance using React Server Compon
 - [A/B Testing on Vercel](https://vercel.com/kb/guide/ab-testing-on-vercel?from=related) — Learn best practices for A/B testing on Vercel
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [Roll Out a Feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Clean Up After Rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Observability](https://vercel.com/docs/flags/observability?from=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
-- [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/run-ab-test.graph.md](/docs/flags/vercel-flags/cli/run-ab-test.graph.md)
 <!-- /docsgraph:related -->

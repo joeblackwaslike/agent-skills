@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "919a55558a3c38b98cfa37703df9c370fcdbb002e8292675403dfa579696dfc9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "62d76c521ee38d2894f7bf755176cf392a7c65e111bef14c0ad1baaa765a4eaa"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -33,9 +33,9 @@ Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions writt
 
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Runtime](https://vercel.com/docs/functions/configuring-functions/runtime?from=related) — Learn how to configure the runtime for Vercel Functions.
 - [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
 - [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.

@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with WordPress to let your plugins access multiple AI models
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/wordpress.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "75ffc56b5809add07c5763721d61b04350dddc365791a4e3f8a01ecbfa223917"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3b57b1bbaab3088c48debd922ff78866284f97a7dab543cee907e0d81cd9e68a"
 ---
 
 # WordPress
@@ -36,8 +36,8 @@ built on top of the WordPress AI Client will then benefit from these capabilitie
 - [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [Integrations for Models](https://vercel.com/docs/agent-resources/integrations-for-models?from=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
+- [Getting Started](https://vercel.com/docs/ai-gateway/getting-started?from=related) — Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related) — Learn how to add a new AI provider to your Vercel projects.
-- [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/wordpress.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/wordpress.graph.md)
 <!-- /docsgraph:related -->

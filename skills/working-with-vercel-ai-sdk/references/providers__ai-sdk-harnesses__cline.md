@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "2b3e172c4a48e866d6881f5fee4231feefdb08dfa0cf33877f06c95075231a93"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "b990df3341331cccc424964a158e75a8957588fd89bd17e9d6667c0aa5edee2f"
 ---
 
 # Cline Harness
@@ -105,6 +105,13 @@ Settings:
 
 To provide additional operating guidance, use the `instructions` setting on
 `HarnessAgent`. The adapter appends it to Cline's system prompt.
+
+## Structured Output
+
+Cline supports schema-backed [`HarnessAgent` structured output](/docs/ai-sdk-harnesses/harness-agent#generate-structured-output)
+by requiring a terminal tool whose argument uses the requested JSON Schema.
+This requires a provider/model route with external tool support;
+`providerId: 'openai-codex-cli'` throws `HarnessCapabilityUnsupportedError`.
 
 ## Authentication
 

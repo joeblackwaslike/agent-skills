@@ -13,8 +13,8 @@ related:
 summary: Learn about public and shared repositories on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/public-and-shared-repositories.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "41ac54b705007099fa5c56f32aa56b54df9abc0e62e8a27231310c94237e48b8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "cb9dcf5399125582a6cf782eb60c8a04ab047569de8b74e117e700149eb275bd"
 ---
 
 # Public and Shared Repositories
@@ -32,7 +32,7 @@ Vercel Container Registry (VCR) repositories are private by default. Share a rep
 - [List repositories](https://vercel.com/docs/rest-api/vcr/list-repositories?from=related)
 - [Create a repository](https://vercel.com/docs/rest-api/vcr/create-a-repository?from=related)
 - [Getting Started](https://vercel.com/docs/container-registry/getting-started?from=related) — Learn about getting started on Vercel.
-- [Get a repository](https://vercel.com/docs/rest-api/vcr/get-a-repository?from=related)
+- [List repository images](https://vercel.com/docs/rest-api/vcr/list-repository-images?from=related)
 
 Full cross-link map for this page: [/docs/container-registry/public-and-shared-repositories.graph.md](/docs/container-registry/public-and-shared-repositories.graph.md)
 <!-- /docsgraph:related -->

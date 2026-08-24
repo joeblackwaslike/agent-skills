@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c3ca2cda2c0d66d9b8cbe7c1127beea1bbda8804694592d1378f97b91b574f4a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7102a5b37501a7c5dd4b142db1bb7e13c18a785615282ef1ea502b3e715b17dd"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -42,6 +42,7 @@ your repository.
 - [Fastify](https://vercel.com/docs/frameworks/backend/fastify?from=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Dramatiq](https://vercel.com/docs/frameworks/backend/dramatiq?from=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 
 Full cross-link map for this page: [/docs/frameworks/backend/fastapi.graph.md](/docs/frameworks/backend/fastapi.graph.md)
 <!-- /docsgraph:related -->

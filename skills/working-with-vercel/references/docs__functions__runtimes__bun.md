@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "16f7064563dd08922cd20cce4692dba7b6fabc45cc529fc0261ac3de082c8059"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b68892e82a811825c023af11a4fab5ab4ad2bd05e7498d2ccede1788bd2ccd92"
 ---
 
 # Using the Bun Runtime with Vercel Functions
@@ -53,17 +53,20 @@ Bun provides Node.js API compatibility and is generally faster than Node.js for 
 
 For all frameworks, including Next.js, you can configure the runtime in your `vercel.json` file using the [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) property.
 
-Once you configure the runtime version, Vercel manages the Bun minor and patch versions automatically, meaning you only need to set the major version. Currently, `"1.x"` is the only valid value.
+Once you configure the runtime version, Vercel manages the patch versions automatically. Currently, `"1.4.x"` and `"1.x"` are the only valid versions:
+
+- `"1.4.x"` selects the [complete rewrite of Bun from Zig to Rust](https://bun.com/blog/bun-v1.4), which contains several [breaking changes](https://bun.com/blog/bun-v1.4#upgrading-to-1-4). Set this version explicitly once you have migrated your application.
+- `"1.x"` selects the previous latest Bun version (currently `1.3.14`).
 
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "bunVersion": "1.x"
+  "bunVersion": "1.4.x"
 }
 ```
 
-> **💡 Note:** Vercel manages the Bun minor and patch versions automatically. `1.x` is the
-> only valid value currently.
+> **💡 Note:** Vercel manages the Bun minor versions automatically. `1.4.x` and `1.x` are the
+> only valid values currently.
 
 ## Deploy with the Bun framework preset
 

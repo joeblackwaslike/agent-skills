@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/gateways.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "7c10111ba4752cd6591de92413257d5491b12306c82c988fcbc4b9361746867d"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "ed073a424c553aaa67ab8d4df24f47c92bcf73d3924e5b50264b2035028a249c"
 ---
 
 > ## Documentation Index
@@ -44,7 +44,7 @@ Claude Code works with Anthropic's own gateway or with a gateway your organizati
 
 ### Claude apps gateway
 
-Claude apps gateway is Anthropic's self-hosted gateway, included in the `claude` binary. It routes to Amazon Bedrock, Claude Platform on AWS, Google Cloud, Microsoft Foundry, or the Anthropic API as the upstream. Developers sign in with your corporate identity provider through `/login`, the gateway enforces model access and [managed settings](/docs/en/permissions#managed-settings) by IdP group, and it emits [OpenTelemetry Protocol (OTLP)](/docs/en/monitoring-usage) usage metrics to your own observability stack.
+Claude apps gateway is Anthropic's self-hosted gateway, included in the `claude` binary. It routes to Amazon Bedrock, Claude Platform on AWS, Google Cloud, Microsoft Foundry, or the Anthropic API as the upstream. Developers sign in with your corporate identity provider through `/login`, the gateway enforces model access and [managed settings](/docs/en/managed-settings) by IdP group, and it emits [OpenTelemetry Protocol (OTLP)](/docs/en/monitoring-usage) usage metrics to your own observability stack.
 
 Because it is built and tested alongside each Claude Code release, it forwards the headers and request fields Claude Code sends. A gateway maintained separately needs its [forwarding rules updated](/docs/en/llm-gateway-protocol#forward-as-open-lists) as those headers and fields change with each release; Claude apps gateway releases with the CLI, so there is no list to keep current. See [Availability and limitations](/docs/en/claude-apps-gateway#availability-and-limitations) for the small set of features that behave differently on a gateway session.
 

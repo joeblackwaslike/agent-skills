@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security-guidance.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "a21699a9713e1e5ac6afb1a416dcfcebe186de6b6a197a09717d8421f372ea7a"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "9f9a3f9899edbe67f5d53b95ada52aac8b4a719f9a5e47e1d123e3471777f6af"
 ---
 
 > ## Documentation Index
@@ -20,7 +20,6 @@ The plugin is the in-session companion to [Code Review](/docs/en/code-review), w
 
 ## Prerequisites
 
-* Claude Code CLI version 2.1.144 or later
 * Python 3.7 or later on your `PATH`. The agentic commit review needs Python 3.10 or later, as do all model-backed reviews when Claude Code uses a third-party provider such as Amazon Bedrock or Google Cloud's Agent Platform. The plugin prefers the versioned interpreters `python3.13` through `python3.10`, then falls back to `python3`, `python`, and `py -3`
 * A git repository for the directory you work in. The end-of-turn and commit reviews diff against git state and skip silently outside a repository. The per-edit pattern check works anywhere
 
@@ -64,7 +63,7 @@ User-scoped plugins do not carry into [Claude Code on the web](/docs/en/claude-c
 }
 ```
 
-Administrators can enable the plugin organization-wide by setting [`enabledPlugins`](/docs/en/settings#plugin-settings) in [managed settings](/docs/en/admin-setup).
+Administrators can enable the plugin organization-wide by setting [`enabledPlugins`](/docs/en/settings-reference#enabledplugins) in [managed settings](/docs/en/admin-setup).
 
 ## What the plugin checks
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/markdown-chatbot-with-memoization.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "ccd64aea4ac5d237e16440f132c2a93ca46167e3d4ea13c1917efc7b04dbe5b3"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "21c9dc47cbb047804789f02bbf23f5570a807e6eb18c3a0a6871f418ebf85694"
 ---
 
 # Markdown Chatbot with Memoization
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    system:
+    instructions:
       'You are a helpful assistant. Respond to the user in Markdown format.',
     model: 'openai/gpt-4o',
     messages: await convertToModelMessages(messages),

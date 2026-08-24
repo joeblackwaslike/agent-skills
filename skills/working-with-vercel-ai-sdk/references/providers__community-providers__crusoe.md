@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/crusoe.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "e24405e9341589fadc7eb3b7ea8f40b6d53379be69f2fa0a44b5205149932478"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "3a58a08fd83a53ad5cade96f9c0a2b68e47d36a0db2beff3ba7a2bd1c4cc9b6c"
 ---
 
 # Crusoe Provider
@@ -174,6 +174,7 @@ for await (const chunk of result.textStream) {
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

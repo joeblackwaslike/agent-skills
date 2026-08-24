@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/tutorials/secure-your-dependencies/dependabot-quickstart.md"
-fetched_at: "2026-07-27T07:36:12.022Z"
-sha256: "8ed662b02431c58ca09aebd7ce8f9eb282184d977bb7bd59f5b9e98a142c124c"
+fetched_at: "2026-08-24T04:49:51.110Z"
+sha256: "4db809baac89c2140b579bcd87f12907a21aec0937d47429588ce23a64044bc1"
 ---
 
 ## About {% data variables.product.prodname_dependabot %}
@@ -22,7 +22,7 @@ You need to start by forking the demo repository.
 
 1. Navigate to [https://github.com/dependabot/demo](https://github.com/dependabot/demo?ref_product=supply-chain-security&ref_type=engagement&ref_style=text).
 1. At the top of the page, on the right, click **{% octicon "repo-forked" aria-hidden="true" aria-label="repo-forked" %} Fork**.
-1. Select an owner (you can select your {% data variables.product.prodname_dotcom %} personal account) and type a repository name. For more information about forking repositories, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository).
+1. Select an owner (you can select your {% data variables.product.prodname_dotcom %} personal account) and type a repository name. For more information about forking repositories, see [AUTOTITLE](/pull-requests/how-tos/work-with-forks/fork-a-repo#forking-a-repository).
 1. Click **Create fork**.
 
 ## Enabling {% data variables.product.prodname_dependabot %} for your repository

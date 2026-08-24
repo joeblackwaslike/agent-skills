@@ -14,8 +14,8 @@ related:
 summary: Archive unused feature flags and restore them when needed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "96b0edbb0b0350057a26638ad96ffe6855a11999056561275cda78c0f28bb189"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4bb0bea633cb6de618f9064598ca652069a4ab2a7ed94246842d48fd0c8c79d7"
 ---
 
 # Archive
@@ -28,6 +28,7 @@ The Archive is where you find feature flags that are no longer active. Archiving
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [Clean Up After Rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Delete a flag](https://vercel.com/docs/rest-api/feature-flags/delete-a-flag?from=related)
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library

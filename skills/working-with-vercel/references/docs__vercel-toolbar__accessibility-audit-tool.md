@@ -15,8 +15,8 @@ related:
 summary: Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level A and AA rules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "dc0fabdb9b2204b6d379976f426c02a02e2bada674ee7d393f2969f58ac2e907"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "cc96b7c564647273238d9d03bea3ee1af692791e1be571a749dd1d68e385ac14"
 ---
 
 # Accessibility Audit Tool
@@ -33,7 +33,7 @@ sha256: "dc0fabdb9b2204b6d379976f426c02a02e2bada674ee7d393f2969f58ac2e907"
 - [Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
 - [Using Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related) — Learn about using vercel toolbar on Vercel.
 - [Add to Production](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Security Dashboard](https://vercel.com/docs/security/security-dashboard?from=related) — Learn about security dashboard on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/accessibility-audit-tool.graph.md](/docs/vercel-toolbar/accessibility-audit-tool.graph.md)
 <!-- /docsgraph:related -->

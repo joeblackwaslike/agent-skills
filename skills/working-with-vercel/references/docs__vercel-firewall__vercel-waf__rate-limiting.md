@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4858203a7f4cad14ccc8327058843df06c559d8201a55b1293089e39ce420d0f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "10d06b08c93378fb86d274bfa813a368c41e15cc33e3e9735fc0100e0b06b2c5"
 ---
 
 # WAF Rate Limiting
@@ -28,15 +28,15 @@ sha256: "4858203a7f4cad14ccc8327058843df06c559d8201a55b1293089e39ce420d0f"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Add Rate Limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel?from=related) — Learn how to implement rate limiting with Vercel
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Limit Abuse with Rate Limiting](https://vercel.com/kb/guide/limit-abuse-with-rate-limiting?from=related) — Learn how to protect your authentication endpoints against abuse.
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related) — Learn how to configure a custom rule with rate limit in your code.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Limits](https://vercel.com/docs/limits?from=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Production Checklist](https://vercel.com/docs/production-checklist?from=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
-- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md)
 <!-- /docsgraph:related -->

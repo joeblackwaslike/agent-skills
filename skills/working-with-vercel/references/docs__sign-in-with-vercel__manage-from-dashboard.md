@@ -10,13 +10,14 @@ prerequisites:
 related:
   - /docs/sign-in-with-vercel/authorization-server-api
   - /docs/rest-api
+  - /docs/kms
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/sign-in-with-vercel/scopes-and-permissions
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5695e5ad0cf651940fb0d8c017e8dd569529f9717c554df575208eefe944d00e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "56e98206186edfddc11f8685825d8de45a2978d8e3a71dc6b49fa59f919b0baf"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -31,10 +32,10 @@ sha256: "5695e5ad0cf651940fb0d8c017e8dd569529f9717c554df575208eefe944d00e"
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Troubleshooting](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related) — Learn how to troubleshoot common errors with Sign in with Vercel
+- [Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Account Management](https://vercel.com/docs/accounts?from=related) — Learn how to manage your Vercel account and team members.
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -64,8 +65,21 @@ The client authentication method determines how your app will authenticate with 
 | --------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | `client_secret_basic` | HTTP Basic Authentication Scheme                      | Client credentials are sent via HTTP Basic Authentication header (Authorization: Basic `<base64-encoded-credentials>`) | Suitable for server-side applications that can securely store credentials                         |
 | `client_secret_post`  | HTTP request body as a form parameter                 | Client credentials are included as form parameters in the request body (`client_id` and `client_secret`)               | The same as `client_secret_basic`                                                                 |
-| `client_secret_jwt`   | JSON Web Token (JWT)                                  | Client authenticates using a JWT signed with the shared client secret                                                  | Provides additional security by avoiding the transmission of the client secret in requests        |
+| `client_secret_jwt`   | JWT signed with the client secret                     | Client authenticates using a JWT signed with HS256, HS384, or HS512. Vercel verifies the assertion against each active client secret. | Provides additional security by avoiding the transmission of the client secret in requests        |
+| `private_key_jwt`     | JWT signed with the app's private key                 | Client authenticates using a JWT signed with a private key. Vercel verifies the signature using public keys from your JWKS URL. Include a `kid` header when the JWKS has more than one key. | Suitable for server-side applications that store a private key and publish public keys at a JWKS URL |
 | `none`                | For public, unauthenticated, non-confidential clients | No client authentication required - suitable for public applications that cannot securely store secrets                | For single page applications (SPAs), mobile apps, and CLIs that cannot securely store credentials |
+
+To enable `private_key_jwt` after you create an app:
+
+1. Navigate to the **Manage** page for your app
+2. Open **Authentication** in the sidebar
+3. Select **private\_key\_jwt**
+4. Enter your **JWKS URL**. For a key you host yourself, use a URL such as `https://example.com/.well-known/jwks.json`. For a [Vercel KMS](/docs/kms) issuer, use `https://kms.vercel.com/<issuerId>/jwks.json`.
+5. Click **Save**
+
+The JWKS URL must use HTTPS and can be up to 2048 characters. You must provide a JWKS URL when `private_key_jwt` is enabled. Vercel fetches public keys from this URL when verifying client assertions. The JWKS document can contain up to 32 keys and must be 64 KB or smaller.
+
+Learn how to build and send JWT client assertions in [Authenticate with a JWT assertion](/docs/sign-in-with-vercel/authorization-server-api#authenticate-with-a-jwt-assertion). To sign with KMS instead of a local private key, see [Sign the assertion with Vercel KMS](/docs/sign-in-with-vercel/authorization-server-api#sign-the-assertion-with-vercel-kms).
 
 ## Generate a client secret
 

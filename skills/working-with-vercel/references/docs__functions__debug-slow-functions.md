@@ -16,8 +16,8 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4301703df1215724533adbf852976bb48ef3e466c13ab75978823fc0409a6dc9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "663ecdbd30acdb789ef8be834bf742fa4970640dbbcddf424f8dcca2f5cb5b87"
 ---
 
 # Debugging slow Vercel Functions
@@ -36,8 +36,10 @@ Use this guide to diagnose and fix slow Vercel Functions. You'll identify which 
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How do I lower my Vercel Function execution time?](https://vercel.com/kb/guide/how-do-i-lower-my-serverless-function-execution-time?from=related) — Learn how to lower your Serverless Function execution time.
 - [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize?from=related) — Learn about optimize deployment storage on Vercel.
 - [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/functions/debug-slow-functions.graph.md](/docs/functions/debug-slow-functions.graph.md)
 <!-- /docsgraph:related -->

@@ -1,15 +1,15 @@
 ---
 title: "Versioning"
 source: "https://docusaurus.io/docs/versioning"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "681decac43c7542ce36d57fef2ead0da6365d1cefa6456579d555448b754b6c8"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "68566f9595e73ca9c4fd637ad358d264ed2a58f4dbac44b68f8f822ce1fa6e31"
 ---
 
 # Versioning
 
 Source: https://docusaurus.io/docs/versioning
 
-- GuidesDocsVersioningVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)[Docs](https://docusaurus.io/docs/docs-introduction)VersioningVersion: 3.10.2On this page
 # Versioning
 
 You can use the versioning CLI to create a new documentation version based on the latest content in the `docs` directory. That specific set of documentation will then be preserved and accessible even as the documentation in the `docs` directory continues to evolve.
@@ -19,7 +19,7 @@ Most of the time, you don't need versioning as it will just increase your build 
 
 To better understand how versioning works and see if it suits your needs, you can read on below.
 
-## Overview​
+## Overview[​](https://docusaurus.io/docs/versioning#overview)
 
 A typical versioned doc site looks like below:
 
@@ -35,16 +35,16 @@ The table below explains how a versioned file maps to its version and the genera
 PathVersionURL`versioned_docs/version-1.0.0/hello.md`1.0.0/docs/1.0.0/hello`versioned_docs/version-1.1.0/hello.md`1.1.0 (latest)/docs/hello`docs/hello.md`current/docs/next/hello
 tipThe files in the `docs` directory belong to the `current` docs version.By default, the `current` docs version is labeled as `Next` and hosted under `/docs/next/*`, but it is entirely configurable to fit your project's release lifecycle.
 
-### Terminology​
+### Terminology[​](https://docusaurus.io/docs/versioning#terminology)
 
 Note the terminology we use here.
 
 Current versionThe version placed in the `./docs` folder.Latest version / last versionThe version served by default for docs navbar items. Usually has path `/docs`.
 Current version is defined by the **file system location**, while latest version is defined by the **the navigation behavior**. They may or may not be the same version! (And the default configuration, as shown in the table above, would treat them as different: current version at `/docs/next` and latest at `/docs`.)
 
-## Tutorials​
+## Tutorials[​](https://docusaurus.io/docs/versioning#tutorials)
 
-### Tagging a new version​
+### Tagging a new version[​](https://docusaurus.io/docs/versioning#tagging-a-new-version)
 
 First, make sure the current docs version (the `./docs` directory) is ready to be frozen.
 
@@ -71,11 +71,11 @@ When tagging a new version, the document versioning mechanism will:
 
 Copy the full `docs/` folder contents into a new `versioned_docs/version-[versionName]/` folder.
 
-- Create a versioned sidebars file based from your current sidebar configuration (if it exists) - saved as `versioned_sidebars/version-[versionName]-sidebars.json`.
+- Create a versioned sidebars file based from your current [sidebar](https://docusaurus.io/docs/sidebar) configuration (if it exists) - saved as `versioned_sidebars/version-[versionName]-sidebars.json`.
 
 - Append the new version number to `versions.json`.
 
-### Creating new docs​
+### Creating new docs[​](https://docusaurus.io/docs/versioning#creating-new-docs)
 
 - Place the new file into the corresponding version folder.
 
@@ -100,7 +100,7 @@ or for a manual sidebar:
 ```
 
 
-### Updating an existing version​
+### Updating an existing version[​](https://docusaurus.io/docs/versioning#updating-an-existing-version)
 
 You can update multiple docs versions at the same time because each directory in `versioned_docs/` represents specific routes when published.
 
@@ -112,7 +112,7 @@ Edit any file.
 
 Example: When you change any file in `versioned_docs/version-2.6/`, it will only affect the docs for version `2.6`.
 
-### Deleting an existing version​
+### Deleting an existing version[​](https://docusaurus.io/docs/versioning#deleting-an-existing-version)
 
 You can delete/remove versions as well.
 
@@ -130,7 +130,7 @@ Example:
 
 - Delete the versioned sidebars file. Example: `versioned_sidebars/version-1.8.0-sidebars.json`.
 
-## Configuring versioning behavior​
+## Configuring versioning behavior[​](https://docusaurus.io/docs/versioning#configuring-versioning-behavior)
 
 The "current" version is the version name for the `./docs` folder. There are different ways to manage versioning, but two very common patterns are:
 
@@ -177,19 +177,19 @@ We offer these plugin options to customize versioning behavior:
 
 - `className`: add a custom `className` to the `<html>` element of doc pages of that version.
 
-See docs plugin configuration for more details.
+See [docs plugin configuration](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#configuration) for more details.
 
-## Navbar items​
+## Navbar items[​](https://docusaurus.io/docs/versioning#navbar-items)
 
 We offer several docs navbar items to help you quickly set up navigation without worrying about versioned routes.
 
-- `doc`: a link to a doc.
+- [doc](https://docusaurus.io/docs/api/themes/configuration#navbar-doc-link): a link to a doc.
 
-- `docSidebar`: a link to the first item in a sidebar.
+- [docSidebar](https://docusaurus.io/docs/api/themes/configuration#navbar-doc-sidebar): a link to the first item in a sidebar.
 
-- `docsVersion`: a link to the main doc of the currently viewed version.
+- [docsVersion](https://docusaurus.io/docs/api/themes/configuration#navbar-docs-version): a link to the main doc of the currently viewed version.
 
-- `docsVersionDropdown`: a dropdown containing all the versions available.
+- [docsVersionDropdown](https://docusaurus.io/docs/api/themes/configuration#navbar-docs-version-dropdown): a dropdown containing all the versions available.
 
 These links would all look for an appropriate version to link to, in the following order:
 
@@ -199,9 +199,9 @@ These links would all look for an appropriate version to link to, in the followi
 
 - **Latest version**: the default version that we navigate to, configured by the `lastVersion` option.
 
-## `docsVersionDropdown`​
+## `docsVersionDropdown`[​](https://docusaurus.io/docs/versioning#docsVersionDropdown)
 
-By default, the `docsVersionDropdown` displays a dropdown with all the available docs versions.
+By default, the [docsVersionDropdown](https://docusaurus.io/docs/api/themes/configuration#navbar-docs-version-dropdown) displays a dropdown with all the available docs versions.
 
 The `versions` attribute allows you to display a subset of the available docs versions in a given order:
 
@@ -218,21 +218,21 @@ export default {  themeConfig: {    navbar: {      items: [        {          ty
 ```
 
 
-## Recommended practices​
+## Recommended practices[​](https://docusaurus.io/docs/versioning#recommended-practices)
 
-### Version your documentation only when needed​
+### Version your documentation only when needed[​](https://docusaurus.io/docs/versioning#version-your-documentation-only-when-needed)
 
 For example, you are building documentation for your npm package `foo` and you are currently in version 1.0.0. You then release a patch version for a minor bug fix and it's now 1.0.1.
 
 Should you cut a new documentation version 1.0.1? **You probably shouldn't**. 1.0.1 and 1.0.0 docs shouldn't differ according to semver because there are no new features!. Cutting a new version for it will only just create unnecessary duplicated files.
 
-### Keep the number of versions small​
+### Keep the number of versions small[​](https://docusaurus.io/docs/versioning#keep-the-number-of-versions-small)
 
-As a good rule of thumb, try to keep the number of your versions below 10. You will **very likely** to have a lot of obsolete versioned documentation that nobody even reads anymore. For example, Jest is currently in version `27.4`, and only maintains several latest documentation versions with the lowest being `25.X`. Keep it small 😊
+As a good rule of thumb, try to keep the number of your versions below 10. You will **very likely** to have a lot of obsolete versioned documentation that nobody even reads anymore. For example, [Jest](https://jestjs.io/versions) is currently in version `27.4`, and only maintains several latest documentation versions with the lowest being `25.X`. Keep it small 😊
 
-archive older versionsIf you deploy your site on a Jamstack provider (e.g. Netlify), the provider will save each production build as a snapshot under an immutable URL. You can include archived versions that will never be rebuilt as external links to these immutable URLs. The Jest website and the Docusaurus website both use such pattern to keep the number of actively built versions low.
+archive older versionsIf you deploy your site on a Jamstack provider (e.g. [Netlify](https://docusaurus.io/docs/deployment)), the provider will save each production build as a snapshot under an immutable URL. You can include archived versions that will never be rebuilt as external links to these immutable URLs. The Jest website and the Docusaurus website both use such pattern to keep the number of actively built versions low.
 
-### Use absolute import within the docs​
+### Use absolute import within the docs[​](https://docusaurus.io/docs/versioning#use-absolute-import-within-the-docs)
 
 Don't use relative paths import within the docs. Because when we cut a version the paths no longer work (the nesting level is different, among other reasons). You can utilize the `@site` alias provided by Docusaurus that points to the `website` directory. Example:
 
@@ -242,7 +242,7 @@ Don't use relative paths import within the docs. Because when we cut a version t
 ```
 
 
-### Link docs by file paths​
+### Link docs by file paths[​](https://docusaurus.io/docs/versioning#link-docs-by-file-paths)
 
 Refer to other docs by relative file paths with the `.md` extension, so that Docusaurus can rewrite them to actual URL paths during building. Files will be linked to the correct corresponding version.
 
@@ -252,7 +252,7 @@ The [@hello](hello.mdx#paginate) document is great!See the [Tutorial](../getting
 ```
 
 
-### Global or versioned collocated assets​
+### Global or versioned collocated assets[​](https://docusaurus.io/docs/versioning#global-or-versioned-collocated-assets)
 
 You should decide if assets like images and files are per-version or shared between versions.
 
@@ -269,4 +269,4 @@ If your assets are global, put them in `/static` and use absolute paths:
 ```
 ![img alt](/myImage.png)[download this file](/file.pdf)
 ```
-Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/docs/versioning.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

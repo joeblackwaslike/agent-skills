@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "7cee55f50f91f4af40826e0ba6939bd0796cd844d80a6634fea1debeea77a224"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "7cf32a59255a44bb2da11a248aaab6dff48eb35b0d43aad4f78561f9a3157961"
 ---
 
 # AI SDK Harnesses
@@ -214,6 +214,7 @@ tools, UI, and terminal usage.
   - [Crusoe](/providers/community-providers/crusoe)
   - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
   - [QVAC](/providers/community-providers/qvac)
+  - [Interfaze](/providers/community-providers/interfaze)
   - [Flowise](/providers/community-providers/flowise)
 - [Adapters](/providers/adapters)
   - [LangChain](/providers/adapters/langchain)

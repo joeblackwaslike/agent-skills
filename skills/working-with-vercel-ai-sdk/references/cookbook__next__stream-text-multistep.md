@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/stream-text-multistep.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "60a1d38b29175bec54c166aae90c8817bcef326a158991961a66e851096479a5"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "d2eca9e78a629a5006d7ac07137da81bd22d43e3fc5f16c41bef57450881ce64"
 ---
 
 # streamText Multi-Step Agent
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
       // step 1 example: forced tool call
       const result1 = streamText({
         model: 'openai/gpt-4o-mini',
-        system: 'Extract the user goal from the conversation.',
+        instructions: 'Extract the user goal from the conversation.',
         messages,
         toolChoice: 'required', // force the model to call a tool
         tools: {
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
       const result2 = streamText({
         // different system prompt, different model, no tools:
         model: 'openai/gpt-4o',
-        system:
+        instructions:
           'You are a helpful assistant with a different system prompt. Repeat the extract user goal in your answer.',
         // continue the workflow stream with the messages from the previous step:
         messages: [

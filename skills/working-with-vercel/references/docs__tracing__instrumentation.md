@@ -14,8 +14,8 @@ related:
 summary: Learn how to instrument your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fd0d1eda0f65847f5cf9efb52b80179d2c0649a59f4f4efe53c10c6c75dbedf0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b128b662b14077609488fd6781efa4b7d981da907d7439f6b2b40264a3f7db12"
 ---
 
 # Instrumentation
@@ -39,7 +39,7 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [instrumentation.js](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation?from=related) — API reference for the instrumentation.js file.
 - [Langfuse](https://ai-sdk.dev/providers/observability/langfuse?from=related)
 - [Laminar](https://ai-sdk.dev/providers/observability/laminar?from=related)
-- [Arize AX](https://ai-sdk.dev/providers/observability/arize-ax?from=related)
+- [Always-on Tracing](https://vercel.com/docs/tracing/always-on-tracing?from=related) — Learn about always-on tracing on Vercel.
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "07a82a3c5cd37bff4e2b54d1956360168558ada6ebd6bcd70aedc2c8b410df4d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "72422bcd81e52040840f681dc354c9439a49e73718710ef2f349698a8a58844a"
 ---
 
 # Cache Status and Reasons
@@ -30,12 +30,13 @@ Vercel records how each cacheable request resolves as a cache **status**, and wh
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related) — Learn how to set headers to cache your function's responses.
 - [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [vercel cache](https://vercel.com/docs/cli/cache?from=related) — Learn how to manage cache for your project using the vercel cache CLI command.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/caching/cache-status.graph.md](/docs/caching/cache-status.graph.md)
 <!-- /docsgraph:related -->

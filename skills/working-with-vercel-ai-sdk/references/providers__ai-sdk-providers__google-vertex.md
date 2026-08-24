@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "ec44b92683619a8b2b8a2c963d9e81b6b44182c2235ceda6e82b480bb0dae840"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "44862546339e0f7f09c9e4930fc0f15782813b85f2853316b281d01abcf4fe2f"
 ---
 
 # Google Vertex Provider
@@ -239,10 +239,10 @@ const googleVertex = createGoogleVertex({
 ### Language Models
 
 You can create models that call the Vertex API using the provider instance.
-The first argument is the model id, e.g. `gemini-2.5-pro`.
+The first argument is the model id, e.g. `gemini-3.7-flash`.
 
 ```ts
-const model = googleVertex('gemini-2.5-pro');
+const model = googleVertex('gemini-3.7-flash');
 ```
 
 <Note>
@@ -259,7 +259,7 @@ an options argument:
 import { googleVertex } from '@ai-sdk/google-vertex';
 import { type GoogleLanguageModelOptions } from '@ai-sdk/google';
 
-const model = googleVertex('gemini-2.5-pro');
+const model = googleVertex('gemini-3.1-pro-preview');
 
 await generateText({
   model,
@@ -419,7 +419,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -469,7 +469,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   tools: { code_execution: googleVertex.tools.codeExecution({}) },
   prompt:
     'Use python to calculate 20th fibonacci number. Then find the nearest palindrome to it.',
@@ -487,7 +487,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   tools: { url_context: googleVertex.tools.urlContext({}) },
   prompt: 'What are the key points from https://example.com/article?',
 });
@@ -502,7 +502,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   tools: { google_search: googleVertex.tools.googleSearch({}) },
   prompt: 'What are the latest developments in AI?',
 });
@@ -517,7 +517,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-2.5-flash'),
+  model: googleVertex('gemini-3.7-flash'),
   tools: {
     enterprise_web_search: googleVertex.tools.enterpriseWebSearch({}),
   },
@@ -535,7 +535,7 @@ import { type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-2.5-flash'),
+  model: googleVertex('gemini-3.7-flash'),
   tools: {
     google_maps: googleVertex.tools.googleMaps({}),
   },
@@ -677,7 +677,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   messages: [
     {
       role: 'user',
@@ -720,13 +720,13 @@ const baseContext =
   'You are a cooking assistant with expertise in Italian cuisine. Here are 1000 lasagna recipes for reference...';
 
 const { text: veggieLasagna } = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   prompt: `${baseContext}\n\nWrite a vegetarian lasagna recipe for 4 people.`,
 });
 
 // Second request with same prefix - eligible for cache hit
 const { text: meatLasagna, providerMetadata } = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   prompt: `${baseContext}\n\nWrite a meat lasagna recipe for 12 people.`,
 });
 
@@ -789,7 +789,7 @@ import { type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const { text: veggieLasagnaRecipe } = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   providerOptions: {
     vertex: {
@@ -799,7 +799,7 @@ const { text: veggieLasagnaRecipe } = await generateText({
 });
 
 const { text: meatLasagnaRecipe } = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   prompt: 'Write a meat lasagna recipe for 12 people.',
   providerOptions: {
     vertex: {
@@ -873,7 +873,7 @@ import { type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { generateText, Output } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-2.5-pro'),
+  model: googleVertex('gemini-3.1-pro-preview'),
   providerOptions: {
     vertex: {
       structuredOutputs: false,

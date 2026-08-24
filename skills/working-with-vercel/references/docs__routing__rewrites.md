@@ -16,8 +16,8 @@ related:
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "173645c7bc2de773f484d9145d7b59aea8c8bac3cd28c8ab24b7f031f3d152aa"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a869fe051cd79df7b4774f3b7754dd70359d417cb8650620a2f0ac5145777f52"
 ---
 
 # Rewrites on Vercel
@@ -30,12 +30,12 @@ A rewrite routes a request to a different destination without changing the URL i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [rewrites](https://nextjs.org/docs/pages/api-reference/config/next-config-js/rewrites?from=related) — Add rewrites to your Next.js app.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 - [Incremental Migration](https://vercel.com/docs/incremental-migration?from=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.

@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Anthropic Messages API to allow models to call tools and functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "82e0471dd737ead31a2e5ba8096388f5dd54d6db2dcffb1221b0239037767233"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0078e872aac635641fda8e44864ddee4562e11022f8300225ef3fa22e0563f59"
 ---
 
 # Tool Calls
@@ -34,8 +34,7 @@ The Anthropic Messages API supports function calling, allowing models to call to
 - [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool?from=related) — Learn what tools are, how tool calling works, and how you can use them to build agents.
 - [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related)
 - [Call Tools](https://ai-sdk.dev/cookbook/next/call-tools?from=related)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related)
-- [Tools](https://eve.dev/docs/tools?from=related) — Define typed actions the agent can call, and gate sensitive ones on human approval.
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 

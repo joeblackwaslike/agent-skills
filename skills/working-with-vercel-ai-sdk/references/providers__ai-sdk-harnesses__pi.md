@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "79ba281da2047f6729461b0d52018de87dfb0e0d0ce73879ce1dee2facf90e3b"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "b2c64239195d2d1de733e5e2ac6ed211ea2494c10160863cfe5f2500852548e8"
 ---
 
 # Pi Harness
@@ -168,6 +168,11 @@ common tool shape.
 
 Pi supports built-in tool approval requests when `permissionMode` is
 `allow-reads` or `allow-edits`.
+
+## Known Limitations
+
+Pi does not support structured output. Supplying `output` to `HarnessAgent`
+causes the turn to throw `HarnessCapabilityUnsupportedError`.
 
 ## Related
 

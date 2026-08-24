@@ -17,8 +17,8 @@ related:
 summary: API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "25e45e1210e9cc1330c8a9ce805708d311ac24b116c537bc87c5299ca04651d7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "97043c832d09b08fb30fdbd7fb21e0e6450b6ca024890c5ccc97d6576a3285db"
 ---
 
 # Multi-Project Platforms Reference
@@ -34,9 +34,9 @@ sha256: "25e45e1210e9cc1330c8a9ce805708d311ac24b116c537bc87c5299ca04651d7"
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related) — Learn how to manage your projects through the Vercel Dashboard.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/reference.graph.md](/docs/platforms/multi-project-platforms/reference.graph.md)
 <!-- /docsgraph:related -->

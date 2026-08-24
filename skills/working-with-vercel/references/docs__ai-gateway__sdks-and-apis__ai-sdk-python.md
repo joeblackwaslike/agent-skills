@@ -16,8 +16,8 @@ related:
 summary: Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e5eaabc2714b9c395dcafbcc34419bda04b62266a5d83b8aa032d376c409f4c9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3d23f078ed7bbb1791103bf8ff8d38934eb687460eeae0dccf1cf2f523c8bdf8"
 ---
 
 # AI SDK for Python
@@ -35,7 +35,7 @@ It uses AI Gateway to route requests by default.
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related) — Set up the Workflow Python SDK in your Python application.
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related) — Add an \`executeCode\` tool to your AI SDK agent with the \`ai-sdk-tool-code-execution\` package to run Python 3.13 insi
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
 - [Pydantic AI](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface
 - [OpenAI](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related) — Integrate your Vercel project with OpenAI's powerful suite of models.

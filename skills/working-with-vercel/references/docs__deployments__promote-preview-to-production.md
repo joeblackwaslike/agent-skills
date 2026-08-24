@@ -16,8 +16,8 @@ related:
 summary: Test a preview deployment and promote it to production using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promote-preview-to-production.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6ef33a87be16728e06a21c65f232595eab01921496b81ad791f81e99ac04d534"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "27d835f9146375ecb0230f31c070d0a2af0e0c1b4539e38ad3906f01df055cc5"
 ---
 
 # Promoting a preview deployment to production
@@ -30,6 +30,7 @@ Use this guide to verify a preview deployment and promote it to production. You'
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related) — Learn how to promote deployments to production on Vercel.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related) — Learn how to deploy based on tags/releases on Vercel.

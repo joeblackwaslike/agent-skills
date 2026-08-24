@@ -17,8 +17,8 @@ related:
 summary: Use the Hermes agent with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/hermes.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7f754382fd78c5ce30781ea6a551e7727a4e988d95da25f13265912acf7f96c1"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "552acf6dcb2ee31be9309462b8479b0c9ab3832f757224745592624f051e60d6"
 ---
 
 # Hermes
@@ -32,11 +32,11 @@ sha256: "7f754382fd78c5ce30781ea6a551e7727a4e988d95da25f13265912acf7f96c1"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
+- [Migrate to AI Gateway](https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway?from=related) — Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use tod
 - [Kilo Code](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related) — Learn about kilo code on Vercel.
 - [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
-- [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
 - [Cursor](https://vercel.com/docs/ai-gateway/coding-agents/cursor?from=related) — Learn about cursor on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/hermes.graph.md](/docs/ai-gateway/coding-agents/hermes.graph.md)

@@ -1,22 +1,22 @@
 ---
 title: "Blog Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "acf119162f1fd7f0e3824991df1892ea4ed377e6756bfd1161942786a54eb6b5"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "5d697f1ce5aacfce5ec09bec5f250708b36563d4f5cfdc75a550d2a008fe9dd1"
 ---
 
 # Blog Plugin
 
 Source: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog
 
-- Plugins📦 plugin-content-blogVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Plugins](https://docusaurus.io/docs/api/plugins)📦 plugin-content-blogVersion: 3.10.2On this page
 # 📦 plugin-content-blog
 
-Provides the Blog feature and is the default blog plugin for Docusaurus.
+Provides the [Blog](https://docusaurus.io/docs/blog) feature and is the default blog plugin for Docusaurus.
 
-some features production onlyThe feed feature works by extracting the build output, and is **only active in production**.
+some features production onlyThe [feed feature](https://docusaurus.io/docs/blog#feed) works by extracting the build output, and is **only active in production**.
 
-## Installation​
+## Installation[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#installation)
 
 npmYarnpnpmBun
 ```
@@ -35,17 +35,17 @@ pnpm add @docusaurus/plugin-content-blog
 bun add @docusaurus/plugin-content-blog
 ```
 
-tipIf you use the preset `@docusaurus/preset-classic`, you don't need to install this plugin as a dependency.You can configure this plugin through the preset options.
+tipIf you use the preset `@docusaurus/preset-classic`, you don't need to install this plugin as a dependency.You can configure this plugin through the [preset options](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic).
 
-## Configuration​
+## Configuration[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#configuration)
 
 Accepted fields:
 
-NameTypeDefaultDescription`path``string``'blog'`Path to the blog content directory on the file system, relative to site dir.`editUrl``string | EditUrlFn``undefined`Base URL to edit your site. The final URL is computed by `editUrl + relativePostPath`. Using a function allows more nuanced control for each file. Omitting this variable entirely will disable edit links.`editLocalizedFiles``boolean``false`The edit URL will target the localized file, instead of the original unlocalized file. Ignored when `editUrl` is a function.`blogTitle``string``'Blog'`Blog page title for better SEO.`blogDescription``string``'Blog'`Blog page meta description for better SEO.`blogSidebarCount``number | 'ALL'``5`Number of blog post elements to show in the blog sidebar. `'ALL'` to show all blog posts; `0` to disable.`blogSidebarTitle``string``'Recent posts'`Title of the blog sidebar.`routeBasePath``string``'blog'`URL route for the blog section of your site. **DO NOT** include a trailing slash. Use `/` to put the blog at root path.`tagsBasePath``string``'tags'`URL route for the tags section of your blog. Will be appended to `routeBasePath`.`pageBasePath``string``'page'`URL route for the pages section of your blog. Will be appended to `routeBasePath`.`archiveBasePath``string | null``'archive'`URL route for the archive section of your blog. Will be appended to `routeBasePath`. **DO NOT** include a trailing slash. Use `null` to disable generation of archive.`authorsBasePath``string``'authors'`URL route for the authors pages of your blog. Will be appended to `path`.`include``string[]``['**/*.{md,mdx}']`Array of glob patterns matching Markdown files to be built, relative to the content path.`exclude``string[]`_See example configuration_Array of glob patterns matching Markdown files to be excluded. Serves as refinement based on the `include` option.`postsPerPage``number | 'ALL'``10`Number of posts to show per page in the listing page. Use `'ALL'` to display all posts on one listing page.`blogListComponent``string``'@theme/BlogListPage'`Root component of the blog listing page.`blogPostComponent``string``'@theme/BlogPostPage'`Root component of each blog post page.`blogTagsListComponent``string``'@theme/BlogTagsListPage'`Root component of the tags list page.`blogTagsPostsComponent``string``'@theme/BlogTagsPostsPage'`Root component of the "posts containing tag" page.`blogArchiveComponent``string``'@theme/BlogArchivePage'`Root component of the blog archive page.`blogAuthorsPostsComponent``string``'@theme/Blog/Pages/BlogAuthorsPostsPage'`Root component of the blog author page.`blogAuthorsListComponent``string``'@theme/Blog/Pages/BlogAuthorsListPage'`Root component of the blog authors page index.`remarkPlugins``any[]``[]`Remark plugins passed to MDX.`rehypePlugins``any[]``[]`Rehype plugins passed to MDX.`recmaPlugins``any[]``[]`Recma plugins passed to MDX.`beforeDefaultRemarkPlugins``any[]``[]`Custom Remark plugins passed to MDX before the default Docusaurus Remark plugins.`beforeDefaultRehypePlugins``any[]``[]`Custom Rehype plugins passed to MDX before the default Docusaurus Rehype plugins.`truncateMarker``RegExp``/<!--\s*truncate\s*-->/` | `\{\/\*\s*truncate\s*\*\/\}/`Truncate marker marking where the summary ends.`showReadingTime``boolean``true`Show estimated reading time for the blog post.`readingTime``ReadingTimeFn`The default reading timeA callback to customize the reading time number displayed.`authorsMapPath``string``'authors.yml'`Path to the authors map file, relative to the blog content directory.`feedOptions`_See below_`{type: ['rss', 'atom']}`Blog feed.`feedOptions.type``FeedType | FeedType[] | 'all' | null`**Required**Type of feed to be generated. Use `null` to disable generation.`feedOptions.createFeedItems``CreateFeedItemsFn | undefined``undefined`An optional function which can be used to transform and / or filter the items in the feed.`feedOptions.limit``number | null | false``20`Limits the feed to the specified number of posts, `false` or `null` for all entries. Defaults to `20`.`feedOptions.title``string``siteConfig.title`Title of the feed.`feedOptions.description``string```${siteConfig.title} Blog``Description of the feed.`feedOptions.copyright``string``undefined`Copyright message.`feedOptions.xslt``boolean | FeedXSLTOptions``undefined`Permits to style the blog XML feeds with XSLT so that browsers render them nicely.`feedOptions.language``string` (See documentation for possible values)`undefined`Language metadata of the feed.`sortPosts``'descending' | 'ascending'``'descending'`Governs the direction of blog post sorting.`processBlogPosts``ProcessBlogPostsFn``undefined`An optional function which can be used to transform blog posts (filter, modify, delete, etc...).`showLastUpdateAuthor``boolean``false`Whether to display the author who last updated the blog post.`showLastUpdateTime``boolean``false`Whether to display the last date the blog post was updated. This requires access to git history during the build, so will not work correctly with shallow clones (a common default for CI systems). With GitHub `actions/checkout`, use `fetch-depth: 0`. When deploying to Vercel, set the environment variable `VERCEL_DEEP_CLONE=true`.`tags``string | false | null | undefined``tags.yml`Path to the YAML tags file listing pre-defined tags. Relative to the blog content directory.`onInlineTags``'ignore' | 'log' | 'warn' | 'throw'``warn`The plugin behavior when blog posts contain inline tags (not appearing in the list of pre-defined tags, usually `tags.yml`).`onUntruncatedBlogPosts``'ignore' | 'log' | 'warn' | 'throw'``warn`The plugin behavior when blog posts do not contain a truncate marker.
+NameTypeDefaultDescription`path``string``'blog'`Path to the blog content directory on the file system, relative to site dir.`editUrl``string | [EditUrlFn](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#EditUrlFn)``undefined`Base URL to edit your site. The final URL is computed by `editUrl + relativePostPath`. Using a function allows more nuanced control for each file. Omitting this variable entirely will disable edit links.`editLocalizedFiles``boolean``false`The edit URL will target the localized file, instead of the original unlocalized file. Ignored when `editUrl` is a function.`blogTitle``string``'Blog'`Blog page title for better SEO.`blogDescription``string``'Blog'`Blog page meta description for better SEO.`blogSidebarCount``number | 'ALL'``5`Number of blog post elements to show in the blog sidebar. `'ALL'` to show all blog posts; `0` to disable.`blogSidebarTitle``string``'Recent posts'`Title of the blog sidebar.`routeBasePath``string``'blog'`URL route for the blog section of your site. **DO NOT** include a trailing slash. Use `/` to put the blog at root path.`tagsBasePath``string``'tags'`URL route for the tags section of your blog. Will be appended to `routeBasePath`.`pageBasePath``string``'page'`URL route for the pages section of your blog. Will be appended to `routeBasePath`.`archiveBasePath``string | null``'archive'`URL route for the archive section of your blog. Will be appended to `routeBasePath`. **DO NOT** include a trailing slash. Use `null` to disable generation of archive.`authorsBasePath``string``'authors'`URL route for the authors pages of your blog. Will be appended to `path`.`include``string[]``['**/*.{md,mdx}']`Array of glob patterns matching Markdown files to be built, relative to the content path.`exclude``string[]`_See example configuration_Array of glob patterns matching Markdown files to be excluded. Serves as refinement based on the `include` option.`postsPerPage``number | 'ALL'``10`Number of posts to show per page in the listing page. Use `'ALL'` to display all posts on one listing page.`blogListComponent``string``'@theme/BlogListPage'`Root component of the blog listing page.`blogPostComponent``string``'@theme/BlogPostPage'`Root component of each blog post page.`blogTagsListComponent``string``'@theme/BlogTagsListPage'`Root component of the tags list page.`blogTagsPostsComponent``string``'@theme/BlogTagsPostsPage'`Root component of the "posts containing tag" page.`blogArchiveComponent``string``'@theme/BlogArchivePage'`Root component of the blog archive page.`blogAuthorsPostsComponent``string``'@theme/Blog/Pages/BlogAuthorsPostsPage'`Root component of the blog author page.`blogAuthorsListComponent``string``'@theme/Blog/Pages/BlogAuthorsListPage'`Root component of the blog authors page index.`remarkPlugins``any[]``[]`Remark plugins passed to MDX.`rehypePlugins``any[]``[]`Rehype plugins passed to MDX.`recmaPlugins``any[]``[]`Recma plugins passed to MDX.`beforeDefaultRemarkPlugins``any[]``[]`Custom Remark plugins passed to MDX before the default Docusaurus Remark plugins.`beforeDefaultRehypePlugins``any[]``[]`Custom Rehype plugins passed to MDX before the default Docusaurus Rehype plugins.`truncateMarker``RegExp``/<!--\s*truncate\s*-->/` | `\{\/\*\s*truncate\s*\*\/\}/`Truncate marker marking where the summary ends.`showReadingTime``boolean``true`Show estimated reading time for the blog post.`readingTime``ReadingTimeFn`The default reading timeA callback to customize the reading time number displayed.`authorsMapPath``string``'authors.yml'`Path to the authors map file, relative to the blog content directory.`feedOptions`_See below_`{type: ['rss', 'atom']}`Blog feed.`feedOptions.type``[FeedType](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#FeedType) | [FeedType](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#FeedType)[] | 'all' | null`**Required**Type of feed to be generated. Use `null` to disable generation.`feedOptions.createFeedItems``[CreateFeedItemsFn](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#CreateFeedItemsFn) | undefined``undefined`An optional function which can be used to transform and / or filter the items in the feed.`feedOptions.limit``number | null | false``20`Limits the feed to the specified number of posts, `false` or `null` for all entries. Defaults to `20`.`feedOptions.title``string``siteConfig.title`Title of the feed.`feedOptions.description``string```${siteConfig.title} Blog``Description of the feed.`feedOptions.copyright``string``undefined`Copyright message.`feedOptions.xslt``boolean | [FeedXSLTOptions](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#FeedXSLTOptions)``undefined`Permits to style the blog XML feeds with XSLT so that browsers render them nicely.`feedOptions.language``string` (See [documentation](http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes) for possible values)`undefined`Language metadata of the feed.`sortPosts``'descending' | 'ascending'``'descending'`Governs the direction of blog post sorting.`processBlogPosts``[ProcessBlogPostsFn](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#ProcessBlogPostsFn)``undefined`An optional function which can be used to transform blog posts (filter, modify, delete, etc...).`showLastUpdateAuthor``boolean``false`Whether to display the author who last updated the blog post.`showLastUpdateTime``boolean``false`Whether to display the last date the blog post was updated. This requires access to git history during the build, so will not work correctly with shallow clones (a common default for CI systems). With GitHub `actions/checkout`, use `fetch-depth: 0`. When deploying to Vercel, set the environment variable `VERCEL_DEEP_CLONE=true`.`tags``string | false | null | undefined``tags.yml`Path to the YAML tags file listing pre-defined tags. Relative to the blog content directory.`onInlineTags``'ignore' | 'log' | 'warn' | 'throw'``warn`The plugin behavior when blog posts contain inline tags (not appearing in the list of pre-defined tags, usually `tags.yml`).`onUntruncatedBlogPosts``'ignore' | 'log' | 'warn' | 'throw'``warn`The plugin behavior when blog posts do not contain a truncate marker.
 
-### Types​
+### Types[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#types)
 
-#### `EditUrlFn`​
+#### `EditUrlFn`[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#EditUrlFn)
 
 
 ```
@@ -53,7 +53,7 @@ type EditUrlFunction = (params: {  blogDirPath: string;  blogPath: string;  perm
 ```
 
 
-#### `ReadingTimeFn`​
+#### `ReadingTimeFn`[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#ReadingTimeFn)
 
 
 ```
@@ -61,7 +61,7 @@ type ReadingTimeOptions = {  wordsPerMinute: number;};type ReadingTimeCalculator
 ```
 
 
-#### `FeedType`​
+#### `FeedType`[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#FeedType)
 
 
 ```
@@ -69,9 +69,9 @@ type FeedType = 'rss' | 'atom' | 'json';
 ```
 
 
-#### `FeedXSLTOptions`​
+#### `FeedXSLTOptions`[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#FeedXSLTOptions)
 
-Permits to style the blog XML feeds so that browsers render them nicely with XSLT.
+Permits to style the blog XML feeds so that browsers render them nicely with [XSLT](https://developer.mozilla.org/en-US/docs/Web/XSLT).
 
 Use `true` to let the blog use its built-in `.xsl` and `.css` files to style the blog feed
 
@@ -85,7 +85,7 @@ type FeedXSLTOptions =  | boolean  | undefined  | null  | {      rss?: string | 
 ```
 
 
-#### `CreateFeedItemsFn`​
+#### `CreateFeedItemsFn`[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#CreateFeedItemsFn)
 
 
 ```
@@ -93,7 +93,7 @@ type CreateFeedItemsFn = (params: {  blogPosts: BlogPost[];  siteConfig: Docusau
 ```
 
 
-#### `ProcessBlogPostsFn`​
+#### `ProcessBlogPostsFn`[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#ProcessBlogPostsFn)
 
 
 ```
@@ -101,13 +101,13 @@ type ProcessBlogPostsFn = (params: {  blogPosts: BlogPost[];}) => Promise<void |
 ```
 
 
-### Example configuration​
+### Example configuration[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#ex-config)
 
 You can configure this plugin through preset options or plugin options.
 
 tipMost Docusaurus users configure this plugin through the preset options.
 
-- Preset optionsPlugin optionsIf you use a preset, configure this plugin through the preset options:docusaurus.config.js
+- Preset optionsPlugin optionsIf you use a preset, configure this plugin through the [preset options](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic):docusaurus.config.js
 ```
 module.exports = {  presets: [    [      '@docusaurus/preset-classic',      {        blog: {          path: 'blog',          // Simple use-case: string editUrl          // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',          // Advanced use-case: functional editUrl          editUrl: ({locale, blogDirPath, blogPath, permalink}) =>            `https://github.com/facebook/docusaurus/edit/main/website/${blogDirPath}/${blogPath}`,          editLocalizedFiles: false,          blogTitle: 'Blog title',          blogDescription: 'Blog',          blogSidebarCount: 5,          blogSidebarTitle: 'All our posts',          routeBasePath: 'blog',          include: ['**/*.{md,mdx}'],          exclude: [            '**/_*.{js,jsx,ts,tsx,md,mdx}',            '**/_*/**',            '**/*.test.{js,jsx,ts,tsx}',            '**/__tests__/**',          ],          postsPerPage: 10,          blogListComponent: '@theme/BlogListPage',          blogPostComponent: '@theme/BlogPostPage',          blogTagsListComponent: '@theme/BlogTagsListPage',          blogTagsPostsComponent: '@theme/BlogTagsPostsPage',          remarkPlugins: [require('./my-remark-plugin')],          rehypePlugins: [],          beforeDefaultRemarkPlugins: [],          beforeDefaultRehypePlugins: [],          truncateMarker: /<!--\s*(truncate)\s*-->/,          showReadingTime: true,          feedOptions: {            type: '',            title: '',            description: '',            copyright: '',            language: undefined,            createFeedItems: async (params) => {              const {blogPosts, defaultCreateFeedItems, ...rest} = params;              return defaultCreateFeedItems({                // keep only the 10 most recent blog posts in the feed                blogPosts: blogPosts.filter((item, index) => index < 10),                ...rest,              });            },          },        },      },    ],  ],};
 ```
@@ -117,13 +117,13 @@ module.exports = {  plugins: [    [      '@docusaurus/plugin-content-blog',     
 ```
 
 
-## Markdown front matter​
+## Markdown front matter[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#markdown-front-matter)
 
-Markdown documents can use the following Markdown front matter metadata fields, enclosed by a line `---` on either side.
+Markdown documents can use the following Markdown [front matter](https://docusaurus.io/docs/markdown-features#front-matter) metadata fields, enclosed by a line `---` on either side.
 
 Accepted fields:
 
-NameTypeDefaultDescription`authors``Authors``undefined`List of blog post authors (or unique author). Read the `authors` guide for more explanations. Prefer `authors` over the `author_*` front matter fields, even for single author blog posts.`author``string``undefined`⚠️ Prefer using `authors`. The blog post author's name.`author_url``string``undefined`⚠️ Prefer using `authors`. The URL that the author's name will be linked to. This could be a GitHub, X, Facebook profile URL, etc.`author_image_url``string``undefined`⚠️ Prefer using `authors`. The URL to the author's thumbnail image.`author_title``string``undefined`⚠️ Prefer using `authors`. A description of the author.`title``string`Markdown titleThe blog post title.`title_meta``string``frontMatter.title`The blog post SEO metadata title, used in `<head>` for `<title>` and `og:title`. Permits to override `title` when the displayed title and SEO title should be different.`sidebar_label``string``title`A custom label for the blog sidebar, replacing the default one (`title`).`date``string`File name or file creation timeThe blog post creation date. If not specified, this can be extracted from the file or folder name, e.g, `2021-04-15-blog-post.mdx`, `2021-04-15-blog-post/index.mdx`, `2021/04/15/blog-post.mdx`. Otherwise, it is the Markdown file creation time.`tags``Tag[]``undefined`A list of strings or objects of two string fields `label` and `permalink` to tag to your post. Strings can be a reference to keys of a tags file (usually `tags.yml`)`draft``boolean``false`Draft blog posts will only be available during development.`unlisted``boolean``false`Unlisted blog posts will be available in both development and production. They will be "hidden" in production, not indexed, excluded from sitemaps, and can only be accessed by users having a direct link.`hide_table_of_contents``boolean``false`Whether to hide the table of contents to the right.`toc_min_heading_level``number``2`The minimum heading level shown in the table of contents. Must be between 2 and 6 and lower or equal to the max value.`toc_max_heading_level``number``3`The max heading level shown in the table of contents. Must be between 2 and 6.`keywords``string[]``undefined`Keywords meta tag, which will become the `<meta name="keywords" content="keyword1,keyword2,..."/>` in `<head>`, used by search engines.`description``string`The first line of Markdown contentThe description of your document, which will become the `<meta name="description" content="..."/>` and `<meta property="og:description" content="..."/>` in `<head>`, used by search engines.`image``string``undefined`Cover or thumbnail image that will be used as the `<meta property="og:image" content="..."/>` in the `<head>`, enhancing link previews on social media and messaging platforms.`slug``string`File pathAllows to customize the blog post URL (`/<routeBasePath>/<slug>`). Support multiple patterns: `slug: my-blog-post`, `slug: /my/path/to/blog/post`, slug: `/`.`last_update``FrontMatterLastUpdate``undefined`Allows overriding the last update author/date. Date can be any parsable date string.
+NameTypeDefaultDescription`authors``Authors``undefined`List of blog post authors (or unique author). Read the [authors guide](https://docusaurus.io/docs/blog#blog-post-authors) for more explanations. Prefer `authors` over the `author_*` front matter fields, even for single author blog posts.`author``string``undefined`⚠️ Prefer using `authors`. The blog post author's name.`author_url``string``undefined`⚠️ Prefer using `authors`. The URL that the author's name will be linked to. This could be a GitHub, X, Facebook profile URL, etc.`author_image_url``string``undefined`⚠️ Prefer using `authors`. The URL to the author's thumbnail image.`author_title``string``undefined`⚠️ Prefer using `authors`. A description of the author.`title``string`Markdown titleThe blog post title.`title_meta``string``frontMatter.title`The blog post SEO metadata title, used in `<head>` for `<title>` and `og:title`. Permits to override `title` when the displayed title and SEO title should be different.`sidebar_label``string``title`A custom label for the blog sidebar, replacing the default one (`title`).`date``string`File name or file creation timeThe blog post creation date. If not specified, this can be extracted from the file or folder name, e.g, `2021-04-15-blog-post.mdx`, `2021-04-15-blog-post/index.mdx`, `2021/04/15/blog-post.mdx`. Otherwise, it is the Markdown file creation time.`tags``Tag[]``undefined`A list of strings or objects of two string fields `label` and `permalink` to tag to your post. Strings can be a reference to keys of a [tags file](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#tags-file) (usually `tags.yml`)`draft``boolean``false`Draft blog posts will only be available during development.`unlisted``boolean``false`Unlisted blog posts will be available in both development and production. They will be "hidden" in production, not indexed, excluded from sitemaps, and can only be accessed by users having a direct link.`hide_table_of_contents``boolean``false`Whether to hide the table of contents to the right.`toc_min_heading_level``number``2`The minimum heading level shown in the table of contents. Must be between 2 and 6 and lower or equal to the max value.`toc_max_heading_level``number``3`The max heading level shown in the table of contents. Must be between 2 and 6.`keywords``string[]``undefined`Keywords meta tag, which will become the `<meta name="keywords" content="keyword1,keyword2,..."/>` in `<head>`, used by search engines.`description``string`The first line of Markdown contentThe description of your document, which will become the `<meta name="description" content="..."/>` and `<meta property="og:description" content="..."/>` in `<head>`, used by search engines.`image``string``undefined`Cover or thumbnail image that will be used as the `<meta property="og:image" content="..."/>` in the `<head>`, enhancing link previews on social media and messaging platforms.`slug``string`File pathAllows to customize the blog post URL (`/<routeBasePath>/<slug>`). Support multiple patterns: `slug: my-blog-post`, `slug: /my/path/to/blog/post`, slug: `/`.`last_update``FrontMatterLastUpdate``undefined`Allows overriding the last update author/date. Date can be any [parsable date string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
 
 ```
 type FrontMatterLastUpdate = {date?: string; author?: string};type Tag = string | {label: string; permalink: string};// An author key references an author from the global plugin authors.yml filetype AuthorKey = string;// Social platform name -> Social platform link// Example: {MyPlatform: 'https://myplatform.com/myusername'}// Pre-defined platforms// ("x", "github", "twitter", "linkedin", "stackoverflow", "instagram", "bluesky", "mastodon", "threads", "twitch", "youtube", "email") accept handles:// Example: {github: 'slorber'}type AuthorSocials = Record<string, string>;type Author = {  key?: AuthorKey;  name: string;  title?: string;  url?: string;  image_url?: string;  socials?: AuthorSocials;};// The front matter authors field allows various possible shapestype Authors = AuthorKey | Author | (AuthorKey | Author)[];
@@ -137,17 +137,17 @@ Example:
 ```
 
 
-## Tags File​
+## Tags File[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#tags-file)
 
-Use the `tags` plugin option to configure the path of a YAML tags file.
+Use the [tags plugin option](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#tags) to configure the path of a YAML tags file.
 
 By convention, the plugin will look for a `tags.yml` file at the root of your content folder(s).
 
-This file can contain a list of predefined tags. You can reference these tags by their keys in Markdown files thanks to the `tags` front matter.
+This file can contain a list of predefined tags. You can reference these tags by their keys in Markdown files thanks to the [tags front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#markdown-front-matter).
 
-Keeping tags consistentUsing a tags file, you can ensure that your tags usage is consistent across your plugin content set. Use the `onInlineTags: 'throw'` plugin option to enforce this consistency and prevent usage of inline tags declared on the fly.
+Keeping tags consistentUsing a tags file, you can ensure that your tags usage is consistent across your plugin content set. Use the [onInlineTags: 'throw'](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#onInlineTags) plugin option to enforce this consistency and prevent usage of inline tags declared on the fly.
 
-### Types​
+### Types[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#tags-file-types)
 
 The YAML content of the provided tags file should respect the following shape:
 
@@ -157,7 +157,7 @@ type Tag = {  label?: string; // Tag display label  permalink?: string; // Tag U
 ```
 
 
-### Example​
+### Example[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#tags-file-example)
 
 tags.yml
 ```
@@ -170,15 +170,15 @@ content.md
 ```
 
 
-## Authors File​
+## Authors File[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#authors-file)
 
-Use the `authors` plugin option to configure the path of a YAML authors file.
+Use the [authors plugin option](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#authors) to configure the path of a YAML authors file.
 
 By convention, the plugin will look for a `authors.yml` file at the root of your blog content folder(s).
 
-This file can contain a list of predefined global blog authors. You can reference these authors by their keys in Markdown files thanks to the `authors` front matter.
+This file can contain a list of predefined [global blog authors](https://docusaurus.io/docs/blog#global-authors). You can reference these authors by their keys in Markdown files thanks to the [authors front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#markdown-front-matter).
 
-### Types​
+### Types[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#authors-file-types)
 
 The YAML content of the provided authors file should respect the following shape:
 
@@ -188,7 +188,7 @@ type AuthorsMapInput = {  [authorKey: string]: AuthorInput;};type AuthorInput = 
 ```
 
 
-### Example​
+### Example[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#authors-file-example)
 
 tags.yml
 ```
@@ -201,24 +201,24 @@ blog/my-blog-post.md
 ```
 
 
-## i18n​
+## i18n[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#i18n)
 
-Read the i18n introduction first.
+Read the [i18n introduction](https://docusaurus.io/docs/i18n/introduction) first.
 
-### Translation files location​
+### Translation files location[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#translation-files-location)
 
 **Base path**: `website/i18n/[locale]/docusaurus-plugin-content-blog`
 
 - **Multi-instance path**: `website/i18n/[locale]/docusaurus-plugin-content-blog-[pluginId]`
 
-- **JSON files**: extracted with `docusaurus write-translations`
+- **JSON files**: extracted with [docusaurus write-translations](https://docusaurus.io/docs/cli#docusaurus-write-translations-sitedir)
 
 - **Markdown files**: `website/i18n/[locale]/docusaurus-plugin-content-blog`
 
-### Example file-system structure​
+### Example file-system structure[​](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#example-file-system-structure)
 
 
 ```
 website/i18n/[locale]/docusaurus-plugin-content-blog││ # translations for website/blog├── authors.yml├── first-blog-post.md├── second-blog-post.md││ # translations for the plugin options that will be rendered└── options.json
 ```
-Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/api/plugins/plugin-content-blog.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

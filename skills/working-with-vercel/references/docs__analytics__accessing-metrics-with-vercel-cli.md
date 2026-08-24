@@ -13,8 +13,8 @@ related:
 summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fc4ed9868d500c2d549289aaa5f806079ae8091b58ceddb6939902a96e672aa8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "aa00288cfbee17612e3632f4baf9a59a970352192e5305be35f13880699ef12b"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -31,7 +31,7 @@ Use `vercel metrics` to query Web Analytics data from your terminal. You can rep
 - [Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api?from=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query](https://vercel.com/docs/query?from=related) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
+- [Custom Metrics](https://vercel.com/docs/observability/custom-metrics?from=related) — Learn about custom metrics on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/accessing-metrics-with-vercel-cli.graph.md](/docs/analytics/accessing-metrics-with-vercel-cli.graph.md)
 <!-- /docsgraph:related -->

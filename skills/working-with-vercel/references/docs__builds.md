@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c514c8f5611c07945bbb60081251340bf515b62724e42f6fab15bc90a6ccca84"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b9542316f7caaee6ef1e1916a8cb7390e87c8f5af01cb103d5474276163c76d5"
 ---
 
 # Builds
@@ -31,12 +31,13 @@ Vercel automatically performs a **build** every time you deploy your code, wheth
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
 - [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/builds.graph.md](/docs/builds.graph.md)
 <!-- /docsgraph:related -->

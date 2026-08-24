@@ -12,11 +12,12 @@ related:
   - /docs/cron-jobs
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/runtimes
+  - /docs/sandbox/concepts/images
 summary: Run Devin Outposts sessions in isolated Vercel Sandbox microVMs, with the control plane deployed on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/devin.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9f50b0f5d6f82a6aa1933f1d0edad6f67c38460727696f16297a368066f5d435"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1c080c217c31fc253f2f3cb1f30d7810d6e958ce31af976cc2e0fd5dce08e050"
 ---
 
 # Devin
@@ -34,14 +35,14 @@ online, so you can start sessions from any device, including a phone.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Sandbox](https://v0.app/docs/sandbox?from=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
+- [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/devin.graph.md](/docs/sandbox/ecosystem/devin.graph.md)
 <!-- /docsgraph:related -->
@@ -99,11 +100,16 @@ Optional environment variables on the deployed project, with defaults:
 
 | Variable             | Default   | Description                                                  |
 | -------------------- | --------- | ------------------------------------------------------------ |
-| `SANDBOX_RUNTIME`    | `node24`  | Sandbox [runtime](/docs/sandbox/concepts/runtimes)           |
+| `SANDBOX_RUNTIME`    | `node24`  | Legacy Sandbox [runtime](/docs/sandbox/concepts/runtimes)    |
 | `SANDBOX_VCPUS`      | `2`       | vCPUs per sandbox                                            |
 | `SANDBOX_TIMEOUT_MS` | `1200000` | Initial session timeout (20 minutes), extended automatically |
 | `MAX_CONCURRENT`     | `5`       | Maximum concurrent sessions                                  |
 | `POLL_INTERVAL_MS`   | `3000`    | Queue poll interval                                          |
+
+`SANDBOX_RUNTIME` configures a legacy Sandbox
+[runtime](/docs/sandbox/concepts/runtimes). New SDK v3 sandboxes default
+to the Ubuntu-based `vercel/sandbox/universal:latest`
+[managed image](/docs/sandbox/concepts/images).
 
 For local development mode and the full variable reference, see the
 [devin-outpost-vercel repository](https://github.com/vercel-labs/devin-outpost-vercel)

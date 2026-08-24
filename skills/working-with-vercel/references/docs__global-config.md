@@ -16,8 +16,8 @@ related:
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "31d56dcb627e9dda68a77821a882cf9d80e70f5d8443b12b63faf3802757289c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "641f54fcbbc6c78d962f0ea65aa0527ccb070ca108eff04b7bb371abf5649ea1"
 ---
 
 # Vercel Global Config
@@ -30,6 +30,7 @@ sha256: "31d56dcb627e9dda68a77821a882cf9d80e70f5d8443b12b63faf3802757289c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Hypertune](https://flags-sdk.dev/docs/providers/hypertune?from=related)
 - [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
@@ -56,7 +57,7 @@ You can use a Global Config in [Middleware](/docs/routing-middleware) and [Verce
 
 > **💡 Note:** Vercel's Global Config read optimizations are **only available on the Edge and
 > Node.js runtimes**. Optimizations can be enabled for other runtimes, [such as
-> Ruby, Go, and Python](/docs/functions/runtimes) upon request. See [our Edge
+> Ruby, Go, and Python](/docs/functions/runtimes) upon request. See [our Global
 > Config limits docs](/docs/global-config/global-config-limits) to learn more.
 
 ## Use cases

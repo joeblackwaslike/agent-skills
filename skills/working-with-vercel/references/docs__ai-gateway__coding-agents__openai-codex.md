@@ -16,8 +16,8 @@ related:
 summary: Use OpenAI Codex CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "28f2927519ca54bdfa71efc23181805825e0b5ceca56c27fddc91aee5005b80a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ade78d6822bdd88bd24c0de9029b0026a56d91e4bf9e0a35623a098ba168e31d"
 ---
 
 # OpenAI Codex
@@ -130,13 +130,20 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   > so remove `supports_websockets = true` when switching to a non-OpenAI model.
 
 - ### (Optional) Use a different model
-  To use a different model, update the `model` field in your config:
-  ```toml filename="~/.codex/config.toml"
-  model = "anthropic/claude-sonnet-5"
-  # Or try other models:
-  # model = "google/gemini-3.5-flash-lite"
-  # model = "openai/gpt-5.6-sol"
+  Run `/model` inside Codex to switch models without leaving your session. The picker lists the full gateway catalog and sets reasoning effort at the same time, because the Codex compatibility endpoint serves `/codex/v1/models` when the CLI starts.
+
+  To start a session on a specific model, pass `--model` (or `-m`):
+  ```bash
+  codex --model openai/gpt-5.5-pro
   ```
+  To change the model for every session, update the `model` field in your config:
+  ```toml filename="~/.codex/config.toml"
+  model = "openai/gpt-5.5-pro"
+  # Or try other models:
+  # model = "openai/gpt-5.4-mini"
+  # model = "openai/gpt-5.4-nano"
+  ```
+  Every model in the gateway catalog works here, not only OpenAI ones. The examples stay on OpenAI models because Codex reads their metadata natively.
   > **💡 Note:** When using non-OpenAI models through the gateway, you may see warnings about
   > model metadata not being found. These warnings are safe to ignore since the
   > gateway handles model routing.
@@ -146,15 +153,15 @@ Configure Codex to use AI Gateway through its configuration file for persistent 
   ```toml filename="~/.codex/fast.config.toml"
   model = "openai/gpt-5.4-nano"
   ```
-  ```toml filename="~/.codex/claude.config.toml"
-  model = "anthropic/claude-sonnet-5"
+  ```toml filename="~/.codex/pro.config.toml"
+  model = "openai/gpt-5.5-pro"
   ```
   Codex loads `~/.codex/config.toml` first, then overlays the profile file, so `model_provider = "vercel"` is inherited from your base config.
 
   Switch between profiles using the `--profile` flag:
   ```bash
   codex --profile fast
-  codex --profile claude
+  codex --profile pro
   ```
   > **💡 Note:** Codex 0.134.0 and later no longer reads `[profiles.<name>]` tables or the
   > `profile` selector from `config.toml`. If you have legacy profile tables,

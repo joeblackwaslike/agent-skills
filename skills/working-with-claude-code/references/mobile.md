@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/mobile.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "179dd0d2cbc2082075408fdb8ffd1696e4cc0eebfd75fdfb19085c8ee588fc39"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "d53b1faa01cdcfcf922170f5f056e78ed8cdfd599f9f88c5da9eca43942ebe88"
 ---
 
 > ## Documentation Index
@@ -64,7 +64,12 @@ Open a session in the app to check progress, answer Claude's questions, or steer
 
 Remote Control connects the Claude app to a Claude Code session running on your machine, so code execution and filesystem access stay local while you drive the session from your phone. Start the session on your computer with `claude remote-control`, or run `/remote-control` in a session that's already open. Then scan the session QR code the terminal can display, or open the Claude app, tap **Code**, and pick the session from the list. See [connect from another device](/docs/en/remote-control#connect-from-another-device) for each option.
 
-Attachments you add in the Claude app reach the local session too. Claude sees attached photos directly as part of your message. Claude Code downloads other files to your machine and passes them to Claude as `@` file references. For requirements, invocation modes, and troubleshooting, see the [Remote Control overview](/docs/en/remote-control).
+When you add an attachment in the Claude app, it reaches the local session too:
+
+* **Photos**: Claude sees attached photos directly as part of your message. Claude Code also saves each photo under `~/.claude/uploads/` and tells Claude the saved file path, so Claude can copy the image into files it creates.
+* **Other files**: Claude Code downloads them to your machine and passes them to Claude as `@` file references.
+
+For requirements, invocation modes, and troubleshooting, see the [Remote Control overview](/docs/en/remote-control).
 
 ### Get push notifications
 

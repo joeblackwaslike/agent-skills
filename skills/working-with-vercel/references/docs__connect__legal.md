@@ -12,8 +12,8 @@ related:
 summary: Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, and Vercel Assisted Setup.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/legal.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7b6db111514d08971c3af5ffa8f3ee5ed20a5d531b74df70d2a14172c788e6a1"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "4a96afacd1237463c45eed0d8a9b991717847cc58509352c7f07064b6093cfdc"
 ---
 
 # Vercel Connect product terms
@@ -31,12 +31,12 @@ These product terms apply to your use of Vercel Connect.
 - [Build a Linear agent with Vercel Connect](https://vercel.com/kb/guide/linear-agent-vercel-connect?from=related) — Build a native Linear Agent that helps your team manage issues. Mention it on any issue and it responds in real time, po
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+- [Concepts](https://vercel.com/docs/kms/concepts?from=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Shared Responsibility Model](https://vercel.com/docs/security/shared-responsibility?from=related) — Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers,
+- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 
 Full cross-link map for this page: [/docs/connect/legal.graph.md](/docs/connect/legal.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +47,7 @@ Full cross-link map for this page: [/docs/connect/legal.graph.md](/docs/connect/
 
 **Third Party Platform** means a third party platform that Customer interacts with using Vercel Connect.
 
-**Vercel Assisted Setup** means Customer authorizes and instructs Vercel to perform some or all of the steps required for Customer to register an OAuth client directly with an [eligible Third Party Platform](/docs/connect#available-connectors-in-beta).
+**Vercel Assisted Setup** means Customer authorizes and instructs Vercel to perform some or all of the steps required for Customer to register an OAuth client directly with an [eligible Third Party Platform](/docs/connect#connector-ownership-models).
 
 **Vercel Managed Connector** means Vercel registers an OAuth client with the Third Party Platform and Customer authorizes Vercel's OAuth client to access Customer's account or workspace.
 
@@ -59,7 +59,7 @@ Full cross-link map for this page: [/docs/connect/legal.graph.md](/docs/connect/
 
 ## 3. Vercel Managed Connector
 
-Customer may use Vercel Managed Connector only with [Permitted Third Party Platforms](/docs/connect#managed-connectors) and will be bound by the terms and policies of that Third Party Platform referred on that webpage, if any.
+Customer may use Vercel Managed Connector only with [Permitted Third Party Platforms](/docs/connect#connector-ownership-models) and will be bound by the terms and policies of that Third Party Platform referred on that webpage, if any.
 
 ## 4. Vercel Assisted Setup
 

@@ -13,8 +13,8 @@ related:
 summary: List recent alerts for a linked project, a specific project, or an entire team with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5fd94fe5ec78fbe4ff97514b95060eaf67b93cbdb2520131f4599c0b71be617b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "dc729b3c1cbf48f2e060e30abdb8a4527a6527f4fe7f642e17e8fb1fae304820"
 ---
 
 # vercel alerts
@@ -29,10 +29,10 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Configure Alerts](https://vercel.com/docs/alerts/configure-alerts?from=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related) — Inspect a request trace in the terminal or open it in the Vercel Dashboard.
 - [vercel routes](https://vercel.com/docs/cli/routes?from=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel security](https://vercel.com/docs/cli/security?from=related) — Learn about vercel security on Vercel.
 
 Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md)
 <!-- /docsgraph:related -->

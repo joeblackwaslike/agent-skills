@@ -13,8 +13,8 @@ related:
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "373c13f668c35f39d228d7bf2871e6ca10d26d1c65f4c0ed7925b133c5515fb2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "61d5295ddf8985a471ec66a03c94d475b9ee5f4ca189632fac1114dd4b166a16"
 ---
 
 # Adding & Configuring a Custom Domain
@@ -28,15 +28,16 @@ Vercel provides all deployments with a `vercel.app` URL, which enables you to sh
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Custom domain](https://v0.app/docs/custom-domains?from=related) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china?from=related) — Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performan
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Configuring Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Adding a Domain to an Environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related)
+- [Custom Domain](https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain?from=related) — A complete domain management interface with DNS verification and real-time status tracking.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/add-a-domain.graph.md](/docs/domains/working-with-domains/add-a-domain.graph.md)
 <!-- /docsgraph:related -->

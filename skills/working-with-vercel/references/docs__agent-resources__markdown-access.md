@@ -14,8 +14,8 @@ related:
 summary: Access Vercel documentation as markdown using .md endpoints or the copy button.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c961cac2018b803b524d61baed2cccdfe0c9b7454358d529188b3fefd33bc259"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "90bee213a8749e2b99a3387a99dc06a8a7fe040975b24da3656ee2ad2b0f6b4a"
 ---
 
 # Markdown and Agent Discovery
@@ -31,15 +31,15 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 - [Make your documentation readable by AI agents](https://vercel.com/kb/guide/make-your-documentation-readable-by-ai-agents?from=related) — Serve markdown to AI agents using content negotiation, .md endpoints, agent auto-detection, llms.txt,   sitemap.md, and
 - [How to serve documentation for agents](https://vercel.com/kb/guide/how-to-serve-documentation-for-agents?from=related) — Learn how to serve markdown to agents and HTML for humans from the same URL
 - [Agent Readability: A Specification for AI-Optimized Websites](https://vercel.com/kb/guide/agent-readability-spec?from=related) — When an agent visits your site, it needs to quickly find, read, and understand your pages. Sites that are easy for agent
+- [AEO & GEO](https://docs.vercel.shop/docs/anatomy/aeo-geo?from=related) — How the storefront makes itself legible to AI answer engines and generative search, with built-in content negotiation, s
 - [Contribution Guide](https://nextjs.org/docs/community/contribution-guide?from=related) — Learn how to contribute to Next.js Documentation
-- [AI Coding Agents](https://nextjs.org/docs/app/guides/ai-agents?from=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
+- [Introduction](https://docs.vercel.shop/docs?from=related) — Learn about the Vercel Shop template and what it offers.
+- [Text Prompting](https://v0.app/docs/text-prompting?from=related) — Use text prompting to create initial UIs and ask technical questions with natural language.
 - [MDX](https://nextjs.org/docs/pages/guides/mdx?from=related) — Learn how to configure MDX to write JSX in your markdown files.
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [Extending with Agents](https://docs.vercel.shop/docs/getting-started/extending-with-agents?from=related) — Use coding agents like Claude Code, Cursor, and Codex to personalize and extend your storefront.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [vercel agent](https://vercel.com/docs/cli/agent?from=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
-- [Products](https://vercel.com/docs/products?from=related) — Explore all Vercel products and capabilities.
-- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
-- [Contentful](https://vercel.com/docs/integrations/cms/contentful?from=related) — Integrate Vercel with Contentful to deploy your content.
 
 Full cross-link map for this page: [/docs/agent-resources/markdown-access.graph.md](/docs/agent-resources/markdown-access.graph.md)
 <!-- /docsgraph:related -->

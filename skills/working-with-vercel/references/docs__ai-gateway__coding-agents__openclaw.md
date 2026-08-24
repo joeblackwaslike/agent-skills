@@ -14,8 +14,8 @@ related:
 summary: Learn about openclaw on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cb4dd618598d9c774898581e6449c0253dd57e8a63f2efdc25d2fad449571ac9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c00f0398389f77e6d0e7c10283ff1ad4c672f4a62480873ccb5af9da87aec517"
 ---
 
 # OpenClaw
@@ -28,7 +28,7 @@ sha256: "cb4dd618598d9c774898581e6449c0253dd57e8a63f2efdc25d2fad449571ac9"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [Chat Platforms](https://vercel.com/docs/ai-gateway/chat-platforms?from=related) — Configure AI chat platforms to use the AI Gateway for unified model access and spend monitoring.
 - [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
 - [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related) — Use Cline with the AI Gateway.

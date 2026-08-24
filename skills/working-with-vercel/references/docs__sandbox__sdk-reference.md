@@ -11,13 +11,13 @@ related:
   - /docs/sandbox/python-sdk-reference
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/tags
+  - /docs/sandbox/concepts/regions
   - /docs/sandbox/pricing
-  - /docs/sandbox/concepts/images
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ce158bd3f98ed42b7139c8bd664c58a3e16e050eed08df41dd0dffcaf9dc1ec9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d38f6aa4973af879a3d246508d0eb2e84b754bc2a577c11bb2ff494b236cc92c"
 ---
 
 # JS SDK Reference
@@ -30,17 +30,16 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
-- [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Create a named sandbox](https://vercel.com/docs/rest-api/sandboxes/create-a-named-sandbox?from=related)
+- [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related)
 - [Update a sandbox](https://vercel.com/docs/rest-api/sandboxes/update-a-sandbox?from=related)
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related)
-- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related)
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -211,12 +210,22 @@ console.log(sandbox.image);
 
 #### `region`
 
-The region where the sandbox runs.
+The [region](/docs/sandbox/concepts/regions) where the sandbox runs. Set with the `region` parameter of [`Sandbox.create()`](#sandbox.create). When no region was passed, this is the project's default sandbox region, or `iad1` if the project doesn't set one.
 
-**Returns:** `string | undefined`.
+**Returns:** `string`.
 
 ```ts
 console.log(sandbox.region);
+```
+
+#### `failoverRegions`
+
+The additional [regions](/docs/sandbox/concepts/regions#failover-regions) this sandbox can fail over to. Returns an empty array when the sandbox has no failover regions.
+
+**Returns:** `string[]`.
+
+```ts
+console.log(sandbox.failoverRegions);
 ```
 
 #### `createdAt` and `updatedAt`
@@ -363,6 +372,8 @@ Sandboxes are persistent by default: when the sandbox stops, the filesystem is a
 | `image`              | `string`                     | No       | VCR image reference, either a [Vercel Managed Image](/docs/sandbox/concepts/images#vercel-managed-images) or [custom image](/docs/sandbox/concepts/images#custom-images). Defaults to `"vercel/sandbox/universal"`. |
 | `ports`              | `number[]`                   | No       | Ports to expose for `sandbox.domain()`. Up to 15.                                                                                                                                                                   |
 | `timeout`            | `number`                     | No       | Session timeout in milliseconds. Defaults to 5 minutes.                                                                                                                                                             |
+| `region`             | `string`                     | No       | [Region](/docs/sandbox/concepts/regions) to create the sandbox in. Defaults to the [project's default sandbox region](/docs/sandbox/concepts/regions#set-a-default-region-for-your-project), or `iad1`.                                                                                     |
+| `failoverRegions`    | `string[]`                   | No       | Additional [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fall back to when the main region is unavailable. Must not include the main `region`. Not supported together with `mounts`. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials).            |
 | `networkPolicy`      | `NetworkPolicy`              | No       | Firewall rules for sandbox egress traffic. Defaults to `"allow-all"`.                                                                                                                                               |
 | `env`                | `Record<string, string>`     | No       | Default environment variables for commands run in this sandbox. Per-command `runCommand({ env })` values override these defaults.                                                                                   |
 | `mounts`             | `SandboxMounts`              | No       | Drives to attach to the sandbox, keyed by absolute mount path. Drives can be mounted as `"read-write"` (default) or `"read-only"`.                                                                                  |
@@ -444,6 +455,8 @@ const sandbox = await Sandbox.getOrCreate({
 `Sandbox.fork()` creates a new sandbox seeded from the current snapshot of an existing one. The new sandbox inherits the source's config, including its environment variables. Any field you pass in overrides the copied value. If the source has no current snapshot, the fork falls back to a fresh create with the source's `image` plus the copied config.
 
 Pass `env` to override the copied environment variables. `image` is not accepted as an override — when the source has a snapshot the image is inherited from it; otherwise it is copied from the source sandbox.
+
+The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `region`. The fork also inherits the source's failover regions; pass `failoverRegions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
 
 **Returns:** `Promise<Sandbox>`.
 
@@ -659,6 +672,7 @@ await sandbox.update({
   snapshotExpiration: 14 * 24 * 60 * 60 * 1000,
   keepLastSnapshots: { count: 1 },
   currentSnapshotId: 'snap_xyz', // Roll back to a previous snapshot
+  failoverRegions: ['cle1'], // Replaces the list; pass [] to remove them
 });
 ```
 
@@ -673,6 +687,7 @@ await sandbox.update({
 | `snapshotExpiration` | `number`                   | No       | New default snapshot TTL in milliseconds. Use `0` for no expiration.                                   |
 | `keepLastSnapshots`  | `object \| null`           | No       | Retention policy that keeps only the N most recent snapshots. Pass `null` to clear. See [`keepLastSnapshots`](#keeplastsnapshots) for field details. |
 | `currentSnapshotId`  | `string`                   | No       | Point the sandbox at a different snapshot. New sessions resume from it.                                |
+| `failoverRegions`    | `string[]`                 | No       | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Must not include the sandbox's main region. Not supported for sandboxes with mounts. Pass `[]` to remove them. Applies to the next session; the running session keeps the region it started in. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `opts.signal`        | `AbortSignal`              | No       | Cancel the operation.                                                                                  |
 
 **Returns:** `Promise<void>`.
@@ -1538,6 +1553,16 @@ The `sizeBytes` accessor returns the size of the snapshot in bytes. Use this to 
 console.log(snapshot.sizeBytes);
 ```
 
+#### `regions`
+
+All [regions](/docs/sandbox/concepts/regions) where the snapshot is available. Snapshots can only be used to create or resume sandboxes in a region where they are available.
+
+**Returns:** `string[]`.
+
+```ts
+console.log(snapshot.regions);
+```
+
 #### `createdAt`
 
 The `createdAt` accessor returns the date and time when the snapshot was created.
@@ -1696,6 +1721,16 @@ The `projectId` accessor returns the project ID that owns the drive.
 console.log(drive.projectId);
 ```
 
+#### `region`
+
+The `region` accessor returns the [region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive stores its data.
+
+**Returns:** `string`.
+
+```ts filename="index.ts"
+console.log(drive.region); // "iad1"
+```
+
 #### `maxSize`
 
 The `maxSize` accessor returns the configured drive size limit in bytes.
@@ -1804,14 +1839,18 @@ Use `Drive.getOrCreate()` to retrieve an existing drive by name or create it if 
 | Parameter | Type          | Required | Details                                                                                          |
 | --------- | ------------- | -------- | ------------------------------------------------------------------------------------------------ |
 | `name`    | `string`      | Yes      | Drive name. Must be unique within the project.                                                    |
+| `region`  | `string`      | No       | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created and stores its data. Defaults to `iad1`. |
 | `maxSize` | `number`      | No       | Drive size limit in bytes. Defaults to 100 GiB when omitted, and can be configured up to 1 TiB. |
 | `signal`  | `AbortSignal` | No       | Cancel the request if necessary.                                                                 |
+
+A drive's region can't change after creation. Calling `Drive.getOrCreate()` with a `region` or `maxSize` that doesn't match the existing drive fails with a `conflict` error.
 
 ```ts filename="index.ts"
 import { Drive } from '@vercel/sandbox';
 
 const drive = await Drive.getOrCreate({
   name: 'workspace-cache',
+  region: 'sfo1',
   maxSize: 200 * 1024 * 1024 * 1024, // 200 GiB
 });
 ```

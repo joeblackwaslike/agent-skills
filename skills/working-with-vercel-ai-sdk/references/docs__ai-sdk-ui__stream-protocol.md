@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "cbaf0c129ceff094f438f6bc43175864979ae99b5915989ae948b5699f8c7afb"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "52774257280a88f32cf34aea62cb74adaa0240bbf3a21138819de0c7ff753609"
 ---
 
 # Stream Protocols
@@ -440,6 +440,22 @@ Example:
 
 ```
 data: {"type":"finish-step"}
+
+```
+
+### Reset Step Part
+
+Removes all message parts received since the most recent `start-step` part. If
+there is no step boundary, it removes all parts from the current message. This
+is useful when a streamed step is retried and partial output from the failed
+attempt must be invalidated before replacement output is sent.
+
+Format: Server-Sent Event with JSON object
+
+Example:
+
+```
+data: {"type":"reset-step"}
 
 ```
 

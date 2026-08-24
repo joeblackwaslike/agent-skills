@@ -16,8 +16,8 @@ related:
 summary: Learn about testing & troubleshooting on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "99b84dfa4d01667cf08f9e6465bac427d2dbb1ce0aa6073b58dfaf4eeb05d24c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "bd3396b81a69f2a7e788665868399f98dc204b2485c755fa82aa020c008f12ca"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -38,6 +38,7 @@ sha256: "99b84dfa4d01667cf08f9e6465bac427d2dbb1ce0aa6073b58dfaf4eeb05d24c"
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
 - [Getting Started](https://vercel.com/docs/routing-middleware/getting-started?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Incremental Migration](https://vercel.com/docs/incremental-migration?from=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -187,7 +188,7 @@ See [debug routing](/docs/microfrontends/local-development#debug-routing) for ho
 
 To validate where requests are being routed to in production, follow these steps:
 
-1. [Verify](/docs/microfrontends/path-routing#identifying-microfrontends-by-path) that the path is covered by the microfrontends routing configuration.
+1. [Verify](/docs/microfrontends/routing#identify-the-microfrontend-for-a-path) that the path is covered by the microfrontends routing configuration.
 2. Inspect the [debug headers](/docs/microfrontends/troubleshooting#debug-headers) or view a [page trace](/docs/microfrontends/troubleshooting#tracing) to verify the expected path was matched.
 
 ### Pages Router pages fail during client-side navigation

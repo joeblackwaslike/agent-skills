@@ -16,8 +16,8 @@ related:
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b709a15fbc9499deedee3f7df29f7bc00732ecfc2b2d286769d3f08a2a20afa2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b602bb457c4b3cd21a28300b9448f027b94aa09285974cf8ed7bace00fbb1d54"
 ---
 
 # Restrict access to deployments with Passport
@@ -36,6 +36,7 @@ sha256: "b709a15fbc9499deedee3f7df29f7bc00732ecfc2b2d286769d3f08a2a20afa2"
 - [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Password Protection](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection?from=related) — Require visitors to enter a password before they can view your deployments.
 - [Bypass Deployment Protection](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/passport.graph.md](/docs/passport.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fda0ee96d631a5941d8bd793dd75bcc7224369c589485e709fa98b5f89e7538c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6ce76ef04ce7b8166ae069cd99f462744d7a4969a8533bd36d5dc2eb76942b33"
 ---
 
 # Rotating environment variables
@@ -36,10 +36,10 @@ sha256: "fda0ee96d631a5941d8bd793dd75bcc7224369c589485e709fa98b5f89e7538c"
 - [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related) — This will guide you how to update the password for a Redis databse.
 - [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration?from=related) — This will guide you how to update the password for a Neon project.
 - [Secrets Rotation](https://vercel.com/docs/integrations/create-integration/secrets-rotation?from=related) — Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
+- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential?from=related)
 - [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
 - [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Sensitive Environment Variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related) — Environment variables that cannot be decrypted once created.
-- [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 
 Full cross-link map for this page: [/docs/environment-variables/rotating-secrets.graph.md](/docs/environment-variables/rotating-secrets.graph.md)
 <!-- /docsgraph:related -->

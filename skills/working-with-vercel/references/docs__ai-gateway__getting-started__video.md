@@ -16,8 +16,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a background job.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "92c1f216e3eebc9bc3f673a61a07bb11f94dd040ed69e52fcf9d030b89b8f3bf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "99a114458a7239f321074898901e73ec4ac9d5972099fb498e94b2c074790c46"
 ---
 
 # Video Generation Quickstart
@@ -32,11 +32,13 @@ This quickstart walks you through generating your first video with AI Gateway. S
 
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
-- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
-- [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
-- [Using Chat Completions API](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
-- [Using AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif?from=related) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related)
+- [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
 - [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
+- [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
+- [Using Chat Completions API](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai?from=related) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/video.graph.md](/docs/ai-gateway/getting-started/video.graph.md)
 <!-- /docsgraph:related -->
@@ -113,7 +115,7 @@ Generations can take minutes. The quickstart below holds one request to AI Gatew
   pnpm tsx index.ts
   ```
   > **💡 Note:** Video generation can take several minutes.
-  > If you hit timeout issues, see [extending timeouts for Node.js](/docs/ai-gateway/modalities/video-generation#extending-timeouts-for-node.js), or switch to [asynchronous video generation](#asynchronous-video-generation) so no single request stays open.
+  > If you hit timeout issues, see [extending timeouts for Node.js](/docs/ai-gateway/modalities/video-generation#extending-timeouts-for-nodejs), or switch to [asynchronous video generation](#asynchronous-video-generation) so no single request stays open.
   The generated video will be saved as `output.mp4` in your project directory.
 
 - ### Next steps
@@ -168,9 +170,9 @@ Behind the scenes, the SDK sends one start request, AI Gateway accepts the gener
 
 Every input style in [More ways to generate video](#more-ways-to-generate-video) works with `poll` as well — use hosted URLs for image/video inputs; inline file data on the asynchronous flow is limited to ~300KB.
 
-Some providers return a hosted URL and others return bytes inline. Either way you get `result.videos[0].uint8Array`, because the SDK downloads hosted results for you. AI Gateway reports the underlying job on `result.providerMetadata.gateway.asyncJob`, including how long a hosted result stays reachable. See [how results come back](/docs/ai-gateway/modalities/video-generation#how-results-come-back).
+Some providers return a hosted URL and others return bytes inline. Either way you get `result.videos[0].uint8Array`, because the SDK downloads hosted results for you. AI Gateway reports the underlying job on `result.providerMetadata.gateway.asyncJob`. Its `result` field takes at least two shapes: a hosted result carries `expiresAt`, while an inline one reports `delivery: 'inline'` and no expiry at all, so read `expiresAt` defensively. See [how results come back](/docs/ai-gateway/modalities/video-generation#how-results-come-back).
 
-To start a job in one process and read it in another, call `doStart` and `doStatus` yourself instead of passing `poll`. See [start now, fetch later](/docs/ai-gateway/modalities/video-generation#start-now-fetch-later).
+To be notified when a job finishes instead of polling for it, pass a `webhook` factory. See [webhook-driven completion](#webhook-driven-completion) below.
 
 ### When to use the asynchronous flow
 
@@ -178,6 +180,64 @@ Both flows produce the same result. Choose based on how your code runs:
 
 - **Use `poll`** when you run in serverless functions or other environments with request timeouts, when generations run long (higher resolutions, longer durations), or when you want each network request to be short and retryable.
 - **Skip `poll`** for scripts and long-lived servers where holding one request open for a few minutes is fine.
+
+### Start now, check later
+
+Even with `poll`, one `generateVideo` call stays alive until the job finishes. When the process that submits the job should not wait at all — fanning out many jobs at once, or enqueuing from a function that needs to return immediately — split the flow yourself with `experimental_startVideo` and `experimental_getVideoStatus`. They take the same options as `generateVideo`, all optional:
+
+> **💡 Note:** `experimental_startVideo` and `experimental_getVideoStatus` require
+> `ai@7.0.76` or later and `@ai-sdk/gateway@4.0.61` or later. Install or
+> upgrade with `pnpm add ai@latest @ai-sdk/gateway@latest`.
+
+```typescript filename="start-video.ts"
+import {
+  experimental_getVideoStatus as getVideoStatus,
+  experimental_startVideo as startVideo,
+} from 'ai';
+import fs from 'node:fs';
+import 'dotenv/config';
+
+const model = 'google/veo-3.1-generate-001';
+
+async function main() {
+  // Returns as soon as AI Gateway accepts the job.
+  const { operation } = await startVideo({
+    model,
+    prompt: 'A serene mountain landscape at sunset with clouds drifting by',
+  });
+
+  // `operation` is JSON-serializable: persist it and check from any process,
+  // on any schedule. Each call is one status request — no polling loop inside.
+  let status = await getVideoStatus(model, { operation });
+  while (status.status === 'pending') {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    status = await getVideoStatus(model, { operation });
+  }
+
+  if (status.status === 'error') {
+    throw new Error(`Video generation failed: ${status.error}`);
+  }
+
+  // Unlike generateVideo, the status result is not auto-downloaded: each
+  // video is a hosted URL or inline bytes, depending on the provider.
+  const [video] = status.videos;
+  if (video.type === 'url') {
+    const response = await fetch(video.url);
+    fs.writeFileSync(
+      'output.mp4',
+      new Uint8Array(await response.arrayBuffer()),
+    );
+  } else if (video.type === 'binary') {
+    fs.writeFileSync('output.mp4', video.data);
+  }
+
+  console.log('Video saved to output.mp4');
+}
+
+main().catch(console.error);
+```
+
+`startVideo` also accepts a `webhookUrl`, so the submitter can exit immediately and let a webhook receiver fetch the result — no status checks at all. See [webhook-driven completion without waiting](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion) on the capabilities page.
 
 ### Safe retries
 
@@ -194,103 +254,96 @@ const result = await generateVideo({
 
 ### Webhook-driven completion
 
-Polling keeps a process alive until the job finishes. To have the result pushed to you instead, start the job with a `webhookUrl` and let AI Gateway call you back. To try it without deploying anything, point `webhookUrl` at a request inspector like [webhook.site](https://webhook.site).
+Polling keeps a process alive until the job finishes. To be notified instead, pass a `webhook` factory and the SDK registers your URL with the job. To try it without deploying anything, point the URL at a request inspector like [webhook.site](https://webhook.site).
 
-> **💡 Note:** Requires `ai@7.0.50` or later and `@ai-sdk/gateway@4.0.44` or later. This flow
-> calls the video model's `doStart` and `doStatus` methods directly instead of
-> `experimental_generateVideo`. The top-level `webhook` option of
-> `experimental_generateVideo` does not deliver webhooks with AI Gateway models;
-> the SDK warns and falls back to polling instead.
+> **💡 Note:** Upgrade before using the `webhook` option: `pnpm add ai@latest
+>   @ai-sdk/gateway@latest`. On older releases the option is ignored, and the SDK
+> adds a warning to `result.warnings` and polls instead.
 
-Start the job and store the operation it returns. You need it later to read the result:
+The factory returns the URL to register and a `received` promise. Mint a token first and put it in the callback URL, so the signing secret and the wait key off the same value:
 
-```typescript filename="start-job.ts"
-import { gateway } from '@ai-sdk/gateway';
+```typescript filename="generate-with-webhook.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import { randomUUID } from 'node:crypto';
+import { gatewayWithCapture } from './capture-secret';
+import { waitForDelivery } from './wait-for-delivery';
 
-const model = gateway.videoModel('google/veo-3.1-generate-001');
+// One token per generation. The job ID cannot serve here, since it does not
+// exist until the start request comes back.
+const token = randomUUID();
+const callbackUrl = `https://example.com/api/video-webhook?token=${token}`;
 
-const started = await model.doStart({
+const result = await generateVideo({
+  model: gatewayWithCapture(token).videoModel('google/veo-3.1-generate-001'),
   prompt: 'A paper plane looping over a city at dusk',
-  duration: 5,
-  webhookUrl: 'https://example.com/api/video-webhook',
+  n: 1,
+  webhook: async () => ({
+    url: callbackUrl,
+    // Resolves once your endpoint has a verified delivery for this token.
+    received: waitForDelivery(token),
+  }),
+  poll: { timeoutMs: 10 * 60 * 1000 },
 });
 
-// Store the operation keyed by its job ID so the webhook can look it up later.
-const { jobId, webhookSigningSecret } =
-  started.providerMetadata.gateway.asyncJob;
-await saveOperation(jobId, started.operation);
-await saveSigningSecret(webhookSigningSecret);
+console.log(result.videos[0].uint8Array);
 ```
 
-When the job finishes, AI Gateway posts one of three event types to your endpoint: `video.generation.completed`, `video.generation.failed`, or `video.generation.cancelled`. The payload carries only terminal facts: the job ID, status, and timestamps. The `data.jobId` is the same job ID the start response returned in `asyncJob` — the key the handler uses to find the stored operation. The payload never carries video URLs or bytes, so fetch the result with `doStatus`:
+`poll.timeoutMs` doubles as the webhook timeout, so the call throws if nothing arrives inside it. The invocation stays alive while it waits, so webhooks save you the status requests rather than the wait itself.
+
+When the job finishes, AI Gateway posts one of three event types to your endpoint: `video.generation.completed`, `video.generation.failed`, or `video.generation.cancelled`. The payload carries terminal facts only, so it never includes video URLs or bytes:
+
+```json filename="delivery payload"
+{
+  "type": "video.generation.completed",
+  "data": {
+    "jobId": "job_01M0BR9PFAW07NGK9813RGPJJ2",
+    "modelId": "alibaba/wan-v2.6-t2v",
+    "status": "completed",
+    "createdAt": 1787100977641,
+    "completedAt": 1787101050089
+  }
+}
+```
+
+`data.jobId` identifies the job and `data.modelId` names the model that ran, so one endpoint can serve several models without hardcoding any of them. Your endpoint verifies the delivery and records it, and the waiting call picks it up:
 
 ```typescript filename="app/api/video-webhook/route.ts"
-import { createHmac, timingSafeEqual } from 'node:crypto';
-import { gateway } from '@ai-sdk/gateway';
-
-const model = gateway.videoModel('google/veo-3.1-generate-001');
-
-// Deliveries are signed: v1 is the HMAC-SHA256 of "<t>.<raw body>" under your
-// signing secret. Check the digest and reject old timestamps.
-function verifySignature(header: string, rawBody: string, secret: string) {
-  const timestamp = header.match(/(?:^|,)t=(\d+)/)?.[1];
-  const digest = header.match(/(?:^|,)v1=([0-9a-f]+)/)?.[1];
-  if (!timestamp || !digest) return false;
-
-  const expected = createHmac('sha256', secret)
-    .update(`${timestamp}.${rawBody}`, 'utf8')
-    .digest('hex');
-  const provided = Buffer.from(digest, 'hex');
-  const computed = Buffer.from(expected, 'hex');
-  if (
-    provided.length !== computed.length ||
-    !timingSafeEqual(provided, computed)
-  ) {
-    return false;
-  }
-
-  // Reject deliveries older than five minutes.
-  return Math.abs(Date.now() / 1000 - Number(timestamp)) <= 5 * 60;
-}
+import { verifySignature } from './verify-delivery';
 
 export async function POST(request: Request) {
+  // The token comes from the callback URL, so the secret is in hand before the
+  // body is parsed. Nothing here trusts the payload until the digest passes.
+  const token = new URL(request.url).searchParams.get('token');
   const rawBody = await request.text();
   const signature = request.headers.get('x-ai-gateway-signature');
-  const secret = await loadSigningSecret();
+  const secret = token ? await db.loadSecret(token) : undefined;
 
-  if (!signature || !verifySignature(signature, rawBody, secret)) {
+  if (
+    !token ||
+    !signature ||
+    !secret ||
+    !verifySignature({ header: signature, rawBody, secret })
+  ) {
     return new Response(null, { status: 401 });
   }
 
-  const event = JSON.parse(rawBody);
-
-  if (event.type === 'video.generation.completed') {
-    // Look up the operation you stored at start time by its job ID.
-    const status = await model.doStatus({
-      operation: await loadOperation(event.data.jobId),
-    });
-
-    if (status.status === 'completed') {
-      const [video] = status.videos;
-      console.log(video.type === 'url' ? video.url : video.mediaType);
-    } else {
-      console.log(`Job ended as ${status.status}`);
-    }
-  } else {
-    console.log(`Job ${event.data.jobId}: ${event.type}`);
-  }
+  // Store headers alongside the body: the SDK's `received` promise resolves to
+  // `{ headers, body }`. The waiting `experimental_generateVideo` call takes it
+  // from here and fetches the videos itself, so this handler never reads them.
+  await db.saveDelivery(token, {
+    headers: Object.fromEntries(request.headers),
+    body: JSON.parse(rawBody),
+  });
 
   return new Response(null, { status: 204 });
 }
 ```
 
-`doStatus` resolves to `pending`, `completed`, or `error`. On `completed`, each entry in `videos` is a URL (`{ type: 'url', url, mediaType }`), inline base64, or raw bytes. Most providers return a URL. On `error`, read `status.error`.
+Deliveries are signed. The `x-ai-gateway-signature` header carries a timestamp and an HMAC-SHA256 digest of `"<timestamp>.<raw body>"`, so verify both against the raw bytes before trusting the payload. The signing secret is returned only on the job's start response, which `generateVideo` does not surface, so `gatewayWithCapture` above wraps `fetch` to store it under the token. See [verifying the delivery](/docs/ai-gateway/modalities/video-generation#verifying-the-delivery) for both helpers.
 
-This is the same `doStatus` call a polling loop makes, so switching to webhooks doesn't change how you read results. For the full option list, see [webhook-driven completion](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion).
+Delivery is best-effort with retries. AI Gateway expects a 2xx response within 10 seconds and does not follow redirects. Every retry of the same terminal event carries the same `x-ai-gateway-idempotency-key` header (`<jobId>-<status>`), so deduplicate on it if processing a result twice would cause side effects.
 
-Deliveries are signed with the secret from the start call. The `x-ai-gateway-signature` header carries a timestamp and an HMAC-SHA256 digest of `"<timestamp>.<raw body>"` — verify both before trusting the payload, as in the snippet above.
-
-Delivery is best-effort with retries. AI Gateway expects a 2xx response within 10 seconds and does not follow redirects. Every retry of the same terminal event carries the same `x-ai-gateway-idempotency-key` header (`<jobId>-<status>`), so deduplicate on it if processing a result twice would cause side effects. A lost delivery never changes the job's state — the result stays available through `doStatus`.
+The `webhook` factory keeps the `generateVideo` call alive so it can return the videos itself. If the submitter should not wait at all, pass `webhookUrl` to [`experimental_startVideo`](#start-now-check-later) instead and let the receiver fetch the result — see [webhook-driven completion](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion) on the capabilities page.
 
 > **💡 Note:** Video models vary in their input formats and required parameters. Some accept buffers while others require URLs. Always check the [Video Generation docs](/docs/ai-gateway/modalities/video-generation) for model-specific requirements.
 

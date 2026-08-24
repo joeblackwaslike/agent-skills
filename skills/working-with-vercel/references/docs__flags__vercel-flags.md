@@ -16,8 +16,8 @@ related:
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "3568a56504adb668e47565acf77c2992f6901f26fd877c0c73cdd9bc3fbf4b39"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "2d6906e250fe7b81758948fd4dd6a93ef84b5d50d0b324d017ea660fa6a91761"
 ---
 
 # Vercel Flags
@@ -30,12 +30,14 @@ sha256: "3568a56504adb668e47565acf77c2992f6901f26fd877c0c73cdd9bc3fbf4b39"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
 - [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [Marketplace](https://vercel.com/docs/flags/marketplace?from=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags.graph.md](/docs/flags/vercel-flags.graph.md)
 <!-- /docsgraph:related -->

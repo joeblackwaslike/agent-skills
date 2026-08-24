@@ -11,13 +11,13 @@ related:
   - /docs/notifications
   - /docs/functions/usage-and-pricing
   - /docs/builds/managing-builds
+  - /docs/deployment-storage
   - /docs/monorepos/remote-caching
-  - /docs/global-config/global-config-limits
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "70ca44921ae61069b60047637095673ad6b4dd7ba4dd08a3095e257839f45b88"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "75132054a0ce2c5ce3340cbd3967831b956bc334b264290e3398f4271a47b8b3"
 ---
 
 # Manage and optimize usage
@@ -77,6 +77,12 @@ To view information on managing each resource, select the resource link in the *
 ## Builds
 
 The table below shows the metrics for the [**Builds**](/docs/builds/managing-builds) section of the **Usage** dashboard.
+
+To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
+
+## Deployment Storage
+
+The table below shows the metrics for the [**Deployment Storage**](/docs/deployment-storage) section of the **Usage** dashboard.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 

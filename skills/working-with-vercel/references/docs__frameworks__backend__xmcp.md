@@ -17,8 +17,8 @@ related:
 summary: Build MCP-compatible backends with xmcp and deploy to Vercel. Learn the project structure, tool format, middleware, and how to run locally and in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/xmcp.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6e56e0a0dcd6cf3fd578c77a1a690b130d3ae1357834dcbe4e8f3ce4f2d02df9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "82e375f2a371d1155abc4bee904905f5ba4951b6626d11832079a5afec55410e"
 ---
 
 # xmcp on Vercel
@@ -33,9 +33,9 @@ sha256: "6e56e0a0dcd6cf3fd578c77a1a690b130d3ae1357834dcbe4e8f3ce4f2d02df9"
 
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related) — This is my wonderful
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [Deploy MCP servers](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related) — Learn how to deploy Model Context Protocol \(MCP\) servers on Vercel with OAuth authentication and efficient scaling.
+- [Deploy MCP servers](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related) — Set up Model Context Protocol \(MCP\) usage with a Vercel project using the vercel mcp CLI command.
+- [vercel mcp](https://vercel.com/docs/cli/mcp?from=related) — Set up Model Context Protocol \\(MCP\\) usage with a Vercel project using the vercel mcp CLI command.
 - [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Sitecore](https://vercel.com/docs/integrations/cms/sitecore?from=related) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
 

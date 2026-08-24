@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "bd6a40c1ac71d75917c2e9365409d7dfc852aaef9f3cf8c401e5762913d7047e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d1097177d55ba1492c9180f15d683bd54d86ed30621a6edc9f880cbdcdfab3c3"
 ---
 
 # Create an Integration
@@ -35,7 +35,7 @@ Learn the process of creating and managing integrations on Vercel, helping you e
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
 - [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [Webhooks](https://vercel.com/docs/webhooks?from=related) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/integrations/create-integration.graph.md](/docs/integrations/create-integration.graph.md)
 <!-- /docsgraph:related -->

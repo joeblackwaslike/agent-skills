@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ca471d12ef7024db241cd6444efbcca295035cab02858db6333e58190d432d02"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5b4ce80c4d5b2804a536ddb990058cd1876f3ce495e87317acdbc7ae77af490d"
 ---
 
 # Vercel CDN Cache
@@ -34,12 +34,13 @@ Vercel's CDN caches your content (including pages, API responses, and static ass
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related) — Learn how to set headers to cache your function's responses.
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
-- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
 - [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
+- [use cache](https://nextjs.org/docs/app/api-reference/directives/use-cache?from=related) — Learn how to use the "use cache" directive to cache data in your Next.js application.
 - [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Node.js](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related) — Learn about available APIs when working with Vercel Functions.
 - [vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [API](https://vercel.com/docs/routing-middleware/api?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [React Router](https://vercel.com/docs/frameworks/frontend/react-router?from=related) — Learn how to use Vercel's features with React Router as a framework.
 
 Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md)

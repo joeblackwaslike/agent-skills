@@ -2,8 +2,8 @@
 title: Data Sharing
 description: Publishing and collaboratively editing a dataset the way teams collaborate on code — fork, edit, open a PR, merge.
 source: "https://www.dolthub.com/docs/introduction/use-cases/data-sharing.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "fd2ebbc9341ecdb732b26770d518df7b218caeda409b91664e92202f0a68af77"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "75db8b55467df9a1d5125b4219e179071cd09187156c2436ed3876fdfae59535"
 ---
 
 ## Problem
@@ -30,11 +30,11 @@ Dolt and DoltHub are also great if vendors share data with you. When you receive
 
 ## Dolt replaces...
 
-## Exchanging Files
+### Exchanging Files
 
 Dolt replaces exchanging flat data files like CSVs via email, FTP servers, or other file transfer techniques. Dolt allows data to maintain schema on exchange including constraints, triggers, and views. This more rich format of exchange reduces transfer errors. Dolt also allows you to change the data to fit your needs and still get updates from your source. Dolt will notify you if your changes [conflict](/concepts/dolt/git/conflicts) with the source.
 
-## External APIs
+### External APIs
 
 Dolt is ideal for sharing data that does not have an API. But even for data with an API, Dolt is often more convenient. With Dolt, you get all the data and its history. With APIs you often have to assemble the data with multiple API calls. With APIs, the data can change out from under you, whereas with Dolt you can read a version of the data until you are ready to upgrade. DoltHub ships with a [SQL API](/products/dolthub/api/v1alpha1/sql) so you can choose the data sharing solution that is right for your use case.
 

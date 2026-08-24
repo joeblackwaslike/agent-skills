@@ -12,8 +12,8 @@ related:
 summary: "Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/registrar-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "348761cb19643fa4a5debf2a11d404d1817fb5665217536f99d145a0f1166927"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5a2ff7f6d71c4e4471fe8e989547d43b154fcd6a2b8f6ee1f151977406660c8f"
 ---
 
 # Programmatic Domain Management
@@ -29,8 +29,7 @@ The domains registrar API enables you to programmatically manage your domain lif
 - [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain?from=related)
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains?from=related)
 - [Working with Domains](https://vercel.com/docs/domains/working-with-domains?from=related) — Learn how domains work and the options Vercel provides for managing them.
-- [Get supported TLDs](https://vercel.com/docs/rest-api/domains-registrar/get-supported-tld-s?from=related)
-- [PUT /domains/{domain}/records](https://vercel.com/docs/rest-api/untagged/put-domains-domain-records?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel routes public requests to services and how each service handles its own routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/routing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cc80f36fd0e084b6698ece752581354c652d5fbabb7d2fc18e605dfdd1857642"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e652aff09bc878038f45dfba60bddf6820b1e05b82fc1cbb893a8dbfbcaa3dd3"
 ---
 
 # Services routing
@@ -34,7 +34,7 @@ owner. For how services are defined and built, see [Services](/docs/services).
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \(a single framework, one project with Services, or separate pr
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request

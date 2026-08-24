@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/rag-chatbot.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "c15eb3b184215ff17de4457c2885cf4653d73bf04efb208587d29f7bcc36fea4"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "041227d3f9050a72c76b0d3ff397dc1446a0cf0ff132772525322cd41302a069"
 ---
 
 # RAG Agent Guide
@@ -529,7 +529,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: 'openai/gpt-4o',
-    system: `You are a helpful assistant. Check your knowledge base before answering any questions.
+    instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
     messages: await convertToModelMessages(messages),
@@ -575,7 +575,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: 'openai/gpt-4o',
-    system: `You are a helpful assistant. Check your knowledge base before answering any questions.
+    instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
     messages: await convertToModelMessages(messages),
@@ -708,7 +708,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: 'openai/gpt-4o',
-    system: `You are a helpful assistant. Check your knowledge base before answering any questions.
+    instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
     messages: await convertToModelMessages(messages),
@@ -825,7 +825,7 @@ export async function POST(req: Request) {
     model: 'openai/gpt-4o',
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
-    system: `You are a helpful assistant. Check your knowledge base before answering any questions.
+    instructions: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
     tools: {

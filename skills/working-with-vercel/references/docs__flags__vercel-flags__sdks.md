@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f6ed48b0b8a3b658c1d8b32eaf9d369ea7da4c8d23ee40938a7ec00c2a3b9dd8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "07e237eefb498251ebaedcb69c5d79eed7a93bdc4bbaf89d01367a1d1e98aa89"
 ---
 
 # SDKs
@@ -32,11 +32,13 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
 - [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting Started](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
-- [Marketplace](https://vercel.com/docs/flags/marketplace?from=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
+- [Segments](https://vercel.com/docs/flags/vercel-flags/dashboard/segments?from=related) — Create reusable user segments for targeting feature flags.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks.graph.md](/docs/flags/vercel-flags/sdks.graph.md)
 <!-- /docsgraph:related -->

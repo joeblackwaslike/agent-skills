@@ -14,8 +14,8 @@ related:
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "29b126464c10664a24ebfd64e2f1dbc531fc16d2c00885e1fca20055ac2e4cbc"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0e8e166120d9b95b802c0d6f2a2475a81ab475f67a78f7828785c4889b823f5c"
 ---
 
 # Assigning a custom domain to an environment
@@ -33,12 +33,13 @@ sha256: "29b126464c10664a24ebfd64e2f1dbc531fc16d2c00885e1fca20055ac2e4cbc"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
+- [Custom domain](https://v0.app/docs/custom-domains?from=related) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
 - [How do I set up a staging environment on Vercel?](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related) — Information on how to set up a staging environment on Vercel.
 - [Set Up Custom Domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Assigning a Domain to a Git Branch](https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch?from=related) — Learn how to assign a domain to a different Git branch with this guide.
 - [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain?from=related) — Server action for programmatically adding custom domains to Vercel projects.
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [Managing Nameservers](https://vercel.com/docs/domains/managing-nameservers?from=related) — Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/add-a-domain-to-environment.graph.md](/docs/domains/working-with-domains/add-a-domain-to-environment.graph.md)
 <!-- /docsgraph:related -->

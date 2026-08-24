@@ -16,8 +16,8 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b3130ddf1f9b8b59af2e874efbe7575cde268912fe30a65e202ba0fdabbd06b7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d0d3f12f2203dbd01f7e628f8f79b3a24bf5c0fa38b59aefeac08c1d528e49eb"
 ---
 
 # Partial Prerendering (PPR)
@@ -37,7 +37,7 @@ sha256: "b3130ddf1f9b8b59af2e874efbe7575cde268912fe30a65e202ba0fdabbd06b7"
 - [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Getting Started](https://vercel.com/docs/incremental-static-regeneration/quickstart?from=related) — Learn how to set up Incremental Static Regeneration \(ISR\) with time-based and on-demand revalidation.
+- [Getting Started](https://vercel.com/docs/incremental-static-regeneration/quickstart?from=related) — Learn how to set up Incremental Static Regeneration \\(ISR\\) with time-based and on-demand revalidation.
 - [Create React App](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related) — Learn how to use Vercel's features with Create React App
 
 Full cross-link map for this page: [/docs/partial-prerendering.graph.md](/docs/partial-prerendering.graph.md)

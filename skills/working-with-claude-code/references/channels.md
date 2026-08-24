@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/channels.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "81f647d6d36b6978f78d2e7481dfdce462c944c955bf3724d8b22093b2d56b37"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "294a7e533dfaae5eb2b82f4e5db0faafb6c79e779129fa3315cdf647578a3ce9"
 ---
 
 > ## Documentation Index
@@ -277,13 +277,7 @@ To try the fakechat demo, you'll need:
   </Step>
 </Steps>
 
-If Claude hits a permission prompt while you're away from the terminal, the session pauses until you respond. Channel servers that declare the [permission relay capability](/docs/en/channels-reference#relay-permission-prompts) can forward these prompts to you so you can approve or deny remotely. For unattended use, [`--dangerously-skip-permissions`](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) bypasses most prompts, but only use it in environments you trust. Even then, these checks still prompt:
-
-* Explicit ask rules
-* Connector tools [your organization set to `ask`](/docs/en/mcp#organization-controls-on-connector-tools)
-* MCP tools marked [`requiresUserInteraction`](/docs/en/mcp#require-approval-for-a-specific-tool)
-* Removals targeting `/` or your home directory
-* The [cross-session messaging safeguards](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode)
+If Claude hits a permission prompt while you're away from the terminal, the session pauses until you respond. Channel servers that declare the [permission relay capability](/docs/en/channels-reference#relay-permission-prompts) can forward these prompts to you so you can approve or deny remotely. For unattended use, [`--dangerously-skip-permissions`](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) bypasses most prompts, but only use it in environments you trust. Even then, the [actions no mode auto-approves](/docs/en/permission-modes#actions-no-mode-auto-approves) still apply.
 
 When you run channels in non-interactive mode with `-p`, tools that need terminal input, such as multiple-choice questions and plan mode approval, are disabled so the session never stalls waiting for input.
 
@@ -345,7 +339,7 @@ By default, any plugin on the Anthropic-maintained allowlist can register as a c
 
 If you set an empty array, you block all channel plugins from the allowlist, but `--dangerously-load-development-channels` can still bypass that block for local testing. To block channels entirely including the development flag, leave `channelsEnabled` unset instead.
 
-This setting requires `channelsEnabled: true`. If a user passes a plugin to `--channels` that isn't on your list, Claude Code starts normally but the channel doesn't register, and the startup notice explains that the plugin isn't on the organization's approved list.
+This setting requires `channelsEnabled: true`. If a user passes a plugin to `--channels` that isn't on your list, Claude Code starts normally but the channel doesn't register, and the startup notice explains that the plugin isn't on the organization's approved list. If you set `MCP_PROTOCOL_NEGOTIATION` to `auto` on the v2 MCP client runtime, a channel can also fail to register because Claude Code [doesn't register a channel server that negotiates protocol revision 2026-07-28](/docs/en/mcp#push-messages-with-channels).
 
 ## Research preview
 

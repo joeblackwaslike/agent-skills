@@ -15,8 +15,8 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7713ba2fa37fbcd7c84f43d93bd367502e06014545d6bcdf6845ef45e19c4622"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "793fe4740135f62f6cc02ab729b3f593cce9c68a9b2905e03ad808eb091a378f"
 ---
 
 # Reference
@@ -29,13 +29,13 @@ sha256: "7713ba2fa37fbcd7c84f43d93bd367502e06014545d6bcdf6845ef45e19c4622"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Use feature flags in Fumadocs with the Vercel Toolbar](https://vercel.com/kb/guide/use-feature-flags-in-fumadocs-with-the-vercel-toolbar?from=related) — Control documentation visibility with feature flags. Hide inline content, entire pages, and navigation items based on fl
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next?from=related) — APIs for working with feature flags in Next.js.
+- [Statsig](https://flags-sdk.dev/docs/providers/statsig?from=related)
 - [Flags SDK](https://vercel.com/docs/flags/flags-sdk-reference?from=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Flags SDK](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
-- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
-- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
-- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
 <!-- /docsgraph:related -->

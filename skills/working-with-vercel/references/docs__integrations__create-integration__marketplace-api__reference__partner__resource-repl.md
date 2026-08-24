@@ -3,7 +3,7 @@ title: resource-repl
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/resource-repl
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/resource-repl"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about resource-repl on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/resource-repl.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7eaf07b472b225c2496457946902dbaf1792c0bd786aa4891474a4c3632c8ef2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b49f9fea9c490803629c31cb8af0b00a078faf4ddb27a54d9bdbde7580ce1a3c"
 ---
 
 # Resource REPL

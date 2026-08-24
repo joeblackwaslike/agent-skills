@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ee45c9c292ce5f94e8c7846e045e4d336a05117d5f0e8eea709dcc4eaaf8a881"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e2919923cf1f853783f775bb5bb8f9cefb8cc9f68135fc31f89024105f455ce8"
 ---
 
 # Vercel CLI Overview
@@ -31,7 +31,9 @@ Vercel gives you multiple ways to interact with and configure your Vercel Projec
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related)
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Terminal commands](https://v0.app/docs/terminal-commands?from=related) — v0 can run bash commands in your project sandbox to test, debug, and use platform CLIs. Control its autonomy with three
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
 - [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
@@ -40,7 +42,6 @@ Vercel gives you multiple ways to interact with and configure your Vercel Projec
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/cli.graph.md](/docs/cli.graph.md)
 <!-- /docsgraph:related -->
@@ -289,6 +290,18 @@ vercel certs rm [certificate-id]
 ```
 
 [Learn more about the certs command](/docs/cli/certs)
+
+### comments
+
+Review and manage existing [Vercel Toolbar comment threads](/docs/comments) from the terminal. This command is in beta.
+
+```bash
+vercel comments
+vercel comments inspect <thread>
+vercel comments resolve <thread> -m 'Fixed in the latest deployment.'
+```
+
+[Learn more about the comments command](/docs/cli/comments)
 
 ### connect
 
@@ -638,11 +651,12 @@ vercel mcp --project
 
 ### metrics
 
-Query metrics from your terminal and inspect the schema to discover the metrics, dimensions, and aggregations available to your account.
+List and query metrics from your terminal, and inspect the schema to discover available dimensions and aggregations.
 
 ```bash
-vercel metrics schema
+vercel metrics list
 vercel metrics schema <metric-or-prefix>
+vercel metrics database.duration_ms --filter "plan:pro"
 vercel metrics <metric-id> --since 7d --granularity 1d --project project-name --prod
 vercel metrics <metric-id> --all --group-by project_id --since 24h --prod
 ```
@@ -801,6 +815,18 @@ vercel sandbox create --connect
 
 [Learn more about the sandbox command](/docs/cli/sandbox)
 
+### security
+
+Inspect the security posture of your Vercel team with checks against vulnerable misconfigurations and settings.
+
+```bash
+vercel security
+vercel security check --findings
+vercel security check [check-name]
+```
+
+[Learn more about the security command](/docs/cli/security)
+
 ### skills
 
 Discover agent skills relevant to your project, or search the skill catalog.
@@ -874,12 +900,15 @@ vercel tokens rm tok_abc123
 
 ### traces
 
-Inspect request traces for your project.
+Inspect request traces for your project, and manage the sampling rules that decide which requests Vercel traces.
 
 ```bash
 vercel traces get [request-id]
 vercel traces [request-id]
 vercel traces get [request-id] --open
+vercel traces config ls
+vercel traces config set production 25
+vercel traces config rm production
 ```
 
 [Learn more about the traces command](/docs/cli/traces)

@@ -17,8 +17,8 @@ related:
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "170a2b5a4c6ec60159ad1befcebb379a142804bb35272ead79c6bb25e5b906cb"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a3319cd40e7ec36e4b299c878f01bea91b616f6ce2dfc8c5889a088b6b04ef99"
 ---
 
 # Deploying & Redirecting Domains
@@ -31,7 +31,7 @@ sha256: "170a2b5a4c6ec60159ad1befcebb379a142804bb35272ead79c6bb25e5b906cb"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
 - [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
 - [Transferring Domains to Vercel](https://vercel.com/kb/guide/transferring-domains-to-vercel?from=related) — How to transfer your domain to Vercel.

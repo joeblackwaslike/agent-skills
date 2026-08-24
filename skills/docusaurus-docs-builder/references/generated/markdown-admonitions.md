@@ -1,15 +1,15 @@
 ---
 title: "Markdown Admonitions"
 source: "https://docusaurus.io/docs/markdown-features/admonitions"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "93d4838af422d1a8c97ebc15f7ad8929b12cfbb03db3f307b3b61418d2a4f5e4"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "f9f51c58dd9b9260bfb0acf4ce02c2f85d672f0ecf32617f080cc28492113801"
 ---
 
 # Markdown Admonitions
 
 Source: https://docusaurus.io/docs/markdown-features/admonitions
 
-- GuidesMarkdown FeaturesAdmonitionsVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)[Markdown Features](https://docusaurus.io/docs/markdown-features)AdmonitionsVersion: 3.10.2On this page
 # Admonitions
 
 In addition to the basic Markdown syntax, we have a special admonitions syntax by wrapping text with a set of 3 colons, followed by a label denoting its type.
@@ -21,11 +21,11 @@ Example:
 :::noteSome **content** with _Markdown_ `syntax`. Check [this `api`](#).::::::tipSome **content** with _Markdown_ `syntax`. Check [this `api`](#).::::::infoSome **content** with _Markdown_ `syntax`. Check [this `api`](#).::::::warningSome **content** with _Markdown_ `syntax`. Check [this `api`](#).::::::dangerSome **content** with _Markdown_ `syntax`. Check [this `api`](#).:::
 ```
 
-http://localhost:3000noteSome **content** with _Markdown_ `syntax`. Check this `api`.tipSome **content** with _Markdown_ `syntax`. Check this `api`.infoSome **content** with _Markdown_ `syntax`. Check this `api`.warningSome **content** with _Markdown_ `syntax`. Check this `api`.dangerSome **content** with _Markdown_ `syntax`. Check this `api`.
+http://localhost:3000noteSome **content** with _Markdown_ `syntax`. Check [this api](https://docusaurus.io/docs/markdown-features/admonitions#).tipSome **content** with _Markdown_ `syntax`. Check [this api](https://docusaurus.io/docs/markdown-features/admonitions#).infoSome **content** with _Markdown_ `syntax`. Check [this api](https://docusaurus.io/docs/markdown-features/admonitions#).warningSome **content** with _Markdown_ `syntax`. Check [this api](https://docusaurus.io/docs/markdown-features/admonitions#).dangerSome **content** with _Markdown_ `syntax`. Check [this api](https://docusaurus.io/docs/markdown-features/admonitions#).
 
-## Usage with Prettier​
+## Usage with Prettier[​](https://docusaurus.io/docs/markdown-features/admonitions#usage-with-prettier)
 
-If you use Prettier to format your Markdown files, Prettier might auto-format your code to invalid admonition syntax. To avoid this problem, add empty lines around the starting and ending directives. This is also why the examples we show here all have empty lines around the content.
+If you use [Prettier](https://prettier.io) to format your Markdown files, Prettier might auto-format your code to invalid admonition syntax. To avoid this problem, add empty lines around the starting and ending directives. This is also why the examples we show here all have empty lines around the content.
 
 
 ```
@@ -33,7 +33,7 @@ If you use Prettier to format your Markdown files, Prettier might auto-format yo
 ```
 
 
-## Specifying title​
+## Specifying title[​](https://docusaurus.io/docs/markdown-features/admonitions#specifying-title)
 
 You may also specify an optional title.
 
@@ -44,7 +44,7 @@ You may also specify an optional title.
 
 http://localhost:3000Your Title **with** some _Markdown_ `syntax`!Some **content** with some _Markdown_ `syntax`.
 
-## Specifying attributes​
+## Specifying attributes[​](https://docusaurus.io/docs/markdown-features/admonitions#specifying-attributes)
 
 You may also provide classes or IDs to admonitions.
 
@@ -55,7 +55,7 @@ You may also provide classes or IDs to admonitions.
 
 http://localhost:3000With css classesNote the padding and the italicized text.noteThe admonition container has now the id `admonition-id`.noteUse id and classes together.
 
-## Nested admonitions​
+## Nested admonitions[​](https://docusaurus.io/docs/markdown-features/admonitions#nested-admonitions)
 
 Admonitions can be nested. Use more colons `:` for each parent admonition level.
 
@@ -66,7 +66,7 @@ Admonitions can be nested. Use more colons `:` for each parent admonition level.
 
 http://localhost:3000ParentParent contentChildChild contentDeep ChildDeep child content
 
-## Admonitions with MDX​
+## Admonitions with MDX[​](https://docusaurus.io/docs/markdown-features/admonitions#admonitions-with-mdx)
 
 You can use MDX inside admonitions too!
 
@@ -77,7 +77,7 @@ import Tabs from '@theme/Tabs';import TabItem from '@theme/TabItem';:::tip[Use t
 
 http://localhost:3000Use tabs in admonitionsAppleOrangeBananaThis is an apple 🍎This is an orange 🍊This is a banana 🍌
 
-## Usage in JSX​
+## Usage in JSX[​](https://docusaurus.io/docs/markdown-features/admonitions#usage-in-jsx)
 
 Outside of Markdown, you can use the `@theme/Admonition` component to get the same output.
 
@@ -96,13 +96,13 @@ MyReactPage.jsx
 http://localhost:3000💡Did you know...Use plugins to introduce shorter syntax for the most commonly used JSX
 elements in your project.
 
-## Customizing admonitions​
+## Customizing admonitions[​](https://docusaurus.io/docs/markdown-features/admonitions#customizing-admonitions)
 
 There are two kinds of customizations possible with admonitions: **parsing** and **rendering**.
 
-### Customizing rendering behavior​
+### Customizing rendering behavior[​](https://docusaurus.io/docs/markdown-features/admonitions#customizing-rendering-behavior)
 
-You can customize how each individual admonition type is rendered through swizzling. You can often achieve your goal through a simple wrapper. For example, in the follow example, we swap out the icon for `info` admonitions only.
+You can customize how each individual admonition type is rendered through [swizzling](https://docusaurus.io/docs/swizzling). You can often achieve your goal through a simple wrapper. For example, in the follow example, we swap out the icon for `info` admonitions only.
 
 src/theme/Admonition.js
 ```
@@ -110,9 +110,9 @@ import React from 'react';import Admonition from '@theme-original/Admonition';im
 ```
 
 
-### Customizing parsing behavior​
+### Customizing parsing behavior[​](https://docusaurus.io/docs/markdown-features/admonitions#customizing-parsing-behavior)
 
-Admonitions are implemented with a Remark plugin. The plugin is designed to be configurable. To customize the Remark plugin for a specific content plugin (docs, blog, pages), pass the options through the `admonitions` key.
+Admonitions are implemented with a [Remark plugin](https://docusaurus.io/docs/markdown-features/plugins). The plugin is designed to be configurable. To customize the Remark plugin for a specific content plugin (docs, blog, pages), pass the options through the `admonitions` key.
 
 docusaurus.config.js
 ```
@@ -127,7 +127,7 @@ The plugin accepts the following options:
 
 The `keyword` will be passed as the `type` prop of the `Admonition` component.
 
-### Custom admonition type components​
+### Custom admonition type components[​](https://docusaurus.io/docs/markdown-features/admonitions#custom-admonition-type-components)
 
 By default, the theme doesn't know what do to with custom admonition keywords such as `:::my-custom-admonition`. It is your responsibility to map each admonition keyword to a React component so that the theme knows how to render them.
 
@@ -152,4 +152,4 @@ Now you can use your new admonition keyword in a Markdown file, and it will be p
 :::my-custom-admonition[My Title]It works!:::
 ```
 
-http://localhost:3000My TitleIt works!Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+http://localhost:3000My TitleIt works![Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-admonitions.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

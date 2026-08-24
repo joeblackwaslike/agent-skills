@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "0571b8266640656c3879e8d35ca9eb41272ab3e2bf2a4481cba3619e65365cb3"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e2c8fecd7132d85cc992735b4695bdc2211f917d37b62a2445097fc946cbc4ca"
 ---
 
 # Transferring a project
@@ -37,8 +37,8 @@ You can transfer projects between your Vercel teams with **zero downtime** and *
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Transferring Domains](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Create project transfer request](https://vercel.com/docs/rest-api/projects/create-project-transfer-request?from=related)
-- [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request?from=related)
 - [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request?from=related)
 - [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments?from=related) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 
 Full cross-link map for this page: [/docs/projects/transferring-projects.graph.md](/docs/projects/transferring-projects.graph.md)

@@ -16,8 +16,8 @@ related:
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1af5345abc91985e5d93c21c3cbfa0f452d80b8554bc9de2a5ad963a1a90222b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "96e566f4a6df2cd87699e3a8ab1b126a4b08ac373ef3a11835052f7dfa669f36"
 ---
 
 # ISR Usage and Pricing
@@ -37,7 +37,7 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 - [Calculating Usage of Resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 - [Pricing & Usage](https://vercel.com/docs/manage-cdn-usage?from=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 - [Limits and Pricing](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [Limits and Pricing](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Stockholm, Sweden \\(arn1\\)](https://vercel.com/docs/pricing/regional-pricing/arn1?from=related) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/limits-and-pricing.graph.md](/docs/incremental-static-regeneration/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->

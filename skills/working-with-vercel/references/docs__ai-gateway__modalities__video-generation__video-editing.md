@@ -9,12 +9,12 @@ prerequisites:
   - /docs/ai-gateway/modalities/video-generation
   - /docs/ai-gateway/modalities
 related:
-  []
+  - /docs/ai-gateway/modalities/video-generation
 summary: Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "9283a9b79bbed995fb0d65c5eb1d2b52162a6c954b08bfee8e4fdf118a15ccb9"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f5c38a3f44c9fb2c8f2d61581fabaac6b1c4f6640ce8006b60fee7b7f8ec3ca3"
 ---
 
 # Video Editing
@@ -31,12 +31,14 @@ Edit existing videos using text prompts. Describe the changes you want and the m
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
 - [Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 - [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
-- [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
+- [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-editing.graph.md](/docs/ai-gateway/modalities/video-generation/video-editing.graph.md)
 <!-- /docsgraph:related -->
+
+Every model here also runs as a background job instead of one long-lived request. See [asynchronous generation](#asynchronous-generation) below.
 
 ## Grok Imagine Video
 
@@ -80,6 +82,32 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation. Generated video URLs are ephemeral
 > and should be downloaded promptly.
+
+## Asynchronous generation
+
+Pass a `webhook` factory and the SDK registers your URL with the job instead of polling for it. The factory returns that URL and a `received` promise it waits on, then it fetches the videos itself.
+
+```typescript filename="async-video-editing.ts"
+const result = await generateVideo({
+  model: gateway.videoModel('xai/grok-imagine-video'),
+  prompt: 'Give the person sunglasses and a hat',
+  providerOptions: {
+    xai: {
+      // Already a hosted URL, which is what the asynchronous flow needs.
+      videoUrl: 'https://example.com/source-video.mp4',
+    },
+  },
+  webhook: async () => ({
+    url: callbackUrl,
+    received: waitForDelivery(token),
+  }),
+  poll: { timeoutMs: 10 * 60 * 1000 },
+});
+```
+
+The start request AI Gateway persists is capped at 300 KiB, so pass your source video as a hosted URL on this flow rather than inline data.
+
+`token`, `callbackUrl`, and `waitForDelivery` come from [webhook-driven completion](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion), which also covers the receiver, signature verification, and the payload shape.
 
 ***
 

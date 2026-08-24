@@ -15,8 +15,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation, SOC 2 compliance and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/access-control.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d144062d02dabc0094809902ce0f8c589204200ddcde3737a78b3810112db227"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9ce5b385767f055804e17e9a32b73980ab4def9f0ca212971dc2c49cb455380a"
 ---
 
 # Access Control
@@ -35,7 +35,7 @@ You can protect deployments with [Password protection](/docs/deployment-protecti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Passport](https://vercel.com/docs/passport?from=related) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
-- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/security/access-control.graph.md](/docs/security/access-control.graph.md)
 <!-- /docsgraph:related -->

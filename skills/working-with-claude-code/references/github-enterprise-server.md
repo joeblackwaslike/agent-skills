@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/github-enterprise-server.md"
-fetched_at: "2026-08-10T05:26:58.686Z"
-sha256: "f250aa7f2f0598670289e3bea3a8be98c8a9cd892bd80f279f5a6a5ebc28c88f"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "b77fdc32ac232e070ddbd4361c7dd6d0385f77e18e7b1e6d87ca70b01f4daf49"
 ---
 
 > ## Documentation Index
@@ -152,7 +152,7 @@ See [Create and distribute a plugin marketplace](/docs/en/plugin-marketplaces) f
 
 ### Pre-register GHES marketplaces with managed settings
 
-The `extraKnownMarketplaces` setting pre-registers a marketplace so developers get it without manual setup. It works from [any settings file](/docs/en/settings#extraknownmarketplaces), including a repository's `.claude/settings.json`; managed settings deliver it organization-wide:
+The `extraKnownMarketplaces` setting pre-registers a marketplace so developers get it without manual setup. It works from [any settings file](/docs/en/settings-reference#extraknownmarketplaces), including a repository's `.claude/settings.json`; managed settings deliver it organization-wide:
 
 ```json theme={null}
 {
@@ -172,11 +172,11 @@ Claude Code installs these marketplaces locally: it registers each entry and clo
 * **Use a full git URL.** The `owner/repo` shorthand always resolves to github.com and cannot reference a GHES host.
 * **Prefer HTTPS URLs.** SSH clones fail on machines that do not already trust your GHES host key. An HTTPS URL with your organization's standard git credential helper works on any machine with credentials configured.
 * **Confirm each machine can clone from your GHES host.** If a machine lacks credentials, the marketplace is registered but never installed, and its plugins report as not found instead of prompting for credentials.
-* **Confirm the setting reaches each machine.** A managed settings file only takes effect on machines it's deployed to, for example through your device management system. See [managed settings](/docs/en/settings#settings-files) for file locations.
+* **Confirm the setting reaches each machine.** A managed settings file only takes effect on machines it's deployed to, for example through your device management system. See [Deploy managed settings](/docs/en/managed-settings#delivery-mechanisms) for file locations.
 
 ### Allowlist GHES marketplaces in managed settings
 
-If your organization uses [managed settings](/docs/en/settings) to restrict which marketplaces developers can add, use the `hostPattern` source type to allow all marketplaces from your GHES instance without enumerating each repository. See [settings files](/docs/en/settings#settings-files) for file locations on each platform. Add the JSON to your `managed-settings.json` file or equivalent MDM policy:
+If your organization uses [managed settings](/docs/en/settings) to restrict which marketplaces developers can add, use the `hostPattern` source type to allow all marketplaces from your GHES instance without enumerating each repository. See [Delivery mechanisms](/docs/en/managed-settings#delivery-mechanisms) for file locations on each platform. Add the JSON to your `managed-settings.json` file or equivalent MDM policy:
 
 ```json theme={null}
 {
@@ -189,7 +189,7 @@ If your organization uses [managed settings](/docs/en/settings) to restrict whic
 }
 ```
 
-See the [strictKnownMarketplaces](/docs/en/settings#strictknownmarketplaces) and [extraKnownMarketplaces](/docs/en/settings#extraknownmarketplaces) settings reference for the complete schema.
+See the [strictKnownMarketplaces](/docs/en/settings-reference#strictknownmarketplaces) and [extraKnownMarketplaces](/docs/en/settings-reference#extraknownmarketplaces) settings reference for the complete schema.
 
 ## Limitations
 

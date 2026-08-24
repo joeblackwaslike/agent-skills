@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/friendliai.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "49a9e69c1ff6f917ca8325b1e26c9b7372210b2d714288c41525e69f9447ae43"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "9275d0bc7eb20860652cef2dee57f9b2341a101d1e7a41632ee4dfe69e9dc446"
 ---
 
 # FriendliAI Provider
@@ -291,6 +291,7 @@ const friendli = createOpenAI({
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

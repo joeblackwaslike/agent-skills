@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d876ac8edc9f7dbcf249091b04a7faf05e222ffa2048077fcb3c6f579cab5b69"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "52f0dab8ec3bf4d68e9a2d87d9b0566b36bde82f2c25bc4e67fc8dc868b2c41f"
 ---
 
 # Vercel Hobby Plan
@@ -97,6 +97,7 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 | [DDoS Mitigation](/docs/vercel-firewall/ddos-mitigation) | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). |
 | [Vercel WAF IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) | Up to 3 | Up to 100 |
 | [Vercel WAF Custom Rules](/docs/vercel-firewall/vercel-waf/custom-rules) | Up to 3 | Up to 40 |
+
 | Deployment Protection | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) (Add-on), [Sharable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) |
 
 ## Upgrading to Pro

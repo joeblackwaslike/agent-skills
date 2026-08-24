@@ -9,18 +9,18 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/plans/enterprise
+  - /docs/ai-gateway/pricing/discounts
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/observability-and-spend/custom-reporting
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
-  - /docs/ai-gateway/security-and-compliance/zdr
 summary: Learn about pricing for AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "43686e9e3881012fac0c65a84f428301b68e997a5a34e9a5f72d72ef3dd2893b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "31d86db6b1d89f87b45d056c7d9a42264d279cedbea55ff551a0697fbba77d0a"
 ---
 
-# Pricing
+# AI Gateway Pricing
 
 **AI Gateway charges no markup and no platform fee on tokens.** You pay the provider's list price on a pay-as-you-go basis. Purchase [AI Gateway Credits](#top-up-your-ai-gateway-credits) and Vercel automatically deducts charges from your balance.
 
@@ -31,11 +31,12 @@ sha256: "43686e9e3881012fac0c65a84f428301b68e997a5a34e9a5f72d72ef3dd2893b"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
-- [Pricing](https://vercel.com/docs/agent/pricing?from=related) — Understand how Vercel Agent pricing works and how to manage your credits
+- [Pricing](https://v0.app/docs/pricing?from=related) — Understand the v0 plans, pricing, and usage limits.
 - [Usage & Billing](https://vercel.com/docs/ai-gateway/observability-and-spend/usage?from=related) — Monitor your AI Gateway credit balance, usage, and generation details.
-- [Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related) — Control processing priority and cost for OpenAI, Google AI Studio, and Google Vertex AI models using service tiers throu
+- [Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related) — Monitor AI Gateway requests and manage spend: observability, custom reporting, usage and billing APIs, and spending budg
+- [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Pricing](https://vercel.com/docs/agent/pricing?from=related) — Understand Vercel Agent pricing and how to track costs
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing.graph.md](/docs/ai-gateway/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -57,6 +58,10 @@ Whether you use a free or paid account, you'll pay the AI Gateway rates listed i
 The charge for each request depends on the AI provider and model you select, and the number of input and output tokens processed. **You're responsible for any payment processing fees that may apply.**
 
 [Enterprise](/docs/plans/enterprise) teams can pay for AI Gateway by invoice instead, which has no payment processing fees. [Contact sales](/contact/sales) to set up invoiced billing.
+
+### Volume discounts
+
+For volume spend, custom [discounts on token spend](/docs/ai-gateway/pricing/discounts) are also available.
 
 ### Finding model pricing
 

@@ -17,8 +17,8 @@ related:
 summary: Deploy NestJS applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nestjs.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "affab597e0e70fb0efb1fc67a533b3e0222e4a39636e5f0456f0b5495a2bbf5f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "17384c5a913af2af4e8992f82ba2e22b967ef4a136d9df19460f1422b2faf2a7"
 ---
 
 # NestJS on Vercel
@@ -39,6 +39,7 @@ NestJS is a progressive Node.js framework for building efficient, reliable and s
 - [Fastify](https://vercel.com/docs/frameworks/backend/fastify?from=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/backend/nestjs.graph.md](/docs/frameworks/backend/nestjs.graph.md)
 <!-- /docsgraph:related -->

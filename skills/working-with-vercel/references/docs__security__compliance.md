@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cce31eb1460853a451b723c226b102e78d0fd7853fd38f9218f6c74a6c5b150e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ab029f803fba9761583e1b7701246908d801263449b69d828a47cc1d82d600e6"
 ---
 
 # Security & Compliance Measures
@@ -30,16 +30,18 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [v0 vs Base44](https://v0.app/docs/compare/v0-vs-base44?from=related) — A source-backed comparison of v0 and Base44.
+- [v0 vs Bolt](https://v0.app/docs/compare/v0-vs-bolt?from=related) — A source-backed comparison of v0 and Bolt.
+- [v0 vs Figma Make](https://v0.app/docs/compare/v0-vs-figma-make?from=related) — A source-backed comparison of v0 and Figma Make.
+- [v0 vs Replit](https://v0.app/docs/compare/v0-vs-replit?from=related) — A source-backed comparison of v0 and Replit.
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
-- [HIPAA Compliance on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Does Vercel support PCI compliance?](https://vercel.com/kb/guide/is-vercel-pci-compliant?from=related) — Learn about Vercel and PCI compliance.
 - [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Encryption & TLS](https://vercel.com/docs/cdn-security/encryption?from=related) — Learn how Vercel encrypts data in transit and at rest.
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
-- [Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related) — Learn about the Vercel Pro plan with credit-based billing, free viewer seats, and self-serve enterprise features for pro
 
 Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md)
 <!-- /docsgraph:related -->

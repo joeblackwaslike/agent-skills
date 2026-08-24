@@ -15,8 +15,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "253aba05b061bb118f6e6d13eef82314b346f33f53cf880348c18d596d95c4c0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ec19f226387b63a5ce42510581b36fba72701038925cefa18f8ed0b43a481c1b"
 ---
 
 # Routing Middleware API
@@ -31,9 +31,9 @@ sha256: "253aba05b061bb118f6e6d13eef82314b346f33f53cf880348c18d596d95c4c0"
 
 - [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related) — Learn how to add a response header in your Middleware.
 - [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters?from=related) — Learn how to filter query parameters in your Middleware.
-- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
 - [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related) — Learn how to modify request headers in your Middleware.
 - [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related) — Learn how to render different content based on the user agent in your Middleware.
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
 - [Version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related) — Upgrade your Next.js Application from Version 14 to 15.
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related) — API reference for the route.js special file.
 - [Getting Started](https://vercel.com/docs/routing-middleware/getting-started?from=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
@@ -154,7 +154,7 @@ To use the Bun runtime with Routing Middleware, set the [`bunVersion`](/docs/pro
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "bunVersion": "1.x"
+  "bunVersion": "1.4.x"
 }
 ```
 

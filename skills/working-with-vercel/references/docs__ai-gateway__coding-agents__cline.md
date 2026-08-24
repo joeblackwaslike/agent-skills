@@ -14,8 +14,8 @@ related:
 summary: Use Cline with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7aad03b65bda1110062fe69b6d122f3033bba1ee284257596979cc38e49c6264"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "96f7d790daee2fc7716458b3d565eb26d014ea51994b1541d16d95ccfcfb0f93"
 ---
 
 # Cline
@@ -29,7 +29,7 @@ sha256: "7aad03b65bda1110062fe69b6d122f3033bba1ee284257596979cc38e49c6264"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [OpenClaw](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related) — Learn about openclaw on Vercel.
-- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
 - [Claude Code](https://vercel.com/docs/ai-gateway/coding-agents/claude-code?from=related) — Use Claude Code and the Claude Agent SDK with AI Gateway.
 - [Blackbox AI](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related) — Use the Blackbox AI CLI with the AI Gateway.

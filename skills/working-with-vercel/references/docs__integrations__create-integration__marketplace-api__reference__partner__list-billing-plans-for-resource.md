@@ -3,7 +3,7 @@ title: list-billing-plans-for-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about list-billing-plans-for-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fe01b13bb7c22da210f8afb37deebae3138f61a0f05444b6c4dd2ec30ea4da36"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d51744df5dbde04a252290fed82efeebd0c2fde1a30f7ab1e9c3243cc751bc37"
 ---
 
 # List Billing Plans For Resource

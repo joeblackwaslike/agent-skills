@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d59e98d7c708c3fa181d4b14e01f845c8aec4aa9fa6d021f4488d5f4205d966d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6bb09a316f738618c428d071beb3a672d57e42a572722120fd1f7aaf11325e65"
 ---
 
 # Project settings
@@ -30,6 +30,7 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related) — Learn how to manage your projects through the Vercel Dashboard.
@@ -40,7 +41,7 @@ Full cross-link map for this page: [/docs/project-configuration/project-settings
 <!-- /docsgraph:related -->
 
 - **Team Settings**: Any settings configured here, are applied at the team-level, although you can select which projects the settings should be set for.
-- **Project Settings**: These are specific settings for the selected project. You can make changes about all areas relating to your project, including domains, functions, drains, integrations, Git, caching, environment variables, deployment protection, and security.
+- **Project Settings**: These are specific settings for the selected project. You can make changes about all areas relating to your project, including project avatar, domains, functions, drains, integrations, Git, caching, environment variables, deployment protection, and security.
 
 This guide focuses on the project settings. To edit project settings:
 
@@ -57,7 +58,9 @@ To learn more, see [Configuring projects with vercel.json](/docs/project-configu
 
 ## General settings
 
-This provides all the foundational information and settings for your Vercel project, including the name, build and deployment settings, the directory where your code is located, the Node.js version, Project ID, toolbar settings, and more.
+This provides all the foundational information and settings for your Vercel project, including the name, project avatar, build and deployment settings, the directory where your code is located, the Node.js version, Project ID, toolbar settings, and more.
+
+This includes the [project avatar](/docs/project-configuration/general-settings#project-avatar), which you can upload or generate.
 
 To learn more, see [General Settings](/docs/project-configuration/general-settings)
 

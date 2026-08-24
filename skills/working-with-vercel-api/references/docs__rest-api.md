@@ -3,7 +3,7 @@ title: Rest API
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn about rest api on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-08-17T04:50:12.895Z"
-sha256: "7bde05d1064f16374cc6112228832d77a706079660d2e929674b3815f84e2392"
+fetched_at: "2026-08-24T04:53:14.265Z"
+sha256: "6f47289e4d993d966517e9e03bcd6b3fe5b6f75c417cd079717544dc77b03ccf"
 ---
 
 # Vercel REST API Reference
@@ -345,6 +345,24 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v3/user/tokens`](/docs/rest-api/authentication/create-an-auth-token.md) | Create an Auth Token |
 | **GET** | [`/v5/user/tokens/{tokenId}`](/docs/rest-api/authentication/get-auth-token-metadata.md) | Get Auth Token Metadata |
 | **DELETE** | [`/v3/user/tokens/{tokenId}`](/docs/rest-api/authentication/delete-an-authentication-token.md) | Delete an authentication token |
+
+## kms
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/kms/issuers`](/docs/rest-api/kms/list-issuers.md) | List issuers |
+| **POST** | [`/v1/kms/issuers`](/docs/rest-api/kms/create-an-issuer.md) | Create an issuer |
+| **POST** | [`/v1/kms/issuers/{issuerId}/sign/message`](/docs/rest-api/kms/sign-a-message.md) | Sign a message |
+| **POST** | [`/v1/kms/issuers/{issuerId}/sign/token`](/docs/rest-api/kms/sign-a-token.md) | Sign a token |
+| **POST** | [`/v1/kms/issuers/{issuerId}/keys`](/docs/rest-api/kms/create-a-signing-key.md) | Create a signing key |
+| **POST** | [`/v1/kms/issuers/{issuerId}/keys/{keyId}/activate`](/docs/rest-api/kms/activate-a-signing-key.md) | Activate a signing key |
+| **POST** | [`/v1/kms/issuers/{issuerId}/keys/{keyId}/revoke`](/docs/rest-api/kms/revoke-a-signing-key.md) | Revoke a signing key |
+| **GET** | [`/v1/kms/issuers/{issuerId}`](/docs/rest-api/kms/get-an-issuer.md) | Get an issuer |
+| **PATCH** | [`/v1/kms/issuers/{issuerId}`](/docs/rest-api/kms/update-an-issuer.md) | Update an issuer |
+| **DELETE** | [`/v1/kms/issuers/{issuerId}`](/docs/rest-api/kms/delete-an-issuer.md) | Delete an issuer |
+| **POST** | [`/v1/kms/issuers/{issuerId}/policies`](/docs/rest-api/kms/create-an-issuer-policy.md) | Create an issuer policy |
+| **PATCH** | [`/v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}`](/docs/rest-api/kms/update-an-issuer-policy.md) | Update an issuer policy |
+| **DELETE** | [`/v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}`](/docs/rest-api/kms/delete-an-issuer-policy.md) | Delete an issuer policy |
 
 ## logs
 

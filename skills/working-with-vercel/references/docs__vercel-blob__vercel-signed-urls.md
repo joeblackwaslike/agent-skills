@@ -13,8 +13,8 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "95bf6e32eebb5c5b5f277fe4429226663355348ffbb7f56af800ac70e9d08185"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d9d90c641f9510cce496fbcc83b4df4ab160dbabd03257eb55a968142cb94713"
 ---
 
 # Vercel Signed URLs
@@ -34,6 +34,8 @@ sha256: "95bf6e32eebb5c5b5f277fe4429226663355348ffbb7f56af800ac70e9d08185"
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Client Uploads](https://vercel.com/docs/vercel-blob/client-upload?from=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related) — Learn how to use private Vercel Blob storage to serve files with authentication
+- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob/vercel-signed-urls.graph.md](/docs/vercel-blob/vercel-signed-urls.graph.md)
 <!-- /docsgraph:related -->

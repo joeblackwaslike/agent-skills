@@ -14,8 +14,8 @@ related:
 summary: Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/concepts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6165cad45ade713f1425055dbca9b5f0d8b5169a711924d9328c13578ad497eb"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fd79ee21fec517b8d99deee9cb22317c99b12975ec06233ce1b4ccdbd26b9d08"
 ---
 
 # Multi-Project Platforms Concepts
@@ -33,8 +33,8 @@ sha256: "6165cad45ade713f1425055dbca9b5f0d8b5169a711924d9328c13578ad497eb"
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Examples](https://vercel.com/docs/platforms/examples?from=related) — Clone working multi-tenant and multi-project starters to begin your platform build.
-- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Projects](https://vercel.com/docs/projects?from=related) — A project is the application that you have deployed to Vercel.
+- [Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/concepts.graph.md](/docs/platforms/multi-project-platforms/concepts.graph.md)
 <!-- /docsgraph:related -->

@@ -1,8 +1,8 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-06-15T05:52:52.261Z"
-sha256: "aee53c7b9a4312e961dd04c7af6d87b20737ec93b26bc0a45b61322b8e6927db"
+fetched_at: "2026-08-24T04:43:15.398Z"
+sha256: "2e8e6a4b18bb0893e8309f472c34f457ff83d78d13c9705e087698f4f32b8743"
 ---
 
 # VS Code API
@@ -20289,7 +20289,11 @@ until the cancellation is requested on the `token`.
 ParameterDescription
 request: [TestRunRequest](https://code.visualstudio.com/api/references/vscode-api#TestRunRequest)Request information for the test run.
 
-token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)
+token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)Token that signals the used asked to abort the
+test run. If cancellation is requested on this token, all [TestRun](https://code.visualstudio.com/api/references/vscode-api#TestRun)
+instances associated with the request will be
+automatically cancelled as well.
+
 ReturnsDescription
 void &#124; Thenable<void>
 

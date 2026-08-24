@@ -13,12 +13,12 @@ related:
   - /docs/pricing/understanding-my-invoice
   - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
-  - /docs/manage-cdn-usage
+  - /docs/sandbox
 summary: Vercel pricing for the Hong Kong (hkg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hkg1.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "824884a244400d34174b2ad323cb0a8c33bf4de2b61402d6e4a53bcabaf79540"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a014a4c062fec5ec0798380949ce56d8efcd6fd7d6de798928e3c11ed93b490a"
 ---
 
 # Hong Kong (hkg1) pricing
@@ -31,11 +31,11 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [San Francisco, USA \(sfo1\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \(sfo1\) region.
-- [Dublin, Ireland \(dub1\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \(dub1\) region.
-- [Singapore \(sin1\)](https://vercel.com/docs/pricing/regional-pricing/sin1?from=related) — Vercel pricing for the Singapore \(sin1\) region.
-- [London, UK \(lhr1\)](https://vercel.com/docs/pricing/regional-pricing/lhr1?from=related) — Vercel pricing for the London, UK \(lhr1\) region.
-- [Tokyo, Japan \(hnd1\)](https://vercel.com/docs/pricing/regional-pricing/hnd1?from=related) — Vercel pricing for the Tokyo, Japan \(hnd1\) region.
+- [San Francisco, USA \\(sfo1\\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Dublin, Ireland \\(dub1\\)](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [London, UK \\(lhr1\\)](https://vercel.com/docs/pricing/regional-pricing/lhr1?from=related) — Vercel pricing for the London, UK \\(lhr1\\) region.
+- [Singapore \\(sin1\\)](https://vercel.com/docs/pricing/regional-pricing/sin1?from=related) — Vercel pricing for the Singapore \\(sin1\\) region.
+- [Seoul, South Korea \\(icn1\\)](https://vercel.com/docs/pricing/regional-pricing/icn1?from=related) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/hkg1.graph.md](/docs/pricing/regional-pricing/hkg1.graph.md)
 <!-- /docsgraph:related -->
@@ -45,7 +45,10 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 > **💡 Note:** Active CPU and Provisioned Memory are billed at different rates depending on
 > the region your [fluid compute](/docs/fluid-compute) is deployed. The rates
 > for each region can be found in the [fluid
-> pricing](/docs/functions/usage-and-pricing) documentation.
+> pricing](/docs/functions/usage-and-pricing) documentation. [Vercel
+> Sandbox](/docs/sandbox) compute is also billed by region. See [Sandbox
+> pricing](/docs/sandbox/pricing#regional-pricing) for the rates in the
+> regions where Sandbox is available.
 
 | Resource | On-demand (Billing Cycle) |
 | --- | --- |

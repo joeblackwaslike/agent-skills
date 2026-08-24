@@ -16,8 +16,8 @@ related:
 summary: Build platforms that serve multiple customers from a single codebase, with custom domains, wildcard subdomains, and automatic SSL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2ec5c7be9241647f00b4b0db8ed64fa9b4bb0d3f1f4488aaad4a37e56c481822"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8241eefeccb9b3140fdbdc94d79f8fdd128f557eb8fa001d36bb41c1c489e623"
 ---
 
 # Vercel for Platforms
@@ -31,6 +31,7 @@ sha256: "2ec5c7be9241647f00b4b0db8ed64fa9b4bb0d3f1f4488aaad4a37e56c481822"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 - [Supported Frameworks](https://vercel.com/docs/frameworks?from=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 

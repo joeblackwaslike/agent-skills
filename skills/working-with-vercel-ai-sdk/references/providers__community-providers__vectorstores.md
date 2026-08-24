@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/vectorstores.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "6609d55579d598d5d036d5bc1c8aff3a52010e1fa3c03bab70db624717203514"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "d51b46e9d7f34ecc846eb9da752684490160a996c9d3347fe3193c049b39dcd8"
 ---
 
 # vectorstores Provider
@@ -153,6 +153,7 @@ Store and retrieve user-specific information across conversations by combining a
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

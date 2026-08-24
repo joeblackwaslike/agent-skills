@@ -16,8 +16,8 @@ related:
 summary: Add and configure a custom domain for your Vercel project using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6e2c38fbff079c3fd087396c6f6ed19cc4e50efb266159fde11e7b5b9db64e01"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "c6627dee93dae9953acc4710d307924e84c2c5caa6746b18e98053264ea54c4c"
 ---
 
 # Setting up a custom domain
@@ -30,7 +30,7 @@ Use this guide to add a custom domain to your Vercel project from the CLI, confi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \(76.76.21.21 or your domain card's value\), pair it with a www CNAME,
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [How do I add a custom domain to my Vercel project?](https://vercel.com/kb/guide/how-do-i-add-a-custom-domain-to-my-vercel-project?from=related) — Learn how to add a custom domain to your Vercel project.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.

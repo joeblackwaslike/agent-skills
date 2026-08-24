@@ -14,8 +14,8 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "76fda00547395542efcf5c957175dfa10973d0c6c555a60c2b6883d659c7a3a8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7ea7660ad3447ef6cdba81bf4ba756d5461d0a3cfb60104a7f7b987d1e9eb829"
 ---
 
 # Implementing secrets rotation
@@ -34,10 +34,10 @@ When your integration provisions resources with credentials (like API keys, data
 - [How to rotate the secrets of your Upstash integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-upstash-integration?from=related) — Rotate Upstash API keys, JWT secrets, and database passwords.
 - [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related) — This will guide you how to update the password for a Redis databse.
 - [Rotating Environment Variables](https://vercel.com/docs/environment-variables/rotating-secrets?from=related) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
+- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential?from=related)
+- [Key rotation](https://vercel.com/docs/kms/concepts/key-rotation?from=related) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
 - [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets?from=related)
 - [Native Integration Flows](https://vercel.com/docs/integrations/create-integration/marketplace-flows?from=related) — Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integra
-- [Building Integrations with Vercel REST API](https://vercel.com/docs/integrations/create-integration/vercel-api-integrations?from=related) — Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
-- [Using Integrations API](https://vercel.com/docs/integrations/create-integration/marketplace-api?from=related) — Learn how to authenticate and use the Integrations REST API to build your integration server.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/secrets-rotation.graph.md](/docs/integrations/create-integration/secrets-rotation.graph.md)
 <!-- /docsgraph:related -->

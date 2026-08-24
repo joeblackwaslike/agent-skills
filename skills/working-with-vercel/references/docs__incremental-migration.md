@@ -16,8 +16,8 @@ related:
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e82e5a61304bb426a56736edb298cc5410781a3d86256bec0345562e0e77f68d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7d33f929718824401b5e28d8fa4861aa70262d41caeb13ea22bf6cc2c27bd19b"
 ---
 
 # Incremental Migration to Vercel
@@ -37,6 +37,7 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related) — Migrate your website's configuration from Netlify to Vercel
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes?from=related) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/incremental-migration.graph.md](/docs/incremental-migration.graph.md)
 <!-- /docsgraph:related -->

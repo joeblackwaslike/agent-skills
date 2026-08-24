@@ -13,8 +13,8 @@ related:
 summary: Learn how to connect Vercel to your third-party account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/add-a-connectable-account.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b4b237fa59d35baead0862a4a8a85cfb5a4dec7847d6c48701cb9611271a4b1d"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "22a56a25c4f37270c584890113007a10a5c838558c012d1584ddf8b74a6a4643"
 ---
 
 # Add a Connectable Account
@@ -27,11 +27,12 @@ sha256: "b4b237fa59d35baead0862a4a8a85cfb5a4dec7847d6c48701cb9611271a4b1d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Connect](https://v0.app/docs/vercel-connect?from=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Concepts](https://vercel.com/docs/connect/concepts?from=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+- [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md)
 <!-- /docsgraph:related -->

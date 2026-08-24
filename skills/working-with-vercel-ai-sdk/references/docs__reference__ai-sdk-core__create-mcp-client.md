@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "0c8568a646d1898758e492ac614c2834509a8d0e4eec77fc9155a202439b5164"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "1257a91f77beb018ba00f831aa0fef89b41b58c93775c635fa400350cbdeafb4"
 ---
 
 # `createMCPClient()`
@@ -122,14 +122,14 @@ It currently does not support accepting notifications from an MCP server, and cu
                       type: 'string',
                       isOptional: true,
                       description:
-                        'Initial MCP session id to send with resumed Streamable HTTP requests after initialization. Pair with initialInitializeResult when using createMCPClient. Only used by the HTTP transport.',
+                        'Initial legacy MCP session id to send with resumed Streamable HTTP requests after initialization. Pair with initialInitializeResult when using createMCPClient. Only used by the HTTP transport and initialization-based protocol versions.',
                     },
                     {
                       name: 'initialProtocolVersion',
                       type: 'string',
                       isOptional: true,
                       description:
-                        'Initial MCP protocol version to send before initialize negotiates one. Only used by the HTTP transport.',
+                        'Initial legacy MCP protocol version to send before initialize negotiates one. Only used by the HTTP transport.',
                     },
                     {
                       name: 'onSessionIdChange',
@@ -168,7 +168,7 @@ It currently does not support accepting notifications from an MCP server, and cu
               type: 'RequestOptions',
               isOptional: true,
               description:
-                'Optional signal and timeout settings that bound transport startup and the initialize request. A timeout or abort closes the transport and rejects createMCPClient.',
+                'Optional signal and timeout settings that bound transport startup and protocol negotiation. A timeout or abort closes the transport and rejects createMCPClient.',
             },
             {
               name: 'clientName',
@@ -207,14 +207,14 @@ It currently does not support accepting notifications from an MCP server, and cu
               type: 'InitializeResult',
               isOptional: true,
               description:
-                'Initialize result from a previous MCP session. When provided, the client starts the transport and reuses this metadata without sending a new initialize request.',
+                'Initialize result from a previous legacy MCP session. When provided, the client starts the transport and reuses this metadata without sending a new initialize request.',
             },
             {
               name: 'capabilities',
               type: 'ClientCapabilities',
               isOptional: true,
               description:
-                'Optional client capabilities to advertise during initialization. For example, set { elicitation: {} } to enable handling elicitation requests from the server.',
+                'Optional client capabilities to advertise during legacy initialization or on each stateless modern request. For example, set { elicitation: {} } to enable handling elicitation requests from the server.',
             },
           ],
         },
@@ -233,13 +233,13 @@ Returns a Promise that resolves to an `MCPClient` with the following properties 
       name: 'initializeResult',
       type: 'InitializeResult',
       description:
-        'The full initialize result used by this client, either from the server during initialization or from initialInitializeResult.',
+        'Connection metadata used by this client. For legacy servers this is the initialize result; for modern servers an equivalent value is derived from protocol discovery.',
     },
     {
       name: 'serverInfo',
       type: 'Configuration',
       description:
-        'Information about the connected MCP server (name, version, optional title), as reported during the initialize handshake.',
+        'Information about the connected MCP server (name, version, optional title), as reported during initialization or protocol discovery.',
     },
     {
       name: 'instructions',

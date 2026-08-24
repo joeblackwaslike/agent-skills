@@ -12,8 +12,8 @@ related:
 summary: Learn how to integrate an iframe into your application to support PCI DSS compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "64b674981355322429e4432382d9269349dd11c4b9152b96b48ad82c4583585b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "85588e902c4e9ff3367e29caac56f5cdc5983f7bcea1b1bf32c5b4ebed7844a9"
 ---
 
 # PCI DSS iframe Integration
@@ -32,7 +32,7 @@ sha256: "64b674981355322429e4432382d9269349dd11c4b9152b96b48ad82c4583585b"
 - [Commerce and Payments](https://vercel.com/docs/integrations/ecommerce?from=related) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
 - [Stripe](https://vercel.com/docs/integrations/ecommerce/stripe?from=related) — Connect your Stripe account to Vercel and accept payments in your applications.
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Security Headers](https://vercel.com/docs/cdn-security/security-headers?from=related) — Learn how the Content Security Policy \(CSP\) offers defense against web vulnerabilities, its key features, and best pra
+- [Security Headers](https://vercel.com/docs/cdn-security/security-headers?from=related) — Learn how the Content Security Policy \\(CSP\\) offers defense against web vulnerabilities, its key features, and best pra
 - [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/security/pci-dss.graph.md](/docs/security/pci-dss.graph.md)

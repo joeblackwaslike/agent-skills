@@ -11,13 +11,13 @@ related:
   - /docs/projects
   - /docs/deployments/environments
   - /docs/microfrontends/configuration
-  - /docs/microfrontends/path-routing
+  - /docs/microfrontends/routing
   - /docs/frameworks/full-stack/sveltekit
 summary: Learn about getting started on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "3026ff02d1701cb25b0c986fc5eabfb5a0104e1082968062e75c15e5a30e8b4e"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "2a467ef0670ee3f0ab50bafa4b8f946ab1e5566019c42532dfc07f9b749b9842"
 ---
 
 # Getting started with microfrontends
@@ -38,6 +38,7 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
 - [Build System](https://vercel.com/docs/fundamentals/builds?from=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -109,7 +110,7 @@ Before diving into implementation, it's helpful to understand these core concept
   ```
   Application names in `microfrontends.json` should match the Vercel project names, see the [microfrontends configuration](/docs/microfrontends/configuration) documentation for more information.
 
-  See the [path routing](/docs/microfrontends/path-routing) documentation for details on how to configure the routing for your microfrontends.
+  See the [routing](/docs/microfrontends/routing) documentation for details on how to configure routing for your microfrontends.
 
 - ### Install the `@vercel/microfrontends` package
   In the directory of the microfrontend application, install the package using the following command:
@@ -160,7 +161,7 @@ Before diving into implementation, it's helpful to understand these core concept
   already set `generateBuildId` manually cannot use `supportPagesRouter`.
   > For \['nextjs-app', 'nextjs']:
   The `withMicrofrontends` function will automatically add an [asset
-  prefix](/docs/microfrontends/path-routing#asset-prefix) to the application so
+  prefix](/docs/microfrontends/routing#configure-an-asset-prefix) to the application so
   that you do not have to worry about that. Next.js applications that use
   [`basePath`](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath)
   are not supported right now.
@@ -254,7 +255,7 @@ Before diving into implementation, it's helpful to understand these core concept
 
 - Learn how to use the `@vercel/microfrontends` package to manage [local development](/docs/microfrontends/local-development).
 - For polyrepo setups (separate repositories), see the [polyrepo configuration guide](/docs/microfrontends/local-development#polyrepo-setup).
-- [Route more paths](/docs/microfrontends/path-routing) to your microfrontends.
+- [Route more paths](/docs/microfrontends/routing) to your microfrontends.
 - To learn about other microfrontends features, visit the [Managing Microfrontends](/docs/microfrontends/managing-microfrontends) documentation.
 - [Set up the Vercel Toolbar](/docs/microfrontends/managing-microfrontends/vercel-toolbar) for access to developer tools to debug and manage microfrontends.
 

@@ -1,8 +1,8 @@
 ---
 title: "VS Code devcontainer CLI"
 source: "https://code.visualstudio.com/docs/devcontainers/devcontainer-cli"
-fetched_at: "2026-08-17T04:40:34.367Z"
-sha256: "bf5433f56a4997906e6685b1b8f596ce5900134243ca89e9620b2b2f527ff1ed"
+fetched_at: "2026-08-24T04:42:55.961Z"
+sha256: "a19d933adf1560481cb0a6fd32ff0bad29092128ed2bc0594ed7fb1157ee46f5"
 ---
 
 # VS Code devcontainer CLI
@@ -240,4 +240,4 @@ The dev container CLI and specification are under active development and we welc
 
                 
                 
-                8/12/2026
+                8/19/2026

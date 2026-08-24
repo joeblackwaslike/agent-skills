@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "49673d8feaf94493cf3bafefd4d640d2eca6bd52797b8fecbe122a724ed8a61a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "eb70b98a7b54d95e0811780187e6d09aa656122094dbd0234cc50af417dd4fff"
 ---
 
 # Using Monorepos
@@ -34,7 +34,7 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \(a single framework, one project with Services, or separate pr
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
 - [Project Linking](https://vercel.com/docs/cli/project-linking?from=related) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.

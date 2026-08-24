@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/README.md"
-fetched_at: "2026-07-06T05:35:43.833Z"
-sha256: "7ab03d5857e672fc85eb00c3ec79d24c0bf0d8cf45db5a125f39663074a54305"
+fetched_at: "2026-08-24T04:47:30.586Z"
+sha256: "0ad281b5b19f3a179e39e4b1b05e36a47ccfc851577787b246a5fc06d7b109c9"
 ---
 
 # Gemini API skills
@@ -46,7 +46,7 @@ and 96% with Gemini 3.1 Pro. For more details, see our blog post:
 
 ## Installation
 
-You can browse and install skills using either the [Vercel skills CLI](https://skills.sh) or the [Context7 skills CLI](https://context7.com).
+You can install these skills across your preferred AI coding assistants and package managers:
 
 ### Using [Vercel skills CLI](https://skills.sh)
 
@@ -66,6 +66,46 @@ npx ctx7 skills install /google-gemini/gemini-skills
 
 # Install a specific skill (e.g., gemini-interactions-api).
 npx ctx7 skills install /google-gemini/gemini-skills gemini-interactions-api
+```
+
+### Antigravity
+
+The Gemini skills come bundled with Antigravity, find them under
+⚙️ → Customizations → Build with Google Plugins.
+
+Or install through the AGY CLI:
+
+```sh
+# Install it directly
+agy plugin install https://github.com/google-gemini/gemini-skills
+```
+
+### Claude Code
+
+```sh
+# Register the marketplace
+/plugin marketplace add google-gemini/gemini-skills
+
+# Install the plugin
+/plugin install gemini-skills@gemini-skills
+```
+
+### Cursor
+
+Install directly from the Cursor plugin directory or via the editor command:
+
+```text
+/add-plugin google-gemini/gemini-skills
+```
+
+### OpenAI Codex
+
+```sh
+# Add the marketplace source
+codex plugin marketplace add https://github.com/google-gemini/gemini-skills
+
+# Install the plugin
+codex plugin install gemini-skills
 ```
 
 ## More info

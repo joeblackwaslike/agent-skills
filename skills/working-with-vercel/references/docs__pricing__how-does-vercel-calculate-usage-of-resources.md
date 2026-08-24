@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d675787dfac002831f51c695bd8ab0f207db7d5957bb430939bf3e4a6d182070"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "efe9d6c92f60d55026e60437f2826cbbbffe627149f0f1aaac4ae5259192ada1"
 ---
 
 # Calculating usage of resources
@@ -30,7 +30,7 @@ It's important to understand how usage and accrual happen on Vercel, in order to
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \(ISR\) behavior to find pages and tags that revalidate to
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs?from=related) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.

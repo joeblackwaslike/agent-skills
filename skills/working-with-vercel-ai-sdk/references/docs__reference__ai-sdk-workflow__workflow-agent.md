@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "dc5f91b2a63b84d5774c6ee25d0609e2ba22c3461f218abad84e020bb62edf38"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "6f01bf3d24175a2a875f6f2d5330f238165efbead7ff1f6391f9f99366e9c882"
 ---
 
 # `WorkflowAgent`
@@ -405,7 +405,8 @@ To see `WorkflowAgent` in action, check out [these examples](#examples).
       name: 'maxRetries',
       type: 'number',
       isOptional: true,
-      description: 'How many times to retry on failure. Default: 2.',
+      description:
+        'How many times to retry retryable model-call failures. Set to 0 to disable retries. Retry-After response headers are respected, and durable workflow step retries are not stacked. Default: 2.',
     },
     {
       name: 'headers',
@@ -680,6 +681,12 @@ Returns a `Promise<WorkflowAgentStreamResult>` with the following properties:
         'Tool results from the last step. Only includes results for tools that were executed.',
     },
     {
+      name: 'error',
+      type: 'unknown | undefined',
+      description:
+        "The original value from a model stream error part. The property is present when an error part was emitted, even if its value is undefined; use `'error' in result` to distinguish that case.",
+    },
+    {
       name: 'output',
       type: 'OUTPUT',
       description:
@@ -690,7 +697,7 @@ Returns a `Promise<WorkflowAgentStreamResult>` with the following properties:
 
 ## Utilities
 
-### `createModelCallToUIChunkTransform()`
+### `createModelCallToUIChunkTransform(options?)`
 
 Creates a `TransformStream` that converts raw `ModelCallStreamPart` chunks (written by the agent to the `writable` stream) into `UIMessageChunk` objects suitable for client consumption.
 
@@ -701,6 +708,20 @@ return createUIMessageStreamResponse({
   stream: run.readable.pipeThrough(createModelCallToUIChunkTransform()),
 });
 ```
+
+When resuming with a `WorkflowChatTransport` cursor, replay the raw workflow
+stream from index `0` and pass the non-negative UI chunk index to the transform:
+
+```ts
+const readable = run
+  .getReadable({ startIndex: 0 })
+  .pipeThrough(createModelCallToUIChunkTransform({ uiStartIndex: startIndex }));
+```
+
+`uiStartIndex` must be a non-negative safe integer. Raw model stream parts and
+UI message chunks are not one-to-one, so do not pass a UI chunk index to
+`getReadable`. Negative tail indexes require a durable stream that already
+stores `UIMessageChunk` objects.
 
 ### `toUIMessageChunk()`
 

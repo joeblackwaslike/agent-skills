@@ -12,8 +12,8 @@ related:
 summary: This reference provides information on how the @vercel/og package works on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "cee47c591251cf3d7b960db11cb4d9b6a56011d4556843ed786d358737331616"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f89c8e8201ab7cb2288e8209713460380ef813c063740b531b9412e6bcc4832b"
 ---
 
 # @vercel/og Reference
@@ -36,6 +36,7 @@ The package exposes an `ImageResponse` constructor, with the following parameter
 - [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related) — Learn how to add metadata to your pages and create dynamic OG images.
 - [Next.js](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Image Optimization](https://vercel.com/docs/image-optimization?from=related) — Transform and optimize images to improve page load performance.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md)
 <!-- /docsgraph:related -->

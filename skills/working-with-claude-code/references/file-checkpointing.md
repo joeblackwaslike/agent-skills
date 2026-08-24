@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/file-checkpointing.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "1419f50f8a20774f3aa22774ee20bc4d08b25c7a09602b301d51af59f17c7395"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "a13c717ee34e1377ac64f5f2ae295b72d95e583a9a5d4e8992a37510e86bb245"
 ---
 
 > ## Documentation Index
@@ -31,12 +31,6 @@ When you enable file checkpointing, the SDK creates backups of files before modi
 <Note>
   File rewinding restores files on disk to a previous state. It does not rewind the conversation itself. The conversation history and context remain intact after calling `rewindFiles()` (TypeScript) or `rewind_files()` (Python).
 </Note>
-
-The checkpoint system tracks:
-
-* Files created during the session
-* Files modified during the session
-* The original content of modified files
 
 When you rewind to a checkpoint, Claude Code deletes the files it created and restores the files it modified to their content at that point. Claude Code skips a tracked path that is a symlink, hard link, or other non-regular file. It also skips a tracked file whose parent directory no longer resolves to its checkpoint-time location, or whose backup it can't read safely. [`RewindFilesResult`](/docs/en/agent-sdk/typescript#rewindfilesresult) counts every skipped path in its `skippedLinks` field. Skipping requires Claude Code v2.1.216 or later; before v2.1.216, a rewind wrote and deleted through links at tracked paths.
 

@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   - /docs/sandbox
 related:
+  - /docs/sandbox/concepts/regions
   - /docs/notifications
   - /docs/plans/hobby
   - /docs/plans/pro-plan
   - /docs/spend-management
-  - /docs/sandbox/concepts/snapshots
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the limits that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "284f63cf8a14e7b280b7ea7edf361c59162a555e09502f212a7c9006104da769"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "551c2a7e36b71df8ba19b9ea5b36643e26b056962ab91369fe8ed448d0efb65c"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -31,15 +31,15 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox?from=related) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related) — Add an \`executeCode\` tool to your AI SDK agent with the \`ai-sdk-tool-code-execution\` package to run Python 3.13 insi
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \(VCR
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Concepts](https://vercel.com/docs/sandbox/concepts?from=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related) — Learn about the pricing for Vercel Blob.
+- [Plans](https://vercel.com/docs/plans?from=related) — Learn about the different plans available on Vercel.
+- [San Francisco, USA \\(sfo1\\)](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
 Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbox/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -54,13 +54,21 @@ Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbo
 | Sandbox Data Transfer | 20 GB/month | $0.15/GB | $0.15/GB |
 | Snapshot Storage | 15 GB (lifetime) | $0.08/GB-month | $0.08/GB-month |
 | Concurrent Sandboxes | 10 | 10,000 | 10,000 |
-| Max Runtime Duration | 45 minutes | 24 hours | 24 hours |
+| Max Session Duration | 45 minutes | 24 hours | 24 hours |
 | vCPU Allocation Rate | 20-40/min | 5,000/min | 5,000/min |
 
+
+The Active CPU and Provisioned Memory rates in this table apply to the default `iad1` region. See [Regional pricing](#regional-pricing) for the rates in each region.
 
 On each billing cycle, Hobby plans receive a monthly allotment of Sandbox usage at no cost. Pro and Enterprise plans are charged based on usage.
 
 Once you exceed your included limit on Hobby, sandbox creation is [paused](#hobby) until the next billing cycle. Pro and Enterprise usage is charged against your account.
+
+## Regional pricing
+
+Sandboxes run in the [region](/docs/sandbox/concepts/regions) you choose when you create them. Active CPU and Provisioned Memory rates vary by region. The prices are per hour for CPU and per GB-hr for memory:
+
+Sandbox Creations, Network, and [Snapshot Storage](#snapshot-storage) are billed at the same rate in all regions where Sandbox is available.
 
 ## Billing information
 
@@ -112,13 +120,13 @@ For example, downloading an npm package is free. If you run a web server on an e
 
 ### Snapshot Storage
 
-The storage used by [snapshots](/docs/sandbox/concepts/snapshots), measured in GB per month.
+The storage used by [snapshots](/docs/sandbox/concepts/snapshots), measured in GB per month. A snapshot is stored in the [region](/docs/sandbox/concepts/regions) of the sandbox it was created from, and storage is billed at the same flat rate per GB-month in every region. See the [pricing table](#pricing) for the rate.
 
 Use a smaller [managed image](/docs/sandbox/concepts/images#vercel-managed-images) like `vercel/sandbox/ubuntu` or your own [custom image](/docs/sandbox/concepts/images#custom-images) to reduce individual snapshot sizes. Set an appropriate [snapshot retention period](/docs/sandbox/concepts/snapshots#snapshot-retention) to avoid storing snapshots longer than needed.
 
 ## Example calculations
 
-The following examples show estimated costs for common scenarios on Pro/Enterprise plans.
+The following examples show estimated costs for common scenarios on Pro/Enterprise plans, using rates for the `iad1` region.
 
 | Scenario           | Duration | vCPUs | Memory | Active CPU Cost | Memory Cost | Total  |
 | ------------------ | -------- | ----- | ------ | --------------- | ----------- | ------ |
@@ -147,11 +155,13 @@ Each sandbox is automatically provisioned 32 GB of ephemeral NVMe storage. You c
 
 The default timeout is 5 minutes. You can configure this using the `timeout` option when creating a sandbox, and extend it using `sandbox.extendTimeout()`. See [Working with Sandbox](/docs/sandbox/working-with-sandbox#execute-long-running-tasks) for details.
 
-| Plan       | Maximum duration |
-| ---------- | ---------------- |
-| Hobby      | 45 minutes       |
-| Pro        | 24 hours         |
-| Enterprise | 24 hours         |
+The maximum duration applies to a single [session](/docs/sandbox/concepts/persistent-sandboxes#sandboxes-and-sessions), not to the sandbox itself. The limit resets every time a sandbox stops and resumes, so the total lifetime of a [persistent sandbox](/docs/sandbox/concepts/persistent-sandboxes) is effectively unbounded.
+
+| Plan       | Maximum session duration |
+| ---------- | ------------------------ |
+| Hobby      | 45 minutes               |
+| Pro        | 24 hours                 |
+| Enterprise | 24 hours                 |
 
 ### Concurrency quota
 
@@ -191,11 +201,13 @@ Deleting a sandbox, snapshot, or drive is limited to 20 requests per second per 
 
 ### Snapshot expiration
 
-Snapshots expire **30 days after their last use by default**. You can configure the [expiration time](/docs/sandbox/concepts/snapshots#snapshot-limits) to control how long snapshots are retained.
+Snapshots expire **30 days after their last use by default**. You can configure the [expiration time](/docs/sandbox/concepts/snapshots#snapshot-retention) to control how long snapshots are retained, including removing the expiration so they are kept indefinitely.
 
 ### Regions
 
-Currently, Vercel Sandbox is only available in the `iad1` region.
+Vercel Sandbox is available in the `iad1` (default), `sfo1`, `cle1`, and `cdg1` regions. You can choose the region per sandbox or set a project default. See [Regions](/docs/sandbox/concepts/regions).
+
+Active CPU and Provisioned Memory rates vary by region. See [Regional pricing](#regional-pricing) for the rates in each region. Sandbox Creations, Network, and [Snapshot Storage](#snapshot-storage) are billed at the same rate in all regions where Sandbox is available.
 
 ## Managing costs
 

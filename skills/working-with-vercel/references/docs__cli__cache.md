@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ecd5c51dcea5606824173a47e78e294f11772725d5dcbbe109b9bd5b39bcc20a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3febe376b1426e597212402048b89a7b1456cdbafc43ad2fdec994bc1e407b42"
 ---
 
 # vercel cache
@@ -30,10 +30,10 @@ The `vercel cache` command is used to manage the cache for your project, such as
 
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Debug Cache Issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
-- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Cache Status](https://vercel.com/docs/caching/cache-status?from=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Data Cache](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 
 Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md)
 <!-- /docsgraph:related -->

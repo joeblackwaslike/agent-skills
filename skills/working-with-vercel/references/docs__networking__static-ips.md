@@ -16,8 +16,8 @@ related:
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1b26fe755bba3fd8bf5df01c0f12b566b80cbf3f068afd1b6ced65ec94e8087f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "51a541d472891f355261b18c9f4bfee0b391d433fa5646d7a2dd77f907f09d43"
 ---
 
 # Static IPs
@@ -30,16 +30,16 @@ sha256: "1b26fe755bba3fd8bf5df01c0f12b566b80cbf3f068afd1b6ced65ec94e8087f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related) — You can securely connect a deployment to external services by using a stable set of IP addresses.
+- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — You can allowlist IP addresses with Vercel Secure Compute and Static IPs
 - [Trusted IPs](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Overview](https://vercel.com/docs/cdn?from=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [Paris, France \(cdg1\)](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related) — Vercel pricing for the Paris, France \(cdg1\) region.
-- [Singapore \(sin1\)](https://vercel.com/docs/pricing/regional-pricing/sin1?from=related) — Vercel pricing for the Singapore \(sin1\) region.
+- [Paris, France \\(cdg1\\)](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [Cleveland, USA \\(cle1\\)](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md)
 <!-- /docsgraph:related -->

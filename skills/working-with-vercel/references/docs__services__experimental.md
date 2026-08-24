@@ -13,8 +13,8 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d449a4f748ee67f7b69e9d8f0f617e3229b44ce74f0515c0c49e6c63584aa499"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "32342886cbd07de5482cb6c3a8dbe18e68b948916b99aed1ae0c0de3262e590f"
 ---
 
 # Experimental Services
@@ -31,7 +31,7 @@ sha256: "d449a4f748ee67f7b69e9d8f0f617e3229b44ce74f0515c0c49e6c63584aa499"
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \(a single framework, one project with Services, or separate pr
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [Services](https://vercel.com/docs/build-output-api/services?from=related) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related) — Options available for service configuration.
 - [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b1ac82f0387d30abd0d35a4c819a5a3639bd4085adb965a7ea8d9081c8888886"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "86be5f99e64b74833d78af5eacbfbc75926df00edabe00703545a757ecc3b302"
 ---
 
 # Tool Calls
@@ -34,11 +34,11 @@ The Chat Completions API supports function calling, allowing models to call tool
 - [Tool Calling](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling?from=related) — Define tools the model can call with the OpenAI Responses API.
 - [Call Tools](https://ai-sdk.dev/cookbook/next/call-tools?from=related)
 - [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related)
-- [Tools](https://eve.dev/docs/tools?from=related) — Define typed actions the agent can call, and gate sensitive ones on human approval.
+- [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools?from=related) — AI SDK tools for the v0 API
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
-- [AI SDK Tools](https://chat-sdk.dev/docs/ai/ai-sdk-tools?from=related) — Give an AI agent the ability to operate inside your workspace. Post messages, send DMs, react, edit, delete; all with bu
+- [Call Tools in Multiple Steps](https://ai-sdk.dev/cookbook/next/call-tools-multiple-steps?from=related)
 - [Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related) — Use the AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Chat Completions](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions?from=related) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.graph.md)
 <!-- /docsgraph:related -->

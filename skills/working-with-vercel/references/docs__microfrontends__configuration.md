@@ -14,8 +14,8 @@ related:
 summary: Learn about configuration on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1702c4519b887435b9922b8de3148776e55df1c0060dd50862ddb80af8b81fcc"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "84a30ea93086822684c19afe1756ec2dfce75940ec1eb301a14c7a7328764911"
 ---
 
 # Microfrontends Configuration
@@ -33,7 +33,7 @@ The `microfrontends.json` file is used to configure your microfrontends. If this
 - [Local Development](https://vercel.com/docs/microfrontends/local-development?from=related) — Learn about local development on Vercel.
 - [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Managing Microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related) — Learn about managing microfrontends on Vercel.
-- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/configuration.graph.md](/docs/microfrontends/configuration.graph.md)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/helicone.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "a195839c1a6a5504dbab3327cdeaa5c7fa918ab9666d6ddddfa730bb9f4d335f"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "a1488317ff1c6b4b454cf2fc69f9ffa12df09f0d6381e754c9fc182be3f74f2e"
 ---
 
 # Helicone
@@ -163,6 +163,7 @@ For more information about these features and advanced configuration options, vi
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

@@ -16,8 +16,8 @@ related:
 summary: Environment variables that cannot be decrypted once created.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "790f6df4558870208ce3a2c2c9883a774c94f30a62c62cbebe2753068f1679e4"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "42feef615a8130f80d9b12bd5af3cc504facd90b099262adee77e9fb981ab743"
 ---
 
 # Sensitive environment variables
@@ -30,7 +30,10 @@ Sensitive environment variables are [environment variables](/docs/environment-va
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related) — How v0 and Vercel work in tandem.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Sending Emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related) — SMTP is the harder path inside Vercel Functions. Learn how to send emails over an HTTP API, which Next.js pattern fits y
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
 - [Managing Environment Variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related) — Learn how to create and manage environment variables for Vercel.
 - [vercel env](https://vercel.com/docs/cli/env?from=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [Manage Across Environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C

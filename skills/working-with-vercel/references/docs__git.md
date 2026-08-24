@@ -16,8 +16,8 @@ related:
 summary: Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLab, and Bitbucket projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b8bcb8ba4ebd1c7bd96a772bab719136f7035b3a75076c860df60f9cc3dab873"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "db0195585321f9a0cbb940796602f8edaaeb2ed49b888eabeee24b558812f174"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -33,7 +33,7 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 - [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
-- [Using Non-default Branches for Production Deployments](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch as Production on your Vercel project.
+- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [Deploy from CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related) — Set up and deploy a Vercel project using the CLI, from linking to production.

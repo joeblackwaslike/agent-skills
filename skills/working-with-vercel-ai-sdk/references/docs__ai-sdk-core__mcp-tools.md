@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "deffaa84501580a255f10494665432a662915c53546492e7eef1af1860e8a24c"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "9fe13a2b474f8ecca437c9e4dcbd43d06168a54728410ed0ca25496181e80589"
 ---
 
 # Model Context Protocol (MCP)
@@ -25,6 +25,12 @@ Create an MCP client using one of the following transport options:
 - **HTTP transport (Recommended)**: Either configure HTTP directly via the client using `transport: { type: 'http', ... }`, or use MCP's official TypeScript SDK `StreamableHTTPClientTransport`
 - SSE (Server-Sent Events): An alternative HTTP-based transport
 - `stdio`: For local development only. Uses standard input/output streams for local MCP servers
+
+The AI SDK MCP client supports both legacy initialization-based protocol
+versions and stateless MCP `2026-07-28`. The built-in stdio transport probes
+with `server/discover` and automatically falls back to the legacy
+`initialize` handshake for older servers. Custom transports can opt into this
+negotiation with `supportsProtocolVersionDiscovery: true`.
 
 ### HTTP Transport (Recommended)
 
@@ -50,8 +56,9 @@ const mcpClient = await createMCPClient({
 });
 ```
 
-If the MCP server uses Streamable HTTP sessions, you can reattach to a saved
-session by restoring both the previous session id and initialize result:
+If a legacy MCP server uses Streamable HTTP sessions, you can reattach to a
+saved session by restoring both the previous session id and initialize result.
+MCP `2026-07-28` is stateless and does not use these options:
 
 ```typescript
 import { createMCPClient } from '@ai-sdk/mcp';
@@ -203,6 +210,32 @@ const myOAuthClientProvider = {
 This hook is called before the SDK fetches authorization server metadata, so a
 rejected URL is not requested. It is optional and does not change existing OAuth
 flows unless you implement it.
+
+### OAuth Callback Issuer Validation
+
+When completing an OAuth authorization callback, pass the callback's `iss`
+parameter to `auth` as `callbackIssuer`:
+
+```typescript
+import { auth } from '@ai-sdk/mcp';
+
+const callbackUrl = new URL(request.url);
+
+await auth(myOAuthClientProvider, {
+  serverUrl: 'https://mcp.example.com',
+  authorizationCode: callbackUrl.searchParams.get('code')!,
+  callbackState: callbackUrl.searchParams.get('state') ?? undefined,
+  callbackIssuer: callbackUrl.searchParams.get('iss') ?? undefined,
+});
+```
+
+When `iss` is present, it must exactly match the discovered authorization
+server issuer. The authorization code is not exchanged when it does not match.
+
+Dynamic client registration requests include an OAuth `application_type`. The
+client infers `native` for loopback, localhost, and custom-scheme redirects,
+and `web` for remote HTTP(S) redirects. You can override this by setting
+`application_type` in the provider's `clientMetadata`.
 
 ### Retrying Transient Tool Failures
 

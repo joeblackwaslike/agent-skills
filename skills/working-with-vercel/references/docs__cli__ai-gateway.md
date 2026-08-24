@@ -16,8 +16,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, routing rules, models, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "21839db7dd15fdd37dc903b188a5dd119c0e38b028720adbdaf6e3d546d7c29f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "533e72d7c4414d34139274bb75aa7ddb9ad89209c59d67607976e3034a65b480"
 ---
 
 # vercel ai-gateway
@@ -35,10 +35,11 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 - [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
 - [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue?from=related) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [CLI](https://eve.dev/docs/reference/cli?from=related) — Reference for every eve CLI command: init, set, info, build, start, dev, logs, trace, link, deploy, eval, channels, and
+- [Migrate to AI Gateway](https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway?from=related) — Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use tod
 - [Conductor](https://vercel.com/docs/ai-gateway/coding-agents/conductor?from=related) — Use Conductor with the AI Gateway.
 - [Grok Build](https://vercel.com/docs/ai-gateway/coding-agents/grok-build?from=related) — Use Grok Build with the AI Gateway.
 - [Superset](https://vercel.com/docs/ai-gateway/coding-agents/superset?from=related) — Use Superset with the AI Gateway.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/cli/ai-gateway.graph.md](/docs/cli/ai-gateway.graph.md)
 <!-- /docsgraph:related -->

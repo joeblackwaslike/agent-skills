@@ -16,8 +16,8 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7ce9493e54f616c2108aeae0087cd3329ff274cfbb72687b55eb4cbd542bbc94"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "5d47ed9278132f578152f1a1de6c5d55316c34667e1cffae943e4f7a7b69dbd4"
 ---
 
 # Storage on Vercel Marketplace
@@ -36,8 +36,9 @@ sha256: "7ce9493e54f616c2108aeae0087cd3329ff274cfbb72687b55eb4cbd542bbc94"
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Overview](https://vercel.com/docs/storage?from=related) — Store large files and global configuration with Vercel's storage products.
-- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
+- [Databases](https://v0.app/docs/databases?from=related) — Build full-stack applications with v0's database integrations.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Marketplace Vercel API](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related) — Learn about marketplace vercel api on Vercel.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 

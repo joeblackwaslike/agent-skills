@@ -13,8 +13,8 @@ related:
 summary: Build a low-latency, speech-to-speech voice agent with AI Gateway and the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "581e3766d1dfb797ea6466b00771fa8c62ba51a6e4443a5554691239424940a7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ac27d317bf306d8a68f7b0c9698f8bd071c666a8432b362a10bc4e0b2c3ba757"
 ---
 
 # Realtime Quickstart
@@ -38,6 +38,7 @@ This quickstart gets you to a working realtime session two ways with the AI SDK:
 - [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
 - [Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech?from=related) — Generate spoken audio from text with speech models through Vercel AI Gateway.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/realtime.graph.md](/docs/ai-gateway/getting-started/realtime.graph.md)
 <!-- /docsgraph:related -->

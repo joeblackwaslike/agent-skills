@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/README.md"
-fetched_at: "2026-07-06T05:53:11.910Z"
-sha256: "7429bacdb67d2fcd51abc00661f191fdc2a0f499d92331acefc0563ad542fbdd"
+fetched_at: "2026-08-24T04:59:20.149Z"
+sha256: "5d220ae81fe2f9846f8add807faa69a2dc7b59f8b217a8030fa7ff5907d3fd64"
 ---
 
 <!-- markdownlint-configure-file {
@@ -42,7 +42,15 @@ sha256: "7429bacdb67d2fcd51abc00661f191fdc2a0f499d92331acefc0563ad542fbdd"
 
 <hr />
 
-# zoxide
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./contrib/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./contrib/logo-light.svg">
+    <img alt="zoxide logo" src="./contrib/logo-light.svg" height="128" width="128">
+  </picture>
+  <br />
+  zoxide
+</h1>
 
 [![crates.io][crates.io-badge]][crates.io]
 [![Downloads][downloads-badge]][releases]
@@ -274,7 +282,7 @@ zoxide can be installed in 4 easy steps:
    > ```
    >
    > **Note:**
-   > zoxide only supports Nushell v0.89.0+.
+   > zoxide only supports Nushell v0.106.0+.
 
    </details>
 
@@ -530,7 +538,7 @@ Environment variables[^2] can be used for configuration. They must be set before
 [termux]: https://github.com/termux/termux-packages/tree/master/packages/zoxide
 [tmux-session-wizard]: https://github.com/27medkamal/tmux-session-wizard
 [tmux-sessionx]: https://github.com/omerxx/tmux-sessionx
-[tutorial]: contrib/tutorial.webp
+[tutorial]: contrib/tutorial.gif
 [ubuntu packages]: https://packages.ubuntu.com/jammy/zoxide
 [vim]: https://github.com/vim/vim
 [void linux packages]: https://github.com/void-linux/void-packages/tree/master/srcpkgs/zoxide

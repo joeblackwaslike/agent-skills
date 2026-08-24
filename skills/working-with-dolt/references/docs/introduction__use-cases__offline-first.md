@@ -2,8 +2,8 @@
 title: Offline First
 description: Cloning a full database locally, working disconnected, then syncing changes back like git push/pull.
 source: "https://www.dolthub.com/docs/introduction/use-cases/offline-first.md"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "79c7b0d71abbd357dfb1eb058bd401bbe4e7cbea0742b8b247a188b8ffe43543"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "f47f298320d9f86483bad51c6a5f8414376b5420860bc8e7043b86836ca5e606"
 ---
 
 ## Problem
@@ -26,7 +26,7 @@ Conflicting writes are surfaced quickly and an operator or software can take add
 
 ## Dolt replaces
 
-## Custom syncing processes
+### Custom syncing processes
 
 Dolt replaces custom code to synchronize your client and server. This code is complicated and hard to get right. The Git [remote](/concepts/dolt/git/remotes) model of clone, fetch, push, and pull is a proven synchronization model. Dolt brings this model to the database allowing you to remove most of your synchronization code. 
 

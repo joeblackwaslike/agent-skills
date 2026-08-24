@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-08-17T04:40:34.367Z"
-sha256: "143b6e41f0a1ae1f98761fb63f9154e4dea42f1e9c424099c71d47414a63b33f"
+fetched_at: "2026-08-24T04:42:55.961Z"
+sha256: "9b46b8d3ada9d30f0b268936564d3da75dae20b0dc3f77608c0606cc991b03a3"
 ---
 
 # Available templates index
@@ -265,13 +265,13 @@ Templates
 | AI Compiler Environment | alan-chen-dongsheng | `ghcr.io/alan-chen-dongsheng/devcontainer-templates/ai_compiler_env:1.0.1` | `1.0.1` |
 | OpenCode Ralph Template | iyaki | `ghcr.io/iyaki/devcontainer-templates/opencode-ralph:1.0.0` | `1.0.0` |
 | Typo3 | thucke | `ghcr.io/thucke/devcontainer-templates/typo3:0.8.2` | `0.8.2` |
-| Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.3.0` | `0.3.0` |
+| Gazebo | althack | `ghcr.io/althack/devcontainers/gz:0.4.0` | `0.4.0` |
 | Magento Open Source | Doug Hatcher | `ghcr.io/doughatcher/devcontainer-templates/magento:0.3.0` | `0.3.0` |
-| Ansible Development Tools (AI-enhanced ansible-dev-tools) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.4.13` | `1.4.13` |
+| Ansible Development Tools (AI-enhanced ansible-dev-tools) | leogallego | `ghcr.io/leogallego/ansible-claude-code-devcontainer/claude-code-ansible:1.6.2` | `1.6.2` |
 | Bun | nozaq | `ghcr.io/bare-devcontainer/templates/bun:1.0.7` | `1.0.7` |
 | Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.2.7` | `1.2.7` |
 | Deno | nozaq | `ghcr.io/bare-devcontainer/templates/deno:1.0.3` | `1.0.3` |
-| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.2.8` | `1.2.8` |
+| Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.3.0` | `1.3.0` |
 | mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.3.3` | `1.3.3` |
 | Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.1.2` | `1.1.2` |
 | OpenTofu | nozaq | `ghcr.io/bare-devcontainer/templates/opentofu:1.0.1` | `1.0.1` |
@@ -279,6 +279,7 @@ Templates
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.2.8` | `1.2.8` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.0.8` | `1.0.8` |
 | Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.2.8` | `1.2.8` |
+| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.8.23-7.9.36` | `2026.8.23-7.9.36` |
 
 
             

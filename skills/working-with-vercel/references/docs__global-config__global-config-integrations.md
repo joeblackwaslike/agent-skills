@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "16f4db6f78819ab145fffb80d03c776203a3a533995b779ce7d6789a9e1c754a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "82225645d289232a837baf83b046bdf61cd24f860bd094ad1c28d7b32d1a5a8f"
 ---
 
 # Using Global Config with an integration
@@ -30,6 +30,7 @@ sha256: "16f4db6f78819ab145fffb80d03c776203a3a533995b779ce7d6789a9e1c754a"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related)
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related) — Learn how to use Global Configs in your projects.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related)
 - [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config?from=related)

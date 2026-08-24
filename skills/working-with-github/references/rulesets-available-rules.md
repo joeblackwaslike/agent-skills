@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-08-17T04:47:04.101Z"
-sha256: "4d4bed12037c442137ab9c44c48dc8b616300dd316aa359c5f85e497a86a19c1"
+fetched_at: "2026-08-24T04:49:51.110Z"
+sha256: "03876051b6ca412d9b0283d55bf6c0a019b733e1e4615a0ac76af93921134ff5"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -122,6 +122,23 @@ Optionally, you can require all comments on the pull request to be resolved befo
 Optionally, you can require a merge type of merge, squash, or rebase. This means the targeted branches may only be merged based on the allowed type. Additionally if the repository has disabled a merge method and the ruleset required a different method, the merge will be blocked. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github).
 {% endif %}
 
+{% ifversion repo-rules-copilot-extra-approval %}
+
+#### Additional approval for unattributed {% data variables.product.prodname_copilot_short %} pull requests
+
+> [!NOTE]
+> This feature is in {% data variables.release-phases.public_preview %} and subject to change.
+
+**Require an additional approval for unattributed {% data variables.product.prodname_copilot_short %} pull requests** is enabled by default, for both new and existing rulesets. When {% data variables.product.prodname_copilot_short %} opens a pull request that isn't attributed to a person, the ruleset requires one more approval than the number you configured. For example, a ruleset that requires one approval requires two approvals from people with write access.
+
+Requiring one approval usually means two people are involved in a change: the person who wrote it and the person who approved it. That assumption doesn't hold when {% data variables.product.prodname_copilot_short %} opens a pull request under its own app identity instead of on behalf of a person, for example when you prompt it from a shared context such as a group thread or channel. See [AUTOTITLE](/copilot/how-tos/copilot-integrations/integrate-cloud-agent-with-slack) and [AUTOTITLE](/copilot/how-tos/copilot-integrations/integrate-cloud-agent-with-teams).
+
+This setting has no effect if the ruleset requires zero approvals, so repositories that use pull requests as a record of changes rather than to gate on approvals are unaffected.
+
+If you clear this setting, these pull requests require only the number of approvals you configured. If you also require an approval from someone other than the last person to push, at least one approval must cover the last push and come from someone other than {% data variables.product.prodname_copilot_short %}.
+
+{% endif %}
+
 {% ifversion repo-rules-required-reviewer %}
 
 #### Required reviewers
@@ -215,8 +232,8 @@ If your repository has {% data variables.product.prodname_code_quality %} enable
 
 This rule blocks a pull request from being merged when either of two code coverage thresholds is not met:
 
-* **Minimum coverage percentage**: the aggregated code coverage for the pull request branch is below the configured percentage.
-* **Maximum coverage drop**: code coverage drops by more than the configured number of percentage points relative to the default branch.
+* **Minimum line coverage percentage**: the aggregated line coverage for the pull request branch is below the configured percentage.
+* **Maximum line coverage drop**: line coverage drops by more than the configured number of percentage points relative to the default branch.
 
 For how to configure the thresholds, the prerequisite for uploading coverage data, and how to roll the rule out safely, see [AUTOTITLE](/code-security/how-tos/maintain-quality-code/restrict-code-coverage).
 

@@ -3,7 +3,7 @@ title: updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexper
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d8a5510e2783874fe9577f602b21b871f04b7fbe8006afa7fb2b520de3c99295"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "33edf04248928e5dd74fd9924b905c2089b17c2d16866cec7fa477f016b6bea0"
 ---
 
 # Patch an existing experimentation item

@@ -13,8 +13,8 @@ related:
 summary: Use the Blackbox AI CLI with the AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/blackbox.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "105631bb280fe22c714a0ad282704206058b0660a491a4dd335fd28a20d6e49c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9e88769999552ce8005a4a9fbcddb2ab64b41152a95fe3de288a0497d7452519"
 ---
 
 # Blackbox AI
@@ -29,7 +29,7 @@ You can use the [Blackbox AI](https://blackbox.ai) CLI for AI-powered code gener
 
 - [Chatbox](https://vercel.com/docs/ai-gateway/chat-platforms/chatbox?from=related) — Use Chatbox with the AI Gateway.
 - [OpenCode](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related) — Use OpenCode with the AI Gateway.
-- [OpenClaw \(Clawdbot\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \(formerly Clawdbot\) with AI Gateway.
+- [OpenClaw \\(Clawdbot\\)](https://vercel.com/docs/ai-gateway/chat-platforms/openclaw?from=related) — Use OpenClaw \\(formerly Clawdbot\\) with AI Gateway.
 - [Cline](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related) — Use Cline with the AI Gateway.
 - [Roo Code](https://vercel.com/docs/ai-gateway/coding-agents/roo-code?from=related) — Use Roo Code with the AI Gateway.
 

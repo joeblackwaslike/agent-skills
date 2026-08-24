@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e6e06fc7965791ebab66b4a22a4ba8a2bda84195eafb37c07d680d451f71487c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "916f764aa7d9ffd1a07a8bc1c6ec6d0f0b23670ab7c4b69eed1ca8e4b7bccfca"
 ---
 
 # Secure Compute
@@ -31,10 +31,10 @@ sha256: "e6e06fc7965791ebab66b4a22a4ba8a2bda84195eafb37c07d680d451f71487c"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
-- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
 - [Create a Secure Compute network](https://vercel.com/docs/rest-api/networking/create-a-secure-compute-network?from=related)
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.

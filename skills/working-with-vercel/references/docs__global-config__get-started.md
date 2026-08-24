@@ -16,8 +16,8 @@ related:
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "039a015f63c6c040539f9db4d8e06a005bc108754b4e814f44e7138f7caefd4f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fc4abd9b15b75956336b289f4b0ca0d8185ad01ccb253272ad5a810e9b712ec0"
 ---
 
 # Getting started with Global Config
@@ -32,6 +32,7 @@ Global Config is a distributed key-value store that allows you to store and retr
 
 - [Redirecting](https://nextjs.org/docs/app/guides/redirecting?from=related) — Learn the different ways to handle redirects in Next.js.
 - [Redirecting](https://nextjs.org/docs/pages/guides/redirecting?from=related) — Learn the different ways to handle redirects in Next.js.
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related)
 - [LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related) — Learn how to use Global Config with Vercel's Statsig integration.

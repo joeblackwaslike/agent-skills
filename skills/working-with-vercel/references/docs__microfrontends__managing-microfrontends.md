@@ -16,8 +16,8 @@ related:
 summary: Learn about managing microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d4d79b9867b36fa132019d8a9185967a98e4d8a955199add87cec7ed6f6db73a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "22cbb316ef239a756a4df5abd40db7c71f521e194b23fcdea8b176bb3351f1b4"
 ---
 
 # Managing microfrontends
@@ -34,7 +34,7 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related) — Learn how to migrate legacy applications using microfrontends
 - [Debug routing on Vercel](https://vercel.com/kb/guide/debug-routing-on-vercel?from=related) — Learn how to debug how Vercel decides where to route your request
-- [Path Routing](https://vercel.com/docs/microfrontends/path-routing?from=related) — Learn about path routing on Vercel.
+- [Routing](https://vercel.com/docs/microfrontends/routing?from=related) — Learn about routing on Vercel.
 - [Getting Started](https://vercel.com/docs/microfrontends/quickstart?from=related) — Learn about getting started on Vercel.
 - [Testing & Troubleshooting](https://vercel.com/docs/microfrontends/troubleshooting?from=related) — Learn about testing & troubleshooting on Vercel.
 - [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,

@@ -15,8 +15,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b45644596b42186d64aa544f84472e7aaa71cab194bacfb2e32ccdb5018b0fa7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "679c47c47e4e23b15f615aa48fda9ee1198a20fecf7a7f8ff6fb8eca1bc70688"
 ---
 
 # Image Generation
@@ -33,7 +33,7 @@ The Vercel [AI Gateway](/docs/ai-gateway) supports image generation and editing 
 - [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
 - [Getting Started](https://vercel.com/docs/ai-gateway/getting-started?from=related) — Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice
 - [Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
-- [Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \(RAG\) through
+- [Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings?from=related) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation.graph.md](/docs/ai-gateway/modalities/image-generation.graph.md)
 <!-- /docsgraph:related -->

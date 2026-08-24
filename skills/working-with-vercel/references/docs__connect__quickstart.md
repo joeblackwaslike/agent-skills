@@ -16,8 +16,8 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b0dedfebf50f306090c8008481cb70743ec800eed8dbc012cecc0097418ff357"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7b03d71a2c3a7f4d41d8641cbb3bfd1e43b5f29bca7c72a18078bfac5bd6122b"
 ---
 
 # Quickstart
@@ -38,8 +38,9 @@ sha256: "b0dedfebf50f306090c8008481cb70743ec800eed8dbc012cecc0097418ff357"
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
 - [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Installations](https://vercel.com/docs/connect/concepts/installations?from=related) — Installations let one connector serve many tenants. One Slack connector, for example, can serve many Slack workspaces, e
 - [Project links](https://vercel.com/docs/connect/concepts/project-links?from=related) — A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -147,7 +148,7 @@ This guide shows you how to create your first connector in Vercel Connect and re
   ```
   This requests a user-subject token: Vercel Connect will mint a Linear token that acts as `user_demo_123`, scoped to `read`. In a real app, replace `user_demo_123` with the id you use to identify the signed-in user in your own database.
 
-  For service-level operations (a bot account or a tenant-wide admin API), use `subject: { type: 'app' }` instead. App-subject tokens skip the user-consent flow entirely. For multi-tenant connector types like Slack or GitHub, pass `installationId` to address a specific workspace or organization; otherwise the connector's default installation is used. See [Tokens](/docs/connect/concepts/tokens) for the full set of scoping options.
+  For service-level operations (a bot account or a tenant-wide admin API), use `subject: { type: 'app' }` instead. App-subject tokens skip the user-consent flow entirely, though some providers still require a one-time installation or an administrator grant. For multi-tenant connector types like Slack or GitHub, pass `installationId` to address a specific workspace or organization; otherwise the connector's default installation is used. See [Tokens](/docs/connect/concepts/tokens) for the full set of scoping options.
 
   **Completing the consent flow**
 

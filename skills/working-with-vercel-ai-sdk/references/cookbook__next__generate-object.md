@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/next/generate-object.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d8f2cff24979d0abd9aa48a265db87dcea5bef85bf86934b8c07c24213fc712a"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "e2492fc3d87f9fd7b5b7028711ba81a11d409e41994b31db4123b414d12d75d4"
 ---
 
 # Generate Object
@@ -94,7 +94,7 @@ export async function POST(req: Request) {
 
   const result = await generateText({
     model: 'openai/gpt-4o',
-    system: 'You generate three notifications for a messages app.',
+    instructions: 'You generate three notifications for a messages app.',
     prompt,
     output: Output.object({
       schema: z.object({

@@ -16,8 +16,8 @@ related:
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "ad6215201670f5c93365b7c315178a1b0469412d492d4773a537e404e4bdcb44"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "eed948c21e93caafa5dc5d8be88ec2b71c02232e3783f1fd43c83f6d2c16bb14"
 ---
 
 # What is Compute?
@@ -39,7 +39,7 @@ Compute is the work a server performs to respond to a request, such as rendering
 - [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [SvelteKit](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related) — Learn how to use Vercel's features with SvelteKit
 - [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Deploy MCP servers](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related) — Learn how to deploy Model Context Protocol \(MCP\) servers on Vercel with OAuth authentication and efficient scaling.
+- [Deploy MCP servers](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
 
 Full cross-link map for this page: [/docs/fundamentals/what-is-compute.graph.md](/docs/fundamentals/what-is-compute.graph.md)
 <!-- /docsgraph:related -->

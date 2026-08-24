@@ -14,8 +14,8 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "f3765f6613c6497d4ffcdf2809429a0378f7de03d7ac9d3b2ca86b0c36477940"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "bee6696f3afe59f5e68174ea5576454ed29b73c9333446723b057f86882bb141"
 ---
 
 # Speech to Text
@@ -36,6 +36,7 @@ Transcribe recorded audio into text with transcription models such as `openai/wh
 - [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
 - [AI SDK](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md)
 <!-- /docsgraph:related -->

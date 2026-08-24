@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-security.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "15728be37be9fd79d4b0b680dabf7dd77f6ac88ed30a8915ba594afd5f89508d"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "688671bb149bfc5b0892adbdf535c459ced5799f457a7b5abb1064b803b75b6d"
 ---
 
 > ## Documentation Index
@@ -14,7 +14,7 @@ sha256: "15728be37be9fd79d4b0b680dabf7dd77f6ac88ed30a8915ba594afd5f89508d"
 
 The Claude Security plugin runs a multi-agent vulnerability scan of your codebase inside a Claude Code session. A team of Claude agents maps your architecture, builds a threat model, hunts for vulnerabilities, and independently reviews every finding before writing the report. Use the plugin to scan a whole repository or [only a set of changes](#scan-only-your-changes), such as a branch's diff, a pull request's diff, or a single commit, then turn the findings you choose into patches that you review and apply yourself.
 
-The plugin runs locally in your session, and each scan counts against your plan's usage limits. If you want a managed service that monitors your repositories, see the [Claude Security](https://claude.com/product/claude-security) product, available on the Enterprise plan. The plugin reaches code the managed product can't reach, such as repositories hosted on GitLab or Bitbucket, or on networks that don't allow inbound connections.
+The plugin runs locally in your session, uses whichever models you have access to in Claude Code, and each scan counts against your plan's usage limits. If you want a managed service that monitors your repositories, or want to run scans on [Claude Mythos 5](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5), see the [Claude Security](https://claude.com/product/claude-security) product, available on the Enterprise plan. The plugin reaches code the managed product can't reach, such as repositories hosted on GitLab or Bitbucket, or on networks that don't allow inbound connections.
 
 The plugin is also distinct from the review tools already in Claude Code: the [security guidance plugin](/docs/en/security-guidance) reviews code as Claude writes it, [`/security-review`](/docs/en/commands#all-commands) runs a single pass over your branch, and [Code Review](/docs/en/code-review) reviews pull requests. For how the layers stack, see [How the plugin fits with other security tools](#how-the-plugin-fits-with-other-security-tools).
 

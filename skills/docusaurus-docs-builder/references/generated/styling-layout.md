@@ -1,23 +1,23 @@
 ---
 title: "Styling and Layout"
 source: "https://docusaurus.io/docs/styling-layout"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "58e92bbf95536bfbde0fba34232865c1858d028a3bdef050da0387f7aeebd287"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "b2a1b59077e8e610f6cabf7d1a6b2f59136bc72f78bb7f4e71f75a0bca567190"
 ---
 
 # Styling and Layout
 
 Source: https://docusaurus.io/docs/styling-layout
 
-- GuidesStyling and LayoutVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)Styling and LayoutVersion: 3.10.2On this page
 # Styling and Layout
 
-tipThis section is focused on styling through stylesheets. For more advanced customizations (DOM structure, React code...), refer to the swizzling guide.
+tipThis section is focused on styling through stylesheets. For more advanced customizations (DOM structure, React code...), refer to the [swizzling guide](https://docusaurus.io/docs/swizzling).
 A Docusaurus site is a single-page React application. You can style it the way you style React apps.
 
 There are a few approaches/frameworks which will work, depending on your preferences and the type of website you are trying to build. Websites that are highly interactive and behave more like web apps will benefit from more modern styling approaches that co-locate styles with the components. Component styling can also be particularly useful when you wish to customize or swizzle a component.
 
-## Global styles​
+## Global styles[​](https://docusaurus.io/docs/styling-layout#global-styles)
 
 This is the most traditional way of styling that most developers (including non-front-end developers) would be familiar with. It works fine for small websites that do not have much customization.
 
@@ -42,26 +42,26 @@ function MyComponent() {  return (    <main>      <h1 className="purple-text">Pu
 
 If you want to add CSS to any element, you can open the DevTools in your browser to inspect its class names. Class names come in several kinds:
 
-**Theme class names**. These class names are listed exhaustively in the next subsection. They don't have any default properties. You should always prioritize targeting those stable class names in your custom CSS.
+**Theme class names**. These class names are listed exhaustively in [the next subsection](https://docusaurus.io/docs/styling-layout#theme-class-names). They don't have any default properties. You should always prioritize targeting those stable class names in your custom CSS.
 
-- **Infima class names**. These class names are found in the classic theme and usually follow the BEM convention of `block__element--modifier`. They are usually stable but are still considered implementation details, so you should generally avoid targeting them. However, you can modify Infima CSS variables.
+- **Infima class names**. These class names are found in the classic theme and usually follow the [BEM convention](http://getbem.com/naming/) of `block__element--modifier`. They are usually stable but are still considered implementation details, so you should generally avoid targeting them. However, you can [modify Infima CSS variables](https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima).
 
-- **CSS module class names**. These class names end with a hash which may change over time (`codeBlockContainer_RIuc`). They are considered implementation details and you should almost always avoid targeting them in your custom CSS. If you must, you can use an attribute selector (`[class*='codeBlockContainer']`) that ignores the hash.
+- **CSS module class names**. These class names end with a hash which may change over time (`codeBlockContainer_RIuc`). They are considered implementation details and you should almost always avoid targeting them in your custom CSS. If you must, you can use an [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) (`[class*='codeBlockContainer']`) that ignores the hash.
 
-### Theme Class Names​
+### Theme Class Names[​](https://docusaurus.io/docs/styling-layout#theme-class-names)
 
 We provide some stable CSS class names for robust and maintainable global layout styling. These names are theme-agnostic and meant to be targeted by custom CSS.
 
-tipIf you can't find a way to create a robust CSS selector, please report your customization use-case and we will consider adding new class names.
+tipIf you can't find a way to create a robust CSS selector, please [report your customization use-case](https://github.com/facebook/docusaurus/discussions/5468) and we will consider adding new class names.
 Exhaustive list of stable class names
 ```
 export const ThemeClassNames = {  page: {    blogListPage: 'blog-list-page',    blogPostPage: 'blog-post-page',    blogTagsListPage: 'blog-tags-list-page',    blogTagPostListPage: 'blog-tags-post-list-page',    blogAuthorsListPage: 'blog-authors-list-page',    blogAuthorsPostsPage: 'blog-authors-posts-page',    docsDocPage: 'docs-doc-page',    docsTagsListPage: 'docs-tags-list-page',    docsTagDocListPage: 'docs-tags-doc-list-page',    mdxPage: 'mdx-page',  },  wrapper: {    main: 'main-wrapper',     blogPages: 'blog-wrapper',    docsPages: 'docs-wrapper',    mdxPages: 'mdx-wrapper',  },  common: {    editThisPage: 'theme-edit-this-page',    lastUpdated: 'theme-last-updated',    backToTopButton: 'theme-back-to-top-button',    codeBlock: 'theme-code-block',    admonition: 'theme-admonition',    unlistedBanner: 'theme-unlisted-banner',    draftBanner: 'theme-draft-banner',    admonitionType: (type: string) => `theme-admonition-${type}`,  },  announcementBar: {    container: 'theme-announcement-bar',  },  tabs: {    container: 'theme-tabs-container',  },  layout: {    navbar: {      container: 'theme-layout-navbar',      containerLeft: 'theme-layout-navbar-left',      containerRight: 'theme-layout-navbar-right',      mobileSidebar: {        container: 'theme-layout-navbar-sidebar',        panel: 'theme-layout-navbar-sidebar-panel',      },    },    main: {      container: 'theme-layout-main',    },    footer: {      container: 'theme-layout-footer',      column: 'theme-layout-footer-column',    },  },  docs: {    docVersionBanner: 'theme-doc-version-banner',    docVersionBadge: 'theme-doc-version-badge',    docBreadcrumbs: 'theme-doc-breadcrumbs',    docMarkdown: 'theme-doc-markdown',    docTocMobile: 'theme-doc-toc-mobile',    docTocDesktop: 'theme-doc-toc-desktop',    docFooter: 'theme-doc-footer',    docFooterTagsRow: 'theme-doc-footer-tags-row',    docFooterEditMetaRow: 'theme-doc-footer-edit-meta-row',    docSidebarContainer: 'theme-doc-sidebar-container',    docSidebarMenu: 'theme-doc-sidebar-menu',    docSidebarItemCategory: 'theme-doc-sidebar-item-category',    docSidebarItemLink: 'theme-doc-sidebar-item-link',    docSidebarItemCategoryLevel: (level: number) =>      `theme-doc-sidebar-item-category-level-${level}` as const,    docSidebarItemLinkLevel: (level: number) =>      `theme-doc-sidebar-item-link-level-${level}` as const,    docCard: {      container: 'theme-doc-card-container',      heading: 'theme-doc-card-heading',      icon: 'theme-doc-card-icon',      title: 'theme-doc-card-title',      description: 'theme-doc-card-description',    },  },  blog: {    blogFooterTagsRow: 'theme-blog-footer-tags-row',    blogFooterEditMetaRow: 'theme-blog-footer-edit-meta-row',  },  pages: {    pageFooterEditMetaRow: 'theme-pages-footer-edit-meta-row',  },} as const;
 ```
 
 
-### Styling your site with Infima​
+### Styling your site with Infima[​](https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima)
 
-`@docusaurus/preset-classic` uses Infima as the underlying styling framework. Infima provides a flexible layout and common UI components styling suitable for content-centric websites (blogs, documentation, landing pages). For more details, check out the Infima website.
+`@docusaurus/preset-classic` uses [Infima](https://infima.dev/) as the underlying styling framework. Infima provides a flexible layout and common UI components styling suitable for content-centric websites (blogs, documentation, landing pages). For more details, check out the [Infima website](https://infima.dev/).
 
 When you scaffold your Docusaurus project with `create-docusaurus`, the website will be generated with basic Infima stylesheets and default styling. You can override Infima CSS variables globally.
 
@@ -70,17 +70,17 @@ When you scaffold your Docusaurus project with `create-docusaurus`, the website 
 :root {  --ifm-color-primary: #25c2a0;  --ifm-code-font-size: 95%;}
 ```
 
-Infima uses 7 shades of each color. We recommend using ColorBox to find the different shades of colors for your chosen primary color.
+Infima uses 7 shades of each color. We recommend using [ColorBox](https://www.colorbox.io/) to find the different shades of colors for your chosen primary color.
 
 Alternatively, use the following tool to generate the different shades for your website and copy the variables into `/src/css/custom.css`.
 
-tipAim for at least WCAG-AA contrast ratio for the primary color to ensure readability. Use the Docusaurus website itself to preview how your color palette would look like. You can use alternative palettes in dark mode because one color doesn't usually work in both light and dark mode.**Primary Color:** Edit dark modeReset**Background:**CSS Variable NameHexAdjustmentContrast Rating`--ifm-color-primary-lightest``#3cad6e`Fail 🔴`--ifm-color-primary-lighter``#359962`Fail 🔴`--ifm-color-primary-light``#33925d`Fail 🔴`--ifm-color-primary``#2e8555`0AA 👍`--ifm-color-primary-dark``#29784c`AA 👍`--ifm-color-primary-darker``#277148`AA 👍`--ifm-color-primary-darkest``#205d3b`AAA 🏅Replace the variables in `src/css/custom.css` with these new variables./src/css/custom.css
+tipAim for at least [WCAG-AA contrast ratio](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast) for the primary color to ensure readability. Use the Docusaurus website itself to preview how your color palette would look like. You can use alternative palettes in dark mode because one color doesn't usually work in both light and dark mode.**Primary Color:** Edit dark modeReset**Background:**CSS Variable NameHexAdjustmentContrast Rating`--ifm-color-primary-lightest``#3cad6e`Fail 🔴`--ifm-color-primary-lighter``#359962`Fail 🔴`--ifm-color-primary-light``#33925d`Fail 🔴`--ifm-color-primary``#2e8555`0AA 👍`--ifm-color-primary-dark``#29784c`AA 👍`--ifm-color-primary-darker``#277148`AA 👍`--ifm-color-primary-darkest``#205d3b`AAA 🏅Replace the variables in `src/css/custom.css` with these new variables./src/css/custom.css
 ```
 :root {  --ifm-color-primary: #2e8555;  --ifm-color-primary-dark: #29784c;  --ifm-color-primary-darker: #277148;  --ifm-color-primary-darkest: #205d3b;  --ifm-color-primary-light: #33925d;  --ifm-color-primary-lighter: #359962;  --ifm-color-primary-lightest: #3cad6e;}
 ```
 
 
-### Dark Mode​
+### Dark Mode[​](https://docusaurus.io/docs/styling-layout#dark-mode)
 
 In light mode, the `<html>` element has a `data-theme="light"` attribute; in dark mode, it's `data-theme="dark"`. Therefore, you can scope your CSS to dark-mode-only by targeting `html` with a specific attribute.
 
@@ -91,7 +91,7 @@ In light mode, the `<html>` element has a `data-theme="light"` attribute; in dar
 
 tipIt is possible to initialize the Docusaurus theme directly from a `docusaurus-theme` query string parameter.Examples:/docs/?docusaurus-theme=dark/docs/configuration?docusaurus-theme=light
 
-### Data Attributes​
+### Data Attributes[​](https://docusaurus.io/docs/styling-layout#data-attributes)
 
 It is possible to inject `<html>` data attributes with query string parameters following the `docusaurus-data-<key>` pattern. This gives you the flexibility to style a page differently based on the query string.
 
@@ -105,7 +105,7 @@ html[data-navbar='false'] .navbar {  display: none;}html[data-red-border] div#__
 /docs/?docusaurus-data-navbar=false&docusaurus-data-red-border
 Iframe ModeIf you plan to embed some Docusaurus pages on another site though an iframe, it can be useful to create an alternative display mode and use iframe urls such as `https://mysite.com/docs/myDoc?docusaurus-data-mode=iframe`. It is your responsibility to provide the additional styles and decide which UI elements you want to keep or hide.
 
-### Mobile View​
+### Mobile View[​](https://docusaurus.io/docs/styling-layout#mobile-view)
 
 Docusaurus uses `996px` as the cutoff between mobile screen width and desktop. If you want your layout to be different in the mobile view, you can use media queries.
 
@@ -114,11 +114,11 @@ Docusaurus uses `996px` as the cutoff between mobile screen width and desktop. I
 .banner {  padding: 4rem;}/** In mobile view, reduce the padding */@media screen and (max-width: 996px) {  .heroBanner {    padding: 2rem;  }}
 ```
 
-Customizing the breakpointSome React components, such as the header and the sidebar, implement different JavaScript logic when in mobile view. If you change the breakpoint value in your custom CSS, you probably also want to update the invocations of the `useWindowSize` hook by swizzling the components it's used in and passing an explicit option argument.
+Customizing the breakpointSome React components, such as the header and the sidebar, implement different JavaScript logic when in mobile view. If you change the breakpoint value in your custom CSS, you probably also want to update the invocations of the `useWindowSize` hook by [swizzling](https://docusaurus.io/docs/swizzling) the components it's used in and passing an explicit option argument.
 
-## CSS modules​
+## CSS modules[​](https://docusaurus.io/docs/styling-layout#css-modules)
 
-To style your components using CSS Modules, name your stylesheet files with the `.module.css` suffix (e.g. `welcome.module.css`). Webpack will load such CSS files as CSS modules and you have to reference the class names as properties of the imported CSS module (as opposed to using plain strings). This is similar to the convention used in Create React App.
+To style your components using [CSS Modules](https://github.com/css-modules/css-modules), name your stylesheet files with the `.module.css` suffix (e.g. `welcome.module.css`). Webpack will load such CSS files as CSS modules and you have to reference the class names as properties of the imported CSS module (as opposed to using plain strings). This is similar to the convention used in [Create React App](https://facebook.github.io/create-react-app/docs/adding-a-css-modules-stylesheet).
 
 styles.module.css
 ```
@@ -132,15 +132,15 @@ import styles from './styles.module.css';function MyComponent() {  return (    <
 
 The class names will be processed by webpack into a globally unique class name during build.
 
-## CSS-in-JS​
+## CSS-in-JS[​](https://docusaurus.io/docs/styling-layout#css-in-js)
 
-warningCSS-in-JS support is a work in progress, so libs like MUI may have display quirks. Welcoming PRs.
+warningCSS-in-JS support is a work in progress, so libs like MUI may have display quirks. [Welcoming PRs](https://github.com/facebook/docusaurus/issues/1640).
 
-## Sass/SCSS​
+## Sass/SCSS[​](https://docusaurus.io/docs/styling-layout#sassscss)
 
-To use Sass/SCSS as your CSS preprocessor, install the unofficial Docusaurus plugin `docusaurus-plugin-sass`. This plugin works for both global styles and the CSS modules approach:
+To use Sass/SCSS as your CSS preprocessor, install the unofficial Docusaurus plugin [docusaurus-plugin-sass](https://github.com/rlamana/docusaurus-plugin-sass). This plugin works for both global styles and the CSS modules approach:
 
-- Install `docusaurus-plugin-sass`:
+- Install [docusaurus-plugin-sass](https://github.com/rlamana/docusaurus-plugin-sass):
 
 - npmYarnpnpmBun
 ```
@@ -170,7 +170,7 @@ export default {  // ...  plugins: ['docusaurus-plugin-sass'],  // ...};
 
 - Write and import your stylesheets in Sass/SCSS as normal.
 
-### Global styles using Sass/SCSS​
+### Global styles using Sass/SCSS[​](https://docusaurus.io/docs/styling-layout#global-styles-using-sassscss)
 
 You can now set the `customCss` property of `@docusaurus/preset-classic` to point to your Sass/SCSS file:
 
@@ -180,7 +180,7 @@ export default {  presets: [    [      '@docusaurus/preset-classic',      {     
 ```
 
 
-### Modules using Sass/SCSS​
+### Modules using Sass/SCSS[​](https://docusaurus.io/docs/styling-layout#modules-using-sassscss)
 
 Name your stylesheet files with the `.module.scss` suffix (e.g. `welcome.module.scss`) instead of `.css`. Webpack will use `sass-loader` to preprocess your stylesheets and load them as CSS modules.
 
@@ -195,7 +195,7 @@ import styles from './styles.module.scss';function MyComponent() {  return (    
 ```
 
 
-#### TypeScript support​
+#### TypeScript support[​](https://docusaurus.io/docs/styling-layout#typescript-support)
 
 To enable TypeScript support for Sass/SCSS modules, the TypeScript configuration should be updated to add the `docusaurus-plugin-sass` type definitions. This can be done in the `tsconfig.json` file:
 
@@ -203,4 +203,4 @@ To enable TypeScript support for Sass/SCSS modules, the TypeScript configuration
 ```
 {  "extends": "@docusaurus/tsconfig",  "compilerOptions": {    ...+    "types": ["docusaurus-plugin-sass"]  }}
 ```
-Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/styling-layout.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

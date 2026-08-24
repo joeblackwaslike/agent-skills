@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "215250150fd364bb2735373f14e0fb410a3d118bd9bc60ced900d8177ebadcc5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f995e3d480ac724b8c993072a3737fa58ee6687184eb801ffc5c553ace0d3abf"
 ---
 
 # @vercel/blob
@@ -37,6 +37,7 @@ sha256: "215250150fd364bb2735373f14e0fb410a3d118bd9bc60ced900d8177ebadcc5"
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Signed URLs](https://vercel.com/docs/vercel-blob/vercel-signed-urls?from=related) — Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob/using-blob-sdk.graph.md](/docs/vercel-blob/using-blob-sdk.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed across plans, how to stop being billed, and the platform limits that apply during beta.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "140d1ece2911bde2eab89e616d9e2cb744fcaa0e4a0575a424bfc0ed0d865b6a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8b630ba1c685d144cc7bc919e4e726ea018e3b263a69bb6ab7ed5e9a12a9e805"
 ---
 
 # Vercel Connect pricing and limits
@@ -31,12 +31,12 @@ Vercel Connect is billed by token request. A token request is a single call to t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Give your agents secure access to third-party APIs](https://vercel.com/kb/guide/vercel-connect?from=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Discord, Notion, Figma, Snowflake, and Salesforce f
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related) — Authenticate Slack, Discord, GitHub, Linear, Notion, and Telegram adapters with Vercel Connect — short-lived runtime tok
+- [Pricing](https://v0.app/docs/pricing?from=related) — Understand the v0 plans, pricing, and usage limits.
 - [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Pricing](https://vercel.com/docs/agent/pricing?from=related) — Understand Vercel Agent pricing and how to track costs
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token?from=related)
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 
 Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -69,8 +69,6 @@ The following limits apply during beta. Contact your account team if you need hi
 | Projects returned by `?include=projects` | 100 (paginated beyond)           |
 | Default token validity buffer            | 30 seconds                       |
 | Connector branding icon                  | PNG or JPEG, square              |
-| Connector types in beta                  | slack, github, oauth (+ flagged) |
-| Trigger forwarding in beta               | Slack only                       |
 
 
 ---

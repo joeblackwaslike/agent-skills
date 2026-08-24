@@ -12,8 +12,8 @@ related:
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "6e68c2ff6906278b2ebf03aaa13bb8d298b110e92ed40e2bab6dc813e8048122"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f2bb9da51abe0a11ec8895353b88fbb23aa8f4fb7541941e10cfe181a7136978"
 ---
 
 # Content Security Policy
@@ -28,7 +28,7 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 
 - [Content Security Policy](https://nextjs.org/docs/pages/guides/content-security-policy?from=related) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
 - [Content Security Policy](https://nextjs.org/docs/app/guides/content-security-policy?from=related) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
-- [Understanding CSRF attacks](https://vercel.com/kb/guide/understanding-csrf-attacks?from=related) — Understand the mechanics and risks of Cross-Site Request Forgery \(CSRF\) attacks, and discover crucial development prac
+- [Understanding CSRF attacks](https://vercel.com/kb/guide/understanding-csrf-attacks?from=related) — Understand the mechanics and risks of Cross-Site Request Forgery \\(CSRF\\) attacks, and discover crucial development prac
 - [Enhancing Security for Redirects and Rewrites](https://vercel.com/kb/guide/enhancing-security-for-redirects-and-rewrites?from=related) — Learn how security measures in URI handling can prevent semantic attacks, where malicious hosts exploit redirects and re
 - [Overview](https://vercel.com/docs/security?from=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Security](https://vercel.com/docs/vercel-blob/security?from=related) — Learn how your Vercel Blob store is secured

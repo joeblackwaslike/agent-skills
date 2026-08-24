@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure two-factor authentication for your Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-authentication.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "dee9a97e4f7d6429b08b7aa7f35f74f17592edfe6551c8f451cb08fde3c3a15f"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "bba799beb90540e93fdd9801fde8c745e61d202662ddf8fbeb68a545d5046d96"
 ---
 
 # Two-factor Authentication
@@ -29,12 +29,11 @@ methods available for 2FA on Vercel:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Application Authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related) — Learn best practices for application authentication Vercel
 - [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related) — Learn how to Sign in with Vercel
 - [Manage from Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Access Control](https://vercel.com/docs/security/access-control?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [SAML SSO](https://vercel.com/docs/saml?from=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 
 Full cross-link map for this page: [/docs/two-factor-authentication.graph.md](/docs/two-factor-authentication.graph.md)

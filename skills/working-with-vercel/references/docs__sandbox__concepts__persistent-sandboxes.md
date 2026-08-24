@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4934797af52784e97c7da96f105ab8eda9fa4538cf5746fe083414840e94a495"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "bfd2ae56b7b945660ef40918db7cac595dc76c317b2db78bb986cf1733336e1e"
 ---
 
 # Persistence
@@ -31,16 +31,16 @@ Persistent sandboxes automatically save their filesystem state when stopped and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [Sandbox](https://eve.dev/docs/sandbox?from=related) — The agent's isolated bash environment, including built-in file tools, a seeded /workspace, backends, lifecycle, and netw
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \`Sandbox.get\(\)\` to reconnect to an existing sandbox from a different process or after a script rest
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
+- [Sandbox](https://v0.app/docs/sandbox?from=related) — VM-backed chats run your project inside an isolated Vercel Sandbox that hosts your code, dev server, terminal, and agent
 - [Examples](https://vercel.com/docs/sandbox/working-with-sandbox?from=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related)
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related) — Learn how to run your first code in a Vercel Sandbox.
-- [Glossary](https://vercel.com/docs/glossary?from=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Create a named sandbox](https://vercel.com/docs/rest-api/sandboxes/create-a-named-sandbox?from=related)
 
 Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md)
 <!-- /docsgraph:related -->
@@ -76,7 +76,7 @@ Persistent sandboxes use a two-level model:
 - **Sandbox**: A long-lived entity identified by a unique `name` within your project. It survives across multiple VM boots.
 - **Session**: A single running VM instance inside a sandbox. Each time you resume a sandbox, a new session starts from the last saved state.
 
-When you stop a persistent sandbox, the SDK automatically snapshots the filesystem. When you resume it, a new session boots from that snapshot.
+When you stop a persistent sandbox, the SDK automatically snapshots the filesystem. When you resume it, a new session boots from that snapshot with a fresh [session timeout](/docs/sandbox/pricing#runtime-limits). A sandbox is made up of many sessions, so the maximum duration caps each one, not the sandbox.
 
 ### Sandbox names
 

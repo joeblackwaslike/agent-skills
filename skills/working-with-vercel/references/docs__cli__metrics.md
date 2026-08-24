@@ -12,13 +12,13 @@ related:
 summary: Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "730342d647d82dc77c3901bf44a56d6facff827cf1ee99599f41dd252902eb24"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "315161839b5a8c96e677d5031c8227721eeac455e02d82f006777eaebec574e2"
 ---
 
 # vercel metrics
 
-The `vercel metrics` command lets you query metrics from the command line. Querying observability metrics requires [Observability Plus](/docs/observability/observability-plus), with product-specific exceptions listed below.
+The `vercel metrics` command, also available as `vc metrics`, lets you list and query metrics from the command line. Querying observability metrics requires [Observability Plus](/docs/observability/observability-plus), with product-specific exceptions listed below.
 
 
 <!-- docsgraph:related -->
@@ -26,11 +26,11 @@ The `vercel metrics` command lets you query metrics from the command line. Query
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improve Cumulative Layout Shift \(CLS\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Using with CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel activity](https://vercel.com/docs/cli/activity?from=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md)
@@ -38,16 +38,19 @@ Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metric
 
 > **🔒 Permissions Required**: Metrics other than Web Analytics and Speed Insights metrics
 
-Use the schema before you build a query. The metrics schema is the source of truth for the metrics, dimensions, and aggregations available to your account.
+Use `vercel metrics list` before you build a query. The command lists all metrics available to your account. Use `vercel metrics schema` to inspect the dimensions and aggregations for a metric.
 
 ## Usage
 
 ```bash filename="terminal"
 # List queryable metrics for the current team context
-vercel metrics schema
+vercel metrics list
 
 # Inspect a metric or metric prefix
 vercel metrics schema <metric-or-prefix>
+
+# Query a custom metric and filter by an attribute
+vercel metrics database.duration_ms --filter "plan:pro"
 
 # Query production data for a specific project
 vercel metrics <metric-id> --since 7d --granularity 1d --project project-name --prod
@@ -59,7 +62,7 @@ vercel metrics <metric-id> --group-by <dimension> --since 1d --limit 5 --project
 vercel metrics <metric-id> --all --group-by project_id --since 24h --prod
 ```
 
-*Using the \`vercel metrics\` command to discover the schema before querying metrics.*
+*Using the \`vercel metrics\` command to discover metrics before querying them.*
 
 ## Query output
 
@@ -85,19 +88,26 @@ These options only apply to the `vercel metrics` command.
 
 ### Metric
 
-The `<metric-id>` positional argument specifies the metric to query. Run `vercel metrics schema` to list queryable metrics for the current team context.
+The `<metric-id>` positional argument specifies the metric to query. Run `vercel metrics list` to list queryable metrics for the current team context.
 
 ```bash filename="terminal"
 vercel metrics <metric-id>
-vercel metrics schema
+vercel metrics list
+```
+
+### List subcommand
+
+Use the `list` subcommand to list all metrics available to your account:
+
+```bash filename="terminal"
+vercel metrics list
 ```
 
 ### Schema subcommand
 
-Use the `schema` subcommand to discover the metrics, dimensions, and aggregations available to your account. Pass a metric ID or prefix to inspect a narrower part of the schema.
+Use the `schema` subcommand to inspect the dimensions and aggregations available for a metric. Pass a metric ID or prefix to inspect a narrower part of the schema.
 
 ```bash filename="terminal"
-vercel metrics schema
 vercel metrics schema <metric-or-prefix>
 ```
 
@@ -124,7 +134,13 @@ vercel metrics <metric-id> --group-by <dimension> --group-by <dimension>
 
 ### Filter
 
-The `--filter` option, shorthand `-f`, applies an OData filter expression. Repeat it to combine filters with `and`.
+The `--filter` option, shorthand `-f`, filters the query. For custom metrics, use `<attribute>:<value>` to filter by an attribute:
+
+```bash filename="terminal"
+vercel metrics database.duration_ms --filter "plan:pro"
+```
+
+For other metrics, pass an OData filter expression. Repeat the option to combine filters with `and`:
 
 ```bash filename="terminal"
 vercel metrics <metric-id> --filter "<dimension> eq '<value>'"
@@ -227,6 +243,18 @@ Inspect the schema before building a query:
 
 ```bash filename="terminal"
 vercel metrics schema <metric-or-prefix>
+```
+
+List all available metrics:
+
+```bash filename="terminal"
+vercel metrics list
+```
+
+Query a custom metric for the `pro` plan:
+
+```bash filename="terminal"
+vercel metrics database.duration_ms --filter "plan:pro"
 ```
 
 Query a metric for the last seven days:

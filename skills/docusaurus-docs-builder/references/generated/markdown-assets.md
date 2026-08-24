@@ -1,15 +1,15 @@
 ---
 title: "Markdown Assets"
 source: "https://docusaurus.io/docs/markdown-features/assets"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "25944dce39eee7f4278a5a61ad4b94c9d9db545feb35ac32b1b3c611409b2767"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "e64241a659c8d38f036d72639debe5f7fdbcac20da0f853435bee8f2ca625c6c"
 ---
 
 # Markdown Assets
 
 Source: https://docusaurus.io/docs/markdown-features/assets
 
-- GuidesMarkdown FeaturesAssetsVersion: 3.10.2On this page
+- [](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)[Markdown Features](https://docusaurus.io/docs/markdown-features)AssetsVersion: 3.10.2On this page
 # Assets
 
 Sometimes you want to link to assets (e.g. docx files, images...) directly from Markdown files, and it is convenient to co-locate the asset next to the Markdown file using it.
@@ -22,7 +22,7 @@ Let's imagine the following file structure:
 ```
 
 
-## Images​
+## Images[​](https://docusaurus.io/docs/markdown-features/assets#images)
 
 You can display images in three different ways: Markdown syntax, CJS require, or ES imports syntax.
 
@@ -42,9 +42,9 @@ import myImageUrl from './assets/docusaurus-asset-example-banner.png';<img src={
 All of the above result in displaying the image:
 
 http://localhost:3000
-noteIf you are using @docusaurus/plugin-ideal-image, you need to use the dedicated image component, as documented.
+noteIf you are using [@docusaurus/plugin-ideal-image](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image), you need to use the dedicated image component, as documented.
 
-## Files​
+## Files[​](https://docusaurus.io/docs/markdown-features/assets#files)
 
 In the same way, you can link to existing assets by `require`'ing them and using the returned URL in `video`s, `a` anchor links, etc.
 
@@ -53,10 +53,10 @@ In the same way, you can link to existing assets by `require`'ing them and using
 # My Markdown page<a target="\_blank" href={require('./assets/docusaurus-asset-example.docx').default}> Download this docx </a>or[Download this docx using Markdown](./assets/docusaurus-asset-example.docx)
 ```
 
-http://localhost:3000Download this docxDownload this docx using Markdown
+http://localhost:3000[Download this docx](https://docusaurus.io/assets/files/docusaurus-asset-example-93ea653de6d8636f7254aecab1adbcce.docx)[Download this docx using Markdown](https://docusaurus.io/assets/files/docusaurus-asset-example-93ea653de6d8636f7254aecab1adbcce.docx)
 Markdown links are always file pathsIf you use the Markdown image or link syntax, all asset paths will be resolved as file paths by Docusaurus and automatically converted to `require()` calls. You don't need to use `require()` in Markdown unless you use the JSX syntax, which you do have to handle yourself.
 
-## Inline SVGs​
+## Inline SVGs[​](https://docusaurus.io/docs/markdown-features/assets#inline-svgs)
 
 Docusaurus supports inlining SVGs out of the box.
 
@@ -80,7 +80,7 @@ import DocusaurusSvg from './docusaurus.svg';<DocusaurusSvg className="themedDoc
 
 http://localhost:3000
 
-## Themed Images​
+## Themed Images[​](https://docusaurus.io/docs/markdown-features/assets#themed-images)
 
 Docusaurus supports themed images: the `ThemedImage` component (included in the themes) allows you to switch the image source based on the current theme.
 
@@ -92,9 +92,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';import ThemedImage from '@theme/
 
 http://localhost:3000
 
-### GitHub-style themed images​
+### GitHub-style themed images[​](https://docusaurus.io/docs/markdown-features/assets#github-style-themed-images)
 
-GitHub uses its own image theming approach with path fragments, which you can easily implement yourself.
+GitHub uses its own [image theming approach](https://github.blog/changelog/2021-11-24-specify-theme-context-for-images-in-markdown/) with path fragments, which you can easily implement yourself.
 
 To toggle the visibility of an image using the path fragment (for GitHub, it's `#gh-dark-mode-only` and `#gh-light-mode-only`), add the following to your custom CSS (you can also use your own suffix if you don't want to be coupled to GitHub):
 
@@ -110,9 +110,9 @@ src/css/custom.css
 
 http://localhost:3000
 
-## Static assets​
+## Static assets[​](https://docusaurus.io/docs/markdown-features/assets#static-assets)
 
-If a Markdown link or image has an absolute path, the path will be seen as a file path and will be resolved from the static directories. For example, if you have configured static directories to be `['public', 'static']`, then for the following image:
+If a Markdown link or image has an absolute path, the path will be seen as a file path and will be resolved from the static directories. For example, if you have configured [static directories](https://docusaurus.io/docs/static-assets) to be `['public', 'static']`, then for the following image:
 
 my-doc.md
 ```
@@ -132,4 +132,4 @@ If you intend to write URLs, you can use the `pathname://` protocol to disable a
 ![banner](pathname:///img/docusaurus-asset-example-banner.png)
 ```
 
-This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-assets.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

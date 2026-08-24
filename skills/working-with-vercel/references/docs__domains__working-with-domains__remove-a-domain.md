@@ -13,8 +13,8 @@ related:
 summary: Learn how to remove a domain from a Project and from your account completely with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "026694c239347e06e40bad637fea78e211a1fe87f06d27beedf706bf7a9c70ce"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6ae1ba62b7adae9eb7629695af25aab01ac81148fcea0aa33d011833259636c2"
 ---
 
 # Removing a Domain from a Project
@@ -30,8 +30,8 @@ When you add a domain to any project, it will be connected to your account until
 - [How do I remove a domain from my Vercel account?](https://vercel.com/kb/guide/how-do-i-remove-a-domain-from-my-vercel-account?from=related) — Learn how to completely remove a domain from your Vercel account?
 - [Remove a domain from a project](https://vercel.com/docs/rest-api/projects/remove-a-domain-from-a-project?from=related)
 - [Remove a domain by name](https://vercel.com/docs/rest-api/domains/remove-a-domain-by-name?from=related)
-- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related)
 - [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project?from=related)
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related)
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/remove-a-domain.graph.md](/docs/domains/working-with-domains/remove-a-domain.graph.md)

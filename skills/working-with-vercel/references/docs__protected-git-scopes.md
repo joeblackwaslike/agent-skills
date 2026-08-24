@@ -12,8 +12,8 @@ related:
 summary: Information to stop developers from deploying their repositories to a personal Vercel account by using Protected Git Scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/protected-git-scopes.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2c9b04b9c7fc986bddb21913aed02e469cb178a589a789c739633ab8f2ae341b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "95ead6229a3e0b268eacbf3eb8082b104beaee569a08e172b304fca99ad0699f"
 ---
 
 # Restricting Git Connections to a single Vercel team
@@ -30,8 +30,8 @@ sha256: "2c9b04b9c7fc986bddb21913aed02e469cb178a589a789c739633ab8f2ae341b"
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Scopes & Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [RBAC](https://vercel.com/docs/rbac?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/protected-git-scopes.graph.md](/docs/protected-git-scopes.graph.md)
 <!-- /docsgraph:related -->

@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-08-17
+last_updated: 2026-08-24
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "05193a570587bd83945ba6d972d2486a473230617b5a1da0ab0604003309dc67"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "806a22ac40a64d598753771aac37c59ffc150ec66e55433c4b578335f3e7cdd7"
 ---
 
 # Vercel Marketplace REST API

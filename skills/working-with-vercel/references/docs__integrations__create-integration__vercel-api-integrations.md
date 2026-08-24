@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1a968862c81d3053b312cd5466843d56e2ae114f6ad227ed0759c4358f2d0b24"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "924b33ace6978a5b33edf8e6f237d1d363c05c0cf8e244c64b43fdf87a9b0b32"
 ---
 
 # Building Integrations with Vercel REST API
@@ -33,8 +33,8 @@ sha256: "1a968862c81d3053b312cd5466843d56e2ae114f6ad227ed0759c4358f2d0b24"
 
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related) — Learn how to manage project access and added products for your integrations.
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related) — Lean more about when you may need to upgrade your Integration.
-- [Get configurations for the authenticated user or team](https://vercel.com/docs/rest-api/integrations/get-configurations-for-the-authenticated-user-or-team?from=related)
 - [Retrieve an integration configuration](https://vercel.com/docs/rest-api/integrations/retrieve-an-integration-configuration?from=related)
+- [Get configurations for the authenticated user or team](https://vercel.com/docs/rest-api/integrations/get-configurations-for-the-authenticated-user-or-team?from=related)
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md)

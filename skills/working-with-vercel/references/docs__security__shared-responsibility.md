@@ -16,8 +16,8 @@ related:
 summary: Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers, Vercel, and shared aspects in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/shared-responsibility.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "36150ceedf786278e2ce2240d13e816e0e745e6f3dcca9f2685f826aeb0df3bf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "0dbff40581d6d46976327d7b8f0ab28930a2f865620aed7376a92fb4a9196b09"
 ---
 
 # Shared Responsibility Model
@@ -31,10 +31,11 @@ A shared responsibility model is a framework designed to split tasks and obligat
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Ensuring safe and effective infrastructure testing](https://vercel.com/kb/guide/ensuring-safe-and-effective-infrastructure-testing?from=related) — We conduct regular penetration testing through certified third-party assessors to secure the Vercel platform. This guide
-- [HIPAA Compliance on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide?from=related) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [Does Vercel support HIPAA compliance?](https://vercel.com/kb/guide/is-vercel-hipaa-compliant?from=related) — Learn about Vercel and HIPAA compliance.
 - [Does Vercel support PCI compliance?](https://vercel.com/kb/guide/is-vercel-pci-compliant?from=related) — Learn about Vercel and PCI compliance.
+- [Security](https://v0.app/docs/security?from=related) — Learn about v0's security practices, threat modeling, and enterprise security features.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Request Lifecycle](https://vercel.com/docs/fundamentals/infrastructure?from=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Security](https://vercel.com/docs/cdn-security?from=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers

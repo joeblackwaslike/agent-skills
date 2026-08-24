@@ -15,8 +15,8 @@ related:
 summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7d0c6bdff542ec3744bc873df04d1aa73a375feea5ac6c44903ccb8845b2fa8b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d44e2f365b590cc1fa890e2b2e3a3bc2aadc94ac65a4ae481d7bf3005b0a252d"
 ---
 
 # Container Registry CLI Reference
@@ -29,11 +29,11 @@ The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \(GHCR\) to Vercel Container Registry \(VCR\), including authent
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related) — Manage Vercel Container Registry from the Vercel CLI: list, inspect, create, and delete repositories, browse tags, and m
-- [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
+- [vercel blob](https://vercel.com/docs/cli/blob?from=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [List repository images](https://vercel.com/docs/rest-api/vcr/list-repository-images?from=related)
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image?from=related)
 

@@ -17,8 +17,8 @@ related:
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "fc9d0fc98630479844eff870854511800e6e3e8f56be0a68447f46fc9fc17ed2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e9f6e07bc2622665c5df594cf309356b3a0b1cd63a528de92601ae23d715f6c9"
 ---
 
 # AI SDK
@@ -41,6 +41,7 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 - [AI SDK](https://vercel.com/docs/ai-sdk?from=related) — TypeScript toolkit for building AI-powered applications with React, Next.js, Vue, Svelte and Node.js
 - [AI SDK for Python](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md)
 <!-- /docsgraph:related -->

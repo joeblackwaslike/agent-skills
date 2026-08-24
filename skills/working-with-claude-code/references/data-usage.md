@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/data-usage.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "b6011f8983f2355994ad22c89d6a5aa8aad820c3097e54607b26f409288d4491"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "25ed5e6074dbcae2e7dab15c6567f80cbbb146dd3bfda1ac169974c51cf9b62a"
 ---
 
 > ## Documentation Index
@@ -41,7 +41,7 @@ After the rating prompt, you may see a separate follow-up asking "Can Anthropic 
 
 Nothing is uploaded unless you explicitly select **Yes**. Organizations with [zero data retention](/docs/en/zero-data-retention), or where product feedback is disabled by organization policy, or where `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` is set, never see this follow-up. Your responses to this survey, including session transcripts submitted after the rating prompt, do not impact your data training preferences and cannot be used to train our AI models.
 
-To disable these surveys, set `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1`. The survey is also disabled when `DISABLE_TELEMETRY`, `DO_NOT_TRACK`, or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` is set. Organizations that block nonessential traffic but capture survey responses through their own [OpenTelemetry collector](/docs/en/monitoring-usage) can opt the survey back in by setting `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL=1`. The survey then logs ratings to the configured collector only. The transcript-share follow-up and all other Anthropic-bound feedback traffic stay disabled. To control frequency instead of disabling, set [`feedbackSurveyRate`](/docs/en/settings#available-settings) in your settings file to a probability between `0` and `1`.
+To disable these surveys, set `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1`. The survey is also disabled when `DISABLE_TELEMETRY`, `DO_NOT_TRACK`, or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` is set. Organizations that block nonessential traffic but capture survey responses through their own [OpenTelemetry collector](/docs/en/monitoring-usage) can opt the survey back in by setting `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL=1`. The survey then logs ratings to the configured collector only. The transcript-share follow-up and all other Anthropic-bound feedback traffic stay disabled. To control frequency instead of disabling, set [`feedbackSurveyRate`](/docs/en/settings-reference#feedbacksurveyrate) in your settings file to a probability between `0` and `1`.
 
 ### Data retention
 
@@ -132,7 +132,7 @@ By default, error reporting, telemetry, and bug reporting are disabled when usin
 | **Session quality surveys**          | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                                  | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   |
 | **WebFetch domain safety check**     | Default on.<br />`skipWebFetchPreflight: true` in [settings](/docs/en/settings) to disable.                | Default on.<br />`skipWebFetchPreflight: true` in [settings](/docs/en/settings) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](/docs/en/settings) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](/docs/en/settings) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](/docs/en/settings) to disable. |
 
-All environment variables can be checked into `settings.json` (see [settings reference](/docs/en/settings)).
+All environment variables can be checked into `settings.json` (see [settings reference](/docs/en/settings-reference)).
 
 When a host platform sets `CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`, metrics default to on for Google Cloud's Agent Platform, Amazon Bedrock, Microsoft Foundry, and Claude Platform on AWS, and follow the standard `DISABLE_TELEMETRY` opt-out. Error reporting and `/feedback` reports remain off by default on those providers.
 

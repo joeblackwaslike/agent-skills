@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "d8665d5a63dc4217c2a92c64b37a2683c763e0acc283f5c25a8ea0d0a37f9c26"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "0d5a651a642b18cc37cb139199409b172a3a77f6cc6707e2a1ab61a01ed222ab"
 ---
 
 # Code Mode
@@ -181,6 +181,17 @@ const result = await runCodeMode({
 `runCodeMode` returns the value returned by the program. It uses the same
 sandbox and execution limits as the AI SDK tool.
 
+## Tool Approval
+
+Code mode does not currently integrate with AI SDK tool approval flows. Tool
+calls made by generated code are nested inside the code mode invocation, so
+they cannot pause the generation and surface a tool approval request to your
+application.
+
+Do not expose tools that rely on user approval to code mode. Keep those tools
+directly callable by the model instead. If a nested tool requires approval,
+the call is rejected rather than executed.
+
 ## Execution Limits
 
 Every invocation has limits for runtime, memory, source size, results, tool
@@ -245,9 +256,6 @@ to code mode.
 
 Tool input schemas are validated before their `execute` functions run. Abort
 signals and AI SDK tool execution context are forwarded to nested tool calls.
-
-Code mode does not currently support approval flows for nested tool calls.
-Tools that require approval are rejected instead of being executed.
 
 
 ## Navigation

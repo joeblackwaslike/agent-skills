@@ -13,8 +13,8 @@ related:
 summary: Track feature flag evaluations and analyze their impact with Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4abdb1213b44e2df4af469e5fb28eb05929dd808223aef31e3b20426330f0fdf"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "8a36f4abbab4d38ce438ff03bd7801e86a31ebc9648016c2379920972c813cf3"
 ---
 
 # Observability
@@ -27,6 +27,7 @@ Feature flags play a crucial role in the software development lifecycle, enablin
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Getting Started](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library

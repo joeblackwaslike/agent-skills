@@ -8,6 +8,7 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/deployment-storage
   - /docs/cli/list
   - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
   - /docs/deployments/environments
@@ -15,8 +16,8 @@ related:
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "657482b2a535e055d8575661547873f1dcd6ba5e53c54f73a523c4255c92dbf3"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "40dd3bc3fa246e400e01f9005f0ba4e0ab3e7d8ac3ef4c7608de94f8a4350e0f"
 ---
 
 # Deployment Retention
@@ -31,10 +32,10 @@ sha256: "657482b2a535e055d8575661547873f1dcd6ba5e53c54f73a523c4255c92dbf3"
 
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related) — Information on deleting an individual deployment.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize?from=related) — Learn about optimize deployment storage on Vercel.
 - [Deployment Policies](https://vercel.com/docs/deployments/deployment-policy?from=related) — Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [Instant Rollback](https://vercel.com/docs/instant-rollback?from=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
-- [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 
 Full cross-link map for this page: [/docs/deployment-retention.graph.md](/docs/deployment-retention.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +48,16 @@ These configured retention policies allow you to control how long your deploymen
 - **Compliance support:** Configure retention policies to align with your compliance requirements.
 - **Efficient storage management:** Automatically clear out unnecessary deployments
 
-Vercel provides unlimited deployment retention for all deployments, regardless of the plan that you are on.
+Your retention policy determines when deployments become eligible for automatic deletion. Retained deployment output contributes to [Deployment Storage](/docs/deployment-storage) while Vercel stores it.
+
+Unless a team or project uses a custom policy, the default retention periods are:
+
+| Plan | Canceled | Errored | Pre-Production | Production |
+| --- | --- | --- | --- | --- |
+| Hobby | 30 days | 30 days | 30 days | 30 days |
+| Pro and Enterprise | 30 days | 90 days | 180 days | 1 year |
+
+A team policy can replace these defaults for new projects or all existing projects. A project policy applies only to that project and replaces the team default.
 
 You can configure retention durations for the following deployment states:
 
@@ -57,8 +67,6 @@ You can configure retention durations for the following deployment states:
 - Production deployments
 
 For example, imagine you created a production deployment with a 60-day retention period on 01/01/2024 and later replaced it with a newer deployment. The origin deployment would expire on 03/01/2024, entering the recovery period, and users accessing it would see a 410 status code. If required, you could still restore it until 03/31/2024, when all associated resources are permanently removed and restoring the deployment is no longer possible.
-
-Once a policy is enabled on a project, deployments within the retention period will start to be automatically marked for deletion, within a few days of enabling the policy.
 
 After a deployment reaches its configured retention limit, a background job typically marks it for deletion within 48 hours. If a deployment is protected by one of the [exceptions to the retention policy](/docs/deployment-retention#exceptions-to-the-retention-policy) when it's first evaluated, it won't be deleted at that time. Once the exception no longer applies (for example, when a production alias moves to a newer deployment), the background job re-evaluates the deployment. This re-evaluation can take up to 30 days.
 

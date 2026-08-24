@@ -16,8 +16,8 @@ related:
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "d64e4e72196697ab6637cf2cb18c49e3d72353a1196de6aa7ee4914f5aee1386"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f5d15d64ed337970a5fd541679982bdd6c699c3dbd4abf292dcb751c7f741f39"
 ---
 
 # Tokens
@@ -74,7 +74,7 @@ For `jwt-bearer`, you can pass optional `iss` and `aud` claims to override the c
 
 Vercel Connect forwards three optional fields to the provider so you can narrow what a token can do:
 
-- **`scopes`**: the provider's own scope strings (`chat:write`, `repo:read`, etc.). Required by most OAuth providers.
+- **`scopes`**: the provider's own scope strings (`chat:write`, `repo:read`, etc.). Pass `['*']` to request the connector's default scopes for the selected subject type.
 - **`resources`**: resource indicators, when the provider uses them. Useful for narrowing a token to one channel, one repo, or one record set.
 - **`authorizationDetails`**: rich authorization requests, when the provider supports them.
 
@@ -93,11 +93,23 @@ const token = await getToken('slack/acme-slack', {
 
 Vercel Connect drives the provider's refresh flow automatically using the refresh token stored at install time. Your code never needs to handle refresh.
 
+Pass `{ forceRefresh: true }` as the third argument to `getToken` or `getTokenResponse` when you need to bypass the in-process cache and revalidate the grant with Vercel Connect:
+
+```ts filename="app/lib/revalidate.ts"
+const token = await getToken(
+  'slack/acme-slack',
+  { subject: { type: 'app' } },
+  { forceRefresh: true },
+);
+```
+
+If a provider rejects a cached token, call `deleteTokenCacheEntry` with the same connector and request parameters. The next token request fetches a fresh token without bypassing the cache on every call. See [SDK Reference](/docs/connect/ts-sdk-reference#deletetokencacheentry).
+
 ## Revocation
 
 Revoking a token tells the provider to invalidate it at the source. Whether revocation actually invalidates the token depends on the provider. If the provider exposes a revocation endpoint, Vercel Connect calls it. If not, Vercel Connect marks the token for deletion in its own store, but the underlying provider credential may continue to work until it expires naturally.
 
-You can revoke from the dashboard, from the CLI (`vercel connect token revoke …`), or programmatically through the REST API.
+You can revoke from the dashboard, from the CLI (`vercel connect token revoke …`), with the SDK's [`revokeToken`](/docs/connect/ts-sdk-reference#revoketoken) function, or through the REST API.
 
 ## Errors
 

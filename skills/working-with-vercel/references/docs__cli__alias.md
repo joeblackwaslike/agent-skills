@@ -16,8 +16,8 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "79d7e35057eab9f428510f7ba968f9a8ab30b2736129c8048334ce0aac70b9b8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "239c536c6cf742e497d3755d9a8f0a59f649dd8db0643d7bf396833884b00f10"
 ---
 
 # vercel alias
@@ -33,9 +33,9 @@ The `vercel alias` command allows you to apply [custom domains](/docs/domains/wo
 - [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related) — Learn how to automatically alias a Vercel preview deployment.
 - [Why do my Vercel deployments have multiple domains?](https://vercel.com/kb/guide/why-do-my-vercel-deployments-have-multiple-domains?from=related) — Learn about why Vercel auto generates URLs for your deployments.
 - [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias?from=related)
-- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias?from=related)
+- [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [List aliases](https://vercel.com/docs/rest-api/aliases/list-aliases?from=related)
 
 Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md)

@@ -14,8 +14,8 @@ related:
 summary: A popover interface for deploying files to Vercel with real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "304880b9f86c750b3494ec22ad2fdbe6a9b4d74c3dac69ff92523bc0c76bf267"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e4e4f0d33c3f70d73e0803b33be3709e1cd089be025bda978f49ecf5f670858c"
 ---
 
 # Deploy Popover
@@ -28,6 +28,7 @@ sha256: "304880b9f86c750b3494ec22ad2fdbe6a9b4d74c3dac69ff92523bc0c76bf267"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deployments](https://v0.app/docs/deployments?from=related) — Deploy your v0 chats to Vercel with one click and manage production deployments.
 - [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [Vercel Drop](https://vercel.com/docs/drop?from=related) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.

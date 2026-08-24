@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "23603db98faa22f19ae01a9f6a77296c1c32013bbf929a9861f56e907e183b4f"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "59e5e704011c2a6e421aea748bf8322fecc910acb872bc2d27629ac0a08c3066"
 ---
 
 # Providers and Models
@@ -98,6 +98,7 @@ The open-source community has created the following providers:
 - [ZeroEntropy Provider](/providers/community-providers/zeroentropy) (`zeroentropy-ai-provider`)
 - [Crusoe Provider](/providers/community-providers/crusoe) (`crusoe-ai-provider`)
 - [Neon AI Gateway Provider](/providers/community-providers/neon-ai-gateway) (`@neon/ai-sdk-provider`)
+- [Interfaze Provider](/providers/community-providers/interfaze) (`@interfaze-ai/ai-sdk`)
 
 ## Self-Hosted Models
 

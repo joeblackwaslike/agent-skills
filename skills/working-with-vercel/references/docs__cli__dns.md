@@ -12,13 +12,13 @@ related:
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b94ab36f51ad721b8ec827e649ec59b0ee954cba39e3b1bb0c06079266879a85"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "2e52a219c616b226711a2ce91fe17c3368dec7c019b40c010514ee63cf2e9ead"
 ---
 
 # vercel dns
 
-The `vercel dns` command is used to manage DNS record for domains, providing functionality to list, add, remove, and import records.
+The `vercel dns` command manages DNS records for domains: list, inspect, add, update, remove, and import records.
 
 
 <!-- docsgraph:related -->
@@ -27,13 +27,12 @@ The `vercel dns` command is used to manage DNS record for domains, providing fun
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How to Export Your Domain's DNS Records from Vercel](https://vercel.com/kb/guide/export-domain-dns-records-via-api?from=related) — Learn how to utilize our API to export your domain's DNS records from Vercel.
-- [Does using Vercel's Nameserver's lock you in?](https://vercel.com/kb/guide/does-using-vercel-s-nameserver-s-lock-you-in?from=related) — Learn about how using Vercel's Nameservers doesn't lock you to anything.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
+- [How long will it take for my Vercel DNS records to update?](https://vercel.com/kb/guide/how-long-to-update-dns-records?from=related) — Information on the length of time it may take for Vercel DNS changes to take place.
 - [vercel domains](https://vercel.com/docs/cli/domains?from=related) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
-- [List existing DNS records](https://vercel.com/docs/rest-api/dns/list-existing-dns-records?from=related)
-- [vercel certs](https://vercel.com/docs/cli/certs?from=related) — Learn how to manage certificates for your domains using the vercel certs CLI command.
+- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record?from=related)
+- [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record?from=related)
 
 Full cross-link map for this page: [/docs/cli/dns.graph.md](/docs/cli/dns.graph.md)
 <!-- /docsgraph:related -->
@@ -81,6 +80,41 @@ vercel dns add [domain] [name] CAA '[flags] [tag] "[value]"'
 a domain.*
 
 ```bash filename="terminal"
+vercel dns update [record-id] --name [name] --type [type] --value [value] --ttl [seconds]
+```
+
+*Using the \`vercel dns\` command to update fields of an
+existing DNS record in place, using its ID.*
+
+```bash filename="terminal"
+vercel dns update [record-id] --mx-priority [priority]
+```
+
+*Using the \`vercel dns\` command to update the priority
+of an MX record.*
+
+```bash filename="terminal"
+vercel dns update [record-id] --srv-priority [priority] --srv-weight [weight] --srv-port [port] --srv-target [target]
+```
+
+*Using the \`vercel dns\` command to update an SRV record.
+All four \`--srv-\` options must be provided together.*
+
+```bash filename="terminal"
+vercel dns update [record-id] --comment "[comment]"
+```
+
+*Using the \`vercel dns\` command to update the comment
+that describes what a DNS record is for.*
+
+```bash filename="terminal"
+vercel dns inspect [record-id]
+```
+
+*Using the \`vercel dns\` command to show a single DNS
+record in full using its ID.*
+
+```bash filename="terminal"
 vercel dns rm [record-id]
 ```
 
@@ -108,6 +142,96 @@ vercel dns ls --limit 100
 
 *Using the \`vercel dns ls\` command with the
 \`--limit\` option.*
+
+### Name
+
+Use the `--name` option with `update` to set a new name for the DNS record. Using `'@'` as the name refers to the domain itself.
+
+```bash filename="terminal"
+vercel dns update rec_1a2b3c4d5e6f --name api
+```
+
+*Using the \`vercel dns update\` command with the
+\`--name\` option.*
+
+### Type
+
+Use the `--type` option with `update` to set a new type for the DNS record. Valid types are `A`, `AAAA`, `ALIAS`, `CAA`, `CNAME`, `MX`, `SRV`, and `TXT`.
+
+```bash filename="terminal"
+vercel dns update rec_1a2b3c4d5e6f --type CNAME
+```
+
+*Using the \`vercel dns update\` command with the
+\`--type\` option.*
+
+### Value
+
+Use the `--value` option with `update` to set a new value for the DNS record.
+
+```bash filename="terminal"
+vercel dns update rec_1a2b3c4d5e6f --value 198.51.100.100
+```
+
+*Using the \`vercel dns update\` command with the
+\`--value\` option.*
+
+### TTL
+
+Use the `--ttl` option with `update` to set a new Time to Live (TTL) for the DNS record, in seconds.
+
+```bash filename="terminal"
+vercel dns update rec_1a2b3c4d5e6f --ttl 300
+```
+
+*Using the \`vercel dns update\` command with the
+\`--ttl\` option.*
+
+### MX Priority
+
+Use the `--mx-priority` option with `update` to set a new priority for an MX record.
+
+```bash filename="terminal"
+vercel dns update rec_1a2b3c4d5e6f --mx-priority 10
+```
+
+*Using the \`vercel dns update\` command with the
+\`--mx-priority\` option.*
+
+### SRV Options
+
+Use the `--srv-priority`, `--srv-weight`, `--srv-port`, and `--srv-target` options with `update` to set new values for an SRV record. All four options must be provided together.
+
+```bash filename="terminal"
+vercel dns update rec_1a2b3c4d5e6f --srv-priority 10 --srv-weight 0 --srv-port 389 --srv-target example.com
+```
+
+*Using the \`vercel dns update\` command with the
+\`--srv-priority\`, \`--srv-weight\`,
+\`--srv-port\`, and \`--srv-target\`
+options.*
+
+### Comment
+
+Use the `--comment` option with `update` to add context on what the DNS record is for.
+
+```bash filename="terminal"
+vercel dns update rec_1a2b3c4d5e6f --comment "used for the marketing site"
+```
+
+*Using the \`vercel dns update\` command with the
+\`--comment\` option.*
+
+### Format
+
+Use the `--format` option with `inspect` to specify the output format. `json` is the only supported format.
+
+```bash filename="terminal"
+vercel dns inspect rec_1a2b3c4d5e6f --format json
+```
+
+*Using the \`vercel dns inspect\` command with the
+\`--format\` option.*
 
 
 ---

@@ -15,8 +15,8 @@ related:
 summary: Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "10927967a83443c2707255d96ea6a7b142c031ef64a4889389bfe62aa2a5116b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3dd21ae0055ca1d240c5b2e2287a64eba6236e2feb1cbb2a656c988fb38af3ec"
 ---
 
 # OPTIONS Allowlist
@@ -30,7 +30,7 @@ sha256: "10927967a83443c2707255d96ea6a7b142c031ef64a4889389bfe62aa2a5116b"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
-- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
 - [Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Exceptions](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions?from=related) — Disable Deployment Protection for a list of preview domains.

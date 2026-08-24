@@ -17,8 +17,8 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "98a4227de75c372503f50829e7452145eea8484c8e1f7a77a0dd49c9a3f56e9a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6b85930287557905c0a49b706fcaa6d491b85fd3e78f23b8355340099a2402ce"
 ---
 
 # Restrict access to deployments with Vercel Authentication
@@ -32,7 +32,7 @@ sha256: "98a4227de75c372503f50829e7452145eea8484c8e1f7a77a0dd49c9a3f56e9a"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related) — Protect who can see your deployments.
-- [How can I enable CORS on Vercel?](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to add CORS headers to your application on Vercel.
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s

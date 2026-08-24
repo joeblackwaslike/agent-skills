@@ -16,8 +16,8 @@ related:
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "2888fee0d9bc7d8759d9ac382f26c346519f0507eb790b89f90f65f1438831d8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "ae8e26402a82dce04846111e27e961ade91f51dc8157875a9caae8ff61985b67"
 ---
 
 # Deploying Turborepo to Vercel
@@ -38,9 +38,10 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 - [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci?from=related) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables?from=related) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
 - [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd?from=related) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \(OIDC\) or a Person
+- [External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd?from=related) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Builds](https://vercel.com/docs/builds?from=related) — Understand how the build step works when creating a Vercel Deployment.
 - [Production Checklist](https://vercel.com/docs/production-checklist?from=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
 <!-- /docsgraph:related -->

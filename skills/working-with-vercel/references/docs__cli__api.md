@@ -14,8 +14,8 @@ related:
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "97257115bd8b6fdbfdfd066c16dd3b13bea836e1c5eeb5ee99ebd6194f435734"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "44300273ee7cf552af6ab23f5207fe1a186b46d2248a5e5d8a5e97518f18ce3a"
 ---
 
 # vercel api
@@ -29,10 +29,10 @@ sha256: "97257115bd8b6fdbfdfd066c16dd3b13bea836e1c5eeb5ee99ebd6194f435734"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel list](https://vercel.com/docs/cli/list?from=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
+- [vercel comments](https://vercel.com/docs/cli/comments?from=related) — Learn about vercel comments on Vercel.
 
 Full cross-link map for this page: [/docs/cli/api.graph.md](/docs/cli/api.graph.md)
 <!-- /docsgraph:related -->

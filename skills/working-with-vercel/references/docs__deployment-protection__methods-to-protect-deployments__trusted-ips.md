@@ -17,8 +17,8 @@ related:
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "144e719cdf51af01b6d1d58b43c174247d7a1c12aabe1ea6c1ea0f72888bc23c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e384605d43a4572dc5caad41c720aa85953d300e1267c63e56a27c1f053f1000"
 ---
 
 # Restrict deployment access by IP address
@@ -31,16 +31,16 @@ sha256: "144e719cdf51af01b6d1d58b43c174247d7a1c12aabe1ea6c1ea0f72888bc23c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Using Self-hosted & Reverse Proxies with Vercel](https://vercel.com/kb/guide/how-to-setup-verified-proxy?from=related) — Learn about using self-hosted or reverse proxies with Vercel deployments.
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [OPTIONS Allowlist](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist?from=related) — Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
-- [Getting Started](https://vercel.com/docs/networking/static-ips/getting-started?from=related) — Learn how to set up Static IPs for your Vercel projects to connect to IP-restricted backend services.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related) — Learn about security on Vercel.
+- [Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md)
 <!-- /docsgraph:related -->

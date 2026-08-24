@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure custom error pages for 5xx server errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/custom-error-pages.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "56765ae7a954a82bb5684208ee5b0651f17e17d71520cda989809968a26c1d01"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e25c904ce15cbbd9e11440d1e282bdc1340cc836e6bd366fa3b3aee1f6456c95"
 ---
 
 # Custom error pages
@@ -34,7 +34,7 @@ sha256: "56765ae7a954a82bb5684208ee5b0651f17e17d71520cda989809968a26c1d01"
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Avoiding duplicate-content SEO with vercel.app URLs and custom domains](https://vercel.com/kb/guide/avoiding-duplicate-content-with-vercel-app-urls?from=related) — Discover why search engines may treat your vercel.app URL and custom domain as separate pages, and how to consolidate ra
 - [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel?from=related) — Learn how to work with build output limits for Next.js on Vercel.
-- [Troubleshooting](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related) — Learn how to troubleshoot common errors with Sign in with Vercel
+- [Custom Subpaths](https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths?from=related) — Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects?from=related) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related) — Learn how to implement common Vercel platform features through the Build Output API.

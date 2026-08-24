@@ -17,8 +17,8 @@ related:
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5129e32c4ac187f4271294bc000a2a5a42452a53084f925e4d80819556b294da"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e0849be056d2f164fd6a760fa6814770f31f991805546aff91cb4f222932c1c8"
 ---
 
 # Deploy a Django app on Vercel
@@ -41,8 +41,8 @@ project settings.
 - [Flask](https://vercel.com/docs/frameworks/backend/flask?from=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 - [Celery](https://vercel.com/docs/frameworks/backend/celery?from=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Express](https://vercel.com/docs/frameworks/backend/express?from=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/django.graph.md](/docs/frameworks/full-stack/django.graph.md)
 <!-- /docsgraph:related -->

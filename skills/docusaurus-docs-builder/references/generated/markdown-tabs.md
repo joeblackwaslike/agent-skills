@@ -1,18 +1,18 @@
 ---
 title: "Markdown Tabs"
 source: "https://docusaurus.io/docs/markdown-features/tabs"
-fetched_at: "2026-07-13T06:52:46.761Z"
-sha256: "eeb7c2a562d50a269894ec5f17a3c75241b6e159f5c635665053a790ee8778ba"
+fetched_at: "2026-08-24T04:43:10.282Z"
+sha256: "d7640a4424ba5b3547be93bbcfc2a7a13671f936b198c546270aaec4a417156c"
 ---
 
 # Markdown Tabs
 
 Source: https://docusaurus.io/docs/markdown-features/tabs
 
-GuidesMarkdown FeaturesTabsVersion: 3.10.2On this page
+[](https://docusaurus.io/)[Guides](https://docusaurus.io/docs/category/guides)[Markdown Features](https://docusaurus.io/docs/markdown-features)TabsVersion: 3.10.2On this page
 # Tabs
 
-Docusaurus provides the `<Tabs>` component that you can use in Markdown thanks to MDX:
+Docusaurus provides the `<Tabs>` component that you can use in Markdown thanks to [MDX](https://docusaurus.io/docs/markdown-features/react):
 
 
 ```
@@ -36,13 +36,13 @@ http://localhost:3000AppleOrangeBananaThis is an apple 🍎This is an orange �
 http://localhost:3000Apple 1Orange 1Banana 1This is an apple 🍎This is an orange 🍊This is a banana 🍌
 tipBy default, all tabs are rendered eagerly during the build process, and search engines can index hidden tabs.It is possible to only render the default tab with `<Tabs lazy />`.
 
-## Displaying a default tab​
+## Displaying a default tab[​](https://docusaurus.io/docs/markdown-features/tabs#displaying-a-default-tab)
 
 The first tab is displayed by default, and to override this behavior, you can specify a default tab by adding `default` to one of the tab items. You can also set the `defaultValue` prop of the `Tabs` component to the label value of your choice. For example, in the example above, either setting `default` for the `value="apple"` tab or setting `defaultValue="apple"` for the tabs forces the "Apple" tab to be open by default.
 
 Docusaurus will throw an error if a `defaultValue` is provided for the `Tabs` but it refers to a non-existing value. If you want none of the tabs to be shown by default, use `defaultValue={null}`.
 
-## Syncing tab choices​
+## Syncing tab choices[​](https://docusaurus.io/docs/markdown-features/tabs#syncing-tab-choices)
 
 You may want choices of the same kind of tabs to sync with each other. For example, you might want to provide different instructions for users on Windows vs users on macOS, and you want to change all OS-specific instructions tabs in one click. To achieve that, you can give all related tabs the same `groupId` prop. Note that doing this will persist the choice in `localStorage` and all `<Tab>` instances with the same `groupId` will update automatically when the value of one of them is changed. Note that group IDs are globally namespaced.
 
@@ -70,7 +70,7 @@ Tab choices with different group IDs will not interfere with each other:
 
 http://localhost:3000WindowsmacOSWindows in windows.macOS is macOS.WindowsUnixWindows is windows.Unix is unix.
 
-## Customizing tabs​
+## Customizing tabs[​](https://docusaurus.io/docs/markdown-features/tabs#customizing-tabs)
 
 You might want to customize the appearance of a certain set of tabs. You can pass the string in `className` prop, and the specified CSS class will be added to the `Tabs` component:
 
@@ -81,7 +81,7 @@ You might want to customize the appearance of a certain set of tabs. You can pas
 
 http://localhost:3000AppleOrangeBananaThis is an apple 🍎This is an orange 🍊This is a banana 🍌
 
-### Customizing tab headings​
+### Customizing tab headings[​](https://docusaurus.io/docs/markdown-features/tabs#customizing-tab-headings)
 
 You can also customize each tab heading independently by using the `attributes` field. The extra props can be passed to the headings either through the `values` prop in `Tabs`, or props of each `TabItem`—in the same way as you declare `label`.
 
@@ -102,7 +102,7 @@ li[role='tab'][data-value='apple'] {  color: red;}
 ```
 
 
-## Query string​
+## Query string[​](https://docusaurus.io/docs/markdown-features/tabs#query-string)
 
 It is possible to persist the selected tab into the url search parameters. This enables you to share a link to a page which pre-selects the tab - linking from your Android app to documentation with the Android tabs pre-selected. This feature does not provide an anchor link - the browser will not scroll to the tab.
 
@@ -120,4 +120,4 @@ tip`queryString` can be used together with `groupId`.For convenience, when the `
 ```
 <Tabs groupId="current-os" queryString>  <TabItem value="android" label="Android">    Android  </TabItem>  <TabItem value="ios" label="iOS">    iOS  </TabItem></Tabs>
 ```
-http://localhost:3000AndroidiOSAndroidiOSWhen the page loads, the tab query string choice will be restored in priority over the `groupId` choice (using `localStorage`).Edit this pageLast updated on Jul 10, 2026 by Sébastien Lorber
+http://localhost:3000AndroidiOSAndroidiOSWhen the page loads, the tab query string choice will be restored in priority over the `groupId` choice (using `localStorage`).[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-tabs.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

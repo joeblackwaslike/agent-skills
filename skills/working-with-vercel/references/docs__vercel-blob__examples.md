@@ -13,8 +13,8 @@ related:
 summary: Examples on how to use Vercel Blob in your applications
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/examples.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "38cf2ebc5c86fe8ad3c676c5885df016f7a29c2b440f1d6fde9e630d1a3e4fbd"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9a1b99148e31b9bc92fa3b9bc93e56f54000f9f0b1049249385af3f697abbb46"
 ---
 
 # Vercel Blob examples
@@ -34,6 +34,7 @@ sha256: "38cf2ebc5c86fe8ad3c676c5885df016f7a29c2b440f1d6fde9e630d1a3e4fbd"
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload?from=related)
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-blob/examples.graph.md](/docs/vercel-blob/examples.graph.md)
 <!-- /docsgraph:related -->

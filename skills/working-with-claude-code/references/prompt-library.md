@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/prompt-library.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "0240042f18bd1ff6c25b078749720d1978266455e4d877d7bc408ec87f8ea313"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "985ba3bd07863a741e2e5f137e14bc8fb173fa547242ad52de426929d3e9ecba"
 ---
 
 > ## Documentation Index
@@ -1208,7 +1208,7 @@ export const text = {
   },
   "migrate-a-pattern-across": {
     title: "Migrate a pattern across the codebase",
-    teaches: "Describe the old pattern and the new one. Asking Claude to identify every place first means the call sites are listed in the response, so you can check none were missed."
+    teaches: "Describe the old pattern and the new one. Asking Claude to identify every place first means the call sites are listed in the response, so you can check none were missed. For a migration across many files, run [/batch](/docs/en/commands). Claude splits the work into units for you to approve, then background subagents make the changes and open one pull request per unit."
   },
   "optimize-against-a-measurable": {
     title: "Optimize against a measurable target",
@@ -1228,7 +1228,7 @@ export const text = {
   "review-a-pull-request": {
     title: "Review a pull request",
     teaches: "Claude reviews with the whole codebase in context, not just the diff. It reads the changed code and what it calls, so it catches problems a diff-only review would miss.",
-    next: "Turn this on for every PR with Code Review"
+    next: "Run `/code-review <pr#>` in one command, or turn on Code Review for every PR"
   },
   "review-infrastructure-changes-before": {
     title: "Review infrastructure changes before applying",
@@ -1345,7 +1345,7 @@ The prompts above share a few patterns. Recognizing them helps you adapt any pro
 add rate limiting to the public API and make sure existing tests still pass
 ```
 
-**Give it a way to check its own work.** Ask for run, test, compare, or verify in the same prompt so Claude iterates instead of stopping after one attempt.
+**Give it a way to check its own work.** Ask for run, test, compare, or verify in the same prompt so Claude iterates instead of stopping after one attempt. To check the finished change against the running app, run [`/verify`](/docs/en/skills#run-and-verify-your-app).
 
 ```text wrap theme={null}
 write the migration, run it against the dev database, and confirm the schema matches

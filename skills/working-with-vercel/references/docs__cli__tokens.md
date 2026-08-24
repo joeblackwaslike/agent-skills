@@ -12,8 +12,8 @@ related:
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "141b939c72584e557816e8d5e45243f1768da2f73b778aed9d9d2251558838ba"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "025999aa21517fc3c23f86f982f79032c8cce01fd5b899223b3db2877df27b24"
 ---
 
 # vercel tokens
@@ -28,9 +28,9 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens?from=related)
-- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 - [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
+- [vercel project](https://vercel.com/docs/cli/project?from=related) — Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename,
 
 Full cross-link map for this page: [/docs/cli/tokens.graph.md](/docs/cli/tokens.graph.md)
 <!-- /docsgraph:related -->

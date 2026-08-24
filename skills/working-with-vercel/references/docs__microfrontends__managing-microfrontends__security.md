@@ -17,8 +17,8 @@ related:
 summary: Learn about security on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/security.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "b07492f0f0eaeaf866e90f008da650259b8342165e695bdf499b7ded821cf89c"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "7e1d1d9c7b130df02df53daa17721f74302968575ee424f9d9283ae55676ceb5"
 ---
 
 # Managing microfrontends security
@@ -75,7 +75,7 @@ We recommend the following configuration:
 - **Default app**: Use [Standard Protection](/docs/deployment-protection) so that end users can access the microfrontend through the default app's URL.
 - **Child apps**: Enable [protection for all deployments](/docs/deployment-protection) so that child apps are not directly accessible. Since child app content is served through the default app's URL, child apps can only be accessed via the URL of the default project.
 
-This works because Vercel handles routing to child apps within a single request at the network layer — as explained in [Path Routing](/docs/microfrontends/path-routing) — it is not a rewrite that would result in a separate request to the child app's URL. Deployment protection on the child app therefore applies only when the child app's URL is accessed directly.
+This works because Vercel handles routing to child apps within a single request at the network layer, as explained in [routing](/docs/microfrontends/routing). It is not a rewrite that results in a separate request to the child app's URL. Deployment protection on the child app therefore applies only when the child app's URL is accessed directly.
 
 ## Vercel Firewall and microfrontends
 

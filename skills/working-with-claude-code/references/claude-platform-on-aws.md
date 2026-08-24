@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-platform-on-aws.md"
-fetched_at: "2026-08-17T04:41:37.014Z"
-sha256: "72010eb6a564f8b4b965ba31cb08f501005e1898fad9aece08015b286017b77c"
+fetched_at: "2026-08-24T04:44:18.863Z"
+sha256: "37615ca54cb479d1a5bd54053b836c0aeccb4b6b57ffcf9ab63c35c4afab7a4a"
 ---
 
 > ## Documentation Index
@@ -268,7 +268,9 @@ export ANTHROPIC_AWS_WORKSPACE_ID=wrkspc_01ABCDEFGHIJKLMN
 export AWS_REGION=us-east-1
 ```
 
-`ANTHROPIC_AWS_WORKSPACE_ID` is required and is sent on every request as the `anthropic-workspace-id` header. Replace the example `wrkspc_01ABCDEFGHIJKLMN` value with your own workspace ID from your Claude Platform on AWS setup. The base URL is computed from `AWS_REGION` as `https://aws-external-anthropic.{region}.api.aws`. To override the URL directly, set `ANTHROPIC_AWS_BASE_URL`.
+`ANTHROPIC_AWS_WORKSPACE_ID` is required. Claude Code sends it on every request as the `anthropic-workspace-id` header. Replace the example `wrkspc_01ABCDEFGHIJKLMN` value with your own workspace ID from your Claude Platform on AWS setup.
+
+Claude Code computes the base URL as `https://aws-external-anthropic.{region}.api.aws` from the AWS region, which it resolves with the [same precedence as Amazon Bedrock](/docs/en/amazon-bedrock#3-configure-claude-code). To override the URL directly, set `ANTHROPIC_AWS_BASE_URL`.
 
 Claude Platform on AWS is opt-in even when AWS credentials are present in your environment. Amazon Bedrock and Microsoft Foundry take precedence in provider routing, so unset `CLAUDE_CODE_USE_BEDROCK` and `CLAUDE_CODE_USE_FOUNDRY` if they're set.
 

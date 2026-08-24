@@ -10,13 +10,14 @@ prerequisites:
 related:
   - /docs/git
   - /docs/git/vercel-for-github
+  - /docs/project-configuration/general-settings
   - /docs/cli
   - /docs/vercel-toolbar/in-production-and-localhost
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and BitBucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "5c3a3225a4ca678dfa0883bad4f04861a4725e67d47477a30a07d0b0fc533ca8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "e85ffe1720d9d669602ae7b82f1f9269aae18d12f25e7156e5f34e8a6882da96"
 ---
 
 # Integrations for Comments
@@ -29,12 +30,14 @@ sha256: "5c3a3225a4ca678dfa0883bad4f04861a4725e67d47477a30a07d0b0fc533ca8"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Slack](https://v0.app/docs/slack?from=related) — Add v0 to your Slack workspace so your whole team can contribute to production.
 - [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [GitHub](https://v0.app/docs/github?from=related) — Connect your GitHub repositories to v0 to automatically create projects and track changes.
 - [Using Comments](https://vercel.com/docs/comments/using-comments?from=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
 - [Managing Comments](https://vercel.com/docs/comments/managing-comments?from=related) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
-- [GitLab](https://vercel.com/docs/git/vercel-for-gitlab?from=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Enabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [vercel comments](https://vercel.com/docs/cli/comments?from=related) — Learn about vercel comments on Vercel.
+- [Getting Started](https://vercel.com/docs/getting-started-with-vercel?from=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Toolbar](https://vercel.com/docs/vercel-toolbar?from=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 
 Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/comments/integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -42,6 +45,8 @@ Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/
 Comments are available for projects using **any** Git provider. Github, BitBucket and GitLab [are supported automatically](/docs/git#supported-git-providers) with the same level of integration.
 
 Pull requests (PRs) with deployments enabled receive [generated PR messages from Vercel bot](/docs/git/vercel-for-github). These PR messages contain the deployment URL.
+
+Generated Vercel bot PR messages display the project's [avatar](/docs/project-configuration/general-settings#project-avatar) when one is available. When the project has no avatar, the framework icon or generated avatar is shown instead.
 
 The generated PR message will also display an **Add your feedback** URL, which lets people visit the deployment and automatically log in. The PR message tracks how many comments have been resolved.
 
@@ -72,6 +77,8 @@ Commenting is available in production and localhost when you use [the Vercel Too
 ## Use the Vercel app for Slack
 
 The [Vercel app for Slack](https://vercel.com/marketplace/slack) connects Vercel deployments to Slack channels. Any new activity will create corresponding Slack threads, which are synced between the deployment and Slack so that the entire discussion can be viewed and responded to on either platform.
+
+Posts and threads created by the Vercel app for Slack display the project's [avatar](/docs/project-configuration/general-settings#project-avatar) when one is available, so you can tell projects apart at a glance. Otherwise, the framework icon or generated avatar is shown.
 
 To get started:
 

@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "622ea1ca659661dcd69c4ac503dc2a0e35f6cdce604bd2b5571922a1e2a90f88"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "41a8cc694dca1116fa573f38eda3689e1a59b310fe6859428da9ced1aa36e288"
 ---
 
 # Billing FAQ for Pro Plan
@@ -32,6 +32,7 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Billing FAQ](https://vercel.com/docs/plans/enterprise/billing?from=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Pricing](https://v0.app/docs/pricing?from=related) — Understand the v0 plans, pricing, and usage limits.
 - [Hobby Plan](https://vercel.com/docs/plans/hobby?from=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Pro Plan Trial](https://vercel.com/docs/plans/pro-plan/trials?from=related) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
 - [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y

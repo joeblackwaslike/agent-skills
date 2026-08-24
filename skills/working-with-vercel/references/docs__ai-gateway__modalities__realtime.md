@@ -15,8 +15,8 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "98deaf961f60085a9f89bbb675b22bd1dc2fbfb72cd49aadcd92f4d05db197f7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "b1a11473cc38c10365e3f455b425bf75711626ce251b118747d8ebb81fef7949"
 ---
 
 # Realtime
@@ -37,6 +37,7 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Speech](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related) — Generate speech from text and transcribe audio back to text with AI Gateway.
 - [Text](https://vercel.com/docs/ai-gateway/getting-started/text?from=related) — Generate and stream text responses using AI Gateway.
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md)
 <!-- /docsgraph:related -->

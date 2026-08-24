@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI model to your Vercel projects
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "345f8aaeb7c8ccc2db3751d511e7bdfbe4fad03559f69612e31a2407fe219cd2"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "9342ea2d93a268b5d403c71c9246176835c4c5b26db80e485b3822743153c678"
 ---
 
 # Adding a Model
@@ -31,6 +31,7 @@ If you have integrations installed, scroll to the bottom to access the models ex
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI models](https://v0.app/docs/ai-models?from=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related) — Learn how to add a new AI provider to your Vercel projects.
 - [Models & Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related) — Work with models and providers in AI Gateway: provider routing and fallbacks, filtering, timeouts, caching, service tier
 - [AI Gateway](https://vercel.com/docs/ai-gateway?from=related) — AI Gateway provides a unified API to access hundreds of AI models through a single endpoint, with text, image, and video

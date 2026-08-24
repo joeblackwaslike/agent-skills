@@ -13,8 +13,8 @@ related:
 summary: "Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless collaboration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edit-mode.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1867219cf1c89df28eff1f375ed40dc4c573d01178a60e3a4e2b3325dc2bb4ba"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "eb794be0c8d7794ebb979d6ab614ad8973b923543aa402136960efde0b4b01d3"
 ---
 
 # Edit Mode
@@ -32,6 +32,7 @@ sha256: "1867219cf1c89df28eff1f375ed40dc4c573d01178a60e3a4e2b3325dc2bb4ba"
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, security defaults, AI infrastructure, GPU comp
 - [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway?from=related) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images via Dockerfile.vercel, frame
+- [Code editing](https://v0.app/docs/code-editing?from=related) — Edit v0's code output directly in the browser.
 - [DatoCMS](https://vercel.com/docs/integrations/cms/dato-cms?from=related) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
 - [Contentful](https://vercel.com/docs/integrations/cms/contentful?from=related) — Integrate Vercel with Contentful to deploy your content.
 - [Sanity](https://vercel.com/docs/integrations/cms/sanity?from=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration

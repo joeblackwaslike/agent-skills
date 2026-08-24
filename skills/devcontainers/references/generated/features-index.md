@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-08-17T04:40:34.367Z"
-sha256: "4dcb0243bdae8c4b52bcfe9c229771e86a7075a57a29f4ece083bbbd7551978f"
+fetched_at: "2026-08-24T04:42:55.961Z"
+sha256: "e88f8290b9bc0d023dcd877f8f27ebd6f0ad7b8d7ecf29dc491dc3709bfc8c1e"
 ---
 
 # Available features index
@@ -117,7 +117,7 @@ Features
 | Dotnet CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/dotnet:2` | `2.5.0` |
 | Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.8` |
 | Git Large File Support (LFS) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git-lfs:1` | `1.2.5` |
-| GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.0` |
+| GitHub CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/github-cli:1` | `1.1.1` |
 | Go | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/go:1` | `1.3.4` |
 | Hugo | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/hugo:1` | `1.1.3` |
 | Java (via SDKMAN!) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/java:1` | `1.8.1` |
@@ -617,12 +617,12 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.27` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.21` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.125` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.126` |
 | Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.38` |
 | Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.38` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.72` |
-| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.36` |
-| Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.27` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.73` |
+| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.37` |
+| Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
 | dmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/dmnlint:1` | `1.0.1` |
 | Verilator | dalance | `ghcr.io/veryl-lang/devcontainer-features/verilator:1` | `1.0.0` |
@@ -1262,20 +1262,19 @@ Features
 | Go security checker | Ivan Szkiba | `ghcr.io/szkiba/devcontainer-features/gosec:1` | `1.0.1` |
 | Go vulnerability scanner | Ivan Szkiba | `ghcr.io/szkiba/devcontainer-features/govulncheck:1` | `1.0.3` |
 | Markdown code block authoring tool | Ivan Szkiba | `ghcr.io/szkiba/devcontainer-features/mdcode:1` | `1.0.2` |
-| bpftool | TheDiveO | `ghcr.io/thediveo/devcontainer-features/bpftool:0` | `0.0.4` |
-| CNI Plugins | TheDiveO | `ghcr.io/thediveo/devcontainer-features/cni-plugins:0` | `0.0.1` |
+| bpftool | TheDiveO | `ghcr.io/thediveo/devcontainer-features/bpftool:0` | `0.0.5` |
+| CNI Plugins | TheDiveO | `ghcr.io/thediveo/devcontainer-features/cni-plugins:0` | `0.0.2` |
 | docsify server | TheDiveO | `ghcr.io/thediveo/devcontainer-features/docsify:1` | `1.0.1` |
-| gcx | TheDiveO | `ghcr.io/thediveo/devcontainer-features/gcx:0` | `0.0.1` |
+| gcx | TheDiveO | `ghcr.io/thediveo/devcontainer-features/gcx:0` | `0.0.2` |
 | Go ebpf development | TheDiveO | `ghcr.io/thediveo/devcontainer-features/go-ebpf:1` | `1.0.0` |
 | go-mod-upgrade | TheDiveO | `ghcr.io/thediveo/devcontainer-features/go-mod-upgrade:1` | `1.0.0` |
 | Go Coverage with Badge | TheDiveO | `ghcr.io/thediveo/devcontainer-features/gocover:1` | `1.0.0` |
 | Go Report Card | TheDiveO | `ghcr.io/thediveo/devcontainer-features/goreportcard:1` | `1.0.0` |
-| grafanactl | TheDiveO | `ghcr.io/thediveo/devcontainer-features/grafanactl:0` | `0.0.2` |
-| lazygit | TheDiveO | `ghcr.io/thediveo/devcontainer-features/lazygit:0` | `0.0.1` |
+| lazygit | TheDiveO | `ghcr.io/thediveo/devcontainer-features/lazygit:0` | `0.0.2` |
 | Local Go Pkgsite | TheDiveO | `ghcr.io/thediveo/devcontainer-features/local-pkgsite:1` | `1.0.2` |
-| nerdctl containerd control CLI and CNI plugins | TheDiveO | `ghcr.io/thediveo/devcontainer-features/nerdctl:0` | `0.1.0` |
+| nerdctl containerd control CLI and CNI plugins | TheDiveO | `ghcr.io/thediveo/devcontainer-features/nerdctl:0` | `0.1.1` |
 | pin-github-action | TheDiveO | `ghcr.io/thediveo/devcontainer-features/pin-github-action:0` | `0.1.0` |
-| pinact | TheDiveO | `ghcr.io/thediveo/devcontainer-features/pinact:0` | `0.0.1` |
+| pinact | TheDiveO | `ghcr.io/thediveo/devcontainer-features/pinact:0` | `0.0.2` |
 | OCI registry pull-through cache to mirror rate-limited upstream registries, such as Docker Hub | TheDiveO | `ghcr.io/thediveo/devcontainer-features/pull-through-cache-registry:1` | `1.0.0` |
 | install and switch between multiple Docker CE versions | TheDiveO | `ghcr.io/thediveo/devcontainer-features/wal-wahl:0` | `0.1.0` |
 | .NET Aspire | danmoseley | `ghcr.io/dotnet/aspire-devcontainer-feature/dotnetaspire:1` | `1.0.0` |
@@ -1448,13 +1447,13 @@ Features
 | Gitea CLI | sliekens | `ghcr.io/sliekens/devcontainer-features/tea:1` | `1.1.3` |
 | Worktrunk | sliekens | `ghcr.io/sliekens/devcontainer-features/worktrunk:1` | `1.1.1` |
 | APM (Agent Package Manager) | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/apm:1` | `1.1.0` |
-| Browsers | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/browsers:1` | `1.0.0` |
+| Browsers | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/browsers:1` | `1.1.0` |
 | Build Essential | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/build-essential:1` | `1.0.0` |
 | claude-code | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/claude-code:1` | `1.1.0` |
-| Cypress Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/cypress-deps:1` | `1.0.0` |
+| Cypress Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/cypress-deps:1` | `1.0.1` |
 | Docker outside Docker | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/docker-out:1` | `1.1.0` |
 | .NET | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/dotnet:1` | `1.0.0` |
-| Eclipse Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/eclipse-deps:1` | `1.0.0` |
+| Eclipse Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/eclipse-deps:1` | `1.1.0` |
 | Git LFS | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/git-lfs:1` | `1.1.0` |
 | GitHub CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/github-cli:1` | `1.1.0` |
 | GitHub Copilot CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/github-copilot-cli:1` | `1.1.0` |
@@ -1462,16 +1461,16 @@ Features
 | Go | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/go:1` | `1.0.0` |
 | Gonovate | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/gonovate:1` | `1.1.0` |
 | GoReleaser | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/goreleaser:1` | `1.1.0` |
-| Instant client | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/instant-client:1` | `1.0.0` |
+| Instant client | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/instant-client:2` | `2.0.0` |
 | JFrog CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/jfrog-cli:1` | `1.0.1` |
 | kubectl | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/kubectl:1` | `1.1.0` |
 | Set a specific locale | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/locale:1` | `1.0.0` |
 | Make | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/make:1` | `1.0.0` |
 | MinGW | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/mingw:1` | `1.0.0` |
-| Nginx | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/nginx:1` | `1.0.0` |
+| Nginx | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/nginx:1` | `1.0.1` |
 | Node.js | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/node:1` | `1.0.0` |
 | NPM Packages | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/npm-packages:1` | `1.0.0` |
-| NVIDIA CUDA | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/nvidia-cuda:1` | `1.0.0` |
+| NVIDIA CUDA | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/nvidia-cuda:1` | `1.1.0` |
 | opencode | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/opencode:1` | `1.1.0` |
 | Playwright Dependencies | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/playwright-deps:2` | `2.0.0` |
 | Python | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/python:1` | `1.1.0` |
@@ -1483,8 +1482,9 @@ Features
 | Vault CLI | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/vault-cli:1` | `1.0.0` |
 | Zig | PostFinance AG | `ghcr.io/postfinance/devcontainer-features/zig:1` | `1.0.0` |
 | Claude config mount | NicoVIII | `ghcr.io/nicoviii/devcontainer-features/claude-mount:0` | `0.1.0` |
-| Linux X11 Forwarding | althack | `ghcr.io/althack/devcontainers/linux-x11-forwarding:0` | `0.3.0` |
-| ROS 2 | althack | `ghcr.io/althack/devcontainers/ros2:0` | `0.3.0` |
+| Linux PulseAudio Forwarding | althack | `ghcr.io/althack/devcontainers/linux-pulseaudio-forwarding:0` | `0.4.0` |
+| Linux X11 Forwarding | althack | `ghcr.io/althack/devcontainers/linux-x11-forwarding:0` | `0.4.0` |
+| ROS 2 | althack | `ghcr.io/althack/devcontainers/ros2:0` | `0.4.0` |
 | Firefox-Variant-Installer | soup-bowl | `ghcr.io/soup-bowl/features/firefox-set:0` | `0.1.1` |
 | Atlassian CLI for Jira & Confluence | rosstaco | `ghcr.io/rosstaco/devcontainer-features/atlassian-jira-confluence-cli:1` | `1.0.0` |
 | Copilot CLI Persistence | rosstaco | `ghcr.io/rosstaco/devcontainer-features/copilot-persistence:1` | `1.1.0` |
@@ -1496,6 +1496,7 @@ Features
 | Conan Package Manager (1.x) | nkdui | `ghcr.io/nkdui/devcontainer-features/conan:1` | `1.0.0` |
 | Trunk (Rust WASM bundler) | mrhornsby | `ghcr.io/mrhornsby/trunk-devcontainer-feature/trunk:1` | `1.0.0` |
 | Keeper Secrets Manager (KSM) | cdsolinfo | `ghcr.io/cdsolinfo/devcontainer-features/ksm:1` | `1.0.0` |
+| Azure Functions Development Tools | nkaaf | `ghcr.io/nkaaf/devcontainer-features/azure-functions:0` | `0.1.0` |
 | LaTeX - TeX Live | nkaaf | `ghcr.io/nkaaf/devcontainer-features/latex-texlive:0` | `0.1.1` |
 | Package Manager | nkaaf | `ghcr.io/nkaaf/devcontainer-features/package-manager:2` | `2.0.0` |
 | Package Manager - apt | nkaaf | `ghcr.io/nkaaf/devcontainer-features/package-manager-apt:0` | `0.1.0` |
@@ -1530,6 +1531,8 @@ Features
 | Cursor CLI | NolanJX | `ghcr.io/nolanjx/devcontainer-features/cursor:1` | `1.2.0` |
 | DeepSeek Harness | NolanJX | `ghcr.io/nolanjx/devcontainer-features/dsh:1` | `1.0.0` |
 | Matt Pocock's Skills | NolanJX | `ghcr.io/nolanjx/devcontainer-features/mattpocock-skills:1` | `1.0.0` |
+| Pi Coding Agent | NolanJX | `ghcr.io/nolanjx/devcontainer-features/pi-coding-agent:1` | `1.0.0` |
+| Claude Code (apt) | Andrii Pravorskyi | `registry.gitlab.com/pravorskyi/devcontainer-features/claude-code:1` | `1.0.0` |
 
 
             

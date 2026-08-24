@@ -13,8 +13,8 @@ related:
 summary: Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "019269e4085e8d96e5218ae8abadb0b7886ae4eceba541a6f43d9baad846e947"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "f73a87f967bacb63119110154c6c88c78072364663d33f55b5e2c76ccf20d792"
 ---
 
 # Multi-Tenant Platform Concepts
@@ -157,7 +157,7 @@ export async function proxy(request: NextRequest) {
 ### Request handling flow
 
 1. User visits `tenant1.yourapp.com`
-2. Request hits Vercel's edge network
+2. Request hits Vercel's CDN
 3. Proxy extracts subdomain (`tenant1`)
 4. Proxy looks up tenant in database or Global Config
 5. Proxy adds tenant context to the request headers

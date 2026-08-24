@@ -16,11 +16,11 @@ related:
 summary: Get started with AI Gateway by generating text, images, video, speech, or transcriptions, or by building realtime voice agents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8eaad6736b5313787e95b02609bf14900f70d748da46839a7a4482e8b6a24874"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "be4258c88d8e8f4d1f797fa2365ab9cbed8e5ecbe79f21d6004c309a17ca4f03"
 ---
 
-# Getting Started
+# Getting Started with AI Gateway
 
 Choose a quickstart to set up a project and make your first request:
 

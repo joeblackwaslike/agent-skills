@@ -17,8 +17,8 @@ related:
 summary: Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "85c3a2c8df8184e51d7b2f42df3d7242f1b415cdb3a5adcf35a8594b258c6688"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "12bb54b75cd37ea894f223c7c467fa8f20595e2cdba511c609c783bba4e5967b"
 ---
 
 # Using the Flags SDK with Vercel Flags
@@ -31,13 +31,14 @@ The [Flags SDK](/docs/flags/flags-sdk-reference) is the recommended way to use V
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related) — Using the Flags SDK in SvelteKit
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Core](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related) — Use the Vercel Flags core evaluation library directly for custom setups.
-- [Feature Flag](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
-- [OpenFeature](https://vercel.com/docs/flags/vercel-flags/sdks/openfeature?from=related) — Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [Set Up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/flags-sdk.graph.md](/docs/flags/vercel-flags/sdks/flags-sdk.graph.md)
 <!-- /docsgraph:related -->

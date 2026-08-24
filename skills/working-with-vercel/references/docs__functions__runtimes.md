@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "c02b070986031ec16a583a73e02863497fb9e5f302851d8a264c6d50f164e282"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6673cfb1077955cd807cb4d2f18fedb8aa9a669375b1133f6e051c66341b9957"
 ---
 
 # Runtimes
@@ -36,11 +36,11 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker support, background workers, and when to
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related) — Learn how to build and scale performant APIs on Vercel.
+- [Backends](https://vercel.com/docs/frameworks/backend?from=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Image](https://vercel.com/docs/builds/build-image?from=related) — Learn about the container image used for Vercel builds.
 - [Managing Cron Jobs](https://vercel.com/docs/cron-jobs/manage-cron-jobs?from=related) — Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency
 - [Troubleshoot Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Frontends](https://vercel.com/docs/frameworks/frontend?from=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/functions/runtimes.graph.md](/docs/functions/runtimes.graph.md)
 <!-- /docsgraph:related -->

@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway/modalities
 related:
   - /docs/ai-gateway/modalities/video-generation/video-editing
+  - /docs/ai-gateway/modalities/video-generation
 summary: Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "89d068b9a63f59d2f9944f7e56216c4015c4ec3dfe4fb84c6189eac9e53c109a"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "fc7321453100767fdc96a6b5f768a8adaabde84e509238e18fff580f2602d49b"
 ---
 
 # Video Extension
@@ -35,12 +36,14 @@ Continue an existing video from its last frame. Describe what happens next and t
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related)
 - [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
 - [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
+- [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 - [Reference-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video?from=related) — Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok I
 - [Image-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video?from=related) — Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-extension.graph.md](/docs/ai-gateway/modalities/video-generation/video-extension.graph.md)
 <!-- /docsgraph:related -->
+
+Every model here also runs as a background job instead of one long-lived request. See [asynchronous generation](#asynchronous-generation) below.
 
 ## Grok Imagine Video
 
@@ -133,6 +136,34 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation. Generated video URLs are ephemeral
 > and should be downloaded promptly.
+
+## Asynchronous generation
+
+Pass a `webhook` factory and the SDK registers your URL with the job instead of polling for it. The factory returns that URL and a `received` promise it waits on, then it fetches the videos itself.
+
+```typescript filename="async-video-extension.ts"
+const result = await generateVideo({
+  model: gateway.videoModel('xai/grok-imagine-video'),
+  prompt: 'The cat turns its head, notices a butterfly, and leaps off.',
+  duration: 6,
+  providerOptions: {
+    xai: {
+      mode: 'extend-video',
+      // Already a hosted URL, which is what the asynchronous flow needs.
+      videoUrl: 'https://example.com/source-video.mp4',
+    },
+  },
+  webhook: async () => ({
+    url: callbackUrl,
+    received: waitForDelivery(token),
+  }),
+  poll: { timeoutMs: 10 * 60 * 1000 },
+});
+```
+
+The start request AI Gateway persists is capped at 300 KiB, so pass your source video as a hosted URL on this flow rather than inline data.
+
+`token`, `callbackUrl`, and `waitForDelivery` come from [webhook-driven completion](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion), which also covers the receiver, signature verification, and the payload shape.
 
 ***
 

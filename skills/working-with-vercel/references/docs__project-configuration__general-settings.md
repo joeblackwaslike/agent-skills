@@ -16,8 +16,8 @@ related:
 summary: Configure basic settings for your Vercel project, including the project name, build and development settings, root directory, Node.js version,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/general-settings.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "1d67a501da54f6c5f9eb4e2e3f6a1aecf006281ebf9b57764ebdf03b6775adeb"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "aa10164a370698046b2464df5883421e4f040a5c3eff5e5422289c6da1b091d6"
 ---
 
 # General settings
@@ -34,14 +34,22 @@ sha256: "1d67a501da54f6c5f9eb4e2e3f6a1aecf006281ebf9b57764ebdf03b6775adeb"
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [Project Settings](https://vercel.com/docs/project-configuration/project-settings?from=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Add to Environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related) — Learn how to use the Vercel Toolbar in production and local environments.
-- [Project Linking](https://vercel.com/docs/cli/project-linking?from=related) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [Build Features](https://vercel.com/docs/builds/build-features?from=related) — Learn how to customize your deployments using Vercel's build features.
+- [Project Linking](https://vercel.com/docs/cli/project-linking?from=related) — Learn how to link existing Vercel Projects with Vercel CLI.
+- [Projects](https://vercel.com/docs/projects?from=related) — A project is the application that you have deployed to Vercel.
 
 Full cross-link map for this page: [/docs/project-configuration/general-settings.graph.md](/docs/project-configuration/general-settings.graph.md)
 <!-- /docsgraph:related -->
 
 Project names can be up to 100 characters long and must be lowercase. They can include letters, digits, and the following characters: `.`, `\_`, `-`. However, they cannot contain the sequence `---`.
+
+## Project avatar
+
+Each project can have its own avatar, shown across the Vercel dashboard and in integrations. Project avatars are available on the Hobby, Pro, and Enterprise plans.
+
+After a deployment completes, Vercel detects the project's favicon and stores it once as the avatar. If no favicon is found, the framework icon is shown instead.
+
+To upload your own image, go to **Settings** > **General** and upload a JPG, PNG, SVG, or ICO up to 1 MB with a minimum size of 16×16 px.
 
 ## Build and development settings
 

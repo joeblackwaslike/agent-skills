@@ -14,8 +14,8 @@ related:
 summary: Clone working multi-tenant and multi-project starters to begin your platform build.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "769b3c1aaf549a7591eb8d02983baa80e220e13c5ac70f76408a8c238b2eb4f6"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3fda35e031b096ee606e697937d90b24235724272b559b253bb9b158b42aa1a9"
 ---
 
 # Examples
@@ -30,7 +30,6 @@ Start from a working example instead of a blank project. Each template covers a 
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms?from=related) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.

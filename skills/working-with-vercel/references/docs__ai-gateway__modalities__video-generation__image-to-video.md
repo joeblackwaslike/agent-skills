@@ -12,11 +12,12 @@ related:
   - /docs/ai-gateway/modalities/video-generation/reference-to-video
   - /docs/vercel-blob
   - /docs/ai-gateway/modalities/video-generation/video-extension
+  - /docs/ai-gateway/modalities/video-generation
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "454035a53ac1218367547ca1e18b04da4a76bd683756a50e711e457e230ba227"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3a00b1f6b06ea27aea1255a1b02456edcca67b037c5ccb835e42238820e9d0a0"
 ---
 
 # Image-to-Video Generation
@@ -32,16 +33,19 @@ Animate a static image into a video. The image you provide becomes the video con
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related)
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related)
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related)
+- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs?from=related)
 - [Text-to-Video](https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video?from=related) — Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI G
-- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
 - [Motion Control](https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control?from=related) — Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
+- [Video / Async Video](https://vercel.com/docs/ai-gateway/getting-started/video?from=related) — Generate videos from text prompts, images, or video input using AI Gateway, either over a single request or as a backgro
 - [Image](https://vercel.com/docs/ai-gateway/getting-started/image?from=related) — Generate images from text prompts using AI Gateway.
-- [Image Generation](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related) — Generate images using AI models that support multimodal output through the Chat Completions API.
+- [Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing?from=related) — Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md)
 <!-- /docsgraph:related -->
+
+Every model here also runs as a background job instead of one long-lived request. See [asynchronous generation](#asynchronous-generation) below.
 
 This is different from [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video), where reference images show the model what characters look like, but the video is a completely new scene.
 
@@ -651,6 +655,31 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation.
+
+## Asynchronous generation
+
+Pass a `webhook` factory and the SDK registers your URL with the job instead of polling for it. The factory returns that URL and a `received` promise it waits on, then it fetches the videos itself.
+
+```typescript filename="async-image-to-video.ts"
+const result = await generateVideo({
+  model: gateway.videoModel('klingai/kling-v3.0-i2v'),
+  prompt: {
+    // Hosted URL, not inline bytes: the start request is capped at 300 KiB.
+    image: 'https://example.com/cat.png',
+    text: 'The cat stretches and pads across the windowsill',
+  },
+  duration: 5,
+  webhook: async () => ({
+    url: callbackUrl,
+    received: waitForDelivery(token),
+  }),
+  poll: { timeoutMs: 10 * 60 * 1000 },
+});
+```
+
+The start request AI Gateway persists is capped at 300 KiB, so pass your image as a hosted URL on this flow rather than inline data.
+
+`token`, `callbackUrl`, and `waitForDelivery` come from [webhook-driven completion](/docs/ai-gateway/modalities/video-generation#webhook-driven-completion), which also covers the receiver, signature verification, and the payload shape.
 
 ***
 

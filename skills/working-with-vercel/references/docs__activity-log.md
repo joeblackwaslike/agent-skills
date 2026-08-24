@@ -14,8 +14,8 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "894f76249eed6d728835aea07a228a08cbef77b47b9eb76aa657e1b48a988ae8"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1f2d8b710747a1cbdcdb63d04a17322db7c20cc1db05d96860710554a9fb8dc8"
 ---
 
 # Using the Activity Log
@@ -28,11 +28,12 @@ sha256: "894f76249eed6d728835aea07a228a08cbef77b47b9eb76aa657e1b48a988ae8"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List User Events](https://vercel.com/docs/rest-api/user/list-user-events?from=related)
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [List Event Types](https://vercel.com/docs/rest-api/user/list-event-types?from=related)
-- [Create a new project](https://vercel.com/docs/rest-api/projects/create-a-new-project?from=related)
+- [List User Events](https://vercel.com/docs/rest-api/user/list-user-events?from=related)
 - [Vercel SDK](https://vercel.com/docs/rest-api/sdk?from=related) — Learn about vercel sdk on Vercel.
 - [Rest API](https://vercel.com/docs/rest-api?from=related) — Learn about rest api on Vercel.
+- [Create a new project](https://vercel.com/docs/rest-api/projects/create-a-new-project?from=related)
 
 Full cross-link map for this page: [/docs/activity-log.graph.md](/docs/activity-log.graph.md)
 <!-- /docsgraph:related -->
@@ -91,10 +92,12 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-api-key-created | Active | A user created an AI Gateway API key. |
 | ai-gateway-api-key-deleted | Active | A user deleted an AI Gateway API key. |
 | ai-gateway-api-key-quota-updated | Active | A user set or changed the budget on an AI Gateway API key. |
+| ai-gateway-auto-reload-updated | Active | A user enabled, changed, or disabled automatic AI Gateway credit reloads, whether charged to a card or drawn from a flexible commitment. |
 | ai-gateway-budget-default-updated | Active | A user set, changed, or removed one scope's AI Gateway budget default. |
 | ai-gateway-byok-credential-created | Active | A user created an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-deleted | Active | A user deleted an AI Gateway BYOK credential. |
 | ai-gateway-byok-credential-updated | Active | A user updated an AI Gateway BYOK credential. |
+| ai-gateway-credits-purchased | Active | A user manually purchased AI Gateway credits. Automatic reloads are not recorded, as they have no acting user. |
 | ai-gateway-guardrails-updated | Active | A user updated the AI Gateway guardrail settings. |
 | ai-gateway-model-allowlist-models-updated | Active | Models were added to or removed from the AI Gateway model allowlist. |
 | ai-gateway-model-allowlist-toggled | Active | The AI Gateway model allowlist was enabled or disabled for a team. |
@@ -109,7 +112,7 @@ The table below shows a list of events logged on the Activity page.
 | ai-gateway-rule-created | Active | A user created an AI Gateway routing rule. |
 | ai-gateway-rule-deleted | Active | A user removed an AI Gateway routing rule. |
 | ai-gateway-rule-updated | Active | A user updated an AI Gateway routing rule. |
-| ai-gateway-scope-budget-updated | Active | A user set, changed, or removed a team- or project-scope AI Gateway budget. |
+| ai-gateway-scope-budget-updated | Active | A user set, changed, or removed a team-, project-, or user-scope AI Gateway budget. |
 | ai-gateway-transcripts-default-disabled | Active | AI Gateway Transcripts capture-by-default was disabled for a team. |
 | ai-gateway-transcripts-default-enabled | Active | AI Gateway Transcripts capture-by-default was enabled for a team. |
 | ai-gateway-transcripts-disabled | Active | AI Gateway Transcripts was disabled for a team. |
@@ -239,17 +242,17 @@ The table below shows a list of events logged on the Activity page.
 | edge-cache-invalidate-by-tags | Active | The CDN cache was invalidated by tags. |
 | edge-cache-purge-all | Active | The CDN cache was purged. |
 | edge-cache-rollback-purge | Active | The CDN cache purge was rolled back. |
-| edge-config-backup-restored | Active | An Edge Config was restored from a backup. |
-| edge-config-created | Active | An Edge Config was created. |
-| edge-config-deleted | Active | An Edge Config was deleted. |
-| edge-config-items-updated | Active | The values in an Edge Config were updated. |
-| edge-config-schema-deleted | Active | An Edge Config schema was deleted. |
-| edge-config-schema-updated | Active | An Edge Config schema was updated. |
-| edge-config-token-created | Active | An access token for an Edge Config was created. |
-| edge-config-token-deleted | Active | An access token for an Edge Config was deleted. |
-| edge-config-transfer-in | Active | An Edge Config was transferred in. |
-| edge-config-transfer-out | Active | An Edge Config was transferred out. |
-| edge-config-updated | Active | An Edge Config was updated. |
+| edge-config-backup-restored | Replaced | An Edge Config was restored from a backup. (Replaced by global-config-backup-restored) |
+| edge-config-created | Replaced | An Edge Config was created. (Replaced by global-config-created) |
+| edge-config-deleted | Replaced | An Edge Config was deleted. (Replaced by global-config-deleted) |
+| edge-config-items-updated | Replaced | The values in an Edge Config were updated. (Replaced by global-config-items-updated) |
+| edge-config-schema-deleted | Replaced | An Edge Config schema was deleted. (Replaced by global-config-schema-deleted) |
+| edge-config-schema-updated | Replaced | An Edge Config schema was updated. (Replaced by global-config-schema-updated) |
+| edge-config-token-created | Replaced | An access token for an Edge Config was created. (Replaced by global-config-token-created) |
+| edge-config-token-deleted | Replaced | An access token for an Edge Config was deleted. (Replaced by global-config-token-deleted) |
+| edge-config-transfer-in | Replaced | An Edge Config was transferred in. (Replaced by global-config-transfer-in) |
+| edge-config-transfer-out | Replaced | An Edge Config was transferred out. (Replaced by global-config-transfer-out) |
+| edge-config-updated | Replaced | An Edge Config was updated. (Replaced by global-config-updated) |
 | email | Active | The email of the current user was updated. |
 | emu-member-removed-unverified-domain | Active | A team member was removed because their email domain is not a verified enterprise managed domain. |
 | enforce-disjunctive-production-secrets | Active | Separate production secret group enforcement was updated for a team. |
@@ -267,6 +270,10 @@ The table below shows a list of events logged on the Activity page.
 | env-variable-read:cli:pull | Active | An environment variable was decrypted via CLI pull. |
 | env-variable-read:unknown-source | Active | An environment variable was decrypted from an unknown source. |
 | env-variable-rotated | Active | An integration-managed environment variable was rotated during a secret rotation. |
+| experiment-created | Active | An experiment and its Flag were created. |
+| experiment-deleted | Active | An experiment was deleted. |
+| experiment-transitioned | Active | An experiment changed lifecycle state or ramp. |
+| experiment-updated | Active | An experiment configuration was updated. |
 | firewall-bypass-created | Active | A bypass of system firewall rules was created |
 | firewall-bypass-deleted | Active | A bypass of system firewall rules was deleted |
 | firewall-config-modified | Active | A firewall configuration was modified. |
@@ -285,6 +292,17 @@ The table below shows a list of events logged on the Activity page.
 | flags-segment | Active | A Segment definition for the Flags tab was created, updated, or deleted. |
 | flags-settings | Active | Settings for the Flags tab were created, updated, or deleted. |
 | git_account_integration_link_added | Active | A GitHub account was linked to an additional Vercel account as an integration. |
+| global-config-backup-restored | Active | A Global Config was restored from a backup. |
+| global-config-created | Active | A Global Config was created. |
+| global-config-deleted | Active | A Global Config was deleted. |
+| global-config-items-updated | Active | The values in a Global Config were updated. |
+| global-config-schema-deleted | Active | A Global Config schema was deleted. |
+| global-config-schema-updated | Active | A Global Config schema was updated. |
+| global-config-token-created | Active | An access token for a Global Config was created. |
+| global-config-token-deleted | Active | An access token for a Global Config was deleted. |
+| global-config-transfer-in | Active | A Global Config was transferred in. |
+| global-config-transfer-out | Active | A Global Config was transferred out. |
+| global-config-updated | Active | A Global Config was updated. |
 | instant-rollback-created | Active | An instant rollback was created. |
 | integration-configuration-credential-rotated | Active | An installed integration rotated the access token it uses to call the Vercel API. |
 | integration-configuration-owner-changed | Active | An integration configuration owner was changed. |
@@ -471,6 +489,7 @@ The table below shows a list of events logged on the Activity page.
 | project-source-files-outside-root-directory-updated | Active | The include files outside root directory setting for a project was updated. |
 | project-speed-insights-disabled | Active | Speed Insights was disabled for a specific project. |
 | project-speed-insights-enabled | Active | Speed Insights was enabled for a specific project. |
+| project-speed-insights-free-data-started | Active | A project without Speed Insights enabled received its first data point (Speed Insights free tier started). |
 | project-sso-protection | Active | Vercel Authentication (formerly SSO protection) for a project was modified. |
 | project-static-ips-updated | Active | Static IPs were updated for a project. |
 | project-trusted-ips | Active | Trusted IPs for a project was modified. |
@@ -487,6 +506,7 @@ The table below shows a list of events logged on the Activity page.
 | sandbox-alias-delete | Active | An alias was removed from a sandbox. |
 | sandbox-drive-created | Active | A sandbox drive was created. |
 | sandbox-drive-deleted | Active | A sandbox drive was deleted. |
+| sandbox-snapshot-regions-updated | Active | The regions of a sandbox snapshot were updated. |
 | scale | Active | A deployment was scaled. |
 | scale-auto | Active | Auto-scaling was configured for a deployment. |
 | secondary-email-added | Active | An email was added to the account |
@@ -583,6 +603,8 @@ The table below shows a list of events logged on the Activity page.
 | team-slug-update | Active | The slug of a team was updated. |
 | tracing-configured | Active | Tracing was configured for a project. |
 | tracing-disabled | Active | Tracing was disabled for a project. |
+| tracing-paused | Active | Tracing was paused for all projects of the team. |
+| tracing-resumed | Active | Tracing was resumed for all projects of the team. |
 | unlink-login-connection | Active | A login connection was unlinked. |
 | update-account-flow-dismissed | Active | The completed account update flow status was dismissed for a team with enterprise managed users. |
 | update-account-flow-triggered | Active | The account update flow was started for a team with enterprise managed users. |

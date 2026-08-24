@@ -15,8 +15,8 @@ related:
 summary: A DNS record display component with one-click copying for guiding users through domain configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e4c33555906e02178d724749dafebf8b054d2a6cbe6ff2c1d97a9211cb74f275"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "11c68283496fe850208fbf53daa2ae14c8103f74bd62404dca142477d807e0da"
 ---
 
 # DNS Table
@@ -31,8 +31,8 @@ sha256: "e4c33555906e02178d724749dafebf8b054d2a6cbe6ff2c1d97a9211cb74f275"
 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related) — Learn how DNS works in order to properly configure your domain.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record?from=related)
 - [Domains](https://vercel.com/docs/domains?from=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 

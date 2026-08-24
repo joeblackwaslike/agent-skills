@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "51188538cd0e1f8a48342789b4bfca7c85b33ee943cef29957a2011e65b52552"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "3da199bd8c18e0533dbc15a09749929680c9def3e105ee6c3f378ad0815af700"
 ---
 
 # Managing projects
@@ -31,7 +31,7 @@ You can manage your project on Vercel in your project's dashboard. To learn more
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
-- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\(\) so inference runs only for verified callers
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Global Configs & Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby

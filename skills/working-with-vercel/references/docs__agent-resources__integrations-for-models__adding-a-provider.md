@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI provider to your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "7461c7b88570cf5f1e83f15cd6115eca54722c0ca739739040e401ee9dd605c5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "90d891b5a7498a75dd010217ec388d560bf272aaf1ebb8abf9ea674018b685b0"
 ---
 
 # Adding a Provider
@@ -31,6 +31,7 @@ When you Open **AI** in the sidebar, you'll see a list of installed AI integrati
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI models](https://v0.app/docs/ai-models?from=related) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related) — Learn how to add a new AI model to your Vercel projects
 - [Integrations for Agents](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Overview](https://vercel.com/docs/integrations?from=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte

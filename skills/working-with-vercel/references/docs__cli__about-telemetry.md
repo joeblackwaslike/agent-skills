@@ -12,8 +12,8 @@ related:
 summary: Vercel CLI collects telemetry data about general usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/about-telemetry.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "95f28eda062851d7ed9e8858493c17dc83bd53e540338757588141cba4e6bab0"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "1ca14c6ed9044e0e003d4e9b9f07f2267325bb7ce99511a9a2a0bbe134f06a28"
 ---
 
 # Telemetry
@@ -32,8 +32,8 @@ sha256: "95f28eda062851d7ed9e8858493c17dc83bd53e540338757588141cba4e6bab0"
 - [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
 - [Using with CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related) — Query observability metrics and inspect available metrics, dimensions, and aggregations using the Vercel CLI.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [vercel api](https://vercel.com/docs/cli/api?from=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/about-telemetry.graph.md](/docs/cli/about-telemetry.graph.md)

@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "aa4f4f148e744b6d237f17693ce606791a02333d10e8a25d4efa2e21a2c461f6"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a1f4576b68c735f8574685a686933e5920095a71ce36e46cda6ea7fdab9eab51"
 ---
 
 # Access Groups
@@ -28,7 +28,8 @@ sha256: "aa4f4f148e744b6d237f17693ce606791a02333d10e8a25d4efa2e21a2c461f6"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \(RBAC
+- [Enterprise](https://v0.app/docs/enterprise?from=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member?from=related)
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project?from=related)
 - [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group?from=related)

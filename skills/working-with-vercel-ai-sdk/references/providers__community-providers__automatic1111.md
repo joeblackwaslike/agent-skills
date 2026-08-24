@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/community-providers/automatic1111.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "f339b2a358f051e6eac7a8c0888a5c42436727928bde2a77478e504132596e16"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "2a897daf2a83ad026feb7a8eace9694acea093d96cce6f650df47174923ecb55"
 ---
 
 # Automatic1111
@@ -191,6 +191,7 @@ The provider automatically detects available models from your AUTOMATIC1111 inst
 - [Crusoe](/providers/community-providers/crusoe)
 - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
 - [QVAC](/providers/community-providers/qvac)
+- [Interfaze](/providers/community-providers/interfaze)
 - [Flowise](/providers/community-providers/flowise)
 
 

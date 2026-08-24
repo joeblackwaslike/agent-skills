@@ -13,13 +13,13 @@ related:
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "e801a022d1e7174a07262b2923467050da43905777e5590d3360667e94b43fb7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "6c7e526ccfd5867c4049b6b658fe600b8212200a9884b437a4d0000efbe2593c"
 ---
 
 # Investigation
 
-> **🔒 Permissions Required**: Agent Investigation
+> **🔒 Permissions Required**: Vercel Agent Investigation
 
 
 <!-- docsgraph:related -->
@@ -34,9 +34,9 @@ sha256: "e801a022d1e7174a07262b2923467050da43905777e5590d3360667e94b43fb7"
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Installation](https://vercel.com/docs/agent/installation?from=related) — Let AI automatically install Web Analytics and Speed Insights in your app
 - [Overview](https://vercel.com/docs/observability?from=related) — Observability on Vercel provides framework-aware insights enabling you to optimize infrastructure and application perfor
-- [Code Review](https://vercel.com/docs/agent/pr-review?from=related) — Get automatic AI-powered code reviews on your pull requests
-- [Managing Reviews](https://vercel.com/docs/agent/pr-review/usage?from=related) — Customize which repositories get reviewed and track your review metrics and spending.
 - [Configure Alerts](https://vercel.com/docs/alerts/configure-alerts?from=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
+- [Managing Reviews](https://vercel.com/docs/agent/pr-review/usage?from=related) — Customize which repositories get reviewed and track your review metrics and spending.
+- [Code Review](https://vercel.com/docs/agent/pr-review?from=related) — Get automatic AI-powered code reviews on your pull requests
 
 Full cross-link map for this page: [/docs/agent/investigation.graph.md](/docs/agent/investigation.graph.md)
 <!-- /docsgraph:related -->
@@ -45,20 +45,20 @@ When you get an anomaly alert, Vercel Agent can investigate your logs and metric
 
 Vercel Agent starts investigations automatically when an alert fires. It checks patterns in your data, identifies what changed, and shows what might be causing the issue.
 
-## Getting started with Agent Investigation
+## Getting started with Vercel Agent Investigation
 
-Before you use Agent Investigation, make sure your team has:
+Before you use Vercel Agent Investigation, make sure your team has:
 
 1. An [Observability Plus](/docs/observability/observability-plus) subscription. It includes 10 alert investigations per billing cycle by default
-2. [Sufficient credits](/docs/agent/pricing) to cover investigations beyond the included investigations
+2. Vercel Agent billing enabled for investigations beyond the included usage
 
-To run investigations **automatically for every alert**, [enable Vercel Agent Investigations](#enable-agent-investigations) for your team.
+To run investigations **automatically for every alert**, [enable Vercel Agent Investigations](#enable-vercel-agent-investigations) for your team.
 
 You can [run an investigation manually](#run-an-investigation-manually) if you want to investigate an alert that has already fired.
 
-> **💡 Note:** Agent Investigation does not start automatically if you previously enabled Vercel Agent only for code review. [Enable Agent Investigations](#enable-agent-investigations) separately.
+> **💡 Note:** Code Review and Vercel Agent Investigations are enabled separately. [Enable Vercel Agent Investigations separately](#enable-vercel-agent-investigations).
 
-### Enable Agent Investigations
+### Enable Vercel Agent Investigations
 
 To run investigations automatically for every alert, enable Vercel Agent Investigations in your team's settings:
 
@@ -66,11 +66,11 @@ To run investigations automatically for every alert, enable Vercel Agent Investi
 2. In the **General** section, find **Vercel Agent** and under **Investigations**, switch the toggle to **Enabled**.
 3. Select **Save** to confirm your changes.
 
-After you enable Agent Investigations, Vercel Agent runs an investigation automatically when an alert fires. Make sure your team has [enough credits](/docs/agent/pricing#adding-credits) to cover investigations beyond the included investigations.
+After you enable Vercel Agent Investigations, Vercel Agent runs an investigation automatically when an alert fires. Make sure your team has Vercel Agent billing enabled for investigations beyond the included usage.
 
-## How to use Agent Investigation
+## How to use Vercel Agent Investigation
 
-When you [enable Agent Investigations](#enable-agent-investigations), Vercel Agent runs an investigation automatically when an alert fires. It queries your logs and metrics around the time of the alert, looks for patterns that might explain the issue, checks for related errors or anomalies, and summarizes what it found.
+When you [enable Vercel Agent Investigations](#enable-vercel-agent-investigations), Vercel Agent runs an investigation automatically when an alert fires. It queries your logs and metrics around the time of the alert, looks for patterns that might explain the issue, checks for related errors or anomalies, and summarizes what it found.
 
 To view an investigation:
 
@@ -82,7 +82,7 @@ If you want to run the investigation again with fresh data, click the **Rerun** 
 
 ### Run an investigation manually
 
-If you do not have Agent Investigations enabled and running automatically, you can run an investigation manually from the alert details page.
+If you do not have Vercel Agent Investigations enabled and running automatically, you can run an investigation manually from the alert details page.
 
 1. Go to your [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fobservability%2Falerts\&title=Open+Alerts) and navigate to **Observability**, then **Alerts**.
 2. Find the alert you want to review and click on it.
@@ -90,19 +90,19 @@ If you do not have Agent Investigations enabled and running automatically, you c
 
 ## Pricing
 
-Agent Investigation includes 10 alert investigations per billing cycle with Observability Plus. After your team uses those included investigations, each additional investigation costs a fixed $0.30 USD plus token costs at the Agent's underlying AI provider rate, with no additional markup. The token cost varies based on how much log and metric data Vercel Agent analyzes.
+Observability Plus includes 10 investigations per billing cycle. Additional investigations use provider inference at the underlying token rate with no markup, plus the Vercel Token Rate of $0.25 per million tokens. The cost varies based on how much log and metric data Vercel Agent analyzes.
 
-You can [purchase credits and enable auto-reload](/docs/agent/pricing#adding-credits) in the Agent section in the sidebar of your dashboard. For complete pricing details, credit management, and cost tracking information, see [Vercel Agent Pricing](/docs/agent/pricing).
+See [Vercel Agent pricing](/docs/agent/pricing) for complete rates and cost-tracking information.
 
-## Disable Agent Investigation
+## Disable Vercel Agent Investigation
 
-To disable Agent Investigation:
+To disable Vercel Agent Investigation:
 
 1. Go to your team's [Settings](https://vercel.com/d?to=%2Fteams%2F%5Bteam%5D%2Fsettings\&title=Go+to+Settings\&personalTo=%2Faccount) page.
 2. In the **General** section, find **Vercel Agent** and under **Investigations**, switch the toggle to **Disabled**.
 3. Select **Save** to confirm your changes.
 
-Once disabled, Agent Investigation won't run automatically on any new alerts. You can re-enable Agent Investigation at any time from the same menu or [run an investigation manually](#run-an-investigation-manually) from the alert details page.
+Once disabled, Vercel Agent Investigation won't run automatically on any new alerts. You can re-enable Vercel Agent Investigation at any time from the same menu or [run an investigation manually](#run-an-investigation-manually) from the alert details page.
 
 
 ---

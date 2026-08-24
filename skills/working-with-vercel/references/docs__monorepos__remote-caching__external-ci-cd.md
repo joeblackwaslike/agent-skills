@@ -13,8 +13,8 @@ related:
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "426447e8df2c1313edfa19217d1e320262ae1347e31a5a4ade17a0a2c7168f4b"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d909d37387d90f02a1d269b8a39e793f691684a654c98ee7c3b873baa045502d"
 ---
 
 # Use Remote Caching from External CI/CD
@@ -35,6 +35,7 @@ You can use [Vercel Remote Cache](/docs/monorepos/remote-caching) with Turborepo
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [OIDC](https://vercel.com/docs/oidc?from=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [sitemap.md](https://vercel.com/docs/sitemap.md?from=related) — Learn about sitemap.md on Vercel.
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md)
 <!-- /docsgraph:related -->

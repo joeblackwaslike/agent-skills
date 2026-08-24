@@ -16,8 +16,8 @@ related:
 summary: Understand how eve usage maps to Vercel resources and inherited platform limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/pricing.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "35523b94e0c473886efaaeb1f1162122e44fed4f3d8dfaed1d66151aa69484a5"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "d92d5636c87280b9f0c1fad03b02859d4067dcdebce198136d375ac8223e03d4"
 ---
 
 # Pricing and Limits
@@ -33,11 +33,12 @@ Sandbox for isolated command execution, and AI Gateway or model providers for mo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Pricing](https://v0.app/docs/pricing?from=related) — Understand the v0 plans, pricing, and usage limits.
+- [Pricing](https://vercel.com/docs/agent/pricing?from=related) — Understand Vercel Agent pricing and how to track costs
 - [Pricing](https://vercel.com/docs/pricing?from=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Pricing](https://vercel.com/docs/agent/pricing?from=related) — Understand how Vercel Agent pricing works and how to manage your credits
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Legacy Usage & Pricing](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Manage and Optimize Usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing and Limits](https://vercel.com/docs/services/pricing?from=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 
 Full cross-link map for this page: [/docs/eve/pricing.graph.md](/docs/eve/pricing.graph.md)
 <!-- /docsgraph:related -->

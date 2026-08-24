@@ -16,8 +16,8 @@ related:
 summary: Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments in this overview.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "8d01c498582914c6d607363ef7eb88198377b15801212ddfea54267eb5af14b7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "21a4af2b089ea2771a05a8dd33d758b4d03e8616cfe3cc82ca245f4f8e59e8b8"
 ---
 
 # Comments Overview
@@ -32,10 +32,10 @@ sha256: "8d01c498582914c6d607363ef7eb88198377b15801212ddfea54267eb5af14b7"
 
 - [How do I prevent the Vercel for GitHub integration comments?](https://vercel.com/kb/guide/how-to-prevent-vercel-github-comments?from=related) — Information on how to prevent the Vercel for GitHub integration from adding comments.
 - [Managing Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
-- [Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
 - [Deployments](https://vercel.com/docs/deployments?from=related) — Learn how to create and manage deployments on Vercel.
 - [General Settings](https://vercel.com/docs/project-configuration/general-settings?from=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
-- [Code Review](https://vercel.com/docs/agent/pr-review?from=related) — Get automatic AI-powered code reviews on your pull requests
+- [Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
+- [Bitbucket](https://vercel.com/docs/git/vercel-for-bitbucket?from=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 
 Full cross-link map for this page: [/docs/comments.graph.md](/docs/comments.graph.md)
 <!-- /docsgraph:related -->
@@ -63,6 +63,7 @@ To leave a comment:
 - [Using Comments](/docs/comments/using-comments)
 - [Managing Comments](/docs/comments/managing-comments)
 - [Comments Integrations](/docs/comments/integrations)
+- [Managing Comments with Vercel CLI](/docs/cli/comments)
 - [Using Comments in production and localhost](/docs/vercel-toolbar/in-production-and-localhost)
 
 

@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "25468c60a147b40a3f52079788d6521cebfcd7a981e051f640e7602bef7dd7dc"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "146602b9a860cbd93fe54aee5ff7ae34613d8c9859399b2ed68e682ba7790e9b"
 ---
 
 # Anthropic Provider
@@ -1111,7 +1111,7 @@ import { generateText } from 'ai';
 
 const result = await generateText({
   model: anthropic('claude-sonnet-4-6'),
-  system:
+  instructions:
     'You have access to an `advisor` tool backed by a stronger reviewer model.',
   prompt:
     'Build a concurrent worker pool in Go with graceful shutdown. Outline the design first.',

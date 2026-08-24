@@ -12,8 +12,8 @@ related:
 summary: Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/agent.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "4d1285cc7e66ed7f250c25ad521a47ffae9f9335cb36eb70b8cef236e7ac7032"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "a1ba4a0ffbda48ccb5e7a4f9778022890adafedb6d45c9169d9a407667e54ba8"
 ---
 
 # vercel agent
@@ -33,7 +33,7 @@ The `vercel agent` command writes a section related to Vercel deployment best pr
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Agent Resources](https://vercel.com/docs/agent-resources?from=related) — Resources for building with AI on Vercel, including documentation access, MCP servers, and agent skills.
 - [vercel build](https://vercel.com/docs/cli/build?from=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Vercel Agent](https://vercel.com/docs/agent?from=related) — Use Vercel Agent to investigate production issues, review code, and take approved actions.
 
 Full cross-link map for this page: [/docs/cli/agent.graph.md](/docs/cli/agent.graph.md)
 <!-- /docsgraph:related -->

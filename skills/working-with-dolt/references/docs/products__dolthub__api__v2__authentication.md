@@ -2,8 +2,8 @@
 title: "Authentication"
 description: How to authenticate requests to the DoltHub v2 API.
 source: "https://www.dolthub.com/docs/products/dolthub/api/v2/authentication.md"
-fetched_at: "2026-07-13T06:56:02.638Z"
-sha256: "480bbc31123fd185483075ac3a902cde9ff9a9c56c0a3a192e6facf0aa21c085"
+fetched_at: "2026-08-24T04:47:05.170Z"
+sha256: "6405913bb256aa6964dd07290225bc2682015ba1e6c46a461b38c26de1f5e34d"
 ---
 
 # Authentication
@@ -40,4 +40,4 @@ Most write operations and all operations on private databases require authentica
 
 Endpoints that require authentication will return `401 Unauthorized` if no valid credential is supplied, and `403 Forbidden` if the credential is valid but lacks permission.
 
-See [Models → Problem](models#model-problem) for the error response format.
+See [Models → Problem](/products/dolthub/api/v2/models#model-problem) for the error response format.

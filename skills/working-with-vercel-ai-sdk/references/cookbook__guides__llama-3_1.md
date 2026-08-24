@@ -1,7 +1,7 @@
 ---
 source: "https://ai-sdk.dev/cookbook/guides/llama-3_1.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "01abe592662eb82185d8b02e0221ea4c999f6af47c4282b29aea182c35339129"
+fetched_at: "2026-08-24T04:50:41.759Z"
+sha256: "b1c2f6a5f819efd8e4297e9dbd1f47474b1e0e28b8d683557f7ff44de93b8767"
 ---
 
 # Get started with Llama 3.1
@@ -173,7 +173,7 @@ const problem =
 
 const { text: answer } = await generateText({
   model: deepInfra('meta-llama/Meta-Llama-3.1-70B-Instruct'),
-  system:
+  instructions:
     'You are solving math problems. Reason step by step. Use the calculator when necessary.',
   prompt: problem,
   tools: {

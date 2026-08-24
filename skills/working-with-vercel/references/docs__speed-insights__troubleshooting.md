@@ -12,8 +12,8 @@ related:
 summary: Learn about common issues and how to troubleshoot Vercel Speed Insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/troubleshooting.md"
-fetched_at: "2026-08-17T04:50:17.160Z"
-sha256: "021760c8b5bf83c349c6d4fa87ad47371af9e18cd98b66a51d44efcc022c48f7"
+fetched_at: "2026-08-24T04:53:18.281Z"
+sha256: "39c97ba6e0e79f8ff0d97d9d41a96cdf7aa8fe0f23f1d444d7ef80ff5d90909e"
 ---
 
 # Troubleshooting Vercel Speed Insights
@@ -26,6 +26,7 @@ sha256: "021760c8b5bf83c349c6d4fa87ad47371af9e18cd98b66a51d44efcc022c48f7"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness?from=related) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
 - [Privacy](https://vercel.com/docs/speed-insights/privacy-policy?from=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 - [Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 - [Getting Started](https://vercel.com/docs/speed-insights/quickstart?from=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
